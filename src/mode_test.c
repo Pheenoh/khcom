@@ -1741,3 +1741,16 @@ Mode gUnk_09EE274C __attribute__((section(".data_registration_gUnk_09EE274C"))) 
     func_08061248,
     Event_2,
 };
+
+#ifdef VERSION_EU
+const char gTaskNameFrdPoohEu[] __attribute__((section(".rodata_registration_name_gTaskDescFrdPoohEu"), aligned(1))) = "task_frd_pooh";
+
+TaskDesc gTaskDescFrdPoohEu __attribute__((section(".data_registration_gTaskDescFrdPoohEu"))) = {
+    gTaskNameFrdPoohEu,
+    (void (*)(void*, void*))eu_08060C8C,
+    (u8 (*)(void*))eu_08060DF8,
+    (void (*)(void*))eu_08061588,
+    (void (*)(void*))eu_08061698,
+    sizeof(UnkModeTestWork),
+};
+#endif

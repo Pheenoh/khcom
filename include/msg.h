@@ -1,3 +1,4 @@
+#include "continue_data.h"
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
@@ -302,7 +303,6 @@ extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gModeBattle[];
 #include "mode_battle_data.h"
-extern s32 gUnk_08F7DAC4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_096145D8[];

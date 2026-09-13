@@ -175,4 +175,7 @@ extern s8 gUnk_09A4CA94[];
 extern s8 gUnk_09A4CAB5[];
 extern s8* gUnk_09EF9E04[];
 
+extern u16 gUnk_09A4CABE[];
+extern s16 gUnk_09A4CAC4[];
+
 #endif

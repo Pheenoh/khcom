@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "obj_api.h"
@@ -6,8 +7,6 @@
 #include "poo_api.h"
 
 #ifdef VERSION_EU
-extern u8* gUnkEu_09F800A4[];
-extern u8* gUnkEu_09F800B8[];
 #endif
 
 PooWork* gPooWork;

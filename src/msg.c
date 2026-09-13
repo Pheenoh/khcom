@@ -16,7 +16,6 @@
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern u8 gUnkEu_0919B63A[];
-extern void* gUnkEu_09F5D7E4[];
 extern u8 gUnkEu_095A3D74[];
 u8 eu_0806C734(EventSeqWork* work);
 u8 eu_0806C7C8(EventSeqWork* work);
@@ -7959,7 +7958,7 @@ s32 func_0806D0A8(ContinueWork* p) {
     }
 
     func_0806CD30(p->unk_60);
-    t = &gUnk_08F7DAC4[14];
+    t = gUnk_08F7DAFC;
     p->unk_54 += (t[p->unk_60] - p->unk_54) >> 3;
     p->unk_64 += 4;
 }
@@ -12906,3 +12905,23 @@ TaskDesc gUnk_09EE284C __attribute__((section(".data_registration_gUnk_09EE284C"
     (void (*)(void*))Continue_3,
     0x6C,
 };
+
+s32 gUnk_08F7DAFC[2] __attribute__((section(".data_continue_cursor_y"), aligned(4))) = {
+    0x4000, 0x5600,
+};
+
+#ifdef VERSION_EU
+extern u8 gUnkEu_0954C284[];
+extern u8 gUnkEu_0954C7B4[];
+extern u8 gUnkEu_0954D7A0[];
+extern u8 gUnkEu_0954D238[];
+extern u8 gUnkEu_0954CD1C[];
+
+void* gUnkEu_09F5D7E4[5] __attribute__((section(".data_continue_tiles_eu"), aligned(4))) = {
+    gUnkEu_0954C284,
+    gUnkEu_0954C7B4,
+    gUnkEu_0954D7A0,
+    gUnkEu_0954D238,
+    gUnkEu_0954CD1C,
+};
+#endif

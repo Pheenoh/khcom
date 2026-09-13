@@ -2,6 +2,7 @@
 #define GUARD_JIMINY_TEXT_ASSETS_H
 
 #include "jiminy_types.h"
+#include "jiminy_inline_text_data.h"
 
 #if defined(VERSION_US)
 
@@ -2710,24 +2711,6 @@ extern JiminyTextChar gUnk_08159DC8[14];
 
 #elif defined(VERSION_JP)
 
-extern JiminyTextChar gUnkJp_0813FEB8[21];
-extern JiminyTextChar gUnkJp_0813FED0[25];
-extern JiminyTextChar gUnkJp_0813FEEC[25];
-extern JiminyTextChar gUnkJp_0813FF08[25];
-extern JiminyTextChar gUnkJp_0813FF24[19];
-extern JiminyTextChar gUnkJp_0813FF38[25];
-extern JiminyTextChar gUnkJp_0813FF54[25];
-extern JiminyTextChar gUnkJp_0813FF70[11];
-extern JiminyTextChar gUnkJp_0813FF7C[25];
-extern JiminyTextChar gUnkJp_0813FF98[25];
-extern JiminyTextChar gUnkJp_0813FFB4[25];
-extern JiminyTextChar gUnkJp_0813FFD0[25];
-extern JiminyTextChar gUnkJp_0813FFEC[9];
-extern JiminyTextChar gUnkJp_0813FFF8[25];
-extern JiminyTextChar gUnkJp_08140014[25];
-extern JiminyTextChar gUnkJp_08140030[25];
-extern JiminyTextChar gUnkJp_0814004C[25];
-extern JiminyTextChar gUnkJp_08140068[25];
 extern JiminyTextChar gUnkJp_08140084[21];
 extern JiminyTextChar gUnkJp_0814009C[25];
 extern JiminyTextChar gUnkJp_081400B8[25];
@@ -18082,31 +18065,6 @@ extern JiminyTextChar gUnkEu_0887ACFF[21];
 extern JiminyTextChar gUnkEu_0887AD14[18];
 extern JiminyTextChar gUnkEu_0887AD26[13];
 extern JiminyTextChar gUnkEu_0887AD33[16];
-extern JiminyTextChar gUnkEu_0888E310[14];
-extern JiminyTextChar gUnkEu_0888E31E[18];
-extern JiminyTextChar gUnkEu_0888E330[19];
-extern JiminyTextChar gUnkEu_0888E343[18];
-extern JiminyTextChar gUnkEu_0888E355[15];
-extern JiminyTextChar gUnkEu_0888E378[8];
-extern JiminyTextChar gUnkEu_0888E380[8];
-extern JiminyTextChar gUnkEu_0888E388[8];
-extern JiminyTextChar gUnkEu_0888E390[8];
-extern JiminyTextChar gUnkEu_0888E398[8];
-extern JiminyTextChar gUnkEu_0888E3B4[11];
-extern JiminyTextChar gUnkEu_0888E3BF[20];
-extern JiminyTextChar gUnkEu_0888E3D3[11];
-extern JiminyTextChar gUnkEu_0888E3DE[26];
-extern JiminyTextChar gUnkEu_0888E3F8[23];
-extern JiminyTextChar gUnkEu_0888E424[8];
-extern JiminyTextChar gUnkEu_0888E42C[8];
-extern JiminyTextChar gUnkEu_0888E434[8];
-extern JiminyTextChar gUnkEu_0888E43C[10];
-extern JiminyTextChar gUnkEu_0888E446[9];
-extern JiminyTextChar gUnkEu_0888E464[15];
-extern JiminyTextChar gUnkEu_0888E473[19];
-extern JiminyTextChar gUnkEu_0888E486[15];
-extern JiminyTextChar gUnkEu_0888E495[22];
-extern JiminyTextChar gUnkEu_0888E4AB[20];
 extern JiminyTextChar gUnkEu_0888E4D4[17];
 extern JiminyTextChar gUnkEu_0888E4E5[20];
 extern JiminyTextChar gUnkEu_0888E4F9[17];

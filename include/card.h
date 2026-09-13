@@ -1,3 +1,6 @@
+#include "card_keyboard_data.h"
+#include "card_keyboard_text.h"
+#include "boss_card_data.h"
 #include "map_animation_data.h"
 #include "card_deck_data.h"
 #include "card_selection_data.h"
@@ -19,6 +22,8 @@
 #include "system_state.h"
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
+
+#include "remaining_resource_data.h"
 
 #include "card_label_data.h"
 
@@ -153,7 +158,6 @@ extern void* gUnk_09EE7938[];
 extern u8 gUnk_0908C686[];
 extern u8 gUnk_0908FCEE[];
 extern u8 gUnk_09613F78[];
-extern s32* gUnk_09EE275C[];
 
 typedef struct UnkStruct_0807FA0C {
     u8 unk_00[0x14];
@@ -1143,9 +1147,6 @@ extern u16 gUnk_0903612C[];
 extern u16 gUnk_090359FC[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
-extern u16 gUnk_09EE4AC8[];
-extern u16 gUnk_09EE4AD6[];
-extern u16 gUnk_09EE4AE4[];
 extern s16 gSineTable[];
 extern u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
@@ -1179,27 +1180,12 @@ extern u8 gUnk_0962B090[];
 extern u8 gUnk_096FBAA4[];
 extern u8 gUnk_0962AD62[];
 extern u8 gUnk_096FBA44[];
-extern void* gUnk_09EF3884[];
 extern u8 gUnk_0962B286[];
 extern u8 gUnk_096FBA64[];
 extern u8 gUnk_0962B8BE[];
 extern u8 gUnk_096FBA84[];
-extern void* gUnk_09EF38B4[];
-extern void* gUnk_09EF3894[];
-extern void* gUnk_09EF38BC[];
-extern void* gUnk_09EF38C8[];
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F7EB38[];
-extern void* gUnkEu_09F7EB44[];
-extern void* gUnkEu_09F7EB50[];
-extern void* gUnkEu_09F7EB5C[];
-extern void* gUnkEu_09F7EB68[];
-extern void* gUnkEu_09F7EB74[];
-extern void* gUnkEu_09F7EB80[];
-extern void* gUnkEu_09F7EB8C[];
-extern void* gUnkEu_09F7EB98[];
-extern void* gUnkEu_09F7EBA4[];
 #endif
 
 extern u8 gUnk_090451C0[];
@@ -1878,7 +1864,6 @@ typedef struct BossCardWork {
     u8 unk_34;
 } BossCardWork;
 
-extern u8 gUnk_08F7DAC4[];
 extern s16 gUnk_0903595E[];
 extern s16 gUnk_09035964[];
 extern s32 gUnk_09033D28[];
@@ -1912,7 +1897,6 @@ typedef struct UnkStruct_0808F358 {
 } UnkStruct_0808F358;
 
 s32 func_0808F358(UnkStruct_0808F358* work);
-extern u8* gUnk_09EE4B0C[];
 
 void func_0807E230(void);
 void func_0807E254(void);

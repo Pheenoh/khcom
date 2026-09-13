@@ -353,8 +353,6 @@ u8 func_0810D364(BosLstWork* work);
 void func_0810D3A8(BosLstWork* work);
 void func_0810D478(BosLstWork* work);
 
-extern u16 gUnk_09A4CABE[];
-extern s16 gUnk_09A4CAC4[];
 
 void func_0810B3E4(void);
 void func_0810B40C(s16 a);

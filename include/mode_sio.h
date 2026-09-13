@@ -5,6 +5,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "remaining_resource_data.h"
+
 #include "sio_menu_data.h"
 
 #include "card_description_data.h"
@@ -401,16 +403,6 @@ extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
-extern void* gUnk_09EF3894[];
-extern void* gUnk_09EF38B4[];
-extern void* gUnk_09EF38D4[];
-extern void* gUnk_09EF38DC[];
-extern void* gUnk_09EF38E4[];
-extern void* gUnk_09EF38EC[];
-extern void* gUnk_09EF38FC[];
-extern void* gUnk_09EF3904[];
-extern void* gUnk_09EF390C[];
-extern void* gUnk_09EF3920[];
 
 void mode_sio_btl_connect_0(s32 arg);
 void mode_sio_btl_connect_1(void);

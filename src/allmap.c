@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
@@ -9,8 +10,6 @@
 #include "allmap_api.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F80124[];
-extern void* gUnkEu_09F80138[];
 extern u8 gUnkEu_09814E40[];
 extern u8 gUnkEu_09815640[];
 #endif

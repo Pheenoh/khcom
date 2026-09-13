@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
@@ -39,10 +40,6 @@ extern u8 gUnkEu_099ABA18[];
 extern u8 gUnkEu_099ABFA0[];
 extern u8 gUnkEu_099AC468[];
 extern u8 gUnkEu_099AC9F0[];
-extern void* gUnkEu_09F84EE8[];
-extern void* gUnkEu_09F84F10[];
-extern void* gUnkEu_09F84F24[];
-extern void* gUnkEu_09F84F38[];
 #endif
 
 s16 gUnk_020354E8;

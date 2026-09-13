@@ -400,3 +400,5 @@ MapNameText* gUnk_09EF7048[28] __attribute__((section(".data_map_text_gUnk_09EF7
     &gMapNameEu_088933D4,
 #endif
 };
+
+u8 gUnk_09EF6C38[] __attribute__((section(".rodata_map_debug_underscore"), aligned(1))) = "_";

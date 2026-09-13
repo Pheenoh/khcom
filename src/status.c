@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "status_api.h"
@@ -8,12 +9,6 @@
 #ifdef VERSION_EU
 extern u16 gUnkEu_096CB088[];
 extern u16 gUnkEu_096CB104[];
-extern void* gUnkEu_09F80288[];
-extern void* gUnkEu_09F8029C[];
-extern void* gUnkEu_09F80350[];
-extern void* gUnkEu_09F80364[];
-extern void* gUnkEu_09F802C8[];
-extern void* gUnkEu_09F802DC[];
 #endif
 
 static StatusWork* gStatusWork;
@@ -302,7 +297,7 @@ u8 func_080D7B94(void) {
 void task_status_tab_0(StatusTabWork* work, s32* arg) {
     work->unk_18 = arg;
 #ifdef VERSION_EU
-    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnkEu_09F802DC[gLanguage], 4),
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes((u16**)gUnkEu_09F802DC[gLanguage], 4),
         gUnkEu_09F802C8[gLanguage]);
 #else
     work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6920, 4), gUnk_097A24A6);

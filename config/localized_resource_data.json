@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "provenance": {
+    "language_slots": "Thirty native EU-only arrays each contain five language-selected pointers. Bounds come from the five-language domain and distinct roots in poo,allmap,title,status,mode_worldwarp,mode_ms,mode_ms2,ms_charge and mode_mapinspect. These are runtime locale selectors, not encoded assets. There are no US/JP counterpart definitions or interpolated spans.",
+    "table_targets": "Nested title/status/resource selectors use void**[5], and the map-inspect animation selector uses AnimHeader**[5]. Every nested target is a separately source-owned real array (actor_ui_resource_data,remaining_resource_data or animation_resource_data), never a byte-view alias. status.c explicitly selects gfx0,1,2 from the EC8 family and GetMaxSpriteTileBytes(...,4) bounds the F08 family. Title uses three gfx slots; room/map-inspect tables have independent animation frame bounds. Existing raw encoded-asset bindings are reused when available; remaining native tile/map/Sprite labels point to original payloads and are not counted as C-owned data.",
+    "direct_consumers": "Two Pooh u8-pointer selectors supply floor-indexed0x140-byte graphics. Allmap and shop map selectors feed LoadBgMap/RequestTilemapRectCopy. Status selectors feed LoadObjTiles,DrawSprite and counted graphics arrays. Worldwarp and mode_ms2 direct Sprite selectors feed DrawSprite; each of their45 pointed-to Sprite streams independently parses to its complete2+6*count byte extent. Existing raw references and region guards remain unchanged except removing now-canonical TU-local extern declarations."
+  },
+  "regions": {
+    "us": {
+      "placements": []
+    },
+    "jp": {
+      "placements": []
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F800A4",
+          "address": "0x9f800a4",
+          "size": 40,
+          "sha256": "66e70fbe69b557ce3ad6b20fe711049b671640beb3bf2d8d427a15e404931558",
+          "objects": [
+            {
+              "name": "gUnkEu_09F800A4",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F800B8",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F80124",
+          "address": "0x9f80124",
+          "size": 40,
+          "sha256": "5490366e22e1df4372535fe166cd887d151f8f71bc2f2d2250e77a857c1117db",
+          "objects": [
+            {
+              "name": "gUnkEu_09F80124",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F80138",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F801D4",
+          "address": "0x9f801d4",
+          "size": 20,
+          "sha256": "ed76449b47e4018c43386090ef73f93fe1201ab80ebb34bc555c3868c49b69da",
+          "objects": [
+            {
+              "name": "gUnkEu_09F801D4",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F80200",
+          "address": "0x9f80200",
+          "size": 40,
+          "sha256": "abf2b8f1ed260e9bd938587ddc6b540e7e6db2d2fb4f2794df18302f1f9e295f",
+          "objects": [
+            {
+              "name": "gUnkEu_09F80200",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F80214",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F80288",
+          "address": "0x9f80288",
+          "size": 40,
+          "sha256": "6bff188cc8f8e9b84432414077d3e435b5ac01b03b6f96038405d2d4372e4ab9",
+          "objects": [
+            {
+              "name": "gUnkEu_09F80288",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F8029C",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F802C8",
+          "address": "0x9f802c8",
+          "size": 40,
+          "sha256": "29ceb6cb44372054d36095fe79c1727fe2bb72090d88c06703c44d776e68f19c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F802C8",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F802DC",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F80350",
+          "address": "0x9f80350",
+          "size": 40,
+          "sha256": "fe67a2b3a04d1b09e3814f5b667db5aff0fc70efb154759c4a4412d5e076b59a",
+          "objects": [
+            {
+              "name": "gUnkEu_09F80350",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F80364",
+              "offset": 20,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F84EE8",
+          "address": "0x9f84ee8",
+          "size": 100,
+          "sha256": "01250ed62943b4d50079d1bf95cf9d36c7c22903e255f9e6970dbd3e492ced52",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84EE8",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84EFC",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F10",
+              "offset": 40,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F24",
+              "offset": 60,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F38",
+              "offset": 80,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F84F5C",
+          "address": "0x9f84f5c",
+          "size": 20,
+          "sha256": "16a2b3f944bb03f88e4086009b219fc3943d83f607a00c9ef30d8ede6f9c86fc",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84F5C",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F84FA8",
+          "address": "0x9f84fa8",
+          "size": 80,
+          "sha256": "200af9ef97f8e36b5167b4e028ce29f225e42d506af3456b1cda9fd8556e1244",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84FA8",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84FBC",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84FD0",
+              "offset": 40,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84FE4",
+              "offset": 60,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "localized_resource_data.c",
+          "section": ".data_localized_09F85008",
+          "address": "0x9f85008",
+          "size": 140,
+          "sha256": "3ee58dfcc41a5759e4d8d8aba493a57cc7ef78f2fe27f8cabb09ed4febc1785d",
+          "objects": [
+            {
+              "name": "gUnkEu_09F85008",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F8501C",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F85030",
+              "offset": 40,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F85044",
+              "offset": 60,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F85058",
+              "offset": 80,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F8506C",
+              "offset": 100,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F85080",
+              "offset": 120,
+              "size": 20
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

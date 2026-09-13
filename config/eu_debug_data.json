@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "provenance": {
+    "movie_menu": "The EU-only movie debugger wraps its signed selection to 0 through 4 at native instructions 0800C7F0 through 0800C806 and accesses five eight-byte movie-ID/label records using a shift by three. The actual load bases are in its pools at 0800C834 and 0800C894. Its label strings, display-clearing string, separator and mode name occupy the exact native 0812F6A8..0812F704 range. Each ASCII string is a genuine compiler-defined null-terminated array, with separate verified four-byte alignment between objects. The unique Mode holds the native init/update/exit addresses. Two real interior Thumb function entries are exposed by the existing regional extra-label mechanism; no instructions change.",
+    "eu_task": "The EU-only 24-byte record at 09F59130 contains the exact task_frd_pooh ASCII name, the four existing mode_test task callbacks and sizeof(UnkModeTestWork) value 0x170. The 14-byte original name lives at 08896644. US and JP have no corresponding record; this native record is owned alongside the callbacks without speculatively moving their translation-unit boundary."
+  },
+  "regions": {
+    "eu": {
+      "placements": [
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6A8",
+          "address": "0x812f6a8",
+          "size": 12,
+          "sha256": "3d41a377f49bffcdd3016d6d034c731f14d929f9823bec370f07fcd91afe6c00",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6A8",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6B4",
+          "address": "0x812f6b4",
+          "size": 7,
+          "sha256": "11fe2762d872e2d1573e78167abd2145a147162c32845711cdce6c96dd0ff48b",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6B4",
+              "offset": 0,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6BC",
+          "address": "0x812f6bc",
+          "size": 7,
+          "sha256": "586685ceb2523f0697f1b2ca02fe60ec0f5b41042b61d938ee233e1e45211603",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6BC",
+              "offset": 0,
+              "size": 7
+            }
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6C4",
+          "address": "0x812f6c4",
+          "size": 8,
+          "sha256": "0736c929cea6494b4cf798bda5255859dc5f5a5252caf6ae404785ad145dc78f",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6C4",
+              "offset": 0,
+              "size": 8
+            }
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6CC",
+          "address": "0x812f6cc",
+          "size": 8,
+          "sha256": "cf04efc03fd3bcd387dde19bab627ff65d2e02fc8d14ccae6ee62d2852df2299",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6CC",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6D4",
+          "address": "0x812f6d4",
+          "size": 31,
+          "sha256": "ac7aa6dfb10077bcf276572849ae5d125ac106583cbfe72c215a72a84eebdb0e",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6D4",
+              "offset": 0,
+              "size": 31
+            }
+          ]
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6F4",
+          "address": "0x812f6f4",
+          "size": 3,
+          "sha256": "009837f45c558b8c59e1d415d41e65141be5d51ca7bf56ef3eed489187825a88",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6F4",
+              "offset": 0,
+              "size": 3
+            }
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".rodata_gMovieDebugTextEu_0812F6F8",
+          "address": "0x812f6f8",
+          "size": 12,
+          "sha256": "defd4e408f34fdd80d0e76d90dd5c3f02e56065bdbfa44ec5f3b0a886006e1a6",
+          "objects": [
+            {
+              "name": "gMovieDebugTextEu_0812F6F8",
+              "offset": 0,
+              "size": 12
+            }
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".data_gMovieDebugEntriesEu",
+          "address": "0x812f680",
+          "size": 40,
+          "sha256": "c25086b29a7d13f324cce8efa93ae166a41d0668c54d516646dd2470cedb0c83",
+          "objects": [
+            {
+              "name": "gMovieDebugEntriesEu",
+              "offset": 0,
+              "size": 40
+            }
+          ]
+        },
+        {
+          "unit": "movie_debug_data.c",
+          "section": ".data_gModeMovieDebugEu",
+          "address": "0x9f49a6c",
+          "size": 16,
+          "sha256": "442f8dbe106994bd36a3f93a78bf27bba0f4d0642d7e8c35b8d7583d4a7e17b2",
+          "objects": [
+            {
+              "name": "gModeMovieDebugEu",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_test.c",
+          "section": ".data_registration_gTaskDescFrdPoohEu",
+          "address": "0x9f59130",
+          "size": 24,
+          "sha256": "1042930c125692a106babbebd8682244d49d6a3c9c2e7edbd2676abb1b30a849",
+          "objects": [
+            {
+              "name": "gTaskDescFrdPoohEu",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "mode_test.c",
+          "section": ".rodata_registration_name_gTaskDescFrdPoohEu",
+          "address": "0x8896644",
+          "size": 14,
+          "sha256": "8a063f508d5fc64c4b7b24aaf402fd18f9856d0f937de5cc9b80d1b51ac21298",
+          "objects": [
+            {
+              "name": "gTaskNameFrdPoohEu",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

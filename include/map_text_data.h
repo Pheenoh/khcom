@@ -15,4 +15,6 @@ extern MapNameText* gUnk_09EF6FCC[13];
 extern MapNameText* gUnk_09EF7000[12];
 extern MapNameText* gUnk_09EF7048[28];
 
+extern u8 gUnk_09EF6C38[2];
+
 #endif

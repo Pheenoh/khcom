@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "ms_charge_api.h"
@@ -10,9 +11,6 @@
 #include "card_ui_state.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F84FA8[];
-extern void* gUnkEu_09F84FE4[];
-extern void* gUnkEu_09F84FD0[];
 extern u8 gUnkEu_09A97520[];
 extern u8 gUnkEu_099AEE98[];
 extern u8 gUnkEu_092D1F74[];
@@ -20,10 +18,6 @@ extern u8 gUnkEu_08890F40[];
 extern u8 gUnkEu_08895960[];
 extern u8 gUnkEu_08890E1C[];
 extern u8 gUnkEu_08890E44[];
-extern void* gUnkEu_09F85044[];
-extern void* gUnkEu_09F85030[];
-extern void* gUnkEu_09F8501C[];
-extern void* gUnkEu_09F85008[];
 #endif
 
 extern u8 gUnk_09A3D23C[];

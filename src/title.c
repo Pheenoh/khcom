@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "title_api.h"
@@ -7,9 +8,6 @@
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F801D4[];
-extern void* gUnkEu_09F80200[];
-extern void* gUnkEu_09F80214[];
 extern u8 gUnkEu_0974E3CC[];
 extern u8 gUnkEu_0974EC7C[];
 extern u8 gUnkEu_0975038C[];

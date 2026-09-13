@@ -3,6 +3,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "remaining_resource_data.h"
+
 #include "card_label_data.h"
 
 #include "animation_resource_data.h"
@@ -262,7 +264,6 @@ extern s32 gUnk_0203C550;
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_097A2CF6[];
 extern u8 gUnk_0984B258[];
-extern void* gUnk_09EF6948[];
 extern u8 gUnk_097A2E16[];
 extern u8 gUnk_0984B278[];
 extern u8 gUnk_097A2DF8[];
@@ -273,8 +274,6 @@ extern u8 gUnk_0984B1B8[];
 extern u8 gUnk_097A18CC[];
 extern u8 gUnk_097A1864[];
 extern u8 gUnk_097A1898[];
-extern void* gUnk_09EF6920[];
-extern void* gUnk_09EF6934[];
 extern u8 gUnk_097A24A6[];
 extern u8 gUnk_0984B218[];
 extern u8 gUnk_097A28DA[];
@@ -284,10 +283,6 @@ extern u8 gUnk_0891ED26[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088E33C2[];
 extern u8 gUnk_0984B1D8[];
-extern void* gUnk_09EF68F0[];
-extern void* gUnk_09EF6908[];
-extern u8 gUnk_09EF6904[];
-extern u8 gUnk_09EF691C[];
 extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];

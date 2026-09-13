@@ -1224,7 +1224,6 @@ extern u8 gUnk_08B1E97E[];
 extern u8 gUnk_08B1E988[];
 extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E9A6[];
-extern u8 gUnk_09EF6C38[];
 extern u8 gUnk_0984C868[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 

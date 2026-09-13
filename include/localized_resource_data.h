@@ -1,0 +1,39 @@
+#ifndef GUARD_LOCALIZED_RESOURCE_DATA_H
+#define GUARD_LOCALIZED_RESOURCE_DATA_H
+
+#include "anim.h"
+
+#ifdef VERSION_EU
+extern u8* gUnkEu_09F800A4[5];
+extern u8* gUnkEu_09F800B8[5];
+extern void* gUnkEu_09F80124[5];
+extern void* gUnkEu_09F80138[5];
+extern void** gUnkEu_09F801D4[5];
+extern void** gUnkEu_09F80200[5];
+extern void** gUnkEu_09F80214[5];
+extern void* gUnkEu_09F80288[5];
+extern void** gUnkEu_09F8029C[5];
+extern void* gUnkEu_09F802C8[5];
+extern void** gUnkEu_09F802DC[5];
+extern void* gUnkEu_09F80350[5];
+extern void* gUnkEu_09F80364[5];
+extern void* gUnkEu_09F84EE8[5];
+extern void* gUnkEu_09F84EFC[5];
+extern void* gUnkEu_09F84F10[5];
+extern void* gUnkEu_09F84F24[5];
+extern void* gUnkEu_09F84F38[5];
+extern void* gUnkEu_09F84F5C[5];
+extern void* gUnkEu_09F84FA8[5];
+extern void* gUnkEu_09F84FBC[5];
+extern void* gUnkEu_09F84FD0[5];
+extern void* gUnkEu_09F84FE4[5];
+extern void* gUnkEu_09F85008[5];
+extern void* gUnkEu_09F8501C[5];
+extern void* gUnkEu_09F85030[5];
+extern void* gUnkEu_09F85044[5];
+extern void* gUnkEu_09F85058[5];
+extern AnimHeader** gUnkEu_09F8506C[5];
+extern void** gUnkEu_09F85080[5];
+#endif
+
+#endif

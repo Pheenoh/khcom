@@ -1,3 +1,4 @@
+#include "localized_resource_data.h"
 #include "system_state.h"
 #include "ms_charge_api.h"
 #include "display.h"
@@ -7,9 +8,6 @@
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F84FBC[];
-extern void* gUnkEu_09F84FD0[];
-extern void* gUnkEu_09F84FE4[];
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)

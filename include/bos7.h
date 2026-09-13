@@ -415,7 +415,6 @@ typedef struct StaffRollWork {
 extern s16 gSineTable[];
 extern u16 gUnk_09A4FE64[][2];
 extern u8 gUnk_09A4D234[];
-extern s32 gUnk_09A4FC20[];
 extern u8 gUnk_09A4F2B4[];
 extern s32 gUnk_09A4FDDC[];
 extern s32 gUnk_09A4FDE8[];

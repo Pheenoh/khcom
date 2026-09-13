@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "provenance": {
+    "pc_cycle": "func_0810B4A8 initializes secondary palette-cycle state0. func_0810B4B4 follows the complete three-state1,2,0 successor cycle and compares against the corresponding three signed durations6,6,6. Those independently rooted halfword tables are six bytes each; no following two-byte padding is counted.",
+    "lst_fade": "task_bos_lst_fld_1 only accesses gUnk_09A4FC20 while its counter is<=63, increments after use and feeds each value to func_08110058 palette interpolation. This proves64 signed32-bit values forming the complete1..32..0 ramp. A separate following zero word before the registration name remains outside this ownership claim. All268 scalar bytes are identical in US/JP/EU; no asset/address aliases or evidence mining is needed."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_secondary_palette_cycle",
+          "address": "0x9a4cabe",
+          "size": 12,
+          "objects": [
+            {
+              "name": "gUnk_09A4CABE",
+              "offset": 0,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09A4CAC4",
+              "offset": 6,
+              "size": 6
+            }
+          ],
+          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_palette_fade",
+          "address": "0x9a4fc20",
+          "size": 256,
+          "objects": [
+            {
+              "name": "gUnk_09A4FC20",
+              "offset": 0,
+              "size": 256
+            }
+          ],
+          "sha256": "4b0b2e64beaf29c003152b96f48e15ddc8d60ab6b7da71b407c24fdfaad6f211"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_secondary_palette_cycle",
+          "address": "0x9a01546",
+          "size": 12,
+          "objects": [
+            {
+              "name": "gUnk_09A4CABE",
+              "offset": 0,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09A4CAC4",
+              "offset": 6,
+              "size": 6
+            }
+          ],
+          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_palette_fade",
+          "address": "0x9a046a8",
+          "size": 256,
+          "objects": [
+            {
+              "name": "gUnk_09A4FC20",
+              "offset": 0,
+              "size": 256
+            }
+          ],
+          "sha256": "4b0b2e64beaf29c003152b96f48e15ddc8d60ab6b7da71b407c24fdfaad6f211"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_secondary_palette_cycle",
+          "address": "0x9aaa582",
+          "size": 12,
+          "objects": [
+            {
+              "name": "gUnk_09A4CABE",
+              "offset": 0,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09A4CAC4",
+              "offset": 6,
+              "size": 6
+            }
+          ],
+          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_palette_fade",
+          "address": "0x9aad6e4",
+          "size": 256,
+          "objects": [
+            {
+              "name": "gUnk_09A4FC20",
+              "offset": 0,
+              "size": 256
+            }
+          ],
+          "sha256": "4b0b2e64beaf29c003152b96f48e15ddc8d60ab6b7da71b407c24fdfaad6f211"
+        }
+      ]
+    }
+  }
+}

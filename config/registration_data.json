@@ -5989,7 +5989,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13531,7 +13533,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20953,7 +20957,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",

@@ -1,7 +1,8 @@
 {
   "version": 1,
   "provenance": {
-    "map_names": "Native Sora thirteen-floor and Riku twelve-floor label tables selected by func_080F7AB4, plus the room-name pointer table used by func_08093C18 and task_room_name_0. The twenty-eight room names consist of twenty-six normal map-card names and Unknown Place/Hidden Chamber, ending at the next independent TaskDesc. EU pointers select real five-language LocalizedText records rather than text bytes. Every record and regional string terminator is checked directly against its original ROM; no localized address correspondence is inferred."
+    "map_names": "Native Sora thirteen-floor and Riku twelve-floor label tables selected by func_080F7AB4, plus the room-name pointer table used by func_08093C18 and task_room_name_0. The twenty-eight room names consist of twenty-six normal map-card names and Unknown Place/Hidden Chamber, ending at the next independent TaskDesc. EU pointers select real five-language LocalizedText records rather than text bytes. Every record and regional string terminator is checked directly against its original ROM; no localized address correspondence is inferred.",
+    "debug_underscore": "EncodeSmallFontString consumes the original ASCII underscore and its byte terminator through the map-debug task. This is two bytes in all three ROMs, not a UTF-16 value or four-byte data array. The following native TaskDesc supplies separately verified two-byte four-byte alignment."
   },
   "regions": {
     "us": {
@@ -45,6 +46,20 @@
               "name": "gUnk_09EF7048",
               "offset": 0,
               "size": 112
+            }
+          ]
+        },
+        {
+          "unit": "map_text_data.c",
+          "section": ".rodata_map_debug_underscore",
+          "address": "0x9ef6c38",
+          "size": 2,
+          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C38",
+              "offset": 0,
+              "size": 2
             }
           ]
         }
@@ -255,6 +270,20 @@
               "name": "gUnk_09EF7048",
               "offset": 0,
               "size": 112
+            }
+          ]
+        },
+        {
+          "unit": "map_text_data.c",
+          "section": ".rodata_map_debug_underscore",
+          "address": "0x9ece024",
+          "size": 2,
+          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C38",
+              "offset": 0,
+              "size": 2
             }
           ]
         }
@@ -843,6 +872,20 @@
               "name": "gMapNameEu_08894578",
               "offset": 0,
               "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "map_text_data.c",
+          "section": ".rodata_map_debug_underscore",
+          "address": "0x9f822a8",
+          "size": 2,
+          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C38",
+              "offset": 0,
+              "size": 2
             }
           ]
         }

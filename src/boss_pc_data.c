@@ -5088,3 +5088,13 @@ s8 gUnk_09A4CAB5[9] __attribute__((section(".data_pc_shake"), aligned(1))) = {
 };
 
 s8* gUnk_09EF9E04[2] __attribute__((section(".data_pc_shake_index"))) = { gUnk_09A4CA94, gUnk_09A4CAB5 };
+
+
+u16 gUnk_09A4CABE[3] __attribute__((section(".data_pc_secondary_palette_cycle"), aligned(2))) = {
+    1, 2, 0,
+};
+
+
+s16 gUnk_09A4CAC4[3] __attribute__((section(".data_pc_secondary_palette_cycle"), aligned(2))) = {
+    6, 6, 6,
+};

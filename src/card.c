@@ -199,7 +199,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a);
 void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_080857D4(u8 slot);
-void SetDeckName(u8 index, void* src);
+void SetDeckName(u8 index, const void* src);
 void func_080AB22C(u8 a);
 void func_080AB334(u8 a);
 void func_080AB4AC(u8 a);
@@ -9555,23 +9555,23 @@ u16 GetDeckCpCost(u8 index) {
     return gDecks[index].unk_DA;
 }
 
-void SetDeckName(u8 index, void* src) {
+void SetDeckName(u8 index, const void* src) {
     u8* deck;
     u32 offset;
     u8* d;
-    u8* s;
+    const u8* s;
 
 #ifdef VERSION_US
-    if (*(u16*)src == 0) {
+    if (*(const u16*)src == 0) {
 #else
-    if (*(u8*)src == 0) {
+    if (*(const u8*)src == 0) {
 #endif
         return;
     }
 
     deck = (u8*)&gDecks;
     offset = index * (sizeof(Deck) / sizeof(u16));
-    s = (u8*)src;
+    s = (const u8*)src;
     offset *= sizeof(u16);
     d = deck + offsetof(Deck, unk_C6);
     d += offset;
@@ -9582,7 +9582,7 @@ void SetDeckName(u8 index, void* src) {
         d[1] = s[1];
         d += 2;
         s += 2;
-    } while (*(u16*)s != 0);
+    } while (*(const u16*)s != 0);
 #else
     do {
         *d = *s;
@@ -9593,7 +9593,7 @@ void SetDeckName(u8 index, void* src) {
         s++;
         d++;
 #endif
-    } while (*(u8*)s != 0);
+    } while (*(const u8*)s != 0);
 #endif
 }
 
@@ -15567,7 +15567,7 @@ void func_0808F304(u8* work) {
 
 #ifdef VERSION_US
 s32 func_0808F358(UnkStruct_0808F358* work) {
-    u8* src;
+    const u8* src;
     u8* dst;
     s32 offset;
     s32 zero;

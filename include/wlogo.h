@@ -2,6 +2,8 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "remaining_resource_data.h"
+
 #include "world_intro_data.h"
 
 #include "boss_tm_data.h"
@@ -513,8 +515,6 @@ extern u8 gUnk_096FB084[];
 extern u8 gUnk_096FB0A4[];
 extern u8 gUnk_096FB0C4[];
 
-extern void* gUnk_09EF36D0[];
-extern void* gUnk_09EF3924[];
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);

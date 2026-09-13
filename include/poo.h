@@ -3,6 +3,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "remaining_resource_data.h"
+
 #include "poo_data.h"
 
 #include "poo_background_data.h"
@@ -1129,7 +1131,6 @@ extern u8 gUnk_0972BD8C[];
 extern u8 gUnk_09849AB8[];
 extern u8 gUnk_0972BD78[];
 extern const PooTileDesc gUnk_096FCB84[];
-extern void* gUnk_09EF5B2C[];
 extern u8 gUnk_097356F4[];
 extern u8 gUnk_09849B98[];
 extern u8 gUnk_09760986[];
