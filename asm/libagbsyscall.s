@@ -31,6 +31,26 @@ CpuSet:
 	bx lr
 	.size CpuSet, . - CpuSet
 
+	.ifdef VERSION_EU
+	.global LZ77UnCompVram
+	.thumb
+	.thumb_func
+	.type LZ77UnCompVram, %function
+LZ77UnCompVram:
+	swi #18
+	bx lr
+	.size LZ77UnCompVram, . - LZ77UnCompVram
+
+	.global LZ77UnCompWram
+	.thumb
+	.thumb_func
+	.type LZ77UnCompWram, %function
+LZ77UnCompWram:
+	swi #17
+	bx lr
+	.size LZ77UnCompWram, . - LZ77UnCompWram
+	.endif
+
 	.global RegisterRamReset
 	.thumb
 	.thumb_func

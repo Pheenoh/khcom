@@ -333,6 +333,7 @@ with out.open("w") as f:
         "asflags",
         f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I . -I include -I asm/{version}/nonmatchings",
     )
+    n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
     defines = f"-DVERSION_{version.upper()}"
     if args.non_matching:
         defines += " -DNON_MATCHING"
@@ -343,7 +344,7 @@ with out.open("w") as f:
 
     n.rule(
         "as",
-        command="$as $asflags -o $out $in",
+        command="$as $asflags $asdefines -o $out $in",
         description="AS $out",
     )
     n.rule(
