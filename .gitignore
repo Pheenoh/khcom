@@ -1,6 +1,11 @@
 # ROMs are never committed
-roms/
+roms/*
+!roms/.gitkeep
 *.gba
+
+# Extracted assets are never committed
+assets/*
+!assets/.gitkeep
 
 # Installed toolchain
 tools/agbcc/
