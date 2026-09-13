@@ -41,7 +41,6 @@ extern u8 gUnk_08F685E4[];
 extern u8 gUnk_09EDF764[];
 extern u8 gUnk_09EDF774[];
 extern Mode gModeChkbtl;
-extern Mode gModeChkobj;
 extern Mode gModeChksnd;
 extern Mode gModeMovie;
 extern Mode gModeEventselect;

@@ -18,6 +18,8 @@ void func_08060598(void);
 void func_080609A0(void);
 
 extern Mode gModeDebug;
+extern Mode gModeChkobj;
+extern const char gModeNameChkobj[];
 extern Mode gModeChkeff;
 extern Mode gModeDummy;
 extern Mode gModeDebflag;
