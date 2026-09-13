@@ -1,6 +1,8 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "map_transition_state.h"
+
 #include "graphics_state.h"
 
 #include "field_state.h"
@@ -1246,8 +1248,6 @@ extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_09EF6C38[];
 extern u8 gUnk_0984C868[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
-extern UnkStruct_0203C7B0 gUnk_0203C7B0;
-extern UnkStruct_0203C7B8* gUnk_0203C7B8;
 
 extern vu32 gFrameCounter;
 extern UnkStruct_0203C590 gUnk_0203C590;

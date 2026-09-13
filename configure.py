@@ -53,6 +53,7 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_COMMON = {
+    "src/boss_tm_state.o": {"us": 0x203ab50, "jp": 0x203aac0, "eu": 0x203b120},
     "src/bos4.o": {"us": 0x203c590, "jp": 0x203c500, "eu": 0x203cb80},
     "src/m4a2.o": {"us": 0x3007ff0, "jp": 0x3007ff0, "eu": 0x3007ff0},
     "src/engine.o": {"us": 0x3007574, "jp": 0x3007574, "eu": 0x300757c},
@@ -67,6 +68,15 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/map_transition_state.o": {"us": 0x0203C7B0, "jp": 0x0203C720, "eu": 0x0203CDA0},
+    "src/allmap_bottom_state.o": {"us": 0x0203C510, "jp": 0x0203C480, "eu": 0x0203CB00},
+    "src/allmap_scroll_state.o": {"us": 0x0203C504, "jp": 0x0203C474, "eu": 0x0203CAF4},
+    "src/allmap_top_state.o": {"us": 0x0203C4C0, "jp": 0x0203C430, "eu": 0x0203CAB0},
+    "src/pooh_actor_state.o": {"us": 0x0203C420, "jp": 0x0203C390, "eu": 0x0203CA10},
+    "src/boss_jafar_state.o": {"us": 0x0203AC80, "jp": 0x0203ABF0, "eu": 0x0203B250},
+    "src/sio_card_trade_state.o": {"us": 0x0203AB10, "jp": 0x0203AA80},
+    "src/sio_battle_options_state.o": {"us": 0x0203AA00, "jp": 0x0203A970, "eu": 0x0203B000},
+    "src/sio_handshake_state.o": {"us": 0x0203A9EC, "jp": 0x0203A95C, "eu": 0x0203AFF8},
     "src/sio_runtime_state.o": {"us": 0x02039810, "jp": 0x02039780, "eu": 0x02039E20},
     "src/sio_callback_state.o": {"us": 0x020397F8, "jp": 0x02039768, "eu": 0x02039E08},
     "src/sio_link_header_state.o": {"us": 0x020397D0, "jp": 0x02039740, "eu": 0x02039DE0},

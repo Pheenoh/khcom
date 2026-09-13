@@ -56,6 +56,15 @@ msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+map_transition_state.c -O2 -fprologue-bugfix -fno-common
+allmap_bottom_state.c -O2 -fprologue-bugfix -fno-common
+allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
+allmap_top_state.c -O2 -fprologue-bugfix -fno-common
+pooh_actor_state.c -O2 -fprologue-bugfix -fno-common
+boss_jafar_state.c -O2 -fprologue-bugfix -fno-common
+sio_card_trade_state.c -O2 -fprologue-bugfix -fno-common
+sio_battle_options_state.c -O2 -fprologue-bugfix -fno-common
+sio_handshake_state.c -O2 -fprologue-bugfix -fno-common
 sio_runtime_state.c -O2 -fprologue-bugfix -fno-common
 sio_callback_state.c -O2 -fprologue-bugfix -fno-common
 sio_link_header_state.c -O2 -fprologue-bugfix -fno-common

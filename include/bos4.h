@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "map_transition_state.h"
+
 #include "boss_status_state.h"
 
 #include "graphics_state.h"
@@ -592,7 +594,6 @@ void func_080DE3E8(MapChkWork* p);
 void func_080DE4A4(MapChkWork* p);
 extern const char* const gUnk_09EF6974[];
 
-extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 void func_080DE2FC(MapChkWork* p);
 void func_080DE35C(MapChkWork* p);
 extern const char* const gUnk_09EF6960[];

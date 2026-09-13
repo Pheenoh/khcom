@@ -1,6 +1,12 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "allmap_bottom_state.h"
+
+#include "allmap_scroll_state.h"
+
+#include "allmap_top_state.h"
+
 #include "allmap_types.h"
 
 #include "map_api.h"
@@ -36,14 +42,7 @@ typedef struct AllmapRoomDirs {
 
 extern u16 gUnk_02034E38;
 extern u16 gUnk_02034E3A;
-extern u8 gUnk_0203C4C0[];
-extern u32 gUnk_0203C4E0;
 extern TaskPool gUnk_0203C4F0;
-extern void* gUnk_0203C504;
-extern u16 gUnk_0203C508;
-extern u8 gUnk_0203C510[];
-extern void* gUnk_0203C530;
-extern u16 gUnk_0203C534;
 extern u8 gMPlayInfo_BGM[];
 extern u8 gUnk_05000140[];
 extern u8 gUnk_08125E24[];

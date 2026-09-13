@@ -1,6 +1,10 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "sio_battle_options_state.h"
+
+#include "sio_handshake_state.h"
+
 #include "sio_runtime_state.h"
 
 #include "sio_callback_state.h"
@@ -186,10 +190,6 @@ void func_08083DD4(void);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];
-extern CharaLinkData gUnk_0203AAC0;
-extern u16 gUnk_0203AA10[];
-extern u16 gUnk_0203A9EC;
-extern u16 gUnk_0203A9F0;
 extern vu32 gFrameCounter;
 extern Mode gModeSioError;
 

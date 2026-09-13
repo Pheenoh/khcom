@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "sio_battle_options_state.h"
+
 #include "sio_runtime_state.h"
 
 #include "graphics_state.h"
@@ -42,8 +44,6 @@ extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
-extern CharaLinkData gUnk_0203AA10;
-extern CharaLinkData gUnk_0203AAC0;
 extern s16 gSineTable[];
 extern u8 gUnk_08F69BC4[];
 extern u16 gUnk_09EDA4EC[];

@@ -735,7 +735,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_095F7FAE": 0x095F7FAE,
         "gUnkEu_09F7EC08": 0x09F7EC08,
         "gUnkEu_09F7EC10": 0x09F7EC10,
-        "gUnkEu_0203B108": 0x0203B108,
         "gUnkEu_08891670": 0x08891670,
         "gUnkEu_08891714": 0x08891714,
         "gUnkEu_09F72CC4": 0x09F72CC4,
