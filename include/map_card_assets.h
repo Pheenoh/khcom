@@ -1,3 +1,4 @@
+#include "event_sprite_data.h"
 #include "card_lookup_data.h"
 #include "card_sprite_data.h"
 #ifndef GUARD_MAP_CARD_ASSETS_H
@@ -118,31 +119,5 @@ extern u8 gUnk_09618BD8[];
 extern u8 gUnk_09618BF8[];
 extern u8 gUnk_09618C18[];
 extern u8 gUnk_09618D78[];
-extern void* gUnk_09EF1060[];
-extern void* gUnk_09EF1068[];
-extern void* gUnk_09EF1070[];
-extern void* gUnk_09EF1078[];
-extern void* gUnk_09EF1080[];
-extern void* gUnk_09EF1088[];
-extern void* gUnk_09EF1090[];
-extern void* gUnk_09EF1098[];
-extern void* gUnk_09EF10A0[];
-extern void* gUnk_09EF10A8[];
-extern void* gUnk_09EF10B0[];
-extern void* gUnk_09EF10B8[];
-extern void* gUnk_09EF10C0[];
-extern void* gUnk_09EF10C8[];
-extern void* gUnk_09EF10D0[];
-extern void* gUnk_09EF10D8[];
-extern void* gUnk_09EF10E0[];
-extern void* gUnk_09EF10E8[];
-extern void* gUnk_09EF10F0[];
-extern void* gUnk_09EF10F8[];
-extern void* gUnk_09EF1100[];
-extern void* gUnk_09EF1108[];
-extern void* gUnk_09EF1110[];
-extern void* gUnk_09EF1118[];
-extern void* gUnk_09EF1120[];
-extern void* gUnk_09EF1128[];
 
 #endif

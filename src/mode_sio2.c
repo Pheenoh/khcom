@@ -886,84 +886,84 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
         break;
     case 36:
         w->unk_24 = 0;
-        e = gUnk_09EF3E88;
+        e = &gUnk_09EF3E88;
         break;
     case 37:
         w->unk_24 = 0;
-        e = gUnk_09EF3E98;
+        e = &gUnk_09EF3E98;
         break;
     case 23:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F28;
+        e = &gUnk_09EF3F28;
         w->unk_FA = 1;
         break;
     case 32:
         w->unk_24 = 0;
-        e = gUnk_09EF3F88;
+        e = &gUnk_09EF3F88;
         w->unk_FA = 1;
         break;
     case 33:
         w->unk_24 = 0;
-        e = gUnk_09EF3FC8;
+        e = &gUnk_09EF3FC8;
         break;
     case 34:
         w->unk_24 = 0;
-        e = gUnk_09EF3FD8;
+        e = &gUnk_09EF3FD8;
         break;
     case 35:
         w->unk_24 = 0;
-        e = gUnk_09EF3FE8;
+        e = &gUnk_09EF3FE8;
         break;
     case 24:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F38;
+        e = &gUnk_09EF3F38;
         w->unk_FA = 1;
         break;
     case 25:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F48;
+        e = &gUnk_09EF3F48;
         w->unk_FA = 1;
         break;
     case 26:
         ColliderSetRadius(w->unk_4C, 14);
         flags |= 1;
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F58;
+        e = &gUnk_09EF3F58;
         w->unk_FA = 1;
         break;
     case 27:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F68;
+        e = &gUnk_09EF3F68;
         w->unk_FA = 1;
         break;
     case 28:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F78;
+        e = &gUnk_09EF3F78;
         w->unk_FA = 1;
         break;
     case 29:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3F98;
+        e = &gUnk_09EF3F98;
         break;
     case 30:
         flags |= 1;
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3FA8;
+        e = &gUnk_09EF3FA8;
         break;
     case 31:
         w->unk_24 = func_080C7F4C(w->unk_38);
-        e = gUnk_09EF3FB8;
+        e = &gUnk_09EF3FB8;
         break;
     case 38:
     case 39:
         flags |= 1;
         w->unk_24 = 0;
-        e = gUnk_09EF3EA8;
+        e = &gUnk_09EF3EA8;
         break;
     case 22:
         flags |= 1;
         w->unk_24 = 0;
-        e = gUnk_09EF3EB8;
+        e = &gUnk_09EF3EB8;
         break;
     case 0:
     case 1:

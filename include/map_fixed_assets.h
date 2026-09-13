@@ -2,6 +2,7 @@
 #define GUARD_MAP_FIXED_ASSETS_H
 
 #include "map.h"
+#include "map_spawn_data.h"
 #include "mode_battle_data.h"
 #include "map_room_assets.h"
 
@@ -97,32 +98,6 @@ extern UnkStruct_080EC760Entry gUnk_09856DA8[];
 extern UnkStruct_080E56B4 gUnk_09856E34[];
 extern UnkStruct_080EC760Entry gUnk_09856E40[];
 extern UnkStruct_080E56B4 gUnk_09856ED8[];
-extern UnkStruct_080E8E74 gUnk_09857B44[];
-extern UnkStruct_080E8E74 gUnk_09857B7C[];
-extern UnkStruct_080E8E74 gUnk_09857BBC[];
-extern UnkStruct_080E8E74 gUnk_09857C1C[];
-extern UnkStruct_080E8E74 gUnk_09857C84[];
-extern UnkStruct_080E8E74 gUnk_09857CEC[];
-extern UnkStruct_080E8E74 gUnk_09857D54[];
-extern UnkStruct_080E8E74 gUnk_09857DBC[];
-extern UnkStruct_080E8E74 gUnk_09857E44[];
-extern UnkStruct_080E8E74 gUnk_09857EC4[];
-extern UnkStruct_080E8E74 gUnk_09857F3C[];
-extern UnkStruct_080E8E74 gUnk_09858004[];
-extern UnkStruct_080E8E74 gUnk_09858084[];
-extern UnkStruct_080E8E24 gUnk_0985824C[];
-extern UnkStruct_080E8E24 gUnk_09858250[];
-extern UnkStruct_080E8E24 gUnk_09858258[];
-extern UnkStruct_080E8E24 gUnk_09858264[];
-extern UnkStruct_080E8E24 gUnk_09858270[];
-extern UnkStruct_080E8E24 gUnk_0985827C[];
-extern UnkStruct_080E8E24 gUnk_09858288[];
-extern UnkStruct_080E8E24 gUnk_09858294[];
-extern UnkStruct_080E8E24 gUnk_098582A4[];
-extern UnkStruct_080E8E24 gUnk_098582B4[];
-extern UnkStruct_080E8E24 gUnk_098582C4[];
-extern UnkStruct_080E8E24 gUnk_098582D0[];
-extern UnkStruct_080E8E24 gUnk_098582DC[];
 extern u8 gUnk_09984F44[];
 extern u8 gUnk_09985744[];
 

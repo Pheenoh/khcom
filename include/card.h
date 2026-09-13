@@ -1,3 +1,5 @@
+#include "event_sprite_data.h"
+#include "card_message_data.h"
 #include "card_lookup_data.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
@@ -106,7 +108,6 @@ extern u8 gUnk_0940F918[];
 extern void* gUnk_09EE7708[];
 extern void* gUnk_09EE7714[];
 extern void* gUnk_09EE7720[];
-extern void* gUnk_09EE91A8[];
 extern u8 gUnk_094233B8[];
 extern void* gUnk_09EEA19C[];
 extern u8 gUnk_093FB6C4[];
@@ -398,13 +399,6 @@ extern u8 gUnk_09985F44[];
 extern u8 gUnk_099597E4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_08F69BE4[];
-
-typedef struct UnkStruct_09EE8008 {
-    u32 unk_00;
-    u8 unk_04[0x0C];
-    u16 unk_10;
-    u16 unk_12;
-} UnkStruct_09EE8008;
 
 typedef struct UnkStruct_080A4188 {
     u32 unk_00;
@@ -1174,7 +1168,6 @@ extern UnkStruct_09035DCC gUnk_090360BC[];
 extern u16 gUnk_0903612C[];
 extern u16 gUnk_090359FC[];
 extern CardBack gUnk_08F709B0[];
-extern UnkStruct_09EE8008 gUnk_09EE8008[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
 extern void* gUnk_09EF7048[];
@@ -1238,7 +1231,6 @@ extern u16* gUnk_09EE4A98[];
 extern const u16 gUnk_090356BA[];
 extern const u16 gUnk_090356D2[];
 extern UnkStruct_09EE752C gUnk_09EE752C[];
-extern void* gUnk_09EEB080[];
 extern void* gUnk_09EEAFF8;
 extern void* gUnk_09EEB000;
 extern s16 gUnk_09035950[];
@@ -1277,8 +1269,6 @@ extern u8 gUnk_093FEEB8[];
 extern u8 gUnk_093FD438[];
 extern u8 gUnk_093F47E4[];
 extern u8 gUnk_09515AB8[];
-extern void* gUnk_09EEA16C[];
-extern void* gUnk_09EEA174[];
 extern u8 gUnk_09619158[];
 extern u8 gUnk_093F762E[];
 extern u8 gUnk_095162B8[];
@@ -1810,13 +1800,6 @@ typedef struct UnkStruct_080984E4 {
     u16 unk_30;
 } UnkStruct_080984E4;
 
-typedef struct UnkStruct_080A3F5C_Sel {
-    s32 unk_00;
-    s32 unk_04;
-    u16 unk_08;
-    u8 unk_0A;
-} UnkStruct_080A3F5C_Sel;
-
 typedef struct UnkStruct_080A3F5C_Entry {
     void* unk_00;
     void* unk_04;
@@ -1847,7 +1830,7 @@ typedef struct UnkStruct_080A4DCC {
     s32 unk_10C;
     u8 unk_110[0x03];
     u8 unk_113;
-    UnkStruct_080A3F5C_Sel* unk_114;
+    CardMessageDef* unk_114;
     s32 unk_118;
     s32 unk_11C;
     s32 unk_120;
@@ -1887,7 +1870,7 @@ typedef struct UnkStruct_080A3F5C {
     s32 unk_10C;
     u8 unk_110[0x03];
     u8 unk_113;
-    UnkStruct_080A3F5C_Sel* unk_114;
+    CardMessageDef* unk_114;
     s32 unk_118;
     s32 unk_11C;
     s32 unk_120;

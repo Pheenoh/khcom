@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "pooh_animation_data.h"
+
 #include "sio_battle_options_state.h"
 
 #include "sio_debug_state.h"
@@ -38,12 +40,6 @@
 #include "bos4_api.h"
 #include "poo_api.h"
 
-typedef struct PoohAnim {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-} PoohAnim;
 
 typedef struct PoohPos {
     s32 unk_00;
@@ -112,33 +108,6 @@ extern u8 gUnk_09849AF8[];
 extern u8 gUnk_09849B18[];
 extern const PoohHit gUnk_096FC010;
 extern const u8 gUnk_096FC01C[];
-extern PoohAnim gUnk_09EF3C98[];
-extern PoohAnim gUnk_09EF3CE8[];
-extern PoohAnim gUnk_09EF3D38[];
-extern PoohAnim gUnk_09EF3D88[];
-extern PoohAnim gUnk_09EF3E08[];
-extern PoohAnim gUnk_09EF3E88[];
-extern PoohAnim gUnk_09EF3E98[];
-extern PoohAnim gUnk_09EF3EA8[];
-extern PoohAnim gUnk_09EF3EB8[];
-extern PoohAnim gUnk_09EF3EC8[];
-extern PoohAnim gUnk_09EF3EE8[];
-extern PoohAnim gUnk_09EF3F08[];
-extern PoohAnim gUnk_09EF3F28[];
-extern PoohAnim gUnk_09EF3F38[];
-extern PoohAnim gUnk_09EF3F48[];
-extern PoohAnim gUnk_09EF3F58[];
-extern PoohAnim gUnk_09EF3F68[];
-extern PoohAnim gUnk_09EF3F78[];
-extern PoohAnim gUnk_09EF3F88[];
-extern PoohAnim gUnk_09EF3F98[];
-extern PoohAnim gUnk_09EF3FA8[];
-extern PoohAnim gUnk_09EF3FB8[];
-extern PoohAnim gUnk_09EF3FC8[];
-extern PoohAnim gUnk_09EF3FD8[];
-extern PoohAnim gUnk_09EF3FE8[];
-extern PoohAnim gUnk_09EF3FF8[];
-extern PoohAnim gUnk_09EF4048[][5];
 extern const char* const gUnk_09EF34F0[];
 extern const char* const gUnk_09EF3504[];
 

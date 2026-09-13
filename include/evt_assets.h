@@ -1,3 +1,4 @@
+#include "event_sprite_data.h"
 #include "card_animation_data.h"
 #ifndef GUARD_EVT_ASSETS_H
 #define GUARD_EVT_ASSETS_H
@@ -46,36 +47,6 @@ extern u8 gUnk_09EDF860[];
 extern u8 gUnk_09EDF880[];
 extern u8 gUnk_09EDF8A8[];
 extern u8 gUnk_09EDF8C8[];
-extern u8 gUnk_09EEDFB8[];
-extern u8 gUnk_09EEDFC4[];
-extern u8 gUnk_09EEDFD0[];
-extern u8 gUnk_09EEDFE0[];
-extern u8 gUnk_09EEE544[];
-extern u8 gUnk_09EEE550[];
-extern u8 gUnk_09EEEE38[];
-extern u8 gUnk_09EEEE44[];
-extern u8 gUnk_09EEEE5C[];
-extern u8 gUnk_09EEEE68[];
-extern u8 gUnk_09EEF0E8[];
-extern u8 gUnk_09EEF104[];
-extern u8 gUnk_09EEF480[];
-extern u8 gUnk_09EEF498[];
-extern u8 gUnk_09EEF6F0[];
-extern u8 gUnk_09EEF718[];
-extern u8 gUnk_09EEFDA4[];
-extern u8 gUnk_09EEFE24[];
-extern u8 gUnk_09EF06A8[];
-extern u8 gUnk_09EF06AC[];
-extern u8 gUnk_09EF06B0[];
-extern u8 gUnk_09EF06C0[];
-extern u8 gUnk_09EF07D4[];
-extern u8 gUnk_09EF07F0[];
-extern u8 gUnk_09EF07F4[];
-extern u8 gUnk_09EF081C[];
-extern u8 gUnk_09EF090C[];
-extern u8 gUnk_09EF092C[];
-extern u8 gUnk_09EF0EBC[];
-extern u8 gUnk_09EF0ED4[];
 extern u8 gUnk_09EF5CAC[];
 extern u8 gUnk_09EF5CB0[];
 extern u8 gUnk_09EF5CB4[];

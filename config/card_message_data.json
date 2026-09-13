@@ -1,0 +1,2215 @@
+{
+  "version": 1,
+  "provenance": {
+    "card_messages": "func_080A411C/func_080A4188 select these20-byte message definitions. All fields are independently read by the card message tasks:portrait/position/frame/timing at0/4/8/A, encoded text atC, flags at10. map.c func_080EC57C explicitly uses final index0xB3 US/JP and0xB2 EU. The immediately following independently owned gUnk_09EE8E18 TaskDesc has a ROM name pointer where a message would require portrait ID1..62. Native count is180 US/JP and179 EU; no unused EU placeholder is created. JP differs only in flag4 support besides text bindings; EU scalar fields match US at every existing ordinal."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "card_message_data.c",
+          "section": ".data_card_messages",
+          "address": "0x9ee8008",
+          "size": 3600,
+          "sha256": "c3c24256626ff654e724d1a0ea14d636b70fc296f3554e49f061c45c4d22ecf7",
+          "objects": [
+            {
+              "name": "gUnk_09EE8008",
+              "offset": 0,
+              "size": 3600,
+              "consumer": [
+                "func_080EC57C",
+                179
+              ]
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gCardMessageTextUs_0900868C",
+          "address": "0x900868c",
+          "size": 80,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C03C",
+          "address": "0x903c03c",
+          "size": 36,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C060",
+          "address": "0x903c060",
+          "size": 116,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C0D4",
+          "address": "0x903c0d4",
+          "size": 56,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C10C",
+          "address": "0x903c10c",
+          "size": 122,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C186",
+          "address": "0x903c186",
+          "size": 134,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C20C",
+          "address": "0x903c20c",
+          "size": 102,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C272",
+          "address": "0x903c272",
+          "size": 130,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C2F4",
+          "address": "0x903c2f4",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C37E",
+          "address": "0x903c37e",
+          "size": 146,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C410",
+          "address": "0x903c410",
+          "size": 178,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C4C2",
+          "address": "0x903c4c2",
+          "size": 404,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C656",
+          "address": "0x903c656",
+          "size": 154,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C6F0",
+          "address": "0x903c6f0",
+          "size": 126,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C76E",
+          "address": "0x903c76e",
+          "size": 44,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C79A",
+          "address": "0x903c79a",
+          "size": 210,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C86C",
+          "address": "0x903c86c",
+          "size": 44,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C898",
+          "address": "0x903c898",
+          "size": 228,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903C97C",
+          "address": "0x903c97c",
+          "size": 340,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CAD0",
+          "address": "0x903cad0",
+          "size": 172,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CB7C",
+          "address": "0x903cb7c",
+          "size": 104,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CBE4",
+          "address": "0x903cbe4",
+          "size": 44,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CC10",
+          "address": "0x903cc10",
+          "size": 112,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CC80",
+          "address": "0x903cc80",
+          "size": 114,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CCF2",
+          "address": "0x903ccf2",
+          "size": 164,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CD96",
+          "address": "0x903cd96",
+          "size": 118,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CE0C",
+          "address": "0x903ce0c",
+          "size": 184,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CEC4",
+          "address": "0x903cec4",
+          "size": 148,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903CF58",
+          "address": "0x903cf58",
+          "size": 358,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D0BE",
+          "address": "0x903d0be",
+          "size": 316,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D1FA",
+          "address": "0x903d1fa",
+          "size": 154,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D294",
+          "address": "0x903d294",
+          "size": 154,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D32E",
+          "address": "0x903d32e",
+          "size": 332,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D47A",
+          "address": "0x903d47a",
+          "size": 72,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D4C2",
+          "address": "0x903d4c2",
+          "size": 294,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D5E8",
+          "address": "0x903d5e8",
+          "size": 396,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D774",
+          "address": "0x903d774",
+          "size": 254,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903D872",
+          "address": "0x903d872",
+          "size": 462,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DA40",
+          "address": "0x903da40",
+          "size": 82,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DA92",
+          "address": "0x903da92",
+          "size": 434,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DC44",
+          "address": "0x903dc44",
+          "size": 242,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DD36",
+          "address": "0x903dd36",
+          "size": 148,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DDCA",
+          "address": "0x903ddca",
+          "size": 94,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DE28",
+          "address": "0x903de28",
+          "size": 284,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903DF44",
+          "address": "0x903df44",
+          "size": 390,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E0CA",
+          "address": "0x903e0ca",
+          "size": 120,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E142",
+          "address": "0x903e142",
+          "size": 390,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E2C8",
+          "address": "0x903e2c8",
+          "size": 168,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E370",
+          "address": "0x903e370",
+          "size": 612,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E5D4",
+          "address": "0x903e5d4",
+          "size": 536,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E7EC",
+          "address": "0x903e7ec",
+          "size": 104,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E854",
+          "address": "0x903e854",
+          "size": 112,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E8C4",
+          "address": "0x903e8c4",
+          "size": 88,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E91C",
+          "address": "0x903e91c",
+          "size": 172,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903E9C8",
+          "address": "0x903e9c8",
+          "size": 176,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903EA78",
+          "address": "0x903ea78",
+          "size": 176,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903EB28",
+          "address": "0x903eb28",
+          "size": 102,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903EB8E",
+          "address": "0x903eb8e",
+          "size": 392,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903ED16",
+          "address": "0x903ed16",
+          "size": 254,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903EE14",
+          "address": "0x903ee14",
+          "size": 340,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903EF68",
+          "address": "0x903ef68",
+          "size": 196,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F02C",
+          "address": "0x903f02c",
+          "size": 108,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F098",
+          "address": "0x903f098",
+          "size": 232,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F180",
+          "address": "0x903f180",
+          "size": 98,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F1E2",
+          "address": "0x903f1e2",
+          "size": 120,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F25A",
+          "address": "0x903f25a",
+          "size": 118,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F2D0",
+          "address": "0x903f2d0",
+          "size": 160,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F410",
+          "address": "0x903f410",
+          "size": 130,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F492",
+          "address": "0x903f492",
+          "size": 294,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F5B8",
+          "address": "0x903f5b8",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F642",
+          "address": "0x903f642",
+          "size": 96,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F6A2",
+          "address": "0x903f6a2",
+          "size": 114,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F714",
+          "address": "0x903f714",
+          "size": 100,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F778",
+          "address": "0x903f778",
+          "size": 120,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F7F0",
+          "address": "0x903f7f0",
+          "size": 140,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F87C",
+          "address": "0x903f87c",
+          "size": 104,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F8E4",
+          "address": "0x903f8e4",
+          "size": 104,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F94C",
+          "address": "0x903f94c",
+          "size": 112,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903F9BC",
+          "address": "0x903f9bc",
+          "size": 110,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FA2A",
+          "address": "0x903fa2a",
+          "size": 136,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FAB2",
+          "address": "0x903fab2",
+          "size": 82,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FB04",
+          "address": "0x903fb04",
+          "size": 114,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FB76",
+          "address": "0x903fb76",
+          "size": 54,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FBAC",
+          "address": "0x903fbac",
+          "size": 78,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FBFA",
+          "address": "0x903fbfa",
+          "size": 112,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FC6A",
+          "address": "0x903fc6a",
+          "size": 116,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FCDE",
+          "address": "0x903fcde",
+          "size": 104,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FD46",
+          "address": "0x903fd46",
+          "size": 100,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FDAA",
+          "address": "0x903fdaa",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FE34",
+          "address": "0x903fe34",
+          "size": 110,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FEA2",
+          "address": "0x903fea2",
+          "size": 86,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FEF8",
+          "address": "0x903fef8",
+          "size": 86,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FF4E",
+          "address": "0x903ff4e",
+          "size": 118,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0903FFC4",
+          "address": "0x903ffc4",
+          "size": 126,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040042",
+          "address": "0x9040042",
+          "size": 154,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090400DC",
+          "address": "0x90400dc",
+          "size": 148,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040170",
+          "address": "0x9040170",
+          "size": 116,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090401E4",
+          "address": "0x90401e4",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904026E",
+          "address": "0x904026e",
+          "size": 98,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090402D0",
+          "address": "0x90402d0",
+          "size": 88,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040328",
+          "address": "0x9040328",
+          "size": 120,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090403A0",
+          "address": "0x90403a0",
+          "size": 124,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904041C",
+          "address": "0x904041c",
+          "size": 142,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090404AA",
+          "address": "0x90404aa",
+          "size": 168,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040552",
+          "address": "0x9040552",
+          "size": 134,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090405D8",
+          "address": "0x90405d8",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040662",
+          "address": "0x9040662",
+          "size": 130,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090406E4",
+          "address": "0x90406e4",
+          "size": 116,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040758",
+          "address": "0x9040758",
+          "size": 90,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090407B2",
+          "address": "0x90407b2",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904083C",
+          "address": "0x904083c",
+          "size": 144,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090408CC",
+          "address": "0x90408cc",
+          "size": 102,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040932",
+          "address": "0x9040932",
+          "size": 180,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090409E6",
+          "address": "0x90409e6",
+          "size": 118,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040A5C",
+          "address": "0x9040a5c",
+          "size": 146,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040AEE",
+          "address": "0x9040aee",
+          "size": 88,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040B46",
+          "address": "0x9040b46",
+          "size": 98,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040BA8",
+          "address": "0x9040ba8",
+          "size": 100,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040C0C",
+          "address": "0x9040c0c",
+          "size": 140,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040C98",
+          "address": "0x9040c98",
+          "size": 118,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040D0E",
+          "address": "0x9040d0e",
+          "size": 130,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040D90",
+          "address": "0x9040d90",
+          "size": 74,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040DDA",
+          "address": "0x9040dda",
+          "size": 114,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040E4C",
+          "address": "0x9040e4c",
+          "size": 138,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040ED6",
+          "address": "0x9040ed6",
+          "size": 120,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040F4E",
+          "address": "0x9040f4e",
+          "size": 148,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09040FE2",
+          "address": "0x9040fe2",
+          "size": 262,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090410E8",
+          "address": "0x90410e8",
+          "size": 142,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041176",
+          "address": "0x9041176",
+          "size": 68,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090411BA",
+          "address": "0x90411ba",
+          "size": 106,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041224",
+          "address": "0x9041224",
+          "size": 102,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904128A",
+          "address": "0x904128a",
+          "size": 308,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090413BE",
+          "address": "0x90413be",
+          "size": 212,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041492",
+          "address": "0x9041492",
+          "size": 44,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090414BE",
+          "address": "0x90414be",
+          "size": 100,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041522",
+          "address": "0x9041522",
+          "size": 38,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041548",
+          "address": "0x9041548",
+          "size": 32,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041568",
+          "address": "0x9041568",
+          "size": 44,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041594",
+          "address": "0x9041594",
+          "size": 114,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041606",
+          "address": "0x9041606",
+          "size": 38,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904162C",
+          "address": "0x904162c",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904165C",
+          "address": "0x904165c",
+          "size": 52,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041690",
+          "address": "0x9041690",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090416C0",
+          "address": "0x90416c0",
+          "size": 42,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090416EA",
+          "address": "0x90416ea",
+          "size": 46,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041718",
+          "address": "0x9041718",
+          "size": 50,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904174A",
+          "address": "0x904174a",
+          "size": 42,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041774",
+          "address": "0x9041774",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090417A4",
+          "address": "0x90417a4",
+          "size": 54,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090417DA",
+          "address": "0x90417da",
+          "size": 34,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090417FC",
+          "address": "0x90417fc",
+          "size": 52,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041830",
+          "address": "0x9041830",
+          "size": 46,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904185E",
+          "address": "0x904185e",
+          "size": 40,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041886",
+          "address": "0x9041886",
+          "size": 38,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090418AC",
+          "address": "0x90418ac",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090418DC",
+          "address": "0x90418dc",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904190C",
+          "address": "0x904190c",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904193C",
+          "address": "0x904193c",
+          "size": 32,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_0904195C",
+          "address": "0x904195c",
+          "size": 40,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_090419E2",
+          "address": "0x90419e2",
+          "size": 38,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041A08",
+          "address": "0x9041a08",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041A38",
+          "address": "0x9041a38",
+          "size": 36,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041A5C",
+          "address": "0x9041a5c",
+          "size": 36,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041AE2",
+          "address": "0x9041ae2",
+          "size": 46,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041B10",
+          "address": "0x9041b10",
+          "size": 92,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041B6C",
+          "address": "0x9041b6c",
+          "size": 52,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041BA0",
+          "address": "0x9041ba0",
+          "size": 60,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041BDC",
+          "address": "0x9041bdc",
+          "size": 56,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041C14",
+          "address": "0x9041c14",
+          "size": 50,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041C46",
+          "address": "0x9041c46",
+          "size": 54,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041C7C",
+          "address": "0x9041c7c",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041CAC",
+          "address": "0x9041cac",
+          "size": 42,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041CD6",
+          "address": "0x9041cd6",
+          "size": 48,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041D06",
+          "address": "0x9041d06",
+          "size": 50,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041D38",
+          "address": "0x9041d38",
+          "size": 96,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041D98",
+          "address": "0x9041d98",
+          "size": 74,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041DE2",
+          "address": "0x9041de2",
+          "size": 132,
+          "encoding": "utf16le"
+        },
+        {
+          "name": "gCardMessageTextUs_09041E66",
+          "address": "0x9041e66",
+          "size": 16,
+          "encoding": "utf16le"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "card_message_data.c",
+          "section": ".data_card_messages",
+          "address": "0x9ebf64c",
+          "size": 3600,
+          "sha256": "6f83101fbb1440a79d6d65175ea78d9ac2eca6a93b23ffd579bb12fa143e5fd2",
+          "objects": [
+            {
+              "name": "gUnk_09EE8008",
+              "offset": 0,
+              "size": 3600,
+              "consumer": [
+                "func_080EC57C",
+                179
+              ]
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gCardMessageTextJp_0900D4C0",
+          "address": "0x900d4c0",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D500",
+          "address": "0x900d500",
+          "size": 95,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D560",
+          "address": "0x900d560",
+          "size": 127,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D5E0",
+          "address": "0x900d5e0",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D610",
+          "address": "0x900d610",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D650",
+          "address": "0x900d650",
+          "size": 31,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D670",
+          "address": "0x900d670",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D68C",
+          "address": "0x900d68c",
+          "size": 39,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D6B4",
+          "address": "0x900d6b4",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D6D8",
+          "address": "0x900d6d8",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D700",
+          "address": "0x900d700",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D728",
+          "address": "0x900d728",
+          "size": 153,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D7C4",
+          "address": "0x900d7c4",
+          "size": 23,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D7DC",
+          "address": "0x900d7dc",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D810",
+          "address": "0x900d810",
+          "size": 33,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D834",
+          "address": "0x900d834",
+          "size": 29,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D854",
+          "address": "0x900d854",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D870",
+          "address": "0x900d870",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D88C",
+          "address": "0x900d88c",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D8B0",
+          "address": "0x900d8b0",
+          "size": 27,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D8CC",
+          "address": "0x900d8cc",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D8F8",
+          "address": "0x900d8f8",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D91C",
+          "address": "0x900d91c",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D948",
+          "address": "0x900d948",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D974",
+          "address": "0x900d974",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D99C",
+          "address": "0x900d99c",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D9C0",
+          "address": "0x900d9c0",
+          "size": 33,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900D9E4",
+          "address": "0x900d9e4",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DA14",
+          "address": "0x900da14",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DA40",
+          "address": "0x900da40",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DA64",
+          "address": "0x900da64",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DA94",
+          "address": "0x900da94",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DAC4",
+          "address": "0x900dac4",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DAF0",
+          "address": "0x900daf0",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DB1C",
+          "address": "0x900db1c",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DB4C",
+          "address": "0x900db4c",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DB78",
+          "address": "0x900db78",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DBA4",
+          "address": "0x900dba4",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DBD0",
+          "address": "0x900dbd0",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DBFC",
+          "address": "0x900dbfc",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DC20",
+          "address": "0x900dc20",
+          "size": 83,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DC74",
+          "address": "0x900dc74",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DCA4",
+          "address": "0x900dca4",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DCC8",
+          "address": "0x900dcc8",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DCEC",
+          "address": "0x900dcec",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DD34",
+          "address": "0x900dd34",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DD60",
+          "address": "0x900dd60",
+          "size": 163,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DE04",
+          "address": "0x900de04",
+          "size": 73,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DE50",
+          "address": "0x900de50",
+          "size": 127,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DED0",
+          "address": "0x900ded0",
+          "size": 65,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900DF14",
+          "address": "0x900df14",
+          "size": 245,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E00C",
+          "address": "0x900e00c",
+          "size": 235,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E0F8",
+          "address": "0x900e0f8",
+          "size": 75,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E144",
+          "address": "0x900e144",
+          "size": 201,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E210",
+          "address": "0x900e210",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E240",
+          "address": "0x900e240",
+          "size": 171,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E2EC",
+          "address": "0x900e2ec",
+          "size": 119,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E364",
+          "address": "0x900e364",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E398",
+          "address": "0x900e398",
+          "size": 79,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E3E8",
+          "address": "0x900e3e8",
+          "size": 101,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E450",
+          "address": "0x900e450",
+          "size": 163,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E4F4",
+          "address": "0x900e4f4",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E528",
+          "address": "0x900e528",
+          "size": 187,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E5E4",
+          "address": "0x900e5e4",
+          "size": 99,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E648",
+          "address": "0x900e648",
+          "size": 199,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E710",
+          "address": "0x900e710",
+          "size": 85,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E768",
+          "address": "0x900e768",
+          "size": 89,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E7C4",
+          "address": "0x900e7c4",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E7F0",
+          "address": "0x900e7f0",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E824",
+          "address": "0x900e824",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E854",
+          "address": "0x900e854",
+          "size": 145,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E8E8",
+          "address": "0x900e8e8",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E914",
+          "address": "0x900e914",
+          "size": 105,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900E980",
+          "address": "0x900e980",
+          "size": 165,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EA28",
+          "address": "0x900ea28",
+          "size": 119,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EAA0",
+          "address": "0x900eaa0",
+          "size": 117,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EB18",
+          "address": "0x900eb18",
+          "size": 191,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EBD8",
+          "address": "0x900ebd8",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EC14",
+          "address": "0x900ec14",
+          "size": 67,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EC58",
+          "address": "0x900ec58",
+          "size": 59,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EC94",
+          "address": "0x900ec94",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900ECD4",
+          "address": "0x900ecd4",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900ED0C",
+          "address": "0x900ed0c",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900ED44",
+          "address": "0x900ed44",
+          "size": 55,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900ED7C",
+          "address": "0x900ed7c",
+          "size": 129,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EE00",
+          "address": "0x900ee00",
+          "size": 39,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EE28",
+          "address": "0x900ee28",
+          "size": 187,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EEE4",
+          "address": "0x900eee4",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EF2C",
+          "address": "0x900ef2c",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900EF60",
+          "address": "0x900ef60",
+          "size": 175,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F010",
+          "address": "0x900f010",
+          "size": 217,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F0EC",
+          "address": "0x900f0ec",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F134",
+          "address": "0x900f134",
+          "size": 73,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F180",
+          "address": "0x900f180",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F1B4",
+          "address": "0x900f1b4",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F1FC",
+          "address": "0x900f1fc",
+          "size": 55,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F234",
+          "address": "0x900f234",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F274",
+          "address": "0x900f274",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F2A8",
+          "address": "0x900f2a8",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F2E8",
+          "address": "0x900f2e8",
+          "size": 189,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F3A8",
+          "address": "0x900f3a8",
+          "size": 97,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F40C",
+          "address": "0x900f40c",
+          "size": 23,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F424",
+          "address": "0x900f424",
+          "size": 113,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F498",
+          "address": "0x900f498",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F4AC",
+          "address": "0x900f4ac",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F4D4",
+          "address": "0x900f4d4",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F50C",
+          "address": "0x900f50c",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F554",
+          "address": "0x900f554",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F588",
+          "address": "0x900f588",
+          "size": 23,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F5A0",
+          "address": "0x900f5a0",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F5C8",
+          "address": "0x900f5c8",
+          "size": 29,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F5E8",
+          "address": "0x900f5e8",
+          "size": 29,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F608",
+          "address": "0x900f608",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F638",
+          "address": "0x900f638",
+          "size": 47,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F668",
+          "address": "0x900f668",
+          "size": 73,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F6B4",
+          "address": "0x900f6b4",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F6E8",
+          "address": "0x900f6e8",
+          "size": 55,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F720",
+          "address": "0x900f720",
+          "size": 59,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F75C",
+          "address": "0x900f75c",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F798",
+          "address": "0x900f798",
+          "size": 69,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F7E0",
+          "address": "0x900f7e0",
+          "size": 61,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F820",
+          "address": "0x900f820",
+          "size": 35,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F844",
+          "address": "0x900f844",
+          "size": 59,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F880",
+          "address": "0x900f880",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F8B0",
+          "address": "0x900f8b0",
+          "size": 29,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F8D0",
+          "address": "0x900f8d0",
+          "size": 33,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F8F4",
+          "address": "0x900f8f4",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F934",
+          "address": "0x900f934",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F968",
+          "address": "0x900f968",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F998",
+          "address": "0x900f998",
+          "size": 43,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900F9C4",
+          "address": "0x900f9c4",
+          "size": 61,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FA04",
+          "address": "0x900fa04",
+          "size": 39,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FA2C",
+          "address": "0x900fa2c",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FA60",
+          "address": "0x900fa60",
+          "size": 47,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FA90",
+          "address": "0x900fa90",
+          "size": 85,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FAE8",
+          "address": "0x900fae8",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FB20",
+          "address": "0x900fb20",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FB5C",
+          "address": "0x900fb5c",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FB90",
+          "address": "0x900fb90",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FBCC",
+          "address": "0x900fbcc",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FC00",
+          "address": "0x900fc00",
+          "size": 55,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FC38",
+          "address": "0x900fc38",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FC80",
+          "address": "0x900fc80",
+          "size": 77,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FCD0",
+          "address": "0x900fcd0",
+          "size": 69,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FD18",
+          "address": "0x900fd18",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FD50",
+          "address": "0x900fd50",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FD8C",
+          "address": "0x900fd8c",
+          "size": 51,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FDC0",
+          "address": "0x900fdc0",
+          "size": 37,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FDE8",
+          "address": "0x900fde8",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FE14",
+          "address": "0x900fe14",
+          "size": 65,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FE58",
+          "address": "0x900fe58",
+          "size": 71,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FEA0",
+          "address": "0x900fea0",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FED0",
+          "address": "0x900fed0",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FF08",
+          "address": "0x900ff08",
+          "size": 73,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FF54",
+          "address": "0x900ff54",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FF8C",
+          "address": "0x900ff8c",
+          "size": 65,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0900FFD0",
+          "address": "0x900ffd0",
+          "size": 45,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010000",
+          "address": "0x9010000",
+          "size": 59,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0901003C",
+          "address": "0x901003c",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010078",
+          "address": "0x9010078",
+          "size": 41,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090100A4",
+          "address": "0x90100a4",
+          "size": 65,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090100E8",
+          "address": "0x90100e8",
+          "size": 59,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010124",
+          "address": "0x9010124",
+          "size": 47,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010154",
+          "address": "0x9010154",
+          "size": 47,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010184",
+          "address": "0x9010184",
+          "size": 27,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090101A0",
+          "address": "0x90101a0",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090101DC",
+          "address": "0x90101dc",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010218",
+          "address": "0x9010218",
+          "size": 55,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010250",
+          "address": "0x9010250",
+          "size": 77,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090102A0",
+          "address": "0x90102a0",
+          "size": 61,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090102E0",
+          "address": "0x90102e0",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010314",
+          "address": "0x9010314",
+          "size": 49,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010348",
+          "address": "0x9010348",
+          "size": 73,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010394",
+          "address": "0x9010394",
+          "size": 57,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_090103D0",
+          "address": "0x90103d0",
+          "size": 63,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010410",
+          "address": "0x9010410",
+          "size": 67,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_09010454",
+          "address": "0x9010454",
+          "size": 53,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gCardMessageTextJp_0901048C",
+          "address": "0x901048c",
+          "size": 41,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "card_message_data.c",
+          "section": ".data_card_messages",
+          "address": "0x9f73478",
+          "size": 3580,
+          "sha256": "11a4b71e4d69970c144d12ea34e37bc72a9618ea6d1b76c09cb629c281952a6a",
+          "objects": [
+            {
+              "name": "gUnk_09EE8008",
+              "offset": 0,
+              "size": 3580,
+              "consumer": [
+                "func_080EC57C",
+                178
+              ]
+            }
+          ]
+        }
+      ],
+      "named_assets": []
+    }
+  }
+}

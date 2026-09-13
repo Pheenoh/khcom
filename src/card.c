@@ -28142,7 +28142,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     CpuSet((void*)&zero, w, 0x05000054);
     ((UnkStruct_02034AFC*)w)->unk_13C = func_0806BA74(0, 0);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
     w->unk_000 = 0;
     w->unk_004 = 0;
     w->unk_008 = 0;
@@ -28251,7 +28251,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 #ifdef VERSION_JP
     w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
                                gUnk_09033CB8[w->unk_114->unk_04],
-                               *(s32*)((u8*)w->unk_114 + 0x0C),
+                               (s32)w->unk_114->unk_0C,
                                (s32*)&w->unk_138);
 #else
     s32* p;
@@ -28265,7 +28265,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
     } else {
         w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
                                    gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
-                                   (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), p);
+                                   (s32)LANGSTR(w->unk_114->unk_0C), p);
     }
 #endif
 
@@ -28276,7 +28276,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
-    UnkStruct_080A3F5C_Sel* sel;
+    CardMessageDef* sel;
     UnkStruct_080A3F5C_Entry* e;
 
     w->unk_149 = 1;
@@ -28378,7 +28378,7 @@ void func_080A3A04(UnkStruct_080A3F5C* w) {
 }
 
 u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
-    UnkStruct_080A3F5C_Sel* sel;
+    CardMessageDef* sel;
     UnkStruct_080A3F5C_Entry* e;
 
     w->unk_12C = AnimUpdate(w->unk_0C4);
@@ -28442,7 +28442,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             }
             w->unk_148 = 0;
             SetTaskUpdate(a, func_080A3A98);
-        } else if (!(((UnkStruct_09EE8008*)w->unk_114)->unk_10 & 1)) {
+        } else if (!(w->unk_114->unk_10 & 1)) {
             AnimStart(w->unk_0DC, 3, 1);
             SetTaskUpdate(a, func_080A3DD0);
             w->unk_13E = 0;
@@ -28573,11 +28573,11 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
         SetTaskUpdate(a, (void*)func_080A3DD0);
     } else if (w->unk_14E == 1) {
         w->unk_14E = 0;
-        w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
 #ifdef VERSION_JP
         w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
                                    gUnk_09033CB8[w->unk_114->unk_04],
-                                   *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_138);
+                                   (s32)w->unk_114->unk_0C, (s32*)&w->unk_138);
 #else
         p = (s32*)&w->unk_138;
 
@@ -28587,7 +28587,7 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
         } else {
             w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
                                        gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
-                                       (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), p);
+                                       (s32)LANGSTR(w->unk_114->unk_0C), p);
         }
 #endif
 
@@ -28694,8 +28694,8 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
 
     CpuSet((void*)&zero, w, 0x05000052);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
-    if (((UnkStruct_09EE8008*)w->unk_114)->unk_10 & 4) {
+    w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
+    if (w->unk_114->unk_10 & 4) {
         w->unk_134 = func_0806BA74(1, 1);
     } else {
         w->unk_134 = func_0806BA74(1, 0);
@@ -28726,23 +28726,23 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     w->unk_146[0] = 1;
 #ifdef VERSION_JP
     w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->unk_114->unk_04],
-                                   *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_130);
+                                   (s32)w->unk_114->unk_0C, (s32*)&w->unk_130);
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
         w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->unk_114->unk_04] - 0x200,
-                                       (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+                                       (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->unk_114->unk_04] - 0x200,
-                                       *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_130);
+                                       (s32)w->unk_114->unk_0C, (s32*)&w->unk_130);
 #endif
     } else {
 #ifdef VERSION_EU
         w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->unk_114->unk_04] - 0x200,
-                                       (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+                                       (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->unk_114->unk_04] - 0x200,
-                                       *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_130);
+                                       (s32)w->unk_114->unk_0C, (s32*)&w->unk_130);
 #endif
     }
 #endif
@@ -28867,7 +28867,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
                                            (s32)w->unk_130, (s32*)&w->unk_130);
 #endif
             w->unk_138[1] = w->unk_138[3];
-        } else if (!(((UnkStruct_09EE8008*)w->unk_114)->unk_10 & 1)) {
+        } else if (!(w->unk_114->unk_10 & 1)) {
             AnimStart(w->unk_0DC, 3, 1);
             w->unk_142 = 0;
             SetTaskUpdate(a, func_080A4910);
@@ -29071,7 +29071,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     if (w->unk_145 == 1) {
         w->unk_145 = 0;
-        w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
         p = (s32*)&w->unk_130;
 
         if (*p != 0) {
@@ -29083,7 +29083,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
             w->unk_138[3] = func_0806BB44(
                 0x2E00,
                 gUnk_09041E80[w->unk_114->unk_04] - 0x200,
-                (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)),
+                (s32)LANGSTR(w->unk_114->unk_0C),
                 p);
         }
 
@@ -29101,11 +29101,11 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     if (w->unk_145 == 1) {
         w->unk_145 = 0;
-        w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
         w->unk_138[3] = func_0806BDB8(
             0x2E00,
             gUnk_09033CB8[w->unk_114->unk_04],
-            (s32)(*(void**)((u8*)w->unk_114 + 0x0C)),
+            (s32)(w->unk_114->unk_0C),
             (s32*)&w->unk_130);
         w->unk_138[1] = w->unk_138[3];
     }
@@ -29138,7 +29138,7 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
 
     CpuSet((void*)&zero, w, 0x05000052);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->unk_114 = &gUnk_09EE8008[*(u16*)&w->unk_110];
     w->unk_134 = func_0806BA74(1, 0);
     FadeSetPaletteExcluded(w->unk_134 + 16, 1);
     w->unk_138[4] = 0;
@@ -29165,53 +29165,53 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
     w->unk_145 = 0;
     w->unk_146[0] = 1;
 #ifdef VERSION_JP
-    w->unk_138[3] = func_0806BDB8(0x4000, 0x4000, *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_130);
+    w->unk_138[3] = func_0806BDB8(0x4000, 0x4000, (s32)w->unk_114->unk_0C, (s32*)&w->unk_130);
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
         case 1:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 2:
-            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 4:
-            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 3:
-            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         default:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         }
 #else
-        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
 #endif
     } else {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
         case 1:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 2:
-            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 4:
-            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         case 3:
-            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         default:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
             break;
         }
 #else
-        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->unk_114->unk_0C), (s32*)&w->unk_130);
 #endif
     }
 #endif

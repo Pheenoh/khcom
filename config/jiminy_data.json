@@ -2912,6 +2912,20 @@
               ]
             }
           ]
+        },
+        {
+          "unit": "save_data.c",
+          "section": ".data_save_signature_text",
+          "address": "0x0813FE20",
+          "size": 25,
+          "sha256": "30a1bff65400281d27d235d504d3c94b6a2faac0b2b6aacc6e0d196e728c2923",
+          "objects": [
+            {
+              "name": "gSaveSignatureText",
+              "offset": 0,
+              "size": 25
+            }
+          ]
         }
       ],
       "assets": [
@@ -13745,14 +13759,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gSaveSignatureText",
-          "address": "0x0813FE20",
-          "size": 25,
-          "encoding": "ascii"
-        }
-      ]
+      "named_assets": []
     },
     "jp": {
       "placements": [
@@ -16655,6 +16662,20 @@
                 "func_0805A638",
                 "index clamp0..12"
               ]
+            }
+          ]
+        },
+        {
+          "unit": "save_data.c",
+          "section": ".data_save_signature_text",
+          "address": "0x0813FE9C",
+          "size": 25,
+          "sha256": "30a1bff65400281d27d235d504d3c94b6a2faac0b2b6aacc6e0d196e728c2923",
+          "objects": [
+            {
+              "name": "gSaveSignatureText",
+              "offset": 0,
+              "size": 25
             }
           ]
         }
@@ -23838,14 +23859,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gSaveSignatureText",
-          "address": "0x0813FE9C",
-          "size": 25,
-          "encoding": "ascii"
-        }
-      ]
+      "named_assets": []
     },
     "eu": {
       "placements": [
@@ -45432,6 +45446,20 @@
               "name": "gSaveSignature",
               "offset": 0,
               "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "save_data.c",
+          "section": ".data_save_signature_text",
+          "address": "0x0888E2F4",
+          "size": 25,
+          "sha256": "4822c48e3d9a842772a192ea588bb689293191dea57b7a9260a4e878381cf0b4",
+          "objects": [
+            {
+              "name": "gSaveSignatureText",
+              "offset": 0,
+              "size": 25
             }
           ]
         }
@@ -104151,14 +104179,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gSaveSignatureText",
-          "address": "0x0888E2F4",
-          "size": 25,
-          "encoding": "ascii"
-        }
-      ]
+      "named_assets": []
     }
   }
 }

@@ -1,0 +1,3891 @@
+{
+  "version": 1,
+  "provenance": {
+    ".data_09EE91A8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE91E8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE9240": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE92E8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE9320": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE93C8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE94AC": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE9544": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EE95B4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEA16C": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEB080": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEB110": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EED7E8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEDB84": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEDFA8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEE454": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEE544": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEEE38": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEEE5C": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEF0E8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEF480": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEF6F0": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EEFDA4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF06A8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF07D4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF090C": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF0EB4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF0F64": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    ".data_09EF1060": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91A8",
+          "address": "0x09EE91A8",
+          "size": 8,
+          "sha256": "575308b65c9d830fce6bc5b084cfc2aed89a95290fe5d22b13f517e9e16f21de",
+          "objects": [
+            {
+              "name": "gUnk_09EE91A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91AC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91E8",
+          "address": "0x09EE91E8",
+          "size": 32,
+          "sha256": "0f90bdcdb7cbe1cf883d9e2a12f6db633066eba91b8c3c27a8d418931d1740dc",
+          "objects": [
+            {
+              "name": "gUnk_09EE91E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9200",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9204",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9240",
+          "address": "0x09EE9240",
+          "size": 48,
+          "sha256": "83c4f26bb4dbe089b1ae41d4bfd8b4b8957c4254f005d49c72d17bd7977f82e4",
+          "objects": [
+            {
+              "name": "gUnk_09EE9240",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9244",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9248",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE924C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9250",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9254",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9258",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE925C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9260",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9264",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9268",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE926C",
+              "offset": 44,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE92E8",
+          "address": "0x09EE92E8",
+          "size": 40,
+          "sha256": "012b0cd83c0303c441d19cb7ed40b9efb14586ddffe39e1c96326ee38d47d1a7",
+          "objects": [
+            {
+              "name": "gUnk_09EE92E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9300",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9304",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9308",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE930C",
+              "offset": 36,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9320",
+          "address": "0x09EE9320",
+          "size": 24,
+          "sha256": "f070982361135e24ff1413f3b422d7497a5607f36ec33a28d23bf7f47cb334f7",
+          "objects": [
+            {
+              "name": "gUnk_09EE9320",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9324",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9328",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE932C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9330",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9334",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE93C8",
+          "address": "0x09EE93C8",
+          "size": 8,
+          "sha256": "c005282f001cf3559fd78434072c6291ac74a65e16de6c973058e984bc459f6e",
+          "objects": [
+            {
+              "name": "gUnk_09EE93C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE93CC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE94AC",
+          "address": "0x09EE94AC",
+          "size": 8,
+          "sha256": "7eb0217ebb1ec9b4558ea4cb54a6da7c4629c27d02143d678cc0d787c579d6ef",
+          "objects": [
+            {
+              "name": "gUnk_09EE94AC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B0",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9544",
+          "address": "0x09EE9544",
+          "size": 8,
+          "sha256": "7f339ace35920a3170d72f2be46d9d648447f6ad81747033060f5b43d3eb3475",
+          "objects": [
+            {
+              "name": "gUnk_09EE9544",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9548",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE95B4",
+          "address": "0x09EE95B4",
+          "size": 8,
+          "sha256": "03a140646b925e975376cde6cd026759d69a4a41ccbd7b98f8aaffe504592fce",
+          "objects": [
+            {
+              "name": "gUnk_09EE95B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE95B8",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEA16C",
+          "address": "0x09EEA16C",
+          "size": 20,
+          "sha256": "089ef51e6c7a67773957504e3e986348626cea34423a69aba2f24184e30c4758",
+          "objects": [
+            {
+              "name": "gUnk_09EEA16C",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA170",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA174",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEA17C",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB080",
+          "address": "0x09EEB080",
+          "size": 12,
+          "sha256": "084a8e53c152d3f4d7254dae8ecb5e0863e4c2ccdb4ad2f4eea1f9d7c3a843b9",
+          "objects": [
+            {
+              "name": "gUnk_09EEB080",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEB088",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB110",
+          "address": "0x09EEB110",
+          "size": 12,
+          "sha256": "2105b82150c0c19d1f0185c2bc6962b3d794c200ab98a524fd823ebf400e5e3b",
+          "objects": [
+            {
+              "name": "gUnk_09EEB110",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB114",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB118",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EED7E8",
+          "address": "0x09EED7E8",
+          "size": 24,
+          "sha256": "cc75d2fc8ac5683c8729eef6cb0c0965f2d94140bbcc85991cb165fdfe66ac02",
+          "objects": [
+            {
+              "name": "gUnk_09EED7E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7FC",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDB84",
+          "address": "0x09EEDB84",
+          "size": 24,
+          "sha256": "3152028e3b7897f49815143e405f707985a2864a1f6f8740a21d39acf3973df9",
+          "objects": [
+            {
+              "name": "gUnk_09EEDB84",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB88",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB8C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB90",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB94",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB98",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDFA8",
+          "address": "0x09EEDFA8",
+          "size": 100,
+          "sha256": "33133f1c2c970b03cf872dabf4ea240ab05b87f888e55fc80fa4b378aa6bd518",
+          "objects": [
+            {
+              "name": "gUnk_09EEDFA8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFAC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB8",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFC4",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFD0",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEDFE0",
+              "offset": 56,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFEC",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF0",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF4",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF8",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFFC",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE000",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE004",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE008",
+              "offset": 96,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE454",
+          "address": "0x09EEE454",
+          "size": 80,
+          "sha256": "9fed0b55de092402f684096bff6ffc42a23306a17f7846b1fe8e4c5ad3bd1f27",
+          "objects": [
+            {
+              "name": "gUnk_09EEE454",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE458",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE45C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE460",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE464",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE468",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE46C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE470",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE474",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE478",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE47C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE480",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE484",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE488",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE48C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE490",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE494",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE498",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE49C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE4A0",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE544",
+          "address": "0x09EEE544",
+          "size": 16,
+          "sha256": "a5a2fae8550228561b371b0016bb73c15e77009e5c8b01544d4fab26c36962dd",
+          "objects": [
+            {
+              "name": "gUnk_09EEE544",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE550",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE38",
+          "address": "0x09EEEE38",
+          "size": 20,
+          "sha256": "ef926597e5295b94fe142ba0c47f0b78a7d1436292b4b6389208d3aa92d18ea5",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE38",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE44",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE5C",
+          "address": "0x09EEEE5C",
+          "size": 20,
+          "sha256": "5ce6cdd056607a199370f98791e1e23f2eab9811db4769283617288b37a9528a",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE5C",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE68",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF0E8",
+          "address": "0x09EEF0E8",
+          "size": 32,
+          "sha256": "42407a126da5c896ffcdc8e5639cf68aeac2428d0884c9c415e74ba572994611",
+          "objects": [
+            {
+              "name": "gUnk_09EEF0E8",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EEF104",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF480",
+          "address": "0x09EEF480",
+          "size": 28,
+          "sha256": "d64330882b4e64f705b65a52869c100f1e5e706871224847a34e0f47a76f373b",
+          "objects": [
+            {
+              "name": "gUnk_09EEF480",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EEF498",
+              "offset": 24,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF6F0",
+          "address": "0x09EEF6F0",
+          "size": 44,
+          "sha256": "5bb54159efcaed2bbb996d7f89b315cd2154035248fb3929008861f82ac281be",
+          "objects": [
+            {
+              "name": "gUnk_09EEF6F0",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EEF718",
+              "offset": 40,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEFDA4",
+          "address": "0x09EEFDA4",
+          "size": 204,
+          "sha256": "7b798d28d60d77ff76e4e8765d246ea1140214e4c7d7bf8dd58ae2acbd6321e0",
+          "objects": [
+            {
+              "name": "gUnk_09EEFDA4",
+              "offset": 0,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EEFE24",
+              "offset": 128,
+              "size": 76
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF06A8",
+          "address": "0x09EF06A8",
+          "size": 36,
+          "sha256": "be5068a5a3aad39163ba0da8254809f4c6063f826b4c925004680b1b58dc3de5",
+          "objects": [
+            {
+              "name": "gUnk_09EF06A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06AC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06B0",
+              "offset": 8,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF06C0",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C4",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C8",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF07D4",
+          "address": "0x09EF07D4",
+          "size": 76,
+          "sha256": "094fa48c8781eaf4d2fa67c30250c60cfd07a957b5c19b6568bfcd2df79d1c8e",
+          "objects": [
+            {
+              "name": "gUnk_09EF07D4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF07F0",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF07F4",
+              "offset": 32,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF081C",
+              "offset": 72,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF090C",
+          "address": "0x09EF090C",
+          "size": 36,
+          "sha256": "7c93c959c6b2da22e1c272bac516d018428d0bc8ce5ecfec42e4b889ee682a4c",
+          "objects": [
+            {
+              "name": "gUnk_09EF090C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF092C",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0EB4",
+          "address": "0x09EF0EB4",
+          "size": 36,
+          "sha256": "2bc4ba30345b12ecde0cc7f2e84bab1db687b173ff452e807a870f0a687ed4c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF0EB4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EB8",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EBC",
+              "offset": 8,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF0ED4",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0F64",
+          "address": "0x09EF0F64",
+          "size": 68,
+          "sha256": "0d2eee46aecfe9782f2f3dd1af0ac6d0650bf4ce556a1c90aa3c63ee0bbdb174",
+          "objects": [
+            {
+              "name": "gUnk_09EF0F64",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F68",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F6C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F70",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F74",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F78",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F7C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F80",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F84",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F88",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F8C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F90",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F94",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F98",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F9C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA0",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA4",
+              "offset": 64,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF1060",
+          "address": "0x09EF1060",
+          "size": 216,
+          "sha256": "438e28a2d3bf1295411e95c83fe1fcb9318de85fa84bcd9729dc333a3122ac0d",
+          "objects": [
+            {
+              "name": "gUnk_09EF1060",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1064",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1068",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF106C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1070",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1074",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1078",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF107C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1080",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1084",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1088",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF108C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1090",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1094",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1098",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF109C",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A0",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A4",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A8",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10AC",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B0",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B4",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10BC",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C0",
+              "offset": 96,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C8",
+              "offset": 104,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10CC",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D0",
+              "offset": 112,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D4",
+              "offset": 116,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D8",
+              "offset": 120,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10DC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10EC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10FC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1100",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1104",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1108",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF110C",
+              "offset": 172,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1110",
+              "offset": 176,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1114",
+              "offset": 180,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1118",
+              "offset": 184,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF111C",
+              "offset": 188,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1120",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1124",
+              "offset": 196,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1128",
+              "offset": 200,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF112C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1130",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1134",
+              "offset": 212,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91A8",
+          "address": "0x09EC07EC",
+          "size": 8,
+          "sha256": "8c6cee623427b4cb25a8ca52a316e479bc8610109a6016492ab8b0ddda79a846",
+          "objects": [
+            {
+              "name": "gUnk_09EE91A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91AC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91E8",
+          "address": "0x09EC082C",
+          "size": 32,
+          "sha256": "c5abe13917afec38cd2cdab847d0c9459883d0ba1eb1cef64f6cb869b3cde281",
+          "objects": [
+            {
+              "name": "gUnk_09EE91E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9200",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9204",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9240",
+          "address": "0x09EC0884",
+          "size": 48,
+          "sha256": "ed75ef91862dcd5e27fbfdc4fb43e771f76414d04d40e016b1412211a1636b7d",
+          "objects": [
+            {
+              "name": "gUnk_09EE9240",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9244",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9248",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE924C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9250",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9254",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9258",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE925C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9260",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9264",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9268",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE926C",
+              "offset": 44,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE92E8",
+          "address": "0x09EC092C",
+          "size": 40,
+          "sha256": "2514526bc0833457b952b4a5e3e89eaaa9d429f3bd593df1a177313659800e1c",
+          "objects": [
+            {
+              "name": "gUnk_09EE92E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9300",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9304",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9308",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE930C",
+              "offset": 36,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9320",
+          "address": "0x09EC0964",
+          "size": 24,
+          "sha256": "9971363567d507eb38431007f1ee6740d3322bae51448640da3232fc4fdae171",
+          "objects": [
+            {
+              "name": "gUnk_09EE9320",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9324",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9328",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE932C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9330",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9334",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE93C8",
+          "address": "0x09EC0A0C",
+          "size": 8,
+          "sha256": "74ae7ee9848cc105deb1c1748a56c876cec78558ec4645f9fc2ae8eb0770e520",
+          "objects": [
+            {
+              "name": "gUnk_09EE93C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE93CC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE94AC",
+          "address": "0x09EC0AF0",
+          "size": 8,
+          "sha256": "0b9ed57b71a4ed61d8a11043dd7f39d429b74ae122aae55e708526844e462eeb",
+          "objects": [
+            {
+              "name": "gUnk_09EE94AC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B0",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9544",
+          "address": "0x09EC0B88",
+          "size": 8,
+          "sha256": "4d4510015d2933bfe2525cd0e0dfa72416b1107c8a91260bd0e5cbf9d5662b04",
+          "objects": [
+            {
+              "name": "gUnk_09EE9544",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9548",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE95B4",
+          "address": "0x09EC0BF8",
+          "size": 8,
+          "sha256": "6630f2cf6691042560c1697f67b60891adcf2c3aa54a529d500e624e9fbec5f1",
+          "objects": [
+            {
+              "name": "gUnk_09EE95B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE95B8",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEA16C",
+          "address": "0x09EC1560",
+          "size": 20,
+          "sha256": "f06b6f2ac05e290c6857765f49a2c0a92b4b40dafe86c3006edaaef1059ca28f",
+          "objects": [
+            {
+              "name": "gUnk_09EEA16C",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA170",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA174",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEA17C",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB080",
+          "address": "0x09EC246C",
+          "size": 12,
+          "sha256": "e04f7ee8e3632b20d0575a213b7cccdfc513091140dd02725570c218c9998e5b",
+          "objects": [
+            {
+              "name": "gUnk_09EEB080",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEB088",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB110",
+          "address": "0x09EC24FC",
+          "size": 12,
+          "sha256": "54ac962f1be95d9028903ae0f29dd986b64c01db75cd459b457e3a4b2449af1d",
+          "objects": [
+            {
+              "name": "gUnk_09EEB110",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB114",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB118",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EED7E8",
+          "address": "0x09EC4BD4",
+          "size": 24,
+          "sha256": "7424f3b8d13f2b6df73ed45c45c65dd75c23fe81d1c4bfdcd32fe9ce965a39d8",
+          "objects": [
+            {
+              "name": "gUnk_09EED7E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7FC",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDB84",
+          "address": "0x09EC4F70",
+          "size": 24,
+          "sha256": "be2429c751bda3beb478a1c1dcee10ceca68ffe03220b128d1477806e4f29259",
+          "objects": [
+            {
+              "name": "gUnk_09EEDB84",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB88",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB8C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB90",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB94",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB98",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDFA8",
+          "address": "0x09EC5394",
+          "size": 100,
+          "sha256": "68625668e201260cd3ce73846d4ef7625295750708cd488348be98bdd8eca29f",
+          "objects": [
+            {
+              "name": "gUnk_09EEDFA8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFAC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB8",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFC4",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFD0",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEDFE0",
+              "offset": 56,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFEC",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF0",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF4",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF8",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFFC",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE000",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE004",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE008",
+              "offset": 96,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE454",
+          "address": "0x09EC5840",
+          "size": 80,
+          "sha256": "e0491d60f5ae4bd5c78bbe0b1fbc363ef6d2d1071afe467a0d8fe198e295790c",
+          "objects": [
+            {
+              "name": "gUnk_09EEE454",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE458",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE45C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE460",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE464",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE468",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE46C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE470",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE474",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE478",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE47C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE480",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE484",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE488",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE48C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE490",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE494",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE498",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE49C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE4A0",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE544",
+          "address": "0x09EC5930",
+          "size": 16,
+          "sha256": "99781b9f4a6a1c47e0b98d43816a9b7b606e6053a6b2d43d7a555c944bafc82a",
+          "objects": [
+            {
+              "name": "gUnk_09EEE544",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE550",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE38",
+          "address": "0x09EC6224",
+          "size": 20,
+          "sha256": "6e3286a26b01fc114f7f618a2b3c760c66f10c3c952193f8af8854c7414fe6ca",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE38",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE44",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE5C",
+          "address": "0x09EC6248",
+          "size": 20,
+          "sha256": "aadf6b8ee2472101fec0f668a86f86602aa1d1ca41cf4be05a472c3f763d6274",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE5C",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE68",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF0E8",
+          "address": "0x09EC64D4",
+          "size": 32,
+          "sha256": "92628537a2b0c768b2736f8a5a12d9ee249c374ddd9fca9293dad3a8099cbc16",
+          "objects": [
+            {
+              "name": "gUnk_09EEF0E8",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EEF104",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF480",
+          "address": "0x09EC686C",
+          "size": 28,
+          "sha256": "189fec784419aceb5f861c28ec68aa97760f013c230eede290359d34516409f9",
+          "objects": [
+            {
+              "name": "gUnk_09EEF480",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EEF498",
+              "offset": 24,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF6F0",
+          "address": "0x09EC6ADC",
+          "size": 44,
+          "sha256": "47f30aa5cd70becca444883e55d087b5843e9a882c018e67fb1e07983fe0931a",
+          "objects": [
+            {
+              "name": "gUnk_09EEF6F0",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EEF718",
+              "offset": 40,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEFDA4",
+          "address": "0x09EC7190",
+          "size": 204,
+          "sha256": "c55c183ba811e4c651e0568a9f6a551a4df627288da03cc9a1a08a6a829c9754",
+          "objects": [
+            {
+              "name": "gUnk_09EEFDA4",
+              "offset": 0,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EEFE24",
+              "offset": 128,
+              "size": 76
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF06A8",
+          "address": "0x09EC7A94",
+          "size": 36,
+          "sha256": "5234feba5b0a1c8462fdc8913f94d17de06248b75a1c5a150df9d1a2b955e1a0",
+          "objects": [
+            {
+              "name": "gUnk_09EF06A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06AC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06B0",
+              "offset": 8,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF06C0",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C4",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C8",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF07D4",
+          "address": "0x09EC7BC0",
+          "size": 76,
+          "sha256": "792f299e546099918128617c67ffd2c4bd12beded86110de5919e4f531672064",
+          "objects": [
+            {
+              "name": "gUnk_09EF07D4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF07F0",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF07F4",
+              "offset": 32,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF081C",
+              "offset": 72,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF090C",
+          "address": "0x09EC7CF8",
+          "size": 36,
+          "sha256": "f9d8f0caa0dcc2f26a31f181059b018ca6bd8f80e416b019064d14a8449382c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF090C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF092C",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0EB4",
+          "address": "0x09EC82A0",
+          "size": 36,
+          "sha256": "f13e5b11677ba2103ced87f833327cc45837fd66ceb6cc822b2ce6421650bd9f",
+          "objects": [
+            {
+              "name": "gUnk_09EF0EB4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EB8",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EBC",
+              "offset": 8,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF0ED4",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0F64",
+          "address": "0x09EC8350",
+          "size": 68,
+          "sha256": "3b683912d7e1c6bef3be3d45105ba6243e4de39e804706615f47a9f54aa664fa",
+          "objects": [
+            {
+              "name": "gUnk_09EF0F64",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F68",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F6C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F70",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F74",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F78",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F7C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F80",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F84",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F88",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F8C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F90",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F94",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F98",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F9C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA0",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA4",
+              "offset": 64,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF1060",
+          "address": "0x09EC844C",
+          "size": 216,
+          "sha256": "9ff97cc37853482feb6809efe7d6c855ef8778e58fe21ae67591de790c61bf02",
+          "objects": [
+            {
+              "name": "gUnk_09EF1060",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1064",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1068",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF106C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1070",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1074",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1078",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF107C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1080",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1084",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1088",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF108C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1090",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1094",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1098",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF109C",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A0",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A4",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A8",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10AC",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B0",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B4",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10BC",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C0",
+              "offset": 96,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C8",
+              "offset": 104,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10CC",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D0",
+              "offset": 112,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D4",
+              "offset": 116,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D8",
+              "offset": 120,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10DC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10EC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10FC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1100",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1104",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1108",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF110C",
+              "offset": 172,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1110",
+              "offset": 176,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1114",
+              "offset": 180,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1118",
+              "offset": 184,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF111C",
+              "offset": 188,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1120",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1124",
+              "offset": 196,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1128",
+              "offset": 200,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF112C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1130",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1134",
+              "offset": 212,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91A8",
+          "address": "0x09F74628",
+          "size": 8,
+          "sha256": "ac9634070f69f35fe46cea8ead8e1ca2c2645650f5325f9966bece9b47b0ab23",
+          "objects": [
+            {
+              "name": "gUnk_09EE91A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91AC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE91E8",
+          "address": "0x09F74668",
+          "size": 32,
+          "sha256": "e5ce2f4b61cf32693213c6dd320184a7af33ffd5c25bbf85d98ab44e85644b83",
+          "objects": [
+            {
+              "name": "gUnk_09EE91E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE91FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9200",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9204",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9240",
+          "address": "0x09F746C0",
+          "size": 48,
+          "sha256": "052282555c49a86d496941bfe6853b7425b948508eb2700f4ff5b6bc48099443",
+          "objects": [
+            {
+              "name": "gUnk_09EE9240",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9244",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9248",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE924C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9250",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9254",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9258",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE925C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9260",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9264",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9268",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE926C",
+              "offset": 44,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE92E8",
+          "address": "0x09F74768",
+          "size": 40,
+          "sha256": "4ebbb2f1c634ed4405a6d008e34ab6a90460682ad2747674a3b9d4aca971b792",
+          "objects": [
+            {
+              "name": "gUnk_09EE92E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE92FC",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9300",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9304",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9308",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE930C",
+              "offset": 36,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9320",
+          "address": "0x09F747A0",
+          "size": 24,
+          "sha256": "6a58a5fe9466dfdbcfc56f1e5b0077eee3da09a34344562812281088f475d210",
+          "objects": [
+            {
+              "name": "gUnk_09EE9320",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9324",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9328",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE932C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9330",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9334",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE93C8",
+          "address": "0x09F74848",
+          "size": 8,
+          "sha256": "5ba5e8763737b60bbdec5a6050e996dfcc28ee3c75817d74ea7517ddd0721083",
+          "objects": [
+            {
+              "name": "gUnk_09EE93C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE93CC",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE94AC",
+          "address": "0x09F7492C",
+          "size": 8,
+          "sha256": "89c0b5e02bfd2f25aa1dca1c7ecbdabf239dfe75438cc4870beff5daaf441383",
+          "objects": [
+            {
+              "name": "gUnk_09EE94AC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B0",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE9544",
+          "address": "0x09F749C4",
+          "size": 8,
+          "sha256": "f6f2b4133c3f7d5cf27cce8b9d80c79fc26cf52b1c2cc624818c27d93b8bd902",
+          "objects": [
+            {
+              "name": "gUnk_09EE9544",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9548",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EE95B4",
+          "address": "0x09F74A34",
+          "size": 8,
+          "sha256": "eca5ef0a808386589718d86a54b12ef6df69ddd35083292ada2695fe333f58da",
+          "objects": [
+            {
+              "name": "gUnk_09EE95B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE95B8",
+              "offset": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEA16C",
+          "address": "0x09F75F84",
+          "size": 20,
+          "sha256": "d73f517d9410616071be3373601f74c89c6d3154bd9bf7b6435f8faeb9257ec1",
+          "objects": [
+            {
+              "name": "gUnk_09EEA16C",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA170",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA174",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEA17C",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB080",
+          "address": "0x09F771A0",
+          "size": 12,
+          "sha256": "f6eed4d81bcfcca3e8e4064e5c2a4db9c74ae924be3575e3c2b1893639c84240",
+          "objects": [
+            {
+              "name": "gUnk_09EEB080",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEB088",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEB110",
+          "address": "0x09F772A0",
+          "size": 12,
+          "sha256": "6ac1c079a8dd4b9978b9064411636ccd401aeff84bbc415fcdf0f189240c08f6",
+          "objects": [
+            {
+              "name": "gUnk_09EEB110",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB114",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB118",
+              "offset": 8,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EED7E8",
+          "address": "0x09F789CC",
+          "size": 24,
+          "sha256": "d891188bda7451a7c780462356c3c2dc32c7f156b057be4650536266ceb3427b",
+          "objects": [
+            {
+              "name": "gUnk_09EED7E8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7EC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7F8",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EED7FC",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDB84",
+          "address": "0x09F78D68",
+          "size": 24,
+          "sha256": "3bf3eca984bd8aa7ca395a91afbd9a67d517360e8855d4e0ed0d6d8efebe550c",
+          "objects": [
+            {
+              "name": "gUnk_09EEDB84",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB88",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB8C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB90",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB94",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDB98",
+              "offset": 20,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEDFA8",
+          "address": "0x09F7918C",
+          "size": 100,
+          "sha256": "f3478d149584c873dd483df0322dbe42b3ea273f1790e563b0de9e180d778ca7",
+          "objects": [
+            {
+              "name": "gUnk_09EEDFA8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFAC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB0",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB4",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFB8",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFC4",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFD0",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEDFE0",
+              "offset": 56,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEDFEC",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF0",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF4",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFF8",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEDFFC",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE000",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE004",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE008",
+              "offset": 96,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE454",
+          "address": "0x09F79638",
+          "size": 80,
+          "sha256": "c2001d4de51c2786345ca510f15d55bae8ea6f7d0c5302d30ad62a79fe2237aa",
+          "objects": [
+            {
+              "name": "gUnk_09EEE454",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE458",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE45C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE460",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE464",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE468",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE46C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE470",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE474",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE478",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE47C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE480",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE484",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE488",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE48C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE490",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE494",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE498",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE49C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE4A0",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEE544",
+          "address": "0x09F79728",
+          "size": 16,
+          "sha256": "4fed419278c952d32106588f24f2ac2239f0d68db29c95a44ae1d70702b9b34d",
+          "objects": [
+            {
+              "name": "gUnk_09EEE544",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE550",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE38",
+          "address": "0x09F7A01C",
+          "size": 20,
+          "sha256": "11ffa2cbb5706124ce0bd57c73f44ab30548c5c53efeb30642aa9ee49994a91e",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE38",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE44",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEEE5C",
+          "address": "0x09F7A040",
+          "size": 20,
+          "sha256": "e8fe8720bba5d19d6fd6df1d3514601fbac06b3a6fd8786691ffe5442b31ed8b",
+          "objects": [
+            {
+              "name": "gUnk_09EEEE5C",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEEE68",
+              "offset": 12,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF0E8",
+          "address": "0x09F7A2CC",
+          "size": 32,
+          "sha256": "3602dc4d5a0c44f12314e16a9799bcf9e6bf36ffd38d3a49a7ee66e77c749fd3",
+          "objects": [
+            {
+              "name": "gUnk_09EEF0E8",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EEF104",
+              "offset": 28,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF480",
+          "address": "0x09F7A664",
+          "size": 28,
+          "sha256": "752423dac1a52a0601974c76c98564bc6b869e0efd95e15d191bd001d8d126cf",
+          "objects": [
+            {
+              "name": "gUnk_09EEF480",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EEF498",
+              "offset": 24,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEF6F0",
+          "address": "0x09F7A8D4",
+          "size": 44,
+          "sha256": "d8382c7bf024c0c62e4ad9783cd954678ce468d55c8f56369c90b85e3f3df2dc",
+          "objects": [
+            {
+              "name": "gUnk_09EEF6F0",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EEF718",
+              "offset": 40,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EEFDA4",
+          "address": "0x09F7AF88",
+          "size": 204,
+          "sha256": "7c09ebf4e58eb154fc2863febdd5170db4a995482ed091162da474cb1492def7",
+          "objects": [
+            {
+              "name": "gUnk_09EEFDA4",
+              "offset": 0,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EEFE24",
+              "offset": 128,
+              "size": 76
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF06A8",
+          "address": "0x09F7B88C",
+          "size": 36,
+          "sha256": "e7b93f39f8af4625a282e41fc92418ab187761f0e8fde2e258bb842fcf3fabac",
+          "objects": [
+            {
+              "name": "gUnk_09EF06A8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06AC",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06B0",
+              "offset": 8,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF06C0",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C4",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF06C8",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF07D4",
+          "address": "0x09F7B9B8",
+          "size": 76,
+          "sha256": "be8a2da71e10a7e16ab0d37c9908b920e2527c474efc79a0e42c29113ddc0c5d",
+          "objects": [
+            {
+              "name": "gUnk_09EF07D4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF07F0",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF07F4",
+              "offset": 32,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF081C",
+              "offset": 72,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF090C",
+          "address": "0x09F7BAF0",
+          "size": 36,
+          "sha256": "73d02df5f0d60d18666e02491e6b1f775ca52ef003a560ef656eb78cb5197be3",
+          "objects": [
+            {
+              "name": "gUnk_09EF090C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF092C",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0EB4",
+          "address": "0x09F7C098",
+          "size": 36,
+          "sha256": "60515c9c5d5fa869620a42f919d437da12b6039c102b9b2cef5510e5090fda6c",
+          "objects": [
+            {
+              "name": "gUnk_09EF0EB4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EB8",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0EBC",
+              "offset": 8,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF0ED4",
+              "offset": 32,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF0F64",
+          "address": "0x09F7C148",
+          "size": 68,
+          "sha256": "bbb9fc6e0b91f06a2f7ca92af32375882d86e734d5c5ee1760f7f0d282f0f114",
+          "objects": [
+            {
+              "name": "gUnk_09EF0F64",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F68",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F6C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F70",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F74",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F78",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F7C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F80",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F84",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F88",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F8C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F90",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F94",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F98",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0F9C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA0",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0FA4",
+              "offset": 64,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "event_sprite_data.c",
+          "section": ".data_09EF1060",
+          "address": "0x09F7C244",
+          "size": 216,
+          "sha256": "67cbe7e6d169abfe5e438b3e378e1aad8caae33ea07525fe27836d567853ff5d",
+          "objects": [
+            {
+              "name": "gUnk_09EF1060",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1064",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1068",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF106C",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1070",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1074",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1078",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF107C",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1080",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1084",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1088",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF108C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1090",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1094",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1098",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF109C",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A0",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A4",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10A8",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10AC",
+              "offset": 76,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B0",
+              "offset": 80,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B4",
+              "offset": 84,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10B8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10BC",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C0",
+              "offset": 96,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10C8",
+              "offset": 104,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10CC",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D0",
+              "offset": 112,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D4",
+              "offset": 116,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10D8",
+              "offset": 120,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10DC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10E8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10EC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10F8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF10FC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1100",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1104",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1108",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF110C",
+              "offset": 172,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1110",
+              "offset": 176,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1114",
+              "offset": 180,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1118",
+              "offset": 184,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF111C",
+              "offset": 188,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1120",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1124",
+              "offset": 196,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1128",
+              "offset": 200,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF112C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1130",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1134",
+              "offset": 212,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
