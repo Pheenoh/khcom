@@ -26,6 +26,7 @@ import struct
 from pathlib import Path
 
 from rom_data_evidence import data_symbol_map, load_evidence
+from regional_data import asset_symbols, load_sidecars, managed_placements, merge_placements, placement_overrides
 
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
@@ -1380,6 +1381,10 @@ def main():
 
     us = Path("roms/B8CE.gba").read_bytes()
     ot = Path(f"roms/{code}.gba").read_bytes()
+    regional = load_sidecars("config", {"us": us, ver: ot})
+    regional_plan = regional["regions"][ver]
+    regional_managed = managed_placements(regional)
+    regional_overrides = placement_overrides(regional_plan)
     rows = load_rows(ver)
 
     owner = {}
@@ -1450,6 +1455,13 @@ def main():
     out, uncertain = regional_symbols(
         Path("config/us/symbols.txt").read_text().splitlines(), tr,
         TARGET_ONLY_SYMBOLS.get(ver, {}), TARGET_ABSENT_SYMBOLS.get(ver, ()))
+    regional_ledger = []
+    for line in out:
+        stripped = line.split("#", 1)[0].strip()
+        if stripped:
+            name, address = stripped.split("=")
+            regional_ledger.append((name.strip(), int(address.strip(), 16)))
+    asset_symbols(regional_plan, regional_ledger)
     Path(f"config/{ver}/symbols.txt").write_text("\n".join(out) + "\n")
     print(f"  symbols.txt: {len(out)} lines, {len(uncertain)} uncertain")
 
@@ -1571,7 +1583,7 @@ def main():
             return "absent"
         return addrs[len(addrs) // 2] if addrs else None
 
-    placed = re.compile(r"^ (\.\w+) +0x(0[89][0-9a-f]{6}) +0x([0-9a-f]+) "
+    placed = re.compile(r"^ (\.[\w.]+) +0x(0[89][0-9a-f]{6}) +0x([0-9a-f]+) "
                         r"build/us/src/(\S+)\.o$")
     spans = {}
     for line in Path("build/us/com_us.map").read_text().splitlines():
@@ -1587,9 +1599,15 @@ def main():
             nm, _, sec = t.partition("(")
             if nm.endswith(".s"):
                 continue
-            lo, size = spans[(nm, sec[:-1])]
-            here, _ = tr(lo)
-            size = TARGET_DATA_SIZE.get(ver, {}).get((nm, sec[:-1]), size)
+            key = nm, sec[:-1]
+            if key in regional_managed:
+                if key not in regional_overrides:
+                    continue
+                here, size = regional_overrides[key]
+            else:
+                lo, size = spans[key]
+                here, _ = tr(lo)
+                size = TARGET_DATA_SIZE.get(ver, {}).get(key, size)
             cdata.append((here, size, line))
             continue
         if not t or t.startswith("#"):
@@ -1601,6 +1619,7 @@ def main():
             head.append(line)
             continue
         body.append((key, line))
+    cdata = merge_placements(cdata, regional_plan, code_end, min(ROM_END, ROM_BASE + len(ot)), regional_managed)
     dropped = [l for k, l in body if k == "absent"]
     for l in dropped:
         print(f"  unit dropped: {l}")

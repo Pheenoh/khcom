@@ -27,6 +27,7 @@ extern u8 gSramFileLarge[];
 #define SAVE_BAD_CHECKSUM 1
 #define SAVE_OK 2
 
+extern u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1];
 extern u8* gSaveSignature;
 
 

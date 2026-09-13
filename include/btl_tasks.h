@@ -10,8 +10,7 @@ struct BtlRikuWork;
 struct BtlSoraWork;
 struct BtlTaskArg;
 
-extern const char gTaskNameBtlLockon[];
-extern const char gTaskNameBtlArea[];
+#include "task_names.h"
 
 void task_btl_lockon_0(struct BtlLockonWork* work);
 u8 task_btl_lockon_1(struct BtlLockonWork* work);

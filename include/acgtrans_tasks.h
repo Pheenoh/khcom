@@ -6,7 +6,7 @@
 struct AcgTransConfig;
 struct AcgTransWork;
 
-extern const char gTaskNameAcgtrans[];
+#include "task_names.h"
 
 void task_acgtrans_0(struct AcgTransWork* work, struct AcgTransConfig* cfg);
 s32 task_acgtrans_1(struct AcgTransWork* work);

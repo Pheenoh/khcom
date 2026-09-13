@@ -6,6 +6,27 @@
 #include "obj.h"
 #include "text_types.h"
 
+#ifdef VERSION_US
+typedef u16 JiminyTextChar;
+#else
+typedef u8 JiminyTextChar;
+#endif
+
+#ifdef VERSION_EU
+typedef struct JiminyLocalizedName {
+    JiminyTextChar* strings[5];
+} JiminyLocalizedName;
+
+typedef struct JiminyLocalizedText {
+    JiminyTextChar** lines[5];
+    u16 lineCounts[5];
+    u16 padding;
+} JiminyLocalizedText;
+
+typedef char JiminyLocalizedName_size[(sizeof(JiminyLocalizedName) == 20) ? 1 : -1];
+typedef char JiminyLocalizedText_size[(sizeof(JiminyLocalizedText) == 32) ? 1 : -1];
+#endif
+
 typedef struct JiminyPair {
     u16 unk_00;
     u16 unk_02;

@@ -590,7 +590,6 @@ extern TaskDesc gTaskDescHumLexTmh;
 extern TaskDesc gTaskDescHumLexTmh0;
 extern TaskDesc gTaskDescHumLexRock;
 extern JiminyWork* gJiminyWork;
-extern void* gUnk_09EDE3FC[];
 extern JiminyEntry gUnk_08155554[];
 
 void func_08054100(AxcelWork* work, HumSub* sub);

@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
+from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
@@ -225,6 +226,13 @@ if symbols_file.exists():
         name, addr = (x.strip() for x in line.split("="))
         symbols.append((name, int(addr, 16)))
 
+regional_files = sorted(Path("config").glob("*_data.json"))
+regional = load_sidecars("config", {version: Path(baserom).read_bytes()} if regional_files and Path(baserom).exists() else {})
+regional_plan = regional["regions"][version]
+symbols.extend(asset_symbols(regional_plan, symbols))
+regional_sections = {(placement["unit"], placement["section"]): placement
+                     for placement in regional_plan["placements"]}
+
 units_file = Path(f"config/{version}/units.txt")
 units = []
 archives = []
@@ -258,6 +266,9 @@ for line in units_file.read_text().splitlines():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
     units.append((src, obj, flags, section))
 
+validate_active_sections(regional_plan,
+                         [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
+                         managed_placements(regional))
 objs_in_order = [(obj, section) for _, obj, _flags, section in units]
 bss_members = [obj for src, obj, _f, _s in units if src is None and BSS_MEMBERS.get(obj.rsplit("/", 1)[-1])]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
@@ -269,7 +280,14 @@ with open(ldscript, "w") as f:
         f.write("\n")
     f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
     for obj, section in objs_in_order:
+        placement = regional_sections.get((Path(obj).stem + ".c", section)) if obj.startswith(f"{build_dir}/src/") else None
+        if placement:
+            for assertion in linker_assertions(placement):
+                f.write(f"        {assertion}\n")
         f.write(f"        {obj}({section});\n")
+        if placement:
+            for assertion in linker_assertions(placement, after=True):
+                f.write(f"        {assertion}\n")
     f.write("    }\n")
     if bss_members:
         f.write(f"\n    .bss {ARCHIVE_BSS[version]:#x} (NOLOAD) :\n    {{\n")
@@ -334,7 +352,8 @@ with out.open("w") as f:
     )
     n.rule(
         "ld",
-        command="$ld -T $ldscript -Map $map -o $out $in",
+        command="$ld -T $ldscript -Map $map -o $out $in" +
+                (f" && {report_python} tools/regional_data.py {version} --binutils-prefix {prefix}" if regional_files else ""),
         description="LD $out",
     )
     n.rule(
@@ -401,7 +420,8 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript],
+        implicit=[ldscript] + (["tools/regional_data.py", "tools/rom_data_evidence.py", baserom]
+                              + [str(path) for path in regional_files] if regional_files else []),
         variables={"ldscript": ldscript, "map": mapfile},
     )
     n.build(rom, "rom", elf, implicit=["tools/gbafix.py"])
