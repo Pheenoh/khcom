@@ -6435,14 +6435,14 @@ void func_08080EB4(UnkStruct_08080268* w) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_08081210(UnkStruct_08080268* w) {
+    CardDisplayWork** q;
+    CardDisplayWork* p;
+    u64 flags;
     u8 i;
     u8 n;
 
-    n = 0;
-
-    for (i = 0; i < w->unk_B9; i++) {
+    for (i = 0, n = 0; i < w->unk_B9; i++) {
         if (w->unk_28[i]->unk_78 & 0x40) {
             n++;
         }
@@ -6455,12 +6455,15 @@ void func_08081210(UnkStruct_08080268* w) {
     gUnk_02039DD4->unk_0C0 = 0;
     gUnk_02039DD4->unk_0E4 = 0;
     w->unk_C4[1] = 0;
+    flags = gBtlWork->unk_068;
 
-    if (!(gBtlWork->unk_068 & 0x80)) {
+    if ((flags & 0x80) == 0) {
         gUnk_02039DD4->unk_0D0 = w->unk_B9;
 
         for (i = 0; i < w->unk_B9; i++) {
-            gUnk_02039DD4->unk_000[i] = w->unk_28[i];
+            q = gUnk_02039DD4->unk_000;
+            q += i;
+            *q = w->unk_28[i];
             w->unk_28[i]->unk_A0 = i * 4 + 50;
 
             if (w->unk_28[i]->unk_48->unk_1E & 2) {
@@ -6481,7 +6484,7 @@ void func_08081210(UnkStruct_08080268* w) {
             return;
         }
 
-        if (!(gBtlWork->unk_068 & 0x20)) {
+        if ((flags & 0x20) == 0) {
             func_08080EB4(w);
             gBtlWork->unk_068 |= 0x10000000;
         } else {
@@ -6509,10 +6512,17 @@ void func_08081210(UnkStruct_08080268* w) {
         }
     }
 
-    for (i = 0; i < w->unk_B9; i++) {
-        w->unk_1C[i] = w->unk_28[i];
-        w->unk_28[i]->unk_A1 = 5;
-        w->unk_28[i] = 0;
+    i = 0;
+
+    if (i < w->unk_B9) {
+        do {
+            p = 0;
+            n = i;
+            w->unk_1C[n] = w->unk_28[n];
+            w->unk_28[n]->unk_A1 = 5;
+            w->unk_28[n] = p;
+            i = ++n;
+        } while (i < w->unk_B9);
     }
 
     func_080819E8();
@@ -6522,9 +6532,6 @@ void func_08081210(UnkStruct_08080268* w) {
     func_0807AE78((UnkStruct_08078754*)w);
     w->unk_C4[1] = 0;
 }
-#else
-INCLUDE_ASM("card/func_08081210.s");
-#endif
 
 u8 func_080814BC(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
