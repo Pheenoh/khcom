@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "bg_animation_data.h"
+
 #include "worldinspect_resources.h"
 
 #include "graphics_state.h"
@@ -358,7 +360,6 @@ extern u8 gUnk_09A3C9DC[];
 extern u8 gUnk_099F1E7C[];
 extern u8 gUnk_09A310DC[];
 extern u8 gUnk_09A31ADC[];
-extern u8 gUnk_09EDABA0[];
 extern u8 gUnk_09A3CC5C[];
 extern u8 gUnk_0999B052[];
 extern u8 gUnk_09A3CC7C[];

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_CHKEFF_H
 #define GUARD_MODE_CHKEFF_H
 
+#include "bg_animation_data.h"
+
 #include "card_api.h"
 
 #include "fade.h"
@@ -32,7 +34,7 @@ extern u32 gFrameCounter;
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08EEE384[];
 extern u8 gUnk_08F683C4[];
-extern void* gUnk_09ED9A1C[];
+extern BgAnimationDef* gUnk_09ED9A1C[83];
 extern TaskDesc gTaskDescPrint;
 extern const char gUnk_081309E0[];
 extern const char gUnk_081309E8[];

@@ -7762,7 +7762,7 @@ void func_0806CD60(ContinueWork* p) {
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
 #endif
     BgAnimInit(2, 0x8000, 128);
-    BgAnimStart(gUnk_09EDA7E0, 120, 46);
+    BgAnimStart(&gUnk_09EDA7E0, 120, 46);
     BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
@@ -7829,7 +7829,7 @@ void func_0806CF04(ContinueWork* p) {
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
 #endif
     BgAnimInit(2, 0x8000, 128);
-    BgAnimStart(gUnk_09EDA7E0, 120, 46);
+    BgAnimStart(&gUnk_09EDA7E0, 120, 46);
     BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);

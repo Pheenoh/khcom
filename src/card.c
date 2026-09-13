@@ -24107,8 +24107,8 @@ u8 func_0809C2D0(u8* work, void* a) {
         *q = 1;
         SetBgPriority(2, 0);
         BgAnimInit(2, 0x8000, 0x80);
-        BgAnimStart(gUnk_09EDA9A8, 120, 60);
-        work[0x88] = BgAnimGetDuration(gUnk_09EDA9A8);
+        BgAnimStart(&gUnk_09EDA9A8, 120, 60);
+        work[0x88] = BgAnimGetDuration(&gUnk_09EDA9A8);
         work[0x89] = z;
         gBldCnt = 0x1B44;
         gBldAlpha = 0x1010;

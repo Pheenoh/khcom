@@ -1931,7 +1931,7 @@ void func_080FDC04(void) {
     case 0:
         if (GetKeysPressed() & 1) {
             BgAnimInit(2, 0x8000, 128);
-            BgAnimStart(gUnk_09EDABA0 + 0x18, 112, 126);
+            BgAnimStart(&gUnk_09EDABB8, 112, 126);
             SetBgPriority(2, 1);
             gBldCnt |= 0x1000;
             gUnk_020350EF = 1;
@@ -2378,7 +2378,7 @@ void mode_worldselect_0(void) {
 
     if (gUnk_020350EE == 0) {
         BgAnimInit(2, 0x8000, 128);
-        BgAnimStart(gUnk_09EDABA0, 120, 110);
+        BgAnimStart(&gUnk_09EDABA0, 120, 110);
         BgAnimSetLoopStartFrame(0);
         gUnk_020350EF = 1;
     }
@@ -2453,7 +2453,7 @@ void mode_worldselect_1(void) {
                 gGameState.progression.unk_82 |= 1;
                 func_080FE89C();
                 BgAnimInit(2, 0x8000, 128);
-                BgAnimStart(gUnk_09EDABA0, 120, 110);
+                BgAnimStart(&gUnk_09EDABA0, 120, 110);
                 BgAnimSetLoopStartFrame(0);
                 gUnk_020350EF = 1;
                 gUnk_020350C0 = 3;

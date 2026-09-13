@@ -2,6 +2,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "bg_animation_data.h"
+
 #include "chara_link_state.h"
 
 #include "msg_types.h"
@@ -378,7 +380,6 @@ extern s32 gUnk_090352E4[];
 extern u8 gUnk_09512AB8[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_09EE7834[];
-extern u8 gUnk_09EDA9A8[];
 extern void* gUnk_09EF1298[];
 extern u8 gUnk_08B25ADE[];
 extern u8 gUnk_093FB954[];

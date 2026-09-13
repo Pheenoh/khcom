@@ -238,6 +238,36 @@
       "pointer_offsets": [
         8
       ]
+    },
+    {
+      "name": "battle_bg_animation_defs",
+      "provenance": "90 canonical 24-byte BgAnimationDef objects; BgAnimStart consumers in btl_effect.c, btl2.c, card.c, bos5.c, msg.c and the 83-entry chkeff selector independently identify records. All scalar fields match every regional record and every chunks pointer has the same offset into the independently identified chunk pool.",
+      "us": "0x9eda558",
+      "targets": {
+        "jp": "0x9eb2844",
+        "eu": "0x9f57e0c"
+      },
+      "size": 2160,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "battle_bg_animation_chunks",
+      "provenance": "108 canonical 8-byte BgAnimationChunk records backing the 90 independently identified BgAnimationDef objects. The block starts at the end of the 94-entry EvtObjResTable and ends at gTaskNameEvtObj in every version. Scalar size/unk_06 fields are identical in all 108 records. Chunk pointers require a separately seeded base anchor; this span does not justify its own position.",
+      "us": "0x813b67c",
+      "targets": {
+        "jp": "0x813b6f8",
+        "eu": "0x8889b50"
+      },
+      "size": 864,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

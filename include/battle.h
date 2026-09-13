@@ -2,6 +2,8 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "bg_animation_data.h"
+
 #include "field_state.h"
 
 #include "fld_types.h"
@@ -232,83 +234,10 @@ extern const s16 gSineTable[];
 extern const u8 gUnk_08133E54[];
 extern u8 gUnk_08F6DA04[];
 extern u8 gUnk_08F69BC4[];
-extern u8 gUnk_09EDA5A0[];
-extern u8 gUnk_09EDA5B8[];
-extern u8 gUnk_09EDA600[];
-extern u8 gUnk_09EDA648[];
-extern u8 gUnk_09EDA780[];
-extern u8 gUnk_09EDA7E0[];
-extern u8 gUnk_09EDA810[];
-extern u8 gUnk_09EDA888[];
-extern u8 gUnk_09EDA900[];
-extern u8 gUnk_09EDA948[];
-extern u8 gUnk_09EDA960[];
-extern u8 gUnk_09EDA978[];
-extern u8 gUnk_09EDA990[];
-extern u8 gUnk_09EDA9D8[];
-extern u8 gUnk_09EDA9C0[];
-extern u8 gUnk_09EDA9F0[];
-extern u8 gUnk_09EDAA20[];
-extern u8 gUnk_09EDAA50[];
-extern u8 gUnk_09EDAA68[];
-extern u8 gUnk_09EDAA98[];
-extern u8 gUnk_09EDAAC8[];
-extern u8 gUnk_09EDAAE0[];
-extern u8 gUnk_09EDAB70[];
-extern u8 gUnk_09EDAC78[];
-extern u8 gUnk_09EDAC90[];
-extern u8 gUnk_09EDACA8[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescBtlPremire[];
 extern u8 gTaskDescBtlPop[];
 extern u8 gTaskDescBtlPopCb[];
-extern u8 gUnk_09EDABD0[];
-extern u8 gUnk_09EDABE8[];
-extern u8 gUnk_09EDAD20[];
-extern u8 gUnk_09EDAD50[];
-extern u8 gUnk_09EDADB0[];
-extern u8 gUnk_09EDAD80[];
-extern u8 gUnk_09EDA8E8[];
-extern u8 gUnk_09EDA930[];
-extern u8 gUnk_09EDA630[];
-extern u8 gUnk_09EDAD38[];
-extern u8 gUnk_09EDA678[];
-extern u8 gUnk_09EDAB88[];
-extern u8 gUnk_09EDA5D0[];
-extern u8 gUnk_09EDA5E8[];
-extern u8 gUnk_09EDA618[];
-extern u8 gUnk_09EDA720[];
-extern u8 gUnk_09EDAA38[];
-extern u8 gUnk_09EDA7F8[];
-extern u8 gUnk_09EDA858[];
-extern u8 gUnk_09EDA870[];
-extern u8 gUnk_09EDACF0[];
-extern u8 gUnk_09EDAD68[];
-extern u8 gUnk_09EDA6C0[];
-extern u8 gUnk_09EDA768[];
-extern u8 gUnk_09EDAA80[];
-extern u8 gUnk_09EDA6F0[];
-extern u8 gUnk_09EDAC00[];
-extern u8 gUnk_09EDAAB0[];
-extern u8 gUnk_09EDACC0[];
-extern u8 gUnk_09EDAD98[];
-extern u8 gUnk_09EDAB28[];
-extern u8 gUnk_09EDAB40[];
-extern u8 gUnk_09EDAA08[];
-extern u8 gUnk_09EDAC18[];
-extern u8 gUnk_09EDA8A0[];
-extern u8 gUnk_09EDA8B8[];
-extern u8 gUnk_09EDA8D0[];
-extern u8 gUnk_09EDA798[];
-extern u8 gUnk_09EDA7B0[];
-extern u8 gUnk_09EDA7C8[];
-extern u8 gUnk_09EDA570[];
-extern u8 gUnk_09EDAC60[];
-extern u8 gUnk_09EDAB10[];
-extern u8 gUnk_09EDA6D8[];
-extern u8 gUnk_09EDA558[];
-extern u8 gUnk_09EDA840[];
-extern u8 gUnk_09EDA828[];
 extern const EnemyBaseStats gUnk_08133E5C[];
 extern const BattleAttackDef gUnk_0813400C[];
 

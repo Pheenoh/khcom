@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "bg_animation_data.h"
+
 #include "field_state.h"
 
 #include "map_api.h"
@@ -283,7 +285,6 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09618118[];
 extern void* gUnk_09EE115C[];
 extern void* gUnk_09EE11A4[];
-extern u8 gUnk_09EDA918[];
 extern u8 gUnk_09EE1244[];
 extern u8 gUnk_09EE1278[];
 extern u8 gUnk_09EE12A4[];

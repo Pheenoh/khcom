@@ -66,6 +66,7 @@ TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 TARGET_ANCHORS = {
     "eu": {
+        0x0813B67C: 0x08889B50,
         0x08135EFC: 0x088843D0,
         0x09A10A3C: 0x09A60380,
         0x099A2B62: 0x099AF866,
@@ -248,6 +249,7 @@ TARGET_ANCHORS = {
         0x08C6A53A: 0x08C9C11E,
     },
     "jp": {
+        0x0813B67C: 0x0813B6F8,
         0x08135EFC: 0x08135F78,
         0x0999E69E: 0x09953126,
         0x09C8D47A: 0x09C678B4,

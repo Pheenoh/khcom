@@ -1,6 +1,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "bg_animation_data.h"
+
 #include "graphics_state.h"
 
 #include "obj.h"
@@ -404,7 +406,6 @@ extern u8 gUnk_090AB5B2[];
 extern u8 gUnk_090B3FBE[];
 extern u8 gUnk_090BC9CA[];
 extern u8 gUnk_090C51A6[];
-extern u8 gUnk_09EDA7E0[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_09614418[];
