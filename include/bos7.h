@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "staff_roll_scene_data.h"
+
 #include "animation_resource_data.h"
 
 #include "graphics_state.h"
@@ -333,28 +335,6 @@ typedef struct StaffRollLabelArg {
     s32 unk_08;
 } StaffRollLabelArg;
 
-typedef struct StaffRollScene {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    void* unk_10;
-    u16 unk_14;
-    u16 unk_16;
-    void* unk_18;
-    u16 unk_1C;
-    u16 unk_1E;
-    void* unk_20;
-    u16 unk_24;
-    u16 unk_26;
-    s32 unk_28;
-    s32 unk_2C;
-    u16 unk_30;
-    u16 unk_32;
-} StaffRollScene;
 
 typedef struct StaffRollTaskArg {
     u16 unk_00;
@@ -437,8 +417,6 @@ typedef struct StaffRollWork {
 
 extern s16 gSineTable[];
 extern u16 gUnk_09A4FE64[][2];
-extern StaffRollScene gUnk_09A538D8[];
-extern StaffRollScene gUnk_09A53D50[];
 extern u8 gUnk_09A4D234[];
 extern s32 gUnk_09A4FC20[];
 extern u8 gUnk_09A4F2B4[];

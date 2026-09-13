@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "provenance": {
+    "bounds": "func_08112C38 loads either literal-pool-linked StaffRollScene base and advances its scene index until the next index exceeds21, proving two22-record arrays of the canonical52-byte type.",
+    "regions": "The three native function pools establish both bases. All scalar fields agree in US/EU; JP changes only the existing coordinate fields unk_0C, unk_28 and unk_2C. Source preserves these native coordinates.",
+    "resources": "LoadBgTiles, LoadBgMap and LoadBgPalette consume three pointer/size groups per record. All65 unique full payloads match byte-for-byte across all three regions at the corresponding scene indices and all132 pointer votes agree."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "staff_roll_scene_data.c",
+          "section": ".data_staff_roll_scenes",
+          "address": "0x9a538d8",
+          "size": 2288,
+          "sha256": "5de00d82727c5866a26d083afb3c907aa502456a112e227bf11fd269e8afa87a",
+          "objects": [
+            {
+              "name": "gUnk_09A538D8",
+              "offset": 0,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            },
+            {
+              "name": "gUnk_09A53D50",
+              "offset": 1144,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "staff_roll_scene_data.c",
+          "section": ".data_staff_roll_scenes",
+          "address": "0x9a08768",
+          "size": 2288,
+          "sha256": "a16e5dd0664bcdeab29c3d94d034f3e399609381484d17e97ba38284277070dd",
+          "objects": [
+            {
+              "name": "gUnk_09A538D8",
+              "offset": 0,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            },
+            {
+              "name": "gUnk_09A53D50",
+              "offset": 1144,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "staff_roll_scene_data.c",
+          "section": ".data_staff_roll_scenes",
+          "address": "0x9ab1610",
+          "size": 2288,
+          "sha256": "362224a6f2e95a38e8e2f51c8939323b544d46911b26e8d2238e2cd69075b07d",
+          "objects": [
+            {
+              "name": "gUnk_09A538D8",
+              "offset": 0,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            },
+            {
+              "name": "gUnk_09A53D50",
+              "offset": 1144,
+              "size": 1144,
+              "consumer": [
+                "func_08112C38",
+                "next scene index >21 terminates"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

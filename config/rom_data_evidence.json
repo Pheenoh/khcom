@@ -31400,6 +31400,710 @@
         0,
         8
       ]
+    },
+    {
+      "name": "staff_roll_scene_0_resources",
+      "us": "0x9a538e8",
+      "targets": {
+        "jp": "0x9a08778",
+        "eu": "0x9ab1620"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_1_resources",
+      "us": "0x9a5391c",
+      "targets": {
+        "jp": "0x9a087ac",
+        "eu": "0x9ab1654"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_2_resources",
+      "us": "0x9a53950",
+      "targets": {
+        "jp": "0x9a087e0",
+        "eu": "0x9ab1688"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_3_resources",
+      "us": "0x9a53984",
+      "targets": {
+        "jp": "0x9a08814",
+        "eu": "0x9ab16bc"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_4_resources",
+      "us": "0x9a539b8",
+      "targets": {
+        "jp": "0x9a08848",
+        "eu": "0x9ab16f0"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_5_resources",
+      "us": "0x9a539ec",
+      "targets": {
+        "jp": "0x9a0887c",
+        "eu": "0x9ab1724"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_6_resources",
+      "us": "0x9a53a20",
+      "targets": {
+        "jp": "0x9a088b0",
+        "eu": "0x9ab1758"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_7_resources",
+      "us": "0x9a53a54",
+      "targets": {
+        "jp": "0x9a088e4",
+        "eu": "0x9ab178c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_8_resources",
+      "us": "0x9a53a88",
+      "targets": {
+        "jp": "0x9a08918",
+        "eu": "0x9ab17c0"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_9_resources",
+      "us": "0x9a53abc",
+      "targets": {
+        "jp": "0x9a0894c",
+        "eu": "0x9ab17f4"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_10_resources",
+      "us": "0x9a53af0",
+      "targets": {
+        "jp": "0x9a08980",
+        "eu": "0x9ab1828"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_11_resources",
+      "us": "0x9a53b24",
+      "targets": {
+        "jp": "0x9a089b4",
+        "eu": "0x9ab185c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_12_resources",
+      "us": "0x9a53b58",
+      "targets": {
+        "jp": "0x9a089e8",
+        "eu": "0x9ab1890"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_13_resources",
+      "us": "0x9a53b8c",
+      "targets": {
+        "jp": "0x9a08a1c",
+        "eu": "0x9ab18c4"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_14_resources",
+      "us": "0x9a53bc0",
+      "targets": {
+        "jp": "0x9a08a50",
+        "eu": "0x9ab18f8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_15_resources",
+      "us": "0x9a53bf4",
+      "targets": {
+        "jp": "0x9a08a84",
+        "eu": "0x9ab192c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_16_resources",
+      "us": "0x9a53c28",
+      "targets": {
+        "jp": "0x9a08ab8",
+        "eu": "0x9ab1960"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_17_resources",
+      "us": "0x9a53c5c",
+      "targets": {
+        "jp": "0x9a08aec",
+        "eu": "0x9ab1994"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_18_resources",
+      "us": "0x9a53c90",
+      "targets": {
+        "jp": "0x9a08b20",
+        "eu": "0x9ab19c8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_19_resources",
+      "us": "0x9a53cc4",
+      "targets": {
+        "jp": "0x9a08b54",
+        "eu": "0x9ab19fc"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_20_resources",
+      "us": "0x9a53cf8",
+      "targets": {
+        "jp": "0x9a08b88",
+        "eu": "0x9ab1a30"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_21_resources",
+      "us": "0x9a53d2c",
+      "targets": {
+        "jp": "0x9a08bbc",
+        "eu": "0x9ab1a64"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_22_resources",
+      "us": "0x9a53d60",
+      "targets": {
+        "jp": "0x9a08bf0",
+        "eu": "0x9ab1a98"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_23_resources",
+      "us": "0x9a53d94",
+      "targets": {
+        "jp": "0x9a08c24",
+        "eu": "0x9ab1acc"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_24_resources",
+      "us": "0x9a53dc8",
+      "targets": {
+        "jp": "0x9a08c58",
+        "eu": "0x9ab1b00"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_25_resources",
+      "us": "0x9a53dfc",
+      "targets": {
+        "jp": "0x9a08c8c",
+        "eu": "0x9ab1b34"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_26_resources",
+      "us": "0x9a53e30",
+      "targets": {
+        "jp": "0x9a08cc0",
+        "eu": "0x9ab1b68"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_27_resources",
+      "us": "0x9a53e64",
+      "targets": {
+        "jp": "0x9a08cf4",
+        "eu": "0x9ab1b9c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_28_resources",
+      "us": "0x9a53e98",
+      "targets": {
+        "jp": "0x9a08d28",
+        "eu": "0x9ab1bd0"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_29_resources",
+      "us": "0x9a53ecc",
+      "targets": {
+        "jp": "0x9a08d5c",
+        "eu": "0x9ab1c04"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_30_resources",
+      "us": "0x9a53f00",
+      "targets": {
+        "jp": "0x9a08d90",
+        "eu": "0x9ab1c38"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_31_resources",
+      "us": "0x9a53f34",
+      "targets": {
+        "jp": "0x9a08dc4",
+        "eu": "0x9ab1c6c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_32_resources",
+      "us": "0x9a53f68",
+      "targets": {
+        "jp": "0x9a08df8",
+        "eu": "0x9ab1ca0"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_33_resources",
+      "us": "0x9a53f9c",
+      "targets": {
+        "jp": "0x9a08e2c",
+        "eu": "0x9ab1cd4"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_34_resources",
+      "us": "0x9a53fd0",
+      "targets": {
+        "jp": "0x9a08e60",
+        "eu": "0x9ab1d08"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_35_resources",
+      "us": "0x9a54004",
+      "targets": {
+        "jp": "0x9a08e94",
+        "eu": "0x9ab1d3c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_36_resources",
+      "us": "0x9a54038",
+      "targets": {
+        "jp": "0x9a08ec8",
+        "eu": "0x9ab1d70"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_37_resources",
+      "us": "0x9a5406c",
+      "targets": {
+        "jp": "0x9a08efc",
+        "eu": "0x9ab1da4"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_38_resources",
+      "us": "0x9a540a0",
+      "targets": {
+        "jp": "0x9a08f30",
+        "eu": "0x9ab1dd8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_39_resources",
+      "us": "0x9a540d4",
+      "targets": {
+        "jp": "0x9a08f64",
+        "eu": "0x9ab1e0c"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_40_resources",
+      "us": "0x9a54108",
+      "targets": {
+        "jp": "0x9a08f98",
+        "eu": "0x9ab1e40"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_41_resources",
+      "us": "0x9a5413c",
+      "targets": {
+        "jp": "0x9a08fcc",
+        "eu": "0x9ab1e74"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_42_resources",
+      "us": "0x9a54170",
+      "targets": {
+        "jp": "0x9a09000",
+        "eu": "0x9ab1ea8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
+    },
+    {
+      "name": "staff_roll_scene_43_resources",
+      "us": "0x9a541a4",
+      "targets": {
+        "jp": "0x9a09034",
+        "eu": "0x9ab1edc"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        8,
+        16
+      ],
+      "provenance": "Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index."
     }
   ]
 }

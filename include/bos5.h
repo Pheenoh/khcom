@@ -1,3 +1,4 @@
+#include "boss_ga_data.h"
 #include "registration_data.h"
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
@@ -336,7 +337,6 @@ u8 func_080F9EDC(GaWork* work);
 u8 func_080FA644(GaWork* work);
 u8 func_080FABE4(GaWork* work);
 extern u8 gTaskDescBosMap[];
-extern u8 gUnk_0999202C[];
 extern u8 gUnk_09A3C89C[];
 void func_080FB930(MdWork* work, u16 id);
 void func_080FB8DC(MdWork* work, s32 state);

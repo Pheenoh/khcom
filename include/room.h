@@ -1,3 +1,4 @@
+#include "room_data.h"
 #include "map_text_data.h"
 #include "map_ui_data.h"
 #ifndef GUARD_ROOM_H
@@ -50,29 +51,13 @@ typedef struct RoomNameWork {
 
 
 extern s16 gSineTable[];
-extern s32 gUnk_0999204C[];
 extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
 
 
 
-typedef struct RoomTableEntry {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u16 unk_10;
-    u16 unk_12;
-    void* unk_14;
-    void* unk_18;
-    void* unk_1C;
-    u16 unk_20;
-    u16 unk_22;
-} RoomTableEntry;
 
 extern GaWork* gGaWork;
-extern s32 gUnk_09991F44[];
-extern RoomTableEntry gUnk_09991F54[];
 extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];

@@ -159,4 +159,16 @@ typedef struct PcGfxSet {
 
 extern PcGfxSet gUnk_09A4AC84[];
 
+typedef struct PcShot {
+    s32 unk_00;
+    s32 unk_04;
+    u16 unk_08;
+    u8 unk_0A[0x2];
+    s32 unk_0C;
+} PcShot;
+
+extern u16 gUnk_09A4C9EC[];
+extern s16 gUnk_09A4C9F2[];
+extern const PcShot gUnk_09A4C9F8[];
+
 #endif

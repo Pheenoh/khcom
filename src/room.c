@@ -305,8 +305,8 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         }
         e->unk_12C -= 0xA000;
     }
-    func_0801B37C(e, gUnk_09991F44, e->unk_124, e->unk_128, e->unk_12C);
-    func_0801C7FC(e, gUnk_09991F44[0], gUnk_09991F54[i].unk_00);
+    func_0801B37C(e, &gUnk_09991F44, e->unk_124, e->unk_128, e->unk_12C);
+    func_0801C7FC(e, gUnk_09991F44.unk_00, gUnk_09991F54[i].unk_00);
     e->unk_0A0 = 0x10;
 
     if (i == 0) {

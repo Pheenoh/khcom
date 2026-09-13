@@ -130,8 +130,6 @@ typedef struct PcWork {
 extern PcSpriteDef* gUnk_09EFBB18[];
 extern void* gUnk_09EFAB18[];
 extern u8 gUnk_09D69274[];
-extern u16 gUnk_09A4C9EC[];
-extern s16 gUnk_09A4C9F2[];
 
 s32 func_08109EA8(s32 a);
 u16 func_08109FF0(PcWork* work, s32 a);
@@ -437,15 +435,6 @@ void task_bos_pc_fld_2(PcFldWork* work);
 
 extern u8 gUnk_09C489E4[];
 
-typedef struct PcShot {
-    s32 unk_00;
-    s32 unk_04;
-    u16 unk_08;
-    u8 unk_0A[0x2];
-    s32 unk_0C;
-} PcShot;
-
-extern const PcShot gUnk_09A4C9F8[];
 
 PcAnimStep* func_08109EB0(PcWork* work);
 void func_0810A454(PcWork* work);
