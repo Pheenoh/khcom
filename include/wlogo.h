@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
@@ -466,10 +467,6 @@ typedef struct WlogoObjParam {
 } WlogoObjParam;
 
 extern s32 gUnk_0203AB38;
-extern TaskDesc gTaskDescBosTmBody;
-extern TaskDesc gTaskDescBosTmFoot;
-extern TaskDesc gTaskDescBosTmArm;
-extern TaskDesc gTaskDescBosTmTbl;
 extern TaskDesc gTaskDescBosMap;
 extern u8 gUnk_09619C68[];
 #include "intr.h"
@@ -547,27 +544,18 @@ extern u8 gUnk_096FAFA4[];
 extern u8 gUnk_096FB084[];
 extern u8 gUnk_096FB0A4[];
 extern u8 gUnk_096FB0C4[];
-extern TaskDesc gTaskDescWlogoHwtObj;
 extern WlogoWonEntry gUnk_09EF167C[];
 extern WlogoWonEntry gUnk_09EF1744[];
 extern s32 gUnk_09EF180C[];
-extern TaskDesc gTaskDescWlogoNvlMov;
-extern TaskDesc gTaskDescWlogoNvlObj;
 extern WlogoAgrEntry gUnk_09EF191C[];
-extern TaskDesc gTaskDescWlogoAgrSmoke;
-extern TaskDesc gTaskDescWlogoAgrFlash0;
-extern TaskDesc gTaskDescWlogoAgrFlash1;
 extern u8 gUnk_09EF1AEC[];
-extern TaskDesc gTaskDescWlogoPooObj;
 typedef struct WlogoTtMotion {
     s32 first[6];
     s32 second[6];
 } WlogoTtMotion;
 
 extern WlogoTtMotion gUnk_09EF1B08;
-extern TaskDesc gTaskDescWlogoTtObj;
 extern s16 gUnk_09EF1B68[][3];
-extern TaskDesc gTaskDescWlogoTtLine;
 extern s8 gUnk_09EF1C48[];
 extern s8 gUnk_09EF1C50[];
 extern u8 gUnk_09EF1C70[];
@@ -575,7 +563,6 @@ extern s16 gUnk_09EF1C7E[][2];
 extern s16 gUnk_09EF1CB6[][2];
 extern s16 gUnk_09EF1CEE[];
 extern u16 gUnk_09EF1D0A[];
-extern TaskDesc gTaskDescWlogoBksObj;
 extern u8 gUnk_09EF1D58[];
 extern s16 gUnk_09EF1D74[];
 extern WlogoTtEffStep gUnk_09EF1E14[];

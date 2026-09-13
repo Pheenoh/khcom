@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
@@ -307,7 +308,6 @@ extern void* gUnk_09A54218[][2];
 extern void* gUnk_09A54374[][4];
 extern s32 gUnk_09A542CC[];
 extern s32 gUnk_09A5430C[];
-extern u8 gTaskDescSrollBCrtn[];
 extern SrollShift gUnk_09A54C78[];
 extern SrollMask gUnk_09A54918[][8];
 extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);

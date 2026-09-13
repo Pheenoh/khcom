@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "sio_battle_options_state.h"
 #include "chara_link_state.h"
@@ -3774,3 +3775,85 @@ void task_wLogo_3(WLogoTaskWork* work) {
     TaskPoolDestroy(gUnk_02034C20);
     SetBgBlend(0, 0, 16);
 }
+
+const char gModeNameSioBtlConnect[] __attribute__((section(".rodata_registration_name_gModeSioBtlConnect"), aligned(1))) = "mode_sio_btl_connect";
+
+Mode gModeSioBtlConnect __attribute__((section(".data_registration_gModeSioBtlConnect"))) = {
+    gModeNameSioBtlConnect,
+    (void (*)(s32))mode_sio_btl_connect_0,
+    (void (*)(void))mode_sio_btl_connect_1,
+    (void (*)(void))mode_sio_btl_connect_2,
+};
+
+const char gModeNameSioBtlOption[] __attribute__((section(".rodata_registration_name_gModeSioBtlOption"), aligned(1))) = "mode_sio_btl_option";
+
+Mode gModeSioBtlOption __attribute__((section(".data_registration_gModeSioBtlOption"))) = {
+    gModeNameSioBtlOption,
+    (void (*)(s32))mode_sio_btl_option_0,
+    (void (*)(void))mode_sio_btl_option_1,
+    (void (*)(void))mode_sio_btl_option_2,
+};
+
+const char gModeNameSioBtlCardget[] __attribute__((section(".rodata_registration_name_gModeSioBtlCardget"), aligned(1))) = "mode_sio_btl_cardget";
+
+Mode gModeSioBtlCardget __attribute__((section(".data_registration_gModeSioBtlCardget"))) = {
+    gModeNameSioBtlCardget,
+    (void (*)(s32))mode_sio_btl_cardget_0,
+    (void (*)(void))mode_sio_btl_cardget_1,
+    (void (*)(void))mode_sio_btl_cardget_2,
+};
+
+#ifndef VERSION_EU
+const char gModeNameSioChgConnect[] __attribute__((section(".rodata_registration_name_gModeSioChgConnect"), aligned(1))) = "mode_sio_chg_connect";
+#endif
+
+#ifndef VERSION_EU
+Mode gModeSioChgConnect __attribute__((section(".data_registration_gModeSioChgConnect"))) = {
+    gModeNameSioChgConnect,
+    (void (*)(s32))mode_sio_chg_connect_0,
+    (void (*)(void))mode_sio_chg_connect_1,
+    (void (*)(void))mode_sio_chg_connect_2,
+};
+#endif
+
+#ifndef VERSION_EU
+const char gModeNameSioChgCard[] __attribute__((section(".rodata_registration_name_gModeSioChgCard"), aligned(1))) = "mode_sio_chg_card";
+#endif
+
+#ifndef VERSION_EU
+Mode gModeSioChgCard __attribute__((section(".data_registration_gModeSioChgCard"))) = {
+    gModeNameSioChgCard,
+    (void (*)(s32))mode_sio_chg_card_0,
+    (void (*)(void))mode_sio_chg_card_1,
+    (void (*)(void))mode_sio_chg_card_2,
+};
+#endif
+
+const char gModeNameSioError[] __attribute__((section(".rodata_registration_name_gModeSioError"), aligned(1))) = "mode_sioError";
+
+Mode gModeSioError __attribute__((section(".data_registration_gModeSioError"))) = {
+    gModeNameSioError,
+    (void (*)(s32))mode_sioError_0,
+    (void (*)(void))mode_sioError_1,
+    (void (*)(void))mode_sioError_2,
+};
+
+const char gModeNameWLogo[] __attribute__((section(".rodata_registration_name_gModeWLogo"), aligned(1))) = "mode_wLogo";
+
+Mode gModeWLogo __attribute__((section(".data_registration_gModeWLogo"))) = {
+    gModeNameWLogo,
+    (void (*)(s32))mode_wLogo_0,
+    (void (*)(void))mode_wLogo_1,
+    (void (*)(void))mode_wLogo_2,
+};
+
+const char gTaskNameWLogo[] __attribute__((section(".rodata_registration_name_gTaskDescWLogo"), aligned(1))) = "task_wLogo";
+
+TaskDesc gTaskDescWLogo __attribute__((section(".data_registration_gTaskDescWLogo"))) = {
+    gTaskNameWLogo,
+    (void (*)(void*, void*))task_wLogo_0,
+    task_wLogo_1,
+    (void (*)(void*))task_wLogo_2,
+    (void (*)(void*))task_wLogo_3,
+    0xC,
+};

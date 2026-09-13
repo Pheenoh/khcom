@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
@@ -149,17 +150,7 @@ extern u8 gUnk_0908C686[];
 extern void* gUnk_09EF12E8[];
 extern u8 gUnk_09EEFD9C[];
 extern u8 gUnk_09EEFD7C[];
-extern TaskDesc gTaskDescHanabira;
-extern TaskDesc gTaskDescHanabiraC;
-extern TaskDesc gTaskDescSmoke;
-extern TaskDesc gTaskDescExclamation;
-extern TaskDesc gTaskDescBalloon;
-extern TaskDesc gTaskDescQuestion;
 extern TaskDesc gUnk_09EE484C;
-extern TaskDesc gTaskDescGlowNose;
-extern TaskDesc gTaskDescGlowNose2;
-extern TaskDesc gTaskDescDown;
-extern TaskDesc gTaskDescTinkerbell;
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
@@ -343,23 +344,6 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09EEFCAC[];
 extern u8 gUnk_09EEFD38[];
-extern TaskDesc gTaskDescBosTm[];
-extern TaskDesc gTaskDescBosJf[];
-extern TaskDesc gTaskDescBosDsd[];
-extern TaskDesc gTaskDescBosBoogie[];
-extern TaskDesc gTaskDescBosUrsula[];
-extern TaskDesc gTaskDescBosGa[];
-extern TaskDesc gTaskDescBosPc[];
-extern TaskDesc gTaskDescBosLst[];
-extern TaskDesc gTaskDescMsgface[];
-extern TaskDesc gTaskDescMsgwin[];
-extern TaskDesc gTaskDescEventChara[];
-extern TaskDesc gTaskDescView[];
-extern TaskDesc gTaskDescEvSound[];
-extern TaskDesc gTaskDescEVBGEFFECT[];
-extern TaskDesc gTaskDescMapAnim[];
-extern TaskDesc gTaskDescEvMapObj[];
-extern TaskDesc gTaskDescPooMapanime[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
 #include "intr.h"

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
@@ -191,7 +192,6 @@ extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];
 extern vu32 gFrameCounter;
-extern Mode gModeSioError;
 
 extern u8 gUnk_09EF2F08[];
 

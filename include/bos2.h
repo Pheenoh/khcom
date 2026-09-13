@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
@@ -576,8 +577,6 @@ extern u16 gUnk_0961A63C[];
 extern u8 gUnk_096874E4[];
 extern u8 gUnk_096FB744[];
 extern u8 gUnk_09EF2E68[];
-extern u8 gTaskDescBosDsdMain[];
-extern u8 gTaskDescBosDsdMap[];
 extern void* gUnk_0961A7B0[];
 extern s16 gUnk_0961A89E[];
 extern s16 gUnk_0961A8B0[];
@@ -591,13 +590,11 @@ extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB304[];
 extern u8 gUnk_0962E838[];
 extern u8 gUnk_096FB484[];
-extern u8 gTaskDescBosDsdRock[];
 extern s16 gUnk_0961A7D0[];
 extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
 extern void* gUnk_09EF275C[][15];
 extern void* gUnk_09EF2D94[];
-extern u8 gTaskDescBosTmClb[];
 extern u8 gUnk_09652E84[];
 extern void* gUnk_09EF3950;
 extern void* gUnk_09EF3958;
@@ -609,7 +606,6 @@ extern u8 gUnk_09658C04[];
 extern u8 gUnk_09665C04[];
 extern u8 gUnk_096CAC64[];
 extern u8 gUnk_096FB2A4[];
-extern u8 gTaskDescBosDsdIta[];
 extern u8 gUnk_096983E4[];
 extern u8 gUnk_09EF3C34[];
 extern u8 gUnk_09EF3C20[];
@@ -643,18 +639,12 @@ extern u8 gUnk_096C4C64[];
 extern u8 gUnk_096C5464[];
 extern u8 gUnk_096C6464[];
 extern u8 gUnk_0961A668[];
-extern u8 gTaskDescBosJfMap[];
-extern u8 gTaskDescBosJfLamp[];
-extern u8 gTaskDescBosJfMajin[];
 
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];
-extern u8 gTaskDescBosDsdCircle[];
-extern u8 gTaskDescBosDsdEnergy1[];
 extern u8 gUnk_09699684[];
 extern u8 gUnk_096A3F44[];
 extern u8 gUnk_096A8BA4[];
-extern u8 gTaskDescBosDsdEnergy2[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern u16 gUnk_0961A710[][3];

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
@@ -346,19 +347,6 @@ extern u8 gUnk_08F68FC4[];
 extern u8 gUnk_08F690A4[];
 extern u8 gUnk_08F691E4[];
 extern u8 gUnk_096F5464[];
-extern TaskDesc gTaskDescWlogoMons;
-extern TaskDesc gTaskDescWlogoHwt;
-extern TaskDesc gTaskDescWlogoWon;
-extern TaskDesc gTaskDescWlogoAtl;
-extern TaskDesc gTaskDescWlogoNvl;
-extern TaskDesc gTaskDescWlogoCol;
-extern TaskDesc gTaskDescWlogoHlw;
-extern TaskDesc gTaskDescWlogoDil;
-extern TaskDesc gTaskDescWlogoAgr;
-extern TaskDesc gTaskDescWlogoTvt;
-extern TaskDesc gTaskDescWlogoPoo;
-extern TaskDesc gTaskDescWlogoTt;
-extern TaskDesc gTaskDescWlogoBks;
 extern u8 gUnk_08159E4A[];
 extern u8 gUnk_08159EC4[];
 extern u8 gUnk_0815A20C[];
@@ -433,18 +421,10 @@ extern void* gUnk_09EF1278[];
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
 extern void* gUnk_09EE8F48[];
-extern Mode gModeSioChgConnect;
-extern Mode gModeSioBtlConnect;
-extern Mode gModeSioBattle;
 extern SioWorldEntry gUnk_09EF1318[];
 extern u16 gUnk_09EF14C4[];
-extern Mode gModeSioBtlOption;
-extern Mode gModeSioChgCard;
-extern TaskDesc gTaskDescChgCardObj;
-extern Mode gModeSioError;
 extern u8* gWorldNames[];
 extern u8 gUnk_09EF15FC[];
-extern Mode gModeWLogo;
 extern SioChgCardPos gUnk_09EF150C[];
 extern void* gUnk_09EDE8CC[];
 extern void* gUnk_09EE981C[];

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "title_api.h"
 #include "pallet.h"
@@ -815,3 +816,47 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+const char gTaskNameTitleLogo[] __attribute__((section(".rodata_registration_name_gTaskDescTitleLogo"), aligned(1))) = "task_title_logo";
+
+TaskDesc gTaskDescTitleLogo __attribute__((section(".data_registration_gTaskDescTitleLogo"))) = {
+    gTaskNameTitleLogo,
+    (void (*)(void*, void*))task_title_logo_0,
+    task_title_logo_1,
+    (void (*)(void*))task_title_logo_2,
+    (void (*)(void*))task_title_logo_3,
+    0x54,
+};
+
+const char gTaskNameTitleObj[] __attribute__((section(".rodata_registration_name_gTaskDescTitleObj"), aligned(1))) = "task_title_obj";
+
+TaskDesc gTaskDescTitleObj __attribute__((section(".data_registration_gTaskDescTitleObj"))) = {
+    gTaskNameTitleObj,
+    (void (*)(void*, void*))task_title_obj_0,
+    task_title_obj_1,
+    (void (*)(void*))task_title_obj_2,
+    (void (*)(void*))task_title_obj_3,
+    0x64,
+};
+
+const char gTaskNameTitleMenu[] __attribute__((section(".rodata_registration_name_gTaskDescTitleMenu"), aligned(1))) = "task_title_menu";
+
+TaskDesc gTaskDescTitleMenu __attribute__((section(".data_registration_gTaskDescTitleMenu"))) = {
+    gTaskNameTitleMenu,
+    (void (*)(void*, void*))task_title_menu_0,
+    task_title_menu_1,
+    (void (*)(void*))task_title_menu_2,
+    (void (*)(void*))task_title_menu_3,
+    0x64,
+};
+
+const char gTaskNameTitleLumichange[] __attribute__((section(".rodata_registration_name_gTaskDescTitleLumichange"), aligned(1))) = "task_title_lumichange";
+
+TaskDesc gTaskDescTitleLumichange __attribute__((section(".data_registration_gTaskDescTitleLumichange"))) = {
+    gTaskNameTitleLumichange,
+    (void (*)(void*, void*))task_title_lumichange_0,
+    task_title_lumichange_1,
+    (void (*)(void*))task_title_lumichange_2,
+    (void (*)(void*))task_title_lumichange_3,
+    0xC,
+};

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
@@ -173,8 +174,6 @@ extern PcSpriteCmd gUnk_09A3DF34[];
 extern u8 gUnk_09D69274[];
 extern u16 gUnk_09A4C9EC[];
 extern s16 gUnk_09A4C9F2[];
-extern TaskDesc gTaskDescBosPcFlt;
-extern TaskDesc gTaskDescBosPcAcd;
 
 s32 func_08109EA8(s32 a);
 u16 func_08109FF0(PcWork* work, s32 a);
@@ -505,14 +504,12 @@ void func_0810A444(PcWork* work);
 void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
 void func_0810A51C(PcWork* work, TaskPool* pool);
 
-extern u8 gTaskDescBosPcFld[];
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];
 extern u8 gUnk_09D34A74[];
 extern u8 gUnk_09CB84B4[];
 extern u8 gUnk_09C448D2[];
 extern u8 gUnk_08F69BC4[];
-extern u8 gTaskDescBosLstFld[];
 extern u8 gUnk_09A4CF6C[];
 extern u8 gUnk_09A4CF5C[];
 extern u8 gUnk_09C53724[];
@@ -624,7 +621,6 @@ typedef struct LstSpawn {
     void* unk_14;
 } LstSpawn;
 
-extern u8 gTaskDescBosLstFal[];
 
 u8 func_0810ACB8(PcWork* work, s32 arg);
 
@@ -641,7 +637,6 @@ typedef struct LstSpawn2 {
     s32 unk_14;
 } LstSpawn2;
 
-extern u8 gTaskDescBosLstCtr[];
 
 typedef struct LstSpawn3 {
     s32 unk_00;
@@ -666,7 +661,6 @@ typedef struct LstSpawn4 {
     s32 unk_28;
 } LstSpawn4;
 
-extern u8 gTaskDescBosLstBit[];
 
 typedef struct LstSpawn5 {
     s32 unk_00;
@@ -680,7 +674,6 @@ extern u8 gUnk_09EFAE1C[];
 extern u8 gUnk_09EFADC4[];
 extern u8 gUnk_09EFAEAC[];
 extern u8 gUnk_09EFAE54[];
-extern u8 gTaskDescBosLstSnp[];
 
 void func_0810F064(BosLstWork* work, LstSub* p);
 

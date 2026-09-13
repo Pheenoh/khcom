@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "mode_debug_api.h"
 #include "m4a_song.h"
@@ -80,11 +81,7 @@ void mode_debug_0(void) {
 
 #ifdef VERSION_EU
 extern Mode gModeChkmov;
-extern Mode gModeStaffRoll;
 extern Mode gModeLang;
-extern Mode gModeJiminy;
-extern Mode gModeWorldselect;
-extern Mode gModeContinue;
 #endif
 
 void mode_debug_1(void) {

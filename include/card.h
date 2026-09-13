@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
@@ -90,8 +91,6 @@ typedef struct CardDisplayWork {
     u8 unk_A6;
     u8 unk_A7;
 } CardDisplayWork;
-extern u8 gTaskDescMapSelect[];
-extern u8 gTaskDescPrizeCardInit[];
 extern u8 gUnk_09EE75D8[];
 extern void** gUnk_09EE3CA0[];
 extern u16 gUnk_0903BFD4[];
@@ -131,22 +130,11 @@ typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
 extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
 extern vu16 gSystemFlags;
-extern Mode gModeSioChgCard;
 extern Mode gModeBattle;
-extern u8 gTaskDescPrizeCardInitBoss[];
-extern u8 gTaskDescPrizeBoss[];
-extern u8 gTaskDescDispCardname[];
-extern u8 gTaskDescVersion[];
 extern u8 gUnk_09EE7650[];
-extern u8 gTaskDescEVBGEFFECT[];
-extern u8 gTaskDescWorldSelBefore[];
-extern u8 gTaskDescREVCOUNT[];
-extern u8 gTaskDescScrollbar[];
 extern u8 gUnk_09EE77A4[];
 extern u8 gUnk_09EE77BC[];
 extern u8 gUnk_09EE781C[];
-extern u8 gTaskDescHCEffectName[];
-extern u8 gTaskDescLevelUp[];
 extern u8 gUnk_09402F78[];
 extern u8 gUnk_09614118[];
 extern u8 gUnk_096142F8[];
@@ -154,14 +142,10 @@ extern u8 gUnk_05000160[];
 extern u8 gUnk_0951B2B8[];
 extern u8 gUnk_09406F78[];
 extern void* gUnk_09EE7938[];
-extern u8 gTaskDescLVUPEFFECT[];
-extern u8 gTaskDescLvupLogo[];
-extern u8 gTaskDescCardEFFECT[];
 extern u8 gUnk_0908C686[];
 extern u8 gUnk_0908FCEE[];
 extern u8 gUnk_09613F78[];
 extern void* gUnk_09EF12E8[];
-extern u8 gTaskDescDeckexchange[];
 extern s32* gUnk_09EE275C[];
 
 typedef struct UnkStruct_0807FA0C {
@@ -1234,7 +1218,6 @@ extern u8 gUnk_09EDEE08[];
 extern u8 gUnk_09036300[];
 extern void* gUnk_09EE4724[];
 extern u8 gUnk_09EE778C[];
-extern u8 gTaskDescBosscard[];
 extern void* gUnk_09EF1198[];
 extern u8 gUnk_09EF1220[];
 extern u8 gUnk_09EF1224[];
@@ -1247,7 +1230,6 @@ extern u8 gUnk_09410058[];
 extern void* gUnk_09EE1538[];
 extern void* gUnk_09EE8F48[];
 extern u8 gUnk_09EE7FC0[];
-extern u8 gTaskDescMapcard[];
 extern void** gUnk_09EE75B8[];
 extern void* gUnk_09EE75C8[];
 extern void* gUnk_09EE7588[];
@@ -1279,9 +1261,6 @@ extern u8 gUnk_0962B8BE[];
 extern u8 gUnk_096FBA84[];
 extern void* gUnk_09EF38B4[];
 extern void* gUnk_09EF3894[];
-extern Mode gModeSioBtlConnect;
-extern Mode gModeMenuLoad;
-extern Mode gModeTitle;
 extern void* gUnk_09EF38BC[];
 extern void* gUnk_09EF38C8[];
 
@@ -1323,10 +1302,8 @@ extern u8 gUnk_08EF4384[];
 extern u8 gUnk_09EE7804[];
 extern u8 gUnk_09EE7560[];
 extern void* gUnk_09EE7578[];
-extern u8 gTaskDescReloadChildren[];
 extern u8 gUnk_0905F03C[];
 extern u8 gUnk_09EE4BB0[];
-extern u8 gTaskDescSELMAPEVKEY[];
 extern void* gUnk_09EE7698[];
 extern void* gUnk_09EE76C0[];
 extern void** gUnk_09EE76D0[];

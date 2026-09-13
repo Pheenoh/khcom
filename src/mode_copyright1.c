@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "macros.h"
 #include "mode_copyright1.h"
 
@@ -104,3 +105,12 @@ void mode_copyright1_2(void) {
 }
 
 ALIGN_ZERO(2);
+
+const char gModeNameCopyright1[] __attribute__((section(".rodata_registration_name_gModeCopyright1"), aligned(1))) = "mode_copyright1";
+
+Mode gModeCopyright1 __attribute__((section(".data_registration_gModeCopyright1"))) = {
+    gModeNameCopyright1,
+    (void (*)(s32))mode_copyright1_0,
+    (void (*)(void))mode_copyright1_1,
+    (void (*)(void))mode_copyright1_2,
+};

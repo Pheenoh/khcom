@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "task.h"
@@ -1249,3 +1250,73 @@ void func_080D5B30(void) {
     func_080C75A4(0, 90);
     gUnk_02034E98 = 9;
 }
+
+const char gTaskNameAllmapRoom[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapRoom"), aligned(1))) = "task_allmap_room";
+
+TaskDesc gTaskDescAllmapRoom __attribute__((section(".data_registration_gTaskDescAllmapRoom"))) = {
+    gTaskNameAllmapRoom,
+    (void (*)(void*, void*))task_allmap_room_0,
+    task_allmap_room_1,
+    (void (*)(void*))task_allmap_room_2,
+    (void (*)(void*))task_allmap_room_3,
+    0xA0,
+};
+
+const char gTaskNameAllmapCursor[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapCursor"), aligned(1))) = "task_allmap_cursor";
+
+TaskDesc gTaskDescAllmapCursor __attribute__((section(".data_registration_gTaskDescAllmapCursor"))) = {
+    gTaskNameAllmapCursor,
+    (void (*)(void*, void*))task_allmap_cursor_0,
+    task_allmap_cursor_1,
+    (void (*)(void*))task_allmap_cursor_2,
+    (void (*)(void*))task_allmap_cursor_3,
+    0x48,
+};
+
+const char gTaskNameAllmapRoomname[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapRoomname"), aligned(1))) = "task_allmap_roomname";
+
+TaskDesc gTaskDescAllmapRoomname __attribute__((section(".data_registration_gTaskDescAllmapRoomname"))) = {
+    gTaskNameAllmapRoomname,
+    (void (*)(void*, void*))task_allmap_roomname_0,
+    task_allmap_roomname_1,
+    (void (*)(void*))task_allmap_roomname_2,
+    (void (*)(void*))task_allmap_roomname_3,
+#ifdef VERSION_EU
+    0x130,
+#else
+    0xD0,
+#endif
+};
+
+const char gTaskNameAllmapBar[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapBar"), aligned(1))) = "task_allmap_bar";
+
+TaskDesc gTaskDescAllmapBar __attribute__((section(".data_registration_gTaskDescAllmapBar"))) = {
+    gTaskNameAllmapBar,
+    (void (*)(void*, void*))task_allmap_bar_0,
+    task_allmap_bar_1,
+    (void (*)(void*))task_allmap_bar_2,
+    (void (*)(void*))task_allmap_bar_3,
+    0x830,
+};
+
+const char gTaskNameAllmapDoorinfo[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapDoorinfo"), aligned(1))) = "task_allmap_doorinfo";
+
+TaskDesc gTaskDescAllmapDoorinfo __attribute__((section(".data_registration_gTaskDescAllmapDoorinfo"))) = {
+    gTaskNameAllmapDoorinfo,
+    (void (*)(void*, void*))task_allmap_doorinfo_0,
+    task_allmap_doorinfo_1,
+    (void (*)(void*))task_allmap_doorinfo_2,
+    (void (*)(void*))task_allmap_doorinfo_3,
+    0x118,
+};
+
+const char gTaskNameAllmapPusha[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapPusha"), aligned(1))) = "task_allmap_pusha";
+
+TaskDesc gTaskDescAllmapPusha __attribute__((section(".data_registration_gTaskDescAllmapPusha"))) = {
+    gTaskNameAllmapPusha,
+    (void (*)(void*, void*))task_allmap_pusha_0,
+    task_allmap_pusha_1,
+    (void (*)(void*))task_allmap_pusha_2,
+    (void (*)(void*))task_allmap_pusha_3,
+    0x30,
+};

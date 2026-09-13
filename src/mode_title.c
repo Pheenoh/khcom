@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "title_api.h"
 #include "macros.h"
 #include "mode_title.h"
@@ -344,3 +345,12 @@ void func_080D62A8(TitleLogoWork* work) {
     work->unk_50 = 0;
     gUnk_02034ECC = 0;
 }
+
+const char gModeNameTitle[] __attribute__((section(".rodata_registration_name_gModeTitle"), aligned(1))) = "mode_title";
+
+Mode gModeTitle __attribute__((section(".data_registration_gModeTitle"))) = {
+    gModeNameTitle,
+    (void (*)(s32))mode_title_0,
+    (void (*)(void))mode_title_1,
+    (void (*)(void))mode_title_2,
+};

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "macros.h"
 #include "monsgage.h"
 

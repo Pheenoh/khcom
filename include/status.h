@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
@@ -259,16 +260,6 @@ typedef struct StatusStocklistWork {
 
 extern s32 gUnk_0203C550;
 
-extern TaskDesc gTaskDescStatusTab;
-extern TaskDesc gTaskDescStatusSora;
-extern TaskDesc gTaskDescStatusDeckname;
-extern TaskDesc gTaskDescStatusCursor;
-extern TaskDesc gTaskDescStatusStocklist;
-extern TaskDesc gTaskDescStatusScrollcursor;
-extern TaskDesc gTaskDescStatusMeswindow;
-extern TaskDesc gTaskDescStatusMessage;
-extern TaskDesc gTaskDescStatusFriend;
-extern TaskDesc gTaskDescStockMesDisp;
 
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_097A2CF6[];
@@ -317,14 +308,8 @@ extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
 extern u8 gUnk_096FDF14[];
 extern u8 gUnk_096FDF24[];
-extern TaskDesc gTaskDescBosBoogieMap;
-extern TaskDesc gTaskDescBosBoogieSaku;
-extern TaskDesc gTaskDescBosBoogieMapanime;
 extern TaskDesc gTaskDescBosShadow;
 
-extern TaskDesc gTaskDescBosBoogieDisk;
-extern TaskDesc gTaskDescBosBoogieKnifereader;
-extern TaskDesc gTaskDescBosBoogieKaihuku;
 
 u8 func_080D7B94(void);
 void func_080D764C(StatusWork* work);
@@ -370,7 +355,6 @@ typedef struct BoogiePalette {
 } BoogiePalette;
 
 extern s16 gSineTable[];
-extern TaskDesc gTaskDescBosBoogieDice;
 u8 func_08083920(void);
 void func_080D8F14(BoogieWork* work);
 u8 func_080D9058(s32* x, s32* y);

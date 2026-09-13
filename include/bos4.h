@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
@@ -381,7 +382,6 @@ extern u8 gUnk_09799CBA[];
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_09EF680C[];
 extern u8 gUnk_09EF67FC[];
-extern u8 gTaskDescBosUrsulaBubbleSingle[];
 extern u8 gUnk_09EF5190[];
 extern u8 gUnk_09EF5100[];
 extern u8 gUnk_09EF5160[];
@@ -603,25 +603,18 @@ extern const char gUnk_0984B830[];
 extern const char gUnk_0984B834[];
 extern void (*const gUnk_09EF69A8[])(MapChkWork* p);
 extern const u8 gUnk_0984B458[][8];
-extern u8 gModeMapDbg[];
 void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 extern s16 gSineTable[];
 void task_bos_ursula_0(UrsulaWork* work);
-extern u8 gTaskDescBosUrsulaMap[];
 extern u8 gUnk_096FE14C[];
-extern u8 gTaskDescBosUrsulaBorder[];
 extern u8 gUnk_096FE13C[];
-extern u8 gTaskDescBosUrsulaTako[];
-extern u8 gTaskDescBosUrsulaMapanime[];
-extern u8 gTaskDescBosUrsulaBacktako[];
 extern u8 gUnk_096FE098[];
 extern u8 gUnk_09EF6824[];
 extern u8 gUnk_0979A426[];
 extern u8 gUnk_09EF6844[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
-extern u8 gTaskDescBosBoogieExplosiondice[];
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work);
 u32 func_080D9A90(void);
@@ -634,7 +627,6 @@ extern u8 gUnk_09EF6798[];
 u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
 
 extern UnkStruct_096FE034 gUnk_096FE260;
-extern u8 gTaskDescBosUrsulaBubble[];
 
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg);
 extern u8 gUnk_0979C44E[];
@@ -683,7 +675,6 @@ extern u8 gUnk_0979D090[];
 extern u8 gUnk_0979D8B8[];
 s32 strcmp(const char* a, const char* b);
 extern const char gUnk_096FE2F4[];
-extern u8 gTaskDescBosUrsulaThunder[];
 extern UnkStruct_096FE034 gUnk_096FE2C0;
 void func_080DA42C(BoogieDiceWork* work);
 extern u8 gUnk_096FDF7C[];
@@ -696,7 +687,6 @@ extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09EF6820[];
 extern u8 gUnk_09EF681C[];
 void func_080DB468(BoogieKnifereaderWork* work);
-extern u8 gTaskDescBosBoogieKnife[];
 void task_bos_ursula_backtako_2(UrsulaBacktakoWork* work);
 void func_080DC9DC(s32* a, s32* b, s32* c, UrsulaTakoWork* d);
 extern const u8 gUnk_0984B844[];

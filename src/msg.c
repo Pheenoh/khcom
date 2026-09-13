@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -8305,7 +8306,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     TaskPoolInit(&work->unk_00, t->unk_00 + 8);
     TaskPoolInit(&work->unk_14, 1);
-    work->unk_28 = (u32)TaskCreate(&work->unk_14, gTaskDescMsgwin, &work->unk_2C);
+    work->unk_28 = (u32)TaskCreate(&work->unk_14, &gTaskDescMsgwin, &work->unk_2C);
 
     for (j = 0; j < t->unk_00; j++) {
         arg.unk_00 = work->unk_2C;
@@ -8317,19 +8318,19 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             gUnk_02039DC8->unk_60 = arg.unk_02;
         }
 
-        TaskCreate(&work->unk_00, gTaskDescEventChara, &arg);
+        TaskCreate(&work->unk_00, &gTaskDescEventChara, &arg);
     }
 
-    TaskCreate(&work->unk_00, gTaskDescView, &work->unk_2C);
-    TaskCreate(&work->unk_00, gTaskDescEvSound, &work->unk_2C);
-    TaskCreate(&work->unk_00, gTaskDescEVBGEFFECT, &work->unk_2C);
+    TaskCreate(&work->unk_00, &gTaskDescView, &work->unk_2C);
+    TaskCreate(&work->unk_00, &gTaskDescEvSound, &work->unk_2C);
+    TaskCreate(&work->unk_00, &gTaskDescEVBGEFFECT, &work->unk_2C);
 
 #ifdef VERSION_EU
     if (work->unk_3D != 0) {
 #else
     if (flag != 0) {
 #endif
-        TaskCreate(&work->unk_00, gTaskDescMapAnim, NULL);
+        TaskCreate(&work->unk_00, &gTaskDescMapAnim, NULL);
     }
 
 #ifndef VERSION_EU
@@ -8344,12 +8345,12 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     if (u != NULL) {
         if (u->unk_28 != 0) {
-            TaskCreate(&work->unk_00, gTaskDescEvMapObj, &work->unk_2C);
+            TaskCreate(&work->unk_00, &gTaskDescEvMapObj, &work->unk_2C);
         }
 
         if ((u->unk_2D & 1) != 0) {
             func_080CA35C();
-            TaskCreate(&work->unk_00, gTaskDescPooMapanime, NULL);
+            TaskCreate(&work->unk_00, &gTaskDescPooMapanime, NULL);
         }
     }
 
@@ -8529,7 +8530,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_02C = p->unk_000->unk_08;
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
-        TaskCreate(&p->unk_010, gTaskDescBosTm, p->unk_028);
+        TaskCreate(&p->unk_010, &gTaskDescBosTm, p->unk_028);
         break;
     case 96:
         gBtlWork = EwramAlloc(464);
@@ -8546,7 +8547,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, NULL);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosPc, NULL);
         break;
     case 97:
         gBtlWork = EwramAlloc(464);
@@ -8563,7 +8564,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, &p->unk_010);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosPc, &p->unk_010);
         p->unk_1B4 = 0;
         gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
         gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
@@ -8588,7 +8589,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 368, 480, 512);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosLst, &p->unk_010);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosLst, &p->unk_010);
         break;
     case 101:
         SetupBg(0, 0, 24, 0);
@@ -8614,7 +8615,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_030 = 0x15E00;
         p->unk_034 = -0x3800;
         SetBattleBounds(420, 612, 328, 384);
-        TaskCreate(&p->unk_010, gTaskDescBosJf, p->unk_028);
+        TaskCreate(&p->unk_010, &gTaskDescBosJf, p->unk_028);
         break;
     case 103:
         SetupBg(0, 0, 24, 0);
@@ -8645,7 +8646,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
         SetBattleBounds(0, 256, 328, 424);
-        TaskCreate(&p->unk_010, gTaskDescBosDsd, p->unk_028);
+        TaskCreate(&p->unk_010, &gTaskDescBosDsd, p->unk_028);
         break;
     case 98:
         SetupBg(0, 0, 24, 0);
@@ -8661,7 +8662,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, gTaskDescBosBoogie, NULL);
+        TaskCreate(&p->unk_010, &gTaskDescBosBoogie, NULL);
         gBtlWork->unk_0B3 = 5;
         break;
     case 99:
@@ -8678,7 +8679,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, gTaskDescBosUrsula, NULL);
+        TaskCreate(&p->unk_010, &gTaskDescBosUrsula, NULL);
         gBtlWork->unk_0B3 = 5;
         break;
     case 104:
@@ -8695,7 +8696,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, gTaskDescBosGa, (void*)1);
+        TaskCreate(&p->unk_010, &gTaskDescBosGa, (void*)1);
         gBtlWork->unk_0B3 = 5;
         break;
     default:
@@ -12077,7 +12078,7 @@ void func_08073E0C(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c) {
     p->positionIndex = c;
     p->command = 0;
     p->unk_03 = 0;
-    TaskCreate(pool, gTaskDescMsgface, p);
+    TaskCreate(pool, &gTaskDescMsgface[0], p);
 }
 
 void func_08073E34(MsgFaceControl* p, u8 a, u8 b, u8 c) {
@@ -12805,3 +12806,83 @@ s16 func_08075064(u8 a) {
     }
     return n;
 }
+
+const char gTaskNameEventSeq[] __attribute__((section(".rodata_registration_name_gTaskDescEventSeq"), aligned(1))) = "event_seq";
+
+TaskDesc gTaskDescEventSeq __attribute__((section(".data_registration_gTaskDescEventSeq"))) = {
+    gTaskNameEventSeq,
+    (void (*)(void*, void*))event_seq_0,
+    event_seq_1,
+    (void (*)(void*))event_seq_2,
+    (void (*)(void*))event_seq_3,
+#ifdef VERSION_EU
+    0x40,
+#else
+    0x3C,
+#endif
+};
+
+const char gTaskNameEventChara[] __attribute__((section(".rodata_registration_name_gTaskDescEventChara"), aligned(1))) = "event_chara";
+
+TaskDesc gTaskDescEventChara __attribute__((section(".data_registration_gTaskDescEventChara"))) = {
+    gTaskNameEventChara,
+    (void (*)(void*, void*))event_chara_0,
+    event_chara_1,
+    (void (*)(void*))event_chara_2,
+    (void (*)(void*))event_chara_3,
+    0x1BC,
+};
+
+const char gTaskNameMsgwin[] __attribute__((section(".rodata_registration_name_gTaskDescMsgwin"), aligned(1))) = "msgwin";
+
+TaskDesc gTaskDescMsgwin __attribute__((section(".data_registration_gTaskDescMsgwin"))) = {
+    gTaskNameMsgwin,
+    (void (*)(void*, void*))func_08072D98,
+    func_08072EAC,
+    (void (*)(void*))func_08073238,
+    (void (*)(void*))func_08073274,
+    0x44,
+};
+
+const char gTaskNameMsgface[] __attribute__((section(".rodata_registration_name_gTaskDescMsgface"), aligned(1))) = "msgface";
+
+const char gTaskNameMsgwait[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwait"), aligned(1))) = "msgwait";
+const char gTaskNameMsgwaitYesno[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwaitYesno"), aligned(1))) = "msgwait_yesno";
+
+TaskDesc gTaskDescMsgface[3] __attribute__((section(".data_registration_gTaskDescMsgface"))) = {
+    {
+        gTaskNameMsgface,
+        (void (*)(void*, void*))msgface_0,
+        msgface_1,
+        (void (*)(void*))msgface_2,
+        (void (*)(void*))msgface_3,
+        0x3C,
+    },
+    {
+        gTaskNameMsgwait,
+        (void (*)(void*, void*))msgwait_0,
+        msgwait_1,
+        (void (*)(void*))msgwait_2,
+        (void (*)(void*))msgwait_3,
+        0x108,
+    },
+    {
+        gTaskNameMsgwaitYesno,
+        (void (*)(void*, void*))msgwait_yesno_0,
+        msgwait_yesno_1,
+        (void (*)(void*))msgwait_yesno_2,
+        (void (*)(void*))msgwait_yesno_3,
+        0x108,
+    },
+};
+
+const char gTaskNameView[] __attribute__((section(".rodata_registration_name_gTaskDescView"), aligned(1))) = "view";
+
+TaskDesc gTaskDescView __attribute__((section(".data_registration_gTaskDescView"))) = {
+    gTaskNameView,
+    (void (*)(void*, void*))view_0,
+    view_1,
+    (void (*)(void*))view_2,
+    (void (*)(void*))view_3,
+    0x15C,
+};

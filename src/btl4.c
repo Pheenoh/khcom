@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "macros.h"
 #include "btl4.h"
@@ -840,3 +841,47 @@ void func_0805DB04(BtlEffect* p, u16 b, u16 c, u16 d) {
 void func_0805DB28(BtlEffect* p) {
     p->unk_00 &= ~4;
 }
+
+const char gTaskNameBtlPopCb[] __attribute__((section(".rodata_registration_name_gTaskDescBtlPopCb"), aligned(1))) = "task_btl_pop_cb";
+
+TaskDesc gTaskDescBtlPopCb __attribute__((section(".data_registration_gTaskDescBtlPopCb"))) = {
+    gTaskNameBtlPopCb,
+    (void (*)(void*, void*))task_btl_pop_cb_0,
+    task_btl_pop_cb_1,
+    (void (*)(void*))task_btl_pop_cb_2,
+    (void (*)(void*))task_btl_pop_cb_3,
+    0x1C,
+};
+
+const char gTaskNameBtlExp[] __attribute__((section(".rodata_registration_name_gTaskDescBtlExp"), aligned(1))) = "task_btl_exp";
+
+TaskDesc gTaskDescBtlExp __attribute__((section(".data_registration_gTaskDescBtlExp"))) = {
+    gTaskNameBtlExp,
+    (void (*)(void*, void*))task_btl_exp_0,
+    task_btl_exp_1,
+    (void (*)(void*))task_btl_exp_2,
+    (void (*)(void*))task_btl_exp_3,
+    0x4C,
+};
+
+const char gTaskNameBtlVslockon[] __attribute__((section(".rodata_registration_name_gTaskDescBtlVslockon"), aligned(1))) = "task_btl_vslockon";
+
+TaskDesc gTaskDescBtlVslockon __attribute__((section(".data_registration_gTaskDescBtlVslockon"))) = {
+    gTaskNameBtlVslockon,
+    (void (*)(void*, void*))task_btl_vslockon_0,
+    task_btl_vslockon_1,
+    (void (*)(void*))task_btl_vslockon_2,
+    (void (*)(void*))task_btl_vslockon_3,
+    0x24,
+};
+
+const char gTaskNameBtlHpoth[] __attribute__((section(".rodata_registration_name_gTaskDescBtlHpoth"), aligned(1))) = "task_btl_hpoth";
+
+TaskDesc gTaskDescBtlHpoth __attribute__((section(".data_registration_gTaskDescBtlHpoth"))) = {
+    gTaskNameBtlHpoth,
+    (void (*)(void*, void*))task_btl_hpoth_0,
+    task_btl_hpoth_1,
+    (void (*)(void*))task_btl_hpoth_2,
+    (void (*)(void*))task_btl_hpoth_3,
+    0x6C,
+};

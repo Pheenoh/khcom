@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
@@ -138,34 +139,8 @@ extern PoohAnim gUnk_09EF3FD8[];
 extern PoohAnim gUnk_09EF3FE8[];
 extern PoohAnim gUnk_09EF3FF8[];
 extern PoohAnim gUnk_09EF4048[][5];
-extern Mode gModeSioBtlConnect;
 extern const char* const gUnk_09EF34F0[];
 extern const char* const gUnk_09EF3504[];
-extern TaskDesc gTaskDescWLogo;
-extern TaskDesc gTaskDescPooPooh;
-extern TaskDesc gTaskDescPooMap;
-extern TaskDesc gTaskDescPooSora;
-extern TaskDesc gTaskDescPooGauge;
-extern TaskDesc gTaskDescPooPiglet;
-extern TaskDesc gTaskDescPooEeyore;
-extern TaskDesc gTaskDescPooRabbit;
-extern TaskDesc gTaskDescPooTigger;
-extern TaskDesc gTaskDescPooTiggerroo;
-extern TaskDesc gTaskDescPooRoo;
-extern TaskDesc gTaskDescPooOwl;
-extern TaskDesc gTaskDescPooRooFootmark;
-extern TaskDesc gTaskDescPooEeyoretail;
-extern TaskDesc gTaskDescPooHoneycomb;
-extern TaskDesc gTaskDescPooVegetable;
-extern TaskDesc gTaskDescPooWagon;
-extern TaskDesc gTaskDescPooWagonwheel;
-extern TaskDesc gTaskDescPooBee;
-extern TaskDesc gTaskDescPooBeeAfterEvent;
-extern TaskDesc gTaskDescPooCabbageborn;
-extern TaskDesc gTaskDescPooBalloon;
-extern TaskDesc gTaskDescPooPrize;
-extern TaskDesc gTaskDescPooRabbitAfterEvent;
-extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
 void mode_sio_dbg_flg_0(s32 arg);
 void mode_sio_dbg_flg_1(void);

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
@@ -171,7 +172,6 @@ extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
 extern void* gUnk_09EE8F48[];
-extern u8 gTaskDescMsShopHosi[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE9894[];
 extern s16 gSineTable[];
@@ -187,7 +187,6 @@ extern u8 gUnk_09A3DB7C[];
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
-extern Mode gModeMsTop;
 extern MooglePackSpriteDef gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
 extern u8 gUnk_09A1251C[];

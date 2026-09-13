@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
@@ -319,11 +320,9 @@ extern u8 gUnk_09A3C99C[];
 extern u8 gUnk_099E367C[];
 extern u8 gUnk_09EF9BC0[];
 extern u8 gUnk_09EF9BB0[];
-extern u8 gTaskDescBosMdFire[];
 void task_bos_md_dai_2(MdDaiWork* work);
 extern u8 gUnk_09999E0C[];
 extern u8 gUnk_09999E1C[];
-extern u8 gTaskDescBosMdHahen[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
 u8 func_080F854C(GaWork* work);
@@ -411,11 +410,9 @@ void func_080FE89C(void);
 
 void func_080FE900(void);
 extern void* gUnk_09EF8F24[];
-extern u8 gTaskDescBosMdMap[];
 extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099920D8[];
-extern u8 gTaskDescBosMdDai[];
 void func_080FBA4C(MdWork* work);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
@@ -1094,7 +1095,6 @@ extern const PooPalStep gUnk_096FDB40[];
 extern PooSpot gUnk_096FC05C[];
 extern PooSpot gUnk_096FC2F0[];
 
-extern TaskDesc gTaskDescPooShadowscale;
 
 extern u16* gUnk_09EF4208[];
 extern u16* gUnk_09EF4448[];
@@ -1102,7 +1102,6 @@ extern u16* gUnk_09EF4688[];
 
 extern u8 gUnk_096FD3E8[];
 extern const s32 gUnk_096FD43C[];
-extern TaskDesc gTaskDescPooPile;
 extern u8 gUnk_097561D4[];
 extern u8 gUnk_09755F34[];
 extern const PooAnimDesc gUnk_096FD47C[];
@@ -1112,8 +1111,6 @@ extern u8 gUnk_097565FC[];
 extern u8 gUnk_097565E8[];
 extern u8 gUnk_09EF602C[];
 extern u8 gUnk_09EF6024[];
-extern TaskDesc gTaskDescPooTanpopo;
-extern TaskDesc gTaskDescPooLeaf;
 extern u8 gUnk_09849D58[];
 extern u8 gUnk_09849C58[];
 extern u8 gUnk_09849D38[];
@@ -1149,7 +1146,6 @@ extern u8 gUnk_09849DB8[];
 extern u8 gUnk_09756E28[];
 extern u8 gUnk_09EF5EF8[];
 extern u8 gUnk_09EF5FA0[];
-extern TaskDesc gTaskDescPooShadowdodai;
 extern u8 gUnk_09758B9C[];
 extern u8 gUnk_09758BF4[];
 extern u8 gUnk_09EF60AC[];
@@ -1158,13 +1154,11 @@ extern u8 gUnk_09EF5AD0[];
 extern u8 gUnk_09EF5AE0[];
 extern u8 gUnk_09EF5E38[];
 extern u8 gUnk_09EF5E44[];
-extern TaskDesc gTaskDescPooShadow;
 extern u8 gUnk_09EF5DC4[];
 extern u8 gUnk_09EF5E24[];
 extern u8 gUnk_09746EDC[];
 extern u8 gUnk_09EF5EA8[];
 extern u8 gUnk_09EF5EE4[];
-extern TaskDesc gTaskDescPooOwlballoon;
 extern u8 gUnk_09EF610C[];
 extern u8 gUnk_09EF612C[];
 extern u8 gUnk_09EF5FF8[];
@@ -1176,10 +1170,7 @@ extern u8 gUnk_09756C78[];
 extern u8 gUnk_09756D86[];
 extern u8 gUnk_09756D90[];
 extern const u16 gUnk_096FD850[];
-extern TaskDesc gTaskDescPooCabbage;
-extern TaskDesc gTaskDescPooMapobjhit;
 extern const PooMapObjHitDesc gUnk_096FD8A4[];
-extern TaskDesc gTaskDescPooButterfly;
 extern const PooZzzDesc gUnk_09EF4C88[];
 extern const PooStumpDesc gUnk_096FCAF4[];
 extern const PooAnimDesc gUnk_096FD50C[];
@@ -1246,13 +1237,11 @@ extern u8 gUnk_09849A98[];
 extern u8 gUnk_09EF5904[];
 extern u8 gUnk_09EF5844[];
 extern const s16 gSineTable[];
-extern TaskDesc gTaskDescPooMapbee;
 extern u8 gUnk_09EF6158[];
 extern u8 gUnk_097606E8[];
 extern u8 gUnk_09849E38[];
 extern u8 gUnk_09EF6200[];
 extern u8 gUnk_09849BB8[];
-extern TaskDesc gTaskDescPooMapbutterfly;
 extern u8 gUnk_096FD400[];
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
@@ -1470,10 +1459,6 @@ u8 task_poo_cabbage_1(PooCabbageWork* w);
 void task_poo_cabbage_2(PooCabbageWork* w);
 void task_poo_pooh_0(PooWork* w);
 extern const u16 gUnk_096FD86E[];
-extern TaskDesc gTaskDescPooFreeballoon;
-extern TaskDesc gTaskDescPooRoo;
-extern TaskDesc gTaskDescPooZzz;
-extern TaskDesc gTaskDescPooMapanime;
 extern PooMapBgDesc gUnk_096FC6E0;
 extern u8 gUnk_098A5C90[];
 extern u8 gUnk_098A5C9A[];
@@ -1481,7 +1466,6 @@ extern u8 gUnk_098A5CA4[];
 extern u8 gUnk_098A5CAE[];
 extern u8 gUnk_098A5CB8[];
 extern u8 gUnk_098A5CF4[];
-extern TaskDesc gTaskDescPooSpark;
 extern u8 gUnk_08F683A4[];
 extern TaskDesc gTaskDescFldShadow;
 void func_080C8AE0(PooWork* w);

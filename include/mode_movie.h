@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_MOVIE_H
 #define GUARD_MODE_MOVIE_H
 
@@ -56,7 +57,6 @@ extern u8 gUnk_0886AC70[];
 extern u8 sMovieHeapName[];
 extern u8 gUnk_08F69C04[];
 extern u8 gUnk_09614718[];
-extern u8 gModeStaffRoll[];
 
 s32 GetIwramHeapStart(void);
 s32 GetIwramHeapSize(void);

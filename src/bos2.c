@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "chara_api.h"
 #include "display.h"
 #include "pallet.h"
@@ -825,7 +826,7 @@ void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a) {
     p->unk_00 = 0;
     p->unk_04 = 1;
     p->unk_0C = 0;
-    TaskCreate(pool, gTaskDescBosTmClb, p);
+    TaskCreate(pool, &gTaskDescBosTmClb, p);
 }
 
 void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b) {
@@ -1923,9 +1924,9 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     TaskPoolInit(&work->unk_254, 4);
 
     if (work->unk_24C & 8) {
-        TaskCreate(&work->unk_254, gTaskDescBosJfMap, &gUnk_0203AC90);
+        TaskCreate(&work->unk_254, &gTaskDescBosJfMap, &gUnk_0203AC90);
     } else {
-        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosJfMap, &gUnk_0203AC90);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosJfMap, &gUnk_0203AC90);
     }
 
     work->unk_268 = 0;
@@ -1956,7 +1957,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_234 = -0x3800;
         func_0801B37C(&work->unk_000, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
         work->unk_000.unk_034 |= 4;
-        TaskCreate(&work->unk_254, gTaskDescBosJfMajin, work);
+        TaskCreate(&work->unk_254, &gTaskDescBosJfMajin, work);
     } else {
         work->unk_220 = 0x29600;
         work->unk_224 = 0x15400;
@@ -1983,8 +1984,8 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         func_0801C298(0, 1);
         func_0801BCC0(0x23E00, 0x16800, -0x4000);
         func_0801C274(0x20600, 0x16800, -0x800);
-        TaskCreate(&work->unk_254, gTaskDescBosJfLamp, work);
-        TaskCreate(&work->unk_254, gTaskDescBosJfMajin, work);
+        TaskCreate(&work->unk_254, &gTaskDescBosJfLamp, work);
+        TaskCreate(&work->unk_254, &gTaskDescBosJfMajin, work);
         q = gBtlWork;
         q->unk_0CC = sub->unk_004;
         q->unk_0D0 = sub->unk_008;
@@ -4752,9 +4753,9 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
     TaskPoolInit(&work->unk_37C, 4);
 
     if (work->unk_358 & 16) {
-        TaskCreate(&work->unk_37C, gTaskDescBosDsdMap, 0);
+        TaskCreate(&work->unk_37C, &gTaskDescBosDsdMap, 0);
     } else {
-        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosDsdMap, work);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosDsdMap, work);
     }
 
     work->unk_390 = 0;
@@ -4789,7 +4790,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
         p2 = &w->unk_000[2];
         func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, 0);
-        TaskCreate(&w->unk_37C, gTaskDescBosDsdMain, w);
+        TaskCreate(&w->unk_37C, &gTaskDescBosDsdMain, w);
     } else {
         work->unk_340 = 0xDC00;
         work->unk_344 = 0x16800;
@@ -4821,7 +4822,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         func_0801C298(0, 1);
         func_0801BCC0(0x6400, 0x16800, 0);
         func_0801C274(0x2800, 0x16800, 0);
-        TaskCreate(&w->unk_37C, gTaskDescBosDsdMain, w);
+        TaskCreate(&w->unk_37C, &gTaskDescBosDsdMain, w);
         btl = gBtlWork;
         btl->unk_0CC = w->unk_000[0].unk_004;
         btl->unk_0D0 = w->unk_000[0].unk_008;
@@ -4889,7 +4890,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
 
     if (func_0801C1C0(0)) {
         work->unk_358 |= 8;
-        TaskCreate(&work->unk_37C, gTaskDescBosDsdIta, work);
+        TaskCreate(&work->unk_37C, &gTaskDescBosDsdIta, work);
     }
 
     if (work->unk_334 == 4) {
@@ -5104,7 +5105,7 @@ void func_080C2734(DsdMainWork* work) {
 
     if (q->unk_02C > 0) {
         if (GetRandom() % 30 == 0) {
-            TaskCreate(&work->unk_058, gTaskDescBosDsdRock, work->unk_000);
+            TaskCreate(&work->unk_058, &gTaskDescBosDsdRock, work->unk_000);
         }
 
         if ((work->unk_000->unk_358 & 0x20) == 0) {
@@ -5544,7 +5545,7 @@ void func_080C3188(DsdMainWork* work) {
         work->unk_00A = 21;
         work->unk_000->unk_356 = 0;
         func_080C213C(work->unk_000->unk_354, 0x80);
-        TaskCreate(&work->unk_058, gTaskDescBosDsdCircle, work->unk_000);
+        TaskCreate(&work->unk_058, &gTaskDescBosDsdCircle, work->unk_000);
         func_080147D8(0x8000, 0x15400);
         func_08011F78(0x101, 0x8000, 0x16800, -0x1400, 16, 16, 16);
         m4aSongNumStart(0x2BC);
@@ -5687,7 +5688,7 @@ void func_080C3574(DsdMainWork* work) {
         break;
     case 2:
         func_080C3504(work);
-        work->unk_184 = TaskCreate(&work->unk_058, gTaskDescBosDsdEnergy1, work->unk_000);
+        work->unk_184 = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->unk_000);
         work->unk_000->unk_350++;
         break;
     case 3:
@@ -5706,7 +5707,7 @@ void func_080C3574(DsdMainWork* work) {
 
         if (work->unk_006 > 4) {
             work->unk_006 = 0;
-            work->unk_188 = TaskCreate(&work->unk_058, gTaskDescBosDsdEnergy1, work->unk_000);
+            work->unk_188 = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->unk_000);
             work->unk_000->unk_350++;
         }
         break;
@@ -5726,7 +5727,7 @@ void func_080C3574(DsdMainWork* work) {
 
         if (work->unk_006 > 4) {
             work->unk_006 = 0;
-            work->unk_18C = TaskCreate(&work->unk_058, gTaskDescBosDsdEnergy1, work->unk_000);
+            work->unk_18C = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->unk_000);
             work->unk_000->unk_350++;
         }
         break;
@@ -5780,7 +5781,7 @@ void func_080C3754(DsdMainWork* work) {
     case 2:
         func_080C3504(work);
         LoadPalette(gUnk_096FB744, (void*)0x05000000, 32);
-        work->unk_06C = TaskCreate(&work->unk_058, gTaskDescBosDsdEnergy2, work->unk_000);
+        work->unk_06C = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy2, work->unk_000);
         work->unk_000->unk_350++;
         break;
     case 3:
@@ -6811,3 +6812,190 @@ void task_bos_dsd_energy2_3(void) {
 }
 
 ALIGN_ZERO(2);
+
+const char gTaskNameBosTmBody[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmBody"), aligned(1))) = "task_bos_tm_body";
+
+TaskDesc gTaskDescBosTmBody __attribute__((section(".data_registration_gTaskDescBosTmBody"))) = {
+    gTaskNameBosTmBody,
+    (void (*)(void*, void*))task_bos_tm_body_0,
+    task_bos_tm_body_1,
+    (void (*)(void*))task_bos_tm_body_2,
+    (void (*)(void*))task_bos_tm_body_3,
+    0x494,
+};
+
+const char gTaskNameBosTmFoot[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmFoot"), aligned(1))) = "task_bos_tm_foot";
+
+TaskDesc gTaskDescBosTmFoot __attribute__((section(".data_registration_gTaskDescBosTmFoot"))) = {
+    gTaskNameBosTmFoot,
+    (void (*)(void*, void*))task_bos_tm_foot_0,
+    task_bos_tm_foot_1,
+    (void (*)(void*))task_bos_tm_foot_2,
+    (void (*)(void*))task_bos_tm_foot_3,
+    0x484,
+};
+
+const char gTaskNameBosTmClb[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmClb"), aligned(1))) = "task_bos_tm_clb";
+
+TaskDesc gTaskDescBosTmClb __attribute__((section(".data_registration_gTaskDescBosTmClb"))) = {
+    gTaskNameBosTmClb,
+    (void (*)(void*, void*))task_bos_tm_clb_0,
+    task_bos_tm_clb_1,
+    (void (*)(void*))task_bos_tm_clb_2,
+    (void (*)(void*))task_bos_tm_clb_3,
+    0x1C,
+};
+
+const char gTaskNameBosTmArm[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmArm"), aligned(1))) = "task_bos_tm_arm";
+
+TaskDesc gTaskDescBosTmArm __attribute__((section(".data_registration_gTaskDescBosTmArm"))) = {
+    gTaskNameBosTmArm,
+    (void (*)(void*, void*))task_bos_tm_arm_0,
+    task_bos_tm_arm_1,
+    (void (*)(void*))task_bos_tm_arm_2,
+    (void (*)(void*))task_bos_tm_arm_3,
+    0x258,
+};
+
+const char gTaskNameBosTmTbl[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmTbl"), aligned(1))) = "task_bos_tm_tbl";
+
+TaskDesc gTaskDescBosTmTbl __attribute__((section(".data_registration_gTaskDescBosTmTbl"))) = {
+    gTaskNameBosTmTbl,
+    (void (*)(void*, void*))task_bos_tm_tbl_0,
+    task_bos_tm_tbl_1,
+    0,
+    (void (*)(void*))task_bos_tm_tbl_3,
+    0x6C,
+};
+
+const char gTaskNameBosJf[] __attribute__((section(".rodata_registration_name_gTaskDescBosJf"), aligned(1))) = "task_bos_jf";
+
+TaskDesc gTaskDescBosJf __attribute__((section(".data_registration_gTaskDescBosJf"))) = {
+    gTaskNameBosJf,
+    (void (*)(void*, void*))task_bos_jf_0,
+    task_bos_jf_1,
+    (void (*)(void*))task_bos_jf_2,
+    (void (*)(void*))task_bos_jf_3,
+    0x26C,
+};
+
+const char gTaskNameBosJfMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfMap"), aligned(1))) = "task_bos_jf_map";
+
+TaskDesc gTaskDescBosJfMap __attribute__((section(".data_registration_gTaskDescBosJfMap"))) = {
+    gTaskNameBosJfMap,
+    (void (*)(void*, void*))task_bos_jf_map_0,
+    task_bos_jf_map_1,
+    0,
+    0,
+    0x4,
+};
+
+const char gTaskNameBosJfLamp[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfLamp"), aligned(1))) = "task_bos_jf_lamp";
+
+TaskDesc gTaskDescBosJfLamp __attribute__((section(".data_registration_gTaskDescBosJfLamp"))) = {
+    gTaskNameBosJfLamp,
+    (void (*)(void*, void*))task_bos_jf_lamp_0,
+    task_bos_jf_lamp_1,
+    (void (*)(void*))task_bos_jf_lamp_2,
+    (void (*)(void*))task_bos_jf_lamp_3,
+    0x58,
+};
+
+const char gTaskNameBosJfMajin[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfMajin"), aligned(1))) = "task_bos_jf_majin";
+
+TaskDesc gTaskDescBosJfMajin __attribute__((section(".data_registration_gTaskDescBosJfMajin"))) = {
+    gTaskNameBosJfMajin,
+    (void (*)(void*, void*))task_bos_jf_majin_0,
+    task_bos_jf_majin_1,
+    (void (*)(void*))task_bos_jf_majin_2,
+    (void (*)(void*))task_bos_jf_majin_3,
+    0x84,
+};
+
+const char gTaskNameBosDsd[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsd"), aligned(1))) = "task_bos_dsd";
+
+TaskDesc gTaskDescBosDsd __attribute__((section(".data_registration_gTaskDescBosDsd"))) = {
+    gTaskNameBosDsd,
+    (void (*)(void*, void*))task_bos_dsd_0,
+    task_bos_dsd_1,
+    (void (*)(void*))task_bos_dsd_2,
+    (void (*)(void*))task_bos_dsd_3,
+    0x394,
+};
+
+const char gTaskNameBosDsdMain[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMain"), aligned(1))) = "task_bos_dsd_main";
+
+TaskDesc gTaskDescBosDsdMain __attribute__((section(".data_registration_gTaskDescBosDsdMain"))) = {
+    gTaskNameBosDsdMain,
+    (void (*)(void*, void*))task_bos_dsd_main_0,
+    task_bos_dsd_main_1,
+    (void (*)(void*))task_bos_dsd_main_2,
+    (void (*)(void*))task_bos_dsd_main_3,
+    0x190,
+};
+
+const char gTaskNameBosDsdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMap"), aligned(1))) = "task_bos_dsd_map";
+
+TaskDesc gTaskDescBosDsdMap __attribute__((section(".data_registration_gTaskDescBosDsdMap"))) = {
+    gTaskNameBosDsdMap,
+    (void (*)(void*, void*))task_bos_dsd_map_0,
+    task_bos_dsd_map_1,
+    0,
+    0,
+    0x4,
+};
+
+const char gTaskNameBosDsdIta[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdIta"), aligned(1))) = "task_bos_dsd_ita";
+
+TaskDesc gTaskDescBosDsdIta __attribute__((section(".data_registration_gTaskDescBosDsdIta"))) = {
+    gTaskNameBosDsdIta,
+    (void (*)(void*, void*))task_bos_dsd_ita_0,
+    task_bos_dsd_ita_1,
+    (void (*)(void*))task_bos_dsd_ita_2,
+    (void (*)(void*))task_bos_dsd_ita_3,
+    0x90,
+};
+
+const char gTaskNameBosDsdRock[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdRock"), aligned(1))) = "task_bos_dsd_rock";
+
+TaskDesc gTaskDescBosDsdRock __attribute__((section(".data_registration_gTaskDescBosDsdRock"))) = {
+    gTaskNameBosDsdRock,
+    (void (*)(void*, void*))task_bos_dsd_rock_0,
+    task_bos_dsd_rock_1,
+    (void (*)(void*))task_bos_dsd_rock_2,
+    (void (*)(void*))task_bos_dsd_rock_3,
+    0x24,
+};
+
+const char gTaskNameBosDsdCircle[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdCircle"), aligned(1))) = "task_bos_dsd_circle";
+
+TaskDesc gTaskDescBosDsdCircle __attribute__((section(".data_registration_gTaskDescBosDsdCircle"))) = {
+    gTaskNameBosDsdCircle,
+    (void (*)(void*, void*))task_bos_dsd_circle_0,
+    task_bos_dsd_circle_1,
+    (void (*)(void*))task_bos_dsd_circle_2,
+    (void (*)(void*))task_bos_dsd_circle_3,
+    0x20,
+};
+
+const char gTaskNameBosDsdEnergy1[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy1"), aligned(1))) = "task_bos_dsd_energy1";
+
+TaskDesc gTaskDescBosDsdEnergy1 __attribute__((section(".data_registration_gTaskDescBosDsdEnergy1"))) = {
+    gTaskNameBosDsdEnergy1,
+    (void (*)(void*, void*))task_bos_dsd_energy1_0,
+    task_bos_dsd_energy1_1,
+    (void (*)(void*))task_bos_dsd_energy1_2,
+    (void (*)(void*))task_bos_dsd_energy1_3,
+    0x4C,
+};
+
+const char gTaskNameBosDsdEnergy2[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy2"), aligned(1))) = "task_bos_dsd_energy2";
+
+TaskDesc gTaskDescBosDsdEnergy2 __attribute__((section(".data_registration_gTaskDescBosDsdEnergy2"))) = {
+    gTaskNameBosDsdEnergy2,
+    (void (*)(void*, void*))task_bos_dsd_energy2_0,
+    task_bos_dsd_energy2_1,
+    (void (*)(void*))task_bos_dsd_energy2_2,
+    (void (*)(void*))task_bos_dsd_energy2_3,
+    0x40,
+};

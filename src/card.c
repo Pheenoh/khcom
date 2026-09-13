@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "graphics_state.h"
 #include "map_api.h"
@@ -1145,7 +1146,7 @@ void func_080792F4(UnkStruct_08080268* w) {
         }
 
         if (gUnk_02034A98->unk_A5 < 9) {
-            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034A98->unk_48);
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034A98->unk_48);
         }
 
         gUnk_02034A98->unk_A5 = n;
@@ -1272,7 +1273,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
         if (gBtlWork->unk_0F4 == 1) {
             gUnk_02039DD4->unk_0C2 = gUnk_02034A98->unk_A5 + 1;
             if (gUnk_02034A98->unk_A5 < 9) {
-                TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034A98->unk_48);
+                TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034A98->unk_48);
             }
             gUnk_02034A98->unk_A5++;
             if (gUnk_02034A98->unk_A5 > 9) {
@@ -1712,7 +1713,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
         gUnk_02034A98->unk_A7 = active;
         gUnk_02034A98->unk_A5 = n;
         if (gUnk_02034A98->unk_A5 < 9) {
-            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034A98->unk_48);
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034A98->unk_48);
         }
     } else if (gBtlWork->unk_0F4 == 21) {
         if (gUnk_02034A98->unk_A5 != 0) {
@@ -2422,7 +2423,7 @@ void func_0807B410(void* pool) {
         case 38:
         case 39:
         case 40:
-            TaskCreate(pool, gTaskDescBosscard, &v);
+            TaskCreate(pool, &gTaskDescBosscard, &v);
             return;
         }
 
@@ -3827,7 +3828,7 @@ u8 func_0807D4E4(CardDisplayWork* p) {
 
     arg = 1;
     gBtlWork->unk_0F8 = gUnk_08F7CBA8[gBtlWork->unk_0F4].unk_0E;
-    TaskCreate(&gUnk_02039DD4->unk_09C, gTaskDescHCEffectName, &arg);
+    TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName, &arg);
     return 0;
 }
 
@@ -5775,7 +5776,7 @@ void func_080802D8(UnkStruct_08080268* w) {
         }
 
         if (t <= 8) {
-            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034AAC->unk_48);
         }
 
         gUnk_02034AAC->unk_A5 = n;
@@ -5887,7 +5888,7 @@ u8 func_08080594(UnkStruct_08080268* w) {
                 gUnk_02039DD4->unk_0C2 = 9;
             }
 
-            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034AAC->unk_48);
         } else if (gUnk_02039B9C->unk_0F4 == 21) {
             if (gUnk_02034AAC->unk_A5 != 0) {
                 gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5 - 1;
@@ -6109,7 +6110,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
 
         gUnk_02034AAC->unk_A5 = n;
         gUnk_02034AAC->unk_A7 = 1;
-        TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+        TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034AAC->unk_48);
     } else if (gUnk_02039B9C->unk_0F4 == 21) {
         if (gUnk_02034AAC->unk_A5 != 0) {
             n = gUnk_02034AAC->unk_A5 - 1;
@@ -7517,7 +7518,7 @@ u8 func_08082F50(CardDisplayWork* p) {
 
     arg = 2;
     gUnk_02039B9C->unk_0F8 = gUnk_08F7CBA8[gUnk_02039B9C->unk_0F4].unk_0E;
-    TaskCreate(&gUnk_02039DD4->unk_09C, gTaskDescHCEffectName, &arg);
+    TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName, &arg);
     return 0;
 }
 
@@ -17645,7 +17646,7 @@ u8 func_0809217C(MapSelectWork* w, void* a) {
         w->unk_2C4 = *(void**)&w->unk_040[0x08];
         w->unk_2CC = 0;
         w->unk_238 =
-            ((void**)TaskCreate(w, gTaskDescSELMAPEVKEY, &w->unk_2C4))[1];
+            ((void**)TaskCreate(w, &gTaskDescSELMAPEVKEY, &w->unk_2C4))[1];
     }
 
     func_08093C44(((u8*)w->unk_1EC)[32], w);
@@ -18691,7 +18692,7 @@ u16 func_08093B58(void) {
 }
 
 void CreateMapCardSelection(void* a, void* b) {
-    TaskCreate(a, gTaskDescMapSelect, b);
+    TaskCreate(a, &gTaskDescMapSelect, b);
 }
 
 void ClearMapCardInventory(void) {
@@ -19550,7 +19551,7 @@ u8 func_08094E4C(MapcardWork* w) {
     return 0;
 }
 void* CreateMapCard(void* a, void* b) {
-    return ((void**)TaskCreate(b, gTaskDescMapcard, a))[1];
+    return ((void**)TaskCreate(b, &gTaskDescMapcard, a))[1];
 }
 void func_08094E90(MapcardWork* w) {
     ListNodeInit(&w->unk_38, w->unk_28, w);
@@ -19650,7 +19651,7 @@ void func_08094EB0(ReloadGageWork* w, ReloadGageArgs* a) {
             *(u16*)args.unk_10 = 0;
             args.unk_0D = w->unk_46;
             args.unk_0E = w->unk_40;
-            TaskCreate(&w->unk_24, gTaskDescReloadChildren, &args);
+            TaskCreate(&w->unk_24, &gTaskDescReloadChildren, &args);
         }
     } else {
         TaskPoolInit(&w->unk_24, 1);
@@ -19739,7 +19740,7 @@ u8 func_0809511C(ReloadGageWork* w, void* a) {
                             *(u16*)args.unk_10 = 0;
                             args.unk_0D = w->unk_46;
                             args.unk_0E = w->unk_40;
-                            node = ((ReloadChildWork**)TaskCreate(&w->unk_24, gTaskDescReloadChildren, &args))[1];
+                            node = ((ReloadChildWork**)TaskCreate(&w->unk_24, &gTaskDescReloadChildren, &args))[1];
                             node->unk_1C = (1 | node->unk_1C) & 0xFFFD;
                             node->unk_18--;
                         }
@@ -20632,10 +20633,10 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
 
         if (gBtlWork->unk_10C != 121) {
             if (func_0808510C(args.unk_20) == 0) {
-                TaskCreate(w, gTaskDescPrizeBoss, &args);
+                TaskCreate(w, &gTaskDescPrizeBoss, &args);
             }
         } else {
-            TaskCreate(w, gTaskDescPrizeBoss, &args);
+            TaskCreate(w, &gTaskDescPrizeBoss, &args);
         }
 
         w->unk_14 = 1;
@@ -20737,11 +20738,11 @@ u16 func_08096D48(u16 a, s32 b) {
 }
 
 void CreatePrizeCardTask(void* a, void* b) {
-    TaskCreate(a, gTaskDescPrizeCardInit, b);
+    TaskCreate(a, &gTaskDescPrizeCardInit, b);
 }
 
 void CreateBossPrizeCardTask(void* a, void* b) {
-    TaskCreate(a, gTaskDescPrizeCardInitBoss, b);
+    TaskCreate(a, &gTaskDescPrizeCardInitBoss, b);
 }
 void DispCardname_0(u8* work, u16* a) {
     UnkStruct_080038C8* p;
@@ -20781,7 +20782,7 @@ void DispCardname_3(u8* work) {
 }
 
 void CreateCardNameDisplay(void* a, void* b) {
-    TaskCreate(a, gTaskDescDispCardname, b);
+    TaskCreate(a, &gTaskDescDispCardname, b);
 }
 void Version_0(u8* work) {
     *(void**)&work[0x00] = LoadSmallFontTiles();
@@ -20799,7 +20800,7 @@ void Version_3(s32* p) {
     FreeSmallFontResources(p[0], p[1]);
 }
 s32 CreateVersionDisplay(void* a) {
-    return (s32)TaskCreate(a, gTaskDescVersion, 0);
+    return (s32)TaskCreate(a, &gTaskDescVersion, 0);
 }
 void func_08096F94(UnkStruct_08096F94* w, s32* args) {
     u8* p;
@@ -22260,7 +22261,7 @@ void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d) {
     args.unk_08 = c;
     args.unk_0C = a[0];
     args.unk_0D = d;
-    TaskCreate(pool, gTaskDescREVCOUNT, &args);
+    TaskCreate(pool, &gTaskDescREVCOUNT, &args);
 }
 
 void RELOAD_0(ReloadWork* w, ReloadArgs* a) {
@@ -22653,7 +22654,7 @@ void func_08099CDC(BossPrizeWork* w) {
                 args.unk_08 = *(s32*)&work[0xB0];
                 args.unk_0C = work[0xED];
                 args.unk_10 = &work[0xEE];
-                TaskCreate(&work[0x20], gTaskDescCardEFFECT, &args);
+                TaskCreate(&work[0x20], &gTaskDescCardEFFECT, &args);
             }
 
             work[0xEF] = 0;
@@ -22668,7 +22669,7 @@ void func_08099CDC(BossPrizeWork* w) {
                 args.unk_08 = *(s32*)&work[0xB0];
                 args.unk_0C = work[0xED];
                 args.unk_10 = &work[0xEE];
-                TaskCreate(&work[0x20], gTaskDescCardEFFECT, &args);
+                TaskCreate(&work[0x20], &gTaskDescCardEFFECT, &args);
             }
 
             work[0xEF] = 0;
@@ -22806,7 +22807,7 @@ s32 CreateScrollbar(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {
     args[2] = c;
     args[3] = d;
     args[4] = e;
-    return (s32)((void**)TaskCreate(pool, gTaskDescScrollbar, args))[1];
+    return (s32)((void**)TaskCreate(pool, &gTaskDescScrollbar, args))[1];
 }
 
 void func_0809A02C(UnkStruct_0809A02C* w, s32* args) {
@@ -24833,7 +24834,7 @@ void Mode_Premire_0(void) {
 #ifdef VERSION_EU
     TaskCreate(gUnk_02034AE0, gUnkEu_09F72D80, 0);
 #else
-    TaskCreate(gUnk_02034AE0, gTaskDescLevelUp, 0);
+    TaskCreate(gUnk_02034AE0, &gTaskDescLevelUp, 0);
 #endif
 }
 
@@ -25936,9 +25937,9 @@ u8 func_0809F390(u8* work, void* a) {
         work[0x7B0] = i;
 
         if (gBtlWork->unk_10C == 151) {
-            LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+            LoadBgMap(0, gUnk_09EE7914[(s8)work[0x7B0]], 0x800);
         } else {
-            LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+            LoadBgMap(1, gUnk_09EE7914[(s8)work[0x7B0]], 0x800);
         }
 
         work[0x7B6] = 8;
@@ -25963,9 +25964,9 @@ u8 func_0809F390(u8* work, void* a) {
         work[0x7B0] = i;
 
         if (gBtlWork->unk_10C == 151) {
-            LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+            LoadBgMap(0, gUnk_09EE7914[(s8)work[0x7B0]], 0x800);
         } else {
-            LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+            LoadBgMap(1, gUnk_09EE7914[(s8)work[0x7B0]], 0x800);
         }
 
         work[0x7B6] = 8;
@@ -26050,7 +26051,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
         args.unk_04 = 60;
         args.unk_08 = 0;
         args.unk_0C = 0;
-        TaskCreate(&w->pool, gTaskDescLVUPEFFECT, &args);
+        TaskCreate(&w->pool, &gTaskDescLVUPEFFECT, &args);
         m4aSongNumStart(148);
 #endif
         w->unk_7C5++;
@@ -27064,7 +27065,7 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
         args.unk_0C = w->unk_0C;
         args.unk_10 = w->tiles;
         args.unk_14 = w->palette;
-        TaskCreate(w->unk_98, gTaskDescLvupLogo, &args);
+        TaskCreate(w->unk_98, &gTaskDescLvupLogo, &args);
         gUnk_02034AF8 = 1;
     }
 }
@@ -27240,7 +27241,7 @@ u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool) {
     args.unk_04 = p->unk_08;
     args.unk_08 = 0;
     args.unk_0C = p;
-    TaskCreate(pool, gTaskDescLVUPEFFECT, &args);
+    TaskCreate(pool, &gTaskDescLVUPEFFECT, &args);
     gBtlWork->unk_068 |= 0x20000;
     return 1;
 }
@@ -27513,7 +27514,7 @@ void EV_BG_EFFECT_2(void) {
 void EV_BG_EFFECT_3(void) {
 }
 void func_080A2124(u8* work) {
-    TaskCreate(&work[0x10], gTaskDescEVBGEFFECT, work);
+    TaskCreate(&work[0x10], &gTaskDescEVBGEFFECT, work);
 }
 void StockInfo_0(u8* work, void* a) {
     u8 i;
@@ -29540,7 +29541,7 @@ void WorldSel_Before_3(void** p) {
     ReleaseObjPalette(p[3]);
 }
 void func_080A581C(u8* work) {
-    TaskCreate(&work[0x10], gTaskDescWorldSelBefore, work);
+    TaskCreate(&work[0x10], &gTaskDescWorldSelBefore, work);
 }
 
 void func_080A5830(void* a, s32 b, s32 c, s32 d) {
@@ -29549,7 +29550,7 @@ void func_080A5830(void* a, s32 b, s32 c, s32 d) {
     args[0] = b;
     args[1] = c;
     args[2] = d;
-    TaskCreate(a, gTaskDescWorldSelBefore, args);
+    TaskCreate(a, &gTaskDescWorldSelBefore, args);
 }
 #ifdef NON_MATCHING
 void func_080A584C(u8* work, void* a) {
@@ -32419,7 +32420,7 @@ void func_080AAF78(void) {
     gUnk_02034B1C = 0;
     gUnk_0203A9DC = 2048;
     TaskPoolInit(gUnk_02034B08, 1);
-    TaskCreate(gUnk_02034B08, gTaskDescDeckexchange, &gUnk_02034B1C);
+    TaskCreate(gUnk_02034B08, &gTaskDescDeckexchange, &gUnk_02034B1C);
 }
 void func_080AAFB4(void) {
     if (gSystemFlags & 1) {
@@ -34785,3 +34786,324 @@ void func_080AEB94(void) {
 }
 
 void** gUnk_02034B38 __attribute__((common));
+
+const char gTaskNameCardBattleRiku[] __attribute__((section(".rodata_registration_name_gTaskDescCardBattleRiku"), aligned(1))) = "cardbattle";
+
+TaskDesc gTaskDescCardBattleRiku __attribute__((section(".data_registration_gTaskDescCardBattleRiku"))) = {
+    gTaskNameCardBattleRiku,
+    (void (*)(void*, void*))func_0807E8F4,
+    func_0807EDEC,
+    (void (*)(void*))func_0807F99C,
+    (void (*)(void*))func_0807FA0C,
+    0xCC,
+};
+
+const char gTaskNameBosscard[] __attribute__((section(".rodata_registration_name_gTaskDescBosscard"), aligned(1))) = "Bosscard";
+
+TaskDesc gTaskDescBosscard __attribute__((section(".data_registration_gTaskDescBosscard"))) = {
+    gTaskNameBosscard,
+    (void (*)(void*, void*))Bosscard_0,
+    Bosscard_1,
+    (void (*)(void*))Bosscard_2,
+    (void (*)(void*))Bosscard_3,
+    0x38,
+};
+
+const char gTaskNameMapAnim[] __attribute__((section(".rodata_registration_name_gTaskDescMapAnim"), aligned(1))) = "map_anim";
+
+TaskDesc gTaskDescMapAnim __attribute__((section(".data_registration_gTaskDescMapAnim"))) = {
+    gTaskNameMapAnim,
+    (void (*)(void*, void*))map_anim_0,
+    map_anim_1,
+    (void (*)(void*))map_anim_2,
+    (void (*)(void*))map_anim_3,
+    0x18,
+};
+
+const char gTaskNameMapSelect[] __attribute__((section(".rodata_registration_name_gTaskDescMapSelect"), aligned(1))) = "MapSelect";
+
+TaskDesc gTaskDescMapSelect __attribute__((section(".data_registration_gTaskDescMapSelect"))) = {
+    gTaskNameMapSelect,
+    (void (*)(void*, void*))MapSelect_0,
+    MapSelect_1,
+    (void (*)(void*))MapSelect_2,
+    (void (*)(void*))MapSelect_3,
+    0x2E4,
+};
+
+const char gTaskNameMapcard[] __attribute__((section(".rodata_registration_name_gTaskDescMapcard"), aligned(1))) = "Mapcard";
+
+TaskDesc gTaskDescMapcard __attribute__((section(".data_registration_gTaskDescMapcard"))) = {
+    gTaskNameMapcard,
+    (void (*)(void*, void*))Mapcard_0,
+    Mapcard_1,
+    (void (*)(void*))Mapcard_2,
+    (void (*)(void*))Mapcard_3,
+    0x78,
+};
+
+const char gTaskNamePrizeCardInit[] __attribute__((section(".rodata_registration_name_gTaskDescPrizeCardInit"), aligned(1))) = "PrizeCardInit";
+
+TaskDesc gTaskDescPrizeCardInit __attribute__((section(".data_registration_gTaskDescPrizeCardInit"))) = {
+    gTaskNamePrizeCardInit,
+    (void (*)(void*, void*))func_08096714,
+    PrizeCardInit_1,
+    (void (*)(void*))func_08096C20,
+    (void (*)(void*))func_08096C2C,
+    0x38,
+};
+
+const char gTaskNamePrizeCardInitBoss[] __attribute__((section(".rodata_registration_name_gTaskDescPrizeCardInitBoss"), aligned(1))) = "PrizeCardInit_Boss";
+
+TaskDesc gTaskDescPrizeCardInitBoss __attribute__((section(".data_registration_gTaskDescPrizeCardInitBoss"))) = {
+    gTaskNamePrizeCardInitBoss,
+    (void (*)(void*, void*))func_08096714,
+    PrizeCardInit_Boss_1,
+    (void (*)(void*))func_08096C20,
+    (void (*)(void*))func_08096C2C,
+    0x38,
+};
+
+const char gTaskNameDispCardname[] __attribute__((section(".rodata_registration_name_gTaskDescDispCardname"), aligned(1))) = "DispCardname";
+
+TaskDesc gTaskDescDispCardname __attribute__((section(".data_registration_gTaskDescDispCardname"))) = {
+    gTaskNameDispCardname,
+    (void (*)(void*, void*))DispCardname_0,
+    DispCardname_1,
+    (void (*)(void*))DispCardname_2,
+    (void (*)(void*))DispCardname_3,
+    0x110,
+};
+
+const char gTaskNameVersion[] __attribute__((section(".rodata_registration_name_gTaskDescVersion"), aligned(1))) = "Version";
+
+TaskDesc gTaskDescVersion __attribute__((section(".data_registration_gTaskDescVersion"))) = {
+    gTaskNameVersion,
+    (void (*)(void*, void*))Version_0,
+    Version_1,
+    (void (*)(void*))Version_2,
+    (void (*)(void*))Version_3,
+    0x2C,
+};
+
+const char gTaskNameSpotLight[] __attribute__((section(".rodata_registration_name_gTaskDescSpotLight"), aligned(1))) = "SpotLight";
+
+TaskDesc gTaskDescSpotLight __attribute__((section(".data_registration_gTaskDescSpotLight"))) = {
+    gTaskNameSpotLight,
+    (void (*)(void*, void*))SpotLight_0,
+    SpotLight_1,
+    (void (*)(void*))SpotLight_2,
+    (void (*)(void*))SpotLight_3,
+    0x18,
+};
+
+const char gTaskNameSELMAPEVKEY[] __attribute__((section(".rodata_registration_name_gTaskDescSELMAPEVKEY"), aligned(1))) = "SELMAP_EVKEY";
+
+TaskDesc gTaskDescSELMAPEVKEY __attribute__((section(".data_registration_gTaskDescSELMAPEVKEY"))) = {
+    gTaskNameSELMAPEVKEY,
+    (void (*)(void*, void*))SELMAP_EVKEY_0,
+    SELMAP_EVKEY_1,
+    (void (*)(void*))SELMAP_EVKEY_2,
+    (void (*)(void*))SELMAP_EVKEY_3,
+    0x124,
+};
+
+const char gTaskNameReloadChildren[] __attribute__((section(".rodata_registration_name_gTaskDescReloadChildren"), aligned(1))) = "RELOAD_CHILDREN";
+
+TaskDesc gTaskDescReloadChildren __attribute__((section(".data_registration_gTaskDescReloadChildren"))) = {
+    gTaskNameReloadChildren,
+    (void (*)(void*, void*))RELOAD_CHILDREN_0,
+    RELOAD_CHILDREN_1,
+    (void (*)(void*))RELOAD_CHILDREN_2,
+    (void (*)(void*))RELOAD_CHILDREN_3,
+    0x48,
+};
+
+const char gTaskNameREVCOUNT[] __attribute__((section(".rodata_registration_name_gTaskDescREVCOUNT"), aligned(1))) = "REV_COUNT";
+
+TaskDesc gTaskDescREVCOUNT __attribute__((section(".data_registration_gTaskDescREVCOUNT"))) = {
+    gTaskNameREVCOUNT,
+    (void (*)(void*, void*))REV_COUNT_0,
+    REV_COUNT_1,
+    (void (*)(void*))REV_COUNT_2,
+    (void (*)(void*))REV_COUNT_3,
+    0x44,
+};
+
+const char gTaskNamePrizeBoss[] __attribute__((section(".rodata_registration_name_gTaskDescPrizeBoss"), aligned(1))) = "PrizeBoss";
+
+TaskDesc gTaskDescPrizeBoss __attribute__((section(".data_registration_gTaskDescPrizeBoss"))) = {
+    gTaskNamePrizeBoss,
+    (void (*)(void*, void*))PrizeBoss_0,
+    PrizeBoss_1,
+    (void (*)(void*))PrizeBoss_2,
+    (void (*)(void*))PrizeBoss_3,
+    0xF0,
+};
+
+const char gTaskNameCardEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescCardEFFECT"), aligned(1))) = "Card_EFFECT";
+
+TaskDesc gTaskDescCardEFFECT __attribute__((section(".data_registration_gTaskDescCardEFFECT"))) = {
+    gTaskNameCardEFFECT,
+    (void (*)(void*, void*))Card_EFFECT_0,
+    Card_EFFECT_1,
+    (void (*)(void*))Card_EFFECT_2,
+    (void (*)(void*))Card_EFFECT_3,
+    0x4C,
+};
+
+const char gTaskNameScrollbar[] __attribute__((section(".rodata_registration_name_gTaskDescScrollbar"), aligned(1))) = "scrollbar";
+
+TaskDesc gTaskDescScrollbar __attribute__((section(".data_registration_gTaskDescScrollbar"))) = {
+    gTaskNameScrollbar,
+    (void (*)(void*, void*))scrollbar_0,
+    scrollbar_1,
+    (void (*)(void*))scrollbar_2,
+    (void (*)(void*))scrollbar_3,
+    0x18,
+};
+
+const char gTaskNameHCEffectName[] __attribute__((section(".rodata_registration_name_gTaskDescHCEffectName"), aligned(1))) = "HCEffectName";
+
+TaskDesc gTaskDescHCEffectName __attribute__((section(".data_registration_gTaskDescHCEffectName"))) = {
+    gTaskNameHCEffectName,
+    (void (*)(void*, void*))HCEffectName_0,
+    HCEffectName_1,
+    (void (*)(void*))HCEffectName_2,
+    (void (*)(void*))HCEffectName_3,
+    0x28,
+};
+
+const char gTaskNameLevelUp[] __attribute__((section(".rodata_registration_name_gTaskDescLevelUp"), aligned(1))) = "Level_Up";
+
+TaskDesc gTaskDescLevelUp __attribute__((section(".data_registration_gTaskDescLevelUp"))) = {
+    gTaskNameLevelUp,
+    (void (*)(void*, void*))Level_Up_0,
+    Level_Up_1,
+    (void (*)(void*))Level_Up_2,
+    (void (*)(void*))Level_Up_3,
+#ifdef VERSION_EU
+    0x124,
+#else
+    0x7CC,
+#endif
+};
+
+const char gTaskNameLVUPEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescLVUPEFFECT"), aligned(1))) = "LVUP_EFFECT";
+
+TaskDesc gTaskDescLVUPEFFECT __attribute__((section(".data_registration_gTaskDescLVUPEFFECT"))) = {
+    gTaskNameLVUPEFFECT,
+    (void (*)(void*, void*))LVUP_EFFECT_0,
+    LVUP_EFFECT_1,
+    (void (*)(void*))LVUP_EFFECT_2,
+    (void (*)(void*))LVUP_EFFECT_3,
+    0xAC,
+};
+
+const char gTaskNameLvupLogo[] __attribute__((section(".rodata_registration_name_gTaskDescLvupLogo"), aligned(1))) = "Lvup_Logo";
+
+TaskDesc gTaskDescLvupLogo __attribute__((section(".data_registration_gTaskDescLvupLogo"))) = {
+    gTaskNameLvupLogo,
+    (void (*)(void*, void*))Lvup_Logo_0,
+    Lvup_Logo_1,
+    (void (*)(void*))Lvup_Logo_2,
+    (void (*)(void*))Lvup_Logo_3,
+    0xAC,
+};
+
+const char gTaskNameEvMapObj[] __attribute__((section(".rodata_registration_name_gTaskDescEvMapObj"), aligned(1))) = "Ev_mapObj";
+
+TaskDesc gTaskDescEvMapObj __attribute__((section(".data_registration_gTaskDescEvMapObj"))) = {
+    gTaskNameEvMapObj,
+    (void (*)(void*, void*))Ev_mapObj_0,
+    Ev_mapObj_1,
+    (void (*)(void*))Ev_mapObj_2,
+    (void (*)(void*))Ev_mapObj_3,
+    0x5C,
+};
+
+const char gTaskNameEVBGEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescEVBGEFFECT"), aligned(1))) = "EV_BG_EFFECT";
+
+TaskDesc gTaskDescEVBGEFFECT __attribute__((section(".data_registration_gTaskDescEVBGEFFECT"))) = {
+    gTaskNameEVBGEFFECT,
+    (void (*)(void*, void*))EV_BG_EFFECT_0,
+    EV_BG_EFFECT_1,
+    (void (*)(void*))EV_BG_EFFECT_2,
+    (void (*)(void*))EV_BG_EFFECT_3,
+    0x18,
+};
+
+const char gTaskNameWorldSelBefore[] __attribute__((section(".rodata_registration_name_gTaskDescWorldSelBefore"), aligned(1))) = "WorldSel Before";
+
+TaskDesc gTaskDescWorldSelBefore __attribute__((section(".data_registration_gTaskDescWorldSelBefore"))) = {
+    gTaskNameWorldSelBefore,
+    (void (*)(void*, void*))WorldSel_Before_0,
+    WorldSel_Before_1,
+    (void (*)(void*))WorldSel_Before_2,
+    (void (*)(void*))WorldSel_Before_3,
+    0xB8,
+};
+
+#ifndef VERSION_EU
+const char gTaskNameDeckexchange[] __attribute__((section(".rodata_registration_name_gTaskDescDeckexchange"), aligned(1))) = "deckexchange";
+#endif
+
+#ifndef VERSION_EU
+TaskDesc gTaskDescDeckexchange __attribute__((section(".data_registration_gTaskDescDeckexchange"))) = {
+    gTaskNameDeckexchange,
+    (void (*)(void*, void*))deckexchange_0,
+    deckexchange_1,
+    (void (*)(void*))deckexchange_2,
+    (void (*)(void*))deckexchange_3,
+    0x718,
+};
+#endif
+
+const char gModeNameRikuBtlTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuBtlTutorial"), aligned(1))) = "Mode_riku_btlTutorial";
+
+Mode gModeRikuBtlTutorial __attribute__((section(".data_registration_gModeRikuBtlTutorial"))) = {
+    gModeNameRikuBtlTutorial,
+    (void (*)(s32))func_080AB96C,
+    (void (*)(void))Mode_riku_btlTutorial_1,
+    (void (*)(void))func_080ABA70,
+};
+
+const char gModeNameRikuDeckTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuDeckTutorial"), aligned(1))) = "Mode_riku_deckTutorial";
+
+Mode gModeRikuDeckTutorial __attribute__((section(".data_registration_gModeRikuDeckTutorial"))) = {
+    gModeNameRikuDeckTutorial,
+    (void (*)(s32))func_080AB96C,
+    (void (*)(void))Mode_riku_deckTutorial_1,
+    (void (*)(void))func_080ABA70,
+};
+
+const char gTaskNamePrint[] __attribute__((section(".rodata_registration_name_gTaskDescPrint"), aligned(1))) = "task_print";
+
+TaskDesc gTaskDescPrint __attribute__((section(".data_registration_gTaskDescPrint"))) = {
+    gTaskNamePrint,
+    (void (*)(void*, void*))task_print_0,
+    task_print_1,
+    (void (*)(void*))task_print_2,
+    (void (*)(void*))task_print_3,
+    0x4,
+};
+
+const char gModeNameSioBattle[] __attribute__((section(".rodata_registration_name_gModeSioBattle"), aligned(1))) = "mode_sio_battle";
+
+Mode gModeSioBattle __attribute__((section(".data_registration_gModeSioBattle"))) = {
+    gModeNameSioBattle,
+    (void (*)(s32))mode_sio_battle_0,
+    (void (*)(void))mode_sio_battle_1,
+    (void (*)(void))mode_sio_battle_2,
+};
+
+const char gTaskNameNumberPlus[] __attribute__((section(".rodata_registration_name_gTaskDescNumberPlus"), aligned(1))) = "NumberPlus";
+
+TaskDesc gTaskDescNumberPlus __attribute__((section(".data_registration_gTaskDescNumberPlus"))) = {
+    gTaskNameNumberPlus,
+    (void (*)(void*, void*))NumberPlus_0,
+    NumberPlus_1,
+    (void (*)(void*))NumberPlus_2,
+    (void (*)(void*))NumberPlus_3,
+    0x2C,
+};

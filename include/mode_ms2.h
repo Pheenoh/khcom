@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
@@ -86,7 +87,6 @@ extern u16 gUnk_02035E0A;
 extern s32 gUnk_02035FD0[];
 extern s32 gUnk_02035FD8;
 extern u8 gUnk_02035E20;
-extern Mode gModeMsTop;
 extern s16 gUnk_02035FC4;
 extern s16 gUnk_02035FC6;
 extern s16 gUnk_02035FC8;

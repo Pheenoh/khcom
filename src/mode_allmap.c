@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "map_api.h"
 #include "mode_allmap_api.h"
 #include "m4a_song.h"
@@ -233,3 +234,12 @@ s32 func_080D37BC(u8 a) {
 }
 
 ALIGN_ZERO(2);
+
+const char gModeNameAllmap[] __attribute__((section(".rodata_registration_name_gModeAllmap"), aligned(1))) = "mode_allmap";
+
+Mode gModeAllmap __attribute__((section(".data_registration_gModeAllmap"))) = {
+    gModeNameAllmap,
+    (void (*)(s32))mode_allmap_0,
+    (void (*)(void))mode_allmap_1,
+    (void (*)(void))mode_allmap_2,
+};

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "engine_math.h"
@@ -801,3 +802,12 @@ void func_08100980(void) {
 #endif
     }
 }
+
+const char gModeNameWorldinspect[] __attribute__((section(".rodata_registration_name_gModeWorldinspect"), aligned(1))) = "mode_worldinspect";
+
+Mode gModeWorldinspect __attribute__((section(".data_registration_gModeWorldinspect"))) = {
+    gModeNameWorldinspect,
+    (void (*)(s32))mode_worldinspect_0,
+    (void (*)(void))mode_worldinspect_1,
+    (void (*)(void))mode_worldinspect_2,
+};

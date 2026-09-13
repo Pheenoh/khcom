@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "chara_api.h"
 #include "display.h"
 #include "m4a_song.h"
@@ -32,7 +33,6 @@ u32 gUnkEu_030074AC;
 #ifdef VERSION_EU
 extern Mode gModeLang;
 #endif
-extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
 void ModeBlankDisplay(void);

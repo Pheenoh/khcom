@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
@@ -71,7 +72,6 @@ extern u8 gUnk_0984A7D8[];
 extern u8 gUnk_0984A7F8[];
 extern s32 gUnk_096FDCC8[];
 extern s16 gUnk_096FDCE8[];
-extern TaskDesc gTaskDescTitleLumichange;
 extern void* gUnk_09EF65E0[];
 extern void* gUnk_09EF65E8[];
 extern u8 gUnk_09EF65F0[];

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "status_api.h"
 #include "macros.h"
@@ -1572,3 +1573,146 @@ void func_080D9B6C(BoogieWork* work) {
         work->unk_15C += 8;
     }
 }
+
+const char gTaskNameStatus[] __attribute__((section(".rodata_registration_name_gTaskDescStatus"), aligned(1))) = "task_status";
+
+TaskDesc gTaskDescStatus __attribute__((section(".data_registration_gTaskDescStatus"))) = {
+    gTaskNameStatus,
+    (void (*)(void*, void*))task_status_0,
+    task_status_1,
+    (void (*)(void*))task_status_2,
+    (void (*)(void*))task_status_3,
+    0x20,
+};
+
+const char gTaskNameStatusBar[] __attribute__((section(".rodata_registration_name_gTaskDescStatusBar"), aligned(1))) = "task_status_bar";
+
+TaskDesc gTaskDescStatusBar __attribute__((section(".data_registration_gTaskDescStatusBar"))) = {
+    gTaskNameStatusBar,
+    (void (*)(void*, void*))task_status_bar_0,
+    task_status_bar_1,
+    (void (*)(void*))task_status_bar_2,
+    (void (*)(void*))task_status_bar_3,
+    0x2C,
+};
+
+const char gTaskNameStatusTab[] __attribute__((section(".rodata_registration_name_gTaskDescStatusTab"), aligned(1))) = "task_status_tab";
+
+TaskDesc gTaskDescStatusTab __attribute__((section(".data_registration_gTaskDescStatusTab"))) = {
+    gTaskNameStatusTab,
+    (void (*)(void*, void*))task_status_tab_0,
+    task_status_tab_1,
+    (void (*)(void*))task_status_tab_2,
+    (void (*)(void*))task_status_tab_3,
+    0x1C,
+};
+
+const char gTaskNameStatusSora[] __attribute__((section(".rodata_registration_name_gTaskDescStatusSora"), aligned(1))) = "task_status_sora";
+
+TaskDesc gTaskDescStatusSora __attribute__((section(".data_registration_gTaskDescStatusSora"))) = {
+    gTaskNameStatusSora,
+    (void (*)(void*, void*))task_status_sora_0,
+    task_status_sora_1,
+    (void (*)(void*))task_status_sora_2,
+    (void (*)(void*))task_status_sora_3,
+    0x24,
+};
+
+const char gTaskNameStatusDeckname[] __attribute__((section(".rodata_registration_name_gTaskDescStatusDeckname"), aligned(1))) = "task_status_deckname";
+
+TaskDesc gTaskDescStatusDeckname __attribute__((section(".data_registration_gTaskDescStatusDeckname"))) = {
+    gTaskNameStatusDeckname,
+    (void (*)(void*, void*))task_status_deckname_0,
+    task_status_deckname_1,
+    (void (*)(void*))task_status_deckname_2,
+    (void (*)(void*))task_status_deckname_3,
+    0x5C,
+};
+
+const char gTaskNameStatusCursor[] __attribute__((section(".rodata_registration_name_gTaskDescStatusCursor"), aligned(1))) = "task_status_cursor";
+
+TaskDesc gTaskDescStatusCursor __attribute__((section(".data_registration_gTaskDescStatusCursor"))) = {
+    gTaskNameStatusCursor,
+    (void (*)(void*, void*))task_status_cursor_0,
+    task_status_cursor_1,
+    (void (*)(void*))task_status_cursor_2,
+    (void (*)(void*))task_status_cursor_3,
+    0x60,
+};
+
+const char gTaskNameStatusStocklist[] __attribute__((section(".rodata_registration_name_gTaskDescStatusStocklist"), aligned(1))) = "task_status_stocklist";
+
+TaskDesc gTaskDescStatusStocklist __attribute__((section(".data_registration_gTaskDescStatusStocklist"))) = {
+    gTaskNameStatusStocklist,
+    (void (*)(void*, void*))task_status_stocklist_0,
+    task_status_stocklist_1,
+    (void (*)(void*))task_status_stocklist_2,
+    (void (*)(void*))task_status_stocklist_3,
+    0x4CC,
+};
+
+const char gTaskNameStatusScrollcursor[] __attribute__((section(".rodata_registration_name_gTaskDescStatusScrollcursor"), aligned(1))) = "task_status_scrollcursor";
+
+TaskDesc gTaskDescStatusScrollcursor __attribute__((section(".data_registration_gTaskDescStatusScrollcursor"))) = {
+    gTaskNameStatusScrollcursor,
+    (void (*)(void*, void*))task_status_scrollcursor_0,
+    task_status_scrollcursor_1,
+    (void (*)(void*))task_status_scrollcursor_2,
+    (void (*)(void*))task_status_scrollcursor_3,
+    0x14,
+};
+
+const char gTaskNameStatusMeswindow[] __attribute__((section(".rodata_registration_name_gTaskDescStatusMeswindow"), aligned(1))) = "task_status_meswindow";
+
+TaskDesc gTaskDescStatusMeswindow __attribute__((section(".data_registration_gTaskDescStatusMeswindow"))) = {
+    gTaskNameStatusMeswindow,
+    (void (*)(void*, void*))task_status_meswindow_0,
+    task_status_meswindow_1,
+    (void (*)(void*))task_status_meswindow_2,
+    (void (*)(void*))task_status_meswindow_3,
+    0x24,
+};
+
+const char gTaskNameStatusMessage[] __attribute__((section(".rodata_registration_name_gTaskDescStatusMessage"), aligned(1))) = "task_status_message";
+
+TaskDesc gTaskDescStatusMessage __attribute__((section(".data_registration_gTaskDescStatusMessage"))) = {
+    gTaskNameStatusMessage,
+    (void (*)(void*, void*))task_status_message_0,
+    task_status_message_1,
+    (void (*)(void*))task_status_message_2,
+    (void (*)(void*))task_status_message_3,
+    0x330,
+};
+
+const char gTaskNameStatusFriend[] __attribute__((section(".rodata_registration_name_gTaskDescStatusFriend"), aligned(1))) = "task_status_friend";
+
+TaskDesc gTaskDescStatusFriend __attribute__((section(".data_registration_gTaskDescStatusFriend"))) = {
+    gTaskNameStatusFriend,
+    (void (*)(void*, void*))task_status_friend_0,
+    task_status_friend_1,
+    (void (*)(void*))task_status_friend_2,
+    (void (*)(void*))task_status_friend_3,
+    0x28,
+};
+
+const char gTaskNameStockMesDisp[] __attribute__((section(".rodata_registration_name_gTaskDescStockMesDisp"), aligned(1))) = "stock_mes_disp";
+
+TaskDesc gTaskDescStockMesDisp __attribute__((section(".data_registration_gTaskDescStockMesDisp"))) = {
+    gTaskNameStockMesDisp,
+    (void (*)(void*, void*))stock_mes_disp_0,
+    stock_mes_disp_1,
+    (void (*)(void*))stock_mes_disp_2,
+    (void (*)(void*))stock_mes_disp_3,
+    0x48,
+};
+
+const char gTaskNameBosBoogie[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogie"), aligned(1))) = "task_bos_boogie";
+
+TaskDesc gTaskDescBosBoogie __attribute__((section(".data_registration_gTaskDescBosBoogie"))) = {
+    gTaskNameBosBoogie,
+    (void (*)(void*, void*))task_bos_boogie_0,
+    task_bos_boogie_1,
+    (void (*)(void*))task_bos_boogie_2,
+    (void (*)(void*))task_bos_boogie_3,
+    0x178,
+};

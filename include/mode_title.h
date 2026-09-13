@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
@@ -49,9 +50,6 @@ extern u8 gUnk_0984A6B8[];
 extern u8 gUnk_0984A6F8[];
 extern u8 gUnk_0984A718[];
 extern u8 gUnk_0984A738[];
-extern TaskDesc gTaskDescTitleLogo;
-extern TaskDesc gTaskDescTitleObj;
-extern TaskDesc gTaskDescTitleMenu;
 extern void* gUnk_09EF659C;
 extern void* gUnk_09EF669C;
 extern void* gUnk_09EF65A4;

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
@@ -237,7 +238,6 @@ extern u8 gUnk_08F69BC4[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescBtlPremire[];
 extern u8 gTaskDescBtlPop[];
-extern u8 gTaskDescBtlPopCb[];
 extern const EnemyBaseStats gUnk_08133E5C[];
 extern const BattleAttackDef gUnk_0813400C[];
 
@@ -304,19 +304,11 @@ u8 func_0807E33C(void);
 u8 func_08081848(void);
 void func_080838E8(void);
 void func_080838EC(void);
-extern TaskDesc gTaskDescBtlVslockon;
-extern TaskDesc gTaskDescBtlHpoth;
-extern TaskDesc gTaskDescCardBattleSora;
-extern TaskDesc gTaskDescCardBattleRiku;
-extern Mode gModeSioBtlCardget;
-extern TaskDesc gTaskDescBtlExp;
-extern Mode gModeContinue;
 extern TaskDesc gTaskDescBtlStart;
 extern TaskDesc gTaskDescBtlLockon;
 extern TaskDesc gTaskDescBtlHpply;
 extern TaskDesc gTaskDescBtlHpenm;
 extern TaskDesc gTaskDescBtlEscape;
-extern u8 gTaskDescLevelUp[];
 extern u8 gUnk_09EE7804[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_09F72C10[];

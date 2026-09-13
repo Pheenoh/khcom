@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "chara_api.h"
 #include "display.h"
 #include "pallet.h"
@@ -1406,3 +1407,14 @@ void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count) {
         RequestDma3Copy(src + i * 0x40, dst + i * 0x40, size * 2);
     }
 }
+
+const char gTaskNameChgCardObj[] __attribute__((section(".rodata_registration_name_gTaskDescChgCardObj"), aligned(1))) = "task_chgCardObj";
+
+TaskDesc gTaskDescChgCardObj __attribute__((section(".data_registration_gTaskDescChgCardObj"))) = {
+    gTaskNameChgCardObj,
+    (void (*)(void*, void*))task_chgCardObj_0,
+    task_chgCardObj_1,
+    (void (*)(void*))task_chgCardObj_2,
+    (void (*)(void*))task_chgCardObj_3,
+    0x44,
+};

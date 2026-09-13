@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "audio_block_codec.h"
 #include "anim.h"
 #include "m4a.h"
@@ -189,7 +190,7 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
             a.unk_00 = 2;
             a.x = w->unk_08->x;
             a.y = w->unk_08->y;
-            TaskCreate(&w->unk_2C, gTaskDescSrollBCrtn, &a);
+            TaskCreate(&w->unk_2C, &gTaskDescSrollBCrtn, &a);
         }
 
         w->unk_08->unk_0C = (gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8) >> 2;
@@ -2017,3 +2018,69 @@ void PcmPlaybackUpdate(void) {
         SetDecodedAudioReadPosition(pos + gUnk_020380A4 - 0x800);
     }
 }
+
+const char gTaskNameSrollAName[] __attribute__((section(".rodata_registration_name_gTaskDescSrollAName"), aligned(1))) = "task_sroll_a_name";
+
+TaskDesc gTaskDescSrollAName __attribute__((section(".data_registration_gTaskDescSrollAName"))) = {
+    gTaskNameSrollAName,
+    (void (*)(void*, void*))task_sroll_a_name_0,
+    task_sroll_a_name_1,
+    (void (*)(void*))task_sroll_a_name_2,
+    (void (*)(void*))task_sroll_a_name_3,
+    0x38,
+};
+
+const char gTaskNameSrollBChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBChar"), aligned(1))) = "task_sroll_b_char";
+
+TaskDesc gTaskDescSrollBChar __attribute__((section(".data_registration_gTaskDescSrollBChar"))) = {
+    gTaskNameSrollBChar,
+    (void (*)(void*, void*))task_sroll_b_char_0,
+    task_sroll_b_char_1,
+    (void (*)(void*))task_sroll_b_char_2,
+    (void (*)(void*))task_sroll_b_char_3,
+    0x40,
+};
+
+const char gTaskNameSrollBLogo[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBLogo"), aligned(1))) = "task_sroll_b_logo";
+
+TaskDesc gTaskDescSrollBLogo __attribute__((section(".data_registration_gTaskDescSrollBLogo"))) = {
+    gTaskNameSrollBLogo,
+    (void (*)(void*, void*))task_sroll_b_logo_0,
+    task_sroll_b_logo_1,
+    (void (*)(void*))task_sroll_b_logo_2,
+    (void (*)(void*))task_sroll_b_logo_3,
+    0x30,
+};
+
+const char gTaskNameSrollBSecn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBSecn"), aligned(1))) = "task_sroll_b_secn";
+
+TaskDesc gTaskDescSrollBSecn __attribute__((section(".data_registration_gTaskDescSrollBSecn"))) = {
+    gTaskNameSrollBSecn,
+    (void (*)(void*, void*))task_sroll_b_secn_0,
+    task_sroll_b_secn_1,
+    (void (*)(void*))task_sroll_b_secn_2,
+    (void (*)(void*))task_sroll_b_secn_3,
+    0x4C,
+};
+
+const char gTaskNameSrollBCrtn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBCrtn"), aligned(1))) = "task_sroll_b_crtn";
+
+TaskDesc gTaskDescSrollBCrtn __attribute__((section(".data_registration_gTaskDescSrollBCrtn"))) = {
+    gTaskNameSrollBCrtn,
+    (void (*)(void*, void*))task_sroll_b_crtn_0,
+    task_sroll_b_crtn_1,
+    (void (*)(void*))task_sroll_b_crtn_2,
+    (void (*)(void*))task_sroll_b_crtn_3,
+    0x30,
+};
+
+const char gTaskNameSrollCChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollCChar"), aligned(1))) = "task_sroll_c_char";
+
+TaskDesc gTaskDescSrollCChar __attribute__((section(".data_registration_gTaskDescSrollCChar"))) = {
+    gTaskNameSrollCChar,
+    (void (*)(void*, void*))task_sroll_c_char_0,
+    task_sroll_c_char_1,
+    (void (*)(void*))task_sroll_c_char_2,
+    (void (*)(void*))task_sroll_c_char_3,
+    0x98,
+};

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "display.h"
@@ -79,7 +80,7 @@ void func_08019190(BtlObj* p, s16 b) {
     if (gGameState.flags & 8) {
         if (b == 9) {
             a.unk_12 = abs(gBtlWork->unk_1CA);
-            TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPopCb, &a);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPopCb, &a);
             return;
         }
         a.unk_12 = b;
@@ -821,7 +822,7 @@ void _08019CB4(void) {
 #ifdef VERSION_EU
                     gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72D80, 0);
 #else
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gTaskDescLevelUp, 0);
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescLevelUp, 0);
 #endif
                     gBtlWork->unk_068 |= 0x4000000ULL;
                     gBtlWork->unk_068 |= 0x2000ULL;

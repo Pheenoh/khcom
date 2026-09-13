@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "mode_status_api.h"
@@ -83,3 +84,12 @@ void mode_status_2(void) {
 void func_080D7568(u8 a) {
     gUnk_02034EF8 = a;
 }
+
+const char gModeNameStatus[] __attribute__((section(".rodata_registration_name_gModeStatus"), aligned(1))) = "mode_status";
+
+Mode gModeStatus __attribute__((section(".data_registration_gModeStatus"))) = {
+    gModeNameStatus,
+    (void (*)(s32))mode_status_0,
+    (void (*)(void))mode_status_1,
+    (void (*)(void))mode_status_2,
+};

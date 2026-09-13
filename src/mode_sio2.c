@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "msg_api.h"
 #include "mode_sio2_api.h"
 #include "macros.h"
@@ -1085,3 +1086,12 @@ void func_080C84E0(PoohWork* w, u32 b) {
 
     func_080C8428(w, b);
 }
+
+const char gModeNamePooh[] __attribute__((section(".rodata_registration_name_gModePooh"), aligned(1))) = "mode_pooh";
+
+Mode gModePooh __attribute__((section(".data_registration_gModePooh"))) = {
+    gModeNamePooh,
+    (void (*)(s32))mode_pooh_0,
+    (void (*)(void))mode_pooh_1,
+    (void (*)(void))mode_pooh_2,
+};

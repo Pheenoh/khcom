@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "chara_api.h"
 #include "intr.h"
 #include "pallet.h"
@@ -2797,3 +2798,267 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
     }
     b->unk_48C = a->unk_02C;
 }
+
+const char gTaskNameWlogoMons[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoMons"), aligned(1))) = "task_wlogo_mons";
+
+TaskDesc gTaskDescWlogoMons __attribute__((section(".data_registration_gTaskDescWlogoMons"))) = {
+    gTaskNameWlogoMons,
+    (void (*)(void*, void*))task_wlogo_mons_0,
+    task_wlogo_mons_1,
+    (void (*)(void*))task_wlogo_mons_2,
+    (void (*)(void*))task_wlogo_mons_3,
+    0x30,
+};
+
+const char gTaskNameWlogoHwt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHwt"), aligned(1))) = "task_wlogo_hwt";
+
+TaskDesc gTaskDescWlogoHwt __attribute__((section(".data_registration_gTaskDescWlogoHwt"))) = {
+    gTaskNameWlogoHwt,
+    (void (*)(void*, void*))task_wlogo_hwt_0,
+    task_wlogo_hwt_1,
+    (void (*)(void*))task_wlogo_hwt_2,
+    (void (*)(void*))task_wlogo_hwt_3,
+    0x8,
+};
+
+const char gTaskNameWlogoHwtObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHwtObj"), aligned(1))) = "task_wlogo_hwt_obj";
+
+TaskDesc gTaskDescWlogoHwtObj __attribute__((section(".data_registration_gTaskDescWlogoHwtObj"))) = {
+    gTaskNameWlogoHwtObj,
+    (void (*)(void*, void*))task_wlogo_hwt_obj_0,
+    task_wlogo_hwt_obj_1,
+    (void (*)(void*))task_wlogo_hwt_obj_2,
+    (void (*)(void*))task_wlogo_hwt_obj_3,
+    0x4C,
+};
+
+const char gTaskNameWlogoWon[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoWon"), aligned(1))) = "task_wlogo_won";
+
+TaskDesc gTaskDescWlogoWon __attribute__((section(".data_registration_gTaskDescWlogoWon"))) = {
+    gTaskNameWlogoWon,
+    (void (*)(void*, void*))task_wlogo_won_0,
+    task_wlogo_won_1,
+    (void (*)(void*))task_wlogo_won_2,
+    (void (*)(void*))task_wlogo_won_3,
+    0x108,
+};
+
+const char gTaskNameWlogoAtl[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAtl"), aligned(1))) = "task_wlogo_atl";
+
+TaskDesc gTaskDescWlogoAtl __attribute__((section(".data_registration_gTaskDescWlogoAtl"))) = {
+    gTaskNameWlogoAtl,
+    (void (*)(void*, void*))task_wlogo_atl_0,
+    task_wlogo_atl_1,
+    (void (*)(void*))task_wlogo_atl_2,
+    (void (*)(void*))task_wlogo_atl_3,
+    0xC,
+};
+
+const char gTaskNameWlogoNvl[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvl"), aligned(1))) = "task_wlogo_nvl";
+
+TaskDesc gTaskDescWlogoNvl __attribute__((section(".data_registration_gTaskDescWlogoNvl"))) = {
+    gTaskNameWlogoNvl,
+    (void (*)(void*, void*))task_wlogo_nvl_0,
+    task_wlogo_nvl_1,
+    (void (*)(void*))task_wlogo_nvl_2,
+    (void (*)(void*))task_wlogo_nvl_3,
+    0xC,
+};
+
+const char gTaskNameWlogoNvlMov[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvlMov"), aligned(1))) = "task_wlogo_nvl_mov";
+
+TaskDesc gTaskDescWlogoNvlMov __attribute__((section(".data_registration_gTaskDescWlogoNvlMov"))) = {
+    gTaskNameWlogoNvlMov,
+    (void (*)(void*, void*))task_wlogo_nvl_mov_0,
+    task_wlogo_nvl_mov_1,
+    (void (*)(void*))task_wlogo_nvl_mov_2,
+    (void (*)(void*))task_wlogo_nvl_mov_3,
+    0x4C,
+};
+
+const char gTaskNameWlogoNvlObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvlObj"), aligned(1))) = "task_wlogo_nvl_obj";
+
+TaskDesc gTaskDescWlogoNvlObj __attribute__((section(".data_registration_gTaskDescWlogoNvlObj"))) = {
+    gTaskNameWlogoNvlObj,
+    (void (*)(void*, void*))task_wlogo_nvl_obj_0,
+    task_wlogo_nvl_obj_1,
+    (void (*)(void*))task_wlogo_nvl_obj_2,
+    (void (*)(void*))task_wlogo_nvl_obj_3,
+    0x30,
+};
+
+const char gTaskNameWlogoCol[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoCol"), aligned(1))) = "task_wlogo_col";
+
+TaskDesc gTaskDescWlogoCol __attribute__((section(".data_registration_gTaskDescWlogoCol"))) = {
+    gTaskNameWlogoCol,
+    (void (*)(void*, void*))task_wlogo_col_0,
+    task_wlogo_col_1,
+    (void (*)(void*))task_wlogo_col_2,
+    (void (*)(void*))task_wlogo_col_3,
+    0x34,
+};
+
+const char gTaskNameWlogoHlw[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHlw"), aligned(1))) = "task_wlogo_hlw";
+
+TaskDesc gTaskDescWlogoHlw __attribute__((section(".data_registration_gTaskDescWlogoHlw"))) = {
+    gTaskNameWlogoHlw,
+    (void (*)(void*, void*))task_wlogo_hlw_0,
+    task_wlogo_hlw_1,
+    (void (*)(void*))task_wlogo_hlw_2,
+    (void (*)(void*))task_wlogo_hlw_3,
+    0x8,
+};
+
+const char gTaskNameWlogoDil[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoDil"), aligned(1))) = "task_wlogo_dil";
+
+TaskDesc gTaskDescWlogoDil __attribute__((section(".data_registration_gTaskDescWlogoDil"))) = {
+    gTaskNameWlogoDil,
+    (void (*)(void*, void*))task_wlogo_dil_0,
+    task_wlogo_dil_1,
+    (void (*)(void*))task_wlogo_dil_2,
+    (void (*)(void*))task_wlogo_dil_3,
+    0x18,
+};
+
+const char gTaskNameWlogoAgr[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgr"), aligned(1))) = "task_wlogo_agr";
+
+TaskDesc gTaskDescWlogoAgr __attribute__((section(".data_registration_gTaskDescWlogoAgr"))) = {
+    gTaskNameWlogoAgr,
+    (void (*)(void*, void*))task_wlogo_agr_0,
+    task_wlogo_agr_1,
+    (void (*)(void*))task_wlogo_agr_2,
+    (void (*)(void*))task_wlogo_agr_3,
+    0x18,
+};
+
+const char gTaskNameWlogoAgrSmoke[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrSmoke"), aligned(1))) = "task_wlogo_agr_smoke";
+
+TaskDesc gTaskDescWlogoAgrSmoke __attribute__((section(".data_registration_gTaskDescWlogoAgrSmoke"))) = {
+    gTaskNameWlogoAgrSmoke,
+    (void (*)(void*, void*))task_wlogo_agr_smoke_0,
+    task_wlogo_agr_smoke_1,
+    (void (*)(void*))task_wlogo_agr_smoke_2,
+    (void (*)(void*))task_wlogo_agr_smoke_3,
+    0x38,
+};
+
+const char gTaskNameWlogoAgrFlash0[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrFlash0"), aligned(1))) = "task_wlogo_agr_flash0";
+
+TaskDesc gTaskDescWlogoAgrFlash0 __attribute__((section(".data_registration_gTaskDescWlogoAgrFlash0"))) = {
+    gTaskNameWlogoAgrFlash0,
+    (void (*)(void*, void*))task_wlogo_agr_flash0_0,
+    task_wlogo_agr_flash0_1,
+    (void (*)(void*))task_wlogo_agr_flash0_2,
+    (void (*)(void*))task_wlogo_agr_flash0_3,
+    0x2C,
+};
+
+const char gTaskNameWlogoAgrFlash1[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrFlash1"), aligned(1))) = "task_wlogo_agr_flash1";
+
+TaskDesc gTaskDescWlogoAgrFlash1 __attribute__((section(".data_registration_gTaskDescWlogoAgrFlash1"))) = {
+    gTaskNameWlogoAgrFlash1,
+    (void (*)(void*, void*))task_wlogo_agr_flash1_0,
+    task_wlogo_agr_flash1_1,
+    (void (*)(void*))task_wlogo_agr_flash1_2,
+    (void (*)(void*))task_wlogo_agr_flash1_3,
+    0x2C,
+};
+
+const char gTaskNameWlogoTvt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTvt"), aligned(1))) = "task_wlogo_tvt";
+
+TaskDesc gTaskDescWlogoTvt __attribute__((section(".data_registration_gTaskDescWlogoTvt"))) = {
+    gTaskNameWlogoTvt,
+    (void (*)(void*, void*))task_wlogo_tvt_0,
+    task_wlogo_tvt_1,
+    (void (*)(void*))task_wlogo_tvt_2,
+    (void (*)(void*))task_wlogo_tvt_3,
+    0x34,
+};
+
+const char gTaskNameWlogoPoo[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoPoo"), aligned(1))) = "task_wlogo_poo";
+
+TaskDesc gTaskDescWlogoPoo __attribute__((section(".data_registration_gTaskDescWlogoPoo"))) = {
+    gTaskNameWlogoPoo,
+    (void (*)(void*, void*))task_wlogo_poo_0,
+    task_wlogo_poo_1,
+    (void (*)(void*))task_wlogo_poo_2,
+    (void (*)(void*))task_wlogo_poo_3,
+    0xC,
+};
+
+const char gTaskNameWlogoPooObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoPooObj"), aligned(1))) = "task_wlogo_poo_obj";
+
+TaskDesc gTaskDescWlogoPooObj __attribute__((section(".data_registration_gTaskDescWlogoPooObj"))) = {
+    gTaskNameWlogoPooObj,
+    (void (*)(void*, void*))task_wlogo_poo_obj_0,
+    task_wlogo_poo_obj_1,
+    (void (*)(void*))task_wlogo_poo_obj_2,
+    (void (*)(void*))task_wlogo_poo_obj_3,
+    0x44,
+};
+
+const char gTaskNameWlogoTt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTt"), aligned(1))) = "task_wlogo_tt";
+
+TaskDesc gTaskDescWlogoTt __attribute__((section(".data_registration_gTaskDescWlogoTt"))) = {
+    gTaskNameWlogoTt,
+    (void (*)(void*, void*))task_wlogo_tt_0,
+    task_wlogo_tt_1,
+    (void (*)(void*))task_wlogo_tt_2,
+    (void (*)(void*))task_wlogo_tt_3,
+    0x128,
+};
+
+const char gTaskNameWlogoTtObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTtObj"), aligned(1))) = "task_wlogo_tt_obj";
+
+TaskDesc gTaskDescWlogoTtObj __attribute__((section(".data_registration_gTaskDescWlogoTtObj"))) = {
+    gTaskNameWlogoTtObj,
+    (void (*)(void*, void*))task_wlogo_tt_obj_0,
+    task_wlogo_tt_obj_1,
+    (void (*)(void*))task_wlogo_tt_obj_2,
+    (void (*)(void*))task_wlogo_tt_obj_3,
+    0x30,
+};
+
+const char gTaskNameWlogoTtLine[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTtLine"), aligned(1))) = "task_wlogo_tt_line";
+
+TaskDesc gTaskDescWlogoTtLine __attribute__((section(".data_registration_gTaskDescWlogoTtLine"))) = {
+    gTaskNameWlogoTtLine,
+    (void (*)(void*, void*))task_wlogo_tt_line_0,
+    task_wlogo_tt_line_1,
+    (void (*)(void*))task_wlogo_tt_line_2,
+    (void (*)(void*))task_wlogo_tt_line_3,
+    0x1C,
+};
+
+const char gTaskNameWlogoBks[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoBks"), aligned(1))) = "task_wlogo_bks";
+
+TaskDesc gTaskDescWlogoBks __attribute__((section(".data_registration_gTaskDescWlogoBks"))) = {
+    gTaskNameWlogoBks,
+    (void (*)(void*, void*))task_wlogo_bks_0,
+    task_wlogo_bks_1,
+    (void (*)(void*))task_wlogo_bks_2,
+    (void (*)(void*))task_wlogo_bks_3,
+    0x50,
+};
+
+const char gTaskNameWlogoBksObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoBksObj"), aligned(1))) = "task_wlogo_bks_obj";
+
+TaskDesc gTaskDescWlogoBksObj __attribute__((section(".data_registration_gTaskDescWlogoBksObj"))) = {
+    gTaskNameWlogoBksObj,
+    (void (*)(void*, void*))task_wlogo_bks_obj_0,
+    task_wlogo_bks_obj_1,
+    (void (*)(void*))task_wlogo_bks_obj_2,
+    (void (*)(void*))task_wlogo_bks_obj_3,
+    0x4C,
+};
+
+const char gTaskNameBosTm[] __attribute__((section(".rodata_registration_name_gTaskDescBosTm"), aligned(1))) = "task_bos_tm";
+
+TaskDesc gTaskDescBosTm __attribute__((section(".data_registration_gTaskDescBosTm"))) = {
+    gTaskNameBosTm,
+    (void (*)(void*, void*))task_bos_tm_0,
+    task_bos_tm_1,
+    (void (*)(void*))task_bos_tm_2,
+    (void (*)(void*))task_bos_tm_3,
+    0x64,
+};

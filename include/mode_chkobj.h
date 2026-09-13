@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_CHKOBJ_H
 #define GUARD_MODE_CHKOBJ_H
 
@@ -46,6 +47,5 @@ extern ObjDef gUnk_09ED5D34[];
 extern ObjDef gUnk_09ED76F4[];
 extern ObjDef gUnk_09ED77D4[];
 extern u8 gUnk_08F683A4[];
-extern TaskDesc gTaskDescPrint;
 
 #endif /* GUARD_MODE_CHKOBJ_H */

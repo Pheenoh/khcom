@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
 
@@ -42,13 +43,5 @@ extern u8 gUnk_09EDF764[];
 extern u8 gUnk_09EDF774[];
 extern Mode gModeChkbtl;
 extern Mode gModeChksnd;
-extern Mode gModeMovie;
-extern Mode gModeEventselect;
-extern Mode gModeSioBattle;
-extern Mode gModeWLogo;
-extern Mode gModePooh;
-extern Mode gModeCopyright1;
-extern Mode gModeMapChk;
-extern Mode gModeBackupstat;
 
 #endif /* GUARD_MODE_DEBUG_H */

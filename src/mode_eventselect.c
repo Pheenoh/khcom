@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "msg_api.h"
 #include "card_api.h"
 #include <string.h>
@@ -2154,3 +2155,142 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
 
     return 1;
 }
+
+const char gModeNameEventselect[] __attribute__((section(".rodata_registration_name_gModeEventselect"), aligned(1))) = "mode_eventselect";
+
+Mode gModeEventselect __attribute__((section(".data_registration_gModeEventselect"))) = {
+    gModeNameEventselect,
+    (void (*)(s32))mode_eventselect_0,
+    (void (*)(void))mode_eventselect_1,
+    (void (*)(void))mode_eventselect_2,
+};
+
+const char gTaskNameHanabira[] __attribute__((section(".rodata_registration_name_gTaskDescHanabira"), aligned(1))) = "Hanabira";
+
+TaskDesc gTaskDescHanabira __attribute__((section(".data_registration_gTaskDescHanabira"))) = {
+    gTaskNameHanabira,
+    (void (*)(void*, void*))Hanabira_0,
+    Hanabira_1,
+    (void (*)(void*))Hanabira_2,
+    (void (*)(void*))Hanabira_3,
+    0x60,
+};
+
+const char gTaskNameHanabiraC[] __attribute__((section(".rodata_registration_name_gTaskDescHanabiraC"), aligned(1))) = "Hanabira_c";
+
+TaskDesc gTaskDescHanabiraC __attribute__((section(".data_registration_gTaskDescHanabiraC"))) = {
+    gTaskNameHanabiraC,
+    (void (*)(void*, void*))Hanabira_c_0,
+    Hanabira_c_1,
+    (void (*)(void*))Hanabira_c_2,
+    (void (*)(void*))Hanabira_c_3,
+    0x60,
+};
+
+const char gTaskNameSmoke[] __attribute__((section(".rodata_registration_name_gTaskDescSmoke"), aligned(1))) = "smoke";
+
+TaskDesc gTaskDescSmoke __attribute__((section(".data_registration_gTaskDescSmoke"))) = {
+    gTaskNameSmoke,
+    (void (*)(void*, void*))smoke_0,
+    func_08075720,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+const char gTaskNameExclamation[] __attribute__((section(".rodata_registration_name_gTaskDescExclamation"), aligned(1))) = "Exclamation";
+
+TaskDesc gTaskDescExclamation __attribute__((section(".data_registration_gTaskDescExclamation"))) = {
+    gTaskNameExclamation,
+    (void (*)(void*, void*))Exclamation_0,
+    Exclamation_1,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+const char gTaskNameBalloon[] __attribute__((section(".rodata_registration_name_gTaskDescBalloon"), aligned(1))) = "balloon";
+
+TaskDesc gTaskDescBalloon __attribute__((section(".data_registration_gTaskDescBalloon"))) = {
+    gTaskNameBalloon,
+    (void (*)(void*, void*))balloon_0,
+    func_08075720,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+const char gTaskNameQuestion[] __attribute__((section(".rodata_registration_name_gTaskDescQuestion"), aligned(1))) = "Question";
+
+TaskDesc gTaskDescQuestion __attribute__((section(".data_registration_gTaskDescQuestion"))) = {
+    gTaskNameQuestion,
+    (void (*)(void*, void*))Question_0,
+    Question_1,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+const char gTaskNameGlowNose[] __attribute__((section(".rodata_registration_name_gTaskDescGlowNose"), aligned(1))) = "GlowNose";
+
+TaskDesc gTaskDescGlowNose __attribute__((section(".data_registration_gTaskDescGlowNose"))) = {
+    gTaskNameGlowNose,
+    (void (*)(void*, void*))GlowNose_0,
+    GlowNose_1,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+TaskDesc gTaskDescGlowNose2 __attribute__((section(".data_registration_gTaskDescGlowNose2"))) = {
+    gTaskNameGlowNose,
+    (void (*)(void*, void*))GlowNose2_0,
+    GlowNose2_1,
+    (void (*)(void*))EffectDrawObj,
+    (void (*)(void*))EffectReleaseObj,
+    0x60,
+};
+
+const char gTaskNameDown[] __attribute__((section(".rodata_registration_name_gTaskDescDown"), aligned(1))) = "down";
+
+TaskDesc gTaskDescDown __attribute__((section(".data_registration_gTaskDescDown"))) = {
+    gTaskNameDown,
+    (void (*)(void*, void*))down_0,
+    down_1,
+    (void (*)(void*))down_2,
+    (void (*)(void*))down_3,
+    0x60,
+};
+
+const char gTaskNameTinkerbell[] __attribute__((section(".rodata_registration_name_gTaskDescTinkerbell"), aligned(1))) = "Tinkerbell";
+
+TaskDesc gTaskDescTinkerbell __attribute__((section(".data_registration_gTaskDescTinkerbell"))) = {
+    gTaskNameTinkerbell,
+    (void (*)(void*, void*))Tinkerbell_0,
+    Tinkerbell_1,
+    (void (*)(void*))Tinkerbell_2,
+    (void (*)(void*))Tinkerbell_3,
+    0x60,
+};
+
+const char gTaskNameEvSound[] __attribute__((section(".rodata_registration_name_gTaskDescEvSound"), aligned(1))) = "EV_SOUND";
+
+TaskDesc gTaskDescEvSound __attribute__((section(".data_registration_gTaskDescEvSound"))) = {
+    gTaskNameEvSound,
+    (void (*)(void*, void*))EV_SOUND_0,
+    EV_SOUND_1,
+    (void (*)(void*))EV_SOUND_2,
+    (void (*)(void*))EV_SOUND_3,
+    0xC,
+};
+
+const char gTaskNameCardBattleSora[] __attribute__((section(".rodata_registration_name_gTaskDescCardBattleSora"), aligned(1))) = "cardbattle";
+
+TaskDesc gTaskDescCardBattleSora __attribute__((section(".data_registration_gTaskDescCardBattleSora"))) = {
+    gTaskNameCardBattleSora,
+    (void (*)(void*, void*))func_08076CB4,
+    func_08076F80,
+    (void (*)(void*))func_08077E10,
+    (void (*)(void*))func_08077E98,
+    0xCC,
+};

@@ -940,7 +940,8 @@ TARGET_ONLY_SYMBOLS = {
 
 TARGET_EXTRA_LABELS = {
     "eu": [0x080059F4, 0x08005A1C, 0x08005ADC, 0x0805E968, 0x0805E9AC, 0x080C2740, 0x080DA830,
-           0x080DA848, 0x080DA860, 0x080ABA38, 0x080ABA7C],
+           0x080DA848, 0x080DA860, 0x080ABA38, 0x080ABA7C,
+           0x0805E9F0, 0x0805EA44, 0x0805EC60, 0x0805ECE4],
 }
 
 TARGET_FUNC_SIZE = {
@@ -1677,6 +1678,7 @@ def main():
         regions.append((here, base))
 
     used = {}
+    blob_names = set()
 
     def blob(lo, hi):
         out = []
@@ -1687,7 +1689,10 @@ def main():
             k = bisect.bisect_right([x[0] for x in regions], a) - 1
             base = regions[k][1] if k >= 0 else "data"
             used[base] = used.get(base, 0) + 1
-            nm = f"{base}.s" if used[base] == 1 else f"{base}{used[base]}.s"
+            nm = f"{base}.s" if used[base] == 1 else f"{base}_at_{a:08X}.s"
+            if nm in blob_names:
+                raise ValueError(f"duplicate regional blob filename: {nm}")
+            blob_names.add(nm)
             out.append((nm, a, b))
         return out
 

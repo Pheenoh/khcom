@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "mode.h"
 #include "macros.h"
@@ -468,7 +469,7 @@ u8 func_081108AC(LstState* work, s32 kind) {
         }
         arg.unk_12 = *work->unk_01C;
         arg.unk_14 = work->unk_020;
-        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFal, &arg);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFal, &arg);
         result = 1;
     }
 
@@ -750,9 +751,9 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     sub.unk_00 = work->unk_00E;
     sub.unk_04 = work->unk_01C;
     sub.unk_08 = work->unk_020;
-    work->unk_1C4 = TaskCreate(pool, gTaskDescBosLstLsr, &sub);
-    work->unk_1C8 = TaskCreate(pool, gTaskDescBosLstLsr, &sub);
-    work->unk_1CC = TaskCreate(pool, gTaskDescBosLstLsr, &sub);
+    work->unk_1C4 = TaskCreate(pool, &gTaskDescBosLstLsr, &sub);
+    work->unk_1C8 = TaskCreate(pool, &gTaskDescBosLstLsr, &sub);
+    work->unk_1CC = TaskCreate(pool, &gTaskDescBosLstLsr, &sub);
 }
 
 void func_08110C9C(LstState* work) {
@@ -1199,7 +1200,7 @@ u8 func_08111678(LstLsrWork* work) {
         arg.unk_0C = work->unk_038;
         arg.unk_12 = *work->unk_008;
         arg.unk_14 = work->unk_00C;
-        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFal, &arg);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFal, &arg);
         result = 1;
     }
 
@@ -1963,7 +1964,7 @@ void func_08112768(StaffRollWork* w) {
             break;
         case 6:
             w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3] =
-                func_0801CE04(w->unk_110, gTaskDescSrollBChar, (EvtObj*)func_08112748(w), w->unk_0CC[w->unk_0D0 + 4],
+                func_0801CE04(w->unk_110, &gTaskDescSrollBChar, (EvtObj*)func_08112748(w), w->unk_0CC[w->unk_0D0 + 4],
                               w->unk_0CC[w->unk_0D0 + 5], 0x2800, 0xF000, 0);
             break;
         case 7:
@@ -2002,7 +2003,7 @@ void func_08112768(StaffRollWork* w) {
             arg.unk_00 = w->unk_0CC[w->unk_0D0 + 4];
             arg.unk_04 = e->x;
             arg.unk_08 = e->y;
-            TaskCreate(w->unk_110, gTaskDescSrollBCrtn, &arg);
+            TaskCreate(w->unk_110, &gTaskDescSrollBCrtn, &arg);
             break;
         case 16:
             func_081149B0((void*)w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3],
@@ -2161,19 +2162,19 @@ u8 func_08112C38(StaffRollWork* w) {
             arg.y = w->unk_09C[w->unk_090].unk_2C;
             arg.targetX = w->unk_09C[w->unk_090].unk_28;
             arg.targetY = w->unk_09C[w->unk_090].unk_2C;
-            w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollAName, &arg);
+            w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
             arg.unk_00 = 1;
             arg.unk_02 = 1;
             arg.unk_04 = w->unk_09C[w->unk_090].unk_32;
             arg.x = -0x5000;
             z = 0x7800;
             arg.targetX = z;
-            w->unk_124[1] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollAName, &arg);
+            w->unk_124[1] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
             arg.unk_00 = 2;
             arg.unk_02 = w->unk_09C[w->unk_090].unk_30;
             arg.unk_04 = w->unk_09C[w->unk_090].unk_32;
             arg.x = z;
-            w->unk_124[2] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollAName, &arg);
+            w->unk_124[2] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
             w->unk_084 = 2;
             w->unk_08C = t;
             break;
@@ -2403,7 +2404,7 @@ u8 func_08113180(StaffRollWork* w) {
                         logo.unk_04 = ((w->unk_0B8 >> 8) + 168) << 8;
                         logo.unk_08 = &w->unk_0B8;
                         logo.unk_0C = &w->unk_0B4;
-                        TaskCreate(w->unk_110, gTaskDescSrollBLogo, &logo);
+                        TaskCreate(w->unk_110, &gTaskDescSrollBLogo, &logo);
                         loop = 0;
                         break;
                     case '<':
@@ -2412,7 +2413,7 @@ u8 func_08113180(StaffRollWork* w) {
                         secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
                         secn.unk_0C = &w->unk_0B8;
                         secn.unk_10 = &w->unk_0B4;
-                        TaskCreate(w->unk_110, gTaskDescSrollBSecn, &secn);
+                        TaskCreate(w->unk_110, &gTaskDescSrollBSecn, &secn);
                         w->unk_014++;
                         loop = 0;
                         break;
@@ -2422,7 +2423,7 @@ u8 func_08113180(StaffRollWork* w) {
                         secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
                         secn.unk_0C = &w->unk_0B8;
                         secn.unk_10 = &w->unk_0B4;
-                        TaskCreate(w->unk_110, gTaskDescSrollBSecn, &secn);
+                        TaskCreate(w->unk_110, &gTaskDescSrollBSecn, &secn);
                         loop = 0;
                         break;
                     case '#':
@@ -2630,9 +2631,9 @@ u8 func_08113A94(StaffRollWork* w) {
         }
         if (FadeIsActive() == 0) {
             if ((gGameState.flags & 8) != 0) {
-                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollCChar, (void*)1);
+                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollCChar, (void*)1);
             } else {
-                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollCChar, (void*)0);
+                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollCChar, (void*)0);
             }
             w->unk_0BC = 2;
             w->unk_0C0 = 0;
@@ -3468,3 +3469,78 @@ s32 func_08114748(s32 x) {
 s32 func_08114750(s32 x) {
     return x * x;
 }
+
+const char gTaskNameBosLstFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstFld"), aligned(1))) = "task_bos_lst_fld";
+
+TaskDesc gTaskDescBosLstFld __attribute__((section(".data_registration_gTaskDescBosLstFld"))) = {
+    gTaskNameBosLstFld,
+    (void (*)(void*, void*))task_bos_lst_fld_0,
+    task_bos_lst_fld_1,
+    (void (*)(void*))task_bos_lst_fld_2,
+    (void (*)(void*))task_bos_lst_fld_3,
+    0x1304,
+};
+
+const char gTaskNameBosLstBit[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstBit"), aligned(1))) = "task_bos_lst_bit";
+
+TaskDesc gTaskDescBosLstBit __attribute__((section(".data_registration_gTaskDescBosLstBit"))) = {
+    gTaskNameBosLstBit,
+    (void (*)(void*, void*))task_bos_lst_bit_0,
+    task_bos_lst_bit_1,
+    (void (*)(void*))task_bos_lst_bit_2,
+    (void (*)(void*))task_bos_lst_bit_3,
+    0x1D0,
+};
+
+const char gTaskNameBosLstLsr[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstLsr"), aligned(1))) = "task_bos_lst_lsr";
+
+TaskDesc gTaskDescBosLstLsr __attribute__((section(".data_registration_gTaskDescBosLstLsr"))) = {
+    gTaskNameBosLstLsr,
+    (void (*)(void*, void*))task_bos_lst_lsr_0,
+    task_bos_lst_lsr_1,
+    (void (*)(void*))task_bos_lst_lsr_2,
+    (void (*)(void*))task_bos_lst_lsr_3,
+    0x5C,
+};
+
+const char gTaskNameBosLstFal[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstFal"), aligned(1))) = "task_bos_lst_fal";
+
+TaskDesc gTaskDescBosLstFal __attribute__((section(".data_registration_gTaskDescBosLstFal"))) = {
+    gTaskNameBosLstFal,
+    (void (*)(void*, void*))task_bos_lst_fal_0,
+    task_bos_lst_fal_1,
+    (void (*)(void*))task_bos_lst_fal_2,
+    (void (*)(void*))task_bos_lst_fal_3,
+    0x40,
+};
+
+const char gTaskNameBosLstCtr[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstCtr"), aligned(1))) = "task_bos_lst_ctr";
+
+TaskDesc gTaskDescBosLstCtr __attribute__((section(".data_registration_gTaskDescBosLstCtr"))) = {
+    gTaskNameBosLstCtr,
+    (void (*)(void*, void*))task_bos_lst_ctr_0,
+    task_bos_lst_ctr_1,
+    (void (*)(void*))task_bos_lst_ctr_2,
+    (void (*)(void*))task_bos_lst_ctr_3,
+    0x188,
+};
+
+const char gTaskNameBosLstSnp[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstSnp"), aligned(1))) = "task_bos_lst_snp";
+
+TaskDesc gTaskDescBosLstSnp __attribute__((section(".data_registration_gTaskDescBosLstSnp"))) = {
+    gTaskNameBosLstSnp,
+    (void (*)(void*, void*))task_bos_lst_snp_0,
+    task_bos_lst_snp_1,
+    (void (*)(void*))task_bos_lst_snp_2,
+    (void (*)(void*))task_bos_lst_snp_3,
+    0x38,
+};
+
+const char gModeNameStaffRoll[] __attribute__((section(".rodata_registration_name_gModeStaffRoll"), aligned(1))) = "mode_StaffRoll";
+
+Mode gModeStaffRoll __attribute__((section(".data_registration_gModeStaffRoll"))) = {
+    gModeNameStaffRoll,
+    (void (*)(s32))mode_StaffRoll_0,
+    (void (*)(void))mode_StaffRoll_1,
+    (void (*)(void))mode_StaffRoll_2,
+};

@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
@@ -483,12 +484,6 @@ extern u8 gUnk_09D6C774[];
 extern u8 gUnk_09D6C974[];
 extern u8 gUnk_09D6CB74[];
 extern LstAnimSet gUnk_09EF9EA4[];
-extern u8 gTaskDescBosLstLsr[];
-extern u8 gTaskDescBosLstFal[];
-extern u8 gTaskDescSrollAName[];
-extern u8 gTaskDescSrollBChar[];
-extern u8 gTaskDescSrollBCrtn[];
-extern u8 gTaskDescSrollCChar[];
 extern u8 gUnk_09EFAEF8[];
 extern u8 gUnk_09EFAF24[];
 extern u8 gUnk_09EFAF50[];
@@ -511,8 +506,6 @@ extern s32* gUnk_09EFA934[];
 extern s32* gUnk_09EFA978[];
 extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
-extern u8 gTaskDescSrollBLogo[];
-extern u8 gTaskDescSrollBSecn[];
 
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);

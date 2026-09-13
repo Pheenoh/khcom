@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "macros.h"
 #include "tutorial.h"
 #include "gba/keys.h"
@@ -535,3 +536,14 @@ void task_tutorial_3(TutorialWork* work) {
     ReleaseObjPalette(work->palette);
     SeedRandom(gFrameCounter);
 }
+
+const char gTaskNameTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescTutorial"), aligned(1))) = "task_tutorial";
+
+TaskDesc gTaskDescTutorial __attribute__((section(".data_registration_gTaskDescTutorial"))) = {
+    gTaskNameTutorial,
+    (void (*)(void*, void*))task_tutorial_0,
+    task_tutorial_1,
+    (void (*)(void*))task_tutorial_2,
+    (void (*)(void*))task_tutorial_3,
+    0x38,
+};

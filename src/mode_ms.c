@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "mode_ms_api.h"
@@ -873,7 +874,7 @@ u8 func_0810329C(u16 a) {
                     arg0.palette = gUnk_02035A40;
                     arg0.unk_08 = GetRandom() % 96 - 48;
                     arg0.unk_0C = GetRandom() % 256 + 0x1C0;
-                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
+                    TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg0);
                 }
             }
 
@@ -887,7 +888,7 @@ u8 func_0810329C(u16 a) {
                 arg0.palette = gUnk_02035A40;
                 arg0.unk_08 = 0x80;
                 arg0.unk_0C = f;
-                TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
+                TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg0);
             }
 
             if (--gUnk_020358C8[i].timer == 0) {
@@ -915,7 +916,7 @@ u8 func_0810329C(u16 a) {
                     arg1.palette = gUnk_02035A40;
                     arg1.unk_08 = 0x80;
                     arg1.unk_0C = g;
-                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg1);
+                    TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg1);
                 }
             }
 
@@ -950,7 +951,7 @@ u8 func_0810329C(u16 a) {
                     arg2.palette = gUnk_02035A40;
                     arg2.unk_08 = 0x80;
                     arg2.unk_0C = h;
-                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg2);
+                    TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg2);
                 }
             }
 
@@ -1438,3 +1439,12 @@ void mode_ms_shop_2(void) {
 
     EwramFree(gUnk_02035C00);
 }
+
+const char gModeNameMsTop[] __attribute__((section(".rodata_registration_name_gModeMsTop"), aligned(1))) = "mode_ms_top";
+
+Mode gModeMsTop __attribute__((section(".data_registration_gModeMsTop"))) = {
+    gModeNameMsTop,
+    (void (*)(s32))mode_ms_top_0,
+    (void (*)(void))mode_ms_top_1,
+    (void (*)(void))mode_ms_top_2,
+};

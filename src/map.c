@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -4929,7 +4930,7 @@ void func_080E8594(void) {
     for (i = 0; i < 12; i++) {
         p = func_080E54A0(i);
         if (p->unk_08 == 0 && p->unk_14 != 0x100000) {
-            TaskCreate(gUnk_02039BA0->unk_78, gTaskDescMapGmkJump, p);
+            TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkJump, p);
         }
     }
     for (i = 0; i < gUnk_02034F78; i++) {
@@ -4939,7 +4940,7 @@ void func_080E8594(void) {
             TaskCreate(gUnk_02039BA0->unk_78, d->unk_24, &gUnk_0203C7B8[i]);
         }
     }
-    TaskCreate(gUnk_02039BA0->unk_78, gTaskDescMapGmkDmy, 0);
+    TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkDmy, 0);
 }
 
 void func_080E8624(void) {
@@ -12620,7 +12621,7 @@ u8 func_080F3ADC(MapGmk01Work* w) {
     if (w->unk_000->unk_00 & 8) {
         gUnk_0203C7AC->unk_00 |= 4;
         w->unk_000->unk_00 |= 2;
-        TaskCreate(gUnk_02039BA0->unk_78, gTaskDescMapGmkEnm, q);
+        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkEnm, q);
         w->unk_0C8 = 0;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x20;
@@ -14977,3 +14978,381 @@ void func_080F7BB8(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 &= ~0x80;
     gUnk_02039BA0->unk_70 &= ~0x1000;
 }
+
+const char gModeNameMapDbg[] __attribute__((section(".rodata_registration_name_gModeMapDbg"), aligned(1))) = "Mode_MapDbg";
+
+Mode gModeMapDbg __attribute__((section(".data_registration_gModeMapDbg"))) = {
+    gModeNameMapDbg,
+    (void (*)(s32))Mode_MapDbg_0,
+    (void (*)(void))Mode_MapDbg_1,
+    (void (*)(void))Mode_MapDbg_2,
+};
+
+const char gModeNameMapFld[] __attribute__((section(".rodata_registration_name_gModeMapFld"), aligned(1))) = "Mode_MapFld";
+
+Mode gModeMapFld __attribute__((section(".data_registration_gModeMapFld"))) = {
+    gModeNameMapFld,
+    (void (*)(s32))Mode_MapFld_0,
+    (void (*)(void))Mode_MapFld_1,
+    (void (*)(void))Mode_MapFld_2,
+};
+
+const char gModeNameMapFix[] __attribute__((section(".rodata_registration_name_gModeMapFix"), aligned(1))) = "Mode_MapFix";
+
+Mode gModeMapFix __attribute__((section(".data_registration_gModeMapFix"))) = {
+    gModeNameMapFix,
+    (void (*)(s32))Mode_MapFix_0,
+    (void (*)(void))Mode_MapFix_1,
+    (void (*)(void))Mode_MapFix_2,
+};
+
+const char gModeNameMenuNew[] __attribute__((section(".rodata_registration_name_gModeMenuNew"), aligned(1))) = "Mode_MenuNew";
+
+Mode gModeMenuNew __attribute__((section(".data_registration_gModeMenuNew"))) = {
+    gModeNameMenuNew,
+    (void (*)(s32))func_080EB328,
+    (void (*)(void))func_080EB698,
+    (void (*)(void))func_080EB6BC,
+};
+
+const char gModeNameMenuLoad[] __attribute__((section(".rodata_registration_name_gModeMenuLoad"), aligned(1))) = "Mode_MenuLoad";
+
+Mode gModeMenuLoad __attribute__((section(".data_registration_gModeMenuLoad"))) = {
+    gModeNameMenuLoad,
+    (void (*)(s32))func_080EC0D4,
+    (void (*)(void))func_080EC424,
+    (void (*)(void))func_080EC448,
+};
+
+const char gModeNameMenuMsg[] __attribute__((section(".rodata_registration_name_gModeMenuMsg"), aligned(1))) = "Mode_MenuMsg";
+
+Mode gModeMenuMsg __attribute__((section(".data_registration_gModeMenuMsg"))) = {
+    gModeNameMenuMsg,
+    (void (*)(s32))func_080EC57C,
+    (void (*)(void))func_080EC618,
+    (void (*)(void))func_080EC644,
+};
+
+const char gTaskNameMapRnd[] __attribute__((section(".rodata_registration_name_gTaskDescMapRnd"), aligned(1))) = "Task_MapRnd";
+
+TaskDesc gTaskDescMapRnd __attribute__((section(".data_registration_gTaskDescMapRnd"))) = {
+    gTaskNameMapRnd,
+    (void (*)(void*, void*))func_080EC660,
+    func_080EC720,
+    (void (*)(void*))func_080EC744,
+    (void (*)(void*))func_080EC750,
+    0x14,
+};
+
+const char gTaskNameMapFix[] __attribute__((section(".rodata_registration_name_gTaskDescMapFix"), aligned(1))) = "Task_MapFix";
+
+TaskDesc gTaskDescMapFix __attribute__((section(".data_registration_gTaskDescMapFix"))) = {
+    gTaskNameMapFix,
+    (void (*)(void*, void*))func_080EC7AC,
+    func_080EC94C,
+    (void (*)(void*))func_080EC9EC,
+    (void (*)(void*))func_080ECA54,
+#ifdef VERSION_EU
+    0x1E8,
+#else
+    0x1E4,
+#endif
+};
+
+const char gTaskNameMapDoor[] __attribute__((section(".rodata_registration_name_gTaskDescMapDoor"), aligned(1))) = "Task_MapDoor";
+
+TaskDesc gTaskDescMapDoor __attribute__((section(".data_registration_gTaskDescMapDoor"))) = {
+    gTaskNameMapDoor,
+    (void (*)(void*, void*))func_080ECC90,
+    func_080ECE3C,
+    (void (*)(void*))func_080ECE98,
+    (void (*)(void*))func_080ECFBC,
+    0x88,
+};
+
+const char gTaskNameMapMenu[] __attribute__((section(".rodata_registration_name_gTaskDescMapMenu"), aligned(1))) = "Task_MapMenu";
+
+TaskDesc gTaskDescMapMenu __attribute__((section(".data_registration_gTaskDescMapMenu"))) = {
+    gTaskNameMapMenu,
+    (void (*)(void*, void*))func_080EDDBC,
+    func_080EDE78,
+    (void (*)(void*))func_080EDECC,
+    (void (*)(void*))func_080EE418,
+#ifdef VERSION_EU
+    0x41C,
+#else
+    0x314,
+#endif
+};
+
+const char gTaskNameMapSave[] __attribute__((section(".rodata_registration_name_gTaskDescMapSave"), aligned(1))) = "Task_MapSave";
+
+TaskDesc gTaskDescMapSave __attribute__((section(".data_registration_gTaskDescMapSave"))) = {
+    gTaskNameMapSave,
+    (void (*)(void*, void*))func_080EED88,
+    func_080EEF04,
+    (void (*)(void*))func_080EEF4C,
+    (void (*)(void*))func_080EF234,
+#ifdef VERSION_EU
+    0x3E8,
+#else
+    0x310,
+#endif
+};
+
+const char gTaskNameMapAnm[] __attribute__((section(".rodata_registration_name_gTaskDescMapAnm"), aligned(1))) = "Task_MapAnm";
+
+TaskDesc gTaskDescMapAnm __attribute__((section(".data_registration_gTaskDescMapAnm"))) = {
+    gTaskNameMapAnm,
+    (void (*)(void*, void*))func_080EF32C,
+    func_080EF368,
+    (void (*)(void*))func_080EF398,
+    (void (*)(void*))func_080EF39C,
+    0xE0,
+};
+
+const char gTaskNameMapDbg[] __attribute__((section(".rodata_registration_name_gTaskDescMapDbg"), aligned(1))) = "Task_MapDbg";
+
+TaskDesc gTaskDescMapDbg __attribute__((section(".data_registration_gTaskDescMapDbg"))) = {
+    gTaskNameMapDbg,
+    (void (*)(void*, void*))func_080F131C,
+    func_080F138C,
+    (void (*)(void*))func_080F139C,
+    (void (*)(void*))func_080F1450,
+    0x48,
+};
+
+const char gTaskNameMapGmkJump[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkJump"), aligned(1))) = "Task_MapGmk_Jump";
+
+TaskDesc gTaskDescMapGmkJump __attribute__((section(".data_registration_gTaskDescMapGmkJump"))) = {
+    gTaskNameMapGmkJump,
+    (void (*)(void*, void*))func_080F1584,
+    func_080F1650,
+    (void (*)(void*))func_080F169C,
+    (void (*)(void*))func_080F1718,
+    0xCC,
+};
+
+const char gTaskNameMapGmkEnm[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkEnm"), aligned(1))) = "Task_MapGmk_Enm";
+
+TaskDesc gTaskDescMapGmkEnm __attribute__((section(".data_registration_gTaskDescMapGmkEnm"))) = {
+    gTaskNameMapGmkEnm,
+    (void (*)(void*, void*))func_080F1798,
+    func_080F1880,
+    (void (*)(void*))func_080F18AC,
+    (void (*)(void*))func_080F1918,
+    0x74,
+};
+
+const char gTaskNameMapGmkDmy[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkDmy"), aligned(1))) = "Task_MapGmk_Dmy";
+
+TaskDesc gTaskDescMapGmkDmy __attribute__((section(".data_registration_gTaskDescMapGmkDmy"))) = {
+    gTaskNameMapGmkDmy,
+    (void (*)(void*, void*))func_080F1930,
+    func_080F194C,
+    (void (*)(void*))func_080F1964,
+    (void (*)(void*))func_080F1968,
+    0x4,
+};
+
+const char gTaskNameMapGmkTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkTutorial"), aligned(1))) = "Task_MapGmk_Tutorial";
+
+TaskDesc gTaskDescMapGmkTutorial __attribute__((section(".data_registration_gTaskDescMapGmkTutorial"))) = {
+    gTaskNameMapGmkTutorial,
+    (void (*)(void*, void*))func_080F1AD0,
+    func_080F1B6C,
+    (void (*)(void*))func_080F1BC8,
+    (void (*)(void*))func_080F1C38,
+    0xC4,
+};
+
+const char gTaskNameMapGmkSpider[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkSpider"), aligned(1))) = "Task_MapGmk_Spider";
+
+TaskDesc gTaskDescMapGmkSpider __attribute__((section(".data_registration_gTaskDescMapGmkSpider"))) = {
+    gTaskNameMapGmkSpider,
+    (void (*)(void*, void*))func_080F1CCC,
+    func_080F1D68,
+    (void (*)(void*))func_080F1D98,
+    (void (*)(void*))func_080F1E0C,
+    0xC8,
+};
+
+const char gTaskNameMapGmk00[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmk00"), aligned(1))) = "Task_MapGmk00";
+
+TaskDesc gTaskDescMapGmk00 __attribute__((section(".data_registration_gTaskDescMapGmk00"))) = {
+    gTaskNameMapGmk00,
+    (void (*)(void*, void*))func_080F3888,
+    func_080F3958,
+    (void (*)(void*))func_080F39DC,
+    (void (*)(void*))func_080F3A50,
+    0xCC,
+};
+
+const char gTaskNameMapPrize[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrize"), aligned(1))) = "Task_MapPrize";
+
+TaskDesc gTaskDescMapPrize __attribute__((section(".data_registration_gTaskDescMapPrize"))) = {
+    gTaskNameMapPrize,
+    (void (*)(void*, void*))func_080F4C5C,
+    func_080F4DB0,
+    (void (*)(void*))func_080F4DDC,
+    (void (*)(void*))func_080F4EC4,
+    0x98,
+};
+
+const char gTaskNameMapPrzCard[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrzCard"), aligned(1))) = "Task_MapPrzCard";
+
+TaskDesc gTaskDescMapPrzCard __attribute__((section(".data_registration_gTaskDescMapPrzCard"))) = {
+    gTaskNameMapPrzCard,
+    (void (*)(void*, void*))func_080F53D0,
+    func_080F5580,
+    (void (*)(void*))func_080F55B0,
+    (void (*)(void*))func_080F5780,
+    0xE8,
+};
+
+const char gTaskNameMapPrzStock[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrzStock"), aligned(1))) = "Task_MapPrzStock";
+
+TaskDesc gTaskDescMapPrzStock __attribute__((section(".data_registration_gTaskDescMapPrzStock"))) = {
+    gTaskNameMapPrzStock,
+    (void (*)(void*, void*))func_080F5838,
+    func_080F5868,
+    (void (*)(void*))func_080F5890,
+    (void (*)(void*))func_080F589C,
+    0x1C,
+};
+
+const char gTaskNameMapMsg[] __attribute__((section(".rodata_registration_name_gTaskDescMapMsg"), aligned(1))) = "Task_MapMsg";
+
+TaskDesc gTaskDescMapMsg __attribute__((section(".data_registration_gTaskDescMapMsg"))) = {
+    gTaskNameMapMsg,
+    (void (*)(void*, void*))func_080F58C4,
+    func_080F5968,
+    (void (*)(void*))func_080F596C,
+    (void (*)(void*))func_080F59A0,
+    0x18C,
+};
+
+const char gTaskNameMapSpark[] __attribute__((section(".rodata_registration_name_gTaskDescMapSpark"), aligned(1))) = "Task_MapSpark";
+
+TaskDesc gTaskDescMapSpark __attribute__((section(".data_registration_gTaskDescMapSpark"))) = {
+    gTaskNameMapSpark,
+    (void (*)(void*, void*))func_080F5A00,
+    func_080F5A64,
+    (void (*)(void*))func_080F5A88,
+    (void (*)(void*))func_080F5B00,
+    0x28,
+};
+
+const char gTaskNameMapTalk[] __attribute__((section(".rodata_registration_name_gTaskDescMapTalk"), aligned(1))) = "Task_MapTalk";
+
+TaskDesc gTaskDescMapTalk __attribute__((section(".data_registration_gTaskDescMapTalk"))) = {
+    gTaskNameMapTalk,
+    (void (*)(void*, void*))func_080F5B18,
+    func_080F5B68,
+    (void (*)(void*))func_080F5BB8,
+    (void (*)(void*))func_080F5C48,
+    0x2C,
+};
+
+const char gTaskNameMapDonald[] __attribute__((section(".rodata_registration_name_gTaskDescMapDonald"), aligned(1))) = "Task_MapDonald";
+
+TaskDesc gTaskDescMapDonald __attribute__((section(".data_registration_gTaskDescMapDonald"))) = {
+    gTaskNameMapDonald,
+    (void (*)(void*, void*))func_080F5D10,
+    func_080F5E4C,
+    (void (*)(void*))func_080F5EA8,
+    (void (*)(void*))func_080F5F4C,
+    0xEC,
+};
+
+const char gTaskNameMapGoofy[] __attribute__((section(".rodata_registration_name_gTaskDescMapGoofy"), aligned(1))) = "Task_MapGoofy";
+
+TaskDesc gTaskDescMapGoofy __attribute__((section(".data_registration_gTaskDescMapGoofy"))) = {
+    gTaskNameMapGoofy,
+    (void (*)(void*, void*))func_080F6038,
+    func_080F6174,
+    (void (*)(void*))func_080F61D0,
+    (void (*)(void*))func_080F6274,
+    0xEC,
+};
+
+const char gTaskNameMapNamine[] __attribute__((section(".rodata_registration_name_gTaskDescMapNamine"), aligned(1))) = "Task_MapNamine";
+
+TaskDesc gTaskDescMapNamine __attribute__((section(".data_registration_gTaskDescMapNamine"))) = {
+    gTaskNameMapNamine,
+    (void (*)(void*, void*))func_080F6348,
+    func_080F64A4,
+    (void (*)(void*))func_080F6500,
+    (void (*)(void*))func_080F65A8,
+    0xF0,
+};
+
+const char gTaskNameMapNiseriku[] __attribute__((section(".rodata_registration_name_gTaskDescMapNiseriku"), aligned(1))) = "Task_MapNiseriku";
+
+TaskDesc gTaskDescMapNiseriku __attribute__((section(".data_registration_gTaskDescMapNiseriku"))) = {
+    gTaskNameMapNiseriku,
+    (void (*)(void*, void*))func_080F6704,
+    func_080F691C,
+    (void (*)(void*))func_080F6978,
+    (void (*)(void*))func_080F6A1C,
+    0xEC,
+};
+
+const char gTaskNameMapMickey[] __attribute__((section(".rodata_registration_name_gTaskDescMapMickey"), aligned(1))) = "Task_MapMickey";
+
+TaskDesc gTaskDescMapMickey __attribute__((section(".data_registration_gTaskDescMapMickey"))) = {
+    gTaskNameMapMickey,
+    (void (*)(void*, void*))func_080F6B0C,
+    func_080F6C00,
+    (void (*)(void*))func_080F6C5C,
+    (void (*)(void*))func_080F6D04,
+    0xEC,
+};
+
+const char gTaskNameMapTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescMapTutorial"), aligned(1))) = "Task_MapTutorial";
+
+TaskDesc gTaskDescMapTutorial __attribute__((section(".data_registration_gTaskDescMapTutorial"))) = {
+    gTaskNameMapTutorial,
+    (void (*)(void*, void*))func_080F72CC,
+    func_080F7378,
+    (void (*)(void*))func_080F73AC,
+    (void (*)(void*))func_080F7458,
+    0xF0,
+};
+
+const char gTaskNameMapStair[] __attribute__((section(".rodata_registration_name_gTaskDescMapStair"), aligned(1))) = "Task_MapStair";
+
+TaskDesc gTaskDescMapStair __attribute__((section(".data_registration_gTaskDescMapStair"))) = {
+    gTaskNameMapStair,
+    (void (*)(void*, void*))func_080F7640,
+    func_080F76D0,
+    (void (*)(void*))func_080F76F0,
+    (void (*)(void*))func_080F775C,
+    0x64,
+};
+
+const char gTaskNameMapDmg[] __attribute__((section(".rodata_registration_name_gTaskDescMapDmg"), aligned(1))) = "Task_MapDmg";
+
+TaskDesc gTaskDescMapDmg __attribute__((section(".data_registration_gTaskDescMapDmg"))) = {
+    gTaskNameMapDmg,
+    (void (*)(void*, void*))func_080F7878,
+    func_080F78A8,
+    (void (*)(void*))func_080F78EC,
+    (void (*)(void*))func_080F7A9C,
+    0xC,
+};
+
+const char gTaskNameMapFloor[] __attribute__((section(".rodata_registration_name_gTaskDescMapFloor"), aligned(1))) = "Task_MapFloor";
+
+TaskDesc gTaskDescMapFloor __attribute__((section(".data_registration_gTaskDescMapFloor"))) = {
+    gTaskNameMapFloor,
+    (void (*)(void*, void*))func_080F7AE0,
+    func_080F7B64,
+    (void (*)(void*))func_080F7B78,
+    (void (*)(void*))func_080F7BB8,
+#ifdef VERSION_EU
+    0x1F8,
+#else
+    0x158,
+#endif
+};

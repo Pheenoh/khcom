@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
@@ -24,9 +25,6 @@ extern u8 gWhitePalette[];
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08F683C4[];
 extern u8 gUnk_08EEE384[];
-extern Mode gModeMovie;
-extern Mode gModeWorldselect;
-extern Mode gModeCopyright1;
 #ifdef VERSION_EU
 extern Mode gModeLang;
 #endif

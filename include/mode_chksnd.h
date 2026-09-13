@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_CHKSND_H
 #define GUARD_MODE_CHKSND_H
 
@@ -15,7 +16,6 @@ typedef struct ChkSndEntry {
     u16 songNum;
 } ChkSndEntry;
 extern ChkSndEntry gChkSndEntries[];
-extern TaskDesc gTaskDescPrint;
 
 void mode_chksnd_0(void);
 void mode_chksnd_1(void);

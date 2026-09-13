@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
@@ -199,15 +200,7 @@ extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
 
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
-extern TaskDesc gTaskDescEventSeq;
-extern Mode gModeEventselect;
 extern Mode gModeBattle;
-extern Mode gModeWorldselect;
-extern Mode gModeTitle;
-extern Mode gModeCopyright1;
-extern Mode gModeMapFld;
-extern Mode gModeMovie;
-extern Mode gModePooh;
 extern Mode gUnk_09EE274C;
 extern const s16 gSineTable[];
 extern vu16 gSystemFlags;
@@ -215,8 +208,6 @@ extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
 extern Mode gModeChkbtl;
 extern Mode gUnk_09EE2704;
-extern Mode gModeSioBtlOption;
-extern Mode gModeAllmap;
 extern TaskDesc gUnk_09EE2834;
 extern TaskDesc gUnk_09EE284C;
 extern TaskDesc gUnk_09EE4AF4;

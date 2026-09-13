@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
@@ -59,7 +60,6 @@ extern u8 gUnk_09EF64FC[];
 extern u8 gUnk_09EF653C[];
 extern u8 gUnk_09EF654C[];
 extern u8 gUnk_09EF658C[];
-extern TaskDesc gTaskDescAllmapBar;
 
 void func_080D4EBC(void);
 void func_080D51D8(void);

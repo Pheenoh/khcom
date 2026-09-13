@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
 
@@ -41,7 +42,6 @@ extern s16 gSineTable[];
 extern u8 gMPlayInfo_BGM[];
 extern TaskDesc gTaskDescRomcriEff;
 extern TaskDesc gTaskDescRomcriEff2;
-extern TaskDesc gTaskDescSpotLight;
 
 struct Task;
 

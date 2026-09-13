@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "jiminy_list.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -1097,3 +1098,12 @@ void mode_jiminy_2(void) {
     func_0805A484();
     EwramFree(gJiminyWork);
 }
+
+const char gModeNameJiminy[] __attribute__((section(".rodata_registration_name_gModeJiminy"), aligned(1))) = "mode_jiminy";
+
+Mode gModeJiminy __attribute__((section(".data_registration_gModeJiminy"))) = {
+    gModeNameJiminy,
+    (void (*)(s32))mode_jiminy_0,
+    (void (*)(void))mode_jiminy_1,
+    (void (*)(void))mode_jiminy_2,
+};

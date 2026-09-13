@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "engine_math.h"
 #include "macros.h"
 #include "bos6.h"
@@ -289,7 +290,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     BtlWork* g;
     u16 zero;
 
-    work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosPcFld, gUnk_09A3DF0C);
+    work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosPcFld, gUnk_09A3DF0C);
     work->unk_000 = 0;
     work->unk_002 = 0;
     work->unk_004 = 600;
@@ -1611,7 +1612,7 @@ u8 func_0810C32C(BosLstWork* work, s32 a) {
             pool = &work->unk_890;
             break;
         }
-        TaskCreate(pool, gTaskDescBosLstFal, &s);
+        TaskCreate(pool, &gTaskDescBosLstFal, &s);
         r = 1;
     }
     return r;
@@ -1769,14 +1770,14 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     if (pool == 0) {
         work->unk_000 = 0;
         work->unk_001 = 0;
-        work->unk_80C = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFld, gUnk_09A4CF6C);
+        work->unk_80C = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFld, gUnk_09A4CF6C);
         work->unk_008 = 0;
         work->unk_044 = 0x14000;
         work->unk_04C = -0x5400;
     } else {
         work->unk_000 = 1;
         work->unk_001 = 0;
-        work->unk_80C = TaskCreate(pool, gTaskDescBosLstFld, gUnk_09A4CF6C);
+        work->unk_80C = TaskCreate(pool, &gTaskDescBosLstFld, gUnk_09A4CF6C);
         work->unk_008 = 7;
         work->unk_044 = 0x1D000;
         work->unk_04C = -0x14400;
@@ -2289,7 +2290,7 @@ void func_0810D4F8(BosLstWork* work) {
             s.unk_20 = s.unk_14 + (i << 11);
             s.unk_24 = obj->unk_08 + 0x1400;
             s.unk_28 = s.unk_1C + ((i << 2) << 8);
-            work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstBit, &s);
+            work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
         }
         *pBC = 0;
         *pBE += 1;
@@ -2410,7 +2411,7 @@ void func_0810D77C(BosLstWork* work) {
                 s.unk_20 = s.unk_14 + (i << 11);
                 s.unk_24 = obj->unk_08 + 0x1400;
                 s.unk_28 = s.unk_1C + ((i << 2) << 8);
-                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstBit, &s);
+                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
             }
         }
         if ((gBtlWork->unk_068 & 0x2000000000000) == 0) {
@@ -2840,7 +2841,7 @@ u8 func_0810E32C(BosLstWork* work) {
                 s.unk_04 = work->unk_0B8;
                 s.unk_06 = i;
                 s.unk_08 = i * ang + 90;
-                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstCtr, &s);
+                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstCtr, &s);
             }
             work->unk_004 = 0;
             work->unk_068 = 0;
@@ -3456,7 +3457,7 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
         s.unk_04 = p->unk_020;
         s.unk_08 = p->unk_024;
         s.unk_0C = work->unk_012;
-        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstSnp, &s);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstSnp, &s);
         break;
     case 4:
         p->unk_004 = 2;
@@ -3854,3 +3855,58 @@ s32 func_0810FE84(s32 x) {
 s32 func_0810FE8C(s32 x) {
     return x * x;
 }
+
+const char gTaskNameBosPc[] __attribute__((section(".rodata_registration_name_gTaskDescBosPc"), aligned(1))) = "task_bos_pc";
+
+TaskDesc gTaskDescBosPc __attribute__((section(".data_registration_gTaskDescBosPc"))) = {
+    gTaskNameBosPc,
+    (void (*)(void*, void*))task_bos_pc_0,
+    task_bos_pc_1,
+    (void (*)(void*))task_bos_pc_2,
+    (void (*)(void*))task_bos_pc_3,
+    0x1F1C,
+};
+
+const char gTaskNameBosPcFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFld"), aligned(1))) = "task_bos_pc_fld";
+
+TaskDesc gTaskDescBosPcFld __attribute__((section(".data_registration_gTaskDescBosPcFld"))) = {
+    gTaskNameBosPcFld,
+    (void (*)(void*, void*))task_bos_pc_fld_0,
+    task_bos_pc_fld_1,
+    (void (*)(void*))task_bos_pc_fld_2,
+    (void (*)(void*))task_bos_pc_fld_3,
+    0x6C,
+};
+
+const char gTaskNameBosPcFlt[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFlt"), aligned(1))) = "task_bos_pc_flt";
+
+TaskDesc gTaskDescBosPcFlt __attribute__((section(".data_registration_gTaskDescBosPcFlt"))) = {
+    gTaskNameBosPcFlt,
+    (void (*)(void*, void*))task_bos_pc_flt_0,
+    task_bos_pc_flt_1,
+    (void (*)(void*))task_bos_pc_flt_2,
+    (void (*)(void*))task_bos_pc_flt_3,
+    0xB4,
+};
+
+const char gTaskNameBosPcAcd[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcAcd"), aligned(1))) = "task_bos_pc_acd";
+
+TaskDesc gTaskDescBosPcAcd __attribute__((section(".data_registration_gTaskDescBosPcAcd"))) = {
+    gTaskNameBosPcAcd,
+    (void (*)(void*, void*))task_bos_pc_acd_0,
+    task_bos_pc_acd_1,
+    (void (*)(void*))task_bos_pc_acd_2,
+    (void (*)(void*))task_bos_pc_acd_3,
+    0x38,
+};
+
+const char gTaskNameBosLst[] __attribute__((section(".rodata_registration_name_gTaskDescBosLst"), aligned(1))) = "task_bos_lst";
+
+TaskDesc gTaskDescBosLst __attribute__((section(".data_registration_gTaskDescBosLst"))) = {
+    gTaskNameBosLst,
+    (void (*)(void*, void*))task_bos_lst_0,
+    task_bos_lst_1,
+    (void (*)(void*))task_bos_lst_2,
+    (void (*)(void*))task_bos_lst_3,
+    0x10A4,
+};

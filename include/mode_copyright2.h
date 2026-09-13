@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_MODE_COPYRIGHT2_H
 #define GUARD_MODE_COPYRIGHT2_H
 
@@ -10,7 +11,6 @@ extern u8 gUnk_097E05B8[];
 extern u8 gUnk_0984AC38[];
 extern u8 gUnk_09841F98[];
 extern u8 gUnk_09801C98[];
-extern Mode gModeTitle;
 
 void mode_copyright2_0(s32 arg);
 void mode_copyright2_1(void);

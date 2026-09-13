@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_BATTLE_H
 #define GUARD_MODE_BATTLE_H
@@ -42,17 +43,6 @@ extern TaskDesc gTaskDescHumLexceus;
 extern TaskDesc gTaskDescHumRiku;
 extern TaskDesc gTaskDescHumLeon;
 extern TaskDesc gTaskDescHumRobe;
-extern TaskDesc gTaskDescMonsgage;
-extern TaskDesc gTaskDescTutorial;
-extern TaskDesc gTaskDescBosTm;
-extern TaskDesc gTaskDescBosJf;
-extern TaskDesc gTaskDescBosDsd;
-extern TaskDesc gTaskDescBosBoogie;
-extern TaskDesc gTaskDescBosUrsula;
-extern TaskDesc gTaskDescBosGa;
-extern TaskDesc gTaskDescBosMd;
-extern TaskDesc gTaskDescBosPc;
-extern TaskDesc gTaskDescBosLst;
 
 void _08019CB4(void);
 

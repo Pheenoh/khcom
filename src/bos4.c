@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "status_api.h"
@@ -565,7 +566,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
             func_0801C2DC((u8*)work->unk_024 + 0x40, 1);
 
             if (func_080DA73C() != 0) {
-                work->unk_03C = (u32)TaskCreate(&work->unk_028, gTaskDescBosBoogieExplosiondice, (void*)work->unk_024);
+                work->unk_03C = (u32)TaskCreate(&work->unk_028, &gTaskDescBosBoogieExplosiondice, (void*)work->unk_024);
             }
         }
     }
@@ -1060,7 +1061,7 @@ void func_080DB468(BoogieKnifereaderWork* work) {
         v = -0x4000;
 
         for (i = 0; i <= 4; i++) {
-            work->unk_12C[i] = TaskCreate(&work->unk_008, gTaskDescBosBoogieKnife, &v);
+            work->unk_12C[i] = TaskCreate(&work->unk_008, &gTaskDescBosBoogieKnife, &v);
             v += 0x6800;
         }
     } else {
@@ -1068,7 +1069,7 @@ void func_080DB468(BoogieKnifereaderWork* work) {
         v = 0x23000;
 
         for (i = 0; i <= 4; i++) {
-            work->unk_12C[i] = TaskCreate(&work->unk_008, gTaskDescBosBoogieKnife, &v);
+            work->unk_12C[i] = TaskCreate(&work->unk_008, &gTaskDescBosBoogieKnife, &v);
             v += -0x6800;
         }
     }
@@ -1360,8 +1361,8 @@ void task_bos_ursula_0(UrsulaWork* work) {
 
     gUrsulaWork = work;
     gUnk_0203C57C = 1;
-    TaskCreate((u8*)gBtlWork + 0x40, gTaskDescBosUrsulaMap, gUnk_096FE14C);
-    TaskCreate((u8*)gBtlWork + 0x2C, gTaskDescBosUrsulaBorder, 0);
+    TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, gUnk_096FE14C);
+    TaskCreate((u8*)gBtlWork + 0x2C, &gTaskDescBosUrsulaBorder, 0);
     work->unk_000 = 0;
     work->unk_004 = 0;
     work->unk_134 = 0;
@@ -1388,12 +1389,12 @@ void task_bos_ursula_0(UrsulaWork* work) {
     gBtlWork->unk_0D4 = work->unk_030;
     TaskPoolInit(&work->unk_008, 5);
     v = 1;
-    work->unk_01C = (u32)TaskCreate(&work->unk_008, gTaskDescBosUrsulaTako, &v);
+    work->unk_01C = (u32)TaskCreate(&work->unk_008, &gTaskDescBosUrsulaTako, &v);
     v = 0;
-    work->unk_020 = (u32)TaskCreate(&work->unk_008, gTaskDescBosUrsulaTako, &v);
-    TaskCreate(&work->unk_008, gTaskDescBosUrsulaMapanime, 0);
+    work->unk_020 = (u32)TaskCreate(&work->unk_008, &gTaskDescBosUrsulaTako, &v);
+    TaskCreate(&work->unk_008, &gTaskDescBosUrsulaMapanime, 0);
     v = 1;
-    TaskCreate(&work->unk_008, gTaskDescBosUrsulaBacktako, &v);
+    TaskCreate(&work->unk_008, &gTaskDescBosUrsulaBacktako, &v);
     work->unk_15E = 0;
 }
 
@@ -2366,7 +2367,7 @@ u8 task_bos_ursula_mapanime_1(UrsulaMapanimeWork* work) {
     if (work->unk_000.unk_08 == &gUnk_096FE290 && func_080DDEA0(&work->unk_000) == 2
             && work->unk_028 == 0) {
         work->unk_028 = 1;
-        work->unk_024 = TaskCreate(&work->unk_010, gTaskDescBosUrsulaBubble, 0);
+        work->unk_024 = TaskCreate(&work->unk_010, &gTaskDescBosUrsulaBubble, 0);
     }
 
     TaskPoolUpdate(&work->unk_010);
@@ -2392,7 +2393,7 @@ void func_080DD69C(s32 a) {
     }
 
     if (a == 3) {
-        gUrsulaMapanimeWork->unk_024 = TaskCreate(&gUrsulaMapanimeWork->unk_010, gTaskDescBosUrsulaThunder, 0);
+        gUrsulaMapanimeWork->unk_024 = TaskCreate(&gUrsulaMapanimeWork->unk_010, &gTaskDescBosUrsulaThunder, 0);
     } else if (gUrsulaMapanimeWork->unk_00C != a) {
         gUrsulaMapanimeWork->unk_00C = a;
 
@@ -2430,21 +2431,21 @@ u16 func_080DD7C4(UrsulaBubbleWork* work) {
         v = -v;
     }
 
-    work->unk_018[0] = TaskCreate(&work->unk_004, gTaskDescBosUrsulaBubbleSingle, &v);
+    work->unk_018[0] = TaskCreate(&work->unk_004, &gTaskDescBosUrsulaBubbleSingle, &v);
     v = 0x20;
 
     if (func_080DC510() != 0) {
         v = -v;
     }
 
-    work->unk_018[1] = TaskCreate(&work->unk_004, gTaskDescBosUrsulaBubbleSingle, &v);
+    work->unk_018[1] = TaskCreate(&work->unk_004, &gTaskDescBosUrsulaBubbleSingle, &v);
     v = 0x40;
 
     if (func_080DC510() != 0) {
         v = -v;
     }
 
-    work->unk_018[2] = TaskCreate(&work->unk_004, gTaskDescBosUrsulaBubbleSingle, &v);
+    work->unk_018[2] = TaskCreate(&work->unk_004, &gTaskDescBosUrsulaBubbleSingle, &v);
 
     return 3;
 }
@@ -2461,7 +2462,7 @@ u16 func_080DD854(UrsulaBubbleWork* work) {
             v = -v;
         }
 
-        work->unk_018[i] = TaskCreate(&work->unk_004, gTaskDescBosUrsulaBubbleSingle, &v);
+        work->unk_018[i] = TaskCreate(&work->unk_004, &gTaskDescBosUrsulaBubbleSingle, &v);
         a += 20;
     }
 
@@ -2480,7 +2481,7 @@ u16 func_080DD8A8(UrsulaBubbleWork* work) {
             v = -v;
         }
 
-        work->unk_018[i] = TaskCreate(&work->unk_004, gTaskDescBosUrsulaBubbleSingle, &v);
+        work->unk_018[i] = TaskCreate(&work->unk_004, &gTaskDescBosUrsulaBubbleSingle, &v);
         a += 16;
     }
 
@@ -3292,7 +3293,7 @@ void Mode_MapChk_1(void) {
             func_080DF990(gMapChkWork->unk_03);
             func_080DFA18(gUnk_0984B458[gMapChkWork->unk_02][0]);
             func_080DFA3C();
-            ModeRequest(gModeMapDbg, 0);
+            ModeRequest(&gModeMapDbg, 0);
             break;
         }
     } else if ((GetKeysPressed() & 6) != 0) {
@@ -4409,3 +4410,218 @@ s32 func_080DFE7C(s32 x, s32 y, s32 z) {
 
     return r;
 }
+
+const char gTaskNameBosBoogieDice[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieDice"), aligned(1))) = "task_bos_boogie_dice";
+
+TaskDesc gTaskDescBosBoogieDice __attribute__((section(".data_registration_gTaskDescBosBoogieDice"))) = {
+    gTaskNameBosBoogieDice,
+    (void (*)(void*, void*))task_bos_boogie_dice_0,
+    task_bos_boogie_dice_1,
+    (void (*)(void*))task_bos_boogie_dice_2,
+    (void (*)(void*))task_bos_boogie_dice_3,
+    0x174,
+};
+
+const char gTaskNameBosBoogieExplosiondice[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieExplosiondice"), aligned(1))) = "task_bos_boogie_explosiondice";
+
+TaskDesc gTaskDescBosBoogieExplosiondice __attribute__((section(".data_registration_gTaskDescBosBoogieExplosiondice"))) = {
+    gTaskNameBosBoogieExplosiondice,
+    (void (*)(void*, void*))task_bos_boogie_explosiondice_0,
+    task_bos_boogie_explosiondice_1,
+    (void (*)(void*))task_bos_boogie_explosiondice_2,
+    (void (*)(void*))task_bos_boogie_explosiondice_3,
+    0x160,
+};
+
+const char gTaskNameBosBoogieSaku[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieSaku"), aligned(1))) = "task_bos_boogie_saku";
+
+TaskDesc gTaskDescBosBoogieSaku __attribute__((section(".data_registration_gTaskDescBosBoogieSaku"))) = {
+    gTaskNameBosBoogieSaku,
+    (void (*)(void*, void*))task_bos_boogie_saku_0,
+    task_bos_boogie_saku_1,
+    (void (*)(void*))task_bos_boogie_saku_2,
+    (void (*)(void*))task_bos_boogie_saku_3,
+    0x44,
+};
+
+const char gTaskNameBosBoogieMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieMap"), aligned(1))) = "task_bos_boogie_map";
+
+TaskDesc gTaskDescBosBoogieMap __attribute__((section(".data_registration_gTaskDescBosBoogieMap"))) = {
+    gTaskNameBosBoogieMap,
+    (void (*)(void*, void*))task_bos_boogie_map_0,
+    task_bos_boogie_map_1,
+    0,
+    0,
+    0x4,
+};
+
+const char gTaskNameBosBoogieMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieMapanime"), aligned(1))) = "task_bos_boogie_mapanime";
+
+TaskDesc gTaskDescBosBoogieMapanime __attribute__((section(".data_registration_gTaskDescBosBoogieMapanime"))) = {
+    gTaskNameBosBoogieMapanime,
+    (void (*)(void*, void*))task_bos_boogie_mapanime_0,
+    task_bos_boogie_mapanime_1,
+    (void (*)(void*))task_bos_boogie_mapanime_2,
+    (void (*)(void*))task_bos_boogie_mapanime_3,
+    0x24,
+};
+
+const char gTaskNameBosBoogieDisk[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieDisk"), aligned(1))) = "task_bos_boogie_disk";
+
+TaskDesc gTaskDescBosBoogieDisk __attribute__((section(".data_registration_gTaskDescBosBoogieDisk"))) = {
+    gTaskNameBosBoogieDisk,
+    (void (*)(void*, void*))task_bos_boogie_disk_0,
+    task_bos_boogie_disk_1,
+    (void (*)(void*))task_bos_boogie_disk_2,
+    (void (*)(void*))task_bos_boogie_disk_3,
+    0x160,
+};
+
+const char gTaskNameBosBoogieKnife[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKnife"), aligned(1))) = "task_bos_boogie_knife";
+
+TaskDesc gTaskDescBosBoogieKnife __attribute__((section(".data_registration_gTaskDescBosBoogieKnife"))) = {
+    gTaskNameBosBoogieKnife,
+    (void (*)(void*, void*))task_bos_boogie_knife_0,
+    task_bos_boogie_knife_1,
+    (void (*)(void*))task_bos_boogie_knife_2,
+    (void (*)(void*))task_bos_boogie_knife_3,
+    0x158,
+};
+
+const char gTaskNameBosBoogieKnifereader[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKnifereader"), aligned(1))) = "task_bos_boogie_knifereader";
+
+TaskDesc gTaskDescBosBoogieKnifereader __attribute__((section(".data_registration_gTaskDescBosBoogieKnifereader"))) = {
+    gTaskNameBosBoogieKnifereader,
+    (void (*)(void*, void*))task_bos_boogie_knifereader_0,
+    task_bos_boogie_knifereader_1,
+    (void (*)(void*))task_bos_boogie_knifereader_2,
+    (void (*)(void*))task_bos_boogie_knifereader_3,
+    0x140,
+};
+
+const char gTaskNameBosBoogieKaihuku[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKaihuku"), aligned(1))) = "task_bos_boogie_kaihuku";
+
+TaskDesc gTaskDescBosBoogieKaihuku __attribute__((section(".data_registration_gTaskDescBosBoogieKaihuku"))) = {
+    gTaskNameBosBoogieKaihuku,
+    (void (*)(void*, void*))task_bos_boogie_kaihuku_0,
+    task_bos_boogie_kaihuku_1,
+    (void (*)(void*))task_bos_boogie_kaihuku_2,
+    (void (*)(void*))task_bos_boogie_kaihuku_3,
+    0x158,
+};
+
+const char gTaskNameBosUrsula[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsula"), aligned(1))) = "task_bos_ursula";
+
+TaskDesc gTaskDescBosUrsula __attribute__((section(".data_registration_gTaskDescBosUrsula"))) = {
+    gTaskNameBosUrsula,
+    (void (*)(void*, void*))task_bos_ursula_0,
+    task_bos_ursula_1,
+    (void (*)(void*))task_bos_ursula_2,
+    (void (*)(void*))task_bos_ursula_3,
+    0x164,
+};
+
+const char gTaskNameBosUrsulaMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaMap"), aligned(1))) = "task_bos_ursula_map";
+
+TaskDesc gTaskDescBosUrsulaMap __attribute__((section(".data_registration_gTaskDescBosUrsulaMap"))) = {
+    gTaskNameBosUrsulaMap,
+    (void (*)(void*, void*))task_bos_ursula_map_0,
+    task_bos_ursula_map_1,
+    0,
+    (void (*)(void*))task_bos_ursula_map_3,
+    0xC,
+};
+
+const char gTaskNameBosUrsulaBorder[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBorder"), aligned(1))) = "task_bos_ursula_border";
+
+TaskDesc gTaskDescBosUrsulaBorder __attribute__((section(".data_registration_gTaskDescBosUrsulaBorder"))) = {
+    gTaskNameBosUrsulaBorder,
+    (void (*)(void*, void*))task_bos_ursula_border_0,
+    task_bos_ursula_border_1,
+    (void (*)(void*))task_bos_ursula_border_2,
+    (void (*)(void*))task_bos_ursula_border_3,
+    0x8,
+};
+
+const char gTaskNameBosUrsulaTako[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaTako"), aligned(1))) = "task_bos_ursula_tako";
+
+TaskDesc gTaskDescBosUrsulaTako __attribute__((section(".data_registration_gTaskDescBosUrsulaTako"))) = {
+    gTaskNameBosUrsulaTako,
+    (void (*)(void*, void*))task_bos_ursula_tako_0,
+    task_bos_ursula_tako_1,
+    (void (*)(void*))task_bos_ursula_tako_2,
+    (void (*)(void*))task_bos_ursula_tako_3,
+    0x204,
+};
+
+const char gTaskNameBosUrsulaBacktako[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBacktako"), aligned(1))) = "task_bos_ursula_backtako";
+
+TaskDesc gTaskDescBosUrsulaBacktako __attribute__((section(".data_registration_gTaskDescBosUrsulaBacktako"))) = {
+    gTaskNameBosUrsulaBacktako,
+    (void (*)(void*, void*))task_bos_ursula_backtako_0,
+    task_bos_ursula_backtako_1,
+    (void (*)(void*))task_bos_ursula_backtako_2,
+    (void (*)(void*))task_bos_ursula_backtako_3,
+    0x44,
+};
+
+const char gTaskNameBosUrsulaMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaMapanime"), aligned(1))) = "task_bos_ursula_mapanime";
+
+TaskDesc gTaskDescBosUrsulaMapanime __attribute__((section(".data_registration_gTaskDescBosUrsulaMapanime"))) = {
+    gTaskNameBosUrsulaMapanime,
+    (void (*)(void*, void*))task_bos_ursula_mapanime_0,
+    task_bos_ursula_mapanime_1,
+    (void (*)(void*))task_bos_ursula_mapanime_2,
+    (void (*)(void*))task_bos_ursula_mapanime_3,
+    0x2C,
+};
+
+const char gTaskNameBosUrsulaBubble[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBubble"), aligned(1))) = "task_bos_ursula_bubble";
+
+TaskDesc gTaskDescBosUrsulaBubble __attribute__((section(".data_registration_gTaskDescBosUrsulaBubble"))) = {
+    gTaskNameBosUrsulaBubble,
+    (void (*)(void*, void*))task_bos_ursula_bubble_0,
+    task_bos_ursula_bubble_1,
+    (void (*)(void*))task_bos_ursula_bubble_2,
+    (void (*)(void*))task_bos_ursula_bubble_3,
+#ifdef VERSION_EU
+    0x5C,
+#else
+    0x44,
+#endif
+};
+
+const char gTaskNameBosUrsulaBubbleSingle[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle"), aligned(1))) = "task_bos_ursula_bubble_single";
+
+TaskDesc gTaskDescBosUrsulaBubbleSingle __attribute__((section(".data_registration_gTaskDescBosUrsulaBubbleSingle"))) = {
+    gTaskNameBosUrsulaBubbleSingle,
+    (void (*)(void*, void*))task_bos_ursula_bubble_single_0,
+    task_bos_ursula_bubble_single_1,
+    (void (*)(void*))task_bos_ursula_bubble_single_2,
+    (void (*)(void*))task_bos_ursula_bubble_single_3,
+#ifdef VERSION_EU
+    0x130,
+#else
+    0x148,
+#endif
+};
+
+const char gTaskNameBosUrsulaThunder[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaThunder"), aligned(1))) = "task_bos_ursula_thunder";
+
+TaskDesc gTaskDescBosUrsulaThunder __attribute__((section(".data_registration_gTaskDescBosUrsulaThunder"))) = {
+    gTaskNameBosUrsulaThunder,
+    (void (*)(void*, void*))task_bos_ursula_thunder_0,
+    task_bos_ursula_thunder_1,
+    (void (*)(void*))task_bos_ursula_thunder_2,
+    (void (*)(void*))task_bos_ursula_thunder_3,
+    0x10,
+};
+
+const char gModeNameMapChk[] __attribute__((section(".rodata_registration_name_gModeMapChk"), aligned(1))) = "Mode_MapChk";
+
+Mode gModeMapChk __attribute__((section(".data_registration_gModeMapChk"))) = {
+    gModeNameMapChk,
+    (void (*)(s32))Mode_MapChk_0,
+    (void (*)(void))Mode_MapChk_1,
+    (void (*)(void))Mode_MapChk_2,
+};

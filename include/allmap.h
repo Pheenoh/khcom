@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
@@ -208,10 +209,6 @@ void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 extern s16 gSineTable[];
 extern s16 gUnk_02034EC2;
 extern u8 gUnk_02034ECA;
-extern Mode gModeSioBattle;
-extern Mode gModeTitle;
-extern Mode gModeMenuNew;
-extern Mode gModeMenuLoad;
 extern u32 gUnk_02034E98;
 extern TaskPool gTitleTaskPool;
 extern Task* gTitleLogoTask;
@@ -250,13 +247,6 @@ extern void* gUnk_09EF64E8[];
 extern u8 gUnk_0984A1F8[];
 extern u8 gUnk_0984A418[];
 extern u8 gUnk_0984A818[];
-extern TaskDesc gTaskDescAllmapRoom;
-extern TaskDesc gTaskDescAllmapRoomname;
-extern TaskDesc gTaskDescAllmapDoorinfo;
-extern TaskDesc gTaskDescAllmapPusha;
-extern TaskDesc gTaskDescAllmapCursor;
-extern TaskDesc gTaskDescTitleLogo;
-extern TaskDesc gTaskDescTitleObj;
 extern void* gUnk_09EF6424[];
 extern void* gUnk_09EF64B4[];
 extern u8 gUnk_09EF64C4[];

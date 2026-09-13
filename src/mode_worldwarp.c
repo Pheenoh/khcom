@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "mode_worldwarp_api.h"
@@ -626,3 +627,12 @@ void func_08101970(void) {
     SetBgScroll(0, (u16)(gUnk_02035884 >> 8), 0);
     SetBgScroll(1, (u16)(gUnk_02035880 >> 8), 0);
 }
+
+const char gModeNameWorldwarp[] __attribute__((section(".rodata_registration_name_gModeWorldwarp"), aligned(1))) = "mode_worldwarp";
+
+Mode gModeWorldwarp __attribute__((section(".data_registration_gModeWorldwarp"))) = {
+    gModeNameWorldwarp,
+    (void (*)(s32))mode_worldwarp_0,
+    (void (*)(void))mode_worldwarp_1,
+    (void (*)(void))mode_worldwarp_2,
+};

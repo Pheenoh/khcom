@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "map_api.h"
 #include "mode.h"
 #include "m4a_song.h"
@@ -1704,3 +1705,23 @@ void Event_2(void) {
     gUnk_02039DC8 = 0;
 }
 #include "mode_test_api.h"
+
+const char gTaskNameLockon[] __attribute__((section(".rodata_registration_name_gTaskDescLockon"), aligned(1))) = "task_lockon";
+
+TaskDesc gTaskDescLockon __attribute__((section(".data_registration_gTaskDescLockon"))) = {
+    gTaskNameLockon,
+    (void (*)(void*, void*))task_lockon_0,
+    task_lockon_1,
+    (void (*)(void*))task_lockon_2,
+    (void (*)(void*))task_lockon_3,
+    0x50,
+};
+
+const char gModeNameContinue[] __attribute__((section(".rodata_registration_name_gModeContinue"), aligned(1))) = "Continue";
+
+Mode gModeContinue __attribute__((section(".data_registration_gModeContinue"))) = {
+    gModeNameContinue,
+    (void (*)(s32))func_08060ED8,
+    (void (*)(void))func_08060F1C,
+    (void (*)(void))func_08060F64,
+};

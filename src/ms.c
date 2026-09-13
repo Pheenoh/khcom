@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "ms_api.h"
 #include "macros.h"
 #include "ms.h"
@@ -55,3 +56,14 @@ void func_08109638(void* a) {
 }
 
 ALIGN_ZERO(2);
+
+const char gTaskNameMsShopHosi[] __attribute__((section(".rodata_registration_name_gTaskDescMsShopHosi"), aligned(1))) = "task_ms_shop_hosi";
+
+TaskDesc gTaskDescMsShopHosi __attribute__((section(".data_registration_gTaskDescMsShopHosi"))) = {
+    gTaskNameMsShopHosi,
+    (void (*)(void*, void*))task_ms_shop_hosi_0,
+    task_ms_shop_hosi_1,
+    (void (*)(void*))task_ms_shop_hosi_2,
+    (void (*)(void*))task_ms_shop_hosi_3,
+    0x20,
+};
