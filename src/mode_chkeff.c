@@ -1,10 +1,11 @@
 #include "display.h"
 #include "macros.h"
 #include "mode_chkeff.h"
+#include "movie_debug_data.h"
 
 ChkEffWork* gChkEffWork;
 #ifdef VERSION_EU
-u32 gUnkEu_020348C4;
+MovieDebugWork* gUnkEu_020348C4;
 extern u8 gUnkEu_08F6A73C[];
 extern u8 gUnkEu_08F79038[];
 #endif
@@ -180,5 +181,57 @@ void mode_chkeff_2(void) {
     TaskPoolDestroy(&gChkEffWork->pool);
     EwramFree(gChkEffWork);
 }
+
+#ifdef VERSION_EU
+void eu_0800C76C(s32 arg) {
+    gUnkEu_020348C4 = EwramAlloc(sizeof(MovieDebugWork));
+    SetBgMode0();
+    gUnkEu_020348C4->index = 0;
+    TaskPoolInit(&gUnkEu_020348C4->pool, 10);
+    TaskCreate(&gUnkEu_020348C4->pool, &gTaskDescPrint, 0);
+}
+
+void eu_0800C7A0(void) {
+    u16 cancel = GetKeysPressed() & B_BUTTON;
+
+    if (cancel) {
+        ModeRequest(&gModeDebug, 0);
+        return;
+    }
+
+    if (GetKeysRepeat() & DPAD_LEFT) {
+        gUnkEu_020348C4->index--;
+    }
+
+    if (GetKeysRepeat() & DPAD_RIGHT) {
+        gUnkEu_020348C4->index++;
+    }
+
+    if (gUnkEu_020348C4->index < 0) {
+        gUnkEu_020348C4->index = 4;
+    }
+
+    if (gUnkEu_020348C4->index > 4) {
+        gUnkEu_020348C4->index = 0;
+    }
+
+    if (GetKeysPressed() & A_BUTTON) {
+        ModeRequestHeapReset(&gModeMovie, gMovieDebugEntriesEu[gUnkEu_020348C4->index].movie);
+        return;
+    }
+
+    func_0809D2B0(0, 0, 0, gMovieDebugTextEu_0812F6D4);
+    func_0809D458(0, 0, 0, gUnkEu_020348C4->index);
+    func_0809D2B0(5, 0, 0, gMovieDebugTextEu_0812F6F4);
+    func_0809D2B0(7, 0, 0, gMovieDebugEntriesEu[gUnkEu_020348C4->index].label);
+    TaskPoolUpdate(&gUnkEu_020348C4->pool);
+    TaskPoolDraw(&gUnkEu_020348C4->pool);
+}
+
+void eu_0800C898(void) {
+    TaskPoolDestroy(&gUnkEu_020348C4->pool);
+    EwramFree(gUnkEu_020348C4);
+}
+#endif
 
 const char gModeNameChkeff[12] = "mode_chkeff";

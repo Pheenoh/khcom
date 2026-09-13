@@ -11,14 +11,12 @@ sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c -O2 -fprologue-bugfix
 util.c -O2 -fprologue-bugfix -fno-common
 save.c -O2 -fprologue-bugfix -fno-common
-eu_08009CD0.s
 mode_battle.c
 mode_chkbtl.c -O2 -fprologue-bugfix -fno-common
 mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
 mode_chksnd.c -O2 -fprologue-bugfix -fno-common
 mode_chkeff.c -O2 -fprologue-bugfix -fno-common
-eu_0800C76C.s
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix
 mode_vsbattle.c -O2 -fprologue-bugfix -fno-common

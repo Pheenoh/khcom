@@ -93,6 +93,169 @@ const u8 gUnkEu_08125144[0xFC] = {
 const char gModeNameLang[12] = "mode_lang";
 #endif
 
+#ifdef VERSION_EU
+LangWork* gLangWork;
+
+void eu_08009CD0(s32 arg) {
+    gLangWork = EwramAlloc(sizeof(LangWork));
+    SetBgMode0();
+    SetupBg(0, 0, 29, 0);
+    SetupBg(1, 0, 30, 0);
+    SetBgPriority(0, 0);
+    SetBgPriority(1, 1);
+    LoadBgPalette(0, gUnkEu_08F6A6FC, 0x40);
+    eu_080059D4(0, gUnkEu_08F77180);
+    eu_080059F4(0, gUnkEu_08F7EFB0);
+    eu_080059F4(1, gUnkEu_08F7EBF8);
+    gLangWork->tiles = LoadObjTiles(gUnkEu_08C9CA58, 0x1A0);
+    gLangWork->palette = LoadObjPalette(gUnkEu_08F6A6DC, 32);
+    gLangWork->timer = 0;
+    gLangWork->state = 0;
+    gLangWork->flags = 0;
+    SaveLoadHeader();
+
+    switch (gLanguage) {
+    case 0:
+        gLangWork->cursor = 0;
+        break;
+    case 3:
+        gLangWork->cursor = 1;
+        break;
+    case 1:
+        gLangWork->cursor = 2;
+        break;
+    case 4:
+        gLangWork->cursor = 3;
+        break;
+    case 2:
+        gLangWork->cursor = 4;
+        break;
+    default:
+        gLanguage = 0;
+        gLangWork->cursor = 0;
+        break;
+    }
+
+    gLangWork->language = gLanguage;
+    FadeStartIn(0, 16);
+}
+
+void eu_08009E10(void) {
+    switch (gLangWork->state) {
+    case 0:
+        if (!FadeIsActive()) {
+            gLangWork->state = 1;
+        }
+        break;
+    case 1:
+        if (GetKeysRepeat() & 0x40) {
+            gLangWork->cursor--;
+
+            if (gLangWork->cursor < 0) {
+                gLangWork->cursor = 4;
+            }
+
+            m4aSongNumStart(0x65);
+        } else if (GetKeysRepeat() & 0x80) {
+            gLangWork->cursor++;
+
+            if (gLangWork->cursor > 4) {
+                gLangWork->cursor = 0;
+            }
+
+            m4aSongNumStart(0x65);
+        } else if (GetKeysPressed() & 1) {
+            gLangWork->timer = 0;
+            gLangWork->state = 2;
+            m4aSongNumStart(0x66);
+        } else if (GetKeysPressed() & 2) {
+            gLangWork->state = 3;
+            m4aSongNumStart(0x67);
+        }
+        break;
+    case 2:
+        if (gLangWork->timer == 0) {
+            switch (gLangWork->cursor) {
+            case 0:
+                gLanguage = 0;
+                break;
+            case 1:
+                gLanguage = 3;
+                break;
+            case 2:
+                gLanguage = 1;
+                break;
+            case 3:
+                gLanguage = 4;
+                break;
+            case 4:
+                gLanguage = 2;
+                break;
+            default:
+                gLanguage = 0;
+                break;
+            }
+
+            if (gLangWork->language != gLanguage) {
+                SaveWriteHeader(-1);
+            }
+        }
+
+        if (gLangWork->timer % 4 < 2) {
+            gLangWork->flags &= ~1;
+        } else {
+            gLangWork->flags |= 1;
+        }
+
+        if (gLangWork->timer > 29) {
+            gLangWork->flags &= ~1;
+            gLangWork->state = 3;
+            gLangWork->timer = 0;
+        } else {
+            gLangWork->timer++;
+        }
+        break;
+    case 3:
+        if (gLangWork->timer == 0) {
+            FadeStartOut(0, 16);
+        }
+
+        if (!FadeIsActive()) {
+            ModeRequest(&gModeCopyright1, 0);
+        } else {
+            gLangWork->timer++;
+        }
+        break;
+    }
+
+    if (!(gLangWork->flags & 1)) {
+        switch (gLangWork->cursor) {
+        case 0:
+            DrawSprite(0x60, 0x58, gUnkEu_08C9C97C, gLangWork->tiles, gLangWork->palette, 0, 0, 0);
+            break;
+        case 1:
+            DrawSprite(0x60, 0x68, gUnkEu_08C9C99E, gLangWork->tiles, gLangWork->palette, 0, 0, 0);
+            break;
+        case 2:
+            DrawSprite(0x60, 0x78, gUnkEu_08C9C9C0, gLangWork->tiles, gLangWork->palette, 0, 0, 0);
+            break;
+        case 3:
+            DrawSprite(0x60, 0x88, gUnkEu_08C9C9E2, gLangWork->tiles, gLangWork->palette, 0, 0, 0);
+            break;
+        case 4:
+            DrawSprite(0x60, 0x98, gUnkEu_08C9CA04, gLangWork->tiles, gLangWork->palette, 0, 0, 0);
+            break;
+        }
+    }
+}
+
+void eu_0800A0DC(void) {
+    ReleaseObjTiles(gLangWork->tiles);
+    ReleaseObjPalette(gLangWork->palette);
+    EwramFree(gLangWork);
+}
+#endif
+
 void mode_battle_0(u32 mode) {
     BtlWork** p;
     vu32 zero;

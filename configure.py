@@ -75,6 +75,7 @@ UNIT_BSS = {
     "src/m4a_catalog_data.o": {"us": 0x20387e0, "jp": 0x2038750, "eu": 0x2038df0},
     "src/memory_regions.o": 0x03000000,
     "src/mode_chkbtl_data.o": {"us": 0x02034890, "jp": 0x02034890, "eu": 0x02034898},
+    "src/mode_battle.o": {"eu": 0x02034890},
     "src/event_scanline_state.o": {"us": 0x02039DCC, "jp": 0x02039D3C, "eu": 0x0203A3DC},
     "src/map_transition_state.o": {"us": 0x0203C7B0, "jp": 0x0203C720, "eu": 0x0203CDA0},
     "src/allmap_bottom_state.o": {"us": 0x0203C510, "jp": 0x0203C480, "eu": 0x0203CB00},

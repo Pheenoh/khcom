@@ -2561,6 +2561,12 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_090CE9E0": 0x090CE9E0,
         "gUnkEu_09F6FDA0": 0x09F6FDA0,
         "gUnkEu_08B4FBC0": 0x08B4FBC0,
+        "gUnkEu_08F6A6DC": 0x08F6A6DC,
+        "gUnkEu_08F6A6FC": 0x08F6A6FC,
+        "gUnkEu_08F77180": 0x08F77180,
+        "gUnkEu_08F7EBF8": 0x08F7EBF8,
+        "gUnkEu_08F7EFB0": 0x08F7EFB0,
+        "gUnkEu_08C9CA58": 0x08C9CA58,
     },
     "jp": {
         "gUnk_0814F180": 0x0814F180,
