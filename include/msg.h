@@ -10,6 +10,7 @@
 #include "continue_types.h"
 
 #include "evt_types.h"
+#include "evt_data.h"
 
 #include "card_api.h"
 
@@ -396,7 +397,6 @@ extern u8 gUnk_096148D8[];
 extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_096112B8[];
 extern void* gUnk_09EE4724[];
-extern void* gUnk_0813B09C[][4];
 extern u8 gUnk_08F69BE4[];
 extern void* gUnk_09EEB188[];
 extern u8 gUnk_090AA506[];

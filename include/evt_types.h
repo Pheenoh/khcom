@@ -3,6 +3,34 @@
 
 #include "types.h"
 
+typedef struct EvtObjRes {
+    u16 unk_00;
+    u8 unk_02[0x06];
+    void* unk_08;
+} EvtObjRes;
+
+typedef struct EvtAnimDef {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+} EvtAnimDef;
+
+typedef struct EvtObjAnim {
+    EvtAnimDef* unk_00;
+    u8 unk_04[0x08];
+    u16 unk_0C;
+    u16 unk_0E;
+} EvtObjAnim;
+
+typedef struct EvtObjResTable {
+    EvtObjRes unk_00;
+    u8 unk_0C[0x04];
+} EvtObjResTable;
+
+typedef char EvtAnimDef_size[(sizeof(EvtAnimDef) == 12) ? 1 : -1];
+typedef char EvtObjAnim_size[(sizeof(EvtObjAnim) == 16) ? 1 : -1];
+typedef char EvtObjResTable_size[(sizeof(EvtObjResTable) == 16) ? 1 : -1];
+
 
 typedef struct Ent08074EC8 {
     s32 unk_00;

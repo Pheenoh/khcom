@@ -8890,7 +8890,7 @@ u8 func_0806E570(EventCharaWork* p) {
     if ((p->unk_000[p->unk_1A0].unk_18 & 0x800) != 0) {
         LoadPalette(&gUnk_096148D8[0x100], (void*)(p->unk_044 * 32 + 0x05000200), 32);
     } else if ((p->unk_000[p->unk_1A0 - 1].unk_18 & 0x800) != 0) {
-        LoadPalette(gUnk_0813B09C[p->unk_026][2], (void*)(p->unk_044 * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_0813B09C[p->unk_026].unk_00.unk_08, (void*)(p->unk_044 * 32 + 0x05000200), 32);
     }
 
     if ((p->unk_000[p->unk_1A0].unk_18 & 0x100000) != 0) {

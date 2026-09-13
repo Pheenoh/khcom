@@ -99,10 +99,15 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
                     raise ValueError(f'{site}: pointer slots require corresponding post-code ROM data or NULL')
                 if source_word in seed and seed[source_word] != target_word:
                     raise ValueError(f'{site}: data pointer conflicts with independent mapping for {source_word:#010x}')
-                internal = any(left <= source_word < left + length or right <= target_word < right + length
-                               for _, left, right, length, _, _ in spans)
+                internal = [span for span in spans
+                            if span[1] <= source_word < span[1] + span[3]
+                            or span[2] <= target_word < span[2] + span[3]]
                 if internal:
-                    if seed.get(source_word) != target_word:
+                    anchored = any(seed.get(left) == right
+                                   and 0 <= source_word - left < length
+                                   and source_word - left == target_word - right
+                                   for _, left, right, length, _, _ in internal)
+                    if seed.get(source_word) != target_word and not anchored:
                         raise ValueError(f'{site}: self or circular table pointers need independent mappings')
                     continue
                 candidates = votes.setdefault(source_word, {})

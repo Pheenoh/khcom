@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_08135EFC
-data_08135EFC:
-	.incbin "roms/B8CE.gba", 0x135efc, 0x5ae0
+	.global data_0813B67C
+data_0813B67C:
+	.incbin "roms/B8CE.gba", 0x13b67c, 0x360

@@ -208,6 +208,36 @@
         20,
         24
       ]
+    },
+    {
+      "name": "gUnk_08135EFC",
+      "provenance": "EvtAnimDef contains three pointers consumed by evt.c:68-71. The gUnk_0813766C table is anchored by evt.c:11; its 931 typed animation records have identical scalar fields and identical target indices across all regions. Their pointers cover 498 of 500 triples and directly reach indices 0 and 499. The highest triple is reached by animation923, which event sequence124 track7 references at US0x08FB4A68. Correspondence is established by this typed reference graph, not merely masked equality of the pure-pointer triples.",
+      "us": "0x8135efc",
+      "targets": {
+        "jp": "0x8135f78",
+        "eu": "0x88843d0"
+      },
+      "size": 6000,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813B09C",
+      "provenance": "EvtObjResTable is indexed at evt.c:27 and47; its nested resource fields are consumed at evt.c:82-85. Resource93 is used by event sequence26 track5 through msg.c:8487 and8703. Exactly94 16-byte records share coherent tile-count fields and zero reserved bytes; following bytes change to pointer-size pairs and cannot satisfy this record type. All scalar fields match across regions; bases are existing consumer-referenced symbols.",
+      "us": "0x813b09c",
+      "targets": {
+        "jp": "0x813b118",
+        "eu": "0x8889570"
+      },
+      "size": 1504,
+      "stride": 16,
+      "pointer_offsets": [
+        8
+      ]
     }
   ]
 }
