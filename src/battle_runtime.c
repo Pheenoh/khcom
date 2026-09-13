@@ -485,7 +485,7 @@ void func_08019ACC(s32 a, s32 b, s32 c) {
     u16 flags;
     s16 v;
 
-    flags = gGameState.unk_17C;
+    flags = gGameState.progression.unk_84;
 
     if (gBtlWork->unk_068 & 0x800000000LL) {
         return;
@@ -737,7 +737,7 @@ void _08019CB4(void) {
                 default:
                     if (gUnk_03006C10 & 1) {
                         TaskCreate(gBtlWork->taskPools, &gTaskDescBtlEscape, 0);
-                    } else if (gGameState.unk_17A & 0x20) {
+                    } else if (gGameState.progression.unk_82 & 0x20) {
                         TaskCreate(gBtlWork->taskPools, &gTaskDescBtlEscape, 0);
                     }
                     break;
@@ -834,8 +834,8 @@ void _08019CB4(void) {
                     BtlObj* healed;
                     gBtlWork->unk_0E4 = 2;
                     healed = gBtlWork->unk_07C;
-                    healed->unk_02C = gGameState.maxHp;
-                    healed->unk_02E = gGameState.maxHp;
+                    healed->unk_02C = gGameState.progression.maxHp;
+                    healed->unk_02E = gGameState.progression.maxHp;
                 }
                 break;
             }
@@ -874,18 +874,18 @@ void _08019CB4(void) {
                 ModeRequest(&gModeChkbtl, 0);
             } else {
                 GameState* state = &gGameState;
-                memcpy(&state->maxHp, gBtlWork->unk_13C, 0x88);
+                memcpy(&state->progression.maxHp, gBtlWork->unk_13C, 0x88);
                 state->flags |= 0x40;
                 switch ((u32)gBtlWork->unk_10C) {
                 case 166:
-                    state->unk_17C = 0;
+                    state->progression.unk_84 = 0;
                     break;
                 case 174:
-                    state->unk_17C &= ~3;
+                    state->progression.unk_84 &= ~3;
                     break;
 #ifdef VERSION_EU
                 case 158:
-                    state->unk_17C &= ~0x20;
+                    state->progression.unk_84 &= ~0x20;
                     break;
 #endif
                 }
@@ -2478,7 +2478,7 @@ void func_0801CA88(void) {
     InitPlayerProgression();
     gGameState.unk_180 = 0xFFFF;
     func_080DFB2C();
-    gGameState.hp = gGameState.maxHp;
+    gGameState.hp = gGameState.progression.maxHp;
     gGameState.unk_024 = 0x2D;
     gGameState.unk_1B8 = 0;
 }

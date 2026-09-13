@@ -264,9 +264,9 @@ void mode_chkbtl_0(void) {
     if (!(gUnk_03006C10 & 1)) {
         func_08085FB0();
         func_08085CB0();
-        gGameState.cp = 9999;
+        gGameState.progression.cp = 9999;
         gUnk_03006C10 |= 1;
-        gGameState.unk_17C = 0xFFFF;
+        gGameState.progression.unk_84 = 0xFFFF;
     }
 }
 
@@ -396,7 +396,7 @@ void mode_chkbtl_1(void) {
         gGameState.unk_00D = gChkBtlWorlds[gChkBtlWork->bg].unk_00;
         gGameState.floor = gChkBtlWork->floor;
         gGameState.hp = gChkBtlWork->hp;
-        gGameState.maxHp = gChkBtlWork->hp;
+        gGameState.progression.maxHp = gChkBtlWork->hp;
         gGameState.world = gChkBtlEntries[gChkBtlWork->enemy].world;
 
         if (GetKeysHeld() & L_BUTTON) {
@@ -442,7 +442,7 @@ void func_0800ABD8(void) {
     gChkBtlWork->bg = 0;
     gChkBtlWork->enemy = 0;
     gChkBtlWork->floor = 0;
-    gChkBtlWork->hp = gGameState.maxHp;
+    gChkBtlWork->hp = gGameState.progression.maxHp;
     gUnk_03006C10 &= ~1;
     gUnk_02039B90 = 0x98;
     gUnk_02039B88 = 0x160;

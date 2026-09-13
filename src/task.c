@@ -65,8 +65,8 @@ void UpdatePlayTime(void) {
 
 void func_0801CCB4(void) {
     func_080DFAF4(0, 0);
-    gGameState.unk_17A = 0xE7FF;
-    gGameState.unk_17C = 0x80;
+    gGameState.progression.unk_82 = 0xE7FF;
+    gGameState.progression.unk_84 = 0x80;
     _08085D04(0);
     gGameState.flags |= 8;
     gGameState.flags |= 0x100;
@@ -80,7 +80,7 @@ void func_0801CCB4(void) {
 }
 
 void func_0801CD20(void) {
-    gGameState.unk_17C = 3;
+    gGameState.progression.unk_84 = 3;
     func_08085C3C();
     gGameState.flags &= ~8;
     func_0800FDD0(0x11);

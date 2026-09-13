@@ -968,7 +968,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
 
     for (index = 0; index <= 7; index++) {
         data = &table.unk_00[index];
-        source = &gGameState.unk_17C;
+        source = &gGameState.progression.unk_84;
         if (*(const u16*)source & ((const StatusFriendEntry*)data)->unk_00) {
             card = &gCardDefs[((const StatusFriendEntry*)data)->unk_02];
             a[count] = LoadObjTiles(card->unk_14, 0x100);

@@ -1,5 +1,12 @@
 {
   "us": {
+    "src/player_progression.o": {
+      "base": "0x02039BB0",
+      "size": "0x210",
+      "symbols": {
+        "gGameState": {"offset": "0x0", "size": "0x210"}
+      }
+    },
     "src/card_state.o": {
       "base": "0x02039DD8",
       "size": "0xA82",
@@ -15,6 +22,13 @@
     }
   },
   "jp": {
+    "src/player_progression.o": {
+      "base": "0x02039B20",
+      "size": "0x210",
+      "symbols": {
+        "gGameState": {"offset": "0x0", "size": "0x210"}
+      }
+    },
     "src/card_state.o": {
       "base": "0x02039D48",
       "size": "0xA82",
@@ -30,6 +44,13 @@
     }
   },
   "eu": {
+    "src/player_progression.o": {
+      "base": "0x0203A1C0",
+      "size": "0x210",
+      "symbols": {
+        "gGameState": {"offset": "0x0", "size": "0x210"}
+      }
+    },
     "src/card_state.o": {
       "base": "0x0203A3E8",
       "size": "0xA82",

@@ -8231,7 +8231,7 @@ void func_08083F84(u16 a) {
     v = func_08084458(a);
 
     if (gCardDefs[a].unk_20 + GetDeckCpCost(GetActiveDeckIndex()) <=
-            gGameState.cp &&
+            gGameState.progression.cp &&
         v != -1) {
         AddCardToActiveDeck(v);
     }
@@ -13812,10 +13812,10 @@ void func_0808D258(u8 mode) {
     d1[1] = v / 100 - d1[0] * 10;
     d1[2] = v / 10 - d1[0] * 100 - d1[1] * 10;
     d1[3] = v - d1[0] * 1000 - d1[1] * 100 - d1[2] * 10;
-    d2[0] = gGameState.cp / 1000;
-    d2[1] = gGameState.cp / 100 - d2[0] * 10;
-    d2[2] = gGameState.cp / 10 - d2[0] * 100 - d2[1] * 10;
-    d2[3] = gGameState.cp - d2[0] * 1000 - d2[1] * 100 - d2[2] * 10;
+    d2[0] = gGameState.progression.cp / 1000;
+    d2[1] = gGameState.progression.cp / 100 - d2[0] * 10;
+    d2[2] = gGameState.progression.cp / 10 - d2[0] * 100 - d2[1] * 10;
+    d2[3] = gGameState.progression.cp - d2[0] * 1000 - d2[1] * 100 - d2[2] * 10;
 
     switch (mode) {
     case 0:
@@ -14710,7 +14710,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
 }
 
 s32 func_0808E750(u8* work) {
-    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
 #ifdef VERSION_EU
         TaskCreate(&work[0x7E0], gUnk_09EE7FA8, &work[0x8CD]);
 #else
@@ -17681,16 +17681,16 @@ u8 func_08092234(MapSelectWork* w, void* a) {
         if (w->unk_28F != 0) {
             w->unk_28F--;
         } else {
-            if ((gGameState.unk_17A & 8) == 0) {
+            if ((gGameState.progression.unk_82 & 8) == 0) {
                 w->unk_2C1 = 1;
                 func_080A42B4();
                 w->unk_2C2 = 95;
                 SetTaskUpdate(a, (void*)func_0809423C);
-            } else if ((gGameState.unk_17A & 0x40) == 0 && w->unk_2BE == 1) {
+            } else if ((gGameState.progression.unk_82 & 0x40) == 0 && w->unk_2BE == 1) {
                 func_080A42B4();
                 w->unk_2C2 = 109;
                 SetTaskUpdate(a, (void*)func_08094404);
-                gGameState.unk_17A |= 0x40;
+                gGameState.progression.unk_82 |= 0x40;
             } else {
                 n = ListPoolFirst(&w->cards);
                 SetBgMapBlocks(1, gUnk_09EE4BB0, 1, 2);
@@ -17799,7 +17799,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
     keys = GetKeysPressed();
     sel = (s8)w->unk_29C + (s8)w->unk_29D * 5;
 
-    if ((gGameState.unk_17A & 8) == 0) {
+    if ((gGameState.progression.unk_82 & 8) == 0) {
         if (w->unk_28B == 0) {
             SetTaskUpdate(a, (void*)func_0809438C);
             TaskPoolUpdate(&w->tasks);
@@ -19122,7 +19122,7 @@ u8 func_0809438C(MapSelectWork* w, void* a) {
                 func_080A4188((u8*)w, w->unk_2C2);
                 w->unk_2C2++;
             } else {
-                gGameState.unk_17A |= 8;
+                gGameState.progression.unk_82 |= 8;
                 SetTaskUpdate(a, (void*)func_0809254C);
             }
         } else {
@@ -20439,11 +20439,11 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
     s32 v;
 
     if (w->unk_14 == 0) {
-        if ((gGameState.unk_17A & 0x20) == 0) {
+        if ((gGameState.progression.unk_82 & 0x20) == 0) {
             *(PrizeCardArgs*)args = w->unk_18;
             args[8] = 2;
             func_0809797C(w, args);
-            gGameState.unk_17A |= 0x20;
+            gGameState.progression.unk_82 |= 0x20;
         } else if ((s8)gGameState.floor == 0) {
             if (func_08093B58() == 0) {
                 *(PrizeCardArgs*)args = w->unk_18;
@@ -25442,11 +25442,11 @@ void Level_Up_0(LevelUpWork* w) {
     w->unk_7BD = 0;
     w->unk_7B0 = 0;
     w->unk_7C7 = 0;
-    func_080A096C(gGameState.level, w->unk_77E);
-    func_080A096C(gGameState.maxHp, w->unk_784);
-    func_080A09C0((u16)gGameState.cp, w->unk_78C);
-    func_080A096C(gGameState.dp, w->unk_794);
-    func_080A0944(gGameState.ap, w->unk_79C);
+    func_080A096C(gGameState.progression.level, w->unk_77E);
+    func_080A096C(gGameState.progression.maxHp, w->unk_784);
+    func_080A09C0((u16)gGameState.progression.cp, w->unk_78C);
+    func_080A096C(gGameState.progression.dp, w->unk_794);
+    func_080A0944(gGameState.progression.ap, w->unk_79C);
     w->unk_7A4 = 0;
     w->unk_7C2[1] = 0;
     w->unk_7C2[0] = 0;
@@ -25800,7 +25800,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                     }
                     w->unk_7BD = 1;
                     if (!(gGameState.flags & 8)) {
-                        if ((s16)gGameState.maxHp > 559) {
+                        if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25816,7 +25816,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78D4[3], w->text[3]);
 #endif
                         }
-                        if (gGameState.cp > 1899) {
+                        if (gGameState.progression.cp > 1899) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25832,7 +25832,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78D4[4], w->text[4]);
 #endif
                         }
-                        if (gGameState.unk_178 > 10) {
+                        if (gGameState.progression.unk_80 > 10) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25859,7 +25859,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                         w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
                         w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
                     } else {
-                        if ((s16)gGameState.maxHp > 559) {
+                        if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25875,7 +25875,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78F0[3], w->text[3]);
 #endif
                         }
-                        if ((s16)gGameState.ap > 29) {
+                        if ((s16)gGameState.progression.ap > 29) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25899,7 +25899,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78F0[4], w->text[4]);
 #endif
                         }
-                        if ((s16)gGameState.dp > 299) {
+                        if ((s16)gGameState.progression.dp > 299) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26142,7 +26142,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.amount = amount;
                     args.done = &w->unk_7C4;
                     args.flags = 0;
-                    gGameState.unk_178++;
+                    gGameState.progression.unk_80++;
                     TaskCreate(&w->pool, gUnk_09EE7F48, &args);
                 }
                 break;
@@ -26161,10 +26161,10 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                 }
                 break;
             }
-            func_080A096C(gGameState.maxHp, w->unk_784);
-            func_080A09C0((u16)gGameState.cp, w->unk_78C);
-            func_080A096C(gGameState.dp, w->unk_794);
-            func_080A0944(gGameState.ap, w->unk_79C);
+            func_080A096C(gGameState.progression.maxHp, w->unk_784);
+            func_080A09C0((u16)gGameState.progression.cp, w->unk_78C);
+            func_080A096C(gGameState.progression.dp, w->unk_794);
+            func_080A0944(gGameState.progression.ap, w->unk_79C);
             w->unk_7C7 = 1;
         }
     }
@@ -26759,7 +26759,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
         }
         w->unk_7BD = 1;
         if (!(gGameState.flags & 8)) {
-            if ((s16)gGameState.maxHp > 559) {
+            if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26775,7 +26775,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78D4[3], w->text[3]);
 #endif
             }
-            if (gGameState.cp > 1899) {
+            if (gGameState.progression.cp > 1899) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26791,7 +26791,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78D4[4], w->text[4]);
 #endif
             }
-            if (gGameState.unk_178 > 10) {
+            if (gGameState.progression.unk_80 > 10) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26818,7 +26818,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
             w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
             w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
         } else {
-            if ((s16)gGameState.maxHp > 559) {
+            if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26834,7 +26834,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78F0[3], w->text[3]);
 #endif
             }
-            if ((s16)gGameState.ap > 29) {
+            if ((s16)gGameState.progression.ap > 29) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26858,7 +26858,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78F0[4], w->text[4]);
 #endif
             }
-            if ((s16)gGameState.dp > 299) {
+            if ((s16)gGameState.progression.dp > 299) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -27020,7 +27020,7 @@ INCLUDE_ASM("card/func_080A11CC.s");
 #endif
 
 s32 func_080A151C(void) {
-    if (gGameState.level >= gUnk_09037FBA[gGameState.unk_178]) {
+    if (gGameState.progression.level >= gUnk_09037FBA[gGameState.progression.unk_80]) {
         return 1;
     }
 
@@ -27563,7 +27563,7 @@ void StockInfo_0(u8* work, void* a) {
     *(s32*)&work[0xC] = 0xBC00;
     work[0x10] = 16;
 
-    switch (gGameState.unk_178) {
+    switch (gGameState.progression.unk_80) {
     case 0:
         func_0800FB2C(0);
         break;
@@ -27606,7 +27606,7 @@ u8 StockInfo_1(u8* work, void* a) {
         work[0x10]--;
     } else {
         m4aSongNumStart(0xCA);
-        func_080D8EB4(&work[0x18], gUnk_0903BFBC[gGameState.unk_178], 0, 0, 0x50);
+        func_080D8EB4(&work[0x18], gUnk_0903BFBC[gGameState.progression.unk_80], 0, 0, 0x50);
         SetTaskUpdate(a, (void*)func_080A22A4);
     }
 
@@ -27629,7 +27629,7 @@ void StockInfo_2(u8* work) {
 void StockInfo_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x00]);
     ReleaseObjPalette(*(void**)&work[0x04]);
-    gGameState.unk_178++;
+    gGameState.progression.unk_80++;
     TaskPoolDestroy(&work[0x18]);
 }
 
@@ -27645,7 +27645,7 @@ u8 func_080A235C(u16 a) {
     return gUnk_09EE7D84[a]->unk_04;
 }
 u8 func_080A2370(void) {
-    if (gGameState.level >= gUnk_0903BFD4[gGameState.unk_178]) {
+    if (gGameState.progression.level >= gUnk_0903BFD4[gGameState.progression.unk_80]) {
         return 1;
     }
 
@@ -30507,7 +30507,7 @@ void func_080A7284(u8* work, u8 mode) {
     }
 }
 u8 func_080A7300(u8* work) {
-    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
         TaskCreate(&work[0x420], gUnk_09EE7FA8, &work[0x501]);
         m4aSongNumStart(0x69);
         return 0;
@@ -32316,7 +32316,7 @@ s32 func_080AAB08(UnkStruct_080AAB08* w) {
 }
 
 s32 func_080AAC40(u8* work) {
-    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
         TaskCreate(&work[0x628], gUnk_09EE7FA8, &work[0x70D]);
         m4aSongNumStart(105);
 
@@ -32728,8 +32728,8 @@ void func_080AB96C(void* a) {
 void Mode_riku_btlTutorial_1(void) {
     u16 t;
 
-    t = gGameState.unk_17A | 0x1000;
-    gGameState.unk_17A = t;
+    t = gGameState.progression.unk_82 | 0x1000;
+    gGameState.progression.unk_82 = t;
     ModeRequest(&gModeBattle, (s32)gUnk_02034B34);
     TaskPoolUpdate(gUnk_02034B20);
     TaskPoolDraw(gUnk_02034B20);
@@ -32746,7 +32746,7 @@ void Mode_riku_deckTutorial_1(void) {
             break;
         case 1:
             if (!func_080A42C8()) {
-                gGameState.unk_17A |= 0x800;
+                gGameState.progression.unk_82 |= 0x800;
                 ModeRequest(&gUnk_09EE2704, (s32)gUnk_02034B34);
             }
             break;

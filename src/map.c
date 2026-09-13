@@ -5943,7 +5943,7 @@ void func_080E9B7C(void) {
         func_080E9898((s32)func_080E9CBC);
         return;
     }
-    if (FadeIsActive() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
+    if (FadeIsActive() == 0 && (gGameState.progression.unk_82 & 0x200) != 0 &&
         (gUnk_02039BA0->unk_70 & 0x41000) == 0 && (gUnk_0203C7AC->unk_00 & 4) == 0) {
         if (GetKeysPressed() & 4) {
             m4aSongNumStart(0x67);
@@ -6034,7 +6034,7 @@ void func_080E9D94(void) {
     if (FadeIsActive() == 0) {
         func_0801CB0C();
         if (gGameState.flags & 8) {
-            if (gGameState.unk_17A & 0x1000) {
+            if (gGameState.progression.unk_82 & 0x1000) {
                 ModeRequest(&gModeBattle, gUnk_0203C7AC->unk_0E);
             } else {
                 ModeRequest(&gModeRikuBtlTutorial, gUnk_0203C7AC->unk_0E);
@@ -6073,9 +6073,9 @@ void func_080E9E94(void) {
         FadeStartOut(0, 16);
         FadeLock();
         func_080E9898((s32)func_080E9CBC);
-        if ((gGameState.unk_17A & 0x200) == 0) {
-            t = gGameState.unk_17A | 0x200;
-            gGameState.unk_17A = t;
+        if ((gGameState.progression.unk_82 & 0x200) == 0) {
+            t = gGameState.progression.unk_82 | 0x200;
+            gGameState.progression.unk_82 = t;
         }
     } else if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gBldCnt = 0;
@@ -6146,7 +6146,7 @@ void Mode_MapFld_0(void) {
     TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescLockon, 0);
     TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapAnm, p->unk_2C);
 
-    if ((gGameState.unk_17A & 0x20) == 0) {
+    if ((gGameState.progression.unk_82 & 0x20) == 0) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapTutorial, 0);
     }
 
@@ -6243,10 +6243,10 @@ void func_080EA2AC(void) {
         }
         return;
     }
-    if (gGameState.unk_17C & 2) {
+    if (gGameState.progression.unk_84 & 2) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapDonald, 0);
     }
-    if (gGameState.unk_17C & 1) {
+    if (gGameState.progression.unk_84 & 1) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGoofy, 0);
     }
     if (gUnk_0203C590.unk_06 != 0xFD) {
@@ -6346,7 +6346,7 @@ void func_080EA498(void) {
     }
     if (gUnk_0203C7AC->unk_00 & 0x2000) {
         func_080EA1F4((s32)func_080EA730);
-    } else if (FadeIsActive() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
+    } else if (FadeIsActive() == 0 && (gGameState.progression.unk_82 & 0x200) != 0 &&
                (gUnk_02039BA0->unk_70 & 0x41000) == 0 && (gUnk_0203C7AC->unk_00 & 4) == 0 &&
                (GetKeysPressed() & 8) != 0) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapMenu, 0);
@@ -6374,7 +6374,7 @@ void func_080EA5CC(void) {
     if (gUnk_0203C7AC->unk_00 & 0x200) {
         if ((s8)gGameState.floor == func_080DF750()) {
             gGameState.flags &= ~0x80;
-            gGameState.unk_17C = (gGameState.unk_17C & 0xFF83) | gGameState.unk_17E;
+            gGameState.progression.unk_84 = (gGameState.progression.unk_84 & 0xFF83) | gGameState.progression.unk_86;
         }
         if (gUnk_0203C590.unk_04 == 0) {
             gUnk_0203C590.unk_07 = 0;
@@ -8353,14 +8353,14 @@ s32 func_080ED498(MapMenuWork* w) {
         w->unk_028 = 0x11800;
         w->unk_02C = 0xF000;
         w->unk_030 = 0x10000;
-        func_080ED0B8(w->unk_024, 0, gGameState.level);
-        func_080ED0B8(w->unk_024, 6, gGameState.maxHp);
+        func_080ED0B8(w->unk_024, 0, gGameState.progression.level);
+        func_080ED0B8(w->unk_024, 6, gGameState.progression.maxHp);
         func_080ED0B8(w->unk_024, 3, gGameState.hp);
 
         if (gGameState.flags & 8) {
-            func_080ED0B8(w->unk_024, 9, gGameState.dp);
+            func_080ED0B8(w->unk_024, 9, gGameState.progression.dp);
         } else {
-            func_080ED14C(w->unk_024, 9, gGameState.mooglePoints);
+            func_080ED14C(w->unk_024, 9, gGameState.progression.mooglePoints);
         }
 
         w->unk_038 = LoadObjPalette(gUnk_09991964, 32);
@@ -8599,7 +8599,7 @@ s32 func_080EDA90(MapMenuWork* w) {
     switch (w->unk_309) {
     case 0:
         if (gGameState.flags & 8) {
-            if (gGameState.unk_17A & 0x800) {
+            if (gGameState.progression.unk_82 & 0x800) {
                 ModeRequest(&gUnk_09EE2704, 0);
             } else {
                 ModeRequest(&gModeRikuDeckTutorial, 0);
@@ -9431,7 +9431,7 @@ void func_080EED88(MapSaveWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     gUnk_0203C7AC->unk_00 |= 0x2000;
-    gGameState.hp = gGameState.maxHp;
+    gGameState.hp = gGameState.progression.maxHp;
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
@@ -12876,7 +12876,7 @@ void func_080F4258(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
         gUnk_0203C7AC->unk_00 &= ~0x4000;
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        gGameState.unk_17A |= 0x10;
+        gGameState.progression.unk_82 |= 0x10;
         w->unk_0C4 = func_080F4140;
     }
 }
@@ -12890,7 +12890,7 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_1A = d->unk_1E;
     e->unk_30 = 3;
 
-    if (gGameState.unk_17A & 0x10) {
+    if (gGameState.progression.unk_82 & 0x10) {
         w->unk_0C4 = func_080F4140;
     } else {
         w->unk_0C4 = func_080F41A4;
@@ -13052,7 +13052,7 @@ void func_080F46C0(MapGmk05Work* w) {
 }
 
 void func_080F46FC(MapGmk06Work* w) {
-    if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004 && (gGameState.unk_17A & 0x100) == 0) {
+    if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004 && (gGameState.progression.unk_82 & 0x100) == 0) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         gUnk_0203C7AC->unk_00 |= 0x4000;
         func_080A411C(&w->unk_0C8, 0, 0x84);
@@ -13078,7 +13078,7 @@ void func_080F47DC(MapGmk06Work* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         gUnk_0203C7AC->unk_00 &= ~0x4000;
-        gGameState.unk_17A |= 0x100;
+        gGameState.progression.unk_82 |= 0x100;
         w->unk_0C4 = func_080F46FC;
     } else {
         gUnk_02039BA0->unk_6C = 30;
@@ -13170,10 +13170,10 @@ void func_080F49D0(MapPrizeWork* w) {
         case 2:
         case 3:
             m4aSongNumStart(107);
-            gGameState.mooglePoints += w->unk_94;
+            gGameState.progression.mooglePoints += w->unk_94;
 
-            if (gGameState.mooglePoints > 99999) {
-                gGameState.mooglePoints = 99999;
+            if (gGameState.progression.mooglePoints > 99999) {
+                gGameState.progression.mooglePoints = 99999;
             }
             break;
         case 0:
@@ -13181,7 +13181,7 @@ void func_080F49D0(MapPrizeWork* w) {
         default:
             m4aSongNumStart(107);
             gGameState.hp += w->unk_94;
-            t = gGameState.maxHp;
+            t = gGameState.progression.maxHp;
 
             if ((s16)gGameState.hp > (s16)t) {
                 gGameState.hp = t;
@@ -13263,12 +13263,12 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
         break;
     case 1:
         w->unk_74 = gUnk_098A5C9A;
-        w->unk_94 = gGameState.maxHp / 20;
+        w->unk_94 = gGameState.progression.maxHp / 20;
         break;
     case 0:
     default:
         w->unk_74 = gUnk_098A5C90;
-        w->unk_94 = gGameState.maxHp * 3 / 100;
+        w->unk_94 = gGameState.progression.maxHp * 3 / 100;
         break;
     }
 
@@ -14463,7 +14463,7 @@ void func_080F6D70(MapTutorialWork* w) {
     if (gUnk_02039BA0->unk_68 == 0) {
         flags = gUnk_02039BA0->unk_70;
 
-        if (!(flags & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x2000) && (gGameState.unk_17A & 0x10)) {
+        if (!(flags & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x2000) && (gGameState.progression.unk_82 & 0x10)) {
             gUnk_0203C7AC->unk_00 |= 0x4000;
             gUnk_02039BA0->unk_70 = flags | 0x1000;
             func_080A411C(&w->unk_0C8, 0, 0x6A);
@@ -14537,7 +14537,7 @@ void func_080F6F90(MapTutorialWork* w) {
 
 void func_080F6FC4(MapTutorialWork* w) {
     if ((gUnk_0203C7AC->unk_00 & 0x10) == 0) {
-        gGameState.unk_17A |= 0x2000;
+        gGameState.progression.unk_82 |= 0x2000;
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_080A411C(&w->unk_0C8, 0, 0x6B);
         w->unk_0C4 = func_080F7024;
@@ -14642,7 +14642,7 @@ void func_080F72CC(MapTutorialWork* w) {
     w->unk_0B4 = 0;
     w->unk_0B8 = 0;
     w->unk_0C2 = 0;
-    t = gGameState.unk_17A & 0x2000;
+    t = gGameState.progression.unk_82 & 0x2000;
 
     if (t == 0) {
         w->unk_0C1 = 0;
@@ -14769,7 +14769,7 @@ void func_080F75E4(MapStairWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         gUnk_0203C7AC->unk_00 &= ~0x4000;
-        gGameState.unk_17A |= 0x400;
+        gGameState.progression.unk_82 |= 0x400;
         w->unk_4C = func_080F74E8;
     }
 }
@@ -14789,7 +14789,7 @@ void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
 
     switch (w->unk_14) {
     case 0x2D:
-        if ((gGameState.unk_17A & 0x400) == 0 && gUnk_0203C590.unk_06 == 0xFD) {
+        if ((gGameState.progression.unk_82 & 0x400) == 0 && gUnk_0203C590.unk_06 == 0xFD) {
             w->unk_4C = func_080F7594;
         } else {
             w->unk_4C = (void (*)(struct MapStairWork*))func_080F74E8;

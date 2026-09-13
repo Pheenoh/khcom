@@ -197,7 +197,7 @@ void mode_ms_top_1(void) {
         }
         break;
     case 2:
-        if ((gGameState.unk_17A & 0x80) == 0) {
+        if ((gGameState.progression.unk_82 & 0x80) == 0) {
             gUnk_020358C2 = 0;
             gUnk_02035890 = 3;
         } else {
@@ -209,7 +209,7 @@ void mode_ms_top_1(void) {
 
         if (gUnk_020358C2 > 2 && gUnk_020358BC < 0 && func_080A42C8() == 0) {
             func_0800FDD0(27);
-            gGameState.unk_17A |= 0x80;
+            gGameState.progression.unk_82 |= 0x80;
             gUnk_02035890 = 4;
         }
         break;

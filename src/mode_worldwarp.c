@@ -412,11 +412,11 @@ void mode_worldwarp_2(void) {
 }
 
 u32 GetMooglePoints(void) {
-    return gGameState.mooglePoints;
+    return gGameState.progression.mooglePoints;
 }
 
 void SetMooglePoints(u32 a) {
-    gGameState.mooglePoints = a;
+    gGameState.progression.mooglePoints = a;
 }
 
 u8 SpendMooglePoints(u32 a) {

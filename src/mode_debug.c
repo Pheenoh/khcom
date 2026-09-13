@@ -243,7 +243,7 @@ void mode_debug_1(void) {
     case 17:
         if (GetKeysPressed() & 9) {
             gGameState.unk_180 = 0xFFFF;
-            gGameState.unk_17A = -1;
+            gGameState.progression.unk_82 = -1;
             ModeRequest(&gModeWorldselect, 0);
         }
         break;

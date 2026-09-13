@@ -293,131 +293,131 @@ void func_08061824(void) {
 void func_08061FC8(void) {
     switch (gUnk_02034A78) {
     case 0:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 94:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 74:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 88:
-        gGameState.unk_17C = 19;
+        gGameState.progression.unk_84 = 19;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(62);
         break;
     case 93:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 107:
-        gGameState.unk_17C = 7;
+        gGameState.progression.unk_84 = 7;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(61);
         break;
     case 114:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 103:
-        gGameState.unk_17C = 11;
+        gGameState.progression.unk_84 = 11;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(63);
         break;
     case 106:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case MSG_CODE(131):
-        gGameState.unk_17C = 67;
+        gGameState.progression.unk_84 = 67;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(65);
         break;
     case MSG_CODE(133):
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 117:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 116:
     case 118:
-        gGameState.unk_17C = 35;
+        gGameState.progression.unk_84 = 35;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(64);
         break;
     case 119:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 120:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 44:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 59:
-        gGameState.unk_17C = 3;
+        gGameState.progression.unk_84 = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case 52:
     case MSG_CODE(149):
-        gGameState.unk_17C = 0;
+        gGameState.progression.unk_84 = 0;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
     case MSG_CODE(155):
-        gGameState.unk_17C = 128;
+        gGameState.progression.unk_84 = 128;
         func_0800FB2C(69);
         break;
     case MSG_CODE(174):
     case MSG_CODE(186):
-        gGameState.unk_17C = 0;
+        gGameState.progression.unk_84 = 0;
         break;
     case MSG_CODE(185):
     case MSG_CODE(190):
-        gGameState.unk_17C = 128;
+        gGameState.progression.unk_84 = 128;
         break;
     case MSG_CODE(156):
         gGameState.flags &= ~0x100;

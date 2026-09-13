@@ -2,6 +2,10 @@
 #define GUARD_PLAYER_PROGRESSION_H
 
 #include "types.h"
+#include "player_progression_types.h"
+
+void AdvanceLevelExpThreshold(PlayerProgression* p);
+void InitPlayerProgression(void);
 
 u8 CanLevelUp(void);
 void func_0800FDD0(u32 a);

@@ -6101,10 +6101,10 @@ void func_080D19C4(PooPrizeWork* w) {
         case 2:
         case 3:
             m4aSongNumStart(107);
-            gGameState.mooglePoints += w->unk_94;
+            gGameState.progression.mooglePoints += w->unk_94;
 
-            if (gGameState.mooglePoints > 99999) {
-                gGameState.mooglePoints = 99999;
+            if (gGameState.progression.mooglePoints > 99999) {
+                gGameState.progression.mooglePoints = 99999;
             }
             break;
         case 0:
@@ -6113,8 +6113,8 @@ void func_080D19C4(PooPrizeWork* w) {
             m4aSongNumStart(107);
             gGameState.hp += w->unk_94;
 
-            if (gGameState.hp > (s16)gGameState.maxHp) {
-                gGameState.hp = gGameState.maxHp;
+            if (gGameState.hp > (s16)gGameState.progression.maxHp) {
+                gGameState.hp = gGameState.progression.maxHp;
             }
             break;
         }
