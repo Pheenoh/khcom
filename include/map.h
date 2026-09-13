@@ -1,3 +1,4 @@
+#include "map_ui_data.h"
 #include "map_resource_data.h"
 #include "card_lookup_data.h"
 #include "registration_data.h"
@@ -1314,7 +1315,6 @@ extern u8 gUnk_099919A4[];
 extern u8 gUnk_099582E4[];
 extern u8 gUnk_09956724[];
 extern u8 gUnk_098A8628[];
-extern void* gUnk_09EF8D8C[];
 extern u8 gUnk_09991C44[];
 extern u8 gUnk_09991C84[];
 extern u8 gUnk_099661A4[];
@@ -1325,13 +1325,6 @@ extern u8 gUnk_0998AF44[];
 extern u8 gUnk_09991D24[];
 extern u8 gUnk_098A8F8A[];
 extern u8 gUnk_08159DF0[];
-extern void* gUnk_09EF8E74[];
-extern void* gUnk_09EF8E6C[];
-extern void* gUnk_09EF8E64[];
-extern void* gUnk_09EF8E80[];
-extern void* gUnk_09EF8E0C[];
-extern void* gUnk_09EF8E20[];
-extern void* gUnk_09EF8E44[];
 extern u8 gUnk_09959A64[];
 extern u8 gUnk_099919C4[];
 extern u8 gUnk_09986F44[];
@@ -1358,7 +1351,6 @@ extern u8 gUnk_09958124[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_08B22BBC[];
-extern void* gUnk_09EF8DA4[];
 extern UnkStruct_0984B968 gUnk_0984B968[];
 extern u8 gUnk_098A948C[];
 extern u8 gUnk_098A94A0[];

@@ -1,0 +1,5094 @@
+{
+  "version": 1,
+  "provenance": {
+    "map_ui": "Native regional map-menu resource indices. Direct DrawSprite calls prove each constant sprite bound; the options selector explicitly cycles0..6, with a separate index7 disabled-state sprite in the first option arrays. Every remaining word is a separate typed resource-pointer scalar. Exact original Sprite/OAM and AnimHeader/frame containers supply version-active binary asset bindings; no localized glyph identity or uniform regional offset is assumed. EU adds four border variants and localized menu/save/option arrays between independently owned animation tables and gTaskDescBosGa."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D8C",
+          "address": "0x9ef8d8c",
+          "size": 12,
+          "sha256": "131bcddc896c33e87ee37c18b401180e514a0665e58bd0836601ee0d0fb01483",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D8C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D98",
+          "address": "0x9ef8d98",
+          "size": 4,
+          "sha256": "b3a8de11623a2861887784ac75fa25365213ee22bac03eeef33050e053ebc3e5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D98",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D9C",
+          "address": "0x9ef8d9c",
+          "size": 4,
+          "sha256": "0697bb0bc4442a543a185b67951ff7ba76cef1e0147746ad998d43d8283457cd",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D9C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA0",
+          "address": "0x9ef8da0",
+          "size": 4,
+          "sha256": "3412bff4a890610159af74159ad8724c815c58e81afd21668e735b8eafa3ad13",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA4",
+          "address": "0x9ef8da4",
+          "size": 4,
+          "sha256": "e84c7182899edde7f8e1ee950d1674d8d010d3248545d6b9aaa0698b7c2755f5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA8",
+          "address": "0x9ef8da8",
+          "size": 4,
+          "sha256": "bf17db4f0fedae736419c79cf5146ee90797e2b02d85f175e42e80a94591e15f",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DAC",
+          "address": "0x9ef8dac",
+          "size": 4,
+          "sha256": "4945a0cc33079274a89515a3e9d0b54b6fcf72c070b6f45e52e319d0764357d1",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DAC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB0",
+          "address": "0x9ef8db0",
+          "size": 4,
+          "sha256": "eae7de62b0854afe01361b5b4771cc34f0132689dceed5aa456dc92cdd88c9ce",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB4",
+          "address": "0x9ef8db4",
+          "size": 4,
+          "sha256": "8c73e6ba60be50c5aae7c143bdd60037b8cfb509b693a055c749272a6eb8eea0",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB8",
+          "address": "0x9ef8db8",
+          "size": 4,
+          "sha256": "f470fdbf99fdd621c5a6b5065f3027d04fb0d303ddb606382c12e44f39a434c7",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DBC",
+          "address": "0x9ef8dbc",
+          "size": 4,
+          "sha256": "b8e6a47aa22460f23f3aa8a2905b0cef40feb29be9a39b6749fb5d794d0dfed4",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DBC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC0",
+          "address": "0x9ef8dc0",
+          "size": 4,
+          "sha256": "57ed562c7dbead6ae6738d67611d80a0b5061bbca227d0965891b447769cdabc",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC4",
+          "address": "0x9ef8dc4",
+          "size": 4,
+          "sha256": "25eef41729ee0ce2c12ba827b6839617b04fff1af1cc0fa31154b2759faac211",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC8",
+          "address": "0x9ef8dc8",
+          "size": 4,
+          "sha256": "04bb9b36bb1285cfa850a7191cd153bb8d9f02d533033a91a5ed83b7fd106268",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DCC",
+          "address": "0x9ef8dcc",
+          "size": 4,
+          "sha256": "29818b4f3cacc055aff3d0deaf0a2c48271c5205ea4b156403e0074e563931e3",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DCC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD0",
+          "address": "0x9ef8dd0",
+          "size": 4,
+          "sha256": "cd8b359fcc735cfb71f89e6a70ba8abda5c31c7378203cd0d9e726fa100afd7e",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD4",
+          "address": "0x9ef8dd4",
+          "size": 4,
+          "sha256": "4b2561c9bb77975bfd58b70446c196cf7b8533f47517df1f3ccd1d53f4b2207c",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD8",
+          "address": "0x9ef8dd8",
+          "size": 4,
+          "sha256": "33f740b752a61e6bff7d85692257395d699c7bfd78c00f0563926c6a093d6c52",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DDC",
+          "address": "0x9ef8ddc",
+          "size": 4,
+          "sha256": "fab29afb0ee5894138f097e44ec16ff68afb89a5844cbd2981f7c1c101e8c67f",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DDC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE0",
+          "address": "0x9ef8de0",
+          "size": 4,
+          "sha256": "93c75cda8c6feeb488b253fbe4e677c577bdd51d79a2aab953737122f3d27acd",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE4",
+          "address": "0x9ef8de4",
+          "size": 4,
+          "sha256": "e7415b7d9a1d24c5f863ecac6c3c55babde3f60ae7ac7d17093f2e65bb90a18c",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE8",
+          "address": "0x9ef8de8",
+          "size": 4,
+          "sha256": "d3ec12483c24187b17f697caed711f40ef3cced0ed9d8da4b495ded6efda5816",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DEC",
+          "address": "0x9ef8dec",
+          "size": 4,
+          "sha256": "50ac8e2b427a309523adbc5d79ff3e1902fe1474530bb388a0b715b5457604c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DEC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF0",
+          "address": "0x9ef8df0",
+          "size": 4,
+          "sha256": "e3888bb8d409fd32b09e5c315f3630245006528a0512c44659e23887ea4c6e06",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF4",
+          "address": "0x9ef8df4",
+          "size": 4,
+          "sha256": "243454293689244c53b972cbceffb7a0b68b117e1f91cd69d65e75fac963b0dc",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF8",
+          "address": "0x9ef8df8",
+          "size": 4,
+          "sha256": "6b706104540c06b3ea852582fa120c0ac4d67c3e8e6705b9b13c21ece6019b6c",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DFC",
+          "address": "0x9ef8dfc",
+          "size": 4,
+          "sha256": "83b24795a3bb9ca328be37db583ccc199def706a1f4082f3ff72e674cc4ef013",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DFC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E00",
+          "address": "0x9ef8e00",
+          "size": 4,
+          "sha256": "0895c57f1f4be35966c62f66add93dd411dc9c04fe66ec049bf039e8bc16ed23",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E00",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E04",
+          "address": "0x9ef8e04",
+          "size": 4,
+          "sha256": "cfff52745adabe9657c70febaeb46adea2d046e2421d78080162067fffe1ea51",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E04",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E08",
+          "address": "0x9ef8e08",
+          "size": 4,
+          "sha256": "2e17b5d6806743ae6fa73ed3fdd719ff20eb1e13b632b68c9c0bd0bb2d0564dc",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E08",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E0C",
+          "address": "0x9ef8e0c",
+          "size": 16,
+          "sha256": "6d3991136f4aea75d2cde9d73667260c27b9ae3538a3ab750effa7b54f804270",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E0C",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E1C",
+          "address": "0x9ef8e1c",
+          "size": 4,
+          "sha256": "5c41993b1a05b00885a70307e6297e5ea87273812d1bfe17df47a1ad9064d821",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E1C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E20",
+          "address": "0x9ef8e20",
+          "size": 32,
+          "sha256": "c80ce3520d7d4b832cd83486be29d054d9957857cf28d28bfaea208a076bfe05",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E20",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E40",
+          "address": "0x9ef8e40",
+          "size": 4,
+          "sha256": "cd3f6e2cc0d8507fae8a981682ab29e8b65d2160f247e484c437cb0d74daca89",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E40",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E44",
+          "address": "0x9ef8e44",
+          "size": 28,
+          "sha256": "549b5c6eb1c028169c149f6556e819466386798f0c5897b055908a61f5e2f28d",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E44",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E60",
+          "address": "0x9ef8e60",
+          "size": 4,
+          "sha256": "10b0bd51703cb3600a71eeb6be40c9f482f5508ce0359e868b9e9dec0cefa0fa",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E60",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E64",
+          "address": "0x9ef8e64",
+          "size": 4,
+          "sha256": "9689ed5d507047e997f68fb39c666efa2dc046d5e41ade0191937370edefd4e7",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E64",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E68",
+          "address": "0x9ef8e68",
+          "size": 4,
+          "sha256": "83150d77adfe15b5f367abe45df65704868a1a604fa3508941b98635a3b9bb50",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E68",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E6C",
+          "address": "0x9ef8e6c",
+          "size": 4,
+          "sha256": "01e92dcb54847f316c76841f806e161c9e8a1e9cc2716b3a2d88c5df2e17e122",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E6C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E70",
+          "address": "0x9ef8e70",
+          "size": 4,
+          "sha256": "593bfa3c4d63e06ff92ccc0c14b1d12bc75b45b359e94521dfcf6ec3a5637904",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E70",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E74",
+          "address": "0x9ef8e74",
+          "size": 8,
+          "sha256": "2fd6aaea34e9150a2052f98ff86f13b478cdcccf650a88d09f2048a8c4b75afd",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E74",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E7C",
+          "address": "0x9ef8e7c",
+          "size": 4,
+          "sha256": "e0cf2a95fa50423b8523369c396d273d14f9d274a24dd07f2b1b2e0b94fa53e4",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E7C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E80",
+          "address": "0x9ef8e80",
+          "size": 12,
+          "sha256": "3422a7cac3f96f510b45459d1c75b32451ab9564016bab3f2838a209f968cb04",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E80",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E8C",
+          "address": "0x9ef8e8c",
+          "size": 4,
+          "sha256": "176fe8d82f86e3f6d65e29f79d57eeabf71869a3f022aa6156f28140f75c0b35",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E8C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E90",
+          "address": "0x9ef8e90",
+          "size": 4,
+          "sha256": "77140aa8097f9a383bdc004f5a0facc18006571db4f0384c031b3e8caffbb641",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E90",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gMapUiSpriteUs_098A8BE4",
+          "address": "0x98a8be4",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A8BF4",
+          "address": "0x98a8bf4",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A8C28",
+          "address": "0x98a8c28",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A8C5C",
+          "address": "0x98a8c5c",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A8F28",
+          "address": "0x98a8f28",
+          "size": 86,
+          "sha256": "dec272da5c251d0f32505943a919f8d0273a510b77da2e30629650684785b552",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A8F80",
+          "address": "0x98a8f80",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A944C",
+          "address": "0x98a944c",
+          "size": 50,
+          "sha256": "c2b058dfd6306cf0f5e9c6930e51cbbdec2aa80912452dddc4c1a9d0dd2b1cb9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9480",
+          "address": "0x98a9480",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A948C",
+          "address": "0x98a948c",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9496",
+          "address": "0x98a9496",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A94A0",
+          "address": "0x98a94a0",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A94AA",
+          "address": "0x98a94aa",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A94B4",
+          "address": "0x98a94b4",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A94BE",
+          "address": "0x98a94be",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A94C8",
+          "address": "0x98a94c8",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A94D2",
+          "address": "0x98a94d2",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A94DC",
+          "address": "0x98a94dc",
+          "size": 20,
+          "sha256": "d5a50c46f36e9d9757d1c6b38d6600853db58dc9b511209a2031280e1b635482",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A94F2",
+          "address": "0x98a94f2",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A94FC",
+          "address": "0x98a94fc",
+          "size": 20,
+          "sha256": "0bcddf6dc7cd675a9718d2d249635d3471d813c62a4be0dd630545cdc7f9a5ac",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9512",
+          "address": "0x98a9512",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A951C",
+          "address": "0x98a951c",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9526",
+          "address": "0x98a9526",
+          "size": 8,
+          "sha256": "0f8923fb187536f210b346aebb553cf8c1ca827ebc0e5447c8b2e9d63a414992",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9530",
+          "address": "0x98a9530",
+          "size": 8,
+          "sha256": "78a89181bd5d39ed6536077cd1f5ebf4c8286400169f311738565b9773337bd9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A953A",
+          "address": "0x98a953a",
+          "size": 8,
+          "sha256": "202de47b0065fdf03369cf1c6242e62a46379215f64918d7046773ee43f97fe0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9544",
+          "address": "0x98a9544",
+          "size": 8,
+          "sha256": "651243179ba9c4933c7a9a17d8836427564d161864430179668b12ddbce0f9f4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A954E",
+          "address": "0x98a954e",
+          "size": 8,
+          "sha256": "91a126269ea3a6b32ba049b3481e8880d4591fdd2901c93cb80e07c26d6f5f51",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9558",
+          "address": "0x98a9558",
+          "size": 8,
+          "sha256": "238586111ca9a8acf46db425ce0d7d57e7e7bb1d67d7b2cc571dcd7a4a4fece3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9562",
+          "address": "0x98a9562",
+          "size": 8,
+          "sha256": "994ca5e29f3ee88059013b0b85502dd169b58ec943658906a726d5dd982441a8",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A956C",
+          "address": "0x98a956c",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimUs_098A958A",
+          "address": "0x98a958a",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimUs_098A95A8",
+          "address": "0x98a95a8",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimUs_098A95C6",
+          "address": "0x98a95c6",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A95E4",
+          "address": "0x98a95e4",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9636",
+          "address": "0x98a9636",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9658",
+          "address": "0x98a9658",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A967A",
+          "address": "0x98a967a",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9696",
+          "address": "0x98a9696",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A96A0",
+          "address": "0x98a96a0",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9710",
+          "address": "0x98a9710",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9780",
+          "address": "0x98a9780",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A97F0",
+          "address": "0x98a97f0",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9860",
+          "address": "0x98a9860",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A98D0",
+          "address": "0x98a98d0",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9940",
+          "address": "0x98a9940",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A99B0",
+          "address": "0x98a99b0",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9A32",
+          "address": "0x98a9a32",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9A3C",
+          "address": "0x98a9a3c",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9A52",
+          "address": "0x98a9a52",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9A68",
+          "address": "0x98a9a68",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9A7E",
+          "address": "0x98a9a7e",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9A94",
+          "address": "0x98a9a94",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9AAA",
+          "address": "0x98a9aaa",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9AC0",
+          "address": "0x98a9ac0",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9AD6",
+          "address": "0x98a9ad6",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9AE0",
+          "address": "0x98a9ae0",
+          "size": 86,
+          "sha256": "863b043c9c67557cf03bd591f3d052625abe9319e4a51a479ec7fe6ff0b43466",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9B38",
+          "address": "0x98a9b38",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9B44",
+          "address": "0x98a9b44",
+          "size": 14,
+          "sha256": "e94e27f9a581e34441f2665ba6ce0a10fc47e40c43c8d1ea7a94fa63baa1aa12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9B54",
+          "address": "0x98a9b54",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9B60",
+          "address": "0x98a9b60",
+          "size": 50,
+          "sha256": "6748bdb28f19a0a7bba6cb3ee212c07fb6f78a3e65d20ca48abea79a8df7565b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9B94",
+          "address": "0x98a9b94",
+          "size": 50,
+          "sha256": "93343210e94a5a5b5423213e41192bb57e5bbe378604e3474b093704096c38cf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9BC8",
+          "address": "0x98a9bc8",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9BD4",
+          "address": "0x98a9bd4",
+          "size": 74,
+          "sha256": "ab92c71096f4f77240ebf601ba899ee17f86f7c1acdd0927c8f549b5f7a51dc0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9C20",
+          "address": "0x98a9c20",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9C42",
+          "address": "0x98a9c42",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteUs_098A9C5E",
+          "address": "0x98a9c5e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimUs_098A9C7A",
+          "address": "0x98a9c7a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D8C",
+          "address": "0x9ed0178",
+          "size": 12,
+          "sha256": "0ac37605123147a8caa4e4add08217ab9a3d995182e5e1fec5233198b4c8fd0e",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D8C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D98",
+          "address": "0x9ed0184",
+          "size": 4,
+          "sha256": "0c6bd0615a60c08fc0f764904778cb29d18ee8930246d7bbdb1c8be16439da46",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D98",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D9C",
+          "address": "0x9ed0188",
+          "size": 4,
+          "sha256": "7f56963121ab5ae50861c331f518de2727e1600cb21e62589853f90e80e7ce4b",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D9C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA0",
+          "address": "0x9ed018c",
+          "size": 4,
+          "sha256": "ed1bedf55134ab3546b8d624371fc99fe830d4310f84c30b60ec1cef6d1c6235",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA4",
+          "address": "0x9ed0190",
+          "size": 4,
+          "sha256": "cee4ff6d5454ee82edd471e8d4ef4fa41d7331283b8c5eaf66fa18a214ef8312",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA8",
+          "address": "0x9ed0194",
+          "size": 4,
+          "sha256": "64a3893db0d67eb3ae4b37a6dc1e57ec0fe941de2f2132713a9fa947245a2201",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DAC",
+          "address": "0x9ed0198",
+          "size": 4,
+          "sha256": "5bab7e3b2680d70f4ca75512ad86b4b03d606ef92edf305ba69d4a50b2b17071",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DAC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB0",
+          "address": "0x9ed019c",
+          "size": 4,
+          "sha256": "c303b8ffead4a1d21986c3ab2c01e3e34e732e3f026853a0a620f7f5253fcb16",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB4",
+          "address": "0x9ed01a0",
+          "size": 4,
+          "sha256": "06e27d9aa8ab79ed3fd4626255eb8622e590e36824058870f6a67569fe440789",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DB8",
+          "address": "0x9ed01a4",
+          "size": 4,
+          "sha256": "7cf6e0d2db395e23cc581b8d70fc5b39d6c3abbfc359bbbc8badaea4aaece220",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DB8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DBC",
+          "address": "0x9ed01a8",
+          "size": 4,
+          "sha256": "bfaf57e6c35b70fa3b8325344edac832a74d9a2e3442bd84e13ddbe49b6e64a6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DBC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC0",
+          "address": "0x9ed01ac",
+          "size": 4,
+          "sha256": "d27ab3cda8562dc6b1ccca2a899ae0e9336ee80581fb42a3ed802310c4dfb0d8",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC4",
+          "address": "0x9ed01b0",
+          "size": 4,
+          "sha256": "4afd68799b8a8033170bdacce8830cfa84a1baf6322d5193d0428017006a6bd3",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DC8",
+          "address": "0x9ed01b4",
+          "size": 4,
+          "sha256": "2a95bf49088951a0291bdf4830f810c015688ed1c2778ccf7d23f42caaf6cde5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DC8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DCC",
+          "address": "0x9ed01b8",
+          "size": 4,
+          "sha256": "263a43266a3a7f16f3e2d039b33bc2555e1dbc39bf557f778ba7cb09cf6741a3",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DCC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD0",
+          "address": "0x9ed01bc",
+          "size": 4,
+          "sha256": "8212e5de2751990f16d9753a21311eeb36003a4b8beab8834f880e7c4d9f4fbf",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD4",
+          "address": "0x9ed01c0",
+          "size": 4,
+          "sha256": "71411288b63d0baad9eb3e718749fa1cba66e7c55c0b37b6ec8c73529e7fc369",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DD8",
+          "address": "0x9ed01c4",
+          "size": 4,
+          "sha256": "e50473737f0aa2ed4159dd10886832454e369e8309854011af4e3ca715b27ecc",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DD8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DDC",
+          "address": "0x9ed01c8",
+          "size": 4,
+          "sha256": "f55066c21673a11f124c1b485eb59ea94769927f4141bfc124334285cc6d9490",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DDC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE0",
+          "address": "0x9ed01cc",
+          "size": 4,
+          "sha256": "7f1f0d8b0d7ae96fbb9c91fe117d2fbd80cc9f9aa5a856b5b7284b2463e80cfe",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE4",
+          "address": "0x9ed01d0",
+          "size": 4,
+          "sha256": "882ab2722d2a1263a15024d8bbc240bf797411a03a1f15c9ef9446c27e0b27b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DE8",
+          "address": "0x9ed01d4",
+          "size": 4,
+          "sha256": "51acc48a4bc692a5d6d0c93fa0b625625549dd6dc84db6ba874bd0153c45ed56",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DE8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DEC",
+          "address": "0x9ed01d8",
+          "size": 4,
+          "sha256": "db448a2985751ebbcdc41615bf7aec62de4a4b24df7aaa14b0b4ffa326d381c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DEC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF0",
+          "address": "0x9ed01dc",
+          "size": 4,
+          "sha256": "0ac97f64ffdce886d98b51e2091669ed192f0df9c8e1b8eabf3858aa3b845ef9",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF4",
+          "address": "0x9ed01e0",
+          "size": 4,
+          "sha256": "bf829ced72da59bbd55b313a5d68d1c1b81e987a98030975546e37728d24f05e",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DF8",
+          "address": "0x9ed01e4",
+          "size": 4,
+          "sha256": "50dc510708d03cd924f622403e2504bb472f1ef2592802930fa5ccdeee7f27f6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DF8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DFC",
+          "address": "0x9ed01e8",
+          "size": 4,
+          "sha256": "967594ea9b79e0bc9f53be5411a53757dab5184948ae4c3f520f12e642b69198",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DFC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E00",
+          "address": "0x9ed01ec",
+          "size": 4,
+          "sha256": "bf3b1bd3c8a1ff23fa27ad543b959ab22ca61ab103fe8dcea7c1696ccaf617ba",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E00",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E04",
+          "address": "0x9ed01f0",
+          "size": 4,
+          "sha256": "f7d7408950add3128de31bab6bff54b87cee5648da6b429f35aef2d63d26dae2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E04",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E08",
+          "address": "0x9ed01f4",
+          "size": 4,
+          "sha256": "fc084d9992ba4d084747044926cb13d98f2539be31c6fc37104ad8c59493fedb",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E08",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E0C",
+          "address": "0x9ed01f8",
+          "size": 16,
+          "sha256": "72ab3208039dd303fb7b9def67879f3dd98abc0e1b07aa2b0038ec8226d3529a",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E0C",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E1C",
+          "address": "0x9ed0208",
+          "size": 4,
+          "sha256": "a1ac80793d0171cf951bd40b8f6355517f8367d69499d16372de0caf8e6e8925",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E1C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E20",
+          "address": "0x9ed020c",
+          "size": 32,
+          "sha256": "be3620a37e966ab9368c30697b78aacc317ea4f9c46b26b43beea669afb9c9db",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E20",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E40",
+          "address": "0x9ed022c",
+          "size": 4,
+          "sha256": "4beb5b9e49189397e0551177b546979f2f56cfe6f6c3935593ddaaf474a50bb7",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E40",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E44",
+          "address": "0x9ed0230",
+          "size": 28,
+          "sha256": "293ca5d52755f6a212199ad7149ce72b193ca1f2f2f8536f784cbae95bf9b660",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E44",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E60",
+          "address": "0x9ed024c",
+          "size": 4,
+          "sha256": "bd2932ce5fae3394ded5b464a68cb5266a6bf7dad2eb842f0277e04dbba71612",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E60",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E64",
+          "address": "0x9ed0250",
+          "size": 4,
+          "sha256": "f91a3d7ffda2150790a556a6728076622cf3ab900a01f8c6218f98d0f8f34305",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E64",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E68",
+          "address": "0x9ed0254",
+          "size": 4,
+          "sha256": "52228c442ee6d67e93659d7c091cd0cef2d8bcb64acb34396a05c1e12592b47a",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E68",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E6C",
+          "address": "0x9ed0258",
+          "size": 4,
+          "sha256": "fff3a4669bc2582fe47f5e5127c253f11b83886486dd3fcacfb76696ad7d25b5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E6C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E70",
+          "address": "0x9ed025c",
+          "size": 4,
+          "sha256": "11271096c4d97b4bdaa65b7a7f12f008890121991366c151a636fc913674715a",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E70",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E74",
+          "address": "0x9ed0260",
+          "size": 8,
+          "sha256": "60e4fe66978ab258cf1478a2b7b2ffa622a4181e3e93dd0d3c24835376054234",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E74",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E7C",
+          "address": "0x9ed0268",
+          "size": 4,
+          "sha256": "a312beabd2643a588550c0afe191eb184954be729b9130581e6785e8492d7b64",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E7C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E80",
+          "address": "0x9ed026c",
+          "size": 12,
+          "sha256": "a44dd4dfa62040edc4483571dd14eb10dd936f320af692b08e9cd782a2b558d5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E80",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E8C",
+          "address": "0x9ed0278",
+          "size": 4,
+          "sha256": "d152c1ff68500952bd7f6da80f11e8b56f2c7dbe1b51e23c60edd403dec9fc74",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E8C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8E90",
+          "address": "0x9ed027c",
+          "size": 4,
+          "sha256": "6304fbd32f5eb891a3946e009ecf905c8ae198ba53cdf30eea70e5ad4fe1bbd2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8E90",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gMapUiSpriteJp_0985D6F8",
+          "address": "0x985d6f8",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985D708",
+          "address": "0x985d708",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985D73C",
+          "address": "0x985d73c",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985D770",
+          "address": "0x985d770",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DA3C",
+          "address": "0x985da3c",
+          "size": 86,
+          "sha256": "dec272da5c251d0f32505943a919f8d0273a510b77da2e30629650684785b552",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DA94",
+          "address": "0x985da94",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DF60",
+          "address": "0x985df60",
+          "size": 50,
+          "sha256": "c2b058dfd6306cf0f5e9c6930e51cbbdec2aa80912452dddc4c1a9d0dd2b1cb9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DF94",
+          "address": "0x985df94",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DFA0",
+          "address": "0x985dfa0",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DFAA",
+          "address": "0x985dfaa",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DFB4",
+          "address": "0x985dfb4",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DFBE",
+          "address": "0x985dfbe",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DFC8",
+          "address": "0x985dfc8",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DFD2",
+          "address": "0x985dfd2",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DFDC",
+          "address": "0x985dfdc",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985DFE6",
+          "address": "0x985dfe6",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985DFF0",
+          "address": "0x985dff0",
+          "size": 20,
+          "sha256": "d5a50c46f36e9d9757d1c6b38d6600853db58dc9b511209a2031280e1b635482",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E006",
+          "address": "0x985e006",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E010",
+          "address": "0x985e010",
+          "size": 20,
+          "sha256": "0bcddf6dc7cd675a9718d2d249635d3471d813c62a4be0dd630545cdc7f9a5ac",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E026",
+          "address": "0x985e026",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E030",
+          "address": "0x985e030",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E03A",
+          "address": "0x985e03a",
+          "size": 8,
+          "sha256": "0f8923fb187536f210b346aebb553cf8c1ca827ebc0e5447c8b2e9d63a414992",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E044",
+          "address": "0x985e044",
+          "size": 8,
+          "sha256": "78a89181bd5d39ed6536077cd1f5ebf4c8286400169f311738565b9773337bd9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E04E",
+          "address": "0x985e04e",
+          "size": 8,
+          "sha256": "202de47b0065fdf03369cf1c6242e62a46379215f64918d7046773ee43f97fe0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E058",
+          "address": "0x985e058",
+          "size": 8,
+          "sha256": "651243179ba9c4933c7a9a17d8836427564d161864430179668b12ddbce0f9f4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E062",
+          "address": "0x985e062",
+          "size": 8,
+          "sha256": "91a126269ea3a6b32ba049b3481e8880d4591fdd2901c93cb80e07c26d6f5f51",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E06C",
+          "address": "0x985e06c",
+          "size": 8,
+          "sha256": "238586111ca9a8acf46db425ce0d7d57e7e7bb1d67d7b2cc571dcd7a4a4fece3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E076",
+          "address": "0x985e076",
+          "size": 8,
+          "sha256": "994ca5e29f3ee88059013b0b85502dd169b58ec943658906a726d5dd982441a8",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E080",
+          "address": "0x985e080",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E09E",
+          "address": "0x985e09e",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E0BC",
+          "address": "0x985e0bc",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E0DA",
+          "address": "0x985e0da",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E0F8",
+          "address": "0x985e0f8",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E14A",
+          "address": "0x985e14a",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E16C",
+          "address": "0x985e16c",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E18E",
+          "address": "0x985e18e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E1AA",
+          "address": "0x985e1aa",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E1B4",
+          "address": "0x985e1b4",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E224",
+          "address": "0x985e224",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E294",
+          "address": "0x985e294",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E304",
+          "address": "0x985e304",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E374",
+          "address": "0x985e374",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E3E4",
+          "address": "0x985e3e4",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E454",
+          "address": "0x985e454",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E4C4",
+          "address": "0x985e4c4",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E546",
+          "address": "0x985e546",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E550",
+          "address": "0x985e550",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E566",
+          "address": "0x985e566",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E57C",
+          "address": "0x985e57c",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E592",
+          "address": "0x985e592",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E5A8",
+          "address": "0x985e5a8",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E5BE",
+          "address": "0x985e5be",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E5D4",
+          "address": "0x985e5d4",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E5EA",
+          "address": "0x985e5ea",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E5F4",
+          "address": "0x985e5f4",
+          "size": 86,
+          "sha256": "863b043c9c67557cf03bd591f3d052625abe9319e4a51a479ec7fe6ff0b43466",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E64C",
+          "address": "0x985e64c",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E658",
+          "address": "0x985e658",
+          "size": 14,
+          "sha256": "e94e27f9a581e34441f2665ba6ce0a10fc47e40c43c8d1ea7a94fa63baa1aa12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E668",
+          "address": "0x985e668",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E674",
+          "address": "0x985e674",
+          "size": 50,
+          "sha256": "6748bdb28f19a0a7bba6cb3ee212c07fb6f78a3e65d20ca48abea79a8df7565b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E6A8",
+          "address": "0x985e6a8",
+          "size": 50,
+          "sha256": "93343210e94a5a5b5423213e41192bb57e5bbe378604e3474b093704096c38cf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E6DC",
+          "address": "0x985e6dc",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E6E8",
+          "address": "0x985e6e8",
+          "size": 74,
+          "sha256": "ab92c71096f4f77240ebf601ba899ee17f86f7c1acdd0927c8f549b5f7a51dc0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E734",
+          "address": "0x985e734",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E756",
+          "address": "0x985e756",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteJp_0985E772",
+          "address": "0x985e772",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimJp_0985E78E",
+          "address": "0x985e78e",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8D8C",
+          "address": "0x9f8443c",
+          "size": 12,
+          "sha256": "a15ee0f511c4a346f1387ccceaab572405f8684e35f4b71c2a21ac0cf2c9c647",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D8C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnk_09EF8DA4",
+          "address": "0x9f84494",
+          "size": 4,
+          "sha256": "3f4f98cb03a5f71397daab046c382a3837ee267af8b59da85371d6396a1de861",
+          "objects": [
+            {
+              "name": "gUnk_09EF8DA4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F843D8",
+          "address": "0x9f843d8",
+          "size": 12,
+          "sha256": "7547b8f12be462fc4c873f3f6f961c1e46e6ea655e3fb00d2d9fc2116a8b2a01",
+          "objects": [
+            {
+              "name": "gUnkEu_09F843D8",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F843E4",
+          "address": "0x9f843e4",
+          "size": 4,
+          "sha256": "d9900d27183d710acdd45f85555ad63df88009d40a1248f60324cb3cad05fc2e",
+          "objects": [
+            {
+              "name": "gUnkEu_09F843E4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F843E8",
+          "address": "0x9f843e8",
+          "size": 12,
+          "sha256": "faef300912c2d74f026fa37fdf6941e45369d4b9999de2a3253292e7c31bc2dc",
+          "objects": [
+            {
+              "name": "gUnkEu_09F843E8",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F843F4",
+          "address": "0x9f843f4",
+          "size": 4,
+          "sha256": "570230a0eda2373ff4157bec6c69c266a98c45c2937c179ca3bf268534c7e1bf",
+          "objects": [
+            {
+              "name": "gUnkEu_09F843F4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F843F8",
+          "address": "0x9f843f8",
+          "size": 12,
+          "sha256": "5130337d75ce7b0fdcc3254765cd4e591620a0aecbd3018b918f708612455075",
+          "objects": [
+            {
+              "name": "gUnkEu_09F843F8",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84404",
+          "address": "0x9f84404",
+          "size": 4,
+          "sha256": "58f7297e3ec695a865d0f1dda0133db3b1ce46ac74d3e6104b9dc128676dc792",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84404",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84408",
+          "address": "0x9f84408",
+          "size": 12,
+          "sha256": "6c6b84dda7bfbd2ae12d352b20ea5536d489fec225e286bda6bf90e9261c3d3b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84408",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84414",
+          "address": "0x9f84414",
+          "size": 4,
+          "sha256": "f4d676b7ef6ecf53075567251ba42649f776673d4150a9ff482d46b864861bd5",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84414",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84448",
+          "address": "0x9f84448",
+          "size": 4,
+          "sha256": "bf454ea03242b0f377531ce7344c17fecb0bee64530345d510a297d0f86268b8",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84448",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8444C",
+          "address": "0x9f8444c",
+          "size": 12,
+          "sha256": "53c7ae996bdd2861147b44fb4c52a1364afd5e0c3343083acfc1eae79e97e788",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8444C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84458",
+          "address": "0x9f84458",
+          "size": 4,
+          "sha256": "2e0c3a44b523811ed72b96d263c7072f8001c7bc9101494e18dda3b455e264ff",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84458",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8445C",
+          "address": "0x9f8445c",
+          "size": 12,
+          "sha256": "f97b0f2a8f3c9a0384fdc6840395b2c874b92e9b5b91f8d99b1015d5c702cc33",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8445C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84468",
+          "address": "0x9f84468",
+          "size": 4,
+          "sha256": "3f92c070eb8b85b7980f747ccd2afb4c81f73fc971918153b587b5c608a31218",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84468",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8446C",
+          "address": "0x9f8446c",
+          "size": 12,
+          "sha256": "a7ba9283d67e866a7289edd7273c2c22cec2e5e40c6a5e78b27aac74ce96e76b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8446C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84478",
+          "address": "0x9f84478",
+          "size": 4,
+          "sha256": "b00fccb43959b45829754b6afb54c7eb87e5ea7a19b5bbd1f51985ad35111c44",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84478",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8447C",
+          "address": "0x9f8447c",
+          "size": 12,
+          "sha256": "70f3007c1a08031b2fe50679b53fe8acb9cee925c0d3b54d9c16b3f7b6a96095",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8447C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84488",
+          "address": "0x9f84488",
+          "size": 4,
+          "sha256": "b425c73ae8c375d613f2d2bc3cdb880985c786e7b60f4cb991e83e8b34bb5ded",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84488",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8448C",
+          "address": "0x9f8448c",
+          "size": 4,
+          "sha256": "b31c3ef3520971dd572911e2ba2ae68e4a130401216da202f48475479d5f6ebb",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8448C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84490",
+          "address": "0x9f84490",
+          "size": 4,
+          "sha256": "798306f06f0d02aeab99327a470b0a81f06cf14b963e1bece8736b8b7f01c9ae",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84490",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84498",
+          "address": "0x9f84498",
+          "size": 4,
+          "sha256": "951fa52710338837a70602ca2e6ba57805cfea2487dc70bd361ccde6334f376b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84498",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8449C",
+          "address": "0x9f8449c",
+          "size": 4,
+          "sha256": "c38dd7331cae87eda2da64451a379e56bd5267817905bb58d4066f8450d67719",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8449C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844A0",
+          "address": "0x9f844a0",
+          "size": 4,
+          "sha256": "b47b6fdd15eb6922cd0fa712a60f86de4dbfd05c98f432485be689fc13865e48",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844A0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844A4",
+          "address": "0x9f844a4",
+          "size": 4,
+          "sha256": "ab8f9735e9322e623808f88f9a962cff6921dcb43d32810fe88713a0d147d93d",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844A4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844A8",
+          "address": "0x9f844a8",
+          "size": 4,
+          "sha256": "f71838ccdfeaf9749f2c4721457d80c6bf1c4188090d72c6ef386029c9830bc8",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844A8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844AC",
+          "address": "0x9f844ac",
+          "size": 4,
+          "sha256": "c3eb27d212ecafea5a369a49efff8bfb8b9abaa1fae6211d82533677bb1a601c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844AC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844B0",
+          "address": "0x9f844b0",
+          "size": 4,
+          "sha256": "a16380f1a724c95ff733a32b0602f8559f8dc7d86f2d17d1899bd45959a3a24c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844B0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844B4",
+          "address": "0x9f844b4",
+          "size": 4,
+          "sha256": "e1ee00d3d62f0f6a32f9935a2f293ce7ae2ec32bfa4a3ac57d068fdf0741cfeb",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844B4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844B8",
+          "address": "0x9f844b8",
+          "size": 4,
+          "sha256": "fa2cb15c466c25faeabae3527a1db7738cbbdae6bdfcc78fd2f9453e995c9c75",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844B8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844BC",
+          "address": "0x9f844bc",
+          "size": 4,
+          "sha256": "d406e793b356a42b0214cb7e9261fc6d8b97c164a5a83f923ef95bca74dfb91d",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844BC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844C0",
+          "address": "0x9f844c0",
+          "size": 4,
+          "sha256": "a449f3170b8a53eaceaf2a161de649ae60530ab9626f19d6bcefd76d2c9b0d27",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844C0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844C4",
+          "address": "0x9f844c4",
+          "size": 4,
+          "sha256": "56b5a7f1b8ff9626cbf687c4203f4e93a575967cdd7e5126df05788059554692",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844C4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844C8",
+          "address": "0x9f844c8",
+          "size": 4,
+          "sha256": "8617c0fb5a868d2f987ba4efc31d62017fd3b129cf9a905cf4adf8bd4f504c6a",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844C8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844CC",
+          "address": "0x9f844cc",
+          "size": 4,
+          "sha256": "57b06b01e0f92d10fa6540a2de757a564c029b24286cf96aee556753c97e8dbf",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844CC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844D0",
+          "address": "0x9f844d0",
+          "size": 4,
+          "sha256": "a76966cdab35618481b4931a7343107cbf7c9b988642808616c4cc1604186e23",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844D0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844D4",
+          "address": "0x9f844d4",
+          "size": 4,
+          "sha256": "92e55eecb2449c4716989d946f65611cd1d088bbfcc751a223fa10cac15fda03",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844D4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844D8",
+          "address": "0x9f844d8",
+          "size": 4,
+          "sha256": "947fa23494db290410c7a6ec51b131834c2e00f71d83f75a7992eefbdc68e2a8",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844D8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844DC",
+          "address": "0x9f844dc",
+          "size": 4,
+          "sha256": "d7ca4c7f350d92df5744c706b874d7e1b04056d6ab304ee9d8999041bfa2513c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844DC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844E0",
+          "address": "0x9f844e0",
+          "size": 4,
+          "sha256": "2eb5e549491ce6bbaebbf9442b91c7c3c4f65ad771eab468a27966a754147846",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844E0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844E4",
+          "address": "0x9f844e4",
+          "size": 4,
+          "sha256": "9a9fc502a551412f8ead471476abb2e67fcc70bcb51464a6a09677b6862b3f97",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844E4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844E8",
+          "address": "0x9f844e8",
+          "size": 4,
+          "sha256": "1fc9ecf5d56e93968d6ab9dce6c675c80ba7e3115b676914a9e7285a491770ea",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844E8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844EC",
+          "address": "0x9f844ec",
+          "size": 4,
+          "sha256": "85269993b8d065fd15e34b8d490c03495344073ffbebb3422be61a4d4783aa80",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844EC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844F0",
+          "address": "0x9f844f0",
+          "size": 4,
+          "sha256": "96e7592ecd0df730db6f67f9754a479b3022b1d308a127c538b08d5ae333b581",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844F0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844F4",
+          "address": "0x9f844f4",
+          "size": 4,
+          "sha256": "3ed813dce778890cd765453bdb398cc4e35170bc10c3f090a7b927284538b30e",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844F4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844F8",
+          "address": "0x9f844f8",
+          "size": 4,
+          "sha256": "ce2d7ac54baf21d53a2df2e62989647cbffebb70a87b2690cd87b8e843d46757",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844F8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F844FC",
+          "address": "0x9f844fc",
+          "size": 16,
+          "sha256": "0f0bc49fe3b8295c436f0ed65c175d2a3bb26916dde563795bd9ec3b305de70c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F844FC",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8450C",
+          "address": "0x9f8450c",
+          "size": 4,
+          "sha256": "8c38fc1c4706ab9b9a6f844894b2f9c6cb5c9d15b14891dae5577ca98561daff",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8450C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84510",
+          "address": "0x9f84510",
+          "size": 16,
+          "sha256": "53b620f5db7161678fa40a452b46176e02a983733426c526a32c64378be9f302",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84510",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84520",
+          "address": "0x9f84520",
+          "size": 4,
+          "sha256": "cb6314e9cee4479a97b930d476e62ac2e195b39752a819c4a2236a99358057cb",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84520",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84524",
+          "address": "0x9f84524",
+          "size": 16,
+          "sha256": "083123063d85bcae2b61a504487e62e332a75816ce8d6cd0ff65edcb220d6805",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84524",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84534",
+          "address": "0x9f84534",
+          "size": 4,
+          "sha256": "ea2c3dd2c70c50f9f7d9d4cc3df594d5b1f10dbb333dead2b52fe23faba36030",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84534",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84538",
+          "address": "0x9f84538",
+          "size": 16,
+          "sha256": "b37f790c1e8d105f1cd29e96cd395d15c48353b6849773063257f3894fdd8ce0",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84538",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84548",
+          "address": "0x9f84548",
+          "size": 4,
+          "sha256": "10dc58aef580004ecb5c1def67db807d7d08802b024a1596d6fa1b6d243ac765",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84548",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8454C",
+          "address": "0x9f8454c",
+          "size": 16,
+          "sha256": "ca9658704c423c2bed908d74e3454d3490a68ab230cd8085f327257f750f2103",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8454C",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8455C",
+          "address": "0x9f8455c",
+          "size": 4,
+          "sha256": "5acc3c7a6d41b5c3b4912b706e1fcaa193c2d81c00091189fa119a0a92a234c9",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8455C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84560",
+          "address": "0x9f84560",
+          "size": 12,
+          "sha256": "ae5563b4a698886cd2055046de2a7c07fc4bee42adc51054987dbb7ebc1519df",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84560",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8456C",
+          "address": "0x9f8456c",
+          "size": 4,
+          "sha256": "555d7baa9910bb7bde29b18050af0d6799da9e9efe6c9f46bb8ba2847433fc0e",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8456C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84570",
+          "address": "0x9f84570",
+          "size": 4,
+          "sha256": "97c776ff8808e9d97e3f567a8fb63cdb4e18714abe208a36448ac650cb350e3c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84570",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84574",
+          "address": "0x9f84574",
+          "size": 12,
+          "sha256": "af8ac46d61cc732fc68ce030bbecdb017ac6234417a81bcf51738d646dcd1227",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84574",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84580",
+          "address": "0x9f84580",
+          "size": 4,
+          "sha256": "46e808471eadd149a467477337b9b81f2b359c5159901a8efb990b077a1bb1e0",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84580",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84584",
+          "address": "0x9f84584",
+          "size": 4,
+          "sha256": "2f2337d187bfd091c557c9954d4fd8fe442ad9682c8d6fc1a5e48ba07b7a1af7",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84584",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84588",
+          "address": "0x9f84588",
+          "size": 12,
+          "sha256": "a0052a812882e4d26fbc834f9e9b37a61c45fa5f7befc0041fa7663d24d1da2a",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84588",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84594",
+          "address": "0x9f84594",
+          "size": 4,
+          "sha256": "220c6b91d0d108dda6f871aabaae921f34a59b3fdceffa14f212a477c1a302c1",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84594",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84598",
+          "address": "0x9f84598",
+          "size": 4,
+          "sha256": "be1df43ff90bf60584b7294aa3fe22049aba07102bd644259ab39283382454e7",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84598",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8459C",
+          "address": "0x9f8459c",
+          "size": 12,
+          "sha256": "87d9022bfbe9807f3b3db238c901b99787ad3cc286a4346134ca5b7eb20bb717",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8459C",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845A8",
+          "address": "0x9f845a8",
+          "size": 4,
+          "sha256": "e1d2adf5f73ac28ccdb86affeedab138819429c32d37676286e0153a3290356b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845A8",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845AC",
+          "address": "0x9f845ac",
+          "size": 4,
+          "sha256": "3a8da1e1005e8a6f6661de3e3c88e5325faa103ea5605332347ee104fdabdfc3",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845AC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845B0",
+          "address": "0x9f845b0",
+          "size": 12,
+          "sha256": "463bf1ed59aee0e6d1cec7619f3173338c476e64f263dd7f0b3cf551dff6dd3b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845B0",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845BC",
+          "address": "0x9f845bc",
+          "size": 4,
+          "sha256": "36a36fa3074e0bc4c3dfcfeefb14ed9515705ecdf86c0b41151963faad23bd43",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845BC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845C0",
+          "address": "0x9f845c0",
+          "size": 4,
+          "sha256": "fa49e9bb35c2c182d6733655f420a93baf15b29b5384b31ca49fb1e8a9d6c853",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845C0",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845C4",
+          "address": "0x9f845c4",
+          "size": 32,
+          "sha256": "6f6d67392242b4e9f886fe57e85949bc5644a86fc1dec0504008b558885f73f4",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845C4",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845E4",
+          "address": "0x9f845e4",
+          "size": 4,
+          "sha256": "1680d8cdd86b479303c80e39a931e043daea1efc6e66dfc3879bd903c67696a1",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845E4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F845E8",
+          "address": "0x9f845e8",
+          "size": 32,
+          "sha256": "5812d751fca48e740f37c335e2576b824f2cdeae27a20c15c88b80ffb09cbab4",
+          "objects": [
+            {
+              "name": "gUnkEu_09F845E8",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84608",
+          "address": "0x9f84608",
+          "size": 4,
+          "sha256": "6315b51259a4615e27d22f300cb0bf77552533a2623029863bb3690e85016307",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84608",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8460C",
+          "address": "0x9f8460c",
+          "size": 32,
+          "sha256": "cbe02d8e3e84cbe002417d41c56a2a1cd0f3387e48acb99dcd2d917ed8fea512",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8460C",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8462C",
+          "address": "0x9f8462c",
+          "size": 4,
+          "sha256": "24cabe108b5412f6a8b1fadd2746da8feeb3e3fa2e7c273b5d6104e01f561480",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8462C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84630",
+          "address": "0x9f84630",
+          "size": 32,
+          "sha256": "c3528218bb68c2ab001e72b845b8ce8dffef76f1d808c8502cc2bea7a94cf102",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84630",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84650",
+          "address": "0x9f84650",
+          "size": 4,
+          "sha256": "7ce27cca8393fe33d7f0330e706c10ae989c572bb6fdd7b33c3d5f8d0ac79284",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84650",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84654",
+          "address": "0x9f84654",
+          "size": 32,
+          "sha256": "f7447efecc86b50349c96f75e531005a9b4407ce327aa1e3894d56e0f5241f08",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84654",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84674",
+          "address": "0x9f84674",
+          "size": 4,
+          "sha256": "6dee3448d55873972b916d42b13318051ff57a0431dd07564f85027160eef3b5",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84674",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84678",
+          "address": "0x9f84678",
+          "size": 28,
+          "sha256": "f5b81dd6ab0e4c46d1544c3ea023d7a87f9ea9d480543e2ff99cb50387007ecc",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84678",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84694",
+          "address": "0x9f84694",
+          "size": 4,
+          "sha256": "98ce0839a2f8de26b0134235dd1cb1bf78a49403c05d8d18990756ef4a1ce403",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84694",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84698",
+          "address": "0x9f84698",
+          "size": 28,
+          "sha256": "94d93df423d27e4c3b7ffeab82ab61f5b41d546920e62f34698472393466a0aa",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84698",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846B4",
+          "address": "0x9f846b4",
+          "size": 4,
+          "sha256": "58be7f71cbd21870f409f15c2b7bc3d626accc5ef156e2a16b1f933dbcc33b9f",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846B4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846B8",
+          "address": "0x9f846b8",
+          "size": 28,
+          "sha256": "f95b7a1275683d522143221646f365a81c53dfb35a10d2c86e475291e0f55aba",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846B8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846D4",
+          "address": "0x9f846d4",
+          "size": 4,
+          "sha256": "1fc21d390f6322548c14bb49ee80baa78c3503c89f9d26a5976d089d97092600",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846D4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846D8",
+          "address": "0x9f846d8",
+          "size": 28,
+          "sha256": "a2050d6cf0bf63a9d1b82ec5c791a3742032df5dfd29dc1255a1f457f14437c0",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846D8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846F4",
+          "address": "0x9f846f4",
+          "size": 4,
+          "sha256": "cd97d2c081fe22b56c65800dc74bd5c47a455056c4585b86fac46eff64062e71",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846F4",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F846F8",
+          "address": "0x9f846f8",
+          "size": 28,
+          "sha256": "dc74921f03221079c77e2b59b6389494f76d023b17813e7e04a4b7d8a45d9930",
+          "objects": [
+            {
+              "name": "gUnkEu_09F846F8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84714",
+          "address": "0x9f84714",
+          "size": 4,
+          "sha256": "8f1cf856f5569877fa230ff2616649d7ea8060a4325a2de27c32e503d99bee36",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84714",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84718",
+          "address": "0x9f84718",
+          "size": 4,
+          "sha256": "ebb754f81a1dcf8248acf3367f2203c1aa3f6112ca9701d3eb34249a65be3a72",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84718",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8471C",
+          "address": "0x9f8471c",
+          "size": 4,
+          "sha256": "00ef8265391857b76a6e17de402996a0a95c50f894f3436af2dc86fe17438f4e",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8471C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84720",
+          "address": "0x9f84720",
+          "size": 4,
+          "sha256": "320142453d3e4f5b3d3f75ef4071a188a3cdc5a965c43ea37a7ab97e304d9f5b",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84720",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84724",
+          "address": "0x9f84724",
+          "size": 4,
+          "sha256": "d22edd7e08ba5251d969f98e8a554231a7a23e290f7aacfdc5bbfc4c58fcbcef",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84724",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84728",
+          "address": "0x9f84728",
+          "size": 4,
+          "sha256": "b1267a9535cc68eb68ffec09db590e688d07e0b26816d55d2c9adddd71ebcf4f",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84728",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F8472C",
+          "address": "0x9f8472c",
+          "size": 4,
+          "sha256": "406aeb58200f5211c1096865810ecc4a6d47ee997cb1ee7e49d2fd250b2922b1",
+          "objects": [
+            {
+              "name": "gUnkEu_09F8472C",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84730",
+          "address": "0x9f84730",
+          "size": 4,
+          "sha256": "ae24fb69d3a2cc69c5a04cff5236013a7d37721f221ea7a345d07eafb8ad4df5",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84730",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84734",
+          "address": "0x9f84734",
+          "size": 4,
+          "sha256": "55ee528b49a9fd1162652838daf542e89117d7fd2e340e2f48b2b4ffe2b72782",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84734",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84738",
+          "address": "0x9f84738",
+          "size": 8,
+          "sha256": "91ed78664824d9d3bfd979b76856a930cd1e7dc5801a9cb56a92492a68bee8a4",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84738",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map_ui_data.c",
+          "section": ".data_map_ui_gUnkEu_09F84740",
+          "address": "0x9f84740",
+          "size": 4,
+          "sha256": "2a618acb47fcc59f77b144eca5d47dc4cb8241cc855dcb11ec72ee3c5c5c73ac",
+          "objects": [
+            {
+              "name": "gUnkEu_09F84740",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gMapUiSpriteEu_09885114",
+          "address": "0x9885114",
+          "size": 20,
+          "sha256": "a1b8634d6d9c2b3a5e6dcef3b658986578334f20f94c0e76d818d63b3285d767",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988512A",
+          "address": "0x988512a",
+          "size": 50,
+          "sha256": "277dffeb36fda7dd3a1e449de1b1935fc2da32a51dea3bd89126a808079e29cf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988515E",
+          "address": "0x988515e",
+          "size": 50,
+          "sha256": "f5585a30259f5cfe0aed24e67956c0ad62fe67fef62fccceff6c1fdbfba78728",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09885192",
+          "address": "0x9885192",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988549C",
+          "address": "0x988549c",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098854AC",
+          "address": "0x98854ac",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098854E0",
+          "address": "0x98854e0",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09885514",
+          "address": "0x9885514",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098857E0",
+          "address": "0x98857e0",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098857F0",
+          "address": "0x98857f0",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09885824",
+          "address": "0x9885824",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09885858",
+          "address": "0x9885858",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09885B24",
+          "address": "0x9885b24",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09885B34",
+          "address": "0x9885b34",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09885B68",
+          "address": "0x9885b68",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09885B9C",
+          "address": "0x9885b9c",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886324",
+          "address": "0x9886324",
+          "size": 26,
+          "sha256": "9b301ddec8f068b3dabde741a92a6d97abc5deaba494ad96ca477ee3456f961f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886340",
+          "address": "0x9886340",
+          "size": 50,
+          "sha256": "6fcc928db240c7d81fdab65b555f9152bac19c0d318beccd504801d91eac06cd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886374",
+          "address": "0x9886374",
+          "size": 50,
+          "sha256": "099acdba625f6904d33347028304b5fb3a7278d71afac8d275cfb5549a68f5b2",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098863A8",
+          "address": "0x98863a8",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098867B4",
+          "address": "0x98867b4",
+          "size": 20,
+          "sha256": "314f47fd5866d9a382327202f94765e8054a1e0e406a34e4a1aa2ad512947751",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098867CA",
+          "address": "0x98867ca",
+          "size": 50,
+          "sha256": "b7665ae5c44e0dab25082699890fe8297fbf094387291ca06ae60566455d40d3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098867FE",
+          "address": "0x98867fe",
+          "size": 50,
+          "sha256": "274c412b1c6c49d93bb7fbeb726eeb4e5a92cecf195892ebd93ab91a46a9139e",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09886832",
+          "address": "0x9886832",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886BFC",
+          "address": "0x9886bfc",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886C0C",
+          "address": "0x9886c0c",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886C40",
+          "address": "0x9886c40",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09886C74",
+          "address": "0x9886c74",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886F40",
+          "address": "0x9886f40",
+          "size": 20,
+          "sha256": "314f47fd5866d9a382327202f94765e8054a1e0e406a34e4a1aa2ad512947751",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886F56",
+          "address": "0x9886f56",
+          "size": 50,
+          "sha256": "b7665ae5c44e0dab25082699890fe8297fbf094387291ca06ae60566455d40d3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09886F8A",
+          "address": "0x9886f8a",
+          "size": 50,
+          "sha256": "274c412b1c6c49d93bb7fbeb726eeb4e5a92cecf195892ebd93ab91a46a9139e",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09886FBE",
+          "address": "0x9886fbe",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887388",
+          "address": "0x9887388",
+          "size": 14,
+          "sha256": "e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887398",
+          "address": "0x9887398",
+          "size": 50,
+          "sha256": "5e97efca9662c64c115f21794867ec63f9f7ea81bbbd9040d0e57161df575d0f",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098873CC",
+          "address": "0x98873cc",
+          "size": 50,
+          "sha256": "92ef3d13692de98eecd60cad3dd1823478e74c0b2b31c87c14743ffda20de43b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887400",
+          "address": "0x9887400",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098876CC",
+          "address": "0x98876cc",
+          "size": 86,
+          "sha256": "dec272da5c251d0f32505943a919f8d0273a510b77da2e30629650684785b552",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887724",
+          "address": "0x9887724",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887BF0",
+          "address": "0x9887bf0",
+          "size": 50,
+          "sha256": "c2b058dfd6306cf0f5e9c6930e51cbbdec2aa80912452dddc4c1a9d0dd2b1cb9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C24",
+          "address": "0x9887c24",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887C30",
+          "address": "0x9887c30",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C3A",
+          "address": "0x9887c3a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887C44",
+          "address": "0x9887c44",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C4E",
+          "address": "0x9887c4e",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887C58",
+          "address": "0x9887c58",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C62",
+          "address": "0x9887c62",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887C6C",
+          "address": "0x9887c6c",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C76",
+          "address": "0x9887c76",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887C80",
+          "address": "0x9887c80",
+          "size": 20,
+          "sha256": "d5a50c46f36e9d9757d1c6b38d6600853db58dc9b511209a2031280e1b635482",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887C96",
+          "address": "0x9887c96",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CA0",
+          "address": "0x9887ca0",
+          "size": 20,
+          "sha256": "0bcddf6dc7cd675a9718d2d249635d3471d813c62a4be0dd630545cdc7f9a5ac",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887CB6",
+          "address": "0x9887cb6",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CC0",
+          "address": "0x9887cc0",
+          "size": 8,
+          "sha256": "a5517c7d56d2061d154de485ae35d42b0cce2f3d816b8b3a0c8b81f176b7bb7d",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CCA",
+          "address": "0x9887cca",
+          "size": 8,
+          "sha256": "0f8923fb187536f210b346aebb553cf8c1ca827ebc0e5447c8b2e9d63a414992",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CD4",
+          "address": "0x9887cd4",
+          "size": 8,
+          "sha256": "78a89181bd5d39ed6536077cd1f5ebf4c8286400169f311738565b9773337bd9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CDE",
+          "address": "0x9887cde",
+          "size": 8,
+          "sha256": "202de47b0065fdf03369cf1c6242e62a46379215f64918d7046773ee43f97fe0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CE8",
+          "address": "0x9887ce8",
+          "size": 8,
+          "sha256": "651243179ba9c4933c7a9a17d8836427564d161864430179668b12ddbce0f9f4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CF2",
+          "address": "0x9887cf2",
+          "size": 8,
+          "sha256": "91a126269ea3a6b32ba049b3481e8880d4591fdd2901c93cb80e07c26d6f5f51",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887CFC",
+          "address": "0x9887cfc",
+          "size": 8,
+          "sha256": "238586111ca9a8acf46db425ce0d7d57e7e7bb1d67d7b2cc571dcd7a4a4fece3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887D06",
+          "address": "0x9887d06",
+          "size": 8,
+          "sha256": "994ca5e29f3ee88059013b0b85502dd169b58ec943658906a726d5dd982441a8",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887D10",
+          "address": "0x9887d10",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimEu_09887D2E",
+          "address": "0x9887d2e",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimEu_09887D4C",
+          "address": "0x9887d4c",
+          "size": 30,
+          "sha256": "94142f00ed6ece4bdcc5083e3ae8d35445aab66cb12e8db39396483a8eee894e",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiAnimEu_09887D6A",
+          "address": "0x9887d6a",
+          "size": 30,
+          "sha256": "c816cee85d70eb704c44b670d27906392bb4280d06143186a26768834b35aaf1",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887D88",
+          "address": "0x9887d88",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887DDA",
+          "address": "0x9887dda",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887DFC",
+          "address": "0x9887dfc",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887E1E",
+          "address": "0x9887e1e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887E3A",
+          "address": "0x9887e3a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887E44",
+          "address": "0x9887e44",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887E96",
+          "address": "0x9887e96",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887EB8",
+          "address": "0x9887eb8",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887EDA",
+          "address": "0x9887eda",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887EF6",
+          "address": "0x9887ef6",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887F00",
+          "address": "0x9887f00",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887F52",
+          "address": "0x9887f52",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887F74",
+          "address": "0x9887f74",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887F96",
+          "address": "0x9887f96",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09887FB2",
+          "address": "0x9887fb2",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09887FBC",
+          "address": "0x9887fbc",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988800E",
+          "address": "0x988800e",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888030",
+          "address": "0x9888030",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888052",
+          "address": "0x9888052",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988806E",
+          "address": "0x988806e",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888078",
+          "address": "0x9888078",
+          "size": 80,
+          "sha256": "4db7a7273d5a0ec6e15845abd3097425cb03c04bc5699fc2ebb1580d58044ae1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098880CA",
+          "address": "0x98880ca",
+          "size": 32,
+          "sha256": "c81cd428f269bd9246049f2b041e32a52a61672ea2456cca457f569ec5f80bef",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098880EC",
+          "address": "0x98880ec",
+          "size": 32,
+          "sha256": "06d5dc5cf9e0399dc20317737554d5067ecee8d7e688fd295c6b3d50b1a89bf4",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988810E",
+          "address": "0x988810e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988812A",
+          "address": "0x988812a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888134",
+          "address": "0x9888134",
+          "size": 74,
+          "sha256": "ab92c71096f4f77240ebf601ba899ee17f86f7c1acdd0927c8f549b5f7a51dc0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888180",
+          "address": "0x9888180",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098881A2",
+          "address": "0x98881a2",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098881BE",
+          "address": "0x98881be",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098881DA",
+          "address": "0x98881da",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098881E4",
+          "address": "0x98881e4",
+          "size": 74,
+          "sha256": "ab92c71096f4f77240ebf601ba899ee17f86f7c1acdd0927c8f549b5f7a51dc0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888230",
+          "address": "0x9888230",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888252",
+          "address": "0x9888252",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988826E",
+          "address": "0x988826e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988828A",
+          "address": "0x988828a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888294",
+          "address": "0x9888294",
+          "size": 74,
+          "sha256": "64e4b8c5762a750ebb027325c6899fac26b616e8132418521b67f03decd84add",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098882E0",
+          "address": "0x98882e0",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888302",
+          "address": "0x9888302",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988831E",
+          "address": "0x988831e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988833A",
+          "address": "0x988833a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888344",
+          "address": "0x9888344",
+          "size": 74,
+          "sha256": "64e4b8c5762a750ebb027325c6899fac26b616e8132418521b67f03decd84add",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888390",
+          "address": "0x9888390",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098883B2",
+          "address": "0x98883b2",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098883CE",
+          "address": "0x98883ce",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098883EA",
+          "address": "0x98883ea",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098883F4",
+          "address": "0x98883f4",
+          "size": 74,
+          "sha256": "64e4b8c5762a750ebb027325c6899fac26b616e8132418521b67f03decd84add",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888440",
+          "address": "0x9888440",
+          "size": 32,
+          "sha256": "9a63174695ab248860278e79bd2404efe2ac93de9de0bc7529605962784164c1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888462",
+          "address": "0x9888462",
+          "size": 26,
+          "sha256": "4342d5bf850202ab27cb85e2ca2579e8e7811a5953eabb6ae6b50663098b4b12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988847E",
+          "address": "0x988847e",
+          "size": 26,
+          "sha256": "d71e1b681c651f3a00ee366c39bbd9846cec211979272700bc35d9298c8e0de6",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988849A",
+          "address": "0x988849a",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098884A4",
+          "address": "0x98884a4",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888514",
+          "address": "0x9888514",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888584",
+          "address": "0x9888584",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098885F4",
+          "address": "0x98885f4",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888664",
+          "address": "0x9888664",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098886D4",
+          "address": "0x98886d4",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888744",
+          "address": "0x9888744",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098887B4",
+          "address": "0x98887b4",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09888836",
+          "address": "0x9888836",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888840",
+          "address": "0x9888840",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098888B0",
+          "address": "0x98888b0",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888920",
+          "address": "0x9888920",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888990",
+          "address": "0x9888990",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888A00",
+          "address": "0x9888a00",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888A70",
+          "address": "0x9888a70",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888AE0",
+          "address": "0x9888ae0",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888B50",
+          "address": "0x9888b50",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09888BD2",
+          "address": "0x9888bd2",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888BDC",
+          "address": "0x9888bdc",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888C4C",
+          "address": "0x9888c4c",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888CBC",
+          "address": "0x9888cbc",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888D2C",
+          "address": "0x9888d2c",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888D9C",
+          "address": "0x9888d9c",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888E0C",
+          "address": "0x9888e0c",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888E7C",
+          "address": "0x9888e7c",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888EEC",
+          "address": "0x9888eec",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09888F6E",
+          "address": "0x9888f6e",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888F78",
+          "address": "0x9888f78",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09888FE8",
+          "address": "0x9888fe8",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889058",
+          "address": "0x9889058",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098890C8",
+          "address": "0x98890c8",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889138",
+          "address": "0x9889138",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098891A8",
+          "address": "0x98891a8",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889218",
+          "address": "0x9889218",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889288",
+          "address": "0x9889288",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988930A",
+          "address": "0x988930a",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889314",
+          "address": "0x9889314",
+          "size": 110,
+          "sha256": "5ac61883ab07b89d56733b72206e79a2d8b1bcb1c1a2e9b20c8ee9b1b08761db",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889384",
+          "address": "0x9889384",
+          "size": 110,
+          "sha256": "80c30eab77d573e9593b762fa07cc2b821a2860e8227874afb2b2536447b1cd3",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098893F4",
+          "address": "0x98893f4",
+          "size": 110,
+          "sha256": "8912229525b75aa4cf9d8f6e70224699334ead566d9abb4aaa9da1ad9d5ba1a0",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889464",
+          "address": "0x9889464",
+          "size": 110,
+          "sha256": "2d4fc912a6964294304b9db0f0ebce77d0729157ffc0075bdd949bc1b0501c39",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098894D4",
+          "address": "0x98894d4",
+          "size": 110,
+          "sha256": "ca448b3d218fb08ae227e67574536d889c2cc2ccf0c103bfb2db8c925c066340",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889544",
+          "address": "0x9889544",
+          "size": 110,
+          "sha256": "64f610f5ae25e9269224d785f246c4458773d4586046e59690ac18b1872b309a",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098895B4",
+          "address": "0x98895b4",
+          "size": 110,
+          "sha256": "5e52abcb089456d69da6354c004da810d6b71e75ca7433c9063828dac13bcccf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889624",
+          "address": "0x9889624",
+          "size": 128,
+          "sha256": "8851796b8f2a109d305eb27dc84e3c88bad8924227c5840b9a42b801f3f65731",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098896A6",
+          "address": "0x98896a6",
+          "size": 10,
+          "sha256": "6a35e5eaa1d844a6e61e9540ec6f4f32bb85f0fa02118c2cc8a1980d3ca35dfc",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098896B0",
+          "address": "0x98896b0",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098896C6",
+          "address": "0x98896c6",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098896DC",
+          "address": "0x98896dc",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098896F2",
+          "address": "0x98896f2",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889708",
+          "address": "0x9889708",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988971E",
+          "address": "0x988971e",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889734",
+          "address": "0x9889734",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_0988974A",
+          "address": "0x988974a",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889754",
+          "address": "0x9889754",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988976A",
+          "address": "0x988976a",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889780",
+          "address": "0x9889780",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889796",
+          "address": "0x9889796",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098897AC",
+          "address": "0x98897ac",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098897C2",
+          "address": "0x98897c2",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098897D8",
+          "address": "0x98897d8",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098897EE",
+          "address": "0x98897ee",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098897F8",
+          "address": "0x98897f8",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988980E",
+          "address": "0x988980e",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889824",
+          "address": "0x9889824",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988983A",
+          "address": "0x988983a",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889850",
+          "address": "0x9889850",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889866",
+          "address": "0x9889866",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988987C",
+          "address": "0x988987c",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889892",
+          "address": "0x9889892",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988989C",
+          "address": "0x988989c",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098898B2",
+          "address": "0x98898b2",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098898C8",
+          "address": "0x98898c8",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098898DE",
+          "address": "0x98898de",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098898F4",
+          "address": "0x98898f4",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988990A",
+          "address": "0x988990a",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889920",
+          "address": "0x9889920",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889936",
+          "address": "0x9889936",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889940",
+          "address": "0x9889940",
+          "size": 20,
+          "sha256": "9677a071c06b6a8166f1dce5d087f4c39e88b4c0bd820d9ee1dd0028b37316fd",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889956",
+          "address": "0x9889956",
+          "size": 20,
+          "sha256": "9ccdc08f20025cb4cc819853f3feeed0ebec94d6a37f0184c55c085101a3b4b1",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_0988996C",
+          "address": "0x988996c",
+          "size": 20,
+          "sha256": "f5626af1db6cf66aa683f2c8749c7f3c126742c3942efbfc74ff39fe42449cc9",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889982",
+          "address": "0x9889982",
+          "size": 20,
+          "sha256": "10bdb26a082fa511599dd1f2addd5bd44f7e535b366676fa7f9b49bc820f6473",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889998",
+          "address": "0x9889998",
+          "size": 20,
+          "sha256": "16e5a8ea577236f359bc3f296f6c3cefde338c2552e3e7eb08bdb92d0fce1320",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098899AE",
+          "address": "0x98899ae",
+          "size": 20,
+          "sha256": "dafca2f9cd63daf1d60f0e429b507af2c776cd6f673e8cff825028434c92b718",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_098899C4",
+          "address": "0x98899c4",
+          "size": 20,
+          "sha256": "1c713426adf27edf983f9cb17fb3c241cc1917cc4931e5daa451d527f9234474",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098899DA",
+          "address": "0x98899da",
+          "size": 10,
+          "sha256": "01713b528b7b4f3db0c96986ed66e0e7effa92831c1a2cda5269eb3c4a1f8da9",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_098899E4",
+          "address": "0x98899e4",
+          "size": 14,
+          "sha256": "e94e27f9a581e34441f2665ba6ce0a10fc47e40c43c8d1ea7a94fa63baa1aa12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_098899F4",
+          "address": "0x98899f4",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889A00",
+          "address": "0x9889a00",
+          "size": 14,
+          "sha256": "e94e27f9a581e34441f2665ba6ce0a10fc47e40c43c8d1ea7a94fa63baa1aa12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889A10",
+          "address": "0x9889a10",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889A1C",
+          "address": "0x9889a1c",
+          "size": 14,
+          "sha256": "e94e27f9a581e34441f2665ba6ce0a10fc47e40c43c8d1ea7a94fa63baa1aa12",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889A2C",
+          "address": "0x9889a2c",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889A38",
+          "address": "0x9889a38",
+          "size": 86,
+          "sha256": "863b043c9c67557cf03bd591f3d052625abe9319e4a51a479ec7fe6ff0b43466",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889A90",
+          "address": "0x9889a90",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889A9C",
+          "address": "0x9889a9c",
+          "size": 50,
+          "sha256": "6748bdb28f19a0a7bba6cb3ee212c07fb6f78a3e65d20ca48abea79a8df7565b",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiSpriteEu_09889AD0",
+          "address": "0x9889ad0",
+          "size": 50,
+          "sha256": "93343210e94a5a5b5423213e41192bb57e5bbe378604e3474b093704096c38cf",
+          "kind": "Sprite"
+        },
+        {
+          "name": "gMapUiAnimEu_09889B04",
+          "address": "0x9889b04",
+          "size": 10,
+          "sha256": "96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46",
+          "kind": "AnimHeader"
+        }
+      ]
+    }
+  }
+}

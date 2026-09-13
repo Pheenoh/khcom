@@ -8,7 +8,7 @@
 void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
     work->palette = LoadObjPalette(gUnk_099910C4, 0x20);
-    work->unk_08 = gUnk_09EF8DA4;
+    work->unk_08 = gUnk_09EF8DA4[0];
     work->unk_30 = arg;
     work->unk_0C = 0x5C00;
     work->unk_10 = 0x8A00;

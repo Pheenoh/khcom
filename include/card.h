@@ -1,3 +1,4 @@
+#include "card_reload_data.h"
 #include "event_sprite_data.h"
 #include "card_message_data.h"
 #include "card_lookup_data.h"
@@ -105,9 +106,6 @@ extern u16 gUnk_0903BFD4[];
 extern u16 gUnk_0903BFBC[];
 extern u8 gUnk_0940F7B8[];
 extern u8 gUnk_0940F918[];
-extern void* gUnk_09EE7708[];
-extern void* gUnk_09EE7714[];
-extern void* gUnk_09EE7720[];
 extern u8 gUnk_094233B8[];
 extern void* gUnk_09EEA19C[];
 extern u8 gUnk_093FB6C4[];
@@ -1024,13 +1022,6 @@ typedef struct MapTileAnimationWork {
     MapTileAnimationDef* definition;
 } MapTileAnimationWork;
 
-typedef struct UnkStruct_09EE752C {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-} UnkStruct_09EE752C;
-
 typedef struct PrizeCardArgs {
     s32 unk_00[8];
 } PrizeCardArgs;
@@ -1191,11 +1182,6 @@ extern u8 gUnk_0940FC58[];
 extern u8 gUnk_09410058[];
 extern void* gUnk_09EE1538[];
 extern void* gUnk_09EE8F48[];
-extern void** gUnk_09EE75B8[];
-extern void* gUnk_09EE75C8[];
-extern void* gUnk_09EE7588[];
-extern void* gUnk_09EE7598[];
-extern void* gUnk_09EE75A8[];
 extern s32 gUnk_09033FF4[][2];
 extern s32 gUnk_09033FA8[];
 extern const s32 gUnk_09033FB8[];
@@ -1230,7 +1216,6 @@ extern u16* gUnk_09EE4A68[];
 extern u16* gUnk_09EE4A98[];
 extern const u16 gUnk_090356BA[];
 extern const u16 gUnk_090356D2[];
-extern UnkStruct_09EE752C gUnk_09EE752C[];
 extern void* gUnk_09EEAFF8;
 extern void* gUnk_09EEB000;
 extern s16 gUnk_09035950[];
@@ -1252,12 +1237,8 @@ extern u8 gUnk_09619098[];
 extern u8 gUnk_08C8C824[];
 extern u8 gUnk_08F68A84[];
 extern u8 gUnk_08EF4384[];
-extern void* gUnk_09EE7578[];
 extern u8 gUnk_0905F03C[];
 extern u8 gUnk_09EE4BB0[];
-extern void* gUnk_09EE7698[];
-extern void* gUnk_09EE76C0[];
-extern void** gUnk_09EE76D0[];
 extern u8 gUnk_090A583E[];
 extern u8 gUnk_090A418E[];
 extern u8 gUnk_090A44C4[];

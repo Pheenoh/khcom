@@ -2,6 +2,7 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 import subprocess
 from pathlib import Path
 
@@ -58,8 +59,8 @@ def normalize_sidecar(document, roms=None):
     result = {'version': 1, 'provenance': dict(provenance), 'regions': {}}
     for version in VERSIONS:
         region = regions.get(version, {})
-        fields(region, set(), {'placements', 'assets', 'named_assets'}, version)
-        for key in ('placements', 'assets', 'named_assets'):
+        fields(region, set(), {'placements', 'assets', 'named_assets', 'binary_assets'}, version)
+        for key in ('placements', 'assets', 'named_assets', 'binary_assets'):
             if not isinstance(region.get(key, []), list):
                 raise ValueError(f'{version}: {key} must be a list')
         rom = roms.get(version)
@@ -164,6 +165,39 @@ def normalize_sidecar(document, roms=None):
         for asset in region.get('named_assets', []):
             fields(asset, {'name', 'address', 'size', 'encoding'}, set(), version + ' named asset')
             add_asset(asset['name'], asset['address'], asset['size'], asset['encoding'], 'named_assets')
+        for asset in region.get('binary_assets', []):
+            fields(asset, {'name', 'address', 'size', 'sha256', 'kind'}, set(), version + ' binary asset')
+            name = identifier(asset['name'], version + ' binary asset')
+            kind = asset['kind']
+            if not isinstance(kind, str) or kind not in ('Sprite', 'AnimHeader'):
+                raise ValueError(f'{name}: unsupported binary asset kind')
+            address, size = extent(asset['address'], asset['size'], limit, name)
+            header, stride = (2, 6) if kind == 'Sprite' else (6, 4)
+            if address % 2 or size < header or (size - header) % stride:
+                raise ValueError(f'{name}: binary alignment or size disagrees with format')
+            digest = asset['sha256']
+            if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
+                raise ValueError(f'{name}: invalid binary SHA-256')
+            if rom is not None:
+                data = rom[address - ROM_BASE:address - ROM_BASE + size]
+                count = struct.unpack_from('<H', data, header - 2)[0]
+                if size != header + count * stride:
+                    raise ValueError(f'{name}: binary size differs from complete format extent')
+                if hashlib.sha256(data).hexdigest() != digest:
+                    raise ValueError(f'{name}: original binary ROM SHA-256 differs')
+            item = {'name': name, 'address': address, 'size': size, 'kind': kind,
+                    'sha256': digest, 'ctype': 'u8' if kind == 'Sprite' else 'AnimHeader',
+                    'groups': ['binary_assets']}
+            previous = assets.get(address)
+            if previous is not None:
+                if previous != item:
+                    raise ValueError(f'{name}: conflicting duplicate binary address')
+                continue
+            if name in names:
+                raise ValueError(f'{version}: colliding object or asset name {name}')
+            names.add(name)
+            assets[address] = item
+            spans.append((address, address + size, name))
         disjoint(spans, version + ' ROM data')
         result['regions'][version] = {'placements': placements, 'assets': list(assets.values())}
     return result
@@ -177,20 +211,24 @@ def load_sidecar(path, roms=None):
 
 def load_sidecars(directory, roms=None):
     combined = {'version': 1, 'provenance': {}, 'regions': {version: {
-        'placements': [], 'assets': [], 'named_assets': []} for version in VERSIONS}}
+        'placements': [], 'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
     for path in sorted(Path(directory).glob('*_data.json')):
         document = json.loads(path.read_text())
         normalize_sidecar(document, roms)
         for key, value in document.get('provenance', {}).items():
             combined['provenance'][path.name + ':' + key] = value
         for version, region in document['regions'].items():
-            for key in ('placements', 'assets', 'named_assets'):
+            for key in ('placements', 'assets', 'named_assets', 'binary_assets'):
                 combined['regions'][version][key].extend(region.get(key, []))
     return normalize_sidecar(combined, roms)
 
 
 def managed_placements(document):
     return set().union(*(placement_overrides(plan) for plan in document['regions'].values()))
+
+
+def managed_asset_names(document):
+    return {asset['name'] for plan in document['regions'].values() for asset in plan['assets']}
 
 
 def asset_symbols(plan, ledger=()):
@@ -284,7 +322,7 @@ def check_layout(plan, objects, linked):
     for unit, layout in objects.items():
         for symbol in layout['symbols']:
             if symbol['name'] in asset_names and 'g' in symbol['flags']:
-                errors.append(f'{unit}: literal binding shadows a compiled definition of {symbol["name"]}')
+                errors.append(f'{unit}: asset binding shadows a compiled definition of {symbol["name"]}')
     for placement in plan['placements']:
         unit, section = placement['unit'], placement['section']
         label = unit + '(' + section + ')'
@@ -315,7 +353,7 @@ def check_layout(plan, objects, linked):
     for asset in plan['assets']:
         definitions = final.get(asset['name'], [])
         if len(definitions) != 1 or definitions[0]['value'] != asset['address'] or definitions[0]['section'] != '*ABS*':
-            errors.append(f'{asset["name"]}: literal binding is missing or differs from its regional address')
+            errors.append(f'{asset["name"]}: asset binding is missing or differs from its regional address')
     return errors
 
 
@@ -365,7 +403,11 @@ def main():
     if errors:
         raise SystemExit(1)
     count = sum(len(placement['objects']) for placement in plan['placements'])
-    print(f'{version}: regional data OK ({len(plan["placements"])} sections, {count} objects, {len(plan["assets"])} literals)')
+    binary_count = sum('kind' in asset for asset in plan['assets'])
+    label = f'{len(plan["assets"]) - binary_count} literals'
+    if binary_count:
+        label += f', {binary_count} binary bindings'
+    print(f'{version}: regional data OK ({len(plan["placements"])} sections, {count} objects, {label})')
 
 
 if __name__ == '__main__':

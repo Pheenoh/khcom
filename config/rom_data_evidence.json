@@ -9320,6 +9320,230 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "gUnk_09EE7578",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7578",
+      "targets": {
+        "jp": "0x9ebebd0",
+        "eu": "0x9f72934"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7588",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7588",
+      "targets": {
+        "jp": "0x9ebebe0",
+        "eu": "0x9f72944"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7598",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7598",
+      "targets": {
+        "jp": "0x9ebebf0",
+        "eu": "0x9f72954"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE75A8",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee75a8",
+      "targets": {
+        "jp": "0x9ebec00",
+        "eu": "0x9f72964"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE75B8",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee75b8",
+      "targets": {
+        "jp": "0x9ebec10",
+        "eu": "0x9f72974"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE75C8",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee75c8",
+      "targets": {
+        "jp": "0x9ebec20",
+        "eu": "0x9f72984"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7698",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7698",
+      "targets": {
+        "jp": "0x9ebecf0",
+        "eu": "0x9f72a90"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76C0",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76c0",
+      "targets": {
+        "jp": "0x9ebed18",
+        "eu": "0x9f72ab8"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76D0",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76d0",
+      "targets": {
+        "jp": "0x9ebed28",
+        "eu": "0x9f72ac8"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76E0",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76e0",
+      "targets": {
+        "jp": "0x9ebed38",
+        "eu": "0x9f72ad8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76E4",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76e4",
+      "targets": {
+        "jp": "0x9ebed3c",
+        "eu": "0x9f72adc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76E8",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76e8",
+      "targets": {
+        "jp": "0x9ebed40",
+        "eu": "0x9f72ae0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE76EC",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee76ec",
+      "targets": {
+        "jp": "0x9ebed44",
+        "eu": "0x9f72ae4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7708",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7708",
+      "targets": {
+        "jp": "0x9ebed60",
+        "eu": "0x9f72b00"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7714",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7714",
+      "targets": {
+        "jp": "0x9ebed6c",
+        "eu": "0x9f72b0c"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE7720",
+      "provenance": "ReloadGageArgs.unk_0E carries the style byte to ReloadGageWork.unk_46, shared by tile, animation and gfx selectors and copied to ReloadChildArgs.unk_0D. All complete four-slot groups preserve typed target roles, order and repeated-target identity in every region, ending at independently selected groups of a different target role or known TaskDesc boundaries. The animation targets are independently validated19-header and5-header arrays; the paired gfx arrays contain19 and13 frames. The four live REV_COUNT gfx selectors target the99-frame array read through index98. Its adjacent four unused pointers target independently validated scalar AnimHeader* objects and are four named AnimHeader** scalars, not extra gfx selectors or an invented array. The RELOAD selectors are three matching4-gfx/1-animation pairs with exact three regional target tuples. No nonexistent style clamp is claimed.",
+      "us": "0x9ee7720",
+      "targets": {
+        "jp": "0x9ebed78",
+        "eu": "0x9f72b18"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

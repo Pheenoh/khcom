@@ -28,7 +28,7 @@ from pathlib import Path
 from rom_data_evidence import data_symbol_map, load_evidence
 from movie_assets import apply_movie_regions, load_movie_assets
 from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_opaque_function_modes, trace_literal_loads
-from regional_data import asset_symbols, load_sidecars, managed_placements, merge_placements, placement_overrides
+from regional_data import asset_symbols, load_sidecars, managed_asset_names, managed_placements, merge_placements, placement_overrides
 
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
@@ -1575,10 +1575,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_0996D930": 0x0996D930,
         "gUnkEu_0996E130": 0x0996E130,
         "gUnkEu_0996E930": 0x0996E930,
-        "gUnkEu_09F843D8": 0x09F843D8,
-        "gUnkEu_09F843E8": 0x09F843E8,
-        "gUnkEu_09F843F8": 0x09F843F8,
-        "gUnkEu_09F84408": 0x09F84408,
         "gUnkEu_09953BF0": 0x09953BF0,
         "gUnkEu_099543F0": 0x099543F0,
         "gUnkEu_09954BF0": 0x09954BF0,
@@ -1670,35 +1666,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_0988683C": 0x0988683C,
         "gUnkEu_09886C7E": 0x09886C7E,
         "gUnkEu_09886FC8": 0x09886FC8,
-        "gUnkEu_09F8447C": 0x09F8447C,
-        "gUnkEu_09F8444C": 0x09F8444C,
-        "gUnkEu_09F8445C": 0x09F8445C,
-        "gUnkEu_09F8446C": 0x09F8446C,
-        "gUnkEu_09F84720": 0x09F84720,
-        "gUnkEu_09F84718": 0x09F84718,
-        "gUnkEu_09F84728": 0x09F84728,
-        "gUnkEu_09F84738": 0x09F84738,
-        "gUnkEu_09F84730": 0x09F84730,
-        "gUnkEu_09F84560": 0x09F84560,
-        "gUnkEu_09F84574": 0x09F84574,
-        "gUnkEu_09F84588": 0x09F84588,
-        "gUnkEu_09F8459C": 0x09F8459C,
-        "gUnkEu_09F845B0": 0x09F845B0,
-        "gUnkEu_09F844FC": 0x09F844FC,
-        "gUnkEu_09F84510": 0x09F84510,
-        "gUnkEu_09F84524": 0x09F84524,
-        "gUnkEu_09F84538": 0x09F84538,
-        "gUnkEu_09F8454C": 0x09F8454C,
-        "gUnkEu_09F845C4": 0x09F845C4,
-        "gUnkEu_09F84678": 0x09F84678,
-        "gUnkEu_09F845E8": 0x09F845E8,
-        "gUnkEu_09F84698": 0x09F84698,
-        "gUnkEu_09F8460C": 0x09F8460C,
-        "gUnkEu_09F846B8": 0x09F846B8,
-        "gUnkEu_09F84630": 0x09F84630,
-        "gUnkEu_09F846D8": 0x09F846D8,
-        "gUnkEu_09F84654": 0x09F84654,
-        "gUnkEu_09F846F8": 0x09F846F8,
         "gUnkEu_08895A00": 0x08895A00,
         "gUnkEu_08895C30": 0x08895C30,
         "gUnkEu_09F847FC": 0x09F847FC,
@@ -2690,7 +2657,7 @@ def main():
 
     out, uncertain = regional_symbols(
         Path("config/us/symbols.txt").read_text().splitlines(), tr,
-        TARGET_ONLY_SYMBOLS.get(ver, {}), TARGET_ABSENT_SYMBOLS.get(ver, ()))
+        TARGET_ONLY_SYMBOLS.get(ver, {}), set(TARGET_ABSENT_SYMBOLS.get(ver, ())) | managed_asset_names(regional))
     regional_ledger = []
     for line in out:
         stripped = line.split("#", 1)[0].strip()

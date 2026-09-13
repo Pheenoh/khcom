@@ -1,3 +1,4 @@
+#include "map_ui_data.h"
 #include "registration_data.h"
 #include "map_menu_assets.h"
 #include "system_state.h"
@@ -19,10 +20,6 @@ extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern void* gUnkEu_08892780[];
 extern void* gUnkEu_08892864[];
-extern void* gUnkEu_09F843D8[];
-extern void* gUnkEu_09F843E8[];
-extern void* gUnkEu_09F843F8[];
-extern void* gUnkEu_09F84408[];
 extern const u8 gUnkEu_09953BF0[];
 extern const u8 gUnkEu_099543F0[];
 extern const u8 gUnkEu_09954BF0[];
@@ -71,35 +68,6 @@ extern u8 gUnkEu_098863B2[];
 extern u8 gUnkEu_0988683C[];
 extern u8 gUnkEu_09886C7E[];
 extern u8 gUnkEu_09886FC8[];
-extern void* gUnkEu_09F8447C[];
-extern void* gUnkEu_09F8444C[];
-extern void* gUnkEu_09F8445C[];
-extern void* gUnkEu_09F8446C[];
-extern void* gUnkEu_09F84738[];
-extern void* gUnkEu_09F84720[];
-extern void* gUnkEu_09F84718[];
-extern void* gUnkEu_09F84728[];
-extern void* gUnkEu_09F84730[];
-extern void* gUnkEu_09F84560[];
-extern void* gUnkEu_09F84574[];
-extern void* gUnkEu_09F84588[];
-extern void* gUnkEu_09F8459C[];
-extern void* gUnkEu_09F845B0[];
-extern void* gUnkEu_09F844FC[];
-extern void* gUnkEu_09F84510[];
-extern void* gUnkEu_09F84524[];
-extern void* gUnkEu_09F84538[];
-extern void* gUnkEu_09F8454C[];
-extern void* gUnkEu_09F845C4[];
-extern void* gUnkEu_09F84678[];
-extern void* gUnkEu_09F845E8[];
-extern void* gUnkEu_09F84698[];
-extern void* gUnkEu_09F8460C[];
-extern void* gUnkEu_09F846B8[];
-extern void* gUnkEu_09F84630[];
-extern void* gUnkEu_09F846D8[];
-extern void* gUnkEu_09F84654[];
-extern void* gUnkEu_09F846F8[];
 #define LANGSEL(x) eu_0805E924(x)
 #else
 #define LANGSEL(x) (x)
