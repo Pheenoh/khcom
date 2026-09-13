@@ -32690,11 +32690,77 @@ void func_080AB1F8(u8 a, u16 b) {
     SetActiveDeckIndex(saved);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
 void func_080AB228(void) {
+    u16 i;
+    u16 n;
+
+    n = 0;
+    gCardCount = 999;
+
+    for (i = 0; i < 170; i++) {
+        gCardCollection[n++] = i;
+    }
+
+    for (i = 170; i < 380; i++) {
+        gCardCollection[n++] = i;
+    }
+
+    for (i = 380; i < 450; i++) {
+        gCardCollection[n++] = i;
+    }
+
+    for (i = 380; i < 450; i++) {
+        gCardCollection[n++] = i;
+    }
+
+    for (i = 450; i < 526; i += 3) {
+        gCardCollection[n++] = i;
+    }
+
+    gCardCollection[n++] = 528;
+    gCardCollection[n++] = 529;
+    gCardCollection[n++] = 532;
+    gCardCollection[n++] = 535;
+    gCardCollection[n++] = 538;
+    gCardCollection[n++] = 541;
+    gCardCollection[n++] = 543;
+    gCardCollection[n++] = 542;
+    gCardCollection[n++] = 544;
+    gCardCollection[n++] = 545;
+    gCardCollection[n++] = 551;
+    gCardCollection[n++] = 552;
+    gCardCollection[n++] = 553;
+    gCardCollection[n++] = 554;
+    gCardCollection[n++] = 555;
+    gCardCollection[n++] = 556;
+    gCardCollection[n++] = 557;
+    gCardCollection[n++] = 558;
+    gCardCollection[n++] = 559;
+    gCardCollection[n++] = 560;
+    gCardCollection[n++] = 561;
+    gCardCollection[n++] = 563;
+    gCardCollection[n++] = 564;
+
+    for (i = 0; i < 170; i++) {
+        if (n < 999) {
+            gCardCollection[n++] = i | 0x8000;
+        }
+    }
+
+    for (i = 170; i < 240; i++) {
+        if (n < 999) {
+            gCardCollection[n++] = i | 0x8000;
+        }
+    }
+
+    for (i = 0; i < 95; i++) {
+        gCardCollection[n++] = 6;
+    }
 }
 #else
-INCLUDE_ASM("card/func_080AB228.s");
+void func_080AB228(void) {
+}
 #endif
 
 void func_080AB22C(u8 a) {
@@ -33040,27 +33106,56 @@ s32 func_080ABA80(s32* out) {
 INCLUDE_ASM("card/func_080ABA80.s");
 #endif
 
-#ifndef VERSION_EU
 s32 func_080ABCA4(s32* out, void* b) {
     UnkStruct_080ABA80 arr;
     u8 buf[6];
     u8 flag;
     u8 i;
     s32 r;
+#ifdef VERSION_EU
+    u8 f;
+    s32 j;
+    s32 t;
+#endif
 
     memset(&arr, 0, 24);
     flag = 0;
     memset(buf, 0, 6);
+#ifdef VERSION_EU
+    f = 0;
+    out[0] = -1;
+    out[1] = -1;
+    out[2] = -1;
+    out[3] = -1;
+    out[4] = -1;
+    out[5] = -1;
+#endif
 
     for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
         arr.unk_00[i] = gUnk_02039DD4->unk_000[i]->unk_48->unk_28;
+#ifdef VERSION_EU
+        out[i] = gUnk_02039DD4->unk_000[i]->unk_48->unk_24;
+#else
 
         if (out != 0) {
             out[i] = gUnk_02039DD4->unk_000[i]->unk_48->unk_24;
         }
+#endif
     }
 
     if (gUnk_02039DD4->unk_0D0 == 1) {
+#ifdef VERSION_EU
+        switch ((s32)b) {
+        case 0:
+            f = gUnk_02039DD4->unk_0E1;
+            break;
+        case 1:
+            f = gUnk_02039DD4->unk_0E2;
+            break;
+        }
+
+        if (f == 0) {
+#endif
         gUnk_02039DD4->unk_0DD = 1;
 
         if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
@@ -33071,6 +33166,27 @@ s32 func_080ABCA4(s32* out, void* b) {
         }
 
         return gUnk_02039DD4->unk_000[0]->unk_48->unk_24;
+#ifdef VERSION_EU
+        } else {
+            if (gBtlWork->unk_0A4 == 1) {
+                if (gBtlWork->unk_0F4 == 47) {
+                    out[0] = out[1] = gUnk_02039DD4->unk_000[0]->unk_48->unk_24;
+                    gUnk_02039DD4->unk_0DD = 2;
+                    return 145;
+                } else {
+                    return gUnk_02039DD4->unk_000[0]->unk_48->unk_24;
+                }
+            } else {
+                if (gUnk_02039B9C->unk_0F4 == 47) {
+                    out[0] = out[1] = gUnk_02039DD4->unk_000[0]->unk_48->unk_24;
+                    gUnk_02039DD4->unk_0DD = 2;
+                    return 145;
+                } else {
+                    return gUnk_02039DD4->unk_000[0]->unk_48->unk_24;
+                }
+            }
+        }
+#endif
     } else if (gUnk_02039DD4->unk_0D0 == 0) {
         gUnk_02039DD4->unk_0DD = 0;
         return -1;
@@ -33100,17 +33216,27 @@ s32 func_080ABCA4(s32* out, void* b) {
                 }
             }
         case 106:
+#ifndef VERSION_EU
             if (out != 0) {
+#endif
                 func_080ABEF8(&arr, buf);
 
                 if (buf[0] == 1) {
                     out[0] = arr.unk_00[0];
+#ifdef VERSION_EU
+                    out[1] = 145;
+#else
                     out[1] = -1;
+#endif
                     out[3] = out[0];
                     out[4] = out[1];
                     out[5] = out[2];
                 } else if (buf[1] == 1) {
+#ifdef VERSION_EU
+                    out[1] = 145;
+#else
                     out[1] = -1;
+#endif
                     out[2] = arr.unk_00[1];
                     out[3] = out[0];
                     out[4] = out[1];
@@ -33119,6 +33245,16 @@ s32 func_080ABCA4(s32* out, void* b) {
                     out[3] = out[0];
                     out[4] = out[1];
                     out[5] = out[2];
+#ifdef VERSION_EU
+
+                    for (j = 0; j < 5; j++) {
+                        if (out[j] == -1) {
+                            t = out[j];
+                            out[j] = out[j + 1];
+                            out[j + 1] = t;
+                        }
+                    }
+#endif
                 }
 
                 if (gBtlWork->unk_0A4 == 1) {
@@ -33134,15 +33270,14 @@ s32 func_080ABCA4(s32* out, void* b) {
                         gUnk_02039DD4->unk_0DD = gUnk_02039DD4->unk_0D0;
                     }
                 }
+#ifndef VERSION_EU
             }
+#endif
 
             return 145;
         }
     }
 }
-#else
-INCLUDE_ASM("card/func_080ABCA4.s");
-#endif
 
 u8 func_080ABED0(void) {
     if ((*(u32*)&gUnk_02039DD4->unk_0E0 & 0x00FFFF00) != 0) {
