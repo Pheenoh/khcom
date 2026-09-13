@@ -6470,25 +6470,28 @@ void func_08081210(UnkStruct_08080268* w) {
 #else
 INCLUDE_ASM("card/func_08081210.s");
 #endif
-#ifdef NON_MATCHING
+
 u8 func_080814BC(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
     CardDisplayWork* p;
     CardDisplayWork* q;
     CardSlot* c;
     u16 v;
+    CardDisplayWork** pp;
 
     if ((gUnk_02034AAC->unk_78 & 2) == 0) {
         if (gUnk_02039DD4->unk_0CE == 0) {
             gUnk_02039DD4->unk_0CE = gUnk_02034AAC->unk_48->unk_24;
             func_08081740(w, gUnk_02039DD4->unk_0CE);
             func_08081760(w);
+            pp = &gUnk_02034AAC;
         } else {
             func_08081744(w);
             gUnk_02039DD4->unk_0CE = gUnk_02034AAC->unk_48->unk_24;
             func_08081740(w, gUnk_02039DD4->unk_0CE);
             func_08081760(w);
             gUnk_02039DD4->unk_0EC = 1;
+            pp = &gUnk_02034AAC;
         }
 
         (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
@@ -6497,7 +6500,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
         gUnk_02034AAC->unk_78 &= ~0x40;
 
         if (w->unk_BA > 1) {
-            UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+            UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], (void*)((u32)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7)));
             w->unk_C4[3] = 8;
         }
 
@@ -6549,16 +6552,14 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             gUnk_02034AAC = p;
         }
 
-        if (gUnk_02034AAC == 0) {
+        if (*pp == 0) {
             w->unk_C0[w->unk_B8] = 1;
         }
     }
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080814BC.s");
-#endif
+
 void func_08081740(UnkStruct_08080268* w, u16 n) {
 }
 void func_08081744(UnkStruct_08080268* w) {
