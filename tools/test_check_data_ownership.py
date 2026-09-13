@@ -58,6 +58,31 @@ class OwnershipTests(unittest.TestCase):
         self.placements = {('src/state.o', 'common'): 0x02000000}
         self.assertEqual(self.errors(), [])
 
+    def test_overlapping_different_names(self):
+        self.objects['src/other.o'] = [symbol('gOther')]
+        self.placements['src/other.o', 'bss'] = 0x02000000
+        self.linked.append(symbol('gOther', value=0x02000000))
+        self.assertTrue(any('overlapping RAM definitions' in error for error in self.errors()))
+
+    def test_adjacent_definitions(self):
+        self.objects['src/other.o'] = [symbol('gOther')]
+        self.placements['src/other.o', 'bss'] = 0x02000004
+        self.linked.append(symbol('gOther', value=0x02000004))
+        self.assertEqual(self.errors(), [])
+
+    def test_nested_overlap(self):
+        self.objects['src/state.o'][0]['size'] = 16
+        self.linked[0]['size'] = 16
+        self.objects['src/other.o'] = [symbol('gOther')]
+        self.placements['src/other.o', 'bss'] = 0x02000004
+        self.linked.append(symbol('gOther', value=0x02000004))
+        self.assertTrue(any('overlapping RAM definitions' in error for error in self.errors()))
+
+    def test_storage_extends_outside_ram(self):
+        self.placements['src/state.o', 'bss'] = 0x0203FFFE
+        self.linked[0]['value'] = 0x0203FFFE
+        self.assertTrue(any('extends outside RAM' in error for error in self.errors()))
+
     def test_contract(self):
         self.contract()
         self.assertEqual(self.errors(), [])

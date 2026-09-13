@@ -6732,7 +6732,7 @@ void func_080EAC60(u8 a, u32 b) {
 }
 
 s32 func_080EAD3C(u8 i) {
-    SaveFileSummary* p = &gUnk_02039D6C[i];
+    SaveFileSummary* p = &gGameState.fileSummaries[i];
 
     if (p->level != 0) {
         func_080EABB8(i, p->level);
@@ -6747,7 +6747,7 @@ s32 func_080EAD3C(u8 i) {
 void func_080EAD84(u8 a) {
     SaveFileSummary* e;
     u8 i = gUnk_02034FDC->unk_33D != 0 ? a + 2 : a;
-    e = &gUnk_02039D6C[i];
+    e = &gGameState.fileSummaries[i];
 
     if (e->level != 0) {
         func_080EAB20(i, 1, e->floor);
@@ -6784,7 +6784,7 @@ void func_080EAD84(u8 a) {
 
 void func_080EAEB0(u8 a) {
     u8 idx = gUnk_02034FDC->unk_33D != 0 ? a + 2 : a;
-    SaveFileSummary* e = &gUnk_02039D6C[idx];
+    SaveFileSummary* e = &gGameState.fileSummaries[idx];
 
     if (e->level != 0) {
         func_080EAB20(idx, 0, e->floor);
@@ -7227,7 +7227,7 @@ void func_080EB93C(u8 a, u32 v) {
 }
 
 void func_080EBA14(u8 a) {
-    SaveFileSummary* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gGameState.fileSummaries[a];
 
     if (e->level != 0) {
         func_080EB898(a, e->level);
@@ -7239,7 +7239,7 @@ void func_080EBA14(u8 a) {
 }
 
 void func_080EBA58(u8 a) {
-    SaveFileSummary* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gGameState.fileSummaries[a];
 
     if (e->level != 0) {
         func_080EB818(a, 1, e->floor);
@@ -7257,7 +7257,7 @@ void func_080EBA58(u8 a) {
 }
 
 void func_080EBAE0(u8 a) {
-    SaveFileSummary* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gGameState.fileSummaries[a];
 
     if (e->level != 0) {
         func_080EB818(a, 0, e->floor);
@@ -7477,7 +7477,7 @@ void func_080EBFF8(LoadGameMenuWork* work) {
 
 void func_080EC04C(LoadGameMenuWork* work) {
 #ifdef VERSION_EU
-    SaveFileSummary* e = &gUnk_02039D6C[work->selectedSlot];
+    SaveFileSummary* e = &gGameState.fileSummaries[work->selectedSlot];
 #endif
 
     if ((u8)FadeIsActive() != 0) {
@@ -9189,7 +9189,7 @@ void func_080EE6AC(u32 t) {
 }
 
 void func_080EE760(u8* work, u8 i) {
-    SaveFileSummary* e = &gUnk_02039D6C[i];
+    SaveFileSummary* e = &gGameState.fileSummaries[i];
 
     if (e->level == 0) {
         work[0x164] = 0;

@@ -308,7 +308,6 @@ extern SpriteFrameResourceDef gUnk_08F7CF18[];
 extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];
-extern u16 gUnk_02039D2C;
 extern u8* gStockMesDispWork;
 extern u8 gUnk_0203C564;
 extern BtlObj* gUnk_0203C55C;

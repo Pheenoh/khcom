@@ -1255,7 +1255,6 @@ extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_09EF6C38[];
 extern u8 gUnk_0984C868[];
-extern SaveFileSummary gUnk_02039D6C[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 extern UnkStruct_0203C7B8* gUnk_0203C7B8;
