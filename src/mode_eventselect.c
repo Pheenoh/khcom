@@ -1132,9 +1132,9 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_04 = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
             } else {
-                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
             c->unk_06 = 1;
             old = n;
@@ -1152,9 +1152,9 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_04 = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
             } else {
-                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
             c->unk_06 = 1;
             old = n;
@@ -1172,9 +1172,9 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_04 = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
             } else {
-                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+                TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
             c->unk_06 = 1;
             count++;
@@ -1186,7 +1186,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_0C = 0xFFFF;
             arg.unk_04 = (CardSlot*)w->unk_44[slot];
             arg.unk_0E = slot;
-            TaskCreate((TaskPool*)w, gUnk_09EE4984, &arg);
+            TaskCreate((TaskPool*)w, &gUnk_09EE4984, &arg);
             e = ListPoolFirst(&w->unk_54[slot]);
             e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
             e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
@@ -1251,7 +1251,6 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
 }
 
 extern u16 gUnk_09033FC8[];
-extern TaskDesc gUnk_09EE8F30;
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 void func_08091B28(void);
@@ -1867,7 +1866,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                     args.slot = w->unk_B8;
                     args.state = &w->unk_C4[0];
                     args.mode = 1;
-                    TaskCreate((TaskPool*)w, &gUnk_09EE7720[3], &args);
+                    TaskCreate((TaskPool*)w, &gUnk_09EE772C, &args);
                     return 1;
                 }
             } else {
@@ -1911,7 +1910,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                             w->unk_28[i]->unk_78 |= 0x10000000;
                         }
                         if (gUnk_02039DD4->unk_0E3 == 0) {
-                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], 0);
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77D4, 0);
                             gUnk_02039DD4->unk_0E3 = 1;
                         }
                     } else {
@@ -1919,7 +1918,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                             w->unk_28[i]->unk_78 |= 0x10000000;
                         }
                         if (gUnk_02039DD4->unk_0E3 == 0) {
-                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], &data);
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77D4, &data);
                             gUnk_02039DD4->unk_0E3 = 1;
                         }
                     }
@@ -1970,7 +1969,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                             w->unk_28[i]->unk_78 |= 0x10000000;
                         }
                         if (gUnk_02039DD4->unk_0E3 == 0) {
-                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], 0);
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77D4, 0);
                             gUnk_02039DD4->unk_0E3 = 1;
                         }
                     }
@@ -2078,9 +2077,9 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {
-                    e = ((Task*)TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg))->work;
                 } else {
-                    e = ((Task*)TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;
                 }
 
                 e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
@@ -2121,9 +2120,9 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {
-                    e = ((Task*)TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg))->work;
                 } else {
-                    e = ((Task*)TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;
                 }
 
                 e->unk_7C = gUnk_09033FA8[3];
@@ -2293,4 +2292,24 @@ TaskDesc gTaskDescCardBattleSora __attribute__((section(".data_registration_gTas
     (void (*)(void*))func_08077E10,
     (void (*)(void*))func_08077E98,
     0xCC,
+};
+
+TaskDesc gUnk_09EE484C __attribute__((section(".data_registration_gUnk_09EE484C"))) = {
+    gTaskNameGlowNose,
+    (void (*)(void*, void*))func_080758D0,
+    func_080759B0,
+    (void (*)(void*))func_080759E0,
+    (void (*)(void*))func_08075A54,
+    0x60,
+};
+
+const char gTaskName_09EE48DC[] __attribute__((section(".rodata_registration_name_gUnk_09EE48DC"), aligned(1))) = "Event_Debug";
+
+TaskDesc gUnk_09EE48DC __attribute__((section(".data_registration_gUnk_09EE48DC"))) = {
+    gTaskName_09EE48DC,
+    (void (*)(void*, void*))Event_Debug_0,
+    Event_Debug_1,
+    (void (*)(void*))Event_Debug_2,
+    (void (*)(void*))Event_Debug_3,
+    0x2C,
 };

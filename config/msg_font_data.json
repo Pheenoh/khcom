@@ -1,7 +1,8 @@
 {
   "version": 1,
   "provenance": {
-    "fonts": "Consumer-bounded font glyph pointer arrays. EncodeSmallFontString supplies the 45 small glyphs; byte-oriented character indexing supplies the 256-entry lookup. Original regional literal pools establish bases; full pointed-to renderer sprite payloads match by glyph index."
+    "fonts": "Consumer-bounded font glyph pointer arrays. EncodeSmallFontString supplies the 45 small glyphs; byte-oriented character indexing supplies the 256-entry lookup. Original regional literal pools establish bases; full pointed-to renderer sprite payloads match by glyph index.",
+    "regional_fonts": "Five font glyph tables exist only in US/JP. Their consumers are absent or select EU replacements. Full renderer-consumed sprite payloads match per glyph in US/JP; explicit absent raw-target names prevent invented EU interpolation."
   },
   "regions": {
     "us": {
@@ -36,6 +37,91 @@
               "size": 180,
               "consumer": [
                 "DrawSmallFontString"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB188",
+          "address": "0x09EEB188",
+          "size": 120,
+          "sha256": "7b874f70263bb67f05bc9acab8db363af25f372bf2257318e1d5a40a052fa187",
+          "objects": [
+            {
+              "name": "gUnk_09EEB188",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "func_08064624"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB608",
+          "address": "0x09EEB608",
+          "size": 1024,
+          "sha256": "afdbb7919e64148cd924c1de2ecee7ac11a0b6fe5c0a7d0d605206ac54be4bfc",
+          "objects": [
+            {
+              "name": "gUnk_09EEB608",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEBA0C",
+          "address": "0x09EEBA0C",
+          "size": 1024,
+          "sha256": "c808852b3c13cf912f7ecc3e12d2ceb84ce9cd704addf66e9c35af12bcddd00f",
+          "objects": [
+            {
+              "name": "gUnk_09EEBA0C",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEBE10",
+          "address": "0x09EEBE10",
+          "size": 800,
+          "sha256": "9eede73984175857df0c9487ac938b6f32fabe85d74fc01ebae60b2daf49452b",
+          "objects": [
+            {
+              "name": "gUnk_09EEBE10",
+              "offset": 0,
+              "size": 800,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEC134",
+          "address": "0x09EEC134",
+          "size": 1024,
+          "sha256": "10a742af69306e87ca5a0f58ce52b408ba9a1bbbf6233827700897a0e598d814",
+          "objects": [
+            {
+              "name": "gUnk_09EEC134",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
               ]
             }
           ]
@@ -74,6 +160,91 @@
               "size": 180,
               "consumer": [
                 "DrawSmallFontString"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB188",
+          "address": "0x09EC2574",
+          "size": 120,
+          "sha256": "18947535f2f1122f6962edbb1982556acfcc1162b86e1985a323b7d098dbb0b0",
+          "objects": [
+            {
+              "name": "gUnk_09EEB188",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "func_08064624"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB608",
+          "address": "0x09EC29F4",
+          "size": 1024,
+          "sha256": "c04a54d83769ff942a6e9f66225482a87bc63b41fbbcb6994af69122215875fe",
+          "objects": [
+            {
+              "name": "gUnk_09EEB608",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEBA0C",
+          "address": "0x09EC2DF8",
+          "size": 1024,
+          "sha256": "36522e90b25b77cf8f5dd07b911d26909e832b8056ef999f6a4bfb8f7455b571",
+          "objects": [
+            {
+              "name": "gUnk_09EEBA0C",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEBE10",
+          "address": "0x09EC31FC",
+          "size": 800,
+          "sha256": "bbaf457b46b80584fb657250b47a0ffdbce0df3e95ea4597276ad2c55283c564",
+          "objects": [
+            {
+              "name": "gUnk_09EEBE10",
+              "offset": 0,
+              "size": 800,
+              "consumer": [
+                "func_08066E40"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEC134",
+          "address": "0x09EC3520",
+          "size": 1024,
+          "sha256": "d581e91c3529e604da66a7e9d8ccf8a08dc6b46772ad749cf11d47a8473744b7",
+          "objects": [
+            {
+              "name": "gUnk_09EEC134",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08066E40"
               ]
             }
           ]

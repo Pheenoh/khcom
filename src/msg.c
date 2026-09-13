@@ -12886,3 +12886,23 @@ TaskDesc gTaskDescView __attribute__((section(".data_registration_gTaskDescView"
     (void (*)(void*))view_3,
     0x15C,
 };
+
+const char gTaskName_09EE2834[] __attribute__((section(".rodata_registration_name_gUnk_09EE2834"), aligned(1))) = "Continue";
+
+TaskDesc gUnk_09EE2834 __attribute__((section(".data_registration_gUnk_09EE2834"))) = {
+    gTaskName_09EE2834,
+    (void (*)(void*, void*))func_0806CD60,
+    func_0806D0A8,
+    (void (*)(void*))func_0806D288,
+    (void (*)(void*))Continue_3,
+    0x6C,
+};
+
+TaskDesc gUnk_09EE284C __attribute__((section(".data_registration_gUnk_09EE284C"))) = {
+    gTaskName_09EE2834,
+    (void (*)(void*, void*))func_0806CF04,
+    func_0806D0A8,
+    (void (*)(void*))func_0806D288,
+    (void (*)(void*))Continue_3,
+    0x6C,
+};

@@ -148,7 +148,6 @@ extern u8 gUnk_0908C686[];
 extern void* gUnk_09EF12E8[];
 extern u8 gUnk_09EEFD9C[];
 extern u8 gUnk_09EEFD7C[];
-extern TaskDesc gUnk_09EE484C;
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];
@@ -162,7 +161,6 @@ extern const char* gEventNames[];
 extern Mode gUnkEu_09F5D6EC;
 #endif
 
-extern TaskDesc gUnk_09EE4984[];
 
 u8 FormatSmallFontDecimal(s32 a, void* b);
 u16 func_080787B8(CardBattleWork* w, u8 n);

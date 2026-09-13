@@ -3,6 +3,8 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "animation_resource_data.h"
+
 #include "graphics_state.h"
 
 #include "msg_types.h"
@@ -204,14 +206,9 @@ extern Mode gModeBattle;
 extern Mode gUnk_09EE274C;
 extern const s16 gSineTable[];
 extern vu16 gSystemFlags;
-extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
 extern Mode gModeChkbtl;
 extern Mode gUnk_09EE2704;
-extern TaskDesc gUnk_09EE2834;
-extern TaskDesc gUnk_09EE284C;
-extern TaskDesc gUnk_09EE4AF4;
-extern TaskDesc gUnk_09EE8EF0;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
 extern u8 gUnk_090D7C84[];

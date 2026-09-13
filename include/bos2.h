@@ -668,7 +668,7 @@ extern void* gUnk_09EF3A1C[];
 extern u32 gUnk_09EF2994[];
 extern u8 gUnk_09EF2A5C[];
 extern u8 gUnk_09EF2A74[];
-extern u8 gUnk_08125E24[];
+#include "mode_battle_data.h"
 extern TmFootStep gUnk_09EF2244[];
 extern TmFootStep gUnk_09EF25A4[];
 extern TmFootStep gUnk_09EF2464[];

@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "animation_resource_data.h"
+
 #include "battle_bg_types.h"
 
 #include "evt_types.h"
@@ -468,11 +470,7 @@ void func_0810BAE4(PcFltWork* work);
 
 extern u8 gUnk_09A4D14C[];
 extern u8 gUnk_09C4B012[];
-extern u8 gUnk_09EFAD3C[];
-extern u8 gUnk_09EFABB0[];
 extern u8 gUnk_09C51CBC[];
-extern u8 gUnk_09EFADBC[];
-extern u8 gUnk_09EFAD74[];
 
 void func_0810CE1C(BosLstWork* work);
 void func_0810C57C(BosLstWork* work, s16 a);
@@ -574,8 +572,6 @@ typedef struct PcFltInit {
 } PcFltInit;
 
 extern u8 gUnk_09CB8F54[];
-extern u8 gUnk_09EFBBEC[];
-extern u8 gUnk_09EFBBBC[];
 
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
@@ -670,10 +666,6 @@ typedef struct LstSpawn5 {
     u8 unk_0E[0x2];
 } LstSpawn5;
 
-extern u8 gUnk_09EFAE1C[];
-extern u8 gUnk_09EFADC4[];
-extern u8 gUnk_09EFAEAC[];
-extern u8 gUnk_09EFAE54[];
 
 void func_0810F064(BosLstWork* work, LstSub* p);
 

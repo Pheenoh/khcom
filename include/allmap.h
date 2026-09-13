@@ -216,7 +216,7 @@ extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
-extern u8 gUnk_08125E24[];
+#include "mode_battle_data.h"
 extern s16 gUnk_096FDC10[][2];
 extern u16 gUnk_096FDC30[][2];
 extern u8 gUnk_096FDC40[][4];

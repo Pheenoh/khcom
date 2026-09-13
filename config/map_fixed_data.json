@@ -1,0 +1,1155 @@
+{
+  "version": 1,
+  "provenance": {
+    "fixed_map_cell_types": "map.c fixed-map initialization reads each descriptor offset40, sets columns=backgroundWidth*8 and rows=backgroundHeight*16, and func_080E55E4 indexes every byte as a MapCell.unk_02 cell type with an explicit0..6 switch and default behavior. Five distinct bounded cell-type grids are shared by six fixed-map descriptors; complete grids and dimensions agree in US/JP/EU. These are logical cell classifications, not graphics or opaque padding.",
+    "fixed_map_definitions": "Six fixed-map definitions are selected explicitly by func_080EA20C. Background blocks have width*height entries; byte grids have width*8 by height*16 entries. Native records are80 bytes US/JP and84 EU with a compressed-resource flag; divergent EU tile lengths have field-only guards. Adjacent14-entry spawn and event indices are distinct native array types, not extra fixed-map definitions."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7108",
+          "address": "0x9ef7108",
+          "size": 1536,
+          "sha256": "d9dc3bd4ab5ec629afabce95b6bd13e50118fb0b9688e24725223a17e16a0448",
+          "objects": [
+            {
+              "name": "gUnk_09EF7108",
+              "offset": 0,
+              "size": 1536
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7708",
+          "address": "0x9ef7708",
+          "size": 768,
+          "sha256": "265ccf3b7d92739d57a2621c4f0ed443ded284af777f8029442919ddcbd7c53e",
+          "objects": [
+            {
+              "name": "gUnk_09EF7708",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7A08",
+          "address": "0x9ef7a08",
+          "size": 768,
+          "sha256": "2b631862660cc4d5e4e6e1fee6fa69c1b08d437ef302f00924b67392eea531e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7A08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7D08",
+          "address": "0x9ef7d08",
+          "size": 768,
+          "sha256": "704464ca7e641800eae9ba0f8c6f916d3edf1b81585c3138299ebb90191e76b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7D08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF8008",
+          "address": "0x9ef8008",
+          "size": 512,
+          "sha256": "62f15cf593fb418802eb08d728a14c77cdce892550c92d26370f119d66f8f126",
+          "objects": [
+            {
+              "name": "gUnk_09EF8008",
+              "offset": 0,
+              "size": 512
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8370",
+          "address": "0x9ef8370",
+          "size": 24,
+          "sha256": "4ed9c0df46f1b91b6c8463532a542a4dcb2762d7d04e9718c06c98badd002d3b",
+          "objects": [
+            {
+              "name": "gUnk_09EF8370",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8208",
+          "address": "0x9ef8208",
+          "size": 48,
+          "sha256": "58499176303172160b293acb5c3e603d25076abc12a6b01dbeaf984765e2b820",
+          "objects": [
+            {
+              "name": "gUnk_09EF8208",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8238",
+          "address": "0x9ef8238",
+          "size": 48,
+          "sha256": "3903b3a0ec86e30dd86882caffebc8e99d2a6df5eeb01a46544f86ead4bdbce2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8238",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8268",
+          "address": "0x9ef8268",
+          "size": 48,
+          "sha256": "5b8489b744b693cc87069e3ff4a0c2f355dbf30121758e18d31755cd284a6906",
+          "objects": [
+            {
+              "name": "gUnk_09EF8268",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856C90",
+          "address": "0x9856c90",
+          "size": 80,
+          "sha256": "0a9dc8e1ef0e6c3553f57b93248b038cce6e7af442f2f53482a36e423db8094e",
+          "objects": [
+            {
+              "name": "gUnk_09856C90",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8298",
+          "address": "0x9ef8298",
+          "size": 24,
+          "sha256": "ec1672d9917fb46099875d1de73447040cfc3179b9a0ca54dc70e62ca86a1eda",
+          "objects": [
+            {
+              "name": "gUnk_09EF8298",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82B0",
+          "address": "0x9ef82b0",
+          "size": 24,
+          "sha256": "468ca1f269f2cfd269e3702c5111ee99b0730b2c80926c9418b4a40fcd78b084",
+          "objects": [
+            {
+              "name": "gUnk_09EF82B0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856D34",
+          "address": "0x9856d34",
+          "size": 80,
+          "sha256": "482143e67ada65cd735942859ab4f7df26a2c3bde06a17e2a5652d2811cc1db3",
+          "objects": [
+            {
+              "name": "gUnk_09856D34",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82C8",
+          "address": "0x9ef82c8",
+          "size": 24,
+          "sha256": "a09a3abc6e006bcc16b9d433c9c9f6ee0b381f83e42bb959c72885e82aead1e8",
+          "objects": [
+            {
+              "name": "gUnk_09EF82C8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82E0",
+          "address": "0x9ef82e0",
+          "size": 24,
+          "sha256": "4d1329fcd5ffdf99136eb38cd2a501c48f8b2b93bc522e264e02f53b74420c6b",
+          "objects": [
+            {
+              "name": "gUnk_09EF82E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856DE4",
+          "address": "0x9856de4",
+          "size": 80,
+          "sha256": "3561f77561db69ea241d071d9d2ac3321c4b1cd1ebd974d50658dac3120e976a",
+          "objects": [
+            {
+              "name": "gUnk_09856DE4",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82F8",
+          "address": "0x9ef82f8",
+          "size": 24,
+          "sha256": "4f8fc54c0927ec65efe3f2cd857a893d84de8011ff0905a8a7689da68c7d5236",
+          "objects": [
+            {
+              "name": "gUnk_09EF82F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8310",
+          "address": "0x9ef8310",
+          "size": 24,
+          "sha256": "51b2f7b8d4d4b4450798df36191add71d5165a75273e9c200173100a60d20b5f",
+          "objects": [
+            {
+              "name": "gUnk_09EF8310",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856E88",
+          "address": "0x9856e88",
+          "size": 80,
+          "sha256": "d8053e77dc395ac497411f81c96200322c9f5a7f2375a748af7f955050bed285",
+          "objects": [
+            {
+              "name": "gUnk_09856E88",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8328",
+          "address": "0x9ef8328",
+          "size": 16,
+          "sha256": "cb7326e402aa054e19df6a54082dff619c561910998d6251f92b895126b0c986",
+          "objects": [
+            {
+              "name": "gUnk_09EF8328",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8338",
+          "address": "0x9ef8338",
+          "size": 16,
+          "sha256": "2e12a93b14cb0c2dfd81d283bf7f9603a93fdeb018dd4af6f8054bae1f09e19a",
+          "objects": [
+            {
+              "name": "gUnk_09EF8338",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8348",
+          "address": "0x9ef8348",
+          "size": 16,
+          "sha256": "4607476ea040c0187a10c5ad734a0381ff866292cfaf54273cfd2694addccd64",
+          "objects": [
+            {
+              "name": "gUnk_09EF8348",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F14",
+          "address": "0x9856f14",
+          "size": 80,
+          "sha256": "50666a63615cc6772312fbdc39a87fdab1a92272ed36a6782da05d89b90a3d3f",
+          "objects": [
+            {
+              "name": "gUnk_09856F14",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8358",
+          "address": "0x9ef8358",
+          "size": 24,
+          "sha256": "f53a49823480792f2921acd078b83ebbc3d5d9bdfc08258ac77b58328e259d5e",
+          "objects": [
+            {
+              "name": "gUnk_09EF8358",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F64",
+          "address": "0x9856f64",
+          "size": 80,
+          "sha256": "a0a81153401dd96d467a0ff89a084a28ba783963f1c976c42113ada03baf0f51",
+          "objects": [
+            {
+              "name": "gUnk_09856F64",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8388",
+          "address": "0x9ef8388",
+          "size": 56,
+          "sha256": "3a41e84f76c68e1688e25ec1224489292017c6b9582ec188bcb7243befd4683f",
+          "objects": [
+            {
+              "name": "gUnk_09EF8388",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF83C0",
+          "address": "0x9ef83c0",
+          "size": 56,
+          "sha256": "dfc6f72faa623dca59a367801381c8a36b44acf0899efa8e591bcacc23042912",
+          "objects": [
+            {
+              "name": "gUnk_09EF83C0",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7108",
+          "address": "0x9ece4f4",
+          "size": 1536,
+          "sha256": "d9dc3bd4ab5ec629afabce95b6bd13e50118fb0b9688e24725223a17e16a0448",
+          "objects": [
+            {
+              "name": "gUnk_09EF7108",
+              "offset": 0,
+              "size": 1536
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7708",
+          "address": "0x9eceaf4",
+          "size": 768,
+          "sha256": "265ccf3b7d92739d57a2621c4f0ed443ded284af777f8029442919ddcbd7c53e",
+          "objects": [
+            {
+              "name": "gUnk_09EF7708",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7A08",
+          "address": "0x9ecedf4",
+          "size": 768,
+          "sha256": "2b631862660cc4d5e4e6e1fee6fa69c1b08d437ef302f00924b67392eea531e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7A08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7D08",
+          "address": "0x9ecf0f4",
+          "size": 768,
+          "sha256": "704464ca7e641800eae9ba0f8c6f916d3edf1b81585c3138299ebb90191e76b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7D08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF8008",
+          "address": "0x9ecf3f4",
+          "size": 512,
+          "sha256": "62f15cf593fb418802eb08d728a14c77cdce892550c92d26370f119d66f8f126",
+          "objects": [
+            {
+              "name": "gUnk_09EF8008",
+              "offset": 0,
+              "size": 512
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8370",
+          "address": "0x9ecf75c",
+          "size": 24,
+          "sha256": "4a9cf7372609068d9aa3f1cd2e015d3852e71d889545c8bf028287549d337a7e",
+          "objects": [
+            {
+              "name": "gUnk_09EF8370",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8208",
+          "address": "0x9ecf5f4",
+          "size": 48,
+          "sha256": "418b27130223b0cd064ae1e982daab8b38dd2bcb55d92dd30d289d490356a120",
+          "objects": [
+            {
+              "name": "gUnk_09EF8208",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8238",
+          "address": "0x9ecf624",
+          "size": 48,
+          "sha256": "86d2ab61747eebf9231ac6e3ac594473e9c8657a28518bfbf732b540aca4b616",
+          "objects": [
+            {
+              "name": "gUnk_09EF8238",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8268",
+          "address": "0x9ecf654",
+          "size": 48,
+          "sha256": "9faed3019a4129ef76a3cd132daff3e67fd4915d7d4520761fd27cce05be5ec9",
+          "objects": [
+            {
+              "name": "gUnk_09EF8268",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856C90",
+          "address": "0x980b7a4",
+          "size": 80,
+          "sha256": "1fb7a812a0db457bbddda890a03d91532b4937b98202b75329edc12b6950b3b6",
+          "objects": [
+            {
+              "name": "gUnk_09856C90",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8298",
+          "address": "0x9ecf684",
+          "size": 24,
+          "sha256": "0f68b9c655c5bb9461a66b4f0ca49368f0f71f9826580f44f374d81a335db1b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8298",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82B0",
+          "address": "0x9ecf69c",
+          "size": 24,
+          "sha256": "6e9a611f8a72ec9aab97d93ff2e245f7d862ff964fae51cbe441125ad49c9d6d",
+          "objects": [
+            {
+              "name": "gUnk_09EF82B0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856D34",
+          "address": "0x980b848",
+          "size": 80,
+          "sha256": "fe9b33d1956e491044e572d9205f5866a827fffa3e402b052a4550cc595c2fb0",
+          "objects": [
+            {
+              "name": "gUnk_09856D34",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82C8",
+          "address": "0x9ecf6b4",
+          "size": 24,
+          "sha256": "c6ee90789b740c3857f8e3e653fd78d6a6bcdda5f9623663b42d5e35289a6d69",
+          "objects": [
+            {
+              "name": "gUnk_09EF82C8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82E0",
+          "address": "0x9ecf6cc",
+          "size": 24,
+          "sha256": "63c06658473ff2997685ee6ad93b2e10b10fa54fd4f4c1978f3528d6f84b5150",
+          "objects": [
+            {
+              "name": "gUnk_09EF82E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856DE4",
+          "address": "0x980b8f8",
+          "size": 80,
+          "sha256": "ced5e4b7aa5a2ba32f7bced3b6e7438cdd464e058afd6461e4d060c597228168",
+          "objects": [
+            {
+              "name": "gUnk_09856DE4",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82F8",
+          "address": "0x9ecf6e4",
+          "size": 24,
+          "sha256": "248b4511563878ed49caf8565c0db049facb683a0638fe512cb6dee30bf048d1",
+          "objects": [
+            {
+              "name": "gUnk_09EF82F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8310",
+          "address": "0x9ecf6fc",
+          "size": 24,
+          "sha256": "dab6097b63407ef29a7633405373b84360e7a0bbe754869560f59cc9beb440a6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8310",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856E88",
+          "address": "0x980b99c",
+          "size": 80,
+          "sha256": "c0c6a38a261d1f8351f37d30aebfb632e497cb900263855befd5dd2dae215020",
+          "objects": [
+            {
+              "name": "gUnk_09856E88",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8328",
+          "address": "0x9ecf714",
+          "size": 16,
+          "sha256": "6b6ab6d1086ab49dc5c7f6327dbe23f7817860c689ca12eb112629cae4dd2d91",
+          "objects": [
+            {
+              "name": "gUnk_09EF8328",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8338",
+          "address": "0x9ecf724",
+          "size": 16,
+          "sha256": "93a33da355be71a173e13bb7b86b62d2d4d581f244f25cf63916dc9e65a8f73b",
+          "objects": [
+            {
+              "name": "gUnk_09EF8338",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8348",
+          "address": "0x9ecf734",
+          "size": 16,
+          "sha256": "e614a73070e9c349ee031fc0262fa8401b9c95fdd163ead60fd8258dccfd6784",
+          "objects": [
+            {
+              "name": "gUnk_09EF8348",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F14",
+          "address": "0x980ba28",
+          "size": 80,
+          "sha256": "450b422a771b5c2085c083e76c6e29846a9ca6d7ba0bd2f0952caf94590e7551",
+          "objects": [
+            {
+              "name": "gUnk_09856F14",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8358",
+          "address": "0x9ecf744",
+          "size": 24,
+          "sha256": "069e53c78223aff0bf393202d049ac075b63344d8830d08c3040e5c8d771204d",
+          "objects": [
+            {
+              "name": "gUnk_09EF8358",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F64",
+          "address": "0x980ba78",
+          "size": 80,
+          "sha256": "1dd634dfceaea5464a12627c22237518bf8b2ef7d0a83aa434f313605b4054b9",
+          "objects": [
+            {
+              "name": "gUnk_09856F64",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8388",
+          "address": "0x9ecf774",
+          "size": 56,
+          "sha256": "ac52f9f622759c7d25ca56b93211dc889ebb8b75ef17df22fbb8f506d461efa2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8388",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF83C0",
+          "address": "0x9ecf7ac",
+          "size": 56,
+          "sha256": "8e1b0623941283bf5599f5a8c783b4e7498d3312e7642d001ed8819f1396edf5",
+          "objects": [
+            {
+              "name": "gUnk_09EF83C0",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7108",
+          "address": "0x9f82778",
+          "size": 1536,
+          "sha256": "d9dc3bd4ab5ec629afabce95b6bd13e50118fb0b9688e24725223a17e16a0448",
+          "objects": [
+            {
+              "name": "gUnk_09EF7108",
+              "offset": 0,
+              "size": 1536
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7708",
+          "address": "0x9f82d78",
+          "size": 768,
+          "sha256": "265ccf3b7d92739d57a2621c4f0ed443ded284af777f8029442919ddcbd7c53e",
+          "objects": [
+            {
+              "name": "gUnk_09EF7708",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7A08",
+          "address": "0x9f83078",
+          "size": 768,
+          "sha256": "2b631862660cc4d5e4e6e1fee6fa69c1b08d437ef302f00924b67392eea531e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7A08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF7D08",
+          "address": "0x9f83378",
+          "size": 768,
+          "sha256": "704464ca7e641800eae9ba0f8c6f916d3edf1b81585c3138299ebb90191e76b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF7D08",
+              "offset": 0,
+              "size": 768
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".rodata_map_fixed_cells_09EF8008",
+          "address": "0x9f83678",
+          "size": 512,
+          "sha256": "62f15cf593fb418802eb08d728a14c77cdce892550c92d26370f119d66f8f126",
+          "objects": [
+            {
+              "name": "gUnk_09EF8008",
+              "offset": 0,
+              "size": 512
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8370",
+          "address": "0x9f839e0",
+          "size": 24,
+          "sha256": "86161d7400becc657bd44c85c2c652a51ad3cd229ce5fa6b3211115aba09b6f2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8370",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8208",
+          "address": "0x9f83878",
+          "size": 48,
+          "sha256": "f9ca8079bcc2c4b6f72b27aa7b19541d5c4839d414f659070c651168a906dcdd",
+          "objects": [
+            {
+              "name": "gUnk_09EF8208",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8238",
+          "address": "0x9f838a8",
+          "size": 48,
+          "sha256": "d6c39f2ddf798afc708ab269a4d83ca24337a7b1eb87620091cbf2a8aca744cd",
+          "objects": [
+            {
+              "name": "gUnk_09EF8238",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8268",
+          "address": "0x9f838d8",
+          "size": 48,
+          "sha256": "59c0cf829739defa74316f3ac7164e4907b3b7018702a7c1e17011881527ec40",
+          "objects": [
+            {
+              "name": "gUnk_09EF8268",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856C90",
+          "address": "0x9833664",
+          "size": 84,
+          "sha256": "b5ab4a4237a1288c937ade9e8060a5aebaee149dfd8451f948e32ba82ec9bbc0",
+          "objects": [
+            {
+              "name": "gUnk_09856C90",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8298",
+          "address": "0x9f83908",
+          "size": 24,
+          "sha256": "ced3f1757393be3d5e1435e338ef9db7d3c83b41bdd6ed6ae8df37b52392cd68",
+          "objects": [
+            {
+              "name": "gUnk_09EF8298",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82B0",
+          "address": "0x9f83920",
+          "size": 24,
+          "sha256": "964392f18cb369c5d454ef68f78faeed34f59a3fad1c145e16da77e9040e5453",
+          "objects": [
+            {
+              "name": "gUnk_09EF82B0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856D34",
+          "address": "0x983370c",
+          "size": 84,
+          "sha256": "5849a399fca01c93f1286f8c34ace4aeaf528fb03b512660a12450449ebfffa8",
+          "objects": [
+            {
+              "name": "gUnk_09856D34",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82C8",
+          "address": "0x9f83938",
+          "size": 24,
+          "sha256": "871459990b52fb6586e7908a4105431dffa1be20ac748d72f9e0af022a3293d9",
+          "objects": [
+            {
+              "name": "gUnk_09EF82C8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82E0",
+          "address": "0x9f83950",
+          "size": 24,
+          "sha256": "a9793a4935bbd19d0ccf785a9051f4d1cbbdfd4d104919f99ebda732127d7c0f",
+          "objects": [
+            {
+              "name": "gUnk_09EF82E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856DE4",
+          "address": "0x98337c0",
+          "size": 84,
+          "sha256": "7a000e15650c5705f92265424b6215b37f807cf8c27bf8a2977469cef3ad6ef4",
+          "objects": [
+            {
+              "name": "gUnk_09856DE4",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF82F8",
+          "address": "0x9f83968",
+          "size": 24,
+          "sha256": "166600fa4516f988c2a05465249078d249dd3d032fa31499e3aa4e03cc0ef22f",
+          "objects": [
+            {
+              "name": "gUnk_09EF82F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8310",
+          "address": "0x9f83980",
+          "size": 24,
+          "sha256": "8b761596ec074861a9934add21cc6e3419ddc02bd6a9206909c758523a2eec56",
+          "objects": [
+            {
+              "name": "gUnk_09EF8310",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856E88",
+          "address": "0x9833868",
+          "size": 84,
+          "sha256": "8335d8b67e74b388101e157ea3868bf0a86608893fcd0942a677d2f67d1d1e81",
+          "objects": [
+            {
+              "name": "gUnk_09856E88",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8328",
+          "address": "0x9f83998",
+          "size": 16,
+          "sha256": "035fc98969036c0bd07e5e0be67d4718d622a77629715aaa00615a1f83fef01b",
+          "objects": [
+            {
+              "name": "gUnk_09EF8328",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8338",
+          "address": "0x9f839a8",
+          "size": 16,
+          "sha256": "c6d138c996ce6de87fdd000c6dddf83ec5da0eace07e9062787014704bd12ba1",
+          "objects": [
+            {
+              "name": "gUnk_09EF8338",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8348",
+          "address": "0x9f839b8",
+          "size": 16,
+          "sha256": "c7583a45ce3129c0adb0a6b22fd284883c7c1a07a74784a4aff67fe46bceb1a0",
+          "objects": [
+            {
+              "name": "gUnk_09EF8348",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F14",
+          "address": "0x98338f8",
+          "size": 84,
+          "sha256": "0483c5c8d5d3cb2e0a9387c7402d6f1e4d1a2843640e6da8542cc977f86a0d7b",
+          "objects": [
+            {
+              "name": "gUnk_09856F14",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8358",
+          "address": "0x9f839c8",
+          "size": 24,
+          "sha256": "b8a64e99a2b60d8532d56a8a857540a2a5a270e0afc905e6888ff3179b55ecf5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8358",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09856F64",
+          "address": "0x983394c",
+          "size": 84,
+          "sha256": "439371757b428f08dbf4f3ac0af85745e876f784ad867016e0b2718c60c5cc55",
+          "objects": [
+            {
+              "name": "gUnk_09856F64",
+              "offset": 0,
+              "size": 84
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF8388",
+          "address": "0x9f839f8",
+          "size": 56,
+          "sha256": "b731047767b6bd5590da2a982ab31ff233747f196b8e13094d629b2edad6fe8a",
+          "objects": [
+            {
+              "name": "gUnk_09EF8388",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map_fixed_data.c",
+          "section": ".data_map_fixed_09EF83C0",
+          "address": "0x9f83a30",
+          "size": 56,
+          "sha256": "acb375eb017ede4d7450fdbe18117a44717d404b71bc0fc5aa8a3dd15979d499",
+          "objects": [
+            {
+              "name": "gUnk_09EF83C0",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

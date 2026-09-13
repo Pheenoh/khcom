@@ -3,6 +3,7 @@
 #define GUARD_MAP_H
 
 #include "map_room_data.h"
+#include "map_fixed_data.h"
 
 #include "animation_resource_data.h"
 
@@ -73,13 +74,6 @@ typedef struct UnkStruct_02034F24 {
     u8 unk_00[0x08];
 } UnkStruct_02034F24;
 
-typedef struct UnkStruct_02034F34 {
-    u8 unk_00[0x18];
-    u16* unk_18;
-    u16* unk_1C;
-    u16* unk_20;
-} UnkStruct_02034F34;
-
 typedef struct UnkStruct_02034F84 {
     u8 unk_00;
     u8 unk_01;
@@ -108,9 +102,10 @@ typedef struct UnkStruct_09EF8370 {
     void* unk_20;
     u8 unk_24;
     u8 unk_25;
-    u8 unk_26[0x06];
-    void* unk_2C;
-    void* unk_30;
+    u8 unk_26[0x02];
+    const u8* unk_28;
+    struct UnkStruct_080E56B4* unk_2C;
+    struct UnkStruct_080EC760Entry* unk_30;
     u16 unk_34;
     u8 unk_36[0x02];
     s32 unk_38;
@@ -247,9 +242,9 @@ typedef struct UnkStruct_09EF70D0 {
     void* unk_10;
     u16 unk_14;
     u8 unk_16[0x02];
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
+    u16* unk_18;
+    u16* unk_1C;
+    u16* unk_20;
     UnkStruct_080E8864* unk_24;
     UnkStruct_080E8864* unk_28;
     void* unk_2C;
@@ -1252,7 +1247,6 @@ extern u8 gUnk_088B6560[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_08F68384[];
 extern const UnkStruct_0203C7B0 gUnk_0984D1F4[];
-extern UnkStruct_09EF8370* gUnk_09EF8370[];
 extern UnkStruct_0984BC9C* gUnk_09EF83F8[];
 extern UnkStruct_080E7D80 gUnk_09857A2C[];
 extern UnkStruct_080E7D80 gUnk_0984C190;
@@ -1275,7 +1269,6 @@ extern const u16 gUnk_09858238[];
 extern UnkStruct_080E8E24 gUnk_0985814C[];
 extern UnkStruct_080E8E24 gUnk_09858184[];
 extern UnkStruct_080E8E24 gUnk_098581EC[];
-extern UnkStruct_080E8E24* gUnk_09EF83C0[];
 extern const u8 gUnk_09961A64[][320];
 extern const u8 gUnk_09962BE4[][320];
 extern const u8 gUnk_09963D64[][320];
@@ -1429,7 +1422,6 @@ extern u8 gUnk_0937E90A[];
 extern u8 gUnk_0938044A[];
 extern u8 gUnk_0938D282[];
 extern u8 gUnk_09618338[];
-extern u8 gUnk_09EF04FC[];
 void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F5C60(MapDonaldWork* w);
 void func_080F5CDC(MapDonaldWork* w);

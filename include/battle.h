@@ -293,7 +293,6 @@ extern TaskDesc gTaskDescBtlLockon;
 extern TaskDesc gTaskDescBtlHpply;
 extern TaskDesc gTaskDescBtlHpenm;
 extern TaskDesc gTaskDescBtlEscape;
-extern u8 gUnk_09EE7804[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_09F72C10[];
 extern u8 gUnkEu_09F72D80[];

@@ -58,6 +58,8 @@ extern TaskDesc gTaskDescEVBGEFFECT;
 extern TaskDesc gTaskDescWorldSelBefore;
 #ifndef VERSION_EU
 extern TaskDesc gTaskDescDeckexchange;
+
+
 #endif
 extern Mode gModeRikuBtlTutorial;
 extern Mode gModeRikuDeckTutorial;
@@ -68,9 +70,13 @@ extern Mode gModeSioBtlOption;
 extern Mode gModeSioBtlCardget;
 #ifndef VERSION_EU
 extern Mode gModeSioChgConnect;
+
+
 #endif
 #ifndef VERSION_EU
 extern Mode gModeSioChgCard;
+
+
 #endif
 extern Mode gModeSioError;
 extern Mode gModeWLogo;
@@ -326,6 +332,8 @@ extern const char gTaskNameEVBGEFFECT[];
 extern const char gTaskNameWorldSelBefore[];
 #ifndef VERSION_EU
 extern const char gTaskNameDeckexchange[];
+
+
 #endif
 extern const char gModeNameRikuBtlTutorial[];
 extern const char gModeNameRikuDeckTutorial[];
@@ -336,9 +344,13 @@ extern const char gModeNameSioBtlOption[];
 extern const char gModeNameSioBtlCardget[];
 #ifndef VERSION_EU
 extern const char gModeNameSioChgConnect[];
+
+
 #endif
 #ifndef VERSION_EU
 extern const char gModeNameSioChgCard[];
+
+
 #endif
 extern const char gModeNameSioError[];
 extern const char gModeNameWLogo[];
@@ -538,5 +550,86 @@ extern const char gTaskNameSrollBLogo[];
 extern const char gTaskNameSrollBSecn[];
 extern const char gTaskNameSrollBCrtn[];
 extern const char gTaskNameSrollCChar[];
+
+extern TaskDesc gUnk_09EE2834;
+extern TaskDesc gUnk_09EE284C;
+extern TaskDesc gUnk_09EE484C;
+extern TaskDesc gUnk_09EE48DC;
+extern TaskDesc gUnk_09EE496C;
+extern TaskDesc gUnk_09EE4984;
+extern TaskDesc gUnk_09EE499C;
+extern TaskDesc gUnk_09EE49CC;
+extern TaskDesc gUnk_09EE49E4;
+extern TaskDesc gUnk_09EE49FC;
+extern TaskDesc gUnk_09EE4AF4;
+extern TaskDesc gUnk_09EE4B28;
+extern TaskDesc gUnk_09EE4B40;
+extern TaskDesc gUnk_09EE4B58;
+extern TaskDesc gUnk_09EE4B70;
+extern TaskDesc gUnk_09EE4B88;
+extern TaskDesc gUnk_09EE7560;
+extern TaskDesc gUnk_09EE75D8;
+extern TaskDesc gUnk_09EE7650;
+extern TaskDesc gUnk_09EE772C;
+extern TaskDesc gUnk_09EE778C;
+extern TaskDesc gUnk_09EE77A4;
+extern TaskDesc gUnk_09EE77BC;
+extern TaskDesc gUnk_09EE77D4;
+extern TaskDesc gUnk_09EE77EC;
+extern TaskDesc gUnk_09EE7804;
+extern TaskDesc gUnk_09EE781C;
+extern TaskDesc gUnk_09EE7834;
+extern TaskDesc gUnk_09EE784C;
+extern TaskDesc gUnk_09EE7864;
+extern TaskDesc gUnk_09EE787C;
+extern TaskDesc gUnk_09EE7F30;
+extern TaskDesc gUnk_09EE7F48;
+extern TaskDesc gUnk_09EE7F60;
+extern TaskDesc gUnk_09EE7F78;
+extern TaskDesc gUnk_09EE7F90;
+extern TaskDesc gUnk_09EE7FA8;
+extern TaskDesc gUnk_09EE7FC0;
+extern TaskDesc gUnk_09EE7FD8;
+extern TaskDesc gUnk_09EE7FF0;
+extern TaskDesc gUnk_09EE8E18;
+extern TaskDesc gUnk_09EE8E30;
+extern TaskDesc gUnk_09EE8E48;
+extern TaskDesc gUnk_09EE8EF0;
+extern TaskDesc gUnk_09EE8F30;
+extern const char gTaskName_09EE2834[];
+extern const char gTaskName_09EE48DC[];
+extern const char gTaskName_09EE496C[];
+extern const char gTaskName_09EE4984[];
+extern const char gTaskName_09EE499C[];
+extern const char gTaskName_09EE49CC[];
+extern const char gTaskName_09EE49E4[];
+extern const char gTaskName_09EE49FC[];
+extern const char gTaskName_09EE4AF4[];
+extern const char gTaskName_09EE4B28[];
+extern const char gTaskName_09EE4B40[];
+extern const char gTaskName_09EE4B58[];
+extern const char gTaskName_09EE7560[];
+extern const char gTaskName_09EE75D8[];
+extern const char gTaskName_09EE7650[];
+extern const char gTaskName_09EE772C[];
+extern const char gTaskName_09EE778C[];
+extern const char gTaskName_09EE77A4[];
+extern const char gTaskName_09EE77BC[];
+extern const char gTaskName_09EE77D4[];
+extern const char gTaskName_09EE7804[];
+extern const char gTaskName_09EE781C[];
+extern const char gTaskName_09EE7834[];
+extern const char gTaskName_09EE784C[];
+extern const char gTaskName_09EE7864[];
+extern const char gTaskName_09EE7F30[];
+extern const char gTaskName_09EE7F48[];
+extern const char gTaskName_09EE7F60[];
+extern const char gTaskName_09EE7F78[];
+extern const char gTaskName_09EE7F90[];
+extern const char gTaskName_09EE7FA8[];
+extern const char gTaskName_09EE8E18[];
+extern const char gTaskName_09EE8E30[];
+extern const char gTaskName_09EE8EF0[];
+extern const char gTaskName_09EE8F30[];
 
 #endif

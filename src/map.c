@@ -112,7 +112,7 @@ u16 gUnk_02034F2A;
 u16 gUnk_02034F2C;
 u16 gUnk_02034F2E;
 void* gUnk_02034F30;
-UnkStruct_02034F34* gUnk_02034F34;
+UnkStruct_09EF70D0* gUnk_02034F34;
 u8* gUnk_02034F38;
 #ifndef VERSION_EU
 u8 gUnk_02034F3C[4];
@@ -3321,7 +3321,7 @@ void func_080E5800(void) {
     RedrawBgMapAt(1, sx, sy);
 }
 
-void func_080E5868(UnkStruct_09EF70D0* p) {
+void func_080E5868(UnkStruct_09EF8370* p) {
     s32 i;
     s32 n;
 
@@ -3338,7 +3338,7 @@ void func_080E5868(UnkStruct_09EF70D0* p) {
         ((MapCell*)gUnk_02034F38)[i].unk_18 = 0;
         ((MapCell*)gUnk_02034F38)[i].unk_1C = 0;
     }
-    func_080E55E4((const u8*)p->unk_28);
+    func_080E55E4(p->unk_28);
 }
 
 void func_080E58E4(void) {
@@ -5359,8 +5359,8 @@ s32 func_080E8E24(UnkStruct_080E8E24* p) {
 
 UnkStruct_080E8E24* func_080E8E74(u8 a) {
     u16 v = GetRandom() % 10000;
-    UnkStruct_09EF8370** t = &gUnk_09EF8370[6];
-    UnkStruct_080E8E74* p = (UnkStruct_080E8E74*)t[gGameState.world];
+    UnkStruct_080E8E74** t = gUnk_09EF8388;
+    UnkStruct_080E8E74* p = t[gGameState.world];
 
     while (p->unk_00 != 41) {
         UnkStruct_080E8E24* q = &gUnk_0985814C[p->unk_00];
@@ -5565,7 +5565,7 @@ u8 func_080E924C(void) {
     u8* p;
 
     for (i = 1; i <= 11; i++) {
-        UnkStruct_09EF8370** t = &gUnk_09EF8370[20];
+        UnkStruct_080E8E24** t = gUnk_09EF83C0;
 
         p = (u8*)t[i];
 
@@ -7873,7 +7873,7 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     gUnk_02039BA0->unk_12 = p->unk_25 * 32;
     gUnk_0203C7AC->unk_04 = gUnk_02039BA0->unk_10 / 4;
     gUnk_0203C7AC->unk_06 = gUnk_02039BA0->unk_12 / 2;
-    func_080E5868((UnkStruct_09EF70D0*)p);
+    func_080E5868(p);
     TaskPoolInit(&w->unk_1D0, 2);
     v.unk_00 = p->unk_38;
     v.unk_04 = p->unk_3C;

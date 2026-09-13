@@ -46,7 +46,7 @@ extern u16 gUnk_02034E3A;
 extern TaskPool gUnk_0203C4F0;
 extern u8 gMPlayInfo_BGM[];
 extern u8 gUnk_05000140[];
-extern u8 gUnk_08125E24[];
+#include "mode_battle_data.h"
 extern AllmapRoomOrder gUnk_096FDB70;
 extern AllmapRoomDirs gUnk_096FDBB0;
 extern u8 gUnk_0976B340[];

@@ -3555,6 +3555,1065 @@
       ],
       "layer": 1,
       "provenance": "msg.c:3480 EncodeSmallFontString maps digits,letters,punctuation through44; DrawSmallFontString at3707 indexes the result"
+    },
+    {
+      "name": "gUnk_09EEB188_glyphs",
+      "us": "0x09EEB188",
+      "targets": {
+        "jp": "0x09EC2574"
+      },
+      "size": 120,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:1588..1662 and1825: short-font numeric and letter glyph mapping reaches index29"
+    },
+    {
+      "name": "gUnk_09EEB608_glyphs",
+      "us": "0x09EEB608",
+      "targets": {
+        "jp": "0x09EC29F4"
+      },
+      "size": 1024,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:2526 andfunc_08066E40 group1 maximum255 at4384"
+    },
+    {
+      "name": "gUnk_09EEBA0C_glyphs",
+      "us": "0x09EEBA0C",
+      "targets": {
+        "jp": "0x09EC2DF8"
+      },
+      "size": 1024,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:2530 andfunc_08066E40 group2 maximum255 at5300"
+    },
+    {
+      "name": "gUnk_09EEBE10_glyphs",
+      "us": "0x09EEBE10",
+      "targets": {
+        "jp": "0x09EC31FC"
+      },
+      "size": 800,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:2534 andfunc_08066E40 group3 maximum199 at6492"
+    },
+    {
+      "name": "gUnk_09EEC134_glyphs",
+      "us": "0x09EEC134",
+      "targets": {
+        "jp": "0x09EC3520"
+      },
+      "size": 1024,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:2110 byte-range check through255 and2179 Latin glyph lookup; EU instead usesgUnk_09EEB204"
+    },
+    {
+      "name": "animation_resources_09EE14D4",
+      "layer": 1,
+      "provenance": "mode_test.c:46-65 clamps gfx selection to0..13; US/JP ETC ObjDef animCount is5; these callbacks and ObjDef entries are absent in EU. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9ee14d4",
+      "targets": {
+        "jp": "0x9eb8f50"
+      },
+      "size": 76,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFABB0",
+      "layer": 1,
+      "provenance": "bos6.c func_0810C494 maps state0..6 to paired animations0..13; source state7 selects the independent AD74/ADBC pair via gUnk_09A4D14C[7]. bos6.c func_0810C494 state7 selects this pair and computes animation (7*2 xor facing)-14, exactly0..1. bos6.c func_0810F064 uses substate*2 plus facing0/1. Substate setters and cases range0..6; state6 assignment at3455 proves animation13. bos6.c func_0810F064 swaps this pair with ADC4/AE1C by side and uses the same substate0..6/facing0..1 bound. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9efabb0",
+      "targets": {
+        "jp": "0x9ed20bc",
+        "eu": "0x9f868fc"
+      },
+      "size": 820,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFAEF8",
+      "layer": 1,
+      "provenance": "bos7.c task_bos_lst_edg_0 starts0; task_bos_lst_edg_1 starts1 at413. bos7.c task_bos_lst_ctr_0 starts3 at1583; later states select1 and2 at1648/1679. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9efaef8",
+      "targets": {
+        "jp": "0x9ed2404",
+        "eu": "0x9f86c44"
+      },
+      "size": 104,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFB840",
+      "layer": 1,
+      "provenance": "sroll.c task_sroll_c_char_0 loops i=0..4 and uses i as AnimStart index at480-481 in all regions. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9efb840",
+      "targets": {
+        "jp": "0x9ed2dc4",
+        "eu": "0x9f875b4"
+      },
+      "size": 396,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFBBBC",
+      "layer": 1,
+      "provenance": "bos6.c PcFlt explicit animations0..9 use gfx0..11. func_0810BA74 indexes the12 canonical8-byte gUnk_09A4CEDC records by that gfxId and uses field+6 as the next animation; maximum20 occurs at gfx9. All21 animation headers close this gfx-index graph within0..11. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9efbbbc",
+      "targets": {
+        "jp": "0x9ed3134",
+        "eu": "0x9f883d0"
+      },
+      "size": 132,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFBF40",
+      "layer": 1,
+      "provenance": "bos7.c task_bos_lst_ptl_0 starts0; task_bos_lst_ptl_1 explicitly changes to1 at1360. bos7.c task_bos_lst_snp_0 starts only animation0 at1755; its sole frame refers gfx0. bos7.c task_bos_lst_fal_0 masks GetRandom with7 to index8 u16[2] gUnk_09A4FE64 records; first fields are0,1,2,3,2,3,4,5, proving animation0..5. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.",
+      "us": "0x9efbf40",
+      "targets": {
+        "jp": "0x9ed34b8",
+        "eu": "0x9f88754"
+      },
+      "size": 156,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFB9CC_us_eu",
+      "layer": 1,
+      "provenance": "Independent sroll.c direct table consumers and animation loop0..4 establish each base. Five complete animation payloads agree US/EU and max gfxIndex65 exactly reaches the independently referenced animation-table base, proving66 gfx pointers.",
+      "us": "0x9efb9cc",
+      "targets": {
+        "eu": "0x9f87740"
+      },
+      "size": 284,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EFBAD4_jp_headers",
+      "layer": 1,
+      "provenance": "Independent sroll.c regional code consumers select the same five animation roles by loop index0..4. Every target is independently parsed as the canonical six-byte AnimHeader prefix followed by frameCount four-byte frames. JP frames are localized and differ, but retain the same five selector roles and reference only the63-entry JP gfx table. No US-to-JP gfx slot equivalence is asserted.",
+      "us": "0x9efbad4",
+      "targets": {
+        "jp": "0x9ed304c"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EDE790",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ede790",
+      "targets": {
+        "jp": "0x9eb620c",
+        "eu": "0x9f593e8"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EDF1C0",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9edf1c0",
+      "targets": {
+        "jp": "0x9eb6c3c",
+        "eu": "0x9f59e18"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EDF2D0",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9edf2d0",
+      "targets": {
+        "jp": "0x9eb6d4c",
+        "eu": "0x9f59f28"
+      },
+      "size": 44,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EDF308",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9edf308",
+      "targets": {
+        "jp": "0x9eb6d84",
+        "eu": "0x9f59f60"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EDF320",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9edf320",
+      "targets": {
+        "jp": "0x9eb6d9c",
+        "eu": "0x9f59f78"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EE00F4",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ee00f4",
+      "targets": {
+        "jp": "0x9eb7b70",
+        "eu": "0x9f5ad4c"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EE10E0",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ee10e0",
+      "targets": {
+        "jp": "0x9eb8b5c",
+        "eu": "0x9f5bd38"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EE9450",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ee9450",
+      "targets": {
+        "jp": "0x9ec0a94",
+        "eu": "0x9f748d0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EE94B4",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ee94b4",
+      "targets": {
+        "jp": "0x9ec0af8",
+        "eu": "0x9f74934"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EE94C8",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ee94c8",
+      "targets": {
+        "jp": "0x9ec0b0c",
+        "eu": "0x9f74948"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EEE268",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9eee268",
+      "targets": {
+        "jp": "0x9ec5654",
+        "eu": "0x9f7944c"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EEE284",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9eee284",
+      "targets": {
+        "jp": "0x9ec5670",
+        "eu": "0x9f79468"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EEE36C",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9eee36c",
+      "targets": {
+        "jp": "0x9ec5758",
+        "eu": "0x9f79550"
+      },
+      "size": 80,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EEE574",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9eee574",
+      "targets": {
+        "jp": "0x9ec5960",
+        "eu": "0x9f79758"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EEFBB8",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9eefbb8",
+      "targets": {
+        "jp": "0x9ec6fa4",
+        "eu": "0x9f7ad9c"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EF0034",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ef0034",
+      "targets": {
+        "jp": "0x9ec7420",
+        "eu": "0x9f7b218"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EF04FC",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ef04fc",
+      "targets": {
+        "jp": "0x9ec78e8",
+        "eu": "0x9f7b6e0"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EF602C",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ef602c",
+      "targets": {
+        "jp": "0x9ecd418",
+        "eu": "0x9f81424"
+      },
+      "size": 52,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_suffix_09EF6078",
+      "layer": 1,
+      "provenance": "Corresponding ObjDef first/second table bases come from completed layer0. Max AnimFrame.gfxIndex+1 proves the used prefix, and the independent animation-table base bounds the remaining pointer words. Each trailing word becomes a neutral scalar pointer rather than an assumed accessed array slot. Every target has a valid u16 OAM count and all count*6+2 consumed sprite bytes agree exactly in US/JP/EU. Per-pointer payload hashes and offsets are in the scratch target proof.",
+      "us": "0x9ef6078",
+      "targets": {
+        "jp": "0x9ecd464",
+        "eu": "0x9f81470"
+      },
+      "size": 52,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EF8370",
+      "provenance": "func_080EA20C explicitly selects fixed map0 through5, and the following table has a different eight-byte spawn-entry pointee type. Regional bases are independently mapped from the same consumers.",
+      "us": "0x9ef8370",
+      "targets": {
+        "jp": "0x9ecf75c",
+        "eu": "0x9f839e0"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 0
+    },
+    {
+      "name": "gUnk_09EF8208",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8208",
+      "targets": {
+        "jp": "0x9ecf5f4",
+        "eu": "0x9f83878"
+      },
+      "size": 48,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8238",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8238",
+      "targets": {
+        "jp": "0x9ecf624",
+        "eu": "0x9f838a8"
+      },
+      "size": 48,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8268",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8268",
+      "targets": {
+        "jp": "0x9ecf654"
+      },
+      "size": 48,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856C90_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856c90",
+      "targets": {
+        "jp": "0x980b7a4",
+        "eu": "0x9833664"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856C90_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856ca0",
+      "targets": {
+        "jp": "0x980b7b4",
+        "eu": "0x9833674"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856C90_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856ca8",
+      "targets": {
+        "jp": "0x980b7bc",
+        "eu": "0x983367c"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF8298",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8298",
+      "targets": {
+        "jp": "0x9ecf684",
+        "eu": "0x9f83908"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF82B0",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef82b0",
+      "targets": {
+        "jp": "0x9ecf69c",
+        "eu": "0x9f83920"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856D34_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856d34",
+      "targets": {
+        "jp": "0x980b848",
+        "eu": "0x983370c"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856D34_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856d44",
+      "targets": {
+        "jp": "0x980b858",
+        "eu": "0x983371c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856D34_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856d4c",
+      "targets": {
+        "jp": "0x980b860",
+        "eu": "0x9833724"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF82C8",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef82c8",
+      "targets": {
+        "jp": "0x9ecf6b4",
+        "eu": "0x9f83938"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF82E0",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef82e0",
+      "targets": {
+        "jp": "0x9ecf6cc",
+        "eu": "0x9f83950"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856DE4_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856de4",
+      "targets": {
+        "jp": "0x980b8f8",
+        "eu": "0x98337c0"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856DE4_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856df4",
+      "targets": {
+        "jp": "0x980b908",
+        "eu": "0x98337d0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856DE4_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856dfc",
+      "targets": {
+        "jp": "0x980b910",
+        "eu": "0x98337d8"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF82F8",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef82f8",
+      "targets": {
+        "jp": "0x9ecf6e4",
+        "eu": "0x9f83968"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8310",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8310",
+      "targets": {
+        "jp": "0x9ecf6fc",
+        "eu": "0x9f83980"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856E88_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856e88",
+      "targets": {
+        "jp": "0x980b99c",
+        "eu": "0x9833868"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856E88_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856e98",
+      "targets": {
+        "jp": "0x980b9ac",
+        "eu": "0x9833878"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856E88_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856ea0",
+      "targets": {
+        "jp": "0x980b9b4",
+        "eu": "0x9833880"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF8328",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8328",
+      "targets": {
+        "jp": "0x9ecf714",
+        "eu": "0x9f83998"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8338",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8338",
+      "targets": {
+        "jp": "0x9ecf724",
+        "eu": "0x9f839a8"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8348",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8348",
+      "targets": {
+        "jp": "0x9ecf734",
+        "eu": "0x9f839b8"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856F14_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f14",
+      "targets": {
+        "jp": "0x980ba28",
+        "eu": "0x98338f8"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856F14_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f24",
+      "targets": {
+        "jp": "0x980ba38",
+        "eu": "0x9833908"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856F14_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f2c",
+      "targets": {
+        "jp": "0x980ba40",
+        "eu": "0x9833910"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF8358",
+      "provenance": "Fixed-map descriptor background map pointer consumed with its exact width and height; SetBgMapBlocks/eu_08005A1C indexes width*height background blocks. The EU targets are encoded graphics assets, not decoded u16 cells.",
+      "us": "0x9ef8358",
+      "targets": {
+        "jp": "0x9ecf744",
+        "eu": "0x9f839c8"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09856F64_fields_00",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f64",
+      "targets": {
+        "jp": "0x980ba78",
+        "eu": "0x983394c"
+      },
+      "size": 12,
+      "stride": 12,
+      "pointer_offsets": [
+        0,
+        8
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856F64_fields_10",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f74",
+      "targets": {
+        "jp": "0x980ba88",
+        "eu": "0x983395c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09856F64_fields_18",
+      "provenance": "Pointer fields of the fixed-map record reached by gUnk_09EF8370. The two separately guarded regional compressed-tile byte lengths are deliberately outside these evidence spans; every scalar byte within these spans is equal.",
+      "us": "0x9856f7c",
+      "targets": {
+        "jp": "0x980ba90",
+        "eu": "0x9833964"
+      },
+      "size": 56,
+      "stride": 56,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_09EF8388",
+      "provenance": "Map world indices0..13 select native UnkStruct_080E8E74 lists, with initial world list repeated at13. Distinct consumers establish the two adjacent indices and their different record sizes.",
+      "us": "0x9ef8388",
+      "targets": {
+        "jp": "0x9ecf774",
+        "eu": "0x9f839f8"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 0
+    },
+    {
+      "name": "gUnk_09EF83C0",
+      "provenance": "Map world indices0..13 select native UnkStruct_080E8E24 lists, with initial world list repeated at13. Distinct consumers establish the two adjacent indices and their different record sizes.",
+      "us": "0x9ef83c0",
+      "targets": {
+        "jp": "0x9ecf7ac",
+        "eu": "0x9f83a30"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 0
+    },
+    {
+      "name": "gUnk_09EF8268_eu_16",
+      "provenance": "EU fixed-map block table selects compressed gUnkEu_08125144 for blank blocks, not the distinct uncompressed C map. Only these three other block slots have common symbolic identity; the divergent blank block slots are guarded in the actual initializer and are not mapping evidence.",
+      "us": "0x9ef8278",
+      "targets": {
+        "eu": "0x9f838e8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8268_eu_20",
+      "provenance": "EU fixed-map block table selects compressed gUnkEu_08125144 for blank blocks, not the distinct uncompressed C map. Only these three other block slots have common symbolic identity; the divergent blank block slots are guarded in the actual initializer and are not mapping evidence.",
+      "us": "0x9ef827c",
+      "targets": {
+        "eu": "0x9f838ec"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_09EF8268_eu_36",
+      "provenance": "EU fixed-map block table selects compressed gUnkEu_08125144 for blank blocks, not the distinct uncompressed C map. Only these three other block slots have common symbolic identity; the divergent blank block slots are guarded in the actual initializer and are not mapping evidence.",
+      "us": "0x9ef828c",
+      "targets": {
+        "eu": "0x9f838fc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
     }
   ]
 }

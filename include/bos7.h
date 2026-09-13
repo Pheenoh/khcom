@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "animation_resource_data.h"
+
 #include "graphics_state.h"
 
 #include "evt_object_types.h"
@@ -484,18 +486,8 @@ extern u8 gUnk_09D6C774[];
 extern u8 gUnk_09D6C974[];
 extern u8 gUnk_09D6CB74[];
 extern LstAnimSet gUnk_09EF9EA4[];
-extern u8 gUnk_09EFAEF8[];
-extern u8 gUnk_09EFAF24[];
-extern u8 gUnk_09EFAF50[];
-extern u8 gUnk_09EFAF1C[];
 extern void* gUnk_09EFBEC4[];
 extern u8 gUnk_09EFBF18[];
-extern u8 gUnk_09EFBF40[];
-extern u8 gUnk_09EFBF64[];
-extern u8 gUnk_09EFBFC4[];
-extern u8 gUnk_09EFBF54[];
-extern u8 gUnk_09EFBF5C[];
-extern u8 gUnk_09EFBF60[];
 
 extern u8 gUnk_09D6BE74[];
 

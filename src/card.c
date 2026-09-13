@@ -250,8 +250,6 @@ u8 func_08089220(u8* work, void* a);
 struct UnkStruct_0808F0C0;
 u8 func_0808F3E8(struct UnkStruct_0808F0C0* w, void* a);
 u8 func_0808F660(struct UnkStruct_0808F0C0* w, void* a);
-extern u8 gUnk_09EE7F60[];
-extern u8 gUnk_09EE7F90[];
 extern s16 gUnk_0903570E[];
 void func_0808D6C4(u8* work);
 
@@ -795,9 +793,9 @@ void func_080789E4(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             p->unk_80 = p->unk_7C = gUnk_09033FA8[1];
@@ -817,7 +815,7 @@ void func_080789E4(UnkStruct_08080268* w) {
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
-        p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C[0x18], &args))[1];
+        p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE4984, &args))[1];
         p->unk_80 = p->unk_7C = gUnk_09033FA8[1];
         p->unk_98 = p->unk_94 = gUnk_09033FB8[0];
         p->unk_A0 = 50;
@@ -961,9 +959,9 @@ void func_08078E34(UnkStruct_08080268* w, u8 b, u8 c) {
             args.unk_0F = w->unk_9C[b];
 
             if (slot->unk_00 == 0xFFFE) {
-                q = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                q = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             q->unk_80 = q->unk_7C = gUnk_09033FA8[3];
@@ -1036,9 +1034,9 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
             args.unk_0F = w->unk_9C[b];
 
             if (c->unk_00 == 0xFFFE) {
-                q = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                q = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             q->unk_80 = q->unk_7C = gUnk_09033FA8[3];
@@ -1405,9 +1403,9 @@ s32 func_08079600(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             e->unk_7C = gUnk_09033FA8[3];
@@ -1517,7 +1515,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
-        e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C[0x18], &args))[1];
+        e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE4984, &args))[1];
         e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
         e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
         e->unk_A0 = 50;
@@ -1551,9 +1549,9 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             e->unk_7C = gUnk_09033FA8[3];
@@ -1653,9 +1651,9 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             e->unk_7C = gUnk_09033FA8[3];
@@ -1809,9 +1807,9 @@ s32 func_0807A188(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
             } else {
-                e = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE496C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
 
             e->unk_7C = gUnk_09033FA8[3];
@@ -4462,9 +4460,9 @@ void func_0807E368(UnkStruct_08080268* w, u8 slot) {
             args.unk_04 = card;
             args.unk_0F = w->unk_9C[slot];
             if (card->unk_00 == 0xFFFE) {
-                gUnk_02034AAC = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+                gUnk_02034AAC = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
             } else {
-                gUnk_02034AAC = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                gUnk_02034AAC = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
             }
             count++;
         }
@@ -4476,7 +4474,7 @@ void func_0807E368(UnkStruct_08080268* w, u8 slot) {
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[slot];
         args.unk_0E = slot;
-        node = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC[0x18], &args))[1];
+        node = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49E4, &args))[1];
         node->unk_98 = node->unk_94 = gUnk_090352E4[0];
         node->unk_A4 = 0;
         node->unk_A0 = 50;
@@ -5260,7 +5258,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                 args[0] = (u8)w->unk_B8 | (args[0] & ~0xFF);
                 args[1] = (s32)&w->unk_C4[0];
                 args[0] = (args[0] & ~0xFF00) | 0x200;
-                TaskCreate(w, &gUnk_09EE7720[3], args);
+                TaskCreate(w, &gUnk_09EE772C, args);
                 return 1;
             }
         } else {
@@ -5329,7 +5327,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             }
 
             if (gUnk_02039DD4->unk_0E4 == 0) {
-                TaskCreate(w, gUnk_09EE77BC, 0);
+                TaskCreate(w, &gUnk_09EE77BC, 0);
                 gUnk_02039DD4->unk_0E4 = 1;
             }
         } else {
@@ -5386,7 +5384,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                     }
 
                     if (gUnk_02039DD4->unk_0E4 == 0) {
-                        TaskCreate(w, gUnk_09EE77BC, 0);
+                        TaskCreate(w, &gUnk_09EE77BC, 0);
                         gUnk_02039DD4->unk_0E4 = 1;
                     }
                 }
@@ -5490,7 +5488,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
                 args.unk_0C = v;
                 args.unk_0E = w->unk_B8;
                 args.unk_04 = c;
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
                 p->unk_80 = p->unk_7C = 0;
                 p->unk_A0 = 50;
                 p->unk_9C = 8;
@@ -5547,9 +5545,9 @@ void func_0807FD10(UnkStruct_08080268* w, u8 n) {
                 args.unk_0F = w->unk_9C[n];
 
                 if (c->unk_00 == 0xFFFE) {
-                    p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+                    p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
                 } else {
-                    p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                    p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
                 }
 
                 p->unk_98 = p->unk_94 = gUnk_090352E4[0];
@@ -5592,9 +5590,9 @@ void func_0807FE30(UnkStruct_08080268* w, u8 n) {
                 args.unk_0F = w->unk_9C[n];
 
                 if (c->unk_00 == 0xFFFE) {
-                    p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+                    p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
                 } else {
-                    p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                    p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
                 }
 
                 p->unk_98 = p->unk_94 = gUnk_090352E4[0];
@@ -5974,9 +5972,9 @@ u8 func_08080594(UnkStruct_08080268* w) {
         args.unk_0F = w->unk_9C[w->unk_B8];
 
         if (*(s32*)c == 0xFFFE) {
-            p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
         } else {
-            p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
         }
 
         p->unk_98 = p->unk_94 = gUnk_090352E4[0];
@@ -6031,9 +6029,9 @@ void func_08080994(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
             } else {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
             }
 
             p->unk_80 = p->unk_7C = 0;
@@ -6053,7 +6051,7 @@ void func_08080994(UnkStruct_08080268* w) {
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
-        q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC[0x18], &args))[1];
+        q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49E4, &args))[1];
         q->unk_80 = q->unk_7C = 0;
         q->unk_98 = q->unk_94 = gUnk_090352E4[0];
         q->unk_4C = q->unk_8C;
@@ -6168,9 +6166,9 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
         args.unk_0F = w->unk_9C[w->unk_B8];
 
         if (*(s32*)c == 0xFFFE) {
-            p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
         } else {
-            p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
         }
 
         p->unk_94 = p->unk_98 = gUnk_090352E4[0];
@@ -6486,9 +6484,9 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49FC, &args))[1];
             } else {
-                p = ((CardDisplayWork**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
             }
 
             p->unk_98 = p->unk_94 = gUnk_090352E4[0];
@@ -6504,7 +6502,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             args.unk_0C = 0xFFFF;
             args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
             args.unk_0E = w->unk_B8;
-            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC[0x18], &args))[1];
+            p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49E4, &args))[1];
             p->unk_98 = p->unk_94 = gUnk_090352E4[0];
             p->unk_A4 = 0;
             p->unk_A0 = 50;
@@ -10907,7 +10905,7 @@ u8 func_0808778C(u8* work, void* a) {
             return 1;
         }
 
-        TaskCreate((TaskPool*)&work[0x7DC], &gUnk_09EE7D84[0x7D], &work[0x8C9]);
+        TaskCreate((TaskPool*)&work[0x7DC], &gUnk_09EE7F78, &work[0x8C9]);
         work[0x8D1] = 1;
         SetTaskUpdate(a, (void*)func_08087438);
         work[0x8B7] = 1;
@@ -11159,7 +11157,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
             }
         } else {
             m4aSongNumStart(105);
-            TaskCreate(&w->cardpool, gUnk_09EE7FD8 + 24, &w->unk_8C9);
+            TaskCreate(&w->cardpool, &gUnk_09EE7FF0, &w->unk_8C9);
             return 1;
         }
         break;
@@ -11597,7 +11595,7 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
 #endif
         SetActiveDeckIndex(w->unk_8C0);
         func_0808D16C(w->unk_8C0);
-        TaskCreate(&w->cardpool, gUnk_09EE7F60, &w->unk_8C9);
+        TaskCreate(&w->cardpool, &gUnk_09EE7F60, &w->unk_8C9);
         m4aSongNumStart(137);
         break;
     case 2:
@@ -11721,7 +11719,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
         case 0:
             SetActiveDeckIndex(w->unk_8C0);
             func_0808D16C(w->unk_8C0);
-            TaskCreate(&w->unk_7DC, gUnk_09EE7F60, &w->unk_8C8[1]);
+            TaskCreate(&w->unk_7DC, &gUnk_09EE7F60, &w->unk_8C8[1]);
             m4aSongNumStart(137);
             SetTaskUpdate(a, (u32)func_08089220);
             return 1;
@@ -11738,7 +11736,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
         case 2:
             m4aSongNumStart(102);
             w->unk_8B1 = 15;
-            TaskCreate(&w->unk_7DC, gUnk_09EE7F90, &w->unk_8C8[1]);
+            TaskCreate(&w->unk_7DC, &gUnk_09EE7F90, &w->unk_8C8[1]);
             w->unk_8D1[0] = 1;
             SetTaskUpdate(a, (u32)func_08088768);
             return 1;
@@ -13216,7 +13214,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                 } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                     args.unk_00 = &work[CARDWORK(0x7F0)];
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
@@ -13224,7 +13222,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                 }
             } else {
                 args.unk_00 = &work[CARDWORK(0x7F0)];
@@ -13233,7 +13231,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
             }
 
             x++;
@@ -13252,7 +13250,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                 x++;
             }
 
@@ -13291,7 +13289,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                     args.unk_08 = y;
                     args.unk_0A = 1;
                     args.unk_0C = 0;
-                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                     x++;
                     count++;
                 }
@@ -13305,7 +13303,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                     args.unk_08 = y;
                     args.unk_0A = 1;
                     args.unk_0C = 0;
-                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                     x++;
                     count++;
                 }
@@ -13329,7 +13327,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                         args.unk_08 = y;
                         args.unk_0A = 1;
                         args.unk_0C = 0;
-                        TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                        TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                         x++;
                         count++;
                     }
@@ -13346,7 +13344,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                         args.unk_08 = y;
                         args.unk_0A = 1;
                         args.unk_0C = 0;
-                        TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
+                        TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
                         x++;
                         count++;
                     }
@@ -14598,7 +14596,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
                 return 1;
             }
 
-            TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+            TaskCreate(&w->unk_7DC, &gUnk_09EE7FD8, &w->unk_888[0x41]);
             m4aSongNumStart(0x69);
             return 0;
         } else {
@@ -14614,7 +14612,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
                 return 1;
             }
 
-            TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+            TaskCreate(&w->unk_7DC, &gUnk_09EE7FD8, &w->unk_888[0x41]);
             m4aSongNumStart(0x69);
             return 0;
         }
@@ -14656,7 +14654,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                             m4aSongNumStart(0x8A);
                             return 1;
                         } else {
-                            TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+                            TaskCreate(&w->unk_7DC, &gUnk_09EE7FD8, &w->unk_888[0x41]);
                             m4aSongNumStart(0x69);
                             return 0;
                         }
@@ -14679,7 +14677,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         m4aSongNumStart(0x8A);
                         return 1;
                     } else {
-                        TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+                        TaskCreate(&w->unk_7DC, &gUnk_09EE7FD8, &w->unk_888[0x41]);
                         m4aSongNumStart(0x69);
                         return 0;
                     }
@@ -14702,9 +14700,9 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
 s32 func_0808E750(u8* work) {
     if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
 #ifdef VERSION_EU
-        TaskCreate(&work[0x7E0], gUnk_09EE7FA8, &work[0x8CD]);
+        TaskCreate(&work[0x7E0], &gUnk_09EE7FA8, &work[0x8CD]);
 #else
-        TaskCreate(&work[0x7DC], gUnk_09EE7FA8, &work[0x8C9]);
+        TaskCreate(&work[0x7DC], &gUnk_09EE7FA8, &work[0x8C9]);
 #endif
         m4aSongNumStart(105);
 
@@ -14718,9 +14716,9 @@ s32 func_0808E79C(u8* work) {
     if (func_080857D4(0) == 0) {
         m4aSongNumStart(105);
 #ifdef VERSION_EU
-        TaskCreate(&work[0x7E0], gUnk_09EE7FC0, &work[0x8CD]);
+        TaskCreate(&work[0x7E0], &gUnk_09EE7FC0, &work[0x8CD]);
 #else
-        TaskCreate(&work[0x7DC], gUnk_09EE7FC0, &work[0x8C9]);
+        TaskCreate(&work[0x7DC], &gUnk_09EE7FC0, &work[0x8C9]);
 #endif
 
         return 0;
@@ -14887,7 +14885,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&w->unk_7C8, gUnk_09EE4B28, &args);
+                    TaskCreate(&w->unk_7C8, &gUnk_09EE4B28, &args);
                 } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                     args.unk_00 = &w->unk_7F0;
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
@@ -14895,7 +14893,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&w->unk_7C8, gUnk_09EE4B28, &args);
+                    TaskCreate(&w->unk_7C8, &gUnk_09EE4B28, &args);
                 }
             } else {
                 args.unk_00 = &w->unk_7F0;
@@ -14904,7 +14902,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&w->unk_7C8, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_7C8, &gUnk_09EE4B28, &args);
             }
 
             x++;
@@ -14923,7 +14921,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&w->unk_7C8, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_7C8, &gUnk_09EE4B28, &args);
                 x++;
             }
 
@@ -17096,7 +17094,7 @@ void func_08091234(u16 arg) {
     *(u16*)&args.unk_08[0] = arg;
     args.unk_0C = gUnk_02034AB4;
     args.unk_0E = 0;
-    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B28[0x30], &args))[1];
+    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B58, &args))[1];
     gBtlWork->unk_068 |= 0x10000000;
     gUnk_02039DD4->unk_0E0 = 1;
 
@@ -17319,7 +17317,7 @@ void func_080917C8(u16 a, u8 b) {
     arg.unk_08 = a;
     arg.unk_0C = b;
     arg.unk_0E = 0;
-    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B28[0x48], &arg))[1];
+    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B70, &arg))[1];
     gBtlWork->unk_068 |= 0x10000000;
 
     if ((gBtlWork->unk_068 & 0x80) == 0) {
@@ -17371,7 +17369,7 @@ void func_08091978(u16 a, u8 b) {
     arg.unk_08 = a;
     arg.unk_0C = b;
     arg.unk_0E = 0;
-    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B28[0x60], &arg))[1];
+    p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B88, &arg))[1];
     gBtlWork->unk_068 |= 0x10000000;
 
     if ((gBtlWork->unk_068 & 0x80) == 0) {
@@ -17438,7 +17436,7 @@ void WORLDSELECT_0(void) {
 #ifdef VERSION_EU
     TaskCreate(gUnk_02034AB8, gUnkEu_09F72C10, 0);
 #else
-    TaskCreate(gUnk_02034AB8, gUnk_09EE7804, 0);
+    TaskCreate(gUnk_02034AB8, &gUnk_09EE7804, 0);
 #endif
 }
 void WORLDSELECT_1(void) {
@@ -20076,7 +20074,7 @@ void* func_08095C28(u8* w, u16 b, void* pool, u8 mode) {
 
     args.unk_08 = mode;
     args.unk_0E = w[0xB8];
-    return ((void**)TaskCreate(pool, gUnk_09EE7560, &args))[1];
+    return ((void**)TaskCreate(pool, &gUnk_09EE7560, &args))[1];
 }
 void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     PrizeCardTaskArgs args;
@@ -20413,7 +20411,7 @@ void func_080966E4(void* a, s32 b, s32 c, s32 d, s32 e) {
 }
 
 void func_08096700(void* a, void* b) {
-    TaskCreate(a, gUnk_09EE75D8, b);
+    TaskCreate(a, &gUnk_09EE75D8, b);
 }
 
 void func_08096714(PrizeCardInitWork* w, PrizeCardArgs* args) {
@@ -21144,7 +21142,7 @@ void func_0809792C(UnkStruct_08096F94* w) {
 #endif
 
 void func_0809797C(void* a, void* b) {
-    TaskCreate(a, gUnk_09EE7650, b);
+    TaskCreate(a, &gUnk_09EE7650, b);
 }
 
 void SpotLight_0(SpotlightWork* w, u8* src) {
@@ -23509,7 +23507,7 @@ void func_0809B644(void* pool, s16 x, s16 y, s16 z, u8 idx) {
                 args[1] = (s16)y << 8;
                 args[2] = (s16)z << 8;
                 args[3] = gUnk_09036210[idx] + GetRandom() % 9;
-                TaskCreate(pool, gUnk_09EE778C, args);
+                TaskCreate(pool, &gUnk_09EE778C, args);
                 gUnk_02039DD4->unk_0D6++;
             }
         }
@@ -23525,7 +23523,7 @@ void func_0809B6D0(void* pool, s16 a, s16 b, s16 c, u16 d) {
     args[1] = b << 8;
     args[2] = c << 8;
     args[3] = t[0];
-    TaskCreate(pool, gUnk_09EE77A4, args);
+    TaskCreate(pool, &gUnk_09EE77A4, args);
 }
 
 void func_0809B710(void* pool, u16 a, u16 b, u16 c, u16 d) {
@@ -23537,7 +23535,7 @@ void func_0809B710(void* pool, u16 a, u16 b, u16 c, u16 d) {
         args[1] = (s16)b << 8;
         args[2] = (s16)c << 8;
         args[3] = d;
-        TaskCreate(pool, gUnk_09EE77BC, args);
+        TaskCreate(pool, &gUnk_09EE77BC, args);
     }
 }
 
@@ -24065,7 +24063,7 @@ void func_0809C294(u8* work) {
 
     for (i = 0; i < work[0x50]; i++) {
         (*(u8**)&work[0x24])[i * 12 + 6] = i;
-        TaskCreate(&work[0x3C], gUnk_09EE781C, &(*(u8**)&work[0x24])[i * 12]);
+        TaskCreate(&work[0x3C], &gUnk_09EE781C, &(*(u8**)&work[0x24])[i * 12]);
     }
 }
 u8 func_0809C2D0(u8* work, void* a) {
@@ -24120,7 +24118,7 @@ u8 func_0809C2D0(u8* work, void* a) {
         FadeSetPaletteExcluded(13, 1);
         FadeSetPaletteExcluded(14, 1);
         FadeSetPaletteExcluded(15, 1);
-        TaskCreate(pool, gUnk_09EE7834, 0);
+        TaskCreate(pool, &gUnk_09EE7834, 0);
         SetTaskUpdate(a, (void*)func_0809C448);
     }
 
@@ -26030,8 +26028,6 @@ u8 func_0809F390(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_0809F390.s");
 #endif
-extern u8 gUnk_09EE7F48[];
-extern u8 gUnk_09EE7F30[];
 extern u8 gUnk_09EE790C[];
 u8 func_0809FBCC(u8* work, void* a);
 
@@ -26092,7 +26088,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                 args.amount = amount;
                 args.done = &w->unk_7C4;
                 args.flags = 0x8000;
-                TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
                 break;
             }
             case 1:
@@ -26103,7 +26099,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.amount = amount;
                     args.done = &w->unk_7C4;
                     args.flags = 0;
-                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
                 } else {
                     s32 amount = LevelUpAp();
                     StatIncreaseDisplayArgs args;
@@ -26112,13 +26108,13 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.done = &w->unk_7C4;
                     args.flags = 0;
                     gGameState.progression.unk_80++;
-                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
                 }
                 break;
             case 2:
                 if (!(gGameState.flags & 8)) {
                     w->unk_7C4 = 1;
-                    TaskCreate(&w->pool, gUnk_09EE7F30, &w->unk_7C4);
+                    TaskCreate(&w->pool, &gUnk_09EE7F30, &w->unk_7C4);
                 } else {
                     s32 amount = LevelUpDp();
                     StatIncreaseDisplayArgs args;
@@ -26126,7 +26122,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.amount = amount;
                     args.done = &w->unk_7C4;
                     args.flags = 0x4000;
-                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
                 }
                 break;
             }
@@ -28631,12 +28627,12 @@ void func_080A411C(void* pool, u32 a, u16 b) {
 
     if (gUnk_09EE8008[b].unk_00 == 62) {
         if (gUnk_09EE8008[b].unk_10 & 2) {
-            TaskCreate(pool, gUnk_09EE8E48, &args);
+            TaskCreate(pool, &gUnk_09EE8E48, &args);
         } else {
-            TaskCreate(pool, gUnk_09EE8E30, &args);
+            TaskCreate(pool, &gUnk_09EE8E30, &args);
         }
     } else {
-        TaskCreate(pool, gUnk_09EE8E18, &args);
+        TaskCreate(pool, &gUnk_09EE8E18, &args);
     }
 }
 
@@ -28648,9 +28644,9 @@ void func_080A4188(void* pool, u16 b) {
     args.unk_07 = 2;
 
     if (gUnk_09EE8008[b].unk_10 & 2) {
-        TaskCreate(pool, gUnk_09EE8E48, &args);
+        TaskCreate(pool, &gUnk_09EE8E48, &args);
     } else {
-        TaskCreate(pool, gUnk_09EE8E30, &args);
+        TaskCreate(pool, &gUnk_09EE8E30, &args);
     }
 }
 
@@ -28661,7 +28657,7 @@ void func_080A41F0(void* pool, u16 a) {
     args.unk_00 = 0;
     args.unk_04 = a;
     args.unk_07 = 3;
-    TaskCreate(pool, gUnk_09EE8E30, &args);
+    TaskCreate(pool, &gUnk_09EE8E30, &args);
 }
 
 void func_080A4234(void* pool, u32 a, u16 b) {
@@ -28676,9 +28672,9 @@ void func_080A4234(void* pool, u32 a, u16 b) {
             func_080A4D7C((u64*)&args);
         }
     } else if (gUnk_09EE8008[b].unk_00 == 62) {
-        TaskCreate(pool, gUnk_09EE8E30, &args);
+        TaskCreate(pool, &gUnk_09EE8E30, &args);
     } else {
-        TaskCreate(pool, gUnk_09EE8E18, &args);
+        TaskCreate(pool, &gUnk_09EE8E18, &args);
     }
 }
 
@@ -30067,7 +30063,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_40C, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_40C, &gUnk_09EE4B28, &args);
                 x++;
             } else if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A == kind - 1) {
                 args.unk_00 = &w->unk_434;
@@ -30076,7 +30072,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_40C, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_40C, &gUnk_09EE4B28, &args);
                 x++;
             }
             if (x > 2) {
@@ -30476,7 +30472,7 @@ void func_080A7284(u8* work, u8 mode) {
 }
 u8 func_080A7300(u8* work) {
     if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
-        TaskCreate(&work[0x420], gUnk_09EE7FA8, &work[0x501]);
+        TaskCreate(&work[0x420], &gUnk_09EE7FA8, &work[0x501]);
         m4aSongNumStart(0x69);
         return 0;
     }
@@ -30486,7 +30482,7 @@ u8 func_080A7300(u8* work) {
 u8 func_080A734C(u8* work) {
     if (func_080857D4(0) == 0) {
         m4aSongNumStart(0x69);
-        TaskCreate(&work[0x420], gUnk_09EE7FC0, &work[0x501]);
+        TaskCreate(&work[0x420], &gUnk_09EE7FC0, &work[0x501]);
         return 0;
     }
 
@@ -31448,7 +31444,7 @@ void func_080A968C(UnkStruct_0808C940* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_614, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_614, &gUnk_09EE4B28, &args);
                 x++;
             } else if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A == kind - 1) {
                 args.unk_00 = &w->unk_63C;
@@ -31457,7 +31453,7 @@ void func_080A968C(UnkStruct_0808C940* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_614, gUnk_09EE4B28, &args);
+                TaskCreate(&w->unk_614, &gUnk_09EE4B28, &args);
                 x++;
             }
             if (x > 2) {
@@ -31491,7 +31487,7 @@ s32 func_080A97D4(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 1;
                 args.unk_0C = 0;
-                TaskCreate(&work[0x614], gUnk_09EE4B28, &args);
+                TaskCreate(&work[0x614], &gUnk_09EE4B28, &args);
                 x++;
             }
         } else {
@@ -31505,7 +31501,7 @@ s32 func_080A97D4(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 1;
                 args.unk_0C = 0;
-                TaskCreate(&work[0x614], gUnk_09EE4B28, &args);
+                TaskCreate(&work[0x614], &gUnk_09EE4B28, &args);
                 x++;
             }
         }
@@ -32285,7 +32281,7 @@ s32 func_080AAB08(UnkStruct_080AAB08* w) {
 
 s32 func_080AAC40(u8* work) {
     if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
-        TaskCreate(&work[0x628], gUnk_09EE7FA8, &work[0x70D]);
+        TaskCreate(&work[0x628], &gUnk_09EE7FA8, &work[0x70D]);
         m4aSongNumStart(105);
 
         return 0;
@@ -32297,7 +32293,7 @@ s32 func_080AAC40(u8* work) {
 u8 func_080AAC8C(u8* work) {
     if (func_080857D4(0) == 0) {
         m4aSongNumStart(105);
-        TaskCreate(&work[0x628], gUnk_09EE7FC0, &work[0x70D]);
+        TaskCreate(&work[0x628], &gUnk_09EE7FC0, &work[0x70D]);
         return 0;
     }
 
@@ -35106,4 +35102,495 @@ TaskDesc gTaskDescNumberPlus __attribute__((section(".data_registration_gTaskDes
     (void (*)(void*))NumberPlus_2,
     (void (*)(void*))NumberPlus_3,
     0x2C,
+};
+
+void func_0807BEC0(CardDisplayWork* p);
+void func_08081C98(CardDisplayWork* p);
+void func_08085FB4(u8* work, void* a);
+struct UnkStruct_0809BB4C;
+void func_0809BB4C(struct UnkStruct_0809BB4C* w);
+void func_080A584C(u8* work, void* a);
+
+const char gTaskName_09EE496C[] __attribute__((section(".rodata_registration_name_gUnk_09EE496C"), aligned(1))) = "card";
+
+TaskDesc gUnk_09EE496C __attribute__((section(".data_registration_gUnk_09EE496C"))) = {
+    gTaskName_09EE496C,
+    (void (*)(void*, void*))func_0807BC24,
+    func_0807BD64,
+    (void (*)(void*))func_0807BEC0,
+    (void (*)(void*))func_0807C2E0,
+    0xA8,
+};
+
+const char gTaskName_09EE4984[] __attribute__((section(".rodata_registration_name_gUnk_09EE4984"), aligned(1))) = "card_not_have";
+
+TaskDesc gUnk_09EE4984 __attribute__((section(".data_registration_gUnk_09EE4984"))) = {
+    gTaskName_09EE4984,
+    (void (*)(void*, void*))func_0807BC24,
+    func_0807BD64,
+    (void (*)(void*))card_not_have_2,
+    (void (*)(void*))func_0807C2E0,
+    0xA8,
+};
+
+const char gTaskName_09EE499C[] __attribute__((section(".rodata_registration_name_gUnk_09EE499C"), aligned(1))) = "card_reload";
+
+TaskDesc gUnk_09EE499C __attribute__((section(".data_registration_gUnk_09EE499C"))) = {
+    gTaskName_09EE499C,
+    (void (*)(void*, void*))card_reload_0,
+    card_reload_1,
+    (void (*)(void*))card_reload_2,
+    (void (*)(void*))card_reload_3,
+    0xA8,
+};
+
+const char gTaskName_09EE49CC[] __attribute__((section(".rodata_registration_name_gUnk_09EE49CC"), aligned(1))) = "card";
+
+TaskDesc gUnk_09EE49CC __attribute__((section(".data_registration_gUnk_09EE49CC"))) = {
+    gTaskName_09EE49CC,
+    (void (*)(void*, void*))func_08081A3C,
+    func_08081B70,
+    (void (*)(void*))func_08081C98,
+    (void (*)(void*))func_080820F4,
+    0xA8,
+};
+
+const char gTaskName_09EE49E4[] __attribute__((section(".rodata_registration_name_gUnk_09EE49E4"), aligned(1))) = "NO_Card";
+
+TaskDesc gUnk_09EE49E4 __attribute__((section(".data_registration_gUnk_09EE49E4"))) = {
+    gTaskName_09EE49E4,
+    (void (*)(void*, void*))func_08081A3C,
+    func_08081B70,
+    (void (*)(void*))NO_Card_2,
+    (void (*)(void*))func_080820F4,
+    0xA8,
+};
+
+const char gTaskName_09EE49FC[] __attribute__((section(".rodata_registration_name_gUnk_09EE49FC"), aligned(1))) = "Reload_Card";
+
+TaskDesc gUnk_09EE49FC __attribute__((section(".data_registration_gUnk_09EE49FC"))) = {
+    gTaskName_09EE49FC,
+    (void (*)(void*, void*))Reload_Card_0,
+    Reload_Card_1,
+    (void (*)(void*))Reload_Card_2,
+    (void (*)(void*))Reload_Card_3,
+    0xA8,
+};
+
+const char gTaskName_09EE4AF4[] __attribute__((section(".rodata_registration_name_gUnk_09EE4AF4"), aligned(1))) = "Deckmenu2";
+
+TaskDesc gUnk_09EE4AF4 __attribute__((section(".data_registration_gUnk_09EE4AF4"))) = {
+    gTaskName_09EE4AF4,
+    (void (*)(void*, void*))func_08085FB4,
+    func_080863C0,
+    (void (*)(void*))func_0808B66C,
+    (void (*)(void*))func_0808C2F0,
+#ifdef VERSION_EU
+    0x8DC,
+#else
+    0x8D8,
+#endif
+};
+
+const char gTaskName_09EE4B28[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B28"), aligned(1))) = "DeckCard2";
+
+TaskDesc gUnk_09EE4B28 __attribute__((section(".data_registration_gUnk_09EE4B28"))) = {
+    gTaskName_09EE4B28,
+    (void (*)(void*, void*))DeckCard2_0,
+    DeckCard2_1,
+    (void (*)(void*))DeckCard2_2,
+    (void (*)(void*))DeckCard2_3,
+    0x50,
+};
+
+const char gTaskName_09EE4B40[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B40"), aligned(1))) = "card_enemy";
+
+TaskDesc gUnk_09EE4B40 __attribute__((section(".data_registration_gUnk_09EE4B40"))) = {
+    gTaskName_09EE4B40,
+    (void (*)(void*, void*))card_enemy_0,
+    card_enemy_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+const char gTaskName_09EE4B58[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B58"), aligned(1))) = "EnemyUsecard";
+
+TaskDesc gUnk_09EE4B58 __attribute__((section(".data_registration_gUnk_09EE4B58"))) = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08090EA0,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+TaskDesc gUnk_09EE4B70 __attribute__((section(".data_registration_gUnk_09EE4B70"))) = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08091048,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+TaskDesc gUnk_09EE4B88 __attribute__((section(".data_registration_gUnk_09EE4B88"))) = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08091138,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+const char gTaskName_09EE7560[] __attribute__((section(".rodata_registration_name_gUnk_09EE7560"), aligned(1))) = "Reload Gage";
+
+TaskDesc gUnk_09EE7560 __attribute__((section(".data_registration_gUnk_09EE7560"))) = {
+    gTaskName_09EE7560,
+    (void (*)(void*, void*))func_08094EB0,
+    func_0809511C,
+    (void (*)(void*))func_08095520,
+    (void (*)(void*))func_080956AC,
+    0xA8,
+};
+
+const char gTaskName_09EE75D8[] __attribute__((section(".rodata_registration_name_gUnk_09EE75D8"), aligned(1))) = "PrizeCard";
+
+TaskDesc gUnk_09EE75D8 __attribute__((section(".data_registration_gUnk_09EE75D8"))) = {
+    gTaskName_09EE75D8,
+    (void (*)(void*, void*))PrizeCard_0,
+    func_08095E68,
+    (void (*)(void*))func_08096428,
+    (void (*)(void*))func_080965CC,
+    0x100,
+};
+
+const char gTaskName_09EE7650[] __attribute__((section(".rodata_registration_name_gUnk_09EE7650"), aligned(1))) = "PrizeCard";
+
+TaskDesc gUnk_09EE7650 __attribute__((section(".data_registration_gUnk_09EE7650"))) = {
+    gTaskName_09EE7650,
+    (void (*)(void*, void*))func_08096F94,
+    func_08097138,
+    (void (*)(void*))func_08097688,
+    (void (*)(void*))func_08097834,
+    0xEC,
+};
+
+const char gTaskName_09EE772C[] __attribute__((section(".rodata_registration_name_gUnk_09EE772C"), aligned(1))) = "RELOAD";
+
+TaskDesc gUnk_09EE772C __attribute__((section(".data_registration_gUnk_09EE772C"))) = {
+    gTaskName_09EE772C,
+    (void (*)(void*, void*))RELOAD_0,
+    RELOAD_1,
+    (void (*)(void*))RELOAD_2,
+    (void (*)(void*))RELOAD_3,
+    0x38,
+};
+
+const char gTaskName_09EE778C[] __attribute__((section(".rodata_registration_name_gUnk_09EE778C"), aligned(1))) = "Friend card";
+
+TaskDesc gUnk_09EE778C __attribute__((section(".data_registration_gUnk_09EE778C"))) = {
+    gTaskName_09EE778C,
+    (void (*)(void*, void*))func_0809A02C,
+    func_0809A54C,
+    (void (*)(void*))func_0809B200,
+    (void (*)(void*))func_0809B59C,
+    0x1D4,
+};
+
+const char gTaskName_09EE77A4[] __attribute__((section(".rodata_registration_name_gUnk_09EE77A4"), aligned(1))) = "Heartless card";
+
+TaskDesc gUnk_09EE77A4 __attribute__((section(".data_registration_gUnk_09EE77A4"))) = {
+    gTaskName_09EE77A4,
+    (void (*)(void*, void*))func_0809A1B8,
+    func_0809AF84,
+    (void (*)(void*))func_0809B3F4,
+    (void (*)(void*))func_0809B5F4,
+    0x1D4,
+};
+
+const char gTaskName_09EE77BC[] __attribute__((section(".rodata_registration_name_gUnk_09EE77BC"), aligned(1))) = "Gimmick card";
+
+TaskDesc gUnk_09EE77BC __attribute__((section(".data_registration_gUnk_09EE77BC"))) = {
+    gTaskName_09EE77BC,
+    (void (*)(void*, void*))func_0809A368,
+    func_0809A840,
+    (void (*)(void*))func_0809B200,
+    (void (*)(void*))func_0809B59C,
+    0x1D4,
+};
+
+const char gTaskName_09EE77D4[] __attribute__((section(".rodata_registration_name_gUnk_09EE77D4"), aligned(1))) = "StockName";
+
+TaskDesc gUnk_09EE77D4 __attribute__((section(".data_registration_gUnk_09EE77D4"))) = {
+    gTaskName_09EE77D4,
+    (void (*)(void*, void*))func_0809B76C,
+    func_0809B840,
+    (void (*)(void*))func_0809B8F0,
+    (void (*)(void*))func_0809BB18,
+    0x34,
+};
+
+TaskDesc gUnk_09EE77EC __attribute__((section(".data_registration_gUnk_09EE77EC"))) = {
+    gTaskName_09EE77D4,
+    (void (*)(void*, void*))func_0809B920,
+    func_0809B9F4,
+    (void (*)(void*))func_0809BAA4,
+    (void (*)(void*))func_0809BAE4,
+    0x34,
+};
+
+const char gTaskName_09EE7804[] __attribute__((section(".rodata_registration_name_gUnk_09EE7804"), aligned(1))) = "Premire Chance";
+
+TaskDesc gUnk_09EE7804 __attribute__((section(".data_registration_gUnk_09EE7804"))) = {
+    gTaskName_09EE7804,
+    (void (*)(void*, void*))func_0809BB4C,
+    func_0809C078,
+    (void (*)(void*))func_0809C110,
+    (void (*)(void*))func_0809C1EC,
+    0x90,
+};
+
+const char gTaskName_09EE781C[] __attribute__((section(".rodata_registration_name_gUnk_09EE781C"), aligned(1))) = "Premire Chance";
+
+TaskDesc gUnk_09EE781C __attribute__((section(".data_registration_gUnk_09EE781C"))) = {
+    gTaskName_09EE781C,
+    (void (*)(void*, void*))func_0809C534,
+    func_0809C710,
+    (void (*)(void*))func_0809C78C,
+    (void (*)(void*))func_0809C98C,
+    0x78,
+};
+
+const char gTaskName_09EE7834[] __attribute__((section(".rodata_registration_name_gUnk_09EE7834"), aligned(1))) = "CardName";
+
+TaskDesc gUnk_09EE7834 __attribute__((section(".data_registration_gUnk_09EE7834"))) = {
+    gTaskName_09EE7834,
+    (void (*)(void*, void*))CardName_0,
+    CardName_1,
+    (void (*)(void*))CardName_2,
+    (void (*)(void*))CardName_3,
+#ifdef VERSION_EU
+    0x31C,
+#else
+    0x22C,
+#endif
+};
+
+const char gTaskName_09EE784C[] __attribute__((section(".rodata_registration_name_gUnk_09EE784C"), aligned(1))) = "Premire_EFFECT";
+
+TaskDesc gUnk_09EE784C __attribute__((section(".data_registration_gUnk_09EE784C"))) = {
+    gTaskName_09EE784C,
+    (void (*)(void*, void*))func_0809CE88,
+    func_0809D040,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};
+
+const char gTaskName_09EE7864[] __attribute__((section(".rodata_registration_name_gUnk_09EE7864"), aligned(1))) = "Premire_EFFECT2";
+
+TaskDesc gUnk_09EE7864 __attribute__((section(".data_registration_gUnk_09EE7864"))) = {
+    gTaskName_09EE7864,
+    (void (*)(void*, void*))func_0809CE88,
+    Premire_EFFECT2_1,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};
+
+TaskDesc gUnk_09EE787C __attribute__((section(".data_registration_gUnk_09EE787C"))) = {
+    gTaskName_09EE784C,
+    (void (*)(void*, void*))func_0809CF64,
+    func_0809D09C,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};
+
+const char gTaskName_09EE7F30[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F30"), aligned(1))) = "StockInfo";
+
+TaskDesc gUnk_09EE7F30 __attribute__((section(".data_registration_gUnk_09EE7F30"))) = {
+    gTaskName_09EE7F30,
+    (void (*)(void*, void*))StockInfo_0,
+    StockInfo_1,
+    (void (*)(void*))StockInfo_2,
+    (void (*)(void*))StockInfo_3,
+    0x2C,
+};
+
+const char gTaskName_09EE7F48[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F48"), aligned(1))) = "Lvup msg";
+
+TaskDesc gUnk_09EE7F48 __attribute__((section(".data_registration_gUnk_09EE7F48"))) = {
+    gTaskName_09EE7F48,
+    (void (*)(void*, void*))func_080A23A0,
+    func_080A25B8,
+    (void (*)(void*))func_080A2678,
+    (void (*)(void*))func_080A27EC,
+#ifdef VERSION_JP
+    0x218,
+#else
+    0x2B8,
+#endif
+};
+
+const char gTaskName_09EE7F60[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F60"), aligned(1))) = "Deck Equip";
+
+TaskDesc gUnk_09EE7F60 __attribute__((section(".data_registration_gUnk_09EE7F60"))) = {
+    gTaskName_09EE7F60,
+    (void (*)(void*, void*))func_080A2844,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7F78[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F78"), aligned(1))) = "Deck_Yes_No";
+
+TaskDesc gUnk_09EE7F78 __attribute__((section(".data_registration_gUnk_09EE7F78"))) = {
+    gTaskName_09EE7F78,
+    (void (*)(void*, void*))Deck_Yes_No_0,
+    func_080A30C0,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7F90[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F90"), aligned(1))) = "Deck_Clear";
+
+TaskDesc gUnk_09EE7F90 __attribute__((section(".data_registration_gUnk_09EE7F90"))) = {
+    gTaskName_09EE7F90,
+    (void (*)(void*, void*))Deck_Clear_0,
+    func_080A30C0,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7FA8[] __attribute__((section(".rodata_registration_name_gUnk_09EE7FA8"), aligned(1))) = "Deck Error";
+
+TaskDesc gUnk_09EE7FA8 __attribute__((section(".data_registration_gUnk_09EE7FA8"))) = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2980,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FC0 __attribute__((section(".data_registration_gUnk_09EE7FC0"))) = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2A80,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FD8 __attribute__((section(".data_registration_gUnk_09EE7FD8"))) = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2BA4,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FF0 __attribute__((section(".data_registration_gUnk_09EE7FF0"))) = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2CC4,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE8E18[] __attribute__((section(".rodata_registration_name_gUnk_09EE8E18"), aligned(1))) = "msgwin";
+
+TaskDesc gUnk_09EE8E18 __attribute__((section(".data_registration_gUnk_09EE8E18"))) = {
+    gTaskName_09EE8E18,
+    (void (*)(void*, void*))func_080A33C4,
+    func_080A3640,
+    (void (*)(void*))func_080A3848,
+    (void (*)(void*))func_080A3A04,
+    0x150,
+};
+
+const char gTaskName_09EE8E30[] __attribute__((section(".rodata_registration_name_gUnk_09EE8E30"), aligned(1))) = "sysmsgwin";
+
+TaskDesc gUnk_09EE8E30 __attribute__((section(".data_registration_gUnk_09EE8E30"))) = {
+    gTaskName_09EE8E30,
+    (void (*)(void*, void*))func_080A430C,
+    func_080A4578,
+    (void (*)(void*))func_080A4A50,
+    (void (*)(void*))func_080A4C1C,
+    0x148,
+};
+
+TaskDesc gUnk_09EE8E48 __attribute__((section(".data_registration_gUnk_09EE8E48"))) = {
+    gTaskName_09EE8E30,
+    (void (*)(void*, void*))func_080A4DCC,
+    func_080A4F14,
+    (void (*)(void*))func_080A52BC,
+    (void (*)(void*))func_080A53E4,
+    0x148,
+};
+
+const char gTaskName_09EE8EF0[] __attribute__((section(".rodata_registration_name_gUnk_09EE8EF0"), aligned(1))) = "Deckmenu2";
+
+TaskDesc gUnk_09EE8EF0 __attribute__((section(".data_registration_gUnk_09EE8EF0"))) = {
+    gTaskName_09EE8EF0,
+    (void (*)(void*, void*))func_080A584C,
+    func_080A5C9C,
+    (void (*)(void*))func_080A6500,
+    (void (*)(void*))func_080A676C,
+    0x510,
+};
+
+const char gTaskName_09EE8F30[] __attribute__((section(".rodata_registration_name_gUnk_09EE8F30"), aligned(1))) = "DarkPoint";
+
+TaskDesc gUnk_09EE8F30 __attribute__((section(".data_registration_gUnk_09EE8F30"))) = {
+    gTaskName_09EE8F30,
+    (void (*)(void*, void*))DarkPoint_0,
+    DarkPoint_1,
+    (void (*)(void*))DarkPoint_2,
+    (void (*)(void*))DarkPoint_3,
+    0x10,
+};
+
+WorldSelAnim gUnk_09EE8E60[30] __attribute__((section(".rodata_card_ui_gUnk_09EE8E60"))) = {
+    { 0, 10, { 0, 0 } },
+    { 1, 6, { 0, 0 } },
+    { 2, 4, { 0, 0 } },
+    { 3, 4, { 0, 0 } },
+    { 4, 4, { 0, 0 } },
+    { 5, 4, { 0, 0 } },
+    { 6, 4, { 0, 0 } },
+    { 7, 4, { 0, 0 } },
+    { 8, 4, { 0, 0 } },
+    { 9, 4, { 0, 0 } },
+    { 10, 4, { 0, 0 } },
+    { 11, 4, { 0, 0 } },
+    { 12, 4, { 0, 0 } },
+    { 13, 4, { 0, 0 } },
+    { 14, 6, { 0, 0 } },
+    { 15, 10, { 0, 0 } },
+    { 14, 6, { 0, 0 } },
+    { 13, 4, { 0, 0 } },
+    { 12, 4, { 0, 0 } },
+    { 11, 4, { 0, 0 } },
+    { 10, 4, { 0, 0 } },
+    { 9, 4, { 0, 0 } },
+    { 8, 4, { 0, 0 } },
+    { 7, 4, { 0, 0 } },
+    { 6, 4, { 0, 0 } },
+    { 5, 4, { 0, 0 } },
+    { 4, 4, { 0, 0 } },
+    { 3, 4, { 0, 0 } },
+    { 2, 4, { 0, 0 } },
+    { 1, 6, { 0, 0 } },
+};
+
+u16 gUnk_09EE48F4[47] __attribute__((section(".rodata_card_ui_gUnk_09EE48F4"))) = {
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 53,
 };

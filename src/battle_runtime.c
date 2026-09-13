@@ -798,7 +798,7 @@ void _08019CB4(void) {
 #ifdef VERSION_EU
                     gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72C10, 0);
 #else
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gUnk_09EE7804, 0);
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], &gUnk_09EE7804, 0);
 #endif
                     gBtlWork->unk_068 |= 0x4000000ULL;
                     gBtlWork->unk_068 |= 0x2000ULL;
@@ -807,7 +807,7 @@ void _08019CB4(void) {
 #ifdef VERSION_EU
                     if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)gUnkEu_09F72C10)) {
 #else
-                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)gUnk_09EE7804)) {
+                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)&gUnk_09EE7804)) {
 #endif
                         break;
                     }

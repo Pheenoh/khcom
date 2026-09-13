@@ -3037,26 +3037,5 @@ extern u8 gUnk_0984AFB8[];
 extern u8 gUnk_0984AFD8[];
 extern u8 gUnk_09A3C89C[];
 extern u8 gUnk_09D69274[];
-extern u8 gUnk_09EDE790[];
-extern u8 gUnk_09EDF1C0[];
-extern u8 gUnk_09EDF2D0[];
-extern u8 gUnk_09EDF308[];
-extern u8 gUnk_09EDF320[];
-extern u8 gUnk_09EE00F4[];
-extern u8 gUnk_09EE10E0[];
-extern void* gUnk_09EE14D4[];
-extern u8 gUnk_09EE150C[];
-extern u8 gUnk_09EE9450[];
-extern u8 gUnk_09EE94B4[];
-extern u8 gUnk_09EE94C8[];
-extern u8 gUnk_09EEE268[];
-extern u8 gUnk_09EEE284[];
-extern u8 gUnk_09EEE36C[];
-extern u8 gUnk_09EEE574[];
-extern u8 gUnk_09EEFBB8[];
-extern u8 gUnk_09EF0034[];
-extern u8 gUnk_09EF04FC[];
-extern u8 gUnk_09EF602C[];
-extern u8 gUnk_09EF6078[];
 
 #endif

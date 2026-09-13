@@ -2315,4 +2315,87 @@ extern AnimHeader* gUnk_09EF6844[1];
 extern void* gUnk_09EF6848[1];
 extern AnimHeader* gUnk_09EF684C[1];
 
+#ifndef VERSION_EU
+extern void* gUnk_09EE14D4[14];
+extern AnimHeader* gUnk_09EE150C[5];
+#endif
+extern void* gUnk_09EFABB0[99];
+extern AnimHeader* gUnk_09EFAD3C[14];
+extern void* gUnk_09EFAD74[18];
+extern AnimHeader* gUnk_09EFADBC[2];
+extern void* gUnk_09EFADC4[22];
+extern AnimHeader* gUnk_09EFAE1C[14];
+extern void* gUnk_09EFAE54[22];
+extern AnimHeader* gUnk_09EFAEAC[14];
+extern void* gUnk_09EFAEF8[9];
+extern AnimHeader* gUnk_09EFAF1C[2];
+extern void* gUnk_09EFAF24[11];
+extern AnimHeader* gUnk_09EFAF50[4];
+extern void* gUnk_09EFB840[94];
+extern AnimHeader* gUnk_09EFB9B8[5];
+extern void* gUnk_09EFBBBC[12];
+extern AnimHeader* gUnk_09EFBBEC[21];
+extern void* gUnk_09EFBF40[5];
+extern AnimHeader* gUnk_09EFBF54[2];
+extern void* gUnk_09EFBF5C[1];
+extern AnimHeader* gUnk_09EFBF60[1];
+extern void* gUnk_09EFBF64[24];
+extern AnimHeader* gUnk_09EFBFC4[6];
+
+#ifdef VERSION_JP
+extern void* gUnk_09EFB9CC[63];
+#else
+extern void* gUnk_09EFB9CC[66];
+#endif
+extern AnimHeader* gUnk_09EFBAD4[5];
+
+extern void* gUnk_09EDE790[7];
+extern void* gUnk_09EDE7AC;
+extern void* gUnk_09EDF1C0[12];
+extern void* gUnk_09EDF1F0;
+extern void* gUnk_09EDF1F4;
+extern void* gUnk_09EDF2D0[10];
+extern void* gUnk_09EDF2F8;
+extern void* gUnk_09EDF308[4];
+extern void* gUnk_09EDF318;
+extern void* gUnk_09EDF320[4];
+extern void* gUnk_09EDF330;
+extern void* gUnk_09EE00F4[7];
+extern void* gUnk_09EE0110;
+extern void* gUnk_09EE10E0[1];
+extern void* gUnk_09EE10E4;
+extern void* gUnk_09EE9450[1];
+extern void* gUnk_09EE9454;
+extern void* gUnk_09EE94B4[1];
+extern void* gUnk_09EE94B8;
+extern void* gUnk_09EE94C8[1];
+extern void* gUnk_09EE94CC;
+extern void* gUnk_09EEE268[3];
+extern void* gUnk_09EEE274;
+extern void* gUnk_09EEE284[3];
+extern void* gUnk_09EEE290;
+extern void* gUnk_09EEE36C[19];
+extern void* gUnk_09EEE3B8;
+extern void* gUnk_09EEE574[4];
+extern void* gUnk_09EEE584;
+extern void* gUnk_09EEFBB8[4];
+extern void* gUnk_09EEFBC8;
+extern void* gUnk_09EF0034[3];
+extern void* gUnk_09EF0040;
+extern void* gUnk_09EF0044;
+extern void* gUnk_09EF0048;
+extern void* gUnk_09EF004C;
+extern void* gUnk_09EF0050;
+extern void* gUnk_09EF04FC[1];
+extern void* gUnk_09EF0500;
+extern void* gUnk_09EF0504;
+extern void* gUnk_09EF0508;
+extern void* gUnk_09EF050C;
+extern void* gUnk_09EF602C[10];
+extern void* gUnk_09EF6054;
+extern void* gUnk_09EF6058;
+extern void* gUnk_09EF605C;
+extern void* gUnk_09EF6078[12];
+extern void* gUnk_09EF60A8;
+
 #endif
