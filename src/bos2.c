@@ -2866,23 +2866,28 @@ void func_080BE478(u8 a, JfMajinWork* work) {
     }
 }
 
-#ifdef NON_MATCHING
+#define GET_ACTOR_POSITION(actor, x, y, z) do { \
+    (x) = (actor)->unk_004; \
+    (y) = (actor)->unk_008; \
+    (z) = (actor)->unk_00C; \
+} while (0)
+
 void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     JfWork* arg = p;
     s32 x;
-    s32 y;
+    union {
+        s32 coordinate;
+        BtlWork* bounds;
+    } y;
     s32 z;
 
-
     work->unk_00 = arg;
-    x = arg->unk_000.unk_004;
-    y = arg->unk_000.unk_008;
-    z = arg->unk_000.unk_00C;
+    GET_ACTOR_POSITION(&arg->unk_000, x, y.coordinate, z);
     work->unk_48 = 0;
     work->unk_46 = 0;
     work->unk_44 = 0;
     work->unk_50 = x;
-    work->unk_54 = y;
+    work->unk_54 = y.coordinate;
     work->unk_58 = z;
     work->unk_5C = 0;
     work->unk_5E = gUnk_0203ACC4;
@@ -2912,17 +2917,18 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     work->unk_34 = 0x12600;
     work->unk_40 = 0;
     work->unk_3C = 0;
+    x = 0x308;
     AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->anim, 1, 1);
     work->gfx = AnimGetGfx(&work->anim);
-    ScrollBgMapTo(1, ((gBtlWork->unk_000 - arg->unk_000.unk_004) >> 8) + 0x308,
-                  ((gBtlWork->unk_004 - (arg->unk_000.unk_008 + arg->unk_000.unk_00C)) >> 8) + 0x126);
+    y.bounds = gBtlWork;
+    ScrollBgMapTo(1, ((y.bounds->unk_000 - arg->unk_000.unk_004) >> 8) + x,
+                  ((z = y.bounds->unk_004 - (arg->unk_000.unk_008 + arg->unk_000.unk_00C)) >> 8) + 0x126);
     TaskPoolInit(&work->unk_6C, 2);
     TaskCreate(&work->unk_6C, gUnk_09EF2A74, work->unk_00);
 }
-#else
-INCLUDE_ASM("bos2/task_bos_jf_majin_0.s");
-#endif
+
+#undef GET_ACTOR_POSITION
 
 u8 task_bos_jf_majin_1(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
