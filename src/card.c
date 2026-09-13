@@ -32250,8 +32250,7 @@ u32 func_080AA764(u16* data) {
     return sum;
 }
 
-#ifdef NON_MATCHING
-s32 func_080AA77C(u8* work, u16 key) {
+s32 func_080AA77C(UnkStruct_0808C940* w, u16 key) {
     u8* tbl;
     u8 idx;
     u8 r0;
@@ -32262,42 +32261,54 @@ s32 func_080AA77C(u8* work, u16 key) {
     s8 d;
     s8 n;
     s32 ofs;
+    s32 k;
+    u8* p;
 
-    tbl = *(u8**)&work[0x4CC] + *(u16*)&work[0x6CC] * 32;
-    idx = *(s16*)&work[0x6D0] * 5 + (u8)*(s16*)&work[0x6D2];
-    row0 = *(s16*)&work[0x6D0];
-    r0 = *(s16*)&work[0x6D0];
-    c0 = *(s16*)&work[0x6D2];
+    idx = w->unk_6D0 * 5 + (u8)w->unk_6D2;
+    tbl = (u8*)&w->unk_4CC[w->unk_6CC];
+    row0 = w->unk_6D0;
+    r0 = w->unk_6D0;
+    c0 = w->unk_6D2;
 
-    if (*(u16*)&tbl[idx * 2] != 0) {
+    if (*(u16*)&tbl[idx << 1] != 0) {
         return 1;
     }
 
     switch (key) {
     case 0x40:
         do {
-            *(s16*)&work[0x6D2] = (*(s16*)&work[0x6D2] > 0) ? *(s16*)&work[0x6D2] - 1 : 4;
-            idx = *(s16*)&work[0x6D0] * 5 + (u8)*(s16*)&work[0x6D2];
+            if (w->unk_6D2 > 0) {
+                w->unk_6D2 = w->unk_6D2 - 1;
+            } else {
+                w->unk_6D2 = 4;
+            }
 
-            if (*(s16*)&work[0x6D0] == r0 && *(s16*)&work[0x6D2] == c0) {
+            idx = w->unk_6D0 * 5 + (u8)w->unk_6D2;
+
+            if (w->unk_6D0 == r0 && w->unk_6D2 == c0) {
                 return 0;
             }
-        } while (*(u16*)&tbl[ofs = idx * 2] == 0);
+        } while (*(u16*)&tbl[idx << 1] == 0);
         break;
     case 0x80:
         do {
-            *(s16*)&work[0x6D2] = (*(s16*)&work[0x6D2] > 3) ? 0 : *(s16*)&work[0x6D2] + 1;
-            idx = *(s16*)&work[0x6D0] * 5 + (u8)*(s16*)&work[0x6D2];
+            if (w->unk_6D2 <= 3) {
+                w->unk_6D2 = w->unk_6D2 + 1;
+            } else {
+                w->unk_6D2 = 0;
+            }
 
-            if (*(s16*)&work[0x6D0] == r0 && *(s16*)&work[0x6D2] == c0) {
+            idx = w->unk_6D0 * 5 + (u8)w->unk_6D2;
+
+            if (w->unk_6D0 == r0 && w->unk_6D2 == c0) {
                 return 0;
             }
-        } while (*(u16*)&tbl[ofs = idx * 2] == 0);
+        } while (*(u16*)&tbl[idx << 1] == 0);
         break;
     case 0x20:
-        if (*(u16*)&tbl[*(s16*)&work[0x6D2] * 2] != 0) {
+        if (*(u16*)&tbl[w->unk_6D2 << 1] != 0) {
             if ((s16)row0 > 0) {
-                *(s16*)&work[0x6D0] = row0 - 1;
+                w->unk_6D0 = row0 - 1;
             }
 
             return 1;
@@ -32310,13 +32321,17 @@ s32 func_080AA77C(u8* work, u16 key) {
         }
 
         if (sum == 0) {
-            *(s16*)&work[0x6D0] = 1;
+            w->unk_6D0 = 1;
             return 0;
         }
 
+        p = (u8*)&w->unk_6D2;
         d = -1;
-        n = (u8)*(s16*)&work[0x6D2] - 1;
+        k = *p + d;
+
         for (;;) {
+            n = k;
+
             if (n < 0) {
                 n = 0;
             }
@@ -32325,7 +32340,9 @@ s32 func_080AA77C(u8* work, u16 key) {
                 n = 4;
             }
 
-            if (*(u16*)&tbl[n * 2] != 0) {
+            ofs = n;
+
+            if (*(u16*)&tbl[ofs *= 2] != 0) {
                 break;
             }
 
@@ -32336,15 +32353,15 @@ s32 func_080AA77C(u8* work, u16 key) {
                 d = -d;
             }
 
-            n = (u8)*(s16*)&work[0x6D2] + d;
+            k = *p + d;
         }
 
-        *(s16*)&work[0x6D2] = n;
+        w->unk_6D2 = n;
         break;
     case 0x10:
-        if (*(u16*)&tbl[(*(s16*)&work[0x6D2] + 5) * 2] != 0) {
+        if (*(u16*)&tbl[(w->unk_6D2 + 5) << 1] != 0) {
             if ((s16)row0 <= 0) {
-                *(s16*)&work[0x6D0] = row0 + 1;
+                w->unk_6D0 = row0 + 1;
             }
 
             return 1;
@@ -32352,18 +32369,22 @@ s32 func_080AA77C(u8* work, u16 key) {
 
         sum = 0;
 
-        for (i = 0; i < 5; i++) {
-            sum += *(u16*)&tbl[(i + 5) * 2];
+        for (i = 5; i < 10; i++) {
+            sum += *(u16*)&tbl[i * 2];
         }
 
         if (sum == 0) {
-            *(s16*)&work[0x6D0] = 0;
+            w->unk_6D0 = 0;
             return 0;
         }
 
+        p = (u8*)&w->unk_6D2;
         d = -1;
-        n = (u8)*(s16*)&work[0x6D2] - 1;
+        k = *p + d;
+
         for (;;) {
+            n = k;
+
             if (n < 0) {
                 n = 0;
             }
@@ -32372,7 +32393,10 @@ s32 func_080AA77C(u8* work, u16 key) {
                 n = 4;
             }
 
-            if (*(u16*)&tbl[(n + 5) * 2] != 0) {
+            ofs = n;
+            ofs *= 2;
+
+            if (*(u16*)&tbl[ofs += 10] != 0) {
                 break;
             }
 
@@ -32383,41 +32407,38 @@ s32 func_080AA77C(u8* work, u16 key) {
                 d = -d;
             }
 
-            n = (u8)*(s16*)&work[0x6D2] + d;
+            k = *p + d;
         }
 
-        *(s16*)&work[0x6D2] = n;
+        w->unk_6D2 = n;
         break;
     case 0:
         do {
-            if (*(s16*)&work[0x6D2] > 3) {
-                *(s16*)&work[0x6D2] = 0;
+            if (w->unk_6D2 <= 3) {
+                w->unk_6D2 = w->unk_6D2 + 1;
             } else {
-                *(s16*)&work[0x6D2] = *(s16*)&work[0x6D2] + 1;
+                w->unk_6D2 = 0;
             }
 
-            idx = *(s16*)&work[0x6D0] * 5 + (u8)*(s16*)&work[0x6D2];
+            idx = w->unk_6D0 * 5 + (u8)w->unk_6D2;
 
-            if (*(s16*)&work[0x6D0] == r0 && *(s16*)&work[0x6D2] == c0) {
-                if (*(s16*)&work[0x6D0] > 0) {
-                    *(s16*)&work[0x6D0] = 0;
+            if (w->unk_6D0 == r0 && w->unk_6D2 == c0) {
+                if (w->unk_6D0 <= 0) {
+                    w->unk_6D0 = w->unk_6D0 + 1;
                 } else {
-                    *(s16*)&work[0x6D0] = *(s16*)&work[0x6D0] + 1;
+                    w->unk_6D0 = 0;
                 }
 
                 if (func_080AA764((u16*)tbl) == 0) {
                     return 0;
                 }
             }
-        } while (*(u16*)&tbl[ofs = idx * 2] == 0);
+        } while (*(u16*)&tbl[idx << 1] == 0);
         break;
     }
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080AA77C.s");
-#endif
 
 void func_080AAA38(u8* work) {
     u16 i;

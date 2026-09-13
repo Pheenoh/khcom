@@ -548,7 +548,8 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_6A4[0x14];
     s32 unk_6B8;
     s32 unk_6BC;
-    u8 unk_6C0[0xE];
+    u8 unk_6C0[0xC];
+    u16 unk_6CC;
     u16 unk_6CE;
     s16 unk_6D0;
     s16 unk_6D2;
