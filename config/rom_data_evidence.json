@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "tables": [
+    {
+      "name": "gUnk_09ECEB74",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 63; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9eceb74",
+      "targets": {
+        "jp": "0x9ea6e60",
+        "eu": "0x9f3eaa8"
+      },
+      "size": 2016,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ECF354",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 163; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ecf354",
+      "targets": {
+        "jp": "0x9ea7640",
+        "eu": "0x9f3f288"
+      },
+      "size": 5216,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED07B4",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 18; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed07b4",
+      "targets": {
+        "jp": "0x9ea8aa0",
+        "eu": "0x9f406e8"
+      },
+      "size": 576,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED09F4",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 108; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed09f4",
+      "targets": {
+        "jp": "0x9ea8ce0",
+        "eu": "0x9f40928"
+      },
+      "size": 3456,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED1774",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 390; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed1774",
+      "targets": {
+        "jp": "0x9ea9a60",
+        "eu": "0x9f416a8"
+      },
+      "size": 12480,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED4834",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 168; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed4834",
+      "targets": {
+        "jp": "0x9eacb20",
+        "eu": "0x9f44768"
+      },
+      "size": 5376,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED5D34",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 206; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed5d34",
+      "targets": {
+        "jp": "0x9eae020",
+        "eu": "0x9f45c68"
+      },
+      "size": 6592,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED76F4",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 5; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed76f4",
+      "targets": {
+        "jp": "0x9eaf9e0",
+        "eu": "0x9f47628"
+      },
+      "size": 160,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED76F4_us_jp_tail",
+      "provenance": "Final two entries of the seven-entry US/JP ETC list, absent from the five-entry EU list. The entry filenames are b_hpgag.aob and b_hpgag_e.aob; scalar bytes and filename identities match US/JP.",
+      "us": "0x9ed7794",
+      "targets": {
+        "jp": "0x9eafa80"
+      },
+      "size": 64,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED77D4",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 88; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed77d4",
+      "targets": {
+        "jp": "0x9eafac0",
+        "eu": "0x9f476c8"
+      },
+      "size": 2816,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "name": "gUnk_09ED82D4",
+      "provenance": "ObjDef arrays are indexed by gChkObjEntries in src/mode_chkobj.c:1530; consumer count 27; include/chkobj.h establishes 32-byte records and six pointer fields. Full scalar bytes and both filename identities agree across these regional records. Regional starts are existing consumer-referenced symbols.",
+      "us": "0x9ed82d4",
+      "targets": {
+        "jp": "0x9eb05c0",
+        "eu": "0x9f481c8"
+      },
+      "size": 864,
+      "stride": 32,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        16,
+        20,
+        24
+      ]
+    }
+  ]
+}

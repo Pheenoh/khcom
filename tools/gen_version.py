@@ -25,6 +25,8 @@ import re
 import struct
 from pathlib import Path
 
+from rom_data_evidence import data_symbol_map, load_evidence
+
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
 ROM_END = 0x0A000000
@@ -269,6 +271,10 @@ TARGET_ANCHORS = {
         0x090358D0: 0x09008D6C,
         0x08EE78E4: 0x08EDADEC,
     },
+}
+
+TARGET_ABSENT_SYMBOLS = {
+    "eu": {"gUnk_09EE150C"},
 }
 
 TARGET_ONLY_SYMBOLS = {
@@ -1303,14 +1309,15 @@ def symbol_map(rows, us, ot):
     return res
 
 
-def translator(res):
+def translator(res, provenance=None):
     keys = sorted(res)
+    provenance = provenance or {}
 
     def tr(a):
         if a < 0x02000000 or a >= 0x0E000000:
             return a, "const"
         if a in res:
-            return res[a], "exact"
+            return res[a], "data" if a in provenance else "exact"
         i = bisect.bisect_left(keys, a)
         lo = keys[i - 1] if i > 0 else None
         hi = keys[i] if i < len(keys) else None
@@ -1323,6 +1330,31 @@ def translator(res):
         return a + res[lo] - lo, "interp?"
 
     return tr
+
+
+def regional_symbols(lines, tr, target_only=None, absent=()):
+    target_only = target_only or {}
+    absent = set(absent)
+    if absent & target_only.keys():
+        raise ValueError('a regional symbol cannot be both present and absent')
+    out, uncertain = [], []
+    for line in lines:
+        stripped = line.split("#")[0].strip()
+        if not stripped:
+            out.append(line)
+            continue
+        nm, a = (x.strip() for x in stripped.split("="))
+        if nm in absent:
+            continue
+        b, how = tr(int(a, 16))
+        if b is None:
+            b, how = int(a, 16), "unknown"
+        if how in ("interp?", "unknown"):
+            uncertain.append((nm, how))
+        out.append(f"{nm} = {b:#010x}")
+    for nm, a in target_only.items():
+        out.append(f"{nm} = {a:#010x}")
+    return out, uncertain
 
 
 def main():
@@ -1382,7 +1414,13 @@ def main():
         res = symbol_map(rows, us, ot)
         res.update(anchors)
         tr = translator(res)
+    evidence = load_evidence("config/rom_data_evidence.json")
+    data, provenance = data_symbol_map(evidence, ver, us, ot, res, CODE_HI, code_end)
+    res.update(data)
+    tr = translator(res, provenance)
     print(f"{ver}: code region {rows[0][3]:#x} .. {code_end:#x} ({how_end})")
+    if data:
+        print(f"  data pointer evidence: {len(data)} directly derived targets")
 
     present = sorted((r for r in rows if r[5]), key=lambda r: r[3])
     gaps = {}
@@ -1396,21 +1434,9 @@ def main():
             kind = "pool"
         gaps[end] = (b[3] - end, kind, a, b, clean(a))
 
-    out, uncertain = [], []
-    for line in Path("config/us/symbols.txt").read_text().splitlines():
-        stripped = line.split("#")[0].strip()
-        if not stripped:
-            out.append(line)
-            continue
-        nm, a = (x.strip() for x in stripped.split("="))
-        b, how = tr(int(a, 16))
-        if b is None:
-            b, how = int(a, 16), "unknown"
-        if how in ("interp?", "unknown"):
-            uncertain.append((nm, how))
-        out.append(f"{nm} = {b:#010x}")
-    for nm, a in TARGET_ONLY_SYMBOLS.get(ver, {}).items():
-        out.append(f"{nm} = {a:#010x}")
+    out, uncertain = regional_symbols(
+        Path("config/us/symbols.txt").read_text().splitlines(), tr,
+        TARGET_ONLY_SYMBOLS.get(ver, {}), TARGET_ABSENT_SYMBOLS.get(ver, ()))
     Path(f"config/{ver}/symbols.txt").write_text("\n".join(out) + "\n")
     print(f"  symbols.txt: {len(out)} lines, {len(uncertain)} uncertain")
 
