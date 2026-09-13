@@ -1,3 +1,4 @@
+#include "map_index_assets.h"
 #include "registration_data.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -4053,7 +4054,7 @@ u32 func_080DF804(u8 index) {
 #ifdef VERSION_EU
     return (u32)eu_0805E924((void*)gUnk_09EF69FC[index]);
 #else
-    return gUnk_09EF69FC[index];
+    return (u32)gUnk_09EF69FC[index];
 #endif
 }
 
@@ -4624,4 +4625,102 @@ Mode gModeMapChk __attribute__((section(".data_registration_gModeMapChk"))) = {
     (void (*)(s32))Mode_MapChk_0,
     (void (*)(void))Mode_MapChk_1,
     (void (*)(void))Mode_MapChk_2,
+};
+
+#ifdef VERSION_EU
+LocalizedText gMapWorldNameEu_088926FC __attribute__((section(".data_gMapWorldNameEu_088926FC"))) = {{gMapWorldNameTextEu_08892680, gMapWorldNameTextEu_08892696, gMapWorldNameTextEu_088926AC, gMapWorldNameTextEu_088926C9, gMapWorldNameTextEu_088926E0}};
+#endif
+
+void (*const gUnk_09EF69A8[10])(MapChkWork*) __attribute__((section(".rodata_gUnk_09EF69A8"))) = {
+    func_080DE2A4,
+    func_080DE2FC,
+    func_080DE35C,
+    func_080DE50C,
+    func_080DE3E8,
+    func_080DE4A4,
+    func_080DE534,
+    func_080DE5B0,
+    func_080DE62C,
+    func_080DE6A8,
+};
+
+const u8 gUnk_09EF69E0[13] __attribute__((section(".rodata_gUnk_09EF69E0"))) = {
+    12,
+    3,
+    4,
+    6,
+    1,
+    5,
+    7,
+    8,
+    10,
+    9,
+    11,
+    13,
+    12,
+};
+
+const u8 gUnk_09EF69EE[13] __attribute__((section(".rodata_gUnk_09EF69EE"))) = {
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+};
+
+MapNameText* gUnk_09EF69FC[14] __attribute__((section(".data_gUnk_09EF69FC"))) = {
+#if defined(VERSION_US)
+    gMapWorldNameTextUs_0815B57A,
+    gUnk_0815A56C,
+    gUnk_0815A5AA,
+    gUnk_0815A54A,
+    gUnk_0815A534,
+    gUnk_0815A59A,
+    gUnk_0815A57C,
+    gUnk_0815A5BE,
+    gUnk_0815A5D4,
+    gUnk_0815A62A,
+    gUnk_0815A518,
+    gUnk_0815A60E,
+    gUnk_0815A64A,
+    gUnk_0815A5F2,
+#elif defined(VERSION_JP)
+    gMapWorldNameTextJp_0814F2E0,
+    gUnkJp_0814E590,
+    gUnkJp_0814E5E4,
+    gUnkJp_0814E5CC,
+    gUnkJp_0814E59C,
+    gUnkJp_0814E5AC,
+    gUnkJp_0814E5B8,
+    gUnkJp_0814E5F4,
+    gUnkJp_0814E618,
+    gUnkJp_0814E62C,
+    gUnkJp_0814E57C,
+    gUnkJp_0814E644,
+    gUnkJp_0814E658,
+    gUnkJp_0814E604,
+#elif defined(VERSION_EU)
+    &gMapWorldNameEu_088926FC,
+    &gUnkEu_0888E3A0,
+    &gUnkEu_0888E578,
+    &gUnkEu_0888E530,
+    &gUnkEu_0888E410,
+    &gUnkEu_0888E450,
+    &gUnkEu_0888E4C0,
+    &gUnkEu_0888E5DC,
+    &gUnkEu_0888E6BC,
+    &gUnkEu_0888E72C,
+    &gUnkEu_0888E364,
+    &gUnkEu_0888E78C,
+    &gUnkEu_0888E804,
+    &gUnkEu_0888E654,
+#endif
 };

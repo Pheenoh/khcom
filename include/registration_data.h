@@ -726,4 +726,7 @@ extern const char gModeNameEvent[];
 extern Mode gUnk_09EE273C;
 extern Mode gUnk_09EE274C;
 
+extern Mode gUnk_09EE4BA0;
+extern const char gUnk_090359BC[];
+
 #endif

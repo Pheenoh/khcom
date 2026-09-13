@@ -915,7 +915,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8455,7 +8457,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",

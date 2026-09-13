@@ -1,3 +1,4 @@
+#include "card_selection_data.h"
 #include "event_index_data.h"
 #include "card_def_data.h"
 #include "battle_localized_data.h"
@@ -126,7 +127,6 @@ extern u8 gUnk_0909FDCA[];
 extern u8 gUnk_090A0C86[];
 extern u8 gUnk_09507F38[];
 extern u8 gUnk_09507F58[];
-extern u16 gUnk_09EE4BE0[];
 typedef struct CardListWork {
     ListPool cards;
     struct UnkStruct_0809C534* selectedCard;
@@ -1247,7 +1247,6 @@ extern u8 gUnk_08C8C824[];
 extern u8 gUnk_08F68A84[];
 extern u8 gUnk_08EF4384[];
 extern u8 gUnk_0905F03C[];
-extern u8 gUnk_09EE4BB0[];
 extern u8 gUnk_090A583E[];
 extern u8 gUnk_090A418E[];
 extern u8 gUnk_090A44C4[];

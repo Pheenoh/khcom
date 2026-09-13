@@ -1,0 +1,461 @@
+{
+  "version": 1,
+  "provenance": {
+    "bounds": "The two world-level offsets contain 14 meaningful native bytes each and end at independently referenced next arrays. The world event array contains 14 nonzero or 0xFF entries followed by two zero alignment bytes, which are not owned here. The random world selector explicitly uses modulo 13; both 13-byte world selectors retain their independent physical bases and leave their one-byte zero tails outside their object extents. Fourteen actual world-text pointers end at the level-offset table. The native map-generation dispatch contains 14 distinct boolean callbacks; the script interpreter has exactly two command handlers. The map-check dispatcher has 10 callback slots and ends at its existing TaskDesc name. Native function targets and all regional literal references are checked separately.",
+    "types": "The map-generation callbacks return only 0 or 1 and have no direct source callers. Their definitions use u8, matching the established u8 function-pointer table and eliminating incompatible callback types. Existing body bytes and relocations must remain unchanged. World names use the established version-native MapNameText rather than integer addresses."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69A8",
+          "address": "0x9ef69a8",
+          "size": 40,
+          "sha256": "09fc7b695415eee0a71d4c5ebfbf626897d8bd08c1c9d37c4d7045e161daed4e",
+          "objects": [
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 0,
+              "size": 40
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69E0",
+          "address": "0x9ef69e0",
+          "size": 13,
+          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "objects": [
+            {
+              "name": "gUnk_09EF69E0",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69EE",
+          "address": "0x9ef69ee",
+          "size": 13,
+          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
+          "objects": [
+            {
+              "name": "gUnk_09EF69EE",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".data_gUnk_09EF69FC",
+          "address": "0x9ef69fc",
+          "size": 56,
+          "sha256": "31b91472ac6c6bcddff468aeff3b24013ae43c54359aeb0d870b67d83fa912c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF69FC",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A34",
+          "address": "0x9ef6a34",
+          "size": 14,
+          "sha256": "035996d309210e73cd7dd8c2bbe180bce41b4b91efce53092ab7415070eb7b7b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A42",
+          "address": "0x9ef6a42",
+          "size": 14,
+          "sha256": "7f23f21dac6419475e00216388968540cc62c5f16490845ae71dc325682ffead",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A42",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A50",
+          "address": "0x9ef6a50",
+          "size": 56,
+          "sha256": "2f21733b62265f31b1ed79ff077cc0a2bdfb9237fe12464875d84523faa8d1b1",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A50",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A88",
+          "address": "0x9ef6a88",
+          "size": 8,
+          "sha256": "e1336b9c164a04339a4a2a9410a9c533a851310d8325e495aa2ef2a1f445becc",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A88",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6AB0",
+          "address": "0x9ef6ab0",
+          "size": 14,
+          "sha256": "dffb90d0d7338bece8b70cd51ff811e66efdd834dda1727649b42a5639c09e61",
+          "objects": [
+            {
+              "name": "gUnk_09EF6AB0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gMapWorldNameTextUs_0815B57A",
+          "address": "0x815b57a",
+          "size": 44,
+          "encoding": "utf16le"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69A8",
+          "address": "0x9ecdd94",
+          "size": 40,
+          "sha256": "69619bbefbfba766a0d287483af0280aee55c8f9f19f6296e4a29167d2c7f371",
+          "objects": [
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 0,
+              "size": 40
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69E0",
+          "address": "0x9ecddcc",
+          "size": 13,
+          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "objects": [
+            {
+              "name": "gUnk_09EF69E0",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69EE",
+          "address": "0x9ecddda",
+          "size": 13,
+          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
+          "objects": [
+            {
+              "name": "gUnk_09EF69EE",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".data_gUnk_09EF69FC",
+          "address": "0x9ecdde8",
+          "size": 56,
+          "sha256": "92214ca304aaf5e46967fe47f781bf5cfafe6b2fc5a9cbf09e1916bd2690ee3c",
+          "objects": [
+            {
+              "name": "gUnk_09EF69FC",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A34",
+          "address": "0x9ecde20",
+          "size": 14,
+          "sha256": "035996d309210e73cd7dd8c2bbe180bce41b4b91efce53092ab7415070eb7b7b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A42",
+          "address": "0x9ecde2e",
+          "size": 14,
+          "sha256": "7f23f21dac6419475e00216388968540cc62c5f16490845ae71dc325682ffead",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A42",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A50",
+          "address": "0x9ecde3c",
+          "size": 56,
+          "sha256": "485eef931ee4fec866963694eb22b7aeaff6574e04104956316c22389e684b82",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A50",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A88",
+          "address": "0x9ecde74",
+          "size": 8,
+          "sha256": "f92bc51cc4c14e270929cfa243a19a87464ab6e27f2e723ffe44fbc374ef97a4",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A88",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6AB0",
+          "address": "0x9ecde9c",
+          "size": 14,
+          "sha256": "dffb90d0d7338bece8b70cd51ff811e66efdd834dda1727649b42a5639c09e61",
+          "objects": [
+            {
+              "name": "gUnk_09EF6AB0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gMapWorldNameTextJp_0814F2E0",
+          "address": "0x814f2e0",
+          "size": 17,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "bos4.c",
+          "section": ".data_gMapWorldNameEu_088926FC",
+          "address": "0x88926fc",
+          "size": 20,
+          "sha256": "bd6e133583cfc69e633e7e415036e442ad4840c3aa150d28a79f413dab47ea0f",
+          "objects": [
+            {
+              "name": "gMapWorldNameEu_088926FC",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69A8",
+          "address": "0x9f82018",
+          "size": 40,
+          "sha256": "e86e502fd1e175eb2be7d359f1ea328d34bc7fbd61bdacedf308490dc41fb5f0",
+          "objects": [
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 0,
+              "size": 40
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69E0",
+          "address": "0x9f82050",
+          "size": 13,
+          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "objects": [
+            {
+              "name": "gUnk_09EF69E0",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".rodata_gUnk_09EF69EE",
+          "address": "0x9f8205e",
+          "size": 13,
+          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
+          "objects": [
+            {
+              "name": "gUnk_09EF69EE",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "bos4.c",
+          "section": ".data_gUnk_09EF69FC",
+          "address": "0x9f8206c",
+          "size": 56,
+          "sha256": "7be7a9558322ccae41980a1c82c036cae7f32f58c2b1b468f8bb18dc036146a5",
+          "objects": [
+            {
+              "name": "gUnk_09EF69FC",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A34",
+          "address": "0x9f820a4",
+          "size": 14,
+          "sha256": "035996d309210e73cd7dd8c2bbe180bce41b4b91efce53092ab7415070eb7b7b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6A42",
+          "address": "0x9f820b2",
+          "size": 14,
+          "sha256": "7f23f21dac6419475e00216388968540cc62c5f16490845ae71dc325682ffead",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A42",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A50",
+          "address": "0x9f820c0",
+          "size": 56,
+          "sha256": "c3566bcabde2ee3a7c716d89f45584150564823a750d640e12250586dbe44c9b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A50",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_gUnk_09EF6A88",
+          "address": "0x9f820f8",
+          "size": 8,
+          "sha256": "56300c2ca4d74e8c289694756bc26709b31373d2cb57e38e82fb1405236d5616",
+          "objects": [
+            {
+              "name": "gUnk_09EF6A88",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_gUnk_09EF6AB0",
+          "address": "0x9f82120",
+          "size": 14,
+          "sha256": "3e366d58da6ebe80180fd77abbbb5adef17e7aaf66b2b0956e299eed3211e98f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6AB0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gMapWorldNameTextEu_08892680",
+          "address": "0x8892680",
+          "size": 22,
+          "encoding": "singlebyte"
+        },
+        {
+          "name": "gMapWorldNameTextEu_08892696",
+          "address": "0x8892696",
+          "size": 22,
+          "encoding": "singlebyte"
+        },
+        {
+          "name": "gMapWorldNameTextEu_088926AC",
+          "address": "0x88926ac",
+          "size": 29,
+          "encoding": "singlebyte"
+        },
+        {
+          "name": "gMapWorldNameTextEu_088926C9",
+          "address": "0x88926c9",
+          "size": 23,
+          "encoding": "singlebyte"
+        },
+        {
+          "name": "gMapWorldNameTextEu_088926E0",
+          "address": "0x88926e0",
+          "size": 26,
+          "encoding": "singlebyte"
+        }
+      ]
+    }
+  }
+}

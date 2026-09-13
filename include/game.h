@@ -1,6 +1,8 @@
 #ifndef GUARD_GAME_H
 #define GUARD_GAME_H
 
+#include "map_world_text_data.h"
+
 #include "bos2_background_data.h"
 
 #include "obj_api.h"
@@ -96,7 +98,6 @@ extern UnkStruct_02039DD4* gUnk_02039DD4;
 
 
 extern u8 gUnk_0203C590[];
-extern u32 gUnk_09EF69FC[];
 extern void* gUrsulaWork;
 
 extern u8 gUnk_08B22BA8[];

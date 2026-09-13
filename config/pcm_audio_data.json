@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "provenance": {
+    "pcm": "LookupPcmPlaybackConfig iterates 12 native playback configurations until the zero identifier sentinel. The complete 13-record SoundEntry array ends at the independently indexed staff-roll Sprite table. Each record contains identifier, sample count and playback rate, consumed with their existing canonical field widths. All 156 bytes are identical in US, JP and EU; there are no resource payload bytes or fabricated padding objects."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "pcm_audio_data.c",
+          "section": ".rodata_pcm_playback_configs",
+          "address": "0x9efaa7c",
+          "size": 156,
+          "sha256": "f6c62bb0ad5d09015d5750ffb8166c4e56a1ee45e4549c2b8aef330750349796",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA7C",
+              "offset": 0,
+              "size": 156
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "pcm_audio_data.c",
+          "section": ".rodata_pcm_playback_configs",
+          "address": "0x9ed1f88",
+          "size": 156,
+          "sha256": "f6c62bb0ad5d09015d5750ffb8166c4e56a1ee45e4549c2b8aef330750349796",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA7C",
+              "offset": 0,
+              "size": 156
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "pcm_audio_data.c",
+          "section": ".rodata_pcm_playback_configs",
+          "address": "0x9f867c8",
+          "size": 156,
+          "sha256": "f6c62bb0ad5d09015d5750ffb8166c4e56a1ee45e4549c2b8aef330750349796",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA7C",
+              "offset": 0,
+              "size": 156
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

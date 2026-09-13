@@ -4,6 +4,8 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "pcm_audio_data.h"
+
 #include "staff_roll_resource_data.h"
 
 #include "animation_resource_data.h"
@@ -303,11 +305,6 @@ typedef struct SrollWork {
     u16 charQueue[0x100];
 } SrollWork;
 
-typedef struct SoundEntry {
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
-} SoundEntry;
 
 extern void* gUnk_09A54218[][2];
 extern void* gUnk_09A54374[][4];
@@ -317,7 +314,6 @@ extern SrollShift gUnk_09A54C78[];
 extern SrollMask gUnk_09A54918[][8];
 extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);
 extern void (*gUnk_09A54CDC[])(u32*, u8*, u32*, s32);
-extern const SoundEntry gUnk_09EFAA7C[];
 extern u8 gUnk_05000220[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BE4[];

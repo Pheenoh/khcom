@@ -32120,6 +32120,20 @@
         8,
         16
       ]
+    },
+    {
+      "name": "map_selection_background_blocks",
+      "provenance": "MapSelect passes gUnk_09EE4BB0 to SetBgMapBlocks with 1 by 2 blocks. The cursor index is explicitly cycled through 0..4 and its row is XORed with 1, proving the separate s16[5] and s16[2] coordinate arrays. func_08093E34 loops i from a to a+9 and indexes gUnk_09EE4BE0[i-a], proving ten u16 tile destinations. The WORLDSELECT Mode is independently identified by its exact ASCII name and the unique ordered triple WORLDSELECT_0/1/2 callbacks in each native ROM.",
+      "us": "0x9ee4bb0",
+      "targets": {
+        "jp": "0x9ebc208",
+        "eu": "0x9f6ff58"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

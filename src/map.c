@@ -4044,7 +4044,7 @@ s32 func_080E6A80(s16 x, s16 y, u16 n) {
     return 1;
 }
 
-s32 func_080E6B24(UnkStruct_080DFF1C* p) {
+u8 func_080E6B24(UnkStruct_080DFF1C* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 2;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
     s16 rx = GetRandom() % w;
@@ -4071,7 +4071,7 @@ s32 func_080E6B24(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E6C2C(UnkStruct_080DFF1C* p) {
+u8 func_080E6C2C(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4117,7 +4117,7 @@ s32 func_080E6C2C(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E6DB0(UnkStruct_080DFF1C* p) {
+u8 func_080E6DB0(UnkStruct_080DFF1C* p) {
     s16 x;
     s16 y;
     s16 cy;
@@ -4158,7 +4158,7 @@ s32 func_080E6DB0(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E6F04(UnkStruct_080DFF1C* p) {
+u8 func_080E6F04(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4204,7 +4204,7 @@ s32 func_080E6F04(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7088(UnkStruct_080DFF1C* p) {
+u8 func_080E7088(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4250,7 +4250,7 @@ s32 func_080E7088(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E71F0(UnkStruct_080DFF1C* p) {
+u8 func_080E71F0(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4296,7 +4296,7 @@ s32 func_080E71F0(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7358(UnkStruct_080DFF1C* p) {
+u8 func_080E7358(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4340,7 +4340,7 @@ s32 func_080E7358(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E74D8(UnkStruct_080DFF1C* p) {
+u8 func_080E74D8(UnkStruct_080DFF1C* p) {
     s16 x;
     s16 y;
     s16 cy;
@@ -4381,7 +4381,7 @@ s32 func_080E74D8(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7620(UnkStruct_080DFF1C* p) {
+u8 func_080E7620(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4427,7 +4427,7 @@ s32 func_080E7620(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E77A4(UnkStruct_080DFF1C* p) {
+u8 func_080E77A4(UnkStruct_080DFF1C* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -4473,7 +4473,7 @@ s32 func_080E77A4(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7928(UnkStruct_080DFF1C* p) {
+u8 func_080E7928(UnkStruct_080DFF1C* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 3;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 3;
     s16 rx = GetRandom() % w;
@@ -4500,7 +4500,7 @@ s32 func_080E7928(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7A30(UnkStruct_080DFF1C* p) {
+u8 func_080E7A30(UnkStruct_080DFF1C* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 4;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 4;
     s16 rx = GetRandom() % w;
@@ -4527,7 +4527,7 @@ s32 func_080E7A30(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7B38(UnkStruct_080DFF1C* p) {
+u8 func_080E7B38(UnkStruct_080DFF1C* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 5;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 5;
     s16 rx = GetRandom() % w;
@@ -4554,7 +4554,7 @@ s32 func_080E7B38(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-s32 func_080E7C40(UnkStruct_080DFF1C* p) {
+u8 func_080E7C40(UnkStruct_080DFF1C* p) {
     UnkStruct_02034F20* e = func_080E54A0(0);
     u16 w = e->unk_02 - e->unk_00 - 2;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
@@ -15588,4 +15588,109 @@ TaskDesc gUnk_09EF6F9C __attribute__((section(".data_registration_gUnk_09EF6F9C"
     (void (*)(void*))func_080F77D4,
     (void (*)(void*))func_080F7860,
     0x28,
+};
+
+const u8 gUnk_09EF6A34[14] __attribute__((section(".rodata_gUnk_09EF6A34"))) = {
+    40,
+    40,
+    50,
+    30,
+    20,
+    80,
+    60,
+    70,
+    100,
+    0,
+    10,
+    90,
+    110,
+    40,
+};
+
+const u8 gUnk_09EF6A42[14] __attribute__((section(".rodata_gUnk_09EF6A42"))) = {
+    40,
+    40,
+    50,
+    30,
+    20,
+    80,
+    60,
+    70,
+    134,
+    0,
+    10,
+    90,
+    110,
+    40,
+};
+
+u8 (*gUnk_09EF6A50[14])(UnkStruct_080DFF1C*) __attribute__((section(".data_gUnk_09EF6A50"))) = {
+    func_080E6B24,
+    func_080E6C2C,
+    func_080E6F04,
+    func_080E77A4,
+    func_080E7088,
+    func_080E71F0,
+    func_080E7358,
+    func_080E74D8,
+    func_080E7620,
+    func_080E7928,
+    func_080E6DB0,
+    func_080E7A30,
+    func_080E7B38,
+    func_080E7C40,
+};
+
+u8 (*gUnk_09EF6A88[2])(UnkStruct_080E8B1C*) __attribute__((section(".data_gUnk_09EF6A88"))) = {
+    func_080E8BD8,
+    func_080E8C30,
+};
+
+const u8 gUnk_09EF6AB0[14] __attribute__((section(".rodata_gUnk_09EF6AB0"))) = {
+#if defined(VERSION_US)
+    255,
+    107,
+    101,
+    120,
+    94,
+    74,
+    87,
+    115,
+    129,
+    53,
+    2,
+    44,
+    61,
+    135,
+#elif defined(VERSION_JP)
+    255,
+    107,
+    101,
+    120,
+    94,
+    74,
+    87,
+    115,
+    129,
+    53,
+    2,
+    44,
+    61,
+    135,
+#elif defined(VERSION_EU)
+    255,
+    107,
+    101,
+    120,
+    94,
+    74,
+    87,
+    115,
+    127,
+    53,
+    2,
+    44,
+    61,
+    133,
+#endif
 };

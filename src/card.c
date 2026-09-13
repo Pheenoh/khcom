@@ -282,8 +282,6 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a);
 extern s16 gUnk_090356F8[];
 s32 func_0808D828(u8* work);
 extern u8 gUnk_09614318[];
-extern s16 gUnk_09EE4BB8[];
-extern s16 gUnk_09EE4BC2[];
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
 u8 func_080864A4(u8* work, void* a);
@@ -292,7 +290,6 @@ u8 func_08096288(PrizeCardWork* w, void* a);
 u8 func_08092A34(MapSelectWork* w, void* a);
 u8 func_080923E0(MapSelectWork* w, void* a);
 #ifdef VERSION_EU
-extern void** gUnkEu_09F6FF70[];
 extern u8 gUnkEu_094E04E4[];
 extern u8 gUnkEu_09533324[];
 extern u8* gUnkEu_09F6FE04[];
@@ -17490,11 +17487,6 @@ void WORLDSELECT_2(void) {
 extern u8 gUnk_093F5422[];
 extern u8 gUnk_093F6734[];
 extern u8 gUnk_093F5C40[];
-#ifdef VERSION_EU
-extern void* gUnkEu_09F6FF30[];
-extern u16 gUnkEu_090CED64[];
-extern void* gUnkEu_09F6FF44[];
-#endif
 void func_0809332C(MapSelectWork* w);
 void MapSelect_0(MapSelectWork* w, u8* a) {
     u32 zero;
@@ -35569,4 +35561,13 @@ WorldSelAnim gUnk_09EE8E60[30] __attribute__((section(".rodata_card_ui_gUnk_09EE
 
 u16 gUnk_09EE48F4[47] __attribute__((section(".rodata_card_ui_gUnk_09EE48F4"))) = {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 53,
+};
+
+const char gUnk_090359BC[] __attribute__((section(".rodata_registration_name_gUnk_09EE4BA0"), aligned(1))) = "WORLDSELECT";
+
+Mode gUnk_09EE4BA0 __attribute__((section(".data_registration_gUnk_09EE4BA0"))) = {
+    gUnk_090359BC,
+    (void (*)(s32))WORLDSELECT_0,
+    WORLDSELECT_1,
+    WORLDSELECT_2,
 };

@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "map_world_text_data.h"
+
 #include "animation_resource_data.h"
 
 #include "map_transition_state.h"
@@ -48,7 +50,6 @@
 #include "btl_api.h"
 
 extern UnkStruct_0203C590 gUnk_0203C590;
-extern u32 gUnk_09EF69FC[];
 
 typedef struct UnkStruct_0984C868 {
     u8 unk_00;

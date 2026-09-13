@@ -1,0 +1,421 @@
+{
+  "version": 1,
+  "provenance": {
+    "map_selection": "MapSelect passes gUnk_09EE4BB0 to SetBgMapBlocks with 1 by 2 blocks. The cursor index is explicitly cycled through 0..4 and its row is XORed with 1, proving the separate s16[5] and s16[2] coordinate arrays. func_08093E34 loops i from a to a+9 and indexes gUnk_09EE4BE0[i-a], proving ten u16 tile destinations. The WORLDSELECT Mode is independently identified by its exact ASCII name and the unique ordered triple WORLDSELECT_0/1/2 callbacks in each native ROM."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB0",
+          "address": "0x9ee4bb0",
+          "size": 8,
+          "sha256": "40935beeba3eb694c262d946281484c436d2d0896c4ffb2da99e3bd4e57a5fb9",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB0",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "MapSelect_1",
+                "SetBgMapBlocks width 1 height 2"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB8",
+          "address": "0x9ee4bb8",
+          "size": 10,
+          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB8",
+              "offset": 0,
+              "size": 10,
+              "consumer": [
+                "func_08093F5C",
+                "cursor column 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BC2",
+          "address": "0x9ee4bc2",
+          "size": 4,
+          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BC2",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "func_08093F5C",
+                "cursor row XOR 1"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BE0",
+          "address": "0x9ee4be0",
+          "size": 20,
+          "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BE0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "func_08093E34",
+                "i-a from 0 through 9"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".rodata_registration_name_gUnk_09EE4BA0",
+          "address": "0x90359bc",
+          "size": 12,
+          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
+          "objects": [
+            {
+              "name": "gUnk_090359BC",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "WORLDSELECT_0",
+                "unique native Mode name"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".data_registration_gUnk_09EE4BA0",
+          "address": "0x9ee4ba0",
+          "size": 16,
+          "sha256": "8f1d5d43633c04f8219c0d0dc57a6d56720b7085d09e1860e5f7118c11999e73",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BA0",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "WORLDSELECT_0",
+                "WORLDSELECT_1",
+                "WORLDSELECT_2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB0",
+          "address": "0x9ebc208",
+          "size": 8,
+          "sha256": "c78d70070cce0de10731f67b2aaf6793c05d3d95e88561a6cd1b04acdc8de8bb",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB0",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "MapSelect_1",
+                "SetBgMapBlocks width 1 height 2"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB8",
+          "address": "0x9ebc210",
+          "size": 10,
+          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB8",
+              "offset": 0,
+              "size": 10,
+              "consumer": [
+                "func_08093F5C",
+                "cursor column 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BC2",
+          "address": "0x9ebc21a",
+          "size": 4,
+          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BC2",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "func_08093F5C",
+                "cursor row XOR 1"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BE0",
+          "address": "0x9ebc238",
+          "size": 20,
+          "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BE0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "func_08093E34",
+                "i-a from 0 through 9"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".rodata_registration_name_gUnk_09EE4BA0",
+          "address": "0x9008e60",
+          "size": 12,
+          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
+          "objects": [
+            {
+              "name": "gUnk_090359BC",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "WORLDSELECT_0",
+                "unique native Mode name"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".data_registration_gUnk_09EE4BA0",
+          "address": "0x9ebc1f8",
+          "size": 16,
+          "sha256": "0dc22a1739ddb715515490ad5a6fd7548d7f152d5ea963243a02ca2a46c3a472",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BA0",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "WORLDSELECT_0",
+                "WORLDSELECT_1",
+                "WORLDSELECT_2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB0",
+          "address": "0x9f6ff58",
+          "size": 8,
+          "sha256": "086a526cd22142fe58d206c605b3d20f62cdb0651e5c679cadeaca77167a7c23",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB0",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "MapSelect_1",
+                "SetBgMapBlocks width 1 height 2"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BB8",
+          "address": "0x9f6ff60",
+          "size": 10,
+          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BB8",
+              "offset": 0,
+              "size": 10,
+              "consumer": [
+                "func_08093F5C",
+                "cursor column 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BC2",
+          "address": "0x9f6ff6a",
+          "size": 4,
+          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BC2",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "func_08093F5C",
+                "cursor row XOR 1"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09EE4BE0",
+          "address": "0x9f6ff9c",
+          "size": 20,
+          "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BE0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "func_08093E34",
+                "i-a from 0 through 9"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09F6FF30",
+          "address": "0x9f6ff30",
+          "size": 20,
+          "sha256": "fae4131ed72c45806077d7519416b714023d6d710f5a9f94e957aa44435ffe61",
+          "objects": [
+            {
+              "name": "gUnkEu_09F6FF30",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "MapSelect_0",
+                "gLanguage domain 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09F6FF44",
+          "address": "0x9f6ff44",
+          "size": 20,
+          "sha256": "2affb8467ba9eb34f93245a3eebfc90d8ac9d0ca23902c55d84502b10fefe3dc",
+          "objects": [
+            {
+              "name": "gUnkEu_09F6FF44",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "MapSelect_0",
+                "gLanguage domain 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_09F6FF70",
+          "address": "0x9f6ff70",
+          "size": 20,
+          "sha256": "2bcf586f35b2a5230b30592fbdfd659487fedb063a8b453bc14eb5fabc0e1e6e",
+          "objects": [
+            {
+              "name": "gUnkEu_09F6FF70",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "MapSelect_2",
+                "gLanguage domain 0..4"
+              ]
+            }
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
+        },
+        {
+          "unit": "card_selection_data.c",
+          "section": ".data_card_selection_090CED64",
+          "address": "0x90ced64",
+          "size": 10,
+          "sha256": "3ac178d10dafd3445d72d0fd1f36633bd75d52a5adfb7257f1a6154f80cc7e42",
+          "objects": [
+            {
+              "name": "gUnkEu_090CED64",
+              "offset": 0,
+              "size": 10,
+              "consumer": [
+                "MapSelect_0",
+                "gLanguage domain 0..4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".rodata_registration_name_gUnk_09EE4BA0",
+          "address": "0x90ced58",
+          "size": 12,
+          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
+          "objects": [
+            {
+              "name": "gUnk_090359BC",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "WORLDSELECT_0",
+                "unique native Mode name"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "card.c",
+          "section": ".data_registration_gUnk_09EE4BA0",
+          "address": "0x9f6ff20",
+          "size": 16,
+          "sha256": "47b957a65609ca51811d5ae82160dadcd1fce0d34a98d9f508602c330d0708ce",
+          "objects": [
+            {
+              "name": "gUnk_09EE4BA0",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "WORLDSELECT_0",
+                "WORLDSELECT_1",
+                "WORLDSELECT_2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
