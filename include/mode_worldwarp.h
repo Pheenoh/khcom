@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "worldwarp_state.h"
+
 #include "obj.h"
 
 #include "world_types.h"
@@ -75,44 +77,44 @@ typedef struct WarpDef {
 
 extern const WarpDef gUnk_09993118[];
 extern u16 gUnk_099931D0[];
-extern s32 gUnk_02035880;
-extern s32 gUnk_02035884;
-extern s32 gUnk_0203588C;
-extern struct ObjPalette* gUnk_0203585C;
-extern void* gUnk_02035818[];
-extern void* gUnk_02035820[];
-extern AnimState gUnk_02035828[];
-extern AnimState gWorldwarpAnim;
-extern s16 gUnk_020358BC;
-extern s16 gUnk_020358C2;
+
+
+
+
+
+
+
+
+
+
 extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_09A35F1C[];
-extern s16 gUnk_020357C0;
-extern void* gUnk_020357C4;
-extern AnimState gUnk_02035860;
-extern s16 gUnk_02035878;
-extern s16 gUnk_0203587A;
-extern s16 gUnk_0203587C;
-extern s16 gUnk_02035890;
-extern s16 gUnk_02035892;
-extern u8 gUnk_020358A4;
-extern s16 gUnk_020358BE;
+
+
+
+
+
+
+
+
+
+
 extern u8 gUnk_09A378DC[];
-extern struct ObjTiles* gUnk_02035858;
-extern s32 gUnk_02035888;
-extern s32 gUnk_02035898[];
-extern s32 gUnk_020358A0;
-extern struct ObjTiles* gUnk_020357C8;
-extern struct ObjPalette* gUnk_020357CC;
-extern struct ObjTiles* gUnk_020357D0;
-extern struct ObjPalette* gUnk_020357D4;
-extern AnimState gUnk_020357F8;
-extern struct ObjTiles* gUnk_020357F0;
-extern struct ObjPalette* gUnk_020357F4;
-extern struct ObjTiles* gUnk_02035810;
-extern struct ObjPalette* gUnk_02035814;
-extern TaskPool gUnk_020358A8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];
 extern u8 gUnk_099A2B24[];

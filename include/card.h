@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "chara_link_state.h"
+
 #include "msg_types.h"
 
 #include "field_state.h"
@@ -1287,7 +1289,7 @@ extern Mode gModeMenuLoad;
 extern Mode gModeTitle;
 extern void* gUnk_09EF38BC[];
 extern void* gUnk_09EF38C8[];
-extern s8 gUnk_0203C374;
+
 extern u8 gUnk_090451C0[];
 extern void* gUnk_09EE4A2C[];
 extern u16* gUnk_09EE4A68[];

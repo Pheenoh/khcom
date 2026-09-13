@@ -1,0 +1,37 @@
+#include "worldwarp_state.h"
+
+s16 gUnk_020357C0 __attribute__((aligned(2)));
+void* gUnk_020357C4 __attribute__((aligned(4)));
+struct ObjTiles* gUnk_020357C8 __attribute__((aligned(4)));
+struct ObjPalette* gUnk_020357CC __attribute__((aligned(4)));
+struct ObjTiles* gUnk_020357D0 __attribute__((aligned(4)));
+struct ObjPalette* gUnk_020357D4 __attribute__((aligned(4)));
+AnimState gWorldwarpAnim __attribute__((aligned(8)));
+struct ObjTiles* gUnk_020357F0 __attribute__((aligned(4)));
+struct ObjPalette* gUnk_020357F4 __attribute__((aligned(4)));
+AnimState gUnk_020357F8 __attribute__((aligned(8)));
+struct ObjTiles* gUnk_02035810 __attribute__((aligned(4)));
+struct ObjPalette* gUnk_02035814 __attribute__((aligned(4)));
+void* gUnk_02035818[2] __attribute__((aligned(8)));
+void* gUnk_02035820[2] __attribute__((aligned(8)));
+AnimState gUnk_02035828[2] __attribute__((aligned(8)));
+struct ObjTiles* gUnk_02035858 __attribute__((aligned(4)));
+struct ObjPalette* gUnk_0203585C __attribute__((aligned(4)));
+AnimState gUnk_02035860 __attribute__((aligned(8)));
+s16 gUnk_02035878 __attribute__((aligned(2)));
+s16 gUnk_0203587A __attribute__((aligned(2)));
+s16 gUnk_0203587C __attribute__((aligned(2)));
+s32 gUnk_02035880 __attribute__((aligned(4)));
+s32 gUnk_02035884 __attribute__((aligned(4)));
+s32 gUnk_02035888 __attribute__((aligned(4)));
+s32 gUnk_0203588C __attribute__((aligned(4)));
+s16 gUnk_02035890 __attribute__((aligned(2)));
+s16 gUnk_02035892 __attribute__((aligned(2)));
+s32 gUnk_02035898[2] __attribute__((aligned(8)));
+s32 gUnk_020358A0 __attribute__((aligned(4)));
+u8 gUnk_020358A4 __attribute__((aligned(1)));
+TaskPool gUnk_020358A8 __attribute__((aligned(8)));
+s16 gUnk_020358BC __attribute__((aligned(2)));
+s16 gUnk_020358BE __attribute__((aligned(2)));
+u8 gUnk_020358C0 __attribute__((aligned(1)));
+s16 gUnk_020358C2 __attribute__((aligned(2)));
