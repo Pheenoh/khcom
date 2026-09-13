@@ -47,18 +47,6 @@ extern u8 gUnkEu_099AC97E[];
 extern u8 gUnkEu_099AC9B2[];
 #endif
 
-typedef struct {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    u8 unk_12[0x02];
-} WorldinspectWarpIcon;
 
 extern s16 gUnk_020354E8;
 extern s16 gUnk_020357A2;
@@ -82,7 +70,6 @@ extern u8 gUnk_02035618[];
 extern u8 gUnk_020356D8;
 extern u8 gUnk_020356E0[];
 extern u8 gUnk_020357A0;
-extern WorldinspectWarpIcon gUnk_09EF9384[];
 extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];

@@ -18,7 +18,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -46,7 +48,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -74,7 +78,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -130,7 +136,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -158,7 +166,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -186,7 +196,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -298,7 +310,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -326,7 +340,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -410,7 +426,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -634,7 +652,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -662,7 +682,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -690,7 +712,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -718,7 +742,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -746,7 +772,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -774,7 +802,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -802,7 +832,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -830,7 +862,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -858,7 +892,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -886,7 +922,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -1082,7 +1120,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -1110,7 +1150,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "room.c",
@@ -1138,7 +1180,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -1166,7 +1210,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -1194,7 +1240,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -1226,7 +1274,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -1254,7 +1304,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -1282,7 +1334,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -1338,7 +1392,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -1366,7 +1422,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -1394,7 +1452,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -1506,7 +1566,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -1534,7 +1596,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -1618,7 +1682,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -1842,7 +1908,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -1870,7 +1938,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -1898,7 +1968,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -1926,7 +1998,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -1954,7 +2028,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -1982,7 +2058,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -2010,7 +2088,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -2038,7 +2118,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -2066,7 +2148,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -2094,7 +2178,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -2290,7 +2376,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -2318,7 +2406,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "room.c",
@@ -2346,7 +2436,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -2374,7 +2466,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -2402,7 +2496,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -2434,7 +2530,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -2462,7 +2560,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -2490,7 +2590,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -2546,7 +2648,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -2574,7 +2678,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -2602,7 +2708,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -2714,7 +2822,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -2742,7 +2852,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -2826,7 +2938,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -3050,7 +3164,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -3078,7 +3194,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3106,7 +3224,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3134,7 +3254,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3162,7 +3284,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3190,7 +3314,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3218,7 +3344,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3246,7 +3374,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3274,7 +3404,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3302,7 +3434,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -3498,7 +3632,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -3526,7 +3662,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "room.c",
@@ -3554,7 +3692,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -3582,7 +3722,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -3610,7 +3752,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",

@@ -1,3 +1,4 @@
+#include "worldwarp_data.h"
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
@@ -27,54 +28,6 @@
 #include "anim.h"
 #include "m4a.h"
 #include "bos4_api.h"
-typedef struct WarpIcon {
-    u8 unk_00[0x08];
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    u8 unk_12[0x02];
-} WarpIcon;
-
-typedef struct WarpRect {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-} WarpRect;
-
-typedef struct WarpGfx {
-    u16 unk_00;
-    s16 unk_02;
-    void* unk_04;
-    u16 unk_08;
-    u8 unk_0A[0x02];
-    void* unk_0C;
-    u16 unk_10;
-    u8 unk_12[0x02];
-    void* unk_14;
-    void* unk_18;
-    u16 unk_1C;
-    u8 unk_1E[0x02];
-} WarpGfx;
-
-typedef struct WarpDef {
-    void* unk_00;
-    u8 unk_04[0x06];
-    u16 unk_0A;
-    s16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    s16 unk_12;
-    u16 unk_14;
-    u16 unk_16;
-    s16 unk_18;
-    u8 unk_1A[0x02];
-    WarpGfx unk_1C[2];
-} WarpDef;
-
-extern const WarpDef gUnk_09993118[];
 extern u16 gUnk_099931D0[];
 
 extern u8 gUnk_09A3D77C[];
@@ -87,9 +40,6 @@ extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];
 extern u8 gUnk_099A2B24[];
 extern u8 gUnk_08B22BA8[];
-extern WarpIcon gUnk_09EF9384[];
-extern WorldSelectDef gUnk_09EF9488[];
-extern WarpRect gUnk_099930E8[];
 extern u8 gUnk_09A3D37C[];
 extern u8 gUnk_09A06A7C[];
 extern u8 gUnk_09A35A1C[];

@@ -3,6 +3,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "card_label_data.h"
+
 #include "animation_resource_data.h"
 
 #include "pooh_actor_state.h"
@@ -290,7 +292,6 @@ extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
 extern s32 gUnk_096FDD8C[];
-extern SpriteFrameResourceDef gUnk_08F7CF18[];
 extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 

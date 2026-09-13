@@ -1,3 +1,5 @@
+#include "jiminy_records_data.h"
+#include "jiminy_records_assets.h"
 #include "battle_localized_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_JIMINY_H
@@ -55,7 +57,6 @@ extern u8 gUnk_09A3CDDC[];
 
 extern JiminyWork* gJiminyWork;
 
-extern JiminyEntry gUnk_08155554[];
 extern s16 gSineTable[];
 
 extern u8 gUnk_08C69C04[];
@@ -90,7 +91,6 @@ extern u8 gUnk_0913F0C2[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_09614AB8[];
 extern u8 gUnk_09614D58[];
-extern u8 gUnk_09A3CC9C[];
 
 u8 func_0805AA9C(void);
 void func_0805A8D0(void);
@@ -103,22 +103,6 @@ void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
 void SplitThreeDecimalDigits(s16 a, u8* out);
 
-extern JiminyDetail gUnk_0815574C[];
-extern JiminyDetail gUnk_08155C54[];
-extern JiminyDetail gUnk_0815600C[];
-extern JiminyDetail gUnk_0815631C[];
-extern JiminyDetail gUnk_081564A4[];
-extern JiminyDetail gUnk_0815662C[];
-extern JiminyDetail gUnk_081570E4[];
-extern JiminyDetail gUnk_08157694[];
-extern JiminyDetail gUnk_08157B9C[];
-extern JiminyDetail gUnk_08158114[];
-extern JiminyDetail gUnk_081589D4[];
-extern JiminyDetail gUnk_08155B04[];
-extern JiminyDetail gUnk_081576CC[];
-extern JiminyDetail gUnk_0815917C[];
-extern JiminyDetail gUnk_0815948C[];
-extern JiminyDetail gUnk_081595DC[];
 extern u8 gUnk_08F64384[];
 extern u8 gUnk_08F60384[];
 extern u8 gUnk_08F5EB84[];

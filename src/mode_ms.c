@@ -1448,3 +1448,12 @@ Mode gModeMsTop __attribute__((section(".data_registration_gModeMsTop"))) = {
     (void (*)(void))mode_ms_top_1,
     (void (*)(void))mode_ms_top_2,
 };
+
+const char gModeNameMsShop[] __attribute__((section(".rodata_registration_name_gModeMsShop"), aligned(1))) = "mode_ms_shop";
+
+Mode gModeMsShop __attribute__((section(".data_registration_gModeMsShop"))) = {
+    gModeNameMsShop,
+    (void (*)(s32))mode_ms_shop_0,
+    mode_ms_shop_1,
+    mode_ms_shop_2,
+};

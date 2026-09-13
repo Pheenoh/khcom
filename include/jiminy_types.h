@@ -63,7 +63,7 @@ typedef struct JiminyEntry {
     s16 unk_0A;
     u16* unk_0C;
     u16* unk_10;
-    void* unk_14;
+    s32 unk_14;
 } JiminyEntry;
 
 typedef struct JiminyWork {
@@ -125,7 +125,7 @@ typedef struct JiminyWork {
     JiminyPair unk_CD8[21];
     s32 unk_D2C;
     u32 unk_D30;
-    void* unk_D34;
+    s32 unk_D34;
     s32 unk_D38;
     u16 unk_D3C;
     u16 unk_D3E;

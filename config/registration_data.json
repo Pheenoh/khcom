@@ -75,7 +75,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -131,7 +133,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "btl4.c",
@@ -159,7 +163,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -187,7 +193,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "tutorial.c",
@@ -327,7 +335,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -411,7 +421,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -467,7 +479,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -495,7 +509,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -523,7 +539,9 @@
               "offset": 0,
               "size": 6
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -551,7 +569,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_eventselect.c",
@@ -635,7 +655,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -677,7 +699,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -705,7 +729,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -733,7 +759,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -901,7 +929,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -957,7 +987,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -985,7 +1017,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1013,7 +1047,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1041,7 +1077,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1069,7 +1107,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1153,7 +1193,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1181,7 +1223,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1293,7 +1337,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1349,7 +1395,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1489,7 +1537,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1657,7 +1707,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_sio.c",
@@ -1713,7 +1765,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_sio.c",
@@ -1741,7 +1795,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_sio.c",
@@ -1769,7 +1825,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_sio.c",
@@ -1797,7 +1855,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -1881,7 +1941,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -1909,7 +1971,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -1937,7 +2001,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -1993,7 +2059,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2021,7 +2089,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2049,7 +2119,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2077,7 +2149,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2105,7 +2179,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2133,7 +2209,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2161,7 +2239,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "wlogo.c",
@@ -2189,7 +2269,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -2217,7 +2299,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -2245,7 +2329,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2301,7 +2387,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2329,7 +2417,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -2357,7 +2447,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -2385,7 +2477,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2413,7 +2507,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -2497,7 +2593,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -2525,7 +2623,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -2777,7 +2877,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -2833,7 +2935,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -2917,7 +3021,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -2945,7 +3051,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -3085,7 +3193,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3113,7 +3223,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3169,7 +3281,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3197,7 +3311,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3225,7 +3341,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3253,7 +3371,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3309,7 +3429,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -3505,7 +3627,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3533,7 +3657,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3561,7 +3687,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -3589,7 +3717,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -3617,7 +3747,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -3673,7 +3805,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3701,7 +3835,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3729,7 +3865,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3813,7 +3951,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3869,7 +4009,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -3925,7 +4067,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3953,7 +4097,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -3981,7 +4127,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -4009,7 +4157,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -4065,7 +4215,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -4093,7 +4245,9 @@
               "offset": 0,
               "size": 27
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -4177,7 +4331,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -4205,7 +4361,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "allmap.c",
@@ -4233,7 +4391,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -4289,7 +4449,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -4317,7 +4479,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_title.c",
@@ -4345,7 +4509,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "title.c",
@@ -4457,7 +4623,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_copyright1.c",
@@ -4653,7 +4821,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -4709,7 +4879,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "status.c",
@@ -4737,7 +4909,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -4765,7 +4939,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -4793,7 +4969,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -4961,7 +5139,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -4989,7 +5169,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -5269,7 +5451,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -5381,7 +5565,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -5549,7 +5735,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5577,7 +5765,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -5605,7 +5795,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5689,7 +5881,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5717,7 +5911,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5745,7 +5941,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5773,7 +5971,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -5829,7 +6029,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5913,7 +6115,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5941,7 +6145,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -5969,7 +6175,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -5997,7 +6205,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -6053,7 +6263,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -6081,7 +6293,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -6109,7 +6323,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -6193,7 +6409,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -6221,7 +6439,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -6249,7 +6469,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -6277,7 +6499,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -6305,7 +6529,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -6333,7 +6559,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -6501,7 +6729,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos5.c",
@@ -6949,7 +7179,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -7033,7 +7265,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -7145,7 +7379,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -7201,7 +7437,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -7229,7 +7467,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -7299,7 +7539,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         }
       ]
     },
@@ -7373,7 +7615,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -7429,7 +7673,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "btl4.c",
@@ -7457,7 +7703,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -7485,7 +7733,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "tutorial.c",
@@ -7625,7 +7875,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -7709,7 +7961,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -7765,7 +8019,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -7793,7 +8049,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -7821,7 +8079,9 @@
               "offset": 0,
               "size": 6
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -7849,7 +8109,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_eventselect.c",
@@ -7933,7 +8195,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -7975,7 +8239,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -8003,7 +8269,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -8031,7 +8299,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -8199,7 +8469,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8255,7 +8527,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8283,7 +8557,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -8311,7 +8587,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -8339,7 +8617,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8367,7 +8647,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8451,7 +8733,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -8479,7 +8763,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8591,7 +8877,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -8647,7 +8935,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8787,7 +9077,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -8955,7 +9247,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_sio.c",
@@ -9011,7 +9305,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_sio.c",
@@ -9039,7 +9335,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_sio.c",
@@ -9067,7 +9365,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_sio.c",
@@ -9095,7 +9395,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9179,7 +9481,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9207,7 +9511,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9235,7 +9541,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9291,7 +9599,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9319,7 +9629,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9347,7 +9659,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9375,7 +9689,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9403,7 +9719,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9431,7 +9749,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9459,7 +9779,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "wlogo.c",
@@ -9487,7 +9809,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -9515,7 +9839,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -9543,7 +9869,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9599,7 +9927,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9627,7 +9957,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -9655,7 +9987,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -9683,7 +10017,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9711,7 +10047,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -9795,7 +10133,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -9823,7 +10163,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -10075,7 +10417,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -10131,7 +10475,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -10215,7 +10561,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -10243,7 +10591,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -10383,7 +10733,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10411,7 +10763,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10467,7 +10821,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10495,7 +10851,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10523,7 +10881,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10551,7 +10911,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10607,7 +10969,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -10803,7 +11167,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -10831,7 +11197,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -10859,7 +11227,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -10887,7 +11257,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -10915,7 +11287,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -10971,7 +11345,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -10999,7 +11375,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -11027,7 +11405,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -11111,7 +11491,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -11167,7 +11549,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -11223,7 +11607,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -11251,7 +11637,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -11279,7 +11667,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -11307,7 +11697,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -11363,7 +11755,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -11391,7 +11785,9 @@
               "offset": 0,
               "size": 27
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -11475,7 +11871,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -11503,7 +11901,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "allmap.c",
@@ -11531,7 +11931,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -11587,7 +11989,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -11615,7 +12019,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_title.c",
@@ -11643,7 +12049,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "title.c",
@@ -11755,7 +12163,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_copyright1.c",
@@ -11951,7 +12361,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -12007,7 +12419,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "status.c",
@@ -12035,7 +12449,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -12063,7 +12479,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -12091,7 +12509,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -12259,7 +12679,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -12287,7 +12709,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -12567,7 +12991,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -12679,7 +13105,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -12847,7 +13275,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -12875,7 +13305,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -12903,7 +13335,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -12987,7 +13421,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13015,7 +13451,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13043,7 +13481,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13071,7 +13511,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13127,7 +13569,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13211,7 +13655,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13239,7 +13685,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13267,7 +13715,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13295,7 +13745,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13351,7 +13803,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13379,7 +13833,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13407,7 +13863,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13491,7 +13949,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13519,7 +13979,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -13547,7 +14009,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13575,7 +14039,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -13603,7 +14069,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -13631,7 +14099,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -13799,7 +14269,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos5.c",
@@ -14247,7 +14719,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -14331,7 +14805,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -14443,7 +14919,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -14499,7 +14977,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -14527,7 +15007,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -14597,7 +15079,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         }
       ]
     },
@@ -14643,7 +15127,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -14699,7 +15185,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "btl4.c",
@@ -14727,7 +15215,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "btl4.c",
@@ -14755,7 +15245,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "tutorial.c",
@@ -14895,7 +15387,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -14979,7 +15473,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "msg.c",
@@ -15035,7 +15531,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -15063,7 +15561,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -15091,7 +15591,9 @@
               "offset": 0,
               "size": 6
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -15119,7 +15621,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_eventselect.c",
@@ -15203,7 +15707,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -15245,7 +15751,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -15273,7 +15781,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -15301,7 +15811,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_eventselect.c",
@@ -15469,7 +15981,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -15525,7 +16039,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -15553,7 +16069,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -15581,7 +16099,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -15609,7 +16129,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -15637,7 +16159,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -15721,7 +16245,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -15749,7 +16275,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -15861,7 +16389,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -15917,7 +16447,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -16029,7 +16561,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -16225,7 +16759,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_sio.c",
@@ -16253,7 +16789,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "mode_sio.c",
@@ -16281,7 +16819,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16365,7 +16905,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16393,7 +16935,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16421,7 +16965,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16477,7 +17023,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16505,7 +17053,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16533,7 +17083,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16561,7 +17113,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16589,7 +17143,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16617,7 +17173,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16645,7 +17203,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "wlogo.c",
@@ -16673,7 +17233,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -16701,7 +17263,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -16729,7 +17293,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16785,7 +17351,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16813,7 +17381,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -16841,7 +17411,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "wlogo.c",
@@ -16869,7 +17441,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16897,7 +17471,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "wlogo.c",
@@ -16981,7 +17557,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -17009,7 +17587,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -17261,7 +17841,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos2.c",
@@ -17317,7 +17899,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -17401,7 +17985,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos2.c",
@@ -17429,7 +18015,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "chara.c",
@@ -17569,7 +18157,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17597,7 +18187,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17653,7 +18245,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17681,7 +18275,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17709,7 +18305,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17737,7 +18335,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -17793,7 +18393,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -17989,7 +18591,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18017,7 +18621,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -18045,7 +18651,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -18073,7 +18681,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -18101,7 +18711,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -18157,7 +18769,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18185,7 +18799,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18213,7 +18829,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18297,7 +18915,9 @@
               "offset": 0,
               "size": 23
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -18353,7 +18973,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -18409,7 +19031,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18437,7 +19061,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18465,7 +19091,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "poo.c",
@@ -18493,7 +19121,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "poo.c",
@@ -18549,7 +19179,9 @@
               "offset": 0,
               "size": 26
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -18577,7 +19209,9 @@
               "offset": 0,
               "size": 27
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "poo.c",
@@ -18661,7 +19295,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -18689,7 +19325,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "allmap.c",
@@ -18717,7 +19355,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -18773,7 +19413,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "allmap.c",
@@ -18801,7 +19443,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_title.c",
@@ -18829,7 +19473,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "title.c",
@@ -18941,7 +19587,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_copyright1.c",
@@ -19137,7 +19785,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -19221,7 +19871,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -19249,7 +19901,9 @@
               "offset": 0,
               "size": 22
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "status.c",
@@ -19277,7 +19931,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "status.c",
@@ -19445,7 +20101,9 @@
               "offset": 0,
               "size": 21
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -19473,7 +20131,9 @@
               "offset": 0,
               "size": 20
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -19753,7 +20413,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos4.c",
@@ -19865,7 +20527,9 @@
               "offset": 0,
               "size": 24
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "bos4.c",
@@ -20033,7 +20697,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20061,7 +20727,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20089,7 +20757,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20173,7 +20843,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20201,7 +20873,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20229,7 +20903,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20257,7 +20933,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20313,7 +20991,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20397,7 +21077,9 @@
               "offset": 0,
               "size": 19
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20425,7 +21107,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20453,7 +21137,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20481,7 +21167,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20537,7 +21225,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20565,7 +21255,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20593,7 +21285,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20677,7 +21371,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20705,7 +21401,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -20733,7 +21431,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20761,7 +21461,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "map.c",
@@ -20789,7 +21491,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "map.c",
@@ -20817,7 +21521,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "map.c",
@@ -20985,7 +21691,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos5.c",
@@ -21433,7 +22141,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -21517,7 +22227,9 @@
               "offset": 0,
               "size": 17
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "bos7.c",
@@ -21629,7 +22341,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -21685,7 +22399,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -21713,7 +22429,9 @@
               "offset": 0,
               "size": 18
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "sroll.c",
@@ -21783,7 +22501,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "monsgage_data.c",

@@ -33,14 +33,29 @@ typedef struct EventCharaTrack {
     u8 unk_05[3];
 } EventCharaTrack;
 
+typedef struct EvSoundCue {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+} EvSoundCue;
+
+typedef struct EventBgEffectEntry {
+    u8 unk_00[0x02];
+    u16 unk_02;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x04];
+} EventBgEffectEntry;
+
 typedef struct EventSequenceDef {
     u8 unk_00;
     u8 unk_01[3];
     EventCharaTrack* unk_04;
     EventCameraKeyframe* unk_08;
     MessageScriptEntry* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    EvSoundCue* unk_10;
+    EventBgEffectEntry* unk_14;
     u16 unk_18;
     u8 unk_1A;
     u8 unk_1B;

@@ -1,3 +1,4 @@
+#include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
 #include "card_animation_data.h"
@@ -343,7 +344,6 @@ extern s16 gSineTable[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
 extern u8 gUnk_090D4180[];
-extern void* gUnk_09EE3CA0[];
 extern s32 gUnk_09033758[];
 extern u8 gUnk_050001C0[];
 extern u8 gUnk_094233B8[];

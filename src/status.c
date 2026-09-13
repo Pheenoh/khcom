@@ -654,8 +654,8 @@ void* func_080D85C0(u16 a) {
     d = &gUnk_08F7CF18[a];
     t = AllocSpriteFrameTiles(d->tilesSize);
 #ifdef VERSION_EU
-    UpdateSpriteFrameTiles(t, ((u32*)d->sprites[gLanguage])[d->spriteIndex],
-        ((u32*)d->tiles)[gLanguage]);
+    UpdateSpriteFrameTiles(t, d->sprites[gLanguage][d->spriteIndex],
+        d->tiles[gLanguage]);
 #else
     UpdateSpriteFrameTiles(t, d->sprites[d->spriteIndex], d->tiles);
 #endif

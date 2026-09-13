@@ -76,7 +76,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -132,7 +134,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -160,7 +164,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -188,7 +194,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -216,7 +224,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -356,7 +366,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -496,7 +508,9 @@
               "offset": 0,
               "size": 7
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -580,7 +594,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -608,7 +624,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -650,7 +668,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -734,7 +754,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -762,7 +784,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -888,7 +912,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -944,7 +970,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1228,7 +1256,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -1284,7 +1314,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1312,7 +1344,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1340,7 +1374,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1368,7 +1404,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1508,7 +1546,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1648,7 +1688,9 @@
               "offset": 0,
               "size": 7
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1732,7 +1774,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1760,7 +1804,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1802,7 +1848,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -1886,7 +1934,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -1914,7 +1964,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -1984,7 +2036,9 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -2040,7 +2094,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -2096,7 +2152,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -2380,7 +2438,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -2436,7 +2496,9 @@
               "offset": 0,
               "size": 14
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -2464,7 +2526,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -2492,7 +2556,9 @@
               "offset": 0,
               "size": 5
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -2520,7 +2586,9 @@
               "offset": 0,
               "size": 8
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -2660,7 +2728,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -2800,7 +2870,9 @@
               "offset": 0,
               "size": 7
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -2884,7 +2956,9 @@
               "offset": 0,
               "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -2912,7 +2986,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -2954,7 +3030,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",
@@ -3038,7 +3116,9 @@
               "offset": 0,
               "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "card.c",
@@ -3066,7 +3146,9 @@
               "offset": 0,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -3192,7 +3274,9 @@
               "offset": 0,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -3248,7 +3332,9 @@
               "offset": 0,
               "size": 11
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 1
         },
         {
           "unit": "card.c",
@@ -3416,7 +3502,9 @@
               "offset": 0,
               "size": 10
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "card.c",

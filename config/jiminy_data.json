@@ -2925,7 +2925,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         }
       ],
       "assets": [
@@ -16677,7 +16679,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         }
       ],
       "assets": [
@@ -45461,7 +45465,9 @@
               "offset": 0,
               "size": 25
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         }
       ],
       "assets": [

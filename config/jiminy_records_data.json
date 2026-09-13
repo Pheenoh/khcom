@@ -1,0 +1,646 @@
+{
+  "version": 1,
+  "provenance": {
+    "entries": "mode_jiminy selects 21 JiminyEntry records; each count bounds its typed category or unlock array. The category field and corresponding work field are integers0..16, not pointers. All338 halfwords and all entry scalar fields agree across regions.",
+    "details": "func_0805BAE4 has16 explicit category cases with literal group bases and exact counts totaling319. Corresponding name/text assets and record scalars establish regional identity; EU omits the local line-count word because its text points to five-language metadata. Sprite, palette, tile and BG fields are real consumer pointers.",
+    "placement": "Exact independently linked entry/group bases and declared counts establish native spans. The JP two-byte gap between indices and entries is linker alignment, not a fake C object. Remaining opaque script/text slices retain their existing excluded classification."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_indices",
+          "address": "0x81552b0",
+          "size": 676,
+          "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
+          "objects": [
+            {
+              "name": "gUnk_081552B0",
+              "offset": 0,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081552D2",
+              "offset": 34,
+              "size": 50
+            },
+            {
+              "name": "gUnk_08155304",
+              "offset": 84,
+              "size": 80
+            },
+            {
+              "name": "gUnk_08155354",
+              "offset": 164,
+              "size": 70
+            },
+            {
+              "name": "gUnk_0815539A",
+              "offset": 234,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081553BC",
+              "offset": 268,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081553D8",
+              "offset": 296,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553E6",
+              "offset": 310,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553F4",
+              "offset": 324,
+              "size": 98
+            },
+            {
+              "name": "gUnk_08155456",
+              "offset": 422,
+              "size": 52
+            },
+            {
+              "name": "gUnk_0815548A",
+              "offset": 474,
+              "size": 2
+            },
+            {
+              "name": "gUnk_0815548C",
+              "offset": 476,
+              "size": 12
+            },
+            {
+              "name": "gUnk_08155498",
+              "offset": 488,
+              "size": 44
+            },
+            {
+              "name": "gUnk_081554C4",
+              "offset": 532,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081554E0",
+              "offset": 560,
+              "size": 12
+            },
+            {
+              "name": "gUnk_081554EC",
+              "offset": 572,
+              "size": 66
+            },
+            {
+              "name": "gUnk_0815552E",
+              "offset": 638,
+              "size": 6
+            },
+            {
+              "name": "gUnk_08155534",
+              "offset": 644,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815553A",
+              "offset": 650,
+              "size": 14
+            },
+            {
+              "name": "gUnk_08155548",
+              "offset": 664,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815554E",
+              "offset": 670,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_records",
+          "address": "0x8155554",
+          "size": 18368,
+          "sha256": "5a9b73764371576397bfe1f968e8c283a230c1c669e430c810d39bee4679971f",
+          "objects": [
+            {
+              "name": "gUnk_08155554",
+              "offset": 0,
+              "size": 504
+            },
+            {
+              "name": "gUnk_0815574C",
+              "offset": 504,
+              "size": 952
+            },
+            {
+              "name": "gUnk_08155B04",
+              "offset": 1456,
+              "size": 336
+            },
+            {
+              "name": "gUnk_08155C54",
+              "offset": 1792,
+              "size": 952
+            },
+            {
+              "name": "gUnk_0815600C",
+              "offset": 2744,
+              "size": 784
+            },
+            {
+              "name": "gUnk_0815631C",
+              "offset": 3528,
+              "size": 392
+            },
+            {
+              "name": "gUnk_081564A4",
+              "offset": 3920,
+              "size": 392
+            },
+            {
+              "name": "gUnk_0815662C",
+              "offset": 4312,
+              "size": 2744
+            },
+            {
+              "name": "gUnk_081570E4",
+              "offset": 7056,
+              "size": 1456
+            },
+            {
+              "name": "gUnk_08157694",
+              "offset": 8512,
+              "size": 56
+            },
+            {
+              "name": "gUnk_081576CC",
+              "offset": 8568,
+              "size": 1232
+            },
+            {
+              "name": "gUnk_08157B9C",
+              "offset": 9800,
+              "size": 1400
+            },
+            {
+              "name": "gUnk_08158114",
+              "offset": 11200,
+              "size": 2240
+            },
+            {
+              "name": "gUnk_081589D4",
+              "offset": 13440,
+              "size": 1960
+            },
+            {
+              "name": "gUnk_0815917C",
+              "offset": 15400,
+              "size": 784
+            },
+            {
+              "name": "gUnk_0815948C",
+              "offset": 16184,
+              "size": 336
+            },
+            {
+              "name": "gUnk_081595DC",
+              "offset": 16520,
+              "size": 1848
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_indices",
+          "address": "0x8149a2e",
+          "size": 676,
+          "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
+          "objects": [
+            {
+              "name": "gUnk_081552B0",
+              "offset": 0,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081552D2",
+              "offset": 34,
+              "size": 50
+            },
+            {
+              "name": "gUnk_08155304",
+              "offset": 84,
+              "size": 80
+            },
+            {
+              "name": "gUnk_08155354",
+              "offset": 164,
+              "size": 70
+            },
+            {
+              "name": "gUnk_0815539A",
+              "offset": 234,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081553BC",
+              "offset": 268,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081553D8",
+              "offset": 296,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553E6",
+              "offset": 310,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553F4",
+              "offset": 324,
+              "size": 98
+            },
+            {
+              "name": "gUnk_08155456",
+              "offset": 422,
+              "size": 52
+            },
+            {
+              "name": "gUnk_0815548A",
+              "offset": 474,
+              "size": 2
+            },
+            {
+              "name": "gUnk_0815548C",
+              "offset": 476,
+              "size": 12
+            },
+            {
+              "name": "gUnk_08155498",
+              "offset": 488,
+              "size": 44
+            },
+            {
+              "name": "gUnk_081554C4",
+              "offset": 532,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081554E0",
+              "offset": 560,
+              "size": 12
+            },
+            {
+              "name": "gUnk_081554EC",
+              "offset": 572,
+              "size": 66
+            },
+            {
+              "name": "gUnk_0815552E",
+              "offset": 638,
+              "size": 6
+            },
+            {
+              "name": "gUnk_08155534",
+              "offset": 644,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815553A",
+              "offset": 650,
+              "size": 14
+            },
+            {
+              "name": "gUnk_08155548",
+              "offset": 664,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815554E",
+              "offset": 670,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_records",
+          "address": "0x8149cd4",
+          "size": 18368,
+          "sha256": "1615ca57b9c9384c43389dfd2bd02643b580f0e8a85285cdba75b4733932fbe3",
+          "objects": [
+            {
+              "name": "gUnk_08155554",
+              "offset": 0,
+              "size": 504
+            },
+            {
+              "name": "gUnk_0815574C",
+              "offset": 504,
+              "size": 952
+            },
+            {
+              "name": "gUnk_08155B04",
+              "offset": 1456,
+              "size": 336
+            },
+            {
+              "name": "gUnk_08155C54",
+              "offset": 1792,
+              "size": 952
+            },
+            {
+              "name": "gUnk_0815600C",
+              "offset": 2744,
+              "size": 784
+            },
+            {
+              "name": "gUnk_0815631C",
+              "offset": 3528,
+              "size": 392
+            },
+            {
+              "name": "gUnk_081564A4",
+              "offset": 3920,
+              "size": 392
+            },
+            {
+              "name": "gUnk_0815662C",
+              "offset": 4312,
+              "size": 2744
+            },
+            {
+              "name": "gUnk_081570E4",
+              "offset": 7056,
+              "size": 1456
+            },
+            {
+              "name": "gUnk_08157694",
+              "offset": 8512,
+              "size": 56
+            },
+            {
+              "name": "gUnk_081576CC",
+              "offset": 8568,
+              "size": 1232
+            },
+            {
+              "name": "gUnk_08157B9C",
+              "offset": 9800,
+              "size": 1400
+            },
+            {
+              "name": "gUnk_08158114",
+              "offset": 11200,
+              "size": 2240
+            },
+            {
+              "name": "gUnk_081589D4",
+              "offset": 13440,
+              "size": 1960
+            },
+            {
+              "name": "gUnk_0815917C",
+              "offset": 15400,
+              "size": 784
+            },
+            {
+              "name": "gUnk_0815948C",
+              "offset": 16184,
+              "size": 336
+            },
+            {
+              "name": "gUnk_081595DC",
+              "offset": 16520,
+              "size": 1848
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_indices",
+          "address": "0x887ad64",
+          "size": 676,
+          "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
+          "objects": [
+            {
+              "name": "gUnk_081552B0",
+              "offset": 0,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081552D2",
+              "offset": 34,
+              "size": 50
+            },
+            {
+              "name": "gUnk_08155304",
+              "offset": 84,
+              "size": 80
+            },
+            {
+              "name": "gUnk_08155354",
+              "offset": 164,
+              "size": 70
+            },
+            {
+              "name": "gUnk_0815539A",
+              "offset": 234,
+              "size": 34
+            },
+            {
+              "name": "gUnk_081553BC",
+              "offset": 268,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081553D8",
+              "offset": 296,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553E6",
+              "offset": 310,
+              "size": 14
+            },
+            {
+              "name": "gUnk_081553F4",
+              "offset": 324,
+              "size": 98
+            },
+            {
+              "name": "gUnk_08155456",
+              "offset": 422,
+              "size": 52
+            },
+            {
+              "name": "gUnk_0815548A",
+              "offset": 474,
+              "size": 2
+            },
+            {
+              "name": "gUnk_0815548C",
+              "offset": 476,
+              "size": 12
+            },
+            {
+              "name": "gUnk_08155498",
+              "offset": 488,
+              "size": 44
+            },
+            {
+              "name": "gUnk_081554C4",
+              "offset": 532,
+              "size": 28
+            },
+            {
+              "name": "gUnk_081554E0",
+              "offset": 560,
+              "size": 12
+            },
+            {
+              "name": "gUnk_081554EC",
+              "offset": 572,
+              "size": 66
+            },
+            {
+              "name": "gUnk_0815552E",
+              "offset": 638,
+              "size": 6
+            },
+            {
+              "name": "gUnk_08155534",
+              "offset": 644,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815553A",
+              "offset": 650,
+              "size": 14
+            },
+            {
+              "name": "gUnk_08155548",
+              "offset": 664,
+              "size": 6
+            },
+            {
+              "name": "gUnk_0815554E",
+              "offset": 670,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "unit": "jiminy_records_data.c",
+          "section": ".data_records",
+          "address": "0x887b008",
+          "size": 17092,
+          "sha256": "4e88735cf85dcac8b78ce5d4637ca06d09a5e83d6ae7dd8b86ebe014d0412aaf",
+          "objects": [
+            {
+              "name": "gUnk_08155554",
+              "offset": 0,
+              "size": 504
+            },
+            {
+              "name": "gUnk_0815574C",
+              "offset": 504,
+              "size": 884
+            },
+            {
+              "name": "gUnk_08155B04",
+              "offset": 1388,
+              "size": 312
+            },
+            {
+              "name": "gUnk_08155C54",
+              "offset": 1700,
+              "size": 884
+            },
+            {
+              "name": "gUnk_0815600C",
+              "offset": 2584,
+              "size": 728
+            },
+            {
+              "name": "gUnk_0815631C",
+              "offset": 3312,
+              "size": 364
+            },
+            {
+              "name": "gUnk_081564A4",
+              "offset": 3676,
+              "size": 364
+            },
+            {
+              "name": "gUnk_0815662C",
+              "offset": 4040,
+              "size": 2548
+            },
+            {
+              "name": "gUnk_081570E4",
+              "offset": 6588,
+              "size": 1352
+            },
+            {
+              "name": "gUnk_08157694",
+              "offset": 7940,
+              "size": 52
+            },
+            {
+              "name": "gUnk_081576CC",
+              "offset": 7992,
+              "size": 1144
+            },
+            {
+              "name": "gUnk_08157B9C",
+              "offset": 9136,
+              "size": 1300
+            },
+            {
+              "name": "gUnk_08158114",
+              "offset": 10436,
+              "size": 2080
+            },
+            {
+              "name": "gUnk_081589D4",
+              "offset": 12516,
+              "size": 1820
+            },
+            {
+              "name": "gUnk_0815917C",
+              "offset": 14336,
+              "size": 728
+            },
+            {
+              "name": "gUnk_0815948C",
+              "offset": 15064,
+              "size": 312
+            },
+            {
+              "name": "gUnk_081595DC",
+              "offset": 15376,
+              "size": 1716
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

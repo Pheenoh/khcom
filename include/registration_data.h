@@ -255,6 +255,8 @@ extern Mode gModeWorldselect;
 extern Mode gModeWorldinspect;
 extern Mode gModeWorldwarp;
 extern Mode gModeMsTop;
+extern Mode gModeMsShop;
+extern Mode gModeMsCharge;
 extern Mode gModeMapinspect;
 extern TaskDesc gTaskDescMsShopHosi;
 extern Mode gModeBackupstat;

@@ -1141,7 +1141,9 @@
                 "Unused native descriptor; all stored fields preserved"
               ]
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "event_background_data.c",
@@ -2459,7 +2461,9 @@
                 "Unused native descriptor; all stored fields preserved"
               ]
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "event_background_data.c",

@@ -2232,7 +2232,9 @@
                 "gUnk_09EE274C"
               ]
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         }
       ]
     },
@@ -4463,7 +4465,9 @@
                 "gUnk_09EE274C"
               ]
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         }
       ]
     },
@@ -6694,7 +6698,9 @@
                 "gUnk_09EE274C"
               ]
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         }
       ]
     }

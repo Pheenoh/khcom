@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "boss_pc_data.h"
+
 #include "animation_resource_data.h"
 
 #include "battle_bg_types.h"
@@ -45,37 +47,6 @@ typedef struct PcPos {
     u8 unk_40[0x5C];
     u16 unk_9C;
 } PcPos;
-
-typedef struct PcAnimStep {
-    u16 unk_00;
-    u8 unk_02[0x2];
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    u8 unk_0A[0x2];
-    u16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    s16 unk_12;
-    s16 unk_14;
-    s16 unk_16;
-    s16 unk_18;
-    u8 unk_1A[0x2];
-    u16 unk_1C;
-    s16 unk_1E;
-    s16 unk_20;
-    s16 unk_22;
-} PcAnimStep;
-
-typedef struct PcSpriteCmd {
-    u8 unk_00;
-    u8 unk_01;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    u16 unk_0A;
-} PcSpriteCmd;
 
 typedef struct PcSpriteDef {
     u16 unk_00;
@@ -165,14 +136,9 @@ typedef struct PcWork {
     PcOam unk_2FC[24];
 } PcWork;
 
-extern PcAnimStep gUnk_09A4AF34[];
-extern PcAnimStep gUnk_09A4C278[];
-extern PcAnimStep* gUnk_09EF9DB4[];
-extern PcSpriteCmd* gUnk_09EF9C34[];
 extern PcSpriteDef* gUnk_09EFBB18[];
 extern PcGfxSet gUnk_09A4AC84[];
 extern void* gUnk_09EFAB18[];
-extern PcSpriteCmd gUnk_09A3DF34[];
 extern u8 gUnk_09D69274[];
 extern u16 gUnk_09A4C9EC[];
 extern s16 gUnk_09A4C9F2[];

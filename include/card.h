@@ -1,3 +1,4 @@
+#include "event_index_data.h"
 #include "card_def_data.h"
 #include "battle_localized_data.h"
 #include "msg_portrait_data.h"
@@ -15,6 +16,8 @@
 #include "system_state.h"
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
+
+#include "card_label_data.h"
 
 #include "card_description_data.h"
 
@@ -109,7 +112,6 @@ typedef struct CardDisplayWork {
     u8 unk_A6;
     u8 unk_A7;
 } CardDisplayWork;
-extern void** gUnk_09EE3CA0[];
 extern u16 gUnk_0903BFD4[];
 extern u16 gUnk_0903BFBC[];
 extern u8 gUnk_0940F7B8[];
@@ -1498,17 +1500,6 @@ typedef struct MapSelectWork {
 
 typedef char MapSelectWork_size[(sizeof(struct MapSelectWork) == 0x2E4) ? 1 : -1];
 
-typedef struct UnkStruct_08F7CBA8 {
-    void* unk_00;
-#ifndef VERSION_EU
-    u8 unk_04[0x04];
-#endif
-    void** unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-} UnkStruct_08F7CBA8;
-
-extern UnkStruct_08F7CBA8 gUnk_08F7CBA8[];
 
 typedef struct UnkStruct_080A23A0_Args {
     u8* unk_00;
@@ -1735,14 +1726,6 @@ typedef struct EventBgEffectDef {
     s8 loopFrame;
 } EventBgEffectDef;
 
-typedef struct EventBgEffectEntry {
-    u8 unk_00[0x02];
-    u16 unk_02;
-    s32 unk_04;
-    s32 unk_08;
-    u8 unk_0C[0x04];
-} EventBgEffectEntry;
-
 typedef struct EventBgEffectWork {
     EventBgEffectEntry* unk_00;
     u8 unk_04[0x08];
@@ -1777,7 +1760,6 @@ typedef struct ReloadWork {
     u8 unk_34;
 } ReloadWork;
 
-extern SpriteFrameResourceDef gUnk_08F7CF18[];
 
 typedef struct UnkStruct_080984E4 {
     u8 unk_00[0x08];
@@ -2045,7 +2027,7 @@ u8 func_080A6474(u8* work, void* a);
 void RecalculateInactiveDeckCpCosts(void);
 u8 RELOAD_1(u8* work, void* a);
 u8 func_08099C4C(BossPrizeWork* w);
-void func_080A1BB8(EventMapObjectWork* w, void** t);
+void func_080A1BB8(EventMapObjectWork* w, EventBackgroundDef* t);
 void Mode_riku_deckTutorial_1(void);
 void func_0807A6C8(UnkStruct_08080268* w);
 u8 func_0807B578(UnkStruct_08080268* w, void* a);

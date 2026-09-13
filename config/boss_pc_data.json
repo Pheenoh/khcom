@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "provenance": {
+    "pc_animation_steps": "func_08109EF8 selects a PcAnimStep stream through the 14-entry index; callers use constants 0,11,12,13, branch-selected values 5..10, and state values assigned 0..3. func_08109F20 consumes opcode0 steps and advances after duration unk_22; opcode1 restarts at step0 and opcode2 stops. Each independently traversed stream therefore includes its first opcode1/2 terminal record. The 14 derived extents partition 190 real36-byte records without gaps or overlap, ending exactly at the separately declared gUnk_09A4C9EC scalar table. All6840 source-record bytes and every stream count/opcode agree across US,JP,EU. Padding halfwords at2,10,26 are zero. The raw step records are source-level boss animation commands, not encoded graphics, and the index is real runtime data. All names retain the existing US address convention; no pointer casting or synthetic arrays are used."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_steps",
+          "address": "0x9a4af34",
+          "size": 6840,
+          "sha256": "4a72f8c8e90b3b824d51fb3d646148e0dffa9da31e3dcb08959740b42779f406",
+          "objects": [
+            {
+              "name": "gUnk_09A4AF34",
+              "offset": 0,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B174",
+              "offset": 576,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B3B4",
+              "offset": 1152,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B5F4",
+              "offset": 1728,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B834",
+              "offset": 2304,
+              "size": 936
+            },
+            {
+              "name": "gUnk_09A4BBDC",
+              "offset": 3240,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4BD20",
+              "offset": 3564,
+              "size": 396
+            },
+            {
+              "name": "gUnk_09A4BEAC",
+              "offset": 3960,
+              "size": 972
+            },
+            {
+              "name": "gUnk_09A4C278",
+              "offset": 4932,
+              "size": 504
+            },
+            {
+              "name": "gUnk_09A4C470",
+              "offset": 5436,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C5B4",
+              "offset": 5760,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C6F8",
+              "offset": 6084,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09A4C818",
+              "offset": 6372,
+              "size": 72
+            },
+            {
+              "name": "gUnk_09A4C860",
+              "offset": 6444,
+              "size": 396
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_index",
+          "address": "0x9ef9db4",
+          "size": 56,
+          "sha256": "97e05f1dc8f81210761d94965095a044c9a8dd773681d6096c7049e40a660573",
+          "objects": [
+            {
+              "name": "gUnk_09EF9DB4",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_steps",
+          "address": "0x99ff9bc",
+          "size": 6840,
+          "sha256": "4a72f8c8e90b3b824d51fb3d646148e0dffa9da31e3dcb08959740b42779f406",
+          "objects": [
+            {
+              "name": "gUnk_09A4AF34",
+              "offset": 0,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B174",
+              "offset": 576,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B3B4",
+              "offset": 1152,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B5F4",
+              "offset": 1728,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B834",
+              "offset": 2304,
+              "size": 936
+            },
+            {
+              "name": "gUnk_09A4BBDC",
+              "offset": 3240,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4BD20",
+              "offset": 3564,
+              "size": 396
+            },
+            {
+              "name": "gUnk_09A4BEAC",
+              "offset": 3960,
+              "size": 972
+            },
+            {
+              "name": "gUnk_09A4C278",
+              "offset": 4932,
+              "size": 504
+            },
+            {
+              "name": "gUnk_09A4C470",
+              "offset": 5436,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C5B4",
+              "offset": 5760,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C6F8",
+              "offset": 6084,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09A4C818",
+              "offset": 6372,
+              "size": 72
+            },
+            {
+              "name": "gUnk_09A4C860",
+              "offset": 6444,
+              "size": 396
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_index",
+          "address": "0x9ed11a0",
+          "size": 56,
+          "sha256": "51d8a4db8337145106491d1877f55d5b39e51f47987a6c136f8e7542db2678b0",
+          "objects": [
+            {
+              "name": "gUnk_09EF9DB4",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_steps",
+          "address": "0x9aa89f8",
+          "size": 6840,
+          "sha256": "4a72f8c8e90b3b824d51fb3d646148e0dffa9da31e3dcb08959740b42779f406",
+          "objects": [
+            {
+              "name": "gUnk_09A4AF34",
+              "offset": 0,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B174",
+              "offset": 576,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B3B4",
+              "offset": 1152,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B5F4",
+              "offset": 1728,
+              "size": 576
+            },
+            {
+              "name": "gUnk_09A4B834",
+              "offset": 2304,
+              "size": 936
+            },
+            {
+              "name": "gUnk_09A4BBDC",
+              "offset": 3240,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4BD20",
+              "offset": 3564,
+              "size": 396
+            },
+            {
+              "name": "gUnk_09A4BEAC",
+              "offset": 3960,
+              "size": 972
+            },
+            {
+              "name": "gUnk_09A4C278",
+              "offset": 4932,
+              "size": 504
+            },
+            {
+              "name": "gUnk_09A4C470",
+              "offset": 5436,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C5B4",
+              "offset": 5760,
+              "size": 324
+            },
+            {
+              "name": "gUnk_09A4C6F8",
+              "offset": 6084,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09A4C818",
+              "offset": 6372,
+              "size": 72
+            },
+            {
+              "name": "gUnk_09A4C860",
+              "offset": 6444,
+              "size": 396
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_animation_index",
+          "address": "0x9f85a20",
+          "size": 56,
+          "sha256": "a3956205b2b59d06314c0adfbd9ebfe15b1c0505155aedca7f2d66e4aeacad27",
+          "objects": [
+            {
+              "name": "gUnk_09EF9DB4",
+              "offset": 0,
+              "size": 56
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

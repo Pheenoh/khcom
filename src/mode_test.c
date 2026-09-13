@@ -1421,7 +1421,7 @@ void func_08060F64(void) {
 }
 void Event_0(s32 arg) {
     EvtArg cfg;
-    UnkStruct_09EE3CA0* e;
+    EventBackgroundDef* e;
 
     gUnk_02039DC8 = EwramAlloc(0x8C);
     e = gUnk_09EE3CA0[arg & 0x7FFF];

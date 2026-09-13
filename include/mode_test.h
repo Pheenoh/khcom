@@ -1,3 +1,4 @@
+#include "event_index_data.h"
 #include "mode_test_data.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
@@ -51,12 +52,6 @@
 
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
-
-typedef struct UnkStruct_09EE3CA0 {
-    u8 unk_00[0x24];
-    u8 unk_24;
-    u8 unk_25[0x03];
-} UnkStruct_09EE3CA0;
 
 typedef struct EvtArg {
     u32 unk_00 : 8;
@@ -205,7 +200,6 @@ void func_0806098C(void);
 extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
 
-extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern Mode gModeBattle;
 extern const s16 gSineTable[];
 extern vu16 gSystemFlags;

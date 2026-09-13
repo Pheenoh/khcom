@@ -28,8 +28,13 @@ typedef char CardUiSpriteState_size[(sizeof(CardUiSpriteState) == 0x24) ? 1 : -1
 typedef char MapCardUiResources_size[(sizeof(MapCardUiResources) == 0x30) ? 1 : -1];
 
 typedef struct SpriteFrameResourceDef {
+#ifdef VERSION_EU
+    void** tiles;
+    void*** sprites;
+#else
     void* tiles;
     void** sprites;
+#endif
     u16 tilesSize;
     u16 spriteIndex;
 } SpriteFrameResourceDef;

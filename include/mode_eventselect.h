@@ -1,3 +1,4 @@
+#include "event_index_data.h"
 #include "aux_animation_data.h"
 #include "card_localized_data.h"
 #include "card_animation_data.h"
@@ -67,13 +68,6 @@ typedef struct DownWork {
     u8 unk_40[8];
     u16 unk_48[8];
 } DownWork;
-
-typedef struct EvSoundCue {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-} EvSoundCue;
 
 typedef struct EvSoundWork {
     EvSoundCue* unk_00;
@@ -152,7 +146,6 @@ extern const char gUnk_09033EF8[];
 extern const char gUnk_09033F10[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
-extern const char* gEventNames[];
 #ifdef VERSION_EU
 extern Mode gUnkEu_09F5D6EC;
 #endif

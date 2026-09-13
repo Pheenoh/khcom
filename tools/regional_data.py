@@ -69,7 +69,7 @@ def normalize_sidecar(document, roms=None):
         owners, names = set(), set()
         for placement in region.get('placements', []):
             fields(placement, {'unit', 'section', 'address', 'size', 'objects'},
-                   {'sha256'}, version + ' placement')
+                   {'sha256', 'alignment_before', 'padding_before'}, version + ' placement')
             unit, section = placement['unit'], placement['section']
             if not isinstance(unit, str) or not UNIT.fullmatch(unit):
                 raise ValueError(f'{version}: placement unit must be a C filename')
@@ -81,6 +81,15 @@ def normalize_sidecar(document, roms=None):
                 raise ValueError(f'{label}: duplicate placement')
             owners.add(key)
             address, size = extent(placement['address'], placement['size'], limit, label)
+            padding = placement.get('padding_before', 0)
+            alignment = placement.get('alignment_before')
+            if 'padding_before' in placement or 'alignment_before' in placement:
+                if type(alignment) is not int or alignment != 4 or type(padding) is not int or not 0 < padding < alignment:
+                    raise ValueError(f'{label}: alignment requires alignment_before=4 and padding_before=1..3')
+                if address % alignment or address - padding < ROM_BASE:
+                    raise ValueError(f'{label}: alignment padding is outside ROM or does not end on its boundary')
+                if rom is not None and rom[address - ROM_BASE - padding:address - ROM_BASE] != bytes(padding):
+                    raise ValueError(f'{label}: original ROM alignment padding is not zero')
             digest = placement.get('sha256')
             if digest is not None:
                 if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
@@ -116,8 +125,11 @@ def normalize_sidecar(document, roms=None):
                     'objects': normalized}
             if digest is not None:
                 item['sha256'] = digest
+            if alignment is not None:
+                item['alignment_before'] = alignment
+                item['padding_before'] = padding
             placements.append(item)
-            spans.append((address, address + size, unit + '(' + section + ')'))
+            spans.append((address - padding, address + size, unit + '(' + section + ')'))
 
         def add_asset(name, address, size, encoding, group):
             identifier(name, version + ' asset')
@@ -253,7 +265,10 @@ def placement_overrides(plan):
 def merge_placements(base, plan, code_end=ROM_BASE, rom_end=ROM_END, managed=()):
     if not plan['placements'] and not managed:
         return list(base)
-    replacements = placement_overrides(plan)
+    replacements = {(placement['unit'], placement['section']):
+                    (placement['address'] - placement.get('padding_before', 0),
+                     placement['size'] + placement.get('padding_before', 0))
+                    for placement in plan['placements']}
     result, seen = [], set()
     for address, size, line in base:
         match = re.fullmatch(r'\s*([^()]+)\(([^()]+)\)\s*', line)
@@ -296,7 +311,12 @@ def linker_assertions(placement, after=False):
     label = placement['unit'] + '(' + placement['section'] + ')'
     address = placement['address'] + (placement['size'] if after else 0)
     edge = 'end' if after else 'start'
-    result = [f'ASSERT(ABSOLUTE(.) == {address:#010x}, "regional data {edge}: {label}");']
+    result = []
+    if not after and placement.get('padding_before'):
+        before = placement['address'] - placement['padding_before']
+        result.extend([f'ASSERT(ABSOLUTE(.) == {before:#010x}, "regional alignment start: {label}");',
+                       f'. = ALIGN({placement["alignment_before"]});'])
+    result.append(f'ASSERT(ABSOLUTE(.) == {address:#010x}, "regional data {edge}: {label}");')
     if after:
         for obj in placement['objects']:
             name = obj['name']
@@ -312,6 +332,9 @@ def read_layout(path, prefix='arm-none-eabi-'):
         match = re.match(r'\s*\d+\s+(\S+)\s+([0-9a-fA-F]+)\s+([0-9a-fA-F]+)\s', line)
         if match:
             sections[match[1]] = {'size': int(match[2], 16), 'value': int(match[3], 16)}
+            alignment = re.search(r'2\*\*(\d+)\s*$', line)
+            if alignment:
+                sections[match[1]]['alignment'] = 1 << int(alignment[1])
         match = re.fullmatch(r'([0-9a-fA-F]+) (.{7})\s+(\S+)\s+([0-9a-fA-F]+)\s+(\S+)', line)
         if match and match[3] != '*UND*':
             symbols.append({'name': match[5], 'value': int(match[1], 16), 'size': int(match[4], 16),
@@ -338,6 +361,9 @@ def check_layout(plan, objects, linked):
         actual_section = layout['sections'].get(section)
         if actual_section is None or actual_section['size'] != placement['size']:
             errors.append(f'{label}: compiled section size differs from placement')
+        if placement.get('alignment_before') and (actual_section is None
+                or actual_section.get('alignment') != placement['alignment_before']):
+            errors.append(f'{label}: compiled section alignment differs from alignment contract')
         actual = {}
         for symbol in layout['symbols']:
             if symbol['section'] == section and 'O' in symbol['flags'] and symbol['size']:

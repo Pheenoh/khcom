@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "provenance": {
+    "worldwarp": "Thirteen20-byte WarpIcon records form the actual floor-navigation graph. The duplicate worldinspect view proves the four directional halfwords previously hidden in the first8 bytes. The connection selector is0..3: exactly four8-byte WarpRect entries end at the separate mode_worldwarp name literal. Fourteen24-byte WorldSelectDef records include the native all-zero world0 entry and end at the separately owned Mode registry. Two92-byte WarpDef records are selected by explicit boolean flags; their first pointer names a real Mode registry, and the previously opaque04 field is a background tilemap pointer with its size at08. All native pointers retain their exact regional value.",
+    "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_099937E4",
+          "address": "0x99937e4",
+          "size": 48,
+          "sha256": "a530a5c8a49f8d95342e1eb204bd521a6015edd86fdec8bd71167f903f2fcae0",
+          "objects": [
+            {
+              "name": "gUnk_099937E4",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_09EF9668",
+          "address": "0x9ef9668",
+          "size": 12,
+          "sha256": "b1f85f597699079d9e418454ef74d630a755a895bb44cb3802822a1434ba72da",
+          "objects": [
+            {
+              "name": "gUnk_09EF9668",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_099930E8",
+          "address": "0x99930e8",
+          "size": 32,
+          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "objects": [
+            {
+              "name": "gUnk_099930E8",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09993118",
+          "address": "0x9993118",
+          "size": 184,
+          "sha256": "c3d50a749f200b5f2549005e4519bd5d31bb30e5e726dcec29351e1862244946",
+          "objects": [
+            {
+              "name": "gUnk_09993118",
+              "offset": 0,
+              "size": 184
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9384",
+          "address": "0x9ef9384",
+          "size": 260,
+          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "objects": [
+            {
+              "name": "gUnk_09EF9384",
+              "offset": 0,
+              "size": 260
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9488",
+          "address": "0x9ef9488",
+          "size": 336,
+          "sha256": "a41970314df7dfe48f9fdb4785b245d1b3f423a03a27b792577396513a5c5790",
+          "objects": [
+            {
+              "name": "gUnk_09EF9488",
+              "offset": 0,
+              "size": 336
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".data_registration_gModeMsShop",
+          "address": "0x9ef95f8",
+          "size": 16,
+          "sha256": "f2888c7ce394a8404359679d4bf0f331ca11e76d202e1fd51961847d2f53a0bb",
+          "objects": [
+            {
+              "name": "gModeMsShop",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".rodata_registration_name_gModeMsShop",
+          "address": "0x9993780",
+          "size": 13,
+          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "objects": [
+            {
+              "name": "gModeNameMsShop",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".data_registration_gModeMsCharge",
+          "address": "0x9ef9608",
+          "size": 16,
+          "sha256": "47eb083199a242680088441094c872c8224baffcee9e67cdc2f335aa10ce4ecb",
+          "objects": [
+            {
+              "name": "gModeMsCharge",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".rodata_registration_name_gModeMsCharge",
+          "address": "0x9993790",
+          "size": 15,
+          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
+          "objects": [
+            {
+              "name": "gModeNameMsCharge",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gBackupTextUs_09993864",
+          "address": "0x9993864",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_09993854",
+          "address": "0x9993854",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_09993844",
+          "address": "0x9993844",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_09993834",
+          "address": "0x9993834",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_09993824",
+          "address": "0x9993824",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_09993814",
+          "address": "0x9993814",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_099937DC",
+          "address": "0x99937dc",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_099937D4",
+          "address": "0x99937d4",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextUs_099937CC",
+          "address": "0x99937cc",
+          "size": 7,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_099937E4",
+          "address": "0x99482f8",
+          "size": 48,
+          "sha256": "4e4203bd347c98c11b535f2cc9f2c87a1c1cf806e3e0d6841107a131f0c50a17",
+          "objects": [
+            {
+              "name": "gUnk_099937E4",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_09EF9668",
+          "address": "0x9ed0a54",
+          "size": 12,
+          "sha256": "0f7d2b8b67fda0c44f2884dd2b499d6a707447f7e33b56ed5bdc1336bc79e2b1",
+          "objects": [
+            {
+              "name": "gUnk_09EF9668",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_099930E8",
+          "address": "0x9947bfc",
+          "size": 32,
+          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "objects": [
+            {
+              "name": "gUnk_099930E8",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09993118",
+          "address": "0x9947c2c",
+          "size": 184,
+          "sha256": "f195b456c40519001cf2f5dbef4eb85af169ae9a6583ea1673bcef02923dea91",
+          "objects": [
+            {
+              "name": "gUnk_09993118",
+              "offset": 0,
+              "size": 184
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9384",
+          "address": "0x9ed0770",
+          "size": 260,
+          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "objects": [
+            {
+              "name": "gUnk_09EF9384",
+              "offset": 0,
+              "size": 260
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9488",
+          "address": "0x9ed0874",
+          "size": 336,
+          "sha256": "fbae0283cf8d95d66113922592179005fd12d82961cf3b30fbcf22fcc4d9ebcb",
+          "objects": [
+            {
+              "name": "gUnk_09EF9488",
+              "offset": 0,
+              "size": 336
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".data_registration_gModeMsShop",
+          "address": "0x9ed09e4",
+          "size": 16,
+          "sha256": "3ecb8e09fb7b381cd7412e25959c112c8759cbe4ca3c716a8ab9a1320353cdb9",
+          "objects": [
+            {
+              "name": "gModeMsShop",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".rodata_registration_name_gModeMsShop",
+          "address": "0x9948294",
+          "size": 13,
+          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "objects": [
+            {
+              "name": "gModeNameMsShop",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".data_registration_gModeMsCharge",
+          "address": "0x9ed09f4",
+          "size": 16,
+          "sha256": "d22d53cdd1004f96b3bc70d07a19f1b4b77d278cdd938b34371194af70674b80",
+          "objects": [
+            {
+              "name": "gModeMsCharge",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".rodata_registration_name_gModeMsCharge",
+          "address": "0x99482a4",
+          "size": 15,
+          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
+          "objects": [
+            {
+              "name": "gModeNameMsCharge",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gBackupTextJp_09948378",
+          "address": "0x9948378",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_09948368",
+          "address": "0x9948368",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_09948358",
+          "address": "0x9948358",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_09948348",
+          "address": "0x9948348",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_09948338",
+          "address": "0x9948338",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_09948328",
+          "address": "0x9948328",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_099482F0",
+          "address": "0x99482f0",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_099482E8",
+          "address": "0x99482e8",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextJp_099482E0",
+          "address": "0x99482e0",
+          "size": 7,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_099937E4",
+          "address": "0x9999aa0",
+          "size": 48,
+          "sha256": "cfc3235d5ee1caabdadfe078eb19acefbe2b0b2133be14704ce53f08db69b1a9",
+          "objects": [
+            {
+              "name": "gUnk_099937E4",
+              "offset": 0,
+              "size": 48
+            }
+          ]
+        },
+        {
+          "unit": "backupstat_data.c",
+          "section": ".data_gUnk_09EF9668",
+          "address": "0x9f850e4",
+          "size": 12,
+          "sha256": "bf49e32d298f7e61b08f9de819d25042c414ce402664d10bc8d752071bb995d5",
+          "objects": [
+            {
+              "name": "gUnk_09EF9668",
+              "offset": 0,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_099930E8",
+          "address": "0x9999398",
+          "size": 32,
+          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "objects": [
+            {
+              "name": "gUnk_099930E8",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09993118",
+          "address": "0x99993c8",
+          "size": 184,
+          "sha256": "79105ab95f9eb8b9d271a4da201f4ec3b25df151f1f6fbd2a86fa8c39e2f75fd",
+          "objects": [
+            {
+              "name": "gUnk_09993118",
+              "offset": 0,
+              "size": 184
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9384",
+          "address": "0x9f84c84",
+          "size": 260,
+          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "objects": [
+            {
+              "name": "gUnk_09EF9384",
+              "offset": 0,
+              "size": 260
+            }
+          ]
+        },
+        {
+          "unit": "worldwarp_data.c",
+          "section": ".data_gUnk_09EF9488",
+          "address": "0x9f84d88",
+          "size": 336,
+          "sha256": "5a02b4e930a34d9c9484e3c14d79b4ff3f8f03d997db01689f33e2cdfe79afba",
+          "objects": [
+            {
+              "name": "gUnk_09EF9488",
+              "offset": 0,
+              "size": 336
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".data_registration_gModeMsShop",
+          "address": "0x9f84f98",
+          "size": 16,
+          "sha256": "d8aa710ec40707d5fd34bce2b985897641ad943cd368ebf7a242862449831cb9",
+          "objects": [
+            {
+              "name": "gModeMsShop",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms.c",
+          "section": ".rodata_registration_name_gModeMsShop",
+          "address": "0x9999a30",
+          "size": 13,
+          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "objects": [
+            {
+              "name": "gModeNameMsShop",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".data_registration_gModeMsCharge",
+          "address": "0x9f84ff8",
+          "size": 16,
+          "sha256": "c042931b07e3ace1872cc0b2c4c88813fe0f93ca2504969df589ef2b0f8fc6e4",
+          "objects": [
+            {
+              "name": "gModeMsCharge",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "mode_ms2.c",
+          "section": ".rodata_registration_name_gModeMsCharge",
+          "address": "0x9999a40",
+          "size": 15,
+          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
+          "objects": [
+            {
+              "name": "gModeNameMsCharge",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gBackupTextEu_09999B20",
+          "address": "0x9999b20",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999B10",
+          "address": "0x9999b10",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999B00",
+          "address": "0x9999b00",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999AF0",
+          "address": "0x9999af0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999AE0",
+          "address": "0x9999ae0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999AD0",
+          "address": "0x9999ad0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999A98",
+          "address": "0x9999a98",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999A90",
+          "address": "0x9999a90",
+          "size": 7,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gBackupTextEu_09999A88",
+          "address": "0x9999a88",
+          "size": 7,
+          "encoding": "shift_jis"
+        }
+      ]
+    }
+  }
+}

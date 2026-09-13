@@ -10833,13 +10833,13 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x7:
     case 0x8:
     case 0x9:
-        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (gUnk_09EE3CA0[p->unk_024] != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 1) {
-                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072918((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 5) {
-                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072918((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 0);
                 }
             }
         }
@@ -10848,13 +10848,13 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x77:
     case 0x288:
     case 0x28C:
-        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (gUnk_09EE3CA0[p->unk_024] != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 2) {
-                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072A64((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 6) {
-                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072A64((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 0);
                 }
             }
         }
@@ -10863,13 +10863,13 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x79:
     case 0x289:
     case 0x28D:
-        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (gUnk_09EE3CA0[p->unk_024] != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072A64((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072A64((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 0);
                 }
             }
         }
@@ -10881,13 +10881,13 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x265:
     case 0x266:
     case 0x267:
-        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (gUnk_09EE3CA0[p->unk_024] != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072B4C((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072B4C((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072B4C((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072B4C((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 0);
                 }
             }
         }
@@ -10897,13 +10897,13 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xC:
     case 0xD:
     case 0xE:
-        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (gUnk_09EE3CA0[p->unk_024] != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072918((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072918((Actor0806180C*)p, gUnk_09EE3CA0[p->unk_024]->unk_2C, 0);
                 }
             }
         }

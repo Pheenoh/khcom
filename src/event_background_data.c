@@ -3613,3 +3613,1701 @@ EventBackgroundDef gUnk_08F7EF7C __attribute__((section(".data_event_background_
     { 0, 0 },
 #endif
 };
+
+EventBackgroundDef gUnk_08F7DB70 __attribute__((section(".data_event_background_definition_08F7DB70"))) = {
+    gUnk_09452B18,
+    0,
+    gUnk_09615518,
+    gUnk_09EE2904,
+    0,
+    gUnk_09EE2914,
+#ifdef VERSION_EU
+    13644,
+#else
+    27200,
+#endif
+    0,
+    160,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DBA0 __attribute__((section(".data_event_background_definition_08F7DBA0"))) = {
+    gUnk_09459558,
+    0,
+    gUnk_096155B8,
+    gUnk_09EE2924,
+    gUnk_09EE2964,
+    0,
+#ifdef VERSION_EU
+    20144,
+#else
+    31424,
+#endif
+    0,
+    224,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DBD0 __attribute__((section(".data_event_background_definition_08F7DBD0"))) = {
+    gUnk_09459558,
+    0,
+    gUnk_096155B8,
+    gUnk_09EE2924,
+    0,
+    0,
+#ifdef VERSION_EU
+    20144,
+#else
+    31424,
+#endif
+    0,
+    224,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DC00 __attribute__((section(".data_event_background_definition_08F7DC00"))) = {
+    gUnk_0964AE84,
+    0,
+    gUnk_096FB164,
+    gUnk_09EE29A4,
+    0,
+    0,
+    32768,
+    0,
+    320,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+    { 0, 0 },
+};
+
+EventBackgroundDef gUnk_08F7DC30 __attribute__((section(".data_event_background_definition_08F7DC30"))) = {
+    gUnk_09443138,
+    0,
+    gUnk_096151D8,
+    gUnk_09EE29A8,
+    0,
+    gUnk_09EE29E8,
+#ifdef VERSION_EU
+    12640,
+#else
+    32768,
+#endif
+    0,
+    512,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DC90 __attribute__((section(".data_event_background_definition_08F7DC90"))) = {
+    gUnk_09461018,
+    0,
+    gUnk_09615698,
+    gUnk_09EE2AA8,
+    gUnk_09EE2AE8,
+    0,
+#ifdef VERSION_EU
+    15520,
+#else
+    32736,
+#endif
+    0,
+    288,
+    4,
+    4,
+    0,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DCC0 __attribute__((section(".data_event_background_definition_08F7DCC0"))) = {
+#ifdef VERSION_EU
+    gUnkEu_08F7042C,
+#else
+    gUnk_08CB06E4,
+#endif
+    0,
+    gUnk_08F69404,
+    gUnk_09EE2B68,
+    0,
+    0,
+#ifdef VERSION_EU
+    6164,
+#else
+    16384,
+#endif
+    0,
+    192,
+    1,
+    1,
+    5,
+    1,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DDB0 __attribute__((section(".data_event_background_definition_08F7DDB0"))) = {
+    gUnk_0947D3D8,
+    0,
+    gUnk_09615B58,
+    gUnk_09EE2B7C,
+    0,
+    gUnk_09EE2BBC,
+#ifdef VERSION_EU
+    15120,
+#else
+    21952,
+#endif
+    0,
+    288,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DDE0 __attribute__((section(".data_event_background_definition_08F7DDE0"))) = {
+    gUnk_09482998,
+    0,
+    gUnk_09615C78,
+    gUnk_09EE2BFC,
+    gUnk_09EE2C3C,
+    0,
+#ifdef VERSION_EU
+    9844,
+#else
+    32640,
+#endif
+    0,
+    256,
+    4,
+    4,
+    2,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DFA8 __attribute__((section(".data_event_background_definition_08F7DFA8"))) = {
+    gUnk_098EB324,
+    gUnk_098F30A4,
+    gUnk_099906A4,
+    gUnk_09EE2CCC,
+    gUnk_09EE2CDC,
+    0,
+    32128,
+    11520,
+    352,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7DF48,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7DFD8 __attribute__((section(".data_event_background_definition_08F7DFD8"))) = {
+    gUnk_09475AF8,
+    0,
+    gUnk_09615A38,
+    gUnk_09EE2CEC,
+    gUnk_09EE2D2C,
+    0,
+#ifdef VERSION_EU
+    12192,
+#else
+    30944,
+#endif
+    0,
+    224,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7DF94,
+    3,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E0EC __attribute__((section(".data_event_background_definition_08F7E0EC"))) = {
+    gUnk_097A2ED8,
+    gUnk_097AAED8,
+    gUnk_09849898,
+    (const void**)gUnk_09EF4208,
+    (const void**)gUnk_09EF4688,
+    (const void**)gUnk_09EF4448,
+    32768,
+    16032,
+    512,
+    16,
+    9,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    0,
+    1,
+    { 0, 0 },
+};
+
+EventBackgroundDef gUnk_08F7E11C __attribute__((section(".data_event_background_definition_08F7E11C"))) = {
+    gUnk_097A2ED8,
+    gUnk_097AAED8,
+    gUnk_09849898,
+    (const void**)gUnk_09EF4208,
+    (const void**)gUnk_09EF4688,
+    (const void**)gUnk_09EF4448,
+    32768,
+    16032,
+    512,
+    16,
+    9,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E0C4,
+    0,
+    1,
+    { 0, 0 },
+};
+
+EventBackgroundDef gUnk_08F7E14C __attribute__((section(".data_event_background_definition_08F7E14C"))) = {
+    gUnk_097A2ED8,
+    gUnk_097AAED8,
+    gUnk_09849898,
+    (const void**)gUnk_09EF4208,
+    (const void**)gUnk_09EF4688,
+    (const void**)gUnk_09EF4448,
+    32768,
+    16032,
+    512,
+    16,
+    9,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E0D8,
+    0,
+    1,
+    { 0, 0 },
+};
+
+EventBackgroundDef gUnk_08F7E210 __attribute__((section(".data_event_background_definition_08F7E210"))) = {
+    gUnk_094AAFF8,
+    0,
+    gUnk_09616898,
+    gUnk_09EE2DB4,
+    gUnk_09EE2DBC,
+    0,
+#ifdef VERSION_EU
+    6708,
+#else
+    11072,
+#endif
+    0,
+    128,
+    2,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E240 __attribute__((section(".data_event_background_definition_08F7E240"))) = {
+    gUnk_094A19D8,
+    0,
+    gUnk_09616678,
+    gUnk_09EE2DC4,
+    gUnk_09EE2DD4,
+    0,
+#ifdef VERSION_EU
+    6296,
+#else
+    12192,
+#endif
+    0,
+    224,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E270 __attribute__((section(".data_event_background_definition_08F7E270"))) = {
+    gUnk_094A4978,
+    0,
+    gUnk_09616758,
+    gUnk_09EE2DE4,
+    gUnk_09EE2DF4,
+    0,
+#ifdef VERSION_EU
+    13112,
+#else
+    26240,
+#endif
+    0,
+    320,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E2A0 __attribute__((section(".data_event_background_definition_08F7E2A0"))) = {
+    gUnk_098BDA44,
+    0,
+    gUnk_09990104,
+    gUnk_09EE2E04,
+    gUnk_09EE2E44,
+    0,
+    32256,
+    0,
+    352,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E1FC,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E358 __attribute__((section(".data_event_background_definition_08F7E358"))) = {
+    gUnk_098DF184,
+    gUnk_098E7184,
+    gUnk_09990524,
+    gUnk_09EE2E98,
+    gUnk_09EE2EA8,
+    gUnk_09EE2EB8,
+    32768,
+    14016,
+    384,
+    2,
+    2,
+    1,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E344,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E3C0 __attribute__((section(".data_event_background_definition_08F7E3C0"))) = {
+    gUnk_098DF184,
+    gUnk_098E7184,
+    gUnk_09990524,
+    gUnk_09EE2EC8,
+    gUnk_09EE2ED8,
+    gUnk_09EE2EE8,
+    32768,
+    14016,
+    384,
+    2,
+    2,
+    1,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E3AC,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E4A4 __attribute__((section(".data_event_background_definition_08F7E4A4"))) = {
+    gUnk_098D4504,
+    gUnk_098DBE44,
+    gUnk_099903C4,
+    gUnk_09EE2F08,
+    gUnk_09EE2F48,
+    gUnk_09EE2F88,
+    31040,
+    12160,
+    352,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E490,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E500 __attribute__((section(".data_event_background_definition_08F7E500"))) = {
+    gUnk_098D4504,
+    gUnk_098DBE44,
+    gUnk_099903C4,
+    gUnk_09EE2FC8,
+    gUnk_09EE2FD8,
+    0,
+    31040,
+    12160,
+    352,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E4EC,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E620 __attribute__((section(".data_event_background_definition_08F7E620"))) = {
+    gUnk_0949AF98,
+    0,
+    gUnk_09616458,
+    gUnk_09EE3004,
+    gUnk_09EE3014,
+    0,
+#ifdef VERSION_EU
+    7124,
+#else
+    14848,
+#endif
+    0,
+    192,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E60C,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E688 __attribute__((section(".data_event_background_definition_08F7E688"))) = {
+    gUnk_0949E998,
+    0,
+    gUnk_09616518,
+    gUnk_09EE3024,
+    gUnk_09EE3034,
+    0,
+#ifdef VERSION_EU
+    6532,
+#else
+    12352,
+#endif
+    0,
+    352,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E674,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E6F0 __attribute__((section(".data_event_background_definition_08F7E6F0"))) = {
+    gUnk_098B3A44,
+    0,
+    gUnk_0998FFA4,
+    gUnk_09EE3044,
+    gUnk_09EE3048,
+    0,
+    30720,
+    0,
+    352,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E6DC,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E764 __attribute__((section(".data_event_background_definition_08F7E764"))) = {
+    gUnk_098B3A44,
+    0,
+    gUnk_0998FFA4,
+    gUnk_09EE304C,
+    gUnk_09EE305C,
+    0,
+    30720,
+    0,
+    352,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E750,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E7FC __attribute__((section(".data_event_background_definition_08F7E7FC"))) = {
+    gUnk_098F71A4,
+    0,
+    gUnk_09990804,
+    gUnk_09EE3078,
+    gUnk_09EE307C,
+    0,
+    32768,
+    0,
+    384,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E7E8,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E84C __attribute__((section(".data_event_background_definition_08F7E84C"))) = {
+    gUnk_098F71A4,
+    0,
+    gUnk_09990804,
+    gUnk_09EE3080,
+    gUnk_09EE3084,
+    0,
+    32768,
+    0,
+    384,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E838,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E8B4 __attribute__((section(".data_event_background_definition_08F7E8B4"))) = {
+    gUnk_094ADB38,
+    0,
+    gUnk_09616918,
+    gUnk_09EE3088,
+    gUnk_09EE308C,
+    0,
+#ifdef VERSION_EU
+    4176,
+#else
+    7744,
+#endif
+    0,
+    320,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7E8A0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7E8E4 __attribute__((section(".data_event_background_definition_08F7E8E4"))) = {
+    gUnk_094AF978,
+    0,
+    gUnk_09616A58,
+    gUnk_09EE3090,
+    gUnk_09EE30A0,
+    0,
+#ifdef VERSION_EU
+    6536,
+#else
+    14112,
+#endif
+    0,
+    256,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EA28 __attribute__((section(".data_event_background_definition_08F7EA28"))) = {
+    gUnk_098C9D84,
+    0,
+    gUnk_09990264,
+    gUnk_09EE30D8,
+    gUnk_09EE3118,
+    0,
+    30720,
+    0,
+    352,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EA14,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EAA8 __attribute__((section(".data_event_background_definition_08F7EAA8"))) = {
+    gUnk_098C9D84,
+    gUnk_098D1584,
+    gUnk_09990264,
+    gUnk_09EE3158,
+    gUnk_09EE3160,
+    0,
+    30720,
+    12160,
+    352,
+    2,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EA94,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EB10 __attribute__((section(".data_event_background_definition_08F7EB10"))) = {
+    gUnk_098C9D84,
+    gUnk_098D1584,
+    gUnk_09990264,
+    gUnk_09EE3170,
+    gUnk_09EE3174,
+    gUnk_09EE3178,
+    30720,
+    12160,
+    352,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EAFC,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EC1C __attribute__((section(".data_event_background_definition_08F7EC1C"))) = {
+    gUnk_0948CC98,
+    0,
+    gUnk_09615F98,
+    gUnk_09EE3194,
+    gUnk_09EE31A4,
+    0,
+#ifdef VERSION_EU
+    5304,
+#else
+    9504,
+#endif
+    0,
+    64,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EC08,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7ECB0 __attribute__((section(".data_event_background_definition_08F7ECB0"))) = {
+    gUnk_09902DA4,
+    0,
+    gUnk_09990984,
+    gUnk_09EE31BC,
+    gUnk_09EE31CC,
+    0,
+    32768,
+    0,
+    384,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EC9C,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7ECE0 __attribute__((section(".data_event_background_definition_08F7ECE0"))) = {
+    gUnk_094B5138,
+    0,
+    gUnk_09616C38,
+    gUnk_09EE31DC,
+    0,
+    0,
+#ifdef VERSION_EU
+    11560,
+#else
+    18016,
+#endif
+    0,
+    288,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7ED48 __attribute__((section(".data_event_background_definition_08F7ED48"))) = {
+    gUnk_09902DA4,
+    0,
+    gUnk_09990984,
+    gUnk_09EE31EC,
+    gUnk_09EE31FC,
+    0,
+    32768,
+    0,
+    384,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7ED34,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7ED78 __attribute__((section(".data_event_background_definition_08F7ED78"))) = {
+    gUnk_094B3098,
+    0,
+    gUnk_09616B58,
+    gUnk_09EE320C,
+    gUnk_09EE321C,
+    0,
+#ifdef VERSION_EU
+    3964,
+#else
+    8352,
+#endif
+    0,
+    224,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EE70 __attribute__((section(".data_event_background_definition_08F7EE70"))) = {
+    gUnk_094B9798,
+    0,
+    gUnk_09616D58,
+    gUnk_09EE3244,
+    gUnk_09EE3284,
+    gUnk_09EE32C4,
+#ifdef VERSION_EU
+    13896,
+#else
+    28256,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EE5C,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EECC __attribute__((section(".data_event_background_definition_08F7EECC"))) = {
+    gUnk_094C6378,
+    0,
+    gUnk_09616FD8,
+    gUnk_09EE3304,
+    gUnk_09EE3344,
+    0,
+#ifdef VERSION_EU
+    6096,
+#else
+    14816,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EEB8,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EF4C __attribute__((section(".data_event_background_definition_08F7EF4C"))) = {
+    gUnk_0946CDD8,
+    0,
+    gUnk_096157B8,
+    gUnk_09EE3384,
+    0,
+    gUnk_09EE3394,
+#ifdef VERSION_EU
+    5600,
+#else
+    13568,
+#endif
+    0,
+    320,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EF38,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7EFD8 __attribute__((section(".data_event_background_definition_08F7EFD8"))) = {
+    gUnk_094C05F8,
+    0,
+    gUnk_09616E98,
+    gUnk_09EE33A4,
+    gUnk_09EE33E4,
+    0,
+#ifdef VERSION_EU
+    11092,
+#else
+    23936,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EFC4,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F008 __attribute__((section(".data_event_background_definition_08F7F008"))) = {
+    gUnk_094C05F8,
+    0,
+    gUnk_09616E98,
+    gUnk_09EE33A4,
+    gUnk_09EE3424,
+    0,
+#ifdef VERSION_EU
+    11092,
+#else
+    23936,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7EFC4,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F038 __attribute__((section(".data_event_background_definition_08F7F038"))) = {
+    gUnk_094D7E58,
+    0,
+    gUnk_09617438,
+    gUnk_09EE3464,
+    gUnk_09EE34A4,
+    0,
+#ifdef VERSION_EU
+    8232,
+#else
+    13280,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F068 __attribute__((section(".data_event_background_definition_08F7F068"))) = {
+    gUnk_094D7E58,
+    0,
+    gUnk_09617438,
+    gUnk_09EE3464,
+    gUnk_09EE34E4,
+    0,
+#ifdef VERSION_EU
+    8232,
+#else
+    13280,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F098 __attribute__((section(".data_event_background_definition_08F7F098"))) = {
+    gUnk_094D7E58,
+    0,
+    gUnk_09617438,
+    gUnk_09EE3464,
+    gUnk_09EE3524,
+    0,
+#ifdef VERSION_EU
+    8232,
+#else
+    13280,
+#endif
+    0,
+    320,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F0C8 __attribute__((section(".data_event_background_definition_08F7F0C8"))) = {
+    gUnk_094C9D58,
+    0,
+    gUnk_09617118,
+    gUnk_09EE3564,
+    gUnk_09EE3574,
+    gUnk_09EE3584,
+#ifdef VERSION_EU
+    8536,
+#else
+    32768,
+#endif
+    0,
+    256,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    2,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F0F8 __attribute__((section(".data_event_background_definition_08F7F0F8"))) = {
+    gUnk_094D1D58,
+    0,
+    gUnk_09617218,
+    gUnk_09EE3594,
+    gUnk_09EE35A4,
+    0,
+#ifdef VERSION_EU
+    5036,
+#else
+    11296,
+#endif
+    0,
+    224,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F16C __attribute__((section(".data_event_background_definition_08F7F16C"))) = {
+    gUnk_0992FF64,
+    0,
+    gUnk_09990F44,
+    gUnk_09EE35B4,
+    gUnk_09EE35B8,
+    0,
+    32768,
+    0,
+    384,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F158,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F19C __attribute__((section(".data_event_background_definition_08F7F19C"))) = {
+    gUnk_094DB238,
+    0,
+    gUnk_09617578,
+    gUnk_09EE35BC,
+    gUnk_09EE35CC,
+    0,
+#ifdef VERSION_EU
+    12208,
+#else
+    24320,
+#endif
+    0,
+    480,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F1CC __attribute__((section(".data_event_background_definition_08F7F1CC"))) = {
+    gUnk_094E1138,
+    0,
+    gUnk_09617758,
+    gUnk_09EE35DC,
+    gUnk_09EE35EC,
+    0,
+#ifdef VERSION_EU
+    10652,
+#else
+    23488,
+#endif
+    0,
+    416,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F26C __attribute__((section(".data_event_background_definition_08F7F26C"))) = {
+    gUnk_094E6CF8,
+    0,
+    gUnk_096178F8,
+    gUnk_09EE3614,
+    gUnk_09EE3638,
+    0,
+#ifdef VERSION_EU
+    5780,
+#else
+    16128,
+#endif
+    0,
+    256,
+    3,
+    3,
+    3,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F258,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F2D4 __attribute__((section(".data_event_background_definition_08F7F2D4"))) = {
+    gUnk_094EDAF8,
+    0,
+    gUnk_096179F8,
+    gUnk_09EE365C,
+    gUnk_09EE3680,
+    0,
+#ifdef VERSION_EU
+    9452,
+#else
+    26432,
+#endif
+    0,
+    288,
+    3,
+    3,
+    4,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F2C0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F324 __attribute__((section(".data_event_background_definition_08F7F324"))) = {
+    gUnk_094F5978,
+    0,
+    gUnk_09617B18,
+    gUnk_09EE36A4,
+    gUnk_09EE36B4,
+    0,
+#ifdef VERSION_EU
+    12248,
+#else
+    22304,
+#endif
+    0,
+    160,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F374 __attribute__((section(".data_event_background_definition_08F7F374"))) = {
+    gUnk_0990EA44,
+    0,
+    gUnk_09990B04,
+    gUnk_09EE36C4,
+    gUnk_09EE36C8,
+    0,
+    32768,
+    0,
+    352,
+    1,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F360,
+    2,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F408 __attribute__((section(".data_event_background_definition_08F7F408"))) = {
+    gUnk_0948F1B8,
+    0,
+    gUnk_09616058,
+    gUnk_09EE36D4,
+    gUnk_09EE36E4,
+    0,
+#ifdef VERSION_EU
+    11084,
+#else
+    19712,
+#endif
+    0,
+    256,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F3F4,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F438 __attribute__((section(".data_event_background_definition_08F7F438"))) = {
+    gUnk_09493EB8,
+    0,
+    gUnk_09616158,
+    gUnk_09EE36F4,
+    gUnk_09EE3704,
+    0,
+#ifdef VERSION_EU
+    9528,
+#else
+    18208,
+#endif
+    0,
+    288,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F468 __attribute__((section(".data_event_background_definition_08F7F468"))) = {
+    gUnk_094985D8,
+    0,
+    gUnk_09616278,
+    gUnk_09EE3714,
+    gUnk_09EE3724,
+    0,
+#ifdef VERSION_EU
+    5084,
+#else
+    10688,
+#endif
+    0,
+    480,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    0,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F4E8 __attribute__((section(".data_event_background_definition_08F7F4E8"))) = {
+    gUnk_099199C4,
+    gUnk_099211C4,
+    gUnk_09990C64,
+    gUnk_09EE3734,
+    gUnk_09EE3774,
+    gUnk_09EE37B4,
+    30720,
+    12224,
+    352,
+    4,
+    4,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F4D4,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 2, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F598 __attribute__((section(".data_event_background_definition_08F7F598"))) = {
+    gUnk_094FB098,
+    0,
+    gUnk_09617C18,
+    gUnk_09EE3814,
+    0,
+    0,
+#ifdef VERSION_EU
+    6208,
+#else
+    25312,
+#endif
+    0,
+    64,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F5C8 __attribute__((section(".data_event_background_definition_08F7F5C8"))) = {
+    gUnk_094FB098,
+    0,
+    gUnk_09617BB8,
+    gUnk_09EE3814,
+    0,
+    0,
+#ifdef VERSION_EU
+    6208,
+#else
+    25312,
+#endif
+    0,
+    96,
+    2,
+    1,
+    5,
+    0,
+    { 0, 0, 0 },
+    0,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
+
+EventBackgroundDef gUnk_08F7F63C __attribute__((section(".data_event_background_definition_08F7F63C"))) = {
+    gUnk_094D4978,
+    0,
+    gUnk_096172F8,
+    gUnk_09EE3824,
+    gUnk_09EE3834,
+    0,
+#ifdef VERSION_EU
+    5592,
+#else
+    13536,
+#endif
+    0,
+    320,
+    2,
+    2,
+    5,
+    0,
+    { 0, 0, 0 },
+    &gUnk_08F7F628,
+    1,
+    0,
+#ifdef VERSION_EU
+    { 3, 0 },
+#else
+    { 0, 0 },
+#endif
+};
