@@ -9559,6 +9559,1930 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "event_extra_09EE2864_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2864",
+      "targets": {
+        "jp": "0x9eba2e0"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2864_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2864",
+      "targets": {
+        "eu": "0x9f6df84"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2874_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2874",
+      "targets": {
+        "jp": "0x9eba2f0"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2874_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2874",
+      "targets": {
+        "eu": "0x9f6df94"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2874_eu_2",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee287c",
+      "targets": {
+        "eu": "0x9f6df9c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2884_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2884",
+      "targets": {
+        "jp": "0x9eba300"
+      },
+      "size": 64,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2884_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2884",
+      "targets": {
+        "eu": "0x9f6dfa4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2884_eu_4",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2894",
+      "targets": {
+        "eu": "0x9f6dfb4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE28C4_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee28c4",
+      "targets": {
+        "jp": "0x9eba340"
+      },
+      "size": 64,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE28C4_eu_5",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee28d8",
+      "targets": {
+        "eu": "0x9f6dff8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A28_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a28",
+      "targets": {
+        "jp": "0x9eba4a4"
+      },
+      "size": 64,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A28_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a28",
+      "targets": {
+        "eu": "0x9f6e148"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A28_eu_4",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a38",
+      "targets": {
+        "eu": "0x9f6e158"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A68_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a68",
+      "targets": {
+        "jp": "0x9eba4e4"
+      },
+      "size": 64,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A68_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a68",
+      "targets": {
+        "eu": "0x9f6e188"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2A68_eu_4",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2a78",
+      "targets": {
+        "eu": "0x9f6e198"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B28_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b28",
+      "targets": {
+        "jp": "0x9eba5a4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B28_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b28",
+      "targets": {
+        "eu": "0x9f6e248"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B2C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b2c",
+      "targets": {
+        "jp": "0x9eba5a8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B2C_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b2c",
+      "targets": {
+        "eu": "0x9f6e24c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B30_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b30",
+      "targets": {
+        "jp": "0x9eba5ac"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B34_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b34",
+      "targets": {
+        "jp": "0x9eba5b0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B38_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b38",
+      "targets": {
+        "jp": "0x9eba5b4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B38_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b38",
+      "targets": {
+        "eu": "0x9f6e258"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B3C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b3c",
+      "targets": {
+        "jp": "0x9eba5b8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B3C_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b3c",
+      "targets": {
+        "eu": "0x9f6e25c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B40_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b40",
+      "targets": {
+        "jp": "0x9eba5bc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B44_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b44",
+      "targets": {
+        "jp": "0x9eba5c0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B48_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b48",
+      "targets": {
+        "jp": "0x9eba5c4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B4C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b4c",
+      "targets": {
+        "jp": "0x9eba5c8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B50_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b50",
+      "targets": {
+        "jp": "0x9eba5cc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B54_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b54",
+      "targets": {
+        "jp": "0x9eba5d0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B58_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b58",
+      "targets": {
+        "jp": "0x9eba5d4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B5C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b5c",
+      "targets": {
+        "jp": "0x9eba5d8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B60_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b60",
+      "targets": {
+        "jp": "0x9eba5dc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B64_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2b64",
+      "targets": {
+        "jp": "0x9eba5e0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B6C_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2b6c",
+      "targets": {
+        "jp": "0x9eba5e8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B70_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2b70",
+      "targets": {
+        "jp": "0x9eba5ec"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B74_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2b74",
+      "targets": {
+        "jp": "0x9eba5f0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2B78_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2b78",
+      "targets": {
+        "jp": "0x9eba5f4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2C7C_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2c7c",
+      "targets": {
+        "jp": "0x9eba6f8"
+      },
+      "size": 72,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2C7C_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2c7c",
+      "targets": {
+        "eu": "0x9f6e39c"
+      },
+      "size": 72,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2CC4_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2cc4",
+      "targets": {
+        "jp": "0x9eba740"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2CC4_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2cc4",
+      "targets": {
+        "eu": "0x9f6e3e4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D6C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d6c",
+      "targets": {
+        "jp": "0x9eba7e8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D6C_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d6c",
+      "targets": {
+        "eu": "0x9f6e48c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D70_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d70",
+      "targets": {
+        "jp": "0x9eba7ec"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D70_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d70",
+      "targets": {
+        "eu": "0x9f6e490"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D74_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d74",
+      "targets": {
+        "jp": "0x9eba7f0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D78_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d78",
+      "targets": {
+        "jp": "0x9eba7f4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D7C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d7c",
+      "targets": {
+        "jp": "0x9eba7f8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D7C_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d7c",
+      "targets": {
+        "eu": "0x9f6e49c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D80_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d80",
+      "targets": {
+        "jp": "0x9eba7fc"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D80_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d80",
+      "targets": {
+        "eu": "0x9f6e4a0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D84_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d84",
+      "targets": {
+        "jp": "0x9eba800"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D88_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d88",
+      "targets": {
+        "jp": "0x9eba804"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D8C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d8c",
+      "targets": {
+        "jp": "0x9eba808"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D90_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d90",
+      "targets": {
+        "jp": "0x9eba80c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D94_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d94",
+      "targets": {
+        "jp": "0x9eba810"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D98_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee2d98",
+      "targets": {
+        "jp": "0x9eba814"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D9C_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2d9c",
+      "targets": {
+        "jp": "0x9eba818"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2D9C_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee2d9c",
+      "targets": {
+        "eu": "0x9f6e4bc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2DA4_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2da4",
+      "targets": {
+        "jp": "0x9eba820"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2DA4_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2da4",
+      "targets": {
+        "eu": "0x9f6e4c4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2DAC_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2dac",
+      "targets": {
+        "jp": "0x9eba828"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2DAC_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2dac",
+      "targets": {
+        "eu": "0x9f6e4cc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2E84_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2e84",
+      "targets": {
+        "jp": "0x9eba900"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2E84_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2e84",
+      "targets": {
+        "eu": "0x9f6e5a4"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2EF8_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2ef8",
+      "targets": {
+        "jp": "0x9eba974"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2EF8_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2ef8",
+      "targets": {
+        "eu": "0x9f6e618"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2FE8_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2fe8",
+      "targets": {
+        "jp": "0x9ebaa64"
+      },
+      "size": 28,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE2FE8_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee2fe8",
+      "targets": {
+        "eu": "0x9f6e708"
+      },
+      "size": 28,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE306C_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee306c",
+      "targets": {
+        "jp": "0x9ebaae8"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE306C_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee306c",
+      "targets": {
+        "eu": "0x9f6e78c"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE30B0_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee30b0",
+      "targets": {
+        "jp": "0x9ebab2c"
+      },
+      "size": 40,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE30B0_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee30b0",
+      "targets": {
+        "eu": "0x9f6e7d0"
+      },
+      "size": 40,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3168_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3168",
+      "targets": {
+        "jp": "0x9ebabe4"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3168_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3168",
+      "targets": {
+        "eu": "0x9f6e888"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE316C_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee316c",
+      "targets": {
+        "jp": "0x9ebabe8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE316C_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee316c",
+      "targets": {
+        "eu": "0x9f6e88c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE317C_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee317c",
+      "targets": {
+        "jp": "0x9ebabf8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE317C_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee317c",
+      "targets": {
+        "eu": "0x9f6e89c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3184_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee3184",
+      "targets": {
+        "jp": "0x9ebac00"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3184_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee3184",
+      "targets": {
+        "eu": "0x9f6e8a4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE318C_jp_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee318c",
+      "targets": {
+        "jp": "0x9ebac08"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE318C_eu_0",
+      "provenance": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+      "us": "0x9ee318c",
+      "targets": {
+        "eu": "0x9f6e8ac"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE31B4_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee31b4",
+      "targets": {
+        "jp": "0x9ebac30"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE31B4_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee31b4",
+      "targets": {
+        "eu": "0x9f6e8d4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE322C_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee322c",
+      "targets": {
+        "jp": "0x9ebaca8"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE322C_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee322c",
+      "targets": {
+        "eu": "0x9f6e94c"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE35FC_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee35fc",
+      "targets": {
+        "jp": "0x9ebb078"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE35FC_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee35fc",
+      "targets": {
+        "eu": "0x9f6ed1c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3600_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3600",
+      "targets": {
+        "jp": "0x9ebb07c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3600_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3600",
+      "targets": {
+        "eu": "0x9f6ed20"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3604_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3604",
+      "targets": {
+        "jp": "0x9ebb080"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3604_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3604",
+      "targets": {
+        "eu": "0x9f6ed24"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3608_jp_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3608",
+      "targets": {
+        "jp": "0x9ebb084"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE3608_eu_0",
+      "provenance": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use.",
+      "us": "0x9ee3608",
+      "targets": {
+        "eu": "0x9f6ed28"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE360C_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee360c",
+      "targets": {
+        "jp": "0x9ebb088"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE360C_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee360c",
+      "targets": {
+        "eu": "0x9f6ed2c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE36CC_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee36cc",
+      "targets": {
+        "jp": "0x9ebb148"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE36CC_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee36cc",
+      "targets": {
+        "eu": "0x9f6edec"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE37F4_jp_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee37f4",
+      "targets": {
+        "jp": "0x9ebb270"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_09EE37F4_eu_0",
+      "provenance": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+      "us": "0x9ee37f4",
+      "targets": {
+        "eu": "0x9f6ef14"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB10_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db10",
+      "targets": {
+        "jp": "0x8f71018"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB10_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db18",
+      "targets": {
+        "jp": "0x8f71020"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB10_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db10",
+      "targets": {
+        "eu": "0x9057cf0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB10_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db18",
+      "targets": {
+        "eu": "0x9057cf8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB40_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db40",
+      "targets": {
+        "jp": "0x8f71048"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB40_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db48",
+      "targets": {
+        "jp": "0x8f71050"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB40_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db40",
+      "targets": {
+        "eu": "0x9057d20"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DB40_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7db48",
+      "targets": {
+        "eu": "0x9057d28"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DC60_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dc60",
+      "targets": {
+        "jp": "0x8f71168"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DC60_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dc68",
+      "targets": {
+        "jp": "0x8f71170"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DC60_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dc60",
+      "targets": {
+        "eu": "0x9057e40"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DC60_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dc68",
+      "targets": {
+        "eu": "0x9057e48"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DCF0_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dcf0",
+      "targets": {
+        "jp": "0x8f711f8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DCF0_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dcf8",
+      "targets": {
+        "jp": "0x8f71200"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DCF0_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dcf8",
+      "targets": {
+        "eu": "0x9057ed8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD20_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd20",
+      "targets": {
+        "jp": "0x8f71228"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD20_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd28",
+      "targets": {
+        "jp": "0x8f71230"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD20_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd28",
+      "targets": {
+        "eu": "0x9057f08"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD50_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd50",
+      "targets": {
+        "jp": "0x8f71258"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD50_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd58",
+      "targets": {
+        "jp": "0x8f71260"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD50_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd58",
+      "targets": {
+        "eu": "0x9057f38"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD80_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd80",
+      "targets": {
+        "jp": "0x8f71288"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD80_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd88",
+      "targets": {
+        "jp": "0x8f71290"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7DD80_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7dd88",
+      "targets": {
+        "eu": "0x9057f68"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E008_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e008",
+      "targets": {
+        "jp": "0x8f71510"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E008_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e010",
+      "targets": {
+        "jp": "0x8f71518"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E008_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e008",
+      "targets": {
+        "eu": "0x90581e8"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E008_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e010",
+      "targets": {
+        "eu": "0x90581f0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E038_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e038",
+      "targets": {
+        "jp": "0x8f71540"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E038_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e040",
+      "targets": {
+        "jp": "0x8f71548"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E038_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e038",
+      "targets": {
+        "eu": "0x9058218"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7E038_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7e040",
+      "targets": {
+        "eu": "0x9058220"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb90",
+      "targets": {
+        "jp": "0x8f72098"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_4_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb94",
+      "targets": {
+        "jp": "0x8f7209c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb98",
+      "targets": {
+        "jp": "0x8f720a0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_40_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ebb8",
+      "targets": {
+        "jp": "0x8f720c0"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb90",
+      "targets": {
+        "eu": "0x9058d70"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_4_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb94",
+      "targets": {
+        "eu": "0x9058d74"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7eb98",
+      "targets": {
+        "eu": "0x9058d78"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EB90_40_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ebb8",
+      "targets": {
+        "eu": "0x9058d98"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EF7C_0_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ef7c",
+      "targets": {
+        "jp": "0x8f72484"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EF7C_8_jp_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ef84",
+      "targets": {
+        "jp": "0x8f7248c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EF7C_0_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ef7c",
+      "targets": {
+        "eu": "0x905915c"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "event_extra_08F7EF7C_8_eu_0",
+      "provenance": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+      "us": "0x8f7ef84",
+      "targets": {
+        "eu": "0x9059164"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

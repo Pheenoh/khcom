@@ -1,3 +1,4 @@
+#include "map_text_data.h"
 #include "map_ui_data.h"
 #include "map_resource_data.h"
 #include "card_lookup_data.h"
@@ -1374,8 +1375,6 @@ extern u8 (*gUnk_09EF6A88[])(UnkStruct_080E8B1C*);
 extern const u8 gUnk_09EF6AB0[];
 extern void* gTaskDescFldSora;
 extern void* gTaskDescFldRiku;
-extern void* gUnk_09EF6FCC[];
-extern void* gUnk_09EF7000[];
 extern CardDef gCardDefs[];
 extern void* gTaskDescRoomcreate;
 

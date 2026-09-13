@@ -1,0 +1,3965 @@
+{
+  "version": 1,
+  "provenance": {
+    "unused_background_definitions": "Eleven unused48-byte EventBackgroundDef scalars lie between62 independently rooted native definitions. Every rooted definition has the same bounded resource-block translation US-to-JP and US-to-EU, and the eleven additional records preserve native pointer roles, dimensions, flags and complete regional structure. Whole-ROM aligned pointer searches find no incoming references. Regional compressed-map flags and resource targets are preserved explicitly. The unused08F7E008 descriptor retains its stored4x4 dimensions and points to the first neutral scalar at09EE2D6C; no12-entry array or valid16-cell extent is invented.",
+    "unused_background_maps": "Fourteen additional background map grids have exact dimensions from the corresponding validated unused native descriptors. Their spans do not overlap the114 previously owned rooted grids or independently proven sprite arrays. All targets are symbolic raw or EU-compressed map resources; regional alternatives already selected in btl.c/mode_sio.c are reused without remapping the raw names.",
+    "event_object_sprites": "EventBackgroundDef.unk_28 reaches the canonical20-byte EventMapObjectDef. Its placements contain spriteIndex and its parallel tile/palette resource vectors corroborate sprite capacity. Thirteen capacities are anchored by equal complete tile and palette resource counts before the first placement vector, with every resource pointer and byte-size validated; the remaining8-entry array is proven directly by maximum placement index7. This proves14 sprite-pointer arrays totaling292 bytes, including the structurally valid unused suffixes at09EE2C7C and09EE2EF8.",
+    "neutral_map_cells": "Thirty-four validated BG-map pointers occupy the four remaining physical fragments09EE2B28..2B68,2D6C..2D9C,3168..3170,35FC..360C. The first, third and fourth fragment bases have no ROM pointer references. The second is referenced only by an unused descriptor with stale4x4 dimensions that would cross independent sprite metadata. Each pointer is therefore a neutral named scalar, with complete regional target validation and no claimed historical array extent or runtime use."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2864",
+          "address": "0x9ee2864",
+          "size": 16,
+          "sha256": "595695307527b83c660ae83c9dbaaab463c1e25928dda4463b5aca01619a54b9",
+          "objects": [
+            {
+              "name": "gUnk_09EE2864",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2874",
+          "address": "0x9ee2874",
+          "size": 16,
+          "sha256": "1c331e69e2d7fa90f62c96253ee7252702f4f98a5c6731e7ebdd2f629381a8e3",
+          "objects": [
+            {
+              "name": "gUnk_09EE2874",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2884",
+          "address": "0x9ee2884",
+          "size": 64,
+          "sha256": "d4aedb663bbba9e4bba316922fb6630fe79f1eac9d5e09aa02dfa85046279552",
+          "objects": [
+            {
+              "name": "gUnk_09EE2884",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE28C4",
+          "address": "0x9ee28c4",
+          "size": 64,
+          "sha256": "508604e0cc0322af0b4a66931a10247ac56b3a78ea3dc4af0aa87a08a77dade7",
+          "objects": [
+            {
+              "name": "gUnk_09EE28C4",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A28",
+          "address": "0x9ee2a28",
+          "size": 64,
+          "sha256": "4d18d7e784da7d9fdc31d766001256adb5adf69b98e7b4ee91a61bb881fb7684",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A28",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A68",
+          "address": "0x9ee2a68",
+          "size": 64,
+          "sha256": "c1e710048e731cdb03c26e76d67ed7337f1b2a4eebb169ccc225d26f922c1e7d",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A68",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B28",
+          "address": "0x9ee2b28",
+          "size": 4,
+          "sha256": "0a155ce6248287bb8f2520dd0c399d3c398bbb3080bb5b31903a45d86d023f89",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B28",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B2C",
+          "address": "0x9ee2b2c",
+          "size": 4,
+          "sha256": "6524cf45b1dd928d79ff56847d7b6305ba1130af9aea3a5e66ecf1ee6a00dc58",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B2C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B30",
+          "address": "0x9ee2b30",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B30",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B34",
+          "address": "0x9ee2b34",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B34",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B38",
+          "address": "0x9ee2b38",
+          "size": 4,
+          "sha256": "e0ee696763db92a4e7e1af3f0ea17da960e31a102dcdbc6eced0d0dd34ec15bc",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B38",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B3C",
+          "address": "0x9ee2b3c",
+          "size": 4,
+          "sha256": "a8b9b393269964bbf1228ba1cbab040728b8eb924a9ddde95f5b6f6d4c91db85",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B3C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B40",
+          "address": "0x9ee2b40",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B40",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B44",
+          "address": "0x9ee2b44",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B44",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B48",
+          "address": "0x9ee2b48",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B48",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B4C",
+          "address": "0x9ee2b4c",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B4C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B50",
+          "address": "0x9ee2b50",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B50",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B54",
+          "address": "0x9ee2b54",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B54",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B58",
+          "address": "0x9ee2b58",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B58",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B5C",
+          "address": "0x9ee2b5c",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B5C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B60",
+          "address": "0x9ee2b60",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B60",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B64",
+          "address": "0x9ee2b64",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B64",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B6C",
+          "address": "0x9ee2b6c",
+          "size": 4,
+          "sha256": "f56f533d4b35331003ad93847d48a3a5ae1de82f772e7891e8defcb54201b5ee",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B70",
+          "address": "0x9ee2b70",
+          "size": 4,
+          "sha256": "d63f5d318b4e11b88aefba585b4b04db934db8d05b38a961dc76b4bed14b870f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B74",
+          "address": "0x9ee2b74",
+          "size": 4,
+          "sha256": "9d497e7fed5b4981f492730519b7646e61d5cd16481089fc80792ae822990317",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B78",
+          "address": "0x9ee2b78",
+          "size": 4,
+          "sha256": "0bbaa4111e9a191a2c324ea38b0a62af6ebe4405a9054704cf271f5f2c963ba0",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2C7C",
+          "address": "0x9ee2c7c",
+          "size": 72,
+          "sha256": "00fe46b2a81758408c1f2f74baf7d755c1e9aefd957d2b443c52f6e661386b63",
+          "objects": [
+            {
+              "name": "gUnk_09EE2C7C",
+              "offset": 0,
+              "size": 72,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2CC4",
+          "address": "0x9ee2cc4",
+          "size": 8,
+          "sha256": "fc6ff5e6d7a2d65d6b7ff6e557ec22662687c62fd88c2ca64239889d9a52de3e",
+          "objects": [
+            {
+              "name": "gUnk_09EE2CC4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D6C",
+          "address": "0x9ee2d6c",
+          "size": 4,
+          "sha256": "2cd545bd463e2453c348b29464a52268e7c3866f2c5dc00b5c9ae7f903cdf036",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D70",
+          "address": "0x9ee2d70",
+          "size": 4,
+          "sha256": "a716ca7bd34de648dbc81699a7e12f95372ad5a5a5f3c0d4b9b126962d12eb82",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D74",
+          "address": "0x9ee2d74",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D78",
+          "address": "0x9ee2d78",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D7C",
+          "address": "0x9ee2d7c",
+          "size": 4,
+          "sha256": "9e3fdcf965aad63a2f2fd712727451b1c43e95c604d682417322df5ed8354379",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D7C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D80",
+          "address": "0x9ee2d80",
+          "size": 4,
+          "sha256": "5a7f449dd27537331ad7ad49dc1d193854859eba55ae14c4433a5f251ee4136c",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D80",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D84",
+          "address": "0x9ee2d84",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D84",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D88",
+          "address": "0x9ee2d88",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D88",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D8C",
+          "address": "0x9ee2d8c",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D8C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D90",
+          "address": "0x9ee2d90",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D90",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D94",
+          "address": "0x9ee2d94",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D94",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D98",
+          "address": "0x9ee2d98",
+          "size": 4,
+          "sha256": "b31f97a7a1f73c4b2ca1f03639fbf09b51619b302b87240062f391b4660b63ae",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D98",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D9C",
+          "address": "0x9ee2d9c",
+          "size": 8,
+          "sha256": "350d54905f04f32046615b41877dbbdf0c635ef38f7efba046ff5e5c88c152fa",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D9C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DA4",
+          "address": "0x9ee2da4",
+          "size": 8,
+          "sha256": "a0026b617a6742a4b0aeecff072c81638e34706dcf58b7345995b2359f9fc383",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DA4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DAC",
+          "address": "0x9ee2dac",
+          "size": 8,
+          "sha256": "70c3deb49274c4e82ec7289cabd5e2f3043d6c0cf238654d1cd50c253a844b9f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DAC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2E84",
+          "address": "0x9ee2e84",
+          "size": 20,
+          "sha256": "fb6299bee4690bd8f1bb97610ae429d709d41e7283b3e5c9b2f6b3ce662cfee7",
+          "objects": [
+            {
+              "name": "gUnk_09EE2E84",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2EF8",
+          "address": "0x9ee2ef8",
+          "size": 16,
+          "sha256": "5763a2eac8cbd23c5f33c94ec56634d46fc0e4353a09679c5e6cbf2265174b04",
+          "objects": [
+            {
+              "name": "gUnk_09EE2EF8",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2FE8",
+          "address": "0x9ee2fe8",
+          "size": 28,
+          "sha256": "26e71bef6250459f3598f8c54fbfada080b8d255b2735c97f790b9a30de0b4fd",
+          "objects": [
+            {
+              "name": "gUnk_09EE2FE8",
+              "offset": 0,
+              "size": 28,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE306C",
+          "address": "0x9ee306c",
+          "size": 12,
+          "sha256": "11321e396c969188f53567596a67cd1137be958c641292fe05705fc5b70a8499",
+          "objects": [
+            {
+              "name": "gUnk_09EE306C",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE30B0",
+          "address": "0x9ee30b0",
+          "size": 40,
+          "sha256": "d4bf13a6cb7ed4bc4facd4789afed8179d3fe9977d46669f7cf8aa77557d3e8f",
+          "objects": [
+            {
+              "name": "gUnk_09EE30B0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3168",
+          "address": "0x9ee3168",
+          "size": 4,
+          "sha256": "bbd94c5c8759a9d36bf4d53891ebf14f1508eefdfccf35a6b84980572512ec80",
+          "objects": [
+            {
+              "name": "gUnk_09EE3168",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE316C",
+          "address": "0x9ee316c",
+          "size": 4,
+          "sha256": "227ff869ba6143a164e031167613e78e575c236fcfae92980ee1174bdda5010c",
+          "objects": [
+            {
+              "name": "gUnk_09EE316C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE317C",
+          "address": "0x9ee317c",
+          "size": 8,
+          "sha256": "43e2ed7630d492bebee0f34824943b0ad21d019ed9fe7cb6be0fe4072413d46f",
+          "objects": [
+            {
+              "name": "gUnk_09EE317C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3184",
+          "address": "0x9ee3184",
+          "size": 8,
+          "sha256": "b8194160371e163299c24c3e60554b011bfc76ded51d7c43c7eb8fd0d51d5bfe",
+          "objects": [
+            {
+              "name": "gUnk_09EE3184",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE318C",
+          "address": "0x9ee318c",
+          "size": 8,
+          "sha256": "f06fa4beb895376981bd7ff7f5bfee37d7c632440e3c3c9b91eff2fd7149374d",
+          "objects": [
+            {
+              "name": "gUnk_09EE318C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE31B4",
+          "address": "0x9ee31b4",
+          "size": 8,
+          "sha256": "bb18c1a6c8ab4cb3fad5bc34b7d37d65adeefbbbe4b9ebac4c2853482a32e384",
+          "objects": [
+            {
+              "name": "gUnk_09EE31B4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE322C",
+          "address": "0x9ee322c",
+          "size": 24,
+          "sha256": "a6b9a7d200eed876ce6c263b75899293175da369859decc8f124348634169587",
+          "objects": [
+            {
+              "name": "gUnk_09EE322C",
+              "offset": 0,
+              "size": 24,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE35FC",
+          "address": "0x9ee35fc",
+          "size": 4,
+          "sha256": "f82716480a0a185051879b92020381920d3905d55937a32e35e4647fa7fd9284",
+          "objects": [
+            {
+              "name": "gUnk_09EE35FC",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3600",
+          "address": "0x9ee3600",
+          "size": 4,
+          "sha256": "ccac78fa6f296202e9563c4d164e07b808a56dfb4b259f30c7f074694185ea0d",
+          "objects": [
+            {
+              "name": "gUnk_09EE3600",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3604",
+          "address": "0x9ee3604",
+          "size": 4,
+          "sha256": "db030b69df86fc45a9f57f1ccd247dbbe8f3da0090e25d30c0bcc4553ba3587d",
+          "objects": [
+            {
+              "name": "gUnk_09EE3604",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3608",
+          "address": "0x9ee3608",
+          "size": 4,
+          "sha256": "ecf1f007ef23ad43b733520a1980433c42e82bf6edfed6658c3a0a8a03ca5d03",
+          "objects": [
+            {
+              "name": "gUnk_09EE3608",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE360C",
+          "address": "0x9ee360c",
+          "size": 8,
+          "sha256": "cb49edfbe8755328448e3f762e82fd2aa1702c392adff5dfc28cbc085016de2d",
+          "objects": [
+            {
+              "name": "gUnk_09EE360C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE36CC",
+          "address": "0x9ee36cc",
+          "size": 8,
+          "sha256": "178e87c0f9c7162f6f0d4f78fd2ecbaaef4a27f7d16a62c5dff42a2cd8d8a1b4",
+          "objects": [
+            {
+              "name": "gUnk_09EE36CC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE37F4",
+          "address": "0x9ee37f4",
+          "size": 32,
+          "sha256": "8d8c7d561e0f47ed3e46310b3c3cbbdddf5f6f133cb6abde43a317432790e319",
+          "objects": [
+            {
+              "name": "gUnk_09EE37F4",
+              "offset": 0,
+              "size": 32,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB10",
+          "address": "0x8f7db10",
+          "size": 48,
+          "sha256": "79bef0af730d20bdeedc2c2f4b444089c47c0dc96154531e1646c40c275840d1",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB10",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB40",
+          "address": "0x8f7db40",
+          "size": 48,
+          "sha256": "06213bec8474ddce650d0e34ff6469dbc10c93749fe9e5f147b054f91f7520d4",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB40",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DC60",
+          "address": "0x8f7dc60",
+          "size": 48,
+          "sha256": "f425d9336cb1e074316ac9fab96dd54e957c8c92505f724e459e4d2eaa5b204f",
+          "objects": [
+            {
+              "name": "gUnk_08F7DC60",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DCF0",
+          "address": "0x8f7dcf0",
+          "size": 48,
+          "sha256": "e73506df5c6db9d2f451cf59c5a9ffad5e932f7c5ff49e62b24d66df45ece6b5",
+          "objects": [
+            {
+              "name": "gUnk_08F7DCF0",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD20",
+          "address": "0x8f7dd20",
+          "size": 48,
+          "sha256": "deb9f7a4c967d2a312b255f928fd543f4f68eb61f5697173f37c7a94bbb81389",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD20",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD50",
+          "address": "0x8f7dd50",
+          "size": 48,
+          "sha256": "21372496d6972cedb5319ddb1fe102c5e2ca2180ef083455d47c4d923490e9cf",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD50",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD80",
+          "address": "0x8f7dd80",
+          "size": 48,
+          "sha256": "b3ddbf1c0620008f0d675b1d66dee9944e44b3b171086c13c366844b3dc0bf44",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD80",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E008",
+          "address": "0x8f7e008",
+          "size": 48,
+          "sha256": "e9da9b3ecc66094f1256e550912dffd97dabfb99e6b54379d8299ae9fed9f370",
+          "objects": [
+            {
+              "name": "gUnk_08F7E008",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E038",
+          "address": "0x8f7e038",
+          "size": 48,
+          "sha256": "aaa202e319b57950fa38124ff5b467a7be603a243762d1d51d533d401eaf8b14",
+          "objects": [
+            {
+              "name": "gUnk_08F7E038",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB90",
+          "address": "0x8f7eb90",
+          "size": 48,
+          "sha256": "8d9eac2853e73375417f9b61aca5fb2fcb5588192b68929bbaee9b896f48f7d4",
+          "objects": [
+            {
+              "name": "gUnk_08F7EB90",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF7C",
+          "address": "0x8f7ef7c",
+          "size": 48,
+          "sha256": "9e37c96853e3c41b5a10b77d6152757ac6e1aecc2ea3ebe1cd1f8ba7906482cd",
+          "objects": [
+            {
+              "name": "gUnk_08F7EF7C",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2864",
+          "address": "0x9eba2e0",
+          "size": 16,
+          "sha256": "8db16e426a751a8437d9eb88efd88f6fcf0f2b670058665c072b3d3d42b352ee",
+          "objects": [
+            {
+              "name": "gUnk_09EE2864",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2874",
+          "address": "0x9eba2f0",
+          "size": 16,
+          "sha256": "4bfb55452b15e039616b03b6143058cb644d90a836ff19e137a3a42c552110b1",
+          "objects": [
+            {
+              "name": "gUnk_09EE2874",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2884",
+          "address": "0x9eba300",
+          "size": 64,
+          "sha256": "3bf5ef3306944e3e4051142846134b85a747583fed0e3b20513ae9cbdc249550",
+          "objects": [
+            {
+              "name": "gUnk_09EE2884",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE28C4",
+          "address": "0x9eba340",
+          "size": 64,
+          "sha256": "5bb07718994040ccef00c1adc5c5a932f751d1996e606edf6a29688613ed1630",
+          "objects": [
+            {
+              "name": "gUnk_09EE28C4",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A28",
+          "address": "0x9eba4a4",
+          "size": 64,
+          "sha256": "cdb8645859c3857e00305ca6d295dbe4943447d3132275212e5d914e2ae2ae2b",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A28",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A68",
+          "address": "0x9eba4e4",
+          "size": 64,
+          "sha256": "921fc10ece85d8c8a7a1842c517176a6db9c80c531cbf0397c370eea5d1e78a0",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A68",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B28",
+          "address": "0x9eba5a4",
+          "size": 4,
+          "sha256": "ebd785bf536bab774d07940a4020fd1fbdfdeb3c36ab2f339aed082d7dc525fe",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B28",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B2C",
+          "address": "0x9eba5a8",
+          "size": 4,
+          "sha256": "3405dbeb00eae86b754d67fdf5db0904846167077ffea2459c43bbd869e2f783",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B2C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B30",
+          "address": "0x9eba5ac",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B30",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B34",
+          "address": "0x9eba5b0",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B34",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B38",
+          "address": "0x9eba5b4",
+          "size": 4,
+          "sha256": "4d8c291bd00abfb60c660b9785ca6b367e1415216f077e3143c90114f4dde9cf",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B38",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B3C",
+          "address": "0x9eba5b8",
+          "size": 4,
+          "sha256": "635dbdfd929d0d5a654a4dc6504b857d7298ebf755512040c708567ede7a8e1c",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B3C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B40",
+          "address": "0x9eba5bc",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B40",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B44",
+          "address": "0x9eba5c0",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B44",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B48",
+          "address": "0x9eba5c4",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B48",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B4C",
+          "address": "0x9eba5c8",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B4C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B50",
+          "address": "0x9eba5cc",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B50",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B54",
+          "address": "0x9eba5d0",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B54",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B58",
+          "address": "0x9eba5d4",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B58",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B5C",
+          "address": "0x9eba5d8",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B5C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B60",
+          "address": "0x9eba5dc",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B60",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B64",
+          "address": "0x9eba5e0",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B64",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B6C",
+          "address": "0x9eba5e8",
+          "size": 4,
+          "sha256": "8373d85d2e96611445997c4c06d4f6ea5dee13a61a76e47a905f4a8c2f12c0eb",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B70",
+          "address": "0x9eba5ec",
+          "size": 4,
+          "sha256": "2bea409e71cbf77e7e895449a3d0a162d434a20bbd4f59670c5f51beea0d95ea",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B74",
+          "address": "0x9eba5f0",
+          "size": 4,
+          "sha256": "9896f7223924c133f76811eddf4dc9f372a7081eb8e398ca1be037ddf5e10efa",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B78",
+          "address": "0x9eba5f4",
+          "size": 4,
+          "sha256": "b972851b1c636673154cd64422450c267f5b2507876f1a2225e6f46dadcb1b16",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2C7C",
+          "address": "0x9eba6f8",
+          "size": 72,
+          "sha256": "792e93636c396ee4e6cc88cab746eb93837b2a583e7b1f9ed8161c17b9d4e48f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2C7C",
+              "offset": 0,
+              "size": 72,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2CC4",
+          "address": "0x9eba740",
+          "size": 8,
+          "sha256": "9a5373d4332e287a7445e26dec02e3410d6b2da65cf447ef11aea6e539faa232",
+          "objects": [
+            {
+              "name": "gUnk_09EE2CC4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D6C",
+          "address": "0x9eba7e8",
+          "size": 4,
+          "sha256": "28d4557263f1f5606aac0f762200b980e42f115c2dcce352e0c4ce6eb2771b8a",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D70",
+          "address": "0x9eba7ec",
+          "size": 4,
+          "sha256": "c90e99cf56072b6cf46f0866af82105e710c06c19db0240f0b529741ae9076bb",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D74",
+          "address": "0x9eba7f0",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D78",
+          "address": "0x9eba7f4",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D7C",
+          "address": "0x9eba7f8",
+          "size": 4,
+          "sha256": "f4831a8fcaf673b3b1517da026b5adcac75380f47222ce8c1861f070ac153005",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D7C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D80",
+          "address": "0x9eba7fc",
+          "size": 4,
+          "sha256": "a437261b83333b7235e3cb4d6c5ba012917ef453ac291e1ebd1cb1085505183f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D80",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D84",
+          "address": "0x9eba800",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D84",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D88",
+          "address": "0x9eba804",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D88",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D8C",
+          "address": "0x9eba808",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D8C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D90",
+          "address": "0x9eba80c",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D90",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D94",
+          "address": "0x9eba810",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D94",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D98",
+          "address": "0x9eba814",
+          "size": 4,
+          "sha256": "3c0aeaec6fee2746e47cb28ebb0ab419302fa8e9886f68d38145b82563419807",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D98",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D9C",
+          "address": "0x9eba818",
+          "size": 8,
+          "sha256": "bd712e6c1816ec028f9b69578b6e5305d62de605e3fe6388b37e1cd31470fda6",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D9C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DA4",
+          "address": "0x9eba820",
+          "size": 8,
+          "sha256": "fcf0fda4febb9372dba3e45d094cc05ad9965402f954aeee544080891e50fd62",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DA4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DAC",
+          "address": "0x9eba828",
+          "size": 8,
+          "sha256": "bbee35d4fe91d4ea0b04f0badd7e371400b93377252699ab1a859ad8a41e8c6c",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DAC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2E84",
+          "address": "0x9eba900",
+          "size": 20,
+          "sha256": "62b3427c9be7c1740daaa147234245494038392e6613e65a0b9788b1dbc84db6",
+          "objects": [
+            {
+              "name": "gUnk_09EE2E84",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2EF8",
+          "address": "0x9eba974",
+          "size": 16,
+          "sha256": "5af82e75003812234c7c29d1e9d952fb60e97b1cd6cc800f88218cff29409e1b",
+          "objects": [
+            {
+              "name": "gUnk_09EE2EF8",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2FE8",
+          "address": "0x9ebaa64",
+          "size": 28,
+          "sha256": "f52f0a5a0c05c5ffd5b9bfc1b2da05f3cfda08984c6692b21786543b17fae004",
+          "objects": [
+            {
+              "name": "gUnk_09EE2FE8",
+              "offset": 0,
+              "size": 28,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE306C",
+          "address": "0x9ebaae8",
+          "size": 12,
+          "sha256": "67c71419443ab8c2ec05eed95e040607d4345834abe537af8f38b595a12eef3d",
+          "objects": [
+            {
+              "name": "gUnk_09EE306C",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE30B0",
+          "address": "0x9ebab2c",
+          "size": 40,
+          "sha256": "0c2565301316b5a85d5ab215634fac961e60185c1ec7a0cffd988facf01b0e89",
+          "objects": [
+            {
+              "name": "gUnk_09EE30B0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3168",
+          "address": "0x9ebabe4",
+          "size": 4,
+          "sha256": "6fb570a0ed3dd28cb31090ff1d1661cb3c3815a7c38b60a2f23fab4f31f2c8fe",
+          "objects": [
+            {
+              "name": "gUnk_09EE3168",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE316C",
+          "address": "0x9ebabe8",
+          "size": 4,
+          "sha256": "a6c34a0f24423e8679b9003f925882076915f3a0170e44b1eb1a3e982dce94c9",
+          "objects": [
+            {
+              "name": "gUnk_09EE316C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE317C",
+          "address": "0x9ebabf8",
+          "size": 8,
+          "sha256": "59817888b6a5e5d5fcaaf4c627000f1e1b384da2448b019ba0bc6abfd0da8c6a",
+          "objects": [
+            {
+              "name": "gUnk_09EE317C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3184",
+          "address": "0x9ebac00",
+          "size": 8,
+          "sha256": "f485d5ef37637b89ac36541c0d441deaa31a0a33ec4e92d274f7284e4074b5ed",
+          "objects": [
+            {
+              "name": "gUnk_09EE3184",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE318C",
+          "address": "0x9ebac08",
+          "size": 8,
+          "sha256": "c949e0e08e672ef7c729da7c8af9e148cd75b6bc13212414be72bc9d3726dd7e",
+          "objects": [
+            {
+              "name": "gUnk_09EE318C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE31B4",
+          "address": "0x9ebac30",
+          "size": 8,
+          "sha256": "a4347dd13c73cec638351d637698e70e4c3b3e991df0af3d917ad1404ed4ddc0",
+          "objects": [
+            {
+              "name": "gUnk_09EE31B4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE322C",
+          "address": "0x9ebaca8",
+          "size": 24,
+          "sha256": "eccaee58f0fb05bf740ce0c1b4ee00762959fa4665982b22e205c975114d2de8",
+          "objects": [
+            {
+              "name": "gUnk_09EE322C",
+              "offset": 0,
+              "size": 24,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE35FC",
+          "address": "0x9ebb078",
+          "size": 4,
+          "sha256": "cd11d56ccb3960c9b13a1140364421a905f086c6ea5db266b12a1ca65cb37882",
+          "objects": [
+            {
+              "name": "gUnk_09EE35FC",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3600",
+          "address": "0x9ebb07c",
+          "size": 4,
+          "sha256": "e42e6177ca2a9a4e2dab0a9c94f7c997bc22bdc971f59fdde17f6f4cf2663433",
+          "objects": [
+            {
+              "name": "gUnk_09EE3600",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3604",
+          "address": "0x9ebb080",
+          "size": 4,
+          "sha256": "44dd8407055289c6f5203f8ff02f0a9bd168a5536ffb9ade44725176c450663a",
+          "objects": [
+            {
+              "name": "gUnk_09EE3604",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3608",
+          "address": "0x9ebb084",
+          "size": 4,
+          "sha256": "7d12b34d67a83b311165cd654b3232aed51358efd659fec7e0957299aff719cf",
+          "objects": [
+            {
+              "name": "gUnk_09EE3608",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE360C",
+          "address": "0x9ebb088",
+          "size": 8,
+          "sha256": "6f9c5060167d99c5a8c9c6abbf89d52f280ec6880cb1a0cc327f7da68838a3f6",
+          "objects": [
+            {
+              "name": "gUnk_09EE360C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE36CC",
+          "address": "0x9ebb148",
+          "size": 8,
+          "sha256": "52a3c476906ec2272d6caeb614d50a6e09538c53082ed697d896bb253cb65876",
+          "objects": [
+            {
+              "name": "gUnk_09EE36CC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE37F4",
+          "address": "0x9ebb270",
+          "size": 32,
+          "sha256": "d72a1e40ba98fe106bf5fb0a2efce94a449ae9d9c11b0e82325cb4d2185ed8e2",
+          "objects": [
+            {
+              "name": "gUnk_09EE37F4",
+              "offset": 0,
+              "size": 32,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB10",
+          "address": "0x8f71018",
+          "size": 48,
+          "sha256": "9366ca9fe60bd2e65942a6a087df38cec5c945e4acbde9266fe829084d0c53e3",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB10",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB40",
+          "address": "0x8f71048",
+          "size": 48,
+          "sha256": "8d15e6956fc010b6103191e012a7ca91dbca9e699ac94fd06502744e16e3aec6",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB40",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DC60",
+          "address": "0x8f71168",
+          "size": 48,
+          "sha256": "bd5967cee26c36cb6b0755c7548b98a0b2d90ffb3350bb0ed3b845f174abc100",
+          "objects": [
+            {
+              "name": "gUnk_08F7DC60",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DCF0",
+          "address": "0x8f711f8",
+          "size": 48,
+          "sha256": "4ea123cdaa913f19f3c5e904f5b1e914107a7e283de1936e042f10d6b1402447",
+          "objects": [
+            {
+              "name": "gUnk_08F7DCF0",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD20",
+          "address": "0x8f71228",
+          "size": 48,
+          "sha256": "71a74936efcb7a25959d7af86615ce2f1250c656027c1c037545d2d1b239fa12",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD20",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD50",
+          "address": "0x8f71258",
+          "size": 48,
+          "sha256": "e74b57d6f59aa8305468a66142b266883a53e1fb8660e6fa83448b25ddef9b0a",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD50",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD80",
+          "address": "0x8f71288",
+          "size": 48,
+          "sha256": "784c385d083f4c69c95c51db07a84d634cd32b855937933eb254754a7f85732d",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD80",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E008",
+          "address": "0x8f71510",
+          "size": 48,
+          "sha256": "0bb491359378b12b6ba08c90bbd97dd4bdd40a95e68da4a317dae14672e2bb61",
+          "objects": [
+            {
+              "name": "gUnk_08F7E008",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E038",
+          "address": "0x8f71540",
+          "size": 48,
+          "sha256": "520dfadb4846eea8bf3599816a834beaf89270182d3045604dbb94249881851f",
+          "objects": [
+            {
+              "name": "gUnk_08F7E038",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB90",
+          "address": "0x8f72098",
+          "size": 48,
+          "sha256": "333a4a5843a2171e60dc65e1b7971903ad2b25c471bc5549783e813483e10663",
+          "objects": [
+            {
+              "name": "gUnk_08F7EB90",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF7C",
+          "address": "0x8f72484",
+          "size": 48,
+          "sha256": "cc74a3f1928cc87f5cbc18cd90f0be13a912edfab3d7efce4a9a00764a035efa",
+          "objects": [
+            {
+              "name": "gUnk_08F7EF7C",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2864",
+          "address": "0x9f6df84",
+          "size": 16,
+          "sha256": "6acd1bd433d8e1fd504d83c527c45474368252b80f2ca331a72ed947f57a508f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2864",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2874",
+          "address": "0x9f6df94",
+          "size": 16,
+          "sha256": "34482f2ebcf920b545f4ebc603030a7c022d2bf77e98d8b473a8e7d298d83900",
+          "objects": [
+            {
+              "name": "gUnk_09EE2874",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2884",
+          "address": "0x9f6dfa4",
+          "size": 64,
+          "sha256": "9ff7c5cea8414779f5a4f574e712e6f45964bf5ce521d6fb4dd7857a23d05e06",
+          "objects": [
+            {
+              "name": "gUnk_09EE2884",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE28C4",
+          "address": "0x9f6dfe4",
+          "size": 64,
+          "sha256": "3990fbff9e693ad6e0cb1f1e6835c9d2b7e75dc1a3c24e884aa52e25545e0499",
+          "objects": [
+            {
+              "name": "gUnk_09EE28C4",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A28",
+          "address": "0x9f6e148",
+          "size": 64,
+          "sha256": "39f48e7b1d2f435b784c60a9bd3ed623d571e26121eae30c3415b43849e21898",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A28",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2A68",
+          "address": "0x9f6e188",
+          "size": 64,
+          "sha256": "2dd3a986cba1c49b0ff8cb6ff36f6f4c5e73ba9ce76fb393544eaefa9c696219",
+          "objects": [
+            {
+              "name": "gUnk_09EE2A68",
+              "offset": 0,
+              "size": 64,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B28",
+          "address": "0x9f6e248",
+          "size": 4,
+          "sha256": "61bb06d3c9998d20ff29e76ec6bd6a6abea1a3a9d3e36b217a393b3d959af647",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B28",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B2C",
+          "address": "0x9f6e24c",
+          "size": 4,
+          "sha256": "421eda399715e73dd1d9199181f6c8f2e0e696e905ad677be4ccd71056d7edd4",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B2C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B30",
+          "address": "0x9f6e250",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B30",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B34",
+          "address": "0x9f6e254",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B34",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B38",
+          "address": "0x9f6e258",
+          "size": 4,
+          "sha256": "d4d86b543751b01ad4ed9fc4521b6d25468163a43118ec04d9cfff4ca0c16279",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B38",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B3C",
+          "address": "0x9f6e25c",
+          "size": 4,
+          "sha256": "c61c1b6dd97f69c4605fbe4c65ae2322a18f25b227f78dc40428667a4ad555aa",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B3C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B40",
+          "address": "0x9f6e260",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B40",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B44",
+          "address": "0x9f6e264",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B44",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B48",
+          "address": "0x9f6e268",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B48",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B4C",
+          "address": "0x9f6e26c",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B4C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B50",
+          "address": "0x9f6e270",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B50",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B54",
+          "address": "0x9f6e274",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B54",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B58",
+          "address": "0x9f6e278",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B58",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B5C",
+          "address": "0x9f6e27c",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B5C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B60",
+          "address": "0x9f6e280",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B60",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B64",
+          "address": "0x9f6e284",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B64",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B6C",
+          "address": "0x9f6e28c",
+          "size": 4,
+          "sha256": "b370ecdf53c404f738383f9940b64d81c10cb6352b6942b12d2a575c5efd372f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B70",
+          "address": "0x9f6e290",
+          "size": 4,
+          "sha256": "74c02d92904be4347303da960f1a3f2f2e52132f2c29dedd6c86757eea23f707",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B74",
+          "address": "0x9f6e294",
+          "size": 4,
+          "sha256": "6deaecbd898b1aa889c2c756eca5e8b4787c6ab2e0bd7cb0623d828aaa2664b5",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2B78",
+          "address": "0x9f6e298",
+          "size": 4,
+          "sha256": "695021a322e9711e024a7f0fd19e6777e8b11c7310532c57e0745cd68f5c09e4",
+          "objects": [
+            {
+              "name": "gUnk_09EE2B78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2C7C",
+          "address": "0x9f6e39c",
+          "size": 72,
+          "sha256": "3708009787f5abeb04ee447293bb635e9574d809478f3deb418d2d6f01e3b6f2",
+          "objects": [
+            {
+              "name": "gUnk_09EE2C7C",
+              "offset": 0,
+              "size": 72,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2CC4",
+          "address": "0x9f6e3e4",
+          "size": 8,
+          "sha256": "8650756c1128054312cafeb2f9ce4e876aa32c1587b9d871e51b573948d8c16e",
+          "objects": [
+            {
+              "name": "gUnk_09EE2CC4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D6C",
+          "address": "0x9f6e48c",
+          "size": 4,
+          "sha256": "69098b42126a9509171e5d148c52e42311cbb3294f7c8f51044a54ccddf489c9",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D6C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D70",
+          "address": "0x9f6e490",
+          "size": 4,
+          "sha256": "4e2bd09f0d71fb1e20591a9eb262ace451b309d9c0af2c0ba8ee1b9aac390879",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D70",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D74",
+          "address": "0x9f6e494",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D74",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D78",
+          "address": "0x9f6e498",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D78",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D7C",
+          "address": "0x9f6e49c",
+          "size": 4,
+          "sha256": "999fc79ecccb56ad6b8b7b4044ba71fb20785b532e459a38a96d77fcf7038552",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D7C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D80",
+          "address": "0x9f6e4a0",
+          "size": 4,
+          "sha256": "3a20779469c6bebe40368dcf9ba42b9252f6f04f0ca2d7567e88fc22bb4f8ecf",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D80",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D84",
+          "address": "0x9f6e4a4",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D84",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D88",
+          "address": "0x9f6e4a8",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D88",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D8C",
+          "address": "0x9f6e4ac",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D8C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D90",
+          "address": "0x9f6e4b0",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D90",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D94",
+          "address": "0x9f6e4b4",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D94",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D98",
+          "address": "0x9f6e4b8",
+          "size": 4,
+          "sha256": "1fdcc5d805a419d6be393ca64393419f67c8ab29a8ecc7276c04e9de9b2c065f",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D98",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2D9C",
+          "address": "0x9f6e4bc",
+          "size": 8,
+          "sha256": "80da4235c37bac595e53203fd0d8d9a25c7dd7115f16c61daeeed0d9a5ffd5a7",
+          "objects": [
+            {
+              "name": "gUnk_09EE2D9C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DA4",
+          "address": "0x9f6e4c4",
+          "size": 8,
+          "sha256": "6008222e9699874bb88d2419d4126dfd98308af570cef3290d0f95771986d560",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DA4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2DAC",
+          "address": "0x9f6e4cc",
+          "size": 8,
+          "sha256": "ad0e96f002513f768c990ffb86bc105278fe3e3d696784907e2633bb6ca3a059",
+          "objects": [
+            {
+              "name": "gUnk_09EE2DAC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2E84",
+          "address": "0x9f6e5a4",
+          "size": 20,
+          "sha256": "3456b7f4ef03986671d9917810386f49883516921705dad1e69e62dea5079cd3",
+          "objects": [
+            {
+              "name": "gUnk_09EE2E84",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2EF8",
+          "address": "0x9f6e618",
+          "size": 16,
+          "sha256": "81b482ce7e1aa010ef338eef10f5de435e806fb56545d7ffa13c3d23a68c7dd0",
+          "objects": [
+            {
+              "name": "gUnk_09EE2EF8",
+              "offset": 0,
+              "size": 16,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE2FE8",
+          "address": "0x9f6e708",
+          "size": 28,
+          "sha256": "f82ffcbfd5b7d4028e7acd53d9421e26359b77d275586bd00d8586da38183eab",
+          "objects": [
+            {
+              "name": "gUnk_09EE2FE8",
+              "offset": 0,
+              "size": 28,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE306C",
+          "address": "0x9f6e78c",
+          "size": 12,
+          "sha256": "e79a4c82884f7c3e07a35025ce1247702c2fbb226fa45ca765c12d86ff031a6f",
+          "objects": [
+            {
+              "name": "gUnk_09EE306C",
+              "offset": 0,
+              "size": 12,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE30B0",
+          "address": "0x9f6e7d0",
+          "size": 40,
+          "sha256": "64e0514296d67b7f93f9cb8bdb972c1ce2511f987de93871f91bb87f7e5a3b08",
+          "objects": [
+            {
+              "name": "gUnk_09EE30B0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3168",
+          "address": "0x9f6e888",
+          "size": 4,
+          "sha256": "19c6807220a3e95a1a9aa983ddaf12d22eacab6d7f919c5c3e8a3ad55034b87a",
+          "objects": [
+            {
+              "name": "gUnk_09EE3168",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE316C",
+          "address": "0x9f6e88c",
+          "size": 4,
+          "sha256": "8b9f20fa147089b675a5e4f6c41fd19ece4e9ceca4a92c554b8cd93d7c1e370e",
+          "objects": [
+            {
+              "name": "gUnk_09EE316C",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE317C",
+          "address": "0x9f6e89c",
+          "size": 8,
+          "sha256": "59bbcc118dcc91f381ae1ec2040a998333761afd4276349282ab69d2cb62dbae",
+          "objects": [
+            {
+              "name": "gUnk_09EE317C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3184",
+          "address": "0x9f6e8a4",
+          "size": 8,
+          "sha256": "0e7631b51936ad3dab196a66fda1a4664868d207aa85dade5b8e1fe9fe30ec10",
+          "objects": [
+            {
+              "name": "gUnk_09EE3184",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE318C",
+          "address": "0x9f6e8ac",
+          "size": 8,
+          "sha256": "a1b83bc44500ca4e6524fd8a549e5c1ba6297ffa3548c34e398a19616d8d36af",
+          "objects": [
+            {
+              "name": "gUnk_09EE318C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "event_seq_1",
+                "See unused_background_maps provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE31B4",
+          "address": "0x9f6e8d4",
+          "size": 8,
+          "sha256": "f58e29c9645571eec87241799125bb70cbd88936b7cc4d05f1b4f693c81226ac",
+          "objects": [
+            {
+              "name": "gUnk_09EE31B4",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE322C",
+          "address": "0x9f6e94c",
+          "size": 24,
+          "sha256": "ca429fcf33ff574da5c1642ff81d504fe745f309d60beceae2d47912dbfa4461",
+          "objects": [
+            {
+              "name": "gUnk_09EE322C",
+              "offset": 0,
+              "size": 24,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE35FC",
+          "address": "0x9f6ed1c",
+          "size": 4,
+          "sha256": "c189711c6ec548647b6934c24ee3894ea313325b1719db247079d5faeece567f",
+          "objects": [
+            {
+              "name": "gUnk_09EE35FC",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3600",
+          "address": "0x9f6ed20",
+          "size": 4,
+          "sha256": "70d8619dd16d5757c50c1b5c3d99e23efc0e6483d562c9d09381a914a1ff6e40",
+          "objects": [
+            {
+              "name": "gUnk_09EE3600",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3604",
+          "address": "0x9f6ed24",
+          "size": 4,
+          "sha256": "cc38fb91454dfb0df24aae45a0a8641da72584ebf3fdc6ee937bc7ca4e6c649c",
+          "objects": [
+            {
+              "name": "gUnk_09EE3604",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE3608",
+          "address": "0x9f6ed28",
+          "size": 4,
+          "sha256": "b43effcac44b6999b5e3915690a3aa0d8eca7dafa3da9acb38da3e282d06fea1",
+          "objects": [
+            {
+              "name": "gUnk_09EE3608",
+              "offset": 0,
+              "size": 4,
+              "consumer": [
+                "event_seq_1",
+                "See neutral_map_cells provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE360C",
+          "address": "0x9f6ed2c",
+          "size": 8,
+          "sha256": "1d50fe2c6062e93676e06401c23c59f3e2b30cbe9b0fde033129e7f69034bbb6",
+          "objects": [
+            {
+              "name": "gUnk_09EE360C",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE36CC",
+          "address": "0x9f6edec",
+          "size": 8,
+          "sha256": "4df2d99a08956d1b70bc5d38674f401cf7641d14cc14250eb85934781e43d12c",
+          "objects": [
+            {
+              "name": "gUnk_09EE36CC",
+              "offset": 0,
+              "size": 8,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_09EE37F4",
+          "address": "0x9f6ef14",
+          "size": 32,
+          "sha256": "5011620c1be81d09b84d01df5874ffdd3dc8bda5139619fb30a63741adefce34",
+          "objects": [
+            {
+              "name": "gUnk_09EE37F4",
+              "offset": 0,
+              "size": 32,
+              "consumer": [
+                "Ev_mapObj_2",
+                "See event_object_sprites provenance; no runtime use is claimed for unused objects"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB10",
+          "address": "0x9057cf0",
+          "size": 48,
+          "sha256": "f1018927cada21e6700a6abdf0e39a3fd3b14c415c1a980265820a2373428a70",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB10",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DB40",
+          "address": "0x9057d20",
+          "size": 48,
+          "sha256": "9cdd1494e6f3f12dc2a4cdf834421a0b31fb8893b9e91d3c3559f7cb584e7496",
+          "objects": [
+            {
+              "name": "gUnk_08F7DB40",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DC60",
+          "address": "0x9057e40",
+          "size": 48,
+          "sha256": "2ad55438ebb435b59b7f2769b3e77ec9a6afaef04c5cb4a9e79c6f2fbbe48549",
+          "objects": [
+            {
+              "name": "gUnk_08F7DC60",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DCF0",
+          "address": "0x9057ed0",
+          "size": 48,
+          "sha256": "3ba057a2128cfb9a4850a4121ceab58a27803e8dd461374b3a18496dea41c449",
+          "objects": [
+            {
+              "name": "gUnk_08F7DCF0",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD20",
+          "address": "0x9057f00",
+          "size": 48,
+          "sha256": "642b4cc5886ec2cd008a74b63ad02e9c9af2bbbc3581e3a3aaa2b952ab753b13",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD20",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD50",
+          "address": "0x9057f30",
+          "size": 48,
+          "sha256": "deac39307d3be12658218a0b8561f2a6ad6582a46d0c2a7e29b60af5fb5499b1",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD50",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7DD80",
+          "address": "0x9057f60",
+          "size": 48,
+          "sha256": "181fc0f1d42a5e08a600798f821f316bdab04a7e40f7b1a5d023bc50d0e2ffc9",
+          "objects": [
+            {
+              "name": "gUnk_08F7DD80",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E008",
+          "address": "0x90581e8",
+          "size": 48,
+          "sha256": "41641e4b6480708260f433b2919d0d8f0c1c0e947395ad3cc9f878121e61fa0b",
+          "objects": [
+            {
+              "name": "gUnk_08F7E008",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E038",
+          "address": "0x9058218",
+          "size": 48,
+          "sha256": "3dcb503faf0933a099c0ac8ae96785fa952ffa38cfcebd8864cb0f2f05190689",
+          "objects": [
+            {
+              "name": "gUnk_08F7E038",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB90",
+          "address": "0x9058d70",
+          "size": 48,
+          "sha256": "87449acb0280d5679c2baff80bcd688bf8fae552a28bb50d1ae7d8f46b50ad29",
+          "objects": [
+            {
+              "name": "gUnk_08F7EB90",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF7C",
+          "address": "0x905915c",
+          "size": 48,
+          "sha256": "f145fa032c29b227201dac8cb688bab3088a2c41d6623d3c5f2bb5c69180ccfd",
+          "objects": [
+            {
+              "name": "gUnk_08F7EF7C",
+              "offset": 0,
+              "size": 48,
+              "consumer": [
+                "event_seq_1",
+                "Unused native descriptor; all stored fields preserved"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -8050,9 +8050,9 @@ void event_seq_0(EventSeqWork* work, u8* a) {
                 SetBgColorMode(2, 128);
                 SetBgSize(2, 0x8000);
                 if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
-                    eu_080059F4(2, *u->unk_0C);
+                    eu_080059F4(2, (void*)*u->unk_0C);
                 } else {
-                    LoadBgMap(2, *u->unk_0C, 0x1000);
+                    LoadBgMap(2, (void*)*u->unk_0C, 0x1000);
                 }
                 SetBgAffine(2, 0, 256, 256, 0, 0);
             } else {
@@ -8221,7 +8221,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             LoadBgPalette(2, u->unk_08, u->unk_1C);
             SetBgColorMode(2, 128);
             SetBgSize(2, 0x8000);
-            LoadBgMap(2, *u->unk_0C, 0x1000);
+            LoadBgMap(2, (void*)*u->unk_0C, 0x1000);
             SetBgAffine(2, 0, 256, 256, 0, 0);
         } else {
             LoadBgTiles(3, u->unk_00, u->unk_18);

@@ -1,3 +1,4 @@
+#include "event_background_types.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
@@ -232,27 +233,6 @@ typedef struct EventSeqArg {
     u32 unk_02 : 8;
     u32 unk_03 : 8;
 } EventSeqArg;
-
-typedef struct EventBackgroundDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void** unk_0C;
-    void* unk_10;
-    void* unk_14;
-    u16 unk_18;
-    u16 unk_1A;
-    u16 unk_1C;
-    u8 unk_1E;
-    u8 unk_1F;
-    s32 unk_20;
-    u8 unk_24;
-    u8 unk_25[3];
-    s32 unk_28;
-    u8 unk_2C;
-    u8 unk_2D;
-    u8 unk_2E[2];
-} EventBackgroundDef;
 
 typedef struct EventScanlineScroll {
     u8 unk_00[2];

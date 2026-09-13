@@ -1,3 +1,4 @@
+#include "map_text_data.h"
 #include "map_ui_data.h"
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
@@ -52,7 +53,6 @@ extern s16 gSineTable[];
 extern s32 gUnk_0999204C[];
 extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
-extern void* gUnk_09EF7048[];
 
 
 

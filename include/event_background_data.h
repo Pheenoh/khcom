@@ -1,7 +1,7 @@
 #ifndef GUARD_EVENT_BACKGROUND_DATA_H
 #define GUARD_EVENT_BACKGROUND_DATA_H
 
-#include "types.h"
+#include "event_background_types.h"
 
 extern const void* gUnk_09EE2904[4];
 extern const void* gUnk_09EE2914[4];
@@ -117,5 +117,79 @@ extern const void* gUnk_09EE37B4[16];
 extern const void* gUnk_09EE3814[4];
 extern const void* gUnk_09EE3824[4];
 extern const void* gUnk_09EE3834[4];
+
+extern const void* gUnk_09EE2864[4];
+extern const void* gUnk_09EE2874[4];
+extern const void* gUnk_09EE2884[16];
+extern const void* gUnk_09EE28C4[16];
+extern const void* gUnk_09EE2A28[16];
+extern const void* gUnk_09EE2A68[16];
+extern const void* gUnk_09EE2B28;
+extern const void* gUnk_09EE2B2C;
+extern const void* gUnk_09EE2B30;
+extern const void* gUnk_09EE2B34;
+extern const void* gUnk_09EE2B38;
+extern const void* gUnk_09EE2B3C;
+extern const void* gUnk_09EE2B40;
+extern const void* gUnk_09EE2B44;
+extern const void* gUnk_09EE2B48;
+extern const void* gUnk_09EE2B4C;
+extern const void* gUnk_09EE2B50;
+extern const void* gUnk_09EE2B54;
+extern const void* gUnk_09EE2B58;
+extern const void* gUnk_09EE2B5C;
+extern const void* gUnk_09EE2B60;
+extern const void* gUnk_09EE2B64;
+extern const void* gUnk_09EE2B6C[1];
+extern const void* gUnk_09EE2B70[1];
+extern const void* gUnk_09EE2B74[1];
+extern const void* gUnk_09EE2B78[1];
+extern void* gUnk_09EE2C7C[18];
+extern void* gUnk_09EE2CC4[2];
+extern const void* gUnk_09EE2D6C;
+extern const void* gUnk_09EE2D70;
+extern const void* gUnk_09EE2D74;
+extern const void* gUnk_09EE2D78;
+extern const void* gUnk_09EE2D7C;
+extern const void* gUnk_09EE2D80;
+extern const void* gUnk_09EE2D84;
+extern const void* gUnk_09EE2D88;
+extern const void* gUnk_09EE2D8C;
+extern const void* gUnk_09EE2D90;
+extern const void* gUnk_09EE2D94;
+extern const void* gUnk_09EE2D98;
+extern const void* gUnk_09EE2D9C[2];
+extern void* gUnk_09EE2DA4[2];
+extern void* gUnk_09EE2DAC[2];
+extern void* gUnk_09EE2E84[5];
+extern void* gUnk_09EE2EF8[4];
+extern void* gUnk_09EE2FE8[7];
+extern void* gUnk_09EE306C[3];
+extern void* gUnk_09EE30B0[10];
+extern const void* gUnk_09EE3168;
+extern const void* gUnk_09EE316C;
+extern const void* gUnk_09EE317C[2];
+extern const void* gUnk_09EE3184[2];
+extern const void* gUnk_09EE318C[2];
+extern void* gUnk_09EE31B4[2];
+extern void* gUnk_09EE322C[6];
+extern const void* gUnk_09EE35FC;
+extern const void* gUnk_09EE3600;
+extern const void* gUnk_09EE3604;
+extern const void* gUnk_09EE3608;
+extern void* gUnk_09EE360C[2];
+extern void* gUnk_09EE36CC[2];
+extern void* gUnk_09EE37F4[8];
+extern EventBackgroundDef gUnk_08F7DB10;
+extern EventBackgroundDef gUnk_08F7DB40;
+extern EventBackgroundDef gUnk_08F7DC60;
+extern EventBackgroundDef gUnk_08F7DCF0;
+extern EventBackgroundDef gUnk_08F7DD20;
+extern EventBackgroundDef gUnk_08F7DD50;
+extern EventBackgroundDef gUnk_08F7DD80;
+extern EventBackgroundDef gUnk_08F7E008;
+extern EventBackgroundDef gUnk_08F7E038;
+extern EventBackgroundDef gUnk_08F7EB90;
+extern EventBackgroundDef gUnk_08F7EF7C;
 
 #endif

@@ -1,3 +1,4 @@
+#include "map_text_data.h"
 #include "card_localized_data.h"
 #include "card_reload_data.h"
 #include "event_sprite_data.h"
@@ -1160,7 +1161,6 @@ extern u16 gUnk_090359FC[];
 extern CardBack gUnk_08F709B0[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
-extern void* gUnk_09EF7048[];
 extern u16 gUnk_09EE4AC8[];
 extern u16 gUnk_09EE4AD6[];
 extern u16 gUnk_09EE4AE4[];

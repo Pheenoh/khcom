@@ -428,4 +428,158 @@ extern u8 gUnk_096BFC64[];
 extern u8 gUnkEu_08F7D724[];
 #endif
 
+extern u8 gUnk_08C84824[];
+extern u8 gUnk_08C88824[];
+extern u8 gUnk_08C8C824[];
+extern u8 gUnk_08C98824[];
+extern u8 gUnk_08EF2384[];
+extern u8 gUnk_08EF3384[];
+extern u8 gUnk_08EF4384[];
+extern u8 gUnk_08EF7384[];
+extern u8 gUnk_08F68904[];
+extern u8 gUnk_08F689C4[];
+extern u8 gUnk_08F68A84[];
+extern u8 gUnk_08F68D64[];
+extern struct EventMapObjectDef gUnk_08F7EB7C;
+extern u8 gUnk_0919752C[];
+extern u8 gUnk_09197648[];
+extern u8 gUnk_0919C91C[];
+extern u8 gUnk_0919CF38[];
+extern u8 gUnk_0919D74C[];
+extern u8 gUnk_0919DD68[];
+extern u8 gUnk_093E9F04[];
+extern u8 gUnk_09443138[];
+extern u8 gUnk_0944B138[];
+extern u8 gUnk_0946CDD8[];
+extern u8 gUnk_094702D8[];
+extern u8 gUnk_0948BC98[];
+extern u8 gUnk_0952EAB8[];
+extern u8 gUnk_0952F2B8[];
+extern u8 gUnk_0952FAB8[];
+extern u8 gUnk_095302B8[];
+extern u8 gUnk_09530AB8[];
+extern u8 gUnk_095312B8[];
+extern u8 gUnk_0953C2B8[];
+extern u8 gUnk_0953CAB8[];
+extern u8 gUnk_0953D2B8[];
+extern u8 gUnk_0953DAB8[];
+extern u8 gUnk_09541AB8[];
+extern u8 gUnk_095422B8[];
+extern u8 gUnk_09542AB8[];
+extern u8 gUnk_095432B8[];
+extern u8 gUnk_09543AB8[];
+extern u8 gUnk_095442B8[];
+extern u8 gUnk_09544AB8[];
+extern u8 gUnk_095452B8[];
+extern u8 gUnk_0955BAB8[];
+extern u8 gUnk_0955C2B8[];
+extern u8 gUnk_0955CAB8[];
+extern u8 gUnk_0955D2B8[];
+extern u8 gUnk_09567AB8[];
+extern u8 gUnk_095682B8[];
+extern u8 gUnk_0956A2B8[];
+extern u8 gUnk_0956AAB8[];
+extern u8 gUnk_0956B2B8[];
+extern u8 gUnk_0956BAB8[];
+extern u8 gUnk_0956C2B8[];
+extern u8 gUnk_0956CAB8[];
+extern u8 gUnk_09601AB8[];
+extern u8 gUnk_096022B8[];
+extern u8 gUnk_09602AB8[];
+extern u8 gUnk_096032B8[];
+extern u8 gUnk_096151D8[];
+extern u8 gUnk_096153D8[];
+extern u8 gUnk_096157B8[];
+extern u8 gUnk_096158F8[];
+extern u8 gUnk_09615D78[];
+extern u8 gUnk_09755F34[];
+extern u8 gUnk_09756D16[];
+extern u8 gUnk_0985D208[];
+extern u8 gUnk_0985E638[];
+extern u8 gUnk_0985F660[];
+extern u8 gUnk_09860684[];
+extern u8 gUnk_09862924[];
+extern u8 gUnk_098635EC[];
+extern u8 gUnk_09863E00[];
+extern u8 gUnk_09864E28[];
+extern u8 gUnk_09866668[];
+extern u8 gUnk_0986700C[];
+extern u8 gUnk_098693B8[];
+extern u8 gUnk_0986A2C0[];
+extern u8 gUnk_0986B424[];
+extern u8 gUnk_0986C588[];
+extern u8 gUnk_0986E280[];
+extern u8 gUnk_0986EA78[];
+extern u8 gUnk_0986F298[];
+extern u8 gUnk_09871288[];
+extern u8 gUnk_098729AC[];
+extern u8 gUnk_09872AC0[];
+extern u8 gUnk_09872BD4[];
+extern u8 gUnk_09872CE8[];
+extern u8 gUnk_098734FC[];
+extern u8 gUnk_09873D10[];
+extern u8 gUnk_09875260[];
+extern u8 gUnk_098767B0[];
+extern u8 gUnk_09877BD0[];
+extern u8 gUnk_098783E4[];
+extern u8 gUnk_09879000[];
+extern u8 gUnk_09879C1C[];
+extern u8 gUnk_0987B444[];
+extern u8 gUnk_0987C060[];
+extern u8 gUnk_0987D888[];
+extern u8 gUnk_0987E4A4[];
+extern u8 gUnk_0987FCCC[];
+extern u8 gUnk_098894A4[];
+extern u8 gUnk_0988A5B0[];
+extern u8 gUnk_0988ABD0[];
+extern u8 gUnk_0988F6DC[];
+extern u8 gUnk_0988FE88[];
+extern u8 gUnk_09890634[];
+extern u8 gUnk_09890E4C[];
+extern u8 gUnk_09891664[];
+extern u8 gUnk_09891E7C[];
+extern u8 gUnk_09896190[];
+extern u8 gUnk_09896EC8[];
+extern u8 gUnk_0989AD5C[];
+extern u8 gUnk_0989B678[];
+extern u8 gUnk_0989D0B8[];
+extern u8 gUnk_098A12D8[];
+extern u8 gUnk_098A21E0[];
+extern u8 gUnk_098A24FC[];
+extern u8 gUnk_098A2D98[];
+extern u8 gUnk_098A3634[];
+extern u8 gUnk_098A3950[];
+extern u8 gUnk_098A94A0[];
+extern u8 gUnk_098C9D84[];
+extern u8 gUnk_098D1584[];
+extern u8 gUnk_09990264[];
+extern u8 gUnk_09C91754[];
+extern u8 gUnk_09D33274[];
+extern u8 gUnk_09D33A74[];
+extern u8 gUnk_09D69274[];
+#ifdef VERSION_EU
+extern u8 gUnkEu_08CA8D3C[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08CACD3C[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08CB0D3C[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08CBCD3C[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08F7A224[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08F7A7A8[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08F7ADFC[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_08F7BE78[];
+#endif
+
 #endif
