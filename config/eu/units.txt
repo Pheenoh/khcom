@@ -50,7 +50,7 @@ smn.c
 frd.c
 pc.c
 hum.c
-eu_0805E924.s
+monsgage.c
 btl4.c
 tutorial.c
 mode_test.c -O2 -fprologue-bugfix -fno-common

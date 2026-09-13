@@ -26,6 +26,9 @@ void task_monsgage_2(MonsgageWork* work);
 void task_monsgage_3(MonsgageWork* work);
 
 #ifdef VERSION_EU
+void* eu_0805E924(void* strings);
+void* eu_0805E968(void* text);
+s32 eu_0805E9AC(void* text);
 void eu_0805E9F0(MonsgageWork* work);
 s32 eu_0805EA44(MonsgageWork* work);
 void eu_0805EC60(MonsgageWork* work);
@@ -39,5 +42,8 @@ extern u8 gUnk_08B25586[];
 extern u8 gUnk_08B25590[];
 extern u8 gUnk_08B2559A[];
 extern u8 gUnk_08B255B4[];
+#ifdef VERSION_EU
+extern u8 gUnkEu_08B4FBC0[];
+#endif
 
 #endif /* GUARD_MONSGAGE_H */
