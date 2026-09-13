@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "graphics_state.h"
+
 #include "evt_object_types.h"
 
 #include "gba/syscall.h"
@@ -503,9 +505,9 @@ extern u8 gUnk_09EFBF60[];
 
 extern u8 gUnk_09D6BE74[];
 
-extern u16 gBldCnt;
-extern u16 gBldAlpha;
-extern u16 gBldY;
+
+
+
 extern u8* gUnk_09EF9F54[];
 extern u8* gUnk_09EFA9C0;
 extern u8* gUnk_09EFA9BC;
@@ -515,11 +517,11 @@ extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
 extern u8 gTaskDescSrollBLogo[];
 extern u8 gTaskDescSrollBSecn[];
-extern vu16 gDispCnt;
-extern u16 gWin0H;
-extern u16 gWin0V;
-extern u16 gWinIn;
-extern u16 gWinOut;
+
+
+
+
+
 
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);

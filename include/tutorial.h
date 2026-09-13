@@ -1,6 +1,8 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
+#include "graphics_state.h"
+
 #include "card_api.h"
 
 #include "movie_text.h"
@@ -40,7 +42,7 @@ void task_tutorial_3(TutorialWork* work);
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];
-extern u16 gBg0Cnt;
+
 extern u8 gUnk_08B263D2[];
 extern u8 gUnk_09EE15F0[];
 extern u8 gUnk_09EE15C0[];

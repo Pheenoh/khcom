@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "graphics_state.h"
+
 #include "hum_types.h"
 
 #include "enemy_types.h"
@@ -61,7 +63,7 @@ extern TaskDesc gTaskDescBtlBadstatus;
 void func_08010CC8(void);
 void func_0801071C(void);
 extern vu32 gFrameCounter;
-extern u16 gBldCnt;
+
 void func_0807E2F4(void);
 
 void mode_vsbattle_0(u32 mode);

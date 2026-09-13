@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "graphics_state.h"
+
 #include "msg_types.h"
 
 #include "field_state.h"
@@ -202,8 +204,8 @@ void func_0806098C(void);
 
 extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
-extern u16 gBldCnt;
-extern u16 gBldAlpha;
+
+
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern TaskDesc gTaskDescEventSeq;
 extern Mode gModeEventselect;

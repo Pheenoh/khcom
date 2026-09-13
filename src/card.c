@@ -1,3 +1,4 @@
+#include "graphics_state.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode_sio_api.h"
@@ -314,7 +315,7 @@ u8 func_080A8430(UnkStruct_0808C940* w, void* a);
 void func_08090170(DeckCard2Work* node);
 u8 func_08096390(PrizeCardWork* w);
 void func_080A9968(u8* work);
-extern u16 gBldAlpha;
+
 extern u8* gUnk_02039DC8;
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
@@ -345,7 +346,7 @@ u8 func_0807D194(CardDisplayWork* p, void* a);
 u8 func_0807D584(CardDisplayWork* p, void* a);
 void func_080949A0(MapcardWork* w);
 u8 func_08094A18(MapcardWork* w, void* a);
-extern u16 gBldCnt;
+
 s32 func_08097A80(u8* work);
 u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a);
 s32 func_080A22A4(u8* work);
@@ -25266,22 +25267,22 @@ extern u8 gUnk_0908D05E[];
 extern s16 gUnk_09037FB4[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
-extern u16 gDispCnt;
-extern u16 gBg1Cnt;
-extern u16 gBg2Cnt;
-extern u16 gBg3Cnt;
-extern u16 gBg2PA;
-extern u16 gBg2PB;
-extern u16 gBg2PC;
-extern u16 gBg2PD;
-extern u16 gBg3PA;
-extern u16 gBg3PB;
-extern u16 gBg3PC;
-extern u16 gBg3PD;
-extern u32 gBg2X;
-extern u32 gBg2Y;
-extern u32 gBg3X;
-extern u32 gBg3Y;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #ifdef VERSION_EU
 extern void* gUnkEu_09F72D1C[];
 extern u16 gUnkEu_090D1328[];

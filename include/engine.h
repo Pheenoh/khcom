@@ -1,6 +1,8 @@
 #ifndef GUARD_ENGINE_H
 #define GUARD_ENGINE_H
 
+#include "graphics_state.h"
+
 #include "fade.h"
 #include "obj_api.h"
 #include "display.h"
@@ -82,8 +84,8 @@ typedef struct Dma3Queue {
 } Dma3Queue;
 
 extern vu16* const gBgControl[];
-extern u8 gBgPaletteBank[];
-extern u16 gDispCnt;
+
+
 
 typedef struct SpriteWork SpriteWork;
 extern SpriteWork* gSpriteWork;
@@ -104,7 +106,7 @@ typedef struct FadeWork {
 typedef char FadeWork_size[(sizeof(FadeWork) == 0x598) ? 1 : -1];
 typedef char PaletteSlot_size[(sizeof(PaletteSlot) == 0x2C) ? 1 : -1];
 
-extern FadeWork* gFadeWork;
+
 
 typedef struct BgAnimationChunk {
     void* data;
@@ -147,23 +149,23 @@ void SplineInit2D(Spline2D* spline, s32* xValues, s32* yValues, s16 count);
 void SplineEvaluate2D(Spline2D* spline, s32 t, s32* x, s32* y);
 void SplineFreeBuffers(Spline2D* spline);
 
-extern u16 gBg0HOfs;
-extern u16 gBg0VOfs;
-extern u16 gBg1HOfs;
-extern u16 gBg1VOfs;
-extern u16 gBg2HOfs;
-extern u16 gBg2VOfs;
-extern u16 gBg3HOfs;
-extern u16 gBg3VOfs;
-extern u16 gUnk_030074CC;
-extern u16 gBackdropColor;
-extern vu16 gMosaic;
-extern BgEntry* gBgEntries;
-extern u16 gBldCnt;
+
+
+
+
+
+
+
+
+
+
+
+
+
 extern u8 sVTransHeapName[];
 extern u8 sBgHeapName[];
 extern u8 sFadeHeapName[];
-extern u16 gBldAlpha;
+
 u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
 u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h);

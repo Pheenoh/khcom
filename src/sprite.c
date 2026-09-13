@@ -1,3 +1,4 @@
+#include "graphics_state.h"
 #include "obj_api.h"
 #include "display.h"
 #include "gba/syscall.h"
@@ -9,7 +10,7 @@ SpriteWork* gSpriteWork;
 
 extern u8 sSpriteHeapName[];
 
-extern u16 gDispCnt;
+
 
 
 void EnableObj(void);

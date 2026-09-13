@@ -7886,7 +7886,7 @@ s32 func_0806D0A8(ContinueWork* p) {
     p->gfx = AnimUpdate(&p->unk_20);
     p->gfx2 = AnimUpdate(&p->unk_38);
     gBldCnt = 0xB54;
-    gBldAlpha = p->unk_66;
+    (*(volatile u16*)&gBldAlpha) = p->unk_66;
 
     if (p->unk_6A == 0) {
         if (FadeIsActive() == 0) {
@@ -8130,7 +8130,7 @@ u8 eu_0806C848(EventSeqWork* work) {
         if (u->unk_14 != NULL) {
             if ((u->unk_2D & 2) != 0) {
                 gBldCnt = 0x1844;
-                gBldAlpha = 0x050E;
+                (*(volatile u16*)&gBldAlpha) = 0x050E;
                 SetBgPriority(2, 1);
                 gUnk_02039DC8->unk_6E = 0x1D42;
                 gUnk_02039DC8->unk_70 = 0x050E;
@@ -8252,7 +8252,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             if (u->unk_14 != NULL) {
                 if ((u->unk_2D & 2) != 0) {
                     gBldCnt = 0x1844;
-                    gBldAlpha = 0x050E;
+                    (*(volatile u16*)&gBldAlpha) = 0x050E;
                     SetBgPriority(2, 1);
                     gUnk_02039DC8->unk_6E = 0x1D42;
                     gUnk_02039DC8->unk_70 = 0x050E;
@@ -8805,7 +8805,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
         if (gFrameCounter % 6 == 0) {
             u16 v = GetRandom() % 7 + 4;
 
-            gBldAlpha = ((16 - v) << 8) | v;
+            (*(volatile u16*)&gBldAlpha) = ((16 - v) << 8) | v;
         }
     }
     return 1;
@@ -9222,7 +9222,7 @@ u8 func_0806EF40(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 16;
+    (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806F02C);
@@ -9245,7 +9245,7 @@ u8 func_0806F02C(EventCharaWork* p, void* a) {
             p->unk_1A9--;
         }
     }
-    gBldAlpha = ((16 - p->unk_1A9) << 8) | p->unk_1A9;
+    (*(volatile u16*)&gBldAlpha) = ((16 - p->unk_1A9) << 8) | p->unk_1A9;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
@@ -9296,7 +9296,7 @@ u8 func_0806F114(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 0x1000;
+    (*(volatile u16*)&gBldAlpha) = 0x1000;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
     SetTaskUpdate(a, (void*)func_0806F204);
@@ -9319,7 +9319,7 @@ u8 func_0806F204(EventCharaWork* p, void* a) {
             p->unk_1A9++;
         }
     }
-    gBldAlpha = ((16 - p->unk_1A9) << 8) | p->unk_1A9;
+    (*(volatile u16*)&gBldAlpha) = ((16 - p->unk_1A9) << 8) | p->unk_1A9;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
@@ -9369,7 +9369,7 @@ u8 func_0806F2EC(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 16;
+    (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
     SetTaskUpdate(a, (void*)func_0806F3A8);
@@ -9385,7 +9385,7 @@ u8 func_0806F3A8(EventCharaWork* p, void* a) {
             p->unk_1A9++;
         }
     }
-    gBldAlpha = (p->unk_1A9 << 8) | 16;
+    (*(volatile u16*)&gBldAlpha) = (p->unk_1A9 << 8) | 16;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
@@ -9429,7 +9429,7 @@ u8 func_0806F47C(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 0x1010;
+    (*(volatile u16*)&gBldAlpha) = 0x1010;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806F53C);
@@ -9445,7 +9445,7 @@ u8 func_0806F53C(EventCharaWork* p, void* a) {
             p->unk_1A9--;
         }
     }
-    gBldAlpha = (p->unk_1A9 << 8) | 16;
+    (*(volatile u16*)&gBldAlpha) = (p->unk_1A9 << 8) | 16;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
@@ -9684,7 +9684,7 @@ u8 func_0806FB6C(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 16;
+    (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806FC28);
@@ -9700,7 +9700,7 @@ u8 func_0806FC28(EventCharaWork* p, void* a) {
             p->unk_1A9--;
         }
     }
-    gBldAlpha = p->unk_1A9;
+    (*(volatile u16*)&gBldAlpha) = p->unk_1A9;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
@@ -9744,7 +9744,7 @@ u8 func_0806FCF4(void* work, void* a) {
     z |= 4;
     func_0801CE00(p->unk_028, z);
     gBldCnt = 0xF40;
-    gBldAlpha = 0;
+    (*(volatile u16*)&gBldAlpha) = 0;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806FDB0);
@@ -9760,8 +9760,8 @@ u8 func_0806FDB0(EventCharaWork* p, void* a) {
             p->unk_1A9--;
         }
     }
-    gBldAlpha = (16 - p->unk_1A9) | (p->unk_1A9 << 8);
-    gBldAlpha = (p->unk_1A9 << 8) | 16;
+    (*(volatile u16*)&gBldAlpha) = (16 - p->unk_1A9) | (p->unk_1A9 << 8);
+    (*(volatile u16*)&gBldAlpha) = (p->unk_1A9 << 8) | 16;
 
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
