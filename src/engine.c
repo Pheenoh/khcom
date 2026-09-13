@@ -558,24 +558,25 @@ void SortSprites(void) {
     gSpriteWork->sortLo = 0;
 }
 
-#ifdef NON_MATCHING
+#define ENGINE_SET_SQUARE_SIZE(w, h, size) \
+    do { \
+        *(w) = (size); \
+        *(h) = (size); \
+    } while (0)
+
 static inline void EngineObjSize(u16 a, u16 b, u16* w, u16* h) {
     switch ((((u32)b << 16) | a) & 0xC000C000) {
     case 0x00000000:
-        *w = 8;
-        *h = 8;
+        ENGINE_SET_SQUARE_SIZE(w, h, 8);
         break;
     case 0x40000000:
-        *w = 16;
-        *h = 16;
+        ENGINE_SET_SQUARE_SIZE(w, h, 16);
         break;
     case 0x80000000:
-        *w = 32;
-        *h = 32;
+        ENGINE_SET_SQUARE_SIZE(w, h, 32);
         break;
     case 0xC0000000:
-        *w = 64;
-        *h = 64;
+        ENGINE_SET_SQUARE_SIZE(w, h, 64);
         break;
     case 0x00004000:
         *w = 16;
@@ -616,6 +617,8 @@ static inline void EngineObjSize(u16 a, u16 b, u16* w, u16* h) {
     }
 }
 
+#undef ENGINE_SET_SQUARE_SIZE
+
 void func_08002F50(void) {
     SpriteEntry** entries;
     SpriteEntry* entry;
@@ -638,13 +641,13 @@ void func_08002F50(void) {
     s16 y;
     s32 xx;
     s32 yy;
-    s32 angle;
     s32 cosIndex;
     s32 sinIndex;
     u16 palette;
     ObjTiles* tiles;
     u32 flip;
     u32 flags;
+    s16 yMask = 255;
 
     if (gSpriteWork->unk_2BAE != 0) {
         return;
@@ -682,7 +685,7 @@ void func_08002F50(void) {
             attr2 = *parts++;
             y = attr0 & 0xFF;
             if (y & 0x80) {
-                y = 0xFF ^ y;
+                y = yMask ^ y;
                 y = 0xFFFF ^ y;
             }
             x = attr1 & 0x1FF;
@@ -695,10 +698,10 @@ void func_08002F50(void) {
                 x += (s16)width >> 1;
                 y += (s16)height >> 1;
                 if (affine->angle != 0) {
-                    angle = -affine->angle;
-                    cosIndex = (angle + 64) & 255;
-                    sinIndex = angle & 255;
-                    xx = (s32)((u32)gSineTable[cosIndex] * x + (u32)gSineTable[sinIndex] * y);
+                    s32 term;
+                    term = (s32)((u32)gSineTable[cosIndex = (s16)((sinIndex = -affine->angle) + 64) & 255] * x);
+                    sinIndex &= 255;
+                    xx = (u32)term + (u32)gSineTable[sinIndex] * y;
                     yy = (s32)((u32)gSineTable[cosIndex + 64] * x + (u32)gSineTable[sinIndex + 64] * y);
                     xx = (s32)((u32)affine->sx * xx) >> 8;
                     yy = (s32)((u32)affine->sy * yy) >> 8;
@@ -767,9 +770,6 @@ void func_08002F50(void) {
     }
     gSpriteWork->entryCount = 0;
 }
-#else
-INCLUDE_ASM("engine/func_08002F50.s");
-#endif
 
 void SetSpriteMosaicEnabled(u8 a) {
     gSpriteWork->unk_2BAF = a;
