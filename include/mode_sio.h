@@ -5,6 +5,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "sio_menu_data.h"
+
 #include "card_description_data.h"
 
 #include "animation_resource_data.h"
@@ -200,32 +202,7 @@ typedef struct SioBtlCardgetWork {
     u8 unk_40[4];
 } SioBtlCardgetWork;
 
-typedef struct SioChgCardPos {
-    s16 unk_00;
-    s16 unk_02;
-    s8 unk_04;
-    s8 unk_05;
-    s8 unk_06;
-    s8 unk_07;
-    s8 unk_08;
-    u8 unk_09[3];
-} SioChgCardPos;
 
-typedef struct SioWorldEntry {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    void* unk_10;
-    u16 unk_14;
-    u16 unk_16;
-    void* unk_18;
-    u8 unk_1C;
-    u8 unk_1D;
-    u16 unk_1E;
-} SioWorldEntry;
 
 typedef struct SioBtlOptionWork {
     s8 unk_000;
@@ -315,7 +292,6 @@ extern u32 gFrameCounter;
 
 extern SioAnimDef gUnk_096193E0[];
 extern SioAnimDef gUnk_09619444[];
-extern s8 gUnk_09EF14B8[];
 extern u8 gUnk_0815A2BE[];
 extern u8 gUnk_08C78824[];
 extern u8 gUnk_08C7C824[];
@@ -425,11 +401,6 @@ extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
-extern SioWorldEntry gUnk_09EF1318[];
-extern u16 gUnk_09EF14C4[];
-extern u8* gWorldNames[];
-extern u8 gUnk_09EF15FC[];
-extern SioChgCardPos gUnk_09EF150C[];
 extern void* gUnk_09EF3894[];
 extern void* gUnk_09EF38B4[];
 extern void* gUnk_09EF38D4[];

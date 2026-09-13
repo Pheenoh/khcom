@@ -3,6 +3,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "poo_data.h"
+
 #include "poo_background_data.h"
 
 #include "animation_resource_data.h"
@@ -135,19 +137,6 @@ typedef struct PooWork {
     u8 unk_FA;
     u8 unk_FB;
 } PooWork;
-
-typedef struct PooMapBgDesc {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    void* unk_10;
-    u16 unk_14;
-    u8 unk_16;
-    u8 unk_17;
-} PooMapBgDesc;
 
 typedef struct PooMapWork {
     u8 unk_00;
@@ -777,11 +766,6 @@ typedef struct PooBeeWork {
     u8 unk_C9[0x03];
 } PooBeeWork;
 
-typedef struct PooPoint {
-    s32 unk_00;
-    s32 unk_04;
-} PooPoint;
-
 typedef struct PooCamera {
     void* unk_00;
     void* unk_04;
@@ -798,12 +782,6 @@ typedef struct PooCamera {
     u16 unk_40;
     u16 unk_42;
 } PooCamera;
-
-typedef struct PooSpot {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-} PooSpot;
 
 typedef struct PooWagonWork {
     void* unk_00;
@@ -1097,8 +1075,6 @@ extern u8 gUnk_0983BC18[];
 extern const PooBgSet gUnk_096FDA8C[];
 extern const PooPalStep gUnk_096FDB40[];
 
-extern PooSpot gUnk_096FC05C[];
-extern PooSpot gUnk_096FC2F0[];
 
 
 
@@ -1169,7 +1145,6 @@ extern u8 gUnk_09760986[];
 extern u8 gUnk_09849E58[];
 extern u8 gUnk_08B22BBC[];
 extern const PooHitBox gUnk_096FC010;
-extern const PooPoint gUnk_096FC6B0[];
 extern const PooSpawn gUnk_096FC6F8[];
 extern const s32 gUnk_096FD61C[];
 extern s32 gUnk_096FD5FC[];
@@ -1177,7 +1152,6 @@ extern const PooGfxDesc gUnk_096FD5DC[];
 extern const PooGfxDesc gUnk_096FD57C[];
 extern const PooGfxDesc gUnk_096FD4BC[];
 
-extern const PooSpot gUnk_096FD778[];
 extern u8 gUnk_09849C38[];
 extern u8 gUnk_09732272[];
 extern u8 gUnk_0973291E[];
@@ -1418,7 +1392,6 @@ u8 task_poo_cabbage_1(PooCabbageWork* w);
 void task_poo_cabbage_2(PooCabbageWork* w);
 void task_poo_pooh_0(PooWork* w);
 extern const u16 gUnk_096FD86E[];
-extern PooMapBgDesc gUnk_096FC6E0;
 extern u8 gUnk_098A5C90[];
 extern u8 gUnk_098A5C9A[];
 extern u8 gUnk_098A5CA4[];

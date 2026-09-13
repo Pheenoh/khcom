@@ -4,6 +4,8 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "staff_roll_resource_data.h"
+
 #include "animation_resource_data.h"
 
 #include "obj.h"
@@ -333,16 +335,6 @@ extern u8 gUnk_09D6CF34[];
 extern u8 gUnk_09D6CF54[];
 extern u8 gUnk_09D6D034[];
 extern u8 gUnk_09D6D114[];
-extern u8 gUnk_09EFAF60[];
-extern u8 gUnk_09EFAF6C[];
-extern u8 gUnk_09EFB1F8[];
-extern u8 gUnk_09EFB200[];
-extern u8 gUnk_09EFB208[];
-extern u8 gUnk_09EFB244[];
-extern u8 gUnk_09EFB5B0[];
-extern u8 gUnk_09EFB5EC[];
-extern u8 gUnk_09EFB828[];
-extern u8 gUnk_09EFB834[];
 extern void* gUnk_09EFBAE8[];
 extern const SrollFont gUnk_09A5B440[];
 extern const u16 gUnk_09A5B470[];

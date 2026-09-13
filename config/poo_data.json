@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "provenance": {
+    "pooh_motion_and_map": "PooSpot motion tables use five direction groups chosen by func_080C7D60 for states17/18. Mode_sio2 selects independently owned AnimDef arrays09EF3CE8/09EF3D38: all five first-state animations have10 frames and second-state counts are14,15,15,15,14 in every region. func_080C89B4 indexes direction*11 or direction*16 plus AnimGetFrame+1, proving fixed native group strides and bounded used rows. The complete55/80-record arrays preserve their real initial/unused slots without claiming every slot is read; they meet independently rooted next arrays. func_080C8A50 copies exactly4 PooPoint records, ending at the owned task_poo_pooh string. func_080D1078 copies exactly18 PooSpot records, ending at gUnk_096FD850. PooMapBgDesc is a24-byte scalar consumed directly by task_poo_map_0 and ending at the separately rooted spawn table. All scalar/coordinate bytes match across regions. Its three existing tile/palette targets match each native record and every raw payload compares byte-identically; declarations are reused from event_background_assets.h. No pixels, palettes or animation-frame assets are converted to C."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_motion",
+          "address": "0x96fc05c",
+          "size": 1620,
+          "sha256": "d91069b1f3416005c08bd37867e768eeb18ab05da76d0cff9c084a4794f76f2e",
+          "objects": [
+            {
+              "name": "gUnk_096FC05C",
+              "offset": 0,
+              "size": 660
+            },
+            {
+              "name": "gUnk_096FC2F0",
+              "offset": 660,
+              "size": 960
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_points",
+          "address": "0x96fc6b0",
+          "size": 32,
+          "sha256": "478983a8def5fc6569c9b8d1f22c1d8747ac4e029b746b3581e3df7ca5bb7163",
+          "objects": [
+            {
+              "name": "gUnk_096FC6B0",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_map_bg",
+          "address": "0x96fc6e0",
+          "size": 24,
+          "sha256": "16b38b25ea5b95c0a65b97de9d704739477da203c9349660be352dc05d809139",
+          "objects": [
+            {
+              "name": "gUnk_096FC6E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_cabbage_spots",
+          "address": "0x96fd778",
+          "size": 216,
+          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
+          "objects": [
+            {
+              "name": "gUnk_096FD778",
+              "offset": 0,
+              "size": 216
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_motion",
+          "address": "0x96b4838",
+          "size": 1620,
+          "sha256": "d91069b1f3416005c08bd37867e768eeb18ab05da76d0cff9c084a4794f76f2e",
+          "objects": [
+            {
+              "name": "gUnk_096FC05C",
+              "offset": 0,
+              "size": 660
+            },
+            {
+              "name": "gUnk_096FC2F0",
+              "offset": 660,
+              "size": 960
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_points",
+          "address": "0x96b4e8c",
+          "size": 32,
+          "sha256": "478983a8def5fc6569c9b8d1f22c1d8747ac4e029b746b3581e3df7ca5bb7163",
+          "objects": [
+            {
+              "name": "gUnk_096FC6B0",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_map_bg",
+          "address": "0x96b4ebc",
+          "size": 24,
+          "sha256": "57ee8d1cbbf8ed4a934fc7625d5c1171a70083233d3062225dadda28e7e03ff1",
+          "objects": [
+            {
+              "name": "gUnk_096FC6E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_cabbage_spots",
+          "address": "0x96b5f54",
+          "size": 216,
+          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
+          "objects": [
+            {
+              "name": "gUnk_096FD778",
+              "offset": 0,
+              "size": 216
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_motion",
+          "address": "0x96c93a4",
+          "size": 1620,
+          "sha256": "d91069b1f3416005c08bd37867e768eeb18ab05da76d0cff9c084a4794f76f2e",
+          "objects": [
+            {
+              "name": "gUnk_096FC05C",
+              "offset": 0,
+              "size": 660
+            },
+            {
+              "name": "gUnk_096FC2F0",
+              "offset": 660,
+              "size": 960
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_points",
+          "address": "0x96c99f8",
+          "size": 32,
+          "sha256": "478983a8def5fc6569c9b8d1f22c1d8747ac4e029b746b3581e3df7ca5bb7163",
+          "objects": [
+            {
+              "name": "gUnk_096FC6B0",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".data_poo_map_bg",
+          "address": "0x96c9a28",
+          "size": 24,
+          "sha256": "4e5a5181c4ad2e5c71b74963958ee7837d37e0d84f047148073d284c3696baa4",
+          "objects": [
+            {
+              "name": "gUnk_096FC6E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_cabbage_spots",
+          "address": "0x96caac0",
+          "size": 216,
+          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
+          "objects": [
+            {
+              "name": "gUnk_096FD778",
+              "offset": 0,
+              "size": 216
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

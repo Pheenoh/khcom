@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "staff_roll_script_data.h"
+
 #include "staff_roll_scene_data.h"
 
 #include "animation_resource_data.h"
@@ -467,11 +469,6 @@ extern LstAnimSet gUnk_09EF9EA4[];
 
 extern u8 gUnk_09D6BE74[];
 
-extern u8* gUnk_09EF9F54[];
-extern u8* gUnk_09EFA9C0;
-extern u8* gUnk_09EFA9BC;
-extern s32* gUnk_09EFA934[];
-extern s32* gUnk_09EFA978[];
 extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
 
