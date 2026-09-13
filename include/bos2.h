@@ -1,6 +1,10 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "boss_jafar_state.h"
+
+#include "boss_jafar_types.h"
+
 #include "boss_tm_state.h"
 
 #include "prize_types.h"
@@ -268,15 +272,6 @@ typedef struct JfWork {
     u16 unk_26A;
 } JfWork;
 
-typedef struct JfMapArg {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    void* unk_10[4];
-} JfMapArg;
 
 typedef struct JfMapWork {
     s16 unk_00;
@@ -642,8 +637,6 @@ extern u8 gUnk_096FB584[];
 extern u8 gUnk_09685DA4[];
 extern u8 gUnk_096FB604[];
 extern u8 gUnk_06010000[];
-extern s16 gUnk_0203AC80;
-extern JfMapArg gUnk_0203AC90;
 extern u8 gUnk_0965DC04[];
 extern u8 gUnk_096FB404[];
 extern u8 gUnk_096C4C64[];
@@ -653,8 +646,6 @@ extern u8 gUnk_0961A668[];
 extern u8 gTaskDescBosJfMap[];
 extern u8 gTaskDescBosJfLamp[];
 extern u8 gTaskDescBosJfMajin[];
-extern s16 gUnk_0203ACB0;
-extern s16 gUnk_0203ACB4;
 
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];

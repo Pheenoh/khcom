@@ -802,7 +802,7 @@ void func_080C61D4(void) {
     u16* recv;
 
     send = &gUnk_0203AAC0;
-    recv = gUnk_0203AA10;
+    recv = (u16*)&gUnk_0203AA10;
     send->unk_00 = gGameState.hp;
     gUnk_0203AAC0.unk_02 = gGameState.progression.maxHp;
     gUnk_0203AAC0.unk_04 = gGameState.progression.level;

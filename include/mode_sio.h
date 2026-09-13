@@ -1,6 +1,12 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "sio_card_trade_state.h"
+
+#include "sio_battle_options_state.h"
+
+#include "sio_handshake_state.h"
+
 #include "sio_runtime_state.h"
 
 #include "chara_link_state.h"
@@ -295,23 +301,6 @@ typedef struct SioBtlOptionWork {
 } SioBtlOptionWork;
 
 
-extern u16 gUnk_0203A9EC;
-extern u16 gUnk_0203A9F0;
-extern s8 gUnk_0203AA00;
-extern u8 gUnk_0203AAB0;
-extern s8 gUnk_0203AB10;
-extern u16 gUnk_0203AB20[];
-extern s8 gUnk_0203AB34[];
-extern CharaLinkData gUnk_0203AA10;
-extern CharaLinkData gUnk_0203AAC0;
-extern u8 gUnk_0203AA30[][20];
-extern u8 gUnk_0203AA58[];
-extern u8 gUnk_0203AA60[][20];
-extern u8 gUnk_0203AA88;
-extern s8 gUnk_0203AA8C;
-extern s8 gUnk_0203AA90;
-extern s8 gUnk_0203AAA0[];
-extern u8 gUnk_0203AAE0[][20];
 extern vu16 gSystemFlags;
 extern u32 gFrameCounter;
 

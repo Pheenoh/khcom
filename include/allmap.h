@@ -1,6 +1,14 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "allmap_bottom_state.h"
+
+#include "allmap_scroll_state.h"
+
+#include "allmap_top_state.h"
+
+#include "pooh_actor_state.h"
+
 #include "allmap_cursor_state.h"
 
 #include "obj.h"
@@ -209,13 +217,6 @@ extern TaskPool gTitleTaskPool;
 extern Task* gTitleLogoTask;
 extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
-extern void* gStockMesDispWork;
-extern AllmapState* gUnk_0203C4B4;
-extern u32 gUnk_0203C4E0;
-extern u16 gUnk_0203C534;
-extern void* gUnk_0203C504;
-extern u16 gUnk_0203C508;
-extern void* gUnk_0203C530;
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
 extern u8 gUnk_08125E24[];

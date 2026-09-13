@@ -1,3 +1,4 @@
+#include "sio_battle_options_state.h"
 #include "chara_link_state.h"
 #include "chara_api.h"
 #include "map_api.h"
@@ -67,7 +68,6 @@ extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
 extern void* gUnkEu_08891714[];
-extern s8 gUnkEu_0203B108[];
 extern void* gUnkEu_08891670[];
 extern u8 gUnkEu_095ECDD8[];
 extern u8 gUnkEu_095ED472[];

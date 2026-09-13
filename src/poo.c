@@ -6928,17 +6928,17 @@ u8 func_080D2DD8(void) {
 }
 
 u16 func_080D2E28(void* a, u16 b) {
-    if (gUnk_0203C4B4->unk_30 > 5) {
+    if (((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30 > 5) {
         return 0xFFFF;
     }
-    gUnk_0203C4B4->unk_00[gUnk_0203C4B4->unk_30].unk_00 = a;
-    gUnk_0203C4B4->unk_00[gUnk_0203C4B4->unk_30].unk_04 = b;
-    gUnk_0203C4B4->unk_00[gUnk_0203C4B4->unk_30].unk_06 = 1;
-    return gUnk_0203C4B4->unk_30++;
+    ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30].unk_00 = a;
+    ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30].unk_04 = b;
+    ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30].unk_06 = 1;
+    return ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30++;
 }
 
 void func_080D2E70(u16 a, u8 b) {
-    gUnk_0203C4B4->unk_00[a].unk_06 = b;
+    ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[a].unk_06 = b;
 }
 
 void func_080D2E84(void) {
@@ -6946,27 +6946,29 @@ void func_080D2E84(void) {
 }
 
 void func_080D2E98(void) {
-    gUnk_0203C4B4 = EwramAlloc(0x34);
-    gUnk_0203C4B4->unk_30 = 0;
+    void** state = &gUnk_0203C4B4;
+
+    *state = EwramAlloc(0x34);
+    ((PoohInteractionRegistry*)*state)->unk_30 = 0;
     func_080D2F10(0);
 }
 
 u16 func_080D2EB8(void) {
     s32 i;
 
-    for (i = 0; i < gUnk_0203C4B4->unk_30; i++) {
-        if (gUnk_0203C4B4->unk_00[i].unk_04 == 0x3B && gUnk_0203C4B4->unk_32 != 0) {
+    for (i = 0; i < ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_30; i++) {
+        if (((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[i].unk_04 == 0x3B && ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_32 != 0) {
             continue;
         }
 
-        if (gUnk_0203C4B4->unk_00[i].unk_06 == 0) {
+        if (((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[i].unk_06 == 0) {
             continue;
         }
 
-        if (func_080C76B0(gUnk_0203C4B4->unk_00[i].unk_00) == 0) {
+        if (func_080C76B0(((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[i].unk_00) == 0) {
             continue;
         }
-        return gUnk_0203C4B4->unk_00[i].unk_04;
+        return ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_00[i].unk_04;
     }
 #ifdef VERSION_EU
     return 0xB3;
@@ -6976,7 +6978,7 @@ u16 func_080D2EB8(void) {
 }
 
 void func_080D2F10(u8 a) {
-    gUnk_0203C4B4->unk_32 = a;
+    ((PoohInteractionRegistry*)gUnk_0203C4B4)->unk_32 = a;
 }
 
 void func_080D2F20(void) {

@@ -1,6 +1,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "pooh_actor_state.h"
+
 #include "boss_status_state.h"
 
 #include "card_ui_types.h"
@@ -309,7 +311,6 @@ extern SpriteFrameResourceDef gUnk_08F7CF18[];
 extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];
-extern u8* gStockMesDispWork;
 
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
