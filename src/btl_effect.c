@@ -3133,10 +3133,10 @@ void func_08017728(u8 a, u8 b) {
         }
     }
 }
-#ifdef NON_MATCHING
 void func_080177EC(void) {
+    u16 alpha;
     s16 v;
-    u16 u;
+    u32 u;
 
     switch (gUnk_02034928->unk_26) {
     case 0:
@@ -3159,17 +3159,17 @@ void func_080177EC(void) {
         }
         break;
     case 1:
-        u = gUnk_02034928->unk_08;
+        u = (u16)gUnk_02034928->unk_08;
         gUnk_02034928->unk_20 = abs(gSineTable[(u8)gUnk_02034928->unk_08] >> 1) + 0x100;
 
         if (gUnk_02034928->unk_34 & 1) {
-            if ((u16)gUnk_02034928->unk_08 == 0) {
+            if ((u16)u == 0) {
                 func_08017728(-u * 8, 1);
             } else {
                 func_08017728(-u * 8, 0);
             }
         } else {
-            if ((u16)gUnk_02034928->unk_08 == 0) {
+            if ((u16)u == 0) {
                 func_08017728(u * 8, 1);
             } else {
                 func_08017728(u * 8, 0);
@@ -3186,13 +3186,16 @@ void func_080177EC(void) {
         }
         break;
     case 2:
+        alpha = 16;
         v = gUnk_02034928->unk_08;
-        SetBlendAlpha(16, 16 - v);
+        u = v;
+        alpha -= u;
+        SetBlendAlpha(16, alpha);
 
         if (gUnk_02034928->unk_34 & 1) {
-            ApproachValue(&gUnk_02034928->unk_1C, -10, 17 - v);
+            ApproachValue(&gUnk_02034928->unk_1C, -10, 17 - u);
         } else {
-            ApproachValue(&gUnk_02034928->unk_1C, 10, 17 - v);
+            ApproachValue(&gUnk_02034928->unk_1C, 10, 17 - u);
         }
 
         ApproachValue(&gUnk_02034928->unk_20, 768, 17 - v);
@@ -3217,9 +3220,6 @@ void func_080177EC(void) {
     ClampBattlePosition(&gUnk_02034928->unk_10, &gUnk_02034928->unk_14, -16, 0);
     func_08012908();
 }
-#else
-INCLUDE_ASM("btl_effect/func_080177EC.s");
-#endif
 void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
     s16 sx;
     s16 sy;
