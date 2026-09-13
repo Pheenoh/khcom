@@ -64,6 +64,8 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/chara_link_state.o": {"us": 0x0203BEC0, "jp": 0x0203BE30, "eu": 0x0203C490},
+    "src/worldwarp_state.o": {"us": 0x020357C0, "jp": 0x02035720, "eu": 0x02035DD0},
     "src/mode_chkbtl.o": {"us": 0X02039B84, "jp": 0x02039af4, "eu": 0x0203a194},
     "src/mode_vsbattle.o": {"us": 0X02039B98, "jp": 0x02039b08, "eu": 0x0203a1a8},
     "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},

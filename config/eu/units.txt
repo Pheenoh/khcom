@@ -113,6 +113,8 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 m4a_1.s
 m4a2.c -O2 -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+chara_link_state.c -O2 -fprologue-bugfix -fno-common
+worldwarp_state.c -O2 -fprologue-bugfix -fno-common
 card_ui_state.c -O2 -fprologue-bugfix -fno-common
 rodata_tables.s(.rodata)
 malloc_data.c(.rodata)

@@ -1,3 +1,4 @@
+#include "chara_link_state.h"
 #include "chara_api.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -59,9 +60,9 @@ extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);
 extern u32 gLanguage;
-extern u16 gUnkEu_0203C964;
-extern u16 gUnkEu_0203C970;
-extern u16 gUnkEu_0203C97C;
+
+
+
 extern void* gUnkEu_08891508[];
 extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];

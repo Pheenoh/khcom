@@ -1,6 +1,8 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "chara_link_state.h"
+
 #include "chara_types.h"
 
 #include "card_api.h"
@@ -190,28 +192,28 @@ extern s32 (*gUnk_02039804)(void);
 extern s32 (*gUnk_020397F8)(void);
 extern s16 gUnk_020397D4;
 extern u32 gUnk_020397F0;
-extern u16* gUnk_0203C37C;
-extern u16 gUnk_0203C378;
-extern u16* gUnk_0203C390;
-extern u16 gUnk_0203C394;
-extern u16* gUnk_0203C398;
-extern u16* gUnk_0203C39C;
-extern u16 gUnk_0203C3B8;
+
+
+
+
+
+
+
 extern u8 gUnk_09EF2F08[];
 extern u16 gUnk_020397E0[4][2];
 extern u16 gUnk_02039810[4][2];
 extern u16 gUnk_02039B58[];
 extern u16 gUnk_02039B68[];
-extern s8 gUnk_0203C38C;
-extern s8 gUnk_0203C380;
-extern s8 gUnk_0203C384;
-extern s8 gUnk_0203C3A0;
-extern s8 gUnk_0203C3A4;
-extern s8 gUnk_0203C3A8;
-extern void (*gUnk_0203C3AC)(void);
-extern u16 gUnk_0203C3B0;
-extern u16 gUnk_0203C3B4;
-extern u16 gUnk_0203C388;
+
+
+
+
+
+
+
+
+
+
 extern s16 gUnk_0203BEA4;
 extern s16 gUnk_0203BEA8;
 extern u32 gUnk_0203BEA0;
@@ -219,20 +221,20 @@ extern u32 gUnk_0203BEB0;
 extern s16 gUnk_0203BEB8;
 extern u32 gUnk_0203BEBC;
 extern u32 gUnk_0203BD10[];
-extern u32 gUnk_0203BEC0[];
-extern u32 gUnk_0203C050[];
-extern u32 gUnk_0203C1E0[];
-extern u16 gUnk_0203C370;
-extern s8 gUnk_0203C374;
+
+
+
+
+
 extern u32 gSioStatus;
 extern u32 gVBlankCounter;
 extern vu16 gSystemFlags;
 extern void (*gUnk_0203BEAC)(void);
 
 #ifdef VERSION_EU
-extern u16 gUnkEu_0203C964;
-extern u16 gUnkEu_0203C970;
-extern u16 gUnkEu_0203C97C;
+
+
+
 #endif
 
 #endif /* GUARD_CHARA_H */
