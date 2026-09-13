@@ -74,6 +74,17 @@ void func_080A096C(u16 a, u16* p);
 #endif
 
 
+typedef struct CardSlot {
+    u32 unk_00;
+    u16 unk_04;
+    u8 unk_06;
+    u8 unk_07;
+    u8 unk_08;
+    u8 unk_09;
+    u8 unk_0A;
+    u8 unk_0B;
+} CardSlot;
+
 typedef struct CardDisplayWork {
     void* unk_00;
     void* unk_04;
@@ -86,7 +97,9 @@ typedef struct CardDisplayWork {
     void* unk_20;
     u8 unk_24[0x14];
     ListPool* unk_38;
-    u8 unk_3C[0x0A];
+    CardSlot* unk_3C;
+    u8 unk_40[4];
+    u16 unk_44;
     u8 unk_46;
     u8 unk_47;
     CardDef* unk_48;
@@ -863,17 +876,6 @@ typedef struct DarkPointWork {
 } DarkPointWork;
 
 typedef char DarkPointWork_sizechk[(sizeof(struct DarkPointWork) == 0x10) ? 1 : -1];
-
-typedef struct CardSlot {
-    u32 unk_00;
-    u16 unk_04;
-    u8 unk_06;
-    u8 unk_07;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
-    u8 unk_0B;
-} CardSlot;
 
 typedef struct UnkStruct_0807FD10_Args {
     void* unk_00;

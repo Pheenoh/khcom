@@ -853,7 +853,7 @@ void func_08078BB4(UnkStruct_08080268* w) {
     w->unk_94[0] = w->unk_A8[0] - 1;
 
     if (w->unk_B8 == 0) {
-        w->unk_94[0] = *(u16*)&gUnk_02034A98->unk_3C[8];
+        w->unk_94[0] = gUnk_02034A98->unk_44;
         node = (CardDisplayWork*)ListPoolFirst(&w->unk_54[0]);
 
         while (node != 0) {
@@ -915,7 +915,7 @@ void func_08078E34(UnkStruct_08080268* w, u8 b, u8 c) {
 
     m4aSongNumStart(0x79);
     gUnk_02034A98->unk_78 &= ~4;
-    prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+    prev = gUnk_02034A98->unk_44;
     p = (CardDisplayWork*)ListPoolFirst(&w->unk_54[b]);
 
     while (p != 0) {
@@ -928,7 +928,7 @@ void func_08078E34(UnkStruct_08080268* w, u8 b, u8 c) {
     }
 
     gUnk_02034A98->unk_78 |= 0x804;
-    cur = *(s16*)&gUnk_02034A98->unk_3C[8];
+    cur = (s16)gUnk_02034A98->unk_44;
     n = cur - 1;
 
     if ((s16)n < 0) {
@@ -990,7 +990,7 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
 
     m4aSongNumStart(0x79);
     gUnk_02034A98->unk_78 &= ~4;
-    prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+    prev = gUnk_02034A98->unk_44;
     p = (CardDisplayWork*)ListPoolFirst(&w->unk_54[b]);
 
     while (p != 0) {
@@ -1003,7 +1003,7 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
     }
 
     gUnk_02034A98->unk_78 |= 0x804;
-    cur = *(s16*)&gUnk_02034A98->unk_3C[8];
+    cur = (s16)gUnk_02034A98->unk_44;
     n = cur + 1;
 
     if ((s16)n >= (s16)w->unk_A8[b]) {
@@ -1300,24 +1300,24 @@ s32 func_08079600(UnkStruct_08080268* w) {
     }
     w->unk_B0[w->unk_B8]--;
     if (w->unk_B0[w->unk_B8] == 1) {
-        (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0B = 1;
+        gUnk_02034A98->unk_3C->unk_0B = 1;
     }
     if ((gUnk_02034A98->unk_48->unk_1E & 2) && (gUnk_02034A98->unk_78 & 0x2000)) {
-        (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+        gUnk_02034A98->unk_3C->unk_0A = 1;
     }
     if (gUnk_02034A98->unk_48->unk_1E & 8) {
-        (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+        gUnk_02034A98->unk_3C->unk_0A = 1;
     }
     if (gUnk_02034A98->unk_A6 == 1) {
-        (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+        gUnk_02034A98->unk_3C->unk_0A = 1;
         if ((u16)func_0807885C((UnkStruct_08078754*)w, 0) == 0) {
-            (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 0;
+            gUnk_02034A98->unk_3C->unk_0A = 0;
         }
     }
     w->unk_1C[0] = gUnk_02034A98;
     gUnk_02034A98->unk_A1 = 5;
     gUnk_02034A98->unk_A0 = 50;
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_08 = 1;
+    gUnk_02034A98->unk_3C->unk_08 = 1;
     gUnk_02034A98->unk_78 &= ~0x40;
     func_0807BC08();
     if (gBtlWork->unk_0F4 == 37) {
@@ -1367,7 +1367,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
     }
 
     if (found) {
-        prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+        prev = gUnk_02034A98->unk_44;
         id = prev + 1;
 
         if (id >= (s16)w->unk_A8[w->unk_B8]) {
@@ -1376,7 +1376,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
 
         for (e = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]); e != 0; e = (CardDisplayWork*)ListPoolNext(&e->unk_64)) {
             if (e->unk_A4 == 0) {
-                other = *(u16*)&e->unk_3C[8];
+                other = e->unk_44;
                 break;
             }
         }
@@ -1449,9 +1449,9 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
         func_0807B478((void*)w);
         gUnk_02039DD4->unk_0EB = 1;
     }
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+    gUnk_02034A98->unk_3C->unk_0A = 1;
     gUnk_02034A98->unk_A1 = 10;
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_08 = 1;
+    gUnk_02034A98->unk_3C->unk_08 = 1;
     gUnk_02034A98->unk_A0 = 50;
     gUnk_02034A98->unk_78 &= ~0x40;
     if (w->unk_BA != 0) {
@@ -1513,7 +1513,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
     }
 
     if (found) {
-        prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+        prev = gUnk_02034A98->unk_44;
         id = prev + 1;
 
         if (id >= (s16)w->unk_A8[w->unk_B8]) {
@@ -1522,7 +1522,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
 
         for (e = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]); e != 0; e = (CardDisplayWork*)ListPoolNext(&e->unk_64)) {
             if (e->unk_A4 == 0) {
-                other = *(u16*)&e->unk_3C[8];
+                other = e->unk_44;
                 break;
             }
         }
@@ -1570,9 +1570,9 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
 
     gBtlWork->unk_068 |= 0x20000000000000;
     m4aSongNumStart(120);
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+    gUnk_02034A98->unk_3C->unk_0A = 1;
     gUnk_02034A98->unk_A1 = 11;
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_08 = 1;
+    gUnk_02034A98->unk_3C->unk_08 = 1;
     gUnk_02034A98->unk_A0 = 50;
     gUnk_02034A98->unk_78 &= ~0x40;
     w->unk_B0[w->unk_B8]--;
@@ -1615,7 +1615,7 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
     }
 
     if (found) {
-        prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+        prev = gUnk_02034A98->unk_44;
         id = prev + 1;
 
         if (id >= (s16)w->unk_A8[w->unk_B8]) {
@@ -1624,7 +1624,7 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
 
         for (e = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]); e != 0; e = (CardDisplayWork*)ListPoolNext(&e->unk_64)) {
             if (e->unk_A4 == 0) {
-                other = *(u16*)&e->unk_3C[8];
+                other = e->unk_44;
                 break;
             }
         }
@@ -1689,8 +1689,8 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     gUnk_02034A98->unk_A0 = 50 - (3 - w->unk_B9) * 4;
     w->unk_28[w->unk_B9] = gUnk_02034A98;
     gUnk_02039DD4->unk_018[gUnk_02039DD4->unk_0DE] = gUnk_02034A98;
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_07 = active = 1;
-    (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_08 = active;
+    gUnk_02034A98->unk_3C->unk_07 = active = 1;
+    gUnk_02034A98->unk_3C->unk_08 = active;
     if (gBtlWork->unk_0F4 == 1) {
         n = gUnk_02034A98->unk_A5 + 1;
         if (n > 9) {
@@ -1722,7 +1722,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     }
     w->unk_B0[w->unk_B8]--;
     if (gUnk_02034A98->unk_48->unk_1E & 8) {
-        (*(CardSlot**)gUnk_02034A98->unk_3C)->unk_0A = 1;
+        gUnk_02034A98->unk_3C->unk_0A = 1;
     }
     if (gBtlWork->unk_0F4 == 37) {
         u16 v = func_080792AC();
@@ -1771,7 +1771,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     }
 
     if (found) {
-        prev = *(u16*)&gUnk_02034A98->unk_3C[8];
+        prev = gUnk_02034A98->unk_44;
         id = prev + 1;
 
         if (id >= (s16)w->unk_A8[w->unk_B8]) {
@@ -1780,7 +1780,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
 
         for (e = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]); e != 0; e = (CardDisplayWork*)ListPoolNext(&e->unk_64)) {
             if (e->unk_A4 == 0) {
-                other = *(u16*)&e->unk_3C[8];
+                other = e->unk_44;
                 break;
             }
         }
@@ -1989,8 +1989,8 @@ void func_0807A80C(UnkStruct_08080268* w) {
 
         if ((u16)r == 52 && (gBtlWork->unk_068 & 0x4800)) {
             for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if ((*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_08 == 1) {
-                    (*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_0A = 1;
+                if (gUnk_02039DD4->unk_000[i]->unk_3C->unk_08 == 1) {
+                    gUnk_02039DD4->unk_000[i]->unk_3C->unk_0A = 1;
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x80000000;
                 }
             }
@@ -2010,7 +2010,7 @@ void func_0807A80C(UnkStruct_08080268* w) {
             w->unk_28[i]->unk_78 |= 0x2000;
 
             if (w->unk_28[i]->unk_48->unk_1E & 2) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+                w->unk_28[i]->unk_3C->unk_0A = 1;
             }
         }
 
@@ -2065,7 +2065,7 @@ void func_0807ABC8(UnkStruct_08080268* w) {
             w->unk_28[i]->unk_A0 = i * 4 + 50;
 
             if (w->unk_28[i]->unk_48->unk_1E & 2) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+                w->unk_28[i]->unk_3C->unk_0A = 1;
             }
 
             w->unk_28[i]->unk_78 |= 0xA000;
@@ -2092,19 +2092,19 @@ void func_0807ABC8(UnkStruct_08080268* w) {
     }
 
     for (i = 0; i < w->unk_B9; i++) {
-        (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_07 = 0;
+        w->unk_28[i]->unk_3C->unk_07 = 0;
 
         if (w->unk_28[i]->unk_48->unk_1E & 2) {
-            (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+            w->unk_28[i]->unk_3C->unk_0A = 1;
         } else if (i == 0 && gBtlWork->unk_0F4 != 15) {
-            (*(CardSlot**)w->unk_28[0]->unk_3C)->unk_0A = 1;
+            w->unk_28[0]->unk_3C->unk_0A = 1;
         }
     }
 
     if (func_0807885C((UnkStruct_08078754*)w, 0) == 0) {
         for (i = 0; i < w->unk_B9; i++) {
             if (w->unk_28[i]->unk_46 == 0) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 0;
+                w->unk_28[i]->unk_3C->unk_0A = 0;
                 break;
             }
         }
@@ -2198,7 +2198,7 @@ void func_0807AF40(UnkStruct_08080268* w) {
     w->unk_BC[w->unk_B8] = 0;
 
     if (w->unk_C0[w->unk_B8] == 0) {
-        w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034A98->unk_3C[8];
+        w->unk_94[w->unk_B8] = gUnk_02034A98->unk_44;
         node = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]);
 
         while (node != 0) {
@@ -2271,7 +2271,7 @@ void func_0807B16C(UnkStruct_08080268* w) {
     w->unk_BC[w->unk_B8] = 0;
 
     if (w->unk_C0[w->unk_B8] == 0) {
-        w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034A98->unk_3C[8];
+        w->unk_94[w->unk_B8] = gUnk_02034A98->unk_44;
         node = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]);
 
         while (node != 0) {
@@ -2814,19 +2814,19 @@ void func_0807BC24(CardDisplayWork* p, CardDisplayArgs* a) {
     *(void**)p->unk_1C = 0;
     *(CardDisplayArgs*)&p->unk_38 = *a;
     p->unk_78 = 0;
-    v = *(u16*)&p->unk_3C[8];
+    v = p->unk_44;
 
     if ((s16)v != -1) {
         func_0807D318(&p->unk_38, &p->unk_48, (u8)v);
 
-        if ((*(CardSlot**)p->unk_3C)->unk_00 == 0xFFFE) {
+        if (p->unk_3C->unk_00 == 0xFFFE) {
             p->unk_78 |= 0x100000;
         }
     } else {
         p->unk_78 = 2;
     }
 
-    if ((*(CardSlot**)p->unk_3C)->unk_00 & 0x8000) {
+    if (p->unk_3C->unk_00 & 0x8000) {
         p->unk_A6 = 1;
     } else {
         p->unk_A6 = 0;
@@ -3148,7 +3148,7 @@ u8 func_0807C4BC(CardDisplayWork* p, void* a) {
             SetTaskUpdate(a, (void*)func_0807CE9C);
 
             if (p->unk_48->unk_1E & 2) {
-                (*(u8**)p->unk_3C)[6] = 0;
+                p->unk_3C->unk_06 = 0;
             }
 
             m4aSongNumStart(0xCC);
@@ -5499,7 +5499,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
     if ((s16)gUnk_02034AAC->unk_9C == 0) {
         if (func_08078754((UnkStruct_08078754*)w, w->unk_B8) > w->unk_C4[2]) {
             gUnk_02034AAC->unk_78 &= ~4;
-            v = *(u16*)&gUnk_02034AAC->unk_3C[8] - 1;
+            v = gUnk_02034AAC->unk_44 - 1;
             c = func_08076750(w, w->unk_B8, &v);
 
             if (c != 0) {
@@ -5548,7 +5548,7 @@ void func_0807FD10(UnkStruct_08080268* w, u8 n) {
         if (w->unk_B0[w->unk_B8] != 1) {
             gUnk_02034AAC->unk_78 &= ~4;
             gUnk_02034AAC->unk_9C = 4;
-            v = *(u16*)&gUnk_02034AAC->unk_3C[8] + 1;
+            v = gUnk_02034AAC->unk_44 + 1;
 
             if ((s16)v >= (s16)w->unk_A8[n]) {
                 v = 0;
@@ -5593,7 +5593,7 @@ void func_0807FE30(UnkStruct_08080268* w, u8 n) {
             gUnk_02034AAC->unk_78 &= ~4;
             gUnk_02034AAC->unk_54 = 0;
             gUnk_02034AAC->unk_9C = 4;
-            v = *(u16*)&gUnk_02034AAC->unk_3C[8] - 1;
+            v = gUnk_02034AAC->unk_44 - 1;
 
             if ((s16)v < 0) {
                 v = w->unk_A8[n] - 1;
@@ -5640,7 +5640,7 @@ void func_0807FF48(UnkStruct_08080268* w) {
         w->unk_BC[w->unk_B8] = 0;
 
         if (w->unk_C0[w->unk_B8] == 0) {
-            w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034AAC->unk_3C[8];
+            w->unk_94[w->unk_B8] = gUnk_02034AAC->unk_44;
             gUnk_02034AAC->unk_8C = 0x10400;
             gUnk_02034AAC->unk_90 = 0x8C00;
             gUnk_02034AAC->unk_9C = 4;
@@ -5692,7 +5692,7 @@ void func_080800B4(UnkStruct_08080268* w) {
     w->unk_BC[w->unk_B8] = 0;
 
     if (w->unk_C0[w->unk_B8] == 0) {
-        w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034AAC->unk_3C[8];
+        w->unk_94[w->unk_B8] = gUnk_02034AAC->unk_44;
         gUnk_02034AAC->unk_8C = 0xC800;
         gUnk_02034AAC->unk_90 = 0xB400;
         gUnk_02034AAC->unk_9C = 12;
@@ -5902,7 +5902,6 @@ void func_080802D8(UnkStruct_08080268* w) {
     }
 }
 
-#ifdef NON_MATCHING
 u8 func_08080594(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
     CardDisplayWork* p;
@@ -5964,32 +5963,34 @@ u8 func_08080594(UnkStruct_08080268* w) {
     w->unk_B0[w->unk_B8]--;
 
     if ((gUnk_02034AAC->unk_48->unk_1E & 2) && (gUnk_02034AAC->unk_78 & 0x2000)) {
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_3C->unk_0A = 1;
     }
 
     if (gUnk_02034AAC->unk_48->unk_1E & 8) {
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_3C->unk_0A = 1;
     }
 
     if (gUnk_02034AAC->unk_A6 == 1) {
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_3C->unk_0A = 1;
 
         if ((u16)func_0807885C(w, 0) == 0) {
-            (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 0;
+            gUnk_02034AAC->unk_3C->unk_0A = 0;
         }
     }
 
     w->unk_1C[0] = gUnk_02034AAC;
     gUnk_02034AAC->unk_A1 = 5;
     gUnk_02034AAC->unk_A0 = 50;
-    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
-    v = *(u16*)&gUnk_02034AAC->unk_3C[8] + 1;
+    gUnk_02034AAC->unk_3C->unk_08 = 1;
+    v = gUnk_02034AAC->unk_44 + 1;
 
     if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
         v = 0;
     }
 
-    func_080819E8();
+    do {
+        func_080819E8();
+    } while (0);
 
     if (gUnk_02039B9C->unk_0F4 == 37) {
         t = func_080792AC();
@@ -6034,7 +6035,9 @@ u8 func_08080594(UnkStruct_08080268* w) {
         w->unk_34[w->unk_B8] = 0;
         gUnk_02034AAC = 0;
         w->unk_C0[0] = 1;
+#ifndef VERSION_EU
         m4aSongNumStart(202);
+#endif
 
         if (FadeGetAmount() == 0) {
             FadeFromAmount(2, 16, 20);
@@ -6043,9 +6046,6 @@ u8 func_08080594(UnkStruct_08080268* w) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_08080594.s");
-#endif
 
 void func_08080994(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
@@ -6136,7 +6136,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     gUnk_02034AAC->unk_A0 = (3 - w->unk_B9) * 4 + 50;
     w->unk_28[w->unk_B9] = gUnk_02034AAC;
     gUnk_02039DD4->unk_024[gUnk_02039DD4->unk_0DF] = gUnk_02034AAC;
-    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_07 = 1;
+    gUnk_02034AAC->unk_3C->unk_07 = 1;
 
     if (gUnk_02039B9C->unk_0F4 == 1) {
         n = gUnk_02034AAC->unk_A5 + 1;
@@ -6173,11 +6173,11 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     w->unk_B0[w->unk_B8]--;
 
     if (gUnk_02034AAC->unk_48->unk_1E & 8) {
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_3C->unk_0A = 1;
     }
 
-    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
-    v = *(u16*)&gUnk_02034AAC->unk_3C[8] + 1;
+    gUnk_02034AAC->unk_3C->unk_08 = 1;
+    v = gUnk_02034AAC->unk_44 + 1;
 
     if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
         v = 0;
@@ -6324,8 +6324,8 @@ void func_08080EB4(UnkStruct_08080268* w) {
         }
         if (result == 52) {
             for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if ((*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_08 == 1) {
-                    (*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_0A = 1;
+                if (gUnk_02039DD4->unk_000[i]->unk_3C->unk_08 == 1) {
+                    gUnk_02039DD4->unk_000[i]->unk_3C->unk_0A = 1;
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x80000000;
                 }
             }
@@ -6346,7 +6346,7 @@ void func_08080EB4(UnkStruct_08080268* w) {
             q = gUnk_02039DD4->unk_000;            q += i;            *q = w->unk_28[i];
             w->unk_28[i]->unk_78 |= 0x2000;
             if (w->unk_28[i]->unk_48->unk_1E & 2) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+                w->unk_28[i]->unk_3C->unk_0A = 1;
             }
         }
         *(u8*)&gBtlWork->unk_0A4 = 0;
@@ -6360,8 +6360,8 @@ void func_08080EB4(UnkStruct_08080268* w) {
         }
         if (result == 52) {
             for (i = 0; i < previousCount; i++) {
-                if ((*(CardSlot**)previous[i]->unk_3C)->unk_08 == 1) {
-                    (*(CardSlot**)previous[i]->unk_3C)->unk_0A = 1;
+                if (previous[i]->unk_3C->unk_08 == 1) {
+                    previous[i]->unk_3C->unk_0A = 1;
                     previous[i]->unk_78 |= 0x80000000;
                 }
             }
@@ -6411,7 +6411,7 @@ void func_08081210(UnkStruct_08080268* w) {
             w->unk_28[i]->unk_A0 = i * 4 + 50;
 
             if (w->unk_28[i]->unk_48->unk_1E & 2) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+                w->unk_28[i]->unk_3C->unk_0A = 1;
             }
 
             w->unk_28[i]->unk_78 |= 0xA000;
@@ -6438,19 +6438,19 @@ void func_08081210(UnkStruct_08080268* w) {
     }
 
     for (i = 0; i < w->unk_B9; i++) {
-        (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_07 = 0;
+        w->unk_28[i]->unk_3C->unk_07 = 0;
 
         if (w->unk_28[i]->unk_48->unk_1E & 2) {
-            (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+            w->unk_28[i]->unk_3C->unk_0A = 1;
         } else if (i == 0 && gUnk_02039B9C->unk_0F4 != 15) {
-            (*(CardSlot**)w->unk_28[0]->unk_3C)->unk_0A = 1;
+            w->unk_28[0]->unk_3C->unk_0A = 1;
         }
     }
 
     if (func_0807885C((UnkStruct_08078754*)w, 0) == 0) {
         for (i = 0; i < w->unk_B9; i++) {
             if (w->unk_28[i]->unk_46 == 0) {
-                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 0;
+                w->unk_28[i]->unk_3C->unk_0A = 0;
                 break;
             }
         }
@@ -6496,7 +6496,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             pp = &gUnk_02034AAC;
         }
 
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_3C->unk_0A = 1;
         gUnk_02034AAC->unk_A1 = 10;
         gUnk_02034AAC->unk_A0 = 50;
         gUnk_02034AAC->unk_78 &= ~0x40;
@@ -6506,9 +6506,9 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             w->unk_C4[3] = 8;
         }
 
-        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
+        gUnk_02034AAC->unk_3C->unk_08 = 1;
         q = gUnk_02034AAC;
-        v = *(u16*)&q->unk_3C[8] + 1;
+        v = q->unk_44 + 1;
 
         if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
             v = 0;
@@ -6739,19 +6739,19 @@ void func_08081A3C(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_20 = 0;
     *(CardDisplayArgs*)&p->unk_38 = *a;
     p->unk_78 = 0;
-    v = *(u16*)&p->unk_3C[8];
+    v = p->unk_44;
 
     if ((s16)v != -1) {
         func_08082DA4(&p->unk_38, &p->unk_48, (u8)v);
 
-        if ((*(CardSlot**)p->unk_3C)->unk_00 == 0xFFFE) {
+        if (p->unk_3C->unk_00 == 0xFFFE) {
             p->unk_78 |= 0x100000;
         }
     } else {
         p->unk_78 = 2;
     }
 
-    if ((*(CardSlot**)p->unk_3C)->unk_00 & 0x8000) {
+    if (p->unk_3C->unk_00 & 0x8000) {
         p->unk_A6 = 1;
     } else {
         p->unk_A6 = 0;
@@ -7027,7 +7027,7 @@ u8 func_08082224(CardDisplayWork* p, void* a) {
             SetTaskUpdate(a, (void*)func_08082B48);
 
             if (p->unk_48->unk_1E & 2) {
-                (*(u8**)p->unk_3C)[6] = 0;
+                p->unk_3C->unk_06 = 0;
             }
 
             m4aSongNumStart(0xCC);
@@ -17000,17 +17000,17 @@ void func_08090EA0(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 = 0;
     p->unk_A0 = 50;
     p->unk_9C = 0;
-    tbl = gUnk_09EE275C[*(s32*)&p->unk_3C[4]];
-    n = gUnk_08F7DAC4[*(s32*)&p->unk_3C[4]];
-    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_3C[4];
+    tbl = gUnk_09EE275C[*(s32*)&p->unk_40[0]];
+    n = gUnk_08F7DAC4[*(s32*)&p->unk_40[0]];
+    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_40[0];
 
     if (n == 1) {
         id = tbl[0];
-    } else if (*(s16*)&p->unk_3C[8] != -1) {
-        if (*(s16*)&p->unk_3C[8] > n) {
+    } else if ((s16)p->unk_44 != -1) {
+        if ((s16)p->unk_44 > n) {
             id = tbl[GetRandom() % n];
         } else {
-            id = tbl[*(s16*)&p->unk_3C[8] - 1];
+            id = tbl[(s16)p->unk_44 - 1];
         }
     } else {
         if (gUnk_02039DD4->unk_0D7 > n) {
@@ -17079,14 +17079,14 @@ void func_08091048(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 = 0;
     p->unk_A0 = 50;
     p->unk_9C = 0;
-    tbl = gUnk_09EE275C[*(s32*)&p->unk_3C[4]];
-    n = gUnk_08F7DAC4[*(s32*)&p->unk_3C[4]];
-    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_3C[4];
+    tbl = gUnk_09EE275C[*(s32*)&p->unk_40[0]];
+    n = gUnk_08F7DAC4[*(s32*)&p->unk_40[0]];
+    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_40[0];
 
     if (n == 1) {
         id = tbl[0];
-    } else if (*(s16*)&p->unk_3C[8] < n) {
-        id = tbl[*(s16*)&p->unk_3C[8]];
+    } else if ((s16)p->unk_44 < n) {
+        id = tbl[(s16)p->unk_44];
     } else {
         id = tbl[GetRandom() % n];
     }
@@ -17121,14 +17121,14 @@ void func_08091138(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 = 0;
     p->unk_A0 = 50;
     p->unk_9C = 0;
-    tbl = gUnk_09EE275C[*(s32*)&p->unk_3C[4]];
-    n = gUnk_08F7DAC4[*(s32*)&p->unk_3C[4]];
-    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_3C[4];
+    tbl = gUnk_09EE275C[*(s32*)&p->unk_40[0]];
+    n = gUnk_08F7DAC4[*(s32*)&p->unk_40[0]];
+    *(u16*)&p->unk_5C[0] = *(s32*)&p->unk_40[0];
 
     if (n == 1) {
         id = tbl[0];
-    } else if (*(s16*)&p->unk_3C[8] < n) {
-        id = tbl[GetRandom() % *(s16*)&p->unk_3C[8]];
+    } else if ((s16)p->unk_44 < n) {
+        id = tbl[GetRandom() % (s16)p->unk_44];
     } else {
         id = tbl[GetRandom() % n];
     }
@@ -19938,7 +19938,7 @@ void func_080956AC(CardDisplayWork* p) {
     EwramFree(*(void**)&p->unk_1C[0]);
     EwramFree(p->unk_20);
 
-    switch (*(s32*)&p->unk_3C[4]) {
+    switch (*(s32*)&p->unk_40[0]) {
     case 1:
         gBtlWork->unk_068 &= ~0x1000000;
 

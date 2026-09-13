@@ -2066,7 +2066,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 e = ListPoolNext(&e->unk_64);
             }
 
-            n = *(u16*)((u8*)gUnk_02034A98 + 0x44) - 1;
+            n = gUnk_02034A98->unk_44 - 1;
             c = func_08076750((UnkStruct_08078754*)w, w->unk_B8, &n);
 
             if (c != 0) {
