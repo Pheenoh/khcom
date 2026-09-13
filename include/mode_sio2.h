@@ -6,6 +6,7 @@
 #include "prize_types.h"
 
 #include "card_api.h"
+#include "card_ui_state.h"
 
 #include "msg_api.h"
 #include "mode_sio2_api.h"
@@ -94,7 +95,6 @@ typedef struct PoohWork {
 } PoohWork;
 
 extern u32 gUnk_02034DAC;
-extern u8 gUnk_0203A9E4;
 extern CharaLinkData gUnk_0203AAC0;
 extern s8 gUnk_0203C3C4;
 extern u16 gUnk_0203C3C8;

@@ -17,6 +17,7 @@
 
 #include "card_deck.h"
 #include "card_state.h"
+#include "card_ui_state.h"
 
 #include "text.h"
 #include "fade.h"
@@ -299,7 +300,6 @@ extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
 extern s8 gUnk_0203AA00;
 extern u8 gUnk_0203AAB0;
-extern s8 gUnk_0203A9E4;
 extern s8 gUnk_0203AB10;
 extern u16 gUnk_0203AB20[];
 extern s8 gUnk_0203AB34[];

@@ -6,7 +6,7 @@
 #include "macros.h"
 #include "mode_ms2.h"
 #include "gba/keys.h"
-extern u8 gUnk_0203A8C0[];
+#include "card_ui_state.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;

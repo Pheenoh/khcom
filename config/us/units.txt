@@ -56,6 +56,7 @@ msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+card_ui_state.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
 wlogo.c -O2 -fprologue-bugfix
 bos2.c -O2 -fprologue-bugfix -fno-common
