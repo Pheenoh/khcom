@@ -2,6 +2,10 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "boss_jafar_data.h"
+
+#include "boss_tm_data.h"
+
 #include "animation_resource_data.h"
 
 #include "bos2_background_data.h"
@@ -526,23 +530,6 @@ typedef struct TmArmWork {
     u8 unk_255[0x3];
 } TmArmWork;
 
-typedef struct TmFootStep {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    s16 unk_12;
-    u8 unk_14[0x4];
-    s16 unk_18;
-    s16 unk_1A;
-    u8 unk_1C[0x4];
-} TmFootStep;
-
 typedef struct TmFootWork {
     u16 unk_000;
     u8 unk_002;
@@ -588,8 +575,6 @@ extern s16 gUnk_0961A8B0[];
 extern void* gUnk_09EF3C50[];
 extern void* gUnk_09EF3BF8[];
 extern void* gUnk_09EF3C18;
-extern void* gUnk_09EF280C[];
-extern void* gUnk_09EF28D0[];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB304[];
@@ -622,8 +607,6 @@ extern u8 gUnk_08F69BA4[];
 extern s8 gUnk_0961A894[];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];
-extern s8 gUnk_09EF2A38[];
-extern s16 gUnk_09EF2A42[];
 extern u8 gUnk_096FB5A4[];
 extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_096FB584[];
@@ -643,9 +626,6 @@ extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern u16 gUnk_0961A710[][3];
 extern void* gUnk_09EF39DC[];
-extern u8 gUnk_09EF21B0[];
-extern s16 gUnk_09EF21B8[];
-extern TmFootStep gUnk_09EF21C4[];
 extern u8 gUnk_09619CDC[];
 extern u8 gUnk_09619D18[];
 extern u8 gUnk_09657C04[];
@@ -655,11 +635,7 @@ extern u8 gUnk_096BF464[];
 extern void* gUnk_09EF39BC;
 extern void* gUnk_09EF39C4;
 extern void* gUnk_09EF3A1C[];
-extern u32 gUnk_09EF2994[];
 #include "mode_battle_data.h"
-extern TmFootStep gUnk_09EF2244[];
-extern TmFootStep gUnk_09EF25A4[];
-extern TmFootStep gUnk_09EF2464[];
 extern u8 gUnk_09619C94[];
 
 void func_080C1A48(JfBorderlineWork* work);
@@ -793,7 +769,6 @@ void task_bos_jf_lamp_2(JfLampWork* work);
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg);
 u8 task_bos_dsd_1(DsdWork* work);
 
-extern u8 gUnk_09EF1D58[];
 
 void func_080C3C40(DsdMainWork* work);
 

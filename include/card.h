@@ -1,3 +1,4 @@
+#include "card_localized_data.h"
 #include "card_reload_data.h"
 #include "event_sprite_data.h"
 #include "card_message_data.h"
@@ -107,7 +108,6 @@ extern u16 gUnk_0903BFBC[];
 extern u8 gUnk_0940F7B8[];
 extern u8 gUnk_0940F918[];
 extern u8 gUnk_094233B8[];
-extern void* gUnk_09EEA19C[];
 extern u8 gUnk_093FB6C4[];
 #include "mode_battle_data.h"
 extern u8 gUnk_096148D8[];
@@ -130,7 +130,6 @@ typedef struct CardListWork {
 typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
 
 extern u8 gUnk_081283C0[];
-extern void** gUnk_09EEA28C;
 extern vu16 gSystemFlags;
 extern Mode gModeBattle;
 extern u8 gUnk_09402F78[];
@@ -1216,8 +1215,6 @@ extern u16* gUnk_09EE4A68[];
 extern u16* gUnk_09EE4A98[];
 extern const u16 gUnk_090356BA[];
 extern const u16 gUnk_090356D2[];
-extern void* gUnk_09EEAFF8;
-extern void* gUnk_09EEB000;
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];

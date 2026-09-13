@@ -1,0 +1,449 @@
+{
+  "version": 1,
+  "provenance": {
+    "boss_tm_movement": "Canonical 32-byte body and foot step types are preserved field-for-field. task_bos_tm_1 wraps idle phase0..7 and walking phase0..9; func_080B83C4 wraps body angle index0..10. task_bos_tm_body_1 and task_bos_tm_foot_1 explicitly select translated step indices0..15 or0..8. Reaction paths explicitly use step0..2. Foot phase bytes produce height selectors0..4. Body effect choice uses GetRandom()%4. Seven unused complete zero terminator records and four unused halfword suffix values remain separately named neutral scalar objects; no runtime access is claimed. All record/scalar bytes agree across US/JP/EU."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_body",
+          "address": "0x9ef1d58",
+          "size": 1088,
+          "sha256": "390a09ca92ca5c17f33a8884f32ca051e6d2c830cde1139624c0b019189dc8c6",
+          "objects": [
+            {
+              "name": "gUnk_09EF1D58",
+              "offset": 0,
+              "size": 11
+            },
+            {
+              "name": "gUnk_09EF1D64",
+              "offset": 12,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF1D74",
+              "offset": 28,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1D88",
+              "offset": 48,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF1DE8",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1E08",
+              "offset": 176,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09EF1E0E",
+              "offset": 182,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E10",
+              "offset": 184,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E12",
+              "offset": 186,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E14",
+              "offset": 188,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2014",
+              "offset": 700,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2034",
+              "offset": 732,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF2154",
+              "offset": 1020,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2174",
+              "offset": 1052,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2194",
+              "offset": 1084,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_foot",
+          "address": "0x9ef21b0",
+          "size": 1332,
+          "sha256": "1c848fcac9e389a1c59a19e08b36dea0ea7801699662a02aa30324c02d76f6c7",
+          "objects": [
+            {
+              "name": "gUnk_09EF21B0",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF21B8",
+              "offset": 8,
+              "size": 10
+            },
+            {
+              "name": "gUnk_09EF21C2",
+              "offset": 18,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF21C4",
+              "offset": 20,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF2224",
+              "offset": 116,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2244",
+              "offset": 148,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2444",
+              "offset": 660,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2464",
+              "offset": 692,
+              "size": 320
+            },
+            {
+              "name": "gUnk_09EF25A4",
+              "offset": 1012,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF26C4",
+              "offset": 1300,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_body",
+          "address": "0x9ec9144",
+          "size": 1088,
+          "sha256": "390a09ca92ca5c17f33a8884f32ca051e6d2c830cde1139624c0b019189dc8c6",
+          "objects": [
+            {
+              "name": "gUnk_09EF1D58",
+              "offset": 0,
+              "size": 11
+            },
+            {
+              "name": "gUnk_09EF1D64",
+              "offset": 12,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF1D74",
+              "offset": 28,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1D88",
+              "offset": 48,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF1DE8",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1E08",
+              "offset": 176,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09EF1E0E",
+              "offset": 182,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E10",
+              "offset": 184,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E12",
+              "offset": 186,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E14",
+              "offset": 188,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2014",
+              "offset": 700,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2034",
+              "offset": 732,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF2154",
+              "offset": 1020,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2174",
+              "offset": 1052,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2194",
+              "offset": 1084,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_foot",
+          "address": "0x9ec959c",
+          "size": 1332,
+          "sha256": "1c848fcac9e389a1c59a19e08b36dea0ea7801699662a02aa30324c02d76f6c7",
+          "objects": [
+            {
+              "name": "gUnk_09EF21B0",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF21B8",
+              "offset": 8,
+              "size": 10
+            },
+            {
+              "name": "gUnk_09EF21C2",
+              "offset": 18,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF21C4",
+              "offset": 20,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF2224",
+              "offset": 116,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2244",
+              "offset": 148,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2444",
+              "offset": 660,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2464",
+              "offset": 692,
+              "size": 320
+            },
+            {
+              "name": "gUnk_09EF25A4",
+              "offset": 1012,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF26C4",
+              "offset": 1300,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_body",
+          "address": "0x9f7cf90",
+          "size": 1088,
+          "sha256": "390a09ca92ca5c17f33a8884f32ca051e6d2c830cde1139624c0b019189dc8c6",
+          "objects": [
+            {
+              "name": "gUnk_09EF1D58",
+              "offset": 0,
+              "size": 11
+            },
+            {
+              "name": "gUnk_09EF1D64",
+              "offset": 12,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF1D74",
+              "offset": 28,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1D88",
+              "offset": 48,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF1DE8",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1E08",
+              "offset": 176,
+              "size": 6
+            },
+            {
+              "name": "gUnk_09EF1E0E",
+              "offset": 182,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E10",
+              "offset": 184,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E12",
+              "offset": 186,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF1E14",
+              "offset": 188,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2014",
+              "offset": 700,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2034",
+              "offset": 732,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF2154",
+              "offset": 1020,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2174",
+              "offset": 1052,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2194",
+              "offset": 1084,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_tm_data.c",
+          "section": ".data_boss_tm_foot",
+          "address": "0x9f7d3e8",
+          "size": 1332,
+          "sha256": "1c848fcac9e389a1c59a19e08b36dea0ea7801699662a02aa30324c02d76f6c7",
+          "objects": [
+            {
+              "name": "gUnk_09EF21B0",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF21B8",
+              "offset": 8,
+              "size": 10
+            },
+            {
+              "name": "gUnk_09EF21C2",
+              "offset": 18,
+              "size": 2
+            },
+            {
+              "name": "gUnk_09EF21C4",
+              "offset": 20,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF2224",
+              "offset": 116,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2244",
+              "offset": 148,
+              "size": 512
+            },
+            {
+              "name": "gUnk_09EF2444",
+              "offset": 660,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF2464",
+              "offset": 692,
+              "size": 320
+            },
+            {
+              "name": "gUnk_09EF25A4",
+              "offset": 1012,
+              "size": 288
+            },
+            {
+              "name": "gUnk_09EF26C4",
+              "offset": 1300,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

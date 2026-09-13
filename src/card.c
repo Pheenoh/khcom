@@ -1,3 +1,4 @@
+#include "card_localized_data.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
@@ -109,7 +110,6 @@ extern u8 gUnkEu_09538B24[];
 extern u8 gUnkEu_09539324[];
 extern u16 gUnkEu_090CE9F4[];
 extern void** gUnkEu_09F72BFC[];
-extern void** gUnkEu_09F74360[];
 extern void* gUnkEu_09F7434C[];
 extern u16 gUnkEu_090D1DF4[];
 extern void* gUnkEu_08890E1C[];
@@ -9943,8 +9943,8 @@ void func_08085FB4(u8* work, void* a) {
     *(void**)&work[0x10] = LoadObjTiles(gUnk_090A44C4, 32);
     *(void**)&work[0x14] = LoadObjPalette(gUnk_09614418, 32);
     *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
-    *(void**)&work[0x4E8] = *(void**)((u8*)gUnk_09EEAFB0 + 0x24);
-    *(void**)&work[0x4EC] = *(void**)((u8*)gUnk_09EEAFB0 + 0x28);
+    *(void**)&work[0x4E8] = gUnk_09EEAFD4;
+    *(void**)&work[0x4EC] = gUnk_09EEAFD8;
     *(void**)&work[0x04] = AllocObjTiles(0x280, 0);
     func_0808E364(work, 0);
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
@@ -12958,11 +12958,7 @@ typedef struct {
 } UnkStruct_0808B66C;
 
 #ifdef VERSION_EU
-extern void** gUnkEu_09F6FDF0[];
-extern void** gUnkEu_09F6FDC8[];
 #else
-extern void* gUnk_09EEAFF0;
-extern void* gUnk_09EEAFE8;
 #endif
 
 void func_0808B66C(UnkStruct_0808B66C* w) {
@@ -25453,8 +25449,6 @@ void func_0809E7A4(void) {
 #endif
     }
 }
-extern void* gUnk_09EEA2BC[];
-extern void* gUnk_09EEA29C[];
 extern u8 gUnk_090950F4[];
 extern u8 gUnk_09091D36[];
 extern u8 gUnk_095112B8[];
@@ -25470,12 +25464,8 @@ extern u8 gUnk_09613FB8[];
 extern u8 gUnk_09613FD8[];
 extern u8 gUnk_09613FF8[];
 #ifdef VERSION_EU
-extern void* gUnkEu_09F7626C[];
-extern void* gUnkEu_09F762A4[];
 extern u8 gUnkEu_09172200[];
 extern u8 gUnkEu_091759BA[];
-extern void** gUnkEu_09F72D58[];
-extern void* gUnkEu_09F72D44[];
 #endif
 u8 func_0809F390(u8* work, void* a);
 
@@ -25979,7 +25969,7 @@ u8 func_0809F390(u8* work, void* a) {
         *(void**)&work[0x6EC] = LoadObjPalette(&gUnk_09611AB8[0x24A0], 32);
         FadeSetPaletteExcluded(*(u16*)((u8*)*(void**)&work[0x6EC] + 6) + 16, 1);
         SetObjTileSource(*(void**)&work[0x6E8], &gUnk_0908C686[0x2B0A]);
-        AnimInit((AnimState*)&work[0x710], &gUnk_09EEA19C[0x39], &gUnk_09EEA19C[0x34]);
+        AnimInit((AnimState*)&work[0x710], gUnk_09EEA280, gUnk_09EEA26C);
         AnimStart((AnimState*)&work[0x710], 0, 1);
         *(void**)&work[0x74C] = AnimGetGfx((AnimState*)&work[0x710]);
         work[0x7B6] = 16;
@@ -26241,15 +26231,9 @@ u8 func_0809FE14(void) {
     return 1;
 }
 #ifdef VERSION_EU
-extern void** gUnk_09EEA1BC[];
 #else
-extern void* gUnk_09EEA1BC[];
 #endif
-extern void* gUnk_09EEA1EC[];
-extern void* gUnk_09EEA2BC[];
-extern void* gUnk_09EEA2D8[];
 #ifdef VERSION_EU
-extern void* gUnkEu_09F7626C[];
 #endif
 void func_080A0734(s16 x, s16 y, void* tiles, void* pal, void** gfx, u16* digits, u8 kind);
 
@@ -29956,6 +29940,8 @@ void func_080A6500(u8* work) {
     if (*(void**)&work[0x3CC] != 0) {
 #ifdef VERSION_EU
         DrawSprite(*(s32*)&work[0x4AC] >> 8, 0, gUnkEu_09F74360[gLanguage][0], *(void**)&work[0x3CC], *(void**)&work[0x3C8], 0, 0, 10);
+#elif defined(VERSION_JP)
+        DrawSprite(*(s32*)&work[0x4AC] >> 8, 0, gUnk_09EEAFF0, *(void**)&work[0x3CC], *(void**)&work[0x3C8], 0, 0, 10);
 #else
         DrawSprite(*(s32*)&work[0x4AC] >> 8, 0, gUnk_09EEAFF8, *(void**)&work[0x3CC], *(void**)&work[0x3C8], 0, 0, 10);
 #endif

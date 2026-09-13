@@ -2454,8 +2454,6 @@ void func_080B89B0(TmBodyWork* p) {
     }
     func_080B83C4(p);
 }
-extern WlogoTtEffStep gUnk_09EF1D88[];
-extern s16 gUnk_09EF1E08[];
 
 void func_080B8A00(TmBodyWork* p) {
     s16 i;

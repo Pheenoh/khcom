@@ -90,7 +90,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
                 func_0801BCD4(&work->unk_12C);
             }
             if ((s16)work->unk_000->unk_36 == 0) {
-                table = (s16*)(gUnk_09EF1D58 + 12);
+                table = gUnk_09EF1D64;
                 work->unk_000->unk_1C += table[(s16)work->unk_000->unk_34] << 8;
                 work->unk_010.unk_00C = work->unk_000->unk_1C - 0x2200;
                 work->unk_12C.unk_00C = work->unk_000->unk_1C + 0x900;

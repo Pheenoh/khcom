@@ -2,6 +2,8 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "boss_tm_data.h"
+
 #include "animation_resource_assets.h"
 
 #include "animation_resource_data.h"
@@ -26,25 +28,6 @@
 
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
-
-typedef struct WlogoTtEffStep {
-    s16 unk_00;
-    s16 unk_02;
-    u8 unk_04;
-    u8 unk_05[0x3];
-    s16 unk_08;
-    s16 unk_0A;
-    u8 unk_0C;
-    u8 unk_0D[0x3];
-    s16 unk_10;
-    s16 unk_12;
-    u8 unk_14[0x2];
-    s16 unk_16;
-    s16 unk_18;
-    s16 unk_1A;
-    u8 unk_1C[0x2];
-    s16 unk_1E;
-} WlogoTtEffStep;
 
 typedef struct WlogoTtWork {
     u8 unk_000;
@@ -566,11 +549,6 @@ extern s16 gUnk_09EF1C7E[][2];
 extern s16 gUnk_09EF1CB6[][2];
 extern s16 gUnk_09EF1CEE[];
 extern u16 gUnk_09EF1D0A[];
-extern u8 gUnk_09EF1D58[];
-extern s16 gUnk_09EF1D74[];
-extern WlogoTtEffStep gUnk_09EF1E14[];
-extern WlogoTtEffStep gUnk_09EF2034[];
-extern s8 gUnk_09EF2194[];
 extern void* gUnk_09EF36D0[];
 extern void* gUnk_09EF3924[];
 extern void* gUnk_09EF3960[];

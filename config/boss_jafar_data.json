@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "provenance": {
+    "boss_jafar_indices": "JfMajin state functions use background phases0..47: func_080BF4F4 and func_080BF8C4 initialize45 and later select+2. Independently referenced map/tile bases bound the final neutral blank-map and NULL scalars. func_080BF8C4 starts angle148/108 and increments/decrements26 times, proving parameter index26. Eight further monotonic u32 values are separate unused scalars before the independently owned TaskDesc. task_bos_jf_rock_1 explicitly clamps animation selector8 and gfx selector11; unused -1 after the9-byte selector array remains a neutral scalar. Final two alignment bytes before the next TaskDesc remain outside this batch."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_background",
+          "address": "0x9ef280c",
+          "size": 532,
+          "sha256": "7e137d3e062b050839f828185cf73079f8fa554ebbcd53db82824197e20d2652",
+          "objects": [
+            {
+              "name": "gUnk_09EF280C",
+              "offset": 0,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF28CC",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF28D0",
+              "offset": 196,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF2990",
+              "offset": 388,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2994",
+              "offset": 392,
+              "size": 108
+            },
+            {
+              "name": "gUnk_09EF2A00",
+              "offset": 500,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A04",
+              "offset": 504,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A08",
+              "offset": 508,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A0C",
+              "offset": 512,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A10",
+              "offset": 516,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A14",
+              "offset": 520,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A18",
+              "offset": 524,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A1C",
+              "offset": 528,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_rock_indices",
+          "address": "0x9ef2a38",
+          "size": 34,
+          "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A38",
+              "offset": 0,
+              "size": 9
+            },
+            {
+              "name": "gUnk_09EF2A41",
+              "offset": 9,
+              "size": 1
+            },
+            {
+              "name": "gUnk_09EF2A42",
+              "offset": 10,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_background",
+          "address": "0x9ec9bf8",
+          "size": 532,
+          "sha256": "262aaa95951c0cfa4c2d3c893ec794403bc182cc22174d4f2d3329c7380f8c5e",
+          "objects": [
+            {
+              "name": "gUnk_09EF280C",
+              "offset": 0,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF28CC",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF28D0",
+              "offset": 196,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF2990",
+              "offset": 388,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2994",
+              "offset": 392,
+              "size": 108
+            },
+            {
+              "name": "gUnk_09EF2A00",
+              "offset": 500,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A04",
+              "offset": 504,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A08",
+              "offset": 508,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A0C",
+              "offset": 512,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A10",
+              "offset": 516,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A14",
+              "offset": 520,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A18",
+              "offset": 524,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A1C",
+              "offset": 528,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_rock_indices",
+          "address": "0x9ec9e24",
+          "size": 34,
+          "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A38",
+              "offset": 0,
+              "size": 9
+            },
+            {
+              "name": "gUnk_09EF2A41",
+              "offset": 9,
+              "size": 1
+            },
+            {
+              "name": "gUnk_09EF2A42",
+              "offset": 10,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_background",
+          "address": "0x9f7da44",
+          "size": 532,
+          "sha256": "bcc1afc9eed3260d3e9ff947b88aa9c8fb57eb301b82e3b7a260f35daab364d7",
+          "objects": [
+            {
+              "name": "gUnk_09EF280C",
+              "offset": 0,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF28CC",
+              "offset": 192,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF28D0",
+              "offset": 196,
+              "size": 192
+            },
+            {
+              "name": "gUnk_09EF2990",
+              "offset": 388,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2994",
+              "offset": 392,
+              "size": 108
+            },
+            {
+              "name": "gUnk_09EF2A00",
+              "offset": 500,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A04",
+              "offset": 504,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A08",
+              "offset": 508,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A0C",
+              "offset": 512,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A10",
+              "offset": 516,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A14",
+              "offset": 520,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A18",
+              "offset": 524,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF2A1C",
+              "offset": 528,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_boss_jafar_rock_indices",
+          "address": "0x9f7dc70",
+          "size": 34,
+          "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A38",
+              "offset": 0,
+              "size": 9
+            },
+            {
+              "name": "gUnk_09EF2A41",
+              "offset": 9,
+              "size": 1
+            },
+            {
+              "name": "gUnk_09EF2A42",
+              "offset": 10,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

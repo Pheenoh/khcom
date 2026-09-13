@@ -9544,6 +9544,21 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "boss_jafar_background_indices",
+      "layer": 1,
+      "provenance": "JfMajin state functions use background phases0..47: func_080BF4F4 and func_080BF8C4 initialize45 and later select+2. Independently referenced map/tile bases bound the final neutral blank-map and NULL scalars. func_080BF8C4 starts angle148/108 and increments/decrements26 times, proving parameter index26. Eight further monotonic u32 values are separate unused scalars before the independently owned TaskDesc. task_bos_jf_rock_1 explicitly clamps animation selector8 and gfx selector11; unused -1 after the9-byte selector array remains a neutral scalar. Final two alignment bytes before the next TaskDesc remain outside this batch. All48 raw maps have identical2048-byte payloads across regions; all48 tile assets have identical4096-byte minimum consumed payloads. No compressed map substitution.",
+      "us": "0x09EF280C",
+      "targets": {
+        "jp": "0x9ec9bf8",
+        "eu": "0x9f7da44"
+      },
+      "size": 392,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }
