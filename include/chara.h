@@ -1,6 +1,8 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "chara_link_cursor.h"
+
 #include "chara_link_buffers.h"
 
 #include "chara_link_state.h"
@@ -200,8 +202,6 @@ extern u16 gUnk_02039810[4][2];
 extern u16 gUnk_02039B58[];
 extern u16 gUnk_02039B68[];
 
-extern s16 gUnk_0203BEB8;
-extern u32 gUnk_0203BEBC;
 
 extern u32 gSioStatus;
 extern u32 gVBlankCounter;

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "sio_debug_state.h"
+
 #include "pooh_state.h"
 
 #include "chara_types.h"
@@ -97,11 +99,6 @@ typedef struct PoohWork {
 
 extern u32 gUnk_02034DAC;
 extern CharaLinkData gUnk_0203AAC0;
-extern s8 gUnk_0203C3C4;
-extern u16 gUnk_0203C3C8;
-extern u16 gUnk_0203C3CC;
-extern u16 gUnk_0203C3D0;
-extern s8 gUnk_0203C3D4;
 
 extern u8 gWhitePalette[];
 extern const char gUnk_0961A9C8[];

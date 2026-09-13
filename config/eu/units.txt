@@ -113,6 +113,12 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 m4a_1.s
 m4a2.c -O2 -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
+battle_field_state.c -O2 -fprologue-bugfix -fno-common
+chara_link_cursor.c -O2 -fprologue-bugfix -fno-common
+worldlogo_state.c -O2 -fprologue-bugfix -fno-common
+sio_debug_state.c -O2 -fprologue-bugfix -fno-common
+title_background_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_buffers.c -O2 -fprologue-bugfix -fno-common
 boss_tm_state.c -O2 -fprologue-bugfix -fno-common
 boss_status_state.c -O2 -fprologue-bugfix -fno-common
