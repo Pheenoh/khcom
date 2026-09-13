@@ -1,3 +1,4 @@
+#include "moogle_data.h"
 #include "card_animation_data.h"
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
@@ -18,7 +19,6 @@
 #include "ms_types.h"
 #include "main.h"
 #include "anim.h"
-extern MapCardCategoryDef gUnk_09EF9618[];
 extern s16 gUnk_02035E2C;
 extern s16 gUnk_02035E2E;
 extern s16 gUnk_02035E48;

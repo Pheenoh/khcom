@@ -28432,6 +28432,2974 @@
         20
       ],
       "layer": 1
+    },
+    {
+      "name": "event_chara_tracks_08F80AA4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f80aa4",
+      "targets": {
+        "jp": "0x8f73cd4",
+        "eu": "0x905a5c0"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F82028",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f82028",
+      "targets": {
+        "jp": "0x8f74e88",
+        "eu": "0x905b25c"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F837B4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f837b4",
+      "targets": {
+        "jp": "0x8f76198",
+        "eu": "0x905c020"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F839E4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f839e4",
+      "targets": {
+        "jp": "0x8f763a4",
+        "eu": "0x905c1e4"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F83D74",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f83d74",
+      "targets": {
+        "jp": "0x8f766c8",
+        "eu": "0x905c48c"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F84180",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f84180",
+      "targets": {
+        "jp": "0x8f76afc",
+        "eu": "0x905c898"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F84DCC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f84dcc",
+      "targets": {
+        "jp": "0x8f77584",
+        "eu": "0x905d0f0"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F859D0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f859d0",
+      "targets": {
+        "jp": "0x8f780f4",
+        "eu": "0x905dba8"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F85E6C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f85e6c",
+      "targets": {
+        "jp": "0x8f78580",
+        "eu": "0x905dfd8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8640C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8640c",
+      "targets": {
+        "jp": "0x8f78a24",
+        "eu": "0x905e3b8"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F86728",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f86728",
+      "targets": {
+        "jp": "0x8f78c88",
+        "eu": "0x905e5c0"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F86C28",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f86c28",
+      "targets": {
+        "jp": "0x8f79160",
+        "eu": "0x905ea64"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8789C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8789c",
+      "targets": {
+        "jp": "0x8f79b0c",
+        "eu": "0x905f0f8"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8910C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8910c",
+      "targets": {
+        "jp": "0x8f7b0f8",
+        "eu": "0x90603f0"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F89E2C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f89e2c",
+      "targets": {
+        "jp": "0x8f7bc38",
+        "eu": "0x9060cfc"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8B54C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8b54c",
+      "targets": {
+        "jp": "0x8f7cecc",
+        "eu": "0x9061a14"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8CFFC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8cffc",
+      "targets": {
+        "jp": "0x8f7e628",
+        "eu": "0x9062d78"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8D90C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8d90c",
+      "targets": {
+        "jp": "0x8f7ee0c",
+        "eu": "0x90633e0"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8DA30",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8da30",
+      "targets": {
+        "jp": "0x8f7ef14",
+        "eu": "0x90634c0"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8F218",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8f218",
+      "targets": {
+        "jp": "0x8f8020c",
+        "eu": "0x906425c"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F8FEF8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f8fef8",
+      "targets": {
+        "jp": "0x8f80d78",
+        "eu": "0x9064c98"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F916C4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f916c4",
+      "targets": {
+        "jp": "0x8f81fec",
+        "eu": "0x9065a04"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F929E0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f929e0",
+      "targets": {
+        "jp": "0x8f8328c",
+        "eu": "0x9066c38"
+      },
+      "size": 80,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F941B0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f941b0",
+      "targets": {
+        "jp": "0x8f84520",
+        "eu": "0x9067a74"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F951E0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f951e0",
+      "targets": {
+        "jp": "0x8f853bc",
+        "eu": "0x9068750"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F953D0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f953d0",
+      "targets": {
+        "jp": "0x8f85580",
+        "eu": "0x90688ec"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F96BF4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f96bf4",
+      "targets": {
+        "jp": "0x8f86928",
+        "eu": "0x90697a4"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F97B90",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f97b90",
+      "targets": {
+        "jp": "0x8f876b8",
+        "eu": "0x906a378"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F98D74",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f98d74",
+      "targets": {
+        "jp": "0x8f88534",
+        "eu": "0x906ae0c"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9A3B8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9a3b8",
+      "targets": {
+        "jp": "0x8f89610",
+        "eu": "0x906b988"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9B2E8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9b2e8",
+      "targets": {
+        "jp": "0x8f8a324",
+        "eu": "0x906c3fc"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9B444",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9b444",
+      "targets": {
+        "jp": "0x8f8a454",
+        "eu": "0x906c4ec"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9C384",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9c384",
+      "targets": {
+        "jp": "0x8f8afe0",
+        "eu": "0x906cbbc"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9CCD8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9ccd8",
+      "targets": {
+        "jp": "0x8f8b8a0",
+        "eu": "0x906d40c"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08F9E804",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8f9e804",
+      "targets": {
+        "jp": "0x8f8d0c4",
+        "eu": "0x906e8a8"
+      },
+      "size": 88,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA007C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa007c",
+      "targets": {
+        "jp": "0x8f8e358",
+        "eu": "0x906f5b4"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA165C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa165c",
+      "targets": {
+        "jp": "0x8f8f784",
+        "eu": "0x9070834"
+      },
+      "size": 96,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA31B0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa31b0",
+      "targets": {
+        "jp": "0x8f90d94",
+        "eu": "0x907186c"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA4238",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa4238",
+      "targets": {
+        "jp": "0x8f91b9c",
+        "eu": "0x9072394"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA43C0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa43c0",
+      "targets": {
+        "jp": "0x8f91d0c",
+        "eu": "0x90724cc"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA5E6C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa5e6c",
+      "targets": {
+        "jp": "0x8f93244",
+        "eu": "0x9073498"
+      },
+      "size": 80,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA6A3C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa6a3c",
+      "targets": {
+        "jp": "0x8f93d24",
+        "eu": "0x9073e84"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FA8848",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fa8848",
+      "targets": {
+        "jp": "0x8f95564",
+        "eu": "0x90750b4"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FAA278",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8faa278",
+      "targets": {
+        "jp": "0x8f96b8c",
+        "eu": "0x9076248"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FABC04",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fabc04",
+      "targets": {
+        "jp": "0x8f981a8",
+        "eu": "0x9077450"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FAD684",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fad684",
+      "targets": {
+        "jp": "0x8f99590",
+        "eu": "0x9078290"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FAF418",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8faf418",
+      "targets": {
+        "jp": "0x8f9ad84",
+        "eu": "0x907963c"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB15F4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb15f4",
+      "targets": {
+        "jp": "0x8f9c8b4",
+        "eu": "0x907abbc"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB29C8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb29c8",
+      "targets": {
+        "jp": "0x8f9d950",
+        "eu": "0x907b99c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB31FC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb31fc",
+      "targets": {
+        "jp": "0x8f9e128",
+        "eu": "0x907c124"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB4AB0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb4ab0",
+      "targets": {
+        "jp": "0x8f9f488",
+        "eu": "0x907d088"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB4C3C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb4c3c",
+      "targets": {
+        "jp": "0x8f9f5fc",
+        "eu": "0x907d1c8"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB5EC4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb5ec4",
+      "targets": {
+        "jp": "0x8fa0558",
+        "eu": "0x907de2c"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB62F8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb62f8",
+      "targets": {
+        "jp": "0x8fa098c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB6590",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb6590",
+      "targets": {
+        "jp": "0x8fa0c24"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB7684",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb7684",
+      "targets": {
+        "jp": "0x8fa1af8",
+        "eu": "0x907ea64"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FB9278",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fb9278",
+      "targets": {
+        "jp": "0x8fa33c4",
+        "eu": "0x907fec8"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FBB638",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fbb638",
+      "targets": {
+        "jp": "0x8fa513c",
+        "eu": "0x90814cc"
+      },
+      "size": 80,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FBC4F8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fbc4f8",
+      "targets": {
+        "jp": "0x8fa5d00",
+        "eu": "0x9081d20"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FBD318",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fbd318",
+      "targets": {
+        "jp": "0x8fa69b4",
+        "eu": "0x90827cc"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC0C6C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc0c6c",
+      "targets": {
+        "jp": "0x8fa9cfc",
+        "eu": "0x90854a0"
+      },
+      "size": 64,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC139C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc139c",
+      "targets": {
+        "jp": "0x8faa3dc",
+        "eu": "0x9085b00"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC22B0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc22b0",
+      "targets": {
+        "jp": "0x8fab164",
+        "eu": "0x9086718"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC3BC8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc3bc8",
+      "targets": {
+        "jp": "0x8fac5cc",
+        "eu": "0x9087690"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC6368",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc6368",
+      "targets": {
+        "jp": "0x8fae4b4",
+        "eu": "0x9088f80"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC69B0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc69b0",
+      "targets": {
+        "jp": "0x8faea04",
+        "eu": "0x9089424"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC8708",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc8708",
+      "targets": {
+        "jp": "0x8fafeb8",
+        "eu": "0x908a2cc"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC9770",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc9770",
+      "targets": {
+        "jp": "0x8fb0c04",
+        "eu": "0x908ad38"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FC9A08",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fc9a08",
+      "targets": {
+        "jp": "0x8fb0e9c",
+        "eu": "0x908afd0"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FCBD58",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fcbd58",
+      "targets": {
+        "jp": "0x8fb2ae8",
+        "eu": "0x908c5d0"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FCCFC0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fccfc0",
+      "targets": {
+        "jp": "0x8fb3b74",
+        "eu": "0x908d470"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FCE7BC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fce7bc",
+      "targets": {
+        "jp": "0x8fb4f98",
+        "eu": "0x908e430"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FCF6D4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fcf6d4",
+      "targets": {
+        "jp": "0x8fb5c58",
+        "eu": "0x908eddc"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD0958",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd0958",
+      "targets": {
+        "jp": "0x8fb6bd0",
+        "eu": "0x908f9cc"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD0B54",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd0b54",
+      "targets": {
+        "jp": "0x8fb6dcc",
+        "eu": "0x908fb84"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD262C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd262c",
+      "targets": {
+        "jp": "0x8fb83e0",
+        "eu": "0x9090ccc"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD3048",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd3048",
+      "targets": {
+        "jp": "0x8fb8bb8",
+        "eu": "0x90912fc"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD3964",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd3964",
+      "targets": {
+        "jp": "0x8fb9198",
+        "eu": "0x9091650"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD4C70",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd4c70",
+      "targets": {
+        "jp": "0x8fba280",
+        "eu": "0x90924b4"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD540C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd540c",
+      "targets": {
+        "jp": "0x8fba8fc",
+        "eu": "0x9092a2c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD55DC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd55dc",
+      "targets": {
+        "jp": "0x8fbaacc",
+        "eu": "0x9092bdc"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD690C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd690c",
+      "targets": {
+        "jp": "0x8fbbadc",
+        "eu": "0x9093918"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD78FC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd78fc",
+      "targets": {
+        "jp": "0x8fbc9a4",
+        "eu": "0x909424c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD84DC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd84dc",
+      "targets": {
+        "jp": "0x8fbd274",
+        "eu": "0x90948a8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD8A68",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd8a68",
+      "targets": {
+        "jp": "0x8fbd700",
+        "eu": "0x9094c6c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FD9BAC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fd9bac",
+      "targets": {
+        "jp": "0x8fbe5d4",
+        "eu": "0x909593c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDAD58",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fdad58",
+      "targets": {
+        "jp": "0x8fbf508",
+        "eu": "0x9096540"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDBA80",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fdba80",
+      "targets": {
+        "jp": "0x8fbfffc",
+        "eu": "0x9096e84"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDCB08",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fdcb08",
+      "targets": {
+        "jp": "0x8fc0c3c",
+        "eu": "0x90976dc"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDD420",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fdd420",
+      "targets": {
+        "jp": "0x8fc1440",
+        "eu": "0x9097d88"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDE590",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fde590",
+      "targets": {
+        "jp": "0x8fc2230",
+        "eu": "0x9098718"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FDE92C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fde92c",
+      "targets": {
+        "jp": "0x8fc25b4",
+        "eu": "0x9098a88"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE0414",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe0414",
+      "targets": {
+        "jp": "0x8fc3b44",
+        "eu": "0x9099b14"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE17E0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe17e0",
+      "targets": {
+        "jp": "0x8fc4b40",
+        "eu": "0x909a764"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE1FC0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe1fc0",
+      "targets": {
+        "jp": "0x8fc519c",
+        "eu": "0x909ac04"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE236C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe236c",
+      "targets": {
+        "jp": "0x8fc54b0",
+        "eu": "0x909ae7c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE301C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe301c",
+      "targets": {
+        "jp": "0x8fc5f0c",
+        "eu": "0x909b66c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE37B4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe37b4",
+      "targets": {
+        "jp": "0x8fc6628",
+        "eu": "0x909bd14"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE4CE8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe4ce8",
+      "targets": {
+        "jp": "0x8fc7604",
+        "eu": "0x909c774"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE5778",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe5778",
+      "targets": {
+        "jp": "0x8fc7e64",
+        "eu": "0x909cdbc"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE6360",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe6360",
+      "targets": {
+        "jp": "0x8fc88a8",
+        "eu": "0x909d64c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE6CC0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe6cc0",
+      "targets": {
+        "jp": "0x8fc90a4",
+        "eu": "0x909dcb8"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE7348",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe7348",
+      "targets": {
+        "jp": "0x8fc9558",
+        "eu": "0x909dfe0"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE78C0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe78c0",
+      "targets": {
+        "jp": "0x8fc9a34",
+        "eu": "0x909e428"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FE9350",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fe9350",
+      "targets": {
+        "jp": "0x8fcb128",
+        "eu": "0x909f6cc"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FEAB44",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8feab44",
+      "targets": {
+        "jp": "0x8fcc370",
+        "eu": "0x90a0368"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FEBD24",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8febd24",
+      "targets": {
+        "jp": "0x8fcd0b8",
+        "eu": "0x90a0d48"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FECF10",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fecf10",
+      "targets": {
+        "jp": "0x8fcdefc",
+        "eu": "0x90a1800"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FED8B0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fed8b0",
+      "targets": {
+        "jp": "0x8fce80c",
+        "eu": "0x90a209c"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FEEBC8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8feebc8",
+      "targets": {
+        "jp": "0x8fcf7d4",
+        "eu": "0x90a2c8c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FEF7C8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8fef7c8",
+      "targets": {
+        "jp": "0x8fd0080",
+        "eu": "0x90a3268"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF0030",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff0030",
+      "targets": {
+        "jp": "0x8fd0770",
+        "eu": "0x90a376c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF049C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff049c",
+      "targets": {
+        "jp": "0x8fd0b7c",
+        "eu": "0x90a3b48"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF1E04",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff1e04",
+      "targets": {
+        "jp": "0x8fd2114",
+        "eu": "0x90a4cc4"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF2CF0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff2cf0",
+      "targets": {
+        "jp": "0x8fd2d84",
+        "eu": "0x90a565c"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF2E68",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff2e68",
+      "targets": {
+        "jp": "0x8fd2edc",
+        "eu": "0x90a57a0"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF4A2C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff4a2c",
+      "targets": {
+        "jp": "0x8fd45d0",
+        "eu": "0x90a6914"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF4EC0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff4ec0",
+      "targets": {
+        "jp": "0x8fd49e8",
+        "eu": "0x90a6cc8"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF5964",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff5964",
+      "targets": {
+        "jp": "0x8fd529c",
+        "eu": "0x90a73a8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FF8720",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ff8720",
+      "targets": {
+        "jp": "0x8fd75a8",
+        "eu": "0x90a8bf8"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFB960",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffb960",
+      "targets": {
+        "jp": "0x8fd9eb4",
+        "eu": "0x90aaafc"
+      },
+      "size": 56,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFC9F4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffc9f4",
+      "targets": {
+        "jp": "0x8fdad18",
+        "eu": "0x90ab6a0"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFCB84",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffcb84",
+      "targets": {
+        "jp": "0x8fdaea8",
+        "eu": "0x90ab818"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFD734",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffd734",
+      "targets": {
+        "jp": "0x8fdb774",
+        "eu": "0x90abda0"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFE38C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffe38c",
+      "targets": {
+        "jp": "0x8fdc174",
+        "eu": "0x90ac4e4"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_08FFEAB4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x8ffeab4",
+      "targets": {
+        "jp": "0x8fdc804",
+        "eu": "0x90acae8"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09000FE8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9000fe8",
+      "targets": {
+        "jp": "0x8fde5c4",
+        "eu": "0x90ae168"
+      },
+      "size": 72,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090020A0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90020a0",
+      "targets": {
+        "jp": "0x8fdf4fc",
+        "eu": "0x90aef54"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090023E0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90023e0",
+      "targets": {
+        "jp": "0x8fdf7fc",
+        "eu": "0x90af228"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090026F8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90026f8",
+      "targets": {
+        "jp": "0x8fdfb14",
+        "eu": "0x90af524"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090029E0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90029e0",
+      "targets": {
+        "jp": "0x8fdfd80",
+        "eu": "0x90af750"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09002EE8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9002ee8",
+      "targets": {
+        "jp": "0x8fe0288",
+        "eu": "0x90afc4c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09005008",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9005008",
+      "targets": {
+        "jp": "0x8fe1cf0",
+        "eu": "0x90b0f34"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090070D4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90070d4",
+      "targets": {
+        "jp": "0x8fe37ac",
+        "eu": "0x90b24b0"
+      },
+      "size": 48,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09008644",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9008644",
+      "targets": {
+        "jp": "0x8fe4888",
+        "eu": "0x90b31d4"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090088AC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90088ac",
+      "targets": {
+        "jp": "0x8fe4ac0",
+        "eu": "0x90b33ec"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09009748",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9009748",
+      "targets": {
+        "jp": "0x8fe568c",
+        "eu": "0x90b3cfc"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900A404",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900a404",
+      "targets": {
+        "jp": "0x8fe5f80",
+        "eu": "0x90b421c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900A590",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900a590",
+      "targets": {
+        "jp": "0x8fe6148",
+        "eu": "0x90b43a8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900B0EC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900b0ec",
+      "targets": {
+        "jp": "0x8fe69fc",
+        "eu": "0x90b4a2c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900BA40",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900ba40",
+      "targets": {
+        "jp": "0x8fe70bc",
+        "eu": "0x90b4e44"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900CAD0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900cad0",
+      "targets": {
+        "jp": "0x8fe7ee4",
+        "eu": "0x90b5974"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900DC50",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900dc50",
+      "targets": {
+        "jp": "0x8fe8c3c",
+        "eu": "0x90b635c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900E738",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900e738",
+      "targets": {
+        "jp": "0x8fe945c",
+        "eu": "0x90b68f8"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900EB24",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900eb24",
+      "targets": {
+        "jp": "0x8fe9848",
+        "eu": "0x90b6ce4"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900EF2C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900ef2c",
+      "targets": {
+        "jp": "0x8fe9cc8",
+        "eu": "0x90b70ec"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900F2EC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900f2ec",
+      "targets": {
+        "jp": "0x8fe9f4c",
+        "eu": "0x90b7370"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900F768",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900f768",
+      "targets": {
+        "jp": "0x8fea2e8",
+        "eu": "0x90b7688"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0900F930",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x900f930",
+      "targets": {
+        "jp": "0x8fea464",
+        "eu": "0x90b77e0"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090109A8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90109a8",
+      "targets": {
+        "jp": "0x8feb158",
+        "eu": "0x90b8190"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09010BF4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9010bf4",
+      "targets": {
+        "jp": "0x8feb38c",
+        "eu": "0x90b83a8"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901163C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901163c",
+      "targets": {
+        "jp": "0x8febb0c",
+        "eu": "0x90b88bc"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09011CD4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9011cd4",
+      "targets": {
+        "jp": "0x8fec020",
+        "eu": "0x90b8c28"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901282C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901282c",
+      "targets": {
+        "jp": "0x8fec838",
+        "eu": "0x90b9164"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09013B34",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9013b34",
+      "targets": {
+        "jp": "0x8fed60c",
+        "eu": "0x90b999c"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09014E24",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9014e24",
+      "targets": {
+        "jp": "0x8fee3ec",
+        "eu": "0x90ba340"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09015F80",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9015f80",
+      "targets": {
+        "jp": "0x8fef044",
+        "eu": "0x90baae4"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09016CA0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9016ca0",
+      "targets": {
+        "jp": "0x8fef9c8",
+        "eu": "0x90bb14c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09017ECC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9017ecc",
+      "targets": {
+        "jp": "0x8ff080c",
+        "eu": "0x90bbbc4"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09018984",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9018984",
+      "targets": {
+        "jp": "0x8ff0ef8",
+        "eu": "0x90bbeac"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090192FC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90192fc",
+      "targets": {
+        "jp": "0x8ff15cc",
+        "eu": "0x90bc2e0"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09019708",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9019708",
+      "targets": {
+        "jp": "0x8ff18d0",
+        "eu": "0x90bc4e8"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09019DDC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9019ddc",
+      "targets": {
+        "jp": "0x8ff1de0",
+        "eu": "0x90bc7f8"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901A8FC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901a8fc",
+      "targets": {
+        "jp": "0x8ff25fc",
+        "eu": "0x90bcd78"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901B354",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901b354",
+      "targets": {
+        "jp": "0x8ff2dd0",
+        "eu": "0x90bd35c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901B894",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901b894",
+      "targets": {
+        "jp": "0x8ff3168",
+        "eu": "0x90bd584"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901C674",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901c674",
+      "targets": {
+        "jp": "0x8ff3c1c",
+        "eu": "0x90bdd40"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901DB8C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901db8c",
+      "targets": {
+        "jp": "0x8ff4d48",
+        "eu": "0x90bea74"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901EAB0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901eab0",
+      "targets": {
+        "jp": "0x8ff58d4",
+        "eu": "0x90bf1f0"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901F188",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901f188",
+      "targets": {
+        "jp": "0x8ff5de0",
+        "eu": "0x90bf4cc"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901F3E4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901f3e4",
+      "targets": {
+        "jp": "0x8ff5fe0",
+        "eu": "0x90bf684"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0901FD48",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x901fd48",
+      "targets": {
+        "jp": "0x8ff66e8",
+        "eu": "0x90bfbac"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902030C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902030c",
+      "targets": {
+        "jp": "0x8ff6bd4",
+        "eu": "0x90bff9c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09020E64",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9020e64",
+      "targets": {
+        "jp": "0x8ff751c",
+        "eu": "0x90c06e0"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09021228",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9021228",
+      "targets": {
+        "jp": "0x8ff7878",
+        "eu": "0x90c09dc"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09021ADC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9021adc",
+      "targets": {
+        "jp": "0x8ff7e3c",
+        "eu": "0x90c0cbc"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09022678",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9022678",
+      "targets": {
+        "jp": "0x8ff86e0",
+        "eu": "0x90c1340"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090230A4",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90230a4",
+      "targets": {
+        "jp": "0x8ff8fdc",
+        "eu": "0x90c1b38"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09023C94",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9023c94",
+      "targets": {
+        "jp": "0x8ff9988",
+        "eu": "0x90c22ac"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09024498",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9024498",
+      "targets": {
+        "jp": "0x8ffa014",
+        "eu": "0x90c280c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_090245BC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x90245bc",
+      "targets": {
+        "jp": "0x8ffa130",
+        "eu": "0x90c2900"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09024DA8",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9024da8",
+      "targets": {
+        "jp": "0x8ffa82c",
+        "eu": "0x90c2ed8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09025B28",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9025b28",
+      "targets": {
+        "jp": "0x8ffb1dc",
+        "eu": "0x90c3580"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09026254",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9026254",
+      "targets": {
+        "jp": "0x8ffb7d8",
+        "eu": "0x90c3a1c"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09026FCC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9026fcc",
+      "targets": {
+        "jp": "0x8ffc2b8",
+        "eu": "0x90c41f0"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09028520",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9028520",
+      "targets": {
+        "jp": "0x8ffd31c",
+        "eu": "0x90c4df4"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09029508",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9029508",
+      "targets": {
+        "jp": "0x8ffdf58",
+        "eu": "0x90c56e0"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_09029F4C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x9029f4c",
+      "targets": {
+        "jp": "0x8ffe71c",
+        "eu": "0x90c5c84"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902A580",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902a580",
+      "targets": {
+        "jp": "0x8ffebb4",
+        "eu": "0x90c5fb0"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902C2CC",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902c2cc",
+      "targets": {
+        "jp": "0x90001a4",
+        "eu": "0x90c6e68"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902D110",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902d110",
+      "targets": {
+        "jp": "0x9000d58",
+        "eu": "0x90c775c"
+      },
+      "size": 32,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902DB08",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902db08",
+      "targets": {
+        "jp": "0x90013e8",
+        "eu": "0x90c7b94"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902DE6C",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902de6c",
+      "targets": {
+        "jp": "0x90016ac",
+        "eu": "0x90c7dc0"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902E890",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902e890",
+      "targets": {
+        "jp": "0x9001e64",
+        "eu": "0x90c82e8"
+      },
+      "size": 24,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902F2A0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902f2a0",
+      "targets": {
+        "jp": "0x90027cc",
+        "eu": "0x90c8b60"
+      },
+      "size": 40,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902FBF0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902fbf0",
+      "targets": {
+        "jp": "0x9002eb4",
+        "eu": "0x90c8f68"
+      },
+      "size": 16,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "event_chara_tracks_0902FCB0",
+      "provenance": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds.",
+      "us": "0x902fcb0",
+      "targets": {
+        "jp": "0x9002f74",
+        "eu": "0x90c900c"
+      },
+      "size": 8,
+      "stride": 8,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 2
+    },
+    {
+      "name": "pc_graphics_sets_09A4AC84",
+      "provenance": "func_0810A018 consumes PcGfxSet tile pointer/size and background-map pointer/size at offsets0/4 and8/12. Every selector0..42 appears in live opcode0 records of the independently owned PcAnimStep streams, and the43 native16-byte records end at the separately owned first PcAnimStep array in every region. All size fields match across US,JP,EU and the two padding halfwords are zero. Every one of the86 pointed native payloads is byte-identical across the three regions for its declared size, independently corroborating each raw tile/map correspondence. Consecutive tile starts advance by their preceding declared tile sizes; maps advance by2048. These real resource descriptors are program data; their tile and map payloads remain encoded assets.",
+      "us": "0x9a4ac84",
+      "targets": {
+        "jp": "0x99ff70c",
+        "eu": "0x9aa8748"
+      },
+      "size": 688,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        8
+      ]
     }
   ]
 }

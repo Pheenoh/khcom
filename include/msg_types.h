@@ -27,8 +27,22 @@ typedef struct MessageScriptEntry {
     u16 unk_16;
 } MessageScriptEntry;
 
+typedef struct EventCharaKeyframe {
+    u32 unk_00;
+    u16 unk_04;
+    u8 unk_06[2];
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    u16 unk_14;
+    u8 unk_16[2];
+    u32 unk_18;
+    void* unk_1C;
+    void (*unk_20)(void*);
+} EventCharaKeyframe;
+
 typedef struct EventCharaTrack {
-    struct EventCharaKeyframe* unk_00;
+    EventCharaKeyframe* unk_00;
     u8 unk_04;
     u8 unk_05[3];
 } EventCharaTrack;

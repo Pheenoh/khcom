@@ -1,3 +1,4 @@
+#include "moogle_data.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_animation_data.h"
@@ -46,30 +47,8 @@
 #include "malloc.h"
 #include "m4a.h"
 
-typedef struct MooglePackCardDef {
-    u16 cardId;
-    u8 unk_02[0x2];
-    void* unk_04;
-    u16 weights[4];
-} MooglePackCardDef;
 
-typedef struct MooglePackCardTable {
-    MooglePackCardDef* cards;
-    s16 count;
-    u8 unk_06[0x2];
-} MooglePackCardTable;
 
-typedef struct MooglePackSpriteDef {
-    void* palette;
-    u16 paletteSize;
-    u8 unk_06[0x2];
-    void* tiles;
-    u16 tilesSize;
-    u8 unk_0E[0x2];
-    void* sprite;
-    u16 xOffset;
-    u16 yOffset;
-} MooglePackSpriteDef;
 
 typedef struct MooglePackCardWork {
     FldRes* palette;
@@ -91,28 +70,7 @@ typedef struct MooglePackCardWork {
     u8 revealed;
 } MooglePackCardWork;
 
-typedef struct MooglePackTilemapDef {
-    u16* tilemap;
-    s16 srcX;
-    s16 srcY;
-} MooglePackTilemapDef;
 
-typedef struct MooglePackMenuEntry {
-    s16 upEntry;
-    s16 downEntry;
-    s16 leftEntry;
-    s16 rightEntry;
-    s16 cursorX;
-    s16 cursorY;
-    void* selectionTilemap;
-    u16 selectionTilemapSize;
-    s16 tilemapX;
-    s16 tilemapY;
-    u16 spriteX;
-    u16 spriteY;
-    u16 unk_1A;
-    MooglePackTilemapDef packTilemaps[4];
-} MooglePackMenuEntry;
 
 void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);
@@ -147,7 +105,6 @@ void func_08103F94(s16 a, s16 b);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 
 extern u8 gUnk_0203C590[];
-extern u16 gUnk_09993334[];
 extern u8 gUnk_09A3ABDC[];
 
 extern u8 gUnk_09A3D79C[];
@@ -169,7 +126,6 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
-extern MooglePackCardTable gUnk_099935A8[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
@@ -183,7 +139,6 @@ extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_09A3DB7C[];
 extern u8 gUnk_0908B1B4[];
-extern MooglePackSpriteDef gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
 extern u8 gUnk_09A1251C[];
 extern u8 gUnk_09A18D7C[];
@@ -193,8 +148,5 @@ extern u8 gUnk_09A3DA7C[];
 extern u8 gUnk_099A3CE4[];
 extern u8 gUnk_09EF99F8[];
 extern u8 gUnk_09EF99D8[];
-extern MooglePackMenuEntry gUnk_099931E4[];
-extern s16 gUnk_099935C0[][4][4];
-extern s16 gUnk_09993760[][4];
 extern u8 gUnk_09A18EBC[];
 #endif /* GUARD_MODE_MS_H */

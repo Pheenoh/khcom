@@ -55,15 +55,6 @@ typedef struct PcSpriteDef {
     u16 unk_06;
 } PcSpriteDef;
 
-typedef struct PcGfxSet {
-    void* unk_00;
-    u16 unk_04;
-    u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x02];
-} PcGfxSet;
-
 typedef struct PcOam {
     u16 count;
     u16 attr[0x95];
@@ -137,7 +128,6 @@ typedef struct PcWork {
 } PcWork;
 
 extern PcSpriteDef* gUnk_09EFBB18[];
-extern PcGfxSet gUnk_09A4AC84[];
 extern void* gUnk_09EFAB18[];
 extern u8 gUnk_09D69274[];
 extern u16 gUnk_09A4C9EC[];

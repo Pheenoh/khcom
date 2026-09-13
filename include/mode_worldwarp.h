@@ -1,3 +1,4 @@
+#include "moogle_data.h"
 #include "worldwarp_data.h"
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
@@ -28,7 +29,6 @@
 #include "anim.h"
 #include "m4a.h"
 #include "bos4_api.h"
-extern u16 gUnk_099931D0[];
 
 extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_09617D58[];

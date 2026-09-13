@@ -1,3 +1,4 @@
+#include "moogle_data.h"
 #include "card_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS2_H
@@ -38,7 +39,6 @@
 #include "m4a.h"
 
 
-extern MapCardCategoryDef gUnk_09EF9618[];
 extern s16 gUnk_02035C14;
 extern s16 gUnk_02035C16;
 extern AnimState gUnk_02035CA0;
