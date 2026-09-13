@@ -411,10 +411,8 @@ s32 func_08011F68(s32 a, BtlObj* b) {
     return func_08011398(b, a);
 }
 
-#ifdef NON_MATCHING
 s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
     const BattleAttackDef* t;
-    BtlWork* w;
     BtlObj* o;
     s32 sx;
     s32 sy;
@@ -423,47 +421,61 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
     s32 flag;
     s32 n;
     s32 res;
-    u64 f;
     s32 r2;
 
     t = &gUnk_0813400C[a];
     cnt = 0;
     flag = 0;
     gBtlWork->unk_0B4 = 1;
-    w = gBtlWork;
-    w->unk_0B8 = x;
-    w->unk_0BC = y;
-    w->unk_0C0 = z;
-    w->unk_0C4 = p;
-    w->unk_0C6 = q;
-    w->unk_0C8 = r;
-    f = w->unk_068;
+    gBtlWork->unk_0B8 = x;
+    gBtlWork->unk_0BC = y;
+    gBtlWork->unk_0C0 = z;
+    gBtlWork->unk_0C4 = p;
+    gBtlWork->unk_0C6 = q;
+    gBtlWork->unk_0C8 = r;
 
-    if ((f & 0x4000) && (f & 0x20000000)) {
-        o = gUnk_02039B9C->unk_07C;
-    } else if (f & 0x20000000) {
-        o = ListPoolFirst(&w->unk_080);
+    if (gBtlWork->unk_068 & 0x4000) {
+        if (gBtlWork->unk_068 & 0x20000000) {
+            o = gUnk_02039B9C->unk_07C;
+        } else {
+            o = gBtlWork->unk_07C;
+        }
+        if (func_08011270(o, x, y, z, p, q, r)) {
+            res = func_08011398(o, a);
+
+            if (res == 1) {
+                if (t->hitEffect != 0) {
+                    t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
+                }
+            }
+            return res;
+        }
+    } else if (gBtlWork->unk_068 & 0x20000000) {
+        o = ListPoolFirst(&gBtlWork->unk_080);
         sz = 0;
         sy = 0;
         sx = 0;
 
         while (o != 0) {
-            if (func_08011270(o, x, y, z, p, q, r)) {
-                r2 = func_08011398(o, a);
-
-                if (r2 == 1) {
-                    sx += o->unk_004;
-                    sy += o->unk_008;
-                    sz += o->unk_00C;
-                    cnt++;
-
-                    if (t->flags & 0x800) {
-                        break;
-                    }
-                } else if (r2 == 2) {
-                    flag = 1;
-                }
+            if (!func_08011270(o, x, y, z, p, q, r)) {
+                o = ListPoolNext(&o->unk_0B8);
+                continue;
             }
+            r2 = func_08011398(o, a);
+
+            if (r2 == 1) {
+                sx += o->unk_004;
+                sy += o->unk_008;
+                sz += o->unk_00C;
+                cnt++;
+
+                if (t->flags & 0x800) {
+                    break;
+                }
+            } else if (r2 == 2) {
+                flag = 1;
+            }
+
             o = ListPoolNext(&o->unk_0B8);
         }
 
@@ -482,26 +494,22 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
             }
             return 1;
         }
-        return 0;
     } else {
-        o = w->unk_07C;
-    }
+        o = gBtlWork->unk_07C;
+        if (func_08011270(o, x, y, z, p, q, r)) {
+            res = func_08011398(o, a);
 
-    if (func_08011270(o, x, y, z, p, q, r)) {
-        res = func_08011398(o, a);
-
-        if (res == 1) {
-            if (t->hitEffect != 0) {
-                t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
+            if (res == 1) {
+                if (t->hitEffect != 0) {
+                    t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
+                }
             }
+            return res;
         }
-        return res;
     }
+
     return 0;
 }
-#else
-INCLUDE_ASM("btl_collision/func_08011F78.s");
-#endif
 
 s32 func_08012170(s32 a, s32 b, s32 c, s32 d) {
     return func_08011F78(a, b, c, d, 16, 16, 16);
