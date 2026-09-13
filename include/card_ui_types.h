@@ -2,6 +2,30 @@
 #define GUARD_CARD_UI_TYPES_H
 
 #include "types.h"
+#include "anim.h"
+
+struct ObjTiles;
+struct ObjPalette;
+
+typedef struct CardUiSpriteState {
+    struct ObjTiles* tiles;
+    struct ObjPalette* palette;
+    AnimState anim;
+    void* gfx;
+} CardUiSpriteState;
+
+typedef struct MapCardUiResources {
+    struct ObjTiles* tiles;
+    struct ObjTiles* extraTiles;
+    u8 unk_08[4];
+    struct ObjPalette* palette;
+    void* gfx;
+    void** sprites;
+    AnimState anim;
+} MapCardUiResources;
+
+typedef char CardUiSpriteState_size[(sizeof(CardUiSpriteState) == 0x24) ? 1 : -1];
+typedef char MapCardUiResources_size[(sizeof(MapCardUiResources) == 0x30) ? 1 : -1];
 
 typedef struct SpriteFrameResourceDef {
     void* tiles;

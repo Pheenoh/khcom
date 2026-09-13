@@ -6,6 +6,7 @@
 #include "field_state.h"
 
 #include "card_ui_types.h"
+#include "card_ui_state.h"
 
 #include "obj_resource_types.h"
 
@@ -38,8 +39,6 @@ void func_080A096C(u16 a, u16* p);
 
 extern CardDef gCardDefs[];
 
-extern u8 gUnk_0203A9D4;
-extern u8 gUnk_0203A9D8;
 
 typedef struct CardDisplayWork {
     void* unk_00;
@@ -87,10 +86,8 @@ typedef struct CardDisplayWork {
     u8 unk_A6;
     u8 unk_A7;
 } CardDisplayWork;
-extern u8 gUnk_0203A9E8;
 extern u8 gTaskDescMapSelect[];
 extern u8 gTaskDescPrizeCardInit[];
-extern u16 gUnk_0203A9DC;
 extern u8 gUnk_09EE75D8[];
 extern void** gUnk_09EE3CA0[];
 extern u16 gUnk_0903BFD4[];
@@ -127,10 +124,8 @@ typedef struct CardListWork {
 
 typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
 
-extern CardListWork* gUnk_0203A9D0;
 extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
-extern u8 gUnk_0203A9E0;
 extern vu16 gSystemFlags;
 extern Mode gModeSioChgCard;
 extern Mode gModeBattle;
@@ -164,7 +159,6 @@ extern u8 gUnk_09613F78[];
 extern void* gUnk_09EF12E8[];
 extern u8 gTaskDescDeckexchange[];
 extern s32* gUnk_09EE275C[];
-extern u8 gUnk_0203A8C0[];
 
 typedef struct UnkStruct_0807FA0C {
     u8 unk_00[0x14];
@@ -1294,7 +1288,6 @@ extern Mode gModeTitle;
 extern void* gUnk_09EF38BC[];
 extern void* gUnk_09EF38C8[];
 extern s8 gUnk_0203C374;
-extern s8 gUnk_0203A9E4;
 extern u8 gUnk_090451C0[];
 extern void* gUnk_09EE4A2C[];
 extern u16* gUnk_09EE4A68[];
@@ -1347,7 +1340,6 @@ extern u8 gUnk_090A3E46[];
 extern u8 gUnk_096144F8[];
 extern u8 gUnk_09516AB8[];
 extern u8 gUnk_095132B8[];
-extern void* gUnk_0203A890[];
 extern u8 gUnk_093FEEB8[];
 extern u8 gUnk_093FD438[];
 extern u8 gUnk_093F47E4[];
@@ -2023,7 +2015,6 @@ typedef struct UnkStruct_08094CE4_B {
     u16 unk_14;
 } UnkStruct_08094CE4_B;
 
-extern void* gUnk_0203A860[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE1380[];
 extern u8 gUnk_0940F938[];

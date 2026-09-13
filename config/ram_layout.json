@@ -1,5 +1,20 @@
 {
   "us": {
+    "src/card_ui_state.o": {
+      "base": "0x0203A890",
+      "size": "0x159",
+      "symbols": {
+        "gUnk_0203A890": {"offset": "0x0", "size": "0x30"},
+        "gUnk_0203A8C0": {"offset": "0x30", "size": "0x10E"},
+        "gUnk_0203A9D0": {"offset": "0x140", "size": "0x4"},
+        "gUnk_0203A9D4": {"offset": "0x144", "size": "0x1"},
+        "gUnk_0203A9D8": {"offset": "0x148", "size": "0x1"},
+        "gUnk_0203A9DC": {"offset": "0x14C", "size": "0x2"},
+        "gUnk_0203A9E0": {"offset": "0x150", "size": "0x1"},
+        "gUnk_0203A9E4": {"offset": "0x154", "size": "0x1"},
+        "gUnk_0203A9E8": {"offset": "0x158", "size": "0x1"}
+      }
+    },
     "src/player_progression.o": {
       "base": "0x02039BB0",
       "size": "0x210",
@@ -22,6 +37,21 @@
     }
   },
   "jp": {
+    "src/card_ui_state.o": {
+      "base": "0x0203A800",
+      "size": "0x159",
+      "symbols": {
+        "gUnk_0203A890": {"offset": "0x0", "size": "0x30"},
+        "gUnk_0203A8C0": {"offset": "0x30", "size": "0x10E"},
+        "gUnk_0203A9D0": {"offset": "0x140", "size": "0x4"},
+        "gUnk_0203A9D4": {"offset": "0x144", "size": "0x1"},
+        "gUnk_0203A9D8": {"offset": "0x148", "size": "0x1"},
+        "gUnk_0203A9DC": {"offset": "0x14C", "size": "0x2"},
+        "gUnk_0203A9E0": {"offset": "0x150", "size": "0x1"},
+        "gUnk_0203A9E4": {"offset": "0x154", "size": "0x1"},
+        "gUnk_0203A9E8": {"offset": "0x158", "size": "0x1"}
+      }
+    },
     "src/player_progression.o": {
       "base": "0x02039B20",
       "size": "0x210",
@@ -44,6 +74,20 @@
     }
   },
   "eu": {
+    "src/card_ui_state.o": {
+      "base": "0x0203AEA0",
+      "size": "0x155",
+      "symbols": {
+        "gUnk_0203A890": {"offset": "0x0", "size": "0x30"},
+        "gUnk_0203A8C0": {"offset": "0x30", "size": "0x10E"},
+        "gUnk_0203A9D0": {"offset": "0x140", "size": "0x4"},
+        "gUnk_0203A9D4": {"offset": "0x144", "size": "0x1"},
+        "gUnk_0203A9D8": {"offset": "0x148", "size": "0x1"},
+        "gUnk_0203A9E0": {"offset": "0x14C", "size": "0x1"},
+        "gUnk_0203A9E4": {"offset": "0x150", "size": "0x1"},
+        "gUnk_0203A9E8": {"offset": "0x154", "size": "0x1"}
+      }
+    },
     "src/player_progression.o": {
       "base": "0x0203A1C0",
       "size": "0x210",
