@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_0815388C
-data_0815388C:
-	.incbin "roms/B8CJ.gba", 0x15388c, 0x70aa74
+	.global data_084D4194
+data_084D4194:
+	.incbin "roms/B8CJ.gba", 0x4d4194, 0x1fc

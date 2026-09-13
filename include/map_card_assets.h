@@ -1,3 +1,4 @@
+#include "card_lookup_data.h"
 #include "card_sprite_data.h"
 #ifndef GUARD_MAP_CARD_ASSETS_H
 #define GUARD_MAP_CARD_ASSETS_H
@@ -117,10 +118,6 @@ extern u8 gUnk_09618BD8[];
 extern u8 gUnk_09618BF8[];
 extern u8 gUnk_09618C18[];
 extern u8 gUnk_09618D78[];
-extern void* gUnk_09EE96D4[];
-extern void* gUnk_09EE9764[];
-extern void* gUnk_09EE97AC[];
-extern void* gUnk_09EE97F4[];
 extern void* gUnk_09EF1060[];
 extern void* gUnk_09EF1068[];
 extern void* gUnk_09EF1070[];

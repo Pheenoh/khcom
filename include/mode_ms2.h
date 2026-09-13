@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
@@ -121,10 +122,6 @@ extern u8 gUnk_09A3BD5C[];
 extern u8 gUnk_09A3C25C[];
 extern u8 gUnk_09A3DBDC[];
 extern u8 gUnk_09A3DE7C[];
-extern u8 gUnk_09EEA148[];
-extern u8 gUnk_09EEA164[];
-extern u8 gUnk_09EEA180[];
-extern u8 gUnk_09EEA198[];
 extern u8 gUnk_09EF9928[];
 extern u8 gUnk_09EF9978[];
 extern u8 gUnk_09EF9A68[];

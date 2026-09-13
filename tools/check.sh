@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+python3 tools/movie_assets.py
+
 python3 configure.py --version us >/dev/null
 ninja
 python3 tools/check_data_ownership.py us

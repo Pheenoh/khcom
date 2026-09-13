@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
 
@@ -54,10 +55,6 @@ extern u8 gUnk_09A3501C[];
 extern u8 gUnk_09A3551C[];
 extern u8 gUnk_09A3D0DC[];
 extern u8 gUnk_09A3D2DC[];
-extern u8 gUnk_09EEA148[];
-extern u8 gUnk_09EEA164[];
-extern u8 gUnk_09EEA180[];
-extern u8 gUnk_09EEA198[];
 extern u8 gUnk_09EF97EC[];
 extern u8 gUnk_09EF981C[];
 extern u8 gUnk_09EF9830[];

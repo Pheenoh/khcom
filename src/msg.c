@@ -39,7 +39,7 @@ static u8 gUnk_02034A91;
 struct UnkStruct_02039DD0* gUnk_02039DD0;
 
 void func_0806180C(u16 a) {
-    ModeRequest(gUnk_09EE274C, a);
+    ModeRequest(&gUnk_09EE274C, a);
 }
 #ifdef VERSION_EU
 #define MSG_CODE(n) ((n) - 2)
@@ -543,7 +543,7 @@ void func_0806297C(void) {
 
     switch (gUnk_02034A78) {
     case 68:
-        ModeRequest(gUnk_09EE274C, 69);
+        ModeRequest(&gUnk_09EE274C, 69);
         break;
     case 83:
     case 84:

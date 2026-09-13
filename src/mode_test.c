@@ -1725,3 +1725,19 @@ Mode gModeContinue __attribute__((section(".data_registration_gModeContinue"))) 
     (void (*)(void))func_08060F1C,
     (void (*)(void))func_08060F64,
 };
+
+const char gModeNameEvent[] __attribute__((section(".rodata_registration_name_Event"), aligned(1))) = "Event";
+
+Mode gUnk_09EE273C __attribute__((section(".data_registration_gUnk_09EE273C"))) = {
+    gModeNameEvent,
+    Event_0,
+    func_0806119C,
+    Event_2,
+};
+
+Mode gUnk_09EE274C __attribute__((section(".data_registration_gUnk_09EE274C"))) = {
+    gModeNameEvent,
+    Event_0,
+    func_08061248,
+    Event_2,
+};

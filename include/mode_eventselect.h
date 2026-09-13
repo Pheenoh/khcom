@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_EVENTSELECT_H
@@ -134,8 +135,6 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EEFD78[];
-extern u8 gUnk_09EEFD60[];
 extern u8 gUnk_09EDE7E4[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_09EDE7B4[];
@@ -146,8 +145,6 @@ extern u8 gUnk_093215CA[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09321804[];
 extern u8 gUnk_0908C686[];
-extern u8 gUnk_09EEFD9C[];
-extern u8 gUnk_09EEFD7C[];
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];

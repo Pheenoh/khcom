@@ -2,6 +2,8 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "chara_mask_data.h"
+
 #include "sio_battle_options_state.h"
 
 #include "sio_handshake_state.h"
@@ -192,7 +194,6 @@ void func_08083DD4(void);
 extern s16 gSineTable[];
 extern vu32 gFrameCounter;
 
-extern u8 gUnk_09EF2F08[];
 
 
 extern u32 gVBlankCounter;

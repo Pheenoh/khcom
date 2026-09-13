@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #ifndef GUARD_EVT_ASSETS_H
 #define GUARD_EVT_ASSETS_H
 
@@ -61,8 +62,6 @@ extern u8 gUnk_09EEF480[];
 extern u8 gUnk_09EEF498[];
 extern u8 gUnk_09EEF6F0[];
 extern u8 gUnk_09EEF718[];
-extern u8 gUnk_09EEFD7C[];
-extern u8 gUnk_09EEFD9C[];
 extern u8 gUnk_09EEFDA4[];
 extern u8 gUnk_09EEFE24[];
 extern u8 gUnk_09EF06A8[];

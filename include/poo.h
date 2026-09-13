@@ -2,6 +2,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "poo_background_data.h"
+
 #include "animation_resource_data.h"
 
 #include "allmap_bottom_state.h"
@@ -1098,9 +1100,6 @@ extern PooSpot gUnk_096FC05C[];
 extern PooSpot gUnk_096FC2F0[];
 
 
-extern u16* gUnk_09EF4208[];
-extern u16* gUnk_09EF4448[];
-extern u16* gUnk_09EF4688[];
 
 extern u8 gUnk_096FD3E8[];
 extern const s32 gUnk_096FD43C[];

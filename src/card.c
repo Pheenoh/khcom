@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
 #include "registration_data.h"
@@ -309,8 +310,6 @@ void func_080A9968(u8* work);
 
 extern u8* gUnk_02039DC8;
 extern u8 gUnk_0908B1B4[];
-extern u8 gUnk_09EEA164[];
-extern u8 gUnk_09EEA148[];
 void func_080AA6D4(u8 a);
 u8 func_0808A114(UnkStruct_0808DB04* work, void* a);
 u8 func_0809FE14(void);
@@ -15683,8 +15682,6 @@ void func_eu_0808EE08(UnkStruct_0808F0C0* w) {
 #endif
 extern u8 gUnk_096145B8[];
 extern u8 gUnk_090A5F1E[];
-extern u8 gUnk_09EEB0B8[];
-extern void* gUnk_09EEB08C[];
 extern u8 gUnk_09417438[];
 extern u8 gUnk_09418438[];
 extern u8 gUnk_09419438[];

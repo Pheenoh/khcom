@@ -720,4 +720,8 @@ extern const char gTaskName_09EF9E8C[];
 extern const char gTaskName_09EF9EF4[];
 extern const char gTaskName_09EFAA64[];
 
+extern const char gModeNameEvent[];
+extern Mode gUnk_09EE273C;
+extern Mode gUnk_09EE274C;
+
 #endif

@@ -2,6 +2,10 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "bos2_background_data.h"
+
+#include "background_actor_assets.h"
+
 #include "boss_jafar_state.h"
 
 #include "boss_jafar_types.h"
@@ -574,7 +578,6 @@ typedef char TmFootWork_size[(sizeof(TmFootWork) == 0x484) ? 1 : -1];
 
 extern s16 gSineTable[];
 extern u16 gUnk_0961A63C[];
-extern u8 gUnk_096874E4[];
 extern u8 gUnk_096FB744[];
 extern u8 gUnk_09EF2E68[];
 extern void* gUnk_0961A7B0[];
@@ -594,7 +597,6 @@ extern s16 gUnk_0961A7D0[];
 extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
 extern void* gUnk_09EF275C[][15];
-extern void* gUnk_09EF2D94[];
 extern u8 gUnk_09652E84[];
 extern void* gUnk_09EF3950;
 extern void* gUnk_09EF3958;
@@ -641,9 +643,6 @@ extern u8 gUnk_0961A668[];
 
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];
-extern u8 gUnk_09699684[];
-extern u8 gUnk_096A3F44[];
-extern u8 gUnk_096A8BA4[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern u16 gUnk_0961A710[][3];

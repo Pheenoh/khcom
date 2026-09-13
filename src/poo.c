@@ -1322,7 +1322,7 @@ void func_080CA368(s32 a, u16 b, u16 c) {
 }
 
 u16 func_080CA36C(u16 x, u16 y) {
-    u16** t;
+    const u16** t;
     u32 bx;
     u32 by;
     u32 tx;

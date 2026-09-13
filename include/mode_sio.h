@@ -1,3 +1,4 @@
+#include "card_lookup_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_SIO_H
@@ -428,7 +429,6 @@ extern u16 gUnk_09EF14C4[];
 extern u8* gWorldNames[];
 extern u8 gUnk_09EF15FC[];
 extern SioChgCardPos gUnk_09EF150C[];
-extern void* gUnk_09EE981C[];
 extern void* gUnk_09EF3894[];
 extern void* gUnk_09EF38B4[];
 extern void* gUnk_09EF38D4[];

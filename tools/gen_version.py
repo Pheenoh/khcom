@@ -26,6 +26,7 @@ import struct
 from pathlib import Path
 
 from rom_data_evidence import data_symbol_map, load_evidence
+from movie_assets import apply_movie_regions, load_movie_assets
 from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_opaque_function_modes, trace_literal_loads
 from regional_data import asset_symbols, load_sidecars, managed_placements, merge_placements, placement_overrides
 
@@ -2063,6 +2064,34 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_094CE802": 0x094CE802,
         "gUnkEu_094CE80C": 0x094CE80C,
         "gUnkEu_094CE816": 0x094CE816,
+        "gUnkEu_0919591C": 0x0919591C,
+        "gUnkEu_09195926": 0x09195926,
+        "gUnkEu_09195930": 0x09195930,
+        "gUnkEu_0919593A": 0x0919593A,
+        "gUnkEu_09195944": 0x09195944,
+        "gUnkEu_0919594E": 0x0919594E,
+        "gUnkEu_0919595E": 0x0919595E,
+        "gUnkEu_0919596E": 0x0919596E,
+        "gUnkEu_0919597E": 0x0919597E,
+        "gUnkEu_09195988": 0x09195988,
+        "gUnkEu_09195992": 0x09195992,
+        "gUnkEu_0919599C": 0x0919599C,
+        "gUnkEu_091959B6": 0x091959B6,
+        "gUnkEu_091959D0": 0x091959D0,
+        "gUnkEu_091964DC": 0x091964DC,
+        "gUnkEu_091964E6": 0x091964E6,
+        "gUnkEu_091964F0": 0x091964F0,
+        "gUnkEu_091964FA": 0x091964FA,
+        "gUnkEu_09196504": 0x09196504,
+        "gUnkEu_0919650E": 0x0919650E,
+        "gUnkEu_0919652A": 0x0919652A,
+        "gUnkEu_09196552": 0x09196552,
+        "gUnkEu_0919656E": 0x0919656E,
+        "gUnkEu_09196578": 0x09196578,
+        "gUnkEu_09196582": 0x09196582,
+        "gUnkEu_0919658C": 0x0919658C,
+        "gUnkEu_091965A6": 0x091965A6,
+        "gUnkEu_091965C0": 0x091965C0,
     },
     "jp": {
         "gUnk_0814F180": 0x0814F180,
@@ -2255,9 +2284,9 @@ TARGET_DATA_SIZE = {
 }
 
 TARGET_BLOB_REGIONS = {
-    "jp": ((0x0813BA86, "rodata_tasknames_alignment"),),
+    "jp": ((0x0813BA86, "rodata_tasknames_alignment"), (0x0814FC76, "rodata_movie_alignment")),
     "eu": (
-        (0x0812FB22, "rodata_tables3"),
+        (0x0812FB22, "rodata_movie_alignment"),
         (0x08889EDE, "rodata_tasknames_alignment"),
         (0x09F49910, "rodata_registrations"),
     ),
@@ -2874,6 +2903,7 @@ def main():
         found.append((ROM_BASE + i, base, how))
     found.extend((address, name, "explicit")
                  for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
+    found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.json", ver, otrom))
     regions = []
 
     for here, base, how in sorted(found, key=lambda item: (item[0], item[2] != "explicit", item[1])):

@@ -1,3 +1,4 @@
+#include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MSG_H
@@ -341,7 +342,6 @@ typedef struct TextGlyphSprite {
 extern EventState* gUnk_02039DC8;
 extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
-extern u8 gUnk_09EE274C[];
 extern u8 gModeBattle[];
 #include "mode_battle_data.h"
 extern s32 gUnk_08F7DAC4[];
@@ -391,8 +391,6 @@ extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_09614418[];
 extern u8 gUnk_090A4664[];
-extern u8 gUnk_09EEB03C[];
-extern u8 gUnk_09EEB008[];
 extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_09611AB8[];
 extern u16 gUnk_08159E10[];
@@ -403,8 +401,6 @@ extern u8 gUnk_090A7D9A[];
 extern u8 gUnk_096146F8[];
 extern u8 gUnk_09614658[];
 extern u8 gUnk_090A6B26[];
-extern u8 gUnk_09EEB108[];
-extern u8 gUnk_09EEB0C4[];
 extern u8 gUnk_090A7F0A[];
 extern u8 gUnk_090A8FC4[];
 extern u16 gUnk_08F7D438[];

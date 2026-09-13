@@ -1,3 +1,4 @@
+#include "card_lookup_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
@@ -1293,7 +1294,6 @@ extern u8 gUnk_098A4B68[];
 extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08F69BE4[];
 extern void* gUnk_09EE1380[];
-extern void* gUnk_09EE981C[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0905EAE8[];
 extern UnkStruct_08F709B0 gUnk_08F709B0[];

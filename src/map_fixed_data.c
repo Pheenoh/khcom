@@ -193,7 +193,7 @@ const u8 gUnk_09EF8008[512] __attribute__((section(".rodata_map_fixed_cells_09EF
     9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
 };
 
-void* gUnk_09EF8208[12] __attribute__((section(".data_map_fixed_09EF8208"))) = {
+const void* gUnk_09EF8208[12] __attribute__((section(".data_map_fixed_09EF8208"))) = {
     gUnk_095A72B8,
     gUnk_095A7AB8,
     gUnk_095A82B8,
@@ -208,7 +208,7 @@ void* gUnk_09EF8208[12] __attribute__((section(".data_map_fixed_09EF8208"))) = {
     gUnk_095ACAB8,
 };
 
-void* gUnk_09EF8238[12] __attribute__((section(".data_map_fixed_09EF8238"))) = {
+const void* gUnk_09EF8238[12] __attribute__((section(".data_map_fixed_09EF8238"))) = {
     gUnk_095AF2B8,
     gUnk_095AFAB8,
     gUnk_095B02B8,
@@ -223,7 +223,7 @@ void* gUnk_09EF8238[12] __attribute__((section(".data_map_fixed_09EF8238"))) = {
     gUnk_095B6AB8,
 };
 
-void* gUnk_09EF8268[12] __attribute__((section(".data_map_fixed_09EF8268"))) = {
+const void* gUnk_09EF8268[12] __attribute__((section(".data_map_fixed_09EF8268"))) = {
 #ifdef VERSION_EU
     gUnkEu_08125144,
     gUnkEu_08125144,
@@ -256,7 +256,7 @@ void* gUnk_09EF8268[12] __attribute__((section(".data_map_fixed_09EF8268"))) = {
 #endif
 };
 
-void* gUnk_09EF8298[6] __attribute__((section(".data_map_fixed_09EF8298"))) = {
+const void* gUnk_09EF8298[6] __attribute__((section(".data_map_fixed_09EF8298"))) = {
     gUnk_095B9AB8,
     gUnk_095BA2B8,
     gUnk_095BAAB8,
@@ -265,7 +265,7 @@ void* gUnk_09EF8298[6] __attribute__((section(".data_map_fixed_09EF8298"))) = {
     gUnk_095BCAB8,
 };
 
-void* gUnk_09EF82B0[6] __attribute__((section(".data_map_fixed_09EF82B0"))) = {
+const void* gUnk_09EF82B0[6] __attribute__((section(".data_map_fixed_09EF82B0"))) = {
     gUnk_095C1AB8,
     gUnk_095C22B8,
     gUnk_095C2AB8,
@@ -274,7 +274,7 @@ void* gUnk_09EF82B0[6] __attribute__((section(".data_map_fixed_09EF82B0"))) = {
     gUnk_095C4AB8,
 };
 
-void* gUnk_09EF82C8[6] __attribute__((section(".data_map_fixed_09EF82C8"))) = {
+const void* gUnk_09EF82C8[6] __attribute__((section(".data_map_fixed_09EF82C8"))) = {
     gUnk_095CAAB8,
     gUnk_095CB2B8,
     gUnk_095CBAB8,
@@ -283,7 +283,7 @@ void* gUnk_09EF82C8[6] __attribute__((section(".data_map_fixed_09EF82C8"))) = {
     gUnk_095CDAB8,
 };
 
-void* gUnk_09EF82E0[6] __attribute__((section(".data_map_fixed_09EF82E0"))) = {
+const void* gUnk_09EF82E0[6] __attribute__((section(".data_map_fixed_09EF82E0"))) = {
     gUnk_095D2AB8,
     gUnk_095D32B8,
     gUnk_095D3AB8,
@@ -292,7 +292,7 @@ void* gUnk_09EF82E0[6] __attribute__((section(".data_map_fixed_09EF82E0"))) = {
     gUnk_095D5AB8,
 };
 
-void* gUnk_09EF82F8[6] __attribute__((section(".data_map_fixed_09EF82F8"))) = {
+const void* gUnk_09EF82F8[6] __attribute__((section(".data_map_fixed_09EF82F8"))) = {
     gUnk_095E92B8,
     gUnk_095E9AB8,
     gUnk_095EA2B8,
@@ -301,7 +301,7 @@ void* gUnk_09EF82F8[6] __attribute__((section(".data_map_fixed_09EF82F8"))) = {
     gUnk_095EC2B8,
 };
 
-void* gUnk_09EF8310[6] __attribute__((section(".data_map_fixed_09EF8310"))) = {
+const void* gUnk_09EF8310[6] __attribute__((section(".data_map_fixed_09EF8310"))) = {
     gUnk_095F12B8,
     gUnk_095F1AB8,
     gUnk_095F22B8,
@@ -310,28 +310,28 @@ void* gUnk_09EF8310[6] __attribute__((section(".data_map_fixed_09EF8310"))) = {
     gUnk_095F52B8,
 };
 
-void* gUnk_09EF8328[4] __attribute__((section(".data_map_fixed_09EF8328"))) = {
+const void* gUnk_09EF8328[4] __attribute__((section(".data_map_fixed_09EF8328"))) = {
     gUnk_09522AB8,
     gUnk_095232B8,
     gUnk_09523AB8,
     gUnk_095242B8,
 };
 
-void* gUnk_09EF8338[4] __attribute__((section(".data_map_fixed_09EF8338"))) = {
+const void* gUnk_09EF8338[4] __attribute__((section(".data_map_fixed_09EF8338"))) = {
     gUnk_09524AB8,
     gUnk_095252B8,
     gUnk_09525AB8,
     gUnk_095262B8,
 };
 
-void* gUnk_09EF8348[4] __attribute__((section(".data_map_fixed_09EF8348"))) = {
+const void* gUnk_09EF8348[4] __attribute__((section(".data_map_fixed_09EF8348"))) = {
     gUnk_09526AB8,
     gUnk_095272B8,
     gUnk_09527AB8,
     gUnk_095282B8,
 };
 
-void* gUnk_09EF8358[6] __attribute__((section(".data_map_fixed_09EF8358"))) = {
+const void* gUnk_09EF8358[6] __attribute__((section(".data_map_fixed_09EF8358"))) = {
     gUnk_095C1AB8,
     gUnk_095C22B8,
     gUnk_095C2AB8,

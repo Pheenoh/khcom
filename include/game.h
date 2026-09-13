@@ -1,6 +1,8 @@
 #ifndef GUARD_GAME_H
 #define GUARD_GAME_H
 
+#include "bos2_background_data.h"
+
 #include "obj_api.h"
 #include "btl_collision.h"
 #include "battle_actor.h"
@@ -92,7 +94,6 @@ typedef struct UnkStruct_02039DD4 {
 
 extern UnkStruct_02039DD4* gUnk_02039DD4;
 
-extern u8 gUnk_09EF2AA4[];
 
 extern u8 gUnk_0203C590[];
 extern u32 gUnk_09EF69FC[];

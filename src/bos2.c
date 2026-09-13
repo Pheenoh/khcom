@@ -4934,11 +4934,11 @@ void task_bos_dsd_3(DsdWork* work) {
 }
 
 void func_080C211C(u8 index) {
-    SetBgMapBlocks(1, gUnk_09EF2AA4 + index * 0x10, 2, 2);
+    SetBgMapBlocks(1, gUnk_09EF2AA4[index], 2, 2);
 }
 
 void func_080C213C(u8 index, u16 a) {
-    SetBgMapBlocks(1, gUnk_09EF2AA4 + index * 0x10, 2, 2);
+    SetBgMapBlocks(1, gUnk_09EF2AA4[index], 2, 2);
     LoadBgTiles(1, gUnk_09EF2D94[index], a * 32);
 }
 

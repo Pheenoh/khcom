@@ -1,3 +1,5 @@
+#include "card_lookup_data.h"
+#include "card_animation_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -388,8 +390,6 @@ extern u8 gUnk_08159FBC[];
 extern u8 gUnk_0815C204[];
 extern u8 gUnk_0815C1C2[];
 extern u8 gUnk_08159E10[];
-extern u8 gUnk_09EEB008[];
-extern u8 gUnk_09EEB03C[];
 extern u8 gUnk_090A4664[];
 extern u8 gUnk_09614418[];
 extern u8 gUnk_09614438[];
@@ -1185,8 +1185,6 @@ extern s16 gSineTable[];
 extern u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
 extern u8 gUnk_0903628A[];
-extern void* gUnk_09EE9894[];
-extern void* gUnk_09EE98C0[];
 extern u8 gUnk_09036380[];
 extern u8 gUnk_0891ED26[];
 extern u8 gUnk_088E33C2[];
@@ -1240,15 +1238,9 @@ extern u16* gUnk_09EE4A98[];
 extern const u16 gUnk_090356BA[];
 extern const u16 gUnk_090356D2[];
 extern UnkStruct_09EE752C gUnk_09EE752C[];
-extern u8 gUnk_09EEA4E0[];
-extern u8 gUnk_09EEA494[];
-extern u8 gUnk_09EEB064[];
-extern u8 gUnk_09EEB050[];
-extern u8 gUnk_09EEB07C[];
 extern void* gUnk_09EEB080[];
 extern void* gUnk_09EEAFF8;
 extern void* gUnk_09EEB000;
-extern u8 gUnk_09EEB068[];
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];
@@ -1285,8 +1277,6 @@ extern u8 gUnk_093FEEB8[];
 extern u8 gUnk_093FD438[];
 extern u8 gUnk_093F47E4[];
 extern u8 gUnk_09515AB8[];
-extern void* gUnk_09EEA344[];
-extern void* gUnk_09EE98EC[];
 extern void* gUnk_09EEA16C[];
 extern void* gUnk_09EEA174[];
 extern u8 gUnk_09619158[];
@@ -1316,8 +1306,6 @@ extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_0908C3CE[];
-extern u8 gUnk_09EEA180[];
-extern u8 gUnk_09EEA198[];
 extern Mode gUnk_09EE2704;
 extern u8 gUnk_09501778[];
 extern u8 gUnk_09618C38[];
@@ -1949,7 +1937,6 @@ typedef struct UnkStruct_08094CE4_B {
     u16 unk_14;
 } UnkStruct_08094CE4_B;
 
-extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE1380[];
 extern u8 gUnk_0940F938[];
 extern s16 gUnk_090361B0[];
