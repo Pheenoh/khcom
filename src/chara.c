@@ -165,7 +165,7 @@ u8 func_080C54B4(void) {
     u32* p;
 
     p = &gSioStatus;
-    *p = func_08006ED4(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
+    *p = func_08006ED4(&gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
     gSioPlayerId = gSioStatus & 3;
     gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
     gUnk_02039824 = (gSioStatus & 0xE00) >> 9;
@@ -215,7 +215,7 @@ u8 func_080C55DC(void) {
     u32* p;
 
     p = &gSioStatus;
-    *p = func_0800702C(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
+    *p = func_0800702C(&gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
     gSioPlayerId = gSioStatus & 3;
     gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
     gUnk_02039824 = (gSioStatus & 0xE00) >> 9;
@@ -249,7 +249,7 @@ u8 func_080C56BC(void) {
     u32* p;
 
     p = &gSioStatus;
-    *p = func_08006ED4(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
+    *p = func_08006ED4(&gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
     gSioPlayerId = gSioStatus & 3;
     gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
     gUnk_02039824 = (gSioStatus & 0xE00) >> 9;

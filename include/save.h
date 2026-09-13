@@ -1,3 +1,4 @@
+#include "sram_state.h"
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
@@ -26,7 +27,6 @@ extern u8 gSramFileLarge[];
 #define SAVE_BAD_CHECKSUM 1
 #define SAVE_OK 2
 
-extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
 extern u8* gSaveSignature;
 
 

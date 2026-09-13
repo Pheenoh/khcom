@@ -1425,3 +1425,5 @@ void DummyFunc(void) {
 }
 
 ALIGN_ZERO(2);
+
+SoundInfo* gSoundInfoPtr __attribute__((common));

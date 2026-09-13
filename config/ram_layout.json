@@ -391,6 +391,166 @@
         "gUnk_020354B0": {"offset": "0x398", "size": "0x8"},
         "gUnk_020354B8": {"offset": "0x3a0", "size": "0x8"}
       }
+    },
+    "src/engine.o": {
+      "sections": [
+        {
+          "base": "0x203401c",
+          "size": "0x50",
+          "symbols": {
+            "gMosaicActive": {"offset": "0xa", "size": "0x1"},
+            "gRandSeed": {"offset": "0xc", "size": "0x4"},
+            "gRandomState": {"offset": "0x14", "size": "0x10"},
+            "gUnk_0203401C": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034020": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034024": {"offset": "0x8", "size": "0x2"},
+            "gUnk_0203402C": {"offset": "0x10", "size": "0x4"},
+            "gUnk_02034040": {"offset": "0x24", "size": "0x4"},
+            "gUnk_02034044": {"offset": "0x28", "size": "0x2"},
+            "gUnk_02034046": {"offset": "0x2a", "size": "0x2"},
+            "gUnk_02034048": {"offset": "0x2c", "size": "0x4"},
+            "gUnk_0203404C": {"offset": "0x30", "size": "0x2"},
+            "gUnk_0203404E": {"offset": "0x32", "size": "0x2"},
+            "gUnk_02034050": {"offset": "0x34", "size": "0x2"},
+            "gUnk_02034052": {"offset": "0x36", "size": "0x2"},
+            "gUnk_02034054": {"offset": "0x38", "size": "0x1"},
+            "gUnk_02034056": {"offset": "0x3a", "size": "0x2"},
+            "gUnk_02034058": {"offset": "0x3c", "size": "0x1"},
+            "gUnk_0203405C": {"offset": "0x40", "size": "0x4"},
+            "gUnk_02034060": {"offset": "0x44", "size": "0x4"},
+            "gUnk_02034064": {"offset": "0x48", "size": "0x1"},
+            "gUnk_02034066": {"offset": "0x4a", "size": "0x2"},
+            "gUnk_02034068": {"offset": "0x4c", "size": "0x2"},
+            "gUnk_0203406A": {"offset": "0x4e", "size": "0x2"}
+          }
+        },
+        {
+          "section": ".common.engine",
+          "base": "0x3007574",
+          "size": "0x4",
+          "symbols": {
+            "gDma3Requests": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/m4a2.o": {
+      "sections": [
+        {
+          "base": "0x203c850",
+          "size": "0x1710",
+          "symbols": {
+            "gCgbChans": {"offset": "0x1040", "size": "0x100"},
+            "gMPlayInfo_BGM": {"offset": "0x12c0", "size": "0x40"},
+            "gMPlayJumpTable": {"offset": "0xfb0", "size": "0x90"},
+            "gMPlayMemAccArea": {"offset": "0x1640", "size": "0x10"},
+            "gSoundInfo": {"offset": "0x0", "size": "0xfb0"},
+            "gUnk_0203D990": {"offset": "0x1140", "size": "0x40"},
+            "gUnk_0203D9D0": {"offset": "0x1180", "size": "0x40"},
+            "gUnk_0203DA10": {"offset": "0x11c0", "size": "0x40"},
+            "gUnk_0203DA50": {"offset": "0x1200", "size": "0x40"},
+            "gUnk_0203DA90": {"offset": "0x1240", "size": "0x40"},
+            "gUnk_0203DAD0": {"offset": "0x1280", "size": "0x40"},
+            "gUnk_0203DB50": {"offset": "0x1300", "size": "0x40"},
+            "gUnk_0203DB90": {"offset": "0x1340", "size": "0x40"},
+            "gUnk_0203DBD0": {"offset": "0x1380", "size": "0x40"},
+            "gUnk_0203DC10": {"offset": "0x13c0", "size": "0x40"},
+            "gUnk_0203DC50": {"offset": "0x1400", "size": "0x40"},
+            "gUnk_0203DC90": {"offset": "0x1440", "size": "0x40"},
+            "gUnk_0203DCD0": {"offset": "0x1480", "size": "0x40"},
+            "gUnk_0203DD10": {"offset": "0x14c0", "size": "0x40"},
+            "gUnk_0203DD50": {"offset": "0x1500", "size": "0x40"},
+            "gUnk_0203DD90": {"offset": "0x1540", "size": "0x40"},
+            "gUnk_0203DDD0": {"offset": "0x1580", "size": "0x40"},
+            "gUnk_0203DE10": {"offset": "0x15c0", "size": "0x40"},
+            "gUnk_0203DE50": {"offset": "0x1600", "size": "0x40"},
+            "gUnk_0203DEA0": {"offset": "0x1650", "size": "0x40"},
+            "gUnk_0203DEE0": {"offset": "0x1690", "size": "0x40"},
+            "gUnk_0203DF20": {"offset": "0x16d0", "size": "0x40"}
+          }
+        },
+        {
+          "section": ".common.m4a2",
+          "base": "0x3007ff0",
+          "size": "0x4",
+          "symbols": {
+            "gSoundInfoPtr": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/bos4.o": {
+      "sections": [
+        {
+          "base": "0x2034f0c",
+          "size": "0x10",
+          "symbols": {
+            "gMapChkWork": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034F18": {"offset": "0xc", "size": "0x4"},
+            "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
+            "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.bos4",
+          "base": "0x203c590",
+          "size": "0x21c",
+          "symbols": {
+            "gUnk_0203C590": {"offset": "0x0", "size": "0x21c"}
+          }
+        }
+      ]
+    },
+    "src/agb_sram.o": {
+      "base": "0x2038698",
+      "size": "0x120",
+      "symbols": {
+        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
+        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
+      }
+    },
+    "src/sram_state.o": {
+      "base": "0x203c7bc",
+      "size": "0x8",
+      "symbols": {
+        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
+        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
+      }
+    },
+    "src/sio_link_header_state.o": {
+      "base": "0x020397D0",
+      "size": "0x24",
+      "symbols": {
+        "gUnk_020397D0": {"offset": "0x0", "size": "0x1"},
+        "gUnk_020397D4": {"offset": "0x4", "size": "0x2"},
+        "gUnk_020397E0": {"offset": "0x10", "size": "0x10"},
+        "gUnk_020397F0": {"offset": "0x20", "size": "0x4"}
+      }
+    },
+    "src/sio_callback_state.o": {
+      "base": "0x020397F8",
+      "size": "0x10",
+      "symbols": {
+        "gUnk_020397F8": {"offset": "0x0", "size": "0x4"},
+        "gUnk_020397FC": {"offset": "0x4", "size": "0x1"},
+        "gUnk_02039800": {"offset": "0x8", "size": "0x1"},
+        "gUnk_02039804": {"offset": "0xc", "size": "0x4"}
+      }
+    },
+    "src/sio_runtime_state.o": {
+      "base": "0x02039810",
+      "size": "0x360",
+      "symbols": {
+        "gUnk_02039810": {"offset": "0x0", "size": "0x10"},
+        "gSioStatus": {"offset": "0x10", "size": "0x4"},
+        "gUnk_02039824": {"offset": "0x14", "size": "0x1"},
+        "gSioPlayerId": {"offset": "0x18", "size": "0x4"},
+        "gUnk_0203982C": {"offset": "0x1c", "size": "0x1"},
+        "gUnk_02039830": {"offset": "0x20", "size": "0x324"},
+        "gUnk_02039B58": {"offset": "0x348", "size": "0x8"},
+        "gUnk_02039B60": {"offset": "0x350", "size": "0x1"},
+        "gUnk_02039B68": {"offset": "0x358", "size": "0x8"}
+      }
     }
   },
   "jp": {
@@ -786,6 +946,166 @@
         "gUnk_020354B0": {"offset": "0x398", "size": "0x8"},
         "gUnk_020354B8": {"offset": "0x3a0", "size": "0x8"}
       }
+    },
+    "src/engine.o": {
+      "sections": [
+        {
+          "base": "0x203401c",
+          "size": "0x50",
+          "symbols": {
+            "gMosaicActive": {"offset": "0xa", "size": "0x1"},
+            "gRandSeed": {"offset": "0xc", "size": "0x4"},
+            "gRandomState": {"offset": "0x14", "size": "0x10"},
+            "gUnk_0203401C": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034020": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034024": {"offset": "0x8", "size": "0x2"},
+            "gUnk_0203402C": {"offset": "0x10", "size": "0x4"},
+            "gUnk_02034040": {"offset": "0x24", "size": "0x4"},
+            "gUnk_02034044": {"offset": "0x28", "size": "0x2"},
+            "gUnk_02034046": {"offset": "0x2a", "size": "0x2"},
+            "gUnk_02034048": {"offset": "0x2c", "size": "0x4"},
+            "gUnk_0203404C": {"offset": "0x30", "size": "0x2"},
+            "gUnk_0203404E": {"offset": "0x32", "size": "0x2"},
+            "gUnk_02034050": {"offset": "0x34", "size": "0x2"},
+            "gUnk_02034052": {"offset": "0x36", "size": "0x2"},
+            "gUnk_02034054": {"offset": "0x38", "size": "0x1"},
+            "gUnk_02034056": {"offset": "0x3a", "size": "0x2"},
+            "gUnk_02034058": {"offset": "0x3c", "size": "0x1"},
+            "gUnk_0203405C": {"offset": "0x40", "size": "0x4"},
+            "gUnk_02034060": {"offset": "0x44", "size": "0x4"},
+            "gUnk_02034064": {"offset": "0x48", "size": "0x1"},
+            "gUnk_02034066": {"offset": "0x4a", "size": "0x2"},
+            "gUnk_02034068": {"offset": "0x4c", "size": "0x2"},
+            "gUnk_0203406A": {"offset": "0x4e", "size": "0x2"}
+          }
+        },
+        {
+          "section": ".common.engine",
+          "base": "0x3007574",
+          "size": "0x4",
+          "symbols": {
+            "gDma3Requests": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/m4a2.o": {
+      "sections": [
+        {
+          "base": "0x203c7c0",
+          "size": "0x1710",
+          "symbols": {
+            "gCgbChans": {"offset": "0x1040", "size": "0x100"},
+            "gMPlayInfo_BGM": {"offset": "0x12c0", "size": "0x40"},
+            "gMPlayJumpTable": {"offset": "0xfb0", "size": "0x90"},
+            "gMPlayMemAccArea": {"offset": "0x1640", "size": "0x10"},
+            "gSoundInfo": {"offset": "0x0", "size": "0xfb0"},
+            "gUnk_0203D990": {"offset": "0x1140", "size": "0x40"},
+            "gUnk_0203D9D0": {"offset": "0x1180", "size": "0x40"},
+            "gUnk_0203DA10": {"offset": "0x11c0", "size": "0x40"},
+            "gUnk_0203DA50": {"offset": "0x1200", "size": "0x40"},
+            "gUnk_0203DA90": {"offset": "0x1240", "size": "0x40"},
+            "gUnk_0203DAD0": {"offset": "0x1280", "size": "0x40"},
+            "gUnk_0203DB50": {"offset": "0x1300", "size": "0x40"},
+            "gUnk_0203DB90": {"offset": "0x1340", "size": "0x40"},
+            "gUnk_0203DBD0": {"offset": "0x1380", "size": "0x40"},
+            "gUnk_0203DC10": {"offset": "0x13c0", "size": "0x40"},
+            "gUnk_0203DC50": {"offset": "0x1400", "size": "0x40"},
+            "gUnk_0203DC90": {"offset": "0x1440", "size": "0x40"},
+            "gUnk_0203DCD0": {"offset": "0x1480", "size": "0x40"},
+            "gUnk_0203DD10": {"offset": "0x14c0", "size": "0x40"},
+            "gUnk_0203DD50": {"offset": "0x1500", "size": "0x40"},
+            "gUnk_0203DD90": {"offset": "0x1540", "size": "0x40"},
+            "gUnk_0203DDD0": {"offset": "0x1580", "size": "0x40"},
+            "gUnk_0203DE10": {"offset": "0x15c0", "size": "0x40"},
+            "gUnk_0203DE50": {"offset": "0x1600", "size": "0x40"},
+            "gUnk_0203DEA0": {"offset": "0x1650", "size": "0x40"},
+            "gUnk_0203DEE0": {"offset": "0x1690", "size": "0x40"},
+            "gUnk_0203DF20": {"offset": "0x16d0", "size": "0x40"}
+          }
+        },
+        {
+          "section": ".common.m4a2",
+          "base": "0x3007ff0",
+          "size": "0x4",
+          "symbols": {
+            "gSoundInfoPtr": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/bos4.o": {
+      "sections": [
+        {
+          "base": "0x2034e6c",
+          "size": "0x10",
+          "symbols": {
+            "gMapChkWork": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034F18": {"offset": "0xc", "size": "0x4"},
+            "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
+            "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.bos4",
+          "base": "0x203c500",
+          "size": "0x21c",
+          "symbols": {
+            "gUnk_0203C590": {"offset": "0x0", "size": "0x21c"}
+          }
+        }
+      ]
+    },
+    "src/agb_sram.o": {
+      "base": "0x2038608",
+      "size": "0x120",
+      "symbols": {
+        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
+        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
+      }
+    },
+    "src/sram_state.o": {
+      "base": "0x203c72c",
+      "size": "0x8",
+      "symbols": {
+        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
+        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
+      }
+    },
+    "src/sio_link_header_state.o": {
+      "base": "0x02039740",
+      "size": "0x24",
+      "symbols": {
+        "gUnk_020397D0": {"offset": "0x0", "size": "0x1"},
+        "gUnk_020397D4": {"offset": "0x4", "size": "0x2"},
+        "gUnk_020397E0": {"offset": "0x10", "size": "0x10"},
+        "gUnk_020397F0": {"offset": "0x20", "size": "0x4"}
+      }
+    },
+    "src/sio_callback_state.o": {
+      "base": "0x02039768",
+      "size": "0x10",
+      "symbols": {
+        "gUnk_020397F8": {"offset": "0x0", "size": "0x4"},
+        "gUnk_020397FC": {"offset": "0x4", "size": "0x1"},
+        "gUnk_02039800": {"offset": "0x8", "size": "0x1"},
+        "gUnk_02039804": {"offset": "0xc", "size": "0x4"}
+      }
+    },
+    "src/sio_runtime_state.o": {
+      "base": "0x02039780",
+      "size": "0x360",
+      "symbols": {
+        "gUnk_02039810": {"offset": "0x0", "size": "0x10"},
+        "gSioStatus": {"offset": "0x10", "size": "0x4"},
+        "gUnk_02039824": {"offset": "0x14", "size": "0x1"},
+        "gSioPlayerId": {"offset": "0x18", "size": "0x4"},
+        "gUnk_0203982C": {"offset": "0x1c", "size": "0x1"},
+        "gUnk_02039830": {"offset": "0x20", "size": "0x324"},
+        "gUnk_02039B58": {"offset": "0x348", "size": "0x8"},
+        "gUnk_02039B60": {"offset": "0x350", "size": "0x1"},
+        "gUnk_02039B68": {"offset": "0x358", "size": "0x8"}
+      }
     }
   },
   "eu": {
@@ -1177,6 +1497,167 @@
         "gUnk_020354A8": {"offset": "0x630", "size": "0x8"},
         "gUnk_020354B0": {"offset": "0x638", "size": "0x8"},
         "gUnk_020354B8": {"offset": "0x640", "size": "0x8"}
+      }
+    },
+    "src/engine.o": {
+      "sections": [
+        {
+          "base": "0x203401c",
+          "size": "0x50",
+          "symbols": {
+            "gMosaicActive": {"offset": "0xa", "size": "0x1"},
+            "gRandSeed": {"offset": "0xc", "size": "0x4"},
+            "gRandomState": {"offset": "0x14", "size": "0x10"},
+            "gUnk_0203401C": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034020": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034024": {"offset": "0x8", "size": "0x2"},
+            "gUnk_0203402C": {"offset": "0x10", "size": "0x4"},
+            "gUnk_02034040": {"offset": "0x24", "size": "0x4"},
+            "gUnk_02034044": {"offset": "0x28", "size": "0x2"},
+            "gUnk_02034046": {"offset": "0x2a", "size": "0x2"},
+            "gUnk_02034048": {"offset": "0x2c", "size": "0x4"},
+            "gUnk_0203404C": {"offset": "0x30", "size": "0x2"},
+            "gUnk_0203404E": {"offset": "0x32", "size": "0x2"},
+            "gUnk_02034050": {"offset": "0x34", "size": "0x2"},
+            "gUnk_02034052": {"offset": "0x36", "size": "0x2"},
+            "gUnk_02034054": {"offset": "0x38", "size": "0x1"},
+            "gUnk_02034056": {"offset": "0x3a", "size": "0x2"},
+            "gUnk_02034058": {"offset": "0x3c", "size": "0x1"},
+            "gUnk_0203405C": {"offset": "0x40", "size": "0x4"},
+            "gUnk_02034060": {"offset": "0x44", "size": "0x4"},
+            "gUnk_02034064": {"offset": "0x48", "size": "0x1"},
+            "gUnk_02034066": {"offset": "0x4a", "size": "0x2"},
+            "gUnk_02034068": {"offset": "0x4c", "size": "0x2"},
+            "gUnk_0203406A": {"offset": "0x4e", "size": "0x2"}
+          }
+        },
+        {
+          "section": ".common.engine",
+          "base": "0x300757c",
+          "size": "0x4",
+          "symbols": {
+            "gDma3Requests": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/m4a2.o": {
+      "sections": [
+        {
+          "base": "0x203ce40",
+          "size": "0x1710",
+          "symbols": {
+            "gCgbChans": {"offset": "0x1040", "size": "0x100"},
+            "gMPlayInfo_BGM": {"offset": "0x12c0", "size": "0x40"},
+            "gMPlayJumpTable": {"offset": "0xfb0", "size": "0x90"},
+            "gMPlayMemAccArea": {"offset": "0x1640", "size": "0x10"},
+            "gSoundInfo": {"offset": "0x0", "size": "0xfb0"},
+            "gUnk_0203D990": {"offset": "0x1140", "size": "0x40"},
+            "gUnk_0203D9D0": {"offset": "0x1180", "size": "0x40"},
+            "gUnk_0203DA10": {"offset": "0x11c0", "size": "0x40"},
+            "gUnk_0203DA50": {"offset": "0x1200", "size": "0x40"},
+            "gUnk_0203DA90": {"offset": "0x1240", "size": "0x40"},
+            "gUnk_0203DAD0": {"offset": "0x1280", "size": "0x40"},
+            "gUnk_0203DB50": {"offset": "0x1300", "size": "0x40"},
+            "gUnk_0203DB90": {"offset": "0x1340", "size": "0x40"},
+            "gUnk_0203DBD0": {"offset": "0x1380", "size": "0x40"},
+            "gUnk_0203DC10": {"offset": "0x13c0", "size": "0x40"},
+            "gUnk_0203DC50": {"offset": "0x1400", "size": "0x40"},
+            "gUnk_0203DC90": {"offset": "0x1440", "size": "0x40"},
+            "gUnk_0203DCD0": {"offset": "0x1480", "size": "0x40"},
+            "gUnk_0203DD10": {"offset": "0x14c0", "size": "0x40"},
+            "gUnk_0203DD50": {"offset": "0x1500", "size": "0x40"},
+            "gUnk_0203DD90": {"offset": "0x1540", "size": "0x40"},
+            "gUnk_0203DDD0": {"offset": "0x1580", "size": "0x40"},
+            "gUnk_0203DE10": {"offset": "0x15c0", "size": "0x40"},
+            "gUnk_0203DE50": {"offset": "0x1600", "size": "0x40"},
+            "gUnk_0203DEA0": {"offset": "0x1650", "size": "0x40"},
+            "gUnk_0203DEE0": {"offset": "0x1690", "size": "0x40"},
+            "gUnk_0203DF20": {"offset": "0x16d0", "size": "0x40"}
+          }
+        },
+        {
+          "section": ".common.m4a2",
+          "base": "0x3007ff0",
+          "size": "0x4",
+          "symbols": {
+            "gSoundInfoPtr": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/bos4.o": {
+      "sections": [
+        {
+          "base": "0x20350fc",
+          "size": "0x14",
+          "symbols": {
+            "gMapChkWork": {"offset": "0xc", "size": "0x4"},
+            "gUnkEu_02035104": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034F18": {"offset": "0x10", "size": "0x4"},
+            "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
+            "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.bos4",
+          "base": "0x203cb80",
+          "size": "0x21c",
+          "symbols": {
+            "gUnk_0203C590": {"offset": "0x0", "size": "0x21c"}
+          }
+        }
+      ]
+    },
+    "src/agb_sram.o": {
+      "base": "0x2038ca8",
+      "size": "0x120",
+      "symbols": {
+        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
+        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
+      }
+    },
+    "src/sram_state.o": {
+      "base": "0x203cdac",
+      "size": "0x8",
+      "symbols": {
+        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
+        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
+      }
+    },
+    "src/sio_link_header_state.o": {
+      "base": "0x02039DE0",
+      "size": "0x24",
+      "symbols": {
+        "gUnk_020397D0": {"offset": "0x0", "size": "0x1"},
+        "gUnk_020397D4": {"offset": "0x4", "size": "0x2"},
+        "gUnk_020397E0": {"offset": "0x10", "size": "0x10"},
+        "gUnk_020397F0": {"offset": "0x20", "size": "0x4"}
+      }
+    },
+    "src/sio_callback_state.o": {
+      "base": "0x02039E08",
+      "size": "0x10",
+      "symbols": {
+        "gUnk_020397F8": {"offset": "0x0", "size": "0x4"},
+        "gUnk_020397FC": {"offset": "0x4", "size": "0x1"},
+        "gUnk_02039800": {"offset": "0x8", "size": "0x1"},
+        "gUnk_02039804": {"offset": "0xc", "size": "0x4"}
+      }
+    },
+    "src/sio_runtime_state.o": {
+      "base": "0x02039E20",
+      "size": "0x360",
+      "symbols": {
+        "gUnk_02039810": {"offset": "0x0", "size": "0x10"},
+        "gSioStatus": {"offset": "0x10", "size": "0x4"},
+        "gUnk_02039824": {"offset": "0x14", "size": "0x1"},
+        "gSioPlayerId": {"offset": "0x18", "size": "0x4"},
+        "gUnk_0203982C": {"offset": "0x1c", "size": "0x1"},
+        "gUnk_02039830": {"offset": "0x20", "size": "0x324"},
+        "gUnk_02039B58": {"offset": "0x348", "size": "0x8"},
+        "gUnk_02039B60": {"offset": "0x350", "size": "0x1"},
+        "gUnk_02039B68": {"offset": "0x358", "size": "0x8"}
       }
     }
   }

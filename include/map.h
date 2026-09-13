@@ -1251,7 +1251,6 @@ extern UnkStruct_0203C7B8* gUnk_0203C7B8;
 
 extern vu32 gFrameCounter;
 extern UnkStruct_0203C590 gUnk_0203C590;
-extern UnkStruct_02034F84 gUnk_0203C598[];
 extern void* gMPlayInfo_BGM;
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F683A4[];

@@ -94,7 +94,6 @@ extern UnkStruct_02039DD4* gUnk_02039DD4;
 
 extern u8 gUnk_09EF2AA4[];
 
-extern u8 gUnk_0203C5AC[];
 extern u8 gUnk_0203C590[];
 extern u32 gUnk_09EF69FC[];
 extern void* gUrsulaWork;

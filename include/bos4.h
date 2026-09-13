@@ -57,7 +57,6 @@ typedef struct UnkStruct_0984C868 {
 extern UnkStruct_0984C868 gUnk_0984C868[];
 extern UnkStruct_0984C868 gUnk_0984CBD0[];
 
-extern UnkStruct_080DEE18 gUnk_0203C5AC[];
 
 UnkStruct_0984C868* func_080DED64(u8 a);
 void func_080DEBD8(UnkStruct_080DEDD8* p);

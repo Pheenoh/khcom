@@ -1,9 +1,16 @@
 #ifndef GUARD_SIO_H
 #define GUARD_SIO_H
 
+#include "sio_runtime_state.h"
+
+#include "sio_callback_state.h"
+
+#include "sio_link_header_state.h"
+
 #include "display.h"
 #include "sio_api.h"
 #include "types.h"
+#include "sio_types.h"
 #include "gba/syscall.h"
 #include "intr.h"
 #include "engine.h"
@@ -27,55 +34,12 @@
 #define REG_IF (*(vu16*)0x04000202)
 #define REG_IME (*(vu16*)0x04000208)
 
-typedef struct {
-    u8 unk_00;
-    u8 unk_01;
-    u8 playerId;
-    u8 playerCount;
-    u16 recv[4];
-    u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-    u8 unk_0F;
-    u8 unk_10;
-    u8 unk_11;
-    u8 unk_12;
-    u8 unk_13;
-    u8 unk_14;
-    u8 unk_15;
-    u16 unk_16;
-    u8 unk_18;
-    u8 unk_19;
-    u8 unk_1A;
-    u8 unk_1B;
-    u16 sendBuf[4][32];
-    u8 sendReadIdx;
-    u8 sendCount;
-    u8 unk_11E;
-    u8 unk_11F;
-    u16 recvBuf[2][4][32];
-    u8 recvReadIdx;
-    u8 recvCount;
-} SioWork;
+
 
 extern BgAnimationDef* gUnk_02034040;
 extern u16 gUnk_02034044;
 extern u16 gUnk_02034046;
 extern u8 gUnk_02034054;
-extern u8 gUnk_020397D0;
-extern s16 gUnk_020397D4;
-extern u32 gUnk_020397F0;
-extern s32 (*gUnk_020397F8)(void);
-extern u8 gUnk_020397FC;
-extern u8 gUnk_02039800;
-extern s32 (*gUnk_02039804)(void);
-extern u32 gSioStatus;
-extern u8 gUnk_02039824;
-extern u32 gSioPlayerId;
-extern u8 gUnk_0203982C;
-extern SioWork gUnk_02039830;
-extern u8 gUnk_02039B50;
-extern u8 gUnk_02039B60;
 
 u16 IsVBlankIntrLive(void);
 void SioInit(void);
