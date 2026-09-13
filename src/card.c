@@ -14306,7 +14306,7 @@ u32 func_0808DEB8(u16* data) {
     return sum;
 }
 
-#ifdef NON_MATCHING
+#ifndef VERSION_EU
 s32 func_0808DED0(u8* work, u16 keys) {
     UnkStruct_0808E2F0* p;
     u8 y0;
@@ -14316,15 +14316,20 @@ s32 func_0808DED0(u8* work, u16 keys) {
     s8 d;
     s32 i;
     s32 sum;
+    s32 n;
     u16 t;
     u16 t884;
+    s16 k;
+    u8* x;
 
+    k = *(s16*)&work[0x884] * 5 + work[0x886];
+    idx = k;
     p = &(*(UnkStruct_0808E2F0**)&work[0x4D4])[*(u16*)&work[0x880]];
     t884 = *(u16*)&work[0x884];
     y0 = work[0x884];
     x0 = work[0x886];
 
-    if (p->unk_00[(u8)(*(s16*)&work[0x884] * 5 + work[0x886])] != 0) {
+    if (p->unk_00[idx] != 0) {
         return 1;
     }
 
@@ -14371,10 +14376,13 @@ s32 func_0808DED0(u8* work, u16 keys) {
             return 0;
         }
 
+        x = &work[0x886];
         d = -1;
-        v = d + work[0x886];
+        n = *x + d;
 
         while (1) {
+            v = n;
+
             if (v < 0) {
                 v = 0;
             }
@@ -14394,11 +14402,10 @@ s32 func_0808DED0(u8* work, u16 keys) {
                 d = -d;
             }
 
-            v = d + work[0x886];
+            n = d + *x;
         }
 
-        *(u16*)&work[0x886] = v;
-        break;
+        goto store;
     case 16:
         if (p->unk_00[*(s16*)&work[0x886] + 5] != 0) {
             if ((s16)t884 <= 0) {
@@ -14419,10 +14426,13 @@ s32 func_0808DED0(u8* work, u16 keys) {
             return 0;
         }
 
+        x = &work[0x886];
         d = -1;
-        v = d + work[0x886];
+        n = *x + d;
 
-        while (1) {
+        for (;;) {
+            v = n;
+
             if (v < 0) {
                 v = 0;
             }
@@ -14442,10 +14452,12 @@ s32 func_0808DED0(u8* work, u16 keys) {
                 d = -d;
             }
 
-            v = d + work[0x886];
+            n = d + *x;
         }
 
-        *(u16*)&work[0x886] = v;
+store:
+        k = v;
+        *(u16*)&work[0x886] = k;
         break;
     case 0:
         do {
@@ -14458,10 +14470,10 @@ s32 func_0808DED0(u8* work, u16 keys) {
             }
 
             if (*(s16*)&work[0x884] == y0 && *(s16*)&work[0x886] == x0) {
-                t = *(u16*)&work[0x884];
+                t884 = *(u16*)&work[0x884];
 
-                if ((s16)t <= 0) {
-                    *(u16*)&work[0x884] = t + 1;
+                if ((s16)t884 <= 0) {
+                    *(u16*)&work[0x884] = t884 + 1;
                 } else {
                     *(u16*)&work[0x884] = 0;
                 }
@@ -14472,7 +14484,9 @@ s32 func_0808DED0(u8* work, u16 keys) {
                     return 0;
                 }
             }
-        } while (p->unk_00[(u8)(*(s16*)&work[0x884] * 5 + work[0x886])] == 0);
+
+            idx = *(s16*)&work[0x884] * 5 + work[0x886];
+        } while (p->unk_00[idx] == 0);
         break;
     }
 
@@ -14481,6 +14495,7 @@ s32 func_0808DED0(u8* work, u16 keys) {
 #else
 INCLUDE_ASM("card/func_0808DED0.s");
 #endif
+
 s32 func_0808E19C(UnkStruct_0808DB04* w) {
     u16 mask;
     u16 idx;
