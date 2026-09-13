@@ -25,10 +25,6 @@ extern u8 gWorldwarpAssetUs_099A2F84[];
 extern u8 gWorldwarpAssetUs_099A32E4[];
 extern u8 gWorldwarpAssetUs_09A3D81C[];
 extern u8 gWorldwarpAssetUs_09A3D83C[];
-extern u8 gWorldwarpAssetUs_09EF9998[];
-extern u8 gWorldwarpAssetUs_09EF999C[];
-extern u8 gWorldwarpAssetUs_09EF99A0[];
-extern u8 gWorldwarpAssetUs_09EF99A4[];
 #endif
 
 #ifdef VERSION_JP
@@ -45,10 +41,6 @@ extern u8 gWorldwarpAssetJp_09957A0C[];
 extern u8 gWorldwarpAssetJp_09957D6C[];
 extern u8 gWorldwarpAssetJp_099F22A4[];
 extern u8 gWorldwarpAssetJp_099F22C4[];
-extern u8 gWorldwarpAssetJp_09ED0D84[];
-extern u8 gWorldwarpAssetJp_09ED0D88[];
-extern u8 gWorldwarpAssetJp_09ED0D8C[];
-extern u8 gWorldwarpAssetJp_09ED0D90[];
 #endif
 
 #ifdef VERSION_EU
@@ -65,12 +57,6 @@ extern u8 gWorldwarpAssetEu_099B0F08[];
 extern u8 gWorldwarpAssetEu_099B1268[];
 extern u8 gWorldwarpAssetEu_09A9B2E0[];
 extern u8 gWorldwarpAssetEu_09A9B300[];
-extern u8 gWorldwarpAssetEu_09F85554[];
-extern u8 gWorldwarpAssetEu_09F855A4[];
-extern u8 gWorldwarpAssetEu_09F85604[];
-extern u8 gWorldwarpAssetEu_09F85608[];
-extern u8 gWorldwarpAssetEu_09F8560C[];
-extern u8 gWorldwarpAssetEu_09F85610[];
 #endif
 
 #endif

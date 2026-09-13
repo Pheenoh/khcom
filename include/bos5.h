@@ -121,7 +121,7 @@ typedef struct MdHahenWork {
     s32 unk_014;
     u32 palette;
     u32 tiles;
-    u32 unk_020;
+    void* unk_020;
     u16 unk_024;
     u8 unk_026[0x2];
 } MdHahenWork;
@@ -271,7 +271,6 @@ typedef struct MdWork {
 extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
 extern u8 gUnk_09999ED0[];
-extern u32 gUnk_09EF9740[];
 
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
@@ -352,7 +351,6 @@ void func_080FE854(void);
 extern u8 gUnk_0999CB90[];
 extern u8 gUnk_0999C394[];
 extern u8 gUnk_0999C3C8[];
-extern void* gUnk_09EF9770[];
 void mode_worldselect_1(void);
 void func_080FDC04(void);
 void func_080FE47C(void);

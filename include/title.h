@@ -2,6 +2,8 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
+#include "actor_ui_resource_data.h"
+
 #include "obj.h"
 
 #include "title_api.h"
@@ -72,17 +74,6 @@ extern u8 gUnk_0984A7D8[];
 extern u8 gUnk_0984A7F8[];
 extern s32 gUnk_096FDCC8[];
 extern s16 gUnk_096FDCE8[];
-extern void* gUnk_09EF65E0[];
-extern void* gUnk_09EF65E8[];
-extern u8 gUnk_09EF65F0[];
-extern u8 gUnk_09EF6604[];
-extern u8 gUnk_09EF6608[];
-extern u8 gUnk_09EF661C[];
-extern void* gUnk_09EF6620[];
-extern void* gUnk_09EF663C[];
-extern void* gUnk_09EF6658[];
-extern void* gUnk_09EF6668[];
-extern void* gUnk_09EF6684[];
 
 void func_080D5998(void);
 u8 func_080D6280(void);

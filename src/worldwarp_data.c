@@ -1,3 +1,4 @@
+#include "animation_resource_data.h"
 #include <stddef.h>
 #include "registration_data.h"
 #include "worldwarp_data.h"
@@ -12,14 +13,14 @@ WarpRect gUnk_099930E8[4] __attribute__((section(".data_gUnk_099930E8"))) = {
 
 const WarpDef gUnk_09993118[2] __attribute__((section(".data_gUnk_09993118"))) = {
 #if defined(VERSION_US)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetUs_09A3D81C, 32, {0, 0}, gWorldwarpAssetUs_099A2F84, 832, {0, 0}, gWorldwarpAssetUs_09EF999C, gWorldwarpAssetUs_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
-    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetUs_09A3D83C, 32, {0, 0}, gWorldwarpAssetUs_099A32E4, 832, {0, 0}, gWorldwarpAssetUs_09EF99A4, gWorldwarpAssetUs_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetUs_09A3D81C, 32, {0, 0}, gWorldwarpAssetUs_099A2F84, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetUs_09A3D83C, 32, {0, 0}, gWorldwarpAssetUs_099A32E4, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #elif defined(VERSION_JP)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetJp_099F22A4, 32, {0, 0}, gWorldwarpAssetJp_09957A0C, 832, {0, 0}, gWorldwarpAssetJp_09ED0D88, gWorldwarpAssetJp_09ED0D84, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
-    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetJp_099F22C4, 32, {0, 0}, gWorldwarpAssetJp_09957D6C, 832, {0, 0}, gWorldwarpAssetJp_09ED0D90, gWorldwarpAssetJp_09ED0D8C, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetJp_099F22A4, 32, {0, 0}, gWorldwarpAssetJp_09957A0C, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetJp_099F22C4, 32, {0, 0}, gWorldwarpAssetJp_09957D6C, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #elif defined(VERSION_EU)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetEu_09A9B2E0, 32, {0, 0}, gWorldwarpAssetEu_099B0F08, 832, {0, 0}, gWorldwarpAssetEu_09F85608, gWorldwarpAssetEu_09F85604, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gWorldwarpAssetEu_09F855A4, gWorldwarpAssetEu_09F85554, 1, {0, 0}}}},
-    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetEu_09A9B300, 32, {0, 0}, gWorldwarpAssetEu_099B1268, 832, {0, 0}, gWorldwarpAssetEu_09F85610, gWorldwarpAssetEu_09F8560C, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gWorldwarpAssetEu_09F855A4, gWorldwarpAssetEu_09F85554, 0, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetEu_09A9B2E0, 32, {0, 0}, gWorldwarpAssetEu_099B0F08, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetEu_09A9B300, 32, {0, 0}, gWorldwarpAssetEu_099B1268, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #endif
 };
 

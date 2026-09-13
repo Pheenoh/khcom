@@ -5,6 +5,8 @@
 #ifndef GUARD_EVT_ASSETS_H
 #define GUARD_EVT_ASSETS_H
 
+#include "actor_ui_resource_data.h"
+
 #include "types.h"
 
 extern u8 gUnk_08F683A4[];
@@ -49,7 +51,5 @@ extern u8 gUnk_09EF5CBC[];
 extern u8 gUnk_09EF5CDC[];
 extern u8 gUnk_09EF5CE0[];
 extern u8 gUnk_09EF5D00[];
-extern u8 gUnk_09EF6718[];
-extern u8 gUnk_09EF672C[];
 
 #endif

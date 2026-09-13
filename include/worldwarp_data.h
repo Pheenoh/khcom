@@ -2,6 +2,7 @@
 #define GUARD_WORLDWARP_DATA_H
 
 #include "types.h"
+#include "anim.h"
 #include "mode.h"
 #include "world_types.h"
 
@@ -34,8 +35,8 @@ typedef struct WarpGfx {
     void* unk_0C;
     u16 unk_10;
     u8 unk_12[0x02];
-    void* unk_14;
-    void* unk_18;
+    AnimHeader** unk_14;
+    void** unk_18;
     u16 unk_1C;
     u8 unk_1E[0x02];
 } WarpGfx;

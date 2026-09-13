@@ -20,4 +20,6 @@ extern void* gUnk_09EF2E44;
 extern void* gUnk_09EF2E48;
 extern void* gUnk_09EF2E4C;
 
+extern const u16* gUnk_09EF2E68[];
+
 #endif

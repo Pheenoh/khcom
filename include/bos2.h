@@ -568,7 +568,6 @@ typedef char TmFootWork_size[(sizeof(TmFootWork) == 0x484) ? 1 : -1];
 extern s16 gSineTable[];
 extern u16 gUnk_0961A63C[];
 extern u8 gUnk_096FB744[];
-extern u8 gUnk_09EF2E68[];
 extern void* gUnk_0961A7B0[];
 extern s16 gUnk_0961A89E[];
 extern s16 gUnk_0961A8B0[];

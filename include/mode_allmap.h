@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "actor_ui_resource_data.h"
+
 #include "allmap_bottom_state.h"
 
 #include "allmap_scroll_state.h"
@@ -56,10 +58,6 @@ extern u8 gUnk_097B62B8[];
 extern u8 gUnk_0983AD98[];
 extern u8 gUnk_0984A0F8[];
 extern u8 gUnk_09849F78[];
-extern u8 gUnk_09EF64FC[];
-extern u8 gUnk_09EF653C[];
-extern u8 gUnk_09EF654C[];
-extern u8 gUnk_09EF658C[];
 
 void func_080D4EBC(void);
 void func_080D51D8(void);

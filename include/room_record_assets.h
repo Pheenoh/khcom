@@ -16,18 +16,6 @@ extern u8 gRoomAssetUs_09A1E8DC[];
 extern u8 gRoomAssetUs_09A1F0DC[];
 extern u8 gRoomAssetUs_09A1F8DC[];
 extern u8 gRoomAssetUs_09A3C75C[];
-extern u8 gRoomAssetUs_09EF9684[];
-extern u8 gRoomAssetUs_09EF96A4[];
-extern u8 gRoomAssetUs_09EF96B0[];
-extern u8 gRoomAssetUs_09EF96C8[];
-extern u8 gRoomAssetUs_09EF96D0[];
-extern u8 gRoomAssetUs_09EF96EC[];
-extern u8 gRoomAssetUs_09EF96F4[];
-extern u8 gRoomAssetUs_09EF9710[];
-extern u8 gRoomAssetUs_09EF9718[];
-extern u8 gRoomAssetUs_09EF971C[];
-extern u8 gRoomAssetUs_09EF9720[];
-extern u8 gRoomAssetUs_09EF9724[];
 #endif
 
 #ifdef VERSION_JP
@@ -43,18 +31,6 @@ extern u8 gRoomAssetJp_099D3364[];
 extern u8 gRoomAssetJp_099D3B64[];
 extern u8 gRoomAssetJp_099D4364[];
 extern u8 gRoomAssetJp_099F11E4[];
-extern u8 gRoomAssetJp_09ED0A70[];
-extern u8 gRoomAssetJp_09ED0A90[];
-extern u8 gRoomAssetJp_09ED0A9C[];
-extern u8 gRoomAssetJp_09ED0AB4[];
-extern u8 gRoomAssetJp_09ED0ABC[];
-extern u8 gRoomAssetJp_09ED0AD8[];
-extern u8 gRoomAssetJp_09ED0AE0[];
-extern u8 gRoomAssetJp_09ED0AFC[];
-extern u8 gRoomAssetJp_09ED0B04[];
-extern u8 gRoomAssetJp_09ED0B08[];
-extern u8 gRoomAssetJp_09ED0B0C[];
-extern u8 gRoomAssetJp_09ED0B10[];
 #endif
 
 #ifdef VERSION_EU
@@ -70,18 +46,6 @@ extern u8 gRoomAssetEu_09A704A0[];
 extern u8 gRoomAssetEu_09A70CA0[];
 extern u8 gRoomAssetEu_09A714A0[];
 extern u8 gRoomAssetEu_09A9A220[];
-extern u8 gRoomAssetEu_09F85100[];
-extern u8 gRoomAssetEu_09F85120[];
-extern u8 gRoomAssetEu_09F8512C[];
-extern u8 gRoomAssetEu_09F85144[];
-extern u8 gRoomAssetEu_09F8514C[];
-extern u8 gRoomAssetEu_09F85168[];
-extern u8 gRoomAssetEu_09F85170[];
-extern u8 gRoomAssetEu_09F8518C[];
-extern u8 gRoomAssetEu_09F85194[];
-extern u8 gRoomAssetEu_09F85198[];
-extern u8 gRoomAssetEu_09F8519C[];
-extern u8 gRoomAssetEu_09F851A0[];
 #endif
 
 #endif

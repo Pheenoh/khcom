@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "boss_ursula_data.h"
+
 #include "map_world_text_data.h"
 
 #include "animation_resource_data.h"
@@ -383,11 +385,7 @@ void task_bos_boogie_dice_3(BoogieDiceWork* work);
 extern const u8 gUnk_0984D134[][8];
 extern u8 gUnk_09799CBA[];
 extern u8 gUnk_0984AF78[];
-extern u8 gUnk_09EF5190[];
-extern u8 gUnk_09EF5100[];
-extern u8 gUnk_09EF5160[];
 void func_080DB978(UrsulaWork* work);
-extern u8 gUnk_09EF5130[];
 void task_bos_ursula_2(UrsulaWork* work);
 u16 func_080DD7C4(UrsulaBubbleWork* work);
 u16 func_080DD854(UrsulaBubbleWork* work);

@@ -3,6 +3,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "animation_resource_data.h"
+
 #include "worldwarp_state.h"
 
 #include "obj.h"
@@ -55,10 +57,6 @@ extern u8 gUnk_09A3D59C[];
 extern u8 gUnk_0999FA20[];
 extern u8 gUnk_09A3D5BC[];
 extern u8 gUnk_099A012C[];
-extern u8 gUnk_09EF9898[];
-extern u8 gUnk_09EF9870[];
-extern u8 gUnk_09EF98B0[];
-extern u8 gUnk_09EF98A0[];
 
 void func_08100980(void);
 void func_081006AC(void);

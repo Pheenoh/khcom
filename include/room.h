@@ -4,6 +4,8 @@
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
 
+#include "animation_resource_data.h"
+
 #include "ga_types.h"
 
 #include "field_state.h"
@@ -59,9 +61,7 @@ extern u8 gUnk_099910C4[];
 
 extern GaWork* gGaWork;
 extern u8 gTaskDescBtlShadow[];
-extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];
-extern u8 gUnk_09EF9738[];
 
 typedef struct RoomObjResource {
     void* unk_00;

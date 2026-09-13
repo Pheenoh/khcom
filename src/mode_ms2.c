@@ -15,8 +15,6 @@ extern void* gUnkEu_09F84FE4[];
 extern void* gUnkEu_09F84FD0[];
 extern u8 gUnkEu_09A97520[];
 extern u8 gUnkEu_099AEE98[];
-extern u8 gUnkEu_09F855A4[];
-extern u8 gUnkEu_09F85554[];
 extern u8 gUnkEu_092D1F74[];
 extern u8 gUnkEu_08890F40[];
 extern u8 gUnkEu_08895960[];
@@ -219,31 +217,15 @@ void mode_ms_charge_0(void) {
 #endif
     , 0x940);
     AnimInit(&gUnk_02035C88,
-#ifdef VERSION_EU
-        gUnkEu_09F855A4
-#else
         gUnk_09EF9978
-#endif
     ,
-#ifdef VERSION_EU
-        gUnkEu_09F85554
-#else
         gUnk_09EF9928
-#endif
     );
     AnimStart(&gUnk_02035C88, 3, 1);
     AnimInit(&gUnk_02035CA0,
-#ifdef VERSION_EU
-        gUnkEu_09F855A4
-#else
         gUnk_09EF9978
-#endif
     ,
-#ifdef VERSION_EU
-        gUnkEu_09F85554
-#else
         gUnk_09EF9928
-#endif
     );
     AnimStart(&gUnk_02035CA0, 0, 1);
     gUnk_02035CC0 = LoadObjPalette(gUnk_09617D58, 32);

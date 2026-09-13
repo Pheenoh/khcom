@@ -1,6 +1,8 @@
 #ifndef GUARD_MS_H
 #define GUARD_MS_H
 
+#include "animation_resource_data.h"
+
 #include "ms_types.h"
 
 #include "ms_api.h"
@@ -31,6 +33,5 @@ void task_ms_shop_hosi_3(MsShopHosiWork* work);
 
 extern s16 gSineTable[];
 extern u8 gUnk_099A6962[];
-extern void* gUnk_09EF9A4C[];
 
 #endif /* GUARD_MS_H */

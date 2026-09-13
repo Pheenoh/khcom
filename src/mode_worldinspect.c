@@ -1,3 +1,4 @@
+#include "animation_resource_data.h"
 #include "worldinspect_data.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -101,10 +102,6 @@ extern u8 gUnk_09A3D0BC[];
 extern u8 gUnk_0999CFC6[];
 extern u8 gUnk_0999D41A[];
 extern u8 gUnk_0999D8A8[];
-extern u8 gUnk_09EF97B0[];
-extern u8 gUnk_09EF97C4[];
-extern u8 gUnk_09EF97CC[];
-extern u8 gUnk_09EF97DC[];
 extern u8 gUnk_09A35A1C[];
 extern u8 gUnk_09A0D63C[];
 extern u8 gUnk_09A0F03C[];

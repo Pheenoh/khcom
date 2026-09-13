@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "actor_ui_resource_data.h"
+
 #include "title_background_state.h"
 
 #include "card_api.h"
@@ -50,13 +52,6 @@ extern u8 gUnk_0984A6B8[];
 extern u8 gUnk_0984A6F8[];
 extern u8 gUnk_0984A718[];
 extern u8 gUnk_0984A738[];
-extern void* gUnk_09EF659C;
-extern void* gUnk_09EF669C;
-extern void* gUnk_09EF65A4;
-extern void* gUnk_09EF65AC;
-extern void* gUnk_09EF65B4;
-extern void* gUnk_09EF65BC;
-extern void* gUnk_09EF65C4;
 
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);

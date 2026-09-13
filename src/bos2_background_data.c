@@ -1,3 +1,4 @@
+#include "boss_map_block_assets.h"
 #include "bos2_background_data.h"
 #include "background_actor_assets.h"
 
@@ -117,3 +118,22 @@ void* gUnk_09EF2E44 __attribute__((section(".data_09EF2AA4"))) = gUnk_096A8BA4;
 void* gUnk_09EF2E48 __attribute__((section(".data_09EF2AA4"))) = gUnk_096A8BA4;
 
 void* gUnk_09EF2E4C __attribute__((section(".data_09EF2AA4"))) = 0;
+
+const u16* gUnk_09EF2E68[4] __attribute__((section(".data_gUnk_09EF2E68"))) = {
+#if defined(VERSION_US)
+    gBossMapBlockUs_096E2C64,
+    gBossMapBlockUs_08125E24,
+    gBossMapBlockUs_096E3464,
+    gBossMapBlockUs_08125E24,
+#elif defined(VERSION_JP)
+    gBossMapBlockJp_0969B440,
+    gBossMapBlockJp_08125EA0,
+    gBossMapBlockJp_0969BC40,
+    gBossMapBlockJp_08125EA0,
+#elif defined(VERSION_EU)
+    gBossMapBlockEu_096AA98C,
+    gBossMapBlockEu_08124944,
+    gBossMapBlockEu_096AB18C,
+    gBossMapBlockEu_08124944,
+#endif
+};

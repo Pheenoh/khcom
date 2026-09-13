@@ -3,6 +3,8 @@
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
 
+#include "animation_resource_data.h"
+
 #include "obj.h"
 
 #include "map_api.h"
@@ -55,10 +57,6 @@ extern u8 gUnk_09A3501C[];
 extern u8 gUnk_09A3551C[];
 extern u8 gUnk_09A3D0DC[];
 extern u8 gUnk_09A3D2DC[];
-extern u8 gUnk_09EF97EC[];
-extern u8 gUnk_09EF981C[];
-extern u8 gUnk_09EF9830[];
-extern u8 gUnk_09EF9858[];
 extern struct ObjPalette* gUnk_02035E4C;
 extern struct ObjTiles* gUnk_02035E50;
 extern struct ObjPalette* gUnk_02035E70;
