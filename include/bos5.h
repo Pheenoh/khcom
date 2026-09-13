@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "graphics_state.h"
+
 #include "obj.h"
 
 #include "ga_types.h"
@@ -412,8 +414,8 @@ extern s16 gUnk_020354C0;
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);
 void func_080FE89C(void);
-extern u16 gBldCnt;
-extern u16 gBldAlpha;
+
+
 void func_080FE900(void);
 extern void* gUnk_09EF8F24[];
 extern u8 gTaskDescBosMdMap[];

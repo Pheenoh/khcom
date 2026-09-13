@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
+#include "graphics_state.h"
+
 #include "card_api.h"
 
 #include "eventselect_api.h"
@@ -207,7 +209,7 @@ extern FldAnimDef gUnk_0813BEFC[][5];
 extern FldAnimDef gUnk_0813C2AC[];
 extern FldAnimDef gUnk_0813C4DC[][5];
 
-extern u16 gBldCnt;
+
 
 extern u8 gUnk_0813C294[];
 

@@ -2349,7 +2349,7 @@ u8 func_08113180(StaffRollWork* w) {
 
         SrollTextInit(w->unk_1C0, gUnk_09A541C8);
         LoadBgPalette(0, gUnk_09D6BE14, 32);
-        gDispCnt |= 0;
+        (*(volatile u16*)&gDispCnt) |= 0;
         gWinIn = 31;
         gWinOut = 30;
         gWin0H = 0x10E0;
@@ -2525,7 +2525,7 @@ u8 func_08113180(StaffRollWork* w) {
             FadeSetPaletteExcluded(i, 0);
         }
 
-        gDispCnt &= 0xDFFF;
+        (*(volatile u16*)&gDispCnt) &= 0xDFFF;
         gWinIn = 0;
         gWinOut = 0;
         gWin0H = 0;

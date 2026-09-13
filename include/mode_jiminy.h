@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include "graphics_state.h"
+
 #include "jiminy_list.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -55,7 +57,7 @@ extern JiminyWork* gJiminyWork;
 
 extern JiminyEntry gUnk_08155554[];
 extern s16 gSineTable[];
-extern u16 gBldCnt;
+
 extern u8 gUnk_08C69C04[];
 extern u8 gUnk_08C69C20[];
 extern u8 gUnk_08C69C54[];

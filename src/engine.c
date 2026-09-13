@@ -1,3 +1,4 @@
+#include "graphics_state.h"
 #include "engine_math.h"
 #include "fade.h"
 #include "pallet.h"
@@ -39,10 +40,10 @@ s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
 extern s16 gSineTable[];
-extern u16 gBg0Cnt;
-extern u16 gBg1Cnt;
-extern u16 gBg2Cnt;
-extern u16 gBg3Cnt;
+
+
+
+
 
 typedef struct BgAffineSrcData {
     s32 texX;
@@ -65,31 +66,31 @@ typedef struct BgAffineDstData {
 
 void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
 
-extern u16 gBg0Cnt;
-extern u16 gBg1Cnt;
-extern u16 gBg2Cnt;
+
+
+
 
 extern u16 gSystemFlags;
 
-extern u16 gBldY;
-extern u16 gWin0H;
-extern u16 gWin1H;
-extern u16 gWin0V;
-extern u16 gWin1V;
-extern u16 gWinIn;
-extern u16 gWinOut;
-extern u16 gBg2PA;
-extern u16 gBg2PB;
-extern u16 gBg2PC;
-extern u16 gBg2PD;
-extern u32 gBg2X;
-extern u32 gBg2Y;
-extern u16 gBg3PA;
-extern u16 gBg3PB;
-extern u16 gBg3PC;
-extern u16 gBg3PD;
-extern u32 gBg3X;
-extern u32 gBg3Y;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 extern u16 gSystemFlags;
 

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "pooh_state.h"
+
 #include "chara_types.h"
 
 #include "prize_types.h"
@@ -101,8 +103,8 @@ extern u16 gUnk_0203C3C8;
 extern u16 gUnk_0203C3CC;
 extern u16 gUnk_0203C3D0;
 extern s8 gUnk_0203C3D4;
-extern u8 gUnk_0203C3D8;
-extern u32 gUnk_0203C3F0;
+
+
 
 extern u8 gWhitePalette[];
 extern const char gUnk_0961A9C8[];

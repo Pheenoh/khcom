@@ -1,6 +1,8 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "graphics_state.h"
+
 #include "hum_types.h"
 
 #include "card_api.h"
@@ -517,7 +519,7 @@ extern u8 gUnk_0813F22C[];
 extern u8 gUnk_0813F2CC[];
 extern u8 gUnk_0813FD58[];
 extern u8 gUnk_0813FDA8[];
-extern u16 gBldCnt;
+
 extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
 extern vu32 gFrameCounter;

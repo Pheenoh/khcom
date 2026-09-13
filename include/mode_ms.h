@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "graphics_state.h"
+
 #include "worldwarp_state.h"
 
 #include "obj.h"
@@ -154,8 +156,8 @@ extern u8 gUnk_09A3ABDC[];
 
 
 
-extern u16 gBldCnt;
-extern u16 gBldAlpha;
+
+
 
 
 

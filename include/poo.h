@@ -1,6 +1,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "pooh_state.h"
+
 #include "prize_types.h"
 
 #include "mode_sio2_api.h"
@@ -1105,8 +1107,8 @@ typedef struct PooPalStep {
 } PooPalStep;
 
 extern PooState gUnk_0203C470;
-extern u16 gUnk_0203C3E0;
-extern u16 gUnk_0203C3E4;
+
+
 extern PoohInteractionRegistry* gUnk_0203C4B4;
 extern const s32 gUnk_096FDA74[];
 extern u16* gUnk_0203C504;
@@ -1119,25 +1121,25 @@ extern u8 gUnk_097B8258[];
 extern u8 gUnk_0983BC18[];
 extern const PooBgSet gUnk_096FDA8C[];
 extern const PooPalStep gUnk_096FDB40[];
-extern PooPos* gUnk_0203C3EC;
-extern u32 gUnk_0203C3F4;
+
+
 extern PooSpot gUnk_096FC05C[];
 extern PooSpot gUnk_096FC2F0[];
-extern s32 gUnk_0203C400;
-extern s32 gUnk_0203C404;
+
+
 extern TaskDesc gTaskDescPooShadowscale;
-extern u16 gUnk_0203C40C;
-extern PooNode* gUnk_0203C410;
-extern void* gUnk_0203C414;
-extern u16 gUnk_0203C3F8;
+
+
+
+
 extern u16* gUnk_09EF4208[];
 extern u16* gUnk_09EF4448[];
 extern u16* gUnk_09EF4688[];
-extern s32 gUnk_0203C3FC;
-extern s32 gUnk_0203C408;
-extern s32 gUnk_0203C3DC;
-extern s32 gUnk_0203C3E8;
-extern u32 gUnk_0203C3F0;
+
+
+
+
+
 extern u8 gUnk_096FD3E8[];
 extern const s32 gUnk_096FD43C[];
 extern TaskDesc gTaskDescPooPile;
@@ -1614,7 +1616,7 @@ void func_080D2E70(u16 a, u8 b);
 u16 func_080D2EB8(void);
 void func_080D2F10(u8 a);
 
-extern u8 gUnk_0203C3D8;
+
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);
 

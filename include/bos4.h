@@ -1,6 +1,10 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "boss_status_state.h"
+
+#include "graphics_state.h"
+
 #include "battle_bg_types.h"
 
 #include "map_types.h"
@@ -200,7 +204,7 @@ typedef struct UrsulaThunderWork {
     s32 unk_00C;
 } UrsulaThunderWork;
 
-extern u16 gDispCnt;
+
 
 void func_080DD69C(s32 a);
 
@@ -368,7 +372,7 @@ extern const u8 gUnk_09EF69EE[];
 
 
 
-extern u16 gUnk_0203C560;
+
 
 typedef struct UnkStruct_080DF640 {
     u16 unk_00;
@@ -378,18 +382,18 @@ typedef struct UnkStruct_080DF640 {
 extern const u8 gUnk_0984D0CC[][4];
 extern vu32 gFrameCounter;
 
-extern u8 gUnk_0203C578;
-extern u8 gUnk_0203C56C;
+
+
 
 
 void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg);
-extern s32 gUnk_0203C580;
-extern u8 gUnk_0203C564;
-extern u8 gUnk_0203C574;
+
+
+
 extern u8 gUnk_096FE0E8[];
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
-extern u8 gUnk_0203C584;
+
 extern const u8 gUnk_0984D134[][8];
 extern u8 gUnk_09799CBA[];
 extern u8 gUnk_0984AF78[];
@@ -449,7 +453,7 @@ typedef struct UrsulaBorderWork {
 
 void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg);
 u8 task_bos_ursula_map_1(UrsulaMapWork* work);
-extern u8 gUnk_0203C57C;
+
 
 typedef struct BoogieSakuWork {
     u32 tiles;
@@ -637,19 +641,19 @@ extern u8 gUnk_09EF6824[];
 extern u8 gUnk_0979A426[];
 extern u8 gUnk_09EF6844[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
-extern u16 gUnk_0203C554;
+
 extern u8 gTaskDescBosBoogieExplosiondice[];
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work);
 u32 func_080D9A90(void);
 u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d);
 void func_080D9B6C(BoogieDiceWork* work);
-extern u8 gUnk_0203C568;
+
 extern u8 gUnk_09EF6788[];
 extern u8 gUnk_09796EAA[];
 extern u8 gUnk_09EF6798[];
 u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
-extern u8 gUnk_0203C570;
+
 extern UnkStruct_096FE034 gUnk_096FE260;
 extern u8 gTaskDescBosUrsulaBubble[];
 
@@ -659,7 +663,7 @@ extern u8 gUnk_0984AFD8[];
 extern u8 gUnk_09EF684C[];
 extern u8 gUnk_09EF6848[];
 
-extern BtlObj* gUnk_0203C55C;
+
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg);
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
 extern const u8 gUnk_09EF69E0[];
@@ -683,10 +687,10 @@ extern UnkStruct_096FDFC4 gUnk_096FDFC4;
 extern UnkStruct_096FDFC4 gUnk_096FE0C0;
 extern UnkStruct_096FDFC4 gUnk_096FDF54;
 u8 task_bos_boogie_map_1(void);
-extern u16 gWin0H;
-extern u16 gWin0V;
-extern u16 gWinIn;
-extern u16 gWinOut;
+
+
+
+
 void task_bos_boogie_dice_2(BoogieDiceWork* work);
 u8 func_080D9B28(BoogieDiceWork* work);
 void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg);
@@ -708,7 +712,7 @@ extern u8 gTaskDescBosUrsulaThunder[];
 extern UnkStruct_096FE034 gUnk_096FE2C0;
 void func_080DA42C(BoogieDiceWork* work);
 extern u8 gUnk_096FDF7C[];
-extern u8 gUnk_0203C558;
+
 void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);
 extern u8 gUnk_096FE114[];
 extern u8 gUnk_09799FB0[];

@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
+#include "graphics_state.h"
+
 #include "card_api.h"
 
 #include "obj_api.h"
@@ -90,7 +92,7 @@ typedef struct BtlHpothWork {
     u32 unk_68;
 } BtlHpothWork;
 
-extern u16 gDispCnt;
+
 
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1FCBC[];

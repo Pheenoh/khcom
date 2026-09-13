@@ -1,6 +1,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "boss_status_state.h"
+
 #include "card_ui_types.h"
 
 #include "card_api.h"
@@ -309,8 +311,8 @@ extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];
 extern u8* gStockMesDispWork;
-extern u8 gUnk_0203C564;
-extern BtlObj* gUnk_0203C55C;
+
+
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
@@ -320,12 +322,12 @@ extern TaskDesc gTaskDescBosBoogieMap;
 extern TaskDesc gTaskDescBosBoogieSaku;
 extern TaskDesc gTaskDescBosBoogieMapanime;
 extern TaskDesc gTaskDescBosShadow;
-extern u8 gUnk_0203C558;
-extern u16 gUnk_0203C554;
-extern u16 gUnk_0203C560;
-extern u8 gUnk_0203C568;
-extern u8 gUnk_0203C56C;
-extern u8 gUnk_0203C570;
+
+
+
+
+
+
 extern TaskDesc gTaskDescBosBoogieDisk;
 extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;

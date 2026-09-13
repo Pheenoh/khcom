@@ -1,6 +1,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "graphics_state.h"
+
 #include "obj.h"
 
 #include "msg_types.h"
@@ -379,8 +381,8 @@ extern s32 gUnk_09033CB8[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
 extern s32 gUnk_09033CF0[];
-extern u16 gBldCnt;
-extern vu16 gBldAlpha;
+
+
 extern u32 gFrameCounter;
 extern u8 gUnk_09614718[];
 extern u8 gUnk_09614738[];
