@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09A4FF45
 data_09A4FF45:
-	.incbin "roms/B8CE.gba", 0x1a4ff45, 0x1783
+	.incbin "assets/us/09A4FF45-09A516C8.bin"

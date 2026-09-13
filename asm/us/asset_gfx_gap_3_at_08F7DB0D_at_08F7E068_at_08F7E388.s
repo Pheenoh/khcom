@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_08F7E388
 data_08F7E388:
-	.incbin "roms/B8CE.gba", 0xf7e388, 0x38
+	.incbin "assets/us/08F7E388-08F7E3C0.bin"

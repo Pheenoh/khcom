@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_090359FA
 data_090359FA:
-	.incbin "roms/B8CE.gba", 0x10359fa, 0x752
+	.incbin "assets/us/090359FA-0903614C.bin"

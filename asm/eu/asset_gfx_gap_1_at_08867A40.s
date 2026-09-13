@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_08867A40
 data_08867A40:
-	.incbin "roms/B8CP.gba", 0x867a40, 0x228
+	.incbin "assets/eu/08867A40-08867C68.bin"

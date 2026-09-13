@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09037FAB
 data_09037FAB:
-	.incbin "roms/B8CE.gba", 0x1037fab, 0x39
+	.incbin "assets/us/09037FAB-09037FE4.bin"

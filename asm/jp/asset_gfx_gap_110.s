@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_096B5F0B
 data_096B5F0B:
-	.incbin "roms/B8CJ.gba", 0x16b5f0b, 0x21
+	.incbin "assets/jp/096B5F0B-096B5F2C.bin"

@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09033CCF
 data_09033CCF:
-	.incbin "roms/B8CE.gba", 0x1033ccf, 0x31
+	.incbin "assets/us/09033CCF-09033D00.bin"

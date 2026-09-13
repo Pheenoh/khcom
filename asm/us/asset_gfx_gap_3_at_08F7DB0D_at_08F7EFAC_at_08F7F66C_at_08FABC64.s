@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_08FABC64
 data_08FABC64:
-	.incbin "roms/B8CE.gba", 0xfabc64, 0x1a20
+	.incbin "assets/us/08FABC64-08FAD684.bin"

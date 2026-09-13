@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_08F71570
 data_08F71570:
-	.incbin "roms/B8CJ.gba", 0xf71570, 0x84
+	.incbin "assets/jp/08F71570-08F715F4.bin"

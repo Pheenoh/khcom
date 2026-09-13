@@ -15,7 +15,7 @@ INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
 
 
-def asm_file_deps(path):
+def asm_file_deps(path, missing):
     seen = set()
     queued = set()
     out = []
@@ -34,7 +34,11 @@ def asm_file_deps(path):
         for m in ASM_FILE_REF_RE.finditer(body):
             ref = Path(m.group(1))
             rkey = str(ref)
-            if not ref.exists() or rkey in queued:
+            if rkey in queued:
+                continue
+            if not ref.exists():
+                if rkey.startswith("assets/"):
+                    missing.add(rkey)
                 continue
             queued.add(rkey)
             out.append(rkey)
@@ -205,18 +209,16 @@ version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
 
-baserom = f"roms/{code}.gba"
 build_dir = f"build/{version}-nonmatching" if args.non_matching else f"build/{version}"
 name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
+verified = f"{build_dir}/verified.gba"
+assets_stamp = f"assets/{version}/.stamp"
 mapfile = f"{build_dir}/{name}.map"
 ldscript = f"{build_dir}/ldscript.ld"
 
 report_python = ".venv/bin/python3" if Path(".venv/bin/python3").exists() else "python3"
-
-if not Path(baserom).exists():
-    print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
 symbols_file = Path(f"config/{version}/symbols.txt")
 symbols = []
@@ -229,7 +231,7 @@ if symbols_file.exists():
         symbols.append((name, int(addr, 16)))
 
 regional_files = sorted(Path("config").glob("*_data.json"))
-regional = load_sidecars("config", {version: Path(baserom).read_bytes()} if regional_files and Path(baserom).exists() else {})
+regional = load_sidecars("config")
 regional_plan = regional["regions"][version]
 symbols.extend(asset_symbols(regional_plan, symbols))
 regional_sections = {(placement["unit"], placement["section"]): placement
@@ -268,6 +270,38 @@ for line in units_file.read_text().splitlines():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
     units.append((src, obj, flags, section))
 
+headers = sorted(str(p) for p in Path("include").glob("*.h"))
+asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
+missing_assets = set()
+edges = []
+emitted = set()
+for src, obj, flags, _section in units:
+    if src is None or obj in emitted:
+        continue
+    emitted.add(obj)
+    rule = "cc" if src.suffix == ".c" else "as"
+    variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
+    deps = []
+    if rule == "as":
+        deps += asm_includes
+        deps.extend(asm_file_deps(src, missing_assets))
+    if rule == "cc":
+        deps += headers
+        for m in INCLUDE_ASM_RE.finditer(src.read_text()):
+            dep = f"asm/{version}/nonmatchings/{m.group(1)}"
+            if Path(dep).exists():
+                deps.append(dep)
+                deps.extend(asm_file_deps(dep, missing_assets))
+    if any(dep.startswith("assets/") for dep in deps):
+        deps.append(assets_stamp)
+    edges.append((obj, rule, src, deps, variables))
+if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
+    missing_assets.add(assets_stamp)
+if missing_assets:
+    first = sorted(missing_assets)[0]
+    sys.exit(f"error: {len(missing_assets)} extracted asset files for {version} are missing (first: {first});"
+             f" run python3 tools/extract_assets.py {version}")
+
 validate_active_sections(regional_plan,
                          [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
                          managed_placements(regional))
@@ -296,9 +330,6 @@ with open(ldscript, "w") as f:
         for obj in bss_members:
             f.write(f"        {obj}(.bss);\n")
         f.write("    }\n")
-    # Only place a unit this version actually links. EU builds from a whole-ROM
-    # incbin and has no src/*.o at all, so an unconditional placement makes ld
-    # fail on a missing object.
     linked = {o for _s, o, _f, _sec in units}
     unit_bss = {}
     for obj, addr in UNIT_BSS.items():
@@ -385,36 +416,21 @@ with out.open("w") as f:
     )
     n.rule(
         "check",
-        command=f"python3 -c \"import hashlib,sys; sys.exit(hashlib.sha1(open('{rom}','rb').read()).hexdigest() != '{sha1}')\" && touch $out",
+        command=f"python3 -c \"import hashlib,sys; sys.exit(hashlib.sha1(open('{rom}','rb').read()).hexdigest() != '{sha1}')\""
+                f" && cp {rom} {verified}"
+                + (f" && {report_python} tools/regional_data.py {version} --rom {verified} --binutils-prefix {prefix}"
+                   if regional_files else "")
+                + " && touch $out",
         description=f"CHECK {rom}",
     )
     n.newline()
 
-    headers = sorted(str(p) for p in Path("include").glob("*.h"))
-    asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
     objs = []
     for path, member, obj in archives:
         n.build(obj, "arx", implicit=[path],
                 variables={"archive": path, "member": member})
         objs.append(obj)
-    emitted = set()
-    for src, obj, flags, _section in units:
-        if src is None or obj in emitted:
-            continue
-        emitted.add(obj)
-        rule = "cc" if src.suffix == ".c" else "as"
-        variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
-        deps = [baserom]
-        if rule == "as":
-            deps += asm_includes
-            deps.extend(asm_file_deps(src))
-        if rule == "cc":
-            deps += headers
-            for m in INCLUDE_ASM_RE.finditer(src.read_text()):
-                dep = f"asm/{version}/nonmatchings/{m.group(1)}"
-                if Path(dep).exists():
-                    deps.append(dep)
-                    deps.extend(asm_file_deps(dep))
+    for obj, rule, src, deps, variables in edges:
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()
@@ -423,13 +439,13 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript] + (["tools/regional_data.py", "tools/rom_data_evidence.py", baserom]
+        implicit=[ldscript] + (["tools/regional_data.py", "tools/rom_data_evidence.py"]
                               + [str(path) for path in regional_files] if regional_files else []),
         variables={"ldscript": ldscript, "map": mapfile},
     )
     n.build(rom, "rom", elf, implicit=["tools/gbafix.py"])
     if not args.non_matching:
-        n.build(f"{build_dir}/ok", "check", rom)
+        n.build(f"{build_dir}/ok", "check", rom, implicit_outputs=[verified])
     n.newline()
 
     if args.non_matching:

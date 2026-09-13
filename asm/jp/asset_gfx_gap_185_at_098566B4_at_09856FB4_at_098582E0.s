@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_0980CDF4
 data_0980CDF4:
-	.incbin "roms/B8CJ.gba", 0x180cdf4, 0x139c64
+	.incbin "assets/jp/0980CDF4-09946A58.bin"

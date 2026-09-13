@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_0813C299
 data_0813C299:
-	.incbin "roms/B8CE.gba", 0x13c299, 0x3
+	.incbin "assets/us/0813C299-0813C29C.bin"

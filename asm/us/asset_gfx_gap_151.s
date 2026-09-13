@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_096FE13C
 data_096FE13C:
-	.incbin "roms/B8CE.gba", 0x16fe13c, 0x30
+	.incbin "assets/us/096FE13C-096FE16C.bin"

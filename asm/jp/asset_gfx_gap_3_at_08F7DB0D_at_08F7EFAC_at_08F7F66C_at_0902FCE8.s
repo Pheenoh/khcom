@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09002FAC
 data_09002FAC:
-	.incbin "roms/B8CJ.gba", 0x1002fac, 0x279c
+	.incbin "assets/jp/09002FAC-09005748.bin"

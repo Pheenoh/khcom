@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09A4CADC
 data_09A4CADC:
-	.incbin "roms/B8CE.gba", 0x1a4cadc, 0x460
+	.incbin "assets/us/09A4CADC-09A4CF3C.bin"

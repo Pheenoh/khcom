@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09D46B2C
 data_09D46B2C:
-	.incbin "roms/B8CJ.gba", 0x1d46b2c, 0x1fec
+	.incbin "assets/jp/09D46B2C-09D48B18.bin"

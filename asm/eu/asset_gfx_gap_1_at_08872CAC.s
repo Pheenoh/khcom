@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_08872CAC
 data_08872CAC:
-	.incbin "roms/B8CP.gba", 0x872cac, 0x138
+	.incbin "assets/eu/08872CAC-08872DE4.bin"

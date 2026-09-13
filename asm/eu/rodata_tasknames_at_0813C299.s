@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_0888A76D
 data_0888A76D:
-	.incbin "roms/B8CP.gba", 0x88a76d, 0x3
+	.incbin "assets/eu/0888A76D-0888A770.bin"

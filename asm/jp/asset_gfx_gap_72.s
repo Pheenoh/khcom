@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_095D2743
 data_095D2743:
-	.incbin "roms/B8CJ.gba", 0x15d2743, 0x21
+	.incbin "assets/jp/095D2743-095D2764.bin"

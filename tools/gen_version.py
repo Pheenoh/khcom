@@ -28,6 +28,7 @@ from pathlib import Path
 from rom_data_evidence import data_symbol_map, load_evidence
 from movie_assets import apply_movie_regions, load_movie_assets
 from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_opaque_function_modes, trace_literal_loads
+import baserom
 from regional_data import asset_symbols, load_sidecars, managed_asset_names, managed_placements, merge_placements, placement_overrides
 
 ROM_BASE = 0x08000000
@@ -69,18 +70,22 @@ def validate_transform_veneers(rom, address, transform):
     return size
 
 
-def blob_source(code, lo, hi, data):
+def asset(ver, lo, hi):
+    return f"assets/{ver}/{lo:08X}-{hi:08X}.bin"
+
+
+def blob_source(ver, lo, hi, data):
     head = f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
     names = veneer_labels(data)
 
     if not names:
-        return head + f'\t.incbin "roms/{code}.gba", {lo - ROM_BASE:#x}, {hi - lo:#x}\n'
+        return head + f'\t.incbin "{asset(ver, lo, hi)}"\n'
     body = ""
 
     for i, name in enumerate(names):
         at = lo + i * VENEER_SIZE
         body += (f'\t.thumb_func\n\t.global {name}\n{name}:\n'
-                 f'\t.incbin "roms/{code}.gba", {at - ROM_BASE:#x}, {VENEER_SIZE:#x}\n')
+                 f'\t.incbin "{asset(ver, at, at + VENEER_SIZE)}"\n')
     return head + body
 
 TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
@@ -3103,7 +3108,7 @@ THUMB = """.syntax unified
 \t.thumb_func
 \t.type {name}, %function
 {name}:
-\t.incbin "roms/{code}.gba", {off:#x}, {size:#x}
+\t.incbin "{asset}"
 .syntax divided
 """
 
@@ -3111,7 +3116,7 @@ DATA = """.syntax unified
 	.text
 {align}\t.global {name}
 {name}:
-\t.incbin "roms/{code}.gba", {off:#x}, {size:#x}
+\t.incbin "{asset}"
 .syntax divided
 """
 
@@ -3120,7 +3125,7 @@ PART = """{align}	.global {name}
 	.thumb_func
 	.type {name}, %function
 {name}:
-	.incbin "roms/{code}.gba", {off:#x}, {size:#x}
+	.incbin "{asset}"
 """
 
 EMPTY = """.syntax unified
@@ -3412,10 +3417,10 @@ def main():
     p.add_argument("code")
     p.add_argument("-q", "--quiet", action="store_true")
     args = p.parse_args()
-    ver, code = args.version, args.code
+    ver = args.version
 
-    us = Path("roms/B8CE.gba").read_bytes()
-    ot = Path(f"roms/{code}.gba").read_bytes()
+    us = baserom.read("us", purpose="gen_version.py")
+    ot = baserom.read(ver, purpose="gen_version.py")
     regional = load_sidecars("config", {"us": us, ver: ot})
     regional_plan = regional["regions"][ver]
     regional_managed = managed_placements(regional)
@@ -3525,7 +3530,7 @@ def main():
                             + [at + gap[0]])
                     body = "".join(
                         PART.format(name=name if lo == at else f"{ver}_{lo:08X}",
-                                    code=code, off=lo - ROM_BASE, size=hi - lo,
+                                    asset=asset(ver, lo, hi),
                                     align="\t.align 2, 0\n" if lo % 4 == 0 else "")
                         for lo, hi in zip(cuts, cuts[1:]) if hi > lo)
                     (d / f"{name}.s").write_text(
@@ -3551,7 +3556,7 @@ def main():
                 if r[5] == 0:
                     tmpl = EMPTY
                 (d / f"{name}.s").write_text(
-                    tmpl.format(name=name, code=code, off=r[3] - ROM_BASE, size=r[5],
+                    tmpl.format(name=name, asset=asset(ver, r[3], r[3] + r[5]),
                                 align="\t.align 2, 0\n" if r[3] % 4 == 0 and r[5] else ""))
             kept.add(d / f"{name}.s")
             wrote += 1
@@ -3577,8 +3582,7 @@ def main():
             nm = f"{ver}_{at:08X}.s"
             cuts = [at] + [x for x in extra_labels if at < x < at + size] + [at + size]
             body = "".join(
-                PART.format(name=f"{ver}_{lo:08X}", code=code, off=lo - ROM_BASE,
-                            size=hi - lo,
+                PART.format(name=f"{ver}_{lo:08X}", asset=asset(ver, lo, hi),
                             align="\t.align 2, 0\n" if lo % 4 == 0 else "")
                 for lo, hi in zip(cuts, cuts[1:]) if hi > lo)
             Path(f"asm/{ver}/{nm}").write_text(
@@ -3671,14 +3675,12 @@ def main():
     if moved:
         print(f"  units reordered: {len(moved)}")
 
-    usrom = Path("roms/B8CE.gba").read_bytes()
-    otrom = Path(f"roms/{code}.gba").read_bytes()
-    pad = len(otrom)
+    pad = len(ot)
 
-    while pad > 0 and otrom[pad - 1] == 0xFF:
+    while pad > 0 and ot[pad - 1] == 0xFF:
         pad -= 1
     found = []
-    incbin = re.compile(r'\.incbin\s+"[^"]+",\s*(0x[0-9a-fA-F]+),\s*(0x[0-9a-fA-F]+)')
+    incbin = re.compile(r'\.incbin\s+"assets/us/([0-9A-F]{8})-([0-9A-F]{8})\.bin"')
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
         if not t.endswith(".s(.rodata)"):
@@ -3689,8 +3691,8 @@ def main():
             continue
         m = incbin.search(src.read_text())
         if not m:
-            continue
-        off = int(m.group(1), 16)
+            raise SystemExit(f"error: {src} is a US data unit with no assets/us incbin to anchor its offset")
+        off = int(m.group(1), 16) - ROM_BASE
         base = nm[:-2]
 
         if base.startswith(("asset_us_", "padding_us_")):
@@ -3698,11 +3700,11 @@ def main():
         if base == "padding":
             found.append((ROM_BASE + pad, base, "run"))
             continue
-        pat = usrom[off:off + 64]
-        i = otrom.find(pat)
+        pat = us[off:off + 64]
+        i = ot.find(pat)
         how = "content"
 
-        if i < 0 or otrom.find(pat, i + 1) >= 0:
+        if i < 0 or ot.find(pat, i + 1) >= 0:
             i, how = tr(ROM_BASE + off)[0], "interp"
 
             if i is None:
@@ -3711,7 +3713,7 @@ def main():
         found.append((ROM_BASE + i, base, how))
     found.extend((address, name, "explicit")
                  for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
-    found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.json", ver, otrom))
+    found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.json", ver, ot))
     regions = []
 
     for here, base, how in sorted(found, key=lambda item: (item[0], item[2] != "explicit", item[1])):
@@ -3756,7 +3758,7 @@ def main():
 
     for nm, lo, hi in bounds:
         Path(f"asm/{ver}/{nm}").write_text(
-            blob_source(code, lo, hi, otrom[lo - ROM_BASE:hi - ROM_BASE]))
+            blob_source(ver, lo, hi, ot[lo - ROM_BASE:hi - ROM_BASE]))
     fresh = {nm for nm, _lo, _hi in bounds}
     for old in Path(f"asm/{ver}").glob("*.s"):
         if old.name not in fresh and ".global data_" in old.read_text():

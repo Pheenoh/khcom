@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_0907C174
 data_0907C174:
-	.incbin "roms/B8CP.gba", 0x107c174, 0xf14
+	.incbin "assets/eu/0907C174-0907D088.bin"

@@ -394,15 +394,16 @@ def main():
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--binutils-prefix', default='arm-none-eabi-')
+    parser.add_argument('--rom', type=Path)
     args = parser.parse_args()
     root, version = args.root, args.version
     paths = [root / args.manifest] if args.manifest else sorted((root / 'config').glob('*_data.json'))
     if not any(path.exists() for path in paths):
         print(f'{version}: no regional data contracts')
         return
-    rom = (root / 'roms' / (VERSIONS[version] + '.gba')).read_bytes()
-    document = (load_sidecar(root / args.manifest, {version: rom}) if args.manifest
-                else load_sidecars(root / 'config', {version: rom}))
+    roms = {version: args.rom.read_bytes()} if args.rom else {}
+    document = (load_sidecar(root / args.manifest, roms) if args.manifest
+                else load_sidecars(root / 'config', roms))
     plan = document['regions'][version]
     if not plan['placements'] and not plan['assets']:
         print(f'{version}: no regional data contracts')

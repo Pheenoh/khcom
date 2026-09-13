@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09947BFA
 data_09947BFA:
-	.incbin "roms/B8CJ.gba", 0x1947bfa, 0x2
+	.incbin "assets/jp/09947BFA-09947BFC.bin"

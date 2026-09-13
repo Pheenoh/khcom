@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_090B59BC
 data_090B59BC:
-	.incbin "roms/B8CP.gba", 0x10b59bc, 0x9a0
+	.incbin "assets/eu/090B59BC-090B635C.bin"

@@ -1,4 +1,4 @@
 	.section .rodata
 	.global data_09A049CD
 data_09A049CD:
-	.incbin "roms/B8CJ.gba", 0x1a049cd, 0x1b8b
+	.incbin "assets/jp/09A049CD-09A06558.bin"
