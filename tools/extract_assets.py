@@ -273,7 +273,7 @@ def main():
                 print(f"{version}: {'FAILED' if problems else 'OK'}")
                 failed |= bool(problems)
             return 1 if failed else 0
-        chosen = args.versions or [v for v in known if baserom.load(v)[0] is not None]
+        chosen = args.versions or [v for v in known if any(p.exists() for p in baserom.candidates(v))]
         if not chosen:
             codes = ", ".join(f"roms/{code}.gba" for code, _sha1 in known.values())
             raise AssetError(f"no ROM found; put at least one of {codes} in place")
