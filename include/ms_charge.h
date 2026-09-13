@@ -2,6 +2,7 @@
 #define GUARD_MS_CHARGE_H
 
 #include "card_types.h"
+#include "card_state.h"
 
 #include "ms_types.h"
 
@@ -27,8 +28,6 @@
 
 
 
-extern u16 gCardCollection[];
-extern u16 gCardCount;
 extern s16 gSineTable[];
 extern CardBack gUnk_08F709B0[];
 extern CardDef gCardDefs[];

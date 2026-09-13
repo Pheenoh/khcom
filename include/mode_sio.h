@@ -16,6 +16,7 @@
 #include "engine_math.h"
 
 #include "card_deck.h"
+#include "card_state.h"
 
 #include "text.h"
 #include "fade.h"
@@ -291,8 +292,6 @@ typedef struct SioBtlOptionWork {
 } SioBtlOptionWork;
 
 extern u16 gUnk_02039810[4][2];
-extern u16 gCardCollection[];
-extern Deck gDecks[];
 extern u16 gUnk_02039B58[];
 extern u8 gUnk_02039B60;
 extern s8 gUnk_0203C374;

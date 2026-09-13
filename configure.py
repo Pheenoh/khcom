@@ -73,6 +73,7 @@ UNIT_BSS = {
     "src/engine.o": 0x0203401C,
     "src/mode_ms.o": {"us": 0x020358C8, "jp": 0x02035828, "eu": 0x02035ED8},
     "src/card.o": {"us": 0x02034AA4, "jp": 0x02034A04, "eu": 0x02034AC0},
+    "src/card_state.o": {"us": 0x02039DD8, "jp": 0x02039D48, "eu": 0x0203A3E8},
     "src/util.o": 0x0203407C,
     "src/save.o": 0x02034088,
     "src/mode_debug.o": {"us": 0x02034898, "jp": 0x02034898, "eu": 0x020348A0},
