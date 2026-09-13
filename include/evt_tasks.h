@@ -8,6 +8,9 @@ struct EvtObjParam;
 struct EvtObjWork;
 struct EvtShadowWork;
 
+extern const char gTaskNameEvtObj[];
+extern const char gTaskNameEvtShadow[];
+
 void task_evt_obj_0(struct EvtObjWork* work, struct EvtObjParam* param);
 s32 task_evt_obj_1(struct EvtObjWork* work);
 void task_evt_obj_2(struct EvtObjWork* work);

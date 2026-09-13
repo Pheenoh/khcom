@@ -43,8 +43,6 @@ extern u8 gUnk_09EDF774[];
 extern Mode gModeChkbtl;
 extern Mode gModeChkobj;
 extern Mode gModeChksnd;
-extern Mode gModeChkeff;
-extern Mode gModeDebflag;
 extern Mode gModeMovie;
 extern Mode gModeEventselect;
 extern Mode gModeSioBattle;

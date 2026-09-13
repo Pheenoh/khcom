@@ -1579,7 +1579,6 @@ extern Mode gModeWorldinspect;
 extern Mode gModeJiminy;
 extern Mode gModeMsTop;
 extern Mode gModeMovie;
-extern Mode gModeDebflag;
 extern Mode gModeTitle;
 void RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);

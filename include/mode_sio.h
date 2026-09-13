@@ -430,7 +430,6 @@ extern u8 gUnk_096FBE24[];
 extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
 extern void* gUnk_09EF1278[];
-extern Mode gModeVsbattle;
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
 extern void* gUnk_09EE8F48[];

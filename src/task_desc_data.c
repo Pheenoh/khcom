@@ -14,11 +14,6 @@
 #include "pc_tasks.h"
 #include "hum_tasks.h"
 
-extern const char gTaskNameEvtObj[];
-extern const char gTaskNameEvtShadow[];
-extern const char gTaskNameAcgtrans[];
-extern const char gTaskNameBtlLockon[];
-extern const char gTaskNameBtlArea[];
 extern const char gTaskNameBtlSora[];
 extern const char gTaskNameBtlRiku[];
 extern const char gTaskNameBtlMap[];

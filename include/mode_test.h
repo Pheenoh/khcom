@@ -202,7 +202,6 @@ extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern TaskDesc gTaskDescEventSeq;
 extern Mode gModeEventselect;
 extern Mode gModeBattle;
-extern Mode gModeDummy;
 extern Mode gModeWorldselect;
 extern Mode gModeTitle;
 extern Mode gModeCopyright1;

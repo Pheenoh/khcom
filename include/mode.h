@@ -18,6 +18,14 @@ void func_08060598(void);
 void func_080609A0(void);
 
 extern Mode gModeDebug;
+extern Mode gModeChkeff;
+extern Mode gModeDummy;
+extern Mode gModeDebflag;
+extern Mode gModeVsbattle;
+extern const char gModeNameChkeff[];
+extern const char gModeNameDummy[];
+extern const char gModeNameDebflag[];
+extern const char gModeNameVsbattle[];
 
 u8 IsModeStarted(void);
 void func_08001080(void);
