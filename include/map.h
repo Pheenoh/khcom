@@ -2,6 +2,8 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "map_room_data.h"
+
 #include "animation_resource_data.h"
 
 #include "map_transition_state.h"
@@ -244,7 +246,10 @@ typedef struct UnkStruct_09EF70D0 {
     u8 unk_0E[0x02];
     void* unk_10;
     u16 unk_14;
-    u8 unk_16[0x0E];
+    u8 unk_16[0x02];
+    void* unk_18;
+    void* unk_1C;
+    void* unk_20;
     UnkStruct_080E8864* unk_24;
     UnkStruct_080E8864* unk_28;
     void* unk_2C;
@@ -1247,7 +1252,6 @@ extern u8 gUnk_088B6560[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_08F68384[];
 extern const UnkStruct_0203C7B0 gUnk_0984D1F4[];
-extern UnkStruct_09EF70D0* gUnk_09EF70D0[];
 extern UnkStruct_09EF8370* gUnk_09EF8370[];
 extern UnkStruct_0984BC9C* gUnk_09EF83F8[];
 extern UnkStruct_080E7D80 gUnk_09857A2C[];

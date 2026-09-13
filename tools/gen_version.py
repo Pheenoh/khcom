@@ -1676,7 +1676,7 @@ def main():
                  for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
     regions = []
 
-    for here, base, how in sorted(found):
+    for here, base, how in sorted(found, key=lambda item: (item[0], item[2] != "explicit", item[1])):
         if regions and here <= regions[-1][0]:
             print(f"  data region {base} dropped, not monotone ({how})")
             continue

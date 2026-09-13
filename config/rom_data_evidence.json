@@ -3186,6 +3186,375 @@
         16,
         20
       ]
+    },
+    {
+      "name": "gUnk_09EF70D0",
+      "provenance": "map.c indexes this table by room theme, with 14 entries including the repeated initial theme at13; the following bytes are independently distinct scalar tile-classification data, not another room pointer.",
+      "us": "0x9ef70d0",
+      "targets": {
+        "jp": "0x9ece4bc",
+        "eu": "0x9f82740"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_0984D2D8",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x984d2d8",
+      "targets": {
+        "jp": "0x9801dec",
+        "eu": "0x9829cac"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_0984DFD8",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x984dfd8",
+      "targets": {
+        "jp": "0x9802aec",
+        "eu": "0x982a9ac"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_0984E734",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x984e734",
+      "targets": {
+        "jp": "0x9803248",
+        "eu": "0x982b108"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09850428",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9850428",
+      "targets": {
+        "jp": "0x9804f3c",
+        "eu": "0x982cdfc"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09856678",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9856678",
+      "targets": {
+        "jp": "0x980b18c",
+        "eu": "0x983304c"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_098535BC",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x98535bc",
+      "targets": {
+        "jp": "0x98080d0",
+        "eu": "0x982ff90"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_0985221C",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x985221c",
+      "targets": {
+        "jp": "0x9806d30",
+        "eu": "0x982ebf0"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09854258",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9854258",
+      "targets": {
+        "jp": "0x9808d6c",
+        "eu": "0x9830c2c"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09852F4C",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9852f4c",
+      "targets": {
+        "jp": "0x9807a60",
+        "eu": "0x982f920"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09850DF4",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9850df4",
+      "targets": {
+        "jp": "0x9805908",
+        "eu": "0x982d7c8"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09855FA8",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x9855fa8",
+      "targets": {
+        "jp": "0x980aabc",
+        "eu": "0x983297c"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_098552E8",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x98552e8",
+      "targets": {
+        "jp": "0x9809dfc",
+        "eu": "0x9831cbc"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_0984F694",
+      "provenance": "Canonical Map room record consumed through the independently indexed table gUnk_09EF70D0; 60-byte structure has eleven pointer roles and identical remaining scalar bytes across all regions.",
+      "layer": 1,
+      "us": "0x984f694",
+      "targets": {
+        "jp": "0x98041a8",
+        "eu": "0x982c068"
+      },
+      "size": 60,
+      "stride": 60,
+      "pointer_offsets": [
+        0,
+        8,
+        16,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52
+      ]
+    },
+    {
+      "name": "gUnk_09EEB204_glyphs",
+      "us": "0x09EEB204",
+      "targets": {
+        "jp": "0x09EC25F0",
+        "eu": "0x09F77318"
+      },
+      "size": 1024,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:1351,1710,2522; EU byte character domain at2101 and2176; matching one-piece glyph attributes for indices0..255"
+    },
+    {
+      "name": "gUnk_09EEC538_glyphs",
+      "us": "0x09EEC538",
+      "targets": {
+        "jp": "0x09EC3924",
+        "eu": "0x09F7771C"
+      },
+      "size": 180,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "msg.c:3480 EncodeSmallFontString maps digits,letters,punctuation through44; DrawSmallFontString at3707 indexes the result"
     }
   ]
 }

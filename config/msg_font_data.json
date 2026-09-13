@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "provenance": {
+    "fonts": "Consumer-bounded font glyph pointer arrays. EncodeSmallFontString supplies the 45 small glyphs; byte-oriented character indexing supplies the 256-entry lookup. Original regional literal pools establish bases; full pointed-to renderer sprite payloads match by glyph index."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB204",
+          "address": "0x09EEB204",
+          "size": 1024,
+          "sha256": "b676e081760b4698a54acb7f69972cd3bcc527e22e51576816e404904d11f446",
+          "objects": [
+            {
+              "name": "gUnk_09EEB204",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08064EF4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEC538",
+          "address": "0x09EEC538",
+          "size": 180,
+          "sha256": "eb6c241221c94bbbeb660df6c92e37e00afced50169c58d930cc13d64f9041c7",
+          "objects": [
+            {
+              "name": "gUnk_09EEC538",
+              "offset": 0,
+              "size": 180,
+              "consumer": [
+                "DrawSmallFontString"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB204",
+          "address": "0x09EC25F0",
+          "size": 1024,
+          "sha256": "cf3e5ec028d853a34355e4af8e4fc654d09eae27b5e1bd03c78d659bc8a56dce",
+          "objects": [
+            {
+              "name": "gUnk_09EEB204",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08064EF4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEC538",
+          "address": "0x09EC3924",
+          "size": 180,
+          "sha256": "252e9d1ec13d05222db4b7a65012381b06e1d6587e4da74ff3a1e32113e1df9c",
+          "objects": [
+            {
+              "name": "gUnk_09EEC538",
+              "offset": 0,
+              "size": 180,
+              "consumer": [
+                "DrawSmallFontString"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEB204",
+          "address": "0x09F77318",
+          "size": 1024,
+          "sha256": "20806b685102d8a1d323435fc310ed21f6d79b54d6306d487da0946b13e3a21d",
+          "objects": [
+            {
+              "name": "gUnk_09EEB204",
+              "offset": 0,
+              "size": 1024,
+              "consumer": [
+                "func_08064EF4"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_font_data.c",
+          "section": ".data_09EEC538",
+          "address": "0x09F7771C",
+          "size": 180,
+          "sha256": "ebcfed45b4b8bc7fee3e8a707665a92e21d5e1a3c6f1682e8cfffd4db4b41bce",
+          "objects": [
+            {
+              "name": "gUnk_09EEC538",
+              "offset": 0,
+              "size": 180,
+              "consumer": [
+                "DrawSmallFontString"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

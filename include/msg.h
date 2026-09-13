@@ -2,6 +2,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "msg_font_data.h"
+
 #include "animation_resource_data.h"
 
 #include "bg_animation_data.h"
@@ -364,11 +366,9 @@ extern u8 gUnk_09614758[];
 extern u8 gUnk_09614778[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_096147B8[];
-extern void* gUnk_09EEB204[];
 extern void* gUnk_09EEB608[];
 extern void* gUnk_09EEBA0C[];
 extern void* gUnk_09EEBE10[];
-extern void* gUnk_09EEC538[];
 extern s32 gUnk_09033D08[][2];
 extern s16 gSineTable[];
 extern s16 gUnk_09033D50[];
