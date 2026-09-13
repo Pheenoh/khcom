@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "worldinspect_resources.h"
+
 #include "graphics_state.h"
 
 #include "obj.h"
@@ -375,16 +377,11 @@ extern void* gUnk_020351C8[];
 extern void* gUnk_02035198[];
 extern AnimState gUnk_02035130;
 extern AnimState gUnk_02035150;
-extern u8 gUnk_020351F8[];
-extern u8 gUnk_020352C0[];
 extern u8 gUnk_0203511A;
 extern u8 gUnk_0999CF38[];
 extern u8 gUnk_0999CF54[];
 extern u8 gUnk_0999CF88[];
-extern void* gUnk_020354B8[];
-extern u8 gUnk_020354A0;
 extern u16 gUnk_020354C2;
-extern u8 gUnk_020352B8;
 extern u8 gUnk_09A3CC3C[];
 extern u8 gUnk_0999A394[];
 extern u8 gUnk_0999A350[];
@@ -400,8 +397,6 @@ typedef struct MdWorldNav {
 } MdWorldNav;
 
 extern MdWorldNav gUnk_09EF8FAC[];
-extern void* gUnk_020354A8[];
-extern void* gUnk_020354B0[];
 extern void* gUnk_02035168[];
 extern u8 gUnk_020354E0;
 extern s16 gUnk_02035118;
@@ -443,8 +438,6 @@ typedef struct MdMsg {
 
 extern MdMsg gUnk_09EF909C[];
 extern void* gUnk_09EE9138[];
-extern u8 gUnk_020351F8[];
-extern u8 gUnk_020352C0[];
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
 void func_080FC360(MdWork* work);

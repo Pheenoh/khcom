@@ -130,7 +130,6 @@ typedef struct {
 extern s16 gUnk_020350F8;
 extern s16 gUnk_020350FA;
 extern s16 gUnk_02035100[];
-extern u8 gUnk_020352B8;
 extern s16 gUnk_020354F0[];
 extern s16 gUnk_0203550A;
 extern s16 gUnk_020357A4;
@@ -184,14 +183,21 @@ u8 gUnk_02035150[0x18];
 void* gUnk_02035168[12];
 void* gUnk_02035198[12];
 void* gUnk_020351C8[12];
-u8 gUnk_020351F8[0xC8];
 #ifdef VERSION_EU
-u8 gUnkEu_020354B0[0xC0];
+TextSlot gUnk_020351F8[48] __attribute__((aligned(8)));
+#else
+TextSlot gUnk_020351F8[24] __attribute__((aligned(8)));
 #endif
-u8 gUnk_020352C0[0x200];
+u8 gUnk_020352B8;
 #ifdef VERSION_EU
-u8 gUnkEu_02035770[0x1E0];
+TextSlot gUnk_020352C0[120] __attribute__((aligned(8)));
+#else
+TextSlot gUnk_020352C0[60] __attribute__((aligned(8)));
 #endif
+u8 gUnk_020354A0;
+void* gUnk_020354A8[2] __attribute__((aligned(8)));
+void* gUnk_020354B0[2] __attribute__((aligned(8)));
+void* gUnk_020354B8[2] __attribute__((aligned(8)));
 s16 gUnk_020354C0;
 s16 gUnk_020354C2;
 s32 gUnk_020354C4;

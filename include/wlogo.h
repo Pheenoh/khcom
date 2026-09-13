@@ -1,6 +1,8 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "worldlogo_state.h"
+
 #include "obj.h"
 
 #include "chara_api.h"
@@ -464,10 +466,6 @@ typedef struct WlogoObjParam {
 } WlogoObjParam;
 
 extern s32 gUnk_0203AB38;
-extern s16 gUnk_0203AB3C;
-extern s16 gUnk_0203AB40;
-extern s16 gUnk_0203AB44;
-extern s16 gUnk_0203AB48;
 extern TaskDesc gTaskDescBosTmBody;
 extern TaskDesc gTaskDescBosTmFoot;
 extern TaskDesc gTaskDescBosTmArm;

@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "allmap_cursor_state.h"
+
 #include "obj.h"
 
 #include "field_state.h"
@@ -214,9 +216,6 @@ extern u16 gUnk_0203C534;
 extern void* gUnk_0203C504;
 extern u16 gUnk_0203C508;
 extern void* gUnk_0203C530;
-extern u8 gUnk_0203C538;
-extern s16 gUnk_0203C53C;
-extern s16 gUnk_0203C540;
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
 extern u8 gUnk_08125E24[];

@@ -64,6 +64,12 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/allmap_cursor_state.o": {"us": 0x0203C538, "jp": 0x0203C4A8, "eu": 0x0203CB28},
+    "src/battle_field_state.o": {"us": 0x02039B9C, "jp": 0x02039B0C, "eu": 0x0203A1AC},
+    "src/chara_link_cursor.o": {"us": 0x0203BEB8, "jp": 0x0203BE28, "eu": 0x0203C488},
+    "src/worldlogo_state.o": {"us": 0x0203AB3C, "jp": 0x0203AAAC, "eu": 0x0203B110},
+    "src/sio_debug_state.o": {"us": 0x0203C3C4, "jp": 0x0203C334, "eu": 0x0203C9A0},
+    "src/title_background_state.o": {"us": 0x0203C544, "jp": 0x0203C4B4, "eu": 0x0203CB34},
     "src/chara_link_buffers.o": {"us": 0x0203BD10, "jp": 0x0203BC80, "eu": 0x0203C2E0},
     "src/boss_tm_state.o": {"us": 0x0203AC60, "jp": 0x0203ABD0, "eu": 0x0203B230},
     "src/boss_status_state.o": {"us": 0x0203C554, "jp": 0x0203C4C4, "eu": 0x0203CB44},

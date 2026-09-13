@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "title_background_state.h"
+
 #include "card_api.h"
 
 #include "title_api.h"
@@ -25,9 +27,6 @@
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
 
-extern s32 gTitleBgScale;
-extern s32 gTitleBgX;
-extern s32 gTitleBgY;
 extern u8 gUnk_09840798[];
 extern u8 gUnk_0983E398[];
 extern u8 gUnk_097D3658[];
