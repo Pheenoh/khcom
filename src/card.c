@@ -18306,51 +18306,49 @@ void func_080933D8(UnkStruct_080933D8* p) {
     }
 }
 
-#ifdef NON_MATCHING
-void func_08093434(u8* work) {
+void func_08093434(MapSelectWork* work) {
     MapcardWork* a;
     MapcardWork* b;
     MapcardWork* found;
     MapcardWork* p;
+    MapcardWork* c;
     s8 cnt;
 
-    if (work[0x298] != 0) {
+    if (work->unk_298 != 0) {
         return;
     }
 
-    if (*(MapcardWork**)&work[0x1EC] == 0) {
+    if (work->unk_1EC == 0) {
         return;
     }
 
     switch (GetKeysRepeat() & 0xF0) {
     case 16:
-        p = (MapcardWork*)ListPoolNext(&(*(MapcardWork**)&work[0x1EC])->unk_38);
+        p = (MapcardWork*)ListPoolNext(&work->unk_1EC->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
-            *(s32*)&work[0x264] = p->unk_4C;
-            work[0x28C] = 4;
-            (*(MapcardWork**)&work[0x1EC])->unk_6C &= 0xFEFF;
-            *(MapcardWork**)&work[0x1EC] = (MapcardWork*)ListPoolNext(
-                &(*(MapcardWork**)&work[0x1EC])->unk_38);
-            (*(MapcardWork**)&work[0x1EC])->unk_6C |= 0x100;
+            work->unk_264 = p->unk_4C;
+            work->unk_28C = 4;
+            work->unk_1EC->unk_6C &= 0xFEFF;
+            work->unk_1EC = (MapcardWork*)ListPoolNext(&work->unk_1EC->unk_38);
+            work->unk_1EC->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
         break;
     case 32:
-        p = ListPoolPrev(&(*(MapcardWork**)&work[0x1EC])->unk_38);
+        p = ListPoolPrev(&work->unk_1EC->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
-            *(s32*)&work[0x264] = p->unk_4C;
-            work[0x28C] = 4;
-            (*(MapcardWork**)&work[0x1EC])->unk_6C &= 0xFEFF;
-            *(MapcardWork**)&work[0x1EC] =
-                ListPoolPrev(&(*(MapcardWork**)&work[0x1EC])->unk_38);
-            (*(MapcardWork**)&work[0x1EC])->unk_6C |= 0x100;
+            work->unk_264 = p->unk_4C;
+            work->unk_28C = 4;
+            work->unk_1EC->unk_6C &= 0xFEFF;
+            work->unk_1EC = ListPoolPrev(&work->unk_1EC->unk_38);
+            work->unk_1EC->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
         break;
     case 128:
-        a = (MapcardWork*)ListPoolFirst(&work[0x14]);
+        a = (MapcardWork*)ListPoolFirst(&work->cards);
         b = 0;
         found = 0;
         cnt = 0;
@@ -18364,18 +18362,22 @@ void func_08093434(u8* work) {
             a = (MapcardWork*)ListPoolNext(&a->unk_38);
         }
 
-        while (b != 0 && (b->unk_6C & 1)) {
-            cnt++;
-            b = (MapcardWork*)ListPoolNext(&b->unk_38);
-        }
+counting:
+        if (b != 0) {
+            if (b->unk_6C & 1) {
+                cnt++;
+                b = (MapcardWork*)ListPoolNext(&b->unk_38);
+                goto counting;
+            }
 
-        if (b != 0 && cnt == 6) {
-            found = b;
+            if (cnt == 6) {
+                found = b;
+            }
         }
 
         if (found != 0) {
-            *(MapcardWork**)&work[0x1F4] = found;
-            work[0x298] = 1;
+            work->unk_1F4 = found;
+            work->unk_298 = 1;
 
             if (a != 0) {
                 do {
@@ -18392,7 +18394,7 @@ void func_08093434(u8* work) {
             m4aSongNumStart(121);
         }
 
-        b = (MapcardWork*)ListPoolFirst(&work[0x14]);
+        b = (MapcardWork*)ListPoolFirst(&work->cards);
 
         while (b != 0) {
             if (b->unk_4C == -0x6400) {
@@ -18403,7 +18405,7 @@ void func_08093434(u8* work) {
         }
         break;
     case 64:
-        a = (MapcardWork*)ListPoolFirst(&work[0x14]);
+        a = (MapcardWork*)ListPoolFirst(&work->cards);
         b = 0;
 
         while (a != 0) {
@@ -18416,24 +18418,26 @@ void func_08093434(u8* work) {
         }
 
         if (ListPoolPrev(&a->unk_38) != 0) {
-            *(MapcardWork**)&work[0x1F4] = ListPoolPrev(&a->unk_38);
-            work[0x298] = 2;
+            work->unk_1F4 = ListPoolPrev(&a->unk_38);
+            work->unk_298 = 2;
 
             if (b != 0) {
+                c = b;
+
                 do {
-                    if ((b->unk_6C & 1) == 0) {
+                    if ((c->unk_6C & 1) == 0) {
                         break;
                     }
 
                     b->unk_4C = -0x6400;
-                    b = (MapcardWork*)ListPoolNext(&b->unk_38);
+                    b = c = (MapcardWork*)ListPoolNext(&b->unk_38);
                 } while (b != 0);
             }
 
             m4aSongNumStart(121);
         }
 
-        b = (MapcardWork*)ListPoolFirst(&work[0x14]);
+        b = (MapcardWork*)ListPoolFirst(&work->cards);
 
         while (b != 0) {
             if (b->unk_4C == -0x6400) {
@@ -18445,15 +18449,13 @@ void func_08093434(u8* work) {
         break;
     }
 
-    ApproachValue((s32*)&work[0x258], *(s32*)&work[0x264], work[0x28C]);
+    ApproachValue(&work->unk_258, work->unk_264, work->unk_28C);
 
-    if (work[0x28C] != 0) {
-        work[0x28C]--;
+    if (work->unk_28C != 0) {
+        work->unk_28C--;
     }
 }
-#else
-INCLUDE_ASM("card/func_08093434.s");
-#endif
+
 void func_08093708(MapSelectWork* w) {
     MapcardWork* node;
     s8 i;
@@ -21434,13 +21436,15 @@ void SELMAP_EVKEY_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x00]);
 }
 
-#ifdef NON_MATCHING
-void func_08098014(u8* work, u8* a) {
+void func_08098014(u8* work, const u8* a) {
     s32 zero;
     MapCardDef* c;
     MapCardBackDef* b;
-    UnkStruct_080038C8* g;
+    MapCardBackDef* d;
+    CardBack* cb;
     u8 n;
+    s32 z;
+    u8 t;
 
     zero = 0;
     CpuSet((void*)&zero, work, 0x0500000D);
@@ -21450,10 +21454,10 @@ void func_08098014(u8* work, u8* a) {
         b = &gUnk_09EE4BF4[c->unk_1E];
         *(void**)&work[0x00] = LoadObjTiles(c->unk_00, c->unk_18);
         *(void**)&work[0x0C] = LoadObjPalette(c->unk_04, c->unk_1A);
-        *(void**)&work[0x18] = c->unk_08;
+        *(void**)&work[0x18] = *c->unk_08;
         *(void**)&work[0x04] = LoadObjTiles(b->unk_00, b->unk_14);
         *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = b->unk_08;
+        *(void**)&work[0x1C] = *b->unk_08;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x14] = 0;
         return;
@@ -21466,15 +21470,15 @@ void func_08098014(u8* work, u8* a) {
     *(s32*)&work[0x14] = 0;
 
     if (a[1] == 0) {
+        n = a[1];
         *(s32*)&work[0x04] = 0;
         *(s32*)&work[0x10] = 0;
         *(s32*)&work[0x1C] = 0;
-        n = a[1];
     } else {
-        b = &gUnk_09EE4BF4[a[1]];
-        *(void**)&work[0x04] = LoadObjTiles(b->unk_0C, *(u16*)&b->unk_18[0]);
-        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *b->unk_10;
+        d = &gUnk_09EE4BF4[a[1]];
+        *(void**)&work[0x04] = LoadObjTiles(d->unk_0C, *(u16*)&d->unk_18[0]);
+        *(void**)&work[0x10] = LoadObjPalette(d->unk_04, d->unk_16);
+        *(void**)&work[0x1C] = *d->unk_10;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x00] = 0;
         *(s32*)&work[0x0C] = 0;
@@ -21497,7 +21501,7 @@ void func_08098014(u8* work, u8* a) {
         }
     }
 
-    work[0x32] = n;
+    work[0x32] = (z = 0, n);
 
     if (a[2] == 0) {
         return;
@@ -21506,164 +21510,69 @@ void func_08098014(u8* work, u8* a) {
     switch (a[2]) {
     case 1:
         if (a[3] <= 9) {
-            g = AllocSpriteFrameTiles(0x100);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x100);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + a[3] * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x500, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         } else {
-            g = AllocSpriteFrameTiles(0x180);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x180);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 8) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x500, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         }
         break;
     case 2:
         if (a[3] <= 9) {
-            g = AllocSpriteFrameTiles(0x100);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x580, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x100);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + a[3] * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x580, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         } else {
-            g = AllocSpriteFrameTiles(0x180);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x580, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x180);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 8) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x580, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         }
         break;
     case 3:
         if (a[3] <= 9) {
-            g = AllocSpriteFrameTiles(0x100);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x600, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x100);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + a[3] * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x600, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         } else {
-            g = AllocSpriteFrameTiles(0x180);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x600, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x180);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 8) * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + 0x600, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         }
         break;
     case 4:
         if (a[3] <= 9) {
-            g = AllocSpriteFrameTiles(0x80);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[0], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[g->unk_06 * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x80);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[0], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + a[3] * 128, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
         } else {
-            g = AllocSpriteFrameTiles(0x100);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[2], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[g->unk_06 * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            *(void**)&work[0x08] = AllocSpriteFrameTiles(0x100);
+            UpdateSpriteFrameTiles(*(void**)&work[0x08], gUnk_09EF1198[2], gUnk_0950C478);
+            *(s32*)&work[0x20] = z;
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(*(UnkStruct_080038C8**)&work[0x08])->unk_06 * 32], 128);
+            RequestDma3Copy((*(UnkStruct_080038C8**)&work[0x08])->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[((*(UnkStruct_080038C8**)&work[0x08])->unk_06 + 4) * 32], 128);
         }
 
-        *(u16*)&work[0x2E] = a[3];
-        *(u16*)&work[0x30] = a[3];
-        break;
-    }
-
-    *(s32*)&work[0x00] = 0;
-    *(s32*)&work[0x0C] = 0;
-    *(s32*)&work[0x18] = 0;
-    *(s32*)&work[0x08] = 0;
-    *(s32*)&work[0x14] = 0;
-
-    if (a[1] == 0) {
-        *(s32*)&work[0x04] = 0;
-        *(s32*)&work[0x10] = 0;
-        *(s32*)&work[0x1C] = 0;
-        n = a[1];
-    } else {
-        b = &gUnk_09EE4BF4[a[1]];
-        *(void**)&work[0x04] = LoadObjTiles(b->unk_0C, *(u16*)&b->unk_18[0]);
-        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *b->unk_10;
-        *(s32*)&work[0x08] = 0;
-        *(s32*)&work[0x00] = 0;
-        *(s32*)&work[0x0C] = 0;
-        *(s32*)&work[0x18] = 0;
-        *(s32*)&work[0x14] = 0;
-
-        switch (a[1]) {
-        case 1:
-            n = 1;
-            break;
-        case 2:
-            n = 2;
-            break;
-        case 3:
-            n = 3;
-            break;
-        default:
-            n = a[1];
-            break;
-        }
-    }
-
-    work[0x32] = n;
-
-    if (a[2] == 0) {
-        return;
-    }
-
-    switch (a[2]) {
-    case 1:
-        if (a[3] <= 9) {
-            g = AllocSpriteFrameTiles(0x100);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
-        } else {
-            g = AllocSpriteFrameTiles(0x180);
-            *(void**)&work[0x08] = g;
-            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
-            *(s32*)&work[0x20] = 0;
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
-            g = *(UnkStruct_080038C8**)&work[0x08];
-            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
-        }
+        t = a[3];
+        *(u16*)&work[0x2E] = t;
+        *(u16*)&work[0x30] = t;
         break;
     }
 
@@ -21673,14 +21582,12 @@ void func_08098014(u8* work, u8* a) {
     *(void**)&work[0x14] = LoadObjPalette(gUnk_09618D38, 32);
 
     if (*(void**)&work[0x04] == 0) {
-        *(void**)&work[0x04] = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
+        cb = &gUnk_08F709B0[4];
+        *(void**)&work[0x04] = LoadObjTiles(cb->unk_10, 0x300);
         *(void**)&work[0x10] = LoadObjPalette(gUnk_09618D38, 32);
-        *(void**)&work[0x1C] = gUnk_08F709B0[4].unk_04;
+        *(void**)&work[0x1C] = cb->unk_04;
     }
 }
-#else
-INCLUDE_ASM("card/func_08098014.s");
-#endif
 
 void func_080984E4(UnkStruct_080984E4* w) {
     s32 z;
