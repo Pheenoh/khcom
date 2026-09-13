@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "animation_resource_data.h"
+
 #include "bg_animation_data.h"
 
 #include "worldinspect_resources.h"
@@ -318,8 +320,6 @@ extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
 extern u8 gUnk_09A3C99C[];
 extern u8 gUnk_099E367C[];
-extern u8 gUnk_09EF9BC0[];
-extern u8 gUnk_09EF9BB0[];
 void task_bos_md_dai_2(MdDaiWork* work);
 extern u8 gUnk_09999E0C[];
 extern u8 gUnk_09999E1C[];

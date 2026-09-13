@@ -1482,7 +1482,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     work->unk_010 = pos->unk_008 - 0x400;
     work->unk_014 = 0;
     if (flt->unk_004 == 1) {
-        tbl = gUnk_09EFAB68;
+        tbl = (u8*)gUnk_09EFAB68;
         ofs = (AnimGetGfxIndex(&work->anim) + 5) * 4;
         gfx = *(void**)((u32)tbl + ofs);
         if ((*gp)->unk_07C->unk_034 & 4) {
@@ -1502,7 +1502,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
             if ((*gp)->unk_07C->unk_034 & 0x80) {
                 return;
             }
-            tbl = gUnk_09EFAB68;
+            tbl = (u8*)gUnk_09EFAB68;
             ofs = (AnimGetGfxIndex(anim) + 5) * 4;
             gfx = *(void**)((u32)tbl + ofs);
             if ((*gp)->unk_07C->unk_034 & 4) {

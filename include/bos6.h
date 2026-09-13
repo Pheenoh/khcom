@@ -480,8 +480,6 @@ extern void* gUnk_09EFBEB8;
 void task_bos_pc_fld_2(PcFldWork* work);
 
 extern u8 gUnk_09C489E4[];
-extern u8 gUnk_09EFABA4[];
-extern u8 gUnk_09EFAB68[];
 
 typedef struct PcShot {
     s32 unk_00;

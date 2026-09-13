@@ -1,3 +1,4 @@
+#include "map_resource_data.h"
 #include "event_sprite_data.h"
 #include "card_animation_data.h"
 #ifndef GUARD_EVT_ASSETS_H
@@ -57,7 +58,5 @@ extern u8 gUnk_09EF5CE0[];
 extern u8 gUnk_09EF5D00[];
 extern u8 gUnk_09EF6718[];
 extern u8 gUnk_09EF672C[];
-extern u8 gUnk_09EF8C70[];
-extern u8 gUnk_09EF8C74[];
 
 #endif

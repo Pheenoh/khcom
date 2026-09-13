@@ -9065,6 +9065,261 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "data_map_resources_09EF8494",
+      "layer": 3,
+      "provenance": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented.",
+      "us": "0x9ef8494",
+      "targets": {
+        "jp": "0x9ecf880",
+        "eu": "0x9f83b04"
+      },
+      "size": 2060,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_map_resources_09EF8CD8",
+      "layer": 3,
+      "provenance": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented.",
+      "us": "0x9ef8cd8",
+      "targets": {
+        "jp": "0x9ed00c4",
+        "eu": "0x9f84348"
+      },
+      "size": 112,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_map_resources_09EF8D68",
+      "layer": 3,
+      "provenance": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented.",
+      "us": "0x9ef8d68",
+      "targets": {
+        "jp": "0x9ed0154",
+        "eu": "0x9f84418"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF39A0",
+      "layer": 1,
+      "provenance": "bos2.c task_bos_tm_arm_0 explicitly starts animation0 for both arm chains. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef39a0",
+      "targets": {
+        "jp": "0x9ecad8c",
+        "eu": "0x9f7ec94"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF39F8",
+      "layer": 1,
+      "provenance": "bos2.c task_bos_tm_arm_0 explicitly starts animation0 for the central arm animation. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef39f8",
+      "targets": {
+        "jp": "0x9ecade4",
+        "eu": "0x9f7ecec"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF3A48",
+      "layer": 1,
+      "provenance": "bos2.c task_bos_jf_borderline_0 explicitly starts animations27 and28, independently proving29 entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3a48",
+      "targets": {
+        "jp": "0x9ecae34",
+        "eu": "0x9f7ed3c"
+      },
+      "size": 364,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF3C20",
+      "layer": 1,
+      "provenance": "bos2.c task_bos_dsd_main_0 explicitly starts animation0 on the first animation state. bos2.c task_bos_dsd_main_0 explicitly starts animation0 on the second animation state. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3c20",
+      "targets": {
+        "jp": "0x9ecb00c",
+        "eu": "0x9f7ef14"
+      },
+      "size": 48,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF5824",
+      "layer": 1,
+      "provenance": "mode_sio2.c independently bounded PoohAnim definitions at09EF3C98..41D8 contain this gfx/animation pair with animation selector1; corresponding descriptor pointer slots independently prove the regional bases. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef5824",
+      "targets": {
+        "jp": "0x9eccc10",
+        "eu": "0x9f80c1c"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF5C6C",
+      "layer": 1,
+      "provenance": "poo.c task_poo_pile_1 transitions via func_080CD1DC to explicit terminal animation7, independently proving8 entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef5c6c",
+      "targets": {
+        "jp": "0x9ecd058",
+        "eu": "0x9f81064"
+      },
+      "size": 64,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF5E38",
+      "layer": 1,
+      "provenance": "poo.c task_poo_balloon_0 explicitly starts animation0 and GetMaxSpriteTileBytes uses3 gfx entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef5e38",
+      "targets": {
+        "jp": "0x9ecd224",
+        "eu": "0x9f81230"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF610C",
+      "layer": 1,
+      "provenance": "poo.c task_poo_leaf_0 explicitly starts animation0; actual complete frames establish the gfx bound. poo.c task_poo_tanpopo_0 explicitly starts animation0 and GetMaxSpriteTileBytes uses2 gfx entries. poo.c task_poo_tanpopo_0 explicitly starts animation0 and GetMaxSpriteTileBytes uses6 gfx entries. poo.c task_poo_mapbee_0 starts animation0 and task_poo_mapbee_1 explicitly changes to animation1. poo.c task_poo_mapbutterfly_0 explicitly starts animation0. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef610c",
+      "targets": {
+        "jp": "0x9ecd4f8",
+        "eu": "0x9f81504"
+      },
+      "size": 400,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF6774",
+      "layer": 1,
+      "provenance": "bos4.c task_bos_boogie_explosiondice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. bos4.c task_bos_boogie_dice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef6774",
+      "targets": {
+        "jp": "0x9ecdb60",
+        "eu": "0x9f81d5c"
+      },
+      "size": 40,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF6860",
+      "layer": 1,
+      "provenance": "bos4.c UrsulaTakoWork unk_024 is0 or65532; task_bos_ursula_tako_1 explicitly selects unk_024+7, proving animation0..7. bos4.c task_bos_ursula_bubble_single_0 starts animation0 and its update/draw callbacks explicitly start animation1; EU uses the same selections through eu_080DA80C. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef6860",
+      "targets": {
+        "jp": "0x9ecdc4c",
+        "eu": "0x9f81e48"
+      },
+      "size": 128,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EF9BB0",
+      "layer": 1,
+      "provenance": "bos5.c task_bos_md_fire_0 explicitly starts animation0. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef9bb0",
+      "targets": {
+        "jp": "0x9ed0f9c",
+        "eu": "0x9f8581c"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EFAB68",
+      "layer": 1,
+      "provenance": "bos6.c task_bos_pc_acd_0 and task_bos_pc_acd_1 select only animation0/1. task_bos_pc_acd_2 directly indexes gfxIndex+5, proving all15 gfx entries. One further header pointer is a neutral scalar before independently referenced09EFABB0. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9efab68",
+      "targets": {
+        "jp": "0x9ed2074",
+        "eu": "0x9f868b4"
+      },
+      "size": 72,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "actor_animation_resources_09EFBEC4",
+      "layer": 1,
+      "provenance": "bos7.c task_bos_lst_lsr_1 explicitly selects animation6 and its draw callback directly uses gfx13. Three further header pointers are separate neutral scalars before independently referenced09EFBF40. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9efbec4",
+      "targets": {
+        "jp": "0x9ed343c",
+        "eu": "0x9f886d8"
+      },
+      "size": 124,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EEA2F4_reload_animation",
+      "layer": 2,
+      "provenance": "Independently mapped7714/7720 selectors give all three actual animation/gfx table bases in every region. RELOAD_0 selects animation0; each of the three one-entry animation tables has four frames consuminggfx0..3. The adjacent unused four sprite words and one animation word remain neutral typed scalars. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9eea2f4",
+      "targets": {
+        "jp": "0x9ec16e8",
+        "eu": "0x9f76364"
+      },
+      "size": 80,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

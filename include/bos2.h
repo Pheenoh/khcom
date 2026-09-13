@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "animation_resource_data.h"
+
 #include "bos2_background_data.h"
 
 #include "background_actor_assets.h"
@@ -609,10 +611,6 @@ extern u8 gUnk_09665C04[];
 extern u8 gUnk_096CAC64[];
 extern u8 gUnk_096FB2A4[];
 extern u8 gUnk_096983E4[];
-extern u8 gUnk_09EF3C34[];
-extern u8 gUnk_09EF3C20[];
-extern u8 gUnk_09EF3C4C[];
-extern u8 gUnk_09EF3C38[];
 extern u8 gUnk_096FB8C4[];
 extern u8 gUnk_096A2F04[];
 extern u8 gUnk_096FB8E4[];
@@ -621,11 +619,9 @@ extern u8 gUnk_096FB864[];
 extern u8 gUnk_096FB884[];
 extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08F69BA4[];
-extern u8 gUnk_09EF3B40[];
 extern s8 gUnk_0961A894[];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];
-extern void* gUnk_09EF3A48[];
 extern s8 gUnk_09EF2A38[];
 extern s16 gUnk_09EF2A42[];
 extern u8 gUnk_096FB5A4[];
@@ -654,10 +650,6 @@ extern u8 gUnk_09619CDC[];
 extern u8 gUnk_09619D18[];
 extern u8 gUnk_09657C04[];
 extern u8 gUnk_0962E7A0[];
-extern void* gUnk_09EF39A0[];
-extern void* gUnk_09EF39B4[];
-extern void* gUnk_09EF39F8[];
-extern void* gUnk_09EF3A18[];
 
 extern u8 gUnk_096BF464[];
 extern void* gUnk_09EF39BC;

@@ -486,8 +486,6 @@ extern u8 gUnk_09D6C774[];
 extern u8 gUnk_09D6C974[];
 extern u8 gUnk_09D6CB74[];
 extern LstAnimSet gUnk_09EF9EA4[];
-extern void* gUnk_09EFBEC4[];
-extern u8 gUnk_09EFBF18[];
 
 extern u8 gUnk_09D6BE74[];
 

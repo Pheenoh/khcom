@@ -7586,7 +7586,7 @@ void func_080EC0D4(s32 arg) {
         gUnk_02034FE0->unk_004 = LoadObjTiles(gUnkEu_09885EEA, 0x2C0);
         break;
     case 1:
-        gUnk_02034FE0->unk_004 = LoadObjTiles(&gUnk_098A87AA[6], 0x300);
+        gUnk_02034FE0->unk_004 = LoadObjTiles(gUnkEu_0988519C, 0x300);
         break;
     case 4:
         gUnk_02034FE0->unk_004 = LoadObjTiles(gUnkEu_0988551E, 0x2C0);

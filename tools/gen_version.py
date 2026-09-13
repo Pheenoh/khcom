@@ -1355,6 +1355,7 @@ TARGET_ABSENT_SYMBOLS = {
 
 TARGET_ONLY_SYMBOLS = {
     "eu": {
+        "gUnkEu_0988519C": 0x0988519C,
         "gUnkEu_0988551E": 0x0988551E,
         "gUnkEu_09885862": 0x09885862,
         "gUnkEu_09885BA6": 0x09885BA6,

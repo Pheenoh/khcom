@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "provenance": {
+    ".data_09EEA2F4": "Independently mapped7714/7720 selectors give all three actual animation/gfx table bases in every region. RELOAD_0 selects animation0; each of the three one-entry animation tables has four frames consuminggfx0..3. The adjacent unused four sprite words and one animation word remain neutral typed scalars."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "reload_animation_data.c",
+          "section": ".data_09EEA2F4",
+          "address": "0x09EEA2F4",
+          "size": 80,
+          "sha256": "bddc198fbf41d241e20553af5cc45e5321ef4899a07150de3da62d494f5c1297",
+          "objects": [
+            {
+              "name": "gUnk_09EEA2F4",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA304",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA308",
+              "offset": 20,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA318",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA31C",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA32C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA330",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA334",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA338",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA33C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA340",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "reload_animation_data.c",
+          "section": ".data_09EEA2F4",
+          "address": "0x09EC16E8",
+          "size": 80,
+          "sha256": "f8369acc680a5e01fbcc771ba1c8aae17454cf0b1f5700029caf3952fc7f5213",
+          "objects": [
+            {
+              "name": "gUnk_09EEA2F4",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA304",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA308",
+              "offset": 20,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA318",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA31C",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA32C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA330",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA334",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA338",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA33C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA340",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "reload_animation_data.c",
+          "section": ".data_09EEA2F4",
+          "address": "0x09F76364",
+          "size": 80,
+          "sha256": "86e9693db1939b9399efcde909e97553a701dfa0b446a9d49402341446223cec",
+          "objects": [
+            {
+              "name": "gUnk_09EEA2F4",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA304",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA308",
+              "offset": 20,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA318",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA31C",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEA32C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA330",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA334",
+              "offset": 64,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA338",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA33C",
+              "offset": 72,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEA340",
+              "offset": 76,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
