@@ -2263,23 +2263,19 @@ void func_0807AF40(UnkStruct_08080268* w) {
     gUnk_02039DD4->unk_0D2 = w->unk_B8;
 }
 
-#ifdef NON_MATCHING
 void func_0807B16C(UnkStruct_08080268* w) {
-    CardDisplayWork* node;
-    s32 z;
+    CardDisplayWork* node = 0;
 
-    z = 0;
     m4aSongNumStart(103);
 
     if (gBtlWork->unk_068 & 0x1000000) {
         gBtlWork->unk_068 &= ~0x1000000;
     }
 
-    w->unk_BC[w->unk_B8] = z;
-    z = w->unk_B8;
+    w->unk_BC[w->unk_B8] = 0;
 
-    if (w->unk_C0[z] == 0) {
-        w->unk_94[z] = *(u16*)&gUnk_02034A98->unk_3C[8];
+    if (w->unk_C0[w->unk_B8] == 0) {
+        w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034A98->unk_3C[8];
         node = (CardDisplayWork*)ListPoolFirst(&w->unk_54[w->unk_B8]);
 
         while (node != 0) {
@@ -2289,7 +2285,7 @@ void func_0807B16C(UnkStruct_08080268* w) {
             node = (CardDisplayWork*)ListPoolNext(&node->unk_64);
         }
     } else {
-        w->unk_34[z] = gUnk_02034A98;
+        w->unk_34[w->unk_B8] = gUnk_02034A98;
         gUnk_02034A98->unk_98 = gUnk_09033FB8[3];
         gUnk_02034A98->unk_A3 = 12;
         gUnk_02034A98->unk_78 &= ~4;
@@ -2322,10 +2318,8 @@ void func_0807B16C(UnkStruct_08080268* w) {
             node = (CardDisplayWork*)ListPoolNext(&node->unk_64);
         }
 
-        z = w->unk_B8;
-
-        if (w->unk_BC[z] == 0 && w->unk_B0[z] > 0) {
-            func_080991CC(w, &w->unk_B8, &w->unk_B0[z], &w->unk_BC[z], 1);
+        if (w->unk_BC[w->unk_B8] == 0 && w->unk_B0[w->unk_B8] > 0) {
+            func_080991CC(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
         }
     } else {
         gUnk_02034A98 = w->unk_34[w->unk_B8];
@@ -2338,9 +2332,6 @@ void func_0807B16C(UnkStruct_08080268* w) {
 
     gUnk_02039DD4->unk_0D2 = w->unk_B8;
 }
-#else
-INCLUDE_ASM("card/func_0807B16C.s");
-#endif
 
 void func_0807B378(u8* p) {
     s16* c;
