@@ -97,7 +97,7 @@ extern u8 gUnkEu_09162C8C[];
 #ifdef VERSION_EU
 extern AnimHeader gUnkEu_091933B6;
 extern void* data_09F6FD8C[];
-extern void** data_09F6FDA0[];
+extern void** gUnkEu_09F6FDA0[];
 extern u16 gUnkEu_090CE9E0[];
 extern void* gUnkEu_09F72A64[];
 extern void* gUnkEu_09F72A3C[];
@@ -10062,8 +10062,8 @@ void func_08085FB4(u8* work, void* a) {
     *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
 #endif
 #ifdef VERSION_EU
-    *(void**)&work[0x4E8] = data_09F6FDA0[gLanguage][0];
-    *(void**)&work[0x4EC] = data_09F6FDA0[gLanguage][1];
+    *(void**)&work[0x4E8] = gUnkEu_09F6FDA0[gLanguage][0];
+    *(void**)&work[0x4EC] = gUnkEu_09F6FDA0[gLanguage][1];
 #else
     *(void**)&work[0x4E8] = *(void**)&gUnk_09EEAFD4;
     *(void**)&work[0x4EC] = *((void**)&gUnk_09EEAFD4 + 1);

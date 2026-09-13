@@ -2554,6 +2554,8 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08B52782": 0x08B52782,
         "gUnkEu_08B533BE": 0x08B533BE,
         "gUnkEu_08B53FFA": 0x08B53FFA,
+        "gUnkEu_090CE9E0": 0x090CE9E0,
+        "gUnkEu_09F6FDA0": 0x09F6FDA0,
     },
     "jp": {
         "gUnk_0814F180": 0x0814F180,
