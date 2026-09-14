@@ -13687,9 +13687,9 @@ void func_080F5A00(MapSparkWork* w, void* arg) {
     AnimState* a;
 
     w->unk_00 = arg;
-    w->unk_1C = AllocObjTiles(0x200, gUnk_098A4B68);
-    w->unk_20 = LoadObjPalette(gUnk_08F69BE4, 32);
-    a = &w->unk_04;
+    w->tiles = AllocObjTiles(0x200, gUnk_098A4B68);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    a = &w->anim;
     AnimInit(a, gUnk_09EF8CC0, gUnk_09EF8CA0);
 
     if (gGameState.flags & 8) {
@@ -13700,9 +13700,9 @@ void func_080F5A00(MapSparkWork* w, void* arg) {
 }
 
 s32 func_080F5A64(MapSparkWork* w) {
-    AnimUpdate(&w->unk_04);
+    AnimUpdate(&w->anim);
 
-    if (AnimIsFinished(&w->unk_04) != 0) {
+    if (AnimIsFinished(&w->anim) != 0) {
         return 0;
     }
     return 1;
@@ -13722,7 +13722,7 @@ void func_080F5A88(MapSparkWork* w) {
 
     x = (p->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (p->unk_04 >> 8) + ((p->unk_08 - h) >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, AnimGetGfx(&w->unk_04), w->unk_1C, w->unk_20, 0, 0x400, 0x50);
+    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
 void func_080F5B00(u8* work) {
@@ -13732,16 +13732,16 @@ void func_080F5B00(u8* work) {
 
 void func_080F5B18(MapTalkWork* w, s32* arg) {
     w->unk_00 = arg;
-    w->unk_1C = AllocObjTiles(0x200, &gUnk_098A4B68[0x1028]);
-    w->unk_20 = LoadObjPalette(gUnk_08F69BE4, 32);
-    AnimInit(&w->unk_04, gUnk_09EF8CD0, gUnk_09EF8CC8);
-    AnimStart(&w->unk_04, 0, 1);
+    w->tiles = AllocObjTiles(0x200, &gUnk_098A4B68[0x1028]);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    AnimInit(&w->anim, gUnk_09EF8CD0, gUnk_09EF8CC8);
+    AnimStart(&w->anim, 0, 1);
     w->unk_28 = 0;
 }
 
 s32 func_080F5B68(MapTalkWork* w) {
     s32* p = w->unk_00;
-    AnimState* anim = &w->unk_04;
+    AnimState* anim = &w->anim;
 
     AnimUpdate(anim);
 
@@ -13766,12 +13766,12 @@ void func_080F5BB8(MapTalkWork* w) {
         x = (p->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8) + 16;
     }
     y = (p->unk_04 >> 8) + ((p->unk_08 - (p->unk_1A << 8)) >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, AnimGetGfx(&w->unk_04), w->unk_1C, w->unk_20, 0, 0x400, 0x50);
+    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
 void func_080F5C48(MapTalkWork* w) {
-    ReleaseObjTiles(w->unk_1C);
-    ReleaseObjPalette(w->unk_20);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void func_080F5C60(MapDonaldWork* w) {
@@ -14802,10 +14802,10 @@ void func_080F775C(MapStairWork* w) {
 
 void func_080F777C(MapFaintWork* w, void* a) {
     w->unk_00 = a;
-    w->unk_1C = AllocObjTiles(0x80, gUnk_08B21ACE);
-    w->unk_20 = LoadObjPalette(gUnk_08F69BE4, 32);
-    AnimInit(&w->unk_04, gUnk_09EE12E4, gUnk_09EE12D4);
-    AnimStart(&w->unk_04, 0, 1);
+    w->tiles = AllocObjTiles(0x80, gUnk_08B21ACE);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    AnimInit(&w->anim, gUnk_09EE12E4, gUnk_09EE12D4);
+    AnimStart(&w->anim, 0, 1);
 }
 
 s32 func_080F77C4(u8* work) {
@@ -14820,7 +14820,7 @@ void func_080F77D4(MapFaintWork* w) {
 
     x = (e->unk_00.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (e->unk_00.x >> 8) + ((e->unk_00.y - ((s16)e->unk_1A + 8) * 0x100) >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, AnimGetGfx(&w->unk_04), w->unk_1C, w->unk_20, 0, 0x800, -0x1005 - (e->unk_00.x >> 8) * 4);
+    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, -0x1005 - (e->unk_00.x >> 8) * 4);
 }
 
 void func_080F7860(u8* work) {

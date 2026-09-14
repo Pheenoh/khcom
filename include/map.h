@@ -901,25 +901,25 @@ typedef struct MapPrzStockWork {
 
 typedef struct MapSparkWork {
     void* unk_00;
-    AnimState unk_04;
-    void* unk_1C;
-    u8* unk_20;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     u8 unk_24[0x04];
 } MapSparkWork;
 
 typedef struct MapFaintWork {
     void* unk_00;
-    AnimState unk_04;
-    void* unk_1C;
-    u8* unk_20;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     u8 unk_24[0x04];
 } MapFaintWork;
 
 typedef struct MapTalkWork {
     s32* unk_00;
-    AnimState unk_04;
-    void* unk_1C;
-    u8* unk_20;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     u8 unk_24[0x04];
     u8 unk_28;
     u8 unk_29[0x03];
