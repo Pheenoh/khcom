@@ -24,8 +24,8 @@ void func_0801CD94(EvtObj* obj, s32 a) {
 void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c) {
     EvtObjParam param;
 
-    param.unk_00 = &gUnk_0813B09C[res].unk_00;
-    param.unk_04 = obj;
+    param.res = &gUnk_0813B09C[res].unk_00;
+    param.obj = obj;
     func_0801CD74(obj, anim);
     EvtObjSetPos(obj, a, b, c);
     obj->flags = 0;
@@ -44,8 +44,8 @@ void func_0801CE00(EvtObj* obj, u16 a) {
 s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c) {
     EvtObjParam param;
 
-    param.unk_00 = &gUnk_0813B09C[res].unk_00;
-    param.unk_04 = obj;
+    param.res = &gUnk_0813B09C[res].unk_00;
+    param.obj = obj;
     func_0801CD74(obj, anim);
     EvtObjSetPos(obj, a, b, c);
     obj->flags = 0;
@@ -73,8 +73,8 @@ void func_0801CE70(EvtObjWork* work) {
 void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     EvtObjRes* res;
 
-    res = param->unk_00;
-    work->obj = param->unk_04;
+    res = param->res;
+    work->obj = param->obj;
     work->tiles = AllocObjTiles(res->unk_00 * 32, 0);
     work->palette = LoadObjPalette(res->unk_08, 32);
     AnimInit(&work->anim, 0, 0);

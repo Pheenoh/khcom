@@ -90,7 +90,7 @@ void task_allmap_room_2(AllmapRoomWork* work) {
     for (i = 0; i < 4; i++) {
         if (work->gfx[i] != 0) {
             work->gfx[i] = AnimUpdate(&work->anim[i]);
-            DrawSprite(x, y, work->gfx[i], work->unk_00C[i], work->palette, 0, g, i - 4 + h);
+            DrawSprite(x, y, work->gfx[i], work->tiles2[i], work->palette, 0, g, i - 4 + h);
         }
     }
 }
@@ -102,8 +102,8 @@ void task_allmap_room_3(AllmapRoomWork* work) {
     ReleaseObjPalette(work->palette);
 
     for (i = 0; i < 4; i++) {
-        if (work->unk_00C[i] != 0) {
-            ReleaseObjTiles(work->unk_00C[i]);
+        if (work->tiles2[i] != 0) {
+            ReleaseObjTiles(work->tiles2[i]);
         }
     }
 }

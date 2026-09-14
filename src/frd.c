@@ -7,7 +7,7 @@
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -93,7 +93,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_donald_1(FrdDonaldWork* work) {
-    BtlObj* body = &work->unk_020;
+    BtlObj* body = &work->body;
     BtlWork* owner;
     BtlObj* target;
     s32 angle;
@@ -455,7 +455,7 @@ void task_frd_donald_2(FrdDonaldWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 
@@ -499,7 +499,7 @@ void task_frd_donald_3(FrdDonaldWork* work) {
 u8 func_080465F0(FrdGoofyWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
     body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
@@ -516,7 +516,7 @@ u8 func_080465F0(FrdGoofyWork* work) {
 void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
 #ifdef VERSION_EU
     if (gLanguage == 1 || gLanguage == 3) {
         m4aSongNumStart(0xAB);
@@ -570,7 +570,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
     BtlWork* obj;
     s32 t;
 
-    body = &work->unk_020;
+    body = &work->body;
     obj = work->unk_14C != 0 ? gBtlWork : gUnk_02039B9C;
 
     if (obj->unk_068 & 0x40000000) {
@@ -744,7 +744,7 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 
@@ -788,7 +788,7 @@ void task_frd_goofy_3(FrdGoofyWork* work) {
 void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     m4aSongNumStart(0xBB);
 
     if (args->unk_02 != 0) {
@@ -848,7 +848,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
     s32 t;
 
 
-    body = &work->unk_020;
+    body = &work->body;
 
     if (gGameState.world != 2) {
         return 0;
@@ -978,7 +978,7 @@ void task_frd_ariel_2(FrdArielWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 
@@ -1022,7 +1022,7 @@ void task_frd_ariel_3(FrdArielWork* work) {
 u8 func_080474A8(FrdJackWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
     body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
@@ -1039,7 +1039,7 @@ u8 func_080474A8(FrdJackWork* work) {
 void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     m4aSongNumStart(0xB8);
 
     if (args->unk_02 != 0) {
@@ -1096,7 +1096,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_jack_1(FrdJackWork* work) {
-    BtlObj* body = &work->unk_020;
+    BtlObj* body = &work->body;
     BtlWork* owner;
     BtlObj* target;
     if (gGameState.world != 6) return 0;
@@ -1456,7 +1456,7 @@ void task_frd_jack_2(FrdJackWork* work) {
     s32 sclY;
     u8 angle;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
     angle = work->unk_160;
@@ -1509,7 +1509,7 @@ void task_frd_jack_3(FrdJackWork* work) {
 void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     m4aSongNumStart(0xB9);
 
     if (args->unk_02 != 0) {
@@ -1571,9 +1571,9 @@ void func_08048980(FrdPanWork* work) {
     BtlObj sub;
 
     if ((s16)work->unk_14E % 3 == 0) {
-        sub.unk_004 = work->unk_020.unk_004;
-        sub.unk_008 = work->unk_020.unk_008;
-        sub.unk_00C = work->unk_020.unk_00C;
+        sub.unk_004 = work->body.unk_004;
+        sub.unk_008 = work->body.unk_008;
+        sub.unk_00C = work->body.unk_00C;
 
         switch (AnimGetGfxIndex(&work->anim)) {
         case 1:
@@ -1584,7 +1584,7 @@ void func_08048980(FrdPanWork* work) {
         case 4:
             sub.unk_00C -= 0x1800;
 
-            if (work->unk_020.unk_034 & 4) {
+            if (work->body.unk_034 & 4) {
                 sub.unk_004 += 0x2000;
             } else {
                 sub.unk_004 -= 0x2000;
@@ -1594,7 +1594,7 @@ void func_08048980(FrdPanWork* work) {
         default:
             sub.unk_00C -= 0x1000;
 
-            if (work->unk_020.unk_034 & 4) {
+            if (work->body.unk_034 & 4) {
                 sub.unk_004 += 0x1000;
             } else {
                 sub.unk_004 -= 0x1000;
@@ -1609,12 +1609,12 @@ void func_08048980(FrdPanWork* work) {
 void func_08048A68(FrdPanWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     body->unk_00C += ((work->unk_164 + (gSineTable[((u16)work->unk_14E * 2) & 0xFF] << 4)) - body->unk_00C) >> 2;
 }
 
 u8 task_frd_pan_1(FrdPanWork* work) {
-    BtlObj* body = &work->unk_020;
+    BtlObj* body = &work->body;
     BtlWork* owner;
     BtlObj* target;
     s32 ground;
@@ -1778,7 +1778,7 @@ void task_frd_pan_2(FrdPanWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 
@@ -1822,7 +1822,7 @@ void task_frd_pan_3(FrdPanWork* work) {
 u8 func_080490FC(FrdAladdinWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
 
     if (func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010)) {
         body->unk_00C += work->unk_154;
@@ -1844,7 +1844,7 @@ u8 func_080490FC(FrdAladdinWork* work) {
 void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     m4aSongNumStart(0xBC);
 
     if (args->unk_02 != 0) {
@@ -1904,7 +1904,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
     s32 y;
     s32 delta;
 
-    body = &work->unk_020;
+    body = &work->body;
     if (gGameState.world != 1) {
         return 0;
     }
@@ -2017,7 +2017,7 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 
@@ -2061,7 +2061,7 @@ void task_frd_aladdin_3(FrdAladdinWork* work) {
 u8 func_080497E8(FrdBeastWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
     body->unk_00C += work->unk_158;
     work->unk_158 += 0x33;
@@ -2079,7 +2079,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     BtlObj* body;
     BtlObj* obj;
 
-    body = &work->unk_020;
+    body = &work->body;
 #ifdef VERSION_EU
     if (gLanguage == 0) {
         m4aSongNumStart(0xBA);
@@ -2155,7 +2155,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
     BtlObj* body;
     BtlWork* obj;
 
-    body = &work->unk_020;
+    body = &work->body;
 
     if (gGameState.world != 8) {
         return 0;
@@ -2248,7 +2248,7 @@ void task_frd_beast_2(FrdBeastWork* work) {
     s32 sclX;
     s32 sclY;
 
-    body = &work->unk_020;
+    body = &work->body;
     gfx = AnimGetGfx(&work->anim);
     flags = GetBattleSpritePriorityFlags(body->unk_008);
 

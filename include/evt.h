@@ -16,8 +16,8 @@
 
 
 typedef struct EvtObjParam {
-    EvtObjRes* unk_00;
-    EvtObj* unk_04;
+    EvtObjRes* res;
+    EvtObj* obj;
 } EvtObjParam;
 
 typedef struct EvtObjWork {

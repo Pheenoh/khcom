@@ -110,7 +110,7 @@ typedef struct BtlSoraWork {
     TaskPool unk_024;
     u32 unk_038;
     u32 unk_03C;
-    BtlObj unk_040;
+    BtlObj actor;
     s32 unk_150;
     u16 unk_154;
     u16 unk_156;
@@ -151,7 +151,7 @@ typedef struct BtlRikuWork {
     TaskPool unk_028;
     u32 unk_03C;
     u32 unk_040;
-    BtlObj unk_044;
+    BtlObj actor;
     s32 unk_154;
     u16 unk_158;
     u16 unk_15A;

@@ -35,7 +35,7 @@ typedef struct FldShadowWork {
     s32 unk_04;
     void* tiles;
     void* palette;
-    FldActor* unk_10;
+    FldActor* actor;
     u8 anim[0x18];
 } FldShadowWork;
 

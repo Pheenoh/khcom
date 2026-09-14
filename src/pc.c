@@ -2,7 +2,7 @@
 #include "pc_api.h"
 
 void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
-    work->unk_04 = obj;
+    work->actor = obj;
     work->unk_02 = 0;
     work->unk_00 = 0x28;
     work->unk_08 = 0;
@@ -12,7 +12,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
     BtlObj* obj;
 
     if (!(gBtlWork->unk_068 & 0x100000)) {
-        obj = work->unk_04;
+        obj = work->actor;
         if (obj->unk_00C >= 0) {
             work->unk_08 = 1;
 

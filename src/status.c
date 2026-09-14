@@ -1069,7 +1069,7 @@ void func_080D8F14(BoogieWork* work) {
 
         if (gUnk_0203C558 == 0) {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDisk, &work->unk_040);
+            work->unk_164 = TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDisk, &work->actor);
         } else if (gUnk_0203C558 == 1) {
             work->unk_000 = 6;
             work->unk_004 = 0;
@@ -1143,13 +1143,13 @@ void task_bos_boogie_0(BoogieWork* work) {
     gUnk_0203C568 = 0;
     gUnk_0203C554 = 0;
     work->unk_174 = 0;
-    gUnk_0203C55C = &work->unk_040;
+    gUnk_0203C55C = &work->actor;
     gUnk_0203C560 = 0;
     SetBattleBounds(128, 368, 576, 632);
-    func_0801B37C(&work->unk_040, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
-    work->unk_040.unk_010 = -0x2000;
-    work->unk_040.unk_034 |= 4;
-    func_0801C2DC(&work->unk_040, 1);
+    func_0801B37C(&work->actor, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
+    work->actor.unk_010 = -0x2000;
+    work->actor.unk_034 |= 4;
+    func_0801C2DC(&work->actor, 1);
     work->unk_150 = 0;
     work->unk_154 = 0;
     work->unk_158 = 0;
@@ -1168,20 +1168,20 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_15C = 9;
     func_080D900C(work, 0, 1);
     TaskPoolInit(&work->unk_02C, 7);
-    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->unk_040);
+    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->actor);
     TaskCreate(&work->unk_02C, &gTaskDescBosBoogieMapanime, 0);
     TaskCreate(&work->unk_02C, &gTaskDescBosBoogieSaku, work);
     work->unk_160 = 0;
     work->unk_164 = 0;
     work->unk_168 = 0;
     work->unk_16C = 0;
-    gBtlWork->unk_0CC = work->unk_040.unk_004;
-    gBtlWork->unk_0D0 = work->unk_040.unk_008;
-    gBtlWork->unk_0D4 = work->unk_040.unk_00C;
+    gBtlWork->unk_0CC = work->actor.unk_004;
+    gBtlWork->unk_0D0 = work->actor.unk_008;
+    gBtlWork->unk_0D4 = work->actor.unk_00C;
 }
 
 u8 task_bos_boogie_1(BoogieWork* work) {
-    BtlObj* a = &work->unk_040;
+    BtlObj* a = &work->actor;
     BoogieFx fx;
     u16 random;
 
@@ -1463,7 +1463,7 @@ void task_bos_boogie_2(BoogieWork* work) {
     s16 x;
     s16 y;
 
-    a = &work->unk_040;
+    a = &work->actor;
     f = GetBattleSpritePriorityFlags(a->unk_008);
 
     if (!(a->unk_034 & 4)) {
@@ -1481,7 +1481,7 @@ void task_bos_boogie_2(BoogieWork* work) {
 }
 
 void task_bos_boogie_3(BoogieWork* work) {
-    func_0801B7D8(&work->unk_040);
+    func_0801B7D8(&work->actor);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);

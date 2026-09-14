@@ -524,7 +524,7 @@ void task_btl_hpenm_0(BtlHpenmWork* work) {
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_14 = 0;
     work->unk_10 = 0x100;
-    work->unk_18 = 0;
+    work->actor = 0;
     work->unk_1C = 0;
     work->unk_20 = 0;
 }
@@ -554,8 +554,8 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
         actor = actor->unk_0D8;
     }
 
-    if (work->unk_18 != actor) {
-        work->unk_18 = actor;
+    if (work->actor != actor) {
+        work->actor = actor;
         work->unk_1E = actor->unk_02C;
 
         if (actor->unk_02E <= 80) {
@@ -1463,7 +1463,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         }
     }
 
-    work->unk_48 = gBtlWork->unk_07C;
+    work->actor = gBtlWork->unk_07C;
 }
 
 #define DIST(a, b) ((a) - (b) >= 0 ? (a) - (b) : (b) - (a))
@@ -1547,7 +1547,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                     if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
                         DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
                         DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                        work->unk_48 = gUnk_02039B9C->unk_07C;
+                        work->actor = gUnk_02039B9C->unk_07C;
                         hit = 1;
                     } else {
                         if (gBtlWork->unk_0F4 == 6) {
@@ -1583,7 +1583,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                         if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
                             DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
                             DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                            work->unk_48 = gUnk_02039B9C->unk_07C;
+                            work->actor = gUnk_02039B9C->unk_07C;
                             hit = 1;
                         }
                     }
@@ -1606,23 +1606,23 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                 m4aSongNumStart(0x6B);
 
                 if (gBtlWork->unk_068 & 0x4000) {
-                    work->unk_48->unk_02C += work->unk_3A;
+                    work->actor->unk_02C += work->unk_3A;
 
-                    if (work->unk_48->unk_02C > work->unk_48->unk_02E) {
-                        work->unk_48->unk_02C = work->unk_48->unk_02E;
+                    if (work->actor->unk_02C > work->actor->unk_02E) {
+                        work->actor->unk_02C = work->actor->unk_02E;
                     }
                 } else {
-                    work->unk_48->unk_02C += work->unk_3A;
+                    work->actor->unk_02C += work->unk_3A;
 
-                    if (work->unk_48->unk_02C > work->unk_48->unk_02E) {
-                        work->unk_48->unk_02C = work->unk_48->unk_02E;
+                    if (work->actor->unk_02C > work->actor->unk_02E) {
+                        work->actor->unk_02C = work->actor->unk_02E;
                     }
                     gGameState.progression.exp += work->unk_38;
                 }
 
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_44 = GetAngle(work->unk_48->unk_004, work->unk_48->unk_008, work->x, work->y);
+                work->unk_44 = GetAngle(work->actor->unk_004, work->actor->unk_008, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1646,9 +1646,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
         work->unk_28++;
     } else {
-        tx = work->unk_48->unk_004 + ((gSineTable[work->unk_44] * (work->unk_34 << 5)) >> 8);
-        ty = work->unk_48->unk_008 + ((-gSineTable[work->unk_44 + 64] * (work->unk_34 << 4)) >> 8);
-        tz = work->unk_48->unk_00C - ((work->unk_28 >> 1) << 8);
+        tx = work->actor->unk_004 + ((gSineTable[work->unk_44] * (work->unk_34 << 5)) >> 8);
+        ty = work->actor->unk_008 + ((-gSineTable[work->unk_44 + 64] * (work->unk_34 << 4)) >> 8);
+        tz = work->actor->unk_00C - ((work->unk_28 >> 1) << 8);
         work->unk_44 += work->unk_2A;
         work->x += (tx - work->x) >> 2;
         work->y += (ty - work->y) >> 2;
@@ -1725,7 +1725,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     gBtlWork->unk_0B0++;
     work->unk_38 = (gSineTable[angle] * spd) >> 8;
     work->unk_3C = (-gSineTable[angle + 64] * spd) >> 8;
-    work->unk_44 = gBtlWork->unk_07C;
+    work->actor = gBtlWork->unk_07C;
 }
 
 s32 task_btl_premire_1(BtlPremireWork* work) {
@@ -1789,7 +1789,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                     if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
                         DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
                         DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                        work->unk_44 = gUnk_02039B9C->unk_07C;
+                        work->actor = gUnk_02039B9C->unk_07C;
                         hit = 1;
                     } else {
                         if (gBtlWork->unk_0F4 == 6) {
@@ -1825,7 +1825,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                         if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
                             DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
                             DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                            work->unk_44 = gUnk_02039B9C->unk_07C;
+                            work->actor = gUnk_02039B9C->unk_07C;
                             hit = 1;
                         }
                     }
@@ -1850,7 +1850,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 work->unk_28 = 0;
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_40 = GetAngle(work->unk_44->unk_004, work->unk_44->unk_008, work->x, work->y);
+                work->unk_40 = GetAngle(work->actor->unk_004, work->actor->unk_008, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1875,9 +1875,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
 
         work->unk_28++;
     } else {
-        tx = work->unk_44->unk_004 + ((gSineTable[work->unk_40] * (work->unk_34 << 5)) >> 8);
-        ty = work->unk_44->unk_008 + ((-gSineTable[work->unk_40 + 64] * (work->unk_34 << 4)) >> 8);
-        tz = work->unk_44->unk_00C - ((work->unk_28 >> 1) << 8);
+        tx = work->actor->unk_004 + ((gSineTable[work->unk_40] * (work->unk_34 << 5)) >> 8);
+        ty = work->actor->unk_008 + ((-gSineTable[work->unk_40 + 64] * (work->unk_34 << 4)) >> 8);
+        tz = work->actor->unk_00C - ((work->unk_28 >> 1) << 8);
         work->unk_40 += work->unk_2A;
         work->x += (tx - work->x) >> 2;
         work->y += (ty - work->y) >> 2;

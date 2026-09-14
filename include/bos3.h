@@ -8,7 +8,7 @@ typedef struct JfShadowWork {
     void* tiles;
     void* palette;
     void* gfx;
-    BtlObj* unk_0C;
+    BtlObj* actor;
 } JfShadowWork;
 
 void task_bos_jf_shadow_0(JfShadowWork* work, BtlObj* obj);

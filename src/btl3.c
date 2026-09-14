@@ -217,12 +217,12 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     if (args->unk_14 != 0) {
         work->unk_3D = 1;
         work->unk_00 = gBtlWork->tiles2;
-        work->unk_5C = gBtlWork->unk_07C;
+        work->actor = gBtlWork->unk_07C;
         work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
         work->unk_00 = gBtlWork->tiles2;
-        work->unk_5C = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->unk_07C;
         work->palette = LoadObjPalette(gUnk_096FAC64, 32);
     }
 
@@ -416,9 +416,9 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (work->unk_38 == 0) {
             work->unk_3A = 16;
         }
-        ApproachValue(&work->x, work->unk_5C->unk_004, work->unk_3A);
-        ApproachValue(&work->y, work->unk_5C->unk_008, work->unk_3A);
-        ApproachValue(&work->z, work->unk_5C->unk_00C - 0x1000, work->unk_3A);
+        ApproachValue(&work->x, work->actor->unk_004, work->unk_3A);
+        ApproachValue(&work->y, work->actor->unk_008, work->unk_3A);
+        ApproachValue(&work->z, work->actor->unk_00C - 0x1000, work->unk_3A);
         work->unk_3A--;
         if (work->unk_3A <= 3) {
             return 0;
@@ -572,7 +572,7 @@ void task_btl_raid_3(BtlRaidWork* work) {
 
 void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->unk_28 = 0;
-    work->unk_24 = obj;
+    work->actor = obj;
     work->tiles = AllocObjTiles(128, 0);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
@@ -585,7 +585,7 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
     BtlObj* obj;
     u32 state;
 
-    obj = work->unk_24;
+    obj = work->actor;
     state = obj->unk_0E8;
 
     if (state == 0) {
@@ -637,7 +637,7 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
     s16 sx;
     s16 sy;
 
-    obj = work->unk_24;
+    obj = work->actor;
 
     if (obj->unk_0E8 != 0) {
         flags = GetBattleSpritePriorityFlags(obj->unk_008);

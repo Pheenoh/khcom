@@ -214,8 +214,8 @@ typedef struct SioBtlOptionWork {
     s16 unk_004;
     s16 unk_006;
     void* unk_008[4];
-    void* unk_018[2];
-    AnimState unk_020[2];
+    void* gfx6[2];
+    AnimState anim2[2];
     u8 unk_050;
     u8 unk_051[3];
     TextSlot unk_054[20];

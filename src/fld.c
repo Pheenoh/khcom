@@ -3166,7 +3166,7 @@ void task_fld_riku_3(FldWork* work) {
 }
 
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
-    work->unk_10 = obj;
+    work->actor = obj;
     work->unk_00 = obj->unk_00.x;
     work->unk_04 = obj->unk_00.y;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -3176,8 +3176,8 @@ void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
 }
 
 s32 task_fld_shadow_1(FldShadowWork* work) {
-    work->unk_00 = work->unk_10->unk_00.x;
-    work->unk_04 = work->unk_10->unk_00.y;
+    work->unk_00 = work->actor->unk_00.x;
+    work->unk_04 = work->actor->unk_00.y;
     return 1;
 }
 
@@ -3190,7 +3190,7 @@ void task_fld_shadow_2(FldShadowWork* work) {
     s32 x;
     s32 y;
 
-    obj = work->unk_10;
+    obj = work->actor;
 
     if (obj->unk_3A == 0) {
         return;

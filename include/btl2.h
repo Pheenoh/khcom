@@ -70,7 +70,7 @@ typedef struct BtlHpenmWork {
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x03];
-    BtlObj* unk_18;
+    BtlObj* actor;
     s16 unk_1C;
     s16 unk_1E;
     u32 unk_20;
@@ -141,7 +141,7 @@ typedef struct BtlPrizeWork {
     s32 unk_40;
     u8 unk_44;
     u8 unk_45[0x03];
-    BtlObj* unk_48;
+    BtlObj* actor;
 } BtlPrizeWork;
 
 typedef struct BtlPremireWork {
@@ -166,7 +166,7 @@ typedef struct BtlPremireWork {
     s32 unk_3C;
     u8 unk_40;
     u8 unk_41[0x03];
-    BtlObj* unk_44;
+    BtlObj* actor;
     AnimState anim;
 } BtlPremireWork;
 

@@ -87,7 +87,7 @@ typedef struct BtlRaidWork {
     u16 unk_56;
     u16 angle;
     u16 unk_5A;
-    BtlObj* unk_5C;
+    BtlObj* actor;
     void* tiles;
     void* palette2;
     u16 unk_68;
@@ -111,7 +111,7 @@ typedef struct BtlBadStatusWork {
     void* palette;
     void* palette2;
     AnimState anim;
-    BtlObj* unk_24;
+    BtlObj* actor;
     u32 unk_28;
     void* unk_2C;
 } BtlBadStatusWork;

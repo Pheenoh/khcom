@@ -1441,7 +1441,7 @@ typedef struct MapSelectWork {
     void* unk_038;
     void* tiles;
     u8 unk_040[0x1AC];
-    MapcardWork* unk_1EC;
+    MapcardWork* card;
     u8 unk_1F0[0x04];
     MapcardWork* unk_1F4;
     u8 unk_1F8[0x40];

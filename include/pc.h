@@ -12,7 +12,7 @@
 typedef struct PcAcdDmgWork {
     s16 unk_00;
     s16 unk_02;
-    BtlObj* unk_04;
+    BtlObj* actor;
     u8 unk_08;
     u8 unk_09[0x3];
 } PcAcdDmgWork;

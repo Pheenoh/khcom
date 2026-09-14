@@ -641,7 +641,7 @@ typedef struct PooStumpWork {
     void* tiles;
     void* palette;
     void* gfx;
-    u8 unk_0C[0x18];
+    u8 anim[0x18];
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
@@ -675,7 +675,7 @@ typedef struct PooVegetableWork {
     void* tiles;
     void* palette;
     void* gfx;
-    u8 unk_0C[0x18];
+    u8 anim[0x18];
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
@@ -711,7 +711,7 @@ typedef struct PooHoneycombWork {
     void* tiles;
     void* palette;
     void* gfx;
-    u8 unk_0C[0x18];
+    u8 anim[0x18];
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;

@@ -337,7 +337,7 @@ s32 func_08110660(s32 x) {
 u8 func_08110668(LstWork* work) {
     LstState* s;
 
-    s = work->unk_04;
+    s = work->state;
     return s->unk_000 != 4;
 }
 
@@ -479,7 +479,7 @@ u8 func_08110918(LstWork* work) {
     LstState* s;
     u8 result;
 
-    s = work->unk_04;
+    s = work->state;
     result = 1;
 
     if (s->unk_0A0.unk_2C <= 0 || s->unk_002 == 6) {
@@ -493,7 +493,7 @@ u8 func_08110938(LstWork* work) {
     LstState* s;
     u8 result;
 
-    s = work->unk_04;
+    s = work->state;
     result = func_08110918(work);
 
     if (result == 1 && s->unk_012 <= 0) {
@@ -508,7 +508,7 @@ u8 eu_0810F08C(LstWork* work) {
     LstState* s;
     u8 result;
 
-    s = work->unk_04;
+    s = work->state;
     result = func_08110918(work);
 
     if (result == 1 && (s->unk_074 == 0x100 || s->unk_078 == 0x100)) {
@@ -522,7 +522,7 @@ u8 eu_0810F08C(LstWork* work) {
 s16 func_0811095C(LstWork* work, s16 a) {
     LstState* s;
 
-    s = work->unk_04;
+    s = work->state;
 
     if (func_08110918(work) == 1 && a == 0) {
         s->unk_010 = a;
@@ -536,7 +536,7 @@ void func_08110984(LstWork* work) {
     LstState* s;
     u16 zero;
 
-    s = work->unk_04;
+    s = work->state;
     zero = 0;
     s->unk_002 = 1;
     s->unk_004 = zero;
@@ -548,7 +548,7 @@ void func_08110994(LstWork* work, s16 a) {
     LstState* s;
     u16 zero;
 
-    s = work->unk_04;
+    s = work->state;
     zero = 0;
     s->unk_002 = 2;
     s->unk_004 = zero;
@@ -561,7 +561,7 @@ void func_081109A8(LstWork* work) {
     LstState* s;
     u16 zero;
 
-    s = work->unk_04;
+    s = work->state;
 #ifdef VERSION_EU
     if ((u16)(s->unk_002 - 5) > 1) {
 #endif
@@ -579,7 +579,7 @@ u8 func_081109B8(LstWork* work, u8 a) {
     LstState* s;
     u8 result;
 
-    s = work->unk_04;
+    s = work->state;
     result = 0;
     func_08111660(s->unk_1C4);
     func_08111660(s->unk_1C8);
@@ -1136,7 +1136,7 @@ u8 func_081115B4(LstWork* work) {
     LstState* s;
     u8 result;
 
-    s = work->unk_04;
+    s = work->state;
     result = 0;
 
     switch (s->unk_000) {
@@ -1156,7 +1156,7 @@ void func_081115CC(LstWork* work, Vec3* a, Vec3* b, s32 c, u16 d) {
     s16 x2;
     s16 y2;
 
-    s = work->unk_04;
+    s = work->state;
     s->unk_000 = 1;
     *(u8*)&s->unk_002 = c;
     s->unk_012 = d;
@@ -1323,7 +1323,7 @@ s32 func_08111A00(s32 x) {
 u8 func_08111A08(LstWork* work) {
     LstState* s;
 
-    s = work->unk_04;
+    s = work->state;
     return s->unk_000 != 2;
 }
 
@@ -1532,7 +1532,7 @@ s32 func_08111F44(s32 x) {
 u8 func_08111F4C(LstWork* work) {
     LstState* s;
 
-    s = work->unk_04;
+    s = work->state;
     return s->unk_008 != 4;
 }
 

@@ -3,7 +3,7 @@
 #include "hum_common.h"
 
 void HumInit(HumWork* work, HumDef* def) {
-    BtlObj* actor = &work->unk_040;
+    BtlObj* actor = &work->actor;
 
     s32 a = 0x14000;
     s32 b = 0x18100;
@@ -59,10 +59,10 @@ void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
     }
 
     sub->tiles = AllocObjTiles(def->unk_04 * 32, 0);
-    sub->unk_0C = sub->palette = LoadObjPalette(def->unk_00, 32);
-    sub->unk_28 = work->unk_040.unk_004;
-    sub->unk_2C = work->unk_040.unk_008;
-    sub->unk_30 = work->unk_040.unk_00C;
+    sub->palette2 = sub->palette = LoadObjPalette(def->unk_00, 32);
+    sub->unk_28 = work->actor.unk_004;
+    sub->unk_2C = work->actor.unk_008;
+    sub->unk_30 = work->actor.unk_00C;
     sub->unk_34 = 0;
     AnimInit(&sub->anim, 0, 0);
 }
@@ -75,27 +75,27 @@ void HumSubReleaseGraphics(HumSub* sub) {
 }
 
 void HumReleaseResources(HumWork* work) {
-    if (gBtlWork->unk_078 == &work->unk_040) {
+    if (gBtlWork->unk_078 == &work->actor) {
         gBtlWork->unk_078 = 0;
     }
 
     HumSubReleaseGraphics(work->unk_00C);
     HumSubReleaseGraphics(work->unk_010);
     gBtlWork->unk_0A8 = 0;
-    func_0801B7D8(&work->unk_040);
+    func_0801B7D8(&work->actor);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->unk_02C);
 }
 
 void func_0800E3D0(HumWork* work) {
-    work->unk_158 = -work->unk_040.unk_0AC * 3;
-    work->unk_040.unk_108 = ((gSineTable[work->unk_040.unk_0B0] << 1) * work->unk_040.unk_0A8) >> 8;
-    work->unk_040.unk_10C = ((-gSineTable[work->unk_040.unk_0B0 + 0x40] << 1) * work->unk_040.unk_0A8) >> 8;
+    work->unk_158 = -work->actor.unk_0AC * 3;
+    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 s32 _0800E434(HumWork* work) {
-    BtlObj* actor = &work->unk_040;
+    BtlObj* actor = &work->actor;
     s32 r;
 
     actor->unk_0FC = actor->unk_004;
@@ -172,7 +172,7 @@ void HumSubUpdateAnimation(HumSub* sub) {
 
 
 s32 func_0800E5F0(HumWork* work) {
-    BtlObj* actor = &work->unk_040;
+    BtlObj* actor = &work->actor;
     s32 x;
 
     func_0801C700(actor, &x, 0, 0);

@@ -22,7 +22,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     u8 ret;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
 
     switch (_0800E434(work)) {
@@ -613,7 +613,7 @@ void task_hum_cloud_3(HumWork* work) {
 
 void func_0804B44C(CloudWork* work, s16 a, s32 b) {
     HumWork* w = &work->base;
-    BtlObj* act = &w->unk_040;
+    BtlObj* act = &w->actor;
 
     if (act->unk_034 & 4) {
         work->base.unk_15C = act->unk_004 - (a << 8);
@@ -640,7 +640,7 @@ u8 func_0804B4F4(CloudWork* work) {
     BtlObj* c;
 
     c = gBtlWork->unk_07C;
-    func_0801C700(&work->base.unk_040, &x, &y, 0);
+    func_0801C700(&work->base.actor, &x, &y, 0);
     func_0800F368(work, 1);
 
     if (func_0800F504(work, 0x100, 0x100, 0x100)) {
@@ -663,7 +663,7 @@ u8 func_0804B4F4(CloudWork* work) {
 void task_hum_hook_0(HookWork* work, void* arg) {
     TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumHookMoon, 0);
     HumInit(&work->base, &gUnk_0813F05C);
-    work->base.unk_040.unk_034 |= 0x10000000;
+    work->base.actor.unk_034 |= 0x10000000;
 
     if (GetRandom() % 2) {
         work->base.unk_184 = gUnk_0813EF54;
@@ -692,7 +692,7 @@ u8 task_hum_hook_1(HookWork* work) {
     u8 a;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     c = gBtlWork->unk_07C;
     func_0801C700(act, &x, &y, &z);
 
@@ -1491,7 +1491,7 @@ void task_hum_hook_bomb_3(HookBombWork* work) {
 }
 
 void func_0804D018(HumWork* work, s32 a) {
-    BtlObj* act = &work->unk_040;
+    BtlObj* act = &work->actor;
     s32 t;
 
     if (a != 0) {
@@ -1502,7 +1502,7 @@ void func_0804D018(HumWork* work, s32 a) {
 }
 
 void func_0804D060(AnsemWork* work) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
 
     if (act->unk_034 & 4) {
         *(s32*)&work->unk_1C8 += (0x1800 - *(s32*)&work->unk_1C8) >> 3;
@@ -1536,7 +1536,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
 
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, 0);
 
     switch (_0800E434(work)) {
@@ -2086,7 +2086,7 @@ void task_hum_ansem_3(HumWork* work) {
 }
 
 void func_0804E3BC(HumWork* work, s32 a) {
-    BtlObj* act = &work->unk_040;
+    BtlObj* act = &work->actor;
     s32 t;
 
     if (a != 0) {
@@ -2097,7 +2097,7 @@ void func_0804E3BC(HumWork* work, s32 a) {
 }
 
 void func_0804E404(AnsemWork* work) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
 
     if (work->unk_1CC > 2) {
         LoadObjPaletteBank(((u16*)work->base.palette)[3], gUnk_09617F18);
@@ -2113,7 +2113,7 @@ void func_0804E404(AnsemWork* work) {
 void task_hum_hades_0(HadesWork* work) {
     HumInit(&work->base, &gUnk_0813F324);
     HumSubInit(&work->base, &work->unk_188, &gUnk_0813F31C);
-    work->base.unk_040.unk_034 |= 0x100000;
+    work->base.actor.unk_034 |= 0x100000;
     work->base.unk_154 |= 0x40;
     work->unk_1CA = 0;
     work->unk_1C4 = -0xA00;
@@ -2146,7 +2146,7 @@ u8 task_hum_hades_1(HadesWork* work) {
     u8 ret;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
 
     switch (_0800E434(work)) {
@@ -2665,7 +2665,7 @@ void task_hum_hades_2(HadesWork* work) {
     if ((work->unk_1CA & 2) == 0) {
         return;
     }
-    act = &work->base.unk_040;
+    act = &work->base.actor;
 
     for (i = 0; i < 2; i++) {
         e = &work->unk_22C[i];
@@ -2709,7 +2709,7 @@ void task_hum_hades_3(HadesWork* work) {
 
 void func_0804F8F0(MahluxiaWork* work, s16 a) {
     HumWork* w = &work->base;
-    BtlObj* act = &w->unk_040;
+    BtlObj* act = &w->actor;
     s32 v;
 
     func_0801C700(act, &v, 0, 0);
@@ -2742,7 +2742,7 @@ u8 func_0804F9C8(MahluxiaWork* work) {
     BtlObj* c;
 
     c = gBtlWork->unk_07C;
-    func_0801C700(&work->base.unk_040, &v, 0, 0);
+    func_0801C700(&work->base.actor, &v, 0, 0);
     func_0800F368(work, 1);
 
     if (func_0800F504(work, 0x100, 0x100, 0x100)) {
@@ -2763,7 +2763,7 @@ u8 func_0804F9C8(MahluxiaWork* work) {
 }
 
 void func_0804FA70(MahluxiaWork* work, RikuSpawn* dst) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
 
     dst->x = act->unk_004;
     dst->y = act->unk_008;
@@ -2793,7 +2793,7 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
 
     sub = work->base.unk_00C;
     gfx = AnimGetGfx(&p->anim);
-    act = &work->base.unk_040;
+    act = &work->base.actor;
 
     if (func_080128EC() == 0) {
         gBldCnt = 0xF10;
@@ -2833,7 +2833,7 @@ void func_0804FBDC(HumWork* work, s32 a) {
     s32 t;
 
     if (a != 0) {
-        act = &work->unk_040;
+        act = &work->actor;
         t = a + gSineTable[gFrameCounter * 4 % 256] * 3;
         work->unk_158 = 0;
         act->unk_00C += (t - act->unk_00C) >> 4;
@@ -2862,7 +2862,7 @@ void task_hum_mahluxia_0(MahluxiaWork* work) {
 }
 
 void func_0804FD7C(MahluxiaWork* work) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
     VixenNdlArgs args;
     s32 range;
 
@@ -2888,7 +2888,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     u16 n;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
     work->unk_1D0 &= ~2;
 
@@ -3407,7 +3407,7 @@ void func_08050EC4(HumWork* work, s32 a) {
     s32 t;
 
     if (a != 0) {
-        act = &work->unk_040;
+        act = &work->actor;
         t = a + gSineTable[gFrameCounter * 4 % 256] * 6;
         work->unk_158 = 0;
         act->unk_00C += (t - act->unk_00C) >> 3;
@@ -3415,7 +3415,7 @@ void func_08050EC4(HumWork* work, s32 a) {
 }
 
 void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
     VixenNdlArgs args;
 
     if (act->unk_034 & 4) {
@@ -3435,7 +3435,7 @@ void task_hum_laxene_0(LaxeneWork* work) {
     work->unk_18E = 0;
     work->unk_188 = -0x3000;
     work->unk_190 = 0;
-    work->base.unk_040.unk_034 |= 0x80000000000;
+    work->base.actor.unk_034 |= 0x80000000000;
     work->base.unk_184 = gUnk_0813F480[0];
     TaskPoolInit(&work->unk_194, 12);
 }
@@ -3450,7 +3450,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     s32 u;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
 
     switch (_0800E434(work)) {
@@ -4250,7 +4250,7 @@ void func_080526F0(HumWork* work, s32 a) {
     s32 t;
 
     if (a != 0) {
-        act = &work->unk_040;
+        act = &work->actor;
         t = a + gSineTable[gFrameCounter * 4 % 256] * 3;
         work->unk_158 = 0;
         act->unk_00C += (t - act->unk_00C) >> 4;
@@ -4272,7 +4272,7 @@ void task_hum_axcel_0(AxcelWork* work) {
     HumInit(&work->base, &gUnk_0813F768);
     HumSubInit(&work->base, &work->unk_188, &gUnk_0813F760);
     HumSubInit(&work->base, &work->unk_1C4, &gUnk_0813F760);
-    work->base.unk_040.unk_034 |= 0x04000000;
+    work->base.actor.unk_034 |= 0x04000000;
     work->base.unk_184 = gUnk_0813F5C8[0];
     work->unk_206 = 0;
     work->unk_200 = -0x300;
@@ -4295,7 +4295,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     w = work;
     sub = &work->unk_188;
     sub2 = &work->unk_1C4;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, 0);
     switch (_0800E434(work)) {
     case 5:
@@ -4442,7 +4442,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             func_08019068(gUnk_0813F5E0, &w->base.anim, 6, 0, w->base.tiles);
             func_08019068(gUnk_0813F6C0, &w->base.unk_00C->anim, 0, 1, w->base.unk_00C->tiles);
-            sub->unk_0C = work->base.palette;
+            sub->palette2 = work->base.palette;
             sub->unk_34 |= 4;
             sub->unk_34 &= ~2;
             m4aSongNumStart(649);
@@ -4501,7 +4501,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             AnimReset(&sub2->anim);
             func_08019068(gUnk_0813F6C0, &w->base.unk_00C->anim, 6, 0, w->base.unk_00C->tiles);
             func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.unk_010)->anim, 2, 0, ((HumSub*)w->base.unk_010)->tiles);
-            sub->unk_0C = sub->palette;
+            sub->palette2 = sub->palette;
             sub->unk_34 &= ~6;
             sub2->unk_34 &= ~6;
             sub->unk_34 |= 1;
@@ -5074,7 +5074,7 @@ void func_080543F4(HumWork* work, s32 a) {
     s32 t;
 
     if (a != 0) {
-        act = &work->unk_040;
+        act = &work->actor;
         t = a + gSineTable[gFrameCounter * 4 % 256] * 3;
         work->unk_158 = 0;
         act->unk_00C += (t - act->unk_00C) >> 4;
@@ -5084,7 +5084,7 @@ void func_080543F4(HumWork* work, s32 a) {
 void task_hum_vixen_0(VixenWork* work) {
     HumInit(&work->base, &gUnk_0813F8C8);
     work->unk_188 = 0;
-    work->base.unk_040.unk_034 |= 0x08000000;
+    work->base.actor.unk_034 |= 0x08000000;
     work->unk_1A2 = 0;
     TaskPoolInit(&work->unk_1A4, 15);
     func_080543B4(work);
@@ -5112,7 +5112,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
     u8 r;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
 
     switch ((u32)_0800E434(work)) {
@@ -6089,7 +6089,7 @@ void func_080560AC(HumWork* work, s32 a) {
     s32 t;
 
     if (a != 0) {
-        act = &work->unk_040;
+        act = &work->actor;
         t = a + gSineTable[gFrameCounter * 4 % 256] * 3;
         work->unk_158 = 0;
         act->unk_00C += (t - act->unk_00C) >> 4;
@@ -6122,7 +6122,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     s16 dy;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     p = gBtlWork->unk_07C;
     func_0801C700(act, &x, &y, &z);
 
@@ -7049,7 +7049,7 @@ void task_hum_mahluxia_flw_3(MahluxiaFlwWork* work) {
 
 void func_08057CBC(RikuWork* work, s16 a, s32 b) {
     HumWork* w = &work->base;
-    BtlObj* act = &w->unk_040;
+    BtlObj* act = &w->actor;
 
     if (act->unk_034 & 4) {
         work->base.unk_15C = act->unk_004 - (a << 8);
@@ -7079,7 +7079,7 @@ u8 func_08057D68(RikuWork* work) {
     c = gBtlWork->unk_07C;
 
     if (GetRandom() % 30 == 0) {
-        func_0801C700(&work->base.unk_040, &v, &w, 0);
+        func_0801C700(&work->base.actor, &v, &w, 0);
         func_0800F368(work, 1);
 
         if (func_0800F504(work, 0x100, 0x100, 0x100)) {
@@ -7101,7 +7101,7 @@ u8 func_08057D68(RikuWork* work) {
 }
 
 void func_08057E2C(RikuWork* work, RikuSpawn* dst) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
 
     dst->x = act->unk_004;
     dst->y = act->unk_008;
@@ -7131,7 +7131,7 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
 
     sub = work->base.unk_00C;
     gfx = AnimGetGfx(&p->anim);
-    act = &work->base.unk_040;
+    act = &work->base.actor;
 
     if (func_080128EC() == 0) {
         gBldCnt = 0xF10;
@@ -7196,7 +7196,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     s32 z;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &x, &y, &z);
     work->unk_1CA &= ~4;
     switch (_0800E434(work)) {
@@ -7945,7 +7945,7 @@ u8 task_hum_leon_1(LeonWork* work) {
     u8 r;
 
     w = work;
-    act = &work->base.unk_040;
+    act = &work->base.actor;
     func_0801C700(act, &a, &b, &c);
 
     switch (_0800E434(work)) {
@@ -8058,7 +8058,7 @@ void task_hum_robe_0(RobeWork* work) {
 }
 
 u8 task_hum_robe_1(RobeWork* work) {
-    BtlObj* act = &work->base.unk_040;
+    BtlObj* act = &work->base.actor;
     s32 x;
     s32 y;
     s32 z;

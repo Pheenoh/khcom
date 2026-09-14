@@ -3,7 +3,7 @@
 #include "enemy_common.h"
 
 void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
-    BtlObj* actor = &work->unk_03C;
+    BtlObj* actor = &work->actor;
     u16 t;
 
     func_0801B37C(actor, &def->unk_1C, obj->unk_00, obj->unk_04, obj->unk_08);
@@ -67,7 +67,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     gBtlWork->unk_120--;
 }
 s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g, s16 h, u16 i) {
-    BtlObj* actor = &work->unk_03C;
+    BtlObj* actor = &work->actor;
     s32 ret;
     s32 v;
     s32 target;
@@ -84,7 +84,7 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
             steps = (a + b) - work->unk_154;
             target = actor->unk_018;
 
-            if (work->unk_03C.unk_034 & 4) {
+            if (work->actor.unk_034 & 4) {
                 v = actor->unk_014 - (e << 8);
             } else {
                 v = actor->unk_014 + (e << 8);
@@ -121,20 +121,20 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
 }
 
 void func_0800CB4C(EmyWork* work) {
-    func_0801AF08(&work->unk_03C);
+    func_0801AF08(&work->actor);
     work->unk_14C = work->unk_150;
     work->unk_154 = 0;
 }
 
 void func_0800CB78(EmyWork* work) {
-    work->unk_168 = -work->unk_03C.unk_0AC * 3;
-    work->unk_03C.unk_108 = ((gSineTable[work->unk_03C.unk_0B0] << 1) * work->unk_03C.unk_0A8) >> 8;
-    work->unk_03C.unk_10C = ((-gSineTable[work->unk_03C.unk_0B0 + 0x40] << 1) * work->unk_03C.unk_0A8) >> 8;
+    work->unk_168 = -work->actor.unk_0AC * 3;
+    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 
 u8 _0800CBDC(EmyWork* work) {
-    BtlObj* actor = &work->unk_03C;
+    BtlObj* actor = &work->actor;
 
     actor->unk_0FC = actor->unk_004;
     actor->unk_100 = actor->unk_008;
@@ -209,7 +209,7 @@ u8 _0800CBDC(EmyWork* work) {
 }
 
 void func_0800CD40(EmyWork* work) {
-    BtlObj* actor = &work->unk_03C;
+    BtlObj* actor = &work->actor;
 
     if (gGameState.flags & 4) {
         actor->unk_034 |= 0x4002;
@@ -232,7 +232,7 @@ void func_0800CD40(EmyWork* work) {
 }
 
 s32 _0800CDF0(EmyWork* work) {
-    BtlObj* actor = &work->unk_03C;
+    BtlObj* actor = &work->actor;
     s32 x;
     s32 y;
     s32 z;
@@ -805,7 +805,7 @@ void func_0800DF30(EmyWork* work) {
         s16 x;
         s16 y;
 
-        actor = &work->unk_03C;
+        actor = &work->actor;
         g = GetBattleSpritePriorityFlags(actor->unk_008) | work->unk_162;
         WorldToScreen(&x, &y, actor->unk_004, actor->unk_008, actor->unk_00C);
 
@@ -852,13 +852,13 @@ void func_0800DF30(EmyWork* work) {
 }
 
 void func_0800E0D0(EmyWork* work) {
-    gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_000];
+    gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->actor.unk_000];
 
-    if (gBtlWork->unk_078 == (BtlObj*)&work->unk_03C) {
+    if (gBtlWork->unk_078 == (BtlObj*)&work->actor) {
         gBtlWork->unk_078 = 0;
     }
 
-    func_0801B7D8(&work->unk_03C);
+    func_0801B7D8(&work->actor);
 
     if (gBtlWork->unk_0EE == 0) {
         if (gBtlWork->unk_120 <= 0) {

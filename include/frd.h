@@ -32,7 +32,7 @@ typedef struct FrdDonaldWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;
@@ -52,7 +52,7 @@ typedef struct FrdGoofyWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -72,7 +72,7 @@ typedef struct FrdArielWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -92,7 +92,7 @@ typedef struct FrdJackWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;
@@ -114,7 +114,7 @@ typedef struct FrdPanWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -138,7 +138,7 @@ typedef struct FrdAladdinWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -156,7 +156,7 @@ typedef struct FrdBeastWork {
     BtlObj* actor;
     void* tiles;
     void* palette;
-    BtlObj unk_020;
+    BtlObj body;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;

@@ -2310,24 +2310,24 @@ void func_080B83C4(TmBodyWork* p) {
 
 void func_080B8418(TmBodyWork* p) {
     if (p->tm->unk_28 & 0x20) {
-        p->unk_010.unk_004 = p->tm->unk_14 + 0x400;
-        p->unk_12C.unk_004 = p->tm->unk_14;
-        p->unk_248.unk_004 = p->tm->unk_14 + 0xC00;
-        p->unk_364.unk_004 = p->tm->unk_14 - 0x100;
+        p->body.unk_004 = p->tm->unk_14 + 0x400;
+        p->body2.unk_004 = p->tm->unk_14;
+        p->body3.unk_004 = p->tm->unk_14 + 0xC00;
+        p->body4.unk_004 = p->tm->unk_14 - 0x100;
     } else {
-        p->unk_010.unk_004 = p->tm->unk_14 - 0x400;
-        p->unk_12C.unk_004 = p->tm->unk_14;
-        p->unk_248.unk_004 = p->tm->unk_14 - 0xC00;
-        p->unk_364.unk_004 = p->tm->unk_14 + 0x100;
+        p->body.unk_004 = p->tm->unk_14 - 0x400;
+        p->body2.unk_004 = p->tm->unk_14;
+        p->body3.unk_004 = p->tm->unk_14 - 0xC00;
+        p->body4.unk_004 = p->tm->unk_14 + 0x100;
     }
-    p->unk_010.unk_008 = p->tm->unk_18;
-    p->unk_12C.unk_008 = p->tm->unk_18;
-    p->unk_248.unk_008 = p->tm->unk_18 + 0x100;
-    p->unk_364.unk_008 = p->tm->unk_18 - 0x400;
-    p->unk_010.unk_00C = p->tm->unk_1C - 0x2200;
-    p->unk_12C.unk_00C = p->tm->unk_1C + 0x900;
-    p->unk_248.unk_00C = p->tm->unk_1C - 0x2100;
-    p->unk_364.unk_00C = p->tm->unk_1C - 0x1E00;
+    p->body.unk_008 = p->tm->unk_18;
+    p->body2.unk_008 = p->tm->unk_18;
+    p->body3.unk_008 = p->tm->unk_18 + 0x100;
+    p->body4.unk_008 = p->tm->unk_18 - 0x400;
+    p->body.unk_00C = p->tm->unk_1C - 0x2200;
+    p->body2.unk_00C = p->tm->unk_1C + 0x900;
+    p->body3.unk_00C = p->tm->unk_1C - 0x2100;
+    p->body4.unk_00C = p->tm->unk_1C - 0x1E00;
 }
 
 void func_080B8508(TmBodyWork* p) {
@@ -2356,23 +2356,23 @@ void func_080B8554(TmBodyWork* p) {
         p->tm->unk_14 = p->tm->unk_08 - 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + dz;
-        p->unk_010.unk_004 = p->tm->unk_08 - 0xF00;
-        p->unk_12C.unk_004 = p->tm->unk_14 + 0x500;
-        p->unk_248.unk_004 = p->tm->unk_14 + 0x400;
-        p->unk_364.unk_004 = p->tm->unk_14 - 0x900;
+        p->body.unk_004 = p->tm->unk_08 - 0xF00;
+        p->body2.unk_004 = p->tm->unk_14 + 0x500;
+        p->body3.unk_004 = p->tm->unk_14 + 0x400;
+        p->body4.unk_004 = p->tm->unk_14 - 0x900;
     } else {
         p->tm->unk_14 = p->tm->unk_08 + 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->tm->unk_08 + 0xF00;
-        p->unk_12C.unk_004 = p->tm->unk_14 - 0x500;
-        p->unk_248.unk_004 = p->tm->unk_14 - 0x400;
-        p->unk_364.unk_004 = p->tm->unk_14 + 0x900;
+        p->body.unk_004 = p->tm->unk_08 + 0xF00;
+        p->body2.unk_004 = p->tm->unk_14 - 0x500;
+        p->body3.unk_004 = p->tm->unk_14 - 0x400;
+        p->body4.unk_004 = p->tm->unk_14 + 0x900;
     }
-    p->unk_010.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->unk_12C.unk_00C = p->tm->unk_1C + 0xE00;
-    p->unk_248.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->unk_364.unk_00C = p->tm->unk_1C - 0x1C00;
+    p->body.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->body2.unk_00C = p->tm->unk_1C + 0xE00;
+    p->body3.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->body4.unk_00C = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B8688(TmBodyWork* p) {
@@ -2385,47 +2385,47 @@ void func_080B8688(TmBodyWork* p) {
         p->tm->unk_14 = p->tm->unk_08 + 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->tm->unk_08 + 0xB00;
-        p->unk_12C.unk_004 = p->tm->unk_14 - 0x500;
-        p->unk_248.unk_004 = p->tm->unk_14 + 0x900;
-        p->unk_364.unk_004 = p->tm->unk_14 - 0x400;
+        p->body.unk_004 = p->tm->unk_08 + 0xB00;
+        p->body2.unk_004 = p->tm->unk_14 - 0x500;
+        p->body3.unk_004 = p->tm->unk_14 + 0x900;
+        p->body4.unk_004 = p->tm->unk_14 - 0x400;
     } else {
         p->tm->unk_14 = p->tm->unk_08 - 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->tm->unk_08 - 0xB00;
-        p->unk_12C.unk_004 = p->tm->unk_14 + 0x500;
-        p->unk_248.unk_004 = p->tm->unk_14 - 0x900;
-        p->unk_364.unk_004 = p->tm->unk_14 + 0x400;
+        p->body.unk_004 = p->tm->unk_08 - 0xB00;
+        p->body2.unk_004 = p->tm->unk_14 + 0x500;
+        p->body3.unk_004 = p->tm->unk_14 - 0x900;
+        p->body4.unk_004 = p->tm->unk_14 + 0x400;
     }
-    p->unk_010.unk_00C = p->tm->unk_1C - 0x2200;
-    p->unk_12C.unk_00C = p->tm->unk_1C + 0x900;
-    p->unk_248.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->unk_364.unk_00C = p->tm->unk_1C - 0x1C00;
+    p->body.unk_00C = p->tm->unk_1C - 0x2200;
+    p->body2.unk_00C = p->tm->unk_1C + 0x900;
+    p->body3.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->body4.unk_00C = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B87C0(TmBodyWork* p, s16 a) {
     if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
-        p->unk_010.unk_004 += gUnk_09EF1E14[a].unk_00 << 8;
-        p->unk_12C.unk_004 += gUnk_09EF1E14[a].unk_08 << 8;
-        p->unk_248.unk_004 += gUnk_09EF1E14[a].unk_10 << 8;
-        p->unk_364.unk_004 += gUnk_09EF1E14[a].unk_18 << 8;
+        p->body.unk_004 += gUnk_09EF1E14[a].unk_00 << 8;
+        p->body2.unk_004 += gUnk_09EF1E14[a].unk_08 << 8;
+        p->body3.unk_004 += gUnk_09EF1E14[a].unk_10 << 8;
+        p->body4.unk_004 += gUnk_09EF1E14[a].unk_18 << 8;
         p->tm->unk_14 += gUnk_09EF1E14[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
-        p->unk_010.unk_004 -= gUnk_09EF1E14[a].unk_00 << 8;
-        p->unk_12C.unk_004 -= gUnk_09EF1E14[a].unk_08 << 8;
-        p->unk_248.unk_004 -= gUnk_09EF1E14[a].unk_10 << 8;
-        p->unk_364.unk_004 -= gUnk_09EF1E14[a].unk_18 << 8;
+        p->body.unk_004 -= gUnk_09EF1E14[a].unk_00 << 8;
+        p->body2.unk_004 -= gUnk_09EF1E14[a].unk_08 << 8;
+        p->body3.unk_004 -= gUnk_09EF1E14[a].unk_10 << 8;
+        p->body4.unk_004 -= gUnk_09EF1E14[a].unk_18 << 8;
         p->tm->unk_14 -= gUnk_09EF1E14[a].unk_10 << 8;
     }
-    p->unk_010.unk_00C += gUnk_09EF1E14[a].unk_02 << 8;
-    p->unk_12C.unk_00C += gUnk_09EF1E14[a].unk_0A << 8;
-    p->unk_248.unk_00C += gUnk_09EF1E14[a].unk_12 << 8;
-    p->unk_364.unk_00C += gUnk_09EF1E14[a].unk_1A << 8;
+    p->body.unk_00C += gUnk_09EF1E14[a].unk_02 << 8;
+    p->body2.unk_00C += gUnk_09EF1E14[a].unk_0A << 8;
+    p->body3.unk_00C += gUnk_09EF1E14[a].unk_12 << 8;
+    p->body4.unk_00C += gUnk_09EF1E14[a].unk_1A << 8;
     p->tm->unk_1C += gUnk_09EF1E14[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF1E14[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF1E14[a].unk_1E];
@@ -2464,49 +2464,49 @@ void func_080B8A00(TmBodyWork* p) {
         if (p->tm->unk_28 & 0x20) {
             p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
             p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-            p->unk_010.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
-            p->unk_12C.unk_004 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
-            p->unk_248.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 + 12) << 8);
-            p->unk_364.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 - 1) << 8);
+            p->body.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
+            p->body2.unk_004 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->body3.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 + 12) << 8);
+            p->body4.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 - 1) << 8);
             p->tm->unk_14 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         } else {
             p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
             p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-            p->unk_010.unk_004 = p->tm->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00) << 8);
-            p->unk_12C.unk_004 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
-            p->unk_248.unk_004 = p->tm->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10) << 8);
-            p->unk_364.unk_004 = p->tm->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18) << 8);
+            p->body.unk_004 = p->tm->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00) << 8);
+            p->body2.unk_004 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->body3.unk_004 = p->tm->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10) << 8);
+            p->body4.unk_004 = p->tm->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18) << 8);
             p->tm->unk_14 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         }
-        p->unk_010.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
-        p->unk_12C.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
-        p->unk_248.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
-        p->unk_364.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
+        p->body.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
+        p->body2.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
+        p->body3.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
+        p->body4.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
         p->tm->unk_1C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 0 + gUnk_09EF1E08[2]) << 8);
     } else {
         if ((s16)p->tm->unk_34 < 3) {
             if (p->tm->unk_28 & 0x20) {
                 p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
                 p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-                p->unk_010.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
-                p->unk_12C.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
-                p->unk_248.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
-                p->unk_364.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->body.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->body2.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->body3.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->body4.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
                 p->tm->unk_14 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             } else {
                 p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
                 p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-                p->unk_010.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
-                p->unk_12C.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
-                p->unk_248.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
-                p->unk_364.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->body.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->body2.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->body3.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->body4.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
                 p->tm->unk_14 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             }
             j = 2 - p->tm->unk_34;
-            p->unk_010.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
-            p->unk_12C.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
-            p->unk_248.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
-            p->unk_364.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
+            p->body.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
+            p->body2.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->body3.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
+            p->body4.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
             p->tm->unk_1C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
         if ((s16)p->tm->unk_32 < 3) {
@@ -2514,25 +2514,25 @@ void func_080B8A00(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x20) {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
-                p->unk_010.unk_004 -= gUnk_09EF1D88[i].unk_00 << 8;
-                p->unk_12C.unk_004 -= gUnk_09EF1D88[i].unk_08 << 8;
-                p->unk_248.unk_004 -= gUnk_09EF1D88[i].unk_10 << 8;
-                p->unk_364.unk_004 -= gUnk_09EF1D88[i].unk_18 << 8;
+                p->body.unk_004 -= gUnk_09EF1D88[i].unk_00 << 8;
+                p->body2.unk_004 -= gUnk_09EF1D88[i].unk_08 << 8;
+                p->body3.unk_004 -= gUnk_09EF1D88[i].unk_10 << 8;
+                p->body4.unk_004 -= gUnk_09EF1D88[i].unk_18 << 8;
                 p->tm->unk_14 -= gUnk_09EF1D88[i].unk_10 << 8;
             } else {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
-                p->unk_010.unk_004 += gUnk_09EF1D88[i].unk_00 << 8;
-                p->unk_12C.unk_004 += gUnk_09EF1D88[i].unk_08 << 8;
-                p->unk_248.unk_004 += gUnk_09EF1D88[i].unk_10 << 8;
-                p->unk_364.unk_004 += gUnk_09EF1D88[i].unk_18 << 8;
+                p->body.unk_004 += gUnk_09EF1D88[i].unk_00 << 8;
+                p->body2.unk_004 += gUnk_09EF1D88[i].unk_08 << 8;
+                p->body3.unk_004 += gUnk_09EF1D88[i].unk_10 << 8;
+                p->body4.unk_004 += gUnk_09EF1D88[i].unk_18 << 8;
                 p->tm->unk_14 += gUnk_09EF1D88[i].unk_10 << 8;
             }
             j = 2 - i;
-            p->unk_010.unk_00C -= (gUnk_09EF1D88[i].unk_02 + gUnk_09EF1E08[j]) << 8;
-            p->unk_12C.unk_00C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
-            p->unk_248.unk_00C -= (gUnk_09EF1D88[i].unk_12 + gUnk_09EF1E08[j]) << 8;
-            p->unk_364.unk_00C -= (gUnk_09EF1D88[i].unk_1A + gUnk_09EF1E08[j]) << 8;
+            p->body.unk_00C -= (gUnk_09EF1D88[i].unk_02 + gUnk_09EF1E08[j]) << 8;
+            p->body2.unk_00C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->body3.unk_00C -= (gUnk_09EF1D88[i].unk_12 + gUnk_09EF1E08[j]) << 8;
+            p->body4.unk_00C -= (gUnk_09EF1D88[i].unk_1A + gUnk_09EF1E08[j]) << 8;
             p->tm->unk_1C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
     }
@@ -2542,24 +2542,24 @@ void func_080B8FF4(TmBodyWork* p, s16 a) {
     if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
-        p->unk_010.unk_004 += gUnk_09EF2034[a].unk_00 << 8;
-        p->unk_12C.unk_004 += gUnk_09EF2034[a].unk_08 << 8;
-        p->unk_248.unk_004 += gUnk_09EF2034[a].unk_10 << 8;
-        p->unk_364.unk_004 += gUnk_09EF2034[a].unk_18 << 8;
+        p->body.unk_004 += gUnk_09EF2034[a].unk_00 << 8;
+        p->body2.unk_004 += gUnk_09EF2034[a].unk_08 << 8;
+        p->body3.unk_004 += gUnk_09EF2034[a].unk_10 << 8;
+        p->body4.unk_004 += gUnk_09EF2034[a].unk_18 << 8;
         p->tm->unk_14 += gUnk_09EF2034[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
-        p->unk_010.unk_004 -= gUnk_09EF2034[a].unk_00 << 8;
-        p->unk_12C.unk_004 -= gUnk_09EF2034[a].unk_08 << 8;
-        p->unk_248.unk_004 -= gUnk_09EF2034[a].unk_10 << 8;
-        p->unk_364.unk_004 -= gUnk_09EF2034[a].unk_18 << 8;
+        p->body.unk_004 -= gUnk_09EF2034[a].unk_00 << 8;
+        p->body2.unk_004 -= gUnk_09EF2034[a].unk_08 << 8;
+        p->body3.unk_004 -= gUnk_09EF2034[a].unk_10 << 8;
+        p->body4.unk_004 -= gUnk_09EF2034[a].unk_18 << 8;
         p->tm->unk_14 -= gUnk_09EF2034[a].unk_10 << 8;
     }
-    p->unk_010.unk_00C += gUnk_09EF2034[a].unk_02 << 8;
-    p->unk_12C.unk_00C += gUnk_09EF2034[a].unk_0A << 8;
-    p->unk_248.unk_00C += gUnk_09EF2034[a].unk_12 << 8;
-    p->unk_364.unk_00C += gUnk_09EF2034[a].unk_1A << 8;
+    p->body.unk_00C += gUnk_09EF2034[a].unk_02 << 8;
+    p->body2.unk_00C += gUnk_09EF2034[a].unk_0A << 8;
+    p->body3.unk_00C += gUnk_09EF2034[a].unk_12 << 8;
+    p->body4.unk_00C += gUnk_09EF2034[a].unk_1A << 8;
     p->tm->unk_1C += gUnk_09EF2034[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
@@ -2583,7 +2583,7 @@ void func_080B91A4(TmBodyWork* p) {
         return;
     }
 
-    if (p->unk_12C.unk_02C < p->unk_12C.unk_02E / 2) {
+    if (p->body2.unk_02C < p->body2.unk_02E / 2) {
         st = p->tm->unk_3A;
 
         if (st == 2) {

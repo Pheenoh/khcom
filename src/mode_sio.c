@@ -280,7 +280,7 @@ void func_080AEE84(void) {
 
 void func_080AEED8(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_096193E0[b];
-    AnimChangeWithTables(&gSioBtlOptionWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
+    AnimChangeWithTables(&gSioBtlOptionWork->anim2[a], def->unk_0C, c, def->unk_04, def->unk_00);
     SetObjTileSource(gSioBtlOptionWork->unk_008[a], def->unk_08);
 }
 
@@ -394,9 +394,9 @@ void func_080AF11C(void) {
 
     for (i = 0; i < 2; i++) {
         gSioBtlOptionWork->unk_008[i] = AllocObjTiles(0xC80, 0);
-        AnimInit(&gSioBtlOptionWork->unk_020[i], 0, 0);
+        AnimInit(&gSioBtlOptionWork->anim2[i], 0, 0);
         func_080AEED8(i, 0, 0);
-        gSioBtlOptionWork->unk_018[i] = AnimGetGfx(&gSioBtlOptionWork->unk_020[i]);
+        gSioBtlOptionWork->gfx6[i] = AnimGetGfx(&gSioBtlOptionWork->anim2[i]);
     }
 
     if (gSioPlayerId == 0) {
@@ -611,11 +611,11 @@ void func_080AF70C(void) {
     s32 multiline;
     s32 i;
 #endif
-    gSioBtlOptionWork->unk_018[0] = AnimUpdate(&gSioBtlOptionWork->unk_020[0]);
-    gSioBtlOptionWork->unk_018[1] = AnimUpdate(&gSioBtlOptionWork->unk_020[1]);
+    gSioBtlOptionWork->gfx6[0] = AnimUpdate(&gSioBtlOptionWork->anim2[0]);
+    gSioBtlOptionWork->gfx6[1] = AnimUpdate(&gSioBtlOptionWork->anim2[1]);
     gSioBtlOptionWork->gfx2 = AnimUpdate(&gSioBtlOptionWork->anim);
-    DrawSprite(60, 88, gSioBtlOptionWork->unk_018[0], gSioBtlOptionWork->unk_008[0], gSioBtlOptionWork->unk_008[2], 0, 1, 0xFFF0);
-    DrawSprite(180, 88, gSioBtlOptionWork->unk_018[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
+    DrawSprite(60, 88, gSioBtlOptionWork->gfx6[0], gSioBtlOptionWork->unk_008[0], gSioBtlOptionWork->unk_008[2], 0, 1, 0xFFF0);
+    DrawSprite(180, 88, gSioBtlOptionWork->gfx6[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
 #ifdef VERSION_EU
     width = GetTextSlotsWidth(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
     DrawTextSlots(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);

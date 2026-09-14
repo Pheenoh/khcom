@@ -10,7 +10,7 @@
 typedef struct BosShadowWork {
     void* tiles;
     void* palette;
-    BtlObj* unk_08;
+    BtlObj* actor;
 } BosShadowWork;
 
 

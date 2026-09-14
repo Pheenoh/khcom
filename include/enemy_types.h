@@ -28,7 +28,7 @@ typedef struct EmyWork {
     void* gfx;
     AnimState anim;
     TaskPool unk_028;
-    BtlObj unk_03C;
+    BtlObj actor;
     u32 unk_14C;
     u32 unk_150;
     s16 unk_154;

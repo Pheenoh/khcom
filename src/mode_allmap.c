@@ -176,7 +176,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
 
     for (i = 0; i < 4; i++) {
         work->gfx[i] = 0;
-        work->unk_00C[i] = 0;
+        work->tiles2[i] = 0;
     }
 
     if (func_080DF51C(work->unk_098) == 1 || func_080DF51C(work->unk_098) == 4) {
@@ -205,9 +205,9 @@ s32 func_080D35B0(AllmapRoomWork* work) {
             work->gfx[i] = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_09C == 0) {
-                work->unk_00C[i] = LoadObjTiles(gUnk_0976DEDC, 0x500);
+                work->tiles2[i] = LoadObjTiles(gUnk_0976DEDC, 0x500);
             } else {
-                work->unk_00C[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF64FC, 16), gUnk_0976DEDC);
+                work->tiles2[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF64FC, 16), gUnk_0976DEDC);
             }
         } else if (func_080D358C(work->unk_098, i) == 0) {
             AnimInit(&work->anim[i], gUnk_09EF658C, gUnk_09EF654C);
@@ -215,9 +215,9 @@ s32 func_080D35B0(AllmapRoomWork* work) {
             work->gfx[i] = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_09C == 0) {
-                work->unk_00C[i] = LoadObjTiles(gUnk_0976E4D4, 0x500);
+                work->tiles2[i] = LoadObjTiles(gUnk_0976E4D4, 0x500);
             } else {
-                work->unk_00C[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF654C, 16), gUnk_0976E4D4);
+                work->tiles2[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF654C, 16), gUnk_0976E4D4);
             }
         }
     }

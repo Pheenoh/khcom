@@ -8,7 +8,7 @@ typedef struct AllmapRoomWork {
     void* tiles;
     void* palette;
     void* unk_008;
-    void* unk_00C[4];
+    void* tiles2[4];
     void* gfx[4];
     AnimState anim[4];
     s16 unk_08C;

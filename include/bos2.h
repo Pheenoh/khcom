@@ -54,7 +54,7 @@ typedef struct BosPos {
 } BosPos;
 
 typedef struct DsdWork {
-    BtlObj unk_000[3];
+    BtlObj body[3];
     u32 unk_330;
     u32 unk_334;
     u32 unk_338;
@@ -187,7 +187,7 @@ typedef struct DsdMainWork {
     void* unk_06C;
     s8 unk_070;
     u8 unk_071[0x3];
-    BtlObj unk_074;
+    BtlObj body;
     void* unk_184;
     void* unk_188;
     void* unk_18C;
@@ -259,8 +259,8 @@ typedef struct TmClbWork {
 } TmClbWork;
 
 typedef struct JfWork {
-    BtlObj unk_000;
-    BtlObj unk_110;
+    BtlObj body;
+    BtlObj sub;
     s32 unk_220;
     s32 unk_224;
     s32 unk_228;
@@ -542,19 +542,19 @@ typedef struct TmFootWork {
     u32 tiles3;
     u32 palette;
     u32 palette2;
-    BtlObj unk_01C;
+    BtlObj body;
     void* unk_12C;
     u8 unk_130;
     u8 unk_131[0x3];
-    BtlObj unk_134;
+    BtlObj body2;
     void* unk_244;
     u8 unk_248;
     u8 unk_249[0x3];
-    BtlObj unk_24C;
+    BtlObj body3;
     u32 unk_35C;
     u8 unk_360;
     u8 unk_361[0x3];
-    BtlObj unk_364;
+    BtlObj body4;
     void* unk_474;
     u8 unk_478;
     u8 unk_479[0x3];

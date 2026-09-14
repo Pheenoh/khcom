@@ -18,7 +18,7 @@ u8 task_emy_00_1(EmyWork* work) {
     u8 ret;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -184,7 +184,7 @@ void task_emy_00_2(EmyWork* work) {
     s16 y;
 
     if (work->unk_15A != 0) {
-        act = &work->unk_03C;
+        act = &work->actor;
         pri = GetBattleSpritePriorityFlags(act->unk_008) | work->unk_162;
         WorldToScreen(&x, &y, act->unk_004, act->unk_008, act->unk_00C);
         zoom = work->unk_180;
@@ -251,7 +251,7 @@ u8 task_emy_01_1(EmyWork* work) {
     s32 x;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -348,7 +348,7 @@ u8 task_emy_02_1(EmyWork* work) {
     s32 p;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -444,7 +444,7 @@ u8 task_emy_03_1(Emy03Work* work) {
     u16 r;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -519,7 +519,7 @@ u8 task_emy_04_1(Emy04Work* work) {
     s16 bestv;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         work->base.unk_14C = 0x12;
@@ -607,7 +607,7 @@ u8 task_emy_06_1(Emy06Work* work) {
     s32 ty;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         func_0801C700(act, 0, &pos, 0);
@@ -713,7 +713,7 @@ void task_emy_07_0(Emy07Work* work, void* obj) {
     work->unk_184 = 0;
     work->unk_186 = 0;
     work->base.unk_150 = 0x12;
-    work->base.unk_03C.unk_034 |= 0x1000;
+    work->base.actor.unk_034 |= 0x1000;
     work->unk_187 = 0;
 }
 
@@ -726,7 +726,7 @@ u8 task_emy_07_1(Emy07Work* work) {
     s32 pos2;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
     state = work->base.unk_14C;
 
 #ifdef VERSION_EU
@@ -956,7 +956,7 @@ u8 task_emy_08_1(Emy08Work* work) {
     s32 dy;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -1146,7 +1146,7 @@ u8 task_emy_14_1(EmyWork* work) {
     s32 d;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         func_0801C700(act, &pos, 0, 0);
@@ -1191,7 +1191,7 @@ u8 task_emy_15_1(EmyWork* work) {
     u16 r;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -1288,7 +1288,7 @@ u8 task_emy_16_1(Emy16Work* work) {
     u16 r;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         if (IsTaskActiveNamed(work->unk_188, gTaskDescEmy16B)) {
@@ -1591,7 +1591,7 @@ void task_emy_16_p_3(Emy16pWork* work) {
 
 void task_emy_18_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813DA94, obj);
-    work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
+    work->actor.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
 
@@ -1601,7 +1601,7 @@ u8 task_emy_18_1(Emy18Work* work) {
     u16 r;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -1751,7 +1751,7 @@ u8 task_emy_19_1(Emy19Work* work) {
     s32 d;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         func_0801C700(act, &pos, 0, 0);
@@ -1885,7 +1885,7 @@ u8 task_emy_21_1(Emy21Work* work) {
     s32 d;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         func_0801C700(act, &pos, 0, 0);
@@ -1929,8 +1929,8 @@ u8 task_emy_21_1(Emy21Work* work) {
         switch (work->base.unk_154) {
         case 2:
             func_08019A30();
-            func_08014020(work->base.unk_03C.unk_004, work->base.unk_03C.unk_008,
-                work->base.unk_03C.unk_00C - 0x1000);
+            func_08014020(work->base.actor.unk_004, work->base.actor.unk_008,
+                work->base.actor.unk_00C - 0x1000);
             break;
         case 40:
             func_0801AF08(act);
@@ -2047,7 +2047,7 @@ u8 task_emy_22_1(Emy22Work* work) {
     s32 pos3;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         if (act->unk_02C < act->unk_02E) {
@@ -2197,7 +2197,7 @@ u8 task_emy_23_1(Emy23Work* work) {
     s32 t;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         func_0801C700(act, &pos, 0, 0);
@@ -2291,7 +2291,7 @@ u8 task_emy_25_1(EmyWork* work) {
     u16 f;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -2435,7 +2435,7 @@ void task_emy_25_3(EmyWork* work) {
 
 void task_emy_26_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813DE14, obj);
-    work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
+    work->actor.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
 
@@ -2449,7 +2449,7 @@ u8 task_emy_26_1(EmyWork* work) {
     s32* p;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -2554,7 +2554,7 @@ u8 task_emy_27_1(EmyWork* work) {
     s32 ty;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         func_0801C700(act, 0, &y, 0);
@@ -2633,7 +2633,7 @@ void task_emy_27_3(EmyWork* work) {
 
 void task_emy_28_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813DF44, obj);
-    work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
+    work->actor.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
 
@@ -2643,7 +2643,7 @@ u8 task_emy_28_1(Emy28Work* work) {
     u16 r;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -2804,9 +2804,9 @@ void task_emy_29_0(Emy29Work* work, void* obj) {
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz) {
     if (work->unk_186 > 0) {
         AnimChange(&work->base.anim, anim, 0);
-        ApproachValue(&work->base.unk_03C.unk_004, work->base.unk_03C.unk_014 + ((s16)dx << 8), work->unk_186);
-        ApproachValue(&work->base.unk_03C.unk_008, work->base.unk_03C.unk_018 + ((s16)dy << 8), work->unk_186);
-        ApproachValue(&work->base.unk_03C.unk_00C, (s16)dz << 8, work->unk_186);
+        ApproachValue(&work->base.actor.unk_004, work->base.actor.unk_014 + ((s16)dx << 8), work->unk_186);
+        ApproachValue(&work->base.actor.unk_008, work->base.actor.unk_018 + ((s16)dy << 8), work->unk_186);
+        ApproachValue(&work->base.actor.unk_00C, (s16)dz << 8, work->unk_186);
         work->unk_186--;
     } else {
         work->unk_186 = 8;
@@ -2824,7 +2824,7 @@ u8 task_emy_29_1(Emy29Work* work) {
     s16 c;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         func_0801C700(act, &pos, 0, 0);
@@ -2914,7 +2914,7 @@ void task_emy_29_3(EmyWork* work) {
 
 void task_emy_30_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813E0B4, obj);
-    work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
+    work->actor.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
 
@@ -2927,7 +2927,7 @@ u8 task_emy_30_1(EmyWork* work) {
     u16 r;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
     func_0801C700(act, &x, &y, 0);
 
     if (_0800CBDC(work)) {
@@ -3189,7 +3189,7 @@ u8 task_emy_31_1(Emy31Work* work) {
     BtlObj* act;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         switch ((u16)(GetRandom() % 3)) {
@@ -3420,14 +3420,14 @@ u8 task_emy_37_1(Emy37Work* work) {
     BtlObj* act;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         if (work->base.unk_14C == 20) {
             work->unk_184 = 0;
             act->unk_034 &= ~0x100;
             work->base.unk_14C = 25;
-            work->base.unk_03C.unk_0A2 = 20;
+            work->base.actor.unk_0A2 = 20;
         } else {
             work->base.unk_14C = 24;
         }
@@ -3693,7 +3693,7 @@ void task_emy_37_2(Emy37Work* work) {
     w = work;
 
     if (work->base.unk_15A != 0) {
-        act = &work->base.unk_03C;
+        act = &work->base.actor;
         pri = GetBattleSpritePriorityFlags(act->unk_008) | work->base.unk_162;
         WorldToScreen(&x, &y, act->unk_004, act->unk_008, act->unk_00C);
 
@@ -3764,7 +3764,7 @@ u8 task_emy_38_1(EmyWork* work) {
     u8 ret;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         r = GetRandom();
@@ -3807,12 +3807,12 @@ u8 task_emy_38_1(EmyWork* work) {
 
     ret = _0800CDF0(work);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->unk_03C.unk_004 && (work->unk_03C.unk_034 & 4)) ||
-            (gBtlWork->unk_07C->unk_004 > work->unk_03C.unk_004 &&
-                !(work->unk_03C.unk_034 & 4))) {
-        work->unk_03C.unk_034 |= 0x8000;
+    if ((gBtlWork->unk_07C->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
+            (gBtlWork->unk_07C->unk_004 > work->actor.unk_004 &&
+                !(work->actor.unk_034 & 4))) {
+        work->actor.unk_034 |= 0x8000;
     } else {
-        work->unk_03C.unk_034 &= ~0x8000;
+        work->actor.unk_034 &= ~0x8000;
     }
 
     return ret;
@@ -3842,7 +3842,7 @@ u8 task_emy_39_1(Emy39Work* work) {
     u8 ret;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -3959,13 +3959,13 @@ u8 task_emy_39_1(Emy39Work* work) {
 
     ret = _0800CDF0(&work->base);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->base.unk_03C.unk_004
-                && (work->base.unk_03C.unk_034 & 4))
-            || (gBtlWork->unk_07C->unk_004 > work->base.unk_03C.unk_004
-                && !(work->base.unk_03C.unk_034 & 4))) {
-        work->base.unk_03C.unk_034 |= 0x8000;
+    if ((gBtlWork->unk_07C->unk_004 < work->base.actor.unk_004
+                && (work->base.actor.unk_034 & 4))
+            || (gBtlWork->unk_07C->unk_004 > work->base.actor.unk_004
+                && !(work->base.actor.unk_034 & 4))) {
+        work->base.actor.unk_034 |= 0x8000;
     } else {
-        work->base.unk_03C.unk_034 &= ~0x8000;
+        work->base.actor.unk_034 &= ~0x8000;
     }
 
     return ret;
@@ -3992,7 +3992,7 @@ u8 task_emy_41_1(Emy41Work* work) {
     s32 a;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -4064,7 +4064,7 @@ u8 task_emy_44_1(EmyWork* work) {
     u8 ret;
 
     w = work;
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         func_0801C700(act, &pos, 0, 0);
@@ -4121,12 +4121,12 @@ u8 task_emy_44_1(EmyWork* work) {
 
     ret = _0800CDF0(work);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->unk_03C.unk_004 && (work->unk_03C.unk_034 & 4)) ||
-            (gBtlWork->unk_07C->unk_004 > work->unk_03C.unk_004 &&
-                !(work->unk_03C.unk_034 & 4))) {
-        work->unk_03C.unk_034 |= 0x0C008000;
+    if ((gBtlWork->unk_07C->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
+            (gBtlWork->unk_07C->unk_004 > work->actor.unk_004 &&
+                !(work->actor.unk_034 & 4))) {
+        work->actor.unk_034 |= 0x0C008000;
     } else {
-        work->unk_03C.unk_034 &= ~0x0C008000;
+        work->actor.unk_034 &= ~0x0C008000;
     }
 
     return ret;
@@ -4161,7 +4161,7 @@ u8 task_emy_81_1(Emy81Work* work) {
     s32 b;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -4411,7 +4411,7 @@ u8 func_0803DD44(EmyWork* work) {
     s32 actorY;
     s32 targetY;
 
-    act = &work->unk_03C;
+    act = &work->actor;
     func_0801C700(act, &x, &y, 0);
 
     if (x < (gBtlWork->unk_0DA + 0x30) << 8) {
@@ -4419,8 +4419,8 @@ u8 func_0803DD44(EmyWork* work) {
     } else if (x > (gBtlWork->unk_0DC - 0x30) << 8) {
         d = x - 0x28;
     } else {
-        t = (work->unk_03C.unk_0CE + ((lo = -work->unk_03C.unk_0D0) +
-            GetRandom() % (work->unk_03C.unk_0D0 - lo + 1))) << 8;
+        t = (work->actor.unk_0CE + ((lo = -work->actor.unk_0D0) +
+            GetRandom() % (work->actor.unk_0D0 - lo + 1))) << 8;
 
         if (act->unk_004 < x) {
             d = x - t;
@@ -4440,7 +4440,7 @@ u8 task_emy_82_1(Emy82Work* work) {
     BtlObj* act;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
     if (_0800CBDC(&work->base)) {
         switch ((u16)(GetRandom() % 3U)) {
         case 0:
@@ -4730,7 +4730,7 @@ u8 task_emy_83_1(Emy83Work* work) {
     u8 ret;
 
     w = work;
-    act = &work->base.unk_03C;
+    act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
         r = GetRandom();
@@ -5009,7 +5009,7 @@ void task_emy_trump_h_0(EmyWork* work, void* obj) {
 u8 task_emy_trump_h_1(EmyWork* work) {
     BtlObj* act;
 
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         work->unk_14C = 0x13;
@@ -5060,7 +5060,7 @@ void task_emy_trump_s_0(EmyWork* work, void* obj) {
 u8 task_emy_trump_s_1(EmyWork* work) {
     BtlObj* act;
 
-    act = &work->unk_03C;
+    act = &work->actor;
 
     if (_0800CBDC(work)) {
         work->unk_14C = 0x13;
@@ -5110,9 +5110,9 @@ void task_emy_trump_s_3(EmyWork* work) {
 
 void task_emy_test_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813E834, obj);
-    work->unk_03C.unk_02E = 0xBB8;
-    work->unk_03C.unk_02C = 0xBB8;
-    work->unk_03C.unk_034 |= 0x1000;
+    work->actor.unk_02E = 0xBB8;
+    work->actor.unk_02C = 0xBB8;
+    work->actor.unk_034 |= 0x1000;
 }
 
 u8 task_emy_test_1(EmyWork* work) {

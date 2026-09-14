@@ -169,7 +169,7 @@ typedef struct BoogieWork {
     void* palette2;
     AnimState anim;
     TaskPool unk_02C;
-    BtlObj unk_040;
+    BtlObj actor;
     s32 unk_150;
     s32 unk_154;
     s32 unk_158;

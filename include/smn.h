@@ -37,7 +37,7 @@ typedef struct SmnCloudWork {
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -51,7 +51,7 @@ typedef struct SmnCloudWork {
     u8 unk_163;
     u8 unk_164;
     u8 unk_165[0x03];
-    BtlObj* unk_168;
+    BtlObj* target;
     u16 unk_16C;
     u8 unk_16E[0x02];
     s32 unk_170;
@@ -67,7 +67,7 @@ typedef struct SmnBambiWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -82,7 +82,7 @@ typedef struct SmnBambiWork {
     u8 unk_163;
     u8 unk_164;
     u8 unk_165[0x03];
-    struct BtlObj* unk_168;
+    struct BtlObj* target;
     s16 unk_16C;
     u8 unk_16E[0x02];
     s32 unk_170;
@@ -95,7 +95,7 @@ typedef struct SmnTinkWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -113,7 +113,7 @@ typedef struct SmnTinkWork {
     u8 unk_172[0x02];
     s32 unk_174;
     s32 unk_178;
-    struct BtlObj* unk_17C;
+    struct BtlObj* actor;
 } SmnTinkWork;
 
 typedef struct SmnTinkeffWork {
@@ -132,7 +132,7 @@ typedef struct SmnSimbaWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -150,7 +150,7 @@ typedef struct SmnMushuWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -159,7 +159,7 @@ typedef struct SmnMushuWork {
     u8 unk_153;
     u8 unk_154;
     u8 unk_155[0x03];
-    struct BtlObj* unk_158;
+    struct BtlObj* actor;
 } SmnMushuWork;
 
 typedef struct SmnDumboWork {
@@ -168,7 +168,7 @@ typedef struct SmnDumboWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -186,7 +186,7 @@ typedef struct SmnGenieWork {
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     u16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -194,7 +194,7 @@ typedef struct SmnGenieWork {
     u8 unk_151;
     u8 unk_152;
     u8 unk_153;
-    struct BtlObj* unk_154;
+    struct BtlObj* target;
     s16 unk_158;
     s16 unk_15A;
     u8 unk_15C;
@@ -226,7 +226,7 @@ typedef struct SmnKingWork {
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    BtlObj unk_038;
+    BtlObj body;
     s16 unk_148;
     s16 unk_14A;
     u16 unk_14C;

@@ -101,7 +101,7 @@ typedef struct LstState {
 
 typedef struct LstWork {
     void* unk_00;
-    LstState* unk_04;
+    LstState* state;
 } LstWork;
 
 typedef struct LstLsrTask {

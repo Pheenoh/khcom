@@ -10,7 +10,7 @@ typedef struct HumSub {
     void* unk_00;
     void* tiles;
     void* palette;
-    void* unk_0C;
+    void* palette2;
     AnimState anim;
     s32 unk_28;
     s32 unk_2C;
@@ -42,7 +42,7 @@ typedef struct HumWork {
     HumSub* unk_010;
     AnimState anim;
     TaskPool unk_02C;
-    BtlObj unk_040;
+    BtlObj actor;
     s16 unk_150;
     s16 unk_152;
     u32 unk_154;

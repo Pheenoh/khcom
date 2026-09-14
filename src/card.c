@@ -17767,7 +17767,7 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     *(void**)&w->unk_040[0x1A0] = LoadObjTiles(gUnk_093F5C40, 32);
     w->unk_284 = 0;
     w->unk_285 = 0;
-    w->unk_1EC = ListPoolFirst(&w->cards);
+    w->card = ListPoolFirst(&w->cards);
     *(MapcardWork**)w->unk_1F0 = 0;
     m4aSongNumStart(118);
     gUnk_02034AD0 = 0;
@@ -17779,10 +17779,10 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     *(s32*)w->unk_268 = 0x6400;
     w->unk_28D[1] = 0;
     w->unk_28B = 0;
-    if (w->unk_1EC != 0) {
-        w->unk_250 = w->unk_1EC->unk_4C;
-        w->unk_254 = w->unk_1EC->unk_50;
-        w->unk_1EC->unk_6C |= 0x100;
+    if (w->card != 0) {
+        w->unk_250 = w->card->unk_4C;
+        w->unk_254 = w->card->unk_50;
+        w->card->unk_6C |= 0x100;
     } else {
         w->unk_250 = -0x6400;
         w->unk_254 = -0x6400;
@@ -17794,9 +17794,9 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     w->unk_287[1] = 0;
     w->unk_287[2] = 0;
     InitTextSlots(&w->unk_040[12], 48);
-    if (w->unk_1EC != 0) {
-        *(MapcardWork**)w->unk_1F0 = w->unk_1EC;
-        w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->unk_1EC->unk_20].unk_20), &w->unk_040[12]);
+    if (w->card != 0) {
+        *(MapcardWork**)w->unk_1F0 = w->card;
+        w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
     }
     w->unk_244 = 0x19100;
     FadeSetPaletteExcluded((u16)((*(ObjPalette**)&w->unk_040[8])->unk_06 + 16), 1);
@@ -17871,7 +17871,7 @@ u8 func_0809217C(MapSelectWork* w, void* a) {
             ((void**)TaskCreate(w, &gTaskDescSELMAPEVKEY, &w->unk_2C4))[1];
     }
 
-    func_08093C44(((u8*)w->unk_1EC)[32], w);
+    func_08093C44(((u8*)w->card)[32], w);
     SetTaskUpdate(a, (void*)func_08092234);
     return 1;
 }
@@ -17938,7 +17938,7 @@ u8 func_08092234(MapSelectWork* w, void* a) {
 u8 func_080923E0(MapSelectWork* w, void* a) {
     s8 v;
 
-    if (w->unk_1EC->unk_6F == 0) {
+    if (w->card->unk_6F == 0) {
         LoadBgTiles(1, &gUnk_09508098[0x2020], 0x23C0);
 #ifdef VERSION_EU
         switch (gLanguage) {
@@ -17959,8 +17959,8 @@ u8 func_080923E0(MapSelectWork* w, void* a) {
         }
 #endif
         LoadBgMap(1, &gUnk_0960F2B8[0x1800], 0x800);
-        func_08093D28(w->unk_1EC->unk_20, w);
-        v = func_08093E34(w->unk_1EC->unk_20, w);
+        func_08093D28(w->card->unk_20, w);
+        v = func_08093E34(w->card->unk_20, w);
         SetTaskUpdate(a, (void*)func_0809254C);
         ReleaseObjTiles(w->tiles);
         w->tiles = AllocObjTiles(0x1E0, 0);
@@ -18046,33 +18046,33 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
         LoadBgTiles(1, gUnk_09508098, 0x2020);
         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
 #endif
-        w->unk_1EC->unk_6C &= 0xFDFF;
+        w->card->unk_6C &= 0xFDFF;
         SetTaskUpdate(a, (void*)func_080928E4);
         m4aSongNumStart(104);
         break;
     case 1:
-        n = (u8)func_080E8D64((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20 + (s16)sel] + 0x20);
+        n = (u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20 + (s16)sel] + 0x20);
 
         if (n == 1) {
-            if (gUnk_0203A8C0[w->unk_1EC->unk_20 + (s16)sel] != 0) {
+            if (gUnk_0203A8C0[w->card->unk_20 + (s16)sel] != 0) {
                 if (w->unk_2BE == 1) {
                     m4aSongNumStart(140);
 
-                    if (func_08093B08(w->unk_1EC->unk_20) == 0) {
-                        w->unk_1EC->unk_74 = sel;
-                        w->unk_1EC->unk_6C |= 0x40;
+                    if (func_08093B08(w->card->unk_20) == 0) {
+                        w->card->unk_74 = sel;
+                        w->card->unk_6C |= 0x40;
                     }
 
-                    RemoveMapCard(w->unk_1EC->unk_20 + sel);
+                    RemoveMapCard(w->card->unk_20 + sel);
 
-                    if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20 + (s16)sel] + 0x20) == 1) {
+                    if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->card->unk_20 + (s16)sel] + 0x20) == 1) {
                         w->unk_2DA = func_080E8D00();
                         ((u8*)w->unk_238)[0x122]++;
                         ((u8*)w->unk_238)[0x11A] = 8;
 
                         if (w->unk_2DA == 0) {
-                            w->unk_1EC->unk_74 = sel;
-                            w->unk_1EC->unk_6C |= 0x40;
+                            w->card->unk_74 = sel;
+                            w->card->unk_6C |= 0x40;
                             *w->unk_294 = 2;
                             w->unk_28F = 16;
                             w->unk_290 = 16;
@@ -18084,10 +18084,10 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
                         }
                     }
 
-                    func_08093C44(w->unk_1EC->unk_20, w);
-                    func_08093D28(w->unk_1EC->unk_20, w);
+                    func_08093C44(w->card->unk_20, w);
+                    func_08093D28(w->card->unk_20, w);
 
-                    if ((s8)func_08093E34(w->unk_1EC->unk_20, w) == -1) {
+                    if ((s8)func_08093E34(w->card->unk_20, w) == -1) {
 #ifdef VERSION_EU
                         LoadBgTiles(1, gUnkEu_09529A04, 0x2020);
 
@@ -18113,16 +18113,16 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
                         LoadBgTiles(1, gUnk_09508098, 0x2020);
                         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
 #endif
-                        w->unk_1EC->unk_6C &= 0xFDFF;
+                        w->card->unk_6C &= 0xFDFF;
                         func_08094548(w);
                         SetTaskUpdate(a, (void*)func_080928E4);
                     }
                     break;
                 }
 
-                w->unk_1EC->unk_74 = sel;
-                w->unk_1EC->unk_6C |= 0x40;
-                RemoveMapCard(w->unk_1EC->unk_20 + sel);
+                w->card->unk_74 = sel;
+                w->card->unk_6C |= 0x40;
+                RemoveMapCard(w->card->unk_20 + sel);
                 *w->unk_294 = 2;
                 w->unk_28F = 16;
                 w->unk_290 = 16;
@@ -18168,11 +18168,11 @@ u8 func_080928E4(MapSelectWork* w, void* a) {
         return 0;
     }
 
-    if (w->unk_1EC->unk_6F == 0) {
+    if (w->card->unk_6F == 0) {
         node = (MapcardWork*)ListPoolFirst(&w->cards);
 
         while (node != 0) {
-            if (w->unk_1EC != node) {
+            if (w->card != node) {
                 node->unk_6C |= 2;
             }
 
@@ -18188,8 +18188,8 @@ u8 func_080928E4(MapSelectWork* w, void* a) {
         w->gfx = AnimGetGfx(w->unk_1F8);
         w->unk_258 = w->unk_280 << 8;
         w->unk_25C = w->unk_282 << 8;
-        w->unk_250 = w->unk_1EC->unk_4C;
-        w->unk_254 = w->unk_1EC->unk_50;
+        w->unk_250 = w->card->unk_4C;
+        w->unk_254 = w->card->unk_50;
         w->unk_2C0 = 1;
     }
 
@@ -18229,21 +18229,21 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
     w->unk_29B++;
     switch (keys & 0x30F) {
     case 1:
-        if (w->unk_1EC != 0) {
-            if (w->unk_1EC->unk_20 >= 220) {
-                if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
-                    if (gUnk_0203A8C0[w->unk_1EC->unk_20 + 1] != 0) {
+        if (w->card != 0) {
+            if (w->card->unk_20 >= 220) {
+                if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20] + 0x48) == 1) {
+                    if (gUnk_0203A8C0[w->card->unk_20 + 1] != 0) {
                         m4aSongNumStart(140);
-                        RemoveMapCard(w->unk_1EC->unk_20 + 1);
-                        if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
+                        RemoveMapCard(w->card->unk_20 + 1);
+                        if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->card->unk_20] + 0x48) == 1) {
                             w->unk_2DA = func_080E8D00();
                             ((u8*)w->unk_238)[0x122]++;
                             ((u8*)w->unk_238)[0x11A] = 8;
                             if (w->unk_2DA == 0) {
-                                w->unk_1EC->unk_74 = 1;
-                                w->unk_1EC->unk_6C |= 0x40;
+                                w->card->unk_74 = 1;
+                                w->card->unk_6C |= 0x40;
                                 for (p = ListPoolFirst(&w->cards); p != 0; p = ListPoolNext(&p->unk_38)) {
-                                    if (w->unk_1EC != p) {
+                                    if (w->card != p) {
                                         p->unk_6C &= 0xFFFD;
                                     }
                                 }
@@ -18261,15 +18261,15 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
                     }
                 }
             } else {
-                if (func_08093B08(w->unk_1EC->unk_20) != 0) {
+                if (func_08093B08(w->card->unk_20) != 0) {
                     for (p = ListPoolFirst(&w->cards); p != 0; p = ListPoolNext(&p->unk_38)) {
-                        if (w->unk_1EC != p) {
+                        if (w->card != p) {
                             p->unk_6C &= 0xFFFD;
                         }
                     }
-                    if (w->unk_1EC != 0) {
-                        w->unk_23C = w->unk_1EC->unk_4C;
-                        w->unk_1EC->unk_6C |= 0x200;
+                    if (w->card != 0) {
+                        w->unk_23C = w->card->unk_4C;
+                        w->card->unk_6C |= 0x200;
                     }
                     m4aSongNumStart(102);
                     SetTaskUpdate(a, (u32)func_080923E0);
@@ -18300,20 +18300,20 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
     }
     func_08093434((u8*)w);
     if (w->unk_298 == 0) {
-        if (w->unk_1EC != *(MapcardWork**)w->unk_1F0) {
-            if (w->unk_1EC != 0) {
-                w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->unk_1EC->unk_20].unk_20), &w->unk_040[12]);
-                func_08093C44(w->unk_1EC->unk_20, w);
+        if (w->card != *(MapcardWork**)w->unk_1F0) {
+            if (w->card != 0) {
+                w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
+                func_08093C44(w->card->unk_20, w);
             } else {
                 w->unk_287[0] = 0;
                 w->unk_287[1] = 0;
                 w->unk_287[2] = 0;
             }
-            *(MapcardWork**)w->unk_1F0 = w->unk_1EC;
+            *(MapcardWork**)w->unk_1F0 = w->card;
             w->unk_28B = 4;
-        } else if (w->unk_1EC != 0) {
-            ApproachValue(&w->unk_250, w->unk_1EC->unk_4C, w->unk_28B);
-            ApproachValue(&w->unk_254, w->unk_1EC->unk_50, w->unk_28B);
+        } else if (w->card != 0) {
+            ApproachValue(&w->unk_250, w->card->unk_4C, w->unk_28B);
+            ApproachValue(&w->unk_254, w->card->unk_50, w->unk_28B);
             if (w->unk_28B != 0) {
                 w->unk_28B--;
             }
@@ -18351,7 +18351,7 @@ u8 func_08092E2C(MapSelectWork* w) {
         ApproachValue(&w->unk_270, 0xA000, w->unk_290);
         w->unk_290--;
     } else {
-        if (w->unk_2BF != 0 || (w->unk_1EC->unk_6C & 0x80)) {
+        if (w->unk_2BF != 0 || (w->card->unk_6C & 0x80)) {
             return 0;
         }
     }
@@ -18370,17 +18370,17 @@ void MapSelect_2(MapSelectWork* w) {
                    w->unk_038, *(void**)&w->unk_040[8], 0, 0, 80);
     }
     if (w->unk_2BE == 1) {
-        switch (gUnk_09EE4C80[w->unk_1EC->unk_20].unk_1E) {
+        switch (gUnk_09EE4C80[w->card->unk_20].unk_1E) {
         case 0:
             break;
         case 2:
-            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), gUnk_0203A890.sprites[3], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[3], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 3:
-            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), gUnk_0203A890.sprites[7], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[7], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 1:
-            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), gUnk_0203A890.sprites[5], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[5], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 4:
             break;
@@ -18513,32 +18513,32 @@ void func_08093434(MapSelectWork* work) {
         return;
     }
 
-    if (work->unk_1EC == 0) {
+    if (work->card == 0) {
         return;
     }
 
     switch (GetKeysRepeat() & 0xF0) {
     case 16:
-        p = (MapcardWork*)ListPoolNext(&work->unk_1EC->unk_38);
+        p = (MapcardWork*)ListPoolNext(&work->card->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
             work->unk_264 = p->unk_4C;
             work->unk_28C = 4;
-            work->unk_1EC->unk_6C &= 0xFEFF;
-            work->unk_1EC = (MapcardWork*)ListPoolNext(&work->unk_1EC->unk_38);
-            work->unk_1EC->unk_6C |= 0x100;
+            work->card->unk_6C &= 0xFEFF;
+            work->card = (MapcardWork*)ListPoolNext(&work->card->unk_38);
+            work->card->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
         break;
     case 32:
-        p = ListPoolPrev(&work->unk_1EC->unk_38);
+        p = ListPoolPrev(&work->card->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
             work->unk_264 = p->unk_4C;
             work->unk_28C = 4;
-            work->unk_1EC->unk_6C &= 0xFEFF;
-            work->unk_1EC = ListPoolPrev(&work->unk_1EC->unk_38);
-            work->unk_1EC->unk_6C |= 0x100;
+            work->card->unk_6C &= 0xFEFF;
+            work->card = ListPoolPrev(&work->card->unk_38);
+            work->card->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
         break;
@@ -18670,8 +18670,8 @@ void func_08093708(MapSelectWork* w) {
         }
         w->unk_298 = 0;
         func_08093838(w);
-        if (w->unk_1EC != 0) {
-            w->unk_264 = w->unk_1EC->unk_4C;
+        if (w->card != 0) {
+            w->unk_264 = w->card->unk_4C;
             w->unk_28C = 4;
         }
         w->unk_284++;
@@ -18688,8 +18688,8 @@ void func_08093708(MapSelectWork* w) {
         }
         w->unk_298 = 0;
         func_08093838(w);
-        if (w->unk_1EC != 0) {
-            w->unk_264 = w->unk_1EC->unk_4C;
+        if (w->card != 0) {
+            w->unk_264 = w->card->unk_4C;
             w->unk_28C = 4;
         }
         w->unk_284--;
@@ -18708,7 +18708,7 @@ s32 func_08093838(MapSelectWork* w) {
     node = (MapcardWork*)ListPoolFirst(&w->cards);
     best = 0x100;
     z = 0;
-    w->unk_1EC = z;
+    w->card = z;
 
     while (node != 0) {
         if (node->unk_4C != -0x6400) {
@@ -18717,21 +18717,21 @@ s32 func_08093838(MapSelectWork* w) {
 
             if (best > r) {
                 best = r;
-                w->unk_1EC = node;
+                w->card = node;
             }
         }
 
         node = (MapcardWork*)ListPoolNext(&node->unk_38);
     }
 
-    q = (u8*)w->unk_1EC;
+    q = (u8*)w->card;
 
     if (q != 0) {
         q += 0x6C;
         r = *(u16*)q | 0x100;
         *(u16*)q = r;
 
-        return (((MapcardWork*)w->unk_1EC)->unk_4C - w->unk_258) >> 8;
+        return (((MapcardWork*)w->card)->unk_4C - w->unk_258) >> 8;
     }
 
     return 0;
@@ -19049,7 +19049,7 @@ void func_08093D28(u16 a, MapSelectWork* w) {
     }
 
     for (i = 22, j = 2; i < 26; i++, j++) {
-        mp = &w->unk_1EC;
+        mp = &w->card;
         pal = w->unk_29E;
 
         switch ((*mp)->unk_18->unk_1E) {
@@ -19398,9 +19398,9 @@ void func_08094548(MapSelectWork* w) {
         }
     }
 
-    n = ListPoolRemove(&w->unk_1EC->unk_38, &w->cards);
-    w->unk_1EC->unk_6C |= 0x400;
-    w->unk_1EC = n;
+    n = ListPoolRemove(&w->card->unk_38, &w->cards);
+    w->card->unk_6C |= 0x400;
+    w->card = n;
 
     while (n != 0) {
         n->unk_21--;
@@ -19417,16 +19417,16 @@ void func_08094548(MapSelectWork* w) {
         n->unk_6C |= 2;
     }
 
-    if (w->unk_1EC == 0) {
-        w->unk_1EC = ListPoolLast(&w->cards);
+    if (w->card == 0) {
+        w->card = ListPoolLast(&w->cards);
 
-        if (w->unk_1EC == 0) {
+        if (w->card == 0) {
             w->unk_264 = 0x1600;
         } else {
-            w->unk_264 = w->unk_1EC->unk_4C;
+            w->unk_264 = w->card->unk_4C;
         }
     } else {
-        w->unk_264 = w->unk_1EC->unk_4C;
+        w->unk_264 = w->card->unk_4C;
     }
 }
 
