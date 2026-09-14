@@ -435,10 +435,10 @@ typedef struct UnkStruct_0807B410 {
 
 typedef struct DeckCard2Work {
     u8 unk_00[0x04];
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
+    void* palette2;
+    void* tiles;
+    void* palette;
+    void* tiles2;
     CardDef* unk_14;
     CardBack* unk_18;
     ListPool* unk_1C;

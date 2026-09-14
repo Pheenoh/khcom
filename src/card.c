@@ -14915,15 +14915,15 @@ void func_0808E7D8(u8* work) {
         x++;
 
         if (node->unk_48 & 1) {
-            ReleaseObjPalette(node->unk_04);
-            ReleaseObjTiles(node->unk_08);
-            ReleaseObjPalette(node->unk_0C);
-            ReleaseObjTiles(node->unk_10);
+            ReleaseObjPalette(node->palette2);
+            ReleaseObjTiles(node->tiles);
+            ReleaseObjPalette(node->palette);
+            ReleaseObjTiles(node->tiles2);
             node->unk_48 &= ~1;
-            node->unk_08 = 0;
-            node->unk_0C = 0;
-            node->unk_10 = 0;
-            node->unk_04 = 0;
+            node->tiles = 0;
+            node->palette = 0;
+            node->tiles2 = 0;
+            node->palette2 = 0;
         }
 
         if (x > 2) {
@@ -14951,15 +14951,15 @@ void func_0808E7D8(u8* work) {
         x++;
 
         if (node->unk_48 & 1) {
-            ReleaseObjPalette(node->unk_04);
-            ReleaseObjTiles(node->unk_08);
-            ReleaseObjPalette(node->unk_0C);
-            ReleaseObjTiles(node->unk_10);
+            ReleaseObjPalette(node->palette2);
+            ReleaseObjTiles(node->tiles);
+            ReleaseObjPalette(node->palette);
+            ReleaseObjTiles(node->tiles2);
             node->unk_48 &= ~1;
-            node->unk_08 = 0;
-            node->unk_0C = 0;
-            node->unk_10 = 0;
-            node->unk_04 = 0;
+            node->tiles = 0;
+            node->palette = 0;
+            node->tiles2 = 0;
+            node->palette2 = 0;
         }
 
         if (x > 2) {
@@ -16496,10 +16496,10 @@ void func_0808FA8C(UnkStruct_0808FA8C* w) {
 
 void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
     *(DeckCard2Args*)&n->unk_1C = *a;
-    n->unk_08 = 0;
-    n->unk_0C = 0;
-    n->unk_10 = 0;
-    n->unk_04 = 0;
+    n->tiles = 0;
+    n->palette = 0;
+    n->tiles2 = 0;
+    n->palette2 = 0;
     n->unk_48 = 0;
 
     switch (n->unk_26) {
@@ -16582,8 +16582,8 @@ void DeckCard2_2(DeckCard2Work* n) {
         return;
     }
 
-    if (n->unk_08 != 0 && n->unk_0C != 0) {
-        DrawSprite(n->unk_40 >> 8, n->unk_44 >> 8, n->unk_14->unk_10, n->unk_08, n->unk_0C, 0, 0, 0x33);
+    if (n->tiles != 0 && n->palette != 0) {
+        DrawSprite(n->unk_40 >> 8, n->unk_44 >> 8, n->unk_14->unk_10, n->tiles, n->palette, 0, 0, 0x33);
 
         if (n->unk_4D != 0) {
             DrawSprite(n->unk_40 >> 8, n->unk_44 >> 8, gUnk_0203A860.gfx, gUnk_0203A860.tiles, gUnk_0203A860.palette, 0, 0, 0x28);
@@ -16591,7 +16591,7 @@ void DeckCard2_2(DeckCard2Work* n) {
     }
 
     if (n->unk_26 == 0 && n->unk_14->unk_2A != 3) {
-        DrawSprite((n->unk_40 >> 8) - 3, (n->unk_44 >> 8) - 4, gUnk_09EE981C[n->unk_14->unk_20], n->unk_10, n->unk_04, 0, 0, 0x31);
+        DrawSprite((n->unk_40 >> 8) - 3, (n->unk_44 >> 8) - 4, gUnk_09EE981C[n->unk_14->unk_20], n->tiles2, n->palette2, 0, 0, 0x31);
     }
 }
 
@@ -16609,27 +16609,27 @@ void func_08090100(DeckCard2Work* n) {
         return;
     }
 
-    n->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
-    n->unk_08 = LoadObjTiles(n->unk_14->unk_14, 0x200);
-    n->unk_0C = LoadObjPalette(n->unk_14->unk_18, 32);
-    n->unk_10 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    n->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    n->tiles = LoadObjTiles(n->unk_14->unk_14, 0x200);
+    n->palette = LoadObjPalette(n->unk_14->unk_18, 32);
+    n->tiles2 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
 
-    if (n->unk_08 != 0 && n->unk_0C != 0) {
+    if (n->tiles != 0 && n->palette != 0) {
         n->unk_48 |= 1;
     }
 }
 
 void func_08090170(DeckCard2Work* node) {
     if (node->unk_48 & 1) {
-        ReleaseObjPalette(node->unk_04);
-        ReleaseObjTiles(node->unk_08);
-        ReleaseObjPalette(node->unk_0C);
-        ReleaseObjTiles(node->unk_10);
+        ReleaseObjPalette(node->palette2);
+        ReleaseObjTiles(node->tiles);
+        ReleaseObjPalette(node->palette);
+        ReleaseObjTiles(node->tiles2);
         node->unk_48 &= 0xFFFE;
-        node->unk_08 = 0;
-        node->unk_0C = 0;
-        node->unk_10 = 0;
-        node->unk_04 = 0;
+        node->tiles = 0;
+        node->palette = 0;
+        node->tiles2 = 0;
+        node->palette2 = 0;
     }
 }
 
