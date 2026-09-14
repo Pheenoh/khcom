@@ -40,3 +40,7 @@ permuter/tmp
 
 # Optional pret gbagfx (Phase 1 asset_gfx dual-path)
 tools/gbagfx/
+
+# Local-only MovieOpen encoder RE (not matching path)
+tools/gfx/movie_open_re.py
+tools/_tmp_movie_encode_re.md
