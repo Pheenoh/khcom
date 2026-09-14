@@ -308,9 +308,9 @@ typedef struct HadesWork {
     void* tiles;
     void* tiles2;
     void* tiles3;
-    AnimState unk_1E0;
-    AnimState unk_1F8;
-    AnimState unk_210;
+    AnimState anim;
+    AnimState anim2;
+    AnimState anim3;
     void* palette;
     HadesSub unk_22C[2];
     s32 unk_27C;

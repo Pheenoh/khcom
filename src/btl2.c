@@ -131,12 +131,12 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
         work->palette = LoadObjPalette(gUnk_09618118, 0x20);
         work->tiles = AllocObjTiles(0x280, gUnk_08B21438);
         work->gfx = gUnk_08B213F0;
-        AnimInit(&work->unk_44, gUnk_09EE12C8, gUnk_09EE12BC);
+        AnimInit(&work->anim, gUnk_09EE12C8, gUnk_09EE12BC);
     } else {
         work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
         work->tiles = AllocObjTiles(0x280, gUnk_08B20D6E);
         work->gfx = gUnk_08B20D20;
-        AnimInit(&work->unk_44, gUnk_09EE12B0, gUnk_09EE12A4);
+        AnimInit(&work->anim, gUnk_09EE12B0, gUnk_09EE12A4);
     }
 
     work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
@@ -144,8 +144,8 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
     work->tiles3 = AllocObjTiles(0x120, gUnk_08B24016);
     work->tiles4 = AllocObjTiles(0x80, gUnk_08B24016);
     work->gfx2 = gUnk_08B23CBA;
-    AnimInit(&work->unk_2C, gUnk_09EE1498, gUnk_09EE1420);
-    AnimStart(&work->unk_44, 0, 1);
+    AnimInit(&work->anim2, gUnk_09EE1498, gUnk_09EE1420);
+    AnimStart(&work->anim, 0, 1);
 
     if (gBtlWork->unk_07C->unk_02E <= 40) {
         work->unk_64 = 0;
@@ -198,30 +198,30 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
         switch (work->unk_64) {
         case 0:
         case 1:
-            AnimStart(&work->unk_2C, 1, 1);
+            AnimStart(&work->anim2, 1, 1);
             break;
         case 2:
-            AnimStart(&work->unk_2C, 3, 1);
+            AnimStart(&work->anim2, 3, 1);
             break;
         case 3:
-            AnimStart(&work->unk_2C, 5, 1);
+            AnimStart(&work->anim2, 5, 1);
             break;
         case 4:
-            AnimStart(&work->unk_2C, 7, 1);
+            AnimStart(&work->anim2, 7, 1);
             break;
         case 5:
-            AnimStart(&work->unk_2C, 9, 1);
+            AnimStart(&work->anim2, 9, 1);
             break;
         case 6:
-            AnimStart(&work->unk_2C, 11, 1);
+            AnimStart(&work->anim2, 11, 1);
             break;
         default:
-            AnimStart(&work->unk_2C, 11, 1);
+            AnimStart(&work->anim2, 11, 1);
             break;
         }
         work->gfx3 = 0;
     } else {
-        AnimStart(&work->unk_2C, 11, 1);
+        AnimStart(&work->anim2, 11, 1);
 
         switch (work->unk_64) {
         case 0:
@@ -284,12 +284,12 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
     }
 
     if (work->unk_5E != 0) {
-        AnimChange(&work->unk_44, 1, 1);
+        AnimChange(&work->anim, 1, 1);
         work->unk_5E--;
     } else if (flag != 0) {
-        AnimChange(&work->unk_44, 2, 1);
+        AnimChange(&work->anim, 2, 1);
     } else {
-        AnimChange(&work->unk_44, 0, 1);
+        AnimChange(&work->anim, 0, 1);
     }
 
     if (work->unk_04 != 0) {
@@ -339,58 +339,58 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
             switch (work->unk_64) {
             case 0:
             case 1:
-                AnimChange(&work->unk_2C, 2, 1);
+                AnimChange(&work->anim2, 2, 1);
                 break;
             case 2:
-                AnimChange(&work->unk_2C, 4, 1);
+                AnimChange(&work->anim2, 4, 1);
                 break;
             case 3:
-                AnimChange(&work->unk_2C, 6, 1);
+                AnimChange(&work->anim2, 6, 1);
                 break;
             case 4:
-                AnimChange(&work->unk_2C, 8, 1);
+                AnimChange(&work->anim2, 8, 1);
                 break;
             case 5:
-                AnimChange(&work->unk_2C, 10, 1);
+                AnimChange(&work->anim2, 10, 1);
                 break;
             case 6:
-                AnimChange(&work->unk_2C, 12, 1);
+                AnimChange(&work->anim2, 12, 1);
                 break;
             default:
-                AnimChange(&work->unk_2C, 12, 1);
+                AnimChange(&work->anim2, 12, 1);
                 break;
             }
         } else {
-            AnimChange(&work->unk_2C, 12, 1);
+            AnimChange(&work->anim2, 12, 1);
         }
     } else {
         if (work->unk_68 == 0) {
             switch (work->unk_64) {
             case 0:
             case 1:
-                AnimChange(&work->unk_2C, 1, 1);
+                AnimChange(&work->anim2, 1, 1);
                 break;
             case 2:
-                AnimChange(&work->unk_2C, 3, 1);
+                AnimChange(&work->anim2, 3, 1);
                 break;
             case 3:
-                AnimChange(&work->unk_2C, 5, 1);
+                AnimChange(&work->anim2, 5, 1);
                 break;
             case 4:
-                AnimChange(&work->unk_2C, 7, 1);
+                AnimChange(&work->anim2, 7, 1);
                 break;
             case 5:
-                AnimChange(&work->unk_2C, 9, 1);
+                AnimChange(&work->anim2, 9, 1);
                 break;
             case 6:
-                AnimChange(&work->unk_2C, 11, 1);
+                AnimChange(&work->anim2, 11, 1);
                 break;
             default:
-                AnimChange(&work->unk_2C, 11, 1);
+                AnimChange(&work->anim2, 11, 1);
                 break;
             }
         } else {
-            AnimChange(&work->unk_2C, 11, 1);
+            AnimChange(&work->anim2, 11, 1);
         }
 
         if (work->unk_5D != 0) {
@@ -399,8 +399,8 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
         }
     }
 
-    work->gfx = AnimUpdate(&work->unk_44);
-    work->gfx2 = AnimUpdate(&work->unk_2C);
+    work->gfx = AnimUpdate(&work->anim);
+    work->gfx2 = AnimUpdate(&work->anim2);
     work->unk_60 = actor->unk_02C;
     return 1;
 }

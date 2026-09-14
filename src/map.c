@@ -8383,10 +8383,10 @@ s32 func_080ED498(MapMenuWork* w) {
 #endif
 
         w->unk_044 = -0x7800;
-        w->unk_060 = LoadObjPalette(gUnk_099919A4, 32);
-        w->unk_064 = AllocObjTiles(0x120, gUnk_098A8628);
-        AnimInit(&w->unk_048, gUnk_09EF8D58, gUnk_09EF8D48);
-        AnimStart(&w->unk_048, 2, 1);
+        w->palette = LoadObjPalette(gUnk_099919A4, 32);
+        w->tiles = AllocObjTiles(0x120, gUnk_098A8628);
+        AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
+        AnimStart(&w->anim, 2, 1);
 
         for (i = 0; i < 3; i++) {
             w->unk_164[i] = 0;
@@ -8702,7 +8702,7 @@ s32 func_080EDE78(MapMenuWork* w) {
     }
 
     if (w->unk_30E != 0) {
-        AnimUpdate(&w->unk_048);
+        AnimUpdate(&w->anim);
     }
 
     if (w->unk_310 != 0 && (u8)w->unk_310(w) == 0) {
@@ -8971,18 +8971,18 @@ void func_080EDECC(MapMenuWork* w) {
             switch (w->unk_30A) {
             case 1:
                 ApproachValueHalf(&w->unk_068, 0x4800);
-                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     1, 60);
                 break;
             case 2:
                 ApproachValueHalf(&w->unk_068, 0x8800);
-                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     1, 60);
                 break;
             case 0:
             default:
                 ApproachValueHalf(&w->unk_06C, (w->unk_309 * 19 + 16) << 8);
-                DrawSprite(24, w->unk_06C >> 8, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                DrawSprite(24, w->unk_06C >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     0x401, 60);
                 break;
             }
@@ -9017,8 +9017,8 @@ void func_080EE418(MapMenuWork* w) {
     ReleaseObjPalette(w->unk_038);
     ReleaseObjPalette(w->unk_03C);
     ReleaseObjTiles(w->unk_040);
-    ReleaseObjPalette(w->unk_060);
-    ReleaseObjTiles(w->unk_064);
+    ReleaseObjPalette(w->palette);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_138);
     ReleaseObjTiles(w->unk_13C);
     ReleaseObjPalette(w->unk_140);
@@ -9266,10 +9266,10 @@ s32 func_080EE824(MapSaveWork* w) {
         w->unk_18C = AllocObjTiles(0x400, gUnk_091ABDB8);
         w->unk_014 = LoadObjPalette(gUnk_09991D24, 32);
         w->unk_018 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
-        w->unk_034 = LoadObjPalette(gUnk_099919A4, 32);
-        w->unk_038 = AllocObjTiles(0x120, gUnk_098A8628);
-        AnimInit(&w->unk_01C, gUnk_09EF8D58, gUnk_09EF8D48);
-        AnimStart(&w->unk_01C, 2, 1);
+        w->palette = LoadObjPalette(gUnk_099919A4, 32);
+        w->tiles = AllocObjTiles(0x120, gUnk_098A8628);
+        AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
+        AnimStart(&w->anim, 2, 1);
         w->unk_190 = _08066468(1);
         p1 = w->unk_194;
 #ifdef VERSION_EU
@@ -9457,7 +9457,7 @@ s32 func_080EEF04(MapSaveWork* w) {
     TaskPoolUpdate(&w->unk_2FC);
 
     if (w->unk_2F4 != 0) {
-        AnimUpdate(&w->unk_01C);
+        AnimUpdate(&w->anim);
     }
 
     if (w->unk_2F0 != 0) {
@@ -9547,12 +9547,12 @@ void func_080EEF4C(MapSaveWork* w) {
         switch (w->unk_2F4) {
         case 1:
             ApproachValueHalf(&w->unk_03C, 0x7800);
-            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
+            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
                 40);
             break;
         case 2:
             ApproachValueHalf(&w->unk_03C, 0xB000);
-            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
+            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
                 40);
             break;
         }
@@ -9567,8 +9567,8 @@ void func_080EF234(MapSaveWork* w) {
     ReleaseObjTiles(w->unk_004);
     ReleaseObjPalette((u8*)w->unk_014);
     ReleaseObjTiles(w->unk_018);
-    ReleaseObjPalette((u8*)w->unk_034);
-    ReleaseObjTiles(w->unk_038);
+    ReleaseObjPalette((u8*)w->palette);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_168);
     ReleaseObjTiles(w->unk_16C);
     ReleaseObjPalette((u8*)w->unk_180);
@@ -10440,7 +10440,7 @@ void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     func_080E6394((UnkStruct_080E590C*)w, arg);
     w->unk_CC = func_080F02A0;
     func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
-    w->unk_C4 = AnimGetGfx(&w->unk_A4);
+    w->gfx = AnimGetGfx(&w->anim);
     ColliderSetDisabled(&w->unk_48, 0);
     w->unk_D0 = 0;
     *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
@@ -11354,7 +11354,7 @@ u8 func_080F1978(MapGmkTutorialWork* w) {
             w->unk_0AC = func_080F1A10;
             gUnk_0203C7AC->unk_0F = 0;
             gUnk_0203C7AC->unk_10 = 0;
-            FadeSetPaletteExcluded(*(u16*)&w->unk_0A0[6] + 16, 1);
+            FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 1);
             TaskCreate(pool, &gTaskDescRoomcreate, 0);
         }
     }
@@ -11371,7 +11371,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        FadeSetPaletteExcluded(*(u16*)&w->unk_0A0[6] + 16, 0);
+        FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 0);
         w->unk_0AC = func_080F1978;
     }
     return 1;
@@ -11379,7 +11379,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
 u8 func_080F1A84(MapGmkTutorialWork* w) {
     if (gUnk_02039BA0->unk_70 & 0x200000) {
-        UpdateSpriteFrameTiles(w->unk_09C, gUnk_098A94A0, gUnk_0994C364);
+        UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
         w->unk_0AC = func_080F1ACC;
     }
@@ -11399,9 +11399,9 @@ void func_080F1AD0(MapGmkTutorialWork* w) {
     w->unk_004 -= w->unk_00C;
     w->unk_014 = 0xAD;
     w->unk_01A = 32;
-    w->unk_0A0 = LoadObjPalette(&gUnk_099910C4[0x140], 32);
-    w->unk_09C = AllocSpriteFrameTiles(0x400);
-    UpdateSpriteFrameTiles(w->unk_09C, gUnk_098A94A0, gUnk_0994BF64);
+    w->palette = LoadObjPalette(&gUnk_099910C4[0x140], 32);
+    w->tiles = AllocSpriteFrameTiles(0x400);
+    UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994BF64);
     ColliderInit(&w->unk_040, 6, 16, 0);
     ColliderSetPosition(&w->unk_040, w->unk_000, w->unk_004, w->unk_008);
     w->unk_0A8 = 0;
@@ -11434,13 +11434,13 @@ void func_080F1BC8(MapGmkTutorialWork* w) {
     k = w->unk_004 >> 8;
     y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     v = -0xFE4 - k * 4;
-    DrawSprite(x, y, 0, w->unk_09C, w->unk_0A0, 0, 0x800, v);
+    DrawSprite(x, y, 0, w->tiles, w->palette, 0, 0x800, v);
     TaskPoolDraw(&w->unk_0B0);
 }
 
 void func_080F1C38(MapGmkTutorialWork* w) {
-    ReleaseObjTiles(w->unk_09C);
-    ReleaseObjPalette(w->unk_0A0);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
     TaskPoolDestroy(&w->unk_0B0);
 }
@@ -13880,8 +13880,8 @@ void func_080F5EA8(MapDonaldWork* w) {
 }
 
 void func_080F5F4C(MapFrdWork* w) {
-    ReleaseObjTiles(w->unk_0B4);
-    ReleaseObjPalette(w->unk_0B8);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
@@ -13995,8 +13995,8 @@ void func_080F61D0(MapGoofyWork* w) {
 }
 
 void func_080F6274(MapFrdWork* w) {
-    ReleaseObjTiles(w->unk_0B4);
-    ReleaseObjPalette(w->unk_0B8);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
@@ -14411,8 +14411,8 @@ void func_080F6C5C(MapMickeyWork* w) {
 }
 
 void func_080F6D04(MapFrdWork* w) {
-    ReleaseObjTiles(w->unk_0B4);
-    ReleaseObjPalette(w->unk_0B8);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
@@ -14452,12 +14452,12 @@ void func_080F6DE8(MapTutorialWork* w) {
         w->unk_008 = w->unk_00C - 0xA000;
         *(u16*)&w->unk_014[6] = 24;
         w->unk_010 = 2;
-        w->unk_0B4 = AllocObjTiles(0x400, &gUnk_09858238[0x482]);
-        w->unk_0B8 = LoadObjPalette(&gUnk_099910C4[0x220], 32);
-        a = &w->unk_09C;
+        w->tiles = AllocObjTiles(0x400, &gUnk_09858238[0x482]);
+        w->palette = LoadObjPalette(&gUnk_099910C4[0x220], 32);
+        a = &w->anim;
         AnimInit(a, gUnk_09EF8460, gUnk_09EF8424);
         AnimStart(a, 0, 1);
-        w->unk_0BC = AnimGetGfx(a);
+        w->gfx = AnimGetGfx(a);
         ColliderInit(w->unk_040, 6, 12, 24);
         ColliderSetPosition(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
         w->unk_0C1 = 1;
@@ -14490,17 +14490,17 @@ void func_080F6F1C(MapTutorialWork* w) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
         gUnk_0203C7AC->unk_00 &= ~0x20;
         func_080E8FB8(0, w->unk_000, w->unk_004, w->unk_008);
-        AnimStart(&w->unk_09C, 1, 0);
+        AnimStart(&w->anim, 1, 0);
         w->unk_0C4 = func_080F6F90;
         ColliderUnregister(w->unk_040);
     }
 }
 
 void func_080F6F90(MapTutorialWork* w) {
-    if (AnimIsFinished(&w->unk_09C)) {
+    if (AnimIsFinished(&w->anim)) {
         w->unk_0C4 = func_080F6FC4;
     } else {
-        w->unk_0BC = AnimUpdate(&w->unk_09C);
+        w->gfx = AnimUpdate(&w->anim);
     }
 }
 
@@ -14530,12 +14530,12 @@ void func_080F7024(MapTutorialWork* w) {
             v = 1;
         }
         w->unk_0C2 = v;
-        w->unk_0B4 = AllocObjTiles(0x400, gUnk_0895EECC);
-        w->unk_0B8 = LoadObjPalette(&gUnk_08F691E4[0x5C0], 32);
-        a = &w->unk_09C;
+        w->tiles = AllocObjTiles(0x400, gUnk_0895EECC);
+        w->palette = LoadObjPalette(&gUnk_08F691E4[0x5C0], 32);
+        a = &w->anim;
         AnimInit(a, gUnk_09EDF940, gUnk_09EDF914);
         AnimStart(a, 0, 1);
-        w->unk_0BC = AnimGetGfx(a);
+        w->gfx = AnimGetGfx(a);
         ColliderInit(w->unk_040, 3, 8, 16);
         ColliderSetPosition(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
         ColliderSetDisabled(w->unk_040, 1);
@@ -14544,20 +14544,20 @@ void func_080F7024(MapTutorialWork* w) {
 }
 
 void func_080F70F4(MapTutorialWork* w) {
-    AnimState* a = &w->unk_09C;
+    AnimState* a = &w->anim;
 
     if (AnimIsFinished(a)) {
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
-        SetObjTileSource(w->unk_0B4, gUnk_08957290);
+        SetObjTileSource(w->tiles, gUnk_08957290);
         func_080A411C(&w->unk_0C8, 0, 0x6C);
         w->unk_0C4 = func_080F7160;
     } else {
-        w->unk_0BC = AnimUpdate(a);
+        w->gfx = AnimUpdate(a);
     }
 }
 
 void func_080F7160(MapTutorialWork* w) {
-    w->unk_0BC = AnimUpdate(&w->unk_09C);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
@@ -14567,9 +14567,9 @@ void func_080F7160(MapTutorialWork* w) {
 }
 
 void func_080F71AC(MapTutorialWork* w) {
-    AnimState* a = &w->unk_09C;
+    AnimState* a = &w->anim;
 
-    w->unk_0BC = AnimUpdate(a);
+    w->gfx = AnimUpdate(a);
 
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 16)) {
         gUnk_0203C7AC->unk_00 |= 0x80;
@@ -14577,7 +14577,7 @@ void func_080F71AC(MapTutorialWork* w) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
         m4aSongNumStart(0x75);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
-        SetObjTileSource(w->unk_0B4, gUnk_08963BAC);
+        SetObjTileSource(w->tiles, gUnk_08963BAC);
         w->unk_0C4 = func_080F7284;
     } else if (w->unk_06C != 0) {
         if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {
@@ -14591,14 +14591,14 @@ void func_080F71AC(MapTutorialWork* w) {
 }
 
 void func_080F7284(MapTutorialWork* w) {
-    AnimState* a = &w->unk_09C;
+    AnimState* a = &w->anim;
 
     if (AnimIsFinished(a)) {
         ColliderSetDisabled(w->unk_040, 1);
         gGameState.flags |= 4;
         func_080F6D40();
     } else {
-        w->unk_0BC = AnimUpdate(a);
+        w->gfx = AnimUpdate(a);
     }
 }
 
@@ -14608,8 +14608,8 @@ void func_080F72CC(MapTutorialWork* w) {
     TaskPoolInit(&w->unk_0C8, 1);
     TaskPoolInit(&w->unk_0DC, 1);
     gUnk_0203C7AC->unk_00 |= 0x20;
-    w->unk_0B4 = 0;
-    w->unk_0B8 = 0;
+    w->tiles = 0;
+    w->palette = 0;
     w->unk_0C2 = 0;
     t = gGameState.progression.unk_82 & 0x2000;
 
@@ -14661,7 +14661,7 @@ void func_080F73AC(MapTutorialWork* w) {
         if (t != 0) {
             flags = 0x801;
         }
-        DrawSprite(x, y, w->unk_0BC, w->unk_0B4, w->unk_0B8, 0, flags, v);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, flags, v);
 
         if (w->unk_0C1 != 0) {
             ((UnkStruct_080E64D4*)w)->unk_3C = w->unk_00C;
@@ -14672,9 +14672,9 @@ void func_080F73AC(MapTutorialWork* w) {
 }
 
 void func_080F7458(MapTutorialWork* w) {
-    if (w->unk_0B4 != 0) {
-        ReleaseObjTiles(w->unk_0B4);
-        ReleaseObjPalette(w->unk_0B8);
+    if (w->tiles != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
     TaskPoolDestroy(&w->unk_0C8);
     TaskPoolDestroy(&w->unk_0DC);

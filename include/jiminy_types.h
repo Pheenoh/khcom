@@ -102,8 +102,8 @@ typedef struct JiminyWork {
     s16 unk_C76;
     s16 unk_C78;
     u8 unk_C7A[0x02];
-    AnimState unk_C7C;
-    AnimState unk_C94;
+    AnimState anim;
+    AnimState anim2;
     u16 unk_CAC;
     s16 unk_CAE;
     s16 unk_CB0;

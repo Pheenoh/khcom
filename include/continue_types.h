@@ -13,8 +13,8 @@ typedef struct ContinueWork {
     void* palette3;
     void* gfx;
     void* gfx2;
-    AnimState unk_20;
-    AnimState unk_38;
+    AnimState anim;
+    AnimState anim2;
     s32 unk_50;
     s32 unk_54;
     s32 unk_58;

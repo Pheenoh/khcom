@@ -247,7 +247,7 @@ u8 func_0805AA9C(void) {
     }
 
     if (gJiminyWork->unk_C70 < gJiminyWork->unk_C71) {
-        AnimChange(&gJiminyWork->unk_C7C, 1, 1);
+        AnimChange(&gJiminyWork->anim, 1, 1);
 
         if (!FadeIsActive()) {
             if (gJiminyWork->unk_048 % 5 == 0) {
@@ -255,7 +255,7 @@ u8 func_0805AA9C(void) {
             }
         }
     } else {
-        AnimChange(&gJiminyWork->unk_C7C, 0, 1);
+        AnimChange(&gJiminyWork->anim, 0, 1);
     }
 
     if (gJiminyWork->unk_C74 < gJiminyWork->unk_C72) {

@@ -303,17 +303,17 @@ void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a) {
         w->tiles = LoadObjTiles(gUnk_09C87A10, 606 * 32);
 #endif
         w->palette = LoadObjPalette(gUnk_09D6CF34, 32);
-        AnimInit(&w->unk_1C, gUnk_09EFB834, gUnk_09EFB828);
-        AnimStart(&w->unk_1C, 0, 0);
-        AnimInit(&w->unk_34, gUnk_09EFB834, gUnk_09EFB828);
-        AnimStart(&w->unk_34, 0, 0);
+        AnimInit(&w->anim, gUnk_09EFB834, gUnk_09EFB828);
+        AnimStart(&w->anim, 0, 0);
+        AnimInit(&w->anim2, gUnk_09EFB834, gUnk_09EFB828);
+        AnimStart(&w->anim2, 0, 0);
     } else {
         w->tiles = LoadObjTiles(gUnk_09A54374[a->unk_00][0], *(u16*)&gUnk_09A54374[a->unk_00][1]);
         w->palette = LoadObjPalette(gUnk_09D6BE74, 256);
-        AnimInit(&w->unk_1C, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
-        AnimStart(&w->unk_1C, 0, 0);
-        AnimInit(&w->unk_34, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
-        AnimStart(&w->unk_34, 1, 0);
+        AnimInit(&w->anim, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
+        AnimStart(&w->anim, 0, 0);
+        AnimInit(&w->anim2, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
+        AnimStart(&w->anim2, 1, 0);
     }
 
     for (i = 0; i < 8; i++) {
@@ -339,8 +339,8 @@ u8 task_sroll_b_secn_1(SrollBSecnWork* w) {
         }
 
         if (w->unk_04 == 0x7800) {
-            AnimUpdate(&w->unk_1C);
-            AnimUpdate(&w->unk_34);
+            AnimUpdate(&w->anim);
+            AnimUpdate(&w->anim2);
         }
     }
     w->unk_00++;
@@ -351,8 +351,8 @@ void task_sroll_b_secn_2(SrollBSecnWork* w) {
     u16 y;
 
     y = (w->unk_08 >> 8) - (*w->unk_0C >> 8);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_1C), w->tiles, w->palette, 0, 0, 0xEF0);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_34), w->tiles, w->palette, 0, 0, 0xEE0);
+    DrawSprite(120, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0, 0xEF0);
+    DrawSprite(120, y, AnimGetGfx(&w->anim2), w->tiles, w->palette, 0, 0, 0xEE0);
 }
 
 void task_sroll_b_secn_3(SrollBSecnWork* w) {

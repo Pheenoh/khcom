@@ -84,8 +84,8 @@ typedef struct BtlHpothWork {
     void* gfx;
     void* gfx2;
     void* gfx3;
-    AnimState unk_2C;
-    AnimState unk_44;
+    AnimState anim2;
+    AnimState anim;
     u8 unk_5C;
     u8 unk_5D;
     s16 unk_5E;

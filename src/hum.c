@@ -2122,12 +2122,12 @@ void task_hum_hades_0(HadesWork* work) {
     work->tiles2 = AllocObjTiles(0x280, gUnk_08BAFB62);
     work->tiles3 = AllocObjTiles(0x3A0, gUnk_08BAFB62);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    AnimInit(&work->unk_1E0, gUnk_09EE1B78, gUnk_09EE1B38);
-    AnimStart(&work->unk_1E0, 2, 1);
-    AnimInit(&work->unk_1F8, gUnk_09EE1B78, gUnk_09EE1B38);
-    AnimStart(&work->unk_1F8, 1, 1);
-    AnimInit(&work->unk_210, gUnk_09EE1B78, gUnk_09EE1B38);
-    AnimStart(&work->unk_210, 0, 1);
+    AnimInit(&work->anim, gUnk_09EE1B78, gUnk_09EE1B38);
+    AnimStart(&work->anim, 2, 1);
+    AnimInit(&work->anim2, gUnk_09EE1B78, gUnk_09EE1B38);
+    AnimStart(&work->anim2, 1, 1);
+    AnimInit(&work->anim3, gUnk_09EE1B78, gUnk_09EE1B38);
+    AnimStart(&work->anim3, 0, 1);
     work->base.unk_184 = gUnk_0813F214;
 }
 
@@ -2641,9 +2641,9 @@ u8 task_hum_hades_1(HadesWork* work) {
     }
 
     if (w->unk_1CA & 2) {
-        AnimUpdate(&w->unk_1E0);
-        AnimUpdate(&w->unk_1F8);
-        AnimUpdate(&w->unk_210);
+        AnimUpdate(&w->anim);
+        AnimUpdate(&w->anim2);
+        AnimUpdate(&w->anim3);
     }
     ret = func_0800E5F0(&work->base);
     return ret;
@@ -2684,15 +2684,15 @@ void task_hum_hades_2(HadesWork* work) {
             }
         }
         affine = AllocObjAffine(0, sx, work->unk_27C, 0);
-        gfx = AnimGetGfx(&work->unk_1E0);
+        gfx = AnimGetGfx(&work->anim);
         WorldToScreen(&x, &y, e->unk_04, e->unk_08, e->unk_0C);
         DrawSprite(x, y, gfx, work->tiles, work->palette, affine, attr,
             -0x1005 - (e->unk_00 >> 8) * 4);
-        gfx = AnimGetGfx(&work->unk_1F8);
+        gfx = AnimGetGfx(&work->anim2);
         WorldToScreen(&x, &y, e->unk_10, e->unk_14, e->unk_18);
         DrawSprite(x, y, gfx, work->tiles2, work->palette, affine, attr,
             -0x1006 - (e->unk_00 >> 8) * 4);
-        gfx = AnimGetGfx(&work->unk_210);
+        gfx = AnimGetGfx(&work->anim3);
         WorldToScreen(&x, &y, e->unk_1C, e->unk_20, e->unk_24);
         DrawSprite(x, y, gfx, work->tiles3, work->palette, affine, attr,
             -0x1007 - (e->unk_00 >> 8) * 4);

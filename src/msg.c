@@ -7771,13 +7771,13 @@ void func_0806CD60(ContinueWork* p) {
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
     SetObjTileSource(p->tiles, gUnk_090A6B26);
-    AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
-    AnimStart(&p->unk_20, 0, 1);
+    AnimInit(&p->anim, gUnk_09EEB108, gUnk_09EEB0C4);
+    AnimStart(&p->anim, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_08F683A4, 32);
     SetObjTileSource(p->tiles2, gUnk_090A7F0A);
-    AnimInit(&p->unk_38, gUnk_09EEB14C, gUnk_09EEB11C);
-    AnimStart(&p->unk_38, 0, 1);
+    AnimInit(&p->anim2, gUnk_09EEB14C, gUnk_09EEB11C);
+    AnimStart(&p->anim2, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
     p->unk_6B = 16;
@@ -7838,13 +7838,13 @@ void func_0806CF04(ContinueWork* p) {
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
     SetObjTileSource(p->tiles, gUnk_090A6B26);
-    AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
-    AnimStart(&p->unk_20, 0, 1);
+    AnimInit(&p->anim, gUnk_09EEB108, gUnk_09EEB0C4);
+    AnimStart(&p->anim, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_09618118, 32);
     SetObjTileSource(p->tiles2, gUnk_090A8FC4);
-    AnimInit(&p->unk_38, gUnk_09EEB180, gUnk_09EEB150);
-    AnimStart(&p->unk_38, 0, 1);
+    AnimInit(&p->anim2, gUnk_09EEB180, gUnk_09EEB150);
+    AnimStart(&p->anim2, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
     p->unk_6B = 16;
@@ -7880,8 +7880,8 @@ s32 func_0806D0A8(ContinueWork* p) {
     s32* t;
 
     BgAnimUpdate();
-    p->gfx = AnimUpdate(&p->unk_20);
-    p->gfx2 = AnimUpdate(&p->unk_38);
+    p->gfx = AnimUpdate(&p->anim);
+    p->gfx2 = AnimUpdate(&p->anim2);
     gBldCnt = 0xB54;
     (*(volatile u16*)&gBldAlpha) = p->unk_66;
 

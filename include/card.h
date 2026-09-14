@@ -341,10 +341,10 @@ typedef struct RevCountArgs {
 } RevCountArgs;
 
 typedef struct RevCountWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     u8 unk_24;
     u8 unk_25;
     u16 unk_26;
@@ -539,8 +539,8 @@ typedef struct UnkStruct_0808C940 {
     TaskPool unk_614;
     TaskPool unk_628;
     ListPool unk_63C;
-    AnimState unk_64C;
-    AnimState unk_664;
+    AnimState anim;
+    AnimState anim2;
     u8 unk_67C[0x18];
     s32 unk_694;
     s32 unk_698;
@@ -641,8 +641,8 @@ typedef struct UnkStruct_080A6FAC {
     void* gfx;
     u8 unk_40C[0x28];
     ListPool unk_434;
-    AnimState unk_444;
-    AnimState unk_45C;
+    AnimState anim2;
+    AnimState anim3;
     AnimState anim;
     u8 unk_48C[0x3C];
     s16 unk_4C8;
@@ -680,8 +680,8 @@ typedef struct UnkStruct_0808DB04 {
     TaskPool unk_7C8;
     TaskPool unk_7DC;
     ListPool unk_7F0;
-    AnimState unk_800;
-    AnimState unk_818;
+    AnimState anim2;
+    AnimState anim3;
     AnimState anim;
     s32 unk_848;
     s32 unk_84C;
@@ -845,10 +845,10 @@ typedef struct UnkStruct_08098670 {
 } UnkStruct_08098670;
 
 typedef struct PremiumCardEffectWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
@@ -1574,9 +1574,9 @@ typedef struct UnkStruct_080A5D3C {
     TaskPool unk_40C;
     TaskPool unk_420;
     ListPool unk_434;
-    AnimState unk_444;
-    AnimState unk_45C;
-    AnimState unk_474;
+    AnimState anim;
+    AnimState anim2;
+    AnimState anim3;
     s32 unk_48C;
     s32 unk_490;
     s32 unk_494;

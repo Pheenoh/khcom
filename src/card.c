@@ -10493,9 +10493,9 @@ typedef struct UnkStruct_080889DC {
     TaskPool taskpool;
     TaskPool cardpool;
     ListPool unk_7F0;
-    AnimState unk_800;
-    AnimState unk_818;
-    AnimState unk_830;
+    AnimState anim2;
+    AnimState anim3;
+    AnimState anim;
     s32 unk_848;
     s32 unk_84C;
     s32 unk_850;
@@ -10541,8 +10541,8 @@ typedef struct UnkStruct_080889DC {
 } UnkStruct_080889DC;
 
 u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
     if ((u8)FadeIsActive() != 0) {
         TaskPoolUpdate(&w->taskpool);
         return 1;
@@ -10592,7 +10592,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
                     m4aSongNumStart(121);
                     w->unk_8B2 = w->unk_8B1;
                     w->unk_8B1 = 2;
-                    AnimStart(&w->unk_800, 0, 1);
+                    AnimStart(&w->anim2, 0, 1);
                     SetTaskUpdate(a, (void*)func_080870FC);
                     func_0808DE28(0);
                     return 1;
@@ -10667,7 +10667,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         } else {
             m4aSongNumStart(104);
             w->unk_8CF = 0;
-            AnimStart(&w->unk_800, 0, 1);
+            AnimStart(&w->anim2, 0, 1);
             return 1;
         }
     case 1:
@@ -10681,12 +10681,12 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             w->unk_876 = w->unk_886;
             w->unk_86C = gUnk_09035950[w->unk_874] << 8;
             w->unk_870 = gUnk_09035956[w->unk_876] << 8;
-            AnimStart(&w->unk_800, 4, 1);
+            AnimStart(&w->anim2, 4, 1);
         } else {
             if ((u8)func_0808EDA4((u8*)w) != 0) {
                 m4aSongNumStart(140);
                 w->unk_8CF = 0;
-                AnimStart(&w->unk_800, 0, 1);
+                AnimStart(&w->anim2, 0, 1);
             } else {
                 m4aSongNumStart(105);
             }
@@ -10703,14 +10703,14 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
     case 512:
         m4aSongNumStart(103);
         w->unk_8CF = 0;
-        AnimStart(&w->unk_800, 0, 1);
+        AnimStart(&w->anim2, 0, 1);
         SetTaskUpdate(a, (void*)func_08089EC0);
         return 1;
     case 256:
         func_0808E2F0((UnkStruct_0808DB04*)w);
         m4aSongNumStart(103);
         w->unk_8CF = 0;
-        AnimStart(&w->unk_800, 0, 1);
+        AnimStart(&w->anim2, 0, 1);
         SetTaskUpdate(a, (void*)func_080892E8);
         return 1;
     }
@@ -10725,7 +10725,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         w->unk_8B7 = 1;
         m4aSongNumStart(121);
         w->unk_8B1 = 2;
-        AnimStart(&w->unk_800, 0, 1);
+        AnimStart(&w->anim2, 0, 1);
         TaskPoolUpdate(&w->taskpool);
         TaskPoolUpdate(&w->cardpool);
         SetTaskUpdate(a, (void*)func_080870FC);
@@ -10747,7 +10747,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
 }
 
 u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
-    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->unk_800);
+    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->anim2);
     if (w->unk_8C8[1] != 0) {
         ApproachValueHalf(&w->unk_848, gUnk_090356F8[w->unk_884] << 8);
         ApproachValueHalf(&w->unk_84C, 0x1E00);
@@ -10844,8 +10844,8 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
 u8 func_08087438(UnkStruct_0808DB04* w, void* a) {
     UnkStruct_09035730 table = gUnk_09035730;
 
-    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->unk_800);
-    *(void**)&w->unk_4E8[12] = AnimUpdate(&w->unk_818);
+    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->anim2);
+    *(void**)&w->unk_4E8[12] = AnimUpdate(&w->anim3);
     if (GetKeysPressed() & 32) {
         if (w->unk_8D1[0] != 0) {
             w->unk_8D1[0]--;
@@ -10972,8 +10972,8 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         w->unk_8CB = 0;
     }
 
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
 
     switch (GetKeysRepeat()) {
     case 32:
@@ -11173,8 +11173,8 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         w->unk_8CB = 0;
     }
 
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
 
     switch ((u16)GetKeysRepeat()) {
     case 32:
@@ -11653,8 +11653,8 @@ u8 func_08088768(u8* work, void* a) {
 }
 
 u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
 #ifdef VERSION_EU
     if ((u8)FadeIsActive() != 0) {
         return 1;
@@ -11807,8 +11807,8 @@ u8 func_08088EB4(u8* work, void* a) {
     return 1;
 }
 u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
-    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->unk_800);
-    *(void**)&w->unk_4E8[12] = AnimUpdate(&w->unk_818);
+    *(void**)&w->unk_4E8[8] = AnimUpdate(&w->anim2);
+    *(void**)&w->unk_4E8[12] = AnimUpdate(&w->anim3);
     if (w->unk_8C8[1] != 0) {
         w->unk_8B1 = 1;
         func_0808CD48((u8*)w);
@@ -12148,8 +12148,8 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
         return 1;
     }
 #endif
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
     if (w->unk_8C9 != 0) {
         TaskPoolUpdate(&w->taskpool);
         TaskPoolUpdate(&w->cardpool);
@@ -12753,8 +12753,8 @@ u8 func_0808A910(UnkStruct_0808DB04* w, void* a) {
 u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
     u16 i;
 
-    w->unk_4F0 = AnimUpdate(&w->unk_800);
-    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    w->unk_4F0 = AnimUpdate(&w->anim2);
+    w->unk_4F4 = AnimUpdate(&w->anim3);
     if (w->unk_8C9 != 0) {
         TaskPoolUpdate(&w->taskpool);
         TaskPoolUpdate(&w->cardpool);
@@ -22142,35 +22142,35 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
     w->unk_2C = *a;
     idx = w->unk_2C.unk_0C;
     w->unk_24 = idx;
-    w->unk_00 = AllocSpriteFrameTiles(320);
-    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles = AllocSpriteFrameTiles(320);
+    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 
     if (w->unk_24 == 0) {
         count = (s16*)w->unk_2C.unk_04;
 
         if (*count >= 2 && *count <= 100) {
             row = gUnk_09EE76D0[w->unk_24];
-            UpdateSpriteFrameTiles(w->unk_00, row[*count - 2], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->tiles, row[*count - 2], gUnk_09EE76C0[w->unk_24]);
         } else if (*count > 100) {
             row = gUnk_09EE76D0[w->unk_24];
-            UpdateSpriteFrameTiles(w->unk_00, row[98], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->tiles, row[98], gUnk_09EE76C0[w->unk_24]);
         } else {
             row = gUnk_09EE76D0[w->unk_24];
-            UpdateSpriteFrameTiles(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->tiles, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     } else {
         count2 = (s16*)w->unk_2C.unk_04;
 
         if (*count2 >= 1 && *count2 <= 99) {
             row = gUnk_09EE76D0[w->unk_24];
-            UpdateSpriteFrameTiles(w->unk_00, row[*count2 - 1], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->tiles, row[*count2 - 1], gUnk_09EE76C0[w->unk_24]);
         } else {
             row = gUnk_09EE76D0[w->unk_24];
-            UpdateSpriteFrameTiles(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->tiles, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     }
 
-    w->unk_08 = AnimGetGfx(&w->unk_0C);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_26 = *(u16*)w->unk_2C.unk_04;
 
     switch (w->unk_2C.unk_0D) {
@@ -22197,7 +22197,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
         if (w->unk_24 == 0) {
             if (*count >= 2 && *count <= 100) {
                 row = gUnk_09EE76D0[w->unk_24];
-                UpdateSpriteFrameTiles(w->unk_00, row[*count - 2],
+                UpdateSpriteFrameTiles(w->tiles, row[*count - 2],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
                 u8 (*f)(RevCountWork*, void*);
@@ -22211,7 +22211,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
         } else {
             if (*count >= 1 && *count <= 99) {
                 row = gUnk_09EE76D0[w->unk_24];
-                UpdateSpriteFrameTiles(w->unk_00, row[*count - 1],
+                UpdateSpriteFrameTiles(w->tiles, row[*count - 1],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
                 u8 (*f)(RevCountWork*, void*);
@@ -22358,15 +22358,15 @@ u8 func_080990CC(RevCountWork* w, void* a) {
 void REV_COUNT_2(RevCountWork* w) {
 #ifdef VERSION_EU
     DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
-               w->unk_00, w->unk_04, 0, 1040, 15);
+               w->tiles, w->palette, 0, 1040, 15);
 #else
     DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
-               w->unk_00, w->unk_04, 0, 1024, 15);
+               w->tiles, w->palette, 0, 1024, 15);
 #endif
 }
 void REV_COUNT_3(RevCountWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d) {
@@ -24703,12 +24703,12 @@ void CardName_3(u8* work) {
 }
 
 void func_0809CE88(PremiumCardEffectWork* w, s16* a) {
-    w->unk_00 = AllocObjTiles(128, 0);
-    w->unk_04 = LoadObjPalette(gUnk_09619158, 32);
-    SetObjTileSource(w->unk_00, gUnk_093F762E);
-    AnimInit(&w->unk_0C, gUnk_09EF1260, gUnk_09EF1230);
-    AnimStart(&w->unk_0C, GetRandom() % 3, 1);
-    w->unk_08 = AnimGetGfx(&w->unk_0C);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_09619158, 32);
+    SetObjTileSource(w->tiles, gUnk_093F762E);
+    AnimInit(&w->anim, gUnk_09EF1260, gUnk_09EF1230);
+    AnimStart(&w->anim, GetRandom() % 3, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_24 = a[1] << 8;
     w->unk_28 = a[2] << 8;
     w->unk_2C = 0;
@@ -24723,12 +24723,12 @@ void func_0809CE88(PremiumCardEffectWork* w, s16* a) {
 }
 
 void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
-    w->unk_00 = AllocObjTiles(128, 0);
-    w->unk_04 = LoadObjPalette(gUnk_09619158, 32);
-    SetObjTileSource(w->unk_00, gUnk_093F762E);
-    AnimInit(&w->unk_0C, gUnk_09EF1260, gUnk_09EF1230);
-    AnimStart(&w->unk_0C, GetRandom() % 3, 1);
-    w->unk_08 = AnimGetGfx(&w->unk_0C);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_09619158, 32);
+    SetObjTileSource(w->tiles, gUnk_093F762E);
+    AnimInit(&w->anim, gUnk_09EF1260, gUnk_09EF1230);
+    AnimStart(&w->anim, GetRandom() % 3, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_24 = a[1] << 8;
     w->unk_28 = a[2] << 8;
     w->unk_2C = 0;
@@ -24749,7 +24749,7 @@ s32 func_0809D040(PremiumCardEffectWork* w) {
 
     if (w->unk_40 > 0) {
         w->unk_40 += -0x180;
-        w->unk_08 = AnimUpdate(&w->unk_0C);
+        w->gfx = AnimUpdate(&w->anim);
         return 1;
     }
 
@@ -24757,7 +24757,7 @@ s32 func_0809D040(PremiumCardEffectWork* w) {
 }
 s32 Premire_EFFECT2_1(PremiumCardEffectWork* w) {
     func_0809D160(w);
-    w->unk_08 = AnimUpdate(&w->unk_0C);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_34 > 0xB400) {
         return 0;
@@ -24768,7 +24768,7 @@ s32 Premire_EFFECT2_1(PremiumCardEffectWork* w) {
 s32 func_0809D09C(PremiumCardEffectWork* w) {
     func_0809D1B0(w);
     w->unk_3C += 8;
-    w->unk_08 = AnimUpdate(&w->unk_0C);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_40 <= 0x800) {
         return 0;
@@ -24777,11 +24777,11 @@ s32 func_0809D09C(PremiumCardEffectWork* w) {
     return 1;
 }
 void func_0809D0CC(PremiumCardEffectWork* w) {
-    DrawSprite(w->unk_30 >> 8, w->unk_34 >> 8, w->unk_08, w->unk_00, w->unk_04, 0, 0, 0);
+    DrawSprite(w->unk_30 >> 8, w->unk_34 >> 8, w->gfx, w->tiles, w->palette, 0, 0, 0);
 }
 void func_0809D0FC(PremiumCardEffectWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     gUnk_0203A9D0->effectCount--;
 }
 
@@ -31167,7 +31167,7 @@ u8 func_080A7C80(u8* work, void* a) {
 u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
     s32 i;
 
-    w->unk_4E8 = AnimUpdate(&w->unk_64C);
+    w->unk_4E8 = AnimUpdate(&w->anim);
     switch (GetKeysRepeat()) {
     case 32:
         if (w->unk_6D0 > 1) {
@@ -31347,8 +31347,8 @@ u8 func_080A8430(UnkStruct_0808C940* w, void* a) {
 u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
     s32 i;
 
-    w->unk_4E8 = AnimUpdate(&w->unk_64C);
-    w->unk_4EC = AnimUpdate(&w->unk_664);
+    w->unk_4E8 = AnimUpdate(&w->anim);
+    w->unk_4EC = AnimUpdate(&w->anim2);
     if (w->unk_70D != 0) {
         TaskPoolUpdate(&w->unk_614);
         TaskPoolUpdate(&w->unk_628);

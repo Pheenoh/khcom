@@ -84,20 +84,20 @@ void mode_jiminy_0(void) {
     if (gGameState.flags & 8) {
         gJiminyWork->tiles3 = AllocObjTiles(0x1000, gUnk_0913F0C2);
         gJiminyWork->palette4 = LoadObjPalette(gUnk_09614D58, 0x20);
-        AnimInit(&gJiminyWork->unk_C7C, gUnk_09EED320, gUnk_09EED2BC);
-        AnimStart(&gJiminyWork->unk_C7C, 0, 1);
+        AnimInit(&gJiminyWork->anim, gUnk_09EED320, gUnk_09EED2BC);
+        AnimStart(&gJiminyWork->anim, 0, 1);
     } else {
         gJiminyWork->tiles3 = AllocObjTiles(0x1000, gUnk_090FDBF4);
         gJiminyWork->palette4 = LoadObjPalette(gUnk_09614AB8, 0x20);
-        AnimInit(&gJiminyWork->unk_C7C, gUnk_09EECAA0, gUnk_09EECA44);
-        AnimStart(&gJiminyWork->unk_C7C, 0, 1);
+        AnimInit(&gJiminyWork->anim, gUnk_09EECAA0, gUnk_09EECA44);
+        AnimStart(&gJiminyWork->anim, 0, 1);
     }
 
     if (FadeIsActive() == 0) {
         gJiminyWork->tiles4 = AllocObjTiles(0x200, gUnk_08C6A958);
         gJiminyWork->palette5 = LoadObjPalette(gUnk_08F6DE04, 0x20);
-        AnimInit(&gJiminyWork->unk_C94, gUnk_09EE2678, gUnk_09EE2668);
-        AnimStart(&gJiminyWork->unk_C94, 2, 1);
+        AnimInit(&gJiminyWork->anim2, gUnk_09EE2678, gUnk_09EE2668);
+        AnimStart(&gJiminyWork->anim2, 2, 1);
     }
 
     gJiminyWork->tiles7 = AllocObjTiles(0x2000, 0);
@@ -340,7 +340,7 @@ void mode_jiminy_1(void) {
     if (gJiminyWork->unk_CAC & 1) {
         EnableBg(2);
         func_080658B8(gJiminyWork->unk_C70);
-        DrawSprite(0x23, 0x76, AnimUpdate(&gJiminyWork->unk_C7C), gJiminyWork->tiles3,
+        DrawSprite(0x23, 0x76, AnimUpdate(&gJiminyWork->anim), gJiminyWork->tiles3,
             gJiminyWork->palette4, 0, 0, 0);
     } else {
         DisableBg(2);
@@ -504,14 +504,14 @@ void mode_jiminy_1(void) {
             if (gJiminyWork->unk_CAC & 4) {
                 if (gJiminyWork->unk_CC0 <= 0) {
                     DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8,
-                        AnimUpdate(&gJiminyWork->unk_C94), gJiminyWork->tiles4,
+                        AnimUpdate(&gJiminyWork->anim2), gJiminyWork->tiles4,
                         gJiminyWork->palette5, 0, 0, 0);
                 } else {
                     DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8, gUnk_08C6A8F8,
                         gJiminyWork->tiles4, gJiminyWork->palette5, 0, 0, 0);
 
                     if (gJiminyWork->unk_CC0 == 1) {
-                        AnimReset(&gJiminyWork->unk_C94);
+                        AnimReset(&gJiminyWork->anim2);
                     }
                 }
             }

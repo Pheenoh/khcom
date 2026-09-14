@@ -172,8 +172,8 @@ typedef struct SrollBSecnWork {
     s32 unk_10;
     void* tiles;
     ObjPalette* palette;
-    AnimState unk_1C;
-    AnimState unk_34;
+    AnimState anim;
+    AnimState anim2;
 } SrollBSecnWork;
 
 typedef struct SrollBSecnArg {
