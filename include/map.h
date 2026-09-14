@@ -930,9 +930,9 @@ typedef struct MapDonaldWork {
     s32 unk_004;
     u8 unk_008[0x38];
     u8 unk_040[0x5C];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void (*unk_0BC)(struct MapDonaldWork*);
     u8 unk_0C0;
     u8 unk_0C1;
@@ -946,9 +946,9 @@ typedef struct MapGoofyWork {
     s32 unk_004;
     u8 unk_008[0x38];
     u8 unk_040[0x5C];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void (*unk_0BC)(struct MapGoofyWork*);
     u8 unk_0C0;
     u8 unk_0C1;
@@ -962,9 +962,9 @@ typedef struct MapNamineWork {
     s32 unk_004;
     u8 unk_008[0x38];
     u8 unk_040[0x5C];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void (*unk_0BC)(struct MapNamineWork*);
     u8 unk_0C0;
     u8 unk_0C1;
@@ -979,9 +979,9 @@ typedef struct MapNamineWork {
 typedef struct MapMickeyWork {
     u8 unk_000[0x40];
     u8 unk_040[0x5C];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void (*unk_0BC)(struct MapMickeyWork*);
     u8 unk_0C0;
     u8 unk_0C1;
@@ -1020,9 +1020,9 @@ typedef struct MapTutorialWork {
 typedef struct MapNiserikuWork {
     u8 unk_000[0x40];
     u8 unk_040[0x5C];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void (*unk_0BC)(struct MapNiserikuWork*);
     u8 unk_0C0;
     u8 unk_0C1;
