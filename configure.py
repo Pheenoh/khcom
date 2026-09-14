@@ -196,11 +196,18 @@ parser.add_argument(
     default="arm-none-eabi-",
     help="binutils tool prefix (default: %(default)s)",
 )
+parser.add_argument(
+    "--asset-gfx-mode",
+    choices=("slice", "built"),
+    default="slice",
+    help="asset_gfx MVP path: baserom slice (default) or built pack via gbagfx (scaffolding)",
+)
 args = parser.parse_args()
 
 version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
+asset_gfx_mode = args.asset_gfx_mode
 
 build_dir = f"build/{version}"
 name = f"com_{version}"
@@ -263,6 +270,26 @@ for line in units_file.read_text().splitlines():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
     units.append((src, obj, flags, section))
 
+asset_gfx_build = f"{build_dir}/assets/asset_gfx.bin"
+asset_gfx_asm = f"{build_dir}/asm/asset_gfx.s"
+if asset_gfx_mode == "built":
+    if version != "us":
+        sys.exit("error: --asset-gfx-mode=built is US-only scaffolding in Phase 1")
+    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
+    Path(asset_gfx_asm).write_text(
+        "\t.section .rodata\n"
+        "\t.global data_084E0B04\n"
+        "data_084E0B04:\n"
+        f'\t.incbin "{asset_gfx_build}"\n'
+    )
+    rewritten = []
+    for src, obj, flags, section in units:
+        if src is not None and src.name == "asset_gfx.s":
+            rewritten.append((Path(asset_gfx_asm), obj, flags, section))
+        else:
+            rewritten.append((src, obj, flags, section))
+    units = rewritten
+
 headers = sorted(str(p) for p in Path("include").glob("*.h"))
 asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
 missing_assets = set()
@@ -283,12 +310,32 @@ for src, obj, flags, _section in units:
     if any(dep.startswith("assets/") for dep in deps):
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
+if asset_gfx_mode == "built":
+    patched = []
+    for obj, rule, src, deps, variables in edges:
+        if obj.endswith("/asset_gfx.o"):
+            deps = [d for d in deps if not d.startswith("assets/")]
+            if asset_gfx_build not in deps:
+                deps.append(asset_gfx_build)
+            if asset_gfx_asm not in deps:
+                deps.append(asset_gfx_asm)
+        patched.append((obj, rule, src, deps, variables))
+    edges = patched
+    missing_assets.difference_update(
+        p for p in list(missing_assets) if p.startswith("assets/") and "084E0B04" in p
+    )
+
 if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
     missing_assets.add(assets_stamp)
-if missing_assets:
-    first = sorted(missing_assets)[0]
-    sys.exit(f"error: {len(missing_assets)} extracted asset files for {version} are missing (first: {first});"
+pending_build_assets = sorted(p for p in missing_assets if p.startswith("build/"))
+missing_extract = sorted(p for p in missing_assets if not p.startswith("build/"))
+if missing_extract:
+    first = missing_extract[0]
+    sys.exit(f"error: {len(missing_extract)} extracted asset files for {version} are missing (first: {first});"
              f" run python3 tools/extract_assets.py {version}")
+if pending_build_assets and asset_gfx_mode != "built":
+    first = pending_build_assets[0]
+    sys.exit(f"error: build asset {first} is missing; use --asset-gfx-mode=built or extract slice assets")
 
 validate_active_sections(regional_plan,
                          [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
@@ -408,6 +455,12 @@ with out.open("w") as f:
                 + " && touch $out",
         description=f"CHECK {rom}",
     )
+    if asset_gfx_mode == "built":
+        n.rule(
+            "asset_gfx_pack",
+            command="python3 tools/gfx/asset_gfx_pack.py --mode built && test -f $out",
+            description="ASSET_GFX $out",
+        )
     n.newline()
 
     objs = []
@@ -415,6 +468,16 @@ with out.open("w") as f:
         n.build(obj, "arx", implicit=[path],
                 variables={"archive": path, "member": member})
         objs.append(obj)
+    if asset_gfx_mode == "built":
+        n.build(
+            asset_gfx_build,
+            "asset_gfx_pack",
+            implicit=[
+                "tools/gfx/asset_gfx_pack.py",
+                "config/asset_gfx_us.yaml",
+                "config/asset_inventory_us_gfx.yaml",
+            ],
+        )
     for obj, rule, src, deps, variables in edges:
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
