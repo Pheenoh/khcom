@@ -760,8 +760,8 @@ typedef struct UnkStruct_08080268 {
 typedef struct HcEffectNameWork {
     s16 unk_00;
     u8 unk_02[0x06];
-    void* unk_08;
-    void* unk_0C;
+    void* tiles2;
+    void* tiles3;
     void* palette;
     void* tiles;
     u8 unk_18;
@@ -1546,8 +1546,8 @@ typedef struct DeckConfirmWork {
     u8 unk_280[0x280];
     u8 unk_500[0x280];
     void* tiles;
-    void* unk_784;
-    void* unk_788;
+    void* palette;
+    void* palette2;
     u8 unk_78C;
     u8 unk_78D;
     u8 unk_78E;

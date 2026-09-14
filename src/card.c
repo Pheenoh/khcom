@@ -25104,8 +25104,8 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
     w->unk_1A = 0;
     w->unk_1C = 32;
     w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    w->unk_08 = AllocSpriteFrameTiles(0x3C0);
-    w->unk_0C = AllocSpriteFrameTiles(32);
+    w->tiles2 = AllocSpriteFrameTiles(0x3C0);
+    w->tiles3 = AllocSpriteFrameTiles(32);
     w->unk_20 = 0;
     w->unk_27 = 1;
 
@@ -25117,12 +25117,12 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
 #endif
         tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_08);
-        UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C], LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00));
+        UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C], LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00));
 #ifdef VERSION_EU
-        UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26], gUnkEu_09F72CB0[gLanguage]);
+        UpdateSpriteFrameTiles(w->tiles3, gUnkEu_09F72CC4[gLanguage][w->unk_26], gUnkEu_09F72CB0[gLanguage]);
 #else
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
-        UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+        UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
 
         if (gUnk_02039DD4->unk_0CC == 0) {
@@ -25136,12 +25136,12 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
 #endif
         tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_08);
-        UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C], LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00));
+        UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C], LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00));
 #ifdef VERSION_EU
-        UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26], gUnkEu_09F72CB0[gLanguage]);
+        UpdateSpriteFrameTiles(w->tiles3, gUnkEu_09F72CC4[gLanguage][w->unk_26], gUnkEu_09F72CB0[gLanguage]);
 #else
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
-        UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+        UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
 
         if (gUnk_02039DD4->unk_0CE == 0) {
@@ -25273,21 +25273,21 @@ u8 func_0809DE30(HcEffectNameWork* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
 #endif
             tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_08);
-            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C],
+            UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00));
 #ifdef VERSION_EU
-            UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+            UpdateSpriteFrameTiles(w->tiles3, gUnkEu_09F72CC4[gLanguage][w->unk_26],
                          gUnkEu_09F72CB0[gLanguage]);
 #else
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
-            UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+            UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
-            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+            UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[id].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[id].unk_00));
         }
         break;
@@ -25302,21 +25302,21 @@ u8 func_0809DE30(HcEffectNameWork* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
 #endif
             tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_08);
-            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C],
+            UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00));
 #ifdef VERSION_EU
-            UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+            UpdateSpriteFrameTiles(w->tiles3, gUnkEu_09F72CC4[gLanguage][w->unk_26],
                          gUnkEu_09F72CB0[gLanguage]);
 #else
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
-            UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+            UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
-            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+            UpdateSpriteFrameTiles(w->tiles2, tiles[gUnk_08F7CBA8[id].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[id].unk_00));
         }
         break;
@@ -25330,20 +25330,20 @@ void HCEffectName_2(HcEffectNameWork* w) {
 
     if (w->unk_27 == 1) {
         pri = 0x410;
-        DrawSprite(w->unk_00, 0x90, 0, w->unk_08, w->palette, 0, pri, 10);
+        DrawSprite(w->unk_00, 0x90, 0, w->tiles2, w->palette, 0, pri, 10);
         DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, pri, 10);
         DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, pri, 10);
         DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->unk_0C, w->palette, 0, pri, 10);
+        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->tiles3, w->palette, 0, pri, 10);
         DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, pri, 10);
     }
 #else
     if (w->unk_27 == 1) {
-        DrawSprite(w->unk_00, 0x90, 0, w->unk_08, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00, 0x90, 0, w->tiles2, w->palette, 0, 0x400, 10);
         DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, 0x400, 10);
         DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, 0x400, 10);
         DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->unk_0C, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->tiles3, w->palette, 0, 0x400, 10);
         DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, 0x400, 10);
     }
 #endif
@@ -28048,9 +28048,9 @@ void func_080A2844(DeckConfirmWork* w, u8* a) {
 #else
     w->unk_78D = LoadTextSlots(&gUnk_0815C204[0x58], w->unk_280);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
 #ifdef VERSION_JP
     w->unk_78E = LoadTextSlots((u8*)gUnk_0903BFD4 + 0x30, w->unk_500);
     w->unk_792 = (233 - GetTextSlotsWidth(w, w->unk_78C) - GetTextSlotsWidth(w->unk_500, w->unk_78E)) / 2;
@@ -28096,9 +28096,9 @@ void func_080A2980(DeckConfirmWork* w, u8* a) {
 #else
     w->unk_78D = LoadTextSlots(&gUnk_08159F38[0x2A], w->unk_280);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
 #ifdef VERSION_JP
     w->unk_794 = (207 - GetTextSlotsWidth(w->unk_280, w->unk_78D)) / 2;
     w->unk_798 = 62;
@@ -28129,9 +28129,9 @@ void func_080A2A80(DeckConfirmWork* w, u8* a) {
 #else
     w->unk_78D = LoadTextSlots(&gUnk_0815C204[0xEA], w->unk_280);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (250 - GetTextSlotsWidth(w, w->unk_78C)) / 2;
     w->unk_796 = 64;
 #ifdef VERSION_JP
@@ -28167,9 +28167,9 @@ void func_080A2BA4(DeckConfirmWork* w, u8* a) {
 #else
     w->unk_78D = LoadTextSlots(&gUnk_0815C204[0xA8], w->unk_280);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (242 - GetTextSlotsWidth(w, w->unk_78C)) / 2;
     w->unk_796 = 66;
     w->unk_794 = (242 - GetTextSlotsWidth(w->unk_280, w->unk_78D)) / 2;
@@ -28198,9 +28198,9 @@ void func_080A2CC4(DeckConfirmWork* w, u8* a) {
 #else
     w->unk_78D = LoadTextSlots(&gUnk_0815C204[0x6C], w->unk_280);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (243 - GetTextSlotsWidth(w, w->unk_78C)) / 2;
     w->unk_796 = 66;
     w->unk_794 = (243 - GetTextSlotsWidth(w->unk_280, w->unk_78D)) / 2;
@@ -28225,19 +28225,19 @@ s32 func_080A2DE4(void) {
 }
 
 void func_080A2E14(DeckConfirmWork* w) {
-    DrawTextSlots(w->unk_792, w->unk_796, w, w->unk_784, 1, w->unk_78C);
-    DrawTextSlots(w->unk_794, w->unk_798, w->unk_280, w->unk_784, 1, w->unk_78D);
-    DrawTextSlots(w->unk_79A, w->unk_79C, w->unk_500, w->unk_784, 1, w->unk_78E);
-    DrawSprite(120, 80, gUnk_09EF1278[0], w->tiles, w->unk_788, 0, 0, 2);
+    DrawTextSlots(w->unk_792, w->unk_796, w, w->palette, 1, w->unk_78C);
+    DrawTextSlots(w->unk_794, w->unk_798, w->unk_280, w->palette, 1, w->unk_78D);
+    DrawTextSlots(w->unk_79A, w->unk_79C, w->unk_500, w->palette, 1, w->unk_78E);
+    DrawSprite(120, 80, gUnk_09EF1278[0], w->tiles, w->palette2, 0, 0, 2);
 }
 
 void func_080A2EF8(DeckConfirmWork* w) {
     FreeTextSlots(w, 80);
     FreeTextSlots(w->unk_280, 80);
     FreeTextSlots(w->unk_500, 80);
-    ReleaseObjPalette(w->unk_784);
+    ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette(w->unk_788);
+    ReleaseObjPalette(w->palette2);
     w->unk_7A0[0] = 0;
 }
 
@@ -28266,9 +28266,9 @@ void Deck_Yes_No_0(DeckConfirmWork* w, u8* a) {
     w->unk_78D = LoadTextSlots(gUnk_08159E10, w->unk_280);
     w->unk_78E = LoadTextSlots(gUnk_08159E18, w->unk_500);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (240 - GetTextSlotsWidth(w, w->unk_78C)) / 2;
     w->unk_796 = 66;
     w->unk_794 = (240 - GetTextSlotsWidth(w->unk_280, w->unk_78D)) / 2 - DECK_PROMPT_LEFT_DX;
@@ -28302,9 +28302,9 @@ void Deck_Clear_0(DeckConfirmWork* w, u8* a) {
     w->unk_78D = LoadTextSlots(gUnk_08159E10, w->unk_280);
     w->unk_78E = LoadTextSlots(gUnk_08159E18, w->unk_500);
 #endif
-    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->palette = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (240 - GetTextSlotsWidth(w, w->unk_78C)) / 2;
     w->unk_794 = (240 - GetTextSlotsWidth(w->unk_280, w->unk_78D)) / 2 - DECK_PROMPT_LEFT_DX;
     w->unk_798 = 88;

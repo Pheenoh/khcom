@@ -30,7 +30,7 @@
 typedef struct RoomNameWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
@@ -46,7 +46,7 @@ typedef struct RoomNameWork {
     s32 unk_30;
     u8 unk_34;
     u8 unk_35[0x3];
-    void* unk_38;
+    void* palette2;
     u8 unk_3C[0x120];
 } RoomNameWork;
 
