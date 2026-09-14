@@ -73,9 +73,9 @@ pack_example:
   extract_path: assets/us/084E0B04-0886AD18.bin
   build_path: build/us/assets/asset_gfx.bin
   source_root: assets/us/src/gfx/asset_gfx
-  tools: [gbagfx]
-  confidence: medium
-  children: []
+  tools: [gbagfx, tools/gfx/asset_gfx_dump.py, tools/movie_assets.py]
+  confidence: high
+  children: [movie, movie, movie, movie, MovieSub tables, padding]
 
 # ---------------------------------------------------------------------------
 # Leaf graphics (future; PNG source form)

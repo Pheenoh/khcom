@@ -29,17 +29,19 @@ def main():
         print(f"match_expected {ok}")
         print(f"gbagfx_present {GBAGFX.exists()}")
         print(f"built_present {BUILD.exists()}")
+        print("format movie_streams (MovieOpen); dump: python3 tools/gfx/asset_gfx_dump.py")
         if args.mode == "slice":
             return 0 if ok else 1
         return 0 if ok else 1
 
     print(
-        "error: asset_gfx built mode is scaffolding only; custom pack framing "
-        "is unidentified and gbagfx cannot emit a matching megablob yet",
+        "error: asset_gfx built mode blocked; container RE done (240x160@15fps "
+        "MovieOpen streams) but matching video/audio encode and region pad are not",
         file=sys.stderr,
     )
     print(f"gbagfx_present {GBAGFX.exists()}", file=sys.stderr)
     print(f"build_path {BUILD}", file=sys.stderr)
+    print("dump: python3 tools/gfx/asset_gfx_dump.py", file=sys.stderr)
     print(f"fetch: sh tools/fetch_gbagfx.sh", file=sys.stderr)
     return 2
 

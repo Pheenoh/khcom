@@ -19,4 +19,7 @@ tools:
   gbagfx: tools/gbagfx/gbagfx
   packer: tools/gfx/asset_gfx_pack.py
 sha256_slice: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
-status: scaffolding
+status: format_re_done_encode_blocked
+tools_extra:
+  dump: tools/gfx/asset_gfx_dump.py
+  extent: tools/movie_assets.py
