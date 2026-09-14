@@ -485,7 +485,7 @@ void mode_battle_0(u32 mode) {
         case 0x98:
             SetBattleBounds(0x80, 0x1A8, 0x126, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPc, 0);
-            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescPcAcddmg, gBtlWork->unk_07C);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescPcAcddmg, gBtlWork->actor);
             gBtlWork->unk_0B3 = 12;
             break;
         case 0x9C:

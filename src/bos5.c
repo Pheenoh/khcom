@@ -98,9 +98,9 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         if (work->unk_000 == 10 || work->unk_004 == 10) {
             func_0801AF08(e);
         } else {
-            d1 = gBtlWork->unk_07C->unk_004 - e->unk_124;
+            d1 = gBtlWork->actor->unk_004 - e->unk_124;
             d1 = (d1 * d1) >> 8;
-            d2 = gBtlWork->unk_07C->unk_008 - e->unk_128;
+            d2 = gBtlWork->actor->unk_008 - e->unk_128;
             d2 = (d2 * d2) >> 8;
 
             if (work->entries[2].unk_15A & work->entries[3].unk_15A & work->entries[4].unk_15A & work->entries[5].unk_15A & 4) {
@@ -120,7 +120,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -146,7 +146,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -162,7 +162,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -188,7 +188,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -204,7 +204,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -230,7 +230,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
                             flag = 1;
                         }
 
@@ -559,7 +559,7 @@ void func_080FB930(MdWork* work, u16 id) {
 
         if (work->unk_17C[n].unk_04 != gUnk_09992108[id].unk_1C[n].unk_08 && n == 0) {
             work->unk_17C[n].unk_04 = gUnk_09992108[id].unk_1C[n].unk_08;
-            UpdateSpriteFrameTiles(work->unk_17C[n].unk_00, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
+            UpdateSpriteFrameTiles(work->unk_17C[n].tiles, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
         }
 
         work->unk_17C[n].unk_0C = gUnk_09992108[id].unk_1C[n].unk_00;
@@ -620,7 +620,7 @@ u8 func_080FBAB8(MdWork* work) {
 
     switch (work->unk_008) {
     case 0:
-        if (gBtlWork->unk_07C->unk_004 > 0x8000) {
+        if (gBtlWork->actor->unk_004 > 0x8000) {
             func_080FBA14(work, 1);
         } else {
             func_080FBA14(work, 0);
@@ -635,7 +635,7 @@ u8 func_080FBAB8(MdWork* work) {
         }
         break;
     case 1:
-        if (func_080FBA9C(work) != 0 && gBtlWork->unk_07C->unk_004 > 0x8000) {
+        if (func_080FBA9C(work) != 0 && gBtlWork->actor->unk_004 > 0x8000) {
             func_080FBA14(work, 1);
         }
 
@@ -674,7 +674,7 @@ u8 func_080FBC4C(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            d = gBtlWork->unk_07C->unk_004;
+            d = gBtlWork->actor->unk_004;
 
             if (d > 0xA800) {
                 switch (GetRandom() % 3) {
@@ -765,7 +765,7 @@ u8 func_080FBDD4(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            if (gBtlWork->unk_07C->unk_004 > 0xA800) {
+            if (gBtlWork->actor->unk_004 > 0xA800) {
                 if (GetRandom() % 100 <= 59) {
                     func_080FBA14(work, 6);
                 } else {
@@ -1003,7 +1003,7 @@ void func_080FC29C(MdWork* work) {
     s32 d;
     u16 r;
 
-    d = gBtlWork->unk_07C->unk_004;
+    d = gBtlWork->actor->unk_004;
 
     if (d > 0xA800) {
         r = GetRandom() % 100;
@@ -1107,15 +1107,15 @@ void task_bos_md_0(MdWork* work, void* arg) {
     }
 
     for (i = 0; i < 2; i++) {
-        work->unk_17C[i].unk_00 = 0;
+        work->unk_17C[i].tiles = 0;
         work->unk_17C[i].unk_04 = 0;
         work->unk_17C[i].unk_08 = 0;
         work->unk_17C[i].unk_0C = 0;
         work->unk_17C[i].unk_0E = 0;
     }
 
-    work->unk_17C[0].unk_00 = AllocSpriteFrameTiles(2432);
-    work->unk_17C[1].unk_00 = LoadObjTiles(gUnk_099D42FC, 0x12A0);
+    work->unk_17C[0].tiles = AllocSpriteFrameTiles(2432);
+    work->unk_17C[1].tiles = LoadObjTiles(gUnk_099D42FC, 0x12A0);
     gBtlWork->unk_0CC = 0x11000;
     gBtlWork->unk_0D0 = 0x15000;
     gBtlWork->unk_0D4 = 0;
@@ -1260,7 +1260,7 @@ void task_bos_md_2(MdWork* work) {
         wy = (work->unk_17C[i].unk_0E + 256) * 256;
         WorldToScreen(&x, &y, wx, wy, work->unk_17C[i].unk_10 * 256);
         frame = GetBattleSpritePriorityFlags(wy);
-        DrawSprite(x, y, work->unk_17C[i].unk_08, work->unk_17C[i].unk_00, pal, 0, frame,
+        DrawSprite(x, y, work->unk_17C[i].unk_08, work->unk_17C[i].tiles, pal, 0, frame,
                    (u16)(-4100 - (wy >> 6)));
     }
 
@@ -1287,8 +1287,8 @@ void task_bos_md_3(MdWork* work) {
     t = &work->unk_054;
 
     for (i = 0; i < 2; i++) {
-        if (work->unk_17C[i].unk_00 != 0) {
-            ReleaseObjTiles(work->unk_17C[i].unk_00);
+        if (work->unk_17C[i].tiles != 0) {
+            ReleaseObjTiles(work->unk_17C[i].tiles);
         }
     }
 
@@ -1387,7 +1387,7 @@ u8 func_080FCCB4(MdFireWork* work) {
     result = 1;
     e = &work->unk_038;
 
-    if ((work->unk_16C->unk_00 & 2) && work->unk_000 != 4) {
+    if ((work->target->unk_00 & 2) && work->unk_000 != 4) {
         func_0801C2DC(e, 1);
         work->unk_034 = 30;
         work->unk_000 = 4;
@@ -1415,8 +1415,8 @@ u8 func_080FCCB4(MdFireWork* work) {
                             case 2:
                             case 4:
                                 a = func_080F7E0C(work->x, work->y,
-                                                  gBtlWork->unk_07C->unk_004,
-                                                  gBtlWork->unk_07C->unk_008);
+                                                  gBtlWork->actor->unk_004,
+                                                  gBtlWork->actor->unk_008);
                                 work->unk_154 = gSineTable[a] * 3;
                                 work->unk_158 = -gSineTable[a + 0x40] * 3;
                                 work->unk_004 = 90;
@@ -1462,7 +1462,7 @@ u8 func_080FCCB4(MdFireWork* work) {
                 work->unk_008--;
             } else if (ColliderIsTouchingType(work->unk_038.unk_040, 1) != 0) {
                 m4aSongNumStart(0x2CA);
-                gBtlWork->unk_07C->unk_034 |= 0x20000000;
+                gBtlWork->actor->unk_034 |= 0x20000000;
                 work->unk_008 = 60;
             }
             break;
@@ -1536,7 +1536,7 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->z = 0;
     work->unk_15E = arg->unk_04;
     work->unk_160 = arg->unk_06;
-    work->unk_16C = (MdFireTarget*)arg->unk_08;
+    work->target = (MdFireTarget*)arg->unk_08;
     func_080FCF78(work);
     func_0801B37C(&work->unk_038, gUnk_09992F28, work->x, work->y, work->z);
     ColliderInit(work->unk_038.unk_040, 3, 16, 16);
@@ -1629,7 +1629,7 @@ void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
     u8* p;
 
     gBtlWork->unk_068 |= 0x100000;
-    work->unk_078 = (MdDaiTarget*)src[1];
+    work->target = (MdDaiTarget*)src[1];
     work->unk_080 = (void*)src[0];
     work->unk_07C = 0;
     work->unk_07E = 0;
@@ -1692,13 +1692,13 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             ColliderSetHeight(&work->unk_01C, 24);
             m4aSongNumStart(680);
             work->unk_07C = 3;
-            work->unk_078->unk_00 &= 0xFFFE;
+            work->target->unk_00 &= 0xFFFE;
             work->unk_07E = 3;
         }
         break;
     case 3:
-        if (work->unk_078->unk_00 & 1) {
-            work->unk_078->unk_00 &= 0xFFFE;
+        if (work->target->unk_00 & 1) {
+            work->target->unk_00 &= 0xFFFE;
             args[0] = work->x;
             args[1] = work->y;
             args[2] = -((work->unk_07C - 1) * 7 << 9);
@@ -1840,7 +1840,7 @@ void func_080FD9B8(s16 model, s16 slot) {
         size = 0x20;
     }
 
-    gUnk_02034FF8[slot].unk_0C = LoadObjPalette(src, size);
+    gUnk_02034FF8[slot].palette = LoadObjPalette(src, size);
 }
 
 void func_080FDA28(s16 model, s16 slot) {
@@ -1852,14 +1852,14 @@ void func_080FDA28(s16 model, s16 slot) {
         src = gUnk_09992F70[model].unk_0C;
     }
 
-    gUnk_02034FF8[slot].unk_10 = LoadObjTiles(src, 0x1000);
+    gUnk_02034FF8[slot].tiles = LoadObjTiles(src, 0x1000);
 }
 
 s16 func_080FDA98(s16 model, s16 slot) {
     if (gUnk_09992F70[model].unk_02 == 13 && func_080D2DD8()) {
-        gUnk_02034FF8[slot].unk_14 = gUnk_099A8914;
+        gUnk_02034FF8[slot].gfx = gUnk_099A8914;
     } else {
-        gUnk_02034FF8[slot].unk_14 = gUnk_09992F70[model].unk_10;
+        gUnk_02034FF8[slot].gfx = gUnk_09992F70[model].unk_10;
     }
 }
 
@@ -1954,8 +1954,8 @@ void func_080FDC04(void) {
                     j += gUnk_02035090;
                 }
 
-                ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-                ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+                ReleaseObjPalette(gUnk_02034FF8[j].palette);
+                ReleaseObjTiles(gUnk_02034FF8[j].tiles);
                 k = gUnk_02034FF8[gUnk_02034FF0].unk_00 - gUnk_02035090 / 2;
 
                 while (k < 0) {
@@ -1982,8 +1982,8 @@ void func_080FDC04(void) {
                     j -= gUnk_02035090;
                 }
 
-                ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-                ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+                ReleaseObjPalette(gUnk_02034FF8[j].palette);
+                ReleaseObjTiles(gUnk_02034FF8[j].tiles);
                 k = gUnk_02034FF8[gUnk_02034FF0].unk_00 + gUnk_02035090 / 2;
 
                 while (k >= gUnk_02035092) {
@@ -2014,8 +2014,8 @@ void func_080FDC04(void) {
                 j += gUnk_02035090;
             }
 
-            ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-            ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+            ReleaseObjPalette(gUnk_02034FF8[j].palette);
+            ReleaseObjTiles(gUnk_02034FF8[j].tiles);
             k = gUnk_02034FF8[gUnk_02034FF0].unk_00 - gUnk_02035090 / 2;
 
             while (k < 0) {
@@ -2047,8 +2047,8 @@ void func_080FDC04(void) {
                         j -= gUnk_02035090;
                     }
 
-                    ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-                    ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+                    ReleaseObjPalette(gUnk_02034FF8[j].palette);
+                    ReleaseObjTiles(gUnk_02034FF8[j].tiles);
                     k = gUnk_02034FF8[gUnk_02034FF0].unk_00 + gUnk_02035090 / 2;
 
                     while (k >= gUnk_02035092) {
@@ -2089,8 +2089,8 @@ void func_080FDC04(void) {
                 j -= gUnk_02035090;
             }
 
-            ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-            ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+            ReleaseObjPalette(gUnk_02034FF8[j].palette);
+            ReleaseObjTiles(gUnk_02034FF8[j].tiles);
             k = gUnk_02034FF8[gUnk_02034FF0].unk_00 + gUnk_02035090 / 2;
 
             while (k >= gUnk_02035092) {
@@ -2122,8 +2122,8 @@ void func_080FDC04(void) {
                         j += gUnk_02035090;
                     }
 
-                    ReleaseObjPalette(gUnk_02034FF8[j].unk_0C);
-                    ReleaseObjTiles(gUnk_02034FF8[j].unk_10);
+                    ReleaseObjPalette(gUnk_02034FF8[j].palette);
+                    ReleaseObjTiles(gUnk_02034FF8[j].tiles);
                     k = gUnk_02034FF8[gUnk_02034FF0].unk_00 - gUnk_02035090 / 2;
 
                     while (k < 0) {
@@ -2235,8 +2235,8 @@ void func_080FE47C(void) {
                           ang > 128 ? (u16)(ang * 2 + 0x6D1) : (u16)((128 - ang) * 2 + 0x7D1));
 
             if ((u8)(t - 65) <= 126) {
-                DrawSprite(x, y, gUnk_02034FF8[i].unk_14, gUnk_02034FF8[i].unk_10,
-                              gUnk_02034FF8[i].unk_0C, sprite, 0x800,
+                DrawSprite(x, y, gUnk_02034FF8[i].gfx, gUnk_02034FF8[i].tiles,
+                              gUnk_02034FF8[i].palette, sprite, 0x800,
                               ang > 128 ? (u16)(ang * 2 + 0x6D0)
                                         : (u16)((128 - ang) * 2 + 0x7D0));
             }
@@ -2557,8 +2557,8 @@ void mode_worldselect_2(void) {
     EwramFree(gUnk_020350BC);
 
     for (i = 0; i < gUnk_02035090; i++) {
-        ReleaseObjPalette(gUnk_02034FF8[i].unk_0C);
-        ReleaseObjTiles(gUnk_02034FF8[i].unk_10);
+        ReleaseObjPalette(gUnk_02034FF8[i].palette);
+        ReleaseObjTiles(gUnk_02034FF8[i].tiles);
     }
 
     for (i = 0; i < 2; i++) {

@@ -2146,7 +2146,7 @@ u8 task_emy_22_1(Emy22Work* work) {
         func_08019068(gUnk_0813DC5C, &w->base.anim, 0, 0, w->base.tiles);
         func_0800C980(&work->base, 27, 14, 40, 191, 24, 0x211, 24, 0, 24);
 
-        if (gBtlWork->unk_07C->unk_034 & 2) {
+        if (gBtlWork->actor->unk_034 & 2) {
             act->unk_02C += act->unk_02E >> 3;
 
             if (act->unk_02C > act->unk_02E) {
@@ -3807,8 +3807,8 @@ u8 task_emy_38_1(EmyWork* work) {
 
     ret = _0800CDF0(work);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
-            (gBtlWork->unk_07C->unk_004 > work->actor.unk_004 &&
+    if ((gBtlWork->actor->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
+            (gBtlWork->actor->unk_004 > work->actor.unk_004 &&
                 !(work->actor.unk_034 & 4))) {
         work->actor.unk_034 |= 0x8000;
     } else {
@@ -3959,9 +3959,9 @@ u8 task_emy_39_1(Emy39Work* work) {
 
     ret = _0800CDF0(&work->base);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->base.actor.unk_004
+    if ((gBtlWork->actor->unk_004 < work->base.actor.unk_004
                 && (work->base.actor.unk_034 & 4))
-            || (gBtlWork->unk_07C->unk_004 > work->base.actor.unk_004
+            || (gBtlWork->actor->unk_004 > work->base.actor.unk_004
                 && !(work->base.actor.unk_034 & 4))) {
         work->base.actor.unk_034 |= 0x8000;
     } else {
@@ -4121,8 +4121,8 @@ u8 task_emy_44_1(EmyWork* work) {
 
     ret = _0800CDF0(work);
 
-    if ((gBtlWork->unk_07C->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
-            (gBtlWork->unk_07C->unk_004 > work->actor.unk_004 &&
+    if ((gBtlWork->actor->unk_004 < work->actor.unk_004 && (work->actor.unk_034 & 4)) ||
+            (gBtlWork->actor->unk_004 > work->actor.unk_004 &&
                 !(work->actor.unk_034 & 4))) {
         work->actor.unk_034 |= 0x0C008000;
     } else {

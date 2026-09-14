@@ -143,7 +143,7 @@ typedef struct MdDaiWork {
     u32 tiles;
     u32 unk_01C;
     u8 unk_020[0x58];
-    MdDaiTarget* unk_078;
+    MdDaiTarget* target;
     s16 unk_07C;
     u16 unk_07E;
     void* unk_080;
@@ -179,7 +179,7 @@ typedef struct MdFireWork {
     u8 unk_163;
     u32 unk_164;
     u32 unk_168;
-    MdFireTarget* unk_16C;
+    MdFireTarget* target;
 } MdFireWork;
 
 typedef struct MdFireArg {
@@ -222,9 +222,9 @@ typedef struct MdSlot {
     u8 unk_02[0x6];
     u8 unk_08;
     u8 unk_09[0x3];
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* palette;
+    void* tiles;
+    void* gfx;
 } MdSlot;
 
 extern MdModel gUnk_09992F70[];
@@ -233,7 +233,7 @@ extern u8 gUnk_099EDE7C[];
 extern u8 gUnk_099A8914[];
 
 typedef struct MdGfx {
-    void* unk_00;
+    void* tiles;
     void* unk_04;
     void* unk_08;
     s16 unk_0C;

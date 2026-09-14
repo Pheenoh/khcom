@@ -147,46 +147,46 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
     AnimInit(&work->anim2, gUnk_09EE1498, gUnk_09EE1420);
     AnimStart(&work->anim, 0, 1);
 
-    if (gBtlWork->unk_07C->unk_02E <= 40) {
+    if (gBtlWork->actor->unk_02E <= 40) {
         work->unk_64 = 0;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 80) {
+    } else if (gBtlWork->actor->unk_02E <= 80) {
         work->unk_64 = 1;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 120) {
+    } else if (gBtlWork->actor->unk_02E <= 120) {
         work->unk_64 = 2;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 160) {
+    } else if (gBtlWork->actor->unk_02E <= 160) {
         work->unk_64 = 3;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 200) {
+    } else if (gBtlWork->actor->unk_02E <= 200) {
         work->unk_64 = 4;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 240) {
+    } else if (gBtlWork->actor->unk_02E <= 240) {
         work->unk_64 = 5;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 280) {
+    } else if (gBtlWork->actor->unk_02E <= 280) {
         work->unk_64 = 6;
         work->unk_68 = 0;
-    } else if (gBtlWork->unk_07C->unk_02E <= 320) {
+    } else if (gBtlWork->actor->unk_02E <= 320) {
         work->unk_64 = 0;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 360) {
+    } else if (gBtlWork->actor->unk_02E <= 360) {
         work->unk_64 = 1;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 400) {
+    } else if (gBtlWork->actor->unk_02E <= 400) {
         work->unk_64 = 2;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 440) {
+    } else if (gBtlWork->actor->unk_02E <= 440) {
         work->unk_64 = 3;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 480) {
+    } else if (gBtlWork->actor->unk_02E <= 480) {
         work->unk_64 = 4;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 520) {
+    } else if (gBtlWork->actor->unk_02E <= 520) {
         work->unk_64 = 5;
         work->unk_68 = 1;
-    } else if (gBtlWork->unk_07C->unk_02E <= 560) {
+    } else if (gBtlWork->actor->unk_02E <= 560) {
         work->unk_64 = 6;
         work->unk_68 = 1;
     } else {
@@ -264,7 +264,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
     BtlObj* actor;
     s32 flag;
 
-    actor = gBtlWork->unk_07C;
+    actor = gBtlWork->actor;
     if (actor == 0) {
         return 0;
     }
@@ -537,7 +537,7 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
     }
 
     if (gBtlWork->unk_068 & 0x800) {
-        actor = gUnk_02039B9C->unk_07C;
+        actor = gUnk_02039B9C->actor;
         work->unk_14 = 1;
     } else {
         if (gBtlWork->unk_078 == 0) {
@@ -1331,7 +1331,7 @@ void task_btl_escape_2(BtlEscapeWork* work) {
         return;
     }
 
-    actor = gBtlWork->unk_07C;
+    actor = gBtlWork->actor;
     if (actor->unk_034 & 4) {
         WorldToScreen(&x, &y, actor->unk_004 - 768, actor->unk_008, actor->unk_00C - 10240);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 2);
@@ -1463,7 +1463,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         }
     }
 
-    work->actor = gBtlWork->unk_07C;
+    work->actor = gBtlWork->actor;
 }
 
 #define DIST(a, b) ((a) - (b) >= 0 ? (a) - (b) : (b) - (a))
@@ -1523,8 +1523,8 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             f = gBtlWork->unk_068;
 
             if (f & 0x4000) {
-                d1 = DIST(work->x, gBtlWork->unk_07C->unk_004);
-                d2 = DIST(work->x, gUnk_02039B9C->unk_07C->unk_004);
+                d1 = DIST(work->x, gBtlWork->actor->unk_004);
+                d2 = DIST(work->x, gUnk_02039B9C->actor->unk_004);
 
                 if (d1 == d2) {
                     bit = f & 0x1000;
@@ -1544,10 +1544,10 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                         range = 0x2800;
                     }
 
-                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                        work->actor = gUnk_02039B9C->unk_07C;
+                    if (DIST(gUnk_02039B9C->actor->unk_004, work->x) < range &&
+                        DIST(gUnk_02039B9C->actor->unk_008, work->y) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->actor->unk_00C, work->z) < 12800) {
+                        work->actor = gUnk_02039B9C->actor;
                         hit = 1;
                     } else {
                         if (gBtlWork->unk_0F4 == 6) {
@@ -1556,9 +1556,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                             range = 0x2800;
                         }
 
-                        if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                            DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                            DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                        if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                            DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                            DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                             hit = 1;
                         }
                     }
@@ -1569,9 +1569,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                         range = 0x2800;
                     }
 
-                    if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                        DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                        DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                    if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                        DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                        DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                         hit = 1;
                     } else {
                         if (gUnk_02039B9C->unk_0F4 == 6) {
@@ -1580,10 +1580,10 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                             range = 0x2800;
                         }
 
-                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                            work->actor = gUnk_02039B9C->unk_07C;
+                        if (DIST(gUnk_02039B9C->actor->unk_004, work->x) < range &&
+                            DIST(gUnk_02039B9C->actor->unk_008, work->y) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->actor->unk_00C, work->z) < 12800) {
+                            work->actor = gUnk_02039B9C->actor;
                             hit = 1;
                         }
                     }
@@ -1595,9 +1595,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                     range = 0x2800;
                 }
 
-                if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                    DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                    DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                    DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                    DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                     hit = 1;
                 }
             }
@@ -1725,7 +1725,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     gBtlWork->unk_0B0++;
     work->unk_38 = (gSineTable[angle] * spd) >> 8;
     work->unk_3C = (-gSineTable[angle + 64] * spd) >> 8;
-    work->actor = gBtlWork->unk_07C;
+    work->actor = gBtlWork->actor;
 }
 
 s32 task_btl_premire_1(BtlPremireWork* work) {
@@ -1786,10 +1786,10 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                         range = 0x2000;
                     }
 
-                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                        work->actor = gUnk_02039B9C->unk_07C;
+                    if (DIST(gUnk_02039B9C->actor->unk_004, work->x) < range &&
+                        DIST(gUnk_02039B9C->actor->unk_008, work->y) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->actor->unk_00C, work->z) < 12800) {
+                        work->actor = gUnk_02039B9C->actor;
                         hit = 1;
                     } else {
                         if (gBtlWork->unk_0F4 == 6) {
@@ -1798,9 +1798,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                             range = 0x2000;
                         }
 
-                        if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                            DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                            DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                        if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                            DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                            DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                             hit = 1;
                         }
                     }
@@ -1811,9 +1811,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                         range = 0x2000;
                     }
 
-                    if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                        DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                        DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                    if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                        DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                        DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                         hit = 1;
                     } else {
                         if (gUnk_02039B9C->unk_0F4 == 6) {
@@ -1822,10 +1822,10 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                             range = 0x2000;
                         }
 
-                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
-                            work->actor = gUnk_02039B9C->unk_07C;
+                        if (DIST(gUnk_02039B9C->actor->unk_004, work->x) < range &&
+                            DIST(gUnk_02039B9C->actor->unk_008, work->y) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->actor->unk_00C, work->z) < 12800) {
+                            work->actor = gUnk_02039B9C->actor;
                             hit = 1;
                         }
                     }
@@ -1837,9 +1837,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                     range = 0x2000;
                 }
 
-                if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
-                    DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
-                    DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
+                if (DIST(gBtlWork->actor->unk_004, work->x) < range &&
+                    DIST(gBtlWork->actor->unk_008, work->y) < (range >> 1) &&
+                    DIST(gBtlWork->actor->unk_00C, work->z) < 12800) {
                     hit = 1;
                 }
             }

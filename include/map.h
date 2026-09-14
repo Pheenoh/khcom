@@ -455,7 +455,7 @@ typedef struct MapMenuWork {
     void* tiles;
     s32 unk_068;
     s32 unk_06C;
-    u8* unk_070;
+    u8* palette8;
     u8 unk_074[0xC4];
     FldRes* palette6;
     void* tiles8;
@@ -465,8 +465,8 @@ typedef struct MapMenuWork {
     s32 unk_14C;
     s32 unk_150;
     s32 unk_154;
-    u8* unk_158[0x03];
-    void* unk_164[0x03];
+    u8* palette9[0x03];
+    void* tiles9[0x03];
     s32 unk_170[0x03];
     u8* unk_17C;
     TextSlot unk_180[0x21];
@@ -1164,12 +1164,12 @@ typedef struct UnkStruct_080ECA88 {
     s32 unk_0C;
     u8 unk_10[0x34];
     void* tiles;
-    u8* unk_48;
+    u8* palette;
     void* unk_4C;
     void* unk_50;
     void* unk_54;
     void* tiles2;
-    u8* unk_5C;
+    u8* palette2;
     void* unk_60;
     void* unk_64;
     void* unk_68;

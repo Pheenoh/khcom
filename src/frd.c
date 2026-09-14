@@ -12,12 +12,12 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -376,7 +376,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         break;
     case 7:
         {
-            BtlObj* ally=work->unk_14C != 0 ? gBtlWork->unk_07C : gUnk_02039B9C->unk_07C;
+            BtlObj* ally=work->unk_14C != 0 ? gBtlWork->actor : gUnk_02039B9C->actor;
             if (work->unk_14E == 0) {
                 func_08019068(gUnk_0813EB8C,&work->anim,1,0,work->tiles);
                 AnimReset(&work->anim);
@@ -530,12 +530,12 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -794,12 +794,12 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -1045,12 +1045,12 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -1515,12 +1515,12 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -1704,7 +1704,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         }
         func_0801D288();
         if (gBtlWork->unk_068 & 0x4000) {
-            BtlObj* other = work->unk_14C != 0 ? gUnk_02039B9C->unk_07C : gBtlWork->unk_07C;
+            BtlObj* other = work->unk_14C != 0 ? gUnk_02039B9C->actor : gBtlWork->actor;
             y = other->unk_008;
             z = other->unk_00C;
         } else if (target != 0) {
@@ -1850,12 +1850,12 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
 
@@ -2093,13 +2093,13 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
         obj = gBtlWork->unk_078;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
         obj = gUnk_02039B9C->unk_078;
     }

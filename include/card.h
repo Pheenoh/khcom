@@ -1435,7 +1435,7 @@ typedef struct MapSelectWork {
     TaskPool tasks;
     ListPool cards;
     u8 unk_024[8];
-    UnkStruct_080038C8* unk_02C;
+    UnkStruct_080038C8* tiles4;
     ObjPalette* palette;
     void* tiles2;
     void* tiles3;
@@ -1681,7 +1681,7 @@ typedef struct WorldSelBeforeWork {
     void* tiles;
     void* palette;
     void* tiles2;
-    UnkStruct_080038C8* unk_0C;
+    UnkStruct_080038C8* palette2;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;

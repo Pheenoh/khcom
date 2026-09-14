@@ -130,7 +130,7 @@ void func_0800EFE8(Actor* work) {
     TaskPoolDraw(&work->unk_2C);
 }
 void func_0800F230(void) {
-    BtlObj* c = gUnk_02039B9C->unk_07C;
+    BtlObj* c = gUnk_02039B9C->actor;
     u8 keys;
     u16 t;
 
@@ -201,7 +201,7 @@ void func_0800F230(void) {
 
 #ifdef VERSION_EU
 void eu_08013190(void) {
-    BtlObj* c = gUnk_02039B9C->unk_07C;
+    BtlObj* c = gUnk_02039B9C->actor;
     u8 keys;
 
     keys = gBtlWork->unk_0EF;
@@ -314,7 +314,7 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
     s32 v0;
     s32 v1;
     Collider* c = (Collider*)&p->unk_40;
-    BtlObj* o = gBtlWork->unk_07C;
+    BtlObj* o = gBtlWork->actor;
     s32 d;
     s32 t;
     s32 bb;

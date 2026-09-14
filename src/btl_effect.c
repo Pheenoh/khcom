@@ -351,9 +351,9 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
     m4aSongNumStart(0x23D);
     BgAnimSetLoopStartFrame(8);
     gUnk_02034928->unk_04 = func_08012C08;
-    gUnk_02034928->unk_28 = gBtlWork->unk_07C->unk_004;
-    gUnk_02034928->unk_2C = gBtlWork->unk_07C->unk_008;
-    gUnk_02034928->unk_30 = gBtlWork->unk_07C->unk_00C;
+    gUnk_02034928->unk_28 = gBtlWork->actor->unk_004;
+    gUnk_02034928->unk_2C = gBtlWork->actor->unk_008;
+    gUnk_02034928->unk_30 = gBtlWork->actor->unk_00C;
     gUnk_02034928->unk_08 = a;
     gUnk_02034928->unk_26 = 1;
     gUnk_02034928->unk_48 = w;
@@ -2353,9 +2353,9 @@ void func_080162A8(s32 x, s32 y, s32 z, s32 w) {
 BtlObj* func_08016320(void) {
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
-            return gBtlWork->unk_07C;
+            return gBtlWork->actor;
         }
-        return gUnk_02039B9C->unk_07C;
+        return gUnk_02039B9C->actor;
     }
 
     if (gBtlWork->unk_078 != 0) {
@@ -2370,18 +2370,18 @@ void func_08016374(s16 a) {
     if (gBtlWork->unk_068 & 0x4000) {
         if (GetRandom() % 5) {
             if (gBtlWork->unk_068 & 0x20000000) {
-                func_08019190(gBtlWork->unk_07C, 2);
+                func_08019190(gBtlWork->actor, 2);
             } else {
-                func_08019190(gUnk_02039B9C->unk_07C, 2);
+                func_08019190(gUnk_02039B9C->actor, 2);
             }
         } else {
-            o = gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->actor;
             o->unk_02C = a;
 
             if (a > o->unk_02E) {
                 o->unk_02C = o->unk_02E;
             }
-            o = gBtlWork->unk_07C;
+            o = gBtlWork->actor;
             o->unk_02C = a;
 
             if (a > o->unk_02E) {
@@ -3111,16 +3111,16 @@ void func_08017728(u8 a, u8 b) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
-            p = gBtlWork->unk_07C;
-            o = gUnk_02039B9C->unk_07C;
+            p = gBtlWork->actor;
+            o = gUnk_02039B9C->actor;
         } else {
-            p = gUnk_02039B9C->unk_07C;
-            o = gBtlWork->unk_07C;
+            p = gUnk_02039B9C->actor;
+            o = gBtlWork->actor;
         }
 
         func_080175BC(p, o, a, b);
     } else {
-        p = gBtlWork->unk_07C;
+        p = gBtlWork->actor;
         o = ListPoolFirst(&gBtlWork->unk_080);
 
         while (o != 0) {
@@ -3351,11 +3351,11 @@ void func_08017C54(void) {
         }
 
         if (gUnk_02034928->unk_34 & 1) {
-            if (gBtlWork->unk_07C->unk_004 < gUnk_02034928->unk_10) {
+            if (gBtlWork->actor->unk_004 < gUnk_02034928->unk_10) {
                 gUnk_02034928->unk_26 = 2;
             }
         } else {
-            if (gBtlWork->unk_07C->unk_004 > gUnk_02034928->unk_10) {
+            if (gBtlWork->actor->unk_004 > gUnk_02034928->unk_10) {
                 gUnk_02034928->unk_26 = 2;
             }
         }
@@ -3704,7 +3704,7 @@ void func_080185D0(void) {
     z = gUnk_02034928->unk_18 + -gSineTable[ang + 64] * r;
     y = gUnk_02034928->unk_14;
     func_08011F78(gUnk_02034928->unk_48, x, y, z, 32, 16, 16);
-    o = gBtlWork->unk_07C;
+    o = gBtlWork->actor;
 
     if (o->unk_034 & 0x2000) {
         o->unk_004 += (x - o->unk_004) >> 2;
@@ -3738,16 +3738,16 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
     }
 
     if (gUnk_02034928->unk_34 & 1) {
-        if (gUnk_02034928->unk_10 < gBtlWork->unk_07C->unk_004) {
+        if (gUnk_02034928->unk_10 < gBtlWork->actor->unk_004) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = -(((gUnk_02034928->unk_10 - gBtlWork->unk_07C->unk_004) << 8) / 19200);
+            gUnk_02034928->unk_1C = -(((gUnk_02034928->unk_10 - gBtlWork->actor->unk_004) << 8) / 19200);
         }
     } else {
-        if (gUnk_02034928->unk_10 > gBtlWork->unk_07C->unk_004) {
+        if (gUnk_02034928->unk_10 > gBtlWork->actor->unk_004) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = ((gBtlWork->unk_07C->unk_004 - gUnk_02034928->unk_10) << 8) / 19200;
+            gUnk_02034928->unk_1C = ((gBtlWork->actor->unk_004 - gUnk_02034928->unk_10) << 8) / 19200;
         }
     }
     BgAnimSetLoopStartFrame(3);

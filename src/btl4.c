@@ -590,21 +590,21 @@ void task_btl_vslockon_0(BtlVslockonWork* work) {
     AnimInit(&work->anim, gUnk_09EE10F8, gUnk_09EE10EC);
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
-    gBtlWork->unk_078 = gUnk_02039B9C->unk_07C;
-    gUnk_02039B9C->unk_078 = gBtlWork->unk_07C;
+    gBtlWork->unk_078 = gUnk_02039B9C->actor;
+    gUnk_02039B9C->unk_078 = gBtlWork->actor;
 }
 
 s32 task_btl_vslockon_1(BtlVslockonWork* work) {
     if (gBtlWork->unk_0F4 == 19) {
         gUnk_02039B9C->unk_078 = 0;
     } else {
-        gUnk_02039B9C->unk_078 = gBtlWork->unk_07C;
+        gUnk_02039B9C->unk_078 = gBtlWork->actor;
     }
 
     if (gUnk_02039B9C->unk_0F4 == 19) {
         gBtlWork->unk_078 = 0;
     } else {
-        gBtlWork->unk_078 = gUnk_02039B9C->unk_07C;
+        gBtlWork->unk_078 = gUnk_02039B9C->actor;
     }
 
     work->gfx = AnimUpdate(&work->anim);
@@ -641,46 +641,46 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
     AnimInit(&work->anim2, gUnk_09EE1498, gUnk_09EE1420);
     AnimStart(&work->anim, 0, 1);
 
-    if (gUnk_02039B9C->unk_07C->unk_02E <= 40) {
+    if (gUnk_02039B9C->actor->unk_02E <= 40) {
         work->unk_64 = 0;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 80) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 80) {
         work->unk_64 = 1;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 120) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 120) {
         work->unk_64 = 2;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 160) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 160) {
         work->unk_64 = 3;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 200) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 200) {
         work->unk_64 = 4;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 240) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 240) {
         work->unk_64 = 5;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 280) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 280) {
         work->unk_64 = 6;
         work->unk_68 = 0;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 320) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 320) {
         work->unk_64 = 0;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 360) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 360) {
         work->unk_64 = 1;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 400) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 400) {
         work->unk_64 = 2;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 440) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 440) {
         work->unk_64 = 3;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 480) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 480) {
         work->unk_64 = 4;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 520) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 520) {
         work->unk_64 = 5;
         work->unk_68 = 1;
-    } else if (gUnk_02039B9C->unk_07C->unk_02E <= 560) {
+    } else if (gUnk_02039B9C->actor->unk_02E <= 560) {
         work->unk_64 = 6;
         work->unk_68 = 1;
     } else {
@@ -756,7 +756,7 @@ s32 task_btl_hpoth_1(BtlHpothWork* work) {
     s32 flag;
     u32 state;
 
-    actor = gUnk_02039B9C->unk_07C;
+    actor = gUnk_02039B9C->actor;
     if (actor == 0) {
         return 0;
     }

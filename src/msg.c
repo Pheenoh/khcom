@@ -8537,7 +8537,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(1, 1);
         SetBgPriority(2, 0);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8554,7 +8554,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(1, 1);
         SetBgPriority(2, 0);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8579,7 +8579,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 0);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8599,7 +8599,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 0);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8656,7 +8656,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8673,7 +8673,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8690,7 +8690,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->actor = (BtlObj*)p->unk_054;
         gBtlWork->unk_068 = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
@@ -8789,9 +8789,9 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->unk_07C->unk_004 = p->unk_02C - 0x7800;
-            gBtlWork->unk_07C->unk_008 = p->unk_030 - 0x5000;
-            gBtlWork->unk_07C->unk_00C = 0;
+            gBtlWork->actor->unk_004 = p->unk_02C - 0x7800;
+            gBtlWork->actor->unk_008 = p->unk_030 - 0x5000;
+            gBtlWork->actor->unk_00C = 0;
         }
     }
 
@@ -10022,9 +10022,9 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->unk_07C->unk_004 = v - 0x7800;
-            gBtlWork->unk_07C->unk_008 = p->unk_030 - 0x5000;
-            gBtlWork->unk_07C->unk_00C = 0;
+            gBtlWork->actor->unk_004 = v - 0x7800;
+            gBtlWork->actor->unk_008 = p->unk_030 - 0x5000;
+            gBtlWork->actor->unk_00C = 0;
         }
     }
 

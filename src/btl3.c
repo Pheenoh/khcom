@@ -70,7 +70,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
             work->unk_00--;
         } else {
             if (work->unk_00 == 0) {
-                obj = gBtlWork->unk_07C;
+                obj = gBtlWork->actor;
                 work->unk_14 = (obj->unk_004 + 0x10000) >> 1;
                 work->unk_18 = obj->unk_008;
                 work->unk_1C = 0;
@@ -217,12 +217,12 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     if (args->unk_14 != 0) {
         work->unk_3D = 1;
         work->unk_00 = gBtlWork->tiles2;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
         work->unk_00 = gBtlWork->tiles2;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->palette = LoadObjPalette(gUnk_096FAC64, 32);
     }
 
@@ -307,9 +307,9 @@ BtlObj* func_08040458(BtlRaidWork* work) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_3D != 0) {
-            obj = gUnk_02039B9C->unk_07C;
+            obj = gUnk_02039B9C->actor;
         } else {
-            obj = gBtlWork->unk_07C;
+            obj = gBtlWork->actor;
         }
 
         if (obj->unk_02C <= 0) {
@@ -668,9 +668,9 @@ BtlObj* func_08040C8C(BtlAiWork* work) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_163 != 0) {
-            p = gUnk_02039B9C->unk_07C;
+            p = gUnk_02039B9C->actor;
         } else {
-            p = gBtlWork->unk_07C;
+            p = gBtlWork->actor;
         }
 
         if (p->unk_02C <= 0) {
@@ -711,9 +711,9 @@ BtlObj* func_08040D54(BtlAiWork* work) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_163 != 0) {
-            p = gUnk_02039B9C->unk_07C;
+            p = gUnk_02039B9C->actor;
         } else {
-            p = gBtlWork->unk_07C;
+            p = gBtlWork->actor;
         }
 
         if (p->unk_02C <= 0) {

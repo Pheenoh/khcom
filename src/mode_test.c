@@ -94,12 +94,12 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     if (args->side != 0) {
         work->side = 1;
         gBtlWork->unk_068 |= 0x200000;
-        work->actor = gBtlWork->unk_07C;
+        work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->side = args->side;
         gUnk_02039B9C->unk_068 |= 0x200000;
-        work->actor = gUnk_02039B9C->unk_07C;
+        work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
     work->card = args->card;

@@ -189,7 +189,7 @@ void func_080107D4(void) {
     if (w->unk_0E3 > 32) {
         func_0807E200();
     }
-    o = w->unk_07C;
+    o = w->actor;
 
     if (o->unk_034 & 0x200) {
         return;
@@ -318,7 +318,7 @@ void func_08010A24(void) {
         func_08076324();
     }
 
-    o = w->unk_07C;
+    o = w->actor;
 
     if (o->unk_034 & 0x200) {
         return;
@@ -370,8 +370,8 @@ void func_08010C70(void) {
 }
 
 void func_08010CC8(void) {
-    BtlObj* player = gBtlWork->unk_07C;
-    BtlObj* other = gUnk_02039B9C->unk_07C;
+    BtlObj* player = gBtlWork->actor;
+    BtlObj* other = gUnk_02039B9C->actor;
     s32 entered;
     s32 i;
     s32 busy;

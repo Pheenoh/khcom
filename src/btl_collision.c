@@ -76,13 +76,13 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         return 0;
     }
     if (gBtlWork->unk_068 & 0x4000) {
-        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
-        else source = gUnk_02039B9C->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->actor;
+        else source = gUnk_02039B9C->actor;
     } else if (gBtlWork->unk_068 & 0x800) {
-        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->actor;
         else source = gBtlWork->unk_0A8;
     } else {
-        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->actor;
         else source = gBtlWork->unk_0A8;
     }
     if (source->btl != 0) {
@@ -380,9 +380,9 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
-            o = gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->actor;
         } else {
-            o = gBtlWork->unk_07C;
+            o = gBtlWork->actor;
         }
         if (func_08011270(o, x, y, z, a, b, c)) {
             return 1;
@@ -398,7 +398,7 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
         }
         return 0;
     } else {
-        o = gBtlWork->unk_07C;
+        o = gBtlWork->actor;
         if (func_08011270(o, x, y, z, a, b, c)) {
             return 1;
         }
@@ -435,9 +435,9 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
-            o = gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->actor;
         } else {
-            o = gBtlWork->unk_07C;
+            o = gBtlWork->actor;
         }
         if (func_08011270(o, x, y, z, p, q, r)) {
             res = func_08011398(o, a);
@@ -494,7 +494,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
             return 1;
         }
     } else {
-        o = gBtlWork->unk_07C;
+        o = gBtlWork->actor;
         if (func_08011270(o, x, y, z, p, q, r)) {
             res = func_08011398(o, a);
 

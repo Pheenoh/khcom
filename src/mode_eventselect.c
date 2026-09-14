@@ -1879,7 +1879,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         } else if (gUnk_02034A98 != 0 && (gUnk_02034A98->unk_78 & 0x42) == 0x42 && func_080787B8((CardBattleWork*)w, w->unk_B8) != 0) {
             w->unk_C0[w->unk_B8] = 1;
             gUnk_02034A98->unk_A1 = 7;
-            actor = gBtlWork->unk_07C;
+            actor = gBtlWork->actor;
             if (actor->unk_02C > 3) {
                 actor->unk_02C -= 2;
             }

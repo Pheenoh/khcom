@@ -76,7 +76,7 @@ s32 func_08049F50(PcCharaWork* work) {
     s32 y;
     BtlObj* obj;
 
-    obj = gBtlWork->unk_07C;
+    obj = gBtlWork->actor;
 
     if ((u16)GetRandom() % 60 == 0) {
         func_0801C700(work->unk_040, &x, &y, 0);

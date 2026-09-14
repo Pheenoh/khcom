@@ -36,12 +36,12 @@
 #include "bos4_api.h"
 
 typedef struct SelmapEventKeyWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     u8 unk_08[0xD0];
     void** unk_D8;
-    AnimState unk_DC;
-    void* unk_F4;
+    AnimState anim;
+    void* gfx;
     void* unk_F8;
     s32 unk_FC;
     s32 unk_100;
@@ -5384,8 +5384,8 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
         gUnk_02034AAC->unk_A1 = 7;
 
         if (gUnk_02039B9C->unk_0F4 != 40) {
-            if (gUnk_02039B9C->unk_07C->unk_02C > 3) {
-                gUnk_02039B9C->unk_07C->unk_02C -= 2;
+            if (gUnk_02039B9C->actor->unk_02C > 3) {
+                gUnk_02039B9C->actor->unk_02C -= 2;
             }
 
             w->unk_34[w->unk_B8] = 0;
@@ -13043,12 +13043,12 @@ void func_0808B3DC(u8* work, u8 flag) {
     }
 }
 typedef struct {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* tiles2;
     void* unk_008;
     void* unk_00C;
     void* unk_010;
-    void* unk_014;
+    void* palette;
     void* unk_018;
     void* unk_01C;
     void* unk_020;
@@ -13076,9 +13076,9 @@ typedef struct {
     void* unk_4E4;
     void* unk_4E8;
     void* unk_4EC;
-    void* unk_4F0;
-    void* unk_4F4;
-    void* unk_4F8;
+    void* gfx;
+    void* gfx2;
+    void* gfx3;
     u8 unk_4FC[0x23C];
     void* unk_738;
     void* unk_73C;
@@ -13097,9 +13097,9 @@ typedef struct {
     TaskPool taskpool;
     TaskPool cardpool;
     ListPool unk_7F0;
-    AnimState unk_800;
-    AnimState unk_818;
-    AnimState unk_830;
+    AnimState anim;
+    AnimState anim2;
+    AnimState anim3;
     s32 unk_848;
     s32 unk_84C;
     s32 unk_850;
@@ -13137,11 +13137,11 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     gUnk_0203A860.gfx = AnimUpdate(&gUnk_0203A860.anim);
     if (w->unk_8C9 == 0) {
         if (w->unk_8B0 != 0) {
-            DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 3);
+            DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 3);
         }
     }
     if (w->unk_8B1 != 13) {
-        DrawSprite(w->unk_850 >> 8, w->unk_854 >> 8, gUnk_09EEB000, w->unk_010, w->unk_014, 0, 0x800, 10);
+        DrawSprite(w->unk_850 >> 8, w->unk_854 >> 8, gUnk_09EEB000, w->unk_010, w->palette, 0, 0x800, 10);
     }
     if (w->unk_4BC != 0) {
         DrawSprite(w->unk_858 >> 8, w->unk_860 >> 8, gUnk_09EEB080[0], w->unk_4BC, w->unk_4C0, 0, 0xC00, 10000);
@@ -13159,12 +13159,12 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     switch (w->unk_8B1) {
     case 0:
         if (w->unk_8CF != 0) {
-            DrawSprite((w->unk_86C >> 8) - 16, (w->unk_870 >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+            DrawSprite((w->unk_86C >> 8) - 16, (w->unk_870 >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         }
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         func_0808B3DC((u8*)w, 0);
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
         break;
     case 3:
 #ifdef VERSION_EU
@@ -13175,33 +13175,33 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         DrawSprite(120, 80, gUnk_09EEAFE8, w->unk_008, w->unk_00C, 0, 0, 8);
 #endif
         func_0808B3DC((u8*)w, 0);
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
         break;
     case 2:
         func_0808B3DC((u8*)w, 0);
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
         break;
     case 1:
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
         func_0808B3DC((u8*)w, 0);
         break;
     case 4:
         func_0808B3DC((u8*)w, 1);
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         if (w->unk_01C != 0) {
             if (w->unk_8C9 == 0) {
-                DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+                DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
             }
             DrawSprite(24, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             DrawTextSlots(10, 116, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 82, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
         }
         if (w->unk_8C9 == 0) {
@@ -13210,14 +13210,14 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         break;
     case 7:
         func_0808B3DC((u8*)w, 1);
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         if (w->unk_01C != 0) {
             DrawSprite(164, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(164, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(164, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(164, 82, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
             if (w->unk_024 != 0) {
                 DrawSprite(164, 82, w->unk_4E4, w->unk_024, w->unk_030, 0, 0, 19);
@@ -13229,15 +13229,15 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 5:
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         func_0808B3DC((u8*)w, 1);
         if (w->unk_01C != 0) {
             DrawSprite(24, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 82, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
             DrawTextSlots(10, 116, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
         }
@@ -13246,21 +13246,21 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 6:
-        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->palette, 0, 0, 10);
         func_0808B3DC((u8*)w, 1);
         break;
     case 8:
-        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->palette, 0, 0, 10);
         func_0808B3DC((u8*)w, 1);
         break;
     case 9:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         if (w->unk_01C != 0) {
             DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 66, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
             DrawTextSlots(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
         }
@@ -13269,13 +13269,13 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 11:
-        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->gfx2, w->tiles2, w->unk_4C4, 0, 0, 8);
         if (w->unk_01C != 0) {
             DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 66, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
             DrawTextSlots(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
         }
@@ -13286,16 +13286,16 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     case 13:
         DrawSprite(w->unk_7B4 >> 8, w->unk_7B8 >> 8, w->unk_7B0, w->unk_738, w->unk_740, 0, 0, 20);
         DrawSprite(w->unk_7BC >> 8, 18, 0, w->unk_73C, w->unk_740, 0, 0, 21);
-        DrawTextSlots(138, 16, w->unk_744, w->unk_014, 20, w->unk_7C4);
+        DrawTextSlots(138, 16, w->unk_744, w->palette, 20, w->unk_7C4);
         break;
     case 12:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 0);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
         if (w->unk_01C != 0) {
             DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 66, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
             DrawTextSlots(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
         }
@@ -13304,13 +13304,13 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 15:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 0);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
         if (w->unk_01C != 0) {
             DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
             DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
             if (w->unk_028 != 0) {
-                w->unk_4F8 = AnimUpdate(&w->unk_830);
-                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+                w->gfx3 = AnimUpdate(&w->anim3);
+                DrawSprite(24, 66, w->gfx3, w->unk_028, w->unk_030, 0, 0, 1);
             }
         }
         break;
@@ -15354,13 +15354,13 @@ typedef struct UnkStruct_0808F0C0 {
     u8 unk_0B8[0x40];
     u8 unk_0F8[0xF0];
     u8 unk_1E8[0x550];
-    void* unk_738;
+    void* tiles;
     UnkStruct_080038C8* unk_73C;
-    void* unk_740;
+    void* palette;
     u8 unk_744[0x40];
     u8 unk_784[0x14];
-    AnimState unk_798;
-    void* unk_7B0;
+    AnimState anim;
+    void* gfx;
     s32 unk_7B4;
     s32 unk_7B8;
     s32 unk_7BC;
@@ -15382,9 +15382,9 @@ typedef struct UnkStruct_0808F0C0 {
     TaskPool taskpool;
     TaskPool cardpool;
     ListPool unk_7F0;
-    AnimState unk_800;
-    AnimState unk_818;
-    AnimState unk_830;
+    AnimState anim2;
+    AnimState anim3;
+    AnimState anim4;
     s32 unk_848;
     s32 unk_84C;
     u8 unk_850[0x60];
@@ -15505,13 +15505,13 @@ u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
 #endif
         if (w->cursor.parts.x == 13 && keys == 32) {
             w->cursor.parts.x = 9;
-            AnimStart(&w->unk_798, 0, 1);
+            AnimStart(&w->anim, 0, 1);
 #ifdef VERSION_EU
             w->unk_7C8 = 0;
 #endif
         } else {
             w->cursor.parts.x = 14;
-            AnimStart(&w->unk_798, 1, 1);
+            AnimStart(&w->anim, 1, 1);
 #ifdef VERSION_EU
             w->unk_7C8 = 1;
 #endif
@@ -15583,11 +15583,11 @@ u8 func_eu_0808E94C(UnkStruct_0808F0C0* w, u16 keys) {
     if (w->cursor.parts.y == 6 && w->cursor.parts.x > 1) {
         if (w->cursor.parts.x == 13 && keys == 32) {
             w->cursor.parts.x = 1;
-            AnimStart(&w->unk_798, 0, 1);
+            AnimStart(&w->anim, 0, 1);
             w->unk_7C8 = 0;
         } else {
             w->cursor.parts.x = 14;
-            AnimStart(&w->unk_798, 1, 1);
+            AnimStart(&w->anim, 1, 1);
             w->unk_7C8 = 1;
         }
         return 0;
@@ -15924,21 +15924,21 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
         DisableBg(1);
         DisableBg(2);
 #ifdef VERSION_EU
-        w->unk_738 = AllocObjTiles(0x400, 0);
+        w->tiles = AllocObjTiles(0x400, 0);
 #else
-        w->unk_738 = AllocObjTiles(0x200, 0);
+        w->tiles = AllocObjTiles(0x200, 0);
 #endif
-        w->unk_740 = LoadObjPalette(gUnk_096145B8, 32);
+        w->palette = LoadObjPalette(gUnk_096145B8, 32);
         w->unk_73C = AllocSpriteFrameTiles(0x80);
 #ifdef VERSION_EU
-        SetObjTileSource(w->unk_738, gUnkEu_09F6FE30[gLanguage]);
-        AnimInit(&w->unk_798, gUnkEu_09F6FE58[gLanguage], gUnkEu_09F6FE44[gLanguage]);
+        SetObjTileSource(w->tiles, gUnkEu_09F6FE30[gLanguage]);
+        AnimInit(&w->anim, gUnkEu_09F6FE58[gLanguage], gUnkEu_09F6FE44[gLanguage]);
 #else
-        SetObjTileSource(w->unk_738, gUnk_090A5F1E);
-        AnimInit(&w->unk_798, gUnk_09EEB0B8, gUnk_09EEB08C);
+        SetObjTileSource(w->tiles, gUnk_090A5F1E);
+        AnimInit(&w->anim, gUnk_09EEB0B8, gUnk_09EEB08C);
 #endif
-        AnimStart(&w->unk_798, 0, 1);
-        w->unk_7B0 = AnimGetGfx(&w->unk_798);
+        AnimStart(&w->anim, 0, 1);
+        w->gfx = AnimGetGfx(&w->anim);
 #ifdef VERSION_EU
         UpdateSpriteFrameTiles(w->unk_73C, gUnkEu_09F6FE44[gLanguage][10], gUnkEu_09F6FE30[gLanguage]);
 #else
@@ -16054,8 +16054,8 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
     }
     ApproachValueHalf(&w->unk_848, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
     ApproachValueHalf(&w->unk_84C, 0x1A00);
-    w->unk_7B0 = AnimUpdate(&w->unk_798);
-    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->unk_800);
+    w->gfx = AnimUpdate(&w->anim);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->taskpool);
     TaskPoolUpdate(&w->cardpool);
     return 1;
@@ -16115,8 +16115,8 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
     }
     ApproachValueHalf(&w->unk_848, (gUnkEu_090CECE8[w->unk_7C7 - 2] + 8) << 8);
     ApproachValueHalf(&w->unk_84C, 0x1A00);
-    w->unk_7B0 = AnimUpdate(&w->unk_798);
-    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->unk_800);
+    w->gfx = AnimUpdate(&w->anim);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->taskpool);
     TaskPoolUpdate(&w->cardpool);
     return 1;
@@ -16130,8 +16130,8 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         bottom = 7;
     }
 #endif
-    w->unk_7B0 = AnimUpdate(&w->unk_798);
-    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->unk_800);
+    w->gfx = AnimUpdate(&w->anim);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
     switch ((u16)GetKeysRepeat()) {
     case 32:
         w->unk_7C6 = 1;
@@ -16140,12 +16140,12 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         case 0:
         case 1:
             if ((u8)func_0808EF80((u8*)w, 32) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
             }
             break;
         case 2:
             if ((u8)func_0808F0C0(w, 32) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
 #ifdef VERSION_EU
                 w->unk_7C8 = 0;
 #endif
@@ -16154,7 +16154,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         case 3:
             if ((u8)func_eu_0808E94C(w, 32) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
                 w->unk_7C8 = 0;
             }
             break;
@@ -16169,12 +16169,12 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         case 0:
         case 1:
             if ((u8)func_0808EF80((u8*)w, 16) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
             }
             break;
         case 2:
             if ((u8)func_0808F0C0(w, 16) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
 #ifdef VERSION_EU
                 w->unk_7C8 = 0;
 #endif
@@ -16183,7 +16183,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         case 3:
             if ((u8)func_eu_0808E94C(w, 16) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
                 w->unk_7C8 = 0;
             }
             break;
@@ -16211,12 +16211,12 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         case 0:
         case 1:
             if ((u8)func_0808EF80((u8*)w, 64) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
             }
             break;
         case 2:
             if ((u8)func_0808F0C0(w, 64) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
 #ifdef VERSION_EU
                 w->unk_7C8 = 0;
 #endif
@@ -16225,7 +16225,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         case 3:
             if ((u8)func_eu_0808E94C(w, 64) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
                 w->unk_7C8 = 0;
             }
             break;
@@ -16240,12 +16240,12 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         case 0:
         case 1:
             if ((u8)func_0808EF80((u8*)w, 128) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
             }
             break;
         case 2:
             if ((u8)func_0808F0C0(w, 128) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
 #ifdef VERSION_EU
                 w->unk_7C8 = 0;
 #endif
@@ -16254,7 +16254,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         case 3:
             if ((u8)func_eu_0808E94C(w, 128) != 0) {
-                AnimStart(&w->unk_798, 0, 1);
+                AnimStart(&w->anim, 0, 1);
                 w->unk_7C8 = 0;
             }
             break;
@@ -16290,7 +16290,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #else
                 w->cursor.parts.y = 6;
 #endif
-                AnimStart(&w->unk_798, 1, 1);
+                AnimStart(&w->anim, 1, 1);
 #ifdef VERSION_EU
                 w->unk_7C8 = 1;
 #endif
@@ -16312,7 +16312,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #else
         w->cursor.parts.y = 6;
 #endif
-        AnimStart(&w->unk_798, 1, 1);
+        AnimStart(&w->anim, 1, 1);
         m4aSongNumStart(121);
 #ifdef VERSION_EU
         w->unk_7C8 = 1;
@@ -17706,21 +17706,21 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     w->tiles3 = 0;
     if (w->unk_2BE == 0) {
         if (*(u16*)w->unk_27E == 0) {
-            w->unk_02C = AllocSpriteFrameTiles(0x80);
-            UpdateSpriteFrameTiles(w->unk_02C, gUnk_09EF1198[0], gUnk_0950C478);
+            w->tiles4 = AllocSpriteFrameTiles(0x80);
+            UpdateSpriteFrameTiles(w->tiles4, gUnk_09EF1198[0], gUnk_0950C478);
         } else {
-            w->unk_02C = AllocSpriteFrameTiles(0x180);
-            UpdateSpriteFrameTiles(w->unk_02C, gUnk_09EF1198[1], gUnk_0950C478);
-            RequestDma3Copy((u8*)w->unk_02C->unk_00 + (*(u16*)w->unk_27E << 7),
-                           (void*)(0x06010000 + ((w->unk_02C->unk_06 + 4) << 5)), 0x80);
-            RequestDma3Copy((u8*)w->unk_02C->unk_00 + 0x500,
-                           (void*)(0x06010000 + (w->unk_02C->unk_06 << 5)), 0x80);
+            w->tiles4 = AllocSpriteFrameTiles(0x180);
+            UpdateSpriteFrameTiles(w->tiles4, gUnk_09EF1198[1], gUnk_0950C478);
+            RequestDma3Copy((u8*)w->tiles4->unk_00 + (*(u16*)w->unk_27E << 7),
+                           (void*)(0x06010000 + ((w->tiles4->unk_06 + 4) << 5)), 0x80);
+            RequestDma3Copy((u8*)w->tiles4->unk_00 + 0x500,
+                           (void*)(0x06010000 + (w->tiles4->unk_06 << 5)), 0x80);
         }
         w->tiles2 = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
         w->palette = LoadObjPalette(gUnk_09618D38, 32);
         FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
     } else {
-        w->unk_02C = 0;
+        w->tiles4 = 0;
         w->tiles2 = 0;
         w->palette = LoadObjPalette(gUnk_09618D38, 32);
         FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
@@ -18400,7 +18400,7 @@ void MapSelect_2(MapSelectWork* w) {
                    gUnk_09EEB000, *(void**)&w->unk_040[0x1A0], w->palette, 0, 0, 40);
     }
     if (w->unk_2BE == 0 && w->unk_299 != 9 && w->unk_29A != 9) {
-        DrawSprite(120, 56, 0, w->unk_02C, w->palette, 0, 8, 60);
+        DrawSprite(120, 56, 0, w->tiles4, w->palette, 0, 8, 60);
         DrawSprite(120, 56, gUnk_08F709B0[4].unk_04, w->tiles2, w->palette, 0, 8, 60);
     }
     DrawSprite(128, (s16)(w->unk_26C >> 8), gUnk_09EF11AC[0], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
@@ -18425,8 +18425,8 @@ void MapSelect_3(MapSelectWork* w) {
     ReleaseObjPalette(*(void**)&w->unk_040[0x00]);
     ReleaseObjTiles(w->tiles3);
 
-    if (w->unk_02C != 0) {
-        ReleaseObjTiles(w->unk_02C);
+    if (w->tiles4 != 0) {
+        ReleaseObjTiles(w->tiles4);
     }
 
     if (w->tiles2 != 0) {
@@ -21079,7 +21079,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
     if (w->unk_A8 - 8 > w->unk_AC) {
         w->unk_A8 = w->unk_AC - 8;
         w->unk_B4 = -((w->unk_B4 * 217) >> 8);
-        w->unk_DC = (u8)GetAngle(w->unk_A0, w->unk_A4, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
+        w->unk_DC = (u8)GetAngle(w->unk_A0, w->unk_A4, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008);
         w->unk_DC += GetRandom() % 65 - 32;
 
         if (w->unk_B4 > -0x200) {
@@ -21127,7 +21127,7 @@ void func_08097390(UnkStruct_08096F94* w) {
     s32 tx;
     s32 ty;
 
-    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
+    WorldToScreen(&x, &y, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
     tx = 0x7800;
     ty = 0x5000;
     dx = tx - w->unk_A0;
@@ -21233,7 +21233,7 @@ u8 func_0809753C(UnkStruct_08096F94* w, void* a) {
 
 u8 func_08097600(UnkStruct_08096F94* w) {
     w->unk_DE += 32;
-    WorldToScreen(&w->unk_D2, &w->unk_D4, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
+    WorldToScreen(&w->unk_D2, &w->unk_D4, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
     w->unk_CE += (w->unk_D2 - w->unk_CE) >> 3;
     w->unk_D0 += (w->unk_D4 - w->unk_D0) >> 3;
     w->unk_C8 -= 10;
@@ -21453,22 +21453,22 @@ void SELMAP_EVKEY_0(SelmapEventKeyWork* work, void* a) {
     }
 
 #ifdef VERSION_EU
-    work->unk_00 = AllocObjTiles(0x800, 0);
-    SetObjTileSource(work->unk_00, gUnkEu_09F72A64[gLanguage]);
-    AnimInit(&work->unk_DC, gUnkEu_09F72A3C[gLanguage], gUnkEu_09F72A50[gLanguage]);
+    work->tiles = AllocObjTiles(0x800, 0);
+    SetObjTileSource(work->tiles, gUnkEu_09F72A64[gLanguage]);
+    AnimInit(&work->anim, gUnkEu_09F72A3C[gLanguage], gUnkEu_09F72A50[gLanguage]);
 #else
 #ifdef VERSION_JP
-    work->unk_00 = AllocObjTiles(0x480, 0);
-    SetObjTileSource(work->unk_00, &gUnk_093F47E4[0x22DC]);
+    work->tiles = AllocObjTiles(0x480, 0);
+    SetObjTileSource(work->tiles, &gUnk_093F47E4[0x22DC]);
 #else
-    work->unk_00 = AllocObjTiles(0x6C0, 0);
-    SetObjTileSource(work->unk_00, &gUnk_093F47E4[0x22E8]);
+    work->tiles = AllocObjTiles(0x6C0, 0);
+    SetObjTileSource(work->tiles, &gUnk_093F47E4[0x22E8]);
 #endif
-    AnimInit(&work->unk_DC, gUnk_09EF1224, gUnk_09EF1220);
+    AnimInit(&work->anim, gUnk_09EF1224, gUnk_09EF1220);
 #endif
-    AnimStart(&work->unk_DC, 0, 1);
-    work->unk_F4 = AnimGetGfx(&work->unk_DC);
-    work->unk_04 = *work->unk_D8;
+    AnimStart(&work->anim, 0, 1);
+    work->gfx = AnimGetGfx(&work->anim);
+    work->palette = *work->unk_D8;
     work->unk_11C = 0;
     work->unk_11D = 0;
     work->unk_11E = 8;
@@ -22631,7 +22631,7 @@ void func_080999A4(BossPrizeWork* w) {
     s32 tx;
     s32 ty;
 
-    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
+    WorldToScreen(&x, &y, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
     tx = 0x7800;
     ty = 0x5000;
     dx = tx - w->unk_A8;
@@ -22746,7 +22746,7 @@ u8 func_08099B60(BossPrizeWork* w, void* a) {
 
 u8 func_08099C4C(BossPrizeWork* w) {
     w->unk_E6 += 32;
-    WorldToScreen(&w->unk_DA, &w->unk_DC, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
+    WorldToScreen(&w->unk_DA, &w->unk_DC, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
     *(s16*)&w->unk_D6 += (w->unk_DA - *(s16*)&w->unk_D6) >> 3;
     *(s16*)&w->unk_D8 += (w->unk_DC - *(s16*)&w->unk_D8) >> 3;
     w->unk_D0 -= 10;
@@ -23098,8 +23098,8 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((204 * w->unk_1A4) >> 8);
         w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C,
-                               gBtlWork->unk_07C->unk_004,
-                               gBtlWork->unk_07C->unk_008);
+                               gBtlWork->actor->unk_004,
+                               gBtlWork->actor->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 224) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -23204,8 +23204,8 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((204 * w->unk_1A4) >> 8);
         w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C,
-                               gBtlWork->unk_07C->unk_004,
-                               gBtlWork->unk_07C->unk_008);
+                               gBtlWork->actor->unk_004,
+                               gBtlWork->actor->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 224) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -23345,7 +23345,7 @@ u8 func_0809ACDC(UnkStruct_0809A02C* w) {
     s16 y;
 
     w->unk_1C9 += 32;
-    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
+    WorldToScreen(&x, &y, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
     w->unk_38 += ((x << 8) - w->unk_38) >> 3;
     w->unk_3C += ((y << 8) - w->unk_3C) >> 3;
     w->unk_1B8 -= 10;
@@ -23445,7 +23445,7 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
     if (w->unk_40 - 0x800 > w->unk_44) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((w->unk_1A4 * 204) >> 8);
-        w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
+        w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 0xE0) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -23872,18 +23872,18 @@ void func_0809BB18(u8* work) {
 }
 
 typedef struct UnkStruct_0809BB4C {
-    void* unk_00;
-    ObjPalette* unk_04;
-    void* unk_08;
-    ObjPalette* unk_0C;
-    void* unk_10;
-    ObjPalette* unk_14;
-    void* unk_18;
-    ObjPalette* unk_1C;
-    void* unk_20;
+    void* tiles;
+    ObjPalette* palette;
+    void* tiles2;
+    ObjPalette* palette2;
+    void* tiles3;
+    ObjPalette* palette3;
+    void* tiles4;
+    ObjPalette* palette4;
+    void* tiles5;
     CardSlot* unk_24;
-    void* unk_28;
-    void* unk_2C;
+    void* gfx;
+    void* gfx2;
     u16 unk_30;
     u8 unk_32[2];
     s32 unk_34;
@@ -23893,8 +23893,8 @@ typedef struct UnkStruct_0809BB4C {
     u8 unk_51;
     u8 unk_52;
     u8 unk_53;
-    AnimState unk_54;
-    AnimState unk_6C;
+    AnimState anim;
+    AnimState anim2;
     u8 unk_84;
     u8 unk_85;
     u8 unk_86;
@@ -23924,51 +23924,51 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     zero2 = 0;
     CpuSet(&zero2, w->unk_24, 0x0500012C);
     cards = GetActiveDeck()->cards;
-    w->unk_08 = AllocObjTiles(0x120, 0);
-    w->unk_0C = LoadObjPalette(gUnk_09618CD8, 32);
-    SetObjTileSource(w->unk_08, gUnk_093F4578);
-    AnimInit(&w->unk_54, gUnk_09EF1170, gUnk_09EF1150);
-    AnimStart(&w->unk_54, 0, 1);
-    w->unk_28 = AnimGetGfx(&w->unk_54);
+    w->tiles2 = AllocObjTiles(0x120, 0);
+    w->palette2 = LoadObjPalette(gUnk_09618CD8, 32);
+    SetObjTileSource(w->tiles2, gUnk_093F4578);
+    AnimInit(&w->anim, gUnk_09EF1170, gUnk_09EF1150);
+    AnimStart(&w->anim, 0, 1);
+    w->gfx = AnimGetGfx(&w->anim);
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 1:
-        w->unk_00 = LoadObjTiles(gUnkEu_0916292A, 0x340);
+        w->tiles = LoadObjTiles(gUnkEu_0916292A, 0x340);
         break;
     case 2:
-        w->unk_00 = LoadObjTiles(gUnkEu_091633A4, 0x3C0);
+        w->tiles = LoadObjTiles(gUnkEu_091633A4, 0x3C0);
         break;
     case 3:
-        w->unk_00 = LoadObjTiles(gUnkEu_09162FB8, 0x3C0);
+        w->tiles = LoadObjTiles(gUnkEu_09162FB8, 0x3C0);
         break;
     case 4:
-        w->unk_00 = LoadObjTiles(gUnkEu_09162C8C, 0x300);
+        w->tiles = LoadObjTiles(gUnkEu_09162C8C, 0x300);
         break;
     case 0:
-        w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+        w->tiles = LoadObjTiles(gUnk_0908BB80, 0x3C0);
         break;
     default:
-        w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+        w->tiles = LoadObjTiles(gUnk_0908BB80, 0x3C0);
         break;
     }
 #else
-    w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+    w->tiles = LoadObjTiles(gUnk_0908BB80, 0x3C0);
 #endif
-    w->unk_04 = LoadObjPalette(gUnk_09613E98, 32);
-    w->unk_20 = LoadObjTiles(gUnk_0908BFB2, 0x3C0);
-    w->unk_10 = AllocObjTiles(0x3C0, 0);
-    w->unk_14 = LoadObjPalette(gUnk_09618D18, 32);
-    SetObjTileSource(w->unk_10, gUnk_093F47E4);
-    AnimInit(&w->unk_6C, gUnk_09EF1194, gUnk_09EF1180);
-    AnimStart(&w->unk_6C, 0, 1);
-    w->unk_2C = AnimGetGfx(&w->unk_6C);
-    w->unk_18 = LoadObjTiles(gUnk_0905F03C, 0x80);
-    w->unk_1C = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gUnk_09613E98, 32);
+    w->tiles5 = LoadObjTiles(gUnk_0908BFB2, 0x3C0);
+    w->tiles3 = AllocObjTiles(0x3C0, 0);
+    w->palette3 = LoadObjPalette(gUnk_09618D18, 32);
+    SetObjTileSource(w->tiles3, gUnk_093F47E4);
+    AnimInit(&w->anim2, gUnk_09EF1194, gUnk_09EF1180);
+    AnimStart(&w->anim2, 0, 1);
+    w->gfx2 = AnimGetGfx(&w->anim2);
+    w->tiles4 = LoadObjTiles(gUnk_0905F03C, 0x80);
+    w->palette4 = LoadObjPalette(gUnk_08F69BA4, 32);
     FadeToAmount(0, 16, 16);
-    FadeSetPaletteExcluded((u16)(w->unk_04->unk_06 + 16), 1);
-    FadeSetPaletteExcluded((u16)(w->unk_14->unk_06 + 16), 1);
-    FadeSetPaletteExcluded((u16)(w->unk_0C->unk_06 + 16), 1);
-    FadeSetPaletteExcluded((u16)(w->unk_1C->unk_06 + 16), 1);
+    FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
+    FadeSetPaletteExcluded((u16)(w->palette3->unk_06 + 16), 1);
+    FadeSetPaletteExcluded((u16)(w->palette2->unk_06 + 16), 1);
+    FadeSetPaletteExcluded((u16)(w->palette4->unk_06 + 16), 1);
 
 #ifdef VERSION_EU
     for (i = 0, n = 0; i < DECK_SIZE; i++) {
@@ -25399,20 +25399,20 @@ typedef struct LevelUpWork {
 #else
     TextSlot text[6][36];
 #endif
-    void* unk_6E0;
-    void* unk_6E4;
-    void* unk_6E8;
-    void* unk_6EC;
-    void* unk_6F0;
-    void* unk_6F4;
-    void* unk_6F8;
+    void* palette;
+    void* palette2;
+    void* tiles;
+    void* palette3;
+    void* tiles2;
+    void* tiles3;
+    void* palette4;
     TaskPool pool;
-    AnimState unk_710;
-    void* unk_728;
-    void* unk_72C;
-    void* unk_730;
-    AnimState unk_734;
-    void* unk_74C;
+    AnimState anim;
+    void* tiles4;
+    void* palette5;
+    void* gfx;
+    AnimState anim2;
+    void* gfx2;
     s16 unk_750[3];
     s16 unk_756[3];
     s16 unk_75C[3];
@@ -25471,8 +25471,8 @@ void Level_Up_0(LevelUpWork* w) {
     s16 x;
     s16 y;
 
-    w->unk_728 = 0;
-    w->unk_72C = 0;
+    w->tiles4 = 0;
+    w->palette5 = 0;
     w->unk_000[0] = 0;
     w->unk_000[1] = 0;
     w->unk_000[2] = 0;
@@ -25481,13 +25481,13 @@ void Level_Up_0(LevelUpWork* w) {
     w->unk_000[5] = 0;
     w->unk_000[6] = 0;
     w->unk_000[7] = 0;
-    w->unk_6E0 = 0;
-    w->unk_6E4 = 0;
-    w->unk_6E8 = 0;
-    w->unk_6EC = 0;
-    w->unk_6F0 = 0;
-    w->unk_6F4 = 0;
-    w->unk_6F8 = 0;
+    w->palette = 0;
+    w->palette2 = 0;
+    w->tiles = 0;
+    w->palette3 = 0;
+    w->tiles2 = 0;
+    w->tiles3 = 0;
+    w->palette4 = 0;
     w->unk_7C8[0] = 1;
     w->unk_7C8[1] = 1;
     w->unk_7C8[2] = 1;
@@ -25510,30 +25510,30 @@ void Level_Up_0(LevelUpWork* w) {
 #endif
     w->unk_000[7] = LoadObjPalette(gUnk_09613E98 + 0x60, 32);
     FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[7])->unk_06 + 16, 1);
-    w->unk_6F0 = LoadObjTiles(gUnk_0908D05E, 0x3C0);
+    w->tiles2 = LoadObjTiles(gUnk_0908D05E, 0x3C0);
     TaskPoolInit(&w->pool, 10);
     if (!(gGameState.flags & 8)) {
-        w->unk_728 = AllocObjTiles(0x500, 0);
-        w->unk_72C = AllocObjPalette(32);
-        UpdateAllocatedObjPalette(w->unk_72C, gUnk_08F683A4);
-        FadeSetPaletteExcluded(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
-        WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
-                      gBtlWork->unk_07C->unk_008,
-                      gBtlWork->unk_07C->unk_00C);
-        SetObjTileSource(w->unk_728, gUnk_088E33C2);
-        AnimInit(&w->unk_734, gUnk_09EDEE14, gUnk_09EDEE08);
-        AnimStart(&w->unk_734, 0, 1);
+        w->tiles4 = AllocObjTiles(0x500, 0);
+        w->palette5 = AllocObjPalette(32);
+        UpdateAllocatedObjPalette(w->palette5, gUnk_08F683A4);
+        FadeSetPaletteExcluded(((ObjPalette*)w->palette5)->unk_06 + 16, 1);
+        WorldToScreen(&x, &y, gBtlWork->actor->unk_004,
+                      gBtlWork->actor->unk_008,
+                      gBtlWork->actor->unk_00C);
+        SetObjTileSource(w->tiles4, gUnk_088E33C2);
+        AnimInit(&w->anim2, gUnk_09EDEE14, gUnk_09EDEE08);
+        AnimStart(&w->anim2, 0, 1);
     } else {
-        w->unk_728 = AllocObjTiles(0x800, 0);
-        w->unk_72C = AllocObjPalette(32);
-        UpdateAllocatedObjPalette(w->unk_72C, gUnk_09618118);
-        FadeSetPaletteExcluded(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
-        WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
-                      gBtlWork->unk_07C->unk_008,
-                      gBtlWork->unk_07C->unk_00C);
-        SetObjTileSource(w->unk_728, gUnk_0891ED26);
-        AnimInit(&w->unk_734, gUnk_09EDF38C, gUnk_09EDF374);
-        AnimStart(&w->unk_734, 0, 1);
+        w->tiles4 = AllocObjTiles(0x800, 0);
+        w->palette5 = AllocObjPalette(32);
+        UpdateAllocatedObjPalette(w->palette5, gUnk_09618118);
+        FadeSetPaletteExcluded(((ObjPalette*)w->palette5)->unk_06 + 16, 1);
+        WorldToScreen(&x, &y, gBtlWork->actor->unk_004,
+                      gBtlWork->actor->unk_008,
+                      gBtlWork->actor->unk_00C);
+        SetObjTileSource(w->tiles4, gUnk_0891ED26);
+        AnimInit(&w->anim2, gUnk_09EDF38C, gUnk_09EDF374);
+        AnimStart(&w->anim2, 0, 1);
     }
     if (gBtlWork->unk_068 & 0x2000) {
         w->unk_7A8 = 0x1C400;
@@ -25542,7 +25542,7 @@ void Level_Up_0(LevelUpWork* w) {
         w->unk_7A8 = x << 8;
         w->unk_7AC = y << 8;
     }
-    w->unk_730 = AnimGetGfx(&w->unk_734);
+    w->gfx = AnimGetGfx(&w->anim2);
     if (!(gBtlWork->unk_068 & 4)) {
         w->unk_7C6 = 0;
         gDispCnt = (gDispCnt & 0xFFF8) | 1;
@@ -25871,45 +25871,45 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
                 break;
             case 1:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0916F992, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0916F992, 0x3E0);
                 break;
             case 2:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0917063A, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0917063A, 0x3E0);
                 break;
             case 3:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_09170202, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_09170202, 0x3E0);
                 break;
             case 4:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0916FDCA, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0916FDCA, 0x3E0);
                 break;
             default:
-                w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
                 break;
             }
 #else
-            w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+            w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-            w->unk_6F8 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[4])->unk_06 + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[5])->unk_06 + 16, 1);
-            FadeSetPaletteExcluded(((ObjPalette*)w->unk_6F8)->unk_06 + 16, 1);
-            w->unk_6E8 = AllocObjTiles(0x3C0, 0);
-            w->unk_6EC = LoadObjPalette(gUnk_09618CD8, 32);
-            FadeSetPaletteExcluded(((ObjPalette*)w->unk_6EC)->unk_06 + 16, 1);
-            SetObjTileSource(w->unk_6E8, gUnk_093F4578);
-            AnimInit(&w->unk_710, gUnk_09EF1170, gUnk_09EF1150);
-            AnimStart(&w->unk_710, 2, 1);
-            w->unk_74C = AnimGetGfx(&w->unk_710);
+            FadeSetPaletteExcluded(((ObjPalette*)w->palette4)->unk_06 + 16, 1);
+            w->tiles = AllocObjTiles(0x3C0, 0);
+            w->palette3 = LoadObjPalette(gUnk_09618CD8, 32);
+            FadeSetPaletteExcluded(((ObjPalette*)w->palette3)->unk_06 + 16, 1);
+            SetObjTileSource(w->tiles, gUnk_093F4578);
+            AnimInit(&w->anim, gUnk_09EF1170, gUnk_09EF1150);
+            AnimStart(&w->anim, 2, 1);
+            w->gfx2 = AnimGetGfx(&w->anim);
             w->unk_7C2[0] = 1;
             w->unk_7A4 = 0;
             FadeToAmount(0, 8, 16);
         }
         return 1;
     }
-    w->unk_730 = AnimUpdate(&w->unk_734);
+    w->gfx = AnimUpdate(&w->anim2);
     if (w->unk_7C0 != 0) {
         ApproachValue(&w->unk_7A8, 0xBE00, w->unk_7C0);
         ApproachValue(&w->unk_7AC, 0x5000, w->unk_7C0);
@@ -26029,8 +26029,8 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78D4[5], w->text[5]);
 #endif
                         }
-                        w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
-                        w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
+                        w->palette = LoadObjPalette(gUnk_09613F98, 32);
+                        w->palette2 = LoadObjPalette(gUnk_09613FB8, 32);
                     } else {
                         if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
@@ -26088,11 +26088,11 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                             w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78F0[5], w->text[5]);
 #endif
                         }
-                        w->unk_6E0 = LoadObjPalette(gUnk_09613FD8, 32);
-                        w->unk_6E4 = LoadObjPalette(gUnk_09613FF8, 32);
+                        w->palette = LoadObjPalette(gUnk_09613FD8, 32);
+                        w->palette2 = LoadObjPalette(gUnk_09613FF8, 32);
                     }
-                    FadeSetPaletteExcluded(((ObjPalette*)w->unk_6E0)->unk_06 + 16, 1);
-                    FadeSetPaletteExcluded(((ObjPalette*)w->unk_6E4)->unk_06 + 16, 1);
+                    FadeSetPaletteExcluded(((ObjPalette*)w->palette)->unk_06 + 16, 1);
+                    FadeSetPaletteExcluded(((ObjPalette*)w->palette2)->unk_06 + 16, 1);
                     for (i = 0; i < 3; i++) {
                         if (w->unk_7C8[i] == 1) {
                             break;
@@ -26193,26 +26193,26 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->unk_7B2[1] = 16;
         w->unk_7B2[2] = 16;
         m4aSongNumStart(102);
-        ReleaseObjTiles(w->unk_6E8);
-        ReleaseObjPalette(w->unk_6EC);
-        w->unk_6E8 = AllocObjTiles(128, 0);
-        w->unk_6EC = LoadObjPalette(&gUnk_09611AB8[palOffset], 32);
-        FadeSetPaletteExcluded(((ObjPalette*)w->unk_6EC)->unk_06 + 16, 1);
-        SetObjTileSource(w->unk_6E8, &gUnk_0908C686[0x2B0A]);
-        AnimInit(&w->unk_710, &gUnk_09EEA1EC[0x25], &gUnk_09EEA19C[0x34]);
-        AnimStart(&w->unk_710, 0, 1);
-        w->unk_74C = AnimGetGfx(&w->unk_710);
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette3);
+        w->tiles = AllocObjTiles(128, 0);
+        w->palette3 = LoadObjPalette(&gUnk_09611AB8[palOffset], 32);
+        FadeSetPaletteExcluded(((ObjPalette*)w->palette3)->unk_06 + 16, 1);
+        SetObjTileSource(w->tiles, &gUnk_0908C686[0x2B0A]);
+        AnimInit(&w->anim, &gUnk_09EEA1EC[0x25], &gUnk_09EEA19C[0x34]);
+        AnimStart(&w->anim, 0, 1);
+        w->gfx2 = AnimGetGfx(&w->anim);
         w->unk_7B6 = 16;
         w->unk_774 = 136;
 
         if (!(gGameState.flags & 8)) {
-            SetObjTileSource(w->unk_728, gUnk_088B6560);
-            AnimInit(&w->unk_734, gUnk_09EDE918, gUnk_09EDE8CC);
-            AnimStart(&w->unk_734, 1, 0);
+            SetObjTileSource(w->tiles4, gUnk_088B6560);
+            AnimInit(&w->anim2, gUnk_09EDE918, gUnk_09EDE8CC);
+            AnimStart(&w->anim2, 1, 0);
         } else {
-            SetObjTileSource(w->unk_728, gUnk_092EB78A);
-            AnimInit(&w->unk_734, gUnk_09EEF8C0, gUnk_09EEF89C);
-            AnimStart(&w->unk_734, 1, 0);
+            SetObjTileSource(w->tiles4, gUnk_092EB78A);
+            AnimInit(&w->anim2, gUnk_09EEF8C0, gUnk_09EEF89C);
+            AnimStart(&w->anim2, 1, 0);
         }
 
         SetTaskUpdate(a, (void*)func_0809F730);
@@ -26223,7 +26223,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
     ApproachValue(&x, gUnk_09037FB4[w->unk_7B0] << 8, w->unk_7B6);
     w->unk_7B6--;
     w->unk_776 = x >> 8;
-    w->unk_74C = AnimUpdate(&w->unk_710);
+    w->gfx2 = AnimUpdate(&w->anim);
     w->unk_7BE++;
 
     if (w->unk_7BE == 32) {
@@ -26231,7 +26231,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->unk_7C1 ^= 1;
     }
 
-    w->unk_730 = AnimUpdate(&w->unk_734);
+    w->gfx = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->pool);
     return 1;
 }
@@ -26378,8 +26378,8 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
     } else {
         w->unk_7A4++;
     }
-    w->unk_74C = AnimUpdate(&w->unk_710);
-    w->unk_730 = AnimUpdate(&w->unk_734);
+    w->gfx2 = AnimUpdate(&w->anim);
+    w->gfx = AnimUpdate(&w->anim2);
     return 1;
 }
 u8 func_0809FBCC(u8* work, void* a) {
@@ -26448,7 +26448,7 @@ u8 func_0809FBCC(u8* work, void* a) {
         }
     }
 
-    *(void**)&work[offsetof(LevelUpWork, unk_730)] = AnimUpdate(&work[offsetof(LevelUpWork, unk_734)]);
+    *(void**)&work[offsetof(LevelUpWork, gfx)] = AnimUpdate(&work[offsetof(LevelUpWork, anim2)]);
     TaskPoolUpdate(&work[offsetof(LevelUpWork, pool)]);
     return 1;
 }
@@ -26511,46 +26511,46 @@ void Level_Up_2(LevelUpWork* w) {
                 }
 #endif
             }
-            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
-            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->tiles2, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->tiles2, w->unk_000[7], 0, 0x400, 51);
             break;
         case 1:
             for (; i < 3; i++) {
                 if (i == w->unk_7B0) {
 #ifdef VERSION_EU
-                    DrawSprite(w->unk_75C[i] + 5, w->unk_762[i] - 4, 0, w->unk_020[i], w->unk_6E0, 0, 0, 40);
+                    DrawSprite(w->unk_75C[i] + 5, w->unk_762[i] - 4, 0, w->unk_020[i], w->palette, 0, 0, 40);
 #else
-                    DrawTextSlots(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->unk_6E0, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->unk_6E0, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->palette, 40, w->unk_7B7[i]);
+                    DrawTextSlots(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->palette, 40, w->unk_7B7[i + 3]);
 #endif
                 } else {
 #ifdef VERSION_EU
-                    DrawSprite(w->unk_75C[i] + 3, w->unk_762[i] - 2, 0, w->unk_020[i], w->unk_6E4, 0, 0, 40);
+                    DrawSprite(w->unk_75C[i] + 3, w->unk_762[i] - 2, 0, w->unk_020[i], w->palette2, 0, 0, 40);
 #else
-                    DrawTextSlots(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->unk_6E4, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->unk_6E4, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->palette2, 40, w->unk_7B7[i]);
+                    DrawTextSlots(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->palette2, 40, w->unk_7B7[i + 3]);
 #endif
                 }
             }
-            DrawSprite(w->unk_774, w->unk_776, w->unk_74C, w->unk_6E8, w->unk_6EC, 0, 0, 40);
+            DrawSprite(w->unk_774, w->unk_776, w->gfx2, w->tiles, w->palette3, 0, 0, 40);
             break;
         case 2:
             for (; i < 3; i++) {
                 if (i == w->unk_7B0) {
 #ifdef VERSION_EU
-                    DrawSprite(w->unk_75C[i] + 4, w->unk_762[i] - 3, 0, w->unk_020[i], w->unk_6E0, 0, 0, 40);
+                    DrawSprite(w->unk_75C[i] + 4, w->unk_762[i] - 3, 0, w->unk_020[i], w->palette, 0, 0, 40);
 #else
-                    DrawTextSlots(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->unk_6E0, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->unk_6E0, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->palette, 40, w->unk_7B7[i]);
+                    DrawTextSlots(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->palette, 40, w->unk_7B7[i + 3]);
 #endif
                     DrawSprite(w->unk_750[i], w->unk_756[i], gUnk_09EEA2D8[i], w->unk_000[i], w->unk_000[5], 0, 0, 50);
                 } else {
                     if (w->unk_000[i] != 0) {
 #ifdef VERSION_EU
-                        DrawSprite(w->unk_75C[i] + 2, w->unk_762[i] - 1, 0, w->unk_020[i], w->unk_6E4, 0, 0, 40);
+                        DrawSprite(w->unk_75C[i] + 2, w->unk_762[i] - 1, 0, w->unk_020[i], w->palette2, 0, 0, 40);
 #else
-                        DrawTextSlots(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->unk_6E4, 40, w->unk_7B7[i]);
-                        DrawTextSlots(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->unk_6E4, 40, w->unk_7B7[i + 3]);
+                        DrawTextSlots(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->palette2, 40, w->unk_7B7[i]);
+                        DrawTextSlots(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->palette2, 40, w->unk_7B7[i + 3]);
 #endif
 #ifdef VERSION_EU
                         if (gLanguage != 3) {
@@ -26564,14 +26564,14 @@ void Level_Up_2(LevelUpWork* w) {
                     }
                 }
             }
-            DrawSprite(w->unk_774, w->unk_776, w->unk_74C, w->unk_6E8, w->unk_6EC, 0, 0, 40);
+            DrawSprite(w->unk_774, w->unk_776, w->gfx2, w->tiles, w->palette3, 0, 0, 40);
             break;
         case 3:
 #ifdef VERSION_EU
-            DrawSprite(w->unk_75C[w->unk_7B0] + 2, w->unk_762[w->unk_7B0] - 1, 0, w->unk_020[w->unk_7B0], w->unk_6E0, 0, 0, 40);
+            DrawSprite(w->unk_75C[w->unk_7B0] + 2, w->unk_762[w->unk_7B0] - 1, 0, w->unk_020[w->unk_7B0], w->palette, 0, 0, 40);
 #else
-            DrawTextSlots(w->unk_75C[w->unk_7B0] + 22, w->unk_762[w->unk_7B0] - 5, w->text[w->unk_7B0], w->unk_6E0, 40, w->unk_7B7[w->unk_7B0]);
-            DrawTextSlots(w->unk_75C[w->unk_7B0] + 4, w->unk_762[w->unk_7B0] + 13, w->text[w->unk_7B0 + 3], w->unk_6E0, 40, w->unk_7B7[w->unk_7B0 + 3]);
+            DrawTextSlots(w->unk_75C[w->unk_7B0] + 22, w->unk_762[w->unk_7B0] - 5, w->text[w->unk_7B0], w->palette, 40, w->unk_7B7[w->unk_7B0]);
+            DrawTextSlots(w->unk_75C[w->unk_7B0] + 4, w->unk_762[w->unk_7B0] + 13, w->text[w->unk_7B0 + 3], w->palette, 40, w->unk_7B7[w->unk_7B0 + 3]);
 #endif
             DrawSprite(w->unk_750[w->unk_7B0], w->unk_756[w->unk_7B0], 0, w->unk_000[w->unk_7B0], w->unk_000[5], 0, 0, 50);
             DrawSprite(w->unk_778, 0,
@@ -26581,13 +26581,13 @@ void Level_Up_2(LevelUpWork* w) {
                        gUnk_09EEA1BC[10],
 #endif
                        w->unk_000[6], w->unk_000[7], 0, 0, 50);
-            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
-            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->tiles2, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->tiles2, w->unk_000[7], 0, 0x400, 51);
             break;
         }
 #ifdef VERSION_JP
         if (w->unk_7C1 != 0) {
-            DrawSprite(192, 82, gUnk_09EEA19C[0], w->unk_6F4, w->unk_6F8, 0, 0, 10);
+            DrawSprite(192, 82, gUnk_09EEA19C[0], w->tiles3, w->palette4, 0, 0, 10);
         }
 #endif
         if (!(gGameState.flags & 8)) {
@@ -26643,7 +26643,7 @@ void Level_Up_2(LevelUpWork* w) {
                        w->unk_794, 3);
         }
     }
-    DrawSprite(w->unk_7A8 >> 8, w->unk_7AC >> 8, w->unk_730, w->unk_728, w->unk_72C, 0, 0x400, 40);
+    DrawSprite(w->unk_7A8 >> 8, w->unk_7AC >> 8, w->gfx, w->tiles4, w->palette5, 0, 0x400, 40);
     TaskPoolDraw(&w->pool);
 }
 
@@ -26697,40 +26697,40 @@ void Level_Up_3(u8* work) {
         ReleaseObjPalette(*(void**)&work[0x14]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6E0)] != 0) {
-        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, unk_6E0)]);
+    if (*(void**)&work[offsetof(LevelUpWork, palette)] != 0) {
+        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, palette)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6E4)] != 0) {
-        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, unk_6E4)]);
+    if (*(void**)&work[offsetof(LevelUpWork, palette2)] != 0) {
+        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, palette2)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6E8)] != 0) {
-        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, unk_6E8)]);
+    if (*(void**)&work[offsetof(LevelUpWork, tiles)] != 0) {
+        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, tiles)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6EC)] != 0) {
-        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, unk_6EC)]);
+    if (*(void**)&work[offsetof(LevelUpWork, palette3)] != 0) {
+        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, palette3)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6F0)] != 0) {
-        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, unk_6F0)]);
+    if (*(void**)&work[offsetof(LevelUpWork, tiles2)] != 0) {
+        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, tiles2)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6F4)] != 0) {
-        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, unk_6F4)]);
+    if (*(void**)&work[offsetof(LevelUpWork, tiles3)] != 0) {
+        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, tiles3)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_6F8)] != 0) {
-        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, unk_6F8)]);
+    if (*(void**)&work[offsetof(LevelUpWork, palette4)] != 0) {
+        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, palette4)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_728)] != 0) {
-        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, unk_728)]);
+    if (*(void**)&work[offsetof(LevelUpWork, tiles4)] != 0) {
+        ReleaseObjTiles(*(void**)&work[offsetof(LevelUpWork, tiles4)]);
     }
 
-    if (*(void**)&work[offsetof(LevelUpWork, unk_72C)] != 0) {
-        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, unk_72C)]);
+    if (*(void**)&work[offsetof(LevelUpWork, palette5)] != 0) {
+        ReleaseObjPalette(*(void**)&work[offsetof(LevelUpWork, palette5)]);
     }
 
     TaskPoolDestroy(&work[offsetof(LevelUpWork, pool)]);
@@ -26864,45 +26864,45 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
                 break;
             case 1:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0916F992, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0916F992, 0x3E0);
                 break;
             case 2:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0917063A, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0917063A, 0x3E0);
                 break;
             case 3:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_09170202, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_09170202, 0x3E0);
                 break;
             case 4:
-                w->unk_6F4 = LoadObjTiles(gUnkEu_0916FDCA, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnkEu_0916FDCA, 0x3E0);
                 break;
             default:
-                w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+                w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
                 break;
             }
 #else
-            w->unk_6F4 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+            w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-            w->unk_6F8 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[4])->unk_06 + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[5])->unk_06 + 16, 1);
-            FadeSetPaletteExcluded(((ObjPalette*)w->unk_6F8)->unk_06 + 16, 1);
-            w->unk_6E8 = AllocObjTiles(0x3C0, 0);
-            w->unk_6EC = LoadObjPalette(gUnk_09618CD8, 32);
-            FadeSetPaletteExcluded(((ObjPalette*)w->unk_6EC)->unk_06 + 16, 1);
-            SetObjTileSource(w->unk_6E8, gUnk_093F4578);
-            AnimInit(&w->unk_710, gUnk_09EF1170, gUnk_09EF1150);
-            AnimStart(&w->unk_710, 2, 1);
-            w->unk_74C = AnimGetGfx(&w->unk_710);
+            FadeSetPaletteExcluded(((ObjPalette*)w->palette4)->unk_06 + 16, 1);
+            w->tiles = AllocObjTiles(0x3C0, 0);
+            w->palette3 = LoadObjPalette(gUnk_09618CD8, 32);
+            FadeSetPaletteExcluded(((ObjPalette*)w->palette3)->unk_06 + 16, 1);
+            SetObjTileSource(w->tiles, gUnk_093F4578);
+            AnimInit(&w->anim, gUnk_09EF1170, gUnk_09EF1150);
+            AnimStart(&w->anim, 2, 1);
+            w->gfx2 = AnimGetGfx(&w->anim);
             w->unk_7C2[0] = 1;
             w->unk_7A4 = 0;
             FadeToAmount(0, 8, 16);
         }
         return 1;
     }
-    w->unk_730 = AnimUpdate(&w->unk_734);
+    w->gfx = AnimUpdate(&w->anim2);
     {
         s32 x0 = w->unk_750[0] << 8;
         s32 x1 = w->unk_750[1] << 8;
@@ -26992,8 +26992,8 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78D4[5], w->text[5]);
 #endif
             }
-            w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
-            w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
+            w->palette = LoadObjPalette(gUnk_09613F98, 32);
+            w->palette2 = LoadObjPalette(gUnk_09613FB8, 32);
         } else {
             if ((s16)gGameState.progression.maxHp > 559) {
 #ifdef VERSION_EU
@@ -27051,11 +27051,11 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
                 w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78F0[5], w->text[5]);
 #endif
             }
-            w->unk_6E0 = LoadObjPalette(gUnk_09613FD8, 32);
-            w->unk_6E4 = LoadObjPalette(gUnk_09613FF8, 32);
+            w->palette = LoadObjPalette(gUnk_09613FD8, 32);
+            w->palette2 = LoadObjPalette(gUnk_09613FF8, 32);
         }
-        FadeSetPaletteExcluded(((ObjPalette*)w->unk_6E0)->unk_06 + 16, 1);
-        FadeSetPaletteExcluded(((ObjPalette*)w->unk_6E4)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((ObjPalette*)w->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((ObjPalette*)w->palette2)->unk_06 + 16, 1);
         for (i = 0; i < 3; i++) {
             if (w->unk_7C8[i] == 1) {
                 break;
@@ -27133,28 +27133,28 @@ u8 func_080A11CC(LevelUpWork* w, void* a) {
                 ReleaseObjPalette(w->unk_000[5]);
             }
 
-            if (w->unk_6E0 != 0) {
-                ReleaseObjPalette(w->unk_6E0);
+            if (w->palette != 0) {
+                ReleaseObjPalette(w->palette);
             }
 
-            if (w->unk_6E4 != 0) {
-                ReleaseObjPalette(w->unk_6E4);
+            if (w->palette2 != 0) {
+                ReleaseObjPalette(w->palette2);
             }
 
-            if (w->unk_6E8 != 0) {
-                ReleaseObjTiles(w->unk_6E8);
+            if (w->tiles != 0) {
+                ReleaseObjTiles(w->tiles);
             }
 
-            if (w->unk_6EC != 0) {
-                ReleaseObjPalette(w->unk_6EC);
+            if (w->palette3 != 0) {
+                ReleaseObjPalette(w->palette3);
             }
 
-            if (w->unk_6F4 != 0) {
-                ReleaseObjTiles(w->unk_6F4);
+            if (w->tiles3 != 0) {
+                ReleaseObjTiles(w->tiles3);
             }
 
-            if (w->unk_6F8 != 0) {
-                ReleaseObjPalette(w->unk_6F8);
+            if (w->palette4 != 0) {
+                ReleaseObjPalette(w->palette4);
             }
 
             w->unk_750[0] = 0xFF80;
@@ -27178,13 +27178,13 @@ u8 func_080A11CC(LevelUpWork* w, void* a) {
             w->unk_776 = gUnk_09037FB4[0];
 
             if ((gGameState.flags & 8) == 0) {
-                SetObjTileSource(w->unk_728, gUnk_088E33C2);
-                AnimInit(&w->unk_734, gUnk_09EDEE14, gUnk_09EDEE08);
-                AnimStart(&w->unk_734, 0, 1);
+                SetObjTileSource(w->tiles4, gUnk_088E33C2);
+                AnimInit(&w->anim2, gUnk_09EDEE14, gUnk_09EDEE08);
+                AnimStart(&w->anim2, 0, 1);
             } else {
-                SetObjTileSource(w->unk_728, gUnk_0891ED26);
-                AnimInit(&w->unk_734, gUnk_09EDF38C, gUnk_09EDF374);
-                AnimStart(&w->unk_734, 0, 1);
+                SetObjTileSource(w->tiles4, gUnk_0891ED26);
+                AnimInit(&w->anim2, gUnk_09EDF38C, gUnk_09EDF374);
+                AnimStart(&w->anim2, 0, 1);
             }
 
             w->unk_7C2[0] = 0;
@@ -27199,7 +27199,7 @@ u8 func_080A11CC(LevelUpWork* w, void* a) {
     w->unk_7C8[0] = 1;
     w->unk_7C8[1] = 1;
     w->unk_7C8[2] = 1;
-    w->unk_730 = AnimUpdate(&w->unk_734);
+    w->gfx = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->pool);
     return 1;
 }
@@ -29707,14 +29707,14 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
     w->tiles = LoadObjTiles(gUnk_093FB0CC, 0xC0);
     w->palette = LoadObjPalette(gUnk_09619378, 32);
     w->tiles2 = LoadObjTiles(gUnk_093FB1AC, 0x4A0);
-    w->unk_0C = AllocObjPalette(32);
+    w->palette2 = AllocObjPalette(32);
     w->unk_A2 = 6;
     w->unk_1C = 0;
     w->unk_1D = 0;
     w->unk_A3 = 0;
-    UpdateAllocatedObjPalette(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+    UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
-    FadeSetPaletteExcluded(w->unk_0C->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(w->palette2->unk_06 + 16, 1);
 
     for (i = 0; i < w->unk_A2; i++) {
         w->unk_98[i] = 0x80;
@@ -29748,7 +29748,7 @@ s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
         } while (0);
 
         w->unk_1D = 0;
-        UpdateAllocatedObjPalette(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+        UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
     }
 
     return 1;
@@ -29765,7 +29765,7 @@ void WorldSel_Before_2(WorldSelBeforeWork* w) {
 
     DrawSprite((w->unk_10 >> 8) - (gUnk_02039BA0->unk_00 >> 8) - 32,
                (w->unk_14 >> 8) + (w->unk_18 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 16,
-               (&gUnk_09EF1278[6])[0], w->tiles2, w->unk_0C, 0, 0x800,
+               (&gUnk_09EF1278[6])[0], w->tiles2, w->palette2, 0, 0x800,
                (u16)(-0x1004 - ((w->unk_14 - 512) >> 8) * 4));
 }
 

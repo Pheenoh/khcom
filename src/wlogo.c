@@ -2229,19 +2229,19 @@ u8 task_bos_tm_1(TmWork* w) {
     case 17:
         break;
     }
-    gUnk_0203AB44 = gBtlWork->unk_07C->unk_008 >> 8;
-    gUnk_0203AB40 = gBtlWork->unk_07C->unk_01C >> 8;
-    gUnk_0203AB3C = gBtlWork->unk_07C->unk_00C >> 8;
+    gUnk_0203AB44 = gBtlWork->actor->unk_008 >> 8;
+    gUnk_0203AB40 = gBtlWork->actor->unk_01C >> 8;
+    gUnk_0203AB3C = gBtlWork->actor->unk_00C >> 8;
     gUnk_0203AB48 = gBtlWork->unk_0D0 >> 8;
 
     if ((gBtlWork->unk_068 & 0x20000000) && w->unk_2C != 13) {
-        if (gBtlWork->unk_07C->unk_01C <= -0x2D00) {
+        if (gBtlWork->actor->unk_01C <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
             gBtlWork->unk_0D8 = 10;
         }
     } else {
-        if (gBtlWork->unk_07C->unk_00C <= -0x2D00) {
+        if (gBtlWork->actor->unk_00C <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
             gBtlWork->unk_0D8 = 10;
@@ -2590,7 +2590,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x10) {
                 p->tm->unk_2C = 1;
                 p->tm->unk_28 = p->tm->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2610,7 +2610,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
@@ -2671,7 +2671,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x10) {
                 p->tm->unk_2C = 1;
                 p->tm->unk_28 = p->tm->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2691,7 +2691,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {

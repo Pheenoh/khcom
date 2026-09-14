@@ -16,7 +16,7 @@ void HumInit(HumWork* work, HumDef* def) {
     actor->unk_0B2 = 1;
     actor->unk_034 |= 0x40000000000000;
 
-    if (gBtlWork->unk_07C->unk_004 < actor->unk_004) {
+    if (gBtlWork->actor->unk_004 < actor->unk_004) {
         actor->unk_034 |= 4;
     }
 
@@ -45,7 +45,7 @@ void HumInit(HumWork* work, HumDef* def) {
     work->sub = 0;
     work->sub2 = 0;
     work->unk_184 = 0;
-    gUnk_02039B9C->unk_07C = actor;
+    gUnk_02039B9C->actor = actor;
     gBtlWork->unk_0A8 = actor;
     actor->btl = gUnk_02039B9C;
     actor->unk_034 |= 0x24000000000;
