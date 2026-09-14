@@ -319,11 +319,11 @@ BtlObj* func_08040458(BtlRaidWork* work) {
         return obj;
     }
 
-    if (gBtlWork->unk_078 == 0) {
+    if (gBtlWork->actor2 == 0) {
         return ListPoolFirst(&gBtlWork->unk_080);
     }
 
-    return gBtlWork->unk_078;
+    return gBtlWork->actor2;
 }
 
 u8 task_btl_raid_1(BtlRaidWork* work) {

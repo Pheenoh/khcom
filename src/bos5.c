@@ -1771,7 +1771,7 @@ void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
     work->unk_024 = 3;
     work->palette = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
-    work->unk_020 = gUnk_09EF9740[GetRandom() % 2];
+    work->gfx = gUnk_09EF9740[GetRandom() % 2];
 }
 
 s32 task_bos_md_hahen_1(MdHahenWork* work) {
@@ -1819,7 +1819,7 @@ void task_bos_md_hahen_2(MdHahenWork* work) {
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     frame = GetBattleSpritePriorityFlags(work->y);
-    DrawSprite(x, y, (void*)work->unk_020, (void*)work->tiles, (void*)work->palette,
+    DrawSprite(x, y, (void*)work->gfx, (void*)work->tiles, (void*)work->palette,
                   flag, frame, (u16)(-4100 - (work->y >> 8) * 4));
 }
 

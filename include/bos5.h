@@ -123,7 +123,7 @@ typedef struct MdHahenWork {
     s32 unk_014;
     u32 palette;
     u32 tiles;
-    void* unk_020;
+    void* gfx;
     u16 unk_024;
     u8 unk_026[0x2];
 } MdHahenWork;

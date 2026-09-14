@@ -230,10 +230,10 @@ void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
 #endif
     gJiminyWork->unk_CB8 = d;
     gJiminyWork->unk_CBC = e;
-    gJiminyWork->unk_CC2 = f + 56;
-    gJiminyWork->unk_CC6 = f + 56;
-    gJiminyWork->unk_CC4 = g - 10;
-    gJiminyWork->unk_CC8 = g + h * (a - 1) + 12;
+    gJiminyWork->x = f + 56;
+    gJiminyWork->x2 = f + 56;
+    gJiminyWork->y = g - 10;
+    gJiminyWork->y2 = g + h * (a - 1) + 12;
     gJiminyWork->unk_CAC = (gJiminyWork->unk_CAC & 0xFFE5) | 4;
     gJiminyWork->unk_C70 = 0;
     func_0805A4D8(gJiminyWork->unk_CAE - 24, gJiminyWork->unk_CB0 - 4,

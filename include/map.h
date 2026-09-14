@@ -556,8 +556,8 @@ typedef struct MapDbgWork {
     u8 unk_0C;
     u8 unk_0D;
     u8 unk_0E[0x02];
-    void* unk_10;
-    void* unk_14;
+    void* tiles;
+    void* palette;
     u16 unk_18[0x0A];
     u8 unk_2C;
     u8 unk_2D;

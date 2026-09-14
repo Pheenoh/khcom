@@ -3160,7 +3160,7 @@ void func_080B397C(void) {
     LoadObjPaletteBank(((ObjPalette*)gSioChgCardWork->palette)->unk_06, gUnk_096FBF04 + off);
     nameId = def->unk_1C;
     defs = (CardDef*)((u8*)defs + 12);
-    gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].unk_00, gSioChgCardWork->unk_364);
+    gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].gfx, gSioChgCardWork->unk_364);
     gSioChgCardWork->unk_20D = LoadTextSlots((void*)gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
     EnableBg(0);
     gSioChgCardWork->unk_360 = 1;

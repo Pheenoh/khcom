@@ -540,14 +540,14 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
         actor = gUnk_02039B9C->actor;
         work->unk_14 = 1;
     } else {
-        if (gBtlWork->unk_078 == 0) {
+        if (gBtlWork->actor2 == 0) {
             if (work->unk_14 != 0) {
                 work->unk_14 = 0;
             }
             return 1;
         }
         work->unk_14 = 1;
-        actor = gBtlWork->unk_078;
+        actor = gBtlWork->actor2;
     }
 
     if (actor->unk_0D8 != 0) {

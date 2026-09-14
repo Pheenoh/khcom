@@ -80,10 +80,10 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         else source = gUnk_02039B9C->actor;
     } else if (gBtlWork->unk_068 & 0x800) {
         if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->actor;
-        else source = gBtlWork->unk_0A8;
+        else source = gBtlWork->actor3;
     } else {
         if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->actor;
-        else source = gBtlWork->unk_0A8;
+        else source = gBtlWork->actor3;
     }
     if (source->btl != 0) {
         switch (source->btl->unk_0F4) {

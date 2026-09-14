@@ -480,7 +480,7 @@ typedef struct TmArmJoint {
     u8 unk_16[0x10];
     u16 unk_26;
     u8 unk_28[0x8];
-    void* unk_30;
+    void* gfx;
 } TmArmJoint;
 
 typedef struct TmArmPos {

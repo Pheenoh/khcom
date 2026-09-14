@@ -112,10 +112,10 @@ typedef struct JiminyWork {
     u16* unk_CB8;
     u16* unk_CBC;
     s16 unk_CC0;
-    s16 unk_CC2;
-    s16 unk_CC4;
-    s16 unk_CC6;
-    s16 unk_CC8;
+    s16 x;
+    s16 y;
+    s16 x2;
+    s16 y2;
     u8 unk_CCA[0x02];
     JiminyDetail* unk_CCC;
     u16 unk_CD0;

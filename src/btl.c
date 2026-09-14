@@ -20,7 +20,7 @@ void task_btl_lockon_0(BtlLockonWork* work) {
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
     work->unk_024 = 0;
-    gBtlWork->unk_078 = 0;
+    gBtlWork->actor2 = 0;
 }
 
 void func_0801D288(void) {
@@ -30,7 +30,7 @@ void func_0801D288(void) {
 
     p = gBtlWork->actor;
     min = 0x40000;
-    gBtlWork->unk_078 = 0;
+    gBtlWork->actor2 = 0;
     e = ListPoolFirst(&gBtlWork->unk_080);
 
     if (p->unk_034 & 4) {
@@ -43,11 +43,11 @@ void func_0801D288(void) {
                 (e->unk_034 & 0x1000000) || p->unk_004 - e->unk_004 >= min) {
                 continue;
             }
-            gBtlWork->unk_078 = e;
+            gBtlWork->actor2 = e;
             min = p->unk_004 - e->unk_004;
         }
 
-        if (gBtlWork->unk_078 == 0) {
+        if (gBtlWork->actor2 == 0) {
             min = 0x40000;
             e = ListPoolFirst(&gBtlWork->unk_080);
 
@@ -60,7 +60,7 @@ void func_0801D288(void) {
                     (e->unk_034 & 0x1000000) || e->unk_004 - p->unk_004 >= min) {
                     continue;
                 }
-                gBtlWork->unk_078 = e;
+                gBtlWork->actor2 = e;
                 min = e->unk_004 - p->unk_004;
             }
         }
@@ -74,11 +74,11 @@ void func_0801D288(void) {
                 (e->unk_034 & 0x1000000) || e->unk_004 - p->unk_004 >= min) {
                 continue;
             }
-            gBtlWork->unk_078 = e;
+            gBtlWork->actor2 = e;
             min = e->unk_004 - p->unk_004;
         }
 
-        if (gBtlWork->unk_078 == 0) {
+        if (gBtlWork->actor2 == 0) {
             min = 0x40000;
             e = ListPoolFirst(&gBtlWork->unk_080);
 
@@ -91,7 +91,7 @@ void func_0801D288(void) {
                     (e->unk_034 & 0x1000000) || p->unk_004 - e->unk_004 >= min) {
                     continue;
                 }
-                gBtlWork->unk_078 = e;
+                gBtlWork->actor2 = e;
                 min = p->unk_004 - e->unk_004;
             }
         }
@@ -103,11 +103,11 @@ u8 task_btl_lockon_1(BtlLockonWork* work) {
         func_0801D288();
     }
 
-    if (gBtlWork->unk_078 != 0) {
+    if (gBtlWork->actor2 != 0) {
         work->gfx = AnimUpdate(&work->anim);
 
-        if (gBtlWork->unk_078->unk_034 & 0x1000000) {
-            gBtlWork->unk_078 = 0;
+        if (gBtlWork->actor2->unk_034 & 0x1000000) {
+            gBtlWork->actor2 = 0;
         }
     }
 
@@ -122,7 +122,7 @@ void task_btl_lockon_2(BtlLockonWork* work) {
     s16 x;
     s16 y;
 
-    e = gBtlWork->unk_078;
+    e = gBtlWork->actor2;
     if (e != 0) {
         WorldToScreen(&x, &y, e->unk_004 + (e->unk_0A4 << 8), e->unk_008,
                       e->unk_00C - (e->unk_0A2 << 8));
@@ -270,7 +270,7 @@ u16 func_0801DC80(BtlSoraWork* work) {
     s32 d;
 
     a = work->actor.btl->actor;
-    b = work->actor.btl->unk_078;
+    b = work->actor.btl->actor2;
 
     if (work->actor.btl->unk_068 & 0x8000) {
         return 3;
@@ -303,7 +303,7 @@ void func_0801DD08(BtlSoraWork* work) {
     if (work->unk_172 == 0) {
         return;
     }
-    c = work->actor.btl->unk_078;
+    c = work->actor.btl->actor2;
     if (c != 0) {
         if (gBtlWork->unk_068 & 0x4000) {
             x = (work->actor.unk_004 + c->unk_004) >> 1;
@@ -708,8 +708,8 @@ BtlObj* func_0801E6DC(BtlSoraWork* work) {
     BtlObj* e;
     s16 n;
 
-    if (work->actor.btl->unk_078 != 0) {
-        return work->actor.btl->unk_078;
+    if (work->actor.btl->actor2 != 0) {
+        return work->actor.btl->actor2;
     }
 
     if (gBtlWork->unk_068 & 0x4000) {
@@ -776,7 +776,7 @@ BtlObj* func_0801E7D4(BtlSoraWork* work) {
         }
     } else {
         if (gBtlWork->unk_068 & 0x40) {
-            return gBtlWork->unk_0A8;
+            return gBtlWork->actor3;
         }
     }
     return 0;
@@ -1898,7 +1898,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             break;
         }
 
-        e3 = p->btl->unk_078;
+        e3 = p->btl->actor2;
 
         if (e3 != 0) {
             if (p->unk_034 & 4) {
@@ -2620,8 +2620,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             m4aSongNumStart(169);
             FadeStartOut(6, 8);
         } else if ((s16)work->unk_154 == 25) {
-            if (p->btl->unk_078 != 0) {
-                e = p->btl->unk_078;
+            if (p->btl->actor2 != 0) {
+                e = p->btl->actor2;
                 t = e->unk_004;
                 t2 = e->unk_008;
                 t3 = e->unk_00C - (e->unk_0A2 << 8);
@@ -2909,7 +2909,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if (AnimGetFrame(&work->anim) <= 2) {
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 if (AnimGetFrame(&work->anim) > 1) {
@@ -3189,7 +3189,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             s32 y;
             s32 z;
 
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 x = e->unk_004;
@@ -3444,7 +3444,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if ((s16)work->unk_154 == 27) {
             switch (work->unk_162[0]) {
             case 0:
-                e = p->btl->unk_078;
+                e = p->btl->actor2;
 
                 if (e != 0) {
                     t = e->unk_004;
@@ -3499,7 +3499,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if ((s16)work->unk_154 == 27) {
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 if (p->unk_034 & 4) {
@@ -3705,7 +3705,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 break;
             }
 
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 t4 = e->unk_00C - (e->unk_0A2 << 8);
@@ -3992,7 +3992,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if (st == 0) {
             p->btl->unk_068 |= 0x0002000000000000LL;
-            p->btl->unk_078 = 0;
+            p->btl->actor2 = 0;
             func_0801DE1C(work, 1, 0);
 
             if (p->unk_034 & 4) {
@@ -4444,7 +4444,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 }
             }
 
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 if (p->unk_034 & 4) {
@@ -4464,7 +4464,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         uv = work->unk_154;
 
         if (uv >= 9 && uv <= 11) {
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (uv == 15) {
                 work->unk_150 = -1152;
@@ -4991,7 +4991,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         uv = work->unk_154;
 
         if (uv >= 15 && uv <= 39) {
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (uv == 15) {
                 work->unk_150 = -1152;
@@ -6173,7 +6173,7 @@ u16 func_08027468(BtlRikuWork* work) {
     s32 d;
 
     a = work->actor.btl->actor;
-    b = work->actor.btl->unk_078;
+    b = work->actor.btl->actor2;
 
     if (work->actor.btl->unk_068 & 0x8000) {
         return 3;
@@ -6203,7 +6203,7 @@ void func_080274F0(BtlRikuWork* work) {
     if (work->unk_178 == 0) {
         return;
     }
-    c = work->actor.btl->unk_078;
+    c = work->actor.btl->actor2;
     if (c != 0) {
         func_0802F284((work->actor.unk_004 + c->unk_004) >> 1, (work->actor.unk_008 + c->unk_008) >> 1,
                       (work->actor.unk_00C + c->unk_00C) >> 1);
@@ -6746,7 +6746,7 @@ BtlObj* func_0802828C(BtlRikuWork* work) {
         }
     } else {
         if (gBtlWork->unk_068 & 0x40) {
-            return gBtlWork->unk_0A8;
+            return gBtlWork->actor3;
         }
     }
     return 0;
@@ -6779,8 +6779,8 @@ BtlObj* func_08028370(BtlRikuWork* work) {
     BtlObj* e;
     s16 n;
 
-    if (work->actor.btl->unk_078 != 0) {
-        return work->actor.btl->unk_078;
+    if (work->actor.btl->actor2 != 0) {
+        return work->actor.btl->actor2;
     }
 
     if (gBtlWork->unk_068 & 0x4000) {
@@ -7277,7 +7277,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 break;
             }
 
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 if (p->unk_034 & 4) {
@@ -7691,7 +7691,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             s32 tx;
             s32 ty;
 
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (p->unk_034 & 4) {
                 if (e != 0) {
@@ -8111,7 +8111,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         switch (AnimGetFrame(&work->anim)) {
         case 1:
         case 2:
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 ex = e->unk_004 - p->unk_004;
@@ -9256,10 +9256,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         func_080274F0(work);
 
         if ((s16)work->unk_158 == 0) {
-            work->unk_370 = func_08028370(work);
+            work->actor2 = func_08028370(work);
             func_080276D4(work, 24, 0);
             func_08027428(work);
-            e = work->unk_370;
+            e = work->actor2;
 
             if (e != 0) {
                 if (p->unk_004 < e->unk_004) {
@@ -9795,7 +9795,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         if (AnimGetFrame(&work->anim) <= 2) {
-            e = p->btl->unk_078;
+            e = p->btl->actor2;
 
             if (e != 0) {
                 if (AnimGetFrame(&work->anim) > 1) {
@@ -9863,7 +9863,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         func_080274F0(work);
 
         if ((s16)work->unk_158 == 0) {
-            p->btl->unk_078 = 0;
+            p->btl->actor2 = 0;
 
             if (gBtlWork->unk_068 & 0x800000000000LL) {
                 func_080276D4(work, 15, 0);

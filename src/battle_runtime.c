@@ -128,14 +128,14 @@ void func_080192E0(void) {
     if (gBtlWork->unk_068 & 0x800000) {
         return;
     }
-    p = gBtlWork->unk_0AC;
+    p = gBtlWork->actor4;
     if (p == 0) {
         return;
     }
     if (p->unk_034 & 0x7202) {
         return;
     }
-    gBtlWork->unk_0A8 = p;
+    gBtlWork->actor3 = p;
     func_08091234(p->unk_000);
 }
 
@@ -617,7 +617,7 @@ void _08019CB4(void) {
         }
         break;
     }
-    gBtlWork->unk_0AC = 0;
+    gBtlWork->actor4 = 0;
     TaskPoolUpdate(&gBtlWork->taskPools[1]);
     if (gBtlWork->unk_068 & 0x800000) {
         gBtlWork->unk_068 |= 0x400000ULL;
@@ -629,7 +629,7 @@ void _08019CB4(void) {
         if (gBtlWork->unk_0A4) {
             BtlObj* obj;
             gBtlWork->unk_068 &= ~0x40ULL;
-            obj = gBtlWork->unk_0A8;
+            obj = gBtlWork->actor3;
             if (obj != 0) {
                 obj->unk_034 |= 0x10000ULL;
             }
@@ -652,7 +652,7 @@ void _08019CB4(void) {
         } else {
             BtlObj* obj;
             gBtlWork->unk_068 |= 0x40;
-            obj = gBtlWork->unk_0A8;
+            obj = gBtlWork->actor3;
             if (obj != 0) {
                 obj->unk_034 |= 1;
             }
@@ -776,7 +776,7 @@ void _08019CB4(void) {
             }
             func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
             gBtlWork->unk_068 |= 0x20;
-            gBtlWork->unk_078 = 0;
+            gBtlWork->actor2 = 0;
             gBtlWork->unk_0E4 = 1;
             gBtlWork->unk_0F4 = 0;
             gBtlWork->unk_068 |= 0x100000000000000ULL;
@@ -860,7 +860,7 @@ void _08019CB4(void) {
             func_080838EC();
             gBtlWork->unk_068 &= ~0x40000ULL;
             gBtlWork->unk_068 |= 0x20;
-            gBtlWork->unk_078 = 0;
+            gBtlWork->actor2 = 0;
             gBtlWork->unk_120 = 0;
         }
         if ((s16)gBtlWork->unk_0E4 == 140) {
@@ -1766,7 +1766,7 @@ void func_0801BCC0(s32 a, s32 b, s32 c) {
 
 void func_0801BCD4(BtlObj* p) {
     if (!(p->unk_034 & 0x7202)) {
-        gBtlWork->unk_0AC = p;
+        gBtlWork->actor4 = p;
     }
 }
 
@@ -1788,7 +1788,7 @@ void func_0801BCF8(BtlObj* p) {
     func_0801C700(p, &x, &y, 0);
 
     if (p->unk_0D0 == 0) {
-        gBtlWork->unk_0AC = p;
+        gBtlWork->actor4 = p;
         return;
     }
 
@@ -1819,7 +1819,7 @@ void func_0801BCF8(BtlObj* p) {
     if (y1 < y) {
         return;
     }
-    gBtlWork->unk_0AC = p;
+    gBtlWork->actor4 = p;
 }
 
 void func_0801BDD4(BtlObj* p, BtlObj* v) {

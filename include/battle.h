@@ -79,7 +79,7 @@ typedef struct BgFx {
     u8 unk_39[0x03];
     s32 unk_3C;
     s32 unk_40;
-    struct BtlObj* unk_44;
+    struct BtlObj* actor;
     s32 unk_48;
     s16 unk_4C;
     u16 unk_4E;

@@ -491,12 +491,12 @@ void mode_jiminy_1(void) {
 
     if (gJiminyWork->unk_000 == 7) {
         if (gJiminyWork->unk_CAC & 8) {
-            DrawSprite(gJiminyWork->unk_CC2, gJiminyWork->unk_CC4 - ((gJiminyWork->unk_D3E >> 3) & 3),
+            DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3),
                 gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
         if (gJiminyWork->unk_CAC & 0x10) {
-            DrawSprite(gJiminyWork->unk_CC6, gJiminyWork->unk_CC8 + ((gJiminyWork->unk_D3E >> 3) & 3),
+            DrawSprite(gJiminyWork->x2, gJiminyWork->y2 + ((gJiminyWork->unk_D3E >> 3) & 3),
                 gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
@@ -529,10 +529,10 @@ void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f) {
     gJiminyWork->unk_C76 = b;
     gJiminyWork->unk_C78 = a;
     gJiminyWork->unk_CB4 = c;
-    gJiminyWork->unk_CC2 = d + 0x38;
-    gJiminyWork->unk_CC6 = d + 0x38;
-    gJiminyWork->unk_CC4 = e - 10;
-    gJiminyWork->unk_CC8 = e + f * (a - 1) + 12;
+    gJiminyWork->x = d + 0x38;
+    gJiminyWork->x2 = d + 0x38;
+    gJiminyWork->y = e - 10;
+    gJiminyWork->y2 = e + f * (a - 1) + 12;
     gJiminyWork->unk_C72 = 0;
     gJiminyWork->unk_C74 = 0;
     gJiminyWork->unk_CC0 = 0;
@@ -1027,11 +1027,11 @@ void func_0805BAE4(void) {
             &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
     }
     if (gJiminyWork->unk_CAC & 8) {
-        DrawSprite(gJiminyWork->unk_CC2, gJiminyWork->unk_CC4 - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,
+        DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,
             gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
     }
     if (gJiminyWork->unk_CAC & 0x10) {
-        DrawSprite(gJiminyWork->unk_CC6, gJiminyWork->unk_CC8 + ((gJiminyWork->unk_D3E >> 3) & 3),
+        DrawSprite(gJiminyWork->x2, gJiminyWork->y2 + ((gJiminyWork->unk_D3E >> 3) & 3),
             gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
     }
     if (gJiminyWork->unk_CD2 != gJiminyWork->unk_CD4) {

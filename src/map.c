@@ -11085,8 +11085,8 @@ void func_080F131C(MapDbgWork* w, u8* p) {
     func_080DEE18(gUnk_0203C590.unk_06);
 #else
     d = func_080DEE18(gUnk_0203C590.unk_06);
-    w->unk_10 = LoadSmallFontTiles();
-    w->unk_14 = LoadSmallFontPalette();
+    w->tiles = LoadSmallFontTiles();
+    w->palette = LoadSmallFontPalette();
     w->unk_2C = FormatSmallFontHex(d->unk_04, w->unk_18);
     w->unk_42 = FormatSmallFontHex(func_080F10F0((u8*)d), w->unk_2E);
     w->unk_46 = EncodeSmallFontString(gUnk_09EF6C38, &w->unk_44);
@@ -11101,14 +11101,14 @@ s32 func_080F138C(u8* work) {
 void func_080F139C(MapDbgWork* w) {
 #ifndef VERSION_EU
     if (w->unk_00 != 0) {
-        DrawSmallFontString(240 - w->unk_2C * 8, 0x8E, w->unk_18, w->unk_10, w->unk_14, 0, w->unk_2C);
-        DrawSmallFontString(240 - w->unk_42 * 8, 0x96, w->unk_2E, w->unk_10, w->unk_14, 0, w->unk_42);
+        DrawSmallFontString(240 - w->unk_2C * 8, 0x8E, w->unk_18, w->tiles, w->palette, 0, w->unk_2C);
+        DrawSmallFontString(240 - w->unk_42 * 8, 0x96, w->unk_2E, w->tiles, w->palette, 0, w->unk_42);
 
         if (*w->unk_04 != 0) {
             if (w->unk_08 == func_080F117C) {
-                DrawSmallFontString(240 - (w->unk_0C + 1) * 8, 0x90, &w->unk_44, w->unk_10, w->unk_14, 0, w->unk_46);
+                DrawSmallFontString(240 - (w->unk_0C + 1) * 8, 0x90, &w->unk_44, w->tiles, w->palette, 0, w->unk_46);
             } else {
-                DrawSmallFontString(240 - (w->unk_0D + 1) * 8, 0x98, &w->unk_44, w->unk_10, w->unk_14, 0, w->unk_46);
+                DrawSmallFontString(240 - (w->unk_0D + 1) * 8, 0x98, &w->unk_44, w->tiles, w->palette, 0, w->unk_46);
             }
         }
     }
@@ -13559,10 +13559,10 @@ void func_080F55B0(MapPrzCardWork* w) {
     }
 
     d = &gCardDefs[w->unk_0A8];
-    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, d->unk_00, w->tiles, w->palette,
+    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, d->gfx, w->tiles, w->palette,
         affine, w->unk_088, w->unk_0BE + 1);
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, q->unk_00, w->tiles2,
+    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, q->gfx, w->tiles2,
         w->palette2, affine, w->unk_088, w->unk_0BE);
 
     if (w->unk_090.unk_0E != 3) {

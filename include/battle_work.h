@@ -28,15 +28,15 @@ typedef struct BtlWork {
     s16 unk_072;
     s16 unk_074;
     u16 unk_076;
-    BtlObj* unk_078;
+    BtlObj* actor2;
     BtlObj* actor;
     ListPool unk_080;
     ListPool unk_090;
     s32 unk_0A0;
     u8 unk_0A4;
     u8 unk_0A5[0x03];
-    BtlObj* unk_0A8;
-    BtlObj* unk_0AC;
+    BtlObj* actor3;
+    BtlObj* actor4;
     s16 unk_0B0;
     s8 unk_0B2;
     u8 unk_0B3;

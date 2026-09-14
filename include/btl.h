@@ -184,7 +184,7 @@ typedef struct BtlRikuWork {
     s16 unk_1BC;
     u8 unk_1BE[0x2];
     BtlDrawInfo unk_1C0[9];
-    BtlObj* unk_370;
+    BtlObj* actor2;
 } BtlRikuWork;
 
 extern u8 gUnk_08F6DD04[];

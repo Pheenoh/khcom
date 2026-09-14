@@ -46,7 +46,7 @@ void HumInit(HumWork* work, HumDef* def) {
     work->sub2 = 0;
     work->unk_184 = 0;
     gUnk_02039B9C->actor = actor;
-    gBtlWork->unk_0A8 = actor;
+    gBtlWork->actor3 = actor;
     actor->btl = gUnk_02039B9C;
     actor->unk_034 |= 0x24000000000;
 }
@@ -75,13 +75,13 @@ void HumSubReleaseGraphics(HumSub* sub) {
 }
 
 void HumReleaseResources(HumWork* work) {
-    if (gBtlWork->unk_078 == &work->actor) {
-        gBtlWork->unk_078 = 0;
+    if (gBtlWork->actor2 == &work->actor) {
+        gBtlWork->actor2 = 0;
     }
 
     HumSubReleaseGraphics(work->sub);
     HumSubReleaseGraphics(work->sub2);
-    gBtlWork->unk_0A8 = 0;
+    gBtlWork->actor3 = 0;
     func_0801B7D8(&work->actor);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);

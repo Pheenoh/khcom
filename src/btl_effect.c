@@ -1020,7 +1020,7 @@ void func_0801416C(s32 x, s32 y, s32 z) {
 }
 
 void func_080141D4(void) {
-    BtlObj* p = gUnk_02034928->unk_44;
+    BtlObj* p = gUnk_02034928->actor;
     gUnk_02034928->unk_10 = p->unk_004;
     gUnk_02034928->unk_14 = p->unk_008;
     gUnk_02034928->unk_18 = p->unk_00C - 0x800;
@@ -1035,7 +1035,7 @@ void func_080141FC(BtlObj* p) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_44 = p;
+    gUnk_02034928->actor = p;
     gUnk_02034928->unk_10 = p->unk_004;
     gUnk_02034928->unk_14 = p->unk_008;
     gUnk_02034928->unk_18 = p->unk_00C - 0x800;
@@ -2358,8 +2358,8 @@ BtlObj* func_08016320(void) {
         return gUnk_02039B9C->actor;
     }
 
-    if (gBtlWork->unk_078 != 0) {
-        return gBtlWork->unk_078;
+    if (gBtlWork->actor2 != 0) {
+        return gBtlWork->actor2;
     }
     return ListPoolFirst(&gBtlWork->unk_080);
 }

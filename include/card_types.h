@@ -14,7 +14,7 @@ typedef struct Deck {
 } Deck;
 
 typedef struct CardDef {
-    void* unk_00;
+    void* gfx;
     void* unk_04;
     void* unk_08;
     void* unk_0C;
@@ -34,7 +34,7 @@ typedef struct CardDef {
 } CardDef;
 
 typedef struct CardBack {
-    void* unk_00;
+    void* gfx;
     void* unk_04;
     void* unk_08;
     void* unk_0C;

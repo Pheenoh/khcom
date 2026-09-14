@@ -527,9 +527,9 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_4C0[0xC];
     struct UnkStruct_08084D78* unk_4CC;
     struct UnkStruct_08084D78* unk_4D0;
-    void* unk_4D4;
-    void* unk_4D8;
-    void* unk_4DC;
+    void* gfx3;
+    void* gfx4;
+    void* gfx5;
     u8 unk_4E0[8];
     void* gfx;
     void* gfx2;

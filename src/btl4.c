@@ -590,21 +590,21 @@ void task_btl_vslockon_0(BtlVslockonWork* work) {
     AnimInit(&work->anim, gUnk_09EE10F8, gUnk_09EE10EC);
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
-    gBtlWork->unk_078 = gUnk_02039B9C->actor;
-    gUnk_02039B9C->unk_078 = gBtlWork->actor;
+    gBtlWork->actor2 = gUnk_02039B9C->actor;
+    gUnk_02039B9C->actor2 = gBtlWork->actor;
 }
 
 s32 task_btl_vslockon_1(BtlVslockonWork* work) {
     if (gBtlWork->unk_0F4 == 19) {
-        gUnk_02039B9C->unk_078 = 0;
+        gUnk_02039B9C->actor2 = 0;
     } else {
-        gUnk_02039B9C->unk_078 = gBtlWork->actor;
+        gUnk_02039B9C->actor2 = gBtlWork->actor;
     }
 
     if (gUnk_02039B9C->unk_0F4 == 19) {
-        gBtlWork->unk_078 = 0;
+        gBtlWork->actor2 = 0;
     } else {
-        gBtlWork->unk_078 = gUnk_02039B9C->actor;
+        gBtlWork->actor2 = gUnk_02039B9C->actor;
     }
 
     work->gfx = AnimUpdate(&work->anim);
@@ -616,7 +616,7 @@ void task_btl_vslockon_2(BtlVslockonWork* work) {
     s16 y;
     BtlObj* p;
 
-    p = gBtlWork->unk_078;
+    p = gBtlWork->actor2;
     if (p != 0) {
         WorldToScreen(&x, &y, p->unk_004, p->unk_008, p->unk_00C - (p->unk_0A2 << 8));
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 0x100);

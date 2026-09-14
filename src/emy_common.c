@@ -854,8 +854,8 @@ void func_0800DF30(EmyWork* work) {
 void func_0800E0D0(EmyWork* work) {
     gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->actor.unk_000];
 
-    if (gBtlWork->unk_078 == (BtlObj*)&work->actor) {
-        gBtlWork->unk_078 = 0;
+    if (gBtlWork->actor2 == (BtlObj*)&work->actor) {
+        gBtlWork->actor2 = 0;
     }
 
     func_0801B7D8(&work->actor);

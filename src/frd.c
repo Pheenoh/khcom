@@ -99,10 +99,10 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
     s32 angle;
     if (work->unk_14C != 0) {
         owner = gBtlWork;
-        target = owner->unk_078;
+        target = owner->actor2;
     } else {
         owner = gUnk_02039B9C;
-        target = owner->unk_078;
+        target = owner->actor2;
     }
     if (owner->unk_068 & 0x40000000) return 0;
     switch (work->unk_148) {
@@ -1102,10 +1102,10 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     if (gGameState.world != 6) return 0;
     if (work->unk_14C != 0) {
         owner = gBtlWork;
-        target = owner->unk_078;
+        target = owner->actor2;
     } else {
         owner = gUnk_02039B9C;
-        target = owner->unk_078;
+        target = owner->actor2;
     }
     if (owner->unk_068 & 0x40000000) return 0;
     switch (work->unk_148) {
@@ -1624,7 +1624,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         return 0;
     }
     owner = work->unk_14C != 0 ? gBtlWork : gUnk_02039B9C;
-    target = owner->unk_078;
+    target = owner->actor2;
     if (owner->unk_068 & 0x40000000) {
         return 0;
     }
@@ -2095,13 +2095,13 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
         gBtlWork->unk_068 |= 0x200000;
         work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
-        obj = gBtlWork->unk_078;
+        obj = gBtlWork->actor2;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
-        obj = gUnk_02039B9C->unk_078;
+        obj = gUnk_02039B9C->actor2;
     }
 
     work->unk_14D = args->unk_00;

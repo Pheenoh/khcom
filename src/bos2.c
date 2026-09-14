@@ -1097,15 +1097,15 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
         AnimInit((AnimState*)&work->joints.arms[0][i].unk_16[2], gUnk_09EF39B4, gUnk_09EF39A0);
         AnimStart((AnimState*)&work->joints.arms[0][i].unk_16[2], 0, 1);
         work->joints.arms[0][i].unk_26 = i * 2;
-        work->joints.arms[0][i].unk_30 = AnimGetGfx((AnimState*)&work->joints.arms[0][i].unk_16[2]);
+        work->joints.arms[0][i].gfx = AnimGetGfx((AnimState*)&work->joints.arms[0][i].unk_16[2]);
         AnimInit((AnimState*)&work->joints.arms[1][i].unk_16[2], gUnk_09EF39B4, gUnk_09EF39A0);
         AnimStart((AnimState*)&work->joints.arms[1][i].unk_16[2], 0, 1);
         work->joints.arms[1][i].unk_26 = i * 2;
-        work->joints.arms[1][i].unk_30 = AnimGetGfx((AnimState*)&work->joints.arms[1][i].unk_16[2]);
+        work->joints.arms[1][i].gfx = AnimGetGfx((AnimState*)&work->joints.arms[1][i].unk_16[2]);
     }
 
-    work->joints.arms[0][3].unk_30 = gUnk_0962E7A0;
-    work->joints.arms[1][3].unk_30 = gUnk_0962E7A0;
+    work->joints.arms[0][3].gfx = gUnk_0962E7A0;
+    work->joints.arms[1][3].gfx = gUnk_0962E7A0;
     work->tiles2 = AllocObjTiles(0x140, gUnk_09657C04);
     work->unk_00C->unk_18->tileCount += ((TmArmTileHeader*)work->tiles2)->tileCount;
     AnimInit(&work->anim, gUnk_09EF3A18, gUnk_09EF39F8);
@@ -1466,7 +1466,7 @@ void func_080BB924(TmArmWork* work) {
     for (i = 0; i < 3; i++) {
         offset = i * sizeof(TmArmJoint);
         gfx = AnimUpdate((AnimState*)((u8*)work->joints.all + offset + 0xE8));
-        dst = &work->joints.all[4].unk_30;
+        dst = &work->joints.all[4].gfx;
         *(void**)((u8*)dst + offset) = gfx;
     }
 }
@@ -1661,7 +1661,7 @@ void func_080BC304(TmArmWork* work) {
     func_080BB4C0(work);
 
     for (i = 0; i < 3; i++) {
-        work->joints.all[i].unk_30 = AnimUpdate((AnimState*)((u8*)&work->joints.all[i] + 0x18));
+        work->joints.all[i].gfx = AnimUpdate((AnimState*)((u8*)&work->joints.all[i] + 0x18));
     }
 }
 
@@ -1721,14 +1721,14 @@ void task_bos_tm_arm_2(TmArmWork* work) {
         WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                       work->unk_00C->unk_08 + j->unk_04);
         depth = -4100;
-        DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
+        DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                    (depth -= (work->unk_00C->unk_04 >> 8) * 4, (u16)depth));
         j = &work->joints.all[i];
         affine = AllocObjAffine(j->unk_08, 256, 256, 0);
         WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                       work->unk_00C->unk_14 + j->unk_04);
         depth = -4100;
-        DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
+        DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                    (depth -= (work->unk_00C->unk_10 >> 8) * 4, (u16)depth));
     }
 
@@ -1742,13 +1742,13 @@ void task_bos_tm_arm_2(TmArmWork* work) {
     affine = AllocObjAffine(j->unk_08, mode, 256, 0);
     WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                   work->unk_00C->unk_08 + j->unk_04);
-    DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
+    DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                (endDepth = -4100 - (work->unk_00C->unk_04 >> 8) * 4, (u16)endDepth));
     j = &work->joints.all[3];
     affine = AllocObjAffine(j->unk_08, mode, 256, 0);
     WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                   work->unk_00C->unk_14 + j->unk_04);
-    DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
+    DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                (endDepth = -4100 - (work->unk_00C->unk_10 >> 8) * 4, (u16)endDepth));
     TaskPoolDraw(&work->unk_1B4);
 }

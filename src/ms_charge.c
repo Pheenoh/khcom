@@ -200,9 +200,9 @@ void func_08104D18(void) {
         defIdx = card->unk_02;
         gUnk_02035D84 = LoadObjPalette(gCardDefs[defIdx].unk_08, 0x20);
         gUnk_02035D88 = LoadObjTiles(gCardDefs[defIdx].unk_04, 0x200);
-        gUnk_02035D8C = gCardDefs[defIdx].unk_00;
+        gUnk_02035D8C = gCardDefs[defIdx].gfx;
         gUnk_02035D94 = LoadObjTiles(gUnk_08F709B0[card->unk_04].unk_0C, 0x300);
-        gUnk_02035D98 = gUnk_08F709B0[card->unk_04].unk_00;
+        gUnk_02035D98 = gUnk_08F709B0[card->unk_04].gfx;
         gUnk_02035DD8 = card->unk_2E;
         p = &gUnk_02035DE0;
 #ifdef VERSION_EU
