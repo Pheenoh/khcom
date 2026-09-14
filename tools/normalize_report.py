@@ -90,6 +90,16 @@ def aggregate(units):
     return result
 
 
+def declared_category_ids():
+    config_path = Path(__file__).resolve().parent.parent / "decomp.yaml"
+    ids = set()
+    for line in config_path.read_text().splitlines():
+        stripped = line.lstrip()
+        if stripped.startswith("- id:"):
+            ids.add(stripped.split(":", 1)[1].strip())
+    return ids
+
+
 def drop_excluded(report):
     report["units"] = [
         u for u in report.get("units", [])
@@ -98,12 +108,20 @@ def drop_excluded(report):
     # ROM data that no translation unit owns yet. It counts toward the project
     # totals but belongs to no subsystem, so leave it uncategorised rather than
     # invent a bucket for it.
+    allowed = declared_category_ids()
     for unit in report["units"]:
+        meta = unit.setdefault("metadata", {})
+        cats = meta.get("progress_categories") or []
         if unit.get("name", "").startswith(UNATTRIBUTED_UNITS):
-            unit.setdefault("metadata", {})["progress_categories"] = []
+            meta["progress_categories"] = []
+        else:
+            meta["progress_categories"] = [c for c in cats if c in allowed]
     used = {c for u in report["units"]
             for c in (u.get("metadata", {}).get("progress_categories") or [])}
-    report["categories"] = [c for c in report.get("categories", []) if c.get("id") in used]
+    report["categories"] = [
+        c for c in report.get("categories", [])
+        if c.get("id") in allowed and c.get("id") in used
+    ]
 
 
 def normalize(report):

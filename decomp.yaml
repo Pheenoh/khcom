@@ -60,10 +60,11 @@ tools:
       # Anything whose subsystem is not established stays in `named` or `unidentified`.
       categories:
         # Specific groups first: prefix matching means `src/task` would otherwise
-        # swallow `src/taskpool`, and the trailing `src/` catch-all would swallow
-        # everything. Data is a dimension, not a category, so each bucket reports
-        # its own code and data; unattributed bytes sit in `other` until the unit
-        # that owns them is written.
+        # swallow `src/taskpool`. Do not add a bare `src` / `src/` path — mapfile_parser
+        # synthesizes a folder-named `src` category for unmatched units, which then
+        # also tags later units that already match core/game/sdk. Data is a dimension,
+        # not a category, so each bucket reports its own code and data; unattributed
+        # bytes sit in `other` until the unit that owns them is written.
         - id: core
           name: Core engine
           paths:
@@ -127,4 +128,45 @@ tools:
             - src/wlogo
             - src/unk_
             - src/map
+            - src/actor_ui_resource_data
+            - src/animation_resource_data
+            - src/aux_animation_data
+            - src/backupstat_data
+            - src/battle_field_state
+            - src/battle_localized_data
+            - src/battle_runtime
+            - src/debug_menu_data
+            - src/enemy_tile_counts
+            - src/event_background_data
+            - src/event_chara_data
+            - src/event_index_data
+            - src/event_scanline_state
+            - src/event_sequence_data
+            - src/event_sprite_data
+            - src/field_transition
+            - src/formation_data
+            - src/graphics_state
+            - src/jiminy_data
+            - src/jiminy_inline_text_data
+            - src/jiminy_list
+            - src/jiminy_records_data
+            - src/localized_resource_data
+            - src/memory_regions
+            - src/moogle_data
+            - src/player_progression
+            - src/player_progression_data
+            - src/reload_animation_data
+            - src/remaining_resource_data
+            - src/sram_state
+            - src/staff_roll_localized_resource_data
+            - src/staff_roll_resource_data
+            - src/staff_roll_resource_tail_data
+            - src/staff_roll_scene_data
+            - src/staff_roll_script_data
+            - src/world_intro_data
+            - src/worldinspect_data
+            - src/worldlogo_state
+            - src/worldselect_data
+            - src/worldwarp_data
+            - src/worldwarp_state
             - asm/transform
