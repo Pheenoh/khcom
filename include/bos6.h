@@ -297,7 +297,7 @@ typedef struct BosLstWork {
     u32 unk_120;
     u32 unk_124;
     u8 unk_128[0xCC];
-    LstSub unk_1F4[2];
+    LstSub sub[2];
     u8 unk_474[0x5C];
     u32 unk_4D0;
     u8 unk_4D4[0x58];

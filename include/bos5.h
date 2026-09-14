@@ -166,7 +166,7 @@ typedef struct MdFireWork {
     u32 unk_030;
     s16 unk_034;
     u8 unk_036[0x2];
-    MdSub unk_038;
+    MdSub sub;
     s32 x;
     s32 y;
     s32 z;

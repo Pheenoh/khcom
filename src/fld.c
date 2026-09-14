@@ -8,7 +8,7 @@ UnkStruct_0203C7AC* gUnk_0203C7AC;
 void task_fld_sora_0(FldWork* work) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     work->tiles = AllocObjTiles(0x500, 0);
     work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     act->unk_1A = 16;
@@ -78,7 +78,7 @@ void task_fld_sora_0(FldWork* work) {
     }
 
     TaskPoolInit(work->unk_24, 2);
-    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
+    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
     ColliderInit(work->unk_38, 1, 4, 32);
     ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
 }
@@ -87,7 +87,7 @@ u8 func_08032268(FldWork* work, void* task) {
     s16* p;
     s32 flags;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     flags = gUnk_02039BA0->unk_70;
 
     if (flags & 0x100000) {
@@ -127,7 +127,7 @@ u8 func_0803234C(FldWork* work, void* task) {
     s32 y;
     s32 z;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     x = act->unk_00.x;
     y = act->unk_00.y;
     gUnk_02039BA0->unk_68 = 0;
@@ -190,7 +190,7 @@ u8 func_080324DC(FldWork* work, void* task) {
     s32 z;
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     z = func_08031F1C(work);
     sx = act->unk_00.x;
     sy = act->unk_00.y;
@@ -491,7 +491,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
     s32 tx;
     s32 ty;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     limit = func_08031F1C(work);
     x = act->unk_00.x;
     y = act->unk_00.y;
@@ -624,7 +624,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
 u8 func_08033054(FldWork* work, void* task) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if ((GetKeysPressed() & B_BUTTON) || (GetKeysPressed() & DPAD_DOWN) ||
         (act->angle == 0xD3 && (GetKeysPressed() & DPAD_RIGHT)) ||
@@ -660,7 +660,7 @@ u8 func_08033150(FldWork* work, void* task) {
     s32 x;
     s32 y;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     ret = 0;
     x = act->unk_00.x;
     y = act->unk_00.y;
@@ -728,7 +728,7 @@ u8 func_08033150(FldWork* work, void* task) {
 u8 func_08033334(FldWork* work, void* task) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     switch (work->unk_94) {
     case 15:
@@ -884,7 +884,7 @@ u8 func_0803366C(FldWork* work, void* task) {
     s32 nx;
     s32 ny;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     x = act->unk_00.x;
     y = act->unk_00.y;
 
@@ -1134,7 +1134,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
     u8 b;
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if ((work->unk_A4 & 8) != 0) {
         work->unk_A4 &= ~8;
@@ -1413,7 +1413,7 @@ void task_fld_sora_2(FldWork* work) {
     s32 y;
     s32 z;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     pri = (work->unk_A4 & 2) ? 0x801 : 0x800;
 
     if (work->unk_BC != 0) {
@@ -1451,7 +1451,7 @@ void task_fld_sora_2(FldWork* work) {
 void task_fld_sora_3(FldWork* work) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ColliderUnregister(work->unk_38);
@@ -1614,7 +1614,7 @@ s32 func_080346C0(FldWork* work) {
     FldActor* act;
     s32 v;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if (work->unk_66 & 1) {
         if (act->unk_00.unk_0C < work->unk_78) {
@@ -1658,7 +1658,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
     FldAnimDef* def;
     s32 dir;
 
-    switch (gUnk_02039BA0->unk_18.angle) {
+    switch (gUnk_02039BA0->actor.angle) {
     case 0x2D:
         dir = 4;
         work->unk_A4 |= 2;
@@ -1707,7 +1707,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
 void task_fld_riku_0(FldWork* work) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     work->tiles = AllocObjTiles(0xA00, 0);
     work->palette = LoadObjPalette(gUnk_09618118, 32);
     act->unk_1A = 16;
@@ -1777,7 +1777,7 @@ void task_fld_riku_0(FldWork* work) {
     }
 
     TaskPoolInit(work->unk_24, 2);
-    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
+    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
     ColliderInit(work->unk_38, 1, 4, 32);
     ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
 }
@@ -1786,7 +1786,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
     s16* p;
     s32 flags;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     flags = gUnk_02039BA0->unk_70;
 
     if (flags & 0x100000) {
@@ -1826,7 +1826,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
     s32 y;
     s32 z;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     x = act->unk_00.x;
     y = act->unk_00.y;
     gUnk_02039BA0->unk_68 = 0;
@@ -1890,7 +1890,7 @@ u8 func_08034C88(FldWork* work, void* task) {
     s32 z;
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     z = func_080346C0(work);
     sx = act->unk_00.x;
     sy = act->unk_00.y;
@@ -2189,7 +2189,7 @@ u8 func_080353DC(FldWork* work, void* task) {
     s32 tx;
     s32 ty;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     limit = func_080346C0(work);
     x = act->unk_00.x;
     y = act->unk_00.y;
@@ -2322,7 +2322,7 @@ u8 func_080353DC(FldWork* work, void* task) {
 u8 func_080357F4(FldWork* work, void* task) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if ((GetKeysPressed() & B_BUTTON) || (GetKeysPressed() & DPAD_DOWN) ||
         (act->angle == 0xD3 && (GetKeysPressed() & DPAD_RIGHT)) ||
@@ -2358,7 +2358,7 @@ u8 func_080358F0(FldWork* work, void* task) {
     s32 x;
     s32 y;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     ret = 0;
     x = act->unk_00.x;
     y = act->unk_00.y;
@@ -2426,7 +2426,7 @@ u8 func_080358F0(FldWork* work, void* task) {
 u8 func_08035AD4(FldWork* work, void* task) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     switch (work->unk_94) {
     case 15:
@@ -2577,7 +2577,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
     s32 nx;
     s32 ny;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     x = act->unk_00.x;
     y = act->unk_00.y;
 
@@ -2828,7 +2828,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
     u8 b;
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if ((work->unk_A4 & 8) != 0) {
         work->unk_A4 &= ~8;
@@ -3106,7 +3106,7 @@ void task_fld_riku_2(FldWork* work) {
     s32 y;
     s32 z;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     pri = (work->unk_A4 & 2) ? 0x801 : 0x800;
 
     if (work->unk_BC != 0) {
@@ -3144,7 +3144,7 @@ void task_fld_riku_2(FldWork* work) {
 void task_fld_riku_3(FldWork* work) {
     FldActor* act;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ColliderUnregister(work->unk_38);

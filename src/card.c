@@ -2906,7 +2906,7 @@ void func_0807BC24(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A3 = 0;
     p->unk_8C = gUnk_09033FF4[0][0];
     p->unk_90 = gUnk_09033FF4[0][1];
-    p->unk_4C = gUnk_09033FF4[4][0];
+    p->x = gUnk_09033FF4[4][0];
     p->unk_50 = gUnk_09033FF4[4][1];
 
     if (p->unk_48 != 0) {
@@ -3018,8 +3018,8 @@ void func_0807BEC0(CardDisplayWork* p) {
 
     if (!(p->unk_78 & 0x200)) {
         aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
-        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((struct UnkStruct_0807BEC0*)gUnk_02039DD4)->tiles[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 1));
-        DrawSprite(p->unk_4C >> 8, y, gfx, p->tiles, p->palette, aff, attr, p->unk_A0);
+        DrawSprite(p->x >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((struct UnkStruct_0807BEC0*)gUnk_02039DD4)->tiles[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->x >> 8, y, gfx, p->tiles, p->palette, aff, attr, p->unk_A0);
         j = p->unk_A5;
 
         if (p->unk_48->unk_2A == 3) {
@@ -3027,22 +3027,22 @@ void func_0807BEC0(CardDisplayWork* p) {
         }
 
         if (p->unk_A7 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 2));
         } else if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 2));
         } else {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 2));
         }
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 3));
+            DrawSprite(p->x >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 3));
         }
 
         return;
     }
 
     aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
-    DrawSprite(p->unk_4C >> 8, y, p->unk_48->unk_10, p->tiles, p->palette, aff, attr, p->unk_A0);
+    DrawSprite(p->x >> 8, y, p->unk_48->unk_10, p->tiles, p->palette, aff, attr, p->unk_A0);
     k = p->unk_A5;
 
     if (p->unk_48->unk_2A == 3) {
@@ -3050,16 +3050,16 @@ void func_0807BEC0(CardDisplayWork* p) {
     }
 
     if (p->unk_A7 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->x >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
+            DrawSprite(p->x >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
         }
     } else if (p->unk_A6 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
-        DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
+        DrawSprite((p->x >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
+        DrawSprite(p->x >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
     } else {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->x >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 10));
     }
 }
 
@@ -3076,7 +3076,7 @@ void card_not_have_2(CardDisplayWork* p) {
     }
 
     if (p->unk_78 & 0x80) {
-        DrawSprite(p->unk_4C >> 8, y, gfx, p->tiles2, gUnk_02039DD4->palette, 0, 0x410, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->x >> 8, y, gfx, p->tiles2, gUnk_02039DD4->palette, 0, 0x410, (u16)(p->unk_A0 - 1));
     }
 }
 
@@ -3180,7 +3180,7 @@ u8 func_0807C3E8(CardDisplayWork* p, void* a) {
 }
 
 u8 func_0807C4BC(CardDisplayWork* p, void* a) {
-    ApproachValue(&p->unk_4C, 0x7800, p->unk_9C);
+    ApproachValue(&p->x, 0x7800, p->unk_9C);
     ApproachValue(&p->unk_50, 0x8400, p->unk_9C);
     if ((s16)p->unk_9C > 0) {
         p->unk_9C--;
@@ -3290,7 +3290,7 @@ u8 func_0807C75C(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             fn = func_0807C5D8;
         } else {
@@ -3299,7 +3299,7 @@ u8 func_0807C75C(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             p->unk_A0 += p->unk_9F * 3;
             fn = func_0807CFA8;
@@ -3337,7 +3337,7 @@ u8 func_0807C75C(CardDisplayWork* p, void* a) {
             break;
         }
     } else {
-        ApproachValue(&p->unk_4C, gUnk_09033FF4[4][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_09033FF4[4][0], p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_09033FF4[4][1], p->unk_9C);
     }
 
@@ -3355,12 +3355,12 @@ u8 func_0807C934(CardDisplayWork* p, void* a) {
     func_0807C2EC(p);
 
     if (p->unk_78 & 0x20) {
-        ApproachValue(&p->unk_4C, gUnk_09033FF4[3 - p->unk_9F][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_09033FF4[3 - p->unk_9F][0], p->unk_9C);
         ApproachValue(&p->unk_58, 179, p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_09033FF4[3 - p->unk_9F][1], p->unk_9C);
         ApproachValue(&p->unk_54, 179, p->unk_9C);
     } else {
-        ApproachValue(&p->unk_4C, gUnk_09033FF4[4][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_09033FF4[4][0], p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_09033FF4[4][1], p->unk_9C);
     }
 
@@ -3395,7 +3395,7 @@ u8 func_0807C934(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             fn = func_0807C5D8;
         } else {
@@ -3404,7 +3404,7 @@ u8 func_0807C934(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             fn = func_0807CFA8;
         }
@@ -3455,7 +3455,7 @@ u8 func_0807CBC0(CardDisplayWork* p, void* a) {
     }
 
     p->unk_84 += (0 - p->unk_84) >> 1;
-    p->unk_4C += (gUnk_09033FF4[4][0] - p->unk_4C) >> 1;
+    p->x += (gUnk_09033FF4[4][0] - p->x) >> 1;
     p->unk_50 += (gUnk_09033FF4[4][1] - p->unk_50) >> 1;
 
     if (p->unk_78 & 0x20) {
@@ -3490,7 +3490,7 @@ void func_0807CC2C(CardDisplayWork* p) {
     p->unk_8C = gSineTable[(p->unk_94 >> 8) & 0xFF] * 80 + gUnk_09033FF4[0][0];
     p->unk_90 = -gSineTable[((p->unk_94 >> 8) & 0xFF) + 0x40] * 80 + gUnk_09033FF4[0][1];
     angle = ((p->unk_7C >> 8) + 0x20) & 0xFF;
-    p->unk_4C = gSineTable[angle] * (p->unk_84 >> 8) + p->unk_8C;
+    p->x = gSineTable[angle] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[angle + 0x40] * (p->unk_84 >> 8) + p->unk_90;
 }
 
@@ -3578,11 +3578,11 @@ u8 func_0807CE04(CardDisplayWork* p) {
 }
 
 u8 func_0807CE68(CardDisplayWork* p) {
-    if (p->unk_4C > 0x10000) {
+    if (p->x > 0x10000) {
         return 1;
     }
 
-    if (p->unk_4C < -0x1000) {
+    if (p->x < -0x1000) {
         return 1;
     }
 
@@ -3602,7 +3602,7 @@ u8 func_0807CE9C(CardDisplayWork* p) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C;
     p->unk_9C++;
-    p->unk_4C -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
+    p->x -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
     p->unk_5E += p->unk_9E;
     p->unk_54 -= 5;
     p->unk_58 -= 5;
@@ -3694,7 +3694,7 @@ void func_0807D0F4(CardDisplayWork* p) {
     }
 
     p->unk_7C += (p->unk_80 - p->unk_7C) >> 2;
-    p->unk_4C = gSineTable[(p->unk_7C >> 8) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
+    p->x = gSineTable[(p->unk_7C >> 8) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[((p->unk_7C >> 8) & 0xFF) + 64] * (p->unk_84 >> 8) + p->unk_90;
 }
 u8 func_0807D194(CardDisplayWork* w, void* a) {
@@ -3785,7 +3785,7 @@ u8 func_0807D3A0(CardDisplayWork* p, void* a) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C >> 1;
     p->unk_9C++;
-    p->unk_4C -= 0x200;
+    p->x -= 0x200;
     p->unk_5E += 16;
 
     if (!(p->unk_78 & 0x400000)) {
@@ -3851,7 +3851,7 @@ u8 func_0807D4E4(CardDisplayWork* p) {
     u8 arg;
 
     p->unk_A1 = 0;
-    ApproachValue(&p->unk_4C, 0x1800, p->unk_9C);
+    ApproachValue(&p->x, 0x1800, p->unk_9C);
     ApproachValue(&p->unk_58, 0x99, p->unk_9C);
     ApproachValue(&p->unk_50, 0x6400, p->unk_9C);
     ApproachValue(&p->unk_54, 0x99, p->unk_9C);
@@ -3875,7 +3875,7 @@ u8 func_0807D584(CardDisplayWork* p, void* a) {
     s32 x;
     s32 y;
 
-    ApproachValue(&p->unk_4C, 0x1800, p->unk_9C);
+    ApproachValue(&p->x, 0x1800, p->unk_9C);
     ApproachValue(&p->unk_50, 0x6400, p->unk_9C);
 
     if ((s16)p->unk_9C > 0) {
@@ -3884,7 +3884,7 @@ u8 func_0807D584(CardDisplayWork* p, void* a) {
         WorldToScreen(&sx, &sy, gBtlWork->unk_100, gBtlWork->unk_104, gBtlWork->unk_108);
         x = sx;
         y = sy;
-        dx = (x << 8) - p->unk_4C;
+        dx = (x << 8) - p->x;
         dy = (y << 8) - p->unk_50;
         p->unk_84 = NormalizeVector2D8(&dx, &dy);
         p->unk_8C = -dx;
@@ -3916,7 +3916,7 @@ u8 func_0807D68C(CardDisplayWork* p, void* a) {
     y = sy;
 
     if (p->unk_88 < 0) {
-        dx = (x << 8) - p->unk_4C;
+        dx = (x << 8) - p->x;
         dy = (y << 8) - p->unk_50;
         NormalizeVector2D8(&dx, &dy);
         p->unk_8C = -dx;
@@ -3933,9 +3933,9 @@ u8 func_0807D68C(CardDisplayWork* p, void* a) {
         p->unk_58 = 25;
     }
 
-    p->unk_4C += (p->unk_8C * p->unk_88) >> 8;
+    p->x += (p->unk_8C * p->unk_88) >> 8;
     p->unk_50 += (p->unk_90 * p->unk_88) >> 8;
-    p->unk_84 = VectorLength2D((x << 8) - p->unk_4C, (y << 8) - p->unk_50);
+    p->unk_84 = VectorLength2D((x << 8) - p->x, (y << 8) - p->unk_50);
     p->unk_88 -= p->unk_80;
     p->unk_80 += 2;
 
@@ -4022,7 +4022,7 @@ void card_reload_0(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A3 = 0;
     p->unk_8C = gUnk_09033FF4[0][0];
     p->unk_90 = gUnk_09033FF4[0][1];
-    p->unk_4C = gUnk_09033FF4[4][0];
+    p->x = gUnk_09033FF4[4][0];
     p->unk_50 = gUnk_09033FF4[4][1];
     p->unk_78 &= ~0x40;
     gUnk_02039DD4->unk_0E7 = 0;
@@ -4037,7 +4037,7 @@ u8 func_0807D930(CardDisplayWork* p, void* a) {
     }
 
     p->unk_84 += (0 - p->unk_84) >> 1;
-    p->unk_4C += (gUnk_09033FF4[4][0] - p->unk_4C) >> 1;
+    p->x += (gUnk_09033FF4[4][0] - p->x) >> 1;
     p->unk_50 += (gUnk_09033FF4[4][1] - p->unk_50) >> 1;
 
     if (p->unk_78 & 0x20) {
@@ -4144,11 +4144,11 @@ void card_reload_2(CardDisplayWork* p) {
         }
 
         attr = 0x410;
-        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
+        DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
                    gUnk_02039DD4->palette, 0, attr, p->unk_A0);
 
         if (!(gGameState.flags & 8) && *(void**)&w[0x60] != 0) {
-            DrawSprite(p->unk_4C >> 8, y, *(void**)&w[0x60], p->tiles,
+            DrawSprite(p->x >> 8, y, *(void**)&w[0x60], p->tiles,
                        gUnk_02039DD4->palette, 0, 0x410, (u16)(p->unk_A0 - 2));
         }
 
@@ -4156,13 +4156,13 @@ void card_reload_2(CardDisplayWork* p) {
             affine = AllocObjAffine(0, p->unk_54, gUnk_02039DD4->unk_0F4, 0);
 
             if (*(void**)&w[0x58] != 0) {
-                DrawSprite(p->unk_4C >> 8, y + 17, *(void**)&w[0x58], p->tiles3,
+                DrawSprite(p->x >> 8, y + 17, *(void**)&w[0x58], p->tiles3,
                            gUnk_02039DD4->palette, affine, 0x400,
                            (u16)(p->unk_A0 - 1));
             }
 
             if (gUnk_02039DD4->unk_108[0] == 1 && *(void**)&w[0x5C] != 0) {
-                DrawSprite(p->unk_4C >> 8, y, *(void**)&w[0x5C], p->tiles4,
+                DrawSprite(p->x >> 8, y, *(void**)&w[0x5C], p->tiles4,
                            gUnk_02039DD4->palette, 0, 0x400,
                            (u16)(p->unk_A0 - 1));
             }
@@ -4766,7 +4766,7 @@ void func_0807E8F4(UnkStruct_08080268* w) {
     w->unk_BC[3] = 0;
     w->unk_BA = 0;
     w->unk_C4[3] = 0;
-    w->unk_A4 = *(u16*)&gUnk_090352E4[4];
+    w->x = *(u16*)&gUnk_090352E4[4];
 
     for (i = 0; i <= 2; i++) {
         w->unk_1C[i] = 0;
@@ -4957,9 +4957,9 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
     }
 
     if (w->unk_C4[3] != 0) {
-        hold = w->unk_A4 << 8;
+        hold = w->x << 8;
         ApproachValue(&hold, gUnk_090352F4[w->unk_B9 - 1] << 8, w->unk_C4[3]);
-        w->unk_A4 = hold >> 8;
+        w->x = hold >> 8;
         w->unk_C4[3]--;
     }
 
@@ -5510,7 +5510,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
 
 void func_0807F99C(UnkStruct_08080268* w) {
     if (gUnk_02039DD4->unk_0EA != 0 && gUnk_02039B9C->unk_0F4 != 28 && w->unk_B9 != 0 && w->unk_BA != 0) {
-        DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16, 12);
+        DrawSprite(w->x, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16, 12);
     }
 
     TaskPoolDraw(w);
@@ -5597,7 +5597,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
                 p->unk_80 = p->unk_7C = 0;
                 p->unk_A0 = 50;
                 p->unk_9C = 8;
-                p->unk_4C = p->unk_8C;
+                p->x = p->unk_8C;
                 p->unk_50 = p->unk_90;
                 p->unk_78 |= 0x814;
                 gUnk_02034AAC = p;
@@ -5659,7 +5659,7 @@ void func_0807FD10(UnkStruct_08080268* w, u8 n) {
                 p->unk_A4 = 0;
                 p->unk_A0 = 60;
                 p->unk_9C = 4;
-                p->unk_4C = p->unk_8C;
+                p->x = p->unk_8C;
                 p->unk_50 = p->unk_90;
                 p->unk_78 |= 0x804;
                 gUnk_02034AAC = p;
@@ -5704,7 +5704,7 @@ void func_0807FE30(UnkStruct_08080268* w, u8 n) {
                 p->unk_A4 = 0;
                 p->unk_A0 = 60;
                 p->unk_9C = 4;
-                p->unk_4C = p->unk_8C;
+                p->x = p->unk_8C;
                 p->unk_50 = p->unk_90;
                 p->unk_78 |= 0x804;
                 gUnk_02034AAC = p;
@@ -5750,7 +5750,7 @@ void func_0807FF48(UnkStruct_08080268* w) {
 
         if (w->unk_C0[w->unk_B8] == 0) {
             func_0807E368(w, (u8)w->unk_B8);
-            gUnk_02034AAC->unk_4C = gUnk_0903401C[5][0];
+            gUnk_02034AAC->x = gUnk_0903401C[5][0];
             gUnk_02034AAC->unk_50 = gUnk_0903401C[5][1];
             gUnk_02034AAC->unk_A3 = 1;
             gUnk_02034AAC->unk_9C = 1;
@@ -5807,7 +5807,7 @@ void func_080800B4(UnkStruct_08080268* w) {
 
     if (w->unk_C0[w->unk_B8] == 0) {
         func_0807E368(w, (u8)w->unk_B8);
-        gUnk_02034AAC->unk_4C = 0x10400;
+        gUnk_02034AAC->x = 0x10400;
         gUnk_02034AAC->unk_50 = 0x8C00;
         gUnk_02034AAC->unk_9C = 12;
     } else {
@@ -6108,7 +6108,7 @@ u8 func_08080594(UnkStruct_08080268* w) {
         p->unk_A4 = 0;
         p->unk_A0 = 60;
         p->unk_9C = 4;
-        p->unk_4C = p->unk_8C;
+        p->x = p->unk_8C;
         p->unk_50 = p->unk_90;
         p->unk_78 |= 0x804;
         gUnk_02034AAC = p;
@@ -6164,7 +6164,7 @@ void func_08080994(UnkStruct_08080268* w) {
             p->unk_98 = p->unk_94 = gUnk_090352E4[0];
             p->unk_A4 = 0;
             p->unk_A0 = 50;
-            p->unk_4C = p->unk_8C;
+            p->x = p->unk_8C;
             p->unk_50 = p->unk_90;
             p->unk_9C = 8;
             p->unk_78 |= 0x814;
@@ -6180,7 +6180,7 @@ void func_08080994(UnkStruct_08080268* w) {
         q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49E4, &args))[1];
         q->unk_80 = q->unk_7C = 0;
         q->unk_98 = q->unk_94 = gUnk_090352E4[0];
-        q->unk_4C = q->unk_8C;
+        q->x = q->unk_8C;
         q->unk_50 = q->unk_90;
         q->unk_A0 = 50;
         q->unk_78 |= 0x806;
@@ -6302,7 +6302,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
         p->unk_A4 = 0;
         p->unk_A0 = 60;
         p->unk_9C = 4;
-        p->unk_4C = p->unk_8C;
+        p->x = p->unk_8C;
         p->unk_50 = p->unk_90;
         p->unk_78 |= 0x804;
         gUnk_02034AAC = p;
@@ -6630,7 +6630,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             p->unk_A4 = 0;
             p->unk_A0 = 60;
             p->unk_9C = 4;
-            p->unk_4C = p->unk_8C;
+            p->x = p->unk_8C;
             p->unk_50 = p->unk_90;
             p->unk_78 |= 0x844;
             gUnk_02034AAC = p;
@@ -6868,7 +6868,7 @@ void func_08081A3C(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A3 = 0;
     p->unk_8C = gUnk_0903401C[5][0];
     p->unk_90 = gUnk_0903401C[5][1];
-    p->unk_4C = gUnk_0903401C[4][0];
+    p->x = gUnk_0903401C[4][0];
     p->unk_50 = gUnk_0903401C[4][1];
 
     if (p->unk_48 != 0) {
@@ -6919,7 +6919,7 @@ u8 func_08081B70(CardDisplayWork* p, void* a) {
         return 1;
     }
 
-    ApproachValue(&p->unk_4C, p->unk_8C, p->unk_9C);
+    ApproachValue(&p->x, p->unk_8C, p->unk_9C);
     ApproachValue(&p->unk_50, p->unk_90, p->unk_9C);
     p->unk_5F += 4;
 
@@ -6968,8 +6968,8 @@ void func_08081C98(CardDisplayWork* p) {
 
         aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
         flags = 0x410;
-        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((UnkStruct_0809B200*)gUnk_02039DD4)->unk_030[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 1));
-        DrawSprite(p->unk_4C >> 8, y, gfx, p->tiles, p->palette, aff, flags, p->unk_A0);
+        DrawSprite(p->x >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((UnkStruct_0809B200*)gUnk_02039DD4)->unk_030[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->x >> 8, y, gfx, p->tiles, p->palette, aff, flags, p->unk_A0);
         j = p->unk_A5;
 
         if (p->unk_48->unk_2A == 3) {
@@ -6977,15 +6977,15 @@ void func_08081C98(CardDisplayWork* p) {
         }
 
         if (p->unk_A7 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
         } else if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
         } else {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->x >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 2));
         }
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 3));
+            DrawSprite(p->x >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 3));
         }
 
         return;
@@ -6998,7 +6998,7 @@ void func_08081C98(CardDisplayWork* p) {
     aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
     flags = 0x410;
     sy = y;
-    DrawSprite(p->unk_4C >> 8, sy, p->unk_48->unk_10, p->tiles, p->palette, aff, flags, p->unk_A0);
+    DrawSprite(p->x >> 8, sy, p->unk_48->unk_10, p->tiles, p->palette, aff, flags, p->unk_A0);
     j = p->unk_A5;
 
     if (p->unk_48->unk_2A == 3) {
@@ -7006,16 +7006,16 @@ void func_08081C98(CardDisplayWork* p) {
     }
 
     if (p->unk_A7 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->x >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
+            DrawSprite(p->x >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
         }
     } else if (p->unk_A6 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
-        DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
+        DrawSprite((p->x >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
+        DrawSprite(p->x >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
     } else {
-        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->x >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 10));
     }
 }
 
@@ -7035,7 +7035,7 @@ void NO_Card_2(CardDisplayWork* p) {
         if (p->unk_78 & 0x80) {
             if (p->unk_54 != 0) {
                 if (gUnk_02039B9C->unk_0F4 != 7) {
-                    DrawSprite(p->unk_4C >> 8, y, gfx, p->tiles2, gUnk_02039DD4->palette, 0, 0x410, (u16)(p->unk_A0 - 1));
+                    DrawSprite(p->x >> 8, y, gfx, p->tiles2, gUnk_02039DD4->palette, 0, 0x410, (u16)(p->unk_A0 - 1));
                 }
             }
         }
@@ -7096,7 +7096,7 @@ u8 func_08082154(CardDisplayWork* p, void* a) {
 }
 
 u8 func_08082224(CardDisplayWork* p, void* a) {
-    ApproachValue(&p->unk_4C, 0x7800, p->unk_9C);
+    ApproachValue(&p->x, 0x7800, p->unk_9C);
     ApproachValue(&p->unk_50, 0x8400, p->unk_9C);
     p->unk_A0 = 80;
 
@@ -7260,7 +7260,7 @@ u8 func_08082618(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             f = func_08082348;
         } else {
@@ -7269,7 +7269,7 @@ u8 func_08082618(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             f = func_080824C8;
         }
@@ -7308,7 +7308,7 @@ u8 func_08082618(CardDisplayWork* p, void* a) {
             break;
         }
     } else {
-        ApproachValue(&p->unk_4C, gUnk_0903401C[4][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_0903401C[4][0], p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_0903401C[4][1], p->unk_9C);
     }
 
@@ -7326,12 +7326,12 @@ u8 func_080827E0(CardDisplayWork* p, void* a) {
     func_0807C2EC(p);
 
     if (p->unk_78 & 0x20) {
-        ApproachValue(&p->unk_4C, gUnk_0903401C[3 - p->unk_9F][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_0903401C[3 - p->unk_9F][0], p->unk_9C);
         ApproachValue(&p->unk_58, 179, p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_0903401C[3 - p->unk_9F][1], p->unk_9C);
         ApproachValue(&p->unk_54, 179, p->unk_9C);
     } else {
-        ApproachValue(&p->unk_4C, gUnk_0903401C[4][0], p->unk_9C);
+        ApproachValue(&p->x, gUnk_0903401C[4][0], p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_0903401C[4][1], p->unk_9C);
     }
 
@@ -7366,7 +7366,7 @@ u8 func_080827E0(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             fn = func_08082348;
         } else {
@@ -7375,7 +7375,7 @@ u8 func_080827E0(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             fn = func_080824C8;
         }
@@ -7425,7 +7425,7 @@ u8 func_08082A64(CardDisplayWork* p, void* a) {
     }
 
     p->unk_84 += -p->unk_84 >> 1;
-    p->unk_4C += (gUnk_0903401C[4][0] - p->unk_4C) >> 1;
+    p->x += (gUnk_0903401C[4][0] - p->x) >> 1;
     p->unk_50 += (gUnk_0903401C[4][1] - p->unk_50) >> 1;
 
     if (p->unk_78 & 0x20) {
@@ -7472,7 +7472,7 @@ u8 func_08082B48(CardDisplayWork* p) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C;
     p->unk_9C++;
-    p->unk_4C -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
+    p->x -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
     p->unk_5E += p->unk_9E;
     p->unk_54 -= 5;
     p->unk_58 -= 5;
@@ -7504,7 +7504,7 @@ void func_08082BF8(CardDisplayWork* p) {
     }
 
     p->unk_7C += (p->unk_80 - p->unk_7C) >> 2;
-    p->unk_4C = gSineTable[(p->unk_7C >> 8) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
+    p->x = gSineTable[(p->unk_7C >> 8) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[((p->unk_7C >> 8) & 0xFF) + 64] * (p->unk_84 >> 8) + p->unk_90;
 }
 u8 func_08082C98(CardDisplayWork* p, void* a) {
@@ -7575,7 +7575,7 @@ u8 func_08082E0C(CardDisplayWork* p, void* a) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C >> 1;
     p->unk_9C++;
-    p->unk_4C -= 0x200;
+    p->x -= 0x200;
     p->unk_5E += 16;
 
     if (!(p->unk_78 & 0x400000)) {
@@ -7641,7 +7641,7 @@ u8 func_08082F50(CardDisplayWork* p) {
     u8 arg;
 
     p->unk_A1 = 0;
-    ApproachValue(&p->unk_4C, 0xD800, p->unk_9C);
+    ApproachValue(&p->x, 0xD800, p->unk_9C);
     ApproachValue(&p->unk_58, 0x99, p->unk_9C);
     ApproachValue(&p->unk_50, 0x6400, p->unk_9C);
     ApproachValue(&p->unk_54, 0x99, p->unk_9C);
@@ -7713,7 +7713,7 @@ void Reload_Card_0(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A3 = 0;
     p->unk_8C = gUnk_0903401C[5][0];
     p->unk_90 = gUnk_0903401C[5][1];
-    p->unk_4C = gUnk_0903401C[4][0];
+    p->x = gUnk_0903401C[4][0];
     p->unk_50 = gUnk_0903401C[4][1];
     p->unk_78 &= ~0x40;
     gUnk_02039DD4->unk_0E8 = 0;
@@ -7753,7 +7753,7 @@ u8 Reload_Card_1(CardDisplayWork* p, void* a) {
         return 1;
     }
 
-    ApproachValue(&p->unk_4C, p->unk_8C, p->unk_9C);
+    ApproachValue(&p->x, p->unk_8C, p->unk_9C);
     ApproachValue(&p->unk_50, p->unk_90, p->unk_9C);
     p->unk_5F += 4;
 
@@ -7911,11 +7911,11 @@ void Reload_Card_2(CardDisplayWork* p) {
         }
 
         if (p->unk_54 > 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
+            DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
                        gUnk_02039DD4->palette, affine, attr, p->unk_A0);
 
             if (*(void**)&w[0x60] != 0) {
-                DrawSprite(p->unk_4C >> 8, y, *(void**)&w[0x60], p->tiles,
+                DrawSprite(p->x >> 8, y, *(void**)&w[0x60], p->tiles,
                            gUnk_02039DD4->palette, affine, attr,
                            (u16)(p->unk_A0 - 2));
             }
@@ -7924,13 +7924,13 @@ void Reload_Card_2(CardDisplayWork* p) {
                 affine2 = AllocObjAffine(0, p->unk_54, gUnk_02039DD4->unk_0F8, 0);
 
                 if (*(void**)&w[0x58] != 0) {
-                    DrawSprite(p->unk_4C >> 8, y + 17, *(void**)&w[0x58],
+                    DrawSprite(p->x >> 8, y + 17, *(void**)&w[0x58],
                                p->tiles3, gUnk_02039DD4->palette, affine2, 0x400,
                                (u16)(p->unk_A0 - 1));
                 }
 
                 if (gUnk_02039DD4->unk_108[1] == 1 && *(void**)&w[0x5C] != 0) {
-                    DrawSprite(p->unk_4C >> 8, y, *(void**)&w[0x5C], p->tiles4,
+                    DrawSprite(p->x >> 8, y, *(void**)&w[0x5C], p->tiles4,
                                gUnk_02039DD4->palette, affine, 0x400,
                                (u16)(p->unk_A0 - 1));
                 }
@@ -13588,7 +13588,7 @@ void func_0808C9CC(u8* work) {
             node->unk_24--;
 
             if (node->unk_24 < 0) {
-                node->unk_44 = 0x20000;
+                node->y = 0x20000;
                 func_08090170(node);
             }
 
@@ -13617,7 +13617,7 @@ void func_0808C9CC(u8* work) {
             node->unk_24--;
 
             if (node->unk_24 < 0) {
-                node->unk_44 = 0x20000;
+                node->y = 0x20000;
                 func_08090170(node);
             }
 
@@ -13679,7 +13679,7 @@ u8 func_0808CA78(u8* work, u8 a) {
             n->unk_24++;
 
             if (n->unk_24 > 3) {
-                n->unk_44 = 0x20000;
+                n->y = 0x20000;
                 func_08090170(n);
             }
 
@@ -16506,20 +16506,20 @@ void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
     switch (n->unk_26) {
     case 0:
         if ((u16)n->unk_24 <= 3) {
-            n->unk_40 = gUnk_09035950[n->unk_22] << 8;
-            n->unk_44 = gUnk_09035956[n->unk_24] << 8;
+            n->x = gUnk_09035950[n->unk_22] << 8;
+            n->y = gUnk_09035956[n->unk_24] << 8;
         } else {
-            n->unk_40 = gUnk_09035950[n->unk_22] << 8;
-            n->unk_44 = 0x20000;
+            n->x = gUnk_09035950[n->unk_22] << 8;
+            n->y = 0x20000;
         }
         break;
     case 1:
         if ((u16)n->unk_24 <= 3) {
-            n->unk_40 = gUnk_0903595E[n->unk_22] << 8;
-            n->unk_44 = gUnk_09035964[n->unk_24] << 8;
+            n->x = gUnk_0903595E[n->unk_22] << 8;
+            n->y = gUnk_09035964[n->unk_24] << 8;
         } else {
-            n->unk_40 = gUnk_0903595E[n->unk_22] << 8;
-            n->unk_44 = 0x20000;
+            n->x = gUnk_0903595E[n->unk_22] << 8;
+            n->y = 0x20000;
         }
         break;
     }
@@ -16553,20 +16553,20 @@ u8 DeckCard2_1(DeckCard2Work* n) {
     switch (n->unk_26) {
     case 0:
         if ((u16)n->unk_24 <= 3) {
-            n->unk_40 = gUnk_09035950[n->unk_22] << 8;
-            n->unk_44 = gUnk_09035956[n->unk_24] << 8;
+            n->x = gUnk_09035950[n->unk_22] << 8;
+            n->y = gUnk_09035956[n->unk_24] << 8;
         } else {
-            n->unk_40 = gUnk_09035950[n->unk_22] << 8;
-            n->unk_44 = 0x20000;
+            n->x = gUnk_09035950[n->unk_22] << 8;
+            n->y = 0x20000;
         }
         break;
     case 1:
         if ((u16)n->unk_24 <= 3) {
-            n->unk_40 = gUnk_0903595E[n->unk_22] << 8;
-            n->unk_44 = gUnk_09035964[n->unk_24] << 8;
+            n->x = gUnk_0903595E[n->unk_22] << 8;
+            n->y = gUnk_09035964[n->unk_24] << 8;
         } else {
-            n->unk_40 = gUnk_0903595E[n->unk_22] << 8;
-            n->unk_44 = 0x20000;
+            n->x = gUnk_0903595E[n->unk_22] << 8;
+            n->y = 0x20000;
         }
         break;
     }
@@ -16584,15 +16584,15 @@ void DeckCard2_2(DeckCard2Work* n) {
     }
 
     if (n->tiles != 0 && n->palette != 0) {
-        DrawSprite(n->unk_40 >> 8, n->unk_44 >> 8, n->unk_14->unk_10, n->tiles, n->palette, 0, 0, 0x33);
+        DrawSprite(n->x >> 8, n->y >> 8, n->unk_14->unk_10, n->tiles, n->palette, 0, 0, 0x33);
 
         if (n->unk_4D != 0) {
-            DrawSprite(n->unk_40 >> 8, n->unk_44 >> 8, gUnk_0203A860.gfx, gUnk_0203A860.tiles, gUnk_0203A860.palette, 0, 0, 0x28);
+            DrawSprite(n->x >> 8, n->y >> 8, gUnk_0203A860.gfx, gUnk_0203A860.tiles, gUnk_0203A860.palette, 0, 0, 0x28);
         }
     }
 
     if (n->unk_26 == 0 && n->unk_14->unk_2A != 3) {
-        DrawSprite((n->unk_40 >> 8) - 3, (n->unk_44 >> 8) - 4, gUnk_09EE981C[n->unk_14->unk_20], n->tiles2, n->palette2, 0, 0, 0x31);
+        DrawSprite((n->x >> 8) - 3, (n->y >> 8) - 4, gUnk_09EE981C[n->unk_14->unk_20], n->tiles2, n->palette2, 0, 0, 0x31);
     }
 }
 
@@ -16706,7 +16706,7 @@ void card_enemy_0(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_88 = 0x2400;
     p->unk_8C = gUnk_09035978[0];
     p->unk_90 = gUnk_09035978[1];
-    p->unk_4C = 0xDC00;
+    p->x = 0xDC00;
     p->unk_50 = 0x8400;
     p->unk_A5 = p->unk_48->unk_20;
     func_08090224((u8*)p);
@@ -16761,18 +16761,18 @@ void func_08090374(CardDisplayWork* p) {
                 }
 
                 flags = 0x410;
-                DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
+                DrawSprite(p->x >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                            gUnk_08F70A28[0].unk_00, ((struct UnkStruct_08090374*)gUnk_02039DD4)->tiles[p->unk_48->unk_2A],
                            gUnk_02039DD4->palette, affine, flags, (u16)(p->unk_A0 - 1));
-                DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
+                DrawSprite(p->x >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                            gfx, p->tiles, p->palette, affine, flags, p->unk_A0);
 
                 if (p->unk_A7 != 0) {
-                    DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
+                    DrawSprite(p->x >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                                gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles7,
                                gUnk_02039DD4->palette2, affine, flags, (u16)(p->unk_A0 - 2));
                 } else {
-                    DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
+                    DrawSprite(p->x >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                                gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles5,
                                gUnk_02039DD4->palette, affine, flags, (u16)(p->unk_A0 - 2));
                 }
@@ -16814,7 +16814,7 @@ u8 func_08090550(CardDisplayWork* p, void* a) {
 
 u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
     p->unk_A0 = 80;
-    ApproachValue(&p->unk_4C, 0x7800, p->unk_9C);
+    ApproachValue(&p->x, 0x7800, p->unk_9C);
     ApproachValue(&p->unk_50, 0x8400, p->unk_9C);
 
     if ((s16)p->unk_9C > 0) {
@@ -16848,7 +16848,7 @@ u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
 }
 
 u8 func_0809075C(CardDisplayWork* p, void* a) {
-    ApproachValue(&p->unk_4C, gSineTable[((p->unk_7C >> 8) - 32) & 0xFF] * (p->unk_84 >> 8) + gUnk_09035978[0],
+    ApproachValue(&p->x, gSineTable[((p->unk_7C >> 8) - 32) & 0xFF] * (p->unk_84 >> 8) + gUnk_09035978[0],
                   p->unk_9C);
     ApproachValue(&p->unk_50, -gSineTable[(((p->unk_7C >> 8) - 32) & 0xFF) + 0x40] * (p->unk_84 >> 8) + gUnk_09035978[1],
                   p->unk_9C);
@@ -16904,7 +16904,7 @@ void func_08090864(CardDisplayWork* p) {
         p->unk_78 &= ~0x40;
     }
 
-    p->unk_4C = gSineTable[((p->unk_7C >> 8) - 32) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
+    p->x = gSineTable[((p->unk_7C >> 8) - 32) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[(((p->unk_7C >> 8) - 32) & 0xFF) + 64] * (p->unk_84 >> 8) + p->unk_90;
 }
 
@@ -16934,7 +16934,7 @@ u8 func_080909A4(CardDisplayWork* p) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C;
     p->unk_9C++;
-    p->unk_4C -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
+    p->x -= gSineTable[(p->unk_7C & 0xFF) + 0x40];
     p->unk_5E += p->unk_9E;
     p->unk_54 -= 5;
     p->unk_58 -= 5;
@@ -16951,7 +16951,7 @@ u8 func_080909A4(CardDisplayWork* p) {
 }
 
 void func_08090A54(CardDisplayWork* p, void* a) {
-    p->unk_4C -= gSineTable[p->unk_9E] * 3;
+    p->x -= gSineTable[p->unk_9E] * 3;
     func_0807CD48(p);
 
     if (p->unk_9E != 0) {
@@ -16969,7 +16969,7 @@ void func_08090A54(CardDisplayWork* p, void* a) {
 }
 
 void func_08090ACC(CardDisplayWork* p, void* a) {
-    p->unk_4C += gSineTable[p->unk_9E] * 3;
+    p->x += gSineTable[p->unk_9E] * 3;
     func_0807CD48(p);
 
     if ((s8)p->unk_9E >= 0) {
@@ -17033,9 +17033,9 @@ u8 func_08090C3C(CardDisplayWork* p, void* a) {
     func_0807CD48(p);
 
     if (p->unk_78 & 0x20) {
-        q = &p->unk_4C; tbl = (s32 (*)[2])gUnk_09035978; ApproachValue(q, tbl[3 - p->unk_9F][0], p->unk_9C); ApproachValue(&p->unk_50, ((s32 (*)[2])gUnk_09035978)[3 - p->unk_9F][1], p->unk_9C);
+        q = &p->x; tbl = (s32 (*)[2])gUnk_09035978; ApproachValue(q, tbl[3 - p->unk_9F][0], p->unk_9C); ApproachValue(&p->unk_50, ((s32 (*)[2])gUnk_09035978)[3 - p->unk_9F][1], p->unk_9C);
     } else {
-        ApproachValue(&p->unk_4C, gUnk_09035978[8], p->unk_9C);
+        ApproachValue(&p->x, gUnk_09035978[8], p->unk_9C);
         ApproachValue(&p->unk_50, gUnk_09035978[9], p->unk_9C);
     }
 
@@ -17060,7 +17060,7 @@ u8 func_08090C3C(CardDisplayWork* p, void* a) {
             p->unk_84 = 0;
             p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
             p->unk_7C = 0;
-            p->unk_8C = p->unk_4C;
+            p->unk_8C = p->x;
             p->unk_90 = p->unk_50;
             SetTaskUpdate(a, (void*)func_0807CFA8);
         }
@@ -17074,7 +17074,7 @@ u8 func_08090DB0(CardDisplayWork* p, void* a) {
     p->unk_50 -= p->unk_84;
     p->unk_84 -= (s16)p->unk_9C >> 1;
     p->unk_9C++;
-    p->unk_4C += 0x200;
+    p->x += 0x200;
     p->unk_5E += 16;
 
     if (!(p->unk_78 & 0x400000)) {
@@ -17161,7 +17161,7 @@ void func_08090EA0(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 |= 0x804;
     p->unk_8C = 0xDC00;
     p->unk_90 = 0x8800;
-    p->unk_4C = 0xDC00;
+    p->x = 0xDC00;
     p->unk_50 = 0x8800;
     p->unk_9C = 10;
     p->unk_A0 -= 4;
@@ -17231,7 +17231,7 @@ void func_08091048(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 |= 0x801;
     p->unk_8C = 0x10000;
     p->unk_90 = 0x8800;
-    p->unk_4C = 0x10000;
+    p->x = 0x10000;
     p->unk_50 = 0x8800;
     p->unk_9C = 0x10;
     p->unk_A0 -= 4;
@@ -17273,7 +17273,7 @@ void func_08091138(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_78 |= 0x801;
     p->unk_8C = 0x10000;
     p->unk_90 = 0x8800;
-    p->unk_4C = 0x10000;
+    p->x = 0x10000;
     p->unk_50 = 0x8800;
     p->unk_9C = 0x10;
     p->unk_A0 -= 4;
@@ -17780,7 +17780,7 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     w->unk_28D[1] = 0;
     w->unk_28B = 0;
     if (w->card != 0) {
-        w->unk_250 = w->card->unk_4C;
+        w->unk_250 = w->card->x;
         w->unk_254 = w->card->unk_50;
         w->card->unk_6C |= 0x100;
     } else {
@@ -18188,7 +18188,7 @@ u8 func_080928E4(MapSelectWork* w, void* a) {
         w->gfx = AnimGetGfx(w->unk_1F8);
         w->unk_258 = w->unk_280 << 8;
         w->unk_25C = w->unk_282 << 8;
-        w->unk_250 = w->card->unk_4C;
+        w->unk_250 = w->card->x;
         w->unk_254 = w->card->unk_50;
         w->unk_2C0 = 1;
     }
@@ -18268,7 +18268,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
                         }
                     }
                     if (w->card != 0) {
-                        w->unk_23C = w->card->unk_4C;
+                        w->unk_23C = w->card->x;
                         w->card->unk_6C |= 0x200;
                     }
                     m4aSongNumStart(102);
@@ -18312,7 +18312,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
             *(MapcardWork**)w->unk_1F0 = w->card;
             w->unk_28B = 4;
         } else if (w->card != 0) {
-            ApproachValue(&w->unk_250, w->card->unk_4C, w->unk_28B);
+            ApproachValue(&w->unk_250, w->card->x, w->unk_28B);
             ApproachValue(&w->unk_254, w->card->unk_50, w->unk_28B);
             if (w->unk_28B != 0) {
                 w->unk_28B--;
@@ -18374,13 +18374,13 @@ void MapSelect_2(MapSelectWork* w) {
         case 0:
             break;
         case 2:
-            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[3], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[3], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 3:
-            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[7], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[7], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 1:
-            DrawSprite((s16)((w->card->unk_4C >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[5], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->unk_50 >> 8) - 32), gUnk_0203A890.sprites[5], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
             break;
         case 4:
             break;
@@ -18522,7 +18522,7 @@ void func_08093434(MapSelectWork* work) {
         p = (MapcardWork*)ListPoolNext(&work->card->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
-            work->unk_264 = p->unk_4C;
+            work->unk_264 = p->x;
             work->unk_28C = 4;
             work->card->unk_6C &= 0xFEFF;
             work->card = (MapcardWork*)ListPoolNext(&work->card->unk_38);
@@ -18534,7 +18534,7 @@ void func_08093434(MapSelectWork* work) {
         p = ListPoolPrev(&work->card->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
-            work->unk_264 = p->unk_4C;
+            work->unk_264 = p->x;
             work->unk_28C = 4;
             work->card->unk_6C &= 0xFEFF;
             work->card = ListPoolPrev(&work->card->unk_38);
@@ -18577,7 +18577,7 @@ counting:
             if (a != 0) {
                 do {
                     if (a->unk_6C & 1) {
-                        a->unk_4C = -0x6400;
+                        a->x = -0x6400;
                         a->unk_6C &= 0xFEFF;
                         a = (MapcardWork*)ListPoolNext(&a->unk_38);
                     } else {
@@ -18592,7 +18592,7 @@ counting:
         b = (MapcardWork*)ListPoolFirst(&work->cards);
 
         while (b != 0) {
-            if (b->unk_4C == -0x6400) {
+            if (b->x == -0x6400) {
                 a->unk_6C &= 0xFEFF;
             }
 
@@ -18624,7 +18624,7 @@ counting:
                         break;
                     }
 
-                    b->unk_4C = -0x6400;
+                    b->x = -0x6400;
                     b = c = (MapcardWork*)ListPoolNext(&b->unk_38);
                 } while (b != 0);
             }
@@ -18635,7 +18635,7 @@ counting:
         b = (MapcardWork*)ListPoolFirst(&work->cards);
 
         while (b != 0) {
-            if (b->unk_4C == -0x6400) {
+            if (b->x == -0x6400) {
                 a->unk_6C &= 0xFEFF;
             }
 
@@ -18662,7 +18662,7 @@ void func_08093708(MapSelectWork* w) {
         node = w->card2;
         i = 0;
         while (node != 0) {
-            node->unk_4C = gUnk_09EE7520[i++] << 8;
+            node->x = gUnk_09EE7520[i++] << 8;
             if (i == 6) {
                 break;
             }
@@ -18671,7 +18671,7 @@ void func_08093708(MapSelectWork* w) {
         w->unk_298 = 0;
         func_08093838(w);
         if (w->card != 0) {
-            w->unk_264 = w->card->unk_4C;
+            w->unk_264 = w->card->x;
             w->unk_28C = 4;
         }
         w->unk_284++;
@@ -18680,7 +18680,7 @@ void func_08093708(MapSelectWork* w) {
         node = w->card2;
         i = 5;
         while (node != 0) {
-            node->unk_4C = gUnk_09EE7520[i--] << 8;
+            node->x = gUnk_09EE7520[i--] << 8;
             if (i < 0) {
                 break;
             }
@@ -18689,7 +18689,7 @@ void func_08093708(MapSelectWork* w) {
         w->unk_298 = 0;
         func_08093838(w);
         if (w->card != 0) {
-            w->unk_264 = w->card->unk_4C;
+            w->unk_264 = w->card->x;
             w->unk_28C = 4;
         }
         w->unk_284--;
@@ -18711,8 +18711,8 @@ s32 func_08093838(MapSelectWork* w) {
     w->card = z;
 
     while (node != 0) {
-        if (node->unk_4C != -0x6400) {
-            d = (node->unk_4C >> 8) - (w->unk_258 >> 8);
+        if (node->x != -0x6400) {
+            d = (node->x >> 8) - (w->unk_258 >> 8);
             r = Sqrt(d * d);
 
             if (best > r) {
@@ -18731,7 +18731,7 @@ s32 func_08093838(MapSelectWork* w) {
         r = *(u16*)q | 0x100;
         *(u16*)q = r;
 
-        return (((MapcardWork*)w->card)->unk_4C - w->unk_258) >> 8;
+        return (((MapcardWork*)w->card)->x - w->unk_258) >> 8;
     }
 
     return 0;
@@ -19406,7 +19406,7 @@ void func_08094548(MapSelectWork* w) {
         n->unk_21--;
 
         if (i <= 5) {
-            n->unk_4C = gUnk_09EE7520[i] << 8;
+            n->x = gUnk_09EE7520[i] << 8;
             i++;
         }
 
@@ -19423,10 +19423,10 @@ void func_08094548(MapSelectWork* w) {
         if (w->card == 0) {
             w->unk_264 = 0x1600;
         } else {
-            w->unk_264 = w->card->unk_4C;
+            w->unk_264 = w->card->x;
         }
     } else {
-        w->unk_264 = w->card->unk_4C;
+        w->unk_264 = w->card->x;
     }
 }
 
@@ -19436,7 +19436,7 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->tiles2 = 0;
     w->palette = 0;
     *(MapcardArgs*)&w->unk_20 = *a;
-    w->unk_4C = w->unk_21 <= 5 ? gUnk_09EE7520[w->unk_21] << 8 : -0x6400;
+    w->x = w->unk_21 <= 5 ? gUnk_09EE7520[w->unk_21] << 8 : -0x6400;
     w->unk_50 = 0x10500;
     w->unk_6A = 50;
     w->unk_5C = 0;
@@ -19489,7 +19489,7 @@ u8 Mapcard_1(MapcardWork* w, void* a) {
 }
 
 u8 func_080947B4(MapcardWork* w, void* a) {
-    ApproachValue(&w->unk_4C, gUnk_09EE7520[0] << 8, w->unk_6F);
+    ApproachValue(&w->x, gUnk_09EE7520[0] << 8, w->unk_6F);
     w->unk_6F--;
 
     if (!(w->unk_6C & 0x200)) {
@@ -19519,7 +19519,7 @@ u8 func_080947B4(MapcardWork* w, void* a) {
 }
 
 u8 func_0809486C(MapcardWork* w, void* a) {
-    ApproachValue(&w->unk_4C, gUnk_09EE7520[w->unk_21 % 6] << 8, w->unk_6F);
+    ApproachValue(&w->x, gUnk_09EE7520[w->unk_21 % 6] << 8, w->unk_6F);
     w->unk_6F--;
 
     if (w->unk_6F == 0) {
@@ -19554,7 +19554,7 @@ s32 func_080948F0(MapcardWork* w, void* a) {
 
 u8 func_08094934(MapcardWork* w, void* a) {
     w->unk_6E = 0;
-    ApproachValue(&w->unk_4C, 0x7800, w->unk_6F);
+    ApproachValue(&w->x, 0x7800, w->unk_6F);
     ApproachValue(&w->unk_50, 0x3800, w->unk_6F);
 
     if (w->unk_6F != 0) {
@@ -19580,7 +19580,7 @@ void func_080949A0(MapcardWork* w) {
 
     dx = (p[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
-    v[0] = dx * 256 - w->unk_4C;
+    v[0] = dx * 256 - w->x;
     v[1] = dy * 256 - w->unk_50;
     w->unk_64 = NormalizeVector2D8(&v[0], &v[1]);
     w->unk_54 = -v[0];
@@ -19606,7 +19606,7 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
 
     if (w->unk_60 < 0) {
-        x = (dx << 8) - w->unk_4C;
+        x = (dx << 8) - w->x;
         y = (dy << 8) - w->unk_50;
         NormalizeVector2D8(&x, &y);
         w->unk_54 = -x;
@@ -19619,9 +19619,9 @@ u8 func_08094A18(MapcardWork* w, void* a) {
         t = *(u16*)(q - 6);
         *(u16*)(q - 6) = (s16)t > 25 ? t - 12 : 25;
     }
-    w->unk_4C += (w->unk_54 * w->unk_60) >> 8;
+    w->x += (w->unk_54 * w->unk_60) >> 8;
     w->unk_50 += (w->unk_58 * w->unk_60) >> 8;
-    d = VectorLength2D((dx << 8) - w->unk_4C, (dy << 8) - w->unk_50);
+    d = VectorLength2D((dx << 8) - w->x, (dy << 8) - w->unk_50);
     w->unk_64 = d;
     w->unk_60 -= w->unk_5C;
     w->unk_5C += 2;
@@ -19654,8 +19654,8 @@ void Mapcard_2(MapcardWork* w) {
         y = (w->unk_50 >> 8) + (gSineTable[w->unk_6E] >> 8);
 
         if (w->unk_6C & 1) {
-            if (w->unk_4C > 0) {
-                if (w->unk_4C <= 0xEFFF) {
+            if (w->x > 0) {
+                if (w->x <= 0xEFFF) {
                     goto draw;
                 }
             }
@@ -19672,14 +19672,14 @@ void Mapcard_2(MapcardWork* w) {
             }
 
             if (gUnk_09EE4C80[w->unk_20].unk_1E == 4) {
-                DrawSprite(w->unk_4C >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
+                DrawSprite(w->x >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
                            (u16)(w->unk_6A - 2));
             }
 
             sprite = w->unk_1C->unk_08[0];
-            DrawSprite(w->unk_4C >> 8, y, sprite, *(void**)&w->unk_10[0], *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
+            DrawSprite(w->x >> 8, y, sprite, *(void**)&w->unk_10[0], *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
             sprite = w->unk_18->unk_08[0];
-            DrawSprite(w->unk_4C >> 8, y, sprite, w->tiles2, w->palette, aff, 0, (u16)(w->unk_6A + 1));
+            DrawSprite(w->x >> 8, y, sprite, w->tiles2, w->palette, aff, 0, (u16)(w->unk_6A + 1));
         }
     }
 }
@@ -20092,20 +20092,20 @@ void func_08095520(CardDisplayWork* p) {
 
     q = p->unk_20;
     gfx = gUnk_08F709B0[p->unk_46].unk_04;
-    DrawSprite((p->unk_4C >> 8) + (*(s32*)&q[4] >> 8),
+    DrawSprite((p->x >> 8) + (*(s32*)&q[4] >> 8),
                (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                gfx, p->tiles2,
                gUnk_02039DD4->palette, 0, 0x400, 50);
 
     if (p->unk_58 > 0) {
         affine = AllocObjAffine(0, 0x100, p->unk_58, 0);
-        DrawSprite((p->unk_4C >> 8) + (*(s32*)&q[4] >> 8),
+        DrawSprite((p->x >> 8) + (*(s32*)&q[4] >> 8),
                    (p->unk_50 >> 8) + (t = (gSineTable[p->unk_5F] >> 8) + 17),
                    *(void**)&q[0x58], p->tiles3, gUnk_02039DD4->palette, affine,
                    0x400, 49);
 
         if (p->unk_9F == 1) {
-            DrawSprite((p->unk_4C >> 8) + (*(s32*)&q[4] >> 8),
+            DrawSprite((p->x >> 8) + (*(s32*)&q[4] >> 8),
                        (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                        *(void**)&q[0x5C], p->tiles4, gUnk_02039DD4->palette, 0,
                        0x400, 49);
@@ -20113,7 +20113,7 @@ void func_08095520(CardDisplayWork* p) {
     }
 
     if (*(void**)&q[0x60] != 0) {
-        DrawSprite((p->unk_4C >> 8) + (*(s32*)&q[4] >> 8),
+        DrawSprite((p->x >> 8) + (*(s32*)&q[4] >> 8),
                    (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                    *(void**)&q[0x60], *(void**)&p->unk_10[0],
                    gUnk_02039DD4->palette, 0, 0x400, 48);
@@ -20392,10 +20392,10 @@ u8 func_08095E68(PrizeCardWork* w, void* a) {
     }
 
     ColliderSetPosition(&w->unk_4C[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
-    w->unk_E6 = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->x = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     w->unk_E8 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    w->unk_EE = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    w->unk_F0 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    w->x2 = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     w->unk_E4 = -0x1004 - (w->unk_AC >> 8) * 4;
     func_08096638(w);
     w->unk_F8 += 2;
@@ -20462,7 +20462,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
         w->unk_F2 += 3;
     }
 
-    w->unk_E6 = w->unk_A8 >> 8;
+    w->x = w->unk_A8 >> 8;
     w->unk_E8 = w->unk_AC >> 8;
     func_08096638(w);
 
@@ -20492,7 +20492,7 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
         w->unk_F2 = 256;
     }
 
-    w->unk_E6 = w->unk_A8 >> 8;
+    w->x = w->unk_A8 >> 8;
     w->unk_E8 = w->unk_AC >> 8;
     func_08096638(w);
     w->unk_FB++;
@@ -20517,10 +20517,10 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 }
 u8 func_08096390(PrizeCardWork* w) {
     w->unk_F6 += 32;
-    w->unk_EA = (gUnk_02039BA0->unk_18.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    w->unk_EC = (gUnk_02039BA0->unk_18.unk_00.y >> 8) + (gUnk_02039BA0->unk_18.unk_00.z >> 8) -
+    w->unk_EA = (gUnk_02039BA0->actor.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->unk_EC = (gUnk_02039BA0->actor.unk_00.y >> 8) + (gUnk_02039BA0->actor.unk_00.z >> 8) -
                 (gUnk_02039BA0->unk_04 >> 8);
-    w->unk_E6 += (w->unk_EA - w->unk_E6) >> 3;
+    w->x += (w->unk_EA - w->x) >> 3;
     w->unk_E8 += (w->unk_EC - w->unk_E8) >> 3;
     w->unk_E0 -= 10;
     w->unk_E2 -= 10;
@@ -20554,13 +20554,13 @@ void func_08096428(PrizeCardWork* w) {
     }
 
     def = &gCardDefs[w->unk_C8];
-    DrawSprite(w->unk_E6, (u16)w->unk_E8 - 8, def->unk_00, w->tiles, w->palette,
+    DrawSprite(w->x, (u16)w->unk_E8 - 8, def->unk_00, w->tiles, w->palette,
                affine, pal, (u16)(w->unk_E4 + 1));
     back = &gUnk_08F709B0[w->unk_20[0x22]];
-    DrawSprite(w->unk_E6, (u16)w->unk_E8 - 8, back->unk_00, w->tiles2, w->palette2,
+    DrawSprite(w->x, (u16)w->unk_E8 - 8, back->unk_00, w->tiles2, w->palette2,
                affine, pal, (u16)w->unk_E4);
     gfx = gUnk_09EE981C[w->unk_20[0x18]];
-    DrawSprite(w->unk_E6, (u16)w->unk_E8 - 8, gfx, w->tiles4, w->palette2, affine,
+    DrawSprite(w->x, (u16)w->unk_E8 - 8, gfx, w->tiles4, w->palette2, affine,
                pal, (u16)(w->unk_E4 - 1));
 
     if (w->unk_FC[0] == 0) {
@@ -20570,7 +20570,7 @@ void func_08096428(PrizeCardWork* w) {
             v = 2;
         }
 
-        DrawSprite(w->unk_EE, w->unk_F0, gUnk_09EE1380[0],
+        DrawSprite(w->x2, w->y, gUnk_09EE1380[0],
                    w->tiles5, w->palette3, AllocObjAffine(0, v, v, 0), pal,
                    (u16)(w->unk_E4 + 2));
     }
@@ -21101,8 +21101,8 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         return 1;
     } else {
         ColliderSetPosition(w->unk_44, w->unk_A0, w->unk_A4, w->unk_A8);
-        WorldToScreen(&w->unk_CE, &w->unk_D0, w->unk_A0, w->unk_A4, w->unk_A8);
-        WorldToScreen(&w->unk_D6, &w->unk_D8, w->unk_A0, w->unk_A4, w->unk_AC);
+        WorldToScreen(&w->x, &w->unk_D0, w->unk_A0, w->unk_A4, w->unk_A8);
+        WorldToScreen(&w->x2, &w->y, w->unk_A0, w->unk_A4, w->unk_AC);
         w->unk_CC = -0x1004 - (w->unk_A4 >> 8) * 4;
         func_080978B0(w);
         w->unk_E0 += 2;
@@ -21180,7 +21180,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
     }
 
     x = w->unk_A0 >> 8;
-    q1 = &w->unk_CE;
+    q1 = &w->x;
     *q1 = x;
     y = w->unk_A4 >> 8;
     q2 = &w->unk_D0;
@@ -21214,7 +21214,7 @@ u8 func_0809753C(UnkStruct_08096F94* w, void* a) {
     }
 
     x = w->unk_A0 >> 8;
-    q = &w->unk_CE;
+    q = &w->x;
     *q = x;
     x = w->unk_A4 >> 8;
     q = &w->unk_D0;
@@ -21234,7 +21234,7 @@ u8 func_0809753C(UnkStruct_08096F94* w, void* a) {
 u8 func_08097600(UnkStruct_08096F94* w) {
     w->unk_DE += 32;
     WorldToScreen(&w->unk_D2, &w->unk_D4, gBtlWork->actor->unk_004, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C);
-    w->unk_CE += (w->unk_D2 - w->unk_CE) >> 3;
+    w->x += (w->unk_D2 - w->x) >> 3;
     w->unk_D0 += (w->unk_D4 - w->unk_D0) >> 3;
     w->unk_C8 -= 10;
     w->unk_CA -= 10;
@@ -21260,7 +21260,7 @@ void func_08097688(UnkStruct_08096F94* w) {
         affine = AllocObjAffine(w->unk_DE, w->unk_C8, w->unk_CA, 1);
     }
 
-    DrawSprite(w->unk_CE, (u16)w->unk_D0 - 8,
+    DrawSprite(w->x, (u16)w->unk_D0 - 8,
                *w->unk_20->unk_08,
                w->tiles, w->palette, affine, pal,
                (u16)(w->unk_CC + 1));
@@ -21271,13 +21271,13 @@ void func_08097688(UnkStruct_08096F94* w) {
         gfx = w->unk_24->unk_08[0];
     }
 
-    DrawSprite(w->unk_CE, (u16)w->unk_D0 - 8, gfx,
+    DrawSprite(w->x, (u16)w->unk_D0 - 8, gfx,
                w->tiles2, w->palette2, affine, pal,
                w->unk_CC);
 
     if (w->unk_20->unk_1E != 4) {
         gfx = gUnk_09EE981C[w->unk_3E];
-        DrawSprite(w->unk_CE, (u16)w->unk_D0 - 8, gfx,
+        DrawSprite(w->x, (u16)w->unk_D0 - 8, gfx,
                    w->tiles4, w->palette2, affine, pal,
                    (u16)(w->unk_CC - 1));
     }
@@ -21289,7 +21289,7 @@ void func_08097688(UnkStruct_08096F94* w) {
             v = 2;
         }
 
-        DrawSprite(w->unk_D6, w->unk_D8, gUnk_09EE1380[0],
+        DrawSprite(w->x2, w->y, gUnk_09EE1380[0],
                    w->tiles5, w->palette3,
                    AllocObjAffine(0, v, v, 0), pal,
                    (u16)(w->unk_CC + 2));
@@ -21820,30 +21820,30 @@ void func_080985A0(UnkStruct_08098670* w, u16 b, s16 c, s16 d) {
 
     aff = AllocObjAffine(0, d, d, 1);
 
-    if (w->unk_00 != 0) {
-        DrawSprite(w->unk_24 >> 8, c + (w->unk_28 >> 8), w->unk_18, w->unk_00, w->unk_0C, aff, b, 10);
+    if (w->tiles != 0) {
+        DrawSprite(w->x >> 8, c + (w->y >> 8), w->gfx, w->tiles, w->palette, aff, b, 10);
     }
 
-    if (w->unk_04 != 0) {
-        DrawSprite(w->unk_24 >> 8, c + (w->unk_28 >> 8), w->unk_1C, w->unk_04, w->unk_10, aff, b, 9);
+    if (w->tiles2 != 0) {
+        DrawSprite(w->x >> 8, c + (w->y >> 8), w->gfx2, w->tiles2, w->palette2, aff, b, 9);
     }
 
-    if (w->unk_08 != 0) {
-        DrawSprite(w->unk_24 >> 8, c + (w->unk_28 >> 8), w->unk_20, w->unk_08, w->unk_14, aff, b, 8);
+    if (w->tiles3 != 0) {
+        DrawSprite(w->x >> 8, c + (w->y >> 8), w->gfx3, w->tiles3, w->palette3, aff, b, 8);
     }
 }
 
 void func_08098670(UnkStruct_08098670* p, u16 a) {
-    if (p->unk_00 != 0) {
-        DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_18, p->unk_00, p->unk_0C, 0, a, 10);
+    if (p->tiles != 0) {
+        DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, 0, a, 10);
     }
 
-    if (p->unk_04 != 0) {
-        DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_1C, p->unk_04, p->unk_10, 0, a, 9);
+    if (p->tiles2 != 0) {
+        DrawSprite(p->x >> 8, p->y >> 8, p->gfx2, p->tiles2, p->palette2, 0, a, 9);
     }
 
-    if (p->unk_08 != 0) {
-        DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_20, p->unk_08, p->unk_14, 0, a, 8);
+    if (p->tiles3 != 0) {
+        DrawSprite(p->x >> 8, p->y >> 8, p->gfx3, p->tiles3, p->palette3, 0, a, 8);
     }
 }
 
@@ -22176,12 +22176,12 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
 
     switch (w->unk_2C.unk_0D) {
     case 1:
-        w->unk_3C = -0x2000;
-        w->unk_40 = 0x9800;
+        w->x = -0x2000;
+        w->y = 0x9800;
         break;
     case 2:
-        w->unk_3C = 0x11000;
-        w->unk_40 = 0x9800;
+        w->x = 0x11000;
+        w->y = 0x9800;
         break;
     }
 
@@ -22238,10 +22238,10 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 
     switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&w->unk_3C, 0, w->unk_28);
+        ApproachValue(&w->x, 0, w->unk_28);
         break;
     case 2:
-        ApproachValue(&w->unk_3C, 0xD800, w->unk_28);
+        ApproachValue(&w->x, 0xD800, w->unk_28);
         break;
     }
 
@@ -22274,10 +22274,10 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 u8 func_08098FDC(RevCountWork* w) {
     switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
+        ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
+        ApproachValue(&w->x, 0x11000, w->unk_28);
         break;
     }
 
@@ -22297,10 +22297,10 @@ u8 func_08099048(RevCountWork* w, void* a) {
 
     switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
+        ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
+        ApproachValue(&w->x, 0x11000, w->unk_28);
         break;
     }
 
@@ -22325,10 +22325,10 @@ u8 func_080990CC(RevCountWork* w, void* a) {
 
     switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
+        ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
+        ApproachValue(&w->x, 0x11000, w->unk_28);
         break;
     }
 
@@ -22358,10 +22358,10 @@ u8 func_080990CC(RevCountWork* w, void* a) {
 }
 void REV_COUNT_2(RevCountWork* w) {
 #ifdef VERSION_EU
-    DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
+    DrawSprite(w->x >> 8, w->y >> 8, 0,
                w->tiles, w->palette, 0, 1040, 15);
 #else
-    DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
+    DrawSprite(w->x >> 8, w->y >> 8, 0,
                w->tiles, w->palette, 0, 1024, 15);
 #endif
 }
@@ -23535,10 +23535,10 @@ void func_0809B200(UnkStruct_0809A02C* w) {
         }
 
         if (w->unk_1CA == 0) {
-            WorldToScreen(&w->unk_1BE, &w->unk_1C0,
+            WorldToScreen(&w->x, &w->y,
                           w->unk_38, w->unk_3C,
                           w->unk_44);
-            DrawSprite(w->unk_1BE, w->unk_1C0,
+            DrawSprite(w->x, w->y,
                        gUnk_09EE1380[0], w->tiles4,
                        w->palette3, AllocObjAffine(0, v, v, 0),
                        w->unk_1D0, (u16)(w->unk_1C2 + 2));
@@ -23580,10 +23580,10 @@ void func_0809B3F4(UnkStruct_0809A02C* w) {
         }
 
         if (w->unk_1CA == 0) {
-            WorldToScreen(&w->unk_1BE, &w->unk_1C0,
+            WorldToScreen(&w->x, &w->y,
                           w->unk_38, w->unk_3C,
                           w->unk_44);
-            DrawSprite(w->unk_1BE, w->unk_1C0,
+            DrawSprite(w->x, w->y,
                        gUnk_09EE1380[0], w->tiles4,
                        w->palette3, AllocObjAffine(0, v, v, 0),
                        w->unk_1D0, (u16)(w->unk_1C2 + 2));
@@ -24315,7 +24315,7 @@ void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
     CardDef* def;
 
     w->unk_54 = 0;
-    w->unk_18 = 0;
+    w->tiles4 = 0;
 
     if (a->unk_06 <= 8) {
         w->unk_4E = gUnk_09036278[a->unk_06];
@@ -24425,22 +24425,22 @@ void func_0809C78C(UnkStruct_0809C534* w) {
 
     if (w->unk_54 != 0) {
         affine = AllocObjAffine(0, w->unk_6C, w->unk_6E, 1);
-        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->unk_00->unk_00, w->unk_08, w->unk_24, affine, 0x400,
+        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->unk_00->unk_00, w->tiles, w->palette2, affine, 0x400,
                    gUnk_0903628A[w->unk_52] + 70);
-        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->unk_04->unk_00, w->unk_0C, w->unk_28, affine, 0x400,
+        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->unk_04->unk_00, w->tiles2, w->palette3, affine, 0x400,
                    gUnk_0903628A[w->unk_52] + 69);
 
         if (w->unk_74 == 0) {
-            DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, gUnk_09EE981C[w->unk_00->unk_20], w->unk_10, w->unk_28,
+            DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, gUnk_09EE981C[w->unk_00->unk_20], w->tiles3, w->palette3,
                        affine, 0x400, gUnk_0903628A[w->unk_52] + 68);
         } else {
-            DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, gUnk_09EE9894[w->unk_00->unk_20], w->unk_1C, w->unk_20,
+            DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, gUnk_09EE9894[w->unk_00->unk_20], w->tiles5, w->palette,
                        affine, 0x400, gUnk_0903628A[w->unk_52] + 68);
         }
     }
 
-    if (w->unk_55 == 2 && w->unk_18 != 0) {
-        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->unk_44, w->unk_18, w->unk_28, 0, 0x400,
+    if (w->unk_55 == 2 && w->tiles4 != 0) {
+        DrawSprite(w->unk_4A + w->unk_70, w->unk_4C + w->unk_72, w->gfx, w->tiles4, w->palette3, 0, 0x400,
                    gUnk_0903628A[w->unk_52] + 67);
     }
 }
@@ -24716,8 +24716,8 @@ void func_0809CE88(PremiumCardEffectWork* w, s16* a) {
     w->unk_40 = a[0] << 8;
     w->unk_3C = a[3];
     w->unk_4C = GetRandom() % 0x181 + 0x100;
-    w->unk_30 = 0;
-    w->unk_34 = 0;
+    w->x = 0;
+    w->y = 0;
     w->unk_38 = 0;
     w->unk_50 = -(GetRandom() % 0x81 + 0x200);
     gUnk_0203A9D0->effectCount++;
@@ -24736,8 +24736,8 @@ void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
     w->unk_40 = a[0] << 8;
     w->unk_3C = a[3];
     w->unk_4C = GetRandom() % 0x81 + 0x200;
-    w->unk_30 = 0;
-    w->unk_34 = 0;
+    w->x = 0;
+    w->y = 0;
     w->unk_38 = 0;
     w->unk_50 = -(GetRandom() % 0x81 + 0x200);
     func_0809D124(w);
@@ -24760,7 +24760,7 @@ s32 Premire_EFFECT2_1(PremiumCardEffectWork* w) {
     func_0809D160(w);
     w->gfx = AnimUpdate(&w->anim);
 
-    if (w->unk_34 > 0xB400) {
+    if (w->y > 0xB400) {
         return 0;
     }
 
@@ -24778,7 +24778,7 @@ s32 func_0809D09C(PremiumCardEffectWork* w) {
     return 1;
 }
 void func_0809D0CC(PremiumCardEffectWork* w) {
-    DrawSprite(w->unk_30 >> 8, w->unk_34 >> 8, w->gfx, w->tiles, w->palette, 0, 0, 0);
+    DrawSprite(w->x >> 8, w->y >> 8, w->gfx, w->tiles, w->palette, 0, 0, 0);
 }
 void func_0809D0FC(PremiumCardEffectWork* w) {
     ReleaseObjTiles(w->tiles);
@@ -24787,8 +24787,8 @@ void func_0809D0FC(PremiumCardEffectWork* w) {
 }
 
 void func_0809D124(PremiumCardEffectWork* w) {
-    w->unk_30 = gSineTable[w->unk_3C & 0xFF] * (w->unk_40 >> 8) + w->unk_24;
-    w->unk_34 = -gSineTable[(w->unk_3C & 0xFF) + 64] * (w->unk_40 >> 8) + w->unk_28;
+    w->x = gSineTable[w->unk_3C & 0xFF] * (w->unk_40 >> 8) + w->unk_24;
+    w->y = -gSineTable[(w->unk_3C & 0xFF) + 64] * (w->unk_40 >> 8) + w->unk_28;
 }
 
 void func_0809D160(PremiumCardEffectWork* w) {
@@ -24796,21 +24796,21 @@ void func_0809D160(PremiumCardEffectWork* w) {
     w->unk_2C += w->unk_50;
     w->unk_24 += gSineTable[w->unk_3C & 0xFF] * (w->unk_4C >> 8);
     w->unk_28 += -gSineTable[(w->unk_3C & 0xFF) + 64] * (w->unk_4C >> 8);
-    w->unk_30 = w->unk_24;
-    w->unk_34 = w->unk_28 + w->unk_2C;
+    w->x = w->unk_24;
+    w->y = w->unk_28 + w->unk_2C;
 }
 
 void func_0809D1B0(PremiumCardEffectWork* w) {
     s32 v;
     s32 d;
 
-    w->unk_44 = w->unk_24 - w->unk_30;
-    w->unk_48 = w->unk_28 - w->unk_34;
+    w->unk_44 = w->unk_24 - w->x;
+    w->unk_48 = w->unk_28 - w->y;
     w->unk_40 = NormalizeVector2D8(&w->unk_44, &w->unk_48);
     v = w->unk_4C;
     d = v >> 8;
-    w->unk_30 += w->unk_44 * d;
-    w->unk_34 += w->unk_48 * d;
+    w->x += w->unk_44 * d;
+    w->y += w->unk_48 * d;
 
     if (w->unk_40 > 0) {
         w->unk_4C = v - 2;
@@ -25111,7 +25111,7 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
 
     switch (w->unk_19) {
     case 1:
-        w->unk_00 = 48;
+        w->x = 48;
         w->unk_1E = gUnk_02039DD4->unk_0CC;
 #ifdef VERSION_EU
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
@@ -25130,7 +25130,7 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
         }
         break;
     case 2:
-        w->unk_00 = 162;
+        w->x = 162;
         w->unk_1E = gUnk_02039DD4->unk_0CE;
 #ifdef VERSION_EU
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
@@ -25330,21 +25330,21 @@ void HCEffectName_2(HcEffectNameWork* w) {
 
     if (w->unk_27 == 1) {
         pri = 0x410;
-        DrawSprite(w->unk_00, 0x90, 0, w->tiles2, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->tiles3, w->palette, 0, pri, 10);
-        DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, pri, 10);
+        DrawSprite(w->x, 0x90, 0, w->tiles2, w->palette, 0, pri, 10);
+        DrawSprite(w->x, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, pri, 10);
+        DrawSprite(w->x + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, pri, 10);
+        DrawSprite(w->x + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, pri, 10);
+        DrawSprite(w->x + 24, 0x8A, 0, w->tiles3, w->palette, 0, pri, 10);
+        DrawSprite(w->x + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, pri, 10);
     }
 #else
     if (w->unk_27 == 1) {
-        DrawSprite(w->unk_00, 0x90, 0, w->tiles2, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->tiles3, w->palette, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x, 0x90, 0, w->tiles2, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x + 24, 0x8A, 0, w->tiles3, w->palette, 0, 0x400, 10);
+        DrawSprite(w->x + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, 0x400, 10);
     }
 #endif
 }
@@ -27265,8 +27265,8 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
         w->unk_10[i] = (w->unk_64 << 8) + gUnk_09037FFC[i];
         w->unk_20[i] = (w->unk_68 << 8) + gUnk_0903800C[i];
         w->unk_8C[i] = gUnk_0903801C[i];
-        w->unk_34[i] = w->unk_30 * gSineTable[w->unk_8C[i] & 0xFF] + w->unk_10[i];
-        w->unk_44[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
+        w->x[i] = w->unk_30 * gSineTable[w->unk_8C[i] & 0xFF] + w->unk_10[i];
+        w->y[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
         w->unk_54[i] = 0;
     }
 
@@ -27276,8 +27276,8 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     TaskPoolInit(w->unk_98, 4);
 
     if (w->unk_0C != 0 && gUnk_02034AF8 == 0) {
-        args.unk_00 = w->unk_34[0];
-        args.unk_04 = w->unk_44[0];
+        args.unk_00 = w->x[0];
+        args.unk_04 = w->y[0];
         args.unk_0C = w->unk_0C;
         args.unk_10 = w->tiles;
         args.unk_14 = w->palette;
@@ -27310,8 +27310,8 @@ u8 LVUP_EFFECT_1(LevelUpEffectWork* w, void* a) {
     }
 
     for (i = 0; i < 4; i++) {
-        w->unk_34[i] = gSineTable[w->unk_8C[i] & 0xFF] * w->unk_30 + w->unk_10[i];
-        w->unk_44[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
+        w->x[i] = gSineTable[w->unk_8C[i] & 0xFF] * w->unk_30 + w->unk_10[i];
+        w->y[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
     }
 
     w->unk_95++;
@@ -27354,8 +27354,8 @@ u8 func_080A18F4(LevelUpEffectWork* w) {
 
     for (i = 0; i < 4; i++) {
         w->unk_6C[i] += 25;
-        w->unk_44[i] += w->unk_6C[i];
-        w->unk_34[i] += gSineTable[(u8)w->unk_8C[i]] * (w->unk_7C[i] >> 8);
+        w->y[i] += w->unk_6C[i];
+        w->x[i] += gSineTable[(u8)w->unk_8C[i]] * (w->unk_7C[i] >> 8);
     }
 
     w->unk_95++;
@@ -27366,7 +27366,7 @@ u8 func_080A18F4(LevelUpEffectWork* w) {
 
     TaskPoolUpdate(&w->unk_98);
 
-    if (w->unk_44[0] > 0xA000) {
+    if (w->y[0] > 0xA000) {
         return 0;
     }
 
@@ -27379,9 +27379,9 @@ void LVUP_EFFECT_2(LevelUpEffectWork* w) {
     for (i = 0; i < 4; i++) {
         if (w->unk_94 <= 5) {
 #ifdef VERSION_EU
-            DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnkEu_09F72E10[gLanguage][w->unk_94], w->tiles, w->palette, 0, 0, 20);
+            DrawSprite(w->x[i] >> 8, w->y[i] >> 8, gUnkEu_09F72E10[gLanguage][w->unk_94], w->tiles, w->palette, 0, 0, 20);
 #else
-            DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnk_09EE7938[w->unk_94], w->tiles, w->palette, 0, 0, 20);
+            DrawSprite(w->x[i] >> 8, w->y[i] >> 8, gUnk_09EE7938[w->unk_94], w->tiles, w->palette, 0, 0, 20);
 #endif
         }
     }
@@ -27400,9 +27400,9 @@ void LVUP_EFFECT_3(u8* work) {
 }
 
 void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
-    w->unk_34[0] = a->unk_00;
+    w->x[0] = a->unk_00;
     w->unk_64 = a->unk_00;
-    w->unk_44[0] = a->unk_04;
+    w->y[0] = a->unk_04;
     w->unk_68 = a->unk_04;
     w->unk_0C = a->unk_0C;
 #ifdef VERSION_EU
@@ -27923,7 +27923,7 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
     w->unk_2A0 = 0xC800;
     w->unk_2A4 = 0xC800;
     w->unk_2A8 = 0xC800;
-    w->unk_290 = 0xCE00;
+    w->y = 0xCE00;
     w->unk_2AC = 14;
     w->unk_2B1 = 0;
     w->unk_294 = ((144 - (GetTextSlotsWidth(w->unk_000, w->unk_2AD)
@@ -27950,7 +27950,7 @@ u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
     s8* counter = &w->unk_2AC;
 
     if (*counter > 0) {
-        ApproachValue(&w->unk_290, 0x6C00, *counter);
+        ApproachValue(&w->y, 0x6C00, *counter);
         ApproachValue(&w->unk_2A0, 0x6600, *counter);
         ApproachValue(&w->unk_2A4, 0x6600, *counter);
         ApproachValue(&w->unk_2A8, 0x6600, *counter);
@@ -28005,9 +28005,9 @@ void func_080A2678(UnkStruct_080A2678* w) {
     w->unk_298 = w->unk_29C + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
 #endif
 #ifdef VERSION_EU
-    DrawSprite(72, w->unk_290 >> 8, 0, w->tiles, w->palette, 0, 0, 41);
+    DrawSprite(72, w->y >> 8, 0, w->tiles, w->palette, 0, 0, 41);
 #else
-    DrawSprite(72, w->unk_290 >> 8, gUnk_09EF126C[0], w->tiles, w->palette, 0, 0, 41);
+    DrawSprite(72, w->y >> 8, gUnk_09EF126C[0], w->tiles, w->palette, 0, 0, 41);
 #endif
     DrawTextSlots(w->unk_294 >> 8, w->unk_2A0 >> 8, w->unk_000, w->unk_280, 40, w->unk_2AD);
     DrawTextSlots(w->unk_298 >> 8, w->unk_2A4 >> 8, w->unk_0A0, w->unk_280, 40, w->unk_2AE);
@@ -28401,7 +28401,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     w->tiles2 = 0;
     w->palette4 = 0;
     w->unk_0C0 = 0;
-    w->unk_118 = gUnk_09033C98[w->unk_114->unk_04];
+    w->x = gUnk_09033C98[w->unk_114->unk_04];
     w->unk_11C = 0;
     w->unk_120 = 0;
     w->unk_124 = 0;
@@ -28460,9 +28460,9 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
     MsgFaceAnim* tbl;
 
-    ApproachValue(&w->unk_118, gUnk_09033CA0[w->unk_114->unk_04], w->unk_140);
+    ApproachValue(&w->x, gUnk_09033CA0[w->unk_114->unk_04], w->unk_140);
     ApproachValue(&w->unk_11C, gUnk_09033CE0[w->unk_114->unk_04], w->unk_140);
-    ScrollBgMapTo(w->unk_10C, w->unk_118, 0);
+    ScrollBgMapTo(w->unk_10C, w->x, 0);
     w->gfx = AnimUpdate(w->anim);
 
     if (w->unk_140 != 0) {
@@ -28491,7 +28491,7 @@ u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
     LoadBgTiles(w->unk_10C, gUnk_094233B8, 1280);
     LoadBgPalette(w->unk_10C, gUnk_096148D8, 32);
     SetBgMapBlocks(w->unk_10C, gUnk_09EE4724[((NumberPlusArgs*)w->unk_114)->unk_04], 2, 1);
-    ScrollBgMapTo(w->unk_10C, *(u16*)&w->unk_118, 0);
+    ScrollBgMapTo(w->unk_10C, *(u16*)&w->x, 0);
     SetTaskUpdate(a, (void*)func_080A36B0);
     return 1;
 }
@@ -28739,9 +28739,9 @@ u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
     if (w->unk_13E > 15) {
         w->unk_149 = 0;
         w->unk_148 = 0;
-        ApproachValue(&w->unk_118, gUnk_09033C98[w->unk_114->unk_04], w->unk_140);
+        ApproachValue(&w->x, gUnk_09033C98[w->unk_114->unk_04], w->unk_140);
         ApproachValue(&w->unk_11C, gUnk_09033CD0[w->unk_114->unk_04], w->unk_140);
-        ScrollBgMapTo(w->unk_10C, w->unk_118, 0);
+        ScrollBgMapTo(w->unk_10C, w->x, 0);
 
         if (w->unk_140 == 0) {
             return 0;
@@ -29141,7 +29141,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
             AnimStart(w->anim3, 2, 1);
             w->gfx = AnimGetGfx(w->anim3);
             w->unk_13D = 1;
-            w->unk_118 = 0x5800;
+            w->x = 0x5800;
             w->unk_11C = gUnk_09033D28[w->unk_13D] - 0x500;
 #ifdef VERSION_EU
             ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
@@ -29247,7 +29247,7 @@ void func_080A4A50(UnkStruct_080A3F5C* w) {
     }
 
     if (w->tiles4 != 0) {
-        DrawSprite(w->unk_118 >> 8, w->unk_11C >> 8, w->gfx,
+        DrawSprite(w->x >> 8, w->unk_11C >> 8, w->gfx,
                    w->tiles4, w->palette2, 0, 1, 5);
     }
 
@@ -29537,7 +29537,7 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     AnimStart(w->anim3, 2, 1);
     w->gfx = AnimGetGfx(w->anim3);
     w->unk_13D = 1;
-    w->unk_118 = 0x8500;
+    w->x = 0x8500;
     w->unk_11C = 0x5000;
 #ifdef VERSION_EU
     ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
@@ -29620,7 +29620,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     }
 
     if (((u8*)&w->unk_13E)[0] != 0) {
-        ApproachValue(&w->unk_118, tbl[w->unk_13D], ((u8*)&w->unk_13E)[0]);
+        ApproachValue(&w->x, tbl[w->unk_13D], ((u8*)&w->unk_13E)[0]);
         ((u8*)&w->unk_13E)[0]--;
     }
 
@@ -29643,7 +29643,7 @@ void func_080A52BC(UnkStruct_080A3F5C* w) {
     }
 
     if (w->tiles4 != 0) {
-        DrawSprite(w->unk_118 >> 8, w->unk_11C >> 8, w->gfx, w->tiles4, w->palette2, 0, 1, 10);
+        DrawSprite(w->x >> 8, w->unk_11C >> 8, w->gfx, w->tiles4, w->palette2, 0, 1, 10);
     }
 
     DrawTextSlots(89, 86, w->unk_020, w->unk_0C0, 0, ((u8*)&w->unk_13E)[1]);
@@ -30364,7 +30364,7 @@ void func_080A69A0(u8* work) {
         node->unk_24--;
 
         if (node->unk_24 < 0) {
-            node->unk_44 = 0x20000;
+            node->y = 0x20000;
             func_08090170(node);
         }
 
@@ -30408,7 +30408,7 @@ u8 func_080A6A38(u8* work) {
         node->unk_24++;
 
         if (node->unk_24 > 3) {
-            node->unk_44 = 0x20000;
+            node->y = 0x20000;
             func_08090170(node);
         }
 
@@ -31011,8 +31011,8 @@ u8 func_080A7ABC(UnkStruct_0808C940* w, void* a) {
     case 10:
         func_080A9F08(GetActiveDeckIndex());
         func_080AA1F8();
-        w->unk_69C = 0x4800;
-        w->unk_6A0 = 0x2800;
+        w->x = 0x4800;
+        w->y = 0x2800;
         v = w->unk_700;
         w->unk_6D2 = v;
         ApproachValue(&w->unk_694, gUnk_09041F04[w->unk_6D0] << 8, w->unk_6F6);
@@ -31207,8 +31207,8 @@ u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
             func_080AA450((u8*)w);
             w->unk_6F0 = 9;
             SetTaskUpdate(a, func_080A86F4);
-            w->unk_69C = 0xA000;
-            w->unk_6A0 = 0x2800;
+            w->x = 0xA000;
+            w->y = 0x2800;
             w->unk_6EC = 4;
             return 1;
         }
@@ -31223,8 +31223,8 @@ u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
             func_080AA450((u8*)w);
             w->unk_6F0 = 9;
             SetTaskUpdate(a, func_080A86F4);
-            w->unk_69C = 0xA000;
-            w->unk_6A0 = 0x2800;
+            w->x = 0xA000;
+            w->y = 0x2800;
             w->unk_6EC = 4;
             return 1;
         }
@@ -31468,8 +31468,8 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
         func_080AACC8(w);
         w->unk_6D0 = w->unk_701;
         w->unk_6F6 = 4;
-        w->unk_69C = 0xA000;
-        w->unk_6A0 = 0x2800;
+        w->x = 0xA000;
+        w->y = 0x2800;
         w->unk_6EC = 4;
         m4aSongNumStart(121);
         w->unk_6F0 = 10;
@@ -31508,31 +31508,31 @@ void func_080A8C58(UnkStruct_0808C940* w, u8 b) {
     if (b == 0) {
         switch (w->unk_700) {
         case 0:
-            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_0C, 20, w->unk_702);
-            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_4BC, 20, w->unk_703);
-            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_4BC, 20, w->unk_704);
+            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->palette, 20, w->unk_702);
+            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->palette4, 20, w->unk_703);
+            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->palette4, 20, w->unk_704);
             break;
         case 1:
-            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_4BC, 20, w->unk_702);
-            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_0C, 20, w->unk_703);
-            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_4BC, 20, w->unk_704);
+            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->palette4, 20, w->unk_702);
+            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->palette, 20, w->unk_703);
+            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->palette4, 20, w->unk_704);
             break;
         case 2:
-            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_4BC, 20, w->unk_702);
-            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_4BC, 20, w->unk_703);
-            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_0C, 20, w->unk_704);
+            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->palette4, 20, w->unk_702);
+            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->palette4, 20, w->unk_703);
+            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->palette, 20, w->unk_704);
             break;
         }
     } else {
         switch (w->unk_700) {
         case 0:
-            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_0C, 20, w->unk_702);
+            DrawTextSlots(w->unk_6D4, w->unk_6DA, w->unk_28, w->palette, 20, w->unk_702);
             break;
         case 1:
-            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_0C, 20, w->unk_703);
+            DrawTextSlots(w->unk_6D6, w->unk_6DC, w->unk_68, w->palette, 20, w->unk_703);
             break;
         case 2:
-            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_0C, 20, w->unk_704);
+            DrawTextSlots(w->unk_6D8, w->unk_6DE, w->unk_A8, w->palette, 20, w->unk_704);
             break;
         }
     }
@@ -31544,15 +31544,15 @@ void func_080A8EE4(u8* work) {
 }
 void deckexchange_2(UnkStruct_0808C940* w) {
     if (w->unk_70D == 0) {
-        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 30, w->gfx, w->unk_00, w->unk_0C, 0, w->unk_6CE, 3);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_6CE, 3);
     }
-    DrawSprite(w->unk_69C >> 8, w->unk_6A0 >> 8, gUnk_09EEB000, w->unk_08, w->unk_0C, 0, 0x800, 10);
+    DrawSprite(w->x >> 8, w->y >> 8, gUnk_09EEB000, w->tiles3, w->palette, 0, 0x800, 10);
     switch (w->unk_6F0) {
     case 0:
         if (w->unk_714 != 0) {
-            DrawSprite((w->unk_6B8 >> 8) - 16, (w->unk_6BC >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+            DrawSprite((w->unk_6B8 >> 8) - 16, (w->unk_6BC >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         }
-        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
     case 1:
     case 2:
     case 3:
@@ -31560,72 +31560,72 @@ void deckexchange_2(UnkStruct_0808C940* w) {
         break;
     case 4:
         func_080A8C58(w, 1);
-        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
-        if (w->unk_10 != 0) {
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        if (w->tiles4 != 0) {
             if (w->unk_70D == 0) {
-                DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+                DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
             }
-            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+            DrawSprite(24, 82, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 7:
         func_080A8C58(w, 1);
-        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
-        if (w->unk_10 != 0) {
-            DrawSprite(164, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(164, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            if (w->unk_18 != 0) {
-                DrawSprite(164, 82, w->unk_4DC, w->unk_18, w->unk_20, 0, 0, 19);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        if (w->tiles4 != 0) {
+            DrawSprite(164, 82, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(164, 82, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            if (w->tiles6 != 0) {
+                DrawSprite(164, 82, w->unk_4DC, w->tiles6, w->palette2, 0, 0, 19);
             }
-            DrawTextSlots(100, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 5:
-        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         func_080A8C58(w, 1);
-        if (w->unk_10 != 0) {
-            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        if (w->tiles4 != 0) {
+            DrawSprite(24, 82, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 6:
         func_080A8C58(w, 1);
-        if (w->unk_10 != 0) {
-            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        if (w->tiles4 != 0) {
+            DrawSprite(24, 82, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 8:
         func_080A8C58(w, 1);
-        if (w->unk_10 != 0) {
-            DrawSprite(164, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(164, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            if (w->unk_18 != 0) {
-                DrawSprite(164, 82, w->unk_4DC, w->unk_18, w->unk_20, 0, 0, 19);
+        if (w->tiles4 != 0) {
+            DrawSprite(164, 82, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(164, 82, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            if (w->tiles6 != 0) {
+                DrawSprite(164, 82, w->unk_4DC, w->tiles6, w->palette2, 0, 0, 19);
             }
-            DrawTextSlots(100, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 9:
-        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         func_080A8EE4((u8*)w);
-        if (w->unk_10 != 0) {
-            DrawSprite(24, 66, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(24, 66, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            DrawTextSlots(10, 100, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        if (w->tiles4 != 0) {
+            DrawSprite(24, 66, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(24, 66, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     case 11:
-        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->gfx2, w->unk_04, w->unk_4BC, 0, 0, 8);
+        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         func_080A8EE4((u8*)w);
-        if (w->unk_10 != 0) {
-            DrawSprite(24, 66, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
-            DrawSprite(24, 66, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
-            DrawTextSlots(10, 100, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        if (w->tiles4 != 0) {
+            DrawSprite(24, 66, w->unk_4D4, w->tiles4, w->palette2, 0, 0, 20);
+            DrawSprite(24, 66, w->unk_4D8, w->tiles5, w->palette3, 0, 0, 21);
+            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->unk_705);
         }
         break;
     }
@@ -31714,8 +31714,8 @@ void func_080A968C(UnkStruct_0808C940* w, u8 kind) {
             }
         }
     }
-    w->unk_69C = 0x4800;
-    w->unk_6A0 = 0x2800;
+    w->x = 0x4800;
+    w->y = 0x2800;
     w->unk_6EC = 4;
     func_080AAEEC(w, y * 3 + x);
 }
@@ -31806,7 +31806,7 @@ void func_080A99A0(u8* work) {
         node->unk_24--;
 
         if (node->unk_24 < 0) {
-            node->unk_44 = 0x20000;
+            node->y = 0x20000;
             func_08090170(node);
         }
 
@@ -31850,7 +31850,7 @@ u8 func_080A9A38(u8* work) {
         node->unk_24++;
 
         if (node->unk_24 > 3) {
-            node->unk_44 = 0x20000;
+            node->y = 0x20000;
             func_08090170(node);
         }
 

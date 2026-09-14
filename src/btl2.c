@@ -2079,7 +2079,7 @@ s32 func_08031F1C(FldWork* work) {
     FldActor* act;
     s32 v;
 
-    act = &gUnk_02039BA0->unk_18;
+    act = &gUnk_02039BA0->actor;
 
     if (work->unk_66 & 1) {
         if (act->unk_00.unk_0C < work->unk_78) {
@@ -2119,7 +2119,7 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     u16 flags = b;
     s32 idx;
 
-    switch (gUnk_02039BA0->unk_18.angle) {
+    switch (gUnk_02039BA0->actor.angle) {
     case 45:
         idx = 4;
         work->unk_A4 |= 2;

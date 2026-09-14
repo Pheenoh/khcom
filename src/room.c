@@ -12,8 +12,8 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->unk_30 = arg;
     work->unk_0C = 0x5C00;
     work->unk_10 = 0x8A00;
-    work->unk_14 = 0x7800;
-    work->unk_18 = 0x8A00;
+    work->x = 0x7800;
+    work->y = 0x8A00;
     work->unk_20 = 0x400;
     work->unk_24 = 0x19;
     work->unk_2A = 0;
@@ -82,7 +82,7 @@ void task_room_name_2(RoomNameWork* work) {
 
     if (work->unk_28 != 0) {
         affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
-        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
+        DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
         DrawTextSlots(work->unk_0C >> 8, work->unk_10 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);
     }
 }

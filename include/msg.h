@@ -278,8 +278,8 @@ typedef struct MsgWaitYesNoWork {
     u8 unk_F4;
     u8 unk_F5;
     u8 unk_F6[2];
-    s32 unk_F8;
-    s32 unk_FC;
+    s32 x;
+    s32 y;
     u8 unk_100;
     u8 unk_101;
     u8 unk_102;

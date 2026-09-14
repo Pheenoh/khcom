@@ -398,8 +398,8 @@ void func_080BA11C(TmFootWork* work) {
     work->unk_000 = 0;
     SetObjTileSource(work->tiles2, gUnk_09654C04);
     SetObjTileSource(work->tiles3, gUnk_09654C04);
-    work->unk_12C = gUnk_09EF39DC[2];
-    work->unk_244 = gUnk_09EF39DC[2];
+    work->gfx = gUnk_09EF39DC[2];
+    work->gfx2 = gUnk_09EF39DC[2];
 
     if (work->tm->unk_28 & 0x20) {
         work->body.unk_004 = work->tm->unk_08 + 0x100;
@@ -432,8 +432,8 @@ void func_080BA11C(TmFootWork* work) {
 void func_080BA2B0(TmFootWork* work) {
     SetObjTileSource(work->tiles2, gUnk_09654C04);
     SetObjTileSource(work->tiles3, gUnk_09654C04);
-    work->unk_12C = gUnk_09EF39DC[0];
-    work->unk_244 = gUnk_09EF39DC[0];
+    work->gfx = gUnk_09EF39DC[0];
+    work->gfx2 = gUnk_09EF39DC[0];
 
     if (work->tm->unk_28 & 0x20) {
         work->body.unk_004 = work->tm->unk_08 + 0x100;
@@ -465,8 +465,8 @@ void func_080BA2B0(TmFootWork* work) {
 }
 
 void func_080BA43C(TmFootWork* work, s16 a) {
-    work->unk_12C = gUnk_09EF39DC[gUnk_09EF2244[a].unk_06];
-    work->unk_244 = gUnk_09EF39DC[gUnk_09EF2244[a].unk_0E];
+    work->gfx = gUnk_09EF39DC[gUnk_09EF2244[a].unk_06];
+    work->gfx2 = gUnk_09EF39DC[gUnk_09EF2244[a].unk_0E];
     work->body.unk_00C += gUnk_09EF2244[a].unk_02 << 8;
     work->body2.unk_00C += gUnk_09EF2244[a].unk_0A << 8;
 }
@@ -476,8 +476,8 @@ void func_080BA49C(TmFootWork* work) {
     work->unk_000 = 0;
     SetObjTileSource(work->tiles2, gUnk_09658C04);
     SetObjTileSource(work->tiles3, gUnk_09658C04);
-    work->unk_12C = gUnk_09EF3A1C[6];
-    work->unk_244 = gUnk_09EF3A1C[1];
+    work->gfx = gUnk_09EF3A1C[6];
+    work->gfx2 = gUnk_09EF3A1C[1];
 
     if (work->tm->unk_28 & 0x20) {
         work->body.unk_004 = work->tm->unk_14 + 0x500;
@@ -512,8 +512,8 @@ void func_080BA62C(TmFootWork* work) {
         return;
     }
 
-    work->unk_12C = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_06];
-    work->unk_244 = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_0E];
+    work->gfx = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_06];
+    work->gfx2 = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_0E];
 
     if (work->tm->unk_28 & 0x20) {
         work->body3.unk_004 = work->tm->unk_14 + ((gUnk_09EF2464[work->tm->unk_34].unk_10 + 6) << 8);
@@ -557,8 +557,8 @@ void func_080BA62C(TmFootWork* work) {
 }
 
 void func_080BA8C8(TmFootWork* work, s16 a) {
-    work->unk_12C = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_06];
-    work->unk_244 = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_0E];
+    work->gfx = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_06];
+    work->gfx2 = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_0E];
     work->body.unk_00C += gUnk_09EF25A4[a].unk_02 << 8;
     work->body2.unk_00C += gUnk_09EF25A4[a].unk_0A << 8;
 }
@@ -571,10 +571,10 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     work->tiles3 = AllocObjTiles(0x440, gUnk_09654C04);
     work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
-    work->unk_12C = gUnk_09EF39DC[2];
-    work->unk_244 = gUnk_09EF39DC[2];
-    work->unk_35C = gUnk_09EF39BC;
-    work->unk_474 = gUnk_09EF39C4;
+    work->gfx = gUnk_09EF39DC[2];
+    work->gfx2 = gUnk_09EF39DC[2];
+    work->gfx3 = gUnk_09EF39BC;
+    work->gfx4 = gUnk_09EF39C4;
     work->tm = arg;
     work->tm->unk_42 += ((u16*)work->tiles2)[4] + ((u16*)work->tiles3)[4];
     work->unk_003 = 0;
@@ -630,8 +630,8 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
 
             work->unk_003 = gUnk_09EF21B0[(s16)work->tm->unk_34];
             work->unk_004 = gUnk_09EF21B0[((s16)work->tm->unk_34 + 4) & 7];
-            work->unk_12C = gUnk_09EF39DC[(s8)work->unk_003];
-            work->unk_244 = gUnk_09EF39DC[(s8)work->unk_004];
+            work->gfx = gUnk_09EF39DC[(s8)work->unk_003];
+            work->gfx2 = gUnk_09EF39DC[(s8)work->unk_004];
             work->body3.unk_00C =
                 work->tm->unk_1C + ((gUnk_09EF21B8[(s8)work->unk_003] + 40) << 8);
             work->body4.unk_00C =
@@ -720,8 +720,8 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         if (work->tm->unk_30 == 1) {
             work->unk_002 = 0;
             work->unk_000 = 0;
-            work->unk_12C = gUnk_09EF39DC[1];
-            work->unk_244 = gUnk_09EF39DC[1];
+            work->gfx = gUnk_09EF39DC[1];
+            work->gfx2 = gUnk_09EF39DC[1];
             work->body.unk_00C = work->tm->unk_10 +
                             ((gUnk_09EF21C4[(s16)work->tm->unk_34].unk_02 - 4) << 8);
             work->body2.unk_00C = work->tm->unk_10 +
@@ -732,16 +732,16 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         }
 
         if ((s16)work->tm->unk_34 <= 2) {
-            work->unk_12C = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_06];
-            work->unk_244 = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0E];
+            work->gfx = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_06];
+            work->gfx2 = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0E];
             work->body.unk_00C += gUnk_09EF21C4[(s16)work->tm->unk_34].unk_02 << 8;
             work->body2.unk_00C += gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0A << 8;
         }
 
         if (work->tm->unk_32 <= 2) {
-            work->unk_12C =
+            work->gfx =
                 gUnk_09EF39DC[(table = gUnk_09EF21C4, e = &table[work->tm->unk_32])->unk_06 + 1];
-            work->unk_244 = gUnk_09EF39DC[e->unk_0E + 1];
+            work->gfx2 = gUnk_09EF39DC[e->unk_0E + 1];
             work->body.unk_00C -= e->unk_02 << 8;
             work->body2.unk_00C -= e->unk_0A << 8;
         }
@@ -801,13 +801,13 @@ void task_bos_tm_foot_2(TmFootWork* work) {
     s2 = &work->body3;
     s3 = &work->body4;
     WorldToScreen(&x, &y, s0->unk_004, s0->unk_008, s0->unk_00C);
-    DrawSprite(x, y, work->unk_12C, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->unk_008 >> 8) * 4));
+    DrawSprite(x, y, work->gfx, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->unk_008 >> 8) * 4));
     WorldToScreen(&x, &y, s1->unk_004, s1->unk_008, s1->unk_00C);
-    DrawSprite(x, y, work->unk_244, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->unk_008 >> 8) * 4));
+    DrawSprite(x, y, work->gfx2, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->unk_008 >> 8) * 4));
     WorldToScreen(&x, &y, s2->unk_004, s2->unk_008, s2->unk_00C);
-    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->unk_008 >> 8) * 4));
+    DrawSprite(x, y, work->gfx3, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->unk_008 >> 8) * 4));
     WorldToScreen(&x, &y, s3->unk_004, s3->unk_008, s3->unk_00C);
-    DrawSprite(x, y, work->unk_474, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->unk_008 >> 8) * 4));
+    DrawSprite(x, y, work->gfx4, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->unk_008 >> 8) * 4));
 }
 
 void task_bos_tm_foot_3(TmFootWork* work) {

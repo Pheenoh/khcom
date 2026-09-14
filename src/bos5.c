@@ -1356,7 +1356,7 @@ s32 task_bos_md_map_1(MdMapWork* work) {
 void func_080FCC14(MdFireWork* work) {
     MdSub* e;
 
-    e = &work->unk_038;
+    e = &work->sub;
 
     switch (func_0801ADAC(e)) {
     case 1:
@@ -1385,7 +1385,7 @@ u8 func_080FCCB4(MdFireWork* work) {
     u8 a;
 
     result = 1;
-    e = &work->unk_038;
+    e = &work->sub;
 
     if ((work->target->unk_00 & 2) && work->unk_000 != 4) {
         func_0801C2DC(e, 1);
@@ -1460,7 +1460,7 @@ u8 func_080FCCB4(MdFireWork* work) {
 
             if (work->unk_008 > 0) {
                 work->unk_008--;
-            } else if (ColliderIsTouchingType(work->unk_038.unk_040, 1) != 0) {
+            } else if (ColliderIsTouchingType(work->sub.unk_040, 1) != 0) {
                 m4aSongNumStart(0x2CA);
                 gBtlWork->actor->unk_034 |= 0x20000000;
                 work->unk_008 = 60;
@@ -1538,14 +1538,14 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->unk_160 = arg->unk_06;
     work->target = (MdFireTarget*)arg->unk_08;
     func_080FCF78(work);
-    func_0801B37C(&work->unk_038, gUnk_09992F28, work->x, work->y, work->z);
-    ColliderInit(work->unk_038.unk_040, 3, 16, 16);
-    ColliderSetPosition(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
-                  work->unk_038.unk_00C);
-    work->unk_038.unk_034 |= 0x1000;
-    work->unk_038.unk_02C = 20;
-    work->unk_038.unk_02E = 20;
-    func_0801C2DC(&work->unk_038, 1);
+    func_0801B37C(&work->sub, gUnk_09992F28, work->x, work->y, work->z);
+    ColliderInit(work->sub.unk_040, 3, 16, 16);
+    ColliderSetPosition(work->sub.unk_040, work->sub.unk_004, work->sub.unk_008,
+                  work->sub.unk_00C);
+    work->sub.unk_034 |= 0x1000;
+    work->sub.unk_02C = 20;
+    work->sub.unk_02E = 20;
+    func_0801C2DC(&work->sub, 1);
     work->palette = (u32)LoadObjPalette(gUnk_09A3C99C, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_099E367C, 0x800);
@@ -1579,11 +1579,11 @@ u8 task_bos_md_fire_1(MdFireWork* work) {
         work->unk_006--;
     }
 
-    work->unk_038.unk_004 = work->x;
-    work->unk_038.unk_008 = work->y;
-    work->unk_038.unk_00C = work->z;
-    ColliderSetPosition(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
-                  work->unk_038.unk_00C);
+    work->sub.unk_004 = work->x;
+    work->sub.unk_008 = work->y;
+    work->sub.unk_00C = work->z;
+    ColliderSetPosition(work->sub.unk_040, work->sub.unk_004, work->sub.unk_008,
+                  work->sub.unk_00C);
     return result;
 }
 
@@ -1618,8 +1618,8 @@ void task_bos_md_fire_2(MdFireWork* work) {
 }
 
 void task_bos_md_fire_3(MdFireWork* work) {
-    ColliderUnregister(work->unk_038.unk_040);
-    func_0801B7D8(&work->unk_038);
+    ColliderUnregister(work->sub.unk_040);
+    func_0801B7D8(&work->sub);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
     ReleaseObjTiles((void*)work->tiles);

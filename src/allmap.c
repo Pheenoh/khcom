@@ -31,10 +31,10 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
 
     if (work->unk_09C == 0) {
         work->tiles = LoadObjTiles(gUnk_0976B340, 0x2400);
-        work->unk_008 = 0;
+        work->gfx2 = 0;
     } else {
         work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6424, 17), gUnk_0976B340);
-        work->unk_008 = gUnk_09EF6424[work->unk_09A];
+        work->gfx2 = gUnk_09EF6424[work->unk_09A];
     }
 
     if (work->unk_09C == 0 && work->unk_098 == gUnk_0203C590[6]) {
@@ -83,8 +83,8 @@ void task_allmap_room_2(AllmapRoomWork* work) {
         return;
     }
 
-    if (work->unk_008 != 0) {
-        DrawSprite(x, y, work->unk_008, work->tiles, work->palette, 0, g, h);
+    if (work->gfx2 != 0) {
+        DrawSprite(x, y, work->gfx2, work->tiles, work->palette, 0, g, h);
     }
 
     for (i = 0; i < 4; i++) {
@@ -344,9 +344,9 @@ void task_allmap_bar_0(AllmapBarWork* work) {
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_0C = 16;
     work->unk_28 = 0;
-    work->unk_10 = -0x800;
-    work->unk_18 = 0xA000;
-    work->unk_20 = -0x8000;
+    work->y = -0x800;
+    work->y2 = 0xA000;
+    work->x = -0x8000;
     work->unk_14 = 0;
     work->unk_1C = 0x9800;
     work->unk_24 = 0;
@@ -364,8 +364,8 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
 
     switch (work->unk_28) {
     case 0:
-        ApproachValue(&work->unk_10, work->unk_14, work->unk_0C);
-        ApproachValue(&work->unk_18, work->unk_1C, work->unk_0C);
+        ApproachValue(&work->y, work->unk_14, work->unk_0C);
+        ApproachValue(&work->y2, work->unk_1C, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
@@ -373,7 +373,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
         break;
     case 1:
-        ApproachValue(&work->unk_20, work->unk_24, work->unk_0C);
+        ApproachValue(&work->x, work->unk_24, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
 #ifdef VERSION_EU
@@ -386,7 +386,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
         break;
     case 3:
-        ApproachValue(&work->unk_20, work->unk_24, work->unk_0C);
+        ApproachValue(&work->x, work->unk_24, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
@@ -401,8 +401,8 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             func_080D3FD4(work);
             work->unk_2D = 1;
         }
-        ApproachValue(&work->unk_10, work->unk_14, work->unk_0C);
-        ApproachValue(&work->unk_18, work->unk_1C, work->unk_0C);
+        ApproachValue(&work->y, work->unk_14, work->unk_0C);
+        ApproachValue(&work->y2, work->unk_1C, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             gUnk_0203C4E0 = 0;
@@ -444,13 +444,13 @@ void task_allmap_bar_2(AllmapBarWork* work) {
         return;
     }
 #ifdef VERSION_EU
-    DrawSprite(work->unk_20 >> 8, 0, gUnkEu_09F80124[gLanguage], work->tiles, work->palette, 0,
+    DrawSprite(work->x >> 8, 0, gUnkEu_09F80124[gLanguage], work->tiles, work->palette, 0,
         0xC00, 1000);
 #else
-    DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->tiles, work->palette, 0, 0xC00, 1000);
+    DrawSprite(work->x >> 8, 0, gUnk_0976D880, work->tiles, work->palette, 0, 0xC00, 1000);
 #endif
-    DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->tiles2, work->palette, 0, 0xC00, 1001);
-    DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->tiles2, work->palette, 0, 0xC00, 1002);
+    DrawSprite(128, work->y >> 8, gUnk_0976DB68, work->tiles2, work->palette, 0, 0xC00, 1001);
+    DrawSprite(128, work->y2 >> 8, gUnk_0976DB9C, work->tiles2, work->palette, 0, 0xC00, 1002);
 }
 
 void task_allmap_bar_3(AllmapBarWork* work) {
@@ -512,10 +512,10 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
             work->unk_01C[i].gfx2 = gUnk_09EE97F4[0];
             FadeSetPaletteExcluded(work->unk_01C[i].palette->unk_06 + 16, 1);
             FadeSetPaletteExcluded(work->unk_01C[i].palette2->unk_06 + 16, 1);
-            work->unk_008[i] = gUnk_09EF64E8[i];
+            work->gfx2[i] = gUnk_09EF64E8[i];
             work->unk_114++;
         } else {
-            work->unk_008[i] = 0;
+            work->gfx2[i] = 0;
         }
     }
 
@@ -612,8 +612,8 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
         func_080D42D4(work);
     }
     work->unk_100 = 8;
-    work->unk_104 = work->unk_0FC << 8;
-    work->unk_108 = work->unk_0FE << 8;
+    work->x = work->unk_0FC << 8;
+    work->y = work->unk_0FE << 8;
     work->unk_116 = 0;
     FadeToAmount(0, 14, 8);
 }
@@ -629,8 +629,8 @@ s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
     }
 
     if (work->unk_100 != 0) {
-        ApproachValue(&work->unk_104, work->unk_10C, work->unk_100);
-        ApproachValue(&work->unk_108, work->unk_110, work->unk_100);
+        ApproachValue(&work->x, work->unk_10C, work->unk_100);
+        ApproachValue(&work->y, work->unk_110, work->unk_100);
         work->unk_100--;
     }
 
@@ -648,15 +648,15 @@ void func_080D484C(AllmapDoorinfoWork* work) {
     }
 
     for (i = 0; i < 4; i++) {
-        if (work->unk_008[i] != 0 && work->unk_100 == 0) {
-            DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->tiles, work->palette, 0, 0, i + 51);
+        if (work->gfx2[i] != 0 && work->unk_100 == 0) {
+            DrawSprite(work->x >> 8, work->y >> 8, work->gfx2[i], work->tiles, work->palette, 0, 0, i + 51);
             gUnk_02034E84 = gUnk_096FDC10[i][0];
             gUnk_02034E88 = gUnk_096FDC10[i][1];
-            DrawSprite(gUnk_02034E84 + (work->unk_104 >> 8), gUnk_02034E88 + (work->unk_108 >> 8), work->unk_01C[i].gfx, work->unk_01C[i].tiles, work->unk_01C[i].palette, 0, 0, i + 40);
-            DrawSprite((work->unk_104 >> 8) + gUnk_02034E84, (work->unk_108 >> 8) + gUnk_02034E88, work->unk_01C[i].gfx2, work->unk_01C[i].tiles2, work->unk_01C[i].palette2, 0, 0, i + 30);
+            DrawSprite(gUnk_02034E84 + (work->x >> 8), gUnk_02034E88 + (work->y >> 8), work->unk_01C[i].gfx, work->unk_01C[i].tiles, work->unk_01C[i].palette, 0, 0, i + 40);
+            DrawSprite((work->x >> 8) + gUnk_02034E84, (work->y >> 8) + gUnk_02034E88, work->unk_01C[i].gfx2, work->unk_01C[i].tiles2, work->unk_01C[i].palette2, 0, 0, i + 30);
         }
     }
-    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
+    DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
 }
 
 void func_080D49EC(AllmapDoorinfoWork* work) {
@@ -667,7 +667,7 @@ void func_080D49EC(AllmapDoorinfoWork* work) {
             func_08098670(&work->unk_01C[i], 0);
         }
     }
-    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
+    DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
 }
 
 void task_allmap_doorinfo_2(AllmapDoorinfoWork* work) {
@@ -695,7 +695,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
         ReleaseObjPalette(work->palette);
 
         for (i = 0; i < 4; i++) {
-            if (work->unk_008[i] != 0) {
+            if (work->gfx2[i] != 0) {
                 ReleaseObjTiles(work->unk_01C[i].tiles);
                 ReleaseObjPalette(work->unk_01C[i].palette);
                 ReleaseObjTiles(work->unk_01C[i].tiles2);
@@ -714,11 +714,11 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
 void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     gStockMesDispWork = work;
     work->cursor = arg;
-    work->unk_2C = arg->unk_30.unk_00 * 24 - gUnk_0203C540;
+    work->x = arg->unk_30.unk_00 * 24 - gUnk_0203C540;
     work->unk_2E = arg->unk_30.unk_02 * 24 - gUnk_0203C53C;
     work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
-    work->unk_08 = gUnk_0976DC9C;
+    work->gfx = gUnk_0976DC9C;
     work->unk_10 = 0;
     TaskPoolInit(&work->unk_14, 1);
     work->unk_28 = 0;
@@ -739,9 +739,9 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
     if (func_080D4D1C() != 0) {
         TaskPoolDraw(&work->unk_14);
     } else {
-        work->unk_2C = work->cursor->unk_30.unk_00 * 24 - gUnk_0203C540;
+        work->x = work->cursor->unk_30.unk_00 * 24 - gUnk_0203C540;
         work->unk_2E = work->cursor->unk_30.unk_02 * 24 - gUnk_0203C53C;
-        DrawSprite(work->unk_2C, work->unk_2E - work->unk_12 + 2, work->unk_08, work->tiles, work->palette, 0, 0, 48);
+        DrawSprite(work->x, work->unk_2E - work->unk_12 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
     }
 }
 

@@ -15,8 +15,8 @@ typedef struct ContinueWork {
     void* gfx2;
     AnimState anim;
     AnimState anim2;
-    s32 unk_50;
-    s32 unk_54;
+    s32 x;
+    s32 y;
     s32 unk_58;
     s32 unk_5C;
     s32 unk_60;

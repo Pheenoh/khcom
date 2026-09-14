@@ -77,11 +77,11 @@ typedef struct AllmapBarWork {
     void* palette;
     u16 unk_0C;
     u8 unk_0E[0x02];
-    s32 unk_10;
+    s32 y;
     s32 unk_14;
-    s32 unk_18;
+    s32 y2;
     s32 unk_1C;
-    s32 unk_20;
+    s32 x;
     s32 unk_24;
     u32 unk_28;
     u8 unk_2C;
@@ -152,7 +152,7 @@ typedef struct AllmapDoorinfoWork {
     AllmapCursorPos unk_000;
     u8 unk_004;
     u8 unk_005[0x03];
-    void* unk_008[4];
+    void* gfx2[4];
     void* tiles;
     AllmapDoorEntry unk_01C[4];
     void* palette;
@@ -163,8 +163,8 @@ typedef struct AllmapDoorinfoWork {
     s16 unk_0FE;
     u16 unk_100;
     u8 unk_102[0x02];
-    s32 unk_104;
-    s32 unk_108;
+    s32 x;
+    s32 y;
     s32 unk_10C;
     s32 unk_110;
     u16 unk_114;
@@ -175,13 +175,13 @@ typedef struct AllmapDoorinfoWork {
 typedef struct AllmapPushaWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     AllmapCursorWork* cursor;
     u16 unk_10;
     s16 unk_12;
     TaskPool unk_14;
     Task* unk_28;
-    s16 unk_2C;
+    s16 x;
     s16 unk_2E;
 } AllmapPushaWork;
 

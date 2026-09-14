@@ -52,7 +52,7 @@ typedef struct WlogoTtWork {
     void* gfx4;
     void* gfx5;
     void* gfx6;
-    void* unk_038;
+    void* gfx7;
     u8 unk_03C[0x4];
     AnimState anim[6];
     u8 unk_0D0[0x1C];
@@ -351,7 +351,7 @@ typedef struct WlogoWonWork {
     s32 x[10];
     s32 y[10];
     s32 unk_05C[10];
-    void* unk_084[10];
+    void* gfx[10];
     u16 unk_0AC[10];
     u8 unk_0C0[10];
     u16 unk_0CA[10];

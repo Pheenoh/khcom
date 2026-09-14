@@ -1282,7 +1282,7 @@ void func_08076CB4(UnkStruct_08080268* w) {
     w->unk_BC[3] = 0;
     w->unk_BA = 0;
     w->unk_C4[3] = 0;
-    w->unk_A4 = gUnk_09033FC8[0];
+    w->x = gUnk_09033FC8[0];
     w->unk_C9 = 0;
     for (i = 0; i < 3; i++) {
         w->unk_1C[i] = 0;
@@ -1394,9 +1394,9 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         return 0;
     }
     if (w->unk_C4[3] != 0) {
-        position = w->unk_A4 * 256;
+        position = w->x * 256;
         ApproachValue(&position, (s16)gUnk_09033FC8[w->unk_B9 - 1] * 256, w->unk_C4[3]);
-        w->unk_A4 = position >> 8;
+        w->x = position >> 8;
         w->unk_C4[3]--;
     }
     if (w->unk_C9 == 0) {
@@ -1993,7 +1993,7 @@ void func_08077E10(CardBattleWork* w) {
     gUnk_02039DD4->gfx2 = AnimUpdate(&gUnk_02039DD4->anim2);
 
     if (gUnk_02039DD4->unk_0EA != 0 && w->unk_B9 != 0 && w->unk_BA != 0) {
-        DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16,
+        DrawSprite(w->x, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16,
                    12);
     }
 

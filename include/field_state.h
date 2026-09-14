@@ -12,7 +12,7 @@ typedef struct FieldState {
     u16 unk_10;
     u16 unk_12;
     u8 unk_14[0x04];
-    FldActor unk_18;
+    FldActor actor;
     void* unk_68;
     s16 unk_6C;
     u16 unk_6E;

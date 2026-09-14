@@ -203,7 +203,7 @@ typedef struct MahluxiaFlwWork {
 
 typedef struct MahluxiaWork {
     HumWork base;
-    HumSub unk_188;
+    HumSub sub;
     s32 unk_1C4;
     s16 unk_1C8;
     u16 unk_1CA;
@@ -258,7 +258,7 @@ typedef struct VixenWork {
     u8 unk_1BC;
     u8 unk_1BD[0x03];
     s32 unk_1C0;
-    VixenSub unk_1C4[3];
+    VixenSub sub[3];
     u8 unk_1E8[0x30];
 } VixenWork;
 
@@ -298,7 +298,7 @@ typedef struct HadesSub {
 
 typedef struct HadesWork {
     HumWork base;
-    HumSub unk_188;
+    HumSub sub;
     s32 unk_1C4;
     u16 unk_1C8;
     u16 unk_1CA;
@@ -312,7 +312,7 @@ typedef struct HadesWork {
     AnimState anim2;
     AnimState anim3;
     void* palette;
-    HadesSub unk_22C[2];
+    HadesSub sub2[2];
     s32 unk_27C;
 } HadesWork;
 
@@ -327,7 +327,7 @@ typedef struct LeonWork {
 
 typedef struct AnsemWork {
     HumWork base;
-    HumSub unk_188;
+    HumSub sub;
     s32 unk_1C4;
     u16 unk_1C8;
     u16 unk_1CA;
@@ -361,18 +361,18 @@ typedef struct VixenFrgSub {
 
 typedef struct VixenFrgWork {
     u8 unk_00[0x30];
-    void* unk_30;
+    void* tiles;
     void* palette;
     s16 unk_38;
     u16 unk_3A;
-    VixenFrgSub unk_3C[15];
+    VixenFrgSub sub[15];
     u8 unk_21C;
     u8 unk_21D[0x03];
 } VixenFrgWork;
 
 typedef struct RikuWork {
     HumWork base;
-    HumSub unk_188;
+    HumSub sub;
     s32 unk_1C4;
     u16 unk_1C8;
     u16 unk_1CA;
@@ -431,7 +431,7 @@ typedef struct LexRockWork {
     u16 unk_162;
     u16 unk_164;
     s16 unk_166;
-    LexRockSub unk_168[12];
+    LexRockSub sub[12];
     void* tiles;
     void* palette;
     u8 unk_2C0;
@@ -442,8 +442,8 @@ typedef struct LexRockWork {
 
 typedef struct AxcelWork {
     HumWork base;
-    HumSub unk_188;
-    HumSub unk_1C4;
+    HumSub sub;
+    HumSub sub2;
     s32 unk_200;
     u16 unk_204;
     u16 unk_206;

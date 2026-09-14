@@ -63,7 +63,7 @@ typedef struct BtlBornArgs {
 } BtlBornArgs;
 
 typedef struct BtlRaidWork {
-    void* unk_00;
+    void* tiles2;
     void* palette;
     void* gfx;
     AnimState anim;
@@ -113,7 +113,7 @@ typedef struct BtlBadStatusWork {
     AnimState anim;
     BtlObj* actor;
     u32 unk_28;
-    void* unk_2C;
+    void* palette3;
 } BtlBadStatusWork;
 
 typedef struct BtlAiWork {

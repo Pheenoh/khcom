@@ -105,7 +105,7 @@ typedef struct CardDisplayWork {
     u8 unk_46;
     u8 unk_47;
     CardDef* unk_48;
-    s32 unk_4C;
+    s32 x;
     s32 unk_50;
     s32 unk_54;
     s32 unk_58;
@@ -222,12 +222,12 @@ typedef struct UnkStruct_08096F94 {
     s16 unk_C8;
     s16 unk_CA;
     u16 unk_CC;
-    s16 unk_CE;
+    s16 x;
     s16 unk_D0;
     s16 unk_D2;
     s16 unk_D4;
-    s16 unk_D6;
-    s16 unk_D8;
+    s16 x2;
+    s16 y;
     s16 unk_DA;
     u16 unk_DC;
     u8 unk_DE;
@@ -305,8 +305,8 @@ typedef struct UnkStruct_0809A02C {
     s16 unk_1B8;
     s16 unk_1BA;
     s16 unk_1BC;
-    s16 unk_1BE;
-    s16 unk_1C0;
+    s16 x;
+    s16 y;
     u16 unk_1C2;
     u16 unk_1C4;
     u8 unk_1C6;
@@ -351,8 +351,8 @@ typedef struct RevCountWork {
     u8 unk_28;
     u8 unk_29[0x03];
     RevCountArgs unk_2C;
-    s32 unk_3C;
-    s32 unk_40;
+    s32 x;
+    s32 y;
 } RevCountWork;
 
 typedef char UnkStruct_08098CE4_sizechk[(sizeof(struct RevCountWork) == 0x44) ? 1 : -1];
@@ -448,8 +448,8 @@ typedef struct DeckCard2Work {
     u8 unk_27;
     void* unk_28;
     ListNode unk_2C;
-    s32 unk_40;
-    s32 unk_44;
+    s32 x;
+    s32 y;
     u16 unk_48;
     u8 unk_4A;
     u8 unk_4B[0x02];
@@ -470,17 +470,17 @@ typedef struct UnkStruct_0809C534_Args {
 typedef struct UnkStruct_0809C534 {
     CardDef* unk_00;
     CardBack* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
     void* unk_14;
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
-    void* unk_24;
-    void* unk_28;
+    void* tiles4;
+    void* tiles5;
+    void* palette;
+    void* palette2;
+    void* palette3;
     u8 unk_2C[0x18];
-    void* unk_44;
+    void* gfx;
     u16 unk_48;
     s16 unk_4A;
     s16 unk_4C;
@@ -509,21 +509,21 @@ typedef struct UnkStruct_0809C9A4 {
 } UnkStruct_0809C9A4;
 
 typedef struct UnkStruct_0808C940 {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* palette;
+    void* tiles4;
+    void* tiles5;
+    void* tiles6;
     void* unk_1C;
-    void* unk_20;
-    void* unk_24;
+    void* palette2;
+    void* palette3;
     TextSlot unk_28[8];
     TextSlot unk_68[8];
     TextSlot unk_A8[8];
     u8 unk_E8[0x3D4];
-    void* unk_4BC;
+    void* palette4;
     u8 unk_4C0[0xC];
     struct UnkStruct_08084D78* unk_4CC;
     struct UnkStruct_08084D78* unk_4D0;
@@ -543,8 +543,8 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_67C[0x18];
     s32 unk_694;
     s32 unk_698;
-    s32 unk_69C;
-    s32 unk_6A0;
+    s32 x;
+    s32 y;
     u8 unk_6A4[0x14];
     s32 unk_6B8;
     s32 unk_6BC;
@@ -742,7 +742,7 @@ typedef struct UnkStruct_08080268 {
     ListPool unk_54[4];
     u16 unk_94[4];
     u16 unk_9C[4];
-    s16 unk_A4;
+    s16 x;
     s16 unk_A6;
     u16 unk_A8[4];
     s16 unk_B0[4];
@@ -757,7 +757,7 @@ typedef struct UnkStruct_08080268 {
 } UnkStruct_08080268;
 
 typedef struct HcEffectNameWork {
-    s16 unk_00;
+    s16 x;
     u8 unk_02[0x06];
     void* tiles2;
     void* tiles3;
@@ -830,17 +830,17 @@ typedef struct ReloadChildWork {
 typedef char UnkStruct_08098BE8_sizechk[(sizeof(struct ReloadChildWork) == 0x48) ? 1 : -1];
 
 typedef struct UnkStruct_08098670 {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* palette;
+    void* palette2;
+    void* palette3;
+    void* gfx;
+    void* gfx2;
+    void* gfx3;
+    s32 x;
+    s32 y;
 } UnkStruct_08098670;
 
 typedef struct PremiumCardEffectWork {
@@ -851,8 +851,8 @@ typedef struct PremiumCardEffectWork {
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
-    s32 unk_30;
-    s32 unk_34;
+    s32 x;
+    s32 y;
     s32 unk_38;
     s32 unk_3C;
     s32 unk_40;
@@ -951,7 +951,7 @@ typedef struct MapcardWork {
     ListPool* unk_28;
     u8 unk_2C[0x0C];
     ListNode unk_38;
-    s32 unk_4C;
+    s32 x;
     s32 unk_50;
     s32 unk_54;
     s32 unk_58;
@@ -1099,12 +1099,12 @@ typedef struct PrizeCardWork {
     s16 unk_E0;
     s16 unk_E2;
     s16 unk_E4;
-    s16 unk_E6;
+    s16 x;
     s16 unk_E8;
     s16 unk_EA;
     s16 unk_EC;
-    s16 unk_EE;
-    s16 unk_F0;
+    s16 x2;
+    s16 y;
     s16 unk_F2;
     s16 unk_F4;
     u8 unk_F6;
@@ -1520,7 +1520,7 @@ typedef struct UnkStruct_080A2678 {
     void* palette;
     u16 unk_28C;
     u8 unk_28E[2];
-    s32 unk_290;
+    s32 y;
     s32 unk_294;
     s32 unk_298;
     s32 unk_29C;
@@ -1633,8 +1633,8 @@ typedef struct LevelUpEffectWork {
     s32 unk_10[4];
     s32 unk_20[4];
     s32 unk_30;
-    s32 unk_34[4];
-    s32 unk_44[4];
+    s32 x[4];
+    s32 y[4];
     s32 unk_54[4];
     s32 unk_64;
     s32 unk_68;
@@ -1834,7 +1834,7 @@ typedef struct UnkStruct_080A3F5C {
     u8 unk_110[0x03];
     u8 unk_113;
     CardMessageDef* unk_114;
-    s32 unk_118;
+    s32 x;
     s32 unk_11C;
     s32 unk_120;
     s32 unk_124;

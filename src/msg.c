@@ -7789,17 +7789,17 @@ void func_0806CD60(ContinueWork* p) {
     case 4:
     case 5:
     case 6:
-        p->unk_50 = 0xBC00;
+        p->x = 0xBC00;
         break;
     case 2:
     case 3:
-        p->unk_50 = 0xC000;
+        p->x = 0xC000;
         break;
     }
 #else
-    p->unk_50 = MSG_CONT_X;
+    p->x = MSG_CONT_X;
 #endif
-    p->unk_54 = 0x4000;
+    p->y = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
     FadeStartIn(1, 24);
@@ -7856,17 +7856,17 @@ void func_0806CF04(ContinueWork* p) {
     case 4:
     case 5:
     case 6:
-        p->unk_50 = 0xBC00;
+        p->x = 0xBC00;
         break;
     case 2:
     case 3:
-        p->unk_50 = 0xC000;
+        p->x = 0xC000;
         break;
     }
 #else
-    p->unk_50 = MSG_CONT_X;
+    p->x = MSG_CONT_X;
 #endif
-    p->unk_54 = 0x4000;
+    p->y = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
     FadeStartIn(1, 24);
@@ -7959,11 +7959,11 @@ s32 func_0806D0A8(ContinueWork* p) {
 
     func_0806CD30(p->unk_60);
     t = gUnk_08F7DAFC;
-    p->unk_54 += (t[p->unk_60] - p->unk_54) >> 3;
+    p->y += (t[p->unk_60] - p->y) >> 3;
     p->unk_64 += 4;
 }
 void func_0806D288(ContinueWork* p) {
-    DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->gfx, p->tiles, p->palette, 0, 4, 100);
+    DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, 0, 4, 100);
     DrawSprite(120, 120, p->gfx2, p->tiles2, p->palette2, 0, 0, 100);
 }
 void Continue_3(ContinueWork* p) {
@@ -12193,9 +12193,9 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_F4 = LoadTextSlots(gUnk_08159E10, p->unk_1C);
     p->unk_F5 = LoadTextSlots(gUnk_08159E18, p->unk_6C);
 #endif
-    p->unk_F8 = 0x5800;
+    p->x = 0x5800;
     p->unk_100 = 1;
-    p->unk_FC = gUnk_09033D28[1];
+    p->y = gUnk_09033D28[1];
     p->unk_102 = 0;
     gUnk_02039DC8->unk_7D = 1;
     gUnk_02039DC8->unk_85 = 1;
@@ -12246,7 +12246,7 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     }
 
     if (p->unk_102 != 0) {
-        ApproachValue(&p->unk_FC, gUnk_09033D28[p->unk_100], p->unk_102);
+        ApproachValue(&p->y, gUnk_09033D28[p->unk_100], p->unk_102);
         p->unk_102--;
     }
     p->gfx = AnimUpdate(p->anim);
@@ -12274,7 +12274,7 @@ void msgwait_yesno_2(MsgWaitYesNoWork* p) {
         break;
     case 1:
         DrawSprite(120, 80, gUnk_09EF126C[1], p->tiles3, p->palette3, 0, 0, 10);
-        DrawSprite(p->unk_F8 >> 8, p->unk_FC >> 8, p->gfx2, p->tiles2, p->palette2, 0, 1, 9);
+        DrawSprite(p->x >> 8, p->y >> 8, p->gfx2, p->tiles2, p->palette2, 0, 1, 9);
         DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->palette4, 0, p->unk_F4);
         DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->palette4, 0, p->unk_F5);
         break;

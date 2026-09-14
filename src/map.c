@@ -382,7 +382,7 @@ s32 func_080E03C0(s32 a) {
         return 0;
     }
 
-    if (gUnk_02039BA0->unk_18.unk_00.z != gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+    if (gUnk_02039BA0->actor.unk_00.z != gUnk_02039BA0->actor.unk_00.unk_0C) {
         return 0;
     }
     return gUnk_02039BA0->unk_68 == a;
@@ -458,7 +458,7 @@ void func_080E0558(void) {
     gUnk_02039BA0->unk_74 = 0;
     TaskPoolInit(gUnk_02039BA0->unk_78, 50);
     TaskPoolInit(gUnk_02039BA0->unk_8C, 1);
-    ListPoolInit(&gUnk_02039BA0->unk_18.unk_40);
+    ListPoolInit(&gUnk_02039BA0->actor.unk_40);
     TaskPoolInit(gUnk_02039BA0->unk_A0, 25);
     TaskPoolInit(gUnk_02039BA0->unk_C8, 1);
     TaskPoolInit(gUnk_02039BA0->unk_B4, 8);
@@ -3079,8 +3079,8 @@ u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
         y %= h;
     }
 
-    a->unk_00 = gUnk_02039BA0->unk_18.unk_00.x;
-    *b = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.unk_0C;
+    a->unk_00 = gUnk_02039BA0->actor.unk_00.x;
+    *b = gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.unk_0C;
     return 0;
 }
 
@@ -3102,7 +3102,7 @@ u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b) {
         for (i = 0; i < w; i++) {
             s32 tx = (gUnk_02039BA0->unk_00 / 32 >> 8) + 1;
             u16 xx = x + tx;
-            s32* q = &gUnk_02039BA0->unk_18.unk_00.x;
+            s32* q = &gUnk_02039BA0->actor.unk_00.x;
             MapCell* e;
 
             if (q[0] < (xx * 32 + 80) << 8 && q[0] > (xx * 32 - 48) << 8 &&
@@ -3493,7 +3493,7 @@ void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b) {
     case 0:
     default:
         ok = func_080E5968(w);
-        w->unk_18 = GetAngle(w->unk_08.unk_00, w->unk_08.x, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        w->unk_18 = GetAngle(w->unk_08.unk_00, w->unk_08.x, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
         break;
     }
     if (ok) {
@@ -4818,7 +4818,7 @@ void func_080E826C(void) {
 }
 
 u8 func_080E8374(UnkStruct_080E8374* p) {
-    s32 lim = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z + 0x4000 + (p->unk_1A << 8);
+    s32 lim = gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.z + 0x4000 + (p->unk_1A << 8);
 
     if (p->unk_00 < gUnk_02039BA0->unk_00 || p->unk_00 > gUnk_02039BA0->unk_00 + 0xF000 ||
         p->unk_04 + p->unk_08 < gUnk_02039BA0->unk_04 || p->unk_04 + p->unk_08 > lim) {
@@ -7937,7 +7937,7 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
     if (!(gUnk_02039BA0->unk_70 & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x4004) &&
         (u8)(flags->unk_07 + 3) > 1 && (flags->unk_00 & 0x12) != 0x12 &&
         func_080E02E0(e, 0, 8) != 0 && !(gUnk_02039BA0->unk_70 & 0x800000) &&
-        gUnk_02039BA0->unk_18.unk_00.z == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+        gUnk_02039BA0->actor.unk_00.z == gUnk_02039BA0->actor.unk_00.unk_0C) {
         TaskPool* pool;
 
         m4aSongNumStart(0xDC);
@@ -8258,8 +8258,8 @@ void func_080ED314(u8* work) {
 s32 func_080ED35C(MapMenuWork* w) {
     w->palette2 = LoadObjPalette(gUnk_09991984, 32);
     w->tiles2 = LoadObjTiles(gUnk_09958124, 0x80);
-    w->unk_008 = -0x800;
-    w->unk_00C = 0xA000;
+    w->y = -0x800;
+    w->y2 = 0xA000;
 
     if (gGameState.flags & 8) {
         w->tiles8 = AllocObjTiles(0x400, gUnk_092EB78A);
@@ -8269,10 +8269,10 @@ s32 func_080ED35C(MapMenuWork* w) {
 
     w->tiles7 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette7 = LoadObjPalette(gUnk_08F69BE4, 32);
-    w->unk_150 = gUnk_02039BA0->unk_18.unk_00.x - gUnk_02039BA0->unk_00;
-    w->unk_154 = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z - gUnk_02039BA0->unk_04;
-    w->unk_148 = w->unk_150;
-    w->unk_14C = w->unk_154;
+    w->unk_150 = gUnk_02039BA0->actor.unk_00.x - gUnk_02039BA0->unk_00;
+    w->unk_154 = gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.z - gUnk_02039BA0->unk_04;
+    w->x8 = w->unk_150;
+    w->y4 = w->unk_154;
     w->unk_309 = gGameState.unk_00F;
     w->unk_30A = 0;
     w->unk_034 = 0;
@@ -8289,8 +8289,8 @@ s32 func_080ED35C(MapMenuWork* w) {
 
 s32 func_080ED498(MapMenuWork* w) {
     if (w->unk_30C != 0) {
-        ApproachValue(&w->unk_008, 0, w->unk_30C);
-        ApproachValue(&w->unk_00C, 0x9800, w->unk_30C);
+        ApproachValue(&w->y, 0, w->unk_30C);
+        ApproachValue(&w->y2, 0x9800, w->unk_30C);
         w->unk_30C--;
     } else {
         s32 i;
@@ -8320,9 +8320,9 @@ s32 func_080ED498(MapMenuWork* w) {
         w->tiles5 = LoadObjTiles(gUnk_09954B64, 0x1BC0);
 #endif
         w->palette3 = LoadObjPalette(gUnk_09991924, 32);
-        w->unk_028 = 0x11800;
-        w->unk_02C = 0xF000;
-        w->unk_030 = 0x10000;
+        w->x3 = 0x11800;
+        w->x4 = 0xF000;
+        w->x5 = 0x10000;
         func_080ED0B8(w->tiles5, 0, gGameState.progression.level);
         func_080ED0B8(w->tiles5, 6, gGameState.progression.maxHp);
         func_080ED0B8(w->tiles5, 3, gGameState.hp);
@@ -8383,7 +8383,7 @@ s32 func_080ED498(MapMenuWork* w) {
         }
 #endif
 
-        w->unk_044 = -0x7800;
+        w->x6 = -0x7800;
         w->palette = LoadObjPalette(gUnk_099919A4, 32);
         w->tiles = AllocObjTiles(0x120, gUnk_098A8628);
         AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
@@ -8418,14 +8418,14 @@ s32 func_080ED498(MapMenuWork* w) {
             w->tiles3 = LoadObjTiles(gUnkEu_0994AAB0, 0x200);
             break;
         }
-        w->unk_014 = -0x8000;
+        w->x = -0x8000;
         w->tiles4 = LoadObjTiles(gUnkEu_0994ACB0, 0x300);
 #else
         w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
-        w->unk_014 = -0x8000;
+        w->x = -0x8000;
         w->tiles4 = LoadObjTiles(gUnk_09957C24, 0x300);
 #endif
-        w->unk_01C = 0xF800;
+        w->x2 = 0xF800;
         func_080ECFE8((UnkStruct_080ECFE8*)w, 1);
         w->unk_30E = 1;
         w->unk_30C = w->unk_30F != 0 ? 1 : 16;
@@ -8437,18 +8437,18 @@ s32 func_080ED498(MapMenuWork* w) {
 
 s32 func_080ED6CC(MapMenuWork* w) {
     if (w->unk_30C != 0) {
-        ApproachValue(&w->unk_014, 0, w->unk_30C);
-        ApproachValue(&w->unk_044, 0x800, w->unk_30C);
-        ApproachValue(&w->unk_01C, 0x7800, w->unk_30C);
-        ApproachValue(&w->unk_028, 0x9800, w->unk_30C);
-        ApproachValue(&w->unk_02C, 0x7000, w->unk_30C);
-        ApproachValue(&w->unk_030, 0x8000, w->unk_30C);
-        ApproachValue(&w->unk_148, 0xAC00, w->unk_30C);
-        ApproachValue(&w->unk_14C, 0x6000, w->unk_30C);
+        ApproachValue(&w->x, 0, w->unk_30C);
+        ApproachValue(&w->x6, 0x800, w->unk_30C);
+        ApproachValue(&w->x2, 0x7800, w->unk_30C);
+        ApproachValue(&w->x3, 0x9800, w->unk_30C);
+        ApproachValue(&w->x4, 0x7000, w->unk_30C);
+        ApproachValue(&w->x5, 0x8000, w->unk_30C);
+        ApproachValue(&w->x8, 0xAC00, w->unk_30C);
+        ApproachValue(&w->y4, 0x6000, w->unk_30C);
         w->unk_30C--;
     } else {
         w->unk_034 = 1;
-        w->unk_06C = (w->unk_309 * 19 + 16) << 8;
+        w->y3 = (w->unk_309 * 19 + 16) << 8;
 
         if (w->unk_30F != 0) {
             w->unk_30F = 0;
@@ -8502,7 +8502,7 @@ s32 func_080ED7CC(MapMenuWork* w) {
             m4aSongNumStart(0x66);
             func_080ED250((u8*)w);
             w->unk_30A = 2;
-            w->unk_068 = 0x8800;
+            w->x7 = 0x8800;
             w->unk_310 = func_080EDC94;
             break;
         }
@@ -8554,7 +8554,7 @@ s32 func_080ED91C(MapMenuWork* w) {
             m4aSongNumStart(102);
             func_080ED250((u8*)w);
             w->unk_30A = 2;
-            w->unk_068 = 0x8800;
+            w->x7 = 0x8800;
             w->unk_310 = func_080EDC94;
             break;
         }
@@ -8602,14 +8602,14 @@ s32 func_080EDA90(MapMenuWork* w) {
 
 s32 func_080EDB4C(MapMenuWork* w) {
     if (w->unk_30C != 0) {
-        ApproachValue(&w->unk_014, -0x8000, w->unk_30C);
-        ApproachValue(&w->unk_044, -0x7800, w->unk_30C);
-        ApproachValue(&w->unk_01C, 0xF800, w->unk_30C);
-        ApproachValue(&w->unk_028, 0x11800, w->unk_30C);
-        ApproachValue(&w->unk_02C, 0xF000, w->unk_30C);
-        ApproachValue(&w->unk_030, 0x10000, w->unk_30C);
-        ApproachValue(&w->unk_148, w->unk_150, w->unk_30C);
-        ApproachValue(&w->unk_14C, w->unk_154, w->unk_30C);
+        ApproachValue(&w->x, -0x8000, w->unk_30C);
+        ApproachValue(&w->x6, -0x7800, w->unk_30C);
+        ApproachValue(&w->x2, 0xF800, w->unk_30C);
+        ApproachValue(&w->x3, 0x11800, w->unk_30C);
+        ApproachValue(&w->x4, 0xF000, w->unk_30C);
+        ApproachValue(&w->x5, 0x10000, w->unk_30C);
+        ApproachValue(&w->x8, w->unk_150, w->unk_30C);
+        ApproachValue(&w->y4, w->unk_154, w->unk_30C);
         w->unk_30C--;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x1000;
@@ -8624,8 +8624,8 @@ s32 func_080EDB4C(MapMenuWork* w) {
 
 s32 func_080EDC38(MapMenuWork* w) {
     if (w->unk_30C != 0) {
-        ApproachValue(&w->unk_008, -0x800, w->unk_30C);
-        ApproachValue(&w->unk_00C, 0xA000, w->unk_30C);
+        ApproachValue(&w->y, -0x800, w->unk_30C);
+        ApproachValue(&w->y2, 0xA000, w->unk_30C);
         w->unk_30C--;
         return 1;
     }
@@ -8653,7 +8653,7 @@ s32 func_080EDC94(MapMenuWork* w) {
     if ((GetKeysPressed() & 2) || ((GetKeysPressed() & 1) && w->unk_30A == 2)) {
         w->unk_30A = 0;
         func_080ED314((u8*)w);
-        w->unk_06C = (w->unk_309 * 19 + 16) << 8;
+        w->y3 = (w->unk_309 * 19 + 16) << 8;
         w->unk_310 = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
         m4aSongNumStart(0x68);
     } else if (GetKeysPressed() & 1) {
@@ -8717,11 +8717,11 @@ void func_080EDECC(MapMenuWork* w) {
     s32 k;
 
 #ifdef VERSION_EU
-    DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F84738[0], w->tiles2, w->palette2, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F84738[1], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->y >> 8, gUnkEu_09F84738[0], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->y2 >> 8, gUnkEu_09F84738[1], w->tiles2, w->palette2, 0, 0x400, 90);
 #else
-    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8E74[0], w->tiles2, w->palette2, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8E74[1], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->y >> 8, gUnk_09EF8E74[0], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->y2 >> 8, gUnk_09EF8E74[1], w->tiles2, w->palette2, 0, 0x400, 90);
 #endif
 
     if (
@@ -8730,14 +8730,14 @@ void func_080EDECC(MapMenuWork* w) {
 #endif
         (gUnk_0203C7AC->unk_00 & 0x1000)) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->tiles8, w->palette6,
+            DrawSprite(w->x8 >> 8, w->y4 >> 8, gUnk_09EEF89C[0], w->tiles8, w->palette6,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles8,
+            DrawSprite(w->x8 >> 8, w->y4 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles8,
                 w->palette6, 0, 0x400, 80);
         }
 
-        DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EE1380[0], w->tiles7, w->palette7, 0,
+        DrawSprite(w->x8 >> 8, w->y4 >> 8, gUnk_09EE1380[0], w->tiles7, w->palette7, 0,
             0x400, 81);
     }
 
@@ -8745,112 +8745,112 @@ void func_080EDECC(MapMenuWork* w) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 4:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84720[0], w->tiles3, w->palette2, 0, 0x400, 80);
+            DrawSprite(w->x >> 8, 0, gUnkEu_09F84720[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         case 0:
         case 1:
         case 3:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84718[0], w->tiles3, w->palette2, 0, 0x400, 80);
+            DrawSprite(w->x >> 8, 0, gUnkEu_09F84718[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         case 2:
         default:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84728[0], w->tiles3, w->palette2, 0, 0x400, 80);
+            DrawSprite(w->x >> 8, 0, gUnkEu_09F84728[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         }
 #else
-        DrawSprite(w->unk_014 >> 8, 0, gUnk_09EF8E6C[0], w->tiles3, w->palette2, 0, 0x400, 80);
+        DrawSprite(w->x >> 8, 0, gUnk_09EF8E6C[0], w->tiles3, w->palette2, 0, 0x400, 80);
 #endif
 #ifdef VERSION_EU
-        DrawSprite(w->unk_01C >> 8, 14, gUnkEu_09F84730[0], w->tiles4, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x2 >> 8, 14, gUnkEu_09F84730[0], w->tiles4, w->palette2, 0, 0x400, 90);
 #else
-        DrawSprite(w->unk_01C >> 8, 14, gUnk_09EF8E64[0], w->tiles4, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x2 >> 8, 14, gUnk_09EF8E64[0], w->tiles4, w->palette2, 0, 0x400, 90);
 #endif
 
         if (gGameState.flags & 8) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84560[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84560[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84560[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84560[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84574[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84574[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84574[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84574[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84588[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84588[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84588[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84588[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8459C[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F8459C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F8459C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F8459C[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F845B0[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F845B0[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F845B0[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F845B0[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[0], w->tiles5, w->palette3, 0, 0x400, 80);
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[1], w->tiles5, w->palette3, 0, 0x400, 81);
-            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E80[2], w->tiles5, w->palette3, 0, 0x400,
+            DrawSprite(w->x3 >> 8, 0, gUnk_09EF8E80[0], w->tiles5, w->palette3, 0, 0x400, 80);
+            DrawSprite(w->x3 >> 8, 0, gUnk_09EF8E80[1], w->tiles5, w->palette3, 0, 0x400, 81);
+            DrawSprite(w->x4 >> 8, 103, gUnk_09EF8E80[2], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
 
             if (w->tiles9[0] != 0) {
-                DrawSprite((w->unk_02C >> 8) + 18, 124, w->unk_170[0], w->tiles9[0],
+                DrawSprite((w->x4 >> 8) + 18, 124, w->unk_170[0], w->tiles9[0],
                     w->palette9[0], 0, 0x400, 80);
             }
         } else {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F844FC[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F844FC[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F844FC[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F844FC[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84510[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84510[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84510[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84510[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84524[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84524[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84524[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84524[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84538[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84538[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F84538[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F84538[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[0], w->tiles5, w->palette3, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[1], w->tiles5, w->palette3, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8454C[2], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F8454C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->x3 >> 8, 0, gUnkEu_09F8454C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->x4 >> 8, 103, gUnkEu_09F8454C[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[0], w->tiles5, w->palette3, 0, 0x400, 80);
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[1], w->tiles5, w->palette3, 0, 0x400, 81);
-            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E0C[2], w->tiles5, w->palette3, 0, 0x400,
+            DrawSprite(w->x3 >> 8, 0, gUnk_09EF8E0C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+            DrawSprite(w->x3 >> 8, 0, gUnk_09EF8E0C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+            DrawSprite(w->x4 >> 8, 103, gUnk_09EF8E0C[2], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
 
@@ -8858,7 +8858,7 @@ void func_080EDECC(MapMenuWork* w) {
                 k = i * 20 + 14;
 
                 if (w->tiles9[i] != 0) {
-                    DrawSprite((w->unk_02C >> 8) + k, 124, w->unk_170[i], w->tiles9[i],
+                    DrawSprite((w->x4 >> 8) + k, 124, w->unk_170[i], w->tiles9[i],
                         w->palette9[i], 0, 0x400, 80);
                 }
             }
@@ -8868,32 +8868,32 @@ void func_080EDECC(MapMenuWork* w) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F844FC[3], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x5 >> 8, 144, gUnkEu_09F844FC[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84510[3], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x5 >> 8, 144, gUnkEu_09F84510[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84524[3], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x5 >> 8, 144, gUnkEu_09F84524[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84538[3], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x5 >> 8, 144, gUnkEu_09F84538[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F8454C[3], w->tiles5, w->palette3, 0, 0x400,
+                DrawSprite(w->x5 >> 8, 144, gUnkEu_09F8454C[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_030 >> 8, 144, gUnk_09EF8E0C[3], w->tiles5, w->palette3, 0, 0x400,
+            DrawSprite(w->x5 >> 8, 144, gUnk_09EF8E0C[3], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
-            DrawTextSlots((w->unk_030 >> 8) + 16, 145, &w->unk_074, w->palette8, 50,
+            DrawTextSlots((w->x5 >> 8) + 16, 145, &w->unk_074, w->palette8, 50,
                 w->unk_074[0xC0]);
         }
 
@@ -8901,69 +8901,69 @@ void func_080EDECC(MapMenuWork* w) {
         switch (gLanguage) {
         case 0:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[w->unk_309], w->tiles6, w->palette5, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F845C4[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84678[w->unk_309], w->tiles6, w->palette4, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84678[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[7], w->tiles6, w->palette5, 0, 0x400,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F845C4[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 1:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[w->unk_309], w->tiles6, w->palette5, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F845E8[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84698[w->unk_309], w->tiles6, w->palette4, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84698[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[7], w->tiles6, w->palette5, 0, 0x400,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F845E8[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 4:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[w->unk_309], w->tiles6, w->palette5, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F8460C[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846B8[w->unk_309], w->tiles6, w->palette4, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F846B8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[7], w->tiles6, w->palette5, 0, 0x400,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F8460C[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 3:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[w->unk_309], w->tiles6, w->palette5, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84630[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846D8[w->unk_309], w->tiles6, w->palette4, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F846D8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[7], w->tiles6, w->palette5, 0, 0x400,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84630[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 2:
         default:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[w->unk_309], w->tiles6, w->palette5, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84654[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846F8[w->unk_309], w->tiles6, w->palette4, 0,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F846F8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[7], w->tiles6, w->palette5, 0, 0x400,
+                DrawSprite(w->x6 >> 8, 26, gUnkEu_09F84654[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         }
 #else
         if (w->unk_034 != 0) {
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->tiles6, w->palette5, 0,
+            DrawSprite(w->x6 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->tiles6, w->palette5, 0,
                 0x400, 81);
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E44[w->unk_309], w->tiles6, w->palette4, 0,
+            DrawSprite(w->x6 >> 8, 26, gUnk_09EF8E44[w->unk_309], w->tiles6, w->palette4, 0,
                 0x400, 81);
         } else {
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[7], w->tiles6, w->palette5, 0, 0x400,
+            DrawSprite(w->x6 >> 8, 26, gUnk_09EF8E20[7], w->tiles6, w->palette5, 0, 0x400,
                 80);
         }
 #endif
@@ -8971,19 +8971,19 @@ void func_080EDECC(MapMenuWork* w) {
         if (w->unk_034 != 0) {
             switch (w->unk_30A) {
             case 1:
-                ApproachValueHalf(&w->unk_068, 0x4800);
-                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
+                ApproachValueHalf(&w->x7, 0x4800);
+                DrawSprite(w->x7 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     1, 60);
                 break;
             case 2:
-                ApproachValueHalf(&w->unk_068, 0x8800);
-                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
+                ApproachValueHalf(&w->x7, 0x8800);
+                DrawSprite(w->x7 >> 8, 80, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     1, 60);
                 break;
             case 0:
             default:
-                ApproachValueHalf(&w->unk_06C, (w->unk_309 * 19 + 16) << 8);
-                DrawSprite(24, w->unk_06C >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
+                ApproachValueHalf(&w->y3, (w->unk_309 * 19 + 16) << 8);
+                DrawSprite(24, w->y3 >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0,
                     0x401, 60);
                 break;
             }
@@ -9173,8 +9173,8 @@ void func_080EE760(u8* work, u8 i) {
 
 s32 func_080EE7B0(MapSaveWork* w) {
     if (w->unk_2F6 != 0) {
-        ApproachValue(&w->unk_008, 0, w->unk_2F6);
-        ApproachValue(&w->unk_00C, 0x9800, w->unk_2F6);
+        ApproachValue(&w->y, 0, w->unk_2F6);
+        ApproachValue(&w->y2, 0x9800, w->unk_2F6);
         w->unk_2F6 -= 1;
     } else {
         gUnk_0203C7AC->unk_00 |= 0x1000;
@@ -9191,14 +9191,14 @@ s32 func_080EE824(MapSaveWork* w) {
     u8* p3;
 
     if (w->unk_2F6 != 0) {
-        ApproachValue(&w->unk_010, 0, w->unk_2F6);
+        ApproachValue(&w->x, 0, w->unk_2F6);
 
         if (gGameState.flags & 8) {
-            ApproachValue(&w->unk_170, 0x3800, w->unk_2F6);
-            ApproachValue(&w->unk_174, 0x7000, w->unk_2F6);
+            ApproachValue(&w->x3, 0x3800, w->unk_2F6);
+            ApproachValue(&w->y3, 0x7000, w->unk_2F6);
         } else {
-            ApproachValue(&w->unk_170, 0x3800, w->unk_2F6);
-            ApproachValue(&w->unk_174, 0x7000, w->unk_2F6);
+            ApproachValue(&w->x3, 0x3800, w->unk_2F6);
+            ApproachValue(&w->y3, 0x7000, w->unk_2F6);
         }
         w->unk_2F6 -= 1;
     } else {
@@ -9294,7 +9294,7 @@ s32 func_080EE824(MapSaveWork* w) {
         func_080EE50C((UnkStruct_080EE50C*)w, 1);
         w->unk_2F8 = 1;
         w->unk_2F4 = 2;
-        w->unk_03C = 0xB000;
+        w->x2 = 0xB000;
         w->unk_2F0 = func_080EEB00;
     }
     return 1;
@@ -9370,9 +9370,9 @@ s32 func_080EEC5C(MapSaveWork* w) {
 
 s32 func_080EEC9C(MapSaveWork* w) {
     if (w->unk_2F6 != 0) {
-        ApproachValue(&w->unk_010, -0x8000, w->unk_2F6);
-        ApproachValue(&w->unk_170, w->unk_178, w->unk_2F6);
-        ApproachValue(&w->unk_174, w->unk_17C, w->unk_2F6);
+        ApproachValue(&w->x, -0x8000, w->unk_2F6);
+        ApproachValue(&w->x3, w->unk_178, w->unk_2F6);
+        ApproachValue(&w->y3, w->unk_17C, w->unk_2F6);
         w->unk_2F6--;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x1000;
@@ -9388,8 +9388,8 @@ s32 func_080EEC9C(MapSaveWork* w) {
 
 s32 func_080EED44(MapSaveWork* w) {
     if (w->unk_2F6 != 0) {
-        ApproachValue(&w->unk_008, -0x800, w->unk_2F6);
-        ApproachValue(&w->unk_00C, 0xA000, w->unk_2F6);
+        ApproachValue(&w->y, -0x800, w->unk_2F6);
+        ApproachValue(&w->y2, 0xA000, w->unk_2F6);
         w->unk_2F6--;
         return 1;
     }
@@ -9426,9 +9426,9 @@ void func_080EED88(MapSaveWork* w) {
     w->palette2 = LoadObjPalette(gUnk_09991D04, 32);
     w->tiles2 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
 #endif
-    w->unk_008 = -0x800;
-    w->unk_00C = 0xA000;
-    w->unk_010 = -0x8000;
+    w->y = -0x800;
+    w->y2 = 0xA000;
+    w->x = -0x8000;
 
     if (gGameState.flags & 8) {
         w->tiles4 = AllocObjTiles(0x400, gUnk_092EB78A);
@@ -9440,10 +9440,10 @@ void func_080EED88(MapSaveWork* w) {
 
     w->palette6 = LoadObjPalette(gUnk_09617C58, 32);
     w->palette7 = LoadObjPalette(gUnk_08F68384, 32);
-    w->unk_178 = gUnk_02039BA0->unk_18.unk_00.x - gUnk_02039BA0->unk_00;
-    w->unk_17C = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z - gUnk_02039BA0->unk_04;
-    w->unk_170 = w->unk_178;
-    w->unk_174 = w->unk_17C;
+    w->unk_178 = gUnk_02039BA0->actor.unk_00.x - gUnk_02039BA0->unk_00;
+    w->unk_17C = gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.z - gUnk_02039BA0->unk_04;
+    w->x3 = w->unk_178;
+    w->y3 = w->unk_17C;
     w->unk_2F4 = 0;
     w->unk_2F8 = 0;
     w->unk_2F6 = 16;
@@ -9474,44 +9474,44 @@ void func_080EEF4C(MapSaveWork* w) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8447C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8447C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8447C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+        DrawSprite(128, w->y >> 8, gUnkEu_09F8447C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->y2 >> 8, gUnkEu_09F8447C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x >> 8, 0, gUnkEu_09F8447C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 1:
-        DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+        DrawSprite(128, w->y >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->y2 >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 4:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8444C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8444C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8444C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+        DrawSprite(128, w->y >> 8, gUnkEu_09F8444C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->y2 >> 8, gUnkEu_09F8444C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x >> 8, 0, gUnkEu_09F8444C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 3:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8445C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8445C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8445C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+        DrawSprite(128, w->y >> 8, gUnkEu_09F8445C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->y2 >> 8, gUnkEu_09F8445C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x >> 8, 0, gUnkEu_09F8445C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 2:
     default:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8446C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8446C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8446C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+        DrawSprite(128, w->y >> 8, gUnkEu_09F8446C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->y2 >> 8, gUnkEu_09F8446C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->x >> 8, 0, gUnkEu_09F8446C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     }
 #else
-    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
-    DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
+    DrawSprite(128, w->y >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->y2 >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(w->x >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
 #endif
 
     if (gUnk_0203C7AC->unk_00 & 0x1000) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->tiles4, w->palette5,
+            DrawSprite(w->x3 >> 8, w->y3 >> 8, gUnk_09EEF89C[0], w->tiles4, w->palette5,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles4,
+            DrawSprite(w->x3 >> 8, w->y3 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles4,
                 w->palette5, 0, 0x400, 80);
         }
     }
@@ -9547,13 +9547,13 @@ void func_080EEF4C(MapSaveWork* w) {
 
         switch (w->unk_2F4) {
         case 1:
-            ApproachValueHalf(&w->unk_03C, 0x7800);
-            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
+            ApproachValueHalf(&w->x2, 0x7800);
+            DrawSprite(w->x2 >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
                 40);
             break;
         case 2:
-            ApproachValueHalf(&w->unk_03C, 0xB000);
-            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
+            ApproachValueHalf(&w->x2, 0xB000);
+            DrawSprite(w->x2 >> 8, 110, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 1,
                 40);
             break;
         }
@@ -9677,10 +9677,10 @@ s32 func_080EF4BC(UnkStruct_080E590C* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     u8 ang;
 
-    if (gUnk_02039BA0->unk_18.unk_00.unk_0C != q->unk_0C) {
+    if (gUnk_02039BA0->actor.unk_00.unk_0C != q->unk_0C) {
         return 0;
     }
-    ang = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+    ang = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     if (abs(GetAngleDiff(ang, q->unk_14)) > 0x18) {
         return 0;
     }
@@ -9836,7 +9836,7 @@ void func_080EF7B8(UnkStruct_080E590C* p) {
     y = q->unk_04;
 
     if (p->unk_D0 % 8 == 0) {
-        q->unk_14 = GetAngle(x, y, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(x, y, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
     func_080EF404(p, 25, 0x200);
 
@@ -9979,13 +9979,13 @@ void func_080EFB24(UnkStruct_080F023C* w, u8 a) {
     s32 t4;
 
     if (a != 0) {
-        w->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        w->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
-        w->unk_DC = gUnk_02039BA0->unk_18.unk_00.z - 0x1000;
+        w->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        w->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
+        w->unk_DC = gUnk_02039BA0->actor.unk_00.z - 0x1000;
     } else {
-        w->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        w->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
-        w->unk_DC = gUnk_02039BA0->unk_18.unk_00.z;
+        w->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        w->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
+        w->unk_DC = gUnk_02039BA0->actor.unk_00.z;
 
         if (GetRandom() % 2) {
             t1 = GetRandom() % 65 * 256;
@@ -10016,10 +10016,10 @@ void func_080EFC08(UnkStruct_080E590C* p) {
     func_080EFA7C((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
-    if (q->unk_08 < gUnk_02039BA0->unk_18.unk_00.z - 0x4000) {
+    if (q->unk_08 < gUnk_02039BA0->actor.unk_00.z - 0x4000) {
         func_080EFB24((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
@@ -10059,7 +10059,7 @@ void func_080EFCF4(UnkStruct_080E590C* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
     dx = p->unk_D4;
@@ -10319,13 +10319,13 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
     s32 dx;
     s32 dy;
 
-    dx = p->unk_F8 - gUnk_02039BA0->unk_18.unk_00.x;
+    dx = p->unk_F8 - gUnk_02039BA0->actor.unk_00.x;
     if (dx < 0) {
-        dx = gUnk_02039BA0->unk_18.unk_00.x - p->unk_F8;
+        dx = gUnk_02039BA0->actor.unk_00.x - p->unk_F8;
     }
-    dy = p->unk_FC - gUnk_02039BA0->unk_18.unk_00.y;
+    dy = p->unk_FC - gUnk_02039BA0->actor.unk_00.y;
     if (dy < 0) {
-        dy = gUnk_02039BA0->unk_18.unk_00.y - p->unk_FC;
+        dy = gUnk_02039BA0->actor.unk_00.y - p->unk_FC;
     }
 
     if (dx > 0x8000 || dy > 0x8000) {
@@ -10343,13 +10343,13 @@ void func_080F02A0(UnkStruct_080F023C* w) {
     func_080F0108(w, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
-    if ((u8)func_080F023C(w, 0x6000) != 0 && q->unk_0C == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
-        w->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        w->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
-        w->unk_DC = gUnk_02039BA0->unk_18.unk_00.unk_0C - 0x1000;
+    if ((u8)func_080F023C(w, 0x6000) != 0 && q->unk_0C == gUnk_02039BA0->actor.unk_00.unk_0C) {
+        w->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        w->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
+        w->unk_DC = gUnk_02039BA0->actor.unk_00.unk_0C - 0x1000;
         w->unk_D0 = 0;
         q->unk_10 = 0;
         w->unk_CC = func_080F0348;
@@ -10370,12 +10370,12 @@ void func_080F0348(UnkStruct_080F023C* w) {
     tmp = *(UnkStruct_080DFF1C*)v;
 
     if (GetRandom() % 20 != 0) {
-        v->unk_14 = GetAngle(w->unk_08, v->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        v->unk_14 = GetAngle(w->unk_08, v->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
-    if ((u8)func_080F023C(w, 0x6000) != 0 && v->unk_0C == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
-        w->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        w->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
+    if ((u8)func_080F023C(w, 0x6000) != 0 && v->unk_0C == gUnk_02039BA0->actor.unk_00.unk_0C) {
+        w->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        w->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
     }
 
     if ((u8)func_080F01B0(q) != 0) {
@@ -10414,7 +10414,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
     save = *(UnkStruct_080DFF1C*)q;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
     if ((u8)func_080F01B0(w) != 0) {
@@ -10513,13 +10513,13 @@ void func_080F0660(UnkStruct_080F023C* p, u8 a) {
 
 void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
     if (flag) {
-        p->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        p->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
-        p->unk_DC = gUnk_02039BA0->unk_18.unk_00.z - 0x1000;
+        p->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        p->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
+        p->unk_DC = gUnk_02039BA0->actor.unk_00.z - 0x1000;
     } else {
-        p->unk_D4 = gUnk_02039BA0->unk_18.unk_00.x;
-        p->unk_D8 = gUnk_02039BA0->unk_18.unk_00.y;
-        p->unk_DC = gUnk_02039BA0->unk_18.unk_00.z;
+        p->unk_D4 = gUnk_02039BA0->actor.unk_00.x;
+        p->unk_D8 = gUnk_02039BA0->actor.unk_00.y;
+        p->unk_DC = gUnk_02039BA0->actor.unk_00.z;
 
         if (GetRandom() % 2) {
             s32 t = GetRandom() % 65 * 256 + 0x2000;
@@ -10555,10 +10555,10 @@ void func_080F07EC(UnkStruct_080E590C* p) {
     func_080F0660((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
-    if (q->unk_08 < gUnk_02039BA0->unk_18.unk_00.z - 0x4000) {
+    if (q->unk_08 < gUnk_02039BA0->actor.unk_00.z - 0x4000) {
         func_080F0708((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
@@ -10599,7 +10599,7 @@ void func_080F08E4(UnkStruct_080E590C* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
     dx = p->unk_D4;
@@ -10773,7 +10773,7 @@ void func_080F0C68(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (GetRandom() % 20 == 0) {
-        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -10891,7 +10891,7 @@ void func_080F0EEC(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (GetRandom() % 20 == 0) {
-        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y);
+        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -11137,7 +11137,7 @@ void func_080F14C4(MapGmkJumpWork* w) {
     if (ColliderIsTouchingType(&w->unk_040, 1)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
-    } else if (gUnk_02039BA0->unk_18.unk_00.z != gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+    } else if (gUnk_02039BA0->actor.unk_00.z != gUnk_02039BA0->actor.unk_00.unk_0C) {
         w->unk_0C8 = func_080F1544;
         w->unk_0C0 = 2;
         AnimStart(&w->anim, 2, 1);
@@ -11279,7 +11279,7 @@ void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_064 = func_080F173C;
     f = 0;
 
-    if (gUnk_02039BA0->unk_18.unk_00.x >= e->unk_00) {
+    if (gUnk_02039BA0->actor.unk_00.x >= e->unk_00) {
         f = 1;
     }
     w->unk_068 = f;
@@ -11344,7 +11344,7 @@ void func_080F1968(u8* work) {
 
 u8 func_080F1978(MapGmkTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 0, 8) != 0) {
-        if ((gUnk_02039BA0->unk_70 & 0x800000) == 0 && gUnk_02039BA0->unk_18.unk_00.z == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+        if ((gUnk_02039BA0->unk_70 & 0x800000) == 0 && gUnk_02039BA0->actor.unk_00.z == gUnk_02039BA0->actor.unk_00.unk_0C) {
             TaskPool* pool = &w->unk_0B0;
 
             TaskCreate(pool, &gTaskDescMapSpark, w);
@@ -11474,7 +11474,7 @@ void func_080F1CCC(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     w->unk_0C0 = func_080F1C64;
     v = 0;
 
-    if (gUnk_02039BA0->unk_18.unk_00.x >= w->unk_000) {
+    if (gUnk_02039BA0->actor.unk_00.x >= w->unk_000) {
         v = 1;
     }
     w->unk_0C4 = v;
@@ -12594,7 +12594,7 @@ u8 func_080F3ADC(MapGmk01Work* w) {
         w->unk_0C8 = 0;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x20;
-        func_080E9078(gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y, gUnk_02039BA0->unk_18.unk_00.z);
+        func_080E9078(gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y, gUnk_02039BA0->actor.unk_00.z);
         func_080DEE18(gUnk_0203C590.unk_06)->unk_00 |= 0x10;
         w->unk_000->unk_00 |= 2;
         w->unk_0C4 = 20;
@@ -13161,7 +13161,7 @@ void func_080F49D0(MapPrizeWork* w) {
 
         w->unk_7C = func_080F4BA0;
         w->unk_82 = 0;
-        w->unk_8C = GetAngle(gUnk_02039BA0->unk_18.unk_00.x, gUnk_02039BA0->unk_18.unk_00.y, w->unk_00, w->unk_04);
+        w->unk_8C = GetAngle(gUnk_02039BA0->actor.unk_00.x, gUnk_02039BA0->actor.unk_00.y, w->unk_00, w->unk_04);
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
@@ -13191,10 +13191,10 @@ void func_080F4BA0(MapPrizeWork* w) {
     FieldState* g = gUnk_02039BA0;
 
     s = gSineTable[w->unk_8C] * 32;
-    x = g->unk_18.unk_00.x + (s * w->unk_90 >> 8);
+    x = g->actor.unk_00.x + (s * w->unk_90 >> 8);
     s = -gSineTable[w->unk_8C + 64] * 22;
-    y = g->unk_18.unk_00.y + (s * w->unk_90 >> 8);
-    z = g->unk_18.unk_00.z - (w->unk_82 / 2 << 8);
+    y = g->actor.unk_00.y + (s * w->unk_90 >> 8);
+    z = g->actor.unk_00.z - (w->unk_82 / 2 << 8);
     w->unk_8C += w->unk_8D;
     w->unk_00 += (x - w->unk_00) >> 2;
     w->unk_04 += (y - w->unk_04) >> 2;
@@ -13224,25 +13224,25 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
 
     switch (w->unk_80) {
     case 3:
-        w->unk_74 = gUnk_098A5CAE;
+        w->gfx = gUnk_098A5CAE;
         w->unk_94 = 10;
         break;
     case 2:
-        w->unk_74 = gUnk_098A5CA4;
+        w->gfx = gUnk_098A5CA4;
         w->unk_94 = 4;
         break;
     case 1:
-        w->unk_74 = gUnk_098A5C9A;
+        w->gfx = gUnk_098A5C9A;
         w->unk_94 = gGameState.progression.maxHp / 20;
         break;
     case 0:
     default:
-        w->unk_74 = gUnk_098A5C90;
+        w->gfx = gUnk_098A5C90;
         w->unk_94 = gGameState.progression.maxHp * 3 / 100;
         break;
     }
 
-    w->unk_78 = gUnk_098A5CB8;
+    w->gfx2 = gUnk_098A5CB8;
     w->unk_97 = 0;
     w->unk_96 = 1;
     w->unk_82 = 0;
@@ -13284,10 +13284,10 @@ void func_080F4DDC(MapPrizeWork* w) {
             aff = 0;
         }
 
-        DrawSprite(x, y, w->unk_74, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
 
         if (w->unk_97 == 0) {
-            DrawSprite(x, (w->unk_04 >> 8) + (w->unk_0C >> 8) - (gUnk_02039BA0->unk_04 >> 8), w->unk_78, w->tiles, w->palette, aff, 0x800, 0xFFFF);
+            DrawSprite(x, (w->unk_04 >> 8) + (w->unk_0C >> 8) - (gUnk_02039BA0->unk_04 >> 8), w->gfx2, w->tiles, w->palette, aff, 0x800, 0xFFFF);
         }
     }
 }
@@ -13375,7 +13375,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
         w->unk_088 = 0;
         w->unk_08C = func_080F51A0;
     } else {
-        w->unk_0BA = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+        w->x = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
         w->unk_0BC = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         w->unk_0BE = -0x1004 - (w->unk_004 >> 8) * 4;
         func_080F4EE4(w);
@@ -13428,7 +13428,7 @@ void func_080F51A0(MapPrzCardWork* w) {
     }
 
     x = w->unk_000 >> 8;
-    w->unk_0BA = x;
+    w->x = x;
     y = w->unk_004 >> 8;
     w->unk_0BC = y;
     func_080F4EE4(w);
@@ -13449,7 +13449,7 @@ void func_080F52D4(MapPrzCardWork* w) {
     }
 
     x = w->unk_000 >> 8;
-    w->unk_0BA = x;
+    w->x = x;
     y = w->unk_004 >> 8;
     w->unk_0BC = y;
     func_080F4EE4(w);
@@ -13468,9 +13468,9 @@ void func_080F534C(MapPrzCardWork* w) {
     s32 y;
 
     w->unk_0CE += 32;
-    x = (gUnk_02039BA0->unk_18.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (gUnk_02039BA0->unk_18.unk_00.y >> 8) + (gUnk_02039BA0->unk_18.unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    w->unk_0BA += ((s16)x - w->unk_0BA) >> 3;
+    x = (gUnk_02039BA0->actor.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    y = (gUnk_02039BA0->actor.unk_00.y >> 8) + (gUnk_02039BA0->actor.unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    w->x += ((s16)x - w->x) >> 3;
     w->unk_0BC += ((s16)y - w->unk_0BC) >> 3;
     w->unk_0B4 -= 10;
     w->unk_0B6 -= 10;
@@ -13559,15 +13559,15 @@ void func_080F55B0(MapPrzCardWork* w) {
     }
 
     d = &gCardDefs[w->unk_0A8];
-    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, d->unk_00, w->tiles, w->palette,
+    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, d->unk_00, w->tiles, w->palette,
         affine, w->unk_088, w->unk_0BE + 1);
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, q->unk_00, w->tiles2,
+    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, q->unk_00, w->tiles2,
         w->palette2, affine, w->unk_088, w->unk_0BE);
 
     if (w->unk_090.unk_0E != 3) {
         t = gUnk_09EE981C[w->unk_090.unk_04];
-        DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, t, w->tiles3,
+        DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, t, w->tiles3,
             w->palette2, affine, w->unk_088, w->unk_0BE - 1);
     }
 
@@ -13745,7 +13745,7 @@ s32 func_080F5B68(MapTalkWork* w) {
 
     AnimUpdate(anim);
 
-    if (gUnk_02039BA0->unk_18.unk_00.x < *p) {
+    if (gUnk_02039BA0->actor.unk_00.x < *p) {
         w->unk_28 = 0;
         AnimStart(anim, 0, 1);
     } else {
@@ -14148,16 +14148,16 @@ void func_080F6668(MapNamineWork* w) {
     s32 dx;
     s32 dy;
 
-    dx = w->unk_000 - gUnk_02039BA0->unk_18.unk_00.x;
+    dx = w->unk_000 - gUnk_02039BA0->actor.unk_00.x;
 
     if (dx < 0) {
-        dx = gUnk_02039BA0->unk_18.unk_00.x - w->unk_000;
+        dx = gUnk_02039BA0->actor.unk_00.x - w->unk_000;
     }
 
-    dy = w->unk_004 - gUnk_02039BA0->unk_18.unk_00.y;
+    dy = w->unk_004 - gUnk_02039BA0->actor.unk_00.y;
 
     if (dy < 0) {
-        dy = gUnk_02039BA0->unk_18.unk_00.y - w->unk_004;
+        dy = gUnk_02039BA0->actor.unk_00.y - w->unk_004;
     }
 
     if (dx <= 0x8000 && dy <= 0x8000) {
@@ -14527,7 +14527,7 @@ void func_080F7024(MapTutorialWork* w) {
         *(u16*)&w->unk_014[6] = 16;
         v = 0;
 
-        if (gUnk_02039BA0->unk_18.unk_00.x > w->unk_000) {
+        if (gUnk_02039BA0->actor.unk_00.x > w->unk_000) {
             v = 1;
         }
         w->unk_0C2 = v;
@@ -14685,13 +14685,13 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     s32 dx;
     s32 dy;
 
-    dx = p->unk_00 - gUnk_02039BA0->unk_18.unk_00.x;
+    dx = p->unk_00 - gUnk_02039BA0->actor.unk_00.x;
     if (dx < 0) {
-        dx = gUnk_02039BA0->unk_18.unk_00.x - p->unk_00;
+        dx = gUnk_02039BA0->actor.unk_00.x - p->unk_00;
     }
-    dy = p->x - gUnk_02039BA0->unk_18.unk_00.y;
+    dy = p->x - gUnk_02039BA0->actor.unk_00.y;
     if (dy < 0) {
-        dy = gUnk_02039BA0->unk_18.unk_00.y - p->x;
+        dy = gUnk_02039BA0->actor.unk_00.y - p->x;
     }
 
     if (dx > 0x8000 || dy > 0x8000) {
@@ -14702,7 +14702,7 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
 
 void func_080F74E8(UnkStruct_080DFF1C* p) {
     if ((u8)func_080F7488(p, 0x800) != 0) {
-        if (gUnk_02039BA0->unk_18.unk_00.z == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+        if (gUnk_02039BA0->actor.unk_00.z == gUnk_02039BA0->actor.unk_00.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
                 gUnk_0203C7AC->unk_00 |= 0x100;
             } else {
@@ -14716,7 +14716,7 @@ void func_080F753C(UnkStruct_080DFF1C* p) {
     s32 k = 0x800;
 
     if ((u8)func_080F7488(p, k) != 0) {
-        if (gUnk_02039BA0->unk_18.unk_00.z == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
+        if (gUnk_02039BA0->actor.unk_00.z == gUnk_02039BA0->actor.unk_00.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
                 gUnk_0203C7AC->unk_00 |= k;
             } else {
@@ -14908,7 +14908,7 @@ void func_080F7AE0(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 |= 0x80;
     w->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
     w->palette = LoadObjPalette(gUnk_099910C4, 32);
-    w->unk_08 = gUnk_09EF8DA4[0];
+    w->gfx = gUnk_09EF8DA4[0];
     w->unk_0E = 120;
 #ifdef VERSION_EU
     InitTextSlots(w->unk_18, 60);
@@ -14931,7 +14931,7 @@ s32 func_080F7B64(u8* work) {
 }
 
 void func_080F7B78(MapFloorWork* w) {
-    DrawSprite(120, 138, w->unk_08, w->tiles, w->palette, 0, 0, 0x3C);
+    DrawSprite(120, 138, w->gfx, w->tiles, w->palette, 0, 0, 0x3C);
     DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->palette2, 50, w->unk_10);
 }
 

@@ -284,7 +284,7 @@ void task_wlogo_won_0(WlogoWonWork* work) {
     work->palette = LoadObjPalette(gUnk_096FAC84, 0x20);
 
     for (i = 0; i < 10; i++) {
-        work->unk_084[i] = gUnk_09EF3924[i];
+        work->gfx[i] = gUnk_09EF3924[i];
         work->x[i] = gUnk_09EF1744[i].unk_00;
         work->y[i] = gUnk_09EF1744[i].unk_04;
         work->unk_05C[i] = gUnk_09EF1744[i].unk_08;
@@ -370,7 +370,7 @@ void task_wlogo_won_2(WlogoWonWork* work) {
     if (work->unk_0F2 == 1) {
         for (i = 0; i < 10; i++) {
             affine = AllocObjAffine(work->unk_00A, gUnk_09EF180C[work->unk_0CA[i]], 0x100, 0);
-            DrawSprite(work->x[i] >> 8, work->y[i] >> 8, work->unk_084[i], work->tiles, work->palette, affine, 0, gUnk_09EF167C[i].unk_10);
+            DrawSprite(work->x[i] >> 8, work->y[i] >> 8, work->gfx[i], work->tiles, work->palette, affine, 0, gUnk_09EF167C[i].unk_10);
         }
     }
 }
@@ -1486,7 +1486,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     AnimInit(&work->anim[5], gUnk_09EF37DC, gUnk_09EF377C);
     AnimStart(&work->anim[5], 0, 0);
     work->gfx6 = AnimGetGfx(&work->anim[5]);
-    work->unk_038 = gUnk_09EF37F4[0];
+    work->gfx7 = gUnk_09EF37F4[0];
 
     for (i = 0; i < 8; i++) {
         work->unk_100[i] = 0;
@@ -1735,7 +1735,7 @@ void task_wlogo_tt_2(WlogoTtWork* work) {
     }
 
     if (work->unk_100[6] == 1) {
-        DrawSprite(64, 64, work->unk_038, work->tiles5, work->palette, 0, 0, 32);
+        DrawSprite(64, 64, work->gfx7, work->tiles5, work->palette, 0, 0, 32);
     }
     TaskPoolDraw(&work->unk_114);
 }

@@ -216,19 +216,19 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 
     if (args->unk_14 != 0) {
         work->unk_3D = 1;
-        work->unk_00 = gBtlWork->tiles2;
+        work->tiles2 = gBtlWork->tiles2;
         work->actor = gBtlWork->actor;
         work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
-        work->unk_00 = gBtlWork->tiles2;
+        work->tiles2 = gBtlWork->tiles2;
         work->actor = gUnk_02039B9C->actor;
         work->palette = LoadObjPalette(gUnk_096FAC64, 32);
     }
 
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithTables(&work->anim, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
-    SetObjTileSource(work->unk_00, gUnk_08901C8A);
+    SetObjTileSource(work->tiles2, gUnk_08901C8A);
     work->x = args->unk_00;
     work->y = args->unk_04;
     work->z = args->unk_08;
@@ -557,7 +557,7 @@ void task_btl_raid_2(BtlRaidWork* work) {
             }
         }
 
-        DrawSprite(sx, sy, work->gfx, work->unk_00, work->palette, affine, flags,
+        DrawSprite(sx, sy, work->gfx, work->tiles2, work->palette, affine, flags,
                    -4100 - (((work->y + 0x1000) >> 8) * 4));
         WorldToScreen(&sx, &sy, work->x, work->y, 0);
         DrawSprite(sx, sy, gUnk_08B22CBC, work->tiles, work->palette2, 0, flags, 0xFFFE);
@@ -576,7 +576,7 @@ void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->tiles = AllocObjTiles(128, 0);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
-    work->unk_2C = work->palette;
+    work->palette3 = work->palette;
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
 }
@@ -598,24 +598,24 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
         switch (state) {
         case 2:
             func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
-            work->unk_2C = work->palette;
+            work->palette3 = work->palette;
             break;
         case 5:
             func_08019068(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
-            work->unk_2C = work->palette2;
+            work->palette3 = work->palette2;
             break;
         case 3:
             func_08019068(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
-            work->unk_2C = work->palette;
+            work->palette3 = work->palette;
             break;
         case 4:
             func_08019068(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
-            work->unk_2C = work->palette2;
+            work->palette3 = work->palette2;
             break;
         case 1:
         default:
             func_08019068(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
-            work->unk_2C = work->palette;
+            work->palette3 = work->palette;
             break;
         }
     }
@@ -650,7 +650,7 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
 
         WorldToScreen(&sx, &sy, obj->unk_004, obj->unk_008,
                       obj->unk_00C - ((obj->unk_09C + 8) << 8));
-        DrawSprite(sx, sy, gfx, work->tiles, work->unk_2C, 0, flags,
+        DrawSprite(sx, sy, gfx, work->tiles, work->palette3, 0, flags,
                    -4101 - ((obj->unk_008 >> 8) * 4));
     }
 }

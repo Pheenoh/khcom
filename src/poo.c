@@ -2691,18 +2691,18 @@ u8 task_poo_freeballoon_1(PooFreeBalloonWork* w) {
     }
     w->unk_24.unk_00 = w->unk_34.unk_00 + w->unk_90 * 256;
     w->unk_24.unk_04 = w->unk_34.unk_04 - ((w->unk_90 * w->unk_90) << 8) / 32;
-    w->unk_8C = (w->unk_6C.unk_00 >> 8) - gUnk_0203C40C;
-    w->unk_8E = (w->unk_6C.unk_04 >> 8) + (w->unk_6C.unk_08 >> 8) - gUnk_0203C3F8;
-    w->unk_44 = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
-    w->unk_46 = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
+    w->x2 = (w->unk_6C.unk_00 >> 8) - gUnk_0203C40C;
+    w->y2 = (w->unk_6C.unk_04 >> 8) + (w->unk_6C.unk_08 >> 8) - gUnk_0203C3F8;
+    w->x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
+    w->y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
-    if (func_080CC284(w->unk_8C, w->unk_8E) != 0) {
+    if (func_080CC284(w->x2, w->y2) != 0) {
         w->gfx2 = AnimUpdate(w->anim2);
     } else {
         w->gfx2 = 0;
     }
 
-    if (func_080CC284(w->unk_44, w->unk_46) != 0) {
+    if (func_080CC284(w->x, w->y) != 0) {
         w->gfx = AnimUpdate(w->anim);
     } else {
         w->gfx = 0;
@@ -2716,11 +2716,11 @@ u8 task_poo_freeballoon_1(PooFreeBalloonWork* w) {
 
 void task_poo_freeballoon_2(PooFreeBalloonWork* w) {
     if (w->gfx2 != 0) {
-        DrawSprite(w->unk_8C, w->unk_8E, w->gfx2, w->tiles2, w->palette2, 0, 0x800, -0x1004 - (w->unk_6C.unk_04 >> 8) * 4);
+        DrawSprite(w->x2, w->y2, w->gfx2, w->tiles2, w->palette2, 0, 0x800, -0x1004 - (w->unk_6C.unk_04 >> 8) * 4);
     }
 
     if (w->gfx != 0) {
-        DrawSprite(w->unk_44, w->unk_46, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(w->x, w->y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
     }
 }
 
@@ -5526,10 +5526,10 @@ void task_poo_bee_0(PooBeeWork* w) {
     b = gUnk_09EF5FF8;
 
     for (; i < 4; i++) {
-        w->unk_24[i].unk_00 = -0x500;
-        w->unk_24[i].unk_04 = 0x500;
-        w->unk_24[i].unk_10 = gUnk_096FD730[i].unk_00;
-        w->unk_24[i].unk_14 = gUnk_096FD730[i].unk_04;
+        w->sub[i].unk_00 = -0x500;
+        w->sub[i].unk_04 = 0x500;
+        w->sub[i].unk_10 = gUnk_096FD730[i].unk_00;
+        w->sub[i].unk_14 = gUnk_096FD730[i].unk_04;
     }
     AnimInit(w->anim, a, b);
     AnimStart(w->anim, 0, 1);
@@ -5548,17 +5548,17 @@ u8 task_poo_bee_1(PooBeeWork* w) {
             w->unk_C8 = 0;
 
             for (i = 0; i < 4; i++) {
-                w->unk_24[i].unk_00 = w->unk_A4 - 0x500;
-                w->unk_24[i].unk_04 = w->unk_A8 + 0x500;
-                w->unk_24[i].unk_08 = w->unk_AC;
-                w->unk_24[i].unk_10 = 0x2000 + gUnk_0203C3EC->unk_00 + gUnk_096FD730[i].unk_00;
-                w->unk_24[i].unk_14 = -0x2000 + gUnk_0203C3EC->unk_04 + gUnk_096FD730[i].unk_04;
+                w->sub[i].unk_00 = w->unk_A4 - 0x500;
+                w->sub[i].unk_04 = w->unk_A8 + 0x500;
+                w->sub[i].unk_08 = w->unk_AC;
+                w->sub[i].unk_10 = 0x2000 + gUnk_0203C3EC->unk_00 + gUnk_096FD730[i].unk_00;
+                w->sub[i].unk_14 = -0x2000 + gUnk_0203C3EC->unk_04 + gUnk_096FD730[i].unk_04;
             }
         }
 
         if (gUnk_02034E2C <= 3) {
-            ApproachValue(&w->unk_24[gUnk_02034E2C].unk_00, w->unk_24[gUnk_02034E2C].unk_10, w->unk_C6);
-            ApproachValue(&w->unk_24[gUnk_02034E2C].unk_04, w->unk_24[gUnk_02034E2C].unk_14, w->unk_C6);
+            ApproachValue(&w->sub[gUnk_02034E2C].unk_00, w->sub[gUnk_02034E2C].unk_10, w->unk_C6);
+            ApproachValue(&w->sub[gUnk_02034E2C].unk_04, w->sub[gUnk_02034E2C].unk_14, w->unk_C6);
             w->unk_C6--;
 
             if (w->unk_C6 == 0) {
@@ -5579,8 +5579,8 @@ u8 task_poo_bee_1(PooBeeWork* w) {
             w->unk_A8 -= w->unk_B8;
 
             for (i = 0; i < 4; i++) {
-                w->unk_24[i].unk_00 -= w->unk_B4;
-                w->unk_24[i].unk_04 -= w->unk_B8;
+                w->sub[i].unk_00 -= w->unk_B4;
+                w->sub[i].unk_04 -= w->unk_B8;
             }
 
             if (func_080C9D84() == 0) {
@@ -5620,8 +5620,8 @@ void task_poo_bee_2(PooBeeWork* w) {
     }
 
     for (i = 0; i < gUnk_02034E2C + 1 && i <= 3; i++) {
-        u = (w->unk_24[i].unk_00 >> 8) - gUnk_0203C40C;
-        v = (w->unk_24[i].unk_04 >> 8) + (w->unk_24[i].unk_08 >> 8) - gUnk_0203C3F8;
+        u = (w->sub[i].unk_00 >> 8) - gUnk_0203C40C;
+        v = (w->sub[i].unk_04 >> 8) + (w->sub[i].unk_08 >> 8) - gUnk_0203C3F8;
         DrawSprite(u, v, w->gfx, w->tiles, w->palette, 0, 0x800, i - ((w->unk_A8 >> 8) * 4 + 0x1003));
     }
 }
@@ -6191,24 +6191,24 @@ void task_poo_prize_0(PooPrizeWork* w, PoohPrizeArgs* a) {
 
     switch (w->unk_80) {
     case 3:
-        w->unk_74 = gUnk_098A5CAE;
+        w->gfx = gUnk_098A5CAE;
         w->unk_94 = 10;
         break;
     case 2:
-        w->unk_74 = gUnk_098A5CA4;
+        w->gfx = gUnk_098A5CA4;
         w->unk_94 = 4;
         break;
     case 1:
-        w->unk_74 = gUnk_098A5C9A;
+        w->gfx = gUnk_098A5C9A;
         w->unk_94 = 10;
         break;
     case 0:
     default:
-        w->unk_74 = gUnk_098A5C90;
+        w->gfx = gUnk_098A5C90;
         w->unk_94 = 3;
         break;
     }
-    w->unk_78 = gUnk_098A5CB8;
+    w->gfx2 = gUnk_098A5CB8;
     w->unk_97 = 0;
     w->unk_96 = 1;
     w->unk_82 = 0;
@@ -6252,11 +6252,11 @@ void task_poo_prize_2(PooPrizeWork* w) {
     } else {
         aff = 0;
     }
-    DrawSprite(x, y, w->unk_74, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
+    DrawSprite(x, y, w->gfx, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
 
     if (w->unk_97 == 0) {
         y = (w->unk_04 >> 8) + (w->unk_0C >> 8) - gUnk_0203C3F8;
-        DrawSprite(x, y, w->unk_78, w->tiles, w->palette, aff, 0x800, 0xFFF0);
+        DrawSprite(x, y, w->gfx2, w->tiles, w->palette, aff, 0x800, 0xFFF0);
     }
 }
 

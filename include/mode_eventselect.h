@@ -46,7 +46,7 @@ typedef struct CardBattleWork {
     u8 unk_1C[0x28];
     void* unk_44[4];
     u8 unk_54[0x50];
-    s16 unk_A4;
+    s16 x;
     u8 unk_A6[0x0A];
     s16 unk_B0;
     u8 unk_B2[0x07];
