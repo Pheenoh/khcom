@@ -672,9 +672,9 @@ typedef struct MapGmkGpWork {
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x5C];
-    AnimState unk_0A0;
-    void* unk_0B8;
-    u8* unk_0BC;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void* unk_0C0;
     u16 unk_0C4;
     u16 unk_0C6;
