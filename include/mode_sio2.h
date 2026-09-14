@@ -71,7 +71,7 @@ typedef struct PoohWork {
     void* unk_00;
     PaletteSlot* palette;
     u8 unk_08[0x04];
-    u8 unk_0C[0x18];
+    u8 anim[0x18];
     u8 unk_24;
     u8 unk_25;
     u16 unk_26;

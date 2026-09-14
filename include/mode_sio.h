@@ -222,21 +222,21 @@ typedef struct SioBtlOptionWork {
 #ifdef VERSION_EU
     TextSlot unkEu_0F4[20];
 #endif
-    void* unk_0F4;
+    void* palette7;
     u8 unk_0F8;
     u8 unk_0F9[3];
     TextSlot unk_0FC[10];
 #ifdef VERSION_EU
     TextSlot unkEu_1EC[10];
 #endif
-    void* unk_14C;
+    void* palette8;
     u8 unk_150;
     u8 unk_151[3];
     TextSlot unk_154[10];
 #ifdef VERSION_EU
     TextSlot unkEu_294[10];
 #endif
-    void* unk_1A4;
+    void* palette9;
     void* tiles;
     void* palette;
     void* gfx;

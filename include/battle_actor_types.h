@@ -83,7 +83,7 @@ typedef struct BtlObj {
     struct BtlObj* unk_0DC;
     u16 unk_0E0;
     s16 unk_0E2;
-    struct BtlWork* unk_0E4;
+    struct BtlWork* btl;
     s32 unk_0E8;
     s16 unk_0EC;
     u8 unk_0EE[0x02];

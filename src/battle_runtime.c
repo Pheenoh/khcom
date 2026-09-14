@@ -1495,7 +1495,7 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     p->unk_0E2 = 0;
     p->unk_0E0 = 0;
     p->unk_0CC = 0xFFF1;
-    p->unk_0E4 = 0;
+    p->btl = 0;
     p->unk_0E8 = 0;
     p->unk_0EC = 0;
     p->unk_0F0 = gBtlWork->unk_07C->unk_004;
@@ -1969,13 +1969,13 @@ u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z) {
 
 void func_0801C068(void) {
     if (gGameState.flags & 8) {
-        gBtlWork->unk_110 = AllocObjTiles(0x840, 0);
+        gBtlWork->tiles = AllocObjTiles(0x840, 0);
     } else {
-        gBtlWork->unk_110 = AllocObjTiles(0xC80, 0);
-        gBtlWork->unk_114 = AllocObjTiles(0xA00, 0);
+        gBtlWork->tiles = AllocObjTiles(0xC80, 0);
+        gBtlWork->tiles2 = AllocObjTiles(0xA00, 0);
 
         if (gBtlWork->unk_068 & 0x4000) {
-            gUnk_02039B9C->unk_110 = AllocObjTiles(0xC80, 0);
+            gUnk_02039B9C->tiles = AllocObjTiles(0xC80, 0);
         }
     }
     gBtlWork->unk_068 |= 0x1000000000000;
@@ -1984,13 +1984,13 @@ void func_0801C068(void) {
 void func_0801C104(void) {
     if (gBtlWork->unk_068 & 0x1000000000000) {
         if (gGameState.flags & 8) {
-            ReleaseObjTiles(gBtlWork->unk_110);
+            ReleaseObjTiles(gBtlWork->tiles);
         } else {
-            ReleaseObjTiles(gBtlWork->unk_110);
-            ReleaseObjTiles(gBtlWork->unk_114);
+            ReleaseObjTiles(gBtlWork->tiles);
+            ReleaseObjTiles(gBtlWork->tiles2);
 
             if (gBtlWork->unk_068 & 0x4000) {
-                ReleaseObjTiles(gUnk_02039B9C->unk_110);
+                ReleaseObjTiles(gUnk_02039B9C->tiles);
             }
         }
         gBtlWork->unk_068 &= ~0x1000000000000;

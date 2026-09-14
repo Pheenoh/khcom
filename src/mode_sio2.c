@@ -1232,7 +1232,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
         break;
     }
 
-    AnimChangeWithTables(&w->unk_0C, e->unk_0C, flags, e->unk_04, e->unk_00);
+    AnimChangeWithTables(&w->anim, e->unk_0C, flags, e->unk_04, e->unk_00);
     SetObjTileSource(w->unk_00, e->unk_08);
 }
 

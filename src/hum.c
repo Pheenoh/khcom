@@ -2334,8 +2334,8 @@ u8 task_hum_hades_1(HadesWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             func_08019068(gUnk_0813F22C, &w->base.anim, 7, 0, w->base.tiles);
 #ifdef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 8) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 8) {
+                act->btl->unk_0F8--;
             }
 #endif
         }
@@ -2497,7 +2497,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         }
 
 #ifndef VERSION_EU
-        if (act->unk_0E4->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
+        if (act->btl->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
             gBtlWork->unk_124 = 0x200;
         }
 #endif
@@ -2543,8 +2543,8 @@ u8 task_hum_hades_1(HadesWork* work) {
             func_08019068(gUnk_0813F2CC, &w->base.unk_00C->anim, 1, 0, w->base.unk_00C->tiles);
             w->unk_188.unk_34 &= 0xFFFD;
 #ifdef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 8) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 8) {
+                act->btl->unk_0F8--;
             }
 #endif
         }
@@ -2559,7 +2559,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         case 3:
         case 4:
 #ifndef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
+            if (act->btl->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
                 gBtlWork->unk_124 = 0x200;
             }
 #endif
@@ -2595,8 +2595,8 @@ u8 task_hum_hades_1(HadesWork* work) {
             w->unk_188.unk_30 = act->unk_00C;
             m4aSongNumStart(253);
 #ifdef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 8) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 8) {
+                act->btl->unk_0F8--;
             }
 #endif
         }
@@ -2609,7 +2609,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             break;
         case 2:
 #ifndef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
+            if (act->btl->unk_0F4 == 8 && act->unk_02C < act->unk_02E >> 1) {
                 gBtlWork->unk_124 = 0x200;
             }
 #endif
@@ -3530,7 +3530,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             work->base.unk_160 = (gBtlWork->unk_0DE + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) << 8;
             work->base.unk_164 = -((GetRandom() % 71) << 8);
 
-            if (act->unk_0E4->unk_0F4 == 50) {
+            if (act->btl->unk_0F4 == 50) {
                 work->base.unk_152 = 12;
             } else {
                 work->base.unk_152 = 25;
@@ -4378,8 +4378,8 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 1:
         if ((s16)work->base.unk_150 == 0) {
-            if (act->unk_0E4->unk_0F4 == 18) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 18) {
+                act->btl->unk_0F8--;
 #ifdef VERSION_EU
                 w->unk_20C = work->base.unk_168 = 0x100;
                 w->unk_210 = work->base.unk_16C = 0x100;
@@ -5091,7 +5091,7 @@ void task_hum_vixen_0(VixenWork* work) {
     work->base.unk_184 = gUnk_0813F7A8;
 
     if (gGameState.flags & 8) {
-        gBtlWork->unk_114 = AllocObjTiles(0x840, 0);
+        gBtlWork->tiles2 = AllocObjTiles(0x840, 0);
     }
 }
 
@@ -5147,7 +5147,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 3:
     case 8:
-        if (act->unk_0E4->unk_0F4 == 27) {
+        if (act->btl->unk_0F4 == 27) {
             w->base.unk_170 = 37;
             w->base.unk_150 = 0;
         }
@@ -5307,7 +5307,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
         if (AnimIsFinished(&w->base.anim)) {
             w->base.unk_154 &= ~4;
-            act->unk_0E4->unk_0F8--;
+            act->btl->unk_0F8--;
             v = 0;
             act->unk_02C = act->unk_02E / 4;
             act->unk_034 &= ~0x100;
@@ -5394,7 +5394,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             }
             work->unk_19C = act->unk_008;
             m4aSongNumStart(276);
-            InitObjTilesAtSlot(&work->unk_1E8, *(u16*)((u8*)gBtlWork->unk_114 + 6), gUnk_08EE3A84, 0x7E0);
+            InitObjTilesAtSlot(&work->unk_1E8, *(u16*)((u8*)gBtlWork->tiles2 + 6), gUnk_08EE3A84, 0x7E0);
         }
 
         if (AnimGetFrame(&w->base.anim) > 2) {
@@ -5607,7 +5607,7 @@ void task_hum_vixen_2(VixenWork* work) {
 
 void task_hum_vixen_3(VixenWork* work) {
     if (gGameState.flags & 8) {
-        ReleaseObjTiles(gBtlWork->unk_114);
+        ReleaseObjTiles(gBtlWork->tiles2);
     }
     HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->unk_1A4);
@@ -5805,7 +5805,7 @@ void task_hum_vixen_ice_3(VixenIceWork* work) {
 
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
-    work->tiles = gBtlWork->unk_114;
+    work->tiles = gBtlWork->tiles2;
 
     if (gGameState.flags & 8) {
         if (gBtlWork->unk_068 & 0x800000000000) {
@@ -6001,7 +6001,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     s32 a;
     s32 b;
 
-    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->unk_114)->unk_06, gUnk_08C1E78C, 0x4C0);
+    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->tiles2)->unk_06, gUnk_08C1E78C, 0x4C0);
     work->unk_30 = work;
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_38 = 0;
@@ -6340,8 +6340,8 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             func_08019068(gUnk_0813FA98, &w->base.anim, 3, 0, w->base.tiles);
             w->unk_1CA &= ~3;
 #ifdef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 49) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 49) {
+                act->btl->unk_0F8--;
             }
 #endif
         }
@@ -6420,8 +6420,8 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             func_08019068(gUnk_0813FA98, &w->base.anim, 4, 0, w->base.tiles);
             w->unk_1CA &= ~1;
 #ifdef VERSION_EU
-            if (act->unk_0E4->unk_0F4 == 49) {
-                act->unk_0E4->unk_0F8--;
+            if (act->btl->unk_0F4 == 49) {
+                act->btl->unk_0F8--;
             }
 #endif
         }
@@ -6430,7 +6430,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             if (AnimGetGfxIndex(&work->base.anim) == 1) {
                 func_08019A30();
 
-                if (act->unk_0E4->unk_0F4 == 49) {
+                if (act->btl->unk_0F4 == 49) {
                     if ((act->unk_034 & 4)
                         ? func_08011F78(0x149, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 20, 55)
                         : func_08011F78(0x149, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 20, 55)) {

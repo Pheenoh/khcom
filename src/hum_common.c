@@ -47,7 +47,7 @@ void HumInit(HumWork* work, HumDef* def) {
     work->unk_184 = 0;
     gUnk_02039B9C->unk_07C = actor;
     gBtlWork->unk_0A8 = actor;
-    actor->unk_0E4 = gUnk_02039B9C;
+    actor->btl = gUnk_02039B9C;
     actor->unk_034 |= 0x24000000000;
 }
 

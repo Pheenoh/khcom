@@ -85,8 +85,8 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
         else source = gBtlWork->unk_0A8;
     }
-    if (source->unk_0E4 != 0) {
-        switch (source->unk_0E4->unk_0F4) {
+    if (source->btl != 0) {
+        switch (source->btl->unk_0F4) {
         case 35:
             if ((attack->flags & 0x01002000) != 0x2000) break;
             if (hit->unk_034 & 0x100000000ULL) break;
@@ -156,8 +156,8 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             break;
         }
     }
-    if (target->unk_0E4 != 0) {
-        switch (target->unk_0E4->unk_0F4) {
+    if (target->btl != 0) {
+        switch (target->btl->unk_0F4) {
         case 14:
             if (attack->flags & 0x80000000) {
                 func_08019190(hit, 0);
@@ -165,7 +165,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             }
             break;
         case 46:
-            target->unk_0E4->unk_0F8--;
+            target->btl->unk_0F8--;
 #ifdef VERSION_EU
             if (attack->flags & 0x4000)
 #endif
@@ -345,12 +345,12 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         else target->unk_020 = (((source->unk_030 * attack->unk_00) >> 8) * scale) >> 8;
         if (target->unk_020 == 0 && attack->unk_00 > 0) target->unk_020 = 1;
     }
-    if (target->unk_0E4 != 0 && target->unk_0E4->unk_0F4 == 26) {
+    if (target->btl != 0 && target->btl->unk_0F4 == 26) {
         if (target->unk_02C > 1 && target->unk_02C - target->unk_020 <= 0) {
             target->unk_020 = target->unk_02C - 1;
             target->unk_0E2 = 60;
             func_08019190(target, 0);
-            target->unk_0E4->unk_0F8--;
+            target->btl->unk_0F8--;
         }
     }
     target->unk_034 |= 2;

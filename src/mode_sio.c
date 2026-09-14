@@ -318,9 +318,9 @@ void mode_sio_btl_option_0(s32 arg) {
     gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
     gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
 #endif
-    gSioBtlOptionWork->unk_0F4 = LoadObjPalette(gUnk_096FBCC4, 32);
-    gSioBtlOptionWork->unk_14C = LoadObjPalette(gUnk_096FBCC4 + 64, 32);
-    gSioBtlOptionWork->unk_1A4 = LoadObjPalette(gUnk_096FBCC4 + 32, 32);
+    gSioBtlOptionWork->palette7 = LoadObjPalette(gUnk_096FBCC4, 32);
+    gSioBtlOptionWork->palette8 = LoadObjPalette(gUnk_096FBCC4 + 64, 32);
+    gSioBtlOptionWork->palette9 = LoadObjPalette(gUnk_096FBCC4 + 32, 32);
     gSioBtlOptionWork->unk_417 = gUnk_0203AAA0[gUnk_0203AA00];
     DisableBg(0);
     DisableBg(1);
@@ -618,12 +618,12 @@ void func_080AF70C(void) {
     DrawSprite(180, 88, gSioBtlOptionWork->unk_018[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
 #ifdef VERSION_EU
     width = GetTextSlotsWidth(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
-    DrawTextSlots(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+    DrawTextSlots(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);
 #else
-    DrawTextSlots(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+    DrawTextSlots(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);
 #endif
-    DrawTextSlots(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->unk_14C, 0xF200, gSioBtlOptionWork->unk_0F8);
-    DrawTextSlots(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->unk_1A4, 0xF200, gSioBtlOptionWork->unk_150);
+    DrawTextSlots(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->palette8, 0xF200, gSioBtlOptionWork->unk_0F8);
+    DrawTextSlots(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->palette9, 0xF200, gSioBtlOptionWork->unk_150);
     DrawSprite(-((gSioBtlOptionWork->unk_1FA >> 3) % 4) + 88, 2, gSioBtlOptionWork->gfx4, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
     DrawSprite(224 + ((gSioBtlOptionWork->unk_1FA >> 3) % 4), 2, gSioBtlOptionWork->unk_1F0, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
 
@@ -1331,9 +1331,9 @@ void mode_sio_btl_option_2(void) {
     ReleaseObjPalette(gSioBtlOptionWork->unk_008[2]);
     ReleaseObjTiles(gSioBtlOptionWork->unk_008[1]);
     ReleaseObjPalette(gSioBtlOptionWork->unk_008[3]);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_0F4);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_14C);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_1A4);
+    ReleaseObjPalette(gSioBtlOptionWork->palette7);
+    ReleaseObjPalette(gSioBtlOptionWork->palette8);
+    ReleaseObjPalette(gSioBtlOptionWork->palette9);
     ReleaseObjPalette(gSioBtlOptionWork->palette6);
 #ifdef VERSION_EU
     FreeTextSlots(gSioBtlOptionWork->unk_054, 40);

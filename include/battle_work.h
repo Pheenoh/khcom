@@ -75,8 +75,8 @@ typedef struct BtlWork {
     s32 unk_104;
     s32 unk_108;
     s32 unk_10C;
-    void* unk_110;
-    void* unk_114;
+    void* tiles;
+    void* tiles2;
     u8 unk_118[0x08];
     s16 unk_120;
     u8 unk_122[0x02];

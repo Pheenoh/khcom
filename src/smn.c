@@ -13,12 +13,12 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
         work->unk_163 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_110;
+        work->tiles = gBtlWork->tiles;
     } else {
         work->unk_163 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->tiles;
     }
 
     body->unk_004 = obj->unk_014;
@@ -459,12 +459,12 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
         work->unk_163 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_163 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     }
 
     body->unk_004 = (gBtlWork->unk_0DA
@@ -792,12 +792,12 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         work->unk_153 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_153 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     }
 
     body->unk_004 = obj->unk_014;
@@ -853,7 +853,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         break;
     }
 
-    if (work->unk_17C->unk_0E4->unk_0F4 == 0x27) {
+    if (work->unk_17C->btl->unk_0F4 == 0x27) {
         t = 332 * t >> 8;
     }
 
@@ -1177,12 +1177,12 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
         work->unk_155 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_110;
+        work->tiles = gBtlWork->tiles;
     } else {
         work->unk_155 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->tiles;
     }
 
     body->unk_004 = obj->unk_014;
@@ -1414,12 +1414,12 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
         work->unk_153 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     } else {
         work->unk_153 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gBtlWork->unk_114;
+        work->tiles = gBtlWork->tiles2;
     }
 
     body->unk_004 = obj->unk_004;
@@ -1667,12 +1667,12 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
         work->unk_155 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_110;
+        work->tiles = gBtlWork->tiles;
     } else {
         work->unk_155 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->tiles;
     }
 
     body->unk_004 = obj->unk_014;
@@ -1873,12 +1873,12 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
         work->unk_151 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_110;
+        work->tiles = gBtlWork->tiles;
     } else {
         work->unk_151 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->tiles;
     }
 
     if (obj->unk_034 & 4) {
@@ -2299,12 +2299,12 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
         work->unk_15D = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->tiles = gBtlWork->unk_110;
+        work->tiles = gBtlWork->tiles;
     } else {
         work->unk_15D = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->tiles = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->tiles;
     }
 
     body->unk_004 = obj->unk_014;

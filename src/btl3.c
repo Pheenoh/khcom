@@ -216,12 +216,12 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 
     if (args->unk_14 != 0) {
         work->unk_3D = 1;
-        work->unk_00 = gBtlWork->unk_114;
+        work->unk_00 = gBtlWork->tiles2;
         work->unk_5C = gBtlWork->unk_07C;
         work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
-        work->unk_00 = gBtlWork->unk_114;
+        work->unk_00 = gBtlWork->tiles2;
         work->unk_5C = gUnk_02039B9C->unk_07C;
         work->palette = LoadObjPalette(gUnk_096FAC64, 32);
     }

@@ -88,10 +88,10 @@ typedef struct CardSlot {
 } CardSlot;
 
 typedef struct CardDisplayWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* tiles4;
     u8 unk_10[0x04];
     void* palette;
     void* unk_18;
@@ -977,12 +977,12 @@ typedef struct UnkStruct_08095A5C {
     u8 unk_04[0x09];
     u8 unk_0D;
     u8 unk_0E[0x02];
-    u8 unk_10[0x18];
-    u8 unk_28[0x18];
-    u8 unk_40[0x18];
-    void* unk_58;
-    void* unk_5C;
-    void* unk_60;
+    u8 anim[0x18];
+    u8 anim2[0x18];
+    u8 anim3[0x18];
+    void* gfx;
+    void* gfx2;
+    void* gfx3;
     s8 unk_64;
     u8 unk_65;
     u8 unk_66[0x02];
@@ -1776,8 +1776,8 @@ typedef struct UnkStruct_080984E4 {
 
 
 typedef struct UnkStruct_080A4DCC {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     void* unk_008;
     void* unk_00C;
     void* unk_010;
@@ -1788,7 +1788,7 @@ typedef struct UnkStruct_080A4DCC {
     u8 unk_070[0x50];
     s32 unk_0C0;
     u8 unk_0C4[0x18];
-    u8 unk_0DC[0x18];
+    u8 anim[0x18];
     u8 unk_0F4[0x18];
     s32 unk_10C;
     u8 unk_110[0x03];
@@ -1798,7 +1798,7 @@ typedef struct UnkStruct_080A4DCC {
     s32 unk_11C;
     s32 unk_120;
     s32 unk_124;
-    s32 unk_128;
+    s32 gfx;
     void* unk_12C;
     void* unk_130;
     u16 unk_134;
@@ -1816,9 +1816,9 @@ typedef struct UnkStruct_080A4DCC {
 } UnkStruct_080A4DCC;
 
 typedef struct UnkStruct_080A3F5C {
-    void* unk_000;
+    void* tiles3;
     void* palette;
-    void* unk_008;
+    void* tiles4;
     void* palette2;
     void* tiles;
     void* palette3;
@@ -1838,7 +1838,7 @@ typedef struct UnkStruct_080A3F5C {
     s32 unk_11C;
     s32 unk_120;
     s32 unk_124;
-    s32 unk_128;
+    s32 gfx4;
     void* gfx;
     void* gfx2;
     void* gfx3;
