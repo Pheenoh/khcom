@@ -1,5 +1,4 @@
 #include "display.h"
-#include "macros.h"
 #include "battle.h"
 #include "btl_effect.h"
 

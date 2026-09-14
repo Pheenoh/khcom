@@ -3,7 +3,6 @@
 #include "system_state.h"
 #include "obj_api.h"
 #include "poo.h"
-#include "macros.h"
 #include "poo_api.h"
 
 #ifdef VERSION_EU

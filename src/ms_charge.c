@@ -3,7 +3,6 @@
 #include "ms_charge_api.h"
 #include "display.h"
 #include "text.h"
-#include "macros.h"
 #include "ms_charge.h"
 #include "gba/keys.h"
 

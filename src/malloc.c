@@ -1,5 +1,4 @@
 #include "system_state.h"
-#include "macros.h"
 #include "listpool.h"
 #include "intr.h"
 #include "gba/syscall.h"

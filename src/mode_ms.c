@@ -5,7 +5,6 @@
 #include "mode_ms_api.h"
 #include "display.h"
 #include "text.h"
-#include "macros.h"
 #include "mode_ms.h"
 
 #ifdef VERSION_EU

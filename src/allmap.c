@@ -4,7 +4,6 @@
 #include "map_api.h"
 #include "task.h"
 #include "obj_api.h"
-#include "macros.h"
 #include "allmap.h"
 #include "gba/keys.h"
 #include "allmap_api.h"

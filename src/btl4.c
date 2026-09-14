@@ -1,7 +1,6 @@
 #include "battle_localized_data.h"
 #include "registration_data.h"
 #include "system_state.h"
-#include "macros.h"
 #include "btl4.h"
 #include "btl4_api.h"
 

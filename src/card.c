@@ -20,7 +20,6 @@
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
-#include "macros.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "anim.h"

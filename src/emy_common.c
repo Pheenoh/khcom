@@ -1,6 +1,5 @@
 #include "display.h"
 #include "mode_vsbattle.h"
-#include "macros.h"
 #include "enemy_common.h"
 
 void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {

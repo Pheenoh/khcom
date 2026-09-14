@@ -1,4 +1,3 @@
-#include "macros.h"
 #include "acgtrans.h"
 
 void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg) {

@@ -2,7 +2,6 @@
 #include "map_api.h"
 #include "mode.h"
 #include "m4a_song.h"
-#include "macros.h"
 #include "mode_test.h"
 #include "gba/keys.h"
 

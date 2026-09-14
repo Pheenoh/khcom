@@ -1,5 +1,4 @@
 #include "pallet.h"
-#include "macros.h"
 #include "romcri.h"
 
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {

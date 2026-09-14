@@ -3,7 +3,6 @@
 #include "map_api.h"
 #include "msg_api.h"
 #include "fade.h"
-#include "macros.h"
 #include "mode_jiminy.h"
 
 JiminyWork* gJiminyWork;

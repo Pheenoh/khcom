@@ -13,7 +13,6 @@ versions:
       compiled_target: "build/us/com_us.gba"
       elf: "build/us/com_us.elf"
       asm: "asm/us"
-      nonmatchings: "asm/us/nonmatchings"
   - name: jp
     fullname: Japan (B8CJ)
     sha1: 59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa
@@ -24,7 +23,6 @@ versions:
       compiled_target: "build/jp/com_jp.gba"
       elf: "build/jp/com_jp.elf"
       asm: "asm/jp"
-      nonmatchings: "asm/jp/nonmatchings"
   - name: eu
     fullname: Europe (B8CP)
     sha1: 8db73586cdb11b3795907edebf43228dbcd3e6b2
@@ -35,7 +33,6 @@ versions:
       compiled_target: "build/eu/com_eu.gba"
       elf: "build/eu/com_eu.elf"
       asm: "asm/eu"
-      nonmatchings: "asm/eu/nonmatchings"
 
 tools:
   mapfile_parser:

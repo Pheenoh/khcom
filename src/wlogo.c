@@ -2,7 +2,6 @@
 #include "chara_api.h"
 #include "intr.h"
 #include "pallet.h"
-#include "macros.h"
 #include "wlogo.h"
 
 static TaskPool gWlogoHwtTaskPool;

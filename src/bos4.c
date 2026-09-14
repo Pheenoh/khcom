@@ -5,7 +5,6 @@
 #include "status_api.h"
 #include "m4a_song.h"
 #include "text.h"
-#include "macros.h"
 #include "bos4.h"
 #include "bos4_api.h"
 

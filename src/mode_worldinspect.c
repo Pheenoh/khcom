@@ -9,7 +9,6 @@
 #include "fade.h"
 #include "obj_api.h"
 #include "display.h"
-#include "macros.h"
 #include "malloc.h"
 #include "mode_worldinspect.h"
 #include "game_state.h"

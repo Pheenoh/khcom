@@ -3,7 +3,6 @@
 #include "map_api.h"
 #include "mode_status_api.h"
 #include "display.h"
-#include "macros.h"
 #include "mode_status.h"
 
 #ifdef VERSION_EU

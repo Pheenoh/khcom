@@ -2,7 +2,6 @@
 #include "engine_math.h"
 #include "display.h"
 #include "obj_api.h"
-#include "macros.h"
 #include "btl.h"
 #include "btl_effect.h"
 #include "btl_api.h"

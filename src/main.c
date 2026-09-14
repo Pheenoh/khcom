@@ -1,6 +1,5 @@
 #include "memory_regions.h"
 #include "chara_api.h"
-#include "macros.h"
 #include "intr.h"
 #include "gba/syscall.h"
 #include "key.h"

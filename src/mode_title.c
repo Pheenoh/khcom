@@ -1,6 +1,5 @@
 #include "registration_data.h"
 #include "title_api.h"
-#include "macros.h"
 #include "mode_title.h"
 
 u32 gUnk_02034E98;

@@ -16,7 +16,6 @@ COMMON = {"assets/common/movie_codec.bin": ("gUnk_081196B4", 15100)}
 LEGACY_COMMON = {"asm/movie_codec.bin": "assets/common/movie_codec.bin"}
 KEEP = {"manifest.json", ".stamp", ".gitkeep"}
 
-INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 DIRECTIVE_RE = re.compile(r'^[^@\n]*?\.(include|incbin)\s+"([^"]+)"([^@\n]*)', re.M)
 ROM_INCBIN_RE = re.compile(r'^(\s*)\.incbin\s+"roms/([A-Z0-9]{4})\.gba"\s*,\s*([^,\s]+)\s*,\s*([^,\s]+)\s*$')
 LEGACY_COMMON_RE = re.compile(r'(\.incbin\s+)"(' + "|".join(re.escape(k) for k in LEGACY_COMMON) + r')"')
@@ -79,10 +78,6 @@ def unit_roots(root, version):
         if name.startswith("@"):
             continue
         if name.endswith(".c"):
-            for m in INCLUDE_ASM_RE.finditer((root / "src" / name).read_text()):
-                chunk = root / "asm" / version / "nonmatchings" / m.group(1)
-                if chunk.exists():
-                    roots.append(chunk)
             continue
         src = root / "asm" / version / name
         roots.append(src if src.exists() else root / "asm" / name)
@@ -90,7 +85,7 @@ def unit_roots(root, version):
 
 
 def reachable(root, version):
-    search = [root, root / "include", root / "asm" / version / "nonmatchings"]
+    search = [root, root / "include"]
     order = []
     seen = set()
     stack = list(reversed(unit_roots(root, version)))

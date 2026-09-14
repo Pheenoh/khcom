@@ -1,4 +1,3 @@
-#include "macros.h"
 #include "mode_chkobj.h"
 #include "gba/keys.h"
 

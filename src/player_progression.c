@@ -1,6 +1,5 @@
 #include "ms_api.h"
 #include "player_progression.h"
-#include "macros.h"
 #include "battle.h"
 
 GameState gGameState;

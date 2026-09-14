@@ -1,5 +1,4 @@
 #include "registration_data.h"
-#include "macros.h"
 #include "tutorial.h"
 #include "gba/keys.h"
 

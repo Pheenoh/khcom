@@ -1,6 +1,5 @@
 #include "mode.h"
 #include "obj_api.h"
-#include "macros.h"
 #include "battle.h"
 
 void func_080100A0(void);

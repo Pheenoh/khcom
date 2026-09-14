@@ -7,7 +7,6 @@
 #include "mode.h"
 #include "display.h"
 #include "pallet.h"
-#include "macros.h"
 #include "mode_movie.h"
 
 #ifdef VERSION_EU

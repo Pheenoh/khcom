@@ -5,7 +5,6 @@
 #include "sio_api.h"
 #include "obj_api.h"
 #include "fade.h"
-#include "macros.h"
 #include "listpool.h"
 #include "taskpool.h"
 #include "intr.h"

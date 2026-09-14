@@ -4,7 +4,6 @@
 #include "fade.h"
 #include "obj_api.h"
 #include "pallet.h"
-#include "macros.h"
 #include "hum.h"
 #include "gba/keys.h"
 

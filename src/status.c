@@ -2,7 +2,6 @@
 #include "registration_data.h"
 #include "system_state.h"
 #include "status_api.h"
-#include "macros.h"
 #include "anim.h"
 #include "status.h"
 

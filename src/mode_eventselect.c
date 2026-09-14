@@ -5,7 +5,6 @@
 #include "eventselect_api.h"
 #include "m4a_song.h"
 #include "fade.h"
-#include "macros.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "mode_eventselect.h"

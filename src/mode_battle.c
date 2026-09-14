@@ -1,6 +1,5 @@
 #include "mode_battle_api.h"
 #include "mode_battle_data.h"
-#include "macros.h"
 #include "mode_battle.h"
 
 const u16 gUnk_08125E24[1024] = {

@@ -1,5 +1,4 @@
 #include "registration_data.h"
-#include "macros.h"
 #include "mode_copyright2.h"
 
 u16 gUnk_02034EDC;

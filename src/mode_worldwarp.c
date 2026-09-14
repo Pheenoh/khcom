@@ -3,7 +3,6 @@
 #include "system_state.h"
 #include "map_api.h"
 #include "mode_worldwarp_api.h"
-#include "macros.h"
 #include "mode_worldwarp.h"
 
 #ifdef VERSION_EU

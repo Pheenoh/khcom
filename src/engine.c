@@ -5,7 +5,6 @@
 #include "display.h"
 #include <stdlib.h>
 #include "obj_api.h"
-#include "macros.h"
 #include "listpool.h"
 #include "anim.h"
 #include "gba/syscall.h"

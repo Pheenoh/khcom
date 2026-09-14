@@ -1,5 +1,4 @@
 #include "snd_stream.h"
-#include "macros.h"
 #include "gba/syscall.h"
 #include "movie.h"
 

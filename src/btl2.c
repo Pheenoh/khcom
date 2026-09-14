@@ -3,7 +3,6 @@
 #include "map_api.h"
 #include "display.h"
 #include "m4a_song.h"
-#include "macros.h"
 #include "btl2.h"
 #include "gba/keys.h"
 #include "btl2_api.h"

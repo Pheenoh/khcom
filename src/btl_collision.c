@@ -1,5 +1,4 @@
 #include "engine_math.h"
-#include "macros.h"
 #include "listpool.h"
 #include "battle.h"
 #include "btl_collision.h"

@@ -1,5 +1,4 @@
 #include "save_api.h"
-#include "macros.h"
 #include "gba/syscall.h"
 #include "save.h"
 

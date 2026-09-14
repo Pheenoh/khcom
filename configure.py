@@ -10,8 +10,6 @@ sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
 from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
 
-INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
-
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
 
 
@@ -194,11 +192,6 @@ parser.add_argument(
     help="version to build (default: %(default)s)",
 )
 parser.add_argument(
-    "--non-matching",
-    action="store_true",
-    help="build with NON_MATCHING defined; does not verify against the base ROM",
-)
-parser.add_argument(
     "--binutils-prefix",
     default="arm-none-eabi-",
     help="binutils tool prefix (default: %(default)s)",
@@ -209,7 +202,7 @@ version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
 
-build_dir = f"build/{version}-nonmatching" if args.non_matching else f"build/{version}"
+build_dir = f"build/{version}"
 name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
@@ -287,11 +280,6 @@ for src, obj, flags, _section in units:
         deps.extend(asm_file_deps(src, missing_assets))
     if rule == "cc":
         deps += headers
-        for m in INCLUDE_ASM_RE.finditer(src.read_text()):
-            dep = f"asm/{version}/nonmatchings/{m.group(1)}"
-            if Path(dep).exists():
-                deps.append(dep)
-                deps.extend(asm_file_deps(dep, missing_assets))
     if any(dep.startswith("assets/") for dep in deps):
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
@@ -363,13 +351,10 @@ with out.open("w") as f:
     n.variable("agbcc", "tools/agbcc/bin/agbcc")
     n.variable(
         "asflags",
-        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I . -I include -I asm/{version}/nonmatchings",
+        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I . -I include",
     )
     n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
-    defines = f"-DVERSION_{version.upper()}"
-    if args.non_matching:
-        defines += " -DNON_MATCHING"
-    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include {defines}")
+    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
     n.variable("cflags", "-mthumb-interwork -O2 -fprologue-bugfix")
     n.variable("pyreport", report_python)
     n.newline()
@@ -444,19 +429,15 @@ with out.open("w") as f:
         variables={"ldscript": ldscript, "map": mapfile},
     )
     n.build(rom, "rom", elf, implicit=["tools/gbafix.py"])
-    if not args.non_matching:
-        n.build(f"{build_dir}/ok", "check", rom, implicit_outputs=[verified])
+    n.build(f"{build_dir}/ok", "check", rom, implicit_outputs=[verified])
     n.newline()
 
-    if args.non_matching:
-        n.build("all", "phony", rom)
-    else:
-        report = f"{build_dir}/report.json"
-        n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml",
-                                            "tools/normalize_report.py", "tools/check_report.py"])
-        n.build("progress", "progress", report, implicit=["tools/progress.py"])
-        n.newline()
-        n.build("all", "phony", f"{build_dir}/ok")
+    report = f"{build_dir}/report.json"
+    n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml",
+                                        "tools/normalize_report.py", "tools/check_report.py"])
+    n.build("progress", "progress", report, implicit=["tools/progress.py"])
+    n.newline()
+    n.build("all", "phony", f"{build_dir}/ok")
     n.default("all")
 
 objdiff_config = {
@@ -473,7 +454,7 @@ root = Path.cwd()
 cc_args = [
     "clang", "-nostdinc", "-fno-builtin", "--target=arm-none-eabi",
     "-mthumb", "-std=gnu89", "-Iinclude", "-Itools/agbcc/include",
-    f"-Iasm/{version}/nonmatchings", f"-DVERSION_{version.upper()}",
+    f"-DVERSION_{version.upper()}",
 ]
 compile_commands = [
     {
@@ -489,5 +470,4 @@ compile_commands = [
 ]
 Path("compile_commands.json").write_text(json.dumps(compile_commands, indent=2) + "\n")
 
-mode = " (non-matching)" if args.non_matching else ""
-print(f"configured for {version} ({code}){mode}; run: ninja")
+print(f"configured for {version} ({code}); run: ninja")

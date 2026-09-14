@@ -1,8 +1,6 @@
 #include "system_state.h"
 #include "display.h"
 #include "frd.h"
-#include "macros.h"
-
 #ifdef VERSION_EU
 #endif
 

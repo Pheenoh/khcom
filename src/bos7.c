@@ -1,7 +1,6 @@
 #include "registration_data.h"
 #include "system_state.h"
 #include "mode.h"
-#include "macros.h"
 #include "bos7.h"
 #include "bos7_api.h"
 

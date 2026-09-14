@@ -1,2 +1,0 @@
-build_system = "ninja"
-compiler_type = "gcc"
