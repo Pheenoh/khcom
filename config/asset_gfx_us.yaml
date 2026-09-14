@@ -9,7 +9,7 @@ rom:
   end: 0x0886AD18
   size: 3711508
 inventory: config/asset_inventory_us_gfx.yaml
-path_mode: slice
+path_mode: built
 extract_path: assets/us/084E0B04-0886AD18.bin
 build_path: build/us/assets/asset_gfx.bin
 source_root: assets/us/src/gfx/asset_gfx
@@ -20,10 +20,11 @@ tools:
   packer: tools/gfx/asset_gfx_pack.py
   layout: tools/gfx/asset_gfx_layout.py
 sha256_slice: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
-status: remux_mvp_green
+status: remux_built_green
 tools_extra:
   dump: tools/gfx/asset_gfx_dump.py
   extent: tools/movie_assets.py
+  movie_re: tools/gfx/movie_open_re.py
 build:
   mode: demux_remux_copy_through
   note: >
@@ -31,6 +32,8 @@ build:
     slice into source_root, then remuxes byte-identical. Encoder RE is follow-on.
 regional:
   movie_payloads_identical: [us, jp, eu]
-  jp_unit: asset_gfx_at_084D4390 (pack) + tiny asset_gfx head
-  eu_unit: asset_gfx (same single-incbin shape as US; divergent pad/subs)
-  built_mode: us_only
+  built_mode: [us, jp, eu]
+  matrix:
+    us: built
+    jp: built (pack unit asset_gfx_at_084D4390; tiny head unit stays slice)
+    eu: built

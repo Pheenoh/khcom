@@ -1,0 +1,60 @@
+# JP inventory for MVP class asset_gfx (Policy B: no binaries).
+# Pack unit asset_gfx_at_084D4390: 0x084D4390–0x0885E300.
+# Separate tiny head unit asset_gfx: 0x084D4194–0x084D4390 (slice-only).
+# Dump/remux: python3 tools/gfx/asset_gfx_pack.py --mode built --version jp
+
+version: jp
+schema_version: 1
+mvp_class: asset_gfx
+policy: B
+baserom_code: B8CJ
+pack:
+  id: asset_gfx
+  class: pack
+  unit: asset_gfx_at_084D4390
+  asm: asm/jp/asset_gfx_at_084D4390.s
+  rom:
+    start: 0x084D4390
+    end: 0x0885E300
+    size: 3710832
+  extract_path: assets/jp/084D4390-0885E300.bin
+  sha256: 81e666166a0946b25cef38efd656ccaed50a7e5f3980a792afb4574645352f82
+  path_mode_default: built
+  confidence: high
+  summary: >
+    Split layout vs US: tiny zeroish head unit precedes the movie pack.
+    Pack head pad 1096. Four MovieOpen payloads byte-identical to US.
+    MovieSub tables at JP-local addresses with non-US sizes.
+
+head_unit:
+  id: asset_gfx.head_unit
+  unit: asset_gfx
+  asm: asm/jp/asset_gfx.s
+  rom:
+    start: 0x084D4194
+    end: 0x084D4390
+    size: 508
+  extract_path: assets/jp/084D4194-084D4390.bin
+  sha256: 13c995087c43bd9f25fa7d771744a40981545343434fae560a6886820adfec4c
+  path_mode: slice
+
+symbols_in_pack:
+  - { address: 0x084D47D8, name: gUnk_084E0F34 }
+  - { address: 0x084E7F04, name: gUnk_084F4660 }
+  - { address: 0x08550558, name: gUnk_0855CCB4 }
+  - { address: 0x086EF2B8, name: gUnk_086FBA14 }
+  - { address: 0x0885DF78, name: gUnk_0886AB40 }
+  - { address: 0x0885E02C, name: gUnk_0886AB90 }
+  - { address: 0x0885E1D8, name: gUnk_0886AC70 }
+  - { address: 0x0885E2F8, name: sMovieHeapName }
+
+regions:
+  - { id: asset_gfx.head, class: padding, start: 0x084D4390, end: 0x084D47D8, size: 1096 }
+  - { id: asset_gfx.movie_gUnk_084E0F34, class: movie, start: 0x084D47D8, end: 0x084E7F04, movie_extent: 79656 }
+  - { id: asset_gfx.movie_gUnk_084F4660, class: movie, start: 0x084E7F04, end: 0x08550558, movie_extent: 427136 }
+  - { id: asset_gfx.movie_gUnk_0855CCB4, class: movie, start: 0x08550558, end: 0x086EF2B8, movie_extent: 1696892 }
+  - { id: asset_gfx.movie_gUnk_086FBA14, class: movie, start: 0x086EF2B8, end: 0x0885DF78, movie_extent: 1501488 }
+  - { id: asset_gfx.table_gUnk_0886AB40, class: movie_sub_table, start: 0x0885DF78, end: 0x0885E02C, size: 180 }
+  - { id: asset_gfx.table_gUnk_0886AB90, class: movie_sub_table, start: 0x0885E02C, end: 0x0885E1D8, size: 428 }
+  - { id: asset_gfx.table_gUnk_0886AC70, class: movie_sub_table, start: 0x0885E1D8, end: 0x0885E2F8, size: 288 }
+  - { id: asset_gfx.sMovieHeapName, class: literal, start: 0x0885E2F8, end: 0x0885E300, size: 8 }

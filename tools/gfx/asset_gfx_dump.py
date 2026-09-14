@@ -14,6 +14,7 @@ from asset_gfx_layout import (
     US_EXTRACT as DEFAULT_BIN,
     US_EXPECTED_SIZE as EXPECTED_SIZE,
     US_ROM_BASE as ROM_BASE,
+    version_spec,
 )
 
 
@@ -176,16 +177,23 @@ def dump_pack(path, as_json):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Dump US asset_gfx movie pack layout")
+    ap = argparse.ArgumentParser(description="Dump asset_gfx movie pack layout")
+    ap.add_argument("--version", choices=("us", "jp", "eu"), default="us")
     ap.add_argument(
         "path",
         nargs="?",
-        default=str(DEFAULT_BIN),
-        help="path to 084E0B04-0886AD18.bin (default: assets/us/... after extract)",
+        default=None,
+        help="path to regional asset_gfx extract bin (default from --version)",
     )
     ap.add_argument("--json", action="store_true", help="emit machine-readable JSON")
     args = ap.parse_args()
-    path = Path(args.path)
+    global REGIONS, DEFAULT_BIN, EXPECTED_SIZE, ROM_BASE
+    spec = version_spec(args.version)
+    REGIONS = spec["regions"]
+    DEFAULT_BIN = spec["extract"]
+    EXPECTED_SIZE = spec["pack_end"] - spec["rom_base"]
+    ROM_BASE = spec["rom_base"]
+    path = Path(args.path) if args.path else DEFAULT_BIN
     if not path.is_file():
         print(
             f"error: missing {path}; run: python3 tools/extract_assets.py us",

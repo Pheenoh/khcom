@@ -200,7 +200,7 @@ parser.add_argument(
     "--asset-gfx-mode",
     choices=("slice", "built"),
     default="slice",
-    help="asset_gfx MVP path: baserom slice (default) or MovieOpen demux/remux built pack",
+    help="asset_gfx path: baserom slice (default) or MovieOpen demux/remux built pack (us/jp/eu)",
 )
 args = parser.parse_args()
 
@@ -272,19 +272,29 @@ for line in units_file.read_text().splitlines():
 
 asset_gfx_build = f"{build_dir}/assets/asset_gfx.bin"
 asset_gfx_asm = f"{build_dir}/asm/asset_gfx.s"
+asset_gfx_unit = "asset_gfx_at_084D4390.s" if version == "jp" else "asset_gfx.s"
+asset_gfx_sym = {
+    "us": "data_084E0B04",
+    "jp": "data_084D4390",
+    "eu": "data_084B423C",
+}[version]
+asset_gfx_extract = {
+    "us": "assets/us/084E0B04-0886AD18.bin",
+    "jp": "assets/jp/084D4390-0885E300.bin",
+    "eu": "assets/eu/084B423C-0883F2D0.bin",
+}[version]
+asset_gfx_manifest = f"config/asset_gfx_{version}.yaml"
 if asset_gfx_mode == "built":
-    if version != "us":
-        sys.exit("error: --asset-gfx-mode=built is US-only (JP/EU movie payloads match; pad/unit layout diverge)")
     Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
     Path(asset_gfx_asm).write_text(
         "\t.section .rodata\n"
-        "\t.global data_084E0B04\n"
-        "data_084E0B04:\n"
+        f"\t.global {asset_gfx_sym}\n"
+        f"{asset_gfx_sym}:\n"
         f'\t.incbin "{asset_gfx_build}"\n'
     )
     rewritten = []
     for src, obj, flags, section in units:
-        if src is not None and src.name == "asset_gfx.s":
+        if src is not None and src.name == asset_gfx_unit:
             rewritten.append((Path(asset_gfx_asm), obj, flags, section))
         else:
             rewritten.append((src, obj, flags, section))
@@ -311,9 +321,10 @@ for src, obj, flags, _section in units:
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
 if asset_gfx_mode == "built":
+    asset_gfx_obj_suffix = "/asset_gfx_at_084D4390.o" if version == "jp" else "/asset_gfx.o"
     patched = []
     for obj, rule, src, deps, variables in edges:
-        if obj.endswith("/asset_gfx.o"):
+        if obj.endswith(asset_gfx_obj_suffix):
             deps = [d for d in deps if not d.startswith("assets/")]
             if asset_gfx_build not in deps:
                 deps.append(asset_gfx_build)
@@ -322,7 +333,8 @@ if asset_gfx_mode == "built":
         patched.append((obj, rule, src, deps, variables))
     edges = patched
     missing_assets.difference_update(
-        p for p in list(missing_assets) if p.startswith("assets/") and "084E0B04" in p
+        p for p in list(missing_assets)
+        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_extract).name
     )
 
 if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
@@ -458,7 +470,7 @@ with out.open("w") as f:
     if asset_gfx_mode == "built":
         n.rule(
             "asset_gfx_pack",
-            command="python3 tools/gfx/asset_gfx_pack.py --mode built && test -f $out",
+            command=f"python3 tools/gfx/asset_gfx_pack.py --mode built --version {version} && test -f $out",
             description="ASSET_GFX $out",
         )
     n.newline()
@@ -476,9 +488,9 @@ with out.open("w") as f:
                 "tools/gfx/asset_gfx_pack.py",
                 "tools/gfx/asset_gfx_layout.py",
                 "tools/movie_assets.py",
-                "config/asset_gfx_us.yaml",
-                "config/asset_inventory_us_gfx.yaml",
-                "assets/us/084E0B04-0886AD18.bin",
+                asset_gfx_manifest,
+                f"config/asset_inventory_{version}_gfx.yaml",
+                asset_gfx_extract,
             ],
         )
     for obj, rule, src, deps, variables in edges:

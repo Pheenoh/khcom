@@ -21,7 +21,7 @@ pack:
   extract_path: assets/us/084E0B04-0886AD18.bin
   sha256: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
   entropy: 7.625
-  path_mode_default: slice
+  path_mode_default: built
   confidence: high
   summary: >
     Named megablob owned by asm/us/asset_gfx.s as a single .incbin.

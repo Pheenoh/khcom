@@ -1,0 +1,32 @@
+# EU asset_gfx pack manifest. Policy B: sources/bins not committed.
+schema_version: 1
+id: asset_gfx
+version: eu
+class: pack
+unit: asset_gfx
+rom:
+  start: 0x084B423C
+  end: 0x0883F2D0
+  size: 3715220
+inventory: config/asset_inventory_eu_gfx.yaml
+path_mode: built
+extract_path: assets/eu/084B423C-0883F2D0.bin
+build_path: build/eu/assets/asset_gfx.bin
+source_root: assets/eu/src/gfx/asset_gfx
+asm_slice: asm/eu/asset_gfx.s
+asm_built: build/eu/asm/asset_gfx.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_pack.py
+  layout: tools/gfx/asset_gfx_layout.py
+sha256_slice: 4436be20c8fb71b53506460553f2fa02679c12cb86284df308278022c117874a
+status: remux_built_green
+build:
+  mode: demux_remux_copy_through
+  note: >
+    EU head pad matches US (1072). MovieOpen payloads byte-identical to US.
+    Final MovieSub / localized subtitle tables are larger (extra gUnkEu_*).
+regional:
+  movie_payloads_identical: true
+  built_mode: full_unit
+  extra_sub_tables: true

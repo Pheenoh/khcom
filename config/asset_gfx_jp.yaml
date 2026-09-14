@@ -1,0 +1,42 @@
+# JP asset_gfx pack manifest. Policy B: sources/bins not committed.
+schema_version: 1
+id: asset_gfx
+version: jp
+class: pack
+unit: asset_gfx_at_084D4390
+rom:
+  start: 0x084D4390
+  end: 0x0885E300
+  size: 3710832
+inventory: config/asset_inventory_jp_gfx.yaml
+path_mode: built
+extract_path: assets/jp/084D4390-0885E300.bin
+build_path: build/jp/assets/asset_gfx.bin
+source_root: assets/jp/src/gfx/asset_gfx
+asm_slice: asm/jp/asset_gfx_at_084D4390.s
+asm_built: build/jp/asm/asset_gfx.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_pack.py
+  layout: tools/gfx/asset_gfx_layout.py
+sha256_slice: 81e666166a0946b25cef38efd656ccaed50a7e5f3980a792afb4574645352f82
+status: remux_built_green
+head_unit:
+  unit: asset_gfx
+  asm: asm/jp/asset_gfx.s
+  rom:
+    start: 0x084D4194
+    end: 0x084D4390
+    size: 508
+  extract_path: assets/jp/084D4194-084D4390.bin
+  sha256_slice: 13c995087c43bd9f25fa7d771744a40981545343434fae560a6886820adfec4c
+  path_mode: slice
+  note: Tiny pre-pack unit; remains baserom slice under built pack mode.
+build:
+  mode: demux_remux_copy_through
+  note: >
+    JP pack head pad is 1096 bytes (vs US/EU 1072). MovieOpen payloads are
+    byte-identical to US. MovieSub table sizes diverge from US.
+regional:
+  movie_payloads_identical: true
+  built_mode: pack_only
