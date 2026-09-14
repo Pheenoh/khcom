@@ -1248,7 +1248,8 @@ void func_080792F4(UnkStruct_08080268* w) {
     }
 }
 
-#ifdef NON_MATCHING
+extern BtlWork* gUnk_02039B84 __asm__("gBtlWork");
+
 s32 func_08079600(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
     u16 id;
@@ -1257,10 +1258,14 @@ s32 func_08079600(UnkStruct_08080268* w) {
     u8 found;
     u32 prev;
     u32 other;
+    BtlWork* b;
+    u64 flags;
 
-    if (!(gBtlWork->unk_068 & 0x80)) {
+    b = gUnk_02039B84;
+    flags = b->unk_068;
+    if ((flags & 0x80) == 0) {
         gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
-        if (gBtlWork->unk_0F4 == 1) {
+        if (b->unk_0F4 == 1) {
             gUnk_02039DD4->unk_0C2 = gUnk_02034A98->unk_A5 + 1;
             if (gUnk_02034A98->unk_A5 < 9) {
                 TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescNumberPlus, &gUnk_02034A98->unk_48);
@@ -1273,7 +1278,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
                 gUnk_02039DD4->unk_0C2 = 9;
             }
             gUnk_02034A98->unk_A7 = 1;
-        } else if (gBtlWork->unk_0F4 == 21) {
+        } else if (b->unk_0F4 == 21) {
             if (gUnk_02034A98->unk_A5 != 0) {
                 gUnk_02034A98->unk_A5--;
                 gUnk_02034A98->unk_A7 = 1;
@@ -1292,10 +1297,10 @@ s32 func_08079600(UnkStruct_08080268* w) {
         gBtlWork->unk_068 |= 0x80;
         gBtlWork->unk_068 |= 0x8000000;
     } else {
-        if (gBtlWork->unk_0A4 == 1) {
+        if (b->unk_0A4 == 1) {
             return 1;
         }
-        if (!(gBtlWork->unk_068 & 0x20)) {
+        if ((flags & 0x20) == 0) {
             func_080792F4(w);
         } else {
             func_080792F4(w);
@@ -1424,9 +1429,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_08079600.s");
-#endif
+
 s32 func_08079B3C(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
     u16 id;
