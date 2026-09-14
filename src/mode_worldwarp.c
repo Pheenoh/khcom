@@ -112,8 +112,8 @@ void mode_worldwarp_0(void) {
     gUnk_020357A8[0] = -0x800;
     gUnk_020357A8[1] = 0xA800;
     gUnk_020357B0 = -0x8000;
-    gUnk_020357B4 = (gUnk_09EF9384[gUnk_020354E8].unk_08 << 11) + 0x2000;
-    gUnk_020357B8 = (gUnk_09EF9384[gUnk_020354E8].unk_0A << 11) - 0x600;
+    gUnk_020357B4 = (gUnk_09EF9384[gUnk_020354E8].x << 11) + 0x2000;
+    gUnk_020357B8 = (gUnk_09EF9384[gUnk_020354E8].y << 11) - 0x600;
     LoadBgPalette(0, gUnk_09A3D37C, 0x200);
 
     for (i = 0; i <= 12; i++) {
@@ -172,16 +172,16 @@ void mode_worldwarp_0(void) {
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020354F0[i] >= 0) {
-            func_0810057C(7, 4, gUnk_09A3691C, 0, 0, gUnk_0203550C, gUnk_09EF9384[i].unk_08, gUnk_09EF9384[i].unk_0A);
+            func_0810057C(7, 4, gUnk_09A3691C, 0, 0, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
         }
     }
 
     for (i = 0; i < gUnk_020354EA - 1; i++) {
         if (gUnk_020354F0[i] >= 0 && gUnk_020354F0[i + 1] >= 0) {
-            func_0810057C(gUnk_099930E8[gUnk_09EF9384[i].unk_0C].unk_00, gUnk_099930E8[gUnk_09EF9384[i].unk_0C].unk_02,
-                gUnk_09A3691C, gUnk_099930E8[gUnk_09EF9384[i].unk_0C].unk_04,
-                gUnk_099930E8[gUnk_09EF9384[i].unk_0C].unk_06, gUnk_0203550C,
-                gUnk_09EF9384[i].unk_0E, gUnk_09EF9384[i].unk_10);
+            func_0810057C(gUnk_099930E8[gUnk_09EF9384[i].rect].width, gUnk_099930E8[gUnk_09EF9384[i].rect].height,
+                gUnk_09A3691C, gUnk_099930E8[gUnk_09EF9384[i].rect].x,
+                gUnk_099930E8[gUnk_09EF9384[i].rect].y, gUnk_0203550C,
+                gUnk_09EF9384[i].x2, gUnk_09EF9384[i].y2);
         }
     }
 
@@ -190,26 +190,26 @@ void mode_worldwarp_0(void) {
             if ((gGameState.flags & 8) == 0) {
                 if (i <= 8) {
                     func_0810057C(3, 1, gUnk_09A3691C, i * 3, 9, gUnk_0203550C,
-                        gUnk_09EF9384[i].unk_08 + 3, gUnk_09EF9384[i].unk_0A + 2);
+                        gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
                 } else {
                     func_0810057C(4, 1, gUnk_09A3691C, (i - 9) * 4, 10, gUnk_0203550C,
-                        gUnk_09EF9384[i].unk_08 + 3, gUnk_09EF9384[i].unk_0A + 2);
+                        gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
                 }
             } else if (i <= 2) {
                 func_0810057C(4, 1, gUnk_09A3691C, i * 4, 21, gUnk_0203550C,
-                    gUnk_09EF9384[i].unk_08 + 3, gUnk_09EF9384[i].unk_0A + 2);
+                    gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
             } else {
                 func_0810057C(3, 1, gUnk_09A3691C, (i - 3) * 3, 22, gUnk_0203550C,
-                    gUnk_09EF9384[i].unk_08 + 3, gUnk_09EF9384[i].unk_0A + 2);
+                    gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
             }
         }
     }
 
     for (i = 0; i < gUnk_020354EA; i++) {
         if (gUnk_020354E8 == i) {
-            func_081004EC(3, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].unk_08, gUnk_09EF9384[i].unk_0A);
+            func_081004EC(3, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
         } else {
-            func_081004EC(2, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].unk_08, gUnk_09EF9384[i].unk_0A);
+            func_081004EC(2, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
         }
     }
 
@@ -453,7 +453,7 @@ void func_081015E8(void) {
     s32 v;
     s32 base;
 
-    x = gUnk_09993118[0].unk_16 + ((gUnk_0203588C - gUnk_02035884) >> 8);
+    x = gUnk_09993118[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8);
     flag = 0;
     v = x;
     base = (-gUnk_02035880) >> 8;
@@ -472,7 +472,7 @@ void func_08101654(void) {
     s32 base;
 
     for (i = 0; i <= 1; i++) {
-        x = gUnk_09993118[0].unk_1C[i].unk_00 - (gUnk_02035884 >> 8);
+        x = gUnk_09993118[0].unk_1C[i].x - (gUnk_02035884 >> 8);
         flag = 0;
         v = x;
         base = (-gUnk_02035880) >> 8;
@@ -487,15 +487,15 @@ void func_08101654(void) {
         if (gUnk_02035818[i] != 0) {
             ReleaseObjTiles(gUnk_02035818[i]);
         }
-        gUnk_02035820[i] = LoadObjPalette(gUnk_09993118[flag].unk_1C[i].unk_04, gUnk_09993118[flag].unk_1C[i].unk_08);
-        gUnk_02035818[i] = LoadObjTiles(gUnk_09993118[flag].unk_1C[i].unk_0C, gUnk_09993118[flag].unk_1C[i].unk_10);
-        AnimInit(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].unk_14, gUnk_09993118[flag].unk_1C[i].unk_18);
-        AnimStart(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].unk_1C, 1);
+        gUnk_02035820[i] = LoadObjPalette(gUnk_09993118[flag].unk_1C[i].palette, gUnk_09993118[flag].unk_1C[i].paletteSize);
+        gUnk_02035818[i] = LoadObjTiles(gUnk_09993118[flag].unk_1C[i].tiles, gUnk_09993118[flag].unk_1C[i].tilesSize);
+        AnimInit(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].anims, gUnk_09993118[flag].unk_1C[i].gfxTable);
+        AnimStart(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].animId, 1);
     }
 }
 
 void func_08101740(s16 a) {
-    AnimStart(&gWorldwarpAnim, gUnk_09993118[a].unk_0E, 1);
+    AnimStart(&gWorldwarpAnim, gUnk_09993118[a].animId, 1);
 }
 
 void func_08101768(void) {
@@ -517,7 +517,7 @@ void func_081017A0(void) {
         if (gUnk_020357C0 == 1) {
             AnimStart(&gUnk_02035828[gUnk_020357C0], 2, 1);
         }
-        gUnk_020357C4 = gUnk_09993118[gUnk_020357C0].unk_00;
+        gUnk_020357C4 = gUnk_09993118[gUnk_020357C0].mode;
         m4aSongNumStart(0x66);
         FadeStartOut(0, 16);
         FadeLock();
@@ -599,20 +599,20 @@ void func_08101970(void) {
         flags |= 1;
         break;
     }
-    DrawSprite(gUnk_09993118[0].unk_16 + ((gUnk_0203588C - gUnk_02035884) >> 8), gUnk_09993118[0].unk_18,
+    DrawSprite(gUnk_09993118[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8), gUnk_09993118[0].y3,
         AnimUpdate(&gUnk_02035860), gUnk_02035858, gUnk_0203585C, 0, flags, 0x834);
-    DrawSprite((gUnk_02035888 >> 8) + gUnk_09993118[0].unk_0A, gUnk_09993118[0].unk_0C,
+    DrawSprite((gUnk_02035888 >> 8) + gUnk_09993118[0].x, gUnk_09993118[0].y,
         AnimUpdate(&gWorldwarpAnim), gUnk_020357D0, gUnk_020357D4, 0, 0x800, 0x7D0);
 
-    DrawSprite(gUnk_09993118[0].unk_10 + (gUnk_02035888 >> 8), gUnk_09993118[0].unk_12,
+    DrawSprite(gUnk_09993118[0].x2 + (gUnk_02035888 >> 8), gUnk_09993118[0].y2,
         AnimUpdate(&gUnk_020357F8), gUnk_020357F0, gUnk_020357F4, 0,
-        0x800 | gUnk_09993118[gUnk_020357C0].unk_14, 0x7D0);
-    DrawSprite(gUnk_09993118[0].unk_10 + (gUnk_02035888 >> 8), gUnk_09993118[0].unk_12,
+        0x800 | gUnk_09993118[gUnk_020357C0].flags, 0x7D0);
+    DrawSprite(gUnk_09993118[0].x2 + (gUnk_02035888 >> 8), gUnk_09993118[0].y2,
         gUnk_08B22BA8, gUnk_02035810, gUnk_02035814, 0,
-        0x800 | gUnk_09993118[gUnk_020357C0].unk_14, 0x7D1);
+        0x800 | gUnk_09993118[gUnk_020357C0].flags, 0x7D1);
 
     for (i = 0; i <= 1; i++) {
-        DrawSprite(gUnk_09993118[0].unk_1C[i].unk_00 - (gUnk_02035884 >> 8), gUnk_09993118[0].unk_1C[i].unk_02,
+        DrawSprite(gUnk_09993118[0].unk_1C[i].x - (gUnk_02035884 >> 8), gUnk_09993118[0].unk_1C[i].y,
             AnimUpdate(&gUnk_02035828[i]), gUnk_02035818[i], gUnk_02035820[i], 0, 0x800, 0x7D0);
     }
 

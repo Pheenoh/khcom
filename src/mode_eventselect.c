@@ -1015,10 +1015,10 @@ void func_08076458(void) {
     gUnk_02039DD4->unk_108[0] = 0;
     gUnk_02039DD4->unk_108[1] = 0;
     TaskPoolInit(&gUnk_02039DD4->unk_09C, 6);
-    gUnk_02039DD4->tiles = LoadObjTiles(gUnk_08F709B0[0].unk_0C, 640);
-    gUnk_02039DD4->tiles2 = LoadObjTiles(gUnk_08F709B0[1].unk_0C, 640);
-    gUnk_02039DD4->tiles3 = LoadObjTiles(gUnk_08F709B0[2].unk_0C, 640);
-    gUnk_02039DD4->tiles4 = LoadObjTiles(gUnk_08F709B0[3].unk_0C, 640);
+    gUnk_02039DD4->tiles = LoadObjTiles(gUnk_08F709B0[0].tiles, 640);
+    gUnk_02039DD4->tiles2 = LoadObjTiles(gUnk_08F709B0[1].tiles, 640);
+    gUnk_02039DD4->tiles3 = LoadObjTiles(gUnk_08F709B0[2].tiles, 640);
+    gUnk_02039DD4->tiles4 = LoadObjTiles(gUnk_08F709B0[3].tiles, 640);
     gUnk_02039DD4->tiles5 = LoadObjTiles(gUnk_0905EAE8, 320);
     gUnk_02039DD4->tiles6 = LoadObjTiles(gUnk_0905ED36, 320);
     gUnk_02039DD4->tiles7 = LoadObjTiles(gUnk_0905EEE6, 320);

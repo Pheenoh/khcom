@@ -3041,7 +3041,7 @@ void func_0807BEC0(CardDisplayWork* p) {
     }
 
     aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
-    DrawSprite(p->x >> 8, y, p->unk_48->unk_10, p->tiles, p->palette, aff, attr, p->unk_A0);
+    DrawSprite(p->x >> 8, y, p->unk_48->gfx2, p->tiles, p->palette, aff, attr, p->unk_A0);
     k = p->unk_A5;
 
     if (p->unk_48->unk_2A == 3) {
@@ -3066,7 +3066,7 @@ void card_not_have_2(CardDisplayWork* p) {
     void* gfx;
     u16 y;
 
-    gfx = gUnk_08F709B0[p->unk_46].unk_04;
+    gfx = gUnk_08F709B0[p->unk_46].gfx2;
 
     if (func_080A42C8() == 1) {
         y = p->y >> 8;
@@ -3111,11 +3111,11 @@ void func_0807C33C(CardDisplayWork* p) {
         p->tiles = 0;
         p->palette = 0;
         p->unk_18 = 0;
-        p->tiles2 = LoadObjTiles(gUnk_08F709B0[p->unk_46].unk_10, 640);
+        p->tiles2 = LoadObjTiles(gUnk_08F709B0[p->unk_46].tiles2, 640);
     } else {
         d = p->unk_48;
-        tiles = d->unk_04;
-        pal = d->unk_08;
+        tiles = d->tiles;
+        pal = d->palette;
         p->tiles = LoadObjTiles(tiles, 512);
         p->palette = LoadObjPalette(pal, 32);
         p->tiles2 = 0;
@@ -3826,8 +3826,8 @@ void func_0807D490(CardDisplayWork* p) {
     void* pal;
 
     func_0807C39C(p);
-    tiles = p->unk_48->unk_14;
-    pal = p->unk_48->unk_18;
+    tiles = p->unk_48->tiles2;
+    pal = p->unk_48->palette2;
     p->tiles = LoadObjTiles(tiles, 256);
     p->palette = LoadObjPalette(pal, 32);
 }
@@ -4143,7 +4143,7 @@ void card_reload_2(CardDisplayWork* p) {
         }
 
         attr = 0x410;
-        DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
+        DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].gfx2, p->tiles2,
                    gUnk_02039DD4->palette, 0, attr, p->unk_A0);
 
         if (!(gGameState.flags & 8) && *(void**)&w[0x60] != 0) {
@@ -6997,7 +6997,7 @@ void func_08081C98(CardDisplayWork* p) {
     aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
     flags = 0x410;
     sy = y;
-    DrawSprite(p->x >> 8, sy, p->unk_48->unk_10, p->tiles, p->palette, aff, flags, p->unk_A0);
+    DrawSprite(p->x >> 8, sy, p->unk_48->gfx2, p->tiles, p->palette, aff, flags, p->unk_A0);
     j = p->unk_A5;
 
     if (p->unk_48->unk_2A == 3) {
@@ -7022,7 +7022,7 @@ void NO_Card_2(CardDisplayWork* p) {
     void* gfx;
     u16 y;
 
-    gfx = gUnk_08F709B0[0].unk_04;
+    gfx = gUnk_08F709B0[0].gfx2;
 
     if (func_080A42C8() == 1) {
         y = p->y >> 8;
@@ -7616,8 +7616,8 @@ void func_08082EFC(CardDisplayWork* p) {
     void* pal;
 
     func_0807C39C(p);
-    tiles = p->unk_48->unk_14;
-    pal = p->unk_48->unk_18;
+    tiles = p->unk_48->tiles2;
+    pal = p->unk_48->palette2;
     p->tiles = LoadObjTiles(tiles, 256);
     p->palette = LoadObjPalette(pal, 32);
 }
@@ -7910,7 +7910,7 @@ void Reload_Card_2(CardDisplayWork* p) {
         }
 
         if (p->unk_54 > 0) {
-            DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].unk_04, p->tiles2,
+            DrawSprite(p->x >> 8, y, gUnk_08F709B0[3].gfx2, p->tiles2,
                        gUnk_02039DD4->palette, affine, attr, p->unk_A0);
 
             if (*(void**)&w[0x60] != 0) {
@@ -14109,9 +14109,9 @@ void func_0808D73C(u8* work, s32 id) {
 
     def = &gCardDefs[id];
 #ifdef VERSION_EU
-    work[CARDWORK(0x8C5)] = LoadTextSlots(eu_0805E924(def->unk_0C), &work[0xF8]);
+    work[CARDWORK(0x8C5)] = LoadTextSlots(eu_0805E924(def->name), &work[0xF8]);
 #else
-    work[0x8C5] = LoadTextSlots(def->unk_0C, &work[0xF8]);
+    work[0x8C5] = LoadTextSlots(def->name, &work[0xF8]);
 #endif
 
     switch (def->unk_2A) {
@@ -14189,9 +14189,9 @@ s32 func_0808D828(u8* work) {
         }
 
         def = &gCardDefs[id & 0xFFF];
-        *(void**)&work[0x1C] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].unk_0C, 0x300);
-        *(void**)&work[0x20] = LoadObjTiles(def->unk_04, 0x200);
-        *(void**)&work[0x34] = LoadObjPalette(def->unk_08, 32);
+        *(void**)&work[0x1C] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 0x300);
+        *(void**)&work[0x20] = LoadObjTiles(def->tiles, 0x200);
+        *(void**)&work[0x34] = LoadObjPalette(def->palette, 32);
         *(void**)&work[0x30] = LoadObjPalette(gUnk_09611AB8, 32);
         *(void**)&work[0x4DC] = gUnk_08F709B0[def->unk_2A].gfx;
         *(void**)&work[0x4E0] = def->gfx;
@@ -14321,9 +14321,9 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
         }
 
         def = &gCardDefs[id & CARD_ID_MASK];
-        w->tiles2 = LoadObjTiles(gUnk_08F709B0[def->unk_2A].unk_0C, 768);
-        w->tiles3 = LoadObjTiles(def->unk_04, 512);
-        w->palette2 = LoadObjPalette(def->unk_08, 32);
+        w->tiles2 = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 768);
+        w->tiles3 = LoadObjTiles(def->tiles, 512);
+        w->palette2 = LoadObjPalette(def->palette, 32);
         w->palette = LoadObjPalette(gUnk_09611AB8, 32);
         w->gfx2 = gUnk_08F709B0[def->unk_2A].gfx;
         w->gfx3 = def->gfx;
@@ -16583,7 +16583,7 @@ void DeckCard2_2(DeckCard2Work* n) {
     }
 
     if (n->tiles != 0 && n->palette != 0) {
-        DrawSprite(n->x >> 8, n->y >> 8, n->unk_14->unk_10, n->tiles, n->palette, 0, 0, 0x33);
+        DrawSprite(n->x >> 8, n->y >> 8, n->unk_14->gfx2, n->tiles, n->palette, 0, 0, 0x33);
 
         if (n->unk_4D != 0) {
             DrawSprite(n->x >> 8, n->y >> 8, gUnk_0203A860.gfx, gUnk_0203A860.tiles, gUnk_0203A860.palette, 0, 0, 0x28);
@@ -16610,8 +16610,8 @@ void func_08090100(DeckCard2Work* n) {
     }
 
     n->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
-    n->tiles = LoadObjTiles(n->unk_14->unk_14, 0x200);
-    n->palette = LoadObjPalette(n->unk_14->unk_18, 32);
+    n->tiles = LoadObjTiles(n->unk_14->tiles2, 0x200);
+    n->palette = LoadObjPalette(n->unk_14->palette2, 32);
     n->tiles2 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
 
     if (n->tiles != 0 && n->palette != 0) {
@@ -17715,7 +17715,7 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
             RequestDma3Copy((u8*)w->tiles4->unk_00 + 0x500,
                            (void*)(0x06010000 + (w->tiles4->unk_06 << 5)), 0x80);
         }
-        w->tiles2 = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
+        w->tiles2 = LoadObjTiles(gUnk_08F709B0[4].tiles2, 0x300);
         w->palette = LoadObjPalette(gUnk_09618D38, 32);
         FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
     } else {
@@ -18400,7 +18400,7 @@ void MapSelect_2(MapSelectWork* w) {
     }
     if (w->unk_2BE == 0 && w->unk_299 != 9 && w->unk_29A != 9) {
         DrawSprite(120, 56, 0, w->tiles4, w->palette, 0, 8, 60);
-        DrawSprite(120, 56, gUnk_08F709B0[4].unk_04, w->tiles2, w->palette, 0, 8, 60);
+        DrawSprite(120, 56, gUnk_08F709B0[4].gfx2, w->tiles2, w->palette, 0, 8, 60);
     }
     DrawSprite(128, (s16)(w->y3 >> 8), gUnk_09EF11AC[0], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
     DrawSprite(128, (s16)(w->y4 >> 8), gUnk_09EF11AC[1], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
@@ -20090,7 +20090,7 @@ void func_08095520(CardDisplayWork* p) {
     s32 t;
 
     q = p->unk_20;
-    gfx = gUnk_08F709B0[p->unk_46].unk_04;
+    gfx = gUnk_08F709B0[p->unk_46].gfx2;
     DrawSprite((p->x >> 8) + (*(s32*)&q[4] >> 8),
                (p->y >> 8) + (gSineTable[p->unk_5F] >> 8),
                gfx, p->tiles2,
@@ -20299,8 +20299,8 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     args = *p;
     w->unk_C8 = args.unk_20;
     def = &gCardDefs[args.unk_20];
-    w->tiles = LoadObjTiles(def->unk_04, 0x300);
-    w->palette = LoadObjPalette(def->unk_08, 32);
+    w->tiles = LoadObjTiles(def->tiles, 0x300);
+    w->palette = LoadObjPalette(def->palette, 32);
     *(CardStat*)&w->unk_20[0x14] = *(CardStat*)&def->unk_1C;
 
     if (gCardDefs[w->unk_C8].unk_1E & 12) {
@@ -20309,8 +20309,8 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
         back = &gUnk_08F709B0[w->unk_20[0x22]];
     }
 
-    w->tiles2 = LoadObjTiles(back->unk_0C, 0x280);
-    w->tiles3 = LoadObjTiles(back->unk_14, 0x600);
+    w->tiles2 = LoadObjTiles(back->tiles, 0x280);
+    w->tiles3 = LoadObjTiles(back->tiles3, 0x600);
     w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -20441,9 +20441,9 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
             w->unk_F6 = 0;
             SetTaskUpdate(a, (void*)func_08096288);
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_C8].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_C8].name));
 #else
-            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_C8].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_C8].name);
 #endif
         }
     }
@@ -21784,9 +21784,9 @@ void func_08098014(u8* work, const u8* a) {
 
     if (*(void**)&work[0x04] == 0) {
         cb = &gUnk_08F709B0[4];
-        *(void**)&work[0x04] = LoadObjTiles(cb->unk_10, 0x300);
+        *(void**)&work[0x04] = LoadObjTiles(cb->tiles2, 0x300);
         *(void**)&work[0x10] = LoadObjPalette(gUnk_09618D38, 32);
-        *(void**)&work[0x1C] = cb->unk_04;
+        *(void**)&work[0x1C] = cb->gfx2;
     }
 }
 
@@ -22043,7 +22043,7 @@ u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a) {
         ApproachValue(&w->unk_24, gUnk_090361C0[(s8)w->unk_18] << 8, w->unk_44);
     } else if ((s8)w->unk_18 < 0) {
         ListPoolRemove(&w->unk_30, *(void**)w->unk_0C);
-        w->tiles2 = LoadObjTiles(gUnk_08F709B0[w->unk_19].unk_10, 0xD00);
+        w->tiles2 = LoadObjTiles(gUnk_08F709B0[w->unk_19].tiles2, 0xD00);
         w->unk_44 = 8;
         w->unk_28 = 0x66;
         SetTaskUpdate(a, (void*)func_08098BA4);
@@ -22118,7 +22118,7 @@ void RELOAD_CHILDREN_2(ReloadChildWork* w) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
         aff = AllocObjAffine(0, w->unk_28, w->unk_28, 0);
-        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_08F709B0[w->unk_19].unk_04, w->tiles2, w->palette, aff, 0, 49);
+        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_08F709B0[w->unk_19].gfx2, w->tiles2, w->palette, aff, 0, 49);
     }
 }
 
@@ -22469,12 +22469,12 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
 
     w->unk_B8 = args[8];
     def = &gCardDefs[args[8]];
-    w->tiles = LoadObjTiles(def->unk_04, 0x300);
-    w->palette = LoadObjPalette(def->unk_08, 32);
+    w->tiles = LoadObjTiles(def->tiles, 0x300);
+    w->palette = LoadObjPalette(def->palette, 32);
     w->unk_34 = *(CardStat*)&def->unk_1C;
     back = &gUnk_08F709B0[def->unk_2A];
-    w->tiles2 = LoadObjTiles(back->unk_0C, 0x280);
-    w->tiles3 = LoadObjTiles(back->unk_14, 0x600);
+    w->tiles2 = LoadObjTiles(back->tiles, 0x280);
+    w->tiles3 = LoadObjTiles(back->tiles3, 0x600);
     w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -22664,9 +22664,9 @@ u8 func_08099A18(BossPrizeWork* w, void* a) {
             w->unk_E6 = 0;
             SetTaskUpdate(a, (void*)func_08099B60);
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_B8].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_B8].name));
 #else
-            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_B8].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_B8].name);
 #endif
         }
     }
@@ -22959,8 +22959,8 @@ void func_0809A02C(UnkStruct_0809A02C* w, s32* args) {
 
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    w->tiles2 = LoadObjTiles(w->unk_1C->unk_04, 0x300);
-    w->palette2 = LoadObjPalette(w->unk_1C->unk_08, 32);
+    w->tiles2 = LoadObjTiles(w->unk_1C->tiles, 0x300);
+    w->palette2 = LoadObjPalette(w->unk_1C->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
@@ -23000,11 +23000,11 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
         w->unk_1CE = w->unk_1C->unk_2A;
     }
 
-    w->tiles = LoadObjTiles(gUnk_08F709B0[w->unk_1CE].unk_0C, 0x280);
+    w->tiles = LoadObjTiles(gUnk_08F709B0[w->unk_1CE].tiles, 0x280);
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    w->tiles2 = LoadObjTiles(w->unk_1C->unk_04, 0x300);
-    w->palette2 = LoadObjPalette(w->unk_1C->unk_08, 32);
+    w->tiles2 = LoadObjTiles(w->unk_1C->tiles, 0x300);
+    w->palette2 = LoadObjPalette(w->unk_1C->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
@@ -23040,8 +23040,8 @@ void func_0809A368(UnkStruct_0809A02C* w, UnkStruct_0809A368_Args* args) {
     w->unk_1CE = w->unk_1C->unk_2A;
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    w->tiles2 = LoadObjTiles(w->unk_1C->unk_04, 0x300);
-    w->palette2 = LoadObjPalette(w->unk_1C->unk_08, 32);
+    w->tiles2 = LoadObjTiles(w->unk_1C->tiles, 0x300);
+    w->palette2 = LoadObjPalette(w->unk_1C->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
@@ -23389,9 +23389,9 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
             *(u16*)&w->unk_1B8 = v = 0x100;
             *(u16*)&w->unk_1BA = v;
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_1A0].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_1A0].name));
 #else
-            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_1A0].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_1A0].name);
 #endif
             SetTaskUpdate(a, (void*)func_0809AD60);
             w->unk_1C4 = 0;
@@ -24595,10 +24595,10 @@ void CardName_0(CardNameWork* w) {
 #endif
     w->unk_218 = _08066468(1);
 #ifdef VERSION_EU
-    w->unk_226 = LoadTextSlots(eu_0805E924(q->unk_00->unk_0C), w->unk_08);
+    w->unk_226 = LoadTextSlots(eu_0805E924(q->unk_00->name), w->unk_08);
     w->unk_227 = LoadTextSlots((u16*)gUnkEu_09F6602C.strings[gLanguage], w->unk_108);
 #else
-    w->unk_226 = LoadTextSlots(q->unk_00->unk_0C, w->unk_08);
+    w->unk_226 = LoadTextSlots(q->unk_00->name, w->unk_08);
 #ifdef VERSION_JP
     w->unk_228 = LoadTextSlots((u16*)gUnkJp_09009748, w->unk_208);
     w->unk_227 = LoadTextSlots((u16*)gUnkJp_0900974C, w->unk_108);
@@ -30553,9 +30553,9 @@ void func_080A6EB4(u8* work, s32 id) {
 
     def = &gCardDefs[id];
 #ifdef VERSION_EU
-    work[0x4FD] = LoadTextSlots(eu_0805E924(def->unk_0C), &work[0xF0]);
+    work[0x4FD] = LoadTextSlots(eu_0805E924(def->name), &work[0xF0]);
 #else
-    work[0x4FD] = LoadTextSlots(def->unk_0C, &work[0xF0]);
+    work[0x4FD] = LoadTextSlots(def->name, &work[0xF0]);
 #endif
 
     switch (def->unk_2A) {
@@ -30642,9 +30642,9 @@ void func_080A6FAC(UnkStruct_080A6FAC* w) {
 
         t = id & CARD_ID_MASK;
         def = &gCardDefs[t];
-        w->tiles = LoadObjTiles(gUnk_08F709B0[def->unk_2A].unk_0C, 768);
-        w->tiles2 = LoadObjTiles(def->unk_04, 512);
-        w->palette2 = LoadObjPalette(def->unk_08, 32);
+        w->tiles = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 768);
+        w->tiles2 = LoadObjTiles(def->tiles, 512);
+        w->palette2 = LoadObjPalette(def->palette, 32);
         w->palette = LoadObjPalette(gUnk_09611AB8, 32);
         w->gfx2 = gUnk_08F709B0[def->unk_2A].gfx;
         w->gfx3 = def->gfx;
@@ -32123,7 +32123,7 @@ void func_080AA3A0(u8* work, s32 id) {
     CardDef* def;
 
     def = &gCardDefs[id];
-    work[0x705] = LoadTextSlots(def->unk_0C, &work[0xE8]);
+    work[0x705] = LoadTextSlots(def->name, &work[0xE8]);
 
     switch (def->unk_2A) {
     case 0:
@@ -32177,9 +32177,9 @@ void func_080AA450(u8* work) {
 
     if (id != 0xFFFF) {
         def = &gCardDefs[id & CARD_ID_MASK];
-        *(void**)&work[0x10] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].unk_0C, 0x300);
-        *(void**)&work[0x14] = LoadObjTiles(def->unk_04, 0x200);
-        *(void**)&work[0x24] = LoadObjPalette(def->unk_08, 32);
+        *(void**)&work[0x10] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 0x300);
+        *(void**)&work[0x14] = LoadObjTiles(def->tiles, 0x200);
+        *(void**)&work[0x24] = LoadObjPalette(def->palette, 32);
         *(void**)&work[0x20] = LoadObjPalette(gUnk_09611AB8, 32);
         *(void**)&work[0x4D4] = gUnk_08F709B0[def->unk_2A].gfx;
         *(void**)&work[0x4D8] = def->gfx;

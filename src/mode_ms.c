@@ -604,9 +604,9 @@ void func_08102AB4(s16 x, s16 y) {
 
         gUnk_020358C8[i].revealed = 0;
         id &= 0xFFF;
-        gUnk_020358C8[i].palette = LoadObjPalette(gCardDefs[id].unk_08, 0x20);
+        gUnk_020358C8[i].palette = LoadObjPalette(gCardDefs[id].palette, 0x20);
         FadeSetPaletteExcluded(gUnk_020358C8[i].palette->unk_06 + 0x10, 1);
-        gUnk_020358C8[i].tiles = LoadObjTiles(gCardDefs[id].unk_04, 0x200);
+        gUnk_020358C8[i].tiles = LoadObjTiles(gCardDefs[id].tiles, 0x200);
         gUnk_020358C8[i].gfx = gCardDefs[id].gfx;
         gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09A3DB1C + gCardDefs[id].unk_2A * 32, 0x20);
         FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
@@ -796,7 +796,7 @@ u8 func_0810329C(u16 a) {
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
                     gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
-                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].tiles, 0x300);
                     gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].gfx;
                     gUnk_020358C8[i].flipAngle = 0x40;
                     gUnk_020358C8[i].state = 3;
@@ -849,7 +849,7 @@ u8 func_0810329C(u16 a) {
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
                     gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
-                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].tiles, 0x300);
                     gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].gfx;
                     gUnk_020358C8[i].flipAngle = 0x40;
                     gUnk_020358C8[i].state = 6;
@@ -931,7 +931,7 @@ u8 func_0810329C(u16 a) {
                     gUnk_02035AD4 = gUnk_020358C8[0].x - 0x1000;
                     gUnk_02035AD8 = gUnk_020358C8[0].y - 0x2000;
                     LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                    gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                    gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].name), gUnk_02035A44);
                     gUnk_02035A50 = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                     LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                     EnableBg(3);
@@ -973,7 +973,7 @@ u8 func_0810329C(u16 a) {
 
             if (gUnk_02035B62 != old) {
                 LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].name), gUnk_02035A44);
                 gUnk_02035A50 = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                 LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                 m4aSongNumStart(0x65);

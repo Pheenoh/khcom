@@ -966,9 +966,9 @@ u16 func_080D8B84(void** a, void** b, void** c) {
         source = &gGameState.progression.unk_84;
         if (*(const u16*)source & ((const StatusFriendEntry*)data)->unk_00) {
             card = &gCardDefs[((const StatusFriendEntry*)data)->unk_02];
-            a[count] = LoadObjTiles(card->unk_14, 0x100);
-            b[count] = LoadObjPalette(card->unk_18, 0x20);
-            c[count] = card->unk_10;
+            a[count] = LoadObjTiles(card->tiles2, 0x100);
+            b[count] = LoadObjPalette(card->palette2, 0x20);
+            c[count] = card->gfx2;
             count++;
             if (count >= limit) {
                 break;

@@ -6,9 +6,9 @@
 #include "taskpool.h"
 
 typedef struct ObjDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* gfxTable;
+    void* anims;
+    void* tiles;
     u16 animCount;
     u16 unk_0E;
     void* palette;

@@ -13409,7 +13409,7 @@ void func_080F51A0(MapPrzCardWork* w) {
             w->unk_0CE = 0;
             w->unk_08A = 0;
             w->unk_08C = func_080F52D4;
-            TaskCreate(&w->unk_0D4, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->unk_0A8].unk_0C));
+            TaskCreate(&w->unk_0D4, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->unk_0A8].name));
         }
     }
 
@@ -13487,12 +13487,12 @@ void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     gUnk_0203C7AC->unk_00 |= 0x10;
     w->unk_0A8 = p->unk_14;
     d = &gCardDefs[w->unk_0A8];
-    w->tiles = LoadObjTiles(d->unk_04, 0x300);
-    w->palette = LoadObjPalette(d->unk_08, 32);
+    w->tiles = LoadObjTiles(d->tiles, 0x300);
+    w->palette = LoadObjPalette(d->palette, 32);
     w->unk_090 = *(UnkStruct_08F70ACC*)&d->unk_1C;
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
     w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
-    w->tiles2 = LoadObjTiles(q->unk_0C, 0x280);
+    w->tiles2 = LoadObjTiles(q->tiles, 0x280);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->palette3 = LoadObjPalette(gUnk_08F69BE4, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);

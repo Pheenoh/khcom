@@ -15,12 +15,12 @@ typedef struct Deck {
 
 typedef struct CardDef {
     void* gfx;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* palette;
+    void* name;
+    void* gfx2;
+    void* tiles2;
+    void* palette2;
     u16 unk_1C;
     u16 unk_1E;
     u8 unk_20;
@@ -35,11 +35,11 @@ typedef struct CardDef {
 
 typedef struct CardBack {
     void* gfx;
-    void* unk_04;
+    void* gfx2;
     void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
 } CardBack;
 
 typedef struct CardStat {

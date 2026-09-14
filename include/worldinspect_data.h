@@ -4,15 +4,15 @@
 #include "types.h"
 
 typedef struct WorldinspectNav {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
+    u16 up;
+    u16 down;
+    u16 left;
+    u16 right;
+    s16 x;
+    s16 y;
+    s16 rect;
+    s16 x2;
+    s16 y2;
     u8 unk_12[0x02];
 } WorldinspectNav;
 

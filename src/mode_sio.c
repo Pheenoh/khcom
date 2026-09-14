@@ -2425,9 +2425,9 @@ void func_080B1E70(void) {
             gSioChgCardWork->unk_0A5[i] = 0;
             gSioChgCardWork->x2[i] = gUnk_09EF150C[i].unk_00 << 8;
             gSioChgCardWork->y2[i] = gUnk_09EF150C[i].unk_02 << 8;
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[0].unk_14, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[0].unk_18, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[0].unk_10;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[0].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[0].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[0].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[0];
             gSioChgCardWork->unk_1A8[i] = 0x100;
             gSioChgCardWork->unk_1D0[i] = 0x100;
@@ -2437,9 +2437,9 @@ void func_080B1E70(void) {
             gSioChgCardWork->x2[i] = gUnk_09EF150C[i].unk_00 << 8;
             gSioChgCardWork->y2[i] = gUnk_09EF150C[i].unk_02 << 8;
             n = gUnk_0203AB20[i];
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[n].unk_14, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[n].unk_18, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[n].unk_10;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[n].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[n].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[n].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[gCardDefs[n].unk_20];
             gSioChgCardWork->unk_1A8[i] = 0x100;
             gSioChgCardWork->unk_1D0[i] = 0x100;
@@ -2456,7 +2456,7 @@ void func_080B1E70(void) {
     gSioChgCardWork->x3 = 68;
     gSioChgCardWork->y3 = 124;
     InitTextSlots(gSioChgCardWork->unk_364, 20);
-    gSioChgCardWork->unk_361 = LoadTextSlots(gCardDefs[0].unk_0C, gSioChgCardWork->unk_364);
+    gSioChgCardWork->unk_361 = LoadTextSlots(gCardDefs[0].name, gSioChgCardWork->unk_364);
     gSioChgCardWork->unk_360 = 0;
     TaskPoolInit(gSioChgCardWork->unk_BE4, 11);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
@@ -2856,9 +2856,9 @@ void func_080B2FEC(u16 a) {
             gSioChgCardWork->unk_0A5[i] = 0;
             ReleaseObjTiles(gSioChgCardWork->tiles3[i]);
             ReleaseObjPalette(gSioChgCardWork->palette3[i]);
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[0].unk_14, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[0].unk_18, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[0].unk_10;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[0].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[0].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[0].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[0];
             gUnk_0203AB20[i] = slot;
 
@@ -2871,9 +2871,9 @@ void func_080B2FEC(u16 a) {
             gSioChgCardWork->unk_0A5[i] = 1;
             ReleaseObjTiles(gSioChgCardWork->tiles3[i]);
             ReleaseObjPalette(gSioChgCardWork->palette3[i]);
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[slot].unk_14, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[slot].unk_18, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[slot].unk_10;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[slot].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[slot].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[slot].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[gCardDefs[slot].unk_20];
             gUnk_0203AB20[i] = slot;
         }

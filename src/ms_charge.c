@@ -161,9 +161,9 @@ void func_08104BBC(void) {
 
             if (idx < limit) {
                 defIdx = gUnk_02035C10[a + idx].unk_02;
-                gUnk_02035CE8[i][k] = LoadObjPalette(gCardDefs[defIdx].unk_18, 0x20);
-                gUnk_02035D18[i][k] = LoadObjTiles(gCardDefs[defIdx].unk_14, 0x100);
-                gUnk_02035D48[i][k] = gCardDefs[defIdx].unk_10;
+                gUnk_02035CE8[i][k] = LoadObjPalette(gCardDefs[defIdx].palette2, 0x20);
+                gUnk_02035D18[i][k] = LoadObjTiles(gCardDefs[defIdx].tiles2, 0x100);
+                gUnk_02035D48[i][k] = gCardDefs[defIdx].gfx2;
                 gUnk_02035D78[i][k] = gUnk_02035C10[a + idx].unk_2E;
             } else {
                 gUnk_02035CE8[i][k] = 0;
@@ -198,17 +198,17 @@ void func_08104D18(void) {
 
     if (card->unk_00 != 0x8F && func_08104AA4(gUnk_02035C18) > 0) {
         defIdx = card->unk_02;
-        gUnk_02035D84 = LoadObjPalette(gCardDefs[defIdx].unk_08, 0x20);
-        gUnk_02035D88 = LoadObjTiles(gCardDefs[defIdx].unk_04, 0x200);
+        gUnk_02035D84 = LoadObjPalette(gCardDefs[defIdx].palette, 0x20);
+        gUnk_02035D88 = LoadObjTiles(gCardDefs[defIdx].tiles, 0x200);
         gUnk_02035D8C = gCardDefs[defIdx].gfx;
-        gUnk_02035D94 = LoadObjTiles(gUnk_08F709B0[card->unk_04].unk_0C, 0x300);
+        gUnk_02035D94 = LoadObjTiles(gUnk_08F709B0[card->unk_04].tiles, 0x300);
         gUnk_02035D98 = gUnk_08F709B0[card->unk_04].gfx;
         gUnk_02035DD8 = card->unk_2E;
         p = &gUnk_02035DE0;
 #ifdef VERSION_EU
-        *p = LoadTextSlots(eu_0805E924(gCardDefs[defIdx].unk_0C), gUnk_02035DDC);
+        *p = LoadTextSlots(eu_0805E924(gCardDefs[defIdx].name), gUnk_02035DDC);
 #else
-        *p = LoadTextSlots(gCardDefs[defIdx].unk_0C, gUnk_02035DDC);
+        *p = LoadTextSlots(gCardDefs[defIdx].name, gUnk_02035DDC);
 #endif
         q = &gUnk_02035DE8;
         *q = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[card->unk_00]), gUnk_02035DE4);

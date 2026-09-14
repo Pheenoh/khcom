@@ -202,8 +202,8 @@ void mode_worldinspect_0(void) {
 
     gUnk_02035118 = 0;
     gUnk_0203511A = 0;
-    gUnk_020354D8 = (gUnk_09EF8FAC[gUnk_020350F8].unk_08 << 11) + 0x2000;
-    gUnk_020354DC = (gUnk_09EF8FAC[gUnk_020350F8].unk_0A << 11) - 0x600;
+    gUnk_020354D8 = (gUnk_09EF8FAC[gUnk_020350F8].x << 11) + 0x2000;
+    gUnk_020354DC = (gUnk_09EF8FAC[gUnk_020350F8].y << 11) - 0x600;
     gUnk_020354C0 = 0;
     gUnk_020354C2 = 16;
     gUnk_020354C8[0] = -0x800;
@@ -270,15 +270,15 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i <= 11; i++) {
         if (gUnk_02035100[i] != 0) {
-            func_080FF19C(7, 4, gUnk_09A333DC, 0, 0, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08, gUnk_09EF8FAC[i].unk_0A);
+            func_080FF19C(7, 4, gUnk_09A333DC, 0, 0, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
         }
     }
 
     for (i = 0; i < gUnk_020350FA - 1; i++) {
         if (gUnk_02035100[i] != 0 && gUnk_02035100[i + 1] != 0) {
             WorldinspectConn* conn = gUnk_099930BC;
-            id = gUnk_09EF8FAC[i].unk_0C;
-            func_080FF19C(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gUnk_09EF8FAC[i].unk_0E, gUnk_09EF8FAC[i].unk_10);
+            id = gUnk_09EF8FAC[i].rect;
+            func_080FF19C(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gUnk_09EF8FAC[i].x2, gUnk_09EF8FAC[i].y2);
         }
     }
 
@@ -286,15 +286,15 @@ void mode_worldinspect_0(void) {
         if (gUnk_02035100[i] != 0) {
             if ((gGameState.flags & 8) == 0) {
                 if (i <= 8) {
-                    func_080FF19C(3, 1, gUnk_09A333DC, i * 3, 9, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08 + 3, gUnk_09EF8FAC[i].unk_0A + 2);
+                    func_080FF19C(3, 1, gUnk_09A333DC, i * 3, 9, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
                 } else {
-                    func_080FF19C(4, 1, gUnk_09A333DC, (i - 9) * 4, 10, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08 + 3, gUnk_09EF8FAC[i].unk_0A + 2);
+                    func_080FF19C(4, 1, gUnk_09A333DC, (i - 9) * 4, 10, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
                 }
             } else {
                 if (i <= 2) {
-                    func_080FF19C(4, 1, gUnk_09A333DC, i * 4, 0x15, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08 + 3, gUnk_09EF8FAC[i].unk_0A + 2);
+                    func_080FF19C(4, 1, gUnk_09A333DC, i * 4, 0x15, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
                 } else {
-                    func_080FF19C(3, 1, gUnk_09A333DC, (i - 3) * 3, 0x16, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08 + 3, gUnk_09EF8FAC[i].unk_0A + 2);
+                    func_080FF19C(3, 1, gUnk_09A333DC, (i - 3) * 3, 0x16, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
                 }
             }
         }
@@ -302,9 +302,9 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i < gUnk_020350FA; i++) {
         if ((s16)floorKeep == i) {
-            func_080FF10C(3, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08, gUnk_09EF8FAC[i].unk_0A);
+            func_080FF10C(3, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
         } else {
-            func_080FF10C(2, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].unk_08, gUnk_09EF8FAC[i].unk_0A);
+            func_080FF10C(2, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
         }
     }
 
@@ -563,28 +563,28 @@ void func_081006AC(void) {
         m4aSongNumStart(0x68);
     } else if (keys & DPAD_UP) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_00;
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].up;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_DOWN) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_02;
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].down;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_LEFT) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_04;
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].left;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_RIGHT) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_06;
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].right;
             if (gUnk_020354E8 == prev) {
                 break;
             }
@@ -693,18 +693,18 @@ void func_08100980(void) {
 #endif
 
     if (gUnk_020357A2 == 2) {
-        DrawSprite((s16)(gUnk_09EF9384[gUnk_020354E8].unk_08 * 8 + 22),
-            (s16)(gUnk_09EF9384[gUnk_020354E8].unk_0A * 8 + 12),
+        DrawSprite((s16)(gUnk_09EF9384[gUnk_020354E8].x * 8 + 22),
+            (s16)(gUnk_09EF9384[gUnk_020354E8].y * 8 + 12),
             AnimUpdate(&gUnk_02035520), gUnk_02035518, gUnk_0203551C, 0, 0x800, 0x898);
-        ApproachValueHalf(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].unk_08 << 11) + 0x2000);
-        ApproachValueHalf(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].unk_0A << 11) + 0xFFFFFA00);
+        ApproachValueHalf(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].x << 11) + 0x2000);
+        ApproachValueHalf(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].y << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020357B4 >> 8, gUnk_020357B8 >> 8, AnimUpdate(&gUnk_02035558),
             gUnk_02035550, gUnk_02035554, 0, 0x800, 0x7D0);
     }
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020355E0[i] != 0) {
-            DrawSprite((s16)(gUnk_09EF9384[i].unk_08 * 8 + 16), (s16)(gUnk_09EF9384[i].unk_0A * 8 + 16),
+            DrawSprite((s16)(gUnk_09EF9384[i].x * 8 + 16), (s16)(gUnk_09EF9384[i].y * 8 + 16),
                 gUnk_020355E0[i], gUnk_02035570[i], gUnk_020355A8[i], 0, 0x800, (u16)(i + 0x834));
         }
     }

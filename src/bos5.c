@@ -2792,7 +2792,7 @@ void func_080FF330(void) {
         gUnk_020354C0 = 5;
     } else if (keys & 0x40) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].unk_00;
+            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].up;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -2804,7 +2804,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x80) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].unk_02;
+            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].down;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -2816,7 +2816,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x20) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].unk_04;
+            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].left;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -2828,7 +2828,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x10) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].unk_06;
+            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].right;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -2979,20 +2979,20 @@ void func_080FF8CC(void) {
     }
 
     if (gUnk_020354C0 == 2) {
-        DrawSprite((s16)(gUnk_09EF8FAC[gUnk_020350F8].unk_08 * 8 + 22),
-                      (s16)(gUnk_09EF8FAC[gUnk_020350F8].unk_0A * 8 + 12),
+        DrawSprite((s16)(gUnk_09EF8FAC[gUnk_020350F8].x * 8 + 22),
+                      (s16)(gUnk_09EF8FAC[gUnk_020350F8].y * 8 + 12),
                       AnimUpdate(&gUnk_02035130), gUnk_02035128, gUnk_02035124, 0, prio, 2013);
         ApproachValueHalf(&gUnk_020354D8,
-                      (gUnk_09EF8FAC[gUnk_020350F8].unk_08 << 11) + 0x2000);
+                      (gUnk_09EF8FAC[gUnk_020350F8].x << 11) + 0x2000);
         ApproachValueHalf(&gUnk_020354DC,
-                      (gUnk_09EF8FAC[gUnk_020350F8].unk_0A << 11) + 0xFFFFFA00);
+                      (gUnk_09EF8FAC[gUnk_020350F8].y << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020354D8 >> 8, gUnk_020354DC >> 8, AnimUpdate(&gUnk_02035150),
                       gUnk_0203514C, gUnk_02035148, 0, prio, 2000);
     }
 
     for (i = 0; i < 12; i++) {
         if (gUnk_020351C8[i] != 0 && gUnk_02035168[i] != 0) {
-            DrawSprite((s16)(gUnk_09EF8FAC[i].unk_08 * 8 + 16), (s16)(gUnk_09EF8FAC[i].unk_0A * 8 + 16),
+            DrawSprite((s16)(gUnk_09EF8FAC[i].x * 8 + 16), (s16)(gUnk_09EF8FAC[i].y * 8 + 16),
                           gUnk_020351C8[i], gUnk_02035198[i], gUnk_02035168[i], 0, prio,
                           (u16)(i + 2001));
         }
