@@ -602,9 +602,9 @@ typedef struct MapGmkJumpWork {
     u16 unk_06E;
     u16 unk_070;
     u8 unk_072[0x2A];
-    AnimState unk_09C;
-    void* unk_0B4;
-    u8* unk_0B8;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     u8 unk_0BC[0x04];
     u8 unk_0C0;
     u8 unk_0C1[0x03];

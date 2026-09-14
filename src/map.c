@@ -11127,9 +11127,9 @@ void func_080F1460(MapGmkJumpWork* w) {
         gUnk_0203C7AC->unk_18 = w->unk_014;
         w->unk_0C8 = func_080F14C4;
         w->unk_0C0 = 1;
-        AnimStart(&w->unk_09C, 1, 1);
+        AnimStart(&w->anim, 1, 1);
     } else {
-        AnimUpdate(&w->unk_09C);
+        AnimUpdate(&w->anim);
     }
 }
 
@@ -11140,21 +11140,21 @@ void func_080F14C4(MapGmkJumpWork* w) {
     } else if (gUnk_02039BA0->unk_18.unk_00.z != gUnk_02039BA0->unk_18.unk_00.unk_0C) {
         w->unk_0C8 = func_080F1544;
         w->unk_0C0 = 2;
-        AnimStart(&w->unk_09C, 2, 1);
+        AnimStart(&w->anim, 2, 1);
     } else {
         w->unk_0C8 = func_080F1460;
         w->unk_0C0 = 0;
-        AnimStart(&w->unk_09C, 0, 1);
+        AnimStart(&w->anim, 0, 1);
     }
 }
 
 void func_080F1544(MapGmkJumpWork* w) {
-    if (AnimIsFinished(&w->unk_09C)) {
+    if (AnimIsFinished(&w->anim)) {
         w->unk_0C8 = func_080F1460;
         w->unk_0C0 = 0;
-        AnimStart(&w->unk_09C, 0, 1);
+        AnimStart(&w->anim, 0, 1);
     } else {
-        AnimUpdate(&w->unk_09C);
+        AnimUpdate(&w->anim);
     }
 }
 
@@ -11183,9 +11183,9 @@ void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     }
     ((u8*)p)[0x14] = v;
     w->unk_0C4 = arg->unk_14 - arg->unk_10;
-    w->unk_0B8 = LoadObjPalette(&gUnk_099910C4[0x240], 32);
-    w->unk_0B4 = LoadObjTiles(&gUnk_09858238[0x10D9], 0x980);
-    a = &w->unk_09C;
+    w->palette = LoadObjPalette(&gUnk_099910C4[0x240], 32);
+    w->tiles = LoadObjTiles(&gUnk_09858238[0x10D9], 0x980);
+    a = &w->anim;
     AnimInit(a, gUnk_09EF8488, gUnk_09EF8468);
     w->unk_0C0 = 0;
     AnimStart(a, 0, 1);
@@ -11221,12 +11221,12 @@ void func_080F169C(MapGmkJumpWork* w) {
     k = w->unk_004 >> 8;
     y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     v = -0x1004 - k * 4;
-    DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, 0x800, v);
+    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
 }
 
 void func_080F1718(MapGmkJumpWork* w) {
-    ReleaseObjTiles(w->unk_0B4);
-    ReleaseObjPalette(w->unk_0B8);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->unk_040);
 }
 
