@@ -1,0 +1,22 @@
+# MVP pack build manifest (US asset_gfx). Policy B: sources/bins not committed.
+schema_version: 1
+id: asset_gfx
+version: us
+class: pack
+unit: asset_gfx
+rom:
+  start: 0x084E0B04
+  end: 0x0886AD18
+  size: 3711508
+inventory: config/asset_inventory_us_gfx.yaml
+path_mode: slice
+extract_path: assets/us/084E0B04-0886AD18.bin
+build_path: build/us/assets/asset_gfx.bin
+source_root: assets/us/src/gfx/asset_gfx
+asm_slice: asm/us/asset_gfx.s
+asm_built: build/us/asm/asset_gfx.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_pack.py
+sha256_slice: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
+status: scaffolding

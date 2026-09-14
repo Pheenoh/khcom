@@ -1,0 +1,186 @@
+# US-first inventory for MVP class asset_gfx only (Policy B: no binaries).
+# Generated against tip inventory of baserom slice assets/us/084E0B04-0886AD18.bin
+# Region: 0x084E0B04–0x0886AD18 (3,711,508 bytes). Not gfx_gap.
+
+version: us
+schema_version: 1
+mvp_class: asset_gfx
+policy: B
+baserom_code: B8CE
+pack:
+  id: asset_gfx
+  class: pack
+  unit: asset_gfx
+  asm: asm/us/asset_gfx.s
+  rom:
+    start: 0x084E0B04
+    end: 0x0886AD18
+    size: 3711508
+  extract_path: assets/us/084E0B04-0886AD18.bin
+  sha256: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
+  entropy: 7.625
+  path_mode_default: slice
+  confidence: high
+  summary: >
+    Named megablob owned by asm/us/asset_gfx.s as a single .incbin.
+    Not a flat BIOS-LZ77 leaf list: whole-blob LZ77 decode finds essentially
+    no valid streams. Four large subranges share a custom header word pattern
+    f0000000 a0000000 and dominate size/entropy. Tail holds small pointer
+    tables and the ASCII label MOVIE (sMovieHeapName). No sidecar
+    binary_assets currently label interiors of this pack.
+
+symbols_in_pack:
+  - { address: 0x084E0F34, name: gUnk_084E0F34 }
+  - { address: 0x084F4660, name: gUnk_084F4660 }
+  - { address: 0x0855CCB4, name: gUnk_0855CCB4 }
+  - { address: 0x086FBA14, name: gUnk_086FBA14 }
+  - { address: 0x0886AB40, name: gUnk_0886AB40 }
+  - { address: 0x0886AB90, name: gUnk_0886AB90 }
+  - { address: 0x0886AC70, name: gUnk_0886AC70 }
+  - { address: 0x0886AD10, name: sMovieHeapName }
+
+# Provisional PNG/LZ planning cuts (symbol-bounded). Leaves are NOT yet
+# confirmed tile dimensions/palettes; treat as RE targets for Phase 1+.
+regions:
+  - id: asset_gfx.head
+    class: leaf_gfx
+    start: 0x084E0B04
+    end: 0x084E0F34
+    size: 1072
+    entropy: 0.137
+    head8: "8010000001000000"
+    sha256_prefix: b4bca0080d3fe9dc
+    suspected: low-entropy header/fill (repetitive 0x22 body after 8-byte header)
+    png_plan: defer until format ID; may be palette or padding rather than tiles
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.chunk_gUnk_084E0F34
+    class: leaf_gfx
+    start: 0x084E0F34
+    end: 0x084F4660
+    size: 79660
+    entropy: 7.590
+    head8: "f0000000a0000000"
+    label: gUnk_084E0F34
+    sha256_prefix: a576309f552846ae
+    suspected: custom-packed gfx chunk (shared f0000000 a0000000 header)
+    png_plan: demux after pack RE; candidate gbagfx tiles/pal inputs per sub-leaf
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.chunk_gUnk_084F4660
+    class: leaf_gfx
+    start: 0x084F4660
+    end: 0x0855CCB4
+    size: 427604
+    entropy: 7.634
+    head8: "f0000000a0000000"
+    label: gUnk_084F4660
+    sha256_prefix: 3d40a1e3510b943e
+    suspected: custom-packed gfx chunk (same header family)
+    png_plan: same as sibling chunks
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.chunk_gUnk_0855CCB4
+    class: leaf_gfx
+    start: 0x0855CCB4
+    end: 0x086FBA14
+    size: 1699168
+    entropy: 7.593
+    head8: "f0000000a0000000"
+    label: gUnk_0855CCB4
+    sha256_prefix: 79596238e2094367
+    suspected: largest custom-packed gfx chunk
+    png_plan: same as sibling chunks
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.chunk_gUnk_086FBA14
+    class: leaf_gfx
+    start: 0x086FBA14
+    end: 0x0886AB40
+    size: 1503532
+    entropy: 7.619
+    head8: "f0000000a0000000"
+    label: gUnk_086FBA14
+    sha256_prefix: 4643cb1644755e58
+    suspected: custom-packed gfx chunk (same header family)
+    png_plan: same as sibling chunks
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.table_gUnk_0886AB40
+    class: leaf_gfx
+    start: 0x0886AB40
+    end: 0x0886AB90
+    size: 80
+    entropy: 3.074
+    head8: "a1020000d4a68608"
+    label: gUnk_0886AB40
+    sha256_prefix: f6012538c3a503ac
+    suspected: pointer/size table into earlier pack bytes
+    png_plan: keep as structured binary / YAML table, not PNG
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.table_gUnk_0886AB90
+    class: leaf_gfx
+    start: 0x0886AB90
+    end: 0x0886AC70
+    size: 224
+    entropy: 3.147
+    head8: "510100008aa78608"
+    label: gUnk_0886AB90
+    sha256_prefix: 58ef44bf4bc9cfb5
+    suspected: pointer/size table
+    png_plan: structured binary / YAML table
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.table_gUnk_0886AC70
+    class: leaf_gfx
+    start: 0x0886AC70
+    end: 0x0886AD10
+    size: 160
+    entropy: 3.176
+    head8: "95010000baa98608"
+    label: gUnk_0886AC70
+    sha256_prefix: a6f8ef2235826314
+    suspected: pointer/size table
+    png_plan: structured binary / YAML table
+    lz77: false
+    confidence: medium
+
+  - id: asset_gfx.sMovieHeapName
+    class: sidecar_literal
+    start: 0x0886AD10
+    end: 0x0886AD18
+    size: 8
+    entropy: 2.406
+    head8: "4d4f564945000000"
+    label: sMovieHeapName
+    sha256_prefix: 98e70e77002b3aa7
+    suspected: ASCII "MOVIE" label at pack tail
+    png_plan: none (literal)
+    lz77: false
+    confidence: high
+
+png_lz_plan:
+  immediate: >
+    Do not PNG-ify the whole 3.71 MB pack. RE the f0000000 a0000000 chunk
+    container first; split into sub-leaves; only then introduce gbagfx PNG
+    round-trips where tile size and palette are known from consumers.
+  lz77: >
+    BIOS LZ77 is not the pack framing. Optional LZ leaves may appear inside
+    chunks after demux — audit per child, do not assume whole-pack LZ.
+  gbagfx: >
+    Prefer pret gbagfx for PNG↔4bpp/pal once leaves exist. Matching grief on
+    LZ or pack framing may require in-tree helpers later.
+
+blockers:
+  - pack container format for f0000000 a0000000 chunks is unidentified
+  - no consumer-driven tile WxH / palette bindings for chunk interiors yet
+  - matching recompress path not proven (Phase 1 flag stays off by default)
+  - JP/EU address translation for this pack not inventoried (US-first)

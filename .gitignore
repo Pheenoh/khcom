@@ -34,6 +34,9 @@ tools/decomp-permuter/
 permuter/
 debug_source.c
 debug_compiled_object.o
-docs/
+docs/*
 CLAUDE.md
 permuter/tmp
+
+# Optional pret gbagfx (Phase 1 asset_gfx dual-path)
+tools/gbagfx/

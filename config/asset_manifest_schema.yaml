@@ -1,0 +1,97 @@
+# Unified asset manifest schema (Phase 0 draft).
+# Covers sidecar-style typed assets and cartridge packs.
+# Instances live under config/; built/extracted bytes stay under assets/ (gitignored).
+
+schema_version: 1
+
+# ---------------------------------------------------------------------------
+# Common fields (all entries)
+# ---------------------------------------------------------------------------
+# id: stable symbolic name (not a ROM address)
+# version: us | jp | eu | common
+# class: enum — see classes below
+# rom:
+#   start: int/hex   # inclusive cartridge address (GBA ROM window)
+#   end: int/hex     # exclusive
+#   size: int        # optional; must equal end-start when both present
+# sha256: hex        # optional integrity of the ROM slice / built blob
+# confidence: low | medium | high
+# notes: string
+
+classes:
+  - pack              # named megablob (e.g. asset_gfx); may contain children
+  - leaf_gfx          # single graphics leaf (tiles/pal/map) inside a pack or alone
+  - leaf_lz77         # BIOS LZ77 stream (encode/decode via matching tools)
+  - sidecar_binary    # typed ABS symbol (Sprite / AnimHeader / SongHeader / ...)
+  - sidecar_literal   # text/literal ABS symbol (utf16le / shift_jis / ...)
+  - movie             # custom movie bitstream region
+  - fmv               # high-entropy FMV-like region (Phase 4)
+  - gap               # unowned gfx_gap / align gap (not MVP)
+  - padding           # 0xFF or generated filler
+  - code_blob         # machine code kept as blob or checked-in disasm (e.g. movie_codec)
+
+# ---------------------------------------------------------------------------
+# Sidecar-typed asset (mirrors config/*_data.json binary_assets / named_assets)
+# ---------------------------------------------------------------------------
+# kind: Sprite | AnimHeader | SongHeader | ...
+# encoding: utf16le | shift_jis | singlebyte | ascii   # literals only
+# symbol: linker ABS symbol name
+# size: byte length of the typed payload
+# sidecar: path to owning *_data.json
+
+sidecar_asset_example:
+  id: gMapUiSpriteUs_098A8BE4
+  version: us
+  class: sidecar_binary
+  kind: Sprite
+  symbol: gMapUiSpriteUs_098A8BE4
+  rom: { start: 0x098A8BE4, size: 14 }
+  sha256: e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3
+  sidecar: config/map_ui_data.json
+  confidence: high
+
+# ---------------------------------------------------------------------------
+# Cartridge pack (MVP: asset_gfx)
+# ---------------------------------------------------------------------------
+# unit: asm unit stem (e.g. asset_gfx)
+# path_mode: slice | built
+#   slice  — baserom extract → assets/<ver>/<START>-<END>.bin → .incbin (default)
+#   built  — sources → gbagfx/packer → build/<ver>/assets/<id>.bin → .incbin
+# extract_path: gitignored baserom slice path (slice mode)
+# build_path: ninja output path (built mode)
+# source_root: local PNG/4bpp tree (built mode; not committed under Policy B)
+# children: optional leaf list once pack RE is done
+# tools: converters required for built mode
+
+pack_example:
+  id: asset_gfx
+  version: us
+  class: pack
+  unit: asset_gfx
+  rom: { start: 0x084E0B04, end: 0x0886AD18 }
+  path_mode: slice
+  extract_path: assets/us/084E0B04-0886AD18.bin
+  build_path: build/us/assets/asset_gfx.bin
+  source_root: assets/us/src/gfx/asset_gfx
+  tools: [gbagfx]
+  confidence: medium
+  children: []
+
+# ---------------------------------------------------------------------------
+# Leaf graphics (future; PNG source form)
+# ---------------------------------------------------------------------------
+# format: tiles4 | tiles8 | palette | tilemap | raw
+# png: local path (not committed)
+# lz77: true if BIOS LZ leaf
+# parent: pack id
+
+leaf_example:
+  id: asset_gfx.chunk0
+  version: us
+  class: leaf_gfx
+  parent: asset_gfx
+  format: raw
+  rom: { start: 0x084E0F34, end: 0x084F4660 }
+  png: assets/us/src/gfx/asset_gfx/chunk0.png
+  lz77: false
+  confidence: low
