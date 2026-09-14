@@ -8256,8 +8256,8 @@ void func_080ED314(u8* work) {
 }
 
 s32 func_080ED35C(MapMenuWork* w) {
-    w->unk_000 = LoadObjPalette(gUnk_09991984, 32);
-    w->unk_004 = LoadObjTiles(gUnk_09958124, 0x80);
+    w->palette2 = LoadObjPalette(gUnk_09991984, 32);
+    w->tiles2 = LoadObjTiles(gUnk_09958124, 0x80);
     w->unk_008 = -0x800;
     w->unk_00C = 0xA000;
 
@@ -8267,8 +8267,8 @@ s32 func_080ED35C(MapMenuWork* w) {
         w->unk_13C = AllocObjTiles(0x340, gUnk_088B6560);
     }
 
-    w->unk_144 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->unk_140 = LoadObjPalette(gUnk_08F69BE4, 32);
+    w->tiles7 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->palette7 = LoadObjPalette(gUnk_08F69BE4, 32);
     w->unk_150 = gUnk_02039BA0->unk_18.unk_00.x - gUnk_02039BA0->unk_00;
     w->unk_154 = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z - gUnk_02039BA0->unk_04;
     w->unk_148 = w->unk_150;
@@ -8300,86 +8300,86 @@ s32 func_080ED498(MapMenuWork* w) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
-            w->unk_024 = LoadObjTiles(gUnk_09954B64, 0x1BC0);
+            w->tiles5 = LoadObjTiles(gUnk_09954B64, 0x1BC0);
             break;
         case 1:
-            w->unk_024 = LoadObjTiles(gUnk_09956724, 0x1BC0);
+            w->tiles5 = LoadObjTiles(gUnk_09956724, 0x1BC0);
             break;
         case 4:
-            w->unk_024 = LoadObjTiles(gUnkEu_09938170, 0x1BC0);
+            w->tiles5 = LoadObjTiles(gUnkEu_09938170, 0x1BC0);
             break;
         case 3:
-            w->unk_024 = LoadObjTiles(gUnkEu_09939D30, 0x1BC0);
+            w->tiles5 = LoadObjTiles(gUnkEu_09939D30, 0x1BC0);
             break;
         case 2:
         default:
-            w->unk_024 = LoadObjTiles(gUnkEu_0993B8F0, 0x1BC0);
+            w->tiles5 = LoadObjTiles(gUnkEu_0993B8F0, 0x1BC0);
             break;
         }
 #else
-        w->unk_024 = LoadObjTiles(gUnk_09954B64, 0x1BC0);
+        w->tiles5 = LoadObjTiles(gUnk_09954B64, 0x1BC0);
 #endif
-        w->unk_020 = LoadObjPalette(gUnk_09991924, 32);
+        w->palette3 = LoadObjPalette(gUnk_09991924, 32);
         w->unk_028 = 0x11800;
         w->unk_02C = 0xF000;
         w->unk_030 = 0x10000;
-        func_080ED0B8(w->unk_024, 0, gGameState.progression.level);
-        func_080ED0B8(w->unk_024, 6, gGameState.progression.maxHp);
-        func_080ED0B8(w->unk_024, 3, gGameState.hp);
+        func_080ED0B8(w->tiles5, 0, gGameState.progression.level);
+        func_080ED0B8(w->tiles5, 6, gGameState.progression.maxHp);
+        func_080ED0B8(w->tiles5, 3, gGameState.hp);
 
         if (gGameState.flags & 8) {
-            func_080ED0B8(w->unk_024, 9, gGameState.progression.dp);
+            func_080ED0B8(w->tiles5, 9, gGameState.progression.dp);
         } else {
-            func_080ED14C(w->unk_024, 9, gGameState.progression.mooglePoints);
+            func_080ED14C(w->tiles5, 9, gGameState.progression.mooglePoints);
         }
 
-        w->unk_038 = LoadObjPalette(gUnk_09991964, 32);
-        w->unk_03C = LoadObjPalette(gUnk_09991944, 32);
+        w->palette4 = LoadObjPalette(gUnk_09991964, 32);
+        w->palette5 = LoadObjPalette(gUnk_09991944, 32);
 
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
             if (gGameState.flags & 8) {
-                w->unk_040 = LoadObjTiles(gUnkEu_09943DB0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_09943DB0, 0x1500);
             } else {
-                w->unk_040 = LoadObjTiles(gUnkEu_0993D4B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_0993D4B0, 0x1500);
             }
             break;
         case 1:
             if (gGameState.flags & 8) {
-                w->unk_040 = LoadObjTiles(gUnkEu_099452B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_099452B0, 0x1500);
             } else {
-                w->unk_040 = LoadObjTiles(gUnkEu_0993E9B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_0993E9B0, 0x1500);
             }
             break;
         case 4:
             if (gGameState.flags & 8) {
-                w->unk_040 = LoadObjTiles(gUnkEu_099467B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_099467B0, 0x1500);
             } else {
-                w->unk_040 = LoadObjTiles(gUnkEu_0993FEB0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_0993FEB0, 0x1500);
             }
             break;
         case 3:
             if (gGameState.flags & 8) {
-                w->unk_040 = LoadObjTiles(gUnkEu_09947CB0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_09947CB0, 0x1500);
             } else {
-                w->unk_040 = LoadObjTiles(gUnkEu_099413B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_099413B0, 0x1500);
             }
             break;
         case 2:
         default:
             if (gGameState.flags & 8) {
-                w->unk_040 = LoadObjTiles(gUnkEu_099491B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_099491B0, 0x1500);
             } else {
-                w->unk_040 = LoadObjTiles(gUnkEu_099428B0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnkEu_099428B0, 0x1500);
             }
             break;
         }
 #else
         if (gGameState.flags & 8) {
-            w->unk_040 = LoadObjTiles(gUnk_099582E4, 0x1500);
+            w->tiles6 = LoadObjTiles(gUnk_099582E4, 0x1500);
         } else {
-            w->unk_040 = LoadObjTiles(gUnk_09956724, 0x1500);
+            w->tiles6 = LoadObjTiles(gUnk_09956724, 0x1500);
         }
 #endif
 
@@ -8402,28 +8402,28 @@ s32 func_080ED498(MapMenuWork* w) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
-            w->unk_010 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
             break;
         case 1:
-            w->unk_010 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
             break;
         case 4:
-            w->unk_010 = LoadObjTiles(gUnkEu_0994A8B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnkEu_0994A8B0, 0x200);
             break;
         case 3:
-            w->unk_010 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
             break;
         case 2:
         default:
-            w->unk_010 = LoadObjTiles(gUnkEu_0994AAB0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnkEu_0994AAB0, 0x200);
             break;
         }
         w->unk_014 = -0x8000;
-        w->unk_018 = LoadObjTiles(gUnkEu_0994ACB0, 0x300);
+        w->tiles4 = LoadObjTiles(gUnkEu_0994ACB0, 0x300);
 #else
-        w->unk_010 = LoadObjTiles(gUnk_09957F24, 0x200);
+        w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
         w->unk_014 = -0x8000;
-        w->unk_018 = LoadObjTiles(gUnk_09957C24, 0x300);
+        w->tiles4 = LoadObjTiles(gUnk_09957C24, 0x300);
 #endif
         w->unk_01C = 0xF800;
         func_080ECFE8((UnkStruct_080ECFE8*)w, 1);
@@ -8678,12 +8678,12 @@ void func_080EDDBC(MapMenuWork* w) {
     gUnk_02039BA0->unk_70 |= 0x2000;
 
     if (gGameState.flags & 8) {
-        w->unk_138 = LoadObjPalette(gUnk_09618118, 32);
+        w->palette6 = LoadObjPalette(gUnk_09618118, 32);
     } else {
-        w->unk_138 = LoadObjPalette(gUnk_08F683A4, 32);
+        w->palette6 = LoadObjPalette(gUnk_08F683A4, 32);
     }
 
-    FadeSetPaletteExcluded(w->unk_138->unk_06 + 0x10, 1);
+    FadeSetPaletteExcluded(w->palette6->unk_06 + 0x10, 1);
     v = gGameState.unk_00F;
 
     if (v != -1) {
@@ -8717,11 +8717,11 @@ void func_080EDECC(MapMenuWork* w) {
     s32 k;
 
 #ifdef VERSION_EU
-    DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F84738[0], w->unk_004, w->unk_000, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F84738[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F84738[0], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F84738[1], w->tiles2, w->palette2, 0, 0x400, 90);
 #else
-    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8E74[0], w->unk_004, w->unk_000, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8E74[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8E74[0], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8E74[1], w->tiles2, w->palette2, 0, 0x400, 90);
 #endif
 
     if (
@@ -8730,14 +8730,14 @@ void func_080EDECC(MapMenuWork* w) {
 #endif
         (gUnk_0203C7AC->unk_00 & 0x1000)) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->unk_13C, w->unk_138,
+            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->unk_13C, w->palette6,
                 0, 0x400, 80);
         } else {
             DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_13C,
-                w->unk_138, 0, 0x400, 80);
+                w->palette6, 0, 0x400, 80);
         }
 
-        DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EE1380[0], w->unk_144, w->unk_140, 0,
+        DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EE1380[0], w->tiles7, w->palette7, 0,
             0x400, 81);
     }
 
@@ -8745,66 +8745,66 @@ void func_080EDECC(MapMenuWork* w) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 4:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84720[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84720[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         case 0:
         case 1:
         case 3:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84718[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84718[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         case 2:
         default:
-            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84728[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84728[0], w->tiles3, w->palette2, 0, 0x400, 80);
             break;
         }
 #else
-        DrawSprite(w->unk_014 >> 8, 0, gUnk_09EF8E6C[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+        DrawSprite(w->unk_014 >> 8, 0, gUnk_09EF8E6C[0], w->tiles3, w->palette2, 0, 0x400, 80);
 #endif
 #ifdef VERSION_EU
-        DrawSprite(w->unk_01C >> 8, 14, gUnkEu_09F84730[0], w->unk_018, w->unk_000, 0, 0x400, 90);
+        DrawSprite(w->unk_01C >> 8, 14, gUnkEu_09F84730[0], w->tiles4, w->palette2, 0, 0x400, 90);
 #else
-        DrawSprite(w->unk_01C >> 8, 14, gUnk_09EF8E64[0], w->unk_018, w->unk_000, 0, 0x400, 90);
+        DrawSprite(w->unk_01C >> 8, 14, gUnk_09EF8E64[0], w->tiles4, w->palette2, 0, 0x400, 90);
 #endif
 
         if (gGameState.flags & 8) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84560[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84560[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84574[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84574[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84588[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84588[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8459C[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8459C[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F845B0[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F845B0[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E80[2], w->unk_024, w->unk_020, 0, 0x400,
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[0], w->tiles5, w->palette3, 0, 0x400, 80);
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[1], w->tiles5, w->palette3, 0, 0x400, 81);
+            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E80[2], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
 
@@ -8816,41 +8816,41 @@ void func_080EDECC(MapMenuWork* w) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F844FC[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F844FC[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84510[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84510[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84524[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84524[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84538[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84538[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8454C[2], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8454C[2], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
-            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
-            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E0C[2], w->unk_024, w->unk_020, 0, 0x400,
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[0], w->tiles5, w->palette3, 0, 0x400, 80);
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[1], w->tiles5, w->palette3, 0, 0x400, 81);
+            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E0C[2], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
 
@@ -8868,29 +8868,29 @@ void func_080EDECC(MapMenuWork* w) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F844FC[3], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F844FC[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 1:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84510[3], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84510[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 4:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84524[3], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84524[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 3:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84538[3], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84538[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             case 2:
             default:
-                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F8454C[3], w->unk_024, w->unk_020, 0, 0x400,
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F8454C[3], w->tiles5, w->palette3, 0, 0x400,
                     81);
                 break;
             }
 #else
-            DrawSprite(w->unk_030 >> 8, 144, gUnk_09EF8E0C[3], w->unk_024, w->unk_020, 0, 0x400,
+            DrawSprite(w->unk_030 >> 8, 144, gUnk_09EF8E0C[3], w->tiles5, w->palette3, 0, 0x400,
                 81);
 #endif
             DrawTextSlots((w->unk_030 >> 8) + 16, 145, &w->unk_074, w->unk_070, 50,
@@ -8901,69 +8901,69 @@ void func_080EDECC(MapMenuWork* w) {
         switch (gLanguage) {
         case 0:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[w->unk_309], w->unk_040, w->unk_03C, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84678[w->unk_309], w->unk_040, w->unk_038, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84678[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[7], w->unk_040, w->unk_03C, 0, 0x400,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 1:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[w->unk_309], w->unk_040, w->unk_03C, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84698[w->unk_309], w->unk_040, w->unk_038, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84698[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[7], w->unk_040, w->unk_03C, 0, 0x400,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 4:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[w->unk_309], w->unk_040, w->unk_03C, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846B8[w->unk_309], w->unk_040, w->unk_038, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846B8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[7], w->unk_040, w->unk_03C, 0, 0x400,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 3:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[w->unk_309], w->unk_040, w->unk_03C, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846D8[w->unk_309], w->unk_040, w->unk_038, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846D8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[7], w->unk_040, w->unk_03C, 0, 0x400,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         case 2:
         default:
             if (w->unk_034 != 0) {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[w->unk_309], w->unk_040, w->unk_03C, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[w->unk_309], w->tiles6, w->palette5, 0,
                     0x400, 81);
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846F8[w->unk_309], w->unk_040, w->unk_038, 0,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846F8[w->unk_309], w->tiles6, w->palette4, 0,
                     0x400, 81);
             } else {
-                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[7], w->unk_040, w->unk_03C, 0, 0x400,
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[7], w->tiles6, w->palette5, 0, 0x400,
                     80);
             }
             break;
         }
 #else
         if (w->unk_034 != 0) {
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->unk_040, w->unk_03C, 0,
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->tiles6, w->palette5, 0,
                 0x400, 81);
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E44[w->unk_309], w->unk_040, w->unk_038, 0,
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E44[w->unk_309], w->tiles6, w->palette4, 0,
                 0x400, 81);
         } else {
-            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[7], w->unk_040, w->unk_03C, 0, 0x400,
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[7], w->tiles6, w->palette5, 0, 0x400,
                 80);
         }
 #endif
@@ -9009,21 +9009,21 @@ void func_080EE418(MapMenuWork* w) {
 
     func_080ED06C((UnkStruct_080ED06C*)w, 0);
     func_080ECFE8((UnkStruct_080ECFE8*)w, 0);
-    ReleaseObjPalette(w->unk_000);
-    ReleaseObjTiles(w->unk_004);
-    ReleaseObjTiles(w->unk_010);
-    ReleaseObjTiles(w->unk_018);
-    ReleaseObjPalette(w->unk_020);
-    ReleaseObjTiles(w->unk_024);
-    ReleaseObjPalette(w->unk_038);
-    ReleaseObjPalette(w->unk_03C);
-    ReleaseObjTiles(w->unk_040);
+    ReleaseObjPalette(w->palette2);
+    ReleaseObjTiles(w->tiles2);
+    ReleaseObjTiles(w->tiles3);
+    ReleaseObjTiles(w->tiles4);
+    ReleaseObjPalette(w->palette3);
+    ReleaseObjTiles(w->tiles5);
+    ReleaseObjPalette(w->palette4);
+    ReleaseObjPalette(w->palette5);
+    ReleaseObjTiles(w->tiles6);
     ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_138);
+    ReleaseObjPalette((u8*)w->palette6);
     ReleaseObjTiles(w->unk_13C);
-    ReleaseObjPalette(w->unk_140);
-    ReleaseObjTiles(w->unk_144);
+    ReleaseObjPalette(w->palette7);
+    ReleaseObjTiles(w->tiles7);
 
     for (i = 0; i < 3; i++) {
         if (w->unk_164[i] != 0) {
@@ -9203,9 +9203,9 @@ s32 func_080EE824(MapSaveWork* w) {
         w->unk_2F6 -= 1;
     } else {
         if (!(gGameState.flags & 8)) {
-            w->unk_040 = LoadObjPalette(gUnk_09991C04, 32);
+            w->palette4 = LoadObjPalette(gUnk_09991C04, 32);
         } else {
-            w->unk_040 = LoadObjPalette(gUnk_09991C44, 32);
+            w->palette4 = LoadObjPalette(gUnk_09991C44, 32);
         }
 
         w->unk_044[0x120] = 0;
@@ -9265,8 +9265,8 @@ s32 func_080EE824(MapSaveWork* w) {
         SetBgScroll(0, 0, 0xFFFB);
         w->unk_184 = AllocObjTiles(0x280, gUnk_0919FDF8);
         w->unk_18C = AllocObjTiles(0x400, gUnk_091ABDB8);
-        w->unk_014 = LoadObjPalette(gUnk_09991D24, 32);
-        w->unk_018 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
+        w->palette3 = LoadObjPalette(gUnk_09991D24, 32);
+        w->tiles3 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
         w->palette = LoadObjPalette(gUnk_099919A4, 32);
         w->tiles = AllocObjTiles(0x120, gUnk_098A8628);
         AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
@@ -9405,26 +9405,26 @@ void func_080EED88(MapSaveWork* w) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        w->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
+        w->tiles2 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
         break;
     case 1:
-        w->unk_004 = LoadObjTiles(gUnkEu_098863B2, 0x400);
+        w->tiles2 = LoadObjTiles(gUnkEu_098863B2, 0x400);
         break;
     case 4:
-        w->unk_004 = LoadObjTiles(gUnkEu_0988683C, 0x3C0);
+        w->tiles2 = LoadObjTiles(gUnkEu_0988683C, 0x3C0);
         break;
     case 3:
-        w->unk_004 = LoadObjTiles(gUnkEu_09886C7E, 0x2C0);
+        w->tiles2 = LoadObjTiles(gUnkEu_09886C7E, 0x2C0);
         break;
     case 2:
     default:
-        w->unk_004 = LoadObjTiles(gUnkEu_09886FC8, 0x3C0);
+        w->tiles2 = LoadObjTiles(gUnkEu_09886FC8, 0x3C0);
         break;
     }
-    w->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
+    w->palette2 = LoadObjPalette(gUnk_09991D04, 32);
 #else
-    w->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
-    w->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
+    w->palette2 = LoadObjPalette(gUnk_09991D04, 32);
+    w->tiles2 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
 #endif
     w->unk_008 = -0x800;
     w->unk_00C = 0xA000;
@@ -9432,14 +9432,14 @@ void func_080EED88(MapSaveWork* w) {
 
     if (gGameState.flags & 8) {
         w->unk_16C = AllocObjTiles(0x400, gUnk_092EB78A);
-        w->unk_168 = LoadObjPalette(gUnk_09618118, 32);
+        w->palette5 = LoadObjPalette(gUnk_09618118, 32);
     } else {
         w->unk_16C = AllocObjTiles(0x340, gUnk_088B6560);
-        w->unk_168 = LoadObjPalette(gUnk_08F683A4, 32);
+        w->palette5 = LoadObjPalette(gUnk_08F683A4, 32);
     }
 
-    w->unk_180 = LoadObjPalette(gUnk_09617C58, 32);
-    w->unk_188 = LoadObjPalette(gUnk_08F68384, 32);
+    w->palette6 = LoadObjPalette(gUnk_09617C58, 32);
+    w->palette7 = LoadObjPalette(gUnk_08F68384, 32);
     w->unk_178 = gUnk_02039BA0->unk_18.unk_00.x - gUnk_02039BA0->unk_00;
     w->unk_17C = gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z - gUnk_02039BA0->unk_04;
     w->unk_170 = w->unk_178;
@@ -9474,56 +9474,56 @@ void func_080EEF4C(MapSaveWork* w) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8447C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8447C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8447C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8447C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8447C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8447C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 1:
-        DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+        DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 4:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8444C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8444C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8444C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8444C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8444C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8444C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 3:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8445C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8445C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8445C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8445C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8445C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8445C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     case 2:
     default:
-        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8446C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8446C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8446C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+        DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F8446C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F8446C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+        DrawSprite(w->unk_010 >> 8, 0, gUnkEu_09F8446C[0], w->tiles2, w->palette2, 0, 0x400, 80);
         break;
     }
 #else
-    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
-    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
-    DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->tiles2, w->palette2, 0, 0x400, 90);
+    DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->tiles2, w->palette2, 0, 0x400, 80);
 #endif
 
     if (gUnk_0203C7AC->unk_00 & 0x1000) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->unk_16C, w->unk_168,
+            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->unk_16C, w->palette5,
                 0, 0x400, 80);
         } else {
             DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_16C,
-                w->unk_168, 0, 0x400, 80);
+                w->palette5, 0, 0x400, 80);
         }
     }
 
     if (w->unk_2F8 != 0) {
         if (!(gGameState.flags & 8)) {
-            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->unk_184, w->unk_180, 0, 0x401, 81);
-            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->unk_18C, w->unk_188, 0, 0x400, 81);
+            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->unk_184, w->palette6, 0, 0x401, 81);
+            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->unk_18C, w->palette7, 0, 0x400, 81);
         }
 
-        DrawSprite(0, 16, gUnk_098A8F28, w->unk_018, w->unk_014, 0, 0x400, 90);
-        DrawTextSlots(100, 59, w->unk_044, w->unk_040, 50, w->unk_044[0x120]);
+        DrawSprite(0, 16, gUnk_098A8F28, w->tiles3, w->palette3, 0, 0x400, 90);
+        DrawTextSlots(100, 59, w->unk_044, w->palette4, 50, w->unk_044[0x120]);
 
         if (w->unk_2F4 != 0) {
 #ifdef VERSION_EU
@@ -9564,19 +9564,19 @@ void func_080EF234(MapSaveWork* w) {
     u32 f;
 
     func_080EE580((UnkStruct_080EE580*)w, 0);
-    ReleaseObjPalette((u8*)w->unk_000);
-    ReleaseObjTiles(w->unk_004);
-    ReleaseObjPalette((u8*)w->unk_014);
-    ReleaseObjTiles(w->unk_018);
+    ReleaseObjPalette((u8*)w->palette2);
+    ReleaseObjTiles(w->tiles2);
+    ReleaseObjPalette((u8*)w->palette3);
+    ReleaseObjTiles(w->tiles3);
     ReleaseObjPalette((u8*)w->palette);
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_168);
+    ReleaseObjPalette((u8*)w->palette5);
     ReleaseObjTiles(w->unk_16C);
-    ReleaseObjPalette((u8*)w->unk_180);
+    ReleaseObjPalette((u8*)w->palette6);
     ReleaseObjTiles(w->unk_184);
-    ReleaseObjPalette((u8*)w->unk_188);
+    ReleaseObjPalette((u8*)w->palette7);
     ReleaseObjTiles(w->unk_18C);
-    ReleaseObjPalette((u8*)w->unk_040);
+    ReleaseObjPalette((u8*)w->palette4);
     FreeTextSlots(w->unk_044, 36);
     ReleaseObjPalette((u8*)w->unk_190);
 #ifdef VERSION_EU
@@ -13218,8 +13218,8 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->unk_84 = -(GetRandom() % 0x301 + 0x200);
     w->unk_88 = GetRandom() % 155 + 153;
     w->unk_8C = GetRandom();
-    w->unk_6C = LoadObjTiles(gUnk_098A5CF4, 0x160);
-    w->unk_70 = LoadObjPalette(gUnk_08F69BE4, 32);
+    w->tiles = LoadObjTiles(gUnk_098A5CF4, 0x160);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
     w->unk_80 = arg->unk_14;
 
     switch (w->unk_80) {
@@ -13284,17 +13284,17 @@ void func_080F4DDC(MapPrizeWork* w) {
             aff = 0;
         }
 
-        DrawSprite(x, y, w->unk_74, w->unk_6C, w->unk_70, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
+        DrawSprite(x, y, w->unk_74, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
 
         if (w->unk_97 == 0) {
-            DrawSprite(x, (w->unk_04 >> 8) + (w->unk_0C >> 8) - (gUnk_02039BA0->unk_04 >> 8), w->unk_78, w->unk_6C, w->unk_70, aff, 0x800, 0xFFFF);
+            DrawSprite(x, (w->unk_04 >> 8) + (w->unk_0C >> 8) - (gUnk_02039BA0->unk_04 >> 8), w->unk_78, w->tiles, w->palette, aff, 0x800, 0xFFFF);
         }
     }
 }
 
 void func_080F4EC4(MapPrizeWork* w) {
-    ReleaseObjTiles(w->unk_6C);
-    ReleaseObjPalette(w->unk_70);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_10);
 }
 
@@ -13487,15 +13487,15 @@ void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     gUnk_0203C7AC->unk_00 |= 0x10;
     w->unk_0A8 = p->unk_14;
     d = &gCardDefs[w->unk_0A8];
-    w->unk_070 = LoadObjTiles(d->unk_04, 0x300);
-    w->unk_06C = LoadObjPalette(d->unk_08, 32);
+    w->tiles = LoadObjTiles(d->unk_04, 0x300);
+    w->palette = LoadObjPalette(d->unk_08, 32);
     w->unk_090 = *(UnkStruct_08F70ACC*)&d->unk_1C;
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    w->unk_074 = LoadObjPalette(gUnk_09611AB8, 32);
-    w->unk_078 = LoadObjTiles(q->unk_0C, 0x280);
-    w->unk_07C = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    w->unk_084 = LoadObjPalette(gUnk_08F69BE4, 32);
-    w->unk_080 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles2 = LoadObjTiles(q->unk_0C, 0x280);
+    w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    w->palette3 = LoadObjPalette(gUnk_08F69BE4, 32);
+    w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->unk_000 = p->unk_04;
     w->unk_004 = p->unk_08;
     w->unk_008 = p->unk_0C;
@@ -13559,16 +13559,16 @@ void func_080F55B0(MapPrzCardWork* w) {
     }
 
     d = &gCardDefs[w->unk_0A8];
-    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, d->unk_00, w->unk_070, w->unk_06C,
+    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, d->unk_00, w->tiles, w->palette,
         affine, w->unk_088, w->unk_0BE + 1);
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, q->unk_00, w->unk_078,
-        w->unk_074, affine, w->unk_088, w->unk_0BE);
+    DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, q->unk_00, w->tiles2,
+        w->palette2, affine, w->unk_088, w->unk_0BE);
 
     if (w->unk_090.unk_0E != 3) {
         t = gUnk_09EE981C[w->unk_090.unk_04];
-        DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, t, w->unk_07C,
-            w->unk_074, affine, w->unk_088, w->unk_0BE - 1);
+        DrawSprite(w->unk_0BA, *(u16*)&w->unk_0BC - 8, t, w->tiles3,
+            w->palette2, affine, w->unk_088, w->unk_0BE - 1);
     }
 
     if (w->unk_0D2 == 0) {
@@ -13580,23 +13580,23 @@ void func_080F55B0(MapPrzCardWork* w) {
             s = 2;
         }
 
-        DrawSprite(x, y, gUnk_09EE1380[0], w->unk_080, w->unk_084,
+        DrawSprite(x, y, gUnk_09EE1380[0], w->tiles4, w->palette3,
             AllocObjAffine(0, s, s, 0), 0x800, w->unk_0BE + 2);
     }
 
     TaskPoolDraw(&w->unk_0D4);
 }
 void func_080F5780(MapPrzCardWork* w) {
-    FadeSetPaletteExcluded(w->unk_074->unk_06 + 0x10, 0);
-    FadeSetPaletteExcluded(w->unk_06C->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->palette2->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->palette->unk_06 + 0x10, 0);
     ColliderUnregister(w->unk_010);
-    ReleaseObjTiles(w->unk_070);
-    ReleaseObjTiles(w->unk_078);
-    ReleaseObjTiles(w->unk_07C);
-    ReleaseObjTiles(w->unk_080);
-    ReleaseObjPalette(w->unk_06C);
-    ReleaseObjPalette(w->unk_074);
-    ReleaseObjPalette(w->unk_084);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjTiles(w->tiles2);
+    ReleaseObjTiles(w->tiles3);
+    ReleaseObjTiles(w->tiles4);
+    ReleaseObjPalette(w->palette);
+    ReleaseObjPalette(w->palette2);
+    ReleaseObjPalette(w->palette3);
     TaskPoolDestroy(&w->unk_0D4);
     gUnk_0203C7AC->unk_00 &= ~0x10;
 }
@@ -14753,8 +14753,8 @@ void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
     w->unk_0C = 0;
     w->unk_08 = 0;
     w->unk_04 = y;
-    w->unk_40 = LoadObjPalette(gUnk_08F69BE4, 0x20);
-    w->unk_44 = LoadObjTiles(gUnk_08B1EA00, 0xE0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    w->tiles = LoadObjTiles(gUnk_08B1EA00, 0xE0);
     w->unk_48 = 0;
 
     switch (w->unk_14) {
@@ -14790,13 +14790,13 @@ void func_080F76F0(MapStairWork* w) {
     if (w->unk_48 == 1) {
         x = (w->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
         y = (w->unk_04 >> 8) + (w->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-        DrawSprite(x, y, gUnk_08B1E9A6, w->unk_44, w->unk_40, 0, 0x800, 0x101);
+        DrawSprite(x, y, gUnk_08B1E9A6, w->tiles, w->palette, 0, 0x800, 0x101);
     }
 }
 
 void func_080F775C(MapStairWork* w) {
-    ReleaseObjTiles(w->unk_44);
-    ReleaseObjPalette(w->unk_40);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     TaskPoolDestroy(&w->unk_50);
 }
 
@@ -14906,8 +14906,8 @@ void* func_080F7AB4(void) {
 void func_080F7AE0(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
-    w->unk_00 = LoadObjTiles(gUnk_0993AF64, 0x800);
-    w->unk_04 = LoadObjPalette(gUnk_099910C4, 32);
+    w->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
+    w->palette = LoadObjPalette(gUnk_099910C4, 32);
     w->unk_08 = gUnk_09EF8DA4[0];
     w->unk_0E = 120;
 #ifdef VERSION_EU
@@ -14931,13 +14931,13 @@ s32 func_080F7B64(u8* work) {
 }
 
 void func_080F7B78(MapFloorWork* w) {
-    DrawSprite(120, 138, w->unk_08, w->unk_00, w->unk_04, 0, 0, 0x3C);
+    DrawSprite(120, 138, w->unk_08, w->tiles, w->palette, 0, 0, 0x3C);
     DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->unk_14, 50, w->unk_10);
 }
 
 void func_080F7BB8(MapFloorWork* w) {
-    ReleaseObjPalette(w->unk_04);
-    ReleaseObjTiles(w->unk_00);
+    ReleaseObjPalette(w->palette);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->unk_14);
 #ifdef VERSION_EU
     FreeTextSlots(w->unk_18, 60);
