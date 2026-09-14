@@ -5,10 +5,6 @@
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
 
-extern u32 gFrameCounter;
-extern u32 gVBlankCounter;
-extern u16 gSystemFlags;
-
 u16 gKeysHeld;
 u16 gKeysPressed;
 u16 gKeysRepeat;

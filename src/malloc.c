@@ -8,12 +8,6 @@ Heap gIwramHeap;
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
 
-extern u32 gFrameCounter;
-extern u32 gVBlankCounter;
-extern u16 gSystemFlags;
-
-
-
 void HeapUnlinkFreeBlock(HeapBlock* b) {
     b->prevFree->nextFree = b->nextFree;
     b->nextFree->prevFree = b->prevFree;

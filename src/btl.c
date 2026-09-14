@@ -468,8 +468,6 @@ typedef struct BtlTaskArg {
     s32 unk_00;
     u8 unk_04;
 } BtlTaskArg;
-extern u16 gUnk_0813C0DC[][4];
-extern u16 gUnk_0813C6BC[][4];
 void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     BtlObj* e;
 
