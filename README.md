@@ -14,7 +14,7 @@
 [<img src="https://decomp.dev/pheenoh/khcom/us.svg?w=512&h=256" width="512" height="256" alt="Progress graph for the us version">][progress]
 <!-- markdownlint-enable MD033 -->
 
-A work-in-progress matching decompilation of *Kingdom Hearts: Chain of Memories*
+A matching decompilation of *Kingdom Hearts: Chain of Memories*
 for the Game Boy Advance.
 
 > [!IMPORTANT]
