@@ -1301,7 +1301,6 @@ extern u8 gUnk_050001A0[];
 extern u8 gUnk_050001C0[];
 extern u8 gUnk_0500016C[];
 extern u8 gUnk_06010000[];
-extern u32 gFrameCounter;
 extern u8 gUnk_095152B8[];
 extern u8 gUnk_095152CC[];
 extern u8 gUnk_095152E0[];

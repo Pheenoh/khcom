@@ -1,6 +1,8 @@
 #include "system_state.h"
 #include "battle_localized_assets.h"
 #include "monsgage.h"
+#include "obj_api.h"
+#include "game.h"
 
 #ifndef VERSION_EU
 void task_monsgage_0(MonsgageWork* work) {

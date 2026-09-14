@@ -566,7 +566,6 @@ typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
 typedef char TmArmWork_size[(sizeof(TmArmWork) == 0x258) ? 1 : -1];
 typedef char TmFootWork_size[(sizeof(TmFootWork) == 0x484) ? 1 : -1];
 
-extern s16 gSineTable[];
 extern u16 gUnk_0961A63C[];
 extern u8 gUnk_096FB744[];
 extern void* gUnk_0961A7B0[];

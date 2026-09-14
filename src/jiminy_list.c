@@ -1,6 +1,7 @@
 #include "jiminy_list.h"
 #include "jiminy_data.h"
 #include "text.h"
+#include "monsgage.h"
 #include "hum.h"
 #include "gba/keys.h"
 

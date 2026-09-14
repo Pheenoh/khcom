@@ -10,6 +10,7 @@
 #include "m4a_song.h"
 #include "display.h"
 #include "text.h"
+#include "monsgage.h"
 #include "anim.h"
 #include "map.h"
 #ifdef VERSION_EU

@@ -6,6 +6,7 @@
 #include "engine_math.h"
 #include "m4a_song.h"
 #include "text.h"
+#include "monsgage.h"
 #include "fade.h"
 #include "obj_api.h"
 #include "display.h"

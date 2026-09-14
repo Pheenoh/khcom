@@ -191,7 +191,6 @@ void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count);
 void func_08083D68(void);
 void func_08083DD4(void);
 
-extern s16 gSineTable[];
 extern vu32 gFrameCounter;
 
 

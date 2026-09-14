@@ -508,7 +508,6 @@ extern AnimDef gUnk_0813FD58[5];
 extern HumDef gUnk_0813FDA8;
 
 extern AnimDef gUnk_0813F91C[13];
-extern s16 gSineTable[];
 extern vu32 gFrameCounter;
 extern u8 gUnk_08F6DCA4[];
 extern u8 gUnk_08F6DCC4[];

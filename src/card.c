@@ -15,6 +15,7 @@
 #include "game_state.h"
 #include <string.h>
 #include "text.h"
+#include "monsgage.h"
 #include "fade.h"
 #include "btl_collision.h"
 #include "obj_api.h"

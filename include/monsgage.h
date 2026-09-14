@@ -1,9 +1,7 @@
 #ifndef GUARD_MONSGAGE_H
 #define GUARD_MONSGAGE_H
 
-#include "obj_api.h"
 #include "types.h"
-#include "game.h"
 
 typedef struct MonsgageWork {
     void* tiles;

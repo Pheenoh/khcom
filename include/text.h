@@ -13,8 +13,5 @@ void DrawTextSlots(s16 x, s16 y, TextSlot* slots, void* palette, u16 priority, u
 void* LoadSmallFontTiles(void);
 void* LoadSmallFontPalette(void);
 
-#ifdef VERSION_EU
-void* eu_0805E924(void* strings);
-#endif
 
 #endif

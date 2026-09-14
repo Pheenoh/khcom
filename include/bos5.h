@@ -321,7 +321,6 @@ void task_bos_ga_0(GaWork* work, s32 arg);
 s32 task_bos_md_dai_1(MdDaiWork* work);
 void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg);
 void func_080FCF78(MdFireWork* work);
-extern s16 gSineTable[];
 extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
 extern u8 gUnk_09A3C99C[];

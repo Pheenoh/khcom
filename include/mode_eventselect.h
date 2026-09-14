@@ -133,7 +133,6 @@ extern u8 gUnk_08BCB3D8[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_088A5D7A[];
 extern s16 gUnk_0903380C[][6];
-extern s16 gSineTable[];
 extern u8 gUnk_093215CA[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09321804[];

@@ -5,6 +5,7 @@
 #include "mode_ms2_api.h"
 #include "display.h"
 #include "text.h"
+#include "monsgage.h"
 #include "mode_ms2.h"
 #include "gba/keys.h"
 #include "card_ui_state.h"

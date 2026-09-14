@@ -12,6 +12,7 @@
 #include "sio_api.h"
 #include "display.h"
 #include "text.h"
+#include "monsgage.h"
 #include "mode_sio.h"
 #include "gba/keys.h"
 

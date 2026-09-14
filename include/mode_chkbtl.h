@@ -44,7 +44,6 @@ typedef struct ChkBtlWorld {
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
-extern u32 gFrameCounter;
 extern const ChkBtlEntry gChkBtlEntries[];
 extern const ChkBtlWorld gChkBtlWorlds[];
 extern ChkBtlWork* gChkBtlWork;

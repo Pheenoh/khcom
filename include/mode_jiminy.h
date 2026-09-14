@@ -18,6 +18,7 @@
 
 #include <stdlib.h>
 #include "text.h"
+#include "monsgage.h"
 #include "fade.h"
 #include "obj_api.h"
 #include "display.h"
@@ -117,8 +118,6 @@ extern u8 gUnk_08C6A53A[];
 extern u8 gUnkEu_09A9A880[];
 extern u8 gUnkEu_09A9A8A0[];
 extern u8 gUnkEu_099FBE00[];
-void* eu_0805E968(void* text);
-s32 eu_0805E9AC(void* text);
 #endif
 
 void mode_jiminy_1(void);

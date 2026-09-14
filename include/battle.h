@@ -180,7 +180,6 @@ typedef struct BattleAttackDef {
 } BattleAttackDef;
 
 
-extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
 extern TaskDesc gTaskDescBtlBorn;
 extern TaskDesc gTaskDescEmy00;

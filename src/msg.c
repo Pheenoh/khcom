@@ -8,6 +8,7 @@
 #include "pallet.h"
 #include "display.h"
 #include "text.h"
+#include "monsgage.h"
 #include "anim.h"
 #include "msg.h"
 

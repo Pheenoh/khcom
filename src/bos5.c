@@ -5,6 +5,7 @@
 #include "display.h"
 #include "fade.h"
 #include "text.h"
+#include "monsgage.h"
 #include "bos5.h"
 #include "bos5_api.h"
 

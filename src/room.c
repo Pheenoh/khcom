@@ -1,6 +1,7 @@
 #include "registration_data.h"
 #include "chara_api.h"
 #include "text.h"
+#include "monsgage.h"
 #include "room.h"
 #include "room_api.h"
 
