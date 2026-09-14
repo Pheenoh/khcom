@@ -10501,8 +10501,8 @@ typedef struct UnkStruct_080889DC {
     s32 x2;
     s32 y2;
     u8 unk_858[0x14];
-    s32 unk_86C;
-    s32 unk_870;
+    s32 x3;
+    s32 y3;
     s16 unk_874;
     s16 unk_876;
     u8 unk_878[0xC];
@@ -10601,9 +10601,9 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
                 if (w->unk_8CF != 0) {
                     w->unk_876++;
                     if ((u16)w->unk_876 <= 3) {
-                        w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+                        w->y3 = gUnk_09035956[w->unk_876] << 8;
                     } else {
-                        w->unk_870 = -0x10000;
+                        w->y3 = -0x10000;
                     }
                 }
             }
@@ -10618,9 +10618,9 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             func_0808C9CC((u8*)w);
             if (w->unk_8CF != 0) {
                 if ((u16)w->unk_876 <= 3) {
-                    w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+                    w->y3 = gUnk_09035956[w->unk_876] << 8;
                 } else {
-                    w->unk_870 = -0x10000;
+                    w->y3 = -0x10000;
                 }
             }
         }
@@ -10679,8 +10679,8 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             w->unk_8CF = 1;
             w->unk_874 = w->unk_884;
             w->unk_876 = w->unk_886;
-            w->unk_86C = gUnk_09035950[w->unk_874] << 8;
-            w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+            w->x3 = gUnk_09035950[w->unk_874] << 8;
+            w->y3 = gUnk_09035956[w->unk_876] << 8;
             AnimStart(&w->anim2, 4, 1);
         } else {
             if ((u8)func_0808EDA4((u8*)w) != 0) {
@@ -13084,9 +13084,9 @@ typedef struct {
     void* palette7;
     u8 unk_744[108];
     void* gfx9;
-    s32 unk_7B4;
-    s32 unk_7B8;
-    s32 unk_7BC;
+    s32 x9;
+    s32 y8;
+    s32 x10;
     u8 unk_7C0[0x4];
     u8 unk_7C4;
     u8 unk_7C5[3];
@@ -13099,17 +13099,17 @@ typedef struct {
     AnimState anim;
     AnimState anim2;
     AnimState anim3;
-    s32 unk_848;
-    s32 unk_84C;
-    s32 unk_850;
-    s32 unk_854;
-    s32 unk_858;
-    s32 unk_85C;
-    s32 unk_860;
-    s32 unk_864;
-    s32 unk_868;
-    s32 unk_86C;
-    s32 unk_870;
+    s32 x3;
+    s32 y3;
+    s32 x4;
+    s32 y4;
+    s32 x5;
+    s32 x6;
+    s32 y5;
+    s32 y6;
+    s32 x7;
+    s32 x8;
+    s32 y7;
     u8 unk_874[0x4];
     s16 x;
     s16 y;
@@ -13136,18 +13136,18 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     gUnk_0203A860.gfx = AnimUpdate(&gUnk_0203A860.anim);
     if (w->unk_8C9 == 0) {
         if (w->unk_8B0 != 0) {
-            DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 3);
+            DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 3);
         }
     }
     if (w->unk_8B1 != 13) {
-        DrawSprite(w->unk_850 >> 8, w->unk_854 >> 8, gUnk_09EEB000, w->tiles4, w->palette, 0, 0x800, 10);
+        DrawSprite(w->x4 >> 8, w->y4 >> 8, gUnk_09EEB000, w->tiles4, w->palette, 0, 0x800, 10);
     }
     if (w->tiles6 != 0) {
-        DrawSprite(w->unk_858 >> 8, w->unk_860 >> 8, gUnk_09EEB080[0], w->tiles6, w->palette3, 0, 0xC00, 10000);
-        DrawSprite(w->unk_85C >> 8, w->unk_864 >> 8, gUnk_09EEB080[1], w->tiles6, w->palette3, 0, 0xC00, 10000);
+        DrawSprite(w->x5 >> 8, w->y5 >> 8, gUnk_09EEB080[0], w->tiles6, w->palette3, 0, 0xC00, 10000);
+        DrawSprite(w->x6 >> 8, w->y6 >> 8, gUnk_09EEB080[1], w->tiles6, w->palette3, 0, 0xC00, 10000);
     }
     if (w->unk_018 != 0) {
-        DrawSprite(w->unk_868 >> 8, 0,
+        DrawSprite(w->x7 >> 8, 0,
 #ifdef VERSION_EU
                    gUnkEu_09F6FDF0[gLanguage][0],
 #else
@@ -13158,9 +13158,9 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     switch (w->unk_8B1) {
     case 0:
         if (w->unk_8CF != 0) {
-            DrawSprite((w->unk_86C >> 8) - 16, (w->unk_870 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+            DrawSprite((w->x8 >> 8) - 16, (w->y7 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         }
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         func_0808B3DC((u8*)w, 0);
         DrawSprite(w->x, w->y, w->gfx7, w->tiles5, w->palette, 0, 0, 10);
         DrawSprite(w->x2, w->y2, w->gfx8, w->tiles5, w->palette, 0, 0, 10);
@@ -13190,10 +13190,10 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     case 4:
         func_0808B3DC((u8*)w, 1);
         DrawSprite(w->x, w->y, w->gfx7, w->tiles5, w->palette, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         if (w->tiles7 != 0) {
             if (w->unk_8C9 == 0) {
-                DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+                DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
             }
             DrawSprite(24, 82, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 82, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -13210,7 +13210,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     case 7:
         func_0808B3DC((u8*)w, 1);
         DrawSprite(w->x2, w->y2, w->gfx8, w->tiles5, w->palette, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         if (w->tiles7 != 0) {
             DrawSprite(164, 82, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(164, 82, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -13229,7 +13229,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         break;
     case 5:
         DrawSprite(w->x, w->y, w->gfx7, w->tiles5, w->palette, 0, 0, 10);
-        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 26, (w->y3 >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         func_0808B3DC((u8*)w, 1);
         if (w->tiles7 != 0) {
             DrawSprite(24, 82, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
@@ -13253,7 +13253,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         func_0808B3DC((u8*)w, 1);
         break;
     case 9:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 20, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         if (w->tiles7 != 0) {
             DrawSprite(24, 66, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 66, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -13268,7 +13268,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 11:
-        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
+        DrawSprite((w->x3 >> 8) - 26, (w->y3 >> 8) - 13, w->gfx2, w->tiles2, w->palette4, 0, 0, 8);
         if (w->tiles7 != 0) {
             DrawSprite(24, 66, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 66, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -13283,12 +13283,12 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 13:
-        DrawSprite(w->unk_7B4 >> 8, w->unk_7B8 >> 8, w->gfx9, w->tiles11, w->palette7, 0, 0, 20);
-        DrawSprite(w->unk_7BC >> 8, 18, 0, w->unk_73C, w->palette7, 0, 0, 21);
+        DrawSprite(w->x9 >> 8, w->y8 >> 8, w->gfx9, w->tiles11, w->palette7, 0, 0, 20);
+        DrawSprite(w->x10 >> 8, 18, 0, w->unk_73C, w->palette7, 0, 0, 21);
         DrawTextSlots(138, 16, w->unk_744, w->palette, 20, w->unk_7C4);
         break;
     case 12:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
         if (w->tiles7 != 0) {
             DrawSprite(24, 66, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 66, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -13303,7 +13303,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
         }
         break;
     case 15:
-        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
+        DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
         if (w->tiles7 != 0) {
             DrawSprite(24, 66, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 66, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
@@ -15360,8 +15360,8 @@ typedef struct UnkStruct_0808F0C0 {
     u8 unk_784[0x14];
     AnimState anim;
     void* gfx;
-    s32 unk_7B4;
-    s32 unk_7B8;
+    s32 x;
+    s32 y;
     s32 unk_7BC;
     union {
         struct {
@@ -15384,8 +15384,8 @@ typedef struct UnkStruct_0808F0C0 {
     AnimState anim2;
     AnimState anim3;
     AnimState anim4;
-    s32 unk_848;
-    s32 unk_84C;
+    s32 x2;
+    s32 y2;
     u8 unk_850[0x60];
     u8 unk_8B0;
     u8 unk_8B1;
@@ -16004,8 +16004,8 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
         break;
     case 6:
         SetTaskUpdate(a, (void*)func_0808F660);
-        w->unk_7B4 = gUnk_09035808[0] << 8;
-        w->unk_7B8 = gUnk_09035874[0] << 8;
+        w->x = gUnk_09035808[0] << 8;
+        w->y = gUnk_09035874[0] << 8;
         w->unk_7C6 = 4;
         w->cursor.parts.x = 0;
         w->cursor.parts.y = 0;
@@ -16051,8 +16051,8 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
         m4aSongNumStart(121);
         return 1;
     }
-    ApproachValueHalf(&w->unk_848, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
-    ApproachValueHalf(&w->unk_84C, 0x1A00);
+    ApproachValueHalf(&w->x2, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
+    ApproachValueHalf(&w->y2, 0x1A00);
     w->gfx = AnimUpdate(&w->anim);
     *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->taskpool);
@@ -16096,24 +16096,24 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
     if (w->unk_7C6 != 0) {
         if (w->unk_7C8 == 1) {
             if (gLanguage == 2) {
-                w->unk_7B4 = 0xC800;
+                w->x = 0xC800;
             } else if (gLanguage == 3) {
-                w->unk_7B4 = 0xD100;
+                w->x = 0xD100;
             } else {
-                w->unk_7B4 = 0xD300;
+                w->x = 0xD300;
             }
-            w->unk_7B8 = 0x8C00;
+            w->y = 0x8C00;
         } else if (w->unk_7C7 == 2) {
-            ApproachValue(&w->unk_7B4, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+            ApproachValue(&w->x, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->y, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
         } else {
-            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+            ApproachValue(&w->x, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->y, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
         }
         w->unk_7C6--;
     }
-    ApproachValueHalf(&w->unk_848, (gUnkEu_090CECE8[w->unk_7C7 - 2] + 8) << 8);
-    ApproachValueHalf(&w->unk_84C, 0x1A00);
+    ApproachValueHalf(&w->x2, (gUnkEu_090CECE8[w->unk_7C7 - 2] + 8) << 8);
+    ApproachValueHalf(&w->y2, 0x1A00);
     w->gfx = AnimUpdate(&w->anim);
     *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
     TaskPoolUpdate(&w->taskpool);
@@ -16301,13 +16301,13 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         w->cursor.parts.y = bottom;
         if (gLanguage == 2) {
-            w->unk_7B4 = 0xC800;
+            w->x = 0xC800;
         } else if (gLanguage == 3) {
-            w->unk_7B4 = 0xD100;
+            w->x = 0xD100;
         } else {
-            w->unk_7B4 = 0xD300;
+            w->x = 0xD300;
         }
-        w->unk_7B8 = 0x8C00;
+        w->y = 0x8C00;
 #else
         w->cursor.parts.y = 6;
 #endif
@@ -16355,8 +16355,8 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         SetTaskUpdate(a, (void*)func_jp_0808F638);
         return 1;
 #else
-        w->unk_848 = (gUnkEu_090CECE8[w->unk_7C7] + 8) << 8;
-        w->unk_84C = 0x1A00;
+        w->x2 = (gUnkEu_090CECE8[w->unk_7C7] + 8) << 8;
+        w->y2 = 0x1A00;
         SetTaskUpdate(a, (void*)func_eu_0808F190);
         break;
 #endif
@@ -16366,33 +16366,33 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
         if (w->cursor.parts.x == 14 && w->cursor.parts.y == bottom) {
             if (gLanguage == 2) {
-                ApproachValue(&w->unk_7B4, 0xC800, w->unk_7C6);
+                ApproachValue(&w->x, 0xC800, w->unk_7C6);
             } else if (gLanguage == 3) {
-                ApproachValue(&w->unk_7B4, 0xD100, w->unk_7C6);
+                ApproachValue(&w->x, 0xD100, w->unk_7C6);
             } else {
-                ApproachValue(&w->unk_7B4, 0xD300, w->unk_7C6);
+                ApproachValue(&w->x, 0xD300, w->unk_7C6);
             }
 #else
         if (w->cursor.packed == 0x6000E) {
-            ApproachValue(&w->unk_7B4, 0xD300, w->unk_7C6);
+            ApproachValue(&w->x, 0xD300, w->unk_7C6);
 #endif
-            ApproachValue(&w->unk_7B8, 0x8C00, w->unk_7C6);
+            ApproachValue(&w->y, 0x8C00, w->unk_7C6);
 #ifdef VERSION_EU
         } else if (w->unk_7C7 == 2) {
 #else
         } else {
 #endif
-            ApproachValue(&w->unk_7B4, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+            ApproachValue(&w->x, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->y, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
 #ifdef VERSION_EU
         } else {
-            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+            ApproachValue(&w->x, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->y, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
 #endif
         }
     }
-    w->unk_848 = w->unk_7B4 + 0x800;
-    w->unk_84C = w->unk_7B8 + 0x800;
+    w->x2 = w->x + 0x800;
+    w->y2 = w->y + 0x800;
     TaskPoolUpdate(&w->taskpool);
     TaskPoolUpdate(&w->cardpool);
     return 1;
@@ -19577,8 +19577,8 @@ void func_080949A0(MapcardWork* w) {
     s32 dy;
     s32* p = func_080E04E0();
 
-    dx = (p[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
+    dx = (p[0] >> 8) - (gUnk_02039BA0->x >> 8);
+    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
     v[0] = dx * 256 - w->x;
     v[1] = dy * 256 - w->y;
     w->unk_64 = NormalizeVector2D8(&v[0], &v[1]);
@@ -19601,8 +19601,8 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     u16 f;
 
     p = func_080E04E0();
-    dx = (p[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
+    dx = (p[0] >> 8) - (gUnk_02039BA0->x >> 8);
+    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
 
     if (w->unk_60 < 0) {
         x = (dx << 8) - w->x;
@@ -20379,8 +20379,8 @@ u8 func_08095E68(PrizeCardWork* w, void* a) {
         }
 
         SetTaskUpdate(a, (void*)func_0809612C);
-        x = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-        y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+        x = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
+        y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->y >> 8);
         w->unk_A8 = x << 8;
         w->unk_AC = y << 8;
         ColliderSetDisabled(&w->unk_4C[0], 1);
@@ -20391,10 +20391,10 @@ u8 func_08095E68(PrizeCardWork* w, void* a) {
     }
 
     ColliderSetPosition(&w->unk_4C[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
-    w->x = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    w->y2 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    w->x2 = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    w->y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    w->x = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
+    w->y2 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->y >> 8);
+    w->x2 = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
+    w->y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->y >> 8);
     w->unk_E4 = -0x1004 - (w->unk_AC >> 8) * 4;
     func_08096638(w);
     w->unk_F8 += 2;
@@ -20516,9 +20516,9 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 }
 u8 func_08096390(PrizeCardWork* w) {
     w->unk_F6 += 32;
-    w->unk_EA = (gUnk_02039BA0->actor.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->unk_EA = (gUnk_02039BA0->actor.unk_00.x >> 8) - (gUnk_02039BA0->x >> 8);
     w->unk_EC = (gUnk_02039BA0->actor.unk_00.y >> 8) + (gUnk_02039BA0->actor.unk_00.z >> 8) -
-                (gUnk_02039BA0->unk_04 >> 8);
+                (gUnk_02039BA0->y >> 8);
     w->x += (w->unk_EA - w->x) >> 3;
     w->y2 += (w->unk_EC - w->y2) >> 3;
     w->unk_E0 -= 10;
@@ -29702,7 +29702,7 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
     u8 i;
 
     FadeToAmount(0, 16, 8);
-    *(WorldSelBeforeArgs*)&w->unk_10 = *a;
+    *(WorldSelBeforeArgs*)&w->x = *a;
     w->tiles = LoadObjTiles(gUnk_093FB0CC, 0xC0);
     w->palette = LoadObjPalette(gUnk_09619378, 32);
     w->tiles2 = LoadObjTiles(gUnk_093FB1AC, 0x4A0);
@@ -29717,9 +29717,9 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
 
     for (i = 0; i < w->unk_A2; i++) {
         w->unk_98[i] = 0x80;
-        w->unk_70[i] = 0;
-        w->unk_20[i] = gSineTable[w->unk_98[i]] * 24 + w->unk_10;
-        w->unk_48[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->unk_14;
+        w->z2[i] = 0;
+        w->x2[i] = gSineTable[w->unk_98[i]] * 24 + w->x;
+        w->y2[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->y;
     }
 
     m4aSongNumStart(0xD4);
@@ -29728,16 +29728,16 @@ s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
     u8 i;
 
     if (w->unk_A3 < w->unk_A2) {
-        w->unk_70[w->unk_A3] -= (s32)(24.0f / (256.0f / (float)w->unk_A2 * 0.25f) * 256.0f);
+        w->z2[w->unk_A3] -= (s32)(24.0f / (256.0f / (float)w->unk_A2 * 0.25f) * 256.0f);
 
-        if (w->unk_70[w->unk_A3] <= -6144) {
+        if (w->z2[w->unk_A3] <= -6144) {
             w->unk_A3++;
         }
     }
 
     for (i = 0; i < w->unk_A3; i++) {
-        w->unk_20[i] = gSineTable[w->unk_98[i]] * 24 + w->unk_10;
-        w->unk_48[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->unk_14;
+        w->x2[i] = gSineTable[w->unk_98[i]] * 24 + w->x;
+        w->y2[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->y;
         w->unk_98[i] += 4;
     }
 
@@ -29756,16 +29756,16 @@ void WorldSel_Before_2(WorldSelBeforeWork* w) {
     u8 i;
 
     for (i = 0; i < w->unk_A2; i++) {
-        DrawSprite((w->unk_20[i] >> 8) - (gUnk_02039BA0->unk_00 >> 8),
-                   (w->unk_48[i] >> 8) + ((w->unk_18 + w->unk_70[i]) >> 8) - (gUnk_02039BA0->unk_04 >> 8),
+        DrawSprite((w->x2[i] >> 8) - (gUnk_02039BA0->x >> 8),
+                   (w->y2[i] >> 8) + ((w->z + w->z2[i]) >> 8) - (gUnk_02039BA0->y >> 8),
                    (&gUnk_09EF1278[4])[0], w->tiles, w->palette, 0, 0x800,
-                   (u16)(-0x1004 - (w->unk_48[i] >> 8) * 4));
+                   (u16)(-0x1004 - (w->y2[i] >> 8) * 4));
     }
 
-    DrawSprite((w->unk_10 >> 8) - (gUnk_02039BA0->unk_00 >> 8) - 32,
-               (w->unk_14 >> 8) + (w->unk_18 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 16,
+    DrawSprite((w->x >> 8) - (gUnk_02039BA0->x >> 8) - 32,
+               (w->y >> 8) + (w->z >> 8) - (gUnk_02039BA0->y >> 8) - 16,
                (&gUnk_09EF1278[6])[0], w->tiles2, w->palette2, 0, 0x800,
-               (u16)(-0x1004 - ((w->unk_14 - 512) >> 8) * 4));
+               (u16)(-0x1004 - ((w->y - 512) >> 8) * 4));
 }
 
 void WorldSel_Before_3(void** p) {

@@ -23,15 +23,15 @@ void func_0805A484(void) {
 
 void func_0805A4D8(s16 a, s16 b, s16 c) {
     gJiminyWork->unk_CC0 = 0;
-    gJiminyWork->unk_058 = a << 8;
-    gJiminyWork->unk_05C = (b + gJiminyWork->unk_C74 * c) << 8;
+    gJiminyWork->x4 = a << 8;
+    gJiminyWork->y5 = (b + gJiminyWork->unk_C74 * c) << 8;
 }
 
 void func_0805A514(s16 a, s16 b, s16 c) {
     s32 v;
 
     v = (b + gJiminyWork->unk_C74 * c) << 8;
-    ApproachValueHalf(&gJiminyWork->unk_05C, v);
+    ApproachValueHalf(&gJiminyWork->y5, v);
 
     if (gJiminyWork->unk_CC0 > 0) {
         gJiminyWork->unk_CC0--;

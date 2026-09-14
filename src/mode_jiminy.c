@@ -72,9 +72,9 @@ void mode_jiminy_0(void) {
     gJiminyWork->tiles6 = LoadObjTiles(gUnk_08C6A6B8, 0x1C0);
 #endif
     gJiminyWork->palette7 = LoadObjPalette(gUnk_08F6DDC4, 0x20);
-    gJiminyWork->unk_04C = -0x8000;
-    gJiminyWork->unk_050 = -0x800;
-    gJiminyWork->unk_054 = 0xA000;
+    gJiminyWork->x3 = -0x8000;
+    gJiminyWork->y3 = -0x800;
+    gJiminyWork->y4 = 0xA000;
     gJiminyWork->unk_000 = 0;
     gJiminyWork->unk_048 = 0;
     gJiminyWork->unk_C70 = 0;
@@ -158,8 +158,8 @@ void mode_jiminy_1(void) {
         if (gJiminyWork->unk_048 == 0) {
             gJiminyWork->unk_04A = 16;
         }
-        ApproachValue(&gJiminyWork->unk_050, 0, gJiminyWork->unk_04A);
-        ApproachValue(&gJiminyWork->unk_054, 0x9800, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->y3, 0, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->y4, 0x9800, gJiminyWork->unk_04A);
         gJiminyWork->unk_04A--;
         if (gJiminyWork->unk_04A <= 0) {
             gJiminyWork->unk_000 = 1;
@@ -172,7 +172,7 @@ void mode_jiminy_1(void) {
         if (gJiminyWork->unk_048 == 0) {
             gJiminyWork->unk_04A = 16;
         }
-        ApproachValue(&gJiminyWork->unk_04C, 0, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->x3, 0, gJiminyWork->unk_04A);
         gJiminyWork->unk_04A--;
         if (gJiminyWork->unk_04A <= 0) {
             gJiminyWork->unk_000 = 6;
@@ -188,7 +188,7 @@ void mode_jiminy_1(void) {
             gJiminyWork->unk_04A = 16;
             LoadBgMap(1, gUnk_08F61B84, 0x800);
         }
-        ApproachValue(&gJiminyWork->unk_04C, -0x8000, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->x3, -0x8000, gJiminyWork->unk_04A);
         gJiminyWork->unk_04A--;
         if (gJiminyWork->unk_04A <= 0) {
             gJiminyWork->unk_000 = 3;
@@ -201,8 +201,8 @@ void mode_jiminy_1(void) {
         if (gJiminyWork->unk_048 == 0) {
             gJiminyWork->unk_04A = 16;
         }
-        ApproachValue(&gJiminyWork->unk_050, -0x800, gJiminyWork->unk_04A);
-        ApproachValue(&gJiminyWork->unk_054, 0xA000, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->y3, -0x800, gJiminyWork->unk_04A);
+        ApproachValue(&gJiminyWork->y4, 0xA000, gJiminyWork->unk_04A);
         gJiminyWork->unk_04A--;
         if (gJiminyWork->unk_04A <= 0) {
             gJiminyWork->unk_000 = 4;
@@ -403,88 +403,88 @@ void mode_jiminy_1(void) {
         switch (gLanguage) {
         case 0:
             if (gGameState.flags & 8) {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             } else {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             }
             DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
-            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
             break;
         case 1:
             if (gGameState.flags & 8) {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A538, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A538, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             } else {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A4CC, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A4CC, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             }
             DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
-            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
             break;
         case 4:
             if (gGameState.flags & 8) {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A564, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A564, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             } else {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A554, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A554, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             }
             DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
-            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
             break;
         case 3:
             if (gGameState.flags & 8) {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A590, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A590, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             } else {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A57A, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A57A, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             }
             DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
-            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
             break;
         case 2:
         default:
             if (gGameState.flags & 8) {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A5C2, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A5C2, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             } else {
-                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A5A6, gJiminyWork->tiles,
+                DrawSprite(gJiminyWork->x3 >> 8, 0, gUnkEu_08C9A5A6, gJiminyWork->tiles,
                     gJiminyWork->palette, 0, 0, 0);
             }
             DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
-            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+            DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 1);
             break;
         }
 #else
         if (gGameState.flags & 8) {
-            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
+            DrawSprite(gJiminyWork->x3 >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 0);
         } else {
-            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
+            DrawSprite(gJiminyWork->x3 >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 0);
         }
         DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
-        DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
+        DrawSprite(0x80, gJiminyWork->y3 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
             gJiminyWork->palette, 0, 0, 1);
-        DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
+        DrawSprite(0x80, gJiminyWork->y4 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
             gJiminyWork->palette, 0, 0, 1);
 #endif
     }
@@ -503,11 +503,11 @@ void mode_jiminy_1(void) {
         if (FadeIsActive() == 0) {
             if (gJiminyWork->unk_CAC & 4) {
                 if (gJiminyWork->unk_CC0 <= 0) {
-                    DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8,
+                    DrawSprite(gJiminyWork->x4 >> 8, gJiminyWork->y5 >> 8,
                         AnimUpdate(&gJiminyWork->anim2), gJiminyWork->tiles4,
                         gJiminyWork->palette5, 0, 0, 0);
                 } else {
-                    DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8, gUnk_08C6A8F8,
+                    DrawSprite(gJiminyWork->x4 >> 8, gJiminyWork->y5 >> 8, gUnk_08C6A8F8,
                         gJiminyWork->tiles4, gJiminyWork->palette5, 0, 0, 0);
 
                     if (gJiminyWork->unk_CC0 == 1) {

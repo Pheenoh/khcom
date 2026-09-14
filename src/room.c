@@ -10,8 +10,8 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->palette = LoadObjPalette(gUnk_099910C4, 0x20);
     work->gfx = gUnk_09EF8DA4[0];
     work->unk_30 = arg;
-    work->unk_0C = 0x5C00;
-    work->unk_10 = 0x8A00;
+    work->x2 = 0x5C00;
+    work->y2 = 0x8A00;
     work->x = 0x7800;
     work->y = 0x8A00;
     work->unk_20 = 0x400;
@@ -46,7 +46,7 @@ u8 task_room_name_1(RoomNameWork* work) {
         work->unk_2A++;
         if (work->unk_2A > 1) {
             work->unk_2A = 0;
-            work->unk_10 -= 0x99;
+            work->y2 -= 0x99;
             work->unk_1C += 0x19;
             if (work->unk_1C > 0xFF) {
                 work->unk_1C = 0x100;
@@ -65,7 +65,7 @@ u8 task_room_name_1(RoomNameWork* work) {
         work->unk_2A++;
         if (work->unk_2A > 1) {
             work->unk_2A = 0;
-            work->unk_10 += 0x99;
+            work->y2 += 0x99;
             work->unk_1C -= 0x19;
             if (work->unk_1C <= 0x19) {
                 work->unk_1C = 0x19;
@@ -83,7 +83,7 @@ void task_room_name_2(RoomNameWork* work) {
     if (work->unk_28 != 0) {
         affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
         DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
-        DrawTextSlots(work->unk_0C >> 8, work->unk_10 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);
+        DrawTextSlots(work->x2 >> 8, work->y2 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);
     }
 }
 
@@ -255,8 +255,8 @@ void func_080F800C(GaWork* work, s32 i) {
     if (work->unk_018 != 0) {
         v = -v;
     }
-    e->unk_15E = v;
-    e->unk_160 = gUnk_09991F54[i].unk_12;
+    e->x2 = v;
+    e->y2 = gUnk_09991F54[i].unk_12;
 }
 
 void func_080F80C0(GaWork* work) {
@@ -379,11 +379,11 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
         pal = work->palette;
     }
     WorldToScreen(&sx, &sy, q->x, q->y, q->z);
-    DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), e->gfx, e->tiles, pal, f, g,
+    DrawSprite((s16)(sx + e->x2), (s16)(sy + e->y2), e->gfx, e->tiles, pal, f, g,
                0xEFFC - ((q->y >> 8) << 2));
 
     if (e->unk_1A0 == 0 && work->unk_000 != 7 && work->unk_000 != 8 && work->unk_000 != 9) {
-        DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), work->gfx, work->tiles, pal, f, g,
+        DrawSprite((s16)(sx + e->x2), (s16)(sy + e->y2), work->gfx, work->tiles, pal, f, g,
                    0xEFFC - ((q->y >> 8) << 2));
     }
     TaskPoolDraw(&e->unk_16C);

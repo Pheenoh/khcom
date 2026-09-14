@@ -87,11 +87,11 @@ typedef struct JiminyWork {
     ObjPalette* palette9;
     s16 unk_048;
     s16 unk_04A;
-    s32 unk_04C;
-    s32 unk_050;
-    s32 unk_054;
-    s32 unk_058;
-    s32 unk_05C;
+    s32 x3;
+    s32 y3;
+    s32 y4;
+    s32 x4;
+    s32 y5;
     JiminyLine unk_060[8];
     u8 unk_C60[8];
     u8 unk_C68[8];

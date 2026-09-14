@@ -351,13 +351,13 @@ typedef struct UnkStruct_080E590C {
 typedef struct LoadGameMenuWork {
     u8* palette2;
     void* tiles2;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
+    s32 y;
+    s32 y2;
+    s32 x;
     AnimState anim;
     u8* palette;
     void* tiles;
-    s32 unk_034;
+    s32 y3;
     UnkStruct_080E590C* palette7;
     u8 unk_03C[0x120];
     u8 unk_15C;
@@ -391,14 +391,14 @@ typedef struct UnkStruct_02034FE4 {
 typedef struct NewGameSlotMenuWork {
     u8* palette2;
     void* tiles2;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 y;
+    s32 y2;
     u8* palette3;
     void* tiles3;
     AnimState anim;
     u8* palette;
     void* tiles;
-    s32 unk_038;
+    s32 y3;
     UnkStruct_080E590C* palette8;
     u8 unk_040[0x120];
     u8 unk_160;
@@ -467,7 +467,7 @@ typedef struct MapMenuWork {
     s32 unk_154;
     u8* palette9[0x03];
     void* tiles9[0x03];
-    s32 unk_170[0x03];
+    s32 gfx[0x03];
     u8* unk_17C;
     TextSlot unk_180[0x21];
 #ifdef VERSION_EU

@@ -1225,8 +1225,8 @@ void task_poo_map_0(PooMapWork* w) {
     gUnk_02034DE4 = gUnk_0203C408;
     gUnk_0203C40C = (gUnk_0203C3FC >> 8) - 120;
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
-    gUnk_02039BA0->unk_00 = gUnk_0203C40C << 8;
-    gUnk_02039BA0->unk_04 = gUnk_0203C3F8 << 8;
+    gUnk_02039BA0->x = gUnk_0203C40C << 8;
+    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
     w->unk_00 = gUnk_096FC6E0.unk_16;
     w->unk_01 = gUnk_096FC6E0.unk_17;
     TaskPoolInit(&w->unk_04, 178);
@@ -1308,8 +1308,8 @@ void func_080CA270(PooMapWork* w) {
     gUnk_0203C40C += tx >> 8;
     gUnk_0203C3F8 += ty >> 8;
     gUnk_0203C3F8 += func_0802F268() >> 8;
-    gUnk_02039BA0->unk_00 = gUnk_0203C40C << 8;
-    gUnk_02039BA0->unk_04 = gUnk_0203C3F8 << 8;
+    gUnk_02039BA0->x = gUnk_0203C40C << 8;
+    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
 }
 
 void func_080CA35C(void) {
@@ -1489,8 +1489,8 @@ void func_080CA6A8(s32 a, s32 b) {
     }
     gUnk_0203C40C = (gUnk_0203C3FC >> 8) - 120;
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
-    gUnk_02039BA0->unk_00 = gUnk_0203C40C << 8;
-    gUnk_02039BA0->unk_04 = gUnk_0203C3F8 << 8;
+    gUnk_02039BA0->x = gUnk_0203C40C << 8;
+    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
     ScrollBgMapTo(3, gUnk_0203C40C, gUnk_0203C3F8);
     ScrollBgMapTo(1, gUnk_0203C40C, gUnk_0203C3F8);
     ScrollBgMapTo(2, gUnk_0203C40C, gUnk_0203C3F8);

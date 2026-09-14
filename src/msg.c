@@ -8569,8 +8569,8 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
         gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
         gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
-        gUnk_02039DC8->unk_58 = v0;
-        gUnk_02039DC8->unk_5C = v1;
+        gUnk_02039DC8->x = v0;
+        gUnk_02039DC8->y = v1;
         break;
     case 100:
         SetBgSize(1, 0x4000);
@@ -8757,16 +8757,16 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     if (p->unk_1B3 != 0) {
         switch (p->unk_026) {
         case 0x62:
-            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 = gBtlWork->unk_010;
-            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C = gBtlWork->unk_014;
+            gUnk_02039DC8->x = gUnk_02039DC8->unk_48 = gBtlWork->unk_010;
+            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C = gBtlWork->unk_014;
             TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x63:
             gBtlWork->unk_004 = gBtlWork->unk_00C;
             gBtlWork->unk_010 = gUnk_02039DC8->unk_48;
             gBtlWork->unk_014 = gUnk_02039DC8->unk_4C;
-            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48;
-            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C;
+            gUnk_02039DC8->x = gUnk_02039DC8->unk_48;
+            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C;
             TaskPoolUpdate(&gBtlWork->taskPools[0]);
             TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
@@ -8775,8 +8775,8 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
             gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
             gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
             gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
-            gUnk_02039DC8->unk_58 = v0;
-            gUnk_02039DC8->unk_5C = v1;
+            gUnk_02039DC8->x = v0;
+            gUnk_02039DC8->y = v1;
             break;
         case 0x61:
             gBtlWork->unk_010 = gUnk_02039DC8->unk_50;
@@ -8809,7 +8809,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     return 1;
 }
 static inline s16 GetEventCharaScreenX(EventCharaWork* p) {
-    return (p->unk_180 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
+    return (p->unk_180 >> 8) - (gUnk_02039DC8->x >> 8);
 }
 
 void event_chara_2(EventCharaWork* p) {
@@ -8845,7 +8845,7 @@ void event_chara_2(EventCharaWork* p) {
             h |= 1;
         }
         x = GetEventCharaScreenX(p);
-        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].spriteYOffset - (gUnk_02039DC8->unk_5C >> 8);
+        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].spriteYOffset - (gUnk_02039DC8->y >> 8);
         DrawSprite(x, y, p->gfx, p->tiles, p->palette, 0, h, 50);
     }
     p->unk_034 = save;
@@ -9004,8 +9004,8 @@ u8 func_0806EA28(EventCharaWork* p, void* a) {
     u16 y;
     u8 t;
 
-    x = (p->unk_02C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (p->unk_02C >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->y >> 8);
     t = func_0806E570(p);
     func_0806E7A8(p);
     func_08070AD4(p);
@@ -10307,8 +10307,8 @@ s32 func_08070AD4(EventCharaWork* p) {
     u16 x;
     u16 y;
 
-    x = (p->unk_02C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (p->unk_02C >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->y >> 8);
 
     switch (p->unk_000[p->unk_1A0].unk_00) {
     case 0x2EB:
@@ -11170,8 +11170,8 @@ void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
 
     switch (kind) {
     case 0:
@@ -11235,8 +11235,8 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
 
     switch (kind) {
     case 0:
@@ -11292,8 +11292,8 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
 
     switch (kind) {
     case 0:
@@ -12540,52 +12540,52 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    ScrollBgMapTo(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                    ScrollBgMapTo(3, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
                 } else {
-                    ScrollBgMapTo(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(3, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_78 != 0) {
-                    ScrollBgMapTo(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(2, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_79 != 0) {
-                    ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
             }
         } else {
             switch (p->unk_08) {
             case 77:
             case 78:
-                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                ScrollBgMapTo(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
-                ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                gBtlWork->unk_000 = gUnk_02039DC8->x;
+                gBtlWork->unk_004 = gUnk_02039DC8->y;
+                gBtlWork->unk_008 = gUnk_02039DC8->x;
+                gBtlWork->unk_00C = gUnk_02039DC8->y;
+                gBtlWork->unk_010 = gUnk_02039DC8->x;
+                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                ScrollBgMapTo(0, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
+                ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;
             case 105:
-                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                ScrollBgMapTo(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                gBtlWork->unk_000 = gUnk_02039DC8->x;
+                gBtlWork->unk_004 = gUnk_02039DC8->y;
+                gBtlWork->unk_008 = gUnk_02039DC8->x;
+                gBtlWork->unk_00C = gUnk_02039DC8->y;
+                gBtlWork->unk_010 = gUnk_02039DC8->x;
+                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;
             case MSG_VIEW_ID_B4:
                 break;
             default:
-                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                ScrollBgMapTo(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
-                ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                gBtlWork->unk_000 = gUnk_02039DC8->x;
+                gBtlWork->unk_004 = gUnk_02039DC8->y;
+                gBtlWork->unk_008 = gUnk_02039DC8->x;
+                gBtlWork->unk_00C = gUnk_02039DC8->y;
+                gBtlWork->unk_010 = gUnk_02039DC8->x;
+                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;
             }
         }
@@ -12612,24 +12612,24 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    ScrollBgMapTo(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                    ScrollBgMapTo(3, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
                 } else {
-                    ScrollBgMapTo(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(3, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_78 != 0) {
-                    ScrollBgMapTo(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(2, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_79 != 0) {
-                    ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 }
             }
         } else {
-            gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
-            gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
-            ScrollBgMapTo(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
-            ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+            gBtlWork->unk_000 = gUnk_02039DC8->x;
+            gBtlWork->unk_004 = gUnk_02039DC8->y;
+            ScrollBgMapTo(0, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
+            ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
         }
     }
 
@@ -12670,8 +12670,8 @@ void func_08074D14(EventCameraWork* a) {
         gUnk_02039DC8->unk_48 += (x - gUnk_02039DC8->unk_48) >> 3;
         gUnk_02039DC8->unk_4C += (y - gUnk_02039DC8->unk_4C) >> 3;
     }
-    gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
-    gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
+    gUnk_02039DC8->x = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
+    gUnk_02039DC8->y = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
 }
 
 void func_08074D98(EventCameraWork* a) {
@@ -12701,8 +12701,8 @@ void func_08074DC4(EventCameraWork* a) {
         gUnk_02039DC8->unk_48 = x;
         gUnk_02039DC8->unk_4C = y;
     }
-    gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
-    gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
+    gUnk_02039DC8->x = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
+    gUnk_02039DC8->y = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
 }
 
 u8 func_08074E40(EventCameraWork* p) {
@@ -12782,7 +12782,7 @@ void func_08075010(EventCameraWork* p) {
 
     if (p->waveEnabled == 1) {
         for (i = 0; i < 160; i++) {
-            p->scanlineScrollX[i] = (gUnk_02039DC8->unk_58 >> 8) + (v = (u8)gSineTable[((i + p->wavePhase) * 2) & 0xFF]) / 32;
+            p->scanlineScrollX[i] = (gUnk_02039DC8->x >> 8) + (v = (u8)gSineTable[((i + p->wavePhase) * 2) & 0xFF]) / 32;
         }
         p->wavePhase++;
     }

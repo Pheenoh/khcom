@@ -45,8 +45,8 @@ typedef struct GaEntryWork {
     u8 unk_159;
     u16 unk_15A;
     s16 unk_15C;
-    u16 unk_15E;
-    u16 unk_160;
+    u16 x2;
+    u16 y2;
     u8 unk_162[0x02];
     s32 unk_164;
     s32 unk_168;

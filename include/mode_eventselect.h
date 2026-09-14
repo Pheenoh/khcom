@@ -85,9 +85,9 @@ typedef struct EventTaskHost {
 
 typedef struct EventBody {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
 } EventBody;
 
 typedef struct EventActor {
@@ -108,10 +108,10 @@ typedef struct EffectWork {
     void* gfx;
     DownWork* down;
     AnimState anim;
-    s32 unk_2C;
-    s32 unk_30;
-    s32 unk_34;
-    s32 unk_38;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 z2;
     s32 unk_3C;
     s32 unk_40;
     u16 unk_44;

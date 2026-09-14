@@ -108,8 +108,8 @@ void task_evt_obj_2(EvtObjWork* work) {
         return;
     }
 
-    x = (obj->x >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (obj->x >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039DC8->y >> 8);
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, work->tiles, work->palette,
         AllocObjAffine(obj->unk_28, obj->unk_20, obj->unk_24, 1), obj->unk_16,
@@ -173,8 +173,8 @@ void task_evt_shadow_2(EvtShadowWork* work) {
         sprite = AllocObjAffine(0, size, size, 0);
     }
 
-    x = (obj->x >> 8) - (gUnk_02039DC8->unk_58 >> 8);
-    y = (obj->y >> 8) + (obj->unk_10 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+    x = (obj->x >> 8) - (gUnk_02039DC8->x >> 8);
+    y = (obj->y >> 8) + (obj->unk_10 >> 8) - (gUnk_02039DC8->y >> 8);
     DrawSprite(x, y, gfx, vram, work->palette, sprite, obj->unk_16, 0xFFF0);
 }
 

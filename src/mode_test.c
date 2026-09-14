@@ -472,9 +472,9 @@ void task_lockon_2(LockonWork* w) {
         return;
     }
 
-    x = (obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    x = (obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
     x2.coord = x + 12;
-    y = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A;
+    y = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A;
     y2.coord = y - 8;
 
     CLAMP_LABEL(x2.coord, x + 60, 240, 192);
@@ -497,13 +497,13 @@ void task_lockon_2(LockonWork* w) {
 #ifdef VERSION_EU
     {
         FldObj* obj = w->unk_0C[w->unk_2D];
-        s32 projectedY = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+        s32 projectedY = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8);
 
-        DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
+        DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
     }
 #else
     obj = w->unk_0C[w->unk_2D];
-    DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8), (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->unk_04 >> 8) << 2)));
+    DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8), (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->unk_04 >> 8) << 2)));
 #endif
 }
 
@@ -611,8 +611,8 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
 
 void func_0805F728(s32* x, s32* y) {
     if (gUnk_02039DC4 != 0) {
-        *x = (gUnk_02039DC4[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-        *y = (gUnk_02039DC4[1] >> 8) + (gUnk_02039DC4[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
+        *x = (gUnk_02039DC4[0] >> 8) - (gUnk_02039BA0->x >> 8);
+        *y = (gUnk_02039DC4[1] >> 8) + (gUnk_02039DC4[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
     } else {
         *x = 0;
         *y = 0;

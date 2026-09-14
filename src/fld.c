@@ -1442,8 +1442,8 @@ void task_fld_sora_2(FldWork* work) {
         }
     }
 
-    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->x >> 8);
+    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
@@ -3135,8 +3135,8 @@ void task_fld_riku_2(FldWork* work) {
         }
     }
 
-    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->x >> 8);
+    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
@@ -3211,8 +3211,8 @@ void task_fld_shadow_2(FldShadowWork* work) {
         sprite = AllocObjAffine(0, size, size, 0);
     }
 
-    x = (work->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (work->unk_04 >> 8) + (z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    x = (work->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    y = (work->unk_04 >> 8) + (z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, spr, work->tiles, work->palette, sprite, 0x800, obj->unk_3A);
 }
 

@@ -59,8 +59,8 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 1:
         if (work->unk_26 > 0) {
-            ApproachValue(&gUnk_02039BA0->unk_00, gUnk_02039BA0->unk_08 - 0x7800, work->unk_26);
-            ApproachValue(&gUnk_02039BA0->unk_04, gUnk_02039BA0->unk_0C - 0x6000, work->unk_26);
+            ApproachValue(&gUnk_02039BA0->x, gUnk_02039BA0->x2 - 0x7800, work->unk_26);
+            ApproachValue(&gUnk_02039BA0->y, gUnk_02039BA0->y2 - 0x6000, work->unk_26);
             work->unk_26--;
         } else if (work->unk_26 == 0) {
             m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);

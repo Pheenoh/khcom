@@ -5,10 +5,10 @@
 #include "fld_types.h"
 
 typedef struct FieldState {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 x2;
+    s32 y2;
     u16 unk_10;
     u16 unk_12;
     u8 unk_14[0x04];
