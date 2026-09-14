@@ -86,7 +86,7 @@ typedef struct DsdWork {
 } DsdWork;
 
 typedef struct DsdEnergy1Work {
-    DsdWork* unk_00;
+    DsdWork* dsd;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
@@ -115,7 +115,7 @@ typedef struct DsdEnergy1Work {
 } DsdEnergy1Work;
 
 typedef struct DsdEnergy2Work {
-    DsdWork* unk_00;
+    DsdWork* dsd;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
@@ -139,7 +139,7 @@ typedef struct DsdEnergy2Work {
 } DsdEnergy2Work;
 
 typedef struct DsdRockWork {
-    DsdWork* unk_00;
+    DsdWork* dsd;
     s32 x;
     s32 y;
     s32 z;
@@ -152,7 +152,7 @@ typedef struct DsdRockWork {
 } DsdRockWork;
 
 typedef struct DsdCircleWork {
-    DsdWork* unk_00;
+    DsdWork* dsd;
     void* gfx;
     s32 x;
     s32 y;
@@ -167,7 +167,7 @@ typedef struct DsdCircleWork {
 } DsdCircleWork;
 
 typedef struct DsdMainWork {
-    DsdWork* unk_000;
+    DsdWork* dsd;
     u16 unk_004;
     s16 unk_006;
     u8 unk_008;
@@ -194,7 +194,7 @@ typedef struct DsdMainWork {
 } DsdMainWork;
 
 typedef struct DsdItaWork {
-    DsdWork* unk_000;
+    DsdWork* dsd;
     u32 unk_004;
     u8 unk_008[0x58];
     s32 x;
@@ -291,7 +291,7 @@ typedef struct JfMapWork {
 } JfMapWork;
 
 typedef struct JfLampWork {
-    JfWork* unk_00;
+    JfWork* jf;
     void* tiles;
     void* gfx;
     void* tiles2;
@@ -320,7 +320,7 @@ typedef struct JfLampWork {
 } JfLampWork;
 
 typedef struct JfRockWork {
-    JfWork* unk_000;
+    JfWork* jf;
     void* tiles;
     void* palette;
     void* gfx;
@@ -366,7 +366,7 @@ typedef struct JfRockWork {
 } JfRockWork;
 
 typedef struct JfMajinWork {
-    JfWork* unk_00;
+    JfWork* jf;
     void* tiles;
     void* palette;
     void* palette2;
@@ -558,7 +558,7 @@ typedef struct TmFootWork {
     void* unk_474;
     u8 unk_478;
     u8 unk_479[0x3];
-    TmWork* unk_47C;
+    TmWork* tm;
     u32 unk_480;
 } TmFootWork;
 

@@ -17716,13 +17716,13 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
                            (void*)(0x06010000 + (w->unk_02C->unk_06 << 5)), 0x80);
         }
         w->unk_034 = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
-        w->unk_030 = LoadObjPalette(gUnk_09618D38, 32);
-        FadeSetPaletteExcluded((u16)(w->unk_030->unk_06 + 16), 1);
+        w->palette = LoadObjPalette(gUnk_09618D38, 32);
+        FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
     } else {
         w->unk_02C = 0;
         w->unk_034 = 0;
-        w->unk_030 = LoadObjPalette(gUnk_09618D38, 32);
-        FadeSetPaletteExcluded((u16)(w->unk_030->unk_06 + 16), 1);
+        w->palette = LoadObjPalette(gUnk_09618D38, 32);
+        FadeSetPaletteExcluded((u16)(w->palette->unk_06 + 16), 1);
     }
     gUnk_0203A890.tiles = AllocObjTiles(0x280, 0);
     SetObjTileSource(gUnk_0203A890.tiles, gUnk_0908B1B4);
@@ -18396,11 +18396,11 @@ void MapSelect_2(MapSelectWork* w) {
 #else
                    (s16)((17 / w->unk_285) * w->unk_284 + 108),
 #endif
-                   gUnk_09EEB000, *(void**)&w->unk_040[0x1A0], w->unk_030, 0, 0, 40);
+                   gUnk_09EEB000, *(void**)&w->unk_040[0x1A0], w->palette, 0, 0, 40);
     }
     if (w->unk_2BE == 0 && w->unk_299 != 9 && w->unk_29A != 9) {
-        DrawSprite(120, 56, 0, w->unk_02C, w->unk_030, 0, 8, 60);
-        DrawSprite(120, 56, gUnk_08F709B0[4].unk_04, w->unk_034, w->unk_030, 0, 8, 60);
+        DrawSprite(120, 56, 0, w->unk_02C, w->palette, 0, 8, 60);
+        DrawSprite(120, 56, gUnk_08F709B0[4].unk_04, w->unk_034, w->palette, 0, 8, 60);
     }
     DrawSprite(128, (s16)(w->unk_26C >> 8), gUnk_09EF11AC[0], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
     DrawSprite(128, (s16)(w->unk_270 >> 8), gUnk_09EF11AC[1], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
@@ -18432,8 +18432,8 @@ void MapSelect_3(MapSelectWork* w) {
         ReleaseObjTiles(w->unk_034);
     }
 
-    if (w->unk_030 != 0) {
-        ReleaseObjPalette(w->unk_030);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
     }
 
     ReleaseObjTiles(*(void**)&w->unk_040[0x1A8]);

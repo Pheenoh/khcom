@@ -80,7 +80,7 @@ typedef struct EventCharaWork {
     u8 unk_038[4];
     u16 unk_03C;
     u16 unk_03E;
-    AnimState* unk_040;
+    AnimState* anim;
     u16 unk_044;
     u8 unk_046[0xE];
     u8 unk_054[0x128];

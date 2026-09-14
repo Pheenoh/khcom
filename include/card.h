@@ -1440,7 +1440,7 @@ typedef struct MapSelectWork {
     ListPool cards;
     u8 unk_024[8];
     UnkStruct_080038C8* unk_02C;
-    ObjPalette* unk_030;
+    ObjPalette* palette;
     void* unk_034;
     void* unk_038;
     void* tiles;

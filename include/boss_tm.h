@@ -42,7 +42,7 @@ typedef struct TmWork {
 } TmWork;
 
 typedef struct TmBodyWork {
-    TmWork* unk_000;
+    TmWork* tm;
     void* tiles;
     void* palette;
     void* palette2;

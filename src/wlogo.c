@@ -2269,9 +2269,9 @@ void func_080B82D4(void) {
 }
 
 void func_080B8324(TmBodyWork* p) {
-    p->unk_000->unk_36 = 0;
-    p->unk_000->unk_34 = 0;
-    p->unk_000->unk_38 = 0;
+    p->tm->unk_36 = 0;
+    p->tm->unk_34 = 0;
+    p->tm->unk_38 = 0;
 }
 
 void func_080B8334(BtlObj* p, s16 a, s16 b, s16 c) {
@@ -2309,25 +2309,25 @@ void func_080B83C4(TmBodyWork* p) {
 }
 
 void func_080B8418(TmBodyWork* p) {
-    if (p->unk_000->unk_28 & 0x20) {
-        p->unk_010.unk_004 = p->unk_000->unk_14 + 0x400;
-        p->unk_12C.unk_004 = p->unk_000->unk_14;
-        p->unk_248.unk_004 = p->unk_000->unk_14 + 0xC00;
-        p->unk_364.unk_004 = p->unk_000->unk_14 - 0x100;
+    if (p->tm->unk_28 & 0x20) {
+        p->unk_010.unk_004 = p->tm->unk_14 + 0x400;
+        p->unk_12C.unk_004 = p->tm->unk_14;
+        p->unk_248.unk_004 = p->tm->unk_14 + 0xC00;
+        p->unk_364.unk_004 = p->tm->unk_14 - 0x100;
     } else {
-        p->unk_010.unk_004 = p->unk_000->unk_14 - 0x400;
-        p->unk_12C.unk_004 = p->unk_000->unk_14;
-        p->unk_248.unk_004 = p->unk_000->unk_14 - 0xC00;
-        p->unk_364.unk_004 = p->unk_000->unk_14 + 0x100;
+        p->unk_010.unk_004 = p->tm->unk_14 - 0x400;
+        p->unk_12C.unk_004 = p->tm->unk_14;
+        p->unk_248.unk_004 = p->tm->unk_14 - 0xC00;
+        p->unk_364.unk_004 = p->tm->unk_14 + 0x100;
     }
-    p->unk_010.unk_008 = p->unk_000->unk_18;
-    p->unk_12C.unk_008 = p->unk_000->unk_18;
-    p->unk_248.unk_008 = p->unk_000->unk_18 + 0x100;
-    p->unk_364.unk_008 = p->unk_000->unk_18 - 0x400;
-    p->unk_010.unk_00C = p->unk_000->unk_1C - 0x2200;
-    p->unk_12C.unk_00C = p->unk_000->unk_1C + 0x900;
-    p->unk_248.unk_00C = p->unk_000->unk_1C - 0x2100;
-    p->unk_364.unk_00C = p->unk_000->unk_1C - 0x1E00;
+    p->unk_010.unk_008 = p->tm->unk_18;
+    p->unk_12C.unk_008 = p->tm->unk_18;
+    p->unk_248.unk_008 = p->tm->unk_18 + 0x100;
+    p->unk_364.unk_008 = p->tm->unk_18 - 0x400;
+    p->unk_010.unk_00C = p->tm->unk_1C - 0x2200;
+    p->unk_12C.unk_00C = p->tm->unk_1C + 0x900;
+    p->unk_248.unk_00C = p->tm->unk_1C - 0x2100;
+    p->unk_364.unk_00C = p->tm->unk_1C - 0x1E00;
 }
 
 void func_080B8508(TmBodyWork* p) {
@@ -2335,9 +2335,9 @@ void func_080B8508(TmBodyWork* p) {
     p->unk_244 = 0;
     p->gfx3 = gUnk_09EF397C[0];
     p->gfx4 = gUnk_09EF3960[0];
-    p->unk_000->unk_14 = p->unk_000->unk_08;
-    p->unk_000->unk_18 = p->unk_000->unk_0C;
-    p->unk_000->unk_1C = p->unk_000->unk_10;
+    p->tm->unk_14 = p->tm->unk_08;
+    p->tm->unk_18 = p->tm->unk_0C;
+    p->tm->unk_1C = p->tm->unk_10;
     func_080B8418(p);
 }
 
@@ -2350,29 +2350,29 @@ void func_080B8554(TmBodyWork* p) {
     p->gfx3 = gUnk_09EF397C[0];
     p->gfx4 = gUnk_09EF3960[0];
     dz = 0xF00;
-    src = p->unk_000;
+    src = p->tm;
 
     if (src->unk_28 & 0x20) {
-        p->unk_000->unk_14 = p->unk_000->unk_08 - 0xA00;
-        p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C = p->unk_000->unk_10 + dz;
-        p->unk_010.unk_004 = p->unk_000->unk_08 - 0xF00;
-        p->unk_12C.unk_004 = p->unk_000->unk_14 + 0x500;
-        p->unk_248.unk_004 = p->unk_000->unk_14 + 0x400;
-        p->unk_364.unk_004 = p->unk_000->unk_14 - 0x900;
+        p->tm->unk_14 = p->tm->unk_08 - 0xA00;
+        p->tm->unk_18 = p->tm->unk_0C;
+        p->tm->unk_1C = p->tm->unk_10 + dz;
+        p->unk_010.unk_004 = p->tm->unk_08 - 0xF00;
+        p->unk_12C.unk_004 = p->tm->unk_14 + 0x500;
+        p->unk_248.unk_004 = p->tm->unk_14 + 0x400;
+        p->unk_364.unk_004 = p->tm->unk_14 - 0x900;
     } else {
-        p->unk_000->unk_14 = p->unk_000->unk_08 + 0xA00;
-        p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C = p->unk_000->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->unk_000->unk_08 + 0xF00;
-        p->unk_12C.unk_004 = p->unk_000->unk_14 - 0x500;
-        p->unk_248.unk_004 = p->unk_000->unk_14 - 0x400;
-        p->unk_364.unk_004 = p->unk_000->unk_14 + 0x900;
+        p->tm->unk_14 = p->tm->unk_08 + 0xA00;
+        p->tm->unk_18 = p->tm->unk_0C;
+        p->tm->unk_1C = p->tm->unk_10 + 0xF00;
+        p->unk_010.unk_004 = p->tm->unk_08 + 0xF00;
+        p->unk_12C.unk_004 = p->tm->unk_14 - 0x500;
+        p->unk_248.unk_004 = p->tm->unk_14 - 0x400;
+        p->unk_364.unk_004 = p->tm->unk_14 + 0x900;
     }
-    p->unk_010.unk_00C = p->unk_000->unk_1C - 0x1F00;
-    p->unk_12C.unk_00C = p->unk_000->unk_1C + 0xE00;
-    p->unk_248.unk_00C = p->unk_000->unk_1C - 0x1F00;
-    p->unk_364.unk_00C = p->unk_000->unk_1C - 0x1C00;
+    p->unk_010.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->unk_12C.unk_00C = p->tm->unk_1C + 0xE00;
+    p->unk_248.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->unk_364.unk_00C = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B8688(TmBodyWork* p) {
@@ -2381,38 +2381,38 @@ void func_080B8688(TmBodyWork* p) {
     p->gfx3 = gUnk_09EF397C[0];
     p->gfx4 = gUnk_09EF3960[0];
 
-    if (p->unk_000->unk_28 & 0x20) {
-        p->unk_000->unk_14 = p->unk_000->unk_08 + 0xA00;
-        p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C = p->unk_000->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->unk_000->unk_08 + 0xB00;
-        p->unk_12C.unk_004 = p->unk_000->unk_14 - 0x500;
-        p->unk_248.unk_004 = p->unk_000->unk_14 + 0x900;
-        p->unk_364.unk_004 = p->unk_000->unk_14 - 0x400;
+    if (p->tm->unk_28 & 0x20) {
+        p->tm->unk_14 = p->tm->unk_08 + 0xA00;
+        p->tm->unk_18 = p->tm->unk_0C;
+        p->tm->unk_1C = p->tm->unk_10 + 0xF00;
+        p->unk_010.unk_004 = p->tm->unk_08 + 0xB00;
+        p->unk_12C.unk_004 = p->tm->unk_14 - 0x500;
+        p->unk_248.unk_004 = p->tm->unk_14 + 0x900;
+        p->unk_364.unk_004 = p->tm->unk_14 - 0x400;
     } else {
-        p->unk_000->unk_14 = p->unk_000->unk_08 - 0xA00;
-        p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C = p->unk_000->unk_10 + 0xF00;
-        p->unk_010.unk_004 = p->unk_000->unk_08 - 0xB00;
-        p->unk_12C.unk_004 = p->unk_000->unk_14 + 0x500;
-        p->unk_248.unk_004 = p->unk_000->unk_14 - 0x900;
-        p->unk_364.unk_004 = p->unk_000->unk_14 + 0x400;
+        p->tm->unk_14 = p->tm->unk_08 - 0xA00;
+        p->tm->unk_18 = p->tm->unk_0C;
+        p->tm->unk_1C = p->tm->unk_10 + 0xF00;
+        p->unk_010.unk_004 = p->tm->unk_08 - 0xB00;
+        p->unk_12C.unk_004 = p->tm->unk_14 + 0x500;
+        p->unk_248.unk_004 = p->tm->unk_14 - 0x900;
+        p->unk_364.unk_004 = p->tm->unk_14 + 0x400;
     }
-    p->unk_010.unk_00C = p->unk_000->unk_1C - 0x2200;
-    p->unk_12C.unk_00C = p->unk_000->unk_1C + 0x900;
-    p->unk_248.unk_00C = p->unk_000->unk_1C - 0x1F00;
-    p->unk_364.unk_00C = p->unk_000->unk_1C - 0x1C00;
+    p->unk_010.unk_00C = p->tm->unk_1C - 0x2200;
+    p->unk_12C.unk_00C = p->tm->unk_1C + 0x900;
+    p->unk_248.unk_00C = p->tm->unk_1C - 0x1F00;
+    p->unk_364.unk_00C = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B87C0(TmBodyWork* p, s16 a) {
-    if (p->unk_000->unk_28 & 0x20) {
+    if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
         p->unk_010.unk_004 += gUnk_09EF1E14[a].unk_00 << 8;
         p->unk_12C.unk_004 += gUnk_09EF1E14[a].unk_08 << 8;
         p->unk_248.unk_004 += gUnk_09EF1E14[a].unk_10 << 8;
         p->unk_364.unk_004 += gUnk_09EF1E14[a].unk_18 << 8;
-        p->unk_000->unk_14 += gUnk_09EF1E14[a].unk_10 << 8;
+        p->tm->unk_14 += gUnk_09EF1E14[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
@@ -2420,13 +2420,13 @@ void func_080B87C0(TmBodyWork* p, s16 a) {
         p->unk_12C.unk_004 -= gUnk_09EF1E14[a].unk_08 << 8;
         p->unk_248.unk_004 -= gUnk_09EF1E14[a].unk_10 << 8;
         p->unk_364.unk_004 -= gUnk_09EF1E14[a].unk_18 << 8;
-        p->unk_000->unk_14 -= gUnk_09EF1E14[a].unk_10 << 8;
+        p->tm->unk_14 -= gUnk_09EF1E14[a].unk_10 << 8;
     }
     p->unk_010.unk_00C += gUnk_09EF1E14[a].unk_02 << 8;
     p->unk_12C.unk_00C += gUnk_09EF1E14[a].unk_0A << 8;
     p->unk_248.unk_00C += gUnk_09EF1E14[a].unk_12 << 8;
     p->unk_364.unk_00C += gUnk_09EF1E14[a].unk_1A << 8;
-    p->unk_000->unk_1C += gUnk_09EF1E14[a].unk_0A << 8;
+    p->tm->unk_1C += gUnk_09EF1E14[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF1E14[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF1E14[a].unk_1E];
 }
@@ -2436,19 +2436,19 @@ void func_080B895C(TmBodyWork* p) {
     p->unk_244 = 0;
     p->gfx3 = gUnk_09EF397C[0];
     p->gfx4 = gUnk_09EF3960[0];
-    p->unk_000->unk_14 = p->unk_000->unk_08;
-    p->unk_000->unk_18 = p->unk_000->unk_0C;
-    p->unk_000->unk_1C = p->unk_000->unk_10 - 0x1500;
+    p->tm->unk_14 = p->tm->unk_08;
+    p->tm->unk_18 = p->tm->unk_0C;
+    p->tm->unk_1C = p->tm->unk_10 - 0x1500;
     func_080B8418(p);
 }
 
 void func_080B89B0(TmBodyWork* p) {
-    if ((s16)p->unk_000->unk_36 == 0) {
-        p->unk_000->unk_08 += p->unk_000->unk_20;
-        p->unk_000->unk_0C += p->unk_000->unk_24;
-        p->unk_000->unk_14 = p->unk_000->unk_08;
-        p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C += gUnk_09EF1D74[(s16)p->unk_000->unk_34] << 8;
+    if ((s16)p->tm->unk_36 == 0) {
+        p->tm->unk_08 += p->tm->unk_20;
+        p->tm->unk_0C += p->tm->unk_24;
+        p->tm->unk_14 = p->tm->unk_08;
+        p->tm->unk_18 = p->tm->unk_0C;
+        p->tm->unk_1C += gUnk_09EF1D74[(s16)p->tm->unk_34] << 8;
         func_080B8418(p);
     }
     func_080B83C4(p);
@@ -2458,67 +2458,67 @@ void func_080B8A00(TmBodyWork* p) {
     s16 i;
     s16 j;
 
-    if ((s16)p->unk_000->unk_30 == 1) {
-        p->unk_000->unk_34 = 0;
-        p->unk_000->unk_36 = 0;
-        if (p->unk_000->unk_28 & 0x20) {
-            p->unk_128 = gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_04;
-            p->unk_244 = gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0C;
-            p->unk_010.unk_004 = p->unk_000->unk_08 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_00 + 4) << 8);
-            p->unk_12C.unk_004 = p->unk_000->unk_08 + (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_08 << 8);
-            p->unk_248.unk_004 = p->unk_000->unk_08 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 + 12) << 8);
-            p->unk_364.unk_004 = p->unk_000->unk_08 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_18 - 1) << 8);
-            p->unk_000->unk_14 = p->unk_000->unk_08 + (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8);
+    if ((s16)p->tm->unk_30 == 1) {
+        p->tm->unk_34 = 0;
+        p->tm->unk_36 = 0;
+        if (p->tm->unk_28 & 0x20) {
+            p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
+            p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
+            p->unk_010.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
+            p->unk_12C.unk_004 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->unk_248.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 + 12) << 8);
+            p->unk_364.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 - 1) << 8);
+            p->tm->unk_14 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         } else {
-            p->unk_128 = gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_04;
-            p->unk_244 = gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0C;
-            p->unk_010.unk_004 = p->unk_000->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_00) << 8);
-            p->unk_12C.unk_004 = p->unk_000->unk_08 - (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_08 << 8);
-            p->unk_248.unk_004 = p->unk_000->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10) << 8);
-            p->unk_364.unk_004 = p->unk_000->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_18) << 8);
-            p->unk_000->unk_14 = p->unk_000->unk_08 - (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8);
+            p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
+            p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
+            p->unk_010.unk_004 = p->tm->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00) << 8);
+            p->unk_12C.unk_004 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->unk_248.unk_004 = p->tm->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10) << 8);
+            p->unk_364.unk_004 = p->tm->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18) << 8);
+            p->tm->unk_14 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         }
-        p->unk_010.unk_00C = p->unk_000->unk_10 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
-        p->unk_12C.unk_00C = p->unk_000->unk_10 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
-        p->unk_248.unk_00C = p->unk_000->unk_10 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
-        p->unk_364.unk_00C = p->unk_000->unk_10 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
-        p->unk_000->unk_1C = p->unk_000->unk_10 + ((gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0A + 0 + gUnk_09EF1E08[2]) << 8);
+        p->unk_010.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
+        p->unk_12C.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
+        p->unk_248.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
+        p->unk_364.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
+        p->tm->unk_1C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 0 + gUnk_09EF1E08[2]) << 8);
     } else {
-        if ((s16)p->unk_000->unk_34 < 3) {
-            if (p->unk_000->unk_28 & 0x20) {
-                p->unk_128 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_04;
-                p->unk_244 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0C;
-                p->unk_010.unk_004 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_00 << 8;
-                p->unk_12C.unk_004 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_08 << 8;
-                p->unk_248.unk_004 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8;
-                p->unk_364.unk_004 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_18 << 8;
-                p->unk_000->unk_14 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8;
+        if ((s16)p->tm->unk_34 < 3) {
+            if (p->tm->unk_28 & 0x20) {
+                p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
+                p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
+                p->unk_010.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->unk_12C.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->unk_248.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->unk_364.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->tm->unk_14 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             } else {
-                p->unk_128 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_04;
-                p->unk_244 += gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0C;
-                p->unk_010.unk_004 -= gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_00 << 8;
-                p->unk_12C.unk_004 -= gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_08 << 8;
-                p->unk_248.unk_004 -= gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8;
-                p->unk_364.unk_004 -= gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_18 << 8;
-                p->unk_000->unk_14 -= gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_10 << 8;
+                p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
+                p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
+                p->unk_010.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->unk_12C.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->unk_248.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->unk_364.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->tm->unk_14 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             }
-            j = 2 - p->unk_000->unk_34;
-            p->unk_010.unk_00C += (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
-            p->unk_12C.unk_00C += (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
-            p->unk_248.unk_00C += (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
-            p->unk_364.unk_00C += (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
-            p->unk_000->unk_1C += (gUnk_09EF1D88[(s16)p->unk_000->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
+            j = 2 - p->tm->unk_34;
+            p->unk_010.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
+            p->unk_12C.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->unk_248.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
+            p->unk_364.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
+            p->tm->unk_1C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
-        if ((s16)p->unk_000->unk_32 < 3) {
-            i = p->unk_000->unk_32;
-            if (p->unk_000->unk_28 & 0x20) {
+        if ((s16)p->tm->unk_32 < 3) {
+            i = p->tm->unk_32;
+            if (p->tm->unk_28 & 0x20) {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
                 p->unk_010.unk_004 -= gUnk_09EF1D88[i].unk_00 << 8;
                 p->unk_12C.unk_004 -= gUnk_09EF1D88[i].unk_08 << 8;
                 p->unk_248.unk_004 -= gUnk_09EF1D88[i].unk_10 << 8;
                 p->unk_364.unk_004 -= gUnk_09EF1D88[i].unk_18 << 8;
-                p->unk_000->unk_14 -= gUnk_09EF1D88[i].unk_10 << 8;
+                p->tm->unk_14 -= gUnk_09EF1D88[i].unk_10 << 8;
             } else {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
@@ -2526,27 +2526,27 @@ void func_080B8A00(TmBodyWork* p) {
                 p->unk_12C.unk_004 += gUnk_09EF1D88[i].unk_08 << 8;
                 p->unk_248.unk_004 += gUnk_09EF1D88[i].unk_10 << 8;
                 p->unk_364.unk_004 += gUnk_09EF1D88[i].unk_18 << 8;
-                p->unk_000->unk_14 += gUnk_09EF1D88[i].unk_10 << 8;
+                p->tm->unk_14 += gUnk_09EF1D88[i].unk_10 << 8;
             }
             j = 2 - i;
             p->unk_010.unk_00C -= (gUnk_09EF1D88[i].unk_02 + gUnk_09EF1E08[j]) << 8;
             p->unk_12C.unk_00C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
             p->unk_248.unk_00C -= (gUnk_09EF1D88[i].unk_12 + gUnk_09EF1E08[j]) << 8;
             p->unk_364.unk_00C -= (gUnk_09EF1D88[i].unk_1A + gUnk_09EF1E08[j]) << 8;
-            p->unk_000->unk_1C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->tm->unk_1C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
     }
 }
 
 void func_080B8FF4(TmBodyWork* p, s16 a) {
-    if (p->unk_000->unk_28 & 0x20) {
+    if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
         p->unk_010.unk_004 += gUnk_09EF2034[a].unk_00 << 8;
         p->unk_12C.unk_004 += gUnk_09EF2034[a].unk_08 << 8;
         p->unk_248.unk_004 += gUnk_09EF2034[a].unk_10 << 8;
         p->unk_364.unk_004 += gUnk_09EF2034[a].unk_18 << 8;
-        p->unk_000->unk_14 += gUnk_09EF2034[a].unk_10 << 8;
+        p->tm->unk_14 += gUnk_09EF2034[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
@@ -2554,13 +2554,13 @@ void func_080B8FF4(TmBodyWork* p, s16 a) {
         p->unk_12C.unk_004 -= gUnk_09EF2034[a].unk_08 << 8;
         p->unk_248.unk_004 -= gUnk_09EF2034[a].unk_10 << 8;
         p->unk_364.unk_004 -= gUnk_09EF2034[a].unk_18 << 8;
-        p->unk_000->unk_14 -= gUnk_09EF2034[a].unk_10 << 8;
+        p->tm->unk_14 -= gUnk_09EF2034[a].unk_10 << 8;
     }
     p->unk_010.unk_00C += gUnk_09EF2034[a].unk_02 << 8;
     p->unk_12C.unk_00C += gUnk_09EF2034[a].unk_0A << 8;
     p->unk_248.unk_00C += gUnk_09EF2034[a].unk_12 << 8;
     p->unk_364.unk_00C += gUnk_09EF2034[a].unk_1A << 8;
-    p->unk_000->unk_1C += gUnk_09EF2034[a].unk_0A << 8;
+    p->tm->unk_1C += gUnk_09EF2034[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
 }
@@ -2578,68 +2578,68 @@ void func_080B91A4(TmBodyWork* p) {
     s32 next;
     u16 rnd;
 
-    if (p->unk_000->unk_28 & 0x40) {
-        p->unk_000->unk_2C = p->unk_000->unk_3C;
+    if (p->tm->unk_28 & 0x40) {
+        p->tm->unk_2C = p->tm->unk_3C;
         return;
     }
 
     if (p->unk_12C.unk_02C < p->unk_12C.unk_02E / 2) {
-        st = p->unk_000->unk_3A;
+        st = p->tm->unk_3A;
 
         if (st == 2) {
-            if (p->unk_000->unk_28 & 0x10) {
-                p->unk_000->unk_2C = 1;
-                p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (p->tm->unk_28 & 0x10) {
+                p->tm->unk_2C = 1;
+                p->tm->unk_28 = p->tm->unk_28 & ~0x10;
+            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
-                    p->unk_000->unk_2C = 9;
+                    p->tm->unk_2C = 9;
                 } else {
-                    p->unk_000->unk_2C = 1;
+                    p->tm->unk_2C = 1;
                 }
             } else {
-                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
+                p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (p->unk_000->unk_2C == 3) {
-                    p->unk_000->unk_2C = st;
+                if (p->tm->unk_2C == 3) {
+                    p->tm->unk_2C = st;
                 }
 
-                if (p->unk_000->unk_2C == 4) {
-                    p->unk_000->unk_2C = 1;
+                if (p->tm->unk_2C == 4) {
+                    p->tm->unk_2C = 1;
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
-                    p->unk_000->unk_2C = 9;
+                    p->tm->unk_2C = 9;
                 } else {
-                    p->unk_000->unk_2C = 1;
+                    p->tm->unk_2C = 1;
                 }
             } else {
-                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
+                p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (p->unk_000->unk_2C == 4) {
-                    if (p->unk_000->unk_28 & 0x20) {
-                        p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = 4;
-                        p->unk_000->unk_3C = 4;
+                if (p->tm->unk_2C == 4) {
+                    if (p->tm->unk_28 & 0x20) {
+                        p->tm->unk_28 |= 0x40;
+                        p->tm->unk_2C = 4;
+                        p->tm->unk_3C = 4;
                     } else {
-                        p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = 6;
-                        p->unk_000->unk_3C = 6;
+                        p->tm->unk_28 |= 0x40;
+                        p->tm->unk_2C = 6;
+                        p->tm->unk_3C = 6;
                     }
-                    next = p->unk_000->unk_2C;
+                    next = p->tm->unk_2C;
 
                     if (next == 3) {
                         rnd = GetRandom() % 100;
 
                         if (rnd <= 49) {
-                            p->unk_000->unk_2C = 11;
+                            p->tm->unk_2C = 11;
                         } else {
-                            p->unk_000->unk_2C = next;
+                            p->tm->unk_2C = next;
                         }
                     }
                 }
@@ -2648,74 +2648,74 @@ void func_080B91A4(TmBodyWork* p) {
             rnd = GetRandom() % 100;
 
             if (rnd <= 59) {
-                p->unk_000->unk_2C = 9;
+                p->tm->unk_2C = 9;
             } else {
-                p->unk_000->unk_2C = 10;
+                p->tm->unk_2C = 10;
             }
         }
-        st = p->unk_000->unk_2C;
+        st = p->tm->unk_2C;
 
         if (st == 1) {
             rnd = GetRandom() % 100;
 
             if (rnd <= 59) {
-                p->unk_000->unk_2C = st;
+                p->tm->unk_2C = st;
             } else {
-                p->unk_000->unk_2C = 10;
+                p->tm->unk_2C = 10;
             }
         }
     } else {
-        st = p->unk_000->unk_3A;
+        st = p->tm->unk_3A;
 
         if (st == 2) {
-            if (p->unk_000->unk_28 & 0x10) {
-                p->unk_000->unk_2C = 1;
-                p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (p->tm->unk_28 & 0x10) {
+                p->tm->unk_2C = 1;
+                p->tm->unk_28 = p->tm->unk_28 & ~0x10;
+            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
-                    p->unk_000->unk_2C = 9;
+                    p->tm->unk_2C = 9;
                 } else {
-                    p->unk_000->unk_2C = 1;
+                    p->tm->unk_2C = 1;
                 }
             } else {
-                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
+                p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (p->unk_000->unk_2C == 3) {
-                    p->unk_000->unk_2C = st;
+                if (p->tm->unk_2C == 3) {
+                    p->tm->unk_2C = st;
                 }
 
-                if (p->unk_000->unk_2C == 4) {
-                    p->unk_000->unk_2C = 1;
+                if (p->tm->unk_2C == 4) {
+                    p->tm->unk_2C = 1;
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
-                    p->unk_000->unk_2C = 9;
+                    p->tm->unk_2C = 9;
                 } else {
-                    p->unk_000->unk_2C = 1;
+                    p->tm->unk_2C = 1;
                 }
             } else {
-                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
+                p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (p->unk_000->unk_2C == 4) {
-                    if (p->unk_000->unk_28 & 0x20) {
-                        p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = 4;
-                        p->unk_000->unk_3C = 4;
+                if (p->tm->unk_2C == 4) {
+                    if (p->tm->unk_28 & 0x20) {
+                        p->tm->unk_28 |= 0x40;
+                        p->tm->unk_2C = 4;
+                        p->tm->unk_3C = 4;
                     } else {
-                        p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = 6;
-                        p->unk_000->unk_3C = 6;
+                        p->tm->unk_28 |= 0x40;
+                        p->tm->unk_2C = 6;
+                        p->tm->unk_3C = 6;
                     }
                 }
             }
         } else {
-            p->unk_000->unk_2C = 9;
+            p->tm->unk_2C = 9;
         }
     }
 }
@@ -2728,7 +2728,7 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
         return;
     }
 
-    if (b->unk_000->unk_08 < 0x8E00 || b->unk_000->unk_08 > 0x16F00) {
+    if (b->tm->unk_08 < 0x8E00 || b->tm->unk_08 > 0x16F00) {
         a->unk_034 |= 0x100;
     } else {
         a->unk_034 &= ~0x100;
@@ -2739,56 +2739,56 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
         func_080B8324(b);
         func_080B9FC4(b);
         func_080B91A4(b);
-        b->unk_000->unk_28 &= ~1;
+        b->tm->unk_28 &= ~1;
         break;
     case 4:
-        b->unk_000->unk_38 = 0;
-        b->unk_000->unk_2C = 14;
+        b->tm->unk_38 = 0;
+        b->tm->unk_2C = 14;
         break;
     case 1:
     case 6:
     case 7:
         b->unk_48A = a->unk_02C;
-        b->unk_000->unk_28 |= 1;
-        b->unk_000->unk_30++;
+        b->tm->unk_28 |= 1;
+        b->tm->unk_30++;
 
         if (b->unk_48C - b->unk_48A >= 9999) {
-            b->unk_000->unk_32 = 55;
-            b->unk_000->unk_2C = 12;
-            b->unk_000->unk_28 &= ~4;
-        } else if (b->unk_000->unk_2C != 12) {
-            b->unk_000->unk_32 = 20;
-            b->unk_000->unk_28 |= 4;
+            b->tm->unk_32 = 55;
+            b->tm->unk_2C = 12;
+            b->tm->unk_28 &= ~4;
+        } else if (b->tm->unk_2C != 12) {
+            b->tm->unk_32 = 20;
+            b->tm->unk_28 |= 4;
         }
         break;
     case 3:
     case 8:
         func_0801AF4C(a);
-        b->unk_000->unk_34 = 0;
-        b->unk_000->unk_2C = 13;
+        b->tm->unk_34 = 0;
+        b->tm->unk_2C = 13;
         break;
     }
 
-    if (b->unk_000->unk_28 & 1) {
-        b->unk_000->unk_32--;
+    if (b->tm->unk_28 & 1) {
+        b->tm->unk_32--;
 
-        if ((s16)b->unk_000->unk_32 <= 0) {
-            b->unk_000->unk_30 = 0;
-            b->unk_000->unk_28 &= ~1;
+        if ((s16)b->tm->unk_32 <= 0) {
+            b->tm->unk_30 = 0;
+            b->tm->unk_28 &= ~1;
             func_0801AF08(a);
 
-            if (b->unk_000->unk_28 & 4) {
-                b->unk_000->unk_28 &= ~4;
+            if (b->tm->unk_28 & 4) {
+                b->tm->unk_28 &= ~4;
             } else {
                 func_080B8324(b);
-                t = b->unk_000->unk_28 & 0x40;
+                t = b->tm->unk_28 & 0x40;
 
                 if (t) {
                     func_080B895C(b);
-                    b->unk_000->unk_2C = 8;
+                    b->tm->unk_2C = 8;
                 } else {
                     func_080B8508(b);
-                    b->unk_000->unk_2C = 0;
+                    b->tm->unk_2C = 0;
                 }
             }
         }

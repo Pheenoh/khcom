@@ -336,11 +336,11 @@ void func_080D3F10(AllmapBarWork* work) {
 void task_allmap_bar_0(AllmapBarWork* work) {
     gStockMesDispWork = work;
 #ifdef VERSION_EU
-    work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0xDC0);
+    work->tiles = LoadObjTiles(gUnk_0976D8A6, 0xDC0);
 #else
-    work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0x2C0);
+    work->tiles = LoadObjTiles(gUnk_0976D8A6, 0x2C0);
 #endif
-    work->unk_04 = LoadObjTiles(gUnk_0976DBDA, 0xC0);
+    work->tiles2 = LoadObjTiles(gUnk_0976DBDA, 0xC0);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_0C = 16;
     work->unk_28 = 0;
@@ -444,18 +444,18 @@ void task_allmap_bar_2(AllmapBarWork* work) {
         return;
     }
 #ifdef VERSION_EU
-    DrawSprite(work->unk_20 >> 8, 0, gUnkEu_09F80124[gLanguage], work->unk_00, work->palette, 0,
+    DrawSprite(work->unk_20 >> 8, 0, gUnkEu_09F80124[gLanguage], work->tiles, work->palette, 0,
         0xC00, 1000);
 #else
-    DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->unk_00, work->palette, 0, 0xC00, 1000);
+    DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->tiles, work->palette, 0, 0xC00, 1000);
 #endif
-    DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->unk_04, work->palette, 0, 0xC00, 1001);
-    DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->unk_04, work->palette, 0, 0xC00, 1002);
+    DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->tiles2, work->palette, 0, 0xC00, 1001);
+    DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->tiles2, work->palette, 0, 0xC00, 1002);
 }
 
 void task_allmap_bar_3(AllmapBarWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjTiles(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjTiles(work->tiles2);
     ReleaseObjPalette(work->palette);
 }
 
@@ -504,14 +504,14 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
                 n = 0;
             }
 
-            work->unk_01C[i].unk_00 = func_080986FC(n);
-            work->unk_01C[i].unk_0C = LoadObjPalette(gUnk_09618D38, 32);
-            work->unk_01C[i].unk_18 = 0;
-            work->unk_01C[i].unk_04 = LoadObjTiles(gUnk_0905E3BA, 0x600);
-            work->unk_01C[i].unk_10 = LoadObjPalette(gUnk_09618D38, 32);
-            work->unk_01C[i].unk_1C = gUnk_09EE97F4[0];
-            FadeSetPaletteExcluded(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
-            FadeSetPaletteExcluded(work->unk_01C[i].unk_10->unk_06 + 16, 1);
+            work->unk_01C[i].tiles = func_080986FC(n);
+            work->unk_01C[i].palette = LoadObjPalette(gUnk_09618D38, 32);
+            work->unk_01C[i].gfx = 0;
+            work->unk_01C[i].tiles2 = LoadObjTiles(gUnk_0905E3BA, 0x600);
+            work->unk_01C[i].palette2 = LoadObjPalette(gUnk_09618D38, 32);
+            work->unk_01C[i].gfx2 = gUnk_09EE97F4[0];
+            FadeSetPaletteExcluded(work->unk_01C[i].palette->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].palette2->unk_06 + 16, 1);
             work->unk_008[i] = gUnk_09EF64E8[i];
             work->unk_114++;
         } else {
@@ -520,13 +520,13 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
     }
 
     if (work->unk_114 != 0) {
-        work->unk_018 = LoadObjTiles(gUnk_0976DD62, 0x80);
+        work->tiles = LoadObjTiles(gUnk_0976DD62, 0x80);
         work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
         FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 1);
-        work->unk_0F0 = LoadObjTiles(gUnk_0976B340, 0x2400);
-        work->unk_0F8 = gUnk_09EF6424[0];
-        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A0F8, 32);
-        FadeSetPaletteExcluded(((ObjPalette*)work->unk_0F4)->unk_06 + 16, 1);
+        work->tiles2 = LoadObjTiles(gUnk_0976B340, 0x2400);
+        work->gfx = gUnk_09EF6424[0];
+        InitObjPaletteAtSlot(work->palette2, 15, gUnk_0984A0F8, 32);
+        FadeSetPaletteExcluded(((ObjPalette*)work->palette2)->unk_06 + 16, 1);
     }
 }
 
@@ -565,30 +565,30 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
         func_08098014(e, func_080E8D1C(i));
         func_08098598(func_080D44A0(work->unk_114, i), 0x6800, e);
 
-        if (work->unk_01C[i].unk_0C != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
+        if (work->unk_01C[i].palette != 0) {
+            FadeSetPaletteExcluded(work->unk_01C[i].palette->unk_06 + 16, 1);
         }
 
-        if (work->unk_01C[i].unk_10 != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].unk_10->unk_06 + 16, 1);
+        if (work->unk_01C[i].palette2 != 0) {
+            FadeSetPaletteExcluded(work->unk_01C[i].palette2->unk_06 + 16, 1);
         }
 
-        if (work->unk_01C[i].unk_14 != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].unk_14->unk_06 + 16, 1);
+        if (work->unk_01C[i].palette3 != 0) {
+            FadeSetPaletteExcluded(work->unk_01C[i].palette3->unk_06 + 16, 1);
         }
     }
 
-    work->unk_0F0 = LoadObjTiles(gUnk_0976B340, 0x2400);
+    work->tiles2 = LoadObjTiles(gUnk_0976B340, 0x2400);
 
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4) {
-        work->unk_0F8 = gUnk_09EF6424[1];
-        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A118, 32);
+        work->gfx = gUnk_09EF6424[1];
+        InitObjPaletteAtSlot(work->palette2, 15, gUnk_0984A118, 32);
     } else {
-        work->unk_0F8 = gUnk_09EF6424[0];
-        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A0F8, 32);
+        work->gfx = gUnk_09EF6424[0];
+        InitObjPaletteAtSlot(work->palette2, 15, gUnk_0984A0F8, 32);
     }
 
-    FadeSetPaletteExcluded(((ObjPalette*)work->unk_0F4)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((ObjPalette*)work->palette2)->unk_06 + 16, 1);
 }
 
 void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
@@ -597,7 +597,7 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
     for (i = 0; i < 32; i++) {
         FadeSetPaletteExcluded(i, 0);
     }
-    work->unk_0F4 = EwramAlloc(40);
+    work->palette2 = EwramAlloc(40);
     work->unk_000 = *arg;
     work->unk_004 = func_080D5494(*arg);
     work->unk_0FC = work->unk_000.unk_00 * 24 - gUnk_0203C540;
@@ -649,14 +649,14 @@ void func_080D484C(AllmapDoorinfoWork* work) {
 
     for (i = 0; i < 4; i++) {
         if (work->unk_008[i] != 0 && work->unk_100 == 0) {
-            DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->unk_018, work->palette, 0, 0, i + 51);
+            DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->tiles, work->palette, 0, 0, i + 51);
             gUnk_02034E84 = gUnk_096FDC10[i][0];
             gUnk_02034E88 = gUnk_096FDC10[i][1];
-            DrawSprite(gUnk_02034E84 + (work->unk_104 >> 8), gUnk_02034E88 + (work->unk_108 >> 8), work->unk_01C[i].unk_18, work->unk_01C[i].unk_00, work->unk_01C[i].unk_0C, 0, 0, i + 40);
-            DrawSprite((work->unk_104 >> 8) + gUnk_02034E84, (work->unk_108 >> 8) + gUnk_02034E88, work->unk_01C[i].unk_1C, work->unk_01C[i].unk_04, work->unk_01C[i].unk_10, 0, 0, i + 30);
+            DrawSprite(gUnk_02034E84 + (work->unk_104 >> 8), gUnk_02034E88 + (work->unk_108 >> 8), work->unk_01C[i].gfx, work->unk_01C[i].tiles, work->unk_01C[i].palette, 0, 0, i + 40);
+            DrawSprite((work->unk_104 >> 8) + gUnk_02034E84, (work->unk_108 >> 8) + gUnk_02034E88, work->unk_01C[i].gfx2, work->unk_01C[i].tiles2, work->unk_01C[i].palette2, 0, 0, i + 30);
         }
     }
-    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_0F8, work->unk_0F0, work->unk_0F4, 0, 0, 20);
+    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
 }
 
 void func_080D49EC(AllmapDoorinfoWork* work) {
@@ -667,7 +667,7 @@ void func_080D49EC(AllmapDoorinfoWork* work) {
             func_08098670(&work->unk_01C[i], 0);
         }
     }
-    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_0F8, work->unk_0F0, work->unk_0F4, 0, 0, 20);
+    DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
 }
 
 void task_allmap_doorinfo_2(AllmapDoorinfoWork* work) {
@@ -684,22 +684,22 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
     if (work->unk_116 == 0) {
         FadeToOriginal(0, 8);
     }
-    ReleaseObjTiles(work->unk_0F0);
+    ReleaseObjTiles(work->tiles2);
 
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4 || func_080DF51C(work->unk_004) == 2) {
         for (i = 0; i < work->unk_114; i++) {
             func_08098778(&work->unk_01C[i]);
         }
     } else {
-        ReleaseObjTiles(work->unk_018);
+        ReleaseObjTiles(work->tiles);
         ReleaseObjPalette(work->palette);
 
         for (i = 0; i < 4; i++) {
             if (work->unk_008[i] != 0) {
-                ReleaseObjTiles(work->unk_01C[i].unk_00);
-                ReleaseObjPalette(work->unk_01C[i].unk_0C);
-                ReleaseObjTiles(work->unk_01C[i].unk_04);
-                ReleaseObjPalette(work->unk_01C[i].unk_10);
+                ReleaseObjTiles(work->unk_01C[i].tiles);
+                ReleaseObjPalette(work->unk_01C[i].palette);
+                ReleaseObjTiles(work->unk_01C[i].tiles2);
+                ReleaseObjPalette(work->unk_01C[i].palette2);
             }
         }
     }
@@ -708,12 +708,12 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
         FadeSetPaletteExcluded(i, 1);
     }
     FadeSetPaletteExcluded(10, 0);
-    EwramFree(work->unk_0F4);
+    EwramFree(work->palette2);
 }
 
 void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     gStockMesDispWork = work;
-    work->unk_0C = arg;
+    work->cursor = arg;
     work->unk_2C = arg->unk_30.unk_00 * 24 - gUnk_0203C540;
     work->unk_2E = arg->unk_30.unk_02 * 24 - gUnk_0203C53C;
     work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
@@ -727,7 +727,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
     if (func_080D4D1C() == 0 && (GetKeysPressed() & 1) != 0) {
         m4aSongNumStart(102);
-        work->unk_28 = TaskCreate(&work->unk_14, &gTaskDescAllmapDoorinfo, &work->unk_0C->unk_30);
+        work->unk_28 = TaskCreate(&work->unk_14, &gTaskDescAllmapDoorinfo, &work->cursor->unk_30);
     }
     work->unk_12 = gSineTable[(u8)work->unk_10] >> 8;
     work->unk_10 += 16;
@@ -739,8 +739,8 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
     if (func_080D4D1C() != 0) {
         TaskPoolDraw(&work->unk_14);
     } else {
-        work->unk_2C = work->unk_0C->unk_30.unk_00 * 24 - gUnk_0203C540;
-        work->unk_2E = work->unk_0C->unk_30.unk_02 * 24 - gUnk_0203C53C;
+        work->unk_2C = work->cursor->unk_30.unk_00 * 24 - gUnk_0203C540;
+        work->unk_2E = work->cursor->unk_30.unk_02 * 24 - gUnk_0203C53C;
         DrawSprite(work->unk_2C, work->unk_2E - work->unk_12 + 2, work->unk_08, work->tiles, work->palette, 0, 0, 48);
     }
 }
