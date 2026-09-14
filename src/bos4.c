@@ -447,8 +447,8 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_154 = GetRandom() % 437 + 76;
     work->unk_158 = GetRandom() % 128 + 0x40;
     p = (u8*)gBtlWork->actor;
-    work->unk_044 = ((BtlObj*)p)->unk_004;
-    work->unk_048 = ((BtlObj*)p)->unk_008;
+    work->unk_044 = ((BtlObj*)p)->x;
+    work->unk_048 = ((BtlObj*)p)->y;
     work->unk_04C = -0xA000;
     ColliderInit(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6774, 4), gUnk_0979666A);
@@ -522,7 +522,7 @@ void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
 }
 
 u8 func_080DA73C(void) {
-    if (gBtlWork->actor->unk_008 <= 0x23EFF) {
+    if (gBtlWork->actor->y <= 0x23EFF) {
         return 1;
     }
 
@@ -632,12 +632,12 @@ void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg) {
     SetBgMapBlocks(0, &arg->unk_10, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
-    gBtlWork->unk_008 = 0xF800;
-    gBtlWork->unk_00C = 0x21000;
+    gBtlWork->x = 0xF800;
+    gBtlWork->y = 0x21000;
     gBtlWork->unk_000 = 0xF800;
     gBtlWork->unk_004 = 0x21000;
-    gBtlWork->unk_010 = 0xF800;
-    gBtlWork->unk_014 = 0x21000;
+    gBtlWork->x2 = 0xF800;
+    gBtlWork->y2 = 0x21000;
     gBtlWork->unk_01C = 0xF800;
     gBtlWork->unk_020 = 0x21000;
     gBtlWork->unk_01A = 15;
@@ -651,8 +651,8 @@ u8 task_bos_boogie_map_1(void) {
     s32 b;
 
     func_0802F208();
-    a = (gBtlWork->unk_010 - gBtlWork->unk_008) >> 3;
-    b = (gBtlWork->unk_014 - gBtlWork->unk_00C) >> 3;
+    a = (gBtlWork->x2 - gBtlWork->x) >> 3;
+    b = (gBtlWork->y2 - gBtlWork->y) >> 3;
 
     if (a > 0x500) {
         a = 0x500;
@@ -660,10 +660,10 @@ u8 task_bos_boogie_map_1(void) {
         a = -0x500;
     }
 
-    gBtlWork->unk_008 += a;
-    gBtlWork->unk_00C += b;
-    gBtlWork->unk_000 = gBtlWork->unk_008;
-    gBtlWork->unk_004 = gBtlWork->unk_00C;
+    gBtlWork->x += a;
+    gBtlWork->y += b;
+    gBtlWork->unk_000 = gBtlWork->x;
+    gBtlWork->unk_004 = gBtlWork->y;
 
     if (gBtlWork->unk_000 - 0x7800 < gBtlWork->unk_0DA * 256) {
         gBtlWork->unk_000 = (gBtlWork->unk_0DA + 0x78) << 8;
@@ -745,11 +745,11 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     work->unk_15C = 0;
     work->unk_150 = -0x200;
 
-    if (gBtlWork->actor->unk_004 < 0xF800) {
-        x = gBtlWork->actor->unk_004 + 0xF000;
+    if (gBtlWork->actor->x < 0xF800) {
+        x = gBtlWork->actor->x + 0xF000;
         work->unk_154 = -0x266;
     } else {
-        x = gBtlWork->actor->unk_004 - 0xF000;
+        x = gBtlWork->actor->x - 0xF000;
         work->unk_154 = 0x266;
     }
 
@@ -764,7 +764,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
         work->unk_158 *= 2;
     }
 
-    d = gBtlWork->actor->unk_008;
+    d = gBtlWork->actor->y;
     e = -0x1000;
     func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
@@ -1320,7 +1320,7 @@ void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
 
 void func_080DB978(UrsulaWork* work) {
     if (work->unk_000 >= 3 && work->unk_000 <= 4) {
-        if (work->unk_028 > gBtlWork->actor->unk_004) {
+        if (work->unk_028 > gBtlWork->actor->x) {
             if (work->unk_134 != (u32)gUnk_09EF5130) {
                 work->unk_134 = (u32)gUnk_09EF5130;
                 SetBgMapBlocks(0, gUnk_09EF5130, 4, 3);
@@ -1443,7 +1443,7 @@ u8 func_080DBC68(UrsulaWork* work) {
 s32 func_080DBCC0(UrsulaWork* work) {
     BtlObj* p = gBtlWork->actor;
 
-    if (p->unk_004 < work->unk_028 - 0x5000 || work->unk_028 + 0x5000 < p->unk_004) {
+    if (p->x < work->unk_028 - 0x5000 || work->unk_028 + 0x5000 < p->x) {
         return 1;
     }
 
@@ -1451,11 +1451,11 @@ s32 func_080DBCC0(UrsulaWork* work) {
 }
 
 s32 func_080DBCEC(UrsulaWork* work) {
-    if (work->unk_028 - 0x3800 < gBtlWork->actor->unk_004 && gBtlWork->actor->unk_004 < work->unk_028 + 0x3800) {
+    if (work->unk_028 - 0x3800 < gBtlWork->actor->x && gBtlWork->actor->x < work->unk_028 + 0x3800) {
         return 3;
     }
 
-    if (work->unk_028 - 0x6800 < gBtlWork->actor->unk_004 && gBtlWork->actor->unk_004 < work->unk_028 + 0x6800) {
+    if (work->unk_028 - 0x6800 < gBtlWork->actor->x && gBtlWork->actor->x < work->unk_028 + 0x6800) {
         return 2;
     }
 
@@ -1463,17 +1463,17 @@ s32 func_080DBCEC(UrsulaWork* work) {
 }
 
 s32 func_080DBD44(UrsulaWork* work) {
-    if (gBtlWork->actor->unk_00C <= -0x5000) {
+    if (gBtlWork->actor->z <= -0x5000) {
         return 3;
     } else {
-        if (work->unk_028 - 0x3800 < gBtlWork->actor->unk_004 && gBtlWork->actor->unk_004 < work->unk_028 + 0x3800) {
+        if (work->unk_028 - 0x3800 < gBtlWork->actor->x && gBtlWork->actor->x < work->unk_028 + 0x3800) {
             if ((u16)(GetRandom() % 100) < 50) {
                 return 3;
             }
             return 1;
         }
     }
-    if (work->unk_028 - 0x8000 < gBtlWork->actor->unk_004 && gBtlWork->actor->unk_004 < work->unk_028 + 0x8000) {
+    if (work->unk_028 - 0x8000 < gBtlWork->actor->x && gBtlWork->actor->x < work->unk_028 + 0x8000) {
         return 2;
     }
     return 1;
@@ -1643,11 +1643,11 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             work->unk_004++;
         } else if ((s16)work->unk_004 == 2) {
             if (func_080DC510()) {
-                x = p->unk_004 + 0x1400;
+                x = p->x + 0x1400;
             } else {
-                x = p->unk_004 - 0x1C00;
+                x = p->x - 0x1C00;
             }
-            func_08014AAC(x, p->unk_008 + p->unk_00C + 0x1C00);
+            func_08014AAC(x, p->y + p->z + 0x1C00);
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
             work->unk_004++;
         } else if ((s16)work->unk_004 == 3) {
@@ -1660,7 +1660,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 func_0801536C();
             }
         } else if (!func_080128EC()) {
-            pos.x = p->unk_004;
+            pos.x = p->x;
             if (pos.x < 0x2000) {
                 pos.x = 0x2000;
             }
@@ -1668,7 +1668,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 pos.x = 0x1E000;
             }
             pos.y = 0x1A800;
-            pos.z = p->unk_00C;
+            pos.z = p->z;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &pos);
             func_0801B008();
             func_0801B918(p);
@@ -1678,7 +1678,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         }
         break;
     case 0:
-        if (work->unk_028 > gBtlWork->actor->unk_004) {
+        if (work->unk_028 > gBtlWork->actor->x) {
             p->unk_034 |= 4;
         } else {
             p->unk_034 &= ~4ULL;
@@ -1690,11 +1690,11 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                     func_0801BCD4(&work->unk_024);
                 }
             }
-            if ((u32)p->unk_004 > 0x20000) {
+            if ((u32)p->x > 0x20000) {
                 work->unk_000 = 5;
             }
             if (func_080DC5E8() == 2) {
-                if (((p->unk_004 - gBtlWork->actor->unk_004) >= 0 ? p->unk_004 - gBtlWork->actor->unk_004 : -(p->unk_004 - gBtlWork->actor->unk_004)) > 0x6800) {
+                if (((p->x - gBtlWork->actor->x) >= 0 ? p->x - gBtlWork->actor->x : -(p->x - gBtlWork->actor->x)) > 0x6800) {
                     work->unk_000 = 5;
                 }
             }
@@ -1708,13 +1708,13 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             if (!func_080DBC68(work)) {
                 p->unk_034 ^= 4;
             }
-            if (func_080DC5E8() == 2 && p->unk_004 > 0x6800 && p->unk_004 < 0x19800) {
-                if (((p->unk_004 - gBtlWork->actor->unk_004) >= 0 ? p->unk_004 - gBtlWork->actor->unk_004 : -(p->unk_004 - gBtlWork->actor->unk_004)) < 0x6800 && func_080DBA14(work)) {
+            if (func_080DC5E8() == 2 && p->x > 0x6800 && p->x < 0x19800) {
+                if (((p->x - gBtlWork->actor->x) >= 0 ? p->x - gBtlWork->actor->x : -(p->x - gBtlWork->actor->x)) < 0x6800 && func_080DBA14(work)) {
                     func_0801BCD4(&work->unk_024);
                     work->unk_000 = 0;
                 }
             }
-            if ((!(p->unk_034 & 4) && p->unk_004 == 0x6800) || ((p->unk_034 & 4) && p->unk_004 == 0x19800)) {
+            if ((!(p->unk_034 & 4) && p->x == 0x6800) || ((p->unk_034 & 4) && p->x == 0x19800)) {
                 work->unk_000 = 0;
             }
         }
@@ -1725,13 +1725,13 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         func_080DB978(work);
     }
     if (func_080DBA14(work)) {
-        ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+        ColliderSetPosition(&p->unk_040, p->x, p->y, p->z);
     } else {
-        ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
+        ColliderSetPosition(&p->unk_040, p->x, p->y + 0x1000, p->z - 0x1000);
     }
-    gBtlWork->unk_0CC = p->unk_004;
-    gBtlWork->unk_0D0 = p->unk_008;
-    gBtlWork->unk_0D4 = p->unk_00C;
+    gBtlWork->unk_0CC = p->x;
+    gBtlWork->unk_0D0 = p->y;
+    gBtlWork->unk_0D4 = p->z;
     TaskPoolUpdate(&work->unk_008);
     return 1;
 }
@@ -1830,12 +1830,12 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg) {
     SetBgMapBlocks(1, arg->unk_10, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
-    gBtlWork->unk_008 = 0x10000;
-    gBtlWork->unk_00C = 0x17100;
+    gBtlWork->x = 0x10000;
+    gBtlWork->y = 0x17100;
     gBtlWork->unk_000 = 0x10000;
     gBtlWork->unk_004 = 0x17100;
-    gBtlWork->unk_010 = 0x10000;
-    gBtlWork->unk_014 = 0x17100;
+    gBtlWork->x2 = 0x10000;
+    gBtlWork->y2 = 0x17100;
     gBtlWork->unk_01C = 0x10000;
     gBtlWork->unk_020 = 0x17100;
     gBtlWork->unk_01A = 0x0F;
@@ -1861,8 +1861,8 @@ u8 task_bos_ursula_map_1(UrsulaMapWork* work) {
     }
 
     func_0802F208();
-    a = (gBtlWork->unk_010 - gBtlWork->unk_008) >> 3;
-    b = (gBtlWork->unk_014 - gBtlWork->unk_00C) >> 3;
+    a = (gBtlWork->x2 - gBtlWork->x) >> 3;
+    b = (gBtlWork->y2 - gBtlWork->y) >> 3;
 
     if (a > 0x500) {
         a = 0x500;
@@ -1876,10 +1876,10 @@ u8 task_bos_ursula_map_1(UrsulaMapWork* work) {
         b = -0x500;
     }
 
-    gBtlWork->unk_008 += a;
-    gBtlWork->unk_00C += b;
-    gBtlWork->unk_000 = gBtlWork->unk_008;
-    gBtlWork->unk_004 = gBtlWork->unk_00C;
+    gBtlWork->x += a;
+    gBtlWork->y += b;
+    gBtlWork->unk_000 = gBtlWork->x;
+    gBtlWork->unk_004 = gBtlWork->y;
 
     if (gBtlWork->unk_000 - 0x7800 < gBtlWork->unk_0DA * 256) {
         gBtlWork->unk_000 = (gBtlWork->unk_0DA + 0x78) << 8;
@@ -2178,13 +2178,13 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 
     AnimUpdate((AnimState*)&work->anim);
     func_080DC9DC(&p->x, &p->y, &p->z, work);
-    if (work->unk_138 - 3 <= 4 && gBtlWork->actor->unk_00C < -0x5000 && !func_080DC528()) {
+    if (work->unk_138 - 3 <= 4 && gBtlWork->actor->z < -0x5000 && !func_080DC528()) {
         ColliderSetDisabled(&work->unk_140, 0);
         ColliderSetPosition(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
     } else {
         ColliderSetDisabled(&work->unk_140, 1);
     }
-    if (work->unk_138 == 3 && gBtlWork->actor->unk_00C <= -0x2000 && gBtlWork->actor->unk_00C > -0x3000) {
+    if (work->unk_138 == 3 && gBtlWork->actor->z <= -0x2000 && gBtlWork->actor->z > -0x3000) {
         ColliderSetDisabled(&work->unk_19C, 0);
         ColliderSetPosition(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
     } else {
@@ -2624,13 +2624,13 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 
     if (work->unk_138 == 1 && work->unk_134 != 0) {
         work->unk_13E = (u8)GetAngle(p->x, p->z,
-            gBtlWork->actor->unk_004, gBtlWork->actor->unk_00C);
+            gBtlWork->actor->x, gBtlWork->actor->z);
         ApproachAngle(&work->unk_13C, work->unk_13E, 4);
         p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
         p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
 
         if (work->unk_134 <= 169) {
-            ApproachValue(&p->y, gBtlWork->actor->unk_008, 30);
+            ApproachValue(&p->y, gBtlWork->actor->y, 30);
         }
 
         if ((u32)p->x > 0x20800 || p->y > 0x20800) {
@@ -2723,9 +2723,9 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
     BtlObj* p = gBtlWork->actor;
 
-    work->unk_004 = p->unk_004;
-    work->unk_008 = p->unk_008;
-    work->unk_00C = p->unk_00C - 0x6000;
+    work->unk_004 = p->x;
+    work->unk_008 = p->y;
+    work->unk_00C = p->z - 0x6000;
     func_08017390(work->unk_004, work->unk_008, work->unk_00C);
     work->unk_000 = 0;
 }

@@ -8519,10 +8519,10 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         gBtlWork->unk_028 = 0x100;
-        gBtlWork->unk_008 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_00C = gUnk_02039DC8->unk_4C;
-        gBtlWork->unk_010 = 0x10000;
-        gBtlWork->unk_014 = 0x14000;
+        gBtlWork->x = gUnk_02039DC8->unk_48;
+        gBtlWork->y = gUnk_02039DC8->unk_4C;
+        gBtlWork->x2 = 0x10000;
+        gBtlWork->y2 = 0x14000;
         gBtlWork->unk_01C = 0x10000;
         gBtlWork->unk_020 = 0x14000;
         gBtlWork->unk_01A = 15;
@@ -8567,8 +8567,8 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_1B4 = 0;
         gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
         gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
-        gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
-        gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
+        gUnk_02039DC8->unk_50 = gBtlWork->x;
+        gUnk_02039DC8->unk_54 = gBtlWork->y;
         gUnk_02039DC8->x = v0;
         gUnk_02039DC8->y = v1;
         break;
@@ -8604,12 +8604,12 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        gBtlWork->unk_008 = 0x26600;
-        gBtlWork->unk_00C = 0x12800;
+        gBtlWork->x = 0x26600;
+        gBtlWork->y = 0x12800;
         gBtlWork->unk_000 = 0x26600;
         gBtlWork->unk_004 = 0x12800;
-        gBtlWork->unk_010 = 0x26600;
-        gBtlWork->unk_014 = 0x12800;
+        gBtlWork->x2 = 0x26600;
+        gBtlWork->y2 = 0x12800;
         p->unk_02C = 0x2A200;
         p->unk_030 = 0x15E00;
         p->unk_034 = -0x3800;
@@ -8629,16 +8629,16 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         gBtlWork->unk_068 = 0;
         p->unk_1B3 = 1;
-        gBtlWork->unk_008 = 0x12C00;
-        gBtlWork->unk_00C = 0x16800;
+        gBtlWork->x = 0x12C00;
+        gBtlWork->y = 0x16800;
         gBtlWork->unk_000 = 0x12C00;
         gBtlWork->unk_004 = 0x16800;
-        gBtlWork->unk_010 = 0x12C00;
-        gBtlWork->unk_014 = 0x16800;
-        gUnk_02039DC8->unk_48 = gBtlWork->unk_008 - 0x7800;
-        gUnk_02039DC8->unk_4C = gBtlWork->unk_00C - 0x5000;
-        gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
-        gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
+        gBtlWork->x2 = 0x12C00;
+        gBtlWork->y2 = 0x16800;
+        gUnk_02039DC8->unk_48 = gBtlWork->x - 0x7800;
+        gUnk_02039DC8->unk_4C = gBtlWork->y - 0x5000;
+        gUnk_02039DC8->unk_50 = gBtlWork->x;
+        gUnk_02039DC8->unk_54 = gBtlWork->y;
         gUnk_02039DC8->unk_68 = 0;
         gUnk_02039DC8->unk_6A = 0;
         p->unk_02C = p->unk_000->unk_08;
@@ -8757,14 +8757,14 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     if (p->unk_1B3 != 0) {
         switch (p->unk_026) {
         case 0x62:
-            gUnk_02039DC8->x = gUnk_02039DC8->unk_48 = gBtlWork->unk_010;
-            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C = gBtlWork->unk_014;
+            gUnk_02039DC8->x = gUnk_02039DC8->unk_48 = gBtlWork->x2;
+            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C = gBtlWork->y2;
             TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x63:
-            gBtlWork->unk_004 = gBtlWork->unk_00C;
-            gBtlWork->unk_010 = gUnk_02039DC8->unk_48;
-            gBtlWork->unk_014 = gUnk_02039DC8->unk_4C;
+            gBtlWork->unk_004 = gBtlWork->y;
+            gBtlWork->x2 = gUnk_02039DC8->unk_48;
+            gBtlWork->y2 = gUnk_02039DC8->unk_4C;
             gUnk_02039DC8->x = gUnk_02039DC8->unk_48;
             gUnk_02039DC8->y = gUnk_02039DC8->unk_4C;
             TaskPoolUpdate(&gBtlWork->taskPools[0]);
@@ -8773,14 +8773,14 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
         case 0x65:
             gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
             gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
-            gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
-            gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
+            gUnk_02039DC8->unk_50 = gBtlWork->x;
+            gUnk_02039DC8->unk_54 = gBtlWork->y;
             gUnk_02039DC8->x = v0;
             gUnk_02039DC8->y = v1;
             break;
         case 0x61:
-            gBtlWork->unk_010 = gUnk_02039DC8->unk_50;
-            gBtlWork->unk_014 = gUnk_02039DC8->unk_54;
+            gBtlWork->x2 = gUnk_02039DC8->unk_50;
+            gBtlWork->y2 = gUnk_02039DC8->unk_54;
             break;
         case 0x67:
             break;
@@ -8789,9 +8789,9 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->actor->unk_004 = p->unk_02C - 0x7800;
-            gBtlWork->actor->unk_008 = p->unk_030 - 0x5000;
-            gBtlWork->actor->unk_00C = 0;
+            gBtlWork->actor->x = p->unk_02C - 0x7800;
+            gBtlWork->actor->y = p->unk_030 - 0x5000;
+            gBtlWork->actor->z = 0;
         }
     }
 
@@ -10022,9 +10022,9 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->actor->unk_004 = v - 0x7800;
-            gBtlWork->actor->unk_008 = p->unk_030 - 0x5000;
-            gBtlWork->actor->unk_00C = 0;
+            gBtlWork->actor->x = v - 0x7800;
+            gBtlWork->actor->y = p->unk_030 - 0x5000;
+            gBtlWork->actor->z = 0;
         }
     }
 
@@ -12559,20 +12559,20 @@ u8 view_1(EventCameraWork* p, u8* task) {
             case 78:
                 gBtlWork->unk_000 = gUnk_02039DC8->x;
                 gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->unk_008 = gUnk_02039DC8->x;
-                gBtlWork->unk_00C = gUnk_02039DC8->y;
-                gBtlWork->unk_010 = gUnk_02039DC8->x;
-                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                gBtlWork->x = gUnk_02039DC8->x;
+                gBtlWork->y = gUnk_02039DC8->y;
+                gBtlWork->x2 = gUnk_02039DC8->x;
+                gBtlWork->y2 = gUnk_02039DC8->y;
                 ScrollBgMapTo(0, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
                 ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;
             case 105:
                 gBtlWork->unk_000 = gUnk_02039DC8->x;
                 gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->unk_008 = gUnk_02039DC8->x;
-                gBtlWork->unk_00C = gUnk_02039DC8->y;
-                gBtlWork->unk_010 = gUnk_02039DC8->x;
-                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                gBtlWork->x = gUnk_02039DC8->x;
+                gBtlWork->y = gUnk_02039DC8->y;
+                gBtlWork->x2 = gUnk_02039DC8->x;
+                gBtlWork->y2 = gUnk_02039DC8->y;
                 ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;
             case MSG_VIEW_ID_B4:
@@ -12580,10 +12580,10 @@ u8 view_1(EventCameraWork* p, u8* task) {
             default:
                 gBtlWork->unk_000 = gUnk_02039DC8->x;
                 gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->unk_008 = gUnk_02039DC8->x;
-                gBtlWork->unk_00C = gUnk_02039DC8->y;
-                gBtlWork->unk_010 = gUnk_02039DC8->x;
-                gBtlWork->unk_014 = gUnk_02039DC8->y;
+                gBtlWork->x = gUnk_02039DC8->x;
+                gBtlWork->y = gUnk_02039DC8->y;
+                gBtlWork->x2 = gUnk_02039DC8->x;
+                gBtlWork->y2 = gUnk_02039DC8->y;
                 ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
                 break;

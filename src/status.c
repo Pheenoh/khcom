@@ -895,7 +895,7 @@ u8 task_status_message_1(StatusMessageWork* work) {
 }
 
 void task_status_message_2(StatusMessageWork* work) {
-    DrawTextSlots(work->unk_328.unk_04, work->unk_328.unk_06, work, work->palette, 3, work->unk_320);
+    DrawTextSlots(work->unk_328.x, work->unk_328.y, work, work->palette, 3, work->unk_320);
 }
 
 void task_status_message_3(StatusMessageWork* work) {
@@ -906,8 +906,8 @@ void task_status_message_3(StatusMessageWork* work) {
 s32 func_080D8AA4(void* pool, s16 x, s16 y, void* p) {
     StatusMessageParam param;
 
-    param.unk_04 = x;
-    param.unk_06 = y;
+    param.x = x;
+    param.y = y;
     param.unk_00 = p;
     TaskCreate(pool, &gTaskDescStatusMessage, &param);
 }
@@ -1175,9 +1175,9 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_164 = 0;
     work->unk_168 = 0;
     work->dialog = 0;
-    gBtlWork->unk_0CC = work->actor.unk_004;
-    gBtlWork->unk_0D0 = work->actor.unk_008;
-    gBtlWork->unk_0D4 = work->actor.unk_00C;
+    gBtlWork->unk_0CC = work->actor.x;
+    gBtlWork->unk_0D0 = work->actor.y;
+    gBtlWork->unk_0D4 = work->actor.z;
 }
 
 u8 task_bos_boogie_1(BoogieWork* work) {
@@ -1248,7 +1248,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             break;
         case 2:
             if (FadeIsActive() == 0) {
-                func_08014AAC(a->unk_004, a->unk_008 + a->unk_00C - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
+                func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
                 FadeToAmount(0, gBtlWork->unk_0B3, 8);
                 work->unk_170 = 3;
@@ -1265,7 +1265,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             break;
         case 4:
             if (func_080128EC() == 0) {
-                fx.x = a->unk_004;
+                fx.x = a->x;
                 fx.y = 0x24000;
                 fx.z = -0x6400;
                 CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &fx);
@@ -1341,15 +1341,15 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             work->unk_000 = 0;
             work->unk_004 = 0;
         } else if (a->unk_034 & 4) {
-            a->unk_004 -= 256;
-            if (a->unk_004 <= 0xA000) {
-                a->unk_004 = 0xA000;
+            a->x -= 256;
+            if (a->x <= 0xA000) {
+                a->x = 0xA000;
                 a->unk_034 &= ~4ULL;
             }
         } else {
-            a->unk_004 += 256;
-            if (a->unk_004 >= 0x15000) {
-                a->unk_004 = 0x15000;
+            a->x += 256;
+            if (a->x >= 0x15000) {
+                a->x = 0x15000;
                 a->unk_034 |= 4;
             }
         }
@@ -1412,47 +1412,47 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         break;
     }
     AnimUpdate(&work->anim);
-    a->unk_00C += work->unk_158;
+    a->z += work->unk_158;
     work->unk_158 += 66;
-    if (a->unk_00C > -0x2000) {
-        a->unk_00C = -0x2000;
+    if (a->z > -0x2000) {
+        a->z = -0x2000;
         work->unk_158 = 0;
     }
     if (work->unk_150 > 0) {
-        a->unk_004 += work->unk_150;
+        a->x += work->unk_150;
         work->unk_150 -= 17;
         if (work->unk_150 < 0) {
             work->unk_150 = 0;
         }
     } else if (work->unk_150 < 0) {
-        a->unk_004 += work->unk_150;
+        a->x += work->unk_150;
         work->unk_150 += 17;
         if (work->unk_150 > 0) {
             work->unk_150 = 0;
         }
     }
     if (work->unk_154 > 0) {
-        a->unk_008 += work->unk_154 / 2;
+        a->y += work->unk_154 / 2;
         work->unk_154 -= 17;
         if (work->unk_154 < 0) {
             work->unk_154 = 0;
         }
     } else if (work->unk_154 < 0) {
-        a->unk_008 += work->unk_154 / 2;
+        a->y += work->unk_154 / 2;
         work->unk_154 += 17;
         if (work->unk_154 > 0) {
             work->unk_154 = 0;
         }
     }
-    func_080D9058(&a->unk_004, &a->unk_008);
-    ColliderSetPosition(&a->unk_040, a->unk_004, a->unk_008, a->unk_00C);
+    func_080D9058(&a->x, &a->y);
+    ColliderSetPosition(&a->unk_040, a->x, a->y, a->z);
     TaskPoolUpdate(&work->unk_02C);
     if (func_0801C1C0(0)) {
         func_080D9A58();
     }
-    gBtlWork->unk_0CC = a->unk_004;
-    gBtlWork->unk_0D0 = a->unk_008;
-    gBtlWork->unk_0D4 = a->unk_00C;
+    gBtlWork->unk_0CC = a->x;
+    gBtlWork->unk_0D0 = a->y;
+    gBtlWork->unk_0D4 = a->z;
     return 1;
 }
 
@@ -1464,7 +1464,7 @@ void task_bos_boogie_2(BoogieWork* work) {
     s16 y;
 
     a = &work->actor;
-    f = GetBattleSpritePriorityFlags(a->unk_008);
+    f = GetBattleSpritePriorityFlags(a->y);
 
     if (!(a->unk_034 & 4)) {
         f |= 1;
@@ -1475,8 +1475,8 @@ void task_bos_boogie_2(BoogieWork* work) {
     } else {
         pal = work->palette;
     }
-    WorldToScreen(&x, &y, a->unk_004, a->unk_008, a->unk_00C);
-    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->unk_008 >> 8) * 4);
+    WorldToScreen(&x, &y, a->x, a->y, a->z);
+    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->y >> 8) * 4);
     TaskPoolDraw(&work->unk_02C);
 }
 

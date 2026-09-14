@@ -98,9 +98,9 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         if (work->unk_000 == 10 || work->unk_004 == 10) {
             func_0801AF08(e);
         } else {
-            d1 = gBtlWork->actor->unk_004 - e->unk_124;
+            d1 = gBtlWork->actor->x - e->unk_124;
             d1 = (d1 * d1) >> 8;
-            d2 = gBtlWork->actor->unk_008 - e->unk_128;
+            d2 = gBtlWork->actor->y - e->unk_128;
             d2 = (d2 * d2) >> 8;
 
             if (work->entries[2].unk_15A & work->entries[3].unk_15A & work->entries[4].unk_15A & work->entries[5].unk_15A & 4) {
@@ -120,7 +120,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -146,7 +146,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -162,7 +162,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -188,7 +188,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -204,7 +204,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -230,7 +230,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->actor->unk_004) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->actor->x) {
                             flag = 1;
                         }
 
@@ -620,7 +620,7 @@ u8 func_080FBAB8(MdWork* work) {
 
     switch (work->unk_008) {
     case 0:
-        if (gBtlWork->actor->unk_004 > 0x8000) {
+        if (gBtlWork->actor->x > 0x8000) {
             func_080FBA14(work, 1);
         } else {
             func_080FBA14(work, 0);
@@ -635,7 +635,7 @@ u8 func_080FBAB8(MdWork* work) {
         }
         break;
     case 1:
-        if (func_080FBA9C(work) != 0 && gBtlWork->actor->unk_004 > 0x8000) {
+        if (func_080FBA9C(work) != 0 && gBtlWork->actor->x > 0x8000) {
             func_080FBA14(work, 1);
         }
 
@@ -674,7 +674,7 @@ u8 func_080FBC4C(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            d = gBtlWork->actor->unk_004;
+            d = gBtlWork->actor->x;
 
             if (d > 0xA800) {
                 switch (GetRandom() % 3) {
@@ -765,7 +765,7 @@ u8 func_080FBDD4(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            if (gBtlWork->actor->unk_004 > 0xA800) {
+            if (gBtlWork->actor->x > 0xA800) {
                 if (GetRandom() % 100 <= 59) {
                     func_080FBA14(work, 6);
                 } else {
@@ -1003,7 +1003,7 @@ void func_080FC29C(MdWork* work) {
     s32 d;
     u16 r;
 
-    d = gBtlWork->actor->unk_004;
+    d = gBtlWork->actor->x;
 
     if (d > 0xA800) {
         r = GetRandom() % 100;
@@ -1305,12 +1305,12 @@ void task_bos_md_map_0(MdMapWork* work, MdMapData* p) {
     SetBgMapBlocks(0, &p->unk_10, 2, 2);
     gBtlWork->unk_024 = 256;
     gBtlWork->unk_028 = 256;
-    gBtlWork->unk_008 = 0x10000;
-    gBtlWork->unk_00C = 0x14000;
+    gBtlWork->x = 0x10000;
+    gBtlWork->y = 0x14000;
     gBtlWork->unk_000 = 0x10000;
     gBtlWork->unk_004 = 0x14000;
-    gBtlWork->unk_010 = 0x10000;
-    gBtlWork->unk_014 = 0x14000;
+    gBtlWork->x2 = 0x10000;
+    gBtlWork->y2 = 0x14000;
     gBtlWork->unk_01C = 0x10000;
     gBtlWork->unk_020 = 0x14000;
     gBtlWork->unk_01A = 15;
@@ -1323,8 +1323,8 @@ s32 task_bos_md_map_1(MdMapWork* work) {
     s32 dy;
 
     func_0802F208();
-    dx = (gBtlWork->unk_010 - gBtlWork->unk_008) >> 3;
-    dy = (gBtlWork->unk_014 - gBtlWork->unk_00C) >> 3;
+    dx = (gBtlWork->x2 - gBtlWork->x) >> 3;
+    dy = (gBtlWork->y2 - gBtlWork->y) >> 3;
 
     if (dx > 1280) {
         dx = 1280;
@@ -1332,10 +1332,10 @@ s32 task_bos_md_map_1(MdMapWork* work) {
         dx = -1280;
     }
 
-    gBtlWork->unk_008 += dx;
-    gBtlWork->unk_00C += dy;
-    gBtlWork->unk_000 = gBtlWork->unk_008;
-    gBtlWork->unk_004 = gBtlWork->unk_00C;
+    gBtlWork->x += dx;
+    gBtlWork->y += dy;
+    gBtlWork->unk_000 = gBtlWork->x;
+    gBtlWork->unk_004 = gBtlWork->y;
 
     if (gBtlWork->unk_000 - 30720 < gBtlWork->unk_0DA * 256) {
         gBtlWork->unk_000 = (gBtlWork->unk_0DA + 120) * 256;
@@ -1415,8 +1415,8 @@ u8 func_080FCCB4(MdFireWork* work) {
                             case 2:
                             case 4:
                                 a = func_080F7E0C(work->x, work->y,
-                                                  gBtlWork->actor->unk_004,
-                                                  gBtlWork->actor->unk_008);
+                                                  gBtlWork->actor->x,
+                                                  gBtlWork->actor->y);
                                 work->unk_154 = gSineTable[a] * 3;
                                 work->unk_158 = -gSineTable[a + 0x40] * 3;
                                 work->unk_004 = 90;

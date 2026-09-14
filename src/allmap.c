@@ -158,8 +158,8 @@ void task_allmap_cursor_0(AllmapCursorWork* work, AllmapCursorPos* arg) {
     work->unk_26 = work->unk_30.unk_02 * 24 + 11 - gUnk_0203C53C;
     work->unk_28 = -work->unk_26 << 8;
     work->unk_2C = work->unk_26 << 8;
-    work->unk_34 = work->unk_3C = work->unk_24 << 8;
-    work->unk_38 = work->unk_40 = work->unk_26 << 8;
+    work->x = work->unk_3C = work->unk_24 << 8;
+    work->y = work->unk_40 = work->unk_26 << 8;
     work->tiles = LoadObjTiles(gUnk_0976D7C0, 0xC0);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     AnimInit(&work->anim, gUnk_09EF64C4, gUnk_09EF64B4);
@@ -189,15 +189,15 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
     work->gfx = AnimUpdate(&work->anim);
     x = (work->unk_30.unk_00 * 24 + 16 - gUnk_0203C540) << 8;
     y = (work->unk_30.unk_02 * 24 + 11 - gUnk_0203C53C) << 8;
-    if (x != work->unk_34 || y != work->unk_38) {
-        work->unk_34 = x;
-        work->unk_38 = y;
+    if (x != work->x || y != work->y) {
+        work->x = x;
+        work->y = y;
         work->unk_44 = 4;
     }
 
     if (work->unk_44 != 0) {
-        ApproachValue(&work->unk_3C, work->unk_34, work->unk_44);
-        ApproachValue(&work->unk_40, work->unk_38, work->unk_44);
+        ApproachValue(&work->unk_3C, work->x, work->unk_44);
+        ApproachValue(&work->unk_40, work->y, work->unk_44);
         work->unk_44--;
     }
     return 1;
@@ -278,7 +278,7 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     pal = func_080D3DCC(arg[0]);
     work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
-    work->unk_0CE = func_080D3D40(GetTextSlotsWidth(work, work->unk_0CC));
+    work->x = func_080D3D40(GetTextSlotsWidth(work, work->unk_0CC));
 }
 
 s32 task_allmap_roomname_1(void) {
@@ -286,7 +286,7 @@ s32 task_allmap_roomname_1(void) {
 }
 
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
-    DrawTextSlots(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
+    DrawTextSlots(work->x + 117, 3, work, work->palette, 50, work->unk_0CC);
 }
 
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {
@@ -729,7 +729,7 @@ s32 task_allmap_pusha_1(AllmapPushaWork* work) {
         m4aSongNumStart(102);
         work->unk_28 = TaskCreate(&work->unk_14, &gTaskDescAllmapDoorinfo, &work->cursor->unk_30);
     }
-    work->unk_12 = gSineTable[(u8)work->unk_10] >> 8;
+    work->y2 = gSineTable[(u8)work->unk_10] >> 8;
     work->unk_10 += 16;
     TaskPoolUpdate(&work->unk_14);
     return 1;
@@ -741,7 +741,7 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
     } else {
         work->x = work->cursor->unk_30.unk_00 * 24 - gUnk_0203C540;
         work->y = work->cursor->unk_30.unk_02 * 24 - gUnk_0203C53C;
-        DrawSprite(work->x, work->y - work->unk_12 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
+        DrawSprite(work->x, work->y - work->y2 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
     }
 }
 

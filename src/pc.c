@@ -13,7 +13,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
 
     if (!(gBtlWork->unk_068 & 0x100000)) {
         obj = work->actor;
-        if (obj->unk_00C >= 0) {
+        if (obj->z >= 0) {
             work->unk_08 = 1;
 
             if (work->unk_00 <= 0) {
@@ -44,11 +44,11 @@ void func_08049E70(PcCharaWork* work, s16 a, s32 b) {
     BtlObj* obj = (BtlObj*)work->unk_040;
 
     if (obj->unk_034 & 4) {
-        work->unk_15C = obj->unk_004 - (a << 8);
+        work->unk_15C = obj->x - (a << 8);
     } else {
-        work->unk_15C = obj->unk_004 + (a << 8);
+        work->unk_15C = obj->x + (a << 8);
     }
-    w->unk_160 = obj->unk_008;
+    w->unk_160 = obj->y;
     w->unk_170 = 0x19;
     w->unk_150 = 0;
     work->unk_188 = -b;

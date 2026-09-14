@@ -16,7 +16,7 @@ void HumInit(HumWork* work, HumDef* def) {
     actor->unk_0B2 = 1;
     actor->unk_034 |= 0x40000000000000;
 
-    if (gBtlWork->actor->unk_004 < actor->unk_004) {
+    if (gBtlWork->actor->x < actor->x) {
         actor->unk_034 |= 4;
     }
 
@@ -60,9 +60,9 @@ void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
 
     sub->tiles = AllocObjTiles(def->unk_04 * 32, 0);
     sub->palette2 = sub->palette = LoadObjPalette(def->unk_00, 32);
-    sub->unk_28 = work->actor.unk_004;
-    sub->unk_2C = work->actor.unk_008;
-    sub->unk_30 = work->actor.unk_00C;
+    sub->unk_28 = work->actor.x;
+    sub->unk_2C = work->actor.y;
+    sub->unk_30 = work->actor.z;
     sub->unk_34 = 0;
     AnimInit(&sub->anim, 0, 0);
 }
@@ -98,8 +98,8 @@ s32 _0800E434(HumWork* work) {
     BtlObj* actor = &work->actor;
     s32 r;
 
-    actor->unk_0FC = actor->unk_004;
-    actor->unk_100 = actor->unk_008;
+    actor->unk_0FC = actor->x;
+    actor->unk_100 = actor->y;
     r = func_0801ADAC(actor);
 
     switch (r) {
@@ -195,7 +195,7 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_170 = 2;
             work->unk_150 = 0;
 
-            if (actor->unk_004 < x) {
+            if (actor->x < x) {
                 if (actor->unk_034 & 4) {
                     if (GetRandom() % 3 == 0) {
                         actor->unk_034 &= ~4;
@@ -319,7 +319,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 18:
         if (work->unk_150 == 23) {
-            func_08013A68(actor->unk_004, actor->unk_008, actor->unk_00C - ((actor->unk_09C - 48) << 8));
+            func_08013A68(actor->x, actor->y, actor->z - ((actor->unk_09C - 48) << 8));
         }
         if (work->unk_150 > 23 && func_080128EC() == 0) {
             switch (work->unk_17E) {
@@ -365,7 +365,7 @@ s32 func_0800E5F0(HumWork* work) {
             if (!(work->unk_154 & 0x40)) {
                 m4aSongNumStart(0x20E);
             }
-            func_08019050(1, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08019050(1, 0x100, gBtlWork->x2, gBtlWork->y2);
         }
         if (FadeIsActive() == 0) {
             work->unk_150 = 0;
@@ -376,16 +376,16 @@ s32 func_0800E5F0(HumWork* work) {
                 work->unk_170 = 4;
             }
         } else {
-            func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
+            func_0802F284(actor->x, actor->y, actor->z);
             work->unk_150++;
         }
         break;
     case 4:
         if (work->unk_150 == 0) {
-            func_08014A34(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
+            func_08014A34(actor->x, actor->y + actor->z - ((s16)actor->unk_0A2 << 8));
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
-        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
+        func_0802F284(actor->x, actor->y, actor->z);
         work->unk_158 = 0;
 
         if (work->unk_150 > 150) {
@@ -405,8 +405,8 @@ s32 func_0800E5F0(HumWork* work) {
             gBtlWork->unk_068 |= 0x400000;
             func_0801B008();
             func_0801B918(actor);
-            arg.unk_00 = actor->unk_004;
-            arg.unk_04 = actor->unk_008;
+            arg.unk_00 = actor->x;
+            arg.unk_04 = actor->y;
             arg.unk_08 = -0x4600;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
             return 0;
@@ -416,10 +416,10 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 6:
         if (work->unk_150 == 0) {
-            func_08014AAC(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
+            func_08014AAC(actor->x, actor->y + actor->z - ((s16)actor->unk_0A2 << 8));
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
-        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
+        func_0802F284(actor->x, actor->y, actor->z);
         work->unk_158 = 0;
 
         if (work->unk_150 > 150) {
@@ -431,18 +431,18 @@ s32 func_0800E5F0(HumWork* work) {
         }
         break;
     case 7:
-        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
+        func_0802F284(actor->x, actor->y, actor->z);
 
         if (func_080128EC() == 0) {
             PrizeCardArg arg2;
 
             func_0801B008();
 #ifdef VERSION_EU
-            ClampBattlePosition(&actor->unk_004, &actor->unk_008, (s16)(work->unk_174 - 8), -16);
+            ClampBattlePosition(&actor->x, &actor->y, (s16)(work->unk_174 - 8), -16);
 #endif
             func_0801B918(actor);
-            arg2.unk_00 = actor->unk_004;
-            arg2.unk_04 = actor->unk_008;
+            arg2.unk_00 = actor->x;
+            arg2.unk_04 = actor->y;
             arg2.unk_08 = -0x4600;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg2);
             return 0;
@@ -470,27 +470,27 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (actor->unk_0E8 != 2) {
-        actor->unk_00C += work->unk_158;
+        actor->z += work->unk_158;
         work->unk_158 += gBtlWork->unk_12C;
 
-        if (actor->unk_00C > 0) {
-            actor->unk_00C = 0;
+        if (actor->z > 0) {
+            actor->z = 0;
             work->unk_158 = 0;
         }
         if (actor->unk_040.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->unk_040.unk_50->unk_30 & 2)) {
-            actor->unk_004 += actor->unk_040.unk_38 >> 1;
-            actor->unk_008 += actor->unk_040.unk_3C >> 1;
+            actor->x += actor->unk_040.unk_38 >> 1;
+            actor->y += actor->unk_040.unk_3C >> 1;
         }
     }
 
     if (actor->unk_108 > 0) {
-        actor->unk_004 += actor->unk_108;
+        actor->x += actor->unk_108;
         actor->unk_108 -= 17;
         if (actor->unk_108 < 0) {
             actor->unk_108 = 0;
         }
     } else if (actor->unk_108 < 0) {
-        actor->unk_004 += actor->unk_108;
+        actor->x += actor->unk_108;
         actor->unk_108 += 17;
         if (actor->unk_108 > 0) {
             actor->unk_108 = 0;
@@ -498,13 +498,13 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (actor->unk_10C > 0) {
-        actor->unk_008 += actor->unk_10C;
+        actor->y += actor->unk_10C;
         actor->unk_10C -= 17;
         if (actor->unk_10C < 0) {
             actor->unk_10C = 0;
         }
     } else if (actor->unk_10C < 0) {
-        actor->unk_008 += actor->unk_10C;
+        actor->y += actor->unk_10C;
         actor->unk_10C += 17;
         if (actor->unk_10C > 0) {
             actor->unk_10C = 0;
@@ -512,7 +512,7 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (!(work->unk_154 & 8)) {
-        switch (ClampBattlePosition(&actor->unk_004, &actor->unk_008, work->unk_174, 0)) {
+        switch (ClampBattlePosition(&actor->x, &actor->y, work->unk_174, 0)) {
         case 1:
         case 2:
             actor->unk_108 = -(actor->unk_108 >> 1);
@@ -536,12 +536,12 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (actor->unk_0E8 == 5) {
-        actor->unk_004 = actor->unk_0FC;
-        actor->unk_008 = actor->unk_100;
+        actor->x = actor->unk_0FC;
+        actor->y = actor->unk_100;
     }
 
     TaskPoolUpdate(&work->unk_02C);
-    ColliderSetPosition(&actor->unk_040, actor->unk_004, actor->unk_008, actor->unk_00C);
+    ColliderSetPosition(&actor->unk_040, actor->x, actor->y, actor->z);
     return 1;
 }
 

@@ -74,9 +74,9 @@ void func_08019190(BtlObj* p, s16 b) {
         }
         *t = 50;
     }
-    a.x = p->unk_004;
-    a.y = p->unk_008;
-    a.z = p->unk_00C - ((p->unk_09C / 2) << 8);
+    a.x = p->x;
+    a.y = p->y;
+    a.z = p->z - ((p->unk_09C / 2) << 8);
     if (gGameState.flags & 8) {
         if (b == 9) {
             a.unk_12 = abs(gBtlWork->unk_1CA);
@@ -593,9 +593,9 @@ void _08019CB4(void) {
             gBtlWork->unk_138 = 0;
         }
     } else {
-        gBtlWork->unk_130 = gBtlWork->actor->unk_004;
-        gBtlWork->unk_134 = gBtlWork->actor->unk_008;
-        gBtlWork->unk_138 = gBtlWork->actor->unk_00C;
+        gBtlWork->unk_130 = gBtlWork->actor->x;
+        gBtlWork->unk_134 = gBtlWork->actor->y;
+        gBtlWork->unk_138 = gBtlWork->actor->z;
     }
     gBtlWork->unk_068 &= ~1ULL;
     switch ((u32)gBtlWork->unk_0A0) {
@@ -640,7 +640,7 @@ void _08019CB4(void) {
             FadeFromAmount(3, 10, 4);
         }
         MosaicStartIn(16, 15);
-        func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+        func_08019050(1, 256, gBtlWork->x2, gBtlWork->y2);
         gBtlWork->unk_0E4 = 0;
     }
     if (gBtlWork->unk_068 & 0x400) {
@@ -759,7 +759,7 @@ void _08019CB4(void) {
             gBtlWork->unk_0A0 = 1;
             gBtlWork->unk_0E4 = 0;
             if (gGameState.unk_1B8 == 5) {
-                func_08019ACC(0x10000, gBtlWork->actor->unk_008, gBtlWork->actor->unk_00C - 0x7800);
+                func_08019ACC(0x10000, gBtlWork->actor->y, gBtlWork->actor->z - 0x7800);
             }
         }
         break;
@@ -774,7 +774,7 @@ void _08019CB4(void) {
                 gBtlWork->unk_068 |= 0x40000000ULL;
                 FadeToOriginal(0, 8);
             }
-            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08019050(8, 256, gBtlWork->x2, gBtlWork->y2);
             gBtlWork->unk_068 |= 0x20;
             gBtlWork->actor2 = 0;
             gBtlWork->unk_0E4 = 1;
@@ -1040,7 +1040,7 @@ s32 func_0801A978(BtlObj* p) {
         }
 
         if (p->unk_000 != 55 && GetRandom() % 8 == 0) {
-            func_08019ACC(p->unk_004, p->unk_008, p->unk_00C - 0x7800);
+            func_08019ACC(p->x, p->y, p->z - 0x7800);
         }
 
         if (p->unk_034 & 0x40000) {
@@ -1126,9 +1126,9 @@ u8 func_0801AD68(BtlObj* p) {
     if (f & 1) {
         p->unk_034 &= ~0x46023;
         p->unk_034 |= 0x90;
-        p->unk_014 = p->unk_004;
-        p->unk_018 = p->unk_008;
-        p->unk_01C = p->unk_00C;
+        p->unk_014 = p->x;
+        p->unk_018 = p->y;
+        p->unk_01C = p->z;
         return 1;
     }
     return 0;
@@ -1477,9 +1477,9 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     p->unk_0B2 = 100;
     p->unk_02C = p->unk_02E;
     p->unk_0DC = p;
-    p->unk_004 = x;
-    p->unk_008 = y;
-    p->unk_00C = z;
+    p->x = x;
+    p->y = y;
+    p->z = z;
     p->unk_010 = 0;
     p->unk_034 = 0;
     p->unk_03C = d->unk_0E;
@@ -1498,9 +1498,9 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     p->btl = 0;
     p->unk_0E8 = 0;
     p->unk_0EC = 0;
-    p->unk_0F0 = gBtlWork->actor->unk_004;
-    p->unk_0F4 = gBtlWork->actor->unk_008;
-    p->unk_0F8 = gBtlWork->actor->unk_00C;
+    p->unk_0F0 = gBtlWork->actor->x;
+    p->unk_0F4 = gBtlWork->actor->y;
+    p->unk_0F8 = gBtlWork->actor->z;
     p->unk_108 = 0;
     p->unk_10C = 0;
     p->unk_104 = 0;
@@ -1584,9 +1584,9 @@ void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
 void func_0801B918(BtlObj* p) {
     UnkStruct_0801B8A8 a;
     s16 n;
-    a.x = p->unk_004;
-    a.y = p->unk_008;
-    a.z = p->unk_00C;
+    a.x = p->x;
+    a.y = p->y;
+    a.z = p->z;
     a.unk_14 = 1;
     n = p->unk_0B4;
     func_0801B8A8(&a, 0, 0x578, &n);
@@ -1611,9 +1611,9 @@ void func_0801B994(BtlObj* p) {
     if (gBtlWork->unk_068 & 0x400000000) {
         return;
     }
-    a.x = p->unk_004;
-    a.y = p->unk_008;
-    a.z = p->unk_00C;
+    a.x = p->x;
+    a.y = p->y;
+    a.z = p->z;
     a.unk_14 = 0;
     n = p->unk_0B4;
     cnt = 0;
@@ -1690,11 +1690,11 @@ void func_0801B994(BtlObj* p) {
 
         if (gBtlWork->unk_10C != 120 && gBtlWork->unk_10C != 124) {
             if (flag != 0) {
-                func_0809B6D0(&gBtlWork->taskPools[0], p->unk_004 >> 8, p->unk_008 >> 8, p->unk_00C >> 8, p->unk_000);
+                func_0809B6D0(&gBtlWork->taskPools[0], p->x >> 8, p->y >> 8, p->z >> 8, p->unk_000);
             } else {
-                b.x = p->unk_004;
-                b.y = p->unk_008;
-                b.z = p->unk_00C;
+                b.x = p->x;
+                b.y = p->y;
+                b.z = p->z;
                 CreatePrizeCardTask(&gBtlWork->taskPools[0], &b);
             }
         }
@@ -1743,9 +1743,9 @@ void func_0801BBF0(BtlObj* p) {
         return;
     }
     gBtlWork->unk_068 |= 0x100000000;
-    a.x = p->unk_004;
-    a.y = p->unk_008;
-    a.z = p->unk_00C;
+    a.x = p->x;
+    a.y = p->y;
+    a.z = p->z;
     a.unk_14 = 0;
     TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPremire, &a);
 }
@@ -1759,9 +1759,9 @@ u8 func_0801BCA8(s32 a) {
 }
 
 void func_0801BCC0(s32 a, s32 b, s32 c) {
-    gBtlWork->actor->unk_004 = a;
-    gBtlWork->actor->unk_008 = b;
-    gBtlWork->actor->unk_00C = c;
+    gBtlWork->actor->x = a;
+    gBtlWork->actor->y = b;
+    gBtlWork->actor->z = c;
 }
 
 void func_0801BCD4(BtlObj* p) {
@@ -1793,17 +1793,17 @@ void func_0801BCF8(BtlObj* p) {
     }
 
     if (p->unk_034 & 4) {
-        cx = p->unk_004 - ((s16)(x1 = p->unk_0CE) * 256);
+        cx = p->x - ((s16)(x1 = p->unk_0CE) * 256);
         x1 = p->unk_0D0;
     } else {
         x1 = p->unk_0CE;
-        cx = p->unk_004 + (s16)x1 * 256;
+        cx = p->x + (s16)x1 * 256;
         x1 = p->unk_0D0;
     }
 
     x1 -= 4;
     x0 = cx - (x1 *= 256);
-    y0 = p->unk_008 - (p->unk_0D2 * 256);
+    y0 = p->y - (p->unk_0D2 * 256);
     x1 = x0 + ((p->unk_0D0 + 4) * 512);
     y1 = y0 + ((p->unk_0D2 + 4) * 512);
 

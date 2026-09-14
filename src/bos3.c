@@ -35,12 +35,12 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
         return;
     }
 
-    frame = GetBattleSpritePriorityFlags(obj->unk_008);
+    frame = GetBattleSpritePriorityFlags(obj->y);
 
-    if (obj->unk_00C >= 0 && gBtlWork->unk_024 == 0x100) {
+    if (obj->z >= 0 && gBtlWork->unk_024 == 0x100) {
         sprite = 0;
     } else {
-        size = 0x200 - ((obj->unk_010 - obj->unk_00C) / 128);
+        size = 0x200 - ((obj->unk_010 - obj->z) / 128);
 
         if (size <= 127) {
             size = 128;
@@ -55,7 +55,7 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
         sprite = AllocObjAffine(0, size, size, flip);
     }
 
-    WorldToScreen(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
+    WorldToScreen(&x, &y, obj->x, obj->y, obj->unk_010);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, sprite, frame, obj->unk_0CC);
 }
 

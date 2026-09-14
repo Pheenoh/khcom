@@ -43,8 +43,8 @@ typedef struct EmyWork {
     s32 unk_164;
     s32 unk_168;
     u32 unk_16C;
-    s32 unk_170;
-    s32 unk_174;
+    s32 x;
+    s32 y;
     s32 unk_178;
     s32 unk_17C;
     s32 unk_180;

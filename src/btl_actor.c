@@ -69,9 +69,9 @@ void func_0800EFE8(Actor* work) {
     if (work->unk_154 & 0x20) {
         attr = 0x800;
     } else {
-        attr = GetBattleSpritePriorityFlags(c->unk_008);
+        attr = GetBattleSpritePriorityFlags(c->y);
     }
-    WorldToScreen(&x, &y, c->unk_004, c->unk_008, c->unk_00C);
+    WorldToScreen(&x, &y, c->x, c->y, c->z);
 
     if (work->unk_168 == 0x100 && work->unk_16C == 0x100) {
         if (c->unk_034 & 4) {
@@ -124,7 +124,7 @@ void func_0800EFE8(Actor* work) {
         work->unk_154 &= ~2;
         LoadObjPaletteBank(work->palette->unk_06, work->unk_178);
     }
-    DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->unk_008 >> 8) * 4) | 3);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->y >> 8) * 4) | 3);
     func_0800EEBC(work, work->unk_0C);
     func_0800EEBC(work, work->unk_10);
     TaskPoolDraw(&work->unk_2C);

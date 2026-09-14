@@ -173,8 +173,8 @@ typedef struct SioChgCardWork {
     s16 unk_404;
     u16 unk_406[0x3E7];
     u64 unk_BD4;
-    s16 unk_BDC;
-    s16 unk_BDE;
+    s16 x3;
+    s16 y3;
     s8 unk_BE0;
     u8 unk_BE1[3];
     u8 unk_BE4[0x14];
@@ -246,7 +246,7 @@ typedef struct SioBtlOptionWork {
     void* palette2;
     void* gfx2;
     AnimState anim;
-    s32 unk_1DC;
+    s32 y;
     s8 unk_1E0;
     u8 unk_1E1[3];
     void* tiles4;
@@ -279,8 +279,8 @@ typedef struct SioBtlOptionWork {
     void* palette6;
     s8 unk_410;
     u8 unk_411;
-    s16 unk_412;
-    s16 unk_414;
+    s16 x;
+    s16 y2;
     s8 unk_416;
     s8 unk_417;
     u16 unk_418;

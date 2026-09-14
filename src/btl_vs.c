@@ -409,7 +409,7 @@ void func_08010CC8(void) {
             FadeFromAmount(3, 10, 4);
         }
         MosaicStartIn(16, 15);
-        func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+        func_08019050(1, 256, gBtlWork->x2, gBtlWork->y2);
         gBtlWork->unk_0E4 = 0;
     }
     if (gBtlWork->unk_068 & 0x400) {
@@ -473,7 +473,7 @@ void func_08010CC8(void) {
             gBtlWork->unk_068 |= 0x20;
             gUnk_02039B9C->unk_068 |= 0x40000000;
             gBtlWork->unk_068 |= 0x40000000;
-            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08019050(8, 256, gBtlWork->x2, gBtlWork->y2);
             gBtlWork->unk_0F4 = 0;
             gUnk_02039B9C->unk_0F4 = 0;
         }

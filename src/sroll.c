@@ -1188,7 +1188,7 @@ u32 SrollTextBlitGlyph(SrollWork* w, u32* dst, u8* src, s32 width) {
     bg = (c << 4) | c;
     bg |= bg << 8;
     bg |= bg << 16;
-    b.unk_00 = w->unk_20 & 7;
+    b.unk_00 = w->x & 7;
     b.unk_04 = width;
     b.unk_08 = src;
     b.unk_0C = dst;
@@ -1229,7 +1229,7 @@ void SrollTextSelectFont(SrollWork* w, u32 mode) {
     w->unk_3C = gUnk_09A5B440[mode].unk_0C;
     w->unk_40 = gUnk_09A5B440[mode].unk_10;
     w->unk_44 = gUnk_09A5B440[mode].unk_14;
-    SrollTextSetCursorTile(w, w->unk_20, w->unk_22);
+    SrollTextSetCursorTile(w, w->x, w->y);
 }
 
 void SrollTextInit(SrollWork* w, SrollInit* a) {
@@ -1301,15 +1301,15 @@ void SrollTextSetCursorTile(SrollWork* w, u16 x, u16 y) {
     if (y + w->unk_24 > w->unk_1E) {
         y = 0;
     }
-    w->unk_20 = x * 8;
-    w->unk_22 = y;
+    w->x = x * 8;
+    w->y = y;
 }
 
 void SrollTextSetCursorPixelX(SrollWork* w, u16 x) {
     if (x >= w->unk_1C * 8) {
         x = 0;
     }
-    w->unk_20 = x;
+    w->x = x;
 }
 
 void SrollTextSetColors(SrollWork* w, u16 a, u16 b, u16 c, u16 d) {
@@ -1573,18 +1573,18 @@ u8 SrollTextProcessNextChar(SrollWork* w) {
 
     r = 0;
 
-    if (w->unk_20 >= w->unk_1C * 8) {
-        w->unk_20 = 0;
+    if (w->x >= w->unk_1C * 8) {
+        w->x = 0;
     }
     c = SrollTextDequeueChar(w);
     if (c & 0xFF00) {
-        off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
+        off = (w->y * w->unk_1C + (w->x >> 3)) * 32;
         g = SrollTextGetGlyphAddress(c, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
         wd = SrollTextGetGlyphWidth(c, w->unk_34, w->unk_3C, w->unk_40);
         n = SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, wd);
-        t = w->unk_22 * w->unk_1C + (w->unk_20 >> 3) + w->unk_30;
+        t = w->y * w->unk_1C + (w->x >> 3) + w->unk_30;
         p = (u16*)((u8*)SrollTextGetTilemap(w) +
-                   ((w->unk_1A + w->unk_22) * w->unk_0A + ((w->unk_20 >> 3) + w->unk_18)) * 2);
+                   ((w->unk_1A + w->y) * w->unk_0A + ((w->x >> 3) + w->unk_18)) * 2);
 
         for (i = 0; i < w->unk_24; i++) {
             if (n == 1) {
@@ -1596,7 +1596,7 @@ u8 SrollTextProcessNextChar(SrollWork* w) {
             p += w->unk_0A;
             t += w->unk_1C;
         }
-        w->unk_20 += wd;
+        w->x += wd;
         w->unk_00 |= 1;
         r = 1;
     } else {
@@ -1626,11 +1626,11 @@ u8 SrollTextProcessNextChar(SrollWork* w) {
         case 0:
             break;
         case '\n':
-            w->unk_20 = 0;
-            w->unk_22 += w->unk_24;
+            w->x = 0;
+            w->y += w->unk_24;
 
-            if (w->unk_22 + w->unk_24 > w->unk_1E) {
-                w->unk_22 = 0;
+            if (w->y + w->unk_24 > w->unk_1E) {
+                w->y = 0;
             }
             break;
         }
@@ -1710,7 +1710,7 @@ void SrollTextDrawStringAtPixelX(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
     SrollTextSetCursorTile(w, x >> 3, y);
     n = x & 7;
     if (n != 0) {
-        off = (w->unk_22 * w->unk_1C + (x >> 3)) * 32;
+        off = (w->y * w->unk_1C + (x >> 3)) * 32;
         g = SrollTextGetGlyphAddress(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
         SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, n);
     }
@@ -1718,10 +1718,10 @@ void SrollTextDrawStringAtPixelX(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
     SrollTextEnqueueString(w, s);
     SrollTextDrawQueued(w, 0);
 
-    if ((w->unk_20 & 7) != 0) {
-        off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
+    if ((w->x & 7) != 0) {
+        off = (w->y * w->unk_1C + (w->x >> 3)) * 32;
         g = SrollTextGetGlyphAddress(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
-        SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, 8 - (w->unk_20 & 7));
+        SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, 8 - (w->x & 7));
     }
 
     if (flush == 1 && (w->unk_00 & 1)) {

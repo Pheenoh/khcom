@@ -41,9 +41,9 @@ typedef struct Collider {
 
 typedef struct BtlObj {
     s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_010;
     s32 unk_014;
     s32 unk_018;

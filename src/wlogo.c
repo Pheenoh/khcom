@@ -2105,9 +2105,9 @@ void task_bos_tm_0(TmWork* w, BtlObj* arg) {
     TaskPoolInit(&gBosTmTaskPool, 4);
 
     if (w->unk_28 & 8) {
-        w->unk_00 = arg->unk_004 >> 8;
-        w->unk_02 = arg->unk_008 >> 8;
-        w->unk_04 = arg->unk_00C >> 8;
+        w->unk_00 = arg->x >> 8;
+        w->unk_02 = arg->y >> 8;
+        w->unk_04 = arg->z >> 8;
     } else {
         w->unk_00 = 0x15D;
         w->unk_02 = 0x16C;
@@ -2211,9 +2211,9 @@ u8 task_bos_tm_1(TmWork* w) {
             param.y = w->unk_18;
             param.z = w->unk_1C;
             param.unk_1C = func_080B82D4;
-            gUnk_0203AB50.unk_004 = w->unk_14;
-            gUnk_0203AB50.unk_008 = w->unk_18;
-            gUnk_0203AB50.unk_00C = w->unk_1C;
+            gUnk_0203AB50.x = w->unk_14;
+            gUnk_0203AB50.y = w->unk_18;
+            gUnk_0203AB50.z = w->unk_1C;
             param.unk_20 = &gUnk_0203AB50;
             func_080C640C(&param);
             w->unk_28 &= ~1;
@@ -2229,9 +2229,9 @@ u8 task_bos_tm_1(TmWork* w) {
     case 17:
         break;
     }
-    gUnk_0203AB44 = gBtlWork->actor->unk_008 >> 8;
+    gUnk_0203AB44 = gBtlWork->actor->y >> 8;
     gUnk_0203AB40 = gBtlWork->actor->unk_01C >> 8;
-    gUnk_0203AB3C = gBtlWork->actor->unk_00C >> 8;
+    gUnk_0203AB3C = gBtlWork->actor->z >> 8;
     gUnk_0203AB48 = gBtlWork->unk_0D0 >> 8;
 
     if ((gBtlWork->unk_068 & 0x20000000) && w->unk_2C != 13) {
@@ -2241,7 +2241,7 @@ u8 task_bos_tm_1(TmWork* w) {
             gBtlWork->unk_0D8 = 10;
         }
     } else {
-        if (gBtlWork->actor->unk_00C <= -0x2D00) {
+        if (gBtlWork->actor->z <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
             gBtlWork->unk_0D8 = 10;
@@ -2275,10 +2275,10 @@ void func_080B8324(TmBodyWork* p) {
 }
 
 void func_080B8334(BtlObj* p, s16 a, s16 b, s16 c) {
-    p->unk_004 = a << 8;
-    p->unk_008 = b << 8;
-    p->unk_00C = (c << 8) + 0x1900;
-    func_0801B37C(p, gUnk_09619C94, p->unk_004, p->unk_008, p->unk_00C);
+    p->x = a << 8;
+    p->y = b << 8;
+    p->z = (c << 8) + 0x1900;
+    func_0801B37C(p, gUnk_09619C94, p->x, p->y, p->z);
     p->unk_09E = 14;
     p->unk_0A0 = 40;
     p->unk_09C = 28;
@@ -2287,9 +2287,9 @@ void func_080B8334(BtlObj* p, s16 a, s16 b, s16 c) {
 }
 
 void func_080B83A4(BtlObj* p, s16 a, s16 b, s16 c) {
-    p->unk_004 = a << 8;
-    p->unk_008 = b << 8;
-    p->unk_00C = c << 8;
+    p->x = a << 8;
+    p->y = b << 8;
+    p->z = c << 8;
 }
 
 void func_080B83B8(BtlObj* a) {
@@ -2310,24 +2310,24 @@ void func_080B83C4(TmBodyWork* p) {
 
 void func_080B8418(TmBodyWork* p) {
     if (p->tm->unk_28 & 0x20) {
-        p->body.unk_004 = p->tm->unk_14 + 0x400;
-        p->body2.unk_004 = p->tm->unk_14;
-        p->body3.unk_004 = p->tm->unk_14 + 0xC00;
-        p->body4.unk_004 = p->tm->unk_14 - 0x100;
+        p->body.x = p->tm->unk_14 + 0x400;
+        p->body2.x = p->tm->unk_14;
+        p->body3.x = p->tm->unk_14 + 0xC00;
+        p->body4.x = p->tm->unk_14 - 0x100;
     } else {
-        p->body.unk_004 = p->tm->unk_14 - 0x400;
-        p->body2.unk_004 = p->tm->unk_14;
-        p->body3.unk_004 = p->tm->unk_14 - 0xC00;
-        p->body4.unk_004 = p->tm->unk_14 + 0x100;
+        p->body.x = p->tm->unk_14 - 0x400;
+        p->body2.x = p->tm->unk_14;
+        p->body3.x = p->tm->unk_14 - 0xC00;
+        p->body4.x = p->tm->unk_14 + 0x100;
     }
-    p->body.unk_008 = p->tm->unk_18;
-    p->body2.unk_008 = p->tm->unk_18;
-    p->body3.unk_008 = p->tm->unk_18 + 0x100;
-    p->body4.unk_008 = p->tm->unk_18 - 0x400;
-    p->body.unk_00C = p->tm->unk_1C - 0x2200;
-    p->body2.unk_00C = p->tm->unk_1C + 0x900;
-    p->body3.unk_00C = p->tm->unk_1C - 0x2100;
-    p->body4.unk_00C = p->tm->unk_1C - 0x1E00;
+    p->body.y = p->tm->unk_18;
+    p->body2.y = p->tm->unk_18;
+    p->body3.y = p->tm->unk_18 + 0x100;
+    p->body4.y = p->tm->unk_18 - 0x400;
+    p->body.z = p->tm->unk_1C - 0x2200;
+    p->body2.z = p->tm->unk_1C + 0x900;
+    p->body3.z = p->tm->unk_1C - 0x2100;
+    p->body4.z = p->tm->unk_1C - 0x1E00;
 }
 
 void func_080B8508(TmBodyWork* p) {
@@ -2356,23 +2356,23 @@ void func_080B8554(TmBodyWork* p) {
         p->tm->unk_14 = p->tm->unk_08 - 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + dz;
-        p->body.unk_004 = p->tm->unk_08 - 0xF00;
-        p->body2.unk_004 = p->tm->unk_14 + 0x500;
-        p->body3.unk_004 = p->tm->unk_14 + 0x400;
-        p->body4.unk_004 = p->tm->unk_14 - 0x900;
+        p->body.x = p->tm->unk_08 - 0xF00;
+        p->body2.x = p->tm->unk_14 + 0x500;
+        p->body3.x = p->tm->unk_14 + 0x400;
+        p->body4.x = p->tm->unk_14 - 0x900;
     } else {
         p->tm->unk_14 = p->tm->unk_08 + 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->body.unk_004 = p->tm->unk_08 + 0xF00;
-        p->body2.unk_004 = p->tm->unk_14 - 0x500;
-        p->body3.unk_004 = p->tm->unk_14 - 0x400;
-        p->body4.unk_004 = p->tm->unk_14 + 0x900;
+        p->body.x = p->tm->unk_08 + 0xF00;
+        p->body2.x = p->tm->unk_14 - 0x500;
+        p->body3.x = p->tm->unk_14 - 0x400;
+        p->body4.x = p->tm->unk_14 + 0x900;
     }
-    p->body.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->body2.unk_00C = p->tm->unk_1C + 0xE00;
-    p->body3.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->body4.unk_00C = p->tm->unk_1C - 0x1C00;
+    p->body.z = p->tm->unk_1C - 0x1F00;
+    p->body2.z = p->tm->unk_1C + 0xE00;
+    p->body3.z = p->tm->unk_1C - 0x1F00;
+    p->body4.z = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B8688(TmBodyWork* p) {
@@ -2385,47 +2385,47 @@ void func_080B8688(TmBodyWork* p) {
         p->tm->unk_14 = p->tm->unk_08 + 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->body.unk_004 = p->tm->unk_08 + 0xB00;
-        p->body2.unk_004 = p->tm->unk_14 - 0x500;
-        p->body3.unk_004 = p->tm->unk_14 + 0x900;
-        p->body4.unk_004 = p->tm->unk_14 - 0x400;
+        p->body.x = p->tm->unk_08 + 0xB00;
+        p->body2.x = p->tm->unk_14 - 0x500;
+        p->body3.x = p->tm->unk_14 + 0x900;
+        p->body4.x = p->tm->unk_14 - 0x400;
     } else {
         p->tm->unk_14 = p->tm->unk_08 - 0xA00;
         p->tm->unk_18 = p->tm->unk_0C;
         p->tm->unk_1C = p->tm->unk_10 + 0xF00;
-        p->body.unk_004 = p->tm->unk_08 - 0xB00;
-        p->body2.unk_004 = p->tm->unk_14 + 0x500;
-        p->body3.unk_004 = p->tm->unk_14 - 0x900;
-        p->body4.unk_004 = p->tm->unk_14 + 0x400;
+        p->body.x = p->tm->unk_08 - 0xB00;
+        p->body2.x = p->tm->unk_14 + 0x500;
+        p->body3.x = p->tm->unk_14 - 0x900;
+        p->body4.x = p->tm->unk_14 + 0x400;
     }
-    p->body.unk_00C = p->tm->unk_1C - 0x2200;
-    p->body2.unk_00C = p->tm->unk_1C + 0x900;
-    p->body3.unk_00C = p->tm->unk_1C - 0x1F00;
-    p->body4.unk_00C = p->tm->unk_1C - 0x1C00;
+    p->body.z = p->tm->unk_1C - 0x2200;
+    p->body2.z = p->tm->unk_1C + 0x900;
+    p->body3.z = p->tm->unk_1C - 0x1F00;
+    p->body4.z = p->tm->unk_1C - 0x1C00;
 }
 
 void func_080B87C0(TmBodyWork* p, s16 a) {
     if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
-        p->body.unk_004 += gUnk_09EF1E14[a].unk_00 << 8;
-        p->body2.unk_004 += gUnk_09EF1E14[a].unk_08 << 8;
-        p->body3.unk_004 += gUnk_09EF1E14[a].unk_10 << 8;
-        p->body4.unk_004 += gUnk_09EF1E14[a].unk_18 << 8;
+        p->body.x += gUnk_09EF1E14[a].unk_00 << 8;
+        p->body2.x += gUnk_09EF1E14[a].unk_08 << 8;
+        p->body3.x += gUnk_09EF1E14[a].unk_10 << 8;
+        p->body4.x += gUnk_09EF1E14[a].unk_18 << 8;
         p->tm->unk_14 += gUnk_09EF1E14[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
-        p->body.unk_004 -= gUnk_09EF1E14[a].unk_00 << 8;
-        p->body2.unk_004 -= gUnk_09EF1E14[a].unk_08 << 8;
-        p->body3.unk_004 -= gUnk_09EF1E14[a].unk_10 << 8;
-        p->body4.unk_004 -= gUnk_09EF1E14[a].unk_18 << 8;
+        p->body.x -= gUnk_09EF1E14[a].unk_00 << 8;
+        p->body2.x -= gUnk_09EF1E14[a].unk_08 << 8;
+        p->body3.x -= gUnk_09EF1E14[a].unk_10 << 8;
+        p->body4.x -= gUnk_09EF1E14[a].unk_18 << 8;
         p->tm->unk_14 -= gUnk_09EF1E14[a].unk_10 << 8;
     }
-    p->body.unk_00C += gUnk_09EF1E14[a].unk_02 << 8;
-    p->body2.unk_00C += gUnk_09EF1E14[a].unk_0A << 8;
-    p->body3.unk_00C += gUnk_09EF1E14[a].unk_12 << 8;
-    p->body4.unk_00C += gUnk_09EF1E14[a].unk_1A << 8;
+    p->body.z += gUnk_09EF1E14[a].unk_02 << 8;
+    p->body2.z += gUnk_09EF1E14[a].unk_0A << 8;
+    p->body3.z += gUnk_09EF1E14[a].unk_12 << 8;
+    p->body4.z += gUnk_09EF1E14[a].unk_1A << 8;
     p->tm->unk_1C += gUnk_09EF1E14[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF1E14[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF1E14[a].unk_1E];
@@ -2464,49 +2464,49 @@ void func_080B8A00(TmBodyWork* p) {
         if (p->tm->unk_28 & 0x20) {
             p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
             p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-            p->body.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
-            p->body2.unk_004 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
-            p->body3.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 + 12) << 8);
-            p->body4.unk_004 = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 - 1) << 8);
+            p->body.x = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
+            p->body2.x = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->body3.x = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 + 12) << 8);
+            p->body4.x = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 - 1) << 8);
             p->tm->unk_14 = p->tm->unk_08 + (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         } else {
             p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
             p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-            p->body.unk_004 = p->tm->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00) << 8);
-            p->body2.unk_004 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
-            p->body3.unk_004 = p->tm->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10) << 8);
-            p->body4.unk_004 = p->tm->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18) << 8);
+            p->body.x = p->tm->unk_08 + ((-4 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00) << 8);
+            p->body2.x = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8);
+            p->body3.x = p->tm->unk_08 + ((-12 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10) << 8);
+            p->body4.x = p->tm->unk_08 + ((1 - gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18) << 8);
             p->tm->unk_14 = p->tm->unk_08 - (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8);
         }
-        p->body.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
-        p->body2.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
-        p->body3.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
-        p->body4.unk_00C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
+        p->body.z = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 - 34 + gUnk_09EF1E08[2]) << 8);
+        p->body2.z = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 9 + gUnk_09EF1E08[2]) << 8);
+        p->body3.z = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 - 33 + gUnk_09EF1E08[2]) << 8);
+        p->body4.z = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A - 30 + gUnk_09EF1E08[2]) << 8);
         p->tm->unk_1C = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 0 + gUnk_09EF1E08[2]) << 8);
     } else {
         if ((s16)p->tm->unk_34 < 3) {
             if (p->tm->unk_28 & 0x20) {
                 p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
                 p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-                p->body.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
-                p->body2.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
-                p->body3.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
-                p->body4.unk_004 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->body.x += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->body2.x += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->body3.x += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->body4.x += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
                 p->tm->unk_14 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             } else {
                 p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
                 p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
-                p->body.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
-                p->body2.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
-                p->body3.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
-                p->body4.unk_004 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
+                p->body.x -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
+                p->body2.x -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_08 << 8;
+                p->body3.x -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
+                p->body4.x -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_18 << 8;
                 p->tm->unk_14 -= gUnk_09EF1D88[(s16)p->tm->unk_34].unk_10 << 8;
             }
             j = 2 - p->tm->unk_34;
-            p->body.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
-            p->body2.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
-            p->body3.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
-            p->body4.unk_00C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
+            p->body.z += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_02 + gUnk_09EF1E08[j]) << 8;
+            p->body2.z += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->body3.z += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_12 + gUnk_09EF1E08[j]) << 8;
+            p->body4.z += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_1A + gUnk_09EF1E08[j]) << 8;
             p->tm->unk_1C += (gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
         if ((s16)p->tm->unk_32 < 3) {
@@ -2514,25 +2514,25 @@ void func_080B8A00(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x20) {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
-                p->body.unk_004 -= gUnk_09EF1D88[i].unk_00 << 8;
-                p->body2.unk_004 -= gUnk_09EF1D88[i].unk_08 << 8;
-                p->body3.unk_004 -= gUnk_09EF1D88[i].unk_10 << 8;
-                p->body4.unk_004 -= gUnk_09EF1D88[i].unk_18 << 8;
+                p->body.x -= gUnk_09EF1D88[i].unk_00 << 8;
+                p->body2.x -= gUnk_09EF1D88[i].unk_08 << 8;
+                p->body3.x -= gUnk_09EF1D88[i].unk_10 << 8;
+                p->body4.x -= gUnk_09EF1D88[i].unk_18 << 8;
                 p->tm->unk_14 -= gUnk_09EF1D88[i].unk_10 << 8;
             } else {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
-                p->body.unk_004 += gUnk_09EF1D88[i].unk_00 << 8;
-                p->body2.unk_004 += gUnk_09EF1D88[i].unk_08 << 8;
-                p->body3.unk_004 += gUnk_09EF1D88[i].unk_10 << 8;
-                p->body4.unk_004 += gUnk_09EF1D88[i].unk_18 << 8;
+                p->body.x += gUnk_09EF1D88[i].unk_00 << 8;
+                p->body2.x += gUnk_09EF1D88[i].unk_08 << 8;
+                p->body3.x += gUnk_09EF1D88[i].unk_10 << 8;
+                p->body4.x += gUnk_09EF1D88[i].unk_18 << 8;
                 p->tm->unk_14 += gUnk_09EF1D88[i].unk_10 << 8;
             }
             j = 2 - i;
-            p->body.unk_00C -= (gUnk_09EF1D88[i].unk_02 + gUnk_09EF1E08[j]) << 8;
-            p->body2.unk_00C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
-            p->body3.unk_00C -= (gUnk_09EF1D88[i].unk_12 + gUnk_09EF1E08[j]) << 8;
-            p->body4.unk_00C -= (gUnk_09EF1D88[i].unk_1A + gUnk_09EF1E08[j]) << 8;
+            p->body.z -= (gUnk_09EF1D88[i].unk_02 + gUnk_09EF1E08[j]) << 8;
+            p->body2.z -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
+            p->body3.z -= (gUnk_09EF1D88[i].unk_12 + gUnk_09EF1E08[j]) << 8;
+            p->body4.z -= (gUnk_09EF1D88[i].unk_1A + gUnk_09EF1E08[j]) << 8;
             p->tm->unk_1C -= (gUnk_09EF1D88[i].unk_0A + gUnk_09EF1E08[j]) << 8;
         }
     }
@@ -2542,24 +2542,24 @@ void func_080B8FF4(TmBodyWork* p, s16 a) {
     if (p->tm->unk_28 & 0x20) {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
-        p->body.unk_004 += gUnk_09EF2034[a].unk_00 << 8;
-        p->body2.unk_004 += gUnk_09EF2034[a].unk_08 << 8;
-        p->body3.unk_004 += gUnk_09EF2034[a].unk_10 << 8;
-        p->body4.unk_004 += gUnk_09EF2034[a].unk_18 << 8;
+        p->body.x += gUnk_09EF2034[a].unk_00 << 8;
+        p->body2.x += gUnk_09EF2034[a].unk_08 << 8;
+        p->body3.x += gUnk_09EF2034[a].unk_10 << 8;
+        p->body4.x += gUnk_09EF2034[a].unk_18 << 8;
         p->tm->unk_14 += gUnk_09EF2034[a].unk_10 << 8;
     } else {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
-        p->body.unk_004 -= gUnk_09EF2034[a].unk_00 << 8;
-        p->body2.unk_004 -= gUnk_09EF2034[a].unk_08 << 8;
-        p->body3.unk_004 -= gUnk_09EF2034[a].unk_10 << 8;
-        p->body4.unk_004 -= gUnk_09EF2034[a].unk_18 << 8;
+        p->body.x -= gUnk_09EF2034[a].unk_00 << 8;
+        p->body2.x -= gUnk_09EF2034[a].unk_08 << 8;
+        p->body3.x -= gUnk_09EF2034[a].unk_10 << 8;
+        p->body4.x -= gUnk_09EF2034[a].unk_18 << 8;
         p->tm->unk_14 -= gUnk_09EF2034[a].unk_10 << 8;
     }
-    p->body.unk_00C += gUnk_09EF2034[a].unk_02 << 8;
-    p->body2.unk_00C += gUnk_09EF2034[a].unk_0A << 8;
-    p->body3.unk_00C += gUnk_09EF2034[a].unk_12 << 8;
-    p->body4.unk_00C += gUnk_09EF2034[a].unk_1A << 8;
+    p->body.z += gUnk_09EF2034[a].unk_02 << 8;
+    p->body2.z += gUnk_09EF2034[a].unk_0A << 8;
+    p->body3.z += gUnk_09EF2034[a].unk_12 << 8;
+    p->body4.z += gUnk_09EF2034[a].unk_1A << 8;
     p->tm->unk_1C += gUnk_09EF2034[a].unk_0A << 8;
     p->gfx3 = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
@@ -2590,7 +2590,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x10) {
                 p->tm->unk_2C = 1;
                 p->tm->unk_28 = p->tm->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2610,7 +2610,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
@@ -2671,7 +2671,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->tm->unk_28 & 0x10) {
                 p->tm->unk_2C = 1;
                 p->tm->unk_28 = p->tm->unk_28 & ~0x10;
-            } else if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2691,7 +2691,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (GetAbsoluteDifference(gBtlWork->actor->unk_004, p->tm->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {

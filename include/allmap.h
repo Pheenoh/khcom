@@ -59,7 +59,7 @@ typedef struct AllmapRoomnameWork {
     void* palette;
     u8 unk_0CC;
     u8 unk_0CD;
-    u16 unk_0CE;
+    u16 x;
 } AllmapRoomnameWork;
 
 
@@ -104,8 +104,8 @@ typedef struct AllmapCursorWork {
     s32 unk_28;
     s32 unk_2C;
     AllmapCursorPos unk_30;
-    s32 unk_34;
-    s32 unk_38;
+    s32 x;
+    s32 y;
     s32 unk_3C;
     s32 unk_40;
     u16 unk_44;
@@ -178,7 +178,7 @@ typedef struct AllmapPushaWork {
     void* gfx;
     AllmapCursorWork* cursor;
     u16 unk_10;
-    s16 unk_12;
+    s16 y2;
     TaskPool unk_14;
     Task* unk_28;
     s16 x;

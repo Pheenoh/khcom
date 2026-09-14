@@ -88,7 +88,7 @@ void func_08012824(void) {
         gUnk_02034928->unk_04();
 
         if (!(gBtlWork->unk_068 & 4)) {
-            gBtlWork->unk_0D0 = gUnk_02034928->unk_14;
+            gBtlWork->unk_0D0 = gUnk_02034928->y;
 
             if (gUnk_02034928->unk_34 & 0x10) {
                 SetBgPriority(gUnk_02034928->unk_00, 0);
@@ -143,7 +143,7 @@ void func_08012908(void) {
         }
     }
 
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimSetPosition(sx, sy);
 
     if (gUnk_02034928->unk_34 & 4) {
@@ -164,8 +164,8 @@ void func_08012AAC(u16 a, s32 x, s32 y, s32 z) {
     }
     func_08012674();
     gUnk_02034928->unk_4C = 20;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
 
     switch (a) {
     case 0:
@@ -178,7 +178,7 @@ void func_08012AAC(u16 a, s32 x, s32 y, s32 z) {
         gUnk_02034928->unk_18 = z - 0x1000;
         break;
     }
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
 
     switch (a) {
     case 0:
@@ -226,19 +226,19 @@ void func_08012C08(void) {
             ang = gUnk_02034928->unk_24;
 
             if (gUnk_02034928->unk_34 & 1) {
-                ApproachAngle(&ang, GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                ApproachAngle(&ang, GetAngle(gUnk_02034928->x, gUnk_02034928->y,
                                              gUnk_02034928->unk_28, gUnk_02034928->unk_2C) + 64, 5);
             } else {
-                ApproachAngle(&ang, GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                ApproachAngle(&ang, GetAngle(gUnk_02034928->x, gUnk_02034928->y,
                                              gUnk_02034928->unk_28, gUnk_02034928->unk_2C) - 64, 5);
             }
 
             gUnk_02034928->unk_24 = ang;
-            ApproachValue(&gUnk_02034928->unk_10, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
-            ApproachValue(&gUnk_02034928->unk_14, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->x, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->y, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
             ApproachValue(&gUnk_02034928->unk_18, gUnk_02034928->unk_30, gUnk_02034928->unk_08);
 
-            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                               gUnk_02034928->unk_18, 8, 8, 16)) {
                 gUnk_02034928->unk_08 = -1;
             } else {
@@ -253,8 +253,8 @@ void func_08012C08(void) {
                 dx = t * -7;
             }
 
-            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 + dx,
-                              gUnk_02034928->unk_14, gUnk_02034928->unk_18, 8, 8, 16)) {
+            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x + dx,
+                              gUnk_02034928->y, gUnk_02034928->unk_18, 8, 8, 16)) {
                 gUnk_02034928->unk_08 = -1;
             }
         }
@@ -266,9 +266,9 @@ void func_08012C08(void) {
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_1C = 0x100;
         gUnk_02034928->unk_20 = 0x100;
-        gUnk_02034928->unk_10 += dx;
+        gUnk_02034928->x += dx;
         gUnk_02034928->unk_4C = 20;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y,
                       gUnk_02034928->unk_18);
 
         switch (gUnk_02034928->unk_26) {
@@ -303,8 +303,8 @@ void func_08012E44(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
 
@@ -343,17 +343,17 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA570, sx, sy);
     m4aSongNumStart(0x23D);
     BgAnimSetLoopStartFrame(8);
     gUnk_02034928->unk_04 = func_08012C08;
-    gUnk_02034928->unk_28 = gBtlWork->actor->unk_004;
-    gUnk_02034928->unk_2C = gBtlWork->actor->unk_008;
-    gUnk_02034928->unk_30 = gBtlWork->actor->unk_00C;
+    gUnk_02034928->unk_28 = gBtlWork->actor->x;
+    gUnk_02034928->unk_2C = gBtlWork->actor->y;
+    gUnk_02034928->unk_30 = gBtlWork->actor->z;
     gUnk_02034928->unk_08 = a;
     gUnk_02034928->unk_26 = 1;
     gUnk_02034928->unk_48 = w;
@@ -385,21 +385,21 @@ void func_08013070(void) {
 
             if (gUnk_02034928->unk_34 & 1) {
                 ApproachAngle(&angle,
-                    GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_28,
+                    GetAngle(gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_28,
                         gUnk_02034928->unk_2C) + 64,
                     5);
             } else {
                 ApproachAngle(&angle,
-                    GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_28,
+                    GetAngle(gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_28,
                         gUnk_02034928->unk_2C) - 64,
                     5);
             }
             gUnk_02034928->unk_24 = angle;
-            ApproachValue(&gUnk_02034928->unk_10, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
-            ApproachValue(&gUnk_02034928->unk_14, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->x, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->y, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
             ApproachValue(&gUnk_02034928->unk_18, gUnk_02034928->unk_30, gUnk_02034928->unk_08);
 
-            if (func_08011E3C(gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 8, 16, 16)) {
+            if (func_08011E3C(gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 8, 16, 16)) {
                 gUnk_02034928->unk_08 = -1;
             } else {
                 gUnk_02034928->unk_08--;
@@ -413,7 +413,7 @@ void func_08013070(void) {
                 dx = t * -7;
             }
 
-            if (func_08011E3C(gUnk_02034928->unk_10 + dx, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 8, 16, 16)) {
+            if (func_08011E3C(gUnk_02034928->x + dx, gUnk_02034928->y, gUnk_02034928->unk_18, 8, 16, 16)) {
                 gUnk_02034928->unk_08 = -1;
             }
         }
@@ -425,9 +425,9 @@ void func_08013070(void) {
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_1C = 0x100;
         gUnk_02034928->unk_20 = 0x100;
-        gUnk_02034928->unk_10 += dx;
+        gUnk_02034928->x += dx;
         gUnk_02034928->unk_4C = 20;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
 
         switch (gUnk_02034928->unk_26) {
         case 0:
@@ -451,20 +451,20 @@ void func_08013070(void) {
         switch (gUnk_02034928->unk_26) {
         case 0:
             if (gUnk_02034928->unk_0A == 20) {
-                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                     gUnk_02034928->unk_18, 18, 18, 18);
             }
             break;
         case 1:
             if (gUnk_02034928->unk_0A == 35) {
-                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                     gUnk_02034928->unk_18, 24, 24, 30);
             }
             break;
         case 2:
         default:
             if (gUnk_02034928->unk_0A == 50) {
-                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                     gUnk_02034928->unk_18, 48, 48, 52);
             }
             break;
@@ -481,8 +481,8 @@ void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA6D8, sx, sy);
@@ -535,8 +535,8 @@ void func_08013480(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     gUnk_02034928->unk_1C = 76;
@@ -571,8 +571,8 @@ void func_08013560(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     gUnk_02034928->unk_1C = 256;
@@ -593,8 +593,8 @@ void func_080135EC(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     gUnk_02034928->unk_1C = 128;
@@ -613,8 +613,8 @@ void func_08013678(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDA630, sx, sy);
@@ -628,8 +628,8 @@ void func_080136E0(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDAD38, sx, sy);
@@ -644,14 +644,14 @@ void func_08013748(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
 
     if (f != 0) {
         gUnk_02034928->unk_1C = -0x100;
     }
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDA648, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
 }
@@ -664,14 +664,14 @@ void func_080137C8(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x + 0x400;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x + 0x400;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
 
     if (f != 0) {
         gUnk_02034928->unk_1C = -0x100;
     }
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDA660, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
 }
@@ -683,8 +683,8 @@ void func_08013854(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDA678, sx, sy);
@@ -698,8 +698,8 @@ void func_080138BC(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     gUnk_02034928->unk_20 = 0x200;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
@@ -714,8 +714,8 @@ void func_0801392C(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDA720, sx, sy);
@@ -730,8 +730,8 @@ void func_08013994(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDA780, sx, sy);
@@ -746,8 +746,8 @@ void func_080139FC(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA930, sx, sy);
@@ -763,8 +763,8 @@ void func_08013A68(s32 x, s32 y, s32 z) {
     }
     func_08012674();
     gUnk_02034928->unk_4C = 20;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x3000;
     WorldToScreen(&sx, &sy, x, y, z - 0x3000);
     BgAnimStart(&gUnk_09EDA6C0, sx, sy);
@@ -781,10 +781,10 @@ void func_08013B00(void) {
 
     if (gUnk_02034928->unk_08 == 0 && BgAnimIsStopped()) {
         SetBlendAlpha(16, 16);
-        gUnk_02034928->unk_10 = gBtlWork->unk_000;
-        gUnk_02034928->unk_14 = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7;
+        gUnk_02034928->x = gBtlWork->unk_000;
+        gUnk_02034928->y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7;
         gUnk_02034928->unk_18 = gUnk_02034928->unk_30;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_4C = 20;
         gUnk_02034928->unk_34 |= 4;
@@ -797,17 +797,17 @@ void func_08013B00(void) {
 
         switch (gUnk_02034928->unk_26) {
         case 0:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 256, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 256, 256);
             BgAnimStart(&gUnk_09EDA798, sx, sy);
             m4aSongNumStart(0x201);
             break;
         case 1:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 256, 256, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 256, 256, 256);
             BgAnimStart(&gUnk_09EDA7B0, sx, sy);
             m4aSongNumStart(0x202);
             break;
         case 2:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 256, 256, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 256, 256, 256);
             BgAnimStart(&gUnk_09EDA7C8, sx, sy);
             m4aSongNumStart(0x203);
             break;
@@ -817,7 +817,7 @@ void func_08013B00(void) {
     } else if (gUnk_02034928->unk_08 == 1) {
         s32 t;
 
-        WorldToScreen(&sx2, &sy2, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+        WorldToScreen(&sx2, &sy2, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
         t = sy2 << 8;
         gUnk_02034928->unk_20 = t / 40;
 
@@ -835,8 +835,8 @@ void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_30 = p;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -878,8 +878,8 @@ void func_08013DB8(s32 x, s32 y, s32 z, s32 s) {
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
     SetBgBlend(gUnk_02034928->unk_00, 0, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA7F8, sx, sy);
@@ -900,8 +900,8 @@ void func_08013E4C(s32 x, s32 y, s32 z, s32 s) {
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
     SetBgBlend(gUnk_02034928->unk_00, 0, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA810, sx, sy);
@@ -921,8 +921,8 @@ void func_08013EDC(s32 x, s32 y, s32 z, s32 s) {
     func_08012674();
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA9D8, sx, sy);
@@ -942,8 +942,8 @@ void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c) {
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
     SetBgBlend(gUnk_02034928->unk_00, b, c);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = -0x1000;
     WorldToScreen(&sx, &sy, x, y, -0x1000);
     BgAnimStart(&gUnk_09EDA810, sx, sy);
@@ -967,8 +967,8 @@ void func_08014020(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA600, sx, sy);
@@ -980,8 +980,8 @@ void func_08014020(s32 x, s32 y, s32 z) {
 }
 
 void func_080140C0(s32* a, s32* b, s32* c) {
-    *a = gUnk_02034928->unk_10;
-    *b = gUnk_02034928->unk_14;
+    *a = gUnk_02034928->x;
+    *b = gUnk_02034928->y;
     *c = gUnk_02034928->unk_18;
 }
 
@@ -993,8 +993,8 @@ void func_080140E0(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA8E8, sx, sy);
@@ -1011,8 +1011,8 @@ void func_0801416C(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, z - 0x1000);
     BgAnimStart(&gUnk_09EDA888, sx, sy);
@@ -1021,9 +1021,9 @@ void func_0801416C(s32 x, s32 y, s32 z) {
 
 void func_080141D4(void) {
     BtlObj* p = gUnk_02034928->actor;
-    gUnk_02034928->unk_10 = p->unk_004;
-    gUnk_02034928->unk_14 = p->unk_008;
-    gUnk_02034928->unk_18 = p->unk_00C - 0x800;
+    gUnk_02034928->x = p->x;
+    gUnk_02034928->y = p->y;
+    gUnk_02034928->unk_18 = p->z - 0x800;
     func_08012908();
 }
 
@@ -1036,12 +1036,12 @@ void func_080141FC(BtlObj* p) {
     }
     func_08012674();
     gUnk_02034928->actor = p;
-    gUnk_02034928->unk_10 = p->unk_004;
-    gUnk_02034928->unk_14 = p->unk_008;
-    gUnk_02034928->unk_18 = p->unk_00C - 0x800;
+    gUnk_02034928->x = p->x;
+    gUnk_02034928->y = p->y;
+    gUnk_02034928->unk_18 = p->z - 0x800;
     gUnk_02034928->unk_1C = 0x133;
     gUnk_02034928->unk_20 = 0x133;
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDA768, sx, sy);
     BgAnimSetLoopStartFrame(4);
     gUnk_02034928->unk_04 = func_080141D4;
@@ -1067,7 +1067,7 @@ void func_08014294(void) {
             gUnk_02034928->unk_08 = 30;
         }
 
-        gUnk_02034928->unk_10 += (gUnk_02034928->unk_28 - gUnk_02034928->unk_10) >> 5;
+        gUnk_02034928->x += (gUnk_02034928->unk_28 - gUnk_02034928->x) >> 5;
         gUnk_02034928->unk_24 += 4;
         break;
     case 2:
@@ -1082,7 +1082,7 @@ void func_08014294(void) {
         break;
     }
 
-    func_08011F78(256, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 32, 32);
+    func_08011F78(256, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 32, 32);
     func_08012908();
 }
 void func_0801435C(s32 x, s32 y, s32 z, s32 w, s32 v) {
@@ -1093,8 +1093,8 @@ void func_0801435C(s32 x, s32 y, s32 z, s32 w, s32 v) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_28 = w;
     gUnk_02034928->unk_3C = v;
@@ -1154,8 +1154,8 @@ void func_080144D8(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b) {
     }
     func_08012674();
     SetBlendAlpha(16, 0);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_1C = w;
@@ -1181,8 +1181,8 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 paramA, s32 paramB) {
     }
     func_08012674();
     SetBlendAlpha(16, 0);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_1C = w;
@@ -1225,8 +1225,8 @@ void func_080146A8(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z - 0x1000;
     WorldToScreen(&sx, &sy, x, y, 0);
     gUnk_02034928->unk_1C = 512;
@@ -1241,14 +1241,14 @@ void func_080146A8(s32 x, s32 y, s32 z) {
 }
 
 void func_0801475C(s32 a, s32 b, s32 c) {
-    gUnk_02034928->unk_10 += a;
-    gUnk_02034928->unk_14 += b;
+    gUnk_02034928->x += a;
+    gUnk_02034928->y += b;
     gUnk_02034928->unk_18 += c;
 }
 
 void func_08014780(s32 a, s32 b, s32 c) {
-    gUnk_02034928->unk_10 = a;
-    gUnk_02034928->unk_14 = b;
+    gUnk_02034928->x = a;
+    gUnk_02034928->y = b;
     gUnk_02034928->unk_18 = c;
 }
 
@@ -1280,8 +1280,8 @@ void func_080147D8(s32 x, s32 y) {
     }
     func_08012674();
     SetBgBlend(gUnk_02034928->unk_00, 5, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     BgAnimStart(&gUnk_09EDA900, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
@@ -1296,7 +1296,7 @@ void func_08014850(void) {
 #else
         if (gUnk_02034928->unk_08 == 21) {
 #endif
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 48);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 16, 16, 48);
         }
         break;
     case 1:
@@ -1305,12 +1305,12 @@ void func_08014850(void) {
 #else
         if (gUnk_02034928->unk_08 == 25) {
 #endif
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 24, 24, 48);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 24, 24, 48);
         }
         break;
     case 2:
         if (gUnk_02034928->unk_08 == 33) {
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 32, 48);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 32, 48);
         }
         break;
     }
@@ -1327,8 +1327,8 @@ void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w) {
     }
     func_08012674();
     gUnk_02034928->unk_4C = 20;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     gUnk_02034928->unk_26 = a;
@@ -1360,8 +1360,8 @@ void func_080149BC(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     BgAnimStart(&gUnk_09EDA948, sx, sy);
     BgAnimSetLoopStartFrame(8);
@@ -1377,8 +1377,8 @@ void func_08014A34(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     BgAnimStart(&gUnk_09EDA960, sx, sy);
     BgAnimSetLoopStartFrame(7);
@@ -1394,8 +1394,8 @@ void func_08014AAC(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     m4aSongNumStart(0x20E);
     BgAnimStart(&gUnk_09EDAA50, sx, sy);
@@ -1412,8 +1412,8 @@ void func_08014B30(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     BgAnimStart(&gUnk_09EDA7E0, sx, sy);
     BgAnimSetLoopStartFrame(0);
@@ -1435,10 +1435,10 @@ void func_08014BA8(void) {
     }
 
     if (gUnk_02034928->unk_0A == 0 && BgAnimIsStopped()) {
-        gUnk_02034928->unk_10 = gUnk_02034928->unk_28;
-        gUnk_02034928->unk_14 = gUnk_02034928->unk_2C;
+        gUnk_02034928->x = gUnk_02034928->unk_28;
+        gUnk_02034928->y = gUnk_02034928->unk_2C;
         gUnk_02034928->unk_18 = gUnk_02034928->unk_30;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_10, gUnk_02034928->unk_18);
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->x, gUnk_02034928->unk_18);
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_4C = 20;
 
@@ -1476,14 +1476,14 @@ void func_08014BA8(void) {
         if (gUnk_02034928->unk_08 == 35) {
             switch (gUnk_02034928->unk_26) {
             case 0:
-                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 24, 12, 256);
+                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 24, 12, 256);
                 break;
             case 1:
-                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 40, 20, 256);
+                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 40, 20, 256);
                 break;
             case 2:
             default:
-                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 80, 40, 256);
+                r = func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 80, 40, 256);
                 break;
             }
 
@@ -1506,8 +1506,8 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
     }
     func_08012674();
     SetBlendAlpha(2, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_28 = p;
     gUnk_02034928->unk_2C = q;
@@ -1519,7 +1519,7 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         gUnk_02034928->unk_34 |= 1;
     }
     gUnk_02034928->unk_0A = 0;
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDA978, sx, sy);
     m4aSongNumStart(0x232);
     gUnk_02034928->unk_26 = a;
@@ -1535,7 +1535,7 @@ void func_08014E38(void) {
     }
 
     if (gUnk_02034928->unk_08 == 0x23) {
-        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 40, 20, 256)) {
+        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 40, 20, 256)) {
             m4aSongNumStart(0x234);
         }
     }
@@ -1552,8 +1552,8 @@ void func_08014EC0(s32 x, s32 y, s32 z, s32 w) {
     }
     func_08012674();
     SetBlendAlpha(2, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     gUnk_02034928->unk_0A = 0;
@@ -1569,9 +1569,9 @@ void func_08014F4C(void) {
     gUnk_02034928->unk_24 += 3;
 
     if (gUnk_02034928->unk_34 & 1) {
-        gUnk_02034928->unk_10 += -0x300;
+        gUnk_02034928->x += -0x300;
     } else {
-        gUnk_02034928->unk_10 += 0x300;
+        gUnk_02034928->x += 0x300;
     }
     func_08012908();
     SetBlendAlpha(16, 8 - gUnk_02034928->unk_0A);
@@ -1594,14 +1594,14 @@ void func_08014FDC(s32 x, s32 y, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y - 0x1000;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y - 0x1000;
     SetBlendAlpha(16, 8);
 
     if (f) {
         gUnk_02034928->unk_34 |= 1;
     }
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, 0);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, 0);
     gUnk_02034928->unk_1C = 128;
     gUnk_02034928->unk_20 = 128;
     gUnk_02034928->unk_24 = 0;
@@ -1635,8 +1635,8 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f) {
     }
     func_08012674();
     SetBlendAlpha(16, 16);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = 0x100;
     gUnk_02034928->unk_20 = 0x100;
@@ -1695,8 +1695,8 @@ void func_08015228(s32 x, s32 y, s32 z, s32 s) {
     }
     func_08012674();
     SetBlendAlpha(16, 0);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     gUnk_02034928->unk_1C = s;
@@ -1771,8 +1771,8 @@ void func_080153C8(void) {
         }
         break;
     case 1:
-        ApproachValue(&gUnk_02034928->unk_10, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
-        ApproachValue(&gUnk_02034928->unk_14, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
+        ApproachValue(&gUnk_02034928->x, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
+        ApproachValue(&gUnk_02034928->y, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
         ApproachValue(&gUnk_02034928->unk_18, gUnk_02034928->unk_30, gUnk_02034928->unk_08);
         ApproachValue(&gUnk_02034928->unk_1C, gUnk_02034928->unk_3C, gUnk_02034928->unk_08);
         gUnk_02034928->unk_20 = gUnk_02034928->unk_1C;
@@ -1781,7 +1781,7 @@ void func_080153C8(void) {
         if (gUnk_02034928->unk_08 <= 0) {
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26 = 2;
-        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, u, u, u)) {
+        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, u, u, u)) {
             m4aSongNumStart(0x27F);
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26 = 2;
@@ -1814,8 +1814,8 @@ void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t
     }
     func_08012674();
     SetBlendAlpha(16, 0);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_28 = p;
     gUnk_02034928->unk_2C = q;
@@ -1842,8 +1842,8 @@ void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     t = sy << 8;
@@ -1854,7 +1854,7 @@ void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
     }
     BgAnimStart(&gUnk_09EDA798, sx, sy);
     m4aSongNumStart(0x201);
-    func_08011F78(w, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 256);
+    func_08011F78(w, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 16, 16, 256);
     gUnk_02034928->unk_04 = func_08012908;
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
@@ -1867,10 +1867,10 @@ void func_08015698(void) {
 
     if (gUnk_02034928->unk_08 == 0 && BgAnimIsStopped()) {
         SetBlendAlpha(16, 16);
-        gUnk_02034928->unk_10 = gUnk_02034928->unk_28;
-        gUnk_02034928->unk_14 = gUnk_02034928->unk_2C;
+        gUnk_02034928->x = gUnk_02034928->unk_28;
+        gUnk_02034928->y = gUnk_02034928->unk_2C;
         gUnk_02034928->unk_18 = gUnk_02034928->unk_30;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_1C = 384;
         gUnk_02034928->unk_20 = (sy << 8) / 40;
@@ -1883,17 +1883,17 @@ void func_08015698(void) {
 
         switch (gUnk_02034928->unk_26) {
         case 0:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 16, 16, 256);
             BgAnimStart(&gUnk_09EDA798, sx, sy);
             m4aSongNumStart(0x201);
             break;
         case 1:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 40, 40, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 40, 40, 256);
             BgAnimStart(&gUnk_09EDA7B0, sx, sy);
             m4aSongNumStart(0x202);
             break;
         case 2:
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 64, 64, 256);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 64, 64, 256);
             BgAnimStart(&gUnk_09EDA7C8, sx, sy);
             m4aSongNumStart(0x203);
             break;
@@ -1903,7 +1903,7 @@ void func_08015698(void) {
     } else if (gUnk_02034928->unk_08 == 1) {
         s32 t;
 
-        WorldToScreen(&sx2, &sy2, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+        WorldToScreen(&sx2, &sy2, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
         t = sy2 << 8;
         gUnk_02034928->unk_20 = t / 40;
 
@@ -1921,8 +1921,8 @@ void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_28 = p;
     gUnk_02034928->unk_2C = q;
@@ -1958,10 +1958,10 @@ void func_080158E8(void) {
         t *= 44;
 
         if (gUnk_02034928->unk_34 & 1) {
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 + t, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x + t, gUnk_02034928->y,
                 gUnk_02034928->unk_18, t << 8 >> 16, 24, 24);
         } else {
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 - t, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x - t, gUnk_02034928->y,
                 gUnk_02034928->unk_18, t << 8 >> 16, 24, 24);
         }
         SetBlendAlpha(16, gUnk_02034928->unk_3C >> 8);
@@ -1990,11 +1990,11 @@ void func_080158E8(void) {
 
         if (gUnk_02034928->unk_34 & 1) {
             gUnk_02034928->unk_40 = -gSineTable[(v * 4) & 0xFF] * 6;
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 + t, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x + t, gUnk_02034928->y,
                 gUnk_02034928->unk_18, t << 8 >> 16, 24, 24);
         } else {
             gUnk_02034928->unk_40 = gSineTable[(v * 4) & 0xFF] * 6;
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 - t, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x - t, gUnk_02034928->y,
                 gUnk_02034928->unk_18, t << 8 >> 16, 24, 24);
         }
         gUnk_02034928->unk_24 = gUnk_02034928->unk_40 >> 8;
@@ -2042,8 +2042,8 @@ void func_08015B50(u16 a, s32 x, s32 y, s32 z, u8 f, s32 w) {
         gUnk_02034928->unk_34 |= 1;
     }
 
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -2086,8 +2086,8 @@ void func_08015C80(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     gUnk_02034928->unk_1C = 76;
@@ -2113,8 +2113,8 @@ void func_08015D30(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = 0x100;
     gUnk_02034928->unk_20 = 0x100;
@@ -2134,8 +2134,8 @@ void func_08015DC8(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     gUnk_02034928->unk_1C = 0x200;
@@ -2169,8 +2169,8 @@ void func_08015E3C(void) {
         t = gUnk_02034928->unk_08;
 
         if ((s16)t > 32) {
-            func_08011F78(87, gUnk_02034928->unk_10, gUnk_02034928->unk_14, 0, 0x100, 0x100, 0x100);
-            func_08019050(1, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08011F78(87, gUnk_02034928->x, gUnk_02034928->y, 0, 0x100, 0x100, 0x100);
+            func_08019050(1, 0x100, gBtlWork->x2, gBtlWork->y2);
             FadeStartIn(2, 60);
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26++;
@@ -2202,11 +2202,11 @@ void func_08015F3C(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     SetBlendAlpha(16, 0);
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     gUnk_02034928->unk_1C = 0x300;
     gUnk_02034928->unk_20 = 0x300;
     BgAnimStart(&gUnk_09EDAAB0, sx, sy);
@@ -2236,8 +2236,8 @@ void func_08016038(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     gUnk_02034928->unk_1C = 0x19;
@@ -2258,7 +2258,7 @@ void func_080160C0(void) {
 
     switch (k) {
     case 4:
-        func_08011F78(91, gUnk_02034928->unk_10 + gUnk_02034928->unk_1C * 40, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 32, 50);
+        func_08011F78(91, gUnk_02034928->x + gUnk_02034928->unk_1C * 40, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 32, 50);
         break;
     case 5:
         if (v == 0) {
@@ -2277,22 +2277,22 @@ void func_080160C0(void) {
         gUnk_02034928->unk_3C += 51;
 
         if (gUnk_02034928->unk_34 & 1) {
-            gUnk_02034928->unk_10 -= gUnk_02034928->unk_3C;
+            gUnk_02034928->x -= gUnk_02034928->unk_3C;
         } else {
-            gUnk_02034928->unk_10 += gUnk_02034928->unk_3C;
+            gUnk_02034928->x += gUnk_02034928->unk_3C;
         }
         break;
     case 2:
         gUnk_02034928->unk_3C += 51;
 
         if (gUnk_02034928->unk_34 & 1) {
-            gUnk_02034928->unk_10 -= gUnk_02034928->unk_3C;
+            gUnk_02034928->x -= gUnk_02034928->unk_3C;
             gUnk_02034928->unk_1C -= 51;
         } else {
-            gUnk_02034928->unk_10 += gUnk_02034928->unk_3C;
+            gUnk_02034928->x += gUnk_02034928->unk_3C;
             gUnk_02034928->unk_1C += 51;
         }
-        func_08011F78(91, gUnk_02034928->unk_10 + gUnk_02034928->unk_1C * 40, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 32, 50);
+        func_08011F78(91, gUnk_02034928->x + gUnk_02034928->unk_1C * 40, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 32, 50);
 
         if (gUnk_02034928->unk_08 > 20) {
             t = 36 - gUnk_02034928->unk_08;
@@ -2315,8 +2315,8 @@ void func_080161F8(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     gUnk_02034928->unk_26 = 0;
@@ -2340,8 +2340,8 @@ void func_080162A8(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAA20, sx, sy);
@@ -2434,9 +2434,9 @@ void func_08016468(void) {
         o = func_08016320();
 
         if (o != 0) {
-            ApproachValueHalfSteps(&gUnk_02034928->unk_10, o->unk_004, gUnk_02034928->unk_0A);
-            ApproachValueHalfSteps(&gUnk_02034928->unk_14, o->unk_008, gUnk_02034928->unk_0A);
-            ApproachValueHalfSteps(&gUnk_02034928->unk_18, o->unk_00C - (o->unk_0A2 << 8), gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->x, o->x, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->y, o->y, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_18, o->z - (o->unk_0A2 << 8), gUnk_02034928->unk_0A);
         }
         gUnk_02034928->unk_0A--;
 
@@ -2473,8 +2473,8 @@ void func_080165DC(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_30 = z;
     gUnk_02034928->unk_26 = 0;
@@ -2496,8 +2496,8 @@ void func_08016684(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAB70, sx, sy);
@@ -2530,8 +2530,8 @@ void func_08016750(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAA20, sx, sy);
@@ -2589,8 +2589,8 @@ void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_0A = a;
     gUnk_02034928->unk_26 = 0;
@@ -2620,8 +2620,8 @@ void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_0A = 45;
@@ -2642,14 +2642,14 @@ void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
 
 void func_08016A64(void) {
     if (gUnk_02034928->unk_34 & 1) {
-        gUnk_02034928->unk_10 += 0x700;
+        gUnk_02034928->x += 0x700;
     } else {
-        gUnk_02034928->unk_10 += -0x700;
+        gUnk_02034928->x += -0x700;
     }
 
-    if (gUnk_02034928->unk_10 < (gBtlWork->unk_0DA - 0x40) << 8 || gUnk_02034928->unk_10 > (gBtlWork->unk_0DC + 0x40) << 8) {
+    if (gUnk_02034928->x < (gBtlWork->unk_0DA - 0x40) << 8 || gUnk_02034928->x > (gBtlWork->unk_0DC + 0x40) << 8) {
         BgAnimStop();
-    } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 48)) {
+    } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 16, 16, 48)) {
         m4aSongNumStart(0x27F);
     }
     func_08012908();
@@ -2663,8 +2663,8 @@ void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -2691,8 +2691,8 @@ void func_08016BCC(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
     BgAnimStart(&gUnk_09EDA888, sx, sy);
     gUnk_02034928->unk_1C = 0x900;
@@ -2707,13 +2707,13 @@ void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_0A = a;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_24 = f;
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDAB28, sx, sy);
     gUnk_02034928->unk_20 = w;
     gUnk_02034928->unk_04 = func_0801519C;
@@ -2737,19 +2737,19 @@ void func_08016D00(void) {
             ang = gUnk_02034928->unk_24;
 
             if (gUnk_02034928->unk_34 & 1) {
-                ApproachAngle(&ang, GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                ApproachAngle(&ang, GetAngle(gUnk_02034928->x, gUnk_02034928->y,
                                              gUnk_02034928->unk_28, gUnk_02034928->unk_2C) + 64, 5);
             } else {
-                ApproachAngle(&ang, GetAngle(gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+                ApproachAngle(&ang, GetAngle(gUnk_02034928->x, gUnk_02034928->y,
                                              gUnk_02034928->unk_28, gUnk_02034928->unk_2C) - 64, 5);
             }
 
             gUnk_02034928->unk_24 = ang;
-            ApproachValue(&gUnk_02034928->unk_10, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
-            ApproachValue(&gUnk_02034928->unk_14, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->x, gUnk_02034928->unk_28, gUnk_02034928->unk_08);
+            ApproachValue(&gUnk_02034928->y, gUnk_02034928->unk_2C, gUnk_02034928->unk_08);
             ApproachValue(&gUnk_02034928->unk_18, gUnk_02034928->unk_30, gUnk_02034928->unk_08);
 
-            if (func_08011E3C(gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18,
+            if (func_08011E3C(gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18,
                               8, 8, 16)) {
                 gUnk_02034928->unk_08 = -1;
             } else {
@@ -2764,7 +2764,7 @@ void func_08016D00(void) {
                 dx = t * -7;
             }
 
-            if (func_08011E3C(gUnk_02034928->unk_10 + dx, gUnk_02034928->unk_14,
+            if (func_08011E3C(gUnk_02034928->x + dx, gUnk_02034928->y,
                               gUnk_02034928->unk_18, 8, 8, 16)) {
                 gUnk_02034928->unk_08 = -1;
             }
@@ -2781,9 +2781,9 @@ void func_08016D00(void) {
         gUnk_02034928->unk_24 = 0;
         gUnk_02034928->unk_1C = 0x500;
         gUnk_02034928->unk_20 = 0x500;
-        gUnk_02034928->unk_10 += dx;
+        gUnk_02034928->x += dx;
         gUnk_02034928->unk_4C = 20;
-        WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+        WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y,
                       gUnk_02034928->unk_18);
         BgAnimStart(&gUnk_09EDA600, sx, sy);
         m4aSongNumStart(0x1FB);
@@ -2792,7 +2792,7 @@ void func_08016D00(void) {
         break;
     case -2:
         if (gUnk_02034928->unk_0A == 7) {
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                           gUnk_02034928->unk_18, 256, 256, 256);
         }
 
@@ -2812,8 +2812,8 @@ void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA570, sx, sy);
@@ -2844,8 +2844,8 @@ void func_08017008(s32 x, s32 y, s32 z) {
     func_08012674();
     gUnk_02034928->unk_1C = 0x180;
     gUnk_02034928->unk_20 = 0x180;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA858, sx, sy);
@@ -2930,8 +2930,8 @@ void func_08017260(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
@@ -2951,8 +2951,8 @@ void func_080172F8(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
@@ -2971,8 +2971,8 @@ void func_08017390(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAB88, sx, sy);
@@ -3008,7 +3008,7 @@ void func_08017410(void) {
     case 1: {
         u16 t;
 
-        func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 32, 16, 256);
+        func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 32, 16, 256);
         t = gUnk_02034928->unk_08;
 
         if ((s16)t > gUnk_02034928->unk_0A) {
@@ -3045,8 +3045,8 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_0A = 120;
     gUnk_02034928->unk_0C = 60;
@@ -3070,36 +3070,36 @@ void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
     s32 ny;
 
     if (d) {
-        b->unk_0B0 = GetAngle(a->unk_004, a->unk_008, b->unk_004, b->unk_008);
+        b->unk_0B0 = GetAngle(a->x, a->y, b->x, b->y);
         b->unk_0A8 = 0;
     }
-    dx = b->unk_004 - gUnk_02034928->unk_10;
+    dx = b->x - gUnk_02034928->x;
 
-    if (dx >= 0 ? dx <= 0x4FFF : gUnk_02034928->unk_10 - b->unk_004 <= 0x4FFF) {
-        dy = b->unk_008 - gUnk_02034928->unk_14;
+    if (dx >= 0 ? dx <= 0x4FFF : gUnk_02034928->x - b->x <= 0x4FFF) {
+        dy = b->y - gUnk_02034928->y;
 
-        if (dy >= 0 ? dy <= 0x27FF : gUnk_02034928->unk_14 - b->unk_008 <= 0x27FF) {
+        if (dy >= 0 ? dy <= 0x27FF : gUnk_02034928->y - b->y <= 0x27FF) {
             if (gUnk_02034928->unk_34 & 1) {
-                h = b->unk_0A8 - ((gUnk_02034928->unk_10 - b->unk_004) >> 1);
+                h = b->unk_0A8 - ((gUnk_02034928->x - b->x) >> 1);
             } else {
-                h = b->unk_0A8 + ((gUnk_02034928->unk_10 - b->unk_004) >> 1);
+                h = b->unk_0A8 + ((gUnk_02034928->x - b->x) >> 1);
             }
 
             if (h > 0) {
                 h = 0;
             }
             t = -(h >> 9);
-            nx = gUnk_02034928->unk_10 + gSineTable[(b->unk_0B0 + c) & 0xFF] * (s16)t;
-            ny = gUnk_02034928->unk_14 + -gSineTable[((b->unk_0B0 + c) & 0xFF) + 64] * ((s16)t >> 1);
+            nx = gUnk_02034928->x + gSineTable[(b->unk_0B0 + c) & 0xFF] * (s16)t;
+            ny = gUnk_02034928->y + -gSineTable[((b->unk_0B0 + c) & 0xFF) + 64] * ((s16)t >> 1);
 
-            if (b->unk_004 < nx) {
+            if (b->x < nx) {
                 b->unk_034 &= ~4;
             } else {
                 b->unk_034 |= 4;
             }
-            b->unk_004 += (nx - b->unk_004) >> 3;
-            b->unk_008 += (ny - b->unk_008) >> 3;
-            b->unk_00C += (h - b->unk_00C) >> 2;
+            b->x += (nx - b->x) >> 3;
+            b->y += (ny - b->y) >> 3;
+            b->z += (h - b->z) >> 2;
             b->unk_0A8 -= 110;
         }
     }
@@ -3178,7 +3178,7 @@ void func_080177EC(void) {
         if (gUnk_02034928->unk_08 > gUnk_02034928->unk_0A) {
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26 = 2;
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14,
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y,
                           gUnk_02034928->unk_18, 40, 20, 256);
         } else {
             gUnk_02034928->unk_08++;
@@ -3208,15 +3208,15 @@ void func_080177EC(void) {
     }
 
     if (gUnk_02034928->unk_34 & 1) {
-        gUnk_02034928->unk_10 -= 102;
+        gUnk_02034928->x -= 102;
     } else {
-        gUnk_02034928->unk_10 += 102;
+        gUnk_02034928->x += 102;
     }
 
     gUnk_02034928->unk_3C = 0;
-    func_0801C6D4(&gUnk_02034928->unk_10, &gUnk_02034928->unk_14, &gUnk_02034928->unk_18,
+    func_0801C6D4(&gUnk_02034928->x, &gUnk_02034928->y, &gUnk_02034928->unk_18,
                   &gUnk_02034928->unk_3C);
-    ClampBattlePosition(&gUnk_02034928->unk_10, &gUnk_02034928->unk_14, -16, 0);
+    ClampBattlePosition(&gUnk_02034928->x, &gUnk_02034928->y, -16, 0);
     func_08012908();
 }
 void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
@@ -3227,8 +3227,8 @@ void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_0A = 220;
     gUnk_02034928->unk_0C = 0;
@@ -3270,9 +3270,9 @@ void func_08017AC0(void) {
 
         if (v > 7) {
 #ifdef VERSION_EU
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14 + 0x1000, 0, 0x100, 0x100, 0x100);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y + 0x1000, 0, 0x100, 0x100, 0x100);
 #else
-            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14 + 0x1000, 0, 0x100, 0x100, 8);
+            func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y + 0x1000, 0, 0x100, 0x100, 8);
 #endif
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26 = 2;
@@ -3301,13 +3301,13 @@ void func_08017B74(s32 x, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = gBtlWork->unk_0DE << 8;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = gBtlWork->unk_0DE << 8;
     gUnk_02034928->unk_18 = 0;
     gUnk_02034928->unk_48 = w;
     gUnk_02034928->unk_1C = 10;
     gUnk_02034928->unk_20 = -((gBtlWork->unk_0E0 - gBtlWork->unk_0DE) << 8) / 96;
-    WorldToScreen(&sx, &sy, x, gUnk_02034928->unk_14, 0);
+    WorldToScreen(&sx, &sy, x, gUnk_02034928->y, 0);
     BgAnimStart(&gUnk_09EDAC00, sx, sy);
     gUnk_02034928->unk_34 |= 0x20;
     gUnk_02034928->unk_26 = 0;
@@ -3320,7 +3320,7 @@ void func_08017B74(s32 x, s32 w) {
 void func_08017C54(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
-        ApproachValue(&gUnk_02034928->unk_10, gUnk_02034928->unk_28, gUnk_02034928->unk_0A);
+        ApproachValue(&gUnk_02034928->x, gUnk_02034928->unk_28, gUnk_02034928->unk_0A);
 
         if (gUnk_02034928->unk_34 & 1) {
             ApproachValue(&gUnk_02034928->unk_1C, -256, gUnk_02034928->unk_0A);
@@ -3338,24 +3338,24 @@ void func_08017C54(void) {
         break;
     case 1:
         if (gUnk_02034928->unk_34 & 1) {
-            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 - 0x1000, gUnk_02034928->unk_14 + 0x2000, 0, 20, 32, 64) || func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 + 0x1000, gUnk_02034928->unk_14 - 0x2000, 0, 20, 32, 64)) {
+            if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x - 0x1000, gUnk_02034928->y + 0x2000, 0, 20, 32, 64) || func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x + 0x1000, gUnk_02034928->y - 0x2000, 0, 20, 32, 64)) {
                 gUnk_02034928->unk_26 = 2;
                 m4aSongNumStart(0x1F9);
             }
-        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 - 0x1000, gUnk_02034928->unk_14 - 0x2000, 0, 20, 32, 64)) {
+        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x - 0x1000, gUnk_02034928->y - 0x2000, 0, 20, 32, 64)) {
             gUnk_02034928->unk_26 = 2;
             m4aSongNumStart(0x1F9);
-        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10 + 0x1000, gUnk_02034928->unk_14 + 0x2000, 0, 20, 32, 64)) {
+        } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x + 0x1000, gUnk_02034928->y + 0x2000, 0, 20, 32, 64)) {
             gUnk_02034928->unk_26 = 2;
             m4aSongNumStart(0x1F9);
         }
 
         if (gUnk_02034928->unk_34 & 1) {
-            if (gBtlWork->actor->unk_004 < gUnk_02034928->unk_10) {
+            if (gBtlWork->actor->x < gUnk_02034928->x) {
                 gUnk_02034928->unk_26 = 2;
             }
         } else {
-            if (gBtlWork->actor->unk_004 > gUnk_02034928->unk_10) {
+            if (gBtlWork->actor->x > gUnk_02034928->x) {
                 gUnk_02034928->unk_26 = 2;
             }
         }
@@ -3381,12 +3381,12 @@ void func_08017E18(s32 x, u8 f, s32 w) {
     }
     func_08012674();
     gUnk_02034928->unk_26 = 0;
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7;
     gUnk_02034928->unk_18 = 0;
     gUnk_02034928->unk_48 = w;
     gUnk_02034928->unk_0A = 20;
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, 0);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, 0);
     BgAnimStart(&gUnk_09EDAC60, sx, sy);
 
     if (f) {
@@ -3413,7 +3413,7 @@ void func_08017EF4(void) {
 
     if (k <= 4) {
         t = (gUnk_02034928->unk_1C * 5) >> 5;
-        if (func_08011F78(0x13D, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, (s16)t, (s16)t >> 1, 1)) {
+        if (func_08011F78(0x13D, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, (s16)t, (s16)t >> 1, 1)) {
             m4aSongNumStart(0x2AB);
         }
     }
@@ -3428,8 +3428,8 @@ void func_08017F70(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -3451,8 +3451,8 @@ void func_0801801C(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -3480,7 +3480,7 @@ void func_080180C8(void) {
         gUnk_02034928->unk_08 = 0;
         gUnk_02034928->unk_26 = 2;
 
-        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 0x100, 0x100, 0x100)) {
+        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 0x100, 0x100, 0x100)) {
             m4aSongNumStart(0x2AF);
         }
         break;
@@ -3508,8 +3508,8 @@ void func_08018184(s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     WorldToScreen(&sx, &sy, x, y, z);
@@ -3535,10 +3535,10 @@ void func_08018240(void) {
     } else {
         gUnk_02034928->unk_24 -= 3;
     }
-    gUnk_02034928->unk_10 = gUnk_02034928->unk_28 + ((gSineTable[gUnk_02034928->unk_24] * gUnk_02034928->unk_3C) >> 8);
+    gUnk_02034928->x = gUnk_02034928->unk_28 + ((gSineTable[gUnk_02034928->unk_24] * gUnk_02034928->unk_3C) >> 8);
     gUnk_02034928->unk_18 = gUnk_02034928->unk_30 + ((-gSineTable[gUnk_02034928->unk_24 + 64] * gUnk_02034928->unk_3C) >> 8);
 
-    if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 10, 5, 72)) {
+    if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, 10, 5, 72)) {
         m4aSongNumStart(0x2AD);
     }
 
@@ -3598,13 +3598,13 @@ void func_0801836C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     gUnk_02034928->unk_30 = z;
     d = abs(w);
     gUnk_02034928->unk_3C = d;
-    gUnk_02034928->unk_10 = x + ((gSineTable[0] * d) >> 8);
+    gUnk_02034928->x = x + ((gSineTable[0] * d) >> 8);
     gUnk_02034928->unk_18 = z + ((-gSineTable[64] * d) >> 8);
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_20 = 0x180;
     SetBlendAlpha(16, 0);
     m4aSongNumStart(0x2AC);
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDACD8, sx, sy);
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_04 = func_08018240;
@@ -3631,11 +3631,11 @@ void func_080184C4(s32 x, s32 y, s32 z, u8 f) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_24 = f;
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     BgAnimStart(&gUnk_09EDACA8, sx, sy);
     gUnk_02034928->unk_34 |= 0x20;
     gUnk_02034928->unk_04 = func_0801848C;
@@ -3648,8 +3648,8 @@ void func_0801853C(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
@@ -3700,16 +3700,16 @@ void func_080185D0(void) {
     } else {
         ang = gUnk_02034928->unk_24 + 64;
     }
-    x = gUnk_02034928->unk_10 + gSineTable[ang] * r;
+    x = gUnk_02034928->x + gSineTable[ang] * r;
     z = gUnk_02034928->unk_18 + -gSineTable[ang + 64] * r;
-    y = gUnk_02034928->unk_14;
+    y = gUnk_02034928->y;
     func_08011F78(gUnk_02034928->unk_48, x, y, z, 32, 16, 16);
     o = gBtlWork->actor;
 
     if (o->unk_034 & 0x2000) {
-        o->unk_004 += (x - o->unk_004) >> 2;
-        o->unk_008 += (y - o->unk_008) >> 2;
-        o->unk_00C += (z - o->unk_00C) >> 1;
+        o->x += (x - o->x) >> 2;
+        o->y += (y - o->y) >> 2;
+        o->z += (z - o->z) >> 1;
     }
     func_08012908();
 }
@@ -3721,8 +3721,8 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_0A = 80;
@@ -3738,16 +3738,16 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
     }
 
     if (gUnk_02034928->unk_34 & 1) {
-        if (gUnk_02034928->unk_10 < gBtlWork->actor->unk_004) {
+        if (gUnk_02034928->x < gBtlWork->actor->x) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = -(((gUnk_02034928->unk_10 - gBtlWork->actor->unk_004) << 8) / 19200);
+            gUnk_02034928->unk_1C = -(((gUnk_02034928->x - gBtlWork->actor->x) << 8) / 19200);
         }
     } else {
-        if (gUnk_02034928->unk_10 > gBtlWork->actor->unk_004) {
+        if (gUnk_02034928->x > gBtlWork->actor->x) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = ((gBtlWork->actor->unk_004 - gUnk_02034928->unk_10) << 8) / 19200;
+            gUnk_02034928->unk_1C = ((gBtlWork->actor->x - gUnk_02034928->x) << 8) / 19200;
         }
     }
     BgAnimSetLoopStartFrame(3);
@@ -3776,7 +3776,7 @@ void func_0801884C(void) {
 
     if (gUnk_02034928->unk_08 == 10) {
         t = (gUnk_02034928->unk_1C * 3) >> 4;
-        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, t, t, 100)) {
+        if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18, t, t, 100)) {
             m4aSongNumStart(0x2BB);
         }
     }
@@ -3792,8 +3792,8 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_48 = w;
     gUnk_02034928->unk_26 = a;
@@ -3812,8 +3812,8 @@ void func_08018970(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAD50, sx, sy);
@@ -3827,8 +3827,8 @@ void func_080189DC(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
@@ -3846,8 +3846,8 @@ void func_08018A70(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = -s;
     gUnk_02034928->unk_20 = s;
@@ -3865,8 +3865,8 @@ void func_08018B04(s32 x, s32 y, s32 z, s32 s) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_1C = s;
     gUnk_02034928->unk_20 = s;
@@ -3916,8 +3916,8 @@ void func_08018C38(s32 x, s32 y, s32 z) {
     }
     func_08012674();
     SetBlendAlpha(16, 0);
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_1C = 10;
@@ -3934,43 +3934,43 @@ void func_08018CC4(void) {
     if (gUnk_02034928->unk_08 > 10) {
         switch (gUnk_02034928->unk_26) {
         case 0:
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x6000, gUnk_02034928->unk_14 - 0x1000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x6000, gUnk_02034928->y - 0x1000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10, gUnk_02034928->unk_14 + 0x2000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x, gUnk_02034928->y + 0x2000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x7000, gUnk_02034928->unk_14 - 0x1000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x7000, gUnk_02034928->y - 0x1000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x3000, gUnk_02034928->unk_14 + 0x2000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x3000, gUnk_02034928->y + 0x2000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x3000, gUnk_02034928->unk_14 + 0x2800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x3000, gUnk_02034928->y + 0x2800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x6000, gUnk_02034928->unk_14 + 0x6000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x6000, gUnk_02034928->y + 0x6000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x800, gUnk_02034928->unk_14 + 0x7800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x800, gUnk_02034928->y + 0x7800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x3000, gUnk_02034928->unk_14 + 0x2800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x3000, gUnk_02034928->y + 0x2800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x6800, gUnk_02034928->unk_14 + 0x6800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x6800, gUnk_02034928->y + 0x6800, gUnk_02034928->unk_18,
                 14, 14, 14);
             break;
         case 1:
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x6000, gUnk_02034928->unk_14 - 0x1000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x6000, gUnk_02034928->y - 0x1000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10, gUnk_02034928->unk_14 + 0x2000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x, gUnk_02034928->y + 0x2000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x7000, gUnk_02034928->unk_14 - 0x1000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x7000, gUnk_02034928->y - 0x1000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x3000, gUnk_02034928->unk_14 + 0x2000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x3000, gUnk_02034928->y + 0x2000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x3000, gUnk_02034928->unk_14 + 0x2800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x3000, gUnk_02034928->y + 0x2800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 + 0x6000, gUnk_02034928->unk_14 + 0x6000, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x + 0x6000, gUnk_02034928->y + 0x6000, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x800, gUnk_02034928->unk_14 + 0x7800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x800, gUnk_02034928->y + 0x7800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x3000, gUnk_02034928->unk_14 + 0x2800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x3000, gUnk_02034928->y + 0x2800, gUnk_02034928->unk_18,
                 14, 14, 14);
-            func_08011F78(11, gUnk_02034928->unk_10 - 0x6800, gUnk_02034928->unk_14 + 0x6800, gUnk_02034928->unk_18,
+            func_08011F78(11, gUnk_02034928->x - 0x6800, gUnk_02034928->y + 0x6800, gUnk_02034928->unk_18,
                 14, 14, 14);
             break;
         }
@@ -3986,11 +3986,11 @@ void func_08018F28(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     m4aSongNumStart(0x2C1);
-    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    WorldToScreen(&sx, &sy, gUnk_02034928->x, gUnk_02034928->y, gUnk_02034928->unk_18);
     gUnk_02034928->unk_26 = GetRandom() % 2;
     switch (gUnk_02034928->unk_26) {
     case 0:
@@ -4012,8 +4012,8 @@ void func_08018FE4(s32 x, s32 y, s32 z) {
         return;
     }
     func_08012674();
-    gUnk_02034928->unk_10 = x;
-    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->x = x;
+    gUnk_02034928->y = y;
     gUnk_02034928->unk_18 = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDADB0, sx, sy);

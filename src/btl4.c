@@ -618,7 +618,7 @@ void task_btl_vslockon_2(BtlVslockonWork* work) {
 
     p = gBtlWork->actor2;
     if (p != 0) {
-        WorldToScreen(&x, &y, p->unk_004, p->unk_008, p->unk_00C - (p->unk_0A2 << 8));
+        WorldToScreen(&x, &y, p->x, p->y, p->z - (p->unk_0A2 << 8));
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 0x100);
     }
 }

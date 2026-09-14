@@ -270,8 +270,8 @@ typedef struct SrollWork {
     u16 unk_1A;
     u16 unk_1C;
     u16 unk_1E;
-    u16 unk_20;
-    u16 unk_22;
+    u16 x;
+    u16 y;
     u16 unk_24;
     u16 unk_26;
     u16 writeIdx;

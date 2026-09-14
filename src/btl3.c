@@ -71,8 +71,8 @@ u8 task_btl_form_1(BtlFormWork* work) {
         } else {
             if (work->unk_00 == 0) {
                 obj = gBtlWork->actor;
-                work->unk_14 = (obj->unk_004 + 0x10000) >> 1;
-                work->unk_18 = obj->unk_008;
+                work->unk_14 = (obj->x + 0x10000) >> 1;
+                work->unk_18 = obj->y;
                 work->unk_1C = 0;
 
                 if (obj->unk_034 & 4) {
@@ -352,14 +352,14 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (obj != 0) {
             if (work->unk_3A <= 0) {
                 ApproachAngle(&work->angle,
-                              (u8)GetAngle(work->x, work->z, obj->unk_004,
-                                            obj->unk_00C - (obj->unk_0A2 << 8)),
+                              (u8)GetAngle(work->x, work->z, obj->x,
+                                            obj->z - (obj->unk_0A2 << 8)),
                               2);
             } else {
                 work->unk_3A--;
             }
 
-            work->y += (obj->unk_008 - work->y) >> 3;
+            work->y += (obj->y - work->y) >> 3;
 
             if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 8) != 0) {
                 m4aSongNumStart(work->unk_68);
@@ -416,9 +416,9 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (work->unk_38 == 0) {
             work->unk_3A = 16;
         }
-        ApproachValue(&work->x, work->actor->unk_004, work->unk_3A);
-        ApproachValue(&work->y, work->actor->unk_008, work->unk_3A);
-        ApproachValue(&work->z, work->actor->unk_00C - 0x1000, work->unk_3A);
+        ApproachValue(&work->x, work->actor->x, work->unk_3A);
+        ApproachValue(&work->y, work->actor->y, work->unk_3A);
+        ApproachValue(&work->z, work->actor->z - 0x1000, work->unk_3A);
         work->unk_3A--;
         if (work->unk_3A <= 3) {
             return 0;
@@ -640,7 +640,7 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
     obj = work->actor;
 
     if (obj->unk_0E8 != 0) {
-        flags = GetBattleSpritePriorityFlags(obj->unk_008);
+        flags = GetBattleSpritePriorityFlags(obj->y);
 
         if (gBtlWork->unk_070 != 0) {
             gfx = AnimGetGfx(&work->anim);
@@ -648,10 +648,10 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
             gfx = AnimUpdate(&work->anim);
         }
 
-        WorldToScreen(&sx, &sy, obj->unk_004, obj->unk_008,
-                      obj->unk_00C - ((obj->unk_09C + 8) << 8));
+        WorldToScreen(&sx, &sy, obj->x, obj->y,
+                      obj->z - ((obj->unk_09C + 8) << 8));
         DrawSprite(sx, sy, gfx, work->tiles, work->palette3, 0, flags,
-                   -4101 - ((obj->unk_008 >> 8) * 4));
+                   -4101 - ((obj->y >> 8) * 4));
     }
 }
 
@@ -728,8 +728,8 @@ BtlObj* func_08040D54(BtlAiWork* work) {
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
-            d = work->unk_044 - p->unk_00C;
-            if (d >= 0 ? d <= 0x3000 : p->unk_00C - work->unk_044 <= 0x3000) {
+            d = work->unk_044 - p->z;
+            if (d >= 0 ? d <= 0x3000 : p->z - work->unk_044 <= 0x3000) {
                 list[count] = p;
                 count++;
                 if (count > 9) {

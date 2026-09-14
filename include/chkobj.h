@@ -32,7 +32,7 @@ typedef struct ChkObjWork {
     u8 unk_41;
     u16 unk_42;
     s16 unk_44;
-    s16 unk_46;
+    s16 y;
 } ChkObjWork;
 
 #endif

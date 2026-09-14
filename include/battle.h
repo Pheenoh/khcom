@@ -62,8 +62,8 @@ typedef struct BgFx {
     s16 unk_0A;
     s16 unk_0C;
     s16 unk_0E;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
     s32 unk_18;
     s32 unk_1C;
     s32 unk_20;

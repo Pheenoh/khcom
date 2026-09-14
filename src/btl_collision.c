@@ -23,22 +23,22 @@ u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     if (f & 0x01000180) {
         return 0;
     }
-    if (x - (a << 8) > p->unk_004 + (p->unk_09E << 8)) {
+    if (x - (a << 8) > p->x + (p->unk_09E << 8)) {
         return 0;
     }
-    if (x + (a << 8) < p->unk_004 - (p->unk_09E << 8)) {
+    if (x + (a << 8) < p->x - (p->unk_09E << 8)) {
         return 0;
     }
-    if (y - (b << 8) > p->unk_008 + (p->unk_0A0 << 8)) {
+    if (y - (b << 8) > p->y + (p->unk_0A0 << 8)) {
         return 0;
     }
-    if (y + (b << 8) < p->unk_008 - (p->unk_0A0 << 8)) {
+    if (y + (b << 8) < p->y - (p->unk_0A0 << 8)) {
         return 0;
     }
-    if (z - (c << 8) > p->unk_00C) {
+    if (z - (c << 8) > p->z) {
         return 0;
     }
-    if (z + (c << 8) < p->unk_00C - (p->unk_09C << 8)) {
+    if (z + (c << 8) < p->z - (p->unk_09C << 8)) {
         return 0;
     }
     if (q->unk_0E2 > 0) {
@@ -146,10 +146,10 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         case 36:
             if ((attack->flags & 0x01002000) == 0x2000) {
                 if (source->unk_034 & 4) {
-                    if ((hit->unk_034 & 4) && hit->unk_004 < source->unk_004) {
+                    if ((hit->unk_034 & 4) && hit->x < source->x) {
                         scale = scale != 0 ? (scale * 512) >> 8 : 512;
                     }
-                } else if (!(hit->unk_034 & 4) && source->unk_004 < hit->unk_004) {
+                } else if (!(hit->unk_034 & 4) && source->x < hit->x) {
                     scale = scale != 0 ? (scale * 512) >> 8 : 512;
                 }
             }
@@ -190,7 +190,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             }
             hit->unk_0E2 = 30;
             func_08019190(hit, 0);
-            func_080139FC(gBtlWork->unk_0B8, gBtlWork->unk_0BC, hit->unk_00C - hit->unk_0A2 * 256);
+            func_080139FC(gBtlWork->x3, gBtlWork->y3, hit->z - hit->unk_0A2 * 256);
             return 2;
         } else if (hit->unk_034 & 0x0020000000000000ULL) {
             scale = scale != 0 ? (scale * 128) >> 8 : 128;
@@ -215,7 +215,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             }
             hit->unk_0E2 = 30;
             func_08019190(hit, 0);
-            func_080139FC(gBtlWork->unk_0B8, gBtlWork->unk_0BC, hit->unk_00C - hit->unk_0A2 * 256);
+            func_080139FC(gBtlWork->x3, gBtlWork->y3, hit->z - hit->unk_0A2 * 256);
             return 2;
         } else if (hit->unk_034 & 0x0100000000000000ULL) {
             scale = scale != 0 ? (scale * 128) >> 8 : 128;
@@ -361,9 +361,9 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         if (source->unk_034 & 4) target->unk_0B0 = 192;
         else target->unk_0B0 = 64;
     } else if (attack->flags & 0x1000) {
-        target->unk_0B0 = GetAngle(gBtlWork->unk_0B8, gBtlWork->unk_0BC, target->unk_004, target->unk_008);
+        target->unk_0B0 = GetAngle(gBtlWork->x3, gBtlWork->y3, target->x, target->y);
     } else {
-        target->unk_0B0 = GetAngle(source->unk_004, source->unk_008, target->unk_004, target->unk_008);
+        target->unk_0B0 = GetAngle(source->x, source->y, target->x, target->y);
     }
     return 1;
 }
@@ -371,8 +371,8 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     BtlObj* o;
 
     gBtlWork->unk_0B4 = 1;
-    gBtlWork->unk_0B8 = x;
-    gBtlWork->unk_0BC = y;
+    gBtlWork->x3 = x;
+    gBtlWork->y3 = y;
     gBtlWork->unk_0C0 = z;
     gBtlWork->unk_0C4 = a;
     gBtlWork->unk_0C6 = b;
@@ -426,8 +426,8 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
     cnt = 0;
     flag = 0;
     gBtlWork->unk_0B4 = 1;
-    gBtlWork->unk_0B8 = x;
-    gBtlWork->unk_0BC = y;
+    gBtlWork->x3 = x;
+    gBtlWork->y3 = y;
     gBtlWork->unk_0C0 = z;
     gBtlWork->unk_0C4 = p;
     gBtlWork->unk_0C6 = q;
@@ -444,7 +444,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
 
             if (res == 1) {
                 if (t->hitEffect != 0) {
-                    t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
+                    t->hitEffect(o->x, o->y, o->z);
                 }
             }
             return res;
@@ -463,9 +463,9 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
             r2 = func_08011398(o, a);
 
             if (r2 == 1) {
-                sx += o->unk_004;
-                sy += o->unk_008;
-                sz += o->unk_00C;
+                sx += o->x;
+                sy += o->y;
+                sz += o->z;
                 cnt++;
 
                 if (t->flags & 0x800) {
@@ -500,7 +500,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
 
             if (res == 1) {
                 if (t->hitEffect != 0) {
-                    t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
+                    t->hitEffect(o->x, o->y, o->z);
                 }
             }
             return res;
@@ -516,9 +516,9 @@ s32 func_08012170(s32 a, s32 b, s32 c, s32 d) {
 
 s32 func_08012188(BtlObj* p, s16 h, s32 c) {
     if (p->unk_034 & 4) {
-        return func_08012170(p->unk_004 - (h << 8), p->unk_008, p->unk_00C - (p->unk_09C >> 1), c);
+        return func_08012170(p->x - (h << 8), p->y, p->z - (p->unk_09C >> 1), c);
     } else {
-        return func_08012170(p->unk_004 + (h << 8), p->unk_008, p->unk_00C - (p->unk_09C >> 1), c);
+        return func_08012170(p->x + (h << 8), p->y, p->z - (p->unk_09C >> 1), c);
     }
 }
 

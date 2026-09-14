@@ -4,8 +4,8 @@
 #include "types.h"
 
 typedef struct PooPos {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32 unk_08;
     s32 unk_0C;
 } PooPos;

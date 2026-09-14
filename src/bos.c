@@ -8,12 +8,12 @@ void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
 
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
-    gBtlWork->unk_008 = 0x10000;
-    gBtlWork->unk_00C = 0x14000;
+    gBtlWork->x = 0x10000;
+    gBtlWork->y = 0x14000;
     gBtlWork->unk_000 = 0x10000;
     gBtlWork->unk_004 = 0x14000;
-    gBtlWork->unk_010 = 0x10000;
-    gBtlWork->unk_014 = 0x14000;
+    gBtlWork->x2 = 0x10000;
+    gBtlWork->y2 = 0x14000;
     gBtlWork->unk_01C = 0x10000;
     gBtlWork->unk_020 = 0x14000;
     gBtlWork->unk_01A = 15;
@@ -30,8 +30,8 @@ s32 task_bos_map_1(void) {
 
     func_0802F208();
 
-    dx = (gBtlWork->unk_010 - gBtlWork->unk_008) >> 3;
-    dy = (gBtlWork->unk_014 - gBtlWork->unk_00C) >> 3;
+    dx = (gBtlWork->x2 - gBtlWork->x) >> 3;
+    dy = (gBtlWork->y2 - gBtlWork->y) >> 3;
 
     if (dx > 0x500) {
         dx = 0x500;
@@ -39,10 +39,10 @@ s32 task_bos_map_1(void) {
         dx = -0x500;
     }
 
-    gBtlWork->unk_008 += dx;
-    gBtlWork->unk_00C += dy;
-    gBtlWork->unk_000 = gBtlWork->unk_008;
-    gBtlWork->unk_004 = gBtlWork->unk_00C;
+    gBtlWork->x += dx;
+    gBtlWork->y += dy;
+    gBtlWork->unk_000 = gBtlWork->x;
+    gBtlWork->unk_004 = gBtlWork->y;
 
     if (gBtlWork->unk_000 - 0x7800 < (gBtlWork->unk_0DA << 8)) {
         gBtlWork->unk_000 = (gBtlWork->unk_0DA + 0x78) << 8;
@@ -86,8 +86,8 @@ void task_bos_shadow_2(BosShadowWork* work) {
     obj = work->actor;
     flip = 0;
     gfx = gUnk_08B22BA8;
-    frame = GetBattleSpritePriorityFlags(obj->unk_008);
-    size = 0x100 - ((obj->unk_010 - obj->unk_00C) >> 7);
+    frame = GetBattleSpritePriorityFlags(obj->y);
+    size = 0x100 - ((obj->unk_010 - obj->z) >> 7);
 
     if (size <= 0xB2) {
         size = 0xB3;
@@ -99,7 +99,7 @@ void task_bos_shadow_2(BosShadowWork* work) {
     }
 
     sprite = AllocObjAffine(0, size, size, flip);
-    WorldToScreen(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
+    WorldToScreen(&x, &y, obj->x, obj->y, obj->unk_010);
     DrawSprite(x, y, gfx, work->tiles, work->palette, sprite, frame, 0xFFF0);
 }
 

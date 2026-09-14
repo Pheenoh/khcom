@@ -10,10 +10,10 @@
 typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
+    s32 x;
+    s32 y;
+    s32 x2;
+    s32 y2;
     u8 unk_018;
     u8 unk_019;
     s16 unk_01A;
@@ -42,8 +42,8 @@ typedef struct BtlWork {
     u8 unk_0B3;
     u8 unk_0B4;
     u8 unk_0B5[0x03];
-    s32 unk_0B8;
-    s32 unk_0BC;
+    s32 x3;
+    s32 y3;
     s32 unk_0C0;
     s16 unk_0C4;
     s16 unk_0C6;

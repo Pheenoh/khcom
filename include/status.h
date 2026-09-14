@@ -126,8 +126,8 @@ typedef struct StatusMeswindowWork {
 
 typedef struct StatusMessageParam {
     void* unk_00;
-    s16 unk_04;
-    s16 unk_06;
+    s16 x;
+    s16 y;
 } StatusMessageParam;
 
 typedef struct StatusMessageWork {

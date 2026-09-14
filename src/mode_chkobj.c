@@ -1554,7 +1554,7 @@ void mode_chkobj_0(void) {
     gChkObjWork->paused = 0;
     gChkObjWork->unk_42 = 0x80A0;
     gChkObjWork->unk_44 = 0;
-    gChkObjWork->unk_46 = 0;
+    gChkObjWork->y = 0;
     func_0800B30C(gChkObjEntries[0].unk_00);
     SetupBg(1, 0, 15, 0);
     EnableBg(0);
@@ -1588,7 +1588,7 @@ void mode_chkobj_1(void) {
                 gChkObjWork->animId++;
             }
 
-            gChkObjWork->unk_46 = 0;
+            gChkObjWork->y = 0;
             gChkObjWork->paused = 0;
             gChkObjWork->unk_44 = 0;
             def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
@@ -1643,7 +1643,7 @@ void mode_chkobj_1(void) {
                 gChkObjWork->unk_42++;
             }
         } else if (GetKeysRepeat() & (L_BUTTON | R_BUTTON)) {
-            gChkObjWork->unk_46 = 0;
+            gChkObjWork->y = 0;
             gChkObjWork->paused = 0;
             gChkObjWork->unk_44 = 0;
 
@@ -1673,9 +1673,9 @@ void mode_chkobj_1(void) {
                       (u16)abs(gSineTable[(gChkObjWork->unk_42 / 4) & 0xFF] * 5 >> 6));
 
         if (GetKeysHeld() & DPAD_UP) {
-            gChkObjWork->unk_46--;
+            gChkObjWork->y--;
         } else if (GetKeysHeld() & DPAD_DOWN) {
-            gChkObjWork->unk_46++;
+            gChkObjWork->y++;
         }
 
         TaskPoolUpdate(&gChkObjWork->pool);
@@ -1724,7 +1724,7 @@ void mode_chkobj_1(void) {
 
         func_0809D2B0(0, 19, 0, "maxChr");
         func_0809D458(6, 19, 0, gChkObjWork->unk_44);
-        DrawSprite(120, gChkObjWork->unk_46 + 96, gChkObjWork->gfx, gChkObjWork->tiles,
+        DrawSprite(120, gChkObjWork->y + 96, gChkObjWork->gfx, gChkObjWork->tiles,
                    gChkObjWork->palette, 0, 0, 0);
         func_080605A4(1);
         func_08060598();

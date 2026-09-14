@@ -57,8 +57,8 @@ void task_poo_pooh_0(PooWork* w) {
     w->unk_26 = 0xFFFF;
     func_080D2CA8(&w->unk_28, &gUnk_02034DAC);
     w->unk_28.unk_0C = 0;
-    w->unk_40 = w->unk_28.unk_00;
-    w->unk_44 = w->unk_28.unk_04;
+    w->unk_40 = w->unk_28.x;
+    w->unk_44 = w->unk_28.y;
     gUnk_0203C3EC = &w->unk_28;
     w->tiles = AllocObjTiles((u16)(gUnk_096FC010.unk_04 * 32), 0);
     w->palette = LoadObjPalette(gUnk_096FC010.unk_00, 32);
@@ -68,7 +68,7 @@ void task_poo_pooh_0(PooWork* w) {
     func_080C7FEC(w, gUnk_02034DAC);
     w->gfx = AnimGetGfx(w->unk_0C);
     ColliderInit(w->unk_4C, 9, gUnk_096FC010.unk_08, gUnk_096FC010.unk_06);
-    ColliderSetPosition(w->unk_4C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
+    ColliderSetPosition(w->unk_4C, w->unk_28.x, w->unk_28.y, w->unk_28.unk_08);
     TaskPoolInit(&w->unk_B0, 10);
     args.unk_00 = &w->unk_28;
     args.unk_04 = (PooShadowInfo*)&w->unk_E0;
@@ -81,23 +81,23 @@ void task_poo_pooh_0(PooWork* w) {
 u8 func_080C871C(PooWork* w) {
     if (gUnk_0203C3F0 == 1) {
         func_080C84E0(w, 16);
-        w->unk_28.unk_00 = gUnk_0203C3DC;
-        w->unk_28.unk_04 = gUnk_0203C3E8;
+        w->unk_28.x = gUnk_0203C3DC;
+        w->unk_28.y = gUnk_0203C3E8;
     } else if (gUnk_0203C3F0 == 2) {
-        w->unk_28.unk_00 = gUnk_0203C3DC;
-        w->unk_28.unk_04 = gUnk_0203C3E8;
+        w->unk_28.x = gUnk_0203C3DC;
+        w->unk_28.y = gUnk_0203C3E8;
         func_080C84E0(w, 38);
     } else if (gUnk_0203C3F0 == 7) {
-        w->unk_28.unk_00 = gUnk_0203C3DC;
-        w->unk_28.unk_04 = gUnk_0203C3E8;
+        w->unk_28.x = gUnk_0203C3DC;
+        w->unk_28.y = gUnk_0203C3E8;
         func_080C84E0(w, 39);
     } else if (gUnk_0203C3F0 == 8) {
-        w->unk_38 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, gUnk_0203C3DC, gUnk_0203C3E8);
+        w->unk_38 = GetAngle(w->unk_28.x, w->unk_28.y, gUnk_0203C3DC, gUnk_0203C3E8);
         w->unk_3A = w->unk_38;
         w->unk_3B = w->unk_38;
         func_080C84E0(w, 20);
     } else if (gUnk_0203C3F0 == 11) {
-        w->unk_38 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, gUnk_0203C3DC, gUnk_0203C3E8);
+        w->unk_38 = GetAngle(w->unk_28.x, w->unk_28.y, gUnk_0203C3DC, gUnk_0203C3E8);
         w->unk_3A = w->unk_38;
         w->unk_3B = w->unk_38;
         w->unk_F6 = 0;
@@ -161,20 +161,20 @@ void func_080C88C4(PooWork* w, PooNode* n) {
         if (w->unk_D0 != n && w->unk_D4 <= 59) {
             w->unk_3A = w->unk_38;
             w->unk_3B = w->unk_38;
-            w->unk_39 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, ((PooPos*)n->unk_08)->unk_00, ((PooPos*)n->unk_08)->unk_04);
-            w->unk_40 = w->unk_28.unk_00;
-            w->unk_44 = w->unk_28.unk_04;
+            w->unk_39 = GetAngle(w->unk_28.x, w->unk_28.y, ((PooPos*)n->unk_08)->x, ((PooPos*)n->unk_08)->y);
+            w->unk_40 = w->unk_28.x;
+            w->unk_44 = w->unk_28.y;
             func_080C84E0(w, 9);
         } else {
             w->unk_D0 = n;
             w->unk_D4 = 0;
-            w->unk_40 = ((PooPos*)w->unk_D0->unk_08)->unk_00;
-            w->unk_44 = ((PooPos*)w->unk_D0->unk_08)->unk_04;
+            w->unk_40 = ((PooPos*)w->unk_D0->unk_08)->x;
+            w->unk_44 = ((PooPos*)w->unk_D0->unk_08)->y;
             func_080C84E0(w, 3);
         }
     } else {
-        w->unk_40 = w->unk_28.unk_00;
-        w->unk_44 = w->unk_28.unk_04;
+        w->unk_40 = w->unk_28.x;
+        w->unk_44 = w->unk_28.y;
         func_080C84E0(w, 23);
     }
 }
@@ -193,9 +193,9 @@ void func_080C89B4(PooWork* w, PooSpot* b, u16 c) {
         if (w->unk_24 != 0) {
             v = -v;
         }
-        w->unk_28.unk_00 += v;
+        w->unk_28.x += v;
         v = b[i].unk_04;
-        w->unk_28.unk_04 += v;
+        w->unk_28.y += v;
     }
     w->unk_28.unk_08 += b[w->unk_A8 * c + f].unk_08;
 }
@@ -293,8 +293,8 @@ u8 func_080C8BD4(void) {
     s16 x;
     s16 y;
 
-    x = (gUnk_0203C3EC->unk_00 >> 8) - gUnk_0203C40C;
-    y = (gUnk_0203C3EC->unk_04 >> 8) + (gUnk_0203C3EC->unk_08 >> 8) - gUnk_0203C3F8;
+    x = (gUnk_0203C3EC->x >> 8) - gUnk_0203C40C;
+    y = (gUnk_0203C3EC->y >> 8) + (gUnk_0203C3EC->unk_08 >> 8) - gUnk_0203C3F8;
     if (x < gUnk_096FC010.unk_08 * 2 || 240 - gUnk_096FC010.unk_08 * 2 < x || y < gUnk_096FC010.unk_06 * 2 || y > 152) {
         return 1;
     }
@@ -311,7 +311,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
 
     switch (gUnk_02034DAC) {
     case 3:
-        if (AnimGetGfxIndex((AnimState*)w->unk_0C) == 8 && gUnk_0203C3EC->unk_04 > 0x1BD00 && (GetKeysPressed() & 1) != 0) {
+        if (AnimGetGfxIndex((AnimState*)w->unk_0C) == 8 && gUnk_0203C3EC->y > 0x1BD00 && (GetKeysPressed() & 1) != 0) {
             v = 128;
 
             if (func_080D1738() != 0) {
@@ -348,8 +348,8 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             if (func_080CBA4C() == 0) {
                 break;
             }
-            w->unk_28.unk_00 += w->unk_84;
-            w->unk_28.unk_04 += w->unk_88;
+            w->unk_28.x += w->unk_84;
+            w->unk_28.y += w->unk_88;
             w->unk_D0 = 0;
             func_080C88C4(w, n);
             break;
@@ -361,7 +361,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         break;
     case 12:
         a0 = w->unk_3A;
-        w->unk_39 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, 0x8DE00, 0x45C00);
+        w->unk_39 = GetAngle(w->unk_28.x, w->unk_28.y, 0x8DE00, 0x45C00);
         ApproachAngle(&a0, w->unk_39, 4);
         w->unk_3A = a0;
         w->unk_D4++;
@@ -390,7 +390,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         w->unk_44 = 0x4B700;
         func_080C8B60((PooMover*)w, 456, 1);
 
-        if (func_080C83C4(w->unk_40 >> 8, w->unk_44 >> 8, w->unk_28.unk_00 >> 8, w->unk_28.unk_04 >> 8) == 0) {
+        if (func_080C83C4(w->unk_40 >> 8, w->unk_44 >> 8, w->unk_28.x >> 8, w->unk_28.y >> 8) == 0) {
             break;
         }
         func_080C84E0(w, 6);
@@ -400,7 +400,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         w->unk_44 = 0x49E00;
         func_080C8B60((PooMover*)w, 456, 1);
 
-        if (func_080C83C4(w->unk_40 >> 8, w->unk_44 >> 8, w->unk_28.unk_00 >> 8, w->unk_28.unk_04 >> 8) == 0) {
+        if (func_080C83C4(w->unk_40 >> 8, w->unk_44 >> 8, w->unk_28.x >> 8, w->unk_28.y >> 8) == 0) {
             break;
         }
         func_080C84E0(w, 14);
@@ -464,7 +464,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
     case 9:
         if (w->unk_D4 <= 59) {
             a1 = w->unk_3A;
-            w->unk_39 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, ((s32*)n->unk_08)[0], ((s32*)n->unk_08)[1]);
+            w->unk_39 = GetAngle(w->unk_28.x, w->unk_28.y, ((s32*)n->unk_08)[0], ((s32*)n->unk_08)[1]);
             ApproachAngle(&a1, w->unk_39, 4);
             w->unk_3A = a1;
             w->unk_D4++;
@@ -477,7 +477,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if (w->unk_28.unk_00 == 0x4A700 && w->unk_28.unk_04 == 0x28E00 && func_080D2D50(5) == 0) {
+        if (w->unk_28.x == 0x4A700 && w->unk_28.y == 0x28E00 && func_080D2D50(5) == 0) {
             func_080C84E0(w, 37);
             TaskCreate(&w->unk_B0, &gTaskDescPooRoo, &w->unk_28);
             break;
@@ -508,8 +508,8 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         }
 
         if (w->unk_AC > 60) {
-            w->unk_28.unk_00 += 128;
-            w->unk_28.unk_04 += 64;
+            w->unk_28.x += 128;
+            w->unk_28.y += 64;
         }
         w->unk_AC++;
 
@@ -622,19 +622,19 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         w->unk_28.unk_08 = -0xD00;
 
         if (w->unk_24 == 0) {
-            w->unk_28.unk_00 -= 0x900;
+            w->unk_28.x -= 0x900;
         } else {
-            w->unk_28.unk_00 += 0x900;
+            w->unk_28.x += 0x900;
         }
 
         if (w->unk_F6 == 0) {
-            func_080D0084((u32*)&w->unk_28.unk_00, (u32*)&w->unk_28.unk_04, 1);
+            func_080D0084((u32*)&w->unk_28.x, (u32*)&w->unk_28.y, 1);
             break;
         }
 
         while ((u8)func_080CFEA0(&w->unk_28) != 0) {
-            w->unk_28.unk_00 += gSineTable[w->unk_38] * 2;
-            w->unk_28.unk_04 -= gSineTable[w->unk_38 + 0x40] * 2;
+            w->unk_28.x += gSineTable[w->unk_38] * 2;
+            w->unk_28.y -= gSineTable[w->unk_38 + 0x40] * 2;
         }
         break;
     case 2:
@@ -678,9 +678,9 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         w->unk_3B = w->unk_38;
 
         if (w->unk_24 == 0) {
-            w->unk_28.unk_00 -= 0x900;
+            w->unk_28.x -= 0x900;
         } else {
-            w->unk_28.unk_00 += 0x900;
+            w->unk_28.x += 0x900;
         }
         break;
     case 8:
@@ -698,7 +698,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
     case 11:
         if (w->unk_DA <= 179) {
             a2 = w->unk_3A;
-            w->unk_39 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, 0x8DE00, 0x45C00);
+            w->unk_39 = GetAngle(w->unk_28.x, w->unk_28.y, 0x8DE00, 0x45C00);
             ApproachAngle(&a2, w->unk_39, 4);
             w->unk_3A = a2;
             w->unk_DA++;
@@ -719,14 +719,14 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         break;
     case 7:
         if (w->unk_E8 != 0) {
-            w->unk_40 = gUnk_0203C420.unk_00.unk_00;
-            w->unk_44 = gUnk_0203C420.unk_00.unk_04;
+            w->unk_40 = gUnk_0203C420.unk_00.x;
+            w->unk_44 = gUnk_0203C420.unk_00.y;
             func_080C8B60((PooMover*)w, 76, 1);
             break;
         }
-        w->unk_40 = gUnk_0203C420.unk_00.unk_00;
-        w->unk_44 = gUnk_0203C420.unk_00.unk_04;
-        w->unk_38 = GetAngle(w->unk_28.unk_00, w->unk_28.unk_04, w->unk_40, w->unk_44);
+        w->unk_40 = gUnk_0203C420.unk_00.x;
+        w->unk_44 = gUnk_0203C420.unk_00.y;
+        w->unk_38 = GetAngle(w->unk_28.x, w->unk_28.y, w->unk_40, w->unk_44);
         w->unk_48 = -0x130;
         w->unk_3C = 237;
         func_080C84E0(w, 19);
@@ -744,8 +744,8 @@ void func_080C8C40(PooWork* w, PooNode* n) {
 
         if ((AnimGetFrame((AnimState*)w->unk_0C) > 1 && AnimGetFrame((AnimState*)w->unk_0C) <= 4) ||
             (AnimGetFrame((AnimState*)w->unk_0C) > 4 && w->unk_E8 == 0 && w->unk_28.unk_08 < w->unk_EC)) {
-            w->unk_28.unk_00 += gSineTable[w->unk_38] * w->unk_3C >> 8;
-            w->unk_28.unk_04 += -gSineTable[w->unk_38 + 0x40] * w->unk_3C >> 8;
+            w->unk_28.x += gSineTable[w->unk_38] * w->unk_3C >> 8;
+            w->unk_28.y += -gSineTable[w->unk_38 + 0x40] * w->unk_3C >> 8;
         }
 
         if (AnimGetFrame((AnimState*)w->unk_0C) <= 1) {
@@ -854,8 +854,8 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
         func_080C84E0(w, 28);
-        w->unk_28.unk_00 -= 0x400;
-        w->unk_28.unk_04 += 0x300;
+        w->unk_28.x -= 0x400;
+        w->unk_28.y += 0x300;
         break;
     }
 }
@@ -885,8 +885,8 @@ u8 func_080C9910(void) {
     s32 x;
     s32 y;
 
-    x = (gUnk_0203C3EC->unk_00 >> 8) - gUnk_0203C40C;
-    y = (gUnk_0203C3EC->unk_04 >> 8) + (gUnk_0203C3EC->unk_08 >> 8) - gUnk_0203C3F8;
+    x = (gUnk_0203C3EC->x >> 8) - gUnk_0203C40C;
+    y = (gUnk_0203C3EC->y >> 8) + (gUnk_0203C3EC->unk_08 >> 8) - gUnk_0203C3F8;
     if (IsRectOutsideScreen(x, y, gUnk_096FC010.unk_06, 0, gUnk_096FC010.unk_08, gUnk_096FC010.unk_08) != 0) {
         return 1;
     }
@@ -921,7 +921,7 @@ u8 task_poo_pooh_1(PooWork* w) {
             }
         }
     }
-    ColliderSetPosition(w->unk_4C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
+    ColliderSetPosition(w->unk_4C, w->unk_28.x, w->unk_28.y, w->unk_28.unk_08);
     TaskPoolUpdate(&w->unk_B0);
     return 1;
 }
@@ -932,8 +932,8 @@ void task_poo_pooh_2(PooWork* w) {
     s32 f;
     u16 p;
 
-    x = (w->unk_28.unk_00 >> 8) - gUnk_0203C40C;
-    y = (w->unk_28.unk_04 >> 8) + (w->unk_28.unk_08 >> 8) - gUnk_0203C3F8;
+    x = (w->unk_28.x >> 8) - gUnk_0203C40C;
+    y = (w->unk_28.y >> 8) + (w->unk_28.unk_08 >> 8) - gUnk_0203C3F8;
     if (w->unk_24 != 0) {
         f = 0x801;
     } else {
@@ -952,17 +952,17 @@ void task_poo_pooh_2(PooWork* w) {
         p = func_080D06C8() - 4;
         w->unk_E0 = p + 1;
         w->unk_E4 = 0;
-    } else if ((u8)func_080D0210(gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04) != 0) {
+    } else if ((u8)func_080D0210(gUnk_0203C3EC->x, gUnk_0203C3EC->y) != 0) {
         if (gUnk_02034DAC == 21 && w->unk_A8 == 1 && w->unk_F6 != 0) {
             p = func_080D06BC() - 3;
-        } else if ((u8)func_080D0210(gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04) == 83 || (u8)func_080D0210(gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04) == 173) {
-            if (gUnk_0203C3EC->unk_04 < gUnk_0203C420.unk_00.unk_04) {
+        } else if ((u8)func_080D0210(gUnk_0203C3EC->x, gUnk_0203C3EC->y) == 83 || (u8)func_080D0210(gUnk_0203C3EC->x, gUnk_0203C3EC->y) == 173) {
+            if (gUnk_0203C3EC->y < gUnk_0203C420.unk_00.y) {
                 p = func_080D06C8() + 5;
             } else {
                 p = func_080D06C8() + 1;
             }
         } else {
-            if (gUnk_0203C3EC->unk_04 < gUnk_0203C420.unk_00.unk_04) {
+            if (gUnk_0203C3EC->y < gUnk_0203C420.unk_00.y) {
                 p = func_080D06BC() - 2;
             } else {
                 p = func_080D06BC() - 6;
@@ -973,7 +973,7 @@ void task_poo_pooh_2(PooWork* w) {
     } else if (w->unk_E8 != 0) {
         p = -0x1008 - (w->unk_94 >> 8) * 4;
 
-        if (w->unk_28.unk_04 >= gUnk_0203C420.unk_00.unk_04) {
+        if (w->unk_28.y >= gUnk_0203C420.unk_00.y) {
             p -= 2;
         } else {
             p += 2;
@@ -991,7 +991,7 @@ void task_poo_pooh_2(PooWork* w) {
             w->unk_E0 = p + 1;
         }
     } else {
-        p = -0x1004 - (w->unk_28.unk_04 >> 8) * 4;
+        p = -0x1004 - (w->unk_28.y >> 8) * 4;
         w->unk_E4 = 0;
 
         if (w->unk_E4 != w->unk_28.unk_0C) {
@@ -1012,11 +1012,11 @@ void task_poo_pooh_3(PooWork* w) {
     if (gUnk_02034DAC == 22) {
         gUnk_02034DAC = 0;
         w->unk_28.unk_08 = 0;
-        w->unk_28.unk_04 += 0x2000;
+        w->unk_28.y += 0x2000;
     } else if (gUnk_02034DAC == 14) {
         gUnk_02034DAC = 0;
-        w->unk_28.unk_00 = 0x7F700;
-        w->unk_28.unk_04 = 0x47E00;
+        w->unk_28.x = 0x7F700;
+        w->unk_28.y = 0x47E00;
         w->unk_28.unk_08 = 0;
     }
     func_080D2C8C(&w->unk_28, gUnk_02034DAC);
@@ -1153,8 +1153,8 @@ u16 func_080C9EFC(void* pool, u16 b) {
     u32 i;
 
     for (i = 0; i < 85; i++) {
-        gUnk_02034DC8.unk_00 = gUnk_096FC6F8[i].unk_00;
-        gUnk_02034DC8.unk_04 = gUnk_096FC6F8[i].unk_04;
+        gUnk_02034DC8.x = gUnk_096FC6F8[i].unk_00;
+        gUnk_02034DC8.y = gUnk_096FC6F8[i].unk_04;
         gUnk_02034DC8.unk_08 = 0;
 
         if (gUnk_096FC6F8[i].unk_08 == &gTaskDescPooTanpopo || gUnk_096FC6F8[i].unk_08 == &gTaskDescPooLeaf) {
@@ -1182,14 +1182,14 @@ void func_080C9FBC(void) {
     }
 
     if (gUnk_02034DE1 != 0) {
-        func_080C9FA8(gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04 + gUnk_0203C3EC->unk_08);
+        func_080C9FA8(gUnk_0203C3EC->x, gUnk_0203C3EC->y + gUnk_0203C3EC->unk_08);
     }
-    y = gUnk_0203C3EC->unk_04 + gUnk_0203C3EC->unk_08;
+    y = gUnk_0203C3EC->y + gUnk_0203C3EC->unk_08;
 
-    if ((gUnk_0203C404 - gUnk_0203C3EC->unk_00 >= 0 ? gUnk_0203C404 - gUnk_0203C3EC->unk_00 < 0xF000
-                                                    : gUnk_0203C3EC->unk_00 - gUnk_0203C404 < 0xF000) &&
+    if ((gUnk_0203C404 - gUnk_0203C3EC->x >= 0 ? gUnk_0203C404 - gUnk_0203C3EC->x < 0xF000
+                                                    : gUnk_0203C3EC->x - gUnk_0203C404 < 0xF000) &&
         (gUnk_0203C400 - y >= 0 ? gUnk_0203C400 - y < 0xA000 : y - gUnk_0203C400 < 0xA000)) {
-        gUnk_0203C3FC = (gUnk_0203C404 + gUnk_0203C3EC->unk_00) / 2;
+        gUnk_0203C3FC = (gUnk_0203C404 + gUnk_0203C3EC->x) / 2;
         gUnk_0203C408 = (gUnk_0203C400 + y) / 2;
     } else {
         gUnk_0203C3FC = gUnk_0203C404;
@@ -1337,7 +1337,7 @@ u16 func_080CA36C(u16 x, u16 y) {
 u8 func_080CA3A0(PooPos* p) {
     u32 v;
 
-    v = func_080CA36C(p->unk_00 >> 8, p->unk_04 >> 8) & 0x3FF;
+    v = func_080CA36C(p->x >> 8, p->y >> 8) & 0x3FF;
     if ((u16)(v - 1) <= 8) {
         return 0;
     }
@@ -1368,8 +1368,8 @@ u8 func_080CA3FC(PooActor* p, s32 x, s32 y, s32* ox, s32* oy) {
         a = p->unk_14 + 0x40;
         s = gSineTable[a];
         c = -gSineTable[a + 0x40];
-        t.unk_00 = s * 4 + x;
-        t.unk_04 = c * 4 + y;
+        t.x = s * 4 + x;
+        t.y = c * 4 + y;
         t.unk_08 = p->unk_00.unk_08;
         t.unk_0C = p->unk_00.unk_0C;
         m = p->unk_10;
@@ -1386,8 +1386,8 @@ u8 func_080CA3FC(PooActor* p, s32 x, s32 y, s32* ox, s32* oy) {
             a = p->unk_14 - 0x40;
             s = gSineTable[a];
             c = -gSineTable[a + 0x40];
-            t.unk_00 = s * 4 + x;
-            t.unk_04 = c * 4 + y;
+            t.x = s * 4 + x;
+            t.y = c * 4 + y;
 
             if (func_080CA3A0(&t) == 0) {
                 *ox = s * m >> 8;
@@ -1443,29 +1443,29 @@ u8 func_080CA560(PooPos* p, s32 x, s32 y) {
     s16 sy;
 
     if (func_080CA3FC((PooActor*)p, x, y, &gUnk_02034DD8, &gUnk_02034DDC) != 0) {
-        p->unk_00 = x + gUnk_02034DD8;
-        p->unk_04 = y + gUnk_02034DDC;
+        p->x = x + gUnk_02034DD8;
+        p->y = y + gUnk_02034DDC;
     }
     sx = (x >> 8) - gUnk_0203C40C;
     sy = (y >> 8) - gUnk_0203C3F8;
 
     if (func_080CA4E8(sx, sy, 48, 0, 18, 18, &gUnk_02034DD8, &gUnk_02034DDC) == 0) {
-        sx = (p->unk_00 >> 8) - gUnk_0203C40C;
-        sy = (p->unk_04 >> 8) - gUnk_0203C3F8;
+        sx = (p->x >> 8) - gUnk_0203C40C;
+        sy = (p->y >> 8) - gUnk_0203C3F8;
 
         if (func_080CA4E8(sx, sy, 48, 0, 18, 18, &gUnk_02034DD8, &gUnk_02034DDC) != 0) {
-            p->unk_00 -= gUnk_02034DD8;
-            p->unk_04 -= gUnk_02034DDC;
+            p->x -= gUnk_02034DD8;
+            p->y -= gUnk_02034DDC;
         }
     } else {
-        p->unk_00 = x;
-        p->unk_04 = y;
+        p->x = x;
+        p->y = y;
     }
     return 1;
 }
 
 u8 func_080CA648(PooPos* p) {
-    if ((func_080CA36C(p->unk_00 >> 8, p->unk_04 >> 8) & 0x3FF) > 0x3BA) {
+    if ((func_080CA36C(p->x >> 8, p->y >> 8) & 0x3FF) > 0x3BA) {
         return 1;
     }
     return 0;
@@ -1473,7 +1473,7 @@ u8 func_080CA648(PooPos* p) {
 
 u16 func_080CA67C(PooPos* p) {
     if (func_080CA648(p) != 0) {
-        if (p->unk_04 <= 0x1FFFF) {
+        if (p->y <= 0x1FFFF) {
             return 1;
         }
         return 2;
@@ -1535,12 +1535,12 @@ void func_080CA724(PooSoraWork* w) {
 u8 func_080CA8D4(PooSoraWork* w, PooPos* p) {
     if (w->unk_64 != 0 && ColliderIsTouchingType(w->unk_38, 5) == 0 && ColliderIsTouchingType(w->unk_38, 3) == 0 && ColliderIsTouchingType(w->unk_38, 5) == 0 && ColliderIsTouchingType(w->unk_38, 11) == 0) {
         if (func_080CFF30() != 0) {
-            p->unk_00 += w->unk_70;
-            p->unk_04 += w->unk_74;
-            func_080CFF58((u32*)&p->unk_00, (u32*)&p->unk_04, 1);
+            p->x += w->unk_70;
+            p->y += w->unk_74;
+            func_080CFF58((u32*)&p->x, (u32*)&p->y, 1);
         } else {
-            p->unk_00 += w->unk_70;
-            p->unk_04 += w->unk_74;
+            p->x += w->unk_70;
+            p->y += w->unk_74;
         }
         return 1;
     }
@@ -1550,7 +1550,7 @@ u8 func_080CA8D4(PooSoraWork* w, PooPos* p) {
 u8 func_080CA960(PooPos* p) {
     u8 a;
 
-    a = GetAngle(p->unk_00, p->unk_04, gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04);
+    a = GetAngle(p->x, p->y, gUnk_0203C3EC->x, gUnk_0203C3EC->y);
 
     switch (((a + 16) & 0xFF) >> 5) {
     case 1:
@@ -1664,21 +1664,21 @@ void func_080CAB24(PooActor* p) {
     switch (p->unk_14) {
     case 0x2D:
     case 0xD3:
-        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 12;
-        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 12;
+        x = p->unk_00.x + gSineTable[p->unk_14] * 12;
+        y = p->unk_00.y + -gSineTable[p->unk_14 + 0x40] * 12;
         break;
     case 0x40:
     case 0xC0:
-        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 27;
-        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 27;
+        x = p->unk_00.x + gSineTable[p->unk_14] * 27;
+        y = p->unk_00.y + -gSineTable[p->unk_14 + 0x40] * 27;
         break;
     case 0x00:
     case 0x53:
     case 0x80:
     case 0xAD:
     default:
-        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 20;
-        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 20;
+        x = p->unk_00.x + gSineTable[p->unk_14] * 20;
+        y = p->unk_00.y + -gSineTable[p->unk_14 + 0x40] * 20;
         break;
     }
     func_080C7684(x, y, p->unk_00.unk_08 - 0x800);
@@ -1703,7 +1703,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     a->unk_14 = 0xAD;
     a->unk_00.unk_0C = 0;
     a->unk_10 = 0;
-    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.x, a->unk_00.y + a->unk_00.unk_08);
     AnimInit((AnimState*)w->unk_08, 0, 0);
     func_080CAA50(w, 0, 1);
     w->gfx = AnimGetGfx((AnimState*)w->unk_08);
@@ -1713,7 +1713,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     TaskCreate(&w->unk_24, &gTaskDescFldShadow, a);
     func_080CCB90(&w->unk_B0, 1, a);
     ColliderInit(w->unk_38, 1, 18, 48);
-    ColliderSetPosition(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
+    ColliderSetPosition(w->unk_38, a->unk_00.x, a->unk_00.y, a->unk_00.unk_08);
 }
 
 u8 func_080CAD08(PooSoraWork* w, u8* t) {
@@ -1726,8 +1726,8 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
     u16 v;
 
     z = func_080CAA14(w);
-    sx = a->unk_00.unk_00;
-    sy = a->unk_00.unk_04;
+    sx = a->unk_00.x;
+    sy = a->unk_00.y;
     func_080CA9DC((PooSoraWork*)a);
 
     switch (w->unk_94) {
@@ -1735,8 +1735,8 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         if (w->unk_98 == 0) {
             func_080CAA50(w, 10, 0);
         }
-        a->unk_00.unk_00 += gSineTable[a->unk_14] * a->unk_10 >> 8;
-        a->unk_00.unk_04 += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
+        a->unk_00.x += gSineTable[a->unk_14] * a->unk_10 >> 8;
+        a->unk_00.y += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
 
         if (AnimGetFrame((AnimState*)w->unk_08) > 3) {
             a->unk_00.unk_08 += w->unk_9C;
@@ -1777,8 +1777,8 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
             func_080CAA50(w, 3, 0);
             a->unk_10 >>= 1;
         }
-        a->unk_00.unk_00 += gSineTable[a->unk_14] * a->unk_10 >> 8;
-        a->unk_00.unk_04 += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
+        a->unk_00.x += gSineTable[a->unk_14] * a->unk_10 >> 8;
+        a->unk_00.y += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
 
         if (w->unk_98 > 3) {
             if (GetRandom() % 2 != 0) {
@@ -1814,8 +1814,8 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         } else {
             func_080CAA50(w, 4, 0);
         }
-        a->unk_00.unk_00 += gSineTable[a->unk_14] * a->unk_10 >> 8;
-        a->unk_00.unk_04 += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
+        a->unk_00.x += gSineTable[a->unk_14] * a->unk_10 >> 8;
+        a->unk_00.y += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
         a->unk_00.unk_08 += w->unk_9C;
         w->unk_9C += 66;
 
@@ -1855,8 +1855,8 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         } else {
             func_080CAA50(w, 6, 0);
         }
-        a->unk_00.unk_00 += gSineTable[a->unk_14] * a->unk_10 >> 8;
-        a->unk_00.unk_04 += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
+        a->unk_00.x += gSineTable[a->unk_14] * a->unk_10 >> 8;
+        a->unk_00.y += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
         a->unk_00.unk_08 += w->unk_9C;
         w->unk_9C += 66;
 
@@ -1901,22 +1901,22 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
 
     if ((u8)func_080CFE34(&a->unk_00) != 0) {
         if (a->unk_00.unk_08 > -0xA00) {
-            p.unk_00 = sx;
-            p.unk_04 = sy;
+            p.x = sx;
+            p.y = sy;
 
             if ((u8)func_080CFE34(&p) == 0) {
-                a->unk_00.unk_00 = sx;
-                a->unk_00.unk_04 = sy;
+                a->unk_00.x = sx;
+                a->unk_00.y = sy;
                 a->unk_10 = 0;
             } else if (w->unk_9C >= 0) {
                 a->unk_10 = 0;
                 v = (-a->unk_00.unk_08 >> 8) + 1;
-                func_080CFF58((u32*)&a->unk_00, (u32*)&a->unk_00.unk_04, v);
+                func_080CFF58((u32*)&a->unk_00, (u32*)&a->unk_00.y, v);
             }
         }
     }
-    ColliderSetPosition(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
-    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    ColliderSetPosition(w->unk_38, a->unk_00.x, a->unk_00.y, a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.x, a->unk_00.y + a->unk_00.unk_08);
     w->gfx = AnimUpdate((AnimState*)w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
@@ -1927,8 +1927,8 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
     s32 sx;
     s32 sy;
 
-    sx = a->unk_00.unk_00;
-    sy = a->unk_00.unk_04;
+    sx = a->unk_00.x;
+    sy = a->unk_00.y;
 
     if (w->unk_94 == 6) {
         if (w->unk_98 == 0) {
@@ -1942,119 +1942,119 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
             case 0xAD:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 -= 0x500;
-                    a->unk_00.unk_04 += 0x400;
+                    a->unk_00.x -= 0x500;
+                    a->unk_00.y += 0x400;
                     break;
                 case 1:
-                    a->unk_00.unk_00 -= 0x200;
+                    a->unk_00.x -= 0x200;
                     break;
                 case 2:
-                    a->unk_00.unk_00 -= 0x300;
+                    a->unk_00.x -= 0x300;
                     break;
                 }
                 break;
             case 0x53:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 += 0x500;
-                    a->unk_00.unk_04 += 0x400;
+                    a->unk_00.x += 0x500;
+                    a->unk_00.y += 0x400;
                     break;
                 case 1:
-                    a->unk_00.unk_00 += 0x200;
+                    a->unk_00.x += 0x200;
                     break;
                 case 2:
-                    a->unk_00.unk_00 += 0x300;
+                    a->unk_00.x += 0x300;
                     break;
                 }
                 break;
             case 0xD3:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 -= 0x500;
-                    a->unk_00.unk_04 -= 0x200;
+                    a->unk_00.x -= 0x500;
+                    a->unk_00.y -= 0x200;
                     break;
                 case 1:
-                    a->unk_00.unk_00 -= 0x500;
+                    a->unk_00.x -= 0x500;
                     break;
                 case 2:
-                    a->unk_00.unk_00 -= 0x200;
+                    a->unk_00.x -= 0x200;
                     break;
                 }
                 break;
             case 0x2D:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 += 0x500;
-                    a->unk_00.unk_04 -= 0x200;
+                    a->unk_00.x += 0x500;
+                    a->unk_00.y -= 0x200;
                     break;
                 case 1:
-                    a->unk_00.unk_00 += 0x500;
+                    a->unk_00.x += 0x500;
                     break;
                 case 2:
-                    a->unk_00.unk_00 += 0x200;
+                    a->unk_00.x += 0x200;
                     break;
                 }
                 break;
             case 0x80:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 -= 0x300;
-                    a->unk_00.unk_04 += 0x400;
+                    a->unk_00.x -= 0x300;
+                    a->unk_00.y += 0x400;
                     break;
                 case 1:
-                    a->unk_00.unk_00 += 0x100;
-                    a->unk_00.unk_04 += 0x100;
+                    a->unk_00.x += 0x100;
+                    a->unk_00.y += 0x100;
                     break;
                 case 2:
-                    a->unk_00.unk_04 += 0x200;
+                    a->unk_00.y += 0x200;
                     break;
                 case 3:
-                    a->unk_00.unk_04 += 0x100;
+                    a->unk_00.y += 0x100;
                     break;
                 }
                 break;
             case 0x40:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 += 0x700;
-                    a->unk_00.unk_04 += 0x100;
+                    a->unk_00.x += 0x700;
+                    a->unk_00.y += 0x100;
                     break;
                 case 1:
-                    a->unk_00.unk_00 += 0x300;
+                    a->unk_00.x += 0x300;
                     break;
                 case 2:
-                    a->unk_00.unk_00 += 0x200;
+                    a->unk_00.x += 0x200;
                     break;
                 }
                 break;
             case 0xC0:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_00 -= 0x700;
-                    a->unk_00.unk_04 += 0x100;
+                    a->unk_00.x -= 0x700;
+                    a->unk_00.y += 0x100;
                     break;
                 case 1:
-                    a->unk_00.unk_00 -= 0x300;
+                    a->unk_00.x -= 0x300;
                     break;
                 case 2:
-                    a->unk_00.unk_00 -= 0x200;
+                    a->unk_00.x -= 0x200;
                     break;
                 }
                 break;
             case 0:
                 switch (AnimGetFrame((AnimState*)w->unk_08)) {
                 case 0:
-                    a->unk_00.unk_04 -= 0x400;
+                    a->unk_00.y -= 0x400;
                     break;
                 case 1:
-                    a->unk_00.unk_04 -= 0x400;
+                    a->unk_00.y -= 0x400;
                     break;
                 case 2:
-                    a->unk_00.unk_00 -= 0x100;
-                    a->unk_00.unk_04 += 0x100;
+                    a->unk_00.x -= 0x100;
+                    a->unk_00.y += 0x100;
                     break;
                 case 3:
-                    a->unk_00.unk_04 -= 0x100;
+                    a->unk_00.y -= 0x100;
                     break;
                 }
                 break;
@@ -2068,22 +2068,22 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
         if (AnimIsFinished((AnimState*)w->unk_08) != 0) {
             switch (a->unk_14) {
             case 0xAD:
-                a->unk_00.unk_00 -= 0x200;
-                a->unk_00.unk_04 += 0x200;
+                a->unk_00.x -= 0x200;
+                a->unk_00.y += 0x200;
                 break;
             case 0x53:
-                a->unk_00.unk_00 += 0x200;
-                a->unk_00.unk_04 += 0x200;
+                a->unk_00.x += 0x200;
+                a->unk_00.y += 0x200;
                 break;
             case 0xD3:
             case 0x2D:
-                a->unk_00.unk_04 -= 0x400;
+                a->unk_00.y -= 0x400;
                 break;
             case 0x80:
-                a->unk_00.unk_04 += 0x200;
+                a->unk_00.y += 0x200;
                 break;
             case 0:
-                a->unk_00.unk_04 -= 0x200;
+                a->unk_00.y -= 0x200;
                 break;
             }
             func_080CAA50(w, 0, 0);
@@ -2097,12 +2097,12 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
     func_080CA560(&a->unk_00, sx, sy);
 
     if ((u8)func_080CFE34(&a->unk_00) != 0) {
-        a->unk_00.unk_00 = sx;
-        a->unk_00.unk_04 = sy;
+        a->unk_00.x = sx;
+        a->unk_00.y = sy;
         a->unk_10 = 0;
     }
-    ColliderSetPosition(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
-    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    ColliderSetPosition(w->unk_38, a->unk_00.x, a->unk_00.y, a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.x, a->unk_00.y + a->unk_00.unk_08);
     w->gfx = AnimUpdate((AnimState*)w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
@@ -2114,8 +2114,8 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
     s32 y;
     u16 keys;
 
-    x = a->unk_00.unk_00;
-    y = a->unk_00.unk_04;
+    x = a->unk_00.x;
+    y = a->unk_00.y;
 
     if (w->unk_94 == 8) {
         if (w->unk_98 == 0) {
@@ -2140,12 +2140,12 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
     func_080CA560(&a->unk_00, x, y);
 
     if ((u8)func_080CFE34(&a->unk_00) != 0) {
-        a->unk_00.unk_00 = x;
-        a->unk_00.unk_04 = y;
+        a->unk_00.x = x;
+        a->unk_00.y = y;
         a->unk_10 = 0;
     }
-    ColliderSetPosition(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
-    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    ColliderSetPosition(w->unk_38, a->unk_00.x, a->unk_00.y, a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.x, a->unk_00.y + a->unk_00.unk_08);
     w->gfx = AnimUpdate((AnimState*)w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
@@ -2159,8 +2159,8 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     u16 v;
 
     z = func_080CAA14(w);
-    sx = a->unk_00.unk_00;
-    sy = a->unk_00.unk_04;
+    sx = a->unk_00.x;
+    sy = a->unk_00.y;
 
     if (w->unk_94 <= 1) {
         func_080CA9DC((PooSoraWork*)a);
@@ -2191,8 +2191,8 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
                 a->unk_10 = 0;
             }
         }
-        a->unk_00.unk_00 += gSineTable[a->unk_14] * a->unk_10 >> 8;
-        a->unk_00.unk_04 += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
+        a->unk_00.x += gSineTable[a->unk_14] * a->unk_10 >> 8;
+        a->unk_00.y += -gSineTable[a->unk_14 + 0x40] * a->unk_10 >> 8;
 
         if ((GetKeysPressed() & 2) != 0) {
             w->unk_98 = 0;
@@ -2235,8 +2235,8 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     func_080CA560(&a->unk_00, sx, sy);
 
     if ((u8)func_080CFE34(&a->unk_00) != 0) {
-        a->unk_00.unk_00 = sx;
-        a->unk_00.unk_04 = sy;
+        a->unk_00.x = sx;
+        a->unk_00.y = sy;
         a->unk_10 = 0;
     }
 
@@ -2247,8 +2247,8 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
         w->unk_94 = 4;
         SetTaskUpdate(t, (u32)func_080CAD08);
     }
-    ColliderSetPosition(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
-    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    ColliderSetPosition(w->unk_38, a->unk_00.x, a->unk_00.y, a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.x, a->unk_00.y + a->unk_00.unk_08);
     w->gfx = AnimUpdate((AnimState*)w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
@@ -2285,7 +2285,7 @@ void task_poo_sora_2(PooSoraWork* w) {
             a->unk_3A = gUnk_02034DEC + 1;
         }
     } else {
-        gUnk_02034DEC = -0x1008 - (a->unk_00.unk_04 >> 8) * 4;
+        gUnk_02034DEC = -0x1008 - (a->unk_00.y >> 8) * 4;
         a->unk_3C = 0;
 
         if (ac != a->unk_00.unk_0C) {
@@ -2294,8 +2294,8 @@ void task_poo_sora_2(PooSoraWork* w) {
             a->unk_3A = gUnk_02034DEC + 1;
         }
     }
-    x = (a->unk_00.unk_00 >> 8) - gUnk_0203C40C;
-    y = (a->unk_00.unk_04 >> 8) + (a->unk_00.unk_08 >> 8) - gUnk_0203C3F8;
+    x = (a->unk_00.x >> 8) - gUnk_0203C40C;
+    y = (a->unk_00.y >> 8) + (a->unk_00.unk_08 >> 8) - gUnk_0203C3F8;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, prio, gUnk_02034DEC - 1);
     TaskPoolDraw(&w->unk_24);
 }
@@ -2401,8 +2401,8 @@ u16 func_080CBB7C(void) {
 }
 
 void task_poo_trap_0(PooTrapWork* w, PooPos* p) {
-    w->unk_0C = p->unk_00;
-    w->unk_10 = p->unk_04;
+    w->unk_0C = p->x;
+    w->unk_10 = p->y;
     w->unk_14 = 0;
     w->tiles = LoadObjTiles(gUnk_0972BD8C, 0x100);
     w->palette = LoadObjPalette(gUnk_09849AB8, 0x20);
@@ -2487,7 +2487,7 @@ void task_poo_pitAndButterfly_3(PooTrapWork* w) {
 void task_poo_balloon_0(PooBalloonObjWork* w, PooPos* p) {
     w->unk_24 = p;
 
-    if (p->unk_00 == 0x3FD00 && p->unk_04 == 0x21B00) {
+    if (p->x == 0x3FD00 && p->y == 0x21B00) {
         w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5E38, 3), gUnk_0974B4D8);
         w->palette = LoadObjPalette(gUnk_09849C98, 0x20);
         AnimInit(w->anim, gUnk_09EF5E44, gUnk_09EF5E38);
@@ -2509,11 +2509,11 @@ void task_poo_balloon_2(PooBalloonObjWork* w) {
     s16 x;
     s16 y;
 
-    x = (w->unk_24->unk_00 >> 8) - gUnk_0203C40C;
-    y = (w->unk_24->unk_04 >> 8) + (w->unk_24->unk_08 >> 8) - gUnk_0203C3F8;
+    x = (w->unk_24->x >> 8) - gUnk_0203C40C;
+    y = (w->unk_24->y >> 8) + (w->unk_24->unk_08 >> 8) - gUnk_0203C3F8;
     if (x >= -16 && x <= 256 && y >= -16 && y <= 176) {
         w->gfx = AnimUpdate(w->anim);
-        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24->unk_04 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24->y >> 8) * 4);
     }
 }
 
@@ -2547,8 +2547,8 @@ void task_poo_shadow_3(TaskPool* w) {
 void task_poo_shadowdodai_0(PooShadowWork* w, PooShadowArgs* a) {
     w->unk_14 = a->unk_00;
     w->unk_18 = a->unk_04;
-    w->unk_00 = w->unk_14->unk_00;
-    w->unk_04 = w->unk_14->unk_04;
+    w->unk_00 = w->unk_14->x;
+    w->unk_04 = w->unk_14->y;
     w->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
     AnimInit(w->anim, gUnk_09EE1384, gUnk_09EE1380);
@@ -2557,8 +2557,8 @@ void task_poo_shadowdodai_0(PooShadowWork* w, PooShadowArgs* a) {
 }
 
 u8 task_poo_shadowdodai_1(PooShadowWork* w) {
-    w->unk_00 = w->unk_14->unk_00;
-    w->unk_04 = w->unk_14->unk_04;
+    w->unk_00 = w->unk_14->x;
+    w->unk_04 = w->unk_14->y;
     return 1;
 }
 
@@ -2593,8 +2593,8 @@ void task_poo_shadowdodai_3(PooShadowWork* w) {
 
 void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a) {
     w->unk_10 = a->unk_00;
-    w->unk_00 = w->unk_10->unk_00;
-    w->unk_04 = w->unk_10->unk_04;
+    w->unk_00 = w->unk_10->x;
+    w->unk_04 = w->unk_10->y;
     w->unk_2C = a->unk_08;
     w->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
@@ -2604,8 +2604,8 @@ void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a) {
 }
 
 u8 task_poo_shadowscale_1(PooScaleWork* w) {
-    w->unk_00 = w->unk_10->unk_00;
-    w->unk_04 = w->unk_10->unk_04;
+    w->unk_00 = w->unk_10->x;
+    w->unk_04 = w->unk_10->y;
     return 1;
 }
 
@@ -2683,18 +2683,18 @@ u8 task_poo_freeballoon_1(PooFreeBalloonWork* w) {
 
     if (w->unk_90 > 5) {
         t = w->unk_90 - 5;
-        w->unk_6C.unk_00 = w->unk_7C.unk_00 - t * 256;
-        w->unk_6C.unk_04 = w->unk_7C.unk_04 - ((t * t) << 8) / 32;
+        w->unk_6C.x = w->unk_7C.x - t * 256;
+        w->unk_6C.y = w->unk_7C.y - ((t * t) << 8) / 32;
     } else {
         w->unk_6C = *w->unk_94;
         w->unk_7C = *w->unk_94;
     }
-    w->unk_24.unk_00 = w->unk_34.unk_00 + w->unk_90 * 256;
-    w->unk_24.unk_04 = w->unk_34.unk_04 - ((w->unk_90 * w->unk_90) << 8) / 32;
-    w->x2 = (w->unk_6C.unk_00 >> 8) - gUnk_0203C40C;
-    w->y2 = (w->unk_6C.unk_04 >> 8) + (w->unk_6C.unk_08 >> 8) - gUnk_0203C3F8;
-    w->x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
-    w->y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
+    w->unk_24.x = w->unk_34.x + w->unk_90 * 256;
+    w->unk_24.y = w->unk_34.y - ((w->unk_90 * w->unk_90) << 8) / 32;
+    w->x2 = (w->unk_6C.x >> 8) - gUnk_0203C40C;
+    w->y2 = (w->unk_6C.y >> 8) + (w->unk_6C.unk_08 >> 8) - gUnk_0203C3F8;
+    w->x = (w->unk_24.x >> 8) - gUnk_0203C40C;
+    w->y = (w->unk_24.y >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
     if (func_080CC284(w->x2, w->y2) != 0) {
         w->gfx2 = AnimUpdate(w->anim2);
@@ -2716,11 +2716,11 @@ u8 task_poo_freeballoon_1(PooFreeBalloonWork* w) {
 
 void task_poo_freeballoon_2(PooFreeBalloonWork* w) {
     if (w->gfx2 != 0) {
-        DrawSprite(w->x2, w->y2, w->gfx2, w->tiles2, w->palette2, 0, 0x800, -0x1004 - (w->unk_6C.unk_04 >> 8) * 4);
+        DrawSprite(w->x2, w->y2, w->gfx2, w->tiles2, w->palette2, 0, 0x800, -0x1004 - (w->unk_6C.y >> 8) * 4);
     }
 
     if (w->gfx != 0) {
-        DrawSprite(w->x, w->y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(w->x, w->y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.y >> 8) * 4);
     }
 }
 
@@ -2807,7 +2807,7 @@ void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p) {
     w->unk_C4 = TaskCreate(&w->unk_B0, &gTaskDescPooShadow, &w->unk_24);
     w->unk_C8 = 0;
     w->unk_CE = GetRandom();
-    ColliderSetPosition(w->unk_34, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
+    ColliderSetPosition(w->unk_34, w->unk_24.x, w->unk_24.y, w->unk_24.unk_08);
 }
 
 u8 task_poo_trapballoon_1(PooBalloonWork* w) {
@@ -2826,8 +2826,8 @@ u8 task_poo_trapballoon_1(PooBalloonWork* w) {
     }
 
     if (ColliderIsTouchingType(w->unk_34, 9) != 0 && func_080C9D70() != 0) {
-        gUnk_0203C3DC = w->unk_24.unk_00;
-        gUnk_0203C3E8 = w->unk_24.unk_04;
+        gUnk_0203C3DC = w->unk_24.x;
+        gUnk_0203C3E8 = w->unk_24.y;
         gUnk_0203C3F0 = 2;
         func_080CCB84(&w->unk_90, 0);
         return 0;
@@ -2852,8 +2852,8 @@ u8 task_poo_trapballoon_1(PooBalloonWork* w) {
     func_080CCB84(&w->unk_90, 0);
     ColliderSetDisabled(w->unk_34, 1);
     func_08000DE8(&w->unk_B0, w->unk_C4);
-    w->unk_24.unk_00 -= 0x800;
-    w->unk_24.unk_04 += 0x1000;
+    w->unk_24.x -= 0x800;
+    w->unk_24.y += 0x1000;
     w->unk_C8 = (s32)TaskCreate(&w->unk_B0, &gTaskDescPooFreeballoon, &w->unk_24);
     m4aSongNumStart(0x147);
     return 1;
@@ -2871,9 +2871,9 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
         w->gfx = AnimUpdate(w->anim);
         w->unk_CE += 2;
         d = gSineTable[w->unk_CE & 0xFF] * 2;
-        x = ((w->unk_24.unk_00 - 0x800) >> 8) - gUnk_0203C40C;
+        x = ((w->unk_24.x - 0x800) >> 8) - gUnk_0203C40C;
         d += 0x1200;
-        y = ((w->unk_24.unk_04 + d) >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
+        y = ((w->unk_24.y + d) >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
         if (IsRectOutsideScreen(x, y, 64, 8, 24, 24) != 0) {
             if (w->palette != 0) {
@@ -2890,7 +2890,7 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
                 ColliderInit(w->unk_34, 10, 8, 16);
                 func_080CCB90(&w->unk_90, 0x400, &w->unk_24);
             }
-            DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+            DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.y >> 8) * 4);
             TaskPoolUpdate(&w->unk_B0);
             TaskPoolDraw(&w->unk_B0);
         }
@@ -2918,14 +2918,14 @@ void task_poo_owlballoon_0(PooOwlBalloonWork* w, PooPos* p) {
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->unk_B0, 2);
     w->unk_C4 = TaskCreate(&w->unk_B0, &gTaskDescPooShadow, &w->unk_24);
-    ColliderSetPosition(w->unk_34, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
+    ColliderSetPosition(w->unk_34, w->unk_24.x, w->unk_24.y, w->unk_24.unk_08);
     func_080CCB90(&w->unk_90, 0x240, &w->unk_24);
 }
 
 u8 task_poo_owlballoon_1(PooOwlBalloonWork* w) {
     if (w->palette != 0 && ColliderIsTouchingType(w->unk_34, 9) != 0 && func_080C9D70() != 0) {
-        gUnk_0203C3DC = w->unk_24.unk_00;
-        gUnk_0203C3E8 = w->unk_24.unk_04;
+        gUnk_0203C3DC = w->unk_24.x;
+        gUnk_0203C3E8 = w->unk_24.y;
         gUnk_0203C3F0 = 7;
         func_080CCB84(&w->unk_90.unk_00, 0);
         m4aSongNumStart(0x181);
@@ -2939,8 +2939,8 @@ void task_poo_owlballoon_2(PooOwlBalloonWork* w) {
     s16 y;
 
     w->gfx = AnimUpdate(w->anim);
-    x = ((w->unk_24.unk_00 - 0x800) >> 8) - gUnk_0203C40C;
-    y = ((w->unk_24.unk_04 + 0x1000) >> 8) - gUnk_0203C3F8;
+    x = ((w->unk_24.x - 0x800) >> 8) - gUnk_0203C40C;
+    y = ((w->unk_24.y + 0x1000) >> 8) - gUnk_0203C3F8;
     if (IsRectOutsideScreen(x, y, 64, 8, 24, 24) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
@@ -2954,7 +2954,7 @@ void task_poo_owlballoon_2(PooOwlBalloonWork* w) {
             w->palette = LoadObjPalette(gUnk_09849C98, 0x20);
             ColliderInit(w->unk_34, 10, 8, 16);
         }
-        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1003 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1003 - (w->unk_24.y >> 8) * 4);
         TaskPoolUpdate(&w->unk_B0);
         TaskPoolDraw(&w->unk_B0);
     }
@@ -3013,8 +3013,8 @@ s32 func_080CCBF8(PooNode* n) {
 
     q = gUnk_0203C3EC;
     p = n->unk_08;
-    dx = (q->unk_00 - p->unk_00) >> 8;
-    dy = (q->unk_04 - p->unk_04) >> 8;
+    dx = (q->x - p->x) >> 8;
+    dy = (q->y - p->y) >> 8;
     r = func_080CCB80(&n->unk_00);
 
     if ((s16)dx * (s16)dx > 0x3840 && (s16)dy * (s16)dy > 0x1900) {
@@ -3056,23 +3056,23 @@ PooNode* func_080CCC98(void) {
 }
 
 void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
-    w->unk_24.unk_00 = p->unk_00;
-    w->unk_24.unk_04 = p->unk_04;
+    w->unk_24.x = p->x;
+    w->unk_24.y = p->y;
     w->unk_24.unk_08 = 0;
     w->palette = 0;
     w->unk_20 = GetMaxSpriteTileBytes(gUnk_09EF5AE4, 14);
     AnimInit(w->anim, gUnk_09EF5B1C, gUnk_09EF5AE4);
     AnimStart(w->anim, 3, 1);
-    ColliderSetPosition(w->unk_74, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
+    ColliderSetPosition(w->unk_74, w->unk_24.x, w->unk_24.y, w->unk_24.unk_08);
     w->unk_34 = w->unk_24;
-    w->unk_34.unk_00 += 0xB00;
-    w->unk_34.unk_04 -= 0xA00;
+    w->unk_34.x += 0xB00;
+    w->unk_34.y -= 0xA00;
     w->unk_54 = w->unk_34;
-    w->unk_54.unk_00 -= 0x100;
-    w->unk_54.unk_04 -= 0x100;
+    w->unk_54.x -= 0x100;
+    w->unk_54.y -= 0x100;
     w->unk_64 = w->unk_34;
-    w->unk_64.unk_00 += 0x100;
-    w->unk_64.unk_04 += 0x100;
+    w->unk_64.x += 0x100;
+    w->unk_64.y += 0x100;
     TaskPoolInit(&w->unk_F4, 1);
     func_080CC178(&w->unk_F4, &w->unk_24, 0xCC);
     w->unk_F0 = 0;
@@ -3082,7 +3082,7 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
 u8 task_poo_honey_1(PooHoneyWork* w) {
     switch (w->unk_F0) {
     case 0:
-        if (w->unk_54.unk_00 <= gUnk_0203C3EC->unk_00 && gUnk_0203C3EC->unk_00 <= w->unk_64.unk_00 && w->unk_54.unk_04 <= gUnk_0203C3EC->unk_04 && gUnk_0203C3EC->unk_04 <= w->unk_64.unk_04) {
+        if (w->unk_54.x <= gUnk_0203C3EC->x && gUnk_0203C3EC->x <= w->unk_64.x && w->unk_54.y <= gUnk_0203C3EC->y && gUnk_0203C3EC->y <= w->unk_64.y) {
             gUnk_0203C3F0 = 3;
             func_080CCB84(&w->unk_D0.unk_00, 0);
             w->unk_F0++;
@@ -3105,8 +3105,8 @@ u8 task_poo_honey_1(PooHoneyWork* w) {
         switch (AnimGetGfxIndex(w->anim)) {
         case 1:
             w->unk_24 = *gUnk_0203C3EC;
-            w->unk_24.unk_00 -= 0xB00;
-            w->unk_24.unk_04 += 0xA00;
+            w->unk_24.x -= 0xB00;
+            w->unk_24.y += 0xA00;
             w->unk_24.unk_08 = 0;
             w->unk_44 = w->unk_24;
             break;
@@ -3115,37 +3115,37 @@ u8 task_poo_honey_1(PooHoneyWork* w) {
         case 4:
         case 5:
         case 6:
-            w->unk_24.unk_00 = w->unk_44.unk_00 + 0x200;
-            w->unk_24.unk_04 = w->unk_44.unk_04;
+            w->unk_24.x = w->unk_44.x + 0x200;
+            w->unk_24.y = w->unk_44.y;
             w->unk_24.unk_08 = w->unk_44.unk_08 - 0x200;
             break;
         case 7:
-            w->unk_24.unk_00 = w->unk_44.unk_00 - 0x200;
-            w->unk_24.unk_04 = w->unk_44.unk_04 - 0x500;
+            w->unk_24.x = w->unk_44.x - 0x200;
+            w->unk_24.y = w->unk_44.y - 0x500;
             w->unk_24.unk_08 = w->unk_44.unk_08 - 0xB00;
             break;
         case 8:
             gUnk_0203C3E4 = 3;
             gUnk_0203C3E0 = 0x73B;
-            w->unk_24.unk_00 = w->unk_44.unk_00 + 0xA00;
-            w->unk_24.unk_04 = w->unk_44.unk_04 - 0x900;
+            w->unk_24.x = w->unk_44.x + 0xA00;
+            w->unk_24.y = w->unk_44.y - 0x900;
             w->unk_24.unk_08 = w->unk_44.unk_08 - 0x1000;
             break;
         case 9:
-            w->unk_24.unk_00 = w->unk_44.unk_00 + 0x200;
-            w->unk_24.unk_04 = w->unk_44.unk_04;
+            w->unk_24.x = w->unk_44.x + 0x200;
+            w->unk_24.y = w->unk_44.y;
             w->unk_24.unk_08 = w->unk_44.unk_08 - 0x300;
             break;
         case 10:
-            w->unk_24.unk_00 = w->unk_44.unk_00 + 0x200;
-            w->unk_24.unk_04 = w->unk_44.unk_04;
+            w->unk_24.x = w->unk_44.x + 0x200;
+            w->unk_24.y = w->unk_44.y;
             w->unk_24.unk_08 = w->unk_44.unk_08 - 0x100;
             break;
         case 11:
         case 12:
         case 13:
-            w->unk_24.unk_00 = w->unk_44.unk_00;
-            w->unk_24.unk_04 = w->unk_44.unk_04;
+            w->unk_24.x = w->unk_44.x;
+            w->unk_24.y = w->unk_44.y;
             w->unk_24.unk_08 = w->unk_44.unk_08;
             w->unk_108++;
             break;
@@ -3168,8 +3168,8 @@ void task_poo_honey_2(PooHoneyWork* w) {
         return;
     }
 
-    x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
-    y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
+    x = (w->unk_24.x >> 8) - gUnk_0203C40C;
+    y = (w->unk_24.y >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
     if (IsRectOutsideScreen(x, y, 24, 8, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
@@ -3185,7 +3185,7 @@ void task_poo_honey_2(PooHoneyWork* w) {
             ColliderInit(w->unk_74, 10, 8, 16);
             func_080CCB90(&w->unk_D0, 0x1FA4, &w->unk_34);
         }
-        DrawSprite(x, y, AnimGetGfx(w->anim), w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(x, y, AnimGetGfx(w->anim), w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.y >> 8) * 4);
         TaskPoolUpdate(&w->unk_F4);
         TaskPoolDraw(&w->unk_F4);
     }
@@ -3404,8 +3404,8 @@ void func_080CD550(void* pool, u16 b, void* c, void* d) {
 }
 
 void task_poo_tigerstump_0(PooStumpWork* w, PooPos* p) {
-    w->unk_24 = p->unk_00;
-    w->unk_28 = p->unk_04 + 0x800;
+    w->unk_24 = p->x;
+    w->unk_28 = p->y + 0x800;
     w->unk_2C = 0;
     w->palette = 0;
     w->gfx = gUnk_097561D4;
@@ -3453,8 +3453,8 @@ void task_poo_tigerstump_3(PooStumpWork* w) {
 }
 
 void task_poo_poohstump_0(PooStumpWork* w, PooPos* p) {
-    w->unk_24 = p->unk_00;
-    w->unk_28 = p->unk_04;
+    w->unk_24 = p->x;
+    w->unk_28 = p->y;
     w->unk_2C = 0;
     w->palette = 0;
     w->gfx = gUnk_09755F34;
@@ -3822,8 +3822,8 @@ void task_poo_eeyore_3(PooEeyoreWork* w) {
 }
 
 void task_poo_owl_0(PooOwlWork* w) {
-    w->unk_24.unk_00 = 0x41500;
-    w->unk_24.unk_04 = 0x20700;
+    w->unk_24.x = 0x41500;
+    w->unk_24.y = 0x20700;
     w->unk_24.unk_08 = -0x3000;
     w->unk_24.unk_0C = 0;
     w->unk_4C = GetMaxSpriteTileBytes(gUnk_09EF5DC4, 18);
@@ -3832,15 +3832,15 @@ void task_poo_owl_0(PooOwlWork* w) {
     AnimInit(w->unk_0C, gUnk_09EF5E24, gUnk_09EF5DC4);
     w->unk_48 = 0;
     w->unk_49 = 0;
-    gUnk_02034E08.unk_00 = 0x3FD00;
-    gUnk_02034E08.unk_04 = 0x21B00;
+    gUnk_02034E08.x = 0x3FD00;
+    gUnk_02034E08.y = 0x21B00;
     TaskPoolInit(&w->unk_34, 1);
     TaskCreate(&w->unk_34, &gTaskDescPooOwlballoon, &gUnk_02034E08);
 }
 
 u8 task_poo_owl_1(PooOwlWork* w) {
     if (func_080C9D5C() != 0) {
-        func_080C9FA8(gUnk_0203C3EC->unk_00, gUnk_0203C3EC->unk_04 + gUnk_0203C3EC->unk_08);
+        func_080C9FA8(gUnk_0203C3EC->x, gUnk_0203C3EC->y + gUnk_0203C3EC->unk_08);
 
         if (gUnk_0203C3EC->unk_08 <= -0x3800) {
             func_080CA09C();
@@ -3858,7 +3858,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
                 if (w->unk_4A != 0) {
                     ApproachValueHalfSteps(&w->unk_24.unk_08, -0x9000, w->unk_4A);
                     w->unk_4A--;
-                    w->unk_24.unk_00 -= 204;
+                    w->unk_24.x -= 204;
                 } else {
                     w->unk_24.unk_08 -= 0x100;
                 }
@@ -3888,8 +3888,8 @@ void task_poo_owl_2(PooOwlWork* w) {
     s16 y;
 
     TaskPoolDraw(&w->unk_34);
-    x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
-    y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
+    x = (w->unk_24.x >> 8) - gUnk_0203C40C;
+    y = (w->unk_24.y >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
     if (IsRectOutsideScreen(x, y, 24, 8, 8, 8) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
@@ -3901,7 +3901,7 @@ void task_poo_owl_2(PooOwlWork* w) {
             w->tiles = AllocObjTiles(w->unk_4C, gUnk_097471E2);
             w->palette = LoadObjPalette(gUnk_09849C78, 0x20);
         }
-        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_24.unk_04 + w->unk_24.unk_08) >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_24.y + w->unk_24.unk_08) >> 8) * 4);
     }
 }
 
@@ -4328,7 +4328,7 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
         if (d != 0) {
             z = -0x1008 - (w->unk_80 >> 8) * 4;
 
-            if (w->unk_2C >= gUnk_0203C420.unk_00.unk_04) {
+            if (w->unk_2C >= gUnk_0203C420.unk_00.y) {
                 z -= 2;
             } else {
                 z += 2;
@@ -4397,8 +4397,8 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     AnimInit(w->anim, gUnk_09EF5FA0, gUnk_09EF5EF8);
 
     if (func_080D2D50(5) != 0) {
-        w->unk_28.unk_00 = 0x95F00;
-        w->unk_28.unk_04 = 0x4EE00;
+        w->unk_28.x = 0x95F00;
+        w->unk_28.y = 0x4EE00;
         w->unk_28.unk_08 = 0;
         AnimStart(w->anim, 0, 0);
         w->unk_24 = 0;
@@ -4413,7 +4413,7 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     TaskPoolInit(&w->unk_98, 1);
     TaskCreate(&w->unk_98, &gTaskDescPooShadow, &w->unk_28);
     ColliderInit(w->unk_3C, 10, 4, 32);
-    ColliderSetPosition(w->unk_3C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
+    ColliderSetPosition(w->unk_3C, w->unk_28.x, w->unk_28.y, w->unk_28.unk_08);
 
     if (func_080D2D50(5) != 0) {
         w->unk_B8 = func_080D2E28(w->unk_3C, 58);
@@ -4429,14 +4429,14 @@ u8 task_poo_roo_1(PooRooWork* w) {
             AnimStart(w->anim, 5, 0);
             w->unk_B4 = 1;
             w->unk_28 = *w->unk_38;
-            w->unk_28.unk_00 -= 0x600;
+            w->unk_28.x -= 0x600;
             w->unk_28.unk_08 += 0x1F00;
         }
         break;
     case 1:
         w->unk_B0 = w->unk_28.unk_08;
         w->unk_28 = *w->unk_38;
-        w->unk_28.unk_00 -= 0x600;
+        w->unk_28.x -= 0x600;
         t = w->unk_28.unk_08 + 0x1F00;
         w->unk_28.unk_08 = t;
 
@@ -4453,8 +4453,8 @@ u8 task_poo_roo_1(PooRooWork* w) {
         if (w->unk_28.unk_08 >= 0) {
             w->unk_28.unk_08 = 0;
         } else {
-            w->unk_28.unk_00 -= 0x40;
-            w->unk_28.unk_04 += 0x40;
+            w->unk_28.x -= 0x40;
+            w->unk_28.y += 0x40;
         }
 
         if (w->unk_38->unk_08 >= 0) {
@@ -4474,7 +4474,7 @@ u8 task_poo_roo_1(PooRooWork* w) {
         break;
     }
     w->gfx = AnimUpdate(w->anim);
-    ColliderSetPosition(w->unk_3C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
+    ColliderSetPosition(w->unk_3C, w->unk_28.x, w->unk_28.y, w->unk_28.unk_08);
     TaskPoolUpdate(&w->unk_98);
     return 1;
 }
@@ -4485,8 +4485,8 @@ void task_poo_roo_2(PooRooWork* w) {
     s32 pr;
     s32 t;
 
-    x = (w->unk_28.unk_00 >> 8) - gUnk_0203C40C;
-    t = w->unk_28.unk_04 >> 8;
+    x = (w->unk_28.x >> 8) - gUnk_0203C40C;
+    t = w->unk_28.y >> 8;
     y = t + (w->unk_28.unk_08 >> 8) - gUnk_0203C3F8;
     pr = w->unk_24 != 0 ? 0x801 : 0x800;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, -0x1006 - t * 4);
@@ -4716,8 +4716,8 @@ void task_poo_tanpopo_3(PooTanpopoWork* w) {
 }
 
 void task_poo_ti_board_0(PooBoardWork* w, PooPos* p) {
-    w->unk_0C = p->unk_00;
-    w->unk_10 = p->unk_04;
+    w->unk_0C = p->x;
+    w->unk_10 = p->y;
     w->unk_14 = 0;
     w->tiles = LoadObjTiles(gUnk_097565FC, 0x200);
     w->palette = 0;
@@ -5004,8 +5004,8 @@ s32 func_080CFE34(PooPos* p) {
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
-    x = p->unk_00 - gUnk_02034E20->unk_1C.unk_00;
-    y = p->unk_04 - gUnk_02034E20->unk_1C.unk_04;
+    x = p->x - gUnk_02034E20->unk_1C.x;
+    y = p->y - gUnk_02034E20->unk_1C.y;
     if (y + x < -0x1A00) {
         return 0;
     }
@@ -5034,8 +5034,8 @@ s32 func_080CFEA0(PooPos* p) {
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
-    x = p->unk_00 - gUnk_02034E20->unk_1C.unk_00;
-    y = p->unk_04 - gUnk_02034E20->unk_1C.unk_04;
+    x = p->x - gUnk_02034E20->unk_1C.x;
+    y = p->y - gUnk_02034E20->unk_1C.y;
     if (y + x < -0x1A00) {
         return 0;
     }
@@ -5072,15 +5072,15 @@ void func_080CFF58(u32* a, u32* b, u16 c) {
     s32 d;
     s32 e;
 
-    d = *a - gUnk_02034E20->unk_1C.unk_00;
+    d = *a - gUnk_02034E20->unk_1C.x;
     if (d < -0x600) {
         d = -0x600;
     } else if (d > 0xA00) {
         d = 0xA00;
     }
     e = d / 2 - 0x300;
-    ApproachValue(a, d + gUnk_02034E20->unk_1C.unk_00, c);
-    ApproachValue(b, e + gUnk_02034E20->unk_1C.unk_04, c);
+    ApproachValue(a, d + gUnk_02034E20->unk_1C.x, c);
+    ApproachValue(b, e + gUnk_02034E20->unk_1C.y, c);
 }
 
 void func_080CFFC0(s32* a, s32* b) {
@@ -5129,8 +5129,8 @@ void func_080D0084(u32* a, u32* b, u16 c) {
     s32 x;
     s32 y;
 
-    x = *a - gUnk_02034E20->unk_1C.unk_00;
-    y = *b - gUnk_02034E20->unk_1C.unk_04;
+    x = *a - gUnk_02034E20->unk_1C.x;
+    y = *b - gUnk_02034E20->unk_1C.y;
 
     if (x < -0xB00 && y < -0xD00) {
         func_080CFFC0(&x, &y);
@@ -5165,16 +5165,16 @@ void func_080D0084(u32* a, u32* b, u16 c) {
             func_080CFFF0(&x, &y);
         }
     }
-    ApproachValue(a, x + gUnk_02034E20->unk_1C.unk_00, c);
-    ApproachValue(b, y + gUnk_02034E20->unk_1C.unk_04, c);
+    ApproachValue(a, x + gUnk_02034E20->unk_1C.x, c);
+    ApproachValue(b, y + gUnk_02034E20->unk_1C.y, c);
 }
 
 s32 func_080D01BC(s32 x, s32 y) {
     s32 dx;
     s32 dy;
 
-    dx = x - gUnk_02034E20->unk_1C.unk_00;
-    dy = y - gUnk_02034E20->unk_1C.unk_04;
+    dx = x - gUnk_02034E20->unk_1C.x;
+    dy = y - gUnk_02034E20->unk_1C.y;
     if (dx < -0xB00 && dy < -0xD00) {
         return 0x53;
     }
@@ -5193,8 +5193,8 @@ s32 func_080D0210(s32 a, s32 b) {
     s32 x;
     s32 y;
 
-    x = a - gUnk_02034E20->unk_1C.unk_00;
-    y = b - gUnk_02034E20->unk_1C.unk_04;
+    x = a - gUnk_02034E20->unk_1C.x;
+    y = b - gUnk_02034E20->unk_1C.y;
     if (x < -0x3D00 || x > 0x4300 || y < -0x1F00 || y > 0x3800) {
         return 0;
     }
@@ -5215,14 +5215,14 @@ s32 func_080D0210(s32 a, s32 b) {
 
 void task_poo_wagon_0(PooCamera* w) {
     gUnk_02034E20 = w;
-    w->unk_1C.unk_00 = 0x2AE00;
-    w->unk_1C.unk_04 = 0x17700;
+    w->unk_1C.x = 0x2AE00;
+    w->unk_1C.y = 0x17700;
     w->unk_1C.unk_08 = 0;
     w->unk_1C.unk_0C = 0;
     w->unk_2C = w->unk_1C;
 
     if (func_080D2D50(6) != 0) {
-        w->unk_1C.unk_04 += 0xC00;
+        w->unk_1C.y += 0xC00;
     }
     w->palette = 0;
     w->gfx = gUnk_09758C04;
@@ -5239,21 +5239,21 @@ u8 task_poo_wagon_1(PooCamera* w) {
     s32 d;
 
     if (func_080CFF0C() != 0) {
-        if (w->unk_1C.unk_04 == w->unk_2C.unk_04) {
-            w->unk_1C.unk_04 += 0x100;
-            gUnk_0203C420.unk_00.unk_04 += 0x100;
+        if (w->unk_1C.y == w->unk_2C.y) {
+            w->unk_1C.y += 0x100;
+            gUnk_0203C420.unk_00.y += 0x100;
 
             if (w->unk_3C != 0) {
-                gUnk_0203C3EC->unk_04 += 0x100;
+                gUnk_0203C3EC->y += 0x100;
             }
         }
     } else if (func_080D2D50(6) == 0) {
-        if (w->unk_1C.unk_04 != w->unk_2C.unk_04) {
-            w->unk_1C.unk_04 -= 0x100;
-            gUnk_0203C420.unk_00.unk_04 -= 0x100;
+        if (w->unk_1C.y != w->unk_2C.y) {
+            w->unk_1C.y -= 0x100;
+            gUnk_0203C420.unk_00.y -= 0x100;
 
             if (w->unk_3C != 0) {
-                gUnk_0203C3EC->unk_04 -= 0x100;
+                gUnk_0203C3EC->y -= 0x100;
             }
         }
     }
@@ -5262,8 +5262,8 @@ u8 task_poo_wagon_1(PooCamera* w) {
 
     if (c != 0) {
         if (w->unk_3C == 0) {
-            gUnk_0203C3DC = w->unk_1C.unk_00;
-            gUnk_0203C3E8 = w->unk_1C.unk_04;
+            gUnk_0203C3DC = w->unk_1C.x;
+            gUnk_0203C3E8 = w->unk_1C.y;
             gUnk_0203C3F0 = 11;
             w->unk_3C = 1;
         }
@@ -5275,12 +5275,12 @@ u8 task_poo_wagon_1(PooCamera* w) {
         w->unk_3E++;
 
         if (w->unk_3E > 100) {
-            if (w->unk_1C.unk_04 != w->unk_2C.unk_04 + 0xC00) {
-                t = w->unk_1C.unk_04 - 0xC00;
-                d = w->unk_2C.unk_04 - t;
-                w->unk_1C.unk_04 += d;
-                gUnk_0203C420.unk_00.unk_04 += d;
-                gUnk_0203C3EC->unk_04 += d;
+            if (w->unk_1C.y != w->unk_2C.y + 0xC00) {
+                t = w->unk_1C.y - 0xC00;
+                d = w->unk_2C.y - t;
+                w->unk_1C.y += d;
+                gUnk_0203C420.unk_00.y += d;
+                gUnk_0203C3EC->y += d;
                 func_080D2D3C(6);
                 m4aSongNumStart(0x90);
                 w->unk_3E = 0;
@@ -5309,8 +5309,8 @@ void task_poo_wagon_2(PooCamera* w) {
     } else {
         t = 0;
     }
-    x = ((w->unk_1C.unk_00 + t) >> 8) - gUnk_0203C40C;
-    y = (w->unk_1C.unk_04 >> 8) + (w->unk_1C.unk_08 >> 8) - gUnk_0203C3F8;
+    x = ((w->unk_1C.x + t) >> 8) - gUnk_0203C40C;
+    y = (w->unk_1C.y >> 8) + (w->unk_1C.unk_08 >> 8) - gUnk_0203C3F8;
 
     if (IsRectOutsideScreen(x, y, 32, 40, 48, 48) != 0) {
         if (w->palette != 0) {
@@ -5336,17 +5336,17 @@ void task_poo_wagon_2(PooCamera* w) {
         gUnk_02034E24 = n - 1;
 
         if (func_080C9DAC() != 0) {
-            if (gUnk_0203C420.unk_00.unk_04 >= gUnk_0203C3EC->unk_04) {
+            if (gUnk_0203C420.unk_00.y >= gUnk_0203C3EC->y) {
                 gUnk_02034E26 += 6;
             } else {
                 gUnk_02034E24 += 0xFFFC;
             }
         }
     } else {
-        d = (u8)func_080D0210(gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04);
+        d = (u8)func_080D0210(gUnk_0203C420.unk_00.x, gUnk_0203C420.unk_00.y);
 
         if (d == 0) {
-            k = w->unk_1C.unk_04 + 0x300;
+            k = w->unk_1C.y + 0x300;
             gUnk_02034E26 = -0x1004 - (k >> 8) * 4;
             gUnk_02034E24 = -0x1009 - (k >> 8) * 4;
         } else if (d == 83 || d == 173) {
@@ -5359,7 +5359,7 @@ void task_poo_wagon_2(PooCamera* w) {
     }
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, gUnk_02034E26);
     DrawSprite(x, y, w->gfx2, w->tiles2, w->palette, 0, 0x800, gUnk_02034E24);
-    p = -0x1002 - ((w->unk_1C.unk_04 - 0xE00) >> 8) * 4;
+    p = -0x1002 - ((w->unk_1C.y - 0xE00) >> 8) * 4;
 
     if (func_080CFF30() == 0 && n > p && (d == 83 || d == 173)) {
         p = n - 1;
@@ -5502,8 +5502,8 @@ void task_poo_spark_2(PooSparkWork* w) {
     u16 x;
     u16 y;
 
-    x = (w->unk_00.unk_00 >> 8) - gUnk_0203C40C;
-    y = (w->unk_00.unk_04 >> 8) + (w->unk_00.unk_08 >> 8) - gUnk_0203C3F8;
+    x = (w->unk_00.x >> 8) - gUnk_0203C40C;
+    y = (w->unk_00.y >> 8) + (w->unk_00.unk_08 >> 8) - gUnk_0203C3F8;
     DrawSprite(x, y, AnimGetGfx(w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
@@ -5551,8 +5551,8 @@ u8 task_poo_bee_1(PooBeeWork* w) {
                 w->sub[i].unk_00 = w->unk_A4 - 0x500;
                 w->sub[i].unk_04 = w->unk_A8 + 0x500;
                 w->sub[i].unk_08 = w->unk_AC;
-                w->sub[i].unk_10 = 0x2000 + gUnk_0203C3EC->unk_00 + gUnk_096FD730[i].unk_00;
-                w->sub[i].unk_14 = -0x2000 + gUnk_0203C3EC->unk_04 + gUnk_096FD730[i].unk_04;
+                w->sub[i].unk_10 = 0x2000 + gUnk_0203C3EC->x + gUnk_096FD730[i].unk_00;
+                w->sub[i].unk_14 = -0x2000 + gUnk_0203C3EC->y + gUnk_096FD730[i].unk_04;
             }
         }
 
@@ -5566,15 +5566,15 @@ u8 task_poo_bee_1(PooBeeWork* w) {
                 gUnk_02034E2C++;
 
                 if (gUnk_02034E2C > 3) {
-                    w->unk_A4 = gUnk_0203C3EC->unk_00 + 0x2000;
-                    w->unk_A8 = gUnk_0203C3EC->unk_04 - 0x2000;
+                    w->unk_A4 = gUnk_0203C3EC->x + 0x2000;
+                    w->unk_A8 = gUnk_0203C3EC->y - 0x2000;
                     w->unk_B4 = w->unk_B8 = 0;
                 }
             }
             func_080C9FA8(w->unk_A4, w->unk_A8 + w->unk_AC);
         } else {
-            w->unk_B4 = w->unk_A4 - (gUnk_0203C3EC->unk_00 + 0x2000);
-            w->unk_B8 = w->unk_A8 - (gUnk_0203C3EC->unk_04 - 0x2000);
+            w->unk_B4 = w->unk_A4 - (gUnk_0203C3EC->x + 0x2000);
+            w->unk_B8 = w->unk_A8 - (gUnk_0203C3EC->y - 0x2000);
             w->unk_A4 -= w->unk_B4;
             w->unk_A8 -= w->unk_B8;
 
@@ -6120,7 +6120,7 @@ void func_080D19C4(PooPrizeWork* w) {
 
         w->unk_7C = func_080D1B94;
         w->unk_82 = 0;
-        w->unk_8C = GetAngle(gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04, w->unk_00, w->unk_04);
+        w->unk_8C = GetAngle(gUnk_0203C420.unk_00.x, gUnk_0203C420.unk_00.y, w->unk_00, w->unk_04);
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
@@ -6159,9 +6159,9 @@ void func_080D1B94(PooPrizeWork* w) {
     g = &gUnk_0203C420.unk_00;
     t = gSineTable;
     a = w->unk_8C;
-    tx = g->unk_00 + ((t[a] << 5) * w->unk_90 >> 8);
+    tx = g->x + ((t[a] << 5) * w->unk_90 >> 8);
     s = -gSineTable[a + 0x40] * 22;
-    ty = g->unk_04 + (s * w->unk_90 >> 8);
+    ty = g->y + (s * w->unk_90 >> 8);
     tz = g->unk_08 - ((w->unk_82 >> 1) << 8);
     w->unk_8C = a + w->unk_8D;
     w->unk_00 += (tx - w->unk_00) >> 2;
@@ -6291,8 +6291,8 @@ void task_poo_zzz_2(PooZzzWork* w) {
     void* g;
 
     p = w->unk_24;
-    x = (p->unk_00 >> 8) - gUnk_0203C40C;
-    y = (p->unk_04 >> 8) + (p->unk_08 >> 8) - gUnk_0203C3F8;
+    x = (p->x >> 8) - gUnk_0203C40C;
+    y = (p->y >> 8) + (p->unk_08 >> 8) - gUnk_0203C3F8;
     if (x >= -0x20 && x <= 0x110 && y >= -0x20 && y <= 0xC0) {
         g = AnimUpdate(w->anim);
         w->gfx = g;
@@ -6367,8 +6367,8 @@ void func_080D206C(PooBflyPart* p) {
 }
 
 void task_poo_butterfly_0(PooButterflyWork* w, PooPos* p) {
-    w->unk_D4 = p->unk_00;
-    w->unk_D8 = p->unk_04;
+    w->unk_D4 = p->x;
+    w->unk_D8 = p->y;
     w->unk_DC = p->unk_08 - 0xE00;
     w->palette = LoadObjPalette(gUnk_09849C38, 0x20);
     w->unk_00[0].unk_20 = w->unk_D4 - 0x1000;
@@ -6464,8 +6464,8 @@ void task_poo_butterflyLeft_2(PooButterflyWork* w) {
 }
 
 void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
-    w->unk_24 = p->unk_00;
-    w->unk_28 = p->unk_04;
+    w->unk_24 = p->x;
+    w->unk_28 = p->y;
     w->unk_2C = 0;
     w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6158, 1), gUnk_097606E8);
     w->palette = LoadObjPalette(gUnk_09849E38, 0x20);
@@ -6523,8 +6523,8 @@ void task_poo_mapbee_3(PooObjWork* w) {
 void task_poo_mapbeeborn_0(PooMapBornWork* w, PooPos* p) {
     w->unk_10 = *p;
     w->unk_10.unk_08 = 0;
-    w->unk_00 = p->unk_00 + 0x400;
-    w->unk_04 = p->unk_04 + 0x1800;
+    w->unk_00 = p->x + 0x400;
+    w->unk_04 = p->y + 0x1800;
     w->unk_08 = 0;
     ColliderSetPosition(w->unk_20, w->unk_00, w->unk_04, 0);
     w->unk_98 = 0;
@@ -6584,8 +6584,8 @@ void task_poo_mapbeeborn_3(PooMapBornWork* w) {
 }
 
 void task_poo_mapbutterfly_0(PooMapButterflyWork* w, PooPos* p) {
-    w->unk_24 = p->unk_00;
-    w->unk_28 = p->unk_04;
+    w->unk_24 = p->x;
+    w->unk_28 = p->y;
     w->unk_2C = 0;
     w->tiles = AllocObjTiles(0x40, gUnk_09760986);
     w->palette = LoadObjPalette(gUnk_09849E58, 0x20);
@@ -6625,8 +6625,8 @@ void task_poo_mapbutterfly_3(PooObjWork* w) {
 void task_poo_mapbutterflyborn_0(PooMapBornWork* w, PooPos* p) {
     w->unk_10 = *p;
     w->unk_10.unk_08 = 0;
-    w->unk_00 = p->unk_00 + 0x1000;
-    w->unk_04 = p->unk_04 + 0x1800;
+    w->unk_00 = p->x + 0x1000;
+    w->unk_04 = p->y + 0x1800;
     w->unk_08 = 0;
     ColliderSetPosition(w->unk_20, w->unk_00, w->unk_04, 0);
     w->unk_98 = 0;
