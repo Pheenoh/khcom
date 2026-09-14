@@ -182,7 +182,7 @@ typedef struct AllmapPushaWork {
     TaskPool unk_14;
     Task* unk_28;
     s16 x;
-    s16 unk_2E;
+    s16 y;
 } AllmapPushaWork;
 
 void func_080AEB94(void);

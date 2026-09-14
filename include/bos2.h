@@ -379,7 +379,7 @@ typedef struct JfMajinWork {
     u8 unk_38[0x4];
     s16 unk_3C;
     u8 unk_3E[0x2];
-    s16 unk_40;
+    s16 y;
     u8 unk_42[0x2];
     s16 unk_44;
     s16 unk_46;

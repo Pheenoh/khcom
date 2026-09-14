@@ -468,12 +468,12 @@ void func_080AF11C(void) {
     gSioBtlOptionWork->palette4 = LoadObjPalette(gUnk_096FBD44, 32);
 #ifdef VERSION_EU
     gSioBtlOptionWork->gfx4 = gUnkEu_09F7EB08[0];
-    gSioBtlOptionWork->unk_1F0 = gUnkEu_09F7EB08[1];
-    gSioBtlOptionWork->unk_1F4 = gUnkEu_09F7EB08[2];
+    gSioBtlOptionWork->gfx7 = gUnkEu_09F7EB08[1];
+    gSioBtlOptionWork->gfx8 = gUnkEu_09F7EB08[2];
 #else
     gSioBtlOptionWork->gfx4 = gUnk_09EF38EC[0];
-    gSioBtlOptionWork->unk_1F0 = gUnk_09EF38EC[1];
-    gSioBtlOptionWork->unk_1F4 = gUnk_09EF38EC[2];
+    gSioBtlOptionWork->gfx7 = gUnk_09EF38EC[1];
+    gSioBtlOptionWork->gfx8 = gUnk_09EF38EC[2];
 #endif
     gSioBtlOptionWork->unk_1F8 = 0;
 #ifdef VERSION_EU
@@ -625,7 +625,7 @@ void func_080AF70C(void) {
     DrawTextSlots(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->palette8, 0xF200, gSioBtlOptionWork->unk_0F8);
     DrawTextSlots(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->palette9, 0xF200, gSioBtlOptionWork->unk_150);
     DrawSprite(-((gSioBtlOptionWork->unk_1FA >> 3) % 4) + 88, 2, gSioBtlOptionWork->gfx4, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
-    DrawSprite(224 + ((gSioBtlOptionWork->unk_1FA >> 3) % 4), 2, gSioBtlOptionWork->unk_1F0, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
+    DrawSprite(224 + ((gSioBtlOptionWork->unk_1FA >> 3) % 4), 2, gSioBtlOptionWork->gfx7, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
 
     if (gSioBtlOptionWork->unk_1B4 == 1) {
         DrawSprite(72, 38, gSioBtlOptionWork->gfx, gSioBtlOptionWork->tiles, gSioBtlOptionWork->palette, 0, 0, 0x200);
@@ -660,7 +660,7 @@ void func_080AF70C(void) {
     DrawSprite(132, 24, gSioBtlOptionWork->gfx5[1], gSioBtlOptionWork->tiles5[1], gSioBtlOptionWork->palette5[1], 0, 0, 0xF100);
 
     if (gSioBtlOptionWork->unk_1F8 == 1) {
-        DrawSprite(gSioPlayerId * 101 + 44 + gUnk_09EF14B8[gSioBtlOptionWork->unk_216], -((gSioBtlOptionWork->unk_1FA >> 3) % 4) / 2 + 22, gSioBtlOptionWork->unk_1F4, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xF000);
+        DrawSprite(gSioPlayerId * 101 + 44 + gUnk_09EF14B8[gSioBtlOptionWork->unk_216], -((gSioBtlOptionWork->unk_1FA >> 3) % 4) / 2 + 22, gSioBtlOptionWork->gfx8, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xF000);
     }
     gSioBtlOptionWork->unk_1FA++;
 }
@@ -2423,8 +2423,8 @@ void func_080B1E70(void) {
     for (i = 0; i < 10; i++) {
         if (gUnk_0203AB20[i] == 0x800) {
             gSioChgCardWork->unk_0A5[i] = 0;
-            gSioChgCardWork->unk_0B0[i] = gUnk_09EF150C[i].unk_00 << 8;
-            gSioChgCardWork->unk_0D8[i] = gUnk_09EF150C[i].unk_02 << 8;
+            gSioChgCardWork->x2[i] = gUnk_09EF150C[i].unk_00 << 8;
+            gSioChgCardWork->y2[i] = gUnk_09EF150C[i].unk_02 << 8;
             gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[0].unk_14, 0x200);
             gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[0].unk_18, 32);
             gSioChgCardWork->gfx4[i] = gCardDefs[0].unk_10;
@@ -2434,8 +2434,8 @@ void func_080B1E70(void) {
             gSioChgCardWork->unk_1F8[i] = 0;
         } else {
             gSioChgCardWork->unk_0A5[i] = 1;
-            gSioChgCardWork->unk_0B0[i] = gUnk_09EF150C[i].unk_00 << 8;
-            gSioChgCardWork->unk_0D8[i] = gUnk_09EF150C[i].unk_02 << 8;
+            gSioChgCardWork->x2[i] = gUnk_09EF150C[i].unk_00 << 8;
+            gSioChgCardWork->y2[i] = gUnk_09EF150C[i].unk_02 << 8;
             n = gUnk_0203AB20[i];
             gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[n].unk_14, 0x200);
             gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[n].unk_18, 32);
@@ -2815,10 +2815,10 @@ void func_080B2CD0(void) {
     for (i = 0; i < 10; i++) {
         if (gSioChgCardWork->unk_0A5[i] == 1) {
             aff = AllocObjAffine(gSioChgCardWork->unk_1F8[i], gSioChgCardWork->unk_1A8[i], gSioChgCardWork->unk_1D0[i], 1);
-            DrawSprite((gSioChgCardWork->unk_0B0[i] >> 8) + 16, (gSioChgCardWork->unk_0D8[i] >> 8) + 20, gSioChgCardWork->gfx4[i], gSioChgCardWork->tiles3[i], gSioChgCardWork->palette3[i], aff, 0x400, 0xFFF0);
+            DrawSprite((gSioChgCardWork->x2[i] >> 8) + 16, (gSioChgCardWork->y2[i] >> 8) + 20, gSioChgCardWork->gfx4[i], gSioChgCardWork->tiles3[i], gSioChgCardWork->palette3[i], aff, 0x400, 0xFFF0);
 
             if (gCardDefs[gUnk_0203AB20[i]].unk_2A != 3) {
-                DrawSprite((gSioChgCardWork->unk_0B0[i] >> 8) + 13, (gSioChgCardWork->unk_0D8[i] >> 8) + 16, gSioChgCardWork->gfx5[i], gSioChgCardWork->tiles4, gSioChgCardWork->palette4, aff, 0x400, 0xFFE0);
+                DrawSprite((gSioChgCardWork->x2[i] >> 8) + 13, (gSioChgCardWork->y2[i] >> 8) + 16, gSioChgCardWork->gfx5[i], gSioChgCardWork->tiles4, gSioChgCardWork->palette4, aff, 0x400, 0xFFE0);
             }
         }
     }
@@ -3204,8 +3204,8 @@ void func_080B3B5C(void) {
 
     for (i = 0; i < 5; i++) {
         if (gUnk_0203AB20[i] != 0x800) {
-            arg.unk_00 = &gSioChgCardWork->unk_0B0[i];
-            arg.unk_04 = &gSioChgCardWork->unk_0D8[i];
+            arg.unk_00 = &gSioChgCardWork->x2[i];
+            arg.unk_04 = &gSioChgCardWork->y2[i];
             arg.unk_08 = &gSioChgCardWork->unk_1A8[i];
             arg.unk_0C = &gSioChgCardWork->unk_1D0[i];
             arg.unk_10 = &gSioChgCardWork->unk_1F8[i];
@@ -3219,8 +3219,8 @@ void func_080B3B5C(void) {
 
     for (i = 5; i < 10; i++) {
         if (gUnk_0203AB20[i] != 0x800) {
-            arg.unk_00 = &gSioChgCardWork->unk_0B0[i];
-            arg.unk_04 = &gSioChgCardWork->unk_0D8[i];
+            arg.unk_00 = &gSioChgCardWork->x2[i];
+            arg.unk_04 = &gSioChgCardWork->y2[i];
             arg.unk_08 = &gSioChgCardWork->unk_1A8[i];
             arg.unk_0C = &gSioChgCardWork->unk_1D0[i];
             arg.unk_10 = &gSioChgCardWork->unk_1F8[i];

@@ -715,7 +715,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     gStockMesDispWork = work;
     work->cursor = arg;
     work->x = arg->unk_30.unk_00 * 24 - gUnk_0203C540;
-    work->unk_2E = arg->unk_30.unk_02 * 24 - gUnk_0203C53C;
+    work->y = arg->unk_30.unk_02 * 24 - gUnk_0203C53C;
     work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->gfx = gUnk_0976DC9C;
@@ -740,8 +740,8 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
         TaskPoolDraw(&work->unk_14);
     } else {
         work->x = work->cursor->unk_30.unk_00 * 24 - gUnk_0203C540;
-        work->unk_2E = work->cursor->unk_30.unk_02 * 24 - gUnk_0203C53C;
-        DrawSprite(work->x, work->unk_2E - work->unk_12 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
+        work->y = work->cursor->unk_30.unk_02 * 24 - gUnk_0203C53C;
+        DrawSprite(work->x, work->y - work->unk_12 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
     }
 }
 

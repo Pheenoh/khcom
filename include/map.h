@@ -878,7 +878,7 @@ typedef struct MapPrzCardWork {
     u8 unk_0B8;
     u8 unk_0B9;
     s16 x;
-    s16 unk_0BC;
+    s16 y;
     u16 unk_0BE;
     s32 unk_0C0;
     s32 unk_0C4;

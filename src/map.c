@@ -13376,7 +13376,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
         w->unk_08C = func_080F51A0;
     } else {
         w->x = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-        w->unk_0BC = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+        w->y = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         w->unk_0BE = -0x1004 - (w->unk_004 >> 8) * 4;
         func_080F4EE4(w);
         w->unk_0D0 += 2;
@@ -13430,7 +13430,7 @@ void func_080F51A0(MapPrzCardWork* w) {
     x = w->unk_000 >> 8;
     w->x = x;
     y = w->unk_004 >> 8;
-    w->unk_0BC = y;
+    w->y = y;
     func_080F4EE4(w);
 }
 
@@ -13451,7 +13451,7 @@ void func_080F52D4(MapPrzCardWork* w) {
     x = w->unk_000 >> 8;
     w->x = x;
     y = w->unk_004 >> 8;
-    w->unk_0BC = y;
+    w->y = y;
     func_080F4EE4(w);
     w->unk_08A++;
 
@@ -13471,7 +13471,7 @@ void func_080F534C(MapPrzCardWork* w) {
     x = (gUnk_02039BA0->actor.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (gUnk_02039BA0->actor.unk_00.y >> 8) + (gUnk_02039BA0->actor.unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     w->x += ((s16)x - w->x) >> 3;
-    w->unk_0BC += ((s16)y - w->unk_0BC) >> 3;
+    w->y += ((s16)y - w->y) >> 3;
     w->unk_0B4 -= 10;
     w->unk_0B6 -= 10;
 
@@ -13559,15 +13559,15 @@ void func_080F55B0(MapPrzCardWork* w) {
     }
 
     d = &gCardDefs[w->unk_0A8];
-    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, d->gfx, w->tiles, w->palette,
+    DrawSprite(w->x, *(u16*)&w->y - 8, d->gfx, w->tiles, w->palette,
         affine, w->unk_088, w->unk_0BE + 1);
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, q->gfx, w->tiles2,
+    DrawSprite(w->x, *(u16*)&w->y - 8, q->gfx, w->tiles2,
         w->palette2, affine, w->unk_088, w->unk_0BE);
 
     if (w->unk_090.unk_0E != 3) {
         t = gUnk_09EE981C[w->unk_090.unk_04];
-        DrawSprite(w->x, *(u16*)&w->unk_0BC - 8, t, w->tiles3,
+        DrawSprite(w->x, *(u16*)&w->y - 8, t, w->tiles3,
             w->palette2, affine, w->unk_088, w->unk_0BE - 1);
     }
 

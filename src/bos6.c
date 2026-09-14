@@ -168,7 +168,7 @@ void func_0810A018(PcWork* work) {
     for (j = 0; !(cmds[j].unk_00 & 0x80); j++) {
         cmd = &cmds[j];
         if (cmd->unk_00 & 1) {
-            DrawSprite(sx + cmd->unk_04, sy + cmd->unk_06, gUnk_09EFAB18[cmd->unk_01],
+            DrawSprite(sx + cmd->x, sy + cmd->y, gUnk_09EFAB18[cmd->unk_01],
                 work->tiles2[j], gfx, 0,
                 func_08109FF0(work, work->unk_024 + PcLayerDepth(cmd->unk_02)),
                 func_0810A000(work, work->unk_024 + PcLayerDepth(cmd->unk_02), 1));
@@ -182,11 +182,11 @@ void func_0810A018(PcWork* work) {
             }
 
             y = (s16)t;
-            y = (s16)(y + cmd->unk_06);
+            y = (s16)(y + cmd->y);
             y = (s16)(y + sy);
             if ((u16)(y + 7) <= 0xAE) {
-                oam->attr[oam->count * 3 + 1] = (def->unk_02 & 0xFF00) | (((u16)(def->unk_02 + 0x40) + cmd->unk_06) & mask);
-                oam->attr[oam->count * 3 + 2] = (def->unk_04 & 0xFE00) | ((def->unk_04 + cmd->unk_04) & 0x1FF);
+                oam->attr[oam->count * 3 + 1] = (def->unk_02 & 0xFF00) | (((u16)(def->unk_02 + 0x40) + cmd->y) & mask);
+                oam->attr[oam->count * 3 + 2] = (def->unk_04 & 0xFE00) | ((def->unk_04 + cmd->x) & 0x1FF);
                 oam->attr[oam->count * 3 + 3] = def->unk_06;
                 oam->count++;
             }
@@ -377,8 +377,8 @@ void func_0810A850(PcWork* work) {
     if ((step->unk_00 & 0x80) == 0) {
         do {
             if (step->unk_00 & 0xC) {
-                x += step->unk_04;
-                y += step->unk_06;
+                x += step->x;
+                y += step->y;
             }
             step++;
         } while ((step->unk_00 & 0x80) == 0);
@@ -464,8 +464,8 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
         if ((anim->unk_14 | anim->unk_16 | anim->unk_18) != 0) {
             k = anim->unk_0C;
             steps = func_08109ECC(work);
-            func_08011F78(0xF6, work->unk_020 + ((anim->unk_0E + steps[k].unk_04) << 8),
-                          work->unk_024 + ((anim->unk_10 + steps[k].unk_06 + steps[k].unk_08) << 8),
+            func_08011F78(0xF6, work->unk_020 + ((anim->unk_0E + steps[k].x) << 8),
+                          work->unk_024 + ((anim->unk_10 + steps[k].y + steps[k].unk_08) << 8),
                           (anim->unk_12 - steps[k].unk_08) << 8, anim->unk_14, anim->unk_16, anim->unk_18);
         }
         switch (anim->unk_1C) {
@@ -475,8 +475,8 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
                 func_0810B40C(1);
                 k = anim->unk_0C;
                 steps = func_08109ECC(work);
-                func_080147D8(work->unk_020 + ((anim->unk_0E + steps[k].unk_04) << 8),
-                              work->unk_024 + ((anim->unk_10 + steps[k].unk_06 + steps[k].unk_08 - 24) << 8));
+                func_080147D8(work->unk_020 + ((anim->unk_0E + steps[k].x) << 8),
+                              work->unk_024 + ((anim->unk_10 + steps[k].y + steps[k].unk_08 - 24) << 8));
             }
             break;
         case 2:
@@ -485,8 +485,8 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
                 func_0810B40C(0);
                 k = anim->unk_0C;
                 steps = func_08109ECC(work);
-                func_080147D8(work->unk_020 + ((anim->unk_0E + steps[k].unk_04) << 8),
-                              work->unk_024 + ((anim->unk_10 + steps[k].unk_06 + steps[k].unk_08 - 24) << 8));
+                func_080147D8(work->unk_020 + ((anim->unk_0E + steps[k].x) << 8),
+                              work->unk_024 + ((anim->unk_10 + steps[k].y + steps[k].unk_08 - 24) << 8));
             }
             break;
         case 3:

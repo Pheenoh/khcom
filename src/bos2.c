@@ -2916,7 +2916,7 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     work->unk_2C = 1;
     work->unk_30 = 0x2A200;
     work->unk_34 = 0x12600;
-    work->unk_40 = 0;
+    work->y = 0;
     work->unk_3C = 0;
     x = 0x308;
     AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
@@ -3023,7 +3023,7 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
         }
 
         WorldToScreen(&x, &y, jf->body.unk_004, jf->body.unk_008, jf->body.unk_00C);
-        DrawSprite(x, work->unk_40 + (y - 61), work->gfx, work->tiles, gfx, 0, pal,
+        DrawSprite(x, work->y + (y - 61), work->gfx, work->tiles, gfx, 0, pal,
                    (u16)(-4100 - (jf->body.unk_008 >> 8) * 4));
     }
 
@@ -3113,7 +3113,7 @@ void func_080BE9A0(JfMajinWork* work) {
 
         work->jf->unk_24A++;
         work->gfx = AnimUpdate(&work->anim);
-        work->unk_40 = gUnk_0961A70A[work->unk_3C];
+        work->y = gUnk_0961A70A[work->unk_3C];
 
         if (gBtlWork->unk_0A0 != 0) {
             if (GetRandom() % 80 == 0) {
@@ -4129,7 +4129,7 @@ void func_080C0624(JfMajinWork* work) {
 
         work->jf->unk_24A++;
         work->gfx = AnimUpdate(&work->anim);
-        work->unk_40 = gUnk_0961A70A[work->unk_3C];
+        work->y = gUnk_0961A70A[work->unk_3C];
     }
 }
 

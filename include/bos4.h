@@ -308,7 +308,7 @@ typedef struct BoogieDiceWork {
     u8 unk_159[0x3];
     s32 unk_15C;
     s32 unk_160;
-    s32 unk_164;
+    s32 y;
     u8 unk_168;
     u8 unk_169[0x3];
     u32 unk_16C;

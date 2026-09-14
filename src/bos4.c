@@ -40,7 +40,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     work->unk_158 = GetRandom() % 0x78 + 0x44;
     work->unk_160 = 0x33;
     work->unk_15C = 0x33;
-    work->unk_164 = 0;
+    work->y = 0;
     work->unk_168 = 0;
     gUnk_0203C564 = 0;
     c = p->x;
@@ -274,7 +274,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
     case 6:
         func_0801C2DC(p, 1);
         work->unk_160 -= 12;
-        work->unk_164 += 96;
+        work->y += 96;
 
         if (work->unk_160 <= 127) {
             work->unk_000 = 7;
@@ -296,7 +296,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         work->unk_150 += 51;
         p->z += work->unk_150;
         work->unk_160 += 25;
-        work->unk_164 -= 200;
+        work->y -= 200;
 
         if (work->unk_160 > 255) {
             work->unk_000 = 9;
@@ -371,7 +371,7 @@ void task_bos_boogie_dice_2(BoogieDiceWork* work) {
 
     aff = AllocObjAffine(0, a, b, 0);
     WorldToScreen(&x, &y, p->x, p->y, p->z);
-    DrawSprite(x, (work->unk_164 >> 8) + y, AnimGetGfx(&work->anim), (void*)work->tiles, pal,
+    DrawSprite(x, (work->y >> 8) + y, AnimGetGfx(&work->anim), (void*)work->tiles, pal,
         aff, c, -0x1004 - (p->y >> 8) * 4);
     TaskPoolDraw(&work->unk_02C);
 }
