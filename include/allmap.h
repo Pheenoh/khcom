@@ -210,7 +210,6 @@ void* func_080986FC(u8 a);
 void func_08098014(AllmapDoorEntry* a, void* b);
 void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 
-extern s16 gSineTable[];
 extern s16 gUnk_02034EC2;
 extern u8 gUnk_02034ECA;
 extern u32 gUnk_02034E98;

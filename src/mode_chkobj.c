@@ -1,4 +1,5 @@
 #include "mode_chkobj.h"
+#include "mode_chkbtl.h"
 #include "gba/keys.h"
 
 const char gUnk_0812858C[16] = "sor1ll75.aob";

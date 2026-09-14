@@ -2,6 +2,8 @@
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
+#include "registration_data.h"
+
 #include "eventselect_api.h"
 
 #include "smn_tasks.h"
@@ -237,13 +239,11 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_096183F8[];
 extern AnimDef gUnk_0813EB4C[3];
 extern u8 gUnk_08F6DC24[];
-extern s16 gSineTable[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09617FF8[];

@@ -1,4 +1,5 @@
 #include "registration_data.h"
+#include "mode_chkbtl.h"
 #include "msg_api.h"
 #include "mode_sio2_api.h"
 #include "mode_sio2.h"

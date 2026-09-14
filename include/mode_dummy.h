@@ -18,10 +18,9 @@ typedef struct DummyEntry {
     const char* desc;
     u16 unk_08;
 } DummyEntry;
-
 extern u32 gFrameCounter;
+
 extern const DummyEntry gDummyEntries[];
-extern u8 gWhitePalette[];
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08F683C4[];
 extern u8 gUnk_08EEE384[];

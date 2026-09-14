@@ -399,7 +399,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     work->unk_01C = 0;
     work->unk_A4C = 0;
     work->unk_A50 = 60;
-    TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosMap, &gUnk_0999202C);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, &gUnk_0999202C);
     gBtlWork->unk_0CC = 0xE200;
     gBtlWork->unk_0D0 = 0x15E00;
     gBtlWork->unk_0D4 = 0;

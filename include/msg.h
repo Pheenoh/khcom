@@ -302,7 +302,6 @@ typedef struct TextGlyphSprite {
 extern EventState* gUnk_02039DC8;
 extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
-extern u8 gModeBattle[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_096145D8[];
@@ -316,8 +315,8 @@ extern s32 gUnk_09033CB8[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
 extern s32 gUnk_09033CF0[];
-
 extern u32 gFrameCounter;
+
 extern u8 gUnk_09614718[];
 extern u8 gUnk_09614738[];
 extern u8 gUnk_09614758[];

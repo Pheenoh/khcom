@@ -40,9 +40,8 @@ void task_tutorial_0(TutorialWork* work, s32 arg1);
 s32 task_tutorial_1(TutorialWork* work);
 void task_tutorial_2(TutorialWork* work);
 void task_tutorial_3(TutorialWork* work);
-
 extern u32 gFrameCounter;
-extern s16 gSineTable[];
+
 
 extern u8 gUnk_08B263D2[];
 

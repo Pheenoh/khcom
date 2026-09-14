@@ -2540,7 +2540,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->unk_38 = 0;
     work->unk_42 = 0;
     TaskPoolInit(&work->unk_44, 1);
-    TaskCreate(&work->unk_44, (TaskDesc*)gTaskDescBtlShadow, &(arg = work->jf)->unk_110);
+    TaskCreate(&work->unk_44, &gTaskDescBtlShadow, &(arg = work->jf)->unk_110);
 }
 u8 task_bos_jf_lamp_1(JfLampWork* work) {
     BtlObj* sub = &work->jf->unk_110;

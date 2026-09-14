@@ -22,6 +22,7 @@
 #include "battle_work.h"
 #include "game_state.h"
 #include "m4a.h"
+#include "m4a_catalog_data.h"
 #include "key.h"
 #include "anim.h"
 #include "fld_types.h"
@@ -185,30 +186,6 @@ typedef struct BtlStartWork {
 } BtlStartWork;
 
 
-extern u8 gUnk_0203D990[];
-extern u8 gUnk_0203D9D0[];
-extern u8 gUnk_0203DA10[];
-extern u8 gUnk_0203DA50[];
-extern u8 gUnk_0203DA90[];
-extern u8 gUnk_0203DAD0[];
-extern u8 gMPlayInfo_BGM[];
-extern u8 gUnk_0203DB50[];
-extern u8 gUnk_0203DB90[];
-extern u8 gUnk_0203DBD0[];
-extern u8 gUnk_0203DC10[];
-extern u8 gUnk_0203DC50[];
-extern u8 gUnk_0203DC90[];
-extern u8 gUnk_0203DCD0[];
-extern u8 gUnk_0203DD10[];
-extern u8 gUnk_0203DD50[];
-extern u8 gUnk_0203DD90[];
-extern u8 gUnk_0203DDD0[];
-extern u8 gUnk_0203DE10[];
-extern u8 gUnk_0203DE50[];
-extern u8 gUnk_0203DEA0[];
-extern u8 gUnk_0203DEE0[];
-extern u8 gUnk_0203DF20[];
-extern s16 gSineTable[];
 extern AnimDef gUnk_0813C89C[15][5];
 extern u8 gUnk_08B1E7F4[];
 extern u8 gUnk_08B1EB1C[];

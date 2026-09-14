@@ -59,7 +59,7 @@ void mode_allmap_0(s32 a) {
     FadeStartIn(0, 16);
 
     if (gUnk_02034E81 != 0) {
-        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
     }
     gUnk_0203C534 = 30;
     gUnk_0203C508 = 30;
@@ -134,7 +134,7 @@ void mode_allmap_2(void) {
     ResetVCountCallback();
 
     if (gUnk_02034E81 != 0) {
-        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x100);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x100);
     }
     EwramFree(gUnk_0203C530);
     EwramFree(gUnk_0203C504);

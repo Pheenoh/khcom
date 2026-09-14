@@ -3,6 +3,7 @@
 #include "display.h"
 #include "obj_api.h"
 #include "btl.h"
+#include "registration_data.h"
 #include "btl_effect.h"
 #include "btl_api.h"
 
@@ -469,7 +470,6 @@ typedef struct BtlTaskArg {
 } BtlTaskArg;
 extern u16 gUnk_0813C0DC[][4];
 extern u16 gUnk_0813C6BC[][4];
-extern TaskDesc gTaskDescBtlShadow, gTaskDescBtlBadstatus;
 void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     BtlObj* e;
 

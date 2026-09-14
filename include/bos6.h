@@ -529,7 +529,6 @@ u8 func_0810E32C(BosLstWork* work);
 u8 func_0810E524(BosLstWork* work);
 u8 func_0810E73C(BosLstWork* work);
 
-extern const s16 gSineTable[];
 
 u8 func_0810A914(PcWork* work, s32 arg);
 void func_0810B844(PcFltWork* work);

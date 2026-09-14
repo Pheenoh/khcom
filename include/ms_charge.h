@@ -31,7 +31,6 @@
 
 
 
-extern s16 gSineTable[];
 extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
 extern u8 gUnk_09A1DCDC[];

@@ -14,7 +14,6 @@ typedef struct DebugFlag {
     u32 mask;
 } DebugFlag;
 extern u8 gUnk_02039B94;
-extern u8 gWhitePalette[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];
 

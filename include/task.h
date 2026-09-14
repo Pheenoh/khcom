@@ -9,8 +9,8 @@
 #include "engine_math.h"
 #include "game_state.h"
 #include "bos4_api.h"
-
 extern u32 gFrameCounter;
+
 
 void func_0801CCB4(void);
 void func_0801CD20(void);

@@ -1,4 +1,5 @@
 #include "registration_data.h"
+#include "mode_chkbtl.h"
 #include "macros.h"
 #include "mode_backupstat.h"
 #include "gba/keys.h"

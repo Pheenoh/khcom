@@ -3,6 +3,8 @@
 
 #include "types.h"
 
+extern const s16 gSineTable[320];
+
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s16 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);

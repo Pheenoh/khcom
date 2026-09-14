@@ -215,7 +215,6 @@ extern TaskDesc gTaskDescEmy82;
 extern TaskDesc gTaskDescEmy83;
 extern TaskDesc gTaskDescEmyTrumpH;
 extern TaskDesc gTaskDescEmyTrumpS;
-extern const s16 gSineTable[];
 extern const u8 gUnk_08133E54[];
 extern u8 gUnk_08F6DA04[];
 extern u8 gUnk_08F69BC4[];

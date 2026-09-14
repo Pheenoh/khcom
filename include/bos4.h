@@ -604,7 +604,6 @@ extern void (*const gUnk_09EF69A8[])(MapChkWork* p);
 extern const u8 gUnk_0984B458[][8];
 void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
-extern s16 gSineTable[];
 void task_bos_ursula_0(UrsulaWork* work);
 extern u8 gUnk_096FE14C[];
 extern u8 gUnk_096FE13C[];
@@ -636,7 +635,6 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work);
 void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg);
 extern u8 gUnk_0979666A[];
 extern u8 gUnk_0984AF98[];
-extern u8 gTaskDescBosShadow[];
 
 typedef struct UnkStruct_096FDFC4 {
     u8 unk_00[0x06];

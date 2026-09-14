@@ -127,7 +127,6 @@ extern u8 gUnk_092028EC[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
-extern s16 gSineTable[];
 extern u8 gUnk_09A3DB1C[];
 extern u8 gUnk_099A4B9A[];
 extern u8 gUnk_09611AB8[];

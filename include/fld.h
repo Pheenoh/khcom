@@ -48,9 +48,7 @@ extern u16 gUnk_0813CD4C[8][8];
 extern u16 gUnk_0813D28C[8][8];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
-extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08F69BE4[];
-extern s16 gSineTable[];
 
 u8 func_08034518(FldPos* p);
 s32 func_0803459C(FldPos* p);

@@ -1,6 +1,7 @@
 #include "jiminy_records_data.h"
 #include "jiminy_records_assets.h"
 #include "battle_localized_data.h"
+#include "battle_localized_assets.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
@@ -39,26 +40,11 @@ extern u8 gUnkEu_08EF3EDC[];
 extern u8 gUnkEu_08EF4EDC[];
 extern u8 gUnkEu_08EF5EDC[];
 extern u8 gUnkEu_08EF6EDC[];
-extern u8 gUnkEu_08C9BD82[];
-extern u8 gUnkEu_08C9BD8C[];
-extern u8 gUnkEu_08C9BD9C[];
-extern u8 gUnkEu_08C9BDAC[];
-extern u8 gUnkEu_08C9A538[];
-extern u8 gUnkEu_08C9A4CC[];
-extern u8 gUnkEu_08C9A564[];
-extern u8 gUnkEu_08C9A554[];
-extern u8 gUnkEu_08C9A590[];
-extern u8 gUnkEu_08C9A57A[];
-extern u8 gUnkEu_08C9A5C2[];
-extern u8 gUnkEu_08C9A5A6[];
-extern u8 gUnkEu_08C9A4E2[];
-extern u8 gUnkEu_08C9A516[];
 extern u8 gUnk_09A3CDDC[];
 #endif
 
 extern JiminyWork* gJiminyWork;
 
-extern s16 gSineTable[];
 
 extern u8 gUnk_08C69C04[];
 extern u8 gUnk_08C69C20[];

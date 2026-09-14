@@ -295,7 +295,6 @@ extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
 extern u8 gUnk_096FDF14[];
 extern u8 gUnk_096FDF24[];
-extern TaskDesc gTaskDescBosShadow;
 
 
 u8 func_080D7B94(void);
@@ -341,7 +340,6 @@ typedef struct BoogiePalette {
     u8 unk_06;
 } BoogiePalette;
 
-extern s16 gSineTable[];
 u8 func_08083920(void);
 void func_080D8F14(BoogieWork* work);
 u8 func_080D9058(s32* x, s32* y);

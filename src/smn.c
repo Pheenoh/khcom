@@ -49,7 +49,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     work->unk_17C = 0;
     work->unk_16C = 0;
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_cloud_1(SmnCloudWork* work) {
@@ -499,7 +499,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->unk_16C = 0;
     m4aSongNumStart(0xAB);
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 u8 func_08041FCC(SmnBambiWork* work) {
@@ -864,7 +864,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     }
 
     TaskPoolInit(&work->unk_020, 15);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 void func_080428E8(SmnTinkWork* work) {
@@ -1207,7 +1207,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_150 = 10;
     work->unk_156 = 0;
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_simba_1(SmnSimbaWork* work) {
@@ -1697,7 +1697,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     work->unk_150 = 10;
     work->unk_156 = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_dumbo_1(SmnDumboWork* work) {
@@ -1919,7 +1919,7 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
 
     work->unk_158 = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 BtlObj* func_08044450(SmnGenieWork* work) {
@@ -2324,7 +2324,7 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     work->unk_154 = 10;
     work->unk_15E = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
+    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
 }
 
 u8 func_08044F98(SmnKingWork* work) {

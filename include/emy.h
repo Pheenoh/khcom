@@ -228,7 +228,6 @@ typedef struct Emy83sWork {
     s16 unk_022;
 } Emy83sWork;
 
-extern s16 gSineTable[];
 extern u8 gUnk_08A20BCE[];
 extern u8 gUnk_08A23630[];
 extern u8 gUnk_08B1D828[];

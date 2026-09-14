@@ -125,7 +125,6 @@ typedef struct BtlAiWork {
     s16 unk_16C;
 } BtlAiWork;
 
-extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];

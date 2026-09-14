@@ -53,7 +53,9 @@
 #include "game_state.h"
 #include "anim.h"
 #include "m4a.h"
+#include "m4a_catalog_data.h"
 #include "mode.h"
+#include "mode_battle_data.h"
 #include "key.h"
 #include "taskpool.h"
 #include "fld_types.h"
@@ -1225,10 +1227,9 @@ extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_0984C868[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
-
 extern vu32 gFrameCounter;
+
 extern UnkStruct_0203C590 gUnk_0203C590;
-extern void* gMPlayInfo_BGM;
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088B6560[];
@@ -1290,7 +1291,6 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_099597E4[];
 extern u8 gUnk_09985F44[];
-extern s16 gSineTable[];
 extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
 extern u8 gUnk_09991984[];
@@ -1346,7 +1346,6 @@ extern u8 gUnk_09991284[];
 extern u8 gUnk_0994BF64[];
 extern u8 gUnk_0994C364[];
 extern u8 gUnk_08B21ACE[];
-extern void* gModeBattle;
 extern const u8 gUnk_09EF6A34[];
 extern const u8 gUnk_09EF6A42[];
 extern u8 (*gUnk_09EF6A50[])(UnkStruct_080DFF1C*);

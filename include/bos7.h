@@ -412,7 +412,6 @@ typedef struct StaffRollWork {
     u8 unk_1C0[0x258];
 } StaffRollWork;
 
-extern s16 gSineTable[];
 extern u16 gUnk_09A4FE64[][2];
 extern u8 gUnk_09A4D234[];
 extern u8 gUnk_09A4F2B4[];

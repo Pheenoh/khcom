@@ -286,10 +286,10 @@ typedef struct SioBtlOptionWork {
     u16 unk_418;
     u8 unk_41A[2];
 } SioBtlOptionWork;
-
-
-extern vu16 gSystemFlags;
 extern u32 gFrameCounter;
+extern vu16 gSystemFlags;
+
+
 
 
 extern SioAnimDef gUnk_096193E0[];

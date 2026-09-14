@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "obj_api.h"
 #include "types.h"
+#include "engine_math.h"
 #include "taskpool.h"
 #include "chkobj.h"
 #include "main.h"
@@ -32,9 +33,7 @@ void mode_chkobj_1(void);
 void mode_chkobj_2(void);
 
 extern ChkObjWork* gChkObjWork;
-extern s16 gSineTable[];
 extern u8 gUnk_088B629C[];
-extern const char gWhitePalette[];
 extern const ChkObjEntry gChkObjEntries[];
 extern ObjDef gUnk_09ECEB74[];
 extern ObjDef gUnk_09ED82D4[];

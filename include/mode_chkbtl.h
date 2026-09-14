@@ -15,6 +15,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
+#include "mode_battle_data.h"
 #include "engine.h"
 #include "key.h"
 
@@ -47,9 +48,8 @@ extern u16 gUnk_02039B90;
 extern const ChkBtlEntry gChkBtlEntries[];
 extern const ChkBtlWorld gChkBtlWorlds[];
 extern ChkBtlWork* gChkBtlWork;
-extern Mode gModeBattle;
 extern Mode gUnk_09EE2704;
-extern const char gWhitePalette[];
+extern const char gWhitePalette[32];
 extern TaskDesc gTaskDescEmy00;
 extern TaskDesc gTaskDescEmy01;
 extern TaskDesc gTaskDescEmy02;

@@ -1,4 +1,5 @@
 #include "map_api.h"
+#include "mode_chkbtl.h"
 #include "msg_api.h"
 #include "display.h"
 #include "macros.h"

@@ -1,6 +1,8 @@
 #ifndef GUARD_FRD_H
 #define GUARD_FRD_H
 
+#include "registration_data.h"
+
 #include "frd_tasks.h"
 
 #include "display.h"
@@ -166,9 +168,7 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
-extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescSmnTinkeff[];
-extern s16 gSineTable[];
 extern u8 gUnk_09617C58[];
 extern AnimDef gUnk_0813EB8C[6];
 extern u8 gUnk_08F68384[];

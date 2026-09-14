@@ -10,6 +10,7 @@
 
 #include "obj_api.h"
 #include "types.h"
+#include "engine_math.h"
 #include "engine.h"
 
 
@@ -31,7 +32,6 @@ s32 task_ms_shop_hosi_1(MsShopHosiWork* work);
 void task_ms_shop_hosi_2(MsShopHosiWork* work);
 void task_ms_shop_hosi_3(MsShopHosiWork* work);
 
-extern s16 gSineTable[];
 extern u8 gUnk_099A6962[];
 
 #endif /* GUARD_MS_H */

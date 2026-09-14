@@ -212,7 +212,6 @@ extern AnimDef gUnk_0813C4DC[6][5];
 
 extern u8 gUnk_0813C294[5];
 
-extern s16 gSineTable[];
 
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1E974[];
@@ -284,8 +283,8 @@ extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F69BA4[];
-
 extern u32 gFrameCounter;
+
 
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);

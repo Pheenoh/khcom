@@ -2,6 +2,7 @@
 #define GUARD_PALLET_H
 
 #include "types.h"
+#include "engine_math.h"
 
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
@@ -18,7 +19,6 @@ typedef struct PaletteWave {
 } PaletteWave;
 
 extern PaletteWave gBgWaves[];
-extern s16 gSineTable[];
 extern u8 sPalletHeapName[];
 extern s32 gUnk_08121694[];
 

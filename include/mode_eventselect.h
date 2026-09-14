@@ -124,19 +124,13 @@ typedef struct EffectWork {
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern EventState* gUnk_02039DC8;
-extern u8 gUnk_0905EAE8[];
-extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];
-extern u8 gUnk_09611AB8[];
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
-extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_088A5D7A[];
 extern s16 gUnk_0903380C[][6];
 extern u8 gUnk_093215CA[];
-extern u8 gUnk_09320796[];
 extern u8 gUnk_09321804[];
-extern u8 gUnk_0908C686[];
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];

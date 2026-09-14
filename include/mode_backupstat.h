@@ -19,7 +19,6 @@ extern const char gUnk_09993874[];
 extern const char gUnk_09993878[];
 extern const char gUnk_09993880[];
 extern const char gUnk_09993888[];
-extern u8 gWhitePalette[];
 
 void mode_backupstat_0(void);
 void mode_backupstat_1(void);

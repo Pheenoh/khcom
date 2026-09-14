@@ -547,7 +547,7 @@ void func_0806297C(void) {
     case 83:
     case 84:
         gGameState.unk_00D = 5;
-        ModeRequest(gModeBattle, m->unk_20);
+        ModeRequest(&gModeBattle, m->unk_20);
         break;
     }
 }

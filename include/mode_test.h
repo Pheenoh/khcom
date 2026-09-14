@@ -44,6 +44,7 @@
 #include "key.h"
 #include "anim.h"
 #include "mode.h"
+#include "mode_battle_data.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "m4a.h"
@@ -128,7 +129,6 @@ typedef struct UnkModeTestArgs {
 
 extern u8 gUnk_09849A98[];
 extern u8 gUnkEu_08896524[];
-extern TaskDesc gTaskDescBtlShadow;
 
 #endif
 
@@ -200,9 +200,6 @@ void func_0806098C(void);
 extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
 
-extern Mode gModeBattle;
-extern const s16 gSineTable[];
-extern vu16 gSystemFlags;
 extern Mode gModeChkbtl;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
@@ -213,4 +210,5 @@ extern u8 gUnk_096148B8[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08F69BE4[];
 
+extern vu16 gSystemFlags;
 #endif /* GUARD_MODE_TEST_H */

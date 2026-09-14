@@ -323,7 +323,7 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         break;
     }
     TaskPoolInit(&e->unk_16C, 1);
-    TaskCreate(&e->unk_16C, gTaskDescBtlShadow, e);
+    TaskCreate(&e->unk_16C, &gTaskDescBtlShadow, e);
     p = gUnk_09991F54[i].unk_1C;
     e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].unk_20), gUnk_09991F54[i].unk_14);
     AnimInit(&e->anim, gUnk_09991F54[i].unk_18, p);

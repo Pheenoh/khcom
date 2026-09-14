@@ -62,7 +62,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     r = GetRandom();
     AnimSetFrame(&work->anim, r & 3);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
+    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->unk_040);
 
     if (work->unk_170 == 0) {
         func_0801BCD4(&work->unk_040);
@@ -458,7 +458,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     AnimInit(&work->anim, gUnk_09EF6784, gUnk_09EF6774);
     AnimStart(&work->anim, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
+    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->unk_040);
 }
 
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work) {
@@ -775,7 +775,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     AnimInit(&work->anim, gUnk_09EF6844, gUnk_09EF6824);
     AnimStart(&work->anim, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
+    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->unk_040);
     func_0801BCD4(&work->unk_040);
     m4aSongNumStart(0x253);
 }

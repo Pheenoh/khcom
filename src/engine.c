@@ -38,7 +38,6 @@ s16 gUnk_02034066;
 s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
-extern s16 gSineTable[];
 
 typedef struct BgAffineSrcData {
     s32 texX;
@@ -60,10 +59,9 @@ typedef struct BgAffineDstData {
 } BgAffineDstData;
 
 void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
-
 extern u16 gSystemFlags;
 
-extern u16 gSystemFlags;
+
 
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     SpriteWork* p;

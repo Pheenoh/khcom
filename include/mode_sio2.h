@@ -100,7 +100,6 @@ typedef struct PoohWork {
 
 extern u32 gUnk_02034DAC;
 
-extern u8 gWhitePalette[];
 extern const char gUnk_0961A9C8[];
 extern const char gUnk_0961A9CC[];
 extern const char gUnk_0961A9E8[];

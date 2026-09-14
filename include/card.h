@@ -52,6 +52,7 @@
 #include "card_state.h"
 
 #include "types.h"
+#include "engine_math.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "obj.h"
@@ -160,7 +161,6 @@ typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
 
 extern u8 gUnk_081283C0[];
 extern vu16 gSystemFlags;
-extern Mode gModeBattle;
 extern u8 gUnk_09402F78[];
 extern u8 gUnk_09614118[];
 extern u8 gUnk_096142F8[];
@@ -377,7 +377,6 @@ extern u16 gUnk_09EE48F4[47];
 extern s32 gUnk_090352E4[];
 extern s16 gUnk_090352F4[];
 extern u8 gUnk_09512AB8[];
-extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08B25ADE[];
 extern u8 gUnk_093FB954[];
 extern u8 gUnk_093FBAB8[][0x80];
@@ -1182,7 +1181,6 @@ extern u16 gUnk_0903612C[];
 extern u16 gUnk_090359FC[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
-extern s16 gSineTable[];
 extern u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
 extern u8 gUnk_0903628A[];
@@ -1283,7 +1281,6 @@ extern u8 gUnk_09614478[];
 extern u8 gUnk_09614498[];
 extern u8 gUnk_096144B8[];
 extern u8 gUnk_09614406[];
-extern u8 gUnk_08F69BA4[];
 extern Deck gUnk_09034084[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EAE8[];

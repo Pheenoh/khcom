@@ -11,7 +11,9 @@
 
 #include "fade.h"
 #include "types.h"
+#include "engine_math.h"
 #include "m4a.h"
+#include "m4a_catalog_data.h"
 #include "taskpool.h"
 #include "fld_types.h"
 #include "engine.h"
@@ -38,8 +40,6 @@ typedef struct RoomCreateWork {
     s32 unk_40;
 } RoomCreateWork;
 
-extern s16 gSineTable[];
-extern u8 gMPlayInfo_BGM[];
 extern TaskDesc gTaskDescRomcriEff;
 extern TaskDesc gTaskDescRomcriEff2;
 

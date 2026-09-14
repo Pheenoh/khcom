@@ -1,4 +1,5 @@
 #include "map_api.h"
+#include "mode_chkbtl.h"
 #include "macros.h"
 #include "mode_debflag.h"
 #include "gba/keys.h"

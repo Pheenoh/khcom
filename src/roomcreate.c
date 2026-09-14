@@ -63,7 +63,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             ApproachValue(&gUnk_02039BA0->unk_04, gUnk_02039BA0->unk_0C - 0x6000, work->unk_26);
             work->unk_26--;
         } else if (work->unk_26 == 0) {
-            m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
+            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
             CreateMapCardSelection(&work->unk_2C, &work->unk_29);
             SetBgPriority(1, 1);
             work->unk_26--;
@@ -179,6 +179,6 @@ void task_roomcreate_2(RoomCreateWork* work) {
 }
 
 void task_roomcreate_3(RoomCreateWork* work) {
-    m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x100);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x100);
     TaskPoolDestroy(&work->unk_2C);
 }

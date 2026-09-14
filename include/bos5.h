@@ -270,7 +270,6 @@ typedef struct MdWork {
     u8 unk_1B6[0x2];
 } MdWork;
 
-extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
 extern u8 gUnk_09999ED0[];
 
@@ -336,7 +335,6 @@ u8 func_080F8F9C(GaWork* work);
 u8 func_080F9EDC(GaWork* work);
 u8 func_080FA644(GaWork* work);
 u8 func_080FABE4(GaWork* work);
-extern u8 gTaskDescBosMap[];
 extern u8 gUnk_09A3C89C[];
 void func_080FB930(MdWork* work, u16 id);
 void func_080FB8DC(MdWork* work, s32 state);
