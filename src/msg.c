@@ -12185,7 +12185,7 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
     InitTextSlots(p->unk_1C, 10);
     InitTextSlots(p->unk_6C, 10);
-    p->unk_18 = _08066468(1);
+    p->palette4 = _08066468(1);
 #ifdef VERSION_EU
     p->unk_F4 = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p->unk_1C);
     p->unk_F5 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p->unk_6C);
@@ -12275,8 +12275,8 @@ void msgwait_yesno_2(MsgWaitYesNoWork* p) {
     case 1:
         DrawSprite(120, 80, gUnk_09EF126C[1], p->tiles3, p->palette3, 0, 0, 10);
         DrawSprite(p->unk_F8 >> 8, p->unk_FC >> 8, p->gfx2, p->tiles2, p->palette2, 0, 1, 9);
-        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->unk_18, 0, p->unk_F4);
-        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->unk_18, 0, p->unk_F5);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->palette4, 0, p->unk_F4);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->palette4, 0, p->unk_F5);
         break;
     }
 }
@@ -12285,7 +12285,7 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
     ReleaseObjTiles(p->tiles3);
     ReleaseObjPalette(p->palette3);
     ReleaseObjPalette(p->palette2);
-    ReleaseObjPalette(p->unk_18);
+    ReleaseObjPalette(p->palette4);
     FreeTextSlots(p->unk_1C, 10);
     FreeTextSlots(p->unk_6C, 10);
 }

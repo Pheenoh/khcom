@@ -132,7 +132,7 @@ typedef struct VixenIceWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    VixenSub* unk_24;
+    VixenSub* sub;
     u8 unk_28[0x5C];
     s16 unk_84;
     u16 unk_86;

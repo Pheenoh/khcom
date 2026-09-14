@@ -38,8 +38,8 @@ typedef struct HumWork {
     void* unk_000;
     void* tiles;
     void* palette;
-    HumSub* unk_00C;
-    HumSub* unk_010;
+    HumSub* sub;
+    HumSub* sub2;
     AnimState anim;
     TaskPool unk_02C;
     BtlObj actor;

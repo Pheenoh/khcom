@@ -7921,13 +7921,13 @@ void func_080ECA54(u8* work) {
 }
 
 void func_080ECA88(UnkStruct_080ECA88* p) {
-    UpdateSpriteFrameTiles(p->unk_44, p->unk_4C, p->unk_54);
-    UpdateSpriteFrameTiles(p->unk_58, p->unk_60, p->unk_64);
+    UpdateSpriteFrameTiles(p->tiles, p->unk_4C, p->unk_54);
+    UpdateSpriteFrameTiles(p->tiles2, p->unk_60, p->unk_64);
 }
 
 void func_080ECAA8(UnkStruct_080ECA88* p) {
-    UpdateSpriteFrameTiles(p->unk_44, p->unk_4C, p->unk_50);
-    UpdateSpriteFrameTiles(p->unk_58, p->unk_60, p->unk_68);
+    UpdateSpriteFrameTiles(p->tiles, p->unk_4C, p->unk_50);
+    UpdateSpriteFrameTiles(p->tiles2, p->unk_60, p->unk_68);
 }
 
 s32 func_080ECAC8(UnkStruct_080ECA88* p) {
@@ -8048,10 +8048,10 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     v->x -= v->y;
     e->unk_1A = 32;
     e->unk_30 = 3;
-    w->unk_44 = AllocSpriteFrameTiles(0x400);
+    w->tiles = AllocSpriteFrameTiles(0x400);
     w->unk_48 = LoadObjPalette(q->unk_00, 32);
     w->unk_5C = LoadObjPalette(gUnk_09991284, 32);
-    w->unk_58 = AllocSpriteFrameTiles(0x100);
+    w->tiles2 = AllocSpriteFrameTiles(0x100);
 
     switch (p->unk_06) {
     case 0:
@@ -8127,17 +8127,17 @@ void func_080ECE98(UnkStruct_080ECA88* p) {
         }
 
         t = 0x800;
-        DrawSprite(sx, sy, 0, p->unk_44, p->unk_48, 0, t, v);
+        DrawSprite(sx, sy, 0, p->tiles, p->unk_48, 0, t, v);
 
         if (f->unk_00 & 0x10) {
             switch (f->unk_06) {
             case 0:
             case 2:
-                DrawSprite(sx, sy, 0, p->unk_58, p->unk_5C, 0, t, v - 1);
+                DrawSprite(sx, sy, 0, p->tiles2, p->unk_5C, 0, t, v - 1);
                 break;
             case 1:
             case 3:
-                DrawSprite(sx, sy, 0, p->unk_58, p->unk_5C, 0, t, v - 1);
+                DrawSprite(sx, sy, 0, p->tiles2, p->unk_5C, 0, t, v - 1);
                 break;
             }
         }
@@ -8147,9 +8147,9 @@ void func_080ECE98(UnkStruct_080ECA88* p) {
 }
 
 void func_080ECFBC(UnkStruct_080ECA88* p) {
-    ReleaseObjTiles(p->unk_44);
+    ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->unk_48);
-    ReleaseObjTiles(p->unk_58);
+    ReleaseObjTiles(p->tiles2);
     ReleaseObjPalette(p->unk_5C);
     TaskPoolDestroy(&p->unk_74);
 }
@@ -8262,9 +8262,9 @@ s32 func_080ED35C(MapMenuWork* w) {
     w->unk_00C = 0xA000;
 
     if (gGameState.flags & 8) {
-        w->unk_13C = AllocObjTiles(0x400, gUnk_092EB78A);
+        w->tiles8 = AllocObjTiles(0x400, gUnk_092EB78A);
     } else {
-        w->unk_13C = AllocObjTiles(0x340, gUnk_088B6560);
+        w->tiles8 = AllocObjTiles(0x340, gUnk_088B6560);
     }
 
     w->tiles7 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -8730,10 +8730,10 @@ void func_080EDECC(MapMenuWork* w) {
 #endif
         (gUnk_0203C7AC->unk_00 & 0x1000)) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->unk_13C, w->palette6,
+            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->tiles8, w->palette6,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_13C,
+            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles8,
                 w->palette6, 0, 0x400, 80);
         }
 
@@ -9021,7 +9021,7 @@ void func_080EE418(MapMenuWork* w) {
     ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->palette6);
-    ReleaseObjTiles(w->unk_13C);
+    ReleaseObjTiles(w->tiles8);
     ReleaseObjPalette(w->palette7);
     ReleaseObjTiles(w->tiles7);
 
@@ -9263,8 +9263,8 @@ s32 func_080EE824(MapSaveWork* w) {
         }
 
         SetBgScroll(0, 0, 0xFFFB);
-        w->unk_184 = AllocObjTiles(0x280, gUnk_0919FDF8);
-        w->unk_18C = AllocObjTiles(0x400, gUnk_091ABDB8);
+        w->tiles5 = AllocObjTiles(0x280, gUnk_0919FDF8);
+        w->tiles6 = AllocObjTiles(0x400, gUnk_091ABDB8);
         w->palette3 = LoadObjPalette(gUnk_09991D24, 32);
         w->tiles3 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
         w->palette = LoadObjPalette(gUnk_099919A4, 32);
@@ -9431,10 +9431,10 @@ void func_080EED88(MapSaveWork* w) {
     w->unk_010 = -0x8000;
 
     if (gGameState.flags & 8) {
-        w->unk_16C = AllocObjTiles(0x400, gUnk_092EB78A);
+        w->tiles4 = AllocObjTiles(0x400, gUnk_092EB78A);
         w->palette5 = LoadObjPalette(gUnk_09618118, 32);
     } else {
-        w->unk_16C = AllocObjTiles(0x340, gUnk_088B6560);
+        w->tiles4 = AllocObjTiles(0x340, gUnk_088B6560);
         w->palette5 = LoadObjPalette(gUnk_08F683A4, 32);
     }
 
@@ -9508,18 +9508,18 @@ void func_080EEF4C(MapSaveWork* w) {
 
     if (gUnk_0203C7AC->unk_00 & 0x1000) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->unk_16C, w->palette5,
+            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->tiles4, w->palette5,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_16C,
+            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles4,
                 w->palette5, 0, 0x400, 80);
         }
     }
 
     if (w->unk_2F8 != 0) {
         if (!(gGameState.flags & 8)) {
-            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->unk_184, w->palette6, 0, 0x401, 81);
-            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->unk_18C, w->palette7, 0, 0x400, 81);
+            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->tiles5, w->palette6, 0, 0x401, 81);
+            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->tiles6, w->palette7, 0, 0x400, 81);
         }
 
         DrawSprite(0, 16, gUnk_098A8F28, w->tiles3, w->palette3, 0, 0x400, 90);
@@ -9571,11 +9571,11 @@ void func_080EF234(MapSaveWork* w) {
     ReleaseObjPalette((u8*)w->palette);
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->palette5);
-    ReleaseObjTiles(w->unk_16C);
+    ReleaseObjTiles(w->tiles4);
     ReleaseObjPalette((u8*)w->palette6);
-    ReleaseObjTiles(w->unk_184);
+    ReleaseObjTiles(w->tiles5);
     ReleaseObjPalette((u8*)w->palette7);
-    ReleaseObjTiles(w->unk_18C);
+    ReleaseObjTiles(w->tiles6);
     ReleaseObjPalette((u8*)w->palette4);
     FreeTextSlots(w->unk_044, 36);
     ReleaseObjPalette((u8*)w->unk_190);
@@ -14915,7 +14915,7 @@ void func_080F7AE0(MapFloorWork* w) {
 #else
     InitTextSlots(w->unk_18, 40);
 #endif
-    w->unk_14 = _08066468(1);
+    w->palette2 = _08066468(1);
     w->unk_10 = LoadTextSlots(func_080F7AB4(), w->unk_18);
     w->unk_0C = (240 - GetTextSlotsWidth(w->unk_18, w->unk_10)) / 2;
 }
@@ -14932,13 +14932,13 @@ s32 func_080F7B64(u8* work) {
 
 void func_080F7B78(MapFloorWork* w) {
     DrawSprite(120, 138, w->unk_08, w->tiles, w->palette, 0, 0, 0x3C);
-    DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->unk_14, 50, w->unk_10);
+    DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->palette2, 50, w->unk_10);
 }
 
 void func_080F7BB8(MapFloorWork* w) {
     ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette(w->unk_14);
+    ReleaseObjPalette(w->palette2);
 #ifdef VERSION_EU
     FreeTextSlots(w->unk_18, 60);
 #else

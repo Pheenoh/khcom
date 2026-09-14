@@ -268,7 +268,7 @@ typedef struct MsgWaitYesNoWork {
     void* tiles3;
     void* palette3;
     void* palette;
-    void* unk_18;
+    void* palette4;
     TextSlot unk_1C[10];
     TextSlot unk_6C[10];
     void* gfx;

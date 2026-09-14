@@ -458,7 +458,7 @@ typedef struct MapMenuWork {
     u8* unk_070;
     u8 unk_074[0xC4];
     FldRes* palette6;
-    void* unk_13C;
+    void* tiles8;
     u8* palette7;
     void* tiles7;
     s32 unk_148;
@@ -504,15 +504,15 @@ typedef struct MapSaveWork {
     FldRes* palette4;
     u8 unk_044[0x124];
     FldRes* palette5;
-    void* unk_16C;
+    void* tiles4;
     s32 unk_170;
     s32 unk_174;
     s32 unk_178;
     s32 unk_17C;
     FldRes* palette6;
-    void* unk_184;
+    void* tiles5;
     FldRes* palette7;
-    void* unk_18C;
+    void* tiles6;
     FldRes* unk_190;
     u8 unk_194[0xD8];
 #ifdef VERSION_EU
@@ -1041,7 +1041,7 @@ typedef struct MapFloorWork {
     u16 unk_0E;
     u8 unk_10;
     u8 unk_11[0x03];
-    void* unk_14;
+    void* palette2;
     u8 unk_18[0x140];
 } MapFloorWork;
 
@@ -1163,12 +1163,12 @@ typedef struct UnkStruct_080ECA88 {
     s32 unk_08;
     s32 unk_0C;
     u8 unk_10[0x34];
-    void* unk_44;
+    void* tiles;
     u8* unk_48;
     void* unk_4C;
     void* unk_50;
     void* unk_54;
-    void* unk_58;
+    void* tiles2;
     u8* unk_5C;
     void* unk_60;
     void* unk_64;

@@ -174,8 +174,8 @@ extern u8 gUnk_09613F78[];
 
 typedef struct UnkStruct_0807FA0C {
     u8 unk_00[0x14];
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* palette;
     u8 unk_1C[0x28];
     void* unk_44[0x04];
 } UnkStruct_0807FA0C;
@@ -531,8 +531,8 @@ typedef struct UnkStruct_0808C940 {
     void* unk_4D8;
     void* unk_4DC;
     u8 unk_4E0[8];
-    void* unk_4E8;
-    void* unk_4EC;
+    void* gfx;
+    void* gfx2;
     u8 unk_4F0[4];
     u8 unk_4F4[0x120];
     TaskPool unk_614;
@@ -626,12 +626,12 @@ typedef struct UnkStruct_080AAB08 {
 
 typedef struct UnkStruct_080A6FAC {
     u8 unk_000[0x18];
-    void* unk_018;
-    void* unk_01C;
-    void* unk_020;
-    void* unk_024;
-    void* unk_028;
-    void* unk_02C;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* tiles4;
+    void* palette;
+    void* palette2;
     u8 unk_030[0x3BC];
     void* unk_3EC;
     void* unk_3F0;
@@ -652,17 +652,17 @@ typedef struct UnkStruct_080A6FAC {
 
 typedef struct UnkStruct_0808DB04 {
     u8 unk_000[0x18];
-    void* unk_018;
-    void* unk_01C;
-    void* unk_020;
-    void* unk_024;
-    void* unk_028;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* tiles4;
+    void* tiles5;
     u8 unk_02C[0x04];
-    void* unk_030;
-    void* unk_034;
+    void* palette;
+    void* palette2;
     u8 unk_038[0x484];
-    void* unk_4BC;
-    void* unk_4C0;
+    void* tiles6;
+    void* palette3;
     u8 unk_4C4[0x10];
     UnkStruct_0808E2F0* unk_4D4;
     UnkStruct_0808E2F0* unk_4D8;
@@ -733,8 +733,8 @@ typedef struct UnkStruct_080A324C {
 
 typedef struct UnkStruct_08080268 {
     u8 unk_00[0x14];
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* palette;
     CardDisplayWork* unk_1C[3];
     CardDisplayWork* unk_28[3];
     CardDisplayWork* unk_34[4];
@@ -807,7 +807,7 @@ typedef struct ReloadChildArgs {
 typedef struct ReloadChildWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* tiles2;
     u8 unk_0C[0x04];
     s32* unk_10;
     s32* unk_14;
@@ -865,7 +865,7 @@ typedef struct PremiumCardEffectWork {
 typedef char PremiumCardEffectWork_sizechk[(sizeof(struct PremiumCardEffectWork) == 0x54) ? 1 : -1];
 
 typedef struct CardNameWork {
-    void* unk_00;
+    void* tiles;
     UnkStruct_080038C8* unk_04;
     TextSlot unk_08[32];
     TextSlot unk_108[32];
@@ -875,7 +875,7 @@ typedef struct CardNameWork {
     TextSlot unk_208[2];
 #endif
     void* unk_218;
-    void* unk_21C;
+    void* palette;
     s16 unk_220;
     s16 unk_222;
     s16 unk_224;
@@ -938,10 +938,10 @@ typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0x
 
 
 typedef struct MapcardWork {
-    void* unk_00;
+    void* tiles;
     void* unk_04;
-    void* unk_08;
-    void* unk_0C;
+    void* tiles2;
+    void* palette;
     u8 unk_10[0x08];
     MapCardDef* unk_18;
     MapCardBackDef* unk_1C;
@@ -1119,9 +1119,9 @@ typedef struct PrizeCardWork {
 typedef struct ReloadGageWork {
     void* tiles;
     void* tiles2;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
+    void* tiles3;
+    void* tiles4;
+    void* tiles5;
     void* palette;
     u8 unk_18[0x04];
     ListPool* unk_1C;
@@ -1340,10 +1340,10 @@ typedef struct CardEffectWork {
 } CardEffectWork;
 
 typedef struct UnkStruct_08083B20 {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* tiles4;
     u8 unk_10[0x04];
     s32 unk_14;
     s32 unk_18;
@@ -1437,13 +1437,13 @@ typedef struct MapSelectWork {
     u8 unk_024[8];
     UnkStruct_080038C8* unk_02C;
     ObjPalette* palette;
-    void* unk_034;
-    void* unk_038;
+    void* tiles2;
+    void* tiles3;
     void* tiles;
     u8 unk_040[0x1AC];
     MapcardWork* card;
     u8 unk_1F0[0x04];
-    MapcardWork* unk_1F4;
+    MapcardWork* card2;
     u8 unk_1F8[0x40];
     void* unk_238;
     s32 unk_23C;
@@ -1516,8 +1516,8 @@ typedef struct UnkStruct_080A2678 {
     TextSlot unk_1E0[20];
 #endif
     void* unk_280;
-    void* unk_284;
-    void* unk_288;
+    void* tiles;
+    void* palette;
     u16 unk_28C;
     u8 unk_28E[2];
     s32 unk_290;
@@ -1563,9 +1563,9 @@ typedef struct DeckConfirmWork {
 
 typedef struct UnkStruct_080A5D3C {
     u8 unk_000[0x3C4];
-    void* unk_3C4;
-    void* unk_3C8;
-    void* unk_3CC;
+    void* tiles;
+    void* palette;
+    void* tiles2;
     u8 unk_3D0[0x3C];
     TaskPool unk_40C;
     TaskPool unk_420;
@@ -1678,9 +1678,9 @@ typedef struct UnkStruct_0809A368_Args {
 } UnkStruct_0809A368_Args;
 
 typedef struct WorldSelBeforeWork {
-    void* unk_00;
+    void* tiles;
     void* palette;
-    void* unk_08;
+    void* tiles2;
     UnkStruct_080038C8* unk_0C;
     s32 unk_10;
     s32 unk_14;

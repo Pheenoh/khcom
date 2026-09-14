@@ -94,7 +94,7 @@ typedef struct EventActor {
     u8 unk_00[0x26];
     u8 unk_26;
     u8 unk_27;
-    EventBody unk_28;
+    EventBody body;
     u8 unk_38[0x06];
     u16 unk_3E;
     u8 unk_40[0x172];

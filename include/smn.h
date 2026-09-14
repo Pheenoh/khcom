@@ -215,7 +215,7 @@ typedef struct SmnPrizeArgs {
 
 typedef struct SmnFrdWork {
     u8 unk_000[0x20];
-    BtlObj unk_020;
+    BtlObj body;
     u8 unk_130[0x24];
     s32 unk_154;
 } SmnFrdWork;

@@ -42,8 +42,8 @@ void HumInit(HumWork* work, HumDef* def) {
     work->unk_170 = 12;
     work->unk_168 = 0x100;
     work->unk_16C = 0x100;
-    work->unk_00C = 0;
-    work->unk_010 = 0;
+    work->sub = 0;
+    work->sub2 = 0;
     work->unk_184 = 0;
     gUnk_02039B9C->unk_07C = actor;
     gBtlWork->unk_0A8 = actor;
@@ -52,10 +52,10 @@ void HumInit(HumWork* work, HumDef* def) {
 }
 
 void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
-    if (work->unk_00C == 0) {
-        work->unk_00C = sub;
+    if (work->sub == 0) {
+        work->sub = sub;
     } else {
-        work->unk_010 = sub;
+        work->sub2 = sub;
     }
 
     sub->tiles = AllocObjTiles(def->unk_04 * 32, 0);
@@ -79,8 +79,8 @@ void HumReleaseResources(HumWork* work) {
         gBtlWork->unk_078 = 0;
     }
 
-    HumSubReleaseGraphics(work->unk_00C);
-    HumSubReleaseGraphics(work->unk_010);
+    HumSubReleaseGraphics(work->sub);
+    HumSubReleaseGraphics(work->sub2);
     gBtlWork->unk_0A8 = 0;
     func_0801B7D8(&work->actor);
     ReleaseObjTiles(work->tiles);
@@ -531,8 +531,8 @@ s32 func_0800E5F0(HumWork* work) {
 
     if (actor->unk_0E8 != 2) {
         work->gfx = AnimUpdate(&work->anim);
-        HumSubUpdateAnimation(work->unk_00C);
-        HumSubUpdateAnimation(work->unk_010);
+        HumSubUpdateAnimation(work->sub);
+        HumSubUpdateAnimation(work->sub2);
     }
 
     if (actor->unk_0E8 == 5) {

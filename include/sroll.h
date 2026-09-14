@@ -133,13 +133,13 @@ typedef struct SrollBCharSet {
 
 typedef struct SrollBCharArg {
     SrollBCharSet* unk_00;
-    SrollBCharSub* unk_04;
+    SrollBCharSub* sub;
 } SrollBCharArg;
 
 typedef struct SrollBCharWork {
     s32 unk_00;
     s32 unk_04;
-    SrollBCharSub* unk_08;
+    SrollBCharSub* sub;
     void* tiles;
     ObjPalette* palette;
     AnimState anim;

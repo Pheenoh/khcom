@@ -137,7 +137,7 @@ typedef struct PcAcdWork {
     s32 unk_014;
     u8 unk_018;
     u8 unk_019[0x3];
-    struct PcFltWork* unk_01C;
+    struct PcFltWork* flt;
     AnimState anim;
 } PcAcdWork;
 

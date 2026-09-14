@@ -133,11 +133,11 @@ void func_081149B8(SrollBCharWork* w) {
     SrollBCharDef* def;
     SrollBCharGfx* gfx;
 
-    def = w->unk_08->unk_00;
+    def = w->sub->unk_00;
     gfx = def->unk_00;
     AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
     SetObjTileSource(w->tiles, gfx->unk_08);
-    w->unk_08->unk_14 &= 0xFFFE;
+    w->sub->unk_14 &= 0xFFFE;
 }
 
 void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
@@ -147,13 +147,13 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     set = a->unk_00;
     w->unk_00 = 0;
     w->unk_04 = 0;
-    w->unk_08 = a->unk_04;
+    w->sub = a->sub;
     w->tiles = AllocObjTiles((u16)(set->unk_00 * 32), 0);
     w->palette = LoadObjPalette(set->unk_08, 32);
     anim = &w->anim;
     AnimInit(anim, 0, 0);
-    w->unk_08->anim = anim;
-    w->unk_08->unk_1C = w->palette->unk_06;
+    w->sub->anim = anim;
+    w->sub->unk_1C = w->palette->unk_06;
     func_081149B8(w);
     TaskPoolInit(&w->unk_2C, 4);
 }
@@ -161,11 +161,11 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
 s32 task_sroll_b_char_1(SrollBCharWork* w) {
     SrollBCrtnArg a;
 
-    if (w->unk_08->unk_14 & 1) {
+    if (w->sub->unk_14 & 1) {
         func_081149B8(w);
     }
 
-    if ((w->unk_08->unk_16 & 4) == 0) {
+    if ((w->sub->unk_16 & 4) == 0) {
         FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 0);
     } else {
         FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 1);
@@ -176,30 +176,30 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
 
     switch (w->unk_00) {
     case 1:
-        w->unk_08->x -= 128;
-        w->unk_08->y += 128;
+        w->sub->x -= 128;
+        w->sub->y += 128;
         break;
     case 2:
-        w->unk_08->unk_0C = gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8;
+        w->sub->unk_0C = gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8;
         w->unk_04++;
         break;
     case 3:
         if ((w->unk_04 & 3) == 0) {
             a.unk_00 = 2;
-            a.x = w->unk_08->x;
-            a.y = w->unk_08->y;
+            a.x = w->sub->x;
+            a.y = w->sub->y;
             TaskCreate(&w->unk_2C, &gTaskDescSrollBCrtn, &a);
         }
 
-        w->unk_08->unk_0C = (gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8) >> 2;
+        w->sub->unk_0C = (gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8) >> 2;
         w->unk_04++;
         break;
     case 4:
-        w->unk_08->x += 128;
-        w->unk_08->y -= 128;
+        w->sub->x += 128;
+        w->sub->y -= 128;
         break;
     case 5:
-        w->unk_08->x += (gUnk_09A542CC[(w->unk_04 >> 2) & 15] << 8) >> 2;
+        w->sub->x += (gUnk_09A542CC[(w->unk_04 >> 2) & 15] << 8) >> 2;
         w->unk_04++;
         break;
     }
@@ -213,7 +213,7 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
     u16 x;
     u16 y;
 
-    sub = w->unk_08;
+    sub = w->sub;
 
     if ((sub->unk_14 & 2) == 0) {
         x = sub->x >> 8;

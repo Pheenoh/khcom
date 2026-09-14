@@ -1418,10 +1418,10 @@ void task_bos_pc_acd_0(PcAcdWork* work, void* arg) {
     work->unk_00C = -1;
     work->unk_010 = -1;
     work->unk_014 = -1;
-    work->unk_01C = arg;
+    work->flt = arg;
     anim = &work->anim;
     AnimInit(anim, gUnk_09EFABA4, gUnk_09EFAB68);
-    if (work->unk_01C->unk_005 == 1) {
+    if (work->flt->unk_005 == 1) {
         work->unk_018 = 1;
         AnimStart(anim, 1, 0);
     } else {
@@ -1472,7 +1472,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     pos->unk_034 &= ~0x2000000;
     ox = 0;
     oy = 0;
-    flt = work->unk_01C;
+    flt = work->flt;
     if (flt->unk_005 == 1) {
         ox = gUnk_02039DC8->unk_68 << 8;
         oy = gUnk_02039DC8->unk_6A << 8;

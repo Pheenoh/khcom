@@ -1174,7 +1174,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_160 = 0;
     work->unk_164 = 0;
     work->unk_168 = 0;
-    work->unk_16C = 0;
+    work->dialog = 0;
     gBtlWork->unk_0CC = work->actor.unk_004;
     gBtlWork->unk_0D0 = work->actor.unk_008;
     gBtlWork->unk_0D4 = work->actor.unk_00C;
@@ -1297,7 +1297,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         func_080D900C(work, 1, 1);
         work->unk_004++;
         if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
-            !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->unk_16C) &&
+            !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->dialog) &&
             !IsTaskActive((Task*)work->unk_164) && gBtlWork->unk_0EC <= 0 && work->unk_174 == 0) {
             random = GetRandom() % 100;
             if (random == 0) {
@@ -1320,7 +1320,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 work->unk_160 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
                 work->unk_175 = 1;
                 work->unk_168 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
-                work->unk_16C = (StatusDialogSub*)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                work->dialog = (StatusDialogSub*)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
                 func_080D900C(work, 2, 1);
                 m4aSongNumStart(272);
                 work->unk_000 = 9;
@@ -1547,9 +1547,9 @@ u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
 
 u8 func_080D9B28(BoogieWork* work) {
     if (work->unk_000 == 3) {
-        if (work->unk_16C->unk_00 == 9) {
-            if (AnimGetFrame(&work->unk_16C->anim) <= 2) {
-                if (!AnimIsFinished(&work->unk_16C->anim)) {
+        if (work->dialog->unk_00 == 9) {
+            if (AnimGetFrame(&work->dialog->anim) <= 2) {
+                if (!AnimIsFinished(&work->dialog->anim)) {
                     return 1;
                 }
             }

@@ -177,7 +177,7 @@ typedef struct BoogieWork {
     s32 unk_160;
     void* unk_164;
     s32 unk_168;
-    StatusDialogSub* unk_16C;
+    StatusDialogSub* dialog;
     u32 unk_170;
     u8 unk_174;
     u8 unk_175;

@@ -147,7 +147,7 @@ void Hanabira_c_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->palette = LoadObjPalette(gUnk_08F6DC84, 32);
     w->tiles = LoadObjTiles(gUnk_08BCB3D8, 256);
     w->unk_2C = b->unk_04;
@@ -220,7 +220,7 @@ void smoke_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08 - 0x800;
     w->tiles = AllocObjTiles(128, 0);
@@ -237,7 +237,7 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
     w->tiles = AllocObjTiles(128, 0);
@@ -259,7 +259,7 @@ void balloon_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
     w->tiles = AllocObjTiles(128, 0);
@@ -318,7 +318,7 @@ void Question_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
     w->tiles = AllocObjTiles(128, 0);
@@ -356,7 +356,7 @@ void func_080758D0(EffectWork* w, EventActor* arg) {
     s32 k;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     k = 0x400;
     d1 = (GetRandom() % 9 << 8) - k;
     w->unk_2C = b->unk_04 + d1;
@@ -412,7 +412,7 @@ void GlowNose_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
     w->unk_2C = b->unk_04 - 1536;
     w->unk_30 = b->unk_08 + 3072;
     w->tiles = AllocObjTiles(128, 0);
@@ -440,7 +440,7 @@ void GlowNose2_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
 
     switch (arg->unk_26) {
     case 3:
@@ -480,7 +480,7 @@ void down_0(EffectWork* w, EventActor* arg) {
     u8 i;
 
     w->actor = arg;
-    b = &arg->unk_28;
+    b = &arg->body;
 
     switch (arg->unk_26) {
     case 0:
@@ -1266,9 +1266,9 @@ void func_08076CB4(UnkStruct_08080268* w) {
     gBtlWork->unk_0F4 = 0;
     func_08091B28();
     func_080782EC();
-    w->unk_14 = AllocSpriteFrameTiles(128);
-    w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
-    UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
+    w->tiles = AllocSpriteFrameTiles(128);
+    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    UpdateSpriteFrameTiles(w->tiles, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
     TaskPoolInit((TaskPool*)w, 30);
     w->unk_B9 = 0;
     w->unk_B8 = 0;

@@ -2498,7 +2498,7 @@ void task_smn_king_3(SmnKingWork* work) {
 u8 func_0804544C(SmnFrdWork* work) {
     BtlObj* body;
 
-    body = &work->unk_020;
+    body = &work->body;
     func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
     body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
