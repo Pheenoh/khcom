@@ -1,4 +1,3 @@
-#include "fld.h"
 #include "task_animation_assets.h"
 
 AnimDef gUnk_0813CDDC[15][5] __attribute__((section(".rodata_fld_000"))) = {

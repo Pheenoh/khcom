@@ -1,4 +1,3 @@
-#include "btl2.h"
 #include "task_animation_assets.h"
 
 AnimDef gUnk_0813C89C[15][5] __attribute__((section(".rodata_btl2_000"))) = {
