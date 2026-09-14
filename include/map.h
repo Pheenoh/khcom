@@ -56,7 +56,6 @@
 #include "mode.h"
 #include "key.h"
 #include "taskpool.h"
-#include "malloc.h"
 #include "fld_types.h"
 #include "card_types.h"
 #include "text_types.h"

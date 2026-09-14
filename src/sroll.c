@@ -2,7 +2,6 @@
 #include "audio_block_codec.h"
 #include "anim.h"
 #include "m4a.h"
-#include "sio.h"
 #include "sroll.h"
 #include "types.h"
 #include "sroll_api.h"

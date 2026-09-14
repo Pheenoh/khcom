@@ -307,7 +307,6 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
-#include "intr.h"
 extern TaskPool gUnk_02034A60;
 extern u32 gUnk_02034A78;
 extern u16 gUnk_09033C98[];

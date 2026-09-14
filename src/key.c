@@ -1,8 +1,4 @@
 #include "system_state.h"
-#include "intr.h"
-#include "gba/syscall.h"
-#include "malloc.h"
-#include "main.h"
 #include "gba/keys.h"
 #include "key.h"
 

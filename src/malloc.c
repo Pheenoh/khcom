@@ -1,8 +1,5 @@
 #include "system_state.h"
 #include "listpool.h"
-#include "intr.h"
-#include "gba/syscall.h"
-#include "key.h"
 #include "malloc.h"
 
 Heap gEwramHeap;

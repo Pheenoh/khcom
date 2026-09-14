@@ -1,6 +1,5 @@
 #include "movie_text.h"
 #include "macros.h"
-#include "tutorial.h"
 
 #ifdef VERSION_JP
 u16 func_0805E848(u8* str) {

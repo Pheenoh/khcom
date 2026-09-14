@@ -440,7 +440,6 @@ typedef struct WlogoObjParam {
 extern s32 gUnk_0203AB38;
 extern TaskDesc gTaskDescBosMap;
 extern u8 gUnk_09619C68[];
-#include "intr.h"
 extern WlogoHwtObjA gUnk_096194D0[];
 extern WlogoHwtObjB gUnk_09619530[][6];
 extern WlogoHwtObjB gUnk_096198D4[];

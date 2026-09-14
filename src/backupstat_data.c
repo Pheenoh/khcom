@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include "registration_data.h"
 #include "backupstat_data.h"
 #include "worldwarp_catalog_assets.h"
 

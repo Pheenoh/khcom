@@ -1,5 +1,4 @@
 #include "snd_stream.h"
-#include "gba/syscall.h"
 #include "movie.h"
 
 #define REG_VCNT (*(vu16*)0x04000006)

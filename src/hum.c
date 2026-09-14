@@ -5,7 +5,6 @@
 #include "obj_api.h"
 #include "pallet.h"
 #include "hum.h"
-#include "gba/keys.h"
 
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {

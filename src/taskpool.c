@@ -7,7 +7,6 @@
 #include "fade.h"
 #include "listpool.h"
 #include "taskpool.h"
-#include "intr.h"
 #include "gba/syscall.h"
 #include "key.h"
 #include "malloc.h"

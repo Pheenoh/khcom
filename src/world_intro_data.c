@@ -1,6 +1,5 @@
 #include <stddef.h>
 #include "world_intro_data.h"
-#include "world_intro_assets.h"
 
 WlogoWonEntry gUnk_09EF167C[10] __attribute__((section(".data_gUnk_09EF167C"))) = {
     {65280, 18432, 768, 10, 59, 35, 11},

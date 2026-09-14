@@ -1,4 +1,3 @@
-#include "registration_data.h"
 #include "system_state.h"
 #include "battle_localized_assets.h"
 #include "monsgage.h"
