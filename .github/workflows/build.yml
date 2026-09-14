@@ -41,6 +41,12 @@ jobs:
           8db73586cdb11b3795907edebf43228dbcd3e6b2  roms/B8CP.gba
           SUMS
 
+      - name: Extract assets
+        run: python3 tools/extract_assets.py ${{ matrix.version }}
+
+      - name: Remove base ROMs
+        run: rm -f roms/*.gba
+
       - name: Build and verify
         run: |
           python3 configure.py --version ${{ matrix.version }}
