@@ -39,7 +39,7 @@ The project can target the following versions:
 
   ```sh
   git clone https://github.com/pret/agbcc
-  cd agbcc && ./build.sh && ./install.sh ../com
+  cd agbcc && ./build.sh && ./install.sh ../khcom
   ```
 
 ## Building
@@ -51,6 +51,12 @@ The project can target the following versions:
   ```
 
 - Copy your legally dumped ROM(s) into `roms/` as `<code>.gba` (e.g. `roms/B8CE.gba`).
+
+- Extract assets:
+
+  ```sh
+  python3 tools/extract_assets.py
+  ```
 
 - Configure:
 
