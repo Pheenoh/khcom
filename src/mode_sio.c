@@ -2324,7 +2324,7 @@ void func_080B1C14(void) {
 #ifndef VERSION_EU
 void func_080B1C70(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_09619444[b];
-    AnimChangeWithTables(&gSioChgCardWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
+    AnimChangeWithTables(&gSioChgCardWork->anim[a], def->unk_0C, c, def->unk_04, def->unk_00);
     SetObjTileSource(gSioChgCardWork->unk_008[a], def->unk_08);
 }
 #endif
@@ -2391,14 +2391,14 @@ void func_080B1E70(void) {
 
     for (i = 0; i < 2; i++) {
         gSioChgCardWork->unk_008[i] = AllocObjTiles(0xC80, 0);
-        AnimInit(&gSioChgCardWork->unk_020[i], 0, 0);
+        AnimInit(&gSioChgCardWork->anim[i], 0, 0);
 
         if (gUnk_0203AB34[i] == 0) {
             func_080B1C70(i, 0, 0);
         } else {
             func_080B1C70(i, 2, 0);
         }
-        gSioChgCardWork->unk_018[i] = AnimGetGfx(&gSioChgCardWork->unk_020[i]);
+        gSioChgCardWork->gfx[i] = AnimGetGfx(&gSioChgCardWork->anim[i]);
     }
 
     if (gSioPlayerId == 0) {
@@ -2408,16 +2408,16 @@ void func_080B1E70(void) {
         gSioChgCardWork->unk_008[2] = LoadObjPalette(gUnk_096FAC64, 32);
         gSioChgCardWork->unk_008[3] = LoadObjPalette(gUnk_08F683A4, 32);
     }
-    gSioChgCardWork->unk_050 = LoadObjTiles(gUnk_0962DEA8, 0x780);
-    gSioChgCardWork->unk_054 = LoadObjPalette(gUnk_096FBF04, 32);
-    AnimInit(&gSioChgCardWork->unk_05C, gUnk_09EF3920, gUnk_09EF390C);
-    AnimStart(&gSioChgCardWork->unk_05C, 0, 1);
-    gSioChgCardWork->unk_058 = AnimGetGfx(&gSioChgCardWork->unk_05C);
-    gSioChgCardWork->unk_080 = LoadObjTiles(gUnk_0962B090, 0x1C0);
-    gSioChgCardWork->unk_084 = LoadObjPalette(gUnk_096FBAA4, 32);
-    AnimInit(&gSioChgCardWork->unk_08C, gUnk_09EF38B4, gUnk_09EF3894);
-    AnimStart(&gSioChgCardWork->unk_08C, 0, 1);
-    gSioChgCardWork->unk_088 = AnimGetGfx(&gSioChgCardWork->unk_08C);
+    gSioChgCardWork->tiles = LoadObjTiles(gUnk_0962DEA8, 0x780);
+    gSioChgCardWork->palette = LoadObjPalette(gUnk_096FBF04, 32);
+    AnimInit(&gSioChgCardWork->anim2, gUnk_09EF3920, gUnk_09EF390C);
+    AnimStart(&gSioChgCardWork->anim2, 0, 1);
+    gSioChgCardWork->gfx2 = AnimGetGfx(&gSioChgCardWork->anim2);
+    gSioChgCardWork->tiles2 = LoadObjTiles(gUnk_0962B090, 0x1C0);
+    gSioChgCardWork->palette2 = LoadObjPalette(gUnk_096FBAA4, 32);
+    AnimInit(&gSioChgCardWork->anim3, gUnk_09EF38B4, gUnk_09EF3894);
+    AnimStart(&gSioChgCardWork->anim3, 0, 1);
+    gSioChgCardWork->gfx3 = AnimGetGfx(&gSioChgCardWork->anim3);
 
     for (i = 0; i < 10; i++) {
         if (gUnk_0203AB20[i] == 0x800) {
@@ -2778,10 +2778,10 @@ void mode_sio_chg_card_2(void) {
     ReleaseObjTiles(gSioChgCardWork->unk_008[1]);
     ReleaseObjPalette(gSioChgCardWork->unk_008[2]);
     ReleaseObjPalette(gSioChgCardWork->unk_008[3]);
-    ReleaseObjTiles(gSioChgCardWork->unk_050);
-    ReleaseObjPalette(gSioChgCardWork->unk_054);
-    ReleaseObjTiles(gSioChgCardWork->unk_080);
-    ReleaseObjPalette(gSioChgCardWork->unk_084);
+    ReleaseObjTiles(gSioChgCardWork->tiles);
+    ReleaseObjPalette(gSioChgCardWork->palette);
+    ReleaseObjTiles(gSioChgCardWork->tiles2);
+    ReleaseObjPalette(gSioChgCardWork->palette2);
 
     for (i = 0; i < 10; i++) {
         ReleaseObjTiles(gSioChgCardWork->unk_100[i]);
@@ -2799,16 +2799,16 @@ void mode_sio_chg_card_2(void) {
 void func_080B2CD0(void) {
     s32 i;
     s32 aff;
-    gSioChgCardWork->unk_018[0] = AnimUpdate(&gSioChgCardWork->unk_020[0]);
-    gSioChgCardWork->unk_018[1] = AnimUpdate(&gSioChgCardWork->unk_020[1]);
-    gSioChgCardWork->unk_058 = AnimUpdate(&gSioChgCardWork->unk_05C);
-    gSioChgCardWork->unk_088 = AnimUpdate(&gSioChgCardWork->unk_08C);
-    DrawSprite(72, 72, gSioChgCardWork->unk_018[0], gSioChgCardWork->unk_008[0], gSioChgCardWork->unk_008[2], 0, 0x401, 0xFFFF);
-    DrawSprite(168, 72, gSioChgCardWork->unk_018[1], gSioChgCardWork->unk_008[1], gSioChgCardWork->unk_008[3], 0, 0x400, 0xFFFF);
+    gSioChgCardWork->gfx[0] = AnimUpdate(&gSioChgCardWork->anim[0]);
+    gSioChgCardWork->gfx[1] = AnimUpdate(&gSioChgCardWork->anim[1]);
+    gSioChgCardWork->gfx2 = AnimUpdate(&gSioChgCardWork->anim2);
+    gSioChgCardWork->gfx3 = AnimUpdate(&gSioChgCardWork->anim3);
+    DrawSprite(72, 72, gSioChgCardWork->gfx[0], gSioChgCardWork->unk_008[0], gSioChgCardWork->unk_008[2], 0, 0x401, 0xFFFF);
+    DrawSprite(168, 72, gSioChgCardWork->gfx[1], gSioChgCardWork->unk_008[1], gSioChgCardWork->unk_008[3], 0, 0x400, 0xFFFF);
 
     if (gSioChgCardWork->unk_074 == 1) {
-        DrawSprite(gSioChgCardWork->x, gSioChgCardWork->y, gSioChgCardWork->unk_058, gSioChgCardWork->unk_050, gSioChgCardWork->unk_054, 0, 0x400, 0xFFC0);
-        DrawSprite(gSioChgCardWork->x + 2, gSioChgCardWork->y - 8, gSioChgCardWork->unk_088, gSioChgCardWork->unk_080, gSioChgCardWork->unk_084, 0, 0x400, 0xFFA0);
+        DrawSprite(gSioChgCardWork->x, gSioChgCardWork->y, gSioChgCardWork->gfx2, gSioChgCardWork->tiles, gSioChgCardWork->palette, 0, 0x400, 0xFFC0);
+        DrawSprite(gSioChgCardWork->x + 2, gSioChgCardWork->y - 8, gSioChgCardWork->gfx3, gSioChgCardWork->tiles2, gSioChgCardWork->palette2, 0, 0x400, 0xFFA0);
     }
 
     for (i = 0; i < 10; i++) {
@@ -2824,12 +2824,12 @@ void func_080B2CD0(void) {
 
     if (gSioChgCardWork->unk_20C == 1) {
         DrawSprite(120, 131, gSioChgCardWork->unk_208, gSioChgCardWork->unk_204, gSioChgCardWork->unk_17C, 0, 0, 0xFF00);
-        DrawTextSlots(gSioChgCardWork->unk_BDC, gSioChgCardWork->unk_BDE, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 20, gSioChgCardWork->unk_20D);
+        DrawTextSlots(gSioChgCardWork->unk_BDC, gSioChgCardWork->unk_BDE, gSioChgCardWork->unk_210, gSioChgCardWork->palette2, 20, gSioChgCardWork->unk_20D);
     }
 
     if (gSioChgCardWork->unk_360 == 1) {
-        DrawTextSlots(58, 27, gSioChgCardWork->unk_364, gSioChgCardWork->unk_054, 18, gSioChgCardWork->unk_361);
-        DrawTextSlots(52, 42, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 18, gSioChgCardWork->unk_20D);
+        DrawTextSlots(58, 27, gSioChgCardWork->unk_364, gSioChgCardWork->palette, 18, gSioChgCardWork->unk_361);
+        DrawTextSlots(52, 42, gSioChgCardWork->unk_210, gSioChgCardWork->palette2, 18, gSioChgCardWork->unk_20D);
     }
 }
 
@@ -3156,7 +3156,7 @@ void func_080B397C(void) {
     def = &defs[n];
     off = def->unk_2A << 5;
     LoadPalette(gUnk_096FBF84 + off, (void*)0x050000A0, 32);
-    LoadObjPaletteBank(((ObjPalette*)gSioChgCardWork->unk_054)->unk_06, gUnk_096FBF04 + off);
+    LoadObjPaletteBank(((ObjPalette*)gSioChgCardWork->palette)->unk_06, gUnk_096FBF04 + off);
     nameId = def->unk_1C;
     defs = (CardDef*)((u8*)defs + 12);
     gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].unk_00, gSioChgCardWork->unk_364);

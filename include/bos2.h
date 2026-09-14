@@ -176,8 +176,8 @@ typedef struct DsdMainWork {
     void* tiles2;
     void* gfx;
     void* gfx2;
-    AnimState unk_01C;
-    AnimState unk_034;
+    AnimState anim;
+    AnimState anim2;
     void* palette;
     void* palette2;
     s8 unk_054;
@@ -410,12 +410,12 @@ typedef struct JfBorderlineWork {
     void* gfx2;
     void* gfx3;
     void* gfx4;
-    AnimState unk_01C;
-    AnimState unk_034;
-    AnimState unk_04C;
-    AnimState unk_064;
+    AnimState anim;
+    AnimState anim2;
+    AnimState anim3;
+    AnimState anim4;
     void* gfx5;
-    AnimState unk_080;
+    AnimState anim5;
     s32 unk_098;
     s32 unk_09C;
     u32 unk_0A0;

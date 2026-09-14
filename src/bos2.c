@@ -4581,21 +4581,21 @@ void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
     work->unk_0B5 = 0;
     work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
-    AnimInit(&work->unk_01C, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_01C, 27, 1);
-    work->gfx = AnimGetGfx(&work->unk_01C);
-    AnimInit(&work->unk_034, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_034, 8, 1);
-    work->gfx2 = AnimGetGfx(&work->unk_034);
-    AnimInit(&work->unk_04C, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_04C, 7, 1);
-    work->gfx3 = AnimGetGfx(&work->unk_04C);
-    AnimInit(&work->unk_064, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_064, 28, 1);
-    work->gfx4 = AnimGetGfx(&work->unk_064);
-    AnimInit(&work->unk_080, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_080, 6, 1);
-    work->gfx5 = AnimGetGfx(&work->unk_080);
+    AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim, 27, 1);
+    work->gfx = AnimGetGfx(&work->anim);
+    AnimInit(&work->anim2, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim2, 8, 1);
+    work->gfx2 = AnimGetGfx(&work->anim2);
+    AnimInit(&work->anim3, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim3, 7, 1);
+    work->gfx3 = AnimGetGfx(&work->anim3);
+    AnimInit(&work->anim4, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim4, 28, 1);
+    work->gfx4 = AnimGetGfx(&work->anim4);
+    AnimInit(&work->anim5, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim5, 6, 1);
+    work->gfx5 = AnimGetGfx(&work->anim5);
     func_0801C298(*(u8*)((u8*)work->palette + 6) + 16, 0);
 }
 
@@ -4605,11 +4605,11 @@ u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
     func_080C1A48(work);
     work->unk_098 = p->unk_04 + work->unk_0A4;
     work->unk_09C = p->unk_08 + work->unk_0A8;
-    work->gfx = AnimUpdate(&work->unk_01C);
-    work->gfx2 = AnimUpdate(&work->unk_034);
-    work->gfx3 = AnimUpdate(&work->unk_04C);
-    work->gfx4 = AnimUpdate(&work->unk_064);
-    work->gfx5 = AnimUpdate(&work->unk_080);
+    work->gfx = AnimUpdate(&work->anim);
+    work->gfx2 = AnimUpdate(&work->anim2);
+    work->gfx3 = AnimUpdate(&work->anim3);
+    work->gfx4 = AnimUpdate(&work->anim4);
+    work->gfx5 = AnimUpdate(&work->anim5);
 
     return 1;
 }
@@ -4958,15 +4958,15 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     work->unk_070 = gBtlWork->unk_1CA;
     SetBgMapBlocks(1, gUnk_09EF2AA4, 2, 2);
     work->tiles = LoadObjTiles(gUnk_096983E4, 0x12A0);
-    AnimInit(&work->unk_01C, gUnk_09EF3C34, gUnk_09EF3C20);
-    AnimStart(&work->unk_01C, 0, 1);
-    work->gfx = AnimGetGfx(&work->unk_01C);
+    AnimInit(&work->anim, gUnk_09EF3C34, gUnk_09EF3C20);
+    AnimStart(&work->anim, 0, 1);
+    work->gfx = AnimGetGfx(&work->anim);
     arg->unk_000[0].unk_008++;
     arg->unk_000[0].unk_008--;
     work->tiles2 = LoadObjTiles(gUnk_096983E4, 0x12A0);
-    AnimInit(&work->unk_034, gUnk_09EF3C4C, gUnk_09EF3C38);
-    AnimStart(&work->unk_034, 0, 1);
-    work->gfx2 = AnimGetGfx(&work->unk_034);
+    AnimInit(&work->anim2, gUnk_09EF3C4C, gUnk_09EF3C38);
+    AnimStart(&work->anim2, 0, 1);
+    work->gfx2 = AnimGetGfx(&work->anim2);
     work->palette = LoadObjPalette(gUnk_096FB8C4, 32);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_000->tiles = AllocObjTiles(0x800, gUnk_096A2F04);
@@ -5142,8 +5142,8 @@ void func_080C2828(DsdMainWork* work) {
     work->unk_000->unk_356 = 0;
     func_080C213C(0, 0x60);
     work->unk_054 = 1;
-    AnimStart(&work->unk_01C, 0, 1);
-    AnimStart(&work->unk_034, 0, 1);
+    AnimStart(&work->anim, 0, 1);
+    AnimStart(&work->anim2, 0, 1);
     p->unk_000[0].unk_00C = -0x6400;
     q->unk_00C = -0x8C00;
 }
@@ -5166,8 +5166,8 @@ void func_080C288C(DsdMainWork* work) {
     }
 
     work->unk_000->unk_356++;
-    work->gfx = AnimUpdate(&work->unk_01C);
-    work->gfx2 = AnimUpdate(&work->unk_034);
+    work->gfx = AnimUpdate(&work->anim);
+    work->gfx2 = AnimUpdate(&work->anim2);
 }
 
 void func_080C2944(DsdMainWork* work) {

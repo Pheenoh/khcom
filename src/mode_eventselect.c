@@ -1989,8 +1989,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
 }
 
 void func_08077E10(CardBattleWork* w) {
-    gUnk_02039DD4->unk_094 = AnimUpdate(&gUnk_02039DD4->unk_064);
-    gUnk_02039DD4->unk_098 = AnimUpdate(&gUnk_02039DD4->unk_07C);
+    gUnk_02039DD4->gfx = AnimUpdate(&gUnk_02039DD4->anim);
+    gUnk_02039DD4->gfx2 = AnimUpdate(&gUnk_02039DD4->anim2);
 
     if (gUnk_02039DD4->unk_0EA != 0 && w->unk_B9 != 0 && w->unk_BA != 0) {
         DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16,

@@ -2585,14 +2585,14 @@ u8 func_0807B60C(void) {
 void func_0807B668(UnkStruct_02039DD4* p) {
     p->unk_040 = AllocObjTiles(0x280, 0);
     SetObjTileSource(p->unk_040, gUnk_0908B1B4);
-    AnimInit(&p->unk_064, gUnk_09EEA164, gUnk_09EEA148);
-    AnimStart(&p->unk_064, 0, 1);
-    p->unk_094 = AnimGetGfx(&p->unk_064);
+    AnimInit(&p->anim, gUnk_09EEA164, gUnk_09EEA148);
+    AnimStart(&p->anim, 0, 1);
+    p->gfx = AnimGetGfx(&p->anim);
     p->unk_050 = AllocObjTiles(0x100, 0);
     SetObjTileSource(p->unk_050, gUnk_0908C3CE);
-    AnimInit(&p->unk_07C, gUnk_09EEA198, gUnk_09EEA180);
-    AnimStart(&p->unk_07C, 0, 1);
-    p->unk_098 = AnimGetGfx(&p->unk_07C);
+    AnimInit(&p->anim2, gUnk_09EEA198, gUnk_09EEA180);
+    AnimStart(&p->anim2, 0, 1);
+    p->gfx2 = AnimGetGfx(&p->anim2);
 }
 
 void func_0807B6F4(void) {
@@ -3034,7 +3034,7 @@ void func_0807BEC0(CardDisplayWork* p) {
         }
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 3));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 3));
         }
 
         return;
@@ -3052,11 +3052,11 @@ void func_0807BEC0(CardDisplayWork* p) {
         DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
         }
     } else if (p->unk_A6 != 0) {
         DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, attr, (u16)(p->unk_A0 - 10));
-        DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
+        DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 11));
     } else {
         DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[k], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, attr, (u16)(p->unk_A0 - 10));
     }
@@ -6984,7 +6984,7 @@ void func_08081C98(CardDisplayWork* p) {
         }
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 3));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->gfx, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 3));
         }
 
         return;
@@ -7008,11 +7008,11 @@ void func_08081C98(CardDisplayWork* p) {
         DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
+            DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
         }
     } else if (p->unk_A6 != 0) {
         DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
-        DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
+        DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->gfx2, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
     } else {
         DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 10));
     }
@@ -35025,53 +35025,53 @@ void mode_sio_battle_0(s32 a) {
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_08 = -0x8000;
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C = -0x800;
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_10 = 0xA000;
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14 = LoadObjTiles(gUnk_0962AD62, 0x240);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18 = LoadObjPalette(gUnk_096FBA44, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->tiles = LoadObjTiles(gUnk_0962AD62, 0x240);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette = LoadObjPalette(gUnk_096FBA44, 32);
 
     for (i = 0; i < 3; i++) {
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[i] = gUnk_09EF3884[i];
     }
 
 #ifdef VERSION_EU
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C = LoadObjPalette(gUnk_096FBA64, 32);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38 = LoadObjPalette(gUnk_096FBA84, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette2 = LoadObjPalette(gUnk_096FBA64, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette3 = LoadObjPalette(gUnk_096FBA84, 32);
 
     switch (gLanguage) {
     case 0:
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EDAAA, 0x600);
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EE0E2, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnkEu_095EDAAA, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnkEu_095EE0E2, 0x600);
         break;
     case 3:
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EFFFA, 0x600);
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095F0632, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnkEu_095EFFFA, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnkEu_095F0632, 0x600);
         break;
     case 1:
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EE71A, 0x600);
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EED52, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnkEu_095EE71A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnkEu_095EED52, 0x600);
         break;
     case 4:
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EF38A, 0x600);
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EF9C2, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnkEu_095EF38A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnkEu_095EF9C2, 0x600);
         break;
     case 2:
     default:
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095F0C6A, 0x600);
-        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095F12A2, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnkEu_095F0C6A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnkEu_095F12A2, 0x600);
         break;
     }
 #else
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnk_0962B286, 0x600);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C = LoadObjPalette(gUnk_096FBA64, 32);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnk_0962B8BE, 0x600);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38 = LoadObjPalette(gUnk_096FBA84, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2 = LoadObjTiles(gUnk_0962B286, 0x600);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette2 = LoadObjPalette(gUnk_096FBA64, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3 = LoadObjTiles(gUnk_0962B8BE, 0x600);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette3 = LoadObjPalette(gUnk_096FBA84, 32);
 #endif
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_40 = LoadObjTiles(gUnk_0962B090, 0x1C0);
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_44 = LoadObjPalette(gUnk_096FBAA4, 32);
-    AnimInit(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, gUnk_09EF38B4, gUnk_09EF3894);
-    AnimStart(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, 1, 1);
-    gfx = AnimGetGfx(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->tiles4 = LoadObjTiles(gUnk_0962B090, 0x1C0);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->palette4 = LoadObjPalette(gUnk_096FBAA4, 32);
+    AnimInit(&((UnkStruct_02034B38*)gUnk_02034B38)->anim, gUnk_09EF38B4, gUnk_09EF3894);
+    AnimStart(&((UnkStruct_02034B38*)gUnk_02034B38)->anim, 1, 1);
+    gfx = AnimGetGfx(&((UnkStruct_02034B38*)gUnk_02034B38)->anim);
     w = (UnkStruct_02034B38*)gUnk_02034B38;
-    w->unk_48 = gfx;
+    w->gfx = gfx;
     w->unk_68 = a;
 
     switch (w->unk_68) {
@@ -35344,14 +35344,14 @@ void mode_sio_battle_1(void) {
         break;
     }
 
-    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_48 = AnimUpdate(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C);
-    DrawSprite(((UnkStruct_02034B38*)gUnk_02034B38)->unk_08 >> 8, 0, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[0], ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -16);
-    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[1], ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -1);
-    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_10 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[2], ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -1);
-    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C, 0, 0x400, -32);
-    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38, 0, 0x400, -32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->gfx = AnimUpdate(&((UnkStruct_02034B38*)gUnk_02034B38)->anim);
+    DrawSprite(((UnkStruct_02034B38*)gUnk_02034B38)->unk_08 >> 8, 0, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[0], ((UnkStruct_02034B38*)gUnk_02034B38)->tiles, ((UnkStruct_02034B38*)gUnk_02034B38)->palette, 0, 0x400, -16);
+    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[1], ((UnkStruct_02034B38*)gUnk_02034B38)->tiles, ((UnkStruct_02034B38*)gUnk_02034B38)->palette, 0, 0x400, -1);
+    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_10 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[2], ((UnkStruct_02034B38*)gUnk_02034B38)->tiles, ((UnkStruct_02034B38*)gUnk_02034B38)->palette, 0, 0x400, -1);
+    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30, ((UnkStruct_02034B38*)gUnk_02034B38)->tiles2, ((UnkStruct_02034B38*)gUnk_02034B38)->palette2, 0, 0x400, -32);
+    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C, ((UnkStruct_02034B38*)gUnk_02034B38)->tiles3, ((UnkStruct_02034B38*)gUnk_02034B38)->palette3, 0, 0x400, -32);
     ApproachValueHalf(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_64, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 7 * 1024 + 0x3300);
-    DrawSprite(64, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_40, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_44, 0, 0x400, -48);
+    DrawSprite(64, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->gfx, ((UnkStruct_02034B38*)gUnk_02034B38)->tiles4, ((UnkStruct_02034B38*)gUnk_02034B38)->palette4, 0, 0x400, -48);
 }
 
 void mode_sio_battle_2(void) {

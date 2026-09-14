@@ -34,10 +34,10 @@ typedef struct UnkStruct_02039DD4 {
     void* palette2;
     u32 unk_05C;
     u32 unk_060;
-    AnimState unk_064;
-    AnimState unk_07C;
-    void* unk_094;
-    void* unk_098;
+    AnimState anim;
+    AnimState anim2;
+    void* gfx;
+    void* gfx2;
     TaskPool unk_09C;
     u32 unk_0B0;
     u32 unk_0B4;
