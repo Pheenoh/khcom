@@ -12865,11 +12865,11 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
         w->unk_0C4 = func_080F41A4;
     }
 
-    w->unk_0A0 = LoadObjPalette(d->unk_00, 32);
-    w->unk_0A4 = AllocObjTiles(d->unk_08, d->unk_04);
-    AnimInit(&w->unk_0A8, d->unk_10, d->unk_0C);
-    AnimStart(&w->unk_0A8, 0, 1);
-    w->unk_0C0 = AnimGetGfx(&w->unk_0A8);
+    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
+    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    AnimStart(&w->anim, 0, 1);
+    w->unk_0C0 = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 4, 24, 24);
     ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     TaskPoolInit(&w->unk_0C8, 1);
@@ -12883,7 +12883,7 @@ s32 func_080F4370(MapGmk04Work* w) {
         return 0;
     }
 
-    w->unk_0C0 = AnimUpdate(&w->unk_0A8);
+    w->unk_0C0 = AnimUpdate(&w->anim);
 
     if (w->unk_0C4 != 0) {
         w->unk_0C4(w);
@@ -12907,12 +12907,12 @@ void func_080F43B4(MapGmk04Work* w) {
     k = p->x >> 8;
     y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     v = -0x1004 - k * 4;
-    DrawSprite(x, y, w->unk_0C0, w->unk_0A4, w->unk_0A0, 0, 0x800, v);
+    DrawSprite(x, y, w->unk_0C0, w->tiles, w->palette, 0, 0x800, v);
 }
 
 void func_080F4428(MapGmk04Work* w) {
-    ReleaseObjTiles(w->unk_0A4);
-    ReleaseObjPalette(w->unk_0A0);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->unk_044);
     TaskPoolDestroy(&w->unk_0C8);
     func_080121FC(&w->unk_004);
@@ -12954,9 +12954,9 @@ void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_1A = d->unk_1E;
     e->unk_30 = 2;
     w->unk_0C4 = func_080F445C;
-    w->unk_0A0 = LoadObjPalette(d->unk_00, 32);
-    w->unk_0A4 = AllocObjTiles(d->unk_08, d->unk_04);
-    a = &w->unk_0A8;
+    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
+    a = &w->anim;
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
@@ -12977,7 +12977,7 @@ s32 func_080F45D4(MapGmk05Work* w) {
 
     TaskPoolUpdate(&w->unk_0CC);
     TaskPoolUpdate(&w->unk_0E0);
-    w->unk_0C0 = AnimUpdate(&w->unk_0A8);
+    w->unk_0C0 = AnimUpdate(&w->anim);
     w->unk_0C8 = func_080E03C0((s32)&w->unk_004);
 
     if (w->unk_0C4 != 0) {
@@ -13001,7 +13001,7 @@ void func_080F4630(MapGmk05Work* w) {
     v = -0x1004 - k * 4;
     x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, w->unk_0C0, w->unk_0A4, w->unk_0A0, 0, 0x800, v);
+    DrawSprite(x, y, w->unk_0C0, w->tiles, w->palette, 0, 0x800, v);
     ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
     ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
     TaskPoolDraw(&w->unk_0CC);
@@ -13012,8 +13012,8 @@ void func_080F4630(MapGmk05Work* w) {
 }
 
 void func_080F46C0(MapGmk05Work* w) {
-    ReleaseObjTiles(w->unk_0A4);
-    ReleaseObjPalette(w->unk_0A0);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_044);
     func_080121FC(&w->unk_004);
     TaskPoolDestroy(&w->unk_0CC);
@@ -13062,11 +13062,11 @@ void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_1A = d->unk_1E;
     e->unk_30 = 3;
     w->unk_0C4 = func_080F46FC;
-    w->unk_0B8 = LoadObjPalette(d->unk_00, 32);
-    w->unk_0BC = AllocObjTiles(d->unk_08, d->unk_04);
-    AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
-    AnimStart(&w->unk_0A0, 0, 1);
-    w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
+    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
+    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    AnimStart(&w->anim, 0, 1);
+    w->unk_0C0 = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 4, 24, 24);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     TaskPoolInit(&w->unk_0C8, 1);
@@ -13080,7 +13080,7 @@ s32 func_080F48E4(MapGmk06Work* w) {
         return 0;
     }
 
-    w->unk_0C0 = AnimUpdate(&w->unk_0A0);
+    w->unk_0C0 = AnimUpdate(&w->anim);
 
     if (w->unk_0C4 != 0) {
         w->unk_0C4(w);
@@ -13104,12 +13104,12 @@ void func_080F4928(MapGmk06Work* w) {
     k = p->x >> 8;
     y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     v = -0x1004 - k * 4;
-    DrawSprite(x, y, w->unk_0C0, w->unk_0BC, w->unk_0B8, 0, 0x800, v);
+    DrawSprite(x, y, w->unk_0C0, w->tiles, w->palette, 0, 0x800, v);
 }
 
 void func_080F499C(MapGmk06Work* w) {
-    ReleaseObjTiles(w->unk_0BC);
-    ReleaseObjPalette(w->unk_0B8);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->unk_044);
     TaskPoolDestroy(&w->unk_0C8);
     func_080121FC(&w->unk_004);
