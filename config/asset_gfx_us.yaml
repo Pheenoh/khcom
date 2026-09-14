@@ -25,11 +25,25 @@ tools_extra:
   dump: tools/gfx/asset_gfx_dump.py
   extent: tools/movie_assets.py
   movie_re: tools/gfx/movie_open_re.py
+encode_re:
+  status: in_progress_not_matching
+  matching_path: demux_remux_copy_through
+  tool_modes: [summary, analyze, probe, experimental-audio]
+  video:
+    i_frame: 16x16 tiles of 8 bytes (c0,c1,pattern); upsample in ARM
+    p_filter_header: u16 sec0 + u16 sec1 + three bitstreams
+    filter: P decode then RGB555 blur blob
+  audio_codec_id_2:
+    mapped: 2-bit ADPCM to 8-bit PCM; predictor/index packing known
+    step_table: gUnk_09D6D1E4 (IMA-like; diffs at 84,85)
+    experimental_encode: gated; not bit-identical
+  blockers: [P bitstream commands, retail I pattern encode, audio bit-identical]
 build:
   mode: demux_remux_copy_through
   note: >
     Built path demuxes MovieOpen streams + pad/MovieSub/MOVIE from the extract
-    slice into source_root, then remuxes byte-identical. Encoder RE is follow-on.
+    slice into source_root, then remuxes byte-identical. Encoder RE is follow-on;
+    probe/experimental-audio stay outside check.sh.
 regional:
   movie_payloads_identical: [us, jp, eu]
   built_mode: [us, jp, eu]

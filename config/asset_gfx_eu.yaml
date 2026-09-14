@@ -21,6 +21,10 @@ tools:
   layout: tools/gfx/asset_gfx_layout.py
 sha256_slice: 4436be20c8fb71b53506460553f2fa02679c12cb86284df308278022c117874a
 status: remux_built_green
+encode_re:
+  status: in_progress_not_matching
+  matching_path: demux_remux_copy_through
+  movie_re: tools/gfx/movie_open_re.py
 build:
   mode: demux_remux_copy_through
   note: >
