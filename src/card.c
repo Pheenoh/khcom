@@ -26113,8 +26113,6 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
     return 1;
 }
 
-extern void* gUnk_09EEA1EC[];
-
 u8 func_0809F390(LevelUpWork* w, void* a) {
     s32 x;
     s8 i;

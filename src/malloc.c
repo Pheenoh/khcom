@@ -1,4 +1,3 @@
-#include "system_state.h"
 #include "listpool.h"
 #include "malloc.h"
 

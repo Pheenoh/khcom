@@ -1,4 +1,3 @@
-#include "system_state.h"
 #include "gba/keys.h"
 #include "key.h"
 

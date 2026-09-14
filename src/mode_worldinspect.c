@@ -15,7 +15,6 @@
 #include "game_state.h"
 #include "gba/keys.h"
 #include "anim.h"
-#include "m4a.h"
 #include "bos5_api.h"
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A86E60[];
