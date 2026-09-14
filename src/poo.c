@@ -2648,16 +2648,16 @@ void task_poo_freeballoon_0(PooFreeBalloonWork* w, PooPos* p) {
     w->unk_34 = *p;
     w->unk_7C = *p;
     w->unk_94 = p;
-    w->unk_00 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AA0, 4), gUnk_09732272);
-    w->unk_04 = LoadObjPalette(gUnk_09849B38, 0x20);
-    AnimInit(w->unk_0C, gUnk_09EF5AB4, gUnk_09EF5AA0);
-    AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
-    w->unk_48 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AB8, 4), gUnk_0973291E);
-    w->unk_4C = LoadObjPalette(gUnk_09849B58, 0x20);
-    AnimInit(w->unk_54, gUnk_09EF5ACC, gUnk_09EF5AB8);
-    AnimStart(w->unk_54, 0, 1);
-    w->unk_50 = AnimGetGfx(w->unk_54);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AA0, 4), gUnk_09732272);
+    w->palette = LoadObjPalette(gUnk_09849B38, 0x20);
+    AnimInit(w->anim, gUnk_09EF5AB4, gUnk_09EF5AA0);
+    AnimStart(w->anim, 0, 1);
+    w->gfx = AnimGetGfx(w->anim);
+    w->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AB8, 4), gUnk_0973291E);
+    w->palette2 = LoadObjPalette(gUnk_09849B58, 0x20);
+    AnimInit(w->anim2, gUnk_09EF5ACC, gUnk_09EF5AB8);
+    AnimStart(w->anim2, 0, 1);
+    w->gfx2 = AnimGetGfx(w->anim2);
     w->unk_90 = 0;
 }
 
@@ -2697,38 +2697,38 @@ u8 task_poo_freeballoon_1(PooFreeBalloonWork* w) {
     w->unk_46 = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
     if (func_080CC284(w->unk_8C, w->unk_8E) != 0) {
-        w->unk_50 = AnimUpdate(w->unk_54);
+        w->gfx2 = AnimUpdate(w->anim2);
     } else {
-        w->unk_50 = 0;
+        w->gfx2 = 0;
     }
 
     if (func_080CC284(w->unk_44, w->unk_46) != 0) {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->anim);
     } else {
-        w->unk_08 = 0;
+        w->gfx = 0;
     }
 
-    if (w->unk_08 == 0 && w->unk_50 == 0) {
+    if (w->gfx == 0 && w->gfx2 == 0) {
         return 0;
     }
     return 1;
 }
 
 void task_poo_freeballoon_2(PooFreeBalloonWork* w) {
-    if (w->unk_50 != 0) {
-        DrawSprite(w->unk_8C, w->unk_8E, w->unk_50, w->unk_48, w->unk_4C, 0, 0x800, -0x1004 - (w->unk_6C.unk_04 >> 8) * 4);
+    if (w->gfx2 != 0) {
+        DrawSprite(w->unk_8C, w->unk_8E, w->gfx2, w->tiles2, w->palette2, 0, 0x800, -0x1004 - (w->unk_6C.unk_04 >> 8) * 4);
     }
 
-    if (w->unk_08 != 0) {
-        DrawSprite(w->unk_44, w->unk_46, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+    if (w->gfx != 0) {
+        DrawSprite(w->unk_44, w->unk_46, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
     }
 }
 
 void task_poo_freeballoon_3(PooFreeBalloonWork* w) {
-    ReleaseObjTiles(w->unk_48);
-    ReleaseObjPalette(w->unk_4C);
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles2);
+    ReleaseObjPalette(w->palette2);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 s32 func_080CC488(u16 x) {

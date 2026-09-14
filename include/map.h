@@ -575,7 +575,7 @@ typedef struct MapGmkEnmWork {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_060;
+    void* gfx;
     s32 (*unk_064)(struct MapGmkEnmWork*);
     u8 unk_068;
     u8 unk_069[0x03];
@@ -644,7 +644,7 @@ typedef struct MapGmk01Work {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     u16 unk_0C4;
     u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmk01Work*);
@@ -660,7 +660,7 @@ typedef struct MapGmkSpiderWork {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0BC;
+    void* gfx;
     u8 (*unk_0C0)(struct MapGmkSpiderWork*);
     u8 unk_0C4;
     u8 unk_0C5[0x03];
@@ -674,7 +674,7 @@ typedef struct MapGmkGpWork {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     u16 unk_0C4;
     u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmkGpWork*);
@@ -688,7 +688,7 @@ typedef struct MapGmkGp1Work {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     u16 unk_0C4;
     u8 unk_0C6;
     u8 unk_0C7;
@@ -705,7 +705,7 @@ typedef struct MapGmk00Work {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     u16 unk_0C4;
     u16 unk_0C6;
     u8 unk_0C8;
@@ -721,7 +721,7 @@ typedef struct MapGmkBarrelWork {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     u8 unk_0C4;
     u8 unk_0C5[0x03];
     u8 (*unk_0C8)(struct MapGmkBarrelWork*);
@@ -761,7 +761,7 @@ typedef struct MapGmkGp8Work {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     s32 (*unk_0C4)(struct MapGmkGp8Work*);
     u8 unk_0C8;
     u8 unk_0C9;
@@ -780,7 +780,7 @@ typedef struct MapGmkGp08Work {
     AnimState anim;
     void* tiles;
     u8* palette;
-    void* unk_0C0;
+    void* gfx;
     void* unk_0C4;
     u16 unk_0C8;
     u8 unk_0CA;
@@ -796,7 +796,7 @@ typedef struct MapGmk04Work {
     u8* palette;
     void* tiles;
     AnimState anim;
-    void* unk_0C0;
+    void* gfx;
     void (*unk_0C4)(struct MapGmk04Work*);
     TaskPool unk_0C8;
 } MapGmk04Work;
@@ -811,7 +811,7 @@ typedef struct MapGmk05Work {
     u8* palette;
     void* tiles;
     AnimState anim;
-    void* unk_0C0;
+    void* gfx;
     void (*unk_0C4)(struct MapGmk05Work*);
     u8 unk_0C8;
     u8 unk_0C9[0x03];
@@ -837,7 +837,7 @@ typedef struct MapGmk06Work {
     AnimState anim;
     u8* palette;
     void* tiles;
-    void* unk_0C0;
+    void* gfx;
     void (*unk_0C4)(struct MapGmk06Work*);
     TaskPool unk_0C8;
 } MapGmk06Work;

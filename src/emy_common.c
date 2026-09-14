@@ -20,8 +20,8 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     t = gUnk_09EDA4EC[actor->unk_000];
     work->unk_15C = def;
     work->tiles = AllocObjTiles(t * 32, 0);
-    work->unk_004 = LoadObjPalette(def->unk_00, 32);
-    work->unk_008 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = LoadObjPalette(def->unk_00, 32);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_150 = 0;
     work->unk_14C = 11;
     work->unk_154 = 0;
@@ -842,9 +842,9 @@ void func_0800DF30(EmyWork* work) {
         }
 
         if (func_0801CA00(actor) != 0) {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_008, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette2, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
         } else {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_004, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
         }
 
         TaskPoolDraw(&work->unk_028);
@@ -869,7 +869,7 @@ void func_0800E0D0(EmyWork* work) {
     }
 
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_004);
-    ReleaseObjPalette(work->unk_008);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
     TaskPoolDestroy(&work->unk_028);
 }

@@ -23,8 +23,8 @@ typedef struct EmyDef {
 
 typedef struct EmyWork {
     void* tiles;
-    void* unk_004;
-    void* unk_008;
+    void* palette;
+    void* palette2;
     void* gfx;
     AnimState anim;
     TaskPool unk_028;

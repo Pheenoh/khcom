@@ -102,11 +102,11 @@ typedef struct EventActor {
 } EventActor;
 
 typedef struct EffectWork {
-    EventActor* unk_00;
+    EventActor* actor;
     void* tiles;
     void* palette;
     void* gfx;
-    DownWork* unk_10;
+    DownWork* down;
     AnimState anim;
     s32 unk_2C;
     s32 unk_30;

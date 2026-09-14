@@ -146,7 +146,7 @@ void Hanabira_3(EffectWork* w) {
 void Hanabira_c_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->palette = LoadObjPalette(gUnk_08F6DC84, 32);
     w->tiles = LoadObjTiles(gUnk_08BCB3D8, 256);
@@ -219,7 +219,7 @@ void Hanabira_c_3(EffectWork* w) {
 void smoke_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08 - 0x800;
@@ -236,7 +236,7 @@ void smoke_0(EffectWork* w, EventActor* arg) {
 void Exclamation_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
@@ -258,7 +258,7 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
 void balloon_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
@@ -275,7 +275,7 @@ void balloon_0(EffectWork* w, EventActor* arg) {
 s32 func_08075720(EffectWork* w) {
     w->gfx = AnimUpdate(&w->anim);
 
-    if (w->unk_00->unk_1B2 == 0) {
+    if (w->actor->unk_1B2 == 0) {
         return 0;
     }
 
@@ -286,7 +286,7 @@ s32 Exclamation_1(EffectWork* w) {
     w->unk_46++;
     w->gfx = AnimUpdate(&w->anim);
 
-    if (w->unk_00->unk_1B2 == 0 || w->unk_46 == 50) {
+    if (w->actor->unk_1B2 == 0 || w->unk_46 == 50) {
         return 0;
     }
 
@@ -297,14 +297,14 @@ void EffectDrawObj(EffectWork* w) {
     u16 pr;
     s32 y;
 
-    pr = w->unk_00->unk_3E;
+    pr = w->actor->unk_3E;
 
     if (w->unk_48 == 0) {
         pr &= 0xFFFE;
     }
 
     DrawSprite((w->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8),
-               (y = (w->unk_30 >> 8) + gUnk_0903380C[w->unk_00->unk_26][0]) -
+               (y = (w->unk_30 >> 8) + gUnk_0903380C[w->actor->unk_26][0]) -
                    (gUnk_02039DC8->unk_5C >> 8),
                w->gfx, w->tiles, w->palette, 0, pr, 50);
 }
@@ -317,7 +317,7 @@ void EffectReleaseObj(EffectWork* w) {
 void Question_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
@@ -340,7 +340,7 @@ s32 Question_1(EffectWork* w) {
         AnimStart(&w->anim, 6, 1);
     }
 
-    if (w->unk_00->unk_1B2 == 0) {
+    if (w->actor->unk_1B2 == 0) {
         return 0;
     }
 
@@ -355,7 +355,7 @@ void func_080758D0(EffectWork* w, EventActor* arg) {
     s32 d2;
     s32 k;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     k = 0x400;
     d1 = (GetRandom() % 9 << 8) - k;
@@ -390,7 +390,7 @@ s32 func_080759B0(EffectWork* w) {
 void func_080759E0(EffectWork* w) {
     u16 pr;
 
-    pr = w->unk_00->unk_3E;
+    pr = w->actor->unk_3E;
 
     if (w->unk_48 == 0) {
         pr &= 0xFFFE;
@@ -411,7 +411,7 @@ void func_08075A54(EffectWork* w) {
 void GlowNose_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04 - 1536;
     w->unk_30 = b->unk_08 + 3072;
@@ -439,7 +439,7 @@ s32 GlowNose_1(EffectWork* w) {
 void GlowNose2_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
 
     switch (arg->unk_26) {
@@ -479,7 +479,7 @@ void down_0(EffectWork* w, EventActor* arg) {
     DownWork* s;
     u8 i;
 
-    w->unk_00 = arg;
+    w->actor = arg;
     b = &arg->unk_28;
 
     switch (arg->unk_26) {
@@ -500,8 +500,8 @@ void down_0(EffectWork* w, EventActor* arg) {
     w->tiles = AllocSpriteFrameTiles(32);
     UpdateSpriteFrameTiles(w->tiles, gUnk_09EEA19C[3], gUnk_0908C686);
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
-    w->unk_10 = EwramAlloc(sizeof(DownWork));
-    s = w->unk_10;
+    w->down = EwramAlloc(sizeof(DownWork));
+    s = w->down;
 
     for (i = 0; i < 8; i++) {
         s->unk_48[i] = i * 32;
@@ -513,7 +513,7 @@ s32 down_1(EffectWork* w) {
     DownWork* s;
     u8 i;
 
-    s = w->unk_10;
+    s = w->down;
 
     for (i = 0; i < 8; i++) {
         s->unk_00[i] = gSineTable[s->unk_48[i] & 0xFF] * 8 + w->unk_2C;
@@ -528,7 +528,7 @@ s32 down_1(EffectWork* w) {
         }
     }
 
-    if (w->unk_00->unk_1B2 == 0) {
+    if (w->actor->unk_1B2 == 0) {
         return 0;
     }
 
@@ -540,8 +540,8 @@ s32 down_2(EffectWork* w) {
     u16 pr;
     u8 i;
 
-    pr = w->unk_00->unk_3E;
-    s = w->unk_10;
+    pr = w->actor->unk_3E;
+    s = w->down;
 
     for (i = 0; i < 8; i++) {
         DrawSprite((s->unk_00[i] >> 8) - (gUnk_02039DC8->unk_58 >> 8),
@@ -553,11 +553,11 @@ s32 down_2(EffectWork* w) {
 void down_3(EffectWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    EwramFree(w->unk_10);
+    EwramFree(w->down);
 }
 
 void Tinkerbell_0(EffectWork* w, void* arg) {
-    w->unk_00 = arg;
+    w->actor = arg;
     gUnk_02039DC8->unk_86 = 0;
     w->unk_44 = 0;
     TaskPoolInit(&w->unk_4C, 8);
@@ -568,7 +568,7 @@ s32 Tinkerbell_1(EffectWork* w) {
 
     if (w->unk_44 == 5) {
         if (gUnk_02039DC8->unk_86 <= 3) {
-            TaskCreate(&w->unk_4C, &gUnk_09EE484C, w->unk_00);
+            TaskCreate(&w->unk_4C, &gUnk_09EE484C, w->actor);
         }
 
         w->unk_44 = 0;

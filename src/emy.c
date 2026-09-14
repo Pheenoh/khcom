@@ -222,12 +222,12 @@ void task_emy_00_2(EmyWork* work) {
         }
 
         if (func_0801CA00(act)) {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_008, affine, pri,
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette2, affine, pri,
                 -0x1004 - (act->unk_008 >> 8) * 4);
         } else if (work->unk_14C == 0x14) {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_004, affine, pri, 0xFFFF);
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, pri, 0xFFFF);
         } else {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_004, affine, pri,
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, pri,
                 -0x1004 - (act->unk_008 >> 8) * 4);
         }
 
@@ -944,7 +944,7 @@ void task_emy_07_3(EmyWork* work) {
 void task_emy_08_0(Emy08Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813D804, obj);
     work->palette = LoadObjPalette(gUnk_08F698C4, 0x20);
-    work->unk_188 = work->base.unk_004;
+    work->unk_188 = work->base.palette;
     work->unk_18C = 0;
 }
 
@@ -1125,9 +1125,9 @@ u8 task_emy_08_1(Emy08Work* work) {
 }
 
 void task_emy_08_2(Emy08Work* work) {
-    work->base.unk_004 = (work->unk_18C & 2) ? work->palette : work->unk_188;
+    work->base.palette = (work->unk_18C & 2) ? work->palette : work->unk_188;
     func_0800DF30(&work->base);
-    work->base.unk_004 = work->unk_188;
+    work->base.palette = work->unk_188;
 }
 
 void task_emy_08_3(Emy08Work* work) {
@@ -3734,13 +3734,13 @@ void task_emy_37_2(Emy37Work* work) {
         }
 
         if (func_0801CA00(act)) {
-            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.unk_008, affine,
+            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.palette2, affine,
                 pri, -0x1004 - (act->unk_008 >> 8) * 4);
         } else if (work->base.unk_14C == 0x14) {
-            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.unk_004, affine,
+            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.palette, affine,
                 pri, 0xFFFF);
         } else {
-            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.unk_004, affine,
+            DrawSprite(x, y, work->base.gfx, work->base.tiles, work->base.palette, affine,
                 pri, -0x1004 - (act->unk_008 >> 8) * 4);
         }
 

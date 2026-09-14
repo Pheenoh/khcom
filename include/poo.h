@@ -528,18 +528,18 @@ typedef struct PooEeyoreTailWork {
 } PooEeyoreTailWork;
 
 typedef struct PooFreeBalloonWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C[0x18];
+    void* tiles;
+    void* palette;
+    void* gfx;
+    u8 anim[0x18];
     PooPos unk_24;
     PooPos unk_34;
     s16 unk_44;
     s16 unk_46;
-    void* unk_48;
-    void* unk_4C;
-    void* unk_50;
-    u8 unk_54[0x18];
+    void* tiles2;
+    void* palette2;
+    void* gfx2;
+    u8 anim2[0x18];
     PooPos unk_6C;
     PooPos unk_7C;
     s16 unk_8C;

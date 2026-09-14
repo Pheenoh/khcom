@@ -12163,25 +12163,25 @@ void msgwait_3(MsgWaitWork* p) {
 }
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_103 = *a;
-    p->unk_00 = AllocObjTiles(64, 0);
-    p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->unk_14)->unk_06, gUnk_08F69BA4);
-    FadeSetPaletteExcluded(((ObjPalette*)p->unk_14)->unk_06 + 16, 1);
-    SetObjTileSource(p->unk_00, gUnk_09320796);
+    p->tiles = AllocObjTiles(64, 0);
+    p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    LoadObjPaletteBank(((ObjPalette*)p->palette)->unk_06, gUnk_08F69BA4);
+    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+    SetObjTileSource(p->tiles, gUnk_09320796);
     AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
-    p->unk_04 = AllocObjTiles(288, 0);
-    p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->unk_08)->unk_06, gUnk_09614418);
-    SetObjTileSource(p->unk_04, gUnk_090A4664);
-    AnimInit((AnimState*)p->unk_C4, gUnk_09EEB03C, gUnk_09EEB008);
-    AnimStart((AnimState*)p->unk_C4, 2, 1);
-    p->unk_C0 = AnimGetGfx((AnimState*)p->unk_C4);
-    p->unk_0C = LoadObjTiles(gUnk_093F7C9C, 4032);
-    p->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->unk_10)->unk_06, gUnk_09611AB8);
-    FadeSetPaletteExcluded(((ObjPalette*)p->unk_14)->unk_06 + 16, 1);
+    p->tiles2 = AllocObjTiles(288, 0);
+    p->palette2 = LoadObjPalette(gUnk_09614418, 32);
+    LoadObjPaletteBank(((ObjPalette*)p->palette2)->unk_06, gUnk_09614418);
+    SetObjTileSource(p->tiles2, gUnk_090A4664);
+    AnimInit((AnimState*)p->anim2, gUnk_09EEB03C, gUnk_09EEB008);
+    AnimStart((AnimState*)p->anim2, 2, 1);
+    p->gfx2 = AnimGetGfx((AnimState*)p->anim2);
+    p->tiles3 = LoadObjTiles(gUnk_093F7C9C, 4032);
+    p->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
+    LoadObjPaletteBank(((ObjPalette*)p->palette3)->unk_06, gUnk_09611AB8);
+    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
     InitTextSlots(p->unk_1C, 10);
     InitTextSlots(p->unk_6C, 10);
     p->unk_18 = _08066468(1);
@@ -12266,24 +12266,24 @@ void msgwait_yesno_2(MsgWaitYesNoWork* p) {
     switch (p->unk_104) {
     case 0:
         if (gUnk_02039DC8->unk_8B != 0) {
-            DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->unk_00, p->unk_14, 0, 0, 0);
+            DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
         } else {
-            DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->unk_00, p->unk_14, 0, 0, 0);
+            DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
         }
         break;
     case 1:
-        DrawSprite(120, 80, gUnk_09EF126C[1], p->unk_0C, p->unk_10, 0, 0, 10);
-        DrawSprite(p->unk_F8 >> 8, p->unk_FC >> 8, p->unk_C0, p->unk_04, p->unk_08, 0, 1, 9);
+        DrawSprite(120, 80, gUnk_09EF126C[1], p->tiles3, p->palette3, 0, 0, 10);
+        DrawSprite(p->unk_F8 >> 8, p->unk_FC >> 8, p->gfx2, p->tiles2, p->palette2, 0, 1, 9);
         DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->unk_18, 0, p->unk_F4);
         DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->unk_18, 0, p->unk_F5);
         break;
     }
 }
 void msgwait_yesno_3(MsgWaitYesNoWork* p) {
-    ReleaseObjTiles(p->unk_04);
-    ReleaseObjTiles(p->unk_0C);
-    ReleaseObjPalette(p->unk_10);
-    ReleaseObjPalette(p->unk_08);
+    ReleaseObjTiles(p->tiles2);
+    ReleaseObjTiles(p->tiles3);
+    ReleaseObjPalette(p->palette3);
+    ReleaseObjPalette(p->palette2);
     ReleaseObjPalette(p->unk_18);
     FreeTextSlots(p->unk_1C, 10);
     FreeTextSlots(p->unk_6C, 10);

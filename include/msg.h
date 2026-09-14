@@ -262,18 +262,18 @@ typedef struct MsgWaitWork {
 } MsgWaitWork;
 
 typedef struct MsgWaitYesNoWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* tiles;
+    void* tiles2;
+    void* palette2;
+    void* tiles3;
+    void* palette3;
+    void* palette;
     void* unk_18;
     TextSlot unk_1C[10];
     TextSlot unk_6C[10];
     void* gfx;
-    void* unk_C0;
-    u8 unk_C4[0x18];
+    void* gfx2;
+    u8 anim2[0x18];
     u8 anim[0x18];
     u8 unk_F4;
     u8 unk_F5;
