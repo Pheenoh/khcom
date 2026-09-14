@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include "sio_menu_data.h"
 #include "world_intro_assets.h"
 

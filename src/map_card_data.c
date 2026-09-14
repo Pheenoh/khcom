@@ -1,6 +1,5 @@
 #include "map_card_data.h"
 #include "map_card_assets.h"
-#include <stddef.h>
 
 MapCardBackDef gUnk_09EE4BF4[5] __attribute__((section(".rodata_map_card"))) = {
     { gUnk_093F61B2, gUnk_09618D78, gUnk_09EF11E8, gUnk_0905E3BA, gUnk_09EE97F4, 640, 32, { 128, 2, 0, 0 } },

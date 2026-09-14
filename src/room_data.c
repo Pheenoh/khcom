@@ -1,5 +1,4 @@
 #include "animation_resource_data.h"
-#include <stddef.h>
 #include "room_data.h"
 #include "room_record_assets.h"
 

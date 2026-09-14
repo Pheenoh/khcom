@@ -6,10 +6,10 @@
 #include "display.h"
 #include "mode_debug.h"
 #include "game_state.h"
+#include "gba/keys.h"
 
 DebugWork* gDebugWork;
 ChkObjWork* gChkObjWork;
-#include "gba/keys.h"
 
 #ifdef VERSION_US
 const char gUnk_081283C0[12] = "N041001a";

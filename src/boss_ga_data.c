@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include "boss_ga_data.h"
 #include "room_record_assets.h"
 

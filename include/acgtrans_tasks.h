@@ -2,11 +2,11 @@
 #define GUARD_ACGTRANS_TASKS_H
 
 #include "types.h"
+#include "task_names.h"
 
 struct AcgTransConfig;
 struct AcgTransWork;
 
-#include "task_names.h"
 
 void task_acgtrans_0(struct AcgTransWork* work, struct AcgTransConfig* cfg);
 s32 task_acgtrans_1(struct AcgTransWork* work);

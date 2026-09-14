@@ -49,6 +49,7 @@
 #include "key.h"
 #include "bos4_api.h"
 #include "allmap_api.h"
+#include "mode_battle_data.h"
 
 typedef struct AllmapRoomnameWork {
     u8 unk_000[0xC8];
@@ -219,7 +220,6 @@ extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
-#include "mode_battle_data.h"
 extern s16 gUnk_096FDC10[][2];
 extern u16 gUnk_096FDC30[][2];
 extern u8 gUnk_096FDC40[][4];

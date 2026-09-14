@@ -2,13 +2,13 @@
 #define GUARD_EVT_TASKS_H
 
 #include "types.h"
+#include "task_names.h"
 
 struct EvtObj;
 struct EvtObjParam;
 struct EvtObjWork;
 struct EvtShadowWork;
 
-#include "task_names.h"
 
 void task_evt_obj_0(struct EvtObjWork* work, struct EvtObjParam* param);
 s32 task_evt_obj_1(struct EvtObjWork* work);

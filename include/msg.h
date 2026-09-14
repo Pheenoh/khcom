@@ -60,6 +60,7 @@
 #include "bos6_api.h"
 #include "poo_api.h"
 #include "evt_api.h"
+#include "mode_battle_data.h"
 
 #define NULL ((void*)0)
 
@@ -302,7 +303,6 @@ extern EventState* gUnk_02039DC8;
 extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gModeBattle[];
-#include "mode_battle_data.h"
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_096145D8[];

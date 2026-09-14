@@ -6,6 +6,7 @@
 #include "display.h"
 #include "text.h"
 #include "mode_ms.h"
+#include "gba/keys.h"
 
 #ifdef VERSION_EU
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -58,7 +59,6 @@ u16* gUnk_02035C00;
 s32 gUnk_02035C04;
 s32 gUnk_02035C08;
 u8 gUnk_02035C0C;
-#include "gba/keys.h"
 
 void mode_ms_top_0(u32 a) {
     s32 i;

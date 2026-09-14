@@ -5,11 +5,11 @@
 #include "sio_api.h"
 #include "util.h"
 #include "chara.h"
+#include "gba/keys.h"
 
 CharaObj* gCharaObj;
 u8 gUnk_02034CDC[4];
 TaskPool gCharaTaskPool;
-#include "gba/keys.h"
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
     s32 i;

@@ -31,6 +31,8 @@
 #include "malloc.h"
 #include "card.h"
 #include <stddef.h>
+#include "game.h"
+#include "bos4_api.h"
 
 typedef struct SelmapEventKeyWork {
     void* unk_00;
@@ -190,8 +192,6 @@ void* gUnk_02034B34;
 TaskPool gUnkEu_02034B38;
 u32 gUnkEu_02034B4C;
 #endif
-#include "game.h"
-#include "bos4_api.h"
 
 extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_096112B8[];

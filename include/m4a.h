@@ -4,6 +4,7 @@
 #include "m4a_song.h"
 #include "types.h"
 #include "gba/syscall.h"
+#include "memory_regions.h"
 
 #define ID_NUMBER 0x68736D53
 
@@ -369,7 +370,6 @@ extern const MPlayFunc gMPlayJumpTableTemplate[];
 extern const u8 gScaleTable[];
 extern const u32 gFreqTable[];
 extern char SoundMainRAM[];
-#include "memory_regions.h"
 extern char gNumMusicPlayers[];
 extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;

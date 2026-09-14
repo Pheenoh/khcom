@@ -44,6 +44,7 @@
 #include "boss_tm.h"
 #include "btl_api.h"
 #include "acgtrans.h"
+#include "mode_battle_data.h"
 
 typedef struct BosPos {
     s32 unk_00;
@@ -622,7 +623,6 @@ extern u8 gUnk_09657C04[];
 extern u8 gUnk_0962E7A0[];
 
 extern u8 gUnk_096BF464[];
-#include "mode_battle_data.h"
 extern u8 gUnk_09619C94[];
 
 void func_080C1A48(JfBorderlineWork* work);

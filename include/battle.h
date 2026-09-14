@@ -52,6 +52,7 @@
 #include "mode.h"
 #include "bos3.h"
 #include "bos4_api.h"
+#include "enemy_tile_counts.h"
 struct BtlObj;
 
 typedef struct BgFx {
@@ -181,7 +182,6 @@ typedef struct BattleAttackDef {
 
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
-#include "enemy_tile_counts.h"
 extern TaskDesc gTaskDescBtlBorn;
 extern TaskDesc gTaskDescEmy00;
 extern TaskDesc gTaskDescEmy01;

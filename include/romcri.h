@@ -7,6 +7,8 @@
 #include "display.h"
 #include "types.h"
 #include "game_state.h"
+#include "formation_types.h"
+#include "enemy_tile_counts.h"
 
 typedef struct RomcriEffWork {
     s16 unk_00;
@@ -20,7 +22,6 @@ typedef struct RomcriEff2Work {
     u8 unk_03;
 } RomcriEff2Work;
 
-#include "formation_types.h"
 
 extern u8 gUnk_08ED21E4[];
 extern u8 gUnk_08ED6CA4[];
@@ -64,7 +65,6 @@ extern u8 gUnk_08F5D384[];
 extern u8 gUnk_08F5DB84[];
 extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
-#include "enemy_tile_counts.h"
 
 u16 func_0803FDC8(const BtlFormEntry* list);
 

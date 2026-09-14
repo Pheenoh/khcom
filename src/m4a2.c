@@ -1,6 +1,8 @@
 #include "m4a_song.h"
 #include "m4a.h"
 #include "macros.h"
+#define M4A_CATALOG_NO_PLAYER_EXTERNS
+#include "m4a_catalog_data.h"
 
 SoundInfo gSoundInfo;
 MPlayFunc gMPlayJumpTable[36];
@@ -30,7 +32,6 @@ MusicPlayerInfo gUnk_0203DEA0;
 MusicPlayerInfo gUnk_0203DEE0;
 MusicPlayerInfo gUnk_0203DF20;
 
-#include "m4a_catalog_data.h"
 
 u32 MidiKeyToFreq(WaveData* wav, u8 key, u8 fineAdjust) {
     u32 val1;

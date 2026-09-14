@@ -1,6 +1,7 @@
 #include "display.h"
 #include "mode_chkeff.h"
 #include "movie_debug_data.h"
+#include "gba/keys.h"
 
 ChkEffWork* gChkEffWork;
 #ifdef VERSION_EU
@@ -8,7 +9,6 @@ MovieDebugWork* gUnkEu_020348C4;
 extern u8 gUnkEu_08F6A73C[];
 extern u8 gUnkEu_08F79038[];
 #endif
-#include "gba/keys.h"
 
 const char gUnk_081309E0[8] = "PAUSE";
 const char gUnk_081309E8[8] = "     ";

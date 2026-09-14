@@ -61,6 +61,7 @@
 #include "fld_types.h"
 #include "game.h"
 #include "mode.h"
+#include "mode_battle_data.h"
 
 void func_080A0944(u16 a, u16* p);
 void func_080A096C(u16 a, u16* p);
@@ -139,7 +140,6 @@ extern u8 gUnk_0940F7B8[];
 extern u8 gUnk_0940F918[];
 extern u8 gUnk_094233B8[];
 extern u8 gUnk_093FB6C4[];
-#include "mode_battle_data.h"
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_09417378[];
 extern u8 gUnk_0909A4E0[];

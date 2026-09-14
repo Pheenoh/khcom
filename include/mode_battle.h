@@ -25,6 +25,10 @@
 #define CPU_SET_32BIT     0x04000000
 
 #include "formation_data.h"
+#ifdef VERSION_EU
+#include "save_api.h"
+#include "battle_localized_assets.h"
+#endif
 extern TaskDesc gTaskDescBtlSora;
 extern TaskDesc gTaskDescBtlRiku;
 extern TaskDesc gTaskDescBtlMap;
@@ -47,9 +51,6 @@ extern TaskDesc gTaskDescHumRobe;
 void _08019CB4(void);
 
 #ifdef VERSION_EU
-#include "save_api.h"
-#include "battle_localized_assets.h"
-
 typedef struct LangWork {
     s16 cursor;
     s16 timer;

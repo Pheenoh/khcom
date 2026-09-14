@@ -4,6 +4,7 @@
 #include "status_api.h"
 #include "anim.h"
 #include "status.h"
+#include "gba/keys.h"
 
 #ifdef VERSION_EU
 extern u16 gUnkEu_096CB088[];
@@ -17,7 +18,6 @@ static StatusStocklistWork* gStatusStocklistWork;
 static BoogieWork* gBoogieWork;
 
 s32 gUnk_0203C550;
-#include "gba/keys.h"
 
 void task_status_0(StatusWork* work) {
     gStatusWork = work;

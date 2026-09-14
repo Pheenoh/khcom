@@ -4,6 +4,7 @@
 #include "m4a_song.h"
 #include "mode_test.h"
 #include "gba/keys.h"
+#include "mode_test_api.h"
 
 #ifndef VERSION_EU
 struct ObjTiles* gUnk_02034A08;
@@ -1703,7 +1704,6 @@ void Event_2(void) {
     EwramFree(gUnk_02039DC8);
     gUnk_02039DC8 = 0;
 }
-#include "mode_test_api.h"
 
 const char gTaskNameLockon[] __attribute__((section(".rodata_registration_name_gTaskDescLockon"), aligned(1))) = "task_lockon";
 

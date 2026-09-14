@@ -1,10 +1,10 @@
 #include "util.h"
+#include "malloc.h"
+#include "m4a.h"
 
 KeyState* gSioKeyStateA;
 KeyState* gSioKeyStateB;
 u16 gUnk_02034084;
-#include "malloc.h"
-#include "m4a.h"
 
 extern u8 sSioKeyHeapName[];
 

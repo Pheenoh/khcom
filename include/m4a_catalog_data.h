@@ -27,6 +27,7 @@ extern MusicPlayerTrack gMPlayTracks23[];
 extern MusicPlayerTrack gMPlayTracks24[];
 extern MusicPlayerTrack gMPlayTracks25[];
 
+#ifndef M4A_CATALOG_NO_PLAYER_EXTERNS
 extern MusicPlayerInfo gMPlayInfo_BGM;
 extern MusicPlayerInfo gUnk_0203D990;
 extern MusicPlayerInfo gUnk_0203D9D0;
@@ -50,6 +51,7 @@ extern MusicPlayerInfo gUnk_0203DE50;
 extern MusicPlayerInfo gUnk_0203DEA0;
 extern MusicPlayerInfo gUnk_0203DEE0;
 extern MusicPlayerInfo gUnk_0203DF20;
+#endif
 
 void RealClearChain(void* work);
 void SoundMainBTM(void* work);

@@ -1,6 +1,7 @@
 #include "map_api.h"
 #include "macros.h"
 #include "mode_debflag.h"
+#include "gba/keys.h"
 
 static s8 gUnk_020348C0;
 static s8 gUnk_020348C1;
@@ -9,7 +10,6 @@ static const DebugFlag* gUnk_020348C4;
 static u32 gUnkEu_020348D4;
 #endif
 
-#include "gba/keys.h"
 
 u8 gUnk_02039B94;
 

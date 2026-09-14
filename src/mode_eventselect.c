@@ -8,6 +8,7 @@
 #include "engine_math.h"
 #include "listpool.h"
 #include "mode_eventselect.h"
+#include "gba/keys.h"
 
 s16 gUnk_02034A94;
 u8 gUnk_02034A96;
@@ -15,7 +16,6 @@ CardDisplayWork* gUnk_02034A98;
 u32 gUnk_02034A9C;
 u32 gUnk_02034AA0;
 UnkStruct_02039DD4* gUnk_02039DD4 __attribute__((common));
-#include "gba/keys.h"
 
 void mode_eventselect_0(void) {
     SetBgMode0();

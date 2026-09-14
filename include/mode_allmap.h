@@ -30,6 +30,7 @@
 #include "bos4_api.h"
 #include "poo_api.h"
 #include "allmap_api.h"
+#include "mode_battle_data.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -48,7 +49,6 @@ extern u16 gUnk_02034E3A;
 extern TaskPool gUnk_0203C4F0;
 extern u8 gMPlayInfo_BGM[];
 extern u8 gUnk_05000140[];
-#include "mode_battle_data.h"
 extern AllmapRoomOrder gUnk_096FDB70;
 extern AllmapRoomDirs gUnk_096FDBB0;
 extern u8 gUnk_0976B340[];

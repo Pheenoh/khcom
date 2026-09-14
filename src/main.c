@@ -13,6 +13,7 @@
 #include "engine.h"
 #include "main.h"
 #include "mode.h"
+#include "system_state.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_VCOUNT (*(vu16*)0x04000006)
@@ -46,7 +47,6 @@ u32 gLanguage;
 #endif
 IntrFunc gVBlankHandlerOverride;
 
-#include "system_state.h"
 
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
