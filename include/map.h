@@ -573,9 +573,9 @@ typedef struct MapGmkEnmWork {
     u8 unk_010[0x0A];
     u16 unk_01A;
     u8 unk_01C[0x24];
-    AnimState unk_040;
-    void* unk_058;
-    u8* unk_05C;
+    AnimState anim;
+    void* tiles;
+    u8* palette;
     void* unk_060;
     s32 (*unk_064)(struct MapGmkEnmWork*);
     u8 unk_068;

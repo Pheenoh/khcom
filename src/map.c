@@ -11232,7 +11232,7 @@ void func_080F1718(MapGmkJumpWork* w) {
 
 s32 func_080F173C(MapGmkEnmWork* w) {
     if (w->unk_070 != 0) {
-        w->unk_060 = AnimUpdate(&w->unk_040);
+        w->unk_060 = AnimUpdate(&w->anim);
         ApproachValue(&w->unk_000.y, w->unk_06C, w->unk_070);
         w->unk_070--;
     } else {
@@ -11258,15 +11258,15 @@ void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_01A = 16;
 
     if (gUnk_0203C590.unk_04 != 2) {
-        w->unk_058 = AllocObjTiles(0x220, gUnk_08988980);
-        w->unk_05C = LoadObjPalette(gUnk_08F69804, 32);
-        an = &w->unk_040;
+        w->tiles = AllocObjTiles(0x220, gUnk_08988980);
+        w->palette = LoadObjPalette(gUnk_08F69804, 32);
+        an = &w->anim;
         anim = gUnk_09EDFC3C;
         frames = gUnk_09EDFB5C;
     } else {
-        w->unk_058 = AllocObjTiles(0x440, gUnk_089D8148);
-        w->unk_05C = LoadObjPalette(gUnk_08F69924, 32);
-        an = &w->unk_040;
+        w->tiles = AllocObjTiles(0x440, gUnk_089D8148);
+        w->palette = LoadObjPalette(gUnk_08F69924, 32);
+        an = &w->anim;
         anim = gUnk_09EE00F0;
         frames = gUnk_09EE00D0;
     }
