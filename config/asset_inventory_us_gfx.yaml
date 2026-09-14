@@ -2,6 +2,7 @@
 # Region: 0x084E0B04–0x0886AD18 (3,711,508 bytes). Not gfx_gap.
 # Format RE: interior movies match MovieOpen / tools/movie_assets.movie_extent.
 # Dump: python3 tools/gfx/asset_gfx_dump.py
+# Remux MVP: python3 tools/gfx/asset_gfx_pack.py --mode built (copy-through MovieOpen parts)
 
 version: us
 schema_version: 1

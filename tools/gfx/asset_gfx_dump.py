@@ -7,23 +7,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "tools" / "gfx"))
 from movie_assets import movie_extent
-
-DEFAULT_BIN = ROOT / "assets" / "us" / "084E0B04-0886AD18.bin"
-ROM_BASE = 0x084E0B04
-PACK_END = 0x0886AD18
-EXPECTED_SIZE = PACK_END - ROM_BASE
-
-REGIONS = (
-    ("asset_gfx.head", 0x084E0B04, 0x084E0F34, "padding"),
-    ("gUnk_084E0F34", 0x084E0F34, 0x084F4660, "movie"),
-    ("gUnk_084F4660", 0x084F4660, 0x0855CCB4, "movie"),
-    ("gUnk_0855CCB4", 0x0855CCB4, 0x086FBA14, "movie"),
-    ("gUnk_086FBA14", 0x086FBA14, 0x0886AB40, "movie"),
-    ("gUnk_0886AB40", 0x0886AB40, 0x0886AB90, "movie_sub_table"),
-    ("gUnk_0886AB90", 0x0886AB90, 0x0886AC70, "movie_sub_table"),
-    ("gUnk_0886AC70", 0x0886AC70, 0x0886AD10, "movie_sub_table"),
-    ("sMovieHeapName", 0x0886AD10, 0x0886AD18, "literal"),
+from asset_gfx_layout import (
+    DUMP_REGIONS as REGIONS,
+    US_EXTRACT as DEFAULT_BIN,
+    US_EXPECTED_SIZE as EXPECTED_SIZE,
+    US_ROM_BASE as ROM_BASE,
 )
 
 

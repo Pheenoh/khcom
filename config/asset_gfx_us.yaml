@@ -18,8 +18,19 @@ asm_built: build/us/asm/asset_gfx.s
 tools:
   gbagfx: tools/gbagfx/gbagfx
   packer: tools/gfx/asset_gfx_pack.py
+  layout: tools/gfx/asset_gfx_layout.py
 sha256_slice: abd74f58e092cdb9c28f71d42d934645ce95cd714cb7108b2d6632f0101f7312
-status: format_re_done_encode_blocked
+status: remux_mvp_green
 tools_extra:
   dump: tools/gfx/asset_gfx_dump.py
   extent: tools/movie_assets.py
+build:
+  mode: demux_remux_copy_through
+  note: >
+    Built path demuxes MovieOpen streams + pad/MovieSub/MOVIE from the extract
+    slice into source_root, then remuxes byte-identical. Encoder RE is follow-on.
+regional:
+  movie_payloads_identical: [us, jp, eu]
+  jp_unit: asset_gfx_at_084D4390 (pack) + tiny asset_gfx head
+  eu_unit: asset_gfx (same single-incbin shape as US; divergent pad/subs)
+  built_mode: us_only

@@ -56,10 +56,10 @@ sidecar_asset_example:
 # unit: asm unit stem (e.g. asset_gfx)
 # path_mode: slice | built
 #   slice  — baserom extract → assets/<ver>/<START>-<END>.bin → .incbin (default)
-#   built  — sources → gbagfx/packer → build/<ver>/assets/<id>.bin → .incbin
+#   built  — demux/remux (MovieOpen copy-through) or later encode → build/<ver>/assets/<id>.bin → .incbin
 # extract_path: gitignored baserom slice path (slice mode)
 # build_path: ninja output path (built mode)
-# source_root: local PNG/4bpp tree (built mode; not committed under Policy B)
+# source_root: local demuxed movie/pad/subs parts (and later PNG); not committed under Policy B
 # children: optional leaf list once pack RE is done
 # tools: converters required for built mode
 
@@ -73,7 +73,7 @@ pack_example:
   extract_path: assets/us/084E0B04-0886AD18.bin
   build_path: build/us/assets/asset_gfx.bin
   source_root: assets/us/src/gfx/asset_gfx
-  tools: [gbagfx, tools/gfx/asset_gfx_dump.py, tools/movie_assets.py]
+  tools: [tools/gfx/asset_gfx_pack.py, tools/gfx/asset_gfx_layout.py, tools/gfx/asset_gfx_dump.py, tools/movie_assets.py, gbagfx]
   confidence: high
   children: [movie, movie, movie, movie, MovieSub tables, padding]
 

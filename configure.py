@@ -200,7 +200,7 @@ parser.add_argument(
     "--asset-gfx-mode",
     choices=("slice", "built"),
     default="slice",
-    help="asset_gfx MVP path: baserom slice (default) or built pack via gbagfx (scaffolding)",
+    help="asset_gfx MVP path: baserom slice (default) or MovieOpen demux/remux built pack",
 )
 args = parser.parse_args()
 
@@ -274,7 +274,7 @@ asset_gfx_build = f"{build_dir}/assets/asset_gfx.bin"
 asset_gfx_asm = f"{build_dir}/asm/asset_gfx.s"
 if asset_gfx_mode == "built":
     if version != "us":
-        sys.exit("error: --asset-gfx-mode=built is US-only scaffolding in Phase 1")
+        sys.exit("error: --asset-gfx-mode=built is US-only (JP/EU movie payloads match; pad/unit layout diverge)")
     Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
     Path(asset_gfx_asm).write_text(
         "\t.section .rodata\n"
@@ -474,8 +474,11 @@ with out.open("w") as f:
             "asset_gfx_pack",
             implicit=[
                 "tools/gfx/asset_gfx_pack.py",
+                "tools/gfx/asset_gfx_layout.py",
+                "tools/movie_assets.py",
                 "config/asset_gfx_us.yaml",
                 "config/asset_inventory_us_gfx.yaml",
+                "assets/us/084E0B04-0886AD18.bin",
             ],
         )
     for obj, rule, src, deps, variables in edges:
