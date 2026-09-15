@@ -17,25 +17,25 @@ typedef struct WorldinspectNav {
 } WorldinspectNav;
 
 typedef struct WorldinspectMsg {
-    u16 unk_00;
-    u16 unk_02;
-    void* unk_04;
-    u16 unk_08;
+    u16 flags;
+    u16 world;
+    void* palette;
+    u16 paletteSize;
     u8 unk_0A[0x02];
-    void* unk_0C;
-    u16 unk_10;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_12[0x02];
-    void* unk_14;
-    void* unk_18;
-    u16 unk_1C;
+    void* sprite;
+    void* palette2;
+    u16 paletteSize2;
     u8 unk_1E[0x02];
-    void* unk_20;
-    u16 unk_24;
+    void* tiles2;
+    u16 tilesSize2;
     u8 unk_26[0x02];
-    void* unk_28;
-    void* unk_2C;
-    u16 unk_30;
-    u16 unk_32;
+    void* sprite2;
+    void* text;
+    u16 descId;
+    u16 descId2;
 } WorldinspectMsg;
 
 typedef WorldinspectNav MdWorldNav;

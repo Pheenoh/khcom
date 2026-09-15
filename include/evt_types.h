@@ -4,9 +4,9 @@
 #include "types.h"
 
 typedef struct EvtObjRes {
-    u16 unk_00;
+    u16 tileCount;
     u8 unk_02[0x06];
-    void* unk_08;
+    void* palette;
 } EvtObjRes;
 
 typedef struct EvtAnimDef {
@@ -16,10 +16,10 @@ typedef struct EvtAnimDef {
 } EvtAnimDef;
 
 typedef struct EvtObjAnim {
-    EvtAnimDef* unk_00;
+    EvtAnimDef* animDef;
     u8 unk_04[0x08];
-    u16 unk_0C;
-    u16 unk_0E;
+    u16 animId;
+    u16 flags;
 } EvtObjAnim;
 
 typedef struct EvtObjResTable {

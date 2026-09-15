@@ -1700,8 +1700,8 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
 
     work->unk_A8 = index;
     def = &gUnk_0813CDDC[index][dir];
-    AnimChangeWithTables(work->unk_08, def->unk_0C, flags, def->unk_04, def->unk_00);
-    SetObjTileSource(work->tiles, def->unk_08);
+    AnimChangeWithTables(work->unk_08, def->animId, flags, def->anims, def->gfxTable);
+    SetObjTileSource(work->tiles, def->tiles);
 }
 
 void task_fld_riku_0(FldWork* work) {

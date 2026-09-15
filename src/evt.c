@@ -64,8 +64,8 @@ void func_0801CE70(EvtObjWork* work) {
 
     obj = work->obj;
     anim = (EvtObjAnim*)obj->unk_00;
-    def = anim->unk_00;
-    AnimChangeWithTables(&work->anim, anim->unk_0C, anim->unk_0E, def->anims, def->gfxTable);
+    def = anim->animDef;
+    AnimChangeWithTables(&work->anim, anim->animId, anim->flags, def->anims, def->gfxTable);
     SetObjTileSource(work->tiles, def->tiles);
     work->obj->flags &= 0xFFFE;
 }
@@ -75,10 +75,10 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
 
     res = param->res;
     work->obj = param->obj;
-    work->tiles = AllocObjTiles(res->unk_00 * 32, 0);
-    work->palette = LoadObjPalette(res->unk_08, 32);
+    work->tiles = AllocObjTiles(res->tileCount * 32, 0);
+    work->palette = LoadObjPalette(res->palette, 32);
     AnimInit(&work->anim, 0, 0);
-    work->obj->unk_18 = &work->anim;
+    work->obj->anim = &work->anim;
     work->obj->unk_1C = work->palette[3];
     func_0801CE70(work);
     TaskPoolInit(&work->unk_24, 1);

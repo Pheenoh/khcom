@@ -20,8 +20,8 @@ void func_08019050(u16 a, s32 b, s32 c, s32 d) {
 
 void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     AnimDef* e = &tbl[i];
-    AnimChangeWithTables(a, e->unk_0C, j, e->unk_04, e->unk_00);
-    SetObjTileSource(obj, e->unk_08);
+    AnimChangeWithTables(a, e->animId, j, e->anims, e->gfxTable);
+    SetObjTileSource(obj, e->tiles);
 }
 
 void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {

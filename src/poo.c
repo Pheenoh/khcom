@@ -6348,8 +6348,8 @@ void func_080D2034(PooBflyPart* p) {
 
     func_080D1FB8(p);
     d = &gUnk_09EF4C88[p->unk_4C];
-    AnimChangeWithTables(p->anim, d->unk_0C, 1, d->unk_04, d->unk_00);
-    SetObjTileSource(p->tiles, d->unk_08);
+    AnimChangeWithTables(p->anim, d->animId, 1, d->anims, d->gfxTable);
+    SetObjTileSource(p->tiles, d->tiles);
 }
 
 void func_080D206C(PooBflyPart* p) {
@@ -7040,9 +7040,9 @@ void func_080D3050(void) {
 }
 
 void func_080D30C8(void) {
-    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].unk_00, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
-    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].unk_04, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
-    LoadPalette(gUnk_096FDA8C[gGameState.world].unk_08, (void*)0x05000140, 0x20);
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].map, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].tiles, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
+    LoadPalette(gUnk_096FDA8C[gGameState.world].palette, (void*)0x05000140, 0x20);
 }
 
 void func_080D313C(void) {

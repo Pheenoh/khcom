@@ -345,8 +345,8 @@ void func_0801DDE4(BtlSoraWork* work, u16 a, u16 b) {
     FldAnimDef* e;
 
     e = &gUnk_0813BA2C[a];
-    AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    SetObjTileSource(work->tiles, e->unk_08);
+    AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles, e->tiles);
 }
 
 void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
@@ -376,8 +376,8 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
         break;
     }
     e = &gUnk_0813BEFC[a][idx];
-    AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    SetObjTileSource(work->tiles, e->unk_08);
+    AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles, e->tiles);
 }
 
 void func_0801DEB8(BtlSoraWork* work) {
@@ -6294,8 +6294,8 @@ void func_080276D4(BtlRikuWork* work, u16 a, u16 b) {
     FldAnimDef* e;
 
     e = &gUnk_0813C2AC[a];
-    AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    SetObjTileSource(work->tiles2, e->unk_08);
+    AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles2, e->tiles);
 }
 
 void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
@@ -6325,8 +6325,8 @@ void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
         break;
     }
     e = &gUnk_0813C4DC[a][idx];
-    AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    SetObjTileSource(work->tiles2, e->unk_08);
+    AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles2, e->tiles);
 }
 
 void func_080277A8(BtlRikuWork* work) {

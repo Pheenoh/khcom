@@ -1050,9 +1050,9 @@ typedef struct PooRooWork {
 } PooRooWork;
 
 typedef struct PooBgSet {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* map;
+    void* tiles;
+    void* palette;
 } PooBgSet;
 
 typedef struct PooPalStep {

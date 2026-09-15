@@ -4,10 +4,10 @@
 #include "types.h"
 
 typedef struct AnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
+    void* gfxTable;
+    void* anims;
+    void* tiles;
+    u8 animId;
     u8 unk_0D[0x03];
 } AnimDef;
 

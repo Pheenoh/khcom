@@ -3547,8 +3547,8 @@ void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
         p->unk_04 &= ~1;
         break;
     }
-    AnimChangeWithTables(p->anim, q->unk_0C, a, q->unk_04, q->unk_00);
-    SetObjTileSource(p->tiles, q->unk_08);
+    AnimChangeWithTables(p->anim, q->animId, a, q->anims, q->gfxTable);
+    SetObjTileSource(p->tiles, q->tiles);
 }
 
 void func_080E5DEC(UnkStruct_080E590C* p) {

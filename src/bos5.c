@@ -539,7 +539,7 @@ void func_080FB8E8(MdWork* work, u16 index) {
 }
 
 void func_080FB908(MdWork* work, u16 index) {
-    LoadBgTiles(1, gUnk_09992108[index].unk_04, gUnk_09992108[index].unk_08);
+    LoadBgTiles(1, gUnk_09992108[index].tiles, gUnk_09992108[index].tilesSize);
 }
 
 void func_080FB930(MdWork* work, u16 id) {
@@ -555,16 +555,16 @@ void func_080FB930(MdWork* work, u16 id) {
     work->unk_17A = gUnk_09992108[id].unk_02;
 
     for (n = 0; n < 2; n++) {
-        work->unk_17C[n].unk_08 = gUnk_09992108[id].unk_1C[n].unk_10;
+        work->unk_17C[n].sprite = gUnk_09992108[id].unk_1C[n].sprite;
 
-        if (work->unk_17C[n].unk_04 != gUnk_09992108[id].unk_1C[n].unk_08 && n == 0) {
-            work->unk_17C[n].unk_04 = gUnk_09992108[id].unk_1C[n].unk_08;
-            UpdateSpriteFrameTiles(work->unk_17C[n].tiles, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
+        if (work->unk_17C[n].src != gUnk_09992108[id].unk_1C[n].src && n == 0) {
+            work->unk_17C[n].src = gUnk_09992108[id].unk_1C[n].src;
+            UpdateSpriteFrameTiles(work->unk_17C[n].tiles, work->unk_17C[n].sprite, work->unk_17C[n].src);
         }
 
-        work->unk_17C[n].unk_0C = gUnk_09992108[id].unk_1C[n].unk_00;
-        work->unk_17C[n].unk_0E = gUnk_09992108[id].unk_1C[n].unk_02;
-        work->unk_17C[n].unk_10 = gUnk_09992108[id].unk_1C[n].unk_04;
+        work->unk_17C[n].x = gUnk_09992108[id].unk_1C[n].x;
+        work->unk_17C[n].y = gUnk_09992108[id].unk_1C[n].y;
+        work->unk_17C[n].z = gUnk_09992108[id].unk_1C[n].z;
     }
 }
 
@@ -575,31 +575,31 @@ void func_080FBA14(MdWork* work, s16 id) {
     MdAnimFrame* f;
 
     a = &work->unk_1A4;
-    a->unk_00 = id;
+    a->animId = id;
     base = gUnk_09992E24;
     d = base + id;
-    f = d->unk_00;
-    a->unk_04 = f;
-    a->unk_08 = d->unk_04;
-    a->unk_0A = 0;
-    a->unk_0C = f->unk_02;
-    func_080FB930(work, f->unk_00);
+    f = d->frames;
+    a->frames = f;
+    a->frameCount = d->frameCount;
+    a->frame = 0;
+    a->timer = f->duration;
+    func_080FB930(work, f->gfxIndex);
 }
 void func_080FBA4C(MdWork* work) {
     MdAnim* a;
 
     a = &work->unk_1A4;
-    a->unk_0C--;
+    a->timer--;
 
-    if (a->unk_0C < 0) {
-        a->unk_0A++;
+    if (a->timer < 0) {
+        a->frame++;
 
-        if (a->unk_0A >= a->unk_08) {
-            a->unk_0A = 0;
+        if (a->frame >= a->frameCount) {
+            a->frame = 0;
         }
 
-        a->unk_0C = a->unk_04[a->unk_0A].unk_02;
-        func_080FB930(work, a->unk_04[a->unk_0A].unk_00);
+        a->timer = a->frames[a->frame].duration;
+        func_080FB930(work, a->frames[a->frame].gfxIndex);
     }
 }
 u8 func_080FBA9C(MdWork* work) {
@@ -607,7 +607,7 @@ u8 func_080FBA9C(MdWork* work) {
 
     a = &work->unk_1A4;
 
-    if (a->unk_0A >= a->unk_08 - 1) {
+    if (a->frame >= a->frameCount - 1) {
         return 1;
     }
 
@@ -723,7 +723,7 @@ u8 func_080FBC4C(MdWork* work) {
             }
             break;
         case 1:
-            switch ((s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00) {
+            switch ((s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex) {
             case 33:
             case 34:
             case 36:
@@ -784,7 +784,7 @@ u8 func_080FBDD4(MdWork* work) {
         case 1:
             switch (work->unk_00C) {
             case 0:
-                v = (s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00;
+                v = (s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex;
 
                 if (v == 18) {
                     func_08011F78(252, gBtlWork->unk_000, gBtlWork->unk_004, 0,
@@ -803,7 +803,7 @@ u8 func_080FBDD4(MdWork* work) {
                 }
                 break;
             case 1:
-                v = (s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00;
+                v = (s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex;
 
                 if (v == 22) {
                     func_08019A30();
@@ -1108,10 +1108,10 @@ void task_bos_md_0(MdWork* work, void* arg) {
 
     for (i = 0; i < 2; i++) {
         work->unk_17C[i].tiles = 0;
-        work->unk_17C[i].unk_04 = 0;
-        work->unk_17C[i].unk_08 = 0;
-        work->unk_17C[i].unk_0C = 0;
-        work->unk_17C[i].unk_0E = 0;
+        work->unk_17C[i].src = 0;
+        work->unk_17C[i].sprite = 0;
+        work->unk_17C[i].x = 0;
+        work->unk_17C[i].y = 0;
     }
 
     work->unk_17C[0].tiles = AllocSpriteFrameTiles(2432);
@@ -1197,13 +1197,13 @@ s32 task_bos_md_1(MdWork* work) {
 
     for (i = 0; i < 1; i++) {
         work->sub[i].unk_004 = gBtlWork->unk_0CC
-            + gUnk_09992108[(s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00]
+            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
                   .unk_44[i].unk_00 * 256;
         work->sub[i].unk_008 = gBtlWork->unk_0D0
-            + gUnk_09992108[(s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00]
+            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
                   .unk_44[i].unk_02 * 256;
         work->sub[i].unk_00C = gBtlWork->unk_0D4
-            + gUnk_09992108[(s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00]
+            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
                   .unk_44[i].unk_04 * 256;
         ColliderSetPosition(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
                       work->sub[i].unk_00C);
@@ -1256,11 +1256,11 @@ void task_bos_md_2(MdWork* work) {
         s32 wy;
         u16 frame;
 
-        wx = (work->unk_17C[i].unk_0C + 224) * 256;
-        wy = (work->unk_17C[i].unk_0E + 256) * 256;
-        WorldToScreen(&x, &y, wx, wy, work->unk_17C[i].unk_10 * 256);
+        wx = (work->unk_17C[i].x + 224) * 256;
+        wy = (work->unk_17C[i].y + 256) * 256;
+        WorldToScreen(&x, &y, wx, wy, work->unk_17C[i].z * 256);
         frame = GetBattleSpritePriorityFlags(wy);
-        DrawSprite(x, y, work->unk_17C[i].unk_08, work->unk_17C[i].tiles, pal, 0, frame,
+        DrawSprite(x, y, work->unk_17C[i].sprite, work->unk_17C[i].tiles, pal, 0, frame,
                    (u16)(-4100 - (wy >> 6)));
     }
 
@@ -2611,7 +2611,7 @@ u8 func_080FF228(s16 id) {
     u8 ret = 0;
 
     if (id != 0) {
-        ret = LoadTextSlots(eu_0805E924(gUnk_09EF909C[id].unk_2C), gUnk_020351F8);
+        ret = LoadTextSlots(eu_0805E924(gUnk_09EF909C[id].text), gUnk_020351F8);
     }
     return ret;
 #else
@@ -2619,7 +2619,7 @@ u8 func_080FF228(s16 id) {
         return 0;
     }
 
-    return LoadTextSlots(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
+    return LoadTextSlots(gUnk_09EF909C[id].text, gUnk_020351F8);
 #endif
 }
 u8 func_080FF25C(s16 id) {
@@ -2631,9 +2631,9 @@ u8 func_080FF25C(s16 id) {
         tbl = gUnk_09EE9138;
 
         if (gGameState.flags & 8) {
-            i = gUnk_09EF909C[id].unk_32;
+            i = gUnk_09EF909C[id].descId2;
         } else {
-            i = gUnk_09EF909C[id].unk_30;
+            i = gUnk_09EF909C[id].descId;
         }
 
         p = &tbl[i];
@@ -2756,12 +2756,12 @@ void func_080FF330(void) {
                 gUnk_020354B8[1] = gUnk_099A8914;
             } else {
                 gUnk_020354A8[1] =
-                    LoadObjPalette(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].unk_18,
-                                   gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].unk_1C);
+                    LoadObjPalette(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].palette2,
+                                   gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].paletteSize2);
                 gUnk_020354B0[1] =
-                    LoadObjTiles(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].unk_20,
-                                 gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].unk_24);
-                gUnk_020354B8[1] = gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].unk_28;
+                    LoadObjTiles(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].tiles2,
+                                 gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].tilesSize2);
+                gUnk_020354B8[1] = gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].sprite2;
             }
 
             gUnk_020354A0 = func_080FF25C(gUnk_02035100[gUnk_020350F8]);
@@ -2863,15 +2863,15 @@ void func_080FF794(void) {
         if (gUnk_020350F8 <= 9) {
             for (i = 10; i < 12; i++) {
                 if (gUnk_02035100[i] != 0) {
-                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].unk_04,
-                                                      gUnk_09EF909C[gUnk_02035100[i]].unk_08);
+                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].palette,
+                                                      gUnk_09EF909C[gUnk_02035100[i]].paletteSize);
                 }
             }
         } else {
             for (i = 4; i < 6; i++) {
                 if (gUnk_02035100[i] != 0) {
-                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].unk_04,
-                                                      gUnk_09EF909C[gUnk_02035100[i]].unk_08);
+                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].palette,
+                                                      gUnk_09EF909C[gUnk_02035100[i]].paletteSize);
                 }
             }
         }

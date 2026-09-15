@@ -51,13 +51,13 @@
 #include "btl_api.h"
 
 typedef struct GaEntryDesc {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
+    u16 x;
+    u16 y;
+    u16 z;
     u16 unk_06;
-    void* unk_08;
+    void* src;
     u8 unk_0C[0x4];
-    void* unk_10;
+    void* sprite;
 } GaEntryDesc;
 
 typedef struct GaEntryPos {
@@ -70,33 +70,33 @@ typedef struct GaEntryPos {
 typedef struct GaEntry {
     u16 unk_00;
     u16 unk_02;
-    void* unk_04;
-    u16 unk_08;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0A[0x12];
     GaEntryDesc unk_1C[2];
     GaEntryPos unk_44[1];
 } GaEntry;
 
 typedef struct MdAnimFrame {
-    u16 unk_00;
-    u16 unk_02;
+    u16 gfxIndex;
+    u16 duration;
 } MdAnimFrame;
 
 typedef struct MdAnimDef {
-    MdAnimFrame* unk_00;
-    u16 unk_04;
+    MdAnimFrame* frames;
+    u16 frameCount;
     u16 unk_06;
 } MdAnimDef;
 
 extern MdAnimDef gUnk_09992E24[];
 
 typedef struct MdAnim {
-    u16 unk_00;
+    u16 animId;
     u16 unk_02;
-    MdAnimFrame* unk_04;
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
+    MdAnimFrame* frames;
+    s16 frameCount;
+    s16 frame;
+    s16 timer;
     u16 unk_0E;
 } MdAnim;
 
@@ -234,11 +234,11 @@ extern u8 gUnk_099A8914[];
 
 typedef struct MdGfx {
     void* tiles;
-    void* unk_04;
-    void* unk_08;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
+    void* src;
+    void* sprite;
+    s16 x;
+    s16 y;
+    s16 z;
     u16 unk_12;
 } MdGfx;
 

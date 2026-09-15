@@ -2161,6 +2161,6 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     work->unk_A8 = a;
 
     e = &gUnk_0813C89C[a][idx];
-    AnimChangeWithTables(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
-    SetObjTileSource(work->tiles, e->unk_08);
+    AnimChangeWithTables(&work->unk_08, e->animId, flags, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles, e->tiles);
 }

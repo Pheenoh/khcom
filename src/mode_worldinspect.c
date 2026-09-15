@@ -191,8 +191,8 @@ void mode_worldinspect_0(void) {
     }
 
     for (i = 0, fa = gUnk_020350FA; i <= 13; i++) {
-        if ((gGameState.unk_180 & gUnk_09EF909C[i].unk_00) != 0) {
-            gUnk_02035100[fa++] = gUnk_09EF909C[i].unk_02;
+        if ((gGameState.unk_180 & gUnk_09EF909C[i].flags) != 0) {
+            gUnk_02035100[fa++] = gUnk_09EF909C[i].world;
 
             if (fa > 11) {
                 break;
@@ -214,11 +214,11 @@ void mode_worldinspect_0(void) {
     for (i = 0; i <= 11; i++) {
         if (gUnk_02035100[i] != 0) {
             id = gUnk_02035100[i];
-            gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[id].unk_04, gUnk_09EF909C[id].unk_08);
+            gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[id].palette, gUnk_09EF909C[id].paletteSize);
             id = gUnk_02035100[i];
-            gUnk_02035198[i] = LoadObjTiles(gUnk_09EF909C[id].unk_0C, gUnk_09EF909C[id].unk_10);
+            gUnk_02035198[i] = LoadObjTiles(gUnk_09EF909C[id].tiles, gUnk_09EF909C[id].tilesSize);
             id = gUnk_02035100[i];
-            gUnk_020351C8[i] = gUnk_09EF909C[id].unk_14;
+            gUnk_020351C8[i] = gUnk_09EF909C[id].sprite;
         } else {
             gUnk_02035168[i] = 0;
             gUnk_02035198[i] = 0;
