@@ -1,0 +1,25 @@
+# JP inventory for asset_gfx_gap_1 (Policy B). Leaf tiles4 identical to US.
+version: jp
+schema_version: 1
+mvp_class: asset_gfx_gap_1
+policy: B
+baserom_code: B8CJ
+pack:
+  id: asset_gfx_gap_1
+  class: pack
+  unit: asset_gfx_gap_1
+  asm: asm/jp/asset_gfx_gap_1.s
+  rom: { start: 0x0885E30B, end: 0x08F6168C, size: 7353217 }
+  extract_path: assets/jp/0885E30B-08F6168C.bin
+  sha256: 43d50d5edd58f22f56edbf86665beace21432684d410ea195acab3887a496f9e
+  path_mode_default: slice
+leaves:
+  - id: gUnk_08C6A88C
+    class: leaf_gfx
+    format: tiles4
+    start: 0x08C5DE74
+    end: 0x08C5DEB4
+    size: 64
+    num_tiles: 2
+    sha1: eb743dad9eeea2053ec6f4166945b204d27057fd
+    confidence: high

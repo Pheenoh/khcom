@@ -1,0 +1,35 @@
+# EU host mega for leaf gUnk_08C6A88C (ABS 0x08C9C288).
+# Leaf lives in rodata_script_at_08896652.s (not the small asset_gfx_gap_1.s slice).
+# Policy B: sources/bins not committed. Parent mega stays slice by default.
+schema_version: 1
+id: asset_gfx_gap_1
+version: eu
+class: pack
+unit: rodata_script_at_08896652
+rom:
+  start: 0x08896652
+  end: 0x08F7F15C
+  size: 7244554
+inventory: config/asset_inventory_eu_gfx_gap_1.yaml
+path_mode: slice
+extract_path: assets/eu/08896652-08F7F15C.bin
+build_path: build/eu/assets/asset_gfx_gap_1.bin
+source_root: assets/eu/src/gfx/asset_gfx_gap_1
+asm_slice: asm/eu/rodata_script_at_08896652.s
+asm_built: build/eu/asm/asset_gfx_gap_1.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_gap_1_pack.py
+  layout: tools/gfx/asset_gfx_gap_1_layout.py
+sha256_slice: c4da9fb2dec3c2955c39d2c318d1f0e7844617f73b253a3f9d7ef9b7c79a10fe
+status: leaf_tiles4_scaffold
+children:
+  - id: gUnk_08C6A88C
+    class: leaf_gfx
+    format: tiles4
+    symbol: gUnk_08C6A88C
+    rom: { start: 0x08C9C288, end: 0x08C9C2C8, size: 64 }
+    num_tiles: 2
+    png: assets/eu/src/gfx/asset_gfx_gap_1/gUnk_08C6A88C.png
+    sha1: eb743dad9eeea2053ec6f4166945b204d27057fd
+    consumer: LoadObjTiles(..., 0x40) mode_jiminy
