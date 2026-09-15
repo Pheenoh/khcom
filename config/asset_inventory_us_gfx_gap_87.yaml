@@ -1,0 +1,354 @@
+# US inventory for asset_gfx_gap_87 (Policy B: no binaries).
+# Host mega: 0x0961A9FD–0x096FC004. Palette leaves: wlogo/btl/bos2/card/mode_sio.
+# Pack: python3 tools/gfx/asset_gfx_gap_87_pack.py --mode dump|built --version us
+# Deferred: gUnk_096FBF04 (EU addr outside host mega).
+
+version: us
+schema_version: 1
+mvp_class: asset_gfx_gap_87
+policy: B
+baserom_code: B8CE
+pack:
+  id: asset_gfx_gap_87
+  class: pack
+  unit: asset_gfx_gap_87_at_0961A9FD
+  asm: asm/us/asset_gfx_gap_87_at_0961A9FD.s
+  rom:
+    start: 0x0961A9FD
+    end: 0x096FC004
+    size: 923143
+  extract_path: assets/us/0961A9FD-096FC004.bin
+  sha256: ca73a09e27ecc2b17b6e76d4175ba119d15ffffe2caf9ae031203e4231f10e70
+  path_mode_default: slice
+  confidence: medium
+  summary: >
+    Named megablob owned by asm/us/asset_gfx_gap_87_at_0961A9FD.s as a single .incbin.
+    Fuller child map not yet RE'd; scaffold rebuilds 27 LoadObjPalette 32B pals.
+
+symbols_in_pack:
+  - { address: 0x096FAC64, name: gUnk_096FAC64, size: 32, kind: palette }
+  - { address: 0x096FAC84, name: gUnk_096FAC84, size: 32, kind: palette }
+  - { address: 0x096FACA4, name: gUnk_096FACA4, size: 32, kind: palette }
+  - { address: 0x096FAD64, name: gUnk_096FAD64, size: 32, kind: palette }
+  - { address: 0x096FADA4, name: gUnk_096FADA4, size: 32, kind: palette }
+  - { address: 0x096FADC4, name: gUnk_096FADC4, size: 32, kind: palette }
+  - { address: 0x096FADE4, name: gUnk_096FADE4, size: 32, kind: palette }
+  - { address: 0x096FAE24, name: gUnk_096FAE24, size: 32, kind: palette }
+  - { address: 0x096FAE44, name: gUnk_096FAE44, size: 32, kind: palette }
+  - { address: 0x096FAE64, name: gUnk_096FAE64, size: 32, kind: palette }
+  - { address: 0x096FAE84, name: gUnk_096FAE84, size: 32, kind: palette }
+  - { address: 0x096FB0A4, name: gUnk_096FB0A4, size: 32, kind: palette }
+  - { address: 0x096FB864, name: gUnk_096FB864, size: 32, kind: palette }
+  - { address: 0x096FB884, name: gUnk_096FB884, size: 32, kind: palette }
+  - { address: 0x096FB8C4, name: gUnk_096FB8C4, size: 32, kind: palette }
+  - { address: 0x096FB8E4, name: gUnk_096FB8E4, size: 32, kind: palette }
+  - { address: 0x096FBA44, name: gUnk_096FBA44, size: 32, kind: palette }
+  - { address: 0x096FBA64, name: gUnk_096FBA64, size: 32, kind: palette }
+  - { address: 0x096FBA84, name: gUnk_096FBA84, size: 32, kind: palette }
+  - { address: 0x096FBAA4, name: gUnk_096FBAA4, size: 32, kind: palette }
+  - { address: 0x096FBCC4, name: gUnk_096FBCC4, size: 32, kind: palette }
+  - { address: 0x096FBD24, name: gUnk_096FBD24, size: 32, kind: palette }
+  - { address: 0x096FBD44, name: gUnk_096FBD44, size: 32, kind: palette }
+  - { address: 0x096FBD64, name: gUnk_096FBD64, size: 32, kind: palette }
+  - { address: 0x096FBDA4, name: gUnk_096FBDA4, size: 32, kind: palette }
+  - { address: 0x096FBDE4, name: gUnk_096FBDE4, size: 32, kind: palette }
+  - { address: 0x096FBE04, name: gUnk_096FBE04, size: 32, kind: palette }
+
+leaves:
+  - id: gUnk_096FAC64
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAC64
+    end: 0x096FAC84
+    size: 32
+    sha1: 26cbeaad5636ffcd9f232dfbf3415ec9f22f4f0e
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) btl/btl3/btl4/mode_sio
+    confidence: high
+  - id: gUnk_096FAC84
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAC84
+    end: 0x096FACA4
+    size: 32
+    sha1: baccd56ffe5e97ba92ca0e5fddabadd7826af201
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FACA4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FACA4
+    end: 0x096FACC4
+    size: 32
+    sha1: 2d4d07ad2e965d1ce327af22f26e8e9ef5fdd16b
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FAD64
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAD64
+    end: 0x096FAD84
+    size: 32
+    sha1: c9c5d876f113052e9829dcfee3dd53a9baab0fee
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FADA4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FADA4
+    end: 0x096FADC4
+    size: 32
+    sha1: 6a07d0fbd1d4e91d9ee1dc27b350ef1e6eb6fa21
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FADC4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FADC4
+    end: 0x096FADE4
+    size: 32
+    sha1: 27172a96661c6ff1d8fda991c903beedcdecadf3
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FADE4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FADE4
+    end: 0x096FAE04
+    size: 32
+    sha1: b74ece71dd3ebfeede88033519404199afa600f4
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FAE24
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAE24
+    end: 0x096FAE44
+    size: 32
+    sha1: 0ed21cccf46c1243906b44b27431e630d94e3bdf
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FAE44
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAE44
+    end: 0x096FAE64
+    size: 32
+    sha1: ebf11d6197c1be7956ca4925a77a50a01c99f1b4
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FAE64
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAE64
+    end: 0x096FAE84
+    size: 32
+    sha1: 68317193a78d3a6dc9a76210b8000b7b667ee0f3
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FAE84
+    class: leaf_gfx
+    format: palette
+    start: 0x096FAE84
+    end: 0x096FAEA4
+    size: 32
+    sha1: 3954f178a7e07bb82850abbc01676c8b92e8587e
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FB0A4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FB0A4
+    end: 0x096FB0C4
+    size: 32
+    sha1: 2d7587c6d6b4187eec6dc69a4cad469e65b4993f
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) wlogo
+    confidence: high
+  - id: gUnk_096FB864
+    class: leaf_gfx
+    format: palette
+    start: 0x096FB864
+    end: 0x096FB884
+    size: 32
+    sha1: b799dff6a74402399695aaafe8a2d45eca4b9621
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos2
+    confidence: high
+  - id: gUnk_096FB884
+    class: leaf_gfx
+    format: palette
+    start: 0x096FB884
+    end: 0x096FB8A4
+    size: 32
+    sha1: f0f70362d09d2fd1bc4dd10dd82c5ba3e83834fa
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos2
+    confidence: high
+  - id: gUnk_096FB8C4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FB8C4
+    end: 0x096FB8E4
+    size: 32
+    sha1: c6bb0c82f19d523591ebdb3ddaea9eef107174e0
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos2
+    confidence: high
+  - id: gUnk_096FB8E4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FB8E4
+    end: 0x096FB904
+    size: 32
+    sha1: 07c5a0158c6a833f4af26636df034012c59e0b86
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos2
+    confidence: high
+  - id: gUnk_096FBA44
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBA44
+    end: 0x096FBA64
+    size: 32
+    sha1: d4b1d67bbbc328f9b1120ef0dddfc562ff4ca800
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) card
+    confidence: high
+  - id: gUnk_096FBA64
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBA64
+    end: 0x096FBA84
+    size: 32
+    sha1: c8d773710a128b67553a87ae70f496cd28b49785
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) card
+    confidence: high
+  - id: gUnk_096FBA84
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBA84
+    end: 0x096FBAA4
+    size: 32
+    sha1: 331c2b2f8d303ab649e62170b51ea813073c5806
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) card
+    confidence: high
+  - id: gUnk_096FBAA4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBAA4
+    end: 0x096FBAC4
+    size: 32
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) card/mode_sio
+    confidence: high
+  - id: gUnk_096FBCC4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBCC4
+    end: 0x096FBCE4
+    size: 32
+    sha1: 8528a9cfdf40e717468a2899110b9b0666e6036e
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBD24
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBD24
+    end: 0x096FBD44
+    size: 32
+    sha1: 48153af31e38e2344a761160bb63451c15cce280
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBD44
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBD44
+    end: 0x096FBD64
+    size: 32
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBD64
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBD64
+    end: 0x096FBD84
+    size: 32
+    sha1: 0f777be0a8db0c1e1e4a14ddecf21edd7464ed23
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBDA4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBDA4
+    end: 0x096FBDC4
+    size: 32
+    sha1: 6c5e46550f4e010e0b6b76373de9d35d1ed7c623
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBDE4
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBDE4
+    end: 0x096FBE04
+    size: 32
+    sha1: 11a00e481d990c41c505e92c5b2eeba8815cbc77
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high
+  - id: gUnk_096FBE04
+    class: leaf_gfx
+    format: palette
+    start: 0x096FBE04
+    end: 0x096FBE24
+    size: 32
+    sha1: 559e70ea6c2c2d4de1d880ca92614163129c79e0
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) mode_sio
+    confidence: high

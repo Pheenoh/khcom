@@ -226,6 +226,12 @@ parser.add_argument(
     default="slice",
     help="asset_gfx_gap_158 path: baserom slice (default) or leaf-patched built mega (gap_158 title palettes via gbagfx)",
 )
+parser.add_argument(
+    "--asset-gfx-gap-87-mode",
+    choices=("slice", "built"),
+    default="slice",
+    help="asset_gfx_gap_87 path: baserom slice (default) or leaf-patched built mega (gap_87 palettes via gbagfx)",
+)
 args = parser.parse_args()
 
 version = args.version
@@ -236,6 +242,7 @@ asset_gfx_gap_195_mode = args.asset_gfx_gap_195_mode
 asset_gfx_gap_1_mode = args.asset_gfx_gap_1_mode
 asset_gfx_gap_43_mode = args.asset_gfx_gap_43_mode
 asset_gfx_gap_158_mode = args.asset_gfx_gap_158_mode
+asset_gfx_gap_87_mode = args.asset_gfx_gap_87_mode
 
 build_dir = f"build/{version}"
 name = f"com_{version}"
@@ -378,6 +385,20 @@ asset_gfx_gap_158_extract = {
     "eu": "assets/eu/096CB6CC-0982820C.bin",
 }[version]
 asset_gfx_gap_158_manifest = f"config/asset_gfx_gap_158_{version}.yaml"
+asset_gfx_gap_87_build = f"{build_dir}/assets/asset_gfx_gap_87.bin"
+asset_gfx_gap_87_asm = f"{build_dir}/asm/asset_gfx_gap_87.s"
+asset_gfx_gap_87_unit = "asset_gfx_gap_87_at_0961A9FD.s"
+asset_gfx_gap_87_sym = {
+    "us": "data_0961A9FD",
+    "jp": "data_095D34D9",
+    "eu": "data_095DBEDD",
+}[version]
+asset_gfx_gap_87_extract = {
+    "us": "assets/us/0961A9FD-096FC004.bin",
+    "jp": "assets/jp/095D34D9-096B47E0.bin",
+    "eu": "assets/eu/095DBEDD-096C934C.bin",
+}[version]
+asset_gfx_gap_87_manifest = f"config/asset_gfx_gap_87_{version}.yaml"
 if asset_gfx_mode == "built":
     Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
     Path(asset_gfx_asm).write_text(
@@ -454,6 +475,22 @@ if asset_gfx_gap_158_mode == "built":
     for src, obj, flags, section in units:
         if src is not None and src.name == asset_gfx_gap_158_unit:
             rewritten.append((Path(asset_gfx_gap_158_asm), obj, flags, section))
+        else:
+            rewritten.append((src, obj, flags, section))
+    units = rewritten
+
+if asset_gfx_gap_87_mode == "built":
+    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
+    Path(asset_gfx_gap_87_asm).write_text(
+        "\t.section .rodata\n"
+        f"\t.global {asset_gfx_gap_87_sym}\n"
+        f"{asset_gfx_gap_87_sym}:\n"
+        f'\t.incbin "{asset_gfx_gap_87_build}"\n'
+    )
+    rewritten = []
+    for src, obj, flags, section in units:
+        if src is not None and src.name == asset_gfx_gap_87_unit:
+            rewritten.append((Path(asset_gfx_gap_87_asm), obj, flags, section))
         else:
             rewritten.append((src, obj, flags, section))
     units = rewritten
@@ -559,6 +596,23 @@ if asset_gfx_gap_158_mode == "built":
         if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_158_extract).name
     )
 
+if asset_gfx_gap_87_mode == "built":
+    gap_87_obj_suffix = "/" + Path(asset_gfx_gap_87_unit).with_suffix(".o").name
+    patched = []
+    for obj, rule, src, deps, variables in edges:
+        if obj.endswith(gap_87_obj_suffix):
+            deps = [d for d in deps if not d.startswith("assets/")]
+            if asset_gfx_gap_87_build not in deps:
+                deps.append(asset_gfx_gap_87_build)
+            if asset_gfx_gap_87_asm not in deps:
+                deps.append(asset_gfx_gap_87_asm)
+        patched.append((obj, rule, src, deps, variables))
+    edges = patched
+    missing_assets.difference_update(
+        p for p in list(missing_assets)
+        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_87_extract).name
+    )
+
 if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
     missing_assets.add(assets_stamp)
 pending_build_assets = sorted(p for p in missing_assets if p.startswith("build/"))
@@ -578,6 +632,8 @@ if asset_gfx_gap_43_mode == "built":
     allowed_build_assets.add(asset_gfx_gap_43_build)
 if asset_gfx_gap_158_mode == "built":
     allowed_build_assets.add(asset_gfx_gap_158_build)
+if asset_gfx_gap_87_mode == "built":
+    allowed_build_assets.add(asset_gfx_gap_87_build)
 pending_uncovered = [p for p in pending_build_assets if p not in allowed_build_assets]
 if pending_uncovered:
     first = pending_uncovered[0]
@@ -586,7 +642,8 @@ if pending_uncovered:
         f"and/or --asset-gfx-gap-195-mode=built "
         f"and/or --asset-gfx-gap-1-mode=built "
         f"and/or --asset-gfx-gap-43-mode=built "
-        f"and/or --asset-gfx-gap-158-mode=built or extract slice assets"
+        f"and/or --asset-gfx-gap-158-mode=built "
+        f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
     )
 
 validate_active_sections(regional_plan,
@@ -737,6 +794,12 @@ with out.open("w") as f:
             command=f"python3 tools/gfx/asset_gfx_gap_158_pack.py --mode built --version {version} && test -f $out",
             description="ASSET_GFX_GAP_158 $out",
         )
+    if asset_gfx_gap_87_mode == "built":
+        n.rule(
+            "asset_gfx_gap_87_pack",
+            command=f"python3 tools/gfx/asset_gfx_gap_87_pack.py --mode built --version {version} && test -f $out",
+            description="ASSET_GFX_GAP_87 $out",
+        )
     n.newline()
 
     objs = []
@@ -803,6 +866,18 @@ with out.open("w") as f:
                 asset_gfx_gap_158_manifest,
                 f"config/asset_inventory_{version}_gfx_gap_158.yaml",
                 asset_gfx_gap_158_extract,
+            ],
+        )
+    if asset_gfx_gap_87_mode == "built":
+        n.build(
+            asset_gfx_gap_87_build,
+            "asset_gfx_gap_87_pack",
+            implicit=[
+                "tools/gfx/asset_gfx_gap_87_pack.py",
+                "tools/gfx/asset_gfx_gap_87_layout.py",
+                asset_gfx_gap_87_manifest,
+                f"config/asset_inventory_{version}_gfx_gap_87.yaml",
+                asset_gfx_gap_87_extract,
             ],
         )
     for obj, rule, src, deps, variables in edges:
