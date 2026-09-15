@@ -23,11 +23,21 @@ tools:
 sha256_slice: d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419
 status: leaf_palette_scaffold
 note: >
-  Dual-path scaffold for five LoadObjPalette 32B leaves in the same mega.
+  Dual-path scaffold for nine LoadObjPalette 32B leaves in the same mega.
   Default path_mode is slice so check.sh stays on extract .incbin. Built mode
   (configure --asset-gfx-gap-195-mode=built) patches gbagfx PNG->gbapal into a
   mega copy; does not affect MovieOpen asset_gfx.
 children:
+  - id: gUnk_09A3CC3C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3CC3C
+    rom: { start: 0x09A3CC3C, end: 0x09A3CC5C, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3CC3C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3CC3C.gbapal
+    sha1: bf51a0326246b202cd501f21e197bba1c9362018
+    consumer: LoadObjPalette(..., 32) bos5
+    path_mode_built: gbagfx_png_to_gbapal
   - id: gUnk_09A3CC9C
     class: leaf_gfx
     format: palette
@@ -37,6 +47,36 @@ children:
     gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3CC9C.gbapal
     sha1: 099b710e870ff122d89615001ad4be7a61026b21
     consumer: LoadObjPalette(..., 0x20) mode_jiminy
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D07C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D07C
+    rom: { start: 0x09A3D07C, end: 0x09A3D09C, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D07C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D07C.gbapal
+    sha1: 48b9c6232707e66a4630e7451788b310a3a580e4
+    consumer: LoadObjPalette(..., 32) bos5/mode_worldinspect
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D09C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D09C
+    rom: { start: 0x09A3D09C, end: 0x09A3D0BC, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D09C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D09C.gbapal
+    sha1: 715e9a30cb6280f400388a34dd3ed031bcc3a033
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D0BC
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D0BC
+    rom: { start: 0x09A3D0BC, end: 0x09A3D0DC, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D0BC.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D0BC.gbapal
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
     path_mode_built: gbagfx_png_to_gbapal
   - id: gUnk_09A3D2DC
     class: leaf_gfx

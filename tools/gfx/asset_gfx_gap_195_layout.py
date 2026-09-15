@@ -15,9 +15,25 @@ LEAF_FORMAT = "palette"
 # Shared leaf metadata (rom addresses are per-version below).
 # Consumers: LoadObjPalette(..., 0x20) / LoadObjPalette(..., 32).
 LEAF_META = {
+    "gUnk_09A3CC3C": {
+        "consumer": "LoadObjPalette(..., 32) bos5",
+        "expected_sha1": "bf51a0326246b202cd501f21e197bba1c9362018",
+    },
     "gUnk_09A3CC9C": {
         "consumer": "LoadObjPalette(..., 0x20) mode_jiminy",
         "expected_sha1": "099b710e870ff122d89615001ad4be7a61026b21",
+    },
+    "gUnk_09A3D07C": {
+        "consumer": "LoadObjPalette(..., 32) bos5/mode_worldinspect",
+        "expected_sha1": "48b9c6232707e66a4630e7451788b310a3a580e4",
+    },
+    "gUnk_09A3D09C": {
+        "consumer": "LoadObjPalette(..., 0x20) mode_worldinspect",
+        "expected_sha1": "715e9a30cb6280f400388a34dd3ed031bcc3a033",
+    },
+    "gUnk_09A3D0BC": {
+        "consumer": "LoadObjPalette(..., 0x20) mode_worldinspect",
+        "expected_sha1": "ac63649ee098c799ad4e03781c54bc1c959d906a",
     },
     "gUnk_09A3D2DC": {
         "consumer": "LoadObjPalette(..., 0x20) mode_mapinspect",
@@ -67,7 +83,11 @@ VERSIONS = {
         "global_sym": "data_0999389C",
         "expected_sha256": "d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419",
         "leaves": [
+            _leaf("gUnk_09A3CC3C", 0x09A3CC3C),
             _leaf("gUnk_09A3CC9C", 0x09A3CC9C),
+            _leaf("gUnk_09A3D07C", 0x09A3D07C),
+            _leaf("gUnk_09A3D09C", 0x09A3D09C),
+            _leaf("gUnk_09A3D0BC", 0x09A3D0BC),
             _leaf("gUnk_09A3D2DC", 0x09A3D2DC),
             _leaf("gUnk_09A3D57C", 0x09A3D57C),
             _leaf("gUnk_09A3D59C", 0x09A3D59C),
@@ -86,7 +106,11 @@ VERSIONS = {
         "global_sym": "data_099483B0",
         "expected_sha256": "a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c",
         "leaves": [
+            _leaf("gUnk_09A3CC3C", 0x099F16C4),
             _leaf("gUnk_09A3CC9C", 0x099F1724),
+            _leaf("gUnk_09A3D07C", 0x099F1B04),
+            _leaf("gUnk_09A3D09C", 0x099F1B24),
+            _leaf("gUnk_09A3D0BC", 0x099F1B44),
             _leaf("gUnk_09A3D2DC", 0x099F1D64),
             _leaf("gUnk_09A3D57C", 0x099F2004),
             _leaf("gUnk_09A3D59C", 0x099F2024),
@@ -105,7 +129,11 @@ VERSIONS = {
         "global_sym": "data_09999B58",
         "expected_sha256": "5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29",
         "leaves": [
+            _leaf("gUnk_09A3CC3C", 0x09A9A700),
             _leaf("gUnk_09A3CC9C", 0x09A9A760),
+            _leaf("gUnk_09A3D07C", 0x09A9AB40),
+            _leaf("gUnk_09A3D09C", 0x09A9AB60),
+            _leaf("gUnk_09A3D0BC", 0x09A9AB80),
             _leaf("gUnk_09A3D2DC", 0x09A9ADA0),
             _leaf("gUnk_09A3D57C", 0x09A9B040),
             _leaf("gUnk_09A3D59C", 0x09A9B060),

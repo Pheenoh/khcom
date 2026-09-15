@@ -23,6 +23,14 @@ tools:
 sha256_slice: 5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29
 status: leaf_palette_scaffold
 children:
+  - id: gUnk_09A3CC3C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3CC3C
+    rom: { start: 0x09A9A700, end: 0x09A9A720, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3CC3C.png
+    sha1: bf51a0326246b202cd501f21e197bba1c9362018
+    consumer: LoadObjPalette(..., 32) bos5
   - id: gUnk_09A3CC9C
     class: leaf_gfx
     format: palette
@@ -31,6 +39,30 @@ children:
     png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3CC9C.png
     sha1: 099b710e870ff122d89615001ad4be7a61026b21
     consumer: LoadObjPalette(..., 0x20) mode_jiminy
+  - id: gUnk_09A3D07C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D07C
+    rom: { start: 0x09A9AB40, end: 0x09A9AB60, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D07C.png
+    sha1: 48b9c6232707e66a4630e7451788b310a3a580e4
+    consumer: LoadObjPalette(..., 32) bos5/mode_worldinspect
+  - id: gUnk_09A3D09C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D09C
+    rom: { start: 0x09A9AB60, end: 0x09A9AB80, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D09C.png
+    sha1: 715e9a30cb6280f400388a34dd3ed031bcc3a033
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
+  - id: gUnk_09A3D0BC
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D0BC
+    rom: { start: 0x09A9AB80, end: 0x09A9ABA0, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D0BC.png
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
   - id: gUnk_09A3D2DC
     class: leaf_gfx
     format: palette

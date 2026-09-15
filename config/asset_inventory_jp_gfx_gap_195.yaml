@@ -14,6 +14,14 @@ pack:
   sha256: a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c
   path_mode_default: slice
 leaves:
+  - id: gUnk_09A3CC3C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F16C4
+    end: 0x099F16E4
+    size: 32
+    sha1: bf51a0326246b202cd501f21e197bba1c9362018
+    confidence: high
   - id: gUnk_09A3CC9C
     class: leaf_gfx
     format: palette
@@ -21,6 +29,30 @@ leaves:
     end: 0x099F1744
     size: 32
     sha1: 099b710e870ff122d89615001ad4be7a61026b21
+    confidence: high
+  - id: gUnk_09A3D07C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F1B04
+    end: 0x099F1B24
+    size: 32
+    sha1: 48b9c6232707e66a4630e7451788b310a3a580e4
+    confidence: high
+  - id: gUnk_09A3D09C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F1B24
+    end: 0x099F1B44
+    size: 32
+    sha1: 715e9a30cb6280f400388a34dd3ed031bcc3a033
+    confidence: high
+  - id: gUnk_09A3D0BC
+    class: leaf_gfx
+    format: palette
+    start: 0x099F1B44
+    end: 0x099F1B64
+    size: 32
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
     confidence: high
   - id: gUnk_09A3D2DC
     class: leaf_gfx
