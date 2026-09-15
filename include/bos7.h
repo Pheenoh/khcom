@@ -246,10 +246,10 @@ typedef struct LstSnpWork {
 } LstSnpWork;
 
 typedef struct LstFldArg {
-    void* unk_00;
-    u16 unk_04;
-    void* unk_08;
-    u16 unk_0C;
+    void* tiles;
+    u16 tilesSize;
+    void* palette;
+    u16 paletteSize;
 } LstFldArg;
 
 typedef struct LstBitArg {

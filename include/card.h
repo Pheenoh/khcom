@@ -1170,8 +1170,8 @@ typedef struct UnkStruct_08096C38 {
 } UnkStruct_08096C38;
 
 typedef struct UnkStruct_09035DCC {
-    UnkStruct_08096C38* unk_00;
-    u16 unk_04;
+    UnkStruct_08096C38* data;
+    u16 size;
     u16 unk_06;
 } UnkStruct_09035DCC;
 

@@ -20,7 +20,7 @@ typedef struct ObjTiles {
     u16 unk_06;
     u16 unk_08;
     u16 unk_0A;
-    ListNode unk_0C;
+    ListNode node;
     u32 unk_20;
     u8 unk_24;
     u8 unk_25[0x03];
@@ -34,7 +34,7 @@ typedef struct ObjPalette {
     u16 unk_06;
     u16 unk_08;
     u16 unk_0A;
-    ListNode unk_0C;
+    ListNode node;
     u32 unk_20;
     struct ObjPalette* self;
 } ObjPalette;

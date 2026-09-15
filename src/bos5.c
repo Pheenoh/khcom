@@ -1300,9 +1300,9 @@ void task_bos_md_3(MdWork* work) {
 }
 
 void task_bos_md_map_0(MdMapWork* work, MdMapData* p) {
-    LoadBgTiles(0, p->unk_00, p->unk_04);
-    LoadBgPalette(0, p->unk_08, p->unk_0C);
-    SetBgMapBlocks(0, &p->unk_10, 2, 2);
+    LoadBgTiles(0, p->tiles, p->tilesSize);
+    LoadBgPalette(0, p->palette, p->paletteSize);
+    SetBgMapBlocks(0, &p->map, 2, 2);
     gBtlWork->unk_024 = 256;
     gBtlWork->unk_028 = 256;
     gBtlWork->x = 0x10000;

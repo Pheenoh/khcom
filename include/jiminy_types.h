@@ -57,13 +57,13 @@ typedef struct JiminyLine {
 } JiminyLine;
 
 typedef struct JiminyEntry {
-    void* unk_00;
-    void* unk_04;
-    s16 unk_08;
-    s16 unk_0A;
-    u16* unk_0C;
-    u16* unk_10;
-    s32 unk_14;
+    void* map;
+    void* names;
+    s16 count;
+    s16 parent;
+    u16* children;
+    u16* flags;
+    s32 detail;
 } JiminyEntry;
 
 typedef struct JiminyWork {

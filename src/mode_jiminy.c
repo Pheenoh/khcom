@@ -134,12 +134,12 @@ void mode_jiminy_0(void) {
         gJiminyWork->unk_D2C = 14;
         e = gUnk_08155554;
         e += 14;
-        func_0805A95C(3, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x80, 0x40, 0x18);
+        func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
         gJiminyWork->unk_CAC = 2;
     } else {
         gJiminyWork->unk_D2C = 0;
         e = gUnk_08155554;
-        func_0805A95C(3, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x80, 0x40, 0x18);
+        func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
         gJiminyWork->unk_CAC = 3;
     }
 }
@@ -252,17 +252,17 @@ void mode_jiminy_1(void) {
             if (gGameState.flags & 8) {
                 LoadBgMap(1, gUnk_08F62B84, 0x800);
             } else {
-                LoadBgMap(1, e->unk_00, 0x800);
+                LoadBgMap(1, e->map, 0x800);
             }
             LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DD84);
-            func_0805A95C(3, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x80, 0x40, 0x18);
+            func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
         } else {
-            LoadBgMap(1, e->unk_00, 0x800);
+            LoadBgMap(1, e->map, 0x800);
             LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DDC4);
 #ifdef VERSION_JP
-            func_0805A95C(8, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x70, 0x1A, 0x10);
+            func_0805A95C(8, e->count, e->names, e->flags, e->children, 0x70, 0x1A, 0x10);
 #else
-            func_0805A95C(4, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x70, 0x3A, 0x10);
+            func_0805A95C(4, e->count, e->names, e->flags, e->children, 0x70, 0x3A, 0x10);
 #endif
         }
 
@@ -281,11 +281,11 @@ void mode_jiminy_1(void) {
         if (GetKeysPressed() & 2) {
             gJiminyWork->unk_048 = 0;
 
-            if (e2->unk_0A == -1) {
+            if (e2->parent == -1) {
                 gJiminyWork->unk_000 = 2;
             } else {
                 gJiminyWork->unk_000 = 6;
-                gJiminyWork->unk_D2C = e2->unk_0A;
+                gJiminyWork->unk_D2C = e2->parent;
                 FadeStartIn(0, 5);
                 FadeLock();
             }
@@ -298,8 +298,8 @@ void mode_jiminy_1(void) {
 
             ok = 1;
 
-            if (e2->unk_10 != 0) {
-                ok = func_0800FF00(e2->unk_10[gJiminyWork->unk_C72]) != 0;
+            if (e2->flags != 0) {
+                ok = func_0800FF00(e2->flags[gJiminyWork->unk_C72]) != 0;
             } else {
                 if (gJiminyWork->unk_C68[gJiminyWork->unk_C74] == 3) {
                     ok = 0;
@@ -309,9 +309,9 @@ void mode_jiminy_1(void) {
             if (ok != 0) {
                 m4aSongNumStart(0x66);
 
-                if (e2->unk_0C != 0) {
+                if (e2->children != 0) {
                     gJiminyWork->unk_000 = 6;
-                    gJiminyWork->unk_D2C = e2->unk_0C[gJiminyWork->unk_C72];
+                    gJiminyWork->unk_D2C = e2->children[gJiminyWork->unk_C72];
                     gJiminyWork->unk_048 = 0;
                     FadeStartIn(0, 5);
                     FadeLock();
@@ -322,7 +322,7 @@ void mode_jiminy_1(void) {
                     gJiminyWork->unk_048 = 0;
                     gJiminyWork->unk_000 = 8;
                     gJiminyWork->unk_CD2 = gJiminyWork->unk_C72;
-                    gJiminyWork->unk_D34 = e2->unk_14;
+                    gJiminyWork->unk_D34 = e2->detail;
                     SetModeUpdate(func_0805BAE4);
                     break;
                 }

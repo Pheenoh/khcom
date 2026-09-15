@@ -20915,11 +20915,11 @@ u16 func_08096D0C(u16 a, s32 b) {
     u16 n;
 
     if (gGameState.flags & 8) {
-        tiles = gUnk_090360BC[a].unk_00;
-        n = gUnk_090360BC[a].unk_04;
+        tiles = gUnk_090360BC[a].data;
+        n = gUnk_090360BC[a].size;
     } else {
-        tiles = gUnk_09035DCC[a].unk_00;
-        n = gUnk_09035DCC[a].unk_04;
+        tiles = gUnk_09035DCC[a].data;
+        n = gUnk_09035DCC[a].size;
     }
 
     return func_08096C38(tiles, n);
@@ -20933,11 +20933,11 @@ u16 func_08096D48(u16 a, s32 b) {
     off = 0;
 
     if (gGameState.flags & 8) {
-        tiles = gUnk_090360BC[a].unk_00;
-        base = func_08096C38(tiles, gUnk_090360BC[a].unk_04);
+        tiles = gUnk_090360BC[a].data;
+        base = func_08096C38(tiles, gUnk_090360BC[a].size);
     } else {
-        tiles = gUnk_09035DCC[a].unk_00;
-        base = func_08096C38(tiles, gUnk_09035DCC[a].unk_04);
+        tiles = gUnk_09035DCC[a].data;
+        base = func_08096C38(tiles, gUnk_09035DCC[a].size);
     }
 
     if (base != 0xFFFF) {
@@ -27493,8 +27493,8 @@ void func_080A1BB8(EventMapObjectWork* w, EventBackgroundDef* t) {
 
     for (i = 0; i < q->placementCount; i++) {
         if (w->tiles[entries[i].spriteIndex] == 0) {
-            w->tiles[entries[i].spriteIndex] = LoadObjTiles(q->tileResources[entries[i].spriteIndex].unk_00, q->tileResources[entries[i].spriteIndex].unk_04);
-            w->palettes[entries[i].spriteIndex] = LoadObjPalette(q->paletteResources[entries[i].spriteIndex].unk_00, q->paletteResources[entries[i].spriteIndex].unk_04);
+            w->tiles[entries[i].spriteIndex] = LoadObjTiles(q->tileResources[entries[i].spriteIndex].data, q->tileResources[entries[i].spriteIndex].size);
+            w->palettes[entries[i].spriteIndex] = LoadObjPalette(q->paletteResources[entries[i].spriteIndex].data, q->paletteResources[entries[i].spriteIndex].size);
         }
     }
 }

@@ -96,20 +96,20 @@ typedef struct UnkStruct_080E92B8 {
 } UnkStruct_080E92B8;
 
 typedef struct UnkStruct_09EF8370 {
-    void* unk_00;
-    u16 unk_04;
+    void* palette;
+    u16 paletteSize;
     u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0E[0x02];
-    void* unk_10;
-    u16 unk_14;
+    void* tiles2;
+    u16 tilesSize2;
     u8 unk_16[0x02];
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
-    u8 unk_24;
-    u8 unk_25;
+    void* map3;
+    void* map2;
+    void* map;
+    u8 mapWidth;
+    u8 mapHeight;
     u8 unk_26[0x02];
     const u8* unk_28;
     struct UnkStruct_080E56B4* unk_2C;
@@ -232,18 +232,18 @@ typedef struct UnkStruct_080E8864 {
 } UnkStruct_080E8864;
 
 typedef struct UnkStruct_09EF70D0 {
-    void* unk_00;
-    u16 unk_04;
+    void* palette;
+    u16 paletteSize;
     u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0E[0x02];
-    void* unk_10;
-    u16 unk_14;
+    void* tiles2;
+    u16 tilesSize2;
     u8 unk_16[0x02];
-    u16* unk_18;
-    u16* unk_1C;
-    u16* unk_20;
+    u16* map3;
+    u16* map2;
+    u16* map;
     UnkStruct_080E8864* unk_24;
     UnkStruct_080E8864* unk_28;
     void* unk_2C;

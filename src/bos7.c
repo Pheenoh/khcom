@@ -79,8 +79,8 @@ void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
     vu32* dma;
     s32 i;
 
-    LoadBgTiles(0, arg->unk_00, arg->unk_04);
-    LoadBgPalette(0, arg->unk_08, arg->unk_0C);
+    LoadBgTiles(0, arg->tiles, arg->tilesSize);
+    LoadBgPalette(0, arg->palette, arg->paletteSize);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0xF800;

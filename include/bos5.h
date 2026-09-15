@@ -303,13 +303,13 @@ extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
 typedef struct MdMapData {
-    void* unk_00;
-    u16 unk_04;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_06[0x2];
-    void* unk_08;
-    u16 unk_0C;
+    void* palette;
+    u16 paletteSize;
     u8 unk_0E[0x2];
-    u32 unk_10;
+    u32 map;
 } MdMapData;
 
 typedef struct MdMapWork {

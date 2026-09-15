@@ -70,16 +70,16 @@ s32 func_0805A574(s32 idx) {
     s32 i;
 
     e = &gUnk_08155554[idx];
-    if (e->unk_10 != 0) {
+    if (e->flags != 0) {
         a = 1;
         b = 1;
 
-        for (i = 0; i < (u16)e->unk_08; i++) {
-            if (func_0800FF70(e->unk_10[i])) {
+        for (i = 0; i < (u16)e->count; i++) {
+            if (func_0800FF70(e->flags[i])) {
                 return 1;
             }
 
-            if (func_0800FF00(e->unk_10[i]) == 0) {
+            if (func_0800FF00(e->flags[i]) == 0) {
                 a = 0;
             } else {
                 b = 0;
@@ -96,14 +96,14 @@ s32 func_0805A574(s32 idx) {
         return 0;
     }
 
-    if (e->unk_0C == 0) {
+    if (e->children == 0) {
         return 3;
     }
     c = 1;
     d = 1;
 
-    for (i = 0; i < (u16)e->unk_08; i++) {
-        switch (func_0805A574(e->unk_0C[i])) {
+    for (i = 0; i < (u16)e->count; i++) {
+        switch (func_0805A574(e->children[i])) {
         case 1:
             return 1;
         case 0:

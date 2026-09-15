@@ -58,15 +58,15 @@ void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi) {
     s32 i;
     s32 j;
 
-    pivot = arr[(lo + hi) >> 1]->unk_14;
+    pivot = arr[(lo + hi) >> 1]->priority;
     i = lo;
     j = hi;
 
     for (;;) {
-        while (arr[i]->unk_14 < pivot) {
+        while (arr[i]->priority < pivot) {
             i++;
         }
-        while (pivot < arr[j]->unk_14) {
+        while (pivot < arr[j]->priority) {
             j--;
         }
         if (i >= j) {
@@ -125,12 +125,12 @@ void SpriteReset(void) {
     ListPoolInit(&gSpriteWork->tilePool);
 
     for (i = 0; i < 128; i++) {
-        ListPoolAddFree(&gSpriteWork->tiles[i].unk_0C, &gSpriteWork->tilePool, &gSpriteWork->tiles[i]);
+        ListPoolAddFree(&gSpriteWork->tiles[i].node, &gSpriteWork->tilePool, &gSpriteWork->tiles[i]);
     }
     ListPoolInit(&gSpriteWork->palettePool);
 
     for (i = 0; i < 16; i++) {
-        ListPoolAddFree(&gSpriteWork->palettes[i].unk_0C, &gSpriteWork->palettePool,
+        ListPoolAddFree(&gSpriteWork->palettes[i].node, &gSpriteWork->palettePool,
                       &gSpriteWork->palettes[i]);
     }
     gSpriteWork->entryCount = 0;
@@ -148,14 +148,14 @@ u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
 
     if (e != 0 && c != 0) {
         p = gSpriteWork;
-        p->entries[p->entryCount].unk_10 = x;
-        p->entries[p->entryCount].unk_12 = y;
-        p->entries[p->entryCount].unk_00 = obj;
-        p->entries[p->entryCount].unk_04 = e;
-        p->entries[p->entryCount].unk_08 = f;
-        p->entries[p->entryCount].unk_16 = g;
-        p->entries[p->entryCount].unk_14 = h;
-        p->entries[p->entryCount].unk_0C = c;
+        p->entries[p->entryCount].x = x;
+        p->entries[p->entryCount].y = y;
+        p->entries[p->entryCount].tiles = obj;
+        p->entries[p->entryCount].palette = e;
+        p->entries[p->entryCount].affine = f;
+        p->entries[p->entryCount].flags = g;
+        p->entries[p->entryCount].priority = h;
+        p->entries[p->entryCount].sprite = c;
         p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
         p->entryCount += 1;
         return 1;

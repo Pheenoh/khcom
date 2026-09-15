@@ -400,14 +400,14 @@ void func_080E042C(void) {
 
     if ((s32)gUnk_0203C7AC->unk_00 < 0) {
         p = gUnk_09EF8370[4];
-        LoadBgTiles(1, p->unk_10, p->unk_14);
-        LoadBgPalette(1, p->unk_00, p->unk_04);
-        SetBgMapBlocks(1, p->unk_20, p->unk_24, p->unk_25);
+        LoadBgTiles(1, p->tiles2, p->tilesSize2);
+        LoadBgPalette(1, p->palette, p->paletteSize);
+        SetBgMapBlocks(1, p->map, p->mapWidth, p->mapHeight);
         gUnk_0203C7AC->unk_00 &= ~1;
     } else {
         q = gUnk_09EF70D0[gUnk_0203C590.unk_04];
-        LoadBgTiles(1, q->unk_10, q->unk_14);
-        LoadBgPalette(1, q->unk_00, q->unk_04);
+        LoadBgTiles(1, q->tiles2, q->tilesSize2);
+        LoadBgPalette(1, q->palette, q->paletteSize);
         x = gUnk_02039BA0->x >> 8;
         y = gUnk_02039BA0->y >> 8;
         func_080E4D68(x / 8, y / 8);
@@ -598,7 +598,7 @@ u8 func_080E0938(u8 a) {
 
 void func_080E0960(MapCell* p, s32 n) {
     if (p != 0) {
-        u16* base = gUnk_02034F34->unk_18;
+        u16* base = gUnk_02034F34->map3;
         const u8* q = gUnk_0984D314[n];
         u8 m = GetRandom() % q[3];
         s32 u = ((m & 7) + q[1]) * 4;
@@ -616,11 +616,11 @@ void func_080E09B4(MapCell* p, u8 n, u8 v) {
 
         switch (q[0]) {
         case 1:
-            base = gUnk_02034F34->unk_1C;
+            base = gUnk_02034F34->map2;
             break;
         case 0:
         default:
-            base = gUnk_02034F34->unk_18;
+            base = gUnk_02034F34->map3;
             break;
         }
         t = ((v & 7) + q[1]) * 4 + ((v >> 3) + q[2]) * 64;
@@ -661,7 +661,7 @@ void func_080E0A70(MapCell* p, s32 n) {
         p->unk_04 = n;
         return;
     }
-    base = gUnk_02034F34->unk_18;
+    base = gUnk_02034F34->map3;
     t = gUnk_0984D32C[n];
     r = GetRandom() % t[3];
     off = (r % 8 + t[1]) * 4 + (r / 8 + t[2]) * 64;
@@ -688,7 +688,7 @@ void sub_080E0B00(MapCell* p, s32 n) {
     }
     t = gUnk_0984D32C[n];
     off = t[1] * 4 + t[2] * 64;
-    base = gUnk_02034F34->unk_1C;
+    base = gUnk_02034F34->map2;
 
     switch (n) {
     case 26:
@@ -718,7 +718,7 @@ void sub_080E0B00(MapCell* p, s32 n) {
 
 void func_080E0B98(MapCell* p, s32 n, u8 v) {
     if (p != 0) {
-        u16* base = gUnk_02034F34->unk_1C;
+        u16* base = gUnk_02034F34->map2;
         const u8* q = gUnk_0984D32C[n];
         s32 t;
 
@@ -1356,7 +1356,7 @@ void func_080E1670(void) {
 void func_080E1C64(s16 x, s16 y, u8 n) {
     MapCell* p = func_080E08BC(x, y);
     if (p != 0) {
-        u16* base = gUnk_02034F34->unk_20;
+        u16* base = gUnk_02034F34->map;
         const u8* q = gUnk_0984D3F8[n];
         s32 t = q[1] * 4 + q[2] * 64;
         p->unk_05 = n;
@@ -2874,8 +2874,8 @@ void func_080E4B78(s16 x, s16 y) {
                 }
             } else {
                 p0[ya * 32 + xa] = 0;
-                p1[ya * 32 + xa] = gUnk_02034F34->unk_1C[0x340];
-                p2[ya * 32 + xa] = gUnk_02034F34->unk_20[0x110];
+                p1[ya * 32 + xa] = gUnk_02034F34->map2[0x340];
+                p2[ya * 32 + xa] = gUnk_02034F34->map[0x110];
             }
 
             xx++;
@@ -2937,7 +2937,7 @@ void func_080E4D68(s32 x, s32 y) {
                     dst[ya * 32 + xa] = 0;
                 }
             } else {
-                dst[ya * 32 + xa] = gUnk_02034F34->unk_20[0x110];
+                dst[ya * 32 + xa] = gUnk_02034F34->map[0x110];
             }
 
             xx++;
@@ -2981,8 +2981,8 @@ void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e) {
             }
         } else {
             a[i] = 0;
-            b[i] = gUnk_02034F34->unk_1C[0x340];
-            c[i] = gUnk_02034F34->unk_20[0x110];
+            b[i] = gUnk_02034F34->map2[0x340];
+            c[i] = gUnk_02034F34->map[0x110];
         }
         e++;
     }
@@ -3033,8 +3033,8 @@ void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e) {
             }
         } else {
             a[i] = 0;
-            b[i] = gUnk_02034F34->unk_1C[0x340];
-            c[i] = gUnk_02034F34->unk_20[0x110];
+            b[i] = gUnk_02034F34->map2[0x340];
+            c[i] = gUnk_02034F34->map[0x110];
         }
         d++;
     }
@@ -7694,12 +7694,12 @@ void func_080EC660(MapRndWork* w) {
     s32 i;
 
     TaskPoolInit(&w->unk_00, 4);
-    LoadBgTiles(3, r->unk_08, r->unk_0C);
-    LoadBgTiles(2, r->unk_08, r->unk_0C);
-    LoadBgTiles(1, r->unk_10, r->unk_14);
-    LoadBgPalette(3, r->unk_00, r->unk_04);
-    LoadBgPalette(2, r->unk_00, r->unk_04);
-    LoadBgPalette(1, r->unk_00, r->unk_04);
+    LoadBgTiles(3, r->tiles, r->tilesSize);
+    LoadBgTiles(2, r->tiles, r->tilesSize);
+    LoadBgTiles(1, r->tiles2, r->tilesSize2);
+    LoadBgPalette(3, r->palette, r->paletteSize);
+    LoadBgPalette(2, r->palette, r->paletteSize);
+    LoadBgPalette(1, r->palette, r->paletteSize);
     gUnk_0203C7AC->unk_04 = func_080E5564();
     gUnk_0203C7AC->unk_06 = 64;
     gUnk_02039BA0->unk_10 = gUnk_0203C7AC->unk_04 * 4;
@@ -7781,65 +7781,65 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     w->unk_1E4 = 0;
 
     if (p->unk_50 == 0) {
-        eu_080059D4(3, p->unk_08);
+        eu_080059D4(3, p->tiles);
     } else {
-        LoadBgTiles(3, p->unk_08, p->unk_0C);
+        LoadBgTiles(3, p->tiles, p->tilesSize);
     }
 #else
-    LoadBgTiles(3, p->unk_08, p->unk_0C);
+    LoadBgTiles(3, p->tiles, p->tilesSize);
 #endif
-    LoadBgPalette(3, p->unk_00, p->unk_04);
+    LoadBgPalette(3, p->palette, p->paletteSize);
 #ifdef VERSION_EU
-    eu_08005A1C(3, p->unk_18, p->unk_24, p->unk_25);
+    eu_08005A1C(3, p->map3, p->mapWidth, p->mapHeight);
     w->unk_1E4 = 1;
 #else
-    SetBgMapBlocks(3, p->unk_18, p->unk_24, p->unk_25);
+    SetBgMapBlocks(3, p->map3, p->mapWidth, p->mapHeight);
 #endif
 
-    if (p->unk_1C != 0) {
+    if (p->map2 != 0) {
 #ifdef VERSION_EU
         if (p->unk_50 == 0) {
-            eu_080059D4(2, p->unk_08);
+            eu_080059D4(2, p->tiles);
         } else {
-            LoadBgTiles(2, p->unk_08, p->unk_0C);
+            LoadBgTiles(2, p->tiles, p->tilesSize);
         }
 #else
-        LoadBgTiles(2, p->unk_08, p->unk_0C);
+        LoadBgTiles(2, p->tiles, p->tilesSize);
 #endif
-        LoadBgPalette(2, p->unk_00, p->unk_04);
+        LoadBgPalette(2, p->palette, p->paletteSize);
 #ifdef VERSION_EU
-        eu_08005A1C(2, p->unk_1C, p->unk_24, p->unk_25);
+        eu_08005A1C(2, p->map2, p->mapWidth, p->mapHeight);
         w->unk_1E5 = 1;
 #else
-        SetBgMapBlocks(2, p->unk_1C, p->unk_24, p->unk_25);
+        SetBgMapBlocks(2, p->map2, p->mapWidth, p->mapHeight);
 #endif
     } else {
         DisableBg(2);
     }
 
-    if (p->unk_20 != 0) {
+    if (p->map != 0) {
 #ifdef VERSION_EU
         if (p->unk_50 == 0) {
-            eu_080059D4(1, p->unk_10);
+            eu_080059D4(1, p->tiles2);
         } else {
-            LoadBgTiles(1, p->unk_10, p->unk_14);
+            LoadBgTiles(1, p->tiles2, p->tilesSize2);
         }
 #else
-        LoadBgTiles(1, p->unk_10, p->unk_14);
+        LoadBgTiles(1, p->tiles2, p->tilesSize2);
 #endif
-        LoadBgPalette(1, p->unk_00, p->unk_04);
+        LoadBgPalette(1, p->palette, p->paletteSize);
 #ifdef VERSION_EU
-        eu_08005A1C(1, p->unk_20, p->unk_24, p->unk_25);
+        eu_08005A1C(1, p->map, p->mapWidth, p->mapHeight);
         w->unk_1E6 = 1;
 #else
-        SetBgMapBlocks(1, p->unk_20, p->unk_24, p->unk_25);
+        SetBgMapBlocks(1, p->map, p->mapWidth, p->mapHeight);
 #endif
     } else {
         DisableBg(1);
     }
 
-    gUnk_02039BA0->unk_10 = p->unk_24 * 32;
-    gUnk_02039BA0->unk_12 = p->unk_25 * 32;
+    gUnk_02039BA0->unk_10 = p->mapWidth * 32;
+    gUnk_02039BA0->unk_12 = p->mapHeight * 32;
     gUnk_0203C7AC->unk_04 = gUnk_02039BA0->unk_10 / 4;
     gUnk_0203C7AC->unk_06 = gUnk_02039BA0->unk_12 / 2;
     func_080E5868(p);

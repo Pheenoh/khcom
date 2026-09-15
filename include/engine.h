@@ -14,9 +14,9 @@
 #include "obj.h"
 
 typedef struct ObjTileListEntry {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
+    u16 attr0;
+    u16 attr1;
+    u16 tile;
 } ObjTileListEntry;
 
 typedef struct Dma3Request {

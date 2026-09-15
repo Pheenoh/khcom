@@ -12,14 +12,14 @@ typedef struct ObjListPool {
 } ObjListPool;
 
 typedef struct SpriteEntry {
-    void* unk_00;
-    void* unk_04;
-    s32 unk_08;
-    void* unk_0C;
-    u16 unk_10;
-    u16 unk_12;
-    u16 unk_14;
-    u16 unk_16;
+    void* tiles;
+    void* palette;
+    s32 affine;
+    void* sprite;
+    u16 x;
+    u16 y;
+    u16 priority;
+    u16 flags;
 } SpriteEntry;
 
 typedef struct ObjAffine {
