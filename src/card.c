@@ -18369,7 +18369,7 @@ void MapSelect_2(MapSelectWork* w) {
                    w->tiles3, *(void**)&w->unk_040[8], 0, 0, 80);
     }
     if (w->unk_2BE == 1) {
-        switch (gUnk_09EE4C80[w->card->unk_20].unk_1E) {
+        switch (gUnk_09EE4C80[w->card->unk_20].backIndex) {
         case 0:
             break;
         case 2:
@@ -19020,7 +19020,7 @@ void func_08093C44(u16 a, MapSelectWork* w) {
         pal = w->unk_29E;
 
         if (gUnk_0203A8C0[i] != 0) {
-            if (card->unk_1E != 4) {
+            if (card->backIndex != 4) {
                 pal[j] = -1;
                 k = j + 1;
                 pal[k] = 0x7F;
@@ -19051,7 +19051,7 @@ void func_08093D28(u16 a, MapSelectWork* w) {
         mp = &w->card;
         pal = w->unk_29E;
 
-        switch ((*mp)->unk_18->unk_1E) {
+        switch ((*mp)->unk_18->backIndex) {
         case 1:
             pal[i] = gUnk_09619098[j + 0x60];
             break;
@@ -19450,7 +19450,7 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->unk_72 = 0;
     w->unk_74 = gUnk_09EE4C80[w->unk_20].unk_22;
     w->unk_18 = &gUnk_09EE4C80[w->unk_20];
-    w->unk_1C = &gUnk_09EE4BF4[w->unk_18->unk_1E];
+    w->unk_1C = &gUnk_09EE4BF4[w->unk_18->backIndex];
     func_08094E90(w);
     func_08094DA8(w);
     func_08094CE4(w);
@@ -19670,14 +19670,14 @@ void Mapcard_2(MapcardWork* w) {
                 aff = AllocObjAffine(w->unk_6E, (s16)w->unk_68, (s16)w->unk_68, 1);
             }
 
-            if (gUnk_09EE4C80[w->unk_20].unk_1E == 4) {
+            if (gUnk_09EE4C80[w->unk_20].backIndex == 4) {
                 DrawSprite(w->x >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
                            (u16)(w->unk_6A - 2));
             }
 
-            sprite = w->unk_1C->unk_08[0];
+            sprite = w->unk_1C->sprites[0];
             DrawSprite(w->x >> 8, y, sprite, *(void**)&w->unk_10[0], *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
-            sprite = w->unk_18->unk_08[0];
+            sprite = w->unk_18->sprites[0];
             DrawSprite(w->x >> 8, y, sprite, w->tiles2, w->palette, aff, 0, (u16)(w->unk_6A + 1));
         }
     }
@@ -19715,10 +19715,10 @@ void func_08094CE4(MapcardWork* w) {
         if (!(w->unk_6C & 1)) {
             a = (UnkStruct_08094CE4_A*)w->unk_18;
             b = (UnkStruct_08094CE4_B*)w->unk_1C;
-            w->tiles2 = LoadObjTiles(a->unk_00, a->unk_18);
-            w->palette = LoadObjPalette(a->unk_04, 32);
-            *(void**)&w->unk_10[0] = LoadObjTiles(b->unk_00, b->unk_14);
-            *(void**)&w->unk_10[4] = LoadObjPalette(b->unk_04, 32);
+            w->tiles2 = LoadObjTiles(a->tiles, a->tilesSize);
+            w->palette = LoadObjPalette(a->palette, 32);
+            *(void**)&w->unk_10[0] = LoadObjTiles(b->tiles, b->tilesSize);
+            *(void**)&w->unk_10[4] = LoadObjPalette(b->palette, 32);
             w->tiles = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
             FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
             FadeSetPaletteExcluded(((UnkStruct_080038C8*)*(void**)&w->unk_10[4])->unk_06 + 16, 1);
@@ -21019,13 +21019,13 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args) {
 
     w->unk_B0 = args[8];
     w->unk_20 = &gUnk_09EE4C80[args[8]];
-    w->unk_24 = &gUnk_09EE4BF4[w->unk_20->unk_1E];
-    w->tiles = LoadObjTiles(w->unk_20->unk_00, 0x300);
-    w->palette = LoadObjPalette(w->unk_20->unk_04, 32);
+    w->unk_24 = &gUnk_09EE4BF4[w->unk_20->backIndex];
+    w->tiles = LoadObjTiles(w->unk_20->tiles, 0x300);
+    w->palette = LoadObjPalette(w->unk_20->palette, 32);
     *(u64*)&w->unk_3C = *(u64*)&w->unk_20->unk_20;
-    w->tiles2 = LoadObjTiles(w->unk_24->unk_00, w->unk_24->unk_14);
-    w->tiles3 = LoadObjTiles(w->unk_24->unk_00, w->unk_24->unk_14);
-    w->palette2 = LoadObjPalette(w->unk_24->unk_04, w->unk_24->unk_16);
+    w->tiles2 = LoadObjTiles(w->unk_24->tiles, w->unk_24->tilesSize);
+    w->tiles3 = LoadObjTiles(w->unk_24->tiles, w->unk_24->tilesSize);
+    w->palette2 = LoadObjPalette(w->unk_24->palette, w->unk_24->paletteSize);
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette3 = LoadObjPalette(gUnk_08F69BE4, 32);
@@ -21260,21 +21260,21 @@ void func_08097688(UnkStruct_08096F94* w) {
     }
 
     DrawSprite(w->x, (u16)w->y2 - 8,
-               *w->unk_20->unk_08,
+               *w->unk_20->sprites,
                w->tiles, w->palette, affine, pal,
                (u16)(w->unk_CC + 1));
 
-    if (w->unk_20->unk_1E == 4) {
-        gfx = w->unk_24->unk_08[w->unk_E8];
+    if (w->unk_20->backIndex == 4) {
+        gfx = w->unk_24->sprites[w->unk_E8];
     } else {
-        gfx = w->unk_24->unk_08[0];
+        gfx = w->unk_24->sprites[0];
     }
 
     DrawSprite(w->x, (u16)w->y2 - 8, gfx,
                w->tiles2, w->palette2, affine, pal,
                w->unk_CC);
 
-    if (w->unk_20->unk_1E != 4) {
+    if (w->unk_20->backIndex != 4) {
         gfx = gUnk_09EE981C[w->unk_3E];
         DrawSprite(w->x, (u16)w->y2 - 8, gfx,
                    w->tiles4, w->palette2, affine, pal,
@@ -21652,13 +21652,13 @@ void func_08098014(u8* work, const u8* a) {
 
     if (a[0] != 255) {
         c = &gUnk_09EE4C80[a[0] * 10];
-        b = &gUnk_09EE4BF4[c->unk_1E];
-        *(void**)&work[0x00] = LoadObjTiles(c->unk_00, c->unk_18);
-        *(void**)&work[0x0C] = LoadObjPalette(c->unk_04, c->unk_1A);
-        *(void**)&work[0x18] = *c->unk_08;
-        *(void**)&work[0x04] = LoadObjTiles(b->unk_00, b->unk_14);
-        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *b->unk_08;
+        b = &gUnk_09EE4BF4[c->backIndex];
+        *(void**)&work[0x00] = LoadObjTiles(c->tiles, c->tilesSize);
+        *(void**)&work[0x0C] = LoadObjPalette(c->palette, c->paletteSize);
+        *(void**)&work[0x18] = *c->sprites;
+        *(void**)&work[0x04] = LoadObjTiles(b->tiles, b->tilesSize);
+        *(void**)&work[0x10] = LoadObjPalette(b->palette, b->paletteSize);
+        *(void**)&work[0x1C] = *b->sprites;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x14] = 0;
         return;
@@ -21677,9 +21677,9 @@ void func_08098014(u8* work, const u8* a) {
         *(s32*)&work[0x1C] = 0;
     } else {
         d = &gUnk_09EE4BF4[a[1]];
-        *(void**)&work[0x04] = LoadObjTiles(d->unk_0C, *(u16*)&d->unk_18[0]);
-        *(void**)&work[0x10] = LoadObjPalette(d->unk_04, d->unk_16);
-        *(void**)&work[0x1C] = *d->unk_10;
+        *(void**)&work[0x04] = LoadObjTiles(d->tiles2, *(u16*)&d->unk_18[0]);
+        *(void**)&work[0x10] = LoadObjPalette(d->palette, d->paletteSize);
+        *(void**)&work[0x1C] = *d->sprites2;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x00] = 0;
         *(s32*)&work[0x0C] = 0;
@@ -21976,7 +21976,7 @@ u8 func_080987C0(u16 n) {
         break;
     }
 
-    return gUnk_09EE4C80[idx].unk_1E;
+    return gUnk_09EE4C80[idx].backIndex;
 }
 
 void RELOAD_CHILDREN_0(ReloadChildWork* w, ReloadChildArgs* a) {
@@ -27483,7 +27483,7 @@ void func_080A1BB8(EventMapObjectWork* w, EventBackgroundDef* t) {
     EventMapObjectPlacement* entries;
     u8 i;
 
-    q = t->unk_28;
+    q = t->mapObjects;
     entries = q->placements;
 
     for (i = 0; i < 10; i++) {
@@ -27518,9 +27518,9 @@ void Ev_mapObj_0(u8* work, u8* a) {
     work[0] = a[0];
     t = gUnk_09EE3CA0[work[0]];
 
-    if (t->unk_28 != 0) {
+    if (t->mapObjects != 0) {
         func_080A1BB8(work, t);
-        *(void**)&work[0x58] = t->unk_28;
+        *(void**)&work[0x58] = t->mapObjects;
     }
 }
 
@@ -28531,9 +28531,9 @@ u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
     if (sel->unk_00 != 62) {
         e = gUnk_09EE45DC[sel->unk_00];
         w->tiles3 = AllocObjTiles(0xD80, 0);
-        w->palette = LoadObjPalette(e[w->unk_114->unk_08].unk_04, 32);
-        SetObjTileSource(w->tiles3, e[w->unk_114->unk_08].unk_00);
-        AnimInit(w->anim, e[w->unk_114->unk_08].unk_0C, e[w->unk_114->unk_08].unk_08);
+        w->palette = LoadObjPalette(e[w->unk_114->unk_08].palette, 32);
+        SetObjTileSource(w->tiles3, e[w->unk_114->unk_08].tiles);
+        AnimInit(w->anim, e[w->unk_114->unk_08].anims, e[w->unk_114->unk_08].gfxTable);
         AnimStart(w->anim, 0, e[w->unk_114->unk_08].unk_11);
         w->gfx = AnimGetGfx(w->anim);
         w->unk_11C = gUnk_09033CD0[w->unk_114->unk_04];

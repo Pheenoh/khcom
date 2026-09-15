@@ -21,9 +21,9 @@ void HumInit(HumWork* work, HumDef* def) {
     }
 
     work->unk_000 = def;
-    work->tiles = AllocObjTiles(def->unk_00 * 32, 0);
-    work->palette = LoadObjPalette(def->unk_04, 32);
-    work->unk_178 = def->unk_04;
+    work->tiles = AllocObjTiles(def->tileCount * 32, 0);
+    work->palette = LoadObjPalette(def->palette, 32);
+    work->unk_178 = def->palette;
     work->unk_150 = 0;
     work->unk_152 = 0;
     work->unk_154 = 0;
@@ -58,8 +58,8 @@ void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
         work->sub2 = sub;
     }
 
-    sub->tiles = AllocObjTiles(def->unk_04 * 32, 0);
-    sub->palette2 = sub->palette = LoadObjPalette(def->unk_00, 32);
+    sub->tiles = AllocObjTiles(def->tileCount * 32, 0);
+    sub->palette2 = sub->palette = LoadObjPalette(def->palette, 32);
     sub->unk_28 = work->actor.x;
     sub->unk_2C = work->actor.y;
     sub->unk_30 = work->actor.z;

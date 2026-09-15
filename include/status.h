@@ -185,16 +185,16 @@ typedef struct BoogieWork {
 } BoogieWork;
 
 typedef struct StatusObjDef {
-    void* unk_00;
-    u16 unk_04;
+    void* sprites;
+    u16 spriteCount;
     u16 unk_06;
 } StatusObjDef;
 
 typedef struct StatusAnimDef {
-    u32 unk_00;
-    u32 unk_04;
-    void* unk_08;
-    u16 unk_0C;
+    u32 anims;
+    u32 gfxTable;
+    void* tiles;
+    u16 animId;
     u16 unk_0E;
 } StatusAnimDef;
 

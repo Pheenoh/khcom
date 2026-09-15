@@ -3527,7 +3527,7 @@ void func_080E5CD4(UnkStruct_080E590C* p) {
 }
 
 void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
-    AnimDef* q = p->unk_00->unk_00;
+    AnimDef* q = p->unk_00->animDef;
 
     switch (p->unk_1C >> 6) {
     case 0:
@@ -3800,7 +3800,7 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     gUnk_02034F40++;
     gUnk_02034F41 += d->unk_08;
     p->tiles = AllocObjTiles(d->unk_08 * 32, 0);
-    p->palette = LoadObjPalette(d->unk_04, 32);
+    p->palette = LoadObjPalette(d->palette, 32);
     p->gfx = 0;
     AnimInit((AnimState*)&p->anim, 0, 0);
     TaskPoolInit((TaskPool*)&p->unk_E4, 2);
@@ -4592,7 +4592,7 @@ s32 func_080E7D80(void* a) {
     s32 i;
 
     for (i = 0; i < gUnk_02034F78; i++) {
-        if (gUnk_0203C7B8[i].unk_14->unk_00 == a) {
+        if (gUnk_0203C7B8[i].unk_14->palette == a) {
             return 0;
         }
     }
@@ -4607,7 +4607,7 @@ s32 func_080E7DB8(u8 flag, void* a) {
     }
 
     for (i = 0; i < gUnk_02034F78; i++) {
-        if (gUnk_0203C7B8[i].unk_14->unk_04 == a) {
+        if (gUnk_0203C7B8[i].unk_14->tiles == a) {
             return 0;
         }
     }
@@ -4654,7 +4654,7 @@ void func_080E7E3C(void) {
 
             gUnk_0203C7B8[*n].unk_14 = q;
             gUnk_0203C7B8[*n].unk_04 = w;
-            gUnk_02034F7A += (size = q->unk_08) / 32;
+            gUnk_02034F7A += (size = q->tilesSize) / 32;
             gUnk_02034F79++;
             (*n)++;
         }
@@ -4677,7 +4677,7 @@ void func_080E7E3C(void) {
 
         gUnk_0203C7B8[gUnk_02034F78].unk_14 = q;
         gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
-        gUnk_02034F7A += q->unk_08 >> 5;
+        gUnk_02034F7A += q->tilesSize >> 5;
         gUnk_02034F79++;
         gUnk_02034F78++;
         p = func_080E67D4(w.unk_00, w.x + w.y);
@@ -4693,7 +4693,7 @@ void func_080E7FCC(void) {
         gUnk_0203C7B8[gUnk_02034F78].unk_00 = 0;
         gUnk_0203C7B8[gUnk_02034F78].unk_14 = &gUnk_0984C1CC;
         gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
-        gUnk_02034F7A += gUnk_0984C1CC.unk_08 >> 5;
+        gUnk_02034F7A += gUnk_0984C1CC.tilesSize >> 5;
         gUnk_02034F79++;
         gUnk_02034F78++;
     }
@@ -4707,7 +4707,7 @@ void func_080E8058(void) {
         gUnk_0203C7B8[gUnk_02034F78].unk_00 = 0;
         gUnk_0203C7B8[gUnk_02034F78].unk_14 = &gUnk_0984C204;
         gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
-        gUnk_02034F7A += gUnk_0984C204.unk_08 >> 5;
+        gUnk_02034F7A += gUnk_0984C204.tilesSize >> 5;
         gUnk_02034F79++;
         gUnk_02034F78++;
     }
@@ -4749,11 +4749,11 @@ void func_080E80E0(void) {
             break;
         }
 
-        if (gUnk_02034F7A + t->unk_08 / 32 > 0x200) {
+        if (gUnk_02034F7A + t->tilesSize / 32 > 0x200) {
             return;
         }
 
-        f = (u8)func_080E7D80(t->unk_00);
+        f = (u8)func_080E7D80(t->palette);
 
         if (f != 0 && gUnk_02034F79 > 5) {
             return;
@@ -4766,7 +4766,7 @@ void func_080E80E0(void) {
         gUnk_0203C7B8[gUnk_02034F78].unk_00 = 0;
         gUnk_0203C7B8[gUnk_02034F78].unk_14 = t;
         gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
-        gUnk_02034F7A += t->unk_08 >> 5;
+        gUnk_02034F7A += t->tilesSize >> 5;
         gUnk_02034F78++;
 
         if (f != 0) {
@@ -4781,16 +4781,16 @@ void func_080E826C(void) {
     for (i = gUnk_02034F78; i < 16; i++) {
         UnkStruct_080DFF1C w;
         UnkStruct_080E7D80* e = &gUnk_09856FB4[func_080E6634(i)];
-        u8 f = func_080E7DB8(e->unk_14, e->unk_04);
+        u8 f = func_080E7DB8(e->unk_14, e->tiles);
         u8 g;
 
         if (f != 0) {
-            if ((e->unk_08 >> 5) + gUnk_02034F7A > 512) {
+            if ((e->tilesSize >> 5) + gUnk_02034F7A > 512) {
                 continue;
             }
         }
 
-        g = func_080E7D80(e->unk_00);
+        g = func_080E7D80(e->palette);
 
         if (g != 0) {
             if (gUnk_02034F79 > 5) {
@@ -4808,7 +4808,7 @@ void func_080E826C(void) {
         gUnk_02034F78++;
 
         if (f != 0) {
-            gUnk_02034F7A += e->unk_08 >> 5;
+            gUnk_02034F7A += e->tilesSize >> 5;
         }
 
         if (g != 0) {
@@ -5134,12 +5134,12 @@ void func_080E8AE8(void) {
 }
 
 void func_080E8B1C(UnkStruct_080E8B1C* p, UnkStruct_080E7D80* q) {
-    p->unk_00 = q->unk_04;
-    p->unk_04 = q->unk_08;
+    p->unk_00 = q->tiles;
+    p->unk_04 = q->tilesSize;
     p->unk_08 += q->unk_0A << 5;
     p->unk_10 = 0;
-    p->unk_14 = q->unk_00;
-    p->unk_18 = q->unk_00;
+    p->unk_14 = q->palette;
+    p->unk_18 = q->palette;
 }
 
 void func_080E8B40(UnkStruct_080E8B1C* p) {
@@ -11557,9 +11557,9 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = LoadObjTiles(d->unk_04, d->unk_08);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
@@ -11653,13 +11653,13 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11745,13 +11745,13 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11849,13 +11849,13 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11939,9 +11939,9 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
 
     if (w->unk_000->unk_00 & 2) {
         AnimStart(&w->anim, 1, 1);
@@ -11950,7 +11950,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->gfx = AnimGetGfx(&w->anim);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12032,9 +12032,9 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
 
     if (w->unk_000->unk_00 & 2) {
         AnimStart(&w->anim, 2, 1);
@@ -12043,7 +12043,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->gfx = AnimGetGfx(&w->anim);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12139,9 +12139,9 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
 
     if (w->unk_000->unk_00 & 4) {
         AnimStart(&w->anim, 1, 1);
@@ -12150,7 +12150,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->gfx = AnimGetGfx(&w->anim);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12245,12 +12245,12 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = func_080F3050;
@@ -12338,9 +12338,9 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = LoadObjTiles(d->unk_04, d->unk_08);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
@@ -12438,9 +12438,9 @@ void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = LoadObjTiles(d->unk_04, d->unk_08);
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
+    w->palette = LoadObjPalette(d->palette, 32);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
@@ -12500,10 +12500,10 @@ void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = LoadObjTiles(d->unk_04, d->unk_08);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
@@ -12625,9 +12625,9 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00 = arg->unk_04;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(0x320, &gUnk_09858238[0x74]);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
 
     if (w->unk_000->unk_00 & 2) {
         AnimStart(a, 1, 1);
@@ -12766,13 +12766,13 @@ void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     e->unk_00.x += d->unk_18 << 8;
     e->unk_00.y += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    w->palette = LoadObjPalette(d->unk_00, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
-    SetObjTileSource(w->tiles, d->unk_04);
+    SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = 1;
@@ -12866,9 +12866,9 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
         w->unk_0C4 = func_080F41A4;
     }
 
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->palette = LoadObjPalette(d->palette, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 4, 24, 24);
@@ -12955,10 +12955,10 @@ void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_1A = d->unk_1E;
     e->unk_30 = 2;
     w->unk_0C4 = func_080F445C;
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
+    w->palette = LoadObjPalette(d->palette, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     a = &w->anim;
-    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
     ColliderInit(&w->unk_044, 4, 16, 24);
@@ -13063,9 +13063,9 @@ void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_1A = d->unk_1E;
     e->unk_30 = 3;
     w->unk_0C4 = func_080F46FC;
-    w->palette = LoadObjPalette(d->unk_00, 32);
-    w->tiles = AllocObjTiles(d->unk_08, d->unk_04);
-    AnimInit(&w->anim, d->unk_10, d->unk_0C);
+    w->palette = LoadObjPalette(d->palette, 32);
+    w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
+    AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->unk_044, 4, 24, 24);

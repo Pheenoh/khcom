@@ -21,16 +21,16 @@ typedef struct HumSub {
 } HumSub;
 
 typedef struct HumDef {
-    u16 unk_00;
+    u16 tileCount;
     u16 unk_02;
-    void* unk_04;
+    void* palette;
     u32 unk_08;
     EmyKind unk_0C;
 } HumDef;
 
 typedef struct HumSubDef {
-    void* unk_00;
-    u16 unk_04;
+    void* palette;
+    u16 tileCount;
     u16 unk_06;
 } HumSubDef;
 

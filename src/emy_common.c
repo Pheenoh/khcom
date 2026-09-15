@@ -20,7 +20,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     t = gUnk_09EDA4EC[actor->unk_000];
     work->unk_15C = def;
     work->tiles = AllocObjTiles(t * 32, 0);
-    work->palette = LoadObjPalette(def->unk_00, 32);
+    work->palette = LoadObjPalette(def->palette, 32);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_150 = 0;
     work->unk_14C = 11;

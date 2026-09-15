@@ -627,9 +627,9 @@ void task_bos_boogie_saku_3(BoogieSakuWork* work) {
 }
 
 void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg) {
-    LoadBgTiles(0, arg->unk_00, arg->unk_04);
-    LoadBgPalette(0, arg->unk_08, arg->unk_0C);
-    SetBgMapBlocks(0, &arg->unk_10, 2, 2);
+    LoadBgTiles(0, arg->tiles, arg->tilesSize);
+    LoadBgPalette(0, arg->palette, arg->paletteSize);
+    SetBgMapBlocks(0, &arg->map, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0xF800;
@@ -1825,9 +1825,9 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg) {
     SetupBg(1, 0, 0x18, 0);
     SetBgPriority(1, 3);
     SetBgPriority(0, 2);
-    LoadBgTiles(1, arg->unk_00, arg->unk_04);
-    LoadBgPalette(1, arg->unk_08, arg->unk_0C);
-    SetBgMapBlocks(1, arg->unk_10, 2, 2);
+    LoadBgTiles(1, arg->tiles, arg->tilesSize);
+    LoadBgPalette(1, arg->palette, arg->paletteSize);
+    SetBgMapBlocks(1, arg->map, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x10000;

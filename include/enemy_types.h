@@ -7,7 +7,7 @@
 #include "battle_actor.h"
 
 typedef struct EmyDef {
-    void* unk_00;
+    void* palette;
     AnimDef* unk_04;
     s32 unk_08;
     u16 unk_0C;

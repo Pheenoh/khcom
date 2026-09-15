@@ -128,8 +128,8 @@ typedef struct UnkStruct_09EF8370 {
 } UnkStruct_09EF8370;
 
 typedef struct UnkStruct_0984BC9C {
-    AnimDef* unk_00;
-    void* unk_04;
+    AnimDef* animDef;
+    void* palette;
     u16 unk_08;
     u16 unk_0A;
     u16 unk_0C;
@@ -151,13 +151,13 @@ typedef struct UnkStruct_080E6034 {
 } UnkStruct_080E6034;
 
 typedef struct UnkStruct_080E7D80 {
-    void* unk_00;
-    void* unk_04;
-    u16 unk_08;
+    void* palette;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0A;
     u8 unk_0B;
-    void* unk_0C;
-    void* unk_10;
+    void* gfxTable;
+    void* anims;
     u8 unk_14;
     u8 unk_15;
     s16 unk_16;

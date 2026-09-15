@@ -1098,8 +1098,8 @@ void func_080D8F14(BoogieWork* work) {
 void func_080D900C(BoogieWork* work, s32 a, u16 b) {
     if (work->unk_15C != a) {
         work->unk_15C = a;
-        AnimChangeWithTables(&work->anim, gUnk_096FDE54[a].unk_0C, b, gUnk_096FDE54[a].unk_00, gUnk_096FDE54[a].unk_04);
-        SetObjTileSource(work->tiles, gUnk_096FDE54[a].unk_08);
+        AnimChangeWithTables(&work->anim, gUnk_096FDE54[a].animId, b, gUnk_096FDE54[a].anims, gUnk_096FDE54[a].gfxTable);
+        SetObjTileSource(work->tiles, gUnk_096FDE54[a].tiles);
     }
 }
 
@@ -1158,7 +1158,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     sz = 0;
 
     for (i = 0; i <= 5; i++) {
-        t = GetMaxSpriteTileBytes(gUnk_096FDEE4[i].unk_00, gUnk_096FDEE4[i].unk_04);
+        t = GetMaxSpriteTileBytes(gUnk_096FDEE4[i].sprites, gUnk_096FDEE4[i].spriteCount);
         if (sz < t) {
             sz = t;
         }

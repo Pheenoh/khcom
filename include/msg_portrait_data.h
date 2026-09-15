@@ -4,10 +4,10 @@
 #include "anim.h"
 
 typedef struct MsgFaceAnim {
-    void* unk_00;
-    void* unk_04;
-    void** unk_08;
-    AnimHeader** unk_0C;
+    void* tiles;
+    void* palette;
+    void** gfxTable;
+    AnimHeader** anims;
     u8 unk_10;
     u8 unk_11;
     u8 unk_12[2];

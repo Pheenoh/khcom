@@ -8026,7 +8026,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
 #ifdef VERSION_EU
         u = gUnk_09EE3CA0[work->unk_2C];
         if (u != NULL) {
-            if (u->unk_04 != NULL) {
+            if (u->tiles2 != NULL) {
                 if ((u->unk_2D & 1) != 0) {
                     SetupBg(0, 3, 31, 14);
                     SetupBg(1, 0, 29, 0);
@@ -8041,17 +8041,17 @@ void event_seq_0(EventSeqWork* work, u8* a) {
             }
             if (u->unk_24 != 0) {
                 if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
-                    eu_080059D4(2, u->unk_00);
+                    eu_080059D4(2, u->tiles);
                 } else {
-                    LoadBgTiles(2, u->unk_00, u->unk_18);
+                    LoadBgTiles(2, u->tiles, u->tilesSize);
                 }
-                LoadBgPalette(2, u->unk_08, u->unk_1C);
+                LoadBgPalette(2, u->palette, u->paletteSize);
                 SetBgColorMode(2, 128);
                 SetBgSize(2, 0x8000);
                 if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
-                    eu_080059F4(2, (void*)*u->unk_0C);
+                    eu_080059F4(2, (void*)*u->maps);
                 } else {
-                    LoadBgMap(2, (void*)*u->unk_0C, 0x1000);
+                    LoadBgMap(2, (void*)*u->maps, 0x1000);
                 }
                 SetBgAffine(2, 0, 256, 256, 0, 0);
             } else {
@@ -8076,18 +8076,18 @@ u8 eu_0806C734(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
         if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
-            eu_080059D4(3, u->unk_00);
+            eu_080059D4(3, u->tiles);
         } else {
-            LoadBgTiles(3, u->unk_00, u->unk_18);
+            LoadBgTiles(3, u->tiles, u->tilesSize);
         }
-        LoadBgPalette(3, u->unk_08, u->unk_1C);
-        if (u->unk_0C != NULL) {
+        LoadBgPalette(3, u->palette, u->paletteSize);
+        if (u->maps != NULL) {
             if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
                 work->unk_3A = 1;
-                eu_08005A1C(3, u->unk_0C, u->unk_1E, u->unk_1F);
+                eu_08005A1C(3, u->maps, u->mapWidth, u->mapHeight);
             } else {
                 work->unk_3A = 0;
-                SetBgMapBlocks(3, u->unk_0C, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(3, u->maps, u->mapWidth, u->mapHeight);
             }
             RedrawBgMapAt(3, 0, 0);
         }
@@ -8097,13 +8097,13 @@ u8 eu_0806C734(EventSeqWork* work) {
 u8 eu_0806C7C8(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
-        if (u->unk_10 != NULL) {
+        if (u->maps2 != NULL) {
             if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
                 work->unk_3B = 1;
-                eu_08005A1C(2, u->unk_10, u->unk_1E, u->unk_1F);
+                eu_08005A1C(2, u->maps2, u->mapWidth, u->mapHeight);
             } else {
                 work->unk_3B = 0;
-                SetBgMapBlocks(2, u->unk_10, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(2, u->maps2, u->mapWidth, u->mapHeight);
             }
             RedrawBgMapAt(2, 0, 0);
             gUnk_02039DC8->unk_78 = 1;
@@ -8116,16 +8116,16 @@ u8 eu_0806C7C8(EventSeqWork* work) {
 u8 eu_0806C848(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
-        if (u->unk_04 != NULL) {
+        if (u->tiles2 != NULL) {
             if ((u->unk_2D & 1) != 0) {
-                LoadBgTiles(2, u->unk_04, u->unk_1A);
+                LoadBgTiles(2, u->tiles2, u->tilesSize2);
             } else if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
-                eu_080059D4(1, u->unk_04);
+                eu_080059D4(1, u->tiles2);
             } else {
-                LoadBgTiles(1, u->unk_04, u->unk_1A);
+                LoadBgTiles(1, u->tiles2, u->tilesSize2);
             }
         }
-        if (u->unk_14 != NULL) {
+        if (u->maps3 != NULL) {
             if ((u->unk_2D & 2) != 0) {
                 gBldCnt = 0x1844;
                 (*(volatile u16*)&gBldAlpha) = 0x050E;
@@ -8138,10 +8138,10 @@ u8 eu_0806C848(EventSeqWork* work) {
             }
             if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
                 work->unk_3C = 1;
-                eu_08005A1C(1, u->unk_14, u->unk_1E, u->unk_1F);
+                eu_08005A1C(1, u->maps3, u->mapWidth, u->mapHeight);
             } else {
                 work->unk_3C = 0;
-                SetBgMapBlocks(1, u->unk_14, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(1, u->maps3, u->mapWidth, u->mapHeight);
             }
             RedrawBgMapAt(1, 0, 0);
             gUnk_02039DC8->unk_79 = 1;
@@ -8201,7 +8201,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 #ifndef VERSION_EU
 
     if (u != NULL) {
-        if (u->unk_04 != NULL) {
+        if (u->tiles2 != NULL) {
             if ((u->unk_2D & 1) != 0) {
                 SetupBg(0, 3, 31, 14);
                 SetupBg(1, 0, 29, 0);
@@ -8216,38 +8216,38 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
         }
 
         if (u->unk_24 != 0) {
-            LoadBgTiles(2, u->unk_00, u->unk_18);
-            LoadBgPalette(2, u->unk_08, u->unk_1C);
+            LoadBgTiles(2, u->tiles, u->tilesSize);
+            LoadBgPalette(2, u->palette, u->paletteSize);
             SetBgColorMode(2, 128);
             SetBgSize(2, 0x8000);
-            LoadBgMap(2, (void*)*u->unk_0C, 0x1000);
+            LoadBgMap(2, (void*)*u->maps, 0x1000);
             SetBgAffine(2, 0, 256, 256, 0, 0);
         } else {
-            LoadBgTiles(3, u->unk_00, u->unk_18);
-            LoadBgPalette(3, u->unk_08, u->unk_1C);
+            LoadBgTiles(3, u->tiles, u->tilesSize);
+            LoadBgPalette(3, u->palette, u->paletteSize);
 
-            if (u->unk_04 != NULL) {
+            if (u->tiles2 != NULL) {
                 if ((u->unk_2D & 1) != 0) {
-                    LoadBgTiles(2, u->unk_04, u->unk_1A);
+                    LoadBgTiles(2, u->tiles2, u->tilesSize2);
                 } else {
-                    LoadBgTiles(1, u->unk_04, u->unk_1A);
+                    LoadBgTiles(1, u->tiles2, u->tilesSize2);
                 }
             }
 
-            if (u->unk_0C != NULL) {
-                SetBgMapBlocks(3, u->unk_0C, u->unk_1E, u->unk_1F);
+            if (u->maps != NULL) {
+                SetBgMapBlocks(3, u->maps, u->mapWidth, u->mapHeight);
                 RedrawBgMapAt(3, 0, 0);
             }
 
-            if (u->unk_10 != NULL) {
-                SetBgMapBlocks(2, u->unk_10, u->unk_1E, u->unk_1F);
+            if (u->maps2 != NULL) {
+                SetBgMapBlocks(2, u->maps2, u->mapWidth, u->mapHeight);
                 RedrawBgMapAt(2, 0, 0);
                 gUnk_02039DC8->unk_78 = 1;
             } else {
                 DisableBg(2);
             }
 
-            if (u->unk_14 != NULL) {
+            if (u->maps3 != NULL) {
                 if ((u->unk_2D & 2) != 0) {
                     gBldCnt = 0x1844;
                     (*(volatile u16*)&gBldAlpha) = 0x050E;
@@ -8259,7 +8259,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
                     gUnk_02039DC8->unk_70 = 0;
                 }
 
-                SetBgMapBlocks(1, u->unk_14, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(1, u->maps3, u->mapWidth, u->mapHeight);
                 RedrawBgMapAt(1, 0, 0);
                 gUnk_02039DC8->unk_79 = 1;
             } else {
@@ -8343,7 +8343,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 #endif
 
     if (u != NULL) {
-        if (u->unk_28 != 0) {
+        if (u->mapObjects != 0) {
             TaskCreate(&work->unk_00, &gTaskDescEvMapObj, &work->unk_2C);
         }
 
@@ -11850,15 +11850,15 @@ void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
     }
 
     if (p->unk_38->portraitId != 62) {
-        SetObjTileSource(p->tiles, anim[p->unk_38->expressionId].unk_00);
-        UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].unk_04);
-        AnimInit(p->anim, anim[p->unk_38->expressionId].unk_0C, anim[p->unk_38->expressionId].unk_08);
+        SetObjTileSource(p->tiles, anim[p->unk_38->expressionId].tiles);
+        UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].palette);
+        AnimInit(p->anim, anim[p->unk_38->expressionId].anims, anim[p->unk_38->expressionId].gfxTable);
         AnimStart(p->anim, 0, anim[p->unk_38->expressionId].unk_11);
         p->gfx = AnimGetGfx(p->anim);
     } else {
-        SetObjTileSource(p->tiles, anim->unk_00);
-        UpdateAllocatedObjPalette(p->palette, anim->unk_04);
-        AnimInit(p->anim, anim->unk_0C, anim->unk_08);
+        SetObjTileSource(p->tiles, anim->tiles);
+        UpdateAllocatedObjPalette(p->palette, anim->palette);
+        AnimInit(p->anim, anim->anims, anim->gfxTable);
         AnimStart(p->anim, 0, anim->unk_11);
         p->gfx = AnimGetGfx(p->anim);
     }
@@ -11886,7 +11886,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
             if (p->unk_38->unk_03 == 1) {
                 UpdateAllocatedObjPalette(p->palette, &gUnk_096148D8[0x100]);
             } else {
-                UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].unk_04);
+                UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].palette);
             }
         }
 
@@ -12002,9 +12002,9 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     }
 
     if (t != NULL) {
-        SetObjTileSource(p->tiles, t[p->unk_38->expressionId].unk_00);
-        UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].unk_04);
-        AnimInit(p->anim, t[p->unk_38->expressionId].unk_0C, t[p->unk_38->expressionId].unk_08);
+        SetObjTileSource(p->tiles, t[p->unk_38->expressionId].tiles);
+        UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].palette);
+        AnimInit(p->anim, t[p->unk_38->expressionId].anims, t[p->unk_38->expressionId].gfxTable);
         AnimStart(p->anim, 0, t[p->unk_38->expressionId].unk_11);
         p->gfx = AnimGetGfx(p->anim);
         p->unk_31 = 0;
@@ -12043,9 +12043,9 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
         }
 
         if (t != NULL) {
-            SetObjTileSource(p->tiles, t[p->unk_38->expressionId].unk_00);
-            UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].unk_04);
-            AnimInit(p->anim, t[p->unk_38->expressionId].unk_0C, t[p->unk_38->expressionId].unk_08);
+            SetObjTileSource(p->tiles, t[p->unk_38->expressionId].tiles);
+            UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].palette);
+            AnimInit(p->anim, t[p->unk_38->expressionId].anims, t[p->unk_38->expressionId].gfxTable);
             AnimStart(p->anim, 0, t[p->unk_38->expressionId].unk_11);
             p->gfx = AnimGetGfx(p->anim);
             p->unk_31 = 0;

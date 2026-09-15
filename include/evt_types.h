@@ -10,9 +10,9 @@ typedef struct EvtObjRes {
 } EvtObjRes;
 
 typedef struct EvtAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* gfxTable;
+    void* anims;
+    void* tiles;
 } EvtAnimDef;
 
 typedef struct EvtObjAnim {

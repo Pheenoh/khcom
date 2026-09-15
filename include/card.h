@@ -1870,17 +1870,17 @@ extern s32 gUnk_09033CF0[];
 extern s32 gUnk_09033CD0[];
 
 typedef struct UnkStruct_08094CE4_A {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     u8 unk_08[0x10];
-    u16 unk_18;
+    u16 tilesSize;
 } UnkStruct_08094CE4_A;
 
 typedef struct UnkStruct_08094CE4_B {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     u8 unk_08[0x0C];
-    u16 unk_14;
+    u16 tilesSize;
 } UnkStruct_08094CE4_B;
 
 extern u8 gUnk_0940F938[];

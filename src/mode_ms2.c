@@ -536,9 +536,9 @@ void func_08107280(void) {
 
             if (k < b) {
                 idx = gUnk_02035E28[a + k].cardIndex;
-                gUnk_02035EA0[i][j] = LoadObjPalette(gUnk_09EE4C80[idx].unk_10, 32);
-                gUnk_02035ED0[i][j] = LoadObjTiles(gUnk_09EE4C80[idx].unk_0C, gUnk_09EE4C80[idx].unk_1C);
-                gUnk_02035F00[i][j] = *gUnk_09EE4C80[idx].unk_14;
+                gUnk_02035EA0[i][j] = LoadObjPalette(gUnk_09EE4C80[idx].palette2, 32);
+                gUnk_02035ED0[i][j] = LoadObjTiles(gUnk_09EE4C80[idx].tiles2, gUnk_09EE4C80[idx].tilesSize2);
+                gUnk_02035F00[i][j] = *gUnk_09EE4C80[idx].sprites2;
                 gUnk_02035F30[i][j] = gUnk_02035E28[a + k].category == 3;
             } else {
                 gUnk_02035EA0[i][j] = 0;
@@ -591,12 +591,12 @@ void func_081073F0(void) {
     if (p->cardType <= 26 && func_08107220(gUnk_02035E2E) > 0) {
         idx = p->cardIndex;
         k = gUnk_099937A0[p->category];
-        gUnk_02035F3C = LoadObjPalette(gUnk_09EE4C80[idx].unk_04, gUnk_09EE4C80[idx].unk_1A);
-        gUnk_02035F40 = LoadObjTiles(gUnk_09EE4C80[idx].unk_00, gUnk_09EE4C80[idx].unk_18);
-        gUnk_02035F44 = *gUnk_09EE4C80[idx].unk_08;
-        gUnk_02035F48 = LoadObjPalette(gUnk_09EE4BF4[k].unk_04, gUnk_09EE4BF4[k].unk_16);
-        gUnk_02035F4C = LoadObjTiles(gUnk_09EE4BF4[k].unk_00, gUnk_09EE4BF4[k].unk_14);
-        gUnk_02035F50 = *gUnk_09EE4BF4[k].unk_08;
+        gUnk_02035F3C = LoadObjPalette(gUnk_09EE4C80[idx].palette, gUnk_09EE4C80[idx].paletteSize);
+        gUnk_02035F40 = LoadObjTiles(gUnk_09EE4C80[idx].tiles, gUnk_09EE4C80[idx].tilesSize);
+        gUnk_02035F44 = *gUnk_09EE4C80[idx].sprites;
+        gUnk_02035F48 = LoadObjPalette(gUnk_09EE4BF4[k].palette, gUnk_09EE4BF4[k].paletteSize);
+        gUnk_02035F4C = LoadObjTiles(gUnk_09EE4BF4[k].tiles, gUnk_09EE4BF4[k].tilesSize);
+        gUnk_02035F50 = *gUnk_09EE4BF4[k].sprites;
         gUnk_02035F90 = p->category == 3;
         gUnk_02035E74 = LoadObjPalette(gUnk_09A3D2FC + p->category * 32, 32);
         q = &gUnk_02035F98;

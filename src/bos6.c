@@ -926,9 +926,9 @@ void func_0810B51C(u8* p) {
 void task_bos_pc_fld_0(PcFldWork* work, BattleBackgroundDef* arg) {
     void* p;
 
-    LoadBgTiles(0, arg->unk_00, arg->unk_04);
-    LoadBgPalette(0, arg->unk_08, arg->unk_0C);
-    SetBgMapBlocks(0, &arg->unk_10, 2, 3);
+    LoadBgTiles(0, arg->tiles, arg->tilesSize);
+    LoadBgPalette(0, arg->palette, arg->paletteSize);
+    SetBgMapBlocks(0, &arg->map, 2, 3);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x11400;

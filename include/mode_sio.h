@@ -57,10 +57,10 @@
 #include "m4a.h"
 #include "poo_api.h"
 typedef struct SioAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
+    void* gfxTable;
+    void* anims;
+    void* tiles;
+    u8 animId;
 } SioAnimDef;
 
 #ifdef VERSION_JP
