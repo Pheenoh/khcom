@@ -1,0 +1,111 @@
+# JP asset_gfx_gap_158 host mega + palette leaves (32B each).
+# Policy B: PNG/gbapal/bins local/gitignored only. Parent mega stays slice until fuller pack RE.
+schema_version: 1
+id: asset_gfx_gap_158
+version: jp
+class: pack
+unit: asset_gfx_gap_158
+rom:
+  start: 0x096B6B48
+  end: 0x0980034C
+  size: 1349636
+inventory: config/asset_inventory_jp_gfx_gap_158.yaml
+path_mode: slice
+extract_path: assets/jp/096B6B48-0980034C.bin
+build_path: build/jp/assets/asset_gfx_gap_158.bin
+source_root: assets/jp/src/gfx/asset_gfx_gap_158
+asm_slice: asm/jp/asset_gfx_gap_158.s
+asm_built: build/jp/asm/asset_gfx_gap_158.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_gap_158_pack.py
+  layout: tools/gfx/asset_gfx_gap_158_layout.py
+sha256_slice: 1617c8eb98110ff85c1ebaf6513c4c16370038469538478d114bc244342643cd
+status: leaf_palette_scaffold
+note: >
+  Dual-path scaffold for 8 high-conf title/mode_title LoadObjPalette 32B leaves.
+  Default path_mode is slice so check.sh stays on extract .incbin. Built mode
+  (configure --asset-gfx-gap-158-mode=built) patches gbagfx PNG->gbapal into a
+  mega copy; does not affect MovieOpen asset_gfx. Deferred: gUnk_0984A778 /
+  gUnk_0984A7B8 dual-bank arrays; gUnk_0984A618 LoadBgPalette 0xA0.
+children:
+  - id: gUnk_0984A6B8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A6B8
+    rom: { start: 0x097FF38C, end: 0x097FF3AC, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6B8.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6B8.gbapal
+    sha1: 9194c1ed5dc3a47091f61fc656a57ddd762120f8
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A6D8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A6D8
+    rom: { start: 0x097FF3AC, end: 0x097FF3CC, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6D8.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6D8.gbapal
+    sha1: acc3c311fd5e8d8462df57cb2b9d62de3e97b6b1
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A6F8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A6F8
+    rom: { start: 0x097FF3CC, end: 0x097FF3EC, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6F8.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A6F8.gbapal
+    sha1: fb247e9bfdd46ddfa4e05f44b70301dd704e51c2
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A718
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A718
+    rom: { start: 0x097FF3EC, end: 0x097FF40C, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A718.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A718.gbapal
+    sha1: 470372cfb34583c77e5024c845a2b4d582c3cbe9
+    consumer: LoadObjPalette(..., 0x20) mode_title/title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A738
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A738
+    rom: { start: 0x097FF40C, end: 0x097FF42C, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A738.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A738.gbapal
+    sha1: 4758be661b3c7eed43f3d251132d9c7b40906710
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A7D8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A7D8
+    rom: { start: 0x097FF4AC, end: 0x097FF4CC, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A7D8.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A7D8.gbapal
+    sha1: 080deda1b378766a85e27bbe2229f2efee36edf1
+    consumer: LoadObjPalette(..., 0x20) title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984A7F8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984A7F8
+    rom: { start: 0x097FF4CC, end: 0x097FF4EC, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A7F8.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984A7F8.gbapal
+    sha1: 8326f05e915f60c03ae463afe7b063a3c4090412
+    consumer: LoadObjPalette(..., 0x20) title
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_0984AA18
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_0984AA18
+    rom: { start: 0x097FF6EC, end: 0x097FF70C, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984AA18.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_158/gUnk_0984AA18.gbapal
+    sha1: 0602dc3b4dbc2969eb41f63d82d808c7f8967395
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    path_mode_built: gbagfx_png_to_gbapal

@@ -1,0 +1,104 @@
+# JP inventory for asset_gfx_gap_158 (Policy B). Leaf palettes identical to US.
+version: jp
+schema_version: 1
+mvp_class: asset_gfx_gap_158
+policy: B
+baserom_code: B8CJ
+pack:
+  id: asset_gfx_gap_158
+  class: pack
+  unit: asset_gfx_gap_158
+  asm: asm/jp/asset_gfx_gap_158.s
+  rom: { start: 0x096B6B48, end: 0x0980034C, size: 1349636 }
+  extract_path: assets/jp/096B6B48-0980034C.bin
+  sha256: 1617c8eb98110ff85c1ebaf6513c4c16370038469538478d114bc244342643cd
+  path_mode_default: slice
+leaves:
+  - id: gUnk_0984A6B8
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF38C
+    end: 0x097FF3AC
+    size: 32
+    sha1: 9194c1ed5dc3a47091f61fc656a57ddd762120f8
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    confidence: high
+  - id: gUnk_0984A6D8
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF3AC
+    end: 0x097FF3CC
+    size: 32
+    sha1: acc3c311fd5e8d8462df57cb2b9d62de3e97b6b1
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    confidence: high
+  - id: gUnk_0984A6F8
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF3CC
+    end: 0x097FF3EC
+    size: 32
+    sha1: fb247e9bfdd46ddfa4e05f44b70301dd704e51c2
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    confidence: high
+  - id: gUnk_0984A718
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF3EC
+    end: 0x097FF40C
+    size: 32
+    sha1: 470372cfb34583c77e5024c845a2b4d582c3cbe9
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title/title
+    confidence: high
+  - id: gUnk_0984A738
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF40C
+    end: 0x097FF42C
+    size: 32
+    sha1: 4758be661b3c7eed43f3d251132d9c7b40906710
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    confidence: high
+  - id: gUnk_0984A7D8
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF4AC
+    end: 0x097FF4CC
+    size: 32
+    sha1: 080deda1b378766a85e27bbe2229f2efee36edf1
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) title
+    confidence: high
+  - id: gUnk_0984A7F8
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF4CC
+    end: 0x097FF4EC
+    size: 32
+    sha1: 8326f05e915f60c03ae463afe7b063a3c4090412
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) title
+    confidence: high
+  - id: gUnk_0984AA18
+    class: leaf_gfx
+    format: palette
+    start: 0x097FF6EC
+    end: 0x097FF70C
+    size: 32
+    sha1: 0602dc3b4dbc2969eb41f63d82d808c7f8967395
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_title
+    confidence: high
