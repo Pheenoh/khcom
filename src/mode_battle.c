@@ -496,13 +496,13 @@ void mode_battle_0(u32 mode) {
         case 0x9B:
             SetBattleBounds(0x80, 0x170, 0x228, 0x278);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosBoogie, 0);
-            gBtlWork->unk_128 = &func_0801050C;
+            gBtlWork->boundsCallback = &func_0801050C;
             gBtlWork->unk_0B3 = 5;
             break;
         default:
             SetBattleBounds(0x1A4, 0x264, 0x148, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosJf, 0);
-            gBtlWork->unk_128 = &func_080BD4A8;
+            gBtlWork->boundsCallback = &func_080BD4A8;
             gBtlWork->unk_0B3 = 10;
             break;
         }

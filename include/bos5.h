@@ -73,7 +73,7 @@ typedef struct GaEntry {
     void* tiles;
     u16 tilesSize;
     u8 unk_0A[0x12];
-    GaEntryDesc unk_1C[2];
+    GaEntryDesc desc[2];
     GaEntryPos pos[1];
 } GaEntry;
 
@@ -264,7 +264,7 @@ typedef struct MdWork {
     MdSub sub[1];
     u16 unk_178;
     u16 unk_17A;
-    MdGfx unk_17C[2];
+    MdGfx gfx[2];
     MdAnim anim;
     u16 unk_1B4;
     u8 unk_1B6[0x2];

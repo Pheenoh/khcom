@@ -588,39 +588,39 @@ void Tinkerbell_3(EffectWork* w) {
 }
 
 void func_08075E60(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescTinkerbell, h);
+    TaskCreate(&h->tasks, &gTaskDescTinkerbell, h);
 }
 
 void func_08075E74(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescDown, h);
+    TaskCreate(&h->tasks, &gTaskDescDown, h);
 }
 
 void func_08075E88(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescSmoke, h);
+    TaskCreate(&h->tasks, &gTaskDescSmoke, h);
 }
 
 void func_08075E9C(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescExclamation, h);
+    TaskCreate(&h->tasks, &gTaskDescExclamation, h);
 }
 
 void func_08075EB0(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescBalloon, h);
+    TaskCreate(&h->tasks, &gTaskDescBalloon, h);
 }
 
 void func_08075EC4(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescQuestion, h);
+    TaskCreate(&h->tasks, &gTaskDescQuestion, h);
 }
 
 void func_08075ED8(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescGlowNose, h);
+    TaskCreate(&h->tasks, &gTaskDescGlowNose, h);
 }
 
 void func_08075EEC(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescGlowNose2, h);
+    TaskCreate(&h->tasks, &gTaskDescGlowNose2, h);
 }
 
 void func_08075F00(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gTaskDescHanabira, h);
+    TaskCreate(&h->tasks, &gTaskDescHanabira, h);
 }
 
 void EV_SOUND_0(EvSoundWork* w, u8* arg) {
@@ -631,7 +631,7 @@ void EV_SOUND_0(EvSoundWork* w, u8* arg) {
     w->unk_06 = 0;
     w->unk_07 = 0;
     w->unk_08 = 256;
-    w->unk_00 = gUnk_09EE3FB4[w->unk_04]->soundCues;
+    w->soundCues = gUnk_09EE3FB4[w->unk_04]->soundCues;
     gUnk_02039DD0 = EwramAlloc(256);
 
     for (i = 0; i < 64; i++) {
@@ -647,11 +647,11 @@ s32 EV_SOUND_1(EvSoundWork* w) {
     u8 n;
     u8 i;
 
-    if (w->unk_00 == 0) {
+    if (w->soundCues == 0) {
         return 0;
     }
 
-    p = &w->unk_00[w->unk_05];
+    p = &w->soundCues[w->unk_05];
 
     if (gUnk_02039DC8->unk_6C == p->unk_02) {
         if (p->unk_00 != 0xFFFF) {

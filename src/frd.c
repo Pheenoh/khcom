@@ -1628,9 +1628,9 @@ u8 task_frd_pan_1(FrdPanWork* work) {
     if (owner->unk_068 & 0x40000000) {
         return 0;
     }
-    if (gBtlWork->unk_128 != 0) {
+    if (gBtlWork->boundsCallback != 0) {
         ground = body->unk_010;
-        gBtlWork->unk_128(&body->x, &body->y, &body->z, &ground);
+        gBtlWork->boundsCallback(&body->x, &body->y, &body->z, &ground);
         if (ground != body->unk_010) {
             work->unk_164 = body->unk_010 - 0x1000;
             body->unk_010 = ground;

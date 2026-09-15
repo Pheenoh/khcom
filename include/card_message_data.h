@@ -17,7 +17,7 @@ typedef struct CardMessageDef {
     u16 unk_08;
     u8 unk_0A;
     u8 unk_0B;
-    CardMessageText* unk_0C;
+    CardMessageText* text;
     u16 unk_10;
     u16 unk_12;
 } CardMessageDef;

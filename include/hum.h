@@ -213,7 +213,7 @@ typedef struct MahluxiaWork {
     s32 unk_1D4;
     s16 unk_1D8;
     u8 unk_1DA[0x02];
-    RikuSpawn unk_1DC[9];
+    RikuSpawn spawns[9];
     s32 unk_38C;
     TaskPool tasks;
 } MahluxiaWork;
@@ -378,7 +378,7 @@ typedef struct RikuWork {
     u16 unk_1CA;
     s16 unk_1CC;
     u16 unk_1CE;
-    RikuSpawn unk_1D0[9];
+    RikuSpawn spawns[9];
     u16 unk_380;
     u8 unk_382[0x02];
 } RikuWork;

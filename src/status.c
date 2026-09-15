@@ -885,8 +885,8 @@ void task_status_meswindow_3(StatusMeswindowWork* work) {
 
 void task_status_message_0(StatusMessageWork* work, StatusMessageParam* arg) {
     InitTextSlots(work, 100);
-    work->unk_328 = *arg;
-    work->unk_320 = LoadTextSlots(work->unk_328.unk_00, work);
+    work->param = *arg;
+    work->unk_320 = LoadTextSlots(work->param.unk_00, work);
     work->palette = LoadObjPalette(gUnk_0984B1B8, 0x20);
 }
 
@@ -895,7 +895,7 @@ u8 task_status_message_1(StatusMessageWork* work) {
 }
 
 void task_status_message_2(StatusMessageWork* work) {
-    DrawTextSlots(work->unk_328.x, work->unk_328.y, work, work->palette, 3, work->unk_320);
+    DrawTextSlots(work->param.x, work->param.y, work, work->palette, 3, work->unk_320);
 }
 
 void task_status_message_3(StatusMessageWork* work) {
@@ -962,7 +962,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
     count = 0;
 
     for (index = 0; index <= 7; index++) {
-        data = &table.unk_00[index];
+        data = &table.entries[index];
         source = &gGameState.progression.unk_84;
         if (*(const u16*)source & ((const StatusFriendEntry*)data)->unk_00) {
             card = &gCardDefs[((const StatusFriendEntry*)data)->unk_02];

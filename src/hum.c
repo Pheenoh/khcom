@@ -2848,15 +2848,15 @@ void task_hum_mahluxia_0(MahluxiaWork* work) {
     work->sub.unk_34 |= 3;
     work->unk_1D8 = 0;
     func_08019068(gUnk_0813F368, &work->base.anim, 0, 1, work->base.tiles);
-    func_0804FA70(work, &work->unk_1DC[0]);
-    work->unk_1DC[1] = work->unk_1DC[0];
-    work->unk_1DC[2] = work->unk_1DC[0];
-    work->unk_1DC[3] = work->unk_1DC[0];
-    work->unk_1DC[4] = work->unk_1DC[0];
-    work->unk_1DC[5] = work->unk_1DC[0];
-    work->unk_1DC[6] = work->unk_1DC[0];
-    work->unk_1DC[7] = work->unk_1DC[0];
-    work->unk_1DC[8] = work->unk_1DC[0];
+    func_0804FA70(work, &work->spawns[0]);
+    work->spawns[1] = work->spawns[0];
+    work->spawns[2] = work->spawns[0];
+    work->spawns[3] = work->spawns[0];
+    work->spawns[4] = work->spawns[0];
+    work->spawns[5] = work->spawns[0];
+    work->spawns[6] = work->spawns[0];
+    work->spawns[7] = work->spawns[0];
+    work->spawns[8] = work->spawns[0];
     TaskPoolInit(&work->tasks, 22);
     work->base.unk_184 = gUnk_0813F35C;
 }
@@ -3368,32 +3368,32 @@ void task_hum_mahluxia_2(MahluxiaWork* work) {
         case 6:
         case 8:
         case 10:
-            func_0804FAD4(work, &work->unk_1DC[2]);
+            func_0804FAD4(work, &work->spawns[2]);
             break;
         case 1:
         case 3:
         case 7:
-            func_0804FAD4(work, &work->unk_1DC[4]);
+            func_0804FAD4(work, &work->spawns[4]);
             break;
         case 5:
         case 9:
-            func_0804FAD4(work, &work->unk_1DC[6]);
+            func_0804FAD4(work, &work->spawns[6]);
             break;
         case 11:
-            func_0804FAD4(work, &work->unk_1DC[8]);
+            func_0804FAD4(work, &work->spawns[8]);
             break;
         }
         work->unk_1D8++;
     }
-    work->unk_1DC[8] = work->unk_1DC[7];
-    work->unk_1DC[7] = work->unk_1DC[6];
-    work->unk_1DC[6] = work->unk_1DC[5];
-    work->unk_1DC[5] = work->unk_1DC[4];
-    work->unk_1DC[4] = work->unk_1DC[3];
-    work->unk_1DC[3] = work->unk_1DC[2];
-    work->unk_1DC[2] = work->unk_1DC[1];
-    work->unk_1DC[1] = work->unk_1DC[0];
-    func_0804FA70(work, &work->unk_1DC[0]);
+    work->spawns[8] = work->spawns[7];
+    work->spawns[7] = work->spawns[6];
+    work->spawns[6] = work->spawns[5];
+    work->spawns[5] = work->spawns[4];
+    work->spawns[4] = work->spawns[3];
+    work->spawns[3] = work->spawns[2];
+    work->spawns[2] = work->spawns[1];
+    work->spawns[1] = work->spawns[0];
+    func_0804FA70(work, &work->spawns[0]);
     TaskPoolDraw(&work->tasks);
 }
 
@@ -7177,15 +7177,15 @@ void task_hum_riku_0(RikuWork* work) {
     if (gBtlWork->unk_10C != 0xA1) {
         work->base.unk_184 = gUnk_0813FBBC[0];
     }
-    func_08057E2C(work, &work->unk_1D0[0]);
-    work->unk_1D0[1] = work->unk_1D0[0];
-    work->unk_1D0[2] = work->unk_1D0[0];
-    work->unk_1D0[3] = work->unk_1D0[0];
-    work->unk_1D0[4] = work->unk_1D0[0];
-    work->unk_1D0[5] = work->unk_1D0[0];
-    work->unk_1D0[6] = work->unk_1D0[0];
-    work->unk_1D0[7] = work->unk_1D0[0];
-    work->unk_1D0[8] = work->unk_1D0[0];
+    func_08057E2C(work, &work->spawns[0]);
+    work->spawns[1] = work->spawns[0];
+    work->spawns[2] = work->spawns[0];
+    work->spawns[3] = work->spawns[0];
+    work->spawns[4] = work->spawns[0];
+    work->spawns[5] = work->spawns[0];
+    work->spawns[6] = work->spawns[0];
+    work->spawns[7] = work->spawns[0];
+    work->spawns[8] = work->spawns[0];
 }
 
 u8 task_hum_riku_1(RikuWork* work) {
@@ -7903,19 +7903,19 @@ void task_hum_riku_2(RikuWork* work) {
     if ((work->unk_1CA & 4) && (work->sub.unk_34 & 2)) {
         switch (work->unk_1CC % 2) {
         case 0:
-            func_08057E90(work, &work->unk_1D0[2]);
+            func_08057E90(work, &work->spawns[2]);
             break;
         case 1:
-            func_08057E90(work, &work->unk_1D0[4]);
+            func_08057E90(work, &work->spawns[4]);
             break;
         }
         work->unk_1CC++;
     }
-    work->unk_1D0[4] = work->unk_1D0[3];
-    work->unk_1D0[3] = work->unk_1D0[2];
-    work->unk_1D0[2] = work->unk_1D0[1];
-    work->unk_1D0[1] = work->unk_1D0[0];
-    func_08057E2C(work, &work->unk_1D0[0]);
+    work->spawns[4] = work->spawns[3];
+    work->spawns[3] = work->spawns[2];
+    work->spawns[2] = work->spawns[1];
+    work->spawns[1] = work->spawns[0];
+    func_08057E2C(work, &work->spawns[0]);
 }
 
 void task_hum_riku_3(HumWork* work) {
@@ -8144,8 +8144,8 @@ void MakeSaveSystem(SaveFileLarge* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(&save->unk_098);
-    func_080A324C(&save->unk_2EC);
+    func_080E92B8(&save->shared);
+    func_080A324C(&save->large);
     func_080C700C(&save->unk_E6C);
     func_080DDEB0(save->unk_E70);
     func_0810962C(&save->unk_EB4);
@@ -8159,8 +8159,8 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(&save->unk_098);
-    func_080A324C(&save->unk_2EC);
+    func_080E92B8(&save->shared);
+    func_080A324C(&save->large);
     func_080C700C(&save->unk_E6C);
     func_080DDEB0(save->unk_E70);
     func_0810962C(&save->unk_EB4);
@@ -8186,8 +8186,8 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(&save->unk_098);
-    CopyMapCardInventory(&save->unk_2EC);
+    func_080E92B8(&save->shared);
+    CopyMapCardInventory(&save->small);
 
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[3].floor = gGameState.floor;
@@ -8282,8 +8282,8 @@ void ApplySaveSystem(SaveFileLarge* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(&save->unk_098);
-    func_080A32DC(&save->unk_2EC);
+    func_080E92F8(&save->shared);
+    func_080A32DC(&save->large);
     func_080C7024(&save->unk_E6C);
     func_080DDEBC(save->unk_E70);
     func_08109638(&save->unk_EB4);
@@ -8301,8 +8301,8 @@ void ApplySaveFileLarge(SaveFileLarge* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(&save->unk_098);
-    func_080A32DC(&save->unk_2EC);
+    func_080E92F8(&save->shared);
+    func_080A32DC(&save->large);
     func_080C7024(&save->unk_E6C);
     func_080DDEBC(save->unk_E70);
     func_08109638(&save->unk_EB4);
@@ -8321,7 +8321,7 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(&save->unk_098);
-    RestoreMapCardInventory(&save->unk_2EC);
+    func_080E92F8(&save->shared);
+    RestoreMapCardInventory(&save->small);
     gGameState.flags |= 8;
 }

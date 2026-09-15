@@ -154,7 +154,7 @@ typedef struct MsgFaceWork {
     u8 unk_33;
     u8 unk_34;
     u8 unk_35[3];
-    MsgFaceControl* unk_38;
+    MsgFaceControl* face;
 } MsgFaceWork;
 
 typedef struct MsgWinWork {
@@ -173,10 +173,10 @@ typedef struct MsgWinWork {
     u8 unk_29;
     u8 unk_2A;
     u8 unk_2B;
-    MsgFaceControl unk_2C;
+    MsgFaceControl face;
     u8 unk_38;
     u8 unk_39[3];
-    MessageScriptEntry* unk_3C;
+    MessageScriptEntry* script;
     s32 unk_40;
 } MsgWinWork;
 

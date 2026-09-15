@@ -19051,7 +19051,7 @@ void func_08093D28(u16 a, MapSelectWork* w) {
         mp = &w->card;
         pal = w->unk_29E;
 
-        switch ((*mp)->unk_18->backIndex) {
+        switch ((*mp)->cardDef->backIndex) {
         case 1:
             pal[i] = gUnk_09619098[j + 0x60];
             break;
@@ -19449,8 +19449,8 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->unk_71 = 0;
     w->unk_72 = 0;
     w->unk_74 = gUnk_09EE4C80[w->unk_20].unk_22;
-    w->unk_18 = &gUnk_09EE4C80[w->unk_20];
-    w->unk_1C = &gUnk_09EE4BF4[w->unk_18->backIndex];
+    w->cardDef = &gUnk_09EE4C80[w->unk_20];
+    w->cardBack = &gUnk_09EE4BF4[w->cardDef->backIndex];
     func_08094E90(w);
     func_08094DA8(w);
     func_08094CE4(w);
@@ -19675,9 +19675,9 @@ void Mapcard_2(MapcardWork* w) {
                            (u16)(w->unk_6A - 2));
             }
 
-            sprite = w->unk_1C->sprites[0];
+            sprite = w->cardBack->sprites[0];
             DrawSprite(w->x >> 8, y, sprite, *(void**)&w->unk_10[0], *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
-            sprite = w->unk_18->sprites[0];
+            sprite = w->cardDef->sprites[0];
             DrawSprite(w->x >> 8, y, sprite, w->tiles2, w->palette, aff, 0, (u16)(w->unk_6A + 1));
         }
     }
@@ -19713,8 +19713,8 @@ void func_08094CE4(MapcardWork* w) {
 
     if (func_08094CB0((s32*)w)) {
         if (!(w->unk_6C & 1)) {
-            a = (UnkStruct_08094CE4_A*)w->unk_18;
-            b = (UnkStruct_08094CE4_B*)w->unk_1C;
+            a = (UnkStruct_08094CE4_A*)w->cardDef;
+            b = (UnkStruct_08094CE4_B*)w->cardBack;
             w->tiles2 = LoadObjTiles(a->tiles, a->tilesSize);
             w->palette = LoadObjPalette(a->palette, 32);
             *(void**)&w->unk_10[0] = LoadObjTiles(b->tiles, b->tilesSize);
@@ -20630,7 +20630,7 @@ void func_08096700(void* a, void* b) {
 
 void func_08096714(PrizeCardInitWork* w, PrizeCardArgs* args) {
     w->unk_14 = 0;
-    w->unk_18 = *args;
+    w->args = *args;
     TaskPoolInit(w, 1);
 }
 
@@ -20640,13 +20640,13 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
 
     if (w->unk_14 == 0) {
         if ((gGameState.progression.unk_82 & 0x20) == 0) {
-            *(PrizeCardArgs*)args = w->unk_18;
+            *(PrizeCardArgs*)args = w->args;
             args[8] = 2;
             func_0809797C(w, args);
             gGameState.progression.unk_82 |= 0x20;
         } else if ((s8)gGameState.floor == 0) {
             if (func_08093B58() == 0) {
-                *(PrizeCardArgs*)args = w->unk_18;
+                *(PrizeCardArgs*)args = w->args;
                 args[8] = func_08096D0C(gGameState.world, 1);
 
                 if (args[8] != 0xFFFF) {
@@ -20655,7 +20655,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                     return 0;
                 }
             } else {
-                *(PrizeCardArgs*)args = w->unk_18;
+                *(PrizeCardArgs*)args = w->args;
                 args[8] = func_08096D48(gGameState.world, 1);
 
                 if (args[8] != 0xFFFF) {
@@ -20670,7 +20670,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
             if (v >= 125 && v <= 127) {
                 if ((gGameState.flags & 8) == 0) {
                     if (GetRandom() % 100 < 20) {
-                        *(PrizeCardArgs*)args = w->unk_18;
+                        *(PrizeCardArgs*)args = w->args;
 #ifdef VERSION_EU
                         if (func_08093B38() <= 98) {
                             args[8] = GetRandom() % 10 + 210;
@@ -20681,7 +20681,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                         args[8] = GetRandom() % 10 + 210;
 #endif
                     } else {
-                        *(PrizeCardArgs*)args = w->unk_18;
+                        *(PrizeCardArgs*)args = w->args;
                         args[8] = func_08096D48(gGameState.world, 1);
                     }
 
@@ -20691,7 +20691,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                         return 0;
                     }
                 } else {
-                    *(PrizeCardArgs*)args = w->unk_18;
+                    *(PrizeCardArgs*)args = w->args;
                     args[8] = func_08096D48(gGameState.world, 1);
 
                     if (args[8] != 0xFFFF) {
@@ -20703,17 +20703,17 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
             } else if (v >= 131 && v <= 133) {
 #ifdef VERSION_EU
                 if (func_08093B38() <= 98) {
-                    *(PrizeCardArgs*)args = w->unk_18;
+                    *(PrizeCardArgs*)args = w->args;
                     args[8] = GetRandom() % 10 + 160;
                     func_0809797C(w, args);
                 }
 #else
-                *(PrizeCardArgs*)args = w->unk_18;
+                *(PrizeCardArgs*)args = w->args;
                 args[8] = GetRandom() % 10 + 160;
                 func_0809797C(w, args);
 #endif
             } else {
-                *(PrizeCardArgs*)args = w->unk_18;
+                *(PrizeCardArgs*)args = w->args;
 
                 if ((gGameState.flags & 8) == 0) {
                     if (HasMapCard(0xFB) == 0) {
@@ -20756,7 +20756,7 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
     PrizeCardTaskArgs args;
 
     if (w->unk_14 == 0) {
-        *(PrizeCardArgs*)&args = w->unk_18;
+        *(PrizeCardArgs*)&args = w->args;
 
         switch (gBtlWork->unk_10C) {
         case 148:
@@ -22139,14 +22139,14 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
 
     zero = 0;
     CpuSet((void*)&zero, w, 0x05000011);
-    w->unk_2C = *a;
-    idx = w->unk_2C.unk_0C;
+    w->args = *a;
+    idx = w->args.unk_0C;
     w->unk_24 = idx;
     w->tiles = AllocSpriteFrameTiles(320);
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 
     if (w->unk_24 == 0) {
-        count = (s16*)w->unk_2C.unk_04;
+        count = (s16*)w->args.unk_04;
 
         if (*count >= 2 && *count <= 100) {
             row = gUnk_09EE76D0[w->unk_24];
@@ -22159,7 +22159,7 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
             UpdateSpriteFrameTiles(w->tiles, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     } else {
-        count2 = (s16*)w->unk_2C.unk_04;
+        count2 = (s16*)w->args.unk_04;
 
         if (*count2 >= 1 && *count2 <= 99) {
             row = gUnk_09EE76D0[w->unk_24];
@@ -22171,9 +22171,9 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
     }
 
     w->gfx = AnimGetGfx(&w->anim);
-    w->unk_26 = *(u16*)w->unk_2C.unk_04;
+    w->unk_26 = *(u16*)w->args.unk_04;
 
-    switch (w->unk_2C.unk_0D) {
+    switch (w->args.unk_0D) {
     case 1:
         w->x = -0x2000;
         w->y = 0x9800;
@@ -22191,7 +22191,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
     s16* count;
     void** row;
 
-    count = (s16*)w->unk_2C.unk_04;
+    count = (s16*)w->args.unk_04;
 
     if (*count != (s16)w->unk_26) {
         if (w->unk_24 == 0) {
@@ -22205,7 +22205,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
                 w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
-                w->unk_26 = *(u16*)w->unk_2C.unk_04;
+                w->unk_26 = *(u16*)w->args.unk_04;
                 return f(w, a);
             }
         } else {
@@ -22219,23 +22219,23 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
                 w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
-                w->unk_26 = *(u16*)w->unk_2C.unk_04;
+                w->unk_26 = *(u16*)w->args.unk_04;
                 return f(w, a);
             }
         }
 
-        w->unk_26 = *(u16*)w->unk_2C.unk_04;
+        w->unk_26 = *(u16*)w->args.unk_04;
     } else if (*count <= 0) {
         u8 (*f)(RevCountWork*, void*);
 
         w->unk_28 = 8;
         f = func_080990CC;
         SetTaskUpdate(a, (u32)f);
-        w->unk_26 = *(u16*)w->unk_2C.unk_04;
+        w->unk_26 = *(u16*)w->args.unk_04;
         return f(w, a);
     }
 
-    switch (w->unk_2C.unk_0D) {
+    switch (w->args.unk_0D) {
     case 1:
         ApproachValue(&w->x, 0, w->unk_28);
         break;
@@ -22248,7 +22248,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
         w->unk_28--;
     }
 
-    if (w->unk_2C.unk_0C != *(u8*)w->unk_2C.unk_00) {
+    if (w->args.unk_0C != *(u8*)w->args.unk_00) {
         u8 (*f)(RevCountWork*, void*);
 
         f = (u8 (*)(RevCountWork*, void*))func_08098FDC;
@@ -22262,7 +22262,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
         SetTaskUpdate(a, (u32)func_08099048);
     }
 
-    if (*(u8*)w->unk_2C.unk_08 == 0) {
+    if (*(u8*)w->args.unk_08 == 0) {
         w->unk_28 = 8;
         SetTaskUpdate(a, (u32)func_08099048);
     }
@@ -22271,7 +22271,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 }
 
 u8 func_08098FDC(RevCountWork* w) {
-    switch (w->unk_2C.unk_0D) {
+    switch (w->args.unk_0D) {
     case 1:
         ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
@@ -22284,7 +22284,7 @@ u8 func_08098FDC(RevCountWork* w) {
         w->unk_28--;
     }
 
-    if (w->unk_2C.unk_0C == *(u8*)w->unk_2C.unk_00 && *(s16*)w->unk_2C.unk_04 > 0) {
+    if (w->args.unk_0C == *(u8*)w->args.unk_00 && *(s16*)w->args.unk_04 > 0) {
         return 0;
     }
 
@@ -22294,7 +22294,7 @@ u8 func_08098FDC(RevCountWork* w) {
 u8 func_08099048(RevCountWork* w, void* a) {
     u8 (*f)(RevCountWork*, void*);
 
-    switch (w->unk_2C.unk_0D) {
+    switch (w->args.unk_0D) {
     case 1:
         ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
@@ -22309,7 +22309,7 @@ u8 func_08099048(RevCountWork* w, void* a) {
 
     w->unk_28--;
 
-    if (*(u8*)w->unk_2C.unk_08 == 1) {
+    if (*(u8*)w->args.unk_08 == 1) {
         w->unk_28 = 8;
         f = REV_COUNT_1;
         SetTaskUpdate(a, (void*)f);
@@ -22322,7 +22322,7 @@ u8 func_08099048(RevCountWork* w, void* a) {
 u8 func_080990CC(RevCountWork* w, void* a) {
     u8 (*f)(RevCountWork*, void*);
 
-    switch (w->unk_2C.unk_0D) {
+    switch (w->args.unk_0D) {
     case 1:
         ApproachValue(&w->x, -0x2000, w->unk_28);
         break;
@@ -22337,14 +22337,14 @@ u8 func_080990CC(RevCountWork* w, void* a) {
 
     do {
         if (w->unk_24 == 0) {
-            if (*(s16*)w->unk_2C.unk_04 > 1) {
+            if (*(s16*)w->args.unk_04 > 1) {
                 f = REV_COUNT_1;
                 SetTaskUpdate(a, (void*)f);
                 w->unk_28 = 8;
                 return f(w, a);
             }
         } else {
-            if (*(s16*)w->unk_2C.unk_04 > 0) {
+            if (*(s16*)w->args.unk_04 > 0) {
                 f = REV_COUNT_1;
                 SetTaskUpdate(a, (void*)f);
                 w->unk_28 = 8;
@@ -22471,7 +22471,7 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
     def = &gCardDefs[args[8]];
     w->tiles = LoadObjTiles(def->tiles, 0x300);
     w->palette = LoadObjPalette(def->palette, 32);
-    w->unk_34 = *(CardStat*)&def->unk_1C;
+    w->stat = *(CardStat*)&def->unk_1C;
     back = &gUnk_08F709B0[def->unk_2A];
     w->tiles2 = LoadObjTiles(back->tiles, 0x280);
     w->tiles3 = LoadObjTiles(back->tiles3, 0x600);
@@ -25359,11 +25359,11 @@ void HCEffectName_3(u8* work) {
 }
 
 void NumberPlus_0(NumberPlusWork* w, NumberPlusArgs* args) {
-    w->unk_08 = *args;
+    w->args = *args;
     w->tiles = LoadObjTiles(gUnk_090451C0, 128);
     w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    w->unk_24 = w->unk_08.unk_04 >> 8;
-    w->unk_26 = (w->unk_08.unk_08 >> 8) - 20;
+    w->unk_24 = w->args.unk_04 >> 8;
+    w->unk_26 = (w->args.unk_08 >> 8) - 20;
     w->unk_28 = 16;
     w->unk_29 = 0;
 }
@@ -27836,7 +27836,7 @@ void StockInfo_3(u8* work) {
 
 void* func_080A2334(u16 a, u8 b) {
     if (b < gUnk_09EE7D84[a]->unk_04) {
-        return LANGSTR(gUnk_09EE7D84[a]->unk_00[b]);
+        return LANGSTR(gUnk_09EE7D84[a]->texts[b]);
     }
 
     return 0;
@@ -28497,7 +28497,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 #ifdef VERSION_JP
     w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
                                gUnk_09033CB8[w->messageDef->unk_04],
-                               (s32)w->messageDef->unk_0C,
+                               (s32)w->messageDef->text,
                                (s32*)&w->unk_138);
 #else
     s32* p;
@@ -28511,7 +28511,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
     } else {
         w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
                                    gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
-                                   (s32)LANGSTR(w->messageDef->unk_0C), p);
+                                   (s32)LANGSTR(w->messageDef->text), p);
     }
 #endif
 
@@ -28823,7 +28823,7 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
 #ifdef VERSION_JP
         w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
                                    gUnk_09033CB8[w->messageDef->unk_04],
-                                   (s32)w->messageDef->unk_0C, (s32*)&w->unk_138);
+                                   (s32)w->messageDef->text, (s32*)&w->unk_138);
 #else
         p = (s32*)&w->unk_138;
 
@@ -28833,7 +28833,7 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
         } else {
             w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
                                        gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
-                                       (s32)LANGSTR(w->messageDef->unk_0C), p);
+                                       (s32)LANGSTR(w->messageDef->text), p);
         }
 #endif
 
@@ -28972,23 +28972,23 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     w->unk_146[0] = 1;
 #ifdef VERSION_JP
     w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->unk_04],
-                                   (s32)w->messageDef->unk_0C, (s32*)&w->unk_130);
+                                   (s32)w->messageDef->text, (s32*)&w->unk_130);
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
         w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->unk_04] - 0x200,
-                                       (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+                                       (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->unk_04] - 0x200,
-                                       (s32)w->messageDef->unk_0C, (s32*)&w->unk_130);
+                                       (s32)w->messageDef->text, (s32*)&w->unk_130);
 #endif
     } else {
 #ifdef VERSION_EU
         w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->unk_04] - 0x200,
-                                       (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+                                       (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->unk_04] - 0x200,
-                                       (s32)w->messageDef->unk_0C, (s32*)&w->unk_130);
+                                       (s32)w->messageDef->text, (s32*)&w->unk_130);
 #endif
     }
 #endif
@@ -29329,7 +29329,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
             w->unk_138[3] = func_0806BB44(
                 0x2E00,
                 gUnk_09041E80[w->messageDef->unk_04] - 0x200,
-                (s32)LANGSTR(w->messageDef->unk_0C),
+                (s32)LANGSTR(w->messageDef->text),
                 p);
         }
 
@@ -29351,7 +29351,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
         w->unk_138[3] = func_0806BDB8(
             0x2E00,
             gUnk_09033CB8[w->messageDef->unk_04],
-            (s32)(w->messageDef->unk_0C),
+            (s32)(w->messageDef->text),
             (s32*)&w->gfx2);
         w->unk_138[1] = w->unk_138[3];
     }
@@ -29411,53 +29411,53 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
     w->unk_145 = 0;
     w->unk_146[0] = 1;
 #ifdef VERSION_JP
-    w->unk_138[3] = func_0806BDB8(0x4000, 0x4000, (s32)w->messageDef->unk_0C, (s32*)&w->unk_130);
+    w->unk_138[3] = func_0806BDB8(0x4000, 0x4000, (s32)w->messageDef->text, (s32*)&w->unk_130);
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
         case 1:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 2:
-            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 4:
-            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 3:
-            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         default:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         }
 #else
-        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #endif
     } else {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
         case 1:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 2:
-            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 4:
-            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         case 3:
-            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         default:
-            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
             break;
         }
 #else
-        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->unk_0C), (s32*)&w->unk_130);
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #endif
     }
 #endif
@@ -30313,7 +30313,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_40C, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
                 x++;
             } else if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A == kind - 1) {
                 args.unk_00 = &w->unk_434;
@@ -30322,7 +30322,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->unk_40C, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
                 x++;
             }
             if (x > 2) {

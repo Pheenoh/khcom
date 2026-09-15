@@ -1365,8 +1365,8 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->z = src->z;
     work->unk_0C = 0;
 
-    if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
+    if (gBtlWork->boundsCallback != 0) {
+        gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
@@ -1487,8 +1487,8 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
     if (work->unk_30 == 0) {
         if (!(work->unk_2C & 4)) {
-            if (gBtlWork->unk_128 != 0) {
-                gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
+            if (gBtlWork->boundsCallback != 0) {
+                gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
             work->z += work->unk_20;
@@ -1699,8 +1699,8 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->z = src->z;
     work->unk_0C = 0;
 
-    if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
+    if (gBtlWork->boundsCallback != 0) {
+        gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
@@ -1743,8 +1743,8 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
 
     if (work->unk_30 == 0) {
         if (!(work->unk_2C & 4)) {
-            if (gBtlWork->unk_128 != 0) {
-                gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
+            if (gBtlWork->boundsCallback != 0) {
+                gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
             work->z += work->unk_20;

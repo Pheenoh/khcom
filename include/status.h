@@ -135,7 +135,7 @@ typedef struct StatusMessageWork {
     u8 unk_320;
     u8 unk_321[3];
     void* palette;
-    StatusMessageParam unk_328;
+    StatusMessageParam param;
 } StatusMessageWork;
 
 typedef struct StatusFriendWork {
@@ -204,7 +204,7 @@ typedef struct StatusFriendEntry {
 } StatusFriendEntry;
 
 typedef struct StatusFriendTable {
-    StatusFriendEntry unk_00[8];
+    StatusFriendEntry entries[8];
 } StatusFriendTable;
 
 

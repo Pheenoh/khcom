@@ -92,7 +92,7 @@ typedef struct JiminyWork {
     s32 y4;
     s32 x4;
     s32 y5;
-    JiminyLine unk_060[8];
+    JiminyLine lines[8];
     u8 unk_C60[8];
     u8 unk_C68[8];
     u8 unk_C70;
@@ -117,12 +117,12 @@ typedef struct JiminyWork {
     s16 x2;
     s16 y2;
     u8 unk_CCA[0x02];
-    JiminyDetail* unk_CCC;
+    JiminyDetail* detail;
     u16 unk_CD0;
     s16 unk_CD2;
     s16 unk_CD4;
     s16 unk_CD6;
-    JiminyPair unk_CD8[21];
+    JiminyPair pairs[21];
     s32 unk_D2C;
     u32 unk_D30;
     s32 unk_D34;

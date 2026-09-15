@@ -5566,7 +5566,7 @@ void func_080E92B8(UnkStruct_080E92B8* p) {
     p->unk_01 = gGameState.floor;
     memcpy(p->unk_04, &gUnk_0203C590, 0x21C);
     src = (u32*)gGameState.floors;
-    dst = (u32*)p->unk_220;
+    dst = (u32*)p->floors;
 
     for (i = 12; i >= 0; i--) {
         *dst++ = *src++;
@@ -5581,7 +5581,7 @@ void func_080E92F8(UnkStruct_080E92B8* p) {
     gGameState.world = p->unk_00;
     gGameState.floor = p->unk_01;
     memcpy(&gUnk_0203C590, p->unk_04, 0x21C);
-    src = (u32*)p->unk_220;
+    src = (u32*)p->floors;
     dst = (u32*)gGameState.floors;
 
     for (i = 12; i >= 0; i--) {

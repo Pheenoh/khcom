@@ -183,7 +183,7 @@ typedef struct BtlRikuWork {
     u8 unk_1B0[0xC];
     s16 unk_1BC;
     u8 unk_1BE[0x2];
-    BtlDrawInfo unk_1C0[9];
+    BtlDrawInfo drawInfo[9];
     BtlObj* actor2;
 } BtlRikuWork;
 

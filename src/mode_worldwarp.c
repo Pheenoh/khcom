@@ -472,7 +472,7 @@ void func_08101654(void) {
     s32 base;
 
     for (i = 0; i <= 1; i++) {
-        x = gUnk_09993118[0].unk_1C[i].x - (gUnk_02035884 >> 8);
+        x = gUnk_09993118[0].gfx[i].x - (gUnk_02035884 >> 8);
         flag = 0;
         v = x;
         base = (-gUnk_02035880) >> 8;
@@ -487,10 +487,10 @@ void func_08101654(void) {
         if (gUnk_02035818[i] != 0) {
             ReleaseObjTiles(gUnk_02035818[i]);
         }
-        gUnk_02035820[i] = LoadObjPalette(gUnk_09993118[flag].unk_1C[i].palette, gUnk_09993118[flag].unk_1C[i].paletteSize);
-        gUnk_02035818[i] = LoadObjTiles(gUnk_09993118[flag].unk_1C[i].tiles, gUnk_09993118[flag].unk_1C[i].tilesSize);
-        AnimInit(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].anims, gUnk_09993118[flag].unk_1C[i].gfxTable);
-        AnimStart(&gUnk_02035828[i], gUnk_09993118[flag].unk_1C[i].animId, 1);
+        gUnk_02035820[i] = LoadObjPalette(gUnk_09993118[flag].gfx[i].palette, gUnk_09993118[flag].gfx[i].paletteSize);
+        gUnk_02035818[i] = LoadObjTiles(gUnk_09993118[flag].gfx[i].tiles, gUnk_09993118[flag].gfx[i].tilesSize);
+        AnimInit(&gUnk_02035828[i], gUnk_09993118[flag].gfx[i].anims, gUnk_09993118[flag].gfx[i].gfxTable);
+        AnimStart(&gUnk_02035828[i], gUnk_09993118[flag].gfx[i].animId, 1);
     }
 }
 
@@ -612,7 +612,7 @@ void func_08101970(void) {
         0x800 | gUnk_09993118[gUnk_020357C0].flags, 0x7D1);
 
     for (i = 0; i <= 1; i++) {
-        DrawSprite(gUnk_09993118[0].unk_1C[i].x - (gUnk_02035884 >> 8), gUnk_09993118[0].unk_1C[i].y,
+        DrawSprite(gUnk_09993118[0].gfx[i].x - (gUnk_02035884 >> 8), gUnk_09993118[0].gfx[i].y,
             AnimUpdate(&gUnk_02035828[i]), gUnk_02035818[i], gUnk_02035820[i], 0, 0x800, 0x7D0);
     }
 

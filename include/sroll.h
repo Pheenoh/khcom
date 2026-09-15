@@ -103,14 +103,14 @@ typedef struct SrollBCharGfx {
 } SrollBCharGfx;
 
 typedef struct SrollBCharDef {
-    SrollBCharGfx* unk_00;
+    SrollBCharGfx* gfx;
     u8 unk_04[0x8];
     u16 unk_0C;
     u16 unk_0E;
 } SrollBCharDef;
 
 typedef struct SrollBCharSub {
-    SrollBCharDef* unk_00;
+    SrollBCharDef* def;
     s32 x;
     s32 y;
     s32 unk_0C;
@@ -132,7 +132,7 @@ typedef struct SrollBCharSet {
 } SrollBCharSet;
 
 typedef struct SrollBCharArg {
-    SrollBCharSet* unk_00;
+    SrollBCharSet* set;
     SrollBCharSub* sub;
 } SrollBCharArg;
 

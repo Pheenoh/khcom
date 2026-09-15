@@ -11,8 +11,8 @@ void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     gBtlWork->unk_068 |= 0x2000000;
     work->unk_20 = 0;
     work->unk_08 = list;
-    work->unk_0C = list->entries[0];
-    work->unk_00 = work->unk_0C->delay;
+    work->entry = list->entries[0];
+    work->unk_00 = work->entry->delay;
     work->unk_10 = 1;
     work->unk_02 = 0;
     work->unk_04 = 0;
@@ -43,15 +43,15 @@ u8 task_btl_form_1(BtlFormWork* work) {
             if (work->unk_22 == 0) {
                 return 0;
             }
-            work->unk_0C = list->entries[work->unk_10];
-            work->unk_00 = work->unk_0C->delay;
+            work->entry = list->entries[work->unk_10];
+            work->unk_00 = work->entry->delay;
             work->unk_02 = 0;
             work->unk_04 = 0;
             work->unk_20 &= ~2;
             work->unk_10++;
             work->unk_24 = 100;
         }
-    } else if (work->unk_0C->count <= work->unk_04) {
+    } else if (work->entry->count <= work->unk_04) {
         if (work->unk_24-- <= 0) {
             work->unk_20 |= 2;
 
@@ -90,7 +90,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 }
                 work->unk_00 = 0xFFFF;
             }
-            step = &work->unk_0C->steps[work->unk_04];
+            step = &work->entry->steps[work->unk_04];
             if (work->unk_02 >= step->delay) {
                 if (work->unk_20 & 1) {
                     x = work->x - (step->x << 8);

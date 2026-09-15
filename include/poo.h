@@ -300,11 +300,11 @@ typedef struct PooHoneyWork {
     u8 anim[0x18];
     u16 unk_20;
     u16 unk_22;
-    PooPos unk_24;
-    PooPos unk_34;
-    PooPos unk_44;
-    PooPos unk_54;
-    PooPos unk_64;
+    PooPos pos;
+    PooPos pos2;
+    PooPos pos3;
+    PooPos minPos;
+    PooPos maxPos;
     u8 collider[0x5C];
     PooNode node;
     u32 unk_F0;
@@ -532,16 +532,16 @@ typedef struct PooFreeBalloonWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    PooPos unk_24;
-    PooPos unk_34;
+    PooPos pos2;
+    PooPos pos3;
     s16 x;
     s16 y;
     void* tiles2;
     void* palette2;
     void* gfx2;
     u8 anim2[0x18];
-    PooPos unk_6C;
-    PooPos unk_7C;
+    PooPos pos4;
+    PooPos pos5;
     s16 x2;
     s16 y2;
     u16 unk_90;
@@ -561,7 +561,7 @@ typedef struct PooMapObjHitDesc {
 typedef struct PooSpawn {
     s32 unk_00;
     s32 unk_04;
-    TaskDesc* unk_08;
+    TaskDesc* desc;
 } PooSpawn;
 
 typedef struct PooSpawnArgs {
@@ -574,7 +574,7 @@ typedef struct PooMapObjHitArgs {
     s32 x;
     s32 y;
     u8 unk_08[0x08];
-    const PooMapObjHitDesc* unk_10;
+    const PooMapObjHitDesc* desc;
     s32 unk_14;
     u16 unk_18;
     u16 unk_1A;
@@ -589,7 +589,7 @@ typedef struct PooMapObjHitWork {
     s32 unk_28;
     s32 unk_2C;
     u8 unk_30[0x04];
-    const PooMapObjHitDesc* unk_34;
+    const PooMapObjHitDesc* desc;
     u8 unk_38;
     u8 unk_39;
     u16 unk_3A;
@@ -776,8 +776,8 @@ typedef struct PooCamera {
     void* gfx2;
     void* tiles3;
     void* gfx3;
-    PooPos unk_1C;
-    PooPos unk_2C;
+    PooPos pos;
+    PooPos pos2;
     u8 unk_3C;
     u8 unk_3D;
     u16 unk_3E;

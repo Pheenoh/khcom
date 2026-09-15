@@ -25,8 +25,8 @@ typedef struct PooActor {
 } PooActor;
 
 typedef struct PooState {
-    PooPos unk_00;
-    PooPos unk_10;
+    PooPos pos;
+    PooPos pos2;
     s32 unk_20;
     u32 unk_24;
     u16 unk_28;

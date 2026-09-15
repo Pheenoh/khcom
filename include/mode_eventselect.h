@@ -70,7 +70,7 @@ typedef struct DownWork {
 } DownWork;
 
 typedef struct EvSoundWork {
-    EvSoundCue* unk_00;
+    EvSoundCue* soundCues;
     u8 unk_04;
     u8 unk_05;
     u8 unk_06;
@@ -80,7 +80,7 @@ typedef struct EvSoundWork {
 
 typedef struct EventTaskHost {
     u8 unk_00[0x10];
-    TaskPool unk_10;
+    TaskPool tasks;
 } EventTaskHost;
 
 typedef struct EventBody {

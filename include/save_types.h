@@ -67,8 +67,8 @@ typedef struct SaveSliceEB4 {
 
 typedef struct SaveFileLarge {
     SaveCommon common;
-    SaveSharedSlice unk_098;
-    SaveLargeSlice unk_2EC;
+    SaveSharedSlice shared;
+    SaveLargeSlice large;
     SaveSliceE6C unk_E6C;
     u8 unk_E70[0x044];
     SaveSliceEB4 unk_EB4;
@@ -76,8 +76,8 @@ typedef struct SaveFileLarge {
 
 typedef struct SaveFileSmall {
     SaveCommon common;
-    SaveSharedSlice unk_098;
-    SaveSmallSlice unk_2EC;
+    SaveSharedSlice shared;
+    SaveSmallSlice small;
 } SaveFileSmall;
 
 #endif

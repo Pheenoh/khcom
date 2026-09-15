@@ -12,7 +12,7 @@ typedef LocalizedText CardHelpText;
 #endif
 
 typedef struct CardHelpDef {
-    CardHelpText** unk_00;
+    CardHelpText** texts;
     u8 unk_04;
     u8 unk_05[3];
 } CardHelpDef;

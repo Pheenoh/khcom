@@ -119,7 +119,7 @@ typedef struct PcWork {
     s32 unk_2F0;
     s32 unk_2F4;
     u8 unk_2F8[0x4];
-    PcOam unk_2FC[24];
+    PcOam oam[24];
 } PcWork;
 
 extern u8 gUnk_09D69274[];
@@ -303,7 +303,7 @@ typedef struct BosLstWork {
     u8 unk_4D4[0x58];
     u8 unk_52C[8][0x5C];
     void* unk_80C;
-    LstTask* unk_810[0x20];
+    LstTask* lstTasks[0x20];
     u32 unk_890;
     u8 unk_894[0x10];
     u8 unk_8A4[0x280];

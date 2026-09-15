@@ -102,7 +102,7 @@ void task_title_logo_2(TitleLogoWork* work) {
         } else {
             affine = 0;
         }
-        DrawSprite(x, y, work->unk_00[i].gfx, work->unk_00[i].tiles, work->unk_00[i].palette, affine, 0, i + 20);
+        DrawSprite(x, y, work->sprites[i].gfx, work->sprites[i].tiles, work->sprites[i].palette, affine, 0, i + 20);
     }
 }
 
@@ -110,8 +110,8 @@ void task_title_logo_3(TitleLogoWork* work) {
     s32 i;
 
     for (i = 0; i < 6; i++) {
-        ReleaseObjTiles(work->unk_00[i].tiles);
-        ReleaseObjPalette(work->unk_00[i].palette);
+        ReleaseObjTiles(work->sprites[i].tiles);
+        ReleaseObjPalette(work->sprites[i].palette);
     }
 }
 
@@ -133,27 +133,27 @@ void task_title_obj_0(TitleObjWork* work) {
 
     t = (gGameState.flags & 0x200) ? 0x20 : 0;
 #ifdef VERSION_EU
-    work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
+    work->sprites[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
     switch (gLanguage) {
     case 0:
-        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750AF8, 0x3C0);
-        work->unk_00[0].gfx = gUnkEu_09F81C54[0];
+        work->sprites[0].tiles = LoadObjTiles(gUnkEu_09750AF8, 0x3C0);
+        work->sprites[0].gfx = gUnkEu_09F81C54[0];
         break;
     case 1:
-        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750EE4, 0x3C0);
-        work->unk_00[0].gfx = gUnkEu_09F81C5C[0];
+        work->sprites[0].tiles = LoadObjTiles(gUnkEu_09750EE4, 0x3C0);
+        work->sprites[0].gfx = gUnkEu_09F81C5C[0];
         break;
     case 2:
-        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09751ADE, 0x400);
-        work->unk_00[0].gfx = gUnkEu_09F81C74[0];
+        work->sprites[0].tiles = LoadObjTiles(gUnkEu_09751ADE, 0x400);
+        work->sprites[0].gfx = gUnkEu_09F81C74[0];
         break;
     case 3:
-        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097516F8, 0x3C0);
-        work->unk_00[0].gfx = gUnkEu_09F81C6C[0];
+        work->sprites[0].tiles = LoadObjTiles(gUnkEu_097516F8, 0x3C0);
+        work->sprites[0].gfx = gUnkEu_09F81C6C[0];
         break;
     case 4:
-        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097512CA, 0x400);
-        work->unk_00[0].gfx = gUnkEu_09F81C64[0];
+        work->sprites[0].tiles = LoadObjTiles(gUnkEu_097512CA, 0x400);
+        work->sprites[0].gfx = gUnkEu_09F81C64[0];
         break;
     case 5:
     case 6:
@@ -162,39 +162,39 @@ void task_title_obj_0(TitleObjWork* work) {
 
     if (gGameState.flags & 0x200) {
         if (gLanguage == 4 || gLanguage == 2) {
-            work->unk_00[0].x = 0xB500;
+            work->sprites[0].x = 0xB500;
         } else {
-            work->unk_00[0].x = 0xBA00;
+            work->sprites[0].x = 0xBA00;
         }
-        work->unk_00[0].y = 0x76;
+        work->sprites[0].y = 0x76;
     } else {
-        work->unk_00[0].x = 0x3D00;
-        work->unk_00[0].y = 0x77;
+        work->sprites[0].x = 0x3D00;
+        work->sprites[0].y = 0x77;
     }
     switch (gLanguage) {
     case 0:
-        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_0973F402, 0x700);
+        work->sprites[1].tiles = LoadObjTiles(gUnkEu_0973F402, 0x700);
         break;
     case 1:
-        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_0973FC6A, 0x7A0);
+        work->sprites[1].tiles = LoadObjTiles(gUnkEu_0973FC6A, 0x7A0);
         break;
     case 2:
-        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_097415E8, 0x800);
+        work->sprites[1].tiles = LoadObjTiles(gUnkEu_097415E8, 0x800);
         break;
     case 3:
-        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_09740D62, 0x700);
+        work->sprites[1].tiles = LoadObjTiles(gUnkEu_09740D62, 0x700);
         break;
     case 4:
-        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_09740536, 0x700);
+        work->sprites[1].tiles = LoadObjTiles(gUnkEu_09740536, 0x700);
         break;
     case 5:
     case 6:
         break;
     }
-    work->unk_00[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[1].x = -0x7800;
-    work->unk_00[1].targetX = 0x7C00;
-    work->unk_00[1].y = 0xA0;
+    work->sprites[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->sprites[1].x = -0x7800;
+    work->sprites[1].targetX = 0x7C00;
+    work->sprites[1].y = 0xA0;
     switch (gLanguage) {
     case 0:
         AnimInit(&work->anim, gUnkEu_09F81A1C, gUnkEu_09F81A08);
@@ -216,37 +216,37 @@ void task_title_obj_0(TitleObjWork* work) {
         break;
     }
     AnimStart(&work->anim, 0, 1);
-    work->unk_00[1].gfx = AnimGetGfx(&work->anim);
-    work->unk_00[2].tiles = LoadObjTiles(gUnkEu_0973EEFE, 0x100);
-    work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[2].gfx = gUnk_09EF65E0[0];
+    work->sprites[1].gfx = AnimGetGfx(&work->anim);
+    work->sprites[2].tiles = LoadObjTiles(gUnkEu_0973EEFE, 0x100);
+    work->sprites[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->sprites[2].gfx = gUnk_09EF65E0[0];
 #else
-    work->unk_00[0].tiles = LoadObjTiles(gUnk_09771060, 0x3C0);
-    work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
-    work->unk_00[0].gfx = gUnk_09EF65E0[0];
+    work->sprites[0].tiles = LoadObjTiles(gUnk_09771060, 0x3C0);
+    work->sprites[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
+    work->sprites[0].gfx = gUnk_09EF65E0[0];
 
     if (gGameState.flags & 0x200) {
-        work->unk_00[0].x = 0xBA00;
-        work->unk_00[0].y = 0x76;
+        work->sprites[0].x = 0xBA00;
+        work->sprites[0].y = 0x76;
     } else {
-        work->unk_00[0].x = 0x3D00;
-        work->unk_00[0].y = 0x77;
+        work->sprites[0].x = 0x3D00;
+        work->sprites[0].y = 0x77;
     }
-    work->unk_00[1].tiles = LoadObjTiles(gUnk_09771666, 0x700);
-    work->unk_00[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[1].x = -0x7800;
-    work->unk_00[1].targetX = 0x7C00;
-    work->unk_00[1].y = 0xA0;
+    work->sprites[1].tiles = LoadObjTiles(gUnk_09771666, 0x700);
+    work->sprites[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->sprites[1].x = -0x7800;
+    work->sprites[1].targetX = 0x7C00;
+    work->sprites[1].y = 0xA0;
     AnimInit(&work->anim, gUnk_09EF6604, gUnk_09EF65F0);
     AnimStart(&work->anim, 0, 1);
-    work->unk_00[1].gfx = AnimGetGfx(&work->anim);
-    work->unk_00[2].tiles = LoadObjTiles(gUnk_0977143A, 0x100);
-    work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[2].gfx = gUnk_09EF65E8[0];
+    work->sprites[1].gfx = AnimGetGfx(&work->anim);
+    work->sprites[2].tiles = LoadObjTiles(gUnk_0977143A, 0x100);
+    work->sprites[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->sprites[2].gfx = gUnk_09EF65E8[0];
 #endif
-    work->unk_00[2].x = 0x15800;
-    work->unk_00[2].targetX = 0xB800;
-    work->unk_00[2].y = 0x91;
+    work->sprites[2].x = 0x15800;
+    work->sprites[2].targetX = 0xB800;
+    work->sprites[2].y = 0x91;
     work->unk_60 = 30;
     gUnk_02034ED0 = 0;
     work->unk_62 = 0;
@@ -257,8 +257,8 @@ u8 task_title_obj_1(TitleObjWork* work) {
         if (work->unk_62 != 0) {
             work->unk_62--;
         } else if (work->unk_60 != 0) {
-            ApproachValue(&work->unk_00[1].x, work->unk_00[1].targetX, work->unk_60);
-            ApproachValue(&work->unk_00[2].x, work->unk_00[2].targetX, work->unk_60);
+            ApproachValue(&work->sprites[1].x, work->sprites[1].targetX, work->unk_60);
+            ApproachValue(&work->sprites[2].x, work->sprites[2].targetX, work->unk_60);
             work->unk_60--;
             if (work->unk_60 == 0) {
                 gUnk_02034ED0 = 1;
@@ -277,11 +277,11 @@ u8 task_title_obj_1(TitleObjWork* work) {
 void task_title_obj_2(TitleObjWork* work) {
     s32 i;
 
-    work->unk_00[1].gfx = AnimUpdate(&work->anim);
+    work->sprites[1].gfx = AnimUpdate(&work->anim);
 
     for (i = 0; i < TITLE_OBJ_DRAW_COUNT; i++) {
-        DrawSprite(work->unk_00[i].x >> 8, work->unk_00[i].y, work->unk_00[i].gfx,
-                   work->unk_00[i].tiles, work->unk_00[i].palette, 0, 0, i);
+        DrawSprite(work->sprites[i].x >> 8, work->sprites[i].y, work->sprites[i].gfx,
+                   work->sprites[i].tiles, work->sprites[i].palette, 0, 0, i);
     }
 }
 
@@ -289,8 +289,8 @@ void task_title_obj_3(TitleObjWork* work) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
-        ReleaseObjTiles(work->unk_00[i].tiles);
-        ReleaseObjPalette(work->unk_00[i].palette);
+        ReleaseObjTiles(work->sprites[i].tiles);
+        ReleaseObjPalette(work->sprites[i].palette);
     }
 }
 

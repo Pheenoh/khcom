@@ -30,7 +30,7 @@ typedef struct TitleObjSprite {
 } TitleObjSprite;
 
 typedef struct TitleObjWork {
-    TitleObjSprite unk_00[3];
+    TitleObjSprite sprites[3];
     AnimState anim;
     u16 unk_60;
     u16 unk_62;

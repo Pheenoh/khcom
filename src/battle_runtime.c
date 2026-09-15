@@ -2264,8 +2264,8 @@ void func_0801C314(void) {
 
 
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d) {
-    if (gBtlWork->unk_128 != 0) {
-        return gBtlWork->unk_128(a, b, c, d);
+    if (gBtlWork->boundsCallback != 0) {
+        return gBtlWork->boundsCallback(a, b, c, d);
     }
     return 0;
 }

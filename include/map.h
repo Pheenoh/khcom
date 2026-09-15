@@ -92,7 +92,7 @@ typedef struct UnkStruct_080E92B8 {
     u8 unk_01;
     u8 unk_02[0x02];
     u8 unk_04[0x21C];
-    GameFloor unk_220[13];
+    GameFloor floors[13];
 } UnkStruct_080E92B8;
 
 typedef struct UnkStruct_09EF8370 {

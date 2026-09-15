@@ -154,7 +154,7 @@ typedef struct AllmapDoorinfoWork {
     u8 unk_005[0x03];
     void* gfx2[4];
     void* tiles;
-    AllmapDoorEntry unk_01C[4];
+    AllmapDoorEntry doors[4];
     void* palette;
     void* tiles2;
     void* palette2;

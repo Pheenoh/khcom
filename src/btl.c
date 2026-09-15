@@ -6662,15 +6662,15 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, e);
     TaskCreate(&work->tasks, &gTaskDescBtlBadstatus, e);
     work->unk_1BC = 0;
-    func_08027570(work, &work->unk_1C0[0]);
-    work->unk_1C0[1] = work->unk_1C0[0];
-    work->unk_1C0[2] = work->unk_1C0[0];
-    work->unk_1C0[3] = work->unk_1C0[0];
-    work->unk_1C0[4] = work->unk_1C0[0];
-    work->unk_1C0[5] = work->unk_1C0[0];
-    work->unk_1C0[6] = work->unk_1C0[0];
-    work->unk_1C0[7] = work->unk_1C0[0];
-    work->unk_1C0[8] = work->unk_1C0[0];
+    func_08027570(work, &work->drawInfo[0]);
+    work->drawInfo[1] = work->drawInfo[0];
+    work->drawInfo[2] = work->drawInfo[0];
+    work->drawInfo[3] = work->drawInfo[0];
+    work->drawInfo[4] = work->drawInfo[0];
+    work->drawInfo[5] = work->drawInfo[0];
+    work->drawInfo[6] = work->drawInfo[0];
+    work->drawInfo[7] = work->drawInfo[0];
+    work->drawInfo[8] = work->drawInfo[0];
 }
 
 void func_080280BC(BtlRikuWork* work, u32 a) {
@@ -10671,21 +10671,21 @@ void task_btl_riku_2(BtlRikuWork* work) {
     if (work->unk_15E & 0x800) {
         switch (work->unk_1BC % 2) {
         case 0:
-            func_080275D4(work, &work->unk_1C0[3]);
+            func_080275D4(work, &work->drawInfo[3]);
             break;
         case 1:
-            func_080275D4(work, &work->unk_1C0[6]);
+            func_080275D4(work, &work->drawInfo[6]);
             break;
         }
         work->unk_1BC++;
     }
-    work->unk_1C0[6] = work->unk_1C0[5];
-    work->unk_1C0[5] = work->unk_1C0[4];
-    work->unk_1C0[4] = work->unk_1C0[3];
-    work->unk_1C0[3] = work->unk_1C0[2];
-    work->unk_1C0[2] = work->unk_1C0[1];
-    work->unk_1C0[1] = work->unk_1C0[0];
-    func_08027570(work, &work->unk_1C0[0]);
+    work->drawInfo[6] = work->drawInfo[5];
+    work->drawInfo[5] = work->drawInfo[4];
+    work->drawInfo[4] = work->drawInfo[3];
+    work->drawInfo[3] = work->drawInfo[2];
+    work->drawInfo[2] = work->drawInfo[1];
+    work->drawInfo[1] = work->drawInfo[0];
+    func_08027570(work, &work->drawInfo[0]);
     TaskPoolDraw(&work->tasks);
 }
 

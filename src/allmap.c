@@ -504,14 +504,14 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
                 n = 0;
             }
 
-            work->unk_01C[i].tiles = func_080986FC(n);
-            work->unk_01C[i].palette = LoadObjPalette(gUnk_09618D38, 32);
-            work->unk_01C[i].gfx = 0;
-            work->unk_01C[i].tiles2 = LoadObjTiles(gUnk_0905E3BA, 0x600);
-            work->unk_01C[i].palette2 = LoadObjPalette(gUnk_09618D38, 32);
-            work->unk_01C[i].gfx2 = gUnk_09EE97F4[0];
-            FadeSetPaletteExcluded(work->unk_01C[i].palette->index + 16, 1);
-            FadeSetPaletteExcluded(work->unk_01C[i].palette2->index + 16, 1);
+            work->doors[i].tiles = func_080986FC(n);
+            work->doors[i].palette = LoadObjPalette(gUnk_09618D38, 32);
+            work->doors[i].gfx = 0;
+            work->doors[i].tiles2 = LoadObjTiles(gUnk_0905E3BA, 0x600);
+            work->doors[i].palette2 = LoadObjPalette(gUnk_09618D38, 32);
+            work->doors[i].gfx2 = gUnk_09EE97F4[0];
+            FadeSetPaletteExcluded(work->doors[i].palette->index + 16, 1);
+            FadeSetPaletteExcluded(work->doors[i].palette2->index + 16, 1);
             work->gfx2[i] = gUnk_09EF64E8[i];
             work->unk_114++;
         } else {
@@ -561,20 +561,20 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
     }
 
     for (i = 0; i < work->unk_114; i++) {
-        e = &work->unk_01C[i];
+        e = &work->doors[i];
         func_08098014(e, func_080E8D1C(i));
         func_08098598(func_080D44A0(work->unk_114, i), 0x6800, e);
 
-        if (work->unk_01C[i].palette != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].palette->index + 16, 1);
+        if (work->doors[i].palette != 0) {
+            FadeSetPaletteExcluded(work->doors[i].palette->index + 16, 1);
         }
 
-        if (work->unk_01C[i].palette2 != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].palette2->index + 16, 1);
+        if (work->doors[i].palette2 != 0) {
+            FadeSetPaletteExcluded(work->doors[i].palette2->index + 16, 1);
         }
 
-        if (work->unk_01C[i].palette3 != 0) {
-            FadeSetPaletteExcluded(work->unk_01C[i].palette3->index + 16, 1);
+        if (work->doors[i].palette3 != 0) {
+            FadeSetPaletteExcluded(work->doors[i].palette3->index + 16, 1);
         }
     }
 
@@ -652,8 +652,8 @@ void func_080D484C(AllmapDoorinfoWork* work) {
             DrawSprite(work->x >> 8, work->y >> 8, work->gfx2[i], work->tiles, work->palette, 0, 0, i + 51);
             gUnk_02034E84 = gUnk_096FDC10[i][0];
             gUnk_02034E88 = gUnk_096FDC10[i][1];
-            DrawSprite(gUnk_02034E84 + (work->x >> 8), gUnk_02034E88 + (work->y >> 8), work->unk_01C[i].gfx, work->unk_01C[i].tiles, work->unk_01C[i].palette, 0, 0, i + 40);
-            DrawSprite((work->x >> 8) + gUnk_02034E84, (work->y >> 8) + gUnk_02034E88, work->unk_01C[i].gfx2, work->unk_01C[i].tiles2, work->unk_01C[i].palette2, 0, 0, i + 30);
+            DrawSprite(gUnk_02034E84 + (work->x >> 8), gUnk_02034E88 + (work->y >> 8), work->doors[i].gfx, work->doors[i].tiles, work->doors[i].palette, 0, 0, i + 40);
+            DrawSprite((work->x >> 8) + gUnk_02034E84, (work->y >> 8) + gUnk_02034E88, work->doors[i].gfx2, work->doors[i].tiles2, work->doors[i].palette2, 0, 0, i + 30);
         }
     }
     DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
@@ -664,7 +664,7 @@ void func_080D49EC(AllmapDoorinfoWork* work) {
 
     if (work->unk_100 == 0) {
         for (i = 0; i < work->unk_114; i++) {
-            func_08098670(&work->unk_01C[i], 0);
+            func_08098670(&work->doors[i], 0);
         }
     }
     DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles2, work->palette2, 0, 0, 20);
@@ -688,7 +688,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
 
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4 || func_080DF51C(work->unk_004) == 2) {
         for (i = 0; i < work->unk_114; i++) {
-            func_08098778(&work->unk_01C[i]);
+            func_08098778(&work->doors[i]);
         }
     } else {
         ReleaseObjTiles(work->tiles);
@@ -696,10 +696,10 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
 
         for (i = 0; i < 4; i++) {
             if (work->gfx2[i] != 0) {
-                ReleaseObjTiles(work->unk_01C[i].tiles);
-                ReleaseObjPalette(work->unk_01C[i].palette);
-                ReleaseObjTiles(work->unk_01C[i].tiles2);
-                ReleaseObjPalette(work->unk_01C[i].palette2);
+                ReleaseObjTiles(work->doors[i].tiles);
+                ReleaseObjPalette(work->doors[i].palette);
+                ReleaseObjTiles(work->doors[i].tiles2);
+                ReleaseObjPalette(work->doors[i].palette2);
             }
         }
     }

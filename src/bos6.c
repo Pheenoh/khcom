@@ -162,7 +162,7 @@ void func_0810A018(PcWork* work) {
     cmds = gUnk_09EF9C34[step->unk_20];
 
     for (j = 0; j < 24; j++) {
-        work->unk_2FC[j].count = 0;
+        work->oam[j].count = 0;
     }
 
     for (j = 0; !(cmds[j].unk_00 & 0x80); j++) {
@@ -174,7 +174,7 @@ void func_0810A018(PcWork* work) {
                 func_0810A000(work, work->unk_024 + PcLayerDepth(cmd->unk_02), 1));
         } else {
             def = gUnk_09EFBB18[cmd->unk_01];
-            oam = &work->unk_2FC[cmd->unk_02];
+            oam = &work->oam[cmd->unk_02];
             mask = 0xFF;
             t = (u8)def->unk_02;
             if (t & 0x80) {
@@ -195,9 +195,9 @@ void func_0810A018(PcWork* work) {
     }
 
     for (i = 0; i < 24; i++) {
-        if (work->unk_2FC[i].count != 0) {
+        if (work->oam[i].count != 0) {
             layer = i * 0x400 - 0x3400;
-            attributes = PcOamGfx(&work->unk_2FC[i]);
+            attributes = PcOamGfx(&work->oam[i]);
             DrawSprite(sx, sy - 0x40, attributes, work->tiles, gfx, 0,
                 func_08109FF0(work, work->unk_024 + layer),
                 func_0810A000(work, work->unk_024 + layer, 1));
@@ -1555,10 +1555,10 @@ void func_0810C2F8(BosLstWork* work) {
     u32 i;
 
     for (i = 0; i < 0x20; i++) {
-        if (work->unk_810[i] != 0) {
-            func_08000DE8(&gBtlWork->taskPools[1], work->unk_810[i]);
+        if (work->lstTasks[i] != 0) {
+            func_08000DE8(&gBtlWork->taskPools[1], work->lstTasks[i]);
         }
-        work->unk_810[i] = 0;
+        work->lstTasks[i] = 0;
     }
 }
 
@@ -1840,7 +1840,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     obj = &work->unk_0E4;
     anim = &work->anim;
     for (; i < 32; i++) {
-        work->unk_810[i] = 0;
+        work->lstTasks[i] = 0;
     }
     tbl = gUnk_09A4CF5C;
     func_0801B37C(obj, tbl, work->unk_044, work->unk_048, work->unk_04C);
@@ -2154,13 +2154,13 @@ u8 func_0810D304(BosLstWork* work, s32 idx) {
     r = 0;
     if (idx < 0) {
         for (i = 0; i < work->unk_0C4; i++) {
-            if (func_08110938(work->unk_810[i]) == 1) {
+            if (func_08110938(work->lstTasks[i]) == 1) {
                 r = 1;
                 break;
             }
         }
     } else if (idx < work->unk_0C4) {
-        if (func_08110938(work->unk_810[idx]) == 1) {
+        if (func_08110938(work->lstTasks[idx]) == 1) {
             r = 1;
         }
     }
@@ -2176,13 +2176,13 @@ u8 eu_0810BA1C(BosLstWork* work, s32 idx) {
     r = 0;
     if (idx < 0) {
         for (i = 0; i < work->unk_0C4; i++) {
-            if (eu_0810F08C(work->unk_810[i]) == 1) {
+            if (eu_0810F08C(work->lstTasks[i]) == 1) {
                 r = 1;
                 break;
             }
         }
     } else if (idx < work->unk_0C4) {
-        if (eu_0810F08C(work->unk_810[idx]) == 1) {
+        if (eu_0810F08C(work->lstTasks[idx]) == 1) {
             r = 1;
         }
     }
@@ -2196,7 +2196,7 @@ u8 func_0810D364(BosLstWork* work) {
 
     v = 0;
     for (i = 0; i < work->unk_0C4; i++) {
-        v = func_0811095C(work->unk_810[i], v);
+        v = func_0811095C(work->lstTasks[i], v);
     }
     return v != 0;
 }
@@ -2205,8 +2205,8 @@ void func_0810D3A8(BosLstWork* work) {
     s32 i;
 
     for (i = 0; i < work->unk_0C4; i++) {
-        if (func_08110918(work->unk_810[i]) == 1) {
-            func_08110984(work->unk_810[i]);
+        if (func_08110918(work->lstTasks[i]) == 1) {
+            func_08110984(work->lstTasks[i]);
         }
     }
 }
@@ -2218,14 +2218,14 @@ u8 func_0810D3E0(BosLstWork* work, s32 idx, s16 a) {
     r = 0;
     if (idx < 0) {
         for (i = 0; i < work->unk_0C4; i++) {
-            if (func_08110918(work->unk_810[i]) == 1) {
-                func_08110994(work->unk_810[i], a);
+            if (func_08110918(work->lstTasks[i]) == 1) {
+                func_08110994(work->lstTasks[i], a);
                 r = 1;
             }
         }
     } else if (idx < work->unk_0C4) {
-        if (func_08110918(work->unk_810[idx]) == 1) {
-            func_08110994(work->unk_810[idx], a);
+        if (func_08110918(work->lstTasks[idx]) == 1) {
+            func_08110994(work->lstTasks[idx], a);
             r = 1;
         }
     }
@@ -2236,8 +2236,8 @@ void func_0810D478(BosLstWork* work) {
     s32 i;
 
     for (i = 0; i < work->unk_0C4; i++) {
-        if (func_08110918(work->unk_810[i]) == 1) {
-            func_081109A8(work->unk_810[i]);
+        if (func_08110918(work->lstTasks[i]) == 1) {
+            func_081109A8(work->lstTasks[i]);
         }
     }
 }
@@ -2248,8 +2248,8 @@ void func_0810D4B0(BosLstWork* work) {
 
     flag = 1;
     for (i = 0; i < work->unk_0C4; i++) {
-        if (func_08110918(work->unk_810[i]) == 1) {
-            if (func_081109B8(work->unk_810[i], flag) == 1) {
+        if (func_08110918(work->lstTasks[i]) == 1) {
+            if (func_081109B8(work->lstTasks[i], flag) == 1) {
                 flag = 0;
             }
         }
@@ -2289,7 +2289,7 @@ void func_0810D4F8(BosLstWork* work) {
             s.unk_20 = s.x + (i << 11);
             s.y2 = obj->y + 0x1400;
             s.unk_28 = s.z + ((i << 2) << 8);
-            work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
+            work->lstTasks[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
         }
         *pBC = 0;
         *pBE += 1;
@@ -2410,7 +2410,7 @@ void func_0810D77C(BosLstWork* work) {
                 s.unk_20 = s.x + (i << 11);
                 s.y2 = obj->y + 0x1400;
                 s.unk_28 = s.z + ((i << 2) << 8);
-                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
+                work->lstTasks[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
             }
         }
         if ((gBtlWork->unk_068 & 0x2000000000000) == 0) {
@@ -2840,7 +2840,7 @@ u8 func_0810E32C(BosLstWork* work) {
                 s.unk_04 = work->unk_0B8;
                 s.unk_06 = i;
                 s.unk_08 = i * ang + 90;
-                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstCtr, &s);
+                work->lstTasks[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstCtr, &s);
             }
             work->unk_004 = 0;
             work->unk_068 = 0;
@@ -2850,7 +2850,7 @@ u8 func_0810E32C(BosLstWork* work) {
     default:
         r = 0;
         for (i = 0; i < work->unk_0B8; i++) {
-            if (func_08111F4C(work->unk_810[i]) == 1) {
+            if (func_08111F4C(work->lstTasks[i]) == 1) {
                 r = 1;
                 break;
             }

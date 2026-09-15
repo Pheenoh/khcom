@@ -81,7 +81,7 @@ typedef struct BtlWork {
     s16 unk_120;
     u8 unk_122[0x02];
     s32 unk_124;
-    BtlBoundsCallback unk_128;
+    BtlBoundsCallback boundsCallback;
     s32 unk_12C;
     s32 unk_130;
     s32 unk_134;

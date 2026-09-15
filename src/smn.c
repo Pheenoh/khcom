@@ -2034,8 +2034,8 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         return 0;
     }
     func_0802F284(body->x, body->y, body->z);
-    if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&body->x, &body->y, &body->z, &body->unk_010);
+    if (gBtlWork->boundsCallback != 0) {
+        gBtlWork->boundsCallback(&body->x, &body->y, &body->z, &body->unk_010);
         if (body->z > body->unk_010) {
             body->z = body->unk_010;
         }

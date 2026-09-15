@@ -350,7 +350,7 @@ typedef struct RevCountWork {
     u16 unk_26;
     u8 unk_28;
     u8 unk_29[0x03];
-    RevCountArgs unk_2C;
+    RevCountArgs args;
     s32 x;
     s32 y;
 } RevCountWork;
@@ -943,8 +943,8 @@ typedef struct MapcardWork {
     void* tiles2;
     void* palette;
     u8 unk_10[0x08];
-    MapCardDef* unk_18;
-    MapCardBackDef* unk_1C;
+    MapCardDef* cardDef;
+    MapCardBackDef* cardBack;
     u8 unk_20;
     u8 unk_21;
     u8 unk_22[0x06];
@@ -1028,7 +1028,7 @@ typedef struct NumberPlusArgs {
 typedef struct NumberPlusWork {
     void* tiles;
     void* palette;
-    NumberPlusArgs unk_08;
+    NumberPlusArgs args;
     s16 unk_24;
     s16 unk_26;
     u8 unk_28;
@@ -1058,7 +1058,7 @@ typedef struct PrizeCardTaskArgs {
 typedef struct PrizeCardInitWork {
     TaskPool tasks;
     u8 unk_14;
-    PrizeCardArgs unk_18;
+    PrizeCardArgs args;
 } PrizeCardInitWork;
 
 typedef struct ScrollBarWork {
@@ -1367,7 +1367,7 @@ typedef struct BossPrizeWork {
     UnkStruct_080038C8* tiles5;
     UnkStruct_080038C8* palette3;
     TaskPool tasks;
-    CardStat unk_34;
+    CardStat stat;
     u8 collider[0x5C];
     s32 unk_A8;
     s32 unk_AC;
@@ -1567,8 +1567,8 @@ typedef struct UnkStruct_080A5D3C {
     void* palette;
     void* tiles2;
     u8 unk_3D0[0x3C];
-    TaskPool unk_40C;
-    TaskPool unk_420;
+    TaskPool tasks;
+    TaskPool tasks2;
     ListPool unk_434;
     AnimState anim;
     AnimState anim2;

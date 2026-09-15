@@ -11,11 +11,11 @@ void func_0805A484(void) {
 
     for (i = 0; i < 8; i++) {
         gJiminyWork->unk_C68[i] = 0;
-        FreeTextSlots(&gJiminyWork->unk_060[i], 48);
+        FreeTextSlots(&gJiminyWork->lines[i], 48);
 
         for (j = 0; j < 48; j++) {
-            if (gJiminyWork->unk_060[i].unk_000[j].tiles != 0) {
-                gJiminyWork->unk_060[i].unk_000[j].tiles = 0;
+            if (gJiminyWork->lines[i].unk_000[j].tiles != 0) {
+                gJiminyWork->lines[i].unk_000[j].tiles = 0;
             }
         }
     }
@@ -141,7 +141,7 @@ void func_0805A638(s32 a, u16** b) {
     if (t > 12) {
         t = 12;
     }
-    gJiminyWork->unk_C60[a] = LoadTextSlots(gUnk_09EDE3FC[t], &gJiminyWork->unk_060[a]);
+    gJiminyWork->unk_C60[a] = LoadTextSlots(gUnk_09EDE3FC[t], &gJiminyWork->lines[a]);
 }
 
 void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h) {
@@ -158,18 +158,18 @@ void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h) {
                     func_0805A638(i, d);
                 } else {
                     gJiminyWork->unk_C60[i] =
-                        LoadTextSlots(d[i], &gJiminyWork->unk_060[i]);
+                        LoadTextSlots(d[i], &gJiminyWork->lines[i]);
                 }
             } else {
                 gJiminyWork->unk_C60[i] =
-                    LoadTextSlots(d[i], &gJiminyWork->unk_060[i]);
+                    LoadTextSlots(d[i], &gJiminyWork->lines[i]);
             }
         }
     } else {
         for (i = 0; i < n; i++) {
             if (func_0800FF00(c[i])) {
                 gJiminyWork->unk_C60[i] =
-                    LoadTextSlots(d[i], &gJiminyWork->unk_060[i]);
+                    LoadTextSlots(d[i], &gJiminyWork->lines[i]);
 
                 if (func_0800FF70(c[i])) {
                     gJiminyWork->unk_C68[i] = 1;

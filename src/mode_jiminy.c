@@ -113,7 +113,7 @@ void mode_jiminy_0(void) {
     FadeStartIn(0, 0x10);
 
     for (i = 0; i < 8; i++) {
-        InitTextSlots(&gJiminyWork->unk_060[i], 0x30);
+        InitTextSlots(&gJiminyWork->lines[i], 0x30);
     }
 
     func_08064B80(0);
@@ -126,8 +126,8 @@ void mode_jiminy_0(void) {
 #endif
 
     for (j = 0; j <= 0x14; j++) {
-        gJiminyWork->unk_CD8[j].unk_00 = 0;
-        gJiminyWork->unk_CD8[j].unk_02 = 0;
+        gJiminyWork->pairs[j].unk_00 = 0;
+        gJiminyWork->pairs[j].unk_02 = 0;
     }
 
     if (gGameState.flags & 8) {
@@ -233,7 +233,7 @@ void mode_jiminy_1(void) {
         break;
     case 6:
         e = &gUnk_08155554[gJiminyWork->unk_D2C];
-        p = &gJiminyWork->unk_CD8[gJiminyWork->unk_D2C];
+        p = &gJiminyWork->pairs[gJiminyWork->unk_D2C];
 #ifdef VERSION_JP
         gJiminyWork->unk_C71 = func_080653D4(0x400, 0x2600, gUnk_08159FE0);
 #else
@@ -269,7 +269,7 @@ void mode_jiminy_1(void) {
         gJiminyWork->unk_000 = 7;
     case 7:
         e2 = &gUnk_08155554[gJiminyWork->unk_D2C];
-        p2 = &gJiminyWork->unk_CD8[gJiminyWork->unk_D2C];
+        p2 = &gJiminyWork->pairs[gJiminyWork->unk_D2C];
 
         if (func_0805AA9C() != 0) {
             break;
@@ -346,12 +346,12 @@ void mode_jiminy_1(void) {
         DisableBg(2);
     }
 
-    for (i = 0; gJiminyWork->unk_060[i].unk_000[0].tiles != 0; i++) {
+    for (i = 0; gJiminyWork->lines[i].unk_000[0].tiles != 0; i++) {
         if (i >= gJiminyWork->unk_C78) {
             break;
         }
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
-            &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
+            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
 
         if (gJiminyWork->unk_000 == 7) {
             switch (gJiminyWork->unk_C68[i]) {
@@ -656,7 +656,7 @@ void func_0805BAE4(void) {
         if (gJiminyWork->unk_CD2 >= (s16)count) {
             gJiminyWork->unk_CD2 = 0;
         }
-        gJiminyWork->unk_CCC = &entries[gJiminyWork->unk_CD2];
+        gJiminyWork->detail = &entries[gJiminyWork->unk_CD2];
         if (gJiminyWork->unk_CB8 != 0) {
             func_0800FFE0(gJiminyWork->unk_CB8[gJiminyWork->unk_CD2]);
             unlocked = 0;
@@ -717,21 +717,21 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F60384;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x400,
-                0x1800, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->detail->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x400,
-                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+                0x1600, eu_0805E924(gJiminyWork->detail->name));
 #else
             gJiminyWork->unk_C71 = func_08065170(0x400,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1600, gJiminyWork->detail->name);
 #endif
 #ifdef VERSION_EU
-            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->detail->text), (s32)eu_0805E968(gJiminyWork->detail->text), 8, 0x3A, 16);
 #else
 #ifdef VERSION_JP
-            func_0805B9D0(7, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x2A, 16);
+            func_0805B9D0(7, gJiminyWork->detail->lineCount, (s32)gJiminyWork->detail->text, 8, 0x2A, 16);
 #else
-            func_0805B9D0(4, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+            func_0805B9D0(4, gJiminyWork->detail->lineCount, (s32)gJiminyWork->detail->text, 8, 0x3A, 16);
 #endif
 #endif
             break;
@@ -740,21 +740,21 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F5EB84;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x400,
-                0x1800, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->detail->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x400,
-                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+                0x1600, eu_0805E924(gJiminyWork->detail->name));
 #else
             gJiminyWork->unk_C71 = func_08065170(0x400,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1600, gJiminyWork->detail->name);
 #endif
 #ifdef VERSION_EU
-            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->detail->text), (s32)eu_0805E968(gJiminyWork->detail->text), 8, 0x3A, 16);
 #else
 #ifdef VERSION_JP
-            func_0805B9D0(7, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x2A, 16);
+            func_0805B9D0(7, gJiminyWork->detail->lineCount, (s32)gJiminyWork->detail->text, 8, 0x2A, 16);
 #else
-            func_0805B9D0(4, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+            func_0805B9D0(4, gJiminyWork->detail->lineCount, (s32)gJiminyWork->detail->text, 8, 0x3A, 16);
 #endif
 #endif
             break;
@@ -764,16 +764,16 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F5FB84;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x2800,
-                0x1800, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->detail->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x2800,
-                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+                0x1600, eu_0805E924(gJiminyWork->detail->name));
 #else
             gJiminyWork->unk_C71 = func_08065170(0x2800,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1600, gJiminyWork->detail->name);
 #endif
 #ifdef VERSION_EU
-            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->detail->text), (s32)eu_0805E968(gJiminyWork->detail->text), 8, 0x3A, 16);
 #else
             func_0805B9D0(
 #ifdef VERSION_JP
@@ -781,28 +781,28 @@ void func_0805BAE4(void) {
 #else
                 4,
 #endif
-                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+                gJiminyWork->detail->lineCount, (s32)gJiminyWork->detail->text, 8, 0x3A, 16);
 #endif
             break;
         }
         LoadBgMap(0, map0, 0x800);
         LoadBgMap(1, map1, 0x800);
-        if (gJiminyWork->unk_CCC->tiles != 0) {
+        if (gJiminyWork->detail->tiles != 0) {
 #ifdef VERSION_EU
-            if (gJiminyWork->unk_CCC->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
+            if (gJiminyWork->detail->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
                 LoadObjPaletteBank(gJiminyWork->palette8->index, gUnkEu_09A9A8A0);
                 LoadObjPaletteBank(gJiminyWork->palette8->index + 1, gUnkEu_09A9A8A0 + 0x20);
                 SetObjTileSource(gJiminyWork->tiles7, gUnkEu_099FBE00);
             } else
 #endif
             {
-                LoadObjPaletteBank(gJiminyWork->palette8->index, gJiminyWork->unk_CCC->palette);
-                SetObjTileSource(gJiminyWork->tiles7, gJiminyWork->unk_CCC->tiles);
+                LoadObjPaletteBank(gJiminyWork->palette8->index, gJiminyWork->detail->palette);
+                SetObjTileSource(gJiminyWork->tiles7, gJiminyWork->detail->tiles);
             }
         }
-        if (gJiminyWork->unk_CCC->tiles2 != 0) {
-            LoadObjPaletteBank(gJiminyWork->palette9->index, gJiminyWork->unk_CCC->palette2);
-            SetObjTileSource(gJiminyWork->tiles8, gJiminyWork->unk_CCC->tiles2);
+        if (gJiminyWork->detail->tiles2 != 0) {
+            LoadObjPaletteBank(gJiminyWork->palette9->index, gJiminyWork->detail->palette2);
+            SetObjTileSource(gJiminyWork->tiles8, gJiminyWork->detail->tiles2);
         }
         if (gJiminyWork->unk_D30 == 2) {
             source = gUnk_08F63B84;
@@ -829,9 +829,9 @@ void func_0805BAE4(void) {
 #else
             width = func_08064DD4(
 #ifdef VERSION_EU
-                eu_0805E924(gJiminyWork->unk_CCC->name)
+                eu_0805E924(gJiminyWork->detail->name)
 #else
-                gJiminyWork->unk_CCC->name
+                gJiminyWork->detail->name
 #endif
             );
             switch ((width + 12) / 8) {
@@ -864,9 +864,9 @@ void func_0805BAE4(void) {
 #else
             width = (s16)func_08064DD4(
 #ifdef VERSION_EU
-                eu_0805E924(gJiminyWork->unk_CCC->name)
+                eu_0805E924(gJiminyWork->detail->name)
 #else
-                gJiminyWork->unk_CCC->name
+                gJiminyWork->detail->name
 #endif
             ) / 8;
 #endif
@@ -925,26 +925,26 @@ void func_0805BAE4(void) {
         RequestDma3Copy(source + digits[2] * 0x20, dest, 0x20);
         gJiminyWork->unk_000 = 9;
         DisableBg(2);
-        if (gJiminyWork->unk_CCC->bgTiles != 0) {
+        if (gJiminyWork->detail->bgTiles != 0) {
             EnableBg(3);
-            RequestDma3Copy(gJiminyWork->unk_CCC->bgTiles,
-                (u8*)GetBgCharBase(3) + 0x4000, gJiminyWork->unk_CCC->tileSize);
-            switch ((u16)gJiminyWork->unk_CCC->paletteSize) {
+            RequestDma3Copy(gJiminyWork->detail->bgTiles,
+                (u8*)GetBgCharBase(3) + 0x4000, gJiminyWork->detail->tileSize);
+            switch ((u16)gJiminyWork->detail->paletteSize) {
             case 0x60:
                 paletteDest = (u16*)0x050001A0;
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x60);
+                LoadPalette(gJiminyWork->detail->bgPalette, paletteDest, 0x60);
                 break;
             case 0x40:
                 paletteDest = (u16*)0x050001C0;
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x40);
+                LoadPalette(gJiminyWork->detail->bgPalette, paletteDest, 0x40);
                 break;
             case 0x20:
             default:
                 paletteDest = (u16*)0x050001E0;
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x20);
+                LoadPalette(gJiminyWork->detail->bgPalette, paletteDest, 0x20);
                 break;
             }
-            LoadBgMap(3, gJiminyWork->unk_CCC->bgMap, 0x800);
+            LoadBgMap(3, gJiminyWork->detail->bgMap, 0x800);
         } else {
             DisableBg(3);
         }
@@ -1022,9 +1022,9 @@ void func_0805BAE4(void) {
         break;
     }
     func_080658B8(gJiminyWork->unk_C71);
-    for (i = 0; gJiminyWork->unk_060[i].unk_000[0].tiles != 0 && i < gJiminyWork->unk_C78; i++) {
+    for (i = 0; gJiminyWork->lines[i].unk_000[0].tiles != 0 && i < gJiminyWork->unk_C78; i++) {
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
-            &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
+            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
     }
     if (gJiminyWork->unk_CAC & 8) {
         DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,
@@ -1042,28 +1042,28 @@ void func_0805BAE4(void) {
     }
     switch (gJiminyWork->unk_D30) {
     case 0:
-        if (gJiminyWork->unk_CCC->tiles != 0) {
-            DrawSprite(gJiminyWork->unk_CCC->x + 0xC8, gJiminyWork->unk_CCC->y + 0x5C,
-                gJiminyWork->unk_CCC->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
+        if (gJiminyWork->detail->tiles != 0) {
+            DrawSprite(gJiminyWork->detail->x + 0xC8, gJiminyWork->detail->y + 0x5C,
+                gJiminyWork->detail->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
         }
         break;
     case 1:
-        if (gJiminyWork->unk_CCC->tiles != 0) {
-            DrawSprite(0xC2, 0x5E, gJiminyWork->unk_CCC->sprite,
+        if (gJiminyWork->detail->tiles != 0) {
+            DrawSprite(0xC2, 0x5E, gJiminyWork->detail->sprite,
                 gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
         }
-        if (gJiminyWork->unk_CCC->tiles2 != 0 && gJiminyWork->unk_CCC->sprite2 != 0) {
-            DrawSprite(0xC2, 0x5E, gJiminyWork->unk_CCC->sprite2,
+        if (gJiminyWork->detail->tiles2 != 0 && gJiminyWork->detail->sprite2 != 0) {
+            DrawSprite(0xC2, 0x5E, gJiminyWork->detail->sprite2,
                 gJiminyWork->tiles8, gJiminyWork->palette9, 0, 4, 0);
         }
         break;
     case 2:
-        if (gJiminyWork->unk_CCC->tiles != 0) {
-            DrawSprite(gJiminyWork->unk_CCC->x + 0xC4, gJiminyWork->unk_CCC->y + 0x74,
-                gJiminyWork->unk_CCC->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
+        if (gJiminyWork->detail->tiles != 0) {
+            DrawSprite(gJiminyWork->detail->x + 0xC4, gJiminyWork->detail->y + 0x74,
+                gJiminyWork->detail->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
         }
-        if (gJiminyWork->unk_CCC->tiles2 != 0) {
-            DrawSprite(0x14, 0x25, gJiminyWork->unk_CCC->sprite2,
+        if (gJiminyWork->detail->tiles2 != 0) {
+            DrawSprite(0x14, 0x25, gJiminyWork->detail->sprite2,
                 gJiminyWork->tiles8, gJiminyWork->palette9, 0, 0x404, 0);
         }
         break;

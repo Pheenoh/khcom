@@ -54,7 +54,7 @@ typedef struct WarpDef {
     u16 x3;
     s16 y3;
     u8 unk_1A[0x02];
-    WarpGfx unk_1C[2];
+    WarpGfx gfx[2];
 } WarpDef;
 
 extern WarpRect gUnk_099930E8[];

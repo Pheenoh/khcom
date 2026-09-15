@@ -133,8 +133,8 @@ void func_081149B8(SrollBCharWork* w) {
     SrollBCharDef* def;
     SrollBCharGfx* gfx;
 
-    def = w->sub->unk_00;
-    gfx = def->unk_00;
+    def = w->sub->def;
+    gfx = def->gfx;
     AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->anims, gfx->gfxTable);
     SetObjTileSource(w->tiles, gfx->tiles);
     w->sub->unk_14 &= 0xFFFE;
@@ -144,7 +144,7 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     SrollBCharSet* set;
     AnimState* anim;
 
-    set = a->unk_00;
+    set = a->set;
     w->unk_00 = 0;
     w->unk_04 = 0;
     w->sub = a->sub;

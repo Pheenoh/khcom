@@ -10,7 +10,7 @@ typedef struct TitleSprite {
 } TitleSprite;
 
 typedef struct TitleLogoWork {
-    TitleSprite unk_00[6];
+    TitleSprite sprites[6];
     s32 unk_48;
     s32 scale;
     u16 unk_50;

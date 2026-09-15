@@ -555,16 +555,16 @@ void func_080FB930(MdWork* work, u16 id) {
     work->unk_17A = gUnk_09992108[id].unk_02;
 
     for (n = 0; n < 2; n++) {
-        work->unk_17C[n].sprite = gUnk_09992108[id].unk_1C[n].sprite;
+        work->gfx[n].sprite = gUnk_09992108[id].desc[n].sprite;
 
-        if (work->unk_17C[n].src != gUnk_09992108[id].unk_1C[n].src && n == 0) {
-            work->unk_17C[n].src = gUnk_09992108[id].unk_1C[n].src;
-            UpdateSpriteFrameTiles(work->unk_17C[n].tiles, work->unk_17C[n].sprite, work->unk_17C[n].src);
+        if (work->gfx[n].src != gUnk_09992108[id].desc[n].src && n == 0) {
+            work->gfx[n].src = gUnk_09992108[id].desc[n].src;
+            UpdateSpriteFrameTiles(work->gfx[n].tiles, work->gfx[n].sprite, work->gfx[n].src);
         }
 
-        work->unk_17C[n].x = gUnk_09992108[id].unk_1C[n].x;
-        work->unk_17C[n].y = gUnk_09992108[id].unk_1C[n].y;
-        work->unk_17C[n].z = gUnk_09992108[id].unk_1C[n].z;
+        work->gfx[n].x = gUnk_09992108[id].desc[n].x;
+        work->gfx[n].y = gUnk_09992108[id].desc[n].y;
+        work->gfx[n].z = gUnk_09992108[id].desc[n].z;
     }
 }
 
@@ -1107,15 +1107,15 @@ void task_bos_md_0(MdWork* work, void* arg) {
     }
 
     for (i = 0; i < 2; i++) {
-        work->unk_17C[i].tiles = 0;
-        work->unk_17C[i].src = 0;
-        work->unk_17C[i].sprite = 0;
-        work->unk_17C[i].x = 0;
-        work->unk_17C[i].y = 0;
+        work->gfx[i].tiles = 0;
+        work->gfx[i].src = 0;
+        work->gfx[i].sprite = 0;
+        work->gfx[i].x = 0;
+        work->gfx[i].y = 0;
     }
 
-    work->unk_17C[0].tiles = AllocSpriteFrameTiles(2432);
-    work->unk_17C[1].tiles = LoadObjTiles(gUnk_099D42FC, 0x12A0);
+    work->gfx[0].tiles = AllocSpriteFrameTiles(2432);
+    work->gfx[1].tiles = LoadObjTiles(gUnk_099D42FC, 0x12A0);
     gBtlWork->unk_0CC = 0x11000;
     gBtlWork->unk_0D0 = 0x15000;
     gBtlWork->unk_0D4 = 0;
@@ -1256,11 +1256,11 @@ void task_bos_md_2(MdWork* work) {
         s32 wy;
         u16 frame;
 
-        wx = (work->unk_17C[i].x + 224) * 256;
-        wy = (work->unk_17C[i].y + 256) * 256;
-        WorldToScreen(&x, &y, wx, wy, work->unk_17C[i].z * 256);
+        wx = (work->gfx[i].x + 224) * 256;
+        wy = (work->gfx[i].y + 256) * 256;
+        WorldToScreen(&x, &y, wx, wy, work->gfx[i].z * 256);
         frame = GetBattleSpritePriorityFlags(wy);
-        DrawSprite(x, y, work->unk_17C[i].sprite, work->unk_17C[i].tiles, pal, 0, frame,
+        DrawSprite(x, y, work->gfx[i].sprite, work->gfx[i].tiles, pal, 0, frame,
                    (u16)(-4100 - (wy >> 6)));
     }
 
@@ -1287,8 +1287,8 @@ void task_bos_md_3(MdWork* work) {
     t = &work->tasks3;
 
     for (i = 0; i < 2; i++) {
-        if (work->unk_17C[i].tiles != 0) {
-            ReleaseObjTiles(work->unk_17C[i].tiles);
+        if (work->gfx[i].tiles != 0) {
+            ReleaseObjTiles(work->gfx[i].tiles);
         }
     }
 
