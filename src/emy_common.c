@@ -6,7 +6,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     BtlObj* actor = &work->actor;
     u16 t;
 
-    func_0801B37C(actor, &def->kind, obj->unk_00, obj->unk_04, obj->unk_08);
+    func_0801B37C(actor, &def->kind, obj->x, obj->y, obj->z);
     actor->unk_0CE = def->unk_12;
     actor->unk_0D0 = def->unk_14;
     actor->unk_0D2 = def->unk_16;

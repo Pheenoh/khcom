@@ -972,9 +972,9 @@ u8 func_080FC17C(MdWork* work) {
                 }
 
                 if (func_080128EC() == 0) {
-                    arg.unk_00 = work->sub[0].unk_004;
-                    arg.unk_04 = work->sub[0].unk_008;
-                    arg.unk_08 = work->sub[0].unk_00C;
+                    arg.x = work->sub[0].unk_004;
+                    arg.y = work->sub[0].unk_008;
+                    arg.z = work->sub[0].unk_00C;
                     CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
                     func_0801B918(&work->sub[0]);
                     func_0801B008();
@@ -1198,13 +1198,13 @@ s32 task_bos_md_1(MdWork* work) {
     for (i = 0; i < 1; i++) {
         work->sub[i].unk_004 = gBtlWork->unk_0CC
             + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].unk_00 * 256;
+                  .unk_44[i].x * 256;
         work->sub[i].unk_008 = gBtlWork->unk_0D0
             + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].unk_02 * 256;
+                  .unk_44[i].y * 256;
         work->sub[i].unk_00C = gBtlWork->unk_0D4
             + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].unk_04 * 256;
+                  .unk_44[i].z * 256;
         ColliderSetPosition(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
                       work->sub[i].unk_00C);
     }
@@ -1417,8 +1417,8 @@ u8 func_080FCCB4(MdFireWork* work) {
                                 a = func_080F7E0C(work->x, work->y,
                                                   gBtlWork->actor->x,
                                                   gBtlWork->actor->y);
-                                work->unk_154 = gSineTable[a] * 3;
-                                work->unk_158 = -gSineTable[a + 0x40] * 3;
+                                work->vx = gSineTable[a] * 3;
+                                work->vy = -gSineTable[a + 0x40] * 3;
                                 work->unk_004 = 90;
                                 work->unk_15C = 1;
                                 break;
@@ -1433,8 +1433,8 @@ u8 func_080FCCB4(MdFireWork* work) {
                     }
                     break;
                 case 1:
-                    work->x += work->unk_154;
-                    work->y += work->unk_158;
+                    work->x += work->vx;
+                    work->y += work->vy;
                     work->unk_004--;
 
 #ifdef VERSION_EU
@@ -1493,8 +1493,8 @@ void func_080FCF78(MdFireWork* work) {
     case 1:
     case 2:
         p = gUnk_09992EF8[work->unk_15E].unk_00 + work->unk_160;
-        work->x = p->unk_00 * 256;
-        work->y = p->unk_02 * 256;
+        work->x = p->x * 256;
+        work->y = p->y * 256;
         work->unk_004 = p->unk_04;
         work->unk_15C = 0;
         break;
@@ -1765,9 +1765,9 @@ void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
     work->z = src[2];
     angle = GetRandom();
     speed = (GetRandom() & 0x1FF) + 0x100;
-    work->unk_00C = -gSineTable[angle + 0x40] * speed >> 8;
-    work->unk_010 = gSineTable[angle] * speed >> 8;
-    work->unk_014 = -((GetRandom() & 0x1FF) + 0x100);
+    work->vx = -gSineTable[angle + 0x40] * speed >> 8;
+    work->vy = gSineTable[angle] * speed >> 8;
+    work->vz = -((GetRandom() & 0x1FF) + 0x100);
     work->unk_024 = 3;
     work->palette = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
@@ -1778,23 +1778,23 @@ s32 task_bos_md_hahen_1(MdHahenWork* work) {
     s32 result;
 
     result = 1;
-    work->x += work->unk_00C;
-    work->y += work->unk_010;
+    work->x += work->vx;
+    work->y += work->vy;
 
 #ifdef VERSION_EU
     if (work->y <= 0x12FFF) {
 #else
     if (work->y <= 0x117FF) {
 #endif
-        work->unk_010 = -work->unk_010;
+        work->vy = -work->vy;
     }
 
-    work->z += work->unk_014;
-    work->unk_014 += 102;
+    work->z += work->vz;
+    work->vz += 102;
 
     if (work->z > 0) {
         work->z = 0;
-        work->unk_014 = -(work->unk_014 * 8 / 10);
+        work->vz = -(work->vz * 8 / 10);
         work->unk_024--;
 
         if ((s16)work->unk_024 <= 0) {

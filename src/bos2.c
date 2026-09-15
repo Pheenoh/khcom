@@ -3917,9 +3917,9 @@ void func_080BFFF8(JfMajinWork* work) {
                 q->x = 0x25200;
             }
 
-            fx.unk_00 = q->x;
-            fx.unk_04 = q->y;
-            fx.unk_08 = -0x7800;
+            fx.x = q->x;
+            fx.y = q->y;
+            fx.z = -0x7800;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &fx);
 #ifdef VERSION_EU
             func_0801B918(q);
@@ -4231,9 +4231,9 @@ void func_080C0714(JfMajinWork* work) {
 }
 void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->jf = arg;
-    work->unk_030 = arg->body.x;
-    work->unk_034 = arg->body.y + 0x500;
-    work->unk_038 = arg->body.z - 0x4800;
+    work->x = arg->body.x;
+    work->y = arg->body.y + 0x500;
+    work->z = arg->body.z - 0x4800;
     work->unk_03C = 0;
     work->unk_0F8 = 0xFE00;
     work->unk_060 = 0x20000;
@@ -4249,14 +4249,14 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_194 = 0;
 
     if (arg->body.unk_034 & 4) {
-        work->unk_170 = arg->body.x + 0x2000;
-        work->unk_174 = arg->body.y + 0xA00;
-        work->unk_178 = arg->body.z - 0x1900;
+        work->x2 = arg->body.x + 0x2000;
+        work->y2 = arg->body.y + 0xA00;
+        work->z2 = arg->body.z - 0x1900;
         work->unk_144 = -((gUnk_0203ACC0 + 1) << 11) - 0x2000;
     } else {
-        work->unk_170 = arg->body.x - 0x2000;
-        work->unk_174 = arg->body.y + 0xA00;
-        work->unk_178 = arg->body.z - 0x1900;
+        work->x2 = arg->body.x - 0x2000;
+        work->y2 = arg->body.y + 0xA00;
+        work->z2 = arg->body.z - 0x1900;
         work->unk_144 = -0x2000 - ((gUnk_0203ACC4 + 1) << 11);
     }
 
@@ -4286,7 +4286,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
     switch (work->unk_160) {
     case 0:
         if (work->unk_15C > 40) {
-            func_0802F274(work->unk_030, work->unk_034 + work->unk_038 - 0x2000);
+            func_0802F274(work->x, work->y + work->z - 0x2000);
         }
 
         work->unk_02A++;
@@ -4303,15 +4303,15 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         }
 
         if (work->unk_15C > 0) {
-            ApproachValue(&work->unk_038, work->unk_144 - 0x4800, work->unk_15C);
-            ApproachValue(&work->unk_178, work->unk_144 - 0x1C00, work->unk_15C);
+            ApproachValue(&work->z, work->unk_144 - 0x4800, work->unk_15C);
+            ApproachValue(&work->z2, work->unk_144 - 0x1C00, work->unk_15C);
             work->unk_15C--;
 
-            if (work->unk_038 <= -0xC00) {
+            if (work->z <= -0xC00) {
                 work->unk_158 = 8;
                 work->unk_15A = 1;
             } else {
-                n = 8 - ((work->unk_038 >> 8) + 12) / 8;
+                n = 8 - ((work->z >> 8) + 12) / 8;
 
                 if (n < 0) {
                     work->unk_158 = 0;
@@ -4325,11 +4325,11 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             AnimStart(&work->anim, gUnk_09EF2A38[work->unk_158], 0);
             work->gfx = AnimGetGfx(&work->anim);
 
-            if (work->unk_178 <= -0x1000) {
+            if (work->z2 <= -0x1000) {
                 work->unk_17E = 11;
                 work->unk_17C = 1;
             } else {
-                n = 11 - ((work->unk_178 >> 8) + 16) / 8;
+                n = 11 - ((work->z2 >> 8) + 16) / 8;
 
                 if (n < 0) {
                     work->unk_17E = 0;
@@ -4345,10 +4345,10 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_13C = (b = gBtlWork->actor)->x;
             work->unk_140 = b->y;
             work->unk_144 = b->z;
-            work->unk_148 = (work->unk_13C - work->unk_030) / 40;
-            work->unk_14C = (work->unk_140 - work->unk_034) / 40;
+            work->unk_148 = (work->unk_13C - work->x) / 40;
+            work->unk_14C = (work->unk_140 - work->y) / 40;
             work->unk_150 = 0;
-            work->unk_154 = (work->unk_144 - work->unk_038) / 820;
+            work->unk_154 = (work->unk_144 - work->z) / 820;
             work->unk_160++;
         }
 
@@ -4379,13 +4379,13 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_15E = 0;
 
             if (jf->body.unk_034 & 4) {
-                work->unk_170 = jf->body.x + 0x1000;
-                work->unk_174 = jf->body.y + 0xA00;
-                work->unk_178 = jf->body.z - 0x1000;
+                work->x2 = jf->body.x + 0x1000;
+                work->y2 = jf->body.y + 0xA00;
+                work->z2 = jf->body.z - 0x1000;
             } else {
-                work->unk_170 = jf->body.x - 0x1000;
-                work->unk_174 = jf->body.y + 0xA00;
-                work->unk_178 = jf->body.z - 0x1000;
+                work->x2 = jf->body.x - 0x1000;
+                work->y2 = jf->body.y + 0xA00;
+                work->z2 = jf->body.z - 0x1000;
             }
 
             work->gfx2 = gUnk_09EF3A48[15];
@@ -4416,18 +4416,18 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             LoadObjPaletteBank(((u16*)work->palette)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
         }
 
-        work->unk_030 += work->unk_148;
-        work->unk_034 += work->unk_14C;
-        work->unk_038 += work->unk_150;
+        work->x += work->unk_148;
+        work->y += work->unk_14C;
+        work->z += work->unk_150;
         work->unk_150 += work->unk_154;
 
         if (work->unk_15E == 7) {
             work->unk_17C = 0;
         }
 
-        if (func_08011F78(231, work->unk_030, work->unk_034, work->unk_038 - 0x2000, 28, 28, 28) == 1) {
+        if (func_08011F78(231, work->x, work->y, work->z - 0x2000, 28, 28, 28) == 1) {
             m4aSongNumStart(0x279);
-            func_08014020(work->unk_030 - 0x800, work->unk_034 + work->unk_038 - 0x2400, 0);
+            func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
             work->unk_160 = 3;
         }
@@ -4440,10 +4440,10 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_160 = 5;
         }
 
-        switch ((s8)func_080C1370(work->unk_030, work->unk_034, work->unk_038 - 0x2000)) {
+        switch ((s8)func_080C1370(work->x, work->y, work->z - 0x2000)) {
         case 1:
             m4aSongNumStart(0x1F9);
-            func_08014020(work->unk_030 - 0x800, work->unk_034 + work->unk_038 - 0x2400, 0);
+            func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
             work->unk_160 = 3;
             break;
@@ -4458,7 +4458,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
     case 5:
         if (MosaicIsActive() == 0) {
             if (work->unk_15C == 0) {
-                func_08014020(work->unk_030 - 0x800, work->unk_034 + work->unk_038 - 0x2400, 0);
+                func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
                 work->unk_15C++;
             } else {
                 if (AnimIsFinished(&work->anim)) {
@@ -4480,7 +4480,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         return 0;
     }
 
-    func_080BD7F8(&work->unk_030, &work->unk_034, (s32)&work->unk_038, (s32*)&work->unk_03C);
+    func_080BD7F8(&work->x, &work->y, (s32)&work->z, (s32*)&work->unk_03C);
     TaskPoolUpdate(&work->unk_180);
 
     return 1;
@@ -4495,22 +4495,22 @@ void task_bos_jf_rock_2(JfRockWork* work) {
 
     if (work->unk_15A == 1) {
         if (jf->body.unk_034 & 4) {
-            if (work->unk_030 <= 0x259FF) {
-                pal = GetBattleSpritePriorityFlags(work->unk_034);
+            if (work->x <= 0x259FF) {
+                pal = GetBattleSpritePriorityFlags(work->y);
                 prio = 0xFD00;
             } else {
                 pal = 0x400;
                 prio = 0xFFF5;
             }
-        } else if (work->unk_030 > 0x1B200) {
-            pal = GetBattleSpritePriorityFlags(work->unk_034);
+        } else if (work->x > 0x1B200) {
+            pal = GetBattleSpritePriorityFlags(work->y);
             prio = 0xFD00;
         } else {
             pal = 0x400;
             prio = 0xFFF5;
         }
 
-        WorldToScreen(&x, &y, work->unk_030, work->unk_034, work->unk_038);
+        WorldToScreen(&x, &y, work->x, work->y, work->z);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pal, prio);
     }
 
@@ -4522,7 +4522,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
             pal |= 1;
         }
 
-        WorldToScreen(&x, &y, work->unk_170, work->unk_174, work->unk_178);
+        WorldToScreen(&x, &y, work->x2, work->y2, work->z2);
         DrawSprite(x, y, work->gfx2, work->tiles2, work->palette2, 0, pal, 0xFFF2);
     }
 
@@ -6305,17 +6305,17 @@ void task_bos_dsd_rock_0(DsdRockWork* work, DsdWork* arg) {
     }
 
     work->z = (GetRandom() % 101) << 8;
-    work->unk_10 = gSineTable[ang] * r >> 8;
-    work->unk_18 = -gSineTable[ang + 0x40] * r >> 8;
+    work->vx = gSineTable[ang] * r >> 8;
+    work->vz = -gSineTable[ang + 0x40] * r >> 8;
 }
 
 u8 task_bos_dsd_rock_1(DsdRockWork* work) {
     if ((work->dsd->unk_358 & 0x40) != 0) {
-        work->unk_10 = -work->unk_10;
-        work->unk_18 = -work->unk_18;
+        work->vx = -work->vx;
+        work->vz = -work->vz;
     } else {
-        work->x += work->unk_10;
-        work->z += work->unk_18;
+        work->x += work->vx;
+        work->z += work->vz;
     }
 
     if (work->x > gBtlWork->unk_000 + 0x8800 || work->x < gBtlWork->unk_000 - 0x8800) {

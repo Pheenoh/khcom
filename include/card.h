@@ -1048,9 +1048,9 @@ typedef struct PrizeCardArgs {
 } PrizeCardArgs;
 
 typedef struct PrizeCardTaskArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x14];
     s32 unk_20;
 } PrizeCardTaskArgs;

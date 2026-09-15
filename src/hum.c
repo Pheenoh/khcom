@@ -2355,19 +2355,19 @@ u8 task_hum_hades_1(HadesWork* work) {
             w->unk_1CA = (w->unk_1CA & 0xFFFB) | 2;
 
             if (act->unk_034 & 4) {
-                w->sub2[0].unk_04 = w->sub2[0].unk_10 = w->sub2[0].unk_1C = act->x - 0x2800;
-                w->sub2[0].unk_08 = w->sub2[0].unk_14 = w->sub2[0].unk_20 = act->y;
-                w->sub2[0].unk_0C = w->sub2[0].unk_18 = w->sub2[0].unk_24 = act->z - 0x3600;
-                w->sub2[1].unk_04 = w->sub2[1].unk_10 = w->sub2[1].unk_1C = act->x + 0x600;
-                w->sub2[1].unk_08 = w->sub2[1].unk_14 = w->sub2[1].unk_20 = act->y;
-                w->sub2[1].unk_0C = w->sub2[1].unk_18 = w->sub2[1].unk_24 = act->z - 0x3400;
+                w->sub2[0].x = w->sub2[0].x2 = w->sub2[0].x3 = act->x - 0x2800;
+                w->sub2[0].y = w->sub2[0].y2 = w->sub2[0].y3 = act->y;
+                w->sub2[0].z = w->sub2[0].z2 = w->sub2[0].z3 = act->z - 0x3600;
+                w->sub2[1].x = w->sub2[1].x2 = w->sub2[1].x3 = act->x + 0x600;
+                w->sub2[1].y = w->sub2[1].y2 = w->sub2[1].y3 = act->y;
+                w->sub2[1].z = w->sub2[1].z2 = w->sub2[1].z3 = act->z - 0x3400;
             } else {
-                w->sub2[0].unk_04 = w->sub2[0].unk_10 = w->sub2[0].unk_1C = act->x + 0x2800;
-                w->sub2[0].unk_08 = w->sub2[0].unk_14 = w->sub2[0].unk_20 = act->y;
-                w->sub2[0].unk_0C = w->sub2[0].unk_18 = w->sub2[0].unk_24 = act->z - 0x3600;
-                w->sub2[1].unk_04 = w->sub2[1].unk_10 = w->sub2[1].unk_1C = act->x - 0x600;
-                w->sub2[1].unk_08 = w->sub2[1].unk_14 = w->sub2[1].unk_20 = act->y;
-                w->sub2[1].unk_0C = w->sub2[1].unk_18 = w->sub2[1].unk_24 = act->z - 0x3400;
+                w->sub2[0].x = w->sub2[0].x2 = w->sub2[0].x3 = act->x + 0x2800;
+                w->sub2[0].y = w->sub2[0].y2 = w->sub2[0].y3 = act->y;
+                w->sub2[0].z = w->sub2[0].z2 = w->sub2[0].z3 = act->z - 0x3600;
+                w->sub2[1].x = w->sub2[1].x2 = w->sub2[1].x3 = act->x - 0x600;
+                w->sub2[1].y = w->sub2[1].y2 = w->sub2[1].y3 = act->y;
+                w->sub2[1].z = w->sub2[1].z2 = w->sub2[1].z3 = act->z - 0x3400;
             }
             m4aSongNumStart(0x2B6);
         }
@@ -2446,16 +2446,16 @@ u8 task_hum_hades_1(HadesWork* work) {
             }
 
             if (act->unk_034 & 4) {
-                w->sub2[0].unk_04 += (act->x - ((s16)p << 8) - w->sub2[0].unk_04) >> 1;
-                w->sub2[1].unk_04 += (act->x - ((s16)r << 8) - w->sub2[1].unk_04) >> 1;
+                w->sub2[0].x += (act->x - ((s16)p << 8) - w->sub2[0].x) >> 1;
+                w->sub2[1].x += (act->x - ((s16)r << 8) - w->sub2[1].x) >> 1;
             } else {
-                w->sub2[0].unk_04 += (act->x + ((s16)p << 8) - w->sub2[0].unk_04) >> 1;
-                w->sub2[1].unk_04 += (act->x + ((s16)r << 8) - w->sub2[1].unk_04) >> 1;
+                w->sub2[0].x += (act->x + ((s16)p << 8) - w->sub2[0].x) >> 1;
+                w->sub2[1].x += (act->x + ((s16)r << 8) - w->sub2[1].x) >> 1;
             }
-            w->sub2[0].unk_08 += (act->y - w->sub2[0].unk_08) >> 1;
-            w->sub2[1].unk_08 += (act->y - w->sub2[1].unk_08) >> 1;
-            w->sub2[0].unk_0C += (act->z + ((s16)q << 8) - w->sub2[0].unk_0C) >> 1;
-            w->sub2[1].unk_0C += (act->z + ((s16)s << 8) - w->sub2[1].unk_0C) >> 1;
+            w->sub2[0].y += (act->y - w->sub2[0].y) >> 1;
+            w->sub2[1].y += (act->y - w->sub2[1].y) >> 1;
+            w->sub2[0].z += (act->z + ((s16)q << 8) - w->sub2[0].z) >> 1;
+            w->sub2[1].z += (act->z + ((s16)s << 8) - w->sub2[1].z) >> 1;
             {
                 s32 v = w->unk_27C;
                 p = (s16)p + (v * 14 >> 8);
@@ -2465,16 +2465,16 @@ u8 task_hum_hades_1(HadesWork* work) {
             }
 
             if (act->unk_034 & 4) {
-                w->sub2[0].unk_10 += (act->x - ((s16)p << 8) - w->sub2[0].unk_10) >> 3;
-                w->sub2[1].unk_10 += (act->x - ((s16)r << 8) - w->sub2[1].unk_10) >> 3;
+                w->sub2[0].x2 += (act->x - ((s16)p << 8) - w->sub2[0].x2) >> 3;
+                w->sub2[1].x2 += (act->x - ((s16)r << 8) - w->sub2[1].x2) >> 3;
             } else {
-                w->sub2[0].unk_10 += (act->x + ((s16)p << 8) - w->sub2[0].unk_10) >> 3;
-                w->sub2[1].unk_10 += (act->x + ((s16)r << 8) - w->sub2[1].unk_10) >> 3;
+                w->sub2[0].x2 += (act->x + ((s16)p << 8) - w->sub2[0].x2) >> 3;
+                w->sub2[1].x2 += (act->x + ((s16)r << 8) - w->sub2[1].x2) >> 3;
             }
-            w->sub2[0].unk_14 += (act->y - w->sub2[0].unk_14) >> 3;
-            w->sub2[1].unk_14 += (act->y - w->sub2[1].unk_14) >> 3;
-            w->sub2[0].unk_18 += (act->z + ((s16)q << 8) - w->sub2[0].unk_18) >> 3;
-            w->sub2[1].unk_18 += (act->z + ((s16)s << 8) - w->sub2[1].unk_18) >> 3;
+            w->sub2[0].y2 += (act->y - w->sub2[0].y2) >> 3;
+            w->sub2[1].y2 += (act->y - w->sub2[1].y2) >> 3;
+            w->sub2[0].z2 += (act->z + ((s16)q << 8) - w->sub2[0].z2) >> 3;
+            w->sub2[1].z2 += (act->z + ((s16)s << 8) - w->sub2[1].z2) >> 3;
             {
                 s32 v = w->unk_27C;
                 p = (s16)p + (v * 24 >> 8);
@@ -2484,16 +2484,16 @@ u8 task_hum_hades_1(HadesWork* work) {
             }
 
             if (act->unk_034 & 4) {
-                w->sub2[0].unk_1C += (act->x - ((s16)p << 8) - w->sub2[0].unk_1C) >> 4;
-                w->sub2[1].unk_1C += (act->x - ((s16)r << 8) - w->sub2[1].unk_1C) >> 4;
+                w->sub2[0].x3 += (act->x - ((s16)p << 8) - w->sub2[0].x3) >> 4;
+                w->sub2[1].x3 += (act->x - ((s16)r << 8) - w->sub2[1].x3) >> 4;
             } else {
-                w->sub2[0].unk_1C += (act->x + ((s16)p << 8) - w->sub2[0].unk_1C) >> 4;
-                w->sub2[1].unk_1C += (act->x + ((s16)r << 8) - w->sub2[1].unk_1C) >> 4;
+                w->sub2[0].x3 += (act->x + ((s16)p << 8) - w->sub2[0].x3) >> 4;
+                w->sub2[1].x3 += (act->x + ((s16)r << 8) - w->sub2[1].x3) >> 4;
             }
-            w->sub2[0].unk_20 += (act->y - w->sub2[0].unk_20) >> 4;
-            w->sub2[1].unk_20 += (act->y - w->sub2[1].unk_20) >> 4;
-            w->sub2[0].unk_24 += (act->z + ((s16)q << 8) - w->sub2[0].unk_24) >> 4;
-            w->sub2[1].unk_24 += (act->z + ((s16)s << 8) - w->sub2[1].unk_24) >> 4;
+            w->sub2[0].y3 += (act->y - w->sub2[0].y3) >> 4;
+            w->sub2[1].y3 += (act->y - w->sub2[1].y3) >> 4;
+            w->sub2[0].z3 += (act->z + ((s16)q << 8) - w->sub2[0].z3) >> 4;
+            w->sub2[1].z3 += (act->z + ((s16)s << 8) - w->sub2[1].z3) >> 4;
         }
 
 #ifndef VERSION_EU
@@ -2503,11 +2503,11 @@ u8 task_hum_hades_1(HadesWork* work) {
 #endif
 
         if (w->unk_27C == 0x100) {
-            if (func_08011F78(0x121, w->sub2[0].unk_1C, w->sub2[0].unk_00, w->sub2[0].unk_24, 16, 16, 16)) {
+            if (func_08011F78(0x121, w->sub2[0].x3, w->sub2[0].unk_00, w->sub2[0].z3, 16, 16, 16)) {
                 m4aSongNumStart(0x1F9);
             }
 
-            if (func_08011F78(0x121, w->sub2[1].unk_1C, w->sub2[1].unk_00, w->sub2[1].unk_24, 16, 16, 16)) {
+            if (func_08011F78(0x121, w->sub2[1].x3, w->sub2[1].unk_00, w->sub2[1].z3, 16, 16, 16)) {
                 m4aSongNumStart(0x1F9);
             }
         }
@@ -2685,15 +2685,15 @@ void task_hum_hades_2(HadesWork* work) {
         }
         affine = AllocObjAffine(0, sx, work->unk_27C, 0);
         gfx = AnimGetGfx(&work->anim);
-        WorldToScreen(&x, &y, e->unk_04, e->unk_08, e->unk_0C);
+        WorldToScreen(&x, &y, e->x, e->y, e->z);
         DrawSprite(x, y, gfx, work->tiles, work->palette, affine, attr,
             -0x1005 - (e->unk_00 >> 8) * 4);
         gfx = AnimGetGfx(&work->anim2);
-        WorldToScreen(&x, &y, e->unk_10, e->unk_14, e->unk_18);
+        WorldToScreen(&x, &y, e->x2, e->y2, e->z2);
         DrawSprite(x, y, gfx, work->tiles2, work->palette, affine, attr,
             -0x1006 - (e->unk_00 >> 8) * 4);
         gfx = AnimGetGfx(&work->anim3);
-        WorldToScreen(&x, &y, e->unk_1C, e->unk_20, e->unk_24);
+        WorldToScreen(&x, &y, e->x3, e->y3, e->z3);
         DrawSprite(x, y, gfx, work->tiles3, work->palette, affine, attr,
             -0x1007 - (e->unk_00 >> 8) * 4);
     }
@@ -6859,9 +6859,9 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
                 e->unk_14 = GetRandom() % 0x501 + 0x300;
             }
             e->unk_18 = GetRandom() % 0x801 - 0x400;
-            e->unk_04 = work->x + ((GetRandom() % 17 - 8) << 8);
-            e->unk_08 = work->y + ((GetRandom() % 17 - 8) << 8);
-            e->unk_0C = work->z + ((GetRandom() % 17 - 8) << 8);
+            e->x = work->x + ((GetRandom() % 17 - 8) << 8);
+            e->y = work->y + ((GetRandom() % 17 - 8) << 8);
+            e->z = work->z + ((GetRandom() % 17 - 8) << 8);
             e->unk_00 = 0;
 
             if (GetRandom() % 2) {
@@ -6879,16 +6879,16 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
 
             for (i = 0; i < 12; i++) {
                 e = &work->sub[i];
-                e->unk_04 += e->unk_14;
-                e->unk_08 += e->unk_18;
-                e->unk_0C += e->unk_10;
+                e->x += e->unk_14;
+                e->y += e->unk_18;
+                e->z += e->unk_10;
                 e->unk_10 += 64;
 
-                if (e->unk_0C > 0) {
-                    e->unk_0C = 0;
+                if (e->z > 0) {
+                    e->z = 0;
                     e->unk_10 = -(e->unk_10 >> 1);
                 }
-                v = ClampBattlePosition(&e->unk_04, &e->unk_08, 0, 0);
+                v = ClampBattlePosition(&e->x, &e->y, 0, 0);
 
                 switch (v) {
                 case 3:
@@ -6902,7 +6902,7 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
                 }
 
                 if (e->unk_00 == 0) {
-                    if (func_08011F78(0x148, e->unk_04, e->unk_08, e->unk_0C, 4, 4, 4)) {
+                    if (func_08011F78(0x148, e->x, e->y, e->z, 4, 4, 4)) {
                         m4aSongNumStart(0x221);
                         e->unk_00 = 1;
                     }
@@ -6956,15 +6956,15 @@ void task_hum_lex_rock_2(LexRockWork* work) {
             gfx = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_160 != 0) {
-                attr = GetBattleSpritePriorityFlags(e->unk_08);
+                attr = GetBattleSpritePriorityFlags(e->y);
             } else {
-                attr = GetBattleSpritePriorityFlags(e->unk_08) | 1;
+                attr = GetBattleSpritePriorityFlags(e->y) | 1;
             }
-            WorldToScreen(&x, &y, e->unk_04, e->unk_08,
-                e->unk_0C);
+            WorldToScreen(&x, &y, e->x, e->y,
+                e->z);
             DrawSprite(x, y, gfx, work->tiles2[i], work->palette2, 0, attr,
-                -0x1006 - (e->unk_08 >> 8) * 4);
-            WorldToScreen(&x, &y, e->unk_04, e->unk_08, 0);
+                -0x1006 - (e->y >> 8) * 4);
+            WorldToScreen(&x, &y, e->x, e->y, 0);
             DrawSprite(x, y, gUnk_08B22CBC, work->tiles, work->palette, 0, attr, 0xFFFE);
         }
     }

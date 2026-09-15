@@ -61,9 +61,9 @@ typedef struct GaEntryDesc {
 } GaEntryDesc;
 
 typedef struct GaEntryPos {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
+    s16 x;
+    s16 y;
+    s16 z;
     u16 unk_06;
 } GaEntryPos;
 
@@ -118,9 +118,9 @@ typedef struct MdHahenWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
+    s32 vx;
+    s32 vy;
+    s32 vz;
     u32 palette;
     u32 tiles;
     void* gfx;
@@ -170,8 +170,8 @@ typedef struct MdFireWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_154;
-    s32 unk_158;
+    s32 vx;
+    s32 vy;
     s16 unk_15C;
     s16 unk_15E;
     s16 unk_160;
@@ -190,8 +190,8 @@ typedef struct MdFireArg {
 } MdFireArg;
 
 typedef struct MdFirePoint {
-    s16 unk_00;
-    s16 unk_02;
+    s16 x;
+    s16 y;
     u16 unk_04;
     u16 unk_06;
 } MdFirePoint;

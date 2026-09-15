@@ -1194,9 +1194,9 @@ u8 func_08111678(LstLsrWork* work) {
 
     if ((s16)*work->unk_00C <= 31) {
         arg.unk_00 = 0;
-        arg.unk_04 = work->unk_030;
-        arg.unk_08 = work->unk_034;
-        arg.unk_0C = work->unk_038;
+        arg.unk_04 = work->x2;
+        arg.unk_08 = work->y2;
+        arg.unk_0C = work->z2;
         arg.unk_12 = *work->unk_008;
         arg.unk_14 = work->unk_00C;
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFal, &arg);
@@ -1243,23 +1243,23 @@ u8 task_bos_lst_lsr_1(LstLsrWork* work) {
             work->unk_010 = 0;
             AnimChange(&work->anim, 4, 0);
         } else {
-            func_08011F78(0x10D, work->unk_030, work->unk_034, work->unk_038, 8, 8, 8);
+            func_08011F78(0x10D, work->x2, work->y2, work->z2, 8, 8, 8);
             if ((work->unk_010 & 3) == 0) {
                 func_08111678(work);
             }
-            if (abs(work->unk_030 - gBtlWork->actor->x) < 384) {
-                work->unk_030 = gBtlWork->actor->x;
-            } else if (work->unk_030 > gBtlWork->actor->x) {
-                work->unk_030 = work->unk_030 - 384;
-            } else if (work->unk_030 < gBtlWork->actor->x) {
-                work->unk_030 = work->unk_030 + 384;
+            if (abs(work->x2 - gBtlWork->actor->x) < 384) {
+                work->x2 = gBtlWork->actor->x;
+            } else if (work->x2 > gBtlWork->actor->x) {
+                work->x2 = work->x2 - 384;
+            } else if (work->x2 < gBtlWork->actor->x) {
+                work->x2 = work->x2 + 384;
             }
-            if (abs(work->unk_034 - gBtlWork->actor->y) < 384) {
-                work->unk_034 = gBtlWork->actor->y;
-            } else if (work->unk_034 > gBtlWork->actor->y) {
-                work->unk_034 = work->unk_034 - 384;
-            } else if (work->unk_034 < gBtlWork->actor->y) {
-                work->unk_034 = work->unk_034 + 384;
+            if (abs(work->y2 - gBtlWork->actor->y) < 384) {
+                work->y2 = gBtlWork->actor->y;
+            } else if (work->y2 > gBtlWork->actor->y) {
+                work->y2 = work->y2 - 384;
+            } else if (work->y2 < gBtlWork->actor->y) {
+                work->y2 = work->y2 + 384;
             }
             work->unk_010++;
         }
@@ -1285,10 +1285,10 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
 
     switch (work->unk_000) {
     case 2:
-        WorldToScreen(&x1, &y1, work->unk_030, work->unk_034, work->unk_038);
-        prio = GetBattleSpritePriorityFlags(work->unk_034);
-        z = -0x1004 - (work->unk_034 >> 8) * 4;
-        WorldToScreen(&x2, &y2, work->unk_024, work->unk_028, work->unk_02C);
+        WorldToScreen(&x1, &y1, work->x2, work->y2, work->z2);
+        prio = GetBattleSpritePriorityFlags(work->y2);
+        z = -0x1004 - (work->y2 >> 8) * 4;
+        WorldToScreen(&x2, &y2, work->x, work->y, work->z);
         oam = AllocObjAffineAngle(work->unk_002, 1);
         x = x2 + (x1 - x2) * work->unk_010 / work->unk_014;
         y = y2 + (y1 - y2) * work->unk_010 / work->unk_014;
@@ -1296,9 +1296,9 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
                    oam, prio, z);
         break;
     case 3:
-        WorldToScreen(&x1, &y1, work->unk_030, work->unk_034, work->unk_038);
-        prio = GetBattleSpritePriorityFlags(work->unk_034);
-        z = -0x1004 - (work->unk_034 >> 8) * 4;
+        WorldToScreen(&x1, &y1, work->x2, work->y2, work->z2);
+        prio = GetBattleSpritePriorityFlags(work->y2);
+        z = -0x1004 - (work->y2 >> 8) * 4;
         oam = AllocObjAffine(0, 0x100 - work->unk_010 * 8, work->unk_010 * 16 + 0x100, 1);
         gfx = AnimGetGfx(&work->anim);
         DrawSprite(x1, y1, gfx, (void*)work->tiles, (void*)work->palette,
@@ -1573,9 +1573,9 @@ void task_bos_lst_ctr_0(LstCtrWork* work, LstCtrArg* arg) {
     work->unk_014 = arg->unk_0C;
     work->unk_018 = arg->unk_10;
     work->unk_01C = arg->unk_14;
-    work->unk_02C = arg->unk_0C;
-    work->unk_030 = arg->unk_10;
-    work->unk_034 = arg->unk_14;
+    work->x = arg->unk_0C;
+    work->y = arg->unk_10;
+    work->z = arg->unk_14;
     work->tiles = (u32)LoadObjTiles(gUnk_09C5C704, 0x500);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     AnimInit(&work->anim, gUnk_09EFAF50, gUnk_09EFAF24);
@@ -1601,15 +1601,15 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
         work->unk_00E--;
         if (work->unk_00E <= 0) {
             p = gBtlWork->actor;
-            work->unk_038 = work->unk_014 - (work->unk_014 - p->x) / 4;
-            work->unk_03C = p->y;
-            work->unk_040 = -0x1000;
+            work->x2 = work->unk_014 - (work->unk_014 - p->x) / 4;
+            work->y2 = p->y;
+            work->z2 = -0x1000;
             work->unk_008 = 1;
             work->unk_00A = 0;
             work->unk_00C = 0;
             work->unk_00E = 0;
-            WorldToScreen(&x1, &y1, work->unk_02C, work->unk_030, work->unk_034);
-            WorldToScreen(&x2, &y2, work->unk_038, work->unk_03C, work->unk_040);
+            WorldToScreen(&x1, &y1, work->x, work->y, work->z);
+            WorldToScreen(&x2, &y2, work->x2, work->y2, work->z2);
             work->unk_010 = 0;
             work->unk_012 = (s16)func_08111F60((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)) / 9;
         } else {
@@ -1620,9 +1620,9 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
         }
         break;
     case 1:
-        work->unk_014 = work->unk_02C - (work->unk_02C - work->unk_038) * work->unk_00C / work->unk_012;
-        work->unk_018 = work->unk_030 + (work->unk_03C - work->unk_030) * work->unk_00C / work->unk_012;
-        work->unk_01C = work->unk_034 + (work->unk_040 - work->unk_034) * work->unk_00C / work->unk_012;
+        work->unk_014 = work->x - (work->x - work->x2) * work->unk_00C / work->unk_012;
+        work->unk_018 = work->y + (work->y2 - work->y) * work->unk_00C / work->unk_012;
+        work->unk_01C = work->z + (work->z2 - work->z) * work->unk_00C / work->unk_012;
         work->unk_00C++;
         if (work->unk_00C >= work->unk_012) {
             work->unk_008 = 2;
@@ -1641,15 +1641,15 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->unk_00A = 0;
             work->unk_00C = 0;
             work->unk_00E = 0;
-            work->unk_014 = work->unk_038;
-            work->unk_018 = work->unk_03C;
-            work->unk_01C = work->unk_040;
+            work->unk_014 = work->x2;
+            work->unk_018 = work->y2;
+            work->unk_01C = work->z2;
             AnimStart(&work->anim, 1, 0);
             m4aSongNumStart(0x2C6);
         }
         break;
     case 3:
-        if (work->unk_02C > work->unk_038) {
+        if (work->x > work->x2) {
             work->unk_010 = 0;
             work->unk_014 = work->unk_014 - 0x600;
             if (work->unk_014 < 0x6000) {
@@ -1668,7 +1668,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
                 work->unk_00E = 0;
             }
         }
-        work->unk_01C = work->unk_040 - ((work->unk_00C >> 2) << 8);
+        work->unk_01C = work->z2 - ((work->unk_00C >> 2) << 8);
         if (func_08011F78(0x10F, work->unk_014, work->unk_018, work->unk_01C, 8, 4, 4) != 0) {
             m4aSongNumStart(0x2BB);
         }
@@ -1717,7 +1717,7 @@ void task_bos_lst_ctr_2(LstCtrWork* work) {
                                 0x100 - work->unk_012 * 4, 1);
         break;
     default:
-        if (work->unk_014 + work->unk_020 > work->unk_038) {
+        if (work->unk_014 + work->unk_020 > work->x2) {
             prio |= 1;
         }
         break;

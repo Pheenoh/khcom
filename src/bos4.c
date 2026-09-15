@@ -2267,9 +2267,9 @@ void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg) {
     work->unk_022 = *arg;
     work->unk_024 = 0;
     work->unk_028 = 0;
-    func_080DD248(&work->unk_02C, &work->unk_030, &work->unk_034, work);
+    func_080DD248(&work->x, &work->y, &work->z, work);
     work->unk_022 = work->unk_022 == 0 ? 1 : 0;
-    func_080DD248(&work->unk_038, &work->unk_03C, &work->unk_040, work);
+    func_080DD248(&work->x2, &work->y2, &work->z2, work);
     work->unk_022 = work->unk_022 == 0 ? 1 : 0;
     if (work->unk_022 != 0) {
         work->unk_020 = 0xFFFC;
@@ -2286,9 +2286,9 @@ void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg) {
 
 u8 task_bos_ursula_backtako_1(UrsulaBacktakoWork* work) {
     if (func_080DC628() == 0) {
-        func_080DD248(&work->unk_02C, &work->unk_030, &work->unk_034, work);
+        func_080DD248(&work->x, &work->y, &work->z, work);
         work->unk_022 = work->unk_022 == 0 ? 1 : 0;
-        func_080DD248(&work->unk_038, &work->unk_03C, &work->unk_040, work);
+        func_080DD248(&work->x2, &work->y2, &work->z2, work);
         work->unk_022 = work->unk_022 == 0 ? 1 : 0;
         AnimUpdate(&work->anim);
     }
@@ -2305,10 +2305,10 @@ void task_bos_ursula_backtako_2(UrsulaBacktakoWork* work) {
         return;
     }
 
-    WorldToScreen(&x, &y, work->unk_02C, work->unk_030, work->unk_034);
+    WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, (void*)work->palette, f, 0xC00,
         0xFE00);
-    WorldToScreen(&x, &y, work->unk_038, work->unk_03C, work->unk_040);
+    WorldToScreen(&x, &y, work->x2, work->y2, work->z2);
     DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, (void*)work->palette, f, 0xC01,
         0xFE00);
 }

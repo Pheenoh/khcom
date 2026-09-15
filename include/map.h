@@ -614,9 +614,9 @@ typedef struct MapGmkJumpWork {
 } MapGmkJumpWork;
 
 typedef struct MapGmkTutorialWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_00C;
     u8 unk_010[0x04];
     u8 unk_014;
@@ -730,9 +730,9 @@ typedef struct MapGmkBarrelWork {
 } MapGmkBarrelWork;
 
 typedef struct MapPrizeWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_0C;
     u8 unk_10[0x5C];
     void* tiles;
@@ -992,9 +992,9 @@ typedef struct MapMickeyWork {
 } MapMickeyWork;
 
 typedef struct MapTutorialWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_00C;
     s32 unk_010;
     u8 unk_014[0x2C];

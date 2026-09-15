@@ -40,9 +40,9 @@ typedef struct PcPos {
     s16 unk_00;
     u8 unk_02;
     u8 unk_03;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_10[0x24];
     u64 unk_34;
     u8 unk_3C[0x4];

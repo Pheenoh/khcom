@@ -20315,9 +20315,9 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
-    w->unk_A8 = args.unk_00;
-    w->unk_AC = args.unk_04;
-    *(s32*)&w->unk_B0[0] = args.unk_08;
+    w->unk_A8 = args.x;
+    w->unk_AC = args.y;
+    *(s32*)&w->unk_B0[0] = args.z;
     *(s32*)&w->unk_B0[4] = 0;
     w->unk_F6 = 24;
     func_080DFF4C(&w->unk_A8);

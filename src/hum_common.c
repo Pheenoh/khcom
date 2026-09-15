@@ -405,9 +405,9 @@ s32 func_0800E5F0(HumWork* work) {
             gBtlWork->unk_068 |= 0x400000;
             func_0801B008();
             func_0801B918(actor);
-            arg.unk_00 = actor->x;
-            arg.unk_04 = actor->y;
-            arg.unk_08 = -0x4600;
+            arg.x = actor->x;
+            arg.y = actor->y;
+            arg.z = -0x4600;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
             return 0;
         } else {
@@ -441,9 +441,9 @@ s32 func_0800E5F0(HumWork* work) {
             ClampBattlePosition(&actor->x, &actor->y, (s16)(work->unk_174 - 8), -16);
 #endif
             func_0801B918(actor);
-            arg2.unk_00 = actor->x;
-            arg2.unk_04 = actor->y;
-            arg2.unk_08 = -0x4600;
+            arg2.x = actor->x;
+            arg2.y = actor->y;
+            arg2.z = -0x4600;
             CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg2);
             return 0;
         }

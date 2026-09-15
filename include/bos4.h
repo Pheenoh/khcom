@@ -491,12 +491,12 @@ typedef struct UrsulaBacktakoWork {
     u8 unk_023[0x1];
     u32 unk_024;
     u32 unk_028;
-    u32 unk_02C;
-    u32 unk_030;
-    u32 unk_034;
-    u32 unk_038;
-    u32 unk_03C;
-    u32 unk_040;
+    u32 x;
+    u32 y;
+    u32 z;
+    u32 x2;
+    u32 y2;
+    u32 z2;
 } UrsulaBacktakoWork;
 
 typedef struct BoogieKaihukuWork {

@@ -143,9 +143,9 @@ typedef struct DsdRockWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_10;
+    s32 vx;
     s32 unk_14;
-    s32 unk_18;
+    s32 vz;
     void* gfx;
     u8 unk_20;
     u8 unk_21[0x3];
@@ -328,9 +328,9 @@ typedef struct JfRockWork {
     s16 unk_028;
     s16 unk_02A;
     u32 unk_02C;
-    s32 unk_030;
-    s32 unk_034;
-    s32 unk_038;
+    s32 x;
+    s32 y;
+    s32 z;
     u32 unk_03C;
     u8 unk_040[0x20];
     u64 unk_060;
@@ -354,9 +354,9 @@ typedef struct JfRockWork {
     void* tiles2;
     void* palette2;
     void* gfx2;
-    s32 unk_170;
-    s32 unk_174;
-    s32 unk_178;
+    s32 x2;
+    s32 y2;
+    s32 z2;
     u8 unk_17C;
     u8 unk_17D;
     s16 unk_17E;

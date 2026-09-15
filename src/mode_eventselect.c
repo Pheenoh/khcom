@@ -153,8 +153,8 @@ void Hanabira_c_0(EffectWork* w, EventActor* arg) {
     w->x = b->x;
     w->y = b->y;
     w->z = b->z - 0x3000;
-    w->unk_3C = GetRandom() % 717 - 358;
-    w->unk_40 = -(GetRandom() % 539 + 102);
+    w->vx = GetRandom() % 717 - 358;
+    w->vz = -(GetRandom() % 539 + 102);
     AnimInit(&w->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
     AnimStart(&w->anim, GetRandom() & 1, 1);
     w->unk_49 = 0;
@@ -166,26 +166,26 @@ s32 Hanabira_c_1(EffectWork* w) {
 
     switch (w->unk_49) {
     case 0:
-        w->x += w->unk_3C;
-        w->z += w->unk_40;
-        w->unk_40 += 17;
+        w->x += w->vx;
+        w->z += w->vz;
+        w->vz += 17;
 
-        if (w->unk_40 > 256) {
+        if (w->vz > 256) {
             w->unk_49 = 1;
         }
         break;
     case 1:
-        w->x += w->unk_3C;
-        w->z += w->unk_40;
-        w->unk_40 = (v = w->unk_40 - 12) - (r = GetRandom()) % 9;
+        w->x += w->vx;
+        w->z += w->vz;
+        w->vz = (v = w->vz - 12) - (r = GetRandom()) % 9;
 
-        if (w->unk_40 < 0) {
-            w->unk_40 = GetRandom() % 181 + 204;
+        if (w->vz < 0) {
+            w->vz = GetRandom() % 181 + 204;
 
-            if (w->unk_3C > 0) {
-                w->unk_3C = -(GetRandom() % 257 + 128);
+            if (w->vx > 0) {
+                w->vx = -(GetRandom() % 257 + 128);
             } else {
-                w->unk_3C = GetRandom() % 257 + 128;
+                w->vx = GetRandom() % 257 + 128;
             }
         }
 
@@ -363,7 +363,7 @@ void func_080758D0(EffectWork* w, EventActor* arg) {
     d2 = (GetRandom() % 9 << 8) - k;
     w->y = b->y + d2;
     w->z2 = b->z;
-    w->unk_3C = GetRandom() % 232 + 76;
+    w->vx = GetRandom() % 232 + 76;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
     SetObjTileSource(w->tiles, gUnk_088A5D7A);

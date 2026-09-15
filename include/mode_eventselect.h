@@ -112,8 +112,8 @@ typedef struct EffectWork {
     s32 y;
     s32 z;
     s32 z2;
-    s32 unk_3C;
-    s32 unk_40;
+    s32 vx;
+    s32 vz;
     u16 unk_44;
     u16 unk_46;
     u8 unk_48;

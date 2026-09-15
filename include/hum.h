@@ -285,15 +285,15 @@ typedef struct LexceusWork {
 
 typedef struct HadesSub {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 x2;
+    s32 y2;
+    s32 z2;
+    s32 x3;
+    s32 y3;
+    s32 z3;
 } HadesSub;
 
 typedef struct HadesWork {
@@ -411,9 +411,9 @@ typedef struct HookBombWork {
 typedef struct LexRockSub {
     u8 unk_00;
     u8 unk_01[0x03];
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
