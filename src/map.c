@@ -8157,23 +8157,23 @@ void func_080ECFBC(UnkStruct_080ECA88* p) {
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a) {
     s32 i;
 
-    FadeSetPaletteExcluded(p->unk_020->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_070->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_038->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_03C->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_060->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_020->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_070->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_038->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_03C->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_060->index + 0x10, a);
 
     for (i = 0; i < 3; i++) {
         if (p->unk_158[i] != 0) {
-            FadeSetPaletteExcluded(p->unk_158[i]->unk_06 + 0x10, a);
+            FadeSetPaletteExcluded(p->unk_158[i]->index + 0x10, a);
         }
     }
 }
 
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a) {
-    FadeSetPaletteExcluded(p->unk_000->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_138->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_140->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_000->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_138->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_140->index + 0x10, a);
 }
 
 void func_080ED0B8(FldRes* p, u8 a, u16 v) {
@@ -8186,7 +8186,7 @@ void func_080ED0B8(FldRes* p, u8 a, u16 v) {
     d[2] = v - d[0] * 100 - d[1] * 10;
 
     for (i = 0, q = d; i < 3; i++) {
-        RequestDma3Copy((void*)&gUnk_099581A4[*q * 32], (void*)(0x06010000 + (p->unk_06 + a + i) * 32), 0x20);
+        RequestDma3Copy((void*)&gUnk_099581A4[*q * 32], (void*)(0x06010000 + (p->index + a + i) * 32), 0x20);
         q++;
     }
 }
@@ -8203,7 +8203,7 @@ void func_080ED14C(FldRes* p, u8 a, u32 v) {
     d[4] = v - d[0] * 10000 - d[1] * 1000 - d[2] * 100 - d[3] * 10;
 
     for (i = 0, q = d; i < 5; i++) {
-        RequestDma3Copy((void*)&gUnk_099581A4[*q * 32], (void*)(0x06010000 + (p->unk_06 + a + i) * 32), 0x20);
+        RequestDma3Copy((void*)&gUnk_099581A4[*q * 32], (void*)(0x06010000 + (p->index + a + i) * 32), 0x20);
         q++;
     }
 }
@@ -8683,7 +8683,7 @@ void func_080EDDBC(MapMenuWork* w) {
         w->palette6 = LoadObjPalette(gUnk_08F683A4, 32);
     }
 
-    FadeSetPaletteExcluded(w->palette6->unk_06 + 0x10, 1);
+    FadeSetPaletteExcluded(w->palette6->index + 0x10, 1);
     v = gGameState.unk_00F;
 
     if (v != -1) {
@@ -9045,17 +9045,17 @@ void func_080EE50C(UnkStruct_080EE50C* p, u8 a) {
     FadeSetPaletteExcluded(0x0C, a);
     FadeSetPaletteExcluded(0x0D, a);
     FadeSetPaletteExcluded(0x0E, a);
-    FadeSetPaletteExcluded(p->unk_014->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_034->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_040->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_190->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_014->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_034->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_040->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_190->index + 0x10, a);
 }
 
 void func_080EE580(UnkStruct_080EE580* p, u8 a) {
-    FadeSetPaletteExcluded(p->unk_000->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_168->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_180->unk_06 + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_188->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_000->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_168->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_180->index + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_188->index + 0x10, a);
 }
 
 void func_080EE5E0(u8 a) {
@@ -13587,8 +13587,8 @@ void func_080F55B0(MapPrzCardWork* w) {
     TaskPoolDraw(&w->unk_0D4);
 }
 void func_080F5780(MapPrzCardWork* w) {
-    FadeSetPaletteExcluded(w->palette2->unk_06 + 0x10, 0);
-    FadeSetPaletteExcluded(w->palette->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->palette2->index + 0x10, 0);
+    FadeSetPaletteExcluded(w->palette->index + 0x10, 0);
     ColliderUnregister(w->unk_010);
     ReleaseObjTiles(w->tiles);
     ReleaseObjTiles(w->tiles2);
@@ -13651,7 +13651,7 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     InitTextSlots(w->unk_004, 48);
     w->unk_184 = LoadTextSlots(text, w->unk_004);
     w->unk_000 = _08066468(1);
-    FadeSetPaletteExcluded(w->unk_000->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(w->unk_000->index + 16, 1);
     w->unk_186 = (240 - GetTextSlotsWidth(w->unk_004, w->unk_184)) / 2;
     w->unk_188 = 0;
 }
@@ -13669,7 +13669,7 @@ void func_080F59A0(MapMsgWork* w) {
         DisableBg(0);
     }
 
-    FadeSetPaletteExcluded(w->unk_000->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->unk_000->index + 0x10, 0);
     ReleaseObjPalette((u8*)w->unk_000);
     FreeTextSlots(&w->unk_004, 0x30);
 }

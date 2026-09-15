@@ -112,17 +112,17 @@ void func_0800EFE8(Actor* work) {
 
         if (work->unk_150 & 1) {
             work->unk_154 |= 2;
-            LoadObjPaletteBank(work->palette->unk_06, gUnk_08F6DA04 + 32 + gUnk_08133E54[idx] * 32);
+            LoadObjPaletteBank(work->palette->index, gUnk_08F6DA04 + 32 + gUnk_08133E54[idx] * 32);
         } else {
             work->unk_154 &= ~2;
-            LoadObjPaletteBank(work->palette->unk_06, work->unk_178);
+            LoadObjPaletteBank(work->palette->index, work->unk_178);
         }
     } else if (func_0801CA00(c)) {
         work->unk_154 |= 2;
-        LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
+        LoadObjPaletteBank(work->palette->index, gUnk_08F69BC4);
     } else if (work->unk_154 & 2) {
         work->unk_154 &= ~2;
-        LoadObjPaletteBank(work->palette->unk_06, work->unk_178);
+        LoadObjPaletteBank(work->palette->index, work->unk_178);
     }
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->y >> 8) * 4) | 3);
     func_0800EEBC(work, work->unk_0C);

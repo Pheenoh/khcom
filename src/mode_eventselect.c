@@ -244,7 +244,7 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
 
     if (FadeIsActive() == 0) {
-        FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->index + 16, 1);
     }
 
     SetObjTileSource(w->tiles, gUnk_09320796);
@@ -1024,7 +1024,7 @@ void func_08076458(void) {
     gUnk_02039DD4->tiles7 = LoadObjTiles(gUnk_0905EEE6, 320);
     gUnk_02039DD4->palette = LoadObjPalette(gUnk_09611AB8, 32);
     gUnk_02039DD4->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
-    FadeSetPaletteExcluded(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->index + 16, 1);
     func_0807B668(gUnk_02039DD4);
 }
 

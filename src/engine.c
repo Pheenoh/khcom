@@ -84,8 +84,8 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
     p->entries[p->entryCount].priority = h;
     p->entries[p->entryCount].sprite = c;
 
-    if (((ObjTiles*)obj)->unk_20 != (u32)c) {
-        ((ObjTiles*)obj)->unk_20 = (u32)c;
+    if (((ObjTiles*)obj)->sprite != (u32)c) {
+        ((ObjTiles*)obj)->sprite = (u32)c;
         n = *(u16*)c;
         c = (u16*)c + 1;
         base = 0;
@@ -94,7 +94,7 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
             i = n;
             do {
                 cnt = GetObjTileCount(((ObjTileListEntry*)c)->attr0, ((ObjTileListEntry*)c)->attr1);
-                RequestDma3Copy((u8*)((ObjTiles*)obj)->unk_00 + ((((ObjTileListEntry*)c)->tile & 0x3FF) << 5), (void*)(((((ObjTiles*)obj)->unk_06 + base) << 5) + 0x06010000), cnt << 5);
+                RequestDma3Copy((u8*)((ObjTiles*)obj)->src + ((((ObjTileListEntry*)c)->tile & 0x3FF) << 5), (void*)(((((ObjTiles*)obj)->index + base) << 5) + 0x06010000), cnt << 5);
                 base += cnt;
                 c = (u16*)c + 3;
             } while (--i);
@@ -108,7 +108,7 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
 u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
     SpriteWork* p;
 
-    if (e == 0 || ((ObjTiles*)obj)->unk_00 == 0) {
+    if (e == 0 || ((ObjTiles*)obj)->src == 0) {
         return 0;
     }
     {
@@ -120,7 +120,7 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
         p->entries[p->entryCount].affine = f;
         p->entries[p->entryCount].flags = g;
         p->entries[p->entryCount].priority = h;
-        p->entries[p->entryCount].sprite = (void*)((ObjTiles*)obj)->unk_20;
+        p->entries[p->entryCount].sprite = (void*)((ObjTiles*)obj)->sprite;
         p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
         p->entryCount += 1;
     }
@@ -128,7 +128,7 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
 }
 u8 DrawSprite(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     if (gSpriteWork->entryCount <= 127 && obj != 0) {
-        switch (((ObjTiles*)obj)->unk_28) {
+        switch (((ObjTiles*)obj)->type) {
         case 0:
             return func_08002060((s16)x, (s16)y, c, obj, e, f, g, h);
         case 1:
@@ -204,7 +204,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     }
     cur = ListPoolFirst(&gSpriteWork->tilePool);
     while (cur != 0) {
-        if (cur->unk_00 == src && cur->unk_24 == 0) {
+        if (cur->src == src && cur->allocated == 0) {
             cur->refCount++;
             return cur;
         }
@@ -214,24 +214,24 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     if (node == 0) {
         return 0;
     }
-    node->unk_28 = 0;
-    node->unk_08 = size / 32;
-    node->unk_00 = src;
+    node->type = 0;
+    node->count = size / 32;
+    node->src = src;
     node->refCount = 0;
-    node->unk_20 = 0;
-    node->unk_24 = 0;
+    node->sprite = 0;
+    node->allocated = 0;
     node->self = node;
     cur = ListPoolFirst(&gSpriteWork->tilePool);
     if (cur == 0) {
-        node->unk_06 = gSpriteWork->tilePool.rangeStart;
-        RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
+        node->index = gSpriteWork->tilePool.rangeStart;
+        RequestDma3Copy(src, (void*)((node->index << 5) + 0x06010000), size);
         ListPoolActivate(&node->node, &gSpriteWork->tilePool);
         return node;
     }
-    node->unk_06 = gSpriteWork->tilePool.rangeStart;
-    avail = cur->unk_06 - gSpriteWork->tilePool.rangeStart;
-    if (node->unk_08 <= (s16)avail) {
-        RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
+    node->index = gSpriteWork->tilePool.rangeStart;
+    avail = cur->index - gSpriteWork->tilePool.rangeStart;
+    if (node->count <= (s16)avail) {
+        RequestDma3Copy(src, (void*)((node->index << 5) + 0x06010000), size);
         ListPoolActivateBefore(&node->node, &gSpriteWork->tilePool, &cur->node);
         return node;
     }
@@ -241,19 +241,19 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > gSpriteWork->tilePool.rangeEnd) {
+        node->index = cur->index + cur->count;
+        if (node->index + node->count > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - node->unk_06;
+            end = next->index - node->index;
         } else {
-            end = gSpriteWork->tilePool.rangeEnd - node->unk_06;
+            end = gSpriteWork->tilePool.rangeEnd - node->index;
         }
 
-        if (node->unk_08 <= end) {
-            RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
+        if (node->count <= end) {
+            RequestDma3Copy(src, (void*)((node->index << 5) + 0x06010000), size);
             ListPoolActivateAfter(&node->node, &gSpriteWork->tilePool, &cur->node);
             return node;
         }
@@ -290,7 +290,7 @@ void ReleaseObjTiles(void* a) {
         return;
     }
 
-    switch (q->unk_28) {
+    switch (q->type) {
     case 0:
         ReleaseSharedObjTiles(q);
         break;
@@ -316,22 +316,22 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     if (node == 0) {
         return 0;
     }
-    node->unk_28 = 1;
-    node->unk_08 = size / 32;
-    node->unk_00 = owner;
+    node->type = 1;
+    node->count = size / 32;
+    node->src = owner;
     node->refCount = 0;
-    node->unk_20 = 0;
-    node->unk_24 = 1;
+    node->sprite = 0;
+    node->allocated = 1;
     node->self = node;
     cur = ListPoolFirst(&gSpriteWork->tilePool);
     if (cur == 0) {
-        node->unk_06 = gSpriteWork->tilePool.rangeStart;
+        node->index = gSpriteWork->tilePool.rangeStart;
         ListPoolActivate(&node->node, &gSpriteWork->tilePool);
         return node;
     }
-    node->unk_06 = gSpriteWork->tilePool.rangeStart;
-    avail = cur->unk_06 - gSpriteWork->tilePool.rangeStart;
-    if (node->unk_08 <= (s16)avail) {
+    node->index = gSpriteWork->tilePool.rangeStart;
+    avail = cur->index - gSpriteWork->tilePool.rangeStart;
+    if (node->count <= (s16)avail) {
         ListPoolActivateBefore(&node->node, &gSpriteWork->tilePool, &cur->node);
         return node;
     }
@@ -341,18 +341,18 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > gSpriteWork->tilePool.rangeEnd) {
+        node->index = cur->index + cur->count;
+        if (node->index + node->count > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - node->unk_06;
+            end = next->index - node->index;
         } else {
-            end = gSpriteWork->tilePool.rangeEnd - node->unk_06;
+            end = gSpriteWork->tilePool.rangeEnd - node->index;
         }
 
-        if (node->unk_08 <= end) {
+        if (node->count <= end) {
             ListPoolActivateAfter(&node->node, &gSpriteWork->tilePool, &cur->node);
             return node;
         }
@@ -381,7 +381,7 @@ ObjPalette* LoadObjPalette(void* src, u16 size) {
     }
 
     for (cur = ListPoolFirst(&gSpriteWork->palettePool); cur != 0; cur = ListPoolNext(&cur->node)) {
-        if (cur->unk_00 == src) {
+        if (cur->src == src) {
             cur->refCount++;
             return cur;
         }
@@ -391,21 +391,21 @@ ObjPalette* LoadObjPalette(void* src, u16 size) {
         return 0;
     }
     node->unk_20 = 0;
-    node->unk_08 = size / 32;
-    node->unk_00 = src;
+    node->count = size / 32;
+    node->src = src;
     node->refCount = 0;
     node->self = node;
     cur = ListPoolFirst(&gSpriteWork->palettePool);
     if (cur == 0) {
-        node->unk_06 = gSpriteWork->palettePool.rangeStart;
-        LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+        node->index = gSpriteWork->palettePool.rangeStart;
+        LoadPalette(src, (void*)((node->index << 5) + 0x05000200), size);
         ListPoolActivate(&node->node, &gSpriteWork->palettePool);
         return node;
     }
-    node->unk_06 = gSpriteWork->palettePool.rangeStart;
-    avail = cur->unk_06 - gSpriteWork->palettePool.rangeStart;
-    if (node->unk_08 <= (s16)avail) {
-        LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+    node->index = gSpriteWork->palettePool.rangeStart;
+    avail = cur->index - gSpriteWork->palettePool.rangeStart;
+    if (node->count <= (s16)avail) {
+        LoadPalette(src, (void*)((node->index << 5) + 0x05000200), size);
         ListPoolActivateBefore(&node->node, &gSpriteWork->palettePool, &cur->node);
         return node;
     }
@@ -415,19 +415,19 @@ ObjPalette* LoadObjPalette(void* src, u16 size) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > gSpriteWork->palettePool.rangeEnd) {
+        node->index = cur->index + cur->count;
+        if (node->index + node->count > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - node->unk_06;
+            end = next->index - node->index;
         } else {
-            end = gSpriteWork->palettePool.rangeEnd - node->unk_06;
+            end = gSpriteWork->palettePool.rangeEnd - node->index;
         }
 
-        if (node->unk_08 <= end) {
-            LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+        if (node->count <= end) {
+            LoadPalette(src, (void*)((node->index << 5) + 0x05000200), size);
             ListPoolActivateAfter(&node->node, &gSpriteWork->palettePool, &cur->node);
             return node;
         }
@@ -445,7 +445,7 @@ void ReleaseObjPaletteRef(ObjPalette* p) {
         p->refCount -= 1;
     } else {
         p->self = 0;
-        FadeClearPaletteSlot(p->unk_06 + 0x10);
+        FadeClearPaletteSlot(p->index + 0x10);
         ListPoolRelease(&p->node, &gSpriteWork->palettePool);
     }
 }
@@ -738,7 +738,7 @@ void func_08002F50(void) {
             x += (s16)entry->x;
             y += (s16)entry->y;
             if (x > 239 || x <= -(s16)width || y > 159 || y <= -(s16)height) {
-                if (((ObjTiles*)entry->tiles)->unk_24 != 0) {
+                if (((ObjTiles*)entry->tiles)->allocated != 0) {
                     tileOffset += GetObjTileCount(attr0, attr1);
                 }
                 continue;
@@ -746,13 +746,13 @@ void func_08002F50(void) {
             oam[0] = (attr0 & 0xFF00) | (y & 0xFF);
             oam[1] = (attr1 & 0xFE00) | (x & 0x1FF);
             tiles = entry->tiles;
-            if (tiles->unk_24 != 0) {
-                palette = (attr2 >> 12) + ((ObjPalette*)entry->palette)->unk_06;
-                oam[2] = (attr2 & 0xC00) | (tileOffset + tiles->unk_06) | (palette << 12);
+            if (tiles->allocated != 0) {
+                palette = (attr2 >> 12) + ((ObjPalette*)entry->palette)->index;
+                oam[2] = (attr2 & 0xC00) | (tileOffset + tiles->index) | (palette << 12);
                 tileOffset += GetObjTileCount(oam[0], oam[1]);
             } else {
-                palette = (attr2 >> 12) + ((ObjPalette*)entry->palette)->unk_06;
-                oam[2] = ((attr2 & 0xFFF) + tiles->unk_06) | (palette << 12);
+                palette = (attr2 >> 12) + ((ObjPalette*)entry->palette)->index;
+                oam[2] = ((attr2 & 0xFFF) + tiles->index) | (palette << 12);
             }
             oam[0] |= (entry->flags & 8) << 9;
             oam[0] |= (entry->flags & 4) << 8;
@@ -950,37 +950,37 @@ u8 func_08003620(u16* oam, s16 x, s16 y) {
 
 void InitObjTilesAtSlot(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x400) {
-        t->unk_28 = 0;
-        t->unk_08 = size >> 5;
-        t->unk_00 = src;
+        t->type = 0;
+        t->count = size >> 5;
+        t->src = src;
         t->refCount = 0;
-        t->unk_20 = 0;
-        t->unk_24 = 0;
-        t->unk_06 = slot;
-        RequestDma3Copy(src, (void*)((t->unk_06 << 5) + 0x06010000), size);
+        t->sprite = 0;
+        t->allocated = 0;
+        t->index = slot;
+        RequestDma3Copy(src, (void*)((t->index << 5) + 0x06010000), size);
     }
 }
 
 void InitDynamicObjTilesAtSlot(ObjTiles* t, u16 slot, u16 size, void* src) {
     if (slot + (size >> 5) <= 0x400) {
-        t->unk_28 = 1;
-        t->unk_08 = size >> 5;
-        t->unk_00 = src;
+        t->type = 1;
+        t->count = size >> 5;
+        t->src = src;
         t->refCount = 0;
-        t->unk_20 = 0;
-        t->unk_24 = 1;
-        t->unk_06 = slot;
+        t->sprite = 0;
+        t->allocated = 1;
+        t->index = slot;
     }
 }
 
 void InitObjPaletteAtSlot(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x10) {
-        t->unk_20 = 0;
-        t->unk_08 = size >> 5;
-        t->unk_00 = src;
+        t->sprite = 0;
+        t->count = size >> 5;
+        t->src = src;
         t->refCount = 0;
-        t->unk_06 = slot;
-        RequestDma3Copy(src, (void*)((t->unk_06 << 5) + 0x05000200), size);
+        t->index = slot;
+        RequestDma3Copy(src, (void*)((t->index << 5) + 0x05000200), size);
     }
 }
 
@@ -988,7 +988,7 @@ ObjTiles* AllocSpriteFrameTiles(u16 a) {
     ObjTiles* t = AllocObjTiles(a, 0);
 
     if (t != 0) {
-        t->unk_28 = 2;
+        t->type = 2;
     }
     return t;
 }
@@ -999,10 +999,10 @@ u8 UpdateSpriteFrameTiles(ObjTiles* a, u16* b, void* c) {
     u16 acc;
     u16 n;
 
-    if (b != 0 && c != 0 && a->unk_28 == 2) {
-        if (a->unk_20 != (u32)b || a->unk_00 != c) {
-            a->unk_00 = c;
-            a->unk_20 = (u32)b;
+    if (b != 0 && c != 0 && a->type == 2) {
+        if (a->sprite != (u32)b || a->src != c) {
+            a->src = c;
+            a->sprite = (u32)b;
             count = *b;
             b++;
             acc = 0;
@@ -1011,8 +1011,8 @@ u8 UpdateSpriteFrameTiles(ObjTiles* a, u16* b, void* c) {
                 j = count;
                 do {
                     n = GetObjTileCount(b[0], b[1]);
-                    RequestDma3Copy((u8*)a->unk_00 + ((b[2] & 0x3FF) << 5),
-                                    (void*)(((a->unk_06 + acc) << 5) + 0x06010000), n * 32);
+                    RequestDma3Copy((u8*)a->src + ((b[2] & 0x3FF) << 5),
+                                    (void*)(((a->index + acc) << 5) + 0x06010000), n * 32);
                     acc = acc + n;
                     b += 3;
                     j--;
@@ -1035,19 +1035,19 @@ ObjPalette* AllocObjPalette(u16 size) {
         return 0;
     }
     node->unk_20 = 2;
-    node->unk_08 = size / 32;
-    node->unk_00 = 0;
+    node->count = size / 32;
+    node->src = 0;
     node->refCount = 0;
     node->self = node;
     cur = ListPoolFirst(&gSpriteWork->palettePool);
     if (cur == 0) {
-        node->unk_06 = gSpriteWork->palettePool.rangeStart;
+        node->index = gSpriteWork->palettePool.rangeStart;
         ListPoolActivate(&node->node, &gSpriteWork->palettePool);
         return node;
     }
-    node->unk_06 = gSpriteWork->palettePool.rangeStart;
-    avail = cur->unk_06 - gSpriteWork->palettePool.rangeStart;
-    if (node->unk_08 <= (s16)avail) {
+    node->index = gSpriteWork->palettePool.rangeStart;
+    avail = cur->index - gSpriteWork->palettePool.rangeStart;
+    if (node->count <= (s16)avail) {
         ListPoolActivateBefore(&node->node, &gSpriteWork->palettePool, &cur->node);
         return node;
     }
@@ -1057,18 +1057,18 @@ ObjPalette* AllocObjPalette(u16 size) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > gSpriteWork->palettePool.rangeEnd) {
+        node->index = cur->index + cur->count;
+        if (node->index + node->count > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - node->unk_06;
+            end = next->index - node->index;
         } else {
-            end = gSpriteWork->palettePool.rangeEnd - node->unk_06;
+            end = gSpriteWork->palettePool.rangeEnd - node->index;
         }
 
-        if (node->unk_08 <= end) {
+        if (node->count <= end) {
             ListPoolActivateAfter(&node->node, &gSpriteWork->palettePool, &cur->node);
             return node;
         }
@@ -1078,8 +1078,8 @@ ObjPalette* AllocObjPalette(u16 size) {
 }
 
 void UpdateAllocatedObjPalette(ObjTiles* t, void* src) {
-    if (t->unk_20 == 2) {
-        LoadPalette(src, (void*)((t->unk_06 << 5) + 0x05000200), (u16)(t->unk_08 << 5));
+    if (t->sprite == 2) {
+        LoadPalette(src, (void*)((t->index << 5) + 0x05000200), (u16)(t->count << 5));
     }
 }
 
@@ -1094,7 +1094,7 @@ u8 CanAllocObjTiles(u16 n) {
         return 1;
     }
     pos = gSpriteWork->tilePool.rangeStart;
-    if (n <= (s16)(cur->unk_06 - pos)) {
+    if (n <= (s16)(cur->index - pos)) {
         return 1;
     }
 
@@ -1103,13 +1103,13 @@ u8 CanAllocObjTiles(u16 n) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        pos = cur->unk_06 + cur->unk_08;
+        pos = cur->index + cur->count;
         if ((s16)pos + n > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - pos;
+            end = next->index - pos;
         } else {
             end = gSpriteWork->tilePool.rangeEnd - pos;
         }
@@ -1132,7 +1132,7 @@ u8 CanAllocObjPalette(u16 n) {
         return 1;
     }
     pos = gSpriteWork->palettePool.rangeStart;
-    if (n <= (s16)(cur->unk_06 - pos)) {
+    if (n <= (s16)(cur->index - pos)) {
         return 1;
     }
 
@@ -1141,13 +1141,13 @@ u8 CanAllocObjPalette(u16 n) {
             break;
         }
         next = ListPoolNext(&cur->node);
-        pos = cur->unk_06 + cur->unk_08;
+        pos = cur->index + cur->count;
         if ((s16)pos + n > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
-            end = next->unk_06 - pos;
+            end = next->index - pos;
         } else {
             end = gSpriteWork->palettePool.rangeEnd - pos;
         }
@@ -1446,14 +1446,14 @@ void VTransReset(void) {
     Dma3Queue* q = gDma3Requests;
 
     q->requestCount = 0;
-    q->unk_10A2 = 0;
-    q->unk_10A4 = 0;
-    q->unk_10A6 = 0;
+    q->blitCount = 0;
+    q->fillCount = 0;
+    q->callbackCount = 0;
     q->count = 0;
 #ifdef VERSION_EU
     q->unk_10AA = 0;
 #endif
-    q->unk_10AC = 0;
+    q->transferredBytes = 0;
 }
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size) {
@@ -1511,42 +1511,42 @@ u8 RequestDma3Clear(void* a, u16 b) {
     if (q->count > 3) {
         return 0;
     }
-    q->pending[q->count].unk_00 = a;
-    q->pending[q->count].unk_04 = b;
+    q->pending[q->count].dst = a;
+    q->pending[q->count].size = b;
     q->count = q->count + 1;
 
     return 1;
 }
 u8 RequestTilemapRectCopy(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh) {
-    if (gDma3Requests->unk_10A2 > 63) {
+    if (gDma3Requests->blitCount > 63) {
         return 0;
     }
 
     if (sw <= 0 || sh <= 0) {
         return 0;
     }
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_00 = src;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_04 = dst;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_08 = x;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_09 = y;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0A = w;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0B = h;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0C = sw;
-    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0D = sh;
-    gDma3Requests->unk_10A2 = gDma3Requests->unk_10A2 + 1;
+    gDma3Requests->blits[gDma3Requests->blitCount].src = src;
+    gDma3Requests->blits[gDma3Requests->blitCount].dst = dst;
+    gDma3Requests->blits[gDma3Requests->blitCount].srcX = x;
+    gDma3Requests->blits[gDma3Requests->blitCount].srcY = y;
+    gDma3Requests->blits[gDma3Requests->blitCount].dstX = w;
+    gDma3Requests->blits[gDma3Requests->blitCount].dstY = h;
+    gDma3Requests->blits[gDma3Requests->blitCount].width = sw;
+    gDma3Requests->blits[gDma3Requests->blitCount].height = sh;
+    gDma3Requests->blitCount = gDma3Requests->blitCount + 1;
     return 1;
 }
 
 u8 RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, u8 e) {
-    if (gDma3Requests->unk_10A4 > 7) {
+    if (gDma3Requests->fillCount > 7) {
         return 0;
     }
-    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_00 = a;
-    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_04 = b;
-    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_08 = c & 0x1F;
-    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_09 = d & 0x1F;
-    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_0A = e;
-    gDma3Requests->unk_10A4 = gDma3Requests->unk_10A4 + 1;
+    gDma3Requests->fills[gDma3Requests->fillCount].src = a;
+    gDma3Requests->fills[gDma3Requests->fillCount].dst = b;
+    gDma3Requests->fills[gDma3Requests->fillCount].x = c & 0x1F;
+    gDma3Requests->fills[gDma3Requests->fillCount].y = d & 0x1F;
+    gDma3Requests->fills[gDma3Requests->fillCount].vertical = e;
+    gDma3Requests->fillCount = gDma3Requests->fillCount + 1;
 
     return 1;
 }
@@ -1554,11 +1554,11 @@ u8 RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, u8 e) {
 u8 QueueVTransCallback(void* a) {
     Dma3Queue* q = gDma3Requests;
 
-    if (q->unk_10A6 > 7) {
+    if (q->callbackCount > 7) {
         return 0;
     }
-    q->unk_1060[q->unk_10A6] = a;
-    q->unk_10A6 = q->unk_10A6 + 1;
+    q->callbacks[q->callbackCount] = a;
+    q->callbackCount = q->callbackCount + 1;
 
     return 1;
 }
@@ -1566,7 +1566,7 @@ u8 QueueVTransCallback(void* a) {
 u32 GetVTransTransferredBytes(void) {
     Dma3Queue* q = gDma3Requests;
 
-    return q->unk_10AC;
+    return q->transferredBytes;
 }
 
 void FlushDma3Queue(void) {
@@ -1593,20 +1593,20 @@ void FlushDma3Queue(void) {
 
     q = gDma3Requests;
     req = q->requests;
-    blits = q->unk_0C00;
-    fills = q->unk_1000;
-    cb = (void (**)(void))q->unk_1060;
+    blits = q->blits;
+    fills = q->fills;
+    cb = (void (**)(void))q->callbacks;
     pend = q->pending;
 #ifdef VERSION_EU
     compressed = q->unkEu_10A0;
 #endif
-    q->unk_10AC = 0;
-    n = q->unk_10A6;
+    q->transferredBytes = 0;
+    n = q->callbackCount;
 
     for (i = 0; i < n; i++) {
         cb[i]();
     }
-    gDma3Requests->unk_10A6 = 0;
+    gDma3Requests->callbackCount = 0;
     n = gDma3Requests->requestCount;
 
     for (i = 0; i < n; i++) {
@@ -1615,7 +1615,7 @@ void FlushDma3Queue(void) {
         dma[1] = (u32)req[i].dst;
         dma[2] = (req[i].size / 2) | 0x80000000;
         dma[2];
-        gDma3Requests->unk_10AC += req[i].size;
+        gDma3Requests->transferredBytes += req[i].size;
     }
     gDma3Requests->requestCount = 0;
 #ifdef VERSION_EU
@@ -1625,40 +1625,40 @@ void FlushDma3Queue(void) {
     }
     gDma3Requests->unk_10AA = 0;
 #endif
-    n = gDma3Requests->unk_10A4;
+    n = gDma3Requests->fillCount;
 
     for (i = 0; i < n; i++) {
         mask = 31;
-        if (fills[i].unk_0A != 0) {
+        if (fills[i].vertical != 0) {
             for (row = 0; row < 32; row++) {
                 f = &fills[i];
-                dy = ((f->unk_09 + row) & mask) << 5;
-                ((u16*)f->unk_04)[dy + f->unk_08] = ((u16*)f->unk_00)[row];
+                dy = ((f->y + row) & mask) << 5;
+                ((u16*)f->dst)[dy + f->x] = ((u16*)f->src)[row];
             }
         } else {
             for (col = 0; col < 32; col++) {
                 f = &fills[i];
-                sx = (f->unk_08 + col) & mask;
-                ((u16*)f->unk_04)[(f->unk_09 << 5) + sx] = ((u16*)f->unk_00)[col];
+                sx = (f->x + col) & mask;
+                ((u16*)f->dst)[(f->y << 5) + sx] = ((u16*)f->src)[col];
             }
         }
     }
-    gDma3Requests->unk_10A4 = 0;
-    n = gDma3Requests->unk_10A2;
+    gDma3Requests->fillCount = 0;
+    n = gDma3Requests->blitCount;
 
     for (i = 0; i < n; i++) {
-        for (row = 0; row < blits[i].unk_0D; row++) {
-            sy = ((blits[i].unk_09 + row) & 31) << 5;
-            dy = ((blits[i].unk_0B + row) & 31) << 5;
+        for (row = 0; row < blits[i].height; row++) {
+            sy = ((blits[i].srcY + row) & 31) << 5;
+            dy = ((blits[i].dstY + row) & 31) << 5;
 
-            for (col = 0; col < blits[i].unk_0C; col++) {
-                sx = (blits[i].unk_08 + col) & 31;
-                dx = (blits[i].unk_0A + col) & 31;
-                ((u16*)blits[i].unk_04)[dx + dy] = ((u16*)blits[i].unk_00)[sx + sy];
+            for (col = 0; col < blits[i].width; col++) {
+                sx = (blits[i].srcX + col) & 31;
+                dx = (blits[i].dstX + col) & 31;
+                ((u16*)blits[i].dst)[dx + dy] = ((u16*)blits[i].src)[sx + sy];
             }
         }
     }
-    gDma3Requests->unk_10A2 = 0;
+    gDma3Requests->blitCount = 0;
     n = gDma3Requests->count;
 
     for (i = 0; i < n; i++) {
@@ -1666,10 +1666,10 @@ void FlushDma3Queue(void) {
         zero = 0;
         dma = (vu32*)0x040000D4;
         dma[0] = (u32)&zero;
-        dma[1] = (u32)pend[i].unk_00;
-        dma[2] = (pend[i].unk_04 >> 1) | 0x81000000;
+        dma[1] = (u32)pend[i].dst;
+        dma[2] = (pend[i].size >> 1) | 0x81000000;
         dma[2];
-        gDma3Requests->unk_10AC += pend[i].unk_04;
+        gDma3Requests->transferredBytes += pend[i].size;
     }
     gDma3Requests->count = 0;
 }
@@ -1700,15 +1700,15 @@ void FlushDma3QueueWithCpu(void) {
 
     q = gDma3Requests;
     req = q->requests;
-    blits = q->unk_0C00;
-    fills = q->unk_1000;
-    cb = (void (**)(void))q->unk_1060;
+    blits = q->blits;
+    fills = q->fills;
+    cb = (void (**)(void))q->callbacks;
     pend = q->pending;
 #ifdef VERSION_EU
     compressed = q->unkEu_10A0;
 #endif
-    q->unk_10AC = 0;
-    n = q->unk_10A6;
+    q->transferredBytes = 0;
+    n = q->callbackCount;
 
     if (n != 0) {
         p = cb;
@@ -1717,14 +1717,14 @@ void FlushDma3QueueWithCpu(void) {
             (*p++)();
         } while (--i);
     }
-    gDma3Requests->unk_10A6 = 0;
+    gDma3Requests->callbackCount = 0;
     n = gDma3Requests->requestCount;
 
     if (n != 0) {
         i = n;
         do {
             CpuSet(req->src, req->dst, req->size >> 1);
-            gDma3Requests->unk_10AC += req->size;
+            gDma3Requests->transferredBytes += req->size;
             req++;
         } while (--i);
     }
@@ -1741,43 +1741,43 @@ void FlushDma3QueueWithCpu(void) {
     }
     gDma3Requests->unk_10AA = 0;
 #endif
-    n = gDma3Requests->unk_10A4;
+    n = gDma3Requests->fillCount;
 
     for (i = 0; i < n; i++) {
         mask = 31;
-        if (fills[i].unk_0A != 0) {
+        if (fills[i].vertical != 0) {
             row = 0;
 
             for (; row < 32; row++) {
                 f = &fills[i];
-                dy = ((f->unk_09 + row) & mask) << 5;
-                ((u16*)f->unk_04)[dy + f->unk_08] = ((u16*)f->unk_00)[row];
+                dy = ((f->y + row) & mask) << 5;
+                ((u16*)f->dst)[dy + f->x] = ((u16*)f->src)[row];
             }
         } else {
             col = 0;
 
             for (; col < 32; col++) {
                 f = &fills[i];
-                sourceIndex = (f->unk_08 + col) & mask;
-                ((u16*)f->unk_04)[(f->unk_09 << 5) + sourceIndex] = ((u16*)f->unk_00)[col];
+                sourceIndex = (f->x + col) & mask;
+                ((u16*)f->dst)[(f->y << 5) + sourceIndex] = ((u16*)f->src)[col];
             }
         }
     }
-    gDma3Requests->unk_10A4 = 0;
-    n = gDma3Requests->unk_10A2;
+    gDma3Requests->fillCount = 0;
+    n = gDma3Requests->blitCount;
 
     for (i = 0; i < n; i++) {
-        for (row = 0; row < blits[i].unk_0D; row++) {
-            sy = ((blits[i].unk_09 + row) & 31) << 5;
-            dy = ((blits[i].unk_0B + row) & 31) << 5;
+        for (row = 0; row < blits[i].height; row++) {
+            sy = ((blits[i].srcY + row) & 31) << 5;
+            dy = ((blits[i].dstY + row) & 31) << 5;
 
-            for (col = 0; col < blits[i].unk_0C; col++) {
-                sourceIndex = (blits[i].unk_08 + col) & 31;
-                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[sourceIndex + sy];
+            for (col = 0; col < blits[i].width; col++) {
+                sourceIndex = (blits[i].srcX + col) & 31;
+                ((u16*)blits[i].dst)[((blits[i].dstX + col) & 31) + dy] = ((u16*)blits[i].src)[sourceIndex + sy];
             }
         }
     }
-    gDma3Requests->unk_10A2 = 0;
+    gDma3Requests->blitCount = 0;
     n = gDma3Requests->count;
 
     if (n != 0) {
@@ -1786,8 +1786,8 @@ void FlushDma3QueueWithCpu(void) {
         i = n;
         do {
             *zeroPtr = 0;
-            CpuSet((void*)&zero, current->unk_00, (current->unk_04 >> 1) | 0x01000000);
-            gDma3Requests->unk_10AC += current->unk_04;
+            CpuSet((void*)&zero, current->dst, (current->size >> 1) | 0x01000000);
+            gDma3Requests->transferredBytes += current->size;
             current++;
         } while (--i);
     }
@@ -1810,10 +1810,10 @@ void BgFree(void) {
 }
 
 void* GetBgMapBlock(BgEntry* e, u16 x, u16 y) {
-    u8 col = (x >> 8) % e->unk_08;
-    u8 row = (y >> 8) % e->unk_09;
+    u8 col = (x >> 8) % e->width;
+    u8 row = (y >> 8) % e->height;
 
-    return ((void**)e->unk_04)[e->unk_08 * row + col];
+    return ((void**)e->map)[e->width * row + col];
 }
 
 void CopyBgMapRect(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h) {
@@ -2030,24 +2030,24 @@ void SetBgMapBlocks(s32 bg, void* src, u8 w, u8 h) {
     *(void**)(q + ofs) = src;
     p += ofs;
     z = 0;
-    ((BgEntry*)p)->unk_08 = w;
-    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_09 = h;
-    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_0A = z;
-    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_0C = z;
-    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_00 = 1;
+    ((BgEntry*)p)->width = w;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->height = h;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->x = z;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->y = z;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->dirty = 1;
 }
 
 void RedrawBgMapAt(s32 bg, u16 x, u16 y) {
     BgEntry* e = &gBgEntries[bg];
 
-    if (e->unk_04 == 0) {
+    if (e->map == 0) {
         return;
     }
-    e->unk_0A = x;
-    e->unk_0C = y;
+    e->x = x;
+    e->y = y;
     CopyBgMapRect(x, y, e, (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000), 0, 0, 0x1F, 0x15);
     SetBgScroll(bg, x & 7, y & 7);
-    e->unk_00 = 0;
+    e->dirty = 0;
 }
 void ScrollBgMapTo(s32 bg, u16 x, u16 y) {
     BgEntry* e;
@@ -2062,16 +2062,16 @@ void ScrollBgMapTo(s32 bg, u16 x, u16 y) {
     void* dst;
 
     e = &gBgEntries[bg];
-    if (e->unk_04 == 0) {
+    if (e->map == 0) {
         return;
     }
 
-    if (e->unk_00 != 0) {
+    if (e->dirty != 0) {
         RedrawBgMapAt(bg, x, y);
         return;
     }
-    dx = (x >> 3) - (e->unk_0A >> 3);
-    dy = (y >> 3) - (e->unk_0C >> 3);
+    dx = (x >> 3) - (e->x >> 3);
+    dy = (y >> 3) - (e->y >> 3);
 
     if (abs(dx) > 29 || abs(dy) > 19) {
         RedrawBgMapAt(bg, x, y);
@@ -2079,11 +2079,11 @@ void ScrollBgMapTo(s32 bg, u16 x, u16 y) {
     }
     sx = GetBgScrollX(bg);
     sy = GetBgScrollY(bg);
-    SetBgScroll(bg, (u16)(sx + (x - e->unk_0A)), (u16)(sy + (y - e->unk_0C)));
+    SetBgScroll(bg, (u16)(sx + (x - e->x)), (u16)(sy + (y - e->y)));
 
     if (dx == 0 && dy == 0) {
-        e->unk_0A = x;
-        e->unk_0C = y;
+        e->x = x;
+        e->y = y;
         return;
     }
     dst = (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
@@ -2096,49 +2096,49 @@ void ScrollBgMapTo(s32 bg, u16 x, u16 y) {
         if (dx > 31) {
             dx = 31;
         }
-        CopyBgMapRect(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
+        CopyBgMapRect(e->x + 248, y, e, dst, tx + 31, cy, dx, 21);
     } else if (dx < 0) {
         dx = -dx;
 
         if (dx > 31) {
             dx = 31;
         }
-        CopyBgMapRect(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
+        CopyBgMapRect(e->x - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
     }
 
     if (dy > 0) {
         if (dy > 21) {
             dy = 21;
         }
-        CopyBgMapRect(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
+        CopyBgMapRect(x, e->y + 168, e, dst, cx, ty + 21, 31, dy);
     } else if (dy < 0) {
         dy = -dy;
 
         if (dy > 21) {
             dy = 21;
         }
-        CopyBgMapRect(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
+        CopyBgMapRect(x, e->y - (dy << 3), e, dst, cx, ty - dy, 31, dy);
     }
-    e->unk_0A = x;
-    e->unk_0C = y;
+    e->x = x;
+    e->y = y;
 }
 
 u16 GetBgMapX(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
-    if (e->unk_04 == 0) {
+    if (e->map == 0) {
         return 0;
     }
-    return e->unk_0A;
+    return e->x;
 }
 
 u16 GetBgMapY(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
-    if (e->unk_04 == 0) {
+    if (e->map == 0) {
         return 0;
     }
-    return e->unk_0C;
+    return e->y;
 }
 
 void SetBgMosaic(s32 bg, u8 on) {
@@ -2369,12 +2369,12 @@ u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h) {
         LZ77UnCompWram(((u32**)src)[i], e->unkEu_10[i]);
     }
     EnableBg(bg);
-    e->unk_04 = e->unkEu_10;
-    e->unk_08 = w;
-    e->unk_09 = h;
-    e->unk_0A = 0;
-    e->unk_0C = 0;
-    e->unk_00 = 1;
+    e->map = e->unkEu_10;
+    e->width = w;
+    e->height = h;
+    e->x = 0;
+    e->y = 0;
+    e->dirty = 1;
     return 1;
 }
 
@@ -2383,7 +2383,7 @@ void eu_08005ADC(s32 bg) {
     s32 count;
     s32 i;
     if (e->unkEu_10 != 0) {
-        count = e->unk_08 * e->unk_09;
+        count = e->width * e->height;
         for (i = 0; i < count; i++) {
             EwramFree(e->unkEu_10[i]);
         }
@@ -2668,9 +2668,9 @@ void LoadPalette(void* src, void* dst, u16 size) {
     src = LoadPaletteWithEffect(src, dst, size);
 
     for (i = 0; i < count; i++) {
-        base[idx + i].unk_00 = (u8*)src + i * 32;
-        base[idx + i].unk_04 = (u8*)dst + i * 32;
-        base[idx + i].unk_29 = 1;
+        base[idx + i].src = (u8*)src + i * 32;
+        base[idx + i].dst = (u8*)dst + i * 32;
+        base[idx + i].dirty = 1;
     }
 }
 
@@ -2678,7 +2678,7 @@ void FadeClearPaletteSlot(u16 a) {
     PaletteSlot* p = gFadeWork->slots;
 
     p += a;
-    p->unk_00 = 0;
+    p->src = 0;
 }
 
 void FadeUpdate(void) {
@@ -2698,30 +2698,30 @@ void FadeUpdate(void) {
     s16 blue;
     u16 color;
 
-    if (gFadeWork->unk_584 != 0 || gFadeWork->unk_580 != 0) {
-        changed = gFadeWork->unk_580 != gFadeWork->unk_588;
-        amount = gFadeWork->unk_580 >> 8;
+    if (gFadeWork->target != 0 || gFadeWork->amount != 0) {
+        changed = gFadeWork->amount != gFadeWork->lastAmount;
+        amount = gFadeWork->amount >> 8;
         for (i = 0; i < 32; i++) {
             slot = &gFadeWork->slots[i];
-            src = slot->unk_00;
+            src = slot->src;
             if (src == 0) {
                 continue;
             }
-            if (slot->unk_28 != 0 && (gFadeWork->unk_594 & 2) == 0) {
+            if (slot->excluded != 0 && (gFadeWork->flags & 2) == 0) {
                 continue;
             }
-            if (slot->unk_29 != 0) {
-                slot->unk_29 = 0;
+            if (slot->dirty != 0) {
+                slot->dirty = 0;
             } else if (!changed) {
                 continue;
             }
-            dst = (u16*)slot->unk_08;
+            dst = (u16*)slot->buffer;
             for (j = 0; j < 16; j++) {
                 color = *src++;
                 r = color & 31;
                 g = (color >> 5) & 31;
                 b = (color >> 10) & 31;
-                switch (gFadeWork->unk_590) {
+                switch (gFadeWork->mode) {
                 case 0:
                     r -= amount;
                     g -= amount;
@@ -2812,105 +2812,105 @@ void FadeUpdate(void) {
                 }
                 *dst++ = b * 1024 | g * 32 | r;
             }
-            RequestDma3Copy(slot->unk_08, slot->unk_04, 32);
+            RequestDma3Copy(slot->buffer, slot->dst, 32);
         }
     }
-    gFadeWork->unk_588 = gFadeWork->unk_580;
-    if (gFadeWork->unk_58C != 0) {
-        if ((gFadeWork->unk_594 & 4) == 0) {
-            ApproachValue((s32*)&gFadeWork->unk_580, gFadeWork->unk_584, gFadeWork->unk_58C);
-            gFadeWork->unk_58C--;
+    gFadeWork->lastAmount = gFadeWork->amount;
+    if (gFadeWork->timer != 0) {
+        if ((gFadeWork->flags & 4) == 0) {
+            ApproachValue((s32*)&gFadeWork->amount, gFadeWork->target, gFadeWork->timer);
+            gFadeWork->timer--;
         }
-        if (gFadeWork->unk_58C == 0 && gFadeWork->unk_580 == 0) {
+        if (gFadeWork->timer == 0 && gFadeWork->amount == 0) {
             for (i = 0; i < 32; i++) {
                 slot = &gFadeWork->slots[i];
-                RequestDma3Copy(slot->unk_00, slot->unk_04, 32);
+                RequestDma3Copy(slot->src, slot->dst, 32);
             }
         }
     } else {
-        gFadeWork->unk_594 = 0;
+        gFadeWork->flags = 0;
     }
 }
 void FadeStartIn(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
-    if (base->unk_594 & 2) {
-        if (base->unk_594 & 1) {
+    if (base->flags & 2) {
+        if (base->flags & 1) {
             return;
         }
     }
     z = 0;
-    base->unk_594 = 1;
-    base->unk_58C = b;
-    base->unk_580 = 0x1F00;
-    base->unk_584 = z;
-    base->unk_588 = z;
-    base->unk_590 = a;
+    base->flags = 1;
+    base->timer = b;
+    base->amount = 0x1F00;
+    base->target = z;
+    base->lastAmount = z;
+    base->mode = a;
 }
 void FadeStartOut(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
-    if (base->unk_594 & 2) {
-        if (base->unk_594 & 1) {
+    if (base->flags & 2) {
+        if (base->flags & 1) {
             return;
         }
     }
     z = 0;
-    base->unk_594 = 1;
-    base->unk_58C = b;
-    base->unk_580 = z;
-    base->unk_584 = 0x1F00;
-    base->unk_588 = z;
-    base->unk_590 = a;
+    base->flags = 1;
+    base->timer = b;
+    base->amount = z;
+    base->target = 0x1F00;
+    base->lastAmount = z;
+    base->mode = a;
 }
 void FadeToOriginal(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
-    if (base->unk_594 & 2) {
-        if (base->unk_594 & 1) {
+    if (base->flags & 2) {
+        if (base->flags & 1) {
             return;
         }
     }
     z = 0;
-    base->unk_594 = 1;
-    base->unk_58C = b;
-    base->unk_584 = z;
-    base->unk_590 = a;
+    base->flags = 1;
+    base->timer = b;
+    base->target = z;
+    base->mode = a;
 }
 
 void FadeToAmount(s32 a, u16 b, u16 c) {
     FadeWork* base = gFadeWork;
 
-    if (base->unk_594 & 2) {
-        if (base->unk_594 & 1) {
+    if (base->flags & 2) {
+        if (base->flags & 1) {
             return;
         }
     }
-    base->unk_594 = 1;
-    base->unk_58C = c;
-    base->unk_584 = b << 8;
-    base->unk_590 = a;
+    base->flags = 1;
+    base->timer = c;
+    base->target = b << 8;
+    base->mode = a;
 }
 
 void FadeFromAmount(s32 a, u16 b, u16 c) {
     FadeWork* base = gFadeWork;
     u32 z;
 
-    if (base->unk_594 & 2) {
-        if (base->unk_594 & 1) {
+    if (base->flags & 2) {
+        if (base->flags & 1) {
             return;
         }
     }
     z = 0;
-    base->unk_594 = 1;
-    base->unk_58C = c;
-    base->unk_580 = b << 8;
-    base->unk_588 = z;
-    base->unk_584 = z;
-    base->unk_590 = a;
+    base->flags = 1;
+    base->timer = c;
+    base->amount = b << 8;
+    base->lastAmount = z;
+    base->target = z;
+    base->mode = a;
 }
 
 void FadeSetPaletteExcluded(u16 slot, u8 value) {
@@ -2921,18 +2921,18 @@ void FadeSetPaletteExcluded(u16 slot, u8 value) {
     }
     p = gFadeWork->slots;
     p += slot;
-    p->unk_28 = value;
+    p->excluded = value;
 }
 
 u8 FadeIsActive(void) {
-    if (gFadeWork->unk_594 & 1) {
+    if (gFadeWork->flags & 1) {
         return 1;
     }
     return 0;
 }
 
 u16 FadeGetColor(void) {
-    switch (gFadeWork->unk_590) {
+    switch (gFadeWork->mode) {
     case 1:
     case 2:
         return 0x7FFF;
@@ -2949,22 +2949,22 @@ u16 FadeGetColor(void) {
 }
 
 u16 FadeGetAmount(void) {
-    return gFadeWork->unk_580 >> 8;
+    return gFadeWork->amount >> 8;
 }
 
 void FadeLock(void) {
-    u16 v = gFadeWork->unk_594 | 2;
+    u16 v = gFadeWork->flags | 2;
 
-    gFadeWork->unk_594 = v;
+    gFadeWork->flags = v;
 }
 
 void FadeSetPaused(u8 on) {
     if (on) {
-        u16 v = gFadeWork->unk_594 | 4;
+        u16 v = gFadeWork->flags | 4;
 
-        gFadeWork->unk_594 = v;
+        gFadeWork->flags = v;
     } else {
-        gFadeWork->unk_594 &= 0xFFFB;
+        gFadeWork->flags &= 0xFFFB;
     }
 }
 

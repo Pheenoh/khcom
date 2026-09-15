@@ -349,7 +349,7 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
 #endif
 #endif
     work->palette = LoadObjPalette(gUnk_0984A7F8, 0x20);
-    func_080D5978(work->palette->unk_06 + 16, gUnk_0984A7F8, 0x20);
+    func_080D5978(work->palette->index + 16, gUnk_0984A7F8, 0x20);
 #ifdef VERSION_EU
     work->tiles2[0] = LoadObjTiles(gUnkEu_0973F058, 0x280);
     switch (gLanguage) {
@@ -387,8 +387,8 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     work->palette2[1] = LoadObjPalette(pal, 0x20);
     pal2 = &gUnk_0984A7B8[t];
     work->palette2[2] = LoadObjPalette(pal2, 0x20);
-    func_080D5978(work->palette2[0]->unk_06 + 16, pal, 0x20);
-    func_080D5978(work->palette2[2]->unk_06 + 16, pal2, 0x20);
+    func_080D5978(work->palette2[0]->index + 16, pal, 0x20);
+    func_080D5978(work->palette2[2]->index + 16, pal2, 0x20);
 #ifdef VERSION_EU
     AnimInit(&work->anim, gUnkEu_09F81A04, gUnk_09EF65E8);
 #else

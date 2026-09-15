@@ -60,7 +60,7 @@ void mode_jiminy_0(void) {
     gJiminyWork->tiles = LoadObjTiles(gUnk_08C69C9C, 0x880);
 #endif
     gJiminyWork->palette = LoadObjPalette(gUnk_08F6DD64, 0x20);
-    FadeSetPaletteExcluded(gJiminyWork->palette->unk_06 + 0x10, 1);
+    FadeSetPaletteExcluded(gJiminyWork->palette->index + 0x10, 1);
     gJiminyWork->tiles2 = LoadObjTiles(gUnk_08C6A88C, 0x40);
     gJiminyWork->palette2 = LoadObjPalette(gUnk_08F6DDE4, 0x20);
     gJiminyWork->palette3 = LoadObjPalette(gUnk_08F6DD84, 0x20);
@@ -254,11 +254,11 @@ void mode_jiminy_1(void) {
             } else {
                 LoadBgMap(1, e->map, 0x800);
             }
-            LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DD84);
+            LoadObjPaletteBank(gJiminyWork->palette3->index, gUnk_08F6DD84);
             func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
         } else {
             LoadBgMap(1, e->map, 0x800);
-            LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DDC4);
+            LoadObjPaletteBank(gJiminyWork->palette3->index, gUnk_08F6DDC4);
 #ifdef VERSION_JP
             func_0805A95C(8, e->count, e->names, e->flags, e->children, 0x70, 0x1A, 0x10);
 #else
@@ -790,18 +790,18 @@ void func_0805BAE4(void) {
         if (gJiminyWork->unk_CCC->tiles != 0) {
 #ifdef VERSION_EU
             if (gJiminyWork->unk_CCC->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
-                LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gUnkEu_09A9A8A0);
-                LoadObjPaletteBank(gJiminyWork->palette8->unk_06 + 1, gUnkEu_09A9A8A0 + 0x20);
+                LoadObjPaletteBank(gJiminyWork->palette8->index, gUnkEu_09A9A8A0);
+                LoadObjPaletteBank(gJiminyWork->palette8->index + 1, gUnkEu_09A9A8A0 + 0x20);
                 SetObjTileSource(gJiminyWork->tiles7, gUnkEu_099FBE00);
             } else
 #endif
             {
-                LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gJiminyWork->unk_CCC->palette);
+                LoadObjPaletteBank(gJiminyWork->palette8->index, gJiminyWork->unk_CCC->palette);
                 SetObjTileSource(gJiminyWork->tiles7, gJiminyWork->unk_CCC->tiles);
             }
         }
         if (gJiminyWork->unk_CCC->tiles2 != 0) {
-            LoadObjPaletteBank(gJiminyWork->palette9->unk_06, gJiminyWork->unk_CCC->palette2);
+            LoadObjPaletteBank(gJiminyWork->palette9->index, gJiminyWork->unk_CCC->palette2);
             SetObjTileSource(gJiminyWork->tiles8, gJiminyWork->unk_CCC->tiles2);
         }
         if (gJiminyWork->unk_D30 == 2) {

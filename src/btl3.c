@@ -11,8 +11,8 @@ void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     gBtlWork->unk_068 |= 0x2000000;
     work->unk_20 = 0;
     work->unk_08 = list;
-    work->unk_0C = list->unk_04[0];
-    work->unk_00 = work->unk_0C->unk_08;
+    work->unk_0C = list->entries[0];
+    work->unk_00 = work->unk_0C->delay;
     work->unk_10 = 1;
     work->unk_02 = 0;
     work->unk_04 = 0;
@@ -20,8 +20,8 @@ void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     work->unk_24 = 100;
     gBtlWork->unk_120 = 0;
 
-    for (i = 0; i < list->unk_00; i++) {
-        gBtlWork->unk_120 += list->unk_04[i]->unk_00;
+    for (i = 0; i < list->count; i++) {
+        gBtlWork->unk_120 += list->entries[i]->count;
     }
 }
 
@@ -39,19 +39,19 @@ u8 task_btl_form_1(BtlFormWork* work) {
 
     if (work->unk_20 & 2) {
         list = work->unk_08;
-        if (list->unk_08 >= work->unk_22 + gBtlWork->unk_0EC) {
+        if (list->threshold >= work->unk_22 + gBtlWork->unk_0EC) {
             if (work->unk_22 == 0) {
                 return 0;
             }
-            work->unk_0C = list->unk_04[work->unk_10];
-            work->unk_00 = work->unk_0C->unk_08;
+            work->unk_0C = list->entries[work->unk_10];
+            work->unk_00 = work->unk_0C->delay;
             work->unk_02 = 0;
             work->unk_04 = 0;
             work->unk_20 &= ~2;
             work->unk_10++;
             work->unk_24 = 100;
         }
-    } else if (work->unk_0C->unk_00 <= work->unk_04) {
+    } else if (work->unk_0C->count <= work->unk_04) {
         if (work->unk_24-- <= 0) {
             work->unk_20 |= 2;
 
@@ -59,11 +59,11 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 gGameState.flags &= ~4;
             }
 
-            if (work->unk_10 >= work->unk_08->unk_00) {
+            if (work->unk_10 >= work->unk_08->count) {
                 work->unk_22 = 0;
                 return 0;
             }
-            work->unk_22 = func_0803FDC8(work->unk_08->unk_04[work->unk_10]);
+            work->unk_22 = func_0803FDC8(work->unk_08->entries[work->unk_10]);
         }
     } else {
         if (work->unk_00 > 0) {
@@ -90,16 +90,16 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 }
                 work->unk_00 = 0xFFFF;
             }
-            step = &work->unk_0C->unk_04[work->unk_04];
-            if (work->unk_02 >= step->unk_0A) {
+            step = &work->unk_0C->steps[work->unk_04];
+            if (work->unk_02 >= step->delay) {
                 if (work->unk_20 & 1) {
-                    x = work->unk_14 - (step->unk_04 << 8);
+                    x = work->unk_14 - (step->x << 8);
                 } else {
-                    x = work->unk_14 + (step->unk_04 << 8);
+                    x = work->unk_14 + (step->x << 8);
                 }
-                y = work->unk_18 + (step->unk_06 << 8);
-                z = work->unk_1C + (step->unk_08 << 8);
-                func_0801BDDC(step->unk_00, x, y, z);
+                y = work->unk_18 + (step->y << 8);
+                z = work->unk_1C + (step->z << 8);
+                func_0801BDDC(step->id, x, y, z);
                 work->unk_04++;
             } else {
                 work->unk_02++;

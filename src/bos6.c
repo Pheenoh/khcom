@@ -852,7 +852,7 @@ void func_0810B378(void** p, u8 a) {
         if (work->palette == 0) {
             pal = (UnkStruct_080038C8*)LoadObjPalette(gUnk_09D693D4, 0x60);
             work->palette = (u32)pal;
-            LoadPalette(gUnk_09D69434, gUnk_05000220 + pal->unk_06 * 32, 32);
+            LoadPalette(gUnk_09D69434, gUnk_05000220 + pal->index * 32, 32);
         }
     }
 }
@@ -1434,8 +1434,8 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     AnimState* anim;
     s32 v;
 
-    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->unk_06 + 17, 0);
-    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->unk_06 + 18, 0);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->index + 17, 0);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->index + 18, 0);
     anim = &work->anim;
     AnimUpdate(anim);
     if (gBtlWork->actor->z >= 0) {
@@ -3712,14 +3712,14 @@ void task_bos_lst_2(BosLstWork* work) {
     if ((s16)work->unk_014 != (s16)work->unk_016) {
         if ((s16)work->unk_014 == 0) {
             LoadPalette(gUnk_09D69454, (void*)0x05000000, 0x60);
-            LoadPalette(gUnk_09D69594, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 0x60);
+            LoadPalette(gUnk_09D69594, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->index & 15) << 5)), 0x60);
         } else {
             LoadPalette(gUnk_08F69BC4, (void*)0x05000000, 32);
             LoadPalette(gUnk_08F69BC4, (void*)0x05000020, 32);
             LoadPalette(gUnk_08F69BC4, (void*)0x05000040, 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000220 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000240 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->index & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000220 + ((((UnkStruct_080038C8*)work->palette)->index & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000240 + ((((UnkStruct_080038C8*)work->palette)->index & 15) << 5)), 32);
         }
         work->unk_016 = work->unk_014;
     }

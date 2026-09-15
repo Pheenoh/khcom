@@ -110,7 +110,7 @@ void task_sroll_a_name_2(SrollANameWork* w) {
     if (w->unk_02 == 2) {
         flags = 4;
         ofs = AnimGetFrame(&w->anim) * 32 + 32;
-        LoadPalette(&gUnk_09D6CD74[ofs], (u8*)0x05000220 + ((w->palette->unk_06 & 15) * 32), 32);
+        LoadPalette(&gUnk_09D6CD74[ofs], (u8*)0x05000220 + ((w->palette->index & 15) * 32), 32);
     }
     DrawSprite(x >> 8, y >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, flags,
                0xFF0 - w->unk_02);
@@ -153,7 +153,7 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     anim = &w->anim;
     AnimInit(anim, 0, 0);
     w->sub->anim = anim;
-    w->sub->unk_1C = w->palette->unk_06;
+    w->sub->unk_1C = w->palette->index;
     func_081149B8(w);
     TaskPoolInit(&w->unk_2C, 4);
 }
@@ -166,9 +166,9 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
     }
 
     if ((w->sub->unk_16 & 4) == 0) {
-        FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 0);
+        FadeSetPaletteExcluded((w->palette->index & 15) + 16, 0);
     } else {
-        FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 1);
+        FadeSetPaletteExcluded((w->palette->index & 15) + 16, 1);
     }
 
     AnimUpdate(&w->anim);
@@ -255,7 +255,7 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     AnimStart(anim, a->unk_10, 0);
 
     for (i = 0; i < 2; i++) {
-        FadeSetPaletteExcluded((w->palette->unk_06 + i) % 16 + 16, 1);
+        FadeSetPaletteExcluded((w->palette->index + i) % 16 + 16, 1);
     }
 }
 
@@ -317,7 +317,7 @@ void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a) {
     }
 
     for (i = 0; i < 8; i++) {
-        FadeSetPaletteExcluded((w->palette->unk_06 + i) % 16 + 16, 1);
+        FadeSetPaletteExcluded((w->palette->index + i) % 16 + 16, 1);
     }
 }
 
@@ -407,7 +407,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         AnimStart(anim, w->unk_04, 0);
         break;
     }
-    FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 0);
+    FadeSetPaletteExcluded((w->palette->index & 15) + 16, 0);
 }
 
 u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
@@ -639,7 +639,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
             w->unk_00 = r;
         }
     }
-    FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 1);
+    FadeSetPaletteExcluded((w->palette->index & 15) + 16, 1);
     w->unk_04++;
     return r;
 }

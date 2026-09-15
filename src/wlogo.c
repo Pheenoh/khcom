@@ -79,11 +79,11 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
             work->unk_02A = 0;
 
             if (work->unk_028 <= 4) {
-                LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FACC4[work->unk_028 * 32]);
+                LoadObjPaletteBank(work->palette->index, &gUnk_096FACC4[work->unk_028 * 32]);
                 LoadPaletteWithEffect(&gUnk_096FACC4[work->unk_028 * 32], (void*)0x050001C0, 0x20);
             } else if (work->unk_028 > 11) {
                 if (work->unk_028 <= 15) {
-                    LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FACC4[(15 - work->unk_028) * 32]);
+                    LoadObjPaletteBank(work->palette->index, &gUnk_096FACC4[(15 - work->unk_028) * 32]);
                     LoadPaletteWithEffect(&gUnk_096FACC4[(15 - work->unk_028) * 32], (void*)0x050001C0, 0x20);
                 } else if (work->unk_028 == 20) {
                     work->unk_02D = 0;
@@ -1467,7 +1467,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     work->tiles4 = AllocObjTiles(0x3C0, gUnk_09624F72);
     work->tiles5 = LoadObjTiles(gUnk_0962848A, 0x7C0);
     work->palette = LoadObjPalette(gUnk_096FAE84, 0x20);
-    LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FAEA4[work->unk_007 * 32]);
+    LoadObjPaletteBank(work->palette->index, &gUnk_096FAEA4[work->unk_007 * 32]);
     AnimInit(&work->anim[0], gUnk_09EF37DC, gUnk_09EF377C);
     AnimStart(&work->anim[0], 1, 0);
     work->gfx = AnimGetGfx(&work->anim[0]);
@@ -1616,7 +1616,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_007 == 4) {
                 work->unk_000++;
             }
-            LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FAEA4[work->unk_007 * 32]);
+            LoadObjPaletteBank(work->palette->index, &gUnk_096FAEA4[work->unk_007 * 32]);
         } else {
             work->unk_004++;
         }
@@ -1630,7 +1630,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_007 > 8) {
                 work->unk_000++;
             } else {
-                LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FAEA4[work->unk_007 * 32]);
+                LoadObjPaletteBank(work->palette->index, &gUnk_096FAEA4[work->unk_007 * 32]);
             }
         } else {
             work->unk_004++;

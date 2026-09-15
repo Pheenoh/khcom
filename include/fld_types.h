@@ -16,7 +16,7 @@ typedef AnimDef FldAnimDef;
 
 typedef struct FldRes {
     u8 unk_00[0x06];
-    u16 unk_06;
+    u16 index;
 } FldRes;
 
 typedef struct FldActor {

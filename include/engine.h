@@ -28,13 +28,13 @@ typedef struct Dma3Request {
 #define BG_ENTRY_COUNT 4
 
 typedef struct BgEntry {
-    u8 unk_00;
+    u8 dirty;
     u8 unk_01[3];
-    void* unk_04;
-    u8 unk_08;
-    u8 unk_09;
-    u16 unk_0A;
-    u16 unk_0C;
+    void* map;
+    u8 width;
+    u8 height;
+    u16 x;
+    u16 y;
     u16 unk_0E;
 #ifdef VERSION_EU
     void** unkEu_10;
@@ -42,46 +42,46 @@ typedef struct BgEntry {
 } BgEntry;
 
 typedef struct Dma3Pending {
-    void* unk_00;
-    u16 unk_04;
+    void* dst;
+    u16 size;
     u16 unk_06;
 } Dma3Pending;
 
 typedef struct Dma3Blit {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
-    u8 unk_0B;
-    u8 unk_0C;
-    u8 unk_0D;
+    void* src;
+    void* dst;
+    u8 srcX;
+    u8 srcY;
+    u8 dstX;
+    u8 dstY;
+    u8 width;
+    u8 height;
 } Dma3Blit;
 
 typedef struct Dma3Fill {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
+    void* src;
+    void* dst;
+    u8 x;
+    u8 y;
+    u8 vertical;
 } Dma3Fill;
 
 typedef struct Dma3Queue {
     Dma3Request requests[256];
-    Dma3Blit unk_0C00[64];
-    Dma3Fill unk_1000[8];
-    void* unk_1060[8];
+    Dma3Blit blits[64];
+    Dma3Fill fills[8];
+    void* callbacks[8];
     Dma3Pending pending[4];
 #ifdef VERSION_EU
     Dma3Request unkEu_10A0[32];
 #endif
     vu16 requestCount;
-    vu16 unk_10A2;
-    vu16 unk_10A4;
-    vu16 unk_10A6;
+    vu16 blitCount;
+    vu16 fillCount;
+    vu16 callbackCount;
     vu16 count;
     vu16 unk_10AA;
-    u32 unk_10AC;
+    u32 transferredBytes;
 } Dma3Queue;
 
 extern vu16* const gBgControl[];
@@ -92,13 +92,13 @@ extern Dma3Queue* gDma3Requests;
 
 typedef struct FadeWork {
     PaletteSlot slots[32];
-    u32 unk_580;
-    u32 unk_584;
-    u32 unk_588;
-    u16 unk_58C;
+    u32 amount;
+    u32 target;
+    u32 lastAmount;
+    u16 timer;
     u16 unk_58E;
-    u32 unk_590;
-    u16 unk_594;
+    u32 mode;
+    u16 flags;
     u16 unk_596;
 } FadeWork;
 

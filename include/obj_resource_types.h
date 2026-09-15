@@ -4,10 +4,10 @@
 #include "types.h"
 
 typedef struct UnkStruct_080038C8 {
-    u8* unk_00;
+    u8* src;
     u8 unk_04[0x02];
-    u16 unk_06;
-    u16 unk_08;
+    u16 index;
+    u16 count;
 } UnkStruct_080038C8;
 
 #endif

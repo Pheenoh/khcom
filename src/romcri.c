@@ -265,8 +265,8 @@ u16 func_0803FDC8(const BtlFormEntry* list) {
 
     total = 0;
 
-    for (i = 0; i < list->unk_00; i++) {
-        total += gUnk_09EDA4EC[list->unk_04[i].unk_00];
+    for (i = 0; i < list->count; i++) {
+        total += gUnk_09EDA4EC[list->steps[i].id];
     }
 
     return total;

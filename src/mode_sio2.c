@@ -1279,7 +1279,7 @@ void func_080C8428(PoohWork* w, u32 b) {
         break;
     }
 
-    if (w->palette->unk_00 != pal) {
+    if (w->palette->src != pal) {
         ReleaseObjPalette(w->palette);
         w->palette = LoadObjPalette(pal, 32);
     }

@@ -5694,7 +5694,7 @@ void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
 u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     if (work->sub->unk_01 == 0) {
         if (work->sub->unk_00 != 0) {
-            FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(((ObjPalette*)work->palette)->index + 16, 1);
             work->sub->unk_00 = 0;
             ColliderSetDisabled(&work->unk_28, 1);
         }
@@ -5702,7 +5702,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     }
 
     if (work->sub->unk_00 != 0) {
-        FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)work->palette)->index + 16, 0);
         work->sub->unk_00 = 0;
         work->unk_00 = 0;
         work->unk_84 = 0;
@@ -6001,7 +6001,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     s32 a;
     s32 b;
 
-    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->tiles2)->unk_06, gUnk_08C1E78C, 0x4C0);
+    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->tiles2)->index, gUnk_08C1E78C, 0x4C0);
     work->tiles = work;
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_38 = 0;

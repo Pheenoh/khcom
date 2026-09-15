@@ -6102,16 +6102,16 @@ void task_btl_sora_2(BtlSoraWork* work) {
         u16 t = work->unk_15A | 0x100;
 
         work->unk_15A = t;
-        LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
+        LoadObjPaletteBank(work->palette->index, gUnk_08F69BC4);
     } else if (work->unk_15A & 0x100) {
         u16 t = work->unk_15A & 0xFEFF;
 
         work->unk_15A = t;
 
         if (work->unk_172 != 0) {
-            LoadObjPaletteBank(work->palette->unk_06, gUnk_08F683A4);
+            LoadObjPaletteBank(work->palette->index, gUnk_08F683A4);
         } else {
-            LoadObjPaletteBank(work->palette->unk_06, gUnk_096FAC64);
+            LoadObjPaletteBank(work->palette->index, gUnk_096FAC64);
         }
     }
 #ifdef VERSION_EU
@@ -6835,7 +6835,7 @@ u16 func_08028428(u16 a, u16 b, u16 c) {
 void func_08028468(BtlRikuWork* work) {
     if (gBtlWork->unk_068 & 0x800000000000) {
         work->unk_1AC = gUnk_09618118;
-        LoadObjPaletteBank(work->palette->unk_06, gUnk_09618118);
+        LoadObjPaletteBank(work->palette->index, gUnk_09618118);
         gBtlWork->unk_068 &= ~0x800000000000;
         gBtlWork->unk_068 |= 0x80000000000000;
     }
@@ -8779,7 +8779,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_158 == 0) {
             func_080276D4(work, 24, 0);
             work->unk_1AC = gUnk_08F6DD04;
-            LoadObjPaletteBank(work->palette->unk_06, gUnk_08F6DD04);
+            LoadObjPaletteBank(work->palette->index, gUnk_08F6DD04);
             gBtlWork->unk_068 |= 0x800000000000LL;
             gBtlWork->unk_068 |= 0x80000000000000LL;
             gs = (u8*)&gGameState;
@@ -10654,16 +10654,16 @@ void task_btl_riku_2(BtlRikuWork* work) {
         u16 t = work->unk_15E | 0x100;
 
         work->unk_15E = t;
-        LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
+        LoadObjPaletteBank(work->palette->index, gUnk_08F69BC4);
     } else if (work->unk_15E & 0x100) {
         u16 t = work->unk_15E & 0xFEFF;
 
         work->unk_15E = t;
 
         if (work->unk_178 != 0) {
-            LoadObjPaletteBank(work->palette->unk_06, work->unk_1AC);
+            LoadObjPaletteBank(work->palette->index, work->unk_1AC);
         } else {
-            LoadObjPaletteBank(work->palette->unk_06, gUnk_096FAC64);
+            LoadObjPaletteBank(work->palette->index, gUnk_096FAC64);
         }
     }
     DrawSprite(x, y, work->gfx, work->tiles2, work->palette, affine, attr, attr2);

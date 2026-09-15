@@ -1509,7 +1509,7 @@ void func_0806422C(void) {
                 ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
             }
         }
-        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].palette)->unk_06, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].palette)->index, 0);
         ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
     }
     EwramFree(gUnk_02034A80);
@@ -1908,11 +1908,11 @@ u16 func_08064B80(s32 a) {
             break;
         }
 
-        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->index + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->palette->unk_06;
+    return gUnk_02034A84->palette->index;
 }
 u16 func_08064C34(s32 a) {
     s32 i;
@@ -1941,12 +1941,12 @@ u16 func_08064C34(s32 a) {
         }
 
         gUnk_02034A84[i].alternatePalette = _08066468(5);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->index + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->index + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->palette->unk_06;
+    return gUnk_02034A84->palette->index;
 }
 
 u16 func_08064D04(s32 a) {
@@ -1976,12 +1976,12 @@ u16 func_08064D04(s32 a) {
         }
 
         gUnk_02034A84[i].alternatePalette = _08066468(3);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->index + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->index + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->palette->unk_06;
+    return gUnk_02034A84->palette->index;
 }
 
 #ifdef VERSION_US
@@ -6795,11 +6795,11 @@ u16 func_0806BA74(s32 mode, s32 flag) {
         } else {
             gUnk_02034A88[i].alternatePalette = _08066468(5);
         }
-        FadeSetPaletteExcluded(gUnk_02034A88[i].palette->unk_06 + 0x10, 1);
-        FadeSetPaletteExcluded(gUnk_02034A88[i].alternatePalette->unk_06 + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].palette->index + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].alternatePalette->index + 0x10, 1);
     }
     gUnk_02034A90 = 0;
-    return gUnk_02034A88[0].palette->unk_06;
+    return gUnk_02034A88[0].palette->index;
 }
 
 u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
@@ -7805,7 +7805,7 @@ void func_0806CD60(ContinueWork* p) {
     FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -7872,7 +7872,7 @@ void func_0806CF04(ContinueWork* p) {
     FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -11477,7 +11477,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                         p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                         if ((e->unk_14 & 0x80) != 0) {
-                            FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+                            FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
                         }
                     }
                     _08073E6C(&p->unk_2C);
@@ -11530,7 +11530,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                 p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                 if ((e->unk_14 & 0x80) != 0) {
-                FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+                FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
                 }
             }
             _08073E6C(&p->unk_2C);
@@ -11933,9 +11933,9 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     }
 
     if (gUnk_02039DC8->unk_82 == 1) {
-        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 0);
     } else {
-        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
     }
 
     p->gfx = AnimUpdate(p->anim);
@@ -12107,8 +12107,8 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
     p->unk_103 = arg[0];
     p->tiles = AllocObjTiles(64, 0);
     p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    LoadObjPaletteBank(p->palette->unk_06, gUnk_08F69BA4);
-    FadeSetPaletteExcluded(p->palette->unk_06 + 16, 1);
+    LoadObjPaletteBank(p->palette->index, gUnk_08F69BA4);
+    FadeSetPaletteExcluded(p->palette->index + 16, 1);
     SetObjTileSource(p->tiles, gUnk_09320796);
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
@@ -12158,7 +12158,7 @@ void msgwait_2(MsgWaitWork* p) {
     }
 }
 void msgwait_3(MsgWaitWork* p) {
-    FadeSetPaletteExcluded(p->palette->unk_06 + 16, 0);
+    FadeSetPaletteExcluded(p->palette->index + 16, 0);
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
 }
@@ -12166,23 +12166,23 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_103 = *a;
     p->tiles = AllocObjTiles(64, 0);
     p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->palette)->unk_06, gUnk_08F69BA4);
-    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+    LoadObjPaletteBank(((ObjPalette*)p->palette)->index, gUnk_08F69BA4);
+    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
     SetObjTileSource(p->tiles, gUnk_09320796);
     AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
     p->tiles2 = AllocObjTiles(288, 0);
     p->palette2 = LoadObjPalette(gUnk_09614418, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->palette2)->unk_06, gUnk_09614418);
+    LoadObjPaletteBank(((ObjPalette*)p->palette2)->index, gUnk_09614418);
     SetObjTileSource(p->tiles2, gUnk_090A4664);
     AnimInit((AnimState*)p->anim2, gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)p->anim2, 2, 1);
     p->gfx2 = AnimGetGfx((AnimState*)p->anim2);
     p->tiles3 = LoadObjTiles(gUnk_093F7C9C, 4032);
     p->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
-    LoadObjPaletteBank(((ObjPalette*)p->palette3)->unk_06, gUnk_09611AB8);
-    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
+    LoadObjPaletteBank(((ObjPalette*)p->palette3)->index, gUnk_09611AB8);
+    FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
     InitTextSlots(p->unk_1C, 10);
     InitTextSlots(p->unk_6C, 10);
     p->palette4 = _08066468(1);

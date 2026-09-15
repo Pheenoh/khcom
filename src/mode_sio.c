@@ -1759,19 +1759,19 @@ void func_080B1134(u16 a, u16 b) {
     case 3:
     case 4:
     case 5:
-        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->unk_06 * 32 + 0x05000200), 32);
-        LoadPalette(gUnk_096FBD64 + 0x22, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->unk_06 * 32 + 0x05000202), (6 - a) * 2);
+        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->index * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBD64 + 0x22, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->index * 32 + 0x05000202), (6 - a) * 2);
         break;
     case 6:
-        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->unk_06 * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->index * 32 + 0x05000200), 32);
         break;
     case 7:
     case 8:
     case 9:
     case 10:
     case 11:
-        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->unk_06 * 32 + 0x05000200), 32);
-        LoadPalette(gUnk_096FBD64 + 0x2C, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->unk_06 * 32 + 0x0500020C), (a - 6) * 2);
+        LoadPalette(gUnk_096FBD64, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->index * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBD64 + 0x2C, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[0])->index * 32 + 0x0500020C), (a - 6) * 2);
         break;
     }
 
@@ -1781,19 +1781,19 @@ void func_080B1134(u16 a, u16 b) {
     case 3:
     case 4:
     case 5:
-        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->unk_06 * 32 + 0x05000200), 32);
-        LoadPalette(gUnk_096FBDA4 + 0x22, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->unk_06 * 32 + 0x05000202), (6 - b) * 2);
+        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->index * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBDA4 + 0x22, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->index * 32 + 0x05000202), (6 - b) * 2);
         break;
     case 6:
-        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->unk_06 * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->index * 32 + 0x05000200), 32);
         break;
     case 7:
     case 8:
     case 9:
     case 10:
     case 11:
-        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->unk_06 * 32 + 0x05000200), 32);
-        LoadPalette(gUnk_096FBDA4 + 0x2C, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->unk_06 * 32 + 0x0500020C), (b - 6) * 2);
+        LoadPalette(gUnk_096FBDA4, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->index * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_096FBDA4 + 0x2C, (void*)(((ObjPalette*)gSioBtlOptionWork->palette5[1])->index * 32 + 0x0500020C), (b - 6) * 2);
         break;
     }
 }
@@ -3157,7 +3157,7 @@ void func_080B397C(void) {
     def = &defs[n];
     off = def->unk_2A << 5;
     LoadPalette(gUnk_096FBF84 + off, (void*)0x050000A0, 32);
-    LoadObjPaletteBank(((ObjPalette*)gSioChgCardWork->palette)->unk_06, gUnk_096FBF04 + off);
+    LoadObjPaletteBank(((ObjPalette*)gSioChgCardWork->palette)->index, gUnk_096FBF04 + off);
     nameId = def->unk_1C;
     defs = (CardDef*)((u8*)defs + 12);
     gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].gfx, gSioChgCardWork->unk_364);

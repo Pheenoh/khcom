@@ -2771,14 +2771,14 @@ u8 task_poo_gauge_1(PooGaugeWork* w) {
 
     if (w->unk_10 != 0) {
         if (w->unk_0C != gUnk_09849BB8) {
-            LoadObjPaletteBank(w->palette->unk_06, gUnk_09849BB8);
+            LoadObjPaletteBank(w->palette->index, gUnk_09849BB8);
             w->unk_0C = gUnk_09849BB8;
         }
     }
 
     if (w->unk_10 == 0) {
         if (w->unk_0C != gUnk_09849B98) {
-            LoadObjPaletteBank(w->palette->unk_06, gUnk_09849B98);
+            LoadObjPaletteBank(w->palette->index, gUnk_09849B98);
             w->unk_0C = gUnk_09849B98;
         }
     }

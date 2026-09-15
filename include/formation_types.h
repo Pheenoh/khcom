@@ -4,25 +4,25 @@
 #include "types.h"
 
 typedef struct BtlFormStep {
-    u32 unk_00;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
+    u32 id;
+    s16 x;
+    s16 y;
+    s16 z;
+    s16 delay;
 } BtlFormStep;
 
 typedef struct BtlFormEntry {
-    s16 unk_00;
+    s16 count;
     u8 unk_02[0x02];
-    const BtlFormStep* unk_04;
-    u16 unk_08;
+    const BtlFormStep* steps;
+    u16 delay;
 } BtlFormEntry;
 
 typedef struct BtlFormList {
-    s16 unk_00;
+    s16 count;
     u8 unk_02[0x02];
-    const BtlFormEntry* const* unk_04;
-    s16 unk_08;
+    const BtlFormEntry* const* entries;
+    s16 threshold;
     u8 unk_0A[0x02];
 } BtlFormList;
 
