@@ -142,7 +142,7 @@ typedef struct Actor {
     SprObj* unk_0C;
     SprObj* unk_10;
     u8 unk_14[0x18];
-    TaskPool unk_2C;
+    TaskPool tasks;
     s32 unk_40;
     s32 unk_44;
     u8 unk_48[0x2C];

@@ -59,7 +59,7 @@ typedef struct BtlObj {
     u64 unk_034;
     u16 unk_03C;
     u8 unk_03E[0x02];
-    Collider unk_040;
+    Collider collider;
     u16 unk_09C;
     u16 unk_09E;
     u16 unk_0A0;

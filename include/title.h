@@ -44,7 +44,7 @@ typedef struct TitleMenuWork {
     void* gfx[3];
     AnimState anim;
     s16* unk_44;
-    TaskPool unk_48;
+    TaskPool tasks;
     s32 unk_5C;
     s16 x;
     u16 unk_62;

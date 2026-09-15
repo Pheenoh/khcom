@@ -720,24 +720,24 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->gfx = gUnk_0976DC9C;
     work->unk_10 = 0;
-    TaskPoolInit(&work->unk_14, 1);
+    TaskPoolInit(&work->tasks, 1);
     work->unk_28 = 0;
 }
 
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
     if (func_080D4D1C() == 0 && (GetKeysPressed() & 1) != 0) {
         m4aSongNumStart(102);
-        work->unk_28 = TaskCreate(&work->unk_14, &gTaskDescAllmapDoorinfo, &work->cursor->unk_30);
+        work->unk_28 = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->unk_30);
     }
     work->y2 = gSineTable[(u8)work->unk_10] >> 8;
     work->unk_10 += 16;
-    TaskPoolUpdate(&work->unk_14);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
 void task_allmap_pusha_2(AllmapPushaWork* work) {
     if (func_080D4D1C() != 0) {
-        TaskPoolDraw(&work->unk_14);
+        TaskPoolDraw(&work->tasks);
     } else {
         work->x = work->cursor->unk_30.x * 24 - gUnk_0203C540;
         work->y = work->cursor->unk_30.y * 24 - gUnk_0203C53C;
@@ -748,7 +748,7 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
 void task_allmap_pusha_3(AllmapPushaWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_14);
+    TaskPoolDestroy(&work->tasks);
     func_080D4D44();
 }
 
@@ -820,7 +820,7 @@ void func_080D4EBC(void) {
     ((AllmapState*)gUnk_0203C4B4)->unk_C0 = 0xFF;
     ((AllmapState*)gUnk_0203C4B4)->unk_BC = 0x400;
     gUnk_0203C538 = gUnk_0203C590[6];
-    TaskPoolInit(&((AllmapState*)gUnk_0203C4B4)->unk_00, 35);
+    TaskPoolInit(&((AllmapState*)gUnk_0203C4B4)->tasks, 35);
     ((AllmapState*)gUnk_0203C4B4)->unk_9C = i = 0;
     ((AllmapState*)gUnk_0203C4B4)->unk_98 = 0;
 
@@ -928,12 +928,12 @@ void func_080D51D8(void) {
     y = gUnk_0203C53C - ((AllmapState*)gUnk_0203C4B4)->unk_AE;
     ScrollBgMapTo(0, x - ((AllmapState*)gUnk_0203C4B4)->unk_AC % 8, y - ((AllmapState*)gUnk_0203C4B4)->unk_AE % 8);
     ScrollBgMapTo(1, x - ((AllmapState*)gUnk_0203C4B4)->unk_AC % 8, y - ((AllmapState*)gUnk_0203C4B4)->unk_AE % 8);
-    TaskPoolUpdate(&((AllmapState*)gUnk_0203C4B4)->unk_00);
-    TaskPoolDraw(&((AllmapState*)gUnk_0203C4B4)->unk_00);
+    TaskPoolUpdate(&((AllmapState*)gUnk_0203C4B4)->tasks);
+    TaskPoolDraw(&((AllmapState*)gUnk_0203C4B4)->tasks);
 }
 
 void func_080D53A8(void) {
-    TaskPoolDestroy(&((AllmapState*)gUnk_0203C4B4)->unk_00);
+    TaskPoolDestroy(&((AllmapState*)gUnk_0203C4B4)->tasks);
     EwramFree(gUnk_0203C4B4);
 }
 

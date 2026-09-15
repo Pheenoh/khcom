@@ -143,7 +143,7 @@ typedef struct SrollBCharWork {
     void* tiles;
     ObjPalette* palette;
     AnimState anim;
-    TaskPool unk_2C;
+    TaskPool tasks;
 } SrollBCharWork;
 
 typedef struct SrollBLogoWork {

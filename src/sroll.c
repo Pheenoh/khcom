@@ -155,7 +155,7 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     w->sub->anim = anim;
     w->sub->unk_1C = w->palette->index;
     func_081149B8(w);
-    TaskPoolInit(&w->unk_2C, 4);
+    TaskPoolInit(&w->tasks, 4);
 }
 
 s32 task_sroll_b_char_1(SrollBCharWork* w) {
@@ -172,7 +172,7 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
     }
 
     AnimUpdate(&w->anim);
-    TaskPoolUpdate(&w->unk_2C);
+    TaskPoolUpdate(&w->tasks);
 
     switch (w->unk_00) {
     case 1:
@@ -188,7 +188,7 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
             a.unk_00 = 2;
             a.x = w->sub->x;
             a.y = w->sub->y;
-            TaskCreate(&w->unk_2C, &gTaskDescSrollBCrtn, &a);
+            TaskCreate(&w->tasks, &gTaskDescSrollBCrtn, &a);
         }
 
         w->sub->unk_0C = (gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8) >> 2;
@@ -221,14 +221,14 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
         gfx = AnimGetGfx(&w->anim);
         DrawSprite(x, y, gfx, w->tiles, w->palette,
                    AllocObjAffine(sub->unk_28, sub->unk_20, sub->unk_24, 1), sub->unk_16, 0xFF0);
-        TaskPoolDraw(&w->unk_2C);
+        TaskPoolDraw(&w->tasks);
     }
 }
 
 void task_sroll_b_char_3(SrollBCharWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->palette);
-    TaskPoolDestroy(&w->unk_2C);
+    TaskPoolDestroy(&w->tasks);
 }
 
 static s32 func_08114C1C(s32 x) {

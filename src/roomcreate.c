@@ -15,7 +15,7 @@ void task_roomcreate_0(RoomCreateWork* work) {
     work->unk_40 = 0;
     SetBgPriority(0, 2);
     SetBgPriority(1, 2);
-    TaskPoolInit(&work->unk_2C, 3);
+    TaskPoolInit(&work->tasks, 3);
     work->x = gUnk_02039BA0->actor.unk_00.x;
     work->y = gUnk_02039BA0->actor.unk_00.y;
     work->z = gUnk_02039BA0->actor.unk_00.z;
@@ -38,7 +38,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 0:
         if (work->unk_26 == 0) {
             gUnk_02039BA0->actor.angle = work->unk_24 + 0x80;
-            TaskCreate(&work->unk_2C, &gTaskDescSpotLight, &work->unk_28);
+            TaskCreate(&work->tasks, &gTaskDescSpotLight, &work->unk_28);
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 30 - work->unk_26;
@@ -64,7 +64,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             work->unk_26--;
         } else if (work->unk_26 == 0) {
             m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
-            CreateMapCardSelection(&work->unk_2C, &work->unk_29);
+            CreateMapCardSelection(&work->tasks, &work->unk_29);
             SetBgPriority(1, 1);
             work->unk_26--;
         }
@@ -98,7 +98,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             work->unk_26++;
         } else if (work->unk_26 == 20) {
             m4aSongNumStart(0x77);
-            TaskCreate(&work->unk_2C, &gTaskDescRomcriEff2, (void*)(u32)work->unk_24);
+            TaskCreate(&work->tasks, &gTaskDescRomcriEff2, (void*)(u32)work->unk_24);
             work->unk_26++;
         }
 
@@ -109,7 +109,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 4:
         if (work->unk_26 == 16) {
-            TaskCreate(&work->unk_2C, &gTaskDescRomcriEff, (void*)(u32)work->unk_24);
+            TaskCreate(&work->tasks, &gTaskDescRomcriEff, (void*)(u32)work->unk_24);
         }
 
         if (work->unk_26 == 40) {
@@ -170,15 +170,15 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 7:
         break;
     }
-    TaskPoolUpdate(&work->unk_2C);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
 void task_roomcreate_2(RoomCreateWork* work) {
-    TaskPoolDraw(&work->unk_2C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_roomcreate_3(RoomCreateWork* work) {
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x100);
-    TaskPoolDestroy(&work->unk_2C);
+    TaskPoolDestroy(&work->tasks);
 }

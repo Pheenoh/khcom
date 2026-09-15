@@ -74,7 +74,7 @@ typedef struct HookWork {
     u16 unk_196;
     u16 unk_198;
     u8 unk_19A[0x02];
-    TaskPool unk_19C;
+    TaskPool tasks;
     void* unk_1B0;
     void* unk_1B4;
     void* unk_1B8;
@@ -133,7 +133,7 @@ typedef struct VixenIceWork {
     void* palette;
     AnimState anim;
     VixenSub* sub;
-    u8 unk_28[0x5C];
+    u8 collider[0x5C];
     s16 unk_84;
     u16 unk_86;
     u16 unk_88;
@@ -215,7 +215,7 @@ typedef struct MahluxiaWork {
     u8 unk_1DA[0x02];
     RikuSpawn unk_1DC[9];
     s32 unk_38C;
-    TaskPool unk_390;
+    TaskPool tasks;
 } MahluxiaWork;
 
 typedef struct LaxeneKnfWork {
@@ -242,7 +242,7 @@ typedef struct LaxeneWork {
     u16 unk_18E;
     u16 unk_190;
     u16 unk_192;
-    TaskPool unk_194;
+    TaskPool tasks;
 } LaxeneWork;
 
 typedef struct VixenWork {
@@ -253,7 +253,7 @@ typedef struct VixenWork {
     s32 unk_19C;
     u16 unk_1A0;
     u16 unk_1A2;
-    TaskPool unk_1A4;
+    TaskPool tasks;
     void* unk_1B8;
     u8 unk_1BC;
     u8 unk_1BD[0x03];
@@ -273,7 +273,7 @@ typedef struct LexceusWork {
     u16 unk_1CE;
     s32 unk_1D0;
     s32 unk_1D4;
-    TaskPool unk_1D8;
+    TaskPool tasks;
     void* unk_1EC;
     s32 unk_1F0;
     s32 unk_1F4;
@@ -454,7 +454,7 @@ typedef struct AxcelWork {
     s32 unk_214;
     void* tiles;
     void* palette;
-    TaskPool unk_220;
+    TaskPool tasks;
     u16 unk_234;
     u16 unk_236;
 } AxcelWork;

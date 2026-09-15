@@ -127,7 +127,7 @@ void func_0800EFE8(Actor* work) {
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->y >> 8) * 4) | 3);
     func_0800EEBC(work, work->unk_0C);
     func_0800EEBC(work, work->unk_10);
-    TaskPoolDraw(&work->unk_2C);
+    TaskPoolDraw(&work->tasks);
 }
 void func_0800F230(void) {
     BtlObj* c = gUnk_02039B9C->actor;
@@ -300,11 +300,11 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r) {
 }
 
 u8 func_0800F4C8(BtlObj* p, u16 b) {
-    if (p->unk_040.x < (gBtlWork->unk_0DA + b) << 8) {
+    if (p->collider.x < (gBtlWork->unk_0DA + b) << 8) {
         return 1;
     }
 
-    if (p->unk_040.x > (gBtlWork->unk_0DC - b) << 8) {
+    if (p->collider.x > (gBtlWork->unk_0DC - b) << 8) {
         return 1;
     }
     return 0;

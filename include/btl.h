@@ -107,7 +107,7 @@ typedef struct BtlSoraWork {
     ObjPalette* palette;
     u32 gfx;
     AnimState anim;
-    TaskPool unk_024;
+    TaskPool tasks;
     u32 unk_038;
     u32 unk_03C;
     BtlObj actor;
@@ -148,7 +148,7 @@ typedef struct BtlRikuWork {
     ObjPalette* palette;
     u32 gfx;
     AnimState anim;
-    TaskPool unk_028;
+    TaskPool tasks;
     u32 unk_03C;
     u32 unk_040;
     BtlObj actor;

@@ -258,9 +258,9 @@ typedef struct MdWork {
     u8* palette;
     u8* palette2;
     void* unk_028;
-    TaskPool unk_02C;
-    TaskPool unk_040;
-    TaskPool unk_054;
+    TaskPool tasks;
+    TaskPool tasks2;
+    TaskPool tasks3;
     MdSub sub[1];
     u16 unk_178;
     u16 unk_17A;

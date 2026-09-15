@@ -40,7 +40,7 @@ typedef struct UnkStruct_02039DD0 {
 } UnkStruct_02039DD0;
 
 typedef struct CardBattleWork {
-    TaskPool unk_00;
+    TaskPool tasks;
     void* tiles;
     void* palette;
     u8 unk_1C[0x28];
@@ -119,7 +119,7 @@ typedef struct EffectWork {
     u8 unk_48;
     u8 unk_49;
     u8 unk_4A[0x02];
-    TaskPool unk_4C;
+    TaskPool tasks;
 } EffectWork;
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;

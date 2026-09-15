@@ -35,7 +35,7 @@ typedef struct SmnCloudWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     s32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -65,7 +65,7 @@ typedef struct SmnBambiWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     u32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -93,7 +93,7 @@ typedef struct SmnTinkWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     u32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -130,7 +130,7 @@ typedef struct SmnSimbaWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     u32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -148,7 +148,7 @@ typedef struct SmnMushuWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     u32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -166,7 +166,7 @@ typedef struct SmnDumboWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     u32 unk_034;
     BtlObj body;
     s16 unk_148;
@@ -184,7 +184,7 @@ typedef struct SmnGenieWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     s32 unk_034;
     BtlObj body;
     u16 unk_148;
@@ -224,7 +224,7 @@ typedef struct SmnKingWork {
     void* tiles;
     void* palette;
     AnimState anim;
-    TaskPool unk_020;
+    TaskPool tasks;
     s32 unk_034;
     BtlObj body;
     s16 unk_148;

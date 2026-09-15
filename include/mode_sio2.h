@@ -82,11 +82,11 @@ typedef struct PoohWork {
     u8 unk_3B;
     u8 unk_3C[0x0C];
     s32 unk_48;
-    u8 unk_4C[0x5C];
+    u8 collider[0x5C];
     s32 unk_A8;
     u16 unk_AC;
     u8 unk_AE[0x02];
-    TaskPool unk_B0;
+    TaskPool tasks;
     Task* unk_C4;
     u8 unk_C8[0x0E];
     u8 unk_D6;

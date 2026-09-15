@@ -122,25 +122,25 @@ void mode_eventselect_2(void) {
 void Hanabira_0(EffectWork* w, void* arg) {
     s32 i;
 
-    TaskPoolInit(&w->unk_4C, 16);
+    TaskPoolInit(&w->tasks, 16);
 
     for (i = 15; i >= 0; i--) {
-        TaskCreate(&w->unk_4C, &gTaskDescHanabiraC, arg);
+        TaskCreate(&w->tasks, &gTaskDescHanabiraC, arg);
     }
 }
 
 s32 Hanabira_1(EffectWork* w) {
-    TaskPoolUpdate(&w->unk_4C);
+    TaskPoolUpdate(&w->tasks);
 
     return 1;
 }
 
 void Hanabira_2(EffectWork* w) {
-    TaskPoolDraw(&w->unk_4C);
+    TaskPoolDraw(&w->tasks);
 }
 
 void Hanabira_3(EffectWork* w) {
-    TaskPoolDestroy(&w->unk_4C);
+    TaskPoolDestroy(&w->tasks);
 }
 
 void Hanabira_c_0(EffectWork* w, EventActor* arg) {
@@ -560,7 +560,7 @@ void Tinkerbell_0(EffectWork* w, void* arg) {
     w->actor = arg;
     gUnk_02039DC8->unk_86 = 0;
     w->unk_44 = 0;
-    TaskPoolInit(&w->unk_4C, 8);
+    TaskPoolInit(&w->tasks, 8);
 }
 
 s32 Tinkerbell_1(EffectWork* w) {
@@ -568,23 +568,23 @@ s32 Tinkerbell_1(EffectWork* w) {
 
     if (w->unk_44 == 5) {
         if (gUnk_02039DC8->unk_86 <= 3) {
-            TaskCreate(&w->unk_4C, &gUnk_09EE484C, w->actor);
+            TaskCreate(&w->tasks, &gUnk_09EE484C, w->actor);
         }
 
         w->unk_44 = 0;
     }
 
-    TaskPoolUpdate(&w->unk_4C);
+    TaskPoolUpdate(&w->tasks);
 
     return 1;
 }
 
 void Tinkerbell_2(EffectWork* w) {
-    TaskPoolDraw(&w->unk_4C);
+    TaskPoolDraw(&w->tasks);
 }
 
 void Tinkerbell_3(EffectWork* w) {
-    TaskPoolDestroy(&w->unk_4C);
+    TaskPoolDestroy(&w->tasks);
 }
 
 void func_08075E60(EventTaskHost* h) {
@@ -1014,7 +1014,7 @@ void func_08076458(void) {
     gUnk_02039DD4->unk_106 = 2;
     gUnk_02039DD4->unk_108[0] = 0;
     gUnk_02039DD4->unk_108[1] = 0;
-    TaskPoolInit(&gUnk_02039DD4->unk_09C, 6);
+    TaskPoolInit(&gUnk_02039DD4->tasks, 6);
     gUnk_02039DD4->tiles = LoadObjTiles(gUnk_08F709B0[0].tiles, 640);
     gUnk_02039DD4->tiles2 = LoadObjTiles(gUnk_08F709B0[1].tiles, 640);
     gUnk_02039DD4->tiles3 = LoadObjTiles(gUnk_08F709B0[2].tiles, 640);
@@ -1861,7 +1861,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                     w->unk_C4[0] = 1;
                     SetTaskUpdate(task, (u32)func_08077F44);
                     TaskPoolUpdate((TaskPool*)w);
-                    TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+                    TaskPoolUpdate(&gUnk_02039DD4->tasks);
                     args.slot = w->unk_B8;
                     args.state = &w->unk_C4[0];
                     args.mode = 1;
@@ -1873,7 +1873,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 w->unk_C0[w->unk_B8] = 0;
                 SetTaskUpdate(task, (u32)func_08077F44);
                 TaskPoolUpdate((TaskPool*)w);
-                TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+                TaskPoolUpdate(&gUnk_02039DD4->tasks);
                 return 1;
             }
         } else if (gUnk_02034A98 != 0 && (gUnk_02034A98->unk_78 & 0x42) == 0x42 && func_080787B8((CardBattleWork*)w, w->unk_B8) != 0) {
@@ -1978,7 +1978,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         }
     }
     TaskPoolUpdate((TaskPool*)w);
-    TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+    TaskPoolUpdate(&gUnk_02039DD4->tasks);
     gUnk_02039DD4->unk_0D3 = w->unk_B9;
     w->unk_C4[4] = 0;
     if (gBtlWork->unk_068 & 0x80000000000000LL) {
@@ -1998,14 +1998,14 @@ void func_08077E10(CardBattleWork* w) {
     }
 
     TaskPoolDraw(w);
-    TaskPoolDraw(&gUnk_02039DD4->unk_09C);
+    TaskPoolDraw(&gUnk_02039DD4->tasks);
 }
 
 void func_08077E98(CardBattleWork* w) {
     u8 i;
 
     TaskPoolDestroy(w);
-    TaskPoolDestroy(&gUnk_02039DD4->unk_09C);
+    TaskPoolDestroy(&gUnk_02039DD4->tasks);
 
     for (i = 0; i < 4; i++) {
         if (w->unk_44[i] != 0) {
@@ -2149,7 +2149,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
     }
 
     TaskPoolUpdate((TaskPool*)w);
-    TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+    TaskPoolUpdate(&gUnk_02039DD4->tasks);
 
     return 1;
 }

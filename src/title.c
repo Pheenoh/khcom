@@ -422,11 +422,11 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     work->gfx[1] = gUnk_09EF6620[work->unk_44[0]];
     work->gfx[2] = gUnk_09EF663C[work->unk_44[0]];
 #endif
-    TaskPoolInit(&work->unk_48, 1);
+    TaskPoolInit(&work->tasks, 1);
 #ifdef VERSION_EU
-    TaskCreate(&work->unk_48, &gUnkEu_09F80228, 0);
+    TaskCreate(&work->tasks, &gUnkEu_09F80228, 0);
 #else
-    TaskCreate(&work->unk_48, &gTaskDescTitleLumichange, 0);
+    TaskCreate(&work->tasks, &gTaskDescTitleLumichange, 0);
 #endif
 }
 
@@ -498,7 +498,7 @@ u8 task_title_menu_1(TitleMenuWork* work) {
     } else if (work->unk_5C == 4) {
         func_080D69AC(work->unk_44, 1);
     }
-    TaskPoolUpdate(&work->unk_48);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -649,7 +649,7 @@ void task_title_menu_2(TitleMenuWork* work) {
     } else {
         func_080D6D2C(work);
     }
-    TaskPoolDraw(&work->unk_48);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_title_menu_3(TitleMenuWork* work) {
@@ -662,7 +662,7 @@ void task_title_menu_3(TitleMenuWork* work) {
         ReleaseObjTiles(work->tiles2[i]);
         ReleaseObjPalette(work->palette2[i]);
     }
-    TaskPoolDestroy(&work->unk_48);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_title_lumichange_0(TitleLumiChangeWork* work) {

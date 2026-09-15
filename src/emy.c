@@ -52,7 +52,7 @@ u8 task_emy_00_1(EmyWork* work) {
 
         if (AnimIsFinished(&w->anim)) {
             w->unk_14C = 20;
-            ColliderSetDisabled(&act->unk_040, 1);
+            ColliderSetDisabled(&act->collider, 1);
             act->unk_034 |= 0x100;
             act->unk_0A2 = 0;
         }
@@ -66,7 +66,7 @@ u8 task_emy_00_1(EmyWork* work) {
 
             if (w->unk_154 > 100) {
                 w->unk_14C = 21;
-                ColliderSetDisabled(&act->unk_040, 0);
+                ColliderSetDisabled(&act->collider, 0);
                 act->unk_034 &= ~0x100;
                 act->unk_0A2 = 16;
                 w->unk_154 = 0;
@@ -120,7 +120,7 @@ u8 task_emy_00_1(EmyWork* work) {
         break;
     case 18:
         if (w->unk_154 == 0) {
-            ColliderSetDisabled(&act->unk_040, 0);
+            ColliderSetDisabled(&act->collider, 0);
             act->unk_034 &= ~0x300;
             func_08019068(work->def->animDef, &work->anim, 0, 3,
                 work->tiles);
@@ -231,7 +231,7 @@ void task_emy_00_2(EmyWork* work) {
                 -0x1004 - (act->y >> 8) * 4);
         }
 
-        TaskPoolDraw(&work->unk_028);
+        TaskPoolDraw(&work->tasks);
     }
 }
 
@@ -777,7 +777,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
 
         act->unk_02C = act->unk_02E;
-        ColliderSetDisabled(&act->unk_040, 0);
+        ColliderSetDisabled(&act->collider, 0);
         break;
     }
 
@@ -1278,7 +1278,7 @@ void task_emy_16_0(Emy16Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813D9CC, obj);
     work->unk_184 = 0;
     work->unk_188 = 0;
-    TaskPoolInit(&work->unk_18C, 2);
+    TaskPoolInit(&work->tasks, 2);
 }
 
 u8 task_emy_16_1(Emy16Work* work) {
@@ -1326,7 +1326,7 @@ u8 task_emy_16_1(Emy16Work* work) {
                 spawn.unk_12 = 0;
             }
 
-            w->unk_184 = TaskCreate(&w->unk_18C, &gTaskDescEmy16P, &spawn);
+            w->unk_184 = TaskCreate(&w->tasks, &gTaskDescEmy16P, &spawn);
             w->unk_1A0 = 1;
         }
 
@@ -1352,7 +1352,7 @@ u8 task_emy_16_1(Emy16Work* work) {
                 spawn.unk_12 = 0;
             }
 
-            w->unk_188 = TaskCreate(&w->unk_18C, &gTaskDescEmy16B, &spawn);
+            w->unk_188 = TaskCreate(&w->tasks, &gTaskDescEmy16B, &spawn);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -1361,18 +1361,18 @@ u8 task_emy_16_1(Emy16Work* work) {
         break;
     }
 
-    TaskPoolUpdate(&w->unk_18C);
+    TaskPoolUpdate(&w->tasks);
     return _0800CDF0(&work->base);
 }
 
 void task_emy_16_2(Emy16Work* work) {
     func_0800DF30(&work->base);
-    TaskPoolDraw(&work->unk_18C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_emy_16_3(Emy16Work* work) {
     func_0800E0D0(&work->base);
-    TaskPoolDestroy(&work->unk_18C);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
@@ -3522,7 +3522,7 @@ u8 task_emy_37_1(Emy37Work* work) {
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 20;
-            ColliderSetDisabled(&act->unk_040, 1);
+            ColliderSetDisabled(&act->collider, 1);
             act->unk_034 |= 0x100;
             act->unk_0A2 = 0;
         }
@@ -3580,7 +3580,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             if (work->base.unk_154 > 160) {
                 w->unk_184 = 0;
                 work->base.unk_14C = 21;
-                ColliderSetDisabled(&act->unk_040, 0);
+                ColliderSetDisabled(&act->collider, 0);
                 act->unk_034 &= ~0x100;
                 act->unk_0A2 = 20;
                 act->unk_034 |= 0x200;
@@ -3633,7 +3633,7 @@ u8 task_emy_37_1(Emy37Work* work) {
     case 18:
         if (work->base.unk_154 == 0) {
             act->unk_0A2 = 20;
-            ColliderSetDisabled(&act->unk_040, 0);
+            ColliderSetDisabled(&act->collider, 0);
             act->unk_034 &= ~0x300;
             func_08019068(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
         }
@@ -3744,7 +3744,7 @@ void task_emy_37_2(Emy37Work* work) {
                 pri, -0x1004 - (act->y >> 8) * 4);
         }
 
-        TaskPoolDraw(&work->base.unk_028);
+        TaskPoolDraw(&work->base.tasks);
     }
 }
 
@@ -4714,7 +4714,7 @@ void task_emy_83_0(Emy83Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813E6AC, obj);
     work->unk_184 = 0;
     work->base.unk_150 = 0x16;
-    TaskPoolInit(&work->unk_188, 4);
+    TaskPoolInit(&work->tasks, 4);
 }
 
 u8 task_emy_83_1(Emy83Work* work) {
@@ -4772,7 +4772,7 @@ u8 task_emy_83_1(Emy83Work* work) {
                 spawn.x = w->unk_19C;
                 spawn.y = w->unk_1A0;
                 spawn.z = c;
-                w->unk_184 = TaskCreate(&w->unk_188, &gTaskDescEmy83B, &spawn);
+                w->unk_184 = TaskCreate(&w->tasks, &gTaskDescEmy83B, &spawn);
                 break;
             }
         }
@@ -4803,11 +4803,11 @@ u8 task_emy_83_1(Emy83Work* work) {
             spawn.y = act->y;
             spawn.z = act->z - 0x1200;
             spawn.unk_14 = 0;
-            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
+            TaskCreate(&w->tasks, &gTaskDescEmy83S, &spawn);
             spawn.unk_14 = 1;
-            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
+            TaskCreate(&w->tasks, &gTaskDescEmy83S, &spawn);
             spawn.unk_14 = 2;
-            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
+            TaskCreate(&w->tasks, &gTaskDescEmy83S, &spawn);
             w->unk_1A4++;
         }
 
@@ -4829,7 +4829,7 @@ u8 task_emy_83_1(Emy83Work* work) {
         break;
     }
 
-    TaskPoolUpdate(&w->unk_188);
+    TaskPoolUpdate(&w->tasks);
     x = act->x;
     y = act->y;
     z = act->z;
@@ -4846,11 +4846,11 @@ u8 task_emy_83_1(Emy83Work* work) {
 
 void task_emy_83_2(Emy83Work* work) {
     func_0800DF30(&work->base);
-    TaskPoolDraw(&work->unk_188);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_emy_83_3(Emy83Work* work) {
-    TaskPoolDestroy(&work->unk_188);
+    TaskPoolDestroy(&work->tasks);
     func_0800E0D0(&work->base);
 }
 

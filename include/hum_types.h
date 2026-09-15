@@ -41,7 +41,7 @@ typedef struct HumWork {
     HumSub* sub;
     HumSub* sub2;
     AnimState anim;
-    TaskPool unk_02C;
+    TaskPool tasks;
     BtlObj actor;
     s16 unk_150;
     s16 unk_152;

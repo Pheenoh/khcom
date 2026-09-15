@@ -36,9 +36,9 @@ void HumInit(HumWork* work, HumDef* def) {
     work->unk_174 = 0xFFF0;
     work->unk_17C = 1;
     AnimInit(&work->anim, 0, 0);
-    TaskPoolInit(&work->unk_02C, 3);
-    TaskCreate(&work->unk_02C, &gTaskDescBtlShadow, actor);
-    TaskCreate(&work->unk_02C, &gTaskDescBtlBadstatus, actor);
+    TaskPoolInit(&work->tasks, 3);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, actor);
+    TaskCreate(&work->tasks, &gTaskDescBtlBadstatus, actor);
     work->unk_170 = 12;
     work->unk_168 = 0x100;
     work->unk_16C = 0x100;
@@ -85,7 +85,7 @@ void HumReleaseResources(HumWork* work) {
     func_0801B7D8(&work->actor);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_02C);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void func_0800E3D0(HumWork* work) {
@@ -222,7 +222,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 14:
         if (work->unk_150 == 0) {
             AnimReset(&work->anim);
-            ColliderSetDisabled(&actor->unk_040, 1);
+            ColliderSetDisabled(&actor->collider, 1);
             actor->unk_034 |= 0x100;
             work->anim.frame = 0;
             work->anim.timer = 0;
@@ -254,7 +254,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 16:
         if (work->unk_150 == 0) {
-            ColliderSetDisabled(&actor->unk_040, 0);
+            ColliderSetDisabled(&actor->collider, 0);
             work->unk_152 = 10;
         }
         ApproachValueHalfSteps(&work->unk_16C, 0x100, work->unk_152--);
@@ -477,9 +477,9 @@ s32 func_0800E5F0(HumWork* work) {
             actor->z = 0;
             work->unk_158 = 0;
         }
-        if (actor->unk_040.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->unk_040.unk_50->unk_30 & 2)) {
-            actor->x += actor->unk_040.unk_38 >> 1;
-            actor->y += actor->unk_040.unk_3C >> 1;
+        if (actor->collider.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->collider.unk_50->unk_30 & 2)) {
+            actor->x += actor->collider.unk_38 >> 1;
+            actor->y += actor->collider.unk_3C >> 1;
         }
     }
 
@@ -540,8 +540,8 @@ s32 func_0800E5F0(HumWork* work) {
         actor->y = actor->unk_100;
     }
 
-    TaskPoolUpdate(&work->unk_02C);
-    ColliderSetPosition(&actor->unk_040, actor->x, actor->y, actor->z);
+    TaskPoolUpdate(&work->tasks);
+    ColliderSetPosition(&actor->collider, actor->x, actor->y, actor->z);
     return 1;
 }
 

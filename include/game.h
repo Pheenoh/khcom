@@ -38,7 +38,7 @@ typedef struct UnkStruct_02039DD4 {
     AnimState anim2;
     void* gfx;
     void* gfx2;
-    TaskPool unk_09C;
+    TaskPool tasks;
     u32 unk_0B0;
     u32 unk_0B4;
     u32 unk_0B8;

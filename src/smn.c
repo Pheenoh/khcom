@@ -48,8 +48,8 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     work->target = 0;
     work->unk_17C = 0;
     work->unk_16C = 0;
-    TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 2);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_cloud_1(SmnCloudWork* work) {
@@ -375,7 +375,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
     func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_010);
     if (body->z > body->unk_010) body->z = body->unk_010;
     if (work->unk_164 != 0) AnimUpdate(&work->anim);
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -425,7 +425,7 @@ void task_smn_cloud_2(SmnCloudWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_cloud_3(SmnCloudWork* work) {
@@ -434,7 +434,7 @@ void task_smn_cloud_3(SmnCloudWork* work) {
     obj = work->unk_163 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void func_08041D64(SmnBambiWork* work) {
@@ -498,8 +498,8 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->target = 0;
     work->unk_16C = 0;
     m4aSongNumStart(0xAB);
-    TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 2);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 u8 func_08041FCC(SmnBambiWork* work) {
@@ -725,7 +725,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -769,7 +769,7 @@ void task_smn_bambi_2(SmnBambiWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_bambi_3(SmnBambiWork* work) {
@@ -778,7 +778,7 @@ void task_smn_bambi_3(SmnBambiWork* work) {
     obj = work->unk_163 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
@@ -863,13 +863,13 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         work->unk_174 = work->actor->unk_02E << 8;
     }
 
-    TaskPoolInit(&work->unk_020, 15);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 15);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 void func_080428E8(SmnTinkWork* work) {
     if (work->unk_170 % 3 == 0) {
-        TaskCreate(&work->unk_020, gTaskDescSmnTinkeff, &work->body);
+        TaskCreate(&work->tasks, gTaskDescSmnTinkeff, &work->body);
     }
 }
 u8 task_smn_tink_1(SmnTinkWork* work) {
@@ -1056,7 +1056,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     work->unk_170++;
     return 1;
 }
@@ -1101,7 +1101,7 @@ void task_smn_tink_2(SmnTinkWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_tink_3(SmnTinkWork* work) {
@@ -1111,7 +1111,7 @@ void task_smn_tink_3(SmnTinkWork* work) {
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     m4aSongNumStop(0x24F);
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 static inline s32 GetTinkEffectOffset(void) {
@@ -1206,8 +1206,8 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_14C = 0;
     work->unk_150 = 10;
     work->unk_156 = 0;
-    TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 2);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_simba_1(SmnSimbaWork* work) {
@@ -1348,7 +1348,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         body->z = body->unk_010;
     }
 
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -1392,7 +1392,7 @@ void task_smn_simba_2(SmnSimbaWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_simba_3(SmnSimbaWork* work) {
@@ -1401,7 +1401,7 @@ void task_smn_simba_3(SmnSimbaWork* work) {
     obj = work->unk_155 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
@@ -1451,7 +1451,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
     }
 
     m4aSongNumStart(0xAB);
-    TaskPoolInit(&work->unk_020, 3);
+    TaskPoolInit(&work->tasks, 3);
 }
 
 u8 task_smn_mushu_1(SmnMushuWork* work) {
@@ -1602,7 +1602,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -1645,7 +1645,7 @@ void task_smn_mushu_2(SmnMushuWork* work) {
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4101 - ((body->y >> 8) * 4));
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_mushu_3(SmnMushuWork* work) {
@@ -1654,7 +1654,7 @@ void task_smn_mushu_3(SmnMushuWork* work) {
     obj = work->unk_153 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
@@ -1696,8 +1696,8 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     work->unk_14C = 0;
     work->unk_150 = 10;
     work->unk_156 = 0;
-    TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_dumbo_1(SmnDumboWork* work) {
@@ -1806,7 +1806,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         body->z = body->unk_010;
     }
 
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -1850,7 +1850,7 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_dumbo_3(SmnDumboWork* work) {
@@ -1860,7 +1860,7 @@ void task_smn_dumbo_3(SmnDumboWork* work) {
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     m4aSongNumStop(0x24E);
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
@@ -1918,8 +1918,8 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     }
 
     work->unk_158 = 0;
-    TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 BtlObj* func_08044450(SmnGenieWork* work) {
@@ -2229,7 +2229,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     if (work->unk_152 != 0) {
         AnimUpdate(&work->anim);
     }
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -2273,7 +2273,7 @@ void task_smn_genie_2(SmnGenieWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_genie_3(SmnGenieWork* work) {
@@ -2286,7 +2286,7 @@ void task_smn_genie_3(SmnGenieWork* work) {
     }
 
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
@@ -2323,8 +2323,8 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     work->unk_14C = 0;
     work->unk_154 = 10;
     work->unk_15E = 0;
-    TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, &gTaskDescBtlShadow, body);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
 u8 func_08044F98(SmnKingWork* work) {
@@ -2439,7 +2439,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
     if (work->unk_15E != 0) {
         AnimUpdate(&work->anim);
     }
-    TaskPoolUpdate(&work->unk_020);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -2483,7 +2483,7 @@ void task_smn_king_2(SmnKingWork* work) {
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_0CC = (-4100 - ((body->y >> 8) * 4)) | 2;
-    TaskPoolDraw(&work->unk_020);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_smn_king_3(SmnKingWork* work) {
@@ -2492,7 +2492,7 @@ void task_smn_king_3(SmnKingWork* work) {
     obj = work->unk_15D != 0 ? gBtlWork : gUnk_02039B9C;
     obj->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_020);
+    TaskPoolDestroy(&work->tasks);
 }
 
 u8 func_0804544C(SmnFrdWork* work) {

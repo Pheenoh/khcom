@@ -168,7 +168,7 @@ typedef struct BoogieWork {
     void* palette;
     void* palette2;
     AnimState anim;
-    TaskPool unk_02C;
+    TaskPool tasks;
     BtlObj actor;
     s32 unk_150;
     s32 unk_154;
@@ -219,7 +219,7 @@ typedef struct StockMesDispWork {
     void* gfx2;
     u16 unk_20;
     u16 unk_22;
-    TaskPool unk_24;
+    TaskPool tasks;
     void* unk_38;
     u16 x;
     u16 y;

@@ -385,7 +385,7 @@ typedef struct UnkStruct_02034FE4 {
     u8 unk_00;
     u8 unk_01[0x03];
     void (*unk_04)(struct UnkStruct_02034FE4*);
-    TaskPool unk_08;
+    TaskPool tasks;
 } UnkStruct_02034FE4;
 
 typedef struct NewGameSlotMenuWork {
@@ -426,7 +426,7 @@ typedef struct NewGameSlotMenuWork {
 } NewGameSlotMenuWork;
 
 typedef struct MapRndWork {
-    TaskPool unk_00;
+    TaskPool tasks;
     u8 unk_10[0x04];
 } MapRndWork;
 
@@ -532,7 +532,7 @@ typedef struct MapSaveWork {
     u16 unk_2F6;
     u8 unk_2F8;
     u8 unk_2F9[0x03];
-    TaskPool unk_2FC;
+    TaskPool tasks;
     u8 unk_30C[0x04];
 } MapSaveWork;
 
@@ -634,7 +634,7 @@ typedef struct MapGmkTutorialWork {
     u8 unk_0A8;
     u8 unk_0A9[0x03];
     u8 (*unk_0AC)(struct MapGmkTutorialWork*);
-    TaskPool unk_0B0;
+    TaskPool tasks;
     u8 unk_0C0[0x04];
 } MapGmkTutorialWork;
 
@@ -642,7 +642,7 @@ typedef struct MapGmk01Work {
     UnkStruct_0203C7B8* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -672,7 +672,7 @@ typedef struct MapGmkGpWork {
     MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -686,7 +686,7 @@ typedef struct MapGmkGp1Work {
     MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -719,7 +719,7 @@ typedef struct MapGmkBarrelWork {
     UnkStruct_0203C7B8* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -734,7 +734,7 @@ typedef struct MapPrizeWork {
     s32 y;
     s32 z;
     s32 unk_0C;
-    u8 unk_10[0x5C];
+    u8 collider[0x5C];
     void* tiles;
     u8* palette;
     u8* gfx;
@@ -794,13 +794,13 @@ typedef struct MapGmk04Work {
     UnkStruct_0203C7B8* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     u8* palette;
     void* tiles;
     AnimState anim;
     void* gfx;
     void (*unk_0C4)(struct MapGmk04Work*);
-    TaskPool unk_0C8;
+    TaskPool tasks;
 } MapGmk04Work;
 
 typedef struct MapGmk05Work {
@@ -809,7 +809,7 @@ typedef struct MapGmk05Work {
     u8 unk_014[0x2A];
     u16 unk_03E;
     s32 unk_040;
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     u8* palette;
     void* tiles;
     AnimState anim;
@@ -817,8 +817,8 @@ typedef struct MapGmk05Work {
     void (*unk_0C4)(struct MapGmk05Work*);
     u8 unk_0C8;
     u8 unk_0C9[0x03];
-    TaskPool unk_0CC;
-    TaskPool unk_0E0;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapGmk05Work;
 
 typedef struct MapFrdWork {
@@ -827,21 +827,21 @@ typedef struct MapFrdWork {
     void* tiles;
     u8* palette;
     u8 unk_0BC[0x08];
-    TaskPool unk_0C4;
-    TaskPool unk_0D8;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapFrdWork;
 
 typedef struct MapGmk06Work {
     u8 unk_000[0x04];
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     u8* palette;
     void* tiles;
     void* gfx;
     void (*unk_0C4)(struct MapGmk06Work*);
-    TaskPool unk_0C8;
+    TaskPool tasks;
 } MapGmk06Work;
 
 typedef struct UnkStruct_08F70ACC {
@@ -857,7 +857,7 @@ typedef struct MapPrzCardWork {
     s32 unk_004;
     s32 unk_008;
     s32 unk_00C;
-    u8 unk_010[0x5C];
+    u8 collider[0x5C];
     FldRes* palette;
     void* tiles;
     FldRes* palette2;
@@ -890,13 +890,13 @@ typedef struct MapPrzCardWork {
     u8 unk_0D1;
     u8 unk_0D2;
     u8 unk_0D3;
-    TaskPool unk_0D4;
+    TaskPool tasks;
 } MapPrzCardWork;
 
 typedef struct MapPrzStockWork {
     u16* unk_00;
     void (*unk_04)(struct MapPrzStockWork*);
-    TaskPool unk_08;
+    TaskPool tasks;
     u8 unk_18[0x04];
 } MapPrzStockWork;
 
@@ -930,7 +930,7 @@ typedef struct MapDonaldWork {
     s32 unk_000;
     s32 unk_004;
     u8 unk_008[0x38];
-    u8 unk_040[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -938,15 +938,15 @@ typedef struct MapDonaldWork {
     u8 unk_0C0;
     u8 unk_0C1;
     u8 unk_0C2[0x02];
-    TaskPool unk_0C4;
-    TaskPool unk_0D8;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapDonaldWork;
 
 typedef struct MapGoofyWork {
     s32 unk_000;
     s32 unk_004;
     u8 unk_008[0x38];
-    u8 unk_040[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -954,15 +954,15 @@ typedef struct MapGoofyWork {
     u8 unk_0C0;
     u8 unk_0C1;
     u8 unk_0C2[0x02];
-    TaskPool unk_0C4;
-    TaskPool unk_0D8;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapGoofyWork;
 
 typedef struct MapNamineWork {
     s32 unk_000;
     s32 unk_004;
     u8 unk_008[0x38];
-    u8 unk_040[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -973,13 +973,13 @@ typedef struct MapNamineWork {
     u8 unk_0C3;
     u16 unk_0C4;
     u8 unk_0C6[0x02];
-    TaskPool unk_0C8;
-    TaskPool unk_0DC;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapNamineWork;
 
 typedef struct MapMickeyWork {
     u8 unk_000[0x40];
-    u8 unk_040[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -987,8 +987,8 @@ typedef struct MapMickeyWork {
     u8 unk_0C0;
     u8 unk_0C1;
     u16 unk_0C2;
-    TaskPool unk_0C4;
-    TaskPool unk_0D8;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapMickeyWork;
 
 typedef struct MapTutorialWork {
@@ -1014,13 +1014,13 @@ typedef struct MapTutorialWork {
     u8 unk_0C2;
     u8 unk_0C3;
     void (*unk_0C4)(struct MapTutorialWork*);
-    TaskPool unk_0C8;
-    TaskPool unk_0DC;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapTutorialWork;
 
 typedef struct MapNiserikuWork {
     u8 unk_000[0x40];
-    u8 unk_040[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     void* tiles;
     u8* palette;
@@ -1029,8 +1029,8 @@ typedef struct MapNiserikuWork {
     u8 unk_0C1;
     u8 unk_0C2;
     u8 unk_0C3;
-    TaskPool unk_0C4;
-    TaskPool unk_0D8;
+    TaskPool tasks;
+    TaskPool tasks2;
 } MapNiserikuWork;
 
 typedef struct MapFloorWork {
@@ -1068,7 +1068,7 @@ typedef struct MapStairWork {
     u8 unk_48;
     u8 unk_49[0x03];
     void (*unk_4C)(struct MapStairWork*);
-    TaskPool unk_50;
+    TaskPool tasks;
     u8 unk_60[0x04];
 } MapStairWork;
 
@@ -1082,7 +1082,7 @@ typedef struct UnkStruct_080F023C {
     s32 unk_14;
     s32 unk_18;
     u8 unk_1C[0x2C];
-    u8 unk_48[0x5C];
+    u8 collider[0x5C];
     AnimState anim;
     u8 unk_BC[0x08];
     void* gfx;
@@ -1094,7 +1094,7 @@ typedef struct UnkStruct_080F023C {
     s32 unk_D8;
     s32 unk_DC;
     u8 unk_E0[0x04];
-    TaskPool unk_E4;
+    TaskPool tasks;
     s32 unk_F8;
     s32 unk_FC;
     s32 unk_100;
@@ -1123,7 +1123,7 @@ typedef struct UnkStruct_080EC760 {
     u8 unk_00;
     u8 unk_01[0x03];
     u8 unk_04[5][0x5C];
-    TaskPool unk_1D0;
+    TaskPool tasks;
 #ifdef VERSION_EU
     u8 unk_1E4;
     u8 unk_1E5;
@@ -1177,7 +1177,7 @@ typedef struct UnkStruct_080ECA88 {
     u8 unk_70;
     u8 unk_71;
     u8 unk_72[0x02];
-    TaskPool unk_74;
+    TaskPool tasks;
 } UnkStruct_080ECA88;
 
 typedef struct UnkStruct_080ED06C {

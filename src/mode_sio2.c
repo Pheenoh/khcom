@@ -1076,7 +1076,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
     u16 flags;
 
     flags = 0;
-    ColliderSetRadius(w->unk_4C, gUnk_096FC010.unk_08);
+    ColliderSetRadius(w->collider, gUnk_096FC010.unk_08);
 
     if (w->unk_26 == anim) {
         flags = 4;
@@ -1169,7 +1169,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
         w->unk_FA = 1;
         break;
     case 26:
-        ColliderSetRadius(w->unk_4C, 14);
+        ColliderSetRadius(w->collider, 14);
         flags |= 1;
         w->unk_24 = func_080C7F4C(w->unk_38);
         e = &gUnk_09EF3F58;
@@ -1296,7 +1296,7 @@ void func_080C84E0(PoohWork* w, u32 b) {
         w->unk_AC = 0;
 
         if (!IsTaskActive(w->unk_C4)) {
-            w->unk_C4 = TaskCreate(&w->unk_B0, &gTaskDescPooBalloon, w->unk_28);
+            w->unk_C4 = TaskCreate(&w->tasks, &gTaskDescPooBalloon, w->unk_28);
         }
     }
 

@@ -677,7 +677,7 @@ void task_hum_hook_0(HookWork* work, void* arg) {
     work->unk_194 = 0;
     work->unk_196 = 0;
     work->unk_198 = 0;
-    TaskPoolInit(&work->unk_19C, 3);
+    TaskPoolInit(&work->tasks, 3);
 }
 
 u8 task_hum_hook_1(HookWork* work) {
@@ -935,9 +935,9 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 1;
                 }
-                w->unk_1B0 = TaskCreate(&w->unk_19C, gTaskDescHumHookBomb, &args);
-                w->unk_1B4 = TaskCreate(&w->unk_19C, gTaskDescHumHookBomb, &args);
-                w->unk_1B8 = TaskCreate(&w->unk_19C, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
+                w->unk_1B4 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
+                w->unk_1B8 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         } else if (w->unk_198 & 2) {
@@ -985,7 +985,7 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 0;
                 }
-                w->unk_1B0 = TaskCreate(&w->unk_19C, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         } else if (w->unk_198 & 2) {
@@ -1033,7 +1033,7 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 2;
                 }
-                w->unk_1B0 = TaskCreate(&w->unk_19C, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         }
@@ -1249,17 +1249,17 @@ u8 task_hum_hook_1(HookWork* work) {
             w->unk_190 = 0;
         }
     }
-    TaskPoolUpdate(&w->unk_19C);
+    TaskPoolUpdate(&w->tasks);
     return func_0800E5F0(work);
 }
 
 void task_hum_hook_2(HookWork* work) {
-    TaskPoolDraw(&work->unk_19C);
+    TaskPoolDraw(&work->tasks);
     func_0800EFE8(&work->base);
 }
 
 void task_hum_hook_3(HookWork* work) {
-    TaskPoolDestroy(&work->unk_19C);
+    TaskPoolDestroy(&work->tasks);
     HumReleaseResources(&work->base);
     gBtlWork->unk_018 = 0;
 }
@@ -2857,7 +2857,7 @@ void task_hum_mahluxia_0(MahluxiaWork* work) {
     work->unk_1DC[6] = work->unk_1DC[0];
     work->unk_1DC[7] = work->unk_1DC[0];
     work->unk_1DC[8] = work->unk_1DC[0];
-    TaskPoolInit(&work->unk_390, 22);
+    TaskPoolInit(&work->tasks, 22);
     work->base.unk_184 = gUnk_0813F35C;
 }
 
@@ -2875,7 +2875,7 @@ void func_0804FD7C(MahluxiaWork* work) {
         range = 0x1000;
         args.y += ((GetRandom() % 33) << 8) - range;
         args.z += ((GetRandom() % 41) << 8) - range;
-        TaskCreate(&work->unk_390, gTaskDescHumMahluxiaFlw, &args);
+        TaskCreate(&work->tasks, gTaskDescHumMahluxiaFlw, &args);
     }
 }
 
@@ -3353,7 +3353,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             func_0804FBDC(&work->base, w->unk_1C4);
         }
     }
-    TaskPoolUpdate(&w->unk_390);
+    TaskPoolUpdate(&w->tasks);
     return func_0800E5F0(&work->base);
 }
 
@@ -3394,12 +3394,12 @@ void task_hum_mahluxia_2(MahluxiaWork* work) {
     work->unk_1DC[2] = work->unk_1DC[1];
     work->unk_1DC[1] = work->unk_1DC[0];
     func_0804FA70(work, &work->unk_1DC[0]);
-    TaskPoolDraw(&work->unk_390);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_hum_mahluxia_3(MahluxiaWork* work) {
     HumReleaseResources(&work->base);
-    TaskPoolDestroy(&work->unk_390);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void func_08050EC4(HumWork* work, s32 a) {
@@ -3427,7 +3427,7 @@ void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
     }
     args.z = act->z + (b << 8);
     args.y = act->y;
-    TaskCreate(&work->unk_194, gTaskDescHumLaxeneKnf, &args);
+    TaskCreate(&work->tasks, gTaskDescHumLaxeneKnf, &args);
 }
 
 void task_hum_laxene_0(LaxeneWork* work) {
@@ -3437,7 +3437,7 @@ void task_hum_laxene_0(LaxeneWork* work) {
     work->unk_190 = 0;
     work->base.actor.unk_034 |= 0x80000000000;
     work->base.unk_184 = gUnk_0813F480[0];
-    TaskPoolInit(&work->unk_194, 12);
+    TaskPoolInit(&work->tasks, 12);
 }
 
 u8 task_hum_laxene_1(LaxeneWork* work) {
@@ -4110,7 +4110,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     if (!(act->unk_034 & 0x2000) && act->unk_0E8 != 2) {
         func_08050EC4(&work->base, w->unk_188);
     }
-    TaskPoolUpdate(&w->unk_194);
+    TaskPoolUpdate(&w->tasks);
 
     if ((s16)w->unk_190 > 0) {
         ApproachValue(&work->base.unk_168, 256, w->unk_190);
@@ -4123,13 +4123,13 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
 
 void task_hum_laxene_2(LaxeneWork* work) {
     func_0800EFE8(&work->base);
-    TaskPoolDraw(&work->unk_194);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_hum_laxene_3(LaxeneWork* work) {
     m4aSongNumStop(0x2A2);
     HumReleaseResources(&work->base);
-    TaskPoolDestroy(&work->unk_194);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
@@ -4264,7 +4264,7 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
         args[0] = sub->unk_28 + (GetRandom() % 29 - 14) * 256;
         args[1] = sub->unk_2C + (GetRandom() % 15 - 7) * 256;
         args[2] = sub->unk_30;
-        TaskCreate(&work->unk_220, gTaskDescHumAxcelPtc, args);
+        TaskCreate(&work->tasks, gTaskDescHumAxcelPtc, args);
     }
 }
 
@@ -4281,7 +4281,7 @@ void task_hum_axcel_0(AxcelWork* work) {
     work->sub2.unk_34 |= 2;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    TaskPoolInit(&work->unk_220, 16);
+    TaskPoolInit(&work->tasks, 16);
 }
 
 u8 task_hum_axcel_1(AxcelWork* work) {
@@ -4948,7 +4948,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         ApproachValue(&work->base.unk_16C, w->unk_210, w->unk_208);
         w->unk_208--;
     }
-    TaskPoolUpdate(&w->unk_220);
+    TaskPoolUpdate(&w->tasks);
     return func_0800E5F0(&work->base);
 }
 
@@ -4983,12 +4983,12 @@ void task_hum_axcel_2(AxcelWork* work) {
     func_0800EFE8(&work->base);
     func_08054100(work, &work->sub);
     func_08054100(work, &work->sub2);
-    TaskPoolDraw(&work->unk_220);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_hum_axcel_3(AxcelWork* work) {
     m4aSongNumStop(0x28E);
-    TaskPoolDestroy(&work->unk_220);
+    TaskPoolDestroy(&work->tasks);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     HumReleaseResources(&work->base);
@@ -5064,7 +5064,7 @@ void func_080543B4(VixenWork* work) {
     for (i = 0; i < 3; i++) {
         p->unk_01 = z;
         p->unk_00 = z;
-        TaskCreate(&work->unk_1A4, gTaskDescHumVixenIce, &work->sub[i]);
+        TaskCreate(&work->tasks, gTaskDescHumVixenIce, &work->sub[i]);
         p++;
     }
 }
@@ -5086,7 +5086,7 @@ void task_hum_vixen_0(VixenWork* work) {
     work->unk_188 = 0;
     work->base.actor.unk_034 |= 0x08000000;
     work->unk_1A2 = 0;
-    TaskPoolInit(&work->unk_1A4, 15);
+    TaskPoolInit(&work->tasks, 15);
     func_080543B4(work);
     work->base.unk_184 = gUnk_0813F7A8;
 
@@ -5414,7 +5414,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
                 args.unk_12 = work->unk_1BC % 8;
                 args.unk_18 = &work->unk_1E8;
                 work->unk_1BC++;
-                TaskCreate(&work->unk_1A4, gTaskDescHumVixenNdl, &args);
+                TaskCreate(&work->tasks, gTaskDescHumVixenNdl, &args);
             }
         }
 
@@ -5570,7 +5570,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             args.x = x;
             args.y = y;
             args.z = 0;
-            work->unk_1B8 = TaskCreate(&work->unk_1A4, gTaskDescHumVixenFrz, &args);
+            work->unk_1B8 = TaskCreate(&work->tasks, gTaskDescHumVixenFrz, &args);
         }
 
         if (AnimIsFinished(&w->base.anim) &&
@@ -5596,13 +5596,13 @@ u8 task_hum_vixen_1(VixenWork* work) {
     } else {
         act->unk_034 &= ~0x8000;
     }
-    TaskPoolUpdate(&work->unk_1A4);
+    TaskPoolUpdate(&work->tasks);
     return r;
 }
 
 void task_hum_vixen_2(VixenWork* work) {
     func_0800EFE8(&work->base);
-    TaskPoolDraw(&work->unk_1A4);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_hum_vixen_3(VixenWork* work) {
@@ -5610,7 +5610,7 @@ void task_hum_vixen_3(VixenWork* work) {
         ReleaseObjTiles(gBtlWork->tiles2);
     }
     HumReleaseResources(&work->base);
-    TaskPoolDestroy(&work->unk_1A4);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
@@ -5687,8 +5687,8 @@ void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
     work->unk_00 = 3;
     AnimInit(&work->anim, gUnk_09EE26CC, gUnk_09EE26B4);
     AnimStart(&work->anim, 0, 0);
-    ColliderInit(&work->unk_28, 12, 27, 1);
-    ColliderSetDisabled(&work->unk_28, 1);
+    ColliderInit(&work->collider, 12, 27, 1);
+    ColliderSetDisabled(&work->collider, 1);
 }
 
 u8 task_hum_vixen_ice_1(VixenIceWork* work) {
@@ -5696,7 +5696,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         if (work->sub->unk_00 != 0) {
             FadeSetPaletteExcluded(((ObjPalette*)work->palette)->index + 16, 1);
             work->sub->unk_00 = 0;
-            ColliderSetDisabled(&work->unk_28, 1);
+            ColliderSetDisabled(&work->collider, 1);
         }
         return 1;
     }
@@ -5730,7 +5730,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         ApproachValue(&work->unk_8C, work->unk_90, work->unk_86);
         work->unk_86--;
         if ((s16)work->unk_86 <= 0) {
-            ColliderSetDisabled(&work->unk_28, 0);
+            ColliderSetDisabled(&work->collider, 0);
             work->unk_00 = 1;
             work->unk_84 = 0;
             work->unk_88 = GetRandom() % 0x259 + 600;
@@ -5769,8 +5769,8 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
             work->sub->unk_01 = 0;
             work->sub->unk_00 = 1;
         }
-        ColliderSetRadius(&work->unk_28, work->unk_8C * 27 >> 8);
-        ColliderSetPosition(&work->unk_28, work->sub->unk_04, work->sub->unk_08, 0);
+        ColliderSetRadius(&work->collider, work->unk_8C * 27 >> 8);
+        ColliderSetPosition(&work->collider, work->sub->unk_04, work->sub->unk_08, 0);
         break;
     }
     AnimUpdate(&work->anim);
@@ -5800,7 +5800,7 @@ void task_hum_vixen_ice_2(VixenIceWork* work) {
 void task_hum_vixen_ice_3(VixenIceWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    ColliderUnregister(&work->unk_28);
+    ColliderUnregister(&work->collider);
 }
 
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
@@ -6106,7 +6106,7 @@ void task_hum_lexceus_0(LexceusWork* work) {
     work->unk_1F4 = 0;
     work->unk_1FC = 0;
     work->base.unk_184 = gUnk_0813FA8C;
-    TaskPoolInit(&work->unk_1D8, 3);
+    TaskPoolInit(&work->tasks, 3);
 }
 
 u8 task_hum_lexceus_1(LexceusWork* work) {
@@ -6242,7 +6242,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 }
                 a1.y = act->y;
                 a1.z = 0;
-                w->unk_1EC = TaskCreate(&w->unk_1D8, &gTaskDescHumLexRock, &a1);
+                w->unk_1EC = TaskCreate(&w->tasks, &gTaskDescHumLexRock, &a1);
             }
             break;
         }
@@ -6292,7 +6292,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 a1.y = act->y;
                 a1.z = act->z - 0x6000;
                 w->unk_1CA |= 4;
-                w->unk_1EC = TaskCreate(&w->unk_1D8, &gTaskDescHumLexTmh, &a1);
+                w->unk_1EC = TaskCreate(&w->tasks, &gTaskDescHumLexTmh, &a1);
             }
         }
 
@@ -6321,7 +6321,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 }
                 a2.y = act->y;
                 a2.z = act->z;
-                TaskCreate(&w->unk_1D8, &gTaskDescHumLexTmh0, &a2);
+                TaskCreate(&w->tasks, &gTaskDescHumLexTmh0, &a2);
             }
         }
 
@@ -6560,7 +6560,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     } else {
         w->unk_1FC = 0;
     }
-    TaskPoolUpdate(&w->unk_1D8);
+    TaskPoolUpdate(&w->tasks);
     return func_0800E5F0(&work->base);
 }
 
@@ -6572,12 +6572,12 @@ void task_hum_lexceus_2(LexceusWork* work) {
         ApproachValue(&work->base.unk_16C, work->unk_1D4, work->unk_1CC);
         work->unk_1CC--;
     }
-    TaskPoolDraw(&work->unk_1D8);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_hum_lexceus_3(LexceusWork* work) {
     HumReleaseResources(&work->base);
-    TaskPoolDestroy(&work->unk_1D8);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {

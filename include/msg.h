@@ -69,7 +69,7 @@ typedef struct EventCharaWork {
     void* tiles;
     void* palette;
     void* gfx;
-    TaskPool unk_010;
+    TaskPool tasks;
     u16 unk_024;
     u8 unk_026;
     u8 unk_027;
@@ -181,8 +181,8 @@ typedef struct MsgWinWork {
 } MsgWinWork;
 
 typedef struct EventSeqWork {
-    TaskPool unk_00;
-    TaskPool unk_14;
+    TaskPool tasks;
+    TaskPool tasks2;
     u32 unk_28;
     u16 unk_2C;
     u8 unk_2E;

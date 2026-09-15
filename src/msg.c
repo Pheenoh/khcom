@@ -8303,9 +8303,9 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     t = work->seqDef;
 #endif
 
-    TaskPoolInit(&work->unk_00, t->unk_00 + 8);
-    TaskPoolInit(&work->unk_14, 1);
-    work->unk_28 = (u32)TaskCreate(&work->unk_14, &gTaskDescMsgwin, &work->unk_2C);
+    TaskPoolInit(&work->tasks, t->unk_00 + 8);
+    TaskPoolInit(&work->tasks2, 1);
+    work->unk_28 = (u32)TaskCreate(&work->tasks2, &gTaskDescMsgwin, &work->unk_2C);
 
     for (j = 0; j < t->unk_00; j++) {
         arg.unk_00 = work->unk_2C;
@@ -8317,19 +8317,19 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             gUnk_02039DC8->unk_60 = arg.unk_02;
         }
 
-        TaskCreate(&work->unk_00, &gTaskDescEventChara, &arg);
+        TaskCreate(&work->tasks, &gTaskDescEventChara, &arg);
     }
 
-    TaskCreate(&work->unk_00, &gTaskDescView, &work->unk_2C);
-    TaskCreate(&work->unk_00, &gTaskDescEvSound, &work->unk_2C);
-    TaskCreate(&work->unk_00, &gTaskDescEVBGEFFECT, &work->unk_2C);
+    TaskCreate(&work->tasks, &gTaskDescView, &work->unk_2C);
+    TaskCreate(&work->tasks, &gTaskDescEvSound, &work->unk_2C);
+    TaskCreate(&work->tasks, &gTaskDescEVBGEFFECT, &work->unk_2C);
 
 #ifdef VERSION_EU
     if (work->unk_3D != 0) {
 #else
     if (flag != 0) {
 #endif
-        TaskCreate(&work->unk_00, &gTaskDescMapAnim, NULL);
+        TaskCreate(&work->tasks, &gTaskDescMapAnim, NULL);
     }
 
 #ifndef VERSION_EU
@@ -8344,12 +8344,12 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     if (u != NULL) {
         if (u->mapObjects != 0) {
-            TaskCreate(&work->unk_00, &gTaskDescEvMapObj, &work->unk_2C);
+            TaskCreate(&work->tasks, &gTaskDescEvMapObj, &work->unk_2C);
         }
 
         if ((u->unk_2D & 1) != 0) {
             func_080CA35C();
-            TaskCreate(&work->unk_00, &gTaskDescPooMapanime, NULL);
+            TaskCreate(&work->tasks, &gTaskDescPooMapanime, NULL);
         }
     }
 
@@ -8416,8 +8416,8 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         }
         p->unk_38++;
     }
-    TaskPoolUpdate(&p->unk_00);
-    TaskPoolUpdate(&p->unk_14);
+    TaskPoolUpdate(&p->tasks);
+    TaskPoolUpdate(&p->tasks2);
 
     if (p->unk_32 != 0) {
         gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
@@ -8451,18 +8451,18 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     return 1;
 }
 void event_seq_2(EventSeqWork* p) {
-    TaskPoolDraw(&p->unk_14);
+    TaskPoolDraw(&p->tasks2);
 
     if (p->unk_32 != 0) {
         TaskPoolDraw(&gBtlWork->taskPools[0]);
     }
-    TaskPoolDraw(&p->unk_00);
+    TaskPoolDraw(&p->tasks);
 }
 void event_seq_3(EventSeqWork* p) {
-    TaskPoolDestroy(&p->unk_00);
+    TaskPoolDestroy(&p->tasks);
 
     if (p->unk_28 != 0) {
-        TaskPoolDestroy(&p->unk_14);
+        TaskPoolDestroy(&p->tasks2);
     }
 #ifdef VERSION_EU
     if (p->unk_3A != 0) {
@@ -8482,7 +8482,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
     s32 v0;
     s32 v1;
 
-    TaskPoolInit(&p->unk_010, 8);
+    TaskPoolInit(&p->tasks, 8);
     *(s32*)&p->unk_024 = *a;
     p->unk_000 = gUnk_09EE3FB4[p->unk_024]->charaTracks[p->unk_027].unk_00;
     p->unk_1A0 = 0;
@@ -8529,7 +8529,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_02C = p->unk_000->unk_08;
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
-        TaskCreate(&p->unk_010, &gTaskDescBosTm, p->unk_028);
+        TaskCreate(&p->tasks, &gTaskDescBosTm, p->unk_028);
         break;
     case 96:
         gBtlWork = EwramAlloc(464);
@@ -8546,7 +8546,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosPc, NULL);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, NULL);
         break;
     case 97:
         gBtlWork = EwramAlloc(464);
@@ -8563,7 +8563,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosPc, &p->unk_010);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, &p->tasks);
         p->unk_1B4 = 0;
         gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
         gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
@@ -8588,7 +8588,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 368, 480, 512);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, &gTaskDescBosLst, &p->unk_010);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosLst, &p->tasks);
         break;
     case 101:
         SetupBg(0, 0, 24, 0);
@@ -8614,7 +8614,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_030 = 0x15E00;
         p->unk_034 = -0x3800;
         SetBattleBounds(420, 612, 328, 384);
-        TaskCreate(&p->unk_010, &gTaskDescBosJf, p->unk_028);
+        TaskCreate(&p->tasks, &gTaskDescBosJf, p->unk_028);
         break;
     case 103:
         SetupBg(0, 0, 24, 0);
@@ -8645,7 +8645,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
         SetBattleBounds(0, 256, 328, 424);
-        TaskCreate(&p->unk_010, &gTaskDescBosDsd, p->unk_028);
+        TaskCreate(&p->tasks, &gTaskDescBosDsd, p->unk_028);
         break;
     case 98:
         SetupBg(0, 0, 24, 0);
@@ -8661,7 +8661,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, &gTaskDescBosBoogie, NULL);
+        TaskCreate(&p->tasks, &gTaskDescBosBoogie, NULL);
         gBtlWork->unk_0B3 = 5;
         break;
     case 99:
@@ -8678,7 +8678,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, &gTaskDescBosUrsula, NULL);
+        TaskCreate(&p->tasks, &gTaskDescBosUrsula, NULL);
         gBtlWork->unk_0B3 = 5;
         break;
     case 104:
@@ -8695,12 +8695,12 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        TaskCreate(&p->unk_010, &gTaskDescBosGa, (void*)1);
+        TaskCreate(&p->tasks, &gTaskDescBosGa, (void*)1);
         gBtlWork->unk_0B3 = 5;
         break;
     default:
         if ((p->unk_000->unk_18 & 0x2000) == 0) {
-            func_0801CD98(&p->unk_010, p->unk_028, p->unk_026, p->unk_000->unk_00, p->unk_000->unk_08, p->unk_000->unk_0C, p->unk_000->unk_10);
+            func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->unk_000->unk_00, p->unk_000->unk_08, p->unk_000->unk_0C, p->unk_000->unk_10);
             p->unk_1B4 = 1;
         } else {
             p->unk_1B4 = 0;
@@ -8752,7 +8752,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
         p->unk_19C = 0;
         SetTaskUpdate(a, (void*)func_080700D4);
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
 
     if (p->unk_1B3 != 0) {
         switch (p->unk_026) {
@@ -8829,7 +8829,7 @@ void event_chara_2(EventCharaWork* p) {
     }
 
     if (p->unk_1B6 != 0) {
-        TaskPoolDraw(&p->unk_010);
+        TaskPoolDraw(&p->tasks);
     }
 
     if (p->unk_026 == 99) {
@@ -8851,7 +8851,7 @@ void event_chara_2(EventCharaWork* p) {
     p->unk_034 = save;
 }
 void event_chara_3(EventCharaWork* p) {
-    TaskPoolDestroy(&p->unk_010);
+    TaskPoolDestroy(&p->tasks);
 
     if (p->unk_1B3 != 0) {
         TaskPoolDestroy(&gBtlWork->taskPools[0]);
@@ -8876,7 +8876,7 @@ u8 func_0806E570(EventCharaWork* p) {
     p->unk_17C = p->unk_000[p->unk_1A0].unk_00;
 
     if ((p->unk_000[p->unk_1A0].unk_18 & 0x4000) != 0) {
-        func_0801CD98(&p->unk_010, p->unk_028, p->unk_026, p->unk_000[p->unk_1A0].unk_00,
+        func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->unk_000[p->unk_1A0].unk_00,
                       p->unk_000[p->unk_1A0].unk_08, p->unk_000[p->unk_1A0].unk_0C,
                       p->unk_000[p->unk_1A0].unk_10);
         p->unk_1B4 = 1;
@@ -8995,7 +8995,7 @@ u8 _0806E9DC(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     SetTaskUpdate(a, (void*)func_0806EA28);
     return 1;
 }
@@ -9047,7 +9047,7 @@ u8 func_0806EA28(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806EB94(EventCharaWork* p, void* a) {
@@ -9055,7 +9055,7 @@ u8 func_0806EB94(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     SetTaskUpdate(a, (void*)func_0806EBE0);
     return 1;
 }
@@ -9097,7 +9097,7 @@ u8 func_0806EBE0(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806ECE0(EventCharaWork* p, void* a) {
@@ -9105,7 +9105,7 @@ u8 func_0806ECE0(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     SetTaskUpdate(a, (void*)func_0806ED2C);
     return 1;
 }
@@ -9147,7 +9147,7 @@ u8 func_0806ED2C(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806EE20(EventCharaWork* p, void* a) {
@@ -9155,7 +9155,7 @@ u8 func_0806EE20(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     SetTaskUpdate(a, (void*)func_0806EE6C);
     return 1;
 }
@@ -9193,7 +9193,7 @@ u8 func_0806EE6C(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806EF40(void* work, void* a) {
@@ -9231,7 +9231,7 @@ u8 func_0806EF40(void* work, void* a) {
             m4aSongNumStart(0x14A);
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F02C(EventCharaWork* p, void* a) {
@@ -9267,7 +9267,7 @@ u8 func_0806F02C(EventCharaWork* p, void* a) {
             func_0801CE00(p->unk_028, z);
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F114(void* work, void* a) {
@@ -9305,7 +9305,7 @@ u8 func_0806F114(void* work, void* a) {
             m4aSongNumStart(0x14B);
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F204(EventCharaWork* p, void* a) {
@@ -9341,7 +9341,7 @@ u8 func_0806F204(EventCharaWork* p, void* a) {
             func_0801CE00(p->unk_028, z);
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F2EC(void* work, void* a) {
@@ -9371,7 +9371,7 @@ u8 func_0806F2EC(void* work, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
     SetTaskUpdate(a, (void*)func_0806F3A8);
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F3A8(EventCharaWork* p, void* a) {
@@ -9401,7 +9401,7 @@ u8 func_0806F3A8(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F47C(void* work, void* a) {
@@ -9431,7 +9431,7 @@ u8 func_0806F47C(void* work, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806F53C);
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F53C(EventCharaWork* p, void* a) {
@@ -9461,7 +9461,7 @@ u8 func_0806F53C(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F610(EventCharaWork* p, void* a) {
@@ -9497,7 +9497,7 @@ u8 func_0806F64C(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F734(EventCharaWork* p, void* a) {
@@ -9533,7 +9533,7 @@ u8 func_0806F770(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806F858(EventCharaWork* p, void* a) {
@@ -9570,7 +9570,7 @@ u8 func_0806F898(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 void func_0806F94C(EventCharaWork* p) {
@@ -9625,7 +9625,7 @@ u8 func_0806FA84(EventCharaWork* p, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
     SetTaskUpdate(a, (void*)func_0806FAB8);
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806FAB8(EventCharaWork* p, void* a) {
@@ -9656,7 +9656,7 @@ u8 func_0806FAB8(EventCharaWork* p, void* a) {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806FB6C(void* work, void* a) {
@@ -9686,7 +9686,7 @@ u8 func_0806FB6C(void* work, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806FC28);
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806FC28(EventCharaWork* p, void* a) {
@@ -9716,7 +9716,7 @@ u8 func_0806FC28(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806FCF4(void* work, void* a) {
@@ -9746,7 +9746,7 @@ u8 func_0806FCF4(void* work, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
     SetTaskUpdate(a, (void*)func_0806FDB0);
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0806FDB0(EventCharaWork* p, void* a) {
@@ -9777,7 +9777,7 @@ u8 func_0806FDB0(EventCharaWork* p, void* a) {
             p->unk_1B2 = 0;
         }
     }
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 void func_0806FE90(EventCharaWork* p) {
@@ -10030,7 +10030,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
 
     p->unk_1AC = p->unk_1AB;
     p->unk_1AE = p->unk_1AD;
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 u8 func_0807048C(EventCharaWork* p, void* a) {
@@ -10292,7 +10292,7 @@ u8 func_0807048C(EventCharaWork* p, void* a) {
         break;
     }
 
-    TaskPoolUpdate(&p->unk_010);
+    TaskPoolUpdate(&p->tasks);
     return 1;
 }
 #ifdef VERSION_EU

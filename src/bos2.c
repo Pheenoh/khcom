@@ -374,8 +374,8 @@ void func_080BA08C(BtlObj* work, s16 x, s16 y, s16 z, s16 a, s16 b, s32 c, s16 d
     work->z = z << 8;
 
     if (d >= 6 && d <= 7) {
-        ColliderInit(&work->unk_040, 8, a, b);
-        ColliderSetPosition(&work->unk_040, work->x, work->y, work->z);
+        ColliderInit(&work->collider, 8, a, b);
+        ColliderSetPosition(&work->collider, work->x, work->y, work->z);
     }
 }
 
@@ -386,11 +386,11 @@ void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c) {
 }
 
 void func_080BA0F8(BtlObj* work) {
-    ColliderUnregister(&work->unk_040);
+    ColliderUnregister(&work->collider);
 }
 
 void func_080BA104(BtlObj* sub, TmFootWork* work) {
-    ColliderSetPosition(&sub->unk_040, sub->x, sub->y, sub->z);
+    ColliderSetPosition(&sub->collider, sub->x, sub->y, sub->z);
 }
 
 void func_080BA11C(TmFootWork* work) {
@@ -1921,10 +1921,10 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     gUnk_0203AC90.maps[1] = gUnk_096C5464;
     gUnk_0203AC90.maps[2] = gUnk_0203ACE0;
     gUnk_0203AC90.maps[3] = gUnk_096C6464;
-    TaskPoolInit(&work->unk_254, 4);
+    TaskPoolInit(&work->tasks, 4);
 
     if (work->unk_24C & 8) {
-        TaskCreate(&work->unk_254, &gTaskDescBosJfMap, &gUnk_0203AC90);
+        TaskCreate(&work->tasks, &gTaskDescBosJfMap, &gUnk_0203AC90);
     } else {
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosJfMap, &gUnk_0203AC90);
     }
@@ -1957,7 +1957,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_234 = -0x3800;
         func_0801B37C(&work->body, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
         work->body.unk_034 |= 4;
-        TaskCreate(&work->unk_254, &gTaskDescBosJfMajin, work);
+        TaskCreate(&work->tasks, &gTaskDescBosJfMajin, work);
     } else {
         work->unk_220 = 0x29600;
         work->unk_224 = 0x15400;
@@ -1984,8 +1984,8 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         func_0801C298(0, 1);
         func_0801BCC0(0x23E00, 0x16800, -0x4000);
         func_0801C274(0x20600, 0x16800, -0x800);
-        TaskCreate(&work->unk_254, &gTaskDescBosJfLamp, work);
-        TaskCreate(&work->unk_254, &gTaskDescBosJfMajin, work);
+        TaskCreate(&work->tasks, &gTaskDescBosJfLamp, work);
+        TaskCreate(&work->tasks, &gTaskDescBosJfMajin, work);
         q = gBtlWork;
         q->unk_0CC = sub->x;
         q->unk_0D0 = sub->y;
@@ -1998,7 +1998,7 @@ u8 task_bos_jf_1(JfWork* work) {
     u16 t;
 
     if (work->unk_24C & 8) {
-        TaskPoolUpdate(&work->unk_254);
+        TaskPoolUpdate(&work->tasks);
         return 1;
     }
 
@@ -2077,7 +2077,7 @@ u8 task_bos_jf_1(JfWork* work) {
         work->unk_250 = t - 1;
     }
 
-    TaskPoolUpdate(&work->unk_254);
+    TaskPoolUpdate(&work->tasks);
     q = gBtlWork;
     q->unk_0CC = sub->x;
     q->unk_0D0 = sub->y;
@@ -2094,7 +2094,7 @@ u8 task_bos_jf_1(JfWork* work) {
 }
 
 void task_bos_jf_2(JfWork* work) {
-    TaskPoolDraw(&work->unk_254);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_jf_3(JfWork* work) {
@@ -2103,7 +2103,7 @@ void task_bos_jf_3(JfWork* work) {
         func_0801B7D8(&work->body);
     }
 
-    TaskPoolDestroy(&work->unk_254);
+    TaskPoolDestroy(&work->tasks);
 }
 
 u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
@@ -2539,8 +2539,8 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->unk_34 = 0;
     work->unk_38 = 0;
     work->unk_42 = 0;
-    TaskPoolInit(&work->unk_44, 1);
-    TaskCreate(&work->unk_44, &gTaskDescBtlShadow, &(arg = work->jf)->sub);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, &(arg = work->jf)->sub);
 }
 u8 task_bos_jf_lamp_1(JfLampWork* work) {
     BtlObj* sub = &work->jf->sub;
@@ -2710,8 +2710,8 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
 
     work->unk_1E++;
     work->unk_2D = func_080BD7F8(&sub->x, &sub->y, (s32)&sub->z, &sub->unk_010);
-    ColliderSetPosition(&sub->unk_040, sub->x, sub->y, sub->z);
-    TaskPoolUpdate(&work->unk_44);
+    ColliderSetPosition(&sub->collider, sub->x, sub->y, sub->z);
+    TaskPoolUpdate(&work->tasks);
 
     return 1;
 }
@@ -2743,7 +2743,7 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
                (u16)(-4101 - (sub->y >> 8) * 4));
 
     if (work->unk_2D == 1) {
-        TaskPoolDraw(&work->unk_44);
+        TaskPoolDraw(&work->tasks);
     }
 }
 
@@ -2752,7 +2752,7 @@ void task_bos_jf_lamp_3(JfLampWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
-    TaskPoolDestroy(&work->unk_44);
+    TaskPoolDestroy(&work->tasks);
 }
 
 s32 func_080BE278(JfLampWork* work) {
@@ -2925,8 +2925,8 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     y.bounds = gBtlWork;
     ScrollBgMapTo(1, ((y.bounds->unk_000 - arg->body.x) >> 8) + x,
                   ((z = y.bounds->unk_004 - (arg->body.y + arg->body.z)) >> 8) + 0x126);
-    TaskPoolInit(&work->unk_6C, 2);
-    TaskCreate(&work->unk_6C, &gUnk_09EF2A74, work->jf);
+    TaskPoolInit(&work->tasks, 2);
+    TaskCreate(&work->tasks, &gUnk_09EF2A74, work->jf);
 }
 
 #undef GET_ACTOR_POSITION
@@ -2975,8 +2975,8 @@ u8 task_bos_jf_majin_1(JfMajinWork* work) {
         break;
     }
 
-    ColliderSetPosition(&jf->body.unk_040, jf->body.x, jf->body.y, jf->body.z);
-    TaskPoolUpdate(&work->unk_6C);
+    ColliderSetPosition(&jf->body.collider, jf->body.x, jf->body.y, jf->body.z);
+    TaskPoolUpdate(&work->tasks);
 
     if (work->jf->unk_24C & 0x10) {
         if (work->jf->unk_238 != 6) {
@@ -3027,14 +3027,14 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
                    (u16)(-4100 - (jf->body.y >> 8) * 4));
     }
 
-    TaskPoolDraw(&work->unk_6C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_jf_majin_3(JfMajinWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
-    TaskPoolDestroy(&work->unk_6C);
+    TaskPoolDestroy(&work->tasks);
 }
 s32 func_080BE910(void) {
     s32 v = gBtlWork->actor->x;
@@ -3304,7 +3304,7 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             work->jf->unk_24A = 0;
-            work->unk_80 = TaskCreate(&work->unk_6C, &gUnk_09EF2A5C, work->jf);
+            work->unk_80 = TaskCreate(&work->tasks, &gUnk_09EF2A5C, work->jf);
             func_080BE380(work->jf->unk_248, 0xA0, work);
             work->unk_44 = 120;
             work->unk_48++;
@@ -4275,8 +4275,8 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->tiles2 = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->palette2 = LoadObjPalette(gUnk_096FB5A4, 0x60);
     work->gfx2 = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
-    TaskPoolInit(&work->unk_180, 1);
-    TaskCreate(&work->unk_180, &gUnk_09EF34D8, &work->unk_02C);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gUnk_09EF34D8, &work->unk_02C);
 }
 u8 task_bos_jf_rock_1(JfRockWork* work) {
     JfWork* jf = work->jf;
@@ -4481,7 +4481,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
     }
 
     func_080BD7F8(&work->x, &work->y, (s32)&work->z, (s32*)&work->unk_03C);
-    TaskPoolUpdate(&work->unk_180);
+    TaskPoolUpdate(&work->tasks);
 
     return 1;
 }
@@ -4527,7 +4527,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     }
 
     if (work->unk_194 == 1) {
-        TaskPoolDraw(&work->unk_180);
+        TaskPoolDraw(&work->tasks);
     }
 }
 
@@ -4536,7 +4536,7 @@ void task_bos_jf_rock_3(JfRockWork* work) {
     ReleaseObjPalette(work->palette);
     ReleaseObjTiles(work->tiles2);
     ReleaseObjPalette(work->palette2);
-    TaskPoolDestroy(&work->unk_180);
+    TaskPoolDestroy(&work->tasks);
 }
 
 u8 func_080C1370(s32 a, s32 b, s32 c) {
@@ -4750,10 +4750,10 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         work->unk_358 = 16;
     }
 
-    TaskPoolInit(&work->unk_37C, 4);
+    TaskPoolInit(&work->tasks, 4);
 
     if (work->unk_358 & 16) {
-        TaskCreate(&work->unk_37C, &gTaskDescBosDsdMap, 0);
+        TaskCreate(&work->tasks, &gTaskDescBosDsdMap, 0);
     } else {
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosDsdMap, work);
     }
@@ -4790,7 +4790,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
         p2 = &w->body[2];
         func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, 0);
-        TaskCreate(&w->unk_37C, &gTaskDescBosDsdMain, w);
+        TaskCreate(&w->tasks, &gTaskDescBosDsdMain, w);
     } else {
         work->unk_340 = 0xDC00;
         work->unk_344 = 0x16800;
@@ -4814,15 +4814,15 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         p2->unk_09E = 16;
         p2->unk_0A0 = 16;
         p2->unk_09C = 32;
-        ColliderInit(&p2->unk_040, 7, 16, 32);
-        ColliderSetPosition(&p2->unk_040, p2->x, p2->y, p2->z);
-        ColliderSetDisabled(&p2->unk_040, 1);
+        ColliderInit(&p2->collider, 7, 16, 32);
+        ColliderSetPosition(&p2->collider, p2->x, p2->y, p2->z);
+        ColliderSetDisabled(&p2->collider, 1);
         func_0801BDD4(p2, p1);
         gBtlWork->unk_0D8 = v;
         func_0801C298(0, 1);
         func_0801BCC0(0x6400, 0x16800, 0);
         func_0801C274(0x2800, 0x16800, 0);
-        TaskCreate(&w->unk_37C, &gTaskDescBosDsdMain, w);
+        TaskCreate(&w->tasks, &gTaskDescBosDsdMain, w);
         btl = gBtlWork;
         btl->unk_0CC = w->body[0].x;
         btl->unk_0D0 = w->body[0].y;
@@ -4835,7 +4835,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
     BtlObj* b = &work->body[1];
 
     if (work->unk_358 & 0x10) {
-        TaskPoolUpdate(&work->unk_37C);
+        TaskPoolUpdate(&work->tasks);
         return 1;
     }
 
@@ -4890,7 +4890,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
 
     if (func_0801C1C0(0)) {
         work->unk_358 |= 8;
-        TaskCreate(&work->unk_37C, &gTaskDescBosDsdIta, work);
+        TaskCreate(&work->tasks, &gTaskDescBosDsdIta, work);
     }
 
     if (work->unk_334 == 4) {
@@ -4903,7 +4903,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
         gBtlWork->unk_0D8 = 0;
     }
 
-    TaskPoolUpdate(&work->unk_37C);
+    TaskPoolUpdate(&work->tasks);
     q = gBtlWork;
     q->unk_0CC = a->x;
     q->unk_0D0 = a->y;
@@ -4917,7 +4917,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
 }
 
 void task_bos_dsd_2(DsdWork* work) {
-    TaskPoolDraw(&work->unk_37C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_dsd_3(DsdWork* work) {
@@ -4926,8 +4926,8 @@ void task_bos_dsd_3(DsdWork* work) {
 
     a = &work->body[1];
     b = &work->body[2];
-    TaskPoolDestroy(&work->unk_37C);
-    ColliderUnregister(&work->body[2].unk_040);
+    TaskPoolDestroy(&work->tasks);
+    ColliderUnregister(&work->body[2].collider);
     func_0801B7D8(work);
     func_0801B7D8(a);
     func_0801B7D8(b);
@@ -4979,11 +4979,11 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     s->x = 0xDC00;
     s->y = 0x16800;
     s->z = 0;
-    ColliderInit(&s->unk_040, 8, 24, 100);
-    ColliderSetPosition(&s->unk_040, s->x, s->y, s->z);
+    ColliderInit(&s->collider, 8, 24, 100);
+    ColliderSetPosition(&s->collider, s->x, s->y, s->z);
     ScrollBgMapTo(1, ((gBtlWork->unk_000 - arg->body[0].x) >> 8) + 100,
                   ((gBtlWork->unk_004 - (arg->body[0].y + arg->body[0].z)) >> 8) + 280);
-    TaskPoolInit(&work->unk_058, 10);
+    TaskPoolInit(&work->tasks, 10);
     func_080C2828(work);
 }
 
@@ -5040,9 +5040,9 @@ u8 task_bos_dsd_main_1(DsdMainWork* work) {
         break;
     }
 
-    ColliderSetPosition(&d->body[0].unk_040, d->body[0].x, d->body[0].y, d->body[0].z);
-    ColliderSetPosition(&p->unk_040, p->x, p->y, p->z);
-    TaskPoolUpdate(&work->unk_058);
+    ColliderSetPosition(&d->body[0].collider, d->body[0].x, d->body[0].y, d->body[0].z);
+    ColliderSetPosition(&p->collider, p->x, p->y, p->z);
+    TaskPoolUpdate(&work->tasks);
     work->unk_070 = gBtlWork->unk_1CA;
 
     return 1;
@@ -5081,7 +5081,7 @@ void task_bos_dsd_main_2(DsdMainWork* work) {
                    (u16)(-4099 - (d->body[0].y >> 8) * 4));
     }
 
-    TaskPoolDraw(&work->unk_058);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_dsd_main_3(DsdMainWork* work) {
@@ -5096,8 +5096,8 @@ void task_bos_dsd_main_3(DsdMainWork* work) {
     ReleaseObjPalette(work->dsd->palette3);
     ReleaseObjTiles(work->dsd->tiles3);
     ReleaseObjPalette(work->dsd->palette4);
-    ColliderUnregister(&work->body.unk_040);
-    TaskPoolDestroy(&work->unk_058);
+    ColliderUnregister(&work->body.collider);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void func_080C2734(DsdMainWork* work) {
@@ -5105,7 +5105,7 @@ void func_080C2734(DsdMainWork* work) {
 
     if (q->unk_02C > 0) {
         if (GetRandom() % 30 == 0) {
-            TaskCreate(&work->unk_058, &gTaskDescBosDsdRock, work->dsd);
+            TaskCreate(&work->tasks, &gTaskDescBosDsdRock, work->dsd);
         }
 
         if ((work->dsd->unk_358 & 0x20) == 0) {
@@ -5224,13 +5224,13 @@ void func_080C2A2C(DsdMainWork* work) {
         switch (d->unk_338) {
         case 4:
         case 5:
-            func_0801D1C4(&work->unk_058, 1, 0, 0x2C8, 8, (u32)gUnk_09699684);
+            func_0801D1C4(&work->tasks, 1, 0, 0x2C8, 8, (u32)gUnk_09699684);
             break;
         case 6:
-            func_0801D1C4(&work->unk_058, 1, 0, 0x280, 8, (u32)gUnk_096A3F44);
+            func_0801D1C4(&work->tasks, 1, 0, 0x280, 8, (u32)gUnk_096A3F44);
             break;
         case 7:
-            func_0801D1C4(&work->unk_058, 1, 0, 0x200, 8, (u32)gUnk_096A8BA4);
+            func_0801D1C4(&work->tasks, 1, 0, 0x200, 8, (u32)gUnk_096A8BA4);
             break;
         }
 
@@ -5295,7 +5295,7 @@ void func_080C2BB0(DsdMainWork* work) {
         }
         break;
     case 2:
-        func_0801D1C4(&work->unk_058, 1, 0, 0x120, 3, (u32)gUnk_096874E4);
+        func_0801D1C4(&work->tasks, 1, 0, 0x120, 3, (u32)gUnk_096874E4);
         work->unk_006 = 0;
         work->dsd->unk_350++;
         break;
@@ -5477,7 +5477,7 @@ void func_080C2FD8(DsdMainWork* work) {
         func_0802F1E8();
         m4aSongNumStart(0x2B9);
         func_0801801C(0x7800, 0x16800, 0, 0x100);
-        ColliderSetDisabled(&b->unk_040, 0);
+        ColliderSetDisabled(&b->collider, 0);
         work->dsd->unk_350++;
         break;
     case 1:
@@ -5523,7 +5523,7 @@ void func_080C2FD8(DsdMainWork* work) {
     case 5:
         func_080C213C(8, 0x80);
         b->unk_034 |= 0x1000000;
-        ColliderSetDisabled(&b->unk_040, 1);
+        ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350++;
         break;
     default:
@@ -5545,7 +5545,7 @@ void func_080C3188(DsdMainWork* work) {
         work->unk_00A = 21;
         work->dsd->unk_356 = 0;
         func_080C213C(work->dsd->unk_354, 0x80);
-        TaskCreate(&work->unk_058, &gTaskDescBosDsdCircle, work->dsd);
+        TaskCreate(&work->tasks, &gTaskDescBosDsdCircle, work->dsd);
         func_080147D8(0x8000, 0x15400);
         func_08011F78(0x101, 0x8000, 0x16800, -0x1400, 16, 16, 16);
         m4aSongNumStart(0x2BC);
@@ -5688,7 +5688,7 @@ void func_080C3574(DsdMainWork* work) {
         break;
     case 2:
         func_080C3504(work);
-        work->unk_184 = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->dsd);
+        work->unk_184 = TaskCreate(&work->tasks, &gTaskDescBosDsdEnergy1, work->dsd);
         work->dsd->unk_350++;
         break;
     case 3:
@@ -5707,7 +5707,7 @@ void func_080C3574(DsdMainWork* work) {
 
         if (work->unk_006 > 4) {
             work->unk_006 = 0;
-            work->unk_188 = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->dsd);
+            work->unk_188 = TaskCreate(&work->tasks, &gTaskDescBosDsdEnergy1, work->dsd);
             work->dsd->unk_350++;
         }
         break;
@@ -5727,7 +5727,7 @@ void func_080C3574(DsdMainWork* work) {
 
         if (work->unk_006 > 4) {
             work->unk_006 = 0;
-            work->unk_18C = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy1, work->dsd);
+            work->unk_18C = TaskCreate(&work->tasks, &gTaskDescBosDsdEnergy1, work->dsd);
             work->dsd->unk_350++;
         }
         break;
@@ -5781,7 +5781,7 @@ void func_080C3754(DsdMainWork* work) {
     case 2:
         func_080C3504(work);
         LoadPalette(gUnk_096FB744, (void*)0x05000000, 32);
-        work->unk_06C = TaskCreate(&work->unk_058, &gTaskDescBosDsdEnergy2, work->dsd);
+        work->unk_06C = TaskCreate(&work->tasks, &gTaskDescBosDsdEnergy2, work->dsd);
         work->dsd->unk_350++;
         break;
     case 3:
@@ -5816,13 +5816,13 @@ void func_080C386C(DsdMainWork* work) {
     if (d->unk_330 == 2 || d->unk_330 == 3) {
         func_0801AF08(a);
         b->unk_034 |= 0x1000000;
-        ColliderSetDisabled(&b->unk_040, 1);
+        ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350 = 0;
         work->dsd->unk_334 = 0;
     } else if (d->unk_350 > 60) {
         func_0801AF08(a);
         b->unk_034 |= 0x1000000;
-        ColliderSetDisabled(&b->unk_040, 1);
+        ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350 = 0;
         work->dsd->unk_334 = 0;
     } else {
@@ -5855,9 +5855,9 @@ void func_080C3928(DsdMainWork* work) {
         break;
     case 1:
         func_0801AF4C(a);
-        ColliderSetDisabled(&a->unk_040, 1);
-        ColliderSetDisabled(&b->unk_040, 1);
-        ColliderSetDisabled(&c->unk_040, 1);
+        ColliderSetDisabled(&a->collider, 1);
+        ColliderSetDisabled(&b->collider, 1);
+        ColliderSetDisabled(&c->collider, 1);
         FadeSetPaletteExcluded(0, 0);
         FadeSetPaletteExcluded(19, 0);
         FadeToAmount(0, 20, 8);

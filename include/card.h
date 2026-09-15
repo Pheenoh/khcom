@@ -202,7 +202,7 @@ typedef struct UnkStruct_08096F94 {
     void* palette3;
     struct MapCardDef* unk_20;
     struct MapCardBackDef* unk_24;
-    TaskPool unk_28;
+    TaskPool tasks;
     u16 unk_3C;
     u16 unk_3E;
     s32 unk_40;
@@ -286,7 +286,7 @@ typedef struct UnkStruct_0809A02C {
     void* tiles4;
     void* palette3;
     CardDef* cardDef;
-    TaskPool unk_20;
+    TaskPool tasks;
     u8 unk_34[0x04];
     s32 unk_38;
     s32 unk_3C;
@@ -535,8 +535,8 @@ typedef struct UnkStruct_0808C940 {
     void* gfx2;
     u8 unk_4F0[4];
     u8 unk_4F4[0x120];
-    TaskPool unk_614;
-    TaskPool unk_628;
+    TaskPool tasks;
+    TaskPool tasks2;
     ListPool unk_63C;
     AnimState anim;
     AnimState anim2;
@@ -676,8 +676,8 @@ typedef struct UnkStruct_0808DB04 {
 #else
     u8 unk_4FC[0x2CC];
 #endif
-    TaskPool unk_7C8;
-    TaskPool unk_7DC;
+    TaskPool tasks;
+    TaskPool tasks2;
     ListPool unk_7F0;
     AnimState anim2;
     AnimState anim3;
@@ -1056,7 +1056,7 @@ typedef struct PrizeCardTaskArgs {
 } PrizeCardTaskArgs;
 
 typedef struct PrizeCardInitWork {
-    TaskPool unk_00;
+    TaskPool tasks;
     u8 unk_14;
     PrizeCardArgs unk_18;
 } PrizeCardInitWork;
@@ -1086,7 +1086,7 @@ typedef struct PrizeCardWork {
     UnkStruct_080038C8* tiles5;
     UnkStruct_080038C8* palette3;
     u8 unk_20[0x2C];
-    u8 unk_4C[0x5C];
+    u8 collider[0x5C];
     s32 unk_A8;
     s32 unk_AC;
     u8 unk_B0[0x18];
@@ -1126,7 +1126,7 @@ typedef struct ReloadGageWork {
     u8 unk_18[0x04];
     ListPool* unk_1C;
     UnkStruct_08095A5C* unk_20;
-    TaskPool unk_24;
+    TaskPool tasks;
     ListPool* unk_38;
     void* unk_3C;
     u32 unk_40;
@@ -1366,9 +1366,9 @@ typedef struct BossPrizeWork {
     UnkStruct_080038C8* tiles4;
     UnkStruct_080038C8* tiles5;
     UnkStruct_080038C8* palette3;
-    TaskPool unk_20;
+    TaskPool tasks;
     CardStat unk_34;
-    u8 unk_4C[0x5C];
+    u8 collider[0x5C];
     s32 unk_A8;
     s32 unk_AC;
     s32 unk_B0;

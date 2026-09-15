@@ -74,7 +74,7 @@ typedef struct Emy16Work {
     EmyWork base;
     void* unk_184;
     void* unk_188;
-    TaskPool unk_18C;
+    TaskPool tasks;
     u8 unk_1A0;
 } Emy16Work;
 
@@ -193,7 +193,7 @@ typedef struct Emy82Work {
 typedef struct Emy83Work {
     EmyWork base;
     void* unk_184;
-    TaskPool unk_188;
+    TaskPool tasks;
     s32 unk_19C;
     s32 unk_1A0;
     s16 unk_1A4;

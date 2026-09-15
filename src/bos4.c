@@ -1725,9 +1725,9 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         func_080DB978(work);
     }
     if (func_080DBA14(work)) {
-        ColliderSetPosition(&p->unk_040, p->x, p->y, p->z);
+        ColliderSetPosition(&p->collider, p->x, p->y, p->z);
     } else {
-        ColliderSetPosition(&p->unk_040, p->x, p->y + 0x1000, p->z - 0x1000);
+        ColliderSetPosition(&p->collider, p->x, p->y + 0x1000, p->z - 0x1000);
     }
     gBtlWork->unk_0CC = p->x;
     gBtlWork->unk_0D0 = p->y;

@@ -988,8 +988,8 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     }
     work->tiles = func_080D85C0(work->unk_42);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    TaskPoolInit(&work->unk_24, 1);
-    work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->x + 6, work->y + 16,
+    TaskPoolInit(&work->tasks, 1);
+    work->unk_38 = (void*)func_080D8AA4(&work->tasks, work->x + 6, work->y + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
     work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
@@ -1016,11 +1016,11 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
 
     if (changed) {
         m4aSongNumStart(0x67);
-        func_08000DE8(&work->unk_24, work->unk_38);
-        work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
+        func_08000DE8(&work->tasks, work->unk_38);
+        work->unk_38 = (void*)func_080D8AA4(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
     }
 
-    TaskPoolUpdate(&work->unk_24);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -1034,7 +1034,7 @@ void stock_mes_disp_2(StockMesDispWork* work) {
     if (work->unk_40 < work->unk_44 - 1) {
         DrawSprite(work->x + ((work->unk_20 / 8) % 4 + 136), work->y, work->gfx2, work->tiles3, work->palette3, 0, 0, 3);
     }
-    TaskPoolDraw(&work->unk_24);
+    TaskPoolDraw(&work->tasks);
     work->unk_20++;
 }
 
@@ -1045,7 +1045,7 @@ void stock_mes_disp_3(StockMesDispWork* work) {
     ReleaseObjPalette(work->palette2);
     ReleaseObjTiles(work->tiles3);
     ReleaseObjPalette(work->palette3);
-    TaskPoolDestroy(&work->unk_24);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void* func_080D8EB4(void* pool, u16 b, u8 c, u16 d, s32 e) {
@@ -1069,7 +1069,7 @@ void func_080D8F14(BoogieWork* work) {
 
         if (gUnk_0203C558 == 0) {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDisk, &work->actor);
+            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieDisk, &work->actor);
         } else if (gUnk_0203C558 == 1) {
             work->unk_000 = 6;
             work->unk_004 = 0;
@@ -1082,7 +1082,7 @@ void func_080D8F14(BoogieWork* work) {
             func_0801BDDC(17, 0x15000, 0x24000, 0);
         } else if (gUnk_0203C558 == 3) {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->unk_02C, &gTaskDescBosBoogieKnifereader, 0);
+            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieKnifereader, 0);
         } else if (gUnk_0203C558 == 4) {
             work->unk_000 = 6;
             work->unk_004 = 0;
@@ -1090,7 +1090,7 @@ void func_080D8F14(BoogieWork* work) {
             func_0801BDDC(15, 0x15000, 0x24000, 0);
         } else {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->unk_02C, &gTaskDescBosBoogieKaihuku, work);
+            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieKaihuku, work);
         }
     }
 }
@@ -1167,10 +1167,10 @@ void task_bos_boogie_0(BoogieWork* work) {
     AnimInit(&work->anim, 0, 0);
     work->unk_15C = 9;
     func_080D900C(work, 0, 1);
-    TaskPoolInit(&work->unk_02C, 7);
-    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->actor);
-    TaskCreate(&work->unk_02C, &gTaskDescBosBoogieMapanime, 0);
-    TaskCreate(&work->unk_02C, &gTaskDescBosBoogieSaku, work);
+    TaskPoolInit(&work->tasks, 7);
+    TaskCreate(&work->tasks, &gTaskDescBosShadow, &work->actor);
+    TaskCreate(&work->tasks, &gTaskDescBosBoogieMapanime, 0);
+    TaskCreate(&work->tasks, &gTaskDescBosBoogieSaku, work);
     work->unk_160 = 0;
     work->unk_164 = 0;
     work->unk_168 = 0;
@@ -1317,10 +1317,10 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 func_08083914();
                 work->unk_174 = 0;
                 work->unk_175 = 0;
-                work->unk_160 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                work->unk_160 = (s32)TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
                 work->unk_175 = 1;
-                work->unk_168 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
-                work->dialog = (StatusDialogSub*)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                work->unk_168 = (s32)TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
+                work->dialog = (StatusDialogSub*)TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
                 func_080D900C(work, 2, 1);
                 m4aSongNumStart(272);
                 work->unk_000 = 9;
@@ -1445,8 +1445,8 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         }
     }
     func_080D9058(&a->x, &a->y);
-    ColliderSetPosition(&a->unk_040, a->x, a->y, a->z);
-    TaskPoolUpdate(&work->unk_02C);
+    ColliderSetPosition(&a->collider, a->x, a->y, a->z);
+    TaskPoolUpdate(&work->tasks);
     if (func_0801C1C0(0)) {
         func_080D9A58();
     }
@@ -1477,7 +1477,7 @@ void task_bos_boogie_2(BoogieWork* work) {
     }
     WorldToScreen(&x, &y, a->x, a->y, a->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->y >> 8) * 4);
-    TaskPoolDraw(&work->unk_02C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_boogie_3(BoogieWork* work) {
@@ -1485,7 +1485,7 @@ void task_bos_boogie_3(BoogieWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
-    TaskPoolDestroy(&work->unk_02C);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void func_080D9A14(void) {

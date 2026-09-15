@@ -374,7 +374,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         e->y += e->unk_07C;
     }
     ColliderSetPosition(&e->unk_040, e->x, e->y, e->z + e->unk_13C);
-    TaskPoolUpdate(&e->unk_16C);
+    TaskPoolUpdate(&e->tasks);
 }
 
 void task_bos_ga_0(GaWork* work, s32 arg) {
@@ -870,7 +870,7 @@ u8 func_080FBFA8(MdWork* work) {
 
                     if (func_080128EC() == 0) {
                         work->unk_1B4 &= 0xFFFD;
-                        a.unk_00 = &work->unk_02C;
+                        a.unk_00 = &work->tasks;
                         a.unk_06 = 0;
                         a.unk_08 = (s32)&work->unk_1B4;
 
@@ -900,7 +900,7 @@ u8 func_080FBFA8(MdWork* work) {
                             }
                         }
 
-                        TaskCreate(&work->unk_02C, &gTaskDescBosMdFire, &a);
+                        TaskCreate(&work->tasks, &gTaskDescBosMdFire, &a);
                         func_080FBA14(work, 4);
                         work->unk_00C = 2;
                     }
@@ -1148,9 +1148,9 @@ void task_bos_md_0(MdWork* work, void* arg) {
     func_0801C298(work->palette[6] + 16, 1);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     func_0801C298(work->palette2[6] + 16, 1);
-    TaskPoolInit(&work->unk_02C, 6);
-    TaskPoolInit(&work->unk_040, 1);
-    TaskPoolInit(&work->unk_054, 8);
+    TaskPoolInit(&work->tasks, 6);
+    TaskPoolInit(&work->tasks2, 1);
+    TaskPoolInit(&work->tasks3, 8);
     ScrollBgMapTo(1, (gBtlWork->unk_000 >> 8) + 72 - work->unk_178,
                   (gBtlWork->unk_004 >> 8) + 48 - work->unk_17A);
 }
@@ -1184,9 +1184,9 @@ s32 task_bos_md_1(MdWork* work) {
     func_080FC3FC(work);
 
     if (func_0801C1C0(0) != 0) {
-        args[0] = &work->unk_054;
+        args[0] = &work->tasks3;
         args[1] = &work->unk_1B4;
-        TaskCreate(&work->unk_040, &gTaskDescBosMdDai, args);
+        TaskCreate(&work->tasks2, &gTaskDescBosMdDai, args);
     }
 
     func_080FBA4C(work);
@@ -1209,9 +1209,9 @@ s32 task_bos_md_1(MdWork* work) {
                       work->sub[i].unk_00C);
     }
 
-    TaskPoolUpdate(&work->unk_02C);
-    TaskPoolUpdate(&work->unk_040);
-    TaskPoolUpdate(&work->unk_054);
+    TaskPoolUpdate(&work->tasks);
+    TaskPoolUpdate(&work->tasks2);
+    TaskPoolUpdate(&work->tasks3);
     return result;
 }
 
@@ -1247,9 +1247,9 @@ void task_bos_md_2(MdWork* work) {
     x = (gBtlWork->unk_000 >> 8) - (work->unk_178 - 72);
     y = (gBtlWork->unk_004 >> 8) - (work->unk_17A - 48);
     ScrollBgMapTo(1, x, y);
-    p0 = &work->unk_02C;
-    p1 = &work->unk_040;
-    p2 = &work->unk_054;
+    p0 = &work->tasks;
+    p1 = &work->tasks2;
+    p2 = &work->tasks3;
 
     for (i = 0; i < 2; i++) {
         s32 wx;
@@ -1282,9 +1282,9 @@ void task_bos_md_3(MdWork* work) {
         func_0801B7D8(&work->sub[i]);
     }
 
-    q = &work->unk_02C;
-    r = &work->unk_040;
-    t = &work->unk_054;
+    q = &work->tasks;
+    r = &work->tasks2;
+    t = &work->tasks3;
 
     for (i = 0; i < 2; i++) {
         if (work->unk_17C[i].tiles != 0) {

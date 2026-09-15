@@ -46,7 +46,7 @@ typedef struct PcPos {
     u8 unk_10[0x24];
     u64 unk_34;
     u8 unk_3C[0x4];
-    u8 unk_40[0x5C];
+    u8 collider[0x5C];
     u16 unk_9C;
 } PcPos;
 
@@ -298,7 +298,7 @@ typedef struct BosLstWork {
     u32 unk_124;
     u8 unk_128[0xCC];
     LstSub sub[2];
-    u8 unk_474[0x5C];
+    u8 collider[0x5C];
     u32 unk_4D0;
     u8 unk_4D4[0x58];
     u8 unk_52C[8][0x5C];

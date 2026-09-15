@@ -1491,7 +1491,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     for (i = 0; i < 8; i++) {
         work->unk_100[i] = 0;
     }
-    TaskPoolInit(&work->unk_114, 1);
+    TaskPoolInit(&work->tasks, 1);
     WlogoEnableHBlank();
     gUnk_0203AB38 = -0x299;
     work->unk_110 = 25;
@@ -1591,7 +1591,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_100[4] = 1;
             work->unk_100[5] = 1;
             work->unk_100[6] = 1;
-            TaskCreate(&work->unk_114, &gTaskDescWlogoTtLine, (void*)0);
+            TaskCreate(&work->tasks, &gTaskDescWlogoTtLine, (void*)0);
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_000++;
@@ -1700,7 +1700,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
     default:
         return 0;
     }
-    TaskPoolUpdate(&work->unk_114);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -1737,12 +1737,12 @@ void task_wlogo_tt_2(WlogoTtWork* work) {
     if (work->unk_100[6] == 1) {
         DrawSprite(64, 64, work->gfx7, work->tiles5, work->palette, 0, 0, 32);
     }
-    TaskPoolDraw(&work->unk_114);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_wlogo_tt_3(WlogoTtWork* work) {
     WlogoDisableHBlank();
-    TaskPoolDestroy(&work->unk_114);
+    TaskPoolDestroy(&work->tasks);
     ReleaseObjTiles(work->tiles);
     ReleaseObjTiles(work->tiles2);
     ReleaseObjTiles(work->tiles3);
@@ -1808,7 +1808,7 @@ void task_wlogo_tt_line_0(WlogoTtLineWork* work) {
     work->unk_000 = 0;
     work->unk_002 = 0;
     work->unk_004 = 0;
-    TaskPoolInit(&work->unk_008, 33);
+    TaskPoolInit(&work->tasks, 33);
 }
 
 u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
@@ -1820,7 +1820,7 @@ u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
             work->unk_000 = 0;
             arg.x = gUnk_09EF1B68[work->unk_002][0] << 8;
             arg.y = gUnk_09EF1B68[work->unk_002][1] << 8;
-            TaskCreate(&work->unk_008, &gTaskDescWlogoTtObj, &arg);
+            TaskCreate(&work->tasks, &gTaskDescWlogoTtObj, &arg);
             work->unk_002++;
             if (work->unk_002 == 31) {
                 work->unk_004++;
@@ -1838,16 +1838,16 @@ u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
     default:
         return 0;
     }
-    TaskPoolUpdate(&work->unk_008);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
 void task_wlogo_tt_line_2(WlogoTtLineWork* work) {
-    TaskPoolDraw(&work->unk_008);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_wlogo_tt_line_3(WlogoTtLineWork* work) {
-    TaskPoolDestroy(&work->unk_008);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_wlogo_bks_0(WlogoBksWork* work) {
@@ -1863,7 +1863,7 @@ void task_wlogo_bks_0(WlogoBksWork* work) {
     work->unk_032 = 0;
     work->unk_030 = 0;
     SetBgBlend(0, 16 - work->unk_00A, work->unk_00A);
-    TaskPoolInit(&work->unk_03C, 15);
+    TaskPoolInit(&work->tasks, 15);
     work->tiles = AllocObjTiles(0x580, gUnk_09628DC0);
     work->palette = LoadObjPalette(gUnk_096FB0A4, 0x20);
     AnimInit(&work->anim, gUnk_09EF3850, gUnk_09EF380C);
@@ -1912,34 +1912,34 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
 
         switch (work->unk_032) {
         case 20:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)13);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)13);
             break;
         case 30:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)12);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)0);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)12);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)0);
             break;
         case 40:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)11);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)1);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)11);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)1);
             break;
         case 50:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)10);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)2);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)10);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)2);
             break;
         case 60:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)9);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)3);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)9);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)3);
             break;
         case 70:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)4);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)8);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)4);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)8);
             break;
         case 80:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)7);
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)5);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)7);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)5);
             break;
         case 90:
-            TaskCreate(&work->unk_03C, &gTaskDescWlogoBksObj, (void*)6);
+            TaskCreate(&work->tasks, &gTaskDescWlogoBksObj, (void*)6);
             break;
         case 115:
             work->unk_000++;
@@ -1996,7 +1996,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
         }
         break;
     }
-    TaskPoolUpdate(&work->unk_03C);
+    TaskPoolUpdate(&work->tasks);
     return 1;
 }
 
@@ -2004,12 +2004,12 @@ void task_wlogo_bks_2(WlogoBksWork* work) {
     if (work->unk_030 == 1) {
         DrawSprite(64, 64, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
-    TaskPoolDraw(&work->unk_03C);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_wlogo_bks_3(WlogoBksWork* work) {
     StopBgWave(0);
-    TaskPoolDestroy(&work->unk_03C);
+    TaskPoolDestroy(&work->tasks);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }

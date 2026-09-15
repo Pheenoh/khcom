@@ -322,8 +322,8 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         e->unk_15A |= 1;
         break;
     }
-    TaskPoolInit(&e->unk_16C, 1);
-    TaskCreate(&e->unk_16C, &gTaskDescBtlShadow, e);
+    TaskPoolInit(&e->tasks, 1);
+    TaskCreate(&e->tasks, &gTaskDescBtlShadow, e);
     p = gUnk_09991F54[i].gfxTable;
     e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].spriteCount), gUnk_09991F54[i].owner);
     AnimInit(&e->anim, gUnk_09991F54[i].anims, p);
@@ -344,7 +344,7 @@ void func_080F8374(GaEntryWork* e) {
         ColliderUnregister(&e->unk_040);
         ReleaseObjTiles(e->tiles);
         func_0801B7D8(e);
-        TaskPoolDestroy(&e->unk_16C);
+        TaskPoolDestroy(&e->tasks);
         e->unk_15A |= 0x10;
     }
 }
@@ -386,7 +386,7 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
         DrawSprite((s16)(sx + e->x2), (s16)(sy + e->y2), work->gfx, work->tiles, pal, f, g,
                    0xEFFC - ((q->y >> 8) << 2));
     }
-    TaskPoolDraw(&e->unk_16C);
+    TaskPoolDraw(&e->tasks);
 }
 
 u8 func_080F854C(GaWork* work) {

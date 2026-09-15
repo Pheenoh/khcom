@@ -80,7 +80,7 @@ typedef struct DsdWork {
     void* palette3;
     void* tiles3;
     void* palette4;
-    TaskPool unk_37C;
+    TaskPool tasks;
     u16 unk_390;
     u16 unk_392;
 } DsdWork;
@@ -183,7 +183,7 @@ typedef struct DsdMainWork {
     void* palette2;
     s8 unk_054;
     u8 unk_055[0x3];
-    TaskPool unk_058;
+    TaskPool tasks;
     void* unk_06C;
     s8 unk_070;
     u8 unk_071[0x3];
@@ -279,7 +279,7 @@ typedef struct JfWork {
     s16 unk_24E;
     s16 unk_250;
     u8 unk_252[0x2];
-    TaskPool unk_254;
+    TaskPool tasks;
     u16 unk_268;
     u16 unk_26A;
 } JfWork;
@@ -316,7 +316,7 @@ typedef struct JfLampWork {
     s32 unk_38;
     u8 unk_3C[0x6];
     u16 unk_42;
-    TaskPool unk_44;
+    TaskPool tasks;
 } JfLampWork;
 
 typedef struct JfRockWork {
@@ -360,7 +360,7 @@ typedef struct JfRockWork {
     u8 unk_17C;
     u8 unk_17D;
     s16 unk_17E;
-    TaskPool unk_180;
+    TaskPool tasks;
     u8 unk_194;
     u8 unk_195[0x3];
 } JfRockWork;
@@ -399,7 +399,7 @@ typedef struct JfMajinWork {
     u16 unk_68;
     s8 unk_6A;
     u8 unk_6B[0x1];
-    TaskPool unk_6C;
+    TaskPool tasks;
     u32 unk_80;
 } JfMajinWork;
 

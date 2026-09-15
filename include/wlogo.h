@@ -62,7 +62,7 @@ typedef struct WlogoTtWork {
     s32 unk_108;
     s32 unk_10C;
     s32 unk_110;
-    TaskPool unk_114;
+    TaskPool tasks;
 } WlogoTtWork;
 
 typedef struct WlogoBksObjWork {
@@ -110,7 +110,7 @@ typedef struct WlogoBksWork {
     u8 unk_037;
     u16 unk_038;
     u8 unk_03A[0x2];
-    TaskPool unk_03C;
+    TaskPool tasks;
 } WlogoBksWork;
 
 typedef struct WlogoTtObjArg {
@@ -136,7 +136,7 @@ typedef struct WlogoTtLineWork {
     s16 unk_002;
     s8 unk_004;
     u8 unk_005[0x3];
-    TaskPool unk_008;
+    TaskPool tasks;
 } WlogoTtLineWork;
 
 typedef struct WlogoPooWork {

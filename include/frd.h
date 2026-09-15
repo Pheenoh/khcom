@@ -28,7 +28,7 @@ typedef struct FrdArgs {
 } FrdArgs;
 
 typedef struct FrdDonaldWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -48,7 +48,7 @@ typedef struct FrdDonaldWork {
 } FrdDonaldWork;
 
 typedef struct FrdGoofyWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -68,7 +68,7 @@ typedef struct FrdGoofyWork {
 } FrdGoofyWork;
 
 typedef struct FrdArielWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -88,7 +88,7 @@ typedef struct FrdArielWork {
 } FrdArielWork;
 
 typedef struct FrdJackWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -110,7 +110,7 @@ typedef struct FrdJackWork {
 } FrdJackWork;
 
 typedef struct FrdPanWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -134,7 +134,7 @@ typedef struct FrdPanWork {
 } FrdPanWork;
 
 typedef struct FrdAladdinWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
@@ -152,7 +152,7 @@ typedef struct FrdAladdinWork {
 } FrdAladdinWork;
 
 typedef struct FrdBeastWork {
-    TaskPool unk_000;
+    TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;

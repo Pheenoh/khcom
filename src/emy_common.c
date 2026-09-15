@@ -47,13 +47,13 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     AnimInit(&work->anim, 0, 0);
     func_08019068(work->def->animDef, &work->anim, 0, 1, work->tiles);
     work->gfx = AnimGetGfx(&work->anim);
-    TaskPoolInit(&work->unk_028, 3);
+    TaskPoolInit(&work->tasks, 3);
 
     if (!(def->unk_1A & 1)) {
-        TaskCreate(&work->unk_028, &gTaskDescBtlShadow, actor);
+        TaskCreate(&work->tasks, &gTaskDescBtlShadow, actor);
     }
 
-    TaskCreate(&work->unk_028, &gTaskDescBtlBadstatus, actor);
+    TaskCreate(&work->tasks, &gTaskDescBtlBadstatus, actor);
 
     if (def->unk_1A & 2) {
         work->unk_17C = 0x100;
@@ -548,7 +548,7 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 15:
         if (work->unk_154 == 0) {
-            ColliderSetDisabled(&actor->unk_040, 1);
+            ColliderSetDisabled(&actor->collider, 1);
             actor->unk_034 |= 0x100;
             func_08019068(work->def->animDef, &work->anim, 1, 0, work->tiles);
             work->anim.frame = 0;
@@ -581,7 +581,7 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 17:
         if (work->unk_154 == 0) {
-            ColliderSetDisabled(&actor->unk_040, 0);
+            ColliderSetDisabled(&actor->collider, 0);
             work->unk_156 = 10;
         }
         ApproachValueHalfSteps(&work->unk_180, 0x100, work->unk_156--);
@@ -720,9 +720,9 @@ s32 _0800CDF0(EmyWork* work) {
             actor->z = 0;
             work->unk_168 = 0;
         }
-        if (actor->unk_040.unk_2C != 0 && !(actor->unk_034 & 0x10) && !(actor->unk_040.unk_50->unk_30 & 2)) {
-            actor->x += actor->unk_040.unk_38 >> 1;
-            actor->y += actor->unk_040.unk_3C >> 1;
+        if (actor->collider.unk_2C != 0 && !(actor->unk_034 & 0x10) && !(actor->collider.unk_50->unk_30 & 2)) {
+            actor->x += actor->collider.unk_38 >> 1;
+            actor->y += actor->collider.unk_3C >> 1;
         }
     }
 
@@ -790,8 +790,8 @@ s32 _0800CDF0(EmyWork* work) {
         actor->y = actor->unk_100;
     }
 
-    TaskPoolUpdate(&work->unk_028);
-    ColliderSetPosition(&actor->unk_040, actor->x, actor->y, actor->z);
+    TaskPoolUpdate(&work->tasks);
+    ColliderSetPosition(&actor->collider, actor->x, actor->y, actor->z);
     return 1;
 }
 
@@ -847,7 +847,7 @@ void func_0800DF30(EmyWork* work) {
             DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, g, (-4100 - ((actor->y >> 8) << 2)) | 3);
         }
 
-        TaskPoolDraw(&work->unk_028);
+        TaskPoolDraw(&work->tasks);
     }
 }
 
@@ -871,5 +871,5 @@ void func_0800E0D0(EmyWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
-    TaskPoolDestroy(&work->unk_028);
+    TaskPoolDestroy(&work->tasks);
 }

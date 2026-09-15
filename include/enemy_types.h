@@ -27,7 +27,7 @@ typedef struct EmyWork {
     void* palette2;
     void* gfx;
     AnimState anim;
-    TaskPool unk_028;
+    TaskPool tasks;
     BtlObj actor;
     u32 unk_14C;
     u32 unk_150;

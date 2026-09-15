@@ -785,7 +785,7 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
         break;
     }
     func_0810A850(work);
-    ColliderSetPosition(p->unk_40, p->x, p->y, p->z);
+    ColliderSetPosition(p->collider, p->x, p->y, p->z);
     ColliderSetPosition(&work->unk_274, work->unk_168, work->unk_16C, work->unk_028 + 0x800);
     g = gBtlWork;
     g->unk_0CC = p->x;
@@ -1856,7 +1856,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     func_0801B37C(obj, tbl, work->unk_044, work->unk_048, work->unk_04C);
     work->sub[1].unk_04C |= 0x400;
     func_0801C7FC(obj, 40, 0x100);
-    ColliderInit(work->unk_474, 8, 20, 20);
+    ColliderInit(work->collider, 8, 20, 20);
     p = &work->unk_4D0;
     ColliderInit(p, 8, 28, 64);
     ColliderSetDisabled(p, 1);
@@ -3640,8 +3640,8 @@ u8 task_bos_lst_1(BosLstWork* work) {
         sub->y = work->unk_048 + work->unk_054 + (gUnk_09A4CF8C[anim].unk_20 << 8);
         sub->z = work->unk_04C + work->unk_058 + (gUnk_09A4CF8C[anim].unk_22 << 8);
     }
-    ColliderSetPosition(obj->unk_40, obj->x + (work->unk_012 << 10), obj->y, obj->z);
-    ColliderSetPosition(work->unk_474, obj->x, obj->y - 0x1000, obj->z + 0x1800);
+    ColliderSetPosition(obj->collider, obj->x + (work->unk_012 << 10), obj->y, obj->z);
+    ColliderSetPosition(work->collider, obj->x, obj->y - 0x1000, obj->z + 0x1800);
     ColliderSetPosition(&work->unk_4D0, obj->x, obj->y - 0x1000, obj->z + 0x4000);
     for (i = 0; i < 8; i++) {
         ColliderSetPosition(work->unk_52C[i], work->unk_044 + ((i << 12) + 0x1800) * work->unk_012, work->unk_048, work->unk_04C);
@@ -3834,7 +3834,7 @@ void task_bos_lst_3(BosLstWork* work) {
     func_0801B7D8(&work->unk_0E4);
     func_0801B7D8(&work->sub[0].unk_018);
     func_0801B7D8(&work->sub[1].unk_018);
-    ColliderUnregister(work->unk_474);
+    ColliderUnregister(work->collider);
     ColliderUnregister(&work->unk_4D0);
     for (i = 0; i < 8; i++) {
         ColliderUnregister(work->unk_52C[i]);
