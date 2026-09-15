@@ -1,4 +1,4 @@
-# EU asset_gfx_gap_195 host mega + leaf gUnk_09A3D2DC (ABS 0x09A9ADA0).
+# EU asset_gfx_gap_195 host mega + palette leaves (ABS addresses differ; SHA-1s match US).
 # Policy B: sources/bins not committed. Parent mega stays slice by default.
 schema_version: 1
 id: asset_gfx_gap_195
@@ -23,6 +23,14 @@ tools:
 sha256_slice: 5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29
 status: leaf_palette_scaffold
 children:
+  - id: gUnk_09A3CC9C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3CC9C
+    rom: { start: 0x09A9A760, end: 0x09A9A780, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3CC9C.png
+    sha1: 099b710e870ff122d89615001ad4be7a61026b21
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
   - id: gUnk_09A3D2DC
     class: leaf_gfx
     format: palette
@@ -31,3 +39,27 @@ children:
     png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D2DC.png
     sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
     consumer: LoadObjPalette(..., 0x20) mode_mapinspect
+  - id: gUnk_09A3D57C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D57C
+    rom: { start: 0x09A9B040, end: 0x09A9B060, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D57C.png
+    sha1: 0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
+  - id: gUnk_09A3D59C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D59C
+    rom: { start: 0x09A9B060, end: 0x09A9B080, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D59C.png
+    sha1: e6bc11348dc0da8364f7adf8db1aa8253c4f99b2
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
+  - id: gUnk_09A3D5BC
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D5BC
+    rom: { start: 0x09A9B080, end: 0x09A9B0A0, size: 32 }
+    png: assets/eu/src/gfx/asset_gfx_gap_195/gUnk_09A3D5BC.png
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    consumer: LoadObjPalette(..., 32) mode_worldwarp

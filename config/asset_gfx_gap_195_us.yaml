@@ -1,4 +1,4 @@
-# US asset_gfx_gap_195 host mega + first leaf gUnk_09A3D2DC.
+# US asset_gfx_gap_195 host mega + palette leaves (32B each).
 # Policy B: PNG/gbapal/bins local/gitignored only. Parent mega stays slice until fuller pack RE.
 schema_version: 1
 id: asset_gfx_gap_195
@@ -23,10 +23,21 @@ tools:
 sha256_slice: d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419
 status: leaf_palette_scaffold
 note: >
-  Dual-path scaffold for first leaf only. Default path_mode is slice so check.sh
-  stays on extract .incbin. Built mode (configure --asset-gfx-gap-195-mode=built)
-  patches gbagfx PNG->gbapal into a mega copy; does not affect MovieOpen asset_gfx.
+  Dual-path scaffold for five LoadObjPalette 32B leaves in the same mega.
+  Default path_mode is slice so check.sh stays on extract .incbin. Built mode
+  (configure --asset-gfx-gap-195-mode=built) patches gbagfx PNG->gbapal into a
+  mega copy; does not affect MovieOpen asset_gfx.
 children:
+  - id: gUnk_09A3CC9C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3CC9C
+    rom: { start: 0x09A3CC9C, end: 0x09A3CCBC, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3CC9C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3CC9C.gbapal
+    sha1: 099b710e870ff122d89615001ad4be7a61026b21
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
+    path_mode_built: gbagfx_png_to_gbapal
   - id: gUnk_09A3D2DC
     class: leaf_gfx
     format: palette
@@ -36,4 +47,34 @@ children:
     gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D2DC.gbapal
     sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
     consumer: LoadObjPalette(..., 0x20) mode_mapinspect
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D57C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D57C
+    rom: { start: 0x09A3D57C, end: 0x09A3D59C, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D57C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D57C.gbapal
+    sha1: 0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D59C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D59C
+    rom: { start: 0x09A3D59C, end: 0x09A3D5BC, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D59C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D59C.gbapal
+    sha1: e6bc11348dc0da8364f7adf8db1aa8253c4f99b2
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3D5BC
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D5BC
+    rom: { start: 0x09A3D5BC, end: 0x09A3D5DC, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D5BC.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D5BC.gbapal
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
     path_mode_built: gbagfx_png_to_gbapal

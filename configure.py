@@ -206,7 +206,7 @@ parser.add_argument(
     "--asset-gfx-gap-195-mode",
     choices=("slice", "built"),
     default="slice",
-    help="asset_gfx_gap_195 path: baserom slice (default) or leaf-patched built mega (gUnk_09A3D2DC via gbagfx)",
+    help="asset_gfx_gap_195 path: baserom slice (default) or leaf-patched built mega (gap_195 palettes via gbagfx)",
 )
 parser.add_argument(
     "--asset-gfx-gap-1-mode",

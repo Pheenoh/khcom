@@ -1,4 +1,4 @@
-# JP inventory for asset_gfx_gap_195 (Policy B). Leaf palette identical to US.
+# JP inventory for asset_gfx_gap_195 (Policy B). Leaf palettes identical to US.
 version: jp
 schema_version: 1
 mvp_class: asset_gfx_gap_195
@@ -14,6 +14,14 @@ pack:
   sha256: a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c
   path_mode_default: slice
 leaves:
+  - id: gUnk_09A3CC9C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F1724
+    end: 0x099F1744
+    size: 32
+    sha1: 099b710e870ff122d89615001ad4be7a61026b21
+    confidence: high
   - id: gUnk_09A3D2DC
     class: leaf_gfx
     format: palette
@@ -21,4 +29,28 @@ leaves:
     end: 0x099F1D84
     size: 32
     sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
+    confidence: high
+  - id: gUnk_09A3D57C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F2004
+    end: 0x099F2024
+    size: 32
+    sha1: 0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46
+    confidence: high
+  - id: gUnk_09A3D59C
+    class: leaf_gfx
+    format: palette
+    start: 0x099F2024
+    end: 0x099F2044
+    size: 32
+    sha1: e6bc11348dc0da8364f7adf8db1aa8253c4f99b2
+    confidence: high
+  - id: gUnk_09A3D5BC
+    class: leaf_gfx
+    format: palette
+    start: 0x099F2044
+    end: 0x099F2064
+    size: 32
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
     confidence: high

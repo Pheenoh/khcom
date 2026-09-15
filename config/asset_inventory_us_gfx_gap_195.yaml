@@ -1,5 +1,5 @@
 # US inventory for asset_gfx_gap_195 (Policy B: no binaries).
-# Host mega: 0x0999389C–0x09A3DF34. First leaf only: gUnk_09A3D2DC palette.
+# Host mega: 0x0999389C–0x09A3DF34. Palette leaves: gUnk_09A3CC9C / 09A3D2DC / 09A3D57C / 09A3D59C / 09A3D5BC.
 # Pack: python3 tools/gfx/asset_gfx_gap_195_pack.py --mode dump|built --version us
 
 version: us
@@ -22,12 +22,27 @@ pack:
   confidence: medium
   summary: >
     Named megablob owned by asm/us/asset_gfx_gap_195.s as a single .incbin.
-    Fuller child map not yet RE'd; scaffold rebuilds only gUnk_09A3D2DC.
+    Fuller child map not yet RE'd; scaffold rebuilds five LoadObjPalette 32B pals.
 
 symbols_in_pack:
+  - { address: 0x09A3CC9C, name: gUnk_09A3CC9C, size: 32, kind: palette }
   - { address: 0x09A3D2DC, name: gUnk_09A3D2DC, size: 32, kind: palette }
+  - { address: 0x09A3D57C, name: gUnk_09A3D57C, size: 32, kind: palette }
+  - { address: 0x09A3D59C, name: gUnk_09A3D59C, size: 32, kind: palette }
+  - { address: 0x09A3D5BC, name: gUnk_09A3D5BC, size: 32, kind: palette }
 
 leaves:
+  - id: gUnk_09A3CC9C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3CC9C
+    end: 0x09A3CCBC
+    size: 32
+    sha1: 099b710e870ff122d89615001ad4be7a61026b21
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: mode_jiminy LoadObjPalette(..., 0x20)
+    confidence: high
   - id: gUnk_09A3D2DC
     class: leaf_gfx
     format: palette
@@ -38,4 +53,37 @@ leaves:
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
     consumer: mode_mapinspect LoadObjPalette(..., 0x20)
+    confidence: high
+  - id: gUnk_09A3D57C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D57C
+    end: 0x09A3D59C
+    size: 32
+    sha1: 0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: mode_worldwarp LoadObjPalette(..., 32)
+    confidence: high
+  - id: gUnk_09A3D59C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D59C
+    end: 0x09A3D5BC
+    size: 32
+    sha1: e6bc11348dc0da8364f7adf8db1aa8253c4f99b2
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: mode_worldwarp LoadObjPalette(..., 32)
+    confidence: high
+  - id: gUnk_09A3D5BC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D5BC
+    end: 0x09A3D5DC
+    size: 32
+    sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: mode_worldwarp LoadObjPalette(..., 32)
     confidence: high

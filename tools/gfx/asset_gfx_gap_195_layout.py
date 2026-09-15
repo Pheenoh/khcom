@@ -1,7 +1,7 @@
-"""Layout for asset_gfx_gap_195 host mega + first leaf gUnk_09A3D2DC (32-byte palette).
+"""Layout for asset_gfx_gap_195 host mega + palette leaves (32B each).
 
-Parent mega stays slice until fuller pack RE. Built mode rebuilds only the leaf via
-gbagfx PNG(indexed)->gbapal and patches it into a copy of the extract slice.
+Parent mega stays slice until fuller pack RE. Built mode rebuilds listed leaves via
+gbagfx PNG(indexed)->gbapal and patches them into a copy of the extract slice.
 MovieOpen asset_gfx remux is intentionally untouched.
 """
 import hashlib
@@ -9,10 +9,50 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 
-# First leaf: LoadObjPalette(..., 0x20) in mode_mapinspect; ABS symbol gUnk_09A3D2DC.
-LEAF_ID = "gUnk_09A3D2DC"
 LEAF_SIZE = 0x20
 LEAF_FORMAT = "palette"
+
+# Shared leaf metadata (rom addresses are per-version below).
+# Consumers: LoadObjPalette(..., 0x20) / LoadObjPalette(..., 32).
+LEAF_META = {
+    "gUnk_09A3CC9C": {
+        "consumer": "LoadObjPalette(..., 0x20) mode_jiminy",
+        "expected_sha1": "099b710e870ff122d89615001ad4be7a61026b21",
+    },
+    "gUnk_09A3D2DC": {
+        "consumer": "LoadObjPalette(..., 0x20) mode_mapinspect",
+        "expected_sha1": "dc1c394483e795a1adf63ab5ba27dac00a0db865",
+    },
+    "gUnk_09A3D57C": {
+        "consumer": "LoadObjPalette(..., 32) mode_worldwarp",
+        "expected_sha1": "0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46",
+    },
+    "gUnk_09A3D59C": {
+        "consumer": "LoadObjPalette(..., 32) mode_worldwarp",
+        "expected_sha1": "e6bc11348dc0da8364f7adf8db1aa8253c4f99b2",
+    },
+    "gUnk_09A3D5BC": {
+        "consumer": "LoadObjPalette(..., 32) mode_worldwarp",
+        "expected_sha1": "ac63649ee098c799ad4e03781c54bc1c959d906a",
+    },
+}
+
+
+def _leaf(symbol, rom_start):
+    meta = LEAF_META[symbol]
+    return {
+        "id": symbol,
+        "symbol": symbol,
+        "rom_start": rom_start,
+        "rom_end": rom_start + LEAF_SIZE,
+        "size": LEAF_SIZE,
+        "format": LEAF_FORMAT,
+        "png": f"{symbol}.png",
+        "gbapal": f"{symbol}.gbapal",
+        "consumer": meta["consumer"],
+        "expected_sha1": meta["expected_sha1"],
+    }
+
 
 VERSIONS = {
     "us": {
@@ -26,18 +66,13 @@ VERSIONS = {
         "asm_unit": "asset_gfx_gap_195.s",
         "global_sym": "data_0999389C",
         "expected_sha256": "d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419",
-        "leaf": {
-            "id": LEAF_ID,
-            "symbol": "gUnk_09A3D2DC",
-            "rom_start": 0x09A3D2DC,
-            "rom_end": 0x09A3D2FC,
-            "size": LEAF_SIZE,
-            "format": LEAF_FORMAT,
-            "png": "gUnk_09A3D2DC.png",
-            "gbapal": "gUnk_09A3D2DC.gbapal",
-            "consumer": "LoadObjPalette(..., 0x20) mode_mapinspect",
-            "expected_sha1": "dc1c394483e795a1adf63ab5ba27dac00a0db865",
-        },
+        "leaves": [
+            _leaf("gUnk_09A3CC9C", 0x09A3CC9C),
+            _leaf("gUnk_09A3D2DC", 0x09A3D2DC),
+            _leaf("gUnk_09A3D57C", 0x09A3D57C),
+            _leaf("gUnk_09A3D59C", 0x09A3D59C),
+            _leaf("gUnk_09A3D5BC", 0x09A3D5BC),
+        ],
     },
     "jp": {
         "rom_base": 0x099483B0,
@@ -50,18 +85,13 @@ VERSIONS = {
         "asm_unit": "asset_gfx_gap_195.s",
         "global_sym": "data_099483B0",
         "expected_sha256": "a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c",
-        "leaf": {
-            "id": LEAF_ID,
-            "symbol": "gUnk_09A3D2DC",
-            "rom_start": 0x099F1D64,
-            "rom_end": 0x099F1D84,
-            "size": LEAF_SIZE,
-            "format": LEAF_FORMAT,
-            "png": "gUnk_09A3D2DC.png",
-            "gbapal": "gUnk_09A3D2DC.gbapal",
-            "consumer": "LoadObjPalette(..., 0x20) mode_mapinspect",
-            "expected_sha1": "dc1c394483e795a1adf63ab5ba27dac00a0db865",
-        },
+        "leaves": [
+            _leaf("gUnk_09A3CC9C", 0x099F1724),
+            _leaf("gUnk_09A3D2DC", 0x099F1D64),
+            _leaf("gUnk_09A3D57C", 0x099F2004),
+            _leaf("gUnk_09A3D59C", 0x099F2024),
+            _leaf("gUnk_09A3D5BC", 0x099F2044),
+        ],
     },
     "eu": {
         "rom_base": 0x09999B58,
@@ -74,18 +104,13 @@ VERSIONS = {
         "asm_unit": "asset_gfx_gap_195.s",
         "global_sym": "data_09999B58",
         "expected_sha256": "5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29",
-        "leaf": {
-            "id": LEAF_ID,
-            "symbol": "gUnk_09A3D2DC",
-            "rom_start": 0x09A9ADA0,
-            "rom_end": 0x09A9ADC0,
-            "size": LEAF_SIZE,
-            "format": LEAF_FORMAT,
-            "png": "gUnk_09A3D2DC.png",
-            "gbapal": "gUnk_09A3D2DC.gbapal",
-            "consumer": "LoadObjPalette(..., 0x20) mode_mapinspect",
-            "expected_sha1": "dc1c394483e795a1adf63ab5ba27dac00a0db865",
-        },
+        "leaves": [
+            _leaf("gUnk_09A3CC9C", 0x09A9A760),
+            _leaf("gUnk_09A3D2DC", 0x09A9ADA0),
+            _leaf("gUnk_09A3D57C", 0x09A9B040),
+            _leaf("gUnk_09A3D59C", 0x09A9B060),
+            _leaf("gUnk_09A3D5BC", 0x09A9B080),
+        ],
     },
 }
 
@@ -104,14 +129,13 @@ def sha1_hex(data):
     return hashlib.sha1(data).hexdigest()
 
 
-def leaf_offset(spec):
-    leaf = spec["leaf"]
+def leaf_offset(spec, leaf):
     return leaf["rom_start"] - spec["rom_base"]
 
 
-def leaf_bytes(data, spec):
-    off = leaf_offset(spec)
-    size = spec["leaf"]["size"]
+def leaf_bytes(data, spec, leaf):
+    off = leaf_offset(spec, leaf)
+    size = leaf["size"]
     return data[off : off + size]
 
 
