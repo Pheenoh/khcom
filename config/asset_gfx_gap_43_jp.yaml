@@ -1,4 +1,4 @@
-# JP asset_gfx_gap_43 host mega + leaf gUnk_09618118 (ABS 0x095D0BF4).
+# JP asset_gfx_gap_43 host mega + palette leaves (ABS aliases of US names).
 # Policy B: sources/bins not committed. Parent mega stays slice by default.
 schema_version: 1
 id: asset_gfx_gap_43
@@ -23,6 +23,30 @@ tools:
 sha256_slice: 572af203f1c3236133e2794c7a975462bc9215ff8d6a106d961da3e03aff17dd
 status: leaf_palette_scaffold
 children:
+  - id: gUnk_09611AB8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09611AB8
+    rom: { start: 0x095CA594, end: 0x095CA5B4, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_43/gUnk_09611AB8.png
+    sha1: 1b135bb0893b38982f2f5e7481348bc1de7ad88f
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy/msg
+  - id: gUnk_09614AB8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09614AB8
+    rom: { start: 0x095CD594, end: 0x095CD5B4, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_43/gUnk_09614AB8.png
+    sha1: f3ce5818afe11cc0bd86f13cdba2823ebe143e2c
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
+  - id: gUnk_09614D58
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09614D58
+    rom: { start: 0x095CD834, end: 0x095CD854, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_43/gUnk_09614D58.png
+    sha1: ae9775356b47fe8f99e2cfadbdcb0d41157fb69a
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
   - id: gUnk_09618118
     class: leaf_gfx
     format: palette

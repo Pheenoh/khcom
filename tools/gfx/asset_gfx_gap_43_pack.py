@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Dual-path pack helper for asset_gfx_gap_43 leaf gUnk_09618118 (palette).
+"""Dual-path pack helper for asset_gfx_gap_43 palette leaves.
 
 slice (default): host mega remains baserom extract .incbin.
-built: gbagfx PNG(indexed)->gbapal for the leaf, patch into mega copy.
+built: gbagfx PNG(indexed)->gbapal for each leaf, patch into mega copy.
 
 Does not touch MovieOpen asset_gfx remux / asset_fmv.
 """
@@ -102,12 +102,11 @@ def gbagfx_png_to_gbapal(png_path, out_path):
 def cmd_status(version):
     spec = version_spec(version)
     extract = spec["extract"]
-    leaf = spec["leaf"]
     print(f"version {version}")
     print(f"manifest {spec['manifest'].relative_to(ROOT)}")
     print(f"unit {spec['asm_unit']} sym {spec['global_sym']}")
     print(f"path_mode_default slice")
-    print(f"leaf {leaf['id']} rom=0x{leaf['rom_start']:08X} size={leaf['size']} format={leaf['format']}")
+    print(f"leaf_count {len(spec['leaves'])}")
     print(f"gbagfx_present {GBAGFX.exists()}")
     if not extract.exists():
         print(f"slice missing {extract.relative_to(ROOT)}")
@@ -118,61 +117,75 @@ def cmd_status(version):
     print(f"slice {extract.relative_to(ROOT)}")
     print(f"sha256 {digest}")
     print(f"match_expected {ok}")
-    pal = leaf_bytes(data, spec)
-    print(f"leaf_sha1 {sha1_hex(pal)}")
-    print(f"leaf_match_expected {sha1_hex(pal) == leaf['expected_sha1']}")
+    all_leaf_ok = True
+    for leaf in spec["leaves"]:
+        pal = leaf_bytes(data, spec, leaf)
+        match = sha1_hex(pal) == leaf["expected_sha1"]
+        all_leaf_ok = all_leaf_ok and match
+        print(
+            f"leaf {leaf['id']} rom=0x{leaf['rom_start']:08X} "
+            f"sha1={sha1_hex(pal)} match={match}"
+        )
     print(f"built_present {spec['build'].exists()}")
     if spec["build"].exists():
         built = spec["build"].read_bytes()
         print(f"built_sha256 {sha256_hex(built)}")
         print(f"built_matches_slice {sha256_hex(built) == spec['expected_sha256']}")
-        bpal = leaf_bytes(built, spec)
-        print(f"built_leaf_sha1 {sha1_hex(bpal)}")
-        print(f"built_leaf_match {sha1_hex(bpal) == leaf['expected_sha1']}")
+        for leaf in spec["leaves"]:
+            bpal = leaf_bytes(built, spec, leaf)
+            print(
+                f"built_leaf {leaf['id']} sha1={sha1_hex(bpal)} "
+                f"match={sha1_hex(bpal) == leaf['expected_sha1']}"
+            )
     src = spec["source_root"]
-    print(f"source_root_present {(src / leaf['png']).exists()}")
-    return 0 if ok else 1
+    for leaf in spec["leaves"]:
+        print(f"source_png {leaf['id']} {(src / leaf['png']).exists()}")
+    return 0 if ok and all_leaf_ok else 1
 
 
 def cmd_dump(version):
     spec = version_spec(version)
     data = require_extract(spec)
-    leaf = spec["leaf"]
-    pal = leaf_bytes(data, spec)
-    if sha1_hex(pal) != leaf["expected_sha1"]:
-        print(f"error: leaf sha1 mismatch: {sha1_hex(pal)}", file=sys.stderr)
-        return 1
     root = spec["source_root"]
     root.mkdir(parents=True, exist_ok=True)
-    gbapal_path = root / leaf["gbapal"]
-    png_path = root / leaf["png"]
-    gbapal_path.write_bytes(pal)
-    write_indexed_palette_png(png_path, pal)
-    # Prove gbagfx roundtrip when available.
-    if GBAGFX.exists():
-        tmp = root / ("." + leaf["gbapal"] + ".roundtrip.gbapal")
-        gbagfx_png_to_gbapal(png_path, tmp)
-        rt = tmp.read_bytes()
-        tmp.unlink(missing_ok=True)
-        if rt != pal:
-            print("error: gbagfx PNG->gbapal roundtrip mismatch", file=sys.stderr)
+    for leaf in spec["leaves"]:
+        pal = leaf_bytes(data, spec, leaf)
+        if sha1_hex(pal) != leaf["expected_sha1"]:
+            print(
+                f"error: leaf {leaf['id']} sha1 mismatch: {sha1_hex(pal)}",
+                file=sys.stderr,
+            )
             return 1
-        print("gbagfx_roundtrip_ok True")
-    else:
-        print("gbagfx_roundtrip_ok skipped (gbagfx missing)")
-    print(f"dumped {gbapal_path.relative_to(ROOT)}")
-    print(f"dumped {png_path.relative_to(ROOT)}")
-    print(f"leaf_sha1 {sha1_hex(pal)}")
+        gbapal_path = root / leaf["gbapal"]
+        png_path = root / leaf["png"]
+        gbapal_path.write_bytes(pal)
+        write_indexed_palette_png(png_path, pal)
+        if GBAGFX.exists():
+            tmp = root / ("." + leaf["gbapal"] + ".roundtrip.gbapal")
+            gbagfx_png_to_gbapal(png_path, tmp)
+            rt = tmp.read_bytes()
+            tmp.unlink(missing_ok=True)
+            if rt != pal:
+                print(
+                    f"error: gbagfx PNG->gbapal roundtrip mismatch for {leaf['id']}",
+                    file=sys.stderr,
+                )
+                return 1
+            print(f"gbagfx_roundtrip_ok {leaf['id']}")
+        else:
+            print(f"gbagfx_roundtrip_ok {leaf['id']} skipped (gbagfx missing)")
+        print(f"dumped {gbapal_path.relative_to(ROOT)}")
+        print(f"dumped {png_path.relative_to(ROOT)}")
+        print(f"leaf_sha1 {leaf['id']} {sha1_hex(pal)}")
     return 0
 
 
-def ensure_png(spec):
-    leaf = spec["leaf"]
+def ensure_png(spec, leaf):
     png_path = spec["source_root"] / leaf["png"]
     if png_path.exists():
         return png_path
     data = require_extract(spec)
-    pal = leaf_bytes(data, spec)
+    pal = leaf_bytes(data, spec, leaf)
     write_indexed_palette_png(png_path, pal)
     (spec["source_root"] / leaf["gbapal"]).write_bytes(pal)
     return png_path
@@ -181,24 +194,29 @@ def ensure_png(spec):
 def cmd_built(version):
     spec = version_spec(version)
     data = bytearray(require_extract(spec))
-    leaf = spec["leaf"]
-    png_path = ensure_png(spec)
     require_gbagfx()
-    out_pal = spec["source_root"] / leaf["gbapal"]
-    gbagfx_png_to_gbapal(png_path, out_pal)
-    pal = out_pal.read_bytes()
-    if len(pal) != leaf["size"]:
-        print(
-            f"error: built gbapal size {len(pal)} != {leaf['size']} "
-            f"(PNG PLTE must have exactly {leaf['size'] // 2} colors)",
-            file=sys.stderr,
-        )
-        return 1
-    if sha1_hex(pal) != leaf["expected_sha1"]:
-        print(f"error: built leaf sha1 mismatch: {sha1_hex(pal)}", file=sys.stderr)
-        return 1
-    off = leaf_offset(spec)
-    data[off : off + leaf["size"]] = pal
+    for leaf in spec["leaves"]:
+        png_path = ensure_png(spec, leaf)
+        out_pal = spec["source_root"] / leaf["gbapal"]
+        gbagfx_png_to_gbapal(png_path, out_pal)
+        pal = out_pal.read_bytes()
+        if len(pal) != leaf["size"]:
+            print(
+                f"error: built gbapal size {len(pal)} != {leaf['size']} for {leaf['id']} "
+                f"(PNG PLTE must have exactly {leaf['size'] // 2} colors)",
+                file=sys.stderr,
+            )
+            return 1
+        if sha1_hex(pal) != leaf["expected_sha1"]:
+            print(
+                f"error: built leaf {leaf['id']} sha1 mismatch: {sha1_hex(pal)}",
+                file=sys.stderr,
+            )
+            return 1
+        off = leaf_offset(spec, leaf)
+        data[off : off + leaf["size"]] = pal
+        print(f"patched {leaf['id']} leaf_sha1 {sha1_hex(pal)}")
+        print(f"source_png {png_path.relative_to(ROOT)}")
     digest = sha256_hex(data)
     if digest != spec["expected_sha256"]:
         print(f"error: patched mega sha256 mismatch: {digest}", file=sys.stderr)
@@ -207,9 +225,7 @@ def cmd_built(version):
     spec["build"].write_bytes(data)
     print(f"built {spec['build'].relative_to(ROOT)}")
     print(f"sha256 {digest}")
-    print(f"leaf_sha1 {sha1_hex(pal)}")
     print(f"match_expected True")
-    print(f"source_png {png_path.relative_to(ROOT)}")
     return 0
 
 

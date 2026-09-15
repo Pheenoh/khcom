@@ -1,4 +1,4 @@
-# US asset_gfx_gap_43 host mega + first leaf gUnk_09618118 (palette, 32B).
+# US asset_gfx_gap_43 host mega + palette leaves (32B each).
 # Policy B: PNG/gbapal/bins local/gitignored only. Parent mega stays slice until fuller pack RE.
 schema_version: 1
 id: asset_gfx_gap_43
@@ -23,11 +23,42 @@ tools:
 sha256_slice: 18201fa5c16ec1a38e758b439066e8dd048de7b19417e4bc9796eb0938c9babd
 status: leaf_palette_scaffold
 note: >
-  Dual-path scaffold for first leaf only. Default path_mode is slice so check.sh
-  stays on extract .incbin. Built mode (configure --asset-gfx-gap-43-mode=built)
-  patches gbagfx PNG->gbapal into a mega copy; does not affect MovieOpen asset_gfx.
-  Glyph sheet gUnk_090AB5B2 (msg) stays deferred (sheet-slice caveats).
+  Dual-path scaffold for four LoadObjPalette 32B leaves in the same mega.
+  Default path_mode is slice so check.sh stays on extract .incbin. Built mode
+  (configure --asset-gfx-gap-43-mode=built) patches gbagfx PNG->gbapal into a
+  mega copy; does not affect MovieOpen asset_gfx. Glyph sheet gUnk_090AB5B2
+  (msg) stays deferred (sheet-slice caveats).
 children:
+  - id: gUnk_09611AB8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09611AB8
+    rom: { start: 0x09611AB8, end: 0x09611AD8, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09611AB8.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09611AB8.gbapal
+    sha1: 1b135bb0893b38982f2f5e7481348bc1de7ad88f
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy/msg
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09614AB8
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09614AB8
+    rom: { start: 0x09614AB8, end: 0x09614AD8, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09614AB8.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09614AB8.gbapal
+    sha1: f3ce5818afe11cc0bd86f13cdba2823ebe143e2c
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09614D58
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09614D58
+    rom: { start: 0x09614D58, end: 0x09614D78, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09614D58.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09614D58.gbapal
+    sha1: ae9775356b47fe8f99e2cfadbdcb0d41157fb69a
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
+    path_mode_built: gbagfx_png_to_gbapal
   - id: gUnk_09618118
     class: leaf_gfx
     format: palette
