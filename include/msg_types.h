@@ -42,7 +42,7 @@ typedef struct EventCharaKeyframe {
 } EventCharaKeyframe;
 
 typedef struct EventCharaTrack {
-    EventCharaKeyframe* unk_00;
+    EventCharaKeyframe* keyframes;
     u8 unk_04;
     u8 unk_05[3];
 } EventCharaTrack;

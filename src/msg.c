@@ -8484,9 +8484,9 @@ void event_chara_0(EventCharaWork* p, u32* a) {
 
     TaskPoolInit(&p->tasks, 8);
     *(s32*)&p->unk_024 = *a;
-    p->unk_000 = gUnk_09EE3FB4[p->unk_024]->charaTracks[p->unk_027].unk_00;
+    p->keyframes = gUnk_09EE3FB4[p->unk_024]->charaTracks[p->unk_027].keyframes;
     p->unk_1A0 = 0;
-    p->unk_1A4 = p->unk_000->unk_04;
+    p->unk_1A4 = p->keyframes->unk_04;
     p->unk_188 = 0;
     p->unk_18C = 0;
     p->unk_198 = 0;
@@ -8526,9 +8526,9 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_01C = 0x10000;
         gBtlWork->unk_020 = 0x14000;
         gBtlWork->unk_01A = 15;
-        p->unk_02C = p->unk_000->unk_08;
-        p->unk_030 = p->unk_000->unk_0C;
-        p->unk_034 = p->unk_000->unk_10;
+        p->unk_02C = p->keyframes->unk_08;
+        p->unk_030 = p->keyframes->unk_0C;
+        p->unk_034 = p->keyframes->unk_10;
         TaskCreate(&p->tasks, &gTaskDescBosTm, p->unk_028);
         break;
     case 96:
@@ -8641,9 +8641,9 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gUnk_02039DC8->unk_54 = gBtlWork->y;
         gUnk_02039DC8->unk_68 = 0;
         gUnk_02039DC8->unk_6A = 0;
-        p->unk_02C = p->unk_000->unk_08;
-        p->unk_030 = p->unk_000->unk_0C;
-        p->unk_034 = p->unk_000->unk_10;
+        p->unk_02C = p->keyframes->unk_08;
+        p->unk_030 = p->keyframes->unk_0C;
+        p->unk_034 = p->keyframes->unk_10;
         SetBattleBounds(0, 256, 328, 424);
         TaskCreate(&p->tasks, &gTaskDescBosDsd, p->unk_028);
         break;
@@ -8699,8 +8699,8 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_0B3 = 5;
         break;
     default:
-        if ((p->unk_000->unk_18 & 0x2000) == 0) {
-            func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->unk_000->unk_00, p->unk_000->unk_08, p->unk_000->unk_0C, p->unk_000->unk_10);
+        if ((p->keyframes->unk_18 & 0x2000) == 0) {
+            func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->keyframes->unk_00, p->keyframes->unk_08, p->keyframes->unk_0C, p->keyframes->unk_10);
             p->unk_1B4 = 1;
         } else {
             p->unk_1B4 = 0;
@@ -8727,26 +8727,26 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     func_08070AD4(p);
 
     if (t != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
-            ((void (*)(EventCharaWork*, void*))p->unk_000[p->unk_1A0].unk_1C)(p, a);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
+            ((void (*)(EventCharaWork*, void*))p->keyframes[p->unk_1A0].unk_1C)(p, a);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
         }
     }
 
-    if (p->unk_000[p->unk_1A0].unk_18 & 0x100) {
+    if (p->keyframes[p->unk_1A0].unk_18 & 0x100) {
         p->unk_03C |= 4;
     } else {
         p->unk_03C &= ~4;
     }
 
-    if (p->unk_000[p->unk_1A0].unk_18 & 0x200) {
+    if (p->keyframes[p->unk_1A0].unk_18 & 0x200) {
         gUnk_02039DC8->unk_64 |= 1;
         gUnk_02039DC8->unk_64 |= 4;
         p->unk_19C = 0;
@@ -8799,7 +8799,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
         return 0;
     }
 
-    if (p->unk_000[p->unk_1A0].unk_18 & 0x100000) {
+    if (p->keyframes[p->unk_1A0].unk_18 & 0x100000) {
         if (gFrameCounter % 6 == 0) {
             u16 v = GetRandom() % 7 + 4;
 
@@ -8820,7 +8820,7 @@ void event_chara_2(EventCharaWork* p) {
     u16 h;
 
     save = p->unk_034;
-    e = &p->unk_000[p->unk_1A0];
+    e = &p->keyframes[p->unk_1A0];
 
     if (e->unk_18 & 0x80) {
         p->unk_034 = gSineTable[p->unk_1B0] * 2 + save;
@@ -8860,40 +8860,40 @@ void event_chara_3(EventCharaWork* p) {
     }
 }
 u8 func_0806E570(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
+    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
     u16 v;
 
-    if (p->unk_000[p->unk_1A0].unk_04 > gUnk_02039DC8->unk_6C) {
+    if (p->keyframes[p->unk_1A0].unk_04 > gUnk_02039DC8->unk_6C) {
         return 0;
     }
 
-    if ((p->unk_000[p->unk_1A0].unk_18 & 0x8000) != 0) {
+    if ((p->keyframes[p->unk_1A0].unk_18 & 0x8000) != 0) {
         return 0;
     }
 
     p->unk_1A0++;
-    p->unk_1A4 = p->unk_000[p->unk_1A0].unk_04 - gUnk_02039DC8->unk_6C;
-    p->unk_17C = p->unk_000[p->unk_1A0].unk_00;
+    p->unk_1A4 = p->keyframes[p->unk_1A0].unk_04 - gUnk_02039DC8->unk_6C;
+    p->unk_17C = p->keyframes[p->unk_1A0].unk_00;
 
-    if ((p->unk_000[p->unk_1A0].unk_18 & 0x4000) != 0) {
-        func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->unk_000[p->unk_1A0].unk_00,
-                      p->unk_000[p->unk_1A0].unk_08, p->unk_000[p->unk_1A0].unk_0C,
-                      p->unk_000[p->unk_1A0].unk_10);
+    if ((p->keyframes[p->unk_1A0].unk_18 & 0x4000) != 0) {
+        func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->keyframes[p->unk_1A0].unk_00,
+                      p->keyframes[p->unk_1A0].unk_08, p->keyframes[p->unk_1A0].unk_0C,
+                      p->keyframes[p->unk_1A0].unk_10);
         p->unk_1B4 = 1;
         func_08072C34(p);
     }
 
-    if ((p->unk_000[p->unk_1A0].unk_18 & 0x10000) != 0) {
+    if ((p->keyframes[p->unk_1A0].unk_18 & 0x10000) != 0) {
         p->unk_1B5 = 1;
     }
 
-    if ((p->unk_000[p->unk_1A0].unk_18 & 0x800) != 0) {
+    if ((p->keyframes[p->unk_1A0].unk_18 & 0x800) != 0) {
         LoadPalette(&gUnk_096148D8[0x100], (void*)(p->unk_044 * 32 + 0x05000200), 32);
-    } else if ((p->unk_000[p->unk_1A0 - 1].unk_18 & 0x800) != 0) {
+    } else if ((p->keyframes[p->unk_1A0 - 1].unk_18 & 0x800) != 0) {
         LoadPalette(gUnk_0813B09C[p->unk_026].unk_00.palette, (void*)(p->unk_044 * 32 + 0x05000200), 32);
     }
 
-    if ((p->unk_000[p->unk_1A0].unk_18 & 0x100000) != 0) {
+    if ((p->keyframes[p->unk_1A0].unk_18 & 0x100000) != 0) {
         gBldCnt = 0xF40;
         v = p->unk_03E;
         func_0801CE00(p->unk_028, v | 4);
@@ -8904,8 +8904,8 @@ u8 func_0806E570(EventCharaWork* p) {
     }
 
     if (p->unk_1B4 != 0) {
-        if ((p->unk_000[p->unk_1A0].unk_18 & 15) == 2) {
-            EvtObjSetPos(p->unk_028, p->unk_000[p->unk_1A0].unk_08, p->unk_000[p->unk_1A0].unk_0C, p->unk_000[p->unk_1A0].unk_10);
+        if ((p->keyframes[p->unk_1A0].unk_18 & 15) == 2) {
+            EvtObjSetPos(p->unk_028, p->keyframes[p->unk_1A0].unk_08, p->keyframes[p->unk_1A0].unk_0C, p->keyframes[p->unk_1A0].unk_10);
         }
 
         func_0801CD74(p->unk_028, p->unk_17C);
@@ -8913,18 +8913,18 @@ u8 func_0806E570(EventCharaWork* p) {
         return 1;
     }
 
-    if (p->unk_000[p->unk_1A0].unk_00 == 0x3AF) {
+    if (p->keyframes[p->unk_1A0].unk_00 == 0x3AF) {
         func_0810B350(gUnk_02039DC8->unk_00[16]);
     }
 
-    if (p->unk_000[p->unk_1A0].unk_00 == 0x3AB) {
+    if (p->keyframes[p->unk_1A0].unk_00 == 0x3AB) {
         func_0810C2C4(gUnk_02039DC8->unk_00[16]);
     }
 
     return 0;
 }
 void func_0806E7A8(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
+    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
     BtlObj* t;
 
     if (e->unk_00 == 0x3A7) {
@@ -8937,16 +8937,16 @@ void func_0806E7A8(EventCharaWork* p) {
 
     switch (e->unk_18 & 15) {
     case 2:
-        EvtObjSetPos(p->unk_028, p->unk_000[p->unk_1A0].unk_08, p->unk_000[p->unk_1A0].unk_0C, p->unk_000[p->unk_1A0].unk_10);
+        EvtObjSetPos(p->unk_028, p->keyframes[p->unk_1A0].unk_08, p->keyframes[p->unk_1A0].unk_0C, p->keyframes[p->unk_1A0].unk_10);
         break;
     case 3:
-        ApproachValue(&p->unk_02C, p->unk_000[p->unk_1A0].unk_08, p->unk_1A4);
-        ApproachValue(&p->unk_030, p->unk_000[p->unk_1A0].unk_0C, p->unk_1A4);
-        ApproachValue(&p->unk_034, p->unk_000[p->unk_1A0].unk_10, p->unk_1A4);
+        ApproachValue(&p->unk_02C, p->keyframes[p->unk_1A0].unk_08, p->unk_1A4);
+        ApproachValue(&p->unk_030, p->keyframes[p->unk_1A0].unk_0C, p->unk_1A4);
+        ApproachValue(&p->unk_034, p->keyframes[p->unk_1A0].unk_10, p->unk_1A4);
         p->unk_1A4--;
 
         if (p->unk_1A4 == 0) {
-            if ((p->unk_000[p->unk_1A0].unk_18 & 0x1000) == 0) {
+            if ((p->keyframes[p->unk_1A0].unk_18 & 0x1000) == 0) {
                 func_0806E9BC(p);
             }
         }
@@ -8985,7 +8985,7 @@ void func_0806E7A8(EventCharaWork* p) {
 }
 
 void func_0806E9BC(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
+    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
 
     func_0801CD74(p->unk_028, e->unk_14);
 }
@@ -9034,14 +9034,14 @@ u8 func_0806EA28(EventCharaWork* p, void* a) {
     if (t != 0) {
         p->unk_034 = p->unk_198;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9084,14 +9084,14 @@ u8 func_0806EBE0(EventCharaWork* p, void* a) {
     if (t != 0) {
         p->unk_034 = p->unk_198;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9134,14 +9134,14 @@ u8 func_0806ED2C(EventCharaWork* p, void* a) {
     if (t != 0) {
         p->unk_034 = p->unk_198;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9180,14 +9180,14 @@ u8 func_0806EE6C(EventCharaWork* p, void* a) {
     }
 
     if (t != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9205,12 +9205,12 @@ u8 func_0806EF40(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9226,7 +9226,7 @@ u8 func_0806EF40(void* work, void* a) {
     SetTaskUpdate(a, (void*)func_0806F02C);
 
     if (p->unk_026 == 3) {
-        e = &p->unk_000[p->unk_1A0];
+        e = &p->keyframes[p->unk_1A0];
         if ((e->unk_18 & 0x80000) == 0) {
             m4aSongNumStart(0x14A);
         }
@@ -9248,14 +9248,14 @@ u8 func_0806F02C(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9279,12 +9279,12 @@ u8 func_0806F114(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9300,7 +9300,7 @@ u8 func_0806F114(void* work, void* a) {
     SetTaskUpdate(a, (void*)func_0806F204);
 
     if (p->unk_026 == 3) {
-        e = &p->unk_000[p->unk_1A0];
+        e = &p->keyframes[p->unk_1A0];
         if ((e->unk_18 & 0x80000) == 0) {
             m4aSongNumStart(0x14B);
         }
@@ -9322,14 +9322,14 @@ u8 func_0806F204(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9352,12 +9352,12 @@ u8 func_0806F2EC(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9388,14 +9388,14 @@ u8 func_0806F3A8(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9412,12 +9412,12 @@ u8 func_0806F47C(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9448,14 +9448,14 @@ u8 func_0806F53C(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9484,14 +9484,14 @@ u8 func_0806F64C(EventCharaWork* p, void* a) {
     }
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9520,14 +9520,14 @@ u8 func_0806F770(EventCharaWork* p, void* a) {
     }
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9557,14 +9557,14 @@ u8 func_0806F898(EventCharaWork* p, void* a) {
     }
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9578,8 +9578,8 @@ void func_0806F94C(EventCharaWork* p) {
 
     z = p->unk_03E;
 
-    if (p->unk_000[p->unk_1A0].unk_18 & 0x40) {
-        if (p->unk_000[p->unk_1A0].unk_18 & 0x10) {
+    if (p->keyframes[p->unk_1A0].unk_18 & 0x40) {
+        if (p->keyframes[p->unk_1A0].unk_18 & 0x10) {
             z |= 0x401;
             z &= 0xF7FF;
             func_0801CE00(p->unk_028, z);
@@ -9588,7 +9588,7 @@ void func_0806F94C(EventCharaWork* p) {
             z &= 0xFBFF;
             func_0801CE00(p->unk_028, z);
 
-            if ((p->unk_000[p->unk_1A0].unk_18 & 0x400) == 0) {
+            if ((p->keyframes[p->unk_1A0].unk_18 & 0x400) == 0) {
                 z |= 0x801;
                 func_0801CE00(p->unk_028, z);
             } else {
@@ -9598,7 +9598,7 @@ void func_0806F94C(EventCharaWork* p) {
             }
         }
     } else {
-        if (p->unk_000[p->unk_1A0].unk_18 & 0x10) {
+        if (p->keyframes[p->unk_1A0].unk_18 & 0x10) {
             z |= 0x400;
             z &= 0xF7FF;
             z &= 0xFFFE;
@@ -9609,7 +9609,7 @@ void func_0806F94C(EventCharaWork* p) {
             z &= 0xFFFE;
             func_0801CE00(p->unk_028, z);
 
-            if ((p->unk_000[p->unk_1A0].unk_18 & 0x400) == 0) {
+            if ((p->keyframes[p->unk_1A0].unk_18 & 0x400) == 0) {
                 z |= 0x800;
                 z &= 0xFFFE;
                 func_0801CE00(p->unk_028, z);
@@ -9650,8 +9650,8 @@ u8 func_0806FAB8(EventCharaWork* p, void* a) {
         p->tiles = NULL;
         p->palette = NULL;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
@@ -9667,12 +9667,12 @@ u8 func_0806FB6C(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9703,14 +9703,14 @@ u8 func_0806FC28(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9727,12 +9727,12 @@ u8 func_0806FCF4(void* work, void* a) {
     func_08070AD4(p);
 
     if (func_0806E570(p) != 0) {
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -9764,14 +9764,14 @@ u8 func_0806FDB0(EventCharaWork* p, void* a) {
     if (func_0806E570(p) != 0) {
         gBldCnt = 0;
 
-        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
-            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+        if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
             SetTaskUpdate(a, (void*)event_chara_1);
         }
 
-        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
-            p->unk_000[p->unk_1A0].unk_20(p);
+        if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
+            p->keyframes[p->unk_1A0].unk_20(p);
             p->unk_1B2 = 1;
         } else {
             p->unk_1B2 = 0;
@@ -10310,7 +10310,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     x = (p->unk_02C >> 8) - (gUnk_02039DC8->x >> 8);
     y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->y >> 8);
 
-    switch (p->unk_000[p->unk_1A0].unk_00) {
+    switch (p->keyframes[p->unk_1A0].unk_00) {
     case 0x2EB:
     case 0x2F1:
     case 0x2F2:

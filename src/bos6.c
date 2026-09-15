@@ -18,22 +18,22 @@ s32 func_08109EA8(s32 a) {
 }
 
 PcAnimStep* func_08109EB0(PcWork* work) {
-    return work->unk_02C != 0 ? &work->unk_02C[work->unk_032] : gUnk_09A4AF34;
+    return work->animSteps != 0 ? &work->animSteps[work->unk_032] : gUnk_09A4AF34;
 }
 
 PcSpriteCmd* func_08109ECC(PcWork* work) {
     PcAnimStep* step;
 
-    if (work->unk_02C == 0) {
+    if (work->animSteps == 0) {
         return gUnk_09A3DF34;
     }
-    step = &work->unk_02C[work->unk_032];
+    step = &work->animSteps[work->unk_032];
     return gUnk_09EF9C34[step->unk_20];
 }
 
 void func_08109EF8(PcWork* work, s32 a) {
-    if (work->unk_02C != gUnk_09EF9DB4[a]) {
-        work->unk_02C = gUnk_09EF9DB4[a];
+    if (work->animSteps != gUnk_09EF9DB4[a]) {
+        work->animSteps = gUnk_09EF9DB4[a];
         work->unk_030 = 0;
         work->unk_034 = 0;
         work->unk_032 = 0;
@@ -48,7 +48,7 @@ void func_08109F20(PcWork* work) {
 
     cont = work->unk_034 >= 0;
     while (cont) {
-        step = &work->unk_02C[work->unk_030];
+        step = &work->animSteps[work->unk_030];
         switch (step->unk_00) {
         case 0:
             work->unk_034++;
@@ -72,7 +72,7 @@ void func_08109F20(PcWork* work) {
             break;
         }
     }
-    step = &work->unk_02C[work->unk_032];
+    step = &work->animSteps[work->unk_032];
     if (step->unk_00 == 0) {
         if (work->unk_034 == 0) {
             v = work->unk_2E8;
@@ -123,10 +123,10 @@ void func_0810A018(PcWork* work) {
     s32 layer;
     u16* attributes;
 
-    if (work->unk_02C == 0) {
+    if (work->animSteps == 0) {
         return;
     }
-    step = &work->unk_02C[work->unk_032];
+    step = &work->animSteps[work->unk_032];
     if (step->unk_00 != 0) {
         return;
     }
@@ -204,7 +204,7 @@ void func_0810A018(PcWork* work) {
         }
     }
 
-    if (work->unk_02C == gUnk_09A4C278) {
+    if (work->animSteps == gUnk_09A4C278) {
         gBtlWork->unk_0D8 = i;
     } else {
         gBtlWork->unk_0D8 = 0xFFF6;
@@ -222,8 +222,8 @@ void func_0810A018(PcWork* work) {
 u8 func_0810A424(PcWork* work) {
     PcAnimStep* step;
 
-    if (work->unk_02C != 0) {
-        step = &work->unk_02C[work->unk_030];
+    if (work->animSteps != 0) {
+        step = &work->animSteps[work->unk_030];
         if (step->unk_00 != 2) {
             return 0;
         }
@@ -300,7 +300,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     work->unk_020 = 0x17000;
     work->unk_024 = 0x15400;
     work->unk_028 = -0x800;
-    work->unk_02C = 0;
+    work->animSteps = 0;
     work->unk_030 = 0;
     work->unk_034 = 0;
     work->unk_2E8 = 0;
@@ -1081,7 +1081,7 @@ void func_0810B844(PcFltWork* work) {
     AnimState* anim;
 
     work->unk_030 = work->unk_024;
-    if (work->unk_03C->unk_02 == 0) {
+    if (work->pos->unk_02 == 0) {
         if (func_0801BCA8(&work->unk_040) == 1) {
             work->unk_030 += 0x200;
             if (work->unk_000 != 1) {
@@ -1142,7 +1142,7 @@ void func_0810B95C(PcFltWork* work) {
     work->unk_030 = work->unk_024 + 0x1000;
     work->unk_002 -= 1;
     if (work->unk_002 < 0) {
-        if (work->unk_03C->unk_02 == 0) {
+        if (work->pos->unk_02 == 0) {
             work->unk_005 = 4;
             work->unk_002 = 0;
             AnimChange(&work->anim, 4, 0);
@@ -1181,7 +1181,7 @@ void func_0810B9DC(PcFltWork* work) {
 
 void func_0810BA14(PcFltWork* work) {
     work->unk_030 = work->unk_024;
-    if (work->unk_03C->unk_02 == 0) {
+    if (work->pos->unk_02 == 0) {
         work->unk_005 = 7;
         work->unk_002 = 0;
         AnimChange(&work->anim, 6, 0);
@@ -1219,7 +1219,7 @@ void func_0810BA74(PcFltWork* work) {
                 work->unk_002 = 1;
             }
         }
-    } else if (work->unk_03C->z <= 119) {
+    } else if (work->pos->z <= 119) {
         work->unk_005 = 3;
         work->unk_000 = 0;
         work->unk_002 = work->unk_004 * 30;
@@ -1230,18 +1230,18 @@ void func_0810BAE4(PcFltWork* work) {
     s32 f;
 
     if ((gBtlWork->unk_068 & 0x20000000) || (gBtlWork->unk_068 & 0x40) ||
-        work->unk_03C->y > 0) {
+        work->pos->y > 0) {
         f = -1;
     } else {
         f = work->unk_007;
     }
-    if (work->unk_005 != 8 && work->unk_03C->z > 0x257) {
+    if (work->unk_005 != 8 && work->pos->z > 0x257) {
         work->unk_005 = 8;
         work->unk_000 = 0;
         work->unk_002 = 0;
         work->unk_018 = 360;
     }
-    if (work->unk_03C->unk_02 == 0) {
+    if (work->pos->unk_02 == 0) {
         if (work->unk_00C > 0xF400) {
             work->unk_00C -= 32;
         }
@@ -1271,7 +1271,7 @@ void func_0810BAE4(PcFltWork* work) {
     if (f >= 0) {
         work->unk_028 = (((gUnk_09A4CCDC[work->unk_008 >> 8] * (work->unk_014 >> 8)) >> 8) + (work->unk_00C >> 8)) << 8;
         work->unk_02C = (((gUnk_09A4CADC[work->unk_008 >> 8] * (work->unk_016 >> 8)) >> 8) + (work->unk_010 >> 8)) << 8;
-        work->unk_008 = work->unk_008 - (((work->unk_03C->unk_00 * 3) << 4) / 256 - 112);
+        work->unk_008 = work->unk_008 - (((work->pos->unk_00 * 3) << 4) / 256 - 112);
     }
     switch (work->unk_005) {
     case 0:
@@ -1344,7 +1344,7 @@ void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg) {
     work->unk_01C = arg->unk_04;
     work->unk_020 = arg->unk_08;
     work->unk_024 = arg->unk_0C;
-    work->unk_03C = arg->unk_10;
+    work->pos = arg->unk_10;
     func_0810BAE4(work);
     func_0810BCD4(work);
 }
@@ -1364,7 +1364,7 @@ u8 task_bos_pc_flt_1(PcFltWork* work) {
         ColliderSetRadius(&work->unk_040, gUnk_09A4CEDC[id].unk_04);
     }
     func_0810BCD4(work);
-    work->unk_007 = work->unk_03C->unk_00 & 1;
+    work->unk_007 = work->pos->unk_00 & 1;
     return 1;
 }
 

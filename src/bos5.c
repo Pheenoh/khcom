@@ -574,7 +574,7 @@ void func_080FBA14(MdWork* work, s16 id) {
     MdAnimDef* d;
     MdAnimFrame* f;
 
-    a = &work->unk_1A4;
+    a = &work->anim;
     a->animId = id;
     base = gUnk_09992E24;
     d = base + id;
@@ -588,7 +588,7 @@ void func_080FBA14(MdWork* work, s16 id) {
 void func_080FBA4C(MdWork* work) {
     MdAnim* a;
 
-    a = &work->unk_1A4;
+    a = &work->anim;
     a->timer--;
 
     if (a->timer < 0) {
@@ -605,7 +605,7 @@ void func_080FBA4C(MdWork* work) {
 u8 func_080FBA9C(MdWork* work) {
     MdAnim* a;
 
-    a = &work->unk_1A4;
+    a = &work->anim;
 
     if (a->frame >= a->frameCount - 1) {
         return 1;
@@ -723,7 +723,7 @@ u8 func_080FBC4C(MdWork* work) {
             }
             break;
         case 1:
-            switch ((s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex) {
+            switch ((s16)work->anim.frames[work->anim.frame].gfxIndex) {
             case 33:
             case 34:
             case 36:
@@ -784,7 +784,7 @@ u8 func_080FBDD4(MdWork* work) {
         case 1:
             switch (work->unk_00C) {
             case 0:
-                v = (s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex;
+                v = (s16)work->anim.frames[work->anim.frame].gfxIndex;
 
                 if (v == 18) {
                     func_08011F78(252, gBtlWork->unk_000, gBtlWork->unk_004, 0,
@@ -803,7 +803,7 @@ u8 func_080FBDD4(MdWork* work) {
                 }
                 break;
             case 1:
-                v = (s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex;
+                v = (s16)work->anim.frames[work->anim.frame].gfxIndex;
 
                 if (v == 22) {
                     func_08019A30();
@@ -1197,14 +1197,14 @@ s32 task_bos_md_1(MdWork* work) {
 
     for (i = 0; i < 1; i++) {
         work->sub[i].unk_004 = gBtlWork->unk_0CC
-            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].x * 256;
+            + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
+                  .pos[i].x * 256;
         work->sub[i].unk_008 = gBtlWork->unk_0D0
-            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].y * 256;
+            + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
+                  .pos[i].y * 256;
         work->sub[i].unk_00C = gBtlWork->unk_0D4
-            + gUnk_09992108[(s16)work->unk_1A4.frames[work->unk_1A4.frame].gfxIndex]
-                  .unk_44[i].z * 256;
+            + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
+                  .pos[i].z * 256;
         ColliderSetPosition(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
                       work->sub[i].unk_00C);
     }

@@ -1036,9 +1036,9 @@ CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n) {
 
     i = *n;
 
-    if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
-        if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
-            return &w->unk_44[slot][(s16)*n];
+    if (w->slots[slot][i].unk_06 == 0 && w->slots[slot][i].unk_07 == 0) {
+        if (w->slots[slot][i].unk_08 == 0 && w->slots[slot][i].unk_0A == 0) {
+            return &w->slots[slot][(s16)*n];
         }
     }
 
@@ -1052,9 +1052,9 @@ CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n) {
     while ((s16)next != (s16)cur) {
         i = next;
 
-        if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
-            if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
-                e = &w->unk_44[slot][i];
+        if (w->slots[slot][i].unk_06 == 0 && w->slots[slot][i].unk_07 == 0) {
+            if (w->slots[slot][i].unk_08 == 0 && w->slots[slot][i].unk_0A == 0) {
+                e = &w->slots[slot][i];
                 *n = next;
                 return e;
             }
@@ -1078,9 +1078,9 @@ CardSlot* func_08076750(UnkStruct_08078754* w, u8 slot, u16* n) {
 
     i = *n;
 
-    if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
-        if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
-            return &w->unk_44[slot][(s16)*n];
+    if (w->slots[slot][i].unk_06 == 0 && w->slots[slot][i].unk_07 == 0) {
+        if (w->slots[slot][i].unk_08 == 0 && w->slots[slot][i].unk_0A == 0) {
+            return &w->slots[slot][(s16)*n];
         }
     }
 
@@ -1094,9 +1094,9 @@ CardSlot* func_08076750(UnkStruct_08078754* w, u8 slot, u16* n) {
     while ((s16)next != (s16)cur) {
         i = next;
 
-        if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
-            if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
-                e = &w->unk_44[slot][i];
+        if (w->slots[slot][i].unk_06 == 0 && w->slots[slot][i].unk_07 == 0) {
+            if (w->slots[slot][i].unk_08 == 0 && w->slots[slot][i].unk_0A == 0) {
+                e = &w->slots[slot][i];
                 *n = next;
                 return e;
             }
@@ -1128,7 +1128,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_00 = &w->unk_54[slot];
             arg.unk_0C = n;
             arg.unk_0E = slot;
-            arg.unk_04 = c;
+            arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
@@ -1148,7 +1148,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_00 = &w->unk_54[slot];
             arg.unk_0C = n;
             arg.unk_0E = slot;
-            arg.unk_04 = c;
+            arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
@@ -1168,7 +1168,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_00 = &w->unk_54[slot];
             arg.unk_0C = n;
             arg.unk_0E = slot;
-            arg.unk_04 = c;
+            arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
@@ -1183,7 +1183,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
         case 0:
             arg.unk_00 = &w->unk_54[slot];
             arg.unk_0C = 0xFFFF;
-            arg.unk_04 = (CardSlot*)w->unk_44[slot];
+            arg.slot = (CardSlot*)w->unk_44[slot];
             arg.unk_0E = slot;
             TaskCreate((TaskPool*)w, &gUnk_09EE4984, &arg);
             e = ListPoolFirst(&w->unk_54[slot]);
@@ -1208,7 +1208,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             e->unk_A0 = 50;
             e->unk_A4 = 1;
             e->unk_78 |= 0x800;
-            e = ListPoolNext(&e->unk_64);
+            e = ListPoolNext(&e->node);
             e->unk_80 = e->unk_7C = gUnk_09033FA8[0];
             e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
             e->unk_A0 = 60;
@@ -1222,13 +1222,13 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             e->unk_A0 = 50;
             e->unk_A4 = 1;
             e->unk_78 |= 0x800;
-            e = ListPoolNext(&e->unk_64);
+            e = ListPoolNext(&e->node);
             e->unk_80 = e->unk_7C = gUnk_09033FA8[2];
             e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
             e->unk_A0 = 60;
             e->unk_A4 = 2;
             e->unk_78 |= 0x800;
-            e = ListPoolNext(&e->unk_64);
+            e = ListPoolNext(&e->node);
             e->unk_80 = e->unk_7C = gUnk_09033FA8[0];
             e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
             e->unk_A0 = 60;
@@ -2062,7 +2062,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 e->unk_80 = gUnk_09033FA8[e->unk_A4];
                 e->unk_9C = 4;
                 e->unk_A0 += 4;
-                e = ListPoolNext(&e->unk_64);
+                e = ListPoolNext(&e->node);
             }
 
             n = gUnk_02034A98->unk_44 - 1;
@@ -2072,7 +2072,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_00 = &w->unk_54[w->unk_B8];
                 arg.unk_0C = n;
                 arg.unk_0E = w->unk_B8;
-                arg.unk_04 = c;
+                arg.slot = c;
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {
@@ -2105,7 +2105,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                     b = *(u16*)((u8*)e + 0x44);
                 }
 
-                e = ListPoolNext(&e->unk_64);
+                e = ListPoolNext(&e->node);
             }
 
             n = w->unk_A8[w->unk_B8] - 1;
@@ -2115,7 +2115,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_00 = &w->unk_54[w->unk_B8];
                 arg.unk_0C = n;
                 arg.unk_0E = w->unk_B8;
-                arg.unk_04 = c;
+                arg.slot = c;
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {

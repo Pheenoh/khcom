@@ -134,7 +134,7 @@ typedef struct UnkStruct_0984BC9C {
     u16 unk_0A;
     u16 unk_0C;
     u16 unk_0E;
-    TaskDesc* unk_10;
+    TaskDesc* desc;
     u16 unk_14;
     u16 unk_16;
 } UnkStruct_0984BC9C;

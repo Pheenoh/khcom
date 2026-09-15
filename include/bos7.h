@@ -380,7 +380,7 @@ typedef struct StaffRollWork {
     s32 unk_090;
     s32 unk_094;
     s32 unk_098;
-    StaffRollScene* unk_09C;
+    StaffRollScene* scene;
     u8 unk_0A0;
     u8 unk_0A1[0x3];
     s32 unk_0A4;

@@ -622,28 +622,28 @@ u8 func_080C76B0(PoohNear* p) {
 void func_080C7714(void) {
     PoohPos p;
 
-    p.unk_00 = 0x13000;
-    p.unk_04 = 0xE800;
-    p.unk_08 = 0;
+    p.x = 0x13000;
+    p.y = 0xE800;
+    p.z = 0;
     func_080D2D0C(&p);
-    p.unk_00 = 0x11000;
-    p.unk_04 = 0xF800;
-    p.unk_08 = 0;
+    p.x = 0x11000;
+    p.y = 0xF800;
+    p.z = 0;
     func_080D2C8C(&p, 0);
 }
 
 void func_080C774C(void) {
     PoohPos p;
 
-    p.unk_00 = 0xB5400;
-    p.unk_04 = 0x5DE00;
-    p.unk_08 = 0;
+    p.x = 0xB5400;
+    p.y = 0x5DE00;
+    p.z = 0;
     func_080D2D0C(&p);
 
     if (func_080D2D94(3)) {
-        p.unk_00 = 0xB3400;
-        p.unk_04 = 0x5EE00;
-        p.unk_08 = 0;
+        p.x = 0xB3400;
+        p.y = 0x5EE00;
+        p.z = 0;
         func_080D2C8C(&p, 0);
     }
 }
@@ -1248,13 +1248,13 @@ s32 func_080C8404(PoohPos* a, PoohPos* b) {
     s32 dx;
     s32 dy;
 
-    dx = a->unk_00 - b->unk_00;
+    dx = a->x - b->x;
     if (dx < 0) {
-        dx = b->unk_00 - a->unk_00;
+        dx = b->x - a->x;
     }
-    dy = a->unk_04 - b->unk_04;
+    dy = a->y - b->y;
     if (dy < 0) {
-        dy = b->unk_04 - a->unk_04;
+        dy = b->y - a->y;
     }
     return dx + dy;
 }
@@ -1295,8 +1295,8 @@ void func_080C84E0(PoohWork* w, u32 b) {
     if (b >= 38 && b <= 39) {
         w->unk_AC = 0;
 
-        if (!IsTaskActive(w->unk_C4)) {
-            w->unk_C4 = TaskCreate(&w->tasks, &gTaskDescPooBalloon, w->unk_28);
+        if (!IsTaskActive(w->task)) {
+            w->task = TaskCreate(&w->tasks, &gTaskDescPooBalloon, w->unk_28);
         }
     }
 

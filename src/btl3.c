@@ -115,7 +115,7 @@ void task_btl_form_3(void) {
 }
 
 void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args) {
-    work->unk_00 = args->unk_04;
+    work->pos = args->pos;
     work->unk_0C = args->unk_00;
     work->unk_10 = args->unk_10;
     work->unk_12 = args->unk_12;
@@ -123,7 +123,7 @@ void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args) {
 
 u8 task_btl_born_1(BtlBornWork* work) {
     if (func_080128EC() == 0) {
-        ClampBattlePosition(&work->unk_00.unk_00, &work->unk_00.unk_04, -24, -12);
+        ClampBattlePosition(&work->pos.x, &work->pos.y, -24, -12);
 
         if (IsSongPlaying(0x22D) == 0) {
             m4aSongNumStart(0x22D);
@@ -140,11 +140,11 @@ u8 task_btl_born_1(BtlBornWork* work) {
         }
 
         if (work->unk_10 & 1) {
-            func_08013EDC(work->unk_00.unk_00, work->unk_00.unk_04,
-                          work->unk_00.unk_08 - 0x1000, 0x200);
+            func_08013EDC(work->pos.x, work->pos.y,
+                          work->pos.z - 0x1000, 0x200);
         } else {
-            func_08013EDC(work->unk_00.unk_00, work->unk_00.unk_04,
-                          work->unk_00.unk_08 - 0x800, 0x100);
+            func_08013EDC(work->pos.x, work->pos.y,
+                          work->pos.z - 0x800, 0x100);
         }
 
         TaskCreate(&gBtlWork->taskPools[0], work->unk_0C, work);
@@ -691,7 +691,7 @@ BtlObj* func_08040C8C(BtlAiWork* work) {
                 break;
             }
         }
-        p = ListPoolNext(&p->unk_0B8);
+        p = ListPoolNext(&p->node);
     }
 
     if (count == 0) {
@@ -737,7 +737,7 @@ BtlObj* func_08040D54(BtlAiWork* work) {
                 }
             }
         }
-        p = ListPoolNext(&p->unk_0B8);
+        p = ListPoolNext(&p->node);
     }
 
     if (count == 0) {

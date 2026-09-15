@@ -2401,7 +2401,7 @@ void func_08016374(s16 a) {
                     o->unk_02C = o->unk_02E;
                 }
             }
-            o = ListPoolNext(&o->unk_0B8);
+            o = ListPoolNext(&o->node);
         }
     }
 }
@@ -3128,7 +3128,7 @@ void func_08017728(u8 a, u8 b) {
                 func_080175BC(p, o, a, b);
             }
 
-            o = ListPoolNext(&o->unk_0B8);
+            o = ListPoolNext(&o->node);
         }
     }
 }

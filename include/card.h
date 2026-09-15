@@ -113,7 +113,7 @@ typedef struct CardDisplayWork {
     u8 unk_5E;
     u8 unk_5F;
     u8 unk_60[0x04];
-    ListNode unk_64;
+    ListNode node;
     u32 unk_78;
     s32 unk_7C;
     s32 unk_80;
@@ -200,8 +200,8 @@ typedef struct UnkStruct_08096F94 {
     void* tiles4;
     void* tiles5;
     void* palette3;
-    struct MapCardDef* unk_20;
-    struct MapCardBackDef* unk_24;
+    struct MapCardDef* cardDef;
+    struct MapCardBackDef* cardBack;
     TaskPool tasks;
     u16 unk_3C;
     u16 unk_3E;
@@ -447,7 +447,7 @@ typedef struct DeckCard2Work {
     u8 unk_26;
     u8 unk_27;
     void* unk_28;
-    ListNode unk_2C;
+    ListNode node;
     s32 x;
     s32 y;
     u16 unk_48;
@@ -491,7 +491,7 @@ typedef struct UnkStruct_0809C534 {
     u8 unk_54;
     u8 unk_55;
     u8 unk_56[0x02];
-    ListNode unk_58;
+    ListNode node;
     s16 unk_6C;
     s16 unk_6E;
     u16 x2;
@@ -821,7 +821,7 @@ typedef struct ReloadChildWork {
     s32 unk_24;
     s32 unk_28;
     u8 unk_2C[0x04];
-    ListNode unk_30;
+    ListNode node;
     u8 unk_44;
     u8 unk_45;
     u8 unk_46;
@@ -911,7 +911,7 @@ typedef char DarkPointWork_sizechk[(sizeof(struct DarkPointWork) == 0x10) ? 1 : 
 
 typedef struct UnkStruct_0807FD10_Args {
     void* unk_00;
-    CardSlot* unk_04;
+    CardSlot* slot;
     u8 unk_08[0x04];
     u16 unk_0C;
     u8 unk_0E;
@@ -920,7 +920,7 @@ typedef struct UnkStruct_0807FD10_Args {
 
 typedef struct UnkStruct_08078754 {
     u8 unk_00[0x44];
-    CardSlot* unk_44[4];
+    CardSlot* slots[4];
     u8 unk_54[0x54];
     s16 unk_A8[4];
     s16 unk_B0[4];
@@ -950,7 +950,7 @@ typedef struct MapcardWork {
     u8 unk_22[0x06];
     ListPool* unk_28;
     u8 unk_2C[0x0C];
-    ListNode unk_38;
+    ListNode node;
     s32 x;
     s32 y;
     s32 unk_54;
@@ -1138,7 +1138,7 @@ typedef struct ReloadGageWork {
     s32 unk_54;
     s32 unk_58;
     u8 unk_5C[0x08];
-    ListNode unk_64;
+    ListNode node;
     u32 unk_78;
     s32 unk_7C;
     s32 unk_80;
@@ -1793,7 +1793,7 @@ typedef struct UnkStruct_080A4DCC {
     s32 unk_10C;
     u8 unk_110[0x03];
     u8 unk_113;
-    CardMessageDef* unk_114;
+    CardMessageDef* messageDef;
     s32 unk_118;
     s32 unk_11C;
     s32 unk_120;
@@ -1833,7 +1833,7 @@ typedef struct UnkStruct_080A3F5C {
     s32 unk_10C;
     u8 unk_110[0x03];
     u8 unk_113;
-    CardMessageDef* unk_114;
+    CardMessageDef* messageDef;
     s32 x;
     s32 unk_11C;
     s32 unk_120;

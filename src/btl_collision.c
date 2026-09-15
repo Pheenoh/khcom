@@ -394,7 +394,7 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
             if (func_08011270(o, x, y, z, a, b, c)) {
                 return 1;
             }
-            o = ListPoolNext(&o->unk_0B8);
+            o = ListPoolNext(&o->node);
         }
         return 0;
     } else {
@@ -457,7 +457,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
 
         while (o != 0) {
             if (!func_08011270(o, x, y, z, p, q, r)) {
-                o = ListPoolNext(&o->unk_0B8);
+                o = ListPoolNext(&o->node);
                 continue;
             }
             r2 = func_08011398(o, a);
@@ -475,7 +475,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
                 flag = 1;
             }
 
-            o = ListPoolNext(&o->unk_0B8);
+            o = ListPoolNext(&o->node);
         }
 
         if (flag != 0) {
@@ -523,12 +523,12 @@ s32 func_08012188(BtlObj* p, s16 h, s32 c) {
 }
 
 void func_080121D4(FldObj* p) {
-    ListNodeInit(&p->unk_1C, &gUnk_02039BA0->actor.unk_40, p);
-    ListPoolAppend(&p->unk_1C, &gUnk_02039BA0->actor.unk_40);
+    ListNodeInit(&p->node, &gUnk_02039BA0->actor.unk_40, p);
+    ListPoolAppend(&p->node, &gUnk_02039BA0->actor.unk_40);
 }
 
 void func_080121FC(FldObj* p) {
-    ListPoolRemove(&p->unk_1C, &gUnk_02039BA0->actor.unk_40);
+    ListPoolRemove(&p->node, &gUnk_02039BA0->actor.unk_40);
 }
 
 void func_08012214(void) {
@@ -580,14 +580,14 @@ void ColliderInit(Collider* p, u32 type, u16 r, u16 h) {
         p->unk_30 |= 1;
         break;
     }
-    ListNodeInit(&p->unk_18, pool, p);
-    ListPoolAppend(&p->unk_18, pool);
+    ListNodeInit(&p->node, pool, p);
+    ListPoolAppend(&p->node, pool);
 }
 
 void ColliderUnregister(Collider* p) {
     Collider* q = p->self;
     if (q == p) {
-        ListPoolRemove(&q->unk_18, ColliderGetPool(q->type));
+        ListPoolRemove(&q->node, ColliderGetPool(q->type));
     }
 }
 
@@ -603,7 +603,7 @@ void ColliderClearPoolContacts(ListPool* pool) {
         p->unk_2C = 0;
         p->unk_58 = 0;
         p->unk_2E = 0;
-        p = ListPoolNext(&p->unk_18);
+        p = ListPoolNext(&p->node);
     }
 }
 
@@ -716,10 +716,10 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
                 }
             }
 
-            q = ListPoolPrev(&q->unk_18);
+            q = ListPoolPrev(&q->node);
         }
 
-        p = ListPoolNext(&p->unk_18);
+        p = ListPoolNext(&p->node);
     }
 }
 
@@ -738,11 +738,11 @@ void ColliderUpdateAll(void) {
 
 void ColliderSetDisabled(Collider* p, u8 b) {
     if (b) {
-        p->unk_18.flags |= 2;
+        p->node.flags |= 2;
         p->unk_2C = 0;
         p->unk_2E = 0;
     } else {
-        p->unk_18.flags &= ~2;
+        p->node.flags &= ~2;
     }
 }
 

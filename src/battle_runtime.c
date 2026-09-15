@@ -474,7 +474,7 @@ void func_08019A30(void) {
         while (p != 0) {
             p->unk_034 &= ~0x80;
             p->unk_0E2 = 0;
-            p = ListPoolNext(&p->unk_0B8);
+            p = ListPoolNext(&p->node);
         }
         return;
     }
@@ -914,7 +914,7 @@ void _08019CB4(void) {
                 busy = 1;
                 break;
             }
-            obj = ListPoolNext(&obj->unk_0B8);
+            obj = ListPoolNext(&obj->node);
         }
         if (busy) {
             break;
@@ -1210,8 +1210,8 @@ void func_0801AF4C(BtlObj* actor) {
     p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {
-        p->unk_0B8.flags |= 2;
-        p = ListPoolNext(&p->unk_0B8);
+        p->node.flags |= 2;
+        p = ListPoolNext(&p->node);
     }
     gBtlWork->unk_0EE = 0;
 }
@@ -1535,15 +1535,15 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     if (d->unk_0E & 4) {
         p->unk_034 |= 0x20000;
     }
-    ListNodeInit(&p->unk_0B8, &gBtlWork->unk_080, p);
-    ListPoolAppend(&p->unk_0B8, &gBtlWork->unk_080);
+    ListNodeInit(&p->node, &gBtlWork->unk_080, p);
+    ListPoolAppend(&p->node, &gBtlWork->unk_080);
     gBtlWork->unk_0EE++;
 }
 
 void func_0801B7D8(BtlObj* obj) {
     BtlObj* p = obj->unk_0DC;
     if (p == obj) {
-        ListPoolRemove(&p->unk_0B8, &gBtlWork->unk_080);
+        ListPoolRemove(&p->node, &gBtlWork->unk_080);
 
         if (!(p->unk_03C & 1)) {
             ColliderUnregister(&p->collider);

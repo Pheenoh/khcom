@@ -2065,7 +2065,7 @@ u8 func_08031E48(FldPos* p, FldWork* work) {
 u8 func_08031EC4(FldActor* act) {
     FldPos a;
 
-    a = act->unk_00;
+    a = act->fieldPosition;
     a.x += gSineTable[act->angle] * 8;
     a.y -= gSineTable[act->angle + 64] * 8;
 
@@ -2082,8 +2082,8 @@ s32 func_08031F1C(FldWork* work) {
     act = &gUnk_02039BA0->actor;
 
     if (work->unk_66 & 1) {
-        if (act->unk_00.unk_0C < work->unk_78) {
-            v = act->unk_00.unk_0C;
+        if (act->fieldPosition.unk_0C < work->unk_78) {
+            v = act->fieldPosition.unk_0C;
         } else {
             v = work->unk_78;
         }
@@ -2091,7 +2091,7 @@ s32 func_08031F1C(FldWork* work) {
         work->unk_BC = 1;
     } else {
         work->unk_BC = 0;
-        v = act->unk_00.unk_0C;
+        v = act->fieldPosition.unk_0C;
     }
 
     return v;

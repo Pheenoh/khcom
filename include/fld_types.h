@@ -20,7 +20,7 @@ typedef struct FldRes {
 } FldRes;
 
 typedef struct FldActor {
-    FldPos unk_00;
+    FldPos fieldPosition;
     s32 unk_10;
     u8 angle;
     u8 unk_15[0x05];
@@ -41,7 +41,7 @@ typedef struct FldObj {
     s32 unk_0C;
     u8 unk_10[0x0A];
     s16 unk_1A;
-    ListNode unk_1C;
+    ListNode node;
     u16 unk_30;
     u8 unk_32[0x02];
 } FldObj;

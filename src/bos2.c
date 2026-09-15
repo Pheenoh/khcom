@@ -5633,7 +5633,7 @@ void func_080C3188(DsdMainWork* work) {
                 m4aSongNumStart(0x227);
             }
 
-            e = ListPoolNext(&e->unk_0B8);
+            e = ListPoolNext(&e->node);
         }
 
         work->dsd->unk_350++;
@@ -5848,7 +5848,7 @@ void func_080C3928(DsdMainWork* work) {
                 m4aSongNumStart(0x227);
             }
 
-            e = ListPoolNext(&e->unk_0B8);
+            e = ListPoolNext(&e->node);
         }
 
         work->dsd->unk_350++;

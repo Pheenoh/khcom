@@ -65,7 +65,7 @@
 #define NULL ((void*)0)
 
 typedef struct EventCharaWork {
-    EventCharaKeyframe* unk_000;
+    EventCharaKeyframe* keyframes;
     void* tiles;
     void* palette;
     void* gfx;

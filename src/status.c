@@ -1497,7 +1497,7 @@ void func_080D9A14(void) {
             t->unk_034 |= 0x40;
             t->unk_024 = 0;
         }
-        t = ListPoolNext(&t->unk_0B8);
+        t = ListPoolNext(&t->node);
     }
 }
 

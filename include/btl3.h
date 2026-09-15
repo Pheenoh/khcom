@@ -43,13 +43,13 @@ typedef struct BtlFormWork {
 } BtlFormWork;
 
 typedef struct BtlVec {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
 } BtlVec;
 
 typedef struct BtlBornWork {
-    BtlVec unk_00;
+    BtlVec pos;
     void* unk_0C;
     u16 unk_10;
     u16 unk_12;
@@ -57,7 +57,7 @@ typedef struct BtlBornWork {
 
 typedef struct BtlBornArgs {
     void* unk_00;
-    BtlVec unk_04;
+    BtlVec pos;
     u16 unk_10;
     u16 unk_12;
 } BtlBornArgs;

@@ -1772,7 +1772,7 @@ u8 func_080DC544(void) {
     BtlObj* p;
     u8 r = 1;
 
-    for (p = ListPoolFirst(&gBtlWork->unk_080); p != 0; p = ListPoolNext(&p->unk_0B8)) {
+    for (p = ListPoolFirst(&gBtlWork->unk_080); p != 0; p = ListPoolNext(&p->node)) {
         if (p->unk_000 == 0x23) {
             r = 0;
             break;

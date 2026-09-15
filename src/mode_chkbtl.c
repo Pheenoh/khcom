@@ -430,9 +430,9 @@ void func_0800AB8C(void) {
     entry = &gChkBtlEntries[gChkBtlWork->enemy];
 
     if (entry->unk_08 == 0xB9) {
-        pos.unk_00 = 0x15000;
-        pos.unk_04 = 0x16000;
-        pos.unk_08 = 0;
+        pos.x = 0x15000;
+        pos.y = 0x16000;
+        pos.z = 0;
         TaskCreate(&gBtlWork->taskPools[0], entry->taskDesc, &pos);
     }
 }

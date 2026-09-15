@@ -72,7 +72,7 @@ typedef struct PcWork {
     s32 unk_020;
     s32 unk_024;
     s32 unk_028;
-    PcAnimStep* unk_02C;
+    PcAnimStep* animSteps;
     s16 unk_030;
     s16 unk_032;
     s16 unk_034;
@@ -164,7 +164,7 @@ typedef struct PcFltWork {
     s32 unk_030;
     u32 tiles;
     u32 palette;
-    PcPos* unk_03C;
+    PcPos* pos;
     u32 unk_040;
     u8 unk_044[0x58];
     AnimState anim;

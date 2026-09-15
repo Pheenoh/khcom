@@ -11,7 +11,7 @@ typedef struct PooPos {
 } PooPos;
 
 typedef struct PooActor {
-    PooPos unk_00;
+    PooPos pos;
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x05];

@@ -153,9 +153,9 @@ u8 func_080D3AB8(u8 a, u8 b) {
 }
 
 void task_allmap_cursor_0(AllmapCursorWork* work, AllmapCursorPos* arg) {
-    work->unk_30 = *arg;
-    work->unk_24 = work->unk_30.x * 24 + 16 - gUnk_0203C540;
-    work->unk_26 = work->unk_30.y * 24 + 11 - gUnk_0203C53C;
+    work->pos = *arg;
+    work->unk_24 = work->pos.x * 24 + 16 - gUnk_0203C540;
+    work->unk_26 = work->pos.y * 24 + 11 - gUnk_0203C53C;
     work->unk_28 = -work->unk_26 << 8;
     work->unk_2C = work->unk_26 << 8;
     work->x = work->unk_3C = work->unk_24 << 8;
@@ -187,8 +187,8 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
         return 1;
     }
     work->gfx = AnimUpdate(&work->anim);
-    x = (work->unk_30.x * 24 + 16 - gUnk_0203C540) << 8;
-    y = (work->unk_30.y * 24 + 11 - gUnk_0203C53C) << 8;
+    x = (work->pos.x * 24 + 16 - gUnk_0203C540) << 8;
+    y = (work->pos.y * 24 + 11 - gUnk_0203C53C) << 8;
     if (x != work->x || y != work->y) {
         work->x = x;
         work->y = y;
@@ -493,8 +493,8 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
     work->unk_114 = 0;
 
     for (i = 0; i < 4; i++) {
-        pos.x = work->unk_000.x + gUnk_096FDC30[i][0];
-        pos.y = work->unk_000.y + gUnk_096FDC30[i][1];
+        pos.x = work->pos.x + gUnk_096FDC30[i][0];
+        pos.y = work->pos.y + gUnk_096FDC30[i][1];
         room = func_080D5494(pos);
 
         if (room != 0xFF && func_080D3A70(room, gUnk_096FDC40[i][0])) {
@@ -544,8 +544,8 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
     AllmapDoorEntry* e;
 
     for (i = 0; i < 4; i++) {
-        pos.x = work->unk_000.x + gUnk_096FDC30[i][0];
-        pos.y = work->unk_000.y + gUnk_096FDC30[i][1];
+        pos.x = work->pos.x + gUnk_096FDC30[i][0];
+        pos.y = work->pos.y + gUnk_096FDC30[i][1];
         room = func_080D5494(pos);
 
         if (room != 0xFF && func_080D3AB8(room, gUnk_096FDC40[i][0])) {
@@ -598,10 +598,10 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
         FadeSetPaletteExcluded(i, 0);
     }
     work->palette2 = EwramAlloc(40);
-    work->unk_000 = *arg;
+    work->pos = *arg;
     work->unk_004 = func_080D5494(*arg);
-    work->unk_0FC = work->unk_000.x * 24 - gUnk_0203C540;
-    work->unk_0FE = work->unk_000.y * 24 - gUnk_0203C53C;
+    work->unk_0FC = work->pos.x * 24 - gUnk_0203C540;
+    work->unk_0FE = work->pos.y * 24 - gUnk_0203C53C;
     work->unk_10C = 0x6800;
 
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4 || func_080DF51C(work->unk_004) == 2) {
@@ -714,20 +714,20 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
 void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     gStockMesDispWork = work;
     work->cursor = arg;
-    work->x = arg->unk_30.x * 24 - gUnk_0203C540;
-    work->y = arg->unk_30.y * 24 - gUnk_0203C53C;
+    work->x = arg->pos.x * 24 - gUnk_0203C540;
+    work->y = arg->pos.y * 24 - gUnk_0203C53C;
     work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->gfx = gUnk_0976DC9C;
     work->unk_10 = 0;
     TaskPoolInit(&work->tasks, 1);
-    work->unk_28 = 0;
+    work->task = 0;
 }
 
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
     if (func_080D4D1C() == 0 && (GetKeysPressed() & 1) != 0) {
         m4aSongNumStart(102);
-        work->unk_28 = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->unk_30);
+        work->task = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->pos);
     }
     work->y2 = gSineTable[(u8)work->unk_10] >> 8;
     work->unk_10 += 16;
@@ -739,8 +739,8 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
     if (func_080D4D1C() != 0) {
         TaskPoolDraw(&work->tasks);
     } else {
-        work->x = work->cursor->unk_30.x * 24 - gUnk_0203C540;
-        work->y = work->cursor->unk_30.y * 24 - gUnk_0203C53C;
+        work->x = work->cursor->pos.x * 24 - gUnk_0203C540;
+        work->y = work->cursor->pos.y * 24 - gUnk_0203C53C;
         DrawSprite(work->x, work->y - work->y2 + 2, work->gfx, work->tiles, work->palette, 0, 0, 48);
     }
 }
@@ -753,7 +753,7 @@ void task_allmap_pusha_3(AllmapPushaWork* work) {
 }
 
 u8 func_080D4D1C(void) {
-    if (gStockMesDispWork == 0 || IsTaskActive(((AllmapPushaWork*)gStockMesDispWork)->unk_28) == 0) {
+    if (gStockMesDispWork == 0 || IsTaskActive(((AllmapPushaWork*)gStockMesDispWork)->task) == 0) {
         return 0;
     }
     return 1;
@@ -1012,7 +1012,7 @@ void func_080D55E4(void) {
 
     moved = 0;
     c = ((AllmapState*)gUnk_0203C4B4)->unk_94->work;
-    p = c->unk_30;
+    p = c->pos;
 
     switch (GetKeysRepeat()) {
     case 64:
@@ -1040,7 +1040,7 @@ void func_080D55E4(void) {
     if (r == 255) {
         return;
     }
-    c->unk_30 = p;
+    c->pos = p;
 
     if (((AllmapState*)gUnk_0203C4B4)->unk_C0 == r) {
         return;
@@ -1068,7 +1068,7 @@ void func_080D55E4(void) {
         func_08000DE8(gUnk_0203C4B4, ((AllmapState*)gUnk_0203C4B4)->unk_9C);
     }
 
-    if (func_080D422C(c->unk_30) != 0) {
+    if (func_080D422C(c->pos) != 0) {
         ((AllmapState*)gUnk_0203C4B4)->unk_9C = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapPusha, c);
     }
 }

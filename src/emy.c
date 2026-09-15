@@ -541,7 +541,7 @@ u8 task_emy_04_1(Emy04Work* work) {
             bestv = 0;
 
             for (p = ListPoolFirst(&gBtlWork->unk_080); p != 0;
-                    p = ListPoolNext(&p->unk_0B8)) {
+                    p = ListPoolNext(&p->node)) {
                 if (!(p->unk_034 & 0x100)) {
                     if (bestv < p->unk_02E - p->unk_02C) {
                         bestv = p->unk_02E - p->unk_02C;
@@ -4599,7 +4599,7 @@ u8 task_emy_82_1(Emy82Work* work) {
                         BtlObj* actor;
                         s16 missing = 0;
                         for (actor = ListPoolFirst(&gBtlWork->unk_080); actor;
-                             actor = ListPoolNext(&actor->unk_0B8)) {
+                             actor = ListPoolNext(&actor->node)) {
                             if (actor != act && !(actor->unk_034 & 0x100)) {
                                 if (missing <= actor->unk_02E - actor->unk_02C) {
                                     missing = actor->unk_02E - actor->unk_02C;

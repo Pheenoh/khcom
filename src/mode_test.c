@@ -387,8 +387,8 @@ u8 task_lockon_1(LockonWork* w) {
         w->unk_30 = 0;
     }
 
-    px = gUnk_02039BA0->actor.unk_00.x;
-    py = gUnk_02039BA0->actor.unk_00.y;
+    px = gUnk_02039BA0->actor.fieldPosition.x;
+    py = gUnk_02039BA0->actor.fieldPosition.y;
     count = 0;
 
     if ((gUnk_02039BA0->unk_70 & 2) == 0) {
@@ -398,7 +398,7 @@ u8 task_lockon_1(LockonWork* w) {
             dx = px - ox;
             dy = py - oy;
 
-            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->actor.unk_00.unk_0C) {
+            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
                 if (o->unk_30 == 3) {
                     gUnk_02039DC4[0] = o->x;
                     gUnk_02039DC4[1] = o->y;
@@ -415,7 +415,7 @@ u8 task_lockon_1(LockonWork* w) {
                 break;
             }
 
-            o = ListPoolNext(&o->unk_1C);
+            o = ListPoolNext(&o->node);
         }
 
         if (w->unk_2C != 0) {

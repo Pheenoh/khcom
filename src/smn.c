@@ -550,7 +550,7 @@ BtlObj* func_08042018(SmnBambiWork* work) {
                 break;
             }
         }
-        p = ListPoolNext(&p->unk_0B8);
+        p = ListPoolNext(&p->node);
     }
 
     if (count == 0) {
@@ -1952,7 +1952,7 @@ BtlObj* func_08044450(SmnGenieWork* work) {
                 break;
             }
         }
-        p = ListPoolNext(&p->unk_0B8);
+        p = ListPoolNext(&p->node);
     }
 
     if (count == 0) {

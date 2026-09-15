@@ -34,7 +34,7 @@ void func_0801D288(void) {
     e = ListPoolFirst(&gBtlWork->unk_080);
 
     if (p->unk_034 & 4) {
-        for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+        for (; e != 0; e = ListPoolNext(&e->node)) {
             if (p->x < e->x || p->x - e->x > 0x9600 ||
                 (p->y - e->y >= 0 ? p->y - e->y > 0x1800
                                               : e->y - p->y > 0x1800) ||
@@ -51,7 +51,7 @@ void func_0801D288(void) {
             min = 0x40000;
             e = ListPoolFirst(&gBtlWork->unk_080);
 
-            for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+            for (; e != 0; e = ListPoolNext(&e->node)) {
                 if (p->x > e->x || e->x - p->x > 0x5A00 ||
                     (p->y - e->y >= 0 ? p->y - e->y > 0x1800
                                                   : e->y - p->y > 0x1800) ||
@@ -65,7 +65,7 @@ void func_0801D288(void) {
             }
         }
     } else {
-        for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+        for (; e != 0; e = ListPoolNext(&e->node)) {
             if (p->x > e->x || e->x - p->x > 0x9600 ||
                 (p->y - e->y >= 0 ? p->y - e->y > 0x1800
                                               : e->y - p->y > 0x1800) ||
@@ -82,7 +82,7 @@ void func_0801D288(void) {
             min = 0x40000;
             e = ListPoolFirst(&gBtlWork->unk_080);
 
-            for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+            for (; e != 0; e = ListPoolNext(&e->node)) {
                 if (p->x < e->x || p->x - e->x > 0x5A00 ||
                     (p->y - e->y >= 0 ? p->y - e->y > 0x1800
                                                   : e->y - p->y > 0x1800) ||
@@ -217,7 +217,7 @@ void task_btl_area_2(BtlAreaWork* work) {
             WorldToScreen(&x, &y, e->x, e->y,
                           e->z - (e->unk_09C << 8));
             DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 0, 0x101);
-            e = ListPoolNext(&e->unk_0B8);
+            e = ListPoolNext(&e->node);
         }
     } else {
         e = gBtlWork->actor;
@@ -728,7 +728,7 @@ BtlObj* func_0801E6DC(BtlSoraWork* work) {
         list[0] = e;
         n = 1;
         do {
-            e = ListPoolNext(&e->unk_0B8);
+            e = ListPoolNext(&e->node);
             if (e == 0) {
                 break;
             }
@@ -957,7 +957,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                         e->unk_02C = hp - 1;
                     }
 
-                    e = ListPoolNext(&e->unk_0B8);
+                    e = ListPoolNext(&e->node);
                 }
             }
         }
@@ -3017,7 +3017,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                         }
                     }
 
-                    e = ListPoolNext(&e->unk_0B8);
+                    e = ListPoolNext(&e->node);
                 }
             }
 
@@ -3075,7 +3075,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                         e2 = e;
                     }
 
-                    e = ListPoolNext(&e->unk_0B8);
+                    e = ListPoolNext(&e->node);
                 }
 
                 if (e2 != 0) {
@@ -4574,7 +4574,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                         func_08011F68(108, e);
                     }
 
-                    e = ListPoolNext(&e->unk_0B8);
+                    e = ListPoolNext(&e->node);
                 }
 
                 if (p->unk_034 & 4) {
@@ -6767,7 +6767,7 @@ BtlObj* func_0802830C(BtlRikuWork* work) {
                 min = d;
             }
         }
-        e = ListPoolNext(&e->unk_0B8);
+        e = ListPoolNext(&e->node);
     }
     return best;
 }
@@ -6799,7 +6799,7 @@ BtlObj* func_08028370(BtlRikuWork* work) {
         list[0] = e;
         n = 1;
         do {
-            e = ListPoolNext(&e->unk_0B8);
+            e = ListPoolNext(&e->node);
             if (e == 0) {
                 break;
             }
@@ -7056,7 +7056,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                         e->unk_02C = uv - 1;
                     }
 
-                    e = ListPoolNext(&e->unk_0B8);
+                    e = ListPoolNext(&e->node);
                 }
             }
         }

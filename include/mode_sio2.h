@@ -44,9 +44,9 @@
 
 
 typedef struct PoohPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_0C;
 } PoohPos;
 
@@ -87,7 +87,7 @@ typedef struct PoohWork {
     u16 unk_AC;
     u8 unk_AE[0x02];
     TaskPool tasks;
-    Task* unk_C4;
+    Task* task;
     u8 unk_C8[0x0E];
     u8 unk_D6;
     u8 unk_D7[0x03];

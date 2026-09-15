@@ -103,7 +103,7 @@ typedef struct AllmapCursorWork {
     s16 unk_26;
     s32 unk_28;
     s32 unk_2C;
-    AllmapCursorPos unk_30;
+    AllmapCursorPos pos;
     s32 x;
     s32 y;
     s32 unk_3C;
@@ -149,7 +149,7 @@ typedef struct AllmapDoorEntry {
 } AllmapDoorEntry;
 
 typedef struct AllmapDoorinfoWork {
-    AllmapCursorPos unk_000;
+    AllmapCursorPos pos;
     u8 unk_004;
     u8 unk_005[0x03];
     void* gfx2[4];
@@ -180,7 +180,7 @@ typedef struct AllmapPushaWork {
     u16 unk_10;
     s16 y2;
     TaskPool tasks;
-    Task* unk_28;
+    Task* task;
     s16 x;
     s16 y;
 } AllmapPushaWork;

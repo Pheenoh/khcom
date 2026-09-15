@@ -16,13 +16,13 @@ void task_roomcreate_0(RoomCreateWork* work) {
     SetBgPriority(0, 2);
     SetBgPriority(1, 2);
     TaskPoolInit(&work->tasks, 3);
-    work->x = gUnk_02039BA0->actor.unk_00.x;
-    work->y = gUnk_02039BA0->actor.unk_00.y;
-    work->z = gUnk_02039BA0->actor.unk_00.z;
+    work->x = gUnk_02039BA0->actor.fieldPosition.x;
+    work->y = gUnk_02039BA0->actor.fieldPosition.y;
+    work->z = gUnk_02039BA0->actor.fieldPosition.z;
     act = gUnk_02039BA0->unk_68;
-    work->x2 = act->unk_00.x;
-    work->y2 = act->unk_00.y;
-    work->z2 = act->unk_00.z;
+    work->x2 = act->fieldPosition.x;
+    work->y2 = act->fieldPosition.y;
+    work->z2 = act->fieldPosition.z;
     work->unk_24 = act->angle;
     work->unk_18 = work->x2 + gSineTable[work->unk_24] * 50;
     work->unk_1C = work->y2 + -gSineTable[work->unk_24 + 0x40] * 50;
@@ -42,9 +42,9 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.x, work->unk_18, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.y, work->unk_1C, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.z, work->unk_20, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->unk_18, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->unk_1C, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->unk_20, steps);
 
         if (steps <= 1) {
             func_080E0418();
@@ -52,8 +52,8 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 &= ~0x80000;
             work->unk_26 = 8;
         } else {
-            func_080E0298((gUnk_02039BA0->actor.unk_00.x + work->x2) / 2,
-                          (gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.z + work->y2 + work->z2) / 2);
+            func_080E0298((gUnk_02039BA0->actor.fieldPosition.x + work->x2) / 2,
+                          (gUnk_02039BA0->actor.fieldPosition.y + gUnk_02039BA0->actor.fieldPosition.z + work->y2 + work->z2) / 2);
             work->unk_26++;
         }
         break;
@@ -138,9 +138,9 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.x, work->x, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.y, work->y, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.z, work->z, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->y, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->z, steps);
 
         if (steps <= 1) {
             gUnk_02039BA0->actor.angle = work->unk_25;
@@ -151,19 +151,19 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             return 0;
         }
         work->unk_26++;
-        func_080E0298((gUnk_02039BA0->actor.unk_00.x + work->x2) / 2,
-                      (gUnk_02039BA0->actor.unk_00.y + gUnk_02039BA0->actor.unk_00.z + work->y2 + work->z2) / 2);
+        func_080E0298((gUnk_02039BA0->actor.fieldPosition.x + work->x2) / 2,
+                      (gUnk_02039BA0->actor.fieldPosition.y + gUnk_02039BA0->actor.fieldPosition.z + work->y2 + work->z2) / 2);
         break;
     case 6:
         if (work->unk_26 == 0) {
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 40 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.x, work->x2, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.y, work->y2, steps);
-        ApproachValue(&gUnk_02039BA0->actor.unk_00.z, work->z2, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x2, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->y2, steps);
+        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->z2, steps);
 
-        if (func_080DFD84(&gUnk_02039BA0->actor.unk_00)) {
+        if (func_080DFD84(&gUnk_02039BA0->actor.fieldPosition)) {
             gUnk_02039BA0->unk_70 |= 0x10;
         }
         break;
