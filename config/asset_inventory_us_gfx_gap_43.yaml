@@ -1,0 +1,42 @@
+# US inventory for asset_gfx_gap_43 (Policy B: no binaries).
+# Host mega: 0x090451AB–0x096193B8. First leaf only: gUnk_09618118 palette.
+# Pack: python3 tools/gfx/asset_gfx_gap_43_pack.py --mode dump|built --version us
+# Deferred: tiles4 glyph sheet gUnk_090AB5B2 (128B consumer slices; sheet extent unknown).
+
+version: us
+schema_version: 1
+mvp_class: asset_gfx_gap_43
+policy: B
+baserom_code: B8CE
+pack:
+  id: asset_gfx_gap_43
+  class: pack
+  unit: asset_gfx_gap_43
+  asm: asm/us/asset_gfx_gap_43.s
+  rom:
+    start: 0x090451AB
+    end: 0x096193B8
+    size: 6111757
+  extract_path: assets/us/090451AB-096193B8.bin
+  sha256: 18201fa5c16ec1a38e758b439066e8dd048de7b19417e4bc9796eb0938c9babd
+  path_mode_default: slice
+  confidence: medium
+  summary: >
+    Named megablob owned by asm/us/asset_gfx_gap_43.s as a single .incbin.
+    Fuller child map not yet RE'd; scaffold rebuilds only gUnk_09618118.
+
+symbols_in_pack:
+  - { address: 0x09618118, name: gUnk_09618118, size: 32, kind: palette }
+
+leaves:
+  - id: gUnk_09618118
+    class: leaf_gfx
+    format: palette
+    start: 0x09618118
+    end: 0x09618138
+    size: 32
+    sha1: 4867c27391463f6144ac876476edcebd33c4e959
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: field_transition/btl2 LoadObjPalette(..., 0x20)
+    confidence: high

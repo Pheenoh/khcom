@@ -1,0 +1,33 @@
+# JP asset_gfx_gap_43 host mega + leaf gUnk_09618118 (ABS 0x095D0BF4).
+# Policy B: sources/bins not committed. Parent mega stays slice by default.
+schema_version: 1
+id: asset_gfx_gap_43
+version: jp
+class: pack
+unit: asset_gfx_gap_43
+rom:
+  start: 0x09012053
+  end: 0x095D1E94
+  size: 6028865
+inventory: config/asset_inventory_jp_gfx_gap_43.yaml
+path_mode: slice
+extract_path: assets/jp/09012053-095D1E94.bin
+build_path: build/jp/assets/asset_gfx_gap_43.bin
+source_root: assets/jp/src/gfx/asset_gfx_gap_43
+asm_slice: asm/jp/asset_gfx_gap_43.s
+asm_built: build/jp/asm/asset_gfx_gap_43.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_gap_43_pack.py
+  layout: tools/gfx/asset_gfx_gap_43_layout.py
+sha256_slice: 572af203f1c3236133e2794c7a975462bc9215ff8d6a106d961da3e03aff17dd
+status: leaf_palette_scaffold
+children:
+  - id: gUnk_09618118
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09618118
+    rom: { start: 0x095D0BF4, end: 0x095D0C14, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_43/gUnk_09618118.png
+    sha1: 4867c27391463f6144ac876476edcebd33c4e959
+    consumer: LoadObjPalette(..., 0x20) field_transition/btl2

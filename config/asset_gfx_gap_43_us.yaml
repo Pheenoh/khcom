@@ -1,0 +1,40 @@
+# US asset_gfx_gap_43 host mega + first leaf gUnk_09618118 (palette, 32B).
+# Policy B: PNG/gbapal/bins local/gitignored only. Parent mega stays slice until fuller pack RE.
+schema_version: 1
+id: asset_gfx_gap_43
+version: us
+class: pack
+unit: asset_gfx_gap_43
+rom:
+  start: 0x090451AB
+  end: 0x096193B8
+  size: 6111757
+inventory: config/asset_inventory_us_gfx_gap_43.yaml
+path_mode: slice
+extract_path: assets/us/090451AB-096193B8.bin
+build_path: build/us/assets/asset_gfx_gap_43.bin
+source_root: assets/us/src/gfx/asset_gfx_gap_43
+asm_slice: asm/us/asset_gfx_gap_43.s
+asm_built: build/us/asm/asset_gfx_gap_43.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_gap_43_pack.py
+  layout: tools/gfx/asset_gfx_gap_43_layout.py
+sha256_slice: 18201fa5c16ec1a38e758b439066e8dd048de7b19417e4bc9796eb0938c9babd
+status: leaf_palette_scaffold
+note: >
+  Dual-path scaffold for first leaf only. Default path_mode is slice so check.sh
+  stays on extract .incbin. Built mode (configure --asset-gfx-gap-43-mode=built)
+  patches gbagfx PNG->gbapal into a mega copy; does not affect MovieOpen asset_gfx.
+  Glyph sheet gUnk_090AB5B2 (msg) stays deferred (sheet-slice caveats).
+children:
+  - id: gUnk_09618118
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09618118
+    rom: { start: 0x09618118, end: 0x09618138, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09618118.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_43/gUnk_09618118.gbapal
+    sha1: 4867c27391463f6144ac876476edcebd33c4e959
+    consumer: LoadObjPalette(..., 0x20) field_transition/btl2
+    path_mode_built: gbagfx_png_to_gbapal
