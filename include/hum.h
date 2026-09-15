@@ -89,9 +89,9 @@ typedef struct HookMoonWork {
 } HookMoonWork;
 
 typedef struct VixenNdlArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
     u16 unk_14;

@@ -580,11 +580,11 @@ typedef struct LstSpawn4 {
     void* unk_08;
     void* unk_0C;
     void* unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_20;
-    s32 unk_24;
+    s32 y2;
     s32 unk_28;
 } LstSpawn4;
 

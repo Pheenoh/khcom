@@ -26248,8 +26248,8 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
     if (w->unk_7C5 == 0) {
 #ifndef VERSION_US
         LevelUpEffectArgs args;
-        args.unk_00 = 192;
-        args.unk_04 = 60;
+        args.x = 192;
+        args.y = 60;
         args.unk_08 = 0;
         args.unk_0C = 0;
         TaskCreate(&w->pool, &gTaskDescLVUPEFFECT, &args);
@@ -27227,8 +27227,8 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     LevelUpEffectArgs args;
 
     w->unk_0C = a->unk_0C;
-    w->unk_64 = a->unk_00;
-    w->unk_68 = a->unk_04;
+    w->unk_64 = a->x;
+    w->unk_68 = a->y;
     w->unk_30 = 30;
     w->unk_97 = a->unk_08;
     func_080A1554((u8*)w);
@@ -27273,8 +27273,8 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     TaskPoolInit(w->unk_98, 4);
 
     if (w->unk_0C != 0 && gUnk_02034AF8 == 0) {
-        args.unk_00 = w->x[0];
-        args.unk_04 = w->y[0];
+        args.x = w->x[0];
+        args.y = w->y[0];
         args.unk_0C = w->unk_0C;
         args.unk_10 = w->tiles;
         args.unk_14 = w->palette;
@@ -27397,10 +27397,10 @@ void LVUP_EFFECT_3(u8* work) {
 }
 
 void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
-    w->x[0] = a->unk_00;
-    w->unk_64 = a->unk_00;
-    w->y[0] = a->unk_04;
-    w->unk_68 = a->unk_04;
+    w->x[0] = a->x;
+    w->unk_64 = a->x;
+    w->y[0] = a->y;
+    w->unk_68 = a->y;
     w->unk_0C = a->unk_0C;
 #ifdef VERSION_EU
     switch (gLanguage) {
@@ -27469,8 +27469,8 @@ u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool) {
         return 0;
     }
 
-    args.unk_00 = p->unk_04;
-    args.unk_04 = p->unk_08;
+    args.x = p->unk_04;
+    args.y = p->unk_08;
     args.unk_08 = 0;
     args.unk_0C = p;
     TaskCreate(pool, &gTaskDescLVUPEFFECT, &args);

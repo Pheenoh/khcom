@@ -3167,8 +3167,8 @@ void task_fld_riku_3(FldWork* work) {
 
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
     work->actor = obj;
-    work->unk_00 = obj->unk_00.x;
-    work->unk_04 = obj->unk_00.y;
+    work->x = obj->unk_00.x;
+    work->y = obj->unk_00.y;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette = LoadObjPalette(gUnk_08F69BE4, 32);
     AnimInit(work->anim, gUnk_09EE1384, gUnk_09EE1380);
@@ -3176,8 +3176,8 @@ void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
 }
 
 s32 task_fld_shadow_1(FldShadowWork* work) {
-    work->unk_00 = work->actor->unk_00.x;
-    work->unk_04 = work->actor->unk_00.y;
+    work->x = work->actor->unk_00.x;
+    work->y = work->actor->unk_00.y;
     return 1;
 }
 
@@ -3211,8 +3211,8 @@ void task_fld_shadow_2(FldShadowWork* work) {
         sprite = AllocObjAffine(0, size, size, 0);
     }
 
-    x = (work->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
-    y = (work->unk_04 >> 8) + (z >> 8) - (gUnk_02039BA0->y >> 8);
+    x = (work->x >> 8) - (gUnk_02039BA0->x >> 8);
+    y = (work->y >> 8) + (z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, spr, work->tiles, work->palette, sprite, 0x800, obj->unk_3A);
 }
 

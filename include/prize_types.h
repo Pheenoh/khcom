@@ -12,9 +12,9 @@ typedef struct PrizeCardArg {
 
 typedef struct PoohPrizeArgs {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     u16 unk_14;
 } PoohPrizeArgs;

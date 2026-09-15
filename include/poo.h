@@ -148,8 +148,8 @@ typedef struct PooMapWork {
 } PooMapWork;
 
 typedef struct PooShadowWork {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     void* tiles;
     void* palette;
     void* gfx;
@@ -189,8 +189,8 @@ typedef struct PooGaugeWork {
 } PooGaugeWork;
 
 typedef struct PooMapBornWork {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32 unk_08;
     u8 unk_0C[0x04];
     PooPos unk_10;
@@ -207,8 +207,8 @@ typedef struct PooMapBornWork {
 } PooMapBornWork;
 
 typedef struct PooScaleWork {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     void* tiles;
     void* palette;
     PooPos* unk_10;
@@ -322,8 +322,8 @@ typedef struct PooLeafArgs {
 } PooLeafArgs;
 
 typedef struct PooPileArgs {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     u8 unk_08[0x08];
     s32 unk_10;
 } PooPileArgs;
@@ -571,8 +571,8 @@ typedef struct PooSpawnArgs {
 } PooSpawnArgs;
 
 typedef struct PooMapObjHitArgs {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     u8 unk_08[0x08];
     const PooMapObjHitDesc* unk_10;
     s32 unk_14;

@@ -277,16 +277,16 @@ typedef struct LstCtrArg {
     u16 unk_04;
     u16 unk_06;
     s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 z;
 } LstCtrArg;
 
 typedef struct LstEdgArg {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
 } LstEdgArg;
 
 typedef struct Vec3 {
@@ -303,9 +303,9 @@ typedef struct LstLsrArg {
 
 typedef struct LstFalArg {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_10;
     u8 unk_11;
     s16 unk_12;
@@ -328,8 +328,8 @@ typedef struct LstSnpArg {
 typedef struct StaffRollLabelArg {
     u16 unk_00;
     u16 unk_02;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
 } StaffRollLabelArg;
 
 

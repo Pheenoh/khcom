@@ -31,8 +31,8 @@
 extern AnimDef gUnk_0813CDDC[15][5];
 
 typedef struct FldShadowWork {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     void* tiles;
     void* palette;
     FldActor* actor;

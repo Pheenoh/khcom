@@ -71,9 +71,9 @@ u8 task_btl_form_1(BtlFormWork* work) {
         } else {
             if (work->unk_00 == 0) {
                 obj = gBtlWork->actor;
-                work->unk_14 = (obj->x + 0x10000) >> 1;
-                work->unk_18 = obj->y;
-                work->unk_1C = 0;
+                work->x = (obj->x + 0x10000) >> 1;
+                work->y = obj->y;
+                work->z = 0;
 
                 if (obj->unk_034 & 4) {
                     if (GetRandom() % 5 != 0) {
@@ -93,12 +93,12 @@ u8 task_btl_form_1(BtlFormWork* work) {
             step = &work->unk_0C->steps[work->unk_04];
             if (work->unk_02 >= step->delay) {
                 if (work->unk_20 & 1) {
-                    x = work->unk_14 - (step->x << 8);
+                    x = work->x - (step->x << 8);
                 } else {
-                    x = work->unk_14 + (step->x << 8);
+                    x = work->x + (step->x << 8);
                 }
-                y = work->unk_18 + (step->y << 8);
-                z = work->unk_1C + (step->z << 8);
+                y = work->y + (step->y << 8);
+                z = work->z + (step->z << 8);
                 func_0801BDDC(step->id, x, y, z);
                 work->unk_04++;
             } else {
@@ -229,9 +229,9 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithTables(&work->anim, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
     SetObjTileSource(work->tiles2, gUnk_08901C8A);
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_38 = 100;
     work->unk_40 = 0;
     work->unk_44 = 256;

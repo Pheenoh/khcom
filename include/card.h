@@ -1602,8 +1602,8 @@ typedef struct UnkStruct_080A5D3C {
 typedef char UnkStruct_080A5D3C_sizechk[(sizeof(struct UnkStruct_080A5D3C) == 0x50C) ? 1 : -1];
 
 typedef struct LevelUpEffectArgs {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     u8 unk_08;
     u8 unk_09[3];
     void* unk_0C;

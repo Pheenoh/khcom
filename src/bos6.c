@@ -2277,18 +2277,18 @@ void func_0810D4F8(BosLstWork* work) {
     pBC = &work->unk_0BC;
     if (v == 0) {
         work->unk_0C4 = 3;
-        s.unk_14 = obj->x;
-        s.unk_18 = obj->y - 0x1100;
-        s.unk_1C = obj->z + 0x800;
+        s.x = obj->x;
+        s.y = obj->y - 0x1100;
+        s.z = obj->z + 0x800;
         for (i = 0; i < work->unk_0C4; i++) {
             s.unk_00 = 0;
             s.unk_04 = i;
             s.unk_08 = &work->unk_012;
             s.unk_0C = &work->unk_074;
             s.unk_10 = &work->unk_004;
-            s.unk_20 = s.unk_14 + (i << 11);
-            s.unk_24 = obj->y + 0x1400;
-            s.unk_28 = s.unk_1C + ((i << 2) << 8);
+            s.unk_20 = s.x + (i << 11);
+            s.y2 = obj->y + 0x1400;
+            s.unk_28 = s.z + ((i << 2) << 8);
             work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
         }
         *pBC = 0;
@@ -2398,18 +2398,18 @@ void func_0810D77C(BosLstWork* work) {
         if (work->unk_06E == 0) {
             work->unk_06E = v + 1;
             work->unk_0C4 = 3;
-            s.unk_14 = obj->x;
-            s.unk_18 = obj->y - 0x1100;
-            s.unk_1C = obj->z + 0x800;
+            s.x = obj->x;
+            s.y = obj->y - 0x1100;
+            s.z = obj->z + 0x800;
             for (i = 0; i < work->unk_0C4; i++) {
                 s.unk_00 = 1;
                 s.unk_04 = i;
                 s.unk_08 = &work->unk_012;
                 s.unk_0C = &work->unk_074;
                 s.unk_10 = &work->unk_004;
-                s.unk_20 = s.unk_14 + (i << 11);
-                s.unk_24 = obj->y + 0x1400;
-                s.unk_28 = s.unk_1C + ((i << 2) << 8);
+                s.unk_20 = s.x + (i << 11);
+                s.y2 = obj->y + 0x1400;
+                s.unk_28 = s.z + ((i << 2) << 8);
                 work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
             }
         }

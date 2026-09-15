@@ -33,9 +33,9 @@ typedef struct BtlFormWork {
     const BtlFormEntry* unk_0C;
     s16 unk_10;
     u8 unk_12[0x02];
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
+    s32 x;
+    s32 y;
+    s32 z;
     u16 unk_20;
     u16 unk_22;
     s16 unk_24;
@@ -95,9 +95,9 @@ typedef struct BtlRaidWork {
 } BtlRaidWork;
 
 typedef struct BtlRaidArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
     s16 unk_14;

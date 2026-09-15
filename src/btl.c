@@ -5664,15 +5664,15 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         case 37:
             args.unk_14 = work->unk_172;
             args.unk_1C = work->unk_162[0];
-            args.unk_04 = p->y;
-            args.unk_08 = p->z - 6144;
+            args.y = p->y;
+            args.z = p->z - 6144;
 
             if (p->unk_034 & 4) {
                 args.unk_12 = 1;
-                args.unk_00 = p->x - 6144;
+                args.x = p->x - 6144;
             } else {
                 args.unk_12 = 0;
-                args.unk_00 = p->x + 6144;
+                args.x = p->x + 6144;
             }
 
             work->unk_188 = TaskCreate(&work->unk_024, &gTaskDescBtlRaid, &args);

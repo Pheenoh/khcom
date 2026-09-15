@@ -474,8 +474,8 @@ typedef struct TmArmJoint {
     s32 unk_04;
     u8 unk_08;
     u8 unk_09[0x3];
-    s32 unk_0C;
-    s32 unk_10;
+    s32 x;
+    s32 y;
     u16 unk_14;
     u8 unk_16[0x10];
     u16 unk_26;
@@ -484,9 +484,9 @@ typedef struct TmArmJoint {
 } TmArmJoint;
 
 typedef struct TmArmPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u16 unk_0C;
     u16 unk_0E;
 } TmArmPos;

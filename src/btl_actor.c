@@ -47,9 +47,9 @@ void func_0800EEBC(Actor* p, SprObj* s) {
     if (s->flags & 4) {
         prio = (-0x1004 - (s->y >> 8) * 4) | 3;
     } else if (s->flags & 1) {
-        prio = ((-0x1004 - (c->unk_08 >> 8) * 4) | 3) - 1;
+        prio = ((-0x1004 - (c->y >> 8) * 4) | 3) - 1;
     } else {
-        prio = ((-0x1004 - (c->unk_08 >> 8) * 4) | 3) + 1;
+        prio = ((-0x1004 - (c->y >> 8) * 4) | 3) + 1;
     }
     WorldToScreen(&x, &y, s->x, s->y, s->z);
     DrawSprite(x, y, s->gfx, s->tiles, s->palette, affine, attr, prio);
@@ -267,14 +267,14 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r) {
 
     func_0801C700(c, &v0, &v1, 0);
     rr = r << 8;
-    d = c->unk_08 - v1;
+    d = c->y - v1;
 
-    if (d >= 0 ? d > rr : v1 - c->unk_08 > rr) {
+    if (d >= 0 ? d > rr : v1 - c->y > rr) {
         return 0;
     }
 
     if (*(u64*)&c->unk_34 & 4) {
-        t = c->unk_04 - (a << 8);
+        t = c->x - (a << 8);
         bb = b << 8;
 
         if (t - bb > v0) {
@@ -285,7 +285,7 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r) {
             return 0;
         }
     } else {
-        t = c->unk_04 + (a << 8);
+        t = c->x + (a << 8);
         bb = b << 8;
 
         if (t + bb < v0) {
@@ -300,11 +300,11 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r) {
 }
 
 u8 func_0800F4C8(BtlObj* p, u16 b) {
-    if (p->unk_040.unk_04 < (gBtlWork->unk_0DA + b) << 8) {
+    if (p->unk_040.x < (gBtlWork->unk_0DA + b) << 8) {
         return 1;
     }
 
-    if (p->unk_040.unk_04 > (gBtlWork->unk_0DC - b) << 8) {
+    if (p->unk_040.x > (gBtlWork->unk_0DC - b) << 8) {
         return 1;
     }
     return 0;
@@ -322,9 +322,9 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
 
     func_0801C700(c, &v0, &v1, 0);
     rr = r << 8;
-    d = c->unk_08 - v1;
+    d = c->y - v1;
 
-    if (d >= 0 ? d > rr : v1 - c->unk_08 > rr) {
+    if (d >= 0 ? d > rr : v1 - c->y > rr) {
         return 0;
     }
 
@@ -332,22 +332,22 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
         t = v0 - (a << 8);
         bb = b << 8;
 
-        if (t - bb > c->unk_04) {
+        if (t - bb > c->x) {
             return 0;
         }
 
-        if (t + bb < c->unk_04) {
+        if (t + bb < c->x) {
             return 0;
         }
     } else {
         t = v0 + (a << 8);
         bb = b << 8;
 
-        if (t + bb < c->unk_04) {
+        if (t + bb < c->x) {
             return 0;
         }
 
-        if (t - bb > c->unk_04) {
+        if (t - bb > c->x) {
             return 0;
         }
     }

@@ -569,7 +569,7 @@ void ColliderInit(Collider* p, u32 type, u16 r, u16 h) {
     p->unk_30 = 0;
     p->radius = r << 8;
     p->height = h << 8;
-    p->unk_00 = type;
+    p->type = type;
     p->self = p;
     p->unk_58 = 0;
     pool = ColliderGetPool(type);
@@ -587,14 +587,14 @@ void ColliderInit(Collider* p, u32 type, u16 r, u16 h) {
 void ColliderUnregister(Collider* p) {
     Collider* q = p->self;
     if (q == p) {
-        ListPoolRemove(&q->unk_18, ColliderGetPool(q->unk_00));
+        ListPoolRemove(&q->unk_18, ColliderGetPool(q->type));
     }
 }
 
 void ColliderSetPosition(Collider* p, s32 a, s32 b, s32 c) {
-    p->unk_04 = a;
-    p->unk_08 = b * 2;
-    p->unk_0C = c;
+    p->x = a;
+    p->y = b * 2;
+    p->z = c;
 }
 
 void ColliderClearPoolContacts(ListPool* pool) {
@@ -625,32 +625,32 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
 
         while (q != 0 && p != q) {
             sum = p->radius + q->radius;
-            dx = p->unk_04 - q->unk_04;
+            dx = p->x - q->x;
 
             if (dx < 0) {
-                dx = q->unk_04 - p->unk_04;
+                dx = q->x - p->x;
             }
 
-            dy = p->unk_08 - q->unk_08;
+            dy = p->y - q->y;
 
             if (dy < 0) {
-                dy = q->unk_08 - p->unk_08;
+                dy = q->y - p->y;
             }
 
             if (dx < sum && dy < sum) {
                 pen = sum - Sqrt8(((dx * dx) >> 8) + ((dy * dy) >> 8));
 
                 if (pen > 0) {
-                    dz = p->unk_0C - q->unk_0C;
+                    dz = p->z - q->z;
 
                     if (dz < p->height && -dz < q->height) {
                         q->unk_2C = 1;
                         p->unk_2C = 1;
-                        p->unk_34 = q->unk_00;
-                        q->unk_34 = p->unk_00;
-                        p->unk_58 |= 1 << q->unk_00;
-                        q->unk_58 |= 1 << p->unk_00;
-                        angle = GetAngle(p->unk_04, p->unk_08, q->unk_04, q->unk_08);
+                        p->unk_34 = q->type;
+                        q->unk_34 = p->type;
+                        p->unk_58 |= 1 << q->type;
+                        q->unk_58 |= 1 << p->type;
+                        angle = GetAngle(p->x, p->y, q->x, q->y);
                         t = (pen * gSineTable[angle]) >> 8;
                         p->unk_38 = -t;
                         p->unk_3C = -((pen * -gSineTable[angle + 64]) >> 8);
@@ -660,56 +660,56 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
                         q->unk_50 = p;
 
                         if (q->unk_30 & 1) {
-                            p->unk_40 = q->unk_0C - q->height;
+                            p->unk_40 = q->z - q->height;
                             p->unk_4C = pen;
-                            p->unk_48 = q->unk_08 >> 1;
-                            p->unk_44 = q->unk_04;
+                            p->unk_48 = q->y >> 1;
+                            p->unk_44 = q->x;
                         }
 
                         if (p->unk_30 & 1) {
-                            q->unk_40 = p->unk_0C - p->height;
+                            q->unk_40 = p->z - p->height;
                             q->unk_4C = pen;
-                            q->unk_48 = p->unk_08 >> 1;
-                            q->unk_44 = p->unk_04;
+                            q->unk_48 = p->y >> 1;
+                            q->unk_44 = p->x;
                         }
                     } else {
                         if (q->unk_30 & 1) {
-                            if (q->unk_0C - q->height >= p->unk_0C) {
+                            if (q->z - q->height >= p->z) {
                                 p->unk_2E |= 1;
 
-                                if (q->unk_0C - q->height == p->unk_0C) {
+                                if (q->z - q->height == p->z) {
                                     q->unk_2E |= 2;
-                                    p->unk_58 |= 1 << q->unk_00;
-                                    q->unk_58 |= 1 << p->unk_00;
+                                    p->unk_58 |= 1 << q->type;
+                                    q->unk_58 |= 1 << p->type;
                                 }
 
-                                p->unk_40 = q->unk_0C - q->height;
+                                p->unk_40 = q->z - q->height;
                                 p->unk_4C = pen;
-                                p->unk_48 = q->unk_08 >> 1;
-                                p->unk_44 = q->unk_04;
+                                p->unk_48 = q->y >> 1;
+                                p->unk_44 = q->x;
                                 p->unk_50 = q;
-                                p->unk_34 = q->unk_00;
-                                q->unk_34 = p->unk_00;
+                                p->unk_34 = q->type;
+                                q->unk_34 = p->type;
                             }
                         }
 
                         if (p->unk_30 & 1) {
-                            if (p->unk_0C - p->height >= q->unk_0C) {
+                            if (p->z - p->height >= q->z) {
                                 q->unk_2E |= 1;
 
-                                if (p->unk_0C - p->height == q->unk_0C) {
+                                if (p->z - p->height == q->z) {
                                     p->unk_2E |= 2;
-                                    p->unk_58 |= 1 << q->unk_00;
-                                    q->unk_58 |= 1 << p->unk_00;
+                                    p->unk_58 |= 1 << q->type;
+                                    q->unk_58 |= 1 << p->type;
                                 }
 
-                                q->unk_40 = p->unk_0C - p->height;
+                                q->unk_40 = p->z - p->height;
                                 q->unk_4C = pen;
-                                q->unk_48 = p->unk_08 >> 1;
-                                q->unk_44 = p->unk_04;
+                                q->unk_48 = p->y >> 1;
+                                q->unk_44 = p->x;
                                 q->unk_50 = p;
-                                p->unk_34 = q->unk_00;
-                                q->unk_34 = p->unk_00;
+                                p->unk_34 = q->type;
+                                q->unk_34 = p->type;
                             }
                         }
                     }

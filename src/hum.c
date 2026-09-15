@@ -923,15 +923,15 @@ u8 task_hum_hook_1(HookWork* work) {
         if ((w->unk_198 & 1) == 0) {
             if (AnimGetFrame(&work->base.anim) == 6 && work->base.anim.timer == 0) {
                 if (act->unk_034 & 4) {
-                    args.unk_00 = act->x - 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x - 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 1;
                     args.unk_14 = 1;
                 } else {
-                    args.unk_00 = act->x + 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x + 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 0;
                     args.unk_14 = 1;
                 }
@@ -973,15 +973,15 @@ u8 task_hum_hook_1(HookWork* work) {
         if ((w->unk_198 & 1) == 0) {
             if (AnimGetFrame(&work->base.anim) == 6 && work->base.anim.timer == 0) {
                 if (act->unk_034 & 4) {
-                    args.unk_00 = act->x - 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x - 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 1;
                     args.unk_14 = 0;
                 } else {
-                    args.unk_00 = act->x + 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x + 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 0;
                     args.unk_14 = 0;
                 }
@@ -1021,15 +1021,15 @@ u8 task_hum_hook_1(HookWork* work) {
         if ((w->unk_198 & 1) == 0) {
             if (AnimGetFrame(&work->base.anim) == 6 && work->base.anim.timer == 0) {
                 if (act->unk_034 & 4) {
-                    args.unk_00 = act->x - 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x - 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 1;
                     args.unk_14 = 2;
                 } else {
-                    args.unk_00 = act->x + 0x3200;
-                    args.unk_04 = act->y;
-                    args.unk_08 = act->z - 0x1C00;
+                    args.x = act->x + 0x3200;
+                    args.y = act->y;
+                    args.z = act->z - 0x1C00;
                     args.unk_12 = 0;
                     args.unk_14 = 2;
                 }
@@ -1349,9 +1349,9 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
     work->tiles = AllocObjTiles(0x280, gUnk_08B59E52);
     AnimInit(&work->anim, gUnk_09EE17AC, gUnk_09EE1798);
     AnimStart(&work->anim, 0, 1);
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_4E = args->unk_14;
     work->unk_3C = 0;
     work->unk_4A = 0;
@@ -2867,14 +2867,14 @@ void func_0804FD7C(MahluxiaWork* work) {
     s32 range;
 
     if (gFrameCounter % 5 == 0) {
-        args.unk_00 = act->x;
-        args.unk_04 = act->y;
-        args.unk_08 = act->z - ((s16)act->unk_0A2 << 8);
+        args.x = act->x;
+        args.y = act->y;
+        args.z = act->z - ((s16)act->unk_0A2 << 8);
         range = 0x2000;
-        args.unk_00 += ((GetRandom() % 65) << 8) - range;
+        args.x += ((GetRandom() % 65) << 8) - range;
         range = 0x1000;
-        args.unk_04 += ((GetRandom() % 33) << 8) - range;
-        args.unk_08 += ((GetRandom() % 41) << 8) - range;
+        args.y += ((GetRandom() % 33) << 8) - range;
+        args.z += ((GetRandom() % 41) << 8) - range;
         TaskCreate(&work->unk_390, gTaskDescHumMahluxiaFlw, &args);
     }
 }
@@ -3419,14 +3419,14 @@ void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
     VixenNdlArgs args;
 
     if (act->unk_034 & 4) {
-        args.unk_00 = act->x + (a << 8);
+        args.x = act->x + (a << 8);
         args.unk_12 = 1;
     } else {
-        args.unk_00 = act->x - (a << 8);
+        args.x = act->x - (a << 8);
         args.unk_12 = 0;
     }
-    args.unk_08 = act->z + (b << 8);
-    args.unk_04 = act->y;
+    args.z = act->z + (b << 8);
+    args.y = act->y;
     TaskCreate(&work->unk_194, gTaskDescHumLaxeneKnf, &args);
 }
 
@@ -4143,9 +4143,9 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     } else {
         work->unk_2C = 0;
     }
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_2E = 0;
     work->unk_2D = 1;
     work->unk_3C = 0;
@@ -5408,9 +5408,9 @@ u8 task_hum_vixen_1(VixenWork* work) {
             func_0800F368(w, 1);
 
             if ((s16)w->base.unk_150 % 9 == 0) {
-                args.unk_00 = work->unk_198;
-                args.unk_04 = work->unk_19C;
-                args.unk_08 = 0;
+                args.x = work->unk_198;
+                args.y = work->unk_19C;
+                args.z = 0;
                 args.unk_12 = work->unk_1BC % 8;
                 args.unk_18 = &work->unk_1E8;
                 work->unk_1BC++;
@@ -5567,9 +5567,9 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
 
         if (AnimGetFrame(&w->base.anim) == 3 && w->base.anim.timer == 0) {
-            args.unk_00 = x;
-            args.unk_04 = y;
-            args.unk_08 = 0;
+            args.x = x;
+            args.y = y;
+            args.z = 0;
             work->unk_1B8 = TaskCreate(&work->unk_1A4, gTaskDescHumVixenFrz, &args);
         }
 
@@ -5619,9 +5619,9 @@ void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
     AnimInit(&work->anim, gUnk_09EE26B0, gUnk_09EE2690);
     AnimStart(&work->anim, 0, 0);
     work->unk_2C = args->unk_12;
-    work->x = args->unk_00;
-    work->y = args->unk_04 + (GetRandom() % 11 - 5) * 256;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y + (GetRandom() % 11 - 5) * 256;
+    work->z = args->z;
     work->unk_2D = 0;
     m4aSongNumStart(0x286);
 
@@ -5826,9 +5826,9 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
         work->unk_34 = 1;
     }
     m4aSongNumStart(0x1FE);
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
 }
 
 u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
@@ -5909,9 +5909,9 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         work->z = gBtlWork->actor->z;
 
         if (AnimIsFinished(&work->anim)) {
-            args.unk_00 = work->x;
-            args.unk_04 = work->y;
-            args.unk_08 = work->z;
+            args.x = work->x;
+            args.y = work->y;
+            args.z = work->z;
             TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args);
             work->unk_2C = 6;
             work->unk_30 = 0;
@@ -5955,9 +5955,9 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         }
 
         if (AnimIsFinished(&work->anim)) {
-            args2.unk_00 = work->x;
-            args2.unk_04 = work->y;
-            args2.unk_08 = work->z;
+            args2.x = work->x;
+            args2.y = work->y;
+            args2.z = work->z;
             TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args2);
             work->unk_2C = 6;
             work->unk_30 = 0;
@@ -6010,9 +6010,9 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     for (i = 0; i < 15; i++) {
         VixenFrgDef* d = &gUnk_0813FA00[i];
         e = &work->sub[i];
-        e->unk_04 = args->unk_00 + (d->unk_00 << 8);
-        e->unk_08 = args->unk_04;
-        e->unk_0C = args->unk_08 + (d->unk_02 << 8);
+        e->unk_04 = args->x + (d->unk_00 << 8);
+        e->unk_08 = args->y;
+        e->unk_0C = args->z + (d->unk_02 << 8);
         e->unk_1C = d->unk_06;
         e->unk_00 = gUnk_09EE218C[d->unk_04];
         e->unk_10 = GetRandom() % 0x401 - 0x500;
@@ -6234,14 +6234,14 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         case 3:
             if (work->base.anim.timer == 0) {
                 if (act->unk_034 & 4) {
-                    a1.unk_00 = act->x - 0x2000;
+                    a1.x = act->x - 0x2000;
                     a1.unk_12 = 1;
                 } else {
-                    a1.unk_00 = act->x + 0x2000;
+                    a1.x = act->x + 0x2000;
                     a1.unk_12 = 0;
                 }
-                a1.unk_04 = act->y;
-                a1.unk_08 = 0;
+                a1.y = act->y;
+                a1.z = 0;
                 w->unk_1EC = TaskCreate(&w->unk_1D8, &gTaskDescHumLexRock, &a1);
             }
             break;
@@ -6283,14 +6283,14 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         if (AnimGetFrame(&work->base.anim) == 3) {
             if (work->base.anim.timer == 2) {
                 if (act->unk_034 & 4) {
-                    a1.unk_00 = act->x - 0x1800;
+                    a1.x = act->x - 0x1800;
                     a1.unk_12 = 1;
                 } else {
-                    a1.unk_00 = act->x + 0x1800;
+                    a1.x = act->x + 0x1800;
                     a1.unk_12 = 0;
                 }
-                a1.unk_04 = act->y;
-                a1.unk_08 = act->z - 0x6000;
+                a1.y = act->y;
+                a1.z = act->z - 0x6000;
                 w->unk_1CA |= 4;
                 w->unk_1EC = TaskCreate(&w->unk_1D8, &gTaskDescHumLexTmh, &a1);
             }
@@ -6313,14 +6313,14 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         if (AnimGetFrame(&work->base.anim) == 2) {
             if (work->base.anim.timer == 10) {
                 if (act->unk_034 & 4) {
-                    a2.unk_00 = act->x - 0x700;
+                    a2.x = act->x - 0x700;
                     a2.unk_12 = 1;
                 } else {
-                    a2.unk_00 = act->x + 0x700;
+                    a2.x = act->x + 0x700;
                     a2.unk_12 = 0;
                 }
-                a2.unk_04 = act->y;
-                a2.unk_08 = act->z;
+                a2.y = act->y;
+                a2.z = act->z;
                 TaskCreate(&w->unk_1D8, &gTaskDescHumLexTmh0, &a2);
             }
         }
@@ -6591,9 +6591,9 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     } else {
         work->unk_2C = 0;
     }
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_34 = gBtlWork->unk_130 + (GetRandom() % 65 - 32) * 256;
     work->unk_38 = gBtlWork->unk_134 + (GetRandom() % 33 - 16) * 256;
     work->unk_30 = 0;
@@ -6724,9 +6724,9 @@ void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
     } else {
         work->unk_2C = 0;
     }
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_30 = 10;
     work->unk_34 = 21;
     m4aSongNumStart(0x2B4);
@@ -6785,9 +6785,9 @@ void task_hum_lex_rock_0(LexRockWork* work, VixenNdlArgs* args) {
     } else {
         work->unk_160 = 0;
     }
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_162 = 0;
     work->unk_164 = 0;
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
@@ -6989,9 +6989,9 @@ void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DC84, 0x20);
     work->tiles = LoadObjTiles(gUnk_08BCB3D8, 0x100);
     work->unk_00 = 0;
-    work->x = args->unk_00;
-    work->y = args->unk_04;
-    work->z = args->unk_08;
+    work->x = args->x;
+    work->y = args->y;
+    work->z = args->z;
     work->unk_2C = GetRandom() % 717 - 358;
     work->unk_28 = -(GetRandom() % 539 + 102);
     AnimInit(&work->anim, gUnk_09EE1CB4, gUnk_09EE1C94);

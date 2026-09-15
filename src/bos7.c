@@ -346,12 +346,12 @@ void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg) {
     work->unk_002 = 0;
     work->unk_004 = 0;
     work->unk_006 = arg->unk_00;
-    work->x = arg->unk_04;
-    work->y = arg->unk_08;
-    work->z = arg->unk_0C;
-    work->unk_014 = arg->unk_04;
-    work->unk_018 = arg->unk_08;
-    work->unk_01C = arg->unk_0C;
+    work->x = arg->x;
+    work->y = arg->y;
+    work->z = arg->z;
+    work->unk_014 = arg->x;
+    work->unk_018 = arg->y;
+    work->unk_01C = arg->z;
     work->tiles = (u32)AllocObjTiles(0x80, gUnk_09C5C4E2);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     AnimInit(&work->anim, gUnk_09EFAF1C, gUnk_09EFAEF8);
@@ -458,13 +458,13 @@ u8 func_081108AC(LstState* work, s32 kind) {
     if ((s16)*work->unk_020 <= 31) {
         arg.unk_00 = 0;
         if (kind == 1) {
-            arg.unk_04 = work->unk_050;
-            arg.unk_08 = work->unk_054;
-            arg.unk_0C = work->unk_058;
+            arg.x = work->unk_050;
+            arg.y = work->unk_054;
+            arg.z = work->unk_058;
         } else {
-            arg.unk_04 = work->unk_028;
-            arg.unk_08 = work->unk_02C;
-            arg.unk_0C = work->unk_030;
+            arg.x = work->unk_028;
+            arg.y = work->unk_02C;
+            arg.z = work->unk_030;
         }
         arg.unk_12 = *work->unk_01C;
         arg.unk_14 = work->unk_020;
@@ -1194,9 +1194,9 @@ u8 func_08111678(LstLsrWork* work) {
 
     if ((s16)*work->unk_00C <= 31) {
         arg.unk_00 = 0;
-        arg.unk_04 = work->x2;
-        arg.unk_08 = work->y2;
-        arg.unk_0C = work->z2;
+        arg.x = work->x2;
+        arg.y = work->y2;
+        arg.z = work->z2;
         arg.unk_12 = *work->unk_008;
         arg.unk_14 = work->unk_00C;
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFal, &arg);
@@ -1416,9 +1416,9 @@ void task_bos_lst_fal_0(LstFalWork* work, LstFalArg* arg) {
 
     anim = gUnk_09A4FE64[GetRandom() & 7][0];
     work->unk_000 = arg->unk_00;
-    work->x = arg->unk_04;
-    work->y = arg->unk_08;
-    work->z = arg->unk_0C;
+    work->x = arg->x;
+    work->y = arg->y;
+    work->z = arg->z;
     work->unk_010 = (GetRandom() % 0x181 + 0x80) * arg->unk_12;
     work->unk_014 = GetRandom() % 0xC1 + 0x40;
     work->unk_018 = GetRandom() % 0x81 + 0x80;
@@ -1570,12 +1570,12 @@ void task_bos_lst_ctr_0(LstCtrWork* work, LstCtrArg* arg) {
     work->unk_020 = 0;
     work->unk_024 = 0;
     work->unk_028 = 0;
-    work->unk_014 = arg->unk_0C;
-    work->unk_018 = arg->unk_10;
-    work->unk_01C = arg->unk_14;
-    work->x = arg->unk_0C;
-    work->y = arg->unk_10;
-    work->z = arg->unk_14;
+    work->unk_014 = arg->x;
+    work->unk_018 = arg->y;
+    work->unk_01C = arg->z;
+    work->x = arg->x;
+    work->y = arg->y;
+    work->z = arg->z;
     work->tiles = (u32)LoadObjTiles(gUnk_09C5C704, 0x500);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     AnimInit(&work->anim, gUnk_09EFAF50, gUnk_09EFAF24);
@@ -2000,8 +2000,8 @@ void func_08112768(StaffRollWork* w) {
         case 15:
             e = (EvtObj*)func_08112748(w);
             arg.unk_00 = w->unk_0CC[w->unk_0D0 + 4];
-            arg.unk_04 = e->x;
-            arg.unk_08 = e->y;
+            arg.x = e->x;
+            arg.y = e->y;
             TaskCreate(w->unk_110, &gTaskDescSrollBCrtn, &arg);
             break;
         case 16:

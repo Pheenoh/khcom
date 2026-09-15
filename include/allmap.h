@@ -90,8 +90,8 @@ typedef struct AllmapBarWork {
 } AllmapBarWork;
 
 typedef struct AllmapCursorPos {
-    u16 unk_00;
-    u16 unk_02;
+    u16 x;
+    u16 y;
 } AllmapCursorPos;
 
 typedef struct AllmapCursorWork {

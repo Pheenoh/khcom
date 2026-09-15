@@ -5,16 +5,16 @@
 #include "battle_actor_types.h"
 
 typedef struct TmWork {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
+    u16 x;
+    u16 y;
+    u16 z;
     u8 unk_06[0x2];
     s32 unk_08;
     s32 unk_0C;
     s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
+    s32 x2;
+    s32 y2;
+    s32 z2;
     s32 unk_20;
     s32 unk_24;
     u16 unk_28;

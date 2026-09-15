@@ -393,16 +393,16 @@ u8 task_lockon_1(LockonWork* w) {
 
     if ((gUnk_02039BA0->unk_70 & 2) == 0) {
         while (o != 0) {
-            ox = o->unk_00;
-            oy = o->unk_04;
+            ox = o->x;
+            oy = o->y;
             dx = px - ox;
             dy = py - oy;
 
             if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->actor.unk_00.unk_0C) {
                 if (o->unk_30 == 3) {
-                    gUnk_02039DC4[0] = o->unk_00;
-                    gUnk_02039DC4[1] = o->unk_04;
-                    gUnk_02039DC4[2] = o->unk_08;
+                    gUnk_02039DC4[0] = o->x;
+                    gUnk_02039DC4[1] = o->y;
+                    gUnk_02039DC4[2] = o->z;
                     w->unk_0C[count++] = o;
                     w->unk_2C++;
                 } else {
@@ -472,9 +472,9 @@ void task_lockon_2(LockonWork* w) {
         return;
     }
 
-    x = (obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (obj->x >> 8) - (gUnk_02039BA0->x >> 8);
     x2.coord = x + 12;
-    y = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A;
+    y = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A;
     y2.coord = y - 8;
 
     CLAMP_LABEL(x2.coord, x + 60, 240, 192);
@@ -497,13 +497,13 @@ void task_lockon_2(LockonWork* w) {
 #ifdef VERSION_EU
     {
         FldObj* obj = w->unk_0C[w->unk_2D];
-        s32 projectedY = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8);
+        s32 projectedY = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8);
 
-        DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
+        DrawSprite((obj->x >> 8) - (gUnk_02039BA0->x >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
     }
 #else
     obj = w->unk_0C[w->unk_2D];
-    DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->x >> 8), (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->unk_04 >> 8) << 2)));
+    DrawSprite((obj->x >> 8) - (gUnk_02039BA0->x >> 8), (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->y >> 8) << 2)));
 #endif
 }
 
@@ -548,8 +548,8 @@ s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list) {
         o = w->unk_0C[list[i]];
 
         if (o != 0) {
-            dx = o->unk_00;
-            dy = o->unk_04;
+            dx = o->x;
+            dy = o->y;
             dist = VectorLength2D(dx - a, dy - b);
 
             if (bestDist > dist) {
@@ -588,8 +588,8 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
     s32 dot;
 
     if (d != 0) {
-        x = d->unk_00 - b;
-        y = d->unk_04 - c;
+        x = d->x - b;
+        y = d->y - c;
         sn = gSineTable[a & 0xFF];
         cs = -gSineTable[(a & 0xFF) + 0x40];
         NormalizeVector2D8(&x, &y);

@@ -848,9 +848,9 @@ u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z) {
     s32 i;
     s32 j;
 
-    args.unk_04 = x;
-    args.unk_08 = y;
-    args.unk_0C = z;
+    args.x = x;
+    args.y = y;
+    args.z = z;
     args.unk_14 = kind;
     made = 0;
     j = 0;

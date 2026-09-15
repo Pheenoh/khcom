@@ -114,8 +114,8 @@ typedef struct WlogoBksWork {
 } WlogoBksWork;
 
 typedef struct WlogoTtObjArg {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32 unk_08;
     s32 unk_0C;
 } WlogoTtObjArg;
@@ -278,8 +278,8 @@ typedef struct WlogoHlwWork {
 } WlogoHlwWork;
 
 typedef struct WlogoNvlObjArg {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32 unk_08;
 } WlogoNvlObjArg;
 

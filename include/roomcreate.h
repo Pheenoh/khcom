@@ -21,12 +21,12 @@
 
 
 typedef struct RoomCreateWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 x2;
+    s32 y2;
+    s32 z2;
     s32 unk_18;
     s32 unk_1C;
     s32 unk_20;

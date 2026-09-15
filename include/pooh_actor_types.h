@@ -6,7 +6,7 @@
 typedef struct PooPos {
     s32 x;
     s32 y;
-    s32 unk_08;
+    s32 z;
     s32 unk_0C;
 } PooPos;
 
