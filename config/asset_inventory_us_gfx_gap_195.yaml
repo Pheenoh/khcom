@@ -1,0 +1,41 @@
+# US inventory for asset_gfx_gap_195 (Policy B: no binaries).
+# Host mega: 0x0999389C–0x09A3DF34. First leaf only: gUnk_09A3D2DC palette.
+# Pack: python3 tools/gfx/asset_gfx_gap_195_pack.py --mode dump|built --version us
+
+version: us
+schema_version: 1
+mvp_class: asset_gfx_gap_195
+policy: B
+baserom_code: B8CE
+pack:
+  id: asset_gfx_gap_195
+  class: pack
+  unit: asset_gfx_gap_195
+  asm: asm/us/asset_gfx_gap_195.s
+  rom:
+    start: 0x0999389C
+    end: 0x09A3DF34
+    size: 698008
+  extract_path: assets/us/0999389C-09A3DF34.bin
+  sha256: d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419
+  path_mode_default: slice
+  confidence: medium
+  summary: >
+    Named megablob owned by asm/us/asset_gfx_gap_195.s as a single .incbin.
+    Fuller child map not yet RE'd; scaffold rebuilds only gUnk_09A3D2DC.
+
+symbols_in_pack:
+  - { address: 0x09A3D2DC, name: gUnk_09A3D2DC, size: 32, kind: palette }
+
+leaves:
+  - id: gUnk_09A3D2DC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D2DC
+    end: 0x09A3D2FC
+    size: 32
+    sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: mode_mapinspect LoadObjPalette(..., 0x20)
+    confidence: high

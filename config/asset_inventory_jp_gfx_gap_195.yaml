@@ -1,0 +1,24 @@
+# JP inventory for asset_gfx_gap_195 (Policy B). Leaf palette identical to US.
+version: jp
+schema_version: 1
+mvp_class: asset_gfx_gap_195
+policy: B
+baserom_code: B8CJ
+pack:
+  id: asset_gfx_gap_195
+  class: pack
+  unit: asset_gfx_gap_195
+  asm: asm/jp/asset_gfx_gap_195.s
+  rom: { start: 0x099483B0, end: 0x099F29BC, size: 697868 }
+  extract_path: assets/jp/099483B0-099F29BC.bin
+  sha256: a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c
+  path_mode_default: slice
+leaves:
+  - id: gUnk_09A3D2DC
+    class: leaf_gfx
+    format: palette
+    start: 0x099F1D64
+    end: 0x099F1D84
+    size: 32
+    sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
+    confidence: high

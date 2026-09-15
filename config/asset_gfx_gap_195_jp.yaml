@@ -1,0 +1,33 @@
+# JP asset_gfx_gap_195 host mega + leaf gUnk_09A3D2DC (ABS 0x099F1D64).
+# Policy B: sources/bins not committed. Parent mega stays slice by default.
+schema_version: 1
+id: asset_gfx_gap_195
+version: jp
+class: pack
+unit: asset_gfx_gap_195
+rom:
+  start: 0x099483B0
+  end: 0x099F29BC
+  size: 697868
+inventory: config/asset_inventory_jp_gfx_gap_195.yaml
+path_mode: slice
+extract_path: assets/jp/099483B0-099F29BC.bin
+build_path: build/jp/assets/asset_gfx_gap_195.bin
+source_root: assets/jp/src/gfx/asset_gfx_gap_195
+asm_slice: asm/jp/asset_gfx_gap_195.s
+asm_built: build/jp/asm/asset_gfx_gap_195.s
+tools:
+  gbagfx: tools/gbagfx/gbagfx
+  packer: tools/gfx/asset_gfx_gap_195_pack.py
+  layout: tools/gfx/asset_gfx_gap_195_layout.py
+sha256_slice: a2ad9fe15cbd3cf89e34eba60ccee8b9b31e9ee5310f3f2c72d3776397d2722c
+status: leaf_palette_scaffold
+children:
+  - id: gUnk_09A3D2DC
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3D2DC
+    rom: { start: 0x099F1D64, end: 0x099F1D84, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_195/gUnk_09A3D2DC.png
+    sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
+    consumer: LoadObjPalette(..., 0x20) mode_mapinspect

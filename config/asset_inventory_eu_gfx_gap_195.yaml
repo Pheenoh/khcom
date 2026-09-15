@@ -1,0 +1,24 @@
+# EU inventory for asset_gfx_gap_195 (Policy B). Leaf palette identical to US.
+version: eu
+schema_version: 1
+mvp_class: asset_gfx_gap_195
+policy: B
+baserom_code: B8CP
+pack:
+  id: asset_gfx_gap_195
+  class: pack
+  unit: asset_gfx_gap_195
+  asm: asm/eu/asset_gfx_gap_195.s
+  rom: { start: 0x09999B58, end: 0x09A9B9F8, size: 1056416 }
+  extract_path: assets/eu/09999B58-09A9B9F8.bin
+  sha256: 5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29
+  path_mode_default: slice
+leaves:
+  - id: gUnk_09A3D2DC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9ADA0
+    end: 0x09A9ADC0
+    size: 32
+    sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
+    confidence: high
