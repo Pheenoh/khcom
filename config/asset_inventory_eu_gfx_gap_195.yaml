@@ -14,6 +14,38 @@ pack:
   sha256: 5207ef458b9091924c8e08f69536b0467d1986e4f0bede8c5c9c35c6d86c2b29
   path_mode_default: slice
 leaves:
+  - id: gUnk_09A3C89C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A360
+    end: 0x09A9A380
+    size: 32
+    sha1: 5da586ba31e87f088db8a8e6b23afdc0a4d08044
+    confidence: high
+  - id: gUnk_09A3C97C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A440
+    end: 0x09A9A460
+    size: 32
+    sha1: f47145c22d9fdb72c4aac2250d250a505fe5dacd
+    confidence: high
+  - id: gUnk_09A3C99C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A460
+    end: 0x09A9A480
+    size: 32
+    sha1: e5895f3bd934b7d32dd2e96a8122db856d53ca2f
+    confidence: high
+  - id: gUnk_09A3C9BC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A480
+    end: 0x09A9A4A0
+    size: 32
+    sha1: d7b494010b18ed49ec3471489d1f40de493bc02e
+    confidence: high
   - id: gUnk_09A3CC3C
     class: leaf_gfx
     format: palette
@@ -21,6 +53,22 @@ leaves:
     end: 0x09A9A720
     size: 32
     sha1: bf51a0326246b202cd501f21e197bba1c9362018
+    confidence: high
+  - id: gUnk_09A3CC5C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A720
+    end: 0x09A9A740
+    size: 32
+    sha1: fb3509387ac30452cb2eb4ac5f3a5b7c1f9d0454
+    confidence: high
+  - id: gUnk_09A3CC7C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9A740
+    end: 0x09A9A760
+    size: 32
+    sha1: 7c22253ceda86021426c1297908e054676d05859
     confidence: high
   - id: gUnk_09A3CC9C
     class: leaf_gfx
@@ -85,4 +133,20 @@ leaves:
     end: 0x09A9B0A0
     size: 32
     sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
+    confidence: high
+  - id: gUnk_09A3D7FC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9B2C0
+    end: 0x09A9B2E0
+    size: 32
+    sha1: a610dd5bb4bd63eaff341e540913743bddbda083
+    confidence: high
+  - id: gUnk_09A3D85C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9B320
+    end: 0x09A9B340
+    size: 32
+    sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
     confidence: high

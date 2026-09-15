@@ -1,5 +1,5 @@
 # US inventory for asset_gfx_gap_195 (Policy B: no binaries).
-# Host mega: 0x0999389C–0x09A3DF34. Palette leaves: bos5/worldinspect/jiminy/mapinspect/worldwarp.
+# Host mega: 0x0999389C–0x09A3DF34. Palette leaves: bos5/jiminy/worldinspect/mapinspect/worldwarp/ms.
 # Pack: python3 tools/gfx/asset_gfx_gap_195_pack.py --mode dump|built --version us
 
 version: us
@@ -22,10 +22,16 @@ pack:
   confidence: medium
   summary: >
     Named megablob owned by asm/us/asset_gfx_gap_195.s as a single .incbin.
-    Fuller child map not yet RE'd; scaffold rebuilds nine LoadObjPalette 32B pals.
+    Fuller child map not yet RE'd; scaffold rebuilds 17 LoadObjPalette 32B pals.
 
 symbols_in_pack:
+  - { address: 0x09A3C89C, name: gUnk_09A3C89C, size: 32, kind: palette }
+  - { address: 0x09A3C97C, name: gUnk_09A3C97C, size: 32, kind: palette }
+  - { address: 0x09A3C99C, name: gUnk_09A3C99C, size: 32, kind: palette }
+  - { address: 0x09A3C9BC, name: gUnk_09A3C9BC, size: 32, kind: palette }
   - { address: 0x09A3CC3C, name: gUnk_09A3CC3C, size: 32, kind: palette }
+  - { address: 0x09A3CC5C, name: gUnk_09A3CC5C, size: 32, kind: palette }
+  - { address: 0x09A3CC7C, name: gUnk_09A3CC7C, size: 32, kind: palette }
   - { address: 0x09A3CC9C, name: gUnk_09A3CC9C, size: 32, kind: palette }
   - { address: 0x09A3D07C, name: gUnk_09A3D07C, size: 32, kind: palette }
   - { address: 0x09A3D09C, name: gUnk_09A3D09C, size: 32, kind: palette }
@@ -34,8 +40,54 @@ symbols_in_pack:
   - { address: 0x09A3D57C, name: gUnk_09A3D57C, size: 32, kind: palette }
   - { address: 0x09A3D59C, name: gUnk_09A3D59C, size: 32, kind: palette }
   - { address: 0x09A3D5BC, name: gUnk_09A3D5BC, size: 32, kind: palette }
+  - { address: 0x09A3D7FC, name: gUnk_09A3D7FC, size: 32, kind: palette }
+  - { address: 0x09A3D85C, name: gUnk_09A3D85C, size: 32, kind: palette }
 
 leaves:
+  - id: gUnk_09A3C89C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3C89C
+    end: 0x09A3C8BC
+    size: 32
+    sha1: 5da586ba31e87f088db8a8e6b23afdc0a4d08044
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
+  - id: gUnk_09A3C97C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3C97C
+    end: 0x09A3C99C
+    size: 32
+    sha1: f47145c22d9fdb72c4aac2250d250a505fe5dacd
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
+  - id: gUnk_09A3C99C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3C99C
+    end: 0x09A3C9BC
+    size: 32
+    sha1: e5895f3bd934b7d32dd2e96a8122db856d53ca2f
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
+  - id: gUnk_09A3C9BC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3C9BC
+    end: 0x09A3C9DC
+    size: 32
+    sha1: d7b494010b18ed49ec3471489d1f40de493bc02e
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
   - id: gUnk_09A3CC3C
     class: leaf_gfx
     format: palette
@@ -45,7 +97,29 @@ leaves:
     sha1: bf51a0326246b202cd501f21e197bba1c9362018
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: bos5 LoadObjPalette(..., 32)
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
+  - id: gUnk_09A3CC5C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3CC5C
+    end: 0x09A3CC7C
+    size: 32
+    sha1: fb3509387ac30452cb2eb4ac5f3a5b7c1f9d0454
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
+    confidence: high
+  - id: gUnk_09A3CC7C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3CC7C
+    end: 0x09A3CC9C
+    size: 32
+    sha1: 7c22253ceda86021426c1297908e054676d05859
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 32) bos5
     confidence: high
   - id: gUnk_09A3CC9C
     class: leaf_gfx
@@ -56,7 +130,7 @@ leaves:
     sha1: 099b710e870ff122d89615001ad4be7a61026b21
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_jiminy LoadObjPalette(..., 0x20)
+    consumer: LoadObjPalette(..., 0x20) mode_jiminy
     confidence: high
   - id: gUnk_09A3D07C
     class: leaf_gfx
@@ -67,7 +141,7 @@ leaves:
     sha1: 48b9c6232707e66a4630e7451788b310a3a580e4
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: bos5/mode_worldinspect LoadObjPalette(..., 32)
+    consumer: LoadObjPalette(..., 32) bos5/mode_worldinspect
     confidence: high
   - id: gUnk_09A3D09C
     class: leaf_gfx
@@ -78,7 +152,7 @@ leaves:
     sha1: 715e9a30cb6280f400388a34dd3ed031bcc3a033
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_worldinspect LoadObjPalette(..., 0x20)
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
     confidence: high
   - id: gUnk_09A3D0BC
     class: leaf_gfx
@@ -89,7 +163,7 @@ leaves:
     sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_worldinspect LoadObjPalette(..., 0x20)
+    consumer: LoadObjPalette(..., 0x20) mode_worldinspect
     confidence: high
   - id: gUnk_09A3D2DC
     class: leaf_gfx
@@ -100,7 +174,7 @@ leaves:
     sha1: dc1c394483e795a1adf63ab5ba27dac00a0db865
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_mapinspect LoadObjPalette(..., 0x20)
+    consumer: LoadObjPalette(..., 0x20) mode_mapinspect
     confidence: high
   - id: gUnk_09A3D57C
     class: leaf_gfx
@@ -111,7 +185,7 @@ leaves:
     sha1: 0eeecb1d1e9b234d4623b091fd7f8bce60c6bc46
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_worldwarp LoadObjPalette(..., 32)
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
     confidence: high
   - id: gUnk_09A3D59C
     class: leaf_gfx
@@ -122,7 +196,7 @@ leaves:
     sha1: e6bc11348dc0da8364f7adf8db1aa8253c4f99b2
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_worldwarp LoadObjPalette(..., 32)
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
     confidence: high
   - id: gUnk_09A3D5BC
     class: leaf_gfx
@@ -133,5 +207,27 @@ leaves:
     sha1: ac63649ee098c799ad4e03781c54bc1c959d906a
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
-    consumer: mode_worldwarp LoadObjPalette(..., 32)
+    consumer: LoadObjPalette(..., 32) mode_worldwarp
+    confidence: high
+  - id: gUnk_09A3D7FC
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D7FC
+    end: 0x09A3D81C
+    size: 32
+    sha1: a610dd5bb4bd63eaff341e540913743bddbda083
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_ms
+    confidence: high
+  - id: gUnk_09A3D85C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3D85C
+    end: 0x09A3D87C
+    size: 32
+    sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_ms
     confidence: high
