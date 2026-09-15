@@ -8890,7 +8890,7 @@ u8 func_0806E570(EventCharaWork* p) {
     if ((p->keyframes[p->unk_1A0].unk_18 & 0x800) != 0) {
         LoadPalette(&gUnk_096148D8[0x100], (void*)(p->unk_044 * 32 + 0x05000200), 32);
     } else if ((p->keyframes[p->unk_1A0 - 1].unk_18 & 0x800) != 0) {
-        LoadPalette(gUnk_0813B09C[p->unk_026].unk_00.palette, (void*)(p->unk_044 * 32 + 0x05000200), 32);
+        LoadPalette(gUnk_0813B09C[p->unk_026].res.palette, (void*)(p->unk_044 * 32 + 0x05000200), 32);
     }
 
     if ((p->keyframes[p->unk_1A0].unk_18 & 0x100000) != 0) {
@@ -8928,7 +8928,7 @@ void func_0806E7A8(EventCharaWork* p) {
     BtlObj* t;
 
     if (e->unk_00 == 0x3A7) {
-        t = ListPoolFirst(&gBtlWork->unk_080);
+        t = ListPoolFirst(&gBtlWork->pool);
 
         if (t != NULL) {
             t->unk_034 |= 2;

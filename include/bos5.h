@@ -197,7 +197,7 @@ typedef struct MdFirePoint {
 } MdFirePoint;
 
 typedef struct MdFireDef {
-    MdFirePoint* unk_00;
+    MdFirePoint* points;
     s16 unk_04;
     u16 unk_06;
 } MdFireDef;

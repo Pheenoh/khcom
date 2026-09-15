@@ -125,8 +125,8 @@ void func_0800EFE8(Actor* work) {
         LoadObjPaletteBank(work->palette->index, work->unk_178);
     }
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->y >> 8) * 4) | 3);
-    func_0800EEBC(work, work->unk_0C);
-    func_0800EEBC(work, work->unk_10);
+    func_0800EEBC(work, work->spr);
+    func_0800EEBC(work, work->spr2);
     TaskPoolDraw(&work->tasks);
 }
 void func_0800F230(void) {

@@ -112,8 +112,8 @@ void BtlWorkInit(void) {
     p = (u8*)&gGameState;
     p += 0xF8;
     memcpy(d, p, 0x88);
-    ListPoolInit(&gBtlWork->unk_080);
-    ListPoolInit(&gBtlWork->unk_090);
+    ListPoolInit(&gBtlWork->pool);
+    ListPoolInit(&gBtlWork->pool2);
 }
 
 void func_080192E0(void) {
@@ -469,7 +469,7 @@ void func_08019A30(void) {
             return;
         }
     } else if (w->unk_068 & 0x20000000) {
-        p = ListPoolFirst(&w->unk_080);
+        p = ListPoolFirst(&w->pool);
 
         while (p != 0) {
             p->unk_034 &= ~0x80;
@@ -694,7 +694,7 @@ void _08019CB4(void) {
     case 0:
         if ((s16)gBtlWork->unk_0E4 == 0) {
             if (!(gBtlWork->unk_068 & 0x800000000ULL)) {
-                gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlStart, 0);
+                gBtlWork->task = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlStart, 0);
             }
             gBtlWork->unk_0E4 = 1;
         }
@@ -709,7 +709,7 @@ void _08019CB4(void) {
             }
             gBtlWork->unk_0E4 = 2;
         }
-        if (IsTaskActiveNamed(gBtlWork->unk_0E8, gTaskDescBtlStart.name)) {
+        if (IsTaskActiveNamed(gBtlWork->task, gTaskDescBtlStart.name)) {
             break;
         }
         if ((s16)gBtlWork->unk_0E4 == 2) {
@@ -796,18 +796,18 @@ void _08019CB4(void) {
                 if ((s16)gBtlWork->unk_0E4 == 2) {
                     func_0801C104();
 #ifdef VERSION_EU
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72C10, 0);
+                    gBtlWork->task = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72C10, 0);
 #else
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], &gUnk_09EE7804, 0);
+                    gBtlWork->task = TaskCreate(&gBtlWork->taskPools[1], &gUnk_09EE7804, 0);
 #endif
                     gBtlWork->unk_068 |= 0x4000000ULL;
                     gBtlWork->unk_068 |= 0x2000ULL;
                     gBtlWork->unk_0E4 = -1;
                 } else {
 #ifdef VERSION_EU
-                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)gUnkEu_09F72C10)) {
+                    if (IsTaskActiveNamed(gBtlWork->task, *(const char**)gUnkEu_09F72C10)) {
 #else
-                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)&gUnk_09EE7804)) {
+                    if (IsTaskActiveNamed(gBtlWork->task, *(const char**)&gUnk_09EE7804)) {
 #endif
                         break;
                     }
@@ -820,9 +820,9 @@ void _08019CB4(void) {
                 if ((s16)gBtlWork->unk_0E4 == 2) {
                     func_0801C104();
 #ifdef VERSION_EU
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72D80, 0);
+                    gBtlWork->task = TaskCreate(&gBtlWork->taskPools[1], gUnkEu_09F72D80, 0);
 #else
-                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescLevelUp, 0);
+                    gBtlWork->task = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescLevelUp, 0);
 #endif
                     gBtlWork->unk_068 |= 0x4000000ULL;
                     gBtlWork->unk_068 |= 0x2000ULL;
@@ -831,7 +831,7 @@ void _08019CB4(void) {
                 break;
             }
             if ((s16)gBtlWork->unk_0E4 == -1) {
-                if (!IsTaskActive(gBtlWork->unk_0E8)) {
+                if (!IsTaskActive(gBtlWork->task)) {
                     BtlObj* healed;
                     gBtlWork->unk_0E4 = 2;
                     healed = gBtlWork->actor;
@@ -908,7 +908,7 @@ void _08019CB4(void) {
         if (busy) {
             break;
         }
-        obj = ListPoolFirst(&gBtlWork->unk_080);
+        obj = ListPoolFirst(&gBtlWork->pool);
         while (obj != 0) {
             if (obj->unk_034 & 0x10) {
                 busy = 1;
@@ -1207,7 +1207,7 @@ void func_0801AF4C(BtlObj* actor) {
     m4aMPlayFadeOut(gMPlayTable[gSongTable[3].ms].info, 12);
     FadeStartIn(2, 20);
     FadeLock();
-    p = ListPoolFirst(&gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
         p->node.flags |= 2;
@@ -1535,15 +1535,15 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     if (d->unk_0E & 4) {
         p->unk_034 |= 0x20000;
     }
-    ListNodeInit(&p->node, &gBtlWork->unk_080, p);
-    ListPoolAppend(&p->node, &gBtlWork->unk_080);
+    ListNodeInit(&p->node, &gBtlWork->pool, p);
+    ListPoolAppend(&p->node, &gBtlWork->pool);
     gBtlWork->unk_0EE++;
 }
 
 void func_0801B7D8(BtlObj* obj) {
     BtlObj* p = obj->unk_0DC;
     if (p == obj) {
-        ListPoolRemove(&p->node, &gBtlWork->unk_080);
+        ListPoolRemove(&p->node, &gBtlWork->pool);
 
         if (!(p->unk_03C & 1)) {
             ColliderUnregister(&p->collider);

@@ -114,10 +114,10 @@ typedef struct AllmapCursorWork {
 
 typedef struct AllmapState {
     TaskPool tasks;
-    Task* unk_14[32];
-    Task* unk_94;
-    Task* unk_98;
-    Task* unk_9C;
+    Task* roomTasks[32];
+    Task* cursorTask;
+    Task* roomnameTask;
+    Task* pushaTask;
     s16 unk_A0;
     s16 unk_A2;
     s32 unk_A4;

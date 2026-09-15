@@ -34,7 +34,7 @@ typedef struct Collider {
     s32 unk_44;
     s32 unk_48;
     s32 unk_4C;
-    struct Collider* unk_50;
+    struct Collider* other;
     struct Collider* self;
     u32 unk_58;
 } Collider;

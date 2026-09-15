@@ -23,7 +23,7 @@ typedef struct EvtObjAnim {
 } EvtObjAnim;
 
 typedef struct EvtObjResTable {
-    EvtObjRes unk_00;
+    EvtObjRes res;
     u8 unk_0C[0x04];
 } EvtObjResTable;
 

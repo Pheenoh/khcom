@@ -30,8 +30,8 @@ typedef struct BtlWork {
     u16 unk_076;
     BtlObj* actor2;
     BtlObj* actor;
-    ListPool unk_080;
-    ListPool unk_090;
+    ListPool pool;
+    ListPool pool2;
     s32 unk_0A0;
     u8 unk_0A4;
     u8 unk_0A5[0x03];
@@ -61,7 +61,7 @@ typedef struct BtlWork {
     u8 unk_0E3;
     s16 unk_0E4;
     u8 unk_0E6[0x02];
-    Task* unk_0E8;
+    Task* task;
     s16 unk_0EC;
     u8 unk_0EE;
     u8 unk_0EF;

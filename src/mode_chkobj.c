@@ -1555,7 +1555,7 @@ void mode_chkobj_0(void) {
     gChkObjWork->unk_42 = 0x80A0;
     gChkObjWork->unk_44 = 0;
     gChkObjWork->y = 0;
-    func_0800B30C(gChkObjEntries[0].unk_00);
+    func_0800B30C(gChkObjEntries[0].defs);
     SetupBg(1, 0, 15, 0);
     EnableBg(0);
     func_0805FA8C(1, 0x5400, 0x500);
@@ -1591,7 +1591,7 @@ void mode_chkobj_1(void) {
             gChkObjWork->y = 0;
             gChkObjWork->paused = 0;
             gChkObjWork->unk_44 = 0;
-            def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+            def = &gChkObjEntries[gChkObjWork->unk_18].defs[gChkObjWork->unk_14];
 
             if (gChkObjWork->animId < 0) {
                 gChkObjWork->unk_14--;
@@ -1606,7 +1606,7 @@ void mode_chkobj_1(void) {
                     gChkObjWork->unk_14 = gChkObjEntries[gChkObjWork->unk_18].count - 1;
                 }
 
-                def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+                def = &gChkObjEntries[gChkObjWork->unk_18].defs[gChkObjWork->unk_14];
                 gChkObjWork->animId = def->animCount - 1;
                 func_0800B30C(def);
             } else if (gChkObjWork->animId >= def->animCount) {
@@ -1622,7 +1622,7 @@ void mode_chkobj_1(void) {
                     gChkObjWork->unk_14 = 0;
                 }
 
-                def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+                def = &gChkObjEntries[gChkObjWork->unk_18].defs[gChkObjWork->unk_14];
                 gChkObjWork->animId = 0;
                 func_0800B30C(def);
             } else {
@@ -1663,7 +1663,7 @@ void mode_chkobj_1(void) {
 
             gChkObjWork->animId = 0;
             gChkObjWork->unk_14 = 0;
-            def = gChkObjEntries[gChkObjWork->unk_18].unk_00;
+            def = gChkObjEntries[gChkObjWork->unk_18].defs;
             func_0800B30C(def);
             func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
@@ -1693,7 +1693,7 @@ void mode_chkobj_1(void) {
             func_0809D2B0(0, 1, 0, "     ");
         }
 
-        def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+        def = &gChkObjEntries[gChkObjWork->unk_18].defs[gChkObjWork->unk_14];
         func_0809D2B0(0, 12, 0, "                                      ");
         func_0809D2B0(0, 13, 0, "                                      ");
         func_0809D2B0(0, 14, 0, "                                      ");

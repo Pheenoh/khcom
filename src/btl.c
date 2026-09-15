@@ -31,7 +31,7 @@ void func_0801D288(void) {
     p = gBtlWork->actor;
     min = 0x40000;
     gBtlWork->actor2 = 0;
-    e = ListPoolFirst(&gBtlWork->unk_080);
+    e = ListPoolFirst(&gBtlWork->pool);
 
     if (p->unk_034 & 4) {
         for (; e != 0; e = ListPoolNext(&e->node)) {
@@ -49,7 +49,7 @@ void func_0801D288(void) {
 
         if (gBtlWork->actor2 == 0) {
             min = 0x40000;
-            e = ListPoolFirst(&gBtlWork->unk_080);
+            e = ListPoolFirst(&gBtlWork->pool);
 
             for (; e != 0; e = ListPoolNext(&e->node)) {
                 if (p->x > e->x || e->x - p->x > 0x5A00 ||
@@ -80,7 +80,7 @@ void func_0801D288(void) {
 
         if (gBtlWork->actor2 == 0) {
             min = 0x40000;
-            e = ListPoolFirst(&gBtlWork->unk_080);
+            e = ListPoolFirst(&gBtlWork->pool);
 
             for (; e != 0; e = ListPoolNext(&e->node)) {
                 if (p->x < e->x || p->x - e->x > 0x5A00 ||
@@ -197,7 +197,7 @@ void task_btl_area_2(BtlAreaWork* work) {
     DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 2, 0x101);
 
     if ((u8)gBtlWork->unk_0A4 != 0) {
-        e = ListPoolFirst(&gBtlWork->unk_080);
+        e = ListPoolFirst(&gBtlWork->pool);
 
         while (e != 0) {
             WorldToScreen(&x, &y, e->x - (e->unk_09E << 8),
@@ -723,7 +723,7 @@ BtlObj* func_0801E6DC(BtlSoraWork* work) {
         return e;
     }
     n = 0;
-    e = ListPoolFirst(&gBtlWork->unk_080);
+    e = ListPoolFirst(&gBtlWork->pool);
     if (e != 0) {
         list[0] = e;
         n = 1;
@@ -948,7 +948,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                     e->unk_02C = hp - 1;
                 }
             } else {
-                e = ListPoolFirst(&gBtlWork->unk_080);
+                e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
                     hp = e->unk_02C;
@@ -2774,7 +2774,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if (work->unk_161 != 0) {
             if (a->flags & 1) {
                 if ((p->btl->unk_068 & 0x8000) == 0) {
-                    a = a->unk_14;
+                    a = a->next;
                 }
             }
         }
@@ -3005,7 +3005,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                     }
                 }
             } else {
-                e = ListPoolFirst(&gBtlWork->unk_080);
+                e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
                     if (e->unk_0E8 != 2 && *(s32*)&e->unk_0D8 == 0) {
@@ -3059,7 +3059,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
                 t3 = 0x40000;
                 e2 = 0;
-                e = ListPoolFirst(&gBtlWork->unk_080);
+                e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
                     s32 t;
@@ -4567,7 +4567,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                     func_08011F68(108, e);
                 }
             } else {
-                e = ListPoolFirst(&gBtlWork->unk_080);
+                e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
                     if (e->unk_108 != 0 || e->unk_10C != 0) {
@@ -5850,7 +5850,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         } else if ((work->unk_15A & 0x20) && p->collider.unk_34 == 7) {
             p->collider.unk_2E |= 1;
         } else if ((work->unk_15A & 0x80) == 0 && p->collider.unk_34 != 5 &&
-                   (p->collider.unk_50->unk_30 & 2) == 0) {
+                   (p->collider.other->unk_30 & 2) == 0) {
             p->x += p->collider.unk_38 >> 1;
             p->y += p->collider.unk_3C >> 1;
         }
@@ -5869,7 +5869,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     }
 
     if (work->unk_15A & 0x20) {
-        if (gBtlWork->unk_0F0 == (s32)p->collider.unk_50) {
+        if (gBtlWork->unk_0F0 == (s32)p->collider.other) {
             p->x += p->collider.unk_44 - *(s32*)&work->unk_178;
             p->y += p->collider.unk_48 - *(s32*)&work->unk_17A[2];
             p->z += p->collider.unk_40 - *(s32*)&work->unk_17A[6];
@@ -5882,7 +5882,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             *(s32*)&work->unk_178 = p->collider.unk_44;
             *(s32*)&work->unk_17A[2] = p->collider.unk_48;
             *(s32*)&work->unk_17A[6] = p->collider.unk_40;
-            gBtlWork->unk_0F0 = (s32)p->collider.unk_50;
+            gBtlWork->unk_0F0 = (s32)p->collider.other;
         } else {
             work->unk_15A &= ~0x20;
             gBtlWork->unk_0F0 = 0;
@@ -6758,7 +6758,7 @@ BtlObj* func_0802830C(BtlRikuWork* work) {
 
     min = 0x10000;
     best = 0;
-    e = ListPoolFirst(&gBtlWork->unk_080);
+    e = ListPoolFirst(&gBtlWork->pool);
     while (e != 0) {
         if (!(e->unk_034 & 0x1000000)) {
             d = e->z - (e->unk_0A2 << 8);
@@ -6794,7 +6794,7 @@ BtlObj* func_08028370(BtlRikuWork* work) {
         return e;
     }
     n = 0;
-    e = ListPoolFirst(&gBtlWork->unk_080);
+    e = ListPoolFirst(&gBtlWork->pool);
     if (e != 0) {
         list[0] = e;
         n = 1;
@@ -7047,7 +7047,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 BtlObj* e;
                 u16 uv;
 
-                e = ListPoolFirst(&gBtlWork->unk_080);
+                e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
                     uv = e->unk_02C;
@@ -9658,7 +9658,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if (work->unk_165 != 0) {
             if (a->flags & 1) {
                 if ((p->btl->unk_068 & 0x8000) == 0) {
-                    a = a->unk_18;
+                    a = a->next;
                 }
             }
         }
@@ -10416,7 +10416,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         p->unk_010 = p->unk_0D4;
     }
 
-    if ((work->unk_15E & 0x20) && *(s32*)&gBtlWork->unk_0F0 == (s32)p->collider.unk_50) {
+    if ((work->unk_15E & 0x20) && *(s32*)&gBtlWork->unk_0F0 == (s32)p->collider.other) {
         p->x += p->collider.unk_44 - *(s32*)&work->unk_17C;
         p->y += p->collider.unk_48 - *(s32*)&work->unk_180[0];
         p->z += p->collider.unk_40 - *(s32*)&work->unk_180[4];
@@ -10428,7 +10428,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             *(s32*)&work->unk_17C = p->collider.unk_44;
             *(s32*)&work->unk_180[0] = p->collider.unk_48;
             *(s32*)&work->unk_180[4] = p->collider.unk_40;
-            *(s32*)&gBtlWork->unk_0F0 = (s32)p->collider.unk_50;
+            *(s32*)&gBtlWork->unk_0F0 = (s32)p->collider.other;
         } else {
             work->unk_15E &= 0xFFDF;
             *(s32*)&gBtlWork->unk_0F0 = 0;

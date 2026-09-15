@@ -388,7 +388,7 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
             return 1;
         }
     } else if (gBtlWork->unk_068 & 0x20000000) {
-        o = ListPoolFirst(&gBtlWork->unk_080);
+        o = ListPoolFirst(&gBtlWork->pool);
 
         while (o != 0) {
             if (func_08011270(o, x, y, z, a, b, c)) {
@@ -450,7 +450,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
             return res;
         }
     } else if (gBtlWork->unk_068 & 0x20000000) {
-        o = ListPoolFirst(&gBtlWork->unk_080);
+        o = ListPoolFirst(&gBtlWork->pool);
         sz = 0;
         sy = 0;
         sx = 0;
@@ -523,12 +523,12 @@ s32 func_08012188(BtlObj* p, s16 h, s32 c) {
 }
 
 void func_080121D4(FldObj* p) {
-    ListNodeInit(&p->node, &gUnk_02039BA0->actor.unk_40, p);
-    ListPoolAppend(&p->node, &gUnk_02039BA0->actor.unk_40);
+    ListNodeInit(&p->node, &gUnk_02039BA0->actor.pool, p);
+    ListPoolAppend(&p->node, &gUnk_02039BA0->actor.pool);
 }
 
 void func_080121FC(FldObj* p) {
-    ListPoolRemove(&p->node, &gUnk_02039BA0->actor.unk_40);
+    ListPoolRemove(&p->node, &gUnk_02039BA0->actor.pool);
 }
 
 void func_08012214(void) {
@@ -654,10 +654,10 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
                         t = (pen * gSineTable[angle]) >> 8;
                         p->unk_38 = -t;
                         p->unk_3C = -((pen * -gSineTable[angle + 64]) >> 8);
-                        p->unk_50 = q;
+                        p->other = q;
                         q->unk_38 = t;
                         q->unk_3C = -p->unk_3C;
-                        q->unk_50 = p;
+                        q->other = p;
 
                         if (q->unk_30 & 1) {
                             p->unk_40 = q->z - q->height;
@@ -687,7 +687,7 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
                                 p->unk_4C = pen;
                                 p->unk_48 = q->y >> 1;
                                 p->unk_44 = q->x;
-                                p->unk_50 = q;
+                                p->other = q;
                                 p->unk_34 = q->type;
                                 q->unk_34 = p->type;
                             }
@@ -707,7 +707,7 @@ void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
                                 q->unk_4C = pen;
                                 q->unk_48 = p->y >> 1;
                                 q->unk_44 = p->x;
-                                q->unk_50 = p;
+                                q->other = p;
                                 p->unk_34 = q->type;
                                 q->unk_34 = p->type;
                             }

@@ -57,7 +57,7 @@ struct BtlObj;
 
 typedef struct BgFx {
     s32 unk_00;
-    void (*unk_04)(void);
+    void (*update)(void);
     s16 unk_08;
     s16 unk_0A;
     s16 unk_0C;
@@ -139,8 +139,8 @@ typedef struct Actor {
     void* unk_00;
     void* tiles;
     ObjPalette* palette;
-    SprObj* unk_0C;
-    SprObj* unk_10;
+    SprObj* spr;
+    SprObj* spr2;
     u8 unk_14[0x18];
     TaskPool tasks;
     s32 unk_40;

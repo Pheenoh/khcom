@@ -1491,7 +1491,7 @@ void task_bos_boogie_3(BoogieWork* work) {
 void func_080D9A14(void) {
     BtlObj* t;
 
-    t = ListPoolFirst(&gBtlWork->unk_080);
+    t = ListPoolFirst(&gBtlWork->pool);
     while (t != 0) {
         if (t->unk_000 != 39) {
             t->unk_034 |= 0x40;

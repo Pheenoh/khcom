@@ -821,11 +821,11 @@ void func_080D4EBC(void) {
     ((AllmapState*)gUnk_0203C4B4)->unk_BC = 0x400;
     gUnk_0203C538 = gUnk_0203C590[6];
     TaskPoolInit(&((AllmapState*)gUnk_0203C4B4)->tasks, 35);
-    ((AllmapState*)gUnk_0203C4B4)->unk_9C = i = 0;
-    ((AllmapState*)gUnk_0203C4B4)->unk_98 = 0;
+    ((AllmapState*)gUnk_0203C4B4)->pushaTask = i = 0;
+    ((AllmapState*)gUnk_0203C4B4)->roomnameTask = 0;
 
     for (; i < 32; i++) {
-        ((AllmapState*)gUnk_0203C4B4)->unk_14[i] = 0;
+        ((AllmapState*)gUnk_0203C4B4)->roomTasks[i] = 0;
     }
 
     ((AllmapState*)gUnk_0203C4B4)->unk_B4 = ((AllmapState*)gUnk_0203C4B4)->unk_B6 = 32;
@@ -842,18 +842,18 @@ void func_080D4EBC(void) {
     gUnk_02034E90 = (((AllmapState*)gUnk_0203C4B4)->unk_AE + ((AllmapState*)gUnk_0203C4B4)->unk_A2) << 8;
 
     for (j = 0; j < 32; j++) {
-        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_14[j])) {
-            w = ((AllmapState*)gUnk_0203C4B4)->unk_14[j]->work;
+        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->roomTasks[j])) {
+            w = ((AllmapState*)gUnk_0203C4B4)->roomTasks[j]->work;
             func_080D4D50(w->unk_08C, w->unk_08E, w->unk_09A, j == gUnk_0203C538);
         }
     }
 
     RedrawBgMapAt(0, ((AllmapState*)gUnk_0203C4B4)->unk_A0 - ((AllmapState*)gUnk_0203C4B4)->unk_AC % 8, ((AllmapState*)gUnk_0203C4B4)->unk_A2 - ((AllmapState*)gUnk_0203C4B4)->unk_AE % 8);
     RedrawBgMapAt(1, ((AllmapState*)gUnk_0203C4B4)->unk_A0 - ((AllmapState*)gUnk_0203C4B4)->unk_AC % 8, ((AllmapState*)gUnk_0203C4B4)->unk_A2 - ((AllmapState*)gUnk_0203C4B4)->unk_AE % 8);
-    c = ((AllmapState*)gUnk_0203C4B4)->unk_14[gUnk_0203C538]->work;
+    c = ((AllmapState*)gUnk_0203C4B4)->roomTasks[gUnk_0203C538]->work;
     arg.x = c->unk_08C;
     arg.y = c->unk_08E;
-    ((AllmapState*)gUnk_0203C4B4)->unk_94 = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapCursor, &arg);
+    ((AllmapState*)gUnk_0203C4B4)->cursorTask = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapCursor, &arg);
     func_080D53F8();
 }
 void func_080D510C(AllmapState* s) {
@@ -953,15 +953,15 @@ void func_080D53F8(void) {
     base = (((AllmapState*)gUnk_0203C4B4)->unk_BA * 24 - gUnk_0203C53C) << 9;
 
     for (i = 0; i < 32; i++) {
-        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_14[i]) != 0) {
-            w = ((AllmapState*)gUnk_0203C4B4)->unk_14[i]->work;
+        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->roomTasks[i]) != 0) {
+            w = ((AllmapState*)gUnk_0203C4B4)->roomTasks[i]->work;
             w->unk_094 = (w->unk_08E * 24 - gUnk_0203C53C) << 8;
             w->unk_090 = w->unk_094 - base;
         }
     }
 
-    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_94) != 0) {
-        c = ((AllmapState*)gUnk_0203C4B4)->unk_94->work;
+    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->cursorTask) != 0) {
+        c = ((AllmapState*)gUnk_0203C4B4)->cursorTask->work;
         c->unk_28 = c->unk_2C - base;
     }
 }
@@ -971,8 +971,8 @@ s32 func_080D5494(AllmapCursorPos a) {
     u8 i;
 
     for (i = 0; i < 32; i++) {
-        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_14[i]) != 0) {
-            w = ((AllmapState*)gUnk_0203C4B4)->unk_14[i]->work;
+        if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->roomTasks[i]) != 0) {
+            w = ((AllmapState*)gUnk_0203C4B4)->roomTasks[i]->work;
             if (a.x == w->unk_08C && a.y == w->unk_08E) {
                 return i;
             }
@@ -984,7 +984,7 @@ s32 func_080D5494(AllmapCursorPos a) {
 void func_080D54FC(void) {
     AllmapRoomWork* w;
 
-    w = ((AllmapState*)gUnk_0203C4B4)->unk_14[gUnk_0203C538]->work;
+    w = ((AllmapState*)gUnk_0203C4B4)->roomTasks[gUnk_0203C538]->work;
     ((AllmapState*)gUnk_0203C4B4)->unk_A2 = w->unk_08E * 24 - ((AllmapState*)gUnk_0203C4B4)->unk_AE - 69;
     if (((AllmapState*)gUnk_0203C4B4)->unk_A2 < 0 || ((AllmapState*)gUnk_0203C4B4)->unk_B2 <= 159) {
         ((AllmapState*)gUnk_0203C4B4)->unk_A2 = 0;
@@ -1011,7 +1011,7 @@ void func_080D55E4(void) {
     u8 r;
 
     moved = 0;
-    c = ((AllmapState*)gUnk_0203C4B4)->unk_94->work;
+    c = ((AllmapState*)gUnk_0203C4B4)->cursorTask->work;
     p = c->pos;
 
     switch (GetKeysRepeat()) {
@@ -1053,23 +1053,23 @@ void func_080D55E4(void) {
         func_080D54FC();
     }
 
-    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_98) != 0) {
-        func_08000DE8(gUnk_0203C4B4, ((AllmapState*)gUnk_0203C4B4)->unk_98);
+    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->roomnameTask) != 0) {
+        func_08000DE8(gUnk_0203C4B4, ((AllmapState*)gUnk_0203C4B4)->roomnameTask);
     }
     d = func_080DEE18(r);
     if (d[8] != 26 && (func_080D5944(r, 2) != 0 || func_080D5944(r, 8) != 0)) {
-        ((AllmapState*)gUnk_0203C4B4)->unk_98 = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoomname, d + 8);
+        ((AllmapState*)gUnk_0203C4B4)->roomnameTask = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoomname, d + 8);
     } else {
-        ((AllmapState*)gUnk_0203C4B4)->unk_98 = 0;
+        ((AllmapState*)gUnk_0203C4B4)->roomnameTask = 0;
         func_080D3ED0();
     }
 
-    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_9C) != 0) {
-        func_08000DE8(gUnk_0203C4B4, ((AllmapState*)gUnk_0203C4B4)->unk_9C);
+    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->pushaTask) != 0) {
+        func_08000DE8(gUnk_0203C4B4, ((AllmapState*)gUnk_0203C4B4)->pushaTask);
     }
 
     if (func_080D422C(c->pos) != 0) {
-        ((AllmapState*)gUnk_0203C4B4)->unk_9C = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapPusha, c);
+        ((AllmapState*)gUnk_0203C4B4)->pushaTask = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapPusha, c);
     }
 }
 
@@ -1080,7 +1080,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
 
     d = func_080DED98(a);
 
-    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->unk_14[a]) != 0) {
+    if (IsTaskActive(((AllmapState*)gUnk_0203C4B4)->roomTasks[a]) != 0) {
         return;
     }
 
@@ -1103,7 +1103,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     arg.unk_02 = c;
     arg.unk_04 = a;
     arg.unk_06 = 0;
-    ((AllmapState*)gUnk_0203C4B4)->unk_14[a] = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoom, &arg);
+    ((AllmapState*)gUnk_0203C4B4)->roomTasks[a] = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoom, &arg);
 
     room = d[0];
     if ((u8)(room + 3) > 2) {
@@ -1152,7 +1152,7 @@ u8 func_080D5944(u8 a, u16 b) {
 }
 
 void* func_080D5960(u8 a) {
-    return ((AllmapState*)gUnk_0203C4B4)->unk_14[a]->work;
+    return ((AllmapState*)gUnk_0203C4B4)->roomTasks[a]->work;
 }
 
 void func_080D5978(u16 a, void* b, u16 c) {

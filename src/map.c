@@ -458,7 +458,7 @@ void func_080E0558(void) {
     gUnk_02039BA0->unk_74 = 0;
     TaskPoolInit(gUnk_02039BA0->unk_78, 50);
     TaskPoolInit(gUnk_02039BA0->unk_8C, 1);
-    ListPoolInit(&gUnk_02039BA0->actor.unk_40);
+    ListPoolInit(&gUnk_02039BA0->actor.pool);
     TaskPoolInit(gUnk_02039BA0->unk_A0, 25);
     TaskPoolInit(gUnk_02039BA0->unk_C8, 1);
     TaskPoolInit(gUnk_02039BA0->unk_B4, 8);
@@ -3627,7 +3627,7 @@ void func_080E6034(UnkStruct_080E590C* p) {
 
     if (q != 0) {
         q->unk_30 = p->unk_00;
-        q->unk_34 = p->unk_CC;
+        q->unk_34 = p->update;
         q->unk_00 = p->unk_08;
         q->unk_10 = p->unk_1C;
         q->unk_14 = p->unk_18;
@@ -3781,7 +3781,7 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     UnkStruct_0984BC9C* d = q->unk_00;
 
     p->unk_00 = d;
-    p->unk_CC = q->unk_04;
+    p->update = q->unk_04;
     p->unk_04 = 0;
     p->unk_E0 = 30;
     e->unk_00 = q->unk_08;
@@ -3861,7 +3861,7 @@ void func_080E657C(UnkStruct_080E590C* p) {
         q = ListPoolFirstFree(gGameState.unk_0E8);
         if (q != 0) {
             q->unk_30 = p->unk_00;
-            q->unk_34 = p->unk_CC;
+            q->unk_34 = p->update;
             q->unk_00 = p->unk_08;
             q->unk_10 = p->unk_1C;
             q->unk_14 = p->unk_18;
@@ -7635,7 +7635,7 @@ void func_080EC500(UnkStruct_02034FE4* w) {
             func_080C75A4(0, 16);
             FadeStartOut(0, 16);
         }
-        w->unk_04 = func_080EC544;
+        w->update = func_080EC544;
     }
 }
 
@@ -7674,11 +7674,11 @@ void func_080EC57C(s32 arg) {
         FadeStartIn(0, 1);
         FadeLock();
     }
-    gUnk_02034FE4->unk_04 = func_080EC500;
+    gUnk_02034FE4->update = func_080EC500;
 }
 
 void func_080EC618(void) {
-    gUnk_02034FE4->unk_04(gUnk_02034FE4);
+    gUnk_02034FE4->update(gUnk_02034FE4);
     TaskPoolUpdate(&gUnk_02034FE4->tasks);
     TaskPoolDraw(&gUnk_02034FE4->tasks);
     func_080C73D8();
@@ -7947,7 +7947,7 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
         gUnk_02039BA0->unk_68 = (s32)e;
         gUnk_0203C7AC->unk_14 = (s32)e;
         p->unk_71 = 1;
-        p->unk_6C = func_080ECBC8;
+        p->update = func_080ECBC8;
         gUnk_0203C7AC->unk_0F = flags->unk_07;
         gUnk_0203C7AC->unk_10 = flags->unk_06;
         FadeSetPaletteExcluded(*(u16*)&p->palette[6] + 16, 1);
@@ -7967,14 +7967,14 @@ s32 func_080ECBC8(UnkStruct_080ECA88* p) {
         } else {
             func_080DF640(flags->unk_07, t);
         }
-        p->unk_6C = func_080ECC54;
+        p->update = func_080ECC54;
     }
 
     if (!(gUnk_02039BA0->unk_70 & 0x40000)) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         FadeSetPaletteExcluded(*(u16*)&p->palette[6] + 16, 0);
         FadeSetPaletteExcluded(*(u16*)&p->palette2[6] + 16, 0);
-        p->unk_6C = func_080ECAC8;
+        p->update = func_080ECAC8;
     }
     return 1;
 }
@@ -7987,7 +7987,7 @@ s32 func_080ECC54(UnkStruct_080ECA88* p) {
         func_080ECA88(p);
         v = flags->unk_00 | 2;
         flags->unk_00 = v;
-        p->unk_6C = func_080ECC8C;
+        p->update = func_080ECC8C;
     }
 
     return 1;
@@ -8069,10 +8069,10 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     }
 
     if (p->unk_00 & 2) {
-        w->unk_6C = func_080ECAC8;
+        w->update = func_080ECAC8;
         func_080ECA88(w);
     } else {
-        w->unk_6C = func_080ECAC8;
+        w->update = func_080ECAC8;
         func_080ECAA8(w);
     }
 
@@ -8089,8 +8089,8 @@ s32 func_080ECE3C(UnkStruct_080ECA88* w) {
         w->unk_70 = 1;
     }
 
-    if (w->unk_6C != 0) {
-        if (w->unk_6C(w) == 0) {
+    if (w->update != 0) {
+        if (w->update(w) == 0) {
             return 0;
         }
     }
@@ -8157,23 +8157,23 @@ void func_080ECFBC(UnkStruct_080ECA88* p) {
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a) {
     s32 i;
 
-    FadeSetPaletteExcluded(p->unk_020->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_070->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_038->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_03C->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_060->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette5->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette2->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette3->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette4->index + 0x10, a);
 
     for (i = 0; i < 3; i++) {
-        if (p->unk_158[i] != 0) {
-            FadeSetPaletteExcluded(p->unk_158[i]->index + 0x10, a);
+        if (p->palettes[i] != 0) {
+            FadeSetPaletteExcluded(p->palettes[i]->index + 0x10, a);
         }
     }
 }
 
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a) {
-    FadeSetPaletteExcluded(p->unk_000->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_138->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_140->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette2->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette3->index + 0x10, a);
 }
 
 void func_080ED0B8(FldRes* p, u8 a, u16 v) {
@@ -8278,7 +8278,7 @@ s32 func_080ED35C(MapMenuWork* w) {
     w->unk_034 = 0;
     w->unk_30E = 0;
     w->unk_30C = w->unk_30F != 0 ? 1 : 16;
-    w->unk_310 = func_080ED498;
+    w->update = func_080ED498;
     func_080ED06C((UnkStruct_080ED06C*)w, 1);
 
     if (w->unk_30F == 0) {
@@ -8429,7 +8429,7 @@ s32 func_080ED498(MapMenuWork* w) {
         func_080ECFE8((UnkStruct_080ECFE8*)w, 1);
         w->unk_30E = 1;
         w->unk_30C = w->unk_30F != 0 ? 1 : 16;
-        w->unk_310 = func_080ED6CC;
+        w->update = func_080ED6CC;
     }
 
     return 1;
@@ -8453,9 +8453,9 @@ s32 func_080ED6CC(MapMenuWork* w) {
         if (w->unk_30F != 0) {
             w->unk_30F = 0;
             FadeToAmount(0, 16, 1);
-            w->unk_310 = func_080EDD7C;
+            w->update = func_080EDD7C;
         } else {
-            w->unk_310 = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
+            w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
         }
     }
 
@@ -8476,7 +8476,7 @@ s32 func_080ED7CC(MapMenuWork* w) {
     if (GetKeysPressed() & 10) {
         w->unk_034 = 0;
         w->unk_30C = 16;
-        w->unk_310 = func_080EDB4C;
+        w->update = func_080EDB4C;
         m4aSongNumStart(0x68);
     } else if (GetKeysPressed() & 1) {
         switch (w->unk_309) {
@@ -8486,13 +8486,13 @@ s32 func_080ED7CC(MapMenuWork* w) {
         case 4:
         case 5:
             func_0801CB0C();
-            w->unk_310 = func_080EDA90;
+            w->update = func_080EDA90;
             m4aSongNumStart(0x66);
             break;
         case 1:
             if ((u8)(gUnk_0203C590.unk_06 + 4) > 2) {
                 func_0801CB0C();
-                w->unk_310 = func_080EDA90;
+                w->update = func_080EDA90;
                 m4aSongNumStart(0x66);
             } else {
                 m4aSongNumStart(0x69);
@@ -8503,7 +8503,7 @@ s32 func_080ED7CC(MapMenuWork* w) {
             func_080ED250((u8*)w);
             w->unk_30A = 2;
             w->x7 = 0x8800;
-            w->unk_310 = func_080EDC94;
+            w->update = func_080EDC94;
             break;
         }
     }
@@ -8524,7 +8524,7 @@ s32 func_080ED91C(MapMenuWork* w) {
     if (GetKeysPressed() & 10) {
         w->unk_034 = 0;
         w->unk_30C = 16;
-        w->unk_310 = func_080EDB4C;
+        w->update = func_080EDB4C;
         m4aSongNumStart(104);
     } else if (GetKeysPressed() & 1) {
         switch (w->unk_309) {
@@ -8534,18 +8534,18 @@ s32 func_080ED91C(MapMenuWork* w) {
         case 4:
             m4aSongNumStart(102);
             func_0801CB0C();
-            w->unk_310 = func_080EDA90;
+            w->update = func_080EDA90;
             break;
         case 5:
             m4aSongNumStart(102);
             func_0801CB0C();
-            w->unk_310 = func_080EDA90;
+            w->update = func_080EDA90;
             break;
         case 1:
             if ((u8)(gUnk_0203C590.unk_06 + 4) > 2) {
                 m4aSongNumStart(102);
                 func_0801CB0C();
-                w->unk_310 = func_080EDA90;
+                w->update = func_080EDA90;
             } else {
                 m4aSongNumStart(105);
             }
@@ -8555,7 +8555,7 @@ s32 func_080ED91C(MapMenuWork* w) {
             func_080ED250((u8*)w);
             w->unk_30A = 2;
             w->x7 = 0x8800;
-            w->unk_310 = func_080EDC94;
+            w->update = func_080EDC94;
             break;
         }
     }
@@ -8617,7 +8617,7 @@ s32 func_080EDB4C(MapMenuWork* w) {
         func_080ECFE8((UnkStruct_080ECFE8*)w, 0);
         FadeToOriginal(0, 16);
         w->unk_30C = 16;
-        w->unk_310 = func_080EDC38;
+        w->update = func_080EDC38;
     }
     return 1;
 }
@@ -8654,11 +8654,11 @@ s32 func_080EDC94(MapMenuWork* w) {
         w->unk_30A = 0;
         func_080ED314((u8*)w);
         w->y3 = (w->unk_309 * 19 + 16) << 8;
-        w->unk_310 = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
+        w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
         m4aSongNumStart(0x68);
     } else if (GetKeysPressed() & 1) {
         SaveWriteSystem();
-        w->unk_310 = func_080EDA90;
+        w->update = func_080EDA90;
         m4aSongNumStart(0x66);
     }
     return 1;
@@ -8666,7 +8666,7 @@ s32 func_080EDC94(MapMenuWork* w) {
 
 s32 func_080EDD7C(MapMenuWork* w) {
     (*(volatile u16*)&gDispCnt) |= 0x1000;
-    w->unk_310 = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
+    w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
     return 1;
 }
 
@@ -8694,7 +8694,7 @@ void func_080EDDBC(MapMenuWork* w) {
         m4aSongNumStart(0x67);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
     }
-    w->unk_310 = func_080ED35C;
+    w->update = func_080ED35C;
 }
 
 s32 func_080EDE78(MapMenuWork* w) {
@@ -8706,7 +8706,7 @@ s32 func_080EDE78(MapMenuWork* w) {
         AnimUpdate(&w->anim);
     }
 
-    if (w->unk_310 != 0 && (u8)w->unk_310(w) == 0) {
+    if (w->update != 0 && (u8)w->update(w) == 0) {
         return 0;
     }
     return 1;
@@ -9045,17 +9045,17 @@ void func_080EE50C(UnkStruct_080EE50C* p, u8 a) {
     FadeSetPaletteExcluded(0x0C, a);
     FadeSetPaletteExcluded(0x0D, a);
     FadeSetPaletteExcluded(0x0E, a);
-    FadeSetPaletteExcluded(p->unk_014->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_034->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_040->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_190->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette2->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette3->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette4->index + 0x10, a);
 }
 
 void func_080EE580(UnkStruct_080EE580* p, u8 a) {
-    FadeSetPaletteExcluded(p->unk_000->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_168->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_180->index + 0x10, a);
-    FadeSetPaletteExcluded(p->unk_188->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette2->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette3->index + 0x10, a);
+    FadeSetPaletteExcluded(p->palette4->index + 0x10, a);
 }
 
 void func_080EE5E0(u8 a) {
@@ -9180,7 +9180,7 @@ s32 func_080EE7B0(MapSaveWork* w) {
         gUnk_0203C7AC->unk_00 |= 0x1000;
         gUnk_02039BA0->unk_70 |= 0x100;
         w->unk_2F6 = 16;
-        w->unk_2F0 = func_080EE824;
+        w->update = func_080EE824;
     }
     return 1;
 }
@@ -9271,7 +9271,7 @@ s32 func_080EE824(MapSaveWork* w) {
         w->tiles = AllocObjTiles(0x120, gUnk_098A8628);
         AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
         AnimStart(&w->anim, 2, 1);
-        w->unk_190 = _08066468(1);
+        w->palette8 = _08066468(1);
         p1 = w->unk_194;
 #ifdef VERSION_EU
         InitTextSlots(p1, 54);
@@ -9295,7 +9295,7 @@ s32 func_080EE824(MapSaveWork* w) {
         w->unk_2F8 = 1;
         w->unk_2F4 = 2;
         w->x2 = 0xB000;
-        w->unk_2F0 = func_080EEB00;
+        w->update = func_080EEB00;
     }
     return 1;
 }
@@ -9320,7 +9320,7 @@ s32 func_080EEB00(MapSaveWork* w) {
         w->unk_2F4 = 0;
         w->unk_2F8 = 0;
         w->unk_2F6 = 16;
-        w->unk_2F0 = func_080EEC9C;
+        w->update = func_080EEC9C;
         DisableBg(0);
     } else if (GetKeysPressed() & 1) {
         m4aSongNumStart(211);
@@ -9351,7 +9351,7 @@ s32 func_080EEB00(MapSaveWork* w) {
         w->unk_2A0 = 0;
         w->unk_2EC = 0;
         w->unk_2F4 = 0;
-        w->unk_2F0 = func_080EEC5C;
+        w->update = func_080EEC5C;
     }
 
     return 1;
@@ -9362,7 +9362,7 @@ s32 func_080EEC5C(MapSaveWork* w) {
         w->unk_2F8 = 0;
         DisableBg(0);
         w->unk_2F6 = 16;
-        w->unk_2F0 = func_080EEC9C;
+        w->update = func_080EEC9C;
     }
 
     return 1;
@@ -9380,7 +9380,7 @@ s32 func_080EEC9C(MapSaveWork* w) {
         func_080EE50C((UnkStruct_080EE50C*)w, 0);
         FadeToOriginal(0, 16);
         w->unk_2F6 = 16;
-        w->unk_2F0 = func_080EED44;
+        w->update = func_080EED44;
     }
 
     return 1;
@@ -9447,7 +9447,7 @@ void func_080EED88(MapSaveWork* w) {
     w->unk_2F4 = 0;
     w->unk_2F8 = 0;
     w->unk_2F6 = 16;
-    w->unk_2F0 = func_080EE7B0;
+    w->update = func_080EE7B0;
     TaskPoolInit(&w->tasks, 1);
     func_080EE580((UnkStruct_080EE580*)w, 1);
     FadeToAmount(0, 16, 16);
@@ -9461,8 +9461,8 @@ s32 func_080EEF04(MapSaveWork* w) {
         AnimUpdate(&w->anim);
     }
 
-    if (w->unk_2F0 != 0) {
-        if ((u8)w->unk_2F0(w) == 0) {
+    if (w->update != 0) {
+        if ((u8)w->update(w) == 0) {
             return 0;
         }
     }
@@ -9527,21 +9527,21 @@ void func_080EEF4C(MapSaveWork* w) {
 
         if (w->unk_2F4 != 0) {
 #ifdef VERSION_EU
-            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 92, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 92, w->unk_194, w->palette8, 50, w->unk_26C);
 #elif defined(VERSION_JP)
-            DrawTextSlots(129, 92, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(129, 92, w->unk_194, w->palette8, 50, w->unk_26C);
 #else
-            DrawTextSlots(124, 92, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(124, 92, w->unk_194, w->palette8, 50, w->unk_26C);
 #endif
-            DrawTextSlots(128, 114, w->unk_270, w->unk_190, 50, w->unk_2A0);
-            DrawTextSlots(184, 114, w->unk_2A4, w->unk_190, 50, w->unk_2EC);
+            DrawTextSlots(128, 114, w->unk_270, w->palette8, 50, w->unk_2A0);
+            DrawTextSlots(184, 114, w->unk_2A4, w->palette8, 50, w->unk_2EC);
         } else {
 #ifdef VERSION_EU
-            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 102, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 102, w->unk_194, w->palette8, 50, w->unk_26C);
 #elif defined(VERSION_JP)
-            DrawTextSlots(129, 103, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(129, 103, w->unk_194, w->palette8, 50, w->unk_26C);
 #else
-            DrawTextSlots(130, 102, w->unk_194, w->unk_190, 50, w->unk_26C);
+            DrawTextSlots(130, 102, w->unk_194, w->palette8, 50, w->unk_26C);
 #endif
         }
 
@@ -9578,7 +9578,7 @@ void func_080EF234(MapSaveWork* w) {
     ReleaseObjTiles(w->tiles6);
     ReleaseObjPalette((u8*)w->palette4);
     FreeTextSlots(w->unk_044, 36);
-    ReleaseObjPalette((u8*)w->unk_190);
+    ReleaseObjPalette((u8*)w->palette8);
 #ifdef VERSION_EU
     FreeTextSlots(w->unk_194, 54);
 #else
@@ -9640,7 +9640,7 @@ s32 func_080EF3A0(UnkStruct_080E590C* p) {
 
     if (p->unk_08.unk_00 < gUnk_02039BA0->x - 0x1800 || p->unk_08.unk_00 > gUnk_02039BA0->x + 0x10800 ||
         q->x + q->y < gUnk_02039BA0->y - 0x800 || q->x + q->y > gUnk_02039BA0->y + 0xC000) {
-        p->unk_CC = 0;
+        p->update = 0;
         ColliderSetDisabled(p->unk_48, 1);
         return 1;
     }
@@ -9668,7 +9668,7 @@ void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c) {
     if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->y) {
         p->unk_08.unk_00 = b;
         q->x = c;
-        p->unk_CC = func_080EF84C;
+        p->update = func_080EF84C;
         ColliderSetDisabled(p->unk_48, 1);
     }
 }
@@ -9696,9 +9696,9 @@ void func_080EF508(UnkStruct_080E590C* p) {
 
     if (AnimIsFinished(p->anim)) {
         if (p->unk_04 & 8) {
-            p->unk_CC = func_080EF7B8;
+            p->update = func_080EF7B8;
         } else {
-            p->unk_CC = func_080EF58C;
+            p->update = func_080EF58C;
         }
         *(u16*)&p->unk_D0 = z = 0;
         ColliderSetDisabled(p->unk_48, z);
@@ -9729,7 +9729,7 @@ void func_080EF58C(UnkStruct_080E590C* p) {
 
     if ((u8)func_080EF4BC(p) != 0) {
         p->unk_D0 = 0;
-        p->unk_CC = func_080EF718;
+        p->update = func_080EF718;
     } else if (GetRandom() % 80 == 0) {
         switch (GetRandom() % 4) {
         case 0:
@@ -9747,11 +9747,11 @@ void func_080EF58C(UnkStruct_080E590C* p) {
         }
         ((u8*)q)[0x14] = v;
         p->unk_D0 = 0;
-        p->unk_CC = func_080EF664;
+        p->update = func_080EF664;
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EF88C;
+        p->update = func_080EF88C;
     } else {
         func_080E5F50(p);
 
@@ -9774,16 +9774,16 @@ void func_080EF664(UnkStruct_080E590C* p) {
 
     if ((u8)func_080EF4BC(p) != 0) {
         p->unk_D0 = 0;
-        p->unk_CC = func_080EF718;
+        p->update = func_080EF718;
     } else if (GetRandom() % 80 == 0) {
         q->unk_10 = 0;
-        p->unk_CC = func_080EF58C;
+        p->update = func_080EF58C;
     } else {
         func_080EF404(p, 12, 0x80);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EF88C;
+        p->update = func_080EF88C;
     } else {
         func_080E5F50(p);
 
@@ -9807,14 +9807,14 @@ void func_080EF718(UnkStruct_080E590C* p) {
     if (p->unk_D0 % 8 == 0) {
         if ((u8)func_080EF4BC(p) == 0) {
             q->unk_10 = 0;
-            p->unk_CC = func_080EF58C;
+            p->update = func_080EF58C;
         }
     }
     func_080EF404(p, 12, 0x180);
     p->unk_D0++;
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EF88C;
+        p->update = func_080EF88C;
     } else {
         func_080E5F50(p);
 
@@ -9841,7 +9841,7 @@ void func_080EF7B8(UnkStruct_080E590C* p) {
     func_080EF404(p, 25, 0x200);
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EF88C;
+        p->update = func_080EF88C;
     } else {
         func_080E5F50(p);
         func_080EF478(p, x, y);
@@ -9856,7 +9856,7 @@ void func_080EF84C(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished(p->anim)) {
-        p->unk_CC = 0;
+        p->update = 0;
     }
 }
 
@@ -9878,7 +9878,7 @@ void func_080EF8CC(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EF88C;
+        p->update = func_080EF88C;
     } else {
         func_080E5F50(p);
     }
@@ -9887,14 +9887,14 @@ void func_080EF8CC(UnkStruct_080E590C* p) {
 void func_080EF914(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
-    if (p->unk_CC == 0) {
+    if (p->update == 0) {
         if (p->unk_04 & 0x20) {
-            p->unk_CC = func_080EF8CC;
+            p->update = func_080EF8CC;
             func_080E5D6C(p, 1, 0);
             p->gfx = AnimGetGfx(p->anim);
             ColliderSetDisabled(p->unk_48, 0);
         } else {
-            p->unk_CC = func_080EF508;
+            p->update = func_080EF508;
             func_080E5D6C(p, 0, 0);
             p->gfx = AnimGetGfx(p->anim);
             ColliderSetDisabled(p->unk_48, 1);
@@ -9913,14 +9913,14 @@ s32 func_080EF9A0(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080EF88C) {
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080EF88C) {
         return 1;
     }
 
-    if (p->unk_CC != 0) {
-        p->unk_CC(p);
+    if (p->update != 0) {
+        p->update(p);
 
-        if (p->unk_CC != 0) {
+        if (p->update != 0) {
             ColliderSetPosition(p->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
@@ -10023,7 +10023,7 @@ void func_080EFC08(UnkStruct_080E590C* p) {
         func_080EFB24((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
-        p->unk_CC = func_080EFCF4;
+        p->update = func_080EFCF4;
     } else if (GetRandom() % 130 == 0) {
         if (GetRandom() % 2 != 0) {
             func_080EFB24((UnkStruct_080F023C*)p, 0);
@@ -10032,11 +10032,11 @@ void func_080EFC08(UnkStruct_080E590C* p) {
         }
         w->unk_D0 = 0;
         q->unk_10 = 0;
-        w->unk_CC = func_080EFCF4;
+        w->update = func_080EFCF4;
     }
 
     if ((u8)func_080E5FB4(w) != 0) {
-        w->unk_CC = func_080EFE54;
+        w->update = func_080EFE54;
     } else {
         func_080E5F50(w);
         func_080EFA30((UnkStruct_080EFA30*)p);
@@ -10101,7 +10101,7 @@ void func_080EFCF4(UnkStruct_080E590C* p) {
     q->unk_04 += v;
 
     if (p->unk_D0 > lim) {
-        p->unk_CC = func_080EFC08;
+        p->update = func_080EFC08;
     } else {
         p->unk_D0++;
     }
@@ -10119,7 +10119,7 @@ void func_080EFCF4(UnkStruct_080E590C* p) {
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EFE54;
+        p->update = func_080EFE54;
     } else {
         func_080E5F50(p);
     }
@@ -10143,7 +10143,7 @@ void func_080EFE94(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080EFE54;
+        p->update = func_080EFE54;
     } else {
         func_080E5F50(p);
     }
@@ -10155,12 +10155,12 @@ void func_080EFEDC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->unk_04 & 0x20) {
-        p->unk_CC = func_080EFE94;
+        p->update = func_080EFE94;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 0);
     } else {
-        p->unk_CC = func_080EFC08;
+        p->update = func_080EFC08;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 0);
@@ -10178,14 +10178,14 @@ s32 func_080EFF64(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080EFE54) {
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080EFE54) {
         return 1;
     }
 
-    if (p->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+    if (p->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->update)(q);
 
-        if (p->unk_CC != 0) {
+        if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
@@ -10218,7 +10218,7 @@ void func_080EFFF8(UnkStruct_080E590C* p) {
 
 void func_080F005C(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
-    p->unk_CC = func_080EFFF8;
+    p->update = func_080EFFF8;
     func_080E5D6C(p, 0, 1);
     p->gfx = AnimGetGfx(p->anim);
     ColliderSetDisabled(p->unk_48, 0);
@@ -10233,10 +10233,10 @@ s32 func_080F0098(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if (w->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))w->unk_CC)(w);
+    if (w->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))w->update)(w);
 
-        if (w->unk_CC != 0) {
+        if (w->update != 0) {
             ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
@@ -10352,7 +10352,7 @@ void func_080F02A0(UnkStruct_080F023C* w) {
         w->unk_DC = gUnk_02039BA0->actor.fieldPosition.unk_0C - 0x1000;
         w->unk_D0 = 0;
         q->unk_10 = 0;
-        w->unk_CC = func_080F0348;
+        w->update = func_080F0348;
     }
     func_080E5F50((UnkStruct_080E590C*)w);
 }
@@ -10384,7 +10384,7 @@ void func_080F0348(UnkStruct_080F023C* w) {
         w->unk_DC = q->unk_100;
         w->unk_D0 = 0;
         v->unk_10 = 0;
-        w->unk_CC = func_080F0470;
+        w->update = func_080F0470;
     }
 
     n = func_080DFF1C((UnkStruct_080DFF1C*)v);
@@ -10420,7 +10420,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
     if ((u8)func_080F01B0(w) != 0) {
         w->unk_D0 = 0;
         q->unk_10 = 0;
-        w->unk_CC = func_080F02A0;
+        w->update = func_080F02A0;
     }
 
     r = func_080DFF1C((UnkStruct_080DFF1C*)q);
@@ -10439,7 +10439,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
 
 void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     func_080E6394((UnkStruct_080E590C*)w, arg);
-    w->unk_CC = func_080F02A0;
+    w->update = func_080F02A0;
     func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderSetDisabled(&w->collider, 0);
@@ -10456,10 +10456,10 @@ s32 func_080F05A4(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if (w->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))w->unk_CC)(w);
+    if (w->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))w->update)(w);
 
-        if (w->unk_CC != 0) {
+        if (w->update != 0) {
             ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
@@ -10562,7 +10562,7 @@ void func_080F07EC(UnkStruct_080E590C* p) {
         func_080F0708((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
-        p->unk_CC = func_080F08E4;
+        p->update = func_080F08E4;
     } else if (GetRandom() % 130 == 0) {
         if (GetRandom() % 2) {
             func_080F0708((UnkStruct_080F023C*)p, 0);
@@ -10572,11 +10572,11 @@ void func_080F07EC(UnkStruct_080E590C* p) {
 
         r->unk_D0 = 0;
         q->unk_10 = 0;
-        r->unk_CC = func_080F08E4;
+        r->update = func_080F08E4;
     }
 
     if ((u8)func_080E5FB4(r) != 0) {
-        r->unk_CC = func_080F0A44;
+        r->update = func_080F0A44;
     } else {
         func_080E5F50(r);
         func_080F0614((UnkStruct_080EFA30*)p);
@@ -10641,7 +10641,7 @@ void func_080F08E4(UnkStruct_080E590C* p) {
     q->unk_04 += v;
 
     if (p->unk_D0 > lim) {
-        p->unk_CC = func_080F07EC;
+        p->update = func_080F07EC;
     } else {
         p->unk_D0++;
     }
@@ -10659,7 +10659,7 @@ void func_080F08E4(UnkStruct_080E590C* p) {
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080F0A44;
+        p->update = func_080F0A44;
     } else {
         func_080E5F50(p);
     }
@@ -10683,7 +10683,7 @@ void func_080F0A84(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if ((u8)func_080E5FB4(p)) {
-        p->unk_CC = func_080F0A44;
+        p->update = func_080F0A44;
     } else {
         func_080E5F50(p);
     }
@@ -10695,12 +10695,12 @@ void func_080F0ACC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->unk_04 & 0x20) {
-        p->unk_CC = func_080F0A84;
+        p->update = func_080F0A84;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 0);
     } else {
-        p->unk_CC = func_080F07EC;
+        p->update = func_080F07EC;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 0);
@@ -10718,14 +10718,14 @@ s32 func_080F0B54(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0A44) {
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0A44) {
         return 1;
     }
 
-    if (p->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+    if (p->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->update)(q);
 
-        if (p->unk_CC != 0) {
+        if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
@@ -10751,7 +10751,7 @@ void func_080F0BE8(UnkStruct_080E590C* p) {
     if (AnimIsFinished(p->anim)) {
         ColliderSetDisabled(p->unk_48, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
-        p->unk_CC = func_080F0C68;
+        p->update = func_080F0C68;
     } else {
         func_080E5DEC(q);
         if (q->unk_E0 > 0) {
@@ -10777,7 +10777,7 @@ void func_080F0C68(UnkStruct_080E590C* p) {
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080F0D40;
+        p->update = func_080F0D40;
     } else {
         func_080E5F50(p);
 
@@ -10785,7 +10785,7 @@ void func_080F0C68(UnkStruct_080E590C* p) {
             p->unk_D0--;
         } else {
             ColliderSetDisabled(q->unk_48, 1);
-            q->unk_CC = func_080F0D00;
+            q->update = func_080F0D00;
         }
     }
 }
@@ -10797,7 +10797,7 @@ void func_080F0D00(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_CC = 0;
+        p->update = 0;
     }
 }
 
@@ -10816,8 +10816,8 @@ void func_080F0D40(UnkStruct_080E590C* p) {
 void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
-    if (p->unk_CC == 0) {
-        p->unk_CC = func_080F0BE8;
+    if (p->update == 0) {
+        p->update = func_080F0BE8;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 1);
@@ -10836,14 +10836,14 @@ s32 func_080F0DD8(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0D40) {
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0D40) {
         return 1;
     }
 
-    if (p->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+    if (p->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->update)(q);
 
-        if (p->unk_CC != 0) {
+        if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
@@ -10869,7 +10869,7 @@ void func_080F0E6C(UnkStruct_080E590C* p) {
     if (AnimIsFinished(p->anim)) {
         ColliderSetDisabled(p->unk_48, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
-        p->unk_CC = func_080F0EEC;
+        p->update = func_080F0EEC;
     } else {
         func_080E5DEC(q);
         if (q->unk_E0 > 0) {
@@ -10895,7 +10895,7 @@ void func_080F0EEC(UnkStruct_080E590C* p) {
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
-        p->unk_CC = func_080F0FC4;
+        p->update = func_080F0FC4;
     } else {
         func_080E5F50(p);
 
@@ -10903,7 +10903,7 @@ void func_080F0EEC(UnkStruct_080E590C* p) {
             p->unk_D0--;
         } else {
             ColliderSetDisabled(q->unk_48, 1);
-            q->unk_CC = func_080F0F84;
+            q->update = func_080F0F84;
         }
     }
 }
@@ -10915,7 +10915,7 @@ void func_080F0F84(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_CC = 0;
+        p->update = 0;
     }
 }
 
@@ -10934,8 +10934,8 @@ void func_080F0FC4(UnkStruct_080E590C* p) {
 void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
-    if (p->unk_CC == 0) {
-        p->unk_CC = func_080F0E6C;
+    if (p->update == 0) {
+        p->update = func_080F0E6C;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
         ColliderSetDisabled(p->unk_48, 1);
@@ -10954,14 +10954,14 @@ s32 func_080F105C(UnkStruct_080E590C* p) {
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0FC4) {
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0FC4) {
         return 1;
     }
 
-    if (p->unk_CC != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+    if (p->update != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->update)(q);
 
-        if (p->unk_CC != 0) {
+        if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
@@ -10994,7 +10994,7 @@ void func_080F1124(MapDbgWork* w) {
         if (GetKeysPressed() & 8) {
             w->unk_00 = 1;
             *w->unk_04 = 1;
-            w->unk_08 = func_080F117C;
+            w->update = func_080F117C;
         }
 #endif
     }
@@ -11040,10 +11040,10 @@ void func_080F117C(MapDbgWork* w) {
     }
 
     if (GetKeysPressed() & 0x300) {
-        w->unk_08 = func_080F1274;
+        w->update = func_080F1274;
     } else if (GetKeysPressed() & 0xB) {
         *w->unk_04 = 0;
-        w->unk_08 = func_080F1124;
+        w->update = func_080F1124;
     }
 }
 
@@ -11061,12 +11061,12 @@ void func_080F1274(MapDbgWork* w) {
     w->unk_42 = FormatSmallFontHex(func_080F10F0((u8*)d), w->unk_2E);
 
     if (GetKeysPressed() & 0x300) {
-        w->unk_08 = func_080F117C;
+        w->update = func_080F117C;
     }
 
     if (GetKeysPressed() & 0xB) {
         *w->unk_04 = 0;
-        w->unk_08 = func_080F1124;
+        w->update = func_080F1124;
     }
 }
 
@@ -11078,7 +11078,7 @@ void func_080F131C(MapDbgWork* w, u8* p) {
     w->unk_00 = 0;
     w->unk_04 = p;
     *p = 0;
-    w->unk_08 = func_080F1124;
+    w->update = func_080F1124;
     w->unk_0C = 0;
     w->unk_0D = 0;
 #ifdef VERSION_EU
@@ -11105,7 +11105,7 @@ void func_080F139C(MapDbgWork* w) {
         DrawSmallFontString(240 - w->unk_42 * 8, 0x96, w->unk_2E, w->tiles, w->palette, 0, w->unk_42);
 
         if (*w->unk_04 != 0) {
-            if (w->unk_08 == func_080F117C) {
+            if (w->update == func_080F117C) {
                 DrawSmallFontString(240 - (w->unk_0C + 1) * 8, 0x90, &w->unk_44, w->tiles, w->palette, 0, w->unk_46);
             } else {
                 DrawSmallFontString(240 - (w->unk_0D + 1) * 8, 0x98, &w->unk_44, w->tiles, w->palette, 0, w->unk_46);
@@ -11125,7 +11125,7 @@ void func_080F1460(MapGmkJumpWork* w) {
     if (ColliderIsTouchingType(&w->unk_040, 1) && (w->unk_06E & 2)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
-        w->unk_0C8 = func_080F14C4;
+        w->update = func_080F14C4;
         w->unk_0C0 = 1;
         AnimStart(&w->anim, 1, 1);
     } else {
@@ -11138,11 +11138,11 @@ void func_080F14C4(MapGmkJumpWork* w) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
     } else if (gUnk_02039BA0->actor.fieldPosition.z != gUnk_02039BA0->actor.fieldPosition.unk_0C) {
-        w->unk_0C8 = func_080F1544;
+        w->update = func_080F1544;
         w->unk_0C0 = 2;
         AnimStart(&w->anim, 2, 1);
     } else {
-        w->unk_0C8 = func_080F1460;
+        w->update = func_080F1460;
         w->unk_0C0 = 0;
         AnimStart(&w->anim, 0, 1);
     }
@@ -11150,7 +11150,7 @@ void func_080F14C4(MapGmkJumpWork* w) {
 
 void func_080F1544(MapGmkJumpWork* w) {
     if (AnimIsFinished(&w->anim)) {
-        w->unk_0C8 = func_080F1460;
+        w->update = func_080F1460;
         w->unk_0C0 = 0;
         AnimStart(&w->anim, 0, 1);
     } else {
@@ -11189,7 +11189,7 @@ void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     AnimInit(a, gUnk_09EF8488, gUnk_09EF8468);
     w->unk_0C0 = 0;
     AnimStart(a, 0, 1);
-    w->unk_0C8 = func_080F1460;
+    w->update = func_080F1460;
     ColliderInit(&w->unk_040, 6, 16, 0);
     ColliderSetPosition(&w->unk_040, p->unk_00, p->x, p->y);
 }
@@ -11205,8 +11205,8 @@ s32 func_080F1650(MapGmkJumpWork* w) {
         ColliderSetDisabled(&w->unk_040, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        w->unk_0C8(w);
+    if (w->update != 0) {
+        w->update(w);
     }
     return 1;
 }
@@ -11352,7 +11352,7 @@ u8 func_080F1978(MapGmkTutorialWork* w) {
             gUnk_0203C7AC->unk_00 |= 0x80;
             gUnk_02039BA0->unk_68 = (s32)w;
             gUnk_0203C7AC->unk_14 = (s32)w;
-            w->unk_0AC = func_080F1A10;
+            w->update = func_080F1A10;
             gUnk_0203C7AC->unk_0F = 0;
             gUnk_0203C7AC->unk_10 = 0;
             FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 1);
@@ -11367,13 +11367,13 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
     if (p != 0) {
         func_080DF640(gUnk_0984C868[0], p);
-        w->unk_0AC = func_080F1A84;
+        w->update = func_080F1A84;
     }
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 0);
-        w->unk_0AC = func_080F1978;
+        w->update = func_080F1978;
     }
     return 1;
 }
@@ -11382,7 +11382,7 @@ u8 func_080F1A84(MapGmkTutorialWork* w) {
     if (gUnk_02039BA0->unk_70 & 0x200000) {
         UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
-        w->unk_0AC = func_080F1ACC;
+        w->update = func_080F1ACC;
     }
     return 1;
 }
@@ -11406,7 +11406,7 @@ void func_080F1AD0(MapGmkTutorialWork* w) {
     ColliderInit(&w->unk_040, 6, 16, 0);
     ColliderSetPosition(&w->unk_040, w->x, w->y, w->z);
     w->unk_0A8 = 0;
-    w->unk_0AC = func_080F1978;
+    w->update = func_080F1978;
     TaskPoolInit(&w->tasks, 2);
 }
 
@@ -11415,8 +11415,8 @@ s32 func_080F1B6C(MapGmkTutorialWork* w) {
         gUnk_0203C7AC->unk_00 |= 0x200;
     }
 
-    if (w->unk_0AC != 0) {
-        if (w->unk_0AC(w) == 0) {
+    if (w->update != 0) {
+        if (w->update(w) == 0) {
             return 0;
         }
     }
@@ -11453,7 +11453,7 @@ u8 func_080F1C64(MapGmkSpiderWork* w) {
         gUnk_0203C7AC->unk_00 |= 2;
         gUnk_02039BA0->unk_70 |= 0x80;
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 125;
-        w->unk_0C0 = 0;
+        w->update = 0;
     } else {
         w->gfx = AnimUpdate(a);
     }
@@ -11471,7 +11471,7 @@ void func_080F1CCC(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, gUnk_0899A8BE);
-    w->unk_0C0 = func_080F1C64;
+    w->update = func_080F1C64;
     v = 0;
 
     if (gUnk_02039BA0->actor.fieldPosition.x >= w->unk_000) {
@@ -11485,8 +11485,8 @@ u8 func_080F1D68(MapGmkSpiderWork* w) {
         return 0;
     }
 
-    if (w->unk_0C0 != 0) {
-        return w->unk_0C0(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -11532,7 +11532,7 @@ s32 func_080F1E28(MapGmkGpWork* w) {
 
         gUnk_0203C7AC->unk_00 |= 0x80;
         w->unk_0C6 = 20;
-        w->unk_0C8 = func_080F1EA0;
+        w->update = func_080F1EA0;
     }
     return 1;
 }
@@ -11542,7 +11542,7 @@ s32 func_080F1EA0(MapGmkGpWork* w) {
         w->unk_0C6--;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        w->unk_0C8 = func_080F1E28;
+        w->update = func_080F1E28;
     }
     return 1;
 }
@@ -11566,7 +11566,7 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C6 = 0;
-    w->unk_0C8 = func_080F1E28;
+    w->update = func_080F1E28;
 }
 
 u8 func_080F1F98(MapGmkGpWork* w) {
@@ -11580,8 +11580,8 @@ u8 func_080F1F98(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -11624,7 +11624,7 @@ u8 func_080F207C(MapGmkGp1Work* w) {
         w->cell->unk_00 |= 1;
         ColliderSetDisabled(&w->collider, 1);
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C8 = func_080F2130;
+        w->update = func_080F2130;
     }
     return 1;
 }
@@ -11637,7 +11637,7 @@ s32 func_080F2130(MapGmkGp1Work* w) {
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         w->unk_0C6 = 0;
-        w->unk_0C8 = 0;
+        w->update = 0;
     }
     return 1;
 }
@@ -11664,7 +11664,7 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C6 = 1;
-    w->unk_0C8 = func_080F207C;
+    w->update = func_080F207C;
 }
 
 u8 func_080F2244(MapGmkGpWork* w) {
@@ -11672,8 +11672,8 @@ u8 func_080F2244(MapGmkGpWork* w) {
         return 0;
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -11716,7 +11716,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
 
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C8 = func_080F238C;
+        w->update = func_080F238C;
     }
     return 1;
 }
@@ -11728,7 +11728,7 @@ u8 func_080F238C(MapGmkGpWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         AnimStart(&w->anim, 0, 0);
         w->gfx = AnimGetGfx(&w->anim);
-        w->unk_0C8 = func_080F230C;
+        w->update = func_080F230C;
     }
 
     return 1;
@@ -11755,7 +11755,7 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
-    w->unk_0C8 = func_080F230C;
+    w->update = func_080F230C;
 }
 
 u8 func_080F24B0(MapGmkGpWork* w) {
@@ -11769,8 +11769,8 @@ u8 func_080F24B0(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -11802,7 +11802,7 @@ u8 func_080F2594(MapGmkGpWork* w) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C8 = func_080F25FC;
+        w->update = func_080F25FC;
     }
     return 1;
 }
@@ -11818,7 +11818,7 @@ s32 func_080F25FC(MapGmkGpWork* w) {
             func_080E84DC(&w->unk_004);
         }
         AnimStart(a, 2, 0);
-        w->unk_0C8 = func_080F2654;
+        w->update = func_080F2654;
     } else {
         w->gfx = AnimUpdate(a);
     }
@@ -11832,7 +11832,7 @@ u8 func_080F2654(MapGmkGpWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         AnimStart(&w->anim, 0, 0);
         w->gfx = AnimGetGfx(&w->anim);
-        w->unk_0C8 = func_080F2594;
+        w->update = func_080F2594;
     }
 
     return 1;
@@ -11859,7 +11859,7 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
-    w->unk_0C8 = func_080F2594;
+    w->update = func_080F2594;
 }
 
 u8 func_080F2778(MapGmkGpWork* w) {
@@ -11873,8 +11873,8 @@ u8 func_080F2778(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -11912,7 +11912,7 @@ u8 func_080F285C(MapGmkGpWork* w) {
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(a, 1, 1);
         w->unk_0C6 = 20;
-        w->unk_0C8 = func_080F28F4;
+        w->update = func_080F28F4;
     }
     return 1;
 }
@@ -11924,7 +11924,7 @@ s32 func_080F28F4(MapGmkGpWork* w) {
         w->unk_0C6--;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        w->unk_0C8 = 0;
+        w->update = 0;
     }
     return 1;
 }
@@ -11954,7 +11954,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
-    w->unk_0C8 = func_080F285C;
+    w->update = func_080F285C;
 }
 
 u8 func_080F2A10(MapGmkGpWork* w) {
@@ -11968,8 +11968,8 @@ u8 func_080F2A10(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -12003,7 +12003,7 @@ s32 func_080F2AF4(MapGmkGpWork* w) {
         w->cell->unk_00 |= 2;
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C8 = func_080F2B78;
+        w->update = func_080F2B78;
     }
     return 1;
 }
@@ -12017,7 +12017,7 @@ s32 func_080F2B78(MapGmkGpWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         AnimStart(a, 2, 0);
         w->gfx = AnimGetGfx(a);
-        w->unk_0C8 = 0;
+        w->update = 0;
     }
     return 1;
 }
@@ -12047,7 +12047,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
-    w->unk_0C8 = func_080F2AF4;
+    w->update = func_080F2AF4;
 }
 
 u8 func_080F2CAC(MapGmkGpWork* w) {
@@ -12061,8 +12061,8 @@ u8 func_080F2CAC(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -12112,7 +12112,7 @@ u8 func_080F2D90(MapGmkGpWork* w) {
         }
 
         w->unk_0C6 = 20;
-        w->unk_0C8 = func_080F2E4C;
+        w->update = func_080F2E4C;
     }
     return 1;
 }
@@ -12124,7 +12124,7 @@ s32 func_080F2E4C(MapGmkGpWork* w) {
         w->unk_0C6--;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        w->unk_0C8 = func_080F2D90;
+        w->update = func_080F2D90;
     }
     return 1;
 }
@@ -12154,7 +12154,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
-    w->unk_0C8 = func_080F2D90;
+    w->update = func_080F2D90;
 }
 
 u8 func_080F2F6C(MapGmkGpWork* w) {
@@ -12168,8 +12168,8 @@ u8 func_080F2F6C(MapGmkGpWork* w) {
         ColliderSetDisabled(&w->collider, 0);
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -12579,7 +12579,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
         AnimStart(a, 1, 1);
         w->gfx = AnimGetGfx(a);
         SetObjTileSource(w->tiles, &gUnk_09858238[0x74]);
-        w->unk_0C8 = func_080F3ADC;
+        w->update = func_080F3ADC;
     }
     return 1;
 }
@@ -12591,14 +12591,14 @@ u8 func_080F3ADC(MapGmk01Work* w) {
         gUnk_0203C7AC->unk_00 |= 4;
         w->unk_000->unk_00 |= 2;
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkEnm, q);
-        w->unk_0C8 = 0;
+        w->update = 0;
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x20;
         func_080E9078(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, gUnk_02039BA0->actor.fieldPosition.z);
         func_080DEE18(gUnk_0203C590.unk_06)->unk_00 |= 0x10;
         w->unk_000->unk_00 |= 2;
         w->unk_0C4 = 20;
-        w->unk_0C8 = func_080F3B84;
+        w->update = func_080F3B84;
     }
 
     return 1;
@@ -12611,7 +12611,7 @@ s32 func_080F3B84(MapGmk01Work* w) {
         }
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        w->unk_0C8 = 0;
+        w->update = 0;
     }
     return 1;
 }
@@ -12632,12 +12632,12 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     if (w->unk_000->unk_00 & 2) {
         AnimStart(a, 1, 1);
         w->gfx = AnimGetGfx(a);
-        w->unk_0C8 = 0;
+        w->update = 0;
     } else {
         gUnk_0203C7AC->unk_00 |= 0x20;
         AnimStart(a, 0, 1);
         w->gfx = AnimGetGfx(a);
-        w->unk_0C8 = func_080F3A74;
+        w->update = func_080F3A74;
     }
     SetObjTileSource(w->tiles, &gUnk_09858238[0x74]);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
@@ -12649,8 +12649,8 @@ u8 func_080F3C98(MapGmk01Work* w) {
         return 0;
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -12730,7 +12730,7 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
         w->unk_000->unk_00 |= 1;
         ColliderSetDisabled(&w->collider, 1);
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C8 = func_080F3F6C;
+        w->update = func_080F3F6C;
         return 1;
     }
 
@@ -12750,7 +12750,7 @@ s32 func_080F3F6C(MapGmkBarrelWork* w) {
     } else {
         gUnk_0203C7AC->unk_00 &= ~0x80;
         w->unk_0C4 = 0;
-        w->unk_0C8 = 0;
+        w->update = 0;
     }
     return 1;
 }
@@ -12776,7 +12776,7 @@ void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = 1;
-    w->unk_0C8 = func_080F3E24;
+    w->update = func_080F3E24;
 }
 
 u8 func_080F4078(MapGmkBarrelWork* w) {
@@ -12784,8 +12784,8 @@ u8 func_080F4078(MapGmkBarrelWork* w) {
         return 0;
     }
 
-    if (w->unk_0C8 != 0) {
-        return w->unk_0C8(w);
+    if (w->update != 0) {
+        return w->update(w);
     }
     return 1;
 }
@@ -12816,7 +12816,7 @@ void func_080F4140(MapGmk04Work* w) {
         m4aSongNumStart(0x66);
         gUnk_02039BA0->unk_70 |= 0x1000;
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSave, 0);
-        w->unk_0C4 = 0;
+        w->update = 0;
     }
 }
 
@@ -12826,19 +12826,19 @@ void func_080F41A4(MapGmk04Work* w) {
     if (state & 0x4000) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x69);
-        w->unk_0C4 = func_080F4258;
+        w->update = func_080F4258;
     } else if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         gUnk_0203C7AC->unk_00 = state | 0x4000;
         func_080A411C(&w->tasks, 0, 0x67);
-        w->unk_0C4 = func_080F4224;
+        w->update = func_080F4224;
     }
 }
 
 void func_080F4224(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSave, 0);
-        w->unk_0C4 = 0;
+        w->update = 0;
     }
 }
 
@@ -12847,7 +12847,7 @@ void func_080F4258(MapGmk04Work* w) {
         gUnk_0203C7AC->unk_00 &= ~0x4000;
         gUnk_02039BA0->unk_70 &= ~0x1000;
         gGameState.progression.unk_82 |= 0x10;
-        w->unk_0C4 = func_080F4140;
+        w->update = func_080F4140;
     }
 }
 
@@ -12861,9 +12861,9 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_30 = 3;
 
     if (gGameState.progression.unk_82 & 0x10) {
-        w->unk_0C4 = func_080F4140;
+        w->update = func_080F4140;
     } else {
-        w->unk_0C4 = func_080F41A4;
+        w->update = func_080F41A4;
     }
 
     w->palette = LoadObjPalette(d->palette, 32);
@@ -12886,10 +12886,10 @@ s32 func_080F4370(MapGmk04Work* w) {
 
     w->gfx = AnimUpdate(&w->anim);
 
-    if (w->unk_0C4 != 0) {
-        w->unk_0C4(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_0C4 != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }
@@ -12925,7 +12925,7 @@ void func_080F445C(MapGmk05Work* w) {
         func_0801CB0C();
         FadeStartOut(0, 16);
         m4aSongNumStart(0xCF);
-        w->unk_0C4 = func_080F44AC;
+        w->update = func_080F44AC;
     }
 }
 
@@ -12943,7 +12943,7 @@ void func_080F44AC(MapGmk04Work* w) {
         e->unk_00 |= 0x20;
         ModeRequest(&gModeMsTop, 1);
     }
-    w->unk_0C4 = 0;
+    w->update = 0;
 }
 
 void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
@@ -12954,7 +12954,7 @@ void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00 = arg->unk_04;
     e->unk_1A = d->unk_1E;
     e->unk_30 = 2;
-    w->unk_0C4 = func_080F445C;
+    w->update = func_080F445C;
     w->palette = LoadObjPalette(d->palette, 32);
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     a = &w->anim;
@@ -12981,10 +12981,10 @@ s32 func_080F45D4(MapGmk05Work* w) {
     w->gfx = AnimUpdate(&w->anim);
     w->unk_0C8 = func_080E03C0((s32)&w->unk_004);
 
-    if (w->unk_0C4 != 0) {
-        w->unk_0C4(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_0C4 != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }
@@ -13027,20 +13027,20 @@ void func_080F46FC(MapGmk06Work* w) {
         gUnk_0203C7AC->unk_00 |= 0x4000;
         func_080A411C(&w->tasks, 0, 0x84);
         gUnk_02039BA0->unk_6C = 30;
-        w->unk_0C4 = func_080F47DC;
+        w->update = func_080F47DC;
     } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
         m4aSongNumStart(0x66);
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
-        w->unk_0C4 = func_080F47B4;
+        w->update = func_080F47B4;
     }
 }
 
 void func_080F47B4(MapGmk06Work* w) {
     if (FadeIsActive() == 0) {
         ModeRequest(&gModeWorldwarp, 0);
-        w->unk_0C4 = 0;
+        w->update = 0;
     }
 }
 
@@ -13049,7 +13049,7 @@ void func_080F47DC(MapGmk06Work* w) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         gUnk_0203C7AC->unk_00 &= ~0x4000;
         gGameState.progression.unk_82 |= 0x100;
-        w->unk_0C4 = func_080F46FC;
+        w->update = func_080F46FC;
     } else {
         gUnk_02039BA0->unk_6C = 30;
     }
@@ -13062,7 +13062,7 @@ void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     e->unk_00 = arg->unk_04;
     e->unk_1A = d->unk_1E;
     e->unk_30 = 3;
-    w->unk_0C4 = func_080F46FC;
+    w->update = func_080F46FC;
     w->palette = LoadObjPalette(d->palette, 32);
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     AnimInit(&w->anim, d->anims, d->gfxTable);
@@ -13083,10 +13083,10 @@ s32 func_080F48E4(MapGmk06Work* w) {
 
     w->gfx = AnimUpdate(&w->anim);
 
-    if (w->unk_0C4 != 0) {
-        w->unk_0C4(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_0C4 != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }
@@ -13159,7 +13159,7 @@ void func_080F49D0(MapPrizeWork* w) {
             break;
         }
 
-        w->unk_7C = func_080F4BA0;
+        w->update = func_080F4BA0;
         w->unk_82 = 0;
         w->unk_8C = GetAngle(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, w->x, w->y);
         w->unk_97 = 1;
@@ -13178,7 +13178,7 @@ void func_080F49D0(MapPrizeWork* w) {
         }
 
         if (w->unk_82++ > 480) {
-            w->unk_7C = 0;
+            w->update = 0;
         }
     }
 }
@@ -13203,7 +13203,7 @@ void func_080F4BA0(MapPrizeWork* w) {
     w->unk_90 -= 2;
 
     if (w->unk_82 > 60) {
-        w->unk_7C = 0;
+        w->update = 0;
     } else {
         w->unk_82++;
     }
@@ -13246,7 +13246,7 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->unk_97 = 0;
     w->unk_96 = 1;
     w->unk_82 = 0;
-    w->unk_7C = func_080F49D0;
+    w->update = func_080F49D0;
     w->unk_90 = 0x100;
     ColliderInit(&w->collider, 5, 16, 50);
     ColliderSetPosition(&w->collider, w->x, w->y, w->z);
@@ -13258,12 +13258,12 @@ s32 func_080F4DB0(MapPrizeWork* w) {
         return 0;
     }
 
-    if (w->unk_7C == 0) {
+    if (w->update == 0) {
         return 0;
     }
-    w->unk_7C(w);
+    w->update(w);
 
-    if (w->unk_7C == 0) {
+    if (w->update == 0) {
         return 0;
     }
     return 1;
@@ -13373,7 +13373,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
         w->unk_0BE = 50;
         func_080F4F60(w);
         w->unk_088 = 0;
-        w->unk_08C = func_080F51A0;
+        w->update = func_080F51A0;
     } else {
         w->x = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
         w->y = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->y >> 8);
@@ -13408,7 +13408,7 @@ void func_080F51A0(MapPrzCardWork* w) {
         if (w->unk_0C8 <= 0x7FF) {
             w->unk_0CE = 0;
             w->unk_08A = 0;
-            w->unk_08C = func_080F52D4;
+            w->update = func_080F52D4;
             TaskCreate(&w->tasks, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->unk_0A8].name));
         }
     }
@@ -13457,7 +13457,7 @@ void func_080F52D4(MapPrzCardWork* w) {
 
     if (w->unk_08A == 30) {
         w->unk_08A = 0;
-        w->unk_08C = func_080F534C;
+        w->update = func_080F534C;
     }
 
     TaskPoolUpdate(&w->tasks);
@@ -13476,7 +13476,7 @@ void func_080F534C(MapPrzCardWork* w) {
     w->unk_0B6 -= 10;
 
     if (w->unk_0B4 <= 10) {
-        w->unk_08C = 0;
+        w->update = 0;
     }
 }
 
@@ -13522,7 +13522,7 @@ void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
 
     w->unk_088 = 0x800;
     w->unk_08A = 0;
-    w->unk_08C = func_080F4FB0;
+    w->update = func_080F4FB0;
     w->unk_0D2 = 0;
     TaskPoolInit(&w->tasks, 1);
 }
@@ -13532,12 +13532,12 @@ s32 func_080F5580(MapPrzCardWork* w) {
         return 0;
     }
 
-    if (w->unk_08C == 0) {
+    if (w->update == 0) {
         return 0;
     }
-    w->unk_08C(w);
+    w->update(w);
 
-    if (w->unk_08C == 0) {
+    if (w->update == 0) {
         return 0;
     }
     return 1;
@@ -13603,12 +13603,12 @@ void func_080F5780(MapPrzCardWork* w) {
 
 void func_080F5800(MapPrzStockWork* w) {
     func_080A411C(&w->tasks, 0, w->unk_00[1]);
-    w->unk_04 = func_080F5820;
+    w->update = func_080F5820;
 }
 
 void func_080F5820(MapPrzStockWork* w) {
     if (func_080A42C8() == 0) {
-        w->unk_04 = 0;
+        w->update = 0;
     }
 }
 
@@ -13616,17 +13616,17 @@ void func_080F5838(MapPrzStockWork* w, u16* a) {
     w->unk_00 = a;
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
-    w->unk_04 = func_080F5800;
+    w->update = func_080F5800;
     TaskPoolInit(&w->tasks, 1);
 }
 
 s32 func_080F5868(MapPrzStockWork* w) {
     TaskPoolUpdate(&w->tasks);
 
-    if (w->unk_04 != 0) {
-        w->unk_04(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_04 != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }
@@ -13650,8 +13650,8 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 32);
     InitTextSlots(w->unk_004, 48);
     w->unk_184 = LoadTextSlots(text, w->unk_004);
-    w->unk_000 = _08066468(1);
-    FadeSetPaletteExcluded(w->unk_000->index + 16, 1);
+    w->palette = _08066468(1);
+    FadeSetPaletteExcluded(w->palette->index + 16, 1);
     w->unk_186 = (240 - GetTextSlotsWidth(w->unk_004, w->unk_184)) / 2;
     w->unk_188 = 0;
 }
@@ -13661,7 +13661,7 @@ s32 func_080F5968(MapMsgWork* w) {
 }
 
 void func_080F596C(MapMsgWork* w) {
-    DrawTextSlots(w->unk_186, 120, &w->unk_004, w->unk_000, 50, w->unk_184);
+    DrawTextSlots(w->unk_186, 120, &w->unk_004, w->palette, 50, w->unk_184);
 }
 
 void func_080F59A0(MapMsgWork* w) {
@@ -13669,8 +13669,8 @@ void func_080F59A0(MapMsgWork* w) {
         DisableBg(0);
     }
 
-    FadeSetPaletteExcluded(w->unk_000->index + 0x10, 0);
-    ReleaseObjPalette((u8*)w->unk_000);
+    FadeSetPaletteExcluded(w->palette->index + 0x10, 0);
+    ReleaseObjPalette((u8*)w->palette);
     FreeTextSlots(&w->unk_004, 0x30);
 }
 
@@ -13784,14 +13784,14 @@ void func_080F5C60(MapDonaldWork* w) {
             func_080A411C(&w->tasks, 0, gUnk_0984C2E4[gUnk_0203C590.unk_00]);
         }
 
-        w->unk_0BC = func_080F5CDC;
+        w->update = func_080F5CDC;
     }
 }
 
 void func_080F5CDC(MapDonaldWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        w->unk_0BC = func_080F5C60;
+        w->update = func_080F5C60;
     }
 }
 
@@ -13824,7 +13824,7 @@ void func_080F5D10(MapDonaldWork* w) {
     e->unk_1A = 0x20;
     e->unk_30 = 2;
     w->unk_0C1 = 1;
-    w->unk_0BC = func_080F5C60;
+    w->update = func_080F5C60;
     w->tiles = AllocObjTiles(0x400, gUnk_0919FDF8);
     w->palette = LoadObjPalette(gUnk_09617C58, 32);
     AnimInit(&w->anim, gUnk_09EEE0A8, gUnk_09EEE03C);
@@ -13849,8 +13849,8 @@ s32 func_080F5E4C(MapDonaldWork* w) {
         TaskPoolUpdate(&w->tasks2);
         AnimUpdate(&w->anim);
 
-        if (w->unk_0BC != 0) {
-            w->unk_0BC(w);
+        if (w->update != 0) {
+            w->update(w);
         }
     }
 
@@ -13899,14 +13899,14 @@ void func_080F5F88(MapGoofyWork* w) {
             func_080A411C(&w->tasks, 0, gUnk_0984C310[gUnk_0203C590.unk_00]);
         }
 
-        w->unk_0BC = func_080F6004;
+        w->update = func_080F6004;
     }
 }
 
 void func_080F6004(MapGoofyWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        w->unk_0BC = func_080F5F88;
+        w->update = func_080F5F88;
     }
 }
 
@@ -13939,7 +13939,7 @@ void func_080F6038(MapGoofyWork* w) {
     e->unk_1A = 0x30;
     e->unk_30 = 2;
     w->unk_0C1 = 1;
-    w->unk_0BC = func_080F5F88;
+    w->update = func_080F5F88;
     w->tiles = AllocObjTiles(0x400, gUnk_091ABDB8);
     w->palette = LoadObjPalette(gUnk_08F68384, 32);
     AnimInit(&w->anim, gUnk_09EEE1CC, gUnk_09EEE1C8);
@@ -13964,8 +13964,8 @@ s32 func_080F6174(MapGoofyWork* w) {
         TaskPoolUpdate(&w->tasks2);
         AnimUpdate(&w->anim);
 
-        if (w->unk_0BC != 0) {
-            w->unk_0BC(w);
+        if (w->update != 0) {
+            w->update(w);
         }
     }
 
@@ -14013,14 +14013,14 @@ void func_080F62B0(MapNamineWork* w) {
         } else {
             func_080A411C(&w->tasks, 0, 0x32);
         }
-        w->unk_0BC = func_080F6314;
+        w->update = func_080F6314;
     }
 }
 
 void func_080F6314(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        w->unk_0BC = func_080F62B0;
+        w->update = func_080F62B0;
     }
 }
 
@@ -14056,7 +14056,7 @@ void func_080F6348(MapNamineWork* w) {
     p->unk_30 = 2;
     w->unk_0C0 = gUnk_0203C590.unk_00 != 23;
     w->unk_0C2 = 1;
-    w->unk_0BC = func_080F62B0;
+    w->update = func_080F62B0;
     w->tiles = AllocObjTiles(0x300, gUnk_093E1EE0);
     w->palette = LoadObjPalette(gUnk_096184D8, 32);
     AnimInit(&w->anim, gUnk_09EF0D64, gUnk_09EF0D48);
@@ -14085,8 +14085,8 @@ s32 func_080F64A4(MapNamineWork* w) {
         TaskPoolUpdate(&w->tasks2);
         AnimUpdate(&w->anim);
 
-        if (w->unk_0BC != 0) {
-            w->unk_0BC(w);
+        if (w->update != 0) {
+            w->update(w);
         }
     }
 
@@ -14133,14 +14133,14 @@ void func_080F65EC(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_080A411C(&w->unk_0C4, 0, 0x34);
-        w->unk_0BC = func_080F6634;
+        w->update = func_080F6634;
     }
 }
 
 void func_080F6634(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        w->unk_0BC = func_080F65EC;
+        w->update = func_080F65EC;
     }
 }
 
@@ -14164,7 +14164,7 @@ void func_080F6668(MapNamineWork* w) {
         if (Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
             FadeStartOut(0, 16);
             gUnk_02039BA0->unk_70 |= 0x1000;
-            w->unk_0BC = func_080F66E0;
+            w->update = func_080F66E0;
         }
     }
 }
@@ -14172,7 +14172,7 @@ void func_080F6668(MapNamineWork* w) {
 void func_080F66E0(MapNamineWork* w) {
     if (FadeIsActive() == 0) {
         func_0806180C(0x3B);
-        w->unk_0BC = 0;
+        w->update = 0;
     }
 }
 
@@ -14221,7 +14221,7 @@ void func_080F6704(MapNiserikuWork* w) {
 
     switch (gUnk_0203C590.unk_00) {
     case 27:
-        w->unk_0BC = func_080F65EC;
+        w->update = func_080F65EC;
         w->tiles = AllocObjTiles(0x680, gUnk_0937E90A);
         w->palette = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->anim, gUnk_09EF04D8, gUnk_09EF04D4);
@@ -14231,7 +14231,7 @@ void func_080F6704(MapNiserikuWork* w) {
         TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
         break;
     case 23:
-        w->unk_0BC = func_080F6668;
+        w->update = func_080F6668;
         w->tiles = AllocObjTiles(0x320, gUnk_0938044A);
         w->palette = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->anim, gUnk_09EF0510, gUnk_09EF04FC);
@@ -14244,7 +14244,7 @@ void func_080F6704(MapNiserikuWork* w) {
     case 25:
     case 26:
     default:
-        w->unk_0BC = 0;
+        w->update = 0;
         w->tiles = AllocObjTiles(0x300, gUnk_0938D282);
         w->palette = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->anim, gUnk_09EF0628, gUnk_09EF060C);
@@ -14269,8 +14269,8 @@ s32 func_080F691C(MapNiserikuWork* w) {
         TaskPoolUpdate(&w->tasks2);
         AnimUpdate(&w->anim);
 
-        if (w->unk_0BC != 0) {
-            w->unk_0BC(w);
+        if (w->update != 0) {
+            w->update(w);
         }
     }
 
@@ -14330,14 +14330,14 @@ void func_080F6A60(MapMickeyWork* w) {
             break;
         }
 
-        w->unk_0BC = func_080F6AD8;
+        w->update = func_080F6AD8;
     }
 }
 
 void func_080F6AD8(MapMickeyWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        w->unk_0BC = func_080F6A60;
+        w->update = func_080F6A60;
     }
 }
 
@@ -14355,7 +14355,7 @@ void func_080F6B0C(MapMickeyWork* w) {
     e->unk_1A = 0x30;
     e->unk_30 = 2;
     w->unk_0C1 = 1;
-    w->unk_0BC = func_080F6A60;
+    w->update = func_080F6A60;
     w->tiles = AllocObjTiles(0x300, gUnk_093A5E10);
     w->palette = LoadObjPalette(gUnk_096183F8, 32);
     AnimInit(&w->anim, gUnk_09EF0824, gUnk_09EF0820);
@@ -14380,8 +14380,8 @@ s32 func_080F6C00(MapMickeyWork* w) {
         TaskPoolUpdate(&w->tasks2);
         AnimUpdate(&w->anim);
 
-        if (w->unk_0BC != 0) {
-            w->unk_0BC(w);
+        if (w->update != 0) {
+            w->update(w);
         }
     }
 
@@ -14437,7 +14437,7 @@ void func_080F6D70(MapTutorialWork* w) {
             gUnk_0203C7AC->unk_00 |= 0x4000;
             gUnk_02039BA0->unk_70 = flags | 0x1000;
             func_080A411C(&w->tasks, 0, 0x6A);
-            w->unk_0C4 = func_080F6DE8;
+            w->update = func_080F6DE8;
         }
     }
 }
@@ -14464,7 +14464,7 @@ void func_080F6DE8(MapTutorialWork* w) {
         w->unk_0C1 = 1;
         TaskCreate(&w->tasks2, &gTaskDescFldShadow, w);
         w->unk_0C0 = 1;
-        w->unk_0C4 = func_080F6EBC;
+        w->update = func_080F6EBC;
     }
 }
 
@@ -14480,7 +14480,7 @@ void func_080F6EBC(MapTutorialWork* w) {
         w->z = w->unk_00C;
         w->unk_010 = 0;
         w->unk_0C1 = 0;
-        w->unk_0C4 = func_080F6F1C;
+        w->update = func_080F6F1C;
     }
     ColliderSetPosition(p->unk_040, p->x, p->y, p->z);
 }
@@ -14492,14 +14492,14 @@ void func_080F6F1C(MapTutorialWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x20;
         func_080E8FB8(0, w->x, w->y, w->z);
         AnimStart(&w->anim, 1, 0);
-        w->unk_0C4 = func_080F6F90;
+        w->update = func_080F6F90;
         ColliderUnregister(w->unk_040);
     }
 }
 
 void func_080F6F90(MapTutorialWork* w) {
     if (AnimIsFinished(&w->anim)) {
-        w->unk_0C4 = func_080F6FC4;
+        w->update = func_080F6FC4;
     } else {
         w->gfx = AnimUpdate(&w->anim);
     }
@@ -14510,7 +14510,7 @@ void func_080F6FC4(MapTutorialWork* w) {
         gGameState.progression.unk_82 |= 0x2000;
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x6B);
-        w->unk_0C4 = func_080F7024;
+        w->update = func_080F7024;
     }
 }
 
@@ -14540,7 +14540,7 @@ void func_080F7024(MapTutorialWork* w) {
         ColliderInit(w->unk_040, 3, 8, 16);
         ColliderSetPosition(w->unk_040, w->x, w->y, w->z);
         ColliderSetDisabled(w->unk_040, 1);
-        w->unk_0C4 = func_080F70F4;
+        w->update = func_080F70F4;
     }
 }
 
@@ -14551,7 +14551,7 @@ void func_080F70F4(MapTutorialWork* w) {
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
         SetObjTileSource(w->tiles, gUnk_08957290);
         func_080A411C(&w->tasks, 0, 0x6C);
-        w->unk_0C4 = func_080F7160;
+        w->update = func_080F7160;
     } else {
         w->gfx = AnimUpdate(a);
     }
@@ -14563,7 +14563,7 @@ void func_080F7160(MapTutorialWork* w) {
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         ColliderSetDisabled(w->unk_040, 0);
-        w->unk_0C4 = func_080F71AC;
+        w->update = func_080F71AC;
     }
 }
 
@@ -14579,7 +14579,7 @@ void func_080F71AC(MapTutorialWork* w) {
         m4aSongNumStart(0x75);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
         SetObjTileSource(w->tiles, gUnk_08963BAC);
-        w->unk_0C4 = func_080F7284;
+        w->update = func_080F7284;
     } else if (w->unk_06C != 0) {
         if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {
             ColliderSetDisabled(w->unk_040, 1);
@@ -14617,13 +14617,13 @@ void func_080F72CC(MapTutorialWork* w) {
     if (t == 0) {
         w->unk_0C1 = 0;
         w->unk_0C0 = 0;
-        w->unk_0C4 = func_080F6D70;
+        w->update = func_080F6D70;
     } else {
         gUnk_02039BA0->unk_70 |= 0x1000;
         TaskCreate(&w->tasks2, &gTaskDescFldShadow, w);
         w->unk_0C0 = 1;
         w->unk_0C1 = 1;
-        w->unk_0C4 = func_080F7024;
+        w->update = func_080F7024;
     }
 }
 
@@ -14631,10 +14631,10 @@ s32 func_080F7378(MapTutorialWork* w) {
     TaskPoolUpdate(&w->tasks);
     TaskPoolUpdate(&w->tasks2);
 
-    if (w->unk_0C4 != 0) {
-        w->unk_0C4(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_0C4 != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }
@@ -14731,7 +14731,7 @@ void func_080F7594(MapStairWork* w) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         gUnk_0203C7AC->unk_00 |= 0x4000;
         func_080A411C(&w->tasks, 0, 0xA7);
-        w->unk_4C = func_080F75E4;
+        w->update = func_080F75E4;
     }
 }
 
@@ -14740,7 +14740,7 @@ void func_080F75E4(MapStairWork* w) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         gUnk_0203C7AC->unk_00 &= ~0x4000;
         gGameState.progression.unk_82 |= 0x400;
-        w->unk_4C = func_080F74E8;
+        w->update = func_080F74E8;
     }
 }
 
@@ -14760,13 +14760,13 @@ void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
     switch (w->unk_14) {
     case 0x2D:
         if ((gGameState.progression.unk_82 & 0x400) == 0 && gUnk_0203C590.unk_06 == 0xFD) {
-            w->unk_4C = func_080F7594;
+            w->update = func_080F7594;
         } else {
-            w->unk_4C = (void (*)(struct MapStairWork*))func_080F74E8;
+            w->update = (void (*)(struct MapStairWork*))func_080F74E8;
         }
         break;
     case 0xAD:
-        w->unk_4C = (void (*)(struct MapStairWork*))func_080F753C;
+        w->update = (void (*)(struct MapStairWork*))func_080F753C;
         break;
     }
     TaskPoolInit(&w->tasks, 1);
@@ -14775,8 +14775,8 @@ void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
 s32 func_080F76D0(MapStairWork* w) {
     TaskPoolUpdate(&w->tasks);
 
-    if (w->unk_4C != 0) {
-        w->unk_4C(w);
+    if (w->update != 0) {
+        w->update(w);
     }
     return 1;
 }

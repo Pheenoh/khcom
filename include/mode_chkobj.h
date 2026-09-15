@@ -22,7 +22,7 @@
 #include "key.h"
 
 typedef struct ChkObjEntry {
-    ObjDef* unk_00;
+    ObjDef* defs;
     u16 count;
     u16 unk_06;
     const char* name;

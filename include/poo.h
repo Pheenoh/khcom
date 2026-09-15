@@ -499,7 +499,7 @@ typedef struct PooPrizeWork {
     void* palette;
     void* gfx;
     void* gfx2;
-    void (*unk_7C)(struct PooPrizeWork* w);
+    void (*update)(struct PooPrizeWork* w);
     u16 unk_80;
     u16 unk_82;
     s32 unk_84;
@@ -1010,7 +1010,7 @@ typedef struct PooSoraWork {
     u16 unk_A0;
     u16 unk_A2;
     s32 unk_A4;
-    const PooAnimDesc* unk_A8;
+    const PooAnimDesc* animDesc;
     u8 unk_AC;
     u8 unk_AD[0x03];
     PooNode node;

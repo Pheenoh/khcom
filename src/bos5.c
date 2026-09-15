@@ -1492,7 +1492,7 @@ void func_080FCF78(MdFireWork* work) {
     case 0:
     case 1:
     case 2:
-        p = gUnk_09992EF8[work->unk_15E].unk_00 + work->unk_160;
+        p = gUnk_09992EF8[work->unk_15E].points + work->unk_160;
         work->x = p->x * 256;
         work->y = p->y * 256;
         work->unk_004 = p->unk_04;

@@ -31,7 +31,7 @@ typedef struct FldActor {
     u8 unk_34[0x06];
     u16 unk_3A;
     s32 unk_3C;
-    ListPool unk_40;
+    ListPool pool;
 } FldActor;
 
 typedef struct FldObj {

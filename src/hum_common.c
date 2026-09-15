@@ -477,7 +477,7 @@ s32 func_0800E5F0(HumWork* work) {
             actor->z = 0;
             work->unk_158 = 0;
         }
-        if (actor->collider.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->collider.unk_50->unk_30 & 2)) {
+        if (actor->collider.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->collider.other->unk_30 & 2)) {
             actor->x += actor->collider.unk_38 >> 1;
             actor->y += actor->collider.unk_3C >> 1;
         }

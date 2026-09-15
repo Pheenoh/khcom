@@ -540,7 +540,7 @@ BtlObj* func_08042018(SmnBambiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(&gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -1942,7 +1942,7 @@ BtlObj* func_08044450(SmnGenieWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(&gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {

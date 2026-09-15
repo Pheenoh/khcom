@@ -29,7 +29,7 @@ typedef struct BtlFormWork {
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x02];
-    const BtlFormList* unk_08;
+    const BtlFormList* list;
     const BtlFormEntry* entry;
     s16 unk_10;
     u8 unk_12[0x02];

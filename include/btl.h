@@ -86,7 +86,7 @@ typedef struct SoraAttackDef {
     s32 unk_0C;
     u16 flags;
     u16 unk_12;
-    struct SoraAttackDef* unk_14;
+    struct SoraAttackDef* next;
 } SoraAttackDef;
 
 typedef struct RikuAttackDef {
@@ -99,7 +99,7 @@ typedef struct RikuAttackDef {
     s32 unk_10;
     u16 flags;
     u16 unk_16;
-    struct RikuAttackDef* unk_18;
+    struct RikuAttackDef* next;
 } RikuAttackDef;
 
 typedef struct BtlSoraWork {

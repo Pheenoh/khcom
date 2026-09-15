@@ -42,7 +42,7 @@ typedef struct DmaStream {
     u8 unk_00;
     u8 unk_01;
     u8 unk_02[0x2];
-    void (*unk_04)(void);
+    void (*update)(void);
     vu16* dst;
     s32 unk_0C;
     u8* src[2];

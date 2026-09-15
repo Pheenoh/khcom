@@ -98,7 +98,7 @@ typedef struct CardDisplayWork {
     u8 unk_1C[0x04];
     void* unk_20;
     u8 unk_24[0x14];
-    ListPool* unk_38;
+    ListPool* pool;
     CardSlot* slot;
     u8 unk_40[4];
     u16 unk_44;
@@ -440,7 +440,7 @@ typedef struct DeckCard2Work {
     void* tiles2;
     CardDef* cardDef;
     CardBack* cardBack;
-    ListPool* unk_1C;
+    ListPool* pool;
     u16 unk_20;
     s16 unk_22;
     s16 unk_24;
@@ -639,7 +639,7 @@ typedef struct UnkStruct_080A6FAC {
     u8 unk_3F8[0x10];
     void* gfx;
     u8 unk_40C[0x28];
-    ListPool unk_434;
+    ListPool pool;
     AnimState anim2;
     AnimState anim3;
     AnimState anim;
@@ -678,7 +678,7 @@ typedef struct UnkStruct_0808DB04 {
 #endif
     TaskPool tasks;
     TaskPool tasks2;
-    ListPool unk_7F0;
+    ListPool pool;
     AnimState anim2;
     AnimState anim3;
     AnimState anim;
@@ -948,7 +948,7 @@ typedef struct MapcardWork {
     u8 unk_20;
     u8 unk_21;
     u8 unk_22[0x06];
-    ListPool* unk_28;
+    ListPool* pool;
     u8 unk_2C[0x0C];
     ListNode node;
     s32 x;
@@ -1124,10 +1124,10 @@ typedef struct ReloadGageWork {
     void* tiles5;
     void* palette;
     u8 unk_18[0x04];
-    ListPool* unk_1C;
+    ListPool* pool;
     UnkStruct_08095A5C* unk_20;
     TaskPool tasks;
-    ListPool* unk_38;
+    ListPool* pool2;
     void* unk_3C;
     u32 unk_40;
     u8 unk_44[0x02];
@@ -1569,7 +1569,7 @@ typedef struct UnkStruct_080A5D3C {
     u8 unk_3D0[0x3C];
     TaskPool tasks;
     TaskPool tasks2;
-    ListPool unk_434;
+    ListPool pool;
     AnimState anim;
     AnimState anim2;
     AnimState anim3;

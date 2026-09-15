@@ -720,7 +720,7 @@ s32 _0800CDF0(EmyWork* work) {
             actor->z = 0;
             work->unk_168 = 0;
         }
-        if (actor->collider.unk_2C != 0 && !(actor->unk_034 & 0x10) && !(actor->collider.unk_50->unk_30 & 2)) {
+        if (actor->collider.unk_2C != 0 && !(actor->unk_034 & 0x10) && !(actor->collider.other->unk_30 & 2)) {
             actor->x += actor->collider.unk_38 >> 1;
             actor->y += actor->collider.unk_3C >> 1;
         }

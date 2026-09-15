@@ -436,7 +436,7 @@ void func_08010CC8(void) {
         break;
     case 0:
         if (gBtlWork->unk_0E4 == 0) {
-            gBtlWork->unk_0E8 = 0;
+            gBtlWork->task = 0;
             gBtlWork->unk_0E4 = 1;
         }
         if (FadeIsActive()) return;
@@ -446,7 +446,7 @@ void func_08010CC8(void) {
             }
             gBtlWork->unk_0E4 = 2;
         }
-        if (IsTaskActive((Task*)gBtlWork->unk_0E8)) return;
+        if (IsTaskActive((Task*)gBtlWork->task)) return;
         if (gBtlWork->unk_0E4 == 2) {
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlVslockon, 0);
             TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlHpply, 0);

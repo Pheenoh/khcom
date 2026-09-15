@@ -241,14 +241,14 @@ typedef struct TmClbSrc {
 typedef struct TmClbArg {
     u32 unk_00;
     u32 unk_04;
-    TmClbSrc* unk_08;
+    TmClbSrc* src;
     s32 unk_0C;
     void* unk_10;
     void* unk_14;
 } TmClbArg;
 
 typedef struct TmClbWork {
-    TmClbArg* unk_000;
+    TmClbArg* arg;
     void* tiles;
     void* palette;
     u16 unk_00C;
@@ -456,7 +456,7 @@ typedef struct TmAnim {
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x2];
-    TmAnimFrame* unk_08;
+    TmAnimFrame* frames;
 } TmAnim;
 
 typedef struct TmArmSrc {
@@ -466,7 +466,7 @@ typedef struct TmArmSrc {
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
-    TmArmState* unk_18;
+    TmArmState* state;
 } TmArmSrc;
 
 typedef struct TmArmJoint {
@@ -500,14 +500,14 @@ typedef struct TmArmWork {
     u32 tiles;
     u16* palette;
     u32 palette2;
-    TmArmSrc* unk_00C;
+    TmArmSrc* src;
     union {
         TmArmJoint all[8];
         TmArmJoint arms[2][4];
     } joints;
     u16 unk_1B0;
     u16 unk_1B2;
-    TaskPool unk_1B4;
+    TaskPool tasks;
     u32 unk_1C8;
     u8 unk_1CC[0xC];
     u32 unk_1D8;

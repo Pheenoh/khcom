@@ -374,7 +374,7 @@ u8 task_lockon_1(LockonWork* w) {
     s32 oy;
 
     i = 0;
-    o = ListPoolFirst(&gUnk_02039BA0->actor.unk_40);
+    o = ListPoolFirst(&gUnk_02039BA0->actor.pool);
 
     if (gUnk_02039BA0->unk_70 & 1) {
         gUnk_02039BA0->unk_68 = 0;

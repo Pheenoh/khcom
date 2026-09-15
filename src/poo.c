@@ -1707,7 +1707,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     AnimInit((AnimState*)w->unk_08, 0, 0);
     func_080CAA50(w, 0, 1);
     w->gfx = AnimGetGfx((AnimState*)w->unk_08);
-    w->unk_A8 = gUnk_096FCF54[11];
+    w->animDesc = gUnk_096FCF54[11];
     TaskPoolInit(&w->tasks, 2);
     gUnk_02039BA0 = EwramAlloc(0xE8);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, a);
@@ -1876,7 +1876,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
     case 5:
         if (w->unk_98 == 0) {
             func_080CAA50(w, 7, 0);
-            m4aSongNumStart(((const u16*)w->unk_A8)[3]);
+            m4aSongNumStart(((const u16*)w->animDesc)[3]);
         }
         a->unk_10 = 0;
         k = GetKeysPressed() & 2;
@@ -2176,10 +2176,10 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
             if (((AnimState*)w->unk_08)->timer == 0) {
                 switch (((AnimState*)w->unk_08)->frame) {
                 case 3:
-                    m4aSongNumStart(((const u16*)w->unk_A8)[0]);
+                    m4aSongNumStart(((const u16*)w->animDesc)[0]);
                     break;
                 case 7:
-                    m4aSongNumStart(((const u16*)w->unk_A8)[1]);
+                    m4aSongNumStart(((const u16*)w->animDesc)[1]);
                     break;
                 }
             }
@@ -2198,7 +2198,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
             w->unk_98 = 0;
             w->unk_94 = 2;
             SetTaskUpdate(t, (u32)func_080CAD08);
-            m4aSongNumStart(((const u16*)w->unk_A8)[2]);
+            m4aSongNumStart(((const u16*)w->animDesc)[2]);
         } else if ((GetKeysPressed() & 1) != 0) {
             func_080CAB24(a);
             gUnk_0203C3D8 = 0;
@@ -6118,7 +6118,7 @@ void func_080D19C4(PooPrizeWork* w) {
             break;
         }
 
-        w->unk_7C = func_080D1B94;
+        w->update = func_080D1B94;
         w->unk_82 = 0;
         w->unk_8C = GetAngle(gUnk_0203C420.pos.x, gUnk_0203C420.pos.y, w->x, w->y);
         w->unk_97 = 1;
@@ -6142,7 +6142,7 @@ void func_080D19C4(PooPrizeWork* w) {
         }
 
         if (w->unk_82++ > 480) {
-            w->unk_7C = 0;
+            w->update = 0;
         }
     }
 }
@@ -6171,7 +6171,7 @@ void func_080D1B94(PooPrizeWork* w) {
     w->unk_90 -= 2;
 
     if (w->unk_82 > 60) {
-        w->unk_7C = 0;
+        w->update = 0;
     } else {
         w->unk_82++;
     }
@@ -6212,7 +6212,7 @@ void task_poo_prize_0(PooPrizeWork* w, PoohPrizeArgs* a) {
     w->unk_97 = 0;
     w->unk_96 = 1;
     w->unk_82 = 0;
-    w->unk_7C = func_080D19C4;
+    w->update = func_080D19C4;
     w->unk_90 = 0x100;
     ColliderInit(w->collider, 5, 16, 50);
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
@@ -6220,10 +6220,10 @@ void task_poo_prize_0(PooPrizeWork* w, PoohPrizeArgs* a) {
 }
 
 u8 task_poo_prize_1(PooPrizeWork* w) {
-    if (w->unk_7C != 0) {
-        w->unk_7C(w);
+    if (w->update != 0) {
+        w->update(w);
 
-        if (w->unk_7C != 0) {
+        if (w->update != 0) {
             return 1;
         }
     }

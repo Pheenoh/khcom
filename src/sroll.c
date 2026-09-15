@@ -1742,7 +1742,7 @@ void ScanlineDmaReset(void) {
     dma[5];
     gUnk_02036028.unk_00 = 0;
     gUnk_02036028.unk_01 = 0;
-    gUnk_02036028.unk_04 = 0;
+    gUnk_02036028.update = 0;
     gUnk_02036028.dst = 0;
     gUnk_02036028.unk_0C = 0;
     gUnk_02036028.src[0] = 0;
@@ -1785,8 +1785,8 @@ void ScanlineDmaUpdate(void) {
             dma32[2];
         }
 
-        if (gUnk_02036028.unk_04 != 0) {
-            gUnk_02036028.unk_04();
+        if (gUnk_02036028.update != 0) {
+            gUnk_02036028.update();
         }
     }
 }
@@ -1806,13 +1806,13 @@ void ScanlineDmaInit(vu16* dst, u8* src, u32 cnt) {
     gUnk_02036028.unk_18 = src;
 
     if (cnt & CPU_SET_32BIT) {
-        gUnk_02036028.unk_04 = ScanlineDmaPrime32Bit;
+        gUnk_02036028.update = ScanlineDmaPrime32Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
             gUnk_02036028.unk_18 = src + 4;
         }
     } else {
-        gUnk_02036028.unk_04 = ScanlineDmaPrime16Bit;
+        gUnk_02036028.update = ScanlineDmaPrime16Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
             gUnk_02036028.unk_18 = src + 2;

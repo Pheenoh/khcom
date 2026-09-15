@@ -10,7 +10,7 @@ void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
 
     gBtlWork->unk_068 |= 0x2000000;
     work->unk_20 = 0;
-    work->unk_08 = list;
+    work->list = list;
     work->entry = list->entries[0];
     work->unk_00 = work->entry->delay;
     work->unk_10 = 1;
@@ -38,7 +38,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
     }
 
     if (work->unk_20 & 2) {
-        list = work->unk_08;
+        list = work->list;
         if (list->threshold >= work->unk_22 + gBtlWork->unk_0EC) {
             if (work->unk_22 == 0) {
                 return 0;
@@ -59,11 +59,11 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 gGameState.flags &= ~4;
             }
 
-            if (work->unk_10 >= work->unk_08->count) {
+            if (work->unk_10 >= work->list->count) {
                 work->unk_22 = 0;
                 return 0;
             }
-            work->unk_22 = func_0803FDC8(work->unk_08->entries[work->unk_10]);
+            work->unk_22 = func_0803FDC8(work->list->entries[work->unk_10]);
         }
     } else {
         if (work->unk_00 > 0) {
@@ -320,7 +320,7 @@ BtlObj* func_08040458(BtlRaidWork* work) {
     }
 
     if (gBtlWork->actor2 == 0) {
-        return ListPoolFirst(&gBtlWork->unk_080);
+        return ListPoolFirst(&gBtlWork->pool);
     }
 
     return gBtlWork->actor2;
@@ -681,7 +681,7 @@ BtlObj* func_08040C8C(BtlAiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(&gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -724,7 +724,7 @@ BtlObj* func_08040D54(BtlAiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(&gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
