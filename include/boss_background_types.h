@@ -10,7 +10,7 @@ typedef struct BosMapConfig {
     void* palette;
     u16 paletteSize;
     u16 unk_0E;
-    void* unk_10[4];
+    void* maps[4];
 } BosMapConfig;
 
 #endif

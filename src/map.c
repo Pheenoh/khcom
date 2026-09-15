@@ -11525,8 +11525,8 @@ s32 func_080F1E28(MapGmkGpWork* w) {
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
 
-        if (!(w->unk_000->unk_00 & 2)) {
-            w->unk_000->unk_00 |= 2;
+        if (!(w->cell->unk_00 & 2)) {
+            w->cell->unk_00 |= 2;
             func_080E84DC(p);
         }
 
@@ -11551,7 +11551,7 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11621,7 +11621,7 @@ u8 func_080F207C(MapGmkGp1Work* w) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
         func_080E84DC(&w->unk_004);
         gUnk_0203C7AC->unk_00 |= 0x80;
-        w->unk_000->unk_00 |= 1;
+        w->cell->unk_00 |= 1;
         ColliderSetDisabled(&w->unk_044, 1);
         AnimStart(&w->anim, 1, 0);
         w->unk_0C8 = func_080F2130;
@@ -11647,7 +11647,7 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
-    w->unk_000 = arg;
+    w->cell = arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11707,7 +11707,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
 
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
-        e = w->unk_000;
+        e = w->cell;
 
         if ((e->unk_00 & 2) == 0) {
             e->unk_00 |= 2;
@@ -11739,7 +11739,7 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
-    w->unk_000 = arg;
+    w->cell = arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11811,7 +11811,7 @@ s32 func_080F25FC(MapGmkGpWork* w) {
     AnimState* a = &w->anim;
 
     if (AnimIsFinished(a)) {
-        MapCell* e = w->unk_000;
+        MapCell* e = w->cell;
 
         if ((e->unk_00 & 2) == 0) {
             e->unk_00 |= 2;
@@ -11843,7 +11843,7 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
-    w->unk_000 = arg;
+    w->cell = arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11904,11 +11904,11 @@ u8 func_080F285C(MapGmkGpWork* w) {
 
     w->gfx = AnimUpdate(a);
 
-    if ((w->unk_000->unk_00 & 2) == 0 && func_080E02E0(q, 8, 8)) {
+    if ((w->cell->unk_00 & 2) == 0 && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
         func_080E84DC(q);
-        w->unk_000->unk_00 |= 2;
+        w->cell->unk_00 |= 2;
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(a, 1, 1);
         w->unk_0C6 = 20;
@@ -11933,7 +11933,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11943,7 +11943,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->palette = LoadObjPalette(d->palette, 32);
     AnimInit(&w->anim, d->anims, d->gfxTable);
 
-    if (w->unk_000->unk_00 & 2) {
+    if (w->cell->unk_00 & 2) {
         AnimStart(&w->anim, 1, 1);
     } else {
         AnimStart(&w->anim, 0, 1);
@@ -11996,11 +11996,11 @@ void func_080F2AD0(MapGmkGpWork* w) {
 s32 func_080F2AF4(MapGmkGpWork* w) {
     UnkStruct_080DFF1C* q = &w->unk_004;
 
-    if (!(w->unk_000->unk_00 & 2) && func_080E02E0(q, 8, 8)) {
+    if (!(w->cell->unk_00 & 2) && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
         func_080E84DC(q);
-        w->unk_000->unk_00 |= 2;
+        w->cell->unk_00 |= 2;
         gUnk_0203C7AC->unk_00 |= 0x80;
         AnimStart(&w->anim, 1, 0);
         w->unk_0C8 = func_080F2B78;
@@ -12026,7 +12026,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12036,7 +12036,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->palette = LoadObjPalette(d->palette, 32);
     AnimInit(&w->anim, d->anims, d->gfxTable);
 
-    if (w->unk_000->unk_00 & 2) {
+    if (w->cell->unk_00 & 2) {
         AnimStart(&w->anim, 2, 1);
     } else {
         AnimStart(&w->anim, 0, 1);
@@ -12096,18 +12096,18 @@ u8 func_080F2D90(MapGmkGpWork* w) {
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
 
-        if ((w->unk_000->unk_00 & 2) == 0) {
-            w->unk_000->unk_00 |= 2;
+        if ((w->cell->unk_00 & 2) == 0) {
+            w->cell->unk_00 |= 2;
             func_080E84DC(q);
         }
 
         gUnk_0203C7AC->unk_00 |= 0x80;
 
-        if (w->unk_000->unk_00 & 4) {
-            w->unk_000->unk_00 &= ~4;
+        if (w->cell->unk_00 & 4) {
+            w->cell->unk_00 &= ~4;
             AnimStart(a, 0, 1);
         } else {
-            w->unk_000->unk_00 |= 4;
+            w->cell->unk_00 |= 4;
             AnimStart(a, 1, 1);
         }
 
@@ -12133,7 +12133,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12143,7 +12143,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->palette = LoadObjPalette(d->palette, 32);
     AnimInit(&w->anim, d->anims, d->gfxTable);
 
-    if (w->unk_000->unk_00 & 4) {
+    if (w->cell->unk_00 & 4) {
         AnimStart(&w->anim, 1, 1);
     } else {
         AnimStart(&w->anim, 0, 1);
@@ -12200,8 +12200,8 @@ s32 func_080F3050(MapGmkGp8Work* w) {
 
     if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
         if (w->unk_072 & 2) {
-            if (!(w->unk_000->unk_00 & 2)) {
-                w->unk_000->unk_00 |= 2;
+            if (!(w->cell->unk_00 & 2)) {
+                w->cell->unk_00 |= 2;
                 func_080E84DC(&w->unk_004);
             }
             AnimStart(a, 1, 0);
@@ -12239,7 +12239,7 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12300,8 +12300,8 @@ s32 func_080F32F4(MapGmkGp8Work* w) {
         m4aSongNumStart(*(u16*)&w->unk_0C8);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
 
-        if (!(w->unk_000->unk_00 & 2)) {
-            w->unk_000->unk_00 |= 2;
+        if (!(w->cell->unk_00 & 2)) {
+            w->cell->unk_00 |= 2;
             func_080E84DC(q);
         }
 
@@ -12332,7 +12332,7 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12397,8 +12397,8 @@ s32 func_080F35C0(MapGmkGp8Work* w) {
 
     if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
         if (w->unk_072 & 2) {
-            if (!(w->unk_000->unk_00 & 2)) {
-                w->unk_000->unk_00 |= 2;
+            if (!(w->cell->unk_00 & 2)) {
+                w->cell->unk_00 |= 2;
                 func_080E84DC(&w->unk_004);
             }
             AnimStart(a, 1, 0);
@@ -12432,7 +12432,7 @@ void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (MapCell*)arg;
+    w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;

@@ -631,7 +631,7 @@ void EV_SOUND_0(EvSoundWork* w, u8* arg) {
     w->unk_06 = 0;
     w->unk_07 = 0;
     w->unk_08 = 256;
-    w->unk_00 = gUnk_09EE3FB4[w->unk_04]->unk_10;
+    w->unk_00 = gUnk_09EE3FB4[w->unk_04]->soundCues;
     gUnk_02039DD0 = EwramAlloc(256);
 
     for (i = 0; i < 64; i++) {
@@ -1474,7 +1474,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (!(gUnk_02034A98->unk_78 & 0x100000)) {
                 if (w->unk_B9 == 3) {
                     func_0807ABC8(w);
-                } else if (gUnk_02034A98->unk_48->unk_2A == 3) {
+                } else if (gUnk_02034A98->cardDef->unk_2A == 3) {
                     m4aSongNumStart(105);
                 } else if (w->unk_C0[w->unk_B8] == 0) {
                     if (!(gUnk_02034A98->unk_78 & 2)) {
@@ -1498,10 +1498,10 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             break;
         case 3:
             gUnk_02034A9C = 0;
-            if (gUnk_02034A98->unk_48->unk_2A != 3) {
+            if (gUnk_02034A98->cardDef->unk_2A != 3) {
                 if (!(gUnk_02034A98->unk_78 & 0x100000)) {
                     if (w->unk_C0[w->unk_B8] == 0) {
-                        if (gUnk_02034A98->unk_48->unk_1E & 0x10) {
+                        if (gUnk_02034A98->cardDef->unk_1E & 0x10) {
                             func_08079ECC(w);
                         } else if (!(gUnk_02034A98->unk_78 & 2)) {
                             if (func_0807B60C() != 0) {
@@ -1926,7 +1926,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                     memset(output, 0, sizeof(output));
                     found = 0;
                     for (i = 0; i < w->unk_B9; i++) {
-                        cards.unk_00[i] = w->unk_28[i]->unk_48->unk_28;
+                        cards.unk_00[i] = w->unk_28[i]->cardDef->unk_28;
                     }
                     kind = func_080AE28C(&cards, output, w->unk_B9);
                     switch (kind) {

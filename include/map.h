@@ -669,7 +669,7 @@ typedef struct MapGmkSpiderWork {
 } MapGmkSpiderWork;
 
 typedef struct MapGmkGpWork {
-    MapCell* unk_000;
+    MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x5C];
@@ -683,7 +683,7 @@ typedef struct MapGmkGpWork {
 } MapGmkGpWork;
 
 typedef struct MapGmkGp1Work {
-    MapCell* unk_000;
+    MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x5C];
@@ -754,7 +754,7 @@ typedef struct MapPrizeWork {
 } MapPrizeWork;
 
 typedef struct MapGmkGp8Work {
-    MapCell* unk_000;
+    MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x2E];
@@ -773,7 +773,7 @@ typedef struct MapGmkGp8Work {
 } MapGmkGp8Work;
 
 typedef struct MapGmkGp08Work {
-    MapCell* unk_000;
+    MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x2E];

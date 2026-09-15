@@ -1479,7 +1479,7 @@ void Event_0(s32 arg) {
         cfg.unk_08 = 1;
     }
 
-    if (gUnk_09EE3FB4[gUnk_02034A78 & 0x8000]->unk_08->unk_14 & 0x80) {
+    if (gUnk_09EE3FB4[gUnk_02034A78 & 0x8000]->keyframes->unk_14 & 0x80) {
         FadeStartIn(1, 999);
     }
 

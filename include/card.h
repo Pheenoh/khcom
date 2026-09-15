@@ -99,12 +99,12 @@ typedef struct CardDisplayWork {
     void* unk_20;
     u8 unk_24[0x14];
     ListPool* unk_38;
-    CardSlot* unk_3C;
+    CardSlot* slot;
     u8 unk_40[4];
     u16 unk_44;
     u8 unk_46;
     u8 unk_47;
-    CardDef* unk_48;
+    CardDef* cardDef;
     s32 x;
     s32 y;
     s32 unk_54;
@@ -285,7 +285,7 @@ typedef struct UnkStruct_0809A02C {
     void* tiles3;
     void* tiles4;
     void* palette3;
-    CardDef* unk_1C;
+    CardDef* cardDef;
     TaskPool unk_20;
     u8 unk_34[0x04];
     s32 unk_38;
@@ -438,8 +438,8 @@ typedef struct DeckCard2Work {
     void* tiles;
     void* palette;
     void* tiles2;
-    CardDef* unk_14;
-    CardBack* unk_18;
+    CardDef* cardDef;
+    CardBack* cardBack;
     ListPool* unk_1C;
     u16 unk_20;
     s16 unk_22;
@@ -468,8 +468,8 @@ typedef struct UnkStruct_0809C534_Args {
 } UnkStruct_0809C534_Args;
 
 typedef struct UnkStruct_0809C534 {
-    CardDef* unk_00;
-    CardBack* unk_04;
+    CardDef* cardDef;
+    CardBack* cardBack;
     void* tiles;
     void* tiles2;
     void* tiles3;
@@ -1730,7 +1730,7 @@ typedef struct EventBgEffectDef {
 } EventBgEffectDef;
 
 typedef struct EventBgEffectWork {
-    EventBgEffectEntry* unk_00;
+    EventBgEffectEntry* entries;
     u8 unk_04[0x08];
     u16 unk_0C;
     u16 unk_0E;
@@ -1889,8 +1889,8 @@ extern s16 gUnk_090361B8[];
 extern s16 gUnk_090361C0[];
 
 typedef struct BossCardWork {
-    CardDef* unk_00;
-    CardBack* unk_04;
+    CardDef* cardDef;
+    CardBack* cardBack;
     s32* unk_08;
     u8 unk_0C[0x18];
     s32 unk_24;

@@ -9,7 +9,7 @@ void HumInit(HumWork* work, HumDef* def) {
     s32 b = 0x18100;
     s32 z = 0;
 
-    func_0801B37C(actor, &def->unk_0C, a, b, z);
+    func_0801B37C(actor, &def->kind, a, b, z);
     actor->unk_0CE = 0;
     actor->unk_0D0 = 0;
     actor->unk_0D2 = 0;

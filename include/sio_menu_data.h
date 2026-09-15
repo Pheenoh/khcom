@@ -4,19 +4,19 @@
 #include "types.h"
 
 typedef struct SioWorldEntry {
-    void* unk_00;
-    u16 unk_04;
+    void* tiles;
+    u16 tilesSize;
     u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
+    void* map;
+    u16 mapSize;
     u16 unk_0E;
-    void* unk_10;
-    u16 unk_14;
+    void* palette;
+    u16 paletteSize;
     u16 unk_16;
-    void* unk_18;
-    u8 unk_1C;
+    void* text;
+    u8 world;
     u8 unk_1D;
-    u16 unk_1E;
+    u16 textX;
 } SioWorldEntry;
 
 typedef struct SioChgCardPos {

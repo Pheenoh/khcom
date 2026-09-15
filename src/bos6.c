@@ -212,8 +212,8 @@ void func_0810A018(PcWork* work) {
     WorldToScreen(&sx, &sy, work->unk_020 + ((-0x70 - ox) * 256), work->unk_024 + ((-0x64 - oy) * 256), work->unk_028);
 
     if (work->unk_032 != work->unk_036) {
-        LoadBgTiles(1, gUnk_09A4AC84[step->unk_1E].unk_00, gUnk_09A4AC84[step->unk_1E].unk_04);
-        LoadBgMap(1, gUnk_09A4AC84[step->unk_1E].unk_08, gUnk_09A4AC84[step->unk_1E].unk_0C);
+        LoadBgTiles(1, gUnk_09A4AC84[step->unk_1E].tiles, gUnk_09A4AC84[step->unk_1E].tilesSize);
+        LoadBgMap(1, gUnk_09A4AC84[step->unk_1E].map, gUnk_09A4AC84[step->unk_1E].mapSize);
         work->unk_036 = work->unk_032;
     }
     SetBgScroll(1, (u16)(-sx + 0x50), (u16)(-sy + 8));

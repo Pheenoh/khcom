@@ -512,14 +512,14 @@ void func_080AF11C(void) {
 
 void func_080AF4F8(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
-    RequestDma3Copy(gUnk_09EF1318[i].unk_00, GetBgCharBase(2), 0x2000);
-    LoadBgPalette(2, gUnk_09EF1318[i].unk_10, gUnk_09EF1318[i].unk_14);
+    RequestDma3Copy(gUnk_09EF1318[i].tiles, GetBgCharBase(2), 0x2000);
+    LoadBgPalette(2, gUnk_09EF1318[i].palette, gUnk_09EF1318[i].paletteSize);
 #ifdef VERSION_EU
-    eu_080059F4(2, gUnk_09EF1318[i].unk_08);
-    gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[i].unk_18), gSioBtlOptionWork->unk_054);
+    eu_080059F4(2, gUnk_09EF1318[i].map);
+    gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[i].text), gSioBtlOptionWork->unk_054);
 #else
-    LoadBgMap(2, gUnk_09EF1318[i].unk_08, gUnk_09EF1318[i].unk_0C);
-    gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[i].unk_18, gSioBtlOptionWork->unk_054);
+    LoadBgMap(2, gUnk_09EF1318[i].map, gUnk_09EF1318[i].mapSize);
+    gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[i].text, gSioBtlOptionWork->unk_054);
 #endif
     DisableBg(2);
     gSioBtlOptionWork->unk_002++;
@@ -528,7 +528,7 @@ void func_080AF4F8(void) {
 void func_080AF58C(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
     FadeStartIn(0, 16);
-    RequestDma3Copy((u8*)gUnk_09EF1318[i].unk_00 + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[i].unk_04 - 0x2000);
+    RequestDma3Copy((u8*)gUnk_09EF1318[i].tiles + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[i].tilesSize - 0x2000);
     EnableBg(0);
     EnableBg(1);
     EnableBg(2);
@@ -620,7 +620,7 @@ void func_080AF70C(void) {
     width = GetTextSlotsWidth(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
     DrawTextSlots(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);
 #else
-    DrawTextSlots(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);
+    DrawTextSlots(gUnk_09EF1318[gSioBtlOptionWork->unk_417].textX + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->palette7, 20, gSioBtlOptionWork->unk_050);
 #endif
     DrawTextSlots(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->palette8, 0xF200, gSioBtlOptionWork->unk_0F8);
     DrawTextSlots(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->palette9, 0xF200, gSioBtlOptionWork->unk_150);
@@ -1092,26 +1092,26 @@ void func_080B0010(void) {
                 gSioBtlOptionWork->unk_410++;
             } else {
                 gSioBtlOptionWork->unk_004 += 8;
-                FadePaletteToBlack(gUnk_09EF1318[a].unk_10, (u16*)0x05000000, gUnk_09EF1318[a].unk_14, gSioBtlOptionWork->unk_004);
+                FadePaletteToBlack(gUnk_09EF1318[a].palette, (u16*)0x05000000, gUnk_09EF1318[a].paletteSize, gSioBtlOptionWork->unk_004);
             }
         }
         break;
     case 1:
-        FadePaletteToBlack(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, 32);
+        FadePaletteToBlack(gUnk_09EF1318[b].palette, (u16*)0x05000000, gUnk_09EF1318[b].paletteSize, 32);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnk_09EF1318[b].unk_08);
+        eu_080059F4(2, gUnk_09EF1318[b].map);
 #else
-        LoadBgMap(2, gUnk_09EF1318[b].unk_08, gUnk_09EF1318[b].unk_0C);
+        LoadBgMap(2, gUnk_09EF1318[b].map, gUnk_09EF1318[b].mapSize);
 #endif
-        RequestDma3Copy(gUnk_09EF1318[b].unk_00, GetBgCharBase(2), 0x2000);
+        RequestDma3Copy(gUnk_09EF1318[b].tiles, GetBgCharBase(2), 0x2000);
         gSioBtlOptionWork->unk_410++;
         break;
     case 2:
-        RequestDma3Copy((u8*)gUnk_09EF1318[b].unk_00 + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[b].unk_04 - 0x2000);
+        RequestDma3Copy((u8*)gUnk_09EF1318[b].tiles + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[b].tilesSize - 0x2000);
 #ifdef VERSION_EU
-        gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[b].unk_18), gSioBtlOptionWork->unk_054);
+        gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[b].text), gSioBtlOptionWork->unk_054);
 #else
-        gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[b].unk_18, gSioBtlOptionWork->unk_054);
+        gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[b].text, gSioBtlOptionWork->unk_054);
 #endif
         gSioBtlOptionWork->unk_417 = b;
         gSioBtlOptionWork->unk_410++;
@@ -1128,9 +1128,9 @@ void func_080B0010(void) {
             } else {
                 gSioBtlOptionWork->unk_004 -= 8;
                 if (gSioBtlOptionWork->unk_004 == 0) {
-                    LoadPaletteWithEffect(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14);
+                    LoadPaletteWithEffect(gUnk_09EF1318[b].palette, (u16*)0x05000000, gUnk_09EF1318[b].paletteSize);
                 } else {
-                    FadePaletteToBlack(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, gSioBtlOptionWork->unk_004);
+                    FadePaletteToBlack(gUnk_09EF1318[b].palette, (u16*)0x05000000, gUnk_09EF1318[b].paletteSize, gSioBtlOptionWork->unk_004);
                 }
             }
         }
@@ -1687,9 +1687,9 @@ void func_080B0F18(void) {
     table = gUnk_09EF1318;
     entry = &table[*p];
 
-    gs->unk_00D = entry->unk_1C;
+    gs->unk_00D = entry->world;
     gUnk_0203AAB0 = gs->world;
-    gs->world = entry->unk_1C;
+    gs->world = entry->world;
 
     if (gSioPlayerId == 0) {
         gUnk_0203AAC0.unk_0A += gUnk_09EF14C4[gSioBtlOptionWork->unk_214[0]];

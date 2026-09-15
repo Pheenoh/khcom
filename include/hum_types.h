@@ -25,7 +25,7 @@ typedef struct HumDef {
     u16 unk_02;
     void* palette;
     u32 unk_08;
-    EmyKind unk_0C;
+    EmyKind kind;
 } HumDef;
 
 typedef struct HumSubDef {

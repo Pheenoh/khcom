@@ -1913,14 +1913,14 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     gUnk_0203ACC4 = 7;
     gUnk_0203ACD4 = 0;
     gUnk_0203ACC0 = 0;
-    gUnk_0203AC90.unk_00 = gUnk_0965DC04;
-    gUnk_0203AC90.unk_04 = 0x8000;
-    gUnk_0203AC90.unk_08 = gUnk_096FB404;
-    gUnk_0203AC90.unk_0C = 128;
-    gUnk_0203AC90.unk_10[0] = gUnk_096C4C64;
-    gUnk_0203AC90.unk_10[1] = gUnk_096C5464;
-    gUnk_0203AC90.unk_10[2] = gUnk_0203ACE0;
-    gUnk_0203AC90.unk_10[3] = gUnk_096C6464;
+    gUnk_0203AC90.tiles = gUnk_0965DC04;
+    gUnk_0203AC90.tilesSize = 0x8000;
+    gUnk_0203AC90.palette = gUnk_096FB404;
+    gUnk_0203AC90.paletteSize = 128;
+    gUnk_0203AC90.maps[0] = gUnk_096C4C64;
+    gUnk_0203AC90.maps[1] = gUnk_096C5464;
+    gUnk_0203AC90.maps[2] = gUnk_0203ACE0;
+    gUnk_0203AC90.maps[3] = gUnk_096C6464;
     TaskPoolInit(&work->unk_254, 4);
 
     if (work->unk_24C & 8) {
@@ -2400,10 +2400,10 @@ u8 func_080BD7F8(s32* p, s32* a, s32 b, s32* out) {
 
 void task_bos_jf_map_0(JfMapWork* work, JfMapArg* arg) {
     RequestDma3Copy(gUnk_096C5C64, gUnk_0203ACE0, 0x800);
-    gUnk_0203ACD8 = arg->unk_10;
+    gUnk_0203ACD8 = arg->maps;
     func_080BDAAC();
-    LoadBgTiles(0, arg->unk_00, arg->unk_04);
-    LoadBgPalette(0, arg->unk_08, arg->unk_0C);
+    LoadBgTiles(0, arg->tiles, arg->tilesSize);
+    LoadBgPalette(0, arg->palette, arg->paletteSize);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x23E00;

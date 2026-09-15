@@ -191,7 +191,7 @@ typedef struct EventSeqWork {
     u8 unk_31;
     u8 unk_32;
     u8 unk_33;
-    struct EventSequenceDef* unk_34;
+    struct EventSequenceDef* seqDef;
     u16 unk_38;
     u8 unk_3A;
     u8 unk_3B;
@@ -236,7 +236,7 @@ typedef struct EventCameraWork {
     u8 unk_08;
     u8 unk_09;
     u8 unk_0A[2];
-    EventCameraKeyframe* unk_0C;
+    EventCameraKeyframe* keyframes;
     u16 unk_10;
     u16 unk_12;
     u8 unk_14;

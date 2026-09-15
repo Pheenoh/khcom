@@ -10,12 +10,12 @@ typedef struct RoomTableEntry {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    u16 unk_10;
-    u16 unk_12;
-    void* unk_14;
-    AnimHeader** unk_18;
-    void** unk_1C;
-    u16 unk_20;
+    u16 x2;
+    u16 y2;
+    void* owner;
+    AnimHeader** anims;
+    void** gfxTable;
+    u16 spriteCount;
     u16 unk_22;
 } RoomTableEntry;
 

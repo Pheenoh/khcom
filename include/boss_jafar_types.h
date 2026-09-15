@@ -4,13 +4,13 @@
 #include "types.h"
 
 typedef struct JfMapArg {
-    void* unk_00;
-    u16 unk_04;
+    void* tiles;
+    u16 tilesSize;
     u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
+    void* palette;
+    u16 paletteSize;
     u16 unk_0E;
-    void* unk_10[4];
+    void* maps[4];
 } JfMapArg;
 
 #endif

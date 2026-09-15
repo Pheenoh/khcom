@@ -8,7 +8,7 @@
 
 typedef struct EmyDef {
     void* palette;
-    AnimDef* unk_04;
+    AnimDef* animDef;
     s32 unk_08;
     u16 unk_0C;
     u16 unk_0E;
@@ -18,7 +18,7 @@ typedef struct EmyDef {
     u16 unk_16;
     u16 unk_18;
     u16 unk_1A;
-    EmyKind unk_1C;
+    EmyKind kind;
 } EmyDef;
 
 typedef struct EmyWork {
@@ -36,7 +36,7 @@ typedef struct EmyWork {
     u16 unk_158;
     u8 unk_15A;
     u8 unk_15B;
-    EmyDef* unk_15C;
+    EmyDef* def;
     u8 angle;
     u8 unk_161;
     u16 unk_162;

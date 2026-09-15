@@ -65,11 +65,11 @@ typedef struct EventBgEffectEntry {
 typedef struct EventSequenceDef {
     u8 unk_00;
     u8 unk_01[3];
-    EventCharaTrack* unk_04;
-    EventCameraKeyframe* unk_08;
-    MessageScriptEntry* unk_0C;
-    EvSoundCue* unk_10;
-    EventBgEffectEntry* unk_14;
+    EventCharaTrack* charaTracks;
+    EventCameraKeyframe* keyframes;
+    MessageScriptEntry* script;
+    EvSoundCue* soundCues;
+    EventBgEffectEntry* bgEffects;
     u16 unk_18;
     u8 unk_1A;
     u8 unk_1B;

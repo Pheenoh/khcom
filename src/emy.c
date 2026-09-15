@@ -122,7 +122,7 @@ u8 task_emy_00_1(EmyWork* work) {
         if (w->unk_154 == 0) {
             ColliderSetDisabled(&act->unk_040, 0);
             act->unk_034 &= ~0x300;
-            func_08019068(work->unk_15C->unk_04, &work->anim, 0, 3,
+            func_08019068(work->def->animDef, &work->anim, 0, 3,
                 work->tiles);
         }
 
@@ -150,7 +150,7 @@ u8 task_emy_00_1(EmyWork* work) {
             break;
         }
 
-        if (GetRandom() % w->unk_15C->unk_0E == 0) {
+        if (GetRandom() % w->def->unk_0E == 0) {
             func_0801C700(act, &pos2, 0, 0);
 
             if (act->x > pos2) {
@@ -783,7 +783,7 @@ u8 task_emy_07_1(Emy07Work* work) {
 
     switch (work->base.unk_14C) {
     case 18:
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 3,
+        func_08019068(w->base.def->animDef, &w->base.anim, 0, 3,
             w->base.tiles);
         func_0801C700(act, &pos, 0, 0);
 
@@ -882,7 +882,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         break;
     case 26:
         if (work->base.unk_154 == 0) {
-            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 1, 0,
+            func_08019068(w->base.def->animDef, &w->base.anim, 1, 0,
                 w->base.tiles);
         }
 
@@ -1631,7 +1631,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         if (AnimGetFrame(&work->base.anim) == 5) {
             work->base.angle = GetAngle(act->x, act->y, work->base.x,
                 work->base.y);
-            work->base.unk_164 = work->base.unk_15C->unk_08;
+            work->base.unk_164 = work->base.def->unk_08;
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
                 >> 8;
@@ -1644,7 +1644,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         break;
     case 22:
         work->base.unk_168 = 0;
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 2, 3,
+        func_08019068(w->base.def->animDef, &w->base.anim, 2, 3,
             w->base.tiles);
 
         if (gBtlWork->unk_068 & 0x40000) {
@@ -1656,7 +1656,7 @@ u8 task_emy_18_1(Emy18Work* work) {
 
             work->base.angle = GetAngle(act->x, act->y, work->base.x,
                 work->base.y);
-            work->base.unk_164 = work->base.unk_15C->unk_08;
+            work->base.unk_164 = work->base.def->unk_08;
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
                 >> 8;
@@ -2072,7 +2072,7 @@ u8 task_emy_22_1(Emy22Work* work) {
         break;
     case 18:
         if (work->base.unk_154 == 0) {
-            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+            func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
                 w->base.tiles);
             act->unk_034 |= 0x300;
             work->base.unk_156 = 20;
@@ -2095,7 +2095,7 @@ u8 task_emy_22_1(Emy22Work* work) {
     case 19:
         if (work->base.unk_154 == 0) {
             func_0801C700(act, &pos, 0, 0);
-            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+            func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
                 w->base.tiles);
 
             if (act->x > pos) {
@@ -2673,7 +2673,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         if (AnimGetFrame(&work->base.anim) == 1) {
             work->base.angle = GetAngle(act->x, act->y, work->base.x,
                 work->base.y);
-            work->base.unk_164 = work->base.unk_15C->unk_08;
+            work->base.unk_164 = work->base.def->unk_08;
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
                 >> 8;
@@ -2686,7 +2686,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         break;
     case 22:
         work->base.unk_168 = 0;
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 2, 3,
+        func_08019068(w->base.def->animDef, &w->base.anim, 2, 3,
             w->base.tiles);
 
         if (gBtlWork->unk_068 & 0x40000) {
@@ -2698,7 +2698,7 @@ u8 task_emy_28_1(Emy28Work* work) {
 
             work->base.angle = GetAngle(act->x, act->y, work->base.x,
                 work->base.y);
-            work->base.unk_164 = work->base.unk_15C->unk_08;
+            work->base.unk_164 = work->base.def->unk_08;
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
                 >> 8;
@@ -2955,7 +2955,7 @@ u8 task_emy_30_1(EmyWork* work) {
 
         if (AnimGetFrame(&work->anim) == 1) {
             work->angle = GetAngle(act->x, act->y, work->x, work->y);
-            work->unk_164 = work->unk_15C->unk_08;
+            work->unk_164 = work->def->unk_08;
             act->x += gSineTable[work->angle] * work->unk_164 >> 8;
             act->y += -gSineTable[work->angle + 64] * work->unk_164 >> 8;
         }
@@ -2967,7 +2967,7 @@ u8 task_emy_30_1(EmyWork* work) {
         break;
     case 26:
         work->unk_168 = 0;
-        func_08019068(w->unk_15C->unk_04, &w->anim, 2, 3, w->tiles);
+        func_08019068(w->def->animDef, &w->anim, 2, 3, w->tiles);
 
         if (gBtlWork->unk_068 & 0x40000) {
             if (act->x > work->x) {
@@ -2977,7 +2977,7 @@ u8 task_emy_30_1(EmyWork* work) {
             }
 
             work->angle = GetAngle(act->x, act->y, work->x, work->y);
-            work->unk_164 = work->unk_15C->unk_08;
+            work->unk_164 = work->def->unk_08;
             act->x += gSineTable[work->angle] * work->unk_164 >> 8;
             act->y += -gSineTable[work->angle + 64] * work->unk_164 >> 8;
             act->z += (work->unk_178 - act->z) >> 3;
@@ -3256,7 +3256,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+                func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
                     w->base.tiles);
             }
 
@@ -3318,7 +3318,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+                func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
                     w->base.tiles);
             }
 
@@ -3635,7 +3635,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             act->unk_0A2 = 20;
             ColliderSetDisabled(&act->unk_040, 0);
             act->unk_034 &= ~0x300;
-            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 3, w->base.tiles);
+            func_08019068(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
         }
 
         func_0801BCF8(act);
@@ -3659,7 +3659,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             break;
         }
 
-        if ((u16)((u32)GetRandom() % work->base.unk_15C->unk_0E) == 0) {
+        if ((u16)((u32)GetRandom() % work->base.def->unk_0E) == 0) {
             s32 x;
 
             func_0801C700(act, &x, 0, 0);
@@ -4466,11 +4466,11 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         break;
     case 22:
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 2, 1, w->base.tiles);
+        func_08019068(w->base.def->animDef, &w->base.anim, 2, 1, w->base.tiles);
         if (act->z < act->unk_010 && (gBtlWork->unk_068 & 0x40000)) {
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
-            if ((u16)((u32)GetRandom() % work->base.unk_15C->unk_0E) == 0) {
+            if ((u16)((u32)GetRandom() % work->base.def->unk_0E) == 0) {
                 s32 x;
                 func_0801C700(act, &x, 0, 0);
                 if (act->x > x) {
@@ -4497,8 +4497,8 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         break;
     case 21:
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1, w->base.tiles);
-        if ((u16)((u32)GetRandom() % work->base.unk_15C->unk_0E) == 0) {
+        func_08019068(w->base.def->animDef, &w->base.anim, 0, 1, w->base.tiles);
+        if ((u16)((u32)GetRandom() % work->base.def->unk_0E) == 0) {
             s32 x;
             func_0801C700(act, &x, 0, 0);
             if (act->x > x) {
@@ -4509,7 +4509,7 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         switch (AnimGetGfxIndex(&work->base.anim)) {
         case 0:
-            if (work->base.anim.timer == 5 && (u16)((u32)GetRandom() % work->base.unk_15C->unk_0C) == 0) {
+            if (work->base.anim.timer == 5 && (u16)((u32)GetRandom() % work->base.def->unk_0C) == 0) {
                 work->base.unk_14C = 22;
                 work->base.angle = func_0803DD44(&work->base);
             }
@@ -4749,7 +4749,7 @@ u8 task_emy_83_1(Emy83Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x16:
-        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 3, w->base.tiles);
+        func_08019068(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
         func_0801BCF8(act);
         func_0801C700(act, &pos, 0, 0);
 
@@ -5026,7 +5026,7 @@ u8 task_emy_trump_h_1(EmyWork* work) {
         break;
     case 0x12:
         if (work->unk_154 == 0) {
-            func_08019068(work->unk_15C->unk_04, &work->anim, 0, 0, work->tiles);
+            func_08019068(work->def->animDef, &work->anim, 0, 0, work->tiles);
             m4aSongNumStart(0x23B);
         }
 
@@ -5081,7 +5081,7 @@ u8 task_emy_trump_s_1(EmyWork* work) {
         break;
     case 0x12:
         if (work->unk_154 == 0) {
-            func_08019068(work->unk_15C->unk_04, &work->anim, 0, 0, work->tiles);
+            func_08019068(work->def->animDef, &work->anim, 0, 0, work->tiles);
             m4aSongNumStart(0x23B);
         }
 

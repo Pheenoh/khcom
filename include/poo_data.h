@@ -16,16 +16,16 @@ typedef struct PooSpot {
 } PooSpot;
 
 typedef struct PooMapBgDesc {
-    void* unk_00;
-    u16 unk_04;
+    void* tiles;
+    u16 tilesSize;
     u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
+    void* palette;
+    u16 paletteSize;
     u16 unk_0E;
-    void* unk_10;
-    u16 unk_14;
-    u8 unk_16;
-    u8 unk_17;
+    void* tiles2;
+    u16 tilesSize2;
+    u8 mapWidth;
+    u8 mapHeight;
 } PooMapBgDesc;
 
 extern PooSpot gUnk_096FC05C[];

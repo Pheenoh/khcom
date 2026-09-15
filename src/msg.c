@@ -7989,7 +7989,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
     work->unk_28 = 0;
     work->unk_2C = a[0];
     work->unk_2E = a[1];
-    work->unk_34 = gUnk_09EE3FB4[work->unk_2C];
+    work->seqDef = gUnk_09EE3FB4[work->unk_2C];
     work->unk_30 = 0;
     work->unk_31 = 0;
     gUnk_02039DC8->unk_8A = 0;
@@ -8019,7 +8019,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
         RequestDma3Clear(GetBgCharBase(1), 0x8000);
 #endif
 
-        if (work->unk_34->unk_08->unk_14 & 0x80) {
+        if (work->seqDef->keyframes->unk_14 & 0x80) {
             SetBackdropColor(31, 31, 31);
             FadeStartIn(1, 0x40);
         }
@@ -8060,9 +8060,9 @@ void event_seq_0(EventSeqWork* work, u8* a) {
                 eu_0806C848(work);
             }
         }
-        if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
+        if ((work->seqDef->keyframes->unk_14 & 0xFF0) == 0) {
             FadeStartIn(0, 64);
-        } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
+        } else if ((work->seqDef->keyframes->unk_14 & 0xFF0) == 0x80) {
             FadeStartIn(1, 120);
         }
         work->unk_38 = 0;
@@ -8153,7 +8153,7 @@ u8 eu_0806C848(EventSeqWork* work) {
 }
 u8 eu_0806C974(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
-    EventCameraKeyframe* q = work->unk_34->unk_08;
+    EventCameraKeyframe* q = work->seqDef->keyframes;
     u16 i;
     gUnk_02039DC8->unk_50 = q->unk_04;
     gUnk_02039DC8->unk_54 = q->unk_08;
@@ -8268,7 +8268,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
         }
     }
 
-    q = work->unk_34->unk_08;
+    q = work->seqDef->keyframes;
     gUnk_02039DC8->unk_50 = q->unk_04;
     gUnk_02039DC8->unk_54 = q->unk_08;
     gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
@@ -8292,7 +8292,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     }
 
     i = 0;
-    t = work->unk_34;
+    t = work->seqDef;
 
     while (i < 16) {
         gUnk_02039DC8->unk_00[i] = NULL;
@@ -8300,7 +8300,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     }
 
 #else
-    t = work->unk_34;
+    t = work->seqDef;
 #endif
 
     TaskPoolInit(&work->unk_00, t->unk_00 + 8);
@@ -8309,7 +8309,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     for (j = 0; j < t->unk_00; j++) {
         arg.unk_00 = work->unk_2C;
-        arg.unk_02 = t->unk_04[j].unk_04;
+        arg.unk_02 = t->charaTracks[j].unk_04;
         arg.unk_03 = j;
 
         if (arg.unk_02 > 94) {
@@ -8333,9 +8333,9 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     }
 
 #ifndef VERSION_EU
-    if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
+    if ((work->seqDef->keyframes->unk_14 & 0xFF0) == 0) {
         FadeStartIn(0, 64);
-    } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
+    } else if ((work->seqDef->keyframes->unk_14 & 0xFF0) == 0x80) {
         FadeStartIn(1, 120);
     }
 
@@ -8404,10 +8404,10 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         return 1;
     }
 
-    if (p->unk_38 == p->unk_34->unk_24) {
+    if (p->unk_38 == p->seqDef->unk_24) {
         gUnk_02039DC8->unk_64 |= 2;
     } else {
-        s32 t = p->unk_34->unk_08->unk_14 & 0xFF0;
+        s32 t = p->seqDef->keyframes->unk_14 & 0xFF0;
 
         if (t == 0) {
             FadeStartIn(0, 64);
@@ -8484,7 +8484,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
 
     TaskPoolInit(&p->unk_010, 8);
     *(s32*)&p->unk_024 = *a;
-    p->unk_000 = gUnk_09EE3FB4[p->unk_024]->unk_04[p->unk_027].unk_00;
+    p->unk_000 = gUnk_09EE3FB4[p->unk_024]->charaTracks[p->unk_027].unk_00;
     p->unk_1A0 = 0;
     p->unk_1A4 = p->unk_000->unk_04;
     p->unk_188 = 0;
@@ -11418,7 +11418,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     p->unk_27 = 0;
     p->unk_29 = 0;
     p->unk_2A = 0;
-    p->unk_3C = t->unk_0C;
+    p->unk_3C = t->script;
     p->unk_2B = 0;
     p->unk_18 = 0;
     p->unk_40 = 0;
@@ -12323,8 +12323,8 @@ void view_0(EventCameraWork* p, u8* arg) {
     p->unk_15 = 0;
     t = gUnk_09EE3FB4[p->unk_08];
     u = gUnk_09EE3CA0[p->unk_08];
-    q = t->unk_08;
-    p->unk_0C = q;
+    q = t->keyframes;
+    p->keyframes = q;
 
     if (q->unk_10 != 255) {
         n = func_08074E40(p);
@@ -12392,11 +12392,11 @@ u8 view_1(EventCameraWork* p, u8* task) {
     }
 
     if (gUnk_02039DC8->unk_7C == 0) {
-        e = &p->unk_0C[p->unk_09];
+        e = &p->keyframes[p->unk_09];
 
         if (gUnk_02039DC8->unk_6C >= *(u16*)&e->unk_00 && !(e->unk_14 & 0x8000)) {
             p->unk_09++;
-            e = &p->unk_0C[p->unk_09];
+            e = &p->keyframes[p->unk_09];
             p->unk_15 = 0;
 
             if (e->unk_1C != NULL) {
@@ -12662,7 +12662,7 @@ void func_08074D14(EventCameraWork* a) {
     func_08074D00(a);
     x = gUnk_02039DC8->unk_50 - 0x7800;
     y = gUnk_02039DC8->unk_54 - 0x5000;
-    e = &a->unk_0C[a->unk_09];
+    e = &a->keyframes[a->unk_09];
     if (e->unk_14 & 0x2C00) {
         gUnk_02039DC8->unk_48 = x;
         gUnk_02039DC8->unk_4C = y;
@@ -12708,8 +12708,8 @@ void func_08074DC4(EventCameraWork* a) {
 u8 func_08074E40(EventCameraWork* p) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    EventCharaTrack* q = t->unk_04;
-    EventCameraKeyframe* e = &p->unk_0C[p->unk_09];
+    EventCharaTrack* q = t->charaTracks;
+    EventCameraKeyframe* e = &p->keyframes[p->unk_09];
     u8 i;
 
     for (i = 0; i < n; i++) {
@@ -12723,7 +12723,7 @@ u8 func_08074E40(EventCameraWork* p) {
 u8 func_08074E88(EventCameraWork* p, u8 v) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    EventCharaTrack* q = t->unk_04;
+    EventCharaTrack* q = t->charaTracks;
     u8 i;
 
     for (i = 0; i < n; i++) {

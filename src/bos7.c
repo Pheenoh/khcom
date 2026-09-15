@@ -2126,11 +2126,11 @@ u8 func_08112C38(StaffRollWork* w) {
             }
 
             EnableBg(0);
-            LoadBgTiles(0, w->unk_09C[w->unk_090].unk_10, w->unk_09C[w->unk_090].unk_14);
-            LoadBgMap(0, w->unk_09C[w->unk_090].unk_18, w->unk_09C[w->unk_090].unk_1C);
-            LoadBgPalette(0, w->unk_09C[w->unk_090].unk_20, w->unk_09C[w->unk_090].unk_24);
-            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].unk_08 >> 8),
-                        (u16) - (w->unk_09C[w->unk_090].unk_0C >> 8));
+            LoadBgTiles(0, w->unk_09C[w->unk_090].tiles, w->unk_09C[w->unk_090].tilesSize);
+            LoadBgMap(0, w->unk_09C[w->unk_090].map, w->unk_09C[w->unk_090].mapSize);
+            LoadBgPalette(0, w->unk_09C[w->unk_090].palette, w->unk_09C[w->unk_090].paletteSize);
+            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].x >> 8),
+                        (u16) - (w->unk_09C[w->unk_090].y >> 8));
         }
 
         w->unk_084 = 1;
@@ -2158,9 +2158,9 @@ u8 func_08112C38(StaffRollWork* w) {
             arg.unk_02 = w->unk_09C[w->unk_090].unk_30;
             arg.unk_04 = t;
             arg.x = 0x14000;
-            arg.y = w->unk_09C[w->unk_090].unk_2C;
-            arg.targetX = w->unk_09C[w->unk_090].unk_28;
-            arg.targetY = w->unk_09C[w->unk_090].unk_2C;
+            arg.y = w->unk_09C[w->unk_090].targetY;
+            arg.targetX = w->unk_09C[w->unk_090].targetX;
+            arg.targetY = w->unk_09C[w->unk_090].targetY;
             w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
             arg.unk_00 = 1;
             arg.unk_02 = 1;
@@ -2249,16 +2249,16 @@ u8 func_08112C38(StaffRollWork* w) {
         w->unk_098 = v;
 
         if (v > 0x1BFF) {
-            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].unk_08 >> 8),
-                        (u16)(-(w->unk_09C[w->unk_090].unk_0C >> 8) + 28));
+            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].x >> 8),
+                        (u16)(-(w->unk_09C[w->unk_090].y >> 8) + 28));
             if (w->unk_098 > 0x4000) {
                 w->unk_084 = 6;
                 w->unk_08C = 0;
                 w->unk_088 = 0;
             }
         } else {
-            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].unk_08 >> 8),
-                        (u16)(-(w->unk_09C[w->unk_090].unk_0C >> 8) + (v >> 8)));
+            SetBgScroll(0, (u16) - (w->unk_09C[w->unk_090].x >> 8),
+                        (u16)(-(w->unk_09C[w->unk_090].y >> 8) + (v >> 8)));
         }
         break;
     }

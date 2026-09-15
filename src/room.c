@@ -250,13 +250,13 @@ void func_080F800C(GaWork* work, s32 i) {
     e->unk_124 = func_080F7FAC(work, i);
     e->unk_128 = func_080F7FC8(work, i);
     e->unk_12C = func_080F7FE4(work, i);
-    v = gUnk_09991F54[i].unk_10;
+    v = gUnk_09991F54[i].x2;
 
     if (work->unk_018 != 0) {
         v = -v;
     }
     e->x2 = v;
-    e->y2 = gUnk_09991F54[i].unk_12;
+    e->y2 = gUnk_09991F54[i].y2;
 }
 
 void func_080F80C0(GaWork* work) {
@@ -324,9 +324,9 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
     }
     TaskPoolInit(&e->unk_16C, 1);
     TaskCreate(&e->unk_16C, &gTaskDescBtlShadow, e);
-    p = gUnk_09991F54[i].unk_1C;
-    e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].unk_20), gUnk_09991F54[i].unk_14);
-    AnimInit(&e->anim, gUnk_09991F54[i].unk_18, p);
+    p = gUnk_09991F54[i].gfxTable;
+    e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].spriteCount), gUnk_09991F54[i].owner);
+    AnimInit(&e->anim, gUnk_09991F54[i].anims, p);
     AnimStart(&e->anim, 0, 1);
     e->gfx = AnimGetGfx(&e->anim);
 

@@ -149,11 +149,11 @@ extern PcSpriteCmd gUnk_09A4AAD4[];
 extern PcSpriteCmd* gUnk_09EF9C34[];
 
 typedef struct PcGfxSet {
-    void* unk_00;
-    u16 unk_04;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
+    void* map;
+    u16 mapSize;
     u8 unk_0E[0x02];
 } PcGfxSet;
 
