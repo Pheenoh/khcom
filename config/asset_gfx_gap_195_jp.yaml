@@ -159,3 +159,13 @@ children:
     png: assets/jp/src/gfx/asset_gfx_gap_195/gUnk_09A3D85C.png
     sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
     consumer: LoadObjPalette(..., 0x20) mode_ms
+  - id: gUnk_09A3DA7C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3DA7C
+    rom: { start: 0x099F2504, end: 0x099F2524, size: 32 }
+    png: assets/jp/src/gfx/asset_gfx_gap_195/gUnk_09A3DA7C.png
+    gbapal: assets/jp/src/gfx/asset_gfx_gap_195/gUnk_09A3DA7C.gbapal
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
+    consumer: LoadObjPalette(..., 0x20) mode_ms
+    path_mode_built: gbagfx_png_to_gbapal

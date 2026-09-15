@@ -23,7 +23,7 @@ tools:
 sha256_slice: d52102817ac348841559fdfe92ccdcb36bf6228308b09117704e335324810419
 status: leaf_palette_scaffold
 note: >
-  Dual-path scaffold for 17 LoadObjPalette 32B leaves in the same mega.
+  Dual-path scaffold for 18 LoadObjPalette 32B leaves in the same mega.
   Default path_mode is slice so check.sh stays on extract .incbin. Built mode
   (configure --asset-gfx-gap-195-mode=built) patches gbagfx PNG->gbapal into a
   mega copy; does not affect MovieOpen asset_gfx.
@@ -196,5 +196,15 @@ children:
     png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D85C.png
     gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3D85C.gbapal
     sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
+    consumer: LoadObjPalette(..., 0x20) mode_ms
+    path_mode_built: gbagfx_png_to_gbapal
+  - id: gUnk_09A3DA7C
+    class: leaf_gfx
+    format: palette
+    symbol: gUnk_09A3DA7C
+    rom: { start: 0x09A3DA7C, end: 0x09A3DA9C, size: 32 }
+    png: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3DA7C.png
+    gbapal: assets/us/src/gfx/asset_gfx_gap_195/gUnk_09A3DA7C.gbapal
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
     consumer: LoadObjPalette(..., 0x20) mode_ms
     path_mode_built: gbagfx_png_to_gbapal

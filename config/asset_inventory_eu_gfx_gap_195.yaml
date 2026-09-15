@@ -150,3 +150,14 @@ leaves:
     size: 32
     sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
     confidence: high
+  - id: gUnk_09A3DA7C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A9B540
+    end: 0x09A9B560
+    size: 32
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_ms
+    confidence: high

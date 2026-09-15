@@ -83,6 +83,10 @@ LEAF_META = {
         "consumer": "LoadObjPalette(..., 0x20) mode_ms",
         "expected_sha1": "0993deb6471323bbc732b4eca512deb79abd35a9",
     },
+    "gUnk_09A3DA7C": {
+        "consumer": "LoadObjPalette(..., 0x20) mode_ms",
+        "expected_sha1": "d6f823392f2666e293585e08fa36c4f1b502c4b4",
+    },
 }
 
 
@@ -132,6 +136,7 @@ VERSIONS = {
             _leaf("gUnk_09A3D5BC", 0x09A3D5BC),
             _leaf("gUnk_09A3D7FC", 0x09A3D7FC),
             _leaf("gUnk_09A3D85C", 0x09A3D85C),
+            _leaf("gUnk_09A3DA7C", 0x09A3DA7C),
         ],
     },
     "jp": {
@@ -163,6 +168,7 @@ VERSIONS = {
             _leaf("gUnk_09A3D5BC", 0x099F2044),
             _leaf("gUnk_09A3D7FC", 0x099F2284),
             _leaf("gUnk_09A3D85C", 0x099F22E4),
+            _leaf("gUnk_09A3DA7C", 0x099F2504),
         ],
     },
     "eu": {
@@ -194,6 +200,7 @@ VERSIONS = {
             _leaf("gUnk_09A3D5BC", 0x09A9B080),
             _leaf("gUnk_09A3D7FC", 0x09A9B2C0),
             _leaf("gUnk_09A3D85C", 0x09A9B320),
+            _leaf("gUnk_09A3DA7C", 0x09A9B540),
         ],
     },
 }

@@ -22,7 +22,7 @@ pack:
   confidence: medium
   summary: >
     Named megablob owned by asm/us/asset_gfx_gap_195.s as a single .incbin.
-    Fuller child map not yet RE'd; scaffold rebuilds 17 LoadObjPalette 32B pals.
+    Fuller child map not yet RE'd; scaffold rebuilds 18 LoadObjPalette 32B pals.
 
 symbols_in_pack:
   - { address: 0x09A3C89C, name: gUnk_09A3C89C, size: 32, kind: palette }
@@ -42,6 +42,7 @@ symbols_in_pack:
   - { address: 0x09A3D5BC, name: gUnk_09A3D5BC, size: 32, kind: palette }
   - { address: 0x09A3D7FC, name: gUnk_09A3D7FC, size: 32, kind: palette }
   - { address: 0x09A3D85C, name: gUnk_09A3D85C, size: 32, kind: palette }
+  - { address: 0x09A3DA7C, name: gUnk_09A3DA7C, size: 32, kind: palette }
 
 leaves:
   - id: gUnk_09A3C89C
@@ -227,6 +228,17 @@ leaves:
     end: 0x09A3D87C
     size: 32
     sha1: 0993deb6471323bbc732b4eca512deb79abd35a9
+    png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
+    lz77: false
+    consumer: LoadObjPalette(..., 0x20) mode_ms
+    confidence: high
+  - id: gUnk_09A3DA7C
+    class: leaf_gfx
+    format: palette
+    start: 0x09A3DA7C
+    end: 0x09A3DA9C
+    size: 32
+    sha1: d6f823392f2666e293585e08fa36c4f1b502c4b4
     png_plan: indexed 16-color PNG -> gbagfx -> .gbapal (32 bytes)
     lz77: false
     consumer: LoadObjPalette(..., 0x20) mode_ms
