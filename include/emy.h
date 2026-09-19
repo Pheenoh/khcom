@@ -1,6 +1,7 @@
 #ifndef GUARD_EMY_H
 #define GUARD_EMY_H
 
+#include "task_descriptors.h"
 #include "animation_resource_data.h"
 
 #include "enemy_types.h"
@@ -238,11 +239,6 @@ extern u8 gUnk_08F698C4[];
 extern u8 gUnk_08F699C4[];
 extern u8 gUnk_08F69B84[];
 extern u32 gFrameCounter;
-extern u8 gTaskDescBtlPrize[];
-extern void* gTaskDescEmy16B;
-extern void* gTaskDescEmy16P;
-extern void* gTaskDescEmy83B;
-extern void* gTaskDescEmy83S;
 
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz);
 u8 func_0803DD44(EmyWork* work);

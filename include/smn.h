@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "aux_animation_data.h"
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
@@ -239,8 +240,6 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-extern u8 gTaskDescBtlPrize[];
-extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_096183F8[];
 extern u8 gUnk_08F6DC24[];
 extern u8 gUnk_088A5D7A[];

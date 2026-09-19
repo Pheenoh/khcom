@@ -1,9 +1,9 @@
+#include "task_descriptors.h"
 #include "display.h"
 #include "smn.h"
 #include "anim.h"
 #include "smn_api.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const AnimDef gUnk_0813E958[8] = {
     { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 0, { 0, 0, 0 } },
@@ -776,7 +776,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             }
 
             args.unk_14 = 0;
-            TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize, &args);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPrize, &args);
         } else {
             work->unk_14C++;
         }
@@ -936,7 +936,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
 
 void func_080428E8(SmnTinkWork* work) {
     if (work->unk_170 % 3 == 0) {
-        TaskCreate(&work->tasks, gTaskDescSmnTinkeff, &work->body);
+        TaskCreate(&work->tasks, &gTaskDescSmnTinkeff, &work->body);
     }
 }
 u8 task_smn_tink_1(SmnTinkWork* work) {
@@ -2620,3 +2620,21 @@ void func_08045494(BtlObj* body, u8 a, s16 b, s16 c) {
         }
     }
 }
+
+TaskDesc gTaskDescSmnCloud = { gTaskNameSmnCloud, task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
+
+TaskDesc gTaskDescSmnBambi = { gTaskNameSmnBambi, task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
+
+TaskDesc gTaskDescSmnTink = { gTaskNameSmnTink, task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
+
+TaskDesc gTaskDescSmnTinkeff = { gTaskNameSmnTinkeff, task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
+
+TaskDesc gTaskDescSmnSimba = { gTaskNameSmnSimba, task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
+
+TaskDesc gTaskDescSmnMushu = { gTaskNameSmnMushu, task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
+
+TaskDesc gTaskDescSmnDumbo = { gTaskNameSmnDumbo, task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
+
+TaskDesc gTaskDescSmnGenie = { gTaskNameSmnGenie, task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
+
+TaskDesc gTaskDescSmnKing = { gTaskNameSmnKing, task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };

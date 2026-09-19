@@ -1,6 +1,6 @@
+#include "task_descriptors.h"
 #include "macros.h"
 #include "bos.h"
-#include "task_names.h"
 
 const char gTaskNameBosMap[] = "task_bos_map";
 
@@ -114,3 +114,7 @@ void task_bos_shadow_3(BosShadowWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+TaskDesc gTaskDescBosMap = { gTaskNameBosMap, task_bos_map_0, task_bos_map_1, 0, 0, 0x4 };
+
+TaskDesc gTaskDescBosShadow = { gTaskNameBosShadow, task_bos_shadow_0, task_bos_shadow_1, task_bos_shadow_2, task_bos_shadow_3, 0xC };

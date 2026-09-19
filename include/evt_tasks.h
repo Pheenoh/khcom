@@ -2,7 +2,6 @@
 #define GUARD_EVT_TASKS_H
 
 #include "types.h"
-#include "task_names.h"
 
 struct EvtObj;
 struct EvtObjParam;

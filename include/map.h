@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "card_def_data.h"
 #include "aux_animation_data.h"
 #include "map_text_data.h"
@@ -1351,9 +1352,6 @@ extern const u8 gUnk_09EF6A42[];
 extern u8 (*gUnk_09EF6A50[])(UnkStruct_080DFF1C*);
 extern u8 (*gUnk_09EF6A88[])(UnkStruct_080E8B1C*);
 extern const u8 gUnk_09EF6AB0[];
-extern void* gTaskDescFldSora;
-extern void* gTaskDescFldRiku;
-extern void* gTaskDescRoomcreate;
 
 void func_080ED250(u8* work);
 void func_080EBE90(LoadGameMenuWork* work);
@@ -1364,7 +1362,6 @@ void func_080EC04C(LoadGameMenuWork* work);
 void func_080EBFF8(LoadGameMenuWork* work);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
-extern TaskDesc gTaskDescFldShadow;
 extern u8 gUnk_0937E90A[];
 extern u8 gUnk_0938044A[];
 extern u8 gUnk_0938D282[];

@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "jiminy_records_data.h"
 #include "aux_animation_data.h"
 #ifndef GUARD_HUM_H
@@ -484,7 +485,6 @@ extern u8 gUnk_08BD99F4[];
 extern u8 gUnk_09618458[];
 extern u8 gUnk_08B5A872[];
 extern u8 gUnk_08F6DC64[];
-extern u8 gTaskDescHumLaxeneKnf[];
 extern u8 gUnk_08C3724C[];
 extern u8 gUnk_09617F18[];
 extern u8 gUnk_09617F38[];
@@ -495,18 +495,11 @@ extern u8 gUnk_08F6DCC4[];
 extern u8 gUnk_08F6DCE4[];
 extern u8 gUnk_08C42BBE[];
 extern u8 gUnk_08C46790[];
-extern u8 gTaskDescHumHookMoon[];
 extern u8 gUnk_08B22BA8[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08BF73C6[];
 extern u8 gUnk_08F69BA4[];
-extern u8 gTaskDescHumAxcelPtc[];
-extern u8 gTaskDescHumVixenIce[];
-extern u8 gTaskDescHumVixenNdl[];
-extern u8 gTaskDescHumHookBomb[];
-extern u8 gTaskDescHumVixenFrz[];
 extern u8 gUnk_08EE3A84[];
-extern u8 gTaskDescHumVixenFrg[];
 extern u8 gUnk_08C1E78C[];
 extern u8 gUnk_08BAFB62[];
 extern u8 gUnk_08F6DC44[];
@@ -515,10 +508,6 @@ extern u8 gUnk_08B5A854[];
 extern u8 gUnk_08B5A85E[];
 extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08B22CBC[];
-extern u8 gTaskDescHumMahluxiaFlw[];
-extern TaskDesc gTaskDescHumLexTmh;
-extern TaskDesc gTaskDescHumLexTmh0;
-extern TaskDesc gTaskDescHumLexRock;
 extern JiminyWork* gJiminyWork;
 
 void func_08054100(AxcelWork* work, HumSub* sub);

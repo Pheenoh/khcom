@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "battle_localized_data.h"
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
@@ -269,22 +270,6 @@ void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
 void func_080161F8(s32 x, s32 y, s32 z, u8 f);
-extern TaskDesc gTaskDescSmnKing;
-extern TaskDesc gTaskDescBtlRaid;
-extern TaskDesc gTaskDescSmnBambi;
-extern TaskDesc gTaskDescSmnTink;
-extern TaskDesc gTaskDescSmnMushu;
-extern TaskDesc gTaskDescSmnCloud;
-extern TaskDesc gTaskDescSmnSimba;
-extern TaskDesc gTaskDescSmnDumbo;
-extern TaskDesc gTaskDescSmnGenie;
-extern TaskDesc gTaskDescFrdDonald;
-extern TaskDesc gTaskDescFrdGoofy;
-extern TaskDesc gTaskDescFrdAriel;
-extern TaskDesc gTaskDescFrdJack;
-extern TaskDesc gTaskDescFrdPan;
-extern TaskDesc gTaskDescFrdAladdin;
-extern TaskDesc gTaskDescFrdBeast;
 s32 func_080ABCA4(s32* out, s32 b);
 
 typedef struct BtlMapWork {

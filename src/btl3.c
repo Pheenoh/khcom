@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "display.h"
 #include "obj_api.h"
 #include "util.h"
@@ -5,7 +6,6 @@
 #include "btl3.h"
 #include "btl3_api.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const char gTaskNameBtlForm[] = "task_btl_form";
 
@@ -767,3 +767,11 @@ BtlObj* func_08040D54(BtlAiWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+TaskDesc gTaskDescBtlForm = { gTaskNameBtlForm, task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
+
+TaskDesc gTaskDescBtlBorn = { gTaskNameBtlBorn, task_btl_born_0, task_btl_born_1, 0, 0, 0x14 };
+
+TaskDesc gTaskDescBtlRaid = { gTaskNameBtlRaid, task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
+
+TaskDesc gTaskDescBtlBadstatus = { gTaskNameBtlBadstatus, task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };

@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "aux_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_POO_H
@@ -1390,7 +1391,6 @@ extern u8 gUnk_098A5CAE[];
 extern u8 gUnk_098A5CB8[];
 extern u8 gUnk_098A5CF4[];
 extern u8 gUnk_08F683A4[];
-extern TaskDesc gTaskDescFldShadow;
 void func_080C8AE0(PooWork* w);
 s32 func_080D01BC(s32 x, s32 y);
 u8 func_080C871C(PooWork* w);

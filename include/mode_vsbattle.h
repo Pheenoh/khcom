@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "task_descriptors.h"
 #include "registration_data.h"
 
 #include "sio_battle_options_state.h"
@@ -48,8 +49,6 @@ extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
 extern u8 gUnk_08F69BC4[];
-extern TaskDesc gTaskDescBtlSora;
-extern TaskDesc gTaskDescBtlMap;
 
 void func_08010CC8(void);
 void func_0801071C(void);

@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "registration_data.h"
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
@@ -40,8 +41,6 @@ typedef struct RoomCreateWork {
     s32 unk_40;
 } RoomCreateWork;
 
-extern TaskDesc gTaskDescRomcriEff;
-extern TaskDesc gTaskDescRomcriEff2;
 
 struct Task;
 

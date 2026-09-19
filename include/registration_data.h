@@ -1,6 +1,7 @@
 #ifndef GUARD_REGISTRATION_DATA_H
 #define GUARD_REGISTRATION_DATA_H
 
+#include "task_descriptors.h"
 #include "taskpool.h"
 #include "mode.h"
 
@@ -10,8 +11,6 @@ extern TaskDesc gTaskDescBtlPopCb;
 extern TaskDesc gTaskDescBtlExp;
 extern TaskDesc gTaskDescBtlVslockon;
 extern TaskDesc gTaskDescBtlHpoth;
-extern TaskDesc gTaskDescBtlShadow;
-extern TaskDesc gTaskDescBtlBadstatus;
 extern TaskDesc gTaskDescTutorial;
 extern Mode gModeMovie;
 extern TaskDesc gTaskDescLockon;
@@ -36,8 +35,6 @@ extern TaskDesc gTaskDescEvSound;
 extern TaskDesc gTaskDescCardBattleSora;
 extern TaskDesc gTaskDescCardBattleRiku;
 extern TaskDesc gTaskDescBosscard;
-extern TaskDesc gTaskDescBosMap;
-extern TaskDesc gTaskDescBosShadow;
 extern TaskDesc gTaskDescMapAnim;
 extern TaskDesc gTaskDescMapSelect;
 extern TaskDesc gTaskDescMapcard;

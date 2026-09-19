@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "aux_animation_data.h"
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
@@ -41,7 +42,6 @@ void func_0803473C(FldWork* work, s32 index, u16 flags);
 
 void func_080A5830(void* a, s32 x, s32 y, s32 z);
 
-extern TaskDesc gTaskDescFldShadow;
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F69BE4[];

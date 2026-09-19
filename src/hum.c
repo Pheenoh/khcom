@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "ms_api.h"
@@ -6,7 +7,6 @@
 #include "pallet.h"
 #include "hum.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const u32 gUnk_0813EDD0[2][3] = {
     { 37, 37, 37 },
@@ -1085,7 +1085,7 @@ u8 func_0804B4F4(CloudWork* work) {
 }
 
 void task_hum_hook_0(HookWork* work, void* arg) {
-    TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumHookMoon, 0);
+    TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumHookMoon, 0);
     HumInit(&work->base, &gUnk_0813F05C);
     work->base.actor.unk_034 |= 0x10000000;
 
@@ -1359,9 +1359,9 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 1;
                 }
-                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
-                w->unk_1B4 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
-                w->unk_1B8 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, &gTaskDescHumHookBomb, &args);
+                w->unk_1B4 = TaskCreate(&w->tasks, &gTaskDescHumHookBomb, &args);
+                w->unk_1B8 = TaskCreate(&w->tasks, &gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         } else if (w->unk_198 & 2) {
@@ -1376,9 +1376,9 @@ u8 task_hum_hook_1(HookWork* work) {
         }
 
         if ((w->unk_198 & 1) &&
-            IsTaskActiveNamed(w->unk_1B0, *(void**)gTaskDescHumHookBomb) == 0 &&
-            IsTaskActiveNamed(w->unk_1B4, *(void**)gTaskDescHumHookBomb) == 0 &&
-            IsTaskActiveNamed(w->unk_1B8, *(void**)gTaskDescHumHookBomb) == 0) {
+            IsTaskActiveNamed(w->unk_1B0, gTaskDescHumHookBomb.name) == 0 &&
+            IsTaskActiveNamed(w->unk_1B4, gTaskDescHumHookBomb.name) == 0 &&
+            IsTaskActiveNamed(w->unk_1B8, gTaskDescHumHookBomb.name) == 0) {
             func_0801AF08(act);
             work->base.unk_170 = 0;
             work->base.unk_150 = 0;
@@ -1409,7 +1409,7 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 0;
                 }
-                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, &gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         } else if (w->unk_198 & 2) {
@@ -1424,7 +1424,7 @@ u8 task_hum_hook_1(HookWork* work) {
         }
 
         if ((w->unk_198 & 1) &&
-            IsTaskActiveNamed(w->unk_1B0, *(void**)gTaskDescHumHookBomb) == 0) {
+            IsTaskActiveNamed(w->unk_1B0, gTaskDescHumHookBomb.name) == 0) {
             func_0801AF08(act);
             work->base.unk_170 = 0;
             work->base.unk_150 = 0;
@@ -1457,7 +1457,7 @@ u8 task_hum_hook_1(HookWork* work) {
                     args.unk_12 = 0;
                     args.unk_14 = 2;
                 }
-                w->unk_1B0 = TaskCreate(&w->tasks, gTaskDescHumHookBomb, &args);
+                w->unk_1B0 = TaskCreate(&w->tasks, &gTaskDescHumHookBomb, &args);
                 w->unk_198 |= 1;
             }
         }
@@ -1468,7 +1468,7 @@ u8 task_hum_hook_1(HookWork* work) {
                 work->base.unk_152++;
                 work->base.unk_170 = 29;
             } else {
-                if (IsTaskActiveNamed(w->unk_1B0, *(void**)gTaskDescHumHookBomb) == 0) {
+                if (IsTaskActiveNamed(w->unk_1B0, gTaskDescHumHookBomb.name) == 0) {
                     work->base.unk_150 = 0;
                     func_0801AF08(act);
                     work->base.unk_170 = 0;
@@ -3299,7 +3299,7 @@ void func_0804FD7C(MahluxiaWork* work) {
         range = 0x1000;
         args.y += ((GetRandom() % 33) << 8) - range;
         args.z += ((GetRandom() % 41) << 8) - range;
-        TaskCreate(&work->tasks, gTaskDescHumMahluxiaFlw, &args);
+        TaskCreate(&work->tasks, &gTaskDescHumMahluxiaFlw, &args);
     }
 }
 
@@ -3851,7 +3851,7 @@ void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
     }
     args.z = act->z + (b << 8);
     args.y = act->y;
-    TaskCreate(&work->tasks, gTaskDescHumLaxeneKnf, &args);
+    TaskCreate(&work->tasks, &gTaskDescHumLaxeneKnf, &args);
 }
 
 void task_hum_laxene_0(LaxeneWork* work) {
@@ -4688,7 +4688,7 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
         args[0] = sub->unk_28 + (GetRandom() % 29 - 14) * 256;
         args[1] = sub->unk_2C + (GetRandom() % 15 - 7) * 256;
         args[2] = sub->unk_30;
-        TaskCreate(&work->tasks, gTaskDescHumAxcelPtc, args);
+        TaskCreate(&work->tasks, &gTaskDescHumAxcelPtc, args);
     }
 }
 
@@ -5488,7 +5488,7 @@ void func_080543B4(VixenWork* work) {
     for (i = 0; i < 3; i++) {
         p->unk_01 = z;
         p->unk_00 = z;
-        TaskCreate(&work->tasks, gTaskDescHumVixenIce, &work->sub[i]);
+        TaskCreate(&work->tasks, &gTaskDescHumVixenIce, &work->sub[i]);
         p++;
     }
 }
@@ -5838,7 +5838,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
                 args.unk_12 = work->unk_1BC % 8;
                 args.unk_18 = &work->unk_1E8;
                 work->unk_1BC++;
-                TaskCreate(&work->tasks, gTaskDescHumVixenNdl, &args);
+                TaskCreate(&work->tasks, &gTaskDescHumVixenNdl, &args);
             }
         }
 
@@ -5994,11 +5994,11 @@ u8 task_hum_vixen_1(VixenWork* work) {
             args.x = x;
             args.y = y;
             args.z = 0;
-            work->unk_1B8 = TaskCreate(&work->tasks, gTaskDescHumVixenFrz, &args);
+            work->unk_1B8 = TaskCreate(&work->tasks, &gTaskDescHumVixenFrz, &args);
         }
 
         if (AnimIsFinished(&w->base.anim) &&
-            IsTaskActiveNamed(work->unk_1B8, *(void**)gTaskDescHumVixenFrz) == 0) {
+            IsTaskActiveNamed(work->unk_1B8, gTaskDescHumVixenFrz.name) == 0) {
             func_0801AF08(act);
             w->base.unk_170 = 0;
             w->base.unk_150 = 0;
@@ -6336,7 +6336,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             args.x = work->x;
             args.y = work->y;
             args.z = work->z;
-            TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumVixenFrg, &args);
             work->unk_2C = 6;
             work->unk_30 = 0;
         } else {
@@ -6382,7 +6382,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             args2.x = work->x;
             args2.y = work->y;
             args2.z = work->z;
-            TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args2);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumVixenFrg, &args2);
             work->unk_2C = 6;
             work->unk_30 = 0;
         } else {
@@ -8749,3 +8749,51 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     RestoreMapCardInventory(&save->small);
     gGameState.flags |= 8;
 }
+
+TaskDesc gTaskDescHumCloud = { gTaskNameHumCloud, task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
+
+TaskDesc gTaskDescHumHook = { gTaskNameHumHook, task_hum_hook_0, task_hum_hook_1, task_hum_hook_2, task_hum_hook_3, 0x1BC };
+
+TaskDesc gTaskDescHumHookMoon = { gTaskNameHumHookMoon, task_hum_hook_moon_0, task_hum_hook_moon_1, task_hum_hook_moon_2, task_hum_hook_moon_3, 0xC };
+
+TaskDesc gTaskDescHumHookBomb = { gTaskNameHumHookBomb, task_hum_hook_bomb_0, task_hum_hook_bomb_1, task_hum_hook_bomb_2, task_hum_hook_bomb_3, 0x54 };
+
+TaskDesc gTaskDescHumAnsem = { gTaskNameHumAnsem, task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
+
+TaskDesc gTaskDescHumHades = { gTaskNameHumHades, task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
+
+TaskDesc gTaskDescHumMahluxia = { gTaskNameHumMahluxia, task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
+
+TaskDesc gTaskDescHumLaxene = { gTaskNameHumLaxene, task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
+
+TaskDesc gTaskDescHumLaxeneKnf = { gTaskNameHumLaxeneKnf, task_hum_laxene_knf_0, task_hum_laxene_knf_1, task_hum_laxene_knf_2, task_hum_laxene_knf_3, 0x44 };
+
+TaskDesc gTaskDescHumAxcel = { gTaskNameHumAxcel, task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
+
+TaskDesc gTaskDescHumAxcelPtc = { gTaskNameHumAxcelPtc, task_hum_axcel_ptc_0, task_hum_axcel_ptc_1, task_hum_axcel_ptc_2, task_hum_axcel_ptc_3, 0x30 };
+
+TaskDesc gTaskDescHumVixen = { gTaskNameHumVixen, task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
+
+TaskDesc gTaskDescHumVixenNdl = { gTaskNameHumVixenNdl, task_hum_vixen_ndl_0, task_hum_vixen_ndl_1, task_hum_vixen_ndl_2, task_hum_vixen_ndl_3, 0x30 };
+
+TaskDesc gTaskDescHumVixenIce = { gTaskNameHumVixenIce, task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
+
+TaskDesc gTaskDescHumVixenFrz = { gTaskNameHumVixenFrz, task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
+
+TaskDesc gTaskDescHumVixenFrg = { gTaskNameHumVixenFrg, task_hum_vixen_frg_0, task_hum_vixen_frg_1, task_hum_vixen_frg_2, task_hum_vixen_frg_3, 0x220 };
+
+TaskDesc gTaskDescHumLexceus = { gTaskNameHumLexceus, task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
+
+TaskDesc gTaskDescHumLexTmh = { gTaskNameHumLexTmh, task_hum_lex_tmh_0, task_hum_lex_tmh_1, task_hum_lex_tmh_2, task_hum_lex_tmh_3, 0x4C };
+
+TaskDesc gTaskDescHumLexTmh0 = { gTaskNameHumLexTmh0, task_hum_lex_tmh0_0, task_hum_lex_tmh0_1, task_hum_lex_tmh0_2, task_hum_lex_tmh0_3, 0x38 };
+
+TaskDesc gTaskDescHumLexRock = { gTaskNameHumLexRock, task_hum_lex_rock_0, task_hum_lex_rock_1, task_hum_lex_rock_2, task_hum_lex_rock_3, 0x2C4 };
+
+TaskDesc gTaskDescHumMahluxiaFlw = { gTaskNameHumMahluxiaFlw, task_hum_mahluxia_flw_0, task_hum_mahluxia_flw_1, task_hum_mahluxia_flw_2, task_hum_mahluxia_flw_3, 0x3C };
+
+TaskDesc gTaskDescHumRiku = { gTaskNameHumRiku, task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
+
+TaskDesc gTaskDescHumLeon = { gTaskNameHumLeon, task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
+
+TaskDesc gTaskDescHumRobe = { gTaskNameHumRobe, task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };

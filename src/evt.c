@@ -1,6 +1,11 @@
+#include "task_descriptors.h"
 #include "macros.h"
 #include "evt.h"
 #include "evt_api.h"
+
+const char gTaskNameEvtObj[] = "task_evt_obj";
+
+const char gTaskNameEvtShadow[] = "task_evt_shadow";
 
 EventState* gUnk_02039DC8;
 
@@ -34,7 +39,7 @@ void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32
     obj->unk_24 = 0x100;
     obj->unk_20 = 0x100;
     obj->unk_28 = 0;
-    TaskCreate(pool, gTaskDescEvtObj, &param);
+    TaskCreate(pool, &gTaskDescEvtObj, &param);
 }
 
 void func_0801CE00(EvtObj* obj, u16 a) {
@@ -82,7 +87,7 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     work->obj->unk_1C = work->palette[3];
     func_0801CE70(work);
     TaskPoolInit(&work->unk_24, 1);
-    TaskCreate(&work->unk_24, gTaskDescEvtShadow, work->obj);
+    TaskCreate(&work->unk_24, &gTaskDescEvtShadow, work->obj);
 }
 
 s32 task_evt_obj_1(EvtObjWork* work) {
@@ -186,3 +191,7 @@ void task_evt_shadow_3(EvtShadowWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+TaskDesc gTaskDescEvtObj = { gTaskNameEvtObj, task_evt_obj_0, task_evt_obj_1, task_evt_obj_2, task_evt_obj_3, 0x38 };
+
+TaskDesc gTaskDescEvtShadow = { gTaskNameEvtShadow, task_evt_shadow_0, task_evt_shadow_1, task_evt_shadow_2, task_evt_shadow_3, 0x14 };

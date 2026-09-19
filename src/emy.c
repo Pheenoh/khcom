@@ -1,8 +1,8 @@
+#include "task_descriptors.h"
 #include "display.h"
 #include "macros.h"
 #include "emy.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const AnimDef gUnk_0813D32C[3] = {
     { gUnk_09EDF834, gUnk_09EDF85C, gUnk_08957290, 0, { 0, 0, 0 } },
@@ -1418,7 +1418,7 @@ u8 task_emy_07_1(Emy07Work* work) {
             spawn.x = act->x;
             spawn.y = act->y;
             spawn.z = act->z - (act->unk_09C << 8);
-            TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize,
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPrize,
                 &spawn);
         }
 
@@ -1848,7 +1848,7 @@ u8 task_emy_16_1(Emy16Work* work) {
     act = &work->base.actor;
 
     if (_0800CBDC(&work->base)) {
-        if (IsTaskActiveNamed(work->unk_188, gTaskDescEmy16B)) {
+        if (IsTaskActiveNamed(work->unk_188, gTaskDescEmy16B.name)) {
             work->base.unk_14C = 0x12;
         } else {
             r = GetRandom();
@@ -1888,7 +1888,7 @@ u8 task_emy_16_1(Emy16Work* work) {
         }
 
         if (w->unk_1A0 != 0) {
-            if (!IsTaskActiveNamed(w->unk_184, gTaskDescEmy16P)) {
+            if (!IsTaskActiveNamed(w->unk_184, gTaskDescEmy16P.name)) {
                 func_0800CB4C(&work->base);
             }
         }
@@ -5334,7 +5334,7 @@ u8 task_emy_83_1(Emy83Work* work) {
             }
         }
 
-        if (AnimIsFinished(&work->base.anim) && !IsTaskActiveNamed(w->unk_184, gTaskDescEmy83B)) {
+        if (AnimIsFinished(&work->base.anim) && !IsTaskActiveNamed(w->unk_184, gTaskDescEmy83B.name)) {
             func_0800CB4C(&work->base);
         }
         break;
@@ -5686,3 +5686,79 @@ void task_emy_test_3(EmyWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+TaskDesc gTaskDescEmy00 = { gTaskNameEmy00, task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
+
+TaskDesc gTaskDescEmy01 = { gTaskNameEmy01, task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
+
+TaskDesc gTaskDescEmy02 = { gTaskNameEmy02, task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
+
+TaskDesc gTaskDescEmy03 = { gTaskNameEmy03, task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
+
+TaskDesc gTaskDescEmy04 = { gTaskNameEmy04, task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
+
+TaskDesc gTaskDescEmy06 = { gTaskNameEmy06, task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
+
+TaskDesc gTaskDescEmy07 = { gTaskNameEmy07, task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
+
+TaskDesc gTaskDescEmy08 = { gTaskNameEmy08, task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
+
+TaskDesc gTaskDescEmy14 = { gTaskNameEmy14, task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
+
+TaskDesc gTaskDescEmy15 = { gTaskNameEmy15, task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
+
+TaskDesc gTaskDescEmy16 = { gTaskNameEmy16, task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
+
+TaskDesc gTaskDescEmy16B = { gTaskNameEmy16B, task_emy_16_b_0, task_emy_16_b_1, task_emy_16_b_2, task_emy_16_b_3, 0xA0 };
+
+TaskDesc gTaskDescEmy16P = { gTaskNameEmy16P, task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
+
+TaskDesc gTaskDescEmy18 = { gTaskNameEmy18, task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
+
+TaskDesc gTaskDescEmy19 = { gTaskNameEmy19, task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
+
+TaskDesc gTaskDescEmy21 = { gTaskNameEmy21, task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
+
+TaskDesc gTaskDescEmy22 = { gTaskNameEmy22, task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
+
+TaskDesc gTaskDescEmy23 = { gTaskNameEmy23, task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
+
+TaskDesc gTaskDescEmy25 = { gTaskNameEmy25, task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
+
+TaskDesc gTaskDescEmy26 = { gTaskNameEmy26, task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
+
+TaskDesc gTaskDescEmy27 = { gTaskNameEmy27, task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
+
+TaskDesc gTaskDescEmy28 = { gTaskNameEmy28, task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
+
+TaskDesc gTaskDescEmy29 = { gTaskNameEmy29, task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
+
+TaskDesc gTaskDescEmy30 = { gTaskNameEmy30, task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
+
+TaskDesc gTaskDescEmy31 = { gTaskNameEmy31, task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
+
+TaskDesc gTaskDescEmy37 = { gTaskNameEmy37, task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
+
+TaskDesc gTaskDescEmy38 = { gTaskNameEmy38, task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
+
+TaskDesc gTaskDescEmy39 = { gTaskNameEmy39, task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
+
+TaskDesc gTaskDescEmy41 = { gTaskNameEmy41, task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
+
+TaskDesc gTaskDescEmy44 = { gTaskNameEmy44, task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
+
+TaskDesc gTaskDescEmy81 = { gTaskNameEmy81, task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
+
+TaskDesc gTaskDescEmy82 = { gTaskNameEmy82, task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
+
+TaskDesc gTaskDescEmy83 = { gTaskNameEmy83, task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
+
+TaskDesc gTaskDescEmy83B = { gTaskNameEmy83B, task_emy_83_b_0, task_emy_83_b_1, task_emy_83_b_2, task_emy_83_b_3, 0x90 };
+
+TaskDesc gTaskDescEmy83S = { gTaskNameEmy83S, task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
+
+TaskDesc gTaskDescEmyTrumpH = { gTaskNameEmyTrumpH, task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
+
+TaskDesc gTaskDescEmyTrumpS = { gTaskNameEmyTrumpS, task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
+
+TaskDesc gTaskDescEmyTest = { gTaskNameEmyTest, task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };

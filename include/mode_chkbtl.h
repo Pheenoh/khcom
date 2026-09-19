@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_CHKBTL_H
 #define GUARD_MODE_CHKBTL_H
@@ -50,39 +51,5 @@ extern const ChkBtlWorld gChkBtlWorlds[];
 extern ChkBtlWork* gChkBtlWork;
 extern Mode gUnk_09EE2704;
 extern const char gWhitePalette[32];
-extern TaskDesc gTaskDescEmy00;
-extern TaskDesc gTaskDescEmy01;
-extern TaskDesc gTaskDescEmy02;
-extern TaskDesc gTaskDescEmy03;
-extern TaskDesc gTaskDescEmy04;
-extern TaskDesc gTaskDescEmy06;
-extern TaskDesc gTaskDescEmy07;
-extern TaskDesc gTaskDescEmy08;
-extern TaskDesc gTaskDescEmy14;
-extern TaskDesc gTaskDescEmy15;
-extern TaskDesc gTaskDescEmy16;
-extern TaskDesc gTaskDescEmy18;
-extern TaskDesc gTaskDescEmy19;
-extern TaskDesc gTaskDescEmy21;
-extern TaskDesc gTaskDescEmy22;
-extern TaskDesc gTaskDescEmy23;
-extern TaskDesc gTaskDescEmy25;
-extern TaskDesc gTaskDescEmy26;
-extern TaskDesc gTaskDescEmy27;
-extern TaskDesc gTaskDescEmy28;
-extern TaskDesc gTaskDescEmy29;
-extern TaskDesc gTaskDescEmy30;
-extern TaskDesc gTaskDescEmy31;
-extern TaskDesc gTaskDescEmy37;
-extern TaskDesc gTaskDescEmy38;
-extern TaskDesc gTaskDescEmy39;
-extern TaskDesc gTaskDescEmy41;
-extern TaskDesc gTaskDescEmy44;
-extern TaskDesc gTaskDescEmy81;
-extern TaskDesc gTaskDescEmy82;
-extern TaskDesc gTaskDescEmy83;
-extern TaskDesc gTaskDescEmyTrumpH;
-extern TaskDesc gTaskDescEmyTrumpS;
-extern TaskDesc gTaskDescEmyTest;
 
 #endif /* GUARD_MODE_CHKBTL_H */

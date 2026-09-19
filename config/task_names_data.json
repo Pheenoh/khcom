@@ -1,7 +1,7 @@
 {
   "version": 1,
   "provenance": {
-    "names": "Each name is referenced by a typed TaskDesc initializer in task_desc_data.c. String extents end at the first ASCII NUL, and all 103 strings are identical in US, JP and EU. Existing independent regional symbol mappings identify their addresses."
+    "names": "Each name is referenced by a typed TaskDesc initializer in its callback translation unit. String extents end at the first ASCII NUL. Independent regional symbol mappings identify their original addresses."
   },
   "regions": {
     "us": {
@@ -131,6 +131,25 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
+        },
+        {
+          "unit": "evt.c",
+          "section": ".rodata",
+          "address": "0x0813B9DC",
+          "size": 32,
+          "sha256": "5c0adedf7820b1ef4105ee07a249b13fbc3686ee646f339fb73621523b110408",
+          "objects": [
+            {
+              "name": "gTaskNameEvtObj",
+              "offset": 0,
+              "size": 13
+            },
+            {
+              "name": "gTaskNameEvtShadow",
+              "offset": 16,
+              "size": 16
+            }
+          ]
         }
       ]
     },
@@ -261,6 +280,25 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
+        },
+        {
+          "unit": "evt.c",
+          "section": ".rodata",
+          "address": "0x0813BA58",
+          "size": 32,
+          "sha256": "5c0adedf7820b1ef4105ee07a249b13fbc3686ee646f339fb73621523b110408",
+          "objects": [
+            {
+              "name": "gTaskNameEvtObj",
+              "offset": 0,
+              "size": 13
+            },
+            {
+              "name": "gTaskNameEvtShadow",
+              "offset": 16,
+              "size": 16
+            }
+          ]
         }
       ]
     },
@@ -391,6 +429,25 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
+        },
+        {
+          "unit": "evt.c",
+          "section": ".rodata",
+          "address": "0x08889EB0",
+          "size": 32,
+          "sha256": "5c0adedf7820b1ef4105ee07a249b13fbc3686ee646f339fb73621523b110408",
+          "objects": [
+            {
+              "name": "gTaskNameEvtObj",
+              "offset": 0,
+              "size": 13
+            },
+            {
+              "name": "gTaskNameEvtShadow",
+              "offset": 16,
+              "size": 16
+            }
+          ]
         }
       ]
     }

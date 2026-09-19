@@ -1,7 +1,7 @@
+#include "task_descriptors.h"
 #include "map_api.h"
 #include "m4a_song.h"
 #include "roomcreate.h"
-#include "task_names.h"
 
 const char gTaskNameRoomcreate[] = "task_roomcreate";
 
@@ -184,3 +184,5 @@ void task_roomcreate_3(RoomCreateWork* work) {
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x100);
     TaskPoolDestroy(&work->tasks);
 }
+
+TaskDesc gTaskDescRoomcreate = { gTaskNameRoomcreate, task_roomcreate_0, task_roomcreate_1, task_roomcreate_2, task_roomcreate_3, 0x44 };

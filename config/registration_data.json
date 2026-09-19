@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "registrations": "TaskCreate consumes canonical 24-byte TaskDesc records; ModeRequest consumes canonical 16-byte Mode records. Callback tuples and ASCII names identify regional registrations. EU Monsgage callbacks are explicitly exposed within existing opaque native code. Message face/wait tasks form a real three-record array. Only absent EU link-exchange tasks omit records; work-size and callback differences use field-level guards.",
-    "names": "Each bounded ASCII name is directly referenced by one or more verified registration records. Shared name addresses have one C owner. String bounds end at their first NUL."
+    "names": "Each bounded ASCII name is directly referenced by one or more verified registration records. Shared name addresses have one C owner. String bounds end at their first NUL.",
+    "task_descriptor_owners": "The 108 individual task descriptors have independent address-taking consumers without cross-record indexing. Callback ownership, name ownership, and text, rodata and descriptor group ordering agree across US, JP and EU. Each callback translation unit emits one ordinary data section in the original order."
   },
   "regions": {
     "us": {
@@ -7418,6 +7419,681 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
+        },
+        {
+          "unit": "evt.c",
+          "section": ".data",
+          "address": "0x09EDADC8",
+          "size": 48,
+          "sha256": "15db7c06b5310f7e6111c94d9f0933547597167d1495b38fd28135e1ae022980",
+          "objects": [
+            {
+              "name": "gTaskDescEvtObj",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEvtShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "acgtrans.c",
+          "section": ".data",
+          "address": "0x09EDADF8",
+          "size": 24,
+          "sha256": "1b7a09bce7f9b83ba5f05894a7a794fc6e5fcb22cfc199446fd4ff2c9a57abe4",
+          "objects": [
+            {
+              "name": "gTaskDescAcgtrans",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl.c",
+          "section": ".data",
+          "address": "0x09EDAE10",
+          "size": 96,
+          "sha256": "247f3487aa96aaacbc435ef6e5b33a8fdc666ef4a04c747c64fadda27daada01",
+          "objects": [
+            {
+              "name": "gTaskDescBtlLockon",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlArea",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlSora",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRiku",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl_map.c",
+          "section": ".data",
+          "address": "0x09EDAE70",
+          "size": 24,
+          "sha256": "6daa0dacf3b3eaca4a9d578702318ed867e6628c9a5010aca25d559e1f45598c",
+          "objects": [
+            {
+              "name": "gTaskDescBtlMap",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl2.c",
+          "section": ".data",
+          "address": "0x09EDAE88",
+          "size": 216,
+          "sha256": "eb2394fdcf44ff7dc89581cb67db3794d502de49829d6dda79305760ec34e33c",
+          "objects": [
+            {
+              "name": "gTaskDescBtlShadow",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpply",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpenm",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPause",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPop",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlEscape",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPrize",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPremire",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlStart",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "fld.c",
+          "section": ".data",
+          "address": "0x09EDAF60",
+          "size": 72,
+          "sha256": "3703624275860c89d284936bc7444e694edef729bcf1760762ea4eb3834624d4",
+          "objects": [
+            {
+              "name": "gTaskDescFldSora",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldRiku",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldShadow",
+              "offset": 48,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "emy.c",
+          "section": ".data",
+          "address": "0x09EDAFA8",
+          "size": 912,
+          "sha256": "88b10ade9adac3002334be0203144b220769bd33b88c6ba2fc8b16c200d4608b",
+          "objects": [
+            {
+              "name": "gTaskDescEmy00",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy01",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy02",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy03",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy04",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy06",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy07",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy08",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy14",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy15",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16B",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16P",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy18",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy19",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy21",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy22",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy23",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy25",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy26",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy27",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy28",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy29",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy30",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy31",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy37",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy38",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy39",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy41",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy44",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy81",
+              "offset": 720,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy82",
+              "offset": 744,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83",
+              "offset": 768,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83B",
+              "offset": 792,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83S",
+              "offset": 816,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpH",
+              "offset": 840,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpS",
+              "offset": 864,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTest",
+              "offset": 888,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos.c",
+          "section": ".data",
+          "address": "0x09EDB338",
+          "size": 48,
+          "sha256": "ccb0a14450c76fbf412b32fbe2c609e0f36f6251e85781090d6014b836c074bc",
+          "objects": [
+            {
+              "name": "gTaskDescBosMap",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "roomcreate.c",
+          "section": ".data",
+          "address": "0x09EDB368",
+          "size": 24,
+          "sha256": "2eb0a8f7a0cc5872acbb37880134a4e4a2c9806e9556c0da7625eb893763f527",
+          "objects": [
+            {
+              "name": "gTaskDescRoomcreate",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "romcri.c",
+          "section": ".data",
+          "address": "0x09EDB380",
+          "size": 48,
+          "sha256": "df13b17c80ef55a020551a01d61b65d5ca9b979a76d2060c83ddafbab7959991",
+          "objects": [
+            {
+              "name": "gTaskDescRomcriEff",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescRomcriEff2",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl3.c",
+          "section": ".data",
+          "address": "0x09EDB3B0",
+          "size": 96,
+          "sha256": "e53655adcb82f0d6f1292d410df4dd891c75cc69809d5d83e10c72606708fd01",
+          "objects": [
+            {
+              "name": "gTaskDescBtlForm",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBorn",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRaid",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBadstatus",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "smn.c",
+          "section": ".data",
+          "address": "0x09EDB410",
+          "size": 216,
+          "sha256": "d7a65d3439cfc130eb389ccdd446ea69cad55133878de5787ba2c402dbb93648",
+          "objects": [
+            {
+              "name": "gTaskDescSmnCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnBambi",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTink",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTinkeff",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnSimba",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnMushu",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnDumbo",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnGenie",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnKing",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "frd.c",
+          "section": ".data",
+          "address": "0x09EDB4E8",
+          "size": 168,
+          "sha256": "a97f72ec707371bbde16af5b1af13f37a6166b763316559b7f19c5d4a638db13",
+          "objects": [
+            {
+              "name": "gTaskDescFrdDonald",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdGoofy",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAriel",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdJack",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdPan",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAladdin",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdBeast",
+              "offset": 144,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "pc.c",
+          "section": ".data",
+          "address": "0x09EDB590",
+          "size": 24,
+          "sha256": "a6e7cb8a2e980179c6ac73102116c2c791228c4bda9e2ea174c66551ec441419",
+          "objects": [
+            {
+              "name": "gTaskDescPcAcddmg",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "hum.c",
+          "section": ".data",
+          "address": "0x09EDB5A8",
+          "size": 576,
+          "sha256": "0e174e73b5f17356e0df1e1db0685ed93f43d3f31f19a836f5e39cb70e91ab10",
+          "objects": [
+            {
+              "name": "gTaskDescHumCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHook",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookMoon",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookBomb",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAnsem",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHades",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxia",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxene",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxeneKnf",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcel",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcelPtc",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixen",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenNdl",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenIce",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrz",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrg",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexceus",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh0",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexRock",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxiaFlw",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRiku",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLeon",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRobe",
+              "offset": 552,
+              "size": 24
+            }
+          ]
         }
       ]
     },
@@ -14834,6 +15510,681 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
+        },
+        {
+          "unit": "evt.c",
+          "section": ".data",
+          "address": "0x09EB30B4",
+          "size": 48,
+          "sha256": "c076fbc619466cc81ccf6ee79fbcbe0b696b735572cc9791e0b47f1411304dd1",
+          "objects": [
+            {
+              "name": "gTaskDescEvtObj",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEvtShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "acgtrans.c",
+          "section": ".data",
+          "address": "0x09EB30E4",
+          "size": 24,
+          "sha256": "971759197547ec2f16ae16d5671fa97329901ac134b551dea39874917fc29b0b",
+          "objects": [
+            {
+              "name": "gTaskDescAcgtrans",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl.c",
+          "section": ".data",
+          "address": "0x09EB30FC",
+          "size": 96,
+          "sha256": "7e369508164f68f567ce90cbb84ad6d79a6b45d755a9f3628eab395e3ef8b6f8",
+          "objects": [
+            {
+              "name": "gTaskDescBtlLockon",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlArea",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlSora",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRiku",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl_map.c",
+          "section": ".data",
+          "address": "0x09EB315C",
+          "size": 24,
+          "sha256": "b39f1922cece52457e11a696449f74f5103dff76f5a2e969ad4cbb1b78d10788",
+          "objects": [
+            {
+              "name": "gTaskDescBtlMap",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl2.c",
+          "section": ".data",
+          "address": "0x09EB3174",
+          "size": 216,
+          "sha256": "0d513a802b948ae91143d6558a319b8f20567189820698924e9bcdec8b443129",
+          "objects": [
+            {
+              "name": "gTaskDescBtlShadow",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpply",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpenm",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPause",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPop",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlEscape",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPrize",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPremire",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlStart",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "fld.c",
+          "section": ".data",
+          "address": "0x09EB324C",
+          "size": 72,
+          "sha256": "bbe460554a12ace0a93687a4616f0cac73e2c08c60804c868fee596a65a1f1df",
+          "objects": [
+            {
+              "name": "gTaskDescFldSora",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldRiku",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldShadow",
+              "offset": 48,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "emy.c",
+          "section": ".data",
+          "address": "0x09EB3294",
+          "size": 912,
+          "sha256": "b5d4f0b5edc39db12059306db573c1b3842098ba6cce8f345fdb0e3ad5dd2fb2",
+          "objects": [
+            {
+              "name": "gTaskDescEmy00",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy01",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy02",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy03",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy04",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy06",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy07",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy08",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy14",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy15",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16B",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16P",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy18",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy19",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy21",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy22",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy23",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy25",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy26",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy27",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy28",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy29",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy30",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy31",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy37",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy38",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy39",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy41",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy44",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy81",
+              "offset": 720,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy82",
+              "offset": 744,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83",
+              "offset": 768,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83B",
+              "offset": 792,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83S",
+              "offset": 816,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpH",
+              "offset": 840,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpS",
+              "offset": 864,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTest",
+              "offset": 888,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos.c",
+          "section": ".data",
+          "address": "0x09EB3624",
+          "size": 48,
+          "sha256": "a45efa07cd932246883a8bcb5d36bb657dc50c048b30c2bbfe17bf943e5afdad",
+          "objects": [
+            {
+              "name": "gTaskDescBosMap",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "roomcreate.c",
+          "section": ".data",
+          "address": "0x09EB3654",
+          "size": 24,
+          "sha256": "639b7088a2b72bea6c9e160889a333b6806c962b3593e95538eea740a77f3355",
+          "objects": [
+            {
+              "name": "gTaskDescRoomcreate",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "romcri.c",
+          "section": ".data",
+          "address": "0x09EB366C",
+          "size": 48,
+          "sha256": "bfe54fbd4d5cf8607b4c9ec0aed1ab0b92e704f27c560629fdbb3fdc21038d9f",
+          "objects": [
+            {
+              "name": "gTaskDescRomcriEff",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescRomcriEff2",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl3.c",
+          "section": ".data",
+          "address": "0x09EB369C",
+          "size": 96,
+          "sha256": "86f532cdf6c2d739f7c726d0a416f94a72b56986895e9eb8ac46b49af30d929c",
+          "objects": [
+            {
+              "name": "gTaskDescBtlForm",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBorn",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRaid",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBadstatus",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "smn.c",
+          "section": ".data",
+          "address": "0x09EB36FC",
+          "size": 216,
+          "sha256": "04050a12d4003ada6d948f32c6a89e39a2b62fdcef31f8058eba028ccae7fd15",
+          "objects": [
+            {
+              "name": "gTaskDescSmnCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnBambi",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTink",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTinkeff",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnSimba",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnMushu",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnDumbo",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnGenie",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnKing",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "frd.c",
+          "section": ".data",
+          "address": "0x09EB37D4",
+          "size": 168,
+          "sha256": "21c359a098433333fa2afc4f801733b3eb956adae01d1a213b7adeedba156f23",
+          "objects": [
+            {
+              "name": "gTaskDescFrdDonald",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdGoofy",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAriel",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdJack",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdPan",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAladdin",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdBeast",
+              "offset": 144,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "pc.c",
+          "section": ".data",
+          "address": "0x09EB387C",
+          "size": 24,
+          "sha256": "3c4da78399ce2bf41049d88d96cf56a45d0e189db5953057f6304ff5543fbbac",
+          "objects": [
+            {
+              "name": "gTaskDescPcAcddmg",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "hum.c",
+          "section": ".data",
+          "address": "0x09EB3894",
+          "size": 576,
+          "sha256": "3c8545f2177625888c279e03eac794aa529f480bcdc0503f16a02844fc3f3d43",
+          "objects": [
+            {
+              "name": "gTaskDescHumCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHook",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookMoon",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookBomb",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAnsem",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHades",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxia",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxene",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxeneKnf",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcel",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcelPtc",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixen",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenNdl",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenIce",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrz",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrg",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexceus",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh0",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexRock",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxiaFlw",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRiku",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLeon",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRobe",
+              "offset": 552,
+              "size": 24
+            }
+          ]
         }
       ]
     },
@@ -22155,6 +23506,681 @@
             {
               "name": "gTaskDescMonsgage",
               "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "evt.c",
+          "section": ".data",
+          "address": "0x09F5867C",
+          "size": 48,
+          "sha256": "1296086726849e57fa2b7dba79fa20abab18b62ddf1d40380a7e2c8590f4daf0",
+          "objects": [
+            {
+              "name": "gTaskDescEvtObj",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEvtShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "acgtrans.c",
+          "section": ".data",
+          "address": "0x09F586AC",
+          "size": 24,
+          "sha256": "7349b516d6e811f7ae26c1f5dcb01d2e76decb015e0e1b88ec8da86607805cf2",
+          "objects": [
+            {
+              "name": "gTaskDescAcgtrans",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl.c",
+          "section": ".data",
+          "address": "0x09F586C4",
+          "size": 96,
+          "sha256": "eec3d8740b66d34188d685a7d7bb454cd7785efa4be56dd573a4b585a1e7416a",
+          "objects": [
+            {
+              "name": "gTaskDescBtlLockon",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlArea",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlSora",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRiku",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl_map.c",
+          "section": ".data",
+          "address": "0x09F58724",
+          "size": 24,
+          "sha256": "80d67f8a6822f464f432d363acb73e3fa6704e772fd3517f2dec26de1cefdf68",
+          "objects": [
+            {
+              "name": "gTaskDescBtlMap",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl2.c",
+          "section": ".data",
+          "address": "0x09F5873C",
+          "size": 216,
+          "sha256": "d2c0f390bac8a93523a7e89a07af7c0d149f02965c654ab143a53e7aaf8760f2",
+          "objects": [
+            {
+              "name": "gTaskDescBtlShadow",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpply",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlHpenm",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPause",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPop",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlEscape",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPrize",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlPremire",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlStart",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "fld.c",
+          "section": ".data",
+          "address": "0x09F58814",
+          "size": 72,
+          "sha256": "45d99934f0313163fb57e9251c10d92165ee98e4d6baed25f66d889218d3f0f0",
+          "objects": [
+            {
+              "name": "gTaskDescFldSora",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldRiku",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFldShadow",
+              "offset": 48,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "emy.c",
+          "section": ".data",
+          "address": "0x09F5885C",
+          "size": 912,
+          "sha256": "68a1c308eaedeed3cee5e18337df1c286b57b2a9ee212cc75b0304d8ff6826b5",
+          "objects": [
+            {
+              "name": "gTaskDescEmy00",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy01",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy02",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy03",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy04",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy06",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy07",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy08",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy14",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy15",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16B",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy16P",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy18",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy19",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy21",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy22",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy23",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy25",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy26",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy27",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy28",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy29",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy30",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy31",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy37",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy38",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy39",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy41",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy44",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy81",
+              "offset": 720,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy82",
+              "offset": 744,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83",
+              "offset": 768,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83B",
+              "offset": 792,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmy83S",
+              "offset": 816,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpH",
+              "offset": 840,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTrumpS",
+              "offset": 864,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEmyTest",
+              "offset": 888,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos.c",
+          "section": ".data",
+          "address": "0x09F58BEC",
+          "size": 48,
+          "sha256": "df821907168a2f832f683ee2af372c1adcb8e032ed8b67cb3733434f2cfa109c",
+          "objects": [
+            {
+              "name": "gTaskDescBosMap",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosShadow",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "roomcreate.c",
+          "section": ".data",
+          "address": "0x09F58C1C",
+          "size": 24,
+          "sha256": "176494f1ed0cf1c1802fa935c21d91fc4b0620f0c9eae84c2951fc8fd8d8fc3c",
+          "objects": [
+            {
+              "name": "gTaskDescRoomcreate",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "romcri.c",
+          "section": ".data",
+          "address": "0x09F58C34",
+          "size": 48,
+          "sha256": "eb3009972dd1246e5e92c0531585030d516a321e94ba8448484c6686e7eb7bae",
+          "objects": [
+            {
+              "name": "gTaskDescRomcriEff",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescRomcriEff2",
+              "offset": 24,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "btl3.c",
+          "section": ".data",
+          "address": "0x09F58C64",
+          "size": 96,
+          "sha256": "1904b48de2feb45727170cdf59c33d2cb8e8a9052be0d3d84a70b77e6f1f2920",
+          "objects": [
+            {
+              "name": "gTaskDescBtlForm",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBorn",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlRaid",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBtlBadstatus",
+              "offset": 72,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "smn.c",
+          "section": ".data",
+          "address": "0x09F58CC4",
+          "size": 216,
+          "sha256": "161a987fa562c5a192d44c2013daa9e0df186152804a9d5ad52ab5195e630beb",
+          "objects": [
+            {
+              "name": "gTaskDescSmnCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnBambi",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTink",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnTinkeff",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnSimba",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnMushu",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnDumbo",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnGenie",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescSmnKing",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "frd.c",
+          "section": ".data",
+          "address": "0x09F58D9C",
+          "size": 168,
+          "sha256": "33184ec4b6d1c6dacb83736f5b7fbcfaaaff475def209b393c5d2f431c779588",
+          "objects": [
+            {
+              "name": "gTaskDescFrdDonald",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdGoofy",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAriel",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdJack",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdPan",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdAladdin",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescFrdBeast",
+              "offset": 144,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "pc.c",
+          "section": ".data",
+          "address": "0x09F58E44",
+          "size": 24,
+          "sha256": "7270c7763456b9aa59af687ffe49349c324265b9ec85e211829f194d08b80502",
+          "objects": [
+            {
+              "name": "gTaskDescPcAcddmg",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "hum.c",
+          "section": ".data",
+          "address": "0x09F58E5C",
+          "size": 576,
+          "sha256": "c8e683b5ac0817c72beb18a52af741d9a25e06045f614d8d6ae9e400d9940251",
+          "objects": [
+            {
+              "name": "gTaskDescHumCloud",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHook",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookMoon",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHookBomb",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAnsem",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumHades",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxia",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxene",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLaxeneKnf",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcel",
+              "offset": 216,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumAxcelPtc",
+              "offset": 240,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixen",
+              "offset": 264,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenNdl",
+              "offset": 288,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenIce",
+              "offset": 312,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrz",
+              "offset": 336,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumVixenFrg",
+              "offset": 360,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexceus",
+              "offset": 384,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexTmh0",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLexRock",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumMahluxiaFlw",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRiku",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumLeon",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescHumRobe",
+              "offset": 552,
               "size": 24
             }
           ]

@@ -1535,6 +1535,3 @@ EvtObjResTable gUnk_0813B09C[94] = {
     { { 72, { 0 }, gUnk_09617F78 }, { 0 } },
     { { 4, { 0 }, gUnk_08F69BA4 }, { 0 } },
 };
-
-const char gTaskNameEvtObj[] = "task_evt_obj";
-const char gTaskNameEvtShadow[] = "task_evt_shadow";

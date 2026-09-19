@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_BATTLE_H
@@ -29,24 +30,6 @@
 #include "save_api.h"
 #include "battle_localized_assets.h"
 #endif
-extern TaskDesc gTaskDescBtlSora;
-extern TaskDesc gTaskDescBtlRiku;
-extern TaskDesc gTaskDescBtlMap;
-extern TaskDesc gTaskDescBtlPause;
-extern TaskDesc gTaskDescBtlForm;
-extern TaskDesc gTaskDescPcAcddmg;
-extern TaskDesc gTaskDescHumCloud;
-extern TaskDesc gTaskDescHumHook;
-extern TaskDesc gTaskDescHumAnsem;
-extern TaskDesc gTaskDescHumHades;
-extern TaskDesc gTaskDescHumMahluxia;
-extern TaskDesc gTaskDescHumLaxene;
-extern TaskDesc gTaskDescHumAxcel;
-extern TaskDesc gTaskDescHumVixen;
-extern TaskDesc gTaskDescHumLexceus;
-extern TaskDesc gTaskDescHumRiku;
-extern TaskDesc gTaskDescHumLeon;
-extern TaskDesc gTaskDescHumRobe;
 
 void _08019CB4(void);
 

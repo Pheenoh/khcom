@@ -83,7 +83,7 @@ void func_08019190(BtlObj* p, s16 b) {
             return;
         }
         a.unk_12 = b;
-        TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPop, &a);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPop, &a);
         return;
     }
     a.unk_12 = b;
@@ -92,10 +92,10 @@ void func_08019190(BtlObj* p, s16 b) {
         if (p->unk_034 & 0x200000000000) {
             return;
         }
-        TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPop, &a);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPop, &a);
         return;
     }
-    TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPop, &a);
+    TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPop, &a);
 }
 
 void BtlWorkInit(void) {
@@ -1556,7 +1556,7 @@ u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt) {
     p->unk_12 = b;
 
     for (i = 0; i < lim; i++) {
-        TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize, p);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPrize, p);
 
         if (++(*cnt) > 2) {
             return 1;
@@ -1573,7 +1573,7 @@ void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
     p->unk_12 = b;
 
     for (i = 0; i < lim; i++) {
-        TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize, p);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPrize, p);
     }
     *n = *n % c;
 }
@@ -1743,7 +1743,7 @@ void func_0801BBF0(BtlObj* p) {
     a.y = p->y;
     a.z = p->z;
     a.unk_14 = 0;
-    TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPremire, &a);
+    TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlPremire, &a);
 }
 
 u8 func_0801BCA8(s32 a) {

@@ -3193,7 +3193,7 @@ u8 func_0810E99C(BosLstWork* work) {
     s.unk_04 = work->unk_048 + work->unk_054;
     s.unk_08 = (work->unk_04C + work->unk_058) - ((obj->unk_9C >> 1) << 8);
     s.unk_12 = 9;
-    TaskCreate(&gBtlWork->taskPools[1], gTaskDescBtlPop, &s);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlPop, &s);
     return 1;
 }
 

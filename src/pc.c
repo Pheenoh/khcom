@@ -1,6 +1,6 @@
+#include "task_descriptors.h"
 #include "pc.h"
 #include "pc_api.h"
-#include "task_names.h"
 
 const char gTaskNamePcAcddmg[] = "task_pc_acddmg";
 
@@ -102,3 +102,5 @@ s32 func_08049F50(PcCharaWork* work) {
     }
     return 0;
 }
+
+TaskDesc gTaskDescPcAcddmg = { gTaskNamePcAcddmg, task_pc_acddmg_0, task_pc_acddmg_1, 0, 0, 0xC };

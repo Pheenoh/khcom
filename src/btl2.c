@@ -1,10 +1,10 @@
+#include "task_descriptors.h"
 #include "battle_localized_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "display.h"
 #include "m4a_song.h"
 #include "btl2.h"
-#include "task_names.h"
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
@@ -1961,3 +1961,21 @@ const char gTaskNameBtlEscape[] = "task_btl_escape";
 const char gTaskNameBtlPrize[] = "task_btl_prize";
 const char gTaskNameBtlPremire[] = "task_btl_premire";
 const char gTaskNameBtlStart[] = "task_btl_start";
+
+TaskDesc gTaskDescBtlShadow = { gTaskNameBtlShadow, task_btl_shadow_0, task_btl_shadow_1, task_btl_shadow_2, task_btl_shadow_3, 0x10 };
+
+TaskDesc gTaskDescBtlHpply = { gTaskNameBtlHpply, task_btl_hpply_0, task_btl_hpply_1, task_btl_hpply_2, task_btl_hpply_3, 0x6C };
+
+TaskDesc gTaskDescBtlHpenm = { gTaskNameBtlHpenm, task_btl_hpenm_0, task_btl_hpenm_1, task_btl_hpenm_2, task_btl_hpenm_3, 0x24 };
+
+TaskDesc gTaskDescBtlPause = { gTaskNameBtlPause, task_btl_pause_0, task_btl_pause_1, task_btl_pause_2, task_btl_pause_3, 0x28 };
+
+TaskDesc gTaskDescBtlPop = { gTaskNameBtlPop, task_btl_pop_0, task_btl_pop_1, task_btl_pop_2, task_btl_pop_3, 0x34 };
+
+TaskDesc gTaskDescBtlEscape = { gTaskNameBtlEscape, task_btl_escape_0, task_btl_escape_1, task_btl_escape_2, task_btl_escape_3, 0x24 };
+
+TaskDesc gTaskDescBtlPrize = { gTaskNameBtlPrize, task_btl_prize_0, task_btl_prize_1, task_btl_prize_2, task_btl_prize_3, 0x4C };
+
+TaskDesc gTaskDescBtlPremire = { gTaskNameBtlPremire, task_btl_premire_0, task_btl_premire_1, task_btl_premire_2, task_btl_premire_3, 0x60 };
+
+TaskDesc gTaskDescBtlStart = { gTaskNameBtlStart, task_btl_start_0, task_btl_start_1, 0, 0, 0x4 };

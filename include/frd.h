@@ -1,6 +1,7 @@
 #ifndef GUARD_FRD_H
 #define GUARD_FRD_H
 
+#include "task_descriptors.h"
 #include "registration_data.h"
 
 #include "frd_tasks.h"
@@ -168,7 +169,6 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
-extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_08F68384[];
 extern u8 gUnk_09617DF8[];

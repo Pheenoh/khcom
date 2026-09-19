@@ -1,6 +1,7 @@
 #ifndef GUARD_ACGTRANS_H
 #define GUARD_ACGTRANS_H
 
+#include "task_descriptors.h"
 #include "acgtrans_tasks.h"
 
 #include "display.h"
@@ -25,7 +26,6 @@ typedef struct AcgTransConfig {
     u32 bg;
 } AcgTransConfig;
 
-extern u8 gTaskDescAcgtrans[];
 
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 

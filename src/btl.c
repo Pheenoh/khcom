@@ -1,10 +1,10 @@
+#include "task_descriptors.h"
 #include "eventselect_api.h"
 #include "engine_math.h"
 #include "display.h"
 #include "obj_api.h"
 #include "btl.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 #include "registration_data.h"
 #include "btl_effect.h"
 #include "btl_api.h"
@@ -10911,3 +10911,11 @@ void task_btl_riku_3(BtlRikuWork* work) {
     ReleaseObjTiles(work->tiles);
     TaskPoolDestroy(&work->tasks);
 }
+
+TaskDesc gTaskDescBtlLockon = { gTaskNameBtlLockon, task_btl_lockon_0, task_btl_lockon_1, task_btl_lockon_2, task_btl_lockon_3, 0x28 };
+
+TaskDesc gTaskDescBtlArea = { gTaskNameBtlArea, task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
+
+TaskDesc gTaskDescBtlSora = { gTaskNameBtlSora, task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
+
+TaskDesc gTaskDescBtlRiku = { gTaskNameBtlRiku, task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };

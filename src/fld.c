@@ -1,9 +1,9 @@
+#include "task_descriptors.h"
 #include "map_api.h"
 #include "macros.h"
 #include "fld.h"
 #include "gba/keys.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const AnimDef gUnk_0813C89C[15][5] = {
     { { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, { 0, 0, 0 } }, { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, { 0, 0, 0 } }, { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, { 0, 0, 0 } }, { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, { 0, 0, 0 } }, { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, { 0, 0, 0 } } },
@@ -3502,3 +3502,9 @@ void task_fld_shadow_3(FldShadowWork* work) {
 }
 
 ALIGN_ZERO(2);
+
+TaskDesc gTaskDescFldSora = { gTaskNameFldSora, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
+
+TaskDesc gTaskDescFldRiku = { gTaskNameFldRiku, task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
+
+TaskDesc gTaskDescFldShadow = { gTaskNameFldShadow, task_fld_shadow_0, task_fld_shadow_1, task_fld_shadow_2, task_fld_shadow_3, 0x2C };

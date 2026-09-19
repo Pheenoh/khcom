@@ -1,5 +1,5 @@
+#include "task_descriptors.h"
 #include "btl.h"
-#include "task_names.h"
 
 u8 gUnk_0203492C;
 u16 gUnk_0203492E;
@@ -509,3 +509,5 @@ s32 task_btl_map_1(BtlMapWork* work) {
                   gBtlWork->unk_004 + 0x2800);
     return 1;
 }
+
+TaskDesc gTaskDescBtlMap = { gTaskNameBtlMap, task_btl_map_0, task_btl_map_1, 0, 0, 0x10 };

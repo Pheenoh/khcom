@@ -2,7 +2,6 @@
 #define GUARD_BTL_TASKS_H
 
 #include "types.h"
-#include "task_names.h"
 
 struct BtlAreaWork;
 struct BtlLockonWork;

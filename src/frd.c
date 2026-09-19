@@ -1,8 +1,8 @@
+#include "task_descriptors.h"
 #include "system_state.h"
 #include "display.h"
 #include "frd.h"
 #include "task_animation_assets.h"
-#include "task_names.h"
 
 const AnimDef gUnk_0813EB8C[6] = {
     { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 0, { 0, 0, 0 } },
@@ -1665,7 +1665,7 @@ void func_08048980(FrdPanWork* work) {
             break;
         }
 
-        TaskCreate(&work->tasks, gTaskDescSmnTinkeff, &sub);
+        TaskCreate(&work->tasks, &gTaskDescSmnTinkeff, &sub);
     }
 }
 
@@ -2351,3 +2351,17 @@ void task_frd_beast_3(FrdBeastWork* work) {
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }
+
+TaskDesc gTaskDescFrdDonald = { gTaskNameFrdDonald, task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
+
+TaskDesc gTaskDescFrdGoofy = { gTaskNameFrdGoofy, task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
+
+TaskDesc gTaskDescFrdAriel = { gTaskNameFrdAriel, task_frd_ariel_0, task_frd_ariel_1, task_frd_ariel_2, task_frd_ariel_3, 0x164 };
+
+TaskDesc gTaskDescFrdJack = { gTaskNameFrdJack, task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
+
+TaskDesc gTaskDescFrdPan = { gTaskNameFrdPan, task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
+
+TaskDesc gTaskDescFrdAladdin = { gTaskNameFrdAladdin, task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
+
+TaskDesc gTaskDescFrdBeast = { gTaskNameFrdBeast, task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };

@@ -1,6 +1,6 @@
+#include "task_descriptors.h"
 #include "pallet.h"
 #include "romcri.h"
-#include "task_names.h"
 
 const char gTaskNameRomcriEff[] = "task_romcri_eff";
 
@@ -276,3 +276,7 @@ u16 func_0803FDC8(const BtlFormEntry* list) {
 
     return total;
 }
+
+TaskDesc gTaskDescRomcriEff = { gTaskNameRomcriEff, task_romcri_eff_0, task_romcri_eff_1, 0, task_romcri_eff_3, 0x4 };
+
+TaskDesc gTaskDescRomcriEff2 = { gTaskNameRomcriEff2, task_romcri_eff2_0, task_romcri_eff2_1, 0, task_romcri_eff2_3, 0x4 };

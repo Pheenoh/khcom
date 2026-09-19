@@ -1,3 +1,4 @@
+#include "task_descriptors.h"
 #include "registration_data.h"
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
@@ -600,7 +601,6 @@ typedef struct LstSpawn5 {
 
 void func_0810F064(BosLstWork* work, LstSub* p);
 
-extern u8 gTaskDescBtlPop[];
 u8 func_0810E99C(BosLstWork* work);
 
 #endif /* GUARD_BOS6_H */
