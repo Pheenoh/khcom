@@ -6,11 +6,6 @@
 #ifdef VERSION_EU
 extern u8* gUnkEu_09F800A4[5];
 extern u8* gUnkEu_09F800B8[5];
-extern void* gUnkEu_09F80124[5];
-extern void* gUnkEu_09F80138[5];
-extern void** gUnkEu_09F801D4[5];
-extern void** gUnkEu_09F80200[5];
-extern void** gUnkEu_09F80214[5];
 extern void* gUnkEu_09F80288[5];
 extern void** gUnkEu_09F8029C[5];
 extern void* gUnkEu_09F802C8[5];

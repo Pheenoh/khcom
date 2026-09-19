@@ -4222,14 +4222,39 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoom",
+          "section": ".data",
           "address": "0x09EF4DC0",
-          "size": 24,
-          "sha256": "c5757b227c32d330fcd0ead9f56ebcfe1c3a7ca527953ced1310d4e94c3b9ddb",
+          "size": 144,
+          "sha256": "a56c775f668ff3155a045c569804495d9da3c985f99f3aa7af7b0ff55dca8fa5",
           "objects": [
             {
               "name": "gTaskDescAllmapRoom",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapCursor",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapRoomname",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapBar",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapDoorinfo",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapPusha",
+              "offset": 120,
               "size": 24
             }
           ]
@@ -4252,20 +4277,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapCursor",
-          "address": "0x09EF4DD8",
-          "size": 24,
-          "sha256": "6db0b8e7f67f737a6fd59fc4a3fb53903a9ab6852bc0d06f570719cb041ceb34",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapCursor",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
           "address": "0x096FDBE8",
           "size": 21,
@@ -4279,20 +4290,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoomname",
-          "address": "0x09EF4DF0",
-          "size": 24,
-          "sha256": "27f045ca4f667a8e9cbf791ce66a3cad6302c39722b7249ccf5d36c2489d0e5a",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapRoomname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "allmap.c",
@@ -4312,20 +4309,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapBar",
-          "address": "0x09EF4E08",
-          "size": 24,
-          "sha256": "db982a1fb3054b104b9738f07c31b9d91701524b9fb7c98f840f23658765e3a1",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapBar",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapDoorinfo",
           "address": "0x096FDC70",
           "size": 21,
@@ -4335,20 +4318,6 @@
               "name": "gTaskNameAllmapDoorinfo",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapDoorinfo",
-          "address": "0x09EF4E20",
-          "size": 24,
-          "sha256": "3c42e7e83da8935fb41674d8a2caffb02bc046f885ab0af867db22ad0d7a297b",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapDoorinfo",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4367,20 +4336,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapPusha",
-          "address": "0x09EF4E38",
-          "size": 24,
-          "sha256": "0cd46cb7aee487ea7640864b749a7bec427dddd1595642c0ba69f9baf16e0d43",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapPusha",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_title.c",
@@ -4430,14 +4385,29 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLogo",
+          "section": ".data",
           "address": "0x09EF4E60",
-          "size": 24,
-          "sha256": "c61614cec29ba4bcc883065feedefe1c287e3eb5ce54e847f1a076df3d1cf38c",
+          "size": 96,
+          "sha256": "80372c6488ec927cb492fda3968a3b1c6d79d3532bf728bd4d41c5ebce3a37ec",
           "objects": [
             {
               "name": "gTaskDescTitleLogo",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleObj",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleMenu",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleLumichange",
+              "offset": 72,
               "size": 24
             }
           ]
@@ -4458,20 +4428,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleObj",
-          "address": "0x09EF4E78",
-          "size": 24,
-          "sha256": "22222ef28393000fadd1da195ac6ff1a3e09244caad4e274d718bc0f9c5e2c61",
-          "objects": [
-            {
-              "name": "gTaskDescTitleObj",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleMenu",
           "address": "0x096FDCD8",
           "size": 16,
@@ -4486,20 +4442,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleMenu",
-          "address": "0x09EF4E90",
-          "size": 24,
-          "sha256": "46ad38de64a9f3e9f77663ad325e871bce7e4b6e0bc814cb8945c49df81a0a13",
-          "objects": [
-            {
-              "name": "gTaskDescTitleMenu",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleLumichange",
           "address": "0x096FDCF0",
           "size": 22,
@@ -4509,20 +4451,6 @@
               "name": "gTaskNameTitleLumichange",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLumichange",
-          "address": "0x09EF4EA8",
-          "size": 24,
-          "sha256": "d8a505ea9b0df68e87c27a19b8ebf142748b52bac053c7804477d76e5ff1349a",
-          "objects": [
-            {
-              "name": "gTaskDescTitleLumichange",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12313,14 +12241,39 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoom",
+          "section": ".data",
           "address": "0x09ECC1AC",
-          "size": 24,
-          "sha256": "1036e89bdce7e256f74ff6e71d26dcfbb7727e224470f6a8d02f327656dbb7b0",
+          "size": 144,
+          "sha256": "6e7caf830ef05dc98085063da7bf017db1af7b04aef8628f08c972cd9b8316be",
           "objects": [
             {
               "name": "gTaskDescAllmapRoom",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapCursor",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapRoomname",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapBar",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapDoorinfo",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapPusha",
+              "offset": 120,
               "size": 24
             }
           ]
@@ -12343,20 +12296,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapCursor",
-          "address": "0x09ECC1C4",
-          "size": 24,
-          "sha256": "c9163b988d697af5a96b4332a9d9d978ba6e95db4965629258336af3729b5384",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapCursor",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
           "address": "0x096B63C4",
           "size": 21,
@@ -12370,20 +12309,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoomname",
-          "address": "0x09ECC1DC",
-          "size": 24,
-          "sha256": "dcbcce0aace510b171c72efceffa0f12fec40a99bfc5ae0712664a38c7be9b0b",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapRoomname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "allmap.c",
@@ -12403,20 +12328,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapBar",
-          "address": "0x09ECC1F4",
-          "size": 24,
-          "sha256": "21da677f28adf4ae5c6718c1fedf9ee470b9b3fc4b84818f684ebcfba8d90cca",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapBar",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapDoorinfo",
           "address": "0x096B644C",
           "size": 21,
@@ -12426,20 +12337,6 @@
               "name": "gTaskNameAllmapDoorinfo",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapDoorinfo",
-          "address": "0x09ECC20C",
-          "size": 24,
-          "sha256": "90f34db52705217ff1111a3aa26c275cfcea2b3cc5578c88e20357137720d8ac",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapDoorinfo",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12458,20 +12355,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapPusha",
-          "address": "0x09ECC224",
-          "size": 24,
-          "sha256": "2bb702322c61c7dc5149a80eb2aba29e4b6a6c0f5a82911dfa70deb9b696bf86",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapPusha",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_title.c",
@@ -12521,14 +12404,29 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLogo",
+          "section": ".data",
           "address": "0x09ECC24C",
-          "size": 24,
-          "sha256": "753b2258e99fbcc14ec164db554fdc00c57fea9e3890c3f85ca91877f0c43ebd",
+          "size": 96,
+          "sha256": "42bd295a10e759a052a69490435af57d6c1e3261ac8b64df451a48c596cd930f",
           "objects": [
             {
               "name": "gTaskDescTitleLogo",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleObj",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleMenu",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleLumichange",
+              "offset": 72,
               "size": 24
             }
           ]
@@ -12549,20 +12447,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleObj",
-          "address": "0x09ECC264",
-          "size": 24,
-          "sha256": "beb6ca1db5955c4fa491694caa41cc9459be5795731a2458a87a0f28581311ab",
-          "objects": [
-            {
-              "name": "gTaskDescTitleObj",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleMenu",
           "address": "0x096B64B4",
           "size": 16,
@@ -12577,20 +12461,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleMenu",
-          "address": "0x09ECC27C",
-          "size": 24,
-          "sha256": "85c204de910b9305192984ad16680e09d03b67385bcf5733c36ca5c681e99239",
-          "objects": [
-            {
-              "name": "gTaskDescTitleMenu",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleLumichange",
           "address": "0x096B64CC",
           "size": 22,
@@ -12600,20 +12470,6 @@
               "name": "gTaskNameTitleLumichange",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLumichange",
-          "address": "0x09ECC294",
-          "size": 24,
-          "sha256": "98161d7f358d5bd013afd2c77375f63a8405ff5f4c035218927d5a4a4a746971",
-          "objects": [
-            {
-              "name": "gTaskDescTitleLumichange",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -20286,14 +20142,49 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoom",
+          "section": ".data",
           "address": "0x09F800DC",
-          "size": 24,
-          "sha256": "021eeb080fae602c158156af578cae004ba11badf8c80416f47cd29fba2392ab",
+          "size": 184,
+          "sha256": "2abfc049589540e9ecf6f75c9a500a88135b5923209178da731fb175f77ff9fc",
           "objects": [
             {
               "name": "gTaskDescAllmapRoom",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapCursor",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapRoomname",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gUnkEu_09F80124",
+              "offset": 72,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F80138",
+              "offset": 92,
+              "size": 20
+            },
+            {
+              "name": "gTaskDescAllmapBar",
+              "offset": 112,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapDoorinfo",
+              "offset": 136,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescAllmapPusha",
+              "offset": 160,
               "size": 24
             }
           ]
@@ -20316,20 +20207,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapCursor",
-          "address": "0x09F800F4",
-          "size": 24,
-          "sha256": "968316b2c6ca1239ec9ca4184e04f0e0a559741ae00f394f114f002d284508b2",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapCursor",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
           "address": "0x096CAF30",
           "size": 21,
@@ -20343,20 +20220,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapRoomname",
-          "address": "0x09F8010C",
-          "size": 24,
-          "sha256": "2f865b0b216a4914a3fa597cabaf7dec755e686f57e1dd2c418a5f83af5fe012",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapRoomname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "allmap.c",
@@ -20376,20 +20239,6 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapBar",
-          "address": "0x09F8014C",
-          "size": 24,
-          "sha256": "c0ffaa2905cc4f9be7210180326abf35a2d34069523e1950369438542cf9cb48",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapBar",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
           "section": ".rodata_registration_name_gTaskDescAllmapDoorinfo",
           "address": "0x096CAFB8",
           "size": 21,
@@ -20399,20 +20248,6 @@
               "name": "gTaskNameAllmapDoorinfo",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapDoorinfo",
-          "address": "0x09F80164",
-          "size": 24,
-          "sha256": "be34f98aa43b5b9787ff8644ee5af08e3829893a1ef11e6ca60b35c7624852b6",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapDoorinfo",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -20431,20 +20266,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".data_registration_gTaskDescAllmapPusha",
-          "address": "0x09F8017C",
-          "size": 24,
-          "sha256": "44a9b065647fb70c4b30e4862574ba4d1105adf05ae4d95b09a77e9f61968da6",
-          "objects": [
-            {
-              "name": "gTaskDescAllmapPusha",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_title.c",
@@ -20494,14 +20315,44 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLogo",
+          "section": ".data",
           "address": "0x09F801A4",
-          "size": 24,
-          "sha256": "047c1ac54d346f59eb35cb5bb9ce3df9235c83c471c2282f282a9a0c21da70c8",
+          "size": 156,
+          "sha256": "f70702543d7bc79453ef3fa02c15996c3c81d0898711023b11df1380b81a2b2d",
           "objects": [
             {
               "name": "gTaskDescTitleLogo",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescTitleObj",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gUnkEu_09F801D4",
+              "offset": 48,
+              "size": 20
+            },
+            {
+              "name": "gTaskDescTitleMenu",
+              "offset": 68,
+              "size": 24
+            },
+            {
+              "name": "gUnkEu_09F80200",
+              "offset": 92,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F80214",
+              "offset": 112,
+              "size": 20
+            },
+            {
+              "name": "gTaskDescTitleLumichange",
+              "offset": 132,
               "size": 24
             }
           ]
@@ -20522,20 +20373,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleObj",
-          "address": "0x09F801BC",
-          "size": 24,
-          "sha256": "7b0cba4ab598f18488218303471ea265dd9767903136ebd36e230184fa88d203",
-          "objects": [
-            {
-              "name": "gTaskDescTitleObj",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleMenu",
           "address": "0x096CB020",
           "size": 16,
@@ -20550,20 +20387,6 @@
         },
         {
           "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleMenu",
-          "address": "0x09F801E8",
-          "size": 24,
-          "sha256": "6c8697a7f7ebf40d031d39e73d03fc9464e324cf4033b8d817c45d485c33ad22",
-          "objects": [
-            {
-              "name": "gTaskDescTitleMenu",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
           "section": ".rodata_registration_name_gTaskDescTitleLumichange",
           "address": "0x096CB038",
           "size": 22,
@@ -20573,20 +20396,6 @@
               "name": "gTaskNameTitleLumichange",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".data_registration_gTaskDescTitleLumichange",
-          "address": "0x09F80228",
-          "size": 24,
-          "sha256": "71e2c856f1b079c3461ec9d4c91727c65e788470ee298bd6c233e4d2901ecdc5",
-          "objects": [
-            {
-              "name": "gTaskDescTitleLumichange",
-              "offset": 0,
-              "size": 24
             }
           ]
         },

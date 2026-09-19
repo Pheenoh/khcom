@@ -19,46 +19,6 @@ u8* gUnkEu_09F800B8[5] __attribute__((section(".data_localized_09F800A4"))) = {
     gUnkEu_0979C820,
 };
 
-void* gUnkEu_09F80124[5] __attribute__((section(".data_localized_09F80124"))) = {
-    gUnkEu_09738538,
-    gUnkEu_09738554,
-    gUnkEu_09738590,
-    gUnkEu_0973857A,
-    gUnkEu_09738564,
-};
-
-void* gUnkEu_09F80138[5] __attribute__((section(".data_localized_09F80124"))) = {
-    gUnkEu_0980F840,
-    gUnkEu_0980FD40,
-    gUnkEu_09810C40,
-    gUnkEu_09810740,
-    gUnkEu_09810240,
-};
-
-void** gUnkEu_09F801D4[5] __attribute__((section(".data_localized_09F801D4"))) = {
-    gUnkEu_09F81B78,
-    gUnkEu_09F81B94,
-    gUnkEu_09F81BE8,
-    gUnkEu_09F81BCC,
-    gUnkEu_09F81BB0,
-};
-
-void** gUnkEu_09F80200[5] __attribute__((section(".data_localized_09F80200"))) = {
-    gUnkEu_09F81B28,
-    gUnkEu_09F81B38,
-    gUnkEu_09F81B68,
-    gUnkEu_09F81B58,
-    gUnkEu_09F81B48,
-};
-
-void** gUnkEu_09F80214[5] __attribute__((section(".data_localized_09F80200"))) = {
-    gUnkEu_09F81C04,
-    gUnkEu_09F81C14,
-    gUnkEu_09F81C44,
-    gUnkEu_09F81C34,
-    gUnkEu_09F81C24,
-};
-
 void* gUnkEu_09F80288[5] __attribute__((section(".data_localized_09F80288"))) = {
     gUnk_097A18EC,
     gUnkEu_0977DE68,
