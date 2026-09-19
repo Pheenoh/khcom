@@ -3,7 +3,8 @@
   "provenance": {
     "registrations": "TaskCreate consumes canonical 24-byte TaskDesc records; ModeRequest consumes canonical 16-byte Mode records. Callback tuples and ASCII names identify regional registrations. EU Monsgage callbacks are explicitly exposed within existing opaque native code. Message face/wait tasks form a real three-record array. Only absent EU link-exchange tasks omit records; work-size and callback differences use field-level guards.",
     "names": "Each bounded ASCII name is directly referenced by one or more verified registration records. Shared name addresses have one C owner. String bounds end at their first NUL.",
-    "task_descriptor_owners": "The 108 individual task descriptors have independent address-taking consumers without cross-record indexing. Callback ownership, name ownership, and text, rodata and descriptor group ordering agree across US, JP and EU. Each callback translation unit emits one ordinary data section in the original order."
+    "task_descriptor_owners": "The 108 individual task descriptors have independent address-taking consumers without cross-record indexing. Callback ownership, name ownership, and text, rodata and descriptor group ordering agree across US, JP and EU. Each callback translation unit emits one ordinary data section in the original order.",
+    "pooh_animation": "mode_sio2.c func_080C7FEC has explicit action cases and direction helpers: C7CC8/C7D60 select 0..4, C7DF8 selects 0..7, C7E98 selects 0..1, and C7F18 selects 1/3. The canonical 4048[][5] row stride and C7CC8 row0..4 prove 5x5 records; the direction lookup normal outputs cover columns0..4 and its sentinel preserves the cached direction selection. Single-action branches become scalar objects. The fifth physical3FF8 record is a separate neutral scalar4038, not an asserted used array entry. All scalar bytes and complete record layouts match across US/JP/EU."
   },
   "regions": {
     "us": {
@@ -2986,7 +2987,7 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModePooh",
+          "section": ".rodata",
           "address": "0x096FC004",
           "size": 10,
           "sha256": "4d4e25ddf6535d2a7797fb35f04a126699cfb527ba574c6628c81f8160e67c6f",
@@ -3000,15 +3001,155 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".data_registration_gModePooh",
+          "section": ".data",
           "address": "0x09EF3C88",
-          "size": 16,
-          "sha256": "2826d8ae8ed34fa0be01b662b69185c20f3c2cea4b41c28e7a9974ae74785c31",
+          "size": 1360,
+          "sha256": "8242dd71b964170c1d0d9ff0cd1ce5e7f89e4b031f680b68a053fd1aa3fe09a9",
           "objects": [
             {
               "name": "gModePooh",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gUnk_09EF3C98",
+              "offset": 16,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3CE8",
+              "offset": 96,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D38",
+              "offset": 176,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D88",
+              "offset": 256,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E08",
+              "offset": 384,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E88",
+              "offset": 512,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3E98",
+              "offset": 528,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EA8",
+              "offset": 544,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EB8",
+              "offset": 560,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EC8",
+              "offset": 576,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3EE8",
+              "offset": 608,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F08",
+              "offset": 640,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F28",
+              "offset": 672,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F38",
+              "offset": 688,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F48",
+              "offset": 704,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F58",
+              "offset": 720,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F68",
+              "offset": 736,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F78",
+              "offset": 752,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F88",
+              "offset": 768,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F98",
+              "offset": 784,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FA8",
+              "offset": 800,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FB8",
+              "offset": 816,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FC8",
+              "offset": 832,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FD8",
+              "offset": 848,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FE8",
+              "offset": 864,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FF8",
+              "offset": 880,
+              "size": 64
+            },
+            {
+              "name": "gUnk_09EF4038",
+              "offset": 944,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF4048",
+              "offset": 960,
+              "size": 400
             }
           ]
         },
@@ -10977,7 +11118,7 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModePooh",
+          "section": ".rodata",
           "address": "0x096B47E0",
           "size": 10,
           "sha256": "4d4e25ddf6535d2a7797fb35f04a126699cfb527ba574c6628c81f8160e67c6f",
@@ -10991,15 +11132,155 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".data_registration_gModePooh",
+          "section": ".data",
           "address": "0x09ECB074",
-          "size": 16,
-          "sha256": "70751b295f0497b177df2d628cff9d21622db4c06e5e3bfdb369793acc86eea8",
+          "size": 1360,
+          "sha256": "3d653a633306099b5ae2c4a835a78b9b93de4914200ae92385b52b30cb460bdc",
           "objects": [
             {
               "name": "gModePooh",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gUnk_09EF3C98",
+              "offset": 16,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3CE8",
+              "offset": 96,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D38",
+              "offset": 176,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D88",
+              "offset": 256,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E08",
+              "offset": 384,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E88",
+              "offset": 512,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3E98",
+              "offset": 528,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EA8",
+              "offset": 544,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EB8",
+              "offset": 560,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EC8",
+              "offset": 576,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3EE8",
+              "offset": 608,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F08",
+              "offset": 640,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F28",
+              "offset": 672,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F38",
+              "offset": 688,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F48",
+              "offset": 704,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F58",
+              "offset": 720,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F68",
+              "offset": 736,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F78",
+              "offset": 752,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F88",
+              "offset": 768,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F98",
+              "offset": 784,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FA8",
+              "offset": 800,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FB8",
+              "offset": 816,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FC8",
+              "offset": 832,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FD8",
+              "offset": 848,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FE8",
+              "offset": 864,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FF8",
+              "offset": 880,
+              "size": 64
+            },
+            {
+              "name": "gUnk_09EF4038",
+              "offset": 944,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF4048",
+              "offset": 960,
+              "size": 400
             }
           ]
         },
@@ -18850,7 +19131,7 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModePooh",
+          "section": ".rodata",
           "address": "0x096C934C",
           "size": 10,
           "sha256": "4d4e25ddf6535d2a7797fb35f04a126699cfb527ba574c6628c81f8160e67c6f",
@@ -18864,15 +19145,155 @@
         },
         {
           "unit": "mode_sio2.c",
-          "section": ".data_registration_gModePooh",
+          "section": ".data",
           "address": "0x09F7EF7C",
-          "size": 16,
-          "sha256": "d01e0cbc1ece9374d396391c864d7a4b31c41f593ea08bbb77316cc5d2dd0165",
+          "size": 1360,
+          "sha256": "73536d6ae2dd52c94e1e0964a91cdfb3a1a7e5953d23e9ba284c44c13cad2191",
           "objects": [
             {
               "name": "gModePooh",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gUnk_09EF3C98",
+              "offset": 16,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3CE8",
+              "offset": 96,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D38",
+              "offset": 176,
+              "size": 80
+            },
+            {
+              "name": "gUnk_09EF3D88",
+              "offset": 256,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E08",
+              "offset": 384,
+              "size": 128
+            },
+            {
+              "name": "gUnk_09EF3E88",
+              "offset": 512,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3E98",
+              "offset": 528,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EA8",
+              "offset": 544,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EB8",
+              "offset": 560,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3EC8",
+              "offset": 576,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3EE8",
+              "offset": 608,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F08",
+              "offset": 640,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF3F28",
+              "offset": 672,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F38",
+              "offset": 688,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F48",
+              "offset": 704,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F58",
+              "offset": 720,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F68",
+              "offset": 736,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F78",
+              "offset": 752,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F88",
+              "offset": 768,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3F98",
+              "offset": 784,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FA8",
+              "offset": 800,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FB8",
+              "offset": 816,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FC8",
+              "offset": 832,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FD8",
+              "offset": 848,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FE8",
+              "offset": 864,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3FF8",
+              "offset": 880,
+              "size": 64
+            },
+            {
+              "name": "gUnk_09EF4038",
+              "offset": 944,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF4048",
+              "offset": 960,
+              "size": 400
             }
           ]
         },

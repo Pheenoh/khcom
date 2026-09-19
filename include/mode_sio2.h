@@ -2,14 +2,6 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
-#include "debug_menu_data.h"
-
-#include "pooh_animation_data.h"
-
-#include "sio_battle_options_state.h"
-
-#include "sio_debug_state.h"
-
 #include "pooh_state.h"
 
 #include "chara_types.h"
@@ -17,8 +9,6 @@
 #include "prize_types.h"
 
 #include "card_api.h"
-#include "card_ui_state.h"
-
 #include "msg_api.h"
 #include "mode_sio2_api.h"
 
@@ -100,9 +90,6 @@ typedef struct PoohWork {
 
 extern u32 gUnk_02034DAC;
 
-extern const char gUnk_0961A9C8[];
-extern const char gUnk_0961A9CC[];
-extern const char gUnk_0961A9E8[];
 extern u8 gUnk_09849A98[];
 extern u8 gUnk_09849AD8[];
 extern u8 gUnk_09849AF8[];
@@ -110,9 +97,6 @@ extern u8 gUnk_09849B18[];
 extern const PoohHit gUnk_096FC010;
 extern const u8 gUnk_096FC01C[];
 
-void mode_sio_dbg_flg_0(s32 arg);
-void mode_sio_dbg_flg_1(void);
-void mode_sio_dbg_flg_2(void);
 void func_080C75E0(u32 a, u16 b);
 void func_080C7608(u32 a, u16 b, u16 c);
 u8 func_080C7638(void);

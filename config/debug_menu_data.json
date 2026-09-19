@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "debug_labels": "Map-check controls wrap through exactly five generator styles and thirteen area choices. US and JP Sio debug setup loops over five labels and selects two flag strings with boolean indexes. The EU native setup at 080C34C8 stores menu count ten and directly loads offsets 0 through 36 from the table at 09F7E728, verified at literal 080C3680. Its two additional stored CARD and ABILITY label pointers are separate dormant scalars, not fictitious boolean choices. The obsolete EU gUnk_09EF3504 alias pointed inside the ten-label table and has no active EU source use. All encoded labels are exact first-terminator Shift-JIS literals.",
-    "mode": "The Mode immediately following each label run has the exact ASCII name mode_sio_dbg_flg and the native ordered mode_sio_dbg_flg_0/1/2 callback triple. Its common definition lives with those callbacks in mode_sio2.c; native EU table growth changes only placement. The Pooh world intro explicitly creates object indexes 0,1,2,3, proving its four-byte animation-selector array."
+    "mode": "The Mode immediately following each label run has the exact ASCII name mode_sio_dbg_flg and the native ordered mode_sio_dbg_flg_0/1/2 callback triple. Its common definition lives with those callbacks in mode_sio_dbg.c; native EU table growth changes only placement. The Pooh world intro explicitly creates object indexes 0,1,2,3, proving its four-byte animation-selector array.",
+    "source_boundary": "The first four code functions form SIO debug setup, update, teardown and battle-option preparation. The remaining mode_sio2.c functions own Pooh mode and animation records. Private debug RAM is two bytes with alignment one; private Pooh RAM begins at the next eight-byte boundary, with compiler-aligned TaskPool objects. Ordinary data and rodata sections preserve each mode record and name. The separate readonly label catalog remains unchanged."
   },
   "regions": {
     "us": {
@@ -64,8 +65,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".rodata",
           "address": "0x961a9ec",
           "size": 17,
           "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
@@ -78,8 +79,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".data_registration_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".data",
           "address": "0x9ef350c",
           "size": 16,
           "sha256": "4aaebb190e7d191a171b8913bb8e17a2d2f1eb541e0bbadd08e7b4a7d923af3c",
@@ -318,8 +319,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".rodata",
           "address": "0x95d34c8",
           "size": 17,
           "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
@@ -332,8 +333,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".data_registration_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".data",
           "address": "0x9eca8f8",
           "size": 16,
           "sha256": "2f1e98d9c79b477dc4734ff23e6c182b653cdf48c3840c411b93cfd7aa0e03e3",
@@ -586,8 +587,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".rodata",
           "address": "0x95dbecc",
           "size": 17,
           "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
@@ -600,8 +601,8 @@
           ]
         },
         {
-          "unit": "mode_sio2.c",
-          "section": ".data_registration_gModeSioDbgFlg",
+          "unit": "mode_sio_dbg.c",
+          "section": ".data",
           "address": "0x9f7e758",
           "size": 16,
           "sha256": "9517162a1db99d335d03973a53a078643f80bd533af78cf925e3ce523354f9ab",

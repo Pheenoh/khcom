@@ -61,7 +61,8 @@ wlogo.c -O2 -fprologue-bugfix
 bos2.c -O2 -fprologue-bugfix -fno-common
 chara.c -O2 -fprologue-bugfix -fno-common
 bos3.c -O2 -fprologue-bugfix -fno-common
-mode_sio2.c -O2 -fprologue-bugfix -fno-common
+mode_sio_dbg.c
+mode_sio2.c
 poo.c -O2 -fprologue-bugfix -fno-common
 mode_allmap.c -O2 -fprologue-bugfix -fno-common
 allmap.c -O2 -fprologue-bugfix -fno-common
@@ -1316,9 +1317,9 @@ bos2.c(.rodata_registration_name_gTaskDescBosDsdEnergy2)
 chara.c(.rodata)
 bos3.c(.rodata)
 asset_gfx_gap_87.s(.rodata)
-mode_sio2.c(.rodata_registration_name_gModeSioDbgFlg)
+mode_sio_dbg.c(.rodata)
 asset_gfx_gap_87_at_0961A9FD.s(.rodata)
-mode_sio2.c(.rodata_registration_name_gModePooh)
+mode_sio2.c(.rodata)
 asset_gfx_gap_88.s(.rodata)
 poo_data.c(.data_poo_motion)
 poo_data.c(.rodata_poo_points)
@@ -2412,7 +2413,7 @@ chara.c(.data)
 bos3.c(.data)
 debug_menu_data.c(.rodata_gUnk_09EF34F0)
 debug_menu_data.c(.rodata_gUnk_09EF3504)
-mode_sio2.c(.data_registration_gModeSioDbgFlg)
+mode_sio_dbg.c(.data)
 animation_resource_data.c(.data_09EF351C)
 remaining_resource_data.c(.data_remaining_09EF36D0)
 animation_resource_data.c(.data_09EF36D8)
@@ -2428,8 +2429,7 @@ remaining_resource_data.c(.data_remaining_09EF3BB4)
 animation_resource_data.c(.data_09EF3BF8)
 animation_resource_data.c(.data_09EF3C20)
 animation_resource_data.c(.data_09EF3C50)
-mode_sio2.c(.data_registration_gModePooh)
-mode_sio2_data.c(.data_pooh_animation)
+mode_sio2.c(.data)
 poo.c(.data_registration_gTaskDescPooPooh)
 poo.c(.data_registration_gTaskDescPooMap)
 poo_background_data.c(.data_09EF4208)

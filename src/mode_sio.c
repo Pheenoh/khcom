@@ -1,3 +1,4 @@
+#include "mode_sio_dbg.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "sio_battle_options_state.h"

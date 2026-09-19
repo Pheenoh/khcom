@@ -1,411 +1,180 @@
 #include "registration_data.h"
-#include "mode_chkbtl.h"
 #include "msg_api.h"
 #include "mode_sio2_api.h"
 #include "mode_sio2.h"
 #include "gba/keys.h"
+#include "pooh_animation_assets.h"
 
-s8 gUnk_02034CF4;
-s8 gUnk_02034CF5;
-u16 gUnk_02034CF6;
-u16 gUnk_02034CF8;
-u32 gUnk_02034CFC;
-u32 gUnk_02034D00;
-u32 gUnk_02034D04;
-u16 gUnk_02034D08;
-u32 gUnk_02034D0C;
-u8 gUnk_02034D10;
-u32 gUnk_02034D14;
-TaskPool gUnk_02034D18;
-u32 gUnk_02034D2C;
-TaskPool gUnk_02034D30;
-u8 gUnk_02034D44;
-u32 gUnk_02034D48;
-u16 gUnk_02034D4C;
-Task* gUnk_02034D50[12];
-TaskPool gUnk_02034D80;
-Task* gWLogoTask;
-u8 gUnk_02034D98;
-s32 gUnk_02034D9C;
-s32 gUnk_02034DA0;
-s32 gUnk_02034DA4;
+const char gModeNamePooh[] = "mode_pooh";
 
-#ifdef VERSION_EU
-void mode_sio_dbg_flg_0(s32 arg) {
-    s32 zero;
+Mode gModePooh = {
+    gModeNamePooh,
+    (void (*)(s32))mode_pooh_0,
+    (void (*)(void))mode_pooh_1,
+    (void (*)(void))mode_pooh_2,
+};
 
-    SetBgMode0();
-    SetupBg(0, 0, 0x0F, 0);
-    EnableBg(0);
-    func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
-    gUnk_02034CF4 = 0;
-    zero = 0;
-    func_0805FCB0(8, 0x24, 2, gUnk_0961A9C8);
-    gUnk_02034CF5 = 10;
-    func_0805FCB0(0x0C, 0x12, 2, gUnk_0961A9CC);
-    func_0805FCB0(0x14, 0x24, 2, gUnk_09EF34F0[0]);
-    func_0805FCB0(0x14, 0x2D, 2, gUnk_09EF34F0[1]);
-    func_0805FCB0(0x14, 0x36, 2, gUnk_09EF34F0[2]);
-    func_0805FCB0(0x14, 0x3F, 2, gUnk_09EF34F0[3]);
-    func_0805FCB0(0x14, 0x48, 2, gUnk_09EF34F0[4]);
-    func_0805FCB0(0x14, 0x5A, 2, gUnk_09EF34F0[5]);
-    func_0805FCB0(0x14, 0x63, 2, gUnk_09EF34F0[6]);
-    func_0805FCB0(0x14, 0x6C, 2, gUnk_09EF34F0[7]);
-    func_0805FCB0(0x14, 0x75, 2, gUnk_09EF34F0[8]);
-    func_0805FCB0(0x14, 0x7E, 2, gUnk_09EF34F0[9]);
-    gUnkEu_0203C9B4 = 1;
-    gUnk_0203C3C4 = 80;
-    gUnk_0203C3D0 = 275;
-    gUnk_0203C3CC = zero;
-    gUnkEu_0203C9B8 = zero;
-    gUnkEu_0203C9C4 = 1;
-    gUnkEu_0203C9C0 = 80;
-    gUnk_0203C3C8 = 275;
-    gUnkEu_0203C9BC = zero;
-    gUnk_0203C3D4 = zero;
-    func_0805FC04(0x78, 0x24, 2, gUnkEu_0203C9B4);
-    func_0805FC04(0x78, 0x2D, 2, gUnk_0203C3C4);
-    func_0805FC04(0x78, 0x36, 2, gUnk_0203C3D0);
-    func_0805FC04(0x78, 0x3F, 2, gUnk_0203C3CC);
-    func_0805FC04(0x78, 0x48, 2, gUnkEu_0203C9B8);
-    func_0805FC04(0x78, 0x5A, 2, gUnkEu_0203C9C4);
-    func_0805FC04(0x78, 0x63, 2, gUnkEu_0203C9C0);
-    func_0805FC04(0x78, 0x6C, 2, gUnk_0203C3C8);
-    func_0805FC04(0x78, 0x75, 2, gUnkEu_0203C9BC);
-    func_0805FC04(0x78, 0x7E, 2, gUnk_0203C3D4);
-}
-#else
-void mode_sio_dbg_flg_0(s32 arg) {
-    s32 i;
+AnimDef gUnk_09EF3C98[5] = {
+    { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
+    { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
+    { gUnk_09EF52A0, gUnk_09EF52A4, gUnk_096FE5E2, 0, { 0, 0, 0 } },
+    { gUnk_09EF52A8, gUnk_09EF52AC, gUnk_096FE83E, 0, { 0, 0, 0 } },
+    { gUnk_09EF52B0, gUnk_09EF52B4, gUnk_096FEA7A, 0, { 0, 0, 0 } },
+};
 
-    SetBgMode0();
-    SetupBg(0, 0, 0x0F, 0);
-    EnableBg(0);
-    func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
-    gUnk_02034CF4 = 0;
-    func_0805FCB0(8, 0x24, 2, gUnk_0961A9C8);
-    gUnk_02034CF5 = 5;
-    func_0805FCB0(0x0C, 0x12, 2, gUnk_0961A9CC);
+AnimDef gUnk_09EF3CE8[5] = {
+    { gUnk_09EF54E0, gUnk_09EF5508, gUnk_0970F5C4, 0, { 0, 0, 0 } },
+    { gUnk_09EF5590, gUnk_09EF55B8, gUnk_09714D3A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5564, gUnk_09EF558C, gUnk_0971381C, 0, { 0, 0, 0 } },
+    { gUnk_09EF5538, gUnk_09EF5560, gUnk_09712406, 0, { 0, 0, 0 } },
+    { gUnk_09EF550C, gUnk_09EF5534, gUnk_09710CA0, 0, { 0, 0, 0 } },
+};
 
-    for (i = 0; i < gUnk_02034CF5; i++) {
-        func_0805FCB0(0x14, i * 9 + 0x24, 2, gUnk_09EF34F0[i]);
-    }
+AnimDef gUnk_09EF3D38[5] = {
+    { gUnk_09EF55BC, gUnk_09EF55F4, gUnk_09716366, 0, { 0, 0, 0 } },
+    { gUnk_09EF56B4, gUnk_09EF56F0, gUnk_0971C3F2, 0, { 0, 0, 0 } },
+    { gUnk_09EF5674, gUnk_09EF56B0, gUnk_0971AB32, 0, { 0, 0, 0 } },
+    { gUnk_09EF5634, gUnk_09EF5670, gUnk_09719286, 0, { 0, 0, 0 } },
+    { gUnk_09EF55F8, gUnk_09EF5630, gUnk_097179FA, 0, { 0, 0, 0 } },
+};
 
-    gUnk_0203C3C8 = 50;
-    gUnk_0203C3CC = 500;
-    gUnk_0203C3D0 = 500;
-    gUnk_0203C3C4 = 0;
-    gUnk_0203C3D4 = 0;
-    func_0805FC04(0x64, 0x24, 2, gUnk_0203C3C8);
-    func_0805FC04(0x64, 0x2D, 2, gUnk_0203C3CC);
-    func_0805FC04(0x64, 0x36, 2, gUnk_0203C3D0);
-    func_0805FCB0(0x64, 0x3F, 2, gUnk_09EF3504[gUnk_0203C3C4]);
-    func_0805FCB0(0x64, 0x48, 2, gUnk_09EF3504[gUnk_0203C3D4]);
-}
-#endif
+AnimDef gUnk_09EF3D88[8] = {
+    { gUnk_09EF5380, gUnk_09EF53AC, gUnk_097058D2, 0, { 0, 0, 0 } },
+    { gUnk_09EF52C0, gUnk_09EF52EC, gUnk_096FEFBE, 0, { 0, 0, 0 } },
+    { gUnk_09EF52F0, gUnk_09EF531C, gUnk_097006F8, 0, { 0, 0, 0 } },
+    { gUnk_09EF5320, gUnk_09EF534C, gUnk_09701FDA, 0, { 0, 0, 0 } },
+    { gUnk_09EF5350, gUnk_09EF537C, gUnk_09703C44, 0, { 0, 0, 0 } },
+    { gUnk_09EF53B0, gUnk_09EF53DC, gUnk_0970754C, 0, { 0, 0, 0 } },
+    { gUnk_09EF53E0, gUnk_09EF540C, gUnk_09708E2E, 0, { 0, 0, 0 } },
+    { gUnk_09EF5410, gUnk_09EF543C, gUnk_0970AA98, 0, { 0, 0, 0 } },
+};
 
-#ifdef VERSION_EU
-void mode_sio_dbg_flg_1(void) {
-    u8 prev;
+AnimDef gUnk_09EF3E08[8] = {
+    { gUnk_09EF59C4, gUnk_09EF59D4, gUnk_0972BED0, 0, { 0, 0, 0 } },
+    { gUnk_09EF59D8, gUnk_09EF59E8, gUnk_0972C694, 0, { 0, 0, 0 } },
+    { gUnk_09EF5A28, gUnk_09EF5A38, gUnk_0972E5A4, 0, { 0, 0, 0 } },
+    { gUnk_09EF5A3C, gUnk_09EF5A4C, gUnk_0972ED68, 0, { 0, 0, 0 } },
+    { gUnk_09EF5A00, gUnk_09EF5A10, gUnk_0972D61C, 0, { 0, 0, 0 } },
+    { gUnk_09EF5A14, gUnk_09EF5A24, gUnk_0972DDE0, 0, { 0, 0, 0 } },
+    { gUnk_09EF5A50, gUnk_09EF5A60, gUnk_0972F52C, 0, { 0, 0, 0 } },
+    { gUnk_09EF59EC, gUnk_09EF59FC, gUnk_0972CE58, 0, { 0, 0, 0 } },
+};
 
-    prev = gUnk_02034CF4;
+AnimDef gUnk_09EF3E88 = { gUnk_09EF5A64, gUnk_09EF5A90, gUnk_0972FD80, 0, { 0, 0, 0 } };
 
-    if (GetKeysRepeat() & DPAD_UP) {
-        if (gUnk_02034CF4 == 0) {
-            gUnk_02034CF4 = 10;
-        } else if (gUnk_02034CF4 == 6) {
-            gUnk_02034CF4 = 4;
-        } else {
-            gUnk_02034CF4--;
-        }
-    }
+AnimDef gUnk_09EF3E98 = { gUnk_09EF5A64, gUnk_09EF5A90, gUnk_0972FD80, 1, { 0, 0, 0 } };
 
-    if (GetKeysRepeat() & DPAD_DOWN) {
-        if (gUnk_02034CF4 == 10) {
-            gUnk_02034CF4 = 0;
-        } else if (gUnk_02034CF4 == 4) {
-            gUnk_02034CF4 = 6;
-        } else {
-            gUnk_02034CF4++;
-        }
-    }
+AnimDef gUnk_09EF3EA8 = { gUnk_09EF5A98, gUnk_09EF5A9C, gUnk_09732026, 0, { 0, 0, 0 } };
 
-    if (prev != gUnk_02034CF4) {
-        func_0805FCB0(8, (prev + 4) * 9, 2, gUnk_0961A9E8);
-        func_0805FCB0(8, (gUnk_02034CF4 + 4) * 9, 2, gUnk_0961A9C8);
-    }
+AnimDef gUnk_09EF3EB8 = { gUnk_09EF5824, gUnk_09EF583C, gUnk_09724C1C, 1, { 0, 0, 0 } };
 
-    switch (gUnk_02034CF4) {
-    case 0:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnkEu_0203C9B4 > 1) {
-                gUnkEu_0203C9B4--;
-            }
-        }
+AnimDef gUnk_09EF3EC8[2] = {
+    { gUnk_09EF57C8, gUnk_09EF57E8, gUnk_0972186A, 0, { 0, 0, 0 } },
+    { gUnk_09EF57A4, gUnk_09EF57C4, gUnk_097205C2, 0, { 0, 0, 0 } },
+};
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnkEu_0203C9B4 <= 98) {
-                gUnkEu_0203C9B4++;
-            }
-        }
-        func_0805FC04(0x78, 0x24, 2, gUnkEu_0203C9B4);
-        break;
-    case 1:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnk_0203C3C4 > 80) {
-                gUnk_0203C3C4 -= 15;
-            }
-        }
+AnimDef gUnk_09EF3EE8[2] = {
+    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 0, { 0, 0, 0 } },
+    { gUnk_09EF56F4, gUnk_09EF5744, gUnk_0971DD78, 0, { 0, 0, 0 } },
+};
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnk_0203C3C4 <= 559) {
-                gUnk_0203C3C4 += 15;
-            }
-        }
-        func_0805FC04(0x78, 0x2D, 2, gUnk_0203C3C4);
-        break;
-    case 2:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnk_0203C3D0 > 275) {
-                gUnk_0203C3D0 -= 25;
-            }
-        }
+AnimDef gUnk_09EF3F08[2] = {
+    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 1, { 0, 0, 0 } },
+    { gUnk_09EF56F4, gUnk_09EF5744, gUnk_0971DD78, 1, { 0, 0, 0 } },
+};
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnk_0203C3D0 <= 974) {
-                gUnk_0203C3D0 += 25;
-            }
-        }
-        func_0805FC04(0x78, 0x36, 2, gUnk_0203C3D0);
-        break;
-    case 3:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnk_0203C3CC > 1) {
-                gUnk_0203C3CC--;
-            }
-        }
+AnimDef gUnk_09EF3F28 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 0, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnk_0203C3CC <= 998) {
-                gUnk_0203C3CC++;
-            }
-        }
-        func_0805FC04(0x78, 0x3F, 2, gUnk_0203C3CC);
-        break;
-    case 4:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnkEu_0203C9B8 > 1) {
-                gUnkEu_0203C9B8--;
-            }
-        }
+AnimDef gUnk_09EF3F38 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 1, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnkEu_0203C9B8 <= 998) {
-                gUnkEu_0203C9B8++;
-            }
-        }
-        func_0805FC04(0x78, 0x48, 2, gUnkEu_0203C9B8);
-        break;
-    case 6:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnkEu_0203C9C4 > 1) {
-                gUnkEu_0203C9C4--;
-            }
-        }
+AnimDef gUnk_09EF3F48 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 2, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnkEu_0203C9C4 <= 98) {
-                gUnkEu_0203C9C4++;
-            }
-        }
-        func_0805FC04(0x78, 0x5A, 2, gUnkEu_0203C9C4);
-        break;
-    case 7:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnkEu_0203C9C0 > 80) {
-                gUnkEu_0203C9C0 -= 15;
-            }
-        }
+AnimDef gUnk_09EF3F58 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 3, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnkEu_0203C9C0 <= 559) {
-                gUnkEu_0203C9C0 += 15;
-            }
-        }
-        func_0805FC04(0x78, 0x63, 2, gUnkEu_0203C9C0);
-        break;
-    case 8:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnk_0203C3C8 > 275) {
-                gUnk_0203C3C8 -= 25;
-            }
-        }
+AnimDef gUnk_09EF3F68 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 4, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnk_0203C3C8 <= 974) {
-                gUnk_0203C3C8 += 25;
-            }
-        }
-        func_0805FC04(0x78, 0x6C, 2, gUnk_0203C3C8);
-        break;
-    case 9:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnkEu_0203C9BC > 1) {
-                gUnkEu_0203C9BC--;
-            }
-        }
+AnimDef gUnk_09EF3F78 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 5, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnkEu_0203C9BC <= 998) {
-                gUnkEu_0203C9BC++;
-            }
-        }
-        func_0805FC04(0x78, 0x75, 2, gUnkEu_0203C9BC);
-        break;
-    case 10:
-        if (GetKeysRepeat() & DPAD_LEFT) {
-            if (gUnk_0203C3D4 > 1) {
-                gUnk_0203C3D4--;
-            }
-        }
+AnimDef gUnk_09EF3F88 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 9, { 0, 0, 0 } };
 
-        if (GetKeysRepeat() & DPAD_RIGHT) {
-            if (gUnk_0203C3D4 <= 998) {
-                gUnk_0203C3D4++;
-            }
-        }
-        func_0805FC04(0x78, 0x7E, 2, gUnk_0203C3D4);
-        break;
-    }
+AnimDef gUnk_09EF3F98 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 1, { 0, 0, 0 } };
 
-    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
-        gUnk_0203A9E4 = 1;
-        func_08085CB0();
-        ModeRequest(&gModeSioBtlConnect, 0);
-    } else {
-        func_080605A4(0);
-        func_08060598();
-    }
-}
-#else
-void mode_sio_dbg_flg_1(void) {
-    u8 prev;
+AnimDef gUnk_09EF3FA8 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 2, { 0, 0, 0 } };
 
-    prev = gUnk_02034CF4;
+AnimDef gUnk_09EF3FB8 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 3, { 0, 0, 0 } };
 
-    if (GetKeysRepeat() & DPAD_UP) {
-        gUnk_02034CF4--;
-    }
+AnimDef gUnk_09EF3FC8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 0, { 0, 0, 0 } };
 
-    if (GetKeysRepeat() & DPAD_DOWN) {
-        gUnk_02034CF4++;
-    }
+AnimDef gUnk_09EF3FD8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 1, { 0, 0, 0 } };
 
-    if (prev != gUnk_02034CF4) {
-        if (gUnk_02034CF4 < 0) {
-            gUnk_02034CF4 = gUnk_02034CF5 - 1;
-        } else if (gUnk_02034CF4 >= gUnk_02034CF5) {
-            gUnk_02034CF4 = 0;
-        }
+AnimDef gUnk_09EF3FE8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 2, { 0, 0, 0 } };
 
-        func_0805FCB0(8, (prev + 4) * 9, 2, gUnk_0961A9E8);
-        func_0805FCB0(8, (gUnk_02034CF4 + 4) * 9, 2, gUnk_0961A9C8);
-    }
+AnimDef gUnk_09EF3FF8[4] = {
+    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
+    { gUnk_09EF5808, gUnk_09EF5820, gUnk_09723C6A, 0, { 0, 0, 0 } },
+    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
+    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
+};
 
-    switch (gUnk_02034CF4) {
-    case 0:
-        if (GetKeysHeld() & DPAD_LEFT) {
-            if (gUnk_0203C3C8 > 1) {
-                gUnk_0203C3C8--;
-            }
-        }
+AnimDef gUnk_09EF4038 = { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } };
 
-        if (GetKeysHeld() & DPAD_RIGHT) {
-            if (gUnk_0203C3C8 <= 98) {
-                gUnk_0203C3C8++;
-            }
-        }
-        func_0805FC04(0x64, 0x24, 2, gUnk_0203C3C8);
-        break;
-    case 1:
-        if (GetKeysHeld() & DPAD_LEFT) {
-            if (gUnk_0203C3CC > 5) {
-                gUnk_0203C3CC -= 5;
-            }
-        }
+AnimDef gUnk_09EF4048[5][5] = {
+    {
+        { gUnk_09EF5458, gUnk_09EF545C, gUnk_0970CD86, 0, { 0, 0, 0 } },
+        { gUnk_09EF5448, gUnk_09EF544C, gUnk_0970C8CE, 0, { 0, 0, 0 } },
+        { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
+        { gUnk_09EF5450, gUnk_09EF5454, gUnk_0970CB2A, 0, { 0, 0, 0 } },
+        { gUnk_09EF5440, gUnk_09EF5444, gUnk_0970C672, 0, { 0, 0, 0 } },
+    },
+    {
+        { gUnk_09EF5488, gUnk_09EF548C, gUnk_0970DBAE, 0, { 0, 0, 0 } },
+        { gUnk_09EF5490, gUnk_09EF5494, gUnk_0970DE0A, 0, { 0, 0, 0 } },
+        { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
+        { gUnk_09EF5480, gUnk_09EF5484, gUnk_0970D952, 0, { 0, 0, 0 } },
+        { gUnk_09EF5498, gUnk_09EF549C, gUnk_0970E066, 0, { 0, 0, 0 } },
+    },
+    {
+        { gUnk_09EF54A8, gUnk_09EF54AC, gUnk_0970E51E, 0, { 0, 0, 0 } },
+        { gUnk_09EF54A0, gUnk_09EF54A4, gUnk_0970E2C2, 0, { 0, 0, 0 } },
+        { gUnk_09EF52A0, gUnk_09EF52A4, gUnk_096FE5E2, 0, { 0, 0, 0 } },
+        { gUnk_09EF54B0, gUnk_09EF54B4, gUnk_0970E77A, 0, { 0, 0, 0 } },
+        { gUnk_09EF54B8, gUnk_09EF54BC, gUnk_0970E9D6, 0, { 0, 0, 0 } },
+    },
+    {
+        { gUnk_09EF54C0, gUnk_09EF54C4, gUnk_0970EC32, 0, { 0, 0, 0 } },
+        { gUnk_09EF54D8, gUnk_09EF54DC, gUnk_0970F2E6, 0, { 0, 0, 0 } },
+        { gUnk_09EF52A8, gUnk_09EF52AC, gUnk_096FE83E, 0, { 0, 0, 0 } },
+        { gUnk_09EF54D0, gUnk_09EF54D4, gUnk_0970F0AA, 0, { 0, 0, 0 } },
+        { gUnk_09EF54C8, gUnk_09EF54CC, gUnk_0970EE6E, 0, { 0, 0, 0 } },
+    },
+    {
+        { gUnk_09EF5470, gUnk_09EF5474, gUnk_0970D49A, 0, { 0, 0, 0 } },
+        { gUnk_09EF5460, gUnk_09EF5464, gUnk_0970CFE2, 0, { 0, 0, 0 } },
+        { gUnk_09EF52B0, gUnk_09EF52B4, gUnk_096FEA7A, 0, { 0, 0, 0 } },
+        { gUnk_09EF5478, gUnk_09EF547C, gUnk_0970D6F6, 0, { 0, 0, 0 } },
+        { gUnk_09EF5468, gUnk_09EF546C, gUnk_0970D23E, 0, { 0, 0, 0 } },
+    },
+};
 
-        if (GetKeysHeld() & DPAD_RIGHT) {
-            if (gUnk_0203C3CC <= 994) {
-                gUnk_0203C3CC += 5;
-            }
-        }
-        func_0805FC04(0x64, 0x2D, 2, gUnk_0203C3CC);
-        break;
-    case 2:
-        if (GetKeysHeld() & DPAD_LEFT) {
-            if (gUnk_0203C3D0 > 5) {
-                gUnk_0203C3D0 -= 5;
-            }
-        }
-
-        if (GetKeysHeld() & DPAD_RIGHT) {
-            if (gUnk_0203C3D0 <= 994) {
-                gUnk_0203C3D0 += 5;
-            }
-        }
-        func_0805FC04(0x64, 0x36, 2, gUnk_0203C3D0);
-        break;
-    case 3:
-        break;
-    case 4:
-        break;
-    }
-
-    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
-        gUnk_0203A9E4 = 1;
-        func_08085CB0();
-        ModeRequest(&gModeSioBtlConnect, 0);
-    } else {
-        func_080605A4(0);
-        func_08060598();
-    }
-}
-#endif
-
-void mode_sio_dbg_flg_2(void) {
-    func_080609A0();
-}
-
-#ifdef VERSION_EU
-void func_080C7350(void) {
-    gUnk_0203AAC0.unk_04 = gUnkEu_0203C9B4;
-    gUnk_0203AAC0.unk_02 = gUnk_0203AAC0.unk_00 = gUnk_0203C3C4;
-    gGameState.progression.cp = gUnk_0203C3D0;
-    gUnk_0203AAC0.unk_06 = gUnk_0203C3CC;
-    gUnk_0203AAC0.unk_08 = gUnkEu_0203C9B8;
-    gUnk_0203AAC0.unk_0C = -1;
-    gUnk_0203AAC0.unk_14 = -1;
-    gUnk_0203AAC0.unk_0A = 4;
-    gUnk_0203AAC0.unk_1E = 0x1234;
-    gUnk_0203AAC0.unk_1C = 0x1FFE;
-    gUnk_0203AA10.unk_04 = gUnkEu_0203C9C4;
-    gUnk_0203AA10.unk_02 = gUnk_0203AA10.unk_00 = gUnkEu_0203C9C0;
-    gUnk_0203AA10.unk_06 = gUnkEu_0203C9BC;
-    gUnk_0203AA10.unk_08 = gUnk_0203C3D4;
-    gUnk_0203AA10.unk_0C = -1;
-    gUnk_0203AA10.unk_14 = -1;
-    gUnk_0203AA10.unk_0A = 4;
-    gUnk_0203AA10.unk_1E = 0x1234;
-    gUnk_0203AA10.unk_1C = 0x1FFE;
-}
-#else
-void func_080C7350(void) {
-    gUnk_0203AAC0.unk_04 = gUnk_0203C3C8;
-    gUnk_0203AAC0.unk_02 = gUnk_0203C3CC;
-}
-#endif
+static u16 gUnk_02034CF8;
+static u32 gUnk_02034CFC;
+static u32 gUnk_02034D00;
+static u32 gUnk_02034D04;
+static u16 gUnk_02034D08;
+static u32 gUnk_02034D0C;
+static u8 gUnk_02034D10;
+static TaskPool gUnk_02034D18;
+static TaskPool gUnk_02034D30;
+static u8 gUnk_02034D44;
+static u32 gUnk_02034D48;
+static u16 gUnk_02034D4C;
+static Task* gUnk_02034D50[12];
+static TaskPool gUnk_02034D80;
+static Task* gWLogoTask;
+static u8 gUnk_02034D98;
+static s32 gUnk_02034D9C;
+static s32 gUnk_02034DA0;
+static s32 gUnk_02034DA4;
 
 void func_080C736C(void) {
     gUnk_02034CFC = 0;
@@ -1072,7 +841,7 @@ u8 func_080C7F94(PoohWork* w) {
 }
 
 void func_080C7FEC(PoohWork* w, u32 anim) {
-    PoohAnim* e;
+    AnimDef* e;
     u16 flags;
 
     flags = 0;
@@ -1330,21 +1099,3 @@ void func_080C84E0(PoohWork* w, u32 b) {
 
     func_080C8428(w, b);
 }
-
-const char gModeNamePooh[] __attribute__((section(".rodata_registration_name_gModePooh"), aligned(1))) = "mode_pooh";
-
-Mode gModePooh __attribute__((section(".data_registration_gModePooh"))) = {
-    gModeNamePooh,
-    (void (*)(s32))mode_pooh_0,
-    (void (*)(void))mode_pooh_1,
-    (void (*)(void))mode_pooh_2,
-};
-
-const char gModeNameSioDbgFlg[] __attribute__((section(".rodata_registration_name_gModeSioDbgFlg"), aligned(1))) = "mode_sio_dbg_flg";
-
-Mode gModeSioDbgFlg __attribute__((section(".data_registration_gModeSioDbgFlg"))) = {
-    gModeNameSioDbgFlg,
-    mode_sio_dbg_flg_0,
-    mode_sio_dbg_flg_1,
-    mode_sio_dbg_flg_2,
-};

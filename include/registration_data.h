@@ -391,7 +391,6 @@ extern const char gTaskNameBosDsdRock[];
 extern const char gTaskNameBosDsdCircle[];
 extern const char gTaskNameBosDsdEnergy1[];
 extern const char gTaskNameBosDsdEnergy2[];
-extern const char gModeNamePooh[];
 extern const char gTaskNamePooPooh[];
 extern const char gTaskNamePooMap[];
 extern const char gTaskNamePooSora[];
@@ -691,7 +690,6 @@ extern Mode gUnk_09EE274C;
 extern Mode gUnk_09EE4BA0;
 extern const char gUnk_090359BC[];
 
-extern const char gModeNameSioDbgFlg[];
 extern Mode gModeSioDbgFlg;
 
 #ifdef VERSION_EU
