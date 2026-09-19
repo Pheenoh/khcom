@@ -55,15 +55,6 @@ const char gTaskNameBosShadow[] __attribute__((section(".rodata_names_bos_shadow
 const char gTaskNameRoomcreate[] __attribute__((section(".rodata_names_roomcreate"), aligned(4))) = "task_roomcreate";
 const char gTaskNameRomcriEff[] __attribute__((section(".rodata_names_romcri_eff"), aligned(4))) = "task_romcri_eff";
 const char gTaskNameRomcriEff2[] __attribute__((section(".rodata_names_romcri_eff2"), aligned(4))) = "task_romcri_eff2";
-const char gTaskNameSmnCloud[] __attribute__((section(".rodata_names_smn_cloud"), aligned(4))) = "task_smn_cloud";
-const char gTaskNameSmnBambi[] __attribute__((section(".rodata_names_smn_bambi"), aligned(4))) = "task_smn_bambi";
-const char gTaskNameSmnTink[] __attribute__((section(".rodata_names_smn_tink"), aligned(4))) = "task_smn_tink";
-const char gTaskNameSmnTinkeff[] __attribute__((section(".rodata_names_smn_tinkeff"), aligned(4))) = "task_smn_tinkeff";
-const char gTaskNameSmnSimba[] __attribute__((section(".rodata_names_smn_simba"), aligned(4))) = "task_smn_simba";
-const char gTaskNameSmnMushu[] __attribute__((section(".rodata_names_smn_mushu"), aligned(4))) = "task_smn_mushu";
-const char gTaskNameSmnDumbo[] __attribute__((section(".rodata_names_smn_dumbo"), aligned(4))) = "task_smn_dumbo";
-const char gTaskNameSmnGenie[] __attribute__((section(".rodata_names_smn_genie"), aligned(4))) = "task_smn_genie";
-const char gTaskNameSmnKing[] __attribute__((section(".rodata_names_smn_king"), aligned(4))) = "task_smn_king";
 const char gTaskNameFrdDonald[] __attribute__((section(".rodata_names_frd_donald"), aligned(4))) = "task_frd_donald";
 const char gTaskNameFrdGoofy[] __attribute__((section(".rodata_names_frd_goofy"), aligned(4))) = "task_frd_goofy";
 const char gTaskNameFrdAriel[] __attribute__((section(".rodata_names_frd_ariel"), aligned(4))) = "task_frd_ariel";

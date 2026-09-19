@@ -1616,11 +1616,11 @@
           "padding_before": 3
         },
         {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_000",
+          "unit": "smn.c",
+          "section": ".rodata",
           "address": "0x0813E958",
-          "size": 128,
-          "sha256": "f8180046771c6baaae67b5686bb1e106dd0e8d2116974eb2815b8d336d613b1f",
+          "size": 562,
+          "sha256": "fd49f0c8476f76851a2f36593b7d7effd165349fe0e92440ffad39c6d165c13d",
           "objects": [
             {
               "name": "gUnk_0813E958",
@@ -1628,157 +1628,125 @@
               "size": 128,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",40,\"0\"],[\"src/smn.c\",151,\"0\"],[\"src/smn.c\",153,\"1\"],[\"src/smn.c\",226,\"6\"],[\"src/smn.c\",228,\"7\"],[\"src/smn.c\",283,\"2\"],[\"src/smn.c\",318,\"3\"],[\"src/smn.c\",322,\"4\"],[\"src/smn.c\",327,\"5\"]],\"max_index\":7}"
+                "{\"calls\":[[\"src/smn.c\",106,\"0\"],[\"src/smn.c\",217,\"0\"],[\"src/smn.c\",219,\"1\"],[\"src/smn.c\",292,\"6\"],[\"src/smn.c\",294,\"7\"],[\"src/smn.c\",349,\"2\"],[\"src/smn.c\",384,\"3\"],[\"src/smn.c\",388,\"4\"],[\"src/smn.c\",393,\"5\"]],\"max_index\":7}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_001",
-          "address": "0x0813E9E8",
-          "size": 16,
-          "sha256": "7b58e2ddddb0cf474502f878effe4c9da6597c0326bb695d8bb2a1064dc20890",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnCloud",
+              "offset": 128,
+              "size": 15
+            },
             {
               "name": "gUnk_0813E9E8",
-              "offset": 0,
+              "offset": 144,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",490,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",556,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_002",
-          "address": "0x0813EA08",
-          "size": 48,
-          "sha256": "0992cf541e61f6e8cf4306c7a76a8089350eaced168fabf5805c8194658cac62",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnBambi",
+              "offset": 160,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA08",
-              "offset": 0,
+              "offset": 176,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",822,\"0\"],[\"src/smn.c\",942,\"0\"],[\"src/smn.c\",967,\"1\"],[\"src/smn.c\",1026,\"2\"],[\"src/smn.c\",1045,\"1\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",888,\"0\"],[\"src/smn.c\",1008,\"0\"],[\"src/smn.c\",1033,\"1\"],[\"src/smn.c\",1092,\"2\"],[\"src/smn.c\",1111,\"1\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_003",
-          "address": "0x0813EA5C",
-          "size": 16,
-          "sha256": "47337d0d7911640ce65090a3e7c5594cdef1dbd51c886217451583f83001128f",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnTink",
+              "offset": 224,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameSmnTinkeff",
+              "offset": 240,
+              "size": 17
+            },
             {
               "name": "gUnk_0813EA5C",
-              "offset": 0,
+              "offset": 260,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1203,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",1269,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_004",
-          "address": "0x0813EA7C",
-          "size": 80,
-          "sha256": "2e0e2bac2cd09517176f317a1680e15cd37901c082d175b821df8317a869bdeb",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnSimba",
+              "offset": 276,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA7C",
-              "offset": 0,
+              "offset": 292,
               "size": 64,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1440,\"0\"],[\"src/smn.c\",1527,\"2\"],[\"src/smn.c\",1536,\"3\"]],\"max_index\":3}"
+                "{\"calls\":[[\"src/smn.c\",1506,\"0\"],[\"src/smn.c\",1593,\"2\"],[\"src/smn.c\",1602,\"3\"]],\"max_index\":3}"
               ]
             },
             {
               "name": "gUnk_0813EABC",
-              "offset": 64,
+              "offset": 356,
               "size": 16,
               "consumer": [
                 "func_08019068",
                 "{\"extent\":\"One independently stored typed continuation record. No code use of index4 was found; following task-name object has an independent descriptor/name anchor. The three pointer roles and final scalar match all regions.\"}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_005",
-          "address": "0x0813EADC",
-          "size": 48,
-          "sha256": "f0052bea4613519569094b7b36fc1b8830e2f0530f9121f8ae5970e294032332",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnMushu",
+              "offset": 372,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EADC",
-              "offset": 0,
+              "offset": 388,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1693,\"0\"],[\"src/smn.c\",1754,\"0\"],[\"src/smn.c\",1766,\"1\"],[\"src/smn.c\",1788,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",1759,\"0\"],[\"src/smn.c\",1820,\"0\"],[\"src/smn.c\",1832,\"1\"],[\"src/smn.c\",1854,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_006",
-          "address": "0x0813EB1C",
-          "size": 32,
-          "sha256": "24f408de7afd9011c7f22c0d55843cf69e42557b18c70071eb88f8b2fe1a9ad5",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnDumbo",
+              "offset": 436,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB1C",
-              "offset": 0,
+              "offset": 452,
               "size": 32,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1899,\"0\"],[\"src/smn.c\",2063,\"0\"],[\"src/smn.c\",2078,\"0\"],[\"src/smn.c\",2096,\"0\"],[\"src/smn.c\",2121,\"1\"],[\"src/smn.c\",2159,\"1\"],[\"src/smn.c\",2198,\"1\"]],\"max_index\":1}"
+                "{\"calls\":[[\"src/smn.c\",1965,\"0\"],[\"src/smn.c\",2129,\"0\"],[\"src/smn.c\",2144,\"0\"],[\"src/smn.c\",2162,\"0\"],[\"src/smn.c\",2187,\"1\"],[\"src/smn.c\",2225,\"1\"],[\"src/smn.c\",2264,\"1\"]],\"max_index\":1}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_007",
-          "address": "0x0813EB4C",
-          "size": 48,
-          "sha256": "164351b21c78e094c2bfe7644706c08b5020204da7fc81c2bdc2cdaabb0e99c2",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnGenie",
+              "offset": 484,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB4C",
-              "offset": 0,
+              "offset": 500,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",2320,\"0\"],[\"src/smn.c\",2387,\"1\"],[\"src/smn.c\",2395,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",2386,\"0\"],[\"src/smn.c\",2453,\"1\"],[\"src/smn.c\",2461,\"2\"]],\"max_index\":2}"
               ]
+            },
+            {
+              "name": "gTaskNameSmnKing",
+              "offset": 548,
+              "size": 14
             }
           ],
           "alignment_before": 4,
@@ -4162,11 +4130,11 @@
           "padding_before": 3
         },
         {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_000",
+          "unit": "smn.c",
+          "section": ".rodata",
           "address": "0x0813E9D4",
-          "size": 128,
-          "sha256": "29b66a9f664652ee0c9685c809ff73b0177eba93f54c914b4f231b0d40c289c6",
+          "size": 562,
+          "sha256": "9e1dc7c8e35f86e249914b3635e344dd9f91cd4ffd2cd97932d8f046c9566169",
           "objects": [
             {
               "name": "gUnk_0813E958",
@@ -4174,157 +4142,125 @@
               "size": 128,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",40,\"0\"],[\"src/smn.c\",151,\"0\"],[\"src/smn.c\",153,\"1\"],[\"src/smn.c\",226,\"6\"],[\"src/smn.c\",228,\"7\"],[\"src/smn.c\",283,\"2\"],[\"src/smn.c\",318,\"3\"],[\"src/smn.c\",322,\"4\"],[\"src/smn.c\",327,\"5\"]],\"max_index\":7}"
+                "{\"calls\":[[\"src/smn.c\",106,\"0\"],[\"src/smn.c\",217,\"0\"],[\"src/smn.c\",219,\"1\"],[\"src/smn.c\",292,\"6\"],[\"src/smn.c\",294,\"7\"],[\"src/smn.c\",349,\"2\"],[\"src/smn.c\",384,\"3\"],[\"src/smn.c\",388,\"4\"],[\"src/smn.c\",393,\"5\"]],\"max_index\":7}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_001",
-          "address": "0x0813EA64",
-          "size": 16,
-          "sha256": "b172b4ffb2ffb6d886aa1a9ffc6f9807451a1f0a0ae18ee5dbf65b1bedd479cf",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnCloud",
+              "offset": 128,
+              "size": 15
+            },
             {
               "name": "gUnk_0813E9E8",
-              "offset": 0,
+              "offset": 144,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",490,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",556,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_002",
-          "address": "0x0813EA84",
-          "size": 48,
-          "sha256": "69e4937bea5a9a726bb1e6e9d59d8b1ac8849f473ecc0b699b3426977cc5756d",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnBambi",
+              "offset": 160,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA08",
-              "offset": 0,
+              "offset": 176,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",822,\"0\"],[\"src/smn.c\",942,\"0\"],[\"src/smn.c\",967,\"1\"],[\"src/smn.c\",1026,\"2\"],[\"src/smn.c\",1045,\"1\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",888,\"0\"],[\"src/smn.c\",1008,\"0\"],[\"src/smn.c\",1033,\"1\"],[\"src/smn.c\",1092,\"2\"],[\"src/smn.c\",1111,\"1\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_003",
-          "address": "0x0813EAD8",
-          "size": 16,
-          "sha256": "d62f7a9b8cf7ec943bf2243c871fe5587301878f93f9bf97bd3c1287f10dd6c4",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnTink",
+              "offset": 224,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameSmnTinkeff",
+              "offset": 240,
+              "size": 17
+            },
             {
               "name": "gUnk_0813EA5C",
-              "offset": 0,
+              "offset": 260,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1203,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",1269,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_004",
-          "address": "0x0813EAF8",
-          "size": 80,
-          "sha256": "90e5a12f0c9b331434fbd40f3249f087a5fc6f380fbd2a199a1e4ddb4d7faf15",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnSimba",
+              "offset": 276,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA7C",
-              "offset": 0,
+              "offset": 292,
               "size": 64,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1440,\"0\"],[\"src/smn.c\",1527,\"2\"],[\"src/smn.c\",1536,\"3\"]],\"max_index\":3}"
+                "{\"calls\":[[\"src/smn.c\",1506,\"0\"],[\"src/smn.c\",1593,\"2\"],[\"src/smn.c\",1602,\"3\"]],\"max_index\":3}"
               ]
             },
             {
               "name": "gUnk_0813EABC",
-              "offset": 64,
+              "offset": 356,
               "size": 16,
               "consumer": [
                 "func_08019068",
                 "{\"extent\":\"One independently stored typed continuation record. No code use of index4 was found; following task-name object has an independent descriptor/name anchor. The three pointer roles and final scalar match all regions.\"}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_005",
-          "address": "0x0813EB58",
-          "size": 48,
-          "sha256": "4bd960cb60fad6aced76cd9242331600965d682b4416177e4482f8c21faa2187",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnMushu",
+              "offset": 372,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EADC",
-              "offset": 0,
+              "offset": 388,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1693,\"0\"],[\"src/smn.c\",1754,\"0\"],[\"src/smn.c\",1766,\"1\"],[\"src/smn.c\",1788,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",1759,\"0\"],[\"src/smn.c\",1820,\"0\"],[\"src/smn.c\",1832,\"1\"],[\"src/smn.c\",1854,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_006",
-          "address": "0x0813EB98",
-          "size": 32,
-          "sha256": "559ebedbaad807c8adabeeb8773e8828fd577411e08d98fbfd50082586458d8b",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnDumbo",
+              "offset": 436,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB1C",
-              "offset": 0,
+              "offset": 452,
               "size": 32,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1899,\"0\"],[\"src/smn.c\",2063,\"0\"],[\"src/smn.c\",2078,\"0\"],[\"src/smn.c\",2096,\"0\"],[\"src/smn.c\",2121,\"1\"],[\"src/smn.c\",2159,\"1\"],[\"src/smn.c\",2198,\"1\"]],\"max_index\":1}"
+                "{\"calls\":[[\"src/smn.c\",1965,\"0\"],[\"src/smn.c\",2129,\"0\"],[\"src/smn.c\",2144,\"0\"],[\"src/smn.c\",2162,\"0\"],[\"src/smn.c\",2187,\"1\"],[\"src/smn.c\",2225,\"1\"],[\"src/smn.c\",2264,\"1\"]],\"max_index\":1}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_007",
-          "address": "0x0813EBC8",
-          "size": 48,
-          "sha256": "5fc43fed2276c2bcb8af6037fc7a98c6254fe5430d8383e39e41cf7d55d1e510",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnGenie",
+              "offset": 484,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB4C",
-              "offset": 0,
+              "offset": 500,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",2320,\"0\"],[\"src/smn.c\",2387,\"1\"],[\"src/smn.c\",2395,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",2386,\"0\"],[\"src/smn.c\",2453,\"1\"],[\"src/smn.c\",2461,\"2\"]],\"max_index\":2}"
               ]
+            },
+            {
+              "name": "gTaskNameSmnKing",
+              "offset": 548,
+              "size": 14
             }
           ],
           "alignment_before": 4,
@@ -6708,11 +6644,11 @@
           "padding_before": 3
         },
         {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_000",
+          "unit": "smn.c",
+          "section": ".rodata",
           "address": "0x0888CE2C",
-          "size": 128,
-          "sha256": "9547d7f0e37bd142ae18ffd2ed06efb17135a5f6873bdc493c6476acecedf04f",
+          "size": 562,
+          "sha256": "75ad15e752e654e0ebdf398a7da46381f89d7081ef94b4f04295ba031ff1550d",
           "objects": [
             {
               "name": "gUnk_0813E958",
@@ -6720,157 +6656,125 @@
               "size": 128,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",40,\"0\"],[\"src/smn.c\",151,\"0\"],[\"src/smn.c\",153,\"1\"],[\"src/smn.c\",226,\"6\"],[\"src/smn.c\",228,\"7\"],[\"src/smn.c\",283,\"2\"],[\"src/smn.c\",318,\"3\"],[\"src/smn.c\",322,\"4\"],[\"src/smn.c\",327,\"5\"]],\"max_index\":7}"
+                "{\"calls\":[[\"src/smn.c\",106,\"0\"],[\"src/smn.c\",217,\"0\"],[\"src/smn.c\",219,\"1\"],[\"src/smn.c\",292,\"6\"],[\"src/smn.c\",294,\"7\"],[\"src/smn.c\",349,\"2\"],[\"src/smn.c\",384,\"3\"],[\"src/smn.c\",388,\"4\"],[\"src/smn.c\",393,\"5\"]],\"max_index\":7}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_001",
-          "address": "0x0888CEBC",
-          "size": 16,
-          "sha256": "f815f7e07278237e905456901592ac28adfaff42c4319b7746d24753f1f4e572",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnCloud",
+              "offset": 128,
+              "size": 15
+            },
             {
               "name": "gUnk_0813E9E8",
-              "offset": 0,
+              "offset": 144,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",490,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",556,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_002",
-          "address": "0x0888CEDC",
-          "size": 48,
-          "sha256": "b878daa257c52278caae37fec72c90807fd156a1b3966b32391daa86cca190dd",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnBambi",
+              "offset": 160,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA08",
-              "offset": 0,
+              "offset": 176,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",822,\"0\"],[\"src/smn.c\",942,\"0\"],[\"src/smn.c\",967,\"1\"],[\"src/smn.c\",1026,\"2\"],[\"src/smn.c\",1045,\"1\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",888,\"0\"],[\"src/smn.c\",1008,\"0\"],[\"src/smn.c\",1033,\"1\"],[\"src/smn.c\",1092,\"2\"],[\"src/smn.c\",1111,\"1\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_003",
-          "address": "0x0888CF30",
-          "size": 16,
-          "sha256": "dd49974c64f466bbd0b8c8a9fdd1c2dc952cb38984d1c18852b6c7c7f8bfa618",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnTink",
+              "offset": 224,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameSmnTinkeff",
+              "offset": 240,
+              "size": 17
+            },
             {
               "name": "gUnk_0813EA5C",
-              "offset": 0,
+              "offset": 260,
               "size": 16,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1203,\"0\"]],\"max_index\":0}"
+                "{\"calls\":[[\"src/smn.c\",1269,\"0\"]],\"max_index\":0}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_004",
-          "address": "0x0888CF50",
-          "size": 80,
-          "sha256": "be160ad13fdf8009d2f32b57dfb2597b3e34b1896d8fe9e748c83a8549b70670",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnSimba",
+              "offset": 276,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EA7C",
-              "offset": 0,
+              "offset": 292,
               "size": 64,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1440,\"0\"],[\"src/smn.c\",1527,\"2\"],[\"src/smn.c\",1536,\"3\"]],\"max_index\":3}"
+                "{\"calls\":[[\"src/smn.c\",1506,\"0\"],[\"src/smn.c\",1593,\"2\"],[\"src/smn.c\",1602,\"3\"]],\"max_index\":3}"
               ]
             },
             {
               "name": "gUnk_0813EABC",
-              "offset": 64,
+              "offset": 356,
               "size": 16,
               "consumer": [
                 "func_08019068",
                 "{\"extent\":\"One independently stored typed continuation record. No code use of index4 was found; following task-name object has an independent descriptor/name anchor. The three pointer roles and final scalar match all regions.\"}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_005",
-          "address": "0x0888CFB0",
-          "size": 48,
-          "sha256": "b9b2722d84e09d141b3370363121e8fc27caa7647269782b76d4a787275e2d87",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnMushu",
+              "offset": 372,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EADC",
-              "offset": 0,
+              "offset": 388,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1693,\"0\"],[\"src/smn.c\",1754,\"0\"],[\"src/smn.c\",1766,\"1\"],[\"src/smn.c\",1788,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",1759,\"0\"],[\"src/smn.c\",1820,\"0\"],[\"src/smn.c\",1832,\"1\"],[\"src/smn.c\",1854,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_006",
-          "address": "0x0888CFF0",
-          "size": 32,
-          "sha256": "ac561a7f6b306fdb2ed47b3ed57b661e5f5cb899957e63c14a4f3dce9d25bb71",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnDumbo",
+              "offset": 436,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB1C",
-              "offset": 0,
+              "offset": 452,
               "size": 32,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",1899,\"0\"],[\"src/smn.c\",2063,\"0\"],[\"src/smn.c\",2078,\"0\"],[\"src/smn.c\",2096,\"0\"],[\"src/smn.c\",2121,\"1\"],[\"src/smn.c\",2159,\"1\"],[\"src/smn.c\",2198,\"1\"]],\"max_index\":1}"
+                "{\"calls\":[[\"src/smn.c\",1965,\"0\"],[\"src/smn.c\",2129,\"0\"],[\"src/smn.c\",2144,\"0\"],[\"src/smn.c\",2162,\"0\"],[\"src/smn.c\",2187,\"1\"],[\"src/smn.c\",2225,\"1\"],[\"src/smn.c\",2264,\"1\"]],\"max_index\":1}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "smn_data.c",
-          "section": ".rodata_smn_007",
-          "address": "0x0888D020",
-          "size": 48,
-          "sha256": "6fb310536168abb9957fa6a72f3a6e5dc4a80ea3acaed2d24945b3145e3a4888",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameSmnGenie",
+              "offset": 484,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EB4C",
-              "offset": 0,
+              "offset": 500,
               "size": 48,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/smn.c\",2320,\"0\"],[\"src/smn.c\",2387,\"1\"],[\"src/smn.c\",2395,\"2\"]],\"max_index\":2}"
+                "{\"calls\":[[\"src/smn.c\",2386,\"0\"],[\"src/smn.c\",2453,\"1\"],[\"src/smn.c\",2461,\"2\"]],\"max_index\":2}"
               ]
+            },
+            {
+              "name": "gTaskNameSmnKing",
+              "offset": 548,
+              "size": 14
             }
           ],
           "alignment_before": 4,

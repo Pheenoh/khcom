@@ -242,7 +242,6 @@ typedef struct SmnKingWork {
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_096183F8[];
-extern AnimDef gUnk_0813EB4C[3];
 extern u8 gUnk_08F6DC24[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BA4[];
@@ -252,13 +251,6 @@ extern u8 gUnk_09618018[];
 extern u8 gUnk_09618098[];
 extern u8 gUnk_09618298[];
 extern u8 gUnk_09618038[];
-extern AnimDef gUnk_0813E958[8];
-extern AnimDef gUnk_0813E9E8;
-extern AnimDef gUnk_0813EA08[3];
-extern AnimDef gUnk_0813EA5C;
-extern AnimDef gUnk_0813EB1C[2];
-extern AnimDef gUnk_0813EA7C[4];
-extern AnimDef gUnk_0813EADC[3];
 void func_08041D64(SmnBambiWork* work);
 void func_08044518(SmnGenieWork* work);
 u8 func_08041FCC(SmnBambiWork* work);
@@ -267,6 +259,5 @@ BtlObj* func_08044450(SmnGenieWork* work);
 void func_080428E8(SmnTinkWork* work);
 u8 func_08044F98(SmnKingWork* work);
 
-extern AnimDef gUnk_0813EABC;
 
 #endif /* GUARD_SMN_H */
