@@ -1,5 +1,81 @@
 {
   "us": {
+    "src/mode_sio.o": {
+      "base": "0x2034b3c",
+      "size": "0x18",
+      "symbols": {
+        "gSioBtlCardgetWork": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gSioBtlConnectWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gSioBtlOptionWork": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gSioChgCardWork": {
+          "offset": "0x10",
+          "size": "0x4"
+        },
+        "gSioChgConnectWork": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gSioErrorWork": {
+          "offset": "0x14",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_wlogo.o": {
+      "base": "0x2034b58",
+      "size": "0xe0",
+      "symbols": {
+        "gUnk_02034B58": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02034B59": {
+          "offset": "0x1",
+          "size": "0x1"
+        },
+        "gUnk_02034B5A": {
+          "offset": "0x2",
+          "size": "0x1"
+        },
+        "gUnk_02034B5B": {
+          "offset": "0x3",
+          "size": "0x1"
+        },
+        "gUnk_02034B60": {
+          "offset": "0x8",
+          "size": "0xa0"
+        },
+        "gUnk_02034C00": {
+          "offset": "0xa8",
+          "size": "0x4"
+        },
+        "gUnk_02034C08": {
+          "offset": "0xb0",
+          "size": "0x14"
+        },
+        "gUnk_02034C1C": {
+          "offset": "0xc4",
+          "size": "0x4"
+        },
+        "gUnk_02034C20": {
+          "offset": "0xc8",
+          "size": "0x14"
+        },
+        "gUnk_02034C34": {
+          "offset": "0xdc",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio_dbg.o": {
       "base": "0x2034cf4",
       "size": "0x2",
@@ -1027,6 +1103,82 @@
     }
   },
   "jp": {
+    "src/mode_sio.o": {
+      "base": "0x2034a9c",
+      "size": "0x18",
+      "symbols": {
+        "gSioBtlCardgetWork": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gSioBtlConnectWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gSioBtlOptionWork": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gSioChgCardWork": {
+          "offset": "0x10",
+          "size": "0x4"
+        },
+        "gSioChgConnectWork": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gSioErrorWork": {
+          "offset": "0x14",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_wlogo.o": {
+      "base": "0x2034ab8",
+      "size": "0xe0",
+      "symbols": {
+        "gUnk_02034B58": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02034B59": {
+          "offset": "0x1",
+          "size": "0x1"
+        },
+        "gUnk_02034B5A": {
+          "offset": "0x2",
+          "size": "0x1"
+        },
+        "gUnk_02034B5B": {
+          "offset": "0x3",
+          "size": "0x1"
+        },
+        "gUnk_02034B60": {
+          "offset": "0x8",
+          "size": "0xa0"
+        },
+        "gUnk_02034C00": {
+          "offset": "0xa8",
+          "size": "0x4"
+        },
+        "gUnk_02034C08": {
+          "offset": "0xb0",
+          "size": "0x14"
+        },
+        "gUnk_02034C1C": {
+          "offset": "0xc4",
+          "size": "0x4"
+        },
+        "gUnk_02034C20": {
+          "offset": "0xc8",
+          "size": "0x14"
+        },
+        "gUnk_02034C34": {
+          "offset": "0xdc",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio_dbg.o": {
       "base": "0x2034c54",
       "size": "0x2",
@@ -2053,6 +2205,74 @@
     }
   },
   "eu": {
+    "src/mode_sio.o": {
+      "base": "0x2034b54",
+      "size": "0x10",
+      "symbols": {
+        "gSioBtlCardgetWork": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gSioBtlConnectWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gSioBtlOptionWork": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gSioErrorWork": {
+          "offset": "0xc",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_wlogo.o": {
+      "base": "0x2034b68",
+      "size": "0x2c0",
+      "symbols": {
+        "gUnk_02034B58": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02034B59": {
+          "offset": "0x1",
+          "size": "0x1"
+        },
+        "gUnk_02034B5A": {
+          "offset": "0x2",
+          "size": "0x1"
+        },
+        "gUnk_02034B5B": {
+          "offset": "0x3",
+          "size": "0x1"
+        },
+        "gUnk_02034B60": {
+          "offset": "0x8",
+          "size": "0x280"
+        },
+        "gUnk_02034C00": {
+          "offset": "0x288",
+          "size": "0x4"
+        },
+        "gUnk_02034C08": {
+          "offset": "0x290",
+          "size": "0x14"
+        },
+        "gUnk_02034C1C": {
+          "offset": "0x2a4",
+          "size": "0x4"
+        },
+        "gUnk_02034C20": {
+          "offset": "0x2a8",
+          "size": "0x14"
+        },
+        "gUnk_02034C34": {
+          "offset": "0x2bc",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio_dbg.o": {
       "base": "0x2034ee4",
       "size": "0x2",

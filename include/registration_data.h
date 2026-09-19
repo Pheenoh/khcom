@@ -348,8 +348,6 @@ extern const char gModeNameSioChgCard[];
 
 #endif
 extern const char gModeNameSioError[];
-extern const char gModeNameWLogo[];
-extern const char gTaskNameWLogo[];
 extern const char gTaskNameWlogoMons[];
 extern const char gTaskNameWlogoHwt[];
 extern const char gTaskNameWlogoHwtObj[];

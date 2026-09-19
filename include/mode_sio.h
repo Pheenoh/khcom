@@ -89,14 +89,6 @@ typedef struct SioBtlConnectWork {
     void* palette;
 } SioBtlConnectWork;
 
-typedef struct WLogoTaskWork {
-    u8 unk_00;
-    u8 unk_01[3];
-    s32 unk_04;
-    s16 unk_08;
-    u8 unk_0A[2];
-} WLogoTaskWork;
-
 typedef struct SioErrorWork {
     u8 unk_00;
     u8 unk_01;
@@ -488,15 +480,6 @@ void mode_sioError_0(s32 arg);
 void mode_sioError_1(void);
 void func_080B3F24(void);
 void mode_sioError_2(void);
-void mode_wLogo_0(s32 arg);
-void mode_wLogo_1(void);
-void mode_wLogo_2(void);
-void func_080B4154(void);
-void func_080B4210(u8 a);
-void task_wLogo_0(WLogoTaskWork* work, u8 arg);
-u8 task_wLogo_1(WLogoTaskWork* work);
-void task_wLogo_2(WLogoTaskWork* work);
-void task_wLogo_3(WLogoTaskWork* work);
 void func_080B1C70(u16 a, u16 b, u16 c);
 void func_080B1848(void);
 void func_080B18C4(void);

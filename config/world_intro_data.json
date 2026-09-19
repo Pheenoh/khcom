@@ -64,34 +64,6 @@
           ]
         },
         {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gWorldNames",
-          "address": "0x9ef15c8",
-          "size": 52,
-          "sha256": "a659667d52ee8f1fda6632bbc06e0e3368ca76acaad0c08f25b61c0eeb6dab2c",
-          "objects": [
-            {
-              "name": "gWorldNames",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF15FC",
-          "address": "0x9ef15fc",
-          "size": 13,
-          "sha256": "5ffcf87e26979e2e53f7fde2032472ccbfc7c3cbd4b18fdec40b7091d3df772a",
-          "objects": [
-            {
-              "name": "gUnk_09EF15FC",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
           "unit": "world_intro_data.c",
           "section": ".data_gUnk_09EF167C",
           "address": "0x9ef167c",
@@ -334,34 +306,6 @@
           ]
         },
         {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gWorldNames",
-          "address": "0x9ec89b4",
-          "size": 52,
-          "sha256": "107bf2675ad5436510235a028fd8f2d12b631a1b8431b328de945c4fbb81d2f7",
-          "objects": [
-            {
-              "name": "gWorldNames",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF15FC",
-          "address": "0x9ec89e8",
-          "size": 13,
-          "sha256": "5ffcf87e26979e2e53f7fde2032472ccbfc7c3cbd4b18fdec40b7091d3df772a",
-          "objects": [
-            {
-              "name": "gUnk_09EF15FC",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
           "unit": "world_intro_data.c",
           "section": ".data_gUnk_09EF167C",
           "address": "0x9ec8a68",
@@ -586,34 +530,6 @@
               "name": "gUnk_09EF14C4",
               "offset": 0,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gWorldNames",
-          "address": "0x9f7c800",
-          "size": 52,
-          "sha256": "50a729403e5d355ec437a3dae80b983865bb5954153afcbfe8a7c3da14a505cf",
-          "objects": [
-            {
-              "name": "gWorldNames",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF15FC",
-          "address": "0x9f7c834",
-          "size": 13,
-          "sha256": "5ffcf87e26979e2e53f7fde2032472ccbfc7c3cbd4b18fdec40b7091d3df772a",
-          "objects": [
-            {
-              "name": "gUnk_09EF15FC",
-              "offset": 0,
-              "size": 13
             }
           ]
         },

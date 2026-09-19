@@ -168,6 +168,7 @@ UNIT_BSS = {
     "src/mode_sio2.o": {"us": 0x02034CF8, "jp": 0x02034C58, "eu": 0x02034EE8},
     "src/sio.o": 0x0203406C,
     "src/mode_sio.o": {"us": 0x02034B3C, "jp": 0x02034A9C, "eu": 0x02034B54},
+    "src/mode_wlogo.o": {"us": 0x02034B58, "jp": 0x02034AB8, "eu": 0x02034B68},
     "src/mode_worldwarp.o": {"us": 0x020354E8, "jp": 0x02035448, "eu": 0x02035978},
     "src/bos3.o": {"us": 0x0203C3BC, "jp": 0x0203C32C, "eu": 0x0203C998},
     "src/snd_stream.o": {"us": 0x0203C7F0, "jp": 0x0203C760, "eu": 0x0203CDE0},

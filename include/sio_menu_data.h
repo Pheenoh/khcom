@@ -34,7 +34,5 @@ extern SioWorldEntry gUnk_09EF1318[];
 extern s8 gUnk_09EF14B8[];
 extern u16 gUnk_09EF14C4[];
 extern SioChgCardPos gUnk_09EF150C[];
-extern u8* gWorldNames[];
-extern u8 gUnk_09EF15FC[];
 
 #endif

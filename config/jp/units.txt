@@ -56,7 +56,8 @@ mode_test.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
-mode_sio.c -O2 -fprologue-bugfix -fno-common
+mode_sio.c
+mode_wlogo.c
 wlogo.c -O2 -fprologue-bugfix
 bos2.c -O2 -fprologue-bugfix -fno-common
 chara.c -O2 -fprologue-bugfix -fno-common
@@ -1257,8 +1258,7 @@ mode_sio.c(.rodata_registration_name_gModeSioChgConnect)
 asset_gfx_gap_46.s(.rodata)
 mode_sio.c(.rodata_registration_name_gModeSioChgCard)
 mode_sio.c(.rodata_registration_name_gModeSioError)
-mode_sio.c(.rodata_registration_name_gModeWLogo)
-mode_sio.c(.rodata_registration_name_gTaskDescWLogo)
+mode_wlogo.c(.rodata)
 wlogo.c(.rodata_registration_name_gTaskDescWlogoMons)
 wlogo.c(.rodata_registration_name_gTaskDescWlogoHwt)
 asset_gfx_gap_51.s(.rodata)
@@ -2333,11 +2333,7 @@ mode_sio.c(.data_registration_gModeSioChgConnect)
 sio_menu_data.c(.data_gUnk_09EF150C)
 mode_sio.c(.data_registration_gModeSioChgCard)
 mode_sio.c(.data_registration_gModeSioError)
-sio_menu_data.c(.data_gWorldNames)
-sio_menu_data.c(.data_gUnk_09EF15FC)
-rodata_regtables3_gap_27.s(.rodata)
-mode_sio.c(.data_registration_gModeWLogo)
-mode_sio.c(.data_registration_gTaskDescWLogo)
+mode_wlogo.c(.data)
 wlogo.c(.data_registration_gTaskDescWlogoMons)
 wlogo.c(.data_registration_gTaskDescWlogoHwt)
 wlogo.c(.data_registration_gTaskDescWlogoHwtObj)
