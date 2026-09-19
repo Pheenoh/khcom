@@ -41,7 +41,5 @@ typedef struct WorldinspectMsg {
 typedef WorldinspectNav MdWorldNav;
 typedef WorldinspectMsg MdMsg;
 
-extern WorldinspectNav gUnk_09EF8FAC[12];
-extern WorldinspectMsg gUnk_09EF909C[14];
 
 #endif

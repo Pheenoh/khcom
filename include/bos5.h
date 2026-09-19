@@ -4,16 +4,11 @@
 #define GUARD_BOS5_H
 
 #include "worldselect_data.h"
-
-#include "worldinspect_data.h"
-
-#include "card_description_data.h"
+#include "worldselect_assets.h"
 
 #include "animation_resource_data.h"
 
 #include "bg_animation_data.h"
-
-#include "worldinspect_resources.h"
 
 #include "graphics_state.h"
 
@@ -45,7 +40,6 @@
 #include "taskpool.h"
 #include "anim.h"
 #include "bos4_api.h"
-#include "bos5_api.h"
 #include "poo_api.h"
 #include "room_api.h"
 #include "btl_api.h"
@@ -228,9 +222,6 @@ typedef struct MdSlot {
 } MdSlot;
 
 extern MdModel gUnk_09992F70[];
-extern u8 gUnk_09A3CDDC[];
-extern u8 gUnk_099EDE7C[];
-extern u8 gUnk_099A8914[];
 
 typedef struct MdGfx {
     void* tiles;
@@ -299,9 +290,6 @@ void task_bos_md_dai_3(MdDaiWork* work);
 void func_080FB8E8(MdWork* work, u16 index);
 void func_080FB908(MdWork* work, u16 index);
 
-extern u8 gUnk_09A02EFC[];
-extern u8 gUnk_09A020FC[];
-
 typedef struct MdMapData {
     void* tiles;
     u16 tilesSize;
@@ -365,35 +353,7 @@ extern u8 gUnk_0999B052[];
 extern u8 gUnk_09A3CC7C[];
 extern u8 gUnk_0999CBB6[];
 extern u8 gUnk_0999C410[];
-extern s32 gUnk_020354D0;
-extern s32 gUnk_020354C8[];
-extern s32 gUnk_020354D8;
-extern s32 gUnk_020354DC;
-extern struct ObjTiles* gUnk_02035120;
-extern struct ObjPalette* gUnk_02035124;
-extern struct ObjTiles* gUnk_02035128;
-extern struct ObjPalette* gUnk_02035148;
-extern struct ObjTiles* gUnk_0203514C;
-extern void* gUnk_020351C8[];
-extern void* gUnk_02035198[];
-extern AnimState gUnk_02035130;
-extern AnimState gUnk_02035150;
-extern u8 gUnk_0203511A;
-extern u8 gUnk_0999CF38[];
-extern u8 gUnk_0999CF54[];
-extern u8 gUnk_0999CF88[];
-extern u16 gUnk_020354C2;
-extern u8 gUnk_09A3CC3C[];
-extern u8 gUnk_0999A394[];
-extern u8 gUnk_0999A350[];
 
-extern void* gUnk_02035168[];
-extern u8 gUnk_020354E0;
-extern s16 gUnk_02035118;
-extern u8 gUnk_09A324DC[];
-extern u8 gUnk_09A3D07C[];
-extern struct ObjPalette* gUnk_0203511C;
-extern s16 gUnk_020354C0;
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);
 void func_080FE89C(void);
@@ -406,7 +366,6 @@ void func_080FBA4C(MdWork* work);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
 void task_bos_md_2(MdWork* work);
-u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
 void func_080FC360(MdWork* work);
 
@@ -414,6 +373,5 @@ u8 func_080FC17C(MdWork* work);
 void func_080FC29C(MdWork* work);
 void task_bos_md_map_0(MdMapWork* work, MdMapData* p);
 s32 task_bos_md_map_1(MdMapWork* work);
-s32 func_080FF310(void);
 
 #endif /* GUARD_BOS5_H */

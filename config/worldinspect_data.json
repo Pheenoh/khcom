@@ -7,11 +7,11 @@
     "us": {
       "placements": [
         {
-          "unit": "worldinspect_data.c",
-          "section": ".data_worldinspect",
+          "unit": "mode_worldinspect.c",
+          "section": ".data",
           "address": "0x9ef8fac",
-          "size": 968,
-          "sha256": "fd796d3287aca104cf139a98d321172d2661420f9bcb7ad4f25f86a9fd57f886",
+          "size": 984,
+          "sha256": "e48e4469b73629ecd9d8f78687008e3409f6da39bf86ddea0507bc1505f47d8a",
           "objects": [
             {
               "name": "gUnk_09EF8FAC",
@@ -22,6 +22,11 @@
               "name": "gUnk_09EF909C",
               "offset": 240,
               "size": 728
+            },
+            {
+              "name": "gModeWorldinspect",
+              "offset": 968,
+              "size": 16
             }
           ]
         }
@@ -30,11 +35,11 @@
     "jp": {
       "placements": [
         {
-          "unit": "worldinspect_data.c",
-          "section": ".data_worldinspect",
+          "unit": "mode_worldinspect.c",
+          "section": ".data",
           "address": "0x9ed0398",
-          "size": 968,
-          "sha256": "39d0af1ee8333dda1ef8f037033cdea0cab58de341366281085af5c95360cce9",
+          "size": 984,
+          "sha256": "38b1c98c7f130a1ea1b8fefd30ed76baf07731ab3bc0078220e3f5eaa8778720",
           "objects": [
             {
               "name": "gUnk_09EF8FAC",
@@ -45,6 +50,11 @@
               "name": "gUnk_09EF909C",
               "offset": 240,
               "size": 728
+            },
+            {
+              "name": "gModeWorldinspect",
+              "offset": 968,
+              "size": 16
             }
           ]
         }
@@ -53,11 +63,11 @@
     "eu": {
       "placements": [
         {
-          "unit": "worldinspect_data.c",
-          "section": ".data_worldinspect",
+          "unit": "mode_worldinspect.c",
+          "section": ".data",
           "address": "0x9f848ac",
-          "size": 968,
-          "sha256": "45851e6e9c8de015b8584e959c9f997cab762203fcfec666290d32193f13952c",
+          "size": 984,
+          "sha256": "ee2c87b54a863458848c202d487e17822aaed961f70eb80c6f472be2b8176a93",
           "objects": [
             {
               "name": "gUnk_09EF8FAC",
@@ -68,6 +78,11 @@
               "name": "gUnk_09EF909C",
               "offset": 240,
               "size": 728
+            },
+            {
+              "name": "gModeWorldinspect",
+              "offset": 968,
+              "size": 16
             }
           ]
         }

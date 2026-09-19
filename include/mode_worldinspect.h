@@ -15,7 +15,6 @@
 #include "text_types.h"
 #include "main.h"
 #include "key.h"
-#include "bos5_api.h"
 
 
 extern u8 gUnk_09A329DC[];

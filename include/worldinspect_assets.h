@@ -7,6 +7,9 @@
 
 #include "mode_jiminy.h"
 
+extern u8 gUnk_0999CF38[];
+extern u8 gUnk_0999CF54[];
+extern u8 gUnk_0999CF88[];
 extern u8 gUnk_099A01EC[];
 extern u8 gUnk_099A0206[];
 extern u8 gUnk_099A0428[];
