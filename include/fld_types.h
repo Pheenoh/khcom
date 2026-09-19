@@ -83,7 +83,7 @@ typedef struct FldWork {
     u16 unk_A4;
     u8 unk_A6[0x02];
     s32 unk_A8;
-    u16* unk_AC;
+    const u16* unk_AC;
     s32 unk_B0;
     s32 unk_B4;
     s32 unk_B8;

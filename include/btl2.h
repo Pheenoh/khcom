@@ -27,7 +27,6 @@
 #include "anim.h"
 #include "fld_types.h"
 #include "bos4_api.h"
-#include "btl2_api.h"
 
 
 typedef struct BtlShadowWork {
@@ -186,7 +185,6 @@ typedef struct BtlStartWork {
 } BtlStartWork;
 
 
-extern AnimDef gUnk_0813C89C[15][5];
 extern u8 gUnk_08B1E7F4[];
 extern u8 gUnk_08B1EB1C[];
 extern u8 gUnk_08B1ED76[];
@@ -249,6 +247,5 @@ extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09618118[];
 
-void func_08031BC4(FldActor* act);
 
 #endif /* GUARD_BTL2_H */

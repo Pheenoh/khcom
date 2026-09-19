@@ -190,50 +190,6 @@
         },
         {
           "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_sora",
-          "address": "0x0813CDCC",
-          "size": 14,
-          "sha256": "5433f335b89d77d5dc48e40905b2fb46fa21a6c22a3c92e94e6c5f9244f6afde",
-          "objects": [
-            {
-              "name": "gTaskNameFldSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_riku",
-          "address": "0x0813D30C",
-          "size": 14,
-          "sha256": "83e20241af8dfafe7b3ecb44e75a7e66c12e95d03cc87ac500454aa61261e57b",
-          "objects": [
-            {
-              "name": "gTaskNameFldRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_shadow",
-          "address": "0x0813D31C",
-          "size": 16,
-          "sha256": "727a7248842aa418ac7c324b0698a4e104d96f1ac8b1f5859af861f7fb2c4dc8",
-          "objects": [
-            {
-              "name": "gTaskNameFldShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
           "section": ".rodata_names_emy_00",
           "address": "0x0813D3F8",
           "size": 12,
@@ -1688,50 +1644,6 @@
         },
         {
           "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_sora",
-          "address": "0x0813CE48",
-          "size": 14,
-          "sha256": "5433f335b89d77d5dc48e40905b2fb46fa21a6c22a3c92e94e6c5f9244f6afde",
-          "objects": [
-            {
-              "name": "gTaskNameFldSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_riku",
-          "address": "0x0813D388",
-          "size": 14,
-          "sha256": "83e20241af8dfafe7b3ecb44e75a7e66c12e95d03cc87ac500454aa61261e57b",
-          "objects": [
-            {
-              "name": "gTaskNameFldRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_shadow",
-          "address": "0x0813D398",
-          "size": 16,
-          "sha256": "727a7248842aa418ac7c324b0698a4e104d96f1ac8b1f5859af861f7fb2c4dc8",
-          "objects": [
-            {
-              "name": "gTaskNameFldShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
           "section": ".rodata_names_emy_00",
           "address": "0x0813D474",
           "size": 12,
@@ -3183,50 +3095,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_sora",
-          "address": "0x0888B2A0",
-          "size": 14,
-          "sha256": "5433f335b89d77d5dc48e40905b2fb46fa21a6c22a3c92e94e6c5f9244f6afde",
-          "objects": [
-            {
-              "name": "gTaskNameFldSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_riku",
-          "address": "0x0888B7E0",
-          "size": 14,
-          "sha256": "83e20241af8dfafe7b3ecb44e75a7e66c12e95d03cc87ac500454aa61261e57b",
-          "objects": [
-            {
-              "name": "gTaskNameFldRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_fld_shadow",
-          "address": "0x0888B7F0",
-          "size": 16,
-          "sha256": "727a7248842aa418ac7c324b0698a4e104d96f1ac8b1f5859af861f7fb2c4dc8",
-          "objects": [
-            {
-              "name": "gTaskNameFldShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         },
         {
           "unit": "task_names_data.c",

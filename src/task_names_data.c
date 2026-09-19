@@ -12,9 +12,6 @@ const char gTaskNameBtlEscape[] __attribute__((section(".rodata_names_btl_escape
 const char gTaskNameBtlPrize[] __attribute__((section(".rodata_names_btl_prize"), aligned(4))) = "task_btl_prize";
 const char gTaskNameBtlPremire[] __attribute__((section(".rodata_names_btl_premire"), aligned(4))) = "task_btl_premire";
 const char gTaskNameBtlStart[] __attribute__((section(".rodata_names_btl_start"), aligned(4))) = "task_btl_start";
-const char gTaskNameFldSora[] __attribute__((section(".rodata_names_fld_sora"), aligned(4))) = "task_fld_sora";
-const char gTaskNameFldRiku[] __attribute__((section(".rodata_names_fld_riku"), aligned(4))) = "task_fld_riku";
-const char gTaskNameFldShadow[] __attribute__((section(".rodata_names_fld_shadow"), aligned(4))) = "task_fld_shadow";
 const char gTaskNameEmy00[] __attribute__((section(".rodata_names_emy_00"), aligned(4))) = "task_emy_00";
 const char gTaskNameEmy01[] __attribute__((section(".rodata_names_emy_01"), aligned(4))) = "task_emy_01";
 const char gTaskNameEmy02[] __attribute__((section(".rodata_names_emy_02"), aligned(4))) = "task_emy_02";

@@ -291,11 +291,11 @@
           ]
         },
         {
-          "unit": "btl2_data.c",
-          "section": ".rodata_btl2_000",
+          "unit": "fld.c",
+          "section": ".rodata",
           "address": "0x0813C89C",
-          "size": 1328,
-          "sha256": "a1e59c86c2fcecff2e66af3e4899a39f44012f37299c4e86c0bc28e6ea5d373a",
+          "size": 2704,
+          "sha256": "f235b79d45e535a783d0ecc73713084c9f13d19bee47947469be73310833b0aa",
           "objects": [
             {
               "name": "gUnk_0813C89C",
@@ -303,7 +303,7 @@
               "size": 1200,
               "consumer": [
                 "func_08031F98",
-                "{\"calls\":[[\"src/btl2.c\",1972,\"s32 a\"],[\"src/fld.c\",48,\"0\"],[\"src/fld.c\",94,\"12\"],[\"src/fld.c\",96,\"1\"],[\"src/fld.c\",98,\"0\"],[\"src/fld.c\",146,\"11\"],[\"src/fld.c\",151,\"4\"],[\"src/fld.c\",207,\"14\"],[\"src/fld.c\",272,\"3\"],[\"src/fld.c\",323,\"5\"],[\"src/fld.c\",325,\"4\"],[\"src/fld.c\",366,\"5\"],[\"src/fld.c\",368,\"6\"],[\"src/fld.c\",392,\"7\"],[\"src/fld.c\",517,\"8\"],[\"src/fld.c\",564,\"0\"],[\"src/fld.c\",589,\"6\"],[\"src/fld.c\",596,\"11\"],[\"src/fld.c\",677,\"9\"],[\"src/fld.c\",695,\"10\"],[\"src/fld.c\",699,\"11\"],[\"src/fld.c\",738,\"2\"],[\"src/fld.c\",853,\"12\"],[\"src/fld.c\",893,\"13\"],[\"src/fld.c\",1079,\"0\"],[\"src/fld.c\",1202,\"2\"],[\"src/fld.c\",1219,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
@@ -312,41 +312,45 @@
               "size": 128,
               "consumer": [
                 "task_fld_sora_0",
-                "{\"consumer\":[\"src/fld.c\",53,73],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "fld_data.c",
-          "section": ".rodata_fld_000",
-          "address": "0x0813CDDC",
-          "size": 1328,
-          "sha256": "b375a557f25d3a34a6d20811741bddf6ec755eecbd8b0bf1d190629d79c71577",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFldSora",
+              "offset": 1328,
+              "size": 14
+            },
             {
               "name": "gUnk_0813CDDC",
-              "offset": 0,
+              "offset": 1344,
               "size": 1200,
               "consumer": [
                 "func_0803473C",
-                "{\"calls\":[[\"src/fld.c\",1657,\"s32 index\"],[\"src/fld.c\",1747,\"0\"],[\"src/fld.c\",1793,\"12\"],[\"src/fld.c\",1795,\"1\"],[\"src/fld.c\",1797,\"0\"],[\"src/fld.c\",1846,\"11\"],[\"src/fld.c\",1851,\"4\"],[\"src/fld.c\",1907,\"14\"],[\"src/fld.c\",1971,\"3\"],[\"src/fld.c\",2022,\"5\"],[\"src/fld.c\",2024,\"4\"],[\"src/fld.c\",2065,\"5\"],[\"src/fld.c\",2067,\"6\"],[\"src/fld.c\",2091,\"7\"],[\"src/fld.c\",2215,\"8\"],[\"src/fld.c\",2262,\"0\"],[\"src/fld.c\",2287,\"6\"],[\"src/fld.c\",2294,\"11\"],[\"src/fld.c\",2375,\"9\"],[\"src/fld.c\",2393,\"10\"],[\"src/fld.c\",2397,\"11\"],[\"src/fld.c\",2436,\"2\"],[\"src/fld.c\",2546,\"12\"],[\"src/fld.c\",2586,\"13\"],[\"src/fld.c\",2772,\"0\"],[\"src/fld.c\",2895,\"2\"],[\"src/fld.c\",2912,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
               "name": "gUnk_0813D28C",
-              "offset": 1200,
+              "offset": 2544,
               "size": 128,
               "consumer": [
                 "task_fld_riku_0",
-                "{\"consumer\":[\"src/fld.c\",1752,1772],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
+            },
+            {
+              "name": "gTaskNameFldRiku",
+              "offset": 2672,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameFldShadow",
+              "offset": 2688,
+              "size": 16
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 1
         },
         {
           "unit": "emy_data.c",
@@ -2813,11 +2817,11 @@
           ]
         },
         {
-          "unit": "btl2_data.c",
-          "section": ".rodata_btl2_000",
+          "unit": "fld.c",
+          "section": ".rodata",
           "address": "0x0813C918",
-          "size": 1328,
-          "sha256": "2c7c9dc462c815ea136cb39a9e11896fbc3a20924f593c9bfffa1358ebdcac50",
+          "size": 2704,
+          "sha256": "e1df86fafcb17b535be263a0ef81eef54e3bda571c871103f3c52c09eebb62cf",
           "objects": [
             {
               "name": "gUnk_0813C89C",
@@ -2825,7 +2829,7 @@
               "size": 1200,
               "consumer": [
                 "func_08031F98",
-                "{\"calls\":[[\"src/btl2.c\",1972,\"s32 a\"],[\"src/fld.c\",48,\"0\"],[\"src/fld.c\",94,\"12\"],[\"src/fld.c\",96,\"1\"],[\"src/fld.c\",98,\"0\"],[\"src/fld.c\",146,\"11\"],[\"src/fld.c\",151,\"4\"],[\"src/fld.c\",207,\"14\"],[\"src/fld.c\",272,\"3\"],[\"src/fld.c\",323,\"5\"],[\"src/fld.c\",325,\"4\"],[\"src/fld.c\",366,\"5\"],[\"src/fld.c\",368,\"6\"],[\"src/fld.c\",392,\"7\"],[\"src/fld.c\",517,\"8\"],[\"src/fld.c\",564,\"0\"],[\"src/fld.c\",589,\"6\"],[\"src/fld.c\",596,\"11\"],[\"src/fld.c\",677,\"9\"],[\"src/fld.c\",695,\"10\"],[\"src/fld.c\",699,\"11\"],[\"src/fld.c\",738,\"2\"],[\"src/fld.c\",853,\"12\"],[\"src/fld.c\",893,\"13\"],[\"src/fld.c\",1079,\"0\"],[\"src/fld.c\",1202,\"2\"],[\"src/fld.c\",1219,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
@@ -2834,41 +2838,45 @@
               "size": 128,
               "consumer": [
                 "task_fld_sora_0",
-                "{\"consumer\":[\"src/fld.c\",53,73],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "fld_data.c",
-          "section": ".rodata_fld_000",
-          "address": "0x0813CE58",
-          "size": 1328,
-          "sha256": "8ed9ed84f119e1ffd382a13d8083cae97bafd4e608a169616c5e8c962866b6d3",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFldSora",
+              "offset": 1328,
+              "size": 14
+            },
             {
               "name": "gUnk_0813CDDC",
-              "offset": 0,
+              "offset": 1344,
               "size": 1200,
               "consumer": [
                 "func_0803473C",
-                "{\"calls\":[[\"src/fld.c\",1657,\"s32 index\"],[\"src/fld.c\",1747,\"0\"],[\"src/fld.c\",1793,\"12\"],[\"src/fld.c\",1795,\"1\"],[\"src/fld.c\",1797,\"0\"],[\"src/fld.c\",1846,\"11\"],[\"src/fld.c\",1851,\"4\"],[\"src/fld.c\",1907,\"14\"],[\"src/fld.c\",1971,\"3\"],[\"src/fld.c\",2022,\"5\"],[\"src/fld.c\",2024,\"4\"],[\"src/fld.c\",2065,\"5\"],[\"src/fld.c\",2067,\"6\"],[\"src/fld.c\",2091,\"7\"],[\"src/fld.c\",2215,\"8\"],[\"src/fld.c\",2262,\"0\"],[\"src/fld.c\",2287,\"6\"],[\"src/fld.c\",2294,\"11\"],[\"src/fld.c\",2375,\"9\"],[\"src/fld.c\",2393,\"10\"],[\"src/fld.c\",2397,\"11\"],[\"src/fld.c\",2436,\"2\"],[\"src/fld.c\",2546,\"12\"],[\"src/fld.c\",2586,\"13\"],[\"src/fld.c\",2772,\"0\"],[\"src/fld.c\",2895,\"2\"],[\"src/fld.c\",2912,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
               "name": "gUnk_0813D28C",
-              "offset": 1200,
+              "offset": 2544,
               "size": 128,
               "consumer": [
                 "task_fld_riku_0",
-                "{\"consumer\":[\"src/fld.c\",1752,1772],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
+            },
+            {
+              "name": "gTaskNameFldRiku",
+              "offset": 2672,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameFldShadow",
+              "offset": 2688,
+              "size": 16
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 1
         },
         {
           "unit": "emy_data.c",
@@ -5335,11 +5343,11 @@
           ]
         },
         {
-          "unit": "btl2_data.c",
-          "section": ".rodata_btl2_000",
+          "unit": "fld.c",
+          "section": ".rodata",
           "address": "0x0888AD70",
-          "size": 1328,
-          "sha256": "1e3d1cc7cd4359147402673a46792ce28e299940a8644d99f33aeaac9ba53b20",
+          "size": 2704,
+          "sha256": "75671851130d6099ca947222446317390622844e4789fcca27658e4d95b304b9",
           "objects": [
             {
               "name": "gUnk_0813C89C",
@@ -5347,7 +5355,7 @@
               "size": 1200,
               "consumer": [
                 "func_08031F98",
-                "{\"calls\":[[\"src/btl2.c\",1972,\"s32 a\"],[\"src/fld.c\",48,\"0\"],[\"src/fld.c\",94,\"12\"],[\"src/fld.c\",96,\"1\"],[\"src/fld.c\",98,\"0\"],[\"src/fld.c\",146,\"11\"],[\"src/fld.c\",151,\"4\"],[\"src/fld.c\",207,\"14\"],[\"src/fld.c\",272,\"3\"],[\"src/fld.c\",323,\"5\"],[\"src/fld.c\",325,\"4\"],[\"src/fld.c\",366,\"5\"],[\"src/fld.c\",368,\"6\"],[\"src/fld.c\",392,\"7\"],[\"src/fld.c\",517,\"8\"],[\"src/fld.c\",564,\"0\"],[\"src/fld.c\",589,\"6\"],[\"src/fld.c\",596,\"11\"],[\"src/fld.c\",677,\"9\"],[\"src/fld.c\",695,\"10\"],[\"src/fld.c\",699,\"11\"],[\"src/fld.c\",738,\"2\"],[\"src/fld.c\",853,\"12\"],[\"src/fld.c\",893,\"13\"],[\"src/fld.c\",1079,\"0\"],[\"src/fld.c\",1202,\"2\"],[\"src/fld.c\",1219,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
@@ -5356,41 +5364,45 @@
               "size": 128,
               "consumer": [
                 "task_fld_sora_0",
-                "{\"consumer\":[\"src/fld.c\",53,73],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "fld_data.c",
-          "section": ".rodata_fld_000",
-          "address": "0x0888B2B0",
-          "size": 1328,
-          "sha256": "80908d7567a4c95f6d7c8ed07609da3f111d2afd218353185d66beadcaf1c8ef",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFldSora",
+              "offset": 1328,
+              "size": 14
+            },
             {
               "name": "gUnk_0813CDDC",
-              "offset": 0,
+              "offset": 1344,
               "size": 1200,
               "consumer": [
                 "func_0803473C",
-                "{\"calls\":[[\"src/fld.c\",1657,\"s32 index\"],[\"src/fld.c\",1747,\"0\"],[\"src/fld.c\",1793,\"12\"],[\"src/fld.c\",1795,\"1\"],[\"src/fld.c\",1797,\"0\"],[\"src/fld.c\",1846,\"11\"],[\"src/fld.c\",1851,\"4\"],[\"src/fld.c\",1907,\"14\"],[\"src/fld.c\",1971,\"3\"],[\"src/fld.c\",2022,\"5\"],[\"src/fld.c\",2024,\"4\"],[\"src/fld.c\",2065,\"5\"],[\"src/fld.c\",2067,\"6\"],[\"src/fld.c\",2091,\"7\"],[\"src/fld.c\",2215,\"8\"],[\"src/fld.c\",2262,\"0\"],[\"src/fld.c\",2287,\"6\"],[\"src/fld.c\",2294,\"11\"],[\"src/fld.c\",2375,\"9\"],[\"src/fld.c\",2393,\"10\"],[\"src/fld.c\",2397,\"11\"],[\"src/fld.c\",2436,\"2\"],[\"src/fld.c\",2546,\"12\"],[\"src/fld.c\",2586,\"13\"],[\"src/fld.c\",2772,\"0\"],[\"src/fld.c\",2895,\"2\"],[\"src/fld.c\",2912,\"0\"]],\"max_index\":74}"
+                "15 animation states with five directional records; maximum flattened index 74"
               ]
             },
             {
               "name": "gUnk_0813D28C",
-              "offset": 1200,
+              "offset": 2544,
               "size": 128,
               "consumer": [
                 "task_fld_riku_0",
-                "{\"consumer\":[\"src/fld.c\",1752,1772],\"rows\":8,\"columns\":8}"
+                "eight world-dependent rows of eight sound IDs; stored through FldWork.unk_AC and only read"
               ]
+            },
+            {
+              "name": "gTaskNameFldRiku",
+              "offset": 2672,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameFldShadow",
+              "offset": 2688,
+              "size": 16
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 1
         },
         {
           "unit": "emy_data.c",

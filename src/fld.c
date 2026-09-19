@@ -2,6 +2,286 @@
 #include "macros.h"
 #include "fld.h"
 #include "gba/keys.h"
+#include "task_animation_assets.h"
+#include "task_names.h"
+
+const AnimDef gUnk_0813C89C[15][5] = {
+    { { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, { 0, 0, 0 } }, { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, { 0, 0, 0 } }, { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, { 0, 0, 0 } }, { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, { 0, 0, 0 } }, { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDED3C, gUnk_09EDED5C, gUnk_088DC192, 0, { 0, 0, 0 } }, { gUnk_09EDE920, gUnk_09EDE940, gUnk_088BAC36, 0, { 0, 0, 0 } }, { gUnk_09EDE9EC, gUnk_09EDEA0C, gUnk_088C1388, 0, { 0, 0, 0 } }, { gUnk_09EDEA70, gUnk_09EDEA90, gUnk_088C5AAA, 0, { 0, 0, 0 } }, { gUnk_09EDEB68, gUnk_09EDEB88, gUnk_088CE0C2, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDED60, gUnk_09EDED80, gUnk_088DDAF6, 0, { 0, 0, 0 } }, { gUnk_09EDE944, gUnk_09EDE964, gUnk_088BC6DE, 0, { 0, 0, 0 } }, { gUnk_09EDEA10, gUnk_09EDEA30, gUnk_088C2D72, 0, { 0, 0, 0 } }, { gUnk_09EDEA94, gUnk_09EDEAB4, gUnk_088C75A0, 0, { 0, 0, 0 } }, { gUnk_09EDEB8C, gUnk_09EDEBAC, gUnk_088CF9CE, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 0, { 0, 0, 0 } }, { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 0, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 0, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 0, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 1, { 0, 0, 0 } }, { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 1, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 1, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 1, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 2, { 0, 0, 0 } }, { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 2, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 2, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 2, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 3, { 0, 0, 0 } }, { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 3, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 3, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 3, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 3, { 0, 0, 0 } } },
+    { { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 4, { 0, 0, 0 } }, { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 4, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 4, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 4, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 4, { 0, 0, 0 } } },
+    { { gUnk_09EDEBE4, gUnk_09EDEBFC, gUnk_088D2638, 0, { 0, 0, 0 } }, { gUnk_09EDEBE4, gUnk_09EDEBFC, gUnk_088D2638, 0, { 0, 0, 0 } }, { gUnk_09EDEBE4, gUnk_09EDEBFC, gUnk_088D2638, 0, { 0, 0, 0 } }, { gUnk_09EDEBE4, gUnk_09EDEBFC, gUnk_088D2638, 0, { 0, 0, 0 } }, { gUnk_09EDEBE4, gUnk_09EDEBFC, gUnk_088D2638, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDECFC, gUnk_09EDED28, gUnk_088D9C76, 0, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 0, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 0, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 0, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDECFC, gUnk_09EDED28, gUnk_088D9C76, 1, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 1, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 1, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 1, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDECFC, gUnk_09EDED28, gUnk_088D9C76, 2, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 2, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 2, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 2, { 0, 0, 0 } }, { gUnk_09EDEC00, gUnk_09EDEC2C, gUnk_088D3A68, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDEC68, gUnk_09EDEC7C, gUnk_088D6282, 0, { 0, 0, 0 } }, { gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0, { 0, 0, 0 } }, { gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0, { 0, 0, 0 } }, { gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0, { 0, 0, 0 } }, { gUnk_09EDEC68, gUnk_09EDEC7C, gUnk_088D6282, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF360, gUnk_09EDF370, gUnk_0891DFC4, 0, { 0, 0, 0 } }, { gUnk_09EDF34C, gUnk_09EDF35C, gUnk_0891D344, 0, { 0, 0, 0 } }, { gUnk_09EDF308, gUnk_09EDF31C, gUnk_0891A166, 0, { 0, 0, 0 } }, { gUnk_09EDF338, gUnk_09EDF348, gUnk_0891C1E8, 0, { 0, 0, 0 } }, { gUnk_09EDF320, gUnk_09EDF334, gUnk_0891B26C, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF090, gUnk_09EDF0A8, gUnk_088FB5F2, 0, { 0, 0, 0 } }, { gUnk_09EDF004, gUnk_09EDF01C, gUnk_088F5298, 0, { 0, 0, 0 } }, { gUnk_09EDF020, gUnk_09EDF03C, gUnk_088F695C, 0, { 0, 0, 0 } }, { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 0, { 0, 0, 0 } }, { gUnk_09EDF074, gUnk_09EDF08C, gUnk_088FA0DA, 0, { 0, 0, 0 } } },
+};
+
+const u16 gUnk_0813CD4C[8][8] = {
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 126, 127, 128, 129, 126, 127, 136, 0 },
+    { 126, 127, 128, 129, 126, 127, 136, 0 },
+    { 109, 110, 111, 112, 133, 133, 134, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 109, 110, 111, 112, 122, 123, 135, 0 },
+};
+
+const char gTaskNameFldSora[] = "task_fld_sora";
+
+const AnimDef gUnk_0813CDDC[15][5] = {
+    { { gUnk_09EDF4C0, gUnk_09EDF4C4, gUnk_08933A34, 0, { 0, 0, 0 } }, { gUnk_09EEF89C, gUnk_09EEF8C0, gUnk_092EB78A, 0, { 0, 0, 0 } }, { gUnk_09EEF894, gUnk_09EEF898, gUnk_092EB288, 0, { 0, 0, 0 } }, { gUnk_09EDF4C8, gUnk_09EDF4CC, gUnk_08933D94, 0, { 0, 0, 0 } }, { gUnk_09EEF8C8, gUnk_09EEF8CC, gUnk_092ED580, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF4F4, gUnk_09EDF514, gUnk_08935BC2, 0, { 0, 0, 0 } }, { gUnk_09EDF4D0, gUnk_09EDF4F0, gUnk_0893416A, 0, { 0, 0, 0 } }, { gUnk_09EEF8D0, gUnk_09EEF8F0, gUnk_092ED9F6, 0, { 0, 0, 0 } }, { gUnk_09EEF8F4, gUnk_09EEF914, gUnk_092EFAD4, 0, { 0, 0, 0 } }, { gUnk_09EEF918, gUnk_09EEF938, gUnk_092F15E4, 0, { 0, 0, 0 } } },
+    { { gUnk_09EEFA4C, gUnk_09EEFA6C, gUnk_092FDDC6, 0, { 0, 0, 0 } }, { gUnk_09EEFA70, gUnk_09EEFA90, gUnk_092FF906, 0, { 0, 0, 0 } }, { gUnk_09EEF93C, gUnk_09EEF95C, gUnk_092F31E0, 0, { 0, 0, 0 } }, { gUnk_09EEF994, gUnk_09EEF9B4, gUnk_092F65A2, 0, { 0, 0, 0 } }, { gUnk_09EEF9B8, gUnk_09EEF9D8, gUnk_092F881A, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 0, { 0, 0, 0 } }, { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 0, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 0, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 0, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 1, { 0, 0, 0 } }, { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 1, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 1, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 1, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 2, { 0, 0, 0 } }, { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 2, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 2, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 2, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 3, { 0, 0, 0 } }, { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 3, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 3, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 3, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 3, { 0, 0, 0 } } },
+    { { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 4, { 0, 0, 0 } }, { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 4, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 4, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 4, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 4, { 0, 0, 0 } } },
+    { { gUnk_09EDF5F4, gUnk_09EDF60C, gUnk_0893DCDC, 0, { 0, 0, 0 } }, { gUnk_09EDF5F4, gUnk_09EDF60C, gUnk_0893DCDC, 0, { 0, 0, 0 } }, { gUnk_09EDF5F4, gUnk_09EDF60C, gUnk_0893DCDC, 0, { 0, 0, 0 } }, { gUnk_09EDF5F4, gUnk_09EDF60C, gUnk_0893DCDC, 0, { 0, 0, 0 } }, { gUnk_09EDF5F4, gUnk_09EDF60C, gUnk_0893DCDC, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF640, gUnk_09EDF660, gUnk_08940D90, 0, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 0, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 0, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 0, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF640, gUnk_09EDF660, gUnk_08940D90, 1, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 1, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 1, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 1, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDF640, gUnk_09EDF660, gUnk_08940D90, 2, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 2, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 2, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 2, { 0, 0, 0 } }, { gUnk_09EDF614, gUnk_09EDF634, gUnk_0893F080, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDF680, gUnk_09EDF68C, gUnk_089434C8, 0, { 0, 0, 0 } }, { gUnk_09EDF66C, gUnk_09EDF678, gUnk_089429AE, 0, { 0, 0, 0 } }, { gUnk_09EDF66C, gUnk_09EDF678, gUnk_089429AE, 0, { 0, 0, 0 } }, { gUnk_09EDF66C, gUnk_09EDF678, gUnk_089429AE, 0, { 0, 0, 0 } }, { gUnk_09EDF680, gUnk_09EDF68C, gUnk_089434C8, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF6AC, gUnk_09EDF6C0, gUnk_08945356, 0, { 0, 0, 0 } }, { gUnk_09EDF694, gUnk_09EDF6A8, gUnk_08943FFC, 0, { 0, 0, 0 } }, { gUnk_09EDF6C4, gUnk_09EDF6D8, gUnk_08946552, 0, { 0, 0, 0 } }, { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 0, { 0, 0, 0 } }, { gUnk_09EDF6DC, gUnk_09EDF6F0, gUnk_08947B36, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF748, gUnk_09EDF760, gUnk_0894EC7C, 0, { 0, 0, 0 } }, { gUnk_09EDF6F4, gUnk_09EDF70C, gUnk_089492FC, 0, { 0, 0, 0 } }, { gUnk_09EDF710, gUnk_09EDF728, gUnk_0894B386, 0, { 0, 0, 0 } }, { gUnk_09EDF4A0, gUnk_09EDF4B8, gUnk_089315B4, 0, { 0, 0, 0 } }, { gUnk_09EDF72C, gUnk_09EDF744, gUnk_0894CECA, 0, { 0, 0, 0 } } },
+};
+
+const u16 gUnk_0813D28C[8][8] = {
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 126, 127, 128, 129, 126, 127, 136, 0 },
+    { 126, 127, 128, 129, 126, 127, 136, 0 },
+    { 109, 110, 111, 112, 133, 133, 134, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 122, 123, 124, 125, 122, 123, 135, 0 },
+    { 109, 110, 111, 112, 122, 123, 135, 0 },
+};
+
+const char gTaskNameFldRiku[] = "task_fld_riku";
+
+const char gTaskNameFldShadow[] = "task_fld_shadow";
+
+void func_08031BC4(FldActor* act) {
+    if ((GetKeysHeld() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN)) {
+        act->angle = 173;
+    } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_LEFT)) {
+        act->angle = 211;
+    } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_RIGHT)) {
+        act->angle = 45;
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_DOWN)) {
+        act->angle = 83;
+    } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
+        act->angle = 173;
+    } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
+        act->angle = 83;
+    } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
+        act->angle = 211;
+    } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
+        act->angle = 45;
+    } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
+        act->angle = 211;
+    } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
+        act->angle = 173;
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
+        act->angle = 45;
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
+        act->angle = 83;
+    } else if (GetKeysHeld() & DPAD_DOWN) {
+        act->angle = 128;
+    } else if (GetKeysHeld() & DPAD_UP) {
+        act->angle = 0;
+    } else if (GetKeysHeld() & DPAD_LEFT) {
+        act->angle = 192;
+    } else if (GetKeysHeld() & DPAD_RIGHT) {
+        act->angle = 64;
+    }
+}
+
+u8 func_08031D74(FldPos* p) {
+    FldPos a;
+    FldPos b;
+    s32 v1;
+    s32 v2;
+
+    a = *p;
+    b = *p;
+    a.y -= 1536;
+    b.y += 1536;
+
+    v1 = func_080DFF1C(&a);
+    if (v1 > a.unk_0C) {
+        a.unk_0C = v1;
+    }
+    v2 = func_080DFF1C(&b);
+    if (v2 > b.unk_0C) {
+        b.unk_0C = v2;
+    }
+
+    if (func_080DFBDC(&a) != 0) {
+        return 1;
+    }
+
+    if (func_080DFBDC(&b) != 0) {
+        return 1;
+    }
+    p->unk_0C = v2 > v1 ? v1 : v2;
+    return 0;
+}
+
+s32 func_08031DF8(FldPos* p) {
+    FldPos a;
+    FldPos b;
+    s32 v1;
+    s32 v2;
+
+    a = *p;
+    b = *p;
+    a.y -= 1536;
+    b.y += 1536;
+    v1 = func_080DFF1C(&a);
+    v2 = func_080DFF1C(&b);
+    if (v2 > v1) {
+        v2 = v1;
+    }
+    return v2;
+}
+
+u8 func_08031E48(FldPos* p, FldWork* work) {
+    FldPos a;
+    FldPos b;
+    u8 r;
+
+    a = *p;
+    b = *p;
+    a.y -= 1536;
+    b.y += 1536;
+
+    r = _080DFE1C(&a);
+    if (r != 0) {
+        work->unk_B0 = a.x;
+        work->unk_B4 = a.y;
+        return r;
+    }
+    r = _080DFE1C(&b);
+    if (r != 0) {
+        work->unk_B0 = b.x;
+        work->unk_B4 = b.y;
+        return r;
+    }
+    return 0;
+}
+
+u8 func_08031EC4(FldActor* act) {
+    FldPos a;
+
+    a = act->fieldPosition;
+    a.x += gSineTable[act->angle] * 8;
+    a.y -= gSineTable[act->angle + 64] * 8;
+
+    if (func_080DFCDC(&a) != 0) {
+        return 1;
+    }
+    return 0;
+}
+
+s32 func_08031F1C(FldWork* work) {
+    FldActor* act;
+    s32 v;
+
+    act = &gUnk_02039BA0->actor;
+
+    if (work->unk_66 & 1) {
+        if (act->fieldPosition.unk_0C < work->unk_78) {
+            v = act->fieldPosition.unk_0C;
+        } else {
+            v = work->unk_78;
+        }
+
+        work->unk_BC = 1;
+    } else {
+        work->unk_BC = 0;
+        v = act->fieldPosition.unk_0C;
+    }
+
+    return v;
+}
+
+void func_08031F60(FldActor* act) {
+    u8 old = act->angle;
+
+    func_08031BC4(act);
+
+    if (old != act->angle) {
+        s32 v;
+
+        if (abs((s8)GetAngleDiff(old, act->angle)) > 100) {
+            v = 0;
+        } else {
+            v = act->unk_10 >> 1;
+        }
+        act->unk_10 = v;
+    }
+}
+
+void func_08031F98(FldWork* work, s32 a, s32 b) {
+    const FldAnimDef* e;
+    u16 flags = b;
+    s32 idx;
+
+    switch (gUnk_02039BA0->actor.angle) {
+    case 45:
+        idx = 4;
+        work->unk_A4 |= 2;
+        break;
+    case 64:
+        idx = 3;
+        work->unk_A4 |= 2;
+        break;
+    case 83:
+        idx = 2;
+        work->unk_A4 |= 2;
+        break;
+    case 128:
+        idx = 1;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 173:
+        idx = 2;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 192:
+        idx = 3;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 211:
+        idx = 4;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 0:
+    default:
+        idx = 0;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    }
+
+    if (work->unk_A8 == a) {
+        flags |= 4;
+    }
+    work->unk_A8 = a;
+
+    e = &gUnk_0813C89C[a][idx];
+    AnimChangeWithTables(&work->unk_08, e->animId, flags, e->anims, e->gfxTable);
+    SetObjTileSource(work->tiles, e->tiles);
+}
+
 
 UnkStruct_0203C7AC* gUnk_0203C7AC;
 
@@ -1655,7 +1935,7 @@ void func_08034704(FldActor* act) {
 }
 
 void func_0803473C(FldWork* work, s32 index, u16 flags) {
-    FldAnimDef* def;
+    const FldAnimDef* def;
     s32 dir;
 
     switch (gUnk_02039BA0->actor.angle) {
