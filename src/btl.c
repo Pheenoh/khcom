@@ -3,13 +3,220 @@
 #include "display.h"
 #include "obj_api.h"
 #include "btl.h"
+#include "task_animation_assets.h"
+#include "task_names.h"
 #include "registration_data.h"
 #include "btl_effect.h"
 #include "btl_api.h"
 
-u8 gUnk_0203492C;
-u16 gUnk_0203492E;
-s32 gUnk_02034930;
+const char gTaskNameBtlLockon[] = "task_btl_lockon";
+const char gTaskNameBtlArea[] = "task_btl_area";
+
+const AnimDef gUnk_0813BA2C[77] = {
+    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 0, { 0, 0, 0 } },
+    { gUnk_09EDEE08, gUnk_09EDEE14, gUnk_088E33C2, 0, { 0, 0, 0 } },
+    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 4, { 0, 0, 0 } },
+    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 3, { 0, 0, 0 } },
+    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 0, { 0, 0, 0 } },
+    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 1, { 0, 0, 0 } },
+    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 2, { 0, 0, 0 } },
+    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 4, { 0, 0, 0 } },
+    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 3, { 0, 0, 0 } },
+    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 0, { 0, 0, 0 } },
+    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 1, { 0, 0, 0 } },
+    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 2, { 0, 0, 0 } },
+    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 4, { 0, 0, 0 } },
+    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 3, { 0, 0, 0 } },
+    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 0, { 0, 0, 0 } },
+    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 1, { 0, 0, 0 } },
+    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 2, { 0, 0, 0 } },
+    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 4, { 0, 0, 0 } },
+    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 3, { 0, 0, 0 } },
+    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 0, { 0, 0, 0 } },
+    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 1, { 0, 0, 0 } },
+    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 2, { 0, 0, 0 } },
+    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 4, { 0, 0, 0 } },
+    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 3, { 0, 0, 0 } },
+    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 0, { 0, 0, 0 } },
+    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 1, { 0, 0, 0 } },
+    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 2, { 0, 0, 0 } },
+    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 5, { 0, 0, 0 } },
+    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 4, { 0, 0, 0 } },
+    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 1, { 0, 0, 0 } },
+    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 2, { 0, 0, 0 } },
+    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 3, { 0, 0, 0 } },
+    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 4, { 0, 0, 0 } },
+    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 3, { 0, 0, 0 } },
+    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 0, { 0, 0, 0 } },
+    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 1, { 0, 0, 0 } },
+    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 2, { 0, 0, 0 } },
+    { gUnk_09EDEEC4, gUnk_09EDEEEC, gUnk_088E967C, 0, { 0, 0, 0 } },
+    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 2, { 0, 0, 0 } },
+    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 3, { 0, 0, 0 } },
+    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 4, { 0, 0, 0 } },
+    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 6, { 0, 0, 0 } },
+    { gUnk_09EDEEF4, gUnk_09EDEF08, gUnk_088EAF1C, 0, { 0, 0, 0 } },
+    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 0, { 0, 0, 0 } },
+    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 1, { 0, 0, 0 } },
+    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 2, { 0, 0, 0 } },
+    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 3, { 0, 0, 0 } },
+    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 3, { 0, 0, 0 } },
+    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 2, { 0, 0, 0 } },
+    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 0, { 0, 0, 0 } },
+    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 1, { 0, 0, 0 } },
+    { gUnk_09EDEF64, gUnk_09EDEF80, gUnk_088EEAD4, 0, { 0, 0, 0 } },
+    { gUnk_09EDEAEC, gUnk_09EDEB08, gUnk_088CA102, 0, { 0, 0, 0 } },
+    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 0, { 0, 0, 0 } },
+    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 0, { 0, 0, 0 } },
+    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 1, { 0, 0, 0 } },
+    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 2, { 0, 0, 0 } },
+    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 3, { 0, 0, 0 } },
+    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 1, { 0, 0, 0 } },
+    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 3, { 0, 0, 0 } },
+    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 0, { 0, 0, 0 } },
+    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 1, { 0, 0, 0 } },
+    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 2, { 0, 0, 0 } },
+    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 3, { 0, 0, 0 } },
+    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 0, { 0, 0, 0 } },
+    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 1, { 0, 0, 0 } },
+    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 2, { 0, 0, 0 } },
+    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 3, { 0, 0, 0 } },
+    { gUnk_09EDF20C, gUnk_09EDF244, gUnk_0890C34E, 0, { 0, 0, 0 } },
+    { gUnk_09EDF248, gUnk_09EDF268, gUnk_0890FCE0, 0, { 0, 0, 0 } },
+    { gUnk_09EDF26C, gUnk_09EDF290, gUnk_08911BC8, 0, { 0, 0, 0 } },
+    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 0, { 0, 0, 0 } },
+    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 1, { 0, 0, 0 } },
+    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 2, { 0, 0, 0 } },
+    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 0, { 0, 0, 0 } },
+    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 1, { 0, 0, 0 } },
+    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 2, { 0, 0, 0 } },
+};
+
+const AnimDef gUnk_0813BEFC[6][5] = {
+    { { gUnk_09EDE944, gUnk_09EDE964, gUnk_088BC6DE, 0, { 0, 0, 0 } }, { gUnk_09EDED60, gUnk_09EDED80, gUnk_088DDAF6, 0, { 0, 0, 0 } }, { gUnk_09EDEA10, gUnk_09EDEA30, gUnk_088C2D72, 0, { 0, 0, 0 } }, { gUnk_09EDEA94, gUnk_09EDEAB4, gUnk_088C75A0, 0, { 0, 0, 0 } }, { gUnk_09EDEB8C, gUnk_09EDEBAC, gUnk_088CF9CE, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 0, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 0, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 0, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 0, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 1, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 1, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 1, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 1, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 2, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 2, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 2, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 2, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 3, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 3, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 3, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 3, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 3, { 0, 0, 0 } } },
+    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 4, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 4, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 4, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 4, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 4, { 0, 0, 0 } } },
+};
+
+const u16 gUnk_0813C0DC[4][4] = {
+    { 532, 533, 534, 535 },
+    { 536, 537, 538, 539 },
+    { 540, 541, 542, 543 },
+    { 122, 123, 124, 125 },
+};
+
+const s32 gUnk_0813C0FC[18] = {
+    12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63,
+};
+
+const s32 gUnk_0813C144[18] = {
+    13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64,
+};
+
+const s32 gUnk_0813C18C[18] = {
+    14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65,
+};
+
+const SoraAttackDef gUnk_0813C1D4 = { 2, gUnk_0813C0FC, 151, 500, 0, 0, 0, NULL };
+
+const SoraAttackDef gUnk_0813C1EC = { 7, gUnk_0813C144, 153, 501, 0, 0, 0, NULL };
+
+const SoraAttackDef gUnk_0813C204 = { 12, gUnk_0813C0FC, 151, 500, 0, 0, 0, NULL };
+
+const SoraAttackDef gUnk_0813C21C = { 17, gUnk_0813C18C, 155, 502, 0, 2, 0, NULL };
+
+const SoraAttackDef gUnk_0813C234 = { 27, gUnk_0813C0FC, 152, 501, -640, 1, 0, &gUnk_0813C1D4 };
+
+const SoraAttackDef gUnk_0813C24C = { 22, gUnk_0813C144, 150, 500, 0, 1, 0, &gUnk_0813C1D4 };
+
+const SoraAttackDef gUnk_0813C264 = { 27, gUnk_0813C0FC, 152, 501, 0, 1, 0, &gUnk_0813C1EC };
+
+const SoraAttackDef gUnk_0813C27C = { 32, gUnk_0813C18C, 155, 502, 0, 3, 0, &gUnk_0813C21C };
+
+const u8 gUnk_0813C294[5] = {
+    10, 12, 15, 18, 20,
+};
+
+const char gTaskNameBtlSora[] = "task_btl_sora";
+
+const AnimDef gUnk_0813C2AC[35] = {
+    { gUnk_09EDF374, gUnk_09EDF38C, gUnk_0891ED26, 0, { 0, 0, 0 } },
+    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 1, { 0, 0, 0 } },
+    { gUnk_09EDF404, gUnk_09EDF418, gUnk_08927806, 3, { 0, 0, 0 } },
+    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 2, { 0, 0, 0 } },
+    { gUnk_09EDF474, gUnk_09EDF498, gUnk_0892E268, 0, { 0, 0, 0 } },
+    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 2, { 0, 0, 0 } },
+    { gUnk_09EDF4A0, gUnk_09EDF4B8, gUnk_089315B4, 1, { 0, 0, 0 } },
+    { gUnk_09EDF390, gUnk_09EDF3A8, gUnk_089209A6, 0, { 0, 0, 0 } },
+    { gUnk_09EDF390, gUnk_09EDF3A8, gUnk_089209A6, 1, { 0, 0, 0 } },
+    { gUnk_09EDF3B0, gUnk_09EDF3C4, gUnk_08922670, 0, { 0, 0, 0 } },
+    { gUnk_09EDF3C8, gUnk_09EDF3E4, gUnk_08923C74, 0, { 0, 0, 0 } },
+    { gUnk_09EDF3E8, gUnk_09EDF400, gUnk_08925B44, 0, { 0, 0, 0 } },
+    { gUnk_09EE23B8, gUnk_09EE23D0, gUnk_08C492E2, 0, { 0, 0, 0 } },
+    { gUnk_09EE23D8, gUnk_09EE23F8, gUnk_08C4AEA0, 0, { 0, 0, 0 } },
+    { gUnk_09EE23FC, gUnk_09EE2410, gUnk_08C4D30E, 0, { 0, 0, 0 } },
+    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 0, { 0, 0, 0 } },
+    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 1, { 0, 0, 0 } },
+    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 2, { 0, 0, 0 } },
+    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 3, { 0, 0, 0 } },
+    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 4, { 0, 0, 0 } },
+    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 0, { 0, 0, 0 } },
+    { gUnk_09EE2490, gUnk_09EE24C0, gUnk_08C5411E, 0, { 0, 0, 0 } },
+    { gUnk_09EE24C8, gUnk_09EE24E4, gUnk_08C579A4, 0, { 0, 0, 0 } },
+    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 0, { 0, 0, 0 } },
+    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 2, { 0, 0, 0 } },
+    { gUnk_09EE25A8, gUnk_09EE25CC, gUnk_08C63E3C, 0, { 0, 0, 0 } },
+    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 0, { 0, 0, 0 } },
+    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 1, { 0, 0, 0 } },
+    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 2, { 0, 0, 0 } },
+    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 0, { 0, 0, 0 } },
+    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 1, { 0, 0, 0 } },
+    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 2, { 0, 0, 0 } },
+    { gUnk_09EE2584, gUnk_09EE25A4, gUnk_08C61980, 0, { 0, 0, 0 } },
+    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 1, { 0, 0, 0 } },
+    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 3, { 0, 0, 0 } },
+};
+
+const AnimDef gUnk_0813C4DC[6][5] = {
+    { { gUnk_09EEFA70, gUnk_09EEFA90, gUnk_092FF906, 0, { 0, 0, 0 } }, { gUnk_09EEFA4C, gUnk_09EEFA6C, gUnk_092FDDC6, 0, { 0, 0, 0 } }, { gUnk_09EEF93C, gUnk_09EEF95C, gUnk_092F31E0, 0, { 0, 0, 0 } }, { gUnk_09EEF994, gUnk_09EEF9B4, gUnk_092F65A2, 0, { 0, 0, 0 } }, { gUnk_09EEF9B8, gUnk_09EEF9D8, gUnk_092F881A, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 0, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 0, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 0, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 0, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 0, { 0, 0, 0 } } },
+    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 1, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 1, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 1, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 1, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 1, { 0, 0, 0 } } },
+    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 2, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 2, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 2, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 2, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 2, { 0, 0, 0 } } },
+    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 3, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 3, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 3, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 3, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 3, { 0, 0, 0 } } },
+    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 4, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 4, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 4, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 4, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 4, { 0, 0, 0 } } },
+};
+
+const u16 gUnk_0813C6BC[4][4] = {
+    { 532, 533, 534, 535 },
+    { 536, 537, 538, 539 },
+    { 540, 541, 542, 543 },
+    { 122, 123, 124, 125 },
+};
+
+const s32 gUnk_0813C6DC[3] = {
+    0, 1, 2,
+};
+
+const RikuAttackDef gUnk_0813C6E8 = { 1, 15, 0, gUnk_0813C6DC, 255, 655, 0, 0, 0, NULL };
+
+const RikuAttackDef gUnk_0813C704 = { 2, 17, 0, &gUnk_0813C6DC[1], 254, 656, 0, 0, 0, NULL };
+
+const RikuAttackDef gUnk_0813C720 = { 3, 15, 0, gUnk_0813C6DC, 256, 655, 0, 0, 0, NULL };
+
+const RikuAttackDef gUnk_0813C73C = { 4, 21, 0, &gUnk_0813C6DC[2], 258, 657, 0, 0, 0, NULL };
+
+const RikuAttackDef gUnk_0813C758 = { 6, 15, 0, gUnk_0813C6DC, 256, 656, -640, 1, 0, &gUnk_0813C6E8 };
+
+const RikuAttackDef gUnk_0813C774 = { 5, 15, 0, &gUnk_0813C6DC[1], 254, 655, 0, 1, 0, &gUnk_0813C6E8 };
+
+const RikuAttackDef gUnk_0813C790 = { 5, 15, 0, gUnk_0813C6DC, 255, 656, 0, 1, 0, &gUnk_0813C704 };
+
+const RikuAttackDef gUnk_0813C7AC = { 6, 15, 0, &gUnk_0813C6DC[2], 257, 657, 0, 1, 0, &gUnk_0813C73C };
+
+const char gTaskNameBtlRiku[] = "task_btl_riku";
 
 void func_0807B3C4(s32 a);
 
@@ -342,7 +549,7 @@ void func_0801DDC4(BtlSoraWork* work) {
 }
 
 void func_0801DDE4(BtlSoraWork* work, u16 a, u16 b) {
-    FldAnimDef* e;
+    const FldAnimDef* e;
 
     e = &gUnk_0813BA2C[a];
     AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
@@ -350,7 +557,7 @@ void func_0801DDE4(BtlSoraWork* work, u16 a, u16 b) {
 }
 
 void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
-    FldAnimDef* e;
+    const FldAnimDef* e;
     s32 idx;
 
     idx = 0;
@@ -794,7 +1001,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     s32 t4;
     u32 id;
     u8* base;
-    SoraAttackDef* a;
+    const SoraAttackDef* a;
     s32 sel[6];
     u8 buf[5];
     BtlObj* e3;
@@ -6291,7 +6498,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
 }
 
 void func_080276D4(BtlRikuWork* work, u16 a, u16 b) {
-    FldAnimDef* e;
+    const FldAnimDef* e;
 
     e = &gUnk_0813C2AC[a];
     AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
@@ -6299,7 +6506,7 @@ void func_080276D4(BtlRikuWork* work, u16 a, u16 b) {
 }
 
 void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
-    FldAnimDef* e;
+    const FldAnimDef* e;
     s32 idx;
 
     idx = 0;
@@ -6885,12 +7092,12 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     s32 t4;
     s32 t5;
 #ifdef VERSION_EU
-    RikuAttackDef** q;
+    const RikuAttackDef** q;
 #else
-    void** q;
+    const void** q;
 #endif
     u8* base;
-    RikuAttackDef* a;
+    const RikuAttackDef* a;
     BtlSpawnArgs spawn;
     u32 id;
     s32 sel[6];
@@ -10703,503 +10910,4 @@ void task_btl_riku_3(BtlRikuWork* work) {
     func_080277E4(work);
     ReleaseObjTiles(work->tiles);
     TaskPoolDestroy(&work->tasks);
-}
-
-#ifdef VERSION_EU
-extern u8 gUnkEu_08C9CD3C[];
-extern u8 gUnkEu_08F79520[];
-extern u8 gUnkEu_08F74484[];
-extern u8 gUnkEu_08F7E498[];
-extern u8 gUnkEu_08F7042C[];
-extern u8 gUnkEu_08F7D724[];
-extern u8 gUnkEu_08F6EF3C[];
-extern u8 gUnkEu_08F7D318[];
-extern u8 gUnkEu_08CA0D3C[];
-extern u8 gUnkEu_08F79960[];
-extern u8 gUnkEu_08F728C0[];
-extern u8 gUnkEu_08F7DED0[];
-extern u8 gUnkEu_08F756FC[];
-extern u8 gUnkEu_08F7E83C[];
-extern u8 gUnkEu_08F71C40[];
-extern u8 gUnkEu_08F7DB78[];
-extern u8 gUnkEu_08CA4D3C[];
-extern u8 gUnkEu_08F79DEC[];
-extern u8 gUnkEu_08CA8D3C[];
-extern u8 gUnkEu_08F7A224[];
-extern u8 gUnkEu_08CB4D3C[];
-extern u8 gUnkEu_08F7B498[];
-extern u8 gUnkEu_08CACD3C[];
-extern u8 gUnkEu_08F7A7A8[];
-extern u8 gUnkEu_08CB0D3C[];
-extern u8 gUnkEu_08F7ADFC[];
-extern u8 gUnkEu_08CB8D3C[];
-extern u8 gUnkEu_08F7B958[];
-extern u8 gUnkEu_08CBCD3C[];
-extern u8 gUnkEu_08F7BE78[];
-extern u8 gUnkEu_08CC0BFC[];
-extern u8 gUnkEu_08F7C274[];
-extern u8 gUnkEu_08CC4BFC[];
-extern u8 gUnkEu_08F7C6CC[];
-extern u8 gUnkEu_08CCCBFC[];
-extern u8 gUnkEu_08F7CFB4[];
-extern u8 gUnkEu_08CC8BFC[];
-extern u8 gUnkEu_08F7CB08[];
-#endif
-
-void task_btl_map_0(BtlMapWork* work) {
-    SetBgSize(gBtlWork->unk_1C6, 0x8000);
-
-    if (gBtlWork->unk_068 & 0x800) {
-        switch (gBtlWork->unk_10C) {
-        case 0xB2:
-        case 0xB3:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 5;
-            break;
-        case 0xB1:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F74484);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CBC6E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69604, 0x120);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E498);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08F00384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 5;
-            break;
-        case 0xA0:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F7042C);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB06E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69404, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7D724);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFD384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 0x9E:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F6EF3C);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CAC6E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F692C4, 0x140);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7D318);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFC384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 9;
-            break;
-        case 0x9F:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 0xAC:
-        case 0xAF:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F728C0);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB86E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69544, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DED0);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFF384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 0xA5:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F756FC);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CC06E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69724, 0x80);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E83C);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08F01384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 20;
-            break;
-        default:
-#ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F71C40);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB46E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F694C4, 0x80);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DB78);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFE384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 20;
-            break;
-        }
-    } else if (gBtlWork->unk_10C == 0x78) {
-#ifdef VERSION_EU
-        LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
-#else
-        LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
-#endif
-        LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
-#ifdef VERSION_EU
-        eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
-#else
-        LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
-#endif
-        gBtlWork->unk_0B3 = 10;
-    } else {
-        switch (gGameState.unk_00D) {
-        case 1:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA8D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C84824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68904, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A224);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF2384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 2:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 3:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB4D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C90824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68B84, 0x100);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B498);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF5384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 4:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CACD3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C88824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F689C4, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A7A8);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF3384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 5:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB0D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C8C824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68A84, 0x100);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7ADFC);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF4384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 7:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB8D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C94824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68C84, 0xE0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B958);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF6384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 5;
-            break;
-        case 8:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CBCD3C, 0x3EC0);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C98824, 0x3EC0);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68D64, 0x140);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7BE78);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF7384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 5;
-            break;
-        case 9:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC0BFC, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C9C6E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68EA4, 0x120);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C274);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF8384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 10:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC4BFC, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA06E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68FC4, 0xE0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C6CC);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF9384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        case 11:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 5;
-            break;
-        case 12:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CCCBFC, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA86E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F691E4, 0xE0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CFB4);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFB384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 20;
-            break;
-        case 13:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC8BFC, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA46E4, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F690A4, 0x140);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CB08);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFA384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 10;
-            break;
-        default:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
-#else
-            LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
-#endif
-            LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
-#ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
-#else
-            LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
-#endif
-            gBtlWork->unk_0B3 = 11;
-            break;
-        }
-    }
-    gBtlWork->unk_024 = 0x100;
-    gBtlWork->unk_028 = 0x100;
-    gBtlWork->x = 0x10000;
-    gBtlWork->y = 0x16000;
-    gBtlWork->unk_000 = 0x10000;
-    gBtlWork->unk_004 = 0x16000;
-    gBtlWork->x2 = 0x10000;
-    gBtlWork->y2 = 0x16000;
-    gBtlWork->unk_01C = 0x10000;
-    gBtlWork->unk_020 = 0x16000;
-    gBtlWork->unk_01A = 0;
-    gBtlWork->unk_018 = 0;
-    work->unk_00 = gBtlWork->unk_0DA << 8;
-    work->unk_04 = gBtlWork->unk_0DC << 8;
-    work->unk_08 = gBtlWork->unk_0DE << 8;
-    work->unk_0C = (gBtlWork->unk_0E0 + 0x20) << 8;
-    func_0802F1C8();
-    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->unk_024,
-                gBtlWork->unk_024, gBtlWork->unk_000,
-                gBtlWork->unk_004 + 0x2800);
-}
-
-void func_0802F1C8(void) {
-    gUnk_0203492C = 0;
-    gUnk_0203492E = 0;
-    gUnk_02034930 = 0;
-}
-
-void func_0802F1E8(void) {
-    gUnk_0203492C = 1;
-    gUnk_0203492E = 0;
-    gUnk_02034930 = 0;
-}
-
-void func_0802F208(void) {
-    if (gUnk_0203492C != 0) {
-        gUnk_02034930 += ((gUnk_0813C7D8[(s16)gUnk_0203492E] << 12) - gUnk_02034930) >> 3;
-        gUnk_0203492E++;
-        if (gUnk_0203492E > 0x1F) {
-            gUnk_0203492C = 0;
-            gUnk_02034930 = 0;
-            gBtlWork->unk_018 = 0;
-        }
-    }
-}
-
-s32 func_0802F268(void) {
-    return gUnk_02034930;
-}
-
-void func_0802F274(s32 a, s32 b) {
-    gBtlWork->x2 = a;
-    gBtlWork->y2 = b;
-}
-
-void func_0802F284(s32 a, s32 b, s32 c) {
-    s32 x = (a + 0x10000) >> 1;
-    s32 y = (b + 0x14400) >> 1;
-
-    if (a - x > 0x3000) {
-        x = a - 0x3000;
-    } else if (x - a > 0x3000) {
-        x = a + 0x3000;
-    }
-
-    if (b - y > 0x3000) {
-        y = b - 0x3000;
-    } else if (y - b > 0x3000) {
-        y = b + 0x3000;
-    }
-    gBtlWork->x2 = x;
-    gBtlWork->y2 = y + c;
-}
-
-s32 task_btl_map_1(BtlMapWork* work) {
-    s32 dx;
-    s32 dy;
-
-    func_0802F208();
-
-    if (gBtlWork->unk_01A > 0) {
-        ApproachValueHalfSteps(&gBtlWork->unk_024, gBtlWork->unk_028, gBtlWork->unk_01A);
-        ApproachValueHalfSteps(&gBtlWork->x, gBtlWork->unk_01C, gBtlWork->unk_01A);
-        ApproachValueHalfSteps(&gBtlWork->y, gBtlWork->unk_020, gBtlWork->unk_01A);
-
-        if (gBtlWork->unk_028 == 0x100) {
-            ApproachValueHalfSteps(&work->unk_00, gBtlWork->unk_0DA << 8, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_04, gBtlWork->unk_0DC << 8, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_08, gBtlWork->unk_0DE << 8, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_0C, (gBtlWork->unk_0E0 + 0x20) << 8, gBtlWork->unk_01A);
-        } else if (gBtlWork->unk_028 > 0x100) {
-            ApproachValueHalfSteps(&work->unk_00, 0x3000, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_04, 0x1D000, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_08, 0x9000, gBtlWork->unk_01A);
-            ApproachValueHalfSteps(&work->unk_0C, 0x1E800, gBtlWork->unk_01A);
-        }
-        gBtlWork->unk_01A--;
-    } else if (gBtlWork->unk_024 == 0x100) {
-        dx = (gBtlWork->x2 - gBtlWork->x) >> 3;
-        dy = (gBtlWork->y2 - gBtlWork->y) >> 3;
-
-        if (dx > 0x400) {
-            dx = 0x400;
-        } else if (dx < -0x400) {
-            dx = -0x400;
-        }
-
-        if (dy > 0x400) {
-            dy = 0x400;
-        } else if (dy < -0x400) {
-            dy = -0x400;
-        }
-        gBtlWork->x += dx;
-        gBtlWork->y += dy;
-    }
-    gBtlWork->unk_000 = gBtlWork->x;
-    gBtlWork->unk_004 = gBtlWork->y;
-
-    if (gUnk_0203492C != 0) {
-        gBtlWork->unk_018 = (gUnk_02034930 >> 8) / 3;
-    }
-
-    if (gBtlWork->unk_000 - 0x7800 < work->unk_00) {
-        gBtlWork->unk_000 = work->unk_00 + 0x7800;
-    } else if (gBtlWork->unk_000 + 0x7800 > work->unk_04) {
-        gBtlWork->unk_000 = work->unk_04 - 0x7800;
-    }
-
-    if (gBtlWork->unk_004 - 0x5000 < 0x9000) {
-        gBtlWork->unk_004 = 0xE000;
-    } else if (gBtlWork->unk_004 + 0x5000 > work->unk_0C) {
-        gBtlWork->unk_004 = work->unk_0C - 0x5000;
-    }
-    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->unk_024,
-                  gBtlWork->unk_024, gBtlWork->unk_000,
-                  gBtlWork->unk_004 + 0x2800);
-    return 1;
 }

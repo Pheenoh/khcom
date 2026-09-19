@@ -38,6 +38,7 @@ task.c
 evt.c -O2 -fprologue-bugfix -fno-common
 acgtrans.c
 btl.c -O2 -fprologue-bugfix -fno-common
+btl_map.c -O2 -fprologue-bugfix -fno-common
 btl2.c
 fld.c -O2 -fprologue-bugfix -fno-common
 emy.c
@@ -714,26 +715,9 @@ evt_data.c(.data)
 btl_effect_data.c(.rodata)
 evt_data.c(.rodata)
 acgtrans.c(.rodata)
-rodata_tasknames_alignment.s(.rodata)
-btl_data.c(.rodata)
-rodata_tasknames.s(.rodata)
-btl_data.c(.rodata_btl_000)
-rodata_tasknames_at_0813C299.s(.rodata)
-task_names_data.c(.rodata_names_btl_sora)
-btl_data.c(.rodata_btl_001)
-task_names_data.c(.rodata_names_btl_riku)
-rodata_tasknames_gap_2.s(.rodata)
-btl_data.c(.rodata_btl_002)
-task_names_data.c(.rodata_names_btl_map)
-task_names_data.c(.rodata_names_btl_shadow)
-task_names_data.c(.rodata_names_btl_hpply)
-task_names_data.c(.rodata_names_btl_hpenm)
-task_names_data.c(.rodata_names_btl_pause)
-task_names_data.c(.rodata_names_btl_pop)
-task_names_data.c(.rodata_names_btl_escape)
-task_names_data.c(.rodata_names_btl_prize)
-task_names_data.c(.rodata_names_btl_premire)
-task_names_data.c(.rodata_names_btl_start)
+btl.c(.rodata)
+btl_map.c(.rodata)
+btl2.c(.rodata)
 fld.c(.rodata)
 emy.c(.rodata)
 task_names_data.c(.rodata_names_bos_map)

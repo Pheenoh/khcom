@@ -4,6 +4,7 @@
 #include "display.h"
 #include "m4a_song.h"
 #include "btl2.h"
+#include "task_names.h"
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
@@ -1950,3 +1951,13 @@ s32 task_btl_start_1(BtlStartWork* work) {
     work->unk_00++;
     return 1;
 }
+
+const char gTaskNameBtlShadow[] = "task_btl_shadow";
+const char gTaskNameBtlHpply[] = "task_btl_hpply";
+const char gTaskNameBtlHpenm[] = "task_btl_hpenm";
+const char gTaskNameBtlPause[] = "task_btl_pause";
+const char gTaskNameBtlPop[] = "task_btl_pop";
+const char gTaskNameBtlEscape[] = "task_btl_escape";
+const char gTaskNameBtlPrize[] = "task_btl_prize";
+const char gTaskNameBtlPremire[] = "task_btl_premire";
+const char gTaskNameBtlStart[] = "task_btl_start";

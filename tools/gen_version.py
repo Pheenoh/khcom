@@ -3085,10 +3085,9 @@ TARGET_DATA_SIZE = {
 }
 
 TARGET_BLOB_REGIONS = {
-    "jp": ((0x0813BA86, "rodata_tasknames_alignment"), (0x0814FC76, "rodata_movie_alignment"), (0x090089B0, "rodata_regtables3_gap_10")),
+    "jp": ((0x0814FC76, "rodata_movie_alignment"), (0x090089B0, "rodata_regtables3_gap_10")),
     "eu": (
         (0x0812FB22, "rodata_movie_alignment"),
-        (0x08889EDE, "rodata_tasknames_alignment"),
         (0x09F49910, "rodata_registrations"),
         (0x09F6FD74, "asset_eu_default_deck_names"),
         (0x09F6FD89, "padding_eu_default_deck_names"),

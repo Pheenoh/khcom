@@ -130,7 +130,7 @@ UNIT_BSS = {
     "src/btl_vs.o": {"us": 0x020348CC, "jp": 0x020348CC, "eu": 0x020349D0},
     "src/btl_collision.o": {"us": 0x020348E8, "jp": 0x020348E8, "eu": 0x020349E8},
     "src/btl_effect.o": {"us": 0x02034928, "jp": 0x02034928, "eu": 0x02034A28},
-    "src/btl.o": {"us": 0x0203492C, "jp": 0x0203492C, "eu": 0x02034A2C},
+    "src/btl_map.o": {"us": 0x0203492C, "jp": 0x0203492C, "eu": 0x02034A2C},
     "src/msg.o": {"us": 0x02034A80, "jp": 0x020349E0, "eu": 0x02034AA0},
     "src/mode_eventselect.o": {"us": 0x02034A94, "jp": 0x020349F4, "eu": 0x02034AB0},
     "src/wlogo.o": {"us": 0x02034C38, "jp": 0x02034B98, "eu": 0x02034E28},

@@ -80,26 +80,26 @@ typedef struct BtlAreaWork {
 
 typedef struct SoraAttackDef {
     s32 animId;
-    s32* attackIds;
+    const s32* attackIds;
     u16 swingSound;
     u16 hitSound;
     s32 unk_0C;
     u16 flags;
     u16 unk_12;
-    struct SoraAttackDef* next;
+    const struct SoraAttackDef* next;
 } SoraAttackDef;
 
 typedef struct RikuAttackDef {
     s32 animId;
     s16 hitFrame;
     u16 unk_06;
-    s32* attackIds;
+    const s32* attackIds;
     u16 unk_0C;
     u16 unk_0E;
     s32 unk_10;
     u16 flags;
     u16 unk_16;
-    struct RikuAttackDef* next;
+    const struct RikuAttackDef* next;
 } RikuAttackDef;
 
 typedef struct BtlSoraWork {
@@ -120,9 +120,9 @@ typedef struct BtlSoraWork {
     u8 unk_160;
     u8 unk_161;
     u8 unk_162[0x2];
-    void* unk_164;
-    void* unk_168;
-    void* unk_16C;
+    const void* unk_164;
+    const void* unk_168;
+    const void* unk_16C;
     u8 unk_170[0x2];
     u8 unk_172;
     u8 unk_173;
@@ -130,7 +130,7 @@ typedef struct BtlSoraWork {
     u8 unk_176[0x2];
     u16 unk_178;
     u8 unk_17A[0xA];
-    u16* unk_184;
+    const u16* unk_184;
     u32 unk_188;
     u8 unk_18C[0x4];
     u8 unk_190;
@@ -161,9 +161,9 @@ typedef struct BtlRikuWork {
     u8 unk_164;
     u8 unk_165;
     u8 unk_166[0x2];
-    void* unk_168;
-    void* unk_16C;
-    void* unk_170;
+    const void* unk_168;
+    const void* unk_16C;
+    const void* unk_170;
     u8 unk_174[0x4];
     u8 unk_178;
     u8 unk_179;
@@ -171,7 +171,7 @@ typedef struct BtlRikuWork {
     u8 unk_17C[0x2];
     u16 unk_17E;
     u8 unk_180[0x8];
-    u16* unk_188;
+    const u16* unk_188;
     u32 unk_18C;
     u8 unk_190[0xC];
     s32 unk_19C;
@@ -188,29 +188,8 @@ typedef struct BtlRikuWork {
 } BtlRikuWork;
 
 extern u8 gUnk_08F6DD04[];
-extern SoraAttackDef gUnk_0813C1D4;
-extern RikuAttackDef gUnk_0813C6E8;
-extern RikuAttackDef gUnk_0813C704;
-extern RikuAttackDef gUnk_0813C720;
-extern RikuAttackDef gUnk_0813C73C;
-extern RikuAttackDef gUnk_0813C758;
-extern RikuAttackDef gUnk_0813C774;
-extern RikuAttackDef gUnk_0813C790;
-extern RikuAttackDef gUnk_0813C7AC;
-extern SoraAttackDef gUnk_0813C1EC;
-extern SoraAttackDef gUnk_0813C204;
-extern SoraAttackDef gUnk_0813C21C;
-extern SoraAttackDef gUnk_0813C234;
-extern SoraAttackDef gUnk_0813C24C;
-extern SoraAttackDef gUnk_0813C264;
-extern SoraAttackDef gUnk_0813C27C;
 
-extern AnimDef gUnk_0813BA2C[77];
-extern AnimDef gUnk_0813BEFC[6][5];
-extern AnimDef gUnk_0813C2AC[35];
-extern AnimDef gUnk_0813C4DC[6][5];
 
-extern u8 gUnk_0813C294[5];
 
 
 extern u8 gUnk_08B1D8BC[];
@@ -315,18 +294,11 @@ typedef struct BtlMapWork {
     s32 unk_0C;
 } BtlMapWork;
 
-extern const s8 gUnk_0813C7D8[32];
 
-extern u16 gUnk_0813C0DC[4][4];
 
-extern s32 gUnk_0813C0FC[18];
 
-extern s32 gUnk_0813C144[18];
 
-extern s32 gUnk_0813C18C[18];
 
-extern u16 gUnk_0813C6BC[4][4];
 
-extern s32 gUnk_0813C6DC[3];
 
 #endif /* GUARD_BTL_H */

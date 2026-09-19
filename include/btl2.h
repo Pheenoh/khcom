@@ -25,7 +25,6 @@
 #include "m4a_catalog_data.h"
 #include "key.h"
 #include "anim.h"
-#include "fld_types.h"
 #include "bos4_api.h"
 
 

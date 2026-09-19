@@ -7,181 +7,55 @@
     "us": {
       "placements": [
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_sora",
-          "address": "0x0813C29C",
-          "size": 14,
-          "sha256": "eac9980fa7c3264343da6d935ec2381405514252b6fd762786b50fde34cc7a00",
-          "objects": [
-            {
-              "name": "gTaskNameBtlSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_riku",
-          "address": "0x0813C7C8",
-          "size": 14,
-          "sha256": "d9547b1bbb14a2da4f2d00db70963da381060a216de2d89a93dbd376dc31802a",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_map",
-          "address": "0x0813C7F8",
-          "size": 13,
-          "sha256": "fdbcc9af493788f0cf1c9fc098d4b4ebcd5de636fa522c72e42e0effe8957c5e",
-          "objects": [
-            {
-              "name": "gTaskNameBtlMap",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_shadow",
+          "unit": "btl2.c",
+          "section": ".rodata",
           "address": "0x0813C808",
-          "size": 16,
-          "sha256": "987387ab481c5949b70c814c20880a8ee0b2327d3f8afcaa47e34bfbdfd9bd9a",
+          "size": 147,
+          "sha256": "da59105ba1a15e13b2f8546b286840fc848ee43448d8572dc03766633be04d7d",
           "objects": [
             {
               "name": "gTaskNameBtlShadow",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpply",
-          "address": "0x0813C818",
-          "size": 15,
-          "sha256": "0c5f6b5efb5a6caa0da343d3677fd11b89cdab07634afbe5ad9dd6d720fbde7d",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpply",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpenm",
-          "address": "0x0813C828",
-          "size": 15,
-          "sha256": "168f61066a5e1e224a0f5f70a4f1502e85d1f28d275d3320fb698d874e55cd93",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpenm",
-              "offset": 0,
+              "offset": 32,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pause",
-          "address": "0x0813C838",
-          "size": 15,
-          "sha256": "dc9485f1972b242be73bc4b9007ad6294c837b0d5ef21290b3ea1454e5e78ef8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPause",
-              "offset": 0,
+              "offset": 48,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pop",
-          "address": "0x0813C848",
-          "size": 13,
-          "sha256": "9551f5d29001d4000b5890d834e1a03a359ac7194f61ec385344b22011ee809f",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPop",
-              "offset": 0,
+              "offset": 64,
               "size": 13
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_escape",
-          "address": "0x0813C858",
-          "size": 16,
-          "sha256": "305caa2312eedfa88769bafa6869ff021758493af0327df6f4af3fc71ae3904b",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlEscape",
-              "offset": 0,
+              "offset": 80,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_prize",
-          "address": "0x0813C868",
-          "size": 15,
-          "sha256": "ea72472cb855b60c790bceb08713440e592c2e83e7207d490710bc93f96a76ef",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPrize",
-              "offset": 0,
+              "offset": 96,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_premire",
-          "address": "0x0813C878",
-          "size": 17,
-          "sha256": "4b6923235740a80b7d21718062ed04f16fa5eb2ed45c708e7a79aa9decae51f8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPremire",
-              "offset": 0,
+              "offset": 112,
               "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_start",
-          "address": "0x0813C88C",
-          "size": 15,
-          "sha256": "2934206e5e14763461ef40056b91c31f410d4718a0a5361bb185772cef8f0d95",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlStart",
-              "offset": 0,
+              "offset": 132,
               "size": 15
             }
           ],
@@ -283,181 +157,55 @@
     "jp": {
       "placements": [
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_sora",
-          "address": "0x0813C318",
-          "size": 14,
-          "sha256": "eac9980fa7c3264343da6d935ec2381405514252b6fd762786b50fde34cc7a00",
-          "objects": [
-            {
-              "name": "gTaskNameBtlSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_riku",
-          "address": "0x0813C844",
-          "size": 14,
-          "sha256": "d9547b1bbb14a2da4f2d00db70963da381060a216de2d89a93dbd376dc31802a",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_map",
-          "address": "0x0813C874",
-          "size": 13,
-          "sha256": "fdbcc9af493788f0cf1c9fc098d4b4ebcd5de636fa522c72e42e0effe8957c5e",
-          "objects": [
-            {
-              "name": "gTaskNameBtlMap",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_shadow",
+          "unit": "btl2.c",
+          "section": ".rodata",
           "address": "0x0813C884",
-          "size": 16,
-          "sha256": "987387ab481c5949b70c814c20880a8ee0b2327d3f8afcaa47e34bfbdfd9bd9a",
+          "size": 147,
+          "sha256": "da59105ba1a15e13b2f8546b286840fc848ee43448d8572dc03766633be04d7d",
           "objects": [
             {
               "name": "gTaskNameBtlShadow",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpply",
-          "address": "0x0813C894",
-          "size": 15,
-          "sha256": "0c5f6b5efb5a6caa0da343d3677fd11b89cdab07634afbe5ad9dd6d720fbde7d",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpply",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpenm",
-          "address": "0x0813C8A4",
-          "size": 15,
-          "sha256": "168f61066a5e1e224a0f5f70a4f1502e85d1f28d275d3320fb698d874e55cd93",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpenm",
-              "offset": 0,
+              "offset": 32,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pause",
-          "address": "0x0813C8B4",
-          "size": 15,
-          "sha256": "dc9485f1972b242be73bc4b9007ad6294c837b0d5ef21290b3ea1454e5e78ef8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPause",
-              "offset": 0,
+              "offset": 48,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pop",
-          "address": "0x0813C8C4",
-          "size": 13,
-          "sha256": "9551f5d29001d4000b5890d834e1a03a359ac7194f61ec385344b22011ee809f",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPop",
-              "offset": 0,
+              "offset": 64,
               "size": 13
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_escape",
-          "address": "0x0813C8D4",
-          "size": 16,
-          "sha256": "305caa2312eedfa88769bafa6869ff021758493af0327df6f4af3fc71ae3904b",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlEscape",
-              "offset": 0,
+              "offset": 80,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_prize",
-          "address": "0x0813C8E4",
-          "size": 15,
-          "sha256": "ea72472cb855b60c790bceb08713440e592c2e83e7207d490710bc93f96a76ef",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPrize",
-              "offset": 0,
+              "offset": 96,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_premire",
-          "address": "0x0813C8F4",
-          "size": 17,
-          "sha256": "4b6923235740a80b7d21718062ed04f16fa5eb2ed45c708e7a79aa9decae51f8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPremire",
-              "offset": 0,
+              "offset": 112,
               "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_start",
-          "address": "0x0813C908",
-          "size": 15,
-          "sha256": "2934206e5e14763461ef40056b91c31f410d4718a0a5361bb185772cef8f0d95",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlStart",
-              "offset": 0,
+              "offset": 132,
               "size": 15
             }
           ],
@@ -559,181 +307,55 @@
     "eu": {
       "placements": [
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_sora",
-          "address": "0x0888A770",
-          "size": 14,
-          "sha256": "eac9980fa7c3264343da6d935ec2381405514252b6fd762786b50fde34cc7a00",
-          "objects": [
-            {
-              "name": "gTaskNameBtlSora",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_riku",
-          "address": "0x0888AC9C",
-          "size": 14,
-          "sha256": "d9547b1bbb14a2da4f2d00db70963da381060a216de2d89a93dbd376dc31802a",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRiku",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_map",
-          "address": "0x0888ACCC",
-          "size": 13,
-          "sha256": "fdbcc9af493788f0cf1c9fc098d4b4ebcd5de636fa522c72e42e0effe8957c5e",
-          "objects": [
-            {
-              "name": "gTaskNameBtlMap",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_shadow",
+          "unit": "btl2.c",
+          "section": ".rodata",
           "address": "0x0888ACDC",
-          "size": 16,
-          "sha256": "987387ab481c5949b70c814c20880a8ee0b2327d3f8afcaa47e34bfbdfd9bd9a",
+          "size": 147,
+          "sha256": "da59105ba1a15e13b2f8546b286840fc848ee43448d8572dc03766633be04d7d",
           "objects": [
             {
               "name": "gTaskNameBtlShadow",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpply",
-          "address": "0x0888ACEC",
-          "size": 15,
-          "sha256": "0c5f6b5efb5a6caa0da343d3677fd11b89cdab07634afbe5ad9dd6d720fbde7d",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpply",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_hpenm",
-          "address": "0x0888ACFC",
-          "size": 15,
-          "sha256": "168f61066a5e1e224a0f5f70a4f1502e85d1f28d275d3320fb698d874e55cd93",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlHpenm",
-              "offset": 0,
+              "offset": 32,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pause",
-          "address": "0x0888AD0C",
-          "size": 15,
-          "sha256": "dc9485f1972b242be73bc4b9007ad6294c837b0d5ef21290b3ea1454e5e78ef8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPause",
-              "offset": 0,
+              "offset": 48,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_pop",
-          "address": "0x0888AD1C",
-          "size": 13,
-          "sha256": "9551f5d29001d4000b5890d834e1a03a359ac7194f61ec385344b22011ee809f",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPop",
-              "offset": 0,
+              "offset": 64,
               "size": 13
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_escape",
-          "address": "0x0888AD2C",
-          "size": 16,
-          "sha256": "305caa2312eedfa88769bafa6869ff021758493af0327df6f4af3fc71ae3904b",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlEscape",
-              "offset": 0,
+              "offset": 80,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_prize",
-          "address": "0x0888AD3C",
-          "size": 15,
-          "sha256": "ea72472cb855b60c790bceb08713440e592c2e83e7207d490710bc93f96a76ef",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPrize",
-              "offset": 0,
+              "offset": 96,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_premire",
-          "address": "0x0888AD4C",
-          "size": 17,
-          "sha256": "4b6923235740a80b7d21718062ed04f16fa5eb2ed45c708e7a79aa9decae51f8",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlPremire",
-              "offset": 0,
+              "offset": 112,
               "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_start",
-          "address": "0x0888AD60",
-          "size": 15,
-          "sha256": "2934206e5e14763461ef40056b91c31f410d4718a0a5361bb185772cef8f0d95",
-          "objects": [
+            },
             {
               "name": "gTaskNameBtlStart",
-              "offset": 0,
+              "offset": 132,
               "size": 15
             }
           ],

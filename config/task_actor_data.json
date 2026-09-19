@@ -12,15 +12,25 @@
     "us": {
       "placements": [
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_000",
-          "address": "0x0813BA2C",
-          "size": 2157,
-          "sha256": "57eee3f41a4ca17c8308503026fcefe7b9494987a4e9f374b2f3cb5e6a6e0c9a",
+          "unit": "btl.c",
+          "section": ".rodata",
+          "address": "0x0813BA0C",
+          "size": 3530,
+          "sha256": "9d45c45f9c3bbb064f759bce42a4481c996013b4cd0d2563d520cc8f34394bd4",
           "objects": [
             {
-              "name": "gUnk_0813BA2C",
+              "name": "gTaskNameBtlLockon",
               "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBtlArea",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813BA2C",
+              "offset": 32,
               "size": 1232,
               "consumer": [
                 "func_0801DDE4",
@@ -29,7 +39,7 @@
             },
             {
               "name": "gUnk_0813BEFC",
-              "offset": 1232,
+              "offset": 1264,
               "size": 480,
               "consumer": [
                 "func_0801DE1C",
@@ -38,7 +48,7 @@
             },
             {
               "name": "gUnk_0813C0DC",
-              "offset": 1712,
+              "offset": 1744,
               "size": 32,
               "consumer": [
                 "task_btl_sora_0",
@@ -47,7 +57,7 @@
             },
             {
               "name": "gUnk_0813C0FC",
-              "offset": 1744,
+              "offset": 1776,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -56,7 +66,7 @@
             },
             {
               "name": "gUnk_0813C144",
-              "offset": 1816,
+              "offset": 1848,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -65,7 +75,7 @@
             },
             {
               "name": "gUnk_0813C18C",
-              "offset": 1888,
+              "offset": 1920,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -74,7 +84,7 @@
             },
             {
               "name": "gUnk_0813C1D4",
-              "offset": 1960,
+              "offset": 1992,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -83,7 +93,7 @@
             },
             {
               "name": "gUnk_0813C1EC",
-              "offset": 1984,
+              "offset": 2016,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -92,7 +102,7 @@
             },
             {
               "name": "gUnk_0813C204",
-              "offset": 2008,
+              "offset": 2040,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -101,7 +111,7 @@
             },
             {
               "name": "gUnk_0813C21C",
-              "offset": 2032,
+              "offset": 2064,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -110,7 +120,7 @@
             },
             {
               "name": "gUnk_0813C234",
-              "offset": 2056,
+              "offset": 2088,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -119,7 +129,7 @@
             },
             {
               "name": "gUnk_0813C24C",
-              "offset": 2080,
+              "offset": 2112,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -128,7 +138,7 @@
             },
             {
               "name": "gUnk_0813C264",
-              "offset": 2104,
+              "offset": 2136,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -137,7 +147,7 @@
             },
             {
               "name": "gUnk_0813C27C",
-              "offset": 2128,
+              "offset": 2160,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -146,25 +156,21 @@
             },
             {
               "name": "gUnk_0813C294",
-              "offset": 2152,
+              "offset": 2184,
               "size": 5,
               "consumer": [
                 "task_btl_sora_1",
                 "{\"consumer\":[\"src/btl.c\",2747],\"copy_bytes\":5}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_001",
-          "address": "0x0813C2AC",
-          "size": 1308,
-          "sha256": "29b916e01c91152e70988396f36df1ba57fc0427e31a7a0d48ff127ac757cf5d",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameBtlSora",
+              "offset": 2192,
+              "size": 14
+            },
             {
               "name": "gUnk_0813C2AC",
-              "offset": 0,
+              "offset": 2208,
               "size": 560,
               "consumer": [
                 "func_080276D4",
@@ -173,7 +179,7 @@
             },
             {
               "name": "gUnk_0813C4DC",
-              "offset": 560,
+              "offset": 2768,
               "size": 480,
               "consumer": [
                 "func_0802770C",
@@ -182,7 +188,7 @@
             },
             {
               "name": "gUnk_0813C6BC",
-              "offset": 1040,
+              "offset": 3248,
               "size": 32,
               "consumer": [
                 "task_btl_riku_0",
@@ -191,7 +197,7 @@
             },
             {
               "name": "gUnk_0813C6DC",
-              "offset": 1072,
+              "offset": 3280,
               "size": 12,
               "consumer": [
                 "task_btl_riku_1",
@@ -200,7 +206,7 @@
             },
             {
               "name": "gUnk_0813C6E8",
-              "offset": 1084,
+              "offset": 3292,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -209,7 +215,7 @@
             },
             {
               "name": "gUnk_0813C704",
-              "offset": 1112,
+              "offset": 3320,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -218,7 +224,7 @@
             },
             {
               "name": "gUnk_0813C720",
-              "offset": 1140,
+              "offset": 3348,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -227,7 +233,7 @@
             },
             {
               "name": "gUnk_0813C73C",
-              "offset": 1168,
+              "offset": 3376,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -236,7 +242,7 @@
             },
             {
               "name": "gUnk_0813C758",
-              "offset": 1196,
+              "offset": 3404,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -245,7 +251,7 @@
             },
             {
               "name": "gUnk_0813C774",
-              "offset": 1224,
+              "offset": 3432,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -254,7 +260,7 @@
             },
             {
               "name": "gUnk_0813C790",
-              "offset": 1252,
+              "offset": 3460,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -263,23 +269,28 @@
             },
             {
               "name": "gUnk_0813C7AC",
-              "offset": 1280,
+              "offset": 3488,
               "size": 28,
               "consumer": [
                 "func_080280E0",
                 "{\"consumer\":[\"src/btl.c\",6696,6719,9672,9699]}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlRiku",
+              "offset": 3516,
+              "size": 14
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_002",
+          "unit": "btl_map.c",
+          "section": ".rodata",
           "address": "0x0813C7D8",
-          "size": 32,
-          "sha256": "d597787afa88ba2b97a38bb908814fd35daa34ab9898dfc72f879346c991bd38",
+          "size": 45,
+          "sha256": "2b0dd7fde2f80c61e004ad206839c9fe5a6d23c32ac8b51fa5c33effaa96a867",
           "objects": [
             {
               "name": "gUnk_0813C7D8",
@@ -289,8 +300,15 @@
                 "func_0802F208",
                 "{\"consumer\":[\"src/btl.c\",11107,11109],\"max_index\":31}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlMap",
+              "offset": 32,
+              "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "fld.c",
@@ -2361,15 +2379,25 @@
     "jp": {
       "placements": [
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_000",
-          "address": "0x0813BAA8",
-          "size": 2157,
-          "sha256": "944be63335d46a4adb9709e1c9c7a1df167648f42762e8584d951b536b96bd46",
+          "unit": "btl.c",
+          "section": ".rodata",
+          "address": "0x0813BA88",
+          "size": 3530,
+          "sha256": "b2480efa8251e6a02988539ef7d8c3fe42df2d0c6296f35d6b0549732566e175",
           "objects": [
             {
-              "name": "gUnk_0813BA2C",
+              "name": "gTaskNameBtlLockon",
               "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBtlArea",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813BA2C",
+              "offset": 32,
               "size": 1232,
               "consumer": [
                 "func_0801DDE4",
@@ -2378,7 +2406,7 @@
             },
             {
               "name": "gUnk_0813BEFC",
-              "offset": 1232,
+              "offset": 1264,
               "size": 480,
               "consumer": [
                 "func_0801DE1C",
@@ -2387,7 +2415,7 @@
             },
             {
               "name": "gUnk_0813C0DC",
-              "offset": 1712,
+              "offset": 1744,
               "size": 32,
               "consumer": [
                 "task_btl_sora_0",
@@ -2396,7 +2424,7 @@
             },
             {
               "name": "gUnk_0813C0FC",
-              "offset": 1744,
+              "offset": 1776,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -2405,7 +2433,7 @@
             },
             {
               "name": "gUnk_0813C144",
-              "offset": 1816,
+              "offset": 1848,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -2414,7 +2442,7 @@
             },
             {
               "name": "gUnk_0813C18C",
-              "offset": 1888,
+              "offset": 1920,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -2423,7 +2451,7 @@
             },
             {
               "name": "gUnk_0813C1D4",
-              "offset": 1960,
+              "offset": 1992,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2432,7 +2460,7 @@
             },
             {
               "name": "gUnk_0813C1EC",
-              "offset": 1984,
+              "offset": 2016,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2441,7 +2469,7 @@
             },
             {
               "name": "gUnk_0813C204",
-              "offset": 2008,
+              "offset": 2040,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2450,7 +2478,7 @@
             },
             {
               "name": "gUnk_0813C21C",
-              "offset": 2032,
+              "offset": 2064,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2459,7 +2487,7 @@
             },
             {
               "name": "gUnk_0813C234",
-              "offset": 2056,
+              "offset": 2088,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2468,7 +2496,7 @@
             },
             {
               "name": "gUnk_0813C24C",
-              "offset": 2080,
+              "offset": 2112,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2477,7 +2505,7 @@
             },
             {
               "name": "gUnk_0813C264",
-              "offset": 2104,
+              "offset": 2136,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2486,7 +2514,7 @@
             },
             {
               "name": "gUnk_0813C27C",
-              "offset": 2128,
+              "offset": 2160,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -2495,25 +2523,21 @@
             },
             {
               "name": "gUnk_0813C294",
-              "offset": 2152,
+              "offset": 2184,
               "size": 5,
               "consumer": [
                 "task_btl_sora_1",
                 "{\"consumer\":[\"src/btl.c\",2747],\"copy_bytes\":5}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_001",
-          "address": "0x0813C328",
-          "size": 1308,
-          "sha256": "e1d0734750ef50c190d119aed6bc8fe74f5c1c42d9d447d6bd4f7909098865df",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameBtlSora",
+              "offset": 2192,
+              "size": 14
+            },
             {
               "name": "gUnk_0813C2AC",
-              "offset": 0,
+              "offset": 2208,
               "size": 560,
               "consumer": [
                 "func_080276D4",
@@ -2522,7 +2546,7 @@
             },
             {
               "name": "gUnk_0813C4DC",
-              "offset": 560,
+              "offset": 2768,
               "size": 480,
               "consumer": [
                 "func_0802770C",
@@ -2531,7 +2555,7 @@
             },
             {
               "name": "gUnk_0813C6BC",
-              "offset": 1040,
+              "offset": 3248,
               "size": 32,
               "consumer": [
                 "task_btl_riku_0",
@@ -2540,7 +2564,7 @@
             },
             {
               "name": "gUnk_0813C6DC",
-              "offset": 1072,
+              "offset": 3280,
               "size": 12,
               "consumer": [
                 "task_btl_riku_1",
@@ -2549,7 +2573,7 @@
             },
             {
               "name": "gUnk_0813C6E8",
-              "offset": 1084,
+              "offset": 3292,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2558,7 +2582,7 @@
             },
             {
               "name": "gUnk_0813C704",
-              "offset": 1112,
+              "offset": 3320,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2567,7 +2591,7 @@
             },
             {
               "name": "gUnk_0813C720",
-              "offset": 1140,
+              "offset": 3348,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2576,7 +2600,7 @@
             },
             {
               "name": "gUnk_0813C73C",
-              "offset": 1168,
+              "offset": 3376,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2585,7 +2609,7 @@
             },
             {
               "name": "gUnk_0813C758",
-              "offset": 1196,
+              "offset": 3404,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2594,7 +2618,7 @@
             },
             {
               "name": "gUnk_0813C774",
-              "offset": 1224,
+              "offset": 3432,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2603,7 +2627,7 @@
             },
             {
               "name": "gUnk_0813C790",
-              "offset": 1252,
+              "offset": 3460,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -2612,23 +2636,28 @@
             },
             {
               "name": "gUnk_0813C7AC",
-              "offset": 1280,
+              "offset": 3488,
               "size": 28,
               "consumer": [
                 "func_080280E0",
                 "{\"consumer\":[\"src/btl.c\",6696,6719,9672,9699]}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlRiku",
+              "offset": 3516,
+              "size": 14
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_002",
+          "unit": "btl_map.c",
+          "section": ".rodata",
           "address": "0x0813C854",
-          "size": 32,
-          "sha256": "d597787afa88ba2b97a38bb908814fd35daa34ab9898dfc72f879346c991bd38",
+          "size": 45,
+          "sha256": "2b0dd7fde2f80c61e004ad206839c9fe5a6d23c32ac8b51fa5c33effaa96a867",
           "objects": [
             {
               "name": "gUnk_0813C7D8",
@@ -2638,8 +2667,15 @@
                 "func_0802F208",
                 "{\"consumer\":[\"src/btl.c\",11107,11109],\"max_index\":31}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlMap",
+              "offset": 32,
+              "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "fld.c",
@@ -4710,15 +4746,25 @@
     "eu": {
       "placements": [
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_000",
-          "address": "0x08889F00",
-          "size": 2157,
-          "sha256": "6c6fb8906bc8b8ddb8880265935d55a79a5942f92b58fb629578c4f20df63437",
+          "unit": "btl.c",
+          "section": ".rodata",
+          "address": "0x08889EE0",
+          "size": 3530,
+          "sha256": "be34bfa6b704ead3a0689928ee184fc8e309f2be08efec2e85cf5a228405210d",
           "objects": [
             {
-              "name": "gUnk_0813BA2C",
+              "name": "gTaskNameBtlLockon",
               "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBtlArea",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813BA2C",
+              "offset": 32,
               "size": 1232,
               "consumer": [
                 "func_0801DDE4",
@@ -4727,7 +4773,7 @@
             },
             {
               "name": "gUnk_0813BEFC",
-              "offset": 1232,
+              "offset": 1264,
               "size": 480,
               "consumer": [
                 "func_0801DE1C",
@@ -4736,7 +4782,7 @@
             },
             {
               "name": "gUnk_0813C0DC",
-              "offset": 1712,
+              "offset": 1744,
               "size": 32,
               "consumer": [
                 "task_btl_sora_0",
@@ -4745,7 +4791,7 @@
             },
             {
               "name": "gUnk_0813C0FC",
-              "offset": 1744,
+              "offset": 1776,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -4754,7 +4800,7 @@
             },
             {
               "name": "gUnk_0813C144",
-              "offset": 1816,
+              "offset": 1848,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -4763,7 +4809,7 @@
             },
             {
               "name": "gUnk_0813C18C",
-              "offset": 1888,
+              "offset": 1920,
               "size": 72,
               "consumer": [
                 "task_btl_sora_1",
@@ -4772,7 +4818,7 @@
             },
             {
               "name": "gUnk_0813C1D4",
-              "offset": 1960,
+              "offset": 1992,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4781,7 +4827,7 @@
             },
             {
               "name": "gUnk_0813C1EC",
-              "offset": 1984,
+              "offset": 2016,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4790,7 +4836,7 @@
             },
             {
               "name": "gUnk_0813C204",
-              "offset": 2008,
+              "offset": 2040,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4799,7 +4845,7 @@
             },
             {
               "name": "gUnk_0813C21C",
-              "offset": 2032,
+              "offset": 2064,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4808,7 +4854,7 @@
             },
             {
               "name": "gUnk_0813C234",
-              "offset": 2056,
+              "offset": 2088,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4817,7 +4863,7 @@
             },
             {
               "name": "gUnk_0813C24C",
-              "offset": 2080,
+              "offset": 2112,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4826,7 +4872,7 @@
             },
             {
               "name": "gUnk_0813C264",
-              "offset": 2104,
+              "offset": 2136,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4835,7 +4881,7 @@
             },
             {
               "name": "gUnk_0813C27C",
-              "offset": 2128,
+              "offset": 2160,
               "size": 24,
               "consumer": [
                 "func_0801E518",
@@ -4844,25 +4890,21 @@
             },
             {
               "name": "gUnk_0813C294",
-              "offset": 2152,
+              "offset": 2184,
               "size": 5,
               "consumer": [
                 "task_btl_sora_1",
                 "{\"consumer\":[\"src/btl.c\",2747],\"copy_bytes\":5}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_001",
-          "address": "0x0888A780",
-          "size": 1308,
-          "sha256": "2054ac22a214ad1b2e067d7b1f8afb82cfedb7c9a08137c2152fe9798f1936f3",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameBtlSora",
+              "offset": 2192,
+              "size": 14
+            },
             {
               "name": "gUnk_0813C2AC",
-              "offset": 0,
+              "offset": 2208,
               "size": 560,
               "consumer": [
                 "func_080276D4",
@@ -4871,7 +4913,7 @@
             },
             {
               "name": "gUnk_0813C4DC",
-              "offset": 560,
+              "offset": 2768,
               "size": 480,
               "consumer": [
                 "func_0802770C",
@@ -4880,7 +4922,7 @@
             },
             {
               "name": "gUnk_0813C6BC",
-              "offset": 1040,
+              "offset": 3248,
               "size": 32,
               "consumer": [
                 "task_btl_riku_0",
@@ -4889,7 +4931,7 @@
             },
             {
               "name": "gUnk_0813C6DC",
-              "offset": 1072,
+              "offset": 3280,
               "size": 12,
               "consumer": [
                 "task_btl_riku_1",
@@ -4898,7 +4940,7 @@
             },
             {
               "name": "gUnk_0813C6E8",
-              "offset": 1084,
+              "offset": 3292,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4907,7 +4949,7 @@
             },
             {
               "name": "gUnk_0813C704",
-              "offset": 1112,
+              "offset": 3320,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4916,7 +4958,7 @@
             },
             {
               "name": "gUnk_0813C720",
-              "offset": 1140,
+              "offset": 3348,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4925,7 +4967,7 @@
             },
             {
               "name": "gUnk_0813C73C",
-              "offset": 1168,
+              "offset": 3376,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4934,7 +4976,7 @@
             },
             {
               "name": "gUnk_0813C758",
-              "offset": 1196,
+              "offset": 3404,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4943,7 +4985,7 @@
             },
             {
               "name": "gUnk_0813C774",
-              "offset": 1224,
+              "offset": 3432,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4952,7 +4994,7 @@
             },
             {
               "name": "gUnk_0813C790",
-              "offset": 1252,
+              "offset": 3460,
               "size": 28,
               "consumer": [
                 "func_080280E0",
@@ -4961,23 +5003,28 @@
             },
             {
               "name": "gUnk_0813C7AC",
-              "offset": 1280,
+              "offset": 3488,
               "size": 28,
               "consumer": [
                 "func_080280E0",
                 "{\"consumer\":[\"src/btl.c\",6696,6719,9672,9699]}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlRiku",
+              "offset": 3516,
+              "size": 14
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "btl_data.c",
-          "section": ".rodata_btl_002",
+          "unit": "btl_map.c",
+          "section": ".rodata",
           "address": "0x0888ACAC",
-          "size": 32,
-          "sha256": "d597787afa88ba2b97a38bb908814fd35daa34ab9898dfc72f879346c991bd38",
+          "size": 45,
+          "sha256": "2b0dd7fde2f80c61e004ad206839c9fe5a6d23c32ac8b51fa5c33effaa96a867",
           "objects": [
             {
               "name": "gUnk_0813C7D8",
@@ -4987,8 +5034,15 @@
                 "func_0802F208",
                 "{\"consumer\":[\"src/btl.c\",11107,11109],\"max_index\":31}"
               ]
+            },
+            {
+              "name": "gTaskNameBtlMap",
+              "offset": 32,
+              "size": 13
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "fld.c",
