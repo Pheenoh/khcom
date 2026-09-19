@@ -2,7 +2,7 @@
 #include "mode_vsbattle.h"
 #include "enemy_common.h"
 
-void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
+void func_0800C778(EmyWork* work, const EmyDef* def, EmyObj* obj) {
     BtlObj* actor = &work->actor;
     u16 t;
 

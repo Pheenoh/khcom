@@ -1314,7 +1314,7 @@ void func_0801B024(BtlObj* p) {
     }
 }
 
-void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
+void func_0801B37C(BtlObj* p, const EmyKind* d, s32 x, s32 y, s32 z) {
     const EnemyBaseStats* e;
     enum EmyId {
         EMY_ID_32 = 32,

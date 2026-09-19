@@ -18,7 +18,7 @@ void func_0801AF08(BtlObj* p);
 u16 GetBattleSpritePriorityFlags(s32 y);
 void func_0801AF4C(BtlObj* actor);
 void func_0801B008(void);
-void func_0801B37C(BtlObj* p, struct EmyKind* d, s32 x, s32 y, s32 z);
+void func_0801B37C(BtlObj* p, const struct EmyKind* d, s32 x, s32 y, s32 z);
 void func_0801B7D8(BtlObj* obj);
 void func_0801B918(BtlObj* p);
 void func_0801B994(BtlObj* p);

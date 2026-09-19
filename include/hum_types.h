@@ -35,7 +35,7 @@ typedef struct HumSubDef {
 } HumSubDef;
 
 typedef struct HumWork {
-    void* unk_000;
+    const void* unk_000;
     void* tiles;
     void* palette;
     HumSub* sub;

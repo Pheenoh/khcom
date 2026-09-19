@@ -2,7 +2,7 @@
 #include "macros.h"
 #include "hum_common.h"
 
-void HumInit(HumWork* work, HumDef* def) {
+void HumInit(HumWork* work, const HumDef* def) {
     BtlObj* actor = &work->actor;
 
     s32 a = 0x14000;
@@ -51,7 +51,7 @@ void HumInit(HumWork* work, HumDef* def) {
     actor->unk_034 |= 0x24000000000;
 }
 
-void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
+void HumSubInit(HumWork* work, HumSub* sub, const HumSubDef* def) {
     if (work->sub == 0) {
         work->sub = sub;
     } else {
