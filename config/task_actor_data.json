@@ -4,7 +4,8 @@
     "anim": "AnimDef feeds gfx, animation-header pointer tables and tiles to func_08019068; the named family wrappers access canonical 16-byte records. Record bounds follow recorded consumers; EmyDef default sequences use indices 0,1,2. The standalone Mushu fifth record is a structurally validated continuation, not a claimed runtime index.",
     "enemy": "Each task passes its EmyDef into func_0800C778; emy_common.c passes the embedded EmyKind at offset28 to func_0801B37C, which consumes its complete16-byte structure.",
     "hum": "HumInit likewise consumes a16-byte EmyKind at offset12. HumWork.unk_184 aliases Actor.unk_184; btl_actor.c:433 accesses cards0..2, proving each card-ID triplet.",
-    "regions": "Every corresponding pointer votes unanimously across all records and both target regions. All nonpointer bytes agree except two HumDef first fields in EU (128 to100 and128 to102), expressed with local version guards."
+    "regions": "Every corresponding pointer votes unanimously across all records and both target regions. All nonpointer bytes agree except two HumDef first fields in EU (128 to100 and128 to102), expressed with local version guards.",
+    "frd_ownership": "Seven friend-task animation tables and their adjacent task names form the same complete read-only group in US, JP and EU. Every table is used only by the corresponding friend lifecycle in frd.c, and each name is referenced by its matching callback descriptor in the aggregate descriptor catalog. The table/name sequence matches callback family order, and ordinary const C definitions plus native compiler alignment reproduce the original spans without per-object sections. The shared names remain declared for the aggregate descriptors."
   },
   "regions": {
     "us": {
@@ -1753,11 +1754,11 @@
           "padding_before": 1
         },
         {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_000",
-          "address": "0x0813EB8C",
-          "size": 96,
-          "sha256": "ae27025db49c06ac816fbbe03574f03dec9d735b59acd71e72fe9acb7dbb5821",
+          "unit": "frd.c",
+          "section": ".rodata",
+          "address": "0x813eb8c",
+          "size": 563,
+          "sha256": "6f82e038074f867b28839a21752f20cfde0c315564c9967603d1959e46069d45",
           "objects": [
             {
               "name": "gUnk_0813EB8C",
@@ -1767,128 +1768,99 @@
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",47,\"0\"],[\"src/frd.c\",113,\"2\"],[\"src/frd.c\",129,\"3\"],[\"src/frd.c\",179,\"3\"],[\"src/frd.c\",188,\"2\"],[\"src/frd.c\",211,\"4\"],[\"src/frd.c\",212,\"5\"],[\"src/frd.c\",238,\"0\"],[\"src/frd.c\",289,\"0\"],[\"src/frd.c\",338,\"1\"],[\"src/frd.c\",383,\"1\"]],\"max_index\":5}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_001",
-          "address": "0x0813EBFC",
-          "size": 80,
-          "sha256": "470f160a1a309173172c7783c09fd63eb0afee874ddfdfd8d867755d87589632",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdDonald",
+              "offset": 96,
+              "size": 16
+            },
             {
               "name": "gUnk_0813EBFC",
-              "offset": 0,
+              "offset": 112,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",565,\"0\"],[\"src/frd.c\",585,\"0\"],[\"src/frd.c\",600,\"1\"],[\"src/frd.c\",621,\"1\"],[\"src/frd.c\",633,\"0\"],[\"src/frd.c\",657,\"2\"],[\"src/frd.c\",694,\"3\"],[\"src/frd.c\",708,\"4\"]],\"max_index\":4}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_002",
-          "address": "0x0813EC5C",
-          "size": 48,
-          "sha256": "11c760735dfd9d4fe259ecd71c3d576577032d6214e805ac6e2b2bf65272e62d",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdGoofy",
+              "offset": 192,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC5C",
-              "offset": 0,
+              "offset": 208,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",826,\"1\"],[\"src/frd.c\",888,\"2\"],[\"src/frd.c\",919,\"0\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_003",
-          "address": "0x0813EC9C",
-          "size": 80,
-          "sha256": "a55823ff6649ad1496ed513cd9f51be5095ba8512661d4dc3f230a658ae5e160",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAriel",
+              "offset": 256,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC9C",
-              "offset": 0,
+              "offset": 272,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1081,\"0\"],[\"src/frd.c\",1116,\"1\"],[\"src/frd.c\",1128,\"2\"],[\"src/frd.c\",1157,\"4\"],[\"src/frd.c\",1166,\"3\"],[\"src/frd.c\",1179,\"4\"],[\"src/frd.c\",1210,\"1\"],[\"src/frd.c\",1211,\"3\"],[\"src/frd.c\",1225,\"2\"],[\"src/frd.c\",1252,\"0\"],[\"src/frd.c\",1303,\"0\"],[\"src/frd.c\",1351,\"0\"],[\"src/frd.c\",1400,\"0\"]],\"max_index\":4}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_004",
-          "address": "0x0813ECFC",
-          "size": 64,
-          "sha256": "0eee57e3b218f6e8a22eb9e0f15ca6934daaf98a0101d12b595cca24139c0c4a",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdJack",
+              "offset": 352,
+              "size": 14
+            },
             {
               "name": "gUnk_0813ECFC",
-              "offset": 0,
+              "offset": 368,
               "size": 64,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1554,\"0\"],[\"src/frd.c\",1644,\"0\"],[\"src/frd.c\",1659,\"0\"],[\"src/frd.c\",1671,\"0\"],[\"src/frd.c\",1690,\"1\"],[\"src/frd.c\",1703,\"2\"],[\"src/frd.c\",1755,\"3\"]],\"max_index\":3}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_005",
-          "address": "0x0813ED4C",
-          "size": 48,
-          "sha256": "af810da19d95f47897d982412ebd81a07ff88435f4ef572f644d32ee1334bfbb",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdPan",
+              "offset": 432,
+              "size": 13
+            },
             {
               "name": "gUnk_0813ED4C",
-              "offset": 0,
+              "offset": 448,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1885,\"0\"],[\"src/frd.c\",1917,\"0\"],[\"src/frd.c\",1930,\"1\"],[\"src/frd.c\",1941,\"0\"],[\"src/frd.c\",1960,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_006",
-          "address": "0x0813ED90",
-          "size": 32,
-          "sha256": "a0e2ff7762d06bf642f99a1bdfcb647850f3befa47fadab461362380d82abed4",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAladdin",
+              "offset": 496,
+              "size": 17
+            },
             {
               "name": "gUnk_0813ED90",
-              "offset": 0,
+              "offset": 516,
               "size": 32,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",2151,\"0\"],[\"src/frd.c\",2208,\"1\"]],\"max_index\":1}"
               ]
+            },
+            {
+              "name": "gTaskNameFrdBeast",
+              "offset": 548,
+              "size": 15
             }
           ],
           "alignment_before": 4,
-          "padding_before": 3
+          "padding_before": 2
         },
         {
           "unit": "hum_data.c",
@@ -4267,11 +4239,11 @@
           "padding_before": 1
         },
         {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_000",
-          "address": "0x0813EC08",
-          "size": 96,
-          "sha256": "7f1d16ae3d5d863aea980ce97d96854d531374707686367697ad1e9c5dbee90e",
+          "unit": "frd.c",
+          "section": ".rodata",
+          "address": "0x813ec08",
+          "size": 563,
+          "sha256": "a1ae433d3dca4060e91b24931fe932a70aa3fabc2ecfdf60062a4267fdeb45b3",
           "objects": [
             {
               "name": "gUnk_0813EB8C",
@@ -4281,128 +4253,99 @@
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",47,\"0\"],[\"src/frd.c\",113,\"2\"],[\"src/frd.c\",129,\"3\"],[\"src/frd.c\",179,\"3\"],[\"src/frd.c\",188,\"2\"],[\"src/frd.c\",211,\"4\"],[\"src/frd.c\",212,\"5\"],[\"src/frd.c\",238,\"0\"],[\"src/frd.c\",289,\"0\"],[\"src/frd.c\",338,\"1\"],[\"src/frd.c\",383,\"1\"]],\"max_index\":5}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_001",
-          "address": "0x0813EC78",
-          "size": 80,
-          "sha256": "ecb88f8d42095269c61346cd6888ecff769efabd4df6378700fe5a76484b76ef",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdDonald",
+              "offset": 96,
+              "size": 16
+            },
             {
               "name": "gUnk_0813EBFC",
-              "offset": 0,
+              "offset": 112,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",565,\"0\"],[\"src/frd.c\",585,\"0\"],[\"src/frd.c\",600,\"1\"],[\"src/frd.c\",621,\"1\"],[\"src/frd.c\",633,\"0\"],[\"src/frd.c\",657,\"2\"],[\"src/frd.c\",694,\"3\"],[\"src/frd.c\",708,\"4\"]],\"max_index\":4}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_002",
-          "address": "0x0813ECD8",
-          "size": 48,
-          "sha256": "8617d94e893307b0c9c91d03d77321554724792b33a26b5999f0b9580e448a24",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdGoofy",
+              "offset": 192,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC5C",
-              "offset": 0,
+              "offset": 208,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",826,\"1\"],[\"src/frd.c\",888,\"2\"],[\"src/frd.c\",919,\"0\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_003",
-          "address": "0x0813ED18",
-          "size": 80,
-          "sha256": "5459cd4017a71b343ddc407dc36b175b6f6ae4061db7a1c985937ea63626cace",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAriel",
+              "offset": 256,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC9C",
-              "offset": 0,
+              "offset": 272,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1081,\"0\"],[\"src/frd.c\",1116,\"1\"],[\"src/frd.c\",1128,\"2\"],[\"src/frd.c\",1157,\"4\"],[\"src/frd.c\",1166,\"3\"],[\"src/frd.c\",1179,\"4\"],[\"src/frd.c\",1210,\"1\"],[\"src/frd.c\",1211,\"3\"],[\"src/frd.c\",1225,\"2\"],[\"src/frd.c\",1252,\"0\"],[\"src/frd.c\",1303,\"0\"],[\"src/frd.c\",1351,\"0\"],[\"src/frd.c\",1400,\"0\"]],\"max_index\":4}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_004",
-          "address": "0x0813ED78",
-          "size": 64,
-          "sha256": "bebbcd29d41936663fa01dae378c233d61aea1ff10c5c57cd53a281f821ba774",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdJack",
+              "offset": 352,
+              "size": 14
+            },
             {
               "name": "gUnk_0813ECFC",
-              "offset": 0,
+              "offset": 368,
               "size": 64,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1554,\"0\"],[\"src/frd.c\",1644,\"0\"],[\"src/frd.c\",1659,\"0\"],[\"src/frd.c\",1671,\"0\"],[\"src/frd.c\",1690,\"1\"],[\"src/frd.c\",1703,\"2\"],[\"src/frd.c\",1755,\"3\"]],\"max_index\":3}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_005",
-          "address": "0x0813EDC8",
-          "size": 48,
-          "sha256": "37a231cbf85899646898be7d6509d7e895542dd1278c3842a5dc2754570de0fa",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdPan",
+              "offset": 432,
+              "size": 13
+            },
             {
               "name": "gUnk_0813ED4C",
-              "offset": 0,
+              "offset": 448,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1885,\"0\"],[\"src/frd.c\",1917,\"0\"],[\"src/frd.c\",1930,\"1\"],[\"src/frd.c\",1941,\"0\"],[\"src/frd.c\",1960,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_006",
-          "address": "0x0813EE0C",
-          "size": 32,
-          "sha256": "9884e3d251075243df836a7e51b644435f9784b4d0fd2b9c2b1dcaf33cde8c16",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAladdin",
+              "offset": 496,
+              "size": 17
+            },
             {
               "name": "gUnk_0813ED90",
-              "offset": 0,
+              "offset": 516,
               "size": 32,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",2151,\"0\"],[\"src/frd.c\",2208,\"1\"]],\"max_index\":1}"
               ]
+            },
+            {
+              "name": "gTaskNameFrdBeast",
+              "offset": 548,
+              "size": 15
             }
           ],
           "alignment_before": 4,
-          "padding_before": 3
+          "padding_before": 2
         },
         {
           "unit": "hum_data.c",
@@ -6781,11 +6724,11 @@
           "padding_before": 1
         },
         {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_000",
-          "address": "0x0888D060",
-          "size": 96,
-          "sha256": "977434e5afae7839b5ccf7d5d732eab42913d2121224af5721491859048affbe",
+          "unit": "frd.c",
+          "section": ".rodata",
+          "address": "0x888d060",
+          "size": 563,
+          "sha256": "276857f4407149f23ba03d45d26f9d7e5dc4eff6889a8da8039ba064b4fe6068",
           "objects": [
             {
               "name": "gUnk_0813EB8C",
@@ -6795,128 +6738,99 @@
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",47,\"0\"],[\"src/frd.c\",113,\"2\"],[\"src/frd.c\",129,\"3\"],[\"src/frd.c\",179,\"3\"],[\"src/frd.c\",188,\"2\"],[\"src/frd.c\",211,\"4\"],[\"src/frd.c\",212,\"5\"],[\"src/frd.c\",238,\"0\"],[\"src/frd.c\",289,\"0\"],[\"src/frd.c\",338,\"1\"],[\"src/frd.c\",383,\"1\"]],\"max_index\":5}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_001",
-          "address": "0x0888D0D0",
-          "size": 80,
-          "sha256": "ec71fa8e24fbffb2eb8ef2ff7557c6e3c112f52c26e1c9c946567ee19e1ecbd3",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdDonald",
+              "offset": 96,
+              "size": 16
+            },
             {
               "name": "gUnk_0813EBFC",
-              "offset": 0,
+              "offset": 112,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",565,\"0\"],[\"src/frd.c\",585,\"0\"],[\"src/frd.c\",600,\"1\"],[\"src/frd.c\",621,\"1\"],[\"src/frd.c\",633,\"0\"],[\"src/frd.c\",657,\"2\"],[\"src/frd.c\",694,\"3\"],[\"src/frd.c\",708,\"4\"]],\"max_index\":4}"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_002",
-          "address": "0x0888D130",
-          "size": 48,
-          "sha256": "a00d0187aafefdef156581fc3c853b6911e02f9866504964ca5d51b4940512e5",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdGoofy",
+              "offset": 192,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC5C",
-              "offset": 0,
+              "offset": 208,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",826,\"1\"],[\"src/frd.c\",888,\"2\"],[\"src/frd.c\",919,\"0\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_003",
-          "address": "0x0888D170",
-          "size": 80,
-          "sha256": "efd57d3d37815e3ed4cad3b336018abd50bb85aeebdf5e55cf0674554eaad388",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAriel",
+              "offset": 256,
+              "size": 15
+            },
             {
               "name": "gUnk_0813EC9C",
-              "offset": 0,
+              "offset": 272,
               "size": 80,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1081,\"0\"],[\"src/frd.c\",1116,\"1\"],[\"src/frd.c\",1128,\"2\"],[\"src/frd.c\",1157,\"4\"],[\"src/frd.c\",1166,\"3\"],[\"src/frd.c\",1179,\"4\"],[\"src/frd.c\",1210,\"1\"],[\"src/frd.c\",1211,\"3\"],[\"src/frd.c\",1225,\"2\"],[\"src/frd.c\",1252,\"0\"],[\"src/frd.c\",1303,\"0\"],[\"src/frd.c\",1351,\"0\"],[\"src/frd.c\",1400,\"0\"]],\"max_index\":4}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_004",
-          "address": "0x0888D1D0",
-          "size": 64,
-          "sha256": "84a1b53ec283b3adcbbbd2d5ade93b10231e40047772282c52867ad2c9751711",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdJack",
+              "offset": 352,
+              "size": 14
+            },
             {
               "name": "gUnk_0813ECFC",
-              "offset": 0,
+              "offset": 368,
               "size": 64,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1554,\"0\"],[\"src/frd.c\",1644,\"0\"],[\"src/frd.c\",1659,\"0\"],[\"src/frd.c\",1671,\"0\"],[\"src/frd.c\",1690,\"1\"],[\"src/frd.c\",1703,\"2\"],[\"src/frd.c\",1755,\"3\"]],\"max_index\":3}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_005",
-          "address": "0x0888D220",
-          "size": 48,
-          "sha256": "bcfd08792b6c179cbafd06fe913cd818dd622fe7be372fa831cf63f7130099ac",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdPan",
+              "offset": 432,
+              "size": 13
+            },
             {
               "name": "gUnk_0813ED4C",
-              "offset": 0,
+              "offset": 448,
               "size": 48,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",1885,\"0\"],[\"src/frd.c\",1917,\"0\"],[\"src/frd.c\",1930,\"1\"],[\"src/frd.c\",1941,\"0\"],[\"src/frd.c\",1960,\"2\"]],\"max_index\":2}"
               ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "frd_data.c",
-          "section": ".rodata_frd_006",
-          "address": "0x0888D264",
-          "size": 32,
-          "sha256": "458c2aa09a483f6083e864e2989e0fd7e53fb5a99e2d15b2411883f93d98dabf",
-          "objects": [
+            },
+            {
+              "name": "gTaskNameFrdAladdin",
+              "offset": 496,
+              "size": 17
+            },
             {
               "name": "gUnk_0813ED90",
-              "offset": 0,
+              "offset": 516,
               "size": 32,
               "consumer": [
                 "func_08019068",
                 "{\"calls\":[[\"src/frd.c\",2151,\"0\"],[\"src/frd.c\",2208,\"1\"]],\"max_index\":1}"
               ]
+            },
+            {
+              "name": "gTaskNameFrdBeast",
+              "offset": 548,
+              "size": 15
             }
           ],
           "alignment_before": 4,
-          "padding_before": 3
+          "padding_before": 2
         },
         {
           "unit": "hum_data.c",

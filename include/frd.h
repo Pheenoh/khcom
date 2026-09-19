@@ -170,19 +170,12 @@ typedef struct FrdBeastWork {
 
 extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_09617C58[];
-extern AnimDef gUnk_0813EB8C[6];
 extern u8 gUnk_08F68384[];
-extern AnimDef gUnk_0813EBFC[5];
 extern u8 gUnk_09617DF8[];
-extern AnimDef gUnk_0813EC5C[3];
 extern u8 gUnk_09617DB8[];
-extern AnimDef gUnk_0813EC9C[5];
 extern u8 gUnk_09617DD8[];
-extern AnimDef gUnk_0813ECFC[4];
 extern u8 gUnk_09617D98[];
-extern AnimDef gUnk_0813ED4C[3];
 extern u8 gUnk_09617E18[];
-extern AnimDef gUnk_0813ED90[2];
 
 u8 func_080474A8(FrdJackWork* work);
 void func_08048A68(FrdPanWork* work);

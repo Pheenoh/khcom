@@ -55,13 +55,6 @@ const char gTaskNameBosShadow[] __attribute__((section(".rodata_names_bos_shadow
 const char gTaskNameRoomcreate[] __attribute__((section(".rodata_names_roomcreate"), aligned(4))) = "task_roomcreate";
 const char gTaskNameRomcriEff[] __attribute__((section(".rodata_names_romcri_eff"), aligned(4))) = "task_romcri_eff";
 const char gTaskNameRomcriEff2[] __attribute__((section(".rodata_names_romcri_eff2"), aligned(4))) = "task_romcri_eff2";
-const char gTaskNameFrdDonald[] __attribute__((section(".rodata_names_frd_donald"), aligned(4))) = "task_frd_donald";
-const char gTaskNameFrdGoofy[] __attribute__((section(".rodata_names_frd_goofy"), aligned(4))) = "task_frd_goofy";
-const char gTaskNameFrdAriel[] __attribute__((section(".rodata_names_frd_ariel"), aligned(4))) = "task_frd_ariel";
-const char gTaskNameFrdJack[] __attribute__((section(".rodata_names_frd_jack"), aligned(4))) = "task_frd_jack";
-const char gTaskNameFrdPan[] __attribute__((section(".rodata_names_frd_pan"), aligned(4))) = "task_frd_pan";
-const char gTaskNameFrdAladdin[] __attribute__((section(".rodata_names_frd_aladdin"), aligned(4))) = "task_frd_aladdin";
-const char gTaskNameFrdBeast[] __attribute__((section(".rodata_names_frd_beast"), aligned(4))) = "task_frd_beast";
 const char gTaskNamePcAcddmg[] __attribute__((section(".rodata_names_pc_acddmg"), aligned(4))) = "task_pc_acddmg";
 const char gTaskNameHumCloud[] __attribute__((section(".rodata_names_hum_cloud"), aligned(4))) = "task_hum_cloud";
 const char gTaskNameHumHook[] __attribute__((section(".rodata_names_hum_hook"), aligned(4))) = "task_hum_hook";

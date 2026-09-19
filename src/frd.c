@@ -1,8 +1,71 @@
 #include "system_state.h"
 #include "display.h"
 #include "frd.h"
-#ifdef VERSION_EU
-#endif
+#include "task_animation_assets.h"
+#include "task_names.h"
+
+const AnimDef gUnk_0813EB8C[6] = {
+    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 0, { 0, 0, 0 } },
+    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 1, { 0, 0, 0 } },
+    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 2, { 0, 0, 0 } },
+    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 3, { 0, 0, 0 } },
+    { gUnk_09EEE03C, gUnk_09EEE0A8, gUnk_0919FDF8, 5, { 0, 0, 0 } },
+    { gUnk_09EEE0C4, gUnk_09EEE170, gUnk_091A4386, 2, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdDonald[] = "task_frd_donald";
+
+const AnimDef gUnk_0813EBFC[5] = {
+    { gUnk_09EDE538, gUnk_09EDE540, gUnk_088717D8, 0, { 0, 0, 0 } },
+    { gUnk_09EDE538, gUnk_09EDE540, gUnk_088717D8, 1, { 0, 0, 0 } },
+    { gUnk_09EDE518, gUnk_09EDE534, gUnk_0886E396, 0, { 0, 0, 0 } },
+    { gUnk_09EDE4F0, gUnk_09EDE50C, gUnk_0886ADEC, 1, { 0, 0, 0 } },
+    { gUnk_09EDE4F0, gUnk_09EDE50C, gUnk_0886ADEC, 2, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdGoofy[] = "task_frd_goofy";
+
+const AnimDef gUnk_0813EC5C[3] = {
+    { gUnk_09EDE5C8, gUnk_09EDE5F0, gUnk_088777F6, 0, { 0, 0, 0 } },
+    { gUnk_09EDE5C8, gUnk_09EDE5F0, gUnk_088777F6, 1, { 0, 0, 0 } },
+    { gUnk_09EDE5C8, gUnk_09EDE5F0, gUnk_088777F6, 2, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdAriel[] = "task_frd_ariel";
+
+const AnimDef gUnk_0813EC9C[5] = {
+    { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 0, { 0, 0, 0 } },
+    { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 1, { 0, 0, 0 } },
+    { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 2, { 0, 0, 0 } },
+    { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 3, { 0, 0, 0 } },
+    { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 4, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdJack[] = "task_frd_jack";
+
+const AnimDef gUnk_0813ECFC[4] = {
+    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 0, { 0, 0, 0 } },
+    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 1, { 0, 0, 0 } },
+    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 2, { 0, 0, 0 } },
+    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 3, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdPan[] = "task_frd_pan";
+
+const AnimDef gUnk_0813ED4C[3] = {
+    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 2, { 0, 0, 0 } },
+    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 0, { 0, 0, 0 } },
+    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 1, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdAladdin[] = "task_frd_aladdin";
+
+const AnimDef gUnk_0813ED90[2] = {
+    { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 0, { 0, 0, 0 } },
+    { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 1, { 0, 0, 0 } },
+};
+
+const char gTaskNameFrdBeast[] = "task_frd_beast";
 
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     BtlObj* body;
