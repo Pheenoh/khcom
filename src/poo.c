@@ -4,6 +4,10 @@
 #include "obj_api.h"
 #include "poo.h"
 #include "poo_api.h"
+#include "background_actor_assets.h"
+#include "mode_chkobj_assets.h"
+
+extern AnimDef gUnk_09EF4C88[5];
 
 #ifdef VERSION_EU
 #endif
@@ -6344,7 +6348,7 @@ void func_080D1FB8(PooBflyPart* p) {
 }
 
 void func_080D2034(PooBflyPart* p) {
-    const PooZzzDesc* d;
+    const AnimDef* d;
 
     func_080D1FB8(p);
     d = &gUnk_09EF4C88[p->unk_4C];
@@ -7075,7 +7079,7 @@ void func_080D313C(void) {
 
 const char gTaskNamePooPooh[] __attribute__((section(".rodata_registration_name_gTaskDescPooPooh"), aligned(1))) = "task_poo_pooh";
 
-TaskDesc gTaskDescPooPooh __attribute__((section(".data_registration_gTaskDescPooPooh"))) = {
+TaskDesc gTaskDescPooPooh = {
     gTaskNamePooPooh,
     (void (*)(void*, void*))task_poo_pooh_0,
     task_poo_pooh_1,
@@ -7086,7 +7090,7 @@ TaskDesc gTaskDescPooPooh __attribute__((section(".data_registration_gTaskDescPo
 
 const char gTaskNamePooMap[] __attribute__((section(".rodata_registration_name_gTaskDescPooMap"), aligned(1))) = "task_poo_map";
 
-TaskDesc gTaskDescPooMap __attribute__((section(".data_registration_gTaskDescPooMap"))) = {
+TaskDesc gTaskDescPooMap = {
     gTaskNamePooMap,
     (void (*)(void*, void*))task_poo_map_0,
     task_poo_map_1,
@@ -7095,9 +7099,450 @@ TaskDesc gTaskDescPooMap __attribute__((section(".data_registration_gTaskDescPoo
     0x18,
 };
 
+const u16* gUnk_09EF4208[144] = {
+    gUnk_09806D98,
+    gUnk_09807598,
+    gUnk_09808D98,
+    gUnk_09809598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09807D98,
+    gUnk_09808598,
+    gUnk_09809D98,
+    gUnk_0980A598,
+    gUnk_0980BD98,
+    gUnk_0980C598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0980AD98,
+    gUnk_0980B598,
+    gUnk_0980CD98,
+    gUnk_0980D598,
+    gUnk_0980ED98,
+    gUnk_0980F598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0980DD98,
+    gUnk_0980E598,
+    gUnk_0980FD98,
+    gUnk_09810598,
+    gUnk_09811D98,
+    gUnk_09812598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09810D98,
+    gUnk_09811598,
+    gUnk_09812D98,
+    gUnk_09813598,
+    gUnk_09814D98,
+    gUnk_09815598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09813D98,
+    gUnk_09814598,
+    gUnk_09815D98,
+    gUnk_09816598,
+    gUnk_09817D98,
+    gUnk_09818598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09816D98,
+    gUnk_09817598,
+    gUnk_09818D98,
+    gUnk_09819598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09819D98,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+};
+
+const u16* gUnk_09EF4448[144] = {
+    gUnk_0981A598,
+    gUnk_0981AD98,
+    gUnk_0981CD98,
+    gUnk_0981D598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981B598,
+    gUnk_0981BD98,
+    gUnk_0981DD98,
+    gUnk_0981E598,
+    gUnk_0981FD98,
+    gUnk_09820598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_0981ED98,
+    gUnk_0981F598,
+    gUnk_09820D98,
+    gUnk_09821598,
+    gUnk_09822D98,
+    gUnk_09823598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_09821D98,
+    gUnk_09822598,
+    gUnk_09823D98,
+    gUnk_09824598,
+    gUnk_09825D98,
+    gUnk_09826598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_09824D98,
+    gUnk_09825598,
+    gUnk_09826D98,
+    gUnk_09827598,
+    gUnk_09828D98,
+    gUnk_09829598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_09827D98,
+    gUnk_09828598,
+    gUnk_09829D98,
+    gUnk_0982A598,
+    gUnk_0982BD98,
+    gUnk_0982C598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_0982AD98,
+    gUnk_0982B598,
+    gUnk_0982CD98,
+    gUnk_0982D598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_0982DD98,
+    gUnk_0982E598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_0981C598,
+    gUnk_0981C598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+};
+
+const u16* gUnk_09EF4688[144] = {
+    gUnk_08125E24,
+    gUnk_0982ED98,
+    gUnk_0982F598,
+    gUnk_0982FD98,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09830598,
+    gUnk_09830D98,
+    gUnk_09831598,
+    gUnk_09831D98,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09832598,
+    gUnk_09832D98,
+    gUnk_09833598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09833D98,
+    gUnk_09834598,
+    gUnk_09834D98,
+    gUnk_09835598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09835D98,
+    gUnk_09836598,
+    gUnk_09836D98,
+    gUnk_09837598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09837D98,
+    gUnk_09838598,
+    gUnk_09838D98,
+    gUnk_09839598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_09839D98,
+    gUnk_0983A598,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+    gUnk_08125E24,
+};
+
 const char gTaskNamePooSora[] __attribute__((section(".rodata_registration_name_gTaskDescPooSora"), aligned(1))) = "task_poo_sora";
 
-TaskDesc gTaskDescPooSora __attribute__((section(".data_registration_gTaskDescPooSora"))) = {
+TaskDesc gTaskDescPooSora = {
     gTaskNamePooSora,
     (void (*)(void*, void*))task_poo_sora_0,
     task_poo_sora_1,
@@ -7106,416 +7551,9 @@ TaskDesc gTaskDescPooSora __attribute__((section(".data_registration_gTaskDescPo
     0xD0,
 };
 
-const char gTaskNamePooBalloon[] __attribute__((section(".rodata_registration_name_gTaskDescPooBalloon"), aligned(1))) = "task_poo_balloon";
-
-TaskDesc gTaskDescPooBalloon __attribute__((section(".data_registration_gTaskDescPooBalloon"))) = {
-    gTaskNamePooBalloon,
-    (void (*)(void*, void*))task_poo_balloon_0,
-    task_poo_balloon_1,
-    (void (*)(void*))task_poo_balloon_2,
-    (void (*)(void*))task_poo_balloon_3,
-    0x28,
-};
-
-const char gTaskNamePooShadow[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadow"), aligned(1))) = "task_poo_shadow";
-
-TaskDesc gTaskDescPooShadow __attribute__((section(".data_registration_gTaskDescPooShadow"))) = {
-    gTaskNamePooShadow,
-    (void (*)(void*, void*))task_poo_shadow_0,
-    task_poo_shadow_1,
-    (void (*)(void*))task_poo_shadow_2,
-    (void (*)(void*))task_poo_shadow_3,
-    0x14,
-};
-
-const char gTaskNamePooShadowdodai[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowdodai"), aligned(1))) = "task_poo_shadowdodai";
-
-TaskDesc gTaskDescPooShadowdodai __attribute__((section(".data_registration_gTaskDescPooShadowdodai"))) = {
-    gTaskNamePooShadowdodai,
-    (void (*)(void*, void*))task_poo_shadowdodai_0,
-    task_poo_shadowdodai_1,
-    (void (*)(void*))task_poo_shadowdodai_2,
-    (void (*)(void*))task_poo_shadowdodai_3,
-    0x34,
-};
-
-const char gTaskNamePooShadowscale[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowscale"), aligned(1))) = "task_poo_shadowscale";
-
-TaskDesc gTaskDescPooShadowscale __attribute__((section(".data_registration_gTaskDescPooShadowscale"))) = {
-    gTaskNamePooShadowscale,
-    (void (*)(void*, void*))task_poo_shadowscale_0,
-    task_poo_shadowscale_1,
-    (void (*)(void*))task_poo_shadowscale_2,
-    (void (*)(void*))task_poo_shadowscale_3,
-    0x34,
-};
-
-const char gTaskNamePooFreeballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooFreeballoon"), aligned(1))) = "task_poo_freeballoon";
-
-TaskDesc gTaskDescPooFreeballoon __attribute__((section(".data_registration_gTaskDescPooFreeballoon"))) = {
-    gTaskNamePooFreeballoon,
-    (void (*)(void*, void*))task_poo_freeballoon_0,
-    task_poo_freeballoon_1,
-    (void (*)(void*))task_poo_freeballoon_2,
-    (void (*)(void*))task_poo_freeballoon_3,
-    0x98,
-};
-
-const char gTaskNamePooGauge[] __attribute__((section(".rodata_registration_name_gTaskDescPooGauge"), aligned(1))) = "task_poo_gauge";
-
-TaskDesc gTaskDescPooGauge __attribute__((section(".data_registration_gTaskDescPooGauge"))) = {
-    gTaskNamePooGauge,
-    (void (*)(void*, void*))task_poo_gauge_0,
-    task_poo_gauge_1,
-    (void (*)(void*))task_poo_gauge_2,
-    (void (*)(void*))task_poo_gauge_3,
-    0x14,
-};
-
-const char gTaskNamePooOwlballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwlballoon"), aligned(1))) = "task_poo_owlballoon";
-
-TaskDesc gTaskDescPooOwlballoon __attribute__((section(".data_registration_gTaskDescPooOwlballoon"))) = {
-    gTaskNamePooOwlballoon,
-    (void (*)(void*, void*))task_poo_owlballoon_0,
-    task_poo_owlballoon_1,
-    (void (*)(void*))task_poo_owlballoon_2,
-    (void (*)(void*))task_poo_owlballoon_3,
-    0xCC,
-};
-
-const char gTaskNamePooMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapanime"), aligned(1))) = "task_poo_mapanime";
-
-TaskDesc gTaskDescPooMapanime __attribute__((section(".data_registration_gTaskDescPooMapanime"))) = {
-    gTaskNamePooMapanime,
-    (void (*)(void*, void*))task_poo_mapanime_0,
-    task_poo_mapanime_1,
-    (void (*)(void*))task_poo_mapanime_2,
-    (void (*)(void*))task_poo_mapanime_3,
-    0x18,
-};
-
-const char gTaskNamePooPile[] __attribute__((section(".rodata_registration_name_gTaskDescPooPile"), aligned(1))) = "task_poo_pile";
-
-TaskDesc gTaskDescPooPile __attribute__((section(".data_registration_gTaskDescPooPile"))) = {
-    gTaskNamePooPile,
-    (void (*)(void*, void*))task_poo_pile_0,
-    task_poo_pile_1,
-    (void (*)(void*))task_poo_pile_2,
-    (void (*)(void*))task_poo_pile_3,
-    0xD0,
-};
-
-const char gTaskNamePooPiglet[] __attribute__((section(".rodata_registration_name_gTaskDescPooPiglet"), aligned(1))) = "task_poo_piglet";
-
-TaskDesc gTaskDescPooPiglet __attribute__((section(".data_registration_gTaskDescPooPiglet"))) = {
-    gTaskNamePooPiglet,
-    (void (*)(void*, void*))task_poo_piglet_0,
-    task_poo_piglet_1,
-    (void (*)(void*))task_poo_piglet_2,
-    (void (*)(void*))task_poo_piglet_3,
-    0xB8,
-};
-
-const char gTaskNamePooEeyore[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyore"), aligned(1))) = "task_poo_eeyore";
-
-TaskDesc gTaskDescPooEeyore __attribute__((section(".data_registration_gTaskDescPooEeyore"))) = {
-    gTaskNamePooEeyore,
-    (void (*)(void*, void*))task_poo_eeyore_0,
-    task_poo_eeyore_1,
-    (void (*)(void*))task_poo_eeyore_2,
-    (void (*)(void*))task_poo_eeyore_3,
-    0xB0,
-};
-
-const char gTaskNamePooOwl[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwl"), aligned(1))) = "task_poo_owl";
-
-TaskDesc gTaskDescPooOwl __attribute__((section(".data_registration_gTaskDescPooOwl"))) = {
-    gTaskNamePooOwl,
-    (void (*)(void*, void*))task_poo_owl_0,
-    task_poo_owl_1,
-    (void (*)(void*))task_poo_owl_2,
-    (void (*)(void*))task_poo_owl_3,
-    0x50,
-};
-
-const char gTaskNamePooRabbit[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbit"), aligned(1))) = "task_poo_rabbit";
-
-TaskDesc gTaskDescPooRabbit __attribute__((section(".data_registration_gTaskDescPooRabbit"))) = {
-    gTaskNamePooRabbit,
-    (void (*)(void*, void*))task_poo_rabbit_0,
-    task_poo_rabbit_1,
-    (void (*)(void*))task_poo_rabbit_2,
-    (void (*)(void*))task_poo_rabbit_3,
-    0xB4,
-};
-
-const char gTaskNamePooTigger[] __attribute__((section(".rodata_registration_name_gTaskDescPooTigger"), aligned(1))) = "task_poo_tigger";
-
-TaskDesc gTaskDescPooTigger __attribute__((section(".data_registration_gTaskDescPooTigger"))) = {
-    gTaskNamePooTigger,
-    (void (*)(void*, void*))task_poo_tigger_0,
-    task_poo_tiggerroo_1,
-    (void (*)(void*))task_poo_tiggerroo_2,
-    (void (*)(void*))task_poo_tiggerroo_3,
-    0xD4,
-};
-
-const char gTaskNamePooTiggerroo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTiggerroo"), aligned(1))) = "task_poo_tiggerroo";
-
-TaskDesc gTaskDescPooTiggerroo __attribute__((section(".data_registration_gTaskDescPooTiggerroo"))) = {
-    gTaskNamePooTiggerroo,
-    (void (*)(void*, void*))task_poo_tiggerroo_0,
-    task_poo_tiggerroo_1,
-    (void (*)(void*))task_poo_tiggerroo_2,
-    (void (*)(void*))task_poo_tiggerroo_3,
-    0xD4,
-};
-
-const char gTaskNamePooRoo[] __attribute__((section(".rodata_registration_name_gTaskDescPooRoo"), aligned(1))) = "task_poo_roo";
-
-TaskDesc gTaskDescPooRoo __attribute__((section(".data_registration_gTaskDescPooRoo"))) = {
-    gTaskNamePooRoo,
-    (void (*)(void*, void*))task_poo_roo_0,
-    task_poo_roo_1,
-    (void (*)(void*))task_poo_roo_2,
-    (void (*)(void*))task_poo_roo_3,
-    0xBC,
-};
-
-const char gTaskNamePooRooFootmark[] __attribute__((section(".rodata_registration_name_gTaskDescPooRooFootmark"), aligned(1))) = "task_poo_roo_footmark";
-
-TaskDesc gTaskDescPooRooFootmark __attribute__((section(".data_registration_gTaskDescPooRooFootmark"))) = {
-    gTaskNamePooRooFootmark,
-    (void (*)(void*, void*))task_poo_roo_footmark_0,
-    task_poo_roo_footmark_1,
-    (void (*)(void*))task_poo_roo_footmark_2,
-    (void (*)(void*))task_poo_roo_footmark_3,
-    0x3C,
-};
-
-const char gTaskNamePooLeaf[] __attribute__((section(".rodata_registration_name_gTaskDescPooLeaf"), aligned(1))) = "task_poo_leaf";
-
-TaskDesc gTaskDescPooLeaf __attribute__((section(".data_registration_gTaskDescPooLeaf"))) = {
-    gTaskNamePooLeaf,
-    (void (*)(void*, void*))task_poo_leaf_0,
-    task_poo_leaf_1,
-    (void (*)(void*))task_poo_leaf_2,
-    (void (*)(void*))task_poo_leaf_3,
-    0x98,
-};
-
-const char gTaskNamePooTanpopo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTanpopo"), aligned(1))) = "task_poo_tanpopo";
-
-TaskDesc gTaskDescPooTanpopo __attribute__((section(".data_registration_gTaskDescPooTanpopo"))) = {
-    gTaskNamePooTanpopo,
-    (void (*)(void*, void*))task_poo_tanpopo_0,
-    task_poo_tanpopo_1,
-    (void (*)(void*))task_poo_tanpopo_2,
-    (void (*)(void*))task_poo_tanpopo_3,
-    0xB8,
-};
-
-const char gTaskNamePooEeyoretail[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyoretail"), aligned(1))) = "task_poo_eeyoretail";
-
-TaskDesc gTaskDescPooEeyoretail __attribute__((section(".data_registration_gTaskDescPooEeyoretail"))) = {
-    gTaskNamePooEeyoretail,
-    (void (*)(void*, void*))task_poo_eeyoretail_0,
-    task_poo_eeyoretail_1,
-    (void (*)(void*))task_poo_eeyoretail_2,
-    (void (*)(void*))task_poo_eeyoretail_3,
-    0x38,
-};
-
-const char gTaskNamePooHoneycomb[] __attribute__((section(".rodata_registration_name_gTaskDescPooHoneycomb"), aligned(1))) = "task_poo_honeycomb";
-
-TaskDesc gTaskDescPooHoneycomb __attribute__((section(".data_registration_gTaskDescPooHoneycomb"))) = {
-    gTaskNamePooHoneycomb,
-    (void (*)(void*, void*))task_poo_honeycomb_0,
-    task_poo_honeycomb_1,
-    (void (*)(void*))task_poo_honeycomb_2,
-    (void (*)(void*))task_poo_honeycomb_3,
-    0xA0,
-};
-
-const char gTaskNamePooVegetable[] __attribute__((section(".rodata_registration_name_gTaskDescPooVegetable"), aligned(1))) = "task_poo_vegetable";
-
-TaskDesc gTaskDescPooVegetable __attribute__((section(".data_registration_gTaskDescPooVegetable"))) = {
-    gTaskNamePooVegetable,
-    (void (*)(void*, void*))task_poo_vegetable_0,
-    task_poo_vegetable_1,
-    (void (*)(void*))task_poo_vegetable_2,
-    (void (*)(void*))task_poo_vegetable_3,
-    0x94,
-};
-
-const char gTaskNamePooWagon[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagon"), aligned(1))) = "task_poo_wagon";
-
-TaskDesc gTaskDescPooWagon __attribute__((section(".data_registration_gTaskDescPooWagon"))) = {
-    gTaskNamePooWagon,
-    (void (*)(void*, void*))task_poo_wagon_0,
-    task_poo_wagon_1,
-    (void (*)(void*))task_poo_wagon_2,
-    (void (*)(void*))task_poo_wagon_3,
-    0x44,
-};
-
-const char gTaskNamePooWagonwheel[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagonwheel"), aligned(1))) = "task_poo_wagonwheel";
-
-TaskDesc gTaskDescPooWagonwheel __attribute__((section(".data_registration_gTaskDescPooWagonwheel"))) = {
-    gTaskNamePooWagonwheel,
-    (void (*)(void*, void*))task_poo_wagonwheel_0,
-    task_poo_wagonwheel_1,
-    (void (*)(void*))task_poo_wagonwheel_2,
-    (void (*)(void*))task_poo_wagonwheel_3,
-    0x44,
-};
-
-const char gTaskNamePooSpark[] __attribute__((section(".rodata_registration_name_gTaskDescPooSpark"), aligned(1))) = "task_poo_spark";
-
-TaskDesc gTaskDescPooSpark __attribute__((section(".data_registration_gTaskDescPooSpark"))) = {
-    gTaskNamePooSpark,
-    (void (*)(void*, void*))task_poo_spark_0,
-    task_poo_spark_1,
-    (void (*)(void*))task_poo_spark_2,
-    (void (*)(void*))task_poo_spark_3,
-    0x34,
-};
-
-const char gTaskNamePooBee[] __attribute__((section(".rodata_registration_name_gTaskDescPooBee"), aligned(1))) = "task_poo_bee";
-
-TaskDesc gTaskDescPooBee __attribute__((section(".data_registration_gTaskDescPooBee"))) = {
-    gTaskNamePooBee,
-    (void (*)(void*, void*))task_poo_bee_0,
-    task_poo_bee_1,
-    (void (*)(void*))task_poo_bee_2,
-    (void (*)(void*))task_poo_bee_3,
-    0xCC,
-};
-
-const char gTaskNamePooBeeAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooBeeAfterEvent"), aligned(1))) = "task_poo_beeAfterEvent";
-
-TaskDesc gTaskDescPooBeeAfterEvent __attribute__((section(".data_registration_gTaskDescPooBeeAfterEvent"))) = {
-    gTaskNamePooBeeAfterEvent,
-    (void (*)(void*, void*))task_poo_beeAfterEvent_0,
-    task_poo_beeAfterEvent_1,
-    (void (*)(void*))task_poo_beeAfterEvent_2,
-    (void (*)(void*))task_poo_beeAfterEvent_3,
-    0x54,
-};
-
-const char gTaskNamePooCabbage[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbage"), aligned(1))) = "task_poo_cabbage";
-
-TaskDesc gTaskDescPooCabbage __attribute__((section(".data_registration_gTaskDescPooCabbage"))) = {
-    gTaskNamePooCabbage,
-    (void (*)(void*, void*))task_poo_cabbage_0,
-    task_poo_cabbage_1,
-    (void (*)(void*))task_poo_cabbage_2,
-    (void (*)(void*))task_poo_cabbage_3,
-    0xD8,
-};
-
-const char gTaskNamePooCabbageborn[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageborn"), aligned(1))) = "task_poo_cabbageborn";
-
-TaskDesc gTaskDescPooCabbageborn __attribute__((section(".data_registration_gTaskDescPooCabbageborn"))) = {
-    gTaskNamePooCabbageborn,
-    (void (*)(void*, void*))task_poo_cabbageborn_0,
-    task_poo_cabbageborn_1,
-    (void (*)(void*))task_poo_cabbageborn_2,
-    (void (*)(void*))task_poo_cabbageborn_3,
-    0x18,
-};
-
-const char gTaskNamePooMapobjhit[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapobjhit"), aligned(1))) = "task_poo_mapobjhit";
-
-TaskDesc gTaskDescPooMapobjhit __attribute__((section(".data_registration_gTaskDescPooMapobjhit"))) = {
-    gTaskNamePooMapobjhit,
-    (void (*)(void*, void*))task_poo_mapobjhit_0,
-    task_poo_mapobjhit_1,
-    (void (*)(void*))task_poo_mapobjhit_2,
-    (void (*)(void*))task_poo_mapobjhit_3,
-    0xA0,
-};
-
-const char gTaskNamePooPrize[] __attribute__((section(".rodata_registration_name_gTaskDescPooPrize"), aligned(1))) = "task_poo_prize";
-
-TaskDesc gTaskDescPooPrize __attribute__((section(".data_registration_gTaskDescPooPrize"))) = {
-    gTaskNamePooPrize,
-    (void (*)(void*, void*))task_poo_prize_0,
-    task_poo_prize_1,
-    (void (*)(void*))task_poo_prize_2,
-    (void (*)(void*))task_poo_prize_3,
-    0x98,
-};
-
-const char gTaskNamePooZzz[] __attribute__((section(".rodata_registration_name_gTaskDescPooZzz"), aligned(1))) = "task_poo_zzz";
-
-TaskDesc gTaskDescPooZzz __attribute__((section(".data_registration_gTaskDescPooZzz"))) = {
-    gTaskNamePooZzz,
-    (void (*)(void*, void*))task_poo_zzz_0,
-    task_poo_zzz_1,
-    (void (*)(void*))task_poo_zzz_2,
-    (void (*)(void*))task_poo_zzz_3,
-    0x28,
-};
-
-const char gTaskNamePooButterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooButterfly"), aligned(1))) = "task_poo_butterfly";
-
-TaskDesc gTaskDescPooButterfly __attribute__((section(".data_registration_gTaskDescPooButterfly"))) = {
-    gTaskNamePooButterfly,
-    (void (*)(void*, void*))task_poo_butterfly_0,
-    task_poo_butterfly_1,
-    (void (*)(void*))task_poo_butterfly_2,
-    (void (*)(void*))task_poo_butterfly_3,
-    0xE4,
-};
-
-const char gTaskNamePooMapbee[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbee"), aligned(1))) = "task_poo_mapbee";
-
-TaskDesc gTaskDescPooMapbee __attribute__((section(".data_registration_gTaskDescPooMapbee"))) = {
-    gTaskNamePooMapbee,
-    (void (*)(void*, void*))task_poo_mapbee_0,
-    task_poo_mapbee_1,
-    (void (*)(void*))task_poo_mapbee_2,
-    (void (*)(void*))task_poo_mapbee_3,
-    0x38,
-};
-
-const char gTaskNamePooMapbutterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbutterfly"), aligned(1))) = "task_poo_mapbutterfly";
-
-TaskDesc gTaskDescPooMapbutterfly __attribute__((section(".data_registration_gTaskDescPooMapbutterfly"))) = {
-    gTaskNamePooMapbutterfly,
-    (void (*)(void*, void*))task_poo_mapbutterfly_0,
-    task_poo_mapbutterfly_1,
-    (void (*)(void*))task_poo_mapbutterfly_2,
-    (void (*)(void*))task_poo_mapbutterfly_3,
-    0x38,
-};
-
-const char gTaskNamePooRabbitAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbitAfterEvent"), aligned(1))) = "task_poo_rabbitAfterEvent";
-
-TaskDesc gTaskDescPooRabbitAfterEvent __attribute__((section(".data_registration_gTaskDescPooRabbitAfterEvent"))) = {
-    gTaskNamePooRabbitAfterEvent,
-    (void (*)(void*, void*))task_poo_rabbitAfterEvent_0,
-    task_poo_rabbitAfterEvent_1,
-    (void (*)(void*))task_poo_rabbitAfterEvent_2,
-    (void (*)(void*))task_poo_rabbitAfterEvent_3,
-    0xA8,
-};
-
-const char gTaskNamePooCabbageAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageAfterEvent"), aligned(1))) = "task_poo_cabbageAfterEvent";
-
-TaskDesc gTaskDescPooCabbageAfterEvent __attribute__((section(".data_registration_gTaskDescPooCabbageAfterEvent"))) = {
-    gTaskNamePooCabbageAfterEvent,
-    (void (*)(void*, void*))task_poo_cabbageAfterEvent_0,
-    task_poo_cabbageAfterEvent_1,
-    (void (*)(void*))task_poo_cabbageAfterEvent_2,
-    (void (*)(void*))task_poo_cabbageAfterEvent_3,
-    0x20,
-};
-
 const char gTaskName_09EF48E0[] __attribute__((section(".rodata_registration_name_gUnk_09EF48E0"), aligned(1))) = "task_poo_trap";
 
-TaskDesc gUnk_09EF48E0 __attribute__((section(".data_registration_gUnk_09EF48E0"))) = {
+TaskDesc gUnk_09EF48E0 = {
     gTaskName_09EF48E0,
     (void (*)(void*, void*))task_poo_trap_0,
     task_poo_trap_1,
@@ -7526,7 +7564,7 @@ TaskDesc gUnk_09EF48E0 __attribute__((section(".data_registration_gUnk_09EF48E0"
 
 const char gTaskName_09EF48F8[] __attribute__((section(".rodata_registration_name_gUnk_09EF48F8"), aligned(1))) = "task_poo_pitAndButterfly";
 
-TaskDesc gUnk_09EF48F8 __attribute__((section(".data_registration_gUnk_09EF48F8"))) = {
+TaskDesc gUnk_09EF48F8 = {
     gTaskName_09EF48F8,
     (void (*)(void*, void*))task_poo_pitAndButterfly_0,
     task_poo_pitAndButterfly_1,
@@ -7535,9 +7573,75 @@ TaskDesc gUnk_09EF48F8 __attribute__((section(".data_registration_gUnk_09EF48F8"
     0xB0,
 };
 
+const char gTaskNamePooBalloon[] __attribute__((section(".rodata_registration_name_gTaskDescPooBalloon"), aligned(1))) = "task_poo_balloon";
+
+TaskDesc gTaskDescPooBalloon = {
+    gTaskNamePooBalloon,
+    (void (*)(void*, void*))task_poo_balloon_0,
+    task_poo_balloon_1,
+    (void (*)(void*))task_poo_balloon_2,
+    (void (*)(void*))task_poo_balloon_3,
+    0x28,
+};
+
+const char gTaskNamePooShadow[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadow"), aligned(1))) = "task_poo_shadow";
+
+TaskDesc gTaskDescPooShadow = {
+    gTaskNamePooShadow,
+    (void (*)(void*, void*))task_poo_shadow_0,
+    task_poo_shadow_1,
+    (void (*)(void*))task_poo_shadow_2,
+    (void (*)(void*))task_poo_shadow_3,
+    0x14,
+};
+
+const char gTaskNamePooShadowdodai[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowdodai"), aligned(1))) = "task_poo_shadowdodai";
+
+TaskDesc gTaskDescPooShadowdodai = {
+    gTaskNamePooShadowdodai,
+    (void (*)(void*, void*))task_poo_shadowdodai_0,
+    task_poo_shadowdodai_1,
+    (void (*)(void*))task_poo_shadowdodai_2,
+    (void (*)(void*))task_poo_shadowdodai_3,
+    0x34,
+};
+
+const char gTaskNamePooShadowscale[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowscale"), aligned(1))) = "task_poo_shadowscale";
+
+TaskDesc gTaskDescPooShadowscale = {
+    gTaskNamePooShadowscale,
+    (void (*)(void*, void*))task_poo_shadowscale_0,
+    task_poo_shadowscale_1,
+    (void (*)(void*))task_poo_shadowscale_2,
+    (void (*)(void*))task_poo_shadowscale_3,
+    0x34,
+};
+
+const char gTaskNamePooFreeballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooFreeballoon"), aligned(1))) = "task_poo_freeballoon";
+
+TaskDesc gTaskDescPooFreeballoon = {
+    gTaskNamePooFreeballoon,
+    (void (*)(void*, void*))task_poo_freeballoon_0,
+    task_poo_freeballoon_1,
+    (void (*)(void*))task_poo_freeballoon_2,
+    (void (*)(void*))task_poo_freeballoon_3,
+    0x98,
+};
+
+const char gTaskNamePooGauge[] __attribute__((section(".rodata_registration_name_gTaskDescPooGauge"), aligned(1))) = "task_poo_gauge";
+
+TaskDesc gTaskDescPooGauge = {
+    gTaskNamePooGauge,
+    (void (*)(void*, void*))task_poo_gauge_0,
+    task_poo_gauge_1,
+    (void (*)(void*))task_poo_gauge_2,
+    (void (*)(void*))task_poo_gauge_3,
+    0x14,
+};
+
 const char gTaskName_09EF49A0[] __attribute__((section(".rodata_registration_name_gUnk_09EF49A0"), aligned(1))) = "task_poo_trapballoon";
 
-TaskDesc gUnk_09EF49A0 __attribute__((section(".data_registration_gUnk_09EF49A0"))) = {
+TaskDesc gUnk_09EF49A0 = {
     gTaskName_09EF49A0,
     (void (*)(void*, void*))task_poo_trapballoon_0,
     task_poo_trapballoon_1,
@@ -7546,9 +7650,20 @@ TaskDesc gUnk_09EF49A0 __attribute__((section(".data_registration_gUnk_09EF49A0"
     0xD0,
 };
 
+const char gTaskNamePooOwlballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwlballoon"), aligned(1))) = "task_poo_owlballoon";
+
+TaskDesc gTaskDescPooOwlballoon = {
+    gTaskNamePooOwlballoon,
+    (void (*)(void*, void*))task_poo_owlballoon_0,
+    task_poo_owlballoon_1,
+    (void (*)(void*))task_poo_owlballoon_2,
+    (void (*)(void*))task_poo_owlballoon_3,
+    0xCC,
+};
+
 const char gTaskName_09EF49D0[] __attribute__((section(".rodata_registration_name_gUnk_09EF49D0"), aligned(1))) = "task_poo_honey";
 
-TaskDesc gUnk_09EF49D0 __attribute__((section(".data_registration_gUnk_09EF49D0"))) = {
+TaskDesc gUnk_09EF49D0 = {
     gTaskName_09EF49D0,
     (void (*)(void*, void*))task_poo_honey_0,
     task_poo_honey_1,
@@ -7557,9 +7672,31 @@ TaskDesc gUnk_09EF49D0 __attribute__((section(".data_registration_gUnk_09EF49D0"
     0x10C,
 };
 
+const char gTaskNamePooMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapanime"), aligned(1))) = "task_poo_mapanime";
+
+TaskDesc gTaskDescPooMapanime = {
+    gTaskNamePooMapanime,
+    (void (*)(void*, void*))task_poo_mapanime_0,
+    task_poo_mapanime_1,
+    (void (*)(void*))task_poo_mapanime_2,
+    (void (*)(void*))task_poo_mapanime_3,
+    0x18,
+};
+
+const char gTaskNamePooPile[] __attribute__((section(".rodata_registration_name_gTaskDescPooPile"), aligned(1))) = "task_poo_pile";
+
+TaskDesc gTaskDescPooPile = {
+    gTaskNamePooPile,
+    (void (*)(void*, void*))task_poo_pile_0,
+    task_poo_pile_1,
+    (void (*)(void*))task_poo_pile_2,
+    (void (*)(void*))task_poo_pile_3,
+    0xD0,
+};
+
 const char gTaskName_09EF4A18[] __attribute__((section(".rodata_registration_name_gUnk_09EF4A18"), aligned(1))) = "task_poo_tigerstump";
 
-TaskDesc gUnk_09EF4A18 __attribute__((section(".data_registration_gUnk_09EF4A18"))) = {
+TaskDesc gUnk_09EF4A18 = {
     gTaskName_09EF4A18,
     (void (*)(void*, void*))task_poo_tigerstump_0,
     task_poo_tigerstump_1,
@@ -7570,7 +7707,7 @@ TaskDesc gUnk_09EF4A18 __attribute__((section(".data_registration_gUnk_09EF4A18"
 
 const char gTaskName_09EF4A30[] __attribute__((section(".rodata_registration_name_gUnk_09EF4A30"), aligned(1))) = "task_poo_poohstump";
 
-TaskDesc gUnk_09EF4A30 __attribute__((section(".data_registration_gUnk_09EF4A30"))) = {
+TaskDesc gUnk_09EF4A30 = {
     gTaskName_09EF4A30,
     (void (*)(void*, void*))task_poo_poohstump_0,
     task_poo_poohstump_1,
@@ -7579,9 +7716,119 @@ TaskDesc gUnk_09EF4A30 __attribute__((section(".data_registration_gUnk_09EF4A30"
     0x90,
 };
 
+const char gTaskNamePooPiglet[] __attribute__((section(".rodata_registration_name_gTaskDescPooPiglet"), aligned(1))) = "task_poo_piglet";
+
+TaskDesc gTaskDescPooPiglet = {
+    gTaskNamePooPiglet,
+    (void (*)(void*, void*))task_poo_piglet_0,
+    task_poo_piglet_1,
+    (void (*)(void*))task_poo_piglet_2,
+    (void (*)(void*))task_poo_piglet_3,
+    0xB8,
+};
+
+const char gTaskNamePooEeyore[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyore"), aligned(1))) = "task_poo_eeyore";
+
+TaskDesc gTaskDescPooEeyore = {
+    gTaskNamePooEeyore,
+    (void (*)(void*, void*))task_poo_eeyore_0,
+    task_poo_eeyore_1,
+    (void (*)(void*))task_poo_eeyore_2,
+    (void (*)(void*))task_poo_eeyore_3,
+    0xB0,
+};
+
+const char gTaskNamePooOwl[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwl"), aligned(1))) = "task_poo_owl";
+
+TaskDesc gTaskDescPooOwl = {
+    gTaskNamePooOwl,
+    (void (*)(void*, void*))task_poo_owl_0,
+    task_poo_owl_1,
+    (void (*)(void*))task_poo_owl_2,
+    (void (*)(void*))task_poo_owl_3,
+    0x50,
+};
+
+const char gTaskNamePooRabbit[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbit"), aligned(1))) = "task_poo_rabbit";
+
+TaskDesc gTaskDescPooRabbit = {
+    gTaskNamePooRabbit,
+    (void (*)(void*, void*))task_poo_rabbit_0,
+    task_poo_rabbit_1,
+    (void (*)(void*))task_poo_rabbit_2,
+    (void (*)(void*))task_poo_rabbit_3,
+    0xB4,
+};
+
+const char gTaskNamePooTigger[] __attribute__((section(".rodata_registration_name_gTaskDescPooTigger"), aligned(1))) = "task_poo_tigger";
+
+TaskDesc gTaskDescPooTigger = {
+    gTaskNamePooTigger,
+    (void (*)(void*, void*))task_poo_tigger_0,
+    task_poo_tiggerroo_1,
+    (void (*)(void*))task_poo_tiggerroo_2,
+    (void (*)(void*))task_poo_tiggerroo_3,
+    0xD4,
+};
+
+const char gTaskNamePooTiggerroo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTiggerroo"), aligned(1))) = "task_poo_tiggerroo";
+
+TaskDesc gTaskDescPooTiggerroo = {
+    gTaskNamePooTiggerroo,
+    (void (*)(void*, void*))task_poo_tiggerroo_0,
+    task_poo_tiggerroo_1,
+    (void (*)(void*))task_poo_tiggerroo_2,
+    (void (*)(void*))task_poo_tiggerroo_3,
+    0xD4,
+};
+
+const char gTaskNamePooRoo[] __attribute__((section(".rodata_registration_name_gTaskDescPooRoo"), aligned(1))) = "task_poo_roo";
+
+TaskDesc gTaskDescPooRoo = {
+    gTaskNamePooRoo,
+    (void (*)(void*, void*))task_poo_roo_0,
+    task_poo_roo_1,
+    (void (*)(void*))task_poo_roo_2,
+    (void (*)(void*))task_poo_roo_3,
+    0xBC,
+};
+
+const char gTaskNamePooRooFootmark[] __attribute__((section(".rodata_registration_name_gTaskDescPooRooFootmark"), aligned(1))) = "task_poo_roo_footmark";
+
+TaskDesc gTaskDescPooRooFootmark = {
+    gTaskNamePooRooFootmark,
+    (void (*)(void*, void*))task_poo_roo_footmark_0,
+    task_poo_roo_footmark_1,
+    (void (*)(void*))task_poo_roo_footmark_2,
+    (void (*)(void*))task_poo_roo_footmark_3,
+    0x3C,
+};
+
+const char gTaskNamePooLeaf[] __attribute__((section(".rodata_registration_name_gTaskDescPooLeaf"), aligned(1))) = "task_poo_leaf";
+
+TaskDesc gTaskDescPooLeaf = {
+    gTaskNamePooLeaf,
+    (void (*)(void*, void*))task_poo_leaf_0,
+    task_poo_leaf_1,
+    (void (*)(void*))task_poo_leaf_2,
+    (void (*)(void*))task_poo_leaf_3,
+    0x98,
+};
+
+const char gTaskNamePooTanpopo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTanpopo"), aligned(1))) = "task_poo_tanpopo";
+
+TaskDesc gTaskDescPooTanpopo = {
+    gTaskNamePooTanpopo,
+    (void (*)(void*, void*))task_poo_tanpopo_0,
+    task_poo_tanpopo_1,
+    (void (*)(void*))task_poo_tanpopo_2,
+    (void (*)(void*))task_poo_tanpopo_3,
+    0xB8,
+};
+
 const char gTaskName_09EF4B38[] __attribute__((section(".rodata_registration_name_gUnk_09EF4B38"), aligned(1))) = "task_poo_ti_board";
 
-TaskDesc gUnk_09EF4B38 __attribute__((section(".data_registration_gUnk_09EF4B38"))) = {
+TaskDesc gUnk_09EF4B38 = {
     gTaskName_09EF4B38,
     (void (*)(void*, void*))task_poo_ti_board_0,
     task_poo_ti_board_1,
@@ -7590,9 +7837,171 @@ TaskDesc gUnk_09EF4B38 __attribute__((section(".data_registration_gUnk_09EF4B38"
     0x78,
 };
 
+const char gTaskNamePooEeyoretail[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyoretail"), aligned(1))) = "task_poo_eeyoretail";
+
+TaskDesc gTaskDescPooEeyoretail = {
+    gTaskNamePooEeyoretail,
+    (void (*)(void*, void*))task_poo_eeyoretail_0,
+    task_poo_eeyoretail_1,
+    (void (*)(void*))task_poo_eeyoretail_2,
+    (void (*)(void*))task_poo_eeyoretail_3,
+    0x38,
+};
+
+const char gTaskNamePooHoneycomb[] __attribute__((section(".rodata_registration_name_gTaskDescPooHoneycomb"), aligned(1))) = "task_poo_honeycomb";
+
+TaskDesc gTaskDescPooHoneycomb = {
+    gTaskNamePooHoneycomb,
+    (void (*)(void*, void*))task_poo_honeycomb_0,
+    task_poo_honeycomb_1,
+    (void (*)(void*))task_poo_honeycomb_2,
+    (void (*)(void*))task_poo_honeycomb_3,
+    0xA0,
+};
+
+const char gTaskNamePooVegetable[] __attribute__((section(".rodata_registration_name_gTaskDescPooVegetable"), aligned(1))) = "task_poo_vegetable";
+
+TaskDesc gTaskDescPooVegetable = {
+    gTaskNamePooVegetable,
+    (void (*)(void*, void*))task_poo_vegetable_0,
+    task_poo_vegetable_1,
+    (void (*)(void*))task_poo_vegetable_2,
+    (void (*)(void*))task_poo_vegetable_3,
+    0x94,
+};
+
+const char gTaskNamePooWagon[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagon"), aligned(1))) = "task_poo_wagon";
+
+TaskDesc gTaskDescPooWagon = {
+    gTaskNamePooWagon,
+    (void (*)(void*, void*))task_poo_wagon_0,
+    task_poo_wagon_1,
+    (void (*)(void*))task_poo_wagon_2,
+    (void (*)(void*))task_poo_wagon_3,
+    0x44,
+};
+
+const char gTaskNamePooWagonwheel[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagonwheel"), aligned(1))) = "task_poo_wagonwheel";
+
+TaskDesc gTaskDescPooWagonwheel = {
+    gTaskNamePooWagonwheel,
+    (void (*)(void*, void*))task_poo_wagonwheel_0,
+    task_poo_wagonwheel_1,
+    (void (*)(void*))task_poo_wagonwheel_2,
+    (void (*)(void*))task_poo_wagonwheel_3,
+    0x44,
+};
+
+const char gTaskNamePooSpark[] __attribute__((section(".rodata_registration_name_gTaskDescPooSpark"), aligned(1))) = "task_poo_spark";
+
+TaskDesc gTaskDescPooSpark = {
+    gTaskNamePooSpark,
+    (void (*)(void*, void*))task_poo_spark_0,
+    task_poo_spark_1,
+    (void (*)(void*))task_poo_spark_2,
+    (void (*)(void*))task_poo_spark_3,
+    0x34,
+};
+
+const char gTaskNamePooBee[] __attribute__((section(".rodata_registration_name_gTaskDescPooBee"), aligned(1))) = "task_poo_bee";
+
+TaskDesc gTaskDescPooBee = {
+    gTaskNamePooBee,
+    (void (*)(void*, void*))task_poo_bee_0,
+    task_poo_bee_1,
+    (void (*)(void*))task_poo_bee_2,
+    (void (*)(void*))task_poo_bee_3,
+    0xCC,
+};
+
+const char gTaskNamePooBeeAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooBeeAfterEvent"), aligned(1))) = "task_poo_beeAfterEvent";
+
+TaskDesc gTaskDescPooBeeAfterEvent = {
+    gTaskNamePooBeeAfterEvent,
+    (void (*)(void*, void*))task_poo_beeAfterEvent_0,
+    task_poo_beeAfterEvent_1,
+    (void (*)(void*))task_poo_beeAfterEvent_2,
+    (void (*)(void*))task_poo_beeAfterEvent_3,
+    0x54,
+};
+
+const char gTaskNamePooCabbage[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbage"), aligned(1))) = "task_poo_cabbage";
+
+TaskDesc gTaskDescPooCabbage = {
+    gTaskNamePooCabbage,
+    (void (*)(void*, void*))task_poo_cabbage_0,
+    task_poo_cabbage_1,
+    (void (*)(void*))task_poo_cabbage_2,
+    (void (*)(void*))task_poo_cabbage_3,
+    0xD8,
+};
+
+const char gTaskNamePooCabbageborn[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageborn"), aligned(1))) = "task_poo_cabbageborn";
+
+TaskDesc gTaskDescPooCabbageborn = {
+    gTaskNamePooCabbageborn,
+    (void (*)(void*, void*))task_poo_cabbageborn_0,
+    task_poo_cabbageborn_1,
+    (void (*)(void*))task_poo_cabbageborn_2,
+    (void (*)(void*))task_poo_cabbageborn_3,
+    0x18,
+};
+
+const char gTaskNamePooMapobjhit[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapobjhit"), aligned(1))) = "task_poo_mapobjhit";
+
+TaskDesc gTaskDescPooMapobjhit = {
+    gTaskNamePooMapobjhit,
+    (void (*)(void*, void*))task_poo_mapobjhit_0,
+    task_poo_mapobjhit_1,
+    (void (*)(void*))task_poo_mapobjhit_2,
+    (void (*)(void*))task_poo_mapobjhit_3,
+    0xA0,
+};
+
+const char gTaskNamePooPrize[] __attribute__((section(".rodata_registration_name_gTaskDescPooPrize"), aligned(1))) = "task_poo_prize";
+
+TaskDesc gTaskDescPooPrize = {
+    gTaskNamePooPrize,
+    (void (*)(void*, void*))task_poo_prize_0,
+    task_poo_prize_1,
+    (void (*)(void*))task_poo_prize_2,
+    (void (*)(void*))task_poo_prize_3,
+    0x98,
+};
+
+const char gTaskNamePooZzz[] __attribute__((section(".rodata_registration_name_gTaskDescPooZzz"), aligned(1))) = "task_poo_zzz";
+
+TaskDesc gTaskDescPooZzz = {
+    gTaskNamePooZzz,
+    (void (*)(void*, void*))task_poo_zzz_0,
+    task_poo_zzz_1,
+    (void (*)(void*))task_poo_zzz_2,
+    (void (*)(void*))task_poo_zzz_3,
+    0x28,
+};
+
+AnimDef gUnk_09EF4C88[5] = {
+    { gUnk_09EF5D54, gUnk_09EF5D64, gUnk_0974465A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D04, gUnk_09EF5D14, gUnk_0974431A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D18, gUnk_09EF5D28, gUnk_0974441A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D2C, gUnk_09EF5D3C, gUnk_097444DA, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D40, gUnk_09EF5D50, gUnk_0974459A, 0, { 0, 0, 0 } },
+};
+
+const char gTaskNamePooButterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooButterfly"), aligned(1))) = "task_poo_butterfly";
+
+TaskDesc gTaskDescPooButterfly = {
+    gTaskNamePooButterfly,
+    (void (*)(void*, void*))task_poo_butterfly_0,
+    task_poo_butterfly_1,
+    (void (*)(void*))task_poo_butterfly_2,
+    (void (*)(void*))task_poo_butterfly_3,
+    0xE4,
+};
+
 const char gTaskName_09EF4CF0[] __attribute__((section(".rodata_registration_name_gUnk_09EF4CF0"), aligned(1))) = "task_poo_butterflyRight";
 
-TaskDesc gUnk_09EF4CF0 __attribute__((section(".data_registration_gUnk_09EF4CF0"))) = {
+TaskDesc gUnk_09EF4CF0 = {
     gTaskName_09EF4CF0,
     (void (*)(void*, void*))task_poo_butterfly_0,
     task_poo_butterflyRight_1,
@@ -7603,7 +8012,7 @@ TaskDesc gUnk_09EF4CF0 __attribute__((section(".data_registration_gUnk_09EF4CF0"
 
 const char gTaskName_09EF4D08[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D08"), aligned(1))) = "task_poo_butterflyLeft";
 
-TaskDesc gUnk_09EF4D08 __attribute__((section(".data_registration_gUnk_09EF4D08"))) = {
+TaskDesc gUnk_09EF4D08 = {
     gTaskName_09EF4D08,
     (void (*)(void*, void*))task_poo_butterfly_0,
     task_poo_butterflyLeft_1,
@@ -7612,9 +8021,20 @@ TaskDesc gUnk_09EF4D08 __attribute__((section(".data_registration_gUnk_09EF4D08"
     0xE4,
 };
 
+const char gTaskNamePooMapbee[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbee"), aligned(1))) = "task_poo_mapbee";
+
+TaskDesc gTaskDescPooMapbee = {
+    gTaskNamePooMapbee,
+    (void (*)(void*, void*))task_poo_mapbee_0,
+    task_poo_mapbee_1,
+    (void (*)(void*))task_poo_mapbee_2,
+    (void (*)(void*))task_poo_mapbee_3,
+    0x38,
+};
+
 const char gTaskName_09EF4D38[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D38"), aligned(1))) = "task_poo_mapbeeborn";
 
-TaskDesc gUnk_09EF4D38 __attribute__((section(".data_registration_gUnk_09EF4D38"))) = {
+TaskDesc gUnk_09EF4D38 = {
     gTaskName_09EF4D38,
     (void (*)(void*, void*))task_poo_mapbeeborn_0,
     task_poo_mapbeeborn_1,
@@ -7623,13 +8043,46 @@ TaskDesc gUnk_09EF4D38 __attribute__((section(".data_registration_gUnk_09EF4D38"
     0x9C,
 };
 
+const char gTaskNamePooMapbutterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbutterfly"), aligned(1))) = "task_poo_mapbutterfly";
+
+TaskDesc gTaskDescPooMapbutterfly = {
+    gTaskNamePooMapbutterfly,
+    (void (*)(void*, void*))task_poo_mapbutterfly_0,
+    task_poo_mapbutterfly_1,
+    (void (*)(void*))task_poo_mapbutterfly_2,
+    (void (*)(void*))task_poo_mapbutterfly_3,
+    0x38,
+};
+
 const char gTaskName_09EF4D68[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D68"), aligned(1))) = "task_poo_mapbutterflyborn";
 
-TaskDesc gUnk_09EF4D68 __attribute__((section(".data_registration_gUnk_09EF4D68"))) = {
+TaskDesc gUnk_09EF4D68 = {
     gTaskName_09EF4D68,
     (void (*)(void*, void*))task_poo_mapbutterflyborn_0,
     task_poo_mapbutterflyborn_1,
     (void (*)(void*))task_poo_mapbutterflyborn_2,
     (void (*)(void*))task_poo_mapbutterflyborn_3,
     0x9C,
+};
+
+const char gTaskNamePooRabbitAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbitAfterEvent"), aligned(1))) = "task_poo_rabbitAfterEvent";
+
+TaskDesc gTaskDescPooRabbitAfterEvent = {
+    gTaskNamePooRabbitAfterEvent,
+    (void (*)(void*, void*))task_poo_rabbitAfterEvent_0,
+    task_poo_rabbitAfterEvent_1,
+    (void (*)(void*))task_poo_rabbitAfterEvent_2,
+    (void (*)(void*))task_poo_rabbitAfterEvent_3,
+    0xA8,
+};
+
+const char gTaskNamePooCabbageAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageAfterEvent"), aligned(1))) = "task_poo_cabbageAfterEvent";
+
+TaskDesc gTaskDescPooCabbageAfterEvent = {
+    gTaskNamePooCabbageAfterEvent,
+    (void (*)(void*, void*))task_poo_cabbageAfterEvent_0,
+    task_poo_cabbageAfterEvent_1,
+    (void (*)(void*))task_poo_cabbageAfterEvent_2,
+    (void (*)(void*))task_poo_cabbageAfterEvent_3,
+    0x20,
 };

@@ -34,8 +34,4 @@ extern const PooPoint gUnk_096FC6B0[];
 extern PooMapBgDesc gUnk_096FC6E0;
 extern const PooSpot gUnk_096FD778[];
 
-typedef AnimDef PooZzzDesc;
-
-extern const PooZzzDesc gUnk_09EF4C88[];
-
 #endif

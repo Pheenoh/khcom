@@ -96,30 +96,6 @@
           ]
         },
         {
-          "unit": "poo_background_data.c",
-          "section": ".data_09EF4208",
-          "address": "0x9ef4208",
-          "size": 1728,
-          "sha256": "ea576e7cdc982367277a0a38154eaf25bffd3229ba7981eddf18d844917e4cb9",
-          "objects": [
-            {
-              "name": "gUnk_09EF4208",
-              "offset": 0,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4448",
-              "offset": 576,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4688",
-              "offset": 1152,
-              "size": 576
-            }
-          ]
-        },
-        {
           "unit": "chara_mask_data.c",
           "section": ".rodata_09EF2F08",
           "address": "0x9ef2f08",
@@ -227,30 +203,6 @@
           ]
         },
         {
-          "unit": "poo_background_data.c",
-          "section": ".data_09EF4208",
-          "address": "0x9ecb5f4",
-          "size": 1728,
-          "sha256": "27bde03e517b0f2f0fd287658aad78f8d1ff1207bd2991f6c621796dbcf5521d",
-          "objects": [
-            {
-              "name": "gUnk_09EF4208",
-              "offset": 0,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4448",
-              "offset": 576,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4688",
-              "offset": 1152,
-              "size": 576
-            }
-          ]
-        },
-        {
           "unit": "chara_mask_data.c",
           "section": ".rodata_09EF2F08",
           "address": "0x9eca2f4",
@@ -354,30 +306,6 @@
               "name": "gUnk_09EF2E4C",
               "offset": 936,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "poo_background_data.c",
-          "section": ".data_09EF4208",
-          "address": "0x9f7f4fc",
-          "size": 1728,
-          "sha256": "4a93a4a782b74744a0e5f4ddfdaa4ab9575baf7d578bd92b08cb0c09a7e00caf",
-          "objects": [
-            {
-              "name": "gUnk_09EF4208",
-              "offset": 0,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4448",
-              "offset": 576,
-              "size": 576
-            },
-            {
-              "name": "gUnk_09EF4688",
-              "offset": 1152,
-              "size": 576
             }
           ]
         },
