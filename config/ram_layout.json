@@ -218,7 +218,7 @@
         }
       ]
     },
-    "src/worldwarp_state.o": {
+    "src/mode_ms_top.o": {
       "base": "0x020357C0",
       "size": "0x104",
       "symbols": {
@@ -1110,7 +1110,7 @@
         }
       ]
     },
-    "src/worldwarp_state.o": {
+    "src/mode_ms_top.o": {
       "base": "0x02035720",
       "size": "0x104",
       "symbols": {
@@ -2008,7 +2008,7 @@
         }
       ]
     },
-    "src/worldwarp_state.o": {
+    "src/mode_ms_top.o": {
       "base": "0x02035DD0",
       "size": "0x104",
       "symbols": {

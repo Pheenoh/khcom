@@ -92,40 +92,6 @@
         },
         {
           "unit": "localized_resource_data.c",
-          "section": ".data_localized_09F84EE8",
-          "address": "0x9f84ee8",
-          "size": 100,
-          "sha256": "01250ed62943b4d50079d1bf95cf9d36c7c22903e255f9e6970dbd3e492ced52",
-          "objects": [
-            {
-              "name": "gUnkEu_09F84EE8",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F84EFC",
-              "offset": 20,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F84F10",
-              "offset": 40,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F84F24",
-              "offset": 60,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F84F38",
-              "offset": 80,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "localized_resource_data.c",
           "section": ".data_localized_09F84F5C",
           "address": "0x9f84f5c",
           "size": 20,

@@ -6705,23 +6705,9 @@
           ]
         },
         {
-          "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsTop",
-          "address": "0x099931D8",
-          "size": 12,
-          "sha256": "3807c000a898bb9e4238f709ba5a5ac1a2e9c036562dfdfe2ef70e29d4d09423",
-          "objects": [
-            {
-              "name": "gModeNameMsTop",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsTop",
-          "address": "0x09EF95E8",
+          "unit": "mode_ms_top.c",
+          "section": ".data",
+          "address": "0x9ef95e8",
           "size": 16,
           "sha256": "346ebd10fa5e6657814a7944999499c6ad7ad06d91a99711babf741fa8c9d184",
           "objects": [
@@ -14724,23 +14710,9 @@
           ]
         },
         {
-          "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsTop",
-          "address": "0x09947CEC",
-          "size": 12,
-          "sha256": "3807c000a898bb9e4238f709ba5a5ac1a2e9c036562dfdfe2ef70e29d4d09423",
-          "objects": [
-            {
-              "name": "gModeNameMsTop",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsTop",
-          "address": "0x09ED09D4",
+          "unit": "mode_ms_top.c",
+          "section": ".data",
+          "address": "0x9ed09d4",
           "size": 16,
           "sha256": "4aaaa56c2ad055e8256e96a3bc792ad71abdfc4fe8ecbd3ab2c0083a85e94889",
           "objects": [
@@ -22648,29 +22620,40 @@
           ]
         },
         {
-          "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsTop",
-          "address": "0x09999488",
-          "size": 12,
-          "sha256": "3807c000a898bb9e4238f709ba5a5ac1a2e9c036562dfdfe2ef70e29d4d09423",
+          "unit": "mode_ms_top.c",
+          "section": ".data",
+          "address": "0x9f84ee8",
+          "size": 116,
+          "sha256": "f8972a4e5ae06858852bcca4c21d15c44b44f42666df8065ee5fd4ef0d97e45b",
           "objects": [
             {
-              "name": "gModeNameMsTop",
+              "name": "gUnkEu_09F84EE8",
               "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsTop",
-          "address": "0x09F84F4C",
-          "size": 16,
-          "sha256": "b8b506bf5984ffc377cb99bd515a77e563596f9667fd6556de3aa5e6730a9df7",
-          "objects": [
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84EFC",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F10",
+              "offset": 40,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F24",
+              "offset": 60,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F38",
+              "offset": 80,
+              "size": 20
+            },
             {
               "name": "gModeMsTop",
-              "offset": 0,
+              "offset": 100,
               "size": 16
             }
           ]

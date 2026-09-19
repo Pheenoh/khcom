@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "worldwarp": "Thirteen20-byte WarpIcon records form the actual floor-navigation graph. The duplicate worldinspect view proves the four directional halfwords previously hidden in the first8 bytes. The connection selector is0..3: exactly four8-byte WarpRect entries end at the separate mode_worldwarp name literal. Fourteen24-byte WorldSelectDef records include the native all-zero world0 entry and end at the separately owned Mode registry. Two92-byte WarpDef records are selected by explicit boolean flags; their first pointer names a real Mode registry, and the previously opaque04 field is a background tilemap pointer with its size at08. All native pointers retain their exact regional value.",
-    "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data."
+    "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data.",
+    "ms_top_owner": "The Moogle top-menu helpers and lifecycle form one contiguous text run between world-warp mode and shop helpers in every region. Their exclusive 35-object state run reproduces the original offsets and 8-byte input alignment with ordinary static C definitions. The two native WarpDef choices, three dialogue IDs and mode-name literal form the corresponding complete read-only span, with ordinary compiler padding between the halfwords and name. Five EU-only locale selector arrays precede this mode descriptor in native initialized data."
   },
   "regions": {
     "us": {
@@ -50,16 +51,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09993118",
+          "unit": "mode_ms_top.c",
+          "section": ".rodata",
           "address": "0x9993118",
-          "size": 184,
-          "sha256": "c3d50a749f200b5f2549005e4519bd5d31bb30e5e726dcec29351e1862244946",
+          "size": 204,
+          "sha256": "7aa05c71e464b381eeb1ac0e18d9badfb6f543ad440f2d6088625bcc40944d36",
           "objects": [
             {
               "name": "gUnk_09993118",
               "offset": 0,
               "size": 184
+            },
+            {
+              "name": "gUnk_099931D0",
+              "offset": 184,
+              "size": 6
+            },
+            {
+              "name": "gModeNameMsTop",
+              "offset": 192,
+              "size": 12
             }
           ]
         },
@@ -93,7 +104,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsShop",
+          "section": ".data",
           "address": "0x9ef95f8",
           "size": 16,
           "sha256": "f2888c7ce394a8404359679d4bf0f331ca11e76d202e1fd51961847d2f53a0bb",
@@ -107,7 +118,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsShop",
+          "section": ".rodata",
           "address": "0x9993780",
           "size": 13,
           "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
@@ -250,16 +261,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09993118",
+          "unit": "mode_ms_top.c",
+          "section": ".rodata",
           "address": "0x9947c2c",
-          "size": 184,
-          "sha256": "f195b456c40519001cf2f5dbef4eb85af169ae9a6583ea1673bcef02923dea91",
+          "size": 204,
+          "sha256": "a39a4fea06ace6148f73b8811316fd9cface041e9e0948da9c8da795c3703b2c",
           "objects": [
             {
               "name": "gUnk_09993118",
               "offset": 0,
               "size": 184
+            },
+            {
+              "name": "gUnk_099931D0",
+              "offset": 184,
+              "size": 6
+            },
+            {
+              "name": "gModeNameMsTop",
+              "offset": 192,
+              "size": 12
             }
           ]
         },
@@ -293,7 +314,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsShop",
+          "section": ".data",
           "address": "0x9ed09e4",
           "size": 16,
           "sha256": "3ecb8e09fb7b381cd7412e25959c112c8759cbe4ca3c716a8ab9a1320353cdb9",
@@ -307,7 +328,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsShop",
+          "section": ".rodata",
           "address": "0x9948294",
           "size": 13,
           "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
@@ -450,16 +471,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09993118",
+          "unit": "mode_ms_top.c",
+          "section": ".rodata",
           "address": "0x99993c8",
-          "size": 184,
-          "sha256": "79105ab95f9eb8b9d271a4da201f4ec3b25df151f1f6fbd2a86fa8c39e2f75fd",
+          "size": 204,
+          "sha256": "da2d952c8c313426d0545168f8b63411580fe1460c91679d8a9bf521fc594edf",
           "objects": [
             {
               "name": "gUnk_09993118",
               "offset": 0,
               "size": 184
+            },
+            {
+              "name": "gUnk_099931D0",
+              "offset": 184,
+              "size": 6
+            },
+            {
+              "name": "gModeNameMsTop",
+              "offset": 192,
+              "size": 12
             }
           ]
         },
@@ -493,7 +524,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".data_registration_gModeMsShop",
+          "section": ".data",
           "address": "0x9f84f98",
           "size": 16,
           "sha256": "d8aa710ec40707d5fd34bce2b985897641ad943cd368ebf7a242862449831cb9",
@@ -507,7 +538,7 @@
         },
         {
           "unit": "mode_ms.c",
-          "section": ".rodata_registration_name_gModeMsShop",
+          "section": ".rodata",
           "address": "0x9999a30",
           "size": 13,
           "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",

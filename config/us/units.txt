@@ -84,7 +84,6 @@ boss_status_state.c -O2 -fprologue-bugfix -fno-common
 pooh_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_state.c -O2 -fprologue-bugfix -fno-common
-worldwarp_state.c -O2 -fprologue-bugfix -fno-common
 card_ui_state.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
 wlogo.c -O2 -fprologue-bugfix
@@ -107,6 +106,7 @@ room.c
 bos5.c -O2 -fprologue-bugfix -fno-common
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
+mode_ms_top.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
 ms_charge.c -O2 -fprologue-bugfix -fno-common
 mode_ms2.c -O2 -fprologue-bugfix -fno-common
@@ -1599,10 +1599,7 @@ asset_gfx_gap_191.s(.rodata)
 worldwarp_data.c(.data_gUnk_099930E8)
 mode_worldwarp.c(.rodata)
 asset_gfx_gap_192.s(.rodata)
-worldwarp_data.c(.data_gUnk_09993118)
-moogle_data.c(.data_gUnk_099931D0)
-asset_gfx_gap_192_at_099931D0.s(.rodata)
-mode_ms.c(.rodata_registration_name_gModeMsTop)
+mode_ms_top.c(.rodata)
 moogle_data.c(.data_gUnk_099931E4)
 moogle_data.c(.data_gUnk_099932D4)
 moogle_data.c(.data_gUnk_09993334)
@@ -1612,7 +1609,7 @@ moogle_data.c(.data_gUnk_09993538)
 moogle_data.c(.data_gUnk_099935A8)
 moogle_data.c(.data_gUnk_099935C0)
 moogle_data.c(.data_gUnk_09993760)
-mode_ms.c(.rodata_registration_name_gModeMsShop)
+mode_ms.c(.rodata)
 asset_gfx_gap_193_at_0999378D.s(.rodata)
 mode_ms2.c(.rodata)
 asset_gfx_gap_193_at_0999379F.s(.rodata)
@@ -2697,8 +2694,8 @@ mode_worldinspect.c(.data)
 worldwarp_data.c(.data_gUnk_09EF9384)
 worldwarp_data.c(.data_gUnk_09EF9488)
 mode_worldwarp.c(.data)
-mode_ms.c(.data_registration_gModeMsTop)
-mode_ms.c(.data_registration_gModeMsShop)
+mode_ms_top.c(.data)
+mode_ms.c(.data)
 mode_ms2.c(.data)
 moogle_data.c(.data_gUnk_09EF9618)
 mode_mapinspect.c(.data)

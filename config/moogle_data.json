@@ -8,20 +8,6 @@
       "placements": [
         {
           "unit": "moogle_data.c",
-          "section": ".data_gUnk_099931D0",
-          "address": "0x99931d0",
-          "size": 6,
-          "sha256": "df006a298eea68c87e5179aa140777613f6bf8213555a999405bbc20758be0cb",
-          "objects": [
-            {
-              "name": "gUnk_099931D0",
-              "offset": 0,
-              "size": 6
-            }
-          ]
-        },
-        {
-          "unit": "moogle_data.c",
           "section": ".data_gUnk_099931E4",
           "address": "0x99931e4",
           "size": 240,
@@ -164,20 +150,6 @@
     },
     "jp": {
       "placements": [
-        {
-          "unit": "moogle_data.c",
-          "section": ".data_gUnk_099931D0",
-          "address": "0x9947ce4",
-          "size": 6,
-          "sha256": "df006a298eea68c87e5179aa140777613f6bf8213555a999405bbc20758be0cb",
-          "objects": [
-            {
-              "name": "gUnk_099931D0",
-              "offset": 0,
-              "size": 6
-            }
-          ]
-        },
         {
           "unit": "moogle_data.c",
           "section": ".data_gUnk_099931E4",
@@ -347,20 +319,6 @@
               "name": "gUnkEu_09F84F84",
               "offset": 0,
               "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "moogle_data.c",
-          "section": ".data_gUnk_099931D0",
-          "address": "0x9999480",
-          "size": 6,
-          "sha256": "df006a298eea68c87e5179aa140777613f6bf8213555a999405bbc20758be0cb",
-          "objects": [
-            {
-              "name": "gUnk_099931D0",
-              "offset": 0,
-              "size": 6
             }
           ]
         },

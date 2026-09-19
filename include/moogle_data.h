@@ -56,7 +56,6 @@ typedef struct MooglePackMenuEntry {
     MooglePackTilemapDef packTilemaps[4];
 } MooglePackMenuEntry;
 
-extern u16 gUnk_099931D0[];
 extern MooglePackMenuEntry gUnk_099931E4[];
 extern MooglePackSpriteDef gUnk_099932D4[];
 extern u16 gUnk_09993334[];

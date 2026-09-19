@@ -12,8 +12,6 @@
 
 #include "graphics_state.h"
 
-#include "worldwarp_state.h"
-
 #include "obj.h"
 
 #include "card_types.h"
@@ -23,7 +21,7 @@
 #include "card_api.h"
 
 #include "map_api.h"
-#include "mode_worldwarp_api.h"
+#include "mode_ms_top_api.h"
 
 #include "mode_ms_api.h"
 
@@ -83,11 +81,9 @@ s32 MoogleShopReadMenuKeys(void);
 u16 func_08103F3C(void);
 void func_08102984(s16 a);
 void func_08103CD8(s16 a);
-void mode_ms_top_2(void);
 void func_08102DC8(void);
 void mode_ms_shop_1(void);
 void func_08104404(void);
-void mode_ms_top_0(u32 a);
 void mode_ms_shop_0(void);
 void func_081041B4(void);
 void mode_ms_shop_2(void);
@@ -96,7 +92,6 @@ void func_08103D7C(void);
 void func_08103DE8(void);
 
 void func_080A4234(void* pool, u32 a, u16 b);
-void mode_ms_top_1(void);
 
 void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);

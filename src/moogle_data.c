@@ -21,12 +21,6 @@ u16* gUnkEu_09F84F84[5] __attribute__((section(".data_gUnkEu_09F84F84"))) = {
 
 #endif
 
-u16 gUnk_099931D0[3] __attribute__((section(".data_gUnk_099931D0"))) = {
-    129,
-    130,
-    131,
-};
-
 MooglePackMenuEntry gUnk_099931E4[4] __attribute__((section(".data_gUnk_099931E4"))) = {
 #if defined(VERSION_US)
     {-1, 2, 5, 1, 67, 16, gMoogleAssetUs_09A387DC, 1280, 5, 3, 40, 24, 0, {{(u16*)gMoogleAssetUs_09A39BDC, 0, 0}, {(u16*)gMoogleAssetUs_09A39BDC, 0, 16}, {(u16*)gMoogleAssetUs_09A3A3DC, 0, 0}, {(u16*)gMoogleAssetUs_09A3A3DC, 0, 16}}},

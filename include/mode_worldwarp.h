@@ -5,8 +5,6 @@
 
 #include "animation_resource_data.h"
 
-#include "worldwarp_state.h"
-
 #include "obj.h"
 
 #include "world_types.h"
@@ -14,8 +12,6 @@
 #include "card_api.h"
 
 #include "map_api.h"
-#include "mode_worldwarp_api.h"
-
 #include "mode_ms_api.h"
 
 #include "text.h"
@@ -32,16 +28,11 @@
 #include "m4a.h"
 #include "bos4_api.h"
 
-extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_09A35F1C[];
 
 extern u8 gUnk_09A378DC[];
 
-extern u8 gUnk_099A2AD4[];
-extern u8 gUnk_099A2AF0[];
-extern u8 gUnk_099A2B24[];
-extern u8 gUnk_08B22BA8[];
 extern u8 gUnk_09A3D37C[];
 extern u8 gUnk_09A06A7C[];
 extern u8 gUnk_09A35A1C[];
@@ -69,6 +60,5 @@ void func_08100670(s32 a, void* b, void* c);
 void mode_worldwarp_0(void);
 void mode_worldwarp_1(void);
 void mode_worldwarp_2(void);
-void SetMooglePoints(u32 a);
 
 #endif /* GUARD_MODE_WORLDWARP_H */
