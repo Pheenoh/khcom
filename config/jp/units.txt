@@ -110,6 +110,7 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libc.a:strcmp.o
 m4a_1.s
 m4a2.c -O2 -fno-common
+movie_debug.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
 memory_regions.c -O2 -fprologue-bugfix -fno-common
 event_scanline_state.c -O2 -fprologue-bugfix -fno-common

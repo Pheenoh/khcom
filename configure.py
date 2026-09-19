@@ -123,6 +123,7 @@ UNIT_BSS = {
     "src/mode_debug.o": {"us": 0x02034898, "jp": 0x02034898, "eu": 0x020348A0},
     "src/mode_chksnd.o": {"us": 0x020348A0, "jp": 0x020348A0, "eu": 0x020348A8},
     "src/mode_chkeff.o": {"us": 0x020348B8, "jp": 0x020348B8, "eu": 0x020348C0},
+    "src/movie_debug.o": {"eu": 0x020348C4},
     "src/mode_dummy.o": {"us": 0x020348BC, "jp": 0x020348BC, "eu": 0x020348C8},
     "src/mode_debflag.o": {"us": 0x020348C0, "jp": 0x020348C0, "eu": 0x020348CC},
     "src/field_transition.o": {"us": 0x020348C8, "jp": 0x020348C8, "eu": 0x020349CC},

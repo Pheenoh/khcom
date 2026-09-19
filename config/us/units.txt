@@ -17,6 +17,7 @@ mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
 mode_chksnd.c -O2 -fprologue-bugfix -fno-common
 mode_chkeff.c -O2 -fprologue-bugfix -fno-common
+movie_debug.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix
 mode_vsbattle.c -O2 -fprologue-bugfix -fno-common

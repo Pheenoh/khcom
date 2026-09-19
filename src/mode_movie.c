@@ -1,3 +1,4 @@
+#include "movie_debug.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "main.h"
@@ -10,7 +11,6 @@
 #include "mode_movie.h"
 
 #ifdef VERSION_EU
-extern Mode gModeChkmov;
 extern u8 gUnkEu_0883E040[];
 extern u8 gUnkEu_0883E454[];
 extern u8 gUnkEu_0883E8D4[];
@@ -498,7 +498,7 @@ void mode_movie_1(void) {
 #endif
 #ifdef VERSION_EU
         } else if (gUnk_03006C10 & 0x8000) {
-            ModeRequest(&gModeChkmov, 0);
+            ModeRequest(&gModeMovieDebugEu, 0);
 #endif
         } else {
             switch (gUnk_0203493C) {

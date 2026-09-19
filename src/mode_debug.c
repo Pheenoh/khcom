@@ -1,3 +1,4 @@
+#include "movie_debug.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "mode_debug_api.h"
@@ -79,7 +80,6 @@ void mode_debug_0(void) {
 }
 
 #ifdef VERSION_EU
-extern Mode gModeChkmov;
 extern Mode gModeLang;
 #endif
 
@@ -217,7 +217,7 @@ void mode_debug_1(void) {
 #ifdef VERSION_EU
     case 13:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gModeChkmov, 0);
+            ModeRequest(&gModeMovieDebugEu, 0);
         }
         break;
     case 14:

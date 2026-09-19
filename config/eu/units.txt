@@ -17,6 +17,7 @@ mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
 mode_chksnd.c -O2 -fprologue-bugfix -fno-common
 mode_chkeff.c -O2 -fprologue-bugfix -fno-common
+movie_debug.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix
 mode_vsbattle.c -O2 -fprologue-bugfix -fno-common
@@ -153,15 +154,7 @@ mode_debug.c(.rodata)
 mode_chkobj.c(.rodata)
 mode_chksnd.c(.rodata)
 mode_chkeff.c(.rodata)
-movie_debug_data.c(.data_gMovieDebugEntriesEu)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6A8)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6B4)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6BC)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6C4)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6CC)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6D4)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6F4)
-movie_debug_data.c(.rodata_gMovieDebugTextEu_0812F6F8)
+movie_debug.c(.rodata)
 mode_dummy.c(.rodata)
 mode_debflag.c(.rodata)
 mode_vsbattle.c(.rodata)
@@ -2898,7 +2891,7 @@ mode_debug.c(.data)
 mode_chkobj.c(.data)
 mode_chksnd.c(.data)
 mode_chkeff.c(.data)
-movie_debug_data.c(.data_gModeMovieDebugEu)
+movie_debug.c(.data)
 mode_dummy.c(.data)
 mode_debflag.c(.data)
 mode_vsbattle.c(.data)

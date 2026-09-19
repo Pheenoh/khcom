@@ -1781,6 +1781,20 @@
     }
   },
   "eu": {
+    "src/mode_chkeff.o": {
+      "base": "0x020348C0",
+      "size": "0x4",
+      "symbols": {
+        "gChkEffWork": {"offset": "0x0", "size": "0x4"}
+      }
+    },
+    "src/movie_debug.o": {
+      "base": "0x020348C4",
+      "size": "0x4",
+      "symbols": {
+        "gUnkEu_020348C4": {"offset": "0x0", "size": "0x4"}
+      }
+    },
     "src/m4a_catalog_data.o": {
       "base": "0x2038df0",
       "size": "0xff0",
