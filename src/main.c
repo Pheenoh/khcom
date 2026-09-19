@@ -48,9 +48,6 @@ u32 gLanguage;
 IntrFunc gVBlankHandlerOverride;
 
 
-extern u8 sEwramHeapName[];
-extern u8 sIwramHeapName[];
-
 extern u8 IrqHandler[];
 
 

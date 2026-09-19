@@ -2,6 +2,8 @@
 #include "battle.h"
 #include "battle_actor.h"
 
+const u8 gUnk_08133E54[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
+
 void func_0800EEBC(Actor* p, SprObj* s) {
     s16 x;
     s16 y;

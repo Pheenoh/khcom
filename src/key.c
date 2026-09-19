@@ -1,9 +1,6 @@
 #include "gba/keys.h"
 #include "key.h"
 
-extern u8 sEwramHeapName[];
-extern u8 sIwramHeapName[];
-
 u16 gKeysHeld;
 u16 gKeysPressed;
 u16 gKeysRepeat;

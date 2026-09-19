@@ -6,9 +6,9 @@
 #include "malloc.h"
 #include "sprite.h"
 
-SpriteWork* gSpriteWork;
+const u8 sSpriteHeapName[8] = "SPRITE";
 
-extern u8 sSpriteHeapName[];
+SpriteWork* gSpriteWork;
 
 void EnableObj(void);
 void DisableObj(void);

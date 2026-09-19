@@ -19,8 +19,6 @@ typedef struct PaletteWave {
 } PaletteWave;
 
 extern PaletteWave gBgWaves[];
-extern u8 sPalletHeapName[];
-extern s32 gUnk_08121694[];
 
 u16* FadePaletteToGray(u16* src, u16* dst, u16 size, u16 amount);
 u16* FadePaletteToWhite(u16* src, u16* dst, u16 size, u16 amount);

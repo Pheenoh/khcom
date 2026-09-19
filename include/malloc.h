@@ -10,7 +10,7 @@ typedef struct HeapBlock {
     struct HeapBlock* prev;
     struct HeapBlock* next;
     u32 unk_14;
-    void* name;
+    const void* name;
     struct HeapBlock* self;
 } HeapBlock;
 
@@ -18,7 +18,7 @@ typedef struct Heap {
     HeapBlock* start;
     HeapBlock* end;
     u8 unk_08;
-    void* name;
+    const void* name;
 } Heap;
 
 void HeapInit(void* addr, u32 size, Heap* heap);
@@ -34,8 +34,8 @@ void* EwramAlloc(u32 size);
 void* IwramAlloc(u32 size);
 void EwramFree(void* p);
 void IwramFree(void* p);
-void SetEwramHeapName(void* name);
-void SetIwramHeapName(void* name);
+void SetEwramHeapName(const void* name);
+void SetIwramHeapName(const void* name);
 
 extern Heap gEwramHeap;
 

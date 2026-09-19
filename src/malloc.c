@@ -1,11 +1,12 @@
 #include "listpool.h"
 #include "malloc.h"
 
+const u8 sEwramHeapName[12] = "HEAP_SYSTEM";
+
+const u8 sIwramHeapName[16] = "HEAPCPU_SYSTEM";
+
 Heap gEwramHeap;
 Heap gIwramHeap;
-
-extern u8 sEwramHeapName[];
-extern u8 sIwramHeapName[];
 
 void HeapUnlinkFreeBlock(HeapBlock* b) {
     b->prevFree->nextFree = b->nextFree;
@@ -37,7 +38,7 @@ void HeapInit(void* addr, u32 size, Heap* heap) {
     HeapBlock* head;
     HeapBlock* tail;
     HeapBlock* first;
-    void* name;
+    const void* name;
     u32 last;
 
     size &= ~31;
@@ -290,19 +291,19 @@ void func_08000AC8(void) {
     func_08000AA8(&gIwramHeap);
 }
 
-void SetEwramHeapName(void* name) {
+void SetEwramHeapName(const void* name) {
     gEwramHeap.name = name;
 }
 
-void SetIwramHeapName(void* name) {
+void SetIwramHeapName(const void* name) {
     gIwramHeap.name = name;
 }
 
-void* GetEwramHeapName(void) {
+const void* GetEwramHeapName(void) {
     return gEwramHeap.name;
 }
 
-void* GetIwramHeapName(void) {
+const void* GetIwramHeapName(void) {
     return gIwramHeap.name;
 }
 

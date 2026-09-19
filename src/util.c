@@ -2,12 +2,11 @@
 #include "malloc.h"
 #include "m4a.h"
 
+const u8 sSioKeyHeapName[8] = "SIOKEY";
+
 KeyState* gSioKeyStateA;
 KeyState* gSioKeyStateB;
 u16 gUnk_02034084;
-
-extern u8 sSioKeyHeapName[];
-
 
 u16 KeyGetHeld(KeyState* k) {
     return k->held;
