@@ -3075,9 +3075,7 @@ TARGET_FUNC_ADDR = {
 
 TARGET_DATA_SIZE = {
     "eu": {
-        ("mode_chkobj_data.c", ".data"): 0x9A90,
-        ("unk_0800c778_data.c", ".rodata"): 0x2928,
-        ("unk_0800c778_data.c", ".data"): 0,
+        ("mode_chkobj.c", ".data"): 0x9A90,
         ("mode_battle.c", ".rodata"): 0x914,
         ("formation_data.c", ".data"): 0x940,
         ("mode_debug.c", ".rodata"): 0x1F4,

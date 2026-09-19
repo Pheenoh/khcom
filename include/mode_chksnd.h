@@ -15,7 +15,6 @@ typedef struct ChkSndEntry {
     const char* name;
     u16 songNum;
 } ChkSndEntry;
-extern ChkSndEntry gChkSndEntries[];
 
 void mode_chksnd_0(void);
 void mode_chksnd_1(void);

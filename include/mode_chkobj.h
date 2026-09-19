@@ -35,16 +35,6 @@ void mode_chkobj_2(void);
 extern ChkObjWork* gChkObjWork;
 extern u8 gUnk_088B629C[];
 extern const ChkObjEntry gChkObjEntries[];
-extern ObjDef gUnk_09ECEB74[];
-extern ObjDef gUnk_09ED82D4[];
-extern ObjDef gUnk_09ECF354[];
-extern ObjDef gUnk_09ED07B4[];
-extern ObjDef gUnk_09ED09F4[];
-extern ObjDef gUnk_09ED1774[];
-extern ObjDef gUnk_09ED4834[];
-extern ObjDef gUnk_09ED5D34[];
-extern ObjDef gUnk_09ED76F4[];
-extern ObjDef gUnk_09ED77D4[];
 extern u8 gUnk_08F683A4[];
 
 #endif /* GUARD_MODE_CHKOBJ_H */

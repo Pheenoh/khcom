@@ -19,12 +19,10 @@ void func_080609A0(void);
 
 extern Mode gModeDebug;
 extern Mode gModeChkobj;
-extern const char gModeNameChkobj[];
 extern Mode gModeChkeff;
 extern Mode gModeDummy;
 extern Mode gModeDebflag;
 extern Mode gModeVsbattle;
-extern const char gModeNameChkeff[];
 
 u8 IsModeStarted(void);
 void func_08001080(void);

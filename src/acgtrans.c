@@ -1,4 +1,7 @@
 #include "acgtrans.h"
+#include "task_names.h"
+
+const char gTaskNameAcgtrans[] = "task_acgtrans";
 
 void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg) {
     work->dst = cfg->dst;
