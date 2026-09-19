@@ -36,8 +36,8 @@
           ]
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".rodata_registration_name_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".rodata",
           "address": "0x0815C388",
           "size": 14,
           "sha256": "71a99ee61baae59f5b905ca83effc20822f137fc85481887479e9ba42b6e77aa",
@@ -50,8 +50,8 @@
           ]
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".data_registration_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".data",
           "address": "0x09EDE440",
           "size": 24,
           "sha256": "a03726850d7854170988bf1708dcdb0a787fefb6655c33a27df9c4c23cd1f367",
@@ -7580,8 +7580,8 @@
           ]
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".rodata_registration_name_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".rodata",
           "address": "0x0814FC14",
           "size": 14,
           "sha256": "71a99ee61baae59f5b905ca83effc20822f137fc85481887479e9ba42b6e77aa",
@@ -7594,8 +7594,8 @@
           ]
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".data_registration_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".data",
           "address": "0x09EB5EBC",
           "size": 24,
           "sha256": "8ee19cf4758f18e021e3b7accc303ac54a6d5bd519121122467c01767d553cd3",
@@ -22516,8 +22516,8 @@
           "padding_before": 3
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".rodata_registration_name_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".rodata",
           "address": "0x088964C0",
           "size": 14,
           "sha256": "71a99ee61baae59f5b905ca83effc20822f137fc85481887479e9ba42b6e77aa",
@@ -22530,8 +22530,8 @@
           ]
         },
         {
-          "unit": "monsgage_data.c",
-          "section": ".data_registration_gTaskDescMonsgage",
+          "unit": "monsgage.c",
+          "section": ".data",
           "address": "0x09F590A0",
           "size": 24,
           "sha256": "39e8d06f3358cc235ee8e0227cb93fddf84941305989e8b26ef1f1478608e239",

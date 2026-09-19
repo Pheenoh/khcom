@@ -130,3 +130,5 @@ void mode_dummy_2(void) {
 ALIGN_ZERO(2);
 
 const char gModeNameDummy[12] = "mode_dummy";
+
+Mode gModeDummy = { gModeNameDummy, (void (*)(s32))mode_dummy_0, mode_dummy_1, mode_dummy_2 };

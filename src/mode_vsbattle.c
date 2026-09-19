@@ -141,3 +141,7 @@ void func_0800C6B8(void) {
 }
 
 ALIGN_ZERO(2);
+
+const char gModeNameVsbattle[] = "mode_vsbattle";
+
+Mode gModeVsbattle = { gModeNameVsbattle, (void (*)(s32))mode_vsbattle_0, mode_vsbattle_1, mode_vsbattle_2 };

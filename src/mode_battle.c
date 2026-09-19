@@ -655,3 +655,5 @@ void mode_battle_2(void) {
 }
 
 const char gModeNameBattle[12] = "mode_battle";
+
+Mode gModeBattle = { gModeNameBattle, mode_battle_0, mode_battle_1, mode_battle_2 };

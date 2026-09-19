@@ -128,3 +128,5 @@ void mode_debflag_2(void) {
 ALIGN_ZERO(2);
 
 const char gModeNameDebflag[16] = "mode_debflag";
+
+Mode gModeDebflag = { gModeNameDebflag, mode_debflag_0, mode_debflag_1, mode_debflag_2 };

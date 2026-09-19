@@ -25,9 +25,6 @@ extern Mode gModeDummy;
 extern Mode gModeDebflag;
 extern Mode gModeVsbattle;
 extern const char gModeNameChkeff[];
-extern const char gModeNameDummy[];
-extern const char gModeNameDebflag[];
-extern const char gModeNameVsbattle[];
 
 u8 IsModeStarted(void);
 void func_08001080(void);

@@ -284,7 +284,6 @@ extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
 extern const char gModeNameJiminy[];
-extern const char gTaskNameMonsgage[];
 extern const char gTaskNameBtlPopCb[];
 extern const char gTaskNameBtlExp[];
 extern const char gTaskNameBtlVslockon[];

@@ -389,3 +389,5 @@ void func_0800B30C(ObjDef* def) {
 }
 
 const char gModeNameDebug[12] = "mode_debug";
+
+Mode gModeDebug = { gModeNameDebug, mode_debug_0, mode_debug_1, mode_debug_2 };

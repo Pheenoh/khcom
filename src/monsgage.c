@@ -1,3 +1,4 @@
+#include "registration_data.h"
 #include "system_state.h"
 #include "battle_localized_assets.h"
 #include "monsgage.h"
@@ -300,3 +301,21 @@ void eu_0805ECE4(MonsgageWork* work) {
     ReleaseObjPalette(work->palette);
 }
 #endif
+
+const char gTaskNameMonsgage[] = "task_monsgage";
+
+TaskDesc gTaskDescMonsgage = {
+    gTaskNameMonsgage,
+#ifdef VERSION_EU
+    (void (*)(void*, void*))eu_0805E9F0,
+    eu_0805EA44,
+    (void (*)(void*))eu_0805EC60,
+    (void (*)(void*))eu_0805ECE4,
+#else
+    (void (*)(void*, void*))task_monsgage_0,
+    task_monsgage_1,
+    (void (*)(void*))task_monsgage_2,
+    (void (*)(void*))task_monsgage_3,
+#endif
+    0x28,
+};
