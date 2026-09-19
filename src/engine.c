@@ -43,9 +43,9 @@ const s16 gSineTable[320] = {
       251,   252,   253,   254,   254,   255,   255,   255,
 };
 
-const u8 sVTransHeapName[8] = "VTRANS";
+const u8 sVTransHeapName[] = "VTRANS";
 
-const u8 sBgHeapName[4] = "BG";
+const u8 sBgHeapName[] = "BG";
 
 const u8 sFadeHeapName[8] = "FADE";
 
