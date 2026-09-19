@@ -1586,7 +1586,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F72A3C": 0x09F72A3C,
         "gUnkEu_09F72A50": 0x09F72A50,
         "gUnkEu_09F72A64": 0x09F72A64,
-        "gModeLang": 0x09F3EA64,
         "gUnkEu_08F6A73C": 0x08F6A73C,
         "gUnkEu_09529A04": 0x09529A04,
         "gUnkEu_0952DDE4": 0x0952DDE4,

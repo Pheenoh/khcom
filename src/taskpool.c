@@ -1,3 +1,4 @@
+#include "mode_battle_data.h"
 #include "registration_data.h"
 #include "chara_api.h"
 #include "display.h"
@@ -27,9 +28,6 @@ void (*gUnk_030074A0)(void);
 void (*gUnk_030074A4)(void);
 #ifdef VERSION_EU
 u32 gUnkEu_030074AC;
-#endif
-#ifdef VERSION_EU
-extern Mode gModeLang;
 #endif
 extern Mode* gDebugModes[];
 

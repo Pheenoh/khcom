@@ -2,6 +2,7 @@
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
+#include "mode_battle_data.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode_test_api.h"
@@ -24,9 +25,6 @@ extern const DummyEntry gDummyEntries[];
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08F683C4[];
 extern u8 gUnk_08EEE384[];
-#ifdef VERSION_EU
-extern Mode gModeLang;
-#endif
 
 void mode_dummy_0(u32 arg);
 void func_0800C064(void);

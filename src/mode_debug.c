@@ -1,3 +1,4 @@
+#include "mode_battle_data.h"
 #include "movie_debug.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -78,10 +79,6 @@ void mode_debug_0(void) {
     gDebugWork->unk_00 = 0;
     gDebugWork->unk_01 = -1;
 }
-
-#ifdef VERSION_EU
-extern Mode gModeLang;
-#endif
 
 void mode_debug_1(void) {
     s16 v;

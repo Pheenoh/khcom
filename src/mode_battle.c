@@ -656,4 +656,8 @@ void mode_battle_2(void) {
 
 const char gModeNameBattle[12] = "mode_battle";
 
+#ifdef VERSION_EU
+Mode gModeLang = { gModeNameLang, eu_08009CD0, eu_08009E10, eu_0800A0DC };
+#endif
+
 Mode gModeBattle = { gModeNameBattle, mode_battle_0, mode_battle_1, mode_battle_2 };
