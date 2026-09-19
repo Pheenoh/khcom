@@ -138,9 +138,9 @@ void mode_backupstat_2(void) {
 
 ALIGN_ZERO(2);
 
-const char gModeNameBackupstat[] __attribute__((section(".rodata_registration_name_gModeBackupstat"), aligned(1))) = "mode_backupstat";
+const char gModeNameBackupstat[] = "mode_backupstat";
 
-Mode gModeBackupstat __attribute__((section(".data_registration_gModeBackupstat"))) = {
+Mode gModeBackupstat = {
     gModeNameBackupstat,
     (void (*)(s32))mode_backupstat_0,
     (void (*)(void))mode_backupstat_1,

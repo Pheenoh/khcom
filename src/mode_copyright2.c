@@ -96,9 +96,9 @@ void func_080D733C(void) {
     }
 }
 
-const char gModeNameCopyright2[] __attribute__((section(".rodata_registration_name_gModeCopyright2"), aligned(1))) = "mode_copyright2";
+const char gModeNameCopyright2[] = "mode_copyright2";
 
-Mode gModeCopyright2 __attribute__((section(".data_registration_gModeCopyright2"))) = {
+Mode gModeCopyright2 = {
     gModeNameCopyright2,
     (void (*)(s32))mode_copyright2_0,
     (void (*)(void))mode_copyright2_1,

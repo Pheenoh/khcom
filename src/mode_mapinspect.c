@@ -371,9 +371,9 @@ void mode_mapinspect_2(void) {
     EwramFree(gUnk_02035E28);
 }
 
-const char gModeNameMapinspect[] __attribute__((section(".rodata_registration_name_gModeMapinspect"), aligned(1))) = "mode_mapinspect";
+const char gModeNameMapinspect[] = "mode_mapinspect";
 
-Mode gModeMapinspect __attribute__((section(".data_registration_gModeMapinspect"))) = {
+Mode gModeMapinspect = {
     gModeNameMapinspect,
     (void (*)(s32))mode_mapinspect_0,
     (void (*)(void))mode_mapinspect_1,

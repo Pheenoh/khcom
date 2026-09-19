@@ -345,9 +345,9 @@ void func_080D62A8(TitleLogoWork* work) {
     gUnk_02034ECC = 0;
 }
 
-const char gModeNameTitle[] __attribute__((section(".rodata_registration_name_gModeTitle"), aligned(1))) = "mode_title";
+const char gModeNameTitle[] = "mode_title";
 
-Mode gModeTitle __attribute__((section(".data_registration_gModeTitle"))) = {
+Mode gModeTitle = {
     gModeNameTitle,
     (void (*)(s32))mode_title_0,
     (void (*)(void))mode_title_1,

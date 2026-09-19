@@ -537,9 +537,9 @@ u16 gUnk_02034968[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
 u16 gUnk_020349B8[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
 #endif
 
-const char gModeNameMovie[] __attribute__((section(".rodata_registration_name_gModeMovie"), aligned(1))) = "mode_movie";
+const char gModeNameMovie[] = "mode_movie";
 
-Mode gModeMovie __attribute__((section(".data_registration_gModeMovie"))) = {
+Mode gModeMovie = {
     gModeNameMovie,
     (void (*)(s32))mode_movie_0,
     (void (*)(void))mode_movie_1,

@@ -312,11 +312,12 @@ def linker_assertions(placement, after=False):
     address = placement['address'] + (placement['size'] if after else 0)
     edge = 'end' if after else 'start'
     result = []
+    position = 'ABSOLUTE(.)'
     if not after and placement.get('padding_before'):
         before = placement['address'] - placement['padding_before']
-        result.extend([f'ASSERT(ABSOLUTE(.) == {before:#010x}, "regional alignment start: {label}");',
-                       f'. = ALIGN({placement["alignment_before"]});'])
-    result.append(f'ASSERT(ABSOLUTE(.) == {address:#010x}, "regional data {edge}: {label}");')
+        result.append(f'ASSERT(ABSOLUTE(.) == {before:#010x}, "regional alignment start: {label}");')
+        position = f'ABSOLUTE(ALIGN(., {placement["alignment_before"]}))'
+    result.append(f'ASSERT({position} == {address:#010x}, "regional data {edge}: {label}");')
     if after:
         for obj in placement['objects']:
             name = obj['name']

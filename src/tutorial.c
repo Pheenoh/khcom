@@ -536,9 +536,9 @@ void task_tutorial_3(TutorialWork* work) {
     SeedRandom(gFrameCounter);
 }
 
-const char gTaskNameTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescTutorial"), aligned(1))) = "task_tutorial";
+const char gTaskNameTutorial[] = "task_tutorial";
 
-TaskDesc gTaskDescTutorial __attribute__((section(".data_registration_gTaskDescTutorial"))) = {
+TaskDesc gTaskDescTutorial = {
     gTaskNameTutorial,
     (void (*)(void*, void*))task_tutorial_0,
     task_tutorial_1,

@@ -57,9 +57,9 @@ void func_08109638(void* a) {
 
 ALIGN_ZERO(2);
 
-const char gTaskNameMsShopHosi[] __attribute__((section(".rodata_registration_name_gTaskDescMsShopHosi"), aligned(1))) = "task_ms_shop_hosi";
+const char gTaskNameMsShopHosi[] = "task_ms_shop_hosi";
 
-TaskDesc gTaskDescMsShopHosi __attribute__((section(".data_registration_gTaskDescMsShopHosi"))) = {
+TaskDesc gTaskDescMsShopHosi = {
     gTaskNameMsShopHosi,
     (void (*)(void*, void*))task_ms_shop_hosi_0,
     task_ms_shop_hosi_1,

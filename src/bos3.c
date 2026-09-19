@@ -79,9 +79,9 @@ void func_080C7024(u16* in) {
     gUnk_0203C3BC = in[1];
 }
 
-const char gTaskName_09EF34D8[] __attribute__((section(".rodata_registration_name_gUnk_09EF34D8"), aligned(1))) = "task_bos_jf_shadow";
+const char gTaskName_09EF34D8[] = "task_bos_jf_shadow";
 
-TaskDesc gUnk_09EF34D8 __attribute__((section(".data_registration_gUnk_09EF34D8"))) = {
+TaskDesc gUnk_09EF34D8 = {
     gTaskName_09EF34D8,
     (void (*)(void*, void*))task_bos_jf_shadow_0,
     task_bos_jf_shadow_1,

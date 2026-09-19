@@ -9,7 +9,7 @@
       "placements": [
         {
           "unit": "mode_jiminy.c",
-          "section": ".rodata_registration_name_gModeJiminy",
+          "section": ".rodata",
           "address": "0x08159DE4",
           "size": 12,
           "sha256": "f35fb0f4da40a3b1f2b45c38f82e10958bcb739301f4bbeed25f651e444a6731",
@@ -23,7 +23,7 @@
         },
         {
           "unit": "mode_jiminy.c",
-          "section": ".data_registration_gModeJiminy",
+          "section": ".data",
           "address": "0x09EDE430",
           "size": 16,
           "sha256": "727c02f710053c74423fc7a755555fb76704f07174660b1e0c08400997dc0ec7",
@@ -183,7 +183,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".rodata_registration_name_gTaskDescTutorial",
+          "section": ".rodata",
           "address": "0x0815C3DC",
           "size": 14,
           "sha256": "971a176dbbc3b5621ce6a2c74e39b273fddc4300d70ec5123de714c607fe6d30",
@@ -199,7 +199,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".data_registration_gTaskDescTutorial",
+          "section": ".data",
           "address": "0x09EDE4B8",
           "size": 24,
           "sha256": "8d4c8184218b7b2669e977ae18333fa102487fa43966cb379bae382ab32fc47f",
@@ -213,7 +213,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".rodata_registration_name_gModeMovie",
+          "section": ".rodata",
           "address": "0x0886AD18",
           "size": 11,
           "sha256": "e30dde3a0344242c619d5f5aed7632a7a7b4117850cfca9a797e10a4a466edfa",
@@ -227,7 +227,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".data_registration_gModeMovie",
+          "section": ".data",
           "address": "0x09EDE4D0",
           "size": 16,
           "sha256": "5c177fc7d24cf6db809f045e21b0f8cbc4304f93436bee69d148044c94909eda",
@@ -4267,7 +4267,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".rodata_registration_name_gModeAllmap",
+          "section": ".rodata",
           "address": "0x096FDB64",
           "size": 12,
           "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
@@ -4281,7 +4281,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".data_registration_gModeAllmap",
+          "section": ".data",
           "address": "0x09EF4DB0",
           "size": 16,
           "sha256": "7db870cbd3596d9d2e0594c32d9a9a9eadf7d082a40bc9176f8e1541a1e8b668",
@@ -4471,7 +4471,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".rodata_registration_name_gModeTitle",
+          "section": ".rodata",
           "address": "0x096FDC9C",
           "size": 11,
           "sha256": "6489e7bdbcb758edc3817c14ffaeffe39c7fb7bd93f766ed15173c5ec4b0fbe3",
@@ -4487,7 +4487,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".data_registration_gModeTitle",
+          "section": ".data",
           "address": "0x09EF4E50",
           "size": 16,
           "sha256": "2380249b74622e2552a97a0db982c62fbefff991a3219abc1b7c438b200274c3",
@@ -4615,7 +4615,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".rodata_registration_name_gModeCopyright1",
+          "section": ".rodata",
           "address": "0x096FDD08",
           "size": 16,
           "sha256": "84fbe0b9b20c6c69491fe74f109e12a34572e5c7c3b9421d17679a0ef641d058",
@@ -4631,7 +4631,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".data_registration_gModeCopyright1",
+          "section": ".data",
           "address": "0x09EF4EC0",
           "size": 16,
           "sha256": "0dc1ffc3d76c92a81f6164c633d38ca4ac409a6ec2ddd6604c806d2b968ca335",
@@ -4645,7 +4645,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".rodata_registration_name_gModeCopyright2",
+          "section": ".rodata",
           "address": "0x096FDD18",
           "size": 16,
           "sha256": "cf26bd5fda4c8ee7dae76325aab528d31f9b5a120b613f9df052b7c747f32ce4",
@@ -4659,7 +4659,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".data_registration_gModeCopyright2",
+          "section": ".data",
           "address": "0x09EF4ED0",
           "size": 16,
           "sha256": "aff3c36d04f9eb6ce7c15b202b0c501edf073103f233dd1d9f065d792cca2047",
@@ -4673,7 +4673,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".rodata_registration_name_gModeStatus",
+          "section": ".rodata",
           "address": "0x096FDD28",
           "size": 12,
           "sha256": "3e86549f115c2f97500700427df77dca4f97b526b0df06eeaf93d47f54247bbf",
@@ -4687,7 +4687,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".data_registration_gModeStatus",
+          "section": ".data",
           "address": "0x09EF4EE0",
           "size": 16,
           "sha256": "4c8e56c1f6c63f0332e197d492fe13a8bd9560c63a44a77d7f895d4cd076787f",
@@ -6809,7 +6809,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".rodata_registration_name_gModeWorldinspect",
+          "section": ".rodata",
           "address": "0x099930D4",
           "size": 18,
           "sha256": "b63dad3bee1ea26919d41414f9fa9cf6bc8a9fc4fb688e6557c8767d4d0c8da1",
@@ -6823,7 +6823,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".data_registration_gModeWorldinspect",
+          "section": ".data",
           "address": "0x09EF9374",
           "size": 16,
           "sha256": "ce8667ebfe64d8665602970bbf62ccb74a3d99e48170a46681bda28a1ab0d512",
@@ -6837,7 +6837,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".rodata_registration_name_gModeWorldwarp",
+          "section": ".rodata",
           "address": "0x09993108",
           "size": 15,
           "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
@@ -6851,7 +6851,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".data_registration_gModeWorldwarp",
+          "section": ".data",
           "address": "0x09EF95D8",
           "size": 16,
           "sha256": "52a0fad076d85d73064cb6b488b003d0046570b02cfcce973a3b562328e84a69",
@@ -6893,7 +6893,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".rodata_registration_name_gModeMapinspect",
+          "section": ".rodata",
           "address": "0x099937A8",
           "size": 16,
           "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
@@ -6907,7 +6907,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".data_registration_gModeMapinspect",
+          "section": ".data",
           "address": "0x09EF9640",
           "size": 16,
           "sha256": "7c045bbe49687d7510ed01689636e74d84b9e96e279949129c4e0f1e7972ae26",
@@ -6921,7 +6921,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".rodata_registration_name_gTaskDescMsShopHosi",
+          "section": ".rodata",
           "address": "0x099937B8",
           "size": 18,
           "sha256": "f788186e1d2464b8788261732a196def96b02fa5d81177c813ed1b07aa1e5de1",
@@ -6935,7 +6935,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".data_registration_gTaskDescMsShopHosi",
+          "section": ".data",
           "address": "0x09EF9650",
           "size": 24,
           "sha256": "2fe655445df2d3c876d5996c0623b41aa42801793d11d50433f1bd26fefa4535",
@@ -6949,7 +6949,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".rodata_registration_name_gModeBackupstat",
+          "section": ".rodata",
           "address": "0x0999388C",
           "size": 16,
           "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
@@ -6963,7 +6963,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".data_registration_gModeBackupstat",
+          "section": ".data",
           "address": "0x09EF9674",
           "size": 16,
           "sha256": "e1d4eb75e86926c44234c71ce1988de114187dd34f43f283f05a5e61853cb2e3",
@@ -7553,7 +7553,7 @@
       "placements": [
         {
           "unit": "mode_jiminy.c",
-          "section": ".rodata_registration_name_gModeJiminy",
+          "section": ".rodata",
           "address": "0x0814E570",
           "size": 12,
           "sha256": "f35fb0f4da40a3b1f2b45c38f82e10958bcb739301f4bbeed25f651e444a6731",
@@ -7567,7 +7567,7 @@
         },
         {
           "unit": "mode_jiminy.c",
-          "section": ".data_registration_gModeJiminy",
+          "section": ".data",
           "address": "0x09EB5EAC",
           "size": 16,
           "sha256": "3bab36c9fab59479dbead8e7cc109cdea827a7d6909ca4841858239fe2768efb",
@@ -7727,7 +7727,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".rodata_registration_name_gTaskDescTutorial",
+          "section": ".rodata",
           "address": "0x0814FC68",
           "size": 14,
           "sha256": "971a176dbbc3b5621ce6a2c74e39b273fddc4300d70ec5123de714c607fe6d30",
@@ -7743,7 +7743,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".data_registration_gTaskDescTutorial",
+          "section": ".data",
           "address": "0x09EB5F34",
           "size": 24,
           "sha256": "6fab9c01f214fa035b24542d0aa11b480716b52b3fae89092ea894b8a829ec47",
@@ -7757,7 +7757,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".rodata_registration_name_gModeMovie",
+          "section": ".rodata",
           "address": "0x0885E300",
           "size": 11,
           "sha256": "e30dde3a0344242c619d5f5aed7632a7a7b4117850cfca9a797e10a4a466edfa",
@@ -7771,7 +7771,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".data_registration_gModeMovie",
+          "section": ".data",
           "address": "0x09EB5F4C",
           "size": 16,
           "sha256": "d908f15496e2c8f2bb0e2106e0307072d60f72570420899de4e2f9f1d694f6a4",
@@ -11811,7 +11811,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".rodata_registration_name_gModeAllmap",
+          "section": ".rodata",
           "address": "0x096B6340",
           "size": 12,
           "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
@@ -11825,7 +11825,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".data_registration_gModeAllmap",
+          "section": ".data",
           "address": "0x09ECC19C",
           "size": 16,
           "sha256": "a679b3ba3e7b9a3a0d953ca81d4cc386b877c2f17d57725592e530f3836f9dc7",
@@ -12015,7 +12015,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".rodata_registration_name_gModeTitle",
+          "section": ".rodata",
           "address": "0x096B6478",
           "size": 11,
           "sha256": "6489e7bdbcb758edc3817c14ffaeffe39c7fb7bd93f766ed15173c5ec4b0fbe3",
@@ -12031,7 +12031,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".data_registration_gModeTitle",
+          "section": ".data",
           "address": "0x09ECC23C",
           "size": 16,
           "sha256": "7ddb85ec26318e317db25f18fa77ace6283d1564ee57c40ca15db08121529ad9",
@@ -12159,7 +12159,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".rodata_registration_name_gModeCopyright1",
+          "section": ".rodata",
           "address": "0x096B64E4",
           "size": 16,
           "sha256": "84fbe0b9b20c6c69491fe74f109e12a34572e5c7c3b9421d17679a0ef641d058",
@@ -12175,7 +12175,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".data_registration_gModeCopyright1",
+          "section": ".data",
           "address": "0x09ECC2AC",
           "size": 16,
           "sha256": "6d8f961635dd4c183a17b93a1e89fc9aa59d7204bb42da8093655ccc592ce6b5",
@@ -12189,7 +12189,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".rodata_registration_name_gModeCopyright2",
+          "section": ".rodata",
           "address": "0x096B64F4",
           "size": 16,
           "sha256": "cf26bd5fda4c8ee7dae76325aab528d31f9b5a120b613f9df052b7c747f32ce4",
@@ -12203,7 +12203,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".data_registration_gModeCopyright2",
+          "section": ".data",
           "address": "0x09ECC2BC",
           "size": 16,
           "sha256": "85461196b8f4613d5d75db62c3cbe55e16bc3caff825337e07df0fe8f8efaa3f",
@@ -12217,7 +12217,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".rodata_registration_name_gModeStatus",
+          "section": ".rodata",
           "address": "0x096B6504",
           "size": 12,
           "sha256": "3e86549f115c2f97500700427df77dca4f97b526b0df06eeaf93d47f54247bbf",
@@ -12231,7 +12231,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".data_registration_gModeStatus",
+          "section": ".data",
           "address": "0x09ECC2CC",
           "size": 16,
           "sha256": "c430123522e859e3721030ce18e7bffd6263690b297855b2f38cdfc575d28291",
@@ -14353,7 +14353,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".rodata_registration_name_gModeWorldinspect",
+          "section": ".rodata",
           "address": "0x09947BE8",
           "size": 18,
           "sha256": "b63dad3bee1ea26919d41414f9fa9cf6bc8a9fc4fb688e6557c8767d4d0c8da1",
@@ -14367,7 +14367,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".data_registration_gModeWorldinspect",
+          "section": ".data",
           "address": "0x09ED0760",
           "size": 16,
           "sha256": "3df2f988daaf61ce3f73e4ab1f61c93d462b84f9924c6296c266bfa8562214fd",
@@ -14381,7 +14381,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".rodata_registration_name_gModeWorldwarp",
+          "section": ".rodata",
           "address": "0x09947C1C",
           "size": 15,
           "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
@@ -14395,7 +14395,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".data_registration_gModeWorldwarp",
+          "section": ".data",
           "address": "0x09ED09C4",
           "size": 16,
           "sha256": "874fb2dd3ea64ae3ba6d5dadef27fb7c36703b8b5b2950fee54a39b544328d57",
@@ -14437,7 +14437,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".rodata_registration_name_gModeMapinspect",
+          "section": ".rodata",
           "address": "0x099482BC",
           "size": 16,
           "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
@@ -14451,7 +14451,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".data_registration_gModeMapinspect",
+          "section": ".data",
           "address": "0x09ED0A2C",
           "size": 16,
           "sha256": "c57ec513dfe6ffc4b9f0d3ec0026f94dc1a42e3ec621d56d1374192fae423758",
@@ -14465,7 +14465,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".rodata_registration_name_gTaskDescMsShopHosi",
+          "section": ".rodata",
           "address": "0x099482CC",
           "size": 18,
           "sha256": "f788186e1d2464b8788261732a196def96b02fa5d81177c813ed1b07aa1e5de1",
@@ -14479,7 +14479,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".data_registration_gTaskDescMsShopHosi",
+          "section": ".data",
           "address": "0x09ED0A3C",
           "size": 24,
           "sha256": "710b16096d08a4c3a118fce410dc36614a1f8117817936ba1e795491043fcf06",
@@ -14493,7 +14493,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".rodata_registration_name_gModeBackupstat",
+          "section": ".rodata",
           "address": "0x099483A0",
           "size": 16,
           "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
@@ -14507,7 +14507,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".data_registration_gModeBackupstat",
+          "section": ".data",
           "address": "0x09ED0A60",
           "size": 16,
           "sha256": "0f481bcdba63ed6a8dce911cea46a59cab868f1d7c1d52d29a05cf52fbb09a71",
@@ -15097,7 +15097,7 @@
       "placements": [
         {
           "unit": "mode_jiminy.c",
-          "section": ".rodata_registration_name_gModeJiminy",
+          "section": ".rodata",
           "address": "0x0887F334",
           "size": 12,
           "sha256": "f35fb0f4da40a3b1f2b45c38f82e10958bcb739301f4bbeed25f651e444a6731",
@@ -15111,7 +15111,7 @@
         },
         {
           "unit": "mode_jiminy.c",
-          "section": ".data_registration_gModeJiminy",
+          "section": ".data",
           "address": "0x09F57450",
           "size": 16,
           "sha256": "662fad48831139ed5271fd0bd8fbcaa82b2f99712dd721cbf7a45cbd67d96ae4",
@@ -15243,7 +15243,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".rodata_registration_name_gTaskDescTutorial",
+          "section": ".rodata",
           "address": "0x08896514",
           "size": 14,
           "sha256": "971a176dbbc3b5621ce6a2c74e39b273fddc4300d70ec5123de714c607fe6d30",
@@ -15259,7 +15259,7 @@
         },
         {
           "unit": "tutorial.c",
-          "section": ".data_registration_gTaskDescTutorial",
+          "section": ".data",
           "address": "0x09F59118",
           "size": 24,
           "sha256": "f1fc57815bd3e326216c71a43c491d318dc36cb243b4f20545dbbb5ca5969847",
@@ -15273,7 +15273,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".rodata_registration_name_gModeMovie",
+          "section": ".rodata",
           "address": "0x0883F2D0",
           "size": 11,
           "sha256": "e30dde3a0344242c619d5f5aed7632a7a7b4117850cfca9a797e10a4a466edfa",
@@ -15287,7 +15287,7 @@
         },
         {
           "unit": "mode_movie.c",
-          "section": ".data_registration_gModeMovie",
+          "section": ".data",
           "address": "0x09F49AAC",
           "size": 16,
           "sha256": "d926c76c6d1dede66b940a5d3c5784b66181f3430064fc73f7b4267d377ec40b",
@@ -19237,7 +19237,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".rodata_registration_name_gModeAllmap",
+          "section": ".rodata",
           "address": "0x096CAEAC",
           "size": 12,
           "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
@@ -19251,7 +19251,7 @@
         },
         {
           "unit": "mode_allmap.c",
-          "section": ".data_registration_gModeAllmap",
+          "section": ".data",
           "address": "0x09F800CC",
           "size": 16,
           "sha256": "5476c3fcfdee7f50a46ef3e72f3baf8c297301a5e2e95eb5dc27930297e514b1",
@@ -19441,7 +19441,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".rodata_registration_name_gModeTitle",
+          "section": ".rodata",
           "address": "0x096CAFE4",
           "size": 11,
           "sha256": "6489e7bdbcb758edc3817c14ffaeffe39c7fb7bd93f766ed15173c5ec4b0fbe3",
@@ -19457,7 +19457,7 @@
         },
         {
           "unit": "mode_title.c",
-          "section": ".data_registration_gModeTitle",
+          "section": ".data",
           "address": "0x09F80194",
           "size": 16,
           "sha256": "9b03283a822016221381dd14615e1b8820e7b097f023ffd7e68b34ca9feaa294",
@@ -19585,7 +19585,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".rodata_registration_name_gModeCopyright1",
+          "section": ".rodata",
           "address": "0x096CB050",
           "size": 16,
           "sha256": "84fbe0b9b20c6c69491fe74f109e12a34572e5c7c3b9421d17679a0ef641d058",
@@ -19601,7 +19601,7 @@
         },
         {
           "unit": "mode_copyright1.c",
-          "section": ".data_registration_gModeCopyright1",
+          "section": ".data",
           "address": "0x09F80240",
           "size": 16,
           "sha256": "e34bc8f7436dac5ac0e4702b0f0ad2e4a84a5004c7d6b625d776321f8c2daf1c",
@@ -19615,7 +19615,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".rodata_registration_name_gModeCopyright2",
+          "section": ".rodata",
           "address": "0x096CB060",
           "size": 16,
           "sha256": "cf26bd5fda4c8ee7dae76325aab528d31f9b5a120b613f9df052b7c747f32ce4",
@@ -19629,7 +19629,7 @@
         },
         {
           "unit": "mode_copyright2.c",
-          "section": ".data_registration_gModeCopyright2",
+          "section": ".data",
           "address": "0x09F80250",
           "size": 16,
           "sha256": "2165ae33f41e075ac3dc68811d1192664789421d207b1be408eec6e06f1bb424",
@@ -19643,7 +19643,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".rodata_registration_name_gModeStatus",
+          "section": ".rodata",
           "address": "0x096CB070",
           "size": 12,
           "sha256": "3e86549f115c2f97500700427df77dca4f97b526b0df06eeaf93d47f54247bbf",
@@ -19657,7 +19657,7 @@
         },
         {
           "unit": "mode_status.c",
-          "section": ".data_registration_gModeStatus",
+          "section": ".data",
           "address": "0x09F80260",
           "size": 16,
           "sha256": "22dce321c97dab0527d5c65923cceacd25c08828ef036c305b033612a02ddf64",
@@ -21777,7 +21777,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".rodata_registration_name_gModeWorldinspect",
+          "section": ".rodata",
           "address": "0x09999384",
           "size": 18,
           "sha256": "b63dad3bee1ea26919d41414f9fa9cf6bc8a9fc4fb688e6557c8767d4d0c8da1",
@@ -21791,7 +21791,7 @@
         },
         {
           "unit": "mode_worldinspect.c",
-          "section": ".data_registration_gModeWorldinspect",
+          "section": ".data",
           "address": "0x09F84C74",
           "size": 16,
           "sha256": "54d3b5a6af78e0393f89ec14c0911e6b9e522719fbc327b9e9692bc6c750a2bc",
@@ -21805,7 +21805,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".rodata_registration_name_gModeWorldwarp",
+          "section": ".rodata",
           "address": "0x099993B8",
           "size": 15,
           "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
@@ -21819,7 +21819,7 @@
         },
         {
           "unit": "mode_worldwarp.c",
-          "section": ".data_registration_gModeWorldwarp",
+          "section": ".data",
           "address": "0x09F84ED8",
           "size": 16,
           "sha256": "b08b418a5176a702c04f9e2762174fcd02ada1952c08900052891e560179312c",
@@ -21861,7 +21861,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".rodata_registration_name_gModeMapinspect",
+          "section": ".rodata",
           "address": "0x09999A64",
           "size": 16,
           "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
@@ -21875,7 +21875,7 @@
         },
         {
           "unit": "mode_mapinspect.c",
-          "section": ".data_registration_gModeMapinspect",
+          "section": ".data",
           "address": "0x09F850BC",
           "size": 16,
           "sha256": "c68a59d9c9d17c654d0bd03d6b3a61d53c62297ed8cc382466312487a35ef53e",
@@ -21889,7 +21889,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".rodata_registration_name_gTaskDescMsShopHosi",
+          "section": ".rodata",
           "address": "0x09999A74",
           "size": 18,
           "sha256": "f788186e1d2464b8788261732a196def96b02fa5d81177c813ed1b07aa1e5de1",
@@ -21903,7 +21903,7 @@
         },
         {
           "unit": "ms.c",
-          "section": ".data_registration_gTaskDescMsShopHosi",
+          "section": ".data",
           "address": "0x09F850CC",
           "size": 24,
           "sha256": "8cec3a19f5d5afed2989454a2d88d04f9537218ab1d7f4ff7d35ebbd4f8b7c2c",
@@ -21917,7 +21917,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".rodata_registration_name_gModeBackupstat",
+          "section": ".rodata",
           "address": "0x09999B48",
           "size": 16,
           "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
@@ -21931,7 +21931,7 @@
         },
         {
           "unit": "mode_backupstat.c",
-          "section": ".data_registration_gModeBackupstat",
+          "section": ".data",
           "address": "0x09F850F0",
           "size": 16,
           "sha256": "a35d8a85c0c104eb8cbcb711c055a0c6d92cda7e29aa6acc9cb87cc91edc4797",

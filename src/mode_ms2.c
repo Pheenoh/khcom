@@ -551,9 +551,9 @@ void func_08107280(void) {
     }
 }
 
-const char gModeNameMsCharge[] __attribute__((section(".rodata_registration_name_gModeMsCharge"), aligned(1))) = "mode_ms_charge";
+const char gModeNameMsCharge[] = "mode_ms_charge";
 
-Mode gModeMsCharge __attribute__((section(".data_registration_gModeMsCharge"))) = {
+Mode gModeMsCharge = {
     gModeNameMsCharge,
     (void (*)(s32))mode_ms_charge_0,
     mode_ms_charge_1,

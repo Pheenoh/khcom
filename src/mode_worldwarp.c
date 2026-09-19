@@ -624,9 +624,9 @@ void func_08101970(void) {
     SetBgScroll(1, (u16)(gUnk_02035880 >> 8), 0);
 }
 
-const char gModeNameWorldwarp[] __attribute__((section(".rodata_registration_name_gModeWorldwarp"), aligned(1))) = "mode_worldwarp";
+const char gModeNameWorldwarp[] = "mode_worldwarp";
 
-Mode gModeWorldwarp __attribute__((section(".data_registration_gModeWorldwarp"))) = {
+Mode gModeWorldwarp = {
     gModeNameWorldwarp,
     (void (*)(s32))mode_worldwarp_0,
     (void (*)(void))mode_worldwarp_1,

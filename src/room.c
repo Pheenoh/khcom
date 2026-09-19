@@ -2160,9 +2160,9 @@ u8 func_080FABE4(GaWork* work) {
     return result;
 }
 
-const char gTaskName_09EF70B8[] __attribute__((section(".rodata_registration_name_gUnk_09EF70B8"), aligned(1))) = "task_room_name";
+const char gTaskName_09EF70B8[] = "task_room_name";
 
-TaskDesc gUnk_09EF70B8 __attribute__((section(".data_registration_gUnk_09EF70B8"))) = {
+TaskDesc gUnk_09EF70B8 = {
     gTaskName_09EF70B8,
     (void (*)(void*, void*))task_room_name_0,
     task_room_name_1,

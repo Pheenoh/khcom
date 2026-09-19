@@ -121,7 +121,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".data_registration_gModeMsCharge",
+          "section": ".data",
           "address": "0x9ef9608",
           "size": 16,
           "sha256": "47eb083199a242680088441094c872c8224baffcee9e67cdc2f335aa10ce4ecb",
@@ -135,7 +135,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".rodata_registration_name_gModeMsCharge",
+          "section": ".rodata",
           "address": "0x9993790",
           "size": 15,
           "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
@@ -321,7 +321,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".data_registration_gModeMsCharge",
+          "section": ".data",
           "address": "0x9ed09f4",
           "size": 16,
           "sha256": "d22d53cdd1004f96b3bc70d07a19f1b4b77d278cdd938b34371194af70674b80",
@@ -335,7 +335,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".rodata_registration_name_gModeMsCharge",
+          "section": ".rodata",
           "address": "0x99482a4",
           "size": 15,
           "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
@@ -521,7 +521,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".data_registration_gModeMsCharge",
+          "section": ".data",
           "address": "0x9f84ff8",
           "size": 16,
           "sha256": "c042931b07e3ace1872cc0b2c4c88813fe0f93ca2504969df589ef2b0f8fc6e4",
@@ -535,7 +535,7 @@
         },
         {
           "unit": "mode_ms2.c",
-          "section": ".rodata_registration_name_gModeMsCharge",
+          "section": ".rodata",
           "address": "0x9999a40",
           "size": 15,
           "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
