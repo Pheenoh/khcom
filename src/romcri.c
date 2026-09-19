@@ -1,5 +1,10 @@
 #include "pallet.h"
 #include "romcri.h"
+#include "task_names.h"
+
+const char gTaskNameRomcriEff[] = "task_romcri_eff";
+
+const char gTaskNameRomcriEff2[] = "task_romcri_eff2";
 
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);

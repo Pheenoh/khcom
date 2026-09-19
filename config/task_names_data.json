@@ -63,40 +63,29 @@
           "padding_before": 3
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_map",
+          "unit": "bos.c",
+          "section": ".rodata",
           "address": "0x0813E870",
-          "size": 13,
-          "sha256": "0338377bfa2380c391843b195ca69a0ff68ad6144d87d0109c7705b67b565769",
+          "size": 32,
+          "sha256": "24a000a59ecb79b42e67185ffcf2cd437db485d544b94bc0fad724ad82f5b1f3",
           "objects": [
             {
               "name": "gTaskNameBosMap",
               "offset": 0,
               "size": 13
+            },
+            {
+              "name": "gTaskNameBosShadow",
+              "offset": 16,
+              "size": 16
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_shadow",
-          "address": "0x0813E880",
-          "size": 16,
-          "sha256": "6a146cd64fb14220ed0872f14854c8719d17d77454fc6a2f4b0caceab85fe8e3",
-          "objects": [
-            {
-              "name": "gTaskNameBosShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_roomcreate",
+          "unit": "roomcreate.c",
+          "section": ".rodata",
           "address": "0x0813E890",
           "size": 16,
           "sha256": "8e3579298dc80033ed92994e1b1429ba671571c9804dca8f04e4e932e83b6255",
@@ -109,36 +98,27 @@
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff",
+          "unit": "romcri.c",
+          "section": ".rodata",
           "address": "0x0813E8A0",
-          "size": 16,
-          "sha256": "a1c242a94c32b02894a288f6a4eb86b0896487a259af021d3e8673b3f31f4abd",
+          "size": 33,
+          "sha256": "6093b208e748bee76fd21684339c9b5172e576aa1dfb6b286483bb5eb0c9dc66",
           "objects": [
             {
               "name": "gTaskNameRomcriEff",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff2",
-          "address": "0x0813E8B0",
-          "size": 17,
-          "sha256": "8786c73ae77f0fce64e74592a64b40179ac8c07013c0276b60ee990938fb1cac",
-          "objects": [
+            },
             {
               "name": "gTaskNameRomcriEff2",
-              "offset": 0,
+              "offset": 16,
               "size": 17
             }
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_pc_acddmg",
+          "unit": "pc.c",
+          "section": ".rodata",
           "address": "0x0813EDC0",
           "size": 15,
           "sha256": "bed8f6b32de6f691c64b32feb12b61975b9f2b177c660bf1a0aaec7ec625e13e",
@@ -213,40 +193,29 @@
           "padding_before": 3
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_map",
+          "unit": "bos.c",
+          "section": ".rodata",
           "address": "0x0813E8EC",
-          "size": 13,
-          "sha256": "0338377bfa2380c391843b195ca69a0ff68ad6144d87d0109c7705b67b565769",
+          "size": 32,
+          "sha256": "24a000a59ecb79b42e67185ffcf2cd437db485d544b94bc0fad724ad82f5b1f3",
           "objects": [
             {
               "name": "gTaskNameBosMap",
               "offset": 0,
               "size": 13
+            },
+            {
+              "name": "gTaskNameBosShadow",
+              "offset": 16,
+              "size": 16
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_shadow",
-          "address": "0x0813E8FC",
-          "size": 16,
-          "sha256": "6a146cd64fb14220ed0872f14854c8719d17d77454fc6a2f4b0caceab85fe8e3",
-          "objects": [
-            {
-              "name": "gTaskNameBosShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_roomcreate",
+          "unit": "roomcreate.c",
+          "section": ".rodata",
           "address": "0x0813E90C",
           "size": 16,
           "sha256": "8e3579298dc80033ed92994e1b1429ba671571c9804dca8f04e4e932e83b6255",
@@ -259,36 +228,27 @@
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff",
+          "unit": "romcri.c",
+          "section": ".rodata",
           "address": "0x0813E91C",
-          "size": 16,
-          "sha256": "a1c242a94c32b02894a288f6a4eb86b0896487a259af021d3e8673b3f31f4abd",
+          "size": 33,
+          "sha256": "6093b208e748bee76fd21684339c9b5172e576aa1dfb6b286483bb5eb0c9dc66",
           "objects": [
             {
               "name": "gTaskNameRomcriEff",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff2",
-          "address": "0x0813E92C",
-          "size": 17,
-          "sha256": "8786c73ae77f0fce64e74592a64b40179ac8c07013c0276b60ee990938fb1cac",
-          "objects": [
+            },
             {
               "name": "gTaskNameRomcriEff2",
-              "offset": 0,
+              "offset": 16,
               "size": 17
             }
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_pc_acddmg",
+          "unit": "pc.c",
+          "section": ".rodata",
           "address": "0x0813EE3C",
           "size": 15,
           "sha256": "bed8f6b32de6f691c64b32feb12b61975b9f2b177c660bf1a0aaec7ec625e13e",
@@ -363,40 +323,29 @@
           "padding_before": 3
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_map",
+          "unit": "bos.c",
+          "section": ".rodata",
           "address": "0x0888CD44",
-          "size": 13,
-          "sha256": "0338377bfa2380c391843b195ca69a0ff68ad6144d87d0109c7705b67b565769",
+          "size": 32,
+          "sha256": "24a000a59ecb79b42e67185ffcf2cd437db485d544b94bc0fad724ad82f5b1f3",
           "objects": [
             {
               "name": "gTaskNameBosMap",
               "offset": 0,
               "size": 13
+            },
+            {
+              "name": "gTaskNameBosShadow",
+              "offset": 16,
+              "size": 16
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_bos_shadow",
-          "address": "0x0888CD54",
-          "size": 16,
-          "sha256": "6a146cd64fb14220ed0872f14854c8719d17d77454fc6a2f4b0caceab85fe8e3",
-          "objects": [
-            {
-              "name": "gTaskNameBosShadow",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_roomcreate",
+          "unit": "roomcreate.c",
+          "section": ".rodata",
           "address": "0x0888CD64",
           "size": 16,
           "sha256": "8e3579298dc80033ed92994e1b1429ba671571c9804dca8f04e4e932e83b6255",
@@ -409,36 +358,27 @@
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff",
+          "unit": "romcri.c",
+          "section": ".rodata",
           "address": "0x0888CD74",
-          "size": 16,
-          "sha256": "a1c242a94c32b02894a288f6a4eb86b0896487a259af021d3e8673b3f31f4abd",
+          "size": 33,
+          "sha256": "6093b208e748bee76fd21684339c9b5172e576aa1dfb6b286483bb5eb0c9dc66",
           "objects": [
             {
               "name": "gTaskNameRomcriEff",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_romcri_eff2",
-          "address": "0x0888CD84",
-          "size": 17,
-          "sha256": "8786c73ae77f0fce64e74592a64b40179ac8c07013c0276b60ee990938fb1cac",
-          "objects": [
+            },
             {
               "name": "gTaskNameRomcriEff2",
-              "offset": 0,
+              "offset": 16,
               "size": 17
             }
           ]
         },
         {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_pc_acddmg",
+          "unit": "pc.c",
+          "section": ".rodata",
           "address": "0x0888D294",
           "size": 15,
           "sha256": "bed8f6b32de6f691c64b32feb12b61975b9f2b177c660bf1a0aaec7ec625e13e",

@@ -1,7 +1,9 @@
 #include "map_api.h"
 #include "m4a_song.h"
 #include "roomcreate.h"
+#include "task_names.h"
 
+const char gTaskNameRoomcreate[] = "task_roomcreate";
 
 void task_roomcreate_0(RoomCreateWork* work) {
     FldActor* act;

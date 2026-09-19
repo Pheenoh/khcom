@@ -1,5 +1,8 @@
 #include "pc.h"
 #include "pc_api.h"
+#include "task_names.h"
+
+const char gTaskNamePcAcddmg[] = "task_pc_acddmg";
 
 void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
     work->actor = obj;

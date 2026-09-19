@@ -1,5 +1,10 @@
 #include "macros.h"
 #include "bos.h"
+#include "task_names.h"
+
+const char gTaskNameBosMap[] = "task_bos_map";
+
+const char gTaskNameBosShadow[] = "task_bos_shadow";
 
 void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
     LoadBgTiles(0, cfg->tiles, cfg->tilesSize);
