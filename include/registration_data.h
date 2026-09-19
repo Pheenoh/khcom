@@ -283,10 +283,6 @@ extern TaskDesc gTaskDescSrollBSecn;
 extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
-extern const char gTaskNameBtlPopCb[];
-extern const char gTaskNameBtlExp[];
-extern const char gTaskNameBtlVslockon[];
-extern const char gTaskNameBtlHpoth[];
 extern const char gTaskNameLockon[];
 extern const char gModeNameContinue[];
 extern const char gTaskNameEventSeq[];
@@ -398,7 +394,6 @@ extern const char gTaskNameBosDsdRock[];
 extern const char gTaskNameBosDsdCircle[];
 extern const char gTaskNameBosDsdEnergy1[];
 extern const char gTaskNameBosDsdEnergy2[];
-extern const char gTaskNameChgCardObj[];
 extern const char gModeNamePooh[];
 extern const char gTaskNamePooPooh[];
 extern const char gTaskNamePooMap[];
@@ -536,12 +531,6 @@ extern const char gTaskNameBosLstFal[];
 extern const char gTaskNameBosLstCtr[];
 extern const char gTaskNameBosLstSnp[];
 extern const char gModeNameStaffRoll[];
-extern const char gTaskNameSrollAName[];
-extern const char gTaskNameSrollBChar[];
-extern const char gTaskNameSrollBLogo[];
-extern const char gTaskNameSrollBSecn[];
-extern const char gTaskNameSrollBCrtn[];
-extern const char gTaskNameSrollCChar[];
 
 extern TaskDesc gUnk_09EE2834;
 extern TaskDesc gUnk_09EE284C;
@@ -670,7 +659,6 @@ extern TaskDesc gUnk_09EFAA64;
 
 extern const char gTaskName_09EF2A5C[];
 extern const char gTaskName_09EF2A74[];
-extern const char gTaskName_09EF34A8[];
 extern const char gTaskName_09EF48E0[];
 extern const char gTaskName_09EF48F8[];
 extern const char gTaskName_09EF49A0[];
@@ -708,7 +696,6 @@ extern const char gTaskName_09EF6EAC[];
 extern const char gTaskName_09EF6F9C[];
 extern const char gTaskName_09EF9E8C[];
 extern const char gTaskName_09EF9EF4[];
-extern const char gTaskName_09EFAA64[];
 
 extern const char gModeNameEvent[];
 extern Mode gUnk_09EE273C;

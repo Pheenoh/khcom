@@ -1043,9 +1043,9 @@ void func_0805DB28(BtlEffect* p) {
     p->unk_00 &= ~4;
 }
 
-const char gTaskNameBtlPopCb[] __attribute__((section(".rodata_registration_name_gTaskDescBtlPopCb"), aligned(1))) = "task_btl_pop_cb";
+const char gTaskNameBtlPopCb[] = "task_btl_pop_cb";
 
-TaskDesc gTaskDescBtlPopCb __attribute__((section(".data_registration_gTaskDescBtlPopCb"))) = {
+TaskDesc gTaskDescBtlPopCb = {
     gTaskNameBtlPopCb,
     (void (*)(void*, void*))task_btl_pop_cb_0,
     task_btl_pop_cb_1,
@@ -1054,9 +1054,9 @@ TaskDesc gTaskDescBtlPopCb __attribute__((section(".data_registration_gTaskDescB
     0x1C,
 };
 
-const char gTaskNameBtlExp[] __attribute__((section(".rodata_registration_name_gTaskDescBtlExp"), aligned(1))) = "task_btl_exp";
+const char gTaskNameBtlExp[] = "task_btl_exp";
 
-TaskDesc gTaskDescBtlExp __attribute__((section(".data_registration_gTaskDescBtlExp"))) = {
+TaskDesc gTaskDescBtlExp = {
     gTaskNameBtlExp,
     (void (*)(void*, void*))task_btl_exp_0,
     task_btl_exp_1,
@@ -1065,9 +1065,9 @@ TaskDesc gTaskDescBtlExp __attribute__((section(".data_registration_gTaskDescBtl
     0x4C,
 };
 
-const char gTaskNameBtlVslockon[] __attribute__((section(".rodata_registration_name_gTaskDescBtlVslockon"), aligned(1))) = "task_btl_vslockon";
+const char gTaskNameBtlVslockon[] = "task_btl_vslockon";
 
-TaskDesc gTaskDescBtlVslockon __attribute__((section(".data_registration_gTaskDescBtlVslockon"))) = {
+TaskDesc gTaskDescBtlVslockon = {
     gTaskNameBtlVslockon,
     (void (*)(void*, void*))task_btl_vslockon_0,
     task_btl_vslockon_1,
@@ -1076,9 +1076,9 @@ TaskDesc gTaskDescBtlVslockon __attribute__((section(".data_registration_gTaskDe
     0x24,
 };
 
-const char gTaskNameBtlHpoth[] __attribute__((section(".rodata_registration_name_gTaskDescBtlHpoth"), aligned(1))) = "task_btl_hpoth";
+const char gTaskNameBtlHpoth[] = "task_btl_hpoth";
 
-TaskDesc gTaskDescBtlHpoth __attribute__((section(".data_registration_gTaskDescBtlHpoth"))) = {
+TaskDesc gTaskDescBtlHpoth = {
     gTaskNameBtlHpoth,
     (void (*)(void*, void*))task_btl_hpoth_0,
     task_btl_hpoth_1,

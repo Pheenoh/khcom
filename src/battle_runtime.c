@@ -5,7 +5,6 @@
 #include "key.h"
 #include "m4a_song.h"
 #include "obj_api.h"
-#include "macros.h"
 #include "battle.h"
 #include "battle_actor.h"
 
@@ -955,9 +954,6 @@ void _08019CB4(void) {
     }
     }
 }
-
-ALIGN_ZERO(2);
-
 
 u32 ClampBattlePosition(s32* px, s32* py, s32 radiusX, s32 radiusY) {
     u16 rx = radiusX;
@@ -2016,8 +2012,6 @@ u8 func_0801C1C0(u8 a) {
     }
     return 0;
 }
-
-ALIGN_ZERO(2);
 
 void _0801C1F8(u8 a, s32 x, s32 y, s32 z) {
     u16 id;

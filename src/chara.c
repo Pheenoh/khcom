@@ -1407,24 +1407,24 @@ void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count) {
     }
 }
 
-const char gTaskNameChgCardObj[] __attribute__((section(".rodata_registration_name_gTaskDescChgCardObj"), aligned(1))) = "task_chgCardObj";
+const char gTaskName_09EF34A8[] = "task_chara_mask_fade";
 
-TaskDesc gTaskDescChgCardObj __attribute__((section(".data_registration_gTaskDescChgCardObj"))) = {
-    gTaskNameChgCardObj,
-    (void (*)(void*, void*))task_chgCardObj_0,
-    task_chgCardObj_1,
-    (void (*)(void*))task_chgCardObj_2,
-    (void (*)(void*))task_chgCardObj_3,
-    0x44,
-};
-
-const char gTaskName_09EF34A8[] __attribute__((section(".rodata_registration_name_gUnk_09EF34A8"), aligned(1))) = "task_chara_mask_fade";
-
-TaskDesc gUnk_09EF34A8 __attribute__((section(".data_registration_gUnk_09EF34A8"))) = {
+TaskDesc gUnk_09EF34A8 = {
     gTaskName_09EF34A8,
     (void (*)(void*, void*))task_chara_mask_fade_0,
     task_chara_mask_fade_1,
     (void (*)(void*))task_chara_mask_fade_2,
     (void (*)(void*))task_chara_mask_fade_3,
     0x240,
+};
+
+const char gTaskNameChgCardObj[] = "task_chgCardObj";
+
+TaskDesc gTaskDescChgCardObj = {
+    gTaskNameChgCardObj,
+    (void (*)(void*, void*))task_chgCardObj_0,
+    task_chgCardObj_1,
+    (void (*)(void*))task_chgCardObj_2,
+    (void (*)(void*))task_chgCardObj_3,
+    0x44,
 };

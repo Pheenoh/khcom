@@ -2019,7 +2019,7 @@ void PcmPlaybackUpdate(void) {
 
 const char gTaskNameSrollAName[] __attribute__((section(".rodata_registration_name_gTaskDescSrollAName"), aligned(1))) = "task_sroll_a_name";
 
-TaskDesc gTaskDescSrollAName __attribute__((section(".data_registration_gTaskDescSrollAName"))) = {
+TaskDesc gTaskDescSrollAName = {
     gTaskNameSrollAName,
     (void (*)(void*, void*))task_sroll_a_name_0,
     task_sroll_a_name_1,
@@ -2030,7 +2030,7 @@ TaskDesc gTaskDescSrollAName __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameSrollBChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBChar"), aligned(1))) = "task_sroll_b_char";
 
-TaskDesc gTaskDescSrollBChar __attribute__((section(".data_registration_gTaskDescSrollBChar"))) = {
+TaskDesc gTaskDescSrollBChar = {
     gTaskNameSrollBChar,
     (void (*)(void*, void*))task_sroll_b_char_0,
     task_sroll_b_char_1,
@@ -2041,7 +2041,7 @@ TaskDesc gTaskDescSrollBChar __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameSrollBLogo[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBLogo"), aligned(1))) = "task_sroll_b_logo";
 
-TaskDesc gTaskDescSrollBLogo __attribute__((section(".data_registration_gTaskDescSrollBLogo"))) = {
+TaskDesc gTaskDescSrollBLogo = {
     gTaskNameSrollBLogo,
     (void (*)(void*, void*))task_sroll_b_logo_0,
     task_sroll_b_logo_1,
@@ -2052,7 +2052,7 @@ TaskDesc gTaskDescSrollBLogo __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameSrollBSecn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBSecn"), aligned(1))) = "task_sroll_b_secn";
 
-TaskDesc gTaskDescSrollBSecn __attribute__((section(".data_registration_gTaskDescSrollBSecn"))) = {
+TaskDesc gTaskDescSrollBSecn = {
     gTaskNameSrollBSecn,
     (void (*)(void*, void*))task_sroll_b_secn_0,
     task_sroll_b_secn_1,
@@ -2063,7 +2063,7 @@ TaskDesc gTaskDescSrollBSecn __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameSrollBCrtn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBCrtn"), aligned(1))) = "task_sroll_b_crtn";
 
-TaskDesc gTaskDescSrollBCrtn __attribute__((section(".data_registration_gTaskDescSrollBCrtn"))) = {
+TaskDesc gTaskDescSrollBCrtn = {
     gTaskNameSrollBCrtn,
     (void (*)(void*, void*))task_sroll_b_crtn_0,
     task_sroll_b_crtn_1,
@@ -2074,7 +2074,7 @@ TaskDesc gTaskDescSrollBCrtn __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameSrollCChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollCChar"), aligned(1))) = "task_sroll_c_char";
 
-TaskDesc gTaskDescSrollCChar __attribute__((section(".data_registration_gTaskDescSrollCChar"))) = {
+TaskDesc gTaskDescSrollCChar = {
     gTaskNameSrollCChar,
     (void (*)(void*, void*))task_sroll_c_char_0,
     task_sroll_c_char_1,
@@ -2085,7 +2085,7 @@ TaskDesc gTaskDescSrollCChar __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskName_09EFAA64[] __attribute__((section(".rodata_registration_name_gUnk_09EFAA64"), aligned(1))) = "task_sroll_tmr";
 
-TaskDesc gUnk_09EFAA64 __attribute__((section(".data_registration_gUnk_09EFAA64"))) = {
+TaskDesc gUnk_09EFAA64 = {
     gTaskName_09EFAA64,
     (void (*)(void*, void*))task_sroll_tmr_0,
     task_sroll_tmr_1,

@@ -1,5 +1,4 @@
 #include <string.h>
-#include "macros.h"
 #include "gba/syscall.h"
 #include "movie.h"
 
@@ -170,8 +169,6 @@ void MovieSetupAudioCodec(MoviePlayer* p, void* a, s32 b) {
         break;
     }
 }
-
-ALIGN_ZERO(2);
 
 MoviePlayer* MovieOpen(void* a) {
     u32* q;
