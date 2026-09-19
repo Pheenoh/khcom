@@ -128,7 +128,6 @@ typedef struct BtlAiWork {
 extern u8 gUnk_08901C8A[];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];
-extern AnimDef gUnk_0813E8F4[5];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09611AB8[];

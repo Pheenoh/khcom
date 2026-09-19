@@ -4,6 +4,24 @@
 #include "macros.h"
 #include "btl3.h"
 #include "btl3_api.h"
+#include "task_animation_assets.h"
+#include "task_names.h"
+
+const char gTaskNameBtlForm[] = "task_btl_form";
+
+const char gTaskNameBtlBorn[] = "task_btl_born";
+
+const char gTaskNameBtlRaid[] = "task_btl_raid";
+
+const AnimDef gUnk_0813E8F4[5] = {
+    { gUnk_09EE12E8, gUnk_09EE130C, gUnk_08B21CFC, 0, { 0, 0, 0 } },
+    { gUnk_09EE12D4, gUnk_09EE12E4, gUnk_08B21ACE, 0, { 0, 0, 0 } },
+    { gUnk_09EE1318, gUnk_09EE132C, gUnk_08B2213C, 0, { 0, 0, 0 } },
+    { gUnk_09EE1330, gUnk_09EE1360, gUnk_08B223E8, 0, { 0, 0, 0 } },
+    { gUnk_09EE1368, gUnk_09EE137C, gUnk_08B229A8, 0, { 0, 0, 0 } },
+};
+
+const char gTaskNameBtlBadstatus[] = "task_btl_badstatus";
 
 void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     s32 i;

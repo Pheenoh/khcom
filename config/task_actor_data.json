@@ -1576,24 +1576,44 @@
           "padding_before": 3
         },
         {
-          "unit": "btl3_data.c",
-          "section": ".rodata_btl3_000",
-          "address": "0x0813E8F4",
-          "size": 80,
-          "sha256": "713b52fe276f802ed510ece83cfc89eec585e68235becb2bd953dee2cd64f722",
+          "unit": "btl3.c",
+          "section": ".rodata",
+          "address": "0x0813E8C4",
+          "size": 147,
+          "sha256": "3c1c579c29f80b7a602dc93e36d82547a5b7ea9dea85150e6dc4d58393c56b3f",
           "objects": [
             {
-              "name": "gUnk_0813E8F4",
+              "name": "gTaskNameBtlForm",
               "offset": 0,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlBorn",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlRaid",
+              "offset": 32,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813E8F4",
+              "offset": 48,
               "size": 80,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/btl3.c\",581,\"0\"],[\"src/btl3.c\",600,\"0\"],[\"src/btl3.c\",604,\"2\"],[\"src/btl3.c\",608,\"3\"],[\"src/btl3.c\",612,\"4\"],[\"src/btl3.c\",617,\"1\"]],\"max_index\":4}"
+                "task_btl_badstatus_0 and task_btl_badstatus_1 select records 0..4"
               ]
+            },
+            {
+              "name": "gTaskNameBtlBadstatus",
+              "offset": 128,
+              "size": 19
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 3
         },
         {
           "unit": "smn_data.c",
@@ -4102,24 +4122,44 @@
           "padding_before": 3
         },
         {
-          "unit": "btl3_data.c",
-          "section": ".rodata_btl3_000",
-          "address": "0x0813E970",
-          "size": 80,
-          "sha256": "c402faa956d5337e63340877cc444f5f69dae9b2d2981096d9b316e7ed58bd8b",
+          "unit": "btl3.c",
+          "section": ".rodata",
+          "address": "0x0813E940",
+          "size": 147,
+          "sha256": "0bbee5f12075e7de473cf39b60a07200b90e90f7019dfad3553d678fbe70b706",
           "objects": [
             {
-              "name": "gUnk_0813E8F4",
+              "name": "gTaskNameBtlForm",
               "offset": 0,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlBorn",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlRaid",
+              "offset": 32,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813E8F4",
+              "offset": 48,
               "size": 80,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/btl3.c\",581,\"0\"],[\"src/btl3.c\",600,\"0\"],[\"src/btl3.c\",604,\"2\"],[\"src/btl3.c\",608,\"3\"],[\"src/btl3.c\",612,\"4\"],[\"src/btl3.c\",617,\"1\"]],\"max_index\":4}"
+                "task_btl_badstatus_0 and task_btl_badstatus_1 select records 0..4"
               ]
+            },
+            {
+              "name": "gTaskNameBtlBadstatus",
+              "offset": 128,
+              "size": 19
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 3
         },
         {
           "unit": "smn_data.c",
@@ -6628,24 +6668,44 @@
           "padding_before": 3
         },
         {
-          "unit": "btl3_data.c",
-          "section": ".rodata_btl3_000",
-          "address": "0x0888CDC8",
-          "size": 80,
-          "sha256": "d311c25fbec2023fab8a9389317b207922f95ed6632a1331cc8e2e622f421300",
+          "unit": "btl3.c",
+          "section": ".rodata",
+          "address": "0x0888CD98",
+          "size": 147,
+          "sha256": "6d6957c3b13081275a08f5bded38e227a5ec7822b83070ad84efb6a4fd5b5d64",
           "objects": [
             {
-              "name": "gUnk_0813E8F4",
+              "name": "gTaskNameBtlForm",
               "offset": 0,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlBorn",
+              "offset": 16,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameBtlRaid",
+              "offset": 32,
+              "size": 14
+            },
+            {
+              "name": "gUnk_0813E8F4",
+              "offset": 48,
               "size": 80,
               "consumer": [
                 "func_08019068",
-                "{\"calls\":[[\"src/btl3.c\",581,\"0\"],[\"src/btl3.c\",600,\"0\"],[\"src/btl3.c\",604,\"2\"],[\"src/btl3.c\",608,\"3\"],[\"src/btl3.c\",612,\"4\"],[\"src/btl3.c\",617,\"1\"]],\"max_index\":4}"
+                "task_btl_badstatus_0 and task_btl_badstatus_1 select records 0..4"
               ]
+            },
+            {
+              "name": "gTaskNameBtlBadstatus",
+              "offset": 128,
+              "size": 19
             }
           ],
           "alignment_before": 4,
-          "padding_before": 2
+          "padding_before": 3
         },
         {
           "unit": "smn_data.c",

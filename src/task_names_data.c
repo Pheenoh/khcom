@@ -55,10 +55,6 @@ const char gTaskNameBosShadow[] __attribute__((section(".rodata_names_bos_shadow
 const char gTaskNameRoomcreate[] __attribute__((section(".rodata_names_roomcreate"), aligned(4))) = "task_roomcreate";
 const char gTaskNameRomcriEff[] __attribute__((section(".rodata_names_romcri_eff"), aligned(4))) = "task_romcri_eff";
 const char gTaskNameRomcriEff2[] __attribute__((section(".rodata_names_romcri_eff2"), aligned(4))) = "task_romcri_eff2";
-const char gTaskNameBtlForm[] __attribute__((section(".rodata_names_btl_form"), aligned(4))) = "task_btl_form";
-const char gTaskNameBtlBorn[] __attribute__((section(".rodata_names_btl_born"), aligned(4))) = "task_btl_born";
-const char gTaskNameBtlRaid[] __attribute__((section(".rodata_names_btl_raid"), aligned(4))) = "task_btl_raid";
-const char gTaskNameBtlBadstatus[] __attribute__((section(".rodata_names_btl_badstatus"), aligned(4))) = "task_btl_badstatus";
 const char gTaskNameSmnCloud[] __attribute__((section(".rodata_names_smn_cloud"), aligned(4))) = "task_smn_cloud";
 const char gTaskNameSmnBambi[] __attribute__((section(".rodata_names_smn_bambi"), aligned(4))) = "task_smn_bambi";
 const char gTaskNameSmnTink[] __attribute__((section(".rodata_names_smn_tink"), aligned(4))) = "task_smn_tink";

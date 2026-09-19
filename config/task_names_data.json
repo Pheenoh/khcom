@@ -800,68 +800,6 @@
         },
         {
           "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_form",
-          "address": "0x0813E8C4",
-          "size": 14,
-          "sha256": "65f82ce428cccf43f6ec9532f10d9ba6c407e7dab4663a3ddc3fc1f01d3c56da",
-          "objects": [
-            {
-              "name": "gTaskNameBtlForm",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_born",
-          "address": "0x0813E8D4",
-          "size": 14,
-          "sha256": "72bdf3692dd158dc3fd696847fc9c5093dcabc3577b6b00174c2bedfbd0d8be8",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBorn",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_raid",
-          "address": "0x0813E8E4",
-          "size": 14,
-          "sha256": "02d682d210202844a5144379a4f048fd39e20cdd06a03a15ea434746fc9c85a5",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRaid",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_badstatus",
-          "address": "0x0813E944",
-          "size": 19,
-          "sha256": "f07a5ca0d67ffce0304d21a0acc127822175a37f6ca2e0d260e3d4b133f8ddf2",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBadstatus",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
           "section": ".rodata_names_smn_cloud",
           "address": "0x0813E9D8",
           "size": 15,
@@ -2254,68 +2192,6 @@
         },
         {
           "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_form",
-          "address": "0x0813E940",
-          "size": 14,
-          "sha256": "65f82ce428cccf43f6ec9532f10d9ba6c407e7dab4663a3ddc3fc1f01d3c56da",
-          "objects": [
-            {
-              "name": "gTaskNameBtlForm",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_born",
-          "address": "0x0813E950",
-          "size": 14,
-          "sha256": "72bdf3692dd158dc3fd696847fc9c5093dcabc3577b6b00174c2bedfbd0d8be8",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBorn",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_raid",
-          "address": "0x0813E960",
-          "size": 14,
-          "sha256": "02d682d210202844a5144379a4f048fd39e20cdd06a03a15ea434746fc9c85a5",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRaid",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_badstatus",
-          "address": "0x0813E9C0",
-          "size": 19,
-          "sha256": "f07a5ca0d67ffce0304d21a0acc127822175a37f6ca2e0d260e3d4b133f8ddf2",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBadstatus",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
           "section": ".rodata_names_smn_cloud",
           "address": "0x0813EA54",
           "size": 15,
@@ -3703,68 +3579,6 @@
               "name": "gTaskNameRomcriEff2",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_form",
-          "address": "0x0888CD98",
-          "size": 14,
-          "sha256": "65f82ce428cccf43f6ec9532f10d9ba6c407e7dab4663a3ddc3fc1f01d3c56da",
-          "objects": [
-            {
-              "name": "gTaskNameBtlForm",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_born",
-          "address": "0x0888CDA8",
-          "size": 14,
-          "sha256": "72bdf3692dd158dc3fd696847fc9c5093dcabc3577b6b00174c2bedfbd0d8be8",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBorn",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_raid",
-          "address": "0x0888CDB8",
-          "size": 14,
-          "sha256": "02d682d210202844a5144379a4f048fd39e20cdd06a03a15ea434746fc9c85a5",
-          "objects": [
-            {
-              "name": "gTaskNameBtlRaid",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "task_names_data.c",
-          "section": ".rodata_names_btl_badstatus",
-          "address": "0x0888CE18",
-          "size": 19,
-          "sha256": "f07a5ca0d67ffce0304d21a0acc127822175a37f6ca2e0d260e3d4b133f8ddf2",
-          "objects": [
-            {
-              "name": "gTaskNameBtlBadstatus",
-              "offset": 0,
-              "size": 19
             }
           ]
         },

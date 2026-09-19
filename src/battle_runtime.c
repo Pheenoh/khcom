@@ -17,8 +17,8 @@ void func_08019050(u16 a, s32 b, s32 c, s32 d) {
     gBtlWork->unk_020 = d;
 }
 
-void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
-    AnimDef* e = &tbl[i];
+void func_08019068(const AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
+    const AnimDef* e = &tbl[i];
     AnimChangeWithTables(a, e->animId, j, e->anims, e->gfxTable);
     SetObjTileSource(obj, e->tiles);
 }
