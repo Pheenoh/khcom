@@ -307,105 +307,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6B90",
-          "address": "0x984bcb4",
-          "size": 14,
-          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6B90",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BA8",
-          "address": "0x984bd3c",
-          "size": 14,
-          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BA8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BC0",
-          "address": "0x984bda4",
-          "size": 14,
-          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BC0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BD8",
-          "address": "0x984be2c",
-          "size": 14,
-          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BD8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BF0",
-          "address": "0x984beb4",
-          "size": 14,
-          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BF0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C08",
-          "address": "0x984bf5c",
-          "size": 14,
-          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C08",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C20",
-          "address": "0x984c004",
-          "size": 14,
-          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C20",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CCC",
           "address": "0x984c080",
           "size": 17,
@@ -421,7 +323,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CE4",
           "address": "0x984c094",
           "size": 17,
@@ -437,7 +339,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CFC",
           "address": "0x984c0a8",
           "size": 17,
@@ -453,7 +355,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D14",
           "address": "0x984c0bc",
           "size": 17,
@@ -469,7 +371,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D2C",
           "address": "0x984c0d0",
           "size": 17,
@@ -485,7 +387,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D44",
           "address": "0x984c0e4",
           "size": 17,
@@ -501,7 +403,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D5C",
           "address": "0x984c0f8",
           "size": 17,
@@ -517,7 +419,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D74",
           "address": "0x984c10c",
           "size": 17,
@@ -533,7 +435,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D8C",
           "address": "0x984c120",
           "size": 17,
@@ -549,7 +451,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DA4",
           "address": "0x984c134",
           "size": 17,
@@ -565,7 +467,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DD4",
           "address": "0x984c180",
           "size": 14,
@@ -579,7 +481,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DEC",
           "address": "0x984c1b8",
           "size": 19,
@@ -593,7 +495,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E04",
           "address": "0x984c1f4",
           "size": 14,
@@ -607,7 +509,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E1C",
           "address": "0x984c22c",
           "size": 14,
@@ -621,7 +523,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E34",
           "address": "0x984c264",
           "size": 14,
@@ -635,7 +537,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6EAC",
           "address": "0x984c2b4",
           "size": 13,
@@ -649,7 +551,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6F9C",
           "address": "0x984c394",
           "size": 14,
@@ -1046,105 +948,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6B90",
-          "address": "0x98007c8",
-          "size": 14,
-          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6B90",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BA8",
-          "address": "0x9800850",
-          "size": 14,
-          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BA8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BC0",
-          "address": "0x98008b8",
-          "size": 14,
-          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BC0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BD8",
-          "address": "0x9800940",
-          "size": 14,
-          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BD8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BF0",
-          "address": "0x98009c8",
-          "size": 14,
-          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BF0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C08",
-          "address": "0x9800a70",
-          "size": 14,
-          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C08",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C20",
-          "address": "0x9800b18",
-          "size": 14,
-          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C20",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CCC",
           "address": "0x9800b94",
           "size": 17,
@@ -1160,7 +964,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CE4",
           "address": "0x9800ba8",
           "size": 17,
@@ -1176,7 +980,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CFC",
           "address": "0x9800bbc",
           "size": 17,
@@ -1192,7 +996,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D14",
           "address": "0x9800bd0",
           "size": 17,
@@ -1208,7 +1012,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D2C",
           "address": "0x9800be4",
           "size": 17,
@@ -1224,7 +1028,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D44",
           "address": "0x9800bf8",
           "size": 17,
@@ -1240,7 +1044,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D5C",
           "address": "0x9800c0c",
           "size": 17,
@@ -1256,7 +1060,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D74",
           "address": "0x9800c20",
           "size": 17,
@@ -1272,7 +1076,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D8C",
           "address": "0x9800c34",
           "size": 17,
@@ -1288,7 +1092,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DA4",
           "address": "0x9800c48",
           "size": 17,
@@ -1304,7 +1108,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DD4",
           "address": "0x9800c94",
           "size": 14,
@@ -1318,7 +1122,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DEC",
           "address": "0x9800ccc",
           "size": 19,
@@ -1332,7 +1136,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E04",
           "address": "0x9800d08",
           "size": 14,
@@ -1346,7 +1150,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E1C",
           "address": "0x9800d40",
           "size": 14,
@@ -1360,7 +1164,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E34",
           "address": "0x9800d78",
           "size": 14,
@@ -1374,7 +1178,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6EAC",
           "address": "0x9800dc8",
           "size": 13,
@@ -1388,7 +1192,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6F9C",
           "address": "0x9800ea8",
           "size": 14,
@@ -1785,105 +1589,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6B90",
-          "address": "0x9828688",
-          "size": 14,
-          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6B90",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BA8",
-          "address": "0x9828710",
-          "size": 14,
-          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BA8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BC0",
-          "address": "0x9828778",
-          "size": 14,
-          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BC0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BD8",
-          "address": "0x9828800",
-          "size": 14,
-          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BD8",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6BF0",
-          "address": "0x9828888",
-          "size": 14,
-          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6BF0",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C08",
-          "address": "0x9828930",
-          "size": 14,
-          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C08",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
-          "section": ".rodata_registration_name_gUnk_09EF6C20",
-          "address": "0x98289d8",
-          "size": 14,
-          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
-          "objects": [
-            {
-              "name": "gTaskName_09EF6C20",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CCC",
           "address": "0x9828a54",
           "size": 17,
@@ -1899,7 +1605,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CE4",
           "address": "0x9828a68",
           "size": 17,
@@ -1915,7 +1621,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6CFC",
           "address": "0x9828a7c",
           "size": 17,
@@ -1931,7 +1637,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D14",
           "address": "0x9828a90",
           "size": 17,
@@ -1947,7 +1653,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D2C",
           "address": "0x9828aa4",
           "size": 17,
@@ -1963,7 +1669,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D44",
           "address": "0x9828ab8",
           "size": 17,
@@ -1979,7 +1685,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D5C",
           "address": "0x9828acc",
           "size": 17,
@@ -1995,7 +1701,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D74",
           "address": "0x9828ae0",
           "size": 17,
@@ -2011,7 +1717,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6D8C",
           "address": "0x9828af4",
           "size": 17,
@@ -2027,7 +1733,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DA4",
           "address": "0x9828b08",
           "size": 17,
@@ -2043,7 +1749,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DD4",
           "address": "0x9828b54",
           "size": 14,
@@ -2057,7 +1763,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6DEC",
           "address": "0x9828b8c",
           "size": 19,
@@ -2071,7 +1777,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E04",
           "address": "0x9828bc8",
           "size": 14,
@@ -2085,7 +1791,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E1C",
           "address": "0x9828c00",
           "size": 14,
@@ -2099,7 +1805,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6E34",
           "address": "0x9828c38",
           "size": 14,
@@ -2113,7 +1819,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6EAC",
           "address": "0x9828c88",
           "size": 13,
@@ -2127,7 +1833,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gUnk_09EF6F9C",
           "address": "0x9828d68",
           "size": 14,

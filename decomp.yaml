@@ -126,6 +126,7 @@ tools:
             - src/wlogo
             - src/unk_
             - src/map
+            - src/map_tasks
             - src/actor_ui_resource_data
             - src/animation_resource_data
             - src/aux_animation_data

@@ -23,7 +23,7 @@
     "boss_tm_movement": "Canonical 32-byte body and foot step types are preserved field-for-field. task_bos_tm_1 wraps idle phase0..7 and walking phase0..9; func_080B83C4 wraps body angle index0..10. task_bos_tm_body_1 and task_bos_tm_foot_1 explicitly select translated step indices0..15 or0..8. Reaction paths explicitly use step0..2. Foot phase bytes produce height selectors0..4. Body effect choice uses GetRandom()%4. Seven unused complete zero terminator records and four unused halfword suffix values remain separately named neutral scalar objects; no runtime access is claimed. All record/scalar bytes agree across US/JP/EU.",
     "boss_tm_native_owner": "The Trickmaster parent lifecycle owns four task pointers and a TaskPool and directly creates its body, foot, club, arm and table callbacks. These callbacks and their repeatedly consumed movement tables form one contiguous original code and initialized-data run across all regions, previously split between the end of wlogo.c, the beginning of bos2.c and a storage-only data unit. Ordinary definitions in boss_tm.c preserve all 31 initialized objects and their relocations. The private logo pools remain in wlogo.c; its naturally 0x74-byte BSS followed by the Trickmaster section with native eight-byte alignment accounts for the former four-byte filler. No data-table extent, remaining shared state or interleaved name/asset boundary is changed.",
     "sio_readonly_owner": "The SIO modes index exactly two and three existing SioAnimDef records; their pointer fields reference the same typed animation resources used by these callbacks. Both tables are read only and have no consumers outside mode_sio.c. They interleave the six mode names in US/JP; EU omits the card-exchange table and two names, and instead has two terminated byte-encoded Deck labels read by the Latin text loader. Ordinary const records, names and character-list byte arrays reproduce each complete original readonly group and every relocation target. The compiler aligns string initializers to four bytes but retains the natural byte alignment of array initializers, explaining the adjacent EU labels without extra bytes or section attributes. Obsolete raw metadata fragments and fixed-address aliases are removed; record bounds, label extents, code, RAM and encoded assets are preserved.",
-    "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects form one native 1556-byte initialized-data run in map.c across all regions. Definitions retain original types, bounds, initializer values and regional guards except that the three fourteen-byte level-offset/event arrays use mutable byte storage. Their old const declarations came from decompilation (89d03418 for level offsets and 474e8dcb for event bytes); recovery commit 47811f02 introduced the definitions and custom readonly sections. Mutable spelling is a reconstruction of the native initialized-data organization, not evidence of observed writes. The two floor-name indexes are read by the floor-task helper named by the final task descriptor; the underscore belongs to the map-debug initializer and remains present but unused by the EU renderer. These three objects move from the artificial map_text_data.c storage split into those consumers, with EU localized records retained under shared canonical declarations. Callback descriptors, table references, native compiler offsets and complete regional object/content contracts corroborate the organization. Lower-ROM names and localized text records retain their placements, and this does not assert a complete original source boundary with map_runtime.c or resolve all remaining readonly sections.",
+    "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects retain their complete 1556-byte initialized-data run across all regions. The map engine prefix now emits the first 348 bytes and the contiguous map task owner emits the following 1208 bytes with ordinary input alignment. Definitions retain their bounds, initializers and regional guards. The three fourteen-byte level-offset/event arrays remain mutable storage, an earlier reconstruction of their native initialized-data organization rather than evidence of writes. The two floor-name indexes and underscore move with their task consumers to map_tasks.c. EU localized records retain shared canonical declarations. Every original object/content contract is preserved; unrelated lower-ROM placements remain unchanged.",
     "allmap_readonly_geometry": "The original 32-byte coordinate span is reconstructed as two const signed-halfword tables of four x/y pairs. func_080D484C indexes the first four-pair rectangle while drawing the four door overlays. The next four pairs form a complete centered 32-pixel square in every original ROM, followed by this same owner's four-direction offset and direction-selection tables. History c4bf64c6 declared only an unsized array, so no prior C extent establishes an eight-entry array. The second four-pair table retains the address-style name gUnk_096FDC20. Assigning this dormant but geometrically complete table to the same owner is an explicit source-organization inference; no live use or uniquely recovered original array boundary is claimed. Original ROM scans find no direct pointer to any byte of the second table. Ordinary definitions place the four earlier names, both coordinate tables and the existing readonly suffix in one 218-byte section. All original bytes, existing object extents, code, relocations and RAM are unchanged, and the former absolute coordinate alias and raw data fragment are removed.",
     "boogie_boundary": "The status UI functions end at StockMesDisp. The following ten Boogie lifecycle/helper functions, private work pointer, name and descriptor share boss_boogie.c. The final three formerly status-owned helpers operate only on BoogieDiceWork and now precede its callbacks in bos4.c. Their parent pointer is the BoogieWork passed by TaskCreate, while BoogieWork.dialog is the returned Task handle; the obsolete overlapping prefix-view type is removed. The original caller uses an unsigned switch for GetBoogieDiceState, supporting one canonical u32 return contract. Fresh sequential links of ordinary text/data/BSS preserve all three original regional layouts without extra alignment or padding. The intervening raw readonly table provider remains separate; this bounded source model does not claim its ownership is recovered.",
     "event_message_readonly": "The seven task names interleave scalar-only rendering tables used by event_message.c and card.c message rendering. The active C8C glyph table is exactly two halfwords: its reader copies four bytes and toggles index zero/one. The adjacent C90 four-halfword table is a bounded reconstruction assumption: four repeated 0x0800 values, compatible with neighboring four-position tables, and no aligned original-ROM pointer to any of its eight bytes in US, JP or EU. It is retained as a separate dormant object, without claiming a live use or uniquely proven original declaration. Shared table declarations are canonical const views in msg_api.h. Ordinary definitions reproduce the complete 217-byte readonly run and its original object order in every region.",
@@ -4472,8 +4472,8 @@
           "unit": "map.c",
           "section": ".data",
           "address": "0x9ef6a34",
-          "size": 1556,
-          "sha256": "8b153808cec17aaabe7446525e744e954143635d04740ce83da2dc9dad815b21",
+          "size": 348,
+          "sha256": "5a05ac1cd9dbcee293595b5bcaa777c829c5cf7c2b523421f905b6b6c6f1d42a",
           "objects": [
             {
               "name": "gUnk_09EF6A34",
@@ -4559,250 +4559,259 @@
               "name": "gTaskDescMapAnm",
               "offset": 324,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "map_tasks.c",
+          "section": ".data",
+          "address": "0x09EF6B90",
+          "size": 1208,
+          "sha256": "e8c83176815beb4709261abb7d4e2ebd29deca44e809cae8b0a3e528a72a18c6",
+          "objects": [
             {
               "name": "gUnk_09EF6B90",
-              "offset": 348,
+              "offset": 0,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BA8",
-              "offset": 372,
+              "offset": 24,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BC0",
-              "offset": 396,
+              "offset": 48,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BD8",
-              "offset": 420,
+              "offset": 72,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BF0",
-              "offset": 444,
+              "offset": 96,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C08",
-              "offset": 468,
+              "offset": 120,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C20",
-              "offset": 492,
+              "offset": 144,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C38",
-              "offset": 516,
+              "offset": 168,
               "size": 2
             },
             {
               "name": "gTaskDescMapDbg",
-              "offset": 520,
+              "offset": 172,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkJump",
-              "offset": 544,
+              "offset": 196,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkEnm",
-              "offset": 568,
+              "offset": 220,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkDmy",
-              "offset": 592,
+              "offset": 244,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkTutorial",
-              "offset": 616,
+              "offset": 268,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkSpider",
-              "offset": 640,
+              "offset": 292,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CCC",
-              "offset": 664,
+              "offset": 316,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CE4",
-              "offset": 688,
+              "offset": 340,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CFC",
-              "offset": 712,
+              "offset": 364,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D14",
-              "offset": 736,
+              "offset": 388,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D2C",
-              "offset": 760,
+              "offset": 412,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D44",
-              "offset": 784,
+              "offset": 436,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D5C",
-              "offset": 808,
+              "offset": 460,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D74",
-              "offset": 832,
+              "offset": 484,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D8C",
-              "offset": 856,
+              "offset": 508,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DA4",
-              "offset": 880,
+              "offset": 532,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmk00",
-              "offset": 904,
+              "offset": 556,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DD4",
-              "offset": 928,
+              "offset": 580,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DEC",
-              "offset": 952,
+              "offset": 604,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E04",
-              "offset": 976,
+              "offset": 628,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E1C",
-              "offset": 1000,
+              "offset": 652,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E34",
-              "offset": 1024,
+              "offset": 676,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrize",
-              "offset": 1048,
+              "offset": 700,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzCard",
-              "offset": 1072,
+              "offset": 724,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzStock",
-              "offset": 1096,
+              "offset": 748,
               "size": 24
             },
             {
               "name": "gTaskDescMapMsg",
-              "offset": 1120,
+              "offset": 772,
               "size": 24
             },
             {
               "name": "gUnk_09EF6EAC",
-              "offset": 1144,
+              "offset": 796,
               "size": 24
             },
             {
               "name": "gTaskDescMapSpark",
-              "offset": 1168,
+              "offset": 820,
               "size": 24
             },
             {
               "name": "gTaskDescMapTalk",
-              "offset": 1192,
+              "offset": 844,
               "size": 24
             },
             {
               "name": "gTaskDescMapDonald",
-              "offset": 1216,
+              "offset": 868,
               "size": 24
             },
             {
               "name": "gTaskDescMapGoofy",
-              "offset": 1240,
+              "offset": 892,
               "size": 24
             },
             {
               "name": "gTaskDescMapNamine",
-              "offset": 1264,
+              "offset": 916,
               "size": 24
             },
             {
               "name": "gTaskDescMapNiseriku",
-              "offset": 1288,
+              "offset": 940,
               "size": 24
             },
             {
               "name": "gTaskDescMapMickey",
-              "offset": 1312,
+              "offset": 964,
               "size": 24
             },
             {
               "name": "gTaskDescMapTutorial",
-              "offset": 1336,
+              "offset": 988,
               "size": 24
             },
             {
               "name": "gTaskDescMapStair",
-              "offset": 1360,
+              "offset": 1012,
               "size": 24
             },
             {
               "name": "gUnk_09EF6F9C",
-              "offset": 1384,
+              "offset": 1036,
               "size": 24
             },
             {
               "name": "gTaskDescMapDmg",
-              "offset": 1408,
+              "offset": 1060,
               "size": 24
             },
             {
               "name": "gUnk_09EF6FCC",
-              "offset": 1432,
+              "offset": 1084,
               "size": 52
             },
             {
               "name": "gUnk_09EF7000",
-              "offset": 1484,
+              "offset": 1136,
               "size": 48
             },
             {
               "name": "gTaskDescMapFloor",
-              "offset": 1532,
+              "offset": 1184,
               "size": 24
             }
           ]
@@ -4974,7 +4983,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDbg",
           "address": "0x0984C014",
           "size": 12,
@@ -4990,7 +4999,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkJump",
           "address": "0x0984C020",
           "size": 17,
@@ -5004,7 +5013,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkEnm",
           "address": "0x0984C034",
           "size": 16,
@@ -5020,7 +5029,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkDmy",
           "address": "0x0984C044",
           "size": 16,
@@ -5034,7 +5043,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkTutorial",
           "address": "0x0984C054",
           "size": 21,
@@ -5048,7 +5057,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkSpider",
           "address": "0x0984C06C",
           "size": 19,
@@ -5064,7 +5073,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmk00",
           "address": "0x0984C148",
           "size": 14,
@@ -5080,7 +5089,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrize",
           "address": "0x0984C274",
           "size": 14,
@@ -5096,7 +5105,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzCard",
           "address": "0x0984C284",
           "size": 16,
@@ -5112,7 +5121,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzStock",
           "address": "0x0984C294",
           "size": 17,
@@ -5126,7 +5135,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMsg",
           "address": "0x0984C2A8",
           "size": 12,
@@ -5142,7 +5151,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapSpark",
           "address": "0x0984C2C4",
           "size": 14,
@@ -5158,7 +5167,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTalk",
           "address": "0x0984C2D4",
           "size": 13,
@@ -5174,7 +5183,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDonald",
           "address": "0x0984C300",
           "size": 15,
@@ -5188,7 +5197,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGoofy",
           "address": "0x0984C32C",
           "size": 14,
@@ -5202,7 +5211,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNamine",
           "address": "0x0984C33C",
           "size": 15,
@@ -5218,7 +5227,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNiseriku",
           "address": "0x0984C34C",
           "size": 17,
@@ -5234,7 +5243,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMickey",
           "address": "0x0984C360",
           "size": 15,
@@ -5250,7 +5259,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTutorial",
           "address": "0x0984C370",
           "size": 17,
@@ -5266,7 +5275,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapStair",
           "address": "0x0984C384",
           "size": 14,
@@ -5282,7 +5291,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDmg",
           "address": "0x0984C3A4",
           "size": 12,
@@ -5298,7 +5307,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapFloor",
           "address": "0x0984C3B0",
           "size": 14,
@@ -11139,8 +11148,8 @@
           "unit": "map.c",
           "section": ".data",
           "address": "0x9ecde20",
-          "size": 1556,
-          "sha256": "606a476828dacbcd5b087d61a4aa2a391b3fa29b55f8c2dff55606b4ceca2337",
+          "size": 348,
+          "sha256": "7d3a288aaf74054d05d2e8f90c6a83f3b9ecec8597ff25793297ded091a87a92",
           "objects": [
             {
               "name": "gUnk_09EF6A34",
@@ -11226,250 +11235,259 @@
               "name": "gTaskDescMapAnm",
               "offset": 324,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "map_tasks.c",
+          "section": ".data",
+          "address": "0x09ECDF7C",
+          "size": 1208,
+          "sha256": "569d21705c5e1a2286d96b05ea48d12a741df235c5a6d6d16463efcef3c4c298",
+          "objects": [
             {
               "name": "gUnk_09EF6B90",
-              "offset": 348,
+              "offset": 0,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BA8",
-              "offset": 372,
+              "offset": 24,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BC0",
-              "offset": 396,
+              "offset": 48,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BD8",
-              "offset": 420,
+              "offset": 72,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BF0",
-              "offset": 444,
+              "offset": 96,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C08",
-              "offset": 468,
+              "offset": 120,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C20",
-              "offset": 492,
+              "offset": 144,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C38",
-              "offset": 516,
+              "offset": 168,
               "size": 2
             },
             {
               "name": "gTaskDescMapDbg",
-              "offset": 520,
+              "offset": 172,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkJump",
-              "offset": 544,
+              "offset": 196,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkEnm",
-              "offset": 568,
+              "offset": 220,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkDmy",
-              "offset": 592,
+              "offset": 244,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkTutorial",
-              "offset": 616,
+              "offset": 268,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkSpider",
-              "offset": 640,
+              "offset": 292,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CCC",
-              "offset": 664,
+              "offset": 316,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CE4",
-              "offset": 688,
+              "offset": 340,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CFC",
-              "offset": 712,
+              "offset": 364,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D14",
-              "offset": 736,
+              "offset": 388,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D2C",
-              "offset": 760,
+              "offset": 412,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D44",
-              "offset": 784,
+              "offset": 436,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D5C",
-              "offset": 808,
+              "offset": 460,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D74",
-              "offset": 832,
+              "offset": 484,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D8C",
-              "offset": 856,
+              "offset": 508,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DA4",
-              "offset": 880,
+              "offset": 532,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmk00",
-              "offset": 904,
+              "offset": 556,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DD4",
-              "offset": 928,
+              "offset": 580,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DEC",
-              "offset": 952,
+              "offset": 604,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E04",
-              "offset": 976,
+              "offset": 628,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E1C",
-              "offset": 1000,
+              "offset": 652,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E34",
-              "offset": 1024,
+              "offset": 676,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrize",
-              "offset": 1048,
+              "offset": 700,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzCard",
-              "offset": 1072,
+              "offset": 724,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzStock",
-              "offset": 1096,
+              "offset": 748,
               "size": 24
             },
             {
               "name": "gTaskDescMapMsg",
-              "offset": 1120,
+              "offset": 772,
               "size": 24
             },
             {
               "name": "gUnk_09EF6EAC",
-              "offset": 1144,
+              "offset": 796,
               "size": 24
             },
             {
               "name": "gTaskDescMapSpark",
-              "offset": 1168,
+              "offset": 820,
               "size": 24
             },
             {
               "name": "gTaskDescMapTalk",
-              "offset": 1192,
+              "offset": 844,
               "size": 24
             },
             {
               "name": "gTaskDescMapDonald",
-              "offset": 1216,
+              "offset": 868,
               "size": 24
             },
             {
               "name": "gTaskDescMapGoofy",
-              "offset": 1240,
+              "offset": 892,
               "size": 24
             },
             {
               "name": "gTaskDescMapNamine",
-              "offset": 1264,
+              "offset": 916,
               "size": 24
             },
             {
               "name": "gTaskDescMapNiseriku",
-              "offset": 1288,
+              "offset": 940,
               "size": 24
             },
             {
               "name": "gTaskDescMapMickey",
-              "offset": 1312,
+              "offset": 964,
               "size": 24
             },
             {
               "name": "gTaskDescMapTutorial",
-              "offset": 1336,
+              "offset": 988,
               "size": 24
             },
             {
               "name": "gTaskDescMapStair",
-              "offset": 1360,
+              "offset": 1012,
               "size": 24
             },
             {
               "name": "gUnk_09EF6F9C",
-              "offset": 1384,
+              "offset": 1036,
               "size": 24
             },
             {
               "name": "gTaskDescMapDmg",
-              "offset": 1408,
+              "offset": 1060,
               "size": 24
             },
             {
               "name": "gUnk_09EF6FCC",
-              "offset": 1432,
+              "offset": 1084,
               "size": 52
             },
             {
               "name": "gUnk_09EF7000",
-              "offset": 1484,
+              "offset": 1136,
               "size": 48
             },
             {
               "name": "gTaskDescMapFloor",
-              "offset": 1532,
+              "offset": 1184,
               "size": 24
             }
           ]
@@ -11641,7 +11659,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDbg",
           "address": "0x09800B28",
           "size": 12,
@@ -11657,7 +11675,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkJump",
           "address": "0x09800B34",
           "size": 17,
@@ -11671,7 +11689,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkEnm",
           "address": "0x09800B48",
           "size": 16,
@@ -11687,7 +11705,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkDmy",
           "address": "0x09800B58",
           "size": 16,
@@ -11701,7 +11719,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkTutorial",
           "address": "0x09800B68",
           "size": 21,
@@ -11715,7 +11733,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkSpider",
           "address": "0x09800B80",
           "size": 19,
@@ -11731,7 +11749,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmk00",
           "address": "0x09800C5C",
           "size": 14,
@@ -11747,7 +11765,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrize",
           "address": "0x09800D88",
           "size": 14,
@@ -11763,7 +11781,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzCard",
           "address": "0x09800D98",
           "size": 16,
@@ -11779,7 +11797,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzStock",
           "address": "0x09800DA8",
           "size": 17,
@@ -11793,7 +11811,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMsg",
           "address": "0x09800DBC",
           "size": 12,
@@ -11809,7 +11827,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapSpark",
           "address": "0x09800DD8",
           "size": 14,
@@ -11825,7 +11843,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTalk",
           "address": "0x09800DE8",
           "size": 13,
@@ -11841,7 +11859,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDonald",
           "address": "0x09800E14",
           "size": 15,
@@ -11855,7 +11873,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGoofy",
           "address": "0x09800E40",
           "size": 14,
@@ -11869,7 +11887,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNamine",
           "address": "0x09800E50",
           "size": 15,
@@ -11885,7 +11903,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNiseriku",
           "address": "0x09800E60",
           "size": 17,
@@ -11901,7 +11919,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMickey",
           "address": "0x09800E74",
           "size": 15,
@@ -11917,7 +11935,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTutorial",
           "address": "0x09800E84",
           "size": 17,
@@ -11933,7 +11951,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapStair",
           "address": "0x09800E98",
           "size": 14,
@@ -11949,7 +11967,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDmg",
           "address": "0x09800EB8",
           "size": 12,
@@ -11965,7 +11983,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapFloor",
           "address": "0x09800EC4",
           "size": 14,
@@ -17803,8 +17821,8 @@
           "unit": "map.c",
           "section": ".data",
           "address": "0x9f820a4",
-          "size": 1556,
-          "sha256": "a780f092bf90f46d3e6bf9d6b198098dd75141201df0c66082d4bc46ecdd9cd6",
+          "size": 348,
+          "sha256": "d18555f041d606595de44572ad62b340939191df4d81fc67e168a328ae3420f1",
           "objects": [
             {
               "name": "gUnk_09EF6A34",
@@ -17890,250 +17908,259 @@
               "name": "gTaskDescMapAnm",
               "offset": 324,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "map_tasks.c",
+          "section": ".data",
+          "address": "0x09F82200",
+          "size": 1208,
+          "sha256": "575c95c5df9722816db2e1f1cdc66a339cfd4540b3fbbe0bd6240a86c766c849",
+          "objects": [
             {
               "name": "gUnk_09EF6B90",
-              "offset": 348,
+              "offset": 0,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BA8",
-              "offset": 372,
+              "offset": 24,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BC0",
-              "offset": 396,
+              "offset": 48,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BD8",
-              "offset": 420,
+              "offset": 72,
               "size": 24
             },
             {
               "name": "gUnk_09EF6BF0",
-              "offset": 444,
+              "offset": 96,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C08",
-              "offset": 468,
+              "offset": 120,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C20",
-              "offset": 492,
+              "offset": 144,
               "size": 24
             },
             {
               "name": "gUnk_09EF6C38",
-              "offset": 516,
+              "offset": 168,
               "size": 2
             },
             {
               "name": "gTaskDescMapDbg",
-              "offset": 520,
+              "offset": 172,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkJump",
-              "offset": 544,
+              "offset": 196,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkEnm",
-              "offset": 568,
+              "offset": 220,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkDmy",
-              "offset": 592,
+              "offset": 244,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkTutorial",
-              "offset": 616,
+              "offset": 268,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmkSpider",
-              "offset": 640,
+              "offset": 292,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CCC",
-              "offset": 664,
+              "offset": 316,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CE4",
-              "offset": 688,
+              "offset": 340,
               "size": 24
             },
             {
               "name": "gUnk_09EF6CFC",
-              "offset": 712,
+              "offset": 364,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D14",
-              "offset": 736,
+              "offset": 388,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D2C",
-              "offset": 760,
+              "offset": 412,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D44",
-              "offset": 784,
+              "offset": 436,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D5C",
-              "offset": 808,
+              "offset": 460,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D74",
-              "offset": 832,
+              "offset": 484,
               "size": 24
             },
             {
               "name": "gUnk_09EF6D8C",
-              "offset": 856,
+              "offset": 508,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DA4",
-              "offset": 880,
+              "offset": 532,
               "size": 24
             },
             {
               "name": "gTaskDescMapGmk00",
-              "offset": 904,
+              "offset": 556,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DD4",
-              "offset": 928,
+              "offset": 580,
               "size": 24
             },
             {
               "name": "gUnk_09EF6DEC",
-              "offset": 952,
+              "offset": 604,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E04",
-              "offset": 976,
+              "offset": 628,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E1C",
-              "offset": 1000,
+              "offset": 652,
               "size": 24
             },
             {
               "name": "gUnk_09EF6E34",
-              "offset": 1024,
+              "offset": 676,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrize",
-              "offset": 1048,
+              "offset": 700,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzCard",
-              "offset": 1072,
+              "offset": 724,
               "size": 24
             },
             {
               "name": "gTaskDescMapPrzStock",
-              "offset": 1096,
+              "offset": 748,
               "size": 24
             },
             {
               "name": "gTaskDescMapMsg",
-              "offset": 1120,
+              "offset": 772,
               "size": 24
             },
             {
               "name": "gUnk_09EF6EAC",
-              "offset": 1144,
+              "offset": 796,
               "size": 24
             },
             {
               "name": "gTaskDescMapSpark",
-              "offset": 1168,
+              "offset": 820,
               "size": 24
             },
             {
               "name": "gTaskDescMapTalk",
-              "offset": 1192,
+              "offset": 844,
               "size": 24
             },
             {
               "name": "gTaskDescMapDonald",
-              "offset": 1216,
+              "offset": 868,
               "size": 24
             },
             {
               "name": "gTaskDescMapGoofy",
-              "offset": 1240,
+              "offset": 892,
               "size": 24
             },
             {
               "name": "gTaskDescMapNamine",
-              "offset": 1264,
+              "offset": 916,
               "size": 24
             },
             {
               "name": "gTaskDescMapNiseriku",
-              "offset": 1288,
+              "offset": 940,
               "size": 24
             },
             {
               "name": "gTaskDescMapMickey",
-              "offset": 1312,
+              "offset": 964,
               "size": 24
             },
             {
               "name": "gTaskDescMapTutorial",
-              "offset": 1336,
+              "offset": 988,
               "size": 24
             },
             {
               "name": "gTaskDescMapStair",
-              "offset": 1360,
+              "offset": 1012,
               "size": 24
             },
             {
               "name": "gUnk_09EF6F9C",
-              "offset": 1384,
+              "offset": 1036,
               "size": 24
             },
             {
               "name": "gTaskDescMapDmg",
-              "offset": 1408,
+              "offset": 1060,
               "size": 24
             },
             {
               "name": "gUnk_09EF6FCC",
-              "offset": 1432,
+              "offset": 1084,
               "size": 52
             },
             {
               "name": "gUnk_09EF7000",
-              "offset": 1484,
+              "offset": 1136,
               "size": 48
             },
             {
               "name": "gTaskDescMapFloor",
-              "offset": 1532,
+              "offset": 1184,
               "size": 24
             }
           ]
@@ -18305,7 +18332,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDbg",
           "address": "0x098289E8",
           "size": 12,
@@ -18321,7 +18348,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkJump",
           "address": "0x098289F4",
           "size": 17,
@@ -18335,7 +18362,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkEnm",
           "address": "0x09828A08",
           "size": 16,
@@ -18351,7 +18378,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkDmy",
           "address": "0x09828A18",
           "size": 16,
@@ -18365,7 +18392,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkTutorial",
           "address": "0x09828A28",
           "size": 21,
@@ -18379,7 +18406,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmkSpider",
           "address": "0x09828A40",
           "size": 19,
@@ -18395,7 +18422,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGmk00",
           "address": "0x09828B1C",
           "size": 14,
@@ -18411,7 +18438,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrize",
           "address": "0x09828C48",
           "size": 14,
@@ -18427,7 +18454,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzCard",
           "address": "0x09828C58",
           "size": 16,
@@ -18443,7 +18470,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapPrzStock",
           "address": "0x09828C68",
           "size": 17,
@@ -18457,7 +18484,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMsg",
           "address": "0x09828C7C",
           "size": 12,
@@ -18473,7 +18500,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapSpark",
           "address": "0x09828C98",
           "size": 14,
@@ -18489,7 +18516,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTalk",
           "address": "0x09828CA8",
           "size": 13,
@@ -18505,7 +18532,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDonald",
           "address": "0x09828CD4",
           "size": 15,
@@ -18519,7 +18546,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapGoofy",
           "address": "0x09828D00",
           "size": 14,
@@ -18533,7 +18560,7 @@
           ]
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNamine",
           "address": "0x09828D10",
           "size": 15,
@@ -18549,7 +18576,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapNiseriku",
           "address": "0x09828D20",
           "size": 17,
@@ -18565,7 +18592,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapMickey",
           "address": "0x09828D34",
           "size": 15,
@@ -18581,7 +18608,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapTutorial",
           "address": "0x09828D44",
           "size": 17,
@@ -18597,7 +18624,7 @@
           "padding_before": 1
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapStair",
           "address": "0x09828D58",
           "size": 14,
@@ -18613,7 +18640,7 @@
           "padding_before": 3
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapDmg",
           "address": "0x09828D78",
           "size": 12,
@@ -18629,7 +18656,7 @@
           "padding_before": 2
         },
         {
-          "unit": "map.c",
+          "unit": "map_tasks.c",
           "section": ".rodata_registration_name_gTaskDescMapFloor",
           "address": "0x09828D84",
           "size": 14,
