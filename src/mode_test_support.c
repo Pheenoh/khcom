@@ -834,9 +834,9 @@ u16 GetCardMooglePointValue(u16 a) {
     return v;
 }
 
-const char gTaskNameLockon[] __attribute__((section(".rodata_registration_name_gTaskDescLockon"), aligned(1))) = "task_lockon";
+const char gTaskNameLockon[] = "task_lockon";
 
-TaskDesc gTaskDescLockon __attribute__((section(".data_registration_gTaskDescLockon"))) = {
+TaskDesc gTaskDescLockon = {
     gTaskNameLockon,
     (void (*)(void*, void*))task_lockon_0,
     task_lockon_1,

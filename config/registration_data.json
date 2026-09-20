@@ -203,7 +203,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gTaskDescLockon",
+          "section": ".rodata",
           "address": "0x08F6E184",
           "size": 12,
           "sha256": "e8f1064d98dbbacd92c66800733271699a9d7c6aa5c043cbd9e1d5b1010c3392",
@@ -217,7 +217,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".data_registration_gTaskDescLockon",
+          "section": ".data",
           "address": "0x09EE26D4",
           "size": 24,
           "sha256": "edf6d38c3aa1ae8d2dfb2ddba8a2a7572b77d5d6216616ddedba6b9be1269838",
@@ -7389,7 +7389,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gTaskDescLockon",
+          "section": ".rodata",
           "address": "0x08F6168C",
           "size": 12,
           "sha256": "e8f1064d98dbbacd92c66800733271699a9d7c6aa5c043cbd9e1d5b1010c3392",
@@ -7403,7 +7403,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".data_registration_gTaskDescLockon",
+          "section": ".data",
           "address": "0x09EBA150",
           "size": 24,
           "sha256": "b3b335acc728082a66a6f662547c5ad10cf0eb6d28d2d7684bb07522d391f225",
@@ -14547,7 +14547,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gTaskDescLockon",
+          "section": ".rodata",
           "address": "0x08F7F15C",
           "size": 12,
           "sha256": "e8f1064d98dbbacd92c66800733271699a9d7c6aa5c043cbd9e1d5b1010c3392",
@@ -14561,7 +14561,7 @@
         },
         {
           "unit": "mode_test_support.c",
-          "section": ".data_registration_gTaskDescLockon",
+          "section": ".data",
           "address": "0x09F5D544",
           "size": 24,
           "sha256": "bcfebdc353d24d37caa14a000758805df18e57997dde9c50953be300d02ab765",
