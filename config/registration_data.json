@@ -15,7 +15,8 @@
     "pooh_eu_background_indexes": "The EU-only five-language floor-background pointer indexes are consumed only by poo.c func_080D313C, which selects the appropriate floor span and copies it to background VRAM. Their ten pointers immediately follow that owner's established native initialized-data run. Ordinary EU-scoped definitions extend the run from 0xBD8 to 0xC00 without changing payloads, pointer targets or any US/JP definition. Both original index object contracts and all preceding Pooh object contracts remain validated.",
     "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
     "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary.",
-    "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization."
+    "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization.",
+    "title_readonly_owner": "The four title task names and two readonly lookup tables share title.c consumers. The menu loops enumerate four s32 entries {4,5,1,2}; the luminance callback copies exactly three s16 entries {-7,0,3} into its local array. Ordinary const definitions reproduce the complete 0x5E-byte readonly run in every original region with native alignment, preserving all four original name extents and both independently bounded table spans. The old raw fragments and address aliases are removed without code or asset-payload changes."
   },
   "regions": {
     "us": {
@@ -4022,15 +4023,40 @@
         },
         {
           "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLogo",
-          "address": "0x096FDCA8",
-          "size": 16,
-          "sha256": "53199e071ca363b48d05d655c599396f2b08d3a937b37a7687b2e25ced935baa",
+          "section": ".rodata",
+          "address": "0x96fdca8",
+          "size": 94,
+          "sha256": "d49a8c1ee698876c1e450274246d7b46452678cd5943750a2456d345be37d1bd",
           "objects": [
             {
               "name": "gTaskNameTitleLogo",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gTaskNameTitleObj",
+              "offset": 16,
+              "size": 15
+            },
+            {
+              "name": "gUnk_096FDCC8",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameTitleMenu",
+              "offset": 48,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDCE8",
+              "offset": 64,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameTitleLumichange",
+              "offset": 72,
+              "size": 22
             }
           ],
           "alignment_before": 4,
@@ -4062,48 +4088,6 @@
               "name": "gTaskDescTitleLumichange",
               "offset": 72,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleObj",
-          "address": "0x096FDCB8",
-          "size": 15,
-          "sha256": "da52ab9160ae5a5106d23b13ccc822334d6927331a3178d2a48703abe543a7b5",
-          "objects": [
-            {
-              "name": "gTaskNameTitleObj",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleMenu",
-          "address": "0x096FDCD8",
-          "size": 16,
-          "sha256": "a8c3ebd50e77e367cff5059691bcb078fe6cbbe7df6b4edd1899d562c88f2af8",
-          "objects": [
-            {
-              "name": "gTaskNameTitleMenu",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLumichange",
-          "address": "0x096FDCF0",
-          "size": 22,
-          "sha256": "ce1952f334f047005006bf60e28c00545d41ad11cbdcfa950491401de0278f00",
-          "objects": [
-            {
-              "name": "gTaskNameTitleLumichange",
-              "offset": 0,
-              "size": 22
             }
           ]
         },
@@ -11283,15 +11267,40 @@
         },
         {
           "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLogo",
-          "address": "0x096B6484",
-          "size": 16,
-          "sha256": "53199e071ca363b48d05d655c599396f2b08d3a937b37a7687b2e25ced935baa",
+          "section": ".rodata",
+          "address": "0x96b6484",
+          "size": 94,
+          "sha256": "d49a8c1ee698876c1e450274246d7b46452678cd5943750a2456d345be37d1bd",
           "objects": [
             {
               "name": "gTaskNameTitleLogo",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gTaskNameTitleObj",
+              "offset": 16,
+              "size": 15
+            },
+            {
+              "name": "gUnk_096FDCC8",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameTitleMenu",
+              "offset": 48,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDCE8",
+              "offset": 64,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameTitleLumichange",
+              "offset": 72,
+              "size": 22
             }
           ],
           "alignment_before": 4,
@@ -11323,48 +11332,6 @@
               "name": "gTaskDescTitleLumichange",
               "offset": 72,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleObj",
-          "address": "0x096B6494",
-          "size": 15,
-          "sha256": "da52ab9160ae5a5106d23b13ccc822334d6927331a3178d2a48703abe543a7b5",
-          "objects": [
-            {
-              "name": "gTaskNameTitleObj",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleMenu",
-          "address": "0x096B64B4",
-          "size": 16,
-          "sha256": "a8c3ebd50e77e367cff5059691bcb078fe6cbbe7df6b4edd1899d562c88f2af8",
-          "objects": [
-            {
-              "name": "gTaskNameTitleMenu",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLumichange",
-          "address": "0x096B64CC",
-          "size": 22,
-          "sha256": "ce1952f334f047005006bf60e28c00545d41ad11cbdcfa950491401de0278f00",
-          "objects": [
-            {
-              "name": "gTaskNameTitleLumichange",
-              "offset": 0,
-              "size": 22
             }
           ]
         },
@@ -18459,15 +18426,40 @@
         },
         {
           "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLogo",
-          "address": "0x096CAFF0",
-          "size": 16,
-          "sha256": "53199e071ca363b48d05d655c599396f2b08d3a937b37a7687b2e25ced935baa",
+          "section": ".rodata",
+          "address": "0x96caff0",
+          "size": 94,
+          "sha256": "d49a8c1ee698876c1e450274246d7b46452678cd5943750a2456d345be37d1bd",
           "objects": [
             {
               "name": "gTaskNameTitleLogo",
               "offset": 0,
               "size": 16
+            },
+            {
+              "name": "gTaskNameTitleObj",
+              "offset": 16,
+              "size": 15
+            },
+            {
+              "name": "gUnk_096FDCC8",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameTitleMenu",
+              "offset": 48,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDCE8",
+              "offset": 64,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameTitleLumichange",
+              "offset": 72,
+              "size": 22
             }
           ],
           "alignment_before": 4,
@@ -18514,48 +18506,6 @@
               "name": "gTaskDescTitleLumichange",
               "offset": 132,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleObj",
-          "address": "0x096CB000",
-          "size": 15,
-          "sha256": "da52ab9160ae5a5106d23b13ccc822334d6927331a3178d2a48703abe543a7b5",
-          "objects": [
-            {
-              "name": "gTaskNameTitleObj",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleMenu",
-          "address": "0x096CB020",
-          "size": 16,
-          "sha256": "a8c3ebd50e77e367cff5059691bcb078fe6cbbe7df6b4edd1899d562c88f2af8",
-          "objects": [
-            {
-              "name": "gTaskNameTitleMenu",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "title.c",
-          "section": ".rodata_registration_name_gTaskDescTitleLumichange",
-          "address": "0x096CB038",
-          "size": 22,
-          "sha256": "ce1952f334f047005006bf60e28c00545d41ad11cbdcfa950491401de0278f00",
-          "objects": [
-            {
-              "name": "gTaskNameTitleLumichange",
-              "offset": 0,
-              "size": 22
             }
           ]
         },

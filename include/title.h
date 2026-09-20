@@ -71,8 +71,6 @@ extern u8 gUnk_0984A778[];
 extern u8 gUnk_0984A7B8[];
 extern u8 gUnk_0984A7D8[];
 extern u8 gUnk_0984A7F8[];
-extern s32 gUnk_096FDCC8[];
-extern s16 gUnk_096FDCE8[];
 
 u8 func_080D6280(void);
 u8 func_080D6294(void);

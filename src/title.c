@@ -49,6 +49,18 @@ extern u8 gUnkEu_09740536[];
 extern u8 gUnkEu_0973EEFE[];
 #endif
 
+const char gTaskNameTitleLogo[] = "task_title_logo";
+
+const char gTaskNameTitleObj[] = "task_title_obj";
+
+const s32 gUnk_096FDCC8[4] = {4, 5, 1, 2};
+
+const char gTaskNameTitleMenu[] = "task_title_menu";
+
+const s16 gUnk_096FDCE8[3] = {-7, 0, 3};
+
+const char gTaskNameTitleLumichange[] = "task_title_lumichange";
+
 u8 gUnk_02034ED0;
 
 void task_title_logo_0(TitleLogoWork* work) {
@@ -794,8 +806,6 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
 
 ALIGN_ZERO(2);
 
-const char gTaskNameTitleLogo[] __attribute__((section(".rodata_registration_name_gTaskDescTitleLogo"), aligned(1))) = "task_title_logo";
-
 TaskDesc gTaskDescTitleLogo = {
     gTaskNameTitleLogo,
     (void (*)(void*, void*))task_title_logo_0,
@@ -804,8 +814,6 @@ TaskDesc gTaskDescTitleLogo = {
     (void (*)(void*))task_title_logo_3,
     0x54,
 };
-
-const char gTaskNameTitleObj[] __attribute__((section(".rodata_registration_name_gTaskDescTitleObj"), aligned(1))) = "task_title_obj";
 
 TaskDesc gTaskDescTitleObj = {
     gTaskNameTitleObj,
@@ -825,8 +833,6 @@ void** gUnkEu_09F801D4[5] = {
     gUnkEu_09F81BB0,
 };
 #endif
-
-const char gTaskNameTitleMenu[] __attribute__((section(".rodata_registration_name_gTaskDescTitleMenu"), aligned(1))) = "task_title_menu";
 
 TaskDesc gTaskDescTitleMenu = {
     gTaskNameTitleMenu,
@@ -854,8 +860,6 @@ void** gUnkEu_09F80214[5] = {
     gUnkEu_09F81C24,
 };
 #endif
-
-const char gTaskNameTitleLumichange[] __attribute__((section(".rodata_registration_name_gTaskDescTitleLumichange"), aligned(1))) = "task_title_lumichange";
 
 TaskDesc gTaskDescTitleLumichange = {
     gTaskNameTitleLumichange,
