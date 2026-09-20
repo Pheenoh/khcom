@@ -13,6 +13,26 @@ extern void* gUnkEu_09F80124[5];
 extern void* gUnkEu_09F80138[5];
 #endif
 
+const u16 gUnk_096FDC30[4][2] = {
+    {0xFFFF, 1},
+    {1, 1},
+    {1, 0xFFFF},
+    {0xFFFF, 0xFFFF},
+};
+
+const u32 gUnk_096FDC40[4] = {0, 3, 1, 2};
+
+const s16 gUnk_096FDC50[4][4] = {
+    {120, 0, 0, 0},
+    {104, 136, 0, 0},
+    {88, 120, 152, 0},
+    {72, 104, 136, 168},
+};
+
+const char gTaskNameAllmapDoorinfo[] = "task_allmap_doorinfo";
+
+const char gTaskNameAllmapPusha[] = "task_allmap_pusha";
+
 static s32 gUnk_02034E84;
 static s32 gUnk_02034E88;
 static s32 gUnk_02034E8C;
@@ -471,9 +491,9 @@ u8 func_080D422C(AllmapCursorPos a) {
         r = func_080D5494(p);
         if (r != 255) {
             if (func_080DF51C(func_080D5494(a)) == 2) {
-                v = func_080D3AB8(r, gUnk_096FDC40[i][0]);
+                v = func_080D3AB8(r, gUnk_096FDC40[i]);
             } else {
-                v = func_080D3A70(r, gUnk_096FDC40[i][0]);
+                v = func_080D3A70(r, gUnk_096FDC40[i]);
             }
 
             if (v != 0) {
@@ -497,7 +517,7 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
         pos.y = work->pos.y + gUnk_096FDC30[i][1];
         room = func_080D5494(pos);
 
-        if (room != 0xFF && func_080D3A70(room, gUnk_096FDC40[i][0])) {
+        if (room != 0xFF && func_080D3A70(room, gUnk_096FDC40[i])) {
             n = func_080DF548(room) + 1;
 
             if (n == 10) {
@@ -548,7 +568,7 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
         pos.y = work->pos.y + gUnk_096FDC30[i][1];
         room = func_080D5494(pos);
 
-        if (room != 0xFF && func_080D3AB8(room, gUnk_096FDC40[i][0])) {
+        if (room != 0xFF && func_080D3AB8(room, gUnk_096FDC40[i])) {
             break;
         }
     }
@@ -556,7 +576,7 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
     if (i == 4) {
         work->unk_114 = 0;
     } else {
-        func_080E8C84(work->unk_004, gUnk_096FDC40[i][0]);
+        func_080E8C84(work->unk_004, gUnk_096FDC40[i]);
         work->unk_114 = func_080E8D00();
     }
 
@@ -1221,8 +1241,6 @@ TaskDesc gTaskDescAllmapBar = {
     0x830,
 };
 
-const char gTaskNameAllmapDoorinfo[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapDoorinfo"), aligned(1))) = "task_allmap_doorinfo";
-
 TaskDesc gTaskDescAllmapDoorinfo = {
     gTaskNameAllmapDoorinfo,
     (void (*)(void*, void*))task_allmap_doorinfo_0,
@@ -1231,8 +1249,6 @@ TaskDesc gTaskDescAllmapDoorinfo = {
     (void (*)(void*))task_allmap_doorinfo_3,
     0x118,
 };
-
-const char gTaskNameAllmapPusha[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapPusha"), aligned(1))) = "task_allmap_pusha";
 
 TaskDesc gTaskDescAllmapPusha = {
     gTaskNameAllmapPusha,
