@@ -1,3 +1,4 @@
+#include "mode_wlogo.h"
 #include "registration_data.h"
 #include "mode_sio.h"
 #include "msg_api.h"
@@ -31,14 +32,6 @@ extern u8 gUnkEu_08C9CD3C[];
 extern u8 gUnkEu_08CC8BFC[];
 extern u8 gUnkEu_08CCCBFC[];
 #endif
-
-typedef struct WLogoTaskWork {
-    u8 unk_00;
-    u8 unk_01[3];
-    s32 unk_04;
-    s16 unk_08;
-    u8 unk_0A[2];
-} WLogoTaskWork;
 
 void func_080B4154(void);
 void func_080B4210(u8 a);

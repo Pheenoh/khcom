@@ -21,29 +21,6 @@
 #include "anim.h"
 #include "gba/keys.h"
 
-typedef struct CardBattleWork {
-    TaskPool tasks;
-    void* tiles;
-    void* palette;
-    u8 unk_1C[0x28];
-    void* unk_44[4];
-    u8 unk_54[0x50];
-    s16 x;
-    u8 unk_A6[0x0A];
-    s16 unk_B0;
-    u8 unk_B2[0x07];
-    u8 unk_B9;
-    u8 unk_BA;
-    u8 unk_BB[0x11];
-} CardBattleWork;
-
-typedef struct EventCardLink {
-    u8 unk_00[0x3C];
-    CardSlot* slot;
-    u8 unk_40[0x24];
-    u8 node[0x14];
-} EventCardLink;
-
 extern u8 gUnk_0905EEE6[];
 
 u16 func_080787B8(CardBattleWork* w, u8 n);
@@ -581,7 +558,6 @@ void func_08076CB4(UnkStruct_08080268* w) {
     }
 }
 
-
 s32 func_08076F4C(CardBattleWork* w) {
     if (func_080787B8(w, 0) == 0 && w->unk_B0 <= 1 && w->unk_B9 != 0) {
         return 1;
@@ -614,13 +590,6 @@ void func_080789E4(void* work);
 void func_08078BB4(void* work);
 u8 func_080782AC(CardDisplayWork** cards, u8 count);
 s32 func_080AE28C(void* cards, void* output, u8 count);
-
-typedef struct {
-    u32 slot : 8;
-    u32 mode : 8;
-    u32 unk_02 : 16;
-    u8* state;
-} EventReloadArgs;
 
 s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     UnkStruct_080ABA80 data;
@@ -1401,7 +1370,6 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
 
     return 1;
 }
-
 
 const char gTaskNameCardBattleSora[] = "cardbattle";
 

@@ -118,4 +118,34 @@ struct CardSlot* func_08076674(struct UnkStruct_08078754* w, u8 slot, u16* n);
 struct CardSlot* func_08076750(struct UnkStruct_08078754* w, u8 slot, u16* n);
 void func_0807682C(struct UnkStruct_08080268* w, u8 slot);
 
+typedef struct CardBattleWork {
+    TaskPool tasks;
+    void* tiles;
+    void* palette;
+    u8 unk_1C[0x28];
+    void* unk_44[4];
+    u8 unk_54[0x50];
+    s16 x;
+    u8 unk_A6[0x0A];
+    s16 unk_B0;
+    u8 unk_B2[0x07];
+    u8 unk_B9;
+    u8 unk_BA;
+    u8 unk_BB[0x11];
+} CardBattleWork;
+
+typedef struct EventCardLink {
+    u8 unk_00[0x3C];
+    struct CardSlot* slot;
+    u8 unk_40[0x24];
+    u8 node[0x14];
+} EventCardLink;
+
+typedef struct {
+    u32 slot : 8;
+    u32 mode : 8;
+    u32 unk_02 : 16;
+    u8* state;
+} EventReloadArgs;
+
 #endif

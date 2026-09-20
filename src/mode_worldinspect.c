@@ -36,7 +36,6 @@ extern u8 gUnkEu_099A563A[];
 extern u8 gUnkEu_099A5ACA[];
 #endif
 
-
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
@@ -71,15 +70,6 @@ extern u8 gUnkEu_09A38C00[];
 extern u8 gUnkEu_09A33600[];
 extern u8 gUnkEu_09A39A00[];
 #endif
-
-
-typedef struct {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-} WorldinspectConn;
-
 
 extern WorldinspectConn gUnk_099930BC[];
 extern u8 gUnk_099FB53C[];

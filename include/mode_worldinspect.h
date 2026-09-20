@@ -18,4 +18,11 @@
 
 extern u8 gUnk_09A329DC[];
 
+typedef struct {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+} WorldinspectConn;
+
 #endif /* GUARD_MODE_WORLDINSPECT_H */

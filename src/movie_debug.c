@@ -9,16 +9,6 @@
 
 #ifdef VERSION_EU
 
-typedef struct MovieDebugWork {
-    TaskPool pool;
-    s16 index;
-} MovieDebugWork;
-
-typedef struct MovieDebugEntry {
-    s32 movie;
-    const char* label;
-} MovieDebugEntry;
-
 MovieDebugWork* gUnkEu_020348C4;
 
 extern const char gMovieDebugTextEu_0812F6A8[];
