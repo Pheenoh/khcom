@@ -13,6 +13,6 @@ typedef struct LstAnimSet {
 extern const s8 gUnk_09A4FBF4[];
 extern const s8 gUnk_09A4FC15[];
 
-extern s32 gUnk_09A4FC20[];
+extern const s32 gUnk_09A4FC20[];
 
 #endif
