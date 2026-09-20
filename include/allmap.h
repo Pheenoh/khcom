@@ -185,7 +185,6 @@ typedef struct AllmapPushaWork {
     s16 y;
 } AllmapPushaWork;
 
-void func_080AEB94(void);
 void func_080D510C(AllmapState* s);
 void func_080D55E4(void);
 void func_080D53F8(void);
@@ -210,13 +209,6 @@ void* func_080986FC(u8 a);
 void func_08098014(AllmapDoorEntry* a, void* b);
 void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 
-extern s16 gUnk_02034EC2;
-extern u8 gUnk_02034ECA;
-extern u32 gUnk_02034E98;
-extern TaskPool gTitleTaskPool;
-extern Task* gTitleLogoTask;
-extern Task* gTitleObjTask;
-extern u8* gUnk_02034EC4;
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
 extern s16 gUnk_096FDC10[][2];
@@ -235,7 +227,6 @@ extern u8 gUnk_0976DCB0[];
 extern u8 gUnk_0983AD98[];
 extern u8 gUnk_0983B298[];
 extern u8 gUnk_0983B7B4[];
-extern u8 gUnk_0983F398[];
 extern u8 gUnk_0984A078[];
 extern u8 gUnk_0984A0F8[];
 extern u8 gUnk_0984A118[];
@@ -245,7 +236,5 @@ extern u8 gUnk_09618D38[];
 extern u8 gUnk_0905E3BA[];
 extern u8 gUnk_0976DD62[];
 extern u8 gUnk_0984A1F8[];
-extern u8 gUnk_0984A418[];
-extern u8 gUnk_0984A818[];
 
 #endif /* GUARD_ALLMAP_H */

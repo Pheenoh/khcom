@@ -13,11 +13,6 @@ extern void* gUnkEu_09F80124[5];
 extern void* gUnkEu_09F80138[5];
 #endif
 
-#ifdef VERSION_EU
-extern u8 gUnkEu_09814E40[];
-extern u8 gUnkEu_09815640[];
-#endif
-
 static s32 gUnk_02034E84;
 static s32 gUnk_02034E88;
 static s32 gUnk_02034E8C;
@@ -1158,100 +1153,6 @@ u8 func_080D5944(u8 a, u16 b) {
 
 void* func_080D5960(u8 a) {
     return ((AllmapState*)gUnk_0203C4B4)->roomTasks[a]->work;
-}
-
-void func_080D5978(u16 a, void* b, u16 c) {
-    RequestDma3Copy(b, gUnk_02034EC4 + a * 32, c);
-}
-
-void func_080D5998(void) {
-    LoadPalette(gUnk_02034EC4, (void*)0x05000000, 0x400);
-}
-
-void func_080D59B4(void) {
-    if (gUnk_02034ECA != 0) {
-        ModeRequest(&gModeTitle, 0);
-        return;
-    }
-
-    switch (gUnk_02034EC2) {
-    case 3:
-        SaveLoadSystem();
-        SaveClearSystem();
-        func_080E04EC();
-        return;
-    case 1:
-        ModeRequest(&gModeMenuLoad, 0);
-        return;
-    case 2:
-        func_080AEB94();
-        ModeRequest(&gModeSioBattle, 0);
-        return;
-    case 4:
-        func_0801CD20();
-        ModeRequest(&gModeMenuNew, 0);
-        return;
-    case 5:
-        func_0801CCB4();
-        ModeRequest(&gModeMenuNew, 0);
-        return;
-    case 0:
-    default:
-        ModeRequest(&gModeMenuNew, 0);
-        return;
-    }
-}
-
-void func_080D5A4C(u16 a) {
-    if ((gGameState.flags & 0x200) != 0) {
-        LoadBgPalette(1, gUnk_0984A818, 0x200);
-        func_080D5978(0, gUnk_0984A818, 0x200);
-    } else {
-        LoadBgPalette(1, gUnk_0984A418, 0x200);
-        func_080D5978(0, gUnk_0984A418, 0x200);
-    }
-    EnableBg(0);
-    DisableBg(1);
-    DisableBg(2);
-
-    if (IsTaskActive(gTitleLogoTask) == 0) {
-        gTitleLogoTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleLogo, 0);
-    }
-
-    if (IsTaskActive(gTitleObjTask) == 0) {
-        gTitleObjTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleObj, 0);
-    }
-    FadeStartIn(2, a);
-}
-
-void func_080D5B04(void) {
-#ifdef VERSION_EU
-    switch (gLanguage) {
-    case 0:
-    case 1:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-        LoadBgMap(0, gUnkEu_09815640, 0x800);
-        break;
-    case 2:
-        LoadBgMap(0, gUnkEu_09814E40, 0x800);
-        break;
-    }
-#else
-    LoadBgMap(0, gUnk_0983F398, 0x800);
-#endif
-    SetBgBlend(0, 5, 16);
-    EnableBg(1);
-    m4aSongNumStart(6);
-}
-
-void func_080D5B30(void) {
-    m4aMPlayFadeOut(gMPlayTable[gSongTable[6].ms].info, 5);
-    FadeStartOut(0, 90);
-    func_080C75A4(0, 90);
-    gUnk_02034E98 = 9;
 }
 
 const char gTaskNameAllmapRoom[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapRoom"), aligned(1))) = "task_allmap_room";

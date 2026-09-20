@@ -70,4 +70,6 @@ s32 func_080ABA80(s32* out);
 s32 func_080AC5E8(struct UnkStruct_02039DD4* g, u8 count, u8 kind, struct UnkStruct_080ABA80* arr, u8* flag);
 s32 func_080AD144(struct UnkStruct_02039DD4* g, u8 count, u8 kind, struct UnkStruct_080ABA80* arr, u8* flag, void* b);
 
+void func_080AEB94(void);
+
 #endif

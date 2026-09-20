@@ -53,7 +53,11 @@ extern u8 gUnk_0984A6F8[];
 extern u8 gUnk_0984A718[];
 extern u8 gUnk_0984A738[];
 
-void func_080D5A4C(s32 a);
+extern u8 gUnk_0983F398[];
+extern u8 gUnk_0984A418[];
+extern u8 gUnk_0984A818[];
+
+void func_080D5A4C(u16 a);
 void func_080D5B04(void);
 void func_080D5B30(void);
 void func_080D59B4(void);

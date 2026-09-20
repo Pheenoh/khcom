@@ -18,7 +18,6 @@
 #include "title_types.h"
 #include "main.h"
 #include "anim.h"
-#include "allmap_api.h"
 
 typedef struct TitleObjSprite {
     void* tiles;
@@ -75,7 +74,6 @@ extern u8 gUnk_0984A7F8[];
 extern s32 gUnk_096FDCC8[];
 extern s16 gUnk_096FDCE8[];
 
-void func_080D5998(void);
 u8 func_080D6280(void);
 u8 func_080D6294(void);
 void func_080D62A8(TitleLogoWork* work);
