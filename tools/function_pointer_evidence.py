@@ -41,11 +41,11 @@ def load_function_modes(path, start, end, prefix='arm-none-eabi-'):
     output = subprocess.check_output([prefix + 'readelf', '-sW', str(path)], text=True)
     result = {}
     for line in output.splitlines():
-        match = re.match(r'^\s*\d+:\s+([0-9a-fA-F]+)\s+\S+\s+FUNC\s+\S+\s+\S+\s+\d+\s+', line)
+        match = re.match(r'^\s*\d+:\s+([0-9a-fA-F]+)\s+\S+\s+(FUNC|THUMB_FUNC)\s+\S+\s+\S+\s+\d+\s+', line)
         if match:
             address = int(match[1], 16)
             if start <= (address & ~1) < end:
-                result[address & ~1] = 'thumb' if address & 1 else 'arm'
+                result[address & ~1] = 'thumb' if match[2] == 'THUMB_FUNC' or address & 1 else 'arm'
     return result
 
 

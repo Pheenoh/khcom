@@ -3,6 +3,7 @@
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -13,6 +14,7 @@ from asset_objects import materialize_assets
 from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
 
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
+LEGACY_ASM_UNITS = {"libagbsyscall.s", "m4a_1.s", "transform_veneers.s"}
 
 
 def asm_file_deps(path, missing):
@@ -248,13 +250,14 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-legacy_tools = [Path("tools/legacy/bin/arm-elf-as"), Path("tools/legacy/lib/libgcc.a"), Path("tools/legacy/lib/libc.a")]
-if any(not path.is_file() for path in legacy_tools):
-    sys.exit("error: run python3 tools/setup_legacy_assembler.py before configuring")
-
+legacy_assembler = Path("tools/legacy/bin/arm-elf-as")
 legacy_linker = Path("tools/legacy/bin/arm-elf-ld")
-if not legacy_linker.is_file():
-    sys.exit("error: run python3 tools/setup_legacy_linker.py before configuring")
+legacy_tools = [legacy_assembler, legacy_linker, Path("tools/legacy/lib/libgcc.a"), Path("tools/legacy/lib/libc.a")]
+if any(not path.is_file() for path in legacy_tools):
+    sys.exit("error: run python3 tools/setup_legacy_toolchain.py before configuring")
+for tool, expected in ((legacy_assembler, "GNU assembler 2.10"), (legacy_linker, "GNU ld 2.10")):
+    if subprocess.check_output([str(tool), "--version"], text=True).splitlines()[0] != expected:
+        sys.exit(f"error: {tool} must be binutils 2.10; run python3 tools/setup_legacy_toolchain.py")
 
 version = args.version
 code, sha1 = VERSIONS[version]
@@ -534,6 +537,9 @@ for src, obj, flags, _section in units:
     if rule == "as":
         deps += asm_includes
         deps.extend(asm_file_deps(src, missing_assets))
+        if src.name in LEGACY_ASM_UNITS:
+            variables = {"as": "$legacy_as", "asflags": "$legacy_asflags"}
+            deps.append(str(legacy_assembler))
     if rule == "cc":
         deps += headers + ["tools/legacy/bin/arm-elf-as"]
     if any(dep.startswith("assets/") for dep in deps):

@@ -27,13 +27,14 @@ def main():
     work = (args.build_dir or root / 'build/toolchain').resolve()
     compiler = root / 'tools/agbcc/bin/old_agbcc'
     if not compiler.is_file():
-        parser.error('install agbcc before setting up the legacy assembler')
+        parser.error('install agbcc before setting up the legacy toolchain')
     if args.jobs < 1:
         parser.error('--jobs must be positive')
     work.mkdir(parents=True, exist_ok=True)
     log_path = work / 'setup.log'
     env = os.environ.copy()
-    env.update(CC='cc -std=gnu89 -Wno-implicit-function-declaration -Wno-int-conversion', CFLAGS='-O2')
+    env.update(CC='cc -std=gnu89 -Wno-implicit-function-declaration -Wno-int-conversion', CFLAGS='-O2',
+               lt_cv_sys_max_cmd_len=str(os.sysconf('SC_ARG_MAX') * 3 // 4))
 
     def run(command, directory=work):
         with log_path.open('a') as log:
@@ -59,7 +60,7 @@ def main():
         elif after not in text:
             raise ValueError(f'{path}: expected source for host compatibility edit is absent')
 
-    print('Building the historical assembler', flush=True)
+    print('Building the binutils 2.10 assembler and linker', flush=True)
     archive = fetch('binutils-2.10.tar.gz', 'https://ftp.gnu.org/gnu/binutils/binutils-2.10.tar.gz', BINUTILS_SHA256)
     source = work / 'binutils-2.10'
     if not source.exists():
@@ -73,15 +74,16 @@ def main():
     elif platform.system() == 'Linux':
         host = machine + '-pc-linux-gnu'
     else:
-        parser.error('legacy assembler setup supports Linux and macOS')
+        parser.error('legacy toolchain setup supports Linux and macOS')
     build = work / 'binutils-build'
     build.mkdir(exist_ok=True)
     run([source / 'configure', '--host=' + host, '--build=' + host,
          '--target=arm-elf', '--disable-nls', '--disable-shared'], build)
-    run(['make', '-j' + str(args.jobs), 'all-gas'], build)
+    run(['make', '-j' + str(args.jobs), 'all-gas', 'all-ld'], build)
     (prefix / 'bin').mkdir(parents=True, exist_ok=True)
     assembler = prefix / 'bin/arm-elf-as'
     shutil.copy2(build / 'gas/as-new', assembler)
+    shutil.copy2(build / 'ld/ld-new', prefix / 'bin/arm-elf-ld')
 
     print('Rebuilding the runtime libraries for the legacy software-FP ABI', flush=True)
     archive = fetch('agbcc-' + AGBCC_REVISION + '.tar.gz',
@@ -103,7 +105,7 @@ def main():
         (prefix / 'lib').mkdir(exist_ok=True)
         for name in ('libgcc', 'libc'):
             shutil.copy2(libraries / name / (name + '.a'), prefix / 'lib' / (name + '.a'))
-    print('Legacy assembler and libraries installed in ' + str(prefix), flush=True)
+    print('Legacy assembler, linker and libraries installed in ' + str(prefix), flush=True)
 
 
 if __name__ == '__main__':

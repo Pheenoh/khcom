@@ -1,6 +1,5 @@
 .include "gba_constants.inc"
 
-	.syntax unified
 	.text
 	.align 2, 0
 
@@ -9,7 +8,7 @@
 	.thumb_func
 	.type BgAffineSet, %function
 BgAffineSet:
-	swi #14
+	swi 14
 	bx lr
 	.size BgAffineSet, . - BgAffineSet
 
@@ -18,7 +17,7 @@ BgAffineSet:
 	.thumb_func
 	.type CpuFastSet, %function
 CpuFastSet:
-	swi #12
+	swi 12
 	bx lr
 	.size CpuFastSet, . - CpuFastSet
 
@@ -27,7 +26,7 @@ CpuFastSet:
 	.thumb_func
 	.type CpuSet, %function
 CpuSet:
-	swi #11
+	swi 11
 	bx lr
 	.size CpuSet, . - CpuSet
 
@@ -37,7 +36,7 @@ CpuSet:
 	.thumb_func
 	.type LZ77UnCompVram, %function
 LZ77UnCompVram:
-	swi #18
+	swi 18
 	bx lr
 	.size LZ77UnCompVram, . - LZ77UnCompVram
 
@@ -46,7 +45,7 @@ LZ77UnCompVram:
 	.thumb_func
 	.type LZ77UnCompWram, %function
 LZ77UnCompWram:
-	swi #17
+	swi 17
 	bx lr
 	.size LZ77UnCompWram, . - LZ77UnCompWram
 	.endif
@@ -56,7 +55,7 @@ LZ77UnCompWram:
 	.thumb_func
 	.type RegisterRamReset, %function
 RegisterRamReset:
-	swi #1
+	swi 1
 	bx lr
 	.size RegisterRamReset, . - RegisterRamReset
 
@@ -66,12 +65,12 @@ RegisterRamReset:
 	.type SoftReset, %function
 SoftReset:
 	ldr r3, sSoftResetRegIme
-	movs r2, #0
+	mov r2, #0
 	strb r2, [r3, #0]
 	ldr r1, sSoftResetStack
 	mov sp, r1
-	swi #1
-	swi #0
+	swi 1
+	swi 0
 	.align 2, 0
 sSoftResetRegIme:
 	.word REG_BASE + OFFSET_REG_IME
@@ -84,7 +83,7 @@ sSoftResetStack:
 	.thumb_func
 	.type Sqrt, %function
 Sqrt:
-	swi #8
+	swi 8
 	bx lr
 	.size Sqrt, . - Sqrt
 
@@ -93,8 +92,8 @@ Sqrt:
 	.thumb_func
 	.type VBlankIntrWait, %function
 VBlankIntrWait:
-	movs r2, #0
-	swi #5
+	mov r2, #0
+	swi 5
 	bx lr
 	.align 2, 0
 	.size VBlankIntrWait, . - VBlankIntrWait
