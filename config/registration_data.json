@@ -13,7 +13,8 @@
     "backupstat_owner": "The three state-name pointers are referenced only by mode_backupstat lifecycle and state editing code. In all three regions the pointer index immediately precedes that owner's mode descriptor, forming one complete 0x1C-byte native initialized-data run. The pointer targets, object bounds, callbacks and original ROM bytes remain independently validated. The separate six-entry backup metadata table and encoded text catalog retain their existing representation.",
     "status_owner": "All thirteen status task descriptors reference callbacks in status.c. Its EU status, bar and cursor callbacks are the only consumers of six five-language graphics pointer indexes. In US/JP the descriptors form one uninterrupted 0x138-byte initialized-data run; EU interleaves those six indexes with the corresponding descriptor families in one 0x1B0-byte run. Ordinary C definitions reproduce the complete runs with all original object addresses, bounds, pointer relocations and ROM contents retained as contracts. Name placements and graphics payloads remain unchanged.",
     "pooh_eu_background_indexes": "The EU-only five-language floor-background pointer indexes are consumed only by poo.c func_080D313C, which selects the appropriate floor span and copies it to background VRAM. Their ten pointers immediately follow that owner's established native initialized-data run. Ordinary EU-scoped definitions extend the run from 0xBD8 to 0xC00 without changing payloads, pointer targets or any US/JP definition. Both original index object contracts and all preceding Pooh object contracts remain validated.",
-    "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged."
+    "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
+    "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary."
   },
   "regions": {
     "us": {
@@ -4473,14 +4474,119 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDice",
-          "address": "0x09EF5028",
-          "size": 24,
-          "sha256": "c4275acfddadea4e5f8a2b85f90195db84c622ebd2a9bfbf443fd8dcbe9a1ad1",
+          "section": ".data",
+          "address": "0x9ef5028",
+          "size": 624,
+          "sha256": "46eb76c9dc0b8280b4135c2fdd9663a21774f1cdebb1ef32c4fa914a7a59759b",
           "objects": [
             {
               "name": "gTaskDescBosBoogieDice",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieExplosiondice",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieSaku",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMap",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMapanime",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieDisk",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnife",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnifereader",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKaihuku",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF5100",
+              "offset": 216,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5130",
+              "offset": 264,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5160",
+              "offset": 312,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5190",
+              "offset": 360,
+              "size": 48
+            },
+            {
+              "name": "gTaskDescBosUrsula",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMap",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBorder",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaTako",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBacktako",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMapanime",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubble",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubbleSingle",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaThunder",
+              "offset": 600,
               "size": 24
             }
           ]
@@ -4496,20 +4602,6 @@
               "name": "gTaskNameBosBoogieExplosiondice",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieExplosiondice",
-          "address": "0x09EF5040",
-          "size": 24,
-          "sha256": "0b3b3c34535b7cd51ae85c664d31ccc9cb19ccbb962d8c5aeeb815c9633a458a",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieExplosiondice",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4531,20 +4623,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieSaku",
-          "address": "0x09EF5058",
-          "size": 24,
-          "sha256": "936da0a86045abe3a4f039833233bf14fb9d2cfed96474e777c19fdf4bb9e2f6",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieSaku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMap",
           "address": "0x096FE00C",
           "size": 20,
@@ -4561,20 +4639,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMap",
-          "address": "0x09EF5070",
-          "size": 24,
-          "sha256": "89534efc110952c08e92d33a3291fdb1aa4021c06b40c5311d7861b371c335d7",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMapanime",
           "address": "0x096FE07C",
           "size": 25,
@@ -4584,20 +4648,6 @@
               "name": "gTaskNameBosBoogieMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMapanime",
-          "address": "0x09EF5088",
-          "size": 24,
-          "sha256": "2f6c0258bef21a0903f26ba833b8f412f53e072f0d6e85e50acebd2422106f42",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4617,20 +4667,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDisk",
-          "address": "0x09EF50A0",
-          "size": 24,
-          "sha256": "f5be42d0462890b7e46e1f249bf28765187cfca663aa8f2a1b81e782b8a5bdc2",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieDisk",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKnife",
           "address": "0x096FE0D0",
           "size": 22,
@@ -4640,20 +4676,6 @@
               "name": "gTaskNameBosBoogieKnife",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnife",
-          "address": "0x09EF50B8",
-          "size": 24,
-          "sha256": "ebec59b9d56c78532a0e1c38c504054c25b1b43b42107272320605257d6ff13d",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnife",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4673,20 +4695,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnifereader",
-          "address": "0x09EF50D0",
-          "size": 24,
-          "sha256": "a50534ce17eb41998049e58bfc8d1d1cd149b3175ec73aaaef76096ca3646223",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnifereader",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKaihuku",
           "address": "0x096FE124",
           "size": 24,
@@ -4694,20 +4702,6 @@
           "objects": [
             {
               "name": "gTaskNameBosBoogieKaihuku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKaihuku",
-          "address": "0x09EF50E8",
-          "size": 24,
-          "sha256": "f5f57bc8b1449ef6b1adddd92385a7725bb33d5e1682c48c6bfb002a8efb2e51",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKaihuku",
               "offset": 0,
               "size": 24
             }
@@ -4729,20 +4723,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsula",
-          "address": "0x09EF51C0",
-          "size": 24,
-          "sha256": "9e043e9b72f8c18fb13ba3997dc95acf9a0c23af06c962bf17f310c337673574",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsula",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMap",
           "address": "0x096FE17C",
           "size": 20,
@@ -4752,20 +4732,6 @@
               "name": "gTaskNameBosUrsulaMap",
               "offset": 0,
               "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMap",
-          "address": "0x09EF51D8",
-          "size": 24,
-          "sha256": "7da33dd310e99cea880a632030e5b8713ba5dc2ede69a4df8713fb0e5c1ff007",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4785,20 +4751,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBorder",
-          "address": "0x09EF51F0",
-          "size": 24,
-          "sha256": "541aab44acc855d8bb81122929f6fb284cae4fb5bf0c2c35cf02a50658c7cf9a",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBorder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaTako",
           "address": "0x096FE1B8",
           "size": 21,
@@ -4808,20 +4760,6 @@
               "name": "gTaskNameBosUrsulaTako",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaTako",
-          "address": "0x09EF5208",
-          "size": 24,
-          "sha256": "9592a73baea9317b7b558ce49380b4a1a7f6facc270756cb6f4ebf3984ca4d42",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaTako",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4843,20 +4781,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBacktako",
-          "address": "0x09EF5220",
-          "size": 24,
-          "sha256": "ac190ce2ed931b8ff37e1519cc4de634e7be8e53724bb25a4fe8405a4071e4a8",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBacktako",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMapanime",
           "address": "0x096FE2D8",
           "size": 25,
@@ -4866,20 +4790,6 @@
               "name": "gTaskNameBosUrsulaMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMapanime",
-          "address": "0x09EF5238",
-          "size": 24,
-          "sha256": "f00a4e2c599925e5c31c789352b79de227b27b1bfc0bcd86736b29baf42fa52b",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4899,20 +4809,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubble",
-          "address": "0x09EF5250",
-          "size": 24,
-          "sha256": "f84b3d09cc883daa02d310628bffaf77871ef8aebbf8ece4c7a6020e1a0bc518",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubble",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
           "address": "0x096FE334",
           "size": 30,
@@ -4922,20 +4818,6 @@
               "name": "gTaskNameBosUrsulaBubbleSingle",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubbleSingle",
-          "address": "0x09EF5268",
-          "size": 24,
-          "sha256": "5c2a10cc6398a3dc0f9ea69d7d7c8c55ded45fe380a2c3ec1df532b7cf4ca6d4",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubbleSingle",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -4954,20 +4836,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaThunder",
-          "address": "0x09EF5280",
-          "size": 24,
-          "sha256": "ee0082eff2f04e84b26fb6f4910cf057fb0c6d42b0ef67ef905c055f7d8d7965",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaThunder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "bos4.c",
@@ -11937,14 +11805,119 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDice",
-          "address": "0x09ECC414",
-          "size": 24,
-          "sha256": "c755a733d8b61a0f6c1425f7a1c48ec9c51d87adb4a85d8f8faaf3beb0e22a95",
+          "section": ".data",
+          "address": "0x9ecc414",
+          "size": 624,
+          "sha256": "d4183fae62d4f057f7e5fb16c1315c49f9781d41704102fa5fb02f008e4e46e8",
           "objects": [
             {
               "name": "gTaskDescBosBoogieDice",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieExplosiondice",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieSaku",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMap",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMapanime",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieDisk",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnife",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnifereader",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKaihuku",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF5100",
+              "offset": 216,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5130",
+              "offset": 264,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5160",
+              "offset": 312,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5190",
+              "offset": 360,
+              "size": 48
+            },
+            {
+              "name": "gTaskDescBosUrsula",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMap",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBorder",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaTako",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBacktako",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMapanime",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubble",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubbleSingle",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaThunder",
+              "offset": 600,
               "size": 24
             }
           ]
@@ -11960,20 +11933,6 @@
               "name": "gTaskNameBosBoogieExplosiondice",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieExplosiondice",
-          "address": "0x09ECC42C",
-          "size": 24,
-          "sha256": "055d883894d57f31aaffb7f7e2d9da37063b9265b41bb7fe790f30e1a1c012e9",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieExplosiondice",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -11995,20 +11954,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieSaku",
-          "address": "0x09ECC444",
-          "size": 24,
-          "sha256": "9844f1292221c5054dd877d46eaa9f6cbeef79eaec4100d8b779216ec7c0c5c3",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieSaku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMap",
           "address": "0x096B67E8",
           "size": 20,
@@ -12025,20 +11970,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMap",
-          "address": "0x09ECC45C",
-          "size": 24,
-          "sha256": "eba340e81d7bf268cd89483a2a88bc27c3a80bbd897423ed26ab155f3434382e",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMapanime",
           "address": "0x096B6858",
           "size": 25,
@@ -12048,20 +11979,6 @@
               "name": "gTaskNameBosBoogieMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMapanime",
-          "address": "0x09ECC474",
-          "size": 24,
-          "sha256": "5c80a074d27ec9ba75c75d481ee9d28e8e17d89c8d312d9d0982ad8ee6967574",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12081,20 +11998,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDisk",
-          "address": "0x09ECC48C",
-          "size": 24,
-          "sha256": "4ec314334c0e4f6740e09851c42d3980eee8bf9dc7921c6ce0514854310da079",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieDisk",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKnife",
           "address": "0x096B68AC",
           "size": 22,
@@ -12104,20 +12007,6 @@
               "name": "gTaskNameBosBoogieKnife",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnife",
-          "address": "0x09ECC4A4",
-          "size": 24,
-          "sha256": "c737ab8b7e749a3418adb7c9b37583f4c230aaee487e35322c4ac3a85c950b4c",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnife",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12137,20 +12026,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnifereader",
-          "address": "0x09ECC4BC",
-          "size": 24,
-          "sha256": "9d27505bcaa9252b45027a835a2b3594bd54b2b5c37e8e3ee5d734974d0214e5",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnifereader",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKaihuku",
           "address": "0x096B6900",
           "size": 24,
@@ -12158,20 +12033,6 @@
           "objects": [
             {
               "name": "gTaskNameBosBoogieKaihuku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKaihuku",
-          "address": "0x09ECC4D4",
-          "size": 24,
-          "sha256": "2ffacca875d7adc7af868b5be7f060e10f874e324f6bc57e7562bddd5b422f5d",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKaihuku",
               "offset": 0,
               "size": 24
             }
@@ -12193,20 +12054,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsula",
-          "address": "0x09ECC5AC",
-          "size": 24,
-          "sha256": "f4515e096e4bdc0c8ffc35e49bfbcc8138d272599c617fef0b5cc8c560491d7b",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsula",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMap",
           "address": "0x096B6958",
           "size": 20,
@@ -12216,20 +12063,6 @@
               "name": "gTaskNameBosUrsulaMap",
               "offset": 0,
               "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMap",
-          "address": "0x09ECC5C4",
-          "size": 24,
-          "sha256": "593c30d1539c3db4b533ce06be7a2adf6ed0ff6e7f5c06d7e1db97b09b1399c4",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12249,20 +12082,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBorder",
-          "address": "0x09ECC5DC",
-          "size": 24,
-          "sha256": "a81991bf17e79e1f5eafd0a7aea4a6d735b8f5aaf47bbc8591e3ad7130d73b7d",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBorder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaTako",
           "address": "0x096B6994",
           "size": 21,
@@ -12272,20 +12091,6 @@
               "name": "gTaskNameBosUrsulaTako",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaTako",
-          "address": "0x09ECC5F4",
-          "size": 24,
-          "sha256": "5483fe287ec87c52fd9d51a65afbe521c4c77cef94247715797e458e97602f48",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaTako",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12307,20 +12112,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBacktako",
-          "address": "0x09ECC60C",
-          "size": 24,
-          "sha256": "a25473d736ab870406b69b2b3264caae31bd4ef818fe40ee30d4a4ce5cf4b0f3",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBacktako",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMapanime",
           "address": "0x096B6AB4",
           "size": 25,
@@ -12330,20 +12121,6 @@
               "name": "gTaskNameBosUrsulaMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMapanime",
-          "address": "0x09ECC624",
-          "size": 24,
-          "sha256": "26a52b147e882338c025c92a2f2fb64cde07a2e6076c20995c39613e4443f84b",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12363,20 +12140,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubble",
-          "address": "0x09ECC63C",
-          "size": 24,
-          "sha256": "c248999eefbb1ba3847c590a2e1ff09e23cfcbdeddf8f5c816994e02fe8bc20f",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubble",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
           "address": "0x096B6B10",
           "size": 30,
@@ -12386,20 +12149,6 @@
               "name": "gTaskNameBosUrsulaBubbleSingle",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubbleSingle",
-          "address": "0x09ECC654",
-          "size": 24,
-          "sha256": "ebb4b1fdf3f0f169febd328625a1f0000a308a62cb1002c7fdb947c52ca90ca8",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubbleSingle",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -12418,20 +12167,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaThunder",
-          "address": "0x09ECC66C",
-          "size": 24,
-          "sha256": "c0944c299bc4ab8c9b5a351db7b947e37603d6face8caebadbb670d41c62ccb1",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaThunder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "bos4.c",
@@ -19359,14 +19094,119 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDice",
-          "address": "0x09F80420",
-          "size": 24,
-          "sha256": "894d338cb249f5578c5177b723d6b2f484b26dc1adf094c321d55e1ebfaeb546",
+          "section": ".data",
+          "address": "0x9f80420",
+          "size": 624,
+          "sha256": "d85ac79708cd083a62aeff376e610dd5c1f4beee663e7b75f252777a4119f92d",
           "objects": [
             {
               "name": "gTaskDescBosBoogieDice",
               "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieExplosiondice",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieSaku",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMap",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieMapanime",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieDisk",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnife",
+              "offset": 144,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKnifereader",
+              "offset": 168,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosBoogieKaihuku",
+              "offset": 192,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF5100",
+              "offset": 216,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5130",
+              "offset": 264,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5160",
+              "offset": 312,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF5190",
+              "offset": 360,
+              "size": 48
+            },
+            {
+              "name": "gTaskDescBosUrsula",
+              "offset": 408,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMap",
+              "offset": 432,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBorder",
+              "offset": 456,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaTako",
+              "offset": 480,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBacktako",
+              "offset": 504,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaMapanime",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubble",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaBubbleSingle",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosUrsulaThunder",
+              "offset": 600,
               "size": 24
             }
           ]
@@ -19382,20 +19222,6 @@
               "name": "gTaskNameBosBoogieExplosiondice",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieExplosiondice",
-          "address": "0x09F80438",
-          "size": 24,
-          "sha256": "c6332d1b4303bdbb3422d0e511de4b08c044443e5b0075be373e79648235a321",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieExplosiondice",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19417,20 +19243,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieSaku",
-          "address": "0x09F80450",
-          "size": 24,
-          "sha256": "052349ff6cd52ed1d2ef43539da1160853db95a2bbc18801d5ccad0b1611e772",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieSaku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMap",
           "address": "0x096CB36C",
           "size": 20,
@@ -19447,20 +19259,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMap",
-          "address": "0x09F80468",
-          "size": 24,
-          "sha256": "82f17f8460f28df275cc180cd91b6f500faeb580d4502cad0e62b41cb1c5a17c",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieMapanime",
           "address": "0x096CB3DC",
           "size": 25,
@@ -19470,20 +19268,6 @@
               "name": "gTaskNameBosBoogieMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieMapanime",
-          "address": "0x09F80480",
-          "size": 24,
-          "sha256": "0627f7d3e16f04d4dec63e522ce12a764e9fc67af7eb837f29c61520746c4218",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19503,20 +19287,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieDisk",
-          "address": "0x09F80498",
-          "size": 24,
-          "sha256": "a5819e1e685e86d2d9e814cb7976d159089cbea163c2c7904362965bbcd1f234",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieDisk",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKnife",
           "address": "0x096CB430",
           "size": 22,
@@ -19526,20 +19296,6 @@
               "name": "gTaskNameBosBoogieKnife",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnife",
-          "address": "0x09F804B0",
-          "size": 24,
-          "sha256": "bcc81f61dbf4df1cc4ebc95af5c1e68c1fdb29ef3a0475ee8e93f7e46e9ff285",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnife",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19559,20 +19315,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKnifereader",
-          "address": "0x09F804C8",
-          "size": 24,
-          "sha256": "df36735e422cfb6bb234a11adee98a2eada19020e7819f9ea1e1cc7eeba7f4ac",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKnifereader",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosBoogieKaihuku",
           "address": "0x096CB484",
           "size": 24,
@@ -19580,20 +19322,6 @@
           "objects": [
             {
               "name": "gTaskNameBosBoogieKaihuku",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosBoogieKaihuku",
-          "address": "0x09F804E0",
-          "size": 24,
-          "sha256": "73d7114aedfb377e09ebfa260834ab14e8c58585f6f566fde505424015b78457",
-          "objects": [
-            {
-              "name": "gTaskDescBosBoogieKaihuku",
               "offset": 0,
               "size": 24
             }
@@ -19615,20 +19343,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsula",
-          "address": "0x09F805B8",
-          "size": 24,
-          "sha256": "a5ef181bda614c2218deb3377331f105f7fa6fe4d77267efd526f1ddee02031a",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsula",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMap",
           "address": "0x096CB4DC",
           "size": 20,
@@ -19638,20 +19352,6 @@
               "name": "gTaskNameBosUrsulaMap",
               "offset": 0,
               "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMap",
-          "address": "0x09F805D0",
-          "size": 24,
-          "sha256": "44a70dc9b0628dff67989be98eefd18bfdc14e257a776d420a67c63b13f81007",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19671,20 +19371,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBorder",
-          "address": "0x09F805E8",
-          "size": 24,
-          "sha256": "a286e6098cace5d7877a30098175fa71d7d5d4939daefde48561cc4ec3e08c6d",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBorder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaTako",
           "address": "0x096CB518",
           "size": 21,
@@ -19694,20 +19380,6 @@
               "name": "gTaskNameBosUrsulaTako",
               "offset": 0,
               "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaTako",
-          "address": "0x09F80600",
-          "size": 24,
-          "sha256": "95d58a719566140768b7acd9b8e6ee12f4cf97e025e5671d7d87a3b402f89b7f",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaTako",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19729,20 +19401,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBacktako",
-          "address": "0x09F80618",
-          "size": 24,
-          "sha256": "2dc16104681421d20ae8d23e55e611476a15acd58347949658b6343f46728755",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBacktako",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaMapanime",
           "address": "0x096CB638",
           "size": 25,
@@ -19752,20 +19410,6 @@
               "name": "gTaskNameBosUrsulaMapanime",
               "offset": 0,
               "size": 25
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaMapanime",
-          "address": "0x09F80630",
-          "size": 24,
-          "sha256": "3be29a5060c0ba6011e154bce7da20622618f525bcc84d7972ad9b57def80af8",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaMapanime",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19785,20 +19429,6 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubble",
-          "address": "0x09F80648",
-          "size": 24,
-          "sha256": "49480628086eab7294d77e2bb8c15f2b5d89958b0f68275c5696524fd7772146",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubble",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
           "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
           "address": "0x096CB694",
           "size": 30,
@@ -19808,20 +19438,6 @@
               "name": "gTaskNameBosUrsulaBubbleSingle",
               "offset": 0,
               "size": 30
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaBubbleSingle",
-          "address": "0x09F80660",
-          "size": 24,
-          "sha256": "ac2be0620be09b0030a542c0c8244fcb3b2ac75be51c2f48861ed2273165af51",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaBubbleSingle",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -19840,20 +19456,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gTaskDescBosUrsulaThunder",
-          "address": "0x09F80678",
-          "size": 24,
-          "sha256": "cbb0a86ce39fe0ff38eef9d579f21bf37f84e546b03afc3d08492b08369fabbe",
-          "objects": [
-            {
-              "name": "gTaskDescBosUrsulaThunder",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "bos4.c",

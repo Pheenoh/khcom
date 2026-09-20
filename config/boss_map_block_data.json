@@ -19,62 +19,6 @@
               "size": 16
             }
           ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5100",
-          "address": "0x9ef5100",
-          "size": 48,
-          "sha256": "c572c249f7df4551a61913193c3f240ee8cfbac0d2958633e764b8e6daa0b563",
-          "objects": [
-            {
-              "name": "gUnk_09EF5100",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5130",
-          "address": "0x9ef5130",
-          "size": 48,
-          "sha256": "cb5e8130e761288ef02b40418b371f2623a1864eac04eccb6ff7172f080ed8ae",
-          "objects": [
-            {
-              "name": "gUnk_09EF5130",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5160",
-          "address": "0x9ef5160",
-          "size": 48,
-          "sha256": "c3c93e5073d38c5c556ed0e8274a1986ddd0d7eb564536f6a1bfe4bab50c5eda",
-          "objects": [
-            {
-              "name": "gUnk_09EF5160",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5190",
-          "address": "0x9ef5190",
-          "size": 48,
-          "sha256": "e8a74973dc7866a1456a4b278f5c8489cd1557aec5c84e9bcf6e931942ce556c",
-          "objects": [
-            {
-              "name": "gUnk_09EF5190",
-              "offset": 0,
-              "size": 48
-            }
-          ]
         }
       ]
     },
@@ -93,62 +37,6 @@
               "size": 16
             }
           ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5100",
-          "address": "0x9ecc4ec",
-          "size": 48,
-          "sha256": "710df2ad2bbdc642e16e4d0ed41484bdda623fdc9f5b64c6d5a31408d3d06407",
-          "objects": [
-            {
-              "name": "gUnk_09EF5100",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5130",
-          "address": "0x9ecc51c",
-          "size": 48,
-          "sha256": "885a070ab6716dfb1ed20f0f6d798234eb313ee0544caba15343d0d0480cbdb5",
-          "objects": [
-            {
-              "name": "gUnk_09EF5130",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5160",
-          "address": "0x9ecc54c",
-          "size": 48,
-          "sha256": "e26aee2b2a4e578539b54eb63f62ab44a4132fc63ba3e9ae0f5d4a1a388ac5ef",
-          "objects": [
-            {
-              "name": "gUnk_09EF5160",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5190",
-          "address": "0x9ecc57c",
-          "size": 48,
-          "sha256": "d7df3934dcc6ed73800756be0b9b33c5a213469f0197760056b145ee8d59120a",
-          "objects": [
-            {
-              "name": "gUnk_09EF5190",
-              "offset": 0,
-              "size": 48
-            }
-          ]
         }
       ]
     },
@@ -165,62 +53,6 @@
               "name": "gUnk_09EF2E68",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5100",
-          "address": "0x9f804f8",
-          "size": 48,
-          "sha256": "75463a21e304cb404e1c8e00e2cd010698e66bb43d555c3b31123aec5fa67568",
-          "objects": [
-            {
-              "name": "gUnk_09EF5100",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5130",
-          "address": "0x9f80528",
-          "size": 48,
-          "sha256": "37dd5e7f568332a1acbdbbcdbea03196402e407f5588fc162b72f494c9bedd8f",
-          "objects": [
-            {
-              "name": "gUnk_09EF5130",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5160",
-          "address": "0x9f80558",
-          "size": 48,
-          "sha256": "973474c3cee085adbcd98beec0e9829cad336654b9c1ace2210e5932757c7806",
-          "objects": [
-            {
-              "name": "gUnk_09EF5160",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "boss_ursula_data.c",
-          "section": ".data_gUnk_09EF5190",
-          "address": "0x9f80588",
-          "size": 48,
-          "sha256": "a66030a91f1e683919016b13f01ebc61deca6e59127a30790e2b6f738b025958",
-          "objects": [
-            {
-              "name": "gUnk_09EF5190",
-              "offset": 0,
-              "size": 48
             }
           ]
         }

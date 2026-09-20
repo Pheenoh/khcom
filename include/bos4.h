@@ -4,7 +4,6 @@
 
 #include "debug_menu_data.h"
 
-#include "boss_ursula_data.h"
 
 #include "map_world_text_data.h"
 
