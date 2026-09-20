@@ -1,5 +1,4 @@
 # US inventory for asset_gfx_gap_1 (Policy B: no binaries).
-# Host mega: 0x0886AD23–0x08F6E184. First leaf only: gUnk_08C6A88C tiles4.
 # Pack: python3 tools/gfx/asset_gfx_gap_1_pack.py --mode dump|built --version us
 
 version: us
@@ -13,11 +12,11 @@ pack:
   unit: asset_gfx_gap_1
   asm: asm/us/asset_gfx_gap_1.s
   rom:
-    start: 0x0886AD23
+    start: 0x0886AD2E
     end: 0x08F6E184
-    size: 7353441
-  extract_path: assets/us/0886AD23-08F6E184.bin
-  sha256: e0ba827cb486e4298fae856c41b3ce61caa4d3b004d422921a6210b530489678
+    size: 7353430
+  extract_path: assets/us/0886AD2E-08F6E184.bin
+  sha256: ab0e492479b3702cab22afce57b317468a33f0bb3c56dfc435d6b71795c25a63
   path_mode_default: slice
   confidence: medium
   summary: >

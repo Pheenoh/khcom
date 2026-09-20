@@ -1,5 +1,4 @@
 # EU inventory for gUnk_08C6A88C host mega (Policy B). Leaf tiles4 identical to US.
-# Host unit is rodata_script_at_08896652.s (EU asset_gfx_gap_1.s is a different small slice).
 version: eu
 schema_version: 1
 mvp_class: asset_gfx_gap_1
@@ -8,8 +7,8 @@ baserom_code: B8CP
 pack:
   id: asset_gfx_gap_1
   class: pack
-  unit: rodata_script_at_08896652
-  asm: asm/eu/rodata_script_at_08896652.s
+  unit: asset_gfx_gap_1
+  asm: asm/eu/asset_gfx_gap_1.s
   rom: { start: 0x08896652, end: 0x08F7F15C, size: 7244554 }
   extract_path: assets/eu/08896652-08F7F15C.bin
   sha256: c4da9fb2dec3c2955c39d2c318d1f0e7844617f73b253a3f9d7ef9b7c79a10fe

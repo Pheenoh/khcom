@@ -9,9 +9,9 @@ pack:
   class: pack
   unit: asset_gfx_gap_1
   asm: asm/jp/asset_gfx_gap_1.s
-  rom: { start: 0x0885E30B, end: 0x08F6168C, size: 7353217 }
-  extract_path: assets/jp/0885E30B-08F6168C.bin
-  sha256: 43d50d5edd58f22f56edbf86665beace21432684d410ea195acab3887a496f9e
+  rom: { start: 0x0885E316, end: 0x08F6168C, size: 7353206 }
+  extract_path: assets/jp/0885E316-08F6168C.bin
+  sha256: 937c07fa59de27527516c34167954cd6b8d3813cb6985ad8b8f8ff66a4aeb3d3
   path_mode_default: slice
 leaves:
   - id: gUnk_08C6A88C

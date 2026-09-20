@@ -6,12 +6,12 @@ version: us
 class: pack
 unit: asset_gfx_gap_1
 rom:
-  start: 0x0886AD23
+  start: 0x0886AD2E
   end: 0x08F6E184
-  size: 7353441
+  size: 7353430
 inventory: config/asset_inventory_us_gfx_gap_1.yaml
 path_mode: slice
-extract_path: assets/us/0886AD23-08F6E184.bin
+extract_path: assets/us/0886AD2E-08F6E184.bin
 build_path: build/us/assets/asset_gfx_gap_1.bin
 source_root: assets/us/src/gfx/asset_gfx_gap_1
 asm_slice: asm/us/asset_gfx_gap_1.s
@@ -20,7 +20,7 @@ tools:
   gbagfx: tools/gbagfx/gbagfx
   packer: tools/gfx/asset_gfx_gap_1_pack.py
   layout: tools/gfx/asset_gfx_gap_1_layout.py
-sha256_slice: e0ba827cb486e4298fae856c41b3ce61caa4d3b004d422921a6210b530489678
+sha256_slice: ab0e492479b3702cab22afce57b317468a33f0bb3c56dfc435d6b71795c25a63
 status: leaf_tiles4_scaffold
 note: >
   Dual-path scaffold for first leaf only. Default path_mode is slice so check.sh

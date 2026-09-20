@@ -316,7 +316,7 @@ void eu_08061698(UnkModeTestWork* work) {
 #endif
 
 #ifndef VERSION_EU
-extern const char gModeNameTest[];
+const char gModeNameTest[] = "mode_test";
 
 Mode gUnk_09EDE4E0 = { gModeNameTest, (void (*)(s32))mode_test_0, mode_test_1, mode_test_2 };
 #endif

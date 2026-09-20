@@ -1,11 +1,10 @@
 # EU host mega for leaf gUnk_08C6A88C (ABS 0x08C9C288).
-# Leaf lives in rodata_script_at_08896652.s (not the small asset_gfx_gap_1.s slice).
 # Policy B: sources/bins not committed. Parent mega stays slice by default.
 schema_version: 1
 id: asset_gfx_gap_1
 version: eu
 class: pack
-unit: rodata_script_at_08896652
+unit: asset_gfx_gap_1
 rom:
   start: 0x08896652
   end: 0x08F7F15C
@@ -15,7 +14,7 @@ path_mode: slice
 extract_path: assets/eu/08896652-08F7F15C.bin
 build_path: build/eu/assets/asset_gfx_gap_1.bin
 source_root: assets/eu/src/gfx/asset_gfx_gap_1
-asm_slice: asm/eu/rodata_script_at_08896652.s
+asm_slice: asm/eu/asset_gfx_gap_1.s
 asm_built: build/eu/asm/asset_gfx_gap_1.s
 tools:
   gbagfx: tools/gbagfx/gbagfx

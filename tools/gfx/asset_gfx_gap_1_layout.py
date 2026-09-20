@@ -4,8 +4,6 @@ Parent mega stays slice until fuller pack RE. Built mode rebuilds only the leaf 
 gbagfx PNG->.4bpp (-num_tiles 2) and patches it into a copy of the extract slice.
 MovieOpen asset_gfx remux is intentionally untouched.
 
-EU note: the leaf ABS lives in unit rodata_script_at_08896652.s (not the small
-asm/eu/asset_gfx_gap_1.s slice); US/JP use asm/*/asset_gfx_gap_1.s.
 """
 import hashlib
 from pathlib import Path
@@ -20,16 +18,16 @@ LEAF_NUM_TILES = 2
 
 VERSIONS = {
     "us": {
-        "rom_base": 0x0886AD23,
+        "rom_base": 0x0886AD2E,
         "pack_end": 0x08F6E184,
-        "extract": ROOT / "assets" / "us" / "0886AD23-08F6E184.bin",
+        "extract": ROOT / "assets" / "us" / "0886AD2E-08F6E184.bin",
         "build": ROOT / "build" / "us" / "assets" / "asset_gfx_gap_1.bin",
         "source_root": ROOT / "assets" / "us" / "src" / "gfx" / "asset_gfx_gap_1",
         "manifest": ROOT / "config" / "asset_gfx_gap_1_us.yaml",
         "inventory": ROOT / "config" / "asset_inventory_us_gfx_gap_1.yaml",
         "asm_unit": "asset_gfx_gap_1.s",
-        "global_sym": "data_0886AD23",
-        "expected_sha256": "e0ba827cb486e4298fae856c41b3ce61caa4d3b004d422921a6210b530489678",
+        "global_sym": "data_0886AD2E",
+        "expected_sha256": "ab0e492479b3702cab22afce57b317468a33f0bb3c56dfc435d6b71795c25a63",
         "leaf": {
             "id": LEAF_ID,
             "symbol": "gUnk_08C6A88C",
@@ -45,16 +43,16 @@ VERSIONS = {
         },
     },
     "jp": {
-        "rom_base": 0x0885E30B,
+        "rom_base": 0x0885E316,
         "pack_end": 0x08F6168C,
-        "extract": ROOT / "assets" / "jp" / "0885E30B-08F6168C.bin",
+        "extract": ROOT / "assets" / "jp" / "0885E316-08F6168C.bin",
         "build": ROOT / "build" / "jp" / "assets" / "asset_gfx_gap_1.bin",
         "source_root": ROOT / "assets" / "jp" / "src" / "gfx" / "asset_gfx_gap_1",
         "manifest": ROOT / "config" / "asset_gfx_gap_1_jp.yaml",
         "inventory": ROOT / "config" / "asset_inventory_jp_gfx_gap_1.yaml",
         "asm_unit": "asset_gfx_gap_1.s",
-        "global_sym": "data_0885E30B",
-        "expected_sha256": "43d50d5edd58f22f56edbf86665beace21432684d410ea195acab3887a496f9e",
+        "global_sym": "data_0885E316",
+        "expected_sha256": "937c07fa59de27527516c34167954cd6b8d3813cb6985ad8b8f8ff66a4aeb3d3",
         "leaf": {
             "id": LEAF_ID,
             "symbol": "gUnk_08C6A88C",
@@ -70,7 +68,6 @@ VERSIONS = {
         },
     },
     "eu": {
-        # Leaf lives in the large EU script mega, not asm/eu/asset_gfx_gap_1.s.
         "rom_base": 0x08896652,
         "pack_end": 0x08F7F15C,
         "extract": ROOT / "assets" / "eu" / "08896652-08F7F15C.bin",
@@ -78,7 +75,7 @@ VERSIONS = {
         "source_root": ROOT / "assets" / "eu" / "src" / "gfx" / "asset_gfx_gap_1",
         "manifest": ROOT / "config" / "asset_gfx_gap_1_eu.yaml",
         "inventory": ROOT / "config" / "asset_inventory_eu_gfx_gap_1.yaml",
-        "asm_unit": "rodata_script_at_08896652.s",
+        "asm_unit": "asset_gfx_gap_1.s",
         "global_sym": "data_08896652",
         "expected_sha256": "c4da9fb2dec3c2955c39d2c318d1f0e7844617f73b253a3f9d7ef9b7c79a10fe",
         "leaf": {

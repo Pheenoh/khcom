@@ -351,20 +351,19 @@ asset_gfx_gap_195_extract = {
 asset_gfx_gap_195_manifest = f"config/asset_gfx_gap_195_{version}.yaml"
 asset_gfx_gap_1_build = f"{build_dir}/assets/asset_gfx_gap_1.bin"
 asset_gfx_gap_1_asm = f"{build_dir}/asm/asset_gfx_gap_1.s"
-# EU leaf host is rodata_script_at_08896652.s; US/JP use asset_gfx_gap_1.s.
 asset_gfx_gap_1_unit = {
     "us": "asset_gfx_gap_1.s",
     "jp": "asset_gfx_gap_1.s",
-    "eu": "rodata_script_at_08896652.s",
+    "eu": "asset_gfx_gap_1.s",
 }[version]
 asset_gfx_gap_1_sym = {
-    "us": "data_0886AD23",
-    "jp": "data_0885E30B",
+    "us": "data_0886AD2E",
+    "jp": "data_0885E316",
     "eu": "data_08896652",
 }[version]
 asset_gfx_gap_1_extract = {
-    "us": "assets/us/0886AD23-08F6E184.bin",
-    "jp": "assets/jp/0885E30B-08F6168C.bin",
+    "us": "assets/us/0886AD2E-08F6E184.bin",
+    "jp": "assets/jp/0885E316-08F6168C.bin",
     "eu": "assets/eu/08896652-08F7F15C.bin",
 }[version]
 asset_gfx_gap_1_manifest = f"config/asset_gfx_gap_1_{version}.yaml"

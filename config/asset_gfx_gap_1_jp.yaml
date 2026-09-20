@@ -6,12 +6,12 @@ version: jp
 class: pack
 unit: asset_gfx_gap_1
 rom:
-  start: 0x0885E30B
+  start: 0x0885E316
   end: 0x08F6168C
-  size: 7353217
+  size: 7353206
 inventory: config/asset_inventory_jp_gfx_gap_1.yaml
 path_mode: slice
-extract_path: assets/jp/0885E30B-08F6168C.bin
+extract_path: assets/jp/0885E316-08F6168C.bin
 build_path: build/jp/assets/asset_gfx_gap_1.bin
 source_root: assets/jp/src/gfx/asset_gfx_gap_1
 asm_slice: asm/jp/asset_gfx_gap_1.s
@@ -20,7 +20,7 @@ tools:
   gbagfx: tools/gbagfx/gbagfx
   packer: tools/gfx/asset_gfx_gap_1_pack.py
   layout: tools/gfx/asset_gfx_gap_1_layout.py
-sha256_slice: 43d50d5edd58f22f56edbf86665beace21432684d410ea195acab3887a496f9e
+sha256_slice: 937c07fa59de27527516c34167954cd6b8d3813cb6985ad8b8f8ff66a4aeb3d3
 status: leaf_tiles4_scaffold
 children:
   - id: gUnk_08C6A88C
