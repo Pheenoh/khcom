@@ -2,190 +2,203 @@
   "version": 1,
   "provenance": {
     "sio": "The world selector wraps0..12 and indexes13 world-name and logo-ID entries. Thirteen32-byte native SioWorldEntry records end at the independently referenced12-entry cursor-offset table; difficulty selection uses1..11 plus the physical zero entry. The13x12 card-position region contains12 navigation slots and its native zero terminator record. This entire change-card mode and table are genuinely absent in EU: its old absolute gUnk_09EF150C alias incorrectly coincided with gWorldNames. No EU definition or bytes are fabricated. All C placements retain their actual regional extents and opaque resource pointers remain assets.",
-    "world_intro": "Won intro loops10 sprites and wraps its affine-frame index0..19, proving two10-record layouts and20 scales. The Agr schedule has19 live records plus its native final zero record before the next TaskDesc. TtMotion retains its canonical two6-element arrays, including unused stored values. The line task allocates33 entries; the physical33x3 halfword table includes31 live tuples, one extra stored tuple and a final zero tuple. It ends before two separate zero alignment bytes. Bks creates every explicit object ID0..13, proving the14-entry sprite, coordinate and timing arrays; its palette cycle uses entries1..6 of the two7-byte sequences. Array-tail alignment bytes remain outside the owned C extents."
+    "world_intro": "Won intro loops10 sprites and wraps its affine-frame index0..19, proving two10-record layouts and20 scales. The Agr schedule has19 live records plus its native final zero record before the next TaskDesc. TtMotion retains its canonical two6-element arrays, including unused stored values. The line task allocates33 entries; the physical33x3 halfword table includes31 live tuples, one extra stored tuple and a final zero tuple. It ends before two separate zero alignment bytes. Bks creates every explicit object ID0..13, proving the14-entry sprite, coordinate and timing arrays; its palette cycle proves reads only at entries 1 through 6 of the paired byte sequences. The remaining halfword-table gaps are supplied by ordinary compiler alignment.",
+    "wlogo_native_owner": "The world-logo callbacks repeatedly consume these movement, scheduling, coordinate and animation-selector tables, interleaved with their own TaskDesc records in the same regional order. The Pooh logo creates indexes 0 through 3 of its four-byte selector. Ordinary definitions in wlogo.c reproduce the complete 37-object, 1804-byte initialized-data run. The two palette sequences are reconstructed as eight-entry s8 arrays with the existing seven initializer values and an implicit final zero. Their earlier seven-byte extents were introduced by recovery commit c3afb221 from the maximum observed index, while predecessor declarations were unsized; no original symbol-size evidence established seven. All three ROMs contain the same paired eight-byte slices, including the two terminal zero bytes. Eight-entry capacity is an explicit reconstruction assumption, not a claim that index 7 is read or that the original authoring form is uniquely proven. All live entries, original addresses, code, relocations and RAM remain unchanged. The 23 lower-ROM names still interleave independent assets and retain their existing placements; this batch does not reconstruct that separate readonly boundary."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF167C",
-          "address": "0x9ef167c",
-          "size": 200,
-          "sha256": "77810d5215cdc9ff5f33f7bccdec7acaf9a3654550402107cc98fcda3d57111c",
+          "unit": "wlogo.c",
+          "section": ".data",
+          "address": "0x9ef1634",
+          "size": 1804,
+          "sha256": "c12816bb2fb5e92b906007fd3476e2c7f14c1ee1eb834e59aaf9f6062c721a09",
           "objects": [
+            {
+              "name": "gTaskDescWlogoMons",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwt",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwtObj",
+              "offset": 48,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF167C",
-              "offset": 0,
+              "offset": 72,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1744",
-          "address": "0x9ef1744",
-          "size": 200,
-          "sha256": "fb6e1e1b72c88e163486da346ee916840980534ff6b68729623fee75c1e49191",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1744",
-              "offset": 0,
+              "offset": 272,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF180C",
-          "address": "0x9ef180c",
-          "size": 80,
-          "sha256": "b5ba9eb983f44c6f9055f8400e1aec18e970da1d3eae6225a2be87e17c418f8b",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF180C",
-              "offset": 0,
+              "offset": 472,
               "size": 80
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF191C",
-          "address": "0x9ef191c",
-          "size": 320,
-          "sha256": "b0a6c0d8c44bce4aeed6cde971f0b788ecfdbbfff43005f3ebb72bbf83942829",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoWon",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAtl",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvl",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlMov",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlObj",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoCol",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHlw",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoDil",
+              "offset": 720,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF191C",
-              "offset": 0,
+              "offset": 744,
               "size": 320
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B08",
-          "address": "0x9ef1b08",
-          "size": 48,
-          "sha256": "b8073c15833978d30d4f4bd9cabd279d3d6758c5330cc2f6fa644afe639ff9c2",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoAgr",
+              "offset": 1064,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrSmoke",
+              "offset": 1088,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash0",
+              "offset": 1112,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash1",
+              "offset": 1136,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTvt",
+              "offset": 1160,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoPoo",
+              "offset": 1184,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 1208,
+              "size": 4
+            },
+            {
+              "name": "gTaskDescWlogoPooObj",
+              "offset": 1212,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B08",
-              "offset": 0,
+              "offset": 1236,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B68",
-          "address": "0x9ef1b68",
-          "size": 198,
-          "sha256": "55428f61dac263249907b9ce4eac5411d6555edf30197102d8df186f14c58d9e",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTt",
+              "offset": 1284,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTtObj",
+              "offset": 1308,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B68",
-              "offset": 0,
+              "offset": 1332,
               "size": 198
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C48",
-          "address": "0x9ef1c48",
-          "size": 7,
-          "sha256": "31a726d50621d8be3b9a918df6878e8602d19779db9b9d12f23de554924d7893",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTtLine",
+              "offset": 1532,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C48",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C50",
-          "address": "0x9ef1c50",
-          "size": 7,
-          "sha256": "f6a61ca9ddeb7ff12fbed80950148e9f7e0f0ba6f68cf2eb15b59d4cee90f53e",
-          "objects": [
+              "offset": 1556,
+              "size": 8
+            },
             {
               "name": "gUnk_09EF1C50",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C70",
-          "address": "0x9ef1c70",
-          "size": 14,
-          "sha256": "95bc9e224b1526e9e75b46d6ef54cf34878ed1861030b7f7e3a1d956d7f163b3",
-          "objects": [
+              "offset": 1564,
+              "size": 8
+            },
+            {
+              "name": "gTaskDescWlogoBks",
+              "offset": 1572,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C70",
-              "offset": 0,
+              "offset": 1596,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C7E",
-          "address": "0x9ef1c7e",
-          "size": 56,
-          "sha256": "301bcb7e6e5a20d7d3635e59b9b16db15f63d4c9ab0de1a379d438ebeb88252a",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1C7E",
-              "offset": 0,
+              "offset": 1610,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CB6",
-          "address": "0x9ef1cb6",
-          "size": 56,
-          "sha256": "86d42ee6c9ac609d6ef9afa530a699dd543bc641e380eeb66d637b248f93aaaa",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CB6",
-              "offset": 0,
+              "offset": 1666,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CEE",
-          "address": "0x9ef1cee",
-          "size": 28,
-          "sha256": "cd15a14132db28fc1a43e7996e60bdf642555d8e52561f3abe6428da90c27556",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CEE",
-              "offset": 0,
+              "offset": 1722,
               "size": 28
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1D0A",
-          "address": "0x9ef1d0a",
-          "size": 28,
-          "sha256": "e216cf2b8c0c44b3876f2aeeb2418c4376319799b722a40a86b16b5606a5aa5f",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1D0A",
-              "offset": 0,
+              "offset": 1750,
               "size": 28
+            },
+            {
+              "name": "gTaskDescWlogoBksObj",
+              "offset": 1780,
+              "size": 24
             }
           ]
         }
@@ -194,184 +207,196 @@
     "jp": {
       "placements": [
         {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF167C",
-          "address": "0x9ec8a68",
-          "size": 200,
-          "sha256": "77810d5215cdc9ff5f33f7bccdec7acaf9a3654550402107cc98fcda3d57111c",
+          "unit": "wlogo.c",
+          "section": ".data",
+          "address": "0x9ec8a20",
+          "size": 1804,
+          "sha256": "d27d3472aaff65ff76178ac8c3d5b02d1fa6da82fe4e1c251f6d2a6cfbd2b79a",
           "objects": [
+            {
+              "name": "gTaskDescWlogoMons",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwt",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwtObj",
+              "offset": 48,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF167C",
-              "offset": 0,
+              "offset": 72,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1744",
-          "address": "0x9ec8b30",
-          "size": 200,
-          "sha256": "fb6e1e1b72c88e163486da346ee916840980534ff6b68729623fee75c1e49191",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1744",
-              "offset": 0,
+              "offset": 272,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF180C",
-          "address": "0x9ec8bf8",
-          "size": 80,
-          "sha256": "b5ba9eb983f44c6f9055f8400e1aec18e970da1d3eae6225a2be87e17c418f8b",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF180C",
-              "offset": 0,
+              "offset": 472,
               "size": 80
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF191C",
-          "address": "0x9ec8d08",
-          "size": 320,
-          "sha256": "b0a6c0d8c44bce4aeed6cde971f0b788ecfdbbfff43005f3ebb72bbf83942829",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoWon",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAtl",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvl",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlMov",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlObj",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoCol",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHlw",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoDil",
+              "offset": 720,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF191C",
-              "offset": 0,
+              "offset": 744,
               "size": 320
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B08",
-          "address": "0x9ec8ef4",
-          "size": 48,
-          "sha256": "b8073c15833978d30d4f4bd9cabd279d3d6758c5330cc2f6fa644afe639ff9c2",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoAgr",
+              "offset": 1064,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrSmoke",
+              "offset": 1088,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash0",
+              "offset": 1112,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash1",
+              "offset": 1136,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTvt",
+              "offset": 1160,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoPoo",
+              "offset": 1184,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 1208,
+              "size": 4
+            },
+            {
+              "name": "gTaskDescWlogoPooObj",
+              "offset": 1212,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B08",
-              "offset": 0,
+              "offset": 1236,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B68",
-          "address": "0x9ec8f54",
-          "size": 198,
-          "sha256": "55428f61dac263249907b9ce4eac5411d6555edf30197102d8df186f14c58d9e",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTt",
+              "offset": 1284,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTtObj",
+              "offset": 1308,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B68",
-              "offset": 0,
+              "offset": 1332,
               "size": 198
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C48",
-          "address": "0x9ec9034",
-          "size": 7,
-          "sha256": "31a726d50621d8be3b9a918df6878e8602d19779db9b9d12f23de554924d7893",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTtLine",
+              "offset": 1532,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C48",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C50",
-          "address": "0x9ec903c",
-          "size": 7,
-          "sha256": "f6a61ca9ddeb7ff12fbed80950148e9f7e0f0ba6f68cf2eb15b59d4cee90f53e",
-          "objects": [
+              "offset": 1556,
+              "size": 8
+            },
             {
               "name": "gUnk_09EF1C50",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C70",
-          "address": "0x9ec905c",
-          "size": 14,
-          "sha256": "95bc9e224b1526e9e75b46d6ef54cf34878ed1861030b7f7e3a1d956d7f163b3",
-          "objects": [
+              "offset": 1564,
+              "size": 8
+            },
+            {
+              "name": "gTaskDescWlogoBks",
+              "offset": 1572,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C70",
-              "offset": 0,
+              "offset": 1596,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C7E",
-          "address": "0x9ec906a",
-          "size": 56,
-          "sha256": "301bcb7e6e5a20d7d3635e59b9b16db15f63d4c9ab0de1a379d438ebeb88252a",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1C7E",
-              "offset": 0,
+              "offset": 1610,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CB6",
-          "address": "0x9ec90a2",
-          "size": 56,
-          "sha256": "86d42ee6c9ac609d6ef9afa530a699dd543bc641e380eeb66d637b248f93aaaa",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CB6",
-              "offset": 0,
+              "offset": 1666,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CEE",
-          "address": "0x9ec90da",
-          "size": 28,
-          "sha256": "cd15a14132db28fc1a43e7996e60bdf642555d8e52561f3abe6428da90c27556",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CEE",
-              "offset": 0,
+              "offset": 1722,
               "size": 28
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1D0A",
-          "address": "0x9ec90f6",
-          "size": 28,
-          "sha256": "e216cf2b8c0c44b3876f2aeeb2418c4376319799b722a40a86b16b5606a5aa5f",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1D0A",
-              "offset": 0,
+              "offset": 1750,
               "size": 28
+            },
+            {
+              "name": "gTaskDescWlogoBksObj",
+              "offset": 1780,
+              "size": 24
             }
           ]
         }
@@ -380,184 +405,196 @@
     "eu": {
       "placements": [
         {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF167C",
-          "address": "0x9f7c8b4",
-          "size": 200,
-          "sha256": "77810d5215cdc9ff5f33f7bccdec7acaf9a3654550402107cc98fcda3d57111c",
+          "unit": "wlogo.c",
+          "section": ".data",
+          "address": "0x9f7c86c",
+          "size": 1804,
+          "sha256": "4dab6231445028af01617e42c5c8ca73bfdc45f492ae306cc9fae6bd5d6e2bac",
           "objects": [
+            {
+              "name": "gTaskDescWlogoMons",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwt",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHwtObj",
+              "offset": 48,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF167C",
-              "offset": 0,
+              "offset": 72,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1744",
-          "address": "0x9f7c97c",
-          "size": 200,
-          "sha256": "fb6e1e1b72c88e163486da346ee916840980534ff6b68729623fee75c1e49191",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1744",
-              "offset": 0,
+              "offset": 272,
               "size": 200
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF180C",
-          "address": "0x9f7ca44",
-          "size": 80,
-          "sha256": "b5ba9eb983f44c6f9055f8400e1aec18e970da1d3eae6225a2be87e17c418f8b",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF180C",
-              "offset": 0,
+              "offset": 472,
               "size": 80
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF191C",
-          "address": "0x9f7cb54",
-          "size": 320,
-          "sha256": "b0a6c0d8c44bce4aeed6cde971f0b788ecfdbbfff43005f3ebb72bbf83942829",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoWon",
+              "offset": 552,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAtl",
+              "offset": 576,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvl",
+              "offset": 600,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlMov",
+              "offset": 624,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoNvlObj",
+              "offset": 648,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoCol",
+              "offset": 672,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoHlw",
+              "offset": 696,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoDil",
+              "offset": 720,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF191C",
-              "offset": 0,
+              "offset": 744,
               "size": 320
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B08",
-          "address": "0x9f7cd40",
-          "size": 48,
-          "sha256": "b8073c15833978d30d4f4bd9cabd279d3d6758c5330cc2f6fa644afe639ff9c2",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoAgr",
+              "offset": 1064,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrSmoke",
+              "offset": 1088,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash0",
+              "offset": 1112,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoAgrFlash1",
+              "offset": 1136,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTvt",
+              "offset": 1160,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoPoo",
+              "offset": 1184,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 1208,
+              "size": 4
+            },
+            {
+              "name": "gTaskDescWlogoPooObj",
+              "offset": 1212,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B08",
-              "offset": 0,
+              "offset": 1236,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1B68",
-          "address": "0x9f7cda0",
-          "size": 198,
-          "sha256": "55428f61dac263249907b9ce4eac5411d6555edf30197102d8df186f14c58d9e",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTt",
+              "offset": 1284,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescWlogoTtObj",
+              "offset": 1308,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1B68",
-              "offset": 0,
+              "offset": 1332,
               "size": 198
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C48",
-          "address": "0x9f7ce80",
-          "size": 7,
-          "sha256": "31a726d50621d8be3b9a918df6878e8602d19779db9b9d12f23de554924d7893",
-          "objects": [
+            },
+            {
+              "name": "gTaskDescWlogoTtLine",
+              "offset": 1532,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C48",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C50",
-          "address": "0x9f7ce88",
-          "size": 7,
-          "sha256": "f6a61ca9ddeb7ff12fbed80950148e9f7e0f0ba6f68cf2eb15b59d4cee90f53e",
-          "objects": [
+              "offset": 1556,
+              "size": 8
+            },
             {
               "name": "gUnk_09EF1C50",
-              "offset": 0,
-              "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C70",
-          "address": "0x9f7cea8",
-          "size": 14,
-          "sha256": "95bc9e224b1526e9e75b46d6ef54cf34878ed1861030b7f7e3a1d956d7f163b3",
-          "objects": [
+              "offset": 1564,
+              "size": 8
+            },
+            {
+              "name": "gTaskDescWlogoBks",
+              "offset": 1572,
+              "size": 24
+            },
             {
               "name": "gUnk_09EF1C70",
-              "offset": 0,
+              "offset": 1596,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1C7E",
-          "address": "0x9f7ceb6",
-          "size": 56,
-          "sha256": "301bcb7e6e5a20d7d3635e59b9b16db15f63d4c9ab0de1a379d438ebeb88252a",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1C7E",
-              "offset": 0,
+              "offset": 1610,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CB6",
-          "address": "0x9f7ceee",
-          "size": 56,
-          "sha256": "86d42ee6c9ac609d6ef9afa530a699dd543bc641e380eeb66d637b248f93aaaa",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CB6",
-              "offset": 0,
+              "offset": 1666,
               "size": 56
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1CEE",
-          "address": "0x9f7cf26",
-          "size": 28,
-          "sha256": "cd15a14132db28fc1a43e7996e60bdf642555d8e52561f3abe6428da90c27556",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1CEE",
-              "offset": 0,
+              "offset": 1722,
               "size": 28
-            }
-          ]
-        },
-        {
-          "unit": "world_intro_data.c",
-          "section": ".data_gUnk_09EF1D0A",
-          "address": "0x9f7cf42",
-          "size": 28,
-          "sha256": "e216cf2b8c0c44b3876f2aeeb2418c4376319799b722a40a86b16b5606a5aa5f",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF1D0A",
-              "offset": 0,
+              "offset": 1750,
               "size": 28
+            },
+            {
+              "name": "gTaskDescWlogoBksObj",
+              "offset": 1780,
+              "size": 24
             }
           ]
         }

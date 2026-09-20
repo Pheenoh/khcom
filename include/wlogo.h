@@ -4,8 +4,6 @@
 
 #include "remaining_resource_data.h"
 
-#include "world_intro_data.h"
-
 #include "animation_resource_assets.h"
 
 #include "animation_resource_data.h"
@@ -29,6 +27,33 @@
 
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
+
+typedef struct WlogoWonEntry {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
+    u16 unk_12;
+} WlogoWonEntry;
+
+typedef struct WlogoAgrEntry {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    u8 unk_06;
+    u8 unk_07;
+    u16 unk_08;
+    u16 unk_0A;
+    u8 unk_0C;
+    u8 unk_0D[0x3];
+} WlogoAgrEntry;
+
+typedef struct WlogoTtMotion {
+    s32 first[6];
+    s32 second[6];
+} WlogoTtMotion;
 
 typedef struct WlogoTtWork {
     u8 unk_000;
