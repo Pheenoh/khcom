@@ -1,4 +1,4 @@
-#include "localized_resource_data.h"
+#include "localized_resource_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "obj_api.h"
@@ -10,6 +10,8 @@
 extern AnimDef gUnk_09EF4C88[5];
 
 #ifdef VERSION_EU
+extern u8* gUnkEu_09F800A4[5];
+extern u8* gUnkEu_09F800B8[5];
 #endif
 
 PooWork* gPooWork;
@@ -8086,3 +8088,21 @@ TaskDesc gTaskDescPooCabbageAfterEvent = {
     (void (*)(void*))task_poo_cabbageAfterEvent_3,
     0x20,
 };
+
+#ifdef VERSION_EU
+u8* gUnkEu_09F800A4[5] = {
+    gUnkEu_09795660,
+    gUnkEu_097966A0,
+    gUnkEu_09799760,
+    gUnkEu_09798720,
+    gUnkEu_097976E0,
+};
+
+u8* gUnkEu_09F800B8[5] = {
+    gUnkEu_0979A7A0,
+    gUnkEu_0979B7E0,
+    gUnkEu_0979E8A0,
+    gUnkEu_0979D860,
+    gUnkEu_0979C820,
+};
+#endif

@@ -16,25 +16,6 @@
       "placements": [
         {
           "unit": "localized_resource_data.c",
-          "section": ".data_localized_09F800A4",
-          "address": "0x9f800a4",
-          "size": 40,
-          "sha256": "66e70fbe69b557ce3ad6b20fe711049b671640beb3bf2d8d427a15e404931558",
-          "objects": [
-            {
-              "name": "gUnkEu_09F800A4",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F800B8",
-              "offset": 20,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "localized_resource_data.c",
           "section": ".data_localized_09F84F5C",
           "address": "0x9f84f5c",
           "size": 20,

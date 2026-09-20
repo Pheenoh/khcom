@@ -3,22 +3,6 @@
 
 #ifdef VERSION_EU
 
-u8* gUnkEu_09F800A4[5] __attribute__((section(".data_localized_09F800A4"))) = {
-    gUnkEu_09795660,
-    gUnkEu_097966A0,
-    gUnkEu_09799760,
-    gUnkEu_09798720,
-    gUnkEu_097976E0,
-};
-
-u8* gUnkEu_09F800B8[5] __attribute__((section(".data_localized_09F800A4"))) = {
-    gUnkEu_0979A7A0,
-    gUnkEu_0979B7E0,
-    gUnkEu_0979E8A0,
-    gUnkEu_0979D860,
-    gUnkEu_0979C820,
-};
-
 void* gUnkEu_09F84F5C[5] __attribute__((section(".data_localized_09F84F5C"))) = {
     gUnkEu_09A8DAA0,
     gUnk_09A3B25C,
