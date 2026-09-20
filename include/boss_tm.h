@@ -165,7 +165,7 @@ typedef struct TmAnim {
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x2];
-    TmAnimFrame* frames;
+    const TmAnimFrame* frames;
 } TmAnim;
 
 typedef struct TmArmSrc {
@@ -357,8 +357,8 @@ void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
 void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b);
 void func_080BB1E8(TmClbArg* p, TmClbSrc* a);
 void func_080BB1F4(TmClbArg* p, TmClbSrc* a, u8 mode);
-void func_080BB428(u8* dst, u8* src);
-void func_080BB43C(u8* work, u8* src, u16 a, u8* dst);
+void func_080BB428(u8* dst, const u8* src);
+void func_080BB43C(u8* work, const TmAnimFrame* src, u16 a, u8* dst);
 void func_080BB464(TmArmWork* work);
 void func_080BB4C0(TmArmWork* work);
 void func_080BA104(BtlObj* sub, TmFootWork* work);

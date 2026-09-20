@@ -29,7 +29,8 @@
     "event_message_readonly": "The seven task names interleave scalar-only rendering tables used by event_message.c and card.c message rendering. The active C8C glyph table is exactly two halfwords: its reader copies four bytes and toggles index zero/one. The adjacent C90 four-halfword table is a bounded reconstruction assumption: four repeated 0x0800 values, compatible with neighboring four-position tables, and no aligned original-ROM pointer to any of its eight bytes in US, JP or EU. It is retained as a separate dormant object, without claiming a live use or uniquely proven original declaration. Shared table declarations are canonical const views in msg_api.h. Ordinary definitions reproduce the complete 217-byte readonly run and its original object order in every region.",
     "event_selector_readonly": "The final count helper func_08075064 is called only by mode_eventselect_1. It and the selector directly consume the two sentinel-terminated event-ID lists, with 146 and 48 IDs respectively. The five following debug strings are used only by that selector. These objects precede the existing selector name group. Moving the unchanged helper to the beginning of mode_eventselect.c preserves sequential code in all regions; ordinary readonly definitions preserve the 600-byte data run. Its native four-byte alignment supplies the three bytes after the preceding event_message View name, without an explicit alignment directive.",
     "darkside_initialized_owner": "Eight Darkside task descriptors and seventeen map/tile-index definitions form one native 1148-byte initialized-data run in bos2.c in all three regions. The parent lifecycle creates the component tasks, every descriptor callback is defined in this owner, and its background helpers and map initializer directly consume both table groups. The storage-only bos2_background_data.c split is removed. All original types, bounds, initializers, regional asset selections and dormant pointer scalars are unchanged, including the explicit NULL initializer that AGBCC emits naturally in .data. No readonly name, Jafar data, RAM definition or source-code boundary changes. Actual background dimensions and Dsd state selectors retain the existing table-bound evidence; the separate suffix pointer scalars retain their original neutral representation and independently used asset targets. task_bos_dsd_map_0 passes exactly two by two map blocks, and every nonblank map target is a complete 32 by 32 u16 tilemap. Raw asset payloads remain untouched.",
-    "wlogo_readonly_prefix": "The first seventeen Wlogo task names interleave three motion-configuration tables whose existing canonical structs are preserved. Hwt explicitly creates objects numbered zero through five; its pre-existing six-record motion-row stride fixes a six by six table, including the real zero and inactive command slots. Each live row terminates on its existing flag, and the initialization table contains the six matching object records. The Nvl motion sequence contains four records ending at the independently referenced task_wlogo_nvl_mov name. Its fourth record carries the stopping flag, but the callback still increments its index and performs the existing post-terminal field loads from the following bytes before later frames skip that branch. The four-record extent follows the next independent name, not a maximum runtime-read bound; the name is not absorbed or relabeled as a fifth record, and all existing loads remain byte-identical. All three table starts were existing fixed-address aliases; their independently bounded records meet the next table or task name exactly, and every byte agrees across US, JP and EU. Only Wlogo callbacks read their scalar fields; ordinary const definitions with private forward declarations reconstruct one native 1363-byte readonly prefix. Compiler alignment supplies the two former one-byte zero prefixes. The later Pooh motion span and six remaining task names keep their original raw/explicit placements because its additional zero records are not established by these readers. No new type, record extent, code boundary or asset payload is inferred."
+    "wlogo_readonly_prefix": "The first seventeen Wlogo task names interleave three motion-configuration tables whose existing canonical structs are preserved. Hwt explicitly creates objects numbered zero through five; its pre-existing six-record motion-row stride fixes a six by six table, including the real zero and inactive command slots. Each live row terminates on its existing flag, and the initialization table contains the six matching object records. The Nvl motion sequence contains four records ending at the independently referenced task_wlogo_nvl_mov name. Its fourth record carries the stopping flag, but the callback still increments its index and performs the existing post-terminal field loads from the following bytes before later frames skip that branch. The four-record extent follows the next independent name, not a maximum runtime-read bound; the name is not absorbed or relabeled as a fifth record, and all existing loads remain byte-identical. All three table starts were existing fixed-address aliases; their independently bounded records meet the next table or task name exactly, and every byte agrees across US, JP and EU. Only Wlogo callbacks read their scalar fields; ordinary const definitions with private forward declarations reconstruct one native 1363-byte readonly prefix. Compiler alignment supplies the two former one-byte zero prefixes. The later Pooh motion span and six remaining task names keep their original raw/explicit placements because its additional zero records are not established by these readers. No new type, record extent, code boundary or asset payload is inferred.",
+    "boss_tm_native_readonly": "The six task names, one EmyKind record, 28 bounded arm-animation arrays, and one segment-length table belong to the existing boss_tm.c owner. func_080B8334 passes the 16-byte record to the established EmyKind reader. The distinct func_080BB43C pointer/count arguments partition exactly 120 existing 20-byte TmAnimFrame records with no gaps; func_080BB5E8 uses the stored count to wrap the frame index. The former EmyKind-address-plus-offset expressions are replaced by those actual array definitions. The frame and segment-length bytes are identical in US, JP, and EU. All six nonzero halfwords after the last animation and before the independently referenced arm task name are retained as a six-element segment-length table; this capacity is an inference from the full typed span, while actual joint initialization proves only indices 0, 2, and 4. Const records and their const reader views are an explicit reconstruction supported by read-only use and the original lower-ROM group. Ordinary definitions emit the complete 2528-byte native readonly run including natural string alignment; no explicit section, alignment, filler, or asset payload changes are used. All prior name contracts remain, and new real-object contracts replace four obsolete address aliases and the two raw providers."
   },
   "regions": {
     "us": {
@@ -1608,15 +1609,366 @@
         },
         {
           "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTm",
+          "section": ".rodata",
           "address": "0x09619C88",
-          "size": 12,
-          "sha256": "877114dcabd826e385f42c696c6316f9a71eaa065cd86549881f0c5bf23296b7",
+          "size": 2528,
+          "sha256": "95a31fac819565b9946e09fc0a49e7ab8a62fa548bf74956c96f4bcbc2309ed5",
           "objects": [
             {
               "name": "gTaskNameBosTm",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_09619C94",
+              "offset": 12,
+              "size": 16,
+              "consumer": [
+                "func_080B8334",
+                "func_0801B37C reads existing EmyKind record"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmBody",
+              "offset": 28,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmFoot",
+              "offset": 48,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmClb",
+              "offset": 68,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09619CDC",
+              "offset": 84,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D18",
+              "offset": 144,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D54",
+              "offset": 204,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D90",
+              "offset": 264,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DCC",
+              "offset": 324,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DE0",
+              "offset": 344,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DF4",
+              "offset": 364,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E08",
+              "offset": 384,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E1C",
+              "offset": 404,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E58",
+              "offset": 464,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E94",
+              "offset": 524,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619ED0",
+              "offset": 584,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F0C",
+              "offset": 644,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F84",
+              "offset": 764,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619FFC",
+              "offset": 884,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A074",
+              "offset": 1004,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A0EC",
+              "offset": 1124,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A164",
+              "offset": 1244,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A1DC",
+              "offset": 1364,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A254",
+              "offset": 1484,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A2CC",
+              "offset": 1604,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A344",
+              "offset": 1724,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A3BC",
+              "offset": 1844,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A434",
+              "offset": 1964,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A4AC",
+              "offset": 2084,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A510",
+              "offset": 2184,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A574",
+              "offset": 2284,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A5D8",
+              "offset": 2384,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A63C",
+              "offset": 2484,
+              "size": 12,
+              "consumer": [
+                "func_080BB518",
+                "task_bos_tm_arm_0 sets live indices 0,2,4; six-halfword capacity inferred from complete nonzero typed span ending at independently referenced task name"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmArm",
+              "offset": 2496,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBosTmTbl",
+              "offset": 2512,
+              "size": 16
             }
           ]
         },
@@ -1781,80 +2133,6 @@
               "name": "gTaskDescBosTmTbl",
               "offset": 2540,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmBody",
-          "address": "0x09619CA4",
-          "size": 17,
-          "sha256": "4fb639f0ebef0435bef62fc17659e398359ca31fdda7ac5b2b12011ed951aec8",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmBody",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmFoot",
-          "address": "0x09619CB8",
-          "size": 17,
-          "sha256": "fde71d985ed5e17f918a984fe22f961d90e8b8abe85ef429b5a79214645fdd70",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmFoot",
-              "offset": 0,
-              "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmClb",
-          "address": "0x09619CCC",
-          "size": 16,
-          "sha256": "edde0738bba1ecf390bcd10be53a7dae4e45adba2b2c0e89064f325189d19c53",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmClb",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmArm",
-          "address": "0x0961A648",
-          "size": 16,
-          "sha256": "cb1b957c8aef7af345fb32d9163d0f00a47a422c065117e87be30bacfa8c4738",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmArm",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmTbl",
-          "address": "0x0961A658",
-          "size": 16,
-          "sha256": "dcc33f2129e0e286cf189510c732888e491cea9a8106de2f13da678fb01fb875",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmTbl",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -7998,15 +8276,366 @@
         },
         {
           "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTm",
+          "section": ".rodata",
           "address": "0x095D2764",
-          "size": 12,
-          "sha256": "877114dcabd826e385f42c696c6316f9a71eaa065cd86549881f0c5bf23296b7",
+          "size": 2528,
+          "sha256": "95a31fac819565b9946e09fc0a49e7ab8a62fa548bf74956c96f4bcbc2309ed5",
           "objects": [
             {
               "name": "gTaskNameBosTm",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_09619C94",
+              "offset": 12,
+              "size": 16,
+              "consumer": [
+                "func_080B8334",
+                "func_0801B37C reads existing EmyKind record"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmBody",
+              "offset": 28,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmFoot",
+              "offset": 48,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmClb",
+              "offset": 68,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09619CDC",
+              "offset": 84,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D18",
+              "offset": 144,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D54",
+              "offset": 204,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D90",
+              "offset": 264,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DCC",
+              "offset": 324,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DE0",
+              "offset": 344,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DF4",
+              "offset": 364,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E08",
+              "offset": 384,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E1C",
+              "offset": 404,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E58",
+              "offset": 464,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E94",
+              "offset": 524,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619ED0",
+              "offset": 584,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F0C",
+              "offset": 644,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F84",
+              "offset": 764,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619FFC",
+              "offset": 884,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A074",
+              "offset": 1004,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A0EC",
+              "offset": 1124,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A164",
+              "offset": 1244,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A1DC",
+              "offset": 1364,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A254",
+              "offset": 1484,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A2CC",
+              "offset": 1604,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A344",
+              "offset": 1724,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A3BC",
+              "offset": 1844,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A434",
+              "offset": 1964,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A4AC",
+              "offset": 2084,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A510",
+              "offset": 2184,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A574",
+              "offset": 2284,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A5D8",
+              "offset": 2384,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A63C",
+              "offset": 2484,
+              "size": 12,
+              "consumer": [
+                "func_080BB518",
+                "task_bos_tm_arm_0 sets live indices 0,2,4; six-halfword capacity inferred from complete nonzero typed span ending at independently referenced task name"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmArm",
+              "offset": 2496,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBosTmTbl",
+              "offset": 2512,
+              "size": 16
             }
           ]
         },
@@ -8171,80 +8800,6 @@
               "name": "gTaskDescBosTmTbl",
               "offset": 2540,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmBody",
-          "address": "0x095D2780",
-          "size": 17,
-          "sha256": "4fb639f0ebef0435bef62fc17659e398359ca31fdda7ac5b2b12011ed951aec8",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmBody",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmFoot",
-          "address": "0x095D2794",
-          "size": 17,
-          "sha256": "fde71d985ed5e17f918a984fe22f961d90e8b8abe85ef429b5a79214645fdd70",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmFoot",
-              "offset": 0,
-              "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmClb",
-          "address": "0x095D27A8",
-          "size": 16,
-          "sha256": "edde0738bba1ecf390bcd10be53a7dae4e45adba2b2c0e89064f325189d19c53",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmClb",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmArm",
-          "address": "0x095D3124",
-          "size": 16,
-          "sha256": "cb1b957c8aef7af345fb32d9163d0f00a47a422c065117e87be30bacfa8c4738",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmArm",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmTbl",
-          "address": "0x095D3134",
-          "size": 16,
-          "sha256": "dcc33f2129e0e286cf189510c732888e491cea9a8106de2f13da678fb01fb875",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmTbl",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -14310,15 +14865,366 @@
         },
         {
           "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTm",
+          "section": ".rodata",
           "address": "0x095DB09C",
-          "size": 12,
-          "sha256": "877114dcabd826e385f42c696c6316f9a71eaa065cd86549881f0c5bf23296b7",
+          "size": 2528,
+          "sha256": "95a31fac819565b9946e09fc0a49e7ab8a62fa548bf74956c96f4bcbc2309ed5",
           "objects": [
             {
               "name": "gTaskNameBosTm",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_09619C94",
+              "offset": 12,
+              "size": 16,
+              "consumer": [
+                "func_080B8334",
+                "func_0801B37C reads existing EmyKind record"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmBody",
+              "offset": 28,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmFoot",
+              "offset": 48,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameBosTmClb",
+              "offset": 68,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09619CDC",
+              "offset": 84,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D18",
+              "offset": 144,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D54",
+              "offset": 204,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619D90",
+              "offset": 264,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DCC",
+              "offset": 324,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DE0",
+              "offset": 344,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619DF4",
+              "offset": 364,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E08",
+              "offset": 384,
+              "size": 20,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E1C",
+              "offset": 404,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E58",
+              "offset": 464,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619E94",
+              "offset": 524,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619ED0",
+              "offset": 584,
+              "size": 60,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F0C",
+              "offset": 644,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619F84",
+              "offset": 764,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_09619FFC",
+              "offset": 884,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A074",
+              "offset": 1004,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A0EC",
+              "offset": 1124,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A164",
+              "offset": 1244,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A1DC",
+              "offset": 1364,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A254",
+              "offset": 1484,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A2CC",
+              "offset": 1604,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A344",
+              "offset": 1724,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A3BC",
+              "offset": 1844,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A434",
+              "offset": 1964,
+              "size": 120,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A4AC",
+              "offset": 2084,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A510",
+              "offset": 2184,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A574",
+              "offset": 2284,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A5D8",
+              "offset": 2384,
+              "size": 100,
+              "consumer": [
+                "task_bos_tm_arm_0",
+                "func_080BB924",
+                "func_080BB43C stores frame pointer and explicit count",
+                "func_080BB5E8 indexes 20-byte TmAnimFrame records and wraps at stored count"
+              ]
+            },
+            {
+              "name": "gUnk_0961A63C",
+              "offset": 2484,
+              "size": 12,
+              "consumer": [
+                "func_080BB518",
+                "task_bos_tm_arm_0 sets live indices 0,2,4; six-halfword capacity inferred from complete nonzero typed span ending at independently referenced task name"
+              ]
+            },
+            {
+              "name": "gTaskNameBosTmArm",
+              "offset": 2496,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameBosTmTbl",
+              "offset": 2512,
+              "size": 16
             }
           ]
         },
@@ -14483,80 +15389,6 @@
               "name": "gTaskDescBosTmTbl",
               "offset": 2540,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmBody",
-          "address": "0x095DB0B8",
-          "size": 17,
-          "sha256": "4fb639f0ebef0435bef62fc17659e398359ca31fdda7ac5b2b12011ed951aec8",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmBody",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmFoot",
-          "address": "0x095DB0CC",
-          "size": 17,
-          "sha256": "fde71d985ed5e17f918a984fe22f961d90e8b8abe85ef429b5a79214645fdd70",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmFoot",
-              "offset": 0,
-              "size": 17
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmClb",
-          "address": "0x095DB0E0",
-          "size": 16,
-          "sha256": "edde0738bba1ecf390bcd10be53a7dae4e45adba2b2c0e89064f325189d19c53",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmClb",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmArm",
-          "address": "0x095DBA5C",
-          "size": 16,
-          "sha256": "cb1b957c8aef7af345fb32d9163d0f00a47a422c065117e87be30bacfa8c4738",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmArm",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "boss_tm.c",
-          "section": ".rodata_registration_name_gTaskDescBosTmTbl",
-          "address": "0x095DBA6C",
-          "size": 16,
-          "sha256": "dcc33f2129e0e286cf189510c732888e491cea9a8106de2f13da678fb01fb875",
-          "objects": [
-            {
-              "name": "gTaskNameBosTmTbl",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
