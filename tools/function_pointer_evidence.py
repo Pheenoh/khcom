@@ -37,11 +37,11 @@ def load_literal_loads(path, start, end, prefix='arm-none-eabi-'):
     return parse_literal_loads(output)
 
 
-def load_opaque_function_modes(path, start, end, prefix='arm-none-eabi-'):
+def load_function_modes(path, start, end, prefix='arm-none-eabi-'):
     output = subprocess.check_output([prefix + 'readelf', '-sW', str(path)], text=True)
     result = {}
     for line in output.splitlines():
-        match = re.match(r'^\s*\d+:\s+([0-9a-fA-F]+)\s+0\s+FUNC\s+\S+\s+\S+\s+\d+\s+', line)
+        match = re.match(r'^\s*\d+:\s+([0-9a-fA-F]+)\s+\S+\s+FUNC\s+\S+\s+\S+\s+\d+\s+', line)
         if match:
             address = int(match[1], 16)
             if start <= (address & ~1) < end:

@@ -243,6 +243,10 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
+legacy_tools = [Path("tools/legacy/bin/arm-elf-as"), Path("tools/legacy/lib/libgcc.a"), Path("tools/legacy/lib/libc.a")]
+if any(not path.is_file() for path in legacy_tools):
+    sys.exit("error: run python3 tools/setup_legacy_assembler.py before configuring")
+
 version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
@@ -297,7 +301,7 @@ for line in units_file.read_text().splitlines():
         section = spec[:-1]
     if name.startswith("@"):
         arch, member = name[1:].split(":")
-        path = f"tools/agbcc/lib/{arch}"
+        path = f"tools/legacy/lib/{arch}"
         obj = f"{build_dir}/lib/{arch}/{member}"
         archives.append((path, member, obj))
         units.append((None, obj, None, section))
@@ -522,7 +526,7 @@ for src, obj, flags, _section in units:
         deps += asm_includes
         deps.extend(asm_file_deps(src, missing_assets))
     if rule == "cc":
-        deps += headers
+        deps += headers + ["tools/legacy/bin/arm-elf-as"]
     if any(dep.startswith("assets/") for dep in deps):
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
@@ -711,6 +715,8 @@ with out.open("w") as f:
 
     n.variable("ninja_required_version", "1.3")
     n.variable("as", f"{prefix}as")
+    n.variable("legacy_as", "tools/legacy/bin/arm-elf-as")
+    n.variable("legacy_asflags", "-marm7tdmi -mthumb-interwork -mno-fpu -I . -I include")
     n.variable("ld", f"{prefix}ld")
     n.variable("ar", f"{prefix}ar")
     n.variable("objcopy", f"{prefix}objcopy")
@@ -718,7 +724,7 @@ with out.open("w") as f:
     n.variable("agbcc", "tools/agbcc/bin/agbcc")
     n.variable(
         "asflags",
-        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I . -I include",
+        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -meabi=gnu -mfpu=softfpa -I . -I include",
     )
     n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
     n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
@@ -733,7 +739,7 @@ with out.open("w") as f:
     )
     n.rule(
         "cc",
-        command="$cpp $cppflags -o $out.i $in && $agbcc $cflags -o $out.s $out.i && $as $asflags -o $out $out.s",
+        command="$cpp $cppflags -o $out.i $in && $agbcc $cflags -o $out.s $out.i && $legacy_as $legacy_asflags -o $out $out.s",
         description="CC $out",
     )
     n.rule(

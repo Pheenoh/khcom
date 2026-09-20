@@ -34,6 +34,7 @@ jobs:
         run: |
           mkdir -p tools roms
           cp -a /agbcc/tools/agbcc tools/
+          python3 tools/setup_legacy_assembler.py
           cp -a /orig/. roms/
           sha1sum -c --status <<'SUMS'
           10729bd884f8fdca7a310b6d606c52e46657aa48  roms/B8CE.gba

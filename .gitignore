@@ -9,6 +9,7 @@ assets/*
 
 # Installed toolchain
 tools/agbcc/
+tools/legacy/
 
 # Build output
 build/

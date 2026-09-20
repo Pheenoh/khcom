@@ -27,7 +27,7 @@ from pathlib import Path
 
 from rom_data_evidence import data_symbol_map, load_evidence
 from movie_assets import apply_movie_regions, load_movie_assets
-from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_opaque_function_modes, trace_literal_loads
+from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_function_modes, trace_literal_loads
 import baserom
 from regional_data import asset_symbols, load_sidecars, managed_asset_names, managed_placements, merge_placements, placement_overrides
 
@@ -3316,8 +3316,8 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None, fixed=None):
     return rows
 
 
-def symbol_map(rows, us, ot, literal_loads, opaque_modes=None):
-    opaque_modes = opaque_modes or {}
+def symbol_map(rows, us, ot, literal_loads, function_modes=None):
+    function_modes = function_modes or {}
     pairs = {}
     for nm, ua, sz, va, how, vsz in rows:
         if va is None or vsz != sz or sz == 0:
@@ -3327,8 +3327,8 @@ def symbol_map(rows, us, ot, literal_loads, opaque_modes=None):
         if len(b) != sz or not near_identical(mask(a), mask(b)):
             continue
         loads = literal_loads
-        if ua in opaque_modes:
-            loads = literal_loads | trace_literal_loads(us, ua, sz, opaque_modes[ua])
+        if ua in function_modes:
+            loads = literal_loads | trace_literal_loads(us, ua, sz, function_modes[ua])
         for w1, w2 in literal_pointer_pairs(us, ot, ua, va, sz, loads):
             pairs.setdefault(w1, {})
             pairs[w1][w2] = pairs[w1].get(w2, 0) + 1
@@ -3416,7 +3416,7 @@ def main():
     regional_managed = managed_placements(regional)
     regional_overrides = placement_overrides(regional_plan)
     literal_loads = load_literal_loads("build/us/com_us.elf", ROM_BASE, CODE_HI)
-    opaque_modes = load_opaque_function_modes("build/us/com_us.elf", ROM_BASE, CODE_HI)
+    function_modes = load_function_modes("build/us/com_us.elf", ROM_BASE, CODE_HI)
     rows = load_rows(ver)
 
     owner = {}
@@ -3453,7 +3453,7 @@ def main():
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
     rows = complete(rows, guess_end, flexible, owner, clean, fixed)
-    res = symbol_map(rows, us, ot, literal_loads, opaque_modes)
+    res = symbol_map(rows, us, ot, literal_loads, function_modes)
     res.update(anchors)
     tr = translator(res)
 
@@ -3461,7 +3461,7 @@ def main():
     if code_end != guess_end:
         rows = load_rows(ver)
         rows = complete(rows, code_end, flexible, owner, clean, fixed)
-        res = symbol_map(rows, us, ot, literal_loads, opaque_modes)
+        res = symbol_map(rows, us, ot, literal_loads, function_modes)
         res.update(anchors)
         tr = translator(res)
     evidence = load_evidence("config/rom_data_evidence.json")
