@@ -402,7 +402,7 @@ UrsulaMapanimeWork* gUrsulaMapanimeWork;
 u32 gUnkEu_02035104;
 #endif
 
-u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
+u8 ClampBoogieDicePosition(s32* a, s32* b, s16 c, u16 d) {
     u8 r;
 
     r = 0;
@@ -431,9 +431,9 @@ u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
 
 u8 func_080D9B28(BoogieDiceWork* work) {
     if (work->unk_000 == 3) {
-        if (work->unk_16C->unk_000 == 9) {
-            if (AnimGetFrame(&work->unk_16C->anim) <= 2) {
-                if (!AnimIsFinished(&work->unk_16C->anim)) {
+        if (work->parent->unk_000 == 9) {
+            if (AnimGetFrame(&work->parent->anim) <= 2) {
+                if (!AnimIsFinished(&work->parent->anim)) {
                     return 1;
                 }
             }
@@ -460,7 +460,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     u16 r;
 
     work->unk_170 = arg[0x175];
-    work->unk_16C = (BoogieWork*)arg;
+    work->parent = (BoogieWork*)arg;
     work->unk_000 = 10;
     work->unk_004 = 0;
     work->unk_150 = -0x4CC;
@@ -532,7 +532,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             break;
         }
     } else {
-        switch (func_080D9A90()) {
+        switch (GetBoogieDiceState()) {
         case 3:
             if (work->unk_000 != 3) {
                 work->unk_000 = 3;
@@ -592,7 +592,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
         }
 
-        if (func_080D9AC4(&p->x, &p->y, 0, 0) != 0) {
+        if (ClampBoogieDicePosition(&p->x, &p->y, 0, 0) != 0) {
             work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
         }
 
@@ -665,7 +665,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
         }
 
-        if (func_080D9AC4(&p->x, &p->y, 0, 0) != 0) {
+        if (ClampBoogieDicePosition(&p->x, &p->y, 0, 0) != 0) {
             work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
         }
 

@@ -55,15 +55,15 @@ void func_080D8F14(BoogieWork* work) {
     }
 }
 
-void func_080D900C(BoogieWork* work, s32 a, u16 b) {
-    if (work->unk_15C != a) {
-        work->unk_15C = a;
+void SetBoogieAnimation(BoogieWork* work, s32 a, u16 b) {
+    if (work->animationIndex != a) {
+        work->animationIndex = a;
         AnimChangeWithTables(&work->anim, gUnk_096FDE54[a].animId, b, gUnk_096FDE54[a].anims, gUnk_096FDE54[a].gfxTable);
         SetObjTileSource(work->tiles, gUnk_096FDE54[a].tiles);
     }
 }
 
-u8 func_080D9058(s32* a, s32* b) {
+u8 ClampBoogiePosition(s32* a, s32* b) {
     u8 r;
 
     r = 0;
@@ -125,8 +125,8 @@ void task_bos_boogie_0(BoogieWork* work) {
     }
     work->tiles = AllocObjTiles(sz, 0);
     AnimInit(&work->anim, 0, 0);
-    work->unk_15C = 9;
-    func_080D900C(work, 0, 1);
+    work->animationIndex = 9;
+    SetBoogieAnimation(work, 0, 1);
     TaskPoolInit(&work->tasks, 7);
     TaskCreate(&work->tasks, &gTaskDescBosShadow, &work->actor);
     TaskCreate(&work->tasks, &gTaskDescBosBoogieMapanime, 0);
@@ -180,7 +180,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
     case 3:
         if (work->unk_004 == 0) {
             AnimReset(&work->anim);
-            func_080D900C(work, 4, 1);
+            SetBoogieAnimation(work, 4, 1);
             work->unk_158 = -((a->unk_0AC << 9) >> 8);
             work->unk_150 = ((gSineTable[a->unk_0B0] * 375) >> 8) * a->unk_0A8 >> 8;
             work->unk_154 = ((-gSineTable[a->unk_0B0 + 64] * 375) >> 8) * a->unk_0A8 >> 8;
@@ -193,7 +193,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         }
         break;
     case 4:
-        func_080D900C(work, 8, 0);
+        SetBoogieAnimation(work, 8, 0);
         switch (work->unk_170) {
         case 0:
             if (work->unk_004 <= 1) {
@@ -237,7 +237,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         }
         break;
     case 0:
-        func_080D900C(work, 0, 1);
+        SetBoogieAnimation(work, 0, 1);
         if (AnimIsFinished(&work->anim)) {
             random = GetRandom();
             if ((random & 15) <= 7 && FadeIsActive() == 0) {
@@ -247,14 +247,14 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                     work->unk_174 = 0;
                 }
                 work->unk_004 = 0;
-                func_080D900C(work, 1, 1);
+                SetBoogieAnimation(work, 1, 1);
             } else {
                 AnimReset(&work->anim);
             }
         }
         break;
     case 11:
-        func_080D900C(work, 1, 1);
+        SetBoogieAnimation(work, 1, 1);
         work->unk_004++;
         if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
             !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->dialog) &&
@@ -281,7 +281,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 work->unk_175 = 1;
                 work->unk_168 = (s32)TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
                 work->dialog = TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
-                func_080D900C(work, 2, 1);
+                SetBoogieAnimation(work, 2, 1);
                 m4aSongNumStart(272);
                 work->unk_000 = 9;
                 work->unk_004 = 0;
@@ -316,7 +316,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         break;
     case 5:
         gUnk_0203C564 = 0;
-        func_080D900C(work, 6, 0);
+        SetBoogieAnimation(work, 6, 0);
         if (func_0801C1C0(0)) {
             func_080D9A58();
             work->unk_000 = 0;
@@ -345,14 +345,14 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         }
         break;
     case 7:
-        func_080D900C(work, 7, 0);
+        SetBoogieAnimation(work, 7, 0);
         if (AnimIsFinished(&work->anim)) {
             work->unk_000 = 0;
             work->unk_004 = 0;
         }
         break;
     case 9:
-        func_080D900C(work, 2, 1);
+        SetBoogieAnimation(work, 2, 1);
         if (work->unk_004 == 0) {
             m4aSongNumStart(599);
         }
@@ -364,7 +364,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         break;
     case 10:
         gUnk_0203C56C = 0;
-        func_080D900C(work, 5, 1);
+        SetBoogieAnimation(work, 5, 1);
         if (AnimIsFinished(&work->anim)) {
             work->unk_000 = 0;
             work->unk_004 = 0;
@@ -404,7 +404,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             work->unk_154 = 0;
         }
     }
-    func_080D9058(&a->x, &a->y);
+    ClampBoogiePosition(&a->x, &a->y);
     ColliderSetPosition(&a->collider, a->x, a->y, a->z);
     TaskPoolUpdate(&work->tasks);
     if (func_0801C1C0(0)) {
@@ -471,7 +471,7 @@ void func_080D9A58(void) {
     }
 }
 
-u32 func_080D9A90(void) {
+u32 GetBoogieDiceState(void) {
     if (IsTaskActive((Task*)gBoogieWork->unk_160) != 0) {
         return *(s32*)((Task*)gBoogieWork->unk_160)->work;
     }

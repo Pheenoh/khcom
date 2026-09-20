@@ -283,7 +283,7 @@ typedef struct BoogieDiceWork {
     s32 y;
     u8 unk_168;
     u8 unk_169[0x3];
-    BoogieWork* unk_16C;
+    BoogieWork* parent;
     u8 unk_170;
     u8 unk_171[0x3];
 } BoogieDiceWork;
@@ -543,7 +543,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work);
-u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d);
+u8 ClampBoogieDicePosition(s32* a, s32* b, s16 c, u16 d);
 void func_080D9B6C(BoogieDiceWork* work);
 
 extern u8 gUnk_09796EAA[];

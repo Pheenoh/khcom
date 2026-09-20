@@ -18,7 +18,7 @@ typedef struct BoogieWork {
     s32 unk_150;
     s32 unk_154;
     s32 unk_158;
-    s32 unk_15C;
+    s32 animationIndex;
     s32 unk_160;
     void* unk_164;
     s32 unk_168;
@@ -61,14 +61,14 @@ typedef struct BoogiePalette {
 } BoogiePalette;
 
 void func_080D8F14(BoogieWork* work);
-void func_080D900C(BoogieWork* work, s32 a, u16 b);
-u8 func_080D9058(s32* a, s32* b);
+void SetBoogieAnimation(BoogieWork* work, s32 a, u16 b);
+u8 ClampBoogiePosition(s32* a, s32* b);
 void task_bos_boogie_0(BoogieWork* work);
 u8 task_bos_boogie_1(BoogieWork* work);
 void task_bos_boogie_2(BoogieWork* work);
 void task_bos_boogie_3(BoogieWork* work);
 void func_080D9A14(void);
 void func_080D9A58(void);
-u32 func_080D9A90(void);
+u32 GetBoogieDiceState(void);
 
 #endif
