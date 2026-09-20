@@ -1,5 +1,6 @@
 #include "registration_data.h"
 #include "audio_block_codec.h"
+#include "pcm_audio.h"
 #include "anim.h"
 #include "m4a.h"
 #include "sroll.h"
@@ -13,18 +14,8 @@ s32 gUnk_02036050[0x810];
 u32* gUnk_02038090;
 s32 gUnk_02038094;
 s32 gUnk_02038098;
-u32 gUnk_0203809C;
-s32 gUnk_020380A0;
-s32 gUnk_020380A4;
-s8 gUnk_020380A8[0x2C0];
-s8 gUnk_02038368[0x2C0];
 
 #define REG_ADDR_DMA0 0x040000B0
-
-#define DMA_SOUND_FIFO                                                        \
-    ((DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT | DMA_DEST_FIXED) << 16)
-
-#define SOUND_MASTER_ENABLE 0x0080
 
 void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
     AnimState* anim;
@@ -1937,84 +1928,6 @@ s32 GetDecodedAudioReadPosition(void) {
 
 void SetDecodedAudioReadPosition(s32 pos) {
     gUnk_02038098 = pos;
-}
-
-u8 LookupPcmPlaybackConfig(u32 id, u16* rate, u32* count) {
-    s32 i = 0;
-
-    do {
-        if (gUnk_09EFAA7C[i].unk_00 == id) {
-            *rate = gUnk_09EFAA7C[i].unk_08;
-            *count = gUnk_09EFAA7C[i].unk_04;
-            return 1;
-        }
-        i++;
-    } while (gUnk_09EFAA7C[i].unk_00 != 0);
-    return 0;
-}
-
-u8 PcmPlaybackInit(u32 id) {
-    u16 rate;
-    s32 i;
-
-    if (!LookupPcmPlaybackConfig(id, &rate, (u32*)&gUnk_020380A4)) {
-        return 0;
-    }
-    REG_SOUNDCNT_H = 0x0B06;
-    REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-    REG_DMA1DAD = (s32)&REG_FIFO_A;
-    REG_TM0CNT_L = rate;
-    REG_DMA1CNT = DMA_SOUND_FIFO;
-
-    for (i = 0; i < gUnk_020380A4; i++) {
-        gUnk_020380A8[i] = gUnk_02038368[i] = 0;
-    }
-    gUnk_020380A0 = 1;
-    REG_DMA1SAD = (s32)gUnk_020380A8;
-    return 1;
-}
-
-void PcmPlaybackStart(void) {
-    REG_TM0CNT_H = TIMER_ENABLE;
-    REG_DMA1CNT |= DMA_ENABLE << 16;
-}
-
-void PcmPlaybackStop(void) {
-    REG_DMA1CNT = 0;
-    REG_TM0CNT_H = 0;
-    REG_SOUNDCNT_H |= 0x800;
-}
-
-void PcmPlaybackUpdate(void) {
-    s32* src;
-    s8* dst;
-    s32 pos;
-    s32 i;
-
-    src = GetDecodedAudioBuffer();
-    pos = GetDecodedAudioReadPosition();
-    REG_DMA1CNT ^= DMA_ENABLE << 16;
-    REG_DMA1SAD = (s32)(gUnk_020380A0 == 1 ? gUnk_02038368 : gUnk_020380A8);
-    REG_DMA1CNT ^= DMA_ENABLE << 16;
-    gUnk_020380A0 = gUnk_020380A0 == 1 ? 2 : 1;
-    dst = gUnk_020380A0 == 1 ? gUnk_02038368 : gUnk_020380A8;
-
-    if (pos + gUnk_020380A4 <= 0x7FF) {
-        for (i = 0; i < gUnk_020380A4; i++) {
-            dst[i] = src[pos] >> 8;
-            pos++;
-        }
-        SetDecodedAudioReadPosition(pos);
-    } else {
-        for (i = 0; i < 0x800 - pos; i++) {
-            dst[i] = src[pos + i] >> 8;
-        }
-
-        for (; i < gUnk_020380A4; i++) {
-            dst[i] = src[pos + i - 0x800] >> 8;
-        }
-        SetDecodedAudioReadPosition(pos + gUnk_020380A4 - 0x800);
-    }
 }
 
 const char gTaskNameSrollAName[] __attribute__((section(".rodata_registration_name_gTaskDescSrollAName"), aligned(1))) = "task_sroll_a_name";

@@ -97,6 +97,7 @@ bos6.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
 mode_staffroll.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
+pcm_audio.c -O2 -fprologue-bugfix
 audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
 agb_sram.c -O1 -fno-common
@@ -3650,7 +3651,7 @@ bos7.c(.data)
 staff_roll_script_data.c(.data_staff_roll_indexes)
 mode_staffroll.c(.data)
 sroll.c(.data)
-pcm_audio_data.c(.rodata_pcm_playback_configs)
+pcm_audio.c(.rodata)
 staff_roll_resource_tail_data.c(.data_staff_roll_tail_09EFAB18)
 animation_resource_data.c(.data_09EFAB68)
 animation_resource_data.c(.data_09EFABB0)

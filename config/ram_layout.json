@@ -1,5 +1,27 @@
 {
   "us": {
+      "src/pcm_audio.o": {
+        "base": "0x20380a0",
+        "size": "0x588",
+        "symbols": {
+          "gUnk_020380A0": {
+            "offset": "0x0",
+            "size": "0x4"
+          },
+          "gUnk_020380A4": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gUnk_020380A8": {
+            "offset": "0x8",
+            "size": "0x2c0"
+          },
+          "gUnk_02038368": {
+            "offset": "0x2c8",
+            "size": "0x2c0"
+          }
+        }
+      },
     "src/save.o": {
       "section": ".bss.save",
       "base": "0x2034088",
@@ -2011,6 +2033,28 @@
     }
   },
   "jp": {
+      "src/pcm_audio.o": {
+        "base": "0x2038010",
+        "size": "0x588",
+        "symbols": {
+          "gUnk_020380A0": {
+            "offset": "0x0",
+            "size": "0x4"
+          },
+          "gUnk_020380A4": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gUnk_020380A8": {
+            "offset": "0x8",
+            "size": "0x2c0"
+          },
+          "gUnk_02038368": {
+            "offset": "0x2c8",
+            "size": "0x2c0"
+          }
+        }
+      },
     "src/save.o": {
       "section": ".bss.save",
       "base": "0x2034088",
@@ -4032,6 +4076,28 @@
     }
   },
   "eu": {
+      "src/pcm_audio.o": {
+        "base": "0x20386b0",
+        "size": "0x588",
+        "symbols": {
+          "gUnk_020380A0": {
+            "offset": "0x0",
+            "size": "0x4"
+          },
+          "gUnk_020380A4": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gUnk_020380A8": {
+            "offset": "0x8",
+            "size": "0x2c0"
+          },
+          "gUnk_02038368": {
+            "offset": "0x2c8",
+            "size": "0x2c0"
+          }
+        }
+      },
     "src/save.o": {
       "section": ".bss.save",
       "base": "0x2034088",

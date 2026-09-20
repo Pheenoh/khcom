@@ -23,4 +23,8 @@ void BlockAudioStart(void);
 void BlockAudioUpdate(void);
 void BlockAudioStop(void);
 
+s32* GetDecodedAudioBuffer(void);
+s32 GetDecodedAudioReadPosition(void);
+void SetDecodedAudioReadPosition(s32 pos);
+
 #endif

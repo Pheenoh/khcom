@@ -8,8 +8,6 @@
 
 #include "staff_roll_resource_tail_data.h"
 
-#include "pcm_audio_data.h"
-
 #include "staff_roll_resource_data.h"
 
 #include "animation_resource_data.h"
@@ -401,13 +399,5 @@ u32* GetBlockAudioData(void);
 u8* ReadNextAudioBlock(u32** p);
 s32 AudioBlockStreamInit(u32* src);
 s32 AudioBlockStreamUpdate(void);
-s32* GetDecodedAudioBuffer(void);
-s32 GetDecodedAudioReadPosition(void);
-void SetDecodedAudioReadPosition(s32 pos);
-u8 LookupPcmPlaybackConfig(u32 id, u16* rate, u32* count);
-u8 PcmPlaybackInit(u32 id);
-void PcmPlaybackStart(void);
-void PcmPlaybackStop(void);
-void PcmPlaybackUpdate(void);
 
 #endif /* GUARD_SROLL_H */
