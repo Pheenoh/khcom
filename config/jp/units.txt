@@ -94,6 +94,7 @@ mode_backupstat.c -O2 -fprologue-bugfix -fno-common
 transform.s
 bos6.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
+mode_staffroll.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
 audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
@@ -1673,7 +1674,7 @@ asset_gfx_gap_205.s(.rodata)
 staff_roll_script_data.c(.data_staff_roll_commands)
 staff_roll_scene_data.c(.data_staff_roll_scenes)
 asset_gfx_gap_205_at_09A541C8.s(.rodata)
-bos7.c(.rodata_registration_name_gModeStaffRoll)
+mode_staffroll.c(.rodata)
 asset_gfx_gap_206.s(.rodata)
 sroll.c(.rodata_registration_name_gTaskDescSrollAName)
 asset_gfx_gap_207.s(.rodata)
@@ -2627,18 +2628,10 @@ animation_resource_data.c(.data_room_resources)
 animation_resource_data.c(.data_09EF9BB0)
 animation_resource_data.c(.data_worldinspect_resources)
 bos6.c(.data)
-boss_lst_data.c(.rodata_lst_shake_index)
-bos7.c(.data_registration_gTaskDescBosLstFld)
-bos7.c(.data_registration_gUnk_09EF9E8C)
-boss_lst_data.c(.data_lst_anim_set)
-bos7.c(.data_registration_gTaskDescBosLstBit)
-bos7.c(.data_registration_gTaskDescBosLstLsr)
-bos7.c(.data_registration_gUnk_09EF9EF4)
-bos7.c(.data_registration_gTaskDescBosLstFal)
-bos7.c(.data_registration_gTaskDescBosLstCtr)
-bos7.c(.data_registration_gTaskDescBosLstSnp)
+bos7.c(.rodata)
+bos7.c(.data)
 staff_roll_script_data.c(.data_staff_roll_indexes)
-bos7.c(.data_registration_gModeStaffRoll)
+mode_staffroll.c(.data)
 sroll.c(.data)
 pcm_audio_data.c(.rodata_pcm_playback_configs)
 staff_roll_resource_tail_data.c(.data_staff_roll_tail_09EFAB18)

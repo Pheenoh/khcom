@@ -1,5 +1,37 @@
 {
   "us": {
+    "src/bos7.o": {
+      "base": "0x2036014",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036014": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02036016": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_02036018": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_0203601C": {
+          "offset": "0x8",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_staffroll.o": {
+      "base": "0x2036020",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02036020": {
+          "offset": "0x0",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_worldwarp.o": {
       "base": "0x20354e8",
       "size": "0x2d4",
@@ -1307,6 +1339,38 @@
     }
   },
   "jp": {
+    "src/bos7.o": {
+      "base": "0x2035f84",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036014": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02036016": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_02036018": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_0203601C": {
+          "offset": "0x8",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_staffroll.o": {
+      "base": "0x2035f90",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02036020": {
+          "offset": "0x0",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_worldwarp.o": {
       "base": "0x2035448",
       "size": "0x2d4",
@@ -2612,6 +2676,38 @@
     }
   },
   "eu": {
+    "src/bos7.o": {
+      "base": "0x2036624",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036014": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_02036016": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_02036018": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_0203601C": {
+          "offset": "0x8",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_staffroll.o": {
+      "base": "0x2036630",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02036020": {
+          "offset": "0x0",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_worldwarp.o": {
       "base": "0x2035978",
       "size": "0x454",

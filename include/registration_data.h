@@ -502,13 +502,6 @@ extern const char gTaskNameBosMdDai[];
 extern const char gTaskNameBosMdHahen[];
 extern const char gModeNameWorldselect[];
 extern const char gModeNameMsTop[];
-extern const char gTaskNameBosLstFld[];
-extern const char gTaskNameBosLstBit[];
-extern const char gTaskNameBosLstLsr[];
-extern const char gTaskNameBosLstFal[];
-extern const char gTaskNameBosLstCtr[];
-extern const char gTaskNameBosLstSnp[];
-extern const char gModeNameStaffRoll[];
 
 extern TaskDesc gUnk_09EE2834;
 extern TaskDesc gUnk_09EE284C;
@@ -672,8 +665,6 @@ extern const char gTaskName_09EF6E1C[];
 extern const char gTaskName_09EF6E34[];
 extern const char gTaskName_09EF6EAC[];
 extern const char gTaskName_09EF6F9C[];
-extern const char gTaskName_09EF9E8C[];
-extern const char gTaskName_09EF9EF4[];
 
 extern const char gModeNameEvent[];
 

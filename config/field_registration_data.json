@@ -1042,20 +1042,6 @@
         },
         {
           "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9E8C",
-          "address": "0x9ef9e8c",
-          "size": 24,
-          "sha256": "7b208e72b4bc68451580525cc6bfbd12bd18f4cbf4e50433ddbecfb422ed0f34",
-          "objects": [
-            {
-              "name": "gUnk_09EF9E8C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos7.c",
           "section": ".rodata_registration_name_gUnk_09EF9EF4",
           "address": "0x9a4fe50",
           "size": 17,
@@ -1069,20 +1055,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9EF4",
-          "address": "0x9ef9ef4",
-          "size": 24,
-          "sha256": "47ac13f53aee4c3bc72a131cbe58d97d1f69167b46d778d91ff5800e92302fbe",
-          "objects": [
-            {
-              "name": "gUnk_09EF9EF4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "sroll.c",
@@ -2140,20 +2112,6 @@
         },
         {
           "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9E8C",
-          "address": "0x9ed1278",
-          "size": 24,
-          "sha256": "a7a1f8a8917e17722300634ed8e997d080142b4f15b58591da756c3a9ce1286e",
-          "objects": [
-            {
-              "name": "gUnk_09EF9E8C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos7.c",
           "section": ".rodata_registration_name_gUnk_09EF9EF4",
           "address": "0x9a048d8",
           "size": 17,
@@ -2167,20 +2125,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9EF4",
-          "address": "0x9ed12e0",
-          "size": 24,
-          "sha256": "c52549e44176f3e9dfd4225de489a63cdc547b5702cc5a5d1738fa9bee6b14d7",
-          "objects": [
-            {
-              "name": "gUnk_09EF9EF4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "sroll.c",
@@ -3238,20 +3182,6 @@
         },
         {
           "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9E8C",
-          "address": "0x9f85af8",
-          "size": 24,
-          "sha256": "22e90d778c760ae68731f0bcfb1c701707341e1a23a8aad740920b78518d2315",
-          "objects": [
-            {
-              "name": "gUnk_09EF9E8C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos7.c",
           "section": ".rodata_registration_name_gUnk_09EF9EF4",
           "address": "0x9aad914",
           "size": 17,
@@ -3265,20 +3195,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "bos7.c",
-          "section": ".data_registration_gUnk_09EF9EF4",
-          "address": "0x9f85b60",
-          "size": 24,
-          "sha256": "a7b9c9d19ae712a41d9dfe08090cd30eb7ce36bcf9f6d6ba17c540bbf99a81d9",
-          "objects": [
-            {
-              "name": "gUnk_09EF9EF4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "sroll.c",

@@ -167,6 +167,7 @@ UNIT_BSS = {
     "src/mode_jiminy.o": {"us": 0x02034934, "jp": 0x02034934, "eu": 0x020349C8},
     "src/bos5.o": {"us": 0x02034FE8, "jp": 0x02034F48, "eu": 0x020351D8},
     "src/bos7.o": {"us": 0x02036014, "jp": 0x02035F84, "eu": 0x02036624},
+    "src/mode_staffroll.o": {"us": 0x02036020, "jp": 0x02035F90, "eu": 0x02036630},
     "src/bos6.o": {"us": 0x02036008, "jp": 0x02035F78, "eu": 0x02036618},
     "src/mode_worldinspect.o": {"us": 0x020350F8, "jp": 0x02035058, "eu": 0x020352E8},
     "src/mode_sio_dbg.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": 0x02034EE4},

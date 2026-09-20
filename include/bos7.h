@@ -325,93 +325,6 @@ typedef struct LstSnpArg {
     s16 unk_0C;
 } LstSnpArg;
 
-typedef struct StaffRollLabelArg {
-    u16 unk_00;
-    u16 unk_02;
-    s32 x;
-    s32 y;
-} StaffRollLabelArg;
-
-
-typedef struct StaffRollTaskArg {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    s32 x;
-    s32 y;
-    s32 targetX;
-    s32 targetY;
-} StaffRollTaskArg;
-
-typedef struct StaffRollLogoArg {
-    s32 unk_00;
-    s32 unk_04;
-    s32* unk_08;
-    s32* unk_0C;
-    u16 unk_10;
-} StaffRollLogoArg;
-
-typedef struct StaffRollSecnArg {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32* unk_0C;
-    s32* unk_10;
-} StaffRollSecnArg;
-
-typedef struct StaffRollWork {
-    u8 unk_000;
-    u8 unk_001;
-    u16 unk_002;
-    u16 unk_004;
-    u16 unk_006;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018[0x60];
-    s32 unk_078;
-    s32 unk_07C;
-    s32 unk_080;
-    s32 unk_084;
-    s32 unk_088;
-    s32 unk_08C;
-    s32 unk_090;
-    s32 unk_094;
-    s32 unk_098;
-    StaffRollScene* scene;
-    u8 unk_0A0;
-    u8 unk_0A1[0x3];
-    s32 unk_0A4;
-    s32 unk_0A8;
-    s32 unk_0AC;
-    s32 unk_0B0;
-    s32 unk_0B4;
-    s32 unk_0B8;
-    s32 unk_0BC;
-    s32 unk_0C0;
-    s32 unk_0C4;
-    s32 unk_0C8;
-    s32* unk_0CC;
-    s32 unk_0D0;
-    s32 unk_0D4;
-    s32 unk_0D8;
-    s32 unk_0DC;
-    s32 unk_0E0;
-    s32 unk_0E4;
-    s32 unk_0E8;
-    s32 unk_0EC;
-    s32 unk_0F0;
-    s32 unk_0F4;
-    u32 palette;
-    u8 unk_0FC[0x14];
-    u8 unk_110[0x14];
-    s32 unk_124[6];
-    u8 unk_13C[0x84];
-    u8 unk_1C0[0x258];
-} StaffRollWork;
-
 extern u16 gUnk_09A4FE64[][2];
 extern u8 gUnk_09A4D234[];
 extern u8 gUnk_09A4F2B4[];
@@ -464,8 +377,6 @@ extern u8 gUnk_09D6BE74[];
 extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
 
-u8 func_08112C38(StaffRollWork* w);
-u8 func_08113180(StaffRollWork* w);
 void func_0810FEDC(void);
 void func_0810FE94(void);
 void func_0810FEBC(s16 a);
@@ -492,7 +403,6 @@ void task_bos_lst_snp_0(LstSnpWork* work, LstSnpArg* arg);
 u8 task_bos_lst_snp_1(LstSnpWork* work);
 void task_bos_lst_snp_2(LstSnpWork* work);
 void task_bos_lst_snp_3(LstSnpWork* work);
-void func_08112600(StaffRollWork* w);
 void task_bos_lst_fld_2(void);
 void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg);
 u8 task_bos_lst_edg_1(LstEdgWork* work);
@@ -517,33 +427,11 @@ s32 func_08111BFC(s32 x);
 s32 func_08111F3C(s32 x);
 s32 func_08111F44(s32 x);
 s32 func_081125B4(s32 x);
-s32 func_08114748(s32 x);
-s32 func_08114750(s32 x);
 u8 func_08110668(LstWork* work);
 u8 func_08111A08(LstWork* work);
 u8 func_081115B4(LstWork* work);
 s32 func_0811157C(s32 n);
 s32 func_08111F60(s32 n);
-u8* func_08112748(StaffRollWork* w);
-u8 func_0811394C(StaffRollWork* w);
-u8 func_08113A94(StaffRollWork* w);
-u8 func_08113BB4(StaffRollWork* w);
-u8 func_08113DB8(StaffRollWork* w);
-u8 func_08113E94(StaffRollWork* w);
-u8 func_08114048(StaffRollWork* w);
-u8 func_0811411C(StaffRollWork* w);
-u8 func_081141F8(StaffRollWork* w);
-void mode_StaffRoll_0(void);
-void func_08112768(StaffRollWork* w);
-void mode_StaffRoll_1(void);
-void mode_StaffRoll_2(void);
-void func_081125BC(StaffRollWork* w);
-u8 func_081125D8(StaffRollWork* w);
-u8 func_08112C24(StaffRollWork* w);
-void func_081126A8(StaffRollWork* w, u16 flags, s32 dur);
-void func_081126D0(StaffRollWork* w, u16 flags, s32 dur);
-void func_081126F8(StaffRollWork* w, u16 flags, s32 dur);
-void func_08112720(StaffRollWork* w, u16 flags, s32 dur);
 u8 func_081108AC(LstState* work, s32 kind);
 s32 func_08110A38(s32 a, s32 b);
 s32 func_08110A98(s32 x0, s32 y0, s32 x1, s32 y1);
