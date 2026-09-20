@@ -11,6 +11,15 @@ extern u8 gSramErrorPalette[];
 extern u8 gSramErrorTiles[];
 extern u8 gSramErrorTilemap[];
 
+const u8* gSaveSignature = gSaveSignatureText;
+
+const u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1] =
+#ifdef VERSION_EU
+    "KHCOM_BACKUP_VER00000013";
+#else
+    "KHCOM_BACKUP_VER00000012";
+#endif
+
 void WaitSramErrorInput(void);
 void ReadKeysRaw(void);
 
@@ -32,7 +41,7 @@ void ZeroFill(void* dst, s16 size) {
     dma[2];
 }
 
-void CopyBytes(u8* src, u8* dst, s16 len) {
+void CopyBytes(const u8* src, u8* dst, s16 len) {
     s16 i;
 
     for (i = 0; i < len; i++) {
@@ -40,7 +49,7 @@ void CopyBytes(u8* src, u8* dst, s16 len) {
     }
 }
 
-u8 BytesEqual(u8* a, u8* b, s16 len) {
+u8 BytesEqual(const u8* a, const u8* b, s16 len) {
     s16 i;
 
     for (i = 0; i < len; i++) {

@@ -8,13 +8,14 @@
     "eu_names": "eu_0805E924 selects one of five pointers at offsets0,4,8,12,16. Menu names flow through jiminy_list.c:223; detail names through mode_jiminy.c:723,746,770.",
     "save": "save.h defines SAVE_SIGNATURE_SIZE as24; save.c compares/copies exactly24 bytes through gSaveSignature. US/JP use version12 and EU version13.",
     "inline_eu_world_names": "Twenty-five original single-byte null-terminated strings are defined by the five established JiminyLocalizedName language-pointer records at 0888E364 through 0888E4C0. Individual extents end at their native terminators; the six remaining bytes are independently checked native four-byte object alignment, not fabricated data. Existing pointer identities and all encoded byte values are preserved.",
-    "inline_jp_description_text": "Eighteen existing Jiminy description-pointer targets at 0813FEB8..08140081 are native Shift-JIS null-terminated strings, each independently bounded by the original text asset evidence and its terminator. Compiler definitions retain every native byte and symbol, including five text bytes beyond the old accidental report-classification boundary. All three-byte or one-byte alignment between strings and the initial three-byte gap are separately checked native four-byte alignment, not array elements."
+    "inline_jp_description_text": "Eighteen existing Jiminy description-pointer targets at 0813FEB8..08140081 are native Shift-JIS null-terminated strings, each independently bounded by the original text asset evidence and its terminator. Compiler definitions retain every native byte and symbol, including five text bytes beyond the old accidental report-classification boundary. All three-byte or one-byte alignment between strings and the initial three-byte gap are separately checked native four-byte alignment, not array elements.",
+    "save_native_owner": "The version signature is only compared and copied from by save.c; the pointer has no other consumer. Treating the unchanged signature bytes as const is an explicit reconstruction assumption supported by these read-only uses. Both signature and pointer use the code owner's ordinary readonly and initialized-data sections, retaining their original independent addresses, sizes, regional version text and natural alignment. The error-screen asset arrays stay unchanged in save_data.c."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "save_data.c",
+          "unit": "save.c",
           "section": ".data",
           "address": "0x09EDB7E8",
           "size": 4,
@@ -2916,8 +2917,8 @@
           ]
         },
         {
-          "unit": "save_data.c",
-          "section": ".data_save_signature_text",
+          "unit": "save.c",
+          "section": ".rodata",
           "address": "0x0813FE20",
           "size": 25,
           "sha256": "30a1bff65400281d27d235d504d3c94b6a2faac0b2b6aacc6e0d196e728c2923",
@@ -13768,7 +13769,7 @@
     "jp": {
       "placements": [
         {
-          "unit": "save_data.c",
+          "unit": "save.c",
           "section": ".data",
           "address": "0x09EB3AD4",
           "size": 4,
@@ -16670,8 +16671,8 @@
           ]
         },
         {
-          "unit": "save_data.c",
-          "section": ".data_save_signature_text",
+          "unit": "save.c",
+          "section": ".rodata",
           "address": "0x0813FE9C",
           "size": 25,
           "sha256": "30a1bff65400281d27d235d504d3c94b6a2faac0b2b6aacc6e0d196e728c2923",
@@ -45665,7 +45666,7 @@
           ]
         },
         {
-          "unit": "save_data.c",
+          "unit": "save.c",
           "section": ".data",
           "address": "0x09F5909C",
           "size": 4,
@@ -45678,8 +45679,8 @@
           ]
         },
         {
-          "unit": "save_data.c",
-          "section": ".data_save_signature_text",
+          "unit": "save.c",
+          "section": ".rodata",
           "address": "0x0888E2F4",
           "size": 25,
           "sha256": "4822c48e3d9a842772a192ea588bb689293191dea57b7a9260a4e878381cf0b4",

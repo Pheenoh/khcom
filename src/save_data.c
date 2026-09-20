@@ -1524,12 +1524,3 @@ const u8 gSramErrorTilemap[1280] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
-
-u8* gSaveSignature = gSaveSignatureText;
-
-u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1] __attribute__((section(".data_save_signature_text"))) =
-#ifdef VERSION_EU
-    "KHCOM_BACKUP_VER00000013";
-#else
-    "KHCOM_BACKUP_VER00000012";
-#endif

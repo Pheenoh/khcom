@@ -26,8 +26,8 @@ extern u8 gSramFileLarge[];
 #define SAVE_BAD_CHECKSUM 1
 #define SAVE_OK 2
 
-extern u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1];
-extern u8* gSaveSignature;
+extern const u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1];
+extern const u8* gSaveSignature;
 
 
 
@@ -61,8 +61,8 @@ typedef struct SaveHeader {
 } SaveHeader;
 
 void ZeroFill(void* dst, s16 size);
-void CopyBytes(u8* src, u8* dst, s16 len);
-u8 BytesEqual(u8* a, u8* b, s16 len);
+void CopyBytes(const u8* src, u8* dst, s16 len);
+u8 BytesEqual(const u8* a, const u8* b, s16 len);
 u16 SaveChecksum(u16* data, int size);
 int SaveVerifyBlock(u8* sram, u8* hdr, u8* buf, s16 size);
 
