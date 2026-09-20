@@ -4,14 +4,15 @@
     "native": "Native actor/allmap/title resource pointers,42 pairs inUS/JP and66 inEU. EU title-language arrays have actual native shapes; inactive generic US aliases into EU array interiors are not fabricated as objects.",
     "bounds": "Complete AnimHeader frames prove graphics extents except direct allmap i<4, title signed-effect0..2, and title native menu selector4,5,1,2. EU five-language selectors independently identify inner arrays of3 or6 graphics. Existing mode-title graphics scalar semantics are retained.",
     "unused": "Unreferenced resource pairs retain exact decoded header/frame shapes; no runtime reachability is claimed. Two US/JP and six EU graphics suffix words are separate neutral pointer scalars, not inflated arrays.",
-    "assets": "Version-local Sprite/AnimHeader assets have complete format extents and original ROM hashes; already managed targets reuse their existing canonical declaration headers. No cross-region data-pointer mapping is inferred."
+    "assets": "Version-local Sprite/AnimHeader assets have complete format extents and original ROM hashes; already managed targets reuse their existing canonical declaration headers. No cross-region data-pointer mapping is inferred.",
+    "native_catalog": "The existing actor and UI resource catalog consists of homogeneous sprite-frame and animation-pointer definitions, with one complete initialized-data run per region. Removing the repeated recovery section attribute leaves the same typed definitions in their existing source order and version guards. Ordinary data sections reproduce every original object offset, size, initializer and relocation; the file has no nonempty readonly or RAM section. Retaining this logical catalog as a data-only translation unit is a reconstruction assumption, without a claim about the original filename or generator boundary. All resource assets and existing bounds remain unchanged."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "actor_ui_resource_data.c",
-          "section": ".data_actor_ui_resources",
+          "section": ".data",
           "address": "0x9ef629c",
           "size": 1240,
           "sha256": "c28f9471f203ad3f672e383f8327a11189444ca19c87668a4d02250e042a9283",
@@ -2626,7 +2627,7 @@
       "placements": [
         {
           "unit": "actor_ui_resource_data.c",
-          "section": ".data_actor_ui_resources",
+          "section": ".data",
           "address": "0x9ecd688",
           "size": 1240,
           "sha256": "8c7c9cb9f6f6f5dfddfa674b27e0ccf102498753b678e1f9342b84ac5b242389",
@@ -5241,7 +5242,7 @@
       "placements": [
         {
           "unit": "actor_ui_resource_data.c",
-          "section": ".data_actor_ui_resources",
+          "section": ".data",
           "address": "0x9f81694",
           "size": 1736,
           "sha256": "3173fd8ad6c4afb9b89233db3c710355a1400f7da2d300f3b8ddc8445aa4a113",
