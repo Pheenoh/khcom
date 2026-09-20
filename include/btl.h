@@ -7,7 +7,7 @@
 
 #include "card_api.h"
 
-#include "eventselect_api.h"
+#include "card_battle.h"
 
 #include "btl_tasks.h"
 

@@ -387,345 +387,155 @@
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gModeEventselect",
+          "section": ".rodata",
           "address": "0x09033F1C",
-          "size": 17,
-          "sha256": "2f963f5253b34d68a78ffb5ae179a4be1b2b87f6e2770f8d8a5d213b154ff31d",
+          "size": 140,
+          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
           "objects": [
             {
               "name": "gModeNameEventselect",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameHanabira",
+              "offset": 20,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameHanabiraC",
+              "offset": 32,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameSmoke",
+              "offset": 44,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameExclamation",
+              "offset": 52,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameBalloon",
+              "offset": 64,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameQuestion",
+              "offset": 72,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameGlowNose",
+              "offset": 84,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameDown",
+              "offset": 96,
+              "size": 5
+            },
+            {
+              "name": "gTaskNameTinkerbell",
+              "offset": 104,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameEvSound",
+              "offset": 116,
+              "size": 9
+            },
+            {
+              "name": "gTaskName_09EE48DC",
+              "offset": 128,
+              "size": 12
             }
           ]
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".data_registration_gModeEventselect",
+          "section": ".data",
           "address": "0x09EE47AC",
-          "size": 16,
-          "sha256": "eae4a4a6beb32da0eac5e19826d8c25254360f3113ff8d90a5f355c5810340e1",
+          "size": 328,
+          "sha256": "5b1617506d78699d021c499ddfd773f2439fac1dccd99a0ec323792f3df5f2b7",
           "objects": [
             {
               "name": "gModeEventselect",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabira",
-          "address": "0x09033F30",
-          "size": 9,
-          "sha256": "d64ee46cee3cdf6945f66934a499689f892b988f06d632759ec82a3e01e9c105",
-          "objects": [
-            {
-              "name": "gTaskNameHanabira",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabira",
-          "address": "0x09EE47BC",
-          "size": 24,
-          "sha256": "01e436a987a8fe642e517741298f3b869a62d061c8b7bbb880138958aec0c7ba",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabira",
-              "offset": 0,
+              "offset": 16,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabiraC",
-          "address": "0x09033F3C",
-          "size": 11,
-          "sha256": "d259d5e43b7070e81a4e2ff16f3aadd374c955b034bf296a5f5feb244c8eb2c2",
-          "objects": [
-            {
-              "name": "gTaskNameHanabiraC",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabiraC",
-          "address": "0x09EE47D4",
-          "size": 24,
-          "sha256": "0038cfd39bc6bfdd2e9a826fc8c80abe6a5478366cbd889a149bfcb52477f2bd",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabiraC",
-              "offset": 0,
+              "offset": 40,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescSmoke",
-          "address": "0x09033F48",
-          "size": 6,
-          "sha256": "d95b9f2f3a709d93c5e2daf52e4a8372bc4a46b04924070920d23f4627ec45f8",
-          "objects": [
-            {
-              "name": "gTaskNameSmoke",
-              "offset": 0,
-              "size": 6
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescSmoke",
-          "address": "0x09EE47EC",
-          "size": 24,
-          "sha256": "3bba816bee728d3e7b6b6cc0aa20af2ff578d2dfb5bba003a4b609da65034145",
-          "objects": [
+            },
             {
               "name": "gTaskDescSmoke",
-              "offset": 0,
+              "offset": 64,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescExclamation",
-          "address": "0x09033F50",
-          "size": 12,
-          "sha256": "b1b943c92e89640392696810913d13adbfba2a2cef83c55123c8d8ba94635955",
-          "objects": [
-            {
-              "name": "gTaskNameExclamation",
-              "offset": 0,
-              "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescExclamation",
-          "address": "0x09EE4804",
-          "size": 24,
-          "sha256": "6f21edc8047c01800bdb9ea2452768029e269ce981d4921b64ac9099bd55f80d",
-          "objects": [
+            },
             {
               "name": "gTaskDescExclamation",
-              "offset": 0,
+              "offset": 88,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescBalloon",
-          "address": "0x09033F5C",
-          "size": 8,
-          "sha256": "5317efa0d0a4593b2b91ce5cc1aaffbffb9c9a4f093f7253d138a69d24943f11",
-          "objects": [
-            {
-              "name": "gTaskNameBalloon",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescBalloon",
-          "address": "0x09EE481C",
-          "size": 24,
-          "sha256": "d508093a9370812330c5fbf231942f097a0e47716da5b4c98adfa4253f223167",
-          "objects": [
+            },
             {
               "name": "gTaskDescBalloon",
-              "offset": 0,
+              "offset": 112,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescQuestion",
-          "address": "0x09033F64",
-          "size": 9,
-          "sha256": "e7d7defa7e71b57964f4ab6d0a2d427fdb8c9fca1bf93a98c61d931f85ba75b6",
-          "objects": [
-            {
-              "name": "gTaskNameQuestion",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescQuestion",
-          "address": "0x09EE4834",
-          "size": 24,
-          "sha256": "0ef1929dc97bd6127513b1e51f959d6a085c2874f867e4da784a99cfae27c641",
-          "objects": [
+            },
             {
               "name": "gTaskDescQuestion",
-              "offset": 0,
+              "offset": 136,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescGlowNose",
-          "address": "0x09033F70",
-          "size": 9,
-          "sha256": "f45325799169fa0a4fe8094178a84f33aad510b3cf9f8bed6cf42bf473c68274",
-          "objects": [
+            },
             {
-              "name": "gTaskNameGlowNose",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose",
-          "address": "0x09EE4864",
-          "size": 24,
-          "sha256": "5121e29dd52f194a0d0e30e4046bbcd9bae6d543f9906a69b2f4a11a436b8582",
-          "objects": [
+              "name": "gUnk_09EE484C",
+              "offset": 160,
+              "size": 24
+            },
             {
               "name": "gTaskDescGlowNose",
-              "offset": 0,
+              "offset": 184,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose2",
-          "address": "0x09EE487C",
-          "size": 24,
-          "sha256": "ad286d92a9719a5f600ccc23f5ebc8ee4911a3a7b38a30092345a57a76298051",
-          "objects": [
+            },
             {
               "name": "gTaskDescGlowNose2",
-              "offset": 0,
+              "offset": 208,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescDown",
-          "address": "0x09033F7C",
-          "size": 5,
-          "sha256": "22f27d8c226e0458bc8eb71202f52c4dcf05f6c86073c82fe6f73df75fe3e854",
-          "objects": [
-            {
-              "name": "gTaskNameDown",
-              "offset": 0,
-              "size": 5
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescDown",
-          "address": "0x09EE4894",
-          "size": 24,
-          "sha256": "a392fc171083d43bee696a766ad1225d2e1d2489100b991fdc58ee8b68cc22b3",
-          "objects": [
+            },
             {
               "name": "gTaskDescDown",
-              "offset": 0,
+              "offset": 232,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescTinkerbell",
-          "address": "0x09033F84",
-          "size": 11,
-          "sha256": "78fdde50238c5770e997189a42b2a7f9b896c02fcbcb898e85d1b4d1daa84ce2",
-          "objects": [
-            {
-              "name": "gTaskNameTinkerbell",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescTinkerbell",
-          "address": "0x09EE48AC",
-          "size": 24,
-          "sha256": "21a1fbb49c451725cddcc023229ccf91480ffa4a22f2eeb93214961165e94b35",
-          "objects": [
+            },
             {
               "name": "gTaskDescTinkerbell",
-              "offset": 0,
+              "offset": 256,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescEvSound",
-          "address": "0x09033F90",
-          "size": 9,
-          "sha256": "d13638f1c4becc2abc418d103498d33303649e8aea7ba987f9efdbc9407cb087",
-          "objects": [
-            {
-              "name": "gTaskNameEvSound",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescEvSound",
-          "address": "0x09EE48C4",
-          "size": 24,
-          "sha256": "312fef0cd7284794978341bb9b9130e29a16716d1d344d55d02ad0368c68b4fa",
-          "objects": [
+            },
             {
               "name": "gTaskDescEvSound",
-              "offset": 0,
+              "offset": 280,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE48DC",
+              "offset": 304,
               "size": 24
             }
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".rodata",
           "address": "0x09033FE8",
           "size": 11,
           "sha256": "261235dbeae0b733c4cfa009e85e2520bcab70d2b0e1fb2734d9001558b03fa5",
@@ -738,8 +548,8 @@
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".data",
           "address": "0x09EE4954",
           "size": 24,
           "sha256": "5e63e287fd0cc171409495c1afbcd0761eb8db7e40f5e0f50667d4e5e6d5bf0c",
@@ -8232,345 +8042,155 @@
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gModeEventselect",
+          "section": ".rodata",
           "address": "0x090071E0",
-          "size": 17,
-          "sha256": "2f963f5253b34d68a78ffb5ae179a4be1b2b87f6e2770f8d8a5d213b154ff31d",
+          "size": 140,
+          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
           "objects": [
             {
               "name": "gModeNameEventselect",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameHanabira",
+              "offset": 20,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameHanabiraC",
+              "offset": 32,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameSmoke",
+              "offset": 44,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameExclamation",
+              "offset": 52,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameBalloon",
+              "offset": 64,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameQuestion",
+              "offset": 72,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameGlowNose",
+              "offset": 84,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameDown",
+              "offset": 96,
+              "size": 5
+            },
+            {
+              "name": "gTaskNameTinkerbell",
+              "offset": 104,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameEvSound",
+              "offset": 116,
+              "size": 9
+            },
+            {
+              "name": "gTaskName_09EE48DC",
+              "offset": 128,
+              "size": 12
             }
           ]
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".data_registration_gModeEventselect",
+          "section": ".data",
           "address": "0x09EBBDCC",
-          "size": 16,
-          "sha256": "59a5b018b1683aa3bd7ef5b62681b967a08e04fceb527f037cfe1a47461603a5",
+          "size": 328,
+          "sha256": "50e5f851ff85c1a4491347fd91a34611551ac8dccf3894a033f6b836de9740b0",
           "objects": [
             {
               "name": "gModeEventselect",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabira",
-          "address": "0x090071F4",
-          "size": 9,
-          "sha256": "d64ee46cee3cdf6945f66934a499689f892b988f06d632759ec82a3e01e9c105",
-          "objects": [
-            {
-              "name": "gTaskNameHanabira",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabira",
-          "address": "0x09EBBDDC",
-          "size": 24,
-          "sha256": "0fdf065c5d0012eeb05d1d438fd4b055054f79ec3e9fe14b108fd25d3e8a73ce",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabira",
-              "offset": 0,
+              "offset": 16,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabiraC",
-          "address": "0x09007200",
-          "size": 11,
-          "sha256": "d259d5e43b7070e81a4e2ff16f3aadd374c955b034bf296a5f5feb244c8eb2c2",
-          "objects": [
-            {
-              "name": "gTaskNameHanabiraC",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabiraC",
-          "address": "0x09EBBDF4",
-          "size": 24,
-          "sha256": "2fd79c7696425023c121811004201dcbce968df0cba84ad41cb160465a2ab55d",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabiraC",
-              "offset": 0,
+              "offset": 40,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescSmoke",
-          "address": "0x0900720C",
-          "size": 6,
-          "sha256": "d95b9f2f3a709d93c5e2daf52e4a8372bc4a46b04924070920d23f4627ec45f8",
-          "objects": [
-            {
-              "name": "gTaskNameSmoke",
-              "offset": 0,
-              "size": 6
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescSmoke",
-          "address": "0x09EBBE0C",
-          "size": 24,
-          "sha256": "c7cdfc4343bdd82f11facdb59b3ad7528fea3b4755ef4ea754ae120f04f0ef53",
-          "objects": [
+            },
             {
               "name": "gTaskDescSmoke",
-              "offset": 0,
+              "offset": 64,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescExclamation",
-          "address": "0x09007214",
-          "size": 12,
-          "sha256": "b1b943c92e89640392696810913d13adbfba2a2cef83c55123c8d8ba94635955",
-          "objects": [
-            {
-              "name": "gTaskNameExclamation",
-              "offset": 0,
-              "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescExclamation",
-          "address": "0x09EBBE24",
-          "size": 24,
-          "sha256": "c012b3f1bd8af336a6e6e052d619c7d1aaafc7964725d5c902b628e0348eea42",
-          "objects": [
+            },
             {
               "name": "gTaskDescExclamation",
-              "offset": 0,
+              "offset": 88,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescBalloon",
-          "address": "0x09007220",
-          "size": 8,
-          "sha256": "5317efa0d0a4593b2b91ce5cc1aaffbffb9c9a4f093f7253d138a69d24943f11",
-          "objects": [
-            {
-              "name": "gTaskNameBalloon",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescBalloon",
-          "address": "0x09EBBE3C",
-          "size": 24,
-          "sha256": "05677cabda77f8fd3aa298ac24ad525838806a853a6dcf17119c7090833b7e2a",
-          "objects": [
+            },
             {
               "name": "gTaskDescBalloon",
-              "offset": 0,
+              "offset": 112,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescQuestion",
-          "address": "0x09007228",
-          "size": 9,
-          "sha256": "e7d7defa7e71b57964f4ab6d0a2d427fdb8c9fca1bf93a98c61d931f85ba75b6",
-          "objects": [
-            {
-              "name": "gTaskNameQuestion",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescQuestion",
-          "address": "0x09EBBE54",
-          "size": 24,
-          "sha256": "db2dafa3735304cb0112fcd35f4a23e6ab22e7f575dea3c9c58672f1d91ce0e3",
-          "objects": [
+            },
             {
               "name": "gTaskDescQuestion",
-              "offset": 0,
+              "offset": 136,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescGlowNose",
-          "address": "0x09007234",
-          "size": 9,
-          "sha256": "f45325799169fa0a4fe8094178a84f33aad510b3cf9f8bed6cf42bf473c68274",
-          "objects": [
+            },
             {
-              "name": "gTaskNameGlowNose",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose",
-          "address": "0x09EBBE84",
-          "size": 24,
-          "sha256": "029a22c03de134812b35fff2283c447d9bfa0aafee7e1264e7bba6c37a28c479",
-          "objects": [
+              "name": "gUnk_09EE484C",
+              "offset": 160,
+              "size": 24
+            },
             {
               "name": "gTaskDescGlowNose",
-              "offset": 0,
+              "offset": 184,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose2",
-          "address": "0x09EBBE9C",
-          "size": 24,
-          "sha256": "4009c347d8344caa347394f0e48f423c3d3f2e4e04fa4c1516e3b6a4565a177e",
-          "objects": [
+            },
             {
               "name": "gTaskDescGlowNose2",
-              "offset": 0,
+              "offset": 208,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescDown",
-          "address": "0x09007240",
-          "size": 5,
-          "sha256": "22f27d8c226e0458bc8eb71202f52c4dcf05f6c86073c82fe6f73df75fe3e854",
-          "objects": [
-            {
-              "name": "gTaskNameDown",
-              "offset": 0,
-              "size": 5
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescDown",
-          "address": "0x09EBBEB4",
-          "size": 24,
-          "sha256": "73128fdc0d50e00ef3762cd1dfabab96228184761fff1ff74105c4530fcacf16",
-          "objects": [
+            },
             {
               "name": "gTaskDescDown",
-              "offset": 0,
+              "offset": 232,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescTinkerbell",
-          "address": "0x09007248",
-          "size": 11,
-          "sha256": "78fdde50238c5770e997189a42b2a7f9b896c02fcbcb898e85d1b4d1daa84ce2",
-          "objects": [
-            {
-              "name": "gTaskNameTinkerbell",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescTinkerbell",
-          "address": "0x09EBBECC",
-          "size": 24,
-          "sha256": "3d8c8bf0673f69d595dcfcd22453e0916cfdf7882bc2953b85bfa4880c9edecd",
-          "objects": [
+            },
             {
               "name": "gTaskDescTinkerbell",
-              "offset": 0,
+              "offset": 256,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescEvSound",
-          "address": "0x09007254",
-          "size": 9,
-          "sha256": "d13638f1c4becc2abc418d103498d33303649e8aea7ba987f9efdbc9407cb087",
-          "objects": [
-            {
-              "name": "gTaskNameEvSound",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescEvSound",
-          "address": "0x09EBBEE4",
-          "size": 24,
-          "sha256": "d0e6cd9d2b956ae18c9d532e436ac6a2aab8ab9b5098345ed1feef592b17b3a0",
-          "objects": [
+            },
             {
               "name": "gTaskDescEvSound",
-              "offset": 0,
+              "offset": 280,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE48DC",
+              "offset": 304,
               "size": 24
             }
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".rodata",
           "address": "0x090072AC",
           "size": 11,
           "sha256": "261235dbeae0b733c4cfa009e85e2520bcab70d2b0e1fb2734d9001558b03fa5",
@@ -8583,8 +8203,8 @@
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".data",
           "address": "0x09EBBF74",
           "size": 24,
           "sha256": "f0e2db81bb805853ec8d19c291d6f91d4b26f29f10ac3c5f7486415847608f5c",
@@ -16049,345 +15669,155 @@
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gModeEventselect",
+          "section": ".rodata",
           "address": "0x090CD210",
-          "size": 17,
-          "sha256": "2f963f5253b34d68a78ffb5ae179a4be1b2b87f6e2770f8d8a5d213b154ff31d",
+          "size": 140,
+          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
           "objects": [
             {
               "name": "gModeNameEventselect",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameHanabira",
+              "offset": 20,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameHanabiraC",
+              "offset": 32,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameSmoke",
+              "offset": 44,
+              "size": 6
+            },
+            {
+              "name": "gTaskNameExclamation",
+              "offset": 52,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameBalloon",
+              "offset": 64,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameQuestion",
+              "offset": 72,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameGlowNose",
+              "offset": 84,
+              "size": 9
+            },
+            {
+              "name": "gTaskNameDown",
+              "offset": 96,
+              "size": 5
+            },
+            {
+              "name": "gTaskNameTinkerbell",
+              "offset": 104,
+              "size": 11
+            },
+            {
+              "name": "gTaskNameEvSound",
+              "offset": 116,
+              "size": 9
+            },
+            {
+              "name": "gTaskName_09EE48DC",
+              "offset": 128,
+              "size": 12
             }
           ]
         },
         {
           "unit": "mode_eventselect.c",
-          "section": ".data_registration_gModeEventselect",
+          "section": ".data",
           "address": "0x09F6FA58",
-          "size": 16,
-          "sha256": "ae8dd4e140abf719a71f0cab07e1233e9456452e8f2164b6090e8464a05afd5e",
+          "size": 328,
+          "sha256": "1c82db01460e6ad77c156851bf1d30ab3bc554f3cabcdc084b4265018303a2e3",
           "objects": [
             {
               "name": "gModeEventselect",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabira",
-          "address": "0x090CD224",
-          "size": 9,
-          "sha256": "d64ee46cee3cdf6945f66934a499689f892b988f06d632759ec82a3e01e9c105",
-          "objects": [
-            {
-              "name": "gTaskNameHanabira",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabira",
-          "address": "0x09F6FA68",
-          "size": 24,
-          "sha256": "35246a1a0bdb5dfe45d57e6d7de2dd2a07ebdc2389f00e63f51a0f67bbbc0f11",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabira",
-              "offset": 0,
+              "offset": 16,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescHanabiraC",
-          "address": "0x090CD230",
-          "size": 11,
-          "sha256": "d259d5e43b7070e81a4e2ff16f3aadd374c955b034bf296a5f5feb244c8eb2c2",
-          "objects": [
-            {
-              "name": "gTaskNameHanabiraC",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescHanabiraC",
-          "address": "0x09F6FA80",
-          "size": 24,
-          "sha256": "c5cf744a32701c3c91d83a1f3cf378a3d5de8c29ac4abfa5e98197233b0243ed",
-          "objects": [
+            },
             {
               "name": "gTaskDescHanabiraC",
-              "offset": 0,
+              "offset": 40,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescSmoke",
-          "address": "0x090CD23C",
-          "size": 6,
-          "sha256": "d95b9f2f3a709d93c5e2daf52e4a8372bc4a46b04924070920d23f4627ec45f8",
-          "objects": [
-            {
-              "name": "gTaskNameSmoke",
-              "offset": 0,
-              "size": 6
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescSmoke",
-          "address": "0x09F6FA98",
-          "size": 24,
-          "sha256": "3739375c1dfb57e12b2f3370dfa20577fecddc7b2248d698c7d72c2eba069907",
-          "objects": [
+            },
             {
               "name": "gTaskDescSmoke",
-              "offset": 0,
+              "offset": 64,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescExclamation",
-          "address": "0x090CD244",
-          "size": 12,
-          "sha256": "b1b943c92e89640392696810913d13adbfba2a2cef83c55123c8d8ba94635955",
-          "objects": [
-            {
-              "name": "gTaskNameExclamation",
-              "offset": 0,
-              "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescExclamation",
-          "address": "0x09F6FAB0",
-          "size": 24,
-          "sha256": "2246345011a0317c5efdf6f3b9e4353b85d5ef405cd2ad6e26a10b090f049d0c",
-          "objects": [
+            },
             {
               "name": "gTaskDescExclamation",
-              "offset": 0,
+              "offset": 88,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescBalloon",
-          "address": "0x090CD250",
-          "size": 8,
-          "sha256": "5317efa0d0a4593b2b91ce5cc1aaffbffb9c9a4f093f7253d138a69d24943f11",
-          "objects": [
-            {
-              "name": "gTaskNameBalloon",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescBalloon",
-          "address": "0x09F6FAC8",
-          "size": 24,
-          "sha256": "29c80aa384271866f52dae382707ff65346aa7e3baefa8382581f3d9003aac54",
-          "objects": [
+            },
             {
               "name": "gTaskDescBalloon",
-              "offset": 0,
+              "offset": 112,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescQuestion",
-          "address": "0x090CD258",
-          "size": 9,
-          "sha256": "e7d7defa7e71b57964f4ab6d0a2d427fdb8c9fca1bf93a98c61d931f85ba75b6",
-          "objects": [
-            {
-              "name": "gTaskNameQuestion",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescQuestion",
-          "address": "0x09F6FAE0",
-          "size": 24,
-          "sha256": "531df11785e38aafe14a99640bc9d97fe06beaed6c019e1a4224d73d769e311f",
-          "objects": [
+            },
             {
               "name": "gTaskDescQuestion",
-              "offset": 0,
+              "offset": 136,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescGlowNose",
-          "address": "0x090CD264",
-          "size": 9,
-          "sha256": "f45325799169fa0a4fe8094178a84f33aad510b3cf9f8bed6cf42bf473c68274",
-          "objects": [
+            },
             {
-              "name": "gTaskNameGlowNose",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose",
-          "address": "0x09F6FB10",
-          "size": 24,
-          "sha256": "0ec07f1795e2bad6ca6c2c22e40a4c33ab22857c6e497816086651a1f7e6aeb1",
-          "objects": [
+              "name": "gUnk_09EE484C",
+              "offset": 160,
+              "size": 24
+            },
             {
               "name": "gTaskDescGlowNose",
-              "offset": 0,
+              "offset": 184,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescGlowNose2",
-          "address": "0x09F6FB28",
-          "size": 24,
-          "sha256": "89facb3caa6c357378406942dcbff71794e98aa67f74ad1f88ff9016853d4907",
-          "objects": [
+            },
             {
               "name": "gTaskDescGlowNose2",
-              "offset": 0,
+              "offset": 208,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescDown",
-          "address": "0x090CD270",
-          "size": 5,
-          "sha256": "22f27d8c226e0458bc8eb71202f52c4dcf05f6c86073c82fe6f73df75fe3e854",
-          "objects": [
-            {
-              "name": "gTaskNameDown",
-              "offset": 0,
-              "size": 5
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescDown",
-          "address": "0x09F6FB40",
-          "size": 24,
-          "sha256": "7215f003dedd157f15eba3bb74ba420a3959f3e95489e08862e1493f4dab6f33",
-          "objects": [
+            },
             {
               "name": "gTaskDescDown",
-              "offset": 0,
+              "offset": 232,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescTinkerbell",
-          "address": "0x090CD278",
-          "size": 11,
-          "sha256": "78fdde50238c5770e997189a42b2a7f9b896c02fcbcb898e85d1b4d1daa84ce2",
-          "objects": [
-            {
-              "name": "gTaskNameTinkerbell",
-              "offset": 0,
-              "size": 11
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescTinkerbell",
-          "address": "0x09F6FB58",
-          "size": 24,
-          "sha256": "ba6d493f074150e61848cb1f03f6960a2350bbbc76024c16ff2a2b7e084dac9c",
-          "objects": [
+            },
             {
               "name": "gTaskDescTinkerbell",
-              "offset": 0,
+              "offset": 256,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescEvSound",
-          "address": "0x090CD284",
-          "size": 9,
-          "sha256": "d13638f1c4becc2abc418d103498d33303649e8aea7ba987f9efdbc9407cb087",
-          "objects": [
-            {
-              "name": "gTaskNameEvSound",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescEvSound",
-          "address": "0x09F6FB70",
-          "size": 24,
-          "sha256": "92da64df6c6dcb88369a869172a0078e7536614a9fab42b39a53e1546eb0b874",
-          "objects": [
+            },
             {
               "name": "gTaskDescEvSound",
-              "offset": 0,
+              "offset": 280,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE48DC",
+              "offset": 304,
               "size": 24
             }
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".rodata_registration_name_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".rodata",
           "address": "0x090CD2DC",
           "size": 11,
           "sha256": "261235dbeae0b733c4cfa009e85e2520bcab70d2b0e1fb2734d9001558b03fa5",
@@ -16400,8 +15830,8 @@
           ]
         },
         {
-          "unit": "mode_eventselect.c",
-          "section": ".data_registration_gTaskDescCardBattleSora",
+          "unit": "card_battle.c",
+          "section": ".data",
           "address": "0x09F6FC00",
           "size": 24,
           "sha256": "9a7d17f5641bab27dad2782e77fd1301cb2d9e21d5a7232ecefe4b76a38c495c",

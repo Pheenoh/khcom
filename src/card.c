@@ -8,7 +8,7 @@
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode_sio_api.h"
-#include "eventselect_api.h"
+#include "card_battle.h"
 #include "mode_test_api.h"
 #include "player_progression.h"
 #include "m4a_song.h"
@@ -155,7 +155,6 @@ extern void* gUnkEu_08895DBC[];
 #define LANGSTR(x) (x)
 #endif
 
-extern CardDisplayWork* gUnk_02034A98;
 
 u32 gUnk_02034AA4;
 u32 gUnk_02034AA8;

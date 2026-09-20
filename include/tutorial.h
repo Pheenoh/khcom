@@ -7,7 +7,7 @@
 #include "card_api.h"
 
 #include "movie_text.h"
-#include "eventselect_api.h"
+#include "card_battle.h"
 
 #include "obj_api.h"
 #include "btl_effect.h"

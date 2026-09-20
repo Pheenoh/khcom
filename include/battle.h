@@ -20,7 +20,7 @@
 #include "msg_api.h"
 #include "mode_chkbtl_api.h"
 
-#include "eventselect_api.h"
+#include "card_battle.h"
 
 #include "save_api.h"
 

@@ -307,20 +307,26 @@
       }
     },
     "src/mode_eventselect.o": {
+      "base": "0x02034A94",
+      "size": "0x3",
+      "symbols": {
+        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+      }
+    },
+    "src/card_battle.o": {
       "sections": [
         {
-          "base": "0x02034A94",
-          "size": "0x10",
+          "base": "0x02034A98",
+          "size": "0xC",
           "symbols": {
-            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"},
-            "gUnk_02034A98": {"offset": "0x4", "size": "0x4"},
-            "gUnk_02034A9C": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034AA0": {"offset": "0xC", "size": "0x4"}
+            "gUnk_02034A98": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034A9C": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AA0": {"offset": "0x8", "size": "0x4"}
           }
         },
         {
-          "section": ".common.mode_eventselect",
+          "section": ".common.card_battle",
           "base": "0x02039DD4",
           "size": "0x4",
           "symbols": {
@@ -1410,20 +1416,26 @@
       }
     },
     "src/mode_eventselect.o": {
+      "base": "0x020349F4",
+      "size": "0x3",
+      "symbols": {
+        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+      }
+    },
+    "src/card_battle.o": {
       "sections": [
         {
-          "base": "0x020349F4",
-          "size": "0x10",
+          "base": "0x020349F8",
+          "size": "0xC",
           "symbols": {
-            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"},
-            "gUnk_02034A98": {"offset": "0x4", "size": "0x4"},
-            "gUnk_02034A9C": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034AA0": {"offset": "0xC", "size": "0x4"}
+            "gUnk_02034A98": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034A9C": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AA0": {"offset": "0x8", "size": "0x4"}
           }
         },
         {
-          "section": ".common.mode_eventselect",
+          "section": ".common.card_battle",
           "base": "0x02039D44",
           "size": "0x4",
           "symbols": {
@@ -2517,20 +2529,26 @@
       }
     },
     "src/mode_eventselect.o": {
+      "base": "0x02034AB0",
+      "size": "0x3",
+      "symbols": {
+        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+      }
+    },
+    "src/card_battle.o": {
       "sections": [
         {
-          "base": "0x02034AB0",
-          "size": "0x10",
+          "base": "0x02034AB4",
+          "size": "0xC",
           "symbols": {
-            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"},
-            "gUnk_02034A98": {"offset": "0x4", "size": "0x4"},
-            "gUnk_02034A9C": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034AA0": {"offset": "0xC", "size": "0x4"}
+            "gUnk_02034A98": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034A9C": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AA0": {"offset": "0x8", "size": "0x4"}
           }
         },
         {
-          "section": ".common.mode_eventselect",
+          "section": ".common.card_battle",
           "base": "0x0203A3E4",
           "size": "0x4",
           "symbols": {

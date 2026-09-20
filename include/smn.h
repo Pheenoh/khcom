@@ -5,7 +5,7 @@
 
 #include "registration_data.h"
 
-#include "eventselect_api.h"
+#include "card_battle.h"
 
 #include "smn_tasks.h"
 

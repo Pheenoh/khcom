@@ -39,29 +39,6 @@ typedef struct UnkStruct_02039DD0 {
     u16 volume;
 } UnkStruct_02039DD0;
 
-typedef struct CardBattleWork {
-    TaskPool tasks;
-    void* tiles;
-    void* palette;
-    u8 unk_1C[0x28];
-    void* unk_44[4];
-    u8 unk_54[0x50];
-    s16 x;
-    u8 unk_A6[0x0A];
-    s16 unk_B0;
-    u8 unk_B2[0x07];
-    u8 unk_B9;
-    u8 unk_BA;
-    u8 unk_BB[0x11];
-} CardBattleWork;
-
-typedef struct EventCardLink {
-    u8 unk_00[0x3C];
-    CardSlot* slot;
-    u8 unk_40[0x24];
-    u8 node[0x14];
-} EventCardLink;
-
 typedef struct DownWork {
     s32 unk_00[8];
     s32 unk_20[8];
@@ -124,7 +101,6 @@ typedef struct EffectWork {
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern EventState* gUnk_02039DC8;
-extern u8 gUnk_0905EEE6[];
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
 extern u8 gUnk_088A5D7A[];
@@ -145,9 +121,6 @@ extern Mode gUnkEu_09F5D6EC;
 
 
 u8 FormatSmallFontDecimal(s32 a, void* b);
-u16 func_080787B8(CardBattleWork* w, u8 n);
-s32 func_08077F44(UnkStruct_08080268* w, u8* task);
-void func_0807682C(UnkStruct_08080268* w, u8 slot);
 
 void mode_eventselect_0(void);
 void mode_eventselect_1(void);
@@ -198,21 +171,9 @@ s32 EV_SOUND_1(EvSoundWork* w);
 void EV_SOUND_2(void);
 void EV_SOUND_3(void);
 void func_080760D8(EvSoundWork* w);
-s32 func_08076F4C(CardBattleWork* w);
-void func_08077E10(CardBattleWork* w);
-void func_08077E98(CardBattleWork* w);
 void Event_Debug_0(u8* work);
 s32 Event_Debug_1(u8* work);
 void Event_Debug_2(u8* work);
 void Event_Debug_3(s32* p);
-u8 func_080762A8(void);
-void func_08076354(void);
-void func_08076388(void);
-void func_080763A0(void);
-void func_080763AC(void);
-void func_080763B8(void);
-void func_080763C4(void);
-void func_08076438(void);
-void func_08076458(void);
 
 #endif
