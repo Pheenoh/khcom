@@ -1,7 +1,7 @@
 #include "map.h"
 #include "map_spawn_data.h"
 
-UnkStruct_080E8E74 gUnk_09857B44[7] __attribute__((section(".data_map_spawn_09857B44"))) = {
+UnkStruct_080E8E74 gUnk_09857B44[7] = {
     { 0, 0, 2500, 2500, { 0, 0 } },
     { 20, 0, 500, 500, { 0, 0 } },
     { 17, 0, 1500, 1500, { 0, 0 } },
@@ -11,7 +11,7 @@ UnkStruct_080E8E74 gUnk_09857B44[7] __attribute__((section(".data_map_spawn_0985
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857B7C[8] __attribute__((section(".data_map_spawn_09857B7C"))) = {
+UnkStruct_080E8E74 gUnk_09857B7C[8] = {
     { 0, 0, 5000, 1000, { 0, 0 } },
     { 9, 0, 1200, 1000, { 0, 0 } },
     { 14, 0, 300, 500, { 0, 0 } },
@@ -22,7 +22,7 @@ UnkStruct_080E8E74 gUnk_09857B7C[8] __attribute__((section(".data_map_spawn_0985
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857BBC[12] __attribute__((section(".data_map_spawn_09857BBC"))) = {
+UnkStruct_080E8E74 gUnk_09857BBC[12] = {
     { 0, 0, 3000, 0, { 0, 0 } },
     { 2, 0, 2000, 1500, { 0, 0 } },
     { 14, 0, 300, 500, { 0, 0 } },
@@ -37,7 +37,7 @@ UnkStruct_080E8E74 gUnk_09857BBC[12] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857C1C[13] __attribute__((section(".data_map_spawn_09857C1C"))) = {
+UnkStruct_080E8E74 gUnk_09857C1C[13] = {
     { 0, 0, 3000, 0, { 0, 0 } },
     { 4, 0, 2000, 1500, { 0, 0 } },
     { 14, 0, 300, 500, { 0, 0 } },
@@ -53,7 +53,7 @@ UnkStruct_080E8E74 gUnk_09857C1C[13] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857C84[13] __attribute__((section(".data_map_spawn_09857C84"))) = {
+UnkStruct_080E8E74 gUnk_09857C84[13] = {
     { 0, 0, 3000, 0, { 0, 0 } },
     { 6, 0, 2000, 1500, { 0, 0 } },
     { 14, 0, 300, 500, { 0, 0 } },
@@ -69,7 +69,7 @@ UnkStruct_080E8E74 gUnk_09857C84[13] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857CEC[13] __attribute__((section(".data_map_spawn_09857CEC"))) = {
+UnkStruct_080E8E74 gUnk_09857CEC[13] = {
     { 0, 0, 2000, 0, { 0, 0 } },
     { 8, 0, 1000, 500, { 0, 0 } },
     { 1, 0, 2000, 1000, { 0, 0 } },
@@ -85,7 +85,7 @@ UnkStruct_080E8E74 gUnk_09857CEC[13] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857D54[13] __attribute__((section(".data_map_spawn_09857D54"))) = {
+UnkStruct_080E8E74 gUnk_09857D54[13] = {
     { 0, 0, 3000, 0, { 0, 0 } },
     { 10, 0, 2000, 1500, { 0, 0 } },
     { 14, 0, 300, 500, { 0, 0 } },
@@ -101,7 +101,7 @@ UnkStruct_080E8E74 gUnk_09857D54[13] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857DBC[17] __attribute__((section(".data_map_spawn_09857DBC"))) = {
+UnkStruct_080E8E74 gUnk_09857DBC[17] = {
     { 0, 0, 2000, 0, { 0, 0 } },
     { 3, 0, 2000, 1500, { 0, 0 } },
     { 7, 0, 0, 500, { 0, 0 } },
@@ -121,7 +121,7 @@ UnkStruct_080E8E74 gUnk_09857DBC[17] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857E44[16] __attribute__((section(".data_map_spawn_09857E44"))) = {
+UnkStruct_080E8E74 gUnk_09857E44[16] = {
     { 0, 0, 2000, 0, { 0, 0 } },
     { 5, 0, 2000, 1500, { 0, 0 } },
     { 7, 0, 0, 500, { 0, 0 } },
@@ -140,7 +140,7 @@ UnkStruct_080E8E74 gUnk_09857E44[16] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857EC4[15] __attribute__((section(".data_map_spawn_09857EC4"))) = {
+UnkStruct_080E8E74 gUnk_09857EC4[15] = {
     { 0, 0, 2000, 0, { 0, 0 } },
     { 7, 0, 0, 500, { 0, 0 } },
     { 8, 0, 200, 0, { 0, 0 } },
@@ -158,7 +158,7 @@ UnkStruct_080E8E74 gUnk_09857EC4[15] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09857F3C[25] __attribute__((section(".data_map_spawn_09857F3C"))) = {
+UnkStruct_080E8E74 gUnk_09857F3C[25] = {
     { 0, 0, 1500, 0, { 0, 0 } },
     { 7, 0, 1500, 500, { 0, 0 } },
     { 8, 0, 1500, 0, { 0, 0 } },
@@ -186,7 +186,7 @@ UnkStruct_080E8E74 gUnk_09857F3C[25] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09858004[16] __attribute__((section(".data_map_spawn_09858004"))) = {
+UnkStruct_080E8E74 gUnk_09858004[16] = {
     { 0, 0, 1000, 0, { 0, 0 } },
     { 12, 0, 1500, 1000, { 0, 0 } },
     { 13, 0, 1500, 1000, { 0, 0 } },
@@ -205,7 +205,7 @@ UnkStruct_080E8E74 gUnk_09858004[16] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E74 gUnk_09858084[25] __attribute__((section(".data_map_spawn_09858084"))) = {
+UnkStruct_080E8E74 gUnk_09858084[25] = {
     { 0, 0, 500, 0, { 0, 0 } },
     { 7, 0, 1000, 500, { 0, 0 } },
     { 8, 0, 1000, 500, { 0, 0 } },
@@ -233,78 +233,145 @@ UnkStruct_080E8E74 gUnk_09858084[25] __attribute__((section(".data_map_spawn_098
     { 41, 0, 0, 0, { 0, 0 } },
 };
 
-UnkStruct_080E8E24 gUnk_0985824C[1] __attribute__((section(".data_map_spawn_0985824C"))) = {
+UnkStruct_080E8E24 gUnk_0985814C[40] = {
+    { { 0, 0 }, 0 },
+    { { 8, 0 }, 80 },
+    { { 1, 0 }, 10 },
+    { { 2, 0 }, 20 },
+    { { 3, 0 }, 30 },
+    { { 4, 0 }, 40 },
+    { { 5, 0 }, 50 },
+    { { 6, 0 }, 60 },
+    { { 7, 0 }, 70 },
+    { { 9, 0 }, 90 },
+    { { 10, 0 }, 100 },
+    { { 11, 0 }, 110 },
+    { { 12, 0 }, 120 },
+    { { 13, 0 }, 130 },
+    { { 14, 0 }, 160 },
+    { { 15, 0 }, 140 },
+    { { 16, 0 }, 150 },
+    { { 17, 0 }, 170 },
+    { { 18, 0 }, 180 },
+    { { 19, 0 }, 190 },
+    { { 20, 0 }, 200 },
+    { { 21, 0 }, 210 },
+    { { 22, 0 }, 220 },
+    { { 23, 0 }, 230 },
+    { { 24, 0 }, 260 },
+    { { 25, 0 }, 270 },
+    { { 26, 0 }, 280 },
+    { { 27, 0 }, 290 },
+    { { 28, 0 }, 300 },
+    { { 29, 0 }, 310 },
+    { { 30, 0 }, 320 },
+    { { 31, 0 }, 380 },
+    { { 32, 0 }, 390 },
+    { { 33, 0 }, 400 },
+    { { 34, 0 }, 410 },
+    { { 35, 0 }, 420 },
+    { { 36, 0 }, 430 },
+    { { 37, 0 }, 440 },
+    { { 57, 0 }, 563 },
+    { { 56, 0 }, 564 },
+};
+
+UnkStruct_080E8E24 gUnk_098581EC[19] = {
+    { { 25, 0 }, 140 },
+    { { 44, 0 }, 141 },
+    { { 26, 0 }, 142 },
+    { { 23, 0 }, 143 },
+    { { 34, 0 }, 144 },
+    { { 24, 0 }, 145 },
+    { { 27, 0 }, 146 },
+    { { 35, 0 }, 147 },
+    { { 33, 0 }, 148 },
+    { { 37, 0 }, 149 },
+    { { 58, 0 }, 150 },
+    { { 30, 0 }, 151 },
+    { { 45, 0 }, 152 },
+    { { 36, 0 }, 153 },
+    { { 56, 0 }, 154 },
+    { { 29, 0 }, 155 },
+    { { 31, 0 }, 156 },
+    { { 39, 0 }, 157 },
+    { { 28, 0 }, 158 },
+};
+
+u16 gUnk_09858238[10] = { 500, 1500, 1500, 1600, 1400, 1000, 1000, 600, 500, 400 };
+
+UnkStruct_080E8E24 gUnk_0985824C[1] = {
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858250[2] __attribute__((section(".data_map_spawn_09858250"))) = {
+UnkStruct_080E8E24 gUnk_09858250[2] = {
     { { 2, 9 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858258[3] __attribute__((section(".data_map_spawn_09858258"))) = {
+UnkStruct_080E8E24 gUnk_09858258[3] = {
     { { 0, 21 }, 0 },
     { { 3, 10 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858264[3] __attribute__((section(".data_map_spawn_09858264"))) = {
+UnkStruct_080E8E24 gUnk_09858264[3] = {
     { { 1, 1 }, 0 },
     { { 3, 2 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858270[3] __attribute__((section(".data_map_spawn_09858270"))) = {
+UnkStruct_080E8E24 gUnk_09858270[3] = {
     { { 1, 3 }, 0 },
     { { 3, 4 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_0985827C[3] __attribute__((section(".data_map_spawn_0985827C"))) = {
+UnkStruct_080E8E24 gUnk_0985827C[3] = {
     { { 1, 5 }, 0 },
     { { 2, 8 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858288[3] __attribute__((section(".data_map_spawn_09858288"))) = {
+UnkStruct_080E8E24 gUnk_09858288[3] = {
     { { 0, 22 }, 0 },
     { { 3, 6 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_09858294[4] __attribute__((section(".data_map_spawn_09858294"))) = {
+UnkStruct_080E8E24 gUnk_09858294[4] = {
     { { 1, 7 }, 0 },
     { { 1, 8 }, 0 },
     { { 3, 9 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_098582A4[4] __attribute__((section(".data_map_spawn_098582A4"))) = {
+UnkStruct_080E8E24 gUnk_098582A4[4] = {
     { { 1, 12 }, 0 },
     { { 1, 11 }, 0 },
     { { 3, 0 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_098582B4[4] __attribute__((section(".data_map_spawn_098582B4"))) = {
+UnkStruct_080E8E24 gUnk_098582B4[4] = {
     { { 1, 14 }, 0 },
     { { 1, 15 }, 0 },
     { { 2, 29 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_098582C4[3] __attribute__((section(".data_map_spawn_098582C4"))) = {
+UnkStruct_080E8E24 gUnk_098582C4[3] = {
     { { 1, 16 }, 0 },
     { { 3, 17 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_098582D0[3] __attribute__((section(".data_map_spawn_098582D0"))) = {
+UnkStruct_080E8E24 gUnk_098582D0[3] = {
     { { 1, 18 }, 0 },
     { { 2, 37 }, 0 },
     { { 4, 0 }, 0 },
 };
 
-UnkStruct_080E8E24 gUnk_098582DC[1] __attribute__((section(".data_map_spawn_098582DC"))) = {
+UnkStruct_080E8E24 gUnk_098582DC[1] = {
     { { 4, 0 }, 0 },
 };

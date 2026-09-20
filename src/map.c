@@ -14,6 +14,8 @@
 #include "monsgage.h"
 #include "anim.h"
 #include "map.h"
+#include "map_spawn_data.h"
+#include "map_resource_assets.h"
 #include "map_text_data.h"
 
 extern u8 gUnk_09EF6A34[];
@@ -5509,7 +5511,7 @@ void func_080E9078(s32 x, s32 y, s32 z) {
     }
 
     if ((gGameState.flags & 0x800) && gGameState.world == 12 && func_0800FC5C(16) != 0) {
-        e = gUnk_09858184;
+        e = &gUnk_0985814C[14];
 
         if (func_0800FC5C(e->unk_00[0]) != 1) {
             func_0800FC14(e->unk_00[0]);
@@ -5558,7 +5560,7 @@ u8 func_080E924C(void) {
                 }
                 break;
             case 3:
-                if (func_0800FBCC((gUnk_0985814C + 40 + p[1])->unk_00[0]) != 1) {
+                if (func_0800FBCC((gUnk_098581EC + p[1])->unk_00[0]) != 1) {
                     return 0;
                 }
                 break;
@@ -11196,7 +11198,7 @@ void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     ((u8*)p)[0x14] = v;
     w->unk_0C4 = arg->unk_14 - arg->unk_10;
     w->palette = LoadObjPalette(&gUnk_099910C4[0x240], 32);
-    w->tiles = LoadObjTiles(&gUnk_09858238[0x10D9], 0x980);
+    w->tiles = LoadObjTiles(gUnk_0985A3EA, 0x980);
     a = &w->anim;
     AnimInit(a, gUnk_09EF8488, gUnk_09EF8468);
     w->unk_0C0 = 0;
@@ -12590,7 +12592,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
         a = &w->anim;
         AnimStart(a, 1, 1);
         w->gfx = AnimGetGfx(a);
-        SetObjTileSource(w->tiles, &gUnk_09858238[0x74]);
+        SetObjTileSource(w->tiles, gUnk_09858320);
         w->update = func_080F3ADC;
     }
     return 1;
@@ -12636,7 +12638,7 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     w->unk_000 = arg;
     e->unk_00 = arg->unk_04;
     e->unk_1A = d->unk_1E;
-    w->tiles = AllocObjTiles(0x320, &gUnk_09858238[0x74]);
+    w->tiles = AllocObjTiles(0x320, gUnk_09858320);
     w->palette = LoadObjPalette(d->palette, 32);
     a = &w->anim;
     AnimInit(a, d->anims, d->gfxTable);
@@ -12651,7 +12653,7 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
         w->gfx = AnimGetGfx(a);
         w->update = func_080F3A74;
     }
-    SetObjTileSource(w->tiles, &gUnk_09858238[0x74]);
+    SetObjTileSource(w->tiles, gUnk_09858320);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
     ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
 }
@@ -14465,7 +14467,7 @@ void func_080F6DE8(MapTutorialWork* w) {
         w->z = w->unk_00C - 0xA000;
         *(u16*)&w->unk_014[6] = 24;
         w->unk_010 = 2;
-        w->tiles = AllocObjTiles(0x400, &gUnk_09858238[0x482]);
+        w->tiles = AllocObjTiles(0x400, gUnk_09858B3C);
         w->palette = LoadObjPalette(&gUnk_099910C4[0x220], 32);
         a = &w->anim;
         AnimInit(a, gUnk_09EF8460, gUnk_09EF8424);

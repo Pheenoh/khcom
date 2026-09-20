@@ -3,6 +3,10 @@
 
 #include "anim.h"
 
+extern const u8 gUnk_09858320[1536];
+extern const u8 gUnk_09858B3C[6144];
+extern const u8 gUnk_0985A3EA[2432];
+
 extern u8 gUnk_0985AD6C[];
 extern u8 gUnk_0985AD76[];
 extern u8 gUnk_0985AD80[];
