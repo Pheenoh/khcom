@@ -3,7 +3,6 @@
 #include "mode_allmap_api.h"
 #include "m4a_song.h"
 #include "obj_api.h"
-#include "macros.h"
 #include "mode_allmap.h"
 
 const char gModeNameAllmap[] = "mode_allmap";
@@ -240,8 +239,6 @@ s32 func_080D37BC(u8 a) {
     }
     return r << 5;
 }
-
-ALIGN_ZERO(2);
 
 Mode gModeAllmap = {
     gModeNameAllmap,

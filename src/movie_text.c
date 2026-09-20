@@ -1,5 +1,4 @@
 #include "movie_text.h"
-#include "macros.h"
 
 #ifdef VERSION_JP
 u16 func_0805E848(u8* str) {
@@ -13,7 +12,6 @@ u16 func_0805E848(u8* str) {
         i++;
     }
 }
-ALIGN_ZERO(2);
 #else
 s16 func_0805E848(u16* widths, u16 count) {
     s16 i;
@@ -51,7 +49,6 @@ u16 func_0805E89C(u8* str) {
         i++;
     }
 }
-ALIGN_ZERO(2);
 #else
 u16 func_0805E89C(u16* str) {
     s32 n;

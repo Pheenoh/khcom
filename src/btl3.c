@@ -2,7 +2,6 @@
 #include "display.h"
 #include "obj_api.h"
 #include "util.h"
-#include "macros.h"
 #include "btl3.h"
 #include "btl3_api.h"
 #include "task_animation_assets.h"
@@ -765,8 +764,6 @@ BtlObj* func_08040D54(BtlAiWork* work) {
     p = list[GetRandom() % count];
     return p;
 }
-
-ALIGN_ZERO(2);
 
 TaskDesc gTaskDescBtlForm = { gTaskNameBtlForm, task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
 

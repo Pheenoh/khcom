@@ -1,5 +1,4 @@
 #include "mode_vsbattle.h"
-#include "macros.h"
 
 u8 gUnk_02039B98;
 
@@ -139,8 +138,6 @@ void func_0800C6B8(void) {
         break;
     }
 }
-
-ALIGN_ZERO(2);
 
 const char gModeNameVsbattle[] = "mode_vsbattle";
 

@@ -1,6 +1,5 @@
 #include "registration_data.h"
 #include "mode_chkbtl.h"
-#include "macros.h"
 #include "mode_backupstat.h"
 #include "gba/keys.h"
 
@@ -150,8 +149,6 @@ void mode_backupstat_1(void) {
 void mode_backupstat_2(void) {
     func_080609A0();
 }
-
-ALIGN_ZERO(2);
 
 const char gModeNameBackupstat[] = "mode_backupstat";
 

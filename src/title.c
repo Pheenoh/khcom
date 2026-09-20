@@ -3,7 +3,6 @@
 #include "system_state.h"
 #include "title_api.h"
 #include "pallet.h"
-#include "macros.h"
 #include "title.h"
 #include "gba/keys.h"
 
@@ -803,8 +802,6 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
-
-ALIGN_ZERO(2);
 
 TaskDesc gTaskDescTitleLogo = {
     gTaskNameTitleLogo,

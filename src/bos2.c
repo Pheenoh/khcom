@@ -6808,8 +6808,6 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
 void task_bos_dsd_energy2_3(void) {
 }
 
-ALIGN_ZERO(2);
-
 const char gTaskNameBosTmBody[] __attribute__((section(".rodata_registration_name_gTaskDescBosTmBody"), aligned(1))) = "task_bos_tm_body";
 
 TaskDesc gTaskDescBosTmBody __attribute__((section(".data_registration_gTaskDescBosTmBody"))) = {

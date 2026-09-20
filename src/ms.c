@@ -1,6 +1,5 @@
 #include "registration_data.h"
 #include "ms_api.h"
-#include "macros.h"
 #include "ms.h"
 
 void task_ms_shop_hosi_0(MsShopHosiWork* work, MsShopHosiArg* arg) {
@@ -54,8 +53,6 @@ void func_0810962C(void* a) {
 void func_08109638(void* a) {
     func_08102610(a);
 }
-
-ALIGN_ZERO(2);
 
 const char gTaskNameMsShopHosi[] = "task_ms_shop_hosi";
 

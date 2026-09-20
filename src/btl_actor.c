@@ -1,4 +1,3 @@
-#include "macros.h"
 #include "battle.h"
 #include "battle_actor.h"
 
@@ -498,5 +497,3 @@ s32 _0800F84C(Actor* work) {
     }
     return id;
 }
-
-ALIGN_ZERO(2);

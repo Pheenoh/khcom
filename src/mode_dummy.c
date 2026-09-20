@@ -2,7 +2,6 @@
 #include "mode_chkbtl.h"
 #include "msg_api.h"
 #include "display.h"
-#include "macros.h"
 #include "mode_dummy.h"
 
 #ifdef VERSION_EU
@@ -126,8 +125,6 @@ void mode_dummy_1(void) {
 void mode_dummy_2(void) {
     func_080609A0();
 }
-
-ALIGN_ZERO(2);
 
 const char gModeNameDummy[12] = "mode_dummy";
 

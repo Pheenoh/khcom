@@ -1,5 +1,4 @@
 #include "mode_vsbattle.h"
-#include "macros.h"
 #include "hum_common.h"
 
 void HumInit(HumWork* work, const HumDef* def) {
@@ -544,5 +543,3 @@ s32 func_0800E5F0(HumWork* work) {
     ColliderSetPosition(&actor->collider, actor->x, actor->y, actor->z);
     return 1;
 }
-
-ALIGN_ZERO(2);

@@ -1,6 +1,5 @@
 #include "map_api.h"
 #include "mode_chkbtl.h"
-#include "macros.h"
 #include "mode_debflag.h"
 #include "gba/keys.h"
 
@@ -124,8 +123,6 @@ void mode_debflag_1(void) {
 void mode_debflag_2(void) {
     func_080609A0();
 }
-
-ALIGN_ZERO(2);
 
 const char gModeNameDebflag[16] = "mode_debflag";
 

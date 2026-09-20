@@ -1,5 +1,4 @@
 #include "registration_data.h"
-#include "macros.h"
 #include "mode_copyright1.h"
 
 #ifndef VERSION_JP
@@ -103,8 +102,6 @@ void mode_copyright1_1(void) {
 
 void mode_copyright1_2(void) {
 }
-
-ALIGN_ZERO(2);
 
 const char gModeNameCopyright1[] = "mode_copyright1";
 

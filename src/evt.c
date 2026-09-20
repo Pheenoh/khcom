@@ -1,5 +1,4 @@
 #include "task_descriptors.h"
-#include "macros.h"
 #include "evt.h"
 #include "evt_api.h"
 
@@ -189,8 +188,6 @@ void task_evt_shadow_3(EvtShadowWork* work) {
     ReleaseObjTiles(work->tiles3);
     ReleaseObjPalette(work->palette);
 }
-
-ALIGN_ZERO(2);
 
 TaskDesc gTaskDescEvtObj = { gTaskNameEvtObj, task_evt_obj_0, task_evt_obj_1, task_evt_obj_2, task_evt_obj_3, 0x38 };
 

@@ -1,6 +1,5 @@
 #include "task_descriptors.h"
 #include "display.h"
-#include "macros.h"
 #include "emy.h"
 #include "task_animation_assets.h"
 
@@ -5684,8 +5683,6 @@ void task_emy_test_2(EmyWork* work) {
 void task_emy_test_3(EmyWork* work) {
     func_0800E0D0(work);
 }
-
-ALIGN_ZERO(2);
 
 TaskDesc gTaskDescEmy00 = { gTaskNameEmy00, task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
 

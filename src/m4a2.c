@@ -1,6 +1,5 @@
 #include "m4a_song.h"
 #include "m4a.h"
-#include "macros.h"
 #define M4A_CATALOG_NO_PLAYER_EXTERNS
 #include "m4a_catalog_data.h"
 
@@ -1426,7 +1425,5 @@ void ply_xswee(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
 
 void DummyFunc(void) {
 }
-
-ALIGN_ZERO(2);
 
 SoundInfo* gSoundInfoPtr __attribute__((common));

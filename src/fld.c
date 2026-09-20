@@ -1,6 +1,5 @@
 #include "task_descriptors.h"
 #include "map_api.h"
-#include "macros.h"
 #include "fld.h"
 #include "gba/keys.h"
 #include "task_animation_assets.h"
@@ -3500,8 +3499,6 @@ void task_fld_shadow_3(FldShadowWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
-
-ALIGN_ZERO(2);
 
 TaskDesc gTaskDescFldSora = { gTaskNameFldSora, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
 
