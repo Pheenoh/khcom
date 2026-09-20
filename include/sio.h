@@ -34,13 +34,6 @@
 #define REG_IF (*(vu16*)0x04000202)
 #define REG_IME (*(vu16*)0x04000208)
 
-
-
-extern BgAnimationDef* gUnk_02034040;
-extern u16 gUnk_02034044;
-extern u16 gUnk_02034046;
-extern u8 gUnk_02034054;
-
 u16 IsVBlankIntrLive(void);
 void SioInit(void);
 void func_08006E70(void);

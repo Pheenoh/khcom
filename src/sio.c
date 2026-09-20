@@ -22,28 +22,6 @@ s8 gUnk_02034074;
 u16 gUnk_02034076;
 u16 gUnk_02034078;
 
-u8 BgAnimIsStopped(void) {
-    return gUnk_02034054;
-}
-
-void BgAnimGetFrameState(u16* a, u16* b) {
-    if (a != 0) {
-        *a = gUnk_02034046;
-    }
-
-    if (b != 0) {
-        *b = gUnk_02034044;
-    }
-}
-
-u32 BgAnimGetDuration(BgAnimationDef* p) {
-    return (u32)p->frameCount * p->frameDuration;
-}
-
-BgAnimationDef* BgAnimGetCurrent(void) {
-    return gUnk_02034040;
-}
-
 u16 IsVBlankIntrLive(void) {
     if (REG_IME & 1) {
         if (REG_DISPSTAT & 8) {

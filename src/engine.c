@@ -75,26 +75,6 @@ s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
 
-typedef struct BgAffineSrcData {
-    s32 texX;
-    s32 texY;
-    s16 scrX;
-    s16 scrY;
-    s16 sx;
-    s16 sy;
-    u16 alpha;
-} BgAffineSrcData;
-
-typedef struct BgAffineDstData {
-    s16 pa;
-    s16 pb;
-    s16 pc;
-    s16 pd;
-    s32 dx;
-    s32 dy;
-} BgAffineDstData;
-
-void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
 extern u16 gSystemFlags;
 
 
@@ -3301,6 +3281,28 @@ void BgAnimStop(void) {
     gUnk_02034040 = 0;
     gUnk_02034054 = 1;
     DisableBg(gUnk_02034048);
+}
+
+u8 BgAnimIsStopped(void) {
+    return gUnk_02034054;
+}
+
+void BgAnimGetFrameState(u16* a, u16* b) {
+    if (a != 0) {
+        *a = gUnk_02034046;
+    }
+
+    if (b != 0) {
+        *b = gUnk_02034044;
+    }
+}
+
+u32 BgAnimGetDuration(BgAnimationDef* p) {
+    return (u32)p->frameCount * p->frameDuration;
+}
+
+BgAnimationDef* BgAnimGetCurrent(void) {
+    return gUnk_02034040;
 }
 
 Dma3Queue* gDma3Requests __attribute__((common));
