@@ -3,7 +3,7 @@
 #include "card_localized_data.h"
 #include "mode_test_data.h"
 
-UnkStruct_08F7CBA8 gUnk_08F7CBA8[55] __attribute__((section(".data_card_effect_labels"))) = {
+UnkStruct_08F7CBA8 gUnk_08F7CBA8[55] = {
     {
 #ifdef VERSION_EU
         gUnkEu_09F5D574,
@@ -1549,7 +1549,7 @@ UnkStruct_08F7CBA8 gUnk_08F7CBA8[55] __attribute__((section(".data_card_effect_l
     },
 };
 
-SpriteFrameResourceDef gUnk_08F7CF18[106] __attribute__((section(".data_card_sprite_frames"))) = {
+SpriteFrameResourceDef gUnk_08F7CF18[106] = {
     {
 #ifdef VERSION_EU
         gUnkEu_09F5D5C4,

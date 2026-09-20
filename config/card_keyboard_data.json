@@ -5,7 +5,7 @@
       "placements": [
         {
           "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnk_09EE4B0C",
+          "section": ".data",
           "address": "0x9ee4b0c",
           "size": 28,
           "sha256": "0df461c26179247cce0f94a75417250dc2741de7abc8823a6ad49604c1c83288",
@@ -90,10 +90,10 @@
       "placements": [
         {
           "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnk_09EE4B0C",
+          "section": ".data",
           "address": "0x9ebc12c",
-          "size": 28,
-          "sha256": "10a057ca49eaf7fff07d956afae5bf2fbc1e35278209273613a27610583d17a4",
+          "size": 84,
+          "sha256": "892e0d2b8d9ede44a6edad8ce0c7ef09e8eb2a07a9e343d22f60ed531ee267b8",
           "objects": [
             {
               "name": "gUnk_09EE4B0C",
@@ -104,38 +104,20 @@
                 "func_0808F0C0",
                 "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnkJp_09EBC148",
-          "address": "0x9ebc148",
-          "size": 28,
-          "sha256": "43cde12b6f2d8495fe515bfe144ff4148181172d068984235da08c09a4450bb9",
-          "objects": [
+            },
             {
               "name": "gUnkJp_09EBC148",
-              "offset": 0,
+              "offset": 28,
               "size": 28,
               "consumer": [
                 "func_0808F358",
                 "func_0808F0C0",
                 "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnkJp_09EBC164",
-          "address": "0x9ebc164",
-          "size": 28,
-          "sha256": "a47b1994e0c86f2c08c1ab3f583b14aab57ca19c403863996855e4b402b27ff2",
-          "objects": [
+            },
             {
               "name": "gUnkJp_09EBC164",
-              "offset": 0,
+              "offset": 56,
               "size": 28,
               "consumer": [
                 "func_0808F358",
@@ -297,10 +279,10 @@
       "placements": [
         {
           "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnkEu_09F6FE6C",
+          "section": ".data",
           "address": "0x9f6fe6c",
-          "size": 32,
-          "sha256": "73e7907694e6be8ee5365f1b624f1d68c3a5223728d835b086af02e6789464b7",
+          "size": 60,
+          "sha256": "74b2ac66e47a3f087be9a333a9c0a389cd3b66e2021343a39dbef3bc0ea5780b",
           "objects": [
             {
               "name": "gUnkEu_09F6FE6C",
@@ -311,19 +293,10 @@
                 "func_0808F0C0",
                 "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data_card_keyboard_gUnkEu_09F6FE8C",
-          "address": "0x9f6fe8c",
-          "size": 28,
-          "sha256": "362aa67e7daf2da48da05290c884141a2d6b788669026139bf2e0497597d88d8",
-          "objects": [
+            },
             {
               "name": "gUnkEu_09F6FE8C",
-              "offset": 0,
+              "offset": 32,
               "size": 28,
               "consumer": [
                 "func_0808F358",
@@ -449,6 +422,7 @@
   "provenance": {
     "keyboard_indices": "US func_0808F358 uses seven row pointers and copies two bytes for each 16-bit glyph. Native JP func_0808F358 at 0808F15C branches on keyboard kind 0/1/2 and loads row pointers from 09EBC12C/09EBC148/09EBC164; its row cursor is clamped to 0..6. Native EU function at 0808EBF0 selects 09F6FE6C for kind 2 and 09F6FE8C otherwise; C cursor logic proves respective row domains 0..7 and 0..6, and native code copies one byte. The old EU gUnk_09EE4B0C raw alias at 09F6FE30 denotes graphics, not a keyboard index, and is removed without inventing a common table.",
     "encoded_assets": "Keyboard and default deck text remain binary-backed assets. US utf16le denotes exact little-endian 16-bit game glyph storage, preserving musical, gender, arrow and bracket glyph code units. JP uses Shift-JIS byte pairs, including full-width spaces and punctuation. EU singlebyte is a game glyph encoding: bytes 01..17 and 83..97 in symbol rows are selectable glyph codes, not text transformations or ASCII normalization. Every binding ends at its first native zero terminator. Byte-view declarations for keyboard payloads match the native byte-copy consumer.",
-    "default_deck_names": "US and JP SetDeckName callers use their three native encoded Deck 1/2/3 literals. EU active callers already use separately owned LocalizedText wrappers at 09F65FDC/09F65FF0/09F66004; the three adjacent English single-byte literals 09F6FD74/7B/82 are coherent unused native duplicates and get honest EU-only asset names, not false mappings to the US UTF-16 names. US text is 42 bytes followed by two alignment zero bytes; EU text is 21 bytes followed by three alignment zero bytes. Metadata immediately after those exact boundaries remains counted."
+    "default_deck_names": "US and JP SetDeckName callers use their three native encoded Deck 1/2/3 literals. EU active callers already use separately owned LocalizedText wrappers at 09F65FDC/09F65FF0/09F66004; the three adjacent English single-byte literals 09F6FD74/7B/82 are coherent unused native duplicates and get honest EU-only asset names, not false mappings to the US UTF-16 names. US text is 42 bytes followed by two alignment zero bytes; EU text is 21 bytes followed by three alignment zero bytes. Metadata immediately after those exact boundaries remains counted.",
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   }
 }

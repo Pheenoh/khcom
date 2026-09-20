@@ -1,15 +1,16 @@
 {
   "version": 1,
   "provenance": {
-    ".data_09EEA2F4": "Independently mapped7714/7720 selectors give all three actual animation/gfx table bases in every region. RELOAD_0 selects animation0; each of the three one-entry animation tables has four frames consuminggfx0..3. The adjacent unused four sprite words and one animation word remain neutral typed scalars."
+    ".data_09EEA2F4": "Independently mapped7714/7720 selectors give all three actual animation/gfx table bases in every region. RELOAD_0 selects animation0; each of the three one-entry animation tables has four frames consuminggfx0..3. The adjacent unused four sprite words and one animation word remain neutral typed scalars.",
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "reload_animation_data.c",
-          "section": ".data_09EEA2F4",
-          "address": "0x09EEA2F4",
+          "section": ".data",
+          "address": "0x9eea2f4",
           "size": 80,
           "sha256": "bddc198fbf41d241e20553af5cc45e5321ef4899a07150de3da62d494f5c1297",
           "objects": [
@@ -76,8 +77,8 @@
       "placements": [
         {
           "unit": "reload_animation_data.c",
-          "section": ".data_09EEA2F4",
-          "address": "0x09EC16E8",
+          "section": ".data",
+          "address": "0x9ec16e8",
           "size": 80,
           "sha256": "f8369acc680a5e01fbcc771ba1c8aae17454cf0b1f5700029caf3952fc7f5213",
           "objects": [
@@ -144,8 +145,8 @@
       "placements": [
         {
           "unit": "reload_animation_data.c",
-          "section": ".data_09EEA2F4",
-          "address": "0x09F76364",
+          "section": ".data",
+          "address": "0x9f76364",
           "size": 80,
           "sha256": "86e9693db1939b9399efcde909e97553a701dfa0b446a9d49402341446223cec",
           "objects": [

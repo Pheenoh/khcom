@@ -2,7 +2,7 @@
 #include "card_keyboard_text.h"
 
 #ifdef VERSION_US
-const u8* gUnk_09EE4B0C[7] __attribute__((section(".data_card_keyboard_gUnk_09EE4B0C"), aligned(4))) = {
+const u8* gUnk_09EE4B0C[7] = {
     gKeyboardTextUs_09035742,
     gKeyboardTextUs_09035762,
     gKeyboardTextUs_0903577A,
@@ -15,7 +15,7 @@ const u8* gUnk_09EE4B0C[7] __attribute__((section(".data_card_keyboard_gUnk_09EE
 #endif
 
 #ifdef VERSION_JP
-const u8* gUnk_09EE4B0C[7] __attribute__((section(".data_card_keyboard_gUnk_09EE4B0C"), aligned(4))) = {
+const u8* gUnk_09EE4B0C[7] = {
     gKeyboardTextJp_09008AE0,
     gKeyboardTextJp_09008AC0,
     gKeyboardTextJp_09008AA0,
@@ -25,7 +25,7 @@ const u8* gUnk_09EE4B0C[7] __attribute__((section(".data_card_keyboard_gUnk_09EE
     gKeyboardTextJp_09008A2C,
 };
 
-const u8* gUnkJp_09EBC148[7] __attribute__((section(".data_card_keyboard_gUnkJp_09EBC148"), aligned(4))) = {
+const u8* gUnkJp_09EBC148[7] = {
     gKeyboardTextJp_09008BB4,
     gKeyboardTextJp_09008B94,
     gKeyboardTextJp_09008B74,
@@ -35,7 +35,7 @@ const u8* gUnkJp_09EBC148[7] __attribute__((section(".data_card_keyboard_gUnkJp_
     gKeyboardTextJp_09008B00,
 };
 
-const u8* gUnkJp_09EBC164[7] __attribute__((section(".data_card_keyboard_gUnkJp_09EBC164"), aligned(4))) = {
+const u8* gUnkJp_09EBC164[7] = {
     gKeyboardTextJp_09008C84,
     gKeyboardTextJp_09008C64,
     gKeyboardTextJp_09008C44,
@@ -48,7 +48,7 @@ const u8* gUnkJp_09EBC164[7] __attribute__((section(".data_card_keyboard_gUnkJp_
 #endif
 
 #ifdef VERSION_EU
-const u8* gUnkEu_09F6FE6C[8] __attribute__((section(".data_card_keyboard_gUnkEu_09F6FE6C"), aligned(4))) = {
+const u8* gUnkEu_09F6FE6C[8] = {
     gKeyboardTextEu_090CEA56,
     gKeyboardTextEu_090CEA66,
     gKeyboardTextEu_090CEA72,
@@ -59,7 +59,7 @@ const u8* gUnkEu_09F6FE6C[8] __attribute__((section(".data_card_keyboard_gUnkEu_
     gKeyboardTextEu_090CEAB9,
 };
 
-const u8* gUnkEu_09F6FE8C[7] __attribute__((section(".data_card_keyboard_gUnkEu_09F6FE8C"), aligned(4))) = {
+const u8* gUnkEu_09F6FE8C[7] = {
     gKeyboardTextEu_090CEAC4,
     gKeyboardTextEu_090CEAD4,
     gKeyboardTextEu_090CEADF,

@@ -1,7 +1,7 @@
 #include "map_card_data.h"
 #include "map_card_assets.h"
 
-MapCardBackDef gUnk_09EE4BF4[5] __attribute__((section(".rodata_map_card"))) = {
+MapCardBackDef gUnk_09EE4BF4[5] = {
     { gUnk_093F61B2, gUnk_09618D78, gUnk_09EF11E8, gUnk_0905E3BA, gUnk_09EE97F4, 640, 32, { 128, 2, 0, 0 } },
     { gUnk_093F5C7A, gUnk_09618D78, gUnk_09EF11D8, gUnk_0905C862, gUnk_09EE9764, 640, 32, { 128, 2, 0, 0 } },
     { gUnk_093F5F16, gUnk_09618D78, gUnk_09EF11E0, gUnk_0905D64E, gUnk_09EE97AC, 640, 32, { 128, 2, 0, 0 } },
@@ -9,7 +9,7 @@ MapCardBackDef gUnk_09EE4BF4[5] __attribute__((section(".rodata_map_card"))) = {
     { gUnk_093F644E, gUnk_09618D78, gUnk_09EF11F0, gUnk_0905E3BA, gUnk_09EE97F4, 640, 32, { 128, 2, 0, 0 } },
 };
 
-MapCardDef gUnk_09EE4C80[260] __attribute__((section(".rodata_map_card"))) = {
+MapCardDef gUnk_09EE4C80[260] = {
     { gUnk_093EF27C, gUnk_096185B8, gUnk_09EF0FB0, gUnk_093F2148, gUnk_09618898, gUnk_09EF1068, 512, 32, 256, 2, 0, 1, 0, 2, 0 },
     { gUnk_093EF27C, gUnk_096185B8, gUnk_09EF0FB0, gUnk_093F2148, gUnk_09618898, gUnk_09EF1068, 512, 32, 256, 2, 0, 1, 1, 2, 0 },
     { gUnk_093EF27C, gUnk_096185B8, gUnk_09EF0FB0, gUnk_093F2148, gUnk_09618898, gUnk_09EF1068, 512, 32, 256, 2, 0, 1, 2, 2, 0 },
@@ -272,7 +272,7 @@ MapCardDef gUnk_09EE4C80[260] __attribute__((section(".rodata_map_card"))) = {
     { gUnk_093F1E20, gUnk_09618858, gUnk_09EF1058, gUnk_093F37EC, gUnk_09618B38, gUnk_09EF1110, 512, 32, 256, 4, 0, 25, 9, 4, 0 },
 };
 
-s16 gUnk_09EE7520[6] __attribute__((section(".rodata_map_card"))) = {
+s16 gUnk_09EE7520[6] = {
     20,
     57,
     94,

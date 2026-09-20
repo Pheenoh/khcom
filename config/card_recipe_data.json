@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "animation": "The six-entry live map animation selector is independently covered by native EventBackgroundDef.unk_20 producers 0..5 in all three regions. Three adjacent unused NULL pointer words are separately named neutral MapTileAnimationDef* scalars, without claiming live indices 6..8. map_anim_0 and map_anim_1 consume explicit trackCount and frameCount fields. All scalar fields and every frame record match across regions. Byte 5 in four MapTileAnimationDef objects is 1, so it is preserved as a neutral u8 field rather than assumed alignment. Single-track objects and definitions are scalars; only actual counted multi-entry tracks are arrays.",
-    "starter_decks": "These are card-ID recipes, not encoded text. _08085D04 maps input world choices to twelve selectors; func_08085DA0 iterates the two explicit u16 count arrays, sends each u16 card ID to func_08084458, and adds the generated card to the active deck. Main lists have 5..30 entries; nine supplemental fixed single values are real const u16 scalars. Zero-count selectors retain genuine aliases to another scalar or the main-count array. No dummy arrays are emitted. All recipes and counts are identical in all regions."
+    "starter_decks": "These are card-ID recipes, not encoded text. _08085D04 maps input world choices to twelve selectors; func_08085DA0 iterates the two explicit u16 count arrays, sends each u16 card ID to func_08084458, and adds the generated card to the active deck. Main lists have 5..30 entries; nine supplemental fixed single values are real const u16 scalars. Zero-count selectors retain genuine aliases to another scalar or the main-count array. No dummy arrays are emitted. All recipes and counts are identical in all regions.",
+    "native_catalog": "The starter-deck recipes, counts and pointer indexes retain their existing catalog owner. The 23 readonly definitions form one complete 514-byte native rodata run and the two pointer arrays form one 96-byte native data run in every region, with unchanged source order, types, extents and relocations. Ordinary compiler alignment reproduces both runs without section attributes. The existing four-byte alignment of the first recipe is retained; subsequent natural halfword and pointer alignment is sufficient. This preserves the shared catalog organization without claiming the original translation-unit filename."
   },
   "regions": {
     "us": {
@@ -469,10 +470,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090354E8",
+          "section": ".rodata",
           "address": "0x90354e8",
-          "size": 42,
-          "sha256": "452a5b9729215db28d0ce4dd3c57272d36928c4e6fc2d200b1d04e4ab7beff46",
+          "size": 514,
+          "sha256": "775869039ec6a3818ab7464522218820811184a937006f3b8f851455361d1452",
           "objects": [
             {
               "name": "gUnk_090354E8",
@@ -482,6 +483,204 @@
                 "func_08085DA0",
                 "explicit main count 21 for starter-deck selector 0; entries passed to func_08084458"
               ]
+            },
+            {
+              "name": "gUnk_09035512",
+              "offset": 42,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903553A",
+              "offset": 82,
+              "size": 42,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035564",
+              "offset": 124,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903557C",
+              "offset": 148,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355A4",
+              "offset": 188,
+              "size": 36,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355C8",
+              "offset": 224,
+              "size": 34,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355EA",
+              "offset": 258,
+              "size": 32,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903560A",
+              "offset": 290,
+              "size": 38,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035630",
+              "offset": 328,
+              "size": 10,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903563A",
+              "offset": 338,
+              "size": 50,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903566C",
+              "offset": 388,
+              "size": 60,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356A8",
+              "offset": 448,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AA",
+              "offset": 450,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AC",
+              "offset": 452,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AE",
+              "offset": 454,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B0",
+              "offset": 456,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B2",
+              "offset": 458,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B4",
+              "offset": 460,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B6",
+              "offset": 462,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B8",
+              "offset": 464,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356BA",
+              "offset": 466,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
+            },
+            {
+              "name": "gUnk_090356D2",
+              "offset": 490,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
             }
           ],
           "alignment_before": 4,
@@ -489,406 +688,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035512",
-          "address": "0x9035512",
-          "size": 40,
-          "sha256": "12c79f7db80046f0b4fdb14c77c83771c0ee7f8a30f75da6b98d2e032845d90f",
-          "objects": [
-            {
-              "name": "gUnk_09035512",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903553A",
-          "address": "0x903553a",
-          "size": 42,
-          "sha256": "e48b14d0cdae08e02a8ad7ab92cb0588236c8747583b98654278beeafbb2ee6c",
-          "objects": [
-            {
-              "name": "gUnk_0903553A",
-              "offset": 0,
-              "size": 42,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035564",
-          "address": "0x9035564",
-          "size": 24,
-          "sha256": "bc0cc81992dfe543bae089d71d7ebedf4d3ab764af2b32881552f2a74c5f3795",
-          "objects": [
-            {
-              "name": "gUnk_09035564",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903557C",
-          "address": "0x903557c",
-          "size": 40,
-          "sha256": "caf3155ecefbef5e6bd5a1cae34a950d25fc5762fd5d49fc71c7606da948f134",
-          "objects": [
-            {
-              "name": "gUnk_0903557C",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355A4",
-          "address": "0x90355a4",
-          "size": 36,
-          "sha256": "3ee2ea8d8dc64ee701e87813ff7096eec90644e3da3036b532cd298a45bc92ba",
-          "objects": [
-            {
-              "name": "gUnk_090355A4",
-              "offset": 0,
-              "size": 36,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355C8",
-          "address": "0x90355c8",
-          "size": 34,
-          "sha256": "9fe08570dd6e91895fb02c43d6196a164fedac8e187e1dbcd9343ca7bcdb59c0",
-          "objects": [
-            {
-              "name": "gUnk_090355C8",
-              "offset": 0,
-              "size": 34,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355EA",
-          "address": "0x90355ea",
-          "size": 32,
-          "sha256": "30d5f7b9aafff2bacdb3568798de910a115febbffd9b47d712516e23196a9695",
-          "objects": [
-            {
-              "name": "gUnk_090355EA",
-              "offset": 0,
-              "size": 32,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903560A",
-          "address": "0x903560a",
-          "size": 38,
-          "sha256": "12eb551b8a7598f7e31bbfe8d2ca0b45845eb155c1c848f6a992f25ab4c9217d",
-          "objects": [
-            {
-              "name": "gUnk_0903560A",
-              "offset": 0,
-              "size": 38,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035630",
-          "address": "0x9035630",
-          "size": 10,
-          "sha256": "5a42d2cae37f01dd0a8e7ce42e317a6605f7fa0364bef084dc14221357e84c06",
-          "objects": [
-            {
-              "name": "gUnk_09035630",
-              "offset": 0,
-              "size": 10,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903563A",
-          "address": "0x903563a",
-          "size": 50,
-          "sha256": "af90c4f59aafd711d254abe776ddeaa8f9c54dfb330c455a88ac606732971b36",
-          "objects": [
-            {
-              "name": "gUnk_0903563A",
-              "offset": 0,
-              "size": 50,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903566C",
-          "address": "0x903566c",
-          "size": 60,
-          "sha256": "82873817af1156133359cfdf9d9d58bd5b57fcc2502a19f6c29c2f50d50bd6ea",
-          "objects": [
-            {
-              "name": "gUnk_0903566C",
-              "offset": 0,
-              "size": 60,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356A8",
-          "address": "0x90356a8",
-          "size": 2,
-          "sha256": "6624800ada3f6c82669393c140336974448615cc9183717624cc57b8ac1b003f",
-          "objects": [
-            {
-              "name": "gUnk_090356A8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AA",
-          "address": "0x90356aa",
-          "size": 2,
-          "sha256": "52de27d73c12de890a4006a43f6cc1107631474bb3bc80a2930c8c2b49b7c4b1",
-          "objects": [
-            {
-              "name": "gUnk_090356AA",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AC",
-          "address": "0x90356ac",
-          "size": 2,
-          "sha256": "0fb03959f2e2abba6a4d42f2e1ab6ce4578e1f7a419ea0731b61705f4adb05f4",
-          "objects": [
-            {
-              "name": "gUnk_090356AC",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AE",
-          "address": "0x90356ae",
-          "size": 2,
-          "sha256": "912cfe4f5305e8d3d50b69d3bd5d77833e2e1b374030ff6fa471c9ecd1fc4006",
-          "objects": [
-            {
-              "name": "gUnk_090356AE",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B0",
-          "address": "0x90356b0",
-          "size": 2,
-          "sha256": "0ae8e20e8cb2ab612a320158def8b102a5c98998f924309714ffabed53179e18",
-          "objects": [
-            {
-              "name": "gUnk_090356B0",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B2",
-          "address": "0x90356b2",
-          "size": 2,
-          "sha256": "b98f461f1da74c0c82d6c977f606436221469d77e91de6b369eee6d3c6369c59",
-          "objects": [
-            {
-              "name": "gUnk_090356B2",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B4",
-          "address": "0x90356b4",
-          "size": 2,
-          "sha256": "f4e2f1a103bb922ff42b612ff7eb3c93e362d2c364508e28368a7b3fac560800",
-          "objects": [
-            {
-              "name": "gUnk_090356B4",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B6",
-          "address": "0x90356b6",
-          "size": 2,
-          "sha256": "b7586d310e5efb1b7d10a917ba5af403adbf54f4f77fe7fdcb4880a95dac7e7e",
-          "objects": [
-            {
-              "name": "gUnk_090356B6",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B8",
-          "address": "0x90356b8",
-          "size": 2,
-          "sha256": "53522cf4f248caa75f77430fcf176ed00c486a0307b24b2b03e929a5a35e51e5",
-          "objects": [
-            {
-              "name": "gUnk_090356B8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356BA",
-          "address": "0x90356ba",
-          "size": 24,
-          "sha256": "31e3cb7e60856768b818f0e76b391bc2c3aee037ba4706a84acfddc4e6f21563",
-          "objects": [
-            {
-              "name": "gUnk_090356BA",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356D2",
-          "address": "0x90356d2",
-          "size": 24,
-          "sha256": "2f05ef17851bdc369a22805a9c3edbbc6c149239517e7a92826f3f935ac8e737",
-          "objects": [
-            {
-              "name": "gUnk_090356D2",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A68",
+          "section": ".data",
           "address": "0x9ee4a68",
-          "size": 48,
-          "sha256": "baef7b9f366f8cdae83ff33e274a5f84bcda941b2f32ee392f256d112e741124",
+          "size": 96,
+          "sha256": "c50077cddc2ca50c06b05202e1b95049c7aa91d8d0acce0fca3357a200dc3d97",
           "objects": [
             {
               "name": "gUnk_09EE4A68",
@@ -898,19 +701,10 @@
                 "func_08085DA0",
                 "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A98",
-          "address": "0x9ee4a98",
-          "size": 48,
-          "sha256": "6a4ee1911361f4ae609c9856c5216af2b96891f148102318f2d10be5b111808e",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A98",
-              "offset": 0,
+              "offset": 48,
               "size": 48,
               "consumer": [
                 "func_08085DA0",
@@ -1385,10 +1179,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090354E8",
+          "section": ".rodata",
           "address": "0x90087ac",
-          "size": 42,
-          "sha256": "452a5b9729215db28d0ce4dd3c57272d36928c4e6fc2d200b1d04e4ab7beff46",
+          "size": 514,
+          "sha256": "775869039ec6a3818ab7464522218820811184a937006f3b8f851455361d1452",
           "objects": [
             {
               "name": "gUnk_090354E8",
@@ -1398,6 +1192,204 @@
                 "func_08085DA0",
                 "explicit main count 21 for starter-deck selector 0; entries passed to func_08084458"
               ]
+            },
+            {
+              "name": "gUnk_09035512",
+              "offset": 42,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903553A",
+              "offset": 82,
+              "size": 42,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035564",
+              "offset": 124,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903557C",
+              "offset": 148,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355A4",
+              "offset": 188,
+              "size": 36,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355C8",
+              "offset": 224,
+              "size": 34,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355EA",
+              "offset": 258,
+              "size": 32,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903560A",
+              "offset": 290,
+              "size": 38,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035630",
+              "offset": 328,
+              "size": 10,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903563A",
+              "offset": 338,
+              "size": 50,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903566C",
+              "offset": 388,
+              "size": 60,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356A8",
+              "offset": 448,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AA",
+              "offset": 450,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AC",
+              "offset": 452,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AE",
+              "offset": 454,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B0",
+              "offset": 456,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B2",
+              "offset": 458,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B4",
+              "offset": 460,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B6",
+              "offset": 462,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B8",
+              "offset": 464,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356BA",
+              "offset": 466,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
+            },
+            {
+              "name": "gUnk_090356D2",
+              "offset": 490,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
             }
           ],
           "alignment_before": 4,
@@ -1405,406 +1397,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035512",
-          "address": "0x90087d6",
-          "size": 40,
-          "sha256": "12c79f7db80046f0b4fdb14c77c83771c0ee7f8a30f75da6b98d2e032845d90f",
-          "objects": [
-            {
-              "name": "gUnk_09035512",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903553A",
-          "address": "0x90087fe",
-          "size": 42,
-          "sha256": "e48b14d0cdae08e02a8ad7ab92cb0588236c8747583b98654278beeafbb2ee6c",
-          "objects": [
-            {
-              "name": "gUnk_0903553A",
-              "offset": 0,
-              "size": 42,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035564",
-          "address": "0x9008828",
-          "size": 24,
-          "sha256": "bc0cc81992dfe543bae089d71d7ebedf4d3ab764af2b32881552f2a74c5f3795",
-          "objects": [
-            {
-              "name": "gUnk_09035564",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903557C",
-          "address": "0x9008840",
-          "size": 40,
-          "sha256": "caf3155ecefbef5e6bd5a1cae34a950d25fc5762fd5d49fc71c7606da948f134",
-          "objects": [
-            {
-              "name": "gUnk_0903557C",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355A4",
-          "address": "0x9008868",
-          "size": 36,
-          "sha256": "3ee2ea8d8dc64ee701e87813ff7096eec90644e3da3036b532cd298a45bc92ba",
-          "objects": [
-            {
-              "name": "gUnk_090355A4",
-              "offset": 0,
-              "size": 36,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355C8",
-          "address": "0x900888c",
-          "size": 34,
-          "sha256": "9fe08570dd6e91895fb02c43d6196a164fedac8e187e1dbcd9343ca7bcdb59c0",
-          "objects": [
-            {
-              "name": "gUnk_090355C8",
-              "offset": 0,
-              "size": 34,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355EA",
-          "address": "0x90088ae",
-          "size": 32,
-          "sha256": "30d5f7b9aafff2bacdb3568798de910a115febbffd9b47d712516e23196a9695",
-          "objects": [
-            {
-              "name": "gUnk_090355EA",
-              "offset": 0,
-              "size": 32,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903560A",
-          "address": "0x90088ce",
-          "size": 38,
-          "sha256": "12eb551b8a7598f7e31bbfe8d2ca0b45845eb155c1c848f6a992f25ab4c9217d",
-          "objects": [
-            {
-              "name": "gUnk_0903560A",
-              "offset": 0,
-              "size": 38,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035630",
-          "address": "0x90088f4",
-          "size": 10,
-          "sha256": "5a42d2cae37f01dd0a8e7ce42e317a6605f7fa0364bef084dc14221357e84c06",
-          "objects": [
-            {
-              "name": "gUnk_09035630",
-              "offset": 0,
-              "size": 10,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903563A",
-          "address": "0x90088fe",
-          "size": 50,
-          "sha256": "af90c4f59aafd711d254abe776ddeaa8f9c54dfb330c455a88ac606732971b36",
-          "objects": [
-            {
-              "name": "gUnk_0903563A",
-              "offset": 0,
-              "size": 50,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903566C",
-          "address": "0x9008930",
-          "size": 60,
-          "sha256": "82873817af1156133359cfdf9d9d58bd5b57fcc2502a19f6c29c2f50d50bd6ea",
-          "objects": [
-            {
-              "name": "gUnk_0903566C",
-              "offset": 0,
-              "size": 60,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356A8",
-          "address": "0x900896c",
-          "size": 2,
-          "sha256": "6624800ada3f6c82669393c140336974448615cc9183717624cc57b8ac1b003f",
-          "objects": [
-            {
-              "name": "gUnk_090356A8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AA",
-          "address": "0x900896e",
-          "size": 2,
-          "sha256": "52de27d73c12de890a4006a43f6cc1107631474bb3bc80a2930c8c2b49b7c4b1",
-          "objects": [
-            {
-              "name": "gUnk_090356AA",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AC",
-          "address": "0x9008970",
-          "size": 2,
-          "sha256": "0fb03959f2e2abba6a4d42f2e1ab6ce4578e1f7a419ea0731b61705f4adb05f4",
-          "objects": [
-            {
-              "name": "gUnk_090356AC",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AE",
-          "address": "0x9008972",
-          "size": 2,
-          "sha256": "912cfe4f5305e8d3d50b69d3bd5d77833e2e1b374030ff6fa471c9ecd1fc4006",
-          "objects": [
-            {
-              "name": "gUnk_090356AE",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B0",
-          "address": "0x9008974",
-          "size": 2,
-          "sha256": "0ae8e20e8cb2ab612a320158def8b102a5c98998f924309714ffabed53179e18",
-          "objects": [
-            {
-              "name": "gUnk_090356B0",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B2",
-          "address": "0x9008976",
-          "size": 2,
-          "sha256": "b98f461f1da74c0c82d6c977f606436221469d77e91de6b369eee6d3c6369c59",
-          "objects": [
-            {
-              "name": "gUnk_090356B2",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B4",
-          "address": "0x9008978",
-          "size": 2,
-          "sha256": "f4e2f1a103bb922ff42b612ff7eb3c93e362d2c364508e28368a7b3fac560800",
-          "objects": [
-            {
-              "name": "gUnk_090356B4",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B6",
-          "address": "0x900897a",
-          "size": 2,
-          "sha256": "b7586d310e5efb1b7d10a917ba5af403adbf54f4f77fe7fdcb4880a95dac7e7e",
-          "objects": [
-            {
-              "name": "gUnk_090356B6",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B8",
-          "address": "0x900897c",
-          "size": 2,
-          "sha256": "53522cf4f248caa75f77430fcf176ed00c486a0307b24b2b03e929a5a35e51e5",
-          "objects": [
-            {
-              "name": "gUnk_090356B8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356BA",
-          "address": "0x900897e",
-          "size": 24,
-          "sha256": "31e3cb7e60856768b818f0e76b391bc2c3aee037ba4706a84acfddc4e6f21563",
-          "objects": [
-            {
-              "name": "gUnk_090356BA",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356D2",
-          "address": "0x9008996",
-          "size": 24,
-          "sha256": "2f05ef17851bdc369a22805a9c3edbbc6c149239517e7a92826f3f935ac8e737",
-          "objects": [
-            {
-              "name": "gUnk_090356D2",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A68",
+          "section": ".data",
           "address": "0x9ebc088",
-          "size": 48,
-          "sha256": "2fa022addfa7e0598f2da76e32e2b93abdad7aa96e86be6dfe1055eedcc06094",
+          "size": 96,
+          "sha256": "214bb4aacf1cfae578a852b0c6df700275aba3183e520bbeeed548b491316719",
           "objects": [
             {
               "name": "gUnk_09EE4A68",
@@ -1814,19 +1410,10 @@
                 "func_08085DA0",
                 "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A98",
-          "address": "0x9ebc0b8",
-          "size": 48,
-          "sha256": "770ebd2f8a84dc9b8966e0eaa4113725ecb4d9eb87d60e52afb1db2f08e2f9c0",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A98",
-              "offset": 0,
+              "offset": 48,
               "size": 48,
               "consumer": [
                 "func_08085DA0",
@@ -2301,10 +1888,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090354E8",
+          "section": ".rodata",
           "address": "0x90ce7dc",
-          "size": 42,
-          "sha256": "452a5b9729215db28d0ce4dd3c57272d36928c4e6fc2d200b1d04e4ab7beff46",
+          "size": 514,
+          "sha256": "775869039ec6a3818ab7464522218820811184a937006f3b8f851455361d1452",
           "objects": [
             {
               "name": "gUnk_090354E8",
@@ -2314,6 +1901,204 @@
                 "func_08085DA0",
                 "explicit main count 21 for starter-deck selector 0; entries passed to func_08084458"
               ]
+            },
+            {
+              "name": "gUnk_09035512",
+              "offset": 42,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903553A",
+              "offset": 82,
+              "size": 42,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035564",
+              "offset": 124,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903557C",
+              "offset": 148,
+              "size": 40,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355A4",
+              "offset": 188,
+              "size": 36,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355C8",
+              "offset": 224,
+              "size": 34,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090355EA",
+              "offset": 258,
+              "size": 32,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903560A",
+              "offset": 290,
+              "size": 38,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_09035630",
+              "offset": 328,
+              "size": 10,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903563A",
+              "offset": 338,
+              "size": 50,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_0903566C",
+              "offset": 388,
+              "size": 60,
+              "consumer": [
+                "func_08085DA0",
+                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356A8",
+              "offset": 448,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AA",
+              "offset": 450,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AC",
+              "offset": 452,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356AE",
+              "offset": 454,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B0",
+              "offset": 456,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B2",
+              "offset": 458,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B4",
+              "offset": 460,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B6",
+              "offset": 462,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356B8",
+              "offset": 464,
+              "size": 2,
+              "consumer": [
+                "func_08085DA0",
+                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
+              ]
+            },
+            {
+              "name": "gUnk_090356BA",
+              "offset": 466,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
+            },
+            {
+              "name": "gUnk_090356D2",
+              "offset": 490,
+              "size": 24,
+              "consumer": [
+                "func_08085DA0",
+                "_08085D04 switch produces all twelve selectors 0..11"
+              ]
             }
           ],
           "alignment_before": 4,
@@ -2321,406 +2106,10 @@
         },
         {
           "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035512",
-          "address": "0x90ce806",
-          "size": 40,
-          "sha256": "12c79f7db80046f0b4fdb14c77c83771c0ee7f8a30f75da6b98d2e032845d90f",
-          "objects": [
-            {
-              "name": "gUnk_09035512",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903553A",
-          "address": "0x90ce82e",
-          "size": 42,
-          "sha256": "e48b14d0cdae08e02a8ad7ab92cb0588236c8747583b98654278beeafbb2ee6c",
-          "objects": [
-            {
-              "name": "gUnk_0903553A",
-              "offset": 0,
-              "size": 42,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 21 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035564",
-          "address": "0x90ce858",
-          "size": 24,
-          "sha256": "bc0cc81992dfe543bae089d71d7ebedf4d3ab764af2b32881552f2a74c5f3795",
-          "objects": [
-            {
-              "name": "gUnk_09035564",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 12 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903557C",
-          "address": "0x90ce870",
-          "size": 40,
-          "sha256": "caf3155ecefbef5e6bd5a1cae34a950d25fc5762fd5d49fc71c7606da948f134",
-          "objects": [
-            {
-              "name": "gUnk_0903557C",
-              "offset": 0,
-              "size": 40,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 20 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355A4",
-          "address": "0x90ce898",
-          "size": 36,
-          "sha256": "3ee2ea8d8dc64ee701e87813ff7096eec90644e3da3036b532cd298a45bc92ba",
-          "objects": [
-            {
-              "name": "gUnk_090355A4",
-              "offset": 0,
-              "size": 36,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 18 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355C8",
-          "address": "0x90ce8bc",
-          "size": 34,
-          "sha256": "9fe08570dd6e91895fb02c43d6196a164fedac8e187e1dbcd9343ca7bcdb59c0",
-          "objects": [
-            {
-              "name": "gUnk_090355C8",
-              "offset": 0,
-              "size": 34,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 17 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090355EA",
-          "address": "0x90ce8de",
-          "size": 32,
-          "sha256": "30d5f7b9aafff2bacdb3568798de910a115febbffd9b47d712516e23196a9695",
-          "objects": [
-            {
-              "name": "gUnk_090355EA",
-              "offset": 0,
-              "size": 32,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 16 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903560A",
-          "address": "0x90ce8fe",
-          "size": 38,
-          "sha256": "12eb551b8a7598f7e31bbfe8d2ca0b45845eb155c1c848f6a992f25ab4c9217d",
-          "objects": [
-            {
-              "name": "gUnk_0903560A",
-              "offset": 0,
-              "size": 38,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 19 for starter-deck selector 8; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_09035630",
-          "address": "0x90ce924",
-          "size": 10,
-          "sha256": "5a42d2cae37f01dd0a8e7ce42e317a6605f7fa0364bef084dc14221357e84c06",
-          "objects": [
-            {
-              "name": "gUnk_09035630",
-              "offset": 0,
-              "size": 10,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 5 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903563A",
-          "address": "0x90ce92e",
-          "size": 50,
-          "sha256": "af90c4f59aafd711d254abe776ddeaa8f9c54dfb330c455a88ac606732971b36",
-          "objects": [
-            {
-              "name": "gUnk_0903563A",
-              "offset": 0,
-              "size": 50,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 25 for starter-deck selector 10; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_0903566C",
-          "address": "0x90ce960",
-          "size": 60,
-          "sha256": "82873817af1156133359cfdf9d9d58bd5b57fcc2502a19f6c29c2f50d50bd6ea",
-          "objects": [
-            {
-              "name": "gUnk_0903566C",
-              "offset": 0,
-              "size": 60,
-              "consumer": [
-                "func_08085DA0",
-                "explicit main count 30 for starter-deck selector 11; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356A8",
-          "address": "0x90ce99c",
-          "size": 2,
-          "sha256": "6624800ada3f6c82669393c140336974448615cc9183717624cc57b8ac1b003f",
-          "objects": [
-            {
-              "name": "gUnk_090356A8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 0; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AA",
-          "address": "0x90ce99e",
-          "size": 2,
-          "sha256": "52de27d73c12de890a4006a43f6cc1107631474bb3bc80a2930c8c2b49b7c4b1",
-          "objects": [
-            {
-              "name": "gUnk_090356AA",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 1; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AC",
-          "address": "0x90ce9a0",
-          "size": 2,
-          "sha256": "0fb03959f2e2abba6a4d42f2e1ab6ce4578e1f7a419ea0731b61705f4adb05f4",
-          "objects": [
-            {
-              "name": "gUnk_090356AC",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 2; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356AE",
-          "address": "0x90ce9a2",
-          "size": 2,
-          "sha256": "912cfe4f5305e8d3d50b69d3bd5d77833e2e1b374030ff6fa471c9ecd1fc4006",
-          "objects": [
-            {
-              "name": "gUnk_090356AE",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 3; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B0",
-          "address": "0x90ce9a4",
-          "size": 2,
-          "sha256": "0ae8e20e8cb2ab612a320158def8b102a5c98998f924309714ffabed53179e18",
-          "objects": [
-            {
-              "name": "gUnk_090356B0",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 4; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B2",
-          "address": "0x90ce9a6",
-          "size": 2,
-          "sha256": "b98f461f1da74c0c82d6c977f606436221469d77e91de6b369eee6d3c6369c59",
-          "objects": [
-            {
-              "name": "gUnk_090356B2",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 5; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B4",
-          "address": "0x90ce9a8",
-          "size": 2,
-          "sha256": "f4e2f1a103bb922ff42b612ff7eb3c93e362d2c364508e28368a7b3fac560800",
-          "objects": [
-            {
-              "name": "gUnk_090356B4",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 6; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B6",
-          "address": "0x90ce9aa",
-          "size": 2,
-          "sha256": "b7586d310e5efb1b7d10a917ba5af403adbf54f4f77fe7fdcb4880a95dac7e7e",
-          "objects": [
-            {
-              "name": "gUnk_090356B6",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 7; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356B8",
-          "address": "0x90ce9ac",
-          "size": 2,
-          "sha256": "53522cf4f248caa75f77430fcf176ed00c486a0307b24b2b03e929a5a35e51e5",
-          "objects": [
-            {
-              "name": "gUnk_090356B8",
-              "offset": 0,
-              "size": 2,
-              "consumer": [
-                "func_08085DA0",
-                "explicit supplemental count 1 for starter-deck selector 9; entries passed to func_08084458"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356BA",
-          "address": "0x90ce9ae",
-          "size": 24,
-          "sha256": "31e3cb7e60856768b818f0e76b391bc2c3aee037ba4706a84acfddc4e6f21563",
-          "objects": [
-            {
-              "name": "gUnk_090356BA",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".rodata_card_deck_090356D2",
-          "address": "0x90ce9c6",
-          "size": 24,
-          "sha256": "2f05ef17851bdc369a22805a9c3edbbc6c149239517e7a92826f3f935ac8e737",
-          "objects": [
-            {
-              "name": "gUnk_090356D2",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A68",
+          "section": ".data",
           "address": "0x9f6fd14",
-          "size": 48,
-          "sha256": "6e896e6de46fff7c006e1459a0476e45054b21e7b043e117050b036a5c194c2a",
+          "size": 96,
+          "sha256": "89b3c3357932c06237b44f08e5f946fb7ab6c841a5cecd061065409e359a4e39",
           "objects": [
             {
               "name": "gUnk_09EE4A68",
@@ -2730,19 +2119,10 @@
                 "func_08085DA0",
                 "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data_card_deck_09EE4A98",
-          "address": "0x9f6fd44",
-          "size": 48,
-          "sha256": "4017705d9e764e6b002f5211c4cee7e28f9e1833bbb9871ea13a0809dd307cac",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A98",
-              "offset": 0,
+              "offset": 48,
               "size": 48,
               "consumer": [
                 "func_08085DA0",

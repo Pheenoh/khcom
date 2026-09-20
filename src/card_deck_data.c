@@ -1,6 +1,6 @@
 #include "card_deck_data.h"
 
-const u16 gUnk_090354E8[21] __attribute__((section(".rodata_card_deck_090354E8"), aligned(4))) = {
+const u16 gUnk_090354E8[21] __attribute__((aligned(4))) = {
     667,
     666,
     664,
@@ -24,7 +24,7 @@ const u16 gUnk_090354E8[21] __attribute__((section(".rodata_card_deck_090354E8")
     397,
 };
 
-const u16 gUnk_09035512[20] __attribute__((section(".rodata_card_deck_09035512"), aligned(2))) = {
+const u16 gUnk_09035512[20] = {
     665,
     665,
     665,
@@ -47,7 +47,7 @@ const u16 gUnk_09035512[20] __attribute__((section(".rodata_card_deck_09035512")
     661,
 };
 
-const u16 gUnk_0903553A[21] __attribute__((section(".rodata_card_deck_0903553A"), aligned(2))) = {
+const u16 gUnk_0903553A[21] = {
     661,
     662,
     663,
@@ -71,7 +71,7 @@ const u16 gUnk_0903553A[21] __attribute__((section(".rodata_card_deck_0903553A")
     660,
 };
 
-const u16 gUnk_09035564[12] __attribute__((section(".rodata_card_deck_09035564"), aligned(2))) = {
+const u16 gUnk_09035564[12] = {
     663,
     664,
     665,
@@ -86,7 +86,7 @@ const u16 gUnk_09035564[12] __attribute__((section(".rodata_card_deck_09035564")
     665,
 };
 
-const u16 gUnk_0903557C[20] __attribute__((section(".rodata_card_deck_0903557C"), aligned(2))) = {
+const u16 gUnk_0903557C[20] = {
     667,
     665,
     664,
@@ -109,7 +109,7 @@ const u16 gUnk_0903557C[20] __attribute__((section(".rodata_card_deck_0903557C")
     661,
 };
 
-const u16 gUnk_090355A4[18] __attribute__((section(".rodata_card_deck_090355A4"), aligned(2))) = {
+const u16 gUnk_090355A4[18] = {
     667,
     667,
     666,
@@ -130,7 +130,7 @@ const u16 gUnk_090355A4[18] __attribute__((section(".rodata_card_deck_090355A4")
     664,
 };
 
-const u16 gUnk_090355C8[17] __attribute__((section(".rodata_card_deck_090355C8"), aligned(2))) = {
+const u16 gUnk_090355C8[17] = {
     667,
     666,
     665,
@@ -150,7 +150,7 @@ const u16 gUnk_090355C8[17] __attribute__((section(".rodata_card_deck_090355C8")
     669,
 };
 
-const u16 gUnk_090355EA[16] __attribute__((section(".rodata_card_deck_090355EA"), aligned(2))) = {
+const u16 gUnk_090355EA[16] = {
     669,
     668,
     667,
@@ -169,7 +169,7 @@ const u16 gUnk_090355EA[16] __attribute__((section(".rodata_card_deck_090355EA")
     389,
 };
 
-const u16 gUnk_0903560A[19] __attribute__((section(".rodata_card_deck_0903560A"), aligned(2))) = {
+const u16 gUnk_0903560A[19] = {
     660,
     661,
     663,
@@ -191,7 +191,7 @@ const u16 gUnk_0903560A[19] __attribute__((section(".rodata_card_deck_0903560A")
     660,
 };
 
-const u16 gUnk_09035630[5] __attribute__((section(".rodata_card_deck_09035630"), aligned(2))) = {
+const u16 gUnk_09035630[5] = {
     664,
     665,
     666,
@@ -199,7 +199,7 @@ const u16 gUnk_09035630[5] __attribute__((section(".rodata_card_deck_09035630"),
     668,
 };
 
-const u16 gUnk_0903563A[25] __attribute__((section(".rodata_card_deck_0903563A"), aligned(2))) = {
+const u16 gUnk_0903563A[25] = {
     669,
     666,
     663,
@@ -227,7 +227,7 @@ const u16 gUnk_0903563A[25] __attribute__((section(".rodata_card_deck_0903563A")
     669,
 };
 
-const u16 gUnk_0903566C[30] __attribute__((section(".rodata_card_deck_0903566C"), aligned(2))) = {
+const u16 gUnk_0903566C[30] = {
     668,
     668,
     668,
@@ -260,25 +260,25 @@ const u16 gUnk_0903566C[30] __attribute__((section(".rodata_card_deck_0903566C")
     660,
 };
 
-const u16 gUnk_090356A8 __attribute__((section(".rodata_card_deck_090356A8"), aligned(2))) = 483;
+const u16 gUnk_090356A8 = 483;
 
-const u16 gUnk_090356AA __attribute__((section(".rodata_card_deck_090356AA"), aligned(2))) = 492;
+const u16 gUnk_090356AA = 492;
 
-const u16 gUnk_090356AC __attribute__((section(".rodata_card_deck_090356AC"), aligned(2))) = 471;
+const u16 gUnk_090356AC = 471;
 
-const u16 gUnk_090356AE __attribute__((section(".rodata_card_deck_090356AE"), aligned(2))) = 456;
+const u16 gUnk_090356AE = 456;
 
-const u16 gUnk_090356B0 __attribute__((section(".rodata_card_deck_090356B0"), aligned(2))) = 489;
+const u16 gUnk_090356B0 = 489;
 
-const u16 gUnk_090356B2 __attribute__((section(".rodata_card_deck_090356B2"), aligned(2))) = 501;
+const u16 gUnk_090356B2 = 501;
 
-const u16 gUnk_090356B4 __attribute__((section(".rodata_card_deck_090356B4"), aligned(2))) = 507;
+const u16 gUnk_090356B4 = 507;
 
-const u16 gUnk_090356B6 __attribute__((section(".rodata_card_deck_090356B6"), aligned(2))) = 516;
+const u16 gUnk_090356B6 = 516;
 
-const u16 gUnk_090356B8 __attribute__((section(".rodata_card_deck_090356B8"), aligned(2))) = 450;
+const u16 gUnk_090356B8 = 450;
 
-const u16 gUnk_090356BA[12] __attribute__((section(".rodata_card_deck_090356BA"), aligned(2))) = {
+const u16 gUnk_090356BA[12] = {
     21,
     20,
     21,
@@ -293,7 +293,7 @@ const u16 gUnk_090356BA[12] __attribute__((section(".rodata_card_deck_090356BA")
     30,
 };
 
-const u16 gUnk_090356D2[12] __attribute__((section(".rodata_card_deck_090356D2"), aligned(2))) = {
+const u16 gUnk_090356D2[12] = {
     1,
     1,
     1,
@@ -308,7 +308,7 @@ const u16 gUnk_090356D2[12] __attribute__((section(".rodata_card_deck_090356D2")
     0,
 };
 
-const u16* gUnk_09EE4A68[12] __attribute__((section(".data_card_deck_09EE4A68"), aligned(4))) = {
+const u16* gUnk_09EE4A68[12] = {
     gUnk_090354E8,
     gUnk_09035512,
     gUnk_0903553A,
@@ -323,7 +323,7 @@ const u16* gUnk_09EE4A68[12] __attribute__((section(".data_card_deck_09EE4A68"),
     gUnk_0903566C,
 };
 
-const u16* gUnk_09EE4A98[12] __attribute__((section(".data_card_deck_09EE4A98"), aligned(4))) = {
+const u16* gUnk_09EE4A98[12] = {
     &gUnk_090356A8,
     &gUnk_090356AA,
     &gUnk_090356AC,
