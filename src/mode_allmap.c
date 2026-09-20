@@ -6,6 +6,14 @@
 #include "macros.h"
 #include "mode_allmap.h"
 
+const char gModeNameAllmap[] = "mode_allmap";
+
+const AllmapRoomOrder gUnk_096FDB70 = {{
+    0, 4, 2, 5, 3, 10, 9, 13, 1, 7, 8, 11, 6, 14, 12, 15,
+}};
+
+const AllmapRoomDirs gUnk_096FDBB0 = {{1, 2, 3, 0}};
+
 TaskPool gUnk_0203C4F0 __attribute__((common));
 
 s16 gUnk_02034E3C;
@@ -234,8 +242,6 @@ s32 func_080D37BC(u8 a) {
 }
 
 ALIGN_ZERO(2);
-
-const char gModeNameAllmap[] = "mode_allmap";
 
 Mode gModeAllmap = {
     gModeNameAllmap,

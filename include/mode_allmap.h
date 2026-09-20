@@ -49,8 +49,6 @@ extern u16 gUnk_02034E38;
 extern u16 gUnk_02034E3A;
 extern TaskPool gUnk_0203C4F0;
 extern u8 gUnk_05000140[];
-extern AllmapRoomOrder gUnk_096FDB70;
-extern AllmapRoomDirs gUnk_096FDBB0;
 extern u8 gUnk_0976B340[];
 extern u8 gUnk_0976DEDC[];
 extern u8 gUnk_0976E4D4[];

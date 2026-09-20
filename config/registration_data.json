@@ -16,7 +16,8 @@
     "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
     "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary.",
     "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization.",
-    "title_readonly_owner": "The four title task names and two readonly lookup tables share title.c consumers. The menu loops enumerate four s32 entries {4,5,1,2}; the luminance callback copies exactly three s16 entries {-7,0,3} into its local array. Ordinary const definitions reproduce the complete 0x5E-byte readonly run in every original region with native alignment, preserving all four original name extents and both independently bounded table spans. The old raw fragments and address aliases are removed without code or asset-payload changes."
+    "title_readonly_owner": "The four title task names and two readonly lookup tables share title.c consumers. The menu loops enumerate four s32 entries {4,5,1,2}; the luminance callback copies exactly three s16 entries {-7,0,3} into its local array. Ordinary const definitions reproduce the complete 0x5E-byte readonly run in every original region with native alignment, preserving all four original name extents and both independently bounded table spans. The old raw fragments and address aliases are removed without code or asset-payload changes.",
+    "mode_allmap_readonly_owner": "The all-map mode copies the complete existing AllmapRoomOrder and AllmapRoomDirs records into locals. The four-direction loop builds a mask in0..15 for the sixteen-entry order and reads the four-entry direction permutation. Both definitions have only mode_allmap.c consumers. Ordinary const definitions follow the existing mode name in one native0x5C-byte readonly section in all regions, replacing the exact80-byte raw metadata fragment. Types remain in the owning header, and no function body, RAM definition or encoded asset changes."
   },
   "regions": {
     "us": {
@@ -3836,13 +3837,23 @@
           "unit": "mode_allmap.c",
           "section": ".rodata",
           "address": "0x096FDB64",
-          "size": 12,
-          "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
+          "size": 92,
+          "sha256": "db43d81d1c28cf1d281153efd8f7e82b0fadf208aa4c192cadfdb23a29a60f92",
           "objects": [
             {
               "name": "gModeNameAllmap",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_096FDB70",
+              "offset": 12,
+              "size": 64
+            },
+            {
+              "name": "gUnk_096FDBB0",
+              "offset": 76,
+              "size": 16
             }
           ]
         },
@@ -11080,13 +11091,23 @@
           "unit": "mode_allmap.c",
           "section": ".rodata",
           "address": "0x096B6340",
-          "size": 12,
-          "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
+          "size": 92,
+          "sha256": "db43d81d1c28cf1d281153efd8f7e82b0fadf208aa4c192cadfdb23a29a60f92",
           "objects": [
             {
               "name": "gModeNameAllmap",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_096FDB70",
+              "offset": 12,
+              "size": 64
+            },
+            {
+              "name": "gUnk_096FDBB0",
+              "offset": 76,
+              "size": 16
             }
           ]
         },
@@ -18229,13 +18250,23 @@
           "unit": "mode_allmap.c",
           "section": ".rodata",
           "address": "0x096CAEAC",
-          "size": 12,
-          "sha256": "3ffc3236a00dd15dc412f0890adf6f05e1fe8ddd8c0ab33e41eb58a7edebad57",
+          "size": 92,
+          "sha256": "db43d81d1c28cf1d281153efd8f7e82b0fadf208aa4c192cadfdb23a29a60f92",
           "objects": [
             {
               "name": "gModeNameAllmap",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnk_096FDB70",
+              "offset": 12,
+              "size": 64
+            },
+            {
+              "name": "gUnk_096FDBB0",
+              "offset": 76,
+              "size": 16
             }
           ]
         },
