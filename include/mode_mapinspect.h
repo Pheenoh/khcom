@@ -1,14 +1,23 @@
-#include "moogle_data.h"
 #include "card_animation_data.h"
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
+
+#include "registration_data.h"
+#include "card_description_data.h"
+#include "map_card_data.h"
+#include "card_ui_types.h"
+#include "card_api.h"
+#include "mode_ms_top_api.h"
+#include "key.h"
+#include "malloc.h"
+#include "mode.h"
+#include "m4a.h"
 
 #include "animation_resource_data.h"
 
 #include "obj.h"
 
 #include "map_api.h"
-#include "mode_ms2_api.h"
 
 #include "game_state.h"
 #include "text.h"
@@ -21,25 +30,6 @@
 #include "ms_types.h"
 #include "main.h"
 #include "anim.h"
-extern s16 gUnk_02035E2C;
-extern s16 gUnk_02035E2E;
-extern s16 gUnk_02035E48;
-extern AnimState gUnk_02035E58;
-extern AnimState gUnk_02035E80;
-extern AnimState gUnk_02035F58;
-extern AnimState gUnk_02035F78;
-extern s16 gUnk_02035E98;
-extern s16 gUnk_02035E9A;
-extern s16 gUnk_02035E9C;
-extern void* gUnk_02035F00[4][3];
-extern u8 gUnk_02035F30[4][3];
-extern void* gUnk_02035F44;
-extern void* gUnk_02035F50;
-extern u8 gUnk_02035F90;
-extern u8 gUnk_02035FA8;
-extern u8 gUnk_02035FB0;
-extern u8 gUnk_02035FB8;
-extern u8 gUnk_02035FC0[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_08159E18[];
 extern u8 gUnk_08159FBC[];
@@ -57,30 +47,48 @@ extern u8 gUnk_09A3501C[];
 extern u8 gUnk_09A3551C[];
 extern u8 gUnk_09A3D0DC[];
 extern u8 gUnk_09A3D2DC[];
-extern struct ObjPalette* gUnk_02035E4C;
-extern struct ObjTiles* gUnk_02035E50;
-extern struct ObjPalette* gUnk_02035E70;
-extern struct ObjPalette* gUnk_02035E74;
-extern struct ObjTiles* gUnk_02035E78;
-extern void* gUnk_02035EA0[4][3];
-extern void* gUnk_02035ED0[4][3];
-extern struct ObjPalette* gUnk_02035F3C;
-extern struct ObjTiles* gUnk_02035F40;
-extern struct ObjPalette* gUnk_02035F48;
-extern struct ObjTiles* gUnk_02035F4C;
-extern struct ObjTiles* gUnk_02035F54;
-extern struct ObjTiles* gUnk_02035F70;
-extern u8* gUnk_02035F94;
-extern u8* gUnk_02035F9C;
-extern u8* gUnk_02035FA4;
-extern u16 gUnk_02035FAA[];
-extern u8* gUnk_02035FAC;
-extern u16 gUnk_02035FB2[];
-extern u8* gUnk_02035FB4;
-extern u16 gUnk_02035FBA[];
-extern void* gUnk_02035FBC[];
-extern u16 gUnk_02035FC2[];
-extern u8* gUnk_02035E28;
 extern u8 gUnk_09A3489C[];
+
+extern u8 gUnk_0999D9C0[];
+extern u8 gUnk_0999D9CA[];
+extern u8 gUnk_0999D9E6[];
+extern u8 gUnk_0999DA1A[];
+extern u8 gUnk_09A067DC[];
+extern u8 gUnk_09A067FC[];
+extern u8 gUnk_09A34D9C[];
+extern u8 gUnk_09A3D248[];
+extern u8 gUnk_09A3D2C8[];
+extern u8 gUnk_09A3D2FC[];
+extern u8 gUnk_09A0667C[];
+extern u8 gUnk_09A0669C[];
+extern u8 gUnk_09A0693C[];
+s16 func_0810712C(s16 a);
+s16 func_0810714C(void);
+void func_081071AC(void);
+s16 func_08107220(s16 a);
+u8 func_08107268(void);
+s16 func_081075C0(s16 a, s16 b);
+s16 func_081075D8(void);
+u16 func_08107D24(void);
+void func_08108170(MapCardInventoryEntry* p, u16 row);
+void func_08107938(void);
+u8 func_081079A8(MapCardInventoryEntry* p);
+u8 func_081079E4(MapCardInventoryEntry* p);
+void func_08107A08(MapCardInventoryEntry* p);
+void func_08107A74(MapCardInventoryEntry* p);
+void func_08107D44(void);
+void func_08107FF0(void);
+void func_08108208(void);
+void func_081083EC(void);
+void func_081085E8(void);
+void func_08108650(void);
+void func_08107B84(void);
+struct MapCardInventoryEntry* func_0810718C(void);
+void func_081078F0(s16 a);
+void func_081075FC(void);
+void func_0810764C(void);
+void func_081076D4(void);
+void func_08107280(void);
+void func_081073F0(void);
 
 #endif /* GUARD_MODE_MAPINSPECT_H */

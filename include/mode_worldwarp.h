@@ -1,4 +1,3 @@
-#include "moogle_data.h"
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 

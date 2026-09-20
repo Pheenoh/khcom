@@ -1,11 +1,22 @@
-#include "localized_resource_data.h"
+#include "localized_resource_assets.h"
 #include "system_state.h"
 #include "ms_charge_api.h"
 #include "display.h"
 #include "text.h"
 #include "monsgage.h"
 #include "ms_charge.h"
+#include "card_ui_state.h"
 #include "gba/keys.h"
+
+#ifdef VERSION_EU
+extern u8 gUnkEu_09A97520[];
+extern u8 gUnkEu_099AEE98[];
+extern u8 gUnkEu_092D1F74[];
+extern u8 gUnkEu_08890F40[];
+extern u8 gUnkEu_08895960[];
+extern u8 gUnkEu_08890E1C[];
+extern u8 gUnkEu_08890E44[];
+#endif
 
 #ifdef VERSION_EU
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -13,16 +24,50 @@
 #define LANGSTR(x) (x)
 #endif
 
+#ifdef VERSION_EU
+void* gUnkEu_09F84FA8[5] = {
+    gUnkEu_09A94E20,
+    gUnkEu_09A95320,
+    gUnkEu_09A96220,
+    gUnkEu_09A95D20,
+    gUnkEu_09A95820,
+};
+
+void* gUnkEu_09F84FBC[5] = {
+    gUnkEu_09A96720,
+    gUnkEu_09A96820,
+    gUnkEu_09A96920,
+    gUnkEu_09A96A20,
+    gUnkEu_09A96920,
+};
+
+void* gUnkEu_09F84FD0[5] = {
+    gUnkEu_09A96B20,
+    gUnkEu_09A97A20,
+    gUnkEu_09A98920,
+    gUnkEu_09A98420,
+    gUnkEu_09A97F20,
+};
+
+void* gUnkEu_09F84FE4[5] = {
+    gUnkEu_09A97020,
+    gUnkEu_09A98E20,
+    gUnkEu_09A99D20,
+    gUnkEu_09A99820,
+    gUnkEu_09A99320,
+};
+#endif
+
 MsCard* gUnk_02035C10;
 s16 gUnk_02035C14;
-u16 gUnk_02035C16;
+s16 gUnk_02035C16;
 s16 gUnk_02035C18;
 u8 gUnk_02035C1A[6];
 s16 gUnk_02035C20[4];
 s16 gUnk_02035C28[4];
 s16 gUnk_02035C30[4];
 s16 gUnk_02035C38;
-u16 gUnk_02035C3A;
+s16 gUnk_02035C3A;
 u16 gUnk_02035C3C;
 struct ObjTiles* gUnk_02035C40;
 struct ObjPalette* gUnk_02035C44;
@@ -1012,3 +1057,376 @@ void func_08106234(void) {
         }
     }
 }
+void mode_ms_charge_0(void) {
+    s16 i;
+    s16 j;
+    u8* pb;
+    u16 length;
+
+    {
+        MsCard** dst = &gUnk_02035C10;
+        *dst = EwramAlloc(0x3A18);
+    }
+    SpriteReset();
+    FadeStartIn(0, 16);
+    SetBgMode0();
+    SetupBg(0, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(2, 0, 30, 0);
+    SetupBg(3, 0, 31, 0);
+    SetBgPriority(0, 3);
+    SetBgPriority(1, 2);
+    SetBgPriority(2, 1);
+    SetBgPriority(3, 0);
+    gUnk_02035C14 = 0;
+    gUnk_02035C18 = 4;
+    func_0810563C();
+    gUnk_02035CE0 = 0;
+    gUnk_02035CE2 = 0;
+    gUnk_02035CE4 = 0;
+
+    if (gUnk_02035C3A > 0) {
+        s32* position = &gUnk_02035E18;
+        s16 state = 0;
+        *position = 0xB500;
+        gUnk_02035E1C = 0x2800;
+        gUnk_02035C16 = state;
+    } else {
+        gUnk_02035E18 = gUnk_02035C18 * 3584 + 0xAC00;
+        gUnk_02035E1C = 0x1000;
+        gUnk_02035C16 = 1;
+    }
+
+    for (i = 0; i <= 3; i++) {
+        for (j = 0; j <= 2; j++) {
+            gUnk_02035CE8[i][j] = 0;
+            gUnk_02035D18[i][j] = 0;
+            gUnk_02035D48[i][j] = 0;
+            gUnk_02035D78[i][j] = 0;
+        }
+    }
+    gUnk_02035D84 = 0;
+    gUnk_02035D88 = 0;
+    gUnk_02035D8C = 0;
+    gUnk_02035D94 = 0;
+    gUnk_02035D98 = 0;
+    gUnk_02035DD8 = 0;
+    gUnk_02035E0C = 0;
+    gUnk_02035E0E = 0;
+    gUnk_02035CB8 = 0;
+    gUnk_02035CBA = -1;
+    gUnk_02035CBC = 0;
+    LoadBgPalette(0, gUnk_09A3DBDC, 0x1A0);
+    LoadBgTiles(0, gUnk_09A1913C,
+#ifdef VERSION_EU
+        0x61C0
+#else
+        0x4A60
+#endif
+    );
+    LoadBgMap(0,
+#ifdef VERSION_EU
+        gUnkEu_09F84FA8[gLanguage]
+#else
+        gUnk_09A3B25C
+#endif
+    , 0x500);
+
+    if (func_08104B2C()->unk_04 == 3) {
+        LoadBgMap(1,
+#ifdef VERSION_EU
+        gUnkEu_09F84FE4[gLanguage]
+#else
+        gUnk_09A3BD5C
+#endif
+    , 0x500);
+    } else {
+        LoadBgMap(1,
+#ifdef VERSION_EU
+        gUnkEu_09F84FD0[gLanguage]
+#else
+        gUnk_09A3B85C
+#endif
+    , 0x500);
+    }
+    func_081052C8(gUnk_02035C18);
+    LoadBgMap(2,
+#ifdef VERSION_EU
+        gUnkEu_09A97520
+#else
+        gUnk_09A3C25C
+#endif
+    , 0x500);
+    func_08104F2C();
+    func_08104FA4();
+    func_08104FF8();
+    func_08105090();
+    gUnk_02035D90 = LoadObjPalette(gUnk_09611AB8, 32);
+    gUnk_02035D9C = LoadObjTiles(gUnk_0908B1B4, 0x9A0);
+    AnimInit(&gUnk_02035DA0, gUnk_09EEA164, gUnk_09EEA148);
+    AnimStart(&gUnk_02035DA0, 0, 1);
+    gUnk_02035DB8 = LoadObjTiles(gUnk_0908C3CE, 0x260);
+    AnimInit(&gUnk_02035DC0, gUnk_09EEA198, gUnk_09EEA180);
+    AnimStart(&gUnk_02035DC0, 0, 1);
+    gUnk_02035C40 = LoadObjTiles(gUnk_099A7C78, 32);
+    gUnk_02035C44 = LoadObjPalette(gUnk_09A3DE7C, 32);
+    gUnk_02035C48 = LoadObjTiles(gUnk_099A6C82, 0xFE0);
+    AnimInit(&gUnk_02035C50, gUnk_09EF9AA4, gUnk_09EF9A68);
+    AnimStart(&gUnk_02035C50, 1, 1);
+    AnimInit(&gUnk_02035C68, gUnk_09EF9AA4, gUnk_09EF9A68);
+    AnimStart(&gUnk_02035C68, 2, 1);
+    gUnk_02035C80 = LoadObjPalette(gUnk_09617D58, 32);
+    gUnk_02035C84 = LoadObjTiles(
+#ifdef VERSION_EU
+        gUnkEu_099AEE98
+#else
+        gUnk_099A2194
+#endif
+    , 0x940);
+    AnimInit(&gUnk_02035C88,
+        gUnk_09EF9978
+    ,
+        gUnk_09EF9928
+    );
+    AnimStart(&gUnk_02035C88, 3, 1);
+    AnimInit(&gUnk_02035CA0,
+        gUnk_09EF9978
+    ,
+        gUnk_09EF9928
+    );
+    AnimStart(&gUnk_02035CA0, 0, 1);
+    gUnk_02035CC0 = LoadObjPalette(gUnk_09617D58, 32);
+    gUnk_02035CC4 = LoadObjTiles(
+#ifdef VERSION_EU
+        gUnkEu_092D1F74
+#else
+        gUnk_092028EC
+#endif
+    , 0xC00);
+    AnimInit(&gUnk_02035CC8, gUnk_09EEEAC8, gUnk_09EEEA98);
+    {
+        void** dst = &gUnk_02035DDC;
+        *dst = EwramAlloc(0x120);
+    }
+    InitTextSlots(gUnk_02035DDC, 36);
+    {
+        void** dst = &gUnk_02035DE4;
+        *dst = EwramAlloc(0x2D0);
+    }
+    InitTextSlots(gUnk_02035DE4, 90);
+    length = func_08065B54(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890F40)
+#else
+        gUnk_08159F38
+#endif
+    );
+    gUnk_02035DF2 = length;
+    {
+        void** dst = &gUnk_02035DEC;
+        *dst = EwramAlloc(gUnk_02035DF2 * 8);
+    }
+    InitTextSlots(gUnk_02035DEC, gUnk_02035DF2);
+    pb = &gUnk_02035DF0;
+    *pb = LoadTextSlots(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890F40)
+#else
+        gUnk_08159F38
+#endif
+    , gUnk_02035DEC);
+    length = func_08065B54(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08895960)
+#else
+        gUnk_0815C204
+#endif
+    );
+    gUnk_02035DFA = length;
+    {
+        void** dst = &gUnk_02035DF4;
+        *dst = EwramAlloc(gUnk_02035DFA * 8);
+    }
+    InitTextSlots(gUnk_02035DF4, gUnk_02035DFA);
+    pb = &gUnk_02035DF8;
+    *pb = LoadTextSlots(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08895960)
+#else
+        gUnk_0815C204
+#endif
+    , gUnk_02035DF4);
+    length = func_08065B54(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890E1C)
+#else
+        gUnk_08159E10
+#endif
+    );
+    gUnk_02035E02 = length;
+    {
+        void** dst = &gUnk_02035DFC;
+        *dst = EwramAlloc(gUnk_02035E02 * 8);
+    }
+    InitTextSlots(gUnk_02035DFC, gUnk_02035E02);
+    pb = &gUnk_02035E00;
+    *pb = LoadTextSlots(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890E1C)
+#else
+        gUnk_08159E10
+#endif
+    , gUnk_02035DFC);
+    length = func_08065B54(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890E44)
+#else
+        gUnk_08159E18
+#endif
+    );
+    gUnk_02035E0A = length;
+    {
+        void** dst = &gUnk_02035E04;
+        *dst = EwramAlloc(gUnk_02035E0A * 8);
+    }
+    InitTextSlots(gUnk_02035E04, gUnk_02035E0A);
+    pb = &gUnk_02035E08;
+    *pb = LoadTextSlots(
+#ifdef VERSION_EU
+        eu_0805E924(gUnkEu_08890E44)
+#else
+        gUnk_08159E18
+#endif
+    , gUnk_02035E04);
+    func_08104BBC();
+    func_08104D18();
+    EnableBg(0);
+    EnableBg(1);
+    DisableBg(2);
+    DisableBg(3);
+}
+
+void mode_ms_charge_1(void) {
+    UpdatePlayTime();
+    gUnk_02035CB8 += 2;
+
+    switch (gUnk_02035C14) {
+    case 0:
+        if (!FadeIsActive()) {
+            gUnk_02035C14 = 1;
+        }
+        break;
+    case 1:
+        switch (gUnk_02035C16) {
+        case 0:
+            func_0810594C();
+            break;
+        case 1:
+            func_08105BD8();
+            break;
+        case 2:
+            func_08105DE0();
+            break;
+        case 3:
+            func_0810601C();
+            break;
+        case 4:
+            func_081061DC();
+            break;
+        }
+        break;
+    case 2:
+        if (!FadeIsActive()) {
+            if (gUnk_02035E20 != 0) {
+                ModeRequest(&gModeMsTop, 2);
+            } else {
+                func_080E04EC();
+            }
+        }
+        break;
+    }
+
+    if (gUnk_02035CBC > 0) {
+        if (AnimGetId(&gUnk_02035CA0) != 2) {
+            if (gUnk_02035CBA < 0) {
+                gUnk_02035CBA = AnimGetId(&gUnk_02035CA0);
+            }
+            AnimStart(&gUnk_02035CA0, 2, 1);
+        }
+
+        if (--gUnk_02035CBC <= 0) {
+            if (AnimGetId(&gUnk_02035CA0) != gUnk_02035CBA) {
+                AnimStart(&gUnk_02035CA0, gUnk_02035CBA, 1);
+            }
+            gUnk_02035CBA = -1;
+        }
+    } else if (gUnk_02035CBA >= 0) {
+        if (AnimGetId(&gUnk_02035CA0) != gUnk_02035CBA) {
+            AnimStart(&gUnk_02035CA0, gUnk_02035CBA, 1);
+        }
+        gUnk_02035CBA = -1;
+    }
+    func_08106234();
+}
+
+void mode_ms_charge_2(void) {
+    s32 i;
+    s32 j;
+
+    ReleaseObjPalette(gUnk_02035D90);
+    ReleaseObjTiles(gUnk_02035D9C);
+    ReleaseObjTiles(gUnk_02035DB8);
+    ReleaseObjTiles(gUnk_02035C40);
+    ReleaseObjPalette(gUnk_02035C44);
+    ReleaseObjTiles(gUnk_02035C48);
+    ReleaseObjPalette(gUnk_02035C80);
+    ReleaseObjTiles(gUnk_02035C84);
+    ReleaseObjPalette(gUnk_02035CC0);
+    ReleaseObjTiles(gUnk_02035CC4);
+
+    for (i = 0; i <= 3; i++) {
+        for (j = 0; j <= 2; j++) {
+            if (gUnk_02035CE8[i][j] != 0) {
+                ReleaseObjPalette(gUnk_02035CE8[i][j]);
+            }
+
+            if (gUnk_02035D18[i][j] != 0) {
+                ReleaseObjTiles(gUnk_02035D18[i][j]);
+            }
+        }
+    }
+
+    if (gUnk_02035D84 != 0) {
+        ReleaseObjPalette(gUnk_02035D84);
+    }
+
+    if (gUnk_02035D88 != 0) {
+        ReleaseObjTiles(gUnk_02035D88);
+    }
+
+    if (gUnk_02035D94 != 0) {
+        ReleaseObjTiles(gUnk_02035D94);
+    }
+    FreeTextSlots(gUnk_02035DDC, 36);
+    EwramFree(gUnk_02035DDC);
+    FreeTextSlots(gUnk_02035DE4, 90);
+    EwramFree(gUnk_02035DE4);
+    FreeTextSlots(gUnk_02035DEC, gUnk_02035DF2);
+    EwramFree(gUnk_02035DEC);
+    FreeTextSlots(gUnk_02035DF4, gUnk_02035DFA);
+    EwramFree(gUnk_02035DF4);
+    FreeTextSlots(gUnk_02035DFC, gUnk_02035E02);
+    EwramFree(gUnk_02035DFC);
+    FreeTextSlots(gUnk_02035E04, gUnk_02035E0A);
+    EwramFree(gUnk_02035E04);
+    EwramFree(gUnk_02035C10);
+}
+
+const char gModeNameMsCharge[] = "mode_ms_charge";
+
+Mode gModeMsCharge = {
+    gModeNameMsCharge,
+    (void (*)(s32))mode_ms_charge_0,
+    mode_ms_charge_1,
+    mode_ms_charge_2,
+};

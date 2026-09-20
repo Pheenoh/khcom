@@ -2,6 +2,19 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
+#include "card_animation_data.h"
+#include "registration_data.h"
+#include "map_card_data.h"
+#include "animation_resource_data.h"
+#include "obj.h"
+#include "card_ui_types.h"
+#include "card_api.h"
+#include "map_api.h"
+#include "game_state.h"
+#include "malloc.h"
+#include "anim.h"
+#include "mode.h"
+
 #include "card_description_data.h"
 
 #include "card_types.h"
@@ -28,8 +41,6 @@
 #include "m4a.h"
 
 #define CARD_ID_MASK 0xFFF
-
-
 
 extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
@@ -65,5 +76,25 @@ void func_081054D0(MsCard* card);
 s32 func_081055E8(u16 id, u8 flag, s16 count);
 s32 func_0810592C(void);
 s32 func_08105D24(MsCard* card, u16 col);
+
+extern u8 gUnk_0908B1B4[];
+extern u8 gUnk_0908C3CE[];
+extern u8 gUnk_092028EC[];
+extern u8 gUnk_08159E10[];
+extern u8 gUnk_08159E18[];
+extern u8 gUnk_08159F38[];
+extern u8 gUnk_0815C204[];
+extern u8 gUnk_09611AB8[];
+extern u8 gUnk_09617D58[];
+extern u8 gUnk_099A2194[];
+extern u8 gUnk_099A6C82[];
+extern u8 gUnk_099A7C78[];
+extern u8 gUnk_09A1913C[];
+extern u8 gUnk_09A3B25C[];
+extern u8 gUnk_09A3C25C[];
+extern u8 gUnk_09A3DBDC[];
+void mode_ms_charge_1(void);
+void mode_ms_charge_2(void);
+void mode_ms_charge_0(void);
 
 #endif

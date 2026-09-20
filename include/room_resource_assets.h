@@ -3,7 +3,8 @@
 
 #include "anim.h"
 #include "bos5.h"
-#include "mode_ms2.h"
+#include "ms_charge.h"
+#include "mode_mapinspect.h"
 #include "mode_worldwarp.h"
 #include "ms_charge.h"
 #include "worldinspect_assets.h"

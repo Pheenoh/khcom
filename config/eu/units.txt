@@ -88,7 +88,6 @@ mode_worldwarp.c -O2 -fprologue-bugfix
 mode_ms_top.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
 ms_charge.c -O2 -fprologue-bugfix -fno-common
-mode_ms2.c -O2 -fprologue-bugfix -fno-common
 mode_mapinspect.c -O2 -fprologue-bugfix -fno-common
 ms.c
 mode_backupstat.c -O2 -fprologue-bugfix -fno-common
@@ -2642,9 +2641,7 @@ mode_worldwarp.c(.rodata)
 asset_gfx_gap_192.s(.rodata)
 mode_ms_top.c(.rodata)
 mode_ms.c(.rodata)
-asset_gfx_gap_193_at_0999378D.s(.rodata)
-mode_ms2.c(.rodata)
-asset_gfx_gap_193_at_0999379F.s(.rodata)
+ms_charge.c(.rodata)
 mode_mapinspect.c(.rodata)
 ms.c(.rodata)
 asset_gfx_gap_194.s(.rodata)
@@ -3671,10 +3668,7 @@ mode_worldinspect.c(.data)
 mode_worldwarp.c(.data)
 mode_ms_top.c(.data)
 mode_ms.c(.data)
-localized_resource_data.c(.data_localized_09F84FA8)
-mode_ms2.c(.data)
-localized_resource_data.c(.data_localized_09F85008)
-moogle_data.c(.data_gUnk_09EF9618)
+ms_charge.c(.data)
 mode_mapinspect.c(.data)
 ms.c(.data)
 mode_backupstat.c(.data)

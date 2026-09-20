@@ -5,7 +5,7 @@
     "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data.",
     "ms_top_owner": "The Moogle top-menu helpers and lifecycle form one contiguous text run between world-warp mode and shop helpers in every region. Their exclusive 35-object state run reproduces the original offsets and 8-byte input alignment with ordinary static C definitions. The two native WarpDef choices, three dialogue IDs and mode-name literal form the corresponding complete read-only span, with ordinary compiler padding between the halfwords and name. Five EU-only locale selector arrays precede this mode descriptor in native initialized data.",
     "worldwarp_owner": "The eight world-warp helpers formerly trailing world-inspection code, the three mode callbacks, three tables, mode name and descriptor form native code, data and rodata runs in every region. Their 27 state objects are private to this owner. WarpRect.width and the existing helper declaration are signed halfwords; the helper immediately copies width into a signed halfword local, so its definition is made consistent without changing any instruction. Both TextSlot buffers contain 24 records in US/JP and 48 in EU, as established by the original initialization and cleanup counts. Ordinary private-object alignment reproduces the original RAM layout without two historical gap arrays or two EU text-buffer extension placeholders.",
-    "moogle_shop_owner": "The nine pack/menu/resource/weight tables are referenced only by mode_ms.c shop selection, drawing and pack generation. They form one complete readonly run immediately before that owner's diagnostic name in all three regions. Canonical const definitions and const card-table readers reproduce the full 0x5A9-byte run without function-body changes. EU's three five-language graphics indexes directly or indirectly feed the same owner and precede its mode descriptor in one 0x4C-byte native initialized-data run; US/JP retain the 16-byte descriptor. All original bounds, addresses, relocations and contents remain checked. Pack types belong to mode_ms.h; the shared map-card category table and all graphics/condition-script payloads retain their existing representation."
+    "moogle_shop_owner": "The nine pack/menu/resource/weight tables are referenced only by mode_ms.c shop selection, drawing and pack generation. They form one complete readonly run immediately before that owner's diagnostic name in all three regions. Canonical const definitions and const card-table readers reproduce the full 0x5A9-byte run without function-body changes. EU's three five-language graphics indexes directly or indirectly feed the same owner and precede its mode descriptor in one 0x4C-byte native initialized-data run; US/JP retain the 16-byte descriptor. All original bounds, addresses, relocations and contents remain checked. Pack types belong to mode_ms.h; the map-card category table is owned separately by map inspection and all graphics/condition-script payloads retain their existing representation."
   },
   "regions": {
     "us": {
@@ -163,34 +163,6 @@
               "name": "gModeNameMsShop",
               "offset": 1436,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".data",
-          "address": "0x9ef9608",
-          "size": 16,
-          "sha256": "47eb083199a242680088441094c872c8224baffcee9e67cdc2f335aa10ce4ecb",
-          "objects": [
-            {
-              "name": "gModeMsCharge",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".rodata",
-          "address": "0x9993790",
-          "size": 15,
-          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
-          "objects": [
-            {
-              "name": "gModeNameMsCharge",
-              "offset": 0,
-              "size": 15
             }
           ]
         }
@@ -407,34 +379,6 @@
               "name": "gModeNameMsShop",
               "offset": 1436,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".data",
-          "address": "0x9ed09f4",
-          "size": 16,
-          "sha256": "d22d53cdd1004f96b3bc70d07a19f1b4b77d278cdd938b34371194af70674b80",
-          "objects": [
-            {
-              "name": "gModeMsCharge",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".rodata",
-          "address": "0x99482a4",
-          "size": 15,
-          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
-          "objects": [
-            {
-              "name": "gModeNameMsCharge",
-              "offset": 0,
-              "size": 15
             }
           ]
         }
@@ -666,34 +610,6 @@
               "name": "gModeNameMsShop",
               "offset": 1436,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".data",
-          "address": "0x9f84ff8",
-          "size": 16,
-          "sha256": "c042931b07e3ace1872cc0b2c4c88813fe0f93ca2504969df589ef2b0f8fc6e4",
-          "objects": [
-            {
-              "name": "gModeMsCharge",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_ms2.c",
-          "section": ".rodata",
-          "address": "0x9999a40",
-          "size": 15,
-          "sha256": "927b13deeb891aa9d11679deae1e1a553c58efbf4393aba1e79f7098bbf904a1",
-          "objects": [
-            {
-              "name": "gModeNameMsCharge",
-              "offset": 0,
-              "size": 15
             }
           ]
         }

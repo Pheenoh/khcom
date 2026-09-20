@@ -3,7 +3,6 @@
 #include "monsgage.h"
 #include "worldwarp_catalog_assets.h"
 #include <stddef.h>
-#include "localized_resource_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"

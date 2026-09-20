@@ -1,4 +1,3 @@
-#include "moogle_data.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_animation_data.h"

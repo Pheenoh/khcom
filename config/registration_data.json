@@ -6040,34 +6040,6 @@
           ]
         },
         {
-          "unit": "mode_mapinspect.c",
-          "section": ".rodata",
-          "address": "0x099937A8",
-          "size": 16,
-          "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
-          "objects": [
-            {
-              "name": "gModeNameMapinspect",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapinspect.c",
-          "section": ".data",
-          "address": "0x09EF9640",
-          "size": 16,
-          "sha256": "7c045bbe49687d7510ed01689636e74d84b9e96e279949129c4e0f1e7972ae26",
-          "objects": [
-            {
-              "name": "gModeMapinspect",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
           "unit": "ms.c",
           "section": ".rodata",
           "address": "0x099937B8",
@@ -13316,34 +13288,6 @@
           "objects": [
             {
               "name": "gModeMsTop",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapinspect.c",
-          "section": ".rodata",
-          "address": "0x099482BC",
-          "size": 16,
-          "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
-          "objects": [
-            {
-              "name": "gModeNameMapinspect",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapinspect.c",
-          "section": ".data",
-          "address": "0x09ED0A2C",
-          "size": 16,
-          "sha256": "c57ec513dfe6ffc4b9f0d3ec0026f94dc1a42e3ec621d56d1374192fae423758",
-          "objects": [
-            {
-              "name": "gModeMapinspect",
               "offset": 0,
               "size": 16
             }
@@ -20614,34 +20558,6 @@
             {
               "name": "gModeMsTop",
               "offset": 100,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapinspect.c",
-          "section": ".rodata",
-          "address": "0x09999A64",
-          "size": 16,
-          "sha256": "4a885f7deea8c77acb4fb4feff8e81d172bb78ccd3d60682720d2288d4b732d4",
-          "objects": [
-            {
-              "name": "gModeNameMapinspect",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapinspect.c",
-          "section": ".data",
-          "address": "0x09F850BC",
-          "size": 16,
-          "sha256": "c68a59d9c9d17c654d0bd03d6b3a61d53c62297ed8cc382466312487a35ef53e",
-          "objects": [
-            {
-              "name": "gModeMapinspect",
-              "offset": 0,
               "size": 16
             }
           ]
