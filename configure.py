@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
+from asset_objects import materialize_assets
 from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
 
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
@@ -503,6 +504,8 @@ if asset_gfx_gap_87_mode == "built":
         else:
             rewritten.append((src, obj, flags, section))
     units = rewritten
+
+units = materialize_assets(regional_plan, units, version, build_dir)
 
 headers = sorted(str(p) for p in Path("include").glob("*.h"))
 asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))

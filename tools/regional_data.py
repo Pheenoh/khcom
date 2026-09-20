@@ -178,13 +178,20 @@ def normalize_sidecar(document, roms=None):
             fields(asset, {'name', 'address', 'size', 'encoding'}, set(), version + ' named asset')
             add_asset(asset['name'], asset['address'], asset['size'], asset['encoding'], 'named_assets')
         for asset in region.get('binary_assets', []):
-            fields(asset, {'name', 'address', 'size', 'sha256', 'kind'}, set(), version + ' binary asset')
+            fields(asset, {'name', 'address', 'size', 'sha256', 'kind'}, {'unit'}, version + ' binary asset')
             name = identifier(asset['name'], version + ' binary asset')
             kind = asset['kind']
-            if not isinstance(kind, str) or kind not in ('Sprite', 'AnimHeader', 'SongHeader'):
+            if not isinstance(kind, str) or kind not in ('Sprite', 'AnimHeader', 'SongHeader', 'Tiles4bpp', 'Tilemap'):
                 raise ValueError(f'{name}: unsupported binary asset kind')
             address, size = extent(asset['address'], asset['size'], limit, name)
-            header, stride = {'Sprite': (2, 6), 'AnimHeader': (6, 4), 'SongHeader': (4, 4)}[kind]
+            header, stride = {'Sprite': (2, 6), 'AnimHeader': (6, 4), 'SongHeader': (4, 4),
+                              'Tiles4bpp': (0, 32), 'Tilemap': (0, 2)}[kind]
+            unit = asset.get('unit')
+            if unit is not None and (not isinstance(unit, str)
+                                     or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*\.s', unit)):
+                raise ValueError(f'{name}: binary definition owner must be an assembler filename')
+            if kind in ('Tiles4bpp', 'Tilemap') and unit is None:
+                raise ValueError(f'{name}: raw graphics require an object definition')
             alignment = 4 if kind == 'SongHeader' else 2
             if address % alignment or size < header or (size - header) % stride:
                 raise ValueError(f'{name}: binary alignment or size disagrees with format')
@@ -193,7 +200,9 @@ def normalize_sidecar(document, roms=None):
                 raise ValueError(f'{name}: invalid binary SHA-256')
             if rom is not None:
                 data = rom[address - ROM_BASE:address - ROM_BASE + size]
-                if kind == 'SongHeader':
+                if kind in ('Tiles4bpp', 'Tilemap'):
+                    expected = size
+                elif kind == 'SongHeader':
                     expected = 8 + data[0] * 4 if data[0] else 4
                 else:
                     count = struct.unpack_from('<H', data, header - 2)[0]
@@ -203,8 +212,11 @@ def normalize_sidecar(document, roms=None):
                 if hashlib.sha256(data).hexdigest() != digest:
                     raise ValueError(f'{name}: original binary ROM SHA-256 differs')
             item = {'name': name, 'address': address, 'size': size, 'kind': kind,
-                    'sha256': digest, 'ctype': 'u8' if kind == 'Sprite' else kind,
+                    'sha256': digest, 'ctype': {'Sprite': 'u8', 'Tiles4bpp': 'u8',
+                                              'Tilemap': 'u16'}.get(kind, kind),
                     'groups': ['binary_assets']}
+            if unit is not None:
+                item['unit'] = unit
             previous = assets.get(address)
             if previous is not None:
                 if previous != item:
@@ -254,7 +266,7 @@ def asset_symbols(plan, ledger=()):
     collisions = (owned | {asset['name'] for asset in plan['assets']}) & existing.keys()
     if collisions:
         raise ValueError('regional data collides with symbols.txt: ' + ', '.join(sorted(collisions)))
-    return [(asset['name'], asset['address']) for asset in plan['assets']]
+    return [(asset['name'], asset['address']) for asset in plan['assets'] if 'unit' not in asset]
 
 
 def placement_overrides(plan):
@@ -347,7 +359,7 @@ def check_layout(plan, objects, linked):
     errors, final = [], {}
     for symbol in linked['symbols']:
         final.setdefault(symbol['name'], []).append(symbol)
-    asset_names = {asset['name'] for asset in plan['assets']}
+    asset_names = {asset['name'] for asset in plan['assets'] if 'unit' not in asset}
     for unit, layout in objects.items():
         for symbol in layout['symbols']:
             if symbol['name'] in asset_names and 'g' in symbol['flags']:
@@ -384,7 +396,16 @@ def check_layout(plan, objects, linked):
                 errors.append(f'{label}: {name} linked address or size differs from placement')
     for asset in plan['assets']:
         definitions = final.get(asset['name'], [])
-        if len(definitions) != 1 or definitions[0]['value'] != asset['address'] or definitions[0]['section'] != '*ABS*':
+        if 'unit' in asset:
+            owned = objects.get(asset['unit'], {}).get('symbols', [])
+            owned = [symbol for symbol in owned if symbol['name'] == asset['name']]
+            if (len(owned) != 1 or owned[0]['size'] != asset['size']
+                    or 'O' not in owned[0]['flags'] or owned[0]['section'] != '.rodata'
+                    or len(definitions) != 1 or definitions[0]['value'] != asset['address']
+                    or definitions[0]['size'] != asset['size'] or 'O' not in definitions[0]['flags']
+                    or definitions[0]['section'] == '*ABS*'):
+                errors.append(f'{asset["name"]}: asset object address, size or owner differs')
+        elif len(definitions) != 1 or definitions[0]['value'] != asset['address'] or definitions[0]['section'] != '*ABS*':
             errors.append(f'{asset["name"]}: asset binding is missing or differs from its regional address')
     return errors
 
@@ -429,6 +450,11 @@ def main():
     validate_active_sections(plan, active, managed_placements(document))
     build = root / 'build' / version
     objects = {unit: read_layout(build / 'src' / (Path(unit).stem + '.o'), args.binutils_prefix) for unit in sorted(units)}
+    for unit in {asset['unit'] for asset in plan['assets'] if 'unit' in asset}:
+        if not re.search(r'^' + re.escape(unit) + r'\(\.rodata\)\s*$',
+                         (root / 'config' / version / 'units.txt').read_text(), re.M):
+            raise ValueError(f'{unit}: asset definition owner is not active')
+        objects[unit] = read_layout(build / 'asm' / (Path(unit).stem + '.o'), args.binutils_prefix)
     linked = read_layout(build / f'com_{version}.elf', args.binutils_prefix)
     errors = check_layout(plan, objects, linked)
     for error in errors:

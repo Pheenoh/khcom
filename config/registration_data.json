@@ -14,7 +14,8 @@
     "status_owner": "All thirteen status task descriptors reference callbacks in status.c. Its EU status, bar and cursor callbacks are the only consumers of six five-language graphics pointer indexes. In US/JP the descriptors form one uninterrupted 0x138-byte initialized-data run; EU interleaves those six indexes with the corresponding descriptor families in one 0x1B0-byte run. Ordinary C definitions reproduce the complete runs with all original object addresses, bounds, pointer relocations and ROM contents retained as contracts. Name placements and graphics payloads remain unchanged.",
     "pooh_eu_background_indexes": "The EU-only five-language floor-background pointer indexes are consumed only by poo.c func_080D313C, which selects the appropriate floor span and copies it to background VRAM. Their ten pointers immediately follow that owner's established native initialized-data run. Ordinary EU-scoped definitions extend the run from 0xBD8 to 0xC00 without changing payloads, pointer targets or any US/JP definition. Both original index object contracts and all preceding Pooh object contracts remain validated.",
     "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
-    "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary."
+    "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary.",
+    "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization."
   },
   "regions": {
     "us": {
@@ -5877,17 +5878,52 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosGa",
-          "address": "0x09EF8E94",
-          "size": 24,
-          "sha256": "0e2c3d6ac3590462eca82541074afafa5e7d6f2ae5c137226a5b2e46d7f537dd",
+          "section": ".data",
+          "address": "0x9ef8e94",
+          "size": 280,
           "objects": [
             {
               "name": "gTaskDescBosGa",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gTaskDescBosMd",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdMap",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdFire",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdDai",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdHahen",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 144,
+              "size": 120
+            },
+            {
+              "name": "gModeWorldselect",
+              "offset": 264,
+              "size": 16
             }
-          ]
+          ],
+          "sha256": "7672cdffdd150838ee6b722c0c27ea18129e07b424ff09c5c0d568a49101e79e"
         },
         {
           "unit": "bos5.c",
@@ -5900,20 +5936,6 @@
               "name": "gTaskNameBosMd",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMd",
-          "address": "0x09EF8EAC",
-          "size": 24,
-          "sha256": "911d1e63b3ce67dc8433d8fbc9378213ac531e26c97e9eb9477dc8244cc494e0",
-          "objects": [
-            {
-              "name": "gTaskDescBosMd",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -5933,20 +5955,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdMap",
-          "address": "0x09EF8EC4",
-          "size": 24,
-          "sha256": "84a0c2c556ae623aab1297ed642cf83618046bf96834f3abaebec08a0653da86",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdFire",
           "address": "0x09992F38",
           "size": 17,
@@ -5956,20 +5964,6 @@
               "name": "gTaskNameBosMdFire",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdFire",
-          "address": "0x09EF8EDC",
-          "size": 24,
-          "sha256": "7fdc852a83752de77d1dc03ac5e066ae083638536ca46fcefd3c9b49d871a8ae",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdFire",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -5991,20 +5985,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdDai",
-          "address": "0x09EF8EF4",
-          "size": 24,
-          "sha256": "5c575ba78743d33bb6969168b02d016f461f4ab86aeb6dd011e59633f3984012",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdDai",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdHahen",
           "address": "0x09992F5C",
           "size": 18,
@@ -6019,20 +5999,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdHahen",
-          "address": "0x09EF8F0C",
-          "size": 24,
-          "sha256": "99f40cd04a6f4abeb9a72668c9a4a1f41d3861c8997f4991582864fc4c40ce2d",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdHahen",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gModeWorldselect",
           "address": "0x099930A8",
           "size": 17,
@@ -6042,20 +6008,6 @@
               "name": "gModeNameWorldselect",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gModeWorldselect",
-          "address": "0x09EF8F9C",
-          "size": 16,
-          "sha256": "4f5885a738c342625b80581d3fa64c7866992d532523f7ff1cd7862e3b78a0c3",
-          "objects": [
-            {
-              "name": "gModeWorldselect",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -13208,17 +13160,52 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosGa",
-          "address": "0x09ED0280",
-          "size": 24,
-          "sha256": "5ce9b0660b758823740821dc845ddefcf5ada5d240e0a63f2900542f94a51447",
+          "section": ".data",
+          "address": "0x9ed0280",
+          "size": 280,
           "objects": [
             {
               "name": "gTaskDescBosGa",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gTaskDescBosMd",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdMap",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdFire",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdDai",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdHahen",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 144,
+              "size": 120
+            },
+            {
+              "name": "gModeWorldselect",
+              "offset": 264,
+              "size": 16
             }
-          ]
+          ],
+          "sha256": "d27b818f3da1a591b8e4626b448115113a329b92e81d7d2478f37113383adcb4"
         },
         {
           "unit": "bos5.c",
@@ -13231,20 +13218,6 @@
               "name": "gTaskNameBosMd",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMd",
-          "address": "0x09ED0298",
-          "size": 24,
-          "sha256": "b150348d1998693d792dfce67772ecef01dc518545435f9c2b0e272c9c013bfa",
-          "objects": [
-            {
-              "name": "gTaskDescBosMd",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13264,20 +13237,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdMap",
-          "address": "0x09ED02B0",
-          "size": 24,
-          "sha256": "fb09cbaa45a5485f0d9e02eac4ba72d82dafeee5cf44e7795e3ab05592c8cc7e",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdFire",
           "address": "0x09947A4C",
           "size": 17,
@@ -13287,20 +13246,6 @@
               "name": "gTaskNameBosMdFire",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdFire",
-          "address": "0x09ED02C8",
-          "size": 24,
-          "sha256": "b122097ebbd76b2e2ea6c87be4c997cb40531bf4e83494c74ec629ec2650c14d",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdFire",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13322,20 +13267,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdDai",
-          "address": "0x09ED02E0",
-          "size": 24,
-          "sha256": "930a315abc2b24956cd44df9b14ec94d83a456a03c23c67ea16260ae221855f6",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdDai",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdHahen",
           "address": "0x09947A70",
           "size": 18,
@@ -13350,20 +13281,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdHahen",
-          "address": "0x09ED02F8",
-          "size": 24,
-          "sha256": "e81c608a2a3c3cd903fb386e56915bcc53983fc81524c6b35a8dbf4733747a59",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdHahen",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gModeWorldselect",
           "address": "0x09947BBC",
           "size": 17,
@@ -13373,20 +13290,6 @@
               "name": "gModeNameWorldselect",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gModeWorldselect",
-          "address": "0x09ED0388",
-          "size": 16,
-          "sha256": "4a46b93051e8209b5a69bd12724df66d24cfa091a7268edf30888a7fba137c4a",
-          "objects": [
-            {
-              "name": "gModeWorldselect",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -20497,17 +20400,84 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosGa",
-          "address": "0x09F84744",
-          "size": 24,
-          "sha256": "0deeb80fd89e4b71d95800f4871f060d012d2136e033e79106aefb033d4de3d8",
+          "section": ".data",
+          "address": "0x9f84744",
+          "size": 360,
           "objects": [
             {
               "name": "gTaskDescBosGa",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gTaskDescBosMd",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdMap",
+              "offset": 48,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdFire",
+              "offset": 72,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdDai",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescBosMdHahen",
+              "offset": 120,
+              "size": 24
+            },
+            {
+              "name": "gUnkEu_09F847D4",
+              "offset": 144,
+              "size": 20,
+              "consumer": [
+                "mode_worldselect_1"
+              ]
+            },
+            {
+              "name": "gUnkEu_09F847E8",
+              "offset": 164,
+              "size": 20,
+              "consumer": [
+                "func_080FDB1C"
+              ]
+            },
+            {
+              "name": "gUnkEu_09F847FC",
+              "offset": 184,
+              "size": 20,
+              "consumer": [
+                "func_080FE47C"
+              ]
+            },
+            {
+              "name": "gUnkEu_09F84810",
+              "offset": 204,
+              "size": 20,
+              "consumer": [
+                "mode_worldselect_0"
+              ]
+            },
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 224,
+              "size": 120
+            },
+            {
+              "name": "gModeWorldselect",
+              "offset": 344,
+              "size": 16
             }
-          ]
+          ],
+          "sha256": "81b712790f3b6d37d078e3bf25436f0abb51e9ce6456b975bef6f30eb6670e28"
         },
         {
           "unit": "bos5.c",
@@ -20520,20 +20490,6 @@
               "name": "gTaskNameBosMd",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMd",
-          "address": "0x09F8475C",
-          "size": 24,
-          "sha256": "fef48f29e0fe4fbe9f7d83720ef52413067e2cc63512004425377189e4cae6cd",
-          "objects": [
-            {
-              "name": "gTaskDescBosMd",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -20553,20 +20509,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdMap",
-          "address": "0x09F84774",
-          "size": 24,
-          "sha256": "ba2eb3d633eb28ac125c08284399dc6b0ee44224951e817a952619d3c7d940a2",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdMap",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdFire",
           "address": "0x099991A8",
           "size": 17,
@@ -20576,20 +20518,6 @@
               "name": "gTaskNameBosMdFire",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdFire",
-          "address": "0x09F8478C",
-          "size": 24,
-          "sha256": "b00359d627b2d62df288efb924c3a09e8dbc30eb9b66010913cf20c17a52b6a4",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdFire",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -20611,20 +20539,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdDai",
-          "address": "0x09F847A4",
-          "size": 24,
-          "sha256": "d5b6150dce1a8497071acb2f80e5705b8d1ce625692490dd9c171628b1207fff",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdDai",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gTaskDescBosMdHahen",
           "address": "0x099991CC",
           "size": 18,
@@ -20639,20 +20553,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".data_registration_gTaskDescBosMdHahen",
-          "address": "0x09F847BC",
-          "size": 24,
-          "sha256": "9c7d6067b39b0b80ff8b9de5f1a98868e2b8d4557e6b756117a0b3f8f007b6b7",
-          "objects": [
-            {
-              "name": "gTaskDescBosMdHahen",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".rodata_registration_name_gModeWorldselect",
           "address": "0x09999358",
           "size": 17,
@@ -20662,20 +20562,6 @@
               "name": "gModeNameWorldselect",
               "offset": 0,
               "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".data_registration_gModeWorldselect",
-          "address": "0x09F8489C",
-          "size": 16,
-          "sha256": "c46fb51fc66672851c4e15af9e2bbb0e426af8dcf98468016a7998db5a635dc2",
-          "objects": [
-            {
-              "name": "gModeWorldselect",
-              "offset": 0,
-              "size": 16
             }
           ]
         },

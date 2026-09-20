@@ -7,13 +7,154 @@
 #include "text.h"
 #include "monsgage.h"
 #include "bos5.h"
+#include "room_resource_assets.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F847D4[];
-extern void* gUnkEu_09F847FC[];
-extern void* gUnkEu_09F84810[];
 extern u16 gUnkEu_099991E0[];
 #endif
+
+const char gTaskNameBosGa[] __attribute__((section(".rodata_registration_name_gTaskDescBosGa"), aligned(1))) = "task_bos_ga";
+
+TaskDesc gTaskDescBosGa = {
+    gTaskNameBosGa,
+    (void (*)(void*, void*))task_bos_ga_0,
+    task_bos_ga_1,
+    (void (*)(void*))task_bos_ga_2,
+    (void (*)(void*))task_bos_ga_3,
+    0xA54,
+};
+
+const char gTaskNameBosMd[] __attribute__((section(".rodata_registration_name_gTaskDescBosMd"), aligned(1))) = "task_bos_md";
+
+TaskDesc gTaskDescBosMd = {
+    gTaskNameBosMd,
+    (void (*)(void*, void*))task_bos_md_0,
+    task_bos_md_1,
+    (void (*)(void*))task_bos_md_2,
+    (void (*)(void*))task_bos_md_3,
+    0x1B8,
+};
+
+const char gTaskNameBosMdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdMap"), aligned(1))) = "task_bos_md_map";
+
+TaskDesc gTaskDescBosMdMap = {
+    gTaskNameBosMdMap,
+    (void (*)(void*, void*))task_bos_md_map_0,
+    task_bos_md_map_1,
+    0,
+    0,
+    0x4,
+};
+
+const char gTaskNameBosMdFire[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdFire"), aligned(1))) = "task_bos_md_fire";
+
+TaskDesc gTaskDescBosMdFire = {
+    gTaskNameBosMdFire,
+    (void (*)(void*, void*))task_bos_md_fire_0,
+    task_bos_md_fire_1,
+    (void (*)(void*))task_bos_md_fire_2,
+    (void (*)(void*))task_bos_md_fire_3,
+    0x170,
+};
+
+const char gTaskNameBosMdDai[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdDai"), aligned(1))) = "task_bos_md_dai";
+
+TaskDesc gTaskDescBosMdDai = {
+    gTaskNameBosMdDai,
+    (void (*)(void*, void*))task_bos_md_dai_0,
+    task_bos_md_dai_1,
+    (void (*)(void*))task_bos_md_dai_2,
+    (void (*)(void*))task_bos_md_dai_3,
+    0x84,
+};
+
+const char gTaskNameBosMdHahen[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdHahen"), aligned(1))) = "task_bos_md_hahen";
+
+TaskDesc gTaskDescBosMdHahen = {
+    gTaskNameBosMdHahen,
+    (void (*)(void*, void*))task_bos_md_hahen_0,
+    task_bos_md_hahen_1,
+    (void (*)(void*))task_bos_md_hahen_2,
+    (void (*)(void*))task_bos_md_hahen_3,
+    0x28,
+};
+
+#ifdef VERSION_EU
+void* gUnkEu_09F847D4[5] = {
+    gUnk_09A31FDC,
+    gUnkEu_09A840A0,
+    gUnkEu_09A84FA0,
+    gUnkEu_09A84AA0,
+    gUnkEu_09A845A0,
+};
+
+void* gUnkEu_09F847E8[5] = {
+    gUnkEu_09A03C80,
+    gUnkEu_09A0A480,
+    gUnkEu_09A1DC80,
+    gUnkEu_09A17480,
+    gUnkEu_09A10C80,
+};
+
+void* gUnkEu_09F847FC[5] = {
+    gUnk_0999CB90,
+    gUnkEu_099A31F4,
+    gUnkEu_099A3DF4,
+    gUnkEu_099A39CC,
+    gUnkEu_099A35E0,
+};
+
+void* gUnkEu_09F84810[5] = {
+    gUnk_0999CBB6,
+    gUnkEu_099A3220,
+    gUnkEu_099A3E1A,
+    gUnkEu_099A39F2,
+    gUnkEu_099A360C,
+};
+
+#endif
+
+void* gUnk_09EF8F24[30] = {
+    gUnk_09A3CA3C,
+    gUnk_09A3CA5C,
+    gUnk_09A3CA7C,
+    gUnk_09A3CA9C,
+    gUnk_09A3CABC,
+    gUnk_09A3CADC,
+    gUnk_09A3CAFC,
+    gUnk_09A3CB1C,
+    gUnk_09A3CB3C,
+    gUnk_09A3CB5C,
+    gUnk_09A3CB7C,
+    gUnk_09A3CB9C,
+    gUnk_09A3CBBC,
+    gUnk_09A3CBDC,
+    gUnk_09A3CBFC,
+    gUnk_09A3CC1C,
+    gUnk_09A3CBFC,
+    gUnk_09A3CBDC,
+    gUnk_09A3CBBC,
+    gUnk_09A3CB9C,
+    gUnk_09A3CB7C,
+    gUnk_09A3CB5C,
+    gUnk_09A3CB3C,
+    gUnk_09A3CB1C,
+    gUnk_09A3CAFC,
+    gUnk_09A3CADC,
+    gUnk_09A3CABC,
+    gUnk_09A3CA9C,
+    gUnk_09A3CA7C,
+    gUnk_09A3CA5C,
+};
+
+const char gModeNameWorldselect[] __attribute__((section(".rodata_registration_name_gModeWorldselect"), aligned(1))) = "mode_worldselect";
+
+Mode gModeWorldselect = {
+    gModeNameWorldselect,
+    (void (*)(s32))mode_worldselect_0,
+    (void (*)(void))mode_worldselect_1,
+    (void (*)(void))mode_worldselect_2,
+};
 
 GaWork* gGaWork;
 u32 gUnk_02034FEC;
@@ -2540,77 +2681,3 @@ void mode_worldselect_2(void) {
     ReleaseObjTiles(gUnk_020350B0);
     TaskPoolDestroy(&gUnk_020350D8);
 }
-const char gTaskNameBosGa[] __attribute__((section(".rodata_registration_name_gTaskDescBosGa"), aligned(1))) = "task_bos_ga";
-
-TaskDesc gTaskDescBosGa __attribute__((section(".data_registration_gTaskDescBosGa"))) = {
-    gTaskNameBosGa,
-    (void (*)(void*, void*))task_bos_ga_0,
-    task_bos_ga_1,
-    (void (*)(void*))task_bos_ga_2,
-    (void (*)(void*))task_bos_ga_3,
-    0xA54,
-};
-
-const char gTaskNameBosMd[] __attribute__((section(".rodata_registration_name_gTaskDescBosMd"), aligned(1))) = "task_bos_md";
-
-TaskDesc gTaskDescBosMd __attribute__((section(".data_registration_gTaskDescBosMd"))) = {
-    gTaskNameBosMd,
-    (void (*)(void*, void*))task_bos_md_0,
-    task_bos_md_1,
-    (void (*)(void*))task_bos_md_2,
-    (void (*)(void*))task_bos_md_3,
-    0x1B8,
-};
-
-const char gTaskNameBosMdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdMap"), aligned(1))) = "task_bos_md_map";
-
-TaskDesc gTaskDescBosMdMap __attribute__((section(".data_registration_gTaskDescBosMdMap"))) = {
-    gTaskNameBosMdMap,
-    (void (*)(void*, void*))task_bos_md_map_0,
-    task_bos_md_map_1,
-    0,
-    0,
-    0x4,
-};
-
-const char gTaskNameBosMdFire[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdFire"), aligned(1))) = "task_bos_md_fire";
-
-TaskDesc gTaskDescBosMdFire __attribute__((section(".data_registration_gTaskDescBosMdFire"))) = {
-    gTaskNameBosMdFire,
-    (void (*)(void*, void*))task_bos_md_fire_0,
-    task_bos_md_fire_1,
-    (void (*)(void*))task_bos_md_fire_2,
-    (void (*)(void*))task_bos_md_fire_3,
-    0x170,
-};
-
-const char gTaskNameBosMdDai[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdDai"), aligned(1))) = "task_bos_md_dai";
-
-TaskDesc gTaskDescBosMdDai __attribute__((section(".data_registration_gTaskDescBosMdDai"))) = {
-    gTaskNameBosMdDai,
-    (void (*)(void*, void*))task_bos_md_dai_0,
-    task_bos_md_dai_1,
-    (void (*)(void*))task_bos_md_dai_2,
-    (void (*)(void*))task_bos_md_dai_3,
-    0x84,
-};
-
-const char gTaskNameBosMdHahen[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdHahen"), aligned(1))) = "task_bos_md_hahen";
-
-TaskDesc gTaskDescBosMdHahen __attribute__((section(".data_registration_gTaskDescBosMdHahen"))) = {
-    gTaskNameBosMdHahen,
-    (void (*)(void*, void*))task_bos_md_hahen_0,
-    task_bos_md_hahen_1,
-    (void (*)(void*))task_bos_md_hahen_2,
-    (void (*)(void*))task_bos_md_hahen_3,
-    0x28,
-};
-
-const char gModeNameWorldselect[] __attribute__((section(".rodata_registration_name_gModeWorldselect"), aligned(1))) = "mode_worldselect";
-
-Mode gModeWorldselect __attribute__((section(".data_registration_gModeWorldselect"))) = {
-    gModeNameWorldselect,
-    (void (*)(s32))mode_worldselect_0,
-    (void (*)(void))mode_worldselect_1,
-    (void (*)(void))mode_worldselect_2,
-};

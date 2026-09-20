@@ -476,13 +476,6 @@ extern const char gTaskNameMapTutorial[];
 extern const char gTaskNameMapStair[];
 extern const char gTaskNameMapDmg[];
 extern const char gTaskNameMapFloor[];
-extern const char gTaskNameBosGa[];
-extern const char gTaskNameBosMd[];
-extern const char gTaskNameBosMdMap[];
-extern const char gTaskNameBosMdFire[];
-extern const char gTaskNameBosMdDai[];
-extern const char gTaskNameBosMdHahen[];
-extern const char gModeNameWorldselect[];
 extern const char gModeNameMsTop[];
 
 extern TaskDesc gUnk_09EE2834;

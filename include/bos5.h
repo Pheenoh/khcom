@@ -3,7 +3,6 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
-#include "worldselect_data.h"
 #include "worldselect_assets.h"
 
 #include "animation_resource_data.h"

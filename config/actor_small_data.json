@@ -10,20 +10,6 @@
     "us": {
       "placements": [
         {
-          "unit": "worldselect_data.c",
-          "section": ".data_worldselect_palette_cycle",
-          "address": "0x9ef8f24",
-          "size": 120,
-          "sha256": "6020d173dc8e8dcb3e93e46b9248de34d32ebfb6f1603a692b6adb6076fd69d6",
-          "objects": [
-            {
-              "name": "gUnk_09EF8F24",
-              "offset": 0,
-              "size": 120
-            }
-          ]
-        },
-        {
           "unit": "boss_pc_data.c",
           "section": ".data_pc_shake",
           "address": "0x9a4ca94",
@@ -66,20 +52,6 @@
     "jp": {
       "placements": [
         {
-          "unit": "worldselect_data.c",
-          "section": ".data_worldselect_palette_cycle",
-          "address": "0x9ed0310",
-          "size": 120,
-          "sha256": "06ea0dceab745a28012612ffbd1c71434d8f1ed88a0e7d76726060c3c15697e7",
-          "objects": [
-            {
-              "name": "gUnk_09EF8F24",
-              "offset": 0,
-              "size": 120
-            }
-          ]
-        },
-        {
           "unit": "boss_pc_data.c",
           "section": ".data_pc_shake",
           "address": "0x9a0151c",
@@ -121,20 +93,6 @@
     },
     "eu": {
       "placements": [
-        {
-          "unit": "worldselect_data.c",
-          "section": ".data_worldselect_palette_cycle",
-          "address": "0x9f84824",
-          "size": 120,
-          "sha256": "bb35faca785fc7b424083277f1a428b3e2a72540ba63c1761d9e2f4aa9a5d5b6",
-          "objects": [
-            {
-              "name": "gUnk_09EF8F24",
-              "offset": 0,
-              "size": 120
-            }
-          ]
-        },
         {
           "unit": "boss_pc_data.c",
           "section": ".data_pc_shake",
