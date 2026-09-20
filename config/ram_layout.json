@@ -1,5 +1,24 @@
 {
   "us": {
+    "src/save.o": {
+      "section": ".bss.save",
+      "base": "0x2034088",
+      "size": "0x508",
+      "symbols": {
+        "gRawKeys": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gRawKeysPrev": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gSramErrorTilemapBuf": {
+          "offset": "0x8",
+          "size": "0x500"
+        }
+      }
+    },
       "src/mode_backupstat.o": {
         "base": "0x2035fe8",
         "size": "0x20",
@@ -2000,6 +2019,25 @@
     }
   },
   "jp": {
+    "src/save.o": {
+      "section": ".bss.save",
+      "base": "0x2034088",
+      "size": "0x508",
+      "symbols": {
+        "gRawKeys": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gRawKeysPrev": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gSramErrorTilemapBuf": {
+          "offset": "0x8",
+          "size": "0x500"
+        }
+      }
+    },
       "src/mode_backupstat.o": {
         "base": "0x2035f58",
         "size": "0x20",
@@ -4010,6 +4048,25 @@
     }
   },
   "eu": {
+    "src/save.o": {
+      "section": ".bss.save",
+      "base": "0x2034088",
+      "size": "0x508",
+      "symbols": {
+        "gRawKeys": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gRawKeysPrev": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gSramErrorTilemapBuf": {
+          "offset": "0x8",
+          "size": "0x500"
+        }
+      }
+    },
       "src/mode_backupstat.o": {
         "base": "0x20365f8",
         "size": "0x20",

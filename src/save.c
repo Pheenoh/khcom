@@ -2,10 +2,9 @@
 #include "gba/syscall.h"
 #include "save.h"
 
-u16 gRawKeys;
-u16 gRawKeysPrev;
-u8 gUnk_0203408C[4];
-u8 gSramErrorTilemapBuf[0x500];
+static u16 gRawKeys;
+static u16 gRawKeysPrev;
+static u8 gSramErrorTilemapBuf[0x500];
 extern u16 gSystemFlags;
 extern u8 gSramErrorPalette[];
 extern u8 gSramErrorTiles[];
