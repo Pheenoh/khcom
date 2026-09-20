@@ -302,20 +302,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventSeq",
-          "address": "0x09EE46D4",
-          "size": 24,
-          "sha256": "ed52773e16bbc5a274e85c9dc8402bbeadbb0461294fbd10bf8f0de16e02faef",
-          "objects": [
-            {
-              "name": "gTaskDescEventSeq",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x09033C80",
           "size": 12,
@@ -332,20 +318,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventChara",
-          "address": "0x09EE46EC",
-          "size": 24,
-          "sha256": "0634c46866245d6f409a5001c6eb99f3996e91b06250f6af7992396fb65bdb20",
-          "objects": [
-            {
-              "name": "gTaskDescEventChara",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x09033CC8",
           "size": 7,
@@ -355,20 +327,6 @@
               "name": "gTaskNameMsgwin",
               "offset": 0,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgwin",
-          "address": "0x09EE4734",
-          "size": 24,
-          "sha256": "29eb95cfe00bcf69b96b7819bb336d920c9bc452e80101d452c6628af50001e8",
-          "objects": [
-            {
-              "name": "gTaskDescMsgwin",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -388,20 +346,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgface",
-          "address": "0x09EE474C",
-          "size": 72,
-          "sha256": "bd871f2d12e5b85237d3ea782c2df24f6fca4bd46e06f39bcae6bb9fc9eae0fc",
-          "objects": [
-            {
-              "name": "gTaskDescMsgface",
-              "offset": 0,
-              "size": 72
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x09033D48",
           "size": 5,
@@ -415,20 +359,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescView",
-          "address": "0x09EE4794",
-          "size": 24,
-          "sha256": "91a73ce9cf995b9d16be4c1efe44fe6355c806c2a900d2642575517941198974",
-          "objects": [
-            {
-              "name": "gTaskDescView",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_eventselect.c",
@@ -7020,20 +6950,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventSeq",
-          "address": "0x09EBBCF4",
-          "size": 24,
-          "sha256": "f1ce63b6b7205882d4f36f9fd2d170dad4d7cd7629f6888f478e7f51723392b1",
-          "objects": [
-            {
-              "name": "gTaskDescEventSeq",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x09006F44",
           "size": 12,
@@ -7050,20 +6966,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventChara",
-          "address": "0x09EBBD0C",
-          "size": 24,
-          "sha256": "9c15dc40d98d40c929f830d2af3a17a21aa077bd8109f2d579e332b0285b7d59",
-          "objects": [
-            {
-              "name": "gTaskDescEventChara",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x09006F8C",
           "size": 7,
@@ -7073,20 +6975,6 @@
               "name": "gTaskNameMsgwin",
               "offset": 0,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgwin",
-          "address": "0x09EBBD54",
-          "size": 24,
-          "sha256": "a36f6856eab1edbf7428a8d6dea2f4a224167cc4e184587ec0cc7d7db07aea18",
-          "objects": [
-            {
-              "name": "gTaskDescMsgwin",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -7106,20 +6994,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgface",
-          "address": "0x09EBBD6C",
-          "size": 72,
-          "sha256": "614e42102e4d8dabe8c7b16da18e49a926e1958babe0c0f99ee82d0d3960c6fe",
-          "objects": [
-            {
-              "name": "gTaskDescMsgface",
-              "offset": 0,
-              "size": 72
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x0900700C",
           "size": 5,
@@ -7133,20 +7007,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescView",
-          "address": "0x09EBBDB4",
-          "size": 24,
-          "sha256": "e4a828619cdad408a337fc31cc4092e22b7507c028b3cc59ab662717e2e52e02",
-          "objects": [
-            {
-              "name": "gTaskDescView",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_eventselect.c",
@@ -13710,20 +13570,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventSeq",
-          "address": "0x09F6F980",
-          "size": 24,
-          "sha256": "704b432e8d2ca4f38f34b3770751de35f09d2b3ecba075412e60572abc22b153",
-          "objects": [
-            {
-              "name": "gTaskDescEventSeq",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x090CCF74",
           "size": 12,
@@ -13740,20 +13586,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescEventChara",
-          "address": "0x09F6F998",
-          "size": 24,
-          "sha256": "6a119e79bb8735a27a80ef24d7d69077c008300440f5a4fd3338946d5176b802",
-          "objects": [
-            {
-              "name": "gTaskDescEventChara",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x090CCFBC",
           "size": 7,
@@ -13763,20 +13595,6 @@
               "name": "gTaskNameMsgwin",
               "offset": 0,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgwin",
-          "address": "0x09F6F9E0",
-          "size": 24,
-          "sha256": "795ed0069ca13f483dff8768c091b9f9bd4275b1cd0a67dabe5b12863bcef2f2",
-          "objects": [
-            {
-              "name": "gTaskDescMsgwin",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13796,20 +13614,6 @@
         },
         {
           "unit": "msg.c",
-          "section": ".data_registration_gTaskDescMsgface",
-          "address": "0x09F6F9F8",
-          "size": 72,
-          "sha256": "24b5729977bd4b00e8f8a42bdec334f334da18f01f39ac864a6cf879373bee1c",
-          "objects": [
-            {
-              "name": "gTaskDescMsgface",
-              "offset": 0,
-              "size": 72
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x090CD03C",
           "size": 5,
@@ -13823,20 +13627,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gTaskDescView",
-          "address": "0x09F6FA40",
-          "size": 24,
-          "sha256": "1f1f9b9e4f65d5d71535a65836f8c04ac19be7f42541fe3e4463b13a56704d54",
-          "objects": [
-            {
-              "name": "gTaskDescView",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "mode_eventselect.c",

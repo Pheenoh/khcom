@@ -13,6 +13,12 @@
 #include "anim.h"
 #include "msg.h"
 
+extern const u16 gUnk_0951D2B8[1024];
+extern const u16 gUnk_0951DAB8[1024];
+extern const u16 gUnk_0951E2B8[1024];
+extern const u16 gUnk_0951EAB8[1024];
+
+
 #ifdef VERSION_EU
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
@@ -12809,7 +12815,7 @@ s16 func_08075064(u8 a) {
 
 const char gTaskNameEventSeq[] __attribute__((section(".rodata_registration_name_gTaskDescEventSeq"), aligned(1))) = "event_seq";
 
-TaskDesc gTaskDescEventSeq __attribute__((section(".data_registration_gTaskDescEventSeq"))) = {
+TaskDesc gTaskDescEventSeq = {
     gTaskNameEventSeq,
     (void (*)(void*, void*))event_seq_0,
     event_seq_1,
@@ -12824,7 +12830,7 @@ TaskDesc gTaskDescEventSeq __attribute__((section(".data_registration_gTaskDescE
 
 const char gTaskNameEventChara[] __attribute__((section(".rodata_registration_name_gTaskDescEventChara"), aligned(1))) = "event_chara";
 
-TaskDesc gTaskDescEventChara __attribute__((section(".data_registration_gTaskDescEventChara"))) = {
+TaskDesc gTaskDescEventChara = {
     gTaskNameEventChara,
     (void (*)(void*, void*))event_chara_0,
     event_chara_1,
@@ -12833,9 +12839,23 @@ TaskDesc gTaskDescEventChara __attribute__((section(".data_registration_gTaskDes
     0x1BC,
 };
 
+const u16* gUnk_09EE4704[4][2] = {
+    {gUnk_08125E24, gUnk_0951D2B8},
+    {gUnk_08125E24, gUnk_0951DAB8},
+    {gUnk_0951E2B8, gUnk_08125E24},
+    {gUnk_0951EAB8, gUnk_08125E24},
+};
+
+void* gUnk_09EE4724[4] = {
+    gUnk_09EE4704[0],
+    gUnk_09EE4704[1],
+    gUnk_09EE4704[2],
+    gUnk_09EE4704[3],
+};
+
 const char gTaskNameMsgwin[] __attribute__((section(".rodata_registration_name_gTaskDescMsgwin"), aligned(1))) = "msgwin";
 
-TaskDesc gTaskDescMsgwin __attribute__((section(".data_registration_gTaskDescMsgwin"))) = {
+TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
     (void (*)(void*, void*))func_08072D98,
     func_08072EAC,
@@ -12849,7 +12869,7 @@ const char gTaskNameMsgface[] __attribute__((section(".rodata_registration_name_
 const char gTaskNameMsgwait[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwait"), aligned(1))) = "msgwait";
 const char gTaskNameMsgwaitYesno[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwaitYesno"), aligned(1))) = "msgwait_yesno";
 
-TaskDesc gTaskDescMsgface[3] __attribute__((section(".data_registration_gTaskDescMsgface"))) = {
+TaskDesc gTaskDescMsgface[3] = {
     {
         gTaskNameMsgface,
         (void (*)(void*, void*))msgface_0,
@@ -12878,7 +12898,7 @@ TaskDesc gTaskDescMsgface[3] __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameView[] __attribute__((section(".rodata_registration_name_gTaskDescView"), aligned(1))) = "view";
 
-TaskDesc gTaskDescView __attribute__((section(".data_registration_gTaskDescView"))) = {
+TaskDesc gTaskDescView = {
     gTaskNameView,
     (void (*)(void*, void*))view_0,
     view_1,

@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "provenance": {
+    "owner": "The existing event-sequence, event-character, message-window, message-face/wait and view descriptors share one complete native initialized-data run in msg.c. The interior 48 bytes are four two-pointer map-block rows and a four-row index, not padding. Both msg-window reads and the card NumberPlus consumer pass a selected row to SetBgMapBlocks with width 2 and height 1; the shared index is declared once through msg_api.h. No original boundary between other msg.c function groups is asserted. Continue records and all task-name placements remain unchanged.",
+    "assets": "Each row selects two standard 32-by-32 tilemap blocks. The four nonblank targets occur at consecutive 0x800-byte boundaries in every region and GetBgMapBlock and CopyBgMapRect address each block as 32-by-32 halfword entries. The existing blank block is reused. Four object definitions are materialized within each original graphics owner by the existing asset-object mechanism; bytes and asset-pack extents remain unchanged, with no address aliases or new graphics translation unit."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "msg.c",
+          "section": ".data",
+          "address": "0x9ee46d4",
+          "size": 216,
+          "sha256": "cefc95a17b859d28379daa6b33f2d523f073cd5b9ef475deadb8b320c4243a23",
+          "objects": [
+            {
+              "name": "gTaskDescEventSeq",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEventChara",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE4704",
+              "offset": 48,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EE4724",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gTaskDescMsgwin",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescMsgface",
+              "offset": 120,
+              "size": 72
+            },
+            {
+              "name": "gTaskDescView",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gUnk_0951D2B8",
+          "address": "0x951d2b8",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "af8edb5106d7b9e358d2d5b9ae8088df7be19878e64d11cf585845316c71fb85",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951DAB8",
+          "address": "0x951dab8",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "8934c6a0611418ed65ca43010c9ea87f40394fbab73445ef917f45e3a049cc73",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951E2B8",
+          "address": "0x951e2b8",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "b53c01e43602e1dd98d1fc8eed87199857557052142f8949a99c98dffdde10cb",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951EAB8",
+          "address": "0x951eab8",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "7eeb750635846fcfa800b34533e9e22279dda7f087302e43a0090dc0b8ec08a2",
+          "unit": "asset_gfx_gap_43.s"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "msg.c",
+          "section": ".data",
+          "address": "0x9ebbcf4",
+          "size": 216,
+          "sha256": "88ab4e87498d2ce84b8a614c7acaefdf552d0a896f8339dda1c6227e1edbf97d",
+          "objects": [
+            {
+              "name": "gTaskDescEventSeq",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEventChara",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE4704",
+              "offset": 48,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EE4724",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gTaskDescMsgwin",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescMsgface",
+              "offset": 120,
+              "size": 72
+            },
+            {
+              "name": "gTaskDescView",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gUnk_0951D2B8",
+          "address": "0x94d5d94",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "af8edb5106d7b9e358d2d5b9ae8088df7be19878e64d11cf585845316c71fb85",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951DAB8",
+          "address": "0x94d6594",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "8934c6a0611418ed65ca43010c9ea87f40394fbab73445ef917f45e3a049cc73",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951E2B8",
+          "address": "0x94d6d94",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "b53c01e43602e1dd98d1fc8eed87199857557052142f8949a99c98dffdde10cb",
+          "unit": "asset_gfx_gap_43.s"
+        },
+        {
+          "name": "gUnk_0951EAB8",
+          "address": "0x94d7594",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "7eeb750635846fcfa800b34533e9e22279dda7f087302e43a0090dc0b8ec08a2",
+          "unit": "asset_gfx_gap_43.s"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "msg.c",
+          "section": ".data",
+          "address": "0x9f6f980",
+          "size": 216,
+          "sha256": "4e57d71df67b6e39826fbdebbcff41ec543577120595777c3a9ecc4ae58cca76",
+          "objects": [
+            {
+              "name": "gTaskDescEventSeq",
+              "offset": 0,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescEventChara",
+              "offset": 24,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EE4704",
+              "offset": 48,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EE4724",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gTaskDescMsgwin",
+              "offset": 96,
+              "size": 24
+            },
+            {
+              "name": "gTaskDescMsgface",
+              "offset": 120,
+              "size": 72
+            },
+            {
+              "name": "gTaskDescView",
+              "offset": 192,
+              "size": 24
+            }
+          ]
+        }
+      ],
+      "binary_assets": [
+        {
+          "name": "gUnk_0951D2B8",
+          "address": "0x953cb24",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "af8edb5106d7b9e358d2d5b9ae8088df7be19878e64d11cf585845316c71fb85",
+          "unit": "asset_gfx_gap_38_at_09041E7F.s"
+        },
+        {
+          "name": "gUnk_0951DAB8",
+          "address": "0x953d324",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "8934c6a0611418ed65ca43010c9ea87f40394fbab73445ef917f45e3a049cc73",
+          "unit": "asset_gfx_gap_38_at_09041E7F.s"
+        },
+        {
+          "name": "gUnk_0951E2B8",
+          "address": "0x953db24",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "b53c01e43602e1dd98d1fc8eed87199857557052142f8949a99c98dffdde10cb",
+          "unit": "asset_gfx_gap_38_at_09041E7F.s"
+        },
+        {
+          "name": "gUnk_0951EAB8",
+          "address": "0x953e324",
+          "size": 2048,
+          "kind": "Tilemap",
+          "sha256": "7eeb750635846fcfa800b34533e9e22279dda7f087302e43a0090dc0b8ec08a2",
+          "unit": "asset_gfx_gap_38_at_09041E7F.s"
+        }
+      ]
+    }
+  }
+}

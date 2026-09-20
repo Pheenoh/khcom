@@ -5,6 +5,8 @@
 
 #include "text_types.h"
 
+extern void* gUnk_09EE4724[4];
+
 void func_0806180C(u16 a);
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a);
