@@ -5,13 +5,9 @@
 #include "wlogo.h"
 
 static TaskPool gWlogoHwtTaskPool;
-static u8 gUnk_02034C4C[4];
 static TaskPool gWlogoNvlTaskPool;
-static u8 gUnk_02034C64[4];
 static TaskPool gWlogoNvlMovTaskPool;
-static u8 gUnk_02034C7C[4];
 static TaskPool gWlogoAgrTaskPool;
-static u8 gUnk_02034C94[4];
 static TaskPool gWlogoPooTaskPool;
 static u8 gUnk_02034CAC[4];
 static Task* gBosTmBodyTask;
