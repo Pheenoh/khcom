@@ -286,9 +286,7 @@ extern u8 gUnk_0984B1D8[];
 extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
-extern s32 gUnk_096FDD8C[];
 extern StatusAnimDef gUnk_096FDE54[];
-extern const StatusFriendTable gUnk_096FDE24;
 
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];

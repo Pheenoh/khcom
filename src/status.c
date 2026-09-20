@@ -13,9 +13,52 @@ extern void* gUnkEu_09F802C8[5];
 extern void** gUnkEu_09F802DC[5];
 extern void* gUnkEu_09F80350[5];
 extern void* gUnkEu_09F80364[5];
-extern u16 gUnkEu_096CB088[];
-extern u16 gUnkEu_096CB104[];
 #endif
+
+const char gTaskNameStatus[] = "task_status";
+
+#ifdef VERSION_EU
+const u16 gUnkEu_096CB088[5] = {736, 608, 736, 640, 704};
+#endif
+
+const char gTaskNameStatusBar[] = "task_status_bar";
+
+const char gTaskNameStatusTab[] = "task_status_tab";
+
+const char gTaskNameStatusSora[] = "task_status_sora";
+
+const char gTaskNameStatusDeckname[] = "task_status_deckname";
+
+const s32 gUnk_096FDD8C[4] = {-1536, 2816, 6912, 10240};
+
+const char gTaskNameStatusCursor[] = "task_status_cursor";
+
+#ifdef VERSION_EU
+const u16 gUnkEu_096CB104[5] = {64, 128, 64, 128, 128};
+#endif
+
+const char gTaskNameStatusStocklist[] = "task_status_stocklist";
+
+const char gTaskNameStatusScrollcursor[] = "task_status_scrollcursor";
+
+const char gTaskNameStatusMeswindow[] = "task_status_meswindow";
+
+const char gTaskNameStatusMessage[] = "task_status_message";
+
+const char gTaskNameStatusFriend[] = "task_status_friend";
+
+const StatusFriendTable gUnk_096FDE24 = {{
+    {2, 240},
+    {1, 250},
+    {4, 330},
+    {8, 340},
+    {16, 350},
+    {32, 360},
+    {64, 370},
+    {128, 670},
+}};
+
+const char gTaskNameStockMesDisp[] = "stock_mes_disp";
 
 static StatusWork* gStatusWork;
 static u8 gUnk_02034F00;
@@ -1574,8 +1617,6 @@ void func_080D9B6C(BoogieWork* work) {
     }
 }
 
-const char gTaskNameStatus[] __attribute__((section(".rodata_registration_name_gTaskDescStatus"), aligned(1))) = "task_status";
-
 TaskDesc gTaskDescStatus = {
     gTaskNameStatus,
     (void (*)(void*, void*))task_status_0,
@@ -1602,8 +1643,6 @@ void** gUnkEu_09F8029C[5] = {
     gUnkEu_09F81EE8,
 };
 #endif
-
-const char gTaskNameStatusBar[] __attribute__((section(".rodata_registration_name_gTaskDescStatusBar"), aligned(1))) = "task_status_bar";
 
 TaskDesc gTaskDescStatusBar = {
     gTaskNameStatusBar,
@@ -1632,8 +1671,6 @@ void** gUnkEu_09F802DC[5] = {
 };
 #endif
 
-const char gTaskNameStatusTab[] __attribute__((section(".rodata_registration_name_gTaskDescStatusTab"), aligned(1))) = "task_status_tab";
-
 TaskDesc gTaskDescStatusTab = {
     gTaskNameStatusTab,
     (void (*)(void*, void*))task_status_tab_0,
@@ -1642,8 +1679,6 @@ TaskDesc gTaskDescStatusTab = {
     (void (*)(void*))task_status_tab_3,
     0x1C,
 };
-
-const char gTaskNameStatusSora[] __attribute__((section(".rodata_registration_name_gTaskDescStatusSora"), aligned(1))) = "task_status_sora";
 
 TaskDesc gTaskDescStatusSora = {
     gTaskNameStatusSora,
@@ -1654,8 +1689,6 @@ TaskDesc gTaskDescStatusSora = {
     0x24,
 };
 
-const char gTaskNameStatusDeckname[] __attribute__((section(".rodata_registration_name_gTaskDescStatusDeckname"), aligned(1))) = "task_status_deckname";
-
 TaskDesc gTaskDescStatusDeckname = {
     gTaskNameStatusDeckname,
     (void (*)(void*, void*))task_status_deckname_0,
@@ -1664,8 +1697,6 @@ TaskDesc gTaskDescStatusDeckname = {
     (void (*)(void*))task_status_deckname_3,
     0x5C,
 };
-
-const char gTaskNameStatusCursor[] __attribute__((section(".rodata_registration_name_gTaskDescStatusCursor"), aligned(1))) = "task_status_cursor";
 
 TaskDesc gTaskDescStatusCursor = {
     gTaskNameStatusCursor,
@@ -1694,8 +1725,6 @@ void* gUnkEu_09F80364[5] = {
 };
 #endif
 
-const char gTaskNameStatusStocklist[] __attribute__((section(".rodata_registration_name_gTaskDescStatusStocklist"), aligned(1))) = "task_status_stocklist";
-
 TaskDesc gTaskDescStatusStocklist = {
     gTaskNameStatusStocklist,
     (void (*)(void*, void*))task_status_stocklist_0,
@@ -1704,8 +1733,6 @@ TaskDesc gTaskDescStatusStocklist = {
     (void (*)(void*))task_status_stocklist_3,
     0x4CC,
 };
-
-const char gTaskNameStatusScrollcursor[] __attribute__((section(".rodata_registration_name_gTaskDescStatusScrollcursor"), aligned(1))) = "task_status_scrollcursor";
 
 TaskDesc gTaskDescStatusScrollcursor = {
     gTaskNameStatusScrollcursor,
@@ -1716,8 +1743,6 @@ TaskDesc gTaskDescStatusScrollcursor = {
     0x14,
 };
 
-const char gTaskNameStatusMeswindow[] __attribute__((section(".rodata_registration_name_gTaskDescStatusMeswindow"), aligned(1))) = "task_status_meswindow";
-
 TaskDesc gTaskDescStatusMeswindow = {
     gTaskNameStatusMeswindow,
     (void (*)(void*, void*))task_status_meswindow_0,
@@ -1726,8 +1751,6 @@ TaskDesc gTaskDescStatusMeswindow = {
     (void (*)(void*))task_status_meswindow_3,
     0x24,
 };
-
-const char gTaskNameStatusMessage[] __attribute__((section(".rodata_registration_name_gTaskDescStatusMessage"), aligned(1))) = "task_status_message";
 
 TaskDesc gTaskDescStatusMessage = {
     gTaskNameStatusMessage,
@@ -1738,8 +1761,6 @@ TaskDesc gTaskDescStatusMessage = {
     0x330,
 };
 
-const char gTaskNameStatusFriend[] __attribute__((section(".rodata_registration_name_gTaskDescStatusFriend"), aligned(1))) = "task_status_friend";
-
 TaskDesc gTaskDescStatusFriend = {
     gTaskNameStatusFriend,
     (void (*)(void*, void*))task_status_friend_0,
@@ -1748,8 +1769,6 @@ TaskDesc gTaskDescStatusFriend = {
     (void (*)(void*))task_status_friend_3,
     0x28,
 };
-
-const char gTaskNameStockMesDisp[] __attribute__((section(".rodata_registration_name_gTaskDescStockMesDisp"), aligned(1))) = "stock_mes_disp";
 
 TaskDesc gTaskDescStockMesDisp = {
     gTaskNameStockMesDisp,

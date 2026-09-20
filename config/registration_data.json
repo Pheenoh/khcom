@@ -18,7 +18,8 @@
     "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization.",
     "title_readonly_owner": "The four title task names and two readonly lookup tables share title.c consumers. The menu loops enumerate four s32 entries {4,5,1,2}; the luminance callback copies exactly three s16 entries {-7,0,3} into its local array. Ordinary const definitions reproduce the complete 0x5E-byte readonly run in every original region with native alignment, preserving all four original name extents and both independently bounded table spans. The old raw fragments and address aliases are removed without code or asset-payload changes.",
     "mode_allmap_readonly_owner": "The all-map mode copies the complete existing AllmapRoomOrder and AllmapRoomDirs records into locals. The four-direction loop builds a mask in0..15 for the sixteen-entry order and reads the four-entry direction permutation. Both definitions have only mode_allmap.c consumers. Ordinary const definitions follow the existing mode name in one native0x5C-byte readonly section in all regions, replacing the exact80-byte raw metadata fragment. Types remain in the owning header, and no function body, RAM definition or encoded asset changes.",
-    "allmap_readonly_suffix": "Three allmap tables have repeated owner-local consumers: four pairs of neighbor offsets, four word-sized direction selectors and a four-by-four signed-halfword arrangement table copied with an explicit sizeof bound. These tables and the following Doorinfo and Pusha task names form the same complete 0x6A-byte readonly suffix in all regions. Ordinary const definitions preserve the original bytes, object bounds and code relocations. The earlier 32-byte coordinate span retains its existing raw representation: only its first four pairs have proven consumers, and the following four pairs do not have an established source-level boundary. Earlier task-name placements remain unchanged."
+    "allmap_readonly_suffix": "Three allmap tables have repeated owner-local consumers: four pairs of neighbor offsets, four word-sized direction selectors and a four-by-four signed-halfword arrangement table copied with an explicit sizeof bound. These tables and the following Doorinfo and Pusha task names form the same complete 0x6A-byte readonly suffix in all regions. Ordinary const definitions preserve the original bytes, object bounds and code relocations. The earlier 32-byte coordinate span retains its existing raw representation: only its first four pairs have proven consumers, and the following four pairs do not have an established source-level boundary. Earlier task-name placements remain unchanged.",
+    "status_readonly_prefix_owner": "Twelve status UI names and their directly consumed cursor positions, eight-entry StatusFriendTable, and two EU language-count arrays form one complete native readonly prefix. The tab navigation bounds select positions 0..3; the friend helper copies the complete existing record and traverses entries 0..7; EU localized resource calls select five language counts. Ordinary const definitions reproduce every original object address and the interleaved compiler alignment. The later Boogie records and name retain their existing boundaries, while descriptor data, code bodies, RAM, and encoded asset payloads are unchanged."
   },
   "regions": {
     "us": {
@@ -4195,15 +4196,80 @@
         },
         {
           "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatus",
+          "section": ".rodata",
           "address": "0x096FDD34",
-          "size": 12,
-          "sha256": "6e98b9d1ea14b3372c005405eadfa245b327a3f544cfbb3faed5a0af7360fdae",
+          "size": 287,
+          "sha256": "cdc647327aa01e31ae321cab05659e4c79c82fec274da123d43967e0277b931b",
           "objects": [
             {
               "name": "gTaskNameStatus",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gTaskNameStatusBar",
+              "offset": 12,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusTab",
+              "offset": 28,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusSora",
+              "offset": 44,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameStatusDeckname",
+              "offset": 64,
+              "size": 21
+            },
+            {
+              "name": "gUnk_096FDD8C",
+              "offset": 88,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusCursor",
+              "offset": 104,
+              "size": 19
+            },
+            {
+              "name": "gTaskNameStatusStocklist",
+              "offset": 124,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusScrollcursor",
+              "offset": 148,
+              "size": 25
+            },
+            {
+              "name": "gTaskNameStatusMeswindow",
+              "offset": 176,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusMessage",
+              "offset": 200,
+              "size": 20
+            },
+            {
+              "name": "gTaskNameStatusFriend",
+              "offset": 220,
+              "size": 19
+            },
+            {
+              "name": "gUnk_096FDE24",
+              "offset": 240,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameStockMesDisp",
+              "offset": 272,
+              "size": 15
             }
           ]
         },
@@ -4278,170 +4344,6 @@
               "name": "gTaskDescBosBoogie",
               "offset": 288,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusBar",
-          "address": "0x096FDD40",
-          "size": 16,
-          "sha256": "7f0ba9e6129b33a835a4031a0b6eff92bd80785a0d1b826f5a4606f5cca911d0",
-          "objects": [
-            {
-              "name": "gTaskNameStatusBar",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusTab",
-          "address": "0x096FDD50",
-          "size": 16,
-          "sha256": "bde0d7af1bd9dd14c502d7b59b69829f9875bd93c7b7e1117ab79d3ba65890a9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusTab",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusSora",
-          "address": "0x096FDD60",
-          "size": 17,
-          "sha256": "a13574f151b0ac8b3af3c502fcd731d69b4669969f1b04da4775f2be2598e73a",
-          "objects": [
-            {
-              "name": "gTaskNameStatusSora",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusDeckname",
-          "address": "0x096FDD74",
-          "size": 21,
-          "sha256": "d6b84384e6ee1bbe00bc1c77c11363068df5b807c2c51c62cc9444dcd0d23867",
-          "objects": [
-            {
-              "name": "gTaskNameStatusDeckname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusCursor",
-          "address": "0x096FDD9C",
-          "size": 19,
-          "sha256": "273d42f132a7682fb5c866478b0ae5ee7c00a2d4a98d7206afe5544a4dda842c",
-          "objects": [
-            {
-              "name": "gTaskNameStatusCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusStocklist",
-          "address": "0x096FDDB0",
-          "size": 22,
-          "sha256": "b3e015675e86e71b05c065f8a41efc1e2e1a96b891efbfd45a449a00ada7f374",
-          "objects": [
-            {
-              "name": "gTaskNameStatusStocklist",
-              "offset": 0,
-              "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusScrollcursor",
-          "address": "0x096FDDC8",
-          "size": 25,
-          "sha256": "25888715b08f5ec110a970ec50f259fae3a2bd4d00e754920f6d192280f20862",
-          "objects": [
-            {
-              "name": "gTaskNameStatusScrollcursor",
-              "offset": 0,
-              "size": 25
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMeswindow",
-          "address": "0x096FDDE4",
-          "size": 22,
-          "sha256": "499a64c50079f41e369ec29630d7414dffeddbd18a3bf7bc74fe0b3c0117f59f",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMeswindow",
-              "offset": 0,
-              "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMessage",
-          "address": "0x096FDDFC",
-          "size": 20,
-          "sha256": "04bec6cf8f1381df224c4a37bef182fad09a87ae0b83bf01b5ab29af29b56003",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMessage",
-              "offset": 0,
-              "size": 20
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusFriend",
-          "address": "0x096FDE10",
-          "size": 19,
-          "sha256": "4e5070f93fa36755cf3ccc2638c4a3103c082dafa88d158f0046a5508c60e8b9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusFriend",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStockMesDisp",
-          "address": "0x096FDE44",
-          "size": 15,
-          "sha256": "715161049f7da5e531d981c652496d8a242b309bc890eafda5460ca2feed6ce0",
-          "objects": [
-            {
-              "name": "gTaskNameStockMesDisp",
-              "offset": 0,
-              "size": 15
             }
           ]
         },
@@ -11453,15 +11355,80 @@
         },
         {
           "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatus",
+          "section": ".rodata",
           "address": "0x096B6510",
-          "size": 12,
-          "sha256": "6e98b9d1ea14b3372c005405eadfa245b327a3f544cfbb3faed5a0af7360fdae",
+          "size": 287,
+          "sha256": "cdc647327aa01e31ae321cab05659e4c79c82fec274da123d43967e0277b931b",
           "objects": [
             {
               "name": "gTaskNameStatus",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gTaskNameStatusBar",
+              "offset": 12,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusTab",
+              "offset": 28,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusSora",
+              "offset": 44,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameStatusDeckname",
+              "offset": 64,
+              "size": 21
+            },
+            {
+              "name": "gUnk_096FDD8C",
+              "offset": 88,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusCursor",
+              "offset": 104,
+              "size": 19
+            },
+            {
+              "name": "gTaskNameStatusStocklist",
+              "offset": 124,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusScrollcursor",
+              "offset": 148,
+              "size": 25
+            },
+            {
+              "name": "gTaskNameStatusMeswindow",
+              "offset": 176,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusMessage",
+              "offset": 200,
+              "size": 20
+            },
+            {
+              "name": "gTaskNameStatusFriend",
+              "offset": 220,
+              "size": 19
+            },
+            {
+              "name": "gUnk_096FDE24",
+              "offset": 240,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameStockMesDisp",
+              "offset": 272,
+              "size": 15
             }
           ]
         },
@@ -11536,170 +11503,6 @@
               "name": "gTaskDescBosBoogie",
               "offset": 288,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusBar",
-          "address": "0x096B651C",
-          "size": 16,
-          "sha256": "7f0ba9e6129b33a835a4031a0b6eff92bd80785a0d1b826f5a4606f5cca911d0",
-          "objects": [
-            {
-              "name": "gTaskNameStatusBar",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusTab",
-          "address": "0x096B652C",
-          "size": 16,
-          "sha256": "bde0d7af1bd9dd14c502d7b59b69829f9875bd93c7b7e1117ab79d3ba65890a9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusTab",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusSora",
-          "address": "0x096B653C",
-          "size": 17,
-          "sha256": "a13574f151b0ac8b3af3c502fcd731d69b4669969f1b04da4775f2be2598e73a",
-          "objects": [
-            {
-              "name": "gTaskNameStatusSora",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusDeckname",
-          "address": "0x096B6550",
-          "size": 21,
-          "sha256": "d6b84384e6ee1bbe00bc1c77c11363068df5b807c2c51c62cc9444dcd0d23867",
-          "objects": [
-            {
-              "name": "gTaskNameStatusDeckname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusCursor",
-          "address": "0x096B6578",
-          "size": 19,
-          "sha256": "273d42f132a7682fb5c866478b0ae5ee7c00a2d4a98d7206afe5544a4dda842c",
-          "objects": [
-            {
-              "name": "gTaskNameStatusCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusStocklist",
-          "address": "0x096B658C",
-          "size": 22,
-          "sha256": "b3e015675e86e71b05c065f8a41efc1e2e1a96b891efbfd45a449a00ada7f374",
-          "objects": [
-            {
-              "name": "gTaskNameStatusStocklist",
-              "offset": 0,
-              "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusScrollcursor",
-          "address": "0x096B65A4",
-          "size": 25,
-          "sha256": "25888715b08f5ec110a970ec50f259fae3a2bd4d00e754920f6d192280f20862",
-          "objects": [
-            {
-              "name": "gTaskNameStatusScrollcursor",
-              "offset": 0,
-              "size": 25
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMeswindow",
-          "address": "0x096B65C0",
-          "size": 22,
-          "sha256": "499a64c50079f41e369ec29630d7414dffeddbd18a3bf7bc74fe0b3c0117f59f",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMeswindow",
-              "offset": 0,
-              "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMessage",
-          "address": "0x096B65D8",
-          "size": 20,
-          "sha256": "04bec6cf8f1381df224c4a37bef182fad09a87ae0b83bf01b5ab29af29b56003",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMessage",
-              "offset": 0,
-              "size": 20
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusFriend",
-          "address": "0x096B65EC",
-          "size": 19,
-          "sha256": "4e5070f93fa36755cf3ccc2638c4a3103c082dafa88d158f0046a5508c60e8b9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusFriend",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStockMesDisp",
-          "address": "0x096B6620",
-          "size": 15,
-          "sha256": "715161049f7da5e531d981c652496d8a242b309bc890eafda5460ca2feed6ce0",
-          "objects": [
-            {
-              "name": "gTaskNameStockMesDisp",
-              "offset": 0,
-              "size": 15
             }
           ]
         },
@@ -18641,15 +18444,90 @@
         },
         {
           "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatus",
+          "section": ".rodata",
           "address": "0x096CB07C",
-          "size": 12,
-          "sha256": "6e98b9d1ea14b3372c005405eadfa245b327a3f544cfbb3faed5a0af7360fdae",
+          "size": 311,
+          "sha256": "5bf902ec59a862257b6f76935b0cb3fc9785b8c48461e53227eb23e6b5a9e220",
           "objects": [
             {
               "name": "gTaskNameStatus",
               "offset": 0,
               "size": 12
+            },
+            {
+              "name": "gUnkEu_096CB088",
+              "offset": 12,
+              "size": 10
+            },
+            {
+              "name": "gTaskNameStatusBar",
+              "offset": 24,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusTab",
+              "offset": 40,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusSora",
+              "offset": 56,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameStatusDeckname",
+              "offset": 76,
+              "size": 21
+            },
+            {
+              "name": "gUnk_096FDD8C",
+              "offset": 100,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameStatusCursor",
+              "offset": 116,
+              "size": 19
+            },
+            {
+              "name": "gUnkEu_096CB104",
+              "offset": 136,
+              "size": 10
+            },
+            {
+              "name": "gTaskNameStatusStocklist",
+              "offset": 148,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusScrollcursor",
+              "offset": 172,
+              "size": 25
+            },
+            {
+              "name": "gTaskNameStatusMeswindow",
+              "offset": 200,
+              "size": 22
+            },
+            {
+              "name": "gTaskNameStatusMessage",
+              "offset": 224,
+              "size": 20
+            },
+            {
+              "name": "gTaskNameStatusFriend",
+              "offset": 244,
+              "size": 19
+            },
+            {
+              "name": "gUnk_096FDE24",
+              "offset": 264,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameStockMesDisp",
+              "offset": 296,
+              "size": 15
             }
           ]
         },
@@ -18754,168 +18632,6 @@
               "name": "gTaskDescBosBoogie",
               "offset": 408,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusBar",
-          "address": "0x096CB094",
-          "size": 16,
-          "sha256": "7f0ba9e6129b33a835a4031a0b6eff92bd80785a0d1b826f5a4606f5cca911d0",
-          "objects": [
-            {
-              "name": "gTaskNameStatusBar",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusTab",
-          "address": "0x096CB0A4",
-          "size": 16,
-          "sha256": "bde0d7af1bd9dd14c502d7b59b69829f9875bd93c7b7e1117ab79d3ba65890a9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusTab",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusSora",
-          "address": "0x096CB0B4",
-          "size": 17,
-          "sha256": "a13574f151b0ac8b3af3c502fcd731d69b4669969f1b04da4775f2be2598e73a",
-          "objects": [
-            {
-              "name": "gTaskNameStatusSora",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusDeckname",
-          "address": "0x096CB0C8",
-          "size": 21,
-          "sha256": "d6b84384e6ee1bbe00bc1c77c11363068df5b807c2c51c62cc9444dcd0d23867",
-          "objects": [
-            {
-              "name": "gTaskNameStatusDeckname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusCursor",
-          "address": "0x096CB0F0",
-          "size": 19,
-          "sha256": "273d42f132a7682fb5c866478b0ae5ee7c00a2d4a98d7206afe5544a4dda842c",
-          "objects": [
-            {
-              "name": "gTaskNameStatusCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusStocklist",
-          "address": "0x096CB110",
-          "size": 22,
-          "sha256": "b3e015675e86e71b05c065f8a41efc1e2e1a96b891efbfd45a449a00ada7f374",
-          "objects": [
-            {
-              "name": "gTaskNameStatusStocklist",
-              "offset": 0,
-              "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusScrollcursor",
-          "address": "0x096CB128",
-          "size": 25,
-          "sha256": "25888715b08f5ec110a970ec50f259fae3a2bd4d00e754920f6d192280f20862",
-          "objects": [
-            {
-              "name": "gTaskNameStatusScrollcursor",
-              "offset": 0,
-              "size": 25
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMeswindow",
-          "address": "0x096CB144",
-          "size": 22,
-          "sha256": "499a64c50079f41e369ec29630d7414dffeddbd18a3bf7bc74fe0b3c0117f59f",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMeswindow",
-              "offset": 0,
-              "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusMessage",
-          "address": "0x096CB15C",
-          "size": 20,
-          "sha256": "04bec6cf8f1381df224c4a37bef182fad09a87ae0b83bf01b5ab29af29b56003",
-          "objects": [
-            {
-              "name": "gTaskNameStatusMessage",
-              "offset": 0,
-              "size": 20
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStatusFriend",
-          "address": "0x096CB170",
-          "size": 19,
-          "sha256": "4e5070f93fa36755cf3ccc2638c4a3103c082dafa88d158f0046a5508c60e8b9",
-          "objects": [
-            {
-              "name": "gTaskNameStatusFriend",
-              "offset": 0,
-              "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescStockMesDisp",
-          "address": "0x096CB1A4",
-          "size": 15,
-          "sha256": "715161049f7da5e531d981c652496d8a242b309bc890eafda5460ca2feed6ce0",
-          "objects": [
-            {
-              "name": "gTaskNameStockMesDisp",
-              "offset": 0,
-              "size": 15
             }
           ]
         },
