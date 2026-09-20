@@ -142,6 +142,7 @@ UNIT_BSS = {
     "src/mode_copyright1.o": {"us": 0x02034ED4, "jp": 0x02034E34, "eu": 0x020350C4},
     "src/mode_status.o": {"us": 0x02034EE0, "jp": 0x02034E40, "eu": 0x020350D0},
     "src/status.o": {"us": 0x02034EFC, "jp": 0x02034E5C, "eu": 0x020350EC},
+    "src/boss_boogie.o": {"us": 0x02034F08, "jp": 0x02034E68, "eu": 0x020350F8},
     "src/key.o": 0x02034000,
     "src/mode_movie.o": {"us": 0x02034938, "jp": 0x02034938, "eu": 0x020348D8},
     "src/bos4.o": {"us": 0x02034F0C, "jp": 0x02034E6C, "eu": 0x020350FC},

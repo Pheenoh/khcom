@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "boss_boogie.h"
+
 
 
 #include "map_text_data.h"
@@ -22,7 +24,6 @@
 
 #include "map_api.h"
 #include "msg_api.h"
-#include "status_api.h"
 #include "mode_test_api.h"
 
 #include "save_api.h"
@@ -282,7 +283,7 @@ typedef struct BoogieDiceWork {
     s32 y;
     u8 unk_168;
     u8 unk_169[0x3];
-    u32 unk_16C;
+    BoogieWork* unk_16C;
     u8 unk_170;
     u8 unk_171[0x3];
 } BoogieDiceWork;
@@ -542,7 +543,6 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work);
-u32 func_080D9A90(void);
 u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d);
 void func_080D9B6C(BoogieDiceWork* work);
 

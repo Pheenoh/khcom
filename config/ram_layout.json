@@ -1,5 +1,53 @@
 {
   "us": {
+      "src/status.o": {
+        "sections": [
+          {
+            "section": ".bss.status",
+            "base": "0x2034efc",
+            "size": "0xc",
+            "symbols": {
+              "gStatusWork": {
+                "offset": "0x0",
+                "size": "0x4"
+              },
+              "gUnk_02034F00": {
+                "offset": "0x4",
+                "size": "0x1"
+              },
+              "gUnk_02034F02": {
+                "offset": "0x6",
+                "size": "0x2"
+              },
+              "gStatusStocklistWork": {
+                "offset": "0x8",
+                "size": "0x4"
+              }
+            }
+          },
+          {
+            "section": ".common.status",
+            "base": "0x203c550",
+            "size": "0x4",
+            "symbols": {
+              "gUnk_0203C550": {
+                "offset": "0x0",
+                "size": "0x4"
+              }
+            }
+          }
+        ]
+      },
+      "src/boss_boogie.o": {
+        "base": "0x2034f08",
+        "size": "0x4",
+        "symbols": {
+          "gBoogieWork": {
+            "offset": "0x0",
+            "size": "0x4"
+          }
+        }
+      },
       "src/pcm_audio.o": {
         "base": "0x20380a0",
         "size": "0x588",
@@ -2286,6 +2334,54 @@
     }
   },
   "jp": {
+      "src/status.o": {
+        "sections": [
+          {
+            "section": ".bss.status",
+            "base": "0x2034e5c",
+            "size": "0xc",
+            "symbols": {
+              "gStatusWork": {
+                "offset": "0x0",
+                "size": "0x4"
+              },
+              "gUnk_02034F00": {
+                "offset": "0x4",
+                "size": "0x1"
+              },
+              "gUnk_02034F02": {
+                "offset": "0x6",
+                "size": "0x2"
+              },
+              "gStatusStocklistWork": {
+                "offset": "0x8",
+                "size": "0x4"
+              }
+            }
+          },
+          {
+            "section": ".common.status",
+            "base": "0x203c4c0",
+            "size": "0x4",
+            "symbols": {
+              "gUnk_0203C550": {
+                "offset": "0x0",
+                "size": "0x4"
+              }
+            }
+          }
+        ]
+      },
+      "src/boss_boogie.o": {
+        "base": "0x2034e68",
+        "size": "0x4",
+        "symbols": {
+          "gBoogieWork": {
+            "offset": "0x0",
+            "size": "0x4"
+          }
+        }
+      },
       "src/pcm_audio.o": {
         "base": "0x2038010",
         "size": "0x588",
@@ -4582,6 +4678,54 @@
     }
   },
   "eu": {
+      "src/status.o": {
+        "sections": [
+          {
+            "section": ".bss.status",
+            "base": "0x20350ec",
+            "size": "0xc",
+            "symbols": {
+              "gStatusWork": {
+                "offset": "0x0",
+                "size": "0x4"
+              },
+              "gUnk_02034F00": {
+                "offset": "0x4",
+                "size": "0x1"
+              },
+              "gUnk_02034F02": {
+                "offset": "0x6",
+                "size": "0x2"
+              },
+              "gStatusStocklistWork": {
+                "offset": "0x8",
+                "size": "0x4"
+              }
+            }
+          },
+          {
+            "section": ".common.status",
+            "base": "0x203cb40",
+            "size": "0x4",
+            "symbols": {
+              "gUnk_0203C550": {
+                "offset": "0x0",
+                "size": "0x4"
+              }
+            }
+          }
+        ]
+      },
+      "src/boss_boogie.o": {
+        "base": "0x20350f8",
+        "size": "0x4",
+        "symbols": {
+          "gBoogieWork": {
+            "offset": "0x0",
+            "size": "0x4"
+          }
+        }
+      },
       "src/pcm_audio.o": {
         "base": "0x20386b0",
         "size": "0x588",

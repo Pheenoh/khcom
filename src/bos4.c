@@ -3,7 +3,6 @@
 #include "registration_data.h"
 #include "map_api.h"
 #include "msg_api.h"
-#include "status_api.h"
 #include "m4a_song.h"
 #include "monsgage.h"
 #include "bos4.h"
@@ -403,6 +402,56 @@ UrsulaMapanimeWork* gUrsulaMapanimeWork;
 u32 gUnkEu_02035104;
 #endif
 
+u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
+    u8 r;
+
+    r = 0;
+
+    if (*a < (128 - c) << 8) {
+        *a = (128 - c) << 8;
+        r = 1;
+    }
+
+    if (*a > (c + 368) << 8) {
+        *a = (c + 368) << 8;
+        r = 1;
+    }
+
+    if (*b < (576 - (s16)d) << 8) {
+        *b = (576 - (s16)d) << 8;
+        r = 1;
+    }
+
+    if (*b > ((s16)d + 632) << 8) {
+        *b = ((s16)d + 632) << 8;
+        r = 1;
+    }
+    return r;
+}
+
+u8 func_080D9B28(BoogieDiceWork* work) {
+    if (work->unk_000 == 3) {
+        if (work->unk_16C->unk_000 == 9) {
+            if (AnimGetFrame(&work->unk_16C->anim) <= 2) {
+                if (!AnimIsFinished(&work->unk_16C->anim)) {
+                    return 1;
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+void func_080D9B6C(BoogieDiceWork* work) {
+    if (work->unk_160 <= 255) {
+        work->unk_160 += 8;
+    }
+
+    if (work->unk_15C <= 255) {
+        work->unk_15C += 8;
+    }
+}
+
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
     s32 c;
@@ -411,7 +460,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     u16 r;
 
     work->unk_170 = arg[0x175];
-    work->unk_16C = (u32)arg;
+    work->unk_16C = (BoogieWork*)arg;
     work->unk_000 = 10;
     work->unk_004 = 0;
     work->unk_150 = -0x4CC;

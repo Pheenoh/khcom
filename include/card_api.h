@@ -39,6 +39,7 @@ u8 func_0807E29C(void);
 u8 func_08081828(void);
 void func_08083900(u8 a);
 void func_08083914(void);
+u8 func_08083920(void);
 s16 func_08084458(u16 cardId);
 u8* GetDeckName(u8 index);
 s16 func_080858B8(s32 index);

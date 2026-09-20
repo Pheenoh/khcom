@@ -154,50 +154,6 @@ typedef struct StatusMesParam {
     u32 unk_04_16 : 16;
 } StatusMesParam;
 
-typedef struct StatusDialogSub {
-    s32 unk_00;
-    u8 unk_04[0x10];
-    AnimState anim;
-} StatusDialogSub;
-
-typedef struct BoogieWork {
-    s32 unk_000;
-    s16 unk_004;
-    u16 unk_006;
-    void* tiles;
-    void* palette;
-    void* palette2;
-    AnimState anim;
-    TaskPool tasks;
-    BtlObj actor;
-    s32 unk_150;
-    s32 unk_154;
-    s32 unk_158;
-    s32 unk_15C;
-    s32 unk_160;
-    void* unk_164;
-    s32 unk_168;
-    StatusDialogSub* dialog;
-    u32 unk_170;
-    u8 unk_174;
-    u8 unk_175;
-    u8 unk_176[2];
-} BoogieWork;
-
-typedef struct StatusObjDef {
-    void* sprites;
-    u16 spriteCount;
-    u16 unk_06;
-} StatusObjDef;
-
-typedef struct StatusAnimDef {
-    u32 anims;
-    u32 gfxTable;
-    void* tiles;
-    u16 animId;
-    u16 unk_0E;
-} StatusAnimDef;
-
 typedef struct StatusFriendEntry {
     u16 unk_00;
     u16 unk_02;
@@ -286,13 +242,7 @@ extern u8 gUnk_0984B1D8[];
 extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
-extern StatusAnimDef gUnk_096FDE54[];
 
-extern u8 gUnk_0984AF78[];
-extern u8 gUnk_08F69BC4[];
-extern StatusObjDef gUnk_096FDEE4[];
-extern u8 gUnk_096FDF14[];
-extern u8 gUnk_096FDF24[];
 
 
 u8 func_080D7B94(void);
@@ -315,31 +265,9 @@ void func_080D8374(void);
 void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
 
-void func_080D9A14(void);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
-void func_080D900C(BoogieWork* work, s32 a, u16 b);
 void func_080D83F4(void);
 
-typedef struct BoogieFx {
-    s32 x;
-    s32 y;
-    s32 z;
-    u8 unk_0C[0x14];
-} BoogieFx;
-
-typedef struct BoogieResource {
-    u8 unk_00[10];
-    s16 unk_0A;
-} BoogieResource;
-
-typedef struct BoogiePalette {
-    u8 unk_00[6];
-    u8 unk_06;
-} BoogiePalette;
-
-u8 func_08083920(void);
-void func_080D8F14(BoogieWork* work);
-u8 func_080D9058(s32* x, s32* y);
 
 #endif /* GUARD_STATUS_H */

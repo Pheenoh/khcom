@@ -107,6 +107,7 @@ mode_copyright1.c -O2 -fprologue-bugfix -fno-common
 mode_copyright2.c -O2 -fprologue-bugfix -fno-common
 mode_status.c -O2 -fprologue-bugfix -fno-common
 status.c -O2 -fprologue-bugfix
+boss_boogie.c -O2 -fprologue-bugfix
 bos4.c -O2 -fprologue-bugfix -fno-common
 mode_mapchk.c -O2 -fprologue-bugfix
 map_runtime.c -O2 -fprologue-bugfix -fno-common
@@ -1340,7 +1341,7 @@ mode_copyright2.c(.rodata)
 mode_status.c(.rodata)
 status.c(.rodata)
 asset_gfx_gap_141.s(.rodata)
-status.c(.rodata_registration_name_gTaskDescBosBoogie)
+boss_boogie.c(.rodata)
 asset_gfx_gap_142.s(.rodata)
 bos4.c(.rodata_registration_name_gTaskDescBosBoogieDice)
 asset_gfx_gap_143.s(.rodata)
@@ -2197,6 +2198,7 @@ mode_copyright1.c(.data)
 mode_copyright2.c(.data)
 mode_status.c(.data)
 status.c(.data)
+boss_boogie.c(.data)
 bos4.c(.data)
 animation_resource_data.c(.data_09EF5298)
 animation_resource_data.c(.data_09EF5824)

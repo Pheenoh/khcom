@@ -11,7 +11,7 @@
     "mode_tail_ownership": "Deck/menu, Continue and Event callback groups each reproduce their native code, name, initialized-data and BSS runs in all three original ROMs. The shared event ID is unsigned as established by the original message-handler switch branches.",
     "bos6_native_data": "The 96-entry PcSpriteCmd pointer index and 14-entry PcAnimStep pointer index are consumed only by bos6.c animation selection and command execution. The two-entry shake index is consumed only by its Pc field-shake helper. In all three original ROMs these three indexes and five TaskDesc records form an uninterrupted 0x238-byte initialized-data run in the same order: sprite index, animation index, Pc registration, shake index, PcFld/PcFlt/PcAcd/BosLst registrations. Each registration directly references callbacks in bos6.c. Ordinary definitions reproduce every original address, byte and relocation without section attributes. The lower-ROM command, animation, palette, shot and name groups retain their existing organization; this consolidation does not claim additional original source boundaries.",
     "backupstat_owner": "The mode lifecycle and state editor are the only users of the status-name index, six-entry BackupStatEntry table and diagnostic labels. The same Shift-JIS bytes occur in every region. Ordinary string literals produce the original deferred reverse initializer order; a const metadata table, const reader and native mode name reproduce the complete 0xD0-byte readonly run, including normal four-byte literal alignment. The original 0x1C-byte initialized-data run remains unchanged. The obsolete storage TU, private declarations and fixed-address text aliases are removed without changing text contents or code.",
-    "status_owner": "All thirteen status task descriptors reference callbacks in status.c. Its EU status, bar and cursor callbacks are the only consumers of six five-language graphics pointer indexes. In US/JP the descriptors form one uninterrupted 0x138-byte initialized-data run; EU interleaves those six indexes with the corresponding descriptor families in one 0x1B0-byte run. Ordinary C definitions reproduce the complete runs with all original object addresses, bounds, pointer relocations and ROM contents retained as contracts. Name placements and graphics payloads remain unchanged.",
+    "status_owner": "The twelve status UI task descriptors and their six EU-only language indexes retain their original native initialized-data owner. The following Boogie descriptor belongs to boss_boogie.c with its lifecycle callbacks and private work pointer; every original descriptor/index object address, extent and content contract is preserved.",
     "pooh_eu_background_indexes": "The EU-only five-language floor-background pointer indexes are consumed only by poo.c func_080D313C, which selects the appropriate floor span and copies it to background VRAM. Their ten pointers immediately follow that owner's established native initialized-data run. Ordinary EU-scoped definitions extend the run from 0xBD8 to 0xC00 without changing payloads, pointer targets or any US/JP definition. Both original index object contracts and all preceding Pooh object contracts remain validated.",
     "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
     "boogie_ursula_native_data": "The nine Boogie and nine Ursula TaskDesc records all point to callbacks in bos4.c. The four 12-entry Ursula background-map indexes are repeatedly selected and compared by object address in func_080DB978 and task_bos_ursula_2, with SetBgMapBlocks explicitly using a 4-by-3 grid. These tables and descriptors form one uninterrupted native 0x270-byte initialized-data run in all three original ROMs: nine Boogie registrations, four map indexes, nine Ursula registrations. Ordinary definitions in the code owner preserve each original object, all relocations and every code byte. The storage-only boss_ursula_data TU and its private declaration header are removed. Later MapChk and other ROM placements remain unchanged; this batch does not assert a new code boundary.",
@@ -24,7 +24,8 @@
     "boss_tm_native_owner": "The Trickmaster parent lifecycle owns four task pointers and a TaskPool and directly creates its body, foot, club, arm and table callbacks. These callbacks and their repeatedly consumed movement tables form one contiguous original code and initialized-data run across all regions, previously split between the end of wlogo.c, the beginning of bos2.c and a storage-only data unit. Ordinary definitions in boss_tm.c preserve all 31 initialized objects and their relocations. The private logo pools remain in wlogo.c; its naturally 0x74-byte BSS followed by the Trickmaster section with native eight-byte alignment accounts for the former four-byte filler. No data-table extent, remaining shared state or interleaved name/asset boundary is changed.",
     "sio_readonly_owner": "The SIO modes index exactly two and three existing SioAnimDef records; their pointer fields reference the same typed animation resources used by these callbacks. Both tables are read only and have no consumers outside mode_sio.c. They interleave the six mode names in US/JP; EU omits the card-exchange table and two names, and instead has two terminated byte-encoded Deck labels read by the Latin text loader. Ordinary const records, names and character-list byte arrays reproduce each complete original readonly group and every relocation target. The compiler aligns string initializers to four bytes but retains the natural byte alignment of array initializers, explaining the adjacent EU labels without extra bytes or section attributes. Obsolete raw metadata fragments and fixed-address aliases are removed; record bounds, label extents, code, RAM and encoded assets are preserved.",
     "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects form one native 1556-byte initialized-data run in map.c across all regions. Definitions retain original types, bounds, initializer values and regional guards except that the three fourteen-byte level-offset/event arrays use mutable byte storage. Their old const declarations came from decompilation (89d03418 for level offsets and 474e8dcb for event bytes); recovery commit 47811f02 introduced the definitions and custom readonly sections. Mutable spelling is a reconstruction of the native initialized-data organization, not evidence of observed writes. The two floor-name indexes are read by the floor-task helper named by the final task descriptor; the underscore belongs to the map-debug initializer and remains present but unused by the EU renderer. These three objects move from the artificial map_text_data.c storage split into those consumers, with EU localized records retained under shared canonical declarations. Callback descriptors, table references, native compiler offsets and complete regional object/content contracts corroborate the organization. Lower-ROM names and localized text records retain their placements, and this does not assert a complete original source boundary with map_runtime.c or resolve all remaining readonly sections.",
-    "allmap_readonly_geometry": "The original 32-byte coordinate span is reconstructed as two const signed-halfword tables of four x/y pairs. func_080D484C indexes the first four-pair rectangle while drawing the four door overlays. The next four pairs form a complete centered 32-pixel square in every original ROM, followed by this same owner's four-direction offset and direction-selection tables. History c4bf64c6 declared only an unsized array, so no prior C extent establishes an eight-entry array. The second four-pair table retains the address-style name gUnk_096FDC20. Assigning this dormant but geometrically complete table to the same owner is an explicit source-organization inference; no live use or uniquely recovered original array boundary is claimed. Original ROM scans find no direct pointer to any byte of the second table. Ordinary definitions place the four earlier names, both coordinate tables and the existing readonly suffix in one 218-byte section. All original bytes, existing object extents, code, relocations and RAM are unchanged, and the former absolute coordinate alias and raw data fragment are removed."
+    "allmap_readonly_geometry": "The original 32-byte coordinate span is reconstructed as two const signed-halfword tables of four x/y pairs. func_080D484C indexes the first four-pair rectangle while drawing the four door overlays. The next four pairs form a complete centered 32-pixel square in every original ROM, followed by this same owner's four-direction offset and direction-selection tables. History c4bf64c6 declared only an unsized array, so no prior C extent establishes an eight-entry array. The second four-pair table retains the address-style name gUnk_096FDC20. Assigning this dormant but geometrically complete table to the same owner is an explicit source-organization inference; no live use or uniquely recovered original array boundary is claimed. Original ROM scans find no direct pointer to any byte of the second table. Ordinary definitions place the four earlier names, both coordinate tables and the existing readonly suffix in one 218-byte section. All original bytes, existing object extents, code, relocations and RAM are unchanged, and the former absolute coordinate alias and raw data fragment are removed.",
+    "boogie_boundary": "The status UI functions end at StockMesDisp. The following ten Boogie lifecycle/helper functions, private work pointer, name and descriptor share boss_boogie.c. The final three formerly status-owned helpers operate only on BoogieDiceWork and now precede its callbacks in bos4.c. Their parent pointer is the BoogieWork passed by TaskCreate, while BoogieWork.dialog is the returned Task handle; the obsolete overlapping prefix-view type is removed. The original caller uses an unsigned switch for func_080D9A90, supporting one canonical u32 return contract. Fresh sequential links of ordinary text/data/BSS preserve all three original regional layouts without extra alignment or padding. The intervening raw readonly table provider remains separate; this bounded source model does not claim its ownership is recovered."
   },
   "regions": {
     "us": {
@@ -3756,8 +3757,8 @@
           "unit": "status.c",
           "section": ".data",
           "address": "0x09EF4EF0",
-          "size": 312,
-          "sha256": "af80fe4a4402fd0368bc6ba9c8e9fba77e6917315a41800bdb920137a21a96b8",
+          "size": 288,
+          "sha256": "a06dc3141194e764c721c66a85bc41895b75195e16cdc8fd15d3aa07475e719d",
           "objects": [
             {
               "name": "gTaskDescStatus",
@@ -3818,17 +3819,26 @@
               "name": "gTaskDescStockMesDisp",
               "offset": 264,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "boss_boogie.c",
+          "section": ".data",
+          "address": "0x09EF5010",
+          "size": 24,
+          "sha256": "69a8004ed61f8c6fed433f12782d49752adf8c6f949875f91b2e35af4e6dbeca",
+          "objects": [
             {
               "name": "gTaskDescBosBoogie",
-              "offset": 288,
+              "offset": 0,
               "size": 24
             }
           ]
         },
         {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescBosBoogie",
+          "unit": "boss_boogie.c",
+          "section": ".rodata",
           "address": "0x096FDF44",
           "size": 16,
           "sha256": "dd98bd778f542019c9c41d07bbc3547585b7f43c9c4c3dcbd0e362bd0ca9d0b5",
@@ -10236,8 +10246,8 @@
           "unit": "status.c",
           "section": ".data",
           "address": "0x09ECC2DC",
-          "size": 312,
-          "sha256": "b9b0322550f4a5d92676298c4f2b4ac1e2bf83c4428f35685d6ae9cd7d47262f",
+          "size": 288,
+          "sha256": "fc7ec0824a0cfd85cea5e50130de129f282594e302ea59dba378c2dd86e63b86",
           "objects": [
             {
               "name": "gTaskDescStatus",
@@ -10298,17 +10308,26 @@
               "name": "gTaskDescStockMesDisp",
               "offset": 264,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "boss_boogie.c",
+          "section": ".data",
+          "address": "0x09ECC3FC",
+          "size": 24,
+          "sha256": "068e0f044084bb45203ac4ec55dd6449fdc4b72bf790f3b1d0e794906ce99c51",
+          "objects": [
             {
               "name": "gTaskDescBosBoogie",
-              "offset": 288,
+              "offset": 0,
               "size": 24
             }
           ]
         },
         {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescBosBoogie",
+          "unit": "boss_boogie.c",
+          "section": ".rodata",
           "address": "0x096B6720",
           "size": 16,
           "sha256": "dd98bd778f542019c9c41d07bbc3547585b7f43c9c4c3dcbd0e362bd0ca9d0b5",
@@ -16683,8 +16702,8 @@
           "unit": "status.c",
           "section": ".data",
           "address": "0x09F80270",
-          "size": 432,
-          "sha256": "933767ba66eba05425d3a0aebd1fb8e1111719ccf1d36b3147a53fb77bc4baf8",
+          "size": 408,
+          "sha256": "f516fc77ec20c50122feabd9364bba948a2dfc2881d27aacbe8bae7e0545877b",
           "objects": [
             {
               "name": "gTaskDescStatus",
@@ -16775,17 +16794,26 @@
               "name": "gTaskDescStockMesDisp",
               "offset": 384,
               "size": 24
-            },
+            }
+          ]
+        },
+        {
+          "unit": "boss_boogie.c",
+          "section": ".data",
+          "address": "0x09F80408",
+          "size": 24,
+          "sha256": "f921c6eda25c93779ee9b0837f14d18abe8d3a16935fc7d8305f4e34c0b614c8",
+          "objects": [
             {
               "name": "gTaskDescBosBoogie",
-              "offset": 408,
+              "offset": 0,
               "size": 24
             }
           ]
         },
         {
-          "unit": "status.c",
-          "section": ".rodata_registration_name_gTaskDescBosBoogie",
+          "unit": "boss_boogie.c",
+          "section": ".rodata",
           "address": "0x096CB2A4",
           "size": 16,
           "sha256": "dd98bd778f542019c9c41d07bbc3547585b7f43c9c4c3dcbd0e362bd0ca9d0b5",
