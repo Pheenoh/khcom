@@ -1,5 +1,27 @@
 {
   "us": {
+      "src/mode_backupstat.o": {
+        "base": "0x2035fe8",
+        "size": "0x20",
+        "symbols": {
+          "gUnk_02035FE8": {
+            "offset": "0x0",
+            "size": "0x1"
+          },
+          "gUnk_02035FE9": {
+            "offset": "0x1",
+            "size": "0x1"
+          },
+          "gBackupStatEntries": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gBackupStatStates": {
+            "offset": "0x8",
+            "size": "0x18"
+          }
+        }
+      },
       "src/ms_charge.o": {
         "base": "0x2035c10",
         "size": "0x211",
@@ -1871,6 +1893,28 @@
     }
   },
   "jp": {
+      "src/mode_backupstat.o": {
+        "base": "0x2035f58",
+        "size": "0x20",
+        "symbols": {
+          "gUnk_02035FE8": {
+            "offset": "0x0",
+            "size": "0x1"
+          },
+          "gUnk_02035FE9": {
+            "offset": "0x1",
+            "size": "0x1"
+          },
+          "gBackupStatEntries": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gBackupStatStates": {
+            "offset": "0x8",
+            "size": "0x18"
+          }
+        }
+      },
       "src/ms_charge.o": {
         "base": "0x2035b70",
         "size": "0x211",
@@ -3752,6 +3796,28 @@
     }
   },
   "eu": {
+      "src/mode_backupstat.o": {
+        "base": "0x20365f8",
+        "size": "0x20",
+        "symbols": {
+          "gUnk_02035FE8": {
+            "offset": "0x0",
+            "size": "0x1"
+          },
+          "gUnk_02035FE9": {
+            "offset": "0x1",
+            "size": "0x1"
+          },
+          "gBackupStatEntries": {
+            "offset": "0x4",
+            "size": "0x4"
+          },
+          "gBackupStatStates": {
+            "offset": "0x8",
+            "size": "0x18"
+          }
+        }
+      },
       "src/ms_charge.o": {
         "base": "0x2036220",
         "size": "0x211",

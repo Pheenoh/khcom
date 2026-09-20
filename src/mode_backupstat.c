@@ -22,7 +22,7 @@ const BackupStatEntry gUnk_099937E4[6] = {
 s8 gUnk_02035FE8;
 s8 gUnk_02035FE9;
 const BackupStatEntry* gBackupStatEntries;
-s16 gBackupStatStates[10];
+s16 gBackupStatStates[12];
 
 void mode_backupstat_0(void) {
     s32 i;
