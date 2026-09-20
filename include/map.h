@@ -1348,11 +1348,6 @@ extern u8 gUnk_09991284[];
 extern u8 gUnk_0994BF64[];
 extern u8 gUnk_0994C364[];
 extern u8 gUnk_08B21ACE[];
-extern const u8 gUnk_09EF6A34[];
-extern const u8 gUnk_09EF6A42[];
-extern u8 (*gUnk_09EF6A50[])(UnkStruct_080DFF1C*);
-extern u8 (*gUnk_09EF6A88[])(UnkStruct_080E8B1C*);
-extern const u8 gUnk_09EF6AB0[];
 
 void func_080ED250(u8* work);
 void func_080EBE90(LoadGameMenuWork* work);

@@ -221,95 +221,6 @@ LocalizedText gMapNameEu_08894578 __attribute__((section(".data_map_text_gMapNam
 
 #endif
 
-MapNameText* gUnk_09EF6FCC[13] __attribute__((section(".data_map_text_gUnk_09EF6FCC"))) = {
-#if defined(VERSION_US)
-    gMapNameTextUs_0815B5F6,
-    gMapNameTextUs_0815B630,
-    gMapNameTextUs_0815B66C,
-    gMapNameTextUs_0815B6A6,
-    gMapNameTextUs_0815B6E2,
-    gMapNameTextUs_0815B71C,
-    gMapNameTextUs_0815B756,
-    gMapNameTextUs_0815B794,
-    gMapNameTextUs_0815B7D0,
-    gMapNameTextUs_0815B80A,
-    gMapNameTextUs_0815B844,
-    gMapNameTextUs_0815B884,
-    gMapNameTextUs_0815B8C2,
-#elif defined(VERSION_JP)
-    gMapNameTextJp_0814F52C,
-    gMapNameTextJp_0814F53C,
-    gMapNameTextJp_0814F54C,
-    gMapNameTextJp_0814F55C,
-    gMapNameTextJp_0814F56C,
-    gMapNameTextJp_0814F57C,
-    gMapNameTextJp_0814F58C,
-    gMapNameTextJp_0814F59C,
-    gMapNameTextJp_0814F5AC,
-    gMapNameTextJp_0814F5BC,
-    gMapNameTextJp_0814F5D0,
-    gMapNameTextJp_0814F5E4,
-    gMapNameTextJp_0814F5F8,
-#elif defined(VERSION_EU)
-    &gMapNameEu_08893480,
-    &gMapNameEu_0889352C,
-    &gMapNameEu_088935D8,
-    &gMapNameEu_08893684,
-    &gMapNameEu_08893730,
-    &gMapNameEu_088937DC,
-    &gMapNameEu_0889388C,
-    &gMapNameEu_08893938,
-    &gMapNameEu_088939E4,
-    &gMapNameEu_08893A94,
-    &gMapNameEu_08893B48,
-    &gMapNameEu_08893BFC,
-    &gMapNameEu_08893CB8,
-#endif
-};
-
-MapNameText* gUnk_09EF7000[12] __attribute__((section(".data_map_text_gUnk_09EF7000"))) = {
-#if defined(VERSION_US)
-    gMapNameTextUs_0815B906,
-    gMapNameTextUs_0815B948,
-    gMapNameTextUs_0815B98A,
-    gMapNameTextUs_0815B9C6,
-    gMapNameTextUs_0815BA04,
-    gMapNameTextUs_0815BA44,
-    gMapNameTextUs_0815BA84,
-    gMapNameTextUs_0815BAC0,
-    gMapNameTextUs_0815BAFE,
-    gMapNameTextUs_0815BB3C,
-    gMapNameTextUs_0815BB7C,
-    gMapNameTextUs_0815BBB8,
-#elif defined(VERSION_JP)
-    gMapNameTextJp_0814F60C,
-    gMapNameTextJp_0814F624,
-    gMapNameTextJp_0814F63C,
-    gMapNameTextJp_0814F654,
-    gMapNameTextJp_0814F668,
-    gMapNameTextJp_0814F67C,
-    gMapNameTextJp_0814F690,
-    gMapNameTextJp_0814F6A4,
-    gMapNameTextJp_0814F6B8,
-    gMapNameTextJp_0814F6CC,
-    gMapNameTextJp_0814F6E0,
-    gMapNameTextJp_0814F6F4,
-#elif defined(VERSION_EU)
-    &gMapNameEu_08893D78,
-    &gMapNameEu_08893E38,
-    &gMapNameEu_08893EF4,
-    &gMapNameEu_08893FAC,
-    &gMapNameEu_08894068,
-    &gMapNameEu_08894124,
-    &gMapNameEu_088941DC,
-    &gMapNameEu_08894294,
-    &gMapNameEu_0889434C,
-    &gMapNameEu_08894408,
-    &gMapNameEu_088944C0,
-    &gMapNameEu_08894578,
-#endif
-};
-
 MapNameText* gUnk_09EF7048[28] __attribute__((section(".data_map_text_gUnk_09EF7048"))) = {
 #if defined(VERSION_US)
     gUnk_0815ADD2,
@@ -400,5 +311,3 @@ MapNameText* gUnk_09EF7048[28] __attribute__((section(".data_map_text_gUnk_09EF7
     &gMapNameEu_088933D4,
 #endif
 };
-
-u8 gUnk_09EF6C38[] __attribute__((section(".rodata_map_debug_underscore"), aligned(1))) = "_";

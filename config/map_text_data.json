@@ -2,39 +2,12 @@
   "version": 1,
   "provenance": {
     "map_names": "Native Sora thirteen-floor and Riku twelve-floor label tables selected by func_080F7AB4, plus the room-name pointer table used by func_08093C18 and task_room_name_0. The twenty-eight room names consist of twenty-six normal map-card names and Unknown Place/Hidden Chamber, ending at the next independent TaskDesc. EU pointers select real five-language LocalizedText records rather than text bytes. Every record and regional string terminator is checked directly against its original ROM; no localized address correspondence is inferred.",
-    "debug_underscore": "EncodeSmallFontString consumes the original ASCII underscore and its byte terminator through the map-debug task. This is two bytes in all three ROMs, not a UTF-16 value or four-byte data array. The following native TaskDesc supplies separately verified two-byte four-byte alignment."
+    "debug_underscore": "EncodeSmallFontString consumes the original ASCII underscore and its byte terminator through the map-debug task. This is two bytes in all three ROMs, not a UTF-16 value or four-byte data array. The following native TaskDesc supplies separately verified two-byte four-byte alignment.",
+    "map_owner": "The thirteen-floor and twelve-floor indexes and the two-byte debug underscore are defined in map.c with their actual consumers. Their original address, extent and content contracts are retained in that native owner run in registration_data.json. The shared room-name index and all EU localized records remain here with unchanged definitions and asset payloads."
   },
   "regions": {
     "us": {
       "placements": [
-        {
-          "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF6FCC",
-          "address": "0x9ef6fcc",
-          "size": 52,
-          "sha256": "9d3abaad8846f00d4937cbf3ac3e34e83acba58a3e9e8416cd7b33e6450b1bbe",
-          "objects": [
-            {
-              "name": "gUnk_09EF6FCC",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7000",
-          "address": "0x9ef7000",
-          "size": 48,
-          "sha256": "9eb8db6489f6dd1157e8ff8810b905fc1291850b7ac8a21ffd0a8b95128621b8",
-          "objects": [
-            {
-              "name": "gUnk_09EF7000",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
         {
           "unit": "map_text_data.c",
           "section": ".data_map_text_gUnk_09EF7048",
@@ -46,20 +19,6 @@
               "name": "gUnk_09EF7048",
               "offset": 0,
               "size": 112
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".rodata_map_debug_underscore",
-          "address": "0x9ef6c38",
-          "size": 2,
-          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
-          "objects": [
-            {
-              "name": "gUnk_09EF6C38",
-              "offset": 0,
-              "size": 2
             }
           ]
         }
@@ -233,34 +192,6 @@
       "placements": [
         {
           "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF6FCC",
-          "address": "0x9ece3b8",
-          "size": 52,
-          "sha256": "52f3795e80ae029ab207b223aed57625b28ee81f2f7e407dca2b2be51019bf52",
-          "objects": [
-            {
-              "name": "gUnk_09EF6FCC",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7000",
-          "address": "0x9ece3ec",
-          "size": 48,
-          "sha256": "323676c9b7d76f81e03d260ba7a8403b428f129d52905e2d61214c7de2b86bbe",
-          "objects": [
-            {
-              "name": "gUnk_09EF7000",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
           "section": ".data_map_text_gUnk_09EF7048",
           "address": "0x9ece434",
           "size": 112,
@@ -270,20 +201,6 @@
               "name": "gUnk_09EF7048",
               "offset": 0,
               "size": 112
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".rodata_map_debug_underscore",
-          "address": "0x9ece024",
-          "size": 2,
-          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
-          "objects": [
-            {
-              "name": "gUnk_09EF6C38",
-              "offset": 0,
-              "size": 2
             }
           ]
         }
@@ -455,34 +372,6 @@
     },
     "eu": {
       "placements": [
-        {
-          "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF6FCC",
-          "address": "0x9f8263c",
-          "size": 52,
-          "sha256": "2d55835164bbbe8dd8384233bb8cd736b49db948166951eec671401d799d44a1",
-          "objects": [
-            {
-              "name": "gUnk_09EF6FCC",
-              "offset": 0,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7000",
-          "address": "0x9f82670",
-          "size": 48,
-          "sha256": "1dfc9a73d61df3c07b6abb6a8a75db828139a636202943dbac2d2effc5b06f09",
-          "objects": [
-            {
-              "name": "gUnk_09EF7000",
-              "offset": 0,
-              "size": 48
-            }
-          ]
-        },
         {
           "unit": "map_text_data.c",
           "section": ".data_map_text_gUnk_09EF7048",
@@ -872,20 +761,6 @@
               "name": "gMapNameEu_08894578",
               "offset": 0,
               "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "map_text_data.c",
-          "section": ".rodata_map_debug_underscore",
-          "address": "0x9f822a8",
-          "size": 2,
-          "sha256": "090c554bb6a344300e5690ce6f80c4ef6ee6cf5bd0fef3fde87a079dee2fa70c",
-          "objects": [
-            {
-              "name": "gUnk_09EF6C38",
-              "offset": 0,
-              "size": 2
             }
           ]
         }
