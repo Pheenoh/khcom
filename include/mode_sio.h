@@ -7,8 +7,6 @@
 
 #include "remaining_resource_data.h"
 
-#include "sio_menu_data.h"
-
 #include "card_description_data.h"
 
 #include "animation_resource_data.h"
@@ -56,6 +54,33 @@
 #include "taskpool.h"
 #include "m4a.h"
 #include "poo_api.h"
+typedef struct SioWorldEntry {
+    void* tiles;
+    u16 tilesSize;
+    u16 unk_06;
+    void* map;
+    u16 mapSize;
+    u16 unk_0E;
+    void* palette;
+    u16 paletteSize;
+    u16 unk_16;
+    void* text;
+    u8 world;
+    u8 unk_1D;
+    u16 textX;
+} SioWorldEntry;
+
+typedef struct SioChgCardPos {
+    s16 unk_00;
+    s16 unk_02;
+    s8 unk_04;
+    s8 unk_05;
+    s8 unk_06;
+    s8 unk_07;
+    s8 unk_08;
+    u8 unk_09[3];
+} SioChgCardPos;
+
 typedef struct SioAnimDef {
     void* gfxTable;
     void* anims;

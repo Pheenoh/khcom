@@ -8,62 +8,6 @@
     "us": {
       "placements": [
         {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF1318",
-          "address": "0x9ef1318",
-          "size": 416,
-          "sha256": "c6f9e65411481839c3a68457f59ded46769c9ced212d482d598de6dee2e513b4",
-          "objects": [
-            {
-              "name": "gUnk_09EF1318",
-              "offset": 0,
-              "size": 416
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14B8",
-          "address": "0x9ef14b8",
-          "size": 12,
-          "sha256": "3d5e093ce5c369e198d7a6195c567658d6c71d899891e182d9dcca9dc268260d",
-          "objects": [
-            {
-              "name": "gUnk_09EF14B8",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14C4",
-          "address": "0x9ef14c4",
-          "size": 24,
-          "sha256": "490c145e107b3bd2337c4384a58a665aa9ce26c6eb5632923643a497e6cef400",
-          "objects": [
-            {
-              "name": "gUnk_09EF14C4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF150C",
-          "address": "0x9ef150c",
-          "size": 156,
-          "sha256": "8284e0ea712071116a53a6f352cd7ed63bdc18e469bc31697ae3821a8c0f00f9",
-          "objects": [
-            {
-              "name": "gUnk_09EF150C",
-              "offset": 0,
-              "size": 156
-            }
-          ]
-        },
-        {
           "unit": "world_intro_data.c",
           "section": ".data_gUnk_09EF167C",
           "address": "0x9ef167c",
@@ -250,62 +194,6 @@
     "jp": {
       "placements": [
         {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF1318",
-          "address": "0x9ec8704",
-          "size": 416,
-          "sha256": "b50bfed23de6608781ffcbe6d5fba34bf7889d1f4ef6621da1f32d5427773ecf",
-          "objects": [
-            {
-              "name": "gUnk_09EF1318",
-              "offset": 0,
-              "size": 416
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14B8",
-          "address": "0x9ec88a4",
-          "size": 12,
-          "sha256": "3d5e093ce5c369e198d7a6195c567658d6c71d899891e182d9dcca9dc268260d",
-          "objects": [
-            {
-              "name": "gUnk_09EF14B8",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14C4",
-          "address": "0x9ec88b0",
-          "size": 24,
-          "sha256": "490c145e107b3bd2337c4384a58a665aa9ce26c6eb5632923643a497e6cef400",
-          "objects": [
-            {
-              "name": "gUnk_09EF14C4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF150C",
-          "address": "0x9ec88f8",
-          "size": 156,
-          "sha256": "8284e0ea712071116a53a6f352cd7ed63bdc18e469bc31697ae3821a8c0f00f9",
-          "objects": [
-            {
-              "name": "gUnk_09EF150C",
-              "offset": 0,
-              "size": 156
-            }
-          ]
-        },
-        {
           "unit": "world_intro_data.c",
           "section": ".data_gUnk_09EF167C",
           "address": "0x9ec8a68",
@@ -491,48 +379,6 @@
     },
     "eu": {
       "placements": [
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF1318",
-          "address": "0x9f7c60c",
-          "size": 416,
-          "sha256": "2234c8a21e72634e0a6a8504b42ef49a2ec1883377b4f82f3b6f9dafc82f5afa",
-          "objects": [
-            {
-              "name": "gUnk_09EF1318",
-              "offset": 0,
-              "size": 416
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14B8",
-          "address": "0x9f7c7ac",
-          "size": 12,
-          "sha256": "3d5e093ce5c369e198d7a6195c567658d6c71d899891e182d9dcca9dc268260d",
-          "objects": [
-            {
-              "name": "gUnk_09EF14B8",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "sio_menu_data.c",
-          "section": ".data_gUnk_09EF14C4",
-          "address": "0x9f7c7b8",
-          "size": 24,
-          "sha256": "490c145e107b3bd2337c4384a58a665aa9ce26c6eb5632923643a497e6cef400",
-          "objects": [
-            {
-              "name": "gUnk_09EF14C4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
         {
           "unit": "world_intro_data.c",
           "section": ".data_gUnk_09EF167C",
