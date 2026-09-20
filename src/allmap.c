@@ -18,10 +18,10 @@ extern u8 gUnkEu_09814E40[];
 extern u8 gUnkEu_09815640[];
 #endif
 
-s32 gUnk_02034E84;
-s32 gUnk_02034E88;
-s32 gUnk_02034E8C;
-s32 gUnk_02034E90;
+static s32 gUnk_02034E84;
+static s32 gUnk_02034E88;
+static s32 gUnk_02034E8C;
+static s32 gUnk_02034E90;
 
 void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     void* pal;
