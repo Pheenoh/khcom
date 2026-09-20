@@ -13,8 +13,8 @@ typedef struct AcgTransWork {
     u32 dst;
     u32 src;
     u16 size;
-    u16 unk_00A;
-    u16 unk_00C;
+    u16 chunkSize;
+    u16 transferredBytes;
     u32 bg;
 } AcgTransWork;
 
@@ -22,7 +22,7 @@ typedef struct AcgTransConfig {
     u32 src;
     u32 dst;
     u16 size;
-    u16 unk_00A;
+    u16 frames;
     u32 bg;
 } AcgTransConfig;
 
