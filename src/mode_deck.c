@@ -8,8 +8,8 @@
 #include "mode_test_api.h"
 
 
-TaskPool gUnk_02034A30;
-u8 gUnk_02034A44;
+static TaskPool gUnk_02034A30;
+static u8 gUnk_02034A44;
 
 void func_08060A74(void) {
     gUnk_02034A44 = 0;

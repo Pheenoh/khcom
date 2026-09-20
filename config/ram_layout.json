@@ -1778,12 +1778,8 @@
       "sections": [
         {
           "base": "0x2034970",
-          "size": "0x20",
+          "size": "0x1c",
           "symbols": {
-            "gUnkJp_0203498C": {
-              "offset": "0x1c",
-              "size": "0x4"
-            },
             "gUnk_02034A14": {
               "offset": "0x0",
               "size": "0x4"
