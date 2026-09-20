@@ -3936,7 +3936,7 @@ void func_080736F8(MsgWinWork* p) {
     }
 }
 void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
-    MsgFaceAnim* anim;
+    const MsgFaceAnim* anim;
     u32 n;
 
     p->tiles = AllocObjTiles(0x12C0, 0);
@@ -3977,7 +3977,7 @@ void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
     }
 }
 u8 msgface_1(MsgFaceWork* p, void* a) {
-    MsgFaceAnim* anim = NULL;
+    const MsgFaceAnim* anim = NULL;
     u32 n;
 
     if (p->face->portraitId != 62) {
@@ -4096,7 +4096,7 @@ u8 func_08073B54(MsgFaceWork* p, void* a) {
     return 1;
 }
 u8 func_08073B9C(MsgFaceWork* p, void* a) {
-    MsgFaceAnim* t;
+    const MsgFaceAnim* t;
     s32 n;
 
     t = NULL;
@@ -4133,7 +4133,7 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
 }
 
 u8 func_08073CA4(MsgFaceWork* p, void* a) {
-    MsgFaceAnim* t;
+    const MsgFaceAnim* t;
 
     if (p->unk_2C < 0) {
         ApproachValue(&p->unk_2C, -2, p->unk_30);

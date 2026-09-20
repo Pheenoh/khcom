@@ -1,7 +1,7 @@
 #include "msg_portrait_data.h"
 #include "msg_portrait_assets.h"
 
-MsgFaceAnim gUnk_09032484[8] __attribute__((section(".data_msg_portrait_09032484"))) = {
+const MsgFaceAnim gUnk_09032484[8] = {
     {
         gUnk_090D806A,
         gUnk_096149F8,
@@ -76,7 +76,7 @@ MsgFaceAnim gUnk_09032484[8] __attribute__((section(".data_msg_portrait_09032484
     },
 };
 
-MsgFaceAnim gUnk_09032524[6] __attribute__((section(".data_msg_portrait_09032524"))) = {
+const MsgFaceAnim gUnk_09032524[6] = {
     {
         gUnk_090DDB7C,
         gUnk_09614A18,
@@ -133,7 +133,7 @@ MsgFaceAnim gUnk_09032524[6] __attribute__((section(".data_msg_portrait_09032524
     },
 };
 
-MsgFaceAnim gUnk_0903259C[5] __attribute__((section(".data_msg_portrait_0903259C"))) = {
+const MsgFaceAnim gUnk_0903259C[5] = {
     {
         gUnk_090DDB7C,
         gUnk_09614CB8,
@@ -181,7 +181,7 @@ MsgFaceAnim gUnk_0903259C[5] __attribute__((section(".data_msg_portrait_0903259C
     },
 };
 
-MsgFaceAnim gUnk_09032600[5] __attribute__((section(".data_msg_portrait_09032600"))) = {
+const MsgFaceAnim gUnk_09032600[5] = {
     {
         gUnk_090E93DC,
         gUnk_09614A38,
@@ -229,7 +229,7 @@ MsgFaceAnim gUnk_09032600[5] __attribute__((section(".data_msg_portrait_09032600
     },
 };
 
-MsgFaceAnim gUnk_09032664[3] __attribute__((section(".data_msg_portrait_09032664"))) = {
+const MsgFaceAnim gUnk_09032664[3] = {
     {
         gUnk_090E93DC,
         gUnk_09614CD8,
@@ -259,7 +259,7 @@ MsgFaceAnim gUnk_09032664[3] __attribute__((section(".data_msg_portrait_09032664
     },
 };
 
-MsgFaceAnim gUnk_090326A0 __attribute__((section(".data_msg_portrait_090326A0"))) = {
+const MsgFaceAnim gUnk_090326A0 = {
     gUnk_090F355E,
     gUnk_09614A58,
     gUnk_09EEC954,
@@ -269,7 +269,7 @@ MsgFaceAnim gUnk_090326A0 __attribute__((section(".data_msg_portrait_090326A0"))
     { 0, 0 },
 };
 
-MsgFaceAnim gUnk_090326B4[4] __attribute__((section(".data_msg_portrait_090326B4"))) = {
+const MsgFaceAnim gUnk_090326B4[4] = {
     {
         gUnk_090F4176,
         gUnk_09614A78,
@@ -308,7 +308,7 @@ MsgFaceAnim gUnk_090326B4[4] __attribute__((section(".data_msg_portrait_090326B4
     },
 };
 
-MsgFaceAnim gUnk_09032704[4] __attribute__((section(".data_msg_portrait_09032704"))) = {
+const MsgFaceAnim gUnk_09032704[4] = {
     {
         gUnk_090FC130,
         gUnk_09614A98,
@@ -347,7 +347,7 @@ MsgFaceAnim gUnk_09032704[4] __attribute__((section(".data_msg_portrait_09032704
     },
 };
 
-MsgFaceAnim gUnk_09032754[5] __attribute__((section(".data_msg_portrait_09032754"))) = {
+const MsgFaceAnim gUnk_09032754[5] = {
     {
         gUnk_090FDBF4,
         gUnk_09614AB8,
@@ -395,7 +395,7 @@ MsgFaceAnim gUnk_09032754[5] __attribute__((section(".data_msg_portrait_09032754
     },
 };
 
-MsgFaceAnim gUnk_090327B8 __attribute__((section(".data_msg_portrait_090327B8"))) = {
+const MsgFaceAnim gUnk_090327B8 = {
     gUnk_09100820,
     gUnk_09614AD8,
     gUnk_09EECAC8,
@@ -405,7 +405,7 @@ MsgFaceAnim gUnk_090327B8 __attribute__((section(".data_msg_portrait_090327B8"))
     { 0, 0 },
 };
 
-MsgFaceAnim gUnk_090327CC[2] __attribute__((section(".data_msg_portrait_090327CC"))) = {
+const MsgFaceAnim gUnk_090327CC[2] = {
     {
         gUnk_0910150E,
         gUnk_09614AF8,
@@ -426,7 +426,7 @@ MsgFaceAnim gUnk_090327CC[2] __attribute__((section(".data_msg_portrait_090327CC
     },
 };
 
-MsgFaceAnim gUnk_090327F4[2] __attribute__((section(".data_msg_portrait_090327F4"))) = {
+const MsgFaceAnim gUnk_090327F4[2] = {
     {
         gUnk_09102A5E,
         gUnk_09614B18,
@@ -447,7 +447,7 @@ MsgFaceAnim gUnk_090327F4[2] __attribute__((section(".data_msg_portrait_090327F4
     },
 };
 
-MsgFaceAnim gUnk_0903281C[15] __attribute__((section(".data_msg_portrait_0903281C"))) = {
+const MsgFaceAnim gUnk_0903281C[15] = {
     {
         gUnk_09104D42,
         gUnk_09614B38,
@@ -585,7 +585,7 @@ MsgFaceAnim gUnk_0903281C[15] __attribute__((section(".data_msg_portrait_0903281
     },
 };
 
-MsgFaceAnim gUnk_09032948[5] __attribute__((section(".data_msg_portrait_09032948"))) = {
+const MsgFaceAnim gUnk_09032948[5] = {
     {
         gUnk_09108B24,
         gUnk_09614B58,
@@ -633,7 +633,7 @@ MsgFaceAnim gUnk_09032948[5] __attribute__((section(".data_msg_portrait_09032948
     },
 };
 
-MsgFaceAnim gUnk_090329AC[4] __attribute__((section(".data_msg_portrait_090329AC"))) = {
+const MsgFaceAnim gUnk_090329AC[4] = {
     {
         gUnk_0910D0D6,
         gUnk_09614B78,
@@ -672,7 +672,7 @@ MsgFaceAnim gUnk_090329AC[4] __attribute__((section(".data_msg_portrait_090329AC
     },
 };
 
-MsgFaceAnim gUnk_090329FC[6] __attribute__((section(".data_msg_portrait_090329FC"))) = {
+const MsgFaceAnim gUnk_090329FC[6] = {
     {
         gUnk_09116698,
         gUnk_09614B98,
@@ -729,7 +729,7 @@ MsgFaceAnim gUnk_090329FC[6] __attribute__((section(".data_msg_portrait_090329FC
     },
 };
 
-MsgFaceAnim gUnk_09032A74[3] __attribute__((section(".data_msg_portrait_09032A74"))) = {
+const MsgFaceAnim gUnk_09032A74[3] = {
     {
         gUnk_09119238,
         gUnk_09614BB8,
@@ -759,7 +759,7 @@ MsgFaceAnim gUnk_09032A74[3] __attribute__((section(".data_msg_portrait_09032A74
     },
 };
 
-MsgFaceAnim gUnk_09032AB0[5] __attribute__((section(".data_msg_portrait_09032AB0"))) = {
+const MsgFaceAnim gUnk_09032AB0[5] = {
     {
         gUnk_0911D7D0,
         gUnk_09614BD8,
@@ -807,7 +807,7 @@ MsgFaceAnim gUnk_09032AB0[5] __attribute__((section(".data_msg_portrait_09032AB0
     },
 };
 
-MsgFaceAnim gUnk_09032B14[4] __attribute__((section(".data_msg_portrait_09032B14"))) = {
+const MsgFaceAnim gUnk_09032B14[4] = {
     {
         gUnk_09120572,
         gUnk_09614BF8,
@@ -846,7 +846,7 @@ MsgFaceAnim gUnk_09032B14[4] __attribute__((section(".data_msg_portrait_09032B14
     },
 };
 
-MsgFaceAnim gUnk_09032B64[3] __attribute__((section(".data_msg_portrait_09032B64"))) = {
+const MsgFaceAnim gUnk_09032B64[3] = {
     {
         gUnk_09122BB8,
         gUnk_09614C18,
@@ -876,7 +876,7 @@ MsgFaceAnim gUnk_09032B64[3] __attribute__((section(".data_msg_portrait_09032B64
     },
 };
 
-MsgFaceAnim gUnk_09032BA0[3] __attribute__((section(".data_msg_portrait_09032BA0"))) = {
+const MsgFaceAnim gUnk_09032BA0[3] = {
     {
         gUnk_09123D24,
         gUnk_09614C38,
@@ -906,7 +906,7 @@ MsgFaceAnim gUnk_09032BA0[3] __attribute__((section(".data_msg_portrait_09032BA0
     },
 };
 
-MsgFaceAnim gUnk_09032BDC[3] __attribute__((section(".data_msg_portrait_09032BDC"))) = {
+const MsgFaceAnim gUnk_09032BDC[3] = {
     {
         gUnk_09125D3A,
         gUnk_09614C58,
@@ -936,7 +936,7 @@ MsgFaceAnim gUnk_09032BDC[3] __attribute__((section(".data_msg_portrait_09032BDC
     },
 };
 
-MsgFaceAnim gUnk_09032C18[4] __attribute__((section(".data_msg_portrait_09032C18"))) = {
+const MsgFaceAnim gUnk_09032C18[4] = {
     {
         gUnk_09127738,
         gUnk_09614C78,
@@ -975,7 +975,7 @@ MsgFaceAnim gUnk_09032C18[4] __attribute__((section(".data_msg_portrait_09032C18
     },
 };
 
-MsgFaceAnim gUnk_09032C68[5] __attribute__((section(".data_msg_portrait_09032C68"))) = {
+const MsgFaceAnim gUnk_09032C68[5] = {
     {
         gUnk_0912AE36,
         gUnk_09614C98,
@@ -1023,7 +1023,7 @@ MsgFaceAnim gUnk_09032C68[5] __attribute__((section(".data_msg_portrait_09032C68
     },
 };
 
-MsgFaceAnim gUnk_09032CCC __attribute__((section(".data_msg_portrait_09032CCC"))) = {
+const MsgFaceAnim gUnk_09032CCC = {
     gUnk_0915A48C,
     gUnk_09614E78,
     gUnk_09EED6A8,
@@ -1033,7 +1033,7 @@ MsgFaceAnim gUnk_09032CCC __attribute__((section(".data_msg_portrait_09032CCC"))
     { 0, 0 },
 };
 
-MsgFaceAnim gUnk_09032CE0[2] __attribute__((section(".data_msg_portrait_09032CE0"))) = {
+const MsgFaceAnim gUnk_09032CE0[2] = {
     {
         gUnk_0915B290,
         gUnk_09614E98,
@@ -1054,7 +1054,7 @@ MsgFaceAnim gUnk_09032CE0[2] __attribute__((section(".data_msg_portrait_09032CE0
     },
 };
 
-MsgFaceAnim gUnk_09032D08[6] __attribute__((section(".data_msg_portrait_09032D08"))) = {
+const MsgFaceAnim gUnk_09032D08[6] = {
     {
         gUnk_091348F0,
         gUnk_09614CF8,
@@ -1111,7 +1111,7 @@ MsgFaceAnim gUnk_09032D08[6] __attribute__((section(".data_msg_portrait_09032D08
     },
 };
 
-MsgFaceAnim gUnk_09032D80[6] __attribute__((section(".data_msg_portrait_09032D80"))) = {
+const MsgFaceAnim gUnk_09032D80[6] = {
     {
         gUnk_09138FDE,
         gUnk_09614D18,
@@ -1168,7 +1168,7 @@ MsgFaceAnim gUnk_09032D80[6] __attribute__((section(".data_msg_portrait_09032D80
     },
 };
 
-MsgFaceAnim gUnk_09032DF8[2] __attribute__((section(".data_msg_portrait_09032DF8"))) = {
+const MsgFaceAnim gUnk_09032DF8[2] = {
     {
         gUnk_0913D796,
         gUnk_09614D38,
@@ -1189,7 +1189,7 @@ MsgFaceAnim gUnk_09032DF8[2] __attribute__((section(".data_msg_portrait_09032DF8
     },
 };
 
-MsgFaceAnim gUnk_09032E20[4] __attribute__((section(".data_msg_portrait_09032E20"))) = {
+const MsgFaceAnim gUnk_09032E20[4] = {
     {
         gUnk_0914A5AC,
         gUnk_09614DB8,
@@ -1228,7 +1228,7 @@ MsgFaceAnim gUnk_09032E20[4] __attribute__((section(".data_msg_portrait_09032E20
     },
 };
 
-MsgFaceAnim gUnk_09032E70[4] __attribute__((section(".data_msg_portrait_09032E70"))) = {
+const MsgFaceAnim gUnk_09032E70[4] = {
     {
         gUnk_0914D870,
         gUnk_09614DD8,
@@ -1267,7 +1267,7 @@ MsgFaceAnim gUnk_09032E70[4] __attribute__((section(".data_msg_portrait_09032E70
     },
 };
 
-MsgFaceAnim gUnk_09032EC0[6] __attribute__((section(".data_msg_portrait_09032EC0"))) = {
+const MsgFaceAnim gUnk_09032EC0[6] = {
     {
         gUnk_0915362A,
         gUnk_09614E18,
@@ -1324,7 +1324,7 @@ MsgFaceAnim gUnk_09032EC0[6] __attribute__((section(".data_msg_portrait_09032EC0
     },
 };
 
-MsgFaceAnim gUnk_09032F38[5] __attribute__((section(".data_msg_portrait_09032F38"))) = {
+const MsgFaceAnim gUnk_09032F38[5] = {
     {
         gUnk_0915CCF8,
         gUnk_09614EB8,
@@ -1372,7 +1372,7 @@ MsgFaceAnim gUnk_09032F38[5] __attribute__((section(".data_msg_portrait_09032F38
     },
 };
 
-MsgFaceAnim gUnk_09032F9C[4] __attribute__((section(".data_msg_portrait_09032F9C"))) = {
+const MsgFaceAnim gUnk_09032F9C[4] = {
     {
         gUnk_09163C18,
         gUnk_09614EF8,
@@ -1411,7 +1411,7 @@ MsgFaceAnim gUnk_09032F9C[4] __attribute__((section(".data_msg_portrait_09032F9C
     },
 };
 
-MsgFaceAnim gUnk_09032FEC[4] __attribute__((section(".data_msg_portrait_09032FEC"))) = {
+const MsgFaceAnim gUnk_09032FEC[4] = {
     {
         gUnk_091684B0,
         gUnk_09614F18,
@@ -1450,7 +1450,7 @@ MsgFaceAnim gUnk_09032FEC[4] __attribute__((section(".data_msg_portrait_09032FEC
     },
 };
 
-MsgFaceAnim gUnk_0903303C[3] __attribute__((section(".data_msg_portrait_0903303C"))) = {
+const MsgFaceAnim gUnk_0903303C[3] = {
     {
         gUnk_0916B056,
         gUnk_09614F38,
@@ -1480,7 +1480,7 @@ MsgFaceAnim gUnk_0903303C[3] __attribute__((section(".data_msg_portrait_0903303C
     },
 };
 
-MsgFaceAnim gUnk_09033078[3] __attribute__((section(".data_msg_portrait_09033078"))) = {
+const MsgFaceAnim gUnk_09033078[3] = {
     {
         gUnk_0916CD7C,
         gUnk_09614F58,
@@ -1510,7 +1510,7 @@ MsgFaceAnim gUnk_09033078[3] __attribute__((section(".data_msg_portrait_09033078
     },
 };
 
-MsgFaceAnim gUnk_090330B4[2] __attribute__((section(".data_msg_portrait_090330B4"))) = {
+const MsgFaceAnim gUnk_090330B4[2] = {
     {
         gUnk_0916E20A,
         gUnk_09614F78,
@@ -1531,7 +1531,7 @@ MsgFaceAnim gUnk_090330B4[2] __attribute__((section(".data_msg_portrait_090330B4
     },
 };
 
-MsgFaceAnim gUnk_090330DC[2] __attribute__((section(".data_msg_portrait_090330DC"))) = {
+const MsgFaceAnim gUnk_090330DC[2] = {
     {
         gUnk_0916FE52,
         gUnk_09614F98,
@@ -1552,7 +1552,7 @@ MsgFaceAnim gUnk_090330DC[2] __attribute__((section(".data_msg_portrait_090330DC
     },
 };
 
-MsgFaceAnim gUnk_09033104[3] __attribute__((section(".data_msg_portrait_09033104"))) = {
+const MsgFaceAnim gUnk_09033104[3] = {
     {
         gUnk_09170ED0,
         gUnk_09614FB8,
@@ -1582,7 +1582,7 @@ MsgFaceAnim gUnk_09033104[3] __attribute__((section(".data_msg_portrait_09033104
     },
 };
 
-MsgFaceAnim gUnk_09033140[3] __attribute__((section(".data_msg_portrait_09033140"))) = {
+const MsgFaceAnim gUnk_09033140[3] = {
     {
         gUnk_091728BC,
         gUnk_09614FD8,
@@ -1612,7 +1612,7 @@ MsgFaceAnim gUnk_09033140[3] __attribute__((section(".data_msg_portrait_09033140
     },
 };
 
-MsgFaceAnim gUnk_0903317C[4] __attribute__((section(".data_msg_portrait_0903317C"))) = {
+const MsgFaceAnim gUnk_0903317C[4] = {
     {
         gUnk_0917D0D0,
         gUnk_09615038,
@@ -1651,7 +1651,7 @@ MsgFaceAnim gUnk_0903317C[4] __attribute__((section(".data_msg_portrait_0903317C
     },
 };
 
-MsgFaceAnim gUnk_090331CC[3] __attribute__((section(".data_msg_portrait_090331CC"))) = {
+const MsgFaceAnim gUnk_090331CC[3] = {
     {
         gUnk_091808CE,
         gUnk_09615078,
@@ -1681,7 +1681,7 @@ MsgFaceAnim gUnk_090331CC[3] __attribute__((section(".data_msg_portrait_090331CC
     },
 };
 
-MsgFaceAnim gUnk_09033208[4] __attribute__((section(".data_msg_portrait_09033208"))) = {
+const MsgFaceAnim gUnk_09033208[4] = {
     {
         gUnk_0918D538,
         gUnk_096150F8,
@@ -1720,7 +1720,7 @@ MsgFaceAnim gUnk_09033208[4] __attribute__((section(".data_msg_portrait_09033208
     },
 };
 
-MsgFaceAnim gUnk_09033258[4] __attribute__((section(".data_msg_portrait_09033258"))) = {
+const MsgFaceAnim gUnk_09033258[4] = {
     {
         gUnk_09160A9E,
         gUnk_09614ED8,
@@ -1759,7 +1759,7 @@ MsgFaceAnim gUnk_09033258[4] __attribute__((section(".data_msg_portrait_09033258
     },
 };
 
-MsgFaceAnim gUnk_090332A8[5] __attribute__((section(".data_msg_portrait_090332A8"))) = {
+const MsgFaceAnim gUnk_090332A8[5] = {
     {
         gUnk_0918218C,
         gUnk_09615098,
@@ -1807,7 +1807,7 @@ MsgFaceAnim gUnk_090332A8[5] __attribute__((section(".data_msg_portrait_090332A8
     },
 };
 
-MsgFaceAnim gUnk_0903330C[3] __attribute__((section(".data_msg_portrait_0903330C"))) = {
+const MsgFaceAnim gUnk_0903330C[3] = {
     {
         gUnk_0918A6DA,
         gUnk_096150D8,
@@ -1837,7 +1837,7 @@ MsgFaceAnim gUnk_0903330C[3] __attribute__((section(".data_msg_portrait_0903330C
     },
 };
 
-MsgFaceAnim gUnk_09033348[4] __attribute__((section(".data_msg_portrait_09033348"))) = {
+const MsgFaceAnim gUnk_09033348[4] = {
     {
         gUnk_0917895E,
         gUnk_09615018,
@@ -1876,7 +1876,7 @@ MsgFaceAnim gUnk_09033348[4] __attribute__((section(".data_msg_portrait_09033348
     },
 };
 
-MsgFaceAnim gUnk_09033398[5] __attribute__((section(".data_msg_portrait_09033398"))) = {
+const MsgFaceAnim gUnk_09033398[5] = {
     {
         gUnk_091743FC,
         gUnk_09614FF8,
@@ -1924,7 +1924,7 @@ MsgFaceAnim gUnk_09033398[5] __attribute__((section(".data_msg_portrait_09033398
     },
 };
 
-MsgFaceAnim gUnk_090333FC[3] __attribute__((section(".data_msg_portrait_090333FC"))) = {
+const MsgFaceAnim gUnk_090333FC[3] = {
     {
         gUnk_0918FB92,
         gUnk_09615118,
@@ -1954,7 +1954,7 @@ MsgFaceAnim gUnk_090333FC[3] __attribute__((section(".data_msg_portrait_090333FC
     },
 };
 
-MsgFaceAnim gUnk_09033438[2] __attribute__((section(".data_msg_portrait_09033438"))) = {
+const MsgFaceAnim gUnk_09033438[2] = {
     {
         gUnk_09193326,
         gUnk_09615158,
@@ -1975,7 +1975,7 @@ MsgFaceAnim gUnk_09033438[2] __attribute__((section(".data_msg_portrait_09033438
     },
 };
 
-MsgFaceAnim gUnk_09033460[3] __attribute__((section(".data_msg_portrait_09033460"))) = {
+const MsgFaceAnim gUnk_09033460[3] = {
     {
         gUnk_091942A4,
         gUnk_09615178,
@@ -2005,7 +2005,7 @@ MsgFaceAnim gUnk_09033460[3] __attribute__((section(".data_msg_portrait_09033460
     },
 };
 
-MsgFaceAnim gUnk_0903349C __attribute__((section(".data_msg_portrait_0903349C"))) = {
+const MsgFaceAnim gUnk_0903349C = {
     gUnk_09195750,
     gUnk_09615198,
     gUnk_09EEDF40,
@@ -2015,7 +2015,7 @@ MsgFaceAnim gUnk_0903349C __attribute__((section(".data_msg_portrait_0903349C"))
     { 0, 0 },
 };
 
-MsgFaceAnim gUnk_090334B0[3] __attribute__((section(".data_msg_portrait_090334B0"))) = {
+const MsgFaceAnim gUnk_090334B0[3] = {
     {
         gUnk_0919632C,
         gUnk_096151B8,
@@ -2045,7 +2045,7 @@ MsgFaceAnim gUnk_090334B0[3] __attribute__((section(".data_msg_portrait_090334B0
     },
 };
 
-MsgFaceAnim gUnk_090334EC __attribute__((section(".data_msg_portrait_090334EC"))) = {
+const MsgFaceAnim gUnk_090334EC = {
     gUnk_09157254,
     gUnk_09614E38,
     gUnk_09EED638,
@@ -2055,7 +2055,7 @@ MsgFaceAnim gUnk_090334EC __attribute__((section(".data_msg_portrait_090334EC"))
     { 0, 0 },
 };
 
-MsgFaceAnim gUnk_09033500[3] __attribute__((section(".data_msg_portrait_09033500"))) = {
+const MsgFaceAnim gUnk_09033500[3] = {
     {
         gUnk_09157E86,
         gUnk_09614E58,
@@ -2085,7 +2085,7 @@ MsgFaceAnim gUnk_09033500[3] __attribute__((section(".data_msg_portrait_09033500
     },
 };
 
-MsgFaceAnim gUnk_0903353C[5] __attribute__((section(".data_msg_portrait_0903353C"))) = {
+const MsgFaceAnim gUnk_0903353C[5] = {
     {
         gUnk_0918689C,
         gUnk_096150B8,
@@ -2133,7 +2133,7 @@ MsgFaceAnim gUnk_0903353C[5] __attribute__((section(".data_msg_portrait_0903353C
     },
 };
 
-MsgFaceAnim gUnk_090335A0[5] __attribute__((section(".data_msg_portrait_090335A0"))) = {
+const MsgFaceAnim gUnk_090335A0[5] = {
     {
         gUnk_09146C84,
         gUnk_09614D98,
@@ -2181,7 +2181,7 @@ MsgFaceAnim gUnk_090335A0[5] __attribute__((section(".data_msg_portrait_090335A0
     },
 };
 
-MsgFaceAnim gUnk_09033604[6] __attribute__((section(".data_msg_portrait_09033604"))) = {
+const MsgFaceAnim gUnk_09033604[6] = {
     {
         gUnk_09142D0E,
         gUnk_09614D78,
@@ -2238,7 +2238,7 @@ MsgFaceAnim gUnk_09033604[6] __attribute__((section(".data_msg_portrait_09033604
     },
 };
 
-MsgFaceAnim gUnk_0903367C[3] __attribute__((section(".data_msg_portrait_0903367C"))) = {
+const MsgFaceAnim gUnk_0903367C[3] = {
     {
         gUnk_09150BD2,
         gUnk_09614DF8,
@@ -2268,7 +2268,7 @@ MsgFaceAnim gUnk_0903367C[3] __attribute__((section(".data_msg_portrait_0903367C
     },
 };
 
-MsgFaceAnim gUnk_090336B8[3] __attribute__((section(".data_msg_portrait_090336B8"))) = {
+const MsgFaceAnim gUnk_090336B8[3] = {
     {
         gUnk_091915E8,
         gUnk_09615138,
@@ -2298,7 +2298,7 @@ MsgFaceAnim gUnk_090336B8[3] __attribute__((section(".data_msg_portrait_090336B8
     },
 };
 
-MsgFaceAnim gUnk_090336F4[5] __attribute__((section(".data_msg_portrait_090336F4"))) = {
+const MsgFaceAnim gUnk_090336F4[5] = {
     {
         gUnk_0913F0C2,
         gUnk_09614D58,
@@ -2346,7 +2346,7 @@ MsgFaceAnim gUnk_090336F4[5] __attribute__((section(".data_msg_portrait_090336F4
     },
 };
 
-MsgFaceAnim* gUnk_09EE45DC[62] __attribute__((section(".data_msg_portrait_index"))) = {
+const MsgFaceAnim* gUnk_09EE45DC[62] = {
     gUnk_09032484,
     gUnk_09032524,
     gUnk_09032600,

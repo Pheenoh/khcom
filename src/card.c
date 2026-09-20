@@ -28088,7 +28088,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
 }
 
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
-    MsgFaceAnim* tbl;
+    const MsgFaceAnim* tbl;
 
     ApproachValue(&w->x, gUnk_09033CA0[w->messageDef->unk_04], w->unk_140);
     ApproachValue(&w->unk_11C, gUnk_09033CE0[w->messageDef->unk_04], w->unk_140);
@@ -28156,7 +28156,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 }
 u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
     CardMessageDef* sel;
-    MsgFaceAnim* e;
+    const MsgFaceAnim* e;
 
     w->unk_149 = 1;
     sel = w->messageDef;
@@ -28258,7 +28258,7 @@ void func_080A3A04(UnkStruct_080A3F5C* w) {
 
 u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
     CardMessageDef* sel;
-    MsgFaceAnim* e;
+    const MsgFaceAnim* e;
 
     w->gfx = AnimUpdate(w->anim);
 
@@ -28296,7 +28296,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
-    MsgFaceAnim* e;
+    const MsgFaceAnim* e;
     u8* pal;
 
     w->gfx2 = AnimUpdate(w->anim2);
@@ -28416,7 +28416,7 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a) {
 }
 
 u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
-    MsgFaceAnim* e;
+    const MsgFaceAnim* e;
 
     w->gfx = AnimUpdate(w->anim);
 
