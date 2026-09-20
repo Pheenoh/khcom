@@ -310,8 +310,6 @@ extern vu16 gSystemFlags;
 
 
 
-extern SioAnimDef gUnk_096193E0[];
-extern SioAnimDef gUnk_09619444[];
 extern u8 gUnk_0815A2BE[];
 extern u8 gUnk_08C78824[];
 extern u8 gUnk_08C7C824[];

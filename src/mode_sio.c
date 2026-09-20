@@ -1,4 +1,5 @@
 #include "mode_sio_dbg.h"
+#include "mode_chkobj_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "sio_battle_options_state.h"
@@ -18,6 +19,22 @@
 #include "gba/keys.h"
 #include "world_intro_assets.h"
 
+const char gModeNameSioBtlConnect[] = "mode_sio_btl_connect";
+
+const SioAnimDef gUnk_096193E0[2] = {
+    {gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0},
+    {gUnk_09EDEE08, gUnk_09EDEE14, gUnk_088E33C2, 0},
+};
+
+#ifndef VERSION_EU
+extern const SioAnimDef gUnk_09619444[3];
+#endif
+
+#ifdef VERSION_EU
+const u8 gUnkEu_095DA860[7] = {'D', 'e', 'c', 'k', ' ', 'I', 0};
+const u8 gUnkEu_095DA867[8] = {'D', 'e', 'c', 'k', ' ', 'I', 'I', 0};
+#endif
+
 #ifdef VERSION_EU
 extern u8 gUnkEu_0967CB6C[];
 extern u8 gUnkEu_095F18BE[];
@@ -36,8 +53,6 @@ extern s32 eu_080C2740(void);
 extern void* gUnkEu_08891508[];
 extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
-extern u16 gUnkEu_095DA860[];
-extern u16 gUnkEu_095DA867[];
 extern void* gUnkEu_08891714[];
 extern void* gUnkEu_08891670[];
 extern u8 gUnkEu_095ECDD8[];
@@ -248,7 +263,7 @@ void func_080AEE84(void) {
 }
 
 void func_080AEED8(u16 a, u16 b, u16 c) {
-    SioAnimDef* def = &gUnk_096193E0[b];
+    const SioAnimDef* def = &gUnk_096193E0[b];
     AnimChangeWithTables(&gSioBtlOptionWork->anim2[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioBtlOptionWork->unk_008[a], def->tiles);
 }
@@ -277,8 +292,8 @@ void mode_sio_btl_option_0(s32 arg) {
         gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
         gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
     } else {
-        gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnkEu_095DA860, gSioBtlOptionWork->unk_0FC);
-        gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnkEu_095DA867, gSioBtlOptionWork->unk_154);
+        gSioBtlOptionWork->unk_0F8 = LoadTextSlots((u16*)gUnkEu_095DA860, gSioBtlOptionWork->unk_0FC);
+        gSioBtlOptionWork->unk_150 = LoadTextSlots((u16*)gUnkEu_095DA867, gSioBtlOptionWork->unk_154);
     }
 #else
     InitTextSlots(gSioBtlOptionWork->unk_054, 20);
@@ -2293,7 +2308,7 @@ void func_080B1C14(void) {
 
 #ifndef VERSION_EU
 void func_080B1C70(u16 a, u16 b, u16 c) {
-    SioAnimDef* def = &gUnk_09619444[b];
+    const SioAnimDef* def = &gUnk_09619444[b];
     AnimChangeWithTables(&gSioChgCardWork->anim[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioChgCardWork->unk_008[a], def->tiles);
 }
@@ -3337,8 +3352,6 @@ void mode_sioError_2(void) {
     EwramFree(gSioErrorWork);
 }
 
-const char gModeNameSioBtlConnect[] __attribute__((section(".rodata_registration_name_gModeSioBtlConnect"), aligned(1))) = "mode_sio_btl_connect";
-
 Mode gModeSioBtlConnect = {
     gModeNameSioBtlConnect,
     (void (*)(s32))mode_sio_btl_connect_0,
@@ -3422,7 +3435,7 @@ u16 gUnk_09EF14C4[12] = {
     1,
 };
 
-const char gModeNameSioBtlOption[] __attribute__((section(".rodata_registration_name_gModeSioBtlOption"), aligned(1))) = "mode_sio_btl_option";
+const char gModeNameSioBtlOption[] = "mode_sio_btl_option";
 
 Mode gModeSioBtlOption = {
     gModeNameSioBtlOption,
@@ -3431,7 +3444,7 @@ Mode gModeSioBtlOption = {
     (void (*)(void))mode_sio_btl_option_2,
 };
 
-const char gModeNameSioBtlCardget[] __attribute__((section(".rodata_registration_name_gModeSioBtlCardget"), aligned(1))) = "mode_sio_btl_cardget";
+const char gModeNameSioBtlCardget[] = "mode_sio_btl_cardget";
 
 Mode gModeSioBtlCardget = {
     gModeNameSioBtlCardget,
@@ -3441,7 +3454,7 @@ Mode gModeSioBtlCardget = {
 };
 
 #ifndef VERSION_EU
-const char gModeNameSioChgConnect[] __attribute__((section(".rodata_registration_name_gModeSioChgConnect"), aligned(1))) = "mode_sio_chg_connect";
+const char gModeNameSioChgConnect[] = "mode_sio_chg_connect";
 #endif
 
 #ifndef VERSION_EU
@@ -3470,7 +3483,13 @@ SioChgCardPos gUnk_09EF150C[13] = {
 #endif
 
 #ifndef VERSION_EU
-const char gModeNameSioChgCard[] __attribute__((section(".rodata_registration_name_gModeSioChgCard"), aligned(1))) = "mode_sio_chg_card";
+const SioAnimDef gUnk_09619444[3] = {
+    {gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0},
+    {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0},
+    {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 1},
+};
+
+const char gModeNameSioChgCard[] = "mode_sio_chg_card";
 #endif
 
 #ifndef VERSION_EU
@@ -3482,7 +3501,7 @@ Mode gModeSioChgCard = {
 };
 #endif
 
-const char gModeNameSioError[] __attribute__((section(".rodata_registration_name_gModeSioError"), aligned(1))) = "mode_sioError";
+const char gModeNameSioError[] = "mode_sioError";
 
 Mode gModeSioError = {
     gModeNameSioError,

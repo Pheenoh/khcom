@@ -21,7 +21,8 @@
     "allmap_readonly_suffix": "Three allmap tables have repeated owner-local consumers: four pairs of neighbor offsets, four word-sized direction selectors and a four-by-four signed-halfword arrangement table copied with an explicit sizeof bound. These tables and the following Doorinfo and Pusha task names form the same complete 0x6A-byte readonly suffix in all regions. Ordinary const definitions preserve the original bytes, object bounds and code relocations. The earlier 32-byte coordinate span retains its existing raw representation: only its first four pairs have proven consumers, and the following four pairs do not have an established source-level boundary. Earlier task-name placements remain unchanged.",
     "status_readonly_prefix_owner": "Twelve status UI names and their directly consumed cursor positions, eight-entry StatusFriendTable, and two EU language-count arrays form one complete native readonly prefix. The tab navigation bounds select positions 0..3; the friend helper copies the complete existing record and traverses entries 0..7; EU localized resource calls select five language counts. Ordinary const definitions reproduce every original object address and the interleaved compiler alignment. The later Boogie records and name retain their existing boundaries, while descriptor data, code bodies, RAM, and encoded asset payloads are unchanged.",
     "boss_tm_movement": "Canonical 32-byte body and foot step types are preserved field-for-field. task_bos_tm_1 wraps idle phase0..7 and walking phase0..9; func_080B83C4 wraps body angle index0..10. task_bos_tm_body_1 and task_bos_tm_foot_1 explicitly select translated step indices0..15 or0..8. Reaction paths explicitly use step0..2. Foot phase bytes produce height selectors0..4. Body effect choice uses GetRandom()%4. Seven unused complete zero terminator records and four unused halfword suffix values remain separately named neutral scalar objects; no runtime access is claimed. All record/scalar bytes agree across US/JP/EU.",
-    "boss_tm_native_owner": "The Trickmaster parent lifecycle owns four task pointers and a TaskPool and directly creates its body, foot, club, arm and table callbacks. These callbacks and their repeatedly consumed movement tables form one contiguous original code and initialized-data run across all regions, previously split between the end of wlogo.c, the beginning of bos2.c and a storage-only data unit. Ordinary definitions in boss_tm.c preserve all 31 initialized objects and their relocations. The private logo pools remain in wlogo.c; its naturally 0x74-byte BSS followed by the Trickmaster section with native eight-byte alignment accounts for the former four-byte filler. No data-table extent, remaining shared state or interleaved name/asset boundary is changed."
+    "boss_tm_native_owner": "The Trickmaster parent lifecycle owns four task pointers and a TaskPool and directly creates its body, foot, club, arm and table callbacks. These callbacks and their repeatedly consumed movement tables form one contiguous original code and initialized-data run across all regions, previously split between the end of wlogo.c, the beginning of bos2.c and a storage-only data unit. Ordinary definitions in boss_tm.c preserve all 31 initialized objects and their relocations. The private logo pools remain in wlogo.c; its naturally 0x74-byte BSS followed by the Trickmaster section with native eight-byte alignment accounts for the former four-byte filler. No data-table extent, remaining shared state or interleaved name/asset boundary is changed.",
+    "sio_readonly_owner": "The SIO modes index exactly two and three existing SioAnimDef records; their pointer fields reference the same typed animation resources used by these callbacks. Both tables are read only and have no consumers outside mode_sio.c. They interleave the six mode names in US/JP; EU omits the card-exchange table and two names, and instead has two terminated byte-encoded Deck labels read by the Latin text loader. Ordinary const records, names and character-list byte arrays reproduce each complete original readonly group and every relocation target. The compiler aligns string initializers to four bytes but retains the natural byte alignment of array initializers, explaining the adjacent EU labels without extra bytes or section attributes. Obsolete raw metadata fragments and fixed-address aliases are removed; record bounds, label extents, code, RAM and encoded assets are preserved."
   },
   "regions": {
     "us": {
@@ -1388,15 +1389,50 @@
         },
         {
           "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlConnect",
+          "section": ".rodata",
           "address": "0x096193C8",
-          "size": 21,
-          "sha256": "d2a1da1a47e4031a73f857c42c9a3ea3b07b6e0ad12d376030a47047ee5d0079",
+          "size": 206,
+          "sha256": "000e17a28be4aa56a4c1371053a1390562a3514b2ca6ed1d63315e724a24ff30",
           "objects": [
             {
               "name": "gModeNameSioBtlConnect",
               "offset": 0,
               "size": 21
+            },
+            {
+              "name": "gUnk_096193E0",
+              "offset": 24,
+              "size": 32
+            },
+            {
+              "name": "gModeNameSioBtlOption",
+              "offset": 56,
+              "size": 20
+            },
+            {
+              "name": "gModeNameSioBtlCardget",
+              "offset": 76,
+              "size": 21
+            },
+            {
+              "name": "gModeNameSioChgConnect",
+              "offset": 100,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09619444",
+              "offset": 124,
+              "size": 48
+            },
+            {
+              "name": "gModeNameSioChgCard",
+              "offset": 172,
+              "size": 18
+            },
+            {
+              "name": "gModeNameSioError",
+              "offset": 192,
+              "size": 14
             }
           ]
         },
@@ -1458,80 +1494,6 @@
               "size": 16
             }
           ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlOption",
-          "address": "0x09619400",
-          "size": 20,
-          "sha256": "bb2947a9ac78a63205b1c7c0caac9fe91c1bbf50936662d0a83d987d9baab56e",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlCardget",
-          "address": "0x09619414",
-          "size": 21,
-          "sha256": "0e4be6163fe49e77746bb3668a93fdee47c5fc71aaea81ee0964082a3e060502",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 0,
-              "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioChgConnect",
-          "address": "0x0961942C",
-          "size": 21,
-          "sha256": "0b2eaa72728c02773fde0ce20c2c7f58ea6cea8297f93aa4ac53ec4085a7a22e",
-          "objects": [
-            {
-              "name": "gModeNameSioChgConnect",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioChgCard",
-          "address": "0x09619474",
-          "size": 18,
-          "sha256": "0f456a516c81abfe42036e3777c765cdf1e42c715461d66cf5cb5fad35bbc150",
-          "objects": [
-            {
-              "name": "gModeNameSioChgCard",
-              "offset": 0,
-              "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioError",
-          "address": "0x09619488",
-          "size": 14,
-          "sha256": "3b580a00ce2f41f81012cb84e6ca0ea60ec28ca93be9b971fb131576191bf23c",
-          "objects": [
-            {
-              "name": "gModeNameSioError",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         },
         {
           "unit": "mode_wlogo.c",
@@ -8627,15 +8589,50 @@
         },
         {
           "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlConnect",
+          "section": ".rodata",
           "address": "0x095D1EA4",
-          "size": 21,
-          "sha256": "d2a1da1a47e4031a73f857c42c9a3ea3b07b6e0ad12d376030a47047ee5d0079",
+          "size": 206,
+          "sha256": "7a3595b49ce8d0e5727bac219b57bb88d8139d88d22fe2551d31cec3c73240bf",
           "objects": [
             {
               "name": "gModeNameSioBtlConnect",
               "offset": 0,
               "size": 21
+            },
+            {
+              "name": "gUnk_096193E0",
+              "offset": 24,
+              "size": 32
+            },
+            {
+              "name": "gModeNameSioBtlOption",
+              "offset": 56,
+              "size": 20
+            },
+            {
+              "name": "gModeNameSioBtlCardget",
+              "offset": 76,
+              "size": 21
+            },
+            {
+              "name": "gModeNameSioChgConnect",
+              "offset": 100,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09619444",
+              "offset": 124,
+              "size": 48
+            },
+            {
+              "name": "gModeNameSioChgCard",
+              "offset": 172,
+              "size": 18
+            },
+            {
+              "name": "gModeNameSioError",
+              "offset": 192,
+              "size": 14
             }
           ]
         },
@@ -8697,80 +8694,6 @@
               "size": 16
             }
           ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlOption",
-          "address": "0x095D1EDC",
-          "size": 20,
-          "sha256": "bb2947a9ac78a63205b1c7c0caac9fe91c1bbf50936662d0a83d987d9baab56e",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlCardget",
-          "address": "0x095D1EF0",
-          "size": 21,
-          "sha256": "0e4be6163fe49e77746bb3668a93fdee47c5fc71aaea81ee0964082a3e060502",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 0,
-              "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioChgConnect",
-          "address": "0x095D1F08",
-          "size": 21,
-          "sha256": "0b2eaa72728c02773fde0ce20c2c7f58ea6cea8297f93aa4ac53ec4085a7a22e",
-          "objects": [
-            {
-              "name": "gModeNameSioChgConnect",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioChgCard",
-          "address": "0x095D1F50",
-          "size": 18,
-          "sha256": "0f456a516c81abfe42036e3777c765cdf1e42c715461d66cf5cb5fad35bbc150",
-          "objects": [
-            {
-              "name": "gModeNameSioChgCard",
-              "offset": 0,
-              "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioError",
-          "address": "0x095D1F64",
-          "size": 14,
-          "sha256": "3b580a00ce2f41f81012cb84e6ca0ea60ec28ca93be9b971fb131576191bf23c",
-          "objects": [
-            {
-              "name": "gModeNameSioError",
-              "offset": 0,
-              "size": 14
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         },
         {
           "unit": "mode_wlogo.c",
@@ -15808,15 +15731,45 @@
         },
         {
           "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlConnect",
+          "section": ".rodata",
           "address": "0x095DA828",
-          "size": 21,
-          "sha256": "d2a1da1a47e4031a73f857c42c9a3ea3b07b6e0ad12d376030a47047ee5d0079",
+          "size": 130,
+          "sha256": "5280b497c2bedf82306fdf4d1b4f2019b1f2cb46c41f7573b89bdf4f37e8fe84",
           "objects": [
             {
               "name": "gModeNameSioBtlConnect",
               "offset": 0,
               "size": 21
+            },
+            {
+              "name": "gUnk_096193E0",
+              "offset": 24,
+              "size": 32
+            },
+            {
+              "name": "gUnkEu_095DA860",
+              "offset": 56,
+              "size": 7
+            },
+            {
+              "name": "gUnkEu_095DA867",
+              "offset": 63,
+              "size": 8
+            },
+            {
+              "name": "gModeNameSioBtlOption",
+              "offset": 72,
+              "size": 20
+            },
+            {
+              "name": "gModeNameSioBtlCardget",
+              "offset": 92,
+              "size": 21
+            },
+            {
+              "name": "gModeNameSioError",
+              "offset": 116,
+              "size": 14
             }
           ]
         },
@@ -15861,48 +15814,6 @@
               "name": "gModeSioError",
               "offset": 500,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlOption",
-          "address": "0x095DA870",
-          "size": 20,
-          "sha256": "bb2947a9ac78a63205b1c7c0caac9fe91c1bbf50936662d0a83d987d9baab56e",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioBtlCardget",
-          "address": "0x095DA884",
-          "size": 21,
-          "sha256": "0e4be6163fe49e77746bb3668a93fdee47c5fc71aaea81ee0964082a3e060502",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 0,
-              "size": 21
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata_registration_name_gModeSioError",
-          "address": "0x095DA89C",
-          "size": 14,
-          "sha256": "3b580a00ce2f41f81012cb84e6ca0ea60ec28ca93be9b971fb131576191bf23c",
-          "objects": [
-            {
-              "name": "gModeNameSioError",
-              "offset": 0,
-              "size": 14
             }
           ]
         },
