@@ -1,7 +1,7 @@
 #include "staff_roll_script_data.h"
 #include "staff_roll_text_assets.h"
 
-s32 gUnk_09A516C8[46] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A516C8[46] = {
     6, 6, 0, 0, 0, 6,
     4, 6, 0, 0, 208, 85,
     9, 5, 0, 0, 30,
@@ -13,7 +13,7 @@ s32 gUnk_09A516C8[46] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51780[61] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51780[61] = {
     6, 6, 0, 0, 1, 117,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 17, 70,
@@ -28,7 +28,7 @@ s32 gUnk_09A51780[61] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51874[63] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51874[63] = {
     6, 6, 0, 0, 2, 149,
     4, 6, 0, 0, 218, 85,
     9, 5, 0, 0, 30,
@@ -43,7 +43,7 @@ s32 gUnk_09A51874[63] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51970[80] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51970[80] = {
     6, 6, 0, 0, 9, 245,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 17, 85,
@@ -62,7 +62,7 @@ s32 gUnk_09A51970[80] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51AB0[93] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51AB0[93] = {
     6, 6, 0, 0, 12, 270,
     4, 6, 0, 0, 208, 130,
     9, 5, 0, 0, 30,
@@ -83,7 +83,7 @@ s32 gUnk_09A51AB0[93] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51C24[79] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51C24[79] = {
     6, 6, 0, 1, 7, 222,
     4, 6, 0, 1, 208, 120,
     9, 5, 0, 0, 30,
@@ -102,7 +102,7 @@ s32 gUnk_09A51C24[79] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51D60[141] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51D60[141] = {
     6, 6, 0, 0, 55, 631,
     4, 6, 0, 0, 223, 65,
     9, 5, 0, 0, 30,
@@ -133,7 +133,7 @@ s32 gUnk_09A51D60[141] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A51F94[60] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A51F94[60] = {
     6, 6, 0, 0, 14, 299,
     4, 6, 0, 0, 24, 100,
     3, 5, 0, 0, 1,
@@ -148,7 +148,7 @@ s32 gUnk_09A51F94[60] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52084[113] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52084[113] = {
     6, 6, 0, 0, 15, 318,
     4, 6, 0, 0, 211, 75,
     9, 5, 0, 0, 30,
@@ -173,7 +173,7 @@ s32 gUnk_09A52084[113] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52248[61] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52248[61] = {
     6, 6, 0, 0, 13, 290,
     4, 6, 0, 0, 32, 100,
     3, 5, 0, 0, 1,
@@ -188,7 +188,7 @@ s32 gUnk_09A52248[61] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A5233C[70] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A5233C[70] = {
     6, 6, 0, 0, 24, 387,
     4, 6, 0, 0, 208, 108,
     6, 6, 0, 1, 23, 381,
@@ -205,7 +205,7 @@ s32 gUnk_09A5233C[70] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52454[44] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52454[44] = {
     6, 6, 0, 0, 16, 328,
     4, 6, 0, 0, 48, 108,
     3, 5, 0, 0, 1,
@@ -217,7 +217,7 @@ s32 gUnk_09A52454[44] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52504[65] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52504[65] = {
     6, 6, 0, 0, 10, 260,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 20, 100,
@@ -233,7 +233,7 @@ s32 gUnk_09A52504[65] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52608[101] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52608[101] = {
     6, 6, 0, 0, 76, 827,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 24, 100,
@@ -256,7 +256,7 @@ s32 gUnk_09A52608[101] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A5279C[51] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A5279C[51] = {
     6, 6, 0, 0, 19, 344,
     4, 6, 0, 0, 204, 110,
     9, 5, 0, 0, 30,
@@ -269,7 +269,7 @@ s32 gUnk_09A5279C[51] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52868[61] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52868[61] = {
     6, 6, 0, 0, 57, 638,
     4, 6, 0, 0, 24, 90,
     3, 5, 0, 0, 1,
@@ -284,7 +284,7 @@ s32 gUnk_09A52868[61] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A5295C[88] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A5295C[88] = {
     6, 6, 0, 0, 35, 424,
     4, 6, 0, 0, 120, 100,
     9, 5, 0, 0, 80,
@@ -304,7 +304,7 @@ s32 gUnk_09A5295C[88] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52ABC[51] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52ABC[51] = {
     6, 6, 0, 0, 44, 516,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 17, 95,
@@ -317,7 +317,7 @@ s32 gUnk_09A52ABC[51] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52B88[51] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52B88[51] = {
     6, 6, 0, 0, 69, 747,
     4, 6, 0, 0, 223, 85,
     9, 5, 0, 0, 30,
@@ -330,7 +330,7 @@ s32 gUnk_09A52B88[51] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52C54[44] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52C54[44] = {
     6, 6, 0, 0, 43, 485,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 32, 110,
@@ -342,7 +342,7 @@ s32 gUnk_09A52C54[44] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52D04[39] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52D04[39] = {
     6, 6, 0, 0, 81, 856,
     4, 6, 0, 0, 200, 110,
     9, 5, 0, 0, 30,
@@ -353,7 +353,7 @@ s32 gUnk_09A52D04[39] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52DA0[39] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52DA0[39] = {
     6, 6, 0, 0, 67, 721,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 28, 110,
@@ -364,7 +364,7 @@ s32 gUnk_09A52DA0[39] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52E3C[34] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52E3C[34] = {
     6, 6, 0, 0, 83, 889,
     4, 6, 0, 0, 216, 110,
     9, 5, 0, 0, 30,
@@ -374,7 +374,7 @@ s32 gUnk_09A52E3C[34] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52EC4[44] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52EC4[44] = {
     6, 6, 0, 0, 82, 887,
     3, 5, 0, 0, 1,
     4, 6, 0, 0, 32, 110,
@@ -386,7 +386,7 @@ s32 gUnk_09A52EC4[44] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A52F74[93] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A52F74[93] = {
     6, 6, 0, 0, 79, 841,
     4, 6, 0, 0, 184, 110,
     9, 5, 0, 0, 30,
@@ -407,7 +407,7 @@ s32 gUnk_09A52F74[93] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A530E8[49] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A530E8[49] = {
     6, 6, 0, 0, 30, 410,
     4, 6, 0, 0, 48, 110,
     3, 5, 0, 0, 1,
@@ -420,7 +420,7 @@ s32 gUnk_09A530E8[49] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A531AC[46] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A531AC[46] = {
     6, 6, 0, 0, 21, 364,
     4, 6, 0, 0, 212, 110,
     9, 5, 0, 0, 30,
@@ -432,7 +432,7 @@ s32 gUnk_09A531AC[46] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A53264[110] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A53264[110] = {
     6, 6, 0, 0, 25, 397,
     4, 6, 0, 0, 25, 105,
     3, 5, 0, 0, 1,
@@ -456,7 +456,7 @@ s32 gUnk_09A53264[110] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A5341C[54] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A5341C[54] = {
     6, 6, 0, 0, 47, 582,
     4, 6, 0, 0, 200, 110,
     9, 5, 0, 0, 30,
@@ -470,7 +470,7 @@ s32 gUnk_09A5341C[54] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A534F4[44] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A534F4[44] = {
     6, 6, 0, 0, 20, 353,
     4, 6, 0, 0, 52, 110,
     3, 5, 0, 0, 1,
@@ -482,7 +482,7 @@ s32 gUnk_09A534F4[44] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A535A4[34] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A535A4[34] = {
     6, 6, 0, 0, 64, 688,
     4, 6, 0, 0, 208, 110,
     9, 5, 0, 0, 30,
@@ -492,7 +492,7 @@ s32 gUnk_09A535A4[34] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A5362C[39] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A5362C[39] = {
     6, 6, 0, 0, 84, 907,
     4, 6, 0, 0, 32, 110,
     3, 5, 0, 0, 1,
@@ -503,7 +503,7 @@ s32 gUnk_09A5362C[39] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A536C8[44] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A536C8[44] = {
     6, 6, 0, 0, 65, 695,
     4, 6, 0, 0, 216, 100,
     9, 5, 0, 0, 30,
@@ -515,7 +515,7 @@ s32 gUnk_09A536C8[44] __attribute__((section(".data_staff_roll_commands"))) = {
     0, 0, -1,
 };
 
-s32 gUnk_09A53778[88] __attribute__((section(".data_staff_roll_commands"))) = {
+const s32 gUnk_09A53778[88] = {
     6, 6, 0, 1, 34, 420,
     4, 6, 0, 1, 128, 100,
     3, 5, 0, 1, 1,
@@ -537,7 +537,7 @@ s32 gUnk_09A53778[88] __attribute__((section(".data_staff_roll_commands"))) = {
 
 #ifdef VERSION_US
 
-u8* gUnk_09EF9F54[632] __attribute__((section(".data_staff_roll_indexes"))) = {
+u8* gUnk_09EF9F54[632] = {
     gUnkUs_09A516BC,
     gUnkUs_09A516B8,
     gUnkUs_09A516A0,
@@ -1172,7 +1172,7 @@ u8* gUnk_09EF9F54[632] __attribute__((section(".data_staff_roll_indexes"))) = {
     0,
 };
 
-s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA934[17] = {
     gUnk_09A516C8,
     gUnk_09A51780,
     gUnk_09A51874,
@@ -1192,7 +1192,7 @@ s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A5295C,
 };
 
-s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA978[17] = {
     gUnk_09A52ABC,
     gUnk_09A52B88,
     gUnk_09A52C54,
@@ -1212,15 +1212,15 @@ s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A53778,
 };
 
-u8* gUnk_09EFA9BC __attribute__((section(".data_staff_roll_indexes"))) = gUnkUs_09A516B8;
+u8* gUnk_09EFA9BC = gUnkUs_09A516B8;
 
-u8* gUnk_09EFA9C0 __attribute__((section(".data_staff_roll_indexes"))) = gUnkUs_09A54204;
+u8* gUnk_09EFA9C0 = gUnkUs_09A54204;
 
 #endif
 
 #ifdef VERSION_JP
 
-u8* gUnk_09EF9F54[704] __attribute__((section(".data_staff_roll_indexes"))) = {
+u8* gUnk_09EF9F54[704] = {
     gUnkJp_09A0654C,
     gUnkJp_09A06548,
     gUnkJp_09A06530,
@@ -1927,7 +1927,7 @@ u8* gUnk_09EF9F54[704] __attribute__((section(".data_staff_roll_indexes"))) = {
     0,
 };
 
-s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA934[17] = {
     gUnk_09A516C8,
     gUnk_09A51780,
     gUnk_09A51874,
@@ -1947,7 +1947,7 @@ s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A5295C,
 };
 
-s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA978[17] = {
     gUnk_09A52ABC,
     gUnk_09A52B88,
     gUnk_09A52C54,
@@ -1967,15 +1967,15 @@ s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A53778,
 };
 
-u8* gUnk_09EFA9BC __attribute__((section(".data_staff_roll_indexes"))) = gUnkJp_09A06548;
+u8* gUnk_09EFA9BC = gUnkJp_09A06548;
 
-u8* gUnk_09EFA9C0 __attribute__((section(".data_staff_roll_indexes"))) = gUnkJp_09A09094;
+u8* gUnk_09EFA9C0 = gUnkJp_09A09094;
 
 #endif
 
 #ifdef VERSION_EU
 
-u8* gUnk_09EF9F54[688] __attribute__((section(".data_staff_roll_indexes"))) = {
+u8* gUnk_09EF9F54[688] = {
     gUnkEu_09AAF3F4,
     gUnkEu_09AAF3F0,
     gUnkEu_09AAF3D8,
@@ -2666,7 +2666,7 @@ u8* gUnk_09EF9F54[688] __attribute__((section(".data_staff_roll_indexes"))) = {
     0,
 };
 
-s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA934[17] = {
     gUnk_09A516C8,
     gUnk_09A51780,
     gUnk_09A51874,
@@ -2686,7 +2686,7 @@ s32* gUnk_09EFA934[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A5295C,
 };
 
-s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
+const s32* gUnk_09EFA978[17] = {
     gUnk_09A52ABC,
     gUnk_09A52B88,
     gUnk_09A52C54,
@@ -2706,8 +2706,8 @@ s32* gUnk_09EFA978[17] __attribute__((section(".data_staff_roll_indexes"))) = {
     gUnk_09A53778,
 };
 
-u8* gUnk_09EFA9BC __attribute__((section(".data_staff_roll_indexes"))) = gUnkEu_09AAF3F0;
+u8* gUnk_09EFA9BC = gUnkEu_09AAF3F0;
 
-u8* gUnk_09EFA9C0 __attribute__((section(".data_staff_roll_indexes"))) = gUnkEu_09AB1F3C;
+u8* gUnk_09EFA9C0 = gUnkEu_09AB1F3C;
 
 #endif

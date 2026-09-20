@@ -72,7 +72,7 @@ typedef struct StaffRollWork {
     s32 unk_0C0;
     s32 unk_0C4;
     s32 unk_0C8;
-    s32* unk_0CC;
+    const s32* unk_0CC;
     s32 unk_0D0;
     s32 unk_0D4;
     s32 unk_0D8;
