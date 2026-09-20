@@ -1,7 +1,82 @@
 #include "map_ui_data.h"
 #include "map_ui_assets.h"
 
-void* gUnk_09EF8D8C[3] __attribute__((section(".data_map_ui_gUnk_09EF8D8C"))) = {
+#if defined(VERSION_EU)
+void* gUnkEu_09F843D8[3] = {
+    gMapUiSpriteEu_09885114,
+    gMapUiSpriteEu_0988512A,
+    gMapUiSpriteEu_0988515E,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F843E4 =
+    &gMapUiAnimEu_09885192
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F843E8[3] = {
+    gMapUiSpriteEu_0988549C,
+    gMapUiSpriteEu_098854AC,
+    gMapUiSpriteEu_098854E0,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F843F4 =
+    &gMapUiAnimEu_09885514
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F843F8[3] = {
+    gMapUiSpriteEu_098857E0,
+    gMapUiSpriteEu_098857F0,
+    gMapUiSpriteEu_09885824,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84404 =
+    &gMapUiAnimEu_09885858
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F84408[3] = {
+    gMapUiSpriteEu_09885B24,
+    gMapUiSpriteEu_09885B34,
+    gMapUiSpriteEu_09885B68,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84414 =
+    &gMapUiAnimEu_09885B9C
+;
+#endif
+
+void* gUnk_09EF8D68[3] = {
+    gUnk_098A8728,
+    gUnk_098A8738,
+    gUnk_098A876C,
+};
+
+AnimHeader* gUnk_09EF8D74 = &gUnk_098A87A0;
+
+void* gUnk_09EF8D78[4] = {
+    gUnk_098A8A6C,
+    gUnk_098A8A82,
+    gUnk_098A8A98,
+    gUnk_098A8AAE,
+};
+
+AnimHeader* gUnk_09EF8D88[1] = {
+    &gUnk_098A8AC4,
+};
+
+void* gUnk_09EF8D8C[3] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A8BE4,
     gMapUiSpriteUs_098A8BF4,
@@ -18,7 +93,7 @@ void* gUnk_09EF8D8C[3] __attribute__((section(".data_map_ui_gUnk_09EF8D8C"))) = 
 };
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8D98 __attribute__((section(".data_map_ui_gUnk_09EF8D98"))) =
+AnimHeader* gUnk_09EF8D98 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A8C5C
 #elif defined(VERSION_JP)
@@ -28,7 +103,7 @@ AnimHeader* gUnk_09EF8D98 __attribute__((section(".data_map_ui_gUnk_09EF8D98")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8D9C __attribute__((section(".data_map_ui_gUnk_09EF8D9C"))) =
+void* gUnk_09EF8D9C =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A8F28
 #elif defined(VERSION_JP)
@@ -38,7 +113,7 @@ void* gUnk_09EF8D9C __attribute__((section(".data_map_ui_gUnk_09EF8D9C"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DA0 __attribute__((section(".data_map_ui_gUnk_09EF8DA0"))) =
+AnimHeader* gUnk_09EF8DA0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A8F80
 #elif defined(VERSION_JP)
@@ -47,7 +122,81 @@ AnimHeader* gUnk_09EF8DA0 __attribute__((section(".data_map_ui_gUnk_09EF8DA0")))
 ;
 #endif
 
-void* gUnk_09EF8DA4[1] __attribute__((section(".data_map_ui_gUnk_09EF8DA4"))) = {
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84448 =
+    &gMapUiAnimEu_098863A8
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F8444C[3] = {
+    gMapUiSpriteEu_098867B4,
+    gMapUiSpriteEu_098867CA,
+    gMapUiSpriteEu_098867FE,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84458 =
+    &gMapUiAnimEu_09886832
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F8445C[3] = {
+    gMapUiSpriteEu_09886BFC,
+    gMapUiSpriteEu_09886C0C,
+    gMapUiSpriteEu_09886C40,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84468 =
+    &gMapUiAnimEu_09886C74
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F8446C[3] = {
+    gMapUiSpriteEu_09886F40,
+    gMapUiSpriteEu_09886F56,
+    gMapUiSpriteEu_09886F8A,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84478 =
+    &gMapUiAnimEu_09886FBE
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F8447C[3] = {
+    gMapUiSpriteEu_09887388,
+    gMapUiSpriteEu_09887398,
+    gMapUiSpriteEu_098873CC,
+};
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84488 =
+    &gMapUiAnimEu_09887400
+;
+#endif
+
+#if defined(VERSION_EU)
+void* gUnkEu_09F8448C =
+    gMapUiSpriteEu_098876CC
+;
+#endif
+
+#if defined(VERSION_EU)
+AnimHeader* gUnkEu_09F84490 =
+    &gMapUiAnimEu_09887724
+;
+#endif
+
+void* gUnk_09EF8DA4[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A944C,
 #elif defined(VERSION_JP)
@@ -58,7 +207,7 @@ void* gUnk_09EF8DA4[1] __attribute__((section(".data_map_ui_gUnk_09EF8DA4"))) = 
 };
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DA8 __attribute__((section(".data_map_ui_gUnk_09EF8DA8"))) =
+AnimHeader* gUnk_09EF8DA8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9480
 #elif defined(VERSION_JP)
@@ -68,7 +217,7 @@ AnimHeader* gUnk_09EF8DA8 __attribute__((section(".data_map_ui_gUnk_09EF8DA8")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DAC __attribute__((section(".data_map_ui_gUnk_09EF8DAC"))) =
+void* gUnk_09EF8DAC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A948C
 #elif defined(VERSION_JP)
@@ -78,7 +227,7 @@ void* gUnk_09EF8DAC __attribute__((section(".data_map_ui_gUnk_09EF8DAC"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DB0 __attribute__((section(".data_map_ui_gUnk_09EF8DB0"))) =
+AnimHeader* gUnk_09EF8DB0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9496
 #elif defined(VERSION_JP)
@@ -88,7 +237,7 @@ AnimHeader* gUnk_09EF8DB0 __attribute__((section(".data_map_ui_gUnk_09EF8DB0")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DB4 __attribute__((section(".data_map_ui_gUnk_09EF8DB4"))) =
+void* gUnk_09EF8DB4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94A0
 #elif defined(VERSION_JP)
@@ -98,7 +247,7 @@ void* gUnk_09EF8DB4 __attribute__((section(".data_map_ui_gUnk_09EF8DB4"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DB8 __attribute__((section(".data_map_ui_gUnk_09EF8DB8"))) =
+AnimHeader* gUnk_09EF8DB8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94AA
 #elif defined(VERSION_JP)
@@ -108,7 +257,7 @@ AnimHeader* gUnk_09EF8DB8 __attribute__((section(".data_map_ui_gUnk_09EF8DB8")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DBC __attribute__((section(".data_map_ui_gUnk_09EF8DBC"))) =
+void* gUnk_09EF8DBC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94B4
 #elif defined(VERSION_JP)
@@ -118,7 +267,7 @@ void* gUnk_09EF8DBC __attribute__((section(".data_map_ui_gUnk_09EF8DBC"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DC0 __attribute__((section(".data_map_ui_gUnk_09EF8DC0"))) =
+AnimHeader* gUnk_09EF8DC0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94BE
 #elif defined(VERSION_JP)
@@ -128,7 +277,7 @@ AnimHeader* gUnk_09EF8DC0 __attribute__((section(".data_map_ui_gUnk_09EF8DC0")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DC4 __attribute__((section(".data_map_ui_gUnk_09EF8DC4"))) =
+void* gUnk_09EF8DC4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94C8
 #elif defined(VERSION_JP)
@@ -138,7 +287,7 @@ void* gUnk_09EF8DC4 __attribute__((section(".data_map_ui_gUnk_09EF8DC4"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DC8 __attribute__((section(".data_map_ui_gUnk_09EF8DC8"))) =
+AnimHeader* gUnk_09EF8DC8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94D2
 #elif defined(VERSION_JP)
@@ -148,7 +297,7 @@ AnimHeader* gUnk_09EF8DC8 __attribute__((section(".data_map_ui_gUnk_09EF8DC8")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DCC __attribute__((section(".data_map_ui_gUnk_09EF8DCC"))) =
+void* gUnk_09EF8DCC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94DC
 #elif defined(VERSION_JP)
@@ -158,7 +307,7 @@ void* gUnk_09EF8DCC __attribute__((section(".data_map_ui_gUnk_09EF8DCC"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DD0 __attribute__((section(".data_map_ui_gUnk_09EF8DD0"))) =
+AnimHeader* gUnk_09EF8DD0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94F2
 #elif defined(VERSION_JP)
@@ -168,7 +317,7 @@ AnimHeader* gUnk_09EF8DD0 __attribute__((section(".data_map_ui_gUnk_09EF8DD0")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DD4 __attribute__((section(".data_map_ui_gUnk_09EF8DD4"))) =
+void* gUnk_09EF8DD4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94FC
 #elif defined(VERSION_JP)
@@ -178,7 +327,7 @@ void* gUnk_09EF8DD4 __attribute__((section(".data_map_ui_gUnk_09EF8DD4"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DD8 __attribute__((section(".data_map_ui_gUnk_09EF8DD8"))) =
+AnimHeader* gUnk_09EF8DD8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9512
 #elif defined(VERSION_JP)
@@ -188,7 +337,7 @@ AnimHeader* gUnk_09EF8DD8 __attribute__((section(".data_map_ui_gUnk_09EF8DD8")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DDC __attribute__((section(".data_map_ui_gUnk_09EF8DDC"))) =
+void* gUnk_09EF8DDC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A951C
 #elif defined(VERSION_JP)
@@ -198,7 +347,7 @@ void* gUnk_09EF8DDC __attribute__((section(".data_map_ui_gUnk_09EF8DDC"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DE0 __attribute__((section(".data_map_ui_gUnk_09EF8DE0"))) =
+void* gUnk_09EF8DE0 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9526
 #elif defined(VERSION_JP)
@@ -208,7 +357,7 @@ void* gUnk_09EF8DE0 __attribute__((section(".data_map_ui_gUnk_09EF8DE0"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DE4 __attribute__((section(".data_map_ui_gUnk_09EF8DE4"))) =
+void* gUnk_09EF8DE4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9530
 #elif defined(VERSION_JP)
@@ -218,7 +367,7 @@ void* gUnk_09EF8DE4 __attribute__((section(".data_map_ui_gUnk_09EF8DE4"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DE8 __attribute__((section(".data_map_ui_gUnk_09EF8DE8"))) =
+void* gUnk_09EF8DE8 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A953A
 #elif defined(VERSION_JP)
@@ -228,7 +377,7 @@ void* gUnk_09EF8DE8 __attribute__((section(".data_map_ui_gUnk_09EF8DE8"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DEC __attribute__((section(".data_map_ui_gUnk_09EF8DEC"))) =
+void* gUnk_09EF8DEC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9544
 #elif defined(VERSION_JP)
@@ -238,7 +387,7 @@ void* gUnk_09EF8DEC __attribute__((section(".data_map_ui_gUnk_09EF8DEC"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DF0 __attribute__((section(".data_map_ui_gUnk_09EF8DF0"))) =
+void* gUnk_09EF8DF0 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A954E
 #elif defined(VERSION_JP)
@@ -248,7 +397,7 @@ void* gUnk_09EF8DF0 __attribute__((section(".data_map_ui_gUnk_09EF8DF0"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DF4 __attribute__((section(".data_map_ui_gUnk_09EF8DF4"))) =
+void* gUnk_09EF8DF4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9558
 #elif defined(VERSION_JP)
@@ -258,7 +407,7 @@ void* gUnk_09EF8DF4 __attribute__((section(".data_map_ui_gUnk_09EF8DF4"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8DF8 __attribute__((section(".data_map_ui_gUnk_09EF8DF8"))) =
+void* gUnk_09EF8DF8 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9562
 #elif defined(VERSION_JP)
@@ -268,7 +417,7 @@ void* gUnk_09EF8DF8 __attribute__((section(".data_map_ui_gUnk_09EF8DF8"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8DFC __attribute__((section(".data_map_ui_gUnk_09EF8DFC"))) =
+AnimHeader* gUnk_09EF8DFC =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A956C
 #elif defined(VERSION_JP)
@@ -278,7 +427,7 @@ AnimHeader* gUnk_09EF8DFC __attribute__((section(".data_map_ui_gUnk_09EF8DFC")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E00 __attribute__((section(".data_map_ui_gUnk_09EF8E00"))) =
+AnimHeader* gUnk_09EF8E00 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A958A
 #elif defined(VERSION_JP)
@@ -288,7 +437,7 @@ AnimHeader* gUnk_09EF8E00 __attribute__((section(".data_map_ui_gUnk_09EF8E00")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E04 __attribute__((section(".data_map_ui_gUnk_09EF8E04"))) =
+AnimHeader* gUnk_09EF8E04 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A95A8
 #elif defined(VERSION_JP)
@@ -298,7 +447,7 @@ AnimHeader* gUnk_09EF8E04 __attribute__((section(".data_map_ui_gUnk_09EF8E04")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E08 __attribute__((section(".data_map_ui_gUnk_09EF8E08"))) =
+AnimHeader* gUnk_09EF8E08 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A95C6
 #elif defined(VERSION_JP)
@@ -308,7 +457,7 @@ AnimHeader* gUnk_09EF8E08 __attribute__((section(".data_map_ui_gUnk_09EF8E08")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E0C[4] __attribute__((section(".data_map_ui_gUnk_09EF8E0C"))) = {
+void* gUnk_09EF8E0C[4] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A95E4,
     gMapUiSpriteUs_098A9636,
@@ -324,7 +473,7 @@ void* gUnk_09EF8E0C[4] __attribute__((section(".data_map_ui_gUnk_09EF8E0C"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E1C __attribute__((section(".data_map_ui_gUnk_09EF8E1C"))) =
+AnimHeader* gUnk_09EF8E1C =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9696
 #elif defined(VERSION_JP)
@@ -334,7 +483,7 @@ AnimHeader* gUnk_09EF8E1C __attribute__((section(".data_map_ui_gUnk_09EF8E1C")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E20[8] __attribute__((section(".data_map_ui_gUnk_09EF8E20"))) = {
+void* gUnk_09EF8E20[8] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A96A0,
     gMapUiSpriteUs_098A9710,
@@ -358,7 +507,7 @@ void* gUnk_09EF8E20[8] __attribute__((section(".data_map_ui_gUnk_09EF8E20"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E40 __attribute__((section(".data_map_ui_gUnk_09EF8E40"))) =
+AnimHeader* gUnk_09EF8E40 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9A32
 #elif defined(VERSION_JP)
@@ -368,7 +517,7 @@ AnimHeader* gUnk_09EF8E40 __attribute__((section(".data_map_ui_gUnk_09EF8E40")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E44[7] __attribute__((section(".data_map_ui_gUnk_09EF8E44"))) = {
+void* gUnk_09EF8E44[7] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9A3C,
     gMapUiSpriteUs_098A9A52,
@@ -390,7 +539,7 @@ void* gUnk_09EF8E44[7] __attribute__((section(".data_map_ui_gUnk_09EF8E44"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E60 __attribute__((section(".data_map_ui_gUnk_09EF8E60"))) =
+AnimHeader* gUnk_09EF8E60 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9AD6
 #elif defined(VERSION_JP)
@@ -400,7 +549,7 @@ AnimHeader* gUnk_09EF8E60 __attribute__((section(".data_map_ui_gUnk_09EF8E60")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E64[1] __attribute__((section(".data_map_ui_gUnk_09EF8E64"))) = {
+void* gUnk_09EF8E64[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9AE0,
 #elif defined(VERSION_JP)
@@ -410,7 +559,7 @@ void* gUnk_09EF8E64[1] __attribute__((section(".data_map_ui_gUnk_09EF8E64"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E68 __attribute__((section(".data_map_ui_gUnk_09EF8E68"))) =
+AnimHeader* gUnk_09EF8E68 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9B38
 #elif defined(VERSION_JP)
@@ -420,7 +569,7 @@ AnimHeader* gUnk_09EF8E68 __attribute__((section(".data_map_ui_gUnk_09EF8E68")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E6C[1] __attribute__((section(".data_map_ui_gUnk_09EF8E6C"))) = {
+void* gUnk_09EF8E6C[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9B44,
 #elif defined(VERSION_JP)
@@ -430,7 +579,7 @@ void* gUnk_09EF8E6C[1] __attribute__((section(".data_map_ui_gUnk_09EF8E6C"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E70 __attribute__((section(".data_map_ui_gUnk_09EF8E70"))) =
+AnimHeader* gUnk_09EF8E70 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9B54
 #elif defined(VERSION_JP)
@@ -440,7 +589,7 @@ AnimHeader* gUnk_09EF8E70 __attribute__((section(".data_map_ui_gUnk_09EF8E70")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E74[2] __attribute__((section(".data_map_ui_gUnk_09EF8E74"))) = {
+void* gUnk_09EF8E74[2] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9B60,
     gMapUiSpriteUs_098A9B94,
@@ -452,7 +601,7 @@ void* gUnk_09EF8E74[2] __attribute__((section(".data_map_ui_gUnk_09EF8E74"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E7C __attribute__((section(".data_map_ui_gUnk_09EF8E7C"))) =
+AnimHeader* gUnk_09EF8E7C =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9BC8
 #elif defined(VERSION_JP)
@@ -462,7 +611,7 @@ AnimHeader* gUnk_09EF8E7C __attribute__((section(".data_map_ui_gUnk_09EF8E7C")))
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E80[3] __attribute__((section(".data_map_ui_gUnk_09EF8E80"))) = {
+void* gUnk_09EF8E80[3] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9BD4,
     gMapUiSpriteUs_098A9C20,
@@ -476,7 +625,7 @@ void* gUnk_09EF8E80[3] __attribute__((section(".data_map_ui_gUnk_09EF8E80"))) = 
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-void* gUnk_09EF8E8C __attribute__((section(".data_map_ui_gUnk_09EF8E8C"))) =
+void* gUnk_09EF8E8C =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9C5E
 #elif defined(VERSION_JP)
@@ -486,7 +635,7 @@ void* gUnk_09EF8E8C __attribute__((section(".data_map_ui_gUnk_09EF8E8C"))) =
 #endif
 
 #if defined(VERSION_US) || defined(VERSION_JP)
-AnimHeader* gUnk_09EF8E90 __attribute__((section(".data_map_ui_gUnk_09EF8E90"))) =
+AnimHeader* gUnk_09EF8E90 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9C7A
 #elif defined(VERSION_JP)
@@ -496,287 +645,157 @@ AnimHeader* gUnk_09EF8E90 __attribute__((section(".data_map_ui_gUnk_09EF8E90")))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F843D8[3] __attribute__((section(".data_map_ui_gUnkEu_09F843D8"))) = {
-    gMapUiSpriteEu_09885114,
-    gMapUiSpriteEu_0988512A,
-    gMapUiSpriteEu_0988515E,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F843E4 __attribute__((section(".data_map_ui_gUnkEu_09F843E4"))) =
-    &gMapUiAnimEu_09885192
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F843E8[3] __attribute__((section(".data_map_ui_gUnkEu_09F843E8"))) = {
-    gMapUiSpriteEu_0988549C,
-    gMapUiSpriteEu_098854AC,
-    gMapUiSpriteEu_098854E0,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F843F4 __attribute__((section(".data_map_ui_gUnkEu_09F843F4"))) =
-    &gMapUiAnimEu_09885514
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F843F8[3] __attribute__((section(".data_map_ui_gUnkEu_09F843F8"))) = {
-    gMapUiSpriteEu_098857E0,
-    gMapUiSpriteEu_098857F0,
-    gMapUiSpriteEu_09885824,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84404 __attribute__((section(".data_map_ui_gUnkEu_09F84404"))) =
-    &gMapUiAnimEu_09885858
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F84408[3] __attribute__((section(".data_map_ui_gUnkEu_09F84408"))) = {
-    gMapUiSpriteEu_09885B24,
-    gMapUiSpriteEu_09885B34,
-    gMapUiSpriteEu_09885B68,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84414 __attribute__((section(".data_map_ui_gUnkEu_09F84414"))) =
-    &gMapUiAnimEu_09885B9C
-;
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84448 __attribute__((section(".data_map_ui_gUnkEu_09F84448"))) =
-    &gMapUiAnimEu_098863A8
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F8444C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8444C"))) = {
-    gMapUiSpriteEu_098867B4,
-    gMapUiSpriteEu_098867CA,
-    gMapUiSpriteEu_098867FE,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84458 __attribute__((section(".data_map_ui_gUnkEu_09F84458"))) =
-    &gMapUiAnimEu_09886832
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F8445C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8445C"))) = {
-    gMapUiSpriteEu_09886BFC,
-    gMapUiSpriteEu_09886C0C,
-    gMapUiSpriteEu_09886C40,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84468 __attribute__((section(".data_map_ui_gUnkEu_09F84468"))) =
-    &gMapUiAnimEu_09886C74
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F8446C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8446C"))) = {
-    gMapUiSpriteEu_09886F40,
-    gMapUiSpriteEu_09886F56,
-    gMapUiSpriteEu_09886F8A,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84478 __attribute__((section(".data_map_ui_gUnkEu_09F84478"))) =
-    &gMapUiAnimEu_09886FBE
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F8447C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8447C"))) = {
-    gMapUiSpriteEu_09887388,
-    gMapUiSpriteEu_09887398,
-    gMapUiSpriteEu_098873CC,
-};
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84488 __attribute__((section(".data_map_ui_gUnkEu_09F84488"))) =
-    &gMapUiAnimEu_09887400
-;
-#endif
-
-#if defined(VERSION_EU)
-void* gUnkEu_09F8448C __attribute__((section(".data_map_ui_gUnkEu_09F8448C"))) =
-    gMapUiSpriteEu_098876CC
-;
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84490 __attribute__((section(".data_map_ui_gUnkEu_09F84490"))) =
-    &gMapUiAnimEu_09887724
-;
-#endif
-
-#if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84498 __attribute__((section(".data_map_ui_gUnkEu_09F84498"))) =
+AnimHeader* gUnkEu_09F84498 =
     &gMapUiAnimEu_09887C24
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F8449C __attribute__((section(".data_map_ui_gUnkEu_09F8449C"))) =
+void* gUnkEu_09F8449C =
     gMapUiSpriteEu_09887C30
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844A0 __attribute__((section(".data_map_ui_gUnkEu_09F844A0"))) =
+AnimHeader* gUnkEu_09F844A0 =
     &gMapUiAnimEu_09887C3A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844A4 __attribute__((section(".data_map_ui_gUnkEu_09F844A4"))) =
+void* gUnkEu_09F844A4 =
     gMapUiSpriteEu_09887C44
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844A8 __attribute__((section(".data_map_ui_gUnkEu_09F844A8"))) =
+AnimHeader* gUnkEu_09F844A8 =
     &gMapUiAnimEu_09887C4E
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844AC __attribute__((section(".data_map_ui_gUnkEu_09F844AC"))) =
+void* gUnkEu_09F844AC =
     gMapUiSpriteEu_09887C58
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844B0 __attribute__((section(".data_map_ui_gUnkEu_09F844B0"))) =
+AnimHeader* gUnkEu_09F844B0 =
     &gMapUiAnimEu_09887C62
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844B4 __attribute__((section(".data_map_ui_gUnkEu_09F844B4"))) =
+void* gUnkEu_09F844B4 =
     gMapUiSpriteEu_09887C6C
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844B8 __attribute__((section(".data_map_ui_gUnkEu_09F844B8"))) =
+AnimHeader* gUnkEu_09F844B8 =
     &gMapUiAnimEu_09887C76
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844BC __attribute__((section(".data_map_ui_gUnkEu_09F844BC"))) =
+void* gUnkEu_09F844BC =
     gMapUiSpriteEu_09887C80
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844C0 __attribute__((section(".data_map_ui_gUnkEu_09F844C0"))) =
+AnimHeader* gUnkEu_09F844C0 =
     &gMapUiAnimEu_09887C96
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844C4 __attribute__((section(".data_map_ui_gUnkEu_09F844C4"))) =
+void* gUnkEu_09F844C4 =
     gMapUiSpriteEu_09887CA0
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844C8 __attribute__((section(".data_map_ui_gUnkEu_09F844C8"))) =
+AnimHeader* gUnkEu_09F844C8 =
     &gMapUiAnimEu_09887CB6
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844CC __attribute__((section(".data_map_ui_gUnkEu_09F844CC"))) =
+void* gUnkEu_09F844CC =
     gMapUiSpriteEu_09887CC0
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844D0 __attribute__((section(".data_map_ui_gUnkEu_09F844D0"))) =
+void* gUnkEu_09F844D0 =
     gMapUiSpriteEu_09887CCA
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844D4 __attribute__((section(".data_map_ui_gUnkEu_09F844D4"))) =
+void* gUnkEu_09F844D4 =
     gMapUiSpriteEu_09887CD4
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844D8 __attribute__((section(".data_map_ui_gUnkEu_09F844D8"))) =
+void* gUnkEu_09F844D8 =
     gMapUiSpriteEu_09887CDE
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844DC __attribute__((section(".data_map_ui_gUnkEu_09F844DC"))) =
+void* gUnkEu_09F844DC =
     gMapUiSpriteEu_09887CE8
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844E0 __attribute__((section(".data_map_ui_gUnkEu_09F844E0"))) =
+void* gUnkEu_09F844E0 =
     gMapUiSpriteEu_09887CF2
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844E4 __attribute__((section(".data_map_ui_gUnkEu_09F844E4"))) =
+void* gUnkEu_09F844E4 =
     gMapUiSpriteEu_09887CFC
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844E8 __attribute__((section(".data_map_ui_gUnkEu_09F844E8"))) =
+void* gUnkEu_09F844E8 =
     gMapUiSpriteEu_09887D06
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844EC __attribute__((section(".data_map_ui_gUnkEu_09F844EC"))) =
+AnimHeader* gUnkEu_09F844EC =
     &gMapUiAnimEu_09887D10
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844F0 __attribute__((section(".data_map_ui_gUnkEu_09F844F0"))) =
+AnimHeader* gUnkEu_09F844F0 =
     &gMapUiAnimEu_09887D2E
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844F4 __attribute__((section(".data_map_ui_gUnkEu_09F844F4"))) =
+AnimHeader* gUnkEu_09F844F4 =
     &gMapUiAnimEu_09887D4C
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F844F8 __attribute__((section(".data_map_ui_gUnkEu_09F844F8"))) =
+AnimHeader* gUnkEu_09F844F8 =
     &gMapUiAnimEu_09887D6A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F844FC[4] __attribute__((section(".data_map_ui_gUnkEu_09F844FC"))) = {
+void* gUnkEu_09F844FC[4] = {
     gMapUiSpriteEu_09887D88,
     gMapUiSpriteEu_09887DDA,
     gMapUiSpriteEu_09887DFC,
@@ -785,13 +804,13 @@ void* gUnkEu_09F844FC[4] __attribute__((section(".data_map_ui_gUnkEu_09F844FC"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F8450C __attribute__((section(".data_map_ui_gUnkEu_09F8450C"))) =
+AnimHeader* gUnkEu_09F8450C =
     &gMapUiAnimEu_09887E3A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84510[4] __attribute__((section(".data_map_ui_gUnkEu_09F84510"))) = {
+void* gUnkEu_09F84510[4] = {
     gMapUiSpriteEu_09887E44,
     gMapUiSpriteEu_09887E96,
     gMapUiSpriteEu_09887EB8,
@@ -800,13 +819,13 @@ void* gUnkEu_09F84510[4] __attribute__((section(".data_map_ui_gUnkEu_09F84510"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84520 __attribute__((section(".data_map_ui_gUnkEu_09F84520"))) =
+AnimHeader* gUnkEu_09F84520 =
     &gMapUiAnimEu_09887EF6
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84524[4] __attribute__((section(".data_map_ui_gUnkEu_09F84524"))) = {
+void* gUnkEu_09F84524[4] = {
     gMapUiSpriteEu_09887F00,
     gMapUiSpriteEu_09887F52,
     gMapUiSpriteEu_09887F74,
@@ -815,13 +834,13 @@ void* gUnkEu_09F84524[4] __attribute__((section(".data_map_ui_gUnkEu_09F84524"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84534 __attribute__((section(".data_map_ui_gUnkEu_09F84534"))) =
+AnimHeader* gUnkEu_09F84534 =
     &gMapUiAnimEu_09887FB2
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84538[4] __attribute__((section(".data_map_ui_gUnkEu_09F84538"))) = {
+void* gUnkEu_09F84538[4] = {
     gMapUiSpriteEu_09887FBC,
     gMapUiSpriteEu_0988800E,
     gMapUiSpriteEu_09888030,
@@ -830,13 +849,13 @@ void* gUnkEu_09F84538[4] __attribute__((section(".data_map_ui_gUnkEu_09F84538"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84548 __attribute__((section(".data_map_ui_gUnkEu_09F84548"))) =
+AnimHeader* gUnkEu_09F84548 =
     &gMapUiAnimEu_0988806E
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F8454C[4] __attribute__((section(".data_map_ui_gUnkEu_09F8454C"))) = {
+void* gUnkEu_09F8454C[4] = {
     gMapUiSpriteEu_09888078,
     gMapUiSpriteEu_098880CA,
     gMapUiSpriteEu_098880EC,
@@ -845,13 +864,13 @@ void* gUnkEu_09F8454C[4] __attribute__((section(".data_map_ui_gUnkEu_09F8454C"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F8455C __attribute__((section(".data_map_ui_gUnkEu_09F8455C"))) =
+AnimHeader* gUnkEu_09F8455C =
     &gMapUiAnimEu_0988812A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84560[3] __attribute__((section(".data_map_ui_gUnkEu_09F84560"))) = {
+void* gUnkEu_09F84560[3] = {
     gMapUiSpriteEu_09888134,
     gMapUiSpriteEu_09888180,
     gMapUiSpriteEu_098881A2,
@@ -859,19 +878,19 @@ void* gUnkEu_09F84560[3] __attribute__((section(".data_map_ui_gUnkEu_09F84560"))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F8456C __attribute__((section(".data_map_ui_gUnkEu_09F8456C"))) =
+void* gUnkEu_09F8456C =
     gMapUiSpriteEu_098881BE
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84570 __attribute__((section(".data_map_ui_gUnkEu_09F84570"))) =
+AnimHeader* gUnkEu_09F84570 =
     &gMapUiAnimEu_098881DA
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84574[3] __attribute__((section(".data_map_ui_gUnkEu_09F84574"))) = {
+void* gUnkEu_09F84574[3] = {
     gMapUiSpriteEu_098881E4,
     gMapUiSpriteEu_09888230,
     gMapUiSpriteEu_09888252,
@@ -879,19 +898,19 @@ void* gUnkEu_09F84574[3] __attribute__((section(".data_map_ui_gUnkEu_09F84574"))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84580 __attribute__((section(".data_map_ui_gUnkEu_09F84580"))) =
+void* gUnkEu_09F84580 =
     gMapUiSpriteEu_0988826E
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84584 __attribute__((section(".data_map_ui_gUnkEu_09F84584"))) =
+AnimHeader* gUnkEu_09F84584 =
     &gMapUiAnimEu_0988828A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84588[3] __attribute__((section(".data_map_ui_gUnkEu_09F84588"))) = {
+void* gUnkEu_09F84588[3] = {
     gMapUiSpriteEu_09888294,
     gMapUiSpriteEu_098882E0,
     gMapUiSpriteEu_09888302,
@@ -899,19 +918,19 @@ void* gUnkEu_09F84588[3] __attribute__((section(".data_map_ui_gUnkEu_09F84588"))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84594 __attribute__((section(".data_map_ui_gUnkEu_09F84594"))) =
+void* gUnkEu_09F84594 =
     gMapUiSpriteEu_0988831E
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84598 __attribute__((section(".data_map_ui_gUnkEu_09F84598"))) =
+AnimHeader* gUnkEu_09F84598 =
     &gMapUiAnimEu_0988833A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F8459C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8459C"))) = {
+void* gUnkEu_09F8459C[3] = {
     gMapUiSpriteEu_09888344,
     gMapUiSpriteEu_09888390,
     gMapUiSpriteEu_098883B2,
@@ -919,19 +938,19 @@ void* gUnkEu_09F8459C[3] __attribute__((section(".data_map_ui_gUnkEu_09F8459C"))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F845A8 __attribute__((section(".data_map_ui_gUnkEu_09F845A8"))) =
+void* gUnkEu_09F845A8 =
     gMapUiSpriteEu_098883CE
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F845AC __attribute__((section(".data_map_ui_gUnkEu_09F845AC"))) =
+AnimHeader* gUnkEu_09F845AC =
     &gMapUiAnimEu_098883EA
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F845B0[3] __attribute__((section(".data_map_ui_gUnkEu_09F845B0"))) = {
+void* gUnkEu_09F845B0[3] = {
     gMapUiSpriteEu_098883F4,
     gMapUiSpriteEu_09888440,
     gMapUiSpriteEu_09888462,
@@ -939,19 +958,19 @@ void* gUnkEu_09F845B0[3] __attribute__((section(".data_map_ui_gUnkEu_09F845B0"))
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F845BC __attribute__((section(".data_map_ui_gUnkEu_09F845BC"))) =
+void* gUnkEu_09F845BC =
     gMapUiSpriteEu_0988847E
 ;
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F845C0 __attribute__((section(".data_map_ui_gUnkEu_09F845C0"))) =
+AnimHeader* gUnkEu_09F845C0 =
     &gMapUiAnimEu_0988849A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F845C4[8] __attribute__((section(".data_map_ui_gUnkEu_09F845C4"))) = {
+void* gUnkEu_09F845C4[8] = {
     gMapUiSpriteEu_098884A4,
     gMapUiSpriteEu_09888514,
     gMapUiSpriteEu_09888584,
@@ -964,13 +983,13 @@ void* gUnkEu_09F845C4[8] __attribute__((section(".data_map_ui_gUnkEu_09F845C4"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F845E4 __attribute__((section(".data_map_ui_gUnkEu_09F845E4"))) =
+AnimHeader* gUnkEu_09F845E4 =
     &gMapUiAnimEu_09888836
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F845E8[8] __attribute__((section(".data_map_ui_gUnkEu_09F845E8"))) = {
+void* gUnkEu_09F845E8[8] = {
     gMapUiSpriteEu_09888840,
     gMapUiSpriteEu_098888B0,
     gMapUiSpriteEu_09888920,
@@ -983,13 +1002,13 @@ void* gUnkEu_09F845E8[8] __attribute__((section(".data_map_ui_gUnkEu_09F845E8"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84608 __attribute__((section(".data_map_ui_gUnkEu_09F84608"))) =
+AnimHeader* gUnkEu_09F84608 =
     &gMapUiAnimEu_09888BD2
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F8460C[8] __attribute__((section(".data_map_ui_gUnkEu_09F8460C"))) = {
+void* gUnkEu_09F8460C[8] = {
     gMapUiSpriteEu_09888BDC,
     gMapUiSpriteEu_09888C4C,
     gMapUiSpriteEu_09888CBC,
@@ -1002,13 +1021,13 @@ void* gUnkEu_09F8460C[8] __attribute__((section(".data_map_ui_gUnkEu_09F8460C"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F8462C __attribute__((section(".data_map_ui_gUnkEu_09F8462C"))) =
+AnimHeader* gUnkEu_09F8462C =
     &gMapUiAnimEu_09888F6E
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84630[8] __attribute__((section(".data_map_ui_gUnkEu_09F84630"))) = {
+void* gUnkEu_09F84630[8] = {
     gMapUiSpriteEu_09888F78,
     gMapUiSpriteEu_09888FE8,
     gMapUiSpriteEu_09889058,
@@ -1021,13 +1040,13 @@ void* gUnkEu_09F84630[8] __attribute__((section(".data_map_ui_gUnkEu_09F84630"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84650 __attribute__((section(".data_map_ui_gUnkEu_09F84650"))) =
+AnimHeader* gUnkEu_09F84650 =
     &gMapUiAnimEu_0988930A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84654[8] __attribute__((section(".data_map_ui_gUnkEu_09F84654"))) = {
+void* gUnkEu_09F84654[8] = {
     gMapUiSpriteEu_09889314,
     gMapUiSpriteEu_09889384,
     gMapUiSpriteEu_098893F4,
@@ -1040,13 +1059,13 @@ void* gUnkEu_09F84654[8] __attribute__((section(".data_map_ui_gUnkEu_09F84654"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84674 __attribute__((section(".data_map_ui_gUnkEu_09F84674"))) =
+AnimHeader* gUnkEu_09F84674 =
     &gMapUiAnimEu_098896A6
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84678[7] __attribute__((section(".data_map_ui_gUnkEu_09F84678"))) = {
+void* gUnkEu_09F84678[7] = {
     gMapUiSpriteEu_098896B0,
     gMapUiSpriteEu_098896C6,
     gMapUiSpriteEu_098896DC,
@@ -1058,13 +1077,13 @@ void* gUnkEu_09F84678[7] __attribute__((section(".data_map_ui_gUnkEu_09F84678"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84694 __attribute__((section(".data_map_ui_gUnkEu_09F84694"))) =
+AnimHeader* gUnkEu_09F84694 =
     &gMapUiAnimEu_0988974A
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84698[7] __attribute__((section(".data_map_ui_gUnkEu_09F84698"))) = {
+void* gUnkEu_09F84698[7] = {
     gMapUiSpriteEu_09889754,
     gMapUiSpriteEu_0988976A,
     gMapUiSpriteEu_09889780,
@@ -1076,13 +1095,13 @@ void* gUnkEu_09F84698[7] __attribute__((section(".data_map_ui_gUnkEu_09F84698"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F846B4 __attribute__((section(".data_map_ui_gUnkEu_09F846B4"))) =
+AnimHeader* gUnkEu_09F846B4 =
     &gMapUiAnimEu_098897EE
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F846B8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846B8"))) = {
+void* gUnkEu_09F846B8[7] = {
     gMapUiSpriteEu_098897F8,
     gMapUiSpriteEu_0988980E,
     gMapUiSpriteEu_09889824,
@@ -1094,13 +1113,13 @@ void* gUnkEu_09F846B8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846B8"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F846D4 __attribute__((section(".data_map_ui_gUnkEu_09F846D4"))) =
+AnimHeader* gUnkEu_09F846D4 =
     &gMapUiAnimEu_09889892
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F846D8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846D8"))) = {
+void* gUnkEu_09F846D8[7] = {
     gMapUiSpriteEu_0988989C,
     gMapUiSpriteEu_098898B2,
     gMapUiSpriteEu_098898C8,
@@ -1112,13 +1131,13 @@ void* gUnkEu_09F846D8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846D8"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F846F4 __attribute__((section(".data_map_ui_gUnkEu_09F846F4"))) =
+AnimHeader* gUnkEu_09F846F4 =
     &gMapUiAnimEu_09889936
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F846F8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846F8"))) = {
+void* gUnkEu_09F846F8[7] = {
     gMapUiSpriteEu_09889940,
     gMapUiSpriteEu_09889956,
     gMapUiSpriteEu_0988996C,
@@ -1130,68 +1149,68 @@ void* gUnkEu_09F846F8[7] __attribute__((section(".data_map_ui_gUnkEu_09F846F8"))
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84714 __attribute__((section(".data_map_ui_gUnkEu_09F84714"))) =
+AnimHeader* gUnkEu_09F84714 =
     &gMapUiAnimEu_098899DA
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84718[1] __attribute__((section(".data_map_ui_gUnkEu_09F84718"))) = {
+void* gUnkEu_09F84718[1] = {
     gMapUiSpriteEu_098899E4,
 };
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F8471C __attribute__((section(".data_map_ui_gUnkEu_09F8471C"))) =
+AnimHeader* gUnkEu_09F8471C =
     &gMapUiAnimEu_098899F4
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84720[1] __attribute__((section(".data_map_ui_gUnkEu_09F84720"))) = {
+void* gUnkEu_09F84720[1] = {
     gMapUiSpriteEu_09889A00,
 };
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84724 __attribute__((section(".data_map_ui_gUnkEu_09F84724"))) =
+AnimHeader* gUnkEu_09F84724 =
     &gMapUiAnimEu_09889A10
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84728[1] __attribute__((section(".data_map_ui_gUnkEu_09F84728"))) = {
+void* gUnkEu_09F84728[1] = {
     gMapUiSpriteEu_09889A1C,
 };
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F8472C __attribute__((section(".data_map_ui_gUnkEu_09F8472C"))) =
+AnimHeader* gUnkEu_09F8472C =
     &gMapUiAnimEu_09889A2C
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84730[1] __attribute__((section(".data_map_ui_gUnkEu_09F84730"))) = {
+void* gUnkEu_09F84730[1] = {
     gMapUiSpriteEu_09889A38,
 };
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84734 __attribute__((section(".data_map_ui_gUnkEu_09F84734"))) =
+AnimHeader* gUnkEu_09F84734 =
     &gMapUiAnimEu_09889A90
 ;
 #endif
 
 #if defined(VERSION_EU)
-void* gUnkEu_09F84738[2] __attribute__((section(".data_map_ui_gUnkEu_09F84738"))) = {
+void* gUnkEu_09F84738[2] = {
     gMapUiSpriteEu_09889A9C,
     gMapUiSpriteEu_09889AD0,
 };
 #endif
 
 #if defined(VERSION_EU)
-AnimHeader* gUnkEu_09F84740 __attribute__((section(".data_map_ui_gUnkEu_09F84740"))) =
+AnimHeader* gUnkEu_09F84740 =
     &gMapUiAnimEu_09889B04
 ;
 #endif

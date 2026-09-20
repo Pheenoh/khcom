@@ -546,10 +546,6 @@ extern u8 gUnk_098A6556[];
 extern u8 gUnk_098A6560[];
 extern u8 gUnk_098A656A[];
 extern AnimHeader gUnk_098A6574;
-extern u8 gUnk_098A8728[];
-extern u8 gUnk_098A8738[];
-extern u8 gUnk_098A876C[];
-extern AnimHeader gUnk_098A87A0;
 
 #ifdef VERSION_EU
 #endif

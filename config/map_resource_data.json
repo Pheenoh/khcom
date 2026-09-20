@@ -2668,25 +2668,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8D68",
-          "address": "0x09EF8D68",
-          "size": 16,
-          "sha256": "051b4ce02442759417bb34961deaaf5e72ed39c3c16d15d427a687973c95a171",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D68",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D74",
-              "offset": 12,
-              "size": 4
-            }
-          ]
         }
       ]
     },
@@ -5354,25 +5335,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8D68",
-          "address": "0x09ED0154",
-          "size": 16,
-          "sha256": "717cc5fe93b00b9a0d0bf44c77dbb209baa6de47c408241d25fe4f7252a53ff0",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D68",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D74",
-              "offset": 12,
-              "size": 4
-            }
-          ]
         }
       ]
     },
@@ -8037,25 +7999,6 @@
             {
               "name": "gUnk_09EF8D44",
               "offset": 108,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8D68",
-          "address": "0x09F84418",
-          "size": 16,
-          "sha256": "64cc5b7ed45ebfa1cd97f0600c4361cea7d1f7c4151d0a6ee73a553453e4ffd5",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D68",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D74",
-              "offset": 12,
               "size": 4
             }
           ]

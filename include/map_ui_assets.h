@@ -3,6 +3,16 @@
 
 #include "anim.h"
 
+extern u8 gUnk_098A8728[];
+extern u8 gUnk_098A8738[];
+extern u8 gUnk_098A876C[];
+extern AnimHeader gUnk_098A87A0;
+extern u8 gUnk_098A8A6C[];
+extern u8 gUnk_098A8A82[];
+extern u8 gUnk_098A8A98[];
+extern u8 gUnk_098A8AAE[];
+extern AnimHeader gUnk_098A8AC4;
+
 #ifdef VERSION_US
 extern u8 gMapUiSpriteUs_098A8BE4[];
 extern u8 gMapUiSpriteUs_098A8BF4[];

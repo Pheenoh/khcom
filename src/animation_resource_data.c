@@ -17363,17 +17363,6 @@ AnimHeader* gUnk_09EF8D58[3] __attribute__((section(".data_09EF8D48"))) = {
 
 AnimHeader* gUnk_09EF8D64 __attribute__((section(".data_09EF8D48"))) = &gUnk_098A861E;
 
-void* gUnk_09EF8D78[4] __attribute__((section(".data_09EF8D78"))) = {
-    gUnk_098A8A6C,
-    gUnk_098A8A82,
-    gUnk_098A8A98,
-    gUnk_098A8AAE,
-};
-
-AnimHeader* gUnk_09EF8D88[1] __attribute__((section(".data_09EF8D78"))) = {
-    &gUnk_098A8AC4,
-};
-
 void* gUnk_09EF39A0[5] __attribute__((section(".data_09EF39A0"))) = {
     gUnk_0962E7B4,
     gUnk_0962E7BE,

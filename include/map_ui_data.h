@@ -3,6 +3,12 @@
 
 #include "anim.h"
 
+extern void* gUnk_09EF8D78[4];
+extern AnimHeader* gUnk_09EF8D88[1];
+
+extern void* gUnk_09EF8D68[3];
+extern AnimHeader* gUnk_09EF8D74;
+
 extern void* gUnk_09EF8D8C[3];
 #if defined(VERSION_US) || defined(VERSION_JP)
 extern AnimHeader* gUnk_09EF8D98;

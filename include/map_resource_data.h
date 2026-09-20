@@ -532,8 +532,6 @@ extern void* gUnk_09EF8D00[6];
 extern AnimHeader* gUnk_09EF8D18[3];
 extern void* gUnk_09EF8D24[8];
 extern AnimHeader* gUnk_09EF8D44[1];
-extern void* gUnk_09EF8D68[3];
-extern AnimHeader* gUnk_09EF8D74;
 #ifdef VERSION_EU
 #endif
 

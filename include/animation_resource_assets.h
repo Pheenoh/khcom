@@ -10211,11 +10211,6 @@ extern AnimHeader gUnk_098A85F4;
 extern AnimHeader gUnk_098A85FA;
 extern AnimHeader gUnk_098A8600;
 extern AnimHeader gUnk_098A861E;
-extern u8 gUnk_098A8A6C[];
-extern u8 gUnk_098A8A82[];
-extern u8 gUnk_098A8A98[];
-extern u8 gUnk_098A8AAE[];
-extern AnimHeader gUnk_098A8AC4;
 
 extern u8 gUnk_0962E7B4[];
 extern u8 gUnk_0962E7BE[];

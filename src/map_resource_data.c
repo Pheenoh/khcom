@@ -1085,13 +1085,5 @@ AnimHeader* gUnk_09EF8D44[1] __attribute__((section(".data_map_resources_09EF8CD
     &gUnk_098A6574,
 };
 
-void* gUnk_09EF8D68[3] __attribute__((section(".data_map_resources_09EF8D68"))) = {
-    gUnk_098A8728,
-    gUnk_098A8738,
-    gUnk_098A876C,
-};
-
-AnimHeader* gUnk_09EF8D74 __attribute__((section(".data_map_resources_09EF8D68"))) = &gUnk_098A87A0;
-
 #ifdef VERSION_EU
 #endif

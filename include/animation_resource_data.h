@@ -2437,8 +2437,6 @@ extern AnimHeader* gUnk_09EF8CD0[2];
 extern void* gUnk_09EF8D48[4];
 extern AnimHeader* gUnk_09EF8D58[3];
 extern AnimHeader* gUnk_09EF8D64;
-extern void* gUnk_09EF8D78[4];
-extern AnimHeader* gUnk_09EF8D88[1];
 
 extern void* gUnk_09EF39A0[5];
 extern AnimHeader* gUnk_09EF39B4[1];
