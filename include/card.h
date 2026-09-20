@@ -1890,7 +1890,7 @@ extern s16 gUnk_090361C0[];
 typedef struct BossCardWork {
     CardDef* cardDef;
     CardBack* cardBack;
-    s32* unk_08;
+    const s32* unk_08;
     u8 unk_0C[0x18];
     s32 unk_24;
     u16 unk_28;

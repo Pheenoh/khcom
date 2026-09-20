@@ -11,7 +11,7 @@ extern u16 gUnk_09EE4BE0[10];
 extern void* gUnkEu_09F6FF30[5];
 extern void** gUnkEu_09F6FF44[5];
 extern void** gUnkEu_09F6FF70[5];
-extern u16 gUnkEu_090CED64[5];
+extern const u16 gUnkEu_090CED64[5];
 #endif
 
 #endif

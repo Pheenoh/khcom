@@ -16864,7 +16864,7 @@ u8 func_08090DB0(CardDisplayWork* p, void* a) {
     return 1;
 }
 void func_08090EA0(CardDisplayWork* p, CardDisplayArgs* a) {
-    s32* tbl;
+    const s32* tbl;
     u8 n;
     s32 id;
     u8* g;
@@ -16948,7 +16948,7 @@ void func_08090EA0(CardDisplayWork* p, CardDisplayArgs* a) {
 }
 
 void func_08091048(CardDisplayWork* p, CardDisplayArgs* a) {
-    s32* tbl;
+    const s32* tbl;
     u8 n;
     s32 id;
 
@@ -16990,7 +16990,7 @@ void func_08091048(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A5 = p->cardDef->unk_20;
 }
 void func_08091138(CardDisplayWork* p, CardDisplayArgs* a) {
-    s32* tbl;
+    const s32* tbl;
     u8 n;
     s32 id;
 
@@ -23374,7 +23374,7 @@ void func_0809B644(void* pool, s16 x, s16 y, s16 z, u8 idx) {
 
 void func_0809B6D0(void* pool, s16 a, s16 b, s16 c, u16 d) {
     s32 args[4];
-    s32* t;
+    const s32* t;
 
     t = gUnk_09EE275C[d];
     args[0] = a << 8;

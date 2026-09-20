@@ -5,10 +5,10 @@
       "placements": [
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipes",
+          "section": ".rodata",
           "address": "0x8f7d638",
-          "size": 1164,
-          "sha256": "b300a2e4e66b25d14b8c52516eae06fb69755c09e103adcbed972b5d538f530f",
+          "size": 1218,
+          "sha256": "0652373880415eee8ea831bdac3db21aec0d54af171f24e369b26f5db36bfdf3",
           "objects": [
             {
               "name": "gUnk_08F7D638",
@@ -724,12 +724,24 @@
                 "func_0809B6D0",
                 "selector 53 has native runtime count zero; nine coherent consecutive card IDs continue the preceding recipe family and terminate at the independently read u8 count table, identical in all regions; no live count of nine is claimed"
               ]
+            },
+            {
+              "name": "gUnk_08F7DAC4",
+              "offset": 1164,
+              "size": 54,
+              "consumer": [
+                "Bosscard_0",
+                "func_08090EA0",
+                "func_08091048",
+                "func_08091138",
+                "native byte loads; the final zero belongs to selector 53"
+              ]
             }
           ]
         },
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipe_index",
+          "section": ".data",
           "address": "0x9ee275c",
           "size": 216,
           "sha256": "8578544bdf770b1fb8bd85592c079cb8bfdab1ba92b84681ac40aa1b658747b0",
@@ -742,27 +754,6 @@
                 "Bosscard_0",
                 "func_08090EA0",
                 "54 native pointer records paired to 54 count bytes; exact next independent Continue metadata boundary"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "boss_card_data.c",
-          "section": ".data_boss_card_counts",
-          "address": "0x8f7dac4",
-          "size": 54,
-          "sha256": "2d38fb1bcb53d9ffca176388e970a2a70b7e2e168948f13fe0cfa24cad0197a0",
-          "objects": [
-            {
-              "name": "gUnk_08F7DAC4",
-              "offset": 0,
-              "size": 54,
-              "consumer": [
-                "Bosscard_0",
-                "func_08090EA0",
-                "func_08091048",
-                "func_08091138",
-                "native byte loads; the final zero belongs to selector 53"
               ]
             }
           ]
@@ -799,10 +790,10 @@
       "placements": [
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipes",
+          "section": ".rodata",
           "address": "0x8f70b40",
-          "size": 1164,
-          "sha256": "b300a2e4e66b25d14b8c52516eae06fb69755c09e103adcbed972b5d538f530f",
+          "size": 1218,
+          "sha256": "0652373880415eee8ea831bdac3db21aec0d54af171f24e369b26f5db36bfdf3",
           "objects": [
             {
               "name": "gUnk_08F7D638",
@@ -1518,12 +1509,24 @@
                 "func_0809B6D0",
                 "selector 53 has native runtime count zero; nine coherent consecutive card IDs continue the preceding recipe family and terminate at the independently read u8 count table, identical in all regions; no live count of nine is claimed"
               ]
+            },
+            {
+              "name": "gUnk_08F7DAC4",
+              "offset": 1164,
+              "size": 54,
+              "consumer": [
+                "Bosscard_0",
+                "func_08090EA0",
+                "func_08091048",
+                "func_08091138",
+                "native byte loads; the final zero belongs to selector 53"
+              ]
             }
           ]
         },
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipe_index",
+          "section": ".data",
           "address": "0x9eba1d8",
           "size": 216,
           "sha256": "1eceeff6be006fedcb6c1df714369012af87f4ca0566a83ee214c63b773d133f",
@@ -1536,27 +1539,6 @@
                 "Bosscard_0",
                 "func_08090EA0",
                 "54 native pointer records paired to 54 count bytes; exact next independent Continue metadata boundary"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "boss_card_data.c",
-          "section": ".data_boss_card_counts",
-          "address": "0x8f70fcc",
-          "size": 54,
-          "sha256": "2d38fb1bcb53d9ffca176388e970a2a70b7e2e168948f13fe0cfa24cad0197a0",
-          "objects": [
-            {
-              "name": "gUnk_08F7DAC4",
-              "offset": 0,
-              "size": 54,
-              "consumer": [
-                "Bosscard_0",
-                "func_08090EA0",
-                "func_08091048",
-                "func_08091138",
-                "native byte loads; the final zero belongs to selector 53"
               ]
             }
           ]
@@ -1593,10 +1575,10 @@
       "placements": [
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipes",
+          "section": ".rodata",
           "address": "0x8f8e534",
-          "size": 1164,
-          "sha256": "b300a2e4e66b25d14b8c52516eae06fb69755c09e103adcbed972b5d538f530f",
+          "size": 1218,
+          "sha256": "0652373880415eee8ea831bdac3db21aec0d54af171f24e369b26f5db36bfdf3",
           "objects": [
             {
               "name": "gUnk_08F7D638",
@@ -2312,12 +2294,24 @@
                 "func_0809B6D0",
                 "selector 53 has native runtime count zero; nine coherent consecutive card IDs continue the preceding recipe family and terminate at the independently read u8 count table, identical in all regions; no live count of nine is claimed"
               ]
+            },
+            {
+              "name": "gUnk_08F7DAC4",
+              "offset": 1164,
+              "size": 54,
+              "consumer": [
+                "Bosscard_0",
+                "func_08090EA0",
+                "func_08091048",
+                "func_08091138",
+                "native byte loads; the final zero belongs to selector 53"
+              ]
             }
           ]
         },
         {
           "unit": "boss_card_data.c",
-          "section": ".data_boss_card_recipe_index",
+          "section": ".data",
           "address": "0x9f5d70c",
           "size": 216,
           "sha256": "de1e12dfac59b41dc07e82e47305b49c45019fa76d901b67fa98633ad74b5744",
@@ -2330,27 +2324,6 @@
                 "Bosscard_0",
                 "func_08090EA0",
                 "54 native pointer records paired to 54 count bytes; exact next independent Continue metadata boundary"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "boss_card_data.c",
-          "section": ".data_boss_card_counts",
-          "address": "0x8f8e9c0",
-          "size": 54,
-          "sha256": "2d38fb1bcb53d9ffca176388e970a2a70b7e2e168948f13fe0cfa24cad0197a0",
-          "objects": [
-            {
-              "name": "gUnk_08F7DAC4",
-              "offset": 0,
-              "size": 54,
-              "consumer": [
-                "Bosscard_0",
-                "func_08090EA0",
-                "func_08091048",
-                "func_08091138",
-                "native byte loads; the final zero belongs to selector 53"
               ]
             }
           ]
@@ -2386,6 +2359,7 @@
   },
   "provenance": {
     "boss_card_recipes": "The native 54-pointer run corresponds one-for-one with 54 count bytes and ends at independently identified Continue metadata. Consumers use s32 card IDs and u8 counts. Preserve unsized public externs: func_08090EA0 has a real one-past-count access when unk_0D7 equals n. No runtime reachability guarantee is claimed for unused selector 53, whose stored count is zero. Its nine valid card IDs are independently bracketed by the final pointer base and the byte-count table, matching the preceding nine-card recipe family in all three regions. An extra unused value 459 is a neutral scalar, not an inflated recipe.",
-    "continue_cursor": "The two cursor coordinates are read only through a zero-or-one choice in the Continue UI update. Their exact s32[2] extent and adjacent bounded Continue name form ordinary const data in continue_ui.c. Native four-byte section alignment supplies the original two bytes after the 54 boss-card counts; alignment_before and padding_before validate that boundary without assigning the linker location or adding a padding object. The EU-only five-pointer compressed tile selector belongs to the same UI callbacks and remains ordinary initialized data before the two task descriptors."
+    "continue_cursor": "The two cursor coordinates are read only through a zero-or-one choice in the Continue UI update. Their exact s32[2] extent and adjacent bounded Continue name form ordinary const data in continue_ui.c. Native four-byte section alignment supplies the original two bytes after the 54 boss-card counts; alignment_before and padding_before validate that boundary without assigning the linker location or adding a padding object. The EU-only five-pointer compressed tile selector belongs to the same UI callbacks and remains ordinary initialized data before the two task descriptors.",
+    "native_catalog": "The existing boss-card recipe and count definitions form a complete read-only catalog consumed by Bosscard_0 and four card.c lookup routines. Const qualification is a source-reconstruction inference supported by these read-only uses and their separate original low-ROM run; it is not a claim of recovered source declarations. The mutable 54-pointer index remains ordinary initialized data and now points to const card IDs. Existing record capacities, both neutral scalars, the final zero count and all initializer tokens are unchanged. Unsized shared index/count declarations preserve the existing one-past-count access in func_08090EA0. The 55 recipe objects followed by the 54-byte count table compile into ordinary 1218-byte .rodata, while the index compiles into 216-byte .data in every region. No TU split or runtime write inference is introduced. Existing Continue ownership and its independently validated natural two-byte alignment gap remain unchanged."
   }
 }

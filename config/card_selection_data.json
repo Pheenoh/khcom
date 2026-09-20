@@ -1,17 +1,18 @@
 {
   "version": 1,
   "provenance": {
-    "map_selection": "MapSelect passes gUnk_09EE4BB0 to SetBgMapBlocks with 1 by 2 blocks. The cursor index is explicitly cycled through 0..4 and its row is XORed with 1, proving the separate s16[5] and s16[2] coordinate arrays. func_08093E34 loops i from a to a+9 and indexes gUnk_09EE4BE0[i-a], proving ten u16 tile destinations. The WORLDSELECT Mode is independently identified by its exact ASCII name and the unique ordered triple WORLDSELECT_0/1/2 callbacks in each native ROM."
+    "map_selection": "MapSelect passes gUnk_09EE4BB0 to SetBgMapBlocks with 1 by 2 blocks. The cursor index is explicitly cycled through 0..4 and its row is XORed with 1, proving the separate s16[5] and s16[2] coordinate arrays. func_08093E34 loops i from a to a+9 and indexes gUnk_09EE4BE0[i-a], proving ten u16 tile destinations. The WORLDSELECT Mode is independently identified by its exact ASCII name and the unique ordered triple WORLDSELECT_0/1/2 callbacks in each native ROM.",
+    "native_selection_catalog": "The existing MapSelect resource pointers, cursor coordinates and EU language selectors form one native initialized-data prefix: 22 bytes in US/JP and 84 bytes in EU, including the native two-byte pointer-alignment gap in EU. Complete definitions are ordered by their original regional positions without changing types, bounds, initializer tokens or regional presence. The EU five-entry tile-size table is read only as a scalar LoadObjTiles argument and is reconstructed as const, yielding its existing 10-byte readonly span. The ten-entry tile-destination table remains explicitly placed because the owning MapSelect TaskDesc interrupts the initialized-data run; no callback metadata is moved to this catalog merely to close that gap. All existing object contracts and payloads are retained, and no new translation-unit boundary is claimed."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB0",
+          "section": ".data",
           "address": "0x9ee4bb0",
-          "size": 8,
-          "sha256": "40935beeba3eb694c262d946281484c436d2d0896c4ffb2da99e3bd4e57a5fb9",
+          "size": 22,
+          "sha256": "77fb5bfc0f9aafc1909404d070b901d30dea924093588abd8d43f6e5645603e3",
           "objects": [
             {
               "name": "gUnk_09EE4BB0",
@@ -21,37 +22,19 @@
                 "MapSelect_1",
                 "SetBgMapBlocks width 1 height 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB8",
-          "address": "0x9ee4bb8",
-          "size": 10,
-          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BB8",
-              "offset": 0,
+              "offset": 8,
               "size": 10,
               "consumer": [
                 "func_08093F5C",
                 "cursor column 0..4"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BC2",
-          "address": "0x9ee4bc2",
-          "size": 4,
-          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BC2",
-              "offset": 0,
+              "offset": 18,
               "size": 4,
               "consumer": [
                 "func_08093F5C",
@@ -121,10 +104,10 @@
       "placements": [
         {
           "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB0",
+          "section": ".data",
           "address": "0x9ebc208",
-          "size": 8,
-          "sha256": "c78d70070cce0de10731f67b2aaf6793c05d3d95e88561a6cd1b04acdc8de8bb",
+          "size": 22,
+          "sha256": "10cdf229c08bc676814615ab65044e7b119d47bfc8aaff2a2c788718216a492c",
           "objects": [
             {
               "name": "gUnk_09EE4BB0",
@@ -134,37 +117,19 @@
                 "MapSelect_1",
                 "SetBgMapBlocks width 1 height 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB8",
-          "address": "0x9ebc210",
-          "size": 10,
-          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BB8",
-              "offset": 0,
+              "offset": 8,
               "size": 10,
               "consumer": [
                 "func_08093F5C",
                 "cursor column 0..4"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BC2",
-          "address": "0x9ebc21a",
-          "size": 4,
-          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BC2",
-              "offset": 0,
+              "offset": 18,
               "size": 4,
               "consumer": [
                 "func_08093F5C",
@@ -234,54 +199,63 @@
       "placements": [
         {
           "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB0",
-          "address": "0x9f6ff58",
-          "size": 8,
-          "sha256": "086a526cd22142fe58d206c605b3d20f62cdb0651e5c679cadeaca77167a7c23",
+          "section": ".data",
+          "address": "0x9f6ff30",
+          "size": 84,
+          "sha256": "17de91e281b04fa40f40be258e2a5c918dc9f13464331caa2c32d3ecd2666309",
           "objects": [
             {
-              "name": "gUnk_09EE4BB0",
+              "name": "gUnkEu_09F6FF30",
               "offset": 0,
+              "size": 20,
+              "consumer": [
+                "MapSelect_0",
+                "gLanguage domain 0..4"
+              ]
+            },
+            {
+              "name": "gUnkEu_09F6FF44",
+              "offset": 20,
+              "size": 20,
+              "consumer": [
+                "MapSelect_0",
+                "gLanguage domain 0..4"
+              ]
+            },
+            {
+              "name": "gUnk_09EE4BB0",
+              "offset": 40,
               "size": 8,
               "consumer": [
                 "MapSelect_1",
                 "SetBgMapBlocks width 1 height 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BB8",
-          "address": "0x9f6ff60",
-          "size": 10,
-          "sha256": "8273eea49ddbb9f95d297edabe1e88d2ea40206e9585f0ffb644565dd7d42b56",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BB8",
-              "offset": 0,
+              "offset": 48,
               "size": 10,
               "consumer": [
                 "func_08093F5C",
                 "cursor column 0..4"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BC2",
-          "address": "0x9f6ff6a",
-          "size": 4,
-          "sha256": "1564645a0811ab1ea148646facf2e072f2bc73eec7b9660d5997f2dd0929cbf2",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4BC2",
-              "offset": 0,
+              "offset": 58,
               "size": 4,
               "consumer": [
                 "func_08093F5C",
                 "cursor row XOR 1"
+              ]
+            },
+            {
+              "name": "gUnkEu_09F6FF70",
+              "offset": 64,
+              "size": 20,
+              "consumer": [
+                "MapSelect_2",
+                "gLanguage domain 0..4"
               ]
             }
           ]
@@ -306,63 +280,7 @@
         },
         {
           "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09F6FF30",
-          "address": "0x9f6ff30",
-          "size": 20,
-          "sha256": "fae4131ed72c45806077d7519416b714023d6d710f5a9f94e957aa44435ffe61",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FF30",
-              "offset": 0,
-              "size": 20,
-              "consumer": [
-                "MapSelect_0",
-                "gLanguage domain 0..4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09F6FF44",
-          "address": "0x9f6ff44",
-          "size": 20,
-          "sha256": "2affb8467ba9eb34f93245a3eebfc90d8ac9d0ca23902c55d84502b10fefe3dc",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FF44",
-              "offset": 0,
-              "size": 20,
-              "consumer": [
-                "MapSelect_0",
-                "gLanguage domain 0..4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09F6FF70",
-          "address": "0x9f6ff70",
-          "size": 20,
-          "sha256": "2bcf586f35b2a5230b30592fbdfd659487fedb063a8b453bc14eb5fabc0e1e6e",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FF70",
-              "offset": 0,
-              "size": 20,
-              "consumer": [
-                "MapSelect_2",
-                "gLanguage domain 0..4"
-              ]
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_090CED64",
+          "section": ".rodata",
           "address": "0x90ced64",
           "size": 10,
           "sha256": "3ac178d10dafd3445d72d0fd1f36633bd75d52a5adfb7257f1a6154f80cc7e42",
