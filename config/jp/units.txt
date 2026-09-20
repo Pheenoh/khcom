@@ -80,6 +80,8 @@ mode_copyright2.c -O2 -fprologue-bugfix -fno-common
 mode_status.c -O2 -fprologue-bugfix -fno-common
 status.c -O2 -fprologue-bugfix
 bos4.c -O2 -fprologue-bugfix -fno-common
+mode_mapchk.c -O2 -fprologue-bugfix
+map_runtime.c -O2 -fprologue-bugfix -fno-common
 map.c -O2 -fprologue-bugfix -fno-common
 room.c
 bos5.c -O2 -fprologue-bugfix -fno-common
@@ -1425,7 +1427,7 @@ asset_gfx_gap_156.s(.rodata)
 bos4.c(.rodata_registration_name_gTaskDescBosUrsulaBubbleSingle)
 bos4.c(.rodata_registration_name_gTaskDescBosUrsulaThunder)
 asset_gfx_gap_158.s(.rodata)
-bos4.c(.rodata_registration_name_gModeMapChk)
+mode_mapchk.c(.rodata)
 asset_gfx_gap_159.s(.rodata)
 map.c(.rodata_registration_name_gModeMapDbg)
 map.c(.rodata_registration_name_gModeMapFld)
@@ -2387,15 +2389,12 @@ animation_resource_data.c(.data_09EF67FC)
 remaining_resource_data.c(.data_remaining_09EF6850)
 animation_resource_data.c(.data_09EF6860)
 remaining_resource_data.c(.data_remaining_09EF68E0)
-debug_menu_data.c(.rodata_gUnk_09EF6960)
-debug_menu_data.c(.rodata_gUnk_09EF6974)
-bos4.c(.rodata_gUnk_09EF69A8)
-bos4.c(.data_registration_gModeMapChk)
-bos4.c(.rodata_gUnk_09EF69E0)
+mode_mapchk.c(.data)
+map_runtime.c(.rodata_gUnk_09EF69E0)
 rodata_regtables3_gap_58.s(.rodata)
-bos4.c(.rodata_gUnk_09EF69EE)
+map_runtime.c(.rodata_gUnk_09EF69EE)
 rodata_regtables3_gap_58_at_09EF69FB.s(.rodata)
-bos4.c(.data_gUnk_09EF69FC)
+map_runtime.c(.data_gUnk_09EF69FC)
 map.c(.rodata_gUnk_09EF6A34)
 map.c(.rodata_gUnk_09EF6A42)
 map.c(.data_gUnk_09EF6A50)

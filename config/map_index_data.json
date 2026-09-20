@@ -1,28 +1,44 @@
 {
   "version": 1,
   "provenance": {
-    "bounds": "The two world-level offsets contain 14 meaningful native bytes each and end at independently referenced next arrays. The world event array contains 14 nonzero or 0xFF entries followed by two zero alignment bytes, which are not owned here. The random world selector explicitly uses modulo 13; both 13-byte world selectors retain their independent physical bases and leave their one-byte zero tails outside their object extents. Fourteen actual world-text pointers end at the level-offset table. The native map-generation dispatch contains 14 distinct boolean callbacks; the script interpreter has exactly two command handlers. The map-check dispatcher has 10 callback slots and ends at its existing TaskDesc name. Native function targets and all regional literal references are checked separately.",
-    "types": "The map-generation callbacks return only 0 or 1 and have no direct source callers. Their definitions use u8, matching the established u8 function-pointer table and eliminating incompatible callback types. Existing body bytes and relocations must remain unchanged. World names use the established version-native MapNameText rather than integer addresses."
+    "bounds": "The two world-level offsets contain 14 meaningful native bytes each and end at independently referenced next arrays. The world event array contains 14 nonzero or 0xFF entries followed by two zero alignment bytes, which are not owned here. The random world selector explicitly uses modulo 13; both 13-byte world selectors retain their independent physical bases and leave their one-byte zero tails outside their object extents. Fourteen actual world-text pointers end at the level-offset table. The native map-generation dispatch contains 14 distinct boolean callbacks; the script interpreter has exactly two command handlers. The map-check dispatcher has 10 callback slots and ends at its following Mode record. Native function targets and all regional literal references are checked separately.",
+    "types": "The map-generation callbacks return only 0 or 1 and have no direct source callers. Their definitions use u8, matching the established u8 function-pointer table and eliminating incompatible callback types. Existing body bytes and relocations must remain unchanged. World names use the established version-native MapNameText rather than integer addresses.",
+    "mapcheck_owner": "The fifteen consecutive functions from func_080DDEC8 through Mode_MapChk_2 form the closed map-check control and lifecycle group in every region. Its two state pointers have no other source consumers. The preceding Ursula BSS followed directly by ordinary private MapChk BSS reproduces every original address with four-byte alignment. The two bounded label arrays, ten-callback dispatcher and Mode record form one native initialized-data run of 128 bytes, while the twelve-byte mode name occupies native readonly data. Pointer-array top-level const was introduced during data recovery, not established from the originals; ordinary mutable pointer arrays preserve the original low-readonly/high-initialized organization while keeping character pointees const. This storage qualification is inferred from that native organization, not from observed writes. The following fifty map-runtime functions retain their existing trailing boundary and world-table placements; this split does not establish their original boundary with map.c."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "bos4.c",
-          "section": ".rodata_gUnk_09EF69A8",
-          "address": "0x9ef69a8",
-          "size": 40,
-          "sha256": "09fc7b695415eee0a71d4c5ebfbf626897d8bd08c1c9d37c4d7045e161daed4e",
+          "unit": "mode_mapchk.c",
+          "section": ".data",
+          "address": "0x9ef6960",
+          "size": 128,
+          "sha256": "13f7f3ef83388e3310848851eb5dc2bcaeb89afc947cd2bc1f343e7054ef8f37",
           "objects": [
             {
-              "name": "gUnk_09EF69A8",
+              "name": "gUnk_09EF6960",
               "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 20,
+              "size": 52
+            },
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 72,
               "size": 40
+            },
+            {
+              "name": "gModeMapChk",
+              "offset": 112,
+              "size": 16
             }
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69E0",
           "address": "0x9ef69e0",
           "size": 13,
@@ -36,7 +52,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69EE",
           "address": "0x9ef69ee",
           "size": 13,
@@ -50,7 +66,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".data_gUnk_09EF69FC",
           "address": "0x9ef69fc",
           "size": 56,
@@ -146,21 +162,36 @@
     "jp": {
       "placements": [
         {
-          "unit": "bos4.c",
-          "section": ".rodata_gUnk_09EF69A8",
-          "address": "0x9ecdd94",
-          "size": 40,
-          "sha256": "69619bbefbfba766a0d287483af0280aee55c8f9f19f6296e4a29167d2c7f371",
+          "unit": "mode_mapchk.c",
+          "section": ".data",
+          "address": "0x9ecdd4c",
+          "size": 128,
+          "sha256": "9a48e587d19c134ebc827a1ce63d6b4b410f7cacdd89d26a53557b3e11eb8c94",
           "objects": [
             {
-              "name": "gUnk_09EF69A8",
+              "name": "gUnk_09EF6960",
               "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 20,
+              "size": 52
+            },
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 72,
               "size": 40
+            },
+            {
+              "name": "gModeMapChk",
+              "offset": 112,
+              "size": 16
             }
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69E0",
           "address": "0x9ecddcc",
           "size": 13,
@@ -174,7 +205,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69EE",
           "address": "0x9ecddda",
           "size": 13,
@@ -188,7 +219,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".data_gUnk_09EF69FC",
           "address": "0x9ecdde8",
           "size": 56,
@@ -284,7 +315,7 @@
     "eu": {
       "placements": [
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".data_gMapWorldNameEu_088926FC",
           "address": "0x88926fc",
           "size": 20,
@@ -298,21 +329,36 @@
           ]
         },
         {
-          "unit": "bos4.c",
-          "section": ".rodata_gUnk_09EF69A8",
-          "address": "0x9f82018",
-          "size": 40,
-          "sha256": "e86e502fd1e175eb2be7d359f1ea328d34bc7fbd61bdacedf308490dc41fb5f0",
+          "unit": "mode_mapchk.c",
+          "section": ".data",
+          "address": "0x9f81fd0",
+          "size": 128,
+          "sha256": "c7dd07cd8bbcbaad93724001202ed8d60fe1404700bb7918b20b30496df942fe",
           "objects": [
             {
-              "name": "gUnk_09EF69A8",
+              "name": "gUnk_09EF6960",
               "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 20,
+              "size": 52
+            },
+            {
+              "name": "gUnk_09EF69A8",
+              "offset": 72,
               "size": 40
+            },
+            {
+              "name": "gModeMapChk",
+              "offset": 112,
+              "size": 16
             }
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69E0",
           "address": "0x9f82050",
           "size": 13,
@@ -326,7 +372,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".rodata_gUnk_09EF69EE",
           "address": "0x9f8205e",
           "size": 13,
@@ -340,7 +386,7 @@
           ]
         },
         {
-          "unit": "bos4.c",
+          "unit": "map_runtime.c",
           "section": ".data_gUnk_09EF69FC",
           "address": "0x9f8206c",
           "size": 56,

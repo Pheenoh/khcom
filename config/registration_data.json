@@ -4785,8 +4785,8 @@
           "padding_before": 2
         },
         {
-          "unit": "bos4.c",
-          "section": ".rodata_registration_name_gModeMapChk",
+          "unit": "mode_mapchk.c",
+          "section": ".rodata",
           "address": "0x0984B838",
           "size": 12,
           "sha256": "a4c7264bf24ced643a050122100a074514f9962773f4094a1024a51d3878eda6",
@@ -4795,20 +4795,6 @@
               "name": "gModeNameMapChk",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gModeMapChk",
-          "address": "0x09EF69D0",
-          "size": 16,
-          "sha256": "a6c7b2812483575286ccda8bc48701c08c24fe1b1649aa4a20ba7dfb067377b7",
-          "objects": [
-            {
-              "name": "gModeMapChk",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -11985,8 +11971,8 @@
           "padding_before": 2
         },
         {
-          "unit": "bos4.c",
-          "section": ".rodata_registration_name_gModeMapChk",
+          "unit": "mode_mapchk.c",
+          "section": ".rodata",
           "address": "0x0980034C",
           "size": 12,
           "sha256": "a4c7264bf24ced643a050122100a074514f9962773f4094a1024a51d3878eda6",
@@ -11995,20 +11981,6 @@
               "name": "gModeNameMapChk",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gModeMapChk",
-          "address": "0x09ECDDBC",
-          "size": 16,
-          "sha256": "9cab32045f8b1fbf96acd7af6945e76b59699450f616b3649b6b28743784b823",
-          "objects": [
-            {
-              "name": "gModeMapChk",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -19182,8 +19154,8 @@
           "padding_before": 2
         },
         {
-          "unit": "bos4.c",
-          "section": ".rodata_registration_name_gModeMapChk",
+          "unit": "mode_mapchk.c",
+          "section": ".rodata",
           "address": "0x0982820C",
           "size": 12,
           "sha256": "a4c7264bf24ced643a050122100a074514f9962773f4094a1024a51d3878eda6",
@@ -19192,20 +19164,6 @@
               "name": "gModeNameMapChk",
               "offset": 0,
               "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos4.c",
-          "section": ".data_registration_gModeMapChk",
-          "address": "0x09F82040",
-          "size": 16,
-          "sha256": "1e7f8f261b2ecc9b1b03068a45224ed5fc4741c83da1c017d98ba216f5cab1a9",
-          "objects": [
-            {
-              "name": "gModeMapChk",
-              "offset": 0,
-              "size": 16
             }
           ]
         },

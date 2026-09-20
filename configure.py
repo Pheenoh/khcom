@@ -145,6 +145,7 @@ UNIT_BSS = {
     "src/key.o": 0x02034000,
     "src/mode_movie.o": {"us": 0x02034938, "jp": 0x02034938, "eu": 0x020348D8},
     "src/bos4.o": {"us": 0x02034F0C, "jp": 0x02034E6C, "eu": 0x020350FC},
+    "src/mode_mapchk.o": {"us": 0x02034F14, "jp": 0x02034E74, "eu": 0x02035108},
     "src/map.o": {"us": 0x02034F1C, "jp": 0x02034E7C, "eu": 0x02035110},
     "src/poo.o": {"us": 0x02034DA8, "jp": 0x02034D08, "eu": 0x02034F98},
     "src/mode_allmap.o": {"us": 0x02034E3C, "jp": 0x02034D9C, "eu": 0x0203502C},

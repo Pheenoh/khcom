@@ -435,7 +435,6 @@ extern const char gTaskNameStatusMessage[];
 extern const char gTaskNameStatusFriend[];
 extern const char gTaskNameStockMesDisp[];
 extern const char gTaskNameBosBoogie[];
-extern const char gModeNameMapChk[];
 extern const char gModeNameMapDbg[];
 extern const char gModeNameMapFld[];
 extern const char gModeNameMapFix[];

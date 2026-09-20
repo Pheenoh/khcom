@@ -1628,10 +1628,8 @@
       "sections": [
         {
           "base": "0x2034f0c",
-          "size": "0x10",
+          "size": "0x8",
           "symbols": {
-            "gMapChkWork": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034F18": {"offset": "0xc", "size": "0x4"},
             "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
             "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
           }
@@ -1645,6 +1643,20 @@
           }
         }
       ]
+    },
+    "src/mode_mapchk.o": {
+      "base": "0x2034f14",
+      "size": "0x8",
+      "symbols": {
+        "gMapChkWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_02034F18": {
+          "offset": "0x4",
+          "size": "0x4"
+        }
+      }
     },
     "src/agb_sram.o": {
       "base": "0x2038698",
@@ -3890,10 +3902,8 @@
       "sections": [
         {
           "base": "0x2034e6c",
-          "size": "0x10",
+          "size": "0x8",
           "symbols": {
-            "gMapChkWork": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034F18": {"offset": "0xc", "size": "0x4"},
             "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
             "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
           }
@@ -3907,6 +3917,20 @@
           }
         }
       ]
+    },
+    "src/mode_mapchk.o": {
+      "base": "0x2034e74",
+      "size": "0x8",
+      "symbols": {
+        "gMapChkWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_02034F18": {
+          "offset": "0x4",
+          "size": "0x4"
+        }
+      }
     },
     "src/agb_sram.o": {
       "base": "0x2038608",
@@ -6132,11 +6156,9 @@
       "sections": [
         {
           "base": "0x20350fc",
-          "size": "0x14",
+          "size": "0xc",
           "symbols": {
-            "gMapChkWork": {"offset": "0xc", "size": "0x4"},
             "gUnkEu_02035104": {"offset": "0x8", "size": "0x4"},
-            "gUnk_02034F18": {"offset": "0x10", "size": "0x4"},
             "gUrsulaMapanimeWork": {"offset": "0x4", "size": "0x4"},
             "gUrsulaWork": {"offset": "0x0", "size": "0x4"}
           }
@@ -6150,6 +6172,20 @@
           }
         }
       ]
+    },
+    "src/mode_mapchk.o": {
+      "base": "0x2035108",
+      "size": "0x8",
+      "symbols": {
+        "gMapChkWork": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_02034F18": {
+          "offset": "0x4",
+          "size": "0x4"
+        }
+      }
     },
     "src/agb_sram.o": {
       "base": "0x2038ca8",
