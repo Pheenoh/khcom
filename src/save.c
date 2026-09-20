@@ -1,4 +1,5 @@
 #include "save_api.h"
+#include "agb_sram.h"
 #include "gba/syscall.h"
 #include "save.h"
 

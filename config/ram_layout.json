@@ -1659,20 +1659,38 @@
       }
     },
     "src/agb_sram.o": {
-      "base": "0x2038698",
-      "size": "0x120",
-      "symbols": {
-        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
-        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
-      }
-    },
-    "src/sram_state.o": {
-      "base": "0x203c7bc",
-      "size": "0x8",
-      "symbols": {
-        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
-        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
-      }
+      "sections": [
+        {
+          "section": ".bss.agb_sram",
+          "base": "0x2038698",
+          "size": "0x120",
+          "symbols": {
+            "readSramFast_Work": {
+              "offset": "0xa0",
+              "size": "0x80"
+            },
+            "verifySramFast_Work": {
+              "offset": "0x0",
+              "size": "0xa0"
+            }
+          }
+        },
+        {
+          "section": ".common.agb_sram",
+          "base": "0x203c7bc",
+          "size": "0x8",
+          "symbols": {
+            "ReadSramFast": {
+              "offset": "0x0",
+              "size": "0x4"
+            },
+            "VerifySramFast": {
+              "offset": "0x4",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
     },
     "src/sio_link_header_state.o": {
       "base": "0x020397D0",
@@ -3933,20 +3951,38 @@
       }
     },
     "src/agb_sram.o": {
-      "base": "0x2038608",
-      "size": "0x120",
-      "symbols": {
-        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
-        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
-      }
-    },
-    "src/sram_state.o": {
-      "base": "0x203c72c",
-      "size": "0x8",
-      "symbols": {
-        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
-        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
-      }
+      "sections": [
+        {
+          "section": ".bss.agb_sram",
+          "base": "0x2038608",
+          "size": "0x120",
+          "symbols": {
+            "readSramFast_Work": {
+              "offset": "0xa0",
+              "size": "0x80"
+            },
+            "verifySramFast_Work": {
+              "offset": "0x0",
+              "size": "0xa0"
+            }
+          }
+        },
+        {
+          "section": ".common.agb_sram",
+          "base": "0x203c72c",
+          "size": "0x8",
+          "symbols": {
+            "ReadSramFast": {
+              "offset": "0x0",
+              "size": "0x4"
+            },
+            "VerifySramFast": {
+              "offset": "0x4",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
     },
     "src/sio_link_header_state.o": {
       "base": "0x02039740",
@@ -6188,20 +6224,38 @@
       }
     },
     "src/agb_sram.o": {
-      "base": "0x2038ca8",
-      "size": "0x120",
-      "symbols": {
-        "readSramFast_Work": {"offset": "0xa0", "size": "0x80"},
-        "verifySramFast_Work": {"offset": "0x0", "size": "0xa0"}
-      }
-    },
-    "src/sram_state.o": {
-      "base": "0x203cdac",
-      "size": "0x8",
-      "symbols": {
-        "ReadSramFast": {"offset": "0x0", "size": "0x4"},
-        "VerifySramFast": {"offset": "0x4", "size": "0x4"}
-      }
+      "sections": [
+        {
+          "section": ".bss.agb_sram",
+          "base": "0x2038ca8",
+          "size": "0x120",
+          "symbols": {
+            "readSramFast_Work": {
+              "offset": "0xa0",
+              "size": "0x80"
+            },
+            "verifySramFast_Work": {
+              "offset": "0x0",
+              "size": "0xa0"
+            }
+          }
+        },
+        {
+          "section": ".common.agb_sram",
+          "base": "0x203cdac",
+          "size": "0x8",
+          "symbols": {
+            "ReadSramFast": {
+              "offset": "0x0",
+              "size": "0x4"
+            },
+            "VerifySramFast": {
+              "offset": "0x4",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
     },
     "src/sio_link_header_state.o": {
       "base": "0x02039DE0",

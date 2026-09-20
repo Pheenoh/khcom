@@ -1,4 +1,3 @@
-#include "sram_state.h"
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
@@ -79,8 +78,5 @@ void ApplySaveFileSmall(SaveFileSmall* data);
 void SaveWriteSystem(void);
 
 void SaveWriteFileSmall(u16 file);
-
-void SetSramFastFunc(void);
-u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);
 
 #endif /* GUARD_SAVE_H */

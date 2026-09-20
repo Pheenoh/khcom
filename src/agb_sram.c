@@ -1,10 +1,12 @@
-#include "sram_state.h"
-#include "types.h"
+#include "agb_sram.h"
+
+void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
+u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size);
 
 #define REG_WAITCNT (*(vu16*)0x4000204)
 
-u16 verifySramFast_Work[80];
-u16 readSramFast_Work[64];
+static u16 verifySramFast_Work[80];
+static u16 readSramFast_Work[64];
 
 
 void ReadSramFast_Core(const u8* src, u8* dest, u32 size) {

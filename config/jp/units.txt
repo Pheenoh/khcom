@@ -101,7 +101,7 @@ sroll.c -O2 -fprologue-bugfix -fno-common
 pcm_audio.c -O2 -fprologue-bugfix
 audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
-agb_sram.c -O1 -fno-common
+agb_sram.c -O1
 movie.c -O0 -fno-common
 movie_player.c -O0 -g -fno-common
 movie_codec.s
@@ -152,7 +152,6 @@ pooh_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_state.c -O2 -fprologue-bugfix -fno-common
 card_ui_state.c -O2 -fprologue-bugfix -fno-common
-sram_state.c -O2 -fprologue-bugfix -fno-common
 transform_veneers.s(.text)
 malloc.c(.rodata)
 sprite.c(.rodata)

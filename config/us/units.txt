@@ -130,8 +130,7 @@ sroll.c -O2 -fprologue-bugfix -fno-common
 pcm_audio.c -O2 -fprologue-bugfix
 audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
-agb_sram.c -O1 -fno-common
-sram_state.c -O2 -fprologue-bugfix -fno-common
+agb_sram.c -O1
 movie.c -O0 -fno-common
 movie_player.c -O0 -g -fno-common
 movie_codec.s
