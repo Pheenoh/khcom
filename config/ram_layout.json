@@ -1040,12 +1040,25 @@
       }
     },
     "src/mode_eventselect.o": {
-      "base": "0x02034A94",
-      "size": "0x3",
-      "symbols": {
-        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
-      }
+      "sections": [
+        {
+          "section": ".bss.mode_eventselect",
+          "base": "0x02034A94",
+          "size": "0x3",
+          "symbols": {
+            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+          }
+        },
+        {
+          "section": ".common.mode_eventselect",
+          "base": "0x02039DD0",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
     },
     "src/card_battle.o": {
       "sections": [
@@ -1205,10 +1218,10 @@
         },
         {
           "section": ".common.msg",
-          "base": "0x02039DD0",
+          "base": "0x2039dcc",
           "size": "0x4",
           "symbols": {
-            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+            "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
           }
         }
       ]
@@ -1925,13 +1938,6 @@
       "size": "0x8",
       "symbols": {
         "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
-      }
-    },
-    "src/event_scanline_state.o": {
-      "base": "0x2039dcc",
-      "size": "0x4",
-      "symbols": {
-        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
       }
     },
     "src/memory_regions.o": {
@@ -3332,12 +3338,25 @@
       }
     },
     "src/mode_eventselect.o": {
-      "base": "0x020349F4",
-      "size": "0x3",
-      "symbols": {
-        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
-      }
+      "sections": [
+        {
+          "section": ".bss.mode_eventselect",
+          "base": "0x020349F4",
+          "size": "0x3",
+          "symbols": {
+            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+          }
+        },
+        {
+          "section": ".common.mode_eventselect",
+          "base": "0x02039D40",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
     },
     "src/card_battle.o": {
       "sections": [
@@ -3497,10 +3516,10 @@
         },
         {
           "section": ".common.msg",
-          "base": "0x02039D40",
+          "base": "0x2039d3c",
           "size": "0x4",
           "symbols": {
-            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+            "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
           }
         }
       ]
@@ -4215,13 +4234,6 @@
       "size": "0x8",
       "symbols": {
         "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
-      }
-    },
-    "src/event_scanline_state.o": {
-      "base": "0x2039d3c",
-      "size": "0x4",
-      "symbols": {
-        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
       }
     },
     "src/memory_regions.o": {
@@ -5615,12 +5627,25 @@
       }
     },
     "src/mode_eventselect.o": {
-      "base": "0x02034AB0",
-      "size": "0x3",
-      "symbols": {
-        "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
-        "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
-      }
+      "sections": [
+        {
+          "section": ".bss.mode_eventselect",
+          "base": "0x02034AB0",
+          "size": "0x3",
+          "symbols": {
+            "gUnk_02034A94": {"offset": "0x0", "size": "0x2"},
+            "gUnk_02034A96": {"offset": "0x2", "size": "0x1"}
+          }
+        },
+        {
+          "section": ".common.mode_eventselect",
+          "base": "0x0203A3E0",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
     },
     "src/card_battle.o": {
       "sections": [
@@ -5761,10 +5786,10 @@
         },
         {
           "section": ".common.msg",
-          "base": "0x0203A3E0",
+          "base": "0x203a3dc",
           "size": "0x4",
           "symbols": {
-            "gUnk_02039DD0": {"offset": "0x0", "size": "0x4"}
+            "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
           }
         }
       ]
@@ -6481,13 +6506,6 @@
       "size": "0x8",
       "symbols": {
         "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
-      }
-    },
-    "src/event_scanline_state.o": {
-      "base": "0x203a3dc",
-      "size": "0x4",
-      "symbols": {
-        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
       }
     },
     "src/memory_regions.o": {

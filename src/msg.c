@@ -1,4 +1,5 @@
 #include "registration_data.h"
+#include "eventselect_api.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -35,7 +36,7 @@ static BgTextLine* gUnk_02034A8C;
 static u8 gUnk_02034A90;
 static u8 gUnk_02034A91;
 
-struct UnkStruct_02039DD0* gUnk_02039DD0;
+EventScanlineScroll* gUnk_02039DCC;
 
 void func_0806180C(u16 a) {
     ModeRequest(&gUnk_09EE274C, a);

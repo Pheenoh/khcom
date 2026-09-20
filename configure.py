@@ -72,7 +72,8 @@ UNIT_COMMON = {
     "src/status.o": {"us": 0X0203C550, "jp": 0x0203c4c0, "eu": 0x0203cb40},
     "src/mode_debflag.o": {"us": 0X02039B94, "jp": 0x02039b04, "eu": 0x0203a1a4},
     "src/wlogo.o": {"us": 0X0203AB38, "jp": 0x0203aaa8, "eu": 0x0203b10c},
-    "src/msg.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
+    "src/msg.o": {"us": 0x02039DCC, "jp": 0x02039D3C, "eu": 0x0203A3DC},
+    "src/mode_eventselect.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
     "src/mode_allmap.o": {"us": 0x0203C4F0, "jp": 0x0203C460, "eu": 0x0203CAE0},
 }
 
@@ -81,7 +82,6 @@ UNIT_BSS = {
     "src/memory_regions.o": 0x03000000,
     "src/mode_chkbtl_data.o": {"us": 0x02034890, "jp": 0x02034890, "eu": 0x02034898},
     "src/mode_battle.o": {"eu": 0x02034890},
-    "src/event_scanline_state.o": {"us": 0x02039DCC, "jp": 0x02039D3C, "eu": 0x0203A3DC},
     "src/map_transition_state.o": {"us": 0x0203C7B0, "jp": 0x0203C720, "eu": 0x0203CDA0},
     "src/allmap_bottom_state.o": {"us": 0x0203C510, "jp": 0x0203C480, "eu": 0x0203CB00},
     "src/allmap_scroll_state.o": {"us": 0x0203C504, "jp": 0x0203C474, "eu": 0x0203CAF4},

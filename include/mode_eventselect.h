@@ -99,7 +99,6 @@ typedef struct EffectWork {
     TaskPool tasks;
 } EffectWork;
 
-extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern EventState* gUnk_02039DC8;
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];

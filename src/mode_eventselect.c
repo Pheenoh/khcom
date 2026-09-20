@@ -10,8 +10,9 @@
 #include "mode_eventselect.h"
 #include "gba/keys.h"
 
-s16 gUnk_02034A94;
-u8 gUnk_02034A96;
+static s16 gUnk_02034A94;
+static u8 gUnk_02034A96;
+UnkStruct_02039DD0* gUnk_02039DD0;
 
 void mode_eventselect_0(void) {
     SetBgMode0();

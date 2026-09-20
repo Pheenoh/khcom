@@ -59,12 +59,11 @@ mode_deck.c -O2 -fprologue-bugfix -fno-common
 mode_continue.c -O2 -fprologue-bugfix -fno-common
 mode_event.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix
-mode_eventselect.c -O2 -fprologue-bugfix -fno-common
+mode_eventselect.c -O2 -fprologue-bugfix
 card_battle.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
 memory_regions.c -O2 -fprologue-bugfix -fno-common
-event_scanline_state.c -O2 -fprologue-bugfix -fno-common
 map_transition_state.c -O2 -fprologue-bugfix -fno-common
 allmap_bottom_state.c -O2 -fprologue-bugfix -fno-common
 allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
