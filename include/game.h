@@ -3,7 +3,6 @@
 
 #include "map_text_data.h"
 
-#include "bos2_background_data.h"
 
 #include "obj_api.h"
 #include "btl_collision.h"

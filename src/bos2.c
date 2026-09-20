@@ -5,6 +5,12 @@
 #include "macros.h"
 #include "bos2.h"
 #include "battle_bounds.h"
+#include "boss_map_block_assets.h"
+#include "background_actor_assets.h"
+
+extern const u16* gUnk_09EF2AA4[46][4];
+extern void* gUnk_09EF2D94[37];
+extern const u16* gUnk_09EF2E68[4];
 
 s16 gUnk_0203ACC0 COMMON;
 s16 gUnk_0203ACC4 COMMON;
@@ -4983,91 +4989,19 @@ TaskDesc gTaskDescBosJfMajin __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameBosDsd[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsd"), aligned(1))) = "task_bos_dsd";
 
-TaskDesc gTaskDescBosDsd __attribute__((section(".data_registration_gTaskDescBosDsd"))) = {
-    gTaskNameBosDsd,
-    (void (*)(void*, void*))task_bos_dsd_0,
-    task_bos_dsd_1,
-    (void (*)(void*))task_bos_dsd_2,
-    (void (*)(void*))task_bos_dsd_3,
-    0x394,
-};
-
 const char gTaskNameBosDsdMain[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMain"), aligned(1))) = "task_bos_dsd_main";
-
-TaskDesc gTaskDescBosDsdMain __attribute__((section(".data_registration_gTaskDescBosDsdMain"))) = {
-    gTaskNameBosDsdMain,
-    (void (*)(void*, void*))task_bos_dsd_main_0,
-    task_bos_dsd_main_1,
-    (void (*)(void*))task_bos_dsd_main_2,
-    (void (*)(void*))task_bos_dsd_main_3,
-    0x190,
-};
 
 const char gTaskNameBosDsdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMap"), aligned(1))) = "task_bos_dsd_map";
 
-TaskDesc gTaskDescBosDsdMap __attribute__((section(".data_registration_gTaskDescBosDsdMap"))) = {
-    gTaskNameBosDsdMap,
-    (void (*)(void*, void*))task_bos_dsd_map_0,
-    task_bos_dsd_map_1,
-    0,
-    0,
-    0x4,
-};
-
 const char gTaskNameBosDsdIta[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdIta"), aligned(1))) = "task_bos_dsd_ita";
-
-TaskDesc gTaskDescBosDsdIta __attribute__((section(".data_registration_gTaskDescBosDsdIta"))) = {
-    gTaskNameBosDsdIta,
-    (void (*)(void*, void*))task_bos_dsd_ita_0,
-    task_bos_dsd_ita_1,
-    (void (*)(void*))task_bos_dsd_ita_2,
-    (void (*)(void*))task_bos_dsd_ita_3,
-    0x90,
-};
 
 const char gTaskNameBosDsdRock[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdRock"), aligned(1))) = "task_bos_dsd_rock";
 
-TaskDesc gTaskDescBosDsdRock __attribute__((section(".data_registration_gTaskDescBosDsdRock"))) = {
-    gTaskNameBosDsdRock,
-    (void (*)(void*, void*))task_bos_dsd_rock_0,
-    task_bos_dsd_rock_1,
-    (void (*)(void*))task_bos_dsd_rock_2,
-    (void (*)(void*))task_bos_dsd_rock_3,
-    0x24,
-};
-
 const char gTaskNameBosDsdCircle[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdCircle"), aligned(1))) = "task_bos_dsd_circle";
-
-TaskDesc gTaskDescBosDsdCircle __attribute__((section(".data_registration_gTaskDescBosDsdCircle"))) = {
-    gTaskNameBosDsdCircle,
-    (void (*)(void*, void*))task_bos_dsd_circle_0,
-    task_bos_dsd_circle_1,
-    (void (*)(void*))task_bos_dsd_circle_2,
-    (void (*)(void*))task_bos_dsd_circle_3,
-    0x20,
-};
 
 const char gTaskNameBosDsdEnergy1[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy1"), aligned(1))) = "task_bos_dsd_energy1";
 
-TaskDesc gTaskDescBosDsdEnergy1 __attribute__((section(".data_registration_gTaskDescBosDsdEnergy1"))) = {
-    gTaskNameBosDsdEnergy1,
-    (void (*)(void*, void*))task_bos_dsd_energy1_0,
-    task_bos_dsd_energy1_1,
-    (void (*)(void*))task_bos_dsd_energy1_2,
-    (void (*)(void*))task_bos_dsd_energy1_3,
-    0x4C,
-};
-
 const char gTaskNameBosDsdEnergy2[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy2"), aligned(1))) = "task_bos_dsd_energy2";
-
-TaskDesc gTaskDescBosDsdEnergy2 __attribute__((section(".data_registration_gTaskDescBosDsdEnergy2"))) = {
-    gTaskNameBosDsdEnergy2,
-    (void (*)(void*, void*))task_bos_dsd_energy2_0,
-    task_bos_dsd_energy2_1,
-    (void (*)(void*))task_bos_dsd_energy2_2,
-    (void (*)(void*))task_bos_dsd_energy2_3,
-    0x40,
-};
 
 const char gTaskName_09EF2A5C[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A5C"), aligned(1))) = "task_bos_jf_rock";
 
@@ -5089,4 +5023,212 @@ TaskDesc gUnk_09EF2A74 __attribute__((section(".data_registration_gUnk_09EF2A74"
     (void (*)(void*))task_bos_jf_borderline_2,
     (void (*)(void*))task_bos_jf_borderline_3,
     0xB8,
+};
+
+TaskDesc gTaskDescBosDsd = {
+    gTaskNameBosDsd,
+    (void (*)(void*, void*))task_bos_dsd_0,
+    task_bos_dsd_1,
+    (void (*)(void*))task_bos_dsd_2,
+    (void (*)(void*))task_bos_dsd_3,
+    0x394,
+};
+
+const u16* gUnk_09EF2AA4[46][4] = {
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E3C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E4464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E4C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E5464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E5C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E5464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E4C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E4464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E7464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E6C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E6464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E6C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E7464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E7C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E8464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E8C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E9464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E9C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E9464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E8C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096E8464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EA464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EAC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EB464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EBC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EC464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096ECC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096ED464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EDC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EE464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EEC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EF464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EFC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EF464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EEC64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096EE464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F0464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F0C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F1464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F1C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F2464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F2C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F3464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F3C64, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F4464, gUnk_08125E24 },
+    { gUnk_08125E24, gUnk_08125E24, gUnk_096F4C64, gUnk_08125E24 },
+};
+
+const u16* gUnk_09EF2D84 = gUnk_08125E24;
+
+const u16* gUnk_09EF2D88 = gUnk_08125E24;
+
+const u16* gUnk_09EF2D8C = gUnk_08125E24;
+
+const u16* gUnk_09EF2D90 = gUnk_08125E24;
+
+void* gUnk_09EF2D94[37] = {
+    gUnk_096874E4,
+    gUnk_0968F4E4,
+    gUnk_096918A4,
+    gUnk_09693C64,
+    gUnk_09696024,
+    gUnk_09693C64,
+    gUnk_096918A4,
+    gUnk_0968F4E4,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_0969EF04,
+    gUnk_0969FF04,
+    gUnk_096A0F04,
+    gUnk_096A1F04,
+    gUnk_096A0F04,
+    gUnk_0969FF04,
+    gUnk_0969EF04,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_09699684,
+    gUnk_0969EF04,
+    gUnk_0969FF04,
+    gUnk_096A0F04,
+    gUnk_096A1F04,
+    gUnk_096A0F04,
+    gUnk_0969FF04,
+    gUnk_0969EF04,
+    gUnk_096A3F44,
+};
+
+void* gUnk_09EF2E28 = gUnk_096A3F44;
+
+void* gUnk_09EF2E2C = gUnk_096A3F44;
+
+void* gUnk_09EF2E30 = gUnk_096A3F44;
+
+void* gUnk_09EF2E34 = gUnk_096A3F44;
+
+void* gUnk_09EF2E38 = gUnk_096A8BA4;
+
+void* gUnk_09EF2E3C = gUnk_096A8BA4;
+
+void* gUnk_09EF2E40 = gUnk_096A8BA4;
+
+void* gUnk_09EF2E44 = gUnk_096A8BA4;
+
+void* gUnk_09EF2E48 = gUnk_096A8BA4;
+
+void* gUnk_09EF2E4C = 0;
+
+TaskDesc gTaskDescBosDsdMain = {
+    gTaskNameBosDsdMain,
+    (void (*)(void*, void*))task_bos_dsd_main_0,
+    task_bos_dsd_main_1,
+    (void (*)(void*))task_bos_dsd_main_2,
+    (void (*)(void*))task_bos_dsd_main_3,
+    0x190,
+};
+
+const u16* gUnk_09EF2E68[4] = {
+#if defined(VERSION_US)
+    gBossMapBlockUs_096E2C64,
+    gBossMapBlockUs_08125E24,
+    gBossMapBlockUs_096E3464,
+    gBossMapBlockUs_08125E24,
+#elif defined(VERSION_JP)
+    gBossMapBlockJp_0969B440,
+    gBossMapBlockJp_08125EA0,
+    gBossMapBlockJp_0969BC40,
+    gBossMapBlockJp_08125EA0,
+#elif defined(VERSION_EU)
+    gBossMapBlockEu_096AA98C,
+    gBossMapBlockEu_08124944,
+    gBossMapBlockEu_096AB18C,
+    gBossMapBlockEu_08124944,
+#endif
+};
+
+TaskDesc gTaskDescBosDsdMap = {
+    gTaskNameBosDsdMap,
+    (void (*)(void*, void*))task_bos_dsd_map_0,
+    task_bos_dsd_map_1,
+    0,
+    0,
+    0x4,
+};
+
+TaskDesc gTaskDescBosDsdIta = {
+    gTaskNameBosDsdIta,
+    (void (*)(void*, void*))task_bos_dsd_ita_0,
+    task_bos_dsd_ita_1,
+    (void (*)(void*))task_bos_dsd_ita_2,
+    (void (*)(void*))task_bos_dsd_ita_3,
+    0x90,
+};
+
+TaskDesc gTaskDescBosDsdRock = {
+    gTaskNameBosDsdRock,
+    (void (*)(void*, void*))task_bos_dsd_rock_0,
+    task_bos_dsd_rock_1,
+    (void (*)(void*))task_bos_dsd_rock_2,
+    (void (*)(void*))task_bos_dsd_rock_3,
+    0x24,
+};
+
+TaskDesc gTaskDescBosDsdCircle = {
+    gTaskNameBosDsdCircle,
+    (void (*)(void*, void*))task_bos_dsd_circle_0,
+    task_bos_dsd_circle_1,
+    (void (*)(void*))task_bos_dsd_circle_2,
+    (void (*)(void*))task_bos_dsd_circle_3,
+    0x20,
+};
+
+TaskDesc gTaskDescBosDsdEnergy1 = {
+    gTaskNameBosDsdEnergy1,
+    (void (*)(void*, void*))task_bos_dsd_energy1_0,
+    task_bos_dsd_energy1_1,
+    (void (*)(void*))task_bos_dsd_energy1_2,
+    (void (*)(void*))task_bos_dsd_energy1_3,
+    0x4C,
+};
+
+TaskDesc gTaskDescBosDsdEnergy2 = {
+    gTaskNameBosDsdEnergy2,
+    (void (*)(void*, void*))task_bos_dsd_energy2_0,
+    task_bos_dsd_energy2_1,
+    (void (*)(void*))task_bos_dsd_energy2_2,
+    (void (*)(void*))task_bos_dsd_energy2_3,
+    0x40,
 };

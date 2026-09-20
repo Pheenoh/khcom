@@ -6,7 +6,6 @@
 
 #include "animation_resource_data.h"
 
-#include "bos2_background_data.h"
 
 #include "background_actor_assets.h"
 
