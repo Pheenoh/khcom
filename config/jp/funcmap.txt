@@ -732,7 +732,7 @@ task_evt_shadow_2	0x0801d050	188	0x0801d050	named
 task_evt_shadow_3	0x0801d10c	36	0x0801d10c	named
 task_acgtrans_0	0x0801d130	56	0x0801d130	named
 task_acgtrans_1	0x0801d168	92	0x0801d168	named
-func_0801D1C4	0x0801d1c4	100	0x0801d1c4	global
+CreateBgTileTransferTask	0x0801d1c4	100	0x0801d1c4	global
 task_btl_lockon_0	0x0801d228	96	0x0801d228	named
 func_0801D288	0x0801d288	680	0x0801d288	global
 task_btl_lockon_1	0x0801d530	100	0x0801d530	named
