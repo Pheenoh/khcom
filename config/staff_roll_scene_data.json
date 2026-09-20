@@ -3,14 +3,15 @@
   "provenance": {
     "bounds": "func_08112C38 loads either literal-pool-linked StaffRollScene base and advances its scene index until the next index exceeds21, proving two22-record arrays of the canonical52-byte type.",
     "regions": "The three native function pools establish both bases. All scalar fields agree in US/EU; JP changes only the existing coordinate fields unk_0C, unk_28 and unk_2C. Source preserves these native coordinates.",
-    "resources": "LoadBgTiles, LoadBgMap and LoadBgPalette consume three pointer/size groups per record. All65 unique full payloads match byte-for-byte across all three regions at the corresponding scene indices and all132 pointer votes agree."
+    "resources": "LoadBgTiles, LoadBgMap and LoadBgPalette consume three pointer/size groups per record. All65 unique full payloads match byte-for-byte across all three regions at the corresponding scene indices and all132 pointer votes agree.",
+    "native_catalog_section": "Each existing shared staff-roll catalog already supplies one complete initialized-data run per active region. Ordinary definitions reproduce the same object sequence and native pointer alignment. Only redundant section annotations and corresponding section selectors are removed; types, initializers, object bounds, region guards and encoded assets are unchanged. The catalog grouping is retained as a reconstruction model without asserting an original source filename."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data_staff_roll_scenes",
+          "section": ".data",
           "address": "0x9a538d8",
           "size": 2288,
           "sha256": "5de00d82727c5866a26d083afb3c907aa502456a112e227bf11fd269e8afa87a",
@@ -41,7 +42,7 @@
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data_staff_roll_scenes",
+          "section": ".data",
           "address": "0x9a08768",
           "size": 2288,
           "sha256": "a16e5dd0664bcdeab29c3d94d034f3e399609381484d17e97ba38284277070dd",
@@ -72,7 +73,7 @@
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data_staff_roll_scenes",
+          "section": ".data",
           "address": "0x9ab1610",
           "size": 2288,
           "sha256": "362224a6f2e95a38e8e2f51c8939323b544d46911b26e8d2238e2cd69075b07d",

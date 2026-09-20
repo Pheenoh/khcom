@@ -3,7 +3,7 @@
 
 #ifdef VERSION_JP
 
-StaffRollScene gUnk_09A538D8[22] __attribute__((section(".data_staff_roll_scenes"))) = {
+StaffRollScene gUnk_09A538D8[22] = {
     { 0, 1, 1, 0, 120, 0, -2048, gUnk_09CD1774, 5120, 0, gUnk_09D59A74, 2048, 0, gUnk_09D695F4, 32, 0, 30720, 51200, 0, 0 },
     { 1, 1, 1, 0, 300, -1024, -1024, gUnk_09CD2B74, 11200, 0, gUnk_09D5A274, 2048, 0, gUnk_09D69614, 512, 0, 30720, 31744, 0, 1 },
     { 1, 1, 0, 0, 180, -1024, -1024, gUnk_09CD5734, 11200, 0, gUnk_09D5AA74, 2048, 0, gUnk_09D69814, 512, 0, 30720, 31744, 0, 2 },
@@ -28,7 +28,7 @@ StaffRollScene gUnk_09A538D8[22] __attribute__((section(".data_staff_roll_scenes
     { 1, 0, 0, 0, 180, -1024, -1024, gUnk_09CEB534, 11200, 0, gUnk_09D5FA74, 2048, 0, gUnk_09D6A814, 512, 0, 30720, 9216, 0, 19 },
 };
 
-StaffRollScene gUnk_09A53D50[22] __attribute__((section(".data_staff_roll_scenes"))) = {
+StaffRollScene gUnk_09A53D50[22] = {
     { 0, 1, 1, 0, 120, 0, -2048, gUnk_09CD1774, 5120, 0, gUnk_09D59A74, 2048, 0, gUnk_09D695F4, 32, 0, 30720, 51200, 0, 0 },
     { 1, 1, 1, 0, 300, -1024, -1024, gUnk_09CEE0F4, 11200, 0, gUnk_09D60274, 2048, 0, gUnk_09D6AA14, 512, 0, 30720, 31744, 0, 1 },
     { 1, 1, 0, 0, 180, -1024, -1024, gUnk_09CF0CB4, 11200, 0, gUnk_09D60A74, 2048, 0, gUnk_09D6AC14, 512, 0, 30720, 31744, 0, 2 },
@@ -55,7 +55,7 @@ StaffRollScene gUnk_09A53D50[22] __attribute__((section(".data_staff_roll_scenes
 
 #else
 
-StaffRollScene gUnk_09A538D8[22] __attribute__((section(".data_staff_roll_scenes"))) = {
+StaffRollScene gUnk_09A538D8[22] = {
     { 0, 1, 1, 0, 120, 0, -2048, gUnk_09CD1774, 5120, 0, gUnk_09D59A74, 2048, 0, gUnk_09D695F4, 32, 0, 30720, 51200, 0, 0 },
     { 1, 1, 1, 0, 300, -1024, -1024, gUnk_09CD2B74, 11200, 0, gUnk_09D5A274, 2048, 0, gUnk_09D69614, 512, 0, 30720, 32768, 0, 1 },
     { 1, 1, 0, 0, 180, -1024, -1024, gUnk_09CD5734, 11200, 0, gUnk_09D5AA74, 2048, 0, gUnk_09D69814, 512, 0, 30720, 32768, 0, 2 },
@@ -80,7 +80,7 @@ StaffRollScene gUnk_09A538D8[22] __attribute__((section(".data_staff_roll_scenes
     { 1, 0, 0, 0, 180, -1024, -1024, gUnk_09CEB534, 11200, 0, gUnk_09D5FA74, 2048, 0, gUnk_09D6A814, 512, 0, 30720, 10240, 0, 19 },
 };
 
-StaffRollScene gUnk_09A53D50[22] __attribute__((section(".data_staff_roll_scenes"))) = {
+StaffRollScene gUnk_09A53D50[22] = {
     { 0, 1, 1, 0, 120, 0, -2048, gUnk_09CD1774, 5120, 0, gUnk_09D59A74, 2048, 0, gUnk_09D695F4, 32, 0, 30720, 51200, 0, 0 },
     { 1, 1, 1, 0, 300, -1024, -1024, gUnk_09CEE0F4, 11200, 0, gUnk_09D60274, 2048, 0, gUnk_09D6AA14, 512, 0, 30720, 32768, 0, 1 },
     { 1, 1, 0, 0, 180, -1024, -1024, gUnk_09CF0CB4, 11200, 0, gUnk_09D60A74, 2048, 0, gUnk_09D6AC14, 512, 0, 30720, 32768, 0, 2 },

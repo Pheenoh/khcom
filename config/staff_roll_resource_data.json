@@ -4,14 +4,15 @@
     "native": "Native StaffRoll resource pointer runs, not one cross-region interpolated array. Function pools anchor logo/name/end tables; script section commands independently select20US,24JP,21EU records whose resource pointers anchor each native section-title pair.",
     "bounds": "Every gfx array ends at maximum actual AnimHeader frame index +1. Nineteen native name runs per region reference only gfx0..2; their following12 Sprite pointers are separate neutral scalar objects, not extra consumed elements. Animation table boundaries require complete renderer headers and the next non-header target.",
     "unused": "US/EU retain one unused Voice Recording variant with the exact8gfx/2animation shape consumed in JP. Other unused name variants preserve the same exact native3animation layout, and are not claimed as selected by the current consumer.",
-    "assets": "Each version-local raw target has an exact Sprite or AnimHeader extent and original ROM hash. Localized shapes and changed section lists receive no invented cross-region aliases."
+    "assets": "Each version-local raw target has an exact Sprite or AnimHeader extent and original ROM hash. Localized shapes and changed section lists receive no invented cross-region aliases.",
+    "native_catalog_section": "Each existing shared staff-roll catalog already supplies one complete initialized-data run per active region. Ordinary definitions reproduce the same object sequence and native pointer alignment. Only redundant section annotations and corresponding section selectors are removed; types, initializers, object bounds, region guards and encoded assets are unchanged. The catalog grouping is retained as a reconstruction model without asserting an original source filename."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "staff_roll_resource_data.c",
-          "section": ".data_staff_roll_resources",
+          "section": ".data",
           "address": "0x9efaf60",
           "size": 2272,
           "sha256": "b4df6c7c4dd3dcba5c1820b9e084373da1560b5a818eecff5dddef5ff03ffc73",
@@ -5572,7 +5573,7 @@
       "placements": [
         {
           "unit": "staff_roll_resource_data.c",
-          "section": ".data_staff_roll_resources",
+          "section": ".data",
           "address": "0x9ed246c",
           "size": 2392,
           "sha256": "396b630000978b4b5d9e095791ca74beefbad99317aa5a583b5a379e135df696",
@@ -11373,7 +11374,7 @@
       "placements": [
         {
           "unit": "staff_roll_resource_data.c",
-          "section": ".data_staff_roll_resources",
+          "section": ".data",
           "address": "0x9f86cac",
           "size": 2312,
           "sha256": "d50db4189509e282b311772c2c92d1754be6d997d7016305b55f99c6f772b84c",

@@ -2,14 +2,15 @@
   "version": 1,
   "provenance": {
     "localized": "EU-only task_sroll_c_char_0 language cases1..4 each select two native resource pairs. Every branch explicitly initializes AnimHeader* indices0..4. Complete native animation frames prove94 graphics for kind0 and66 for kind1. Actual Thumb PC-relative literal loads independently identify all16 bases.",
-    "native": "The2720-byte block is extra EU character-name rendering metadata, not an expansion inferred onto a US table. US/JP have no corresponding placement or synthetic assets. All native Sprite/AnimHeader asset bindings have complete exact format extents and hashes; metadata remains counted."
+    "native": "The2720-byte block is extra EU character-name rendering metadata, not an expansion inferred onto a US table. US/JP have no corresponding placement or synthetic assets. All native Sprite/AnimHeader asset bindings have complete exact format extents and hashes; metadata remains counted.",
+    "native_catalog_section": "Each existing shared staff-roll catalog already supplies one complete initialized-data run per active region. Ordinary definitions reproduce the same object sequence and native pointer alignment. Only redundant section annotations and corresponding section selectors are removed; types, initializers, object bounds, region guards and encoded assets are unchanged. The catalog grouping is retained as a reconstruction model without asserting an original source filename."
   },
   "regions": {
     "eu": {
       "placements": [
         {
           "unit": "staff_roll_localized_resource_data.c",
-          "section": ".data_staff_roll_localized_resources",
+          "section": ".data",
           "address": "0x9f8785c",
           "size": 2720,
           "sha256": "3c3d10952854679cea9636ff1824f030eae6486dcf4ea581395263098b0d44b2",
