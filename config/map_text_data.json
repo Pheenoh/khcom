@@ -3,14 +3,15 @@
   "provenance": {
     "map_names": "Native Sora thirteen-floor and Riku twelve-floor label tables selected by func_080F7AB4, plus the room-name pointer table used by func_08093C18 and task_room_name_0. The twenty-eight room names consist of twenty-six normal map-card names and Unknown Place/Hidden Chamber, ending at the next independent TaskDesc. EU pointers select real five-language LocalizedText records rather than text bytes. Every record and regional string terminator is checked directly against its original ROM; no localized address correspondence is inferred.",
     "debug_underscore": "EncodeSmallFontString consumes the original ASCII underscore and its byte terminator through the map-debug task. This is two bytes in all three ROMs, not a UTF-16 value or four-byte data array. The following native TaskDesc supplies separately verified two-byte four-byte alignment.",
-    "map_owner": "The thirteen-floor and twelve-floor indexes and the two-byte debug underscore are defined in map.c with their actual consumers. Their original address, extent and content contracts are retained in that native owner run in registration_data.json. The shared room-name index and all EU localized records remain here with unchanged definitions and asset payloads."
+    "map_owner": "The thirteen-floor and twelve-floor indexes and the two-byte debug underscore are defined in map.c with their actual consumers. Their original address, extent and content contracts are retained in that native owner run in registration_data.json. The shared room-name index and all EU localized records remain here with unchanged definitions and asset payloads.",
+    "shared_index_native": "The twenty-eight room-name index is shared by room.c and the card name accessor, including allmap and map-inspection users of that accessor. It remains in this shared catalog with its existing type, bound, regional initializer and canonical declaration, and now uses ordinary .data. The EU localized records stay at their existing positions among their language-text payloads; their interleaved placement does not support a single native run without restructuring those resources. This change makes no new code-owner or translation-unit-boundary claim and changes no text payload."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7048",
+          "section": ".data",
           "address": "0x9ef7048",
           "size": 112,
           "sha256": "585322fc25f9c26248c204cf33b1722468d696850122354f32a7da83fa87ba24",
@@ -192,7 +193,7 @@
       "placements": [
         {
           "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7048",
+          "section": ".data",
           "address": "0x9ece434",
           "size": 112,
           "sha256": "471095770696553474304f3014ae8844c1306f806c8af84844b7b3ea353ff7c1",
@@ -374,7 +375,7 @@
       "placements": [
         {
           "unit": "map_text_data.c",
-          "section": ".data_map_text_gUnk_09EF7048",
+          "section": ".data",
           "address": "0x9f826b8",
           "size": 112,
           "sha256": "c73ec5fd7d78709caae777fb7cd3998568c2b19b9da187887b155673d29db809",

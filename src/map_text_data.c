@@ -221,7 +221,7 @@ LocalizedText gMapNameEu_08894578 __attribute__((section(".data_map_text_gMapNam
 
 #endif
 
-MapNameText* gUnk_09EF7048[28] __attribute__((section(".data_map_text_gUnk_09EF7048"))) = {
+MapNameText* gUnk_09EF7048[28] = {
 #if defined(VERSION_US)
     gUnk_0815ADD2,
     gUnk_0815ADF4,

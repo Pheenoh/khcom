@@ -2,7 +2,7 @@
 #include "map.h"
 #include "map_fixed_assets.h"
 
-const u8 gUnk_09EF7108[1536] __attribute__((section(".rodata_map_fixed_cells_09EF7108"), aligned(1))) = {
+const u8 gUnk_09EF7108[1536] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -53,7 +53,7 @@ const u8 gUnk_09EF7108[1536] __attribute__((section(".rodata_map_fixed_cells_09E
     8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9,
 };
 
-const u8 gUnk_09EF7708[768] __attribute__((section(".rodata_map_fixed_cells_09EF7708"), aligned(1))) = {
+const u8 gUnk_09EF7708[768] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 7, 7, 7, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 7, 7, 7, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 7, 7, 7, 9, 9, 9,
@@ -88,7 +88,7 @@ const u8 gUnk_09EF7708[768] __attribute__((section(".rodata_map_fixed_cells_09EF
     8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9,
 };
 
-const u8 gUnk_09EF7A08[768] __attribute__((section(".rodata_map_fixed_cells_09EF7A08"), aligned(1))) = {
+const u8 gUnk_09EF7A08[768] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 7, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 7, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 7, 9, 9, 9, 9, 9, 9,
@@ -123,7 +123,7 @@ const u8 gUnk_09EF7A08[768] __attribute__((section(".rodata_map_fixed_cells_09EF
     8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9,
 };
 
-const u8 gUnk_09EF7D08[768] __attribute__((section(".rodata_map_fixed_cells_09EF7D08"), aligned(1))) = {
+const u8 gUnk_09EF7D08[768] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -158,7 +158,7 @@ const u8 gUnk_09EF7D08[768] __attribute__((section(".rodata_map_fixed_cells_09EF
     8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9,
 };
 
-const u8 gUnk_09EF8008[512] __attribute__((section(".rodata_map_fixed_cells_09EF8008"), aligned(1))) = {
+const u8 gUnk_09EF8008[512] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9,
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9,
@@ -193,7 +193,7 @@ const u8 gUnk_09EF8008[512] __attribute__((section(".rodata_map_fixed_cells_09EF
     9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
 };
 
-const void* gUnk_09EF8208[12] __attribute__((section(".data_map_fixed_09EF8208"))) = {
+const void* gUnk_09EF8208[12] = {
     gUnk_095A72B8,
     gUnk_095A7AB8,
     gUnk_095A82B8,
@@ -208,7 +208,7 @@ const void* gUnk_09EF8208[12] __attribute__((section(".data_map_fixed_09EF8208")
     gUnk_095ACAB8,
 };
 
-const void* gUnk_09EF8238[12] __attribute__((section(".data_map_fixed_09EF8238"))) = {
+const void* gUnk_09EF8238[12] = {
     gUnk_095AF2B8,
     gUnk_095AFAB8,
     gUnk_095B02B8,
@@ -223,7 +223,7 @@ const void* gUnk_09EF8238[12] __attribute__((section(".data_map_fixed_09EF8238")
     gUnk_095B6AB8,
 };
 
-const void* gUnk_09EF8268[12] __attribute__((section(".data_map_fixed_09EF8268"))) = {
+const void* gUnk_09EF8268[12] = {
 #ifdef VERSION_EU
     gUnkEu_08125144,
     gUnkEu_08125144,
@@ -256,7 +256,7 @@ const void* gUnk_09EF8268[12] __attribute__((section(".data_map_fixed_09EF8268")
 #endif
 };
 
-const void* gUnk_09EF8298[6] __attribute__((section(".data_map_fixed_09EF8298"))) = {
+const void* gUnk_09EF8298[6] = {
     gUnk_095B9AB8,
     gUnk_095BA2B8,
     gUnk_095BAAB8,
@@ -265,7 +265,7 @@ const void* gUnk_09EF8298[6] __attribute__((section(".data_map_fixed_09EF8298"))
     gUnk_095BCAB8,
 };
 
-const void* gUnk_09EF82B0[6] __attribute__((section(".data_map_fixed_09EF82B0"))) = {
+const void* gUnk_09EF82B0[6] = {
     gUnk_095C1AB8,
     gUnk_095C22B8,
     gUnk_095C2AB8,
@@ -274,7 +274,7 @@ const void* gUnk_09EF82B0[6] __attribute__((section(".data_map_fixed_09EF82B0"))
     gUnk_095C4AB8,
 };
 
-const void* gUnk_09EF82C8[6] __attribute__((section(".data_map_fixed_09EF82C8"))) = {
+const void* gUnk_09EF82C8[6] = {
     gUnk_095CAAB8,
     gUnk_095CB2B8,
     gUnk_095CBAB8,
@@ -283,7 +283,7 @@ const void* gUnk_09EF82C8[6] __attribute__((section(".data_map_fixed_09EF82C8"))
     gUnk_095CDAB8,
 };
 
-const void* gUnk_09EF82E0[6] __attribute__((section(".data_map_fixed_09EF82E0"))) = {
+const void* gUnk_09EF82E0[6] = {
     gUnk_095D2AB8,
     gUnk_095D32B8,
     gUnk_095D3AB8,
@@ -292,7 +292,7 @@ const void* gUnk_09EF82E0[6] __attribute__((section(".data_map_fixed_09EF82E0"))
     gUnk_095D5AB8,
 };
 
-const void* gUnk_09EF82F8[6] __attribute__((section(".data_map_fixed_09EF82F8"))) = {
+const void* gUnk_09EF82F8[6] = {
     gUnk_095E92B8,
     gUnk_095E9AB8,
     gUnk_095EA2B8,
@@ -301,7 +301,7 @@ const void* gUnk_09EF82F8[6] __attribute__((section(".data_map_fixed_09EF82F8"))
     gUnk_095EC2B8,
 };
 
-const void* gUnk_09EF8310[6] __attribute__((section(".data_map_fixed_09EF8310"))) = {
+const void* gUnk_09EF8310[6] = {
     gUnk_095F12B8,
     gUnk_095F1AB8,
     gUnk_095F22B8,
@@ -310,28 +310,28 @@ const void* gUnk_09EF8310[6] __attribute__((section(".data_map_fixed_09EF8310"))
     gUnk_095F52B8,
 };
 
-const void* gUnk_09EF8328[4] __attribute__((section(".data_map_fixed_09EF8328"))) = {
+const void* gUnk_09EF8328[4] = {
     gUnk_09522AB8,
     gUnk_095232B8,
     gUnk_09523AB8,
     gUnk_095242B8,
 };
 
-const void* gUnk_09EF8338[4] __attribute__((section(".data_map_fixed_09EF8338"))) = {
+const void* gUnk_09EF8338[4] = {
     gUnk_09524AB8,
     gUnk_095252B8,
     gUnk_09525AB8,
     gUnk_095262B8,
 };
 
-const void* gUnk_09EF8348[4] __attribute__((section(".data_map_fixed_09EF8348"))) = {
+const void* gUnk_09EF8348[4] = {
     gUnk_09526AB8,
     gUnk_095272B8,
     gUnk_09527AB8,
     gUnk_095282B8,
 };
 
-const void* gUnk_09EF8358[6] __attribute__((section(".data_map_fixed_09EF8358"))) = {
+const void* gUnk_09EF8358[6] = {
     gUnk_095C1AB8,
     gUnk_095C22B8,
     gUnk_095C2AB8,
@@ -340,7 +340,7 @@ const void* gUnk_09EF8358[6] __attribute__((section(".data_map_fixed_09EF8358"))
     gUnk_095C4AB8,
 };
 
-UnkStruct_09EF8370* gUnk_09EF8370[6] __attribute__((section(".data_map_fixed_09EF8370"))) = {
+UnkStruct_09EF8370* gUnk_09EF8370[6] = {
     &gUnk_09856C90,
     &gUnk_09856D34,
     &gUnk_09856DE4,
@@ -349,7 +349,7 @@ UnkStruct_09EF8370* gUnk_09EF8370[6] __attribute__((section(".data_map_fixed_09E
     &gUnk_09856F64,
 };
 
-UnkStruct_080E8E74* gUnk_09EF8388[14] __attribute__((section(".data_map_fixed_09EF8388"))) = {
+UnkStruct_080E8E74* gUnk_09EF8388[14] = {
     gUnk_09857B44,
     gUnk_09857BBC,
     gUnk_09857DBC,
@@ -366,7 +366,7 @@ UnkStruct_080E8E74* gUnk_09EF8388[14] __attribute__((section(".data_map_fixed_09
     gUnk_09857B44,
 };
 
-UnkStruct_080E8E24* gUnk_09EF83C0[14] __attribute__((section(".data_map_fixed_09EF83C0"))) = {
+UnkStruct_080E8E24* gUnk_09EF83C0[14] = {
     gUnk_0985824C,
     gUnk_09858258,
     gUnk_09858294,
