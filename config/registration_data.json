@@ -9,7 +9,8 @@
     "world_logo_owner": "The nine world-logo selector and task callbacks form a separate final code run in mode_sio.c. Their two private selector tables, two registration records and two aligned names form complete native data and rodata groups across US, JP and EU. The 13-entry world-name and logo-ID bounds come from the selector wrap logic. Native alignment supplies the three bytes after the logo-ID array and the one byte between names.",
     "sio_menu_owner": "All remaining SIO mode descriptors reference callbacks in mode_sio.c, and its world-menu, level-offset and card-trade navigation tables are referenced only by those callbacks and helpers. Six descriptors and four tables form one complete native initialized-data run in US/JP; EU omits the two card-trade descriptors and their navigation table. Original ROM order, object extents, relocations and contents remain independently checked. The separate name sections include intervening UI data and are not merged.",
     "mode_tail_ownership": "Deck/menu, Continue and Event callback groups each reproduce their native code, name, initialized-data and BSS runs in all three original ROMs. The shared event ID is unsigned as established by the original message-handler switch branches.",
-    "bos6_native_data": "The 96-entry PcSpriteCmd pointer index and 14-entry PcAnimStep pointer index are consumed only by bos6.c animation selection and command execution. The two-entry shake index is consumed only by its Pc field-shake helper. In all three original ROMs these three indexes and five TaskDesc records form an uninterrupted 0x238-byte initialized-data run in the same order: sprite index, animation index, Pc registration, shake index, PcFld/PcFlt/PcAcd/BosLst registrations. Each registration directly references callbacks in bos6.c. Ordinary definitions reproduce every original address, byte and relocation without section attributes. The lower-ROM command, animation, palette, shot and name groups retain their existing organization; this consolidation does not claim additional original source boundaries."
+    "bos6_native_data": "The 96-entry PcSpriteCmd pointer index and 14-entry PcAnimStep pointer index are consumed only by bos6.c animation selection and command execution. The two-entry shake index is consumed only by its Pc field-shake helper. In all three original ROMs these three indexes and five TaskDesc records form an uninterrupted 0x238-byte initialized-data run in the same order: sprite index, animation index, Pc registration, shake index, PcFld/PcFlt/PcAcd/BosLst registrations. Each registration directly references callbacks in bos6.c. Ordinary definitions reproduce every original address, byte and relocation without section attributes. The lower-ROM command, animation, palette, shot and name groups retain their existing organization; this consolidation does not claim additional original source boundaries.",
+    "backupstat_owner": "The three state-name pointers are referenced only by mode_backupstat lifecycle and state editing code. In all three regions the pointer index immediately precedes that owner's mode descriptor, forming one complete 0x1C-byte native initialized-data run. The pointer targets, object bounds, callbacks and original ROM bytes remain independently validated. The separate six-entry backup metadata table and encoded text catalog retain their existing representation."
   },
   "regions": {
     "us": {
@@ -6396,13 +6397,18 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".data",
-          "address": "0x09EF9674",
-          "size": 16,
-          "sha256": "e1d4eb75e86926c44234c71ce1988de114187dd34f43f283f05a5e61853cb2e3",
+          "address": "0x9ef9668",
+          "size": 28,
+          "sha256": "028f2be3b8512c830ec1594c0f7114bf17a50ad797f1aefb26eecd5b1c7afebc",
           "objects": [
             {
-              "name": "gModeBackupstat",
+              "name": "gUnk_09EF9668",
               "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gModeBackupstat",
+              "offset": 12,
               "size": 16
             }
           ]
@@ -13979,13 +13985,18 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".data",
-          "address": "0x09ED0A60",
-          "size": 16,
-          "sha256": "0f481bcdba63ed6a8dce911cea46a59cab868f1d7c1d52d29a05cf52fbb09a71",
+          "address": "0x9ed0a54",
+          "size": 28,
+          "sha256": "efdea38c9db7b8feee3b6497ac5733a9cc472fc10728508ae53eab30206a96a0",
           "objects": [
             {
-              "name": "gModeBackupstat",
+              "name": "gUnk_09EF9668",
               "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gModeBackupstat",
+              "offset": 12,
               "size": 16
             }
           ]
@@ -21505,13 +21516,18 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".data",
-          "address": "0x09F850F0",
-          "size": 16,
-          "sha256": "a35d8a85c0c104eb8cbcb711c055a0c6d92cda7e29aa6acc9cb87cc91edc4797",
+          "address": "0x9f850e4",
+          "size": 28,
+          "sha256": "01806b4f35cba2d27b55443118a278b5566b4aac587e34ef09a3aae21a917f30",
           "objects": [
             {
-              "name": "gModeBackupstat",
+              "name": "gUnk_09EF9668",
               "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gModeBackupstat",
+              "offset": 12,
               "size": 16
             }
           ]

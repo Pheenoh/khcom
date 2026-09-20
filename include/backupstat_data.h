@@ -9,6 +9,5 @@ typedef struct BackupStatEntry {
 } BackupStatEntry;
 
 extern BackupStatEntry gUnk_099937E4[];
-extern const char* gUnk_09EF9668[];
 
 #endif

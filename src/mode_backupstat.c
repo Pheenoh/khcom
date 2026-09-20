@@ -3,6 +3,23 @@
 #include "macros.h"
 #include "mode_backupstat.h"
 #include "gba/keys.h"
+#include "worldwarp_catalog_assets.h"
+
+const char* gUnk_09EF9668[3] = {
+#if defined(VERSION_US)
+    gBackupTextUs_099937DC,
+    gBackupTextUs_099937D4,
+    gBackupTextUs_099937CC,
+#elif defined(VERSION_JP)
+    gBackupTextJp_099482F0,
+    gBackupTextJp_099482E8,
+    gBackupTextJp_099482E0,
+#elif defined(VERSION_EU)
+    gBackupTextEu_09999A98,
+    gBackupTextEu_09999A90,
+    gBackupTextEu_09999A88,
+#endif
+};
 
 s8 gUnk_02035FE8;
 s8 gUnk_02035FE9;

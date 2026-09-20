@@ -24,20 +24,6 @@
           ]
         },
         {
-          "unit": "backupstat_data.c",
-          "section": ".data_gUnk_09EF9668",
-          "address": "0x9ef9668",
-          "size": 12,
-          "sha256": "b1f85f597699079d9e418454ef74d630a755a895bb44cb3802822a1434ba72da",
-          "objects": [
-            {
-              "name": "gUnk_09EF9668",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
           "unit": "mode_worldwarp.c",
           "section": ".rodata",
           "address": "0x99930e8",
@@ -237,20 +223,6 @@
           ]
         },
         {
-          "unit": "backupstat_data.c",
-          "section": ".data_gUnk_09EF9668",
-          "address": "0x9ed0a54",
-          "size": 12,
-          "sha256": "0f7d2b8b67fda0c44f2884dd2b499d6a707447f7e33b56ed5bdc1336bc79e2b1",
-          "objects": [
-            {
-              "name": "gUnk_09EF9668",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
           "unit": "mode_worldwarp.c",
           "section": ".rodata",
           "address": "0x9947bfc",
@@ -446,20 +418,6 @@
               "name": "gUnk_099937E4",
               "offset": 0,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "backupstat_data.c",
-          "section": ".data_gUnk_09EF9668",
-          "address": "0x9f850e4",
-          "size": 12,
-          "sha256": "bf49e32d298f7e61b08f9de819d25042c414ce402664d10bc8d752071bb995d5",
-          "objects": [
-            {
-              "name": "gUnk_09EF9668",
-              "offset": 0,
-              "size": 12
             }
           ]
         },
