@@ -10,7 +10,7 @@ typedef struct MapTileAnimationFrame {
 } MapTileAnimationFrame;
 
 typedef struct MapTileAnimationTrack {
-    MapTileAnimationFrame* frames;
+    const MapTileAnimationFrame* frames;
     u8* tiles;
     u8 frameCount;
     u8 unk_09;
@@ -20,7 +20,7 @@ typedef struct MapTileAnimationTrack {
 } MapTileAnimationTrack;
 
 typedef struct MapTileAnimationDef {
-    MapTileAnimationTrack* tracks;
+    const MapTileAnimationTrack* tracks;
     u8 trackCount;
     u8 unk_05;
     u16 unk_06;

@@ -8138,10 +8138,10 @@ void map_anim_0(MapTileAnimationWork* p) {
 }
 
 u8 map_anim_1(MapTileAnimationWork* w) {
-    MapTileAnimationDef* a;
-    MapTileAnimationTrack* e;
-    MapTileAnimationFrame* f;
-    MapTileAnimationFrame* f2;
+    const MapTileAnimationDef* a;
+    const MapTileAnimationTrack* e;
+    const MapTileAnimationFrame* f;
+    const MapTileAnimationFrame* f2;
     u8 i;
     u8* dst;
 

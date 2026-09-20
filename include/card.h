@@ -1046,7 +1046,7 @@ typedef struct MapTileAnimationWork {
     u8 frameTimers[8];
     u8 frameIndices[8];
     u8 unk_11[3];
-    MapTileAnimationDef* definition;
+    const MapTileAnimationDef* definition;
 } MapTileAnimationWork;
 
 typedef struct PrizeCardArgs {

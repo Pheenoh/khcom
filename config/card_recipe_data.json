@@ -3,17 +3,18 @@
   "provenance": {
     "animation": "The six-entry live map animation selector is independently covered by native EventBackgroundDef.unk_20 producers 0..5 in all three regions. Three adjacent unused NULL pointer words are separately named neutral MapTileAnimationDef* scalars, without claiming live indices 6..8. map_anim_0 and map_anim_1 consume explicit trackCount and frameCount fields. All scalar fields and every frame record match across regions. Byte 5 in four MapTileAnimationDef objects is 1, so it is preserved as a neutral u8 field rather than assumed alignment. Single-track objects and definitions are scalars; only actual counted multi-entry tracks are arrays.",
     "starter_decks": "These are card-ID recipes, not encoded text. _08085D04 maps input world choices to twelve selectors; func_08085DA0 iterates the two explicit u16 count arrays, sends each u16 card ID to func_08084458, and adds the generated card to the active deck. Main lists have 5..30 entries; nine supplemental fixed single values are real const u16 scalars. Zero-count selectors retain genuine aliases to another scalar or the main-count array. No dummy arrays are emitted. All recipes and counts are identical in all regions.",
-    "native_catalog": "The starter-deck recipes, counts and pointer indexes retain their existing catalog owner. The 23 readonly definitions form one complete 514-byte native rodata run and the two pointer arrays form one 96-byte native data run in every region, with unchanged source order, types, extents and relocations. Ordinary compiler alignment reproduces both runs without section attributes. The existing four-byte alignment of the first recipe is retained; subsequent natural halfword and pointer alignment is sufficient. This preserves the shared catalog organization without claiming the original translation-unit filename."
+    "native_catalog": "The starter-deck recipes, counts and pointer indexes retain their existing catalog owner. The 23 readonly definitions form one complete 514-byte native rodata run and the two pointer arrays form one 96-byte native data run in every region, with unchanged source order, types, extents and relocations. Ordinary compiler alignment reproduces both runs without section attributes. The existing four-byte alignment of the first recipe is retained; subsequent natural halfword and pointer alignment is sufficient. This preserves the shared catalog organization without claiming the original translation-unit filename.",
+    "animation_native_sections": "The existing complete frame/track/definition catalog forms one 404-byte lower-ROM run in all three regions, while the six-entry selector and three separately named dormant NULL pointers form a 36-byte initialized-data run. MapAnim initialization stores the selected definition in its work record; update only reads definitions, tracks and frames, while changing separate frame timers and indices. Ordinary const catalog records, const pointer views through those types and the work record, and mutable selector storage reproduce the original spans without section or alignment attributes. Const qualification and mutable selector storage are explicit source reconstruction inferences, not observed original qualifiers or writes. All existing extents, scalar/array distinctions, pointer expressions and record values remain intact. Only the live selector is exported. The existing coherent data catalog remains a separate TU; this change makes no claim that the mixed card.c code boundary is recovered."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035348",
+          "section": ".rodata",
           "address": "0x9035348",
-          "size": 16,
-          "sha256": "a0218fde2974672406ca2d51a91882e5af31b3926e0d21a802651cd8ace6de1d",
+          "size": 404,
+          "sha256": "1e1acfaeccd193513546e79ad65a3f5089da63cb19ca66fb783759d8befdb8f3",
           "objects": [
             {
               "name": "gUnk_09035348",
@@ -23,370 +24,190 @@
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035358",
-          "address": "0x9035358",
-          "size": 16,
-          "sha256": "ae00366a0a610576578dc9dbdd3a041ca7a24f7a0be0ffd334a81c42b6b6f414",
-          "objects": [
+            },
             {
               "name": "gUnk_09035358",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035368",
-          "address": "0x9035368",
-          "size": 32,
-          "sha256": "a12cd3290ce0dfe14506018c94f4148bb68d831bafce263cf20d8a897ddddd05",
-          "objects": [
+            },
             {
               "name": "gUnk_09035368",
-              "offset": 0,
+              "offset": 32,
               "size": 32,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035388",
-          "address": "0x9035388",
-          "size": 8,
-          "sha256": "70abc5e7181065a44c75c7651f0bddd6b05a2a855723f136463414e86b553293",
-          "objects": [
+            },
             {
               "name": "gUnk_09035388",
-              "offset": 0,
+              "offset": 64,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 0"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035390",
-          "address": "0x9035390",
-          "size": 16,
-          "sha256": "6e7a2659c80d7e6e37c7b7637cfe36939c756e2eccfd32c4ae6b9259eb60e72f",
-          "objects": [
+            },
             {
               "name": "gUnk_09035390",
-              "offset": 0,
+              "offset": 72,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353A0",
-          "address": "0x90353a0",
-          "size": 16,
-          "sha256": "b33da1b562869b83a710df61ffc27e54c53213051b78b937b50712197887c02c",
-          "objects": [
+            },
             {
               "name": "gUnk_090353A0",
-              "offset": 0,
+              "offset": 88,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353B0",
-          "address": "0x90353b0",
-          "size": 16,
-          "sha256": "53f802f3da4e750152f7ecd277b7325b43543638c1a334df660d59799f0beb94",
-          "objects": [
+            },
             {
               "name": "gUnk_090353B0",
-              "offset": 0,
+              "offset": 104,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353C0",
-          "address": "0x90353c0",
-          "size": 16,
-          "sha256": "c038d8da91f838380ae53fc720b9c2d0a04214fe452a817f18ddf78cc3e25bdb",
-          "objects": [
+            },
             {
               "name": "gUnk_090353C0",
-              "offset": 0,
+              "offset": 120,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353D0",
-          "address": "0x90353d0",
-          "size": 16,
-          "sha256": "7a4a763b74a6729db4833c3b997031dc9654b898ef6ade86e4bee3cb9330aa8a",
-          "objects": [
+            },
             {
               "name": "gUnk_090353D0",
-              "offset": 0,
+              "offset": 136,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353E0",
-          "address": "0x90353e0",
-          "size": 16,
-          "sha256": "b7ff12f6a6a2f9834037c7cf17a13e5182cc23b673f921bbddd912c76ba3c2f1",
-          "objects": [
+            },
             {
               "name": "gUnk_090353E0",
-              "offset": 0,
+              "offset": 152,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353F0",
-          "address": "0x90353f0",
-          "size": 96,
-          "sha256": "950f4f76af67dea7ac621f98dc7f0bf850253720254497329703a236ebc88302",
-          "objects": [
+            },
             {
               "name": "gUnk_090353F0",
-              "offset": 0,
+              "offset": 168,
               "size": 96,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 6"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035450",
-          "address": "0x9035450",
-          "size": 8,
-          "sha256": "e28a90ce8cf498cc74d7d3cd93b16cd38c209509d97a2de60f6a8de1f0d13a85",
-          "objects": [
+            },
             {
               "name": "gUnk_09035450",
-              "offset": 0,
+              "offset": 264,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035458",
-          "address": "0x9035458",
-          "size": 20,
-          "sha256": "55cdeb0a96c5e25ca8d90772914d5d20a38f1f30ce6c88c9b62e601c27527a6d",
-          "objects": [
+            },
             {
               "name": "gUnk_09035458",
-              "offset": 0,
+              "offset": 272,
               "size": 20,
               "consumer": [
                 "map_anim_1",
                 "frameCount 5 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903546C",
-          "address": "0x903546c",
-          "size": 16,
-          "sha256": "f30d90ec600fce5adc17b2f2632ff85d7ca4ad92125c017117a944cdcf59840b",
-          "objects": [
+            },
             {
               "name": "gUnk_0903546C",
-              "offset": 0,
+              "offset": 292,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903547C",
-          "address": "0x903547c",
-          "size": 8,
-          "sha256": "caf18d79c20b360e757a873583480c75e0e156679bb657b5babce05e3d2236ff",
-          "objects": [
+            },
             {
               "name": "gUnk_0903547C",
-              "offset": 0,
+              "offset": 308,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035484",
-          "address": "0x9035484",
-          "size": 16,
-          "sha256": "97a40ca897824a09f01d7c3f387f8235fbc0eea07cd0dbaea44ec4141ee291fd",
-          "objects": [
+            },
             {
               "name": "gUnk_09035484",
-              "offset": 0,
+              "offset": 316,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035494",
-          "address": "0x9035494",
-          "size": 16,
-          "sha256": "0b14ac3c730675440ade3ebc8b8c79f2d89ded73330f9a0772d5ff8564fa4f6b",
-          "objects": [
+            },
             {
               "name": "gUnk_09035494",
-              "offset": 0,
+              "offset": 332,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354A4",
-          "address": "0x90354a4",
-          "size": 8,
-          "sha256": "61e259f4c694a941fc235af9e93a7717f551a35eeba46bacb97a992489a20ec2",
-          "objects": [
+            },
             {
               "name": "gUnk_090354A4",
-              "offset": 0,
+              "offset": 348,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 3"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354AC",
-          "address": "0x90354ac",
-          "size": 24,
-          "sha256": "8ab17753b98be42f524dca533e3676837f39ea8bd596342b2f1f982a6dfda6da",
-          "objects": [
+            },
             {
               "name": "gUnk_090354AC",
-              "offset": 0,
+              "offset": 356,
               "size": 24,
               "consumer": [
                 "map_anim_1",
                 "frameCount 6 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354C4",
-          "address": "0x90354c4",
-          "size": 16,
-          "sha256": "a08cecb7afbf1c6663275c17ded30b48ece0eec7b8be866a0bc31e9e6a3da770",
-          "objects": [
+            },
             {
               "name": "gUnk_090354C4",
-              "offset": 0,
+              "offset": 380,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354D4",
-          "address": "0x90354d4",
-          "size": 8,
-          "sha256": "55d044ade1400669e0ed1c07bcdf366ff6c7eeb6e8eaaea405b78332cf3cf916",
-          "objects": [
+            },
             {
               "name": "gUnk_090354D4",
-              "offset": 0,
+              "offset": 396,
               "size": 8,
               "consumer": [
                 "map_anim_0",
@@ -398,10 +219,10 @@
         },
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A2C",
+          "section": ".data",
           "address": "0x9ee4a2c",
-          "size": 24,
-          "sha256": "56db244a2ef1e21643bbe9194dcb551b9b58634c66c796302bbbcf813347f7e1",
+          "size": 36,
+          "sha256": "3bbbbbb7a6025fd63e32be174c30592677de47c53d729edb2fa25ad100862961",
           "objects": [
             {
               "name": "gUnk_09EE4A2C",
@@ -411,55 +232,28 @@
                 "map_anim_0",
                 "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A44",
-          "address": "0x9ee4a44",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A44",
-              "offset": 0,
+              "offset": 24,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A48",
-          "address": "0x9ee4a48",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A48",
-              "offset": 0,
+              "offset": 28,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A4C",
-          "address": "0x9ee4a4c",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A4C",
-              "offset": 0,
+              "offset": 32,
               "size": 4,
               "consumer": [
                 "map_anim_0",
@@ -719,10 +513,10 @@
       "placements": [
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035348",
+          "section": ".rodata",
           "address": "0x900860c",
-          "size": 16,
-          "sha256": "a0218fde2974672406ca2d51a91882e5af31b3926e0d21a802651cd8ace6de1d",
+          "size": 404,
+          "sha256": "cfc8a66133b08386d230bffe0c208451e167b542ea55d25433494bf9e0d1824f",
           "objects": [
             {
               "name": "gUnk_09035348",
@@ -732,370 +526,190 @@
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035358",
-          "address": "0x900861c",
-          "size": 16,
-          "sha256": "ae00366a0a610576578dc9dbdd3a041ca7a24f7a0be0ffd334a81c42b6b6f414",
-          "objects": [
+            },
             {
               "name": "gUnk_09035358",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035368",
-          "address": "0x900862c",
-          "size": 32,
-          "sha256": "d862f9c9876c19660378ad8baaea57a2fd997765bc05c9e68ee255664cad0cb9",
-          "objects": [
+            },
             {
               "name": "gUnk_09035368",
-              "offset": 0,
+              "offset": 32,
               "size": 32,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035388",
-          "address": "0x900864c",
-          "size": 8,
-          "sha256": "6752e6ac0890072d0ff2f4d8c607bf8133d9835519c749cddfb93a97af3c0d5d",
-          "objects": [
+            },
             {
               "name": "gUnk_09035388",
-              "offset": 0,
+              "offset": 64,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 0"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035390",
-          "address": "0x9008654",
-          "size": 16,
-          "sha256": "6e7a2659c80d7e6e37c7b7637cfe36939c756e2eccfd32c4ae6b9259eb60e72f",
-          "objects": [
+            },
             {
               "name": "gUnk_09035390",
-              "offset": 0,
+              "offset": 72,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353A0",
-          "address": "0x9008664",
-          "size": 16,
-          "sha256": "b33da1b562869b83a710df61ffc27e54c53213051b78b937b50712197887c02c",
-          "objects": [
+            },
             {
               "name": "gUnk_090353A0",
-              "offset": 0,
+              "offset": 88,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353B0",
-          "address": "0x9008674",
-          "size": 16,
-          "sha256": "53f802f3da4e750152f7ecd277b7325b43543638c1a334df660d59799f0beb94",
-          "objects": [
+            },
             {
               "name": "gUnk_090353B0",
-              "offset": 0,
+              "offset": 104,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353C0",
-          "address": "0x9008684",
-          "size": 16,
-          "sha256": "c038d8da91f838380ae53fc720b9c2d0a04214fe452a817f18ddf78cc3e25bdb",
-          "objects": [
+            },
             {
               "name": "gUnk_090353C0",
-              "offset": 0,
+              "offset": 120,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353D0",
-          "address": "0x9008694",
-          "size": 16,
-          "sha256": "7a4a763b74a6729db4833c3b997031dc9654b898ef6ade86e4bee3cb9330aa8a",
-          "objects": [
+            },
             {
               "name": "gUnk_090353D0",
-              "offset": 0,
+              "offset": 136,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353E0",
-          "address": "0x90086a4",
-          "size": 16,
-          "sha256": "b7ff12f6a6a2f9834037c7cf17a13e5182cc23b673f921bbddd912c76ba3c2f1",
-          "objects": [
+            },
             {
               "name": "gUnk_090353E0",
-              "offset": 0,
+              "offset": 152,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353F0",
-          "address": "0x90086b4",
-          "size": 96,
-          "sha256": "91839220e37910c299b6c6ce092f6ca3e0a150f29c54fe6516a6d38f40c09451",
-          "objects": [
+            },
             {
               "name": "gUnk_090353F0",
-              "offset": 0,
+              "offset": 168,
               "size": 96,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 6"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035450",
-          "address": "0x9008714",
-          "size": 8,
-          "sha256": "be6588a29f8a76d748dbf93f68a9ff0bd6f0d2935e5e42fa648cc5dee303700c",
-          "objects": [
+            },
             {
               "name": "gUnk_09035450",
-              "offset": 0,
+              "offset": 264,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035458",
-          "address": "0x900871c",
-          "size": 20,
-          "sha256": "55cdeb0a96c5e25ca8d90772914d5d20a38f1f30ce6c88c9b62e601c27527a6d",
-          "objects": [
+            },
             {
               "name": "gUnk_09035458",
-              "offset": 0,
+              "offset": 272,
               "size": 20,
               "consumer": [
                 "map_anim_1",
                 "frameCount 5 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903546C",
-          "address": "0x9008730",
-          "size": 16,
-          "sha256": "2d41357f8a4347f0ff12c591e67eb79b71b798b97e4cdf7913818af862ae350f",
-          "objects": [
+            },
             {
               "name": "gUnk_0903546C",
-              "offset": 0,
+              "offset": 292,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903547C",
-          "address": "0x9008740",
-          "size": 8,
-          "sha256": "3c663b087cf875ae1d123a00ab5f1a79fb686389475609518fb1b25fbb41f057",
-          "objects": [
+            },
             {
               "name": "gUnk_0903547C",
-              "offset": 0,
+              "offset": 308,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035484",
-          "address": "0x9008748",
-          "size": 16,
-          "sha256": "97a40ca897824a09f01d7c3f387f8235fbc0eea07cd0dbaea44ec4141ee291fd",
-          "objects": [
+            },
             {
               "name": "gUnk_09035484",
-              "offset": 0,
+              "offset": 316,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035494",
-          "address": "0x9008758",
-          "size": 16,
-          "sha256": "cebf06566c3929a45e47e80f29ebb91a8ce7ba8667cb115ea1e1dc955e6fe977",
-          "objects": [
+            },
             {
               "name": "gUnk_09035494",
-              "offset": 0,
+              "offset": 332,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354A4",
-          "address": "0x9008768",
-          "size": 8,
-          "sha256": "8f25f0a608fa772883a27f52c53a9a9052489adce3fde2a83a99fc173039bff4",
-          "objects": [
+            },
             {
               "name": "gUnk_090354A4",
-              "offset": 0,
+              "offset": 348,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 3"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354AC",
-          "address": "0x9008770",
-          "size": 24,
-          "sha256": "8ab17753b98be42f524dca533e3676837f39ea8bd596342b2f1f982a6dfda6da",
-          "objects": [
+            },
             {
               "name": "gUnk_090354AC",
-              "offset": 0,
+              "offset": 356,
               "size": 24,
               "consumer": [
                 "map_anim_1",
                 "frameCount 6 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354C4",
-          "address": "0x9008788",
-          "size": 16,
-          "sha256": "0cc07314fc84c1f05a32c3634c8d3141503b5bdc7e0765149ab66753f0075190",
-          "objects": [
+            },
             {
               "name": "gUnk_090354C4",
-              "offset": 0,
+              "offset": 380,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354D4",
-          "address": "0x9008798",
-          "size": 8,
-          "sha256": "19cbf4951e5c4684d6b6b5d46dd29041ec9b6bb690a0b1d09dfc5d1fd146f0d2",
-          "objects": [
+            },
             {
               "name": "gUnk_090354D4",
-              "offset": 0,
+              "offset": 396,
               "size": 8,
               "consumer": [
                 "map_anim_0",
@@ -1107,10 +721,10 @@
         },
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A2C",
+          "section": ".data",
           "address": "0x9ebc04c",
-          "size": 24,
-          "sha256": "50ee0e03c91b0799fd8585e5eb4143a06a157f2f0f8d860d2ac1807477b88bfc",
+          "size": 36,
+          "sha256": "b1ed6537bcdad3b26d236ae7cd7e35222541bd65a5e2993b8ee67c8c24745b10",
           "objects": [
             {
               "name": "gUnk_09EE4A2C",
@@ -1120,55 +734,28 @@
                 "map_anim_0",
                 "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A44",
-          "address": "0x9ebc064",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A44",
-              "offset": 0,
+              "offset": 24,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A48",
-          "address": "0x9ebc068",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A48",
-              "offset": 0,
+              "offset": 28,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A4C",
-          "address": "0x9ebc06c",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A4C",
-              "offset": 0,
+              "offset": 32,
               "size": 4,
               "consumer": [
                 "map_anim_0",
@@ -1428,10 +1015,10 @@
       "placements": [
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035348",
+          "section": ".rodata",
           "address": "0x90ce63c",
-          "size": 16,
-          "sha256": "a0218fde2974672406ca2d51a91882e5af31b3926e0d21a802651cd8ace6de1d",
+          "size": 404,
+          "sha256": "dbd6b542a6bbd06331409ba23289e19d283151e88c0014f24db7e8f523cadbbc",
           "objects": [
             {
               "name": "gUnk_09035348",
@@ -1441,370 +1028,190 @@
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035358",
-          "address": "0x90ce64c",
-          "size": 16,
-          "sha256": "ae00366a0a610576578dc9dbdd3a041ca7a24f7a0be0ffd334a81c42b6b6f414",
-          "objects": [
+            },
             {
               "name": "gUnk_09035358",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035368",
-          "address": "0x90ce65c",
-          "size": 32,
-          "sha256": "103275817ac6f6d6f5ca322d0af6a02844ca659d44dc1bba314753247efef38d",
-          "objects": [
+            },
             {
               "name": "gUnk_09035368",
-              "offset": 0,
+              "offset": 32,
               "size": 32,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035388",
-          "address": "0x90ce67c",
-          "size": 8,
-          "sha256": "fd6d3694b55bfb8c31e59884361bc8bf549855422c58c01cf5ab984e3e4e3568",
-          "objects": [
+            },
             {
               "name": "gUnk_09035388",
-              "offset": 0,
+              "offset": 64,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 0"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035390",
-          "address": "0x90ce684",
-          "size": 16,
-          "sha256": "6e7a2659c80d7e6e37c7b7637cfe36939c756e2eccfd32c4ae6b9259eb60e72f",
-          "objects": [
+            },
             {
               "name": "gUnk_09035390",
-              "offset": 0,
+              "offset": 72,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353A0",
-          "address": "0x90ce694",
-          "size": 16,
-          "sha256": "b33da1b562869b83a710df61ffc27e54c53213051b78b937b50712197887c02c",
-          "objects": [
+            },
             {
               "name": "gUnk_090353A0",
-              "offset": 0,
+              "offset": 88,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353B0",
-          "address": "0x90ce6a4",
-          "size": 16,
-          "sha256": "53f802f3da4e750152f7ecd277b7325b43543638c1a334df660d59799f0beb94",
-          "objects": [
+            },
             {
               "name": "gUnk_090353B0",
-              "offset": 0,
+              "offset": 104,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353C0",
-          "address": "0x90ce6b4",
-          "size": 16,
-          "sha256": "c038d8da91f838380ae53fc720b9c2d0a04214fe452a817f18ddf78cc3e25bdb",
-          "objects": [
+            },
             {
               "name": "gUnk_090353C0",
-              "offset": 0,
+              "offset": 120,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353D0",
-          "address": "0x90ce6c4",
-          "size": 16,
-          "sha256": "7a4a763b74a6729db4833c3b997031dc9654b898ef6ade86e4bee3cb9330aa8a",
-          "objects": [
+            },
             {
               "name": "gUnk_090353D0",
-              "offset": 0,
+              "offset": 136,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353E0",
-          "address": "0x90ce6d4",
-          "size": 16,
-          "sha256": "b7ff12f6a6a2f9834037c7cf17a13e5182cc23b673f921bbddd912c76ba3c2f1",
-          "objects": [
+            },
             {
               "name": "gUnk_090353E0",
-              "offset": 0,
+              "offset": 152,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090353F0",
-          "address": "0x90ce6e4",
-          "size": 96,
-          "sha256": "75ea2acc25c1eb4efd8030d3782f40395ef5488173956a0b6603fdcd60f5b769",
-          "objects": [
+            },
             {
               "name": "gUnk_090353F0",
-              "offset": 0,
+              "offset": 168,
               "size": 96,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 6"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035450",
-          "address": "0x90ce744",
-          "size": 8,
-          "sha256": "327928585dfeaf0ac66b492bb73af570f476a3f1475e57e583248ccb5a9d3f72",
-          "objects": [
+            },
             {
               "name": "gUnk_09035450",
-              "offset": 0,
+              "offset": 264,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035458",
-          "address": "0x90ce74c",
-          "size": 20,
-          "sha256": "55cdeb0a96c5e25ca8d90772914d5d20a38f1f30ce6c88c9b62e601c27527a6d",
-          "objects": [
+            },
             {
               "name": "gUnk_09035458",
-              "offset": 0,
+              "offset": 272,
               "size": 20,
               "consumer": [
                 "map_anim_1",
                 "frameCount 5 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903546C",
-          "address": "0x90ce760",
-          "size": 16,
-          "sha256": "9e0d6c7cdf5fb127c419dc6c76f0d1051cf7427c120bf97f40280e7e0da3505d",
-          "objects": [
+            },
             {
               "name": "gUnk_0903546C",
-              "offset": 0,
+              "offset": 292,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_0903547C",
-          "address": "0x90ce770",
-          "size": 8,
-          "sha256": "7a20ea870f7a68df9808a2bd9e044a0c45a07854a18037a47bd5f4dcf8e4611e",
-          "objects": [
+            },
             {
               "name": "gUnk_0903547C",
-              "offset": 0,
+              "offset": 308,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035484",
-          "address": "0x90ce778",
-          "size": 16,
-          "sha256": "97a40ca897824a09f01d7c3f387f8235fbc0eea07cd0dbaea44ec4141ee291fd",
-          "objects": [
+            },
             {
               "name": "gUnk_09035484",
-              "offset": 0,
+              "offset": 316,
               "size": 16,
               "consumer": [
                 "map_anim_1",
                 "frameCount 4 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09035494",
-          "address": "0x90ce788",
-          "size": 16,
-          "sha256": "5f33143260300c3f2a393d4efccd58cc8a2561b7e1ce311551727f8e3be4e9da",
-          "objects": [
+            },
             {
               "name": "gUnk_09035494",
-              "offset": 0,
+              "offset": 332,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354A4",
-          "address": "0x90ce798",
-          "size": 8,
-          "sha256": "c1aa7e9a758e0e9c8b199965edc7794bc528a4cd496b3429178509191e10d8e8",
-          "objects": [
+            },
             {
               "name": "gUnk_090354A4",
-              "offset": 0,
+              "offset": 348,
               "size": 8,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 3"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354AC",
-          "address": "0x90ce7a0",
-          "size": 24,
-          "sha256": "8ab17753b98be42f524dca533e3676837f39ea8bd596342b2f1f982a6dfda6da",
-          "objects": [
+            },
             {
               "name": "gUnk_090354AC",
-              "offset": 0,
+              "offset": 356,
               "size": 24,
               "consumer": [
                 "map_anim_1",
                 "frameCount 6 with increment-and-wrap at equality"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354C4",
-          "address": "0x90ce7b8",
-          "size": 16,
-          "sha256": "4a35e4741d4472eb0c96c291cc348c779e858fc876b264bf854e49299ca59b18",
-          "objects": [
+            },
             {
               "name": "gUnk_090354C4",
-              "offset": 0,
+              "offset": 380,
               "size": 16,
               "consumer": [
                 "map_anim_0",
                 "map_anim_1",
                 "explicit trackCount 1"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_090354D4",
-          "address": "0x90ce7c8",
-          "size": 8,
-          "sha256": "eb9b3fd2efbc52b567020c5ed0829e51289b1b8c41db83d09c163b4738b60d35",
-          "objects": [
+            },
             {
               "name": "gUnk_090354D4",
-              "offset": 0,
+              "offset": 396,
               "size": 8,
               "consumer": [
                 "map_anim_0",
@@ -1816,10 +1223,10 @@
         },
         {
           "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A2C",
+          "section": ".data",
           "address": "0x9f6fcd8",
-          "size": 24,
-          "sha256": "ce836e2cede36923ed39c8377ff8a9b59e34f15e331de443c22379e2c2ec5b83",
+          "size": 36,
+          "sha256": "fcb38ca7d8370deb8305f1eda68d885831333e3c2145397a6534ffc0d17cd391",
           "objects": [
             {
               "name": "gUnk_09EE4A2C",
@@ -1829,55 +1236,28 @@
                 "map_anim_0",
                 "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A44",
-          "address": "0x9f6fcf0",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A44",
-              "offset": 0,
+              "offset": 24,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A48",
-          "address": "0x9f6fcf4",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A48",
-              "offset": 0,
+              "offset": 28,
               "size": 4,
               "consumer": [
                 "map_anim_0",
                 "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data_map_animation_09EE4A4C",
-          "address": "0x9f6fcf8",
-          "size": 4,
-          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE4A4C",
-              "offset": 0,
+              "offset": 32,
               "size": 4,
               "consumer": [
                 "map_anim_0",
