@@ -61,10 +61,6 @@
             "offset": "0x8",
             "size": "0x2"
           },
-          "gUnk_02035C1A": {
-            "offset": "0xa",
-            "size": "0x6"
-          },
           "gUnk_02035C20": {
             "offset": "0x10",
             "size": "0x8"
@@ -99,10 +95,6 @@
           },
           "gUnk_02035C48": {
             "offset": "0x38",
-            "size": "0x4"
-          },
-          "gUnk_02035C4C": {
-            "offset": "0x3c",
             "size": "0x4"
           },
           "gUnk_02035C50": {
@@ -2080,10 +2072,6 @@
             "offset": "0x8",
             "size": "0x2"
           },
-          "gUnk_02035C1A": {
-            "offset": "0xa",
-            "size": "0x6"
-          },
           "gUnk_02035C20": {
             "offset": "0x10",
             "size": "0x8"
@@ -2118,10 +2106,6 @@
           },
           "gUnk_02035C48": {
             "offset": "0x38",
-            "size": "0x4"
-          },
-          "gUnk_02035C4C": {
-            "offset": "0x3c",
             "size": "0x4"
           },
           "gUnk_02035C50": {
@@ -4109,10 +4093,6 @@
             "offset": "0x8",
             "size": "0x2"
           },
-          "gUnk_02035C1A": {
-            "offset": "0xa",
-            "size": "0x6"
-          },
           "gUnk_02035C20": {
             "offset": "0x10",
             "size": "0x8"
@@ -4147,10 +4127,6 @@
           },
           "gUnk_02035C48": {
             "offset": "0x38",
-            "size": "0x4"
-          },
-          "gUnk_02035C4C": {
-            "offset": "0x3c",
             "size": "0x4"
           },
           "gUnk_02035C50": {
