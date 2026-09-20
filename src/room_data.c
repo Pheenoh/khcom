@@ -2,11 +2,11 @@
 #include "room_data.h"
 #include "room_record_assets.h"
 
-EmyKind gUnk_09991F44 __attribute__((section(".data_gUnk_09991F44"))) =
+EmyKind gUnk_09991F44 =
 {32, 100, 16, 16, 0, 100, 1}
 ;
 
-RoomTableEntry gUnk_09991F54[6] __attribute__((section(".data_gUnk_09991F54"))) = {
+RoomTableEntry gUnk_09991F54[6] = {
 #if defined(VERSION_US)
     {256, 0, 0, -15872, 0, 0, gRoomAssetUs_099939FA, gUnk_09EF96A4, gUnk_09EF9684, 8, 0},
     {256, -2560, 2048, -25088, 0, 0, gRoomAssetUs_09995E9C, gUnk_09EF96C8, gUnk_09EF96B0, 6, 0},
@@ -31,7 +31,17 @@ RoomTableEntry gUnk_09991F54[6] __attribute__((section(".data_gUnk_09991F54"))) 
 #endif
 };
 
-s32 gUnk_0999204C[32] __attribute__((section(".data_gUnk_0999204C"))) = {
+BosMapConfig gUnk_0999202C =
+#if defined(VERSION_US)
+{gRoomAssetUs_099A899C, 16352, 0, gRoomAssetUs_09A3C75C, 320, 0, {gRoomAssetUs_09A1E0DC, gRoomAssetUs_09A1F0DC, gRoomAssetUs_09A1E8DC, gRoomAssetUs_09A1F8DC}}
+#elif defined(VERSION_JP)
+{gRoomAssetJp_0995D424, 16352, 0, gRoomAssetJp_099F11E4, 320, 0, {gRoomAssetJp_099D2B64, gRoomAssetJp_099D3B64, gRoomAssetJp_099D3364, gRoomAssetJp_099D4364}}
+#elif defined(VERSION_EU)
+{gRoomAssetEu_099B6920, 16352, 0, gRoomAssetEu_09A9A220, 320, 0, {gRoomAssetEu_09A6FCA0, gRoomAssetEu_09A70CA0, gRoomAssetEu_09A704A0, gRoomAssetEu_09A714A0}}
+#endif
+;
+
+s32 gUnk_0999204C[32] = {
     6,
     12,
     18,

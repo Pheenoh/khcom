@@ -4,6 +4,7 @@
 #include "types.h"
 #include "anim.h"
 #include "battle_actor_types.h"
+#include "boss_background_types.h"
 
 typedef struct RoomTableEntry {
     s32 unk_00;
@@ -21,6 +22,7 @@ typedef struct RoomTableEntry {
 
 extern EmyKind gUnk_09991F44;
 extern RoomTableEntry gUnk_09991F54[];
+extern BosMapConfig gUnk_0999202C;
 extern s32 gUnk_0999204C[];
 
 #endif

@@ -1,4 +1,4 @@
-#include "boss_ga_data.h"
+#include "room_data.h"
 #include "registration_data.h"
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H

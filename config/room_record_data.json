@@ -1,64 +1,38 @@
 {
   "version": 1,
   "provenance": {
-    "room": "func_080F80C0 explicitly updates all six Ga entry indices0..5, and the native six36-byte RoomTableEntry records end at the independently rooted BosMapConfig. The preceding16 bytes are a real EmyKind passed to func_0801B37C, whose layout replaces the old s32 array view. The angle-threshold table is exactly32 native scalar values ending256 before the separate task_bos_ga registration name; the public declaration stays unsized, preserving the original out-of-range behavior instead of fabricating64 entries from the loop upper bound. BosMapConfig contains actual four map-block pointers at10..1F, consumed by SetBgMapBlocks(2,2); these replace the old opaque16-byte member without changing its layout. All resource pointers retain their original regional values; no asset payload is counted as compiler-owned."
+    "room": "func_080F80C0 explicitly updates all six Ga entry indices0..5, and the native six36-byte RoomTableEntry records end at the independently rooted BosMapConfig. The preceding16 bytes are a real EmyKind passed to func_0801B37C, whose layout replaces the old s32 array view. The angle-threshold table is exactly32 native scalar values ending256 before the separate task_bos_ga registration name; the public declaration stays unsized, preserving the original out-of-range behavior instead of fabricating64 entries from the loop upper bound. BosMapConfig contains actual four map-block pointers at10..1F, consumed by SetBgMapBlocks(2,2); these replace the old opaque16-byte member without changing its layout. All resource pointers retain their original regional values; no asset payload is counted as compiler-owned.",
+    "native_ga_catalog": "The enemy-kind record, six Ga component records, shared Ga background configuration and angle thresholds form one consecutive 392-byte native initialized-data catalog in all three regions. The room helpers consume the actor and threshold records while the Ga task supplies the intervening background configuration to the shared map task. Keeping these related records in one data translation unit is a reconstruction assumption supported by their common lifecycle, exact ordering and native four-byte alignment; no original code translation-unit boundary is asserted. All original objects, regional pointer targets and scalar values remain unchanged."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data_gUnk_09991F44",
+          "section": ".data",
           "address": "0x9991f44",
-          "size": 16,
-          "sha256": "de5311d50d8855e88406d2e22f149dc24b7af09b1ddaabfd5dc5ee089362cf41",
+          "size": 392,
+          "sha256": "c6ec823d321a1d2e5d68edd86bbb8edac494651d00ae3ca4c21db56c0973adbb",
           "objects": [
             {
               "name": "gUnk_09991F44",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_09991F54",
-          "address": "0x9991f54",
-          "size": 216,
-          "sha256": "6fc4ae18c0ab2abc1ee313dd37ad230056e668c1a2f13427227fdb051f588f82",
-          "objects": [
+            },
             {
               "name": "gUnk_09991F54",
-              "offset": 0,
+              "offset": 16,
               "size": 216
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_0999204C",
-          "address": "0x999204c",
-          "size": 128,
-          "sha256": "5214c35a88c30fa85c572acc255a12188d8e23fe91b98c193b55c1f280f78e5a",
-          "objects": [
-            {
-              "name": "gUnk_0999204C",
-              "offset": 0,
-              "size": 128
-            }
-          ]
-        },
-        {
-          "unit": "boss_ga_data.c",
-          "section": ".data_gUnk_0999202C",
-          "address": "0x999202c",
-          "size": 32,
-          "sha256": "6324c75fbc2f8688a1270902f239a9d66aeb54054a78c0543d8b72cbe288f5d9",
-          "objects": [
+            },
             {
               "name": "gUnk_0999202C",
-              "offset": 0,
+              "offset": 232,
               "size": 32
+            },
+            {
+              "name": "gUnk_0999204C",
+              "offset": 264,
+              "size": 128
             }
           ]
         }
@@ -68,57 +42,30 @@
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data_gUnk_09991F44",
+          "section": ".data",
           "address": "0x9946a58",
-          "size": 16,
-          "sha256": "de5311d50d8855e88406d2e22f149dc24b7af09b1ddaabfd5dc5ee089362cf41",
+          "size": 392,
+          "sha256": "427d40a6c07bcabac052f557f982480ca05506a3ef228be8bbeb0a68b16389d9",
           "objects": [
             {
               "name": "gUnk_09991F44",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_09991F54",
-          "address": "0x9946a68",
-          "size": 216,
-          "sha256": "07326deb9c0a889d935779a63667b1c0d9e46c07745d7f816e2d08f38e795f6c",
-          "objects": [
+            },
             {
               "name": "gUnk_09991F54",
-              "offset": 0,
+              "offset": 16,
               "size": 216
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_0999204C",
-          "address": "0x9946b60",
-          "size": 128,
-          "sha256": "5214c35a88c30fa85c572acc255a12188d8e23fe91b98c193b55c1f280f78e5a",
-          "objects": [
-            {
-              "name": "gUnk_0999204C",
-              "offset": 0,
-              "size": 128
-            }
-          ]
-        },
-        {
-          "unit": "boss_ga_data.c",
-          "section": ".data_gUnk_0999202C",
-          "address": "0x9946b40",
-          "size": 32,
-          "sha256": "eebb93ddd573d9482fa9a495a35a716e68982718242aeb095afa4f26921497be",
-          "objects": [
+            },
             {
               "name": "gUnk_0999202C",
-              "offset": 0,
+              "offset": 232,
               "size": 32
+            },
+            {
+              "name": "gUnk_0999204C",
+              "offset": 264,
+              "size": 128
             }
           ]
         }
@@ -128,57 +75,30 @@
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data_gUnk_09991F44",
+          "section": ".data",
           "address": "0x99981b4",
-          "size": 16,
-          "sha256": "de5311d50d8855e88406d2e22f149dc24b7af09b1ddaabfd5dc5ee089362cf41",
+          "size": 392,
+          "sha256": "9b437c96017da0ef47125e71fb92e2ccb8fd48dcb7bac682062af4ef3f0ff516",
           "objects": [
             {
               "name": "gUnk_09991F44",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_09991F54",
-          "address": "0x99981c4",
-          "size": 216,
-          "sha256": "6872f452199b9b81129cc76c985b547a2593839c198ae99e06d47d6df389d9c6",
-          "objects": [
+            },
             {
               "name": "gUnk_09991F54",
-              "offset": 0,
+              "offset": 16,
               "size": 216
-            }
-          ]
-        },
-        {
-          "unit": "room_data.c",
-          "section": ".data_gUnk_0999204C",
-          "address": "0x99982bc",
-          "size": 128,
-          "sha256": "5214c35a88c30fa85c572acc255a12188d8e23fe91b98c193b55c1f280f78e5a",
-          "objects": [
-            {
-              "name": "gUnk_0999204C",
-              "offset": 0,
-              "size": 128
-            }
-          ]
-        },
-        {
-          "unit": "boss_ga_data.c",
-          "section": ".data_gUnk_0999202C",
-          "address": "0x999829c",
-          "size": 32,
-          "sha256": "0731cc75846ab6a8ccd266218b858ee35e88d822c069781fa58a436c52d6bc9b",
-          "objects": [
+            },
             {
               "name": "gUnk_0999202C",
-              "offset": 0,
+              "offset": 232,
               "size": 32
+            },
+            {
+              "name": "gUnk_0999204C",
+              "offset": 264,
+              "size": 128
             }
           ]
         }
