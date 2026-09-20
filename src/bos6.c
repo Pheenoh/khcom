@@ -7,11 +7,10 @@
 extern u8 eu_0810BA1C(BosLstWork* work, s32 idx);
 #endif
 
-u8 gUnk_02036008;
-s16 gUnk_0203600A;
-s16 gUnk_0203600C;
-u8 gUnk_0203600E[2];
-s32 gUnk_02036010;
+static u8 gUnk_02036008;
+static s16 gUnk_0203600A;
+static s16 gUnk_0203600C;
+static s32 gUnk_02036010;
 
 void task_bos_pc_3(PcWork* work);
 

@@ -1974,6 +1974,29 @@
           "size": "0x14"
         }
       }
+    },
+    "src/bos6.o": {
+      "section": ".bss.bos6",
+      "base": "0x2036008",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036008": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_0203600A": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_0203600C": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_02036010": {
+          "offset": "0x8",
+          "size": "0x4"
+        }
+      }
     }
   },
   "jp": {
@@ -3961,6 +3984,29 @@
           "size": "0x14"
         }
       }
+    },
+    "src/bos6.o": {
+      "section": ".bss.bos6",
+      "base": "0x2035f78",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036008": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_0203600A": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_0203600C": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_02036010": {
+          "offset": "0x8",
+          "size": "0x4"
+        }
+      }
     }
   },
   "eu": {
@@ -5922,6 +5968,29 @@
         "gCharaTaskPool": {
           "offset": "0x8",
           "size": "0x14"
+        }
+      }
+    },
+    "src/bos6.o": {
+      "section": ".bss.bos6",
+      "base": "0x2036618",
+      "size": "0xc",
+      "symbols": {
+        "gUnk_02036008": {
+          "offset": "0x0",
+          "size": "0x1"
+        },
+        "gUnk_0203600A": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_0203600C": {
+          "offset": "0x4",
+          "size": "0x2"
+        },
+        "gUnk_02036010": {
+          "offset": "0x8",
+          "size": "0x4"
         }
       }
     }
