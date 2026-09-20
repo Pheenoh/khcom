@@ -1,14 +1,14 @@
 {
   "version": 1,
   "provenance": {
-    "owner": "The existing event-sequence, event-character, message-window, message-face/wait and view descriptors share one complete native initialized-data run in msg.c. The interior 48 bytes are four two-pointer map-block rows and a four-row index, not padding. Both msg-window reads and the card NumberPlus consumer pass a selected row to SetBgMapBlocks with width 2 and height 1; the shared index is declared once through msg_api.h. No original boundary between other msg.c function groups is asserted. Continue records and all task-name placements remain unchanged.",
+    "owner": "The existing event-sequence, event-character, message-window, message-face/wait and view descriptors share one complete native initialized-data run in event_message.c. The interior 48 bytes are four two-pointer map-block rows and a four-row index, not padding. Both msg-window reads and the card NumberPlus consumer pass a selected row to SetBgMapBlocks with width 2 and height 1; the shared index is declared once through msg_api.h. The Continue UI callbacks and metadata form the preceding separate continue_ui.c owner; the text-rendering prefix remains msg.c. All event/message task-name placements remain unchanged.",
     "assets": "Each row selects two standard 32-by-32 tilemap blocks. The four nonblank targets occur at consecutive 0x800-byte boundaries in every region and GetBgMapBlock and CopyBgMapRect address each block as 32-by-32 halfword entries. The existing blank block is reused. Four object definitions are materialized within each original graphics owner by the existing asset-object mechanism; bytes and asset-pack extents remain unchanged, with no address aliases or new graphics translation unit."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".data",
           "address": "0x9ee46d4",
           "size": 216,
@@ -90,7 +90,7 @@
     "jp": {
       "placements": [
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".data",
           "address": "0x9ebbcf4",
           "size": 216,
@@ -172,7 +172,7 @@
     "eu": {
       "placements": [
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".data",
           "address": "0x9f6f980",
           "size": 216,

@@ -8,6 +8,12 @@
 extern void* gUnk_09EE4724[4];
 
 void func_0806180C(u16 a);
+u16 func_08064B80(s32 a);
+u16 func_08064C34(s32 a);
+u16 func_08064D04(s32 a);
+#ifndef VERSION_EU
+u8 func_080653D4(s32 a, s32 b, u8* c);
+#endif
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a);
 #else

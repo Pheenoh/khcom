@@ -1263,9 +1263,13 @@
             "gUnk_02034A90": {"offset": "0x10", "size": "0x1"},
             "gUnk_02034A91": {"offset": "0x11", "size": "0x1"}
           }
-        },
+        }
+      ]
+    },
+    "src/event_message.o": {
+      "sections": [
         {
-          "section": ".common.msg",
+          "section": ".common.event_message",
           "base": "0x2039dcc",
           "size": "0x4",
           "symbols": {
@@ -3609,9 +3613,13 @@
             "gUnk_02034A90": {"offset": "0x10", "size": "0x1"},
             "gUnk_02034A91": {"offset": "0x11", "size": "0x1"}
           }
-        },
+        }
+      ]
+    },
+    "src/event_message.o": {
+      "sections": [
         {
-          "section": ".common.msg",
+          "section": ".common.event_message",
           "base": "0x2039d3c",
           "size": "0x4",
           "symbols": {
@@ -5927,9 +5935,13 @@
             "gUnk_02034A90": {"offset": "0xc", "size": "0x1"},
             "gUnk_02034A91": {"offset": "0xd", "size": "0x1"}
           }
-        },
+        }
+      ]
+    },
+    "src/event_message.o": {
+      "sections": [
         {
-          "section": ".common.msg",
+          "section": ".common.event_message",
           "base": "0x203a3dc",
           "size": "0x4",
           "symbols": {

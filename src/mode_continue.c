@@ -1,4 +1,5 @@
 #include "mode_continue.h"
+#include "continue_ui.h"
 #include "registration_data.h"
 #include "map_api.h"
 #include "mode.h"

@@ -288,7 +288,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventSeq",
           "address": "0x09033C74",
           "size": 10,
@@ -302,7 +302,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x09033C80",
           "size": 12,
@@ -318,7 +318,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x09033CC8",
           "size": 7,
@@ -332,7 +332,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgface",
           "address": "0x09033D00",
           "size": 8,
@@ -346,7 +346,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x09033D48",
           "size": 5,
@@ -5783,7 +5783,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwait",
           "address": "0x09033D30",
           "size": 8,
@@ -5797,7 +5797,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
           "address": "0x09033D38",
           "size": 14,
@@ -6777,7 +6777,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventSeq",
           "address": "0x09006F38",
           "size": 10,
@@ -6791,7 +6791,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x09006F44",
           "size": 12,
@@ -6807,7 +6807,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x09006F8C",
           "size": 7,
@@ -6821,7 +6821,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgface",
           "address": "0x09006FC4",
           "size": 8,
@@ -6835,7 +6835,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x0900700C",
           "size": 5,
@@ -12272,7 +12272,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwait",
           "address": "0x09006FF4",
           "size": 8,
@@ -12286,7 +12286,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
           "address": "0x09006FFC",
           "size": 14,
@@ -13238,7 +13238,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventSeq",
           "address": "0x090CCF68",
           "size": 10,
@@ -13252,7 +13252,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescEventChara",
           "address": "0x090CCF74",
           "size": 12,
@@ -13268,7 +13268,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgwin",
           "address": "0x090CCFBC",
           "size": 7,
@@ -13282,7 +13282,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescMsgface",
           "address": "0x090CCFF4",
           "size": 8,
@@ -13296,7 +13296,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskDescView",
           "address": "0x090CD03C",
           "size": 5,
@@ -18815,7 +18815,7 @@
           "padding_before": 2
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwait",
           "address": "0x090CD024",
           "size": 8,
@@ -18829,7 +18829,7 @@
           ]
         },
         {
-          "unit": "msg.c",
+          "unit": "event_message.c",
           "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
           "address": "0x090CD02C",
           "size": 14,

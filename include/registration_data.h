@@ -447,8 +447,6 @@ extern const char gTaskNameMapDmg[];
 extern const char gTaskNameMapFloor[];
 extern const char gModeNameMsTop[];
 
-extern TaskDesc gUnk_09EE2834;
-extern TaskDesc gUnk_09EE284C;
 extern TaskDesc gUnk_09EE484C;
 extern TaskDesc gUnk_09EE48DC;
 extern TaskDesc gUnk_09EE496C;
@@ -492,7 +490,6 @@ extern TaskDesc gUnk_09EE8E30;
 extern TaskDesc gUnk_09EE8E48;
 extern TaskDesc gUnk_09EE8EF0;
 extern TaskDesc gUnk_09EE8F30;
-extern const char gTaskName_09EE2834[];
 extern const char gTaskName_09EE48DC[];
 extern const char gTaskName_09EE496C[];
 extern const char gTaskName_09EE4984[];

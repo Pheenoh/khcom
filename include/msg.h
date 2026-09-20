@@ -1,5 +1,4 @@
 #include "mode_event.h"
-#include "continue_data.h"
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
@@ -20,8 +19,6 @@
 #include "obj.h"
 
 #include "msg_types.h"
-
-#include "continue_types.h"
 
 #include "evt_types.h"
 #include "evt_data.h"
@@ -301,12 +298,9 @@ typedef struct TextGlyphSprite {
 } TextGlyphSprite;
 
 extern EventState* gUnk_02039DC8;
-extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
-extern u8 gUnk_096145D8[];
-extern u8 gUnk_09614618[];
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CA8[];
@@ -346,14 +340,6 @@ extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_09611AB8[];
 extern u16 gUnk_08159E10[];
 extern u16 gUnk_08159E18[];
-extern u8 gUnk_0941A418[];
-extern u8 gUnk_0951CAB8[];
-extern u8 gUnk_090A7D9A[];
-extern u8 gUnk_096146F8[];
-extern u8 gUnk_09614658[];
-extern u8 gUnk_090A6B26[];
-extern u8 gUnk_090A7F0A[];
-extern u8 gUnk_090A8FC4[];
 extern u16 gUnk_08F7D438[];
 extern u8 gUnk_090CBFB2[];
 extern s32 gUnk_09033D28[];
@@ -446,8 +432,13 @@ void func_08074DC4(EventCameraWork* a);
 void func_0806FE90(EventCharaWork* p);
 u8 func_0807048C(EventCharaWork* p, void* a);
 void func_08072C34(EventCharaWork* p);
-void func_0806CD60(ContinueWork* p);
-void func_0806CF04(ContinueWork* p);
+#ifdef VERSION_EU
+u8 eu_0806C734(EventSeqWork* work);
+u8 eu_0806C7C8(EventSeqWork* work);
+u8 eu_0806C848(EventSeqWork* work);
+u8 eu_0806C974(EventSeqWork* work);
+#endif
+
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a);
 u8 func_0806D830(EventSeqWork* p, void* a);
 void func_08070008(EventCharaWork* p);

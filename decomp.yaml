@@ -105,6 +105,7 @@ tools:
             - src/pc
             - src/hum
             - src/card
+            - src/continue_ui
             - src/mode_
             - src/acgtrans
             - src/allmap
@@ -137,6 +138,7 @@ tools:
             - src/event_background_data
             - src/event_chara_data
             - src/event_index_data
+            - src/event_message
             - src/event_scanline_state
             - src/event_sequence_data
             - src/event_sprite_data

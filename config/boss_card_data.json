@@ -768,11 +768,11 @@
           ]
         },
         {
-          "unit": "msg.c",
-          "section": ".data_continue_cursor_y",
+          "unit": "continue_ui.c",
+          "section": ".rodata",
           "address": "0x8f7dafc",
-          "size": 8,
-          "sha256": "c81b8e82c3591a5cf42bffcef5b87081cff9abf37e89a7ebc9adafbca009c0c1",
+          "size": 17,
+          "sha256": "e1d9e768523bcbbfc71d2f0b800a516e4737772a225cae09a662482f8d12a8ad",
           "objects": [
             {
               "name": "gUnk_08F7DAFC",
@@ -783,6 +783,11 @@
                 "func_0806CF04",
                 "cursor field unk_60 is initialized to zero and toggled exclusively between zero and one"
               ]
+            },
+            {
+              "name": "gTaskName_09EE2834",
+              "offset": 8,
+              "size": 9
             }
           ],
           "alignment_before": 4,
@@ -1557,11 +1562,11 @@
           ]
         },
         {
-          "unit": "msg.c",
-          "section": ".data_continue_cursor_y",
+          "unit": "continue_ui.c",
+          "section": ".rodata",
           "address": "0x8f71004",
-          "size": 8,
-          "sha256": "c81b8e82c3591a5cf42bffcef5b87081cff9abf37e89a7ebc9adafbca009c0c1",
+          "size": 17,
+          "sha256": "e1d9e768523bcbbfc71d2f0b800a516e4737772a225cae09a662482f8d12a8ad",
           "objects": [
             {
               "name": "gUnk_08F7DAFC",
@@ -1572,6 +1577,11 @@
                 "func_0806CF04",
                 "cursor field unk_60 is initialized to zero and toggled exclusively between zero and one"
               ]
+            },
+            {
+              "name": "gTaskName_09EE2834",
+              "offset": 8,
+              "size": 9
             }
           ],
           "alignment_before": 4,
@@ -2346,11 +2356,11 @@
           ]
         },
         {
-          "unit": "msg.c",
-          "section": ".data_continue_cursor_y",
+          "unit": "continue_ui.c",
+          "section": ".rodata",
           "address": "0x8f8e9f8",
-          "size": 8,
-          "sha256": "c81b8e82c3591a5cf42bffcef5b87081cff9abf37e89a7ebc9adafbca009c0c1",
+          "size": 17,
+          "sha256": "e1d9e768523bcbbfc71d2f0b800a516e4737772a225cae09a662482f8d12a8ad",
           "objects": [
             {
               "name": "gUnk_08F7DAFC",
@@ -2361,35 +2371,21 @@
                 "func_0806CF04",
                 "cursor field unk_60 is initialized to zero and toggled exclusively between zero and one"
               ]
+            },
+            {
+              "name": "gTaskName_09EE2834",
+              "offset": 8,
+              "size": 9
             }
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_continue_tiles_eu",
-          "address": "0x9f5d7e4",
-          "size": 20,
-          "sha256": "e2e08f0297c16490839ee0c17978139cc97c7511c070cd9bc7332704c68e42e4",
-          "objects": [
-            {
-              "name": "gUnkEu_09F5D7E4",
-              "offset": 0,
-              "size": 20,
-              "consumer": [
-                "func_0806CD60",
-                "func_0806CF04",
-                "gLanguage indexes five native LZ77 tile streams, all declaring 0x1AA0 decoded bytes"
-              ]
-            }
-          ]
         }
       ]
     }
   },
   "provenance": {
     "boss_card_recipes": "The native 54-pointer run corresponds one-for-one with 54 count bytes and ends at independently identified Continue metadata. Consumers use s32 card IDs and u8 counts. Preserve unsized public externs: func_08090EA0 has a real one-past-count access when unk_0D7 equals n. No runtime reachability guarantee is claimed for unused selector 53, whose stored count is zero. Its nine valid card IDs are independently bracketed by the final pointer base and the byte-count table, matching the preceding nine-card recipe family in all three regions. An extra unused value 459 is a neutral scalar, not an inflated recipe.",
-    "continue_cursor": "The old msg.h s32 view of the boss-card u8 count table made &gUnk_08F7DAC4[14] spell a separate object at byte offset 56. It is now a real s32[2] object with the actual 0x4000/0x5600 coordinates and explicit two-byte alignment after the count bytes. Continue toggles its cursor index between zero and one. EU has a separate five-pointer compressed tile selector, with no artificial US/JP counterpart."
+    "continue_cursor": "The two cursor coordinates are read only through a zero-or-one choice in the Continue UI update. Their exact s32[2] extent and adjacent bounded Continue name form ordinary const data in continue_ui.c. Native four-byte section alignment supplies the original two bytes after the 54 boss-card counts; alignment_before and padding_before validate that boundary without assigning the linker location or adding a padding object. The EU-only five-pointer compressed tile selector belongs to the same UI callbacks and remains ordinary initialized data before the two task descriptors."
   }
 }

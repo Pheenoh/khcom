@@ -3,49 +3,27 @@
   "provenance": {
     "registrations": "Each 24-byte TaskDesc is independently corroborated by a unique tuple of all four real linked callback symbols and its exact bounded ASCII name in every region. All 45 records exist in all three regions. Only three workSize fields differ.",
     "world": "WorldSel_Before_1 wraps 29 to 0, proving 30 four-byte WorldSelAnim records. Its end is the independently owned WorldSel Before TaskDesc.",
-    "selection": "func_080792AC chooses GetRandom()%47; func_080792D0 wraps after 46. This proves 47 u16 entries."
+    "selection": "func_080792AC chooses GetRandom()%47; func_080792D0 wraps after 46. This proves 47 u16 entries.",
+    "continue_owner": "The six Continue UI functions share their ContinueWork layout, two lifecycle descriptors, read-only two-coordinate cursor table and name, plus the EU-only language tile index. The surrounding msg prefix owns all six existing private text-state variables; the event/message suffix owns its sole scanline-scroll COMMON pointer. Sequential ordinary text and BSS links reproduce all original regional function addresses, bytes and RAM instances. This supports the bounded msg.c / continue_ui.c / event_message.c source organization; it does not claim every remaining event/message name and external asset provider has a recovered original boundary. Four shared prefix APIs now have declarations matching their definitions, replacing two incompatible Jiminy declarations."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "msg.c",
-          "section": ".rodata_registration_name_gUnk_09EE2834",
-          "address": "0x8f7db04",
-          "size": 9,
-          "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
-          "objects": [
-            {
-              "name": "gTaskName_09EE2834",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE2834",
+          "unit": "continue_ui.c",
+          "section": ".data",
           "address": "0x9ee2834",
-          "size": 24,
-          "sha256": "301a9c305f1e71677748bb74ae6ee3f90b999fd1ad8853277c3eec227d2bdf71",
+          "size": 48,
+          "sha256": "e104cd133c76c3c93a4f764e1c5f91d51f75df771024a1c18dd688d5494cb64e",
           "objects": [
             {
               "name": "gUnk_09EE2834",
               "offset": 0,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE284C",
-          "address": "0x9ee284c",
-          "size": 24,
-          "sha256": "d7af9f514b70461877651c9ee8df93cf05a73e6d7efa270e5491b3f78d2b07f0",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE284C",
-              "offset": 0,
+              "offset": 24,
               "size": 24
             }
           ]
@@ -935,43 +913,20 @@
     "jp": {
       "placements": [
         {
-          "unit": "msg.c",
-          "section": ".rodata_registration_name_gUnk_09EE2834",
-          "address": "0x8f7100c",
-          "size": 9,
-          "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
-          "objects": [
-            {
-              "name": "gTaskName_09EE2834",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE2834",
+          "unit": "continue_ui.c",
+          "section": ".data",
           "address": "0x9eba2b0",
-          "size": 24,
-          "sha256": "b1271dced28ab16997592dd607a4ad8a26f1f23c68a0a303128042a59c859607",
+          "size": 48,
+          "sha256": "da8feb2b647b1015ce80820e7ad8fd2db8d5248e1c90b02168c1ce4c361afd4e",
           "objects": [
             {
               "name": "gUnk_09EE2834",
               "offset": 0,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE284C",
-          "address": "0x9eba2c8",
-          "size": 24,
-          "sha256": "ab53903f4381babf3b7a3b619ecf5665ef73e732365af1a988abb031398255fd",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE284C",
-              "offset": 0,
+              "offset": 24,
               "size": 24
             }
           ]
@@ -1863,43 +1818,30 @@
     "eu": {
       "placements": [
         {
-          "unit": "msg.c",
-          "section": ".rodata_registration_name_gUnk_09EE2834",
-          "address": "0x8f8ea00",
-          "size": 9,
-          "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
+          "unit": "continue_ui.c",
+          "section": ".data",
+          "address": "0x9f5d7e4",
+          "size": 68,
+          "sha256": "590fbb4363206c14a25b440d1b41fa985140ef6395d881e6db88cb940184df9f",
           "objects": [
             {
-              "name": "gTaskName_09EE2834",
+              "name": "gUnkEu_09F5D7E4",
               "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE2834",
-          "address": "0x9f5d7f8",
-          "size": 24,
-          "sha256": "5a347d9ff0a75940df46353641d96e5bd7bfe8499127a0da584c3f9359974c08",
-          "objects": [
+              "size": 20,
+              "consumer": [
+                "func_0806CD60",
+                "func_0806CF04",
+                "gLanguage indexes five native LZ77 tile streams, all declaring 0x1AA0 decoded bytes"
+              ]
+            },
             {
               "name": "gUnk_09EE2834",
-              "offset": 0,
+              "offset": 20,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "msg.c",
-          "section": ".data_registration_gUnk_09EE284C",
-          "address": "0x9f5d810",
-          "size": 24,
-          "sha256": "275aad8c85bf8c1f73b09827b9c84aa91971559f149ccaad7ee54bc19a33e4a1",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE284C",
-              "offset": 0,
+              "offset": 44,
               "size": 24
             }
           ]
