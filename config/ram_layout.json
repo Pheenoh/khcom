@@ -2030,6 +2030,165 @@
           "size": "0x4"
         }
       }
+    },
+    "src/mode_ms.o": {
+      "section": ".bss.mode_ms",
+      "base": "0x20358c8",
+      "size": "0x345",
+      "symbols": {
+        "gUnk_020358C8": {
+          "offset": "0x0",
+          "size": "0x168"
+        },
+        "gUnk_02035A30": {
+          "offset": "0x168",
+          "size": "0x4"
+        },
+        "gUnk_02035A34": {
+          "offset": "0x16c",
+          "size": "0x4"
+        },
+        "gUnk_02035A38": {
+          "offset": "0x170",
+          "size": "0x4"
+        },
+        "gUnk_02035A3C": {
+          "offset": "0x174",
+          "size": "0x4"
+        },
+        "gUnk_02035A40": {
+          "offset": "0x178",
+          "size": "0x4"
+        },
+        "gUnk_02035A44": {
+          "offset": "0x17c",
+          "size": "0x4"
+        },
+        "gUnk_02035A48": {
+          "offset": "0x180",
+          "size": "0x1"
+        },
+        "gUnk_02035A4C": {
+          "offset": "0x184",
+          "size": "0x4"
+        },
+        "gUnk_02035A50": {
+          "offset": "0x188",
+          "size": "0x1"
+        },
+        "gUnk_02035A54": {
+          "offset": "0x18c",
+          "size": "0x4"
+        },
+        "gUnk_02035A58": {
+          "offset": "0x190",
+          "size": "0x18"
+        },
+        "gUnk_02035A70": {
+          "offset": "0x1a8",
+          "size": "0x64"
+        },
+        "gUnk_02035AD4": {
+          "offset": "0x20c",
+          "size": "0x4"
+        },
+        "gUnk_02035AD8": {
+          "offset": "0x210",
+          "size": "0x4"
+        },
+        "gUnk_02035ADC": {
+          "offset": "0x214",
+          "size": "0x4"
+        },
+        "gUnk_02035AE0": {
+          "offset": "0x218",
+          "size": "0x4"
+        },
+        "gUnk_02035AE8": {
+          "offset": "0x220",
+          "size": "0x18"
+        },
+        "gUnk_02035B00": {
+          "offset": "0x238",
+          "size": "0x1"
+        },
+        "gUnk_02035B02": {
+          "offset": "0x23a",
+          "size": "0x2"
+        },
+        "gUnk_02035B04": {
+          "offset": "0x23c",
+          "size": "0x2"
+        },
+        "gUnk_02035B08": {
+          "offset": "0x240",
+          "size": "0x8"
+        },
+        "gUnk_02035B10": {
+          "offset": "0x248",
+          "size": "0x2"
+        },
+        "gUnk_02035B18": {
+          "offset": "0x250",
+          "size": "0x40"
+        },
+        "gUnk_02035B58": {
+          "offset": "0x290",
+          "size": "0xa"
+        },
+        "gUnk_02035B62": {
+          "offset": "0x29a",
+          "size": "0x2"
+        },
+        "gUnk_02035B68": {
+          "offset": "0x2a0",
+          "size": "0x40"
+        },
+        "gUnk_02035BA8": {
+          "offset": "0x2e0",
+          "size": "0x4"
+        },
+        "gUnk_02035BAC": {
+          "offset": "0x2e4",
+          "size": "0x4"
+        },
+        "gUnk_02035BB0": {
+          "offset": "0x2e8",
+          "size": "0x4"
+        },
+        "gUnk_02035BB8": {
+          "offset": "0x2f0",
+          "size": "0x18"
+        },
+        "gUnk_02035BD0": {
+          "offset": "0x308",
+          "size": "0x10"
+        },
+        "gUnk_02035BE0": {
+          "offset": "0x318",
+          "size": "0x10"
+        },
+        "gUnk_02035BF0": {
+          "offset": "0x328",
+          "size": "0x10"
+        },
+        "gUnk_02035C00": {
+          "offset": "0x338",
+          "size": "0x4"
+        },
+        "gUnk_02035C04": {
+          "offset": "0x33c",
+          "size": "0x4"
+        },
+        "gUnk_02035C08": {
+          "offset": "0x340",
+          "size": "0x4"
+        },
+        "gUnk_02035C0C": {
+          "offset": "0x344",
+          "size": "0x1"
+        }
+      }
     }
   },
   "jp": {
@@ -4073,6 +4232,165 @@
           "size": "0x4"
         }
       }
+    },
+    "src/mode_ms.o": {
+      "section": ".bss.mode_ms",
+      "base": "0x2035828",
+      "size": "0x345",
+      "symbols": {
+        "gUnk_020358C8": {
+          "offset": "0x0",
+          "size": "0x168"
+        },
+        "gUnk_02035A30": {
+          "offset": "0x168",
+          "size": "0x4"
+        },
+        "gUnk_02035A34": {
+          "offset": "0x16c",
+          "size": "0x4"
+        },
+        "gUnk_02035A38": {
+          "offset": "0x170",
+          "size": "0x4"
+        },
+        "gUnk_02035A3C": {
+          "offset": "0x174",
+          "size": "0x4"
+        },
+        "gUnk_02035A40": {
+          "offset": "0x178",
+          "size": "0x4"
+        },
+        "gUnk_02035A44": {
+          "offset": "0x17c",
+          "size": "0x4"
+        },
+        "gUnk_02035A48": {
+          "offset": "0x180",
+          "size": "0x1"
+        },
+        "gUnk_02035A4C": {
+          "offset": "0x184",
+          "size": "0x4"
+        },
+        "gUnk_02035A50": {
+          "offset": "0x188",
+          "size": "0x1"
+        },
+        "gUnk_02035A54": {
+          "offset": "0x18c",
+          "size": "0x4"
+        },
+        "gUnk_02035A58": {
+          "offset": "0x190",
+          "size": "0x18"
+        },
+        "gUnk_02035A70": {
+          "offset": "0x1a8",
+          "size": "0x64"
+        },
+        "gUnk_02035AD4": {
+          "offset": "0x20c",
+          "size": "0x4"
+        },
+        "gUnk_02035AD8": {
+          "offset": "0x210",
+          "size": "0x4"
+        },
+        "gUnk_02035ADC": {
+          "offset": "0x214",
+          "size": "0x4"
+        },
+        "gUnk_02035AE0": {
+          "offset": "0x218",
+          "size": "0x4"
+        },
+        "gUnk_02035AE8": {
+          "offset": "0x220",
+          "size": "0x18"
+        },
+        "gUnk_02035B00": {
+          "offset": "0x238",
+          "size": "0x1"
+        },
+        "gUnk_02035B02": {
+          "offset": "0x23a",
+          "size": "0x2"
+        },
+        "gUnk_02035B04": {
+          "offset": "0x23c",
+          "size": "0x2"
+        },
+        "gUnk_02035B08": {
+          "offset": "0x240",
+          "size": "0x8"
+        },
+        "gUnk_02035B10": {
+          "offset": "0x248",
+          "size": "0x2"
+        },
+        "gUnk_02035B18": {
+          "offset": "0x250",
+          "size": "0x40"
+        },
+        "gUnk_02035B58": {
+          "offset": "0x290",
+          "size": "0xa"
+        },
+        "gUnk_02035B62": {
+          "offset": "0x29a",
+          "size": "0x2"
+        },
+        "gUnk_02035B68": {
+          "offset": "0x2a0",
+          "size": "0x40"
+        },
+        "gUnk_02035BA8": {
+          "offset": "0x2e0",
+          "size": "0x4"
+        },
+        "gUnk_02035BAC": {
+          "offset": "0x2e4",
+          "size": "0x4"
+        },
+        "gUnk_02035BB0": {
+          "offset": "0x2e8",
+          "size": "0x4"
+        },
+        "gUnk_02035BB8": {
+          "offset": "0x2f0",
+          "size": "0x18"
+        },
+        "gUnk_02035BD0": {
+          "offset": "0x308",
+          "size": "0x10"
+        },
+        "gUnk_02035BE0": {
+          "offset": "0x318",
+          "size": "0x10"
+        },
+        "gUnk_02035BF0": {
+          "offset": "0x328",
+          "size": "0x10"
+        },
+        "gUnk_02035C00": {
+          "offset": "0x338",
+          "size": "0x4"
+        },
+        "gUnk_02035C04": {
+          "offset": "0x33c",
+          "size": "0x4"
+        },
+        "gUnk_02035C08": {
+          "offset": "0x340",
+          "size": "0x4"
+        },
+        "gUnk_02035C0C": {
+          "offset": "0x344",
+          "size": "0x1"
+        }
+      }
     }
   },
   "eu": {
@@ -6090,6 +6408,165 @@
         "gUnk_02036010": {
           "offset": "0x8",
           "size": "0x4"
+        }
+      }
+    },
+    "src/mode_ms.o": {
+      "section": ".bss.mode_ms",
+      "base": "0x2035ed8",
+      "size": "0x345",
+      "symbols": {
+        "gUnk_020358C8": {
+          "offset": "0x0",
+          "size": "0x168"
+        },
+        "gUnk_02035A30": {
+          "offset": "0x168",
+          "size": "0x4"
+        },
+        "gUnk_02035A34": {
+          "offset": "0x16c",
+          "size": "0x4"
+        },
+        "gUnk_02035A38": {
+          "offset": "0x170",
+          "size": "0x4"
+        },
+        "gUnk_02035A3C": {
+          "offset": "0x174",
+          "size": "0x4"
+        },
+        "gUnk_02035A40": {
+          "offset": "0x178",
+          "size": "0x4"
+        },
+        "gUnk_02035A44": {
+          "offset": "0x17c",
+          "size": "0x4"
+        },
+        "gUnk_02035A48": {
+          "offset": "0x180",
+          "size": "0x1"
+        },
+        "gUnk_02035A4C": {
+          "offset": "0x184",
+          "size": "0x4"
+        },
+        "gUnk_02035A50": {
+          "offset": "0x188",
+          "size": "0x1"
+        },
+        "gUnk_02035A54": {
+          "offset": "0x18c",
+          "size": "0x4"
+        },
+        "gUnk_02035A58": {
+          "offset": "0x190",
+          "size": "0x18"
+        },
+        "gUnk_02035A70": {
+          "offset": "0x1a8",
+          "size": "0x64"
+        },
+        "gUnk_02035AD4": {
+          "offset": "0x20c",
+          "size": "0x4"
+        },
+        "gUnk_02035AD8": {
+          "offset": "0x210",
+          "size": "0x4"
+        },
+        "gUnk_02035ADC": {
+          "offset": "0x214",
+          "size": "0x4"
+        },
+        "gUnk_02035AE0": {
+          "offset": "0x218",
+          "size": "0x4"
+        },
+        "gUnk_02035AE8": {
+          "offset": "0x220",
+          "size": "0x18"
+        },
+        "gUnk_02035B00": {
+          "offset": "0x238",
+          "size": "0x1"
+        },
+        "gUnk_02035B02": {
+          "offset": "0x23a",
+          "size": "0x2"
+        },
+        "gUnk_02035B04": {
+          "offset": "0x23c",
+          "size": "0x2"
+        },
+        "gUnk_02035B08": {
+          "offset": "0x240",
+          "size": "0x8"
+        },
+        "gUnk_02035B10": {
+          "offset": "0x248",
+          "size": "0x2"
+        },
+        "gUnk_02035B18": {
+          "offset": "0x250",
+          "size": "0x40"
+        },
+        "gUnk_02035B58": {
+          "offset": "0x290",
+          "size": "0xa"
+        },
+        "gUnk_02035B62": {
+          "offset": "0x29a",
+          "size": "0x2"
+        },
+        "gUnk_02035B68": {
+          "offset": "0x2a0",
+          "size": "0x40"
+        },
+        "gUnk_02035BA8": {
+          "offset": "0x2e0",
+          "size": "0x4"
+        },
+        "gUnk_02035BAC": {
+          "offset": "0x2e4",
+          "size": "0x4"
+        },
+        "gUnk_02035BB0": {
+          "offset": "0x2e8",
+          "size": "0x4"
+        },
+        "gUnk_02035BB8": {
+          "offset": "0x2f0",
+          "size": "0x18"
+        },
+        "gUnk_02035BD0": {
+          "offset": "0x308",
+          "size": "0x10"
+        },
+        "gUnk_02035BE0": {
+          "offset": "0x318",
+          "size": "0x10"
+        },
+        "gUnk_02035BF0": {
+          "offset": "0x328",
+          "size": "0x10"
+        },
+        "gUnk_02035C00": {
+          "offset": "0x338",
+          "size": "0x4"
+        },
+        "gUnk_02035C04": {
+          "offset": "0x33c",
+          "size": "0x4"
+        },
+        "gUnk_02035C08": {
+          "offset": "0x340",
+          "size": "0x4"
+        },
+        "gUnk_02035C0C": {
+          "offset": "0x344",
+          "size": "0x1"
         }
       }
     }
