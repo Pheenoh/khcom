@@ -35,63 +35,6 @@
         },
         {
           "unit": "localized_resource_data.c",
-          "section": ".data_localized_09F80288",
-          "address": "0x9f80288",
-          "size": 40,
-          "sha256": "6bff188cc8f8e9b84432414077d3e435b5ac01b03b6f96038405d2d4372e4ab9",
-          "objects": [
-            {
-              "name": "gUnkEu_09F80288",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F8029C",
-              "offset": 20,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "localized_resource_data.c",
-          "section": ".data_localized_09F802C8",
-          "address": "0x9f802c8",
-          "size": 40,
-          "sha256": "29ceb6cb44372054d36095fe79c1727fe2bb72090d88c06703c44d776e68f19c",
-          "objects": [
-            {
-              "name": "gUnkEu_09F802C8",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F802DC",
-              "offset": 20,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "localized_resource_data.c",
-          "section": ".data_localized_09F80350",
-          "address": "0x9f80350",
-          "size": 40,
-          "sha256": "fe67a2b3a04d1b09e3814f5b667db5aff0fc70efb154759c4a4412d5e076b59a",
-          "objects": [
-            {
-              "name": "gUnkEu_09F80350",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F80364",
-              "offset": 20,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "localized_resource_data.c",
           "section": ".data_localized_09F84F5C",
           "address": "0x9f84f5c",
           "size": 20,
