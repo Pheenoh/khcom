@@ -1,4 +1,3 @@
-#include "worldwarp_data.h"
 #ifndef GUARD_MODE_WORLDINSPECT_H
 #define GUARD_MODE_WORLDINSPECT_H
 
@@ -18,7 +17,5 @@
 
 
 extern u8 gUnk_09A329DC[];
-extern u8 gUnk_02035618[];
-extern u8 gUnk_020356E0[];
 
 #endif /* GUARD_MODE_WORLDINSPECT_H */

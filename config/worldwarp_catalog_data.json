@@ -3,7 +3,8 @@
   "provenance": {
     "worldwarp": "Thirteen20-byte WarpIcon records form the actual floor-navigation graph. The duplicate worldinspect view proves the four directional halfwords previously hidden in the first8 bytes. The connection selector is0..3: exactly four8-byte WarpRect entries end at the separate mode_worldwarp name literal. Fourteen24-byte WorldSelectDef records include the native all-zero world0 entry and end at the separately owned Mode registry. Two92-byte WarpDef records are selected by explicit boolean flags; their first pointer names a real Mode registry, and the previously opaque04 field is a background tilemap pointer with its size at08. All native pointers retain their exact regional value.",
     "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data.",
-    "ms_top_owner": "The Moogle top-menu helpers and lifecycle form one contiguous text run between world-warp mode and shop helpers in every region. Their exclusive 35-object state run reproduces the original offsets and 8-byte input alignment with ordinary static C definitions. The two native WarpDef choices, three dialogue IDs and mode-name literal form the corresponding complete read-only span, with ordinary compiler padding between the halfwords and name. Five EU-only locale selector arrays precede this mode descriptor in native initialized data."
+    "ms_top_owner": "The Moogle top-menu helpers and lifecycle form one contiguous text run between world-warp mode and shop helpers in every region. Their exclusive 35-object state run reproduces the original offsets and 8-byte input alignment with ordinary static C definitions. The two native WarpDef choices, three dialogue IDs and mode-name literal form the corresponding complete read-only span, with ordinary compiler padding between the halfwords and name. Five EU-only locale selector arrays precede this mode descriptor in native initialized data.",
+    "worldwarp_owner": "The eight world-warp helpers formerly trailing world-inspection code, the three mode callbacks, three tables, mode name and descriptor form native code, data and rodata runs in every region. Their 27 state objects are private to this owner. WarpRect.width and the existing helper declaration are signed halfwords; the helper immediately copies width into a signed halfword local, so its definition is made consistent without changing any instruction. Both TextSlot buffers contain 24 records in US/JP and 48 in EU, as established by the original initialization and cleanup counts. Ordinary private-object alignment reproduces the original RAM layout without two historical gap arrays or two EU text-buffer extension placeholders."
   },
   "regions": {
     "us": {
@@ -37,18 +38,25 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_099930E8",
+          "unit": "mode_worldwarp.c",
+          "section": ".rodata",
           "address": "0x99930e8",
-          "size": 32,
-          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "size": 47,
+          "sha256": "89302f5691fc7736b1579d3509353498f52841541e217ba5b0d0855219b32880",
           "objects": [
             {
               "name": "gUnk_099930E8",
               "offset": 0,
               "size": 32
+            },
+            {
+              "name": "gModeNameWorldwarp",
+              "offset": 32,
+              "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_ms_top.c",
@@ -75,30 +83,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9384",
+          "unit": "mode_worldwarp.c",
+          "section": ".data",
           "address": "0x9ef9384",
-          "size": 260,
-          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "size": 612,
+          "sha256": "71dfcc2ba02480cd6d682271164aee68b38083ea56d52c2386801fe192a12c38",
           "objects": [
             {
               "name": "gUnk_09EF9384",
               "offset": 0,
               "size": 260
-            }
-          ]
-        },
-        {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9488",
-          "address": "0x9ef9488",
-          "size": 336,
-          "sha256": "a41970314df7dfe48f9fdb4785b245d1b3f423a03a27b792577396513a5c5790",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF9488",
-              "offset": 0,
+              "offset": 260,
               "size": 336
+            },
+            {
+              "name": "gModeWorldwarp",
+              "offset": 596,
+              "size": 16
             }
           ]
         },
@@ -247,18 +251,25 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_099930E8",
+          "unit": "mode_worldwarp.c",
+          "section": ".rodata",
           "address": "0x9947bfc",
-          "size": 32,
-          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "size": 47,
+          "sha256": "89302f5691fc7736b1579d3509353498f52841541e217ba5b0d0855219b32880",
           "objects": [
             {
               "name": "gUnk_099930E8",
               "offset": 0,
               "size": 32
+            },
+            {
+              "name": "gModeNameWorldwarp",
+              "offset": 32,
+              "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_ms_top.c",
@@ -285,30 +296,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9384",
+          "unit": "mode_worldwarp.c",
+          "section": ".data",
           "address": "0x9ed0770",
-          "size": 260,
-          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "size": 612,
+          "sha256": "4d656b531ad94eab1976b28084c10aaa7a1198b36382464ed3773bb995284134",
           "objects": [
             {
               "name": "gUnk_09EF9384",
               "offset": 0,
               "size": 260
-            }
-          ]
-        },
-        {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9488",
-          "address": "0x9ed0874",
-          "size": 336,
-          "sha256": "fbae0283cf8d95d66113922592179005fd12d82961cf3b30fbcf22fcc4d9ebcb",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF9488",
-              "offset": 0,
+              "offset": 260,
               "size": 336
+            },
+            {
+              "name": "gModeWorldwarp",
+              "offset": 596,
+              "size": 16
             }
           ]
         },
@@ -457,18 +464,25 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_099930E8",
+          "unit": "mode_worldwarp.c",
+          "section": ".rodata",
           "address": "0x9999398",
-          "size": 32,
-          "sha256": "3f4fe531be854fee97e16e068485f19c5473e2bcfa4791f9377aadcb29b4e05b",
+          "size": 47,
+          "sha256": "89302f5691fc7736b1579d3509353498f52841541e217ba5b0d0855219b32880",
           "objects": [
             {
               "name": "gUnk_099930E8",
               "offset": 0,
               "size": 32
+            },
+            {
+              "name": "gModeNameWorldwarp",
+              "offset": 32,
+              "size": 15
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2
         },
         {
           "unit": "mode_ms_top.c",
@@ -495,30 +509,26 @@
           ]
         },
         {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9384",
+          "unit": "mode_worldwarp.c",
+          "section": ".data",
           "address": "0x9f84c84",
-          "size": 260,
-          "sha256": "f9d5884cc11da13c71fdd0fb508661a48545b54ad1d6afda5c2037c43091e488",
+          "size": 612,
+          "sha256": "dc5d98e17a212283f6f163e87372e8b75ad824cf1c0df7fb007492370de1b79d",
           "objects": [
             {
               "name": "gUnk_09EF9384",
               "offset": 0,
               "size": 260
-            }
-          ]
-        },
-        {
-          "unit": "worldwarp_data.c",
-          "section": ".data_gUnk_09EF9488",
-          "address": "0x9f84d88",
-          "size": 336,
-          "sha256": "5a02b4e930a34d9c9484e3c14d79b4ff3f8f03d997db01689f33e2cdfe79afba",
-          "objects": [
+            },
             {
               "name": "gUnk_09EF9488",
-              "offset": 0,
+              "offset": 260,
               "size": 336
+            },
+            {
+              "name": "gModeWorldwarp",
+              "offset": 596,
+              "size": 16
             }
           ]
         },

@@ -1,5 +1,4 @@
 #include "moogle_data.h"
-#include "worldwarp_data.h"
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
@@ -49,13 +48,6 @@ extern u8 gUnk_0999FA20[];
 extern u8 gUnk_09A3D5BC[];
 extern u8 gUnk_099A012C[];
 
-void func_08100980(void);
-void func_081006AC(void);
-void func_0810057C(s16 a, s16 b, void* c, s16 d, s16 e, void* f, s16 g, s16 h);
-void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);
-u8 func_08100608(s16 a);
-u8 func_0810063C(s16 a);
-void func_08100670(s32 a, void* b, void* c);
 
 void mode_worldwarp_0(void);
 void mode_worldwarp_1(void);

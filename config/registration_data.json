@@ -6330,34 +6330,6 @@
           ]
         },
         {
-          "unit": "mode_worldwarp.c",
-          "section": ".rodata",
-          "address": "0x09993108",
-          "size": 15,
-          "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
-          "objects": [
-            {
-              "name": "gModeNameWorldwarp",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "mode_worldwarp.c",
-          "section": ".data",
-          "address": "0x09EF95D8",
-          "size": 16,
-          "sha256": "52a0fad076d85d73064cb6b488b003d0046570b02cfcce973a3b562328e84a69",
-          "objects": [
-            {
-              "name": "gModeWorldwarp",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
           "unit": "mode_ms_top.c",
           "section": ".data",
           "address": "0x9ef95e8",
@@ -13985,34 +13957,6 @@
           ]
         },
         {
-          "unit": "mode_worldwarp.c",
-          "section": ".rodata",
-          "address": "0x09947C1C",
-          "size": 15,
-          "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
-          "objects": [
-            {
-              "name": "gModeNameWorldwarp",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "mode_worldwarp.c",
-          "section": ".data",
-          "address": "0x09ED09C4",
-          "size": 16,
-          "sha256": "874fb2dd3ea64ae3ba6d5dadef27fb7c36703b8b5b2950fee54a39b544328d57",
-          "objects": [
-            {
-              "name": "gModeWorldwarp",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
           "unit": "mode_ms_top.c",
           "section": ".data",
           "address": "0x9ed09d4",
@@ -21541,34 +21485,6 @@
               "name": "gModeNameWorldinspect",
               "offset": 0,
               "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "mode_worldwarp.c",
-          "section": ".rodata",
-          "address": "0x099993B8",
-          "size": 15,
-          "sha256": "9ed22a7796e7130e1e65e547b39dd5cbd7cb6d06a374cf701e3456d5a1a90282",
-          "objects": [
-            {
-              "name": "gModeNameWorldwarp",
-              "offset": 0,
-              "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "mode_worldwarp.c",
-          "section": ".data",
-          "address": "0x09F84ED8",
-          "size": 16,
-          "sha256": "b08b418a5176a702c04f9e2762174fcd02ada1952c08900052891e560179312c",
-          "objects": [
-            {
-              "name": "gModeWorldwarp",
-              "offset": 0,
-              "size": 16
             }
           ]
         },

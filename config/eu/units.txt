@@ -80,7 +80,7 @@ map.c -O2 -fprologue-bugfix -fno-common
 room.c
 bos5.c -O2 -fprologue-bugfix -fno-common
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
-mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
+mode_worldwarp.c -O2 -fprologue-bugfix
 mode_ms_top.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
 ms_charge.c -O2 -fprologue-bugfix -fno-common
@@ -2633,8 +2633,6 @@ asset_gfx_gap_189.s(.rodata)
 bos5.c(.rodata_registration_name_gModeWorldselect)
 asset_gfx_gap_190.s(.rodata)
 mode_worldinspect.c(.rodata)
-asset_gfx_gap_191.s(.rodata)
-worldwarp_data.c(.data_gUnk_099930E8)
 mode_worldwarp.c(.rodata)
 asset_gfx_gap_192.s(.rodata)
 mode_ms_top.c(.rodata)
@@ -3726,8 +3724,6 @@ rodata_regtables3_gap_59_at_09F847D4.s(.rodata)
 worldselect_data.c(.data_worldselect_palette_cycle)
 bos5.c(.data_registration_gModeWorldselect)
 mode_worldinspect.c(.data)
-worldwarp_data.c(.data_gUnk_09EF9384)
-worldwarp_data.c(.data_gUnk_09EF9488)
 mode_worldwarp.c(.data)
 mode_ms_top.c(.data)
 localized_resource_data.c(.data_localized_09F84F5C)

@@ -1,5 +1,119 @@
 {
   "us": {
+    "src/mode_worldwarp.o": {
+      "base": "0x20354e8",
+      "size": "0x2d4",
+      "symbols": {
+        "gUnk_020354E8": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gUnk_020354EA": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_020354F0": {
+          "offset": "0x8",
+          "size": "0x1a"
+        },
+        "gUnk_0203550A": {
+          "offset": "0x22",
+          "size": "0x2"
+        },
+        "gUnk_0203550C": {
+          "offset": "0x24",
+          "size": "0x4"
+        },
+        "gUnk_02035510": {
+          "offset": "0x28",
+          "size": "0x4"
+        },
+        "gUnk_02035514": {
+          "offset": "0x2c",
+          "size": "0x4"
+        },
+        "gUnk_02035518": {
+          "offset": "0x30",
+          "size": "0x4"
+        },
+        "gUnk_0203551C": {
+          "offset": "0x34",
+          "size": "0x4"
+        },
+        "gUnk_02035520": {
+          "offset": "0x38",
+          "size": "0x18"
+        },
+        "gUnk_02035538": {
+          "offset": "0x50",
+          "size": "0x18"
+        },
+        "gUnk_02035550": {
+          "offset": "0x68",
+          "size": "0x4"
+        },
+        "gUnk_02035554": {
+          "offset": "0x6c",
+          "size": "0x4"
+        },
+        "gUnk_02035558": {
+          "offset": "0x70",
+          "size": "0x18"
+        },
+        "gUnk_02035570": {
+          "offset": "0x88",
+          "size": "0x38"
+        },
+        "gUnk_020355A8": {
+          "offset": "0xc0",
+          "size": "0x38"
+        },
+        "gUnk_020355E0": {
+          "offset": "0xf8",
+          "size": "0x38"
+        },
+        "gUnk_02035618": {
+          "offset": "0x130",
+          "size": "0xc0"
+        },
+        "gUnk_020356D8": {
+          "offset": "0x1f0",
+          "size": "0x1"
+        },
+        "gUnk_020356E0": {
+          "offset": "0x1f8",
+          "size": "0xc0"
+        },
+        "gUnk_020357A0": {
+          "offset": "0x2b8",
+          "size": "0x1"
+        },
+        "gUnk_020357A2": {
+          "offset": "0x2ba",
+          "size": "0x2"
+        },
+        "gUnk_020357A4": {
+          "offset": "0x2bc",
+          "size": "0x2"
+        },
+        "gUnk_020357A8": {
+          "offset": "0x2c0",
+          "size": "0x8"
+        },
+        "gUnk_020357B0": {
+          "offset": "0x2c8",
+          "size": "0x4"
+        },
+        "gUnk_020357B4": {
+          "offset": "0x2cc",
+          "size": "0x4"
+        },
+        "gUnk_020357B8": {
+          "offset": "0x2d0",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio.o": {
       "base": "0x2034b3c",
       "size": "0x18",
@@ -1109,6 +1223,120 @@
     }
   },
   "jp": {
+    "src/mode_worldwarp.o": {
+      "base": "0x2035448",
+      "size": "0x2d4",
+      "symbols": {
+        "gUnk_020354E8": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gUnk_020354EA": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_020354F0": {
+          "offset": "0x8",
+          "size": "0x1a"
+        },
+        "gUnk_0203550A": {
+          "offset": "0x22",
+          "size": "0x2"
+        },
+        "gUnk_0203550C": {
+          "offset": "0x24",
+          "size": "0x4"
+        },
+        "gUnk_02035510": {
+          "offset": "0x28",
+          "size": "0x4"
+        },
+        "gUnk_02035514": {
+          "offset": "0x2c",
+          "size": "0x4"
+        },
+        "gUnk_02035518": {
+          "offset": "0x30",
+          "size": "0x4"
+        },
+        "gUnk_0203551C": {
+          "offset": "0x34",
+          "size": "0x4"
+        },
+        "gUnk_02035520": {
+          "offset": "0x38",
+          "size": "0x18"
+        },
+        "gUnk_02035538": {
+          "offset": "0x50",
+          "size": "0x18"
+        },
+        "gUnk_02035550": {
+          "offset": "0x68",
+          "size": "0x4"
+        },
+        "gUnk_02035554": {
+          "offset": "0x6c",
+          "size": "0x4"
+        },
+        "gUnk_02035558": {
+          "offset": "0x70",
+          "size": "0x18"
+        },
+        "gUnk_02035570": {
+          "offset": "0x88",
+          "size": "0x38"
+        },
+        "gUnk_020355A8": {
+          "offset": "0xc0",
+          "size": "0x38"
+        },
+        "gUnk_020355E0": {
+          "offset": "0xf8",
+          "size": "0x38"
+        },
+        "gUnk_02035618": {
+          "offset": "0x130",
+          "size": "0xc0"
+        },
+        "gUnk_020356D8": {
+          "offset": "0x1f0",
+          "size": "0x1"
+        },
+        "gUnk_020356E0": {
+          "offset": "0x1f8",
+          "size": "0xc0"
+        },
+        "gUnk_020357A0": {
+          "offset": "0x2b8",
+          "size": "0x1"
+        },
+        "gUnk_020357A2": {
+          "offset": "0x2ba",
+          "size": "0x2"
+        },
+        "gUnk_020357A4": {
+          "offset": "0x2bc",
+          "size": "0x2"
+        },
+        "gUnk_020357A8": {
+          "offset": "0x2c0",
+          "size": "0x8"
+        },
+        "gUnk_020357B0": {
+          "offset": "0x2c8",
+          "size": "0x4"
+        },
+        "gUnk_020357B4": {
+          "offset": "0x2cc",
+          "size": "0x4"
+        },
+        "gUnk_020357B8": {
+          "offset": "0x2d0",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio.o": {
       "base": "0x2034a9c",
       "size": "0x18",
@@ -2217,6 +2445,120 @@
     }
   },
   "eu": {
+    "src/mode_worldwarp.o": {
+      "base": "0x2035978",
+      "size": "0x454",
+      "symbols": {
+        "gUnk_020354E8": {
+          "offset": "0x0",
+          "size": "0x2"
+        },
+        "gUnk_020354EA": {
+          "offset": "0x2",
+          "size": "0x2"
+        },
+        "gUnk_020354F0": {
+          "offset": "0x8",
+          "size": "0x1a"
+        },
+        "gUnk_0203550A": {
+          "offset": "0x22",
+          "size": "0x2"
+        },
+        "gUnk_0203550C": {
+          "offset": "0x24",
+          "size": "0x4"
+        },
+        "gUnk_02035510": {
+          "offset": "0x28",
+          "size": "0x4"
+        },
+        "gUnk_02035514": {
+          "offset": "0x2c",
+          "size": "0x4"
+        },
+        "gUnk_02035518": {
+          "offset": "0x30",
+          "size": "0x4"
+        },
+        "gUnk_0203551C": {
+          "offset": "0x34",
+          "size": "0x4"
+        },
+        "gUnk_02035520": {
+          "offset": "0x38",
+          "size": "0x18"
+        },
+        "gUnk_02035538": {
+          "offset": "0x50",
+          "size": "0x18"
+        },
+        "gUnk_02035550": {
+          "offset": "0x68",
+          "size": "0x4"
+        },
+        "gUnk_02035554": {
+          "offset": "0x6c",
+          "size": "0x4"
+        },
+        "gUnk_02035558": {
+          "offset": "0x70",
+          "size": "0x18"
+        },
+        "gUnk_02035570": {
+          "offset": "0x88",
+          "size": "0x38"
+        },
+        "gUnk_020355A8": {
+          "offset": "0xc0",
+          "size": "0x38"
+        },
+        "gUnk_020355E0": {
+          "offset": "0xf8",
+          "size": "0x38"
+        },
+        "gUnk_02035618": {
+          "offset": "0x130",
+          "size": "0x180"
+        },
+        "gUnk_020356D8": {
+          "offset": "0x2b0",
+          "size": "0x1"
+        },
+        "gUnk_020356E0": {
+          "offset": "0x2b8",
+          "size": "0x180"
+        },
+        "gUnk_020357A0": {
+          "offset": "0x438",
+          "size": "0x1"
+        },
+        "gUnk_020357A2": {
+          "offset": "0x43a",
+          "size": "0x2"
+        },
+        "gUnk_020357A4": {
+          "offset": "0x43c",
+          "size": "0x2"
+        },
+        "gUnk_020357A8": {
+          "offset": "0x440",
+          "size": "0x8"
+        },
+        "gUnk_020357B0": {
+          "offset": "0x448",
+          "size": "0x4"
+        },
+        "gUnk_020357B4": {
+          "offset": "0x44c",
+          "size": "0x4"
+        },
+        "gUnk_020357B8": {
+          "offset": "0x450",
+          "size": "0x4"
+        }
+      }
+    },
     "src/mode_sio.o": {
       "base": "0x2034b54",
       "size": "0x10",
