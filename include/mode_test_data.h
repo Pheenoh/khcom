@@ -7,11 +7,6 @@
 #ifndef VERSION_EU
 extern Mode gUnk_09EDE4E0;
 #endif
-extern u8* gUnk_09EE26EC[2];
-extern u8* gUnk_09EE26F4;
-extern u8* gUnk_09EE26F8;
-extern u8* gUnk_09EE26FC;
-extern u8* gUnk_09EE2700;
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F5D574[5];

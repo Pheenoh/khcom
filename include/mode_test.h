@@ -167,6 +167,12 @@ void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060470(u8 bg);
 void func_0806098C(void);
 
+extern u8* gUnk_09EE26EC[2];
+extern u8* gUnk_09EE26F4;
+extern u8* gUnk_09EE26F8;
+extern u8* gUnk_09EE26FC;
+extern u8* gUnk_09EE2700;
+
 extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
 

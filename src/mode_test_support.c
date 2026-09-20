@@ -3,6 +3,7 @@
 #include "mode.h"
 #include "m4a_song.h"
 #include "mode_test.h"
+#include "mode_test_assets.h"
 #include "gba/keys.h"
 #include "mode_test_api.h"
 
@@ -844,3 +845,9 @@ TaskDesc gTaskDescLockon = {
     (void (*)(void*))task_lockon_3,
     0x50,
 };
+
+u8* gUnk_09EE26EC[2] = { gUnk_08F6E190, gUnk_08F6F190 };
+u8* gUnk_09EE26F4 = gUnk_08F70AAC;
+u8* gUnk_09EE26F8 = gUnk_08F70AA8;
+u8* gUnk_09EE26FC = gUnk_08F70AA4;
+u8* gUnk_09EE2700 = gUnk_08F70AA0;

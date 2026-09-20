@@ -219,13 +219,38 @@
           "unit": "mode_test_support.c",
           "section": ".data",
           "address": "0x09EE26D4",
-          "size": 24,
-          "sha256": "edf6d38c3aa1ae8d2dfb2ddba8a2a7572b77d5d6216616ddedba6b9be1269838",
+          "size": 48,
+          "sha256": "ae08c049fb0d9949dd06048b0bc94a4d5dfed4983a21cf4dc2f675a2fbefad11",
           "objects": [
             {
               "name": "gTaskDescLockon",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gUnk_09EE26EC",
+              "offset": 24,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EE26F4",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26F8",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26FC",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE2700",
+              "offset": 44,
+              "size": 4
             }
           ]
         },
@@ -7083,13 +7108,38 @@
           "unit": "mode_test_support.c",
           "section": ".data",
           "address": "0x09EBA150",
-          "size": 24,
-          "sha256": "b3b335acc728082a66a6f662547c5ad10cf0eb6d28d2d7684bb07522d391f225",
+          "size": 48,
+          "sha256": "bfe6a2fc2231ef011f7253ead232ddc3539d92be5c1b478068196e8e0fc2af8c",
           "objects": [
             {
               "name": "gTaskDescLockon",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gUnk_09EE26EC",
+              "offset": 24,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EE26F4",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26F8",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26FC",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE2700",
+              "offset": 44,
+              "size": 4
             }
           ]
         },
@@ -13919,13 +13969,38 @@
           "unit": "mode_test_support.c",
           "section": ".data",
           "address": "0x09F5D544",
-          "size": 24,
-          "sha256": "bcfebdc353d24d37caa14a000758805df18e57997dde9c50953be300d02ab765",
+          "size": 48,
+          "sha256": "261b54052d42405ebe8bc90c3d3871b1071ea34684032c742c88454698a040b9",
           "objects": [
             {
               "name": "gTaskDescLockon",
               "offset": 0,
               "size": 24
+            },
+            {
+              "name": "gUnk_09EE26EC",
+              "offset": 24,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EE26F4",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26F8",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE26FC",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE2700",
+              "offset": 44,
+              "size": 4
             }
           ]
         },
