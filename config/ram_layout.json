@@ -4,19 +4,19 @@
         "base": "0x20380a0",
         "size": "0x588",
         "symbols": {
-          "gUnk_020380A0": {
+          "gPcmActiveBufferIndex": {
             "offset": "0x0",
             "size": "0x4"
           },
-          "gUnk_020380A4": {
+          "gPcmSamplesPerBuffer": {
             "offset": "0x4",
             "size": "0x4"
           },
-          "gUnk_020380A8": {
+          "gPcmOutputBufferA": {
             "offset": "0x8",
             "size": "0x2c0"
           },
-          "gUnk_02038368": {
+          "gPcmOutputBufferB": {
             "offset": "0x2c8",
             "size": "0x2c0"
           }
@@ -2254,19 +2254,19 @@
         "base": "0x2038010",
         "size": "0x588",
         "symbols": {
-          "gUnk_020380A0": {
+          "gPcmActiveBufferIndex": {
             "offset": "0x0",
             "size": "0x4"
           },
-          "gUnk_020380A4": {
+          "gPcmSamplesPerBuffer": {
             "offset": "0x4",
             "size": "0x4"
           },
-          "gUnk_020380A8": {
+          "gPcmOutputBufferA": {
             "offset": "0x8",
             "size": "0x2c0"
           },
-          "gUnk_02038368": {
+          "gPcmOutputBufferB": {
             "offset": "0x2c8",
             "size": "0x2c0"
           }
@@ -4514,19 +4514,19 @@
         "base": "0x20386b0",
         "size": "0x588",
         "symbols": {
-          "gUnk_020380A0": {
+          "gPcmActiveBufferIndex": {
             "offset": "0x0",
             "size": "0x4"
           },
-          "gUnk_020380A4": {
+          "gPcmSamplesPerBuffer": {
             "offset": "0x4",
             "size": "0x4"
           },
-          "gUnk_020380A8": {
+          "gPcmOutputBufferA": {
             "offset": "0x8",
             "size": "0x2c0"
           },
-          "gUnk_02038368": {
+          "gPcmOutputBufferB": {
             "offset": "0x2c8",
             "size": "0x2c0"
           }

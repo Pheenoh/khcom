@@ -4,13 +4,13 @@
 #include "types.h"
 
 typedef struct SoundEntry {
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
+    u32 sampleRate;
+    u32 samplesPerBuffer;
+    u32 timerReload;
 } SoundEntry;
 
-u8 LookupPcmPlaybackConfig(u32 id, u16* rate, u32* count);
-u8 PcmPlaybackInit(u32 id);
+u8 LookupPcmPlaybackConfig(u32 sampleRate, u16* timerReload, u32* samplesPerBuffer);
+u8 PcmPlaybackInit(u32 sampleRate);
 void PcmPlaybackStart(void);
 void PcmPlaybackStop(void);
 void PcmPlaybackUpdate(void);

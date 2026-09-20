@@ -2,7 +2,7 @@
 #include "sroll_api.h"
 #include "m4a.h"
 
-const SoundEntry gUnk_09EFAA7C[13] = {
+const SoundEntry gPcmPlaybackConfigs[13] = {
     {5734, 96, 62610},
     {7884, 132, 63408},
     {10512, 176, 63940},
@@ -18,48 +18,48 @@ const SoundEntry gUnk_09EFAA7C[13] = {
     {0, 0, 0},
 };
 
-static s32 gUnk_020380A0;
-static s32 gUnk_020380A4;
-static s8 gUnk_020380A8[0x2C0];
-static s8 gUnk_02038368[0x2C0];
+static s32 gPcmActiveBufferIndex;
+static s32 gPcmSamplesPerBuffer;
+static s8 gPcmOutputBufferA[0x2C0];
+static s8 gPcmOutputBufferB[0x2C0];
 
 #define DMA_SOUND_FIFO                                                        \
     ((DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT | DMA_DEST_FIXED) << 16)
 
 #define SOUND_MASTER_ENABLE 0x0080
 
-u8 LookupPcmPlaybackConfig(u32 id, u16* rate, u32* count) {
+u8 LookupPcmPlaybackConfig(u32 sampleRate, u16* timerReload, u32* samplesPerBuffer) {
     s32 i = 0;
 
     do {
-        if (gUnk_09EFAA7C[i].unk_00 == id) {
-            *rate = gUnk_09EFAA7C[i].unk_08;
-            *count = gUnk_09EFAA7C[i].unk_04;
+        if (gPcmPlaybackConfigs[i].sampleRate == sampleRate) {
+            *timerReload = gPcmPlaybackConfigs[i].timerReload;
+            *samplesPerBuffer = gPcmPlaybackConfigs[i].samplesPerBuffer;
             return 1;
         }
         i++;
-    } while (gUnk_09EFAA7C[i].unk_00 != 0);
+    } while (gPcmPlaybackConfigs[i].sampleRate != 0);
     return 0;
 }
 
-u8 PcmPlaybackInit(u32 id) {
-    u16 rate;
+u8 PcmPlaybackInit(u32 sampleRate) {
+    u16 timerReload;
     s32 i;
 
-    if (!LookupPcmPlaybackConfig(id, &rate, (u32*)&gUnk_020380A4)) {
+    if (!LookupPcmPlaybackConfig(sampleRate, &timerReload, (u32*)&gPcmSamplesPerBuffer)) {
         return 0;
     }
     REG_SOUNDCNT_H = 0x0B06;
     REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
     REG_DMA1DAD = (s32)&REG_FIFO_A;
-    REG_TM0CNT_L = rate;
+    REG_TM0CNT_L = timerReload;
     REG_DMA1CNT = DMA_SOUND_FIFO;
 
-    for (i = 0; i < gUnk_020380A4; i++) {
-        gUnk_020380A8[i] = gUnk_02038368[i] = 0;
+    for (i = 0; i < gPcmSamplesPerBuffer; i++) {
+        gPcmOutputBufferA[i] = gPcmOutputBufferB[i] = 0;
     }
-    gUnk_020380A0 = 1;
-    REG_DMA1SAD = (s32)gUnk_020380A8;
+    gPcmActiveBufferIndex = 1;
+    REG_DMA1SAD = (s32)gPcmOutputBufferA;
     return 1;
 }
 
@@ -83,13 +83,13 @@ void PcmPlaybackUpdate(void) {
     src = GetDecodedAudioBuffer();
     pos = GetDecodedAudioReadPosition();
     REG_DMA1CNT ^= DMA_ENABLE << 16;
-    REG_DMA1SAD = (s32)(gUnk_020380A0 == 1 ? gUnk_02038368 : gUnk_020380A8);
+    REG_DMA1SAD = (s32)(gPcmActiveBufferIndex == 1 ? gPcmOutputBufferB : gPcmOutputBufferA);
     REG_DMA1CNT ^= DMA_ENABLE << 16;
-    gUnk_020380A0 = gUnk_020380A0 == 1 ? 2 : 1;
-    dst = gUnk_020380A0 == 1 ? gUnk_02038368 : gUnk_020380A8;
+    gPcmActiveBufferIndex = gPcmActiveBufferIndex == 1 ? 2 : 1;
+    dst = gPcmActiveBufferIndex == 1 ? gPcmOutputBufferB : gPcmOutputBufferA;
 
-    if (pos + gUnk_020380A4 <= 0x7FF) {
-        for (i = 0; i < gUnk_020380A4; i++) {
+    if (pos + gPcmSamplesPerBuffer <= 0x7FF) {
+        for (i = 0; i < gPcmSamplesPerBuffer; i++) {
             dst[i] = src[pos] >> 8;
             pos++;
         }
@@ -99,9 +99,9 @@ void PcmPlaybackUpdate(void) {
             dst[i] = src[pos + i] >> 8;
         }
 
-        for (; i < gUnk_020380A4; i++) {
+        for (; i < gPcmSamplesPerBuffer; i++) {
             dst[i] = src[pos + i - 0x800] >> 8;
         }
-        SetDecodedAudioReadPosition(pos + gUnk_020380A4 - 0x800);
+        SetDecodedAudioReadPosition(pos + gPcmSamplesPerBuffer - 0x800);
     }
 }
