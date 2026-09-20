@@ -9,9 +9,6 @@ u16 gUnk_020348D8[2];
 u16 gUnk_020348DC[2];
 u16 gUnk_020348E0;
 u16 gUnk_020348E2;
-#ifndef VERSION_EU
-u8 gUnk_020348E4[4];
-#endif
 
 void func_08010548(u16 keys, s32 i) {
     if (keys & 0x200) {

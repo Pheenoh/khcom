@@ -193,10 +193,6 @@ extern u16 gUnk_020348D8[2];
 extern u16 gUnk_020348DC[2];
 extern u16 gUnk_020348E0;
 extern u16 gUnk_020348E2;
-extern ListPool gUnk_020348E8;
-extern ListPool gUnk_020348F8;
-extern ListPool gUnk_02034908;
-extern ListPool gUnk_02034918;
 extern BgFx* gUnk_02034928;
 
 void* ColliderGetPool(u32 type);

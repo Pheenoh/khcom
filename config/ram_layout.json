@@ -2189,6 +2189,64 @@
           "size": "0x1"
         }
       }
+    },
+    "src/btl_vs.o": {
+      "section": ".bss.btl_vs",
+      "base": "0x20348cc",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_020348CC": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_020348D4": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gUnk_020348D0": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gUnk_020348D8": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gUnk_020348DC": {
+          "offset": "0x10",
+          "size": "0x4"
+        },
+        "gUnk_020348E0": {
+          "offset": "0x14",
+          "size": "0x2"
+        },
+        "gUnk_020348E2": {
+          "offset": "0x16",
+          "size": "0x2"
+        }
+      }
+    },
+    "src/btl_collision.o": {
+      "section": ".bss.btl_collision",
+      "base": "0x20348e8",
+      "size": "0x40",
+      "symbols": {
+        "gUnk_020348E8": {
+          "offset": "0x0",
+          "size": "0x10"
+        },
+        "gUnk_020348F8": {
+          "offset": "0x10",
+          "size": "0x10"
+        },
+        "gUnk_02034908": {
+          "offset": "0x20",
+          "size": "0x10"
+        },
+        "gUnk_02034918": {
+          "offset": "0x30",
+          "size": "0x10"
+        }
+      }
     }
   },
   "jp": {
@@ -4391,6 +4449,64 @@
           "size": "0x1"
         }
       }
+    },
+    "src/btl_vs.o": {
+      "section": ".bss.btl_vs",
+      "base": "0x20348cc",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_020348CC": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_020348D4": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gUnk_020348D0": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gUnk_020348D8": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gUnk_020348DC": {
+          "offset": "0x10",
+          "size": "0x4"
+        },
+        "gUnk_020348E0": {
+          "offset": "0x14",
+          "size": "0x2"
+        },
+        "gUnk_020348E2": {
+          "offset": "0x16",
+          "size": "0x2"
+        }
+      }
+    },
+    "src/btl_collision.o": {
+      "section": ".bss.btl_collision",
+      "base": "0x20348e8",
+      "size": "0x40",
+      "symbols": {
+        "gUnk_020348E8": {
+          "offset": "0x0",
+          "size": "0x10"
+        },
+        "gUnk_020348F8": {
+          "offset": "0x10",
+          "size": "0x10"
+        },
+        "gUnk_02034908": {
+          "offset": "0x20",
+          "size": "0x10"
+        },
+        "gUnk_02034918": {
+          "offset": "0x30",
+          "size": "0x10"
+        }
+      }
     }
   },
   "eu": {
@@ -6567,6 +6683,64 @@
         "gUnk_02035C0C": {
           "offset": "0x344",
           "size": "0x1"
+        }
+      }
+    },
+    "src/btl_vs.o": {
+      "section": ".bss.btl_vs",
+      "base": "0x20349d0",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_020348CC": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gUnk_020348D4": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gUnk_020348D0": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gUnk_020348D8": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gUnk_020348DC": {
+          "offset": "0x10",
+          "size": "0x4"
+        },
+        "gUnk_020348E0": {
+          "offset": "0x14",
+          "size": "0x2"
+        },
+        "gUnk_020348E2": {
+          "offset": "0x16",
+          "size": "0x2"
+        }
+      }
+    },
+    "src/btl_collision.o": {
+      "section": ".bss.btl_collision",
+      "base": "0x20349e8",
+      "size": "0x40",
+      "symbols": {
+        "gUnk_020348E8": {
+          "offset": "0x0",
+          "size": "0x10"
+        },
+        "gUnk_020348F8": {
+          "offset": "0x10",
+          "size": "0x10"
+        },
+        "gUnk_02034908": {
+          "offset": "0x20",
+          "size": "0x10"
+        },
+        "gUnk_02034918": {
+          "offset": "0x30",
+          "size": "0x10"
         }
       }
     }

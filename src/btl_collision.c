@@ -338,10 +338,10 @@ const BattleAttackDef gUnk_0813400C[330] = {
 };
 
 
-ListPool gUnk_020348E8;
-ListPool gUnk_020348F8;
-ListPool gUnk_02034908;
-ListPool gUnk_02034918;
+static ListPool gUnk_020348E8;
+static ListPool gUnk_020348F8;
+static ListPool gUnk_02034908;
+static ListPool gUnk_02034918;
 
 u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     BtlObj* q = p->unk_0D8;
