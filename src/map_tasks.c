@@ -192,6 +192,40 @@ const UnkStruct_0984BC9C gUnk_0984BFEC = {
 
 const char gTaskName_09EF6C20[] = "Task_MapEnm06";
 
+const char gTaskNameMapDbg[] = "Task_MapDbg";
+
+const char gTaskNameMapGmkJump[] = "Task_MapGmk_Jump";
+
+const char gTaskNameMapGmkEnm[] = "Task_MapGmk_Enm";
+
+const char gTaskNameMapGmkDmy[] = "Task_MapGmk_Dmy";
+
+const char gTaskNameMapGmkTutorial[] = "Task_MapGmk_Tutorial";
+
+const char gTaskNameMapGmkSpider[] = "Task_MapGmk_Spider";
+
+const char gTaskName_09EF6CCC[] = "Task_MapGmk_GP00";
+
+const char gTaskName_09EF6CE4[] = "Task_MapGmk_GP01";
+
+const char gTaskName_09EF6CFC[] = "Task_MapGmk_GP02";
+
+const char gTaskName_09EF6D14[] = "Task_MapGmk_GP03";
+
+const char gTaskName_09EF6D2C[] = "Task_MapGmk_GP04";
+
+const char gTaskName_09EF6D44[] = "Task_MapGmk_GP05";
+
+const char gTaskName_09EF6D5C[] = "Task_MapGmk_GP06";
+
+const char gTaskName_09EF6D74[] = "Task_MapGmk_GP07";
+
+const char gTaskName_09EF6D8C[] = "Task_MapGmk_GP08";
+
+const char gTaskName_09EF6DA4[] = "Task_MapGmk_GP09";
+
+const char gTaskNameMapGmk00[] = "Task_MapGmk00";
+
 s32 func_080EF3A0(UnkStruct_080E590C* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
@@ -5505,20 +5539,6 @@ void func_080F7BB8(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 &= ~0x1000;
 }
 
-const char gTaskNameMapDbg[] __attribute__((section(".rodata_registration_name_gTaskDescMapDbg"), aligned(1))) = "Task_MapDbg";
-
-const char gTaskNameMapGmkJump[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkJump"), aligned(1))) = "Task_MapGmk_Jump";
-
-const char gTaskNameMapGmkEnm[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkEnm"), aligned(1))) = "Task_MapGmk_Enm";
-
-const char gTaskNameMapGmkDmy[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkDmy"), aligned(1))) = "Task_MapGmk_Dmy";
-
-const char gTaskNameMapGmkTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkTutorial"), aligned(1))) = "Task_MapGmk_Tutorial";
-
-const char gTaskNameMapGmkSpider[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmkSpider"), aligned(1))) = "Task_MapGmk_Spider";
-
-const char gTaskNameMapGmk00[] __attribute__((section(".rodata_registration_name_gTaskDescMapGmk00"), aligned(1))) = "Task_MapGmk00";
-
 const char gTaskNameMapPrize[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrize"), aligned(1))) = "Task_MapPrize";
 
 const char gTaskNameMapPrzCard[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrzCard"), aligned(1))) = "Task_MapPrzCard";
@@ -5548,26 +5568,6 @@ const char gTaskNameMapStair[] __attribute__((section(".rodata_registration_name
 const char gTaskNameMapDmg[] __attribute__((section(".rodata_registration_name_gTaskDescMapDmg"), aligned(1))) = "Task_MapDmg";
 
 const char gTaskNameMapFloor[] __attribute__((section(".rodata_registration_name_gTaskDescMapFloor"), aligned(1))) = "Task_MapFloor";
-
-const char gTaskName_09EF6CCC[] __attribute__((section(".rodata_registration_name_gUnk_09EF6CCC"), aligned(1))) = "Task_MapGmk_GP00";
-
-const char gTaskName_09EF6CE4[] __attribute__((section(".rodata_registration_name_gUnk_09EF6CE4"), aligned(1))) = "Task_MapGmk_GP01";
-
-const char gTaskName_09EF6CFC[] __attribute__((section(".rodata_registration_name_gUnk_09EF6CFC"), aligned(1))) = "Task_MapGmk_GP02";
-
-const char gTaskName_09EF6D14[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D14"), aligned(1))) = "Task_MapGmk_GP03";
-
-const char gTaskName_09EF6D2C[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D2C"), aligned(1))) = "Task_MapGmk_GP04";
-
-const char gTaskName_09EF6D44[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D44"), aligned(1))) = "Task_MapGmk_GP05";
-
-const char gTaskName_09EF6D5C[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D5C"), aligned(1))) = "Task_MapGmk_GP06";
-
-const char gTaskName_09EF6D74[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D74"), aligned(1))) = "Task_MapGmk_GP07";
-
-const char gTaskName_09EF6D8C[] __attribute__((section(".rodata_registration_name_gUnk_09EF6D8C"), aligned(1))) = "Task_MapGmk_GP08";
-
-const char gTaskName_09EF6DA4[] __attribute__((section(".rodata_registration_name_gUnk_09EF6DA4"), aligned(1))) = "Task_MapGmk_GP09";
 
 const char gTaskName_09EF6DD4[] __attribute__((section(".rodata_registration_name_gUnk_09EF6DD4"), aligned(1))) = "Task_MapGmk01";
 

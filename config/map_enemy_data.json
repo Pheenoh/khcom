@@ -4,8 +4,9 @@
     "map_enemies": "Seven field-enemy records selected by gUnk_09EF83F8 are exactly24-byte headers: animation index, palette, tile/collider dimensions, TaskDesc pointer and flags. The former70-byte char member was never accessed and incorrectly swallowed the independently referenced following TaskDesc name and next animation table.",
     "animation_extent": "func_080E5D6C selects directional pairs at2*n or2*n+1. Reachable family callbacks prove used n maxima4/2/0/1/2/3/3, hence10/6/2/4/6/8/8 entries. Ten extra complete AnimDef records before the following distinct descriptor are individually typed neutral scalars with no runtime-use claim. AnimDef is the already canonical identical16-byte layout, not another duplicate struct.",
     "map_tasks_owner": "The seven complete MapEnm callback families form the start of a contiguous run of map task implementations. All 313 functions from func_080EF3A0 through func_080F7BB8 have no direct callers in the preceding engine prefix or other C sources, and none directly references a RAM symbol defined in map.c. Their descriptors, private name strings, debug glyph and floor-name indexes move with them to map_tasks.c. The preceding map.c retains all 349 earlier functions, shared map APIs, generic enemy spawn helpers, and all original RAM. This two-owner source boundary is a reconstruction supported by the closed task lifecycles, one-way calls to shared helpers and matching sequential ordinary text and data; it does not claim uniquely recovered original filenames or exclude finer historical task-family TUs.",
-    "enemy_readonly_storage": "Each enemy record links its directional animation table to the matching TaskDesc, callbacks and task name. The seven groups preserve the same order in original code, initialized descriptors and low-ROM data in all regions. Existing animation and 24-byte record definitions now use ordinary const storage beside their names in map_tasks.c, producing the complete 1142-byte readonly span with unchanged bounds, contents and relocations. Constness is an explicit source-storage inference from read-only uses and natural layout, not proof of the original declaration spelling. Shared record/work pointers retain const views; the next unchanged MapDbg name input section has native four-byte alignment and supplies the original two-byte boundary gap.",
-    "enemy_roster_owner": "The unchanged seven-pointer roster gUnk_09EF83F8 remains ordinary initialized data in map_enemy_data.c. Its consumers are the generic spawn and enemy-selection helpers in map.c, and its original position follows the separate room and fixed-map catalogs, far from the task descriptor run. Retaining this small central registry as a data-only provider is an explicit source-organization assumption; no custom placement section or replacement padding is introduced."
+    "enemy_readonly_storage": "Each enemy record links its directional animation table to the matching TaskDesc, callbacks and task name. The seven groups preserve the same order in original code, initialized descriptors and low-ROM data in all regions. Existing animation and 24-byte record definitions now use ordinary const storage beside their names in map_tasks.c, producing the complete 1142-byte readonly span with unchanged bounds, contents and relocations. Constness is an explicit source-storage inference from read-only uses and natural layout, not proof of the original declaration spelling. Shared record/work pointers retain const views; the following MapDbg name uses ordinary constant alignment within the same native readonly section, preserving the original two-byte gap.",
+    "enemy_roster_owner": "The unchanged seven-pointer roster gUnk_09EF83F8 remains ordinary initialized data in map_enemy_data.c. Its consumers are the generic spawn and enemy-selection helpers in map.c, and its original position follows the separate room and fixed-map catalogs, far from the task descriptor run. Retaining this small central registry as a data-only provider is an explicit source-organization assumption; no custom placement section or replacement padding is introduced.",
+    "native_following_names": "Seventeen existing names for callbacks already owned by map_tasks.c immediately follow the enemy animation/record run in the same physical order in every region. Ordinary const char definitions extend that native readonly section from 1142 to 1466 bytes. The compiler emits its normal four-byte constant alignment; both former section and aligned(1) attributes are removed, with no replacement alignment or padding. Every existing string initializer, symbol address and size and descriptor name pointer is preserved. This extends the existing logical task owner without claiming a uniquely proven original file boundary. The next task name is separated by 40 bytes of other data after natural alignment, so that interval and all subsequent name annotations are retained."
   },
   "regions": {
     "us": {
@@ -28,8 +29,8 @@
           "unit": "map_tasks.c",
           "section": ".rodata",
           "address": "0x0984BB9C",
-          "size": 1142,
-          "sha256": "444f5bc61948414a3559346c631c2138643cbb1738dab7abed25d9edc9f8a8e0",
+          "size": 1466,
+          "sha256": "907edc36785a1f545c7459ec81918614370945a94535a6e757e5b60c9f40f77e",
           "objects": [
             {
               "name": "gUnk_0984BB9C",
@@ -184,6 +185,91 @@
             {
               "name": "gTaskName_09EF6C20",
               "offset": 1128,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameMapDbg",
+              "offset": 1144,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameMapGmkJump",
+              "offset": 1156,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmkEnm",
+              "offset": 1176,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkDmy",
+              "offset": 1192,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkTutorial",
+              "offset": 1208,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameMapGmkSpider",
+              "offset": 1232,
+              "size": 19
+            },
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 1252,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 1272,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 1292,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 1312,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 1332,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 1352,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 1372,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 1392,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 1412,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 1432,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmk00",
+              "offset": 1452,
               "size": 14
             }
           ]
@@ -210,8 +296,8 @@
           "unit": "map_tasks.c",
           "section": ".rodata",
           "address": "0x098006B0",
-          "size": 1142,
-          "sha256": "3ce3c2106ff0351c7a239a28074dbd0783050ea148772efcf5ae59b325d5eed2",
+          "size": 1466,
+          "sha256": "3952f052d8665e86f1838e1e76d6bf76745b0d7308d9c8ea74a3182fca902323",
           "objects": [
             {
               "name": "gUnk_0984BB9C",
@@ -366,6 +452,91 @@
             {
               "name": "gTaskName_09EF6C20",
               "offset": 1128,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameMapDbg",
+              "offset": 1144,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameMapGmkJump",
+              "offset": 1156,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmkEnm",
+              "offset": 1176,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkDmy",
+              "offset": 1192,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkTutorial",
+              "offset": 1208,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameMapGmkSpider",
+              "offset": 1232,
+              "size": 19
+            },
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 1252,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 1272,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 1292,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 1312,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 1332,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 1352,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 1372,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 1392,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 1412,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 1432,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmk00",
+              "offset": 1452,
               "size": 14
             }
           ]
@@ -392,8 +563,8 @@
           "unit": "map_tasks.c",
           "section": ".rodata",
           "address": "0x09828570",
-          "size": 1142,
-          "sha256": "fc29b5a49e111680f84ae570efb6a0ca70f33dd1f0af50a94a7ee920dbb709c0",
+          "size": 1466,
+          "sha256": "7d1e444c4cd608e490542a17213cbe49ee60670194caf0b187e0d914d027583b",
           "objects": [
             {
               "name": "gUnk_0984BB9C",
@@ -548,6 +719,91 @@
             {
               "name": "gTaskName_09EF6C20",
               "offset": 1128,
+              "size": 14
+            },
+            {
+              "name": "gTaskNameMapDbg",
+              "offset": 1144,
+              "size": 12
+            },
+            {
+              "name": "gTaskNameMapGmkJump",
+              "offset": 1156,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmkEnm",
+              "offset": 1176,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkDmy",
+              "offset": 1192,
+              "size": 16
+            },
+            {
+              "name": "gTaskNameMapGmkTutorial",
+              "offset": 1208,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameMapGmkSpider",
+              "offset": 1232,
+              "size": 19
+            },
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 1252,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 1272,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 1292,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 1312,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 1332,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 1352,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 1372,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 1392,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 1412,
+              "size": 17
+            },
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 1432,
+              "size": 17
+            },
+            {
+              "name": "gTaskNameMapGmk00",
+              "offset": 1452,
               "size": 14
             }
           ]
