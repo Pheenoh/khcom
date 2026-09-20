@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "indexes": "The sentinel-terminated debug selector lists consumed by func_08075064 and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.",
-    "backgrounds": "All62 distinct nonnull background pointers in the rooted event index are complete native48-byte EventBackgroundDef scalars. Their exact map-grid dimensions, graphics pointers, palette sizes, flags, object metadata and trailing fields are independently consumed by event_seq and Ev_mapObj tasks. All three versions preserve the corresponding record roles and complete native layout. Every map-grid pointer resolves to an existing compiler-owned array. Three native Pooh const u16* grids use a symbolic const void** view at the generic raw/compressed map interface; no alternate array bounds or storage are created. Existing explicit EU compressed-resource alternatives are selected symbolically, preserving the raw counterparts and all divergent flags/sizes."
+    "backgrounds": "All62 distinct nonnull background pointers in the rooted event index are complete native48-byte EventBackgroundDef scalars. Their exact map-grid dimensions, graphics pointers, palette sizes, flags, object metadata and trailing fields are independently consumed by event_seq and Ev_mapObj tasks. All three versions preserve the corresponding record roles and complete native layout. Every map-grid pointer resolves to an existing compiler-owned array. Three native Pooh const u16* grids use a symbolic const void** view at the generic raw/compressed map interface; no alternate array bounds or storage are created. Existing explicit EU compressed-resource alternatives are selected symbolically, preserving the raw counterparts and all divergent flags/sizes.",
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   },
   "regions": {
     "us": {
@@ -1125,10 +1126,10 @@
         },
         {
           "unit": "event_index_data.c",
-          "section": ".data_event_background_index",
+          "section": ".data",
           "address": "0x9ee3ca0",
-          "size": 788,
-          "sha256": "5062562757123ec7179f2cf0718ab65525272d9db8ef163765dd2db3e4859959",
+          "size": 2364,
+          "sha256": "089ed801e5f97215e49b066c70293c83a9310533262fdd5221cd115f3c1b447a",
           "objects": [
             {
               "name": "gUnk_09EE3CA0",
@@ -1138,37 +1139,19 @@
                 "mode_eventselect_1",
                 196
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_sequence_index",
-          "address": "0x9ee3fb4",
-          "size": 788,
-          "sha256": "a5b5731717376a1bda1fcc059fe57e0950707fd70fc4613d0772a677b9687e87",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE3FB4",
-              "offset": 0,
+              "offset": 788,
               "size": 788,
               "consumer": [
                 "mode_eventselect_1",
                 196
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_name_index",
-          "address": "0x9ee42c8",
-          "size": 788,
-          "sha256": "2fb904edea12c499864929c1410c588830ca82478d01b4c8d142051f7a9718da",
-          "objects": [
+            },
             {
               "name": "gEventNames",
-              "offset": 0,
+              "offset": 1576,
               "size": 788,
               "consumer": [
                 "mode_eventselect_1",
@@ -3471,10 +3454,10 @@
         },
         {
           "unit": "event_index_data.c",
-          "section": ".data_event_background_index",
+          "section": ".data",
           "address": "0x9ebb2c0",
-          "size": 788,
-          "sha256": "5cbbe038b99930dfe5b3acf11a555d2a935a7aa345acce9cc7f60ef2bf862371",
+          "size": 2364,
+          "sha256": "42171237a47ba2669f80f4255e48c7e36f36491c322cb9337c61a98b630a7048",
           "objects": [
             {
               "name": "gUnk_09EE3CA0",
@@ -3484,37 +3467,19 @@
                 "mode_eventselect_1",
                 196
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_sequence_index",
-          "address": "0x9ebb5d4",
-          "size": 788,
-          "sha256": "3f1b37e0749b6a0b0f12e24156f7127cd6143c0edaa596244be39a8878fb39e7",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE3FB4",
-              "offset": 0,
+              "offset": 788,
               "size": 788,
               "consumer": [
                 "mode_eventselect_1",
                 196
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_name_index",
-          "address": "0x9ebb8e8",
-          "size": 788,
-          "sha256": "2aaba398e1a2f9544c26891a970ef8ce5763c7eaeaffde2935774c71bd444be1",
-          "objects": [
+            },
             {
               "name": "gEventNames",
-              "offset": 0,
+              "offset": 1576,
               "size": 788,
               "consumer": [
                 "mode_eventselect_1",
@@ -5817,10 +5782,10 @@
         },
         {
           "unit": "event_index_data.c",
-          "section": ".data_event_background_index",
+          "section": ".data",
           "address": "0x9f6ef64",
-          "size": 780,
-          "sha256": "6fbedc30de7acaa220a7057a483417502bdcd062642d469378f4b0e798d3a980",
+          "size": 2340,
+          "sha256": "6f1d230d827a2254a67aa6757deff08cacbdc8fded1e8a04346f5433d9609978",
           "objects": [
             {
               "name": "gUnk_09EE3CA0",
@@ -5830,37 +5795,19 @@
                 "mode_eventselect_1",
                 194
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_sequence_index",
-          "address": "0x9f6f270",
-          "size": 780,
-          "sha256": "c7f73179363132f386478d43ab201b7a19db11e44c88f8e088648d8a784975ed",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE3FB4",
-              "offset": 0,
+              "offset": 780,
               "size": 780,
               "consumer": [
                 "mode_eventselect_1",
                 194
               ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data_event_name_index",
-          "address": "0x9f6f57c",
-          "size": 780,
-          "sha256": "273b0b4b6f3983f5b43e9f20a4cf2cd7de404d56e54a0d8b7478031a7b861aaf",
-          "objects": [
+            },
             {
               "name": "gEventNames",
-              "offset": 0,
+              "offset": 1560,
               "size": 780,
               "consumer": [
                 "mode_eventselect_1",

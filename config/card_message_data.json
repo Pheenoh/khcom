@@ -1,14 +1,15 @@
 {
   "version": 1,
   "provenance": {
-    "card_messages": "func_080A411C/func_080A4188 select these20-byte message definitions. All fields are independently read by the card message tasks:portrait/position/frame/timing at0/4/8/A, encoded text atC, flags at10. map.c func_080EC57C explicitly uses final index0xB3 US/JP and0xB2 EU. The immediately following independently owned gUnk_09EE8E18 TaskDesc has a ROM name pointer where a message would require portrait ID1..62. Native count is180 US/JP and179 EU; no unused EU placeholder is created. JP differs only in flag4 support besides text bindings; EU scalar fields match US at every existing ordinal."
+    "card_messages": "func_080A411C/func_080A4188 select these20-byte message definitions. All fields are independently read by the card message tasks:portrait/position/frame/timing at0/4/8/A, encoded text atC, flags at10. map.c func_080EC57C explicitly uses final index0xB3 US/JP and0xB2 EU. The immediately following independently owned gUnk_09EE8E18 TaskDesc has a ROM name pointer where a message would require portrait ID1..62. Native count is180 US/JP and179 EU; no unused EU placeholder is created. JP differs only in flag4 support besides text bindings; EU scalar fields match US at every existing ordinal.",
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "card_message_data.c",
-          "section": ".data_card_messages",
+          "section": ".data",
           "address": "0x9ee8008",
           "size": 3600,
           "sha256": "c3c24256626ff654e724d1a0ea14d636b70fc296f3554e49f061c45c4d22ecf7",
@@ -1100,7 +1101,7 @@
       "placements": [
         {
           "unit": "card_message_data.c",
-          "section": ".data_card_messages",
+          "section": ".data",
           "address": "0x9ebf64c",
           "size": 3600,
           "sha256": "6f83101fbb1440a79d6d65175ea78d9ac2eca6a93b23ffd579bb12fa143e5fd2",
@@ -2192,7 +2193,7 @@
       "placements": [
         {
           "unit": "card_message_data.c",
-          "section": ".data_card_messages",
+          "section": ".data",
           "address": "0x9f73478",
           "size": 3580,
           "sha256": "11a4b71e4d69970c144d12ea34e37bc72a9618ea6d1b76c09cb629c281952a6a",

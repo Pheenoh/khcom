@@ -1,7 +1,7 @@
 #include "event_index_data.h"
 #include "event_index_assets.h"
 
-EventBackgroundDef* gUnk_09EE3CA0[] __attribute__((section(".data_event_background_index"))) = {
+EventBackgroundDef* gUnk_09EE3CA0[] = {
     &gUnk_08F7EE70,
     &gUnk_08F7EFD8,
     &gUnk_08F7F4E8,
@@ -203,7 +203,7 @@ EventBackgroundDef* gUnk_09EE3CA0[] __attribute__((section(".data_event_backgrou
     &gUnk_08F7EF4C,
 };
 
-EventSequenceDef* gUnk_09EE3FB4[] __attribute__((section(".data_event_sequence_index"))) = {
+EventSequenceDef* gUnk_09EE3FB4[] = {
     &gUnk_08FC0CAC,
     &gUnk_08FC13BC,
     &gUnk_08FC22C8,
@@ -405,7 +405,7 @@ EventSequenceDef* gUnk_09EE3FB4[] __attribute__((section(".data_event_sequence_i
     &gUnk_0902FCB8,
 };
 
-const char* gEventNames[] __attribute__((section(".data_event_name_index"))) = {
+const char* gEventNames[] = {
     gEventName_09032450,
     gEventName_0903241C,
     gEventName_090323E8,

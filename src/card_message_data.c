@@ -1,7 +1,7 @@
 #include "card_message_data.h"
 #include "card_message_assets.h"
 
-CardMessageDef gUnk_09EE8008[] __attribute__((section(".data_card_messages"))) = {
+CardMessageDef gUnk_09EE8008[] = {
     {
         1, 3, 1, 3, 0,
 #if defined(VERSION_EU)

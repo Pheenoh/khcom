@@ -1,49 +1,32 @@
 {
   "version": 1,
   "provenance": {
-    "card_descriptions": "Three independently referenced native description lists have98/26/14 text pointers and end at the already-owned RikuBtlTutorial Mode. All260 MapCardDef category fields cover0..25; the14 WorldinspectMsg/MdMsg records selected by mode_worldinspect_0 i<=13 cover description selectors0..13 in both modes. CardDef rows0..654 use selectors0..97; row655 is the first out-of-range selector98, and later placeholder rows reach141. Live collection code does not establish those placeholders unreachable. Original mode_ms2 <=26 allows a cross-object read into world description0; card selectors139..141 would read following Mode callbacks. Definitions preserve true physical extents and public externs remain unsized; no false larger bounds or behavior fixes are claimed. US UTF16 and JP Shift-JIS text remain named binary assets; EU entries refer existing compiler-owned five-language LocalizedText wrappers."
+    "card_descriptions": "Three independently referenced native description lists have98/26/14 text pointers and end at the already-owned RikuBtlTutorial Mode. All260 MapCardDef category fields cover0..25; the14 WorldinspectMsg/MdMsg records selected by mode_worldinspect_0 i<=13 cover description selectors0..13 in both modes. CardDef rows0..654 use selectors0..97; row655 is the first out-of-range selector98, and later placeholder rows reach141. Live collection code does not establish those placeholders unreachable. Original mode_ms2 <=26 allows a cross-object read into world description0; card selectors139..141 would read following Mode callbacks. Definitions preserve true physical extents and public externs remain unsized; no false larger bounds or behavior fixes are claimed. US UTF16 and JP Shift-JIS text remain named binary assets; EU entries refer existing compiler-owned five-language LocalizedText wrappers.",
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "card_description_data.c",
-          "section": ".data_card_descriptions",
+          "section": ".data",
           "address": "0x9ee8f48",
-          "size": 392,
-          "sha256": "bcfbe2db89ec92c0077977d267bbc3c1aa7b865544947f00fc053b50316b6d8a",
+          "size": 552,
+          "sha256": "4154c7942821671a8c2e9db98216b1f1c06d3db1f3971af21f552645a83c3160",
           "objects": [
             {
               "name": "gUnk_09EE8F48",
               "offset": 0,
               "size": 392
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_map_card_descriptions",
-          "address": "0x9ee90d0",
-          "size": 104,
-          "sha256": "83153620e4a48f5627974c25da777b0588c568ffca24665db6d34062edd4483d",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE90D0",
-              "offset": 0,
+              "offset": 392,
               "size": 104
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_world_descriptions",
-          "address": "0x9ee9138",
-          "size": 56,
-          "sha256": "0557c3ab271bfbd18337de008894dbe70e50c953064379d9e7b88379c1b5d14c",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE9138",
-              "offset": 0,
+              "offset": 496,
               "size": 56
             }
           ]
@@ -872,42 +855,24 @@
       "placements": [
         {
           "unit": "card_description_data.c",
-          "section": ".data_card_descriptions",
+          "section": ".data",
           "address": "0x9ec058c",
-          "size": 392,
-          "sha256": "13658e03b9ca4df3da2ece542087b46d197db302837bf9084319337f6cd8373d",
+          "size": 552,
+          "sha256": "5d0e2ca32c08b48fa5f2e10532c80e7d361b1aa0e8db4b835078b469da1fd3bf",
           "objects": [
             {
               "name": "gUnk_09EE8F48",
               "offset": 0,
               "size": 392
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_map_card_descriptions",
-          "address": "0x9ec0714",
-          "size": 104,
-          "sha256": "d6abece5dbfe97271f91c474c6d3db0b00ae9fb5a52188e8a1b0be5c617f72b4",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE90D0",
-              "offset": 0,
+              "offset": 392,
               "size": 104
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_world_descriptions",
-          "address": "0x9ec077c",
-          "size": 56,
-          "sha256": "f61ddea8fbe969d261e15e4a31196ae6b3d97eda3507ec6a5f83453b4b0ca87f",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE9138",
-              "offset": 0,
+              "offset": 496,
               "size": 56
             }
           ]
@@ -1736,42 +1701,24 @@
       "placements": [
         {
           "unit": "card_description_data.c",
-          "section": ".data_card_descriptions",
+          "section": ".data",
           "address": "0x9f743b8",
-          "size": 392,
-          "sha256": "f9124d5a7a4090a00e4777ff00b3c2726299bc215e376b59bb0c3fc8927c9eb8",
+          "size": 552,
+          "sha256": "af77aab55b53292ad4450e5c7bca32733ef99cacfe6f2ce1bdcf8f653ece03b9",
           "objects": [
             {
               "name": "gUnk_09EE8F48",
               "offset": 0,
               "size": 392
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_map_card_descriptions",
-          "address": "0x9f74540",
-          "size": 104,
-          "sha256": "ba6dfe1c8dbd6d6983c3218ae2b504700ea8c20a9d06c8b724d1d9a4f11ee159",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE90D0",
-              "offset": 0,
+              "offset": 392,
               "size": 104
-            }
-          ]
-        },
-        {
-          "unit": "card_description_data.c",
-          "section": ".data_world_descriptions",
-          "address": "0x9f745a8",
-          "size": 56,
-          "sha256": "af77af649a2673989effd13e8195b5a5698c7929065d98fe6041067ac1acf20e",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE9138",
-              "offset": 0,
+              "offset": 496,
               "size": 56
             }
           ]

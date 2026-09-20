@@ -1,7 +1,7 @@
 #include "card_description_data.h"
 #include "card_description_assets.h"
 
-CardDescriptionText* gUnk_09EE8F48[98] __attribute__((section(".data_card_descriptions"))) = {
+CardDescriptionText* gUnk_09EE8F48[98] = {
 #if defined(VERSION_EU)
     &gUnkEu_09F5EA0C,
 #elif defined(VERSION_JP)
@@ -690,7 +690,7 @@ CardDescriptionText* gUnk_09EE8F48[98] __attribute__((section(".data_card_descri
 #endif
 };
 
-CardDescriptionText* gUnk_09EE90D0[26] __attribute__((section(".data_map_card_descriptions"))) = {
+CardDescriptionText* gUnk_09EE90D0[26] = {
 #if defined(VERSION_EU)
     &gUnkEu_09F5F18C,
 #elif defined(VERSION_JP)
@@ -875,7 +875,7 @@ CardDescriptionText* gUnk_09EE90D0[26] __attribute__((section(".data_map_card_de
 #endif
 };
 
-CardDescriptionText* gUnk_09EE9138[14] __attribute__((section(".data_world_descriptions"))) = {
+CardDescriptionText* gUnk_09EE9138[14] = {
 #if defined(VERSION_EU)
     &gUnkEu_09F5F394,
 #elif defined(VERSION_JP)
