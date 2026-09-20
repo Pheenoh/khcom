@@ -10,7 +10,7 @@
     "sio_menu_owner": "All remaining SIO mode descriptors reference callbacks in mode_sio.c, and its world-menu, level-offset and card-trade navigation tables are referenced only by those callbacks and helpers. Six descriptors and four tables form one complete native initialized-data run in US/JP; EU omits the two card-trade descriptors and their navigation table. Original ROM order, object extents, relocations and contents remain independently checked. The separate name sections include intervening UI data and are not merged.",
     "mode_tail_ownership": "Deck/menu, Continue and Event callback groups each reproduce their native code, name, initialized-data and BSS runs in all three original ROMs. The shared event ID is unsigned as established by the original message-handler switch branches.",
     "bos6_native_data": "The 96-entry PcSpriteCmd pointer index and 14-entry PcAnimStep pointer index are consumed only by bos6.c animation selection and command execution. The two-entry shake index is consumed only by its Pc field-shake helper. In all three original ROMs these three indexes and five TaskDesc records form an uninterrupted 0x238-byte initialized-data run in the same order: sprite index, animation index, Pc registration, shake index, PcFld/PcFlt/PcAcd/BosLst registrations. Each registration directly references callbacks in bos6.c. Ordinary definitions reproduce every original address, byte and relocation without section attributes. The lower-ROM command, animation, palette, shot and name groups retain their existing organization; this consolidation does not claim additional original source boundaries.",
-    "backupstat_owner": "The three state-name pointers are referenced only by mode_backupstat lifecycle and state editing code. In all three regions the pointer index immediately precedes that owner's mode descriptor, forming one complete 0x1C-byte native initialized-data run. The pointer targets, object bounds, callbacks and original ROM bytes remain independently validated. The separate six-entry backup metadata table and encoded text catalog retain their existing representation.",
+    "backupstat_owner": "The mode lifecycle and state editor are the only users of the status-name index, six-entry BackupStatEntry table and diagnostic labels. The same Shift-JIS bytes occur in every region. Ordinary string literals produce the original deferred reverse initializer order; a const metadata table, const reader and native mode name reproduce the complete 0xD0-byte readonly run, including normal four-byte literal alignment. The original 0x1C-byte initialized-data run remains unchanged. The obsolete storage TU, private declarations and fixed-address text aliases are removed without changing text contents or code.",
     "status_owner": "All thirteen status task descriptors reference callbacks in status.c. Its EU status, bar and cursor callbacks are the only consumers of six five-language graphics pointer indexes. In US/JP the descriptors form one uninterrupted 0x138-byte initialized-data run; EU interleaves those six indexes with the corresponding descriptor families in one 0x1B0-byte run. Ordinary C definitions reproduce the complete runs with all original object addresses, bounds, pointer relocations and ROM contents retained as contracts. Name placements and graphics payloads remain unchanged.",
     "pooh_eu_background_indexes": "The EU-only five-language floor-background pointer indexes are consumed only by poo.c func_080D313C, which selects the appropriate floor span and copies it to background VRAM. Their ten pointers immediately follow that owner's established native initialized-data run. Ordinary EU-scoped definitions extend the run from 0xBD8 to 0xC00 without changing payloads, pointer targets or any US/JP definition. Both original index object contracts and all preceding Pooh object contracts remain validated.",
     "lst_staffroll_owners": "The StaffRoll helpers beginning at func_081125BC and its three lifecycle callbacks share one exclusively referenced work pointer, its mode descriptor and diagnostic name. Their code, native data/rodata and RAM runs reproduce the original order across all regions without code changes or added alignment. They now live in mode_staffroll.c; existing StaffRoll types move to its header. The preceding Lst callbacks, eight task descriptors, four-entry LstAnimSet and shake-pointer index remain in bos7.c. The index retains its const pointer-array type and uses ordinary rodata; the animation records and descriptors form the immediately following native 0xE0-byte data run. Each table is consumed only by that owner. The separate staff-roll script/text catalogs and lower boss data/name groups remain unchanged.",
@@ -6070,16 +6070,23 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".rodata",
-          "address": "0x0999388C",
-          "size": 16,
-          "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
+          "address": "0x99937cc",
+          "size": 208,
           "objects": [
             {
+              "name": "gUnk_099937E4",
+              "offset": 24,
+              "size": 48
+            },
+            {
               "name": "gModeNameBackupstat",
-              "offset": 0,
+              "offset": 192,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2,
+          "sha256": "6a95413f11b9e84856323defb2b0766e3caa60e9775d8ae19ad9dc6856d07358"
         },
         {
           "unit": "mode_backupstat.c",
@@ -13324,16 +13331,23 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".rodata",
-          "address": "0x099483A0",
-          "size": 16,
-          "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
+          "address": "0x99482e0",
+          "size": 208,
           "objects": [
             {
+              "name": "gUnk_099937E4",
+              "offset": 24,
+              "size": 48
+            },
+            {
               "name": "gModeNameBackupstat",
-              "offset": 0,
+              "offset": 192,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2,
+          "sha256": "202251c8de4e83e2b9dcf4db8d78cd345f345d8dd28d9c475523cd3ad1b6407f"
         },
         {
           "unit": "mode_backupstat.c",
@@ -20593,16 +20607,23 @@
         {
           "unit": "mode_backupstat.c",
           "section": ".rodata",
-          "address": "0x09999B48",
-          "size": 16,
-          "sha256": "65da03fa0a15b415a817c93ae6dc615cb677bcbd9a4f97acd99a587c46a74236",
+          "address": "0x9999a88",
+          "size": 208,
           "objects": [
             {
+              "name": "gUnk_099937E4",
+              "offset": 24,
+              "size": 48
+            },
+            {
               "name": "gModeNameBackupstat",
-              "offset": 0,
+              "offset": 192,
               "size": 16
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 2,
+          "sha256": "ea7aad7b387356187d5c14253a3dbd94cbfb2f544f277bb4e8130df9c77b656d"
         },
         {
           "unit": "mode_backupstat.c",

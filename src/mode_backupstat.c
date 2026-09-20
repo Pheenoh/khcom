@@ -3,27 +3,25 @@
 #include "macros.h"
 #include "mode_backupstat.h"
 #include "gba/keys.h"
-#include "worldwarp_catalog_assets.h"
 
 const char* gUnk_09EF9668[3] = {
-#if defined(VERSION_US)
-    gBackupTextUs_099937DC,
-    gBackupTextUs_099937D4,
-    gBackupTextUs_099937CC,
-#elif defined(VERSION_JP)
-    gBackupTextJp_099482F0,
-    gBackupTextJp_099482E8,
-    gBackupTextJp_099482E0,
-#elif defined(VERSION_EU)
-    gBackupTextEu_09999A98,
-    gBackupTextEu_09999A90,
-    gBackupTextEu_09999A88,
-#endif
+    "\x82\xC8\x82\xB5\x81\x40",
+    "\x82\xB1\x82\xED\x82\xEA",
+    "\x82\xA0\x82\xE8\x81\x40",
+};
+
+const BackupStatEntry gUnk_099937E4[6] = {
+    {"\x82\x72\x82\x78\x82\x72\x82\x73\x82\x64\x82\x6C\x81\x40", 2},
+    {"\x82\x72\x82\x6E\x82\x71\x82\x60\x81\x40\x81\x40\x82\x50", 64},
+    {"\x82\x72\x82\x6E\x82\x71\x82\x60\x81\x40\x81\x40\x82\x51", 64},
+    {"\x82\x71\x82\x68\x82\x6A\x82\x74\x81\x40\x81\x40\x82\x50", 512},
+    {"\x82\x71\x82\x68\x82\x6A\x82\x74\x81\x40\x81\x40\x82\x51", 512},
+    {"\x82\x72\x82\x74\x82\x72\x82\x6F\x82\x64\x82\x6D\x82\x63", 4},
 };
 
 s8 gUnk_02035FE8;
 s8 gUnk_02035FE9;
-BackupStatEntry* gBackupStatEntries;
+const BackupStatEntry* gBackupStatEntries;
 s16 gBackupStatStates[10];
 
 void mode_backupstat_0(void) {
@@ -36,7 +34,7 @@ void mode_backupstat_0(void) {
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gWhitePalette, 32, 15);
     gUnk_02035FE8 = 0;
-    func_0805FCB0(0, 0, 2, gUnk_09993874);
+    func_0805FCB0(0, 0, 2, "\x81\x84");
     gUnk_02035FE9 = 6;
     gBackupStatEntries = gUnk_099937E4;
 
@@ -70,10 +68,10 @@ void mode_backupstat_0(void) {
 
         switch (i % 2) {
         case 0:
-            func_0805FCB0(75, i * 9, 2, gUnk_09993878);
+            func_0805FCB0(75, i * 9, 2, "\x81\x7C\x82\x50");
             break;
         case 1:
-            func_0805FCB0(75, i * 9, 2, gUnk_09993880);
+            func_0805FCB0(75, i * 9, 2, "\x81\x7C\x82\x51");
             break;
         }
         func_0805FCB0(120, i * 9, 2, gUnk_09EF9668[gBackupStatStates[i]]);
@@ -125,8 +123,8 @@ void mode_backupstat_1(void) {
         } else if (gUnk_02035FE8 >= gUnk_02035FE9 * 2) {
             gUnk_02035FE8 = 0;
         }
-        func_0805FCB0(0, prev * 9, 2, gUnk_09993888);
-        func_0805FCB0(0, gUnk_02035FE8 * 9, 2, gUnk_09993874);
+        func_0805FCB0(0, prev * 9, 2, "\x81\x40");
+        func_0805FCB0(0, gUnk_02035FE8 * 9, 2, "\x81\x84");
     }
 
     if ((GetKeysPressed() & DPAD_LEFT) != 0) {
