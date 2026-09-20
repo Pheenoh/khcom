@@ -7,9 +7,8 @@
 #include "chara.h"
 #include "gba/keys.h"
 
-CharaObj* gCharaObj;
-u8 gUnk_02034CDC[4];
-TaskPool gCharaTaskPool;
+static CharaObj* gCharaObj;
+static TaskPool gCharaTaskPool;
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
     s32 i;

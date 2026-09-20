@@ -1959,6 +1959,21 @@
           "size": "0x14"
         }
       }
+    },
+    "src/chara.o": {
+      "section": ".bss.chara",
+      "base": "0x2034cd8",
+      "size": "0x1c",
+      "symbols": {
+        "gCharaObj": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gCharaTaskPool": {
+          "offset": "0x8",
+          "size": "0x14"
+        }
+      }
     }
   },
   "jp": {
@@ -3931,6 +3946,21 @@
           "size": "0x14"
         }
       }
+    },
+    "src/chara.o": {
+      "section": ".bss.chara",
+      "base": "0x2034c38",
+      "size": "0x1c",
+      "symbols": {
+        "gCharaObj": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gCharaTaskPool": {
+          "offset": "0x8",
+          "size": "0x14"
+        }
+      }
     }
   },
   "eu": {
@@ -5876,6 +5906,21 @@
         },
         "gBosTmTaskPool": {
           "offset": "0x10",
+          "size": "0x14"
+        }
+      }
+    },
+    "src/chara.o": {
+      "section": ".bss.chara",
+      "base": "0x2034ec8",
+      "size": "0x1c",
+      "symbols": {
+        "gCharaObj": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gCharaTaskPool": {
+          "offset": "0x8",
           "size": "0x14"
         }
       }
