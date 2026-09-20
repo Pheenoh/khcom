@@ -671,10 +671,6 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     }
 }
 
-typedef struct BtlTaskArg {
-    s32 unk_00;
-    u8 unk_04;
-} BtlTaskArg;
 void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     BtlObj* e;
 

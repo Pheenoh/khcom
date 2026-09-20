@@ -2512,10 +2512,7 @@ s32 func_080BDB58(void) {
 }
 
 void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
-    struct {
-        u8 fraction;
-        s8 integer;
-    } speed;
+    JfLampSpeed speed;
 
     speed.integer = 0;
     speed.fraction = 0x80;

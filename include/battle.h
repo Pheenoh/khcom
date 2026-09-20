@@ -340,4 +340,11 @@ u8 func_08085BAC(void);
 u8 HasNonPremiumCardsInActiveDeck(void);
 void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
 
+typedef struct BtlPrizeArgs {
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_0C[0x14];
+} BtlPrizeArgs;
+
 #endif /* GUARD_BATTLE_H */

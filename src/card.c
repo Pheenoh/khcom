@@ -35,52 +35,7 @@
 #include "game.h"
 #include "bos4_api.h"
 
-typedef struct SelmapEventKeyWork {
-    void* tiles;
-    void* palette;
-    u8 unk_08[0xD0];
-    void** unk_D8;
-    AnimState anim;
-    void* gfx;
-    void* unk_F8;
-    s32 unk_FC;
-    s32 unk_100;
-    s32 unk_104;
-    s32 unk_108;
-    s32 unk_10C;
-    s32 unk_110;
-    u16 unk_114;
-    u16 unk_116;
-    u16 unk_118;
-    u8 unk_11A;
-    u8 unk_11B;
-    u8 unk_11C;
-    u8 unk_11D;
-    u8 unk_11E;
-    u8 unk_11F;
-    u8 unk_120;
-    u8 unk_121;
-    u8 unk_122;
-    u8 unk_123;
-} SelmapEventKeyWork;
 
-typedef struct UnkStruct_080A82E0 {
-    u8 unk_000[0x614];
-    TaskPool unk_614;
-    TaskPool unk_628;
-    ListPool unk_63C;
-    u8 unk_64C[0x78];
-    u16 unk_6C4;
-    u16 unk_6C6;
-    u16 unk_6C8;
-    u16 unk_6CA;
-    u8 unk_6CC[0x16];
-    u16 unk_6E2[4];
-    u8 unk_6EA[6];
-    u8 unk_6F0;
-    u8 unk_6F1[0x24];
-    u8 unk_715;
-} UnkStruct_080A82E0;
 
 u8 func_080892E8(u8* work, void* a);
 extern u8 gUnk_09618CD8[];
@@ -2985,10 +2940,6 @@ u8 func_0807BE54(CardDisplayWork* p, void* a) {
 }
 
 void func_0807BEC0(CardDisplayWork* p) {
-    struct UnkStruct_0807BEC0 {
-        u8 unk_00[0x30];
-        void* tiles[4];
-    };
     s16 y;
     void* gfx;
     s32 aff;
@@ -10478,66 +10429,6 @@ u8 func_08086984(u8* work, void* a) {
 
     return 1;
 }
-typedef struct UnkStruct_080889DC {
-    u8 unk_000[0x4C8];
-    void* unk_4C8;
-    void* unk_4CC;
-    u8 unk_4D0[0x20];
-    void* gfx;
-    void* gfx2;
-    u8 unk_4F8[0x2D0];
-#ifdef VERSION_EU
-    u8 unk_7C8[4];
-#endif
-    TaskPool taskpool;
-    TaskPool cardpool;
-    ListPool unk_7F0;
-    AnimState anim2;
-    AnimState anim3;
-    AnimState anim;
-    s32 x;
-    s32 y;
-    s32 x2;
-    s32 y2;
-    u8 unk_858[0x14];
-    s32 x3;
-    s32 y3;
-    s16 unk_874;
-    s16 unk_876;
-    u8 unk_878[0xC];
-    s16 unk_884;
-    s16 unk_886;
-    u8 unk_888[0x12];
-    u16 unk_89A[4];
-    u16 unk_8A2;
-    u16 unk_8A4;
-    u16 unk_8A6;
-    u16 unk_8A8;
-    u8 unk_8AA[2];
-    u16 unk_8AC;
-    u8 unk_8AE[3];
-    u8 unk_8B1;
-    u8 unk_8B2;
-    u8 unk_8B3[2];
-    s8 unk_8B5;
-    s8 unk_8B6;
-    u8 unk_8B7;
-    u8 unk_8B8[8];
-    u8 unk_8C0;
-    u8 unk_8C1;
-    u8 unk_8C2[7];
-    u8 unk_8C9;
-    u8 unk_8CA;
-    u8 unk_8CB;
-    u8 unk_8CC[2];
-    s8 unk_8CE;
-    u8 unk_8CF;
-    u8 unk_8D0;
-    u8 unk_8D1;
-    u8 unk_8D2;
-    u8 unk_8D3;
-    u16 unk_8D4;
-} UnkStruct_080889DC;
 
 u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
     w->gfx = AnimUpdate(&w->anim2);
@@ -13040,92 +12931,6 @@ void func_0808B3DC(u8* work, u8 flag) {
         }
     }
 }
-typedef struct {
-    void* tiles;
-    void* tiles2;
-    void* tiles3;
-    void* palette2;
-    void* tiles4;
-    void* palette;
-    void* tiles12;
-    void* tiles7;
-    void* tiles8;
-    void* tiles9;
-    void* tiles10;
-    void* unk_02C;
-    void* palette5;
-    void* palette6;
-    TextSlot unk_038[8];
-    TextSlot unk_078[8];
-    TextSlot unk_0B8[8];
-    TextSlot unk_0F8[30];
-    TextSlot unk_1E8[90];
-    void* tiles5;
-    void* tiles6;
-    void* palette3;
-    void* palette4;
-    void* unk_4C8;
-    void* unk_4CC;
-    void* unk_4D0;
-    void* unk_4D4;
-    void* unk_4D8;
-    void* gfx4;
-    void* gfx5;
-    void* gfx6;
-    void* gfx7;
-    void* gfx8;
-    void* gfx;
-    void* gfx2;
-    void* gfx3;
-    u8 unk_4FC[0x23C];
-    void* tiles11;
-    void* tiles13;
-    void* palette7;
-    u8 unk_744[108];
-    void* gfx9;
-    s32 x9;
-    s32 y8;
-    s32 x10;
-    u8 unk_7C0[0x4];
-    u8 unk_7C4;
-    u8 unk_7C5[3];
-#ifdef VERSION_EU
-    u8 unk_eu_7C8[4];
-#endif
-    TaskPool taskpool;
-    TaskPool cardpool;
-    ListPool unk_7F0;
-    AnimState anim;
-    AnimState anim2;
-    AnimState anim3;
-    s32 x3;
-    s32 y3;
-    s32 x4;
-    s32 y4;
-    s32 x5;
-    s32 x6;
-    s32 y5;
-    s32 y6;
-    s32 x7;
-    s32 x8;
-    s32 y7;
-    u8 unk_874[0x4];
-    s16 x;
-    s16 y;
-    s16 x2;
-    s16 y2;
-    u8 unk_880[0x2];
-    u16 unk_882;
-    u8 unk_884[0x2C];
-    u8 unk_8B0;
-    u8 unk_8B1;
-    u8 unk_8B2[0x13];
-    u8 unk_8C5;
-    u8 unk_8C6[0x3];
-    u8 unk_8C9;
-    u8 unk_8CA[0x5];
-    u8 unk_8CF;
-} UnkStruct_0808B66C;
 
 #ifdef VERSION_EU
 #else
@@ -15345,60 +15150,7 @@ u8 func_0808EF80(u8* work, u16 dir) {
     return 1;
 }
 
-typedef struct UnkStruct_0808F0C0 {
-    u8 unk_000[0x38];
-    u8 unk_038[0x40];
-    u8 unk_078[0x40];
-    u8 unk_0B8[0x40];
-    u8 unk_0F8[0xF0];
-    u8 unk_1E8[0x550];
-    void* tiles;
-    UnkStruct_080038C8* tiles2;
-    void* palette;
-    u8 unk_744[0x40];
-    u8 unk_784[0x14];
-    AnimState anim;
-    void* gfx;
-    s32 x;
-    s32 y;
-    s32 unk_7BC;
-    union {
-        struct {
-            s16 x;
-            s16 y;
-        } parts;
-        u32 packed;
-    } cursor;
-    u8 unk_7C4;
-    u8 unk_7C5;
-    u8 unk_7C6;
-    u8 unk_7C7;
-#ifdef VERSION_EU
-    u8 unk_7C8;
-    u8 unk_7C9[3];
-#endif
-    TaskPool taskpool;
-    TaskPool cardpool;
-    ListPool unk_7F0;
-    AnimState anim2;
-    AnimState anim3;
-    AnimState anim4;
-    s32 x2;
-    s32 y2;
-    u8 unk_850[0x60];
-    u8 unk_8B0;
-    u8 unk_8B1;
-    u8 unk_8B2[0xE];
-    u8 unk_8C0;
-    u8 unk_8C1[0xF];
-    u8 unk_8D0;
-} UnkStruct_0808F0C0;
 
-typedef struct UnkStruct_09035898 {
-    s16* unk_00;
-    s16 unk_04;
-    u8 unk_06[2];
-} UnkStruct_09035898;
 
 extern UnkStruct_09035898 gUnk_09035898[];
 extern UnkStruct_09035898 gUnk_090358D0[];
@@ -16424,16 +16176,6 @@ u8 func_0808FA0C(u8* work, void* a) {
 #endif
 }
 
-typedef struct UnkStruct_0808FA8C {
-    u8 unk_000[0x4D4];
-    UnkStruct_08084D78* unk_4D4;
-    UnkStruct_08084D78* unk_4D8;
-    u8 unk_4DC[0x3BC];
-#ifdef VERSION_EU
-    u8 unk_898[4];
-#endif
-    u16 count;
-} UnkStruct_0808FA8C;
 
 void func_0808FA8C(UnkStruct_0808FA8C* w) {
     u16 i;
@@ -16739,10 +16481,6 @@ u8 card_enemy_1(CardDisplayWork* p, void* a) {
 }
 
 void func_08090374(CardDisplayWork* p) {
-    struct UnkStruct_08090374 {
-        u8 unk_00[0x30];
-        void* tiles[4];
-    };
     void* gfx;
     s32 affine;
     u16 flags;
@@ -17529,14 +17267,7 @@ void func_08091234(u16 arg) {
 }
 
 void func_080917C8(u16 a, u8 b) {
-    struct {
-        s32 unk_00;
-        s32 unk_04;
-        s32 unk_08;
-        u16 unk_0C;
-        u8 unk_0E;
-        u8 unk_0F;
-    } arg;
+    UnkStruct_080917C8_Args arg;
     CardDisplayWork* p;
     u8 i;
 
@@ -17581,14 +17312,7 @@ void func_080917C8(u16 a, u8 b) {
 }
 
 void func_08091978(u16 a, u8 b) {
-    struct {
-        s32 unk_00;
-        s32 unk_04;
-        s32 unk_08;
-        u16 unk_0C;
-        u8 unk_0E;
-        u8 unk_0F;
-    } arg;
+    UnkStruct_08091978_Args arg;
     CardDisplayWork* p;
     u8 i;
 
@@ -23869,41 +23593,6 @@ void func_0809BB18(u8* work) {
     gUnk_02039DD4->unk_0C8 = 256;
 }
 
-typedef struct UnkStruct_0809BB4C {
-    void* tiles;
-    ObjPalette* palette;
-    void* tiles2;
-    ObjPalette* palette2;
-    void* tiles3;
-    ObjPalette* palette3;
-    void* tiles4;
-    ObjPalette* palette4;
-    void* tiles5;
-    CardSlot* unk_24;
-    void* gfx;
-    void* gfx2;
-    u16 unk_30;
-    u8 unk_32[2];
-    s32 unk_34;
-    s32 unk_38;
-    TaskPool unk_3C;
-    u8 unk_50;
-    u8 unk_51;
-    u8 unk_52;
-    u8 unk_53;
-    AnimState anim;
-    AnimState anim2;
-    u8 unk_84;
-    u8 unk_85;
-    u8 unk_86;
-    u8 unk_87;
-    u8 unk_88;
-    u8 unk_89;
-    u8 unk_8A;
-    u8 unk_8B;
-    u8 unk_8C;
-    u8 unk_8D[3];
-} UnkStruct_0809BB4C;
 
 void func_0809BB4C(UnkStruct_0809BB4C* w) {
     u8 n = 0;
@@ -25389,68 +25078,6 @@ void NumberPlus_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjPalette(p[1]);
 }
-typedef struct LevelUpWork {
-    void* unk_000[8];
-#ifdef VERSION_EU
-    void* tiles5[3];
-    u8 unk_02C[0xC];
-#else
-    TextSlot text[6][36];
-#endif
-    void* palette;
-    void* palette2;
-    void* tiles;
-    void* palette3;
-    void* tiles2;
-    void* tiles3;
-    void* palette4;
-    TaskPool pool;
-    AnimState anim;
-    void* tiles4;
-    void* palette5;
-    void* gfx;
-    AnimState anim2;
-    void* gfx2;
-    s16 x4[3];
-    s16 y4[3];
-    s16 x5[3];
-    s16 y5[3];
-    s16 x;
-    s16 x2;
-    s32 y;
-    s32 y2;
-    s16 x3;
-    s16 y3;
-    s16 x6;
-    s16 unk_77A;
-    s16 unk_77C;
-    u16 unk_77E[3];
-    u16 unk_784[4];
-    u16 unk_78C[4];
-    u16 unk_794[4];
-    u16 unk_79C[4];
-    s16 unk_7A4;
-    s16 unk_7A6;
-    s32 x7;
-    s32 y6;
-    s8 unk_7B0;
-    s8 unk_7B1;
-    s8 unk_7B2[3];
-    s8 unk_7B5;
-    s8 unk_7B6;
-    u8 unk_7B7[6];
-    u8 unk_7BD;
-    u8 unk_7BE;
-    u8 unk_7BF;
-    u8 unk_7C0;
-    u8 unk_7C1;
-    u8 unk_7C2[2];
-    u8 unk_7C4;
-    u8 unk_7C5;
-    u8 unk_7C6;
-    u8 unk_7C7;
-    u8 unk_7C8[3];
-} LevelUpWork;
 
 u8 func_080A11CC(LevelUpWork* w, void* a);
 
@@ -26235,11 +25862,6 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
 extern u8 gUnk_09EE790C[];
 u8 func_0809FBCC(u8* work, void* a);
 
-typedef struct StatIncreaseDisplayArgs {
-    u8* done;
-    u32 flags : 16;
-    u32 amount : 16;
-} StatIncreaseDisplayArgs;
 
 u8 func_0809F730(LevelUpWork* w, void* a) {
     u8 i;
@@ -27861,11 +27483,7 @@ extern u8 gUnkEu_08895EDC[];
 #endif
 
 void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
-    struct UnkStruct_080A23A0_Packed {
-        u8* unk_00;
-        u32 unk_04 : 16;
-        u32 unk_06 : 16;
-    } args = *(struct UnkStruct_080A23A0_Packed*)a;
+    struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
     InitTextSlots(w->unk_000, 20);
     InitTextSlots(w->unk_0A0, 20);

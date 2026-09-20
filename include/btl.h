@@ -286,4 +286,9 @@ typedef struct BtlMapWork {
 
 
 
+typedef struct BtlTaskArg {
+    s32 unk_00;
+    u8 unk_04;
+} BtlTaskArg;
+
 #endif /* GUARD_BTL_H */

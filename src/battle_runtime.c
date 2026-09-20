@@ -572,12 +572,6 @@ void _08019CB4(void) {
     s32 changed;
     s32 busy;
     u8 count;
-    typedef struct BtlPrizeArgs {
-        s32 x;
-        s32 y;
-        s32 z;
-        u8 unk_0C[0x14];
-    } BtlPrizeArgs;
     BtlPrizeArgs pos;
 
     player = gBtlWork->actor;

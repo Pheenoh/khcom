@@ -13,4 +13,9 @@ typedef struct JfMapArg {
     void* maps[4];
 } JfMapArg;
 
+typedef struct JfLampSpeed {
+    u8 fraction;
+    s8 integer;
+} JfLampSpeed;
+
 #endif
