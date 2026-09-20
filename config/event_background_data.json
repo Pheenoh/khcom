@@ -2179,7 +2179,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE273C",
           "address": "0x9ee273c",
           "size": 16,
@@ -2198,7 +2198,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE274C",
           "address": "0x9ee274c",
           "size": 16,
@@ -2217,7 +2217,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_Event",
           "address": "0x8f7d430",
           "size": 6,
@@ -4412,7 +4412,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE273C",
           "address": "0x9eba1b8",
           "size": 16,
@@ -4431,7 +4431,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE274C",
           "address": "0x9eba1c8",
           "size": 16,
@@ -4450,7 +4450,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_Event",
           "address": "0x8f70938",
           "size": 6,
@@ -6645,7 +6645,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE273C",
           "address": "0x9f5d6ec",
           "size": 16,
@@ -6664,7 +6664,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gUnk_09EE274C",
           "address": "0x9f5d6fc",
           "size": 16,
@@ -6683,7 +6683,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_Event",
           "address": "0x8f8e32c",
           "size": 6,

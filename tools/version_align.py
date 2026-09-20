@@ -127,16 +127,8 @@ def main():
     addr = [None] * n
     how = ["-"] * n
 
-    dropped = set()
-    per_obj = {}
-    for a, e, nm in funcs:
-        if nm in usn or nm in otn:
-            per_obj.setdefault(owner.get(nm), []).append(nm)
-    for obj, names in per_obj.items():
-        if obj and not any(nm in otn for nm in names):
-            dropped.add(obj)
     for i, (a, e, nm) in enumerate(funcs):
-        if owner.get(nm) in dropped or (nm in usn and nm not in otn):
+        if nm in usn and nm not in otn:
             how[i] = "absent"
 
     for i, (a, e, nm) in enumerate(funcs):

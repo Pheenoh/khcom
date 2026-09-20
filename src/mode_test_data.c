@@ -3,10 +3,6 @@
 #include "mode_test.h"
 #include "card_localized_data.h"
 
-#ifndef VERSION_EU
-Mode gUnk_09EDE4E0 __attribute__((section(".data_test"))) = { gModeNameTest, (void (*)(s32))mode_test_0, mode_test_1, mode_test_2 };
-#endif
-
 u8* gUnk_09EE26EC[2] __attribute__((section(".data_fonts"))) = { gUnk_08F6E190, gUnk_08F6F190 };
 u8* gUnk_09EE26F4 __attribute__((section(".data_fonts"))) = gUnk_08F70AAC;
 u8* gUnk_09EE26F8 __attribute__((section(".data_fonts"))) = gUnk_08F70AA8;

@@ -691,7 +691,6 @@ extern const char gUnk_090359BC[];
 extern Mode gModeSioDbgFlg;
 
 #ifdef VERSION_EU
-extern const char gTaskNameFrdPoohEu[];
 extern TaskDesc gTaskDescFrdPoohEu;
 #endif
 

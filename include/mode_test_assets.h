@@ -4,7 +4,6 @@
 #include "types.h"
 
 #ifndef VERSION_EU
-extern const char gModeNameTest[10];
 #endif
 extern const char gModeNameDeck[10];
 extern const char gTaskNameMenu[5];

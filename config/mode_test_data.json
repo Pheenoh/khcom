@@ -3,14 +3,15 @@
   "provenance": {
     "modes": "Actual callback words establish Mode16 and TaskDesc24 records; menu allocation equals sizeof(MenuWork)=20. mode_test callbacks are physically absent in EU.",
     "font": "mode_test font encoder has two valid Shift-JIS lead-byte branches,81 and82; draw selects font bank0 or1. Four following words are independent pointers to terminated \u25cf/\u25cb/\u2605/\u2606 strings, not font entries.",
-    "wrappers": "Eight pairs of native EU five-language tile and gfx arrays are referenced by55 canonical CBA8 records and106 canonical CF18 records; gfx targets are already compiler-owned native arrays and every selected index is within their actual bounds. These are graphics pointers, not LocalizedText."
+    "wrappers": "Eight pairs of native EU five-language tile and gfx arrays are referenced by55 canonical CBA8 records and106 canonical CF18 records; gfx targets are already compiler-owned native arrays and every selected index is within their actual bounds. These are graphics pointers, not LocalizedText.",
+    "front_owner": "The US/JP test-mode lifecycle callbacks exclusively reference the three leading RAM words and are directly named by the native Mode record. The retained EU prefix contains its four friend-Pooh callbacks and private helper, with a native TaskDesc and name. The shared ApproachValueHalf helper retains its existing regional position. These retained prefixes precede task_lockon_0, and ordinary record definitions reproduce the separate front registration locations in each original ROM. EU also owns its name as ordinary rodata. The US/JP name remains in its existing named-asset representation because extracting it changes inferred EU blob naming; native C string bytes and alignment were independently proven exact. Three private US/JP words preserve their original addresses using ordinary static definitions. This establishes the boundary before lockon, not a common semantic implementation of the regional front groups or a complete original TU for the shared math helper. The remaining mixed support code and its placements are retained separately pending further ownership evidence."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "mode_test_data.c",
-          "section": ".data_test",
+          "unit": "mode_test.c",
+          "section": ".data",
           "address": "0x9ede4e0",
           "size": 16,
           "sha256": "12ac44069c57fc6420bd24d6b47bf6d246ce2006439445545641c45e98aa76f3",
@@ -124,8 +125,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "mode_test_data.c",
-          "section": ".data_test",
+          "unit": "mode_test.c",
+          "section": ".data",
           "address": "0x9eb5f5c",
           "size": 16,
           "sha256": "9c9da8ac36f136dc12153243421d919ba3bb2f962ca987df983c505d097d0165",

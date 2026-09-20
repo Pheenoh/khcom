@@ -1345,7 +1345,7 @@ mode_movie_2	0x0805f0d8	12	0x0800dae0	named
 mode_test_0	0x0805f0e4	60	-	absent
 mode_test_1	0x0805f120	128	-	absent
 mode_test_2	0x0805f1a0	32	-	absent
-ApproachValueHalf	0x0805f1c0	12	0x08060c38	body
+ApproachValueHalf	0x0805f1c0	12	0x08060c38	xref
 task_lockon_0	0x0805f1cc	148	0x080616e4	named
 task_lockon_1	0x0805f260	496	0x08061778	named
 task_lockon_2	0x0805f450	264	0x08061968	named

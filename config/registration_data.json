@@ -186,7 +186,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gTaskDescLockon",
           "address": "0x08F6E184",
           "size": 12,
@@ -200,7 +200,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gTaskDescLockon",
           "address": "0x09EE26D4",
           "size": 24,
@@ -214,7 +214,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gModeContinue",
           "address": "0x08F7D424",
           "size": 9,
@@ -228,7 +228,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gModeContinue",
           "address": "0x09EE272C",
           "size": 16,
@@ -7813,7 +7813,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gTaskDescLockon",
           "address": "0x08F6168C",
           "size": 12,
@@ -7827,7 +7827,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gTaskDescLockon",
           "address": "0x09EBA150",
           "size": 24,
@@ -7841,7 +7841,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gModeContinue",
           "address": "0x08F7092C",
           "size": 9,
@@ -7855,7 +7855,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gModeContinue",
           "address": "0x09EBA1A8",
           "size": 16,
@@ -15412,7 +15412,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gTaskDescLockon",
           "address": "0x08F7F15C",
           "size": 12,
@@ -15426,7 +15426,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gTaskDescLockon",
           "address": "0x09F5D544",
           "size": 24,
@@ -15440,7 +15440,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".rodata_registration_name_gModeContinue",
           "address": "0x08F8E320",
           "size": 9,
@@ -15454,7 +15454,7 @@
           ]
         },
         {
-          "unit": "mode_test.c",
+          "unit": "mode_test_support.c",
           "section": ".data_registration_gModeContinue",
           "address": "0x09F5D6DC",
           "size": 16,
