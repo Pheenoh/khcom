@@ -525,7 +525,7 @@ void func_0805A638(s32 a, u16** b);
 void func_0805A4D8(s16 a, s16 b, s16 c);
 void func_0805A7D0(void);
 void func_0805A514(s16 a, s16 b, s16 c);
-void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
+void func_0805A698(s16 a, s16 b, u16** d, const u16* c, const u16* e, s16 f, s16 g, s16 h);
 u8 func_0800FF70(u16 a);
 
 s32 func_0805A574(s32 idx);

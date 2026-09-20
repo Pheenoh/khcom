@@ -3,14 +3,15 @@
   "provenance": {
     "entries": "mode_jiminy selects 21 JiminyEntry records; each count bounds its typed category or unlock array. The category field and corresponding work field are integers0..16, not pointers. All338 halfwords and all entry scalar fields agree across regions.",
     "details": "func_0805BAE4 has16 explicit category cases with literal group bases and exact counts totaling319. Corresponding name/text assets and record scalars establish regional identity; EU omits the local line-count word because its text points to five-language metadata. Sprite, palette, tile and BG fields are real consumer pointers.",
-    "placement": "Exact independently linked entry/group bases and declared counts establish native spans. The JP two-byte gap between indices and entries is linker alignment, not a fake C object. Remaining opaque script/text slices retain their existing excluded classification."
+    "placement": "Exact independently linked entry/group bases and declared counts establish native spans. The JP two-byte gap between indices and entries is linker alignment, not a fake C object. Remaining opaque script/text slices retain their existing excluded classification.",
+    "native_catalog": "The category and unlock-index arrays are immutable inputs: their only addresses occur in JiminyEntry records, and the mode/list consumers read the pointed-to halfwords without writing them. Const qualification is a source-reconstruction assumption supported by those consumers; it is not inferred solely from placement. The catalog keeps the existing mutable entry/detail records and emits ordinary readonly indices followed by initialized records in the same translation unit. Native halfword and pointer section alignment reproduce the original JP two-byte boundary gap and the contiguous US/EU runs. All array bounds, initializers, object addresses, scalar layouts and relocation targets are unchanged."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_indices",
+          "section": ".rodata",
           "address": "0x81552b0",
           "size": 676,
           "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
@@ -124,7 +125,7 @@
         },
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_records",
+          "section": ".data",
           "address": "0x8155554",
           "size": 18368,
           "sha256": "5a9b73764371576397bfe1f968e8c283a230c1c669e430c810d39bee4679971f",
@@ -222,7 +223,7 @@
       "placements": [
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_indices",
+          "section": ".rodata",
           "address": "0x8149a2e",
           "size": 676,
           "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
@@ -336,7 +337,7 @@
         },
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_records",
+          "section": ".data",
           "address": "0x8149cd4",
           "size": 18368,
           "sha256": "1615ca57b9c9384c43389dfd2bd02643b580f0e8a85285cdba75b4733932fbe3",
@@ -434,7 +435,7 @@
       "placements": [
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_indices",
+          "section": ".rodata",
           "address": "0x887ad64",
           "size": 676,
           "sha256": "909d5beb6d001a74c0d13aaadb363fc38f97fa486ac63abc11676a11fd3627ea",
@@ -548,7 +549,7 @@
         },
         {
           "unit": "jiminy_records_data.c",
-          "section": ".data_records",
+          "section": ".data",
           "address": "0x887b008",
           "size": 17092,
           "sha256": "4e88735cf85dcac8b78ce5d4637ca06d09a5e83d6ae7dd8b86ebe014d0412aaf",

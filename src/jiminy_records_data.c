@@ -15,29 +15,29 @@
 #include "aux_animation_assets.h"
 #include "task_animation_assets.h"
 
-u16 gUnk_081552B0[17] __attribute__((section(".data_indices"), aligned(2))) = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
-u16 gUnk_081552D2[25] __attribute__((section(".data_indices"), aligned(2))) = { 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41 };
-u16 gUnk_08155304[40] __attribute__((section(".data_indices"), aligned(2))) = { 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83 };
-u16 gUnk_08155354[35] __attribute__((section(".data_indices"), aligned(2))) = { 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118 };
-u16 gUnk_0815539A[17] __attribute__((section(".data_indices"), aligned(2))) = { 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 133 };
-u16 gUnk_081553BC[14] __attribute__((section(".data_indices"), aligned(2))) = { 136, 137, 138, 139, 140, 141, 142, 143, 146, 145, 148, 144, 147, 149 };
-u16 gUnk_081553D8[7] __attribute__((section(".data_indices"), aligned(2))) = { 150, 151, 152, 153, 154, 155, 156 };
-u16 gUnk_081553E6[7] __attribute__((section(".data_indices"), aligned(2))) = { 157, 158, 159, 161, 160, 162, 163 };
-u16 gUnk_081553F4[49] __attribute__((section(".data_indices"), aligned(2))) = { 164, 172, 188, 165, 166, 167, 168, 173, 174, 175, 176, 189, 177, 178, 169, 179, 190, 180, 181, 182, 183, 184, 191, 185, 186, 187, 170, 171, 194, 192, 193, 195, 201, 197, 204, 246, 196, 198, 200, 199, 202, 203, 247, 206, 205, 207, 208, 248, 249 };
-u16 gUnk_08155456[26] __attribute__((section(".data_indices"), aligned(2))) = { 210, 209, 215, 216, 213, 212, 228, 229, 230, 221, 220, 222, 223, 227, 225, 226, 217, 211, 218, 214, 224, 219, 231, 232, 233, 234 };
-u16 gUnk_0815548A[1] __attribute__((section(".data_indices"), aligned(2))) = { 245 };
-u16 gUnk_0815548C[6] __attribute__((section(".data_indices"), aligned(2))) = { 0, 1, 2, 3, 235, 236 };
-u16 gUnk_08155498[22] __attribute__((section(".data_indices"), aligned(2))) = { 243, 244, 164, 188, 173, 189, 178, 169, 180, 182, 191, 195, 201, 197, 204, 196, 198, 200, 199, 202, 203, 248 };
-u16 gUnk_081554C4[14] __attribute__((section(".data_indices"), aligned(2))) = { 21, 237, 17, 22, 36, 238, 239, 40, 240, 241, 38, 41, 39, 242 };
-u16 gUnk_081554E0[6] __attribute__((section(".data_indices"), aligned(2))) = { 75, 57, 67, 50, 61, 72 };
-u16 gUnk_081554EC[33] __attribute__((section(".data_indices"), aligned(2))) = { 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 112, 113, 114, 115, 116, 117, 118 };
-u16 gUnk_0815552E[3] __attribute__((section(".data_indices"), aligned(2))) = { 1, 2, 3 };
-u16 gUnk_08155534[3] __attribute__((section(".data_indices"), aligned(2))) = { 11, 12, 13 };
-u16 gUnk_0815553A[7] __attribute__((section(".data_indices"), aligned(2))) = { 4, 5, 6, 7, 8, 9, 10 };
-u16 gUnk_08155548[3] __attribute__((section(".data_indices"), aligned(2))) = { 15, 16, 17 };
-u16 gUnk_0815554E[3] __attribute__((section(".data_indices"), aligned(2))) = { 18, 19, 20 };
+const u16 gUnk_081552B0[17] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
+const u16 gUnk_081552D2[25] = { 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41 };
+const u16 gUnk_08155304[40] = { 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83 };
+const u16 gUnk_08155354[35] = { 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118 };
+const u16 gUnk_0815539A[17] = { 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 133 };
+const u16 gUnk_081553BC[14] = { 136, 137, 138, 139, 140, 141, 142, 143, 146, 145, 148, 144, 147, 149 };
+const u16 gUnk_081553D8[7] = { 150, 151, 152, 153, 154, 155, 156 };
+const u16 gUnk_081553E6[7] = { 157, 158, 159, 161, 160, 162, 163 };
+const u16 gUnk_081553F4[49] = { 164, 172, 188, 165, 166, 167, 168, 173, 174, 175, 176, 189, 177, 178, 169, 179, 190, 180, 181, 182, 183, 184, 191, 185, 186, 187, 170, 171, 194, 192, 193, 195, 201, 197, 204, 246, 196, 198, 200, 199, 202, 203, 247, 206, 205, 207, 208, 248, 249 };
+const u16 gUnk_08155456[26] = { 210, 209, 215, 216, 213, 212, 228, 229, 230, 221, 220, 222, 223, 227, 225, 226, 217, 211, 218, 214, 224, 219, 231, 232, 233, 234 };
+const u16 gUnk_0815548A[1] = { 245 };
+const u16 gUnk_0815548C[6] = { 0, 1, 2, 3, 235, 236 };
+const u16 gUnk_08155498[22] = { 243, 244, 164, 188, 173, 189, 178, 169, 180, 182, 191, 195, 201, 197, 204, 196, 198, 200, 199, 202, 203, 248 };
+const u16 gUnk_081554C4[14] = { 21, 237, 17, 22, 36, 238, 239, 40, 240, 241, 38, 41, 39, 242 };
+const u16 gUnk_081554E0[6] = { 75, 57, 67, 50, 61, 72 };
+const u16 gUnk_081554EC[33] = { 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 112, 113, 114, 115, 116, 117, 118 };
+const u16 gUnk_0815552E[3] = { 1, 2, 3 };
+const u16 gUnk_08155534[3] = { 11, 12, 13 };
+const u16 gUnk_0815553A[7] = { 4, 5, 6, 7, 8, 9, 10 };
+const u16 gUnk_08155548[3] = { 15, 16, 17 };
+const u16 gUnk_0815554E[3] = { 18, 19, 20 };
 
-JiminyEntry gUnk_08155554[21] __attribute__((section(".data_records"))) = {
+JiminyEntry gUnk_08155554[21] = {
     { gUnk_08F62384, gUnk_09EDDECC, 3, -1, gUnk_0815552E, 0, 0 },
     { gUnk_08F61384, gUnk_09EDDED8, 17, 0, 0, gUnk_081552B0, 1 },
     { gUnk_08F5E384, gUnk_09EDDF1C, 7, 0, gUnk_0815553A, 0, 0 },
@@ -63,7 +63,7 @@ JiminyEntry gUnk_08155554[21] __attribute__((section(".data_records"))) = {
 
 #if defined(VERSION_US)
 
-JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815574C[17] = {
     { gUnk_0815B502, gUnk_09EDB7EC, 22, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815B51E, gUnk_09EDB844, 19, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815B53C, gUnk_09EDD46C, 18, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -83,7 +83,7 @@ JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
     { gUnk_0815A64A, gUnk_09EDDE38, 24, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155B04[6] = {
     { gUnk_0815C01E, gUnk_09EDD698, 41, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815C03A, gUnk_09EDBB1C, 26, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815C058, gUnk_09EDBB84, 20, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -92,7 +92,7 @@ JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
     { gUnk_0815C0B2, gUnk_09EDD78C, 31, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155C54[17] = {
     { gUnk_0815A66A, gUnk_09EDD928, 12, 0, gUnk_09051580, gUnk_09611E58, gUnk_09051594, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A682, gUnk_09EDD958, 11, 0, gUnk_09051FCC, gUnk_09611EB8, gUnk_09051FE0, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A69C, gUnk_09EDD984, 12, 0, gUnk_090521E0, gUnk_09611ED8, gUnk_090521F6, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
@@ -112,7 +112,7 @@ JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
     { gUnk_0815A7A2, gUnk_09EDDE98, 10, 0, gUnk_090538C0, gUnk_09612038, gUnk_090538D4, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815600C[14] = {
     { gUnk_0815A7FA, gUnk_09EDCCAC, 4, 0, gUnk_0904619C, gUnk_09611BB8, gUnk_090461B0, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A804, gUnk_09EDCCBC, 4, 0, gUnk_090463B0, gUnk_09611BD8, gUnk_090463C4, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A816, gUnk_09EDCCCC, 5, 0, gUnk_090465C4, gUnk_09611BF8, gUnk_090465D8, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
@@ -129,7 +129,7 @@ JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
     { gUnk_0815A8A8, gUnk_09EDCDA0, 4, 0, gUnk_09048FE8, gUnk_09611DB8, gUnk_09048FFC, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815631C[7] = {
     { gUnk_0815A8B4, gUnk_09EDCDB0, 5, 0, gUnk_09045240, gUnk_09611AD8, gUnk_09045254, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A8C2, gUnk_09EDCDC4, 5, 0, gUnk_09045454, gUnk_09611AF8, gUnk_09045468, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A8D6, gUnk_09EDCDD8, 6, 0, gUnk_09045668, gUnk_09611B18, gUnk_0904567C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -139,7 +139,7 @@ JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
     { gUnk_0815A91E, gUnk_09EDCE2C, 6, 0, gUnk_09045EB8, gUnk_09611B98, gUnk_09045ECC, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081564A4[7] = {
     { gUnk_0815A932, gUnk_09EDCE44, 5, 0, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A94A, gUnk_09EDCE58, 4, 0, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A956, gUnk_09EDCE68, 5, 0, gUnk_090491FC, gUnk_09617D98, gUnk_09049210, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -149,7 +149,7 @@ JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
     { gUnk_0815A990, gUnk_09EDCEB4, 5, 0, gUnk_09049A4C, gUnk_09617E18, gUnk_09049A60, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815662C[49] = {
     { gUnk_0815A9A4, gUnk_09EDCEC8, 5, 0, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A9B2, gUnk_09EDCEDC, 5, 0, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A9EC, gUnk_09EDCEF0, 6, 0, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -201,7 +201,7 @@ JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
     { gUnk_0815ADAA, gUnk_09EDDC54, 7, 0, gUnk_0905136C, gUnk_09612B18, gUnk_09051380, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081570E4[26] = {
     { gUnk_0815ADF4, gUnk_09EDD26C, 2, 0, gUnk_093EF268, gUnk_096185B8, gUnk_093EF27C, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815ADD2, gUnk_09EDDCBC, 4, 0, gUnk_093EF054, gUnk_09618598, gUnk_093EF068, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815AE9E, gUnk_09EDD294, 3, 0, gUnk_093EFCCC, gUnk_09618658, gUnk_093EFCE0, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
@@ -230,11 +230,11 @@ JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
     { gUnk_0815B0CA, gUnk_09EDD374, 2, 0, gUnk_093F1E0C, gUnk_09618858, gUnk_093F1E20, gUnk_093F6434, gUnk_09618D78, gUnk_093F644E, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157694[1] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157694[1] = {
     { gUnk_0815C10E, gUnk_09EDDCF4, 17, 0, gUnkUs_08C6AA58, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081576CC[22] = {
     { gUnk_0815C372, gUnk_09EDBC30, 4, 0, gUnk_09053EFC, gUnk_09612098, gUnk_09053F10, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815C360, gUnk_09EDDD38, 4, 0, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnk_0815A9A4, gUnk_09EDCEC8, 5, 0, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -259,7 +259,7 @@ JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
     { gUnk_0815AD9A, gUnk_09EDD37C, 14, 0, gUnk_09051158, gUnk_09612A78, gUnk_0905116C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157B9C[25] = {
     { gUnk_0815B0E8, gUnk_09EDBC40, 15, 0, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
     { gUnk_0815A932, gUnk_09EDBC7C, 16, 0, gUnk_0919FBB4, gUnk_09617C58, gUnk_0919FDF8, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, 0, 0, 0, 0, 0, 0, -9 },
     { gUnk_0815A94A, gUnk_09EDBCBC, 12, 0, gUnk_091ABDA4, gUnk_08F68384, gUnk_091ABDB8, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, 0, 0, 0, 0, 0, 0, 0 },
@@ -287,7 +287,7 @@ JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
     { gUnk_0815AD4C, gUnk_09EDBF84, 10, 0, gUnk_093AECB4, gUnk_09618438, gUnk_093AECCE, gUnk_09050F44, gUnk_096129D8, gUnk_09050F58, 0, 0, 0, 0, 0, -3, 6 },
 };
 
-JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08158114[40] = {
     { gUnk_0815B296, gUnk_09EDC1E0, 11, 0, gUnk_091F7F90, gUnk_09617CF8, gUnk_091F81C2, gUnk_09054960, gUnk_09612118, gUnk_09054974, 0, 0, 0, 0, 0, -1, -1 },
     { gUnk_0815B2A2, gUnk_09EDC20C, 8, 0, gUnk_091EBF70, gUnk_09617CD8, gUnk_091EBFC8, gUnk_09054B74, gUnk_09612138, gUnk_09054B88, 0, 0, 0, 0, 0, -3, 4 },
     { gUnk_0815B2CA, gUnk_09EDC22C, 7, 0, gUnk_092041A0, gUnk_09617D78, gUnk_092041BA, gUnk_090551B0, gUnk_09612158, gUnk_090551C4, 0, 0, 0, 0, 0, 0, -10 },
@@ -330,7 +330,7 @@ JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
     { gUnk_0815B3C6, gUnk_09EDC4BC, 9, 0, gUnk_0974BF58, gUnk_09849CB8, gUnk_0974C196, gUnk_09057F68, gUnk_09612418, gUnk_09057F7C, 0, 0, 0, 0, 0, -1, -3 },
 };
 
-JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081589D4[35] = {
     { gUnk_0815A9A4, gUnk_09EDC540, 9, 0, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { gUnk_0815A9B2, gUnk_09EDC564, 7, 0, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { gUnk_0815A9EC, gUnk_09EDC580, 10, 0, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },
@@ -368,7 +368,7 @@ JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
     { gUnk_0815ACFA, gUnk_09EDD67C, 7, 0, 0, 0, 0, gUnk_0904F014, gUnk_096FB8A4, gUnk_0904F028, gUnk_08F65384, gUnk_08F6E024, gUnk_08EE7A24, 32, 5216, 0, 0 },
 };
 
-JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815917C[14] = {
     { gUnk_0815B0F2, gUnk_09EDD808, 24, 0, gUnk_092EB274, gUnk_09618118, gUnk_092EB288, gUnk_09055C14, gUnk_096121F8, gUnk_09055C28, 0, 0, 0, 0, 0, -3, 0 },
     { gUnk_0815C360, gUnk_09EDD868, 15, 0, gUnk_093A5DF0, gUnk_096183F8, gUnk_093A5E10, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, 0, 0, 0, 0, 0, -2, -6 },
     { gUnk_0815B0E8, gUnk_09EDC91C, 13, 0, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
@@ -385,7 +385,7 @@ JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
     { gUnk_0815C0EA, gUnk_09EDCB38, 11, 0, gUnk_093DF56C, gUnk_096184B8, gUnk_093DF636, gUnk_09059C80, gUnk_09612C18, gUnk_09059C94, 0, 0, 0, 0, 0, -2, 8 },
 };
 
-JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815948C[6] = {
     { gUnk_0815B356, gUnk_09EDCB64, 13, 0, gUnk_092BBF5C, gUnk_09617FD8, gUnk_092BBF82, gUnk_09059008, gUnk_09612518, gUnk_0905901C, 0, 0, 0, 0, 0, -12, 16 },
     { gUnk_0815B1FE, gUnk_09EDCB98, 8, 0, 0, 0, 0, gUnk_0904FA78, gUnk_09612598, gUnk_0904FA8C, gUnk_08F67384, gUnk_08F6E104, gUnk_08EEC044, 32, 3744, 0, 0 },
     { gUnk_0815AC88, gUnk_09EDCBB8, 9, 0, gUnk_092621EC, gUnk_09617E78, gUnk_0926221E, gUnk_0904FC8C, gUnk_096125B8, gUnk_0904FCA0, 0, 0, 0, 0, 0, -3, 6 },
@@ -394,7 +394,7 @@ JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
     { gUnk_0815B340, gUnk_09EDCC1C, 6, 0, gUnk_09312DB8, gUnk_09618158, gUnk_09312DDE, gUnk_090502CC, gUnk_09612618, gUnk_090502E0, 0, 0, 0, 0, 0, -1, 17 },
 };
 
-JiminyDetail gUnk_081595DC[33] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081595DC[33] = {
     { gUnk_0815A9A4, gUnk_09EDC540, 9, 0, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { gUnk_0815A9B2, gUnk_09EDC564, 7, 0, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { gUnk_0815A9EC, gUnk_09EDC580, 10, 0, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },
@@ -432,7 +432,7 @@ JiminyDetail gUnk_081595DC[33] __attribute__((section(".data_records"))) = {
 
 #elif defined(VERSION_JP)
 
-JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815574C[17] = {
     { gUnkJp_0814F25C, gUnk_09EDB7EC, 12, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814F270, gUnk_09EDB844, 14, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814F284, gUnk_09EDD46C, 16, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -452,7 +452,7 @@ JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E658, gUnk_09EDDE38, 16, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155B04[6] = {
     { gUnkJp_0814FA18, gUnk_09EDD698, 28, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814FA2C, gUnk_09EDBB1C, 16, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814FA40, gUnk_09EDBB84, 13, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -461,7 +461,7 @@ JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814FA7C, gUnk_09EDD78C, 23, 0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155C54[17] = {
     { gUnkJp_0814E664, gUnk_09EDD928, 11, 0, gUnk_09051580, gUnk_09611E58, gUnk_09051594, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E678, gUnk_09EDD958, 11, 0, gUnk_09051FCC, gUnk_09611EB8, gUnk_09051FE0, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E68C, gUnk_09EDD984, 13, 0, gUnk_090521E0, gUnk_09611ED8, gUnk_090521F6, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
@@ -481,7 +481,7 @@ JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E76C, gUnk_09EDDE98, 10, 0, gUnk_090538C0, gUnk_09612038, gUnk_090538D4, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815600C[14] = {
     { gUnkJp_0814E7A0, gUnk_09EDCCAC, 5, 0, gUnk_0904619C, gUnk_09611BB8, gUnk_090461B0, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E7AC, gUnk_09EDCCBC, 5, 0, gUnk_090463B0, gUnk_09611BD8, gUnk_090463C4, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E7B8, gUnk_09EDCCCC, 5, 0, gUnk_090465C4, gUnk_09611BF8, gUnk_090465D8, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
@@ -498,7 +498,7 @@ JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E834, gUnk_09EDCDA0, 3, 0, gUnk_09048FE8, gUnk_09611DB8, gUnk_09048FFC, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815631C[7] = {
     { gUnkJp_0814E840, gUnk_09EDCDB0, 5, 0, gUnk_09045240, gUnk_09611AD8, gUnk_09045254, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E84C, gUnk_09EDCDC4, 5, 0, gUnk_09045454, gUnk_09611AF8, gUnk_09045468, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E85C, gUnk_09EDCDD8, 6, 0, gUnk_09045668, gUnk_09611B18, gUnk_0904567C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -508,7 +508,7 @@ JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E894, gUnk_09EDCE2C, 6, 0, gUnk_09045EB8, gUnk_09611B98, gUnk_09045ECC, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081564A4[7] = {
     { gUnkJp_0814E8A8, gUnk_09EDCE44, 5, 0, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E8B8, gUnk_09EDCE58, 4, 0, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E8DC, gUnk_09EDCE68, 4, 0, gUnk_090491FC, gUnk_09617D98, gUnk_09049210, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -518,7 +518,7 @@ JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E910, gUnk_09EDCEB4, 3, 0, gUnk_09049A4C, gUnk_09617E18, gUnk_09049A60, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815662C[49] = {
     { gUnkJp_0814E9EC, gUnk_09EDCEC8, 5, 0, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E9F8, gUnk_09EDCEDC, 5, 0, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814EA28, gUnk_09EDCEF0, 6, 0, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -570,7 +570,7 @@ JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814EE94, gUnk_09EDDC54, 9, 0, gUnk_0905136C, gUnk_09612B18, gUnk_09051380, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081570E4[26] = {
     { gUnkJp_0814F364, gUnk_09EDD26C, 2, 0, gUnk_093EF268, gUnk_096185B8, gUnk_093EF27C, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814F358, gUnk_09EDDCBC, 5, 0, gUnk_093EF054, gUnk_09618598, gUnk_093EF068, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814F3A8, gUnk_09EDD294, 2, 0, gUnk_093EFCCC, gUnk_09618658, gUnk_093EFCE0, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
@@ -599,11 +599,11 @@ JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814F4F8, gUnk_09EDD374, 2, 0, gUnk_093F1E0C, gUnk_09618858, gUnk_093F1E20, gUnk_093F6434, gUnk_09618D78, gUnk_093F644E, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157694[1] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157694[1] = {
     { gUnkJp_0814FAB8, gUnk_09EDDCF4, 13, 0, gUnkJp_08C5E040, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081576CC[22] = {
     { gUnkJp_0814EEA8, gUnk_09EDBC30, 3, 0, gUnk_09053EFC, gUnk_09612098, gUnk_09053F10, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814EEA0, gUnk_09EDDD38, 4, 0, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { gUnkJp_0814E9EC, gUnk_09EDCEC8, 5, 0, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -628,7 +628,7 @@ JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814EE88, gUnk_09EDD37C, 11, 0, gUnk_09051158, gUnk_09612A78, gUnk_0905116C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157B9C[25] = {
     { gUnkJp_0814E91C, gUnk_09EDBC40, 8, 0, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
     { gUnkJp_0814E8A8, gUnk_09EDBC7C, 10, 0, gUnk_0919FBB4, gUnk_09617C58, gUnk_0919FDF8, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, 0, 0, 0, 0, 0, 0, -9 },
     { gUnkJp_0814E8B8, gUnk_09EDBCBC, 9, 0, gUnk_091ABDA4, gUnk_08F68384, gUnk_091ABDB8, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, 0, 0, 0, 0, 0, 0, 0 },
@@ -656,7 +656,7 @@ JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814E9D0, gUnk_09EDBF84, 6, 0, gUnk_093AECB4, gUnk_09618438, gUnk_093AECCE, gUnk_09050F44, gUnk_096129D8, gUnk_09050F58, 0, 0, 0, 0, 0, -3, 6 },
 };
 
-JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08158114[40] = {
     { gUnkJp_0814ED50, gUnk_09EDC1E0, 8, 0, gUnk_091F7F90, gUnk_09617CF8, gUnk_091F81C2, gUnk_09054960, gUnk_09612118, gUnk_09054974, 0, 0, 0, 0, 0, -1, -1 },
     { gUnkJp_0814ED58, gUnk_09EDC20C, 6, 0, gUnk_091EBF70, gUnk_09617CD8, gUnk_091EBFC8, gUnk_09054B74, gUnk_09612138, gUnk_09054B88, 0, 0, 0, 0, 0, -3, 4 },
     { gUnkJp_0814ED68, gUnk_09EDC22C, 4, 0, gUnk_092041A0, gUnk_09617D78, gUnk_092041BA, gUnk_090551B0, gUnk_09612158, gUnk_090551C4, 0, 0, 0, 0, 0, 0, -10 },
@@ -699,7 +699,7 @@ JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814EE3C, gUnk_09EDC4BC, 6, 0, gUnk_0974BF58, gUnk_09849CB8, gUnk_0974C196, gUnk_09057F68, gUnk_09612418, gUnk_09057F7C, 0, 0, 0, 0, 0, -1, -3 },
 };
 
-JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081589D4[35] = {
     { gUnkJp_0814E9EC, gUnk_09EDC540, 7, 0, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { gUnkJp_0814E9F8, gUnk_09EDC564, 5, 0, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { gUnkJp_0814EA28, gUnk_09EDC580, 8, 0, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },
@@ -737,7 +737,7 @@ JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814EC70, gUnk_09EDD67C, 6, 0, 0, 0, 0, gUnk_0904F014, gUnk_096FB8A4, gUnk_0904F028, gUnk_08F65384, gUnk_08F6E024, gUnk_08EE7A24, 32, 5216, 0, 0 },
 };
 
-JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815917C[14] = {
     { gUnkJp_0814E924, gUnk_09EDD808, 11, 0, gUnk_092EB274, gUnk_09618118, gUnk_092EB288, gUnk_09055C14, gUnk_096121F8, gUnk_09055C28, 0, 0, 0, 0, 0, -3, 0 },
     { gUnkJp_0814EEA0, gUnk_09EDD868, 7, 0, gUnk_093A5DF0, gUnk_096183F8, gUnk_093A5E10, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, 0, 0, 0, 0, 0, -2, -6 },
     { gUnkJp_0814E91C, gUnk_09EDC91C, 7, 0, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
@@ -754,7 +754,7 @@ JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814FAA0, gUnk_09EDCB38, 7, 0, gUnk_093DF56C, gUnk_096184B8, gUnk_093DF636, gUnk_09059C80, gUnk_09612C18, gUnk_09059C94, 0, 0, 0, 0, 0, -2, 8 },
 };
 
-JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815948C[6] = {
     { gUnkJp_0814EDF0, gUnk_09EDCB64, 6, 0, gUnk_092BBF5C, gUnk_09617FD8, gUnk_092BBF82, gUnk_09059008, gUnk_09612518, gUnk_0905901C, 0, 0, 0, 0, 0, -12, 16 },
     { gUnkJp_0814ECF4, gUnk_09EDCB98, 6, 0, 0, 0, 0, gUnk_0904FA78, gUnk_09612598, gUnk_0904FA8C, gUnk_08F67384, gUnk_08F6E104, gUnk_08EEC044, 32, 3744, 0, 0 },
     { gUnkJp_0814EC28, gUnk_09EDCBB8, 6, 0, gUnk_092621EC, gUnk_09617E78, gUnk_0926221E, gUnk_0904FC8C, gUnk_096125B8, gUnk_0904FCA0, 0, 0, 0, 0, 0, -3, 6 },
@@ -763,7 +763,7 @@ JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
     { gUnkJp_0814EDE0, gUnk_09EDCC1C, 4, 0, gUnk_09312DB8, gUnk_09618158, gUnk_09312DDE, gUnk_090502CC, gUnk_09612618, gUnk_090502E0, 0, 0, 0, 0, 0, -1, 17 },
 };
 
-JiminyDetail gUnk_081595DC[33] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081595DC[33] = {
     { gUnkJp_0814E9EC, gUnk_09EDC540, 7, 0, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { gUnkJp_0814E9F8, gUnk_09EDC564, 5, 0, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { gUnkJp_0814EA28, gUnk_09EDC580, 8, 0, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },
@@ -801,7 +801,7 @@ JiminyDetail gUnk_081595DC[33] __attribute__((section(".data_records"))) = {
 
 #elif defined(VERSION_EU)
 
-JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815574C[17] = {
     { &gUnkEu_08892450, &gUnkEu_0883FB1C, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_088924BC, &gUnkEu_088402A4, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0889252C, &gUnkEu_08840A14, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -821,7 +821,7 @@ JiminyDetail gUnk_0815574C[17] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888E804, &gUnkEu_08848808, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155B04[6] = {
     { &gUnkEu_088954F4, &gUnkEu_08849768, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_08895560, &gUnkEu_0884A1C8, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_088955D0, &gUnkEu_0884AA20, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -830,7 +830,7 @@ JiminyDetail gUnk_08155B04[6] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08895710, &gUnkEu_0884C7C0, gUnk_099A897C, gUnk_09A3CE5C, gUnk_099F0E7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08155C54[17] = {
     { &gUnkEu_0888E860, &gUnkEu_0884CB9C, gUnk_09051580, gUnk_09611E58, gUnk_09051594, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888E8B4, &gUnkEu_0884CF0C, gUnk_09051FCC, gUnk_09611EB8, gUnk_09051FE0, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888E904, &gUnkEu_0884D304, gUnk_090521E0, gUnk_09611ED8, gUnk_090521F6, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
@@ -850,7 +850,7 @@ JiminyDetail gUnk_08155C54[17] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888ECE8, &gUnkEu_08850724, gUnk_090538C0, gUnk_09612038, gUnk_090538D4, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815600C[14] = {
     { &gUnkEu_0888EDE0, &gUnkEu_088508FC, gUnk_0904619C, gUnk_09611BB8, gUnk_090461B0, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888EE18, &gUnkEu_08850AE0, gUnk_090463B0, gUnk_09611BD8, gUnk_090463C4, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888EE50, &gUnkEu_08850CD0, gUnk_090465C4, gUnk_09611BF8, gUnk_090465D8, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
@@ -867,7 +867,7 @@ JiminyDetail gUnk_0815600C[14] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888F0A4, &gUnkEu_08852574, gUnk_09048FE8, gUnk_09611DB8, gUnk_09048FFC, gUnk_09059E94, gUnk_09611AB8, gUnk_09059EAE, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815631C[7] = {
     { &gUnkEu_0888F0DC, &gUnkEu_088527E4, gUnk_09045240, gUnk_09611AD8, gUnk_09045254, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F128, &gUnkEu_08852A50, gUnk_09045454, gUnk_09611AF8, gUnk_09045468, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F178, &gUnkEu_08852D50, gUnk_09045668, gUnk_09611B18, gUnk_0904567C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -877,7 +877,7 @@ JiminyDetail gUnk_0815631C[7] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888F278, &gUnkEu_08853754, gUnk_09045EB8, gUnk_09611B98, gUnk_09045ECC, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081564A4[7] = {
     { &gUnkEu_0888F2C0, &gUnkEu_08853980, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F2F4, &gUnkEu_08853B98, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F394, &gUnkEu_08853DAC, gUnk_090491FC, gUnk_09617D98, gUnk_09049210, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
@@ -887,7 +887,7 @@ JiminyDetail gUnk_081564A4[7] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888F484, &gUnkEu_088545F8, gUnk_09049A4C, gUnk_09617E18, gUnk_09049A60, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815662C[49] = {
     { &gUnkEu_0888F880, &gUnkEu_0885479C, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F8C4, &gUnkEu_08855548, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F9AC, &gUnkEu_08857454, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -939,7 +939,7 @@ JiminyDetail gUnk_0815662C[49] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08890FB0, &gUnkEu_0885AF84, gUnk_0905136C, gUnk_09612B18, gUnk_09051380, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081570E4[26] = {
     { &gUnkEu_088929B0, &gUnkEu_0885BB4C, gUnk_093EF268, gUnk_096185B8, gUnk_093EF27C, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0889294C, &gUnkEu_0885BA50, gUnk_093EF054, gUnk_09618598, gUnk_093EF068, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_08892BB0, &gUnkEu_0885C230, gUnk_093EFCCC, gUnk_09618658, gUnk_093EFCE0, gUnk_093F5EFC, gUnk_09618D78, gUnk_093F5F16, 0, 0, 0, 0, 0, 0, 0 },
@@ -968,11 +968,11 @@ JiminyDetail gUnk_081570E4[26] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08893310, &gUnkEu_0885DC30, gUnk_093F1E0C, gUnk_09618858, gUnk_093F1E20, gUnk_093F6434, gUnk_09618D78, gUnk_093F644E, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157694[1] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157694[1] = {
     { &gUnkEu_08895850, &gUnkEu_0885E1D8, gUnkEu_08C9C454, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081576CC[22] = {
     { &gUnkEu_0889103C, &gUnkEu_0885B6AC, gUnk_09053EFC, gUnk_09612098, gUnk_09053F10, gUnk_0905A668, gUnk_09611AB8, gUnk_0905A682, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_08890FEC, &gUnkEu_0885B870, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, gUnk_0905A3CC, gUnk_09611AB8, gUnk_0905A3E6, 0, 0, 0, 0, 0, 0, 0 },
     { &gUnkEu_0888F880, &gUnkEu_0885479C, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
@@ -997,7 +997,7 @@ JiminyDetail gUnk_081576CC[22] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08890F7C, &gUnkEu_0885ACC0, gUnk_09051158, gUnk_09612A78, gUnk_0905116C, gUnk_0905A130, gUnk_09611AB8, gUnk_0905A14A, 0, 0, 0, 0, 0, 0, 0 },
 };
 
-JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08157B9C[25] = {
     { &gUnkEu_0888F4FC, &gUnkEu_0885E7B8, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
     { &gUnkEu_0888F2C0, &gUnkEu_0885ED64, gUnk_0919FBB4, gUnk_09617C58, gUnk_0919FDF8, gUnk_0904815C, gUnk_09617C58, gUnk_09048170, 0, 0, 0, 0, 0, 0, -9 },
     { &gUnkEu_0888F2F4, &gUnkEu_0885F1AC, gUnk_091ABDA4, gUnk_08F68384, gUnk_091ABDB8, gUnk_09047F48, gUnk_08F68384, gUnk_09047F5C, 0, 0, 0, 0, 0, 0, 0 },
@@ -1025,7 +1025,7 @@ JiminyDetail gUnk_08157B9C[25] __attribute__((section(".data_records"))) = {
     { &gUnkEu_0888F7E8, &gUnkEu_08864A34, gUnk_093AECB4, gUnk_09618438, gUnk_093AECCE, gUnk_09050F44, gUnk_096129D8, gUnk_09050F58, 0, 0, 0, 0, 0, -3, 6 },
 };
 
-JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_08158114[40] = {
     { &gUnkEu_088908E4, &gUnkEu_088683FC, gUnk_091F7F90, gUnk_09617CF8, gUnk_091F81C2, gUnk_09054960, gUnk_09612118, gUnk_09054974, 0, 0, 0, 0, 0, -1, -1 },
     { &gUnkEu_08890950, &gUnkEu_0886871C, gUnk_091EBF70, gUnk_09617CD8, gUnk_091EBFC8, gUnk_09054B74, gUnk_09612138, gUnk_09054B88, 0, 0, 0, 0, 0, -3, 4 },
     { &gUnkEu_088909B4, &gUnkEu_08868954, gUnk_092041A0, gUnk_09617D78, gUnk_092041BA, gUnk_090551B0, gUnk_09612158, gUnk_090551C4, 0, 0, 0, 0, 0, 0, -10 },
@@ -1068,7 +1068,7 @@ JiminyDetail gUnk_08158114[40] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08890DF4, &gUnkEu_0886CF18, gUnk_0974BF58, gUnk_09849CB8, gUnk_0974C196, gUnk_09057F68, gUnk_09612418, gUnk_09057F7C, 0, 0, 0, 0, 0, -1, -3 },
 };
 
-JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081589D4[35] = {
     { &gUnkEu_0888F880, &gUnkEu_0886DF4C, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { &gUnkEu_0888F8C4, &gUnkEu_0886E1FC, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { &gUnkEu_0888F9AC, &gUnkEu_0886E5EC, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },
@@ -1106,7 +1106,7 @@ JiminyDetail gUnk_081589D4[35] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08890484, &gUnkEu_0886DBF8, 0, 0, 0, gUnk_0904F014, gUnk_096FB8A4, gUnk_0904F028, gUnk_08F65384, gUnk_08F6E024, gUnk_08EE7A24, 32, 5216, 0, 0 },
 };
 
-JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815917C[14] = {
     { &gUnkEu_0888F52C, &gUnkEu_08874658, gUnk_092EB274, gUnk_09618118, gUnk_092EB288, gUnk_09055C14, gUnk_096121F8, gUnk_09055C28, 0, 0, 0, 0, 0, -3, 0 },
     { &gUnkEu_08890FEC, &gUnkEu_08874BC8, gUnk_093A5DF0, gUnk_096183F8, gUnk_093A5E10, gUnk_09049C60, gUnk_096183F8, gUnk_09049C74, 0, 0, 0, 0, 0, -2, -6 },
     { &gUnkEu_0888F4FC, &gUnkEu_088750B8, gUnk_088BEFD8, gUnk_08F683A4, gUnk_088BF162, gUnk_090555D8, gUnk_09612198, gUnk_090555EC, 0, 0, 0, 0, 0, -3, -3 },
@@ -1123,7 +1123,7 @@ JiminyDetail gUnk_0815917C[14] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08895784, &gUnkEu_08878F40, gUnk_093DF56C, gUnk_096184B8, gUnk_093DF636, gUnk_09059C80, gUnk_09612C18, gUnk_09059C94, 0, 0, 0, 0, 0, -2, 8 },
 };
 
-JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_0815948C[6] = {
     { &gUnkEu_08890C48, &gUnkEu_088793FC, gUnk_092BBF5C, gUnk_09617FD8, gUnk_092BBF82, gUnk_09059008, gUnk_09612518, gUnk_0905901C, 0, 0, 0, 0, 0, -12, 16 },
     { &gUnkEu_08890700, &gUnkEu_08879700, 0, 0, 0, gUnk_0904FA78, gUnk_09612598, gUnk_0904FA8C, gUnk_08F67384, gUnk_08F6E104, gUnk_08EEC044, 32, 3744, 0, 0 },
     { &gUnkEu_08890300, &gUnkEu_08879A6C, gUnk_092621EC, gUnk_09617E78, gUnk_0926221E, gUnk_0904FC8C, gUnk_096125B8, gUnk_0904FCA0, 0, 0, 0, 0, 0, -3, 6 },
@@ -1132,7 +1132,7 @@ JiminyDetail gUnk_0815948C[6] __attribute__((section(".data_records"))) = {
     { &gUnkEu_08890BD0, &gUnkEu_0887A250, gUnk_09312DB8, gUnk_09618158, gUnk_09312DDE, gUnk_090502CC, gUnk_09612618, gUnk_090502E0, 0, 0, 0, 0, 0, -1, 17 },
 };
 
-JiminyDetail gUnk_081595DC[33] __attribute__((section(".data_records"))) = {
+JiminyDetail gUnk_081595DC[33] = {
     { &gUnkEu_0888F880, &gUnkEu_0886DF4C, gUnk_089571D4, gUnk_08F697A4, gUnk_08957290, gUnk_0904AD80, gUnk_08F697A4, gUnk_0904AD94, 0, 0, 0, 0, 0, 2, -12 },
     { &gUnkEu_0888F8C4, &gUnkEu_0886E1FC, gUnk_0897EEFC, gUnk_08F697E4, gUnk_0897EFB2, gUnk_0904BE20, gUnk_08F697E4, gUnk_0904BE34, 0, 0, 0, 0, 0, -8, 2 },
     { &gUnkEu_0888F9AC, &gUnkEu_0886E5EC, gUnk_08967910, gUnk_08F697C4, gUnk_08967A32, gUnk_0904E188, gUnk_08F697C4, gUnk_0904E19C, 0, 0, 0, 0, 0, -6, 6 },

@@ -144,7 +144,7 @@ void func_0805A638(s32 a, u16** b) {
     gJiminyWork->unk_C60[a] = LoadTextSlots(gUnk_09EDE3FC[t], &gJiminyWork->lines[a]);
 }
 
-void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h) {
+void func_0805A698(s16 a, s16 b, u16** d, const u16* c, const u16* e, s16 f, s16 g, s16 h) {
     s16 n;
     s32 i;
 
@@ -208,7 +208,7 @@ void func_0805A8D0(void) {
         gJiminyWork->unk_CAE, gJiminyWork->unk_CB0, gJiminyWork->unk_CB2);
 }
 
-void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
+void func_0805A95C(s16 a, s16 b, u16** c, const u16* d, const u16* e, s16 f, s16 g, s16 h) {
 #ifdef VERSION_EU
     s32 i;
 #endif

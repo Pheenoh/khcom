@@ -61,8 +61,8 @@ typedef struct JiminyEntry {
     void* names;
     s16 count;
     s16 parent;
-    u16* children;
-    u16* flags;
+    const u16* children;
+    const u16* flags;
     s32 detail;
 } JiminyEntry;
 
@@ -109,8 +109,8 @@ typedef struct JiminyWork {
     s16 unk_CB0;
     s16 unk_CB2;
     u16** unk_CB4;
-    u16* unk_CB8;
-    u16* unk_CBC;
+    const u16* unk_CB8;
+    const u16* unk_CBC;
     s16 unk_CC0;
     s16 x;
     s16 y;

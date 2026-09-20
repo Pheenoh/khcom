@@ -84,7 +84,7 @@ void func_0805A8D0(void);
 void func_08064B80(s32 a);
 s32 func_08065170(s32 a, s32 b, void* c);
 s32 func_080653D4(s32 a, s32 b, void* c);
-void func_0805A95C(s32 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, s32 h);
+void func_0805A95C(s32 a, s16 b, void* c, const void* d, const void* e, s32 f, s32 g, s32 h);
 
 void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
