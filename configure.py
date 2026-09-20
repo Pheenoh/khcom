@@ -137,6 +137,7 @@ UNIT_BSS = {
     "src/mode_eventselect.o": {"us": 0x02034A94, "jp": 0x020349F4, "eu": 0x02034AB0},
     "src/card_battle.o": {"us": 0x02034A98, "jp": 0x020349F8, "eu": 0x02034AB4},
     "src/wlogo.o": {"us": 0x02034C38, "jp": 0x02034B98, "eu": 0x02034E28},
+    "src/boss_tm.o": {"us": 0x02034CB0, "jp": 0x02034C10, "eu": 0x02034EA0},
     "src/chara.o": {"us": 0x02034CD8, "jp": 0x02034C38, "eu": 0x02034EC8},
     "src/mode_copyright1.o": {"us": 0x02034ED4, "jp": 0x02034E34, "eu": 0x020350C4},
     "src/mode_status.o": {"us": 0x02034EE0, "jp": 0x02034E40, "eu": 0x020350D0},

@@ -4,8 +4,6 @@
 
 #include "boss_jafar_data.h"
 
-#include "boss_tm_data.h"
-
 #include "animation_resource_data.h"
 
 #include "bos2_background_data.h"
@@ -41,7 +39,6 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "game.h"
-#include "boss_tm.h"
 #include "btl_api.h"
 #include "acgtrans.h"
 #include "mode_battle_data.h"
@@ -215,49 +212,6 @@ typedef struct DsdItaWork {
     void* gfx2;
 } DsdItaWork;
 
-typedef struct TmTblWork {
-    u32 unk_000;
-    u32 unk_004;
-    u8 unk_008[0x32];
-    u8 unk_03A;
-    u8 unk_03B[0x25];
-    u16 unk_060;
-    u8 unk_062;
-    u8 unk_063[0x1];
-    u16 unk_064;
-    s8 unk_066;
-    u8 unk_067;
-    u32 unk_068;
-} TmTblWork;
-
-typedef struct TmClbSrc {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-} TmClbSrc;
-
-typedef struct TmClbArg {
-    u32 unk_00;
-    u32 unk_04;
-    TmClbSrc* src;
-    s32 unk_0C;
-    void* unk_10;
-    void* unk_14;
-} TmClbArg;
-
-typedef struct TmClbWork {
-    TmClbArg* arg;
-    void* tiles;
-    void* palette;
-    u16 unk_00C;
-    u8 unk_00E[0x2];
-    s32 x;
-    s32 y;
-    s32 z;
-} TmClbWork;
-
 typedef struct JfWork {
     BtlObj body;
     BtlObj sub;
@@ -430,162 +384,21 @@ typedef struct JfBorderlineWork {
     u8 unk_0B6[0x2];
 } JfBorderlineWork;
 
-typedef struct TmArmState {
-    u8 unk_00[0x8];
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10[0x18];
-    u16 unk_28;
-    u8 unk_2A[0x2];
-    s32 unk_2C;
-    u8 unk_30[0xA];
-    u8 unk_3A;
-    u8 unk_3B;
-    u8 unk_3C[6];
-    u16 tileCount;
-} TmArmState;
-
-typedef struct TmAnimFrame {
-    s16 unk_00;
-    u8 unk_02[0x2];
-    u8 unk_04[0x10];
-} TmAnimFrame;
-
-typedef struct TmAnim {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    u8 unk_06[0x2];
-    TmAnimFrame* frames;
-} TmAnim;
-
-typedef struct TmArmSrc {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    TmArmState* state;
-} TmArmSrc;
-
-typedef struct TmArmJoint {
-    s32 unk_00;
-    s32 unk_04;
-    u8 unk_08;
-    u8 unk_09[0x3];
-    s32 x;
-    s32 y;
-    u16 unk_14;
-    u8 unk_16[0x10];
-    u16 unk_26;
-    u8 unk_28[0x8];
-    void* gfx;
-} TmArmJoint;
-
-typedef struct TmArmPos {
-    s32 x;
-    s32 y;
-    s32 z;
-    u16 unk_0C;
-    u16 unk_0E;
-} TmArmPos;
-
-typedef struct TmArmTileHeader {
-    u16 unk_00[4];
-    u16 tileCount;
-} TmArmTileHeader;
-
-typedef struct TmArmWork {
-    u32 tiles;
-    u16* palette;
-    u32 palette2;
-    TmArmSrc* src;
-    union {
-        TmArmJoint all[8];
-        TmArmJoint arms[2][4];
-    } joints;
-    u16 unk_1B0;
-    u16 unk_1B2;
-    TaskPool tasks;
-    u32 unk_1C8;
-    u8 unk_1CC[0xC];
-    u32 unk_1D8;
-    u32 unk_1DC;
-    u32 unk_1E0;
-    u8 unk_1E4[0xC];
-    u32 unk_1F0;
-    u32 unk_1F4;
-    TmArmPos unk_1F8[2];
-    u32 unk_218;
-    u8 unk_21C[0x4];
-    u32 unk_220;
-    u8 unk_224[0x8];
-    u32 unk_22C;
-    u8 unk_230;
-    u8 unk_231[0x3];
-    u32 unk_234;
-    u32 tiles2;
-    AnimState anim;
-    u8 unk_254;
-    u8 unk_255[0x3];
-} TmArmWork;
-
-typedef struct TmFootWork {
-    u16 unk_000;
-    u8 unk_002;
-    u8 unk_003;
-    u8 unk_004;
-    u8 unk_005[0x3];
-    u32 tiles;
-    u32 tiles2;
-    u32 tiles3;
-    u32 palette;
-    u32 palette2;
-    BtlObj body;
-    void* gfx;
-    u8 unk_130;
-    u8 unk_131[0x3];
-    BtlObj body2;
-    void* gfx2;
-    u8 unk_248;
-    u8 unk_249[0x3];
-    BtlObj body3;
-    u32 gfx3;
-    u8 unk_360;
-    u8 unk_361[0x3];
-    BtlObj body4;
-    void* gfx4;
-    u8 unk_478;
-    u8 unk_479[0x3];
-    TmWork* tm;
-    u32 unk_480;
-} TmFootWork;
-
 typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
-typedef char TmArmWork_size[(sizeof(TmArmWork) == 0x258) ? 1 : -1];
-typedef char TmFootWork_size[(sizeof(TmFootWork) == 0x484) ? 1 : -1];
 
-extern u16 gUnk_0961A63C[];
 extern u8 gUnk_096FB744[];
 extern void* gUnk_0961A7B0[];
 extern s16 gUnk_0961A89E[];
 extern s16 gUnk_0961A8B0[];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_096C5C64[];
-extern u8 gUnk_096FB304[];
-extern u8 gUnk_0962E838[];
 extern u8 gUnk_096FB484[];
 extern s16 gUnk_0961A7D0[];
 extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
-extern u8 gUnk_09652E84[];
 
-extern u8 gUnk_09654C04[];
-extern u8 gUnk_09658C04[];
 extern u8 gUnk_09665C04[];
 extern u8 gUnk_096CAC64[];
-extern u8 gUnk_096FB2A4[];
 extern u8 gUnk_096983E4[];
 extern u8 gUnk_096FB8C4[];
 extern u8 gUnk_096A2F04[];
@@ -614,30 +427,16 @@ extern s16 gUnk_0961A860[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern u16 gUnk_0961A710[][3];
-extern u8 gUnk_09619CDC[];
-extern u8 gUnk_09619D18[];
-extern u8 gUnk_09657C04[];
-extern u8 gUnk_0962E7A0[];
 
-extern u8 gUnk_096BF464[];
-extern u8 gUnk_09619C94[];
 
 void func_080C1A48(JfBorderlineWork* work);
 s32 __divsi3(s32 a, s32 b);
-void func_080BB924(TmArmWork* work);
-void func_080BC304(TmArmWork* work);
 void func_080BE3DC(u8 a, JfMajinWork* work);
 void func_080BE478(u8 a, JfMajinWork* work);
 void func_080BE380(u8 a, u16 b, JfMajinWork* work);
 
 u8 task_bos_jf_borderline_1(JfBorderlineWork* work);
 void task_bos_jf_borderline_3(JfBorderlineWork* work);
-u8 task_bos_tm_clb_1(TmClbWork* work);
-u8 task_bos_tm_arm_1(TmArmWork* work);
-void task_bos_tm_arm_3(TmArmWork* work);
-void task_bos_tm_foot_3(TmFootWork* work);
-void task_bos_tm_clb_0(TmClbWork* work, void* arg);
-void task_bos_tm_clb_2(TmClbWork* work);
 
 u8 task_bos_dsd_rock_1(DsdRockWork* work);
 void task_bos_dsd_rock_3(void);
@@ -669,27 +468,12 @@ void task_bos_jf_3(JfWork* work);
 u8 task_bos_dsd_map_1(void);
 void task_bos_dsd_2(DsdWork* work);
 void task_bos_dsd_3(DsdWork* work);
-void task_bos_tm_tbl_0(TmTblWork* work, void* arg);
-void task_bos_tm_tbl_3(TmTblWork* work);
-void task_bos_tm_clb_3(TmClbWork* work);
-void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c);
-void func_080BA0F8(BtlObj* work);
-void task_bos_tm_body_3(TmBodyWork* work);
-void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
-void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b);
-void func_080BB1E8(TmClbArg* p, TmClbSrc* a);
-void func_080BB1F4(TmClbArg* p, TmClbSrc* a, u8 mode);
-void func_080BB428(u8* dst, u8* src);
-void func_080BB43C(u8* work, u8* src, u16 a, u8* dst);
-void func_080BB464(TmArmWork* work);
-void func_080BB4C0(TmArmWork* work);
 void func_080C211C(u8 index);
 void func_080C213C(u8 index, u16 a);
 void func_080C43E4(s32* p, s32 target);
 
 void func_080C3868(DsdMainWork* work);
 void func_080C3C34(DsdMainWork* work);
-void func_080BA104(BtlObj* sub, TmFootWork* work);
 void task_bos_dsd_energy1_3(void);
 void task_bos_jf_lamp_3(JfLampWork* work);
 void task_bos_jf_majin_3(JfMajinWork* work);
@@ -700,12 +484,7 @@ void func_080C29F4(DsdMainWork* work);
 void func_080C2944(DsdMainWork* work);
 void func_080C4398(DsdItaWork* work);
 u8 func_080C0258(u16* p, s16 b, u8 c, u8 d);
-void func_080BA43C(TmFootWork* work, s16 a);
-void func_080BA62C(TmFootWork* work);
-void func_080BA8C8(TmFootWork* work, s16 a);
 s32 func_080BE940(JfMajinWork* work);
-void func_080BB588(TmArmJoint* joints, u16 a);
-void func_080BB5E8(u8* joints, TmAnim* a);
 void func_080C2F68(DsdMainWork* work);
 void func_080C3504(DsdMainWork* work);
 void func_080C4C54(DsdEnergy1Work* work);

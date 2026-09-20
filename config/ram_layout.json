@@ -1890,6 +1890,75 @@
           }
         }
       ]
+    },
+    "src/wlogo.o": {
+      "sections": [
+        {
+          "section": ".bss.wlogo",
+          "base": "0x2034c38",
+          "size": "0x74",
+          "symbols": {
+            "gWlogoHwtTaskPool": {
+              "offset": "0x0",
+              "size": "0x14"
+            },
+            "gWlogoNvlTaskPool": {
+              "offset": "0x18",
+              "size": "0x14"
+            },
+            "gWlogoNvlMovTaskPool": {
+              "offset": "0x30",
+              "size": "0x14"
+            },
+            "gWlogoAgrTaskPool": {
+              "offset": "0x48",
+              "size": "0x14"
+            },
+            "gWlogoPooTaskPool": {
+              "offset": "0x60",
+              "size": "0x14"
+            }
+          }
+        },
+        {
+          "section": ".common.wlogo",
+          "base": "0x203ab38",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_0203AB38": {
+              "offset": "0x0",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
+    },
+    "src/boss_tm.o": {
+      "section": ".bss.boss_tm",
+      "base": "0x2034cb0",
+      "size": "0x24",
+      "symbols": {
+        "gBosTmBodyTask": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gBosTmArmTask": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gBosTmFootTask": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gBosTmTblTask": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gBosTmTaskPool": {
+          "offset": "0x10",
+          "size": "0x14"
+        }
+      }
     }
   },
   "jp": {
@@ -3793,6 +3862,75 @@
           }
         }
       ]
+    },
+    "src/wlogo.o": {
+      "sections": [
+        {
+          "section": ".bss.wlogo",
+          "base": "0x2034b98",
+          "size": "0x74",
+          "symbols": {
+            "gWlogoHwtTaskPool": {
+              "offset": "0x0",
+              "size": "0x14"
+            },
+            "gWlogoNvlTaskPool": {
+              "offset": "0x18",
+              "size": "0x14"
+            },
+            "gWlogoNvlMovTaskPool": {
+              "offset": "0x30",
+              "size": "0x14"
+            },
+            "gWlogoAgrTaskPool": {
+              "offset": "0x48",
+              "size": "0x14"
+            },
+            "gWlogoPooTaskPool": {
+              "offset": "0x60",
+              "size": "0x14"
+            }
+          }
+        },
+        {
+          "section": ".common.wlogo",
+          "base": "0x203aaa8",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_0203AB38": {
+              "offset": "0x0",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
+    },
+    "src/boss_tm.o": {
+      "section": ".bss.boss_tm",
+      "base": "0x2034c10",
+      "size": "0x24",
+      "symbols": {
+        "gBosTmBodyTask": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gBosTmArmTask": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gBosTmFootTask": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gBosTmTblTask": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gBosTmTaskPool": {
+          "offset": "0x10",
+          "size": "0x14"
+        }
+      }
     }
   },
   "eu": {
@@ -5672,6 +5810,75 @@
           }
         }
       ]
+    },
+    "src/wlogo.o": {
+      "sections": [
+        {
+          "section": ".bss.wlogo",
+          "base": "0x2034e28",
+          "size": "0x74",
+          "symbols": {
+            "gWlogoHwtTaskPool": {
+              "offset": "0x0",
+              "size": "0x14"
+            },
+            "gWlogoNvlTaskPool": {
+              "offset": "0x18",
+              "size": "0x14"
+            },
+            "gWlogoNvlMovTaskPool": {
+              "offset": "0x30",
+              "size": "0x14"
+            },
+            "gWlogoAgrTaskPool": {
+              "offset": "0x48",
+              "size": "0x14"
+            },
+            "gWlogoPooTaskPool": {
+              "offset": "0x60",
+              "size": "0x14"
+            }
+          }
+        },
+        {
+          "section": ".common.wlogo",
+          "base": "0x203b10c",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_0203AB38": {
+              "offset": "0x0",
+              "size": "0x4"
+            }
+          }
+        }
+      ]
+    },
+    "src/boss_tm.o": {
+      "section": ".bss.boss_tm",
+      "base": "0x2034ea0",
+      "size": "0x24",
+      "symbols": {
+        "gBosTmBodyTask": {
+          "offset": "0x0",
+          "size": "0x4"
+        },
+        "gBosTmArmTask": {
+          "offset": "0x4",
+          "size": "0x4"
+        },
+        "gBosTmFootTask": {
+          "offset": "0x8",
+          "size": "0x4"
+        },
+        "gBosTmTblTask": {
+          "offset": "0xc",
+          "size": "0x4"
+        },
+        "gBosTmTaskPool": {
+          "offset": "0x10",
+          "size": "0x14"
+        }
+      }
     }
   }
 }

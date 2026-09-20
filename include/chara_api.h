@@ -23,6 +23,7 @@ s32 func_080C6008(void);
 s32 func_080C60D8(void);
 void func_080C61D4(void);
 void func_080C640C(struct CharaObjParam2* param);
+u8 func_080C64A4(void);
 void func_080C6894(struct CharaObjParam* param);
 u8 func_080C69B4(void);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);

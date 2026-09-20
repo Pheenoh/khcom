@@ -6,8 +6,6 @@
 
 #include "world_intro_data.h"
 
-#include "boss_tm_data.h"
-
 #include "animation_resource_assets.h"
 
 #include "animation_resource_data.h"
@@ -24,7 +22,6 @@
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
-#include "boss_tm.h"
 #include "taskpool.h"
 #include "intr.h"
 #include "main.h"
@@ -423,27 +420,11 @@ typedef struct WlogoMonsWork {
     u8 unk_02E;
     u8 unk_02F;
 } WlogoMonsWork;
-typedef struct WlogoObjParam {
-    u32 tiles;
-    u16 unk_04;
-    u8 unk_06[0x02];
-    u32 palette;
-    u16 unk_0C;
-    u8 unk_0E[0x02];
-    s32 x;
-    s32 y;
-    s32 z;
-    void (*unk_1C)(void);
-    void* unk_20;
-} WlogoObjParam;
-
 extern s32 gUnk_0203AB38;
-extern u8 gUnk_09619C68[];
 extern WlogoHwtObjA gUnk_096194D0[];
 extern WlogoHwtObjB gUnk_09619530[][6];
 extern WlogoHwtObjB gUnk_096198D4[];
 extern WlogoPooObjStep gUnk_09619A04[][5];
-extern u8 gUnk_09619C94[];
 extern u8 gUnk_0961AA92[];
 extern u8 gUnk_0961B072[];
 extern u8 gUnk_0961C062[];
@@ -493,7 +474,6 @@ extern u8 gUnk_096BD464[];
 extern u8 gUnk_096BDC64[];
 extern u8 gUnk_096BE464[];
 extern u8 gUnk_096BEC64[];
-extern u8 gUnk_096BF464[];
 extern u8 gUnk_096FAC84[];
 extern u8 gUnk_096FACA4[];
 extern u8 gUnk_096FACC4[];
@@ -603,7 +583,6 @@ void func_080B5444(void);
 void WlogoEnableHBlank(void);
 void WlogoHBlankIntr(void);
 void WlogoDisableHBlank(void);
-s32 GetAbsoluteDifference(s32 a, s32 b);
 void task_wlogo_won_0(WlogoWonWork* work);
 u8 task_wlogo_won_1(WlogoWonWork* work);
 void task_wlogo_won_2(WlogoWonWork* work);
@@ -613,12 +592,5 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work);
 void task_wlogo_mons_2(WlogoMonsWork* work);
 void task_wlogo_mons_3(WlogoMonsWork* work);
 
-u8 func_080C64A4(void);
-void func_080B7E68(TmWork* w);
-void task_bos_tm_0(TmWork* w, BtlObj* arg);
-u8 task_bos_tm_1(TmWork* w);
-void task_bos_tm_2(TmWork* w);
-void task_bos_tm_3(TmWork* w);
-void func_080B82D4(void);
 
 #endif /* GUARD_WLOGO_H */
