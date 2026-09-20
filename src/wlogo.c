@@ -5,6 +5,10 @@
 #include "wlogo.h"
 #include "boss_tm_assets.h"
 
+extern const WlogoHwtObjA gUnk_096194D0[6];
+extern const WlogoHwtObjB gUnk_09619530[6][6];
+extern const WlogoHwtObjB gUnk_096198D4[4];
+
 extern WlogoWonEntry gUnk_09EF167C[];
 extern WlogoWonEntry gUnk_09EF1744[];
 extern s32 gUnk_09EF180C[];
@@ -2083,39 +2087,106 @@ void task_wlogo_bks_obj_3(WlogoBksObjWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-const char gTaskNameWlogoMons[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoMons"), aligned(1))) = "task_wlogo_mons";
+const char gTaskNameWlogoMons[] = "task_wlogo_mons";
 
-const char gTaskNameWlogoHwt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHwt"), aligned(1))) = "task_wlogo_hwt";
+const char gTaskNameWlogoHwt[] = "task_wlogo_hwt";
 
-const char gTaskNameWlogoHwtObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHwtObj"), aligned(1))) = "task_wlogo_hwt_obj";
+const WlogoHwtObjA gUnk_096194D0[6] = {
+    { 17920, 46080, 384, 1, { 0, 0, 0 } },
+    { 43520, 46080, 384, 0, { 0, 0, 0 } },
+    { 33280, 46080, 384, 1, { 0, 0, 0 } },
+    { 30720, 46080, 384, 0, { 0, 0, 0 } },
+    { 35840, 19200, 384, 1, { 0, 0, 0 } },
+    { 25600, 46080, 384, 0, { 0, 0, 0 } },
+};
 
-const char gTaskNameWlogoWon[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoWon"), aligned(1))) = "task_wlogo_won";
+const WlogoHwtObjB gUnk_09619530[6][6] = {
+    {
+        { 40, { 0, 0 }, 102, -1536, -2, 51, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, 51, 128, 2, 0, 0, { 0, 0, 0 } },
+        { 30, { 0, 0 }, 102, -768, -2, -25, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+    {
+        { 30, { 0, 0 }, -102, -1536, 2, 76, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, -51, 128, -2, 0, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, -102, -768, 2, -25, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+    {
+        { 30, { 0, 0 }, 102, -1536, 0, 51, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, 25, 128, 2, 0, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, 102, -768, 25, -51, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+    {
+        { 40, { 0, 0 }, -102, -1484, 0, 38, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, -25, 128, -2, 0, 0, { 0, 0, 0 } },
+        { 30, { 0, 0 }, -102, -768, -25, -51, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+    {
+        { 30, { 0, 0 }, 51, -512, 0, 25, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, 25, 76, 2, 0, 0, { 0, 0, 0 } },
+        { 30, { 0, 0 }, 51, -384, 5, -51, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+    {
+        { 120, { 0, 0 }, 0, -384, 0, -25, 1, { 0, 0, 0 } },
+        { 40, { 0, 0 }, -25, 128, -2, 0, 0, { 0, 0, 0 } },
+        { 40, { 0, 0 }, -51, -358, -25, -51, 1, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+        { 0, { 0, 0 }, 0, 0, 0, 0, 0, { 0, 0, 0 } },
+    },
+};
 
-const char gTaskNameWlogoAtl[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAtl"), aligned(1))) = "task_wlogo_atl";
+const char gTaskNameWlogoHwtObj[] = "task_wlogo_hwt_obj";
 
-const char gTaskNameWlogoNvl[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvl"), aligned(1))) = "task_wlogo_nvl";
+const char gTaskNameWlogoWon[] = "task_wlogo_won";
 
-const char gTaskNameWlogoNvlMov[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvlMov"), aligned(1))) = "task_wlogo_nvl_mov";
+const char gTaskNameWlogoAtl[] = "task_wlogo_atl";
 
-const char gTaskNameWlogoNvlObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoNvlObj"), aligned(1))) = "task_wlogo_nvl_obj";
+const char gTaskNameWlogoNvl[] = "task_wlogo_nvl";
 
-const char gTaskNameWlogoCol[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoCol"), aligned(1))) = "task_wlogo_col";
+const WlogoHwtObjB gUnk_096198D4[4] = {
+    { 20, { 0, 0 }, 768, 256, -5, -12, 0, { 0, 0, 0 } },
+    { 20, { 0, 0 }, 921, -51, -46, -25, 0, { 0, 0, 0 } },
+    { 20, { 0, 0 }, 0, -512, -46, 23, 0, { 0, 0, 0 } },
+    { 20, { 0, 0 }, -921, -115, 19, -5, 1, { 0, 0, 0 } },
+};
 
-const char gTaskNameWlogoHlw[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoHlw"), aligned(1))) = "task_wlogo_hlw";
+const char gTaskNameWlogoNvlMov[] = "task_wlogo_nvl_mov";
 
-const char gTaskNameWlogoDil[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoDil"), aligned(1))) = "task_wlogo_dil";
+const char gTaskNameWlogoNvlObj[] = "task_wlogo_nvl_obj";
 
-const char gTaskNameWlogoAgr[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgr"), aligned(1))) = "task_wlogo_agr";
+const char gTaskNameWlogoCol[] = "task_wlogo_col";
 
-const char gTaskNameWlogoAgrSmoke[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrSmoke"), aligned(1))) = "task_wlogo_agr_smoke";
+const char gTaskNameWlogoHlw[] = "task_wlogo_hlw";
 
-const char gTaskNameWlogoAgrFlash0[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrFlash0"), aligned(1))) = "task_wlogo_agr_flash0";
+const char gTaskNameWlogoDil[] = "task_wlogo_dil";
 
-const char gTaskNameWlogoAgrFlash1[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoAgrFlash1"), aligned(1))) = "task_wlogo_agr_flash1";
+const char gTaskNameWlogoAgr[] = "task_wlogo_agr";
 
-const char gTaskNameWlogoTvt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTvt"), aligned(1))) = "task_wlogo_tvt";
+const char gTaskNameWlogoAgrSmoke[] = "task_wlogo_agr_smoke";
 
-const char gTaskNameWlogoPoo[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoPoo"), aligned(1))) = "task_wlogo_poo";
+const char gTaskNameWlogoAgrFlash0[] = "task_wlogo_agr_flash0";
+
+const char gTaskNameWlogoAgrFlash1[] = "task_wlogo_agr_flash1";
+
+const char gTaskNameWlogoTvt[] = "task_wlogo_tvt";
+
+const char gTaskNameWlogoPoo[] = "task_wlogo_poo";
 
 const char gTaskNameWlogoPooObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoPooObj"), aligned(1))) = "task_wlogo_poo_obj";
 

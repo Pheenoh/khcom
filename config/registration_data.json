@@ -28,7 +28,8 @@
     "boogie_boundary": "The status UI functions end at StockMesDisp. The following ten Boogie lifecycle/helper functions, private work pointer, name and descriptor share boss_boogie.c. The final three formerly status-owned helpers operate only on BoogieDiceWork and now precede its callbacks in bos4.c. Their parent pointer is the BoogieWork passed by TaskCreate, while BoogieWork.dialog is the returned Task handle; the obsolete overlapping prefix-view type is removed. The original caller uses an unsigned switch for GetBoogieDiceState, supporting one canonical u32 return contract. Fresh sequential links of ordinary text/data/BSS preserve all three original regional layouts without extra alignment or padding. The intervening raw readonly table provider remains separate; this bounded source model does not claim its ownership is recovered.",
     "event_message_readonly": "The seven task names interleave scalar-only rendering tables used by event_message.c and card.c message rendering. The active C8C glyph table is exactly two halfwords: its reader copies four bytes and toggles index zero/one. The adjacent C90 four-halfword table is a bounded reconstruction assumption: four repeated 0x0800 values, compatible with neighboring four-position tables, and no aligned original-ROM pointer to any of its eight bytes in US, JP or EU. It is retained as a separate dormant object, without claiming a live use or uniquely proven original declaration. Shared table declarations are canonical const views in msg_api.h. Ordinary definitions reproduce the complete 217-byte readonly run and its original object order in every region.",
     "event_selector_readonly": "The final count helper func_08075064 is called only by mode_eventselect_1. It and the selector directly consume the two sentinel-terminated event-ID lists, with 146 and 48 IDs respectively. The five following debug strings are used only by that selector. These objects precede the existing selector name group. Moving the unchanged helper to the beginning of mode_eventselect.c preserves sequential code in all regions; ordinary readonly definitions preserve the 600-byte data run. Its native four-byte alignment supplies the three bytes after the preceding event_message View name, without an explicit alignment directive.",
-    "darkside_initialized_owner": "Eight Darkside task descriptors and seventeen map/tile-index definitions form one native 1148-byte initialized-data run in bos2.c in all three regions. The parent lifecycle creates the component tasks, every descriptor callback is defined in this owner, and its background helpers and map initializer directly consume both table groups. The storage-only bos2_background_data.c split is removed. All original types, bounds, initializers, regional asset selections and dormant pointer scalars are unchanged, including the explicit NULL initializer that AGBCC emits naturally in .data. No readonly name, Jafar data, RAM definition or source-code boundary changes. Actual background dimensions and Dsd state selectors retain the existing table-bound evidence; the separate suffix pointer scalars retain their original neutral representation and independently used asset targets. task_bos_dsd_map_0 passes exactly two by two map blocks, and every nonblank map target is a complete 32 by 32 u16 tilemap. Raw asset payloads remain untouched."
+    "darkside_initialized_owner": "Eight Darkside task descriptors and seventeen map/tile-index definitions form one native 1148-byte initialized-data run in bos2.c in all three regions. The parent lifecycle creates the component tasks, every descriptor callback is defined in this owner, and its background helpers and map initializer directly consume both table groups. The storage-only bos2_background_data.c split is removed. All original types, bounds, initializers, regional asset selections and dormant pointer scalars are unchanged, including the explicit NULL initializer that AGBCC emits naturally in .data. No readonly name, Jafar data, RAM definition or source-code boundary changes. Actual background dimensions and Dsd state selectors retain the existing table-bound evidence; the separate suffix pointer scalars retain their original neutral representation and independently used asset targets. task_bos_dsd_map_0 passes exactly two by two map blocks, and every nonblank map target is a complete 32 by 32 u16 tilemap. Raw asset payloads remain untouched.",
+    "wlogo_readonly_prefix": "The first seventeen Wlogo task names interleave three motion-configuration tables whose existing canonical structs are preserved. Hwt explicitly creates objects numbered zero through five; its pre-existing six-record motion-row stride fixes a six by six table, including the real zero and inactive command slots. Each live row terminates on its existing flag, and the initialization table contains the six matching object records. The Nvl motion sequence contains four records ending at the independently referenced task_wlogo_nvl_mov name. Its fourth record carries the stopping flag, but the callback still increments its index and performs the existing post-terminal field loads from the following bytes before later frames skip that branch. The four-record extent follows the next independent name, not a maximum runtime-read bound; the name is not absorbed or relabeled as a fifth record, and all existing loads remain byte-identical. All three table starts were existing fixed-address aliases; their independently bounded records meet the next table or task name exactly, and every byte agrees across US, JP and EU. Only Wlogo callbacks read their scalar fields; ordinary const definitions with private forward declarations reconstruct one native 1363-byte readonly prefix. Compiler alignment supplies the two former one-byte zero prefixes. The later Pooh motion span and six remaining task names keep their original raw/explicit placements because its additional zero records are not established by these readers. No new type, record extent, code boundary or asset payload is inferred."
   },
   "regions": {
     "us": {
@@ -1402,264 +1403,109 @@
         },
         {
           "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoMons",
-          "address": "0x096194B0",
-          "size": 16,
-          "sha256": "42008d36655fda716570a9fb39aff61ebd9d407f6ed58491d8d8c80c008887ad",
+          "section": ".rodata",
+          "address": "0x96194b0",
+          "size": 1363,
+          "sha256": "42f3e54b2be7c01ed62b7c2af2254a7ae9c2f3f7d51b2aea34eed30b25ba8419",
           "objects": [
             {
               "name": "gTaskNameWlogoMons",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwt",
-          "address": "0x096194C0",
-          "size": 15,
-          "sha256": "7e312bbd321175d40c1de51958a218c5dc2ff0ed6a97dd6954644f4bc4d695bb",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHwt",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwtObj",
-          "address": "0x09619890",
-          "size": 19,
-          "sha256": "e29f14421b8122839e1684cfa27816c4975380fbe57c2b847354ddcd55d4bf37",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096194D0",
+              "offset": 32,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09619530",
+              "offset": 128,
+              "size": 864
+            },
             {
               "name": "gTaskNameWlogoHwtObj",
-              "offset": 0,
+              "offset": 992,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoWon",
-          "address": "0x096198A4",
-          "size": 15,
-          "sha256": "c022036852f9e6165b13c96a55381ce62b45605abd036396e6679555b187b70f",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoWon",
-              "offset": 0,
+              "offset": 1012,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAtl",
-          "address": "0x096198B4",
-          "size": 15,
-          "sha256": "0acb48f61c7977e70204df54e5f04eec1d4f2c2e608b96586d1c9a2a2cded622",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAtl",
-              "offset": 0,
+              "offset": 1028,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvl",
-          "address": "0x096198C4",
-          "size": 15,
-          "sha256": "e6dd8359a09941cb46f2fd5eace976577396d239a9741cf498c3de9784b095c3",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvl",
-              "offset": 0,
+              "offset": 1044,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlMov",
-          "address": "0x09619934",
-          "size": 19,
-          "sha256": "9d1fc7bb9330d8793fcfcc1f3c23aff91b9eb39bfd3b5109a03e8cdd3b2ee4dd",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096198D4",
+              "offset": 1060,
+              "size": 96
+            },
             {
               "name": "gTaskNameWlogoNvlMov",
-              "offset": 0,
+              "offset": 1156,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlObj",
-          "address": "0x09619948",
-          "size": 19,
-          "sha256": "4ea095900e2513fac05c4550e92bee3111a2fc5021efad523ab2ba3396da3441",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvlObj",
-              "offset": 0,
+              "offset": 1176,
               "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoCol",
-          "address": "0x0961995C",
-          "size": 15,
-          "sha256": "e04c7714ba64c1310798d0eeb9dc06ea35658ac485d17bf011a8c7ee0fcbc8b0",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoCol",
-              "offset": 0,
+              "offset": 1196,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHlw",
-          "address": "0x0961996C",
-          "size": 15,
-          "sha256": "40ca61277a44af33ffa2376f490a43d2afab2511ca535c7a28ca04a5824d2d59",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHlw",
-              "offset": 0,
+              "offset": 1212,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoDil",
-          "address": "0x0961997C",
-          "size": 15,
-          "sha256": "1c42428ee9a4d42eb3e5e6821b94abf0aa1ce6f6d8d08df46ff05debc67a5f11",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoDil",
-              "offset": 0,
+              "offset": 1228,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgr",
-          "address": "0x0961998C",
-          "size": 15,
-          "sha256": "7a8997312bb996143e27a5c1f44fb4c875c3ae129c16719ffa3fd5d32bbc506d",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgr",
-              "offset": 0,
+              "offset": 1244,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrSmoke",
-          "address": "0x0961999C",
-          "size": 21,
-          "sha256": "7210cbcbf24dce174e14d1a1ea098edd4c999b9650508f7ca64633d0ed128b3c",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrSmoke",
-              "offset": 0,
+              "offset": 1260,
               "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash0",
-          "address": "0x096199B4",
-          "size": 22,
-          "sha256": "1e272f7e38ff38ed324563cbbbf69b5305e6efb51e234efe081654a7e7791316",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash0",
-              "offset": 0,
+              "offset": 1284,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash1",
-          "address": "0x096199CC",
-          "size": 22,
-          "sha256": "749545056081731bd4e54c0081dfafa63880929d3279f92a06cd7d65fcf10814",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash1",
-              "offset": 0,
+              "offset": 1308,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoTvt",
-          "address": "0x096199E4",
-          "size": 15,
-          "sha256": "c2ef2fa1a4bba59407e6d423aa6864bbf10a84c71c75b396aff19336f348d1ac",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoTvt",
-              "offset": 0,
+              "offset": 1332,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoPoo",
-          "address": "0x096199F4",
-          "size": 15,
-          "sha256": "b1426075fb19ce80e38e40272d4c4f39d6f49f298e7dcb2fb97aa58fe4b5a7d9",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoPoo",
-              "offset": 0,
+              "offset": 1348,
               "size": 15
             }
           ],
@@ -7947,264 +7793,109 @@
         },
         {
           "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoMons",
-          "address": "0x095D1F8C",
-          "size": 16,
-          "sha256": "42008d36655fda716570a9fb39aff61ebd9d407f6ed58491d8d8c80c008887ad",
+          "section": ".rodata",
+          "address": "0x95d1f8c",
+          "size": 1363,
+          "sha256": "42f3e54b2be7c01ed62b7c2af2254a7ae9c2f3f7d51b2aea34eed30b25ba8419",
           "objects": [
             {
               "name": "gTaskNameWlogoMons",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwt",
-          "address": "0x095D1F9C",
-          "size": 15,
-          "sha256": "7e312bbd321175d40c1de51958a218c5dc2ff0ed6a97dd6954644f4bc4d695bb",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHwt",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwtObj",
-          "address": "0x095D236C",
-          "size": 19,
-          "sha256": "e29f14421b8122839e1684cfa27816c4975380fbe57c2b847354ddcd55d4bf37",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096194D0",
+              "offset": 32,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09619530",
+              "offset": 128,
+              "size": 864
+            },
             {
               "name": "gTaskNameWlogoHwtObj",
-              "offset": 0,
+              "offset": 992,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoWon",
-          "address": "0x095D2380",
-          "size": 15,
-          "sha256": "c022036852f9e6165b13c96a55381ce62b45605abd036396e6679555b187b70f",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoWon",
-              "offset": 0,
+              "offset": 1012,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAtl",
-          "address": "0x095D2390",
-          "size": 15,
-          "sha256": "0acb48f61c7977e70204df54e5f04eec1d4f2c2e608b96586d1c9a2a2cded622",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAtl",
-              "offset": 0,
+              "offset": 1028,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvl",
-          "address": "0x095D23A0",
-          "size": 15,
-          "sha256": "e6dd8359a09941cb46f2fd5eace976577396d239a9741cf498c3de9784b095c3",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvl",
-              "offset": 0,
+              "offset": 1044,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlMov",
-          "address": "0x095D2410",
-          "size": 19,
-          "sha256": "9d1fc7bb9330d8793fcfcc1f3c23aff91b9eb39bfd3b5109a03e8cdd3b2ee4dd",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096198D4",
+              "offset": 1060,
+              "size": 96
+            },
             {
               "name": "gTaskNameWlogoNvlMov",
-              "offset": 0,
+              "offset": 1156,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlObj",
-          "address": "0x095D2424",
-          "size": 19,
-          "sha256": "4ea095900e2513fac05c4550e92bee3111a2fc5021efad523ab2ba3396da3441",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvlObj",
-              "offset": 0,
+              "offset": 1176,
               "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoCol",
-          "address": "0x095D2438",
-          "size": 15,
-          "sha256": "e04c7714ba64c1310798d0eeb9dc06ea35658ac485d17bf011a8c7ee0fcbc8b0",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoCol",
-              "offset": 0,
+              "offset": 1196,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHlw",
-          "address": "0x095D2448",
-          "size": 15,
-          "sha256": "40ca61277a44af33ffa2376f490a43d2afab2511ca535c7a28ca04a5824d2d59",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHlw",
-              "offset": 0,
+              "offset": 1212,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoDil",
-          "address": "0x095D2458",
-          "size": 15,
-          "sha256": "1c42428ee9a4d42eb3e5e6821b94abf0aa1ce6f6d8d08df46ff05debc67a5f11",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoDil",
-              "offset": 0,
+              "offset": 1228,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgr",
-          "address": "0x095D2468",
-          "size": 15,
-          "sha256": "7a8997312bb996143e27a5c1f44fb4c875c3ae129c16719ffa3fd5d32bbc506d",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgr",
-              "offset": 0,
+              "offset": 1244,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrSmoke",
-          "address": "0x095D2478",
-          "size": 21,
-          "sha256": "7210cbcbf24dce174e14d1a1ea098edd4c999b9650508f7ca64633d0ed128b3c",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrSmoke",
-              "offset": 0,
+              "offset": 1260,
               "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash0",
-          "address": "0x095D2490",
-          "size": 22,
-          "sha256": "1e272f7e38ff38ed324563cbbbf69b5305e6efb51e234efe081654a7e7791316",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash0",
-              "offset": 0,
+              "offset": 1284,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash1",
-          "address": "0x095D24A8",
-          "size": 22,
-          "sha256": "749545056081731bd4e54c0081dfafa63880929d3279f92a06cd7d65fcf10814",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash1",
-              "offset": 0,
+              "offset": 1308,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoTvt",
-          "address": "0x095D24C0",
-          "size": 15,
-          "sha256": "c2ef2fa1a4bba59407e6d423aa6864bbf10a84c71c75b396aff19336f348d1ac",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoTvt",
-              "offset": 0,
+              "offset": 1332,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoPoo",
-          "address": "0x095D24D0",
-          "size": 15,
-          "sha256": "b1426075fb19ce80e38e40272d4c4f39d6f49f298e7dcb2fb97aa58fe4b5a7d9",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoPoo",
-              "offset": 0,
+              "offset": 1348,
               "size": 15
             }
           ],
@@ -14414,264 +14105,109 @@
         },
         {
           "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoMons",
-          "address": "0x095DA8C4",
-          "size": 16,
-          "sha256": "42008d36655fda716570a9fb39aff61ebd9d407f6ed58491d8d8c80c008887ad",
+          "section": ".rodata",
+          "address": "0x95da8c4",
+          "size": 1363,
+          "sha256": "42f3e54b2be7c01ed62b7c2af2254a7ae9c2f3f7d51b2aea34eed30b25ba8419",
           "objects": [
             {
               "name": "gTaskNameWlogoMons",
               "offset": 0,
               "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwt",
-          "address": "0x095DA8D4",
-          "size": 15,
-          "sha256": "7e312bbd321175d40c1de51958a218c5dc2ff0ed6a97dd6954644f4bc4d695bb",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHwt",
-              "offset": 0,
+              "offset": 16,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHwtObj",
-          "address": "0x095DACA4",
-          "size": 19,
-          "sha256": "e29f14421b8122839e1684cfa27816c4975380fbe57c2b847354ddcd55d4bf37",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096194D0",
+              "offset": 32,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09619530",
+              "offset": 128,
+              "size": 864
+            },
             {
               "name": "gTaskNameWlogoHwtObj",
-              "offset": 0,
+              "offset": 992,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoWon",
-          "address": "0x095DACB8",
-          "size": 15,
-          "sha256": "c022036852f9e6165b13c96a55381ce62b45605abd036396e6679555b187b70f",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoWon",
-              "offset": 0,
+              "offset": 1012,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAtl",
-          "address": "0x095DACC8",
-          "size": 15,
-          "sha256": "0acb48f61c7977e70204df54e5f04eec1d4f2c2e608b96586d1c9a2a2cded622",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAtl",
-              "offset": 0,
+              "offset": 1028,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvl",
-          "address": "0x095DACD8",
-          "size": 15,
-          "sha256": "e6dd8359a09941cb46f2fd5eace976577396d239a9741cf498c3de9784b095c3",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvl",
-              "offset": 0,
+              "offset": 1044,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlMov",
-          "address": "0x095DAD48",
-          "size": 19,
-          "sha256": "9d1fc7bb9330d8793fcfcc1f3c23aff91b9eb39bfd3b5109a03e8cdd3b2ee4dd",
-          "objects": [
+            },
+            {
+              "name": "gUnk_096198D4",
+              "offset": 1060,
+              "size": 96
+            },
             {
               "name": "gTaskNameWlogoNvlMov",
-              "offset": 0,
+              "offset": 1156,
               "size": 19
-            }
-          ]
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoNvlObj",
-          "address": "0x095DAD5C",
-          "size": 19,
-          "sha256": "4ea095900e2513fac05c4550e92bee3111a2fc5021efad523ab2ba3396da3441",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoNvlObj",
-              "offset": 0,
+              "offset": 1176,
               "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoCol",
-          "address": "0x095DAD70",
-          "size": 15,
-          "sha256": "e04c7714ba64c1310798d0eeb9dc06ea35658ac485d17bf011a8c7ee0fcbc8b0",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoCol",
-              "offset": 0,
+              "offset": 1196,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoHlw",
-          "address": "0x095DAD80",
-          "size": 15,
-          "sha256": "40ca61277a44af33ffa2376f490a43d2afab2511ca535c7a28ca04a5824d2d59",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoHlw",
-              "offset": 0,
+              "offset": 1212,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoDil",
-          "address": "0x095DAD90",
-          "size": 15,
-          "sha256": "1c42428ee9a4d42eb3e5e6821b94abf0aa1ce6f6d8d08df46ff05debc67a5f11",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoDil",
-              "offset": 0,
+              "offset": 1228,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgr",
-          "address": "0x095DADA0",
-          "size": 15,
-          "sha256": "7a8997312bb996143e27a5c1f44fb4c875c3ae129c16719ffa3fd5d32bbc506d",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgr",
-              "offset": 0,
+              "offset": 1244,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrSmoke",
-          "address": "0x095DADB0",
-          "size": 21,
-          "sha256": "7210cbcbf24dce174e14d1a1ea098edd4c999b9650508f7ca64633d0ed128b3c",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrSmoke",
-              "offset": 0,
+              "offset": 1260,
               "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash0",
-          "address": "0x095DADC8",
-          "size": 22,
-          "sha256": "1e272f7e38ff38ed324563cbbbf69b5305e6efb51e234efe081654a7e7791316",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash0",
-              "offset": 0,
+              "offset": 1284,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoAgrFlash1",
-          "address": "0x095DADE0",
-          "size": 22,
-          "sha256": "749545056081731bd4e54c0081dfafa63880929d3279f92a06cd7d65fcf10814",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoAgrFlash1",
-              "offset": 0,
+              "offset": 1308,
               "size": 22
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoTvt",
-          "address": "0x095DADF8",
-          "size": 15,
-          "sha256": "c2ef2fa1a4bba59407e6d423aa6864bbf10a84c71c75b396aff19336f348d1ac",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoTvt",
-              "offset": 0,
+              "offset": 1332,
               "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "wlogo.c",
-          "section": ".rodata_registration_name_gTaskDescWlogoPoo",
-          "address": "0x095DAE08",
-          "size": 15,
-          "sha256": "b1426075fb19ce80e38e40272d4c4f39d6f49f298e7dcb2fb97aa58fe4b5a7d9",
-          "objects": [
+            },
             {
               "name": "gTaskNameWlogoPoo",
-              "offset": 0,
+              "offset": 1348,
               "size": 15
             }
           ],
