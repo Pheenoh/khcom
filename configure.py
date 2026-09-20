@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
+from assembler_flags import software_fp_flags
 from asset_objects import materialize_assets
 from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
 
@@ -250,6 +251,7 @@ if any(not path.is_file() for path in legacy_tools):
 version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
+raw_as_flags = software_fp_flags(f"{prefix}as")
 asset_gfx_mode = args.asset_gfx_mode
 asset_gfx_gap_195_mode = args.asset_gfx_gap_195_mode
 asset_gfx_gap_1_mode = args.asset_gfx_gap_1_mode
@@ -724,7 +726,7 @@ with out.open("w") as f:
     n.variable("agbcc", "tools/agbcc/bin/agbcc")
     n.variable(
         "asflags",
-        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -meabi=gnu -mfpu=softfpa -I . -I include",
+        f"{raw_as_flags} -I . -I include",
     )
     n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
     n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
