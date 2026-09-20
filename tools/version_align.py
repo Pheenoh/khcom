@@ -36,7 +36,7 @@ MATCH_BONUS = 8
 VOTER_MIN = 8
 TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
-MAP_RE = re.compile(r"^\s+(0x08[0-9a-f]{6})\s+(\S+)$")
+MAP_RE = re.compile(r"^\s+(0x0*8[0-9a-f]{6})\s+(\S+)$")
 
 
 def named(rom):
@@ -58,7 +58,7 @@ def us_functions(mapfile):
     owner = {}
     cur = None
     for line in Path(mapfile).read_text().splitlines():
-        m = re.match(r"^ \.text +0x08[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
+        m = re.match(r"^ \.text +0x0*8[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
         if m:
             cur = m.group(1)
             continue

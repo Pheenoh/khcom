@@ -250,6 +250,10 @@ legacy_tools = [Path("tools/legacy/bin/arm-elf-as"), Path("tools/legacy/lib/libg
 if any(not path.is_file() for path in legacy_tools):
     sys.exit("error: run python3 tools/setup_legacy_assembler.py before configuring")
 
+legacy_linker = Path("tools/legacy/bin/arm-elf-ld")
+if not legacy_linker.is_file():
+    sys.exit("error: run python3 tools/setup_legacy_linker.py before configuring")
+
 version = args.version
 code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
@@ -720,7 +724,7 @@ with out.open("w") as f:
     n.variable("as", f"{prefix}as")
     n.variable("legacy_as", "tools/legacy/bin/arm-elf-as")
     n.variable("legacy_asflags", "-marm7tdmi -mthumb-interwork -mno-fpu -I . -I include")
-    n.variable("ld", f"{prefix}ld")
+    n.variable("ld", str(legacy_linker))
     n.variable("ar", f"{prefix}ar")
     n.variable("objcopy", f"{prefix}objcopy")
     n.variable("cpp", f"{prefix}cpp")
@@ -909,7 +913,7 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript] + (["tools/regional_data.py", "tools/rom_data_evidence.py"]
+        implicit=[ldscript, str(legacy_linker)] + (["tools/regional_data.py", "tools/rom_data_evidence.py"]
                               + [str(path) for path in regional_files] if regional_files else []),
         variables={"ldscript": ldscript, "map": mapfile},
     )

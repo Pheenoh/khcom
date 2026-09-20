@@ -3418,13 +3418,13 @@ def main():
     owner = {}
     cur = None
     for line in Path("build/us/com_us.map").read_text().splitlines():
-        m = re.match(r"^ \.text +0x08[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
+        m = re.match(r"^ \.text +0x0*8[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
         if m:
             cur = m.group(1)
             continue
         if cur is None or "=" in line:
             continue
-        m = re.match(r"^ +0x08[0-9a-f]{6} +(\S+)$", line)
+        m = re.match(r"^ +0x0*8[0-9a-f]{6} +(\S+)$", line)
         if m:
             owner.setdefault(m.group(1), cur)
 
@@ -3610,7 +3610,7 @@ def main():
             return "absent"
         return addrs[len(addrs) // 2] if addrs else None
 
-    placed = re.compile(r"^ (\.[\w.]+) +0x(0[89][0-9a-f]{6}) +0x([0-9a-f]+) "
+    placed = re.compile(r"^ (\.[\w.]+) +0x(0*[89][0-9a-f]{6}) +0x([0-9a-f]+) "
                         r"build/us/src/(\S+)\.o$")
     spans = {}
     for line in Path("build/us/com_us.map").read_text().splitlines():

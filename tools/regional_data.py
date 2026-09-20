@@ -319,6 +319,11 @@ def validate_active_sections(plan, active, managed=()):
                          f'absent={sorted(absent)}, duplicate={sorted(duplicated)}')
 
 
+def linker_assertion(actual, expected, label):
+    value = f'(ABSOLUTE(. + {expected:#010x}) - ABSOLUTE(.))'
+    return f'__data_layout_valid = ABSOLUTE(ASSERT({actual} == {value}, "{label}"));'
+
+
 def linker_assertions(placement, after=False):
     label = placement['unit'] + '(' + placement['section'] + ')'
     address = placement['address'] + (placement['size'] if after else 0)
@@ -327,14 +332,14 @@ def linker_assertions(placement, after=False):
     position = 'ABSOLUTE(.)'
     if not after and placement.get('padding_before'):
         before = placement['address'] - placement['padding_before']
-        result.append(f'ASSERT(ABSOLUTE(.) == {before:#010x}, "regional alignment start: {label}");')
-        position = f'ABSOLUTE(ALIGN(., {placement["alignment_before"]}))'
-    result.append(f'ASSERT({position} == {address:#010x}, "regional data {edge}: {label}");')
+        result.append(linker_assertion('ABSOLUTE(.)', before, f'regional alignment start: {label}'))
+        position = f'ABSOLUTE(ALIGN({placement["alignment_before"]}))'
+    result.append(linker_assertion(position, address, f'regional data {edge}: {label}'))
     if after:
         for obj in placement['objects']:
             name = obj['name']
             address = placement['address'] + obj['offset']
-            result.append(f'ASSERT(ABSOLUTE({name}) == {address:#010x}, "regional data object: {name}");')
+            result.append(linker_assertion(f'ABSOLUTE({name})', address, f'regional data object: {name}'))
     return result
 
 
