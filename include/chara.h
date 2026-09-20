@@ -2,8 +2,6 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
-#include "chara_mask_data.h"
-
 #include "sio_battle_options_state.h"
 
 #include "sio_handshake_state.h"

@@ -94,20 +94,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "chara_mask_data.c",
-          "section": ".rodata_09EF2F08",
-          "address": "0x9ef2f08",
-          "size": 1440,
-          "sha256": "93bd316b10f1fc483059238947301c7d94759426c17499b2c8cfe6405f1f2254",
-          "objects": [
-            {
-              "name": "gUnk_09EF2F08",
-              "offset": 0,
-              "size": 1440
-            }
-          ]
         }
       ]
     },
@@ -201,20 +187,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "chara_mask_data.c",
-          "section": ".rodata_09EF2F08",
-          "address": "0x9eca2f4",
-          "size": 1440,
-          "sha256": "93bd316b10f1fc483059238947301c7d94759426c17499b2c8cfe6405f1f2254",
-          "objects": [
-            {
-              "name": "gUnk_09EF2F08",
-              "offset": 0,
-              "size": 1440
-            }
-          ]
         }
       ]
     },
@@ -306,20 +278,6 @@
               "name": "gUnk_09EF2E4C",
               "offset": 936,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "chara_mask_data.c",
-          "section": ".rodata_09EF2F08",
-          "address": "0x9f7e140",
-          "size": 1440,
-          "sha256": "93bd316b10f1fc483059238947301c7d94759426c17499b2c8cfe6405f1f2254",
-          "objects": [
-            {
-              "name": "gUnk_09EF2F08",
-              "offset": 0,
-              "size": 1440
             }
           ]
         }

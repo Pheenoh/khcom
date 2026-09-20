@@ -1,7 +1,8 @@
 {
   "version": 1,
   "provenance": {
-    "registrations": "Forty-three native TaskDesc records outside the card UI range, each independently corroborated by an exact ASCII name and unique tuple of all four real linked callback addresses in US/JP/EU. All records have equal work sizes in every region and are defined in the actual callback owner translation unit."
+    "registrations": "Forty-three native TaskDesc records outside the card UI range, each independently corroborated by an exact ASCII name and unique tuple of all four real linked callback addresses in US/JP/EU. All records have equal work sizes in every region and are defined in the actual callback owner translation unit.",
+    "chara_mask_owner": "The mask-fade callbacks in chara.c consume five variants of nine 32-byte frames, establishing the complete 1440-byte mask table. Its original high-ROM position directly precedes the two Chara task descriptors in every region, while both task names belong to a separate lower-ROM readonly run. Commit 34b9492b introduced the table const qualifier together with a recovery-only readonly section; the preceding declaration was mutable u8[]. This reconstruction assumes ordinary initialized byte storage, rather than observed mutation, so the unchanged mask and two descriptors form one native 1488-byte data section. All table bytes, object extents, names, code, relocations and RAM are preserved."
   },
   "regions": {
     "us": {
@@ -90,18 +91,23 @@
         {
           "unit": "chara.c",
           "section": ".data",
-          "address": "0x9ef34a8",
-          "size": 48,
-          "sha256": "bae54a27055cd206a186d4f45100b316f27b63ae259bdbc551a501bdf032798a",
+          "address": "0x9ef2f08",
+          "size": 1488,
+          "sha256": "8319bfa28d0b9041f57a38ef80eddb79053db228bcc88e400cfd5494d4a26548",
           "objects": [
             {
-              "name": "gUnk_09EF34A8",
+              "name": "gUnk_09EF2F08",
               "offset": 0,
+              "size": 1440
+            },
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 1440,
               "size": 24
             },
             {
               "name": "gTaskDescChgCardObj",
-              "offset": 24,
+              "offset": 1464,
               "size": 24
             }
           ]
@@ -1160,18 +1166,23 @@
         {
           "unit": "chara.c",
           "section": ".data",
-          "address": "0x9eca894",
-          "size": 48,
-          "sha256": "065441817f6d8792015fd7ace84d9e3240d74981dceec7c675643f8614e55dad",
+          "address": "0x9eca2f4",
+          "size": 1488,
+          "sha256": "9ca5f9154c65ac79db958d5aeb4cc5da63ea886d9cb97f784944937e6a0da64d",
           "objects": [
             {
-              "name": "gUnk_09EF34A8",
+              "name": "gUnk_09EF2F08",
               "offset": 0,
+              "size": 1440
+            },
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 1440,
               "size": 24
             },
             {
               "name": "gTaskDescChgCardObj",
-              "offset": 24,
+              "offset": 1464,
               "size": 24
             }
           ]
@@ -2230,18 +2241,23 @@
         {
           "unit": "chara.c",
           "section": ".data",
-          "address": "0x9f7e6e0",
-          "size": 48,
-          "sha256": "04c6bedaa7355910da73606f9dde7941827ba53fc3f649fc380854f075e8215d",
+          "address": "0x9f7e140",
+          "size": 1488,
+          "sha256": "5c20fcdadb261e9f7bf2f770ae9271aa9507dcb0eb76fa26993ef4b76168f199",
           "objects": [
             {
-              "name": "gUnk_09EF34A8",
+              "name": "gUnk_09EF2F08",
               "offset": 0,
+              "size": 1440
+            },
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 1440,
               "size": 24
             },
             {
               "name": "gTaskDescChgCardObj",
-              "offset": 24,
+              "offset": 1464,
               "size": 24
             }
           ]
