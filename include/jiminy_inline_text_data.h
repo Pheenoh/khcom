@@ -5,6 +5,12 @@
 
 #ifdef VERSION_EU
 
+extern JiminyLocalizedName gUnkEu_0888E364;
+extern JiminyLocalizedName gUnkEu_0888E3A0;
+extern JiminyLocalizedName gUnkEu_0888E410;
+extern JiminyLocalizedName gUnkEu_0888E450;
+extern JiminyLocalizedName gUnkEu_0888E4C0;
+
 extern JiminyTextChar gUnkEu_0888E310[14];
 extern JiminyTextChar gUnkEu_0888E31E[18];
 extern JiminyTextChar gUnkEu_0888E330[19];

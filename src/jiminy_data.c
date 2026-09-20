@@ -12982,26 +12982,6 @@ JiminyLocalizedText gUnkEu_0887AD44 __attribute__((section(".rodata_jiminy_text_
     0
 };
 
-JiminyLocalizedName gUnkEu_0888E364 __attribute__((section(".rodata_jiminy_name_270"))) = {
-    { gUnkEu_0888E310, gUnkEu_0888E31E, gUnkEu_0888E330, gUnkEu_0888E343, gUnkEu_0888E355 }
-};
-
-JiminyLocalizedName gUnkEu_0888E3A0 __attribute__((section(".rodata_jiminy_name_271"))) = {
-    { gUnkEu_0888E378, gUnkEu_0888E380, gUnkEu_0888E388, gUnkEu_0888E390, gUnkEu_0888E398 }
-};
-
-JiminyLocalizedName gUnkEu_0888E410 __attribute__((section(".rodata_jiminy_name_272"))) = {
-    { gUnkEu_0888E3B4, gUnkEu_0888E3BF, gUnkEu_0888E3D3, gUnkEu_0888E3DE, gUnkEu_0888E3F8 }
-};
-
-JiminyLocalizedName gUnkEu_0888E450 __attribute__((section(".rodata_jiminy_name_273"))) = {
-    { gUnkEu_0888E424, gUnkEu_0888E42C, gUnkEu_0888E434, gUnkEu_0888E43C, gUnkEu_0888E446 }
-};
-
-JiminyLocalizedName gUnkEu_0888E4C0 __attribute__((section(".rodata_jiminy_name_274"))) = {
-    { gUnkEu_0888E464, gUnkEu_0888E473, gUnkEu_0888E486, gUnkEu_0888E495, gUnkEu_0888E4AB }
-};
-
 JiminyLocalizedName gUnkEu_0888E530 __attribute__((section(".rodata_jiminy_name_275"))) = {
     { gUnkEu_0888E4D4, gUnkEu_0888E4E5, gUnkEu_0888E4F9, gUnkEu_0888E50A, gUnkEu_0888E51A }
 };
