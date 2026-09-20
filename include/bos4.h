@@ -4,7 +4,7 @@
 
 
 
-#include "map_world_text_data.h"
+#include "map_text_data.h"
 
 #include "animation_resource_data.h"
 

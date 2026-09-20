@@ -123,8 +123,8 @@ void task_monsgage_3(MonsgageWork* work) {
 #endif
 
 #ifdef VERSION_EU
-void* eu_0805E924(void* strings) {
-    void** s = strings;
+void* eu_0805E924(const void* strings) {
+    void* const* s = strings;
 
     switch (gLanguage) {
     case 3:

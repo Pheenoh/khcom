@@ -24,7 +24,7 @@ void task_monsgage_2(MonsgageWork* work);
 void task_monsgage_3(MonsgageWork* work);
 
 #ifdef VERSION_EU
-void* eu_0805E924(void* strings);
+void* eu_0805E924(const void* strings);
 void* eu_0805E968(void* text);
 s32 eu_0805E9AC(void* text);
 void eu_0805E9F0(MonsgageWork* work);

@@ -1,7 +1,7 @@
 #ifndef GUARD_GAME_H
 #define GUARD_GAME_H
 
-#include "map_world_text_data.h"
+#include "map_text_data.h"
 
 #include "bos2_background_data.h"
 

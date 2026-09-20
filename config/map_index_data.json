@@ -1,9 +1,10 @@
 {
   "version": 1,
   "provenance": {
-    "bounds": "The two world-level offsets contain 14 meaningful native bytes each and end at independently referenced next arrays. The world event array contains 14 nonzero or 0xFF entries followed by two zero alignment bytes, which are not owned here. The random world selector explicitly uses modulo 13; both 13-byte world selectors retain their independent physical bases and leave their one-byte zero tails outside their object extents. Fourteen actual world-text pointers end at the level-offset table. The native map-generation dispatch contains 14 distinct boolean callbacks; the script interpreter has exactly two command handlers. The map-check dispatcher has 10 callback slots and ends at its following Mode record. Native function targets and all regional literal references are checked separately.",
+    "bounds": "The two world-level offsets contain 14 meaningful native bytes each and end at independently referenced next arrays. The world event array contains 14 nonzero or 0xFF entries followed by two zero alignment bytes, which are not owned here. The random world selector explicitly uses modulo 13. Both world selectors use an inferred capacity of 14 bytes: thirteen existing values and one implicit zero. Their original starts are fourteen bytes apart in every region, followed by the fourteen-pointer world-name table. The extra slot is a source-capacity assumption rather than a proven runtime access. Fourteen actual world-text pointers end at the level-offset table. The native map-generation dispatch contains 14 distinct boolean callbacks; the script interpreter has exactly two command handlers. The map-check dispatcher has 10 callback slots and ends at its following Mode record. Native function targets and all regional literal references are checked separately.",
     "types": "The map-generation callbacks return only 0 or 1 and have no direct source callers. Their definitions use u8, matching the established u8 function-pointer table and eliminating incompatible callback types. Existing body bytes and relocations must remain unchanged. World names use the established version-native MapNameText rather than integer addresses.",
-    "mapcheck_owner": "The fifteen consecutive functions from func_080DDEC8 through Mode_MapChk_2 form the closed map-check control and lifecycle group in every region. Its two state pointers have no other source consumers. The preceding Ursula BSS followed directly by ordinary private MapChk BSS reproduces every original address with four-byte alignment. The two bounded label arrays, ten-callback dispatcher and Mode record form one native initialized-data run of 128 bytes, while the twelve-byte mode name occupies native readonly data. Pointer-array top-level const was introduced during data recovery, not established from the originals; ordinary mutable pointer arrays preserve the original low-readonly/high-initialized organization while keeping character pointees const. This storage qualification is inferred from that native organization, not from observed writes. The following fifty map-runtime functions retain their existing trailing boundary and world-table placements; this split does not establish their original boundary with map.c."
+    "mapcheck_owner": "The fifteen consecutive functions from func_080DDEC8 through Mode_MapChk_2 form the closed map-check control and lifecycle group in every region. Its two state pointers have no other source consumers. The preceding Ursula BSS followed directly by ordinary private MapChk BSS reproduces every original address with four-byte alignment. The two bounded label arrays, ten-callback dispatcher and Mode record form one native initialized-data run of 128 bytes, while the twelve-byte mode name occupies native readonly data. Pointer-array top-level const was introduced during data recovery, not established from the originals; ordinary mutable pointer arrays preserve the original low-readonly/high-initialized organization while keeping character pointees const. This storage qualification is inferred from that native organization, not from observed writes. The following fifty map-runtime functions retain their existing trailing boundary; this split does not establish their original boundary with map.c.",
+    "map_runtime_native": "The paired selectors and world-name pointer array belong to the same existing map-runtime implementation: world setup reads the first selector, random world selection reads the second, and world-name lookup reads the pointer array. They now use ordinary initialized data in their original order. Recovery commit 913eb657 inferred thirteen-byte selector extents from the observed modulo-13 access and separated the following zero bytes; earlier headers had unsized const declarations. The revised model treats the pair as fourteen-slot initialized arrays with unchanged thirteen-value initializers and implicit spare zeros. Mutable selector storage is inferred from the complete native initialized-data run beside the pointer array, not from observed writes or a uniquely established original qualifier. The EU-only five-language world-name wrapper is read-only and naturally occupies the separate original low-ROM readonly location. Its const view propagates through the pointer array and the read-only language selector API. No complete original boundary between map_runtime.c and map.c is claimed."
   },
   "regions": {
     "us": {
@@ -39,42 +40,24 @@
         },
         {
           "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69E0",
+          "section": ".data",
           "address": "0x9ef69e0",
-          "size": 13,
-          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "size": 84,
+          "sha256": "d85dda84bafc80542a0800944088d0edcc3b61393684221b0241c6146408c954",
           "objects": [
             {
               "name": "gUnk_09EF69E0",
               "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69EE",
-          "address": "0x9ef69ee",
-          "size": 13,
-          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
-          "objects": [
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69EE",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data_gUnk_09EF69FC",
-          "address": "0x9ef69fc",
-          "size": 56,
-          "sha256": "31b91472ac6c6bcddff468aeff3b24013ae43c54359aeb0d870b67d83fa912c2",
-          "objects": [
+              "offset": 14,
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69FC",
-              "offset": 0,
+              "offset": 28,
               "size": 56
             }
           ]
@@ -192,42 +175,24 @@
         },
         {
           "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69E0",
+          "section": ".data",
           "address": "0x9ecddcc",
-          "size": 13,
-          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "size": 84,
+          "sha256": "3ddcf02ecda4aaa7f349e379ed2623da158532177a6acca8a5275b509d4e8fc7",
           "objects": [
             {
               "name": "gUnk_09EF69E0",
               "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69EE",
-          "address": "0x9ecddda",
-          "size": 13,
-          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
-          "objects": [
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69EE",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data_gUnk_09EF69FC",
-          "address": "0x9ecdde8",
-          "size": 56,
-          "sha256": "92214ca304aaf5e46967fe47f781bf5cfafe6b2fc5a9cbf09e1916bd2690ee3c",
-          "objects": [
+              "offset": 14,
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69FC",
-              "offset": 0,
+              "offset": 28,
               "size": 56
             }
           ]
@@ -316,7 +281,7 @@
       "placements": [
         {
           "unit": "map_runtime.c",
-          "section": ".data_gMapWorldNameEu_088926FC",
+          "section": ".rodata",
           "address": "0x88926fc",
           "size": 20,
           "sha256": "bd6e133583cfc69e633e7e415036e442ad4840c3aa150d28a79f413dab47ea0f",
@@ -359,42 +324,24 @@
         },
         {
           "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69E0",
+          "section": ".data",
           "address": "0x9f82050",
-          "size": 13,
-          "sha256": "5213ff05d02a179daebae03dc5365b0b37eec806afd9651b9befe545359f466a",
+          "size": 84,
+          "sha256": "09475b108e08043e171aee1c71a06b043e024699f0ad0e6aef54050daca377a6",
           "objects": [
             {
               "name": "gUnk_09EF69E0",
               "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".rodata_gUnk_09EF69EE",
-          "address": "0x9f8205e",
-          "size": 13,
-          "sha256": "e15467948497b8316487a0ba1ffebba5eefb19b57d7db9fa9004c64b45ce07f5",
-          "objects": [
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69EE",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data_gUnk_09EF69FC",
-          "address": "0x9f8206c",
-          "size": 56,
-          "sha256": "7be7a9558322ccae41980a1c82c036cae7f32f58c2b1b468f8bb18dc036146a5",
-          "objects": [
+              "offset": 14,
+              "size": 14
+            },
             {
               "name": "gUnk_09EF69FC",
-              "offset": 0,
+              "offset": 28,
               "size": 56
             }
           ]

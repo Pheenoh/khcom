@@ -9,11 +9,13 @@
 #include "bos4.h"
 #include "bos4_api.h"
 #include "map_runtime.h"
+#include "map_text_data.h"
 
 extern UnkStruct_0984C868 gUnk_0984C868[];
 extern UnkStruct_0984C868 gUnk_0984CBD0[];
-extern const u8 gUnk_09EF69E0[];
-extern const u8 gUnk_09EF69EE[];
+extern u8 gUnk_09EF69E0[];
+extern u8 gUnk_09EF69EE[];
+extern const MapNameText* gUnk_09EF69FC[];
 
 u8 func_080DEBAC(u8 a) {
     switch (a) {
@@ -757,7 +759,7 @@ u8 func_080DF750(void) {
 
 u32 func_080DF804(u8 index) {
 #ifdef VERSION_EU
-    return (u32)eu_0805E924((void*)gUnk_09EF69FC[index]);
+    return (u32)eu_0805E924(gUnk_09EF69FC[index]);
 #else
     return (u32)gUnk_09EF69FC[index];
 #endif
@@ -1118,10 +1120,10 @@ s32 func_080DFE7C(s32 x, s32 y, s32 z) {
 }
 
 #ifdef VERSION_EU
-LocalizedText gMapWorldNameEu_088926FC __attribute__((section(".data_gMapWorldNameEu_088926FC"))) = {{gMapWorldNameTextEu_08892680, gMapWorldNameTextEu_08892696, gMapWorldNameTextEu_088926AC, gMapWorldNameTextEu_088926C9, gMapWorldNameTextEu_088926E0}};
+const LocalizedText gMapWorldNameEu_088926FC = {{gMapWorldNameTextEu_08892680, gMapWorldNameTextEu_08892696, gMapWorldNameTextEu_088926AC, gMapWorldNameTextEu_088926C9, gMapWorldNameTextEu_088926E0}};
 #endif
 
-const u8 gUnk_09EF69E0[13] __attribute__((section(".rodata_gUnk_09EF69E0"))) = {
+u8 gUnk_09EF69E0[14] = {
     12,
     3,
     4,
@@ -1137,7 +1139,7 @@ const u8 gUnk_09EF69E0[13] __attribute__((section(".rodata_gUnk_09EF69E0"))) = {
     12,
 };
 
-const u8 gUnk_09EF69EE[13] __attribute__((section(".rodata_gUnk_09EF69EE"))) = {
+u8 gUnk_09EF69EE[14] = {
     1,
     2,
     4,
@@ -1153,7 +1155,7 @@ const u8 gUnk_09EF69EE[13] __attribute__((section(".rodata_gUnk_09EF69EE"))) = {
     18,
 };
 
-MapNameText* gUnk_09EF69FC[14] __attribute__((section(".data_gUnk_09EF69FC"))) = {
+const MapNameText* gUnk_09EF69FC[14] = {
 #if defined(VERSION_US)
     gMapWorldNameTextUs_0815B57A,
     gUnk_0815A56C,
