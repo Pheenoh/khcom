@@ -1,3 +1,4 @@
+#include "mode_deck.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_sprite_data.h"
@@ -418,7 +419,6 @@ extern u8 gUnk_096FBE04[];
 extern u8 gUnk_096FBE24[];
 extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
-extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
 
 void mode_sio_btl_connect_0(s32 arg);

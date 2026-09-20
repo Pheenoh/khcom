@@ -14,7 +14,6 @@ extern TaskDesc gTaskDescBtlHpoth;
 extern TaskDesc gTaskDescTutorial;
 extern Mode gModeMovie;
 extern TaskDesc gTaskDescLockon;
-extern Mode gModeContinue;
 extern TaskDesc gTaskDescEventSeq;
 extern TaskDesc gTaskDescEventChara;
 extern TaskDesc gTaskDescMsgwin;
@@ -682,8 +681,6 @@ extern const char gTaskName_09EF9E8C[];
 extern const char gTaskName_09EF9EF4[];
 
 extern const char gModeNameEvent[];
-extern Mode gUnk_09EE273C;
-extern Mode gUnk_09EE274C;
 
 extern Mode gUnk_09EE4BA0;
 extern const char gUnk_090359BC[];

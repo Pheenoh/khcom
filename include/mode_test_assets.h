@@ -5,8 +5,6 @@
 
 #ifndef VERSION_EU
 #endif
-extern const char gModeNameDeck[10];
-extern const char gTaskNameMenu[5];
 extern u8 gUnk_08F6E190[];
 extern u8 gUnk_08F6F190[];
 extern u8 gUnk_08F70AAC[3];

@@ -54,22 +54,6 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-typedef struct EvtArg {
-    u32 unk_00 : 8;
-    u32 unk_08 : 8;
-    u32 unk_10 : 16;
-} EvtArg;
-
-typedef struct MenuWork {
-    void* tiles;
-    void* palette;
-    s32 x;
-    s32 y;
-    u8 unk_10;
-    u8 unk_11;
-    u8 unk_12[0x02];
-} MenuWork;
-
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
     u8 unk_7A;
@@ -165,23 +149,9 @@ u8 func_0805F8F0(u8 a);
 void func_0805F904(void);
 void func_0805FB78(s32 a);
 void func_0805FB84(u8 x, u8 y, u32 c, u8 v);
-void func_08060A74(void);
-void func_08060AD8(void);
-void func_08060BAC(void);
-void menu_0(MenuWork* w);
-u8 menu_1(MenuWork* w);
-void menu_2(MenuWork* w);
-void menu_3(MenuWork* w);
-void func_08060ED8(void);
-void func_08060F1C(void);
-void func_08060F64(void);
 void task_lockon_0(LockonWork* w);
 s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
 u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
-void Event_0(s32 arg);
-void func_0806119C(void);
-void Event_2(void);
-void func_08061248(void);
 void func_08062D3C(void);
 void func_0806250C(void);
 void func_08062CE4(void);

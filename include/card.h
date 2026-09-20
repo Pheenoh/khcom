@@ -1,3 +1,4 @@
+#include "mode_deck.h"
 #include "card_keyboard_data.h"
 #include "card_keyboard_text.h"
 #include "boss_card_data.h"
@@ -1290,7 +1291,6 @@ extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_0908C3CE[];
-extern Mode gUnk_09EE2704;
 extern u8 gUnk_09501778[];
 extern u8 gUnk_09618C38[];
 extern u8 gUnk_0960F2B8[];

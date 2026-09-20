@@ -1,3 +1,4 @@
+#include "mode_event.h"
 #include "continue_data.h"
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
@@ -306,8 +307,6 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
-extern TaskPool gUnk_02034A60;
-extern u32 gUnk_02034A78;
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CA8[];

@@ -1,3 +1,4 @@
+#include "mode_continue.h"
 #include "registration_data.h"
 #include "map_api.h"
 #include "msg_api.h"

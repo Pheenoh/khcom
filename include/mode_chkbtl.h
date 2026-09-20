@@ -1,3 +1,4 @@
+#include "mode_deck.h"
 #include "task_descriptors.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_CHKBTL_H
@@ -49,7 +50,6 @@ extern u16 gUnk_02039B90;
 extern const ChkBtlEntry gChkBtlEntries[];
 extern const ChkBtlWorld gChkBtlWorlds[];
 extern ChkBtlWork* gChkBtlWork;
-extern Mode gUnk_09EE2704;
 extern const char gWhitePalette[32];
 
 #endif /* GUARD_MODE_CHKBTL_H */

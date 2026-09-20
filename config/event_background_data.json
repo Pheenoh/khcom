@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "event_background_grids": "EventBackgroundDef objects selected by gUnk_09EE3CA0 in event_seq_0/event_seq_1/eu_0806C734/eu_0806C7C8/eu_0806C848 have map pointers at offsets12/16/20 and width/height bytes30/31. SetBgMapBlocks and its EU compressed counterpart consume width*height pointer cells. All62 unique rooted descriptors preserve the114 selected grid starts, dimensions and reference topology across US/JP/EU. Shared starts use their largest independently referenced dimensions; intervening unrooted bytes are not included.",
-    "event_modes": "Both16-byte Mode records have unique complete Event_0/update/Event_2 callback tuples and the exact bounded ASCII name Event in each regional ROM."
+    "event_modes": "Both16-byte Mode records have unique complete Event_0/update/Event_2 callback tuples and the exact bounded ASCII name Event in each regional ROM.",
+    "mode_tail_ownership": "Deck/menu, Continue and Event callback groups each reproduce their native code, name, initialized-data and BSS runs in all three original ROMs. The shared event ID is unsigned as established by the original message-handler switch branches."
   },
   "regions": {
     "us": {
@@ -2179,11 +2180,11 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE273C",
+          "unit": "mode_event.c",
+          "section": ".data",
           "address": "0x9ee273c",
-          "size": 16,
-          "sha256": "067809ac3ce574b458035806978e861da5dd5c152fbdb7f28ed4aa5be7412a3e",
+          "size": 32,
+          "sha256": "7956933f29e7d4930f8c01427db1f4f2163801bf47a59d872d66d12ef11cbcb9",
           "objects": [
             {
               "name": "gUnk_09EE273C",
@@ -2194,19 +2195,10 @@
                 "func_0806119C",
                 "Event_2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE274C",
-          "address": "0x9ee274c",
-          "size": 16,
-          "sha256": "a3e53e59a53c22a9a740121d9c0296d7d1162950c7320a913217de31c0772f31",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE274C",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "Event_0",
@@ -2217,8 +2209,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_Event",
+          "unit": "mode_event.c",
+          "section": ".rodata",
           "address": "0x8f7d430",
           "size": 6,
           "sha256": "05304ce8160e79d99c577e96de5c55557d34999684d7c729984a9d5581d70e48",
@@ -4412,11 +4404,11 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE273C",
+          "unit": "mode_event.c",
+          "section": ".data",
           "address": "0x9eba1b8",
-          "size": 16,
-          "sha256": "d802983521639096a498c743c80119b2761a44ad8d6934d7453bc7a65edee4a1",
+          "size": 32,
+          "sha256": "67d37b3ecc88e9b9f1d33a37063214f9b507c98487decaffb46dfd0c46415c10",
           "objects": [
             {
               "name": "gUnk_09EE273C",
@@ -4427,19 +4419,10 @@
                 "func_0806119C",
                 "Event_2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE274C",
-          "address": "0x9eba1c8",
-          "size": 16,
-          "sha256": "ce10328ae75c75d39e50442fac1adeb380fa8496167efb6862a369e5104dc7be",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE274C",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "Event_0",
@@ -4450,8 +4433,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_Event",
+          "unit": "mode_event.c",
+          "section": ".rodata",
           "address": "0x8f70938",
           "size": 6,
           "sha256": "05304ce8160e79d99c577e96de5c55557d34999684d7c729984a9d5581d70e48",
@@ -6645,11 +6628,11 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE273C",
+          "unit": "mode_event.c",
+          "section": ".data",
           "address": "0x9f5d6ec",
-          "size": 16,
-          "sha256": "e2a8b0ef8b5d4aba7f08bdf0defae4547c62f7f38a092c4b25638ac7b2c332d1",
+          "size": 32,
+          "sha256": "f1cc7f4a837ab8c110c0de88f60366667d18300bc03f01ea3a50d65c7f3b8e35",
           "objects": [
             {
               "name": "gUnk_09EE273C",
@@ -6660,19 +6643,10 @@
                 "func_0806119C",
                 "Event_2"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gUnk_09EE274C",
-          "address": "0x9f5d6fc",
-          "size": 16,
-          "sha256": "029b5d7991b5fe894abb6ed8bb3a4129c3911aeac1f93425ca46f988a7144513",
-          "objects": [
+            },
             {
               "name": "gUnk_09EE274C",
-              "offset": 0,
+              "offset": 16,
               "size": 16,
               "consumer": [
                 "Event_0",
@@ -6683,8 +6657,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_Event",
+          "unit": "mode_event.c",
+          "section": ".rodata",
           "address": "0x8f8e32c",
           "size": 6,
           "sha256": "05304ce8160e79d99c577e96de5c55557d34999684d7c729984a9d5581d70e48",

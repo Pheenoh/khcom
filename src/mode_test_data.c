@@ -9,10 +9,6 @@ u8* gUnk_09EE26F8 __attribute__((section(".data_fonts"))) = gUnk_08F70AA8;
 u8* gUnk_09EE26FC __attribute__((section(".data_fonts"))) = gUnk_08F70AA4;
 u8* gUnk_09EE2700 __attribute__((section(".data_fonts"))) = gUnk_08F70AA0;
 
-Mode gUnk_09EE2704 __attribute__((section(".data_deck_menu"))) = { gModeNameDeck, (void (*)(s32))func_08060A74, func_08060AD8, func_08060BAC };
-
-TaskDesc gUnk_09EE2714 __attribute__((section(".data_deck_menu"))) = { gTaskNameMenu, (void (*)(void*, void*))menu_0, menu_1, (void (*)(void*))menu_2, (void (*)(void*))menu_3, sizeof(MenuWork) };
-
 #ifdef VERSION_EU
 void* gUnkEu_09F5D574[5] __attribute__((section(".data_eu_card_labels"))) = { gUnkEu_091078AE, gUnkEu_0910DD2E, gUnkEu_09121002, gUnkEu_0911AB16, gUnkEu_09114860 };
 void** gUnkEu_09F5D588[5] __attribute__((section(".data_eu_card_labels"))) = { gUnkEu_09F753D0, gUnkEu_09F75498, gUnkEu_09F756F0, gUnkEu_09F75628, gUnkEu_09F75560 };

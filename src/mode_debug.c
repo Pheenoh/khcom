@@ -1,3 +1,4 @@
+#include "mode_continue.h"
 #include "mode_battle_data.h"
 #include "movie_debug.h"
 #include "registration_data.h"

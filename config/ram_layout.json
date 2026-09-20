@@ -471,7 +471,7 @@
       "sections": [
         {
           "base": "0x2034a14",
-          "size": "0x69",
+          "size": "0x1c",
           "symbols": {
             "gUnk_02034A14": {
               "offset": "0x0",
@@ -504,38 +504,6 @@
             "gUnk_02034A2C": {
               "offset": "0x18",
               "size": "0x4"
-            },
-            "gUnk_02034A30": {
-              "offset": "0x1c",
-              "size": "0x14"
-            },
-            "gUnk_02034A44": {
-              "offset": "0x30",
-              "size": "0x1"
-            },
-            "gUnk_02034A48": {
-              "offset": "0x34",
-              "size": "0x14"
-            },
-            "gUnk_02034A5C": {
-              "offset": "0x48",
-              "size": "0x4"
-            },
-            "gUnk_02034A60": {
-              "offset": "0x4c",
-              "size": "0x14"
-            },
-            "gUnk_02034A74": {
-              "offset": "0x60",
-              "size": "0x1"
-            },
-            "gUnk_02034A78": {
-              "offset": "0x64",
-              "size": "0x4"
-            },
-            "gUnk_02034A7C": {
-              "offset": "0x68",
-              "size": "0x1"
             }
           }
         },
@@ -551,6 +519,56 @@
           }
         }
       ]
+    },
+    "src/mode_deck.o": {
+      "base": "0x2034a30",
+      "size": "0x15",
+      "symbols": {
+        "gUnk_02034A30": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A44": {
+          "offset": "0x14",
+          "size": "0x1"
+        }
+      }
+    },
+    "src/mode_continue.o": {
+      "base": "0x2034a48",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_02034A48": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A5C": {
+          "offset": "0x14",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_event.o": {
+      "base": "0x2034a60",
+      "size": "0x1d",
+      "symbols": {
+        "gUnk_02034A60": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A74": {
+          "offset": "0x14",
+          "size": "0x1"
+        },
+        "gUnk_02034A78": {
+          "offset": "0x18",
+          "size": "0x4"
+        },
+        "gUnk_02034A7C": {
+          "offset": "0x1c",
+          "size": "0x1"
+        }
+      }
     },
     "src/msg.o": {
       "sections": [
@@ -1760,7 +1778,7 @@
       "sections": [
         {
           "base": "0x2034970",
-          "size": "0x6d",
+          "size": "0x20",
           "symbols": {
             "gUnkJp_0203498C": {
               "offset": "0x1c",
@@ -1797,38 +1815,6 @@
             "gUnk_02034A2C": {
               "offset": "0x18",
               "size": "0x4"
-            },
-            "gUnk_02034A30": {
-              "offset": "0x20",
-              "size": "0x14"
-            },
-            "gUnk_02034A44": {
-              "offset": "0x34",
-              "size": "0x1"
-            },
-            "gUnk_02034A48": {
-              "offset": "0x38",
-              "size": "0x14"
-            },
-            "gUnk_02034A5C": {
-              "offset": "0x4c",
-              "size": "0x4"
-            },
-            "gUnk_02034A60": {
-              "offset": "0x50",
-              "size": "0x14"
-            },
-            "gUnk_02034A74": {
-              "offset": "0x64",
-              "size": "0x1"
-            },
-            "gUnk_02034A78": {
-              "offset": "0x68",
-              "size": "0x4"
-            },
-            "gUnk_02034A7C": {
-              "offset": "0x6c",
-              "size": "0x1"
             }
           }
         },
@@ -1844,6 +1830,56 @@
           }
         }
       ]
+    },
+    "src/mode_deck.o": {
+      "base": "0x2034990",
+      "size": "0x15",
+      "symbols": {
+        "gUnk_02034A30": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A44": {
+          "offset": "0x14",
+          "size": "0x1"
+        }
+      }
+    },
+    "src/mode_continue.o": {
+      "base": "0x20349a8",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_02034A48": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A5C": {
+          "offset": "0x14",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_event.o": {
+      "base": "0x20349c0",
+      "size": "0x1d",
+      "symbols": {
+        "gUnk_02034A60": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A74": {
+          "offset": "0x14",
+          "size": "0x1"
+        },
+        "gUnk_02034A78": {
+          "offset": "0x18",
+          "size": "0x4"
+        },
+        "gUnk_02034A7C": {
+          "offset": "0x1c",
+          "size": "0x1"
+        }
+      }
     },
     "src/msg.o": {
       "sections": [
@@ -3038,7 +3074,7 @@
       "sections": [
         {
           "base": "0x2034a34",
-          "size": "0x69",
+          "size": "0x1c",
           "symbols": {
             "gUnk_02034A14": {
               "offset": "0x0",
@@ -3071,38 +3107,6 @@
             "gUnk_02034A2C": {
               "offset": "0x18",
               "size": "0x4"
-            },
-            "gUnk_02034A30": {
-              "offset": "0x1c",
-              "size": "0x14"
-            },
-            "gUnk_02034A44": {
-              "offset": "0x30",
-              "size": "0x1"
-            },
-            "gUnk_02034A48": {
-              "offset": "0x34",
-              "size": "0x14"
-            },
-            "gUnk_02034A5C": {
-              "offset": "0x48",
-              "size": "0x4"
-            },
-            "gUnk_02034A60": {
-              "offset": "0x4c",
-              "size": "0x14"
-            },
-            "gUnk_02034A74": {
-              "offset": "0x60",
-              "size": "0x1"
-            },
-            "gUnk_02034A78": {
-              "offset": "0x64",
-              "size": "0x4"
-            },
-            "gUnk_02034A7C": {
-              "offset": "0x68",
-              "size": "0x1"
             }
           }
         },
@@ -3118,6 +3122,56 @@
           }
         }
       ]
+    },
+    "src/mode_deck.o": {
+      "base": "0x2034a50",
+      "size": "0x15",
+      "symbols": {
+        "gUnk_02034A30": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A44": {
+          "offset": "0x14",
+          "size": "0x1"
+        }
+      }
+    },
+    "src/mode_continue.o": {
+      "base": "0x2034a68",
+      "size": "0x18",
+      "symbols": {
+        "gUnk_02034A48": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A5C": {
+          "offset": "0x14",
+          "size": "0x4"
+        }
+      }
+    },
+    "src/mode_event.o": {
+      "base": "0x2034a80",
+      "size": "0x1d",
+      "symbols": {
+        "gUnk_02034A60": {
+          "offset": "0x0",
+          "size": "0x14"
+        },
+        "gUnk_02034A74": {
+          "offset": "0x14",
+          "size": "0x1"
+        },
+        "gUnk_02034A78": {
+          "offset": "0x18",
+          "size": "0x4"
+        },
+        "gUnk_02034A7C": {
+          "offset": "0x1c",
+          "size": "0x1"
+        }
+      }
     },
     "src/msg.o": {
       "sections": [

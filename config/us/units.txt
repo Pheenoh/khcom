@@ -55,6 +55,9 @@ movie_text.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c -O2 -fprologue-bugfix
 mode_test_support.c -O2 -fprologue-bugfix -fno-common
+mode_deck.c -O2 -fprologue-bugfix -fno-common
+mode_continue.c -O2 -fprologue-bugfix -fno-common
+mode_event.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card_battle.c -O2 -fprologue-bugfix -fno-common
@@ -208,9 +211,9 @@ asset_gfx_gap_2_at_08F70AA0.s(.rodata)
 card_def_data.c(.data_card_defs)
 card_label_data.c(.data_card_effect_labels)
 card_label_data.c(.data_card_sprite_frames)
-asset_gfx_gap_2_at_08F7D410.s(.rodata)
-mode_test_support.c(.rodata_registration_name_gModeContinue)
-mode_test_support.c(.rodata_registration_name_Event)
+mode_deck.c(.rodata)
+mode_continue.c(.rodata)
+mode_event.c(.rodata)
 asset_gfx_gap_3_at_08F7D436.s(.rodata)
 boss_card_data.c(.data_boss_card_recipes)
 boss_card_data.c(.data_boss_card_counts)
@@ -1765,10 +1768,9 @@ battle_localized_data.c(.data_09EE25D0)
 animation_resource_data.c(.data_09EE2690)
 mode_test_support.c(.data_registration_gTaskDescLockon)
 mode_test_data.c(.data_fonts)
-mode_test_data.c(.data_deck_menu)
-mode_test_support.c(.data_registration_gModeContinue)
-mode_test_support.c(.data_registration_gUnk_09EE273C)
-mode_test_support.c(.data_registration_gUnk_09EE274C)
+mode_deck.c(.data)
+mode_continue.c(.data)
+mode_event.c(.data)
 boss_card_data.c(.data_boss_card_recipe_index)
 msg.c(.data_registration_gUnk_09EE2834)
 msg.c(.data_registration_gUnk_09EE284C)

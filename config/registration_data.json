@@ -7,7 +7,8 @@
     "pooh_animation": "mode_sio2.c func_080C7FEC has explicit action cases and direction helpers: C7CC8/C7D60 select 0..4, C7DF8 selects 0..7, C7E98 selects 0..1, and C7F18 selects 1/3. The canonical 4048[][5] row stride and C7CC8 row0..4 prove 5x5 records; the direction lookup normal outputs cover columns0..4 and its sentinel preserves the cached direction selection. Single-action branches become scalar objects. The fifth physical3FF8 record is a separate neutral scalar4038, not an asserted used array entry. All scalar bytes and complete record layouts match across US/JP/EU.",
     "poo_native_data": "All 51 Pooh task descriptors directly reference callbacks in poo.c. The three 144-entry const-u16-pointer indexes feed task_poo_map_0 and func_080CA36C and remain shared with three event-background records through poo_background_data.h. The five 16-byte butterfly records are AnimDef metadata selected by func_080D1FB8 and read by func_080D2034. In US, JP and EU the descriptors, background indexes and butterfly table form one uninterrupted initialized-data run in callback-family order. Ordinary definitions in poo.c reproduce its entire 0xBD8-byte range, every object offset and all relocations. The butterfly table uses native mutable storage, consistent with this data run; its consumer retains a const view. The former custom readonly placement did not establish original const qualification. Lower motion, point, cabbage and name placements are unchanged pending separate source-boundary evidence.",
     "world_logo_owner": "The nine world-logo selector and task callbacks form a separate final code run in mode_sio.c. Their two private selector tables, two registration records and two aligned names form complete native data and rodata groups across US, JP and EU. The 13-entry world-name and logo-ID bounds come from the selector wrap logic. Native alignment supplies the three bytes after the logo-ID array and the one byte between names.",
-    "sio_menu_owner": "All remaining SIO mode descriptors reference callbacks in mode_sio.c, and its world-menu, level-offset and card-trade navigation tables are referenced only by those callbacks and helpers. Six descriptors and four tables form one complete native initialized-data run in US/JP; EU omits the two card-trade descriptors and their navigation table. Original ROM order, object extents, relocations and contents remain independently checked. The separate name sections include intervening UI data and are not merged."
+    "sio_menu_owner": "All remaining SIO mode descriptors reference callbacks in mode_sio.c, and its world-menu, level-offset and card-trade navigation tables are referenced only by those callbacks and helpers. Six descriptors and four tables form one complete native initialized-data run in US/JP; EU omits the two card-trade descriptors and their navigation table. Original ROM order, object extents, relocations and contents remain independently checked. The separate name sections include intervening UI data and are not merged.",
+    "mode_tail_ownership": "Deck/menu, Continue and Event callback groups each reproduce their native code, name, initialized-data and BSS runs in all three original ROMs. The shared event ID is unsigned as established by the original message-handler switch branches."
   },
   "regions": {
     "us": {
@@ -215,8 +216,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".rodata",
           "address": "0x08F7D424",
           "size": 9,
           "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
@@ -226,11 +227,13 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".data",
           "address": "0x09EE272C",
           "size": 16,
           "sha256": "8906da329b7e401ee0d3352c04e792e0a765268f9a2fa4ae2dccf87c64ddf564",
@@ -7817,8 +7820,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".rodata",
           "address": "0x08F7092C",
           "size": 9,
           "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
@@ -7828,11 +7831,13 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".data",
           "address": "0x09EBA1A8",
           "size": 16,
           "sha256": "e6e998e5d1ce093cf6af3e05e4d98b215a6ccb54e7d746760e198e6266a71fb5",
@@ -15391,8 +15396,8 @@
           ]
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".rodata_registration_name_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".rodata",
           "address": "0x08F8E320",
           "size": 9,
           "sha256": "1569eae389775395111bd96ac2430f3e6cd982bc6e02ca97f00cbeb0d4193087",
@@ -15402,11 +15407,13 @@
               "offset": 0,
               "size": 9
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
-          "unit": "mode_test_support.c",
-          "section": ".data_registration_gModeContinue",
+          "unit": "mode_continue.c",
+          "section": ".data",
           "address": "0x09F5D6DC",
           "size": 16,
           "sha256": "1faae07332fcaf99e6d40a3485f77e33e27f8bdf4ba9c151d20b20e1a51a9123",

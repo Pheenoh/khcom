@@ -1,3 +1,4 @@
+#include "mode_deck.h"
 #include "task_descriptors.h"
 #include "card_def_data.h"
 #include "aux_animation_data.h"
@@ -1442,7 +1443,6 @@ s32 func_080F2E4C(MapGmkGpWork* w);
 s32 func_080F3108(MapGmkGp8Work* w);
 s32 func_080F30C4(MapGmkGp8Work* w);
 void func_080E4B34(void);
-extern Mode gUnk_09EE2704;
 void RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
 s32 func_080ECAC8(UnkStruct_080ECA88* p);
