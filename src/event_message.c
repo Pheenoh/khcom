@@ -28,6 +28,67 @@ extern u8 gUnkEu_0919B63A[];
 #define LANGSTR(x) (x)
 #endif
 
+const char gTaskNameEventSeq[] = "event_seq";
+
+const char gTaskNameEventChara[] = "event_chara";
+
+const u16 gUnk_09033C8C[2] = {
+    145, 167,
+};
+
+const u16 gUnk_09033C90[4] = {
+    2048, 2048, 2048, 2048,
+};
+
+const u16 gUnk_09033C98[4] = {
+    0, 0, 255, 255,
+};
+
+const u16 gUnk_09033CA0[4] = {
+    255, 255, 0, 0,
+};
+
+const s32 gUnk_09033CA8[4] = {
+    4096, 4096, 18432, 18432,
+};
+
+const s32 gUnk_09033CB8[4] = {
+    3584, 28160, 3584, 28160,
+};
+
+const char gTaskNameMsgwin[] = "msgwin";
+
+const s32 gUnk_09033CD0[4] = {
+    114944, 114944, -76544, -76544,
+};
+
+const s32 gUnk_09033CE0[4] = {
+    52736, 52736, 9216, 9216,
+};
+
+const s32 gUnk_09033CF0[4] = {
+    14336, 32768, 14336, 32768,
+};
+
+const char gTaskNameMsgface[] = "msgface";
+
+const s32 gUnk_09033D08[4][2] = {
+    {26112, 15872},
+    {26112, 40448},
+    {36864, 15872},
+    {36864, 40448},
+};
+
+const s32 gUnk_09033D28[2] = {
+    16128, 19968,
+};
+
+const char gTaskNameMsgwait[] = "msgwait";
+
+const char gTaskNameMsgwaitYesno[] = "msgwait_yesno";
+
+const char gTaskNameView[] = "view";
+
 EventScanlineScroll* gUnk_02039DCC;
 
 
@@ -4840,25 +4901,7 @@ void func_08075010(EventCameraWork* p) {
     }
 }
 
-s16 func_08075064(u8 a) {
-    s16 n = 0;
 
-    switch (a) {
-    case 0:
-        while (gUnk_09033D50[n] != -1) {
-            n++;
-        }
-        break;
-    case 1:
-        while (gUnk_09033E76[n] != -1) {
-            n++;
-        }
-        break;
-    }
-    return n;
-}
-
-const char gTaskNameEventSeq[] __attribute__((section(".rodata_registration_name_gTaskDescEventSeq"), aligned(1))) = "event_seq";
 
 TaskDesc gTaskDescEventSeq = {
     gTaskNameEventSeq,
@@ -4873,7 +4916,6 @@ TaskDesc gTaskDescEventSeq = {
 #endif
 };
 
-const char gTaskNameEventChara[] __attribute__((section(".rodata_registration_name_gTaskDescEventChara"), aligned(1))) = "event_chara";
 
 TaskDesc gTaskDescEventChara = {
     gTaskNameEventChara,
@@ -4898,7 +4940,6 @@ void* gUnk_09EE4724[4] = {
     gUnk_09EE4704[3],
 };
 
-const char gTaskNameMsgwin[] __attribute__((section(".rodata_registration_name_gTaskDescMsgwin"), aligned(1))) = "msgwin";
 
 TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
@@ -4909,10 +4950,7 @@ TaskDesc gTaskDescMsgwin = {
     0x44,
 };
 
-const char gTaskNameMsgface[] __attribute__((section(".rodata_registration_name_gTaskDescMsgface"), aligned(1))) = "msgface";
 
-const char gTaskNameMsgwait[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwait"), aligned(1))) = "msgwait";
-const char gTaskNameMsgwaitYesno[] __attribute__((section(".rodata_registration_name_gTaskNameMsgwaitYesno"), aligned(1))) = "msgwait_yesno";
 
 TaskDesc gTaskDescMsgface[3] = {
     {
@@ -4941,7 +4979,6 @@ TaskDesc gTaskDescMsgface[3] = {
     },
 };
 
-const char gTaskNameView[] __attribute__((section(".rodata_registration_name_gTaskDescView"), aligned(1))) = "view";
 
 TaskDesc gTaskDescView = {
     gTaskNameView,

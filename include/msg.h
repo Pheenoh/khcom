@@ -298,16 +298,8 @@ typedef struct TextGlyphSprite {
 } TextGlyphSprite;
 
 extern EventState* gUnk_02039DC8;
-extern u16 gUnk_09033C8C[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
-extern u16 gUnk_09033C98[];
-extern u16 gUnk_09033CA0[];
-extern s32 gUnk_09033CA8[];
-extern s32 gUnk_09033CB8[];
-extern s32 gUnk_09033CD0[];
-extern s32 gUnk_09033CE0[];
-extern s32 gUnk_09033CF0[];
 extern u32 gFrameCounter;
 
 extern u8 gUnk_09614718[];
@@ -316,9 +308,6 @@ extern u8 gUnk_09614758[];
 extern u8 gUnk_09614778[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_096147B8[];
-extern s32 gUnk_09033D08[][2];
-extern s16 gUnk_09033D50[];
-extern s16 gUnk_09033E76[];
 extern u8 gUnk_090D4180[];
 extern s32 gUnk_09033758[];
 extern u8 gUnk_050001C0[];
@@ -342,7 +331,6 @@ extern u16 gUnk_08159E10[];
 extern u16 gUnk_08159E18[];
 extern u16 gUnk_08F7D438[];
 extern u8 gUnk_090CBFB2[];
-extern s32 gUnk_09033D28[];
 extern EventCharaParams gUnk_0903380C[];
 
 void _08065994(void);

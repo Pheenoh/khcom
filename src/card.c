@@ -389,8 +389,6 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d);
 #ifdef VERSION_JP
 u8 func_0806BDB8(s32 x, s32 y, s32 s, s32* d);
 #endif
-extern s32 gUnk_09033CA8[];
-extern s32 gUnk_09033CB8[];
 u8 func_080A4010(UnkStruct_080A3F5C* w, void* a);
 
 u8 func_080782AC(CardDisplayWork** p, u8 n) {

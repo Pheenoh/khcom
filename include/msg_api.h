@@ -37,6 +37,15 @@ void func_0806BA0C(s16 v, u8* out);
 u16 func_0806BA74(s32 mode, s32 flag);
 void func_0806C2C0(u8 n);
 void func_0806C34C(void);
-s16 func_08075064(u8 a);
+
+extern const u16 gUnk_09033C98[4];
+extern const u16 gUnk_09033CA0[4];
+extern const s32 gUnk_09033CA8[4];
+extern const s32 gUnk_09033CB8[4];
+extern const s32 gUnk_09033CD0[4];
+extern const s32 gUnk_09033CE0[4];
+extern const s32 gUnk_09033CF0[4];
+extern const s32 gUnk_09033D08[4][2];
+extern const s32 gUnk_09033D28[2];
 
 #endif

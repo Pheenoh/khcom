@@ -107,13 +107,6 @@ extern s16 gUnk_0903380C[][6];
 extern u8 gUnk_093215CA[];
 extern u8 gUnk_09321804[];
 extern const char gUnk_08F70990[];
-extern const char gUnk_09033ED8[];
-extern const char gUnk_09033EDC[];
-extern const char gUnk_09033EE0[];
-extern const char gUnk_09033EF8[];
-extern const char gUnk_09033F10[];
-extern s16 gUnk_09033D50[];
-extern s16 gUnk_09033E76[];
 #ifdef VERSION_EU
 extern Mode gUnkEu_09F5D6EC;
 #endif
@@ -174,5 +167,7 @@ void Event_Debug_0(u8* work);
 s32 Event_Debug_1(u8* work);
 void Event_Debug_2(u8* work);
 void Event_Debug_3(s32* p);
+
+s16 func_08075064(u8 a);
 
 #endif

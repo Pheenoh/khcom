@@ -281,13 +281,6 @@ extern TaskDesc gTaskDescSrollCChar;
 
 extern const char gTaskNameLockon[];
 extern const char gModeNameContinue[];
-extern const char gTaskNameEventSeq[];
-extern const char gTaskNameEventChara[];
-extern const char gTaskNameMsgwin[];
-extern const char gTaskNameMsgface[];
-extern const char gTaskNameMsgwait[];
-extern const char gTaskNameMsgwaitYesno[];
-extern const char gTaskNameView[];
 extern const char gModeNameEventselect[];
 extern const char gTaskNameHanabira[];
 extern const char gTaskNameHanabiraC[];

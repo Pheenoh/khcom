@@ -25,7 +25,9 @@
     "sio_readonly_owner": "The SIO modes index exactly two and three existing SioAnimDef records; their pointer fields reference the same typed animation resources used by these callbacks. Both tables are read only and have no consumers outside mode_sio.c. They interleave the six mode names in US/JP; EU omits the card-exchange table and two names, and instead has two terminated byte-encoded Deck labels read by the Latin text loader. Ordinary const records, names and character-list byte arrays reproduce each complete original readonly group and every relocation target. The compiler aligns string initializers to four bytes but retains the natural byte alignment of array initializers, explaining the adjacent EU labels without extra bytes or section attributes. Obsolete raw metadata fragments and fixed-address aliases are removed; record bounds, label extents, code, RAM and encoded assets are preserved.",
     "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects form one native 1556-byte initialized-data run in map.c across all regions. Definitions retain original types, bounds, initializer values and regional guards except that the three fourteen-byte level-offset/event arrays use mutable byte storage. Their old const declarations came from decompilation (89d03418 for level offsets and 474e8dcb for event bytes); recovery commit 47811f02 introduced the definitions and custom readonly sections. Mutable spelling is a reconstruction of the native initialized-data organization, not evidence of observed writes. The two floor-name indexes are read by the floor-task helper named by the final task descriptor; the underscore belongs to the map-debug initializer and remains present but unused by the EU renderer. These three objects move from the artificial map_text_data.c storage split into those consumers, with EU localized records retained under shared canonical declarations. Callback descriptors, table references, native compiler offsets and complete regional object/content contracts corroborate the organization. Lower-ROM names and localized text records retain their placements, and this does not assert a complete original source boundary with map_runtime.c or resolve all remaining readonly sections.",
     "allmap_readonly_geometry": "The original 32-byte coordinate span is reconstructed as two const signed-halfword tables of four x/y pairs. func_080D484C indexes the first four-pair rectangle while drawing the four door overlays. The next four pairs form a complete centered 32-pixel square in every original ROM, followed by this same owner's four-direction offset and direction-selection tables. History c4bf64c6 declared only an unsized array, so no prior C extent establishes an eight-entry array. The second four-pair table retains the address-style name gUnk_096FDC20. Assigning this dormant but geometrically complete table to the same owner is an explicit source-organization inference; no live use or uniquely recovered original array boundary is claimed. Original ROM scans find no direct pointer to any byte of the second table. Ordinary definitions place the four earlier names, both coordinate tables and the existing readonly suffix in one 218-byte section. All original bytes, existing object extents, code, relocations and RAM are unchanged, and the former absolute coordinate alias and raw data fragment are removed.",
-    "boogie_boundary": "The status UI functions end at StockMesDisp. The following ten Boogie lifecycle/helper functions, private work pointer, name and descriptor share boss_boogie.c. The final three formerly status-owned helpers operate only on BoogieDiceWork and now precede its callbacks in bos4.c. Their parent pointer is the BoogieWork passed by TaskCreate, while BoogieWork.dialog is the returned Task handle; the obsolete overlapping prefix-view type is removed. The original caller uses an unsigned switch for GetBoogieDiceState, supporting one canonical u32 return contract. Fresh sequential links of ordinary text/data/BSS preserve all three original regional layouts without extra alignment or padding. The intervening raw readonly table provider remains separate; this bounded source model does not claim its ownership is recovered."
+    "boogie_boundary": "The status UI functions end at StockMesDisp. The following ten Boogie lifecycle/helper functions, private work pointer, name and descriptor share boss_boogie.c. The final three formerly status-owned helpers operate only on BoogieDiceWork and now precede its callbacks in bos4.c. Their parent pointer is the BoogieWork passed by TaskCreate, while BoogieWork.dialog is the returned Task handle; the obsolete overlapping prefix-view type is removed. The original caller uses an unsigned switch for GetBoogieDiceState, supporting one canonical u32 return contract. Fresh sequential links of ordinary text/data/BSS preserve all three original regional layouts without extra alignment or padding. The intervening raw readonly table provider remains separate; this bounded source model does not claim its ownership is recovered.",
+    "event_message_readonly": "The seven task names interleave scalar-only rendering tables used by event_message.c and card.c message rendering. The active C8C glyph table is exactly two halfwords: its reader copies four bytes and toggles index zero/one. The adjacent C90 four-halfword table is a bounded reconstruction assumption: four repeated 0x0800 values, compatible with neighboring four-position tables, and no aligned original-ROM pointer to any of its eight bytes in US, JP or EU. It is retained as a separate dormant object, without claiming a live use or uniquely proven original declaration. Shared table declarations are canonical const views in msg_api.h. Ordinary definitions reproduce the complete 217-byte readonly run and its original object order in every region.",
+    "event_selector_readonly": "The final count helper func_08075064 is called only by mode_eventselect_1. It and the selector directly consume the two sentinel-terminated event-ID lists, with 146 and 48 IDs respectively. The five following debug strings are used only by that selector. These objects precede the existing selector name group. Moving the unchanged helper to the beginning of mode_eventselect.c preserves sequential code in all regions; ordinary readonly definitions preserve the 600-byte data run. Its native four-byte alignment supplies the three bytes after the preceding event_message View name, without an explicit alignment directive."
   },
   "regions": {
     "us": {
@@ -289,146 +291,208 @@
         },
         {
           "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventSeq",
+          "section": ".rodata",
           "address": "0x09033C74",
-          "size": 10,
-          "sha256": "b4ffdcea264fd4ba647e556ea10e6e1bbcae5111707161edcc6c4cc120f4d063",
+          "size": 217,
+          "sha256": "b2f6d86b242df2ccd9ab7fbb2af6654a0280d21aa6d9a5d72e1550f3005d0b50",
           "objects": [
             {
               "name": "gTaskNameEventSeq",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventChara",
-          "address": "0x09033C80",
-          "size": 12,
-          "sha256": "3e29cf1b1b741873596cdaa4daf07e22301abcd834f475f5c870883ee664dc63",
-          "objects": [
+            },
             {
               "name": "gTaskNameEventChara",
-              "offset": 0,
+              "offset": 12,
               "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgwin",
-          "address": "0x09033CC8",
-          "size": 7,
-          "sha256": "001a2a99a19152f8252e37f12255164e777377762a0d2a4a1450e2eeb40e26b4",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033C8C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09033C90",
+              "offset": 28,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033C98",
+              "offset": 36,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA0",
+              "offset": 44,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA8",
+              "offset": 52,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CB8",
+              "offset": 68,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgwin",
-              "offset": 0,
+              "offset": 84,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgface",
-          "address": "0x09033D00",
-          "size": 8,
-          "sha256": "b5bbfd400a6e1fb3b5e3c9a26572f4d19c2132d305c7c1b23b41ec5552142aa3",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033CD0",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CE0",
+              "offset": 108,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CF0",
+              "offset": 124,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgface",
-              "offset": 0,
+              "offset": 140,
               "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescView",
-          "address": "0x09033D48",
-          "size": 5,
-          "sha256": "37334a86ed463b26141af658e9c356d3711eb1417454a98d63230080dd19af3a",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033D08",
+              "offset": 148,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09033D28",
+              "offset": 180,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwait",
+              "offset": 188,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwaitYesno",
+              "offset": 196,
+              "size": 14
+            },
             {
               "name": "gTaskNameView",
-              "offset": 0,
+              "offset": 212,
               "size": 5
             }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
+          ]
         },
         {
           "unit": "mode_eventselect.c",
           "section": ".rodata",
-          "address": "0x09033F1C",
-          "size": 140,
-          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
+          "address": "0x09033D50",
+          "size": 600,
+          "sha256": "e86aa3067951f4f722b53ec9a9d6e5432c010c69bd4a2795db698f6b0ec82c27",
           "objects": [
             {
-              "name": "gModeNameEventselect",
+              "name": "gUnk_09033D50",
               "offset": 0,
+              "size": 294
+            },
+            {
+              "name": "gUnk_09033E76",
+              "offset": 294,
+              "size": 98
+            },
+            {
+              "name": "gUnk_09033ED8",
+              "offset": 392,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EDC",
+              "offset": 396,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EE0",
+              "offset": 400,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033EF8",
+              "offset": 424,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033F10",
+              "offset": 448,
+              "size": 9
+            },
+            {
+              "name": "gModeNameEventselect",
+              "offset": 460,
               "size": 17
             },
             {
               "name": "gTaskNameHanabira",
-              "offset": 20,
+              "offset": 480,
               "size": 9
             },
             {
               "name": "gTaskNameHanabiraC",
-              "offset": 32,
+              "offset": 492,
               "size": 11
             },
             {
               "name": "gTaskNameSmoke",
-              "offset": 44,
+              "offset": 504,
               "size": 6
             },
             {
               "name": "gTaskNameExclamation",
-              "offset": 52,
+              "offset": 512,
               "size": 12
             },
             {
               "name": "gTaskNameBalloon",
-              "offset": 64,
+              "offset": 524,
               "size": 8
             },
             {
               "name": "gTaskNameQuestion",
-              "offset": 72,
+              "offset": 532,
               "size": 9
             },
             {
               "name": "gTaskNameGlowNose",
-              "offset": 84,
+              "offset": 544,
               "size": 9
             },
             {
               "name": "gTaskNameDown",
-              "offset": 96,
+              "offset": 556,
               "size": 5
             },
             {
               "name": "gTaskNameTinkerbell",
-              "offset": 104,
+              "offset": 564,
               "size": 11
             },
             {
               "name": "gTaskNameEvSound",
-              "offset": 116,
+              "offset": 576,
               "size": 9
             },
             {
               "name": "gTaskName_09EE48DC",
-              "offset": 128,
+              "offset": 588,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -5783,34 +5847,6 @@
           "padding_before": 2
         },
         {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwait",
-          "address": "0x09033D30",
-          "size": 8,
-          "sha256": "665c13dceebf9edbf5d480504079b35eca8c9eb34a781c5006bd7ca9522de7f5",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwait",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
-          "address": "0x09033D38",
-          "size": 14,
-          "sha256": "8e596cfa527b11c6987d08788cd57a1b364668a459689425557ff3340ae271fa",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwaitYesno",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
           "unit": "card.c",
           "section": ".data_registration_gTaskDescNumberPlus",
           "address": "0x09EE78BC",
@@ -6778,146 +6814,208 @@
         },
         {
           "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventSeq",
+          "section": ".rodata",
           "address": "0x09006F38",
-          "size": 10,
-          "sha256": "b4ffdcea264fd4ba647e556ea10e6e1bbcae5111707161edcc6c4cc120f4d063",
+          "size": 217,
+          "sha256": "b2f6d86b242df2ccd9ab7fbb2af6654a0280d21aa6d9a5d72e1550f3005d0b50",
           "objects": [
             {
               "name": "gTaskNameEventSeq",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventChara",
-          "address": "0x09006F44",
-          "size": 12,
-          "sha256": "3e29cf1b1b741873596cdaa4daf07e22301abcd834f475f5c870883ee664dc63",
-          "objects": [
+            },
             {
               "name": "gTaskNameEventChara",
-              "offset": 0,
+              "offset": 12,
               "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgwin",
-          "address": "0x09006F8C",
-          "size": 7,
-          "sha256": "001a2a99a19152f8252e37f12255164e777377762a0d2a4a1450e2eeb40e26b4",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033C8C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09033C90",
+              "offset": 28,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033C98",
+              "offset": 36,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA0",
+              "offset": 44,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA8",
+              "offset": 52,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CB8",
+              "offset": 68,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgwin",
-              "offset": 0,
+              "offset": 84,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgface",
-          "address": "0x09006FC4",
-          "size": 8,
-          "sha256": "b5bbfd400a6e1fb3b5e3c9a26572f4d19c2132d305c7c1b23b41ec5552142aa3",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033CD0",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CE0",
+              "offset": 108,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CF0",
+              "offset": 124,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgface",
-              "offset": 0,
+              "offset": 140,
               "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescView",
-          "address": "0x0900700C",
-          "size": 5,
-          "sha256": "37334a86ed463b26141af658e9c356d3711eb1417454a98d63230080dd19af3a",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033D08",
+              "offset": 148,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09033D28",
+              "offset": 180,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwait",
+              "offset": 188,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwaitYesno",
+              "offset": 196,
+              "size": 14
+            },
             {
               "name": "gTaskNameView",
-              "offset": 0,
+              "offset": 212,
               "size": 5
             }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
+          ]
         },
         {
           "unit": "mode_eventselect.c",
           "section": ".rodata",
-          "address": "0x090071E0",
-          "size": 140,
-          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
+          "address": "0x09007014",
+          "size": 600,
+          "sha256": "e86aa3067951f4f722b53ec9a9d6e5432c010c69bd4a2795db698f6b0ec82c27",
           "objects": [
             {
-              "name": "gModeNameEventselect",
+              "name": "gUnk_09033D50",
               "offset": 0,
+              "size": 294
+            },
+            {
+              "name": "gUnk_09033E76",
+              "offset": 294,
+              "size": 98
+            },
+            {
+              "name": "gUnk_09033ED8",
+              "offset": 392,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EDC",
+              "offset": 396,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EE0",
+              "offset": 400,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033EF8",
+              "offset": 424,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033F10",
+              "offset": 448,
+              "size": 9
+            },
+            {
+              "name": "gModeNameEventselect",
+              "offset": 460,
               "size": 17
             },
             {
               "name": "gTaskNameHanabira",
-              "offset": 20,
+              "offset": 480,
               "size": 9
             },
             {
               "name": "gTaskNameHanabiraC",
-              "offset": 32,
+              "offset": 492,
               "size": 11
             },
             {
               "name": "gTaskNameSmoke",
-              "offset": 44,
+              "offset": 504,
               "size": 6
             },
             {
               "name": "gTaskNameExclamation",
-              "offset": 52,
+              "offset": 512,
               "size": 12
             },
             {
               "name": "gTaskNameBalloon",
-              "offset": 64,
+              "offset": 524,
               "size": 8
             },
             {
               "name": "gTaskNameQuestion",
-              "offset": 72,
+              "offset": 532,
               "size": 9
             },
             {
               "name": "gTaskNameGlowNose",
-              "offset": 84,
+              "offset": 544,
               "size": 9
             },
             {
               "name": "gTaskNameDown",
-              "offset": 96,
+              "offset": 556,
               "size": 5
             },
             {
               "name": "gTaskNameTinkerbell",
-              "offset": 104,
+              "offset": 564,
               "size": 11
             },
             {
               "name": "gTaskNameEvSound",
-              "offset": 116,
+              "offset": 576,
               "size": 9
             },
             {
               "name": "gTaskName_09EE48DC",
-              "offset": 128,
+              "offset": 588,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -12272,34 +12370,6 @@
           "padding_before": 2
         },
         {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwait",
-          "address": "0x09006FF4",
-          "size": 8,
-          "sha256": "665c13dceebf9edbf5d480504079b35eca8c9eb34a781c5006bd7ca9522de7f5",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwait",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
-          "address": "0x09006FFC",
-          "size": 14,
-          "sha256": "8e596cfa527b11c6987d08788cd57a1b364668a459689425557ff3340ae271fa",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwaitYesno",
-              "offset": 0,
-              "size": 14
-            }
-          ]
-        },
-        {
           "unit": "card.c",
           "section": ".data_registration_gTaskDescNumberPlus",
           "address": "0x09EBEF14",
@@ -13239,146 +13309,208 @@
         },
         {
           "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventSeq",
+          "section": ".rodata",
           "address": "0x090CCF68",
-          "size": 10,
-          "sha256": "b4ffdcea264fd4ba647e556ea10e6e1bbcae5111707161edcc6c4cc120f4d063",
+          "size": 217,
+          "sha256": "b2f6d86b242df2ccd9ab7fbb2af6654a0280d21aa6d9a5d72e1550f3005d0b50",
           "objects": [
             {
               "name": "gTaskNameEventSeq",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescEventChara",
-          "address": "0x090CCF74",
-          "size": 12,
-          "sha256": "3e29cf1b1b741873596cdaa4daf07e22301abcd834f475f5c870883ee664dc63",
-          "objects": [
+            },
             {
               "name": "gTaskNameEventChara",
-              "offset": 0,
+              "offset": 12,
               "size": 12
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgwin",
-          "address": "0x090CCFBC",
-          "size": 7,
-          "sha256": "001a2a99a19152f8252e37f12255164e777377762a0d2a4a1450e2eeb40e26b4",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033C8C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09033C90",
+              "offset": 28,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033C98",
+              "offset": 36,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA0",
+              "offset": 44,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09033CA8",
+              "offset": 52,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CB8",
+              "offset": 68,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgwin",
-              "offset": 0,
+              "offset": 84,
               "size": 7
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescMsgface",
-          "address": "0x090CCFF4",
-          "size": 8,
-          "sha256": "b5bbfd400a6e1fb3b5e3c9a26572f4d19c2132d305c7c1b23b41ec5552142aa3",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033CD0",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CE0",
+              "offset": 108,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09033CF0",
+              "offset": 124,
+              "size": 16
+            },
             {
               "name": "gTaskNameMsgface",
-              "offset": 0,
+              "offset": 140,
               "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskDescView",
-          "address": "0x090CD03C",
-          "size": 5,
-          "sha256": "37334a86ed463b26141af658e9c356d3711eb1417454a98d63230080dd19af3a",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09033D08",
+              "offset": 148,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09033D28",
+              "offset": 180,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwait",
+              "offset": 188,
+              "size": 8
+            },
+            {
+              "name": "gTaskNameMsgwaitYesno",
+              "offset": 196,
+              "size": 14
+            },
             {
               "name": "gTaskNameView",
-              "offset": 0,
+              "offset": 212,
               "size": 5
             }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
+          ]
         },
         {
           "unit": "mode_eventselect.c",
           "section": ".rodata",
-          "address": "0x090CD210",
-          "size": 140,
-          "sha256": "abfc124424726b4524e4cf89bb557230440fb4fedfb3c96e5a12a75fff47384e",
+          "address": "0x090CD044",
+          "size": 600,
+          "sha256": "2f8b0e16846a133831ea64c026a16ce67d3cc5d54f3de257aa4b3cf23371951f",
           "objects": [
             {
-              "name": "gModeNameEventselect",
+              "name": "gUnk_09033D50",
               "offset": 0,
+              "size": 294
+            },
+            {
+              "name": "gUnk_09033E76",
+              "offset": 294,
+              "size": 98
+            },
+            {
+              "name": "gUnk_09033ED8",
+              "offset": 392,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EDC",
+              "offset": 396,
+              "size": 3
+            },
+            {
+              "name": "gUnk_09033EE0",
+              "offset": 400,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033EF8",
+              "offset": 424,
+              "size": 21
+            },
+            {
+              "name": "gUnk_09033F10",
+              "offset": 448,
+              "size": 9
+            },
+            {
+              "name": "gModeNameEventselect",
+              "offset": 460,
               "size": 17
             },
             {
               "name": "gTaskNameHanabira",
-              "offset": 20,
+              "offset": 480,
               "size": 9
             },
             {
               "name": "gTaskNameHanabiraC",
-              "offset": 32,
+              "offset": 492,
               "size": 11
             },
             {
               "name": "gTaskNameSmoke",
-              "offset": 44,
+              "offset": 504,
               "size": 6
             },
             {
               "name": "gTaskNameExclamation",
-              "offset": 52,
+              "offset": 512,
               "size": 12
             },
             {
               "name": "gTaskNameBalloon",
-              "offset": 64,
+              "offset": 524,
               "size": 8
             },
             {
               "name": "gTaskNameQuestion",
-              "offset": 72,
+              "offset": 532,
               "size": 9
             },
             {
               "name": "gTaskNameGlowNose",
-              "offset": 84,
+              "offset": 544,
               "size": 9
             },
             {
               "name": "gTaskNameDown",
-              "offset": 96,
+              "offset": 556,
               "size": 5
             },
             {
               "name": "gTaskNameTinkerbell",
-              "offset": 104,
+              "offset": 564,
               "size": 11
             },
             {
               "name": "gTaskNameEvSound",
-              "offset": 116,
+              "offset": 576,
               "size": 9
             },
             {
               "name": "gTaskName_09EE48DC",
-              "offset": 128,
+              "offset": 588,
               "size": 12
             }
-          ]
+          ],
+          "alignment_before": 4,
+          "padding_before": 3
         },
         {
           "unit": "mode_eventselect.c",
@@ -18813,34 +18945,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwait",
-          "address": "0x090CD024",
-          "size": 8,
-          "sha256": "665c13dceebf9edbf5d480504079b35eca8c9eb34a781c5006bd7ca9522de7f5",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwait",
-              "offset": 0,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "event_message.c",
-          "section": ".rodata_registration_name_gTaskNameMsgwaitYesno",
-          "address": "0x090CD02C",
-          "size": 14,
-          "sha256": "8e596cfa527b11c6987d08788cd57a1b364668a459689425557ff3340ae271fa",
-          "objects": [
-            {
-              "name": "gTaskNameMsgwaitYesno",
-              "offset": 0,
-              "size": 14
-            }
-          ]
         },
         {
           "unit": "card.c",

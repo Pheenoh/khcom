@@ -398,7 +398,6 @@ extern WorldSelAnim gUnk_09EE8E60[30];
 extern u8 gUnk_093FB1AC[];
 extern u8 gUnk_09619378[];
 extern u8 gUnk_093FB0CC[];
-extern s32 gUnk_09033D08[][2];
 extern s32 gUnk_09041E80[];
 extern s32 gUnk_09041E9C[];
 extern s16 gUnk_09041EB4[];
@@ -1868,11 +1867,6 @@ typedef struct UnkStruct_080A3F5C {
 
 typedef char UnkStruct_080A3F5C_sizechk[(sizeof(struct UnkStruct_080A3F5C) == 0x150) ? 1 : -1];
 
-extern u16 gUnk_09033C98[];
-extern u16 gUnk_09033CA0[];
-extern s32 gUnk_09033CE0[];
-extern s32 gUnk_09033CF0[];
-extern s32 gUnk_09033CD0[];
 
 typedef struct UnkStruct_08094CE4_A {
     void* tiles;
@@ -1913,7 +1907,6 @@ typedef struct BossCardWork {
 
 extern s16 gUnk_0903595E[];
 extern s16 gUnk_09035964[];
-extern s32 gUnk_09033D28[];
 
 typedef struct UnkStruct_080A97D4 {
     void* unk_00;
