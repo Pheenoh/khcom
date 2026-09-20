@@ -680,16 +680,6 @@ void* gUnk_09EEB000 __attribute__((section(".data_deck_labels"))) = gUnkUs_090A4
 
 AnimHeader* gUnkUs_09EEB004 __attribute__((section(".data_deck_labels"))) = &gUnkUs_090A44BA;
 
-AnimHeader* gUnkUs_09EEB200 __attribute__((section(".data_09EEB200"))) = &gUnkUs_090AA4FC;
-
-AnimHeader* gUnkUs_09EEBA08 __attribute__((section(".data_09EEBA08"))) = &gUnkUs_090B3FB4;
-
-AnimHeader* gUnkUs_09EEBE0C __attribute__((section(".data_09EEBE0C"))) = &gUnkUs_090BC9C0;
-
-AnimHeader* gUnkUs_09EEC130 __attribute__((section(".data_09EEC130"))) = &gUnkUs_090C519C;
-
-AnimHeader* gUnkUs_09EEC534 __attribute__((section(".data_09EEC534"))) = &gUnkUs_090CBFA8;
-
 #elif defined(VERSION_JP)
 void* gUnkJp_09EC12D4[53] __attribute__((section(".data_labels"))) = {
     gUnkJp_09033B64,
@@ -1063,16 +1053,6 @@ AnimHeader* gUnkJp_09EC23E8 __attribute__((section(".data_deck_labels"))) = &gUn
 void* gUnk_09EEB000 __attribute__((section(".data_deck_labels"))) = gUnkJp_0905F9D8;
 
 AnimHeader* gUnkJp_09EC23F0 __attribute__((section(".data_deck_labels"))) = &gUnkJp_0905F9E2;
-
-AnimHeader* gUnkJp_09EC25EC __attribute__((section(".data_09EEB200"))) = &gUnkJp_09065A24;
-
-AnimHeader* gUnkJp_09EC2DF4 __attribute__((section(".data_09EEBA08"))) = &gUnkJp_0906F4DC;
-
-AnimHeader* gUnkJp_09EC31F8 __attribute__((section(".data_09EEBE0C"))) = &gUnkJp_09077EE8;
-
-AnimHeader* gUnkJp_09EC351C __attribute__((section(".data_09EEC130"))) = &gUnkJp_090806C4;
-
-AnimHeader* gUnkJp_09EC3920 __attribute__((section(".data_09EEC534"))) = &gUnkJp_090874D0;
 
 #elif defined(VERSION_EU)
 void* gUnkEu_09F75110 __attribute__((section(".data_labels"))) = gUnkEu_090F3ADC;

@@ -2,51 +2,18 @@
   "version": 1,
   "provenance": {
     "fonts": "Consumer-bounded font glyph pointer arrays. EncodeSmallFontString supplies the 45 small glyphs; byte-oriented character indexing supplies the 256-entry lookup. Original regional literal pools establish bases; full pointed-to renderer sprite payloads match by glyph index.",
-    "regional_fonts": "Five font glyph tables exist only in US/JP. Their consumers are absent or select EU replacements. Full renderer-consumed sprite payloads match per glyph in US/JP; explicit absent raw-target names prevent invented EU interpolation."
+    "regional_fonts": "Five font glyph tables exist only in US/JP. Their consumers are absent or select EU replacements. Full renderer-consumed sprite payloads match per glyph in US/JP; explicit absent raw-target names prevent invented EU interpolation.",
+    "native_catalog": "The existing glyph-pointer tables and their companion one-entry animation indexes are a coherent generated font resource catalog. Each original glyph table is immediately followed by its AnimHeader pointer; independently, the last glyph sprite payload ends exactly where that pointer-target AnimHeader begins, and its existing one-frame animation references glyph zero. This pattern holds for all seven US/JP font resources and both EU resources. The glyph tables are consumed only by msg.c font readers; the companion animation indexes have no active C reader and remain preserved as resource metadata. Moving the existing indexes from generic card lookup/localized catalogs into this font catalog restores one native initialized-data run of 5224 bytes in US/JP and1212 bytes in EU. Existing types, qualifiers, bounds, regional identities and initializer tokens remain unchanged. The adjacent nonfont resource starting at gUnk_09EEC5F0 remains in its existing provider; no larger source boundary is asserted. All existing object contracts and glyph/animation asset payloads are preserved."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "msg_font_data.c",
-          "section": ".data_09EEB204",
-          "address": "0x09EEB204",
-          "size": 1024,
-          "sha256": "b676e081760b4698a54acb7f69972cd3bcc527e22e51576816e404904d11f446",
-          "objects": [
-            {
-              "name": "gUnk_09EEB204",
-              "offset": 0,
-              "size": 1024,
-              "consumer": [
-                "func_08064EF4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEC538",
-          "address": "0x09EEC538",
-          "size": 180,
-          "sha256": "eb6c241221c94bbbeb660df6c92e37e00afced50169c58d930cc13d64f9041c7",
-          "objects": [
-            {
-              "name": "gUnk_09EEC538",
-              "offset": 0,
-              "size": 180,
-              "consumer": [
-                "DrawSmallFontString"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEB188",
-          "address": "0x09EEB188",
-          "size": 120,
-          "sha256": "7b874f70263bb67f05bc9acab8db363af25f372bf2257318e1d5a40a052fa187",
+          "section": ".data",
+          "address": "0x9eeb188",
+          "size": 5224,
+          "sha256": "cbc63015b1108f116209dc4b46e04aa19fd429f11a87ea8a5a294ba15c0f99c5",
           "objects": [
             {
               "name": "gUnk_09EEB188",
@@ -55,74 +22,89 @@
               "consumer": [
                 "func_08064624"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEB608",
-          "address": "0x09EEB608",
-          "size": 1024,
-          "sha256": "afdbb7919e64148cd924c1de2ecee7ac11a0b6fe5c0a7d0d605206ac54be4bfc",
-          "objects": [
+            },
+            {
+              "name": "gUnkUs_09EEB200",
+              "offset": 120,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB204",
+              "offset": 124,
+              "size": 1024,
+              "consumer": [
+                "func_08064EF4"
+              ]
+            },
+            {
+              "name": "gUnk_09EEB604",
+              "offset": 1148,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEB608",
-              "offset": 0,
+              "offset": 1152,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEBA0C",
-          "address": "0x09EEBA0C",
-          "size": 1024,
-          "sha256": "c808852b3c13cf912f7ecc3e12d2ceb84ce9cd704addf66e9c35af12bcddd00f",
-          "objects": [
+            },
+            {
+              "name": "gUnkUs_09EEBA08",
+              "offset": 2176,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEBA0C",
-              "offset": 0,
+              "offset": 2180,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEBE10",
-          "address": "0x09EEBE10",
-          "size": 800,
-          "sha256": "9eede73984175857df0c9487ac938b6f32fabe85d74fc01ebae60b2daf49452b",
-          "objects": [
+            },
+            {
+              "name": "gUnkUs_09EEBE0C",
+              "offset": 3204,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEBE10",
-              "offset": 0,
+              "offset": 3208,
               "size": 800,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEC134",
-          "address": "0x09EEC134",
-          "size": 1024,
-          "sha256": "10a742af69306e87ca5a0f58ce52b408ba9a1bbbf6233827700897a0e598d814",
-          "objects": [
+            },
+            {
+              "name": "gUnkUs_09EEC130",
+              "offset": 4008,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEC134",
-              "offset": 0,
+              "offset": 4012,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
+            },
+            {
+              "name": "gUnkUs_09EEC534",
+              "offset": 5036,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEC538",
+              "offset": 5040,
+              "size": 180,
+              "consumer": [
+                "DrawSmallFontString"
+              ]
+            },
+            {
+              "name": "gUnk_09EEC5EC",
+              "offset": 5220,
+              "size": 4
             }
           ]
         }
@@ -132,44 +114,10 @@
       "placements": [
         {
           "unit": "msg_font_data.c",
-          "section": ".data_09EEB204",
-          "address": "0x09EC25F0",
-          "size": 1024,
-          "sha256": "cf3e5ec028d853a34355e4af8e4fc654d09eae27b5e1bd03c78d659bc8a56dce",
-          "objects": [
-            {
-              "name": "gUnk_09EEB204",
-              "offset": 0,
-              "size": 1024,
-              "consumer": [
-                "func_08064EF4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEC538",
-          "address": "0x09EC3924",
-          "size": 180,
-          "sha256": "252e9d1ec13d05222db4b7a65012381b06e1d6587e4da74ff3a1e32113e1df9c",
-          "objects": [
-            {
-              "name": "gUnk_09EEC538",
-              "offset": 0,
-              "size": 180,
-              "consumer": [
-                "DrawSmallFontString"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEB188",
-          "address": "0x09EC2574",
-          "size": 120,
-          "sha256": "18947535f2f1122f6962edbb1982556acfcc1162b86e1985a323b7d098dbb0b0",
+          "section": ".data",
+          "address": "0x9ec2574",
+          "size": 5224,
+          "sha256": "6e9e7a06ff8a9410ec570a0a37bd6fd9d8ef40f3fd6c710f3dc26501435cfbe7",
           "objects": [
             {
               "name": "gUnk_09EEB188",
@@ -178,74 +126,89 @@
               "consumer": [
                 "func_08064624"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEB608",
-          "address": "0x09EC29F4",
-          "size": 1024,
-          "sha256": "c04a54d83769ff942a6e9f66225482a87bc63b41fbbcb6994af69122215875fe",
-          "objects": [
+            },
+            {
+              "name": "gUnkJp_09EC25EC",
+              "offset": 120,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEB204",
+              "offset": 124,
+              "size": 1024,
+              "consumer": [
+                "func_08064EF4"
+              ]
+            },
+            {
+              "name": "gUnk_09EEB604",
+              "offset": 1148,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEB608",
-              "offset": 0,
+              "offset": 1152,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEBA0C",
-          "address": "0x09EC2DF8",
-          "size": 1024,
-          "sha256": "36522e90b25b77cf8f5dd07b911d26909e832b8056ef999f6a4bfb8f7455b571",
-          "objects": [
+            },
+            {
+              "name": "gUnkJp_09EC2DF4",
+              "offset": 2176,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEBA0C",
-              "offset": 0,
+              "offset": 2180,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEBE10",
-          "address": "0x09EC31FC",
-          "size": 800,
-          "sha256": "bbaf457b46b80584fb657250b47a0ffdbce0df3e95ea4597276ad2c55283c564",
-          "objects": [
+            },
+            {
+              "name": "gUnkJp_09EC31F8",
+              "offset": 3204,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEBE10",
-              "offset": 0,
+              "offset": 3208,
               "size": 800,
               "consumer": [
                 "func_08066E40"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEC134",
-          "address": "0x09EC3520",
-          "size": 1024,
-          "sha256": "d581e91c3529e604da66a7e9d8ccf8a08dc6b46772ad749cf11d47a8473744b7",
-          "objects": [
+            },
+            {
+              "name": "gUnkJp_09EC351C",
+              "offset": 4008,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEC134",
-              "offset": 0,
+              "offset": 4012,
               "size": 1024,
               "consumer": [
                 "func_08066E40"
               ]
+            },
+            {
+              "name": "gUnkJp_09EC3920",
+              "offset": 5036,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEC538",
+              "offset": 5040,
+              "size": 180,
+              "consumer": [
+                "DrawSmallFontString"
+              ]
+            },
+            {
+              "name": "gUnk_09EEC5EC",
+              "offset": 5220,
+              "size": 4
             }
           ]
         }
@@ -255,10 +218,10 @@
       "placements": [
         {
           "unit": "msg_font_data.c",
-          "section": ".data_09EEB204",
-          "address": "0x09F77318",
-          "size": 1024,
-          "sha256": "20806b685102d8a1d323435fc310ed21f6d79b54d6306d487da0946b13e3a21d",
+          "section": ".data",
+          "address": "0x9f77318",
+          "size": 1212,
+          "sha256": "80b698ce464f16f3a016c8cf93837ff5aa7f32cfbec4a2defa292adee9de3a02",
           "objects": [
             {
               "name": "gUnk_09EEB204",
@@ -267,23 +230,24 @@
               "consumer": [
                 "func_08064EF4"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "msg_font_data.c",
-          "section": ".data_09EEC538",
-          "address": "0x09F7771C",
-          "size": 180,
-          "sha256": "ebcfed45b4b8bc7fee3e8a707665a92e21d5e1a3c6f1682e8cfffd4db4b41bce",
-          "objects": [
+            },
+            {
+              "name": "gUnk_09EEB604",
+              "offset": 1024,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEC538",
-              "offset": 0,
+              "offset": 1028,
               "size": 180,
               "consumer": [
                 "DrawSmallFontString"
               ]
+            },
+            {
+              "name": "gUnk_09EEC5EC",
+              "offset": 1208,
+              "size": 4
             }
           ]
         }

@@ -867,8 +867,6 @@ extern void* gUnk_09EEAEBC[13];
 extern AnimHeader* gUnk_09EEAEF0[5];
 extern void* gUnk_09EEAF04[13];
 extern AnimHeader* gUnk_09EEAF38[5];
-extern AnimHeader* gUnk_09EEB604;
-extern AnimHeader* gUnk_09EEC5EC;
 extern void* gUnk_09EEC5F0;
 extern void* gUnk_09EEC5F4;
 extern AnimHeader* gUnk_09EEC5F8;

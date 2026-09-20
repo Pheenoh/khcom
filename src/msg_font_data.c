@@ -1,7 +1,47 @@
 #include "msg_font_data.h"
 #include "msg_font_assets.h"
 
-void* gUnk_09EEB204[256] __attribute__((section(".data_09EEB204"))) = {
+#ifndef VERSION_EU
+void* gUnk_09EEB188[30] = {
+    gUnk_090AA3C4,
+    gUnk_090AA3CE,
+    gUnk_090AA3D8,
+    gUnk_090AA3E2,
+    gUnk_090AA3EC,
+    gUnk_090AA3F6,
+    gUnk_090AA400,
+    gUnk_090AA40A,
+    gUnk_090AA414,
+    gUnk_090AA41E,
+    gUnk_090AA428,
+    gUnk_090AA438,
+    gUnk_090AA442,
+    gUnk_090AA452,
+    gUnk_090AA45C,
+    gUnk_090AA466,
+    gUnk_090AA470,
+    gUnk_090AA47A,
+    gUnk_090AA484,
+    gUnk_090AA48E,
+    gUnk_090AA498,
+    gUnk_090AA4A2,
+    gUnk_090AA4AC,
+    gUnk_090AA4B6,
+    gUnk_090AA4C0,
+    gUnk_090AA4CA,
+    gUnk_090AA4D4,
+    gUnk_090AA4DE,
+    gUnk_090AA4E8,
+    gUnk_090AA4F2,
+};
+#endif
+#if defined(VERSION_US)
+AnimHeader* gUnkUs_09EEB200 = &gUnkUs_090AA4FC;
+#elif defined(VERSION_JP)
+AnimHeader* gUnkJp_09EC25EC = &gUnkJp_09065A24;
+#endif
+
+void* gUnk_09EEB204[256] = {
     gUnk_090AABA8,
     gUnk_090AABB2,
     gUnk_090AABBC,
@@ -260,88 +300,10 @@ void* gUnk_09EEB204[256] __attribute__((section(".data_09EEB204"))) = {
     gUnk_090AB59E,
 };
 
-void* gUnk_09EEC538[45] __attribute__((section(".data_09EEC538"))) = {
-    gUnk_090D3FB4,
-    gUnk_090D3FBE,
-    gUnk_090D3FC8,
-    gUnk_090D3FD2,
-    gUnk_090D3FDC,
-    gUnk_090D3FE6,
-    gUnk_090D3FF0,
-    gUnk_090D3FFA,
-    gUnk_090D4004,
-    gUnk_090D400E,
-    gUnk_090D4018,
-    gUnk_090D4022,
-    gUnk_090D402C,
-    gUnk_090D4036,
-    gUnk_090D4040,
-    gUnk_090D404A,
-    gUnk_090D4054,
-    gUnk_090D405E,
-    gUnk_090D4068,
-    gUnk_090D4072,
-    gUnk_090D407C,
-    gUnk_090D4086,
-    gUnk_090D4090,
-    gUnk_090D409A,
-    gUnk_090D40A4,
-    gUnk_090D40AE,
-    gUnk_090D40B8,
-    gUnk_090D40C2,
-    gUnk_090D40CC,
-    gUnk_090D40D6,
-    gUnk_090D40E0,
-    gUnk_090D40EA,
-    gUnk_090D40F4,
-    gUnk_090D40FE,
-    gUnk_090D4108,
-    gUnk_090D4112,
-    gUnk_090D411C,
-    gUnk_090D4126,
-    gUnk_090D4130,
-    gUnk_090D413A,
-    gUnk_090D4144,
-    gUnk_090D414E,
-    gUnk_090D4158,
-    gUnk_090D4162,
-    gUnk_090D416C,
-};
-#ifndef VERSION_EU
-void* gUnk_09EEB188[30] __attribute__((section(".data_09EEB188"))) = {
-    gUnk_090AA3C4,
-    gUnk_090AA3CE,
-    gUnk_090AA3D8,
-    gUnk_090AA3E2,
-    gUnk_090AA3EC,
-    gUnk_090AA3F6,
-    gUnk_090AA400,
-    gUnk_090AA40A,
-    gUnk_090AA414,
-    gUnk_090AA41E,
-    gUnk_090AA428,
-    gUnk_090AA438,
-    gUnk_090AA442,
-    gUnk_090AA452,
-    gUnk_090AA45C,
-    gUnk_090AA466,
-    gUnk_090AA470,
-    gUnk_090AA47A,
-    gUnk_090AA484,
-    gUnk_090AA48E,
-    gUnk_090AA498,
-    gUnk_090AA4A2,
-    gUnk_090AA4AC,
-    gUnk_090AA4B6,
-    gUnk_090AA4C0,
-    gUnk_090AA4CA,
-    gUnk_090AA4D4,
-    gUnk_090AA4DE,
-    gUnk_090AA4E8,
-    gUnk_090AA4F2,
-};
+AnimHeader* gUnk_09EEB604 = &gUnk_090AB5A8;
 
-void* gUnk_09EEB608[256] __attribute__((section(".data_09EEB608"))) = {
+#ifndef VERSION_EU
+void* gUnk_09EEB608[256] = {
     gUnk_090B35B4,
     gUnk_090B35BE,
     gUnk_090B35C8,
@@ -599,8 +561,15 @@ void* gUnk_09EEB608[256] __attribute__((section(".data_09EEB608"))) = {
     gUnk_090B3FA0,
     gUnk_090B3FAA,
 };
+#endif
+#if defined(VERSION_US)
+AnimHeader* gUnkUs_09EEBA08 = &gUnkUs_090B3FB4;
+#elif defined(VERSION_JP)
+AnimHeader* gUnkJp_09EC2DF4 = &gUnkJp_0906F4DC;
+#endif
 
-void* gUnk_09EEBA0C[256] __attribute__((section(".data_09EEBA0C"))) = {
+#ifndef VERSION_EU
+void* gUnk_09EEBA0C[256] = {
     gUnk_090BBFC0,
     gUnk_090BBFCA,
     gUnk_090BBFD4,
@@ -858,8 +827,15 @@ void* gUnk_09EEBA0C[256] __attribute__((section(".data_09EEBA0C"))) = {
     gUnk_090BC9AC,
     gUnk_090BC9B6,
 };
+#endif
+#if defined(VERSION_US)
+AnimHeader* gUnkUs_09EEBE0C = &gUnkUs_090BC9C0;
+#elif defined(VERSION_JP)
+AnimHeader* gUnkJp_09EC31F8 = &gUnkJp_09077EE8;
+#endif
 
-void* gUnk_09EEBE10[200] __attribute__((section(".data_09EEBE10"))) = {
+#ifndef VERSION_EU
+void* gUnk_09EEBE10[200] = {
     gUnk_090C49CC,
     gUnk_090C49D6,
     gUnk_090C49E0,
@@ -1061,8 +1037,15 @@ void* gUnk_09EEBE10[200] __attribute__((section(".data_09EEBE10"))) = {
     gUnk_090C5188,
     gUnk_090C5192,
 };
+#endif
+#if defined(VERSION_US)
+AnimHeader* gUnkUs_09EEC130 = &gUnkUs_090C519C;
+#elif defined(VERSION_JP)
+AnimHeader* gUnkJp_09EC351C = &gUnkJp_090806C4;
+#endif
 
-void* gUnk_09EEC134[256] __attribute__((section(".data_09EEC134"))) = {
+#ifndef VERSION_EU
+void* gUnk_09EEC134[256] = {
     gUnk_090CB5A8,
     gUnk_090CB5B2,
     gUnk_090CB5BC,
@@ -1320,5 +1303,59 @@ void* gUnk_09EEC134[256] __attribute__((section(".data_09EEC134"))) = {
     gUnk_090CBF94,
     gUnk_090CBF9E,
 };
-
 #endif
+#if defined(VERSION_US)
+AnimHeader* gUnkUs_09EEC534 = &gUnkUs_090CBFA8;
+#elif defined(VERSION_JP)
+AnimHeader* gUnkJp_09EC3920 = &gUnkJp_090874D0;
+#endif
+
+void* gUnk_09EEC538[45] = {
+    gUnk_090D3FB4,
+    gUnk_090D3FBE,
+    gUnk_090D3FC8,
+    gUnk_090D3FD2,
+    gUnk_090D3FDC,
+    gUnk_090D3FE6,
+    gUnk_090D3FF0,
+    gUnk_090D3FFA,
+    gUnk_090D4004,
+    gUnk_090D400E,
+    gUnk_090D4018,
+    gUnk_090D4022,
+    gUnk_090D402C,
+    gUnk_090D4036,
+    gUnk_090D4040,
+    gUnk_090D404A,
+    gUnk_090D4054,
+    gUnk_090D405E,
+    gUnk_090D4068,
+    gUnk_090D4072,
+    gUnk_090D407C,
+    gUnk_090D4086,
+    gUnk_090D4090,
+    gUnk_090D409A,
+    gUnk_090D40A4,
+    gUnk_090D40AE,
+    gUnk_090D40B8,
+    gUnk_090D40C2,
+    gUnk_090D40CC,
+    gUnk_090D40D6,
+    gUnk_090D40E0,
+    gUnk_090D40EA,
+    gUnk_090D40F4,
+    gUnk_090D40FE,
+    gUnk_090D4108,
+    gUnk_090D4112,
+    gUnk_090D411C,
+    gUnk_090D4126,
+    gUnk_090D4130,
+    gUnk_090D413A,
+    gUnk_090D4144,
+    gUnk_090D414E,
+    gUnk_090D4158,
+    gUnk_090D4162,
+    gUnk_090D416C,
+};
+
+AnimHeader* gUnk_09EEC5EC = &gUnk_090D4176;

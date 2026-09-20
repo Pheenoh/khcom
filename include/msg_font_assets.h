@@ -1,7 +1,7 @@
 #ifndef GUARD_MSG_FONT_ASSETS_H
 #define GUARD_MSG_FONT_ASSETS_H
 
-#include "types.h"
+#include "anim.h"
 
 extern u8 gUnk_090AABA8[];
 extern u8 gUnk_090AABB2[];
@@ -1305,5 +1305,24 @@ extern u8 gUnk_090CBF8A[];
 extern u8 gUnk_090CBF94[];
 extern u8 gUnk_090CBF9E[];
 #endif
+
+#if defined(VERSION_US)
+extern AnimHeader gUnkUs_090AA4FC;
+extern AnimHeader gUnkUs_090B3FB4;
+extern AnimHeader gUnkUs_090BC9C0;
+extern AnimHeader gUnkUs_090C519C;
+extern AnimHeader gUnkUs_090CBFA8;
+#endif
+
+#if defined(VERSION_JP)
+extern AnimHeader gUnkJp_09065A24;
+extern AnimHeader gUnkJp_0906F4DC;
+extern AnimHeader gUnkJp_09077EE8;
+extern AnimHeader gUnkJp_090806C4;
+extern AnimHeader gUnkJp_090874D0;
+#endif
+
+extern AnimHeader gUnk_090AB5A8;
+extern AnimHeader gUnk_090D4176;
 
 #endif

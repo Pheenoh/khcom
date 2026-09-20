@@ -2014,10 +2014,6 @@ AnimHeader* gUnk_09EEAF38[5] __attribute__((section(".data_09EEA52C"))) = {
     &gUnk_0909FDB4,
 };
 
-AnimHeader* gUnk_09EEB604 __attribute__((section(".data_09EEB604"))) = &gUnk_090AB5A8;
-
-AnimHeader* gUnk_09EEC5EC __attribute__((section(".data_09EEC5EC"))) = &gUnk_090D4176;
-
 void* gUnk_09EEC5F0 __attribute__((section(".data_09EEC5EC"))) = gUnk_090D4720;
 
 void* gUnk_09EEC5F4 __attribute__((section(".data_09EEC5EC"))) = gUnk_090D472A;

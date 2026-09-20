@@ -249,11 +249,6 @@ extern void* gUnk_09EEAFF8;
 extern AnimHeader* gUnkUs_09EEAFFC;
 extern void* gUnk_09EEB000;
 extern AnimHeader* gUnkUs_09EEB004;
-extern AnimHeader* gUnkUs_09EEB200;
-extern AnimHeader* gUnkUs_09EEBA08;
-extern AnimHeader* gUnkUs_09EEBE0C;
-extern AnimHeader* gUnkUs_09EEC130;
-extern AnimHeader* gUnkUs_09EEC534;
 #elif defined(VERSION_JP)
 extern void* gUnkJp_09EC12D4[53];
 extern AnimHeader* gUnkJp_09EC13A8;
@@ -345,11 +340,6 @@ extern void* gUnk_09EEAFF0;
 extern AnimHeader* gUnkJp_09EC23E8;
 extern void* gUnk_09EEB000;
 extern AnimHeader* gUnkJp_09EC23F0;
-extern AnimHeader* gUnkJp_09EC25EC;
-extern AnimHeader* gUnkJp_09EC2DF4;
-extern AnimHeader* gUnkJp_09EC31F8;
-extern AnimHeader* gUnkJp_09EC351C;
-extern AnimHeader* gUnkJp_09EC3920;
 #elif defined(VERSION_EU)
 extern void* gUnkEu_09F75110;
 extern AnimHeader* gUnkEu_09F75114;

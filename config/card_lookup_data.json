@@ -4359,123 +4359,104 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEB604",
-          "address": "0x09EEB604",
-          "size": 4,
-          "sha256": "5b2180118e681d108d6952c089452489416a678439bd683198f774469e40bb3e",
-          "objects": [
-            {
-              "name": "gUnk_09EEB604",
-              "offset": 0,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_lookup_data.c",
           "section": ".data_09EEC5EC",
-          "address": "0x09EEC5EC",
-          "size": 116,
-          "sha256": "9de80c0eb9ae58cdebe5f9ed5fc4343ad6ccfea8d733b4f66e8e014c7d3993c6",
+          "address": "0x9eec5f0",
+          "size": 112,
+          "sha256": "dd3634b38b9fb4b9e051dc415337590a1bf2b256899e61b2fb327ec596509cb4",
           "objects": [
-            {
-              "name": "gUnk_09EEC5EC",
-              "offset": 0,
-              "size": 4
-            },
             {
               "name": "gUnk_09EEC5F0",
-              "offset": 4,
+              "offset": 0,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F4",
-              "offset": 8,
+              "offset": 4,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F8",
-              "offset": 12,
+              "offset": 8,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5FC",
-              "offset": 16,
+              "offset": 12,
               "size": 4
             },
             {
               "name": "gUnk_09EEC600",
-              "offset": 20,
+              "offset": 16,
               "size": 40
             },
             {
               "name": "gUnk_09EEC628",
-              "offset": 60,
+              "offset": 56,
               "size": 4
             },
             {
               "name": "gUnk_09EEC62C",
-              "offset": 64,
+              "offset": 60,
               "size": 4
             },
             {
               "name": "gUnk_09EEC630",
-              "offset": 68,
+              "offset": 64,
               "size": 4
             },
             {
               "name": "gUnk_09EEC634",
-              "offset": 72,
+              "offset": 68,
               "size": 4
             },
             {
               "name": "gUnk_09EEC638",
-              "offset": 76,
+              "offset": 72,
               "size": 4
             },
             {
               "name": "gUnk_09EEC63C",
-              "offset": 80,
+              "offset": 76,
               "size": 4
             },
             {
               "name": "gUnk_09EEC640",
-              "offset": 84,
+              "offset": 80,
               "size": 4
             },
             {
               "name": "gUnk_09EEC644",
-              "offset": 88,
+              "offset": 84,
               "size": 4
             },
             {
               "name": "gUnk_09EEC648",
-              "offset": 92,
+              "offset": 88,
               "size": 4
             },
             {
               "name": "gUnk_09EEC64C",
-              "offset": 96,
+              "offset": 92,
               "size": 4
             },
             {
               "name": "gUnk_09EEC650",
-              "offset": 100,
+              "offset": 96,
               "size": 4
             },
             {
               "name": "gUnk_09EEC654",
-              "offset": 104,
+              "offset": 100,
               "size": 4
             },
             {
               "name": "gUnk_09EEC658",
-              "offset": 108,
+              "offset": 104,
               "size": 4
             },
             {
               "name": "gUnk_09EEC65C",
-              "offset": 112,
+              "offset": 108,
               "size": 4
             }
           ]
@@ -8833,123 +8814,104 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEB604",
-          "address": "0x09EC29F0",
-          "size": 4,
-          "sha256": "08dc6af0716a08b0ba965b479845d8ce6f5c1f7bff91bdb85e5e1be912cd3849",
-          "objects": [
-            {
-              "name": "gUnk_09EEB604",
-              "offset": 0,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_lookup_data.c",
           "section": ".data_09EEC5EC",
-          "address": "0x09EC39D8",
-          "size": 116,
-          "sha256": "da34a3c8dd22fdab433f314856af6a1668f74714fccd8e6184e5582eca9f9015",
+          "address": "0x9ec39dc",
+          "size": 112,
+          "sha256": "929c712ab0f65d636a2eb8e28dc2b47bd08aaa08fadeb12ec6c280212cb5441b",
           "objects": [
-            {
-              "name": "gUnk_09EEC5EC",
-              "offset": 0,
-              "size": 4
-            },
             {
               "name": "gUnk_09EEC5F0",
-              "offset": 4,
+              "offset": 0,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F4",
-              "offset": 8,
+              "offset": 4,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F8",
-              "offset": 12,
+              "offset": 8,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5FC",
-              "offset": 16,
+              "offset": 12,
               "size": 4
             },
             {
               "name": "gUnk_09EEC600",
-              "offset": 20,
+              "offset": 16,
               "size": 40
             },
             {
               "name": "gUnk_09EEC628",
-              "offset": 60,
+              "offset": 56,
               "size": 4
             },
             {
               "name": "gUnk_09EEC62C",
-              "offset": 64,
+              "offset": 60,
               "size": 4
             },
             {
               "name": "gUnk_09EEC630",
-              "offset": 68,
+              "offset": 64,
               "size": 4
             },
             {
               "name": "gUnk_09EEC634",
-              "offset": 72,
+              "offset": 68,
               "size": 4
             },
             {
               "name": "gUnk_09EEC638",
-              "offset": 76,
+              "offset": 72,
               "size": 4
             },
             {
               "name": "gUnk_09EEC63C",
-              "offset": 80,
+              "offset": 76,
               "size": 4
             },
             {
               "name": "gUnk_09EEC640",
-              "offset": 84,
+              "offset": 80,
               "size": 4
             },
             {
               "name": "gUnk_09EEC644",
-              "offset": 88,
+              "offset": 84,
               "size": 4
             },
             {
               "name": "gUnk_09EEC648",
-              "offset": 92,
+              "offset": 88,
               "size": 4
             },
             {
               "name": "gUnk_09EEC64C",
-              "offset": 96,
+              "offset": 92,
               "size": 4
             },
             {
               "name": "gUnk_09EEC650",
-              "offset": 100,
+              "offset": 96,
               "size": 4
             },
             {
               "name": "gUnk_09EEC654",
-              "offset": 104,
+              "offset": 100,
               "size": 4
             },
             {
               "name": "gUnk_09EEC658",
-              "offset": 108,
+              "offset": 104,
               "size": 4
             },
             {
               "name": "gUnk_09EEC65C",
-              "offset": 112,
+              "offset": 108,
               "size": 4
             }
           ]
@@ -13307,123 +13269,104 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEB604",
-          "address": "0x09F77718",
-          "size": 4,
-          "sha256": "597ef80a69d0c9a1bcbca614563c4985f3a4c327f51714a9fb36937a6f4d9325",
-          "objects": [
-            {
-              "name": "gUnk_09EEB604",
-              "offset": 0,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_lookup_data.c",
           "section": ".data_09EEC5EC",
-          "address": "0x09F777D0",
-          "size": 116,
-          "sha256": "2f168fc1adec1c45d9d74d6eb9cf5838f4b2f1ca6df5d4f955b5b9d902a0335c",
+          "address": "0x9f777d4",
+          "size": 112,
+          "sha256": "82d6e498664fdd6eafcfa2544365136c2977f76fd8df256fa29587a0a43ea270",
           "objects": [
-            {
-              "name": "gUnk_09EEC5EC",
-              "offset": 0,
-              "size": 4
-            },
             {
               "name": "gUnk_09EEC5F0",
-              "offset": 4,
+              "offset": 0,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F4",
-              "offset": 8,
+              "offset": 4,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5F8",
-              "offset": 12,
+              "offset": 8,
               "size": 4
             },
             {
               "name": "gUnk_09EEC5FC",
-              "offset": 16,
+              "offset": 12,
               "size": 4
             },
             {
               "name": "gUnk_09EEC600",
-              "offset": 20,
+              "offset": 16,
               "size": 40
             },
             {
               "name": "gUnk_09EEC628",
-              "offset": 60,
+              "offset": 56,
               "size": 4
             },
             {
               "name": "gUnk_09EEC62C",
-              "offset": 64,
+              "offset": 60,
               "size": 4
             },
             {
               "name": "gUnk_09EEC630",
-              "offset": 68,
+              "offset": 64,
               "size": 4
             },
             {
               "name": "gUnk_09EEC634",
-              "offset": 72,
+              "offset": 68,
               "size": 4
             },
             {
               "name": "gUnk_09EEC638",
-              "offset": 76,
+              "offset": 72,
               "size": 4
             },
             {
               "name": "gUnk_09EEC63C",
-              "offset": 80,
+              "offset": 76,
               "size": 4
             },
             {
               "name": "gUnk_09EEC640",
-              "offset": 84,
+              "offset": 80,
               "size": 4
             },
             {
               "name": "gUnk_09EEC644",
-              "offset": 88,
+              "offset": 84,
               "size": 4
             },
             {
               "name": "gUnk_09EEC648",
-              "offset": 92,
+              "offset": 88,
               "size": 4
             },
             {
               "name": "gUnk_09EEC64C",
-              "offset": 96,
+              "offset": 92,
               "size": 4
             },
             {
               "name": "gUnk_09EEC650",
-              "offset": 100,
+              "offset": 96,
               "size": 4
             },
             {
               "name": "gUnk_09EEC654",
-              "offset": 104,
+              "offset": 100,
               "size": 4
             },
             {
               "name": "gUnk_09EEC658",
-              "offset": 108,
+              "offset": 104,
               "size": 4
             },
             {
               "name": "gUnk_09EEC65C",
-              "offset": 112,
+              "offset": 108,
               "size": 4
             }
           ]

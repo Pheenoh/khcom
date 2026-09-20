@@ -405,11 +405,6 @@ extern u8 gUnkUs_090A4168[26];
 extern AnimHeader gUnkUs_090A4184;
 extern u8 gUnkUs_090A44B0[8];
 extern AnimHeader gUnkUs_090A44BA;
-extern AnimHeader gUnkUs_090AA4FC;
-extern AnimHeader gUnkUs_090B3FB4;
-extern AnimHeader gUnkUs_090BC9C0;
-extern AnimHeader gUnkUs_090C519C;
-extern AnimHeader gUnkUs_090CBFA8;
 #elif defined(VERSION_JP)
 extern u8 gUnkJp_09033B64[20];
 extern u8 gUnkJp_09033B7A[20];
@@ -662,11 +657,6 @@ extern u8 gUnkJp_0905F690[26];
 extern AnimHeader gUnkJp_0905F6AC;
 extern u8 gUnkJp_0905F9D8[8];
 extern AnimHeader gUnkJp_0905F9E2;
-extern AnimHeader gUnkJp_09065A24;
-extern AnimHeader gUnkJp_0906F4DC;
-extern AnimHeader gUnkJp_09077EE8;
-extern AnimHeader gUnkJp_090806C4;
-extern AnimHeader gUnkJp_090874D0;
 #elif defined(VERSION_EU)
 extern u8 gUnkEu_090F3ADC[8];
 extern AnimHeader gUnkEu_090F3AE6;
