@@ -668,20 +668,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescMapcard",
-          "address": "0x09EE7548",
-          "size": 24,
-          "sha256": "b91b1756aa115ffb58d243c8509345884f9c8dafc744e2a619e63648d332f42a",
-          "objects": [
-            {
-              "name": "gTaskDescMapcard",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrizeCardInit",
           "address": "0x0903614C",
           "size": 14,
@@ -691,20 +677,6 @@
               "name": "gTaskNamePrizeCardInit",
               "offset": 0,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInit",
-          "address": "0x09EE75F0",
-          "size": 24,
-          "sha256": "193d55fd61119c445bcff03a5f0d1d69ea43896735e53a0c973b3071bf9356b5",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInit",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -726,20 +698,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInitBoss",
-          "address": "0x09EE7608",
-          "size": 24,
-          "sha256": "f5efb6181ece923c356af997f159221f7e2105ee709ede4d2b8074595d1faf04",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInitBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescDispCardname",
           "address": "0x09036170",
           "size": 13,
@@ -753,20 +711,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescDispCardname",
-          "address": "0x09EE7620",
-          "size": 24,
-          "sha256": "b832df37995d8431e7667c972d4d192a492e406439398580b1a1c00a698f2ebe",
-          "objects": [
-            {
-              "name": "gTaskDescDispCardname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -786,20 +730,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescVersion",
-          "address": "0x09EE7638",
-          "size": 24,
-          "sha256": "3c8777e270bfe5d097974df57a7db1df1f4443226218e38f17e14dfe82956790",
-          "objects": [
-            {
-              "name": "gTaskDescVersion",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescSpotLight",
           "address": "0x09036194",
           "size": 10,
@@ -813,20 +743,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescSpotLight",
-          "address": "0x09EE7668",
-          "size": 24,
-          "sha256": "ecdeaa3961e31124cd5f43d4fcd2d13f1454d708e43ad70acf18b00f219cd5d0",
-          "objects": [
-            {
-              "name": "gTaskDescSpotLight",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -846,20 +762,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescSELMAPEVKEY",
-          "address": "0x09EE7680",
-          "size": 24,
-          "sha256": "40094706c7c8eaedb3ff48480b481aedc48710fbf77e37a3994279cb7c5453b5",
-          "objects": [
-            {
-              "name": "gTaskDescSELMAPEVKEY",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescReloadChildren",
           "address": "0x090361C8",
           "size": 16,
@@ -874,20 +776,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescReloadChildren",
-          "address": "0x09EE76A8",
-          "size": 24,
-          "sha256": "de87b2313c70b2b280e173fda183fe3415381b5357332a39d66ae434a48f96e2",
-          "objects": [
-            {
-              "name": "gTaskDescReloadChildren",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescREVCOUNT",
           "address": "0x090361D8",
           "size": 10,
@@ -897,20 +785,6 @@
               "name": "gTaskNameREVCOUNT",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescREVCOUNT",
-          "address": "0x09EE76F0",
-          "size": 24,
-          "sha256": "dd774dea5d28ca3e69eec5bd25235be8947059d662967e72d3a5628f6edc2661",
-          "objects": [
-            {
-              "name": "gTaskDescREVCOUNT",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -932,20 +806,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeBoss",
-          "address": "0x09EE7744",
-          "size": 24,
-          "sha256": "3ef33dc266e900e536676069da3018e6ed618d0631d34e07a393abcee1716a51",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescCardEFFECT",
           "address": "0x090361F8",
           "size": 12,
@@ -962,20 +822,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescCardEFFECT",
-          "address": "0x09EE775C",
-          "size": 24,
-          "sha256": "cccc98f10a863486dbf6e13fb2e4d3e29378ef56593f00e7c4366169c8ab2838",
-          "objects": [
-            {
-              "name": "gTaskDescCardEFFECT",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescScrollbar",
           "address": "0x09036204",
           "size": 10,
@@ -985,20 +831,6 @@
               "name": "gTaskNameScrollbar",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescScrollbar",
-          "address": "0x09EE7774",
-          "size": 24,
-          "sha256": "c3dc8f2bee901a44436019f52d30b54fdf006b898727bd35c234f2b6b5a9a68f",
-          "objects": [
-            {
-              "name": "gTaskDescScrollbar",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -7316,20 +7148,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescMapcard",
-          "address": "0x09EBEBA0",
-          "size": 24,
-          "sha256": "0a35cff8c0bbf5b0225f0d9c8b7bbeeb20a4250464fd145db89bd664b0f2f1e9",
-          "objects": [
-            {
-              "name": "gTaskDescMapcard",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrizeCardInit",
           "address": "0x090095F0",
           "size": 14,
@@ -7339,20 +7157,6 @@
               "name": "gTaskNamePrizeCardInit",
               "offset": 0,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInit",
-          "address": "0x09EBEC48",
-          "size": 24,
-          "sha256": "4415ecf575d48485739ce106b5f71d2b4eca7b8c784b66326d3249933ac5836c",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInit",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -7374,20 +7178,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInitBoss",
-          "address": "0x09EBEC60",
-          "size": 24,
-          "sha256": "ffcedf6440093735e18849c514746fc374af8bb8111c06f2de779491df6c49d3",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInitBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescDispCardname",
           "address": "0x09009614",
           "size": 13,
@@ -7401,20 +7191,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescDispCardname",
-          "address": "0x09EBEC78",
-          "size": 24,
-          "sha256": "9a0634b73f60fd38bda5958c79b2c8f50e60143522684519f0ca79ec2e9e0c15",
-          "objects": [
-            {
-              "name": "gTaskDescDispCardname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -7434,20 +7210,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescVersion",
-          "address": "0x09EBEC90",
-          "size": 24,
-          "sha256": "3c33f32320988bcd54ffa3e3255bebc5eec07a4fdbc768ea8e8f21dea1267b4a",
-          "objects": [
-            {
-              "name": "gTaskDescVersion",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescSpotLight",
           "address": "0x09009638",
           "size": 10,
@@ -7461,20 +7223,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescSpotLight",
-          "address": "0x09EBECC0",
-          "size": 24,
-          "sha256": "cc9271e580a2d6409dd5f65977a57ccd7984cb7e696207044f74d2649780af10",
-          "objects": [
-            {
-              "name": "gTaskDescSpotLight",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -7494,20 +7242,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescSELMAPEVKEY",
-          "address": "0x09EBECD8",
-          "size": 24,
-          "sha256": "09edaefbc154a764e0180aa7feb1dfef0b23e128a1c348102c65cde7c60af485",
-          "objects": [
-            {
-              "name": "gTaskDescSELMAPEVKEY",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescReloadChildren",
           "address": "0x0900966C",
           "size": 16,
@@ -7522,20 +7256,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescReloadChildren",
-          "address": "0x09EBED00",
-          "size": 24,
-          "sha256": "d469175ad115643dc821d033508e481f2662373b7e74c8af3eabc58f9c58c642",
-          "objects": [
-            {
-              "name": "gTaskDescReloadChildren",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescREVCOUNT",
           "address": "0x0900967C",
           "size": 10,
@@ -7545,20 +7265,6 @@
               "name": "gTaskNameREVCOUNT",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescREVCOUNT",
-          "address": "0x09EBED48",
-          "size": 24,
-          "sha256": "3cb7bbe9b1024501ef4d7506db800a0599deb0a9e36597205224fa79870bf253",
-          "objects": [
-            {
-              "name": "gTaskDescREVCOUNT",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -7580,20 +7286,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeBoss",
-          "address": "0x09EBED9C",
-          "size": 24,
-          "sha256": "0598675b4a8164724bfd91a44bd085c3add6511ff26f661c7965994b1d3ba781",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescCardEFFECT",
           "address": "0x0900969C",
           "size": 12,
@@ -7610,20 +7302,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescCardEFFECT",
-          "address": "0x09EBEDB4",
-          "size": 24,
-          "sha256": "cfecf0c73387fe06dbcbdbd10fc162c92a8b8bf4de7637bda342a63202f38b19",
-          "objects": [
-            {
-              "name": "gTaskDescCardEFFECT",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescScrollbar",
           "address": "0x090096A8",
           "size": 10,
@@ -7633,20 +7311,6 @@
               "name": "gTaskNameScrollbar",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescScrollbar",
-          "address": "0x09EBEDCC",
-          "size": 24,
-          "sha256": "98b4b077d91ddd9eb9bf9014256f1ceeb0ac7adbf79d37b8b17cf788fea99f70",
-          "objects": [
-            {
-              "name": "gTaskDescScrollbar",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13934,20 +13598,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescMapcard",
-          "address": "0x09F72904",
-          "size": 24,
-          "sha256": "2cc5e8488e3af4a215b2d5bbc2c0d30f8b3c57936d709230a39c1e5cccda5fc2",
-          "objects": [
-            {
-              "name": "gTaskDescMapcard",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrizeCardInit",
           "address": "0x090CF4F0",
           "size": 14,
@@ -13957,20 +13607,6 @@
               "name": "gTaskNamePrizeCardInit",
               "offset": 0,
               "size": 14
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInit",
-          "address": "0x09F729AC",
-          "size": 24,
-          "sha256": "c6965b740f353489fa6654f79851ac72afbd19203b505e28b695e119f2237b09",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInit",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13992,20 +13628,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeCardInitBoss",
-          "address": "0x09F729C4",
-          "size": 24,
-          "sha256": "8f98e1260b45b735ab65a49729a12b2c125ba28ad5f9de591e4f88357657b370",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeCardInitBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescDispCardname",
           "address": "0x090CF514",
           "size": 13,
@@ -14019,20 +13641,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescDispCardname",
-          "address": "0x09F729DC",
-          "size": 24,
-          "sha256": "6483ca3ce69fb516c0ed5328d2fc5c0b78589f902e7b6941ba69b7b9028ce221",
-          "objects": [
-            {
-              "name": "gTaskDescDispCardname",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -14052,20 +13660,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescVersion",
-          "address": "0x09F729F4",
-          "size": 24,
-          "sha256": "a1d706bae87bfd277199532233344a6e5d62694609e366c2c003a36df9972be2",
-          "objects": [
-            {
-              "name": "gTaskDescVersion",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescSpotLight",
           "address": "0x090CF538",
           "size": 10,
@@ -14079,20 +13673,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescSpotLight",
-          "address": "0x09F72A24",
-          "size": 24,
-          "sha256": "4d266e9d165da93d80c774592058e87471268f0a467ec9448e03d0bca97c9b48",
-          "objects": [
-            {
-              "name": "gTaskDescSpotLight",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -14112,20 +13692,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescSELMAPEVKEY",
-          "address": "0x09F72A78",
-          "size": 24,
-          "sha256": "48e2b392cb0f86a139cd6e235b5b55aa1771e9cbd987c78b37e5b91555e6bbc1",
-          "objects": [
-            {
-              "name": "gTaskDescSELMAPEVKEY",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescReloadChildren",
           "address": "0x090CF56C",
           "size": 16,
@@ -14140,20 +13706,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescReloadChildren",
-          "address": "0x09F72AA0",
-          "size": 24,
-          "sha256": "453261aa953fa3f85fc896c2a87710e6789846f45b2aacdd55d7a2734fbdcf0b",
-          "objects": [
-            {
-              "name": "gTaskDescReloadChildren",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescREVCOUNT",
           "address": "0x090CF57C",
           "size": 10,
@@ -14163,20 +13715,6 @@
               "name": "gTaskNameREVCOUNT",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescREVCOUNT",
-          "address": "0x09F72AE8",
-          "size": 24,
-          "sha256": "7aeddb9f96f3a56e083342e17b3d3c4df2813877f3008724aa51c2de3f5de8a7",
-          "objects": [
-            {
-              "name": "gTaskDescREVCOUNT",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -14198,20 +13736,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrizeBoss",
-          "address": "0x09F72B3C",
-          "size": 24,
-          "sha256": "9b25ff889f916babd9417d0e63cc458b54f942749f791d2077bf7b7a029d82f2",
-          "objects": [
-            {
-              "name": "gTaskDescPrizeBoss",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescCardEFFECT",
           "address": "0x090CF59C",
           "size": 12,
@@ -14228,20 +13752,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescCardEFFECT",
-          "address": "0x09F72B54",
-          "size": 24,
-          "sha256": "6c30c7f1f10ef81dd2768dab18be4a591fd48cf8c1debd4c1204bdb9bc07a4ce",
-          "objects": [
-            {
-              "name": "gTaskDescCardEFFECT",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescScrollbar",
           "address": "0x090CF5A8",
           "size": 10,
@@ -14251,20 +13761,6 @@
               "name": "gTaskNameScrollbar",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescScrollbar",
-          "address": "0x09F72B6C",
-          "size": 24,
-          "sha256": "bb7b011b84a78539e7ef5577660a475d7a3716f8563e835d441d563ab6f7bb9c",
-          "objects": [
-            {
-              "name": "gTaskDescScrollbar",
-              "offset": 0,
-              "size": 24
             }
           ]
         },

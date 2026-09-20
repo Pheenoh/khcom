@@ -384,20 +384,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7560",
-          "address": "0x9ee7560",
-          "size": 24,
-          "sha256": "8f70a51b45d25c939c0665f55089d68fa41fc1d96c256dbbda068b32a765064c",
-          "objects": [
-            {
-              "name": "gUnk_09EE7560",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE75D8",
           "address": "0x90359f0",
           "size": 10,
@@ -412,20 +398,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE75D8",
-          "address": "0x9ee75d8",
-          "size": 24,
-          "sha256": "df985d9c93713259144dd49e41cf8a03591db569ec70407626b0ab2ebbae9247",
-          "objects": [
-            {
-              "name": "gUnk_09EE75D8",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7650",
           "address": "0x9036188",
           "size": 10,
@@ -435,20 +407,6 @@
               "name": "gTaskName_09EE7650",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7650",
-          "address": "0x9ee7650",
-          "size": 24,
-          "sha256": "bc143706ce6d95150ef381790424ad95ecdf112fcb2adaf7ce6736345b718ce4",
-          "objects": [
-            {
-              "name": "gUnk_09EE7650",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -470,20 +428,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE772C",
-          "address": "0x9ee772c",
-          "size": 24,
-          "sha256": "58292a57f0f57bb43bfc8d150e6468020796d39c6d1cdd4822da98f6f7e3ea99",
-          "objects": [
-            {
-              "name": "gUnk_09EE772C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE778C",
           "address": "0x9036230",
           "size": 12,
@@ -498,20 +442,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE778C",
-          "address": "0x9ee778c",
-          "size": 24,
-          "sha256": "3efc3998a5a011b27de9c5a235d9de4bd8e20a4d5547bd37456ffb8f15925f9c",
-          "objects": [
-            {
-              "name": "gUnk_09EE778C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77A4",
           "address": "0x903623c",
           "size": 15,
@@ -521,20 +451,6 @@
               "name": "gTaskName_09EE77A4",
               "offset": 0,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77A4",
-          "address": "0x9ee77a4",
-          "size": 24,
-          "sha256": "24ec054f325b47e329eb3b1fdaec9d23c229a2bb61e45b851fdd1d96b51ee9a5",
-          "objects": [
-            {
-              "name": "gUnk_09EE77A4",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -556,20 +472,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77BC",
-          "address": "0x9ee77bc",
-          "size": 24,
-          "sha256": "53b693fa8b7632792709e8d113e8059619f27f8a6d1143950bff489d741ea23a",
-          "objects": [
-            {
-              "name": "gUnk_09EE77BC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77D4",
           "address": "0x903625c",
           "size": 10,
@@ -583,34 +485,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77D4",
-          "address": "0x9ee77d4",
-          "size": 24,
-          "sha256": "383f560410420e96e173be966359aa4db251ffe94f053ee81df14bc8da10e144",
-          "objects": [
-            {
-              "name": "gUnk_09EE77D4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77EC",
-          "address": "0x9ee77ec",
-          "size": 24,
-          "sha256": "97c3e11145b53c4b673329fdf4ad7f29093f4953909de27048b354a1988b67bd",
-          "objects": [
-            {
-              "name": "gUnk_09EE77EC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -630,20 +504,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7804",
-          "address": "0x9ee7804",
-          "size": 24,
-          "sha256": "a9293fce7f488638a6d7f7be4202d2b8b527e572d1d5d335c66ccdad7c20d666",
-          "objects": [
-            {
-              "name": "gUnk_09EE7804",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE781C",
           "address": "0x9036294",
           "size": 15,
@@ -658,20 +518,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE781C",
-          "address": "0x9ee781c",
-          "size": 24,
-          "sha256": "7001e4d5fd82e9a3c5568cf27fd8fd3e79a1aecdbbb0634522bd29bb72bbb128",
-          "objects": [
-            {
-              "name": "gUnk_09EE781C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7834",
           "address": "0x90362d4",
           "size": 9,
@@ -681,20 +527,6 @@
               "name": "gTaskName_09EE7834",
               "offset": 0,
               "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7834",
-          "address": "0x9ee7834",
-          "size": 24,
-          "sha256": "ace833b15ae19dc5d4eeae72ed70bdea00f9935b5e502229903be1b38c5ecbd8",
-          "objects": [
-            {
-              "name": "gUnk_09EE7834",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -716,20 +548,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE784C",
-          "address": "0x9ee784c",
-          "size": 24,
-          "sha256": "881004dbcb6739a978e855c82a29862960e1a3475bbafd51daf317d286986e9c",
-          "objects": [
-            {
-              "name": "gUnk_09EE784C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7864",
           "address": "0x90362f0",
           "size": 16,
@@ -743,34 +561,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7864",
-          "address": "0x9ee7864",
-          "size": 24,
-          "sha256": "50a57f6fa09ebf59d70bfb46a116a4b0f99ca3ead40110d89f4c68173366dead",
-          "objects": [
-            {
-              "name": "gUnk_09EE7864",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE787C",
-          "address": "0x9ee787c",
-          "size": 24,
-          "sha256": "d62df185e2f0764f339974c310d91ddf407b868c760eed3bc2e9b7d7cbcac3e9",
-          "objects": [
-            {
-              "name": "gUnk_09EE787C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -1520,20 +1310,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7560",
-          "address": "0x9ebebb8",
-          "size": 24,
-          "sha256": "a225b98e9d6f507b869dcc99b547969cefe12ace20c55081a23ec7ce1e10ffe7",
-          "objects": [
-            {
-              "name": "gUnk_09EE7560",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE75D8",
           "address": "0x9008e94",
           "size": 10,
@@ -1548,20 +1324,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE75D8",
-          "address": "0x9ebec30",
-          "size": 24,
-          "sha256": "58d04d97601db1082679626b6fba8a96986fc7e1ef13ccfccc88c51a16a01f46",
-          "objects": [
-            {
-              "name": "gUnk_09EE75D8",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7650",
           "address": "0x900962c",
           "size": 10,
@@ -1571,20 +1333,6 @@
               "name": "gTaskName_09EE7650",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7650",
-          "address": "0x9ebeca8",
-          "size": 24,
-          "sha256": "76af452c52e10fe9fcb8b7bbff88e550a4565595f3cfce5882e04de9fb888849",
-          "objects": [
-            {
-              "name": "gUnk_09EE7650",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -1606,20 +1354,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE772C",
-          "address": "0x9ebed84",
-          "size": 24,
-          "sha256": "90ad98e00c6e564234de5ff553c3d67e3f12bafeef1248441695271ac3cc896f",
-          "objects": [
-            {
-              "name": "gUnk_09EE772C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE778C",
           "address": "0x90096d4",
           "size": 12,
@@ -1634,20 +1368,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE778C",
-          "address": "0x9ebede4",
-          "size": 24,
-          "sha256": "c969b1fadb0a503b7a882cc481fc5f255600dce5de6d199506bdf1656802aa8f",
-          "objects": [
-            {
-              "name": "gUnk_09EE778C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77A4",
           "address": "0x90096e0",
           "size": 15,
@@ -1657,20 +1377,6 @@
               "name": "gTaskName_09EE77A4",
               "offset": 0,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77A4",
-          "address": "0x9ebedfc",
-          "size": 24,
-          "sha256": "d964450da74c74d3d3c311213d9ab9b29fdcabfa714253dec1fcfa17f291fd90",
-          "objects": [
-            {
-              "name": "gUnk_09EE77A4",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -1692,20 +1398,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77BC",
-          "address": "0x9ebee14",
-          "size": 24,
-          "sha256": "098a186b89c58adf2bd2ead543e2600c5f882178496b4163b230070566eed4f3",
-          "objects": [
-            {
-              "name": "gUnk_09EE77BC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77D4",
           "address": "0x9009700",
           "size": 10,
@@ -1719,34 +1411,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77D4",
-          "address": "0x9ebee2c",
-          "size": 24,
-          "sha256": "c336b879aae7c72cdb42445ea2eff6580097a961f2ec33091dd6d96cae41b840",
-          "objects": [
-            {
-              "name": "gUnk_09EE77D4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77EC",
-          "address": "0x9ebee44",
-          "size": 24,
-          "sha256": "f9b88d0e3879408889850494bef819d781861a88ab0085f0e9067ca677c428ef",
-          "objects": [
-            {
-              "name": "gUnk_09EE77EC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -1766,20 +1430,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7804",
-          "address": "0x9ebee5c",
-          "size": 24,
-          "sha256": "1195ad7aa9ac5ef60b9fb72c16de3f1da2a242f2b4398464e65bb4dc376e4a31",
-          "objects": [
-            {
-              "name": "gUnk_09EE7804",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE781C",
           "address": "0x9009738",
           "size": 15,
@@ -1794,20 +1444,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE781C",
-          "address": "0x9ebee74",
-          "size": 24,
-          "sha256": "700dd92e2ee219be013092e29b4ae59f64cfdae8ce53117884f9b6799dd30e38",
-          "objects": [
-            {
-              "name": "gUnk_09EE781C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7834",
           "address": "0x9009760",
           "size": 9,
@@ -1817,20 +1453,6 @@
               "name": "gTaskName_09EE7834",
               "offset": 0,
               "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7834",
-          "address": "0x9ebee8c",
-          "size": 24,
-          "sha256": "9c2051c55d29221c271f9801b9a4964140400d8d90ee4a621690c267ef1ce4b3",
-          "objects": [
-            {
-              "name": "gUnk_09EE7834",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -1852,20 +1474,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE784C",
-          "address": "0x9ebeea4",
-          "size": 24,
-          "sha256": "f0deb52bb3cd189d94c1ffb730e78768267e3cd88ed6896d0a43c2dca1fee755",
-          "objects": [
-            {
-              "name": "gUnk_09EE784C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7864",
           "address": "0x900977c",
           "size": 16,
@@ -1879,34 +1487,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7864",
-          "address": "0x9ebeebc",
-          "size": 24,
-          "sha256": "d2139095ab521e9e725d5916ab06c6e7457254d41930cfedcb9a36fcaeb41c88",
-          "objects": [
-            {
-              "name": "gUnk_09EE7864",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE787C",
-          "address": "0x9ebeed4",
-          "size": 24,
-          "sha256": "f25a65068efab9b40c438418c456a772ff9e717d7a50f1500ac3193ead18a5ba",
-          "objects": [
-            {
-              "name": "gUnk_09EE787C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -2658,20 +2238,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7560",
-          "address": "0x9f7291c",
-          "size": 24,
-          "sha256": "1ad87f9f9594a99f618d6d1f68ec52354ff6a2a70119df40ea752cc81948857d",
-          "objects": [
-            {
-              "name": "gUnk_09EE7560",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE75D8",
           "address": "0x90ced98",
           "size": 10,
@@ -2686,20 +2252,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE75D8",
-          "address": "0x9f72994",
-          "size": 24,
-          "sha256": "57153ec91502ee99a94b6b8f57731edcc257f486e6211e091004c0307cca6239",
-          "objects": [
-            {
-              "name": "gUnk_09EE75D8",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7650",
           "address": "0x90cf52c",
           "size": 10,
@@ -2709,20 +2261,6 @@
               "name": "gTaskName_09EE7650",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7650",
-          "address": "0x9f72a0c",
-          "size": 24,
-          "sha256": "9a8f3824d8141a8c1b9b95e18f4bc601a47c714c75a12324d833a3f26fae2006",
-          "objects": [
-            {
-              "name": "gUnk_09EE7650",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -2744,20 +2282,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE772C",
-          "address": "0x9f72b24",
-          "size": 24,
-          "sha256": "fd876f955b0ecc4ab1a2c73a551b0e0ba97be33c2aa3a6e97ccc6106c93c1fa5",
-          "objects": [
-            {
-              "name": "gUnk_09EE772C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE778C",
           "address": "0x90cf5d4",
           "size": 12,
@@ -2772,20 +2296,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE778C",
-          "address": "0x9f72b84",
-          "size": 24,
-          "sha256": "8fc15dfdea77b385a41c4aae0c92933a62d7627a68ff72f7afc462131c8393b4",
-          "objects": [
-            {
-              "name": "gUnk_09EE778C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77A4",
           "address": "0x90cf5e0",
           "size": 15,
@@ -2795,20 +2305,6 @@
               "name": "gTaskName_09EE77A4",
               "offset": 0,
               "size": 15
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77A4",
-          "address": "0x9f72b9c",
-          "size": 24,
-          "sha256": "50607c5e3a1eacbbfbb391aade1600fd5de3b9cce9ed0e5c5ddfb88e5ee2f4de",
-          "objects": [
-            {
-              "name": "gUnk_09EE77A4",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -2830,20 +2326,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77BC",
-          "address": "0x9f72bb4",
-          "size": 24,
-          "sha256": "a981a3b4fe54c35b46c839394d9287617a38d4051c34afcc031e7e52bca2f09b",
-          "objects": [
-            {
-              "name": "gUnk_09EE77BC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE77D4",
           "address": "0x90cf600",
           "size": 10,
@@ -2857,34 +2339,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77D4",
-          "address": "0x9f72bcc",
-          "size": 24,
-          "sha256": "1df13cd4381de5175fb0610bbb758ee70d915ee1898e4802a43dd9e088d1baa9",
-          "objects": [
-            {
-              "name": "gUnk_09EE77D4",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE77EC",
-          "address": "0x9f72be4",
-          "size": 24,
-          "sha256": "ee2063560f5dc9a62ed51cdd9a0b4d40a463a76d94ae3a501e5448723bc4e084",
-          "objects": [
-            {
-              "name": "gUnk_09EE77EC",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",
@@ -2904,20 +2358,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7804",
-          "address": "0x9f72c10",
-          "size": 24,
-          "sha256": "84f093430dede26ea4d14fb719f8650823853b47882909d4a8798b2ece32c30d",
-          "objects": [
-            {
-              "name": "gUnk_09EE7804",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE781C",
           "address": "0x90cf638",
           "size": 15,
@@ -2932,20 +2372,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE781C",
-          "address": "0x9f72c28",
-          "size": 24,
-          "sha256": "cda653b63be91a42c0895d65c5881695489dae7e73508f058a41b5416bbeaa7f",
-          "objects": [
-            {
-              "name": "gUnk_09EE781C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7834",
           "address": "0x90cf650",
           "size": 9,
@@ -2955,20 +2381,6 @@
               "name": "gTaskName_09EE7834",
               "offset": 0,
               "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7834",
-          "address": "0x9f72c40",
-          "size": 24,
-          "sha256": "9a3a4afc188c2f8425ecb3fc3ca323ba052f9fab4f490c5b7ee68ce87f19abfd",
-          "objects": [
-            {
-              "name": "gUnk_09EE7834",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -2990,20 +2402,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE784C",
-          "address": "0x9f72c58",
-          "size": 24,
-          "sha256": "14b40b7c3f97486dc65a8ef6940b0b2c67c205d6b8fc2cb3df1d032a187ee5c2",
-          "objects": [
-            {
-              "name": "gUnk_09EE784C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gUnk_09EE7864",
           "address": "0x90cf66c",
           "size": 16,
@@ -3017,34 +2415,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 1
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE7864",
-          "address": "0x9f72c70",
-          "size": 24,
-          "sha256": "461872c442591d3695152788d2f223b7f8a1f0e205b3e90461001e198a9b9412",
-          "objects": [
-            {
-              "name": "gUnk_09EE7864",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gUnk_09EE787C",
-          "address": "0x9f72c88",
-          "size": 24,
-          "sha256": "83d5b676ca781c158e00709aae9b2a480fe74d5eb6bdf763d2c477cd0203d4bd",
-          "objects": [
-            {
-              "name": "gUnk_09EE787C",
-              "offset": 0,
-              "size": 24
-            }
-          ]
         },
         {
           "unit": "card.c",

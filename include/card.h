@@ -13,7 +13,6 @@
 #include "aux_animation_data.h"
 #include "map_text_data.h"
 #include "card_localized_data.h"
-#include "card_reload_data.h"
 #include "event_sprite_data.h"
 #include "card_message_data.h"
 #include "card_lookup_data.h"
@@ -64,6 +63,13 @@
 #include "game.h"
 #include "mode.h"
 #include "mode_battle_data.h"
+
+typedef struct UnkStruct_09EE752C {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+} UnkStruct_09EE752C;
 
 void func_080A0944(u16 a, u16* p);
 void func_080A096C(u16 a, u16* p);
