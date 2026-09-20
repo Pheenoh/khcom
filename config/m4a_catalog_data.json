@@ -3,91 +3,87 @@
   "provenance": {
     "dispatch": "MPlayJumpTableCopy explicitly copies36 function pointers. The twelve XCMD entries end where the independent ToneData bank begins. Every pointer names the actual mapped Thumb function in each region; the scale/frequency tables have180 and12 entries, matching MidiKeyToFreq key clamp178 and key+1 lookup.",
     "players": "m4aSoundInit iterates NUM_MUSIC_PLAYERS=26. Each12-byte MusicPlayer descriptor names a compiler-owned MusicPlayerInfo and its actual count-bounded MusicPlayerTrack array. Slots13..15 are native zero descriptors. The23 track arrays total51 records at80-byte stride and exactly fill the previously unallocated4080-byte RAM span before sio_link_header_state, with regional addresses verified from all26 native table records.",
-    "songs": "962 complete8-byte Song records end at the separately referenced zero-track song header. All ms/me selectors agree across versions and remain within26 player slots. Native sequence headers are complete encoded music asset bindings (4-byte zero-track sentinel or8+4*trackCount), not claimed as source-owned C metadata. Duplicate headers use a single canonical binding per native address."
+    "songs": "962 complete8-byte Song records end at the separately referenced zero-track song header. All ms/me selectors agree across versions and remain within26 player slots. Native sequence headers are complete encoded music asset bindings (4-byte zero-track sentinel or8+4*trackCount), not claimed as source-owned C metadata. Duplicate headers use a single canonical binding per native address.",
+    "native_engine_tables": "The driver dispatch template, pitch lookup tables, CGB/noise/timing tables and XCMD dispatch form one consecutive driver-data run in all three regions. Existing driver consumers distinguish these fixed algorithm tables from game-specific player/song records. A shared engine-data translation unit is a reconstruction assumption supported by this common role, unchanged order and native four-byte alignment; the three bytes after the 49-byte clock table are the natural gap before the XCMD pointer array. Every original object extent and pointer relocation is preserved.",
+    "native_game_catalog": "The 26 player descriptors and 962 song records are consecutive game-specific catalog data in all three regions, while their 23 track work arrays remain in the existing unchanged RAM allocation. Ordinary readonly definitions preserve both catalog object offsets and all pointer targets without per-symbol section attributes."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayJumpTableTemplate",
+          "unit": "m4a_tables.c",
+          "section": ".rodata",
           "address": "0x9d6d348",
-          "size": 144,
-          "sha256": "4072465aabbf62f43b547e1190dce278814c9f3e52b826ea6c5e83322588ca0d",
+          "size": 728,
+          "sha256": "c6c11a832db5e7d54513b8615231391f61722047290fbd24b878725f648e1a93",
           "objects": [
             {
               "name": "gMPlayJumpTableTemplate",
               "offset": 0,
               "size": 144
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gScaleTable",
-          "address": "0x9d6d3d8",
-          "size": 180,
-          "sha256": "52e19ba195ffad7aa82ac71bf26543d912f3e3a763e40c755ce0e71b674ef9e7",
-          "objects": [
+            },
             {
               "name": "gScaleTable",
-              "offset": 0,
+              "offset": 144,
               "size": 180
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gFreqTable",
-          "address": "0x9d6d48c",
-          "size": 48,
-          "sha256": "6b73747d3fb29635eeda13481d08a06e5371958ee746967aa892fa5390509404",
-          "objects": [
+            },
             {
               "name": "gFreqTable",
-              "offset": 0,
+              "offset": 324,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gXcmdTable",
-          "address": "0x9d6d5f0",
-          "size": 48,
-          "sha256": "d4c5d4c2004bd846dadacfaff363a3a550d1d9532ee9e403ca24cb179378d4d4",
-          "objects": [
+            },
+            {
+              "name": "gPcmSamplesPerVBlankTable",
+              "offset": 372,
+              "size": 24
+            },
+            {
+              "name": "gCgbScaleTable",
+              "offset": 396,
+              "size": 132
+            },
+            {
+              "name": "gCgbFreqTable",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gNoiseTable",
+              "offset": 552,
+              "size": 60
+            },
+            {
+              "name": "gCgb3Vol",
+              "offset": 612,
+              "size": 16
+            },
+            {
+              "name": "gClockTable",
+              "offset": 628,
+              "size": 49
+            },
             {
               "name": "gXcmdTable",
-              "offset": 0,
+              "offset": 680,
               "size": 48
             }
           ]
         },
         {
           "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayTable",
+          "section": ".rodata",
           "address": "0x9d6f60c",
-          "size": 312,
-          "sha256": "bfa55773e573d8c8e8dd39ee0dffa3e3a510a64899b759f12494df2f438920d1",
+          "size": 8008,
+          "sha256": "6b70ff690872ef07365656effee480298a92099e0f81c79405072840981eb92f",
           "objects": [
             {
               "name": "gMPlayTable",
               "offset": 0,
               "size": 312
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gSongTable",
-          "address": "0x9d6f744",
-          "size": 7696,
-          "sha256": "2b36acf1237cbb70d610a53ed25be985db5d77d91d7bf93944ddaeb0baa7289c",
-          "objects": [
+            },
             {
               "name": "gSongTable",
-              "offset": 0,
+              "offset": 312,
               "size": 7696
             }
           ]
@@ -4236,85 +4232,79 @@
     "jp": {
       "placements": [
         {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayJumpTableTemplate",
+          "unit": "m4a_tables.c",
+          "section": ".rodata",
           "address": "0x9d46854",
-          "size": 144,
-          "sha256": "ac1cd6d669b09ede5b7eac0118116bd9aa56d2b0048eefe592283f3f94a272cd",
+          "size": 728,
+          "sha256": "840bb6d4e998476d1d835031abec02fe95f0bd93d6be345c1007e72cd41446b2",
           "objects": [
             {
               "name": "gMPlayJumpTableTemplate",
               "offset": 0,
               "size": 144
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gScaleTable",
-          "address": "0x9d468e4",
-          "size": 180,
-          "sha256": "52e19ba195ffad7aa82ac71bf26543d912f3e3a763e40c755ce0e71b674ef9e7",
-          "objects": [
+            },
             {
               "name": "gScaleTable",
-              "offset": 0,
+              "offset": 144,
               "size": 180
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gFreqTable",
-          "address": "0x9d46998",
-          "size": 48,
-          "sha256": "6b73747d3fb29635eeda13481d08a06e5371958ee746967aa892fa5390509404",
-          "objects": [
+            },
             {
               "name": "gFreqTable",
-              "offset": 0,
+              "offset": 324,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gXcmdTable",
-          "address": "0x9d46afc",
-          "size": 48,
-          "sha256": "f0766f43a1776bf62521a0d79d268e86e95977195f9911cc5261fcf56c631b7e",
-          "objects": [
+            },
+            {
+              "name": "gPcmSamplesPerVBlankTable",
+              "offset": 372,
+              "size": 24
+            },
+            {
+              "name": "gCgbScaleTable",
+              "offset": 396,
+              "size": 132
+            },
+            {
+              "name": "gCgbFreqTable",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gNoiseTable",
+              "offset": 552,
+              "size": 60
+            },
+            {
+              "name": "gCgb3Vol",
+              "offset": 612,
+              "size": 16
+            },
+            {
+              "name": "gClockTable",
+              "offset": 628,
+              "size": 49
+            },
             {
               "name": "gXcmdTable",
-              "offset": 0,
+              "offset": 680,
               "size": 48
             }
           ]
         },
         {
           "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayTable",
+          "section": ".rodata",
           "address": "0x9d48b18",
-          "size": 312,
-          "sha256": "a1c1a5f6887964454803201fca6d20cb35e705bc4e60703abd308c15ba2adcac",
+          "size": 8008,
+          "sha256": "5253e833b646d387bc45dd3b668624e6659af3e85edfbeb653feaa4958c7054e",
           "objects": [
             {
               "name": "gMPlayTable",
               "offset": 0,
               "size": 312
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gSongTable",
-          "address": "0x9d48c50",
-          "size": 7696,
-          "sha256": "85eadb34b90f750161f4357c90a0f3c4113bd182051e23de5d5b62f839799140",
-          "objects": [
+            },
             {
               "name": "gSongTable",
-              "offset": 0,
+              "offset": 312,
               "size": 7696
             }
           ]
@@ -8463,85 +8453,79 @@
     "eu": {
       "placements": [
         {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayJumpTableTemplate",
+          "unit": "m4a_tables.c",
+          "section": ".rodata",
           "address": "0x9ddd274",
-          "size": 144,
-          "sha256": "0a78e233f6726d59d33df00a704e374d3848cff7445ba72f161f34ace160c58e",
+          "size": 728,
+          "sha256": "b832e82f5b37d7d6705eb3d7e23fdbabebb004dca73f1b08691d34bc59f0b450",
           "objects": [
             {
               "name": "gMPlayJumpTableTemplate",
               "offset": 0,
               "size": 144
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gScaleTable",
-          "address": "0x9ddd304",
-          "size": 180,
-          "sha256": "52e19ba195ffad7aa82ac71bf26543d912f3e3a763e40c755ce0e71b674ef9e7",
-          "objects": [
+            },
             {
               "name": "gScaleTable",
-              "offset": 0,
+              "offset": 144,
               "size": 180
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gFreqTable",
-          "address": "0x9ddd3b8",
-          "size": 48,
-          "sha256": "6b73747d3fb29635eeda13481d08a06e5371958ee746967aa892fa5390509404",
-          "objects": [
+            },
             {
               "name": "gFreqTable",
-              "offset": 0,
+              "offset": 324,
               "size": 48
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gXcmdTable",
-          "address": "0x9ddd51c",
-          "size": 48,
-          "sha256": "58dd4b4fc2695c0c71017a78644edf176dfbd470abbf5bc267b22b86830d9e64",
-          "objects": [
+            },
+            {
+              "name": "gPcmSamplesPerVBlankTable",
+              "offset": 372,
+              "size": 24
+            },
+            {
+              "name": "gCgbScaleTable",
+              "offset": 396,
+              "size": 132
+            },
+            {
+              "name": "gCgbFreqTable",
+              "offset": 528,
+              "size": 24
+            },
+            {
+              "name": "gNoiseTable",
+              "offset": 552,
+              "size": 60
+            },
+            {
+              "name": "gCgb3Vol",
+              "offset": 612,
+              "size": 16
+            },
+            {
+              "name": "gClockTable",
+              "offset": 628,
+              "size": 49
+            },
             {
               "name": "gXcmdTable",
-              "offset": 0,
+              "offset": 680,
               "size": 48
             }
           ]
         },
         {
           "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gMPlayTable",
+          "section": ".rodata",
           "address": "0x9ddf538",
-          "size": 312,
-          "sha256": "3956c90c5a01b7afd5b2bfa00c72db329395c387a66fa3d33a00055f78eb7966",
+          "size": 8008,
+          "sha256": "e4273f28591cf5c0a18894e96b87406ec1ac707d26251ceb8812ebe3e3454a98",
           "objects": [
             {
               "name": "gMPlayTable",
               "offset": 0,
               "size": 312
-            }
-          ]
-        },
-        {
-          "unit": "m4a_catalog_data.c",
-          "section": ".rodata_gSongTable",
-          "address": "0x9ddf670",
-          "size": 7696,
-          "sha256": "8db01ffdad8a7400a505d102f94385acd721f4cc8183119534cf78a0dc58cb4f",
-          "objects": [
+            },
             {
               "name": "gSongTable",
-              "offset": 0,
+              "offset": 312,
               "size": 7696
             }
           ]
