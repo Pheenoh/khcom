@@ -38,7 +38,6 @@ extern PcAnimStep gUnk_09A4C5B4[];
 extern PcAnimStep gUnk_09A4C6F8[];
 extern PcAnimStep gUnk_09A4C818[];
 extern PcAnimStep gUnk_09A4C860[];
-extern PcAnimStep* gUnk_09EF9DB4[];
 
 typedef struct PcSpriteCmd {
     u8 unk_00;
@@ -146,7 +145,6 @@ extern PcSpriteCmd gUnk_09A4A4C8[];
 extern PcSpriteCmd gUnk_09A4A708[];
 extern PcSpriteCmd gUnk_09A4A924[];
 extern PcSpriteCmd gUnk_09A4AAD4[];
-extern PcSpriteCmd* gUnk_09EF9C34[];
 
 typedef struct PcGfxSet {
     void* tiles;
@@ -173,7 +171,6 @@ extern const PcShot gUnk_09A4C9F8[];
 
 extern s8 gUnk_09A4CA94[];
 extern s8 gUnk_09A4CAB5[];
-extern s8* gUnk_09EF9E04[];
 
 extern u16 gUnk_09A4CABE[];
 extern s16 gUnk_09A4CAC4[];

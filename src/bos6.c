@@ -13,6 +13,181 @@ s16 gUnk_0203600C;
 u8 gUnk_0203600E[2];
 s32 gUnk_02036010;
 
+void task_bos_pc_3(PcWork* work);
+
+PcSpriteCmd* gUnk_09EF9C34[96] = {
+    gUnk_09A42BD8,
+    gUnk_09A410FC,
+    gUnk_09A41360,
+    gUnk_09A415A0,
+    gUnk_09A417BC,
+    gUnk_09A419D8,
+    gUnk_09A41BD0,
+    gUnk_09A41DA4,
+    gUnk_09A41F78,
+    gUnk_09A4214C,
+    gUnk_09A42344,
+    gUnk_09A4253C,
+    gUnk_09A42734,
+    gUnk_09A42974,
+    gUnk_09A40E98,
+    gUnk_09A3DF34,
+    gUnk_09A3E198,
+    gUnk_09A3E3FC,
+    gUnk_09A3E660,
+    gUnk_09A3E8C4,
+    gUnk_09A3EB04,
+    gUnk_09A3ED44,
+    gUnk_09A3EF84,
+    gUnk_09A3F1C4,
+    gUnk_09A3F3E0,
+    gUnk_09A3F5D8,
+    gUnk_09A3F7F4,
+    gUnk_09A3F9EC,
+    gUnk_09A3FC2C,
+    gUnk_09A3FE90,
+    gUnk_09A400F4,
+    gUnk_09A40358,
+    gUnk_09A405BC,
+    gUnk_09A40820,
+    gUnk_09A409F4,
+    gUnk_09A40B80,
+    gUnk_09A40D0C,
+    gUnk_09A42E3C,
+    gUnk_09A430A0,
+    gUnk_09A432BC,
+    gUnk_09A434B4,
+    gUnk_09A43718,
+    gUnk_09A4397C,
+    gUnk_09A43BE0,
+    gUnk_09A44BA0,
+    gUnk_09A43FAC,
+    gUnk_09A44210,
+    gUnk_09A44474,
+    gUnk_09A446D8,
+    gUnk_09A4493C,
+    gUnk_09A43D48,
+    gUnk_09A44E04,
+    gUnk_09A45044,
+    gUnk_09A451F4,
+    gUnk_09A453C8,
+    gUnk_09A455C0,
+    gUnk_09A457DC,
+    gUnk_09A459B0,
+    gUnk_09A45B84,
+    gUnk_09A45D34,
+    gUnk_09A45F50,
+    gUnk_09A46124,
+    gUnk_09A462F8,
+    gUnk_09A4655C,
+    gUnk_09A467C0,
+    gUnk_09A46994,
+    gUnk_09A46B8C,
+    gUnk_09A46DA8,
+    gUnk_09A46FC4,
+    gUnk_09A47204,
+    gUnk_09A47444,
+    gUnk_09A47684,
+    gUnk_09A478C4,
+    gUnk_09A47AE0,
+    gUnk_09A47D20,
+    gUnk_09A47F84,
+    gUnk_09A480EC,
+    gUnk_09A48308,
+    gUnk_09A48500,
+    gUnk_09A48764,
+    gUnk_09A489C8,
+    gUnk_09A48C2C,
+    gUnk_09A48E90,
+    gUnk_09A48FF8,
+    gUnk_09A49214,
+    gUnk_09A4940C,
+    gUnk_09A49670,
+    gUnk_09A498D4,
+    gUnk_09A49B38,
+    gUnk_09A49D9C,
+    gUnk_09A4A000,
+    gUnk_09A4A264,
+    gUnk_09A4A4C8,
+    gUnk_09A4A708,
+    gUnk_09A4A924,
+    gUnk_09A4AAD4,
+};
+
+PcAnimStep* gUnk_09EF9DB4[14] = {
+    gUnk_09A4AF34,
+    gUnk_09A4B174,
+    gUnk_09A4B3B4,
+    gUnk_09A4B5F4,
+    gUnk_09A4B834,
+    gUnk_09A4BBDC,
+    gUnk_09A4BD20,
+    gUnk_09A4BEAC,
+    gUnk_09A4C278,
+    gUnk_09A4C470,
+    gUnk_09A4C5B4,
+    gUnk_09A4C6F8,
+    gUnk_09A4C818,
+    gUnk_09A4C860,
+};
+
+const char gTaskNameBosPc[] __attribute__((section(".rodata_registration_name_gTaskDescBosPc"), aligned(1))) = "task_bos_pc";
+
+TaskDesc gTaskDescBosPc = {
+    gTaskNameBosPc,
+    (void (*)(void*, void*))task_bos_pc_0,
+    task_bos_pc_1,
+    (void (*)(void*))task_bos_pc_2,
+    (void (*)(void*))task_bos_pc_3,
+    0x1F1C,
+};
+
+s8* gUnk_09EF9E04[2] = { gUnk_09A4CA94, gUnk_09A4CAB5 };
+
+const char gTaskNameBosPcFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFld"), aligned(1))) = "task_bos_pc_fld";
+
+TaskDesc gTaskDescBosPcFld = {
+    gTaskNameBosPcFld,
+    (void (*)(void*, void*))task_bos_pc_fld_0,
+    task_bos_pc_fld_1,
+    (void (*)(void*))task_bos_pc_fld_2,
+    (void (*)(void*))task_bos_pc_fld_3,
+    0x6C,
+};
+
+const char gTaskNameBosPcFlt[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFlt"), aligned(1))) = "task_bos_pc_flt";
+
+TaskDesc gTaskDescBosPcFlt = {
+    gTaskNameBosPcFlt,
+    (void (*)(void*, void*))task_bos_pc_flt_0,
+    task_bos_pc_flt_1,
+    (void (*)(void*))task_bos_pc_flt_2,
+    (void (*)(void*))task_bos_pc_flt_3,
+    0xB4,
+};
+
+const char gTaskNameBosPcAcd[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcAcd"), aligned(1))) = "task_bos_pc_acd";
+
+TaskDesc gTaskDescBosPcAcd = {
+    gTaskNameBosPcAcd,
+    (void (*)(void*, void*))task_bos_pc_acd_0,
+    task_bos_pc_acd_1,
+    (void (*)(void*))task_bos_pc_acd_2,
+    (void (*)(void*))task_bos_pc_acd_3,
+    0x38,
+};
+
+const char gTaskNameBosLst[] __attribute__((section(".rodata_registration_name_gTaskDescBosLst"), aligned(1))) = "task_bos_lst";
+
+TaskDesc gTaskDescBosLst = {
+    gTaskNameBosLst,
+    (void (*)(void*, void*))task_bos_lst_0,
+    task_bos_lst_1,
+    (void (*)(void*))task_bos_lst_2,
+    (void (*)(void*))task_bos_lst_3,
+    0x10A4,
+};
+
 s32 func_08109EA8(s32 a) {
     return a * a;
 }
@@ -3854,58 +4029,3 @@ s32 func_0810FE84(s32 x) {
 s32 func_0810FE8C(s32 x) {
     return x * x;
 }
-
-const char gTaskNameBosPc[] __attribute__((section(".rodata_registration_name_gTaskDescBosPc"), aligned(1))) = "task_bos_pc";
-
-TaskDesc gTaskDescBosPc __attribute__((section(".data_registration_gTaskDescBosPc"))) = {
-    gTaskNameBosPc,
-    (void (*)(void*, void*))task_bos_pc_0,
-    task_bos_pc_1,
-    (void (*)(void*))task_bos_pc_2,
-    (void (*)(void*))task_bos_pc_3,
-    0x1F1C,
-};
-
-const char gTaskNameBosPcFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFld"), aligned(1))) = "task_bos_pc_fld";
-
-TaskDesc gTaskDescBosPcFld __attribute__((section(".data_registration_gTaskDescBosPcFld"))) = {
-    gTaskNameBosPcFld,
-    (void (*)(void*, void*))task_bos_pc_fld_0,
-    task_bos_pc_fld_1,
-    (void (*)(void*))task_bos_pc_fld_2,
-    (void (*)(void*))task_bos_pc_fld_3,
-    0x6C,
-};
-
-const char gTaskNameBosPcFlt[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFlt"), aligned(1))) = "task_bos_pc_flt";
-
-TaskDesc gTaskDescBosPcFlt __attribute__((section(".data_registration_gTaskDescBosPcFlt"))) = {
-    gTaskNameBosPcFlt,
-    (void (*)(void*, void*))task_bos_pc_flt_0,
-    task_bos_pc_flt_1,
-    (void (*)(void*))task_bos_pc_flt_2,
-    (void (*)(void*))task_bos_pc_flt_3,
-    0xB4,
-};
-
-const char gTaskNameBosPcAcd[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcAcd"), aligned(1))) = "task_bos_pc_acd";
-
-TaskDesc gTaskDescBosPcAcd __attribute__((section(".data_registration_gTaskDescBosPcAcd"))) = {
-    gTaskNameBosPcAcd,
-    (void (*)(void*, void*))task_bos_pc_acd_0,
-    task_bos_pc_acd_1,
-    (void (*)(void*))task_bos_pc_acd_2,
-    (void (*)(void*))task_bos_pc_acd_3,
-    0x38,
-};
-
-const char gTaskNameBosLst[] __attribute__((section(".rodata_registration_name_gTaskDescBosLst"), aligned(1))) = "task_bos_lst";
-
-TaskDesc gTaskDescBosLst __attribute__((section(".data_registration_gTaskDescBosLst"))) = {
-    gTaskNameBosLst,
-    (void (*)(void*, void*))task_bos_lst_0,
-    task_bos_lst_1,
-    (void (*)(void*))task_bos_lst_2,
-    (void (*)(void*))task_bos_lst_3,
-    0x10A4,
-};

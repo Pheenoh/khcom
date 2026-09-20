@@ -84,20 +84,6 @@
               "size": 396
             }
           ]
-        },
-        {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_animation_index",
-          "address": "0x9ef9db4",
-          "size": 56,
-          "sha256": "97e05f1dc8f81210761d94965095a044c9a8dd773681d6096c7049e40a660573",
-          "objects": [
-            {
-              "name": "gUnk_09EF9DB4",
-              "offset": 0,
-              "size": 56
-            }
-          ]
         }
       ]
     },
@@ -181,20 +167,6 @@
               "size": 396
             }
           ]
-        },
-        {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_animation_index",
-          "address": "0x9ed11a0",
-          "size": 56,
-          "sha256": "51d8a4db8337145106491d1877f55d5b39e51f47987a6c136f8e7542db2678b0",
-          "objects": [
-            {
-              "name": "gUnk_09EF9DB4",
-              "offset": 0,
-              "size": 56
-            }
-          ]
         }
       ]
     },
@@ -276,20 +248,6 @@
               "name": "gUnk_09A4C860",
               "offset": 6444,
               "size": 396
-            }
-          ]
-        },
-        {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_animation_index",
-          "address": "0x9f85a20",
-          "size": 56,
-          "sha256": "a3956205b2b59d06314c0adfbd9ebfe15b1c0505155aedca7f2d66e4aeacad27",
-          "objects": [
-            {
-              "name": "gUnk_09EF9DB4",
-              "offset": 0,
-              "size": 56
             }
           ]
         }
