@@ -48,6 +48,58 @@
 
 
 
+typedef struct MooglePackCardDef {
+    u16 cardId;
+    u8 unk_02[0x2];
+    void* unk_04;
+    u16 weights[4];
+} MooglePackCardDef;
+
+typedef struct MooglePackCardTable {
+    const MooglePackCardDef* cards;
+    s16 count;
+    u8 unk_06[0x2];
+} MooglePackCardTable;
+
+typedef struct MooglePackSpriteDef {
+    void* palette;
+    u16 paletteSize;
+    u8 unk_06[0x2];
+    void* tiles;
+    u16 tilesSize;
+    u8 unk_0E[0x2];
+    void* sprite;
+    u16 xOffset;
+    u16 yOffset;
+} MooglePackSpriteDef;
+
+typedef struct MooglePackTilemapDef {
+#ifdef VERSION_EU
+    u16** tilemap;
+#else
+    u16* tilemap;
+#endif
+    s16 srcX;
+    s16 srcY;
+} MooglePackTilemapDef;
+
+typedef struct MooglePackMenuEntry {
+    s16 upEntry;
+    s16 downEntry;
+    s16 leftEntry;
+    s16 rightEntry;
+    s16 cursorX;
+    s16 cursorY;
+    void* selectionTilemap;
+    u16 selectionTilemapSize;
+    s16 tilemapX;
+    s16 tilemapY;
+    u16 spriteX;
+    u16 spriteY;
+    u16 unk_1A;
+    MooglePackTilemapDef packTilemaps[4];
+} MooglePackMenuEntry;
+
 typedef struct MooglePackCardWork {
     FldRes* palette;
     void* tiles;

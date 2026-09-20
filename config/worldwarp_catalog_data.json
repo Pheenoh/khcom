@@ -4,7 +4,8 @@
     "worldwarp": "Thirteen20-byte WarpIcon records form the actual floor-navigation graph. The duplicate worldinspect view proves the four directional halfwords previously hidden in the first8 bytes. The connection selector is0..3: exactly four8-byte WarpRect entries end at the separate mode_worldwarp name literal. Fourteen24-byte WorldSelectDef records include the native all-zero world0 entry and end at the separately owned Mode registry. Two92-byte WarpDef records are selected by explicit boolean flags; their first pointer names a real Mode registry, and the previously opaque04 field is a background tilemap pointer with its size at08. All native pointers retain their exact regional value.",
     "backup": "mode_backupstat_0 explicitly initializes and displays six8-byte BackupStatEntry records. Name targets are complete Shift-JIS text assets. Save-state selection wraps0..2 and indexes the three native status-name pointers. These60 bytes are metadata; their encoded text payloads are not counted as source-owned C data.",
     "ms_top_owner": "The Moogle top-menu helpers and lifecycle form one contiguous text run between world-warp mode and shop helpers in every region. Their exclusive 35-object state run reproduces the original offsets and 8-byte input alignment with ordinary static C definitions. The two native WarpDef choices, three dialogue IDs and mode-name literal form the corresponding complete read-only span, with ordinary compiler padding between the halfwords and name. Five EU-only locale selector arrays precede this mode descriptor in native initialized data.",
-    "worldwarp_owner": "The eight world-warp helpers formerly trailing world-inspection code, the three mode callbacks, three tables, mode name and descriptor form native code, data and rodata runs in every region. Their 27 state objects are private to this owner. WarpRect.width and the existing helper declaration are signed halfwords; the helper immediately copies width into a signed halfword local, so its definition is made consistent without changing any instruction. Both TextSlot buffers contain 24 records in US/JP and 48 in EU, as established by the original initialization and cleanup counts. Ordinary private-object alignment reproduces the original RAM layout without two historical gap arrays or two EU text-buffer extension placeholders."
+    "worldwarp_owner": "The eight world-warp helpers formerly trailing world-inspection code, the three mode callbacks, three tables, mode name and descriptor form native code, data and rodata runs in every region. Their 27 state objects are private to this owner. WarpRect.width and the existing helper declaration are signed halfwords; the helper immediately copies width into a signed halfword local, so its definition is made consistent without changing any instruction. Both TextSlot buffers contain 24 records in US/JP and 48 in EU, as established by the original initialization and cleanup counts. Ordinary private-object alignment reproduces the original RAM layout without two historical gap arrays or two EU text-buffer extension placeholders.",
+    "moogle_shop_owner": "The nine pack/menu/resource/weight tables are referenced only by mode_ms.c shop selection, drawing and pack generation. They form one complete readonly run immediately before that owner's diagnostic name in all three regions. Canonical const definitions and const card-table readers reproduce the full 0x5A9-byte run without function-body changes. EU's three five-language graphics indexes directly or indirectly feed the same owner and precede its mode descriptor in one 0x4C-byte native initialized-data run; US/JP retain the 16-byte descriptor. All original bounds, addresses, relocations and contents remain checked. Pack types belong to mode_ms.h; the shared map-card category table and all graphics/condition-script payloads retain their existing representation."
   },
   "regions": {
     "us": {
@@ -109,13 +110,58 @@
         {
           "unit": "mode_ms.c",
           "section": ".rodata",
-          "address": "0x9993780",
-          "size": 13,
-          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "address": "0x99931e4",
+          "size": 1449,
+          "sha256": "bcdc3f127bcc8b46d3db7108193606a2277581ed4e41b16edf8c914fcff1c03a",
           "objects": [
             {
-              "name": "gModeNameMsShop",
+              "name": "gUnk_099931E4",
               "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_099932D4",
+              "offset": 240,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09993334",
+              "offset": 336,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09993348",
+              "offset": 356,
+              "size": 272
+            },
+            {
+              "name": "gUnk_09993458",
+              "offset": 628,
+              "size": 224
+            },
+            {
+              "name": "gUnk_09993538",
+              "offset": 852,
+              "size": 112
+            },
+            {
+              "name": "gUnk_099935A8",
+              "offset": 964,
+              "size": 24
+            },
+            {
+              "name": "gUnk_099935C0",
+              "offset": 988,
+              "size": 416
+            },
+            {
+              "name": "gUnk_09993760",
+              "offset": 1404,
+              "size": 32
+            },
+            {
+              "name": "gModeNameMsShop",
+              "offset": 1436,
               "size": 13
             }
           ]
@@ -308,13 +354,58 @@
         {
           "unit": "mode_ms.c",
           "section": ".rodata",
-          "address": "0x9948294",
-          "size": 13,
-          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "address": "0x9947cf8",
+          "size": 1449,
+          "sha256": "2359a9b8ce980841e4b88d7d7130039790c0c87f3cb6fedcc0ebe0a7dd3a1b6f",
           "objects": [
             {
-              "name": "gModeNameMsShop",
+              "name": "gUnk_099931E4",
               "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_099932D4",
+              "offset": 240,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09993334",
+              "offset": 336,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09993348",
+              "offset": 356,
+              "size": 272
+            },
+            {
+              "name": "gUnk_09993458",
+              "offset": 628,
+              "size": 224
+            },
+            {
+              "name": "gUnk_09993538",
+              "offset": 852,
+              "size": 112
+            },
+            {
+              "name": "gUnk_099935A8",
+              "offset": 964,
+              "size": 24
+            },
+            {
+              "name": "gUnk_099935C0",
+              "offset": 988,
+              "size": 416
+            },
+            {
+              "name": "gUnk_09993760",
+              "offset": 1404,
+              "size": 32
+            },
+            {
+              "name": "gModeNameMsShop",
+              "offset": 1436,
               "size": 13
             }
           ]
@@ -493,13 +584,28 @@
         {
           "unit": "mode_ms.c",
           "section": ".data",
-          "address": "0x9f84f98",
-          "size": 16,
-          "sha256": "d8aa710ec40707d5fd34bce2b985897641ad943cd368ebf7a242862449831cb9",
+          "address": "0x9f84f5c",
+          "size": 76,
+          "sha256": "67a8d8ff3b442e89e9b0abf9bbd5768c23ffa67474f53a1035576993f4862fce",
           "objects": [
             {
-              "name": "gModeMsShop",
+              "name": "gUnkEu_09F84F5C",
               "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F70",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F84F84",
+              "offset": 40,
+              "size": 20
+            },
+            {
+              "name": "gModeMsShop",
+              "offset": 60,
               "size": 16
             }
           ]
@@ -507,13 +613,58 @@
         {
           "unit": "mode_ms.c",
           "section": ".rodata",
-          "address": "0x9999a30",
-          "size": 13,
-          "sha256": "47719104cdb0e25e6eadba4bb885ea503f842c3092d8d48c3931802d550386d1",
+          "address": "0x9999494",
+          "size": 1449,
+          "sha256": "c6bab09d0c12e970e6d3f01102c65e3d7e6c60bcda6a05e51e74b773a82cdbac",
           "objects": [
             {
-              "name": "gModeNameMsShop",
+              "name": "gUnk_099931E4",
               "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_099932D4",
+              "offset": 240,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09993334",
+              "offset": 336,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09993348",
+              "offset": 356,
+              "size": 272
+            },
+            {
+              "name": "gUnk_09993458",
+              "offset": 628,
+              "size": 224
+            },
+            {
+              "name": "gUnk_09993538",
+              "offset": 852,
+              "size": 112
+            },
+            {
+              "name": "gUnk_099935A8",
+              "offset": 964,
+              "size": 24
+            },
+            {
+              "name": "gUnk_099935C0",
+              "offset": 988,
+              "size": 416
+            },
+            {
+              "name": "gUnk_09993760",
+              "offset": 1404,
+              "size": 32
+            },
+            {
+              "name": "gModeNameMsShop",
+              "offset": 1436,
               "size": 13
             }
           ]

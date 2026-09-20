@@ -4,7 +4,6 @@
 #include "anim.h"
 
 #ifdef VERSION_EU
-extern void* gUnkEu_09F84F5C[5];
 extern void* gUnkEu_09F84FA8[5];
 extern void* gUnkEu_09F84FBC[5];
 extern void* gUnkEu_09F84FD0[5];

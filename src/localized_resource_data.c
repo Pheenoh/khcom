@@ -3,14 +3,6 @@
 
 #ifdef VERSION_EU
 
-void* gUnkEu_09F84F5C[5] __attribute__((section(".data_localized_09F84F5C"))) = {
-    gUnkEu_09A8DAA0,
-    gUnk_09A3B25C,
-    gUnkEu_09A91920,
-    gUnkEu_09A91420,
-    gUnk_09A3B75C,
-};
-
 void* gUnkEu_09F84FA8[5] __attribute__((section(".data_localized_09F84FA8"))) = {
     gUnkEu_09A94E20,
     gUnkEu_09A95320,
