@@ -13,6 +13,28 @@ extern void* gUnkEu_09F80124[5];
 extern void* gUnkEu_09F80138[5];
 #endif
 
+const char gTaskNameAllmapRoom[] = "task_allmap_room";
+
+const char gTaskNameAllmapCursor[] = "task_allmap_cursor";
+
+const char gTaskNameAllmapRoomname[] = "task_allmap_roomname";
+
+const char gTaskNameAllmapBar[] = "task_allmap_bar";
+
+const s16 gUnk_096FDC10[4][2] = {
+    {-24, 48},
+    {56, 48},
+    {56, -19},
+    {-24, -19},
+};
+
+const s16 gUnk_096FDC20[4][2] = {
+    {16, -16},
+    {-16, -16},
+    {-16, 16},
+    {16, 16},
+};
+
 const u16 gUnk_096FDC30[4][2] = {
     {0xFFFF, 1},
     {1, 1},
@@ -1175,8 +1197,6 @@ void* func_080D5960(u8 a) {
     return ((AllmapState*)gUnk_0203C4B4)->roomTasks[a]->work;
 }
 
-const char gTaskNameAllmapRoom[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapRoom"), aligned(1))) = "task_allmap_room";
-
 TaskDesc gTaskDescAllmapRoom = {
     gTaskNameAllmapRoom,
     (void (*)(void*, void*))task_allmap_room_0,
@@ -1186,8 +1206,6 @@ TaskDesc gTaskDescAllmapRoom = {
     0xA0,
 };
 
-const char gTaskNameAllmapCursor[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapCursor"), aligned(1))) = "task_allmap_cursor";
-
 TaskDesc gTaskDescAllmapCursor = {
     gTaskNameAllmapCursor,
     (void (*)(void*, void*))task_allmap_cursor_0,
@@ -1196,8 +1214,6 @@ TaskDesc gTaskDescAllmapCursor = {
     (void (*)(void*))task_allmap_cursor_3,
     0x48,
 };
-
-const char gTaskNameAllmapRoomname[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapRoomname"), aligned(1))) = "task_allmap_roomname";
 
 TaskDesc gTaskDescAllmapRoomname = {
     gTaskNameAllmapRoomname,
@@ -1229,8 +1245,6 @@ void* gUnkEu_09F80138[5] = {
     gUnkEu_09810240,
 };
 #endif
-
-const char gTaskNameAllmapBar[] __attribute__((section(".rodata_registration_name_gTaskDescAllmapBar"), aligned(1))) = "task_allmap_bar";
 
 TaskDesc gTaskDescAllmapBar = {
     gTaskNameAllmapBar,

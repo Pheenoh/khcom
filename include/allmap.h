@@ -211,7 +211,6 @@ void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
-extern s16 gUnk_096FDC10[][2];
 extern u8 gUnk_0976B340[];
 extern u8 gUnk_0976D7C0[];
 extern u8 gUnk_0976D880[];

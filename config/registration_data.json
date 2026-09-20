@@ -18,12 +18,13 @@
     "bos5_native_data": "Six boss TaskDesc records, the world-selection palette cycle and its Mode record form a complete initialized-data run in bos5.c, with four additional five-language pointer indexes between the sixth task record and palette cycle in EU. Every descriptor uses callbacks in that source, and palette and language indexes have repeated code or MdModel consumers there. Ordinary definitions preserve all original object extents and callbacks: 0x118 bytes in US/JP and 0x168 bytes in EU. The former worldselect_data storage TU and private header are removed. The separate lower-ROM name, actor and model data retain their existing organization.",
     "title_readonly_owner": "The four title task names and two readonly lookup tables share title.c consumers. The menu loops enumerate four s32 entries {4,5,1,2}; the luminance callback copies exactly three s16 entries {-7,0,3} into its local array. Ordinary const definitions reproduce the complete 0x5E-byte readonly run in every original region with native alignment, preserving all four original name extents and both independently bounded table spans. The old raw fragments and address aliases are removed without code or asset-payload changes.",
     "mode_allmap_readonly_owner": "The all-map mode copies the complete existing AllmapRoomOrder and AllmapRoomDirs records into locals. The four-direction loop builds a mask in0..15 for the sixteen-entry order and reads the four-entry direction permutation. Both definitions have only mode_allmap.c consumers. Ordinary const definitions follow the existing mode name in one native0x5C-byte readonly section in all regions, replacing the exact80-byte raw metadata fragment. Types remain in the owning header, and no function body, RAM definition or encoded asset changes.",
-    "allmap_readonly_suffix": "Three allmap tables have repeated owner-local consumers: four pairs of neighbor offsets, four word-sized direction selectors and a four-by-four signed-halfword arrangement table copied with an explicit sizeof bound. These tables and the following Doorinfo and Pusha task names form the same complete 0x6A-byte readonly suffix in all regions. Ordinary const definitions preserve the original bytes, object bounds and code relocations. The earlier 32-byte coordinate span retains its existing raw representation: only its first four pairs have proven consumers, and the following four pairs do not have an established source-level boundary. Earlier task-name placements remain unchanged.",
+    "allmap_readonly_suffix": "Three allmap tables have repeated owner-local consumers: four pairs of neighbor offsets, four word-sized direction selectors and a four-by-four signed-halfword arrangement table copied with an explicit sizeof bound. These tables and the following Doorinfo and Pusha task names form the same complete 0x6A-byte readonly suffix in all regions. Ordinary const definitions preserve the original bytes, object bounds and code relocations. The preceding coordinate span and earlier four task names now complete the same native readonly owner as described in allmap_readonly_geometry.",
     "status_readonly_prefix_owner": "Twelve status UI names and their directly consumed cursor positions, eight-entry StatusFriendTable, and two EU language-count arrays form one complete native readonly prefix. The tab navigation bounds select positions 0..3; the friend helper copies the complete existing record and traverses entries 0..7; EU localized resource calls select five language counts. Ordinary const definitions reproduce every original object address and the interleaved compiler alignment. The later Boogie records and name retain their existing boundaries, while descriptor data, code bodies, RAM, and encoded asset payloads are unchanged.",
     "boss_tm_movement": "Canonical 32-byte body and foot step types are preserved field-for-field. task_bos_tm_1 wraps idle phase0..7 and walking phase0..9; func_080B83C4 wraps body angle index0..10. task_bos_tm_body_1 and task_bos_tm_foot_1 explicitly select translated step indices0..15 or0..8. Reaction paths explicitly use step0..2. Foot phase bytes produce height selectors0..4. Body effect choice uses GetRandom()%4. Seven unused complete zero terminator records and four unused halfword suffix values remain separately named neutral scalar objects; no runtime access is claimed. All record/scalar bytes agree across US/JP/EU.",
     "boss_tm_native_owner": "The Trickmaster parent lifecycle owns four task pointers and a TaskPool and directly creates its body, foot, club, arm and table callbacks. These callbacks and their repeatedly consumed movement tables form one contiguous original code and initialized-data run across all regions, previously split between the end of wlogo.c, the beginning of bos2.c and a storage-only data unit. Ordinary definitions in boss_tm.c preserve all 31 initialized objects and their relocations. The private logo pools remain in wlogo.c; its naturally 0x74-byte BSS followed by the Trickmaster section with native eight-byte alignment accounts for the former four-byte filler. No data-table extent, remaining shared state or interleaved name/asset boundary is changed.",
     "sio_readonly_owner": "The SIO modes index exactly two and three existing SioAnimDef records; their pointer fields reference the same typed animation resources used by these callbacks. Both tables are read only and have no consumers outside mode_sio.c. They interleave the six mode names in US/JP; EU omits the card-exchange table and two names, and instead has two terminated byte-encoded Deck labels read by the Latin text loader. Ordinary const records, names and character-list byte arrays reproduce each complete original readonly group and every relocation target. The compiler aligns string initializers to four bytes but retains the natural byte alignment of array initializers, explaining the adjacent EU labels without extra bytes or section attributes. Obsolete raw metadata fragments and fixed-address aliases are removed; record bounds, label extents, code, RAM and encoded assets are preserved.",
-    "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects form one native 1556-byte initialized-data run in map.c across all regions. Definitions retain original types, bounds, initializer values and regional guards except that the three fourteen-byte level-offset/event arrays use mutable byte storage. Their old const declarations came from decompilation (89d03418 for level offsets and 474e8dcb for event bytes); recovery commit 47811f02 introduced the definitions and custom readonly sections. Mutable spelling is a reconstruction of the native initialized-data organization, not evidence of observed writes. The two floor-name indexes are read by the floor-task helper named by the final task descriptor; the underscore belongs to the map-debug initializer and remains present but unused by the EU renderer. These three objects move from the artificial map_text_data.c storage split into those consumers, with EU localized records retained under shared canonical declarations. Callback descriptors, table references, native compiler offsets and complete regional object/content contracts corroborate the organization. Lower-ROM names and localized text records retain their placements, and this does not assert a complete original source boundary with map_runtime.c or resolve all remaining readonly sections."
+    "map_initialized_owner": "The sixty-six original map configuration, callback, task, mode, debug-glyph and floor-name objects form one native 1556-byte initialized-data run in map.c across all regions. Definitions retain original types, bounds, initializer values and regional guards except that the three fourteen-byte level-offset/event arrays use mutable byte storage. Their old const declarations came from decompilation (89d03418 for level offsets and 474e8dcb for event bytes); recovery commit 47811f02 introduced the definitions and custom readonly sections. Mutable spelling is a reconstruction of the native initialized-data organization, not evidence of observed writes. The two floor-name indexes are read by the floor-task helper named by the final task descriptor; the underscore belongs to the map-debug initializer and remains present but unused by the EU renderer. These three objects move from the artificial map_text_data.c storage split into those consumers, with EU localized records retained under shared canonical declarations. Callback descriptors, table references, native compiler offsets and complete regional object/content contracts corroborate the organization. Lower-ROM names and localized text records retain their placements, and this does not assert a complete original source boundary with map_runtime.c or resolve all remaining readonly sections.",
+    "allmap_readonly_geometry": "The original 32-byte coordinate span is reconstructed as two const signed-halfword tables of four x/y pairs. func_080D484C indexes the first four-pair rectangle while drawing the four door overlays. The next four pairs form a complete centered 32-pixel square in every original ROM, followed by this same owner's four-direction offset and direction-selection tables. History c4bf64c6 declared only an unsized array, so no prior C extent establishes an eight-entry array. The second four-pair table retains the address-style name gUnk_096FDC20. Assigning this dormant but geometrically complete table to the same owner is an explicit source-organization inference; no live use or uniquely recovered original array boundary is claimed. Original ROM scans find no direct pointer to any byte of the second table. Ordinary definitions place the four earlier names, both coordinate tables and the existing readonly suffix in one 218-byte section. All original bytes, existing object extents, code, relocations and RAM are unchanged, and the former absolute coordinate alias and raw data fragment are removed."
   },
   "regions": {
     "us": {
@@ -3623,15 +3624,65 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoom",
-          "address": "0x096FDBC0",
-          "size": 17,
-          "sha256": "d955e4d911b01ed7e092b84f4d56921c87ede228ce3a059148c5e4cedb278497",
+          "section": ".rodata",
+          "address": "0x96fdbc0",
+          "size": 218,
+          "sha256": "449c24e747d7a6f71b1c2d6041291df2ac5c233b92f7fd7c9aa7dfce2c0c38bd",
           "objects": [
             {
               "name": "gTaskNameAllmapRoom",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameAllmapCursor",
+              "offset": 20,
+              "size": 19
+            },
+            {
+              "name": "gTaskNameAllmapRoomname",
+              "offset": 40,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapBar",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC10",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC20",
+              "offset": 96,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC30",
+              "offset": 112,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC40",
+              "offset": 128,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC50",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameAllmapDoorinfo",
+              "offset": 176,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapPusha",
+              "offset": 200,
+              "size": 18
             }
           ]
         },
@@ -3671,88 +3722,6 @@
               "name": "gTaskDescAllmapPusha",
               "offset": 120,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapCursor",
-          "address": "0x096FDBD4",
-          "size": 19,
-          "sha256": "da3b3d3ff1c37e66ce59c4f5165ad61e3340ef0c8ac01b2de86083cba87afe77",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
-          "address": "0x096FDBE8",
-          "size": 21,
-          "sha256": "bbb5d41ddd44478e528c45c4c8126aacb8e3726fd3358a750408c8120e7b0ad8",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapRoomname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapBar",
-          "address": "0x096FDC00",
-          "size": 16,
-          "sha256": "0075f5e9c52e318b69b0df825b58942e9124f6f31c62e7cc616fedfacce513f4",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapBar",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata",
-          "address": "0x096FDC30",
-          "size": 106,
-          "sha256": "e2831adcc529ae74f020b8b1a8a7a555b295a723d8a1631bb7a72be8cf0bb04b",
-          "objects": [
-            {
-              "name": "gUnk_096FDC30",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC40",
-              "offset": 16,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC50",
-              "offset": 32,
-              "size": 32
-            },
-            {
-              "name": "gTaskNameAllmapDoorinfo",
-              "offset": 64,
-              "size": 21
-            },
-            {
-              "name": "gTaskNameAllmapPusha",
-              "offset": 88,
-              "size": 18
             }
           ]
         },
@@ -10373,15 +10342,65 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoom",
-          "address": "0x096B639C",
-          "size": 17,
-          "sha256": "d955e4d911b01ed7e092b84f4d56921c87ede228ce3a059148c5e4cedb278497",
+          "section": ".rodata",
+          "address": "0x96b639c",
+          "size": 218,
+          "sha256": "449c24e747d7a6f71b1c2d6041291df2ac5c233b92f7fd7c9aa7dfce2c0c38bd",
           "objects": [
             {
               "name": "gTaskNameAllmapRoom",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameAllmapCursor",
+              "offset": 20,
+              "size": 19
+            },
+            {
+              "name": "gTaskNameAllmapRoomname",
+              "offset": 40,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapBar",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC10",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC20",
+              "offset": 96,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC30",
+              "offset": 112,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC40",
+              "offset": 128,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC50",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameAllmapDoorinfo",
+              "offset": 176,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapPusha",
+              "offset": 200,
+              "size": 18
             }
           ]
         },
@@ -10421,88 +10440,6 @@
               "name": "gTaskDescAllmapPusha",
               "offset": 120,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapCursor",
-          "address": "0x096B63B0",
-          "size": 19,
-          "sha256": "da3b3d3ff1c37e66ce59c4f5165ad61e3340ef0c8ac01b2de86083cba87afe77",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
-          "address": "0x096B63C4",
-          "size": 21,
-          "sha256": "bbb5d41ddd44478e528c45c4c8126aacb8e3726fd3358a750408c8120e7b0ad8",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapRoomname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapBar",
-          "address": "0x096B63DC",
-          "size": 16,
-          "sha256": "0075f5e9c52e318b69b0df825b58942e9124f6f31c62e7cc616fedfacce513f4",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapBar",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata",
-          "address": "0x096B640C",
-          "size": 106,
-          "sha256": "e2831adcc529ae74f020b8b1a8a7a555b295a723d8a1631bb7a72be8cf0bb04b",
-          "objects": [
-            {
-              "name": "gUnk_096FDC30",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC40",
-              "offset": 16,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC50",
-              "offset": 32,
-              "size": 32
-            },
-            {
-              "name": "gTaskNameAllmapDoorinfo",
-              "offset": 64,
-              "size": 21
-            },
-            {
-              "name": "gTaskNameAllmapPusha",
-              "offset": 88,
-              "size": 18
             }
           ]
         },
@@ -17055,15 +16992,65 @@
         },
         {
           "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoom",
-          "address": "0x096CAF08",
-          "size": 17,
-          "sha256": "d955e4d911b01ed7e092b84f4d56921c87ede228ce3a059148c5e4cedb278497",
+          "section": ".rodata",
+          "address": "0x96caf08",
+          "size": 218,
+          "sha256": "449c24e747d7a6f71b1c2d6041291df2ac5c233b92f7fd7c9aa7dfce2c0c38bd",
           "objects": [
             {
               "name": "gTaskNameAllmapRoom",
               "offset": 0,
               "size": 17
+            },
+            {
+              "name": "gTaskNameAllmapCursor",
+              "offset": 20,
+              "size": 19
+            },
+            {
+              "name": "gTaskNameAllmapRoomname",
+              "offset": 40,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapBar",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC10",
+              "offset": 80,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC20",
+              "offset": 96,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC30",
+              "offset": 112,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC40",
+              "offset": 128,
+              "size": 16
+            },
+            {
+              "name": "gUnk_096FDC50",
+              "offset": 144,
+              "size": 32
+            },
+            {
+              "name": "gTaskNameAllmapDoorinfo",
+              "offset": 176,
+              "size": 21
+            },
+            {
+              "name": "gTaskNameAllmapPusha",
+              "offset": 200,
+              "size": 18
             }
           ]
         },
@@ -17113,88 +17100,6 @@
               "name": "gTaskDescAllmapPusha",
               "offset": 160,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapCursor",
-          "address": "0x096CAF1C",
-          "size": 19,
-          "sha256": "da3b3d3ff1c37e66ce59c4f5165ad61e3340ef0c8ac01b2de86083cba87afe77",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapCursor",
-              "offset": 0,
-              "size": 19
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapRoomname",
-          "address": "0x096CAF30",
-          "size": 21,
-          "sha256": "bbb5d41ddd44478e528c45c4c8126aacb8e3726fd3358a750408c8120e7b0ad8",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapRoomname",
-              "offset": 0,
-              "size": 21
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata_registration_name_gTaskDescAllmapBar",
-          "address": "0x096CAF48",
-          "size": 16,
-          "sha256": "0075f5e9c52e318b69b0df825b58942e9124f6f31c62e7cc616fedfacce513f4",
-          "objects": [
-            {
-              "name": "gTaskNameAllmapBar",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "allmap.c",
-          "section": ".rodata",
-          "address": "0x096CAF78",
-          "size": 106,
-          "sha256": "e2831adcc529ae74f020b8b1a8a7a555b295a723d8a1631bb7a72be8cf0bb04b",
-          "objects": [
-            {
-              "name": "gUnk_096FDC30",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC40",
-              "offset": 16,
-              "size": 16
-            },
-            {
-              "name": "gUnk_096FDC50",
-              "offset": 32,
-              "size": 32
-            },
-            {
-              "name": "gTaskNameAllmapDoorinfo",
-              "offset": 64,
-              "size": 21
-            },
-            {
-              "name": "gTaskNameAllmapPusha",
-              "offset": 88,
-              "size": 18
             }
           ]
         },
