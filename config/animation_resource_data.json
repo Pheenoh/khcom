@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_animation_resource_data_edecfc": "Split contiguous forced section .data_09EDECFC into TU animation_resource_data_edecfc.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_data_20b4.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_data_f0930.c for ordinary .data ownership.",
     "native_animation_resource_f5298": "The gUnk_09EF5298 animation-resource pointer cluster is a contiguous 1420-byte initialized-data run with matching source order; split into TU animation_resource_data_f5298.c for ordinary .data ownership.",
@@ -489,8 +490,8 @@
           "sha256": "8b2cd9a6d4d1d3e6c4f0f9f6d31ae4dd9c8536f962f70bb8b49e2a96f5c08426"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDECFC",
+          "unit": "animation_resource_data_edecfc.c",
+          "section": ".data",
           "address": "0x9edecfc",
           "size": 1220,
           "objects": [
@@ -13576,8 +13577,8 @@
           "sha256": "ff886f9909b67f6acbf06974fad66ebd1abd9b0676f8ecd33b8bf044ea062930"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDECFC",
+          "unit": "animation_resource_data_edecfc.c",
+          "section": ".data",
           "address": "0x9eb6778",
           "size": 1220,
           "objects": [
@@ -26663,8 +26664,8 @@
           "sha256": "182f5cadf56bb2c887529cc4bc3a1937b35e5b82a1c7b4ea3a9003fe38cf5015"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDECFC",
+          "unit": "animation_resource_data_edecfc.c",
+          "section": ".data",
           "address": "0x9f59954",
           "size": 1220,
           "objects": [
