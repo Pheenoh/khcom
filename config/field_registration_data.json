@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_bos2_09EF2A5C_rodata": "gUnk_09EF2A5C TaskDesc formerly .data_registration_gUnk_09EF2A5C is const in existing bos2.c; ordinary .rodata replaces the forced section (TU free .rodata slot).",
     "registrations": "Forty-three native TaskDesc records outside the card UI range, each independently corroborated by an exact ASCII name and unique tuple of all four real linked callback addresses in US/JP/EU. All records have equal work sizes in every region and are defined in the actual callback owner translation unit.",
     "chara_mask_owner": "The mask-fade callbacks in chara.c consume five variants of nine 32-byte frames, establishing the complete 1440-byte mask table. Its original high-ROM position directly precedes the two Chara task descriptors in every region, while both task names belong to a separate lower-ROM readonly run. Commit 34b9492b introduced the table const qualifier together with a recovery-only readonly section; the preceding declaration was mutable u8[]. This reconstruction assumes ordinary initialized byte storage, rather than observed mutation, so the unchanged mask and two descriptors form one native 1488-byte data section. All table bytes, object extents, names, code, relocations and RAM are preserved."
   },
@@ -25,7 +26,7 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gUnk_09EF2A5C",
+          "section": ".rodata",
           "address": "0x9ef2a5c",
           "size": 24,
           "sha256": "8729a73423a7b33af44d27c04bba0c44d6f7585bfa8f1dcddacb612ce4f762da",
@@ -506,7 +507,7 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gUnk_09EF2A5C",
+          "section": ".rodata",
           "address": "0x9ec9e48",
           "size": 24,
           "sha256": "cce5a17ccd69d0721a5afd4b55cde1b7f60f5ca13bf1465fe44fa951d1776fe4",
@@ -987,7 +988,7 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gUnk_09EF2A5C",
+          "section": ".rodata",
           "address": "0x9f7dc94",
           "size": 24,
           "sha256": "e073e85793ae25b29bd3f88a40bafb9cd3ede90046b76c052b591f5744f6d976",

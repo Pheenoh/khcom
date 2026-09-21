@@ -5005,7 +5005,7 @@ const char gTaskNameBosDsdEnergy2[] __attribute__((section(".rodata_registration
 
 const char gTaskName_09EF2A5C[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A5C"), aligned(1))) = "task_bos_jf_rock";
 
-TaskDesc gUnk_09EF2A5C __attribute__((section(".data_registration_gUnk_09EF2A5C"))) = {
+const TaskDesc gUnk_09EF2A5C = {
     gTaskName_09EF2A5C,
     (void (*)(void*, void*))task_bos_jf_rock_0,
     task_bos_jf_rock_1,
