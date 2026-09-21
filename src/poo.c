@@ -8078,7 +8078,7 @@ TaskDesc gTaskDescPooRabbitAfterEvent = {
     0xA8,
 };
 
-const char gTaskNamePooCabbageAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageAfterEvent"), aligned(1))) = "task_poo_cabbageAfterEvent";
+const char gTaskNamePooCabbageAfterEvent[] __attribute__((aligned(1))) = "task_poo_cabbageAfterEvent";
 
 TaskDesc gTaskDescPooCabbageAfterEvent = {
     gTaskNamePooCabbageAfterEvent,

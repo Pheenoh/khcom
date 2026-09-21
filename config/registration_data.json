@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_poo_cabbage_after_event_name_rodata": "gTaskNamePooCabbageAfterEvent formerly forced registration-name section; stays const char[] in existing poo.c; ordinary .rodata replaces it (first native slot).",
     "native_bos4_ursula_bubble_single_name_rodata": "gTaskNameBosUrsulaBubbleSingle formerly .rodata_registration_name_gTaskDescBosUrsulaBubbleSingle stays const char[] in existing bos4.c; ordinary .rodata replaces the forced section (first native slot).",
     "registrations": "TaskCreate consumes canonical 24-byte TaskDesc records; ModeRequest consumes canonical 16-byte Mode records. Callback tuples and ASCII names identify regional registrations. EU Monsgage callbacks are explicitly exposed within existing opaque native code. Message face/wait tasks form a real three-record array. Only absent EU link-exchange tasks omit records; work-size and callback differences use field-level guards.",
     "names": "Each bounded ASCII name is directly referenced by one or more verified registration records. Shared name addresses have one C owner. String bounds end at their first NUL.",
@@ -3545,7 +3546,7 @@
         },
         {
           "unit": "poo.c",
-          "section": ".rodata_registration_name_gTaskDescPooCabbageAfterEvent",
+          "section": ".rodata",
           "address": "0x096FDA58",
           "size": 27,
           "sha256": "68be44ac07994ff2a41b3408bf6d23a4605865b5f125abd6406314248f5b5431",
@@ -10115,7 +10116,7 @@
         },
         {
           "unit": "poo.c",
-          "section": ".rodata_registration_name_gTaskDescPooCabbageAfterEvent",
+          "section": ".rodata",
           "address": "0x096B6234",
           "size": 27,
           "sha256": "68be44ac07994ff2a41b3408bf6d23a4605865b5f125abd6406314248f5b5431",
@@ -16617,7 +16618,7 @@
         },
         {
           "unit": "poo.c",
-          "section": ".rodata_registration_name_gTaskDescPooCabbageAfterEvent",
+          "section": ".rodata",
           "address": "0x096CADA0",
           "size": 27,
           "sha256": "68be44ac07994ff2a41b3408bf6d23a4605865b5f125abd6406314248f5b5431",
