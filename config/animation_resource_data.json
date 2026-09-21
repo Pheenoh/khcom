@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_data_20b4.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_data_f0930.c for ordinary .data ownership.",
     "native_animation_resource_f5298": "The gUnk_09EF5298 animation-resource pointer cluster is a contiguous 1420-byte initialized-data run with matching source order; split into TU animation_resource_data_f5298.c for ordinary .data ownership.",
     "animation_resources": "ObjDef first and second pointer fields establish corresponding table bases across regions; animCount bounds the AnimHeader pointer array. Canonical AnimHeader.frameCount and AnimFrame.gfxIndex establish max gfx index plus one, which must exactly meet the independently referenced animation-table base before a full gfx table is owned. All complete animation payload bytes agree across regions. Twenty gfx tables with unresolved trailing entries stay incbin.",
@@ -3536,8 +3537,8 @@
           "sha256": "ea89eb0e7b4ac2d1b2f966457b08404f458fccf09a67eddca10131191a64731c"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE20B4",
+          "unit": "animation_resource_data_20b4.c",
+          "section": ".data",
           "address": "0x9ee20b4",
           "size": 1308,
           "objects": [
@@ -16623,8 +16624,8 @@
           "sha256": "0688c31d5d121e263206327314d8ccd457f9a3f5f77c642bc878a8c856035e56"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE20B4",
+          "unit": "animation_resource_data_20b4.c",
+          "section": ".data",
           "address": "0x9eb9b30",
           "size": 1308,
           "objects": [
@@ -29710,8 +29711,8 @@
           "sha256": "c188b9a95a5b6e393903a019561309d69806206a0b0d062ea2bbc7d5774014d7"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE20B4",
+          "unit": "animation_resource_data_20b4.c",
+          "section": ".data",
           "address": "0x9f5cec0",
           "size": 1308,
           "objects": [
