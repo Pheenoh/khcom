@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_bos4_ursula_bubble_single_name_rodata": "gTaskNameBosUrsulaBubbleSingle formerly .rodata_registration_name_gTaskDescBosUrsulaBubbleSingle stays const char[] in existing bos4.c; ordinary .rodata replaces the forced section (first native slot).",
     "registrations": "TaskCreate consumes canonical 24-byte TaskDesc records; ModeRequest consumes canonical 16-byte Mode records. Callback tuples and ASCII names identify regional registrations. EU Monsgage callbacks are explicitly exposed within existing opaque native code. Message face/wait tasks form a real three-record array. Only absent EU link-exchange tasks omit records; work-size and callback differences use field-level guards.",
     "names": "Each bounded ASCII name is directly referenced by one or more verified registration records. Shared name addresses have one C owner. String bounds end at their first NUL.",
     "task_descriptor_owners": "The 108 individual task descriptors have independent address-taking consumers without cross-record indexing. Callback ownership, name ownership, and text, rodata and descriptor group ordering agree across US, JP and EU. Each callback translation unit emits one ordinary data section in the original order.",
@@ -4412,7 +4413,7 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
+          "section": ".rodata",
           "address": "0x096FE334",
           "size": 30,
           "sha256": "3fc9cb46c79841fa7527060a1e98e6af4c785447f8b2de763a72c488bd299443",
@@ -10982,7 +10983,7 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
+          "section": ".rodata",
           "address": "0x096B6B10",
           "size": 30,
           "sha256": "3fc9cb46c79841fa7527060a1e98e6af4c785447f8b2de763a72c488bd299443",
@@ -17549,7 +17550,7 @@
         },
         {
           "unit": "bos4.c",
-          "section": ".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle",
+          "section": ".rodata",
           "address": "0x096CB694",
           "size": 30,
           "sha256": "3fc9cb46c79841fa7527060a1e98e6af4c785447f8b2de763a72c488bd299443",

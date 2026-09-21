@@ -363,7 +363,7 @@ TaskDesc gTaskDescBosUrsulaBubble = {
 #endif
 };
 
-const char gTaskNameBosUrsulaBubbleSingle[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBubbleSingle"), aligned(1))) = "task_bos_ursula_bubble_single";
+const char gTaskNameBosUrsulaBubbleSingle[] __attribute__((aligned(1))) = "task_bos_ursula_bubble_single";
 
 TaskDesc gTaskDescBosUrsulaBubbleSingle = {
     gTaskNameBosUrsulaBubbleSingle,
