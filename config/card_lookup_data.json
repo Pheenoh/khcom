@@ -5,7 +5,8 @@
     ".data_09EEA344": "RELOAD_CHILDREN drawing explicitly usesA344[0]. Independent selector arrays7588/7598 point toA448/A3FC; func_08095AD8 guards animation<=18, and all19 one-frame headers reference corresponding gfx0..18. Other words are neutral typed scalars.",
     ".data_09EEA52C": "7588/7598 independently selectA578/A52C with animation<=18. REV_COUNT_0 independently selectsA5C4 and explicitly reads gfx98, proving99 entries. 75B8/75C8 select three13-gfx/5-animation pairs; func_08095C00 reaches animation4 and their complete frame graph coversgfx0..12. All unconsumed adjacent sprite/animation words are neutral typed scalars, including four40-header groups; no fabricated99-element use is inferred from those40 headers.",
     ".data_09EEB604": "The independent256-glyph shared font ends exactly atB604 and the corresponding regions contain one complete AnimHeader pointer there; the pointer is a separate neutral scalar, not an extra glyph.",
-    ".data_09EEC5EC": "The independent45-glyph font ends atC5EC. menu_0/menu_1/menu_2 initializes, bounds, and indexes menu glyphs0..9 atC600. Remaining sprite and animation words are separately typed neutral scalar objects. The subsequent independently linked lock-on pair startsC660."
+    ".data_09EEC5EC": "The independent45-glyph font ends atC5EC. menu_0/menu_1/menu_2 initializes, bounds, and indexes menu glyphs0..9 atC600. Remaining sprite and animation words are separately typed neutral scalar objects. The subsequent independently linked lock-on pair startsC660.",
+    "native_a52c_cluster": "The gUnk_09EEA52C pointer/AnimHeader cluster is a contiguous 2592-byte initialized-data run with matching source order in card_lookup_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Other card_lookup_data clusters remain sectioned where they occupy separate link addresses."
   },
   "regions": {
     "us": {
@@ -2020,7 +2021,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA52C",
+          "section": ".data",
           "address": "0x09EEA52C",
           "size": 2592,
           "sha256": "65a92440b45e3453a15336cb6c22d0b0a5bf119ab31e9987e7db14af793a97d9",
@@ -6475,7 +6476,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA52C",
+          "section": ".data",
           "address": "0x09EC1920",
           "size": 2592,
           "sha256": "ef66cd37d71f3c77cb9e8446ff550b10abc0cd69462c0084ea8f328085d55865",
@@ -10930,7 +10931,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA52C",
+          "section": ".data",
           "address": "0x09F7659C",
           "size": 2592,
           "sha256": "0345cb4b4c0f047cbc9c9e54746ba7e6528068a0bda3be75e9fd1a7254b45a00",
