@@ -3,7 +3,8 @@
   "provenance": {
     "indexes": "The sentinel-terminated debug selector lists consumed by func_08075064 and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.",
     "backgrounds": "All62 distinct nonnull background pointers in the rooted event index are complete native48-byte EventBackgroundDef scalars. Their exact map-grid dimensions, graphics pointers, palette sizes, flags, object metadata and trailing fields are independently consumed by event_seq and Ev_mapObj tasks. All three versions preserve the corresponding record roles and complete native layout. Every map-grid pointer resolves to an existing compiler-owned array. Three native Pooh const u16* grids use a symbolic const void** view at the generic raw/compressed map interface; no alternate array bounds or storage are created. Existing explicit EU compressed-resource alternatives are selected symbolically, preserving the raw counterparts and all divergent flags/sizes.",
-    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
+    "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.",
+    "native_event_background_08F7EFD8_rodata": "Contiguous 7\u00d7EventBackgroundDef cluster formerly .data_event_background_definition_08F7EFD8..08F7F0F8 is const in existing event_background_data.c (source order already matched); ordinary .rodata replaces the forced sections (TU already has .data)."
   },
   "regions": {
     "us": {
@@ -748,127 +749,45 @@
         },
         {
           "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7EFD8",
+          "section": ".rodata",
           "address": "0x8f7efd8",
-          "size": 48,
-          "sha256": "dcc0ddfedfbc5b146f7a1ff454463d657e3015474173001f1480e4d3955b9351",
+          "size": 336,
+          "sha256": "da6c0d09b20a72d690eaf2a514d95dd0c1e6267c941225168481e8d0258ef191",
           "objects": [
             {
               "name": "gUnk_08F7EFD8",
               "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F008",
-          "address": "0x8f7f008",
-          "size": 48,
-          "sha256": "112b460103cf54a10857d2f2b0b170d69f7016a39f8fbe6b021918ec563cd1b5",
-          "objects": [
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F008",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F038",
-          "address": "0x8f7f038",
-          "size": 48,
-          "sha256": "8b0ee527f1bd2cb9ffa61ed5206322f53774423f9dc037ff27ae5ad7de0b64b9",
-          "objects": [
+              "offset": 48,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F038",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F068",
-          "address": "0x8f7f068",
-          "size": 48,
-          "sha256": "e98c6f146827cf4cbd150421f76fe27128bb0fec48c7143f4ebc5392af8d175d",
-          "objects": [
+              "offset": 96,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F068",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F098",
-          "address": "0x8f7f098",
-          "size": 48,
-          "sha256": "b335ba9af03add73d5452ea6c66578986249919d5f391538bb0450e66eb73921",
-          "objects": [
+              "offset": 144,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F098",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0C8",
-          "address": "0x8f7f0c8",
-          "size": 48,
-          "sha256": "5ec90da9a8882bf3e40ddbb027265d4d5dadf4419a01efe729b7b125136b2a3d",
-          "objects": [
+              "offset": 192,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0C8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0F8",
-          "address": "0x8f7f0f8",
-          "size": 48,
-          "sha256": "c2bffd445ce82dff58bdc3701738a2d164a17747cd22e23f68f9ac1bb5ed24b2",
-          "objects": [
+              "offset": 240,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0F8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
+              "offset": 288,
+              "size": 48
             }
           ]
         },
@@ -3076,127 +2995,45 @@
         },
         {
           "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7EFD8",
+          "section": ".rodata",
           "address": "0x8f724e0",
-          "size": 48,
-          "sha256": "ea4e66a7992bd8074a12b073513f01662bd0bfff3cd686bd0df2d5131dfd18cb",
+          "size": 336,
+          "sha256": "b8d5328d4a835117fb44dbc1e79e62656cf3078b376eed24acca0531bb7a01c2",
           "objects": [
             {
               "name": "gUnk_08F7EFD8",
               "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F008",
-          "address": "0x8f72510",
-          "size": 48,
-          "sha256": "e16ef552247d677b32b91fa7955f1266377eef7d414fb6ab5a9d9bcf27b51823",
-          "objects": [
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F008",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F038",
-          "address": "0x8f72540",
-          "size": 48,
-          "sha256": "5a650bf69acd26cc24224823ad461ae97f6857c2101b9c6abe94e05861f06954",
-          "objects": [
+              "offset": 48,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F038",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F068",
-          "address": "0x8f72570",
-          "size": 48,
-          "sha256": "07145f82172745d9e3cb2dc5a18fd95f5edf086d46a3398cfcdf891b56fd5a66",
-          "objects": [
+              "offset": 96,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F068",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F098",
-          "address": "0x8f725a0",
-          "size": 48,
-          "sha256": "422f7a10a9c30fb78ab40f68df2308ffb785a25164394f40b94fb2c4a37f4a26",
-          "objects": [
+              "offset": 144,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F098",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0C8",
-          "address": "0x8f725d0",
-          "size": 48,
-          "sha256": "52595e385d277d818ae608b6780782bc58f39aa1dd01b78ed6b9d6af4ea78bce",
-          "objects": [
+              "offset": 192,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0C8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0F8",
-          "address": "0x8f72600",
-          "size": 48,
-          "sha256": "07bcbe349df0cc8de15d8087863fd093aa971bf0fb904da284574197c2c5a84f",
-          "objects": [
+              "offset": 240,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0F8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
+              "offset": 288,
+              "size": 48
             }
           ]
         },
@@ -5404,127 +5241,45 @@
         },
         {
           "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7EFD8",
+          "section": ".rodata",
           "address": "0x90591b8",
-          "size": 48,
-          "sha256": "32e774997d4c96e527a3eb93a5d9baea10025c1ed64b91fc284d5c16fc4c18c5",
+          "size": 336,
+          "sha256": "00e8e015398e46c5038fb77ca798531a4f89a7cd8f14e9a5e75d20c31cb2b21d",
           "objects": [
             {
               "name": "gUnk_08F7EFD8",
               "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F008",
-          "address": "0x90591e8",
-          "size": 48,
-          "sha256": "b1798f4209b9322c47cd9a285ce33ed8bb864efb7f23df710ad15f01f7e0acbc",
-          "objects": [
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F008",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F038",
-          "address": "0x9059218",
-          "size": 48,
-          "sha256": "a6797d629d7b1842cf9a3210919a4b406aaf9ce68fe50a12ebdcaa663430ddf9",
-          "objects": [
+              "offset": 48,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F038",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F068",
-          "address": "0x9059248",
-          "size": 48,
-          "sha256": "2b80b2dc59aaa6eec0c51b9d8e1887805db9c57671912aa2d54a3ab2d629c204",
-          "objects": [
+              "offset": 96,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F068",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F098",
-          "address": "0x9059278",
-          "size": 48,
-          "sha256": "3b539d3cf65b0caa47357cde46f1f19672fc842951c950c8e6fabfa14c6d2cf7",
-          "objects": [
+              "offset": 144,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F098",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0C8",
-          "address": "0x90592a8",
-          "size": 48,
-          "sha256": "dbb1e8f353f965d1e4f40c4391ede4ae13f622cc4c527a29ea4611a9a54f6588",
-          "objects": [
+              "offset": 192,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0C8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_background_data.c",
-          "section": ".data_event_background_definition_08F7F0F8",
-          "address": "0x90592d8",
-          "size": 48,
-          "sha256": "64c9d6fdea8e14b473325a8de78e21fd21e2fb1354a64e9d95ec48c3ed9017d8",
-          "objects": [
+              "offset": 240,
+              "size": 48
+            },
             {
               "name": "gUnk_08F7F0F8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "native scalar background definition"
-              ]
+              "offset": 288,
+              "size": 48
             }
           ]
         },

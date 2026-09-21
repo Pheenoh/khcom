@@ -4715,7 +4715,7 @@ EventBackgroundDef gUnk_08F7EF4C __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7EFD8 __attribute__((section(".data_event_background_definition_08F7EFD8"))) = {
+const EventBackgroundDef gUnk_08F7EFD8  = {
     gUnk_094C05F8,
     0,
     gUnk_09616E98,
@@ -4744,7 +4744,7 @@ EventBackgroundDef gUnk_08F7EFD8 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F008 __attribute__((section(".data_event_background_definition_08F7F008"))) = {
+const EventBackgroundDef gUnk_08F7F008  = {
     gUnk_094C05F8,
     0,
     gUnk_09616E98,
@@ -4773,7 +4773,7 @@ EventBackgroundDef gUnk_08F7F008 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F038 __attribute__((section(".data_event_background_definition_08F7F038"))) = {
+const EventBackgroundDef gUnk_08F7F038  = {
     gUnk_094D7E58,
     0,
     gUnk_09617438,
@@ -4802,7 +4802,7 @@ EventBackgroundDef gUnk_08F7F038 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F068 __attribute__((section(".data_event_background_definition_08F7F068"))) = {
+const EventBackgroundDef gUnk_08F7F068  = {
     gUnk_094D7E58,
     0,
     gUnk_09617438,
@@ -4831,7 +4831,7 @@ EventBackgroundDef gUnk_08F7F068 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F098 __attribute__((section(".data_event_background_definition_08F7F098"))) = {
+const EventBackgroundDef gUnk_08F7F098  = {
     gUnk_094D7E58,
     0,
     gUnk_09617438,
@@ -4860,7 +4860,7 @@ EventBackgroundDef gUnk_08F7F098 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F0C8 __attribute__((section(".data_event_background_definition_08F7F0C8"))) = {
+const EventBackgroundDef gUnk_08F7F0C8  = {
     gUnk_094C9D58,
     0,
     gUnk_09617118,
@@ -4889,7 +4889,7 @@ EventBackgroundDef gUnk_08F7F0C8 __attribute__((section(".data_event_background_
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F0F8 __attribute__((section(".data_event_background_definition_08F7F0F8"))) = {
+const EventBackgroundDef gUnk_08F7F0F8  = {
     gUnk_094D1D58,
     0,
     gUnk_09617218,
