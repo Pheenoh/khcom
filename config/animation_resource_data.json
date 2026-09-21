@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_animation_resource_ef71c_rodata": "Contiguous pointer cluster formerly .data_09EEF71C is const tables in existing animation_resource_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "native_animation_resource_data_f0054": "Split contiguous forced section .data_09EF0054 into TU animation_resource_data_f0054.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_data_edecfc": "Split contiguous forced section .data_09EDECFC into TU animation_resource_data_edecfc.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_data_20b4.c with ordinary .data ownership; source order matches ROM.",
@@ -9006,7 +9007,7 @@
         },
         {
           "unit": "animation_resource_data.c",
-          "section": ".data_09EEF71C",
+          "section": ".rodata",
           "address": "0x9eef71c",
           "size": 1180,
           "objects": [
@@ -22093,7 +22094,7 @@
         },
         {
           "unit": "animation_resource_data.c",
-          "section": ".data_09EEF71C",
+          "section": ".rodata",
           "address": "0x9ec6b08",
           "size": 1180,
           "objects": [
@@ -35180,7 +35181,7 @@
         },
         {
           "unit": "animation_resource_data.c",
-          "section": ".data_09EEF71C",
+          "section": ".rodata",
           "address": "0x9f7a900",
           "size": 1180,
           "objects": [
