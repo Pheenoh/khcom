@@ -8,7 +8,8 @@
     "direct_animation_resources": "Actual map and world-logo consumers independently bound each array. Canonical animation and consumed gfx payloads match exactly in all regions. Unused suffix pointers are separate neutral scalar objects.",
     "native_efb840_cluster": "gUnk_09EFB840 and gUnk_09EFB9CC form a contiguous 680-byte initialized-data run with matching source order in animation_resource_data.c, so ordinary .data replaces the two forced section attributes.",
     "native_animation_resource_c670": "The gUnk_09EEC670 animation-resource pointer cluster is a contiguous 4472-byte initialized-data run with matching source order; split into TU animation_resource_data_c670.c so ordinary .data can own it without colliding with other native .data already in animation_resource_data.c.",
-    "native_animation_resource_0114": "The gUnk_09EE0114 animation-resource AnimHeader cluster is a contiguous 4044-byte initialized-data run with matching source order; split into TU animation_resource_data_0114.c so ordinary .data can own it without colliding with other native .data clusters already extracted from animation_resource_data.c."
+    "native_animation_resource_0114": "The gUnk_09EE0114 animation-resource AnimHeader cluster is a contiguous 4044-byte initialized-data run with matching source order; split into TU animation_resource_data_0114.c so ordinary .data can own it without colliding with other native .data clusters already extracted from animation_resource_data.c.",
+    "native_animation_resource_e588": "The gUnk_09EEE588 animation-resource pointer cluster is a contiguous 2224-byte initialized-data run with matching source order; split into TU animation_resource_data_e588.c for ordinary .data ownership."
   },
   "regions": {
     "us": {
@@ -7408,8 +7409,8 @@
           "sha256": "209fa2e05513b9adb467bfe0ba5169277a70e972f322d0e60da48b54cfdaf603"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE588",
+          "unit": "animation_resource_data_e588.c",
+          "section": ".data",
           "address": "0x9eee588",
           "size": 2224,
           "objects": [
@@ -20495,8 +20496,8 @@
           "sha256": "8a3269d72d6eb887a917ca40e9e2c6a29d20ed0124c8814138a170f6255f57f1"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE588",
+          "unit": "animation_resource_data_e588.c",
+          "section": ".data",
           "address": "0x9ec5974",
           "size": 2224,
           "objects": [
@@ -33582,8 +33583,8 @@
           "sha256": "b648f12ee05d56f207f428c87fb941f716684545877550f12affb762775114d4"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE588",
+          "unit": "animation_resource_data_e588.c",
+          "section": ".data",
           "address": "0x9f7976c",
           "size": 2224,
           "objects": [
