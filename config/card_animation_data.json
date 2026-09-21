@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_card_animation_a494_rodata": "Cluster formerly .data_09EEA494 is const pointer tables in existing card_animation_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "card_animation": "Direct AnimInit tables and explicit animation/index bounds establish eleven common pairs. Full animation-frame and renderer sprite payloads agree in all regions. Pointer words outside proven consumer arrays are neutral scalar objects. EU selectors establish two additional localized pairs.",
     "native_b008_cluster": "The three pointer/AnimHeader clusters at gUnk_09EEB008, gUnk_09EEB050 and gUnk_09EEB068 form one contiguous 120-byte initialized-data run in every region; ordinary definitions in card_animation_data.c reproduce that run as native .data. event_sprite_data still owns the following 09EEB080 interrupt before the later 09EEB08C cluster."
   },
@@ -57,7 +58,7 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEA494",
+          "section": ".rodata",
           "address": "0x09EEA494",
           "size": 152,
           "sha256": "f2bee4d0283501c04b0328454379814a87780b69703b5a619bf2fd1413f97ce1",
@@ -367,7 +368,7 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEA494",
+          "section": ".rodata",
           "address": "0x09EC1888",
           "size": 152,
           "sha256": "b2a73b0170fa51fcbf6641772b88a1aadd3cf4ce924fb3967047c8bf1ca883e4",
@@ -677,7 +678,7 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEA494",
+          "section": ".rodata",
           "address": "0x09F76504",
           "size": 152,
           "sha256": "16ec3dd310d53890b3e4628268ce7d1d7cf29729db4a33df2e0cf9495700e078",
