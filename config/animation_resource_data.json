@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_data_f0930.c for ordinary .data ownership.",
     "native_animation_resource_f5298": "The gUnk_09EF5298 animation-resource pointer cluster is a contiguous 1420-byte initialized-data run with matching source order; split into TU animation_resource_data_f5298.c for ordinary .data ownership.",
     "animation_resources": "ObjDef first and second pointer fields establish corresponding table bases across regions; animCount bounds the AnimHeader pointer array. Canonical AnimHeader.frameCount and AnimFrame.gfxIndex establish max gfx index plus one, which must exactly meet the independently referenced animation-table base before a full gfx table is owned. All complete animation payload bytes agree across regions. Twenty gfx tables with unresolved trailing entries stay incbin.",
     "resource_followup": "Independent direct consumers and scalar selector bounds prove each array; corresponding complete animation payloads are identical. No unused suffix is incorporated. The ETC pair exists only in US/JP.",
@@ -10629,8 +10630,8 @@
           "sha256": "7e26bc3d94da6acc137f1d2cfa52226aa96b7f7a80c73718a0a5bb2b69117fbc"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0930",
+          "unit": "animation_resource_data_f0930.c",
+          "section": ".data",
           "address": "0x9ef0930",
           "size": 1412,
           "objects": [
@@ -23716,8 +23717,8 @@
           "sha256": "85cf506a2aa5f7f601cc9caa63781d19828f56a2591a4b19b9c7c3189a89a3c1"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0930",
+          "unit": "animation_resource_data_f0930.c",
+          "section": ".data",
           "address": "0x9ec7d1c",
           "size": 1412,
           "objects": [
@@ -36803,8 +36804,8 @@
           "sha256": "e5fc09d30e2f34a861330d260518d6c1afeb154274266d37a802f6bb45ad231e"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0930",
+          "unit": "animation_resource_data_f0930.c",
+          "section": ".data",
           "address": "0x9f7bb14",
           "size": 1412,
           "objects": [
