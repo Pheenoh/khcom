@@ -283,7 +283,7 @@ EventCharaTrack gUnk_08F9CCD8[9] __attribute__((section(".data_event_chara_track
     { gUnk_08F9CC90, 40, { 0, 0, 0 } },
 };
 
-EventCharaTrack gUnk_08F9E804[11] __attribute__((section(".data_event_chara_tracks_08F9E804"))) = {
+EventCharaTrack gUnk_08F9E804[11] = {
     { gUnk_08F9D790, 59, { 0, 0, 0 } },
     { gUnk_08F9D9D0, 12, { 0, 0, 0 } },
     { gUnk_08F9DF94, 2, { 0, 0, 0 } },

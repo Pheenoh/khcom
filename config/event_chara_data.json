@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_event_chara_08F9E804_data": "gUnk_08F9E804 EventCharaTrack[11] formerly .data_event_chara_tracks_08F9E804 stays mutable in existing event_chara_data.c; ordinary .data replaces the forced section (TU already has .rodata from A165C).",
     "native_event_chara_08FA165C_rodata": "gUnk_08FA165C EventCharaTrack[12] formerly .data_event_chara_tracks_08FA165C is const in existing event_chara_data.c; ordinary .rodata replaces the forced section (TU had no native .data/.rodata).",
     "character_tracks": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds."
   },
@@ -723,7 +724,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08F9E804",
+          "section": ".data",
           "address": "0x8f9e804",
           "size": 88,
           "sha256": "a4320ffb8af9f90f8c453715dbd7ccd052a0d19e2e77f84db206e02484938e82",
@@ -4864,7 +4865,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08F9E804",
+          "section": ".data",
           "address": "0x8f8d0c4",
           "size": 88,
           "sha256": "23bf6fc95681f6f36159366278dd1e4107451dcbed440ae83de0f5229384060f",
@@ -9005,7 +9006,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08F9E804",
+          "section": ".data",
           "address": "0x906e8a8",
           "size": 88,
           "sha256": "872226910d2ef7f29d54fa3290c416ea44d94a06795241d26a2a06705cd8432e",
