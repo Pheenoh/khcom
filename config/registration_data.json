@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_bos5_md_hahen_name_rodata": "gTaskNameBosMdHahen formerly forced registration-name section; stays const char[] in existing bos5.c; ordinary .rodata replaces it (first native slot).",
     "native_sroll_c_char_name_rodata": "gTaskNameSrollCChar formerly forced registration-name section; stays const char[] in existing sroll.c; ordinary .rodata replaces it (first native slot).",
     "native_poo_cabbage_after_event_name_rodata": "gTaskNamePooCabbageAfterEvent formerly forced registration-name section; stays const char[] in existing poo.c; ordinary .rodata replaces it (first native slot).",
     "native_bos4_ursula_bubble_single_name_rodata": "gTaskNameBosUrsulaBubbleSingle formerly .rodata_registration_name_gTaskDescBosUrsulaBubbleSingle stays const char[] in existing bos4.c; ordinary .rodata replaces the forced section (first native slot).",
@@ -5340,7 +5341,7 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdHahen",
+          "section": ".rodata",
           "address": "0x09992F5C",
           "size": 18,
           "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",
@@ -11910,7 +11911,7 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdHahen",
+          "section": ".rodata",
           "address": "0x09947A70",
           "size": 18,
           "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",
@@ -18509,7 +18510,7 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdHahen",
+          "section": ".rodata",
           "address": "0x099991CC",
           "size": 18,
           "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",

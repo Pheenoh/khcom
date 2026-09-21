@@ -68,7 +68,7 @@ TaskDesc gTaskDescBosMdDai = {
     0x84,
 };
 
-const char gTaskNameBosMdHahen[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdHahen"), aligned(1))) = "task_bos_md_hahen";
+const char gTaskNameBosMdHahen[] __attribute__((aligned(1))) = "task_bos_md_hahen";
 
 TaskDesc gTaskDescBosMdHahen = {
     gTaskNameBosMdHahen,
