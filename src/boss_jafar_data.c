@@ -1,7 +1,7 @@
 #include "boss_jafar_data.h"
 #include "boss_jafar_assets.h"
 
-void* gUnk_09EF280C[48] __attribute__((section(".data_boss_jafar_background"), aligned(4))) = {
+void* gUnk_09EF280C[48] __attribute__((aligned(4))) = {
     gUnk_096D5C64,
     gUnk_096D6464,
     gUnk_096D6C64,
@@ -52,9 +52,9 @@ void* gUnk_09EF280C[48] __attribute__((section(".data_boss_jafar_background"), a
     gUnk_096E2464,
 };
 
-const u16* gUnk_09EF28CC __attribute__((section(".data_boss_jafar_background"), aligned(4))) = gUnk_08125E24;
+const u16* gUnk_09EF28CC __attribute__((aligned(4))) = gUnk_08125E24;
 
-void* gUnk_09EF28D0[48] __attribute__((section(".data_boss_jafar_background"), aligned(4))) = {
+void* gUnk_09EF28D0[48] __attribute__((aligned(4))) = {
     gUnk_09671DE4,
     gUnk_09672CE4,
     gUnk_09673964,
@@ -105,25 +105,25 @@ void* gUnk_09EF28D0[48] __attribute__((section(".data_boss_jafar_background"), a
     gUnk_09681C64,
 };
 
-void* gUnk_09EF2990 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 0;
+void* gUnk_09EF2990 __attribute__((aligned(4))) = 0;
 
-u32 gUnk_09EF2994[27] __attribute__((section(".data_boss_jafar_background"), aligned(4))) = { 256, 266, 276, 286, 296, 307, 317, 327, 337, 348, 358, 368, 378, 389, 399, 409, 419, 432, 445, 458, 471, 486, 501, 517, 532, 547, 563 };
+u32 gUnk_09EF2994[27] __attribute__((aligned(4))) = { 256, 266, 276, 286, 296, 307, 317, 327, 337, 348, 358, 368, 378, 389, 399, 409, 419, 432, 445, 458, 471, 486, 501, 517, 532, 547, 563 };
 
-u32 gUnk_09EF2A00 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 578;
+u32 gUnk_09EF2A00 __attribute__((aligned(4))) = 578;
 
-u32 gUnk_09EF2A04 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 593;
+u32 gUnk_09EF2A04 __attribute__((aligned(4))) = 593;
 
-u32 gUnk_09EF2A08 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 609;
+u32 gUnk_09EF2A08 __attribute__((aligned(4))) = 609;
 
-u32 gUnk_09EF2A0C __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 622;
+u32 gUnk_09EF2A0C __attribute__((aligned(4))) = 622;
 
-u32 gUnk_09EF2A10 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 637;
+u32 gUnk_09EF2A10 __attribute__((aligned(4))) = 637;
 
-u32 gUnk_09EF2A14 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 652;
+u32 gUnk_09EF2A14 __attribute__((aligned(4))) = 652;
 
-u32 gUnk_09EF2A18 __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 668;
+u32 gUnk_09EF2A18 __attribute__((aligned(4))) = 668;
 
-u32 gUnk_09EF2A1C __attribute__((section(".data_boss_jafar_background"), aligned(4))) = 683;
+u32 gUnk_09EF2A1C __attribute__((aligned(4))) = 683;
 
 s8 gUnk_09EF2A38[9] __attribute__((section(".data_boss_jafar_rock_indices"), aligned(1))) = { 9, 10, 11, 12, 13, 14, 15, 26, 0 };
 

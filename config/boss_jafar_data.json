@@ -1,14 +1,15 @@
 {
   "version": 1,
   "provenance": {
-    "boss_jafar_indices": "JfMajin state functions use background phases0..47: func_080BF4F4 and func_080BF8C4 initialize45 and later select+2. Independently referenced map/tile bases bound the final neutral blank-map and NULL scalars. func_080BF8C4 starts angle148/108 and increments/decrements26 times, proving parameter index26. Eight further monotonic u32 values are separate unused scalars before the independently owned TaskDesc. task_bos_jf_rock_1 explicitly clamps animation selector8 and gfx selector11; unused -1 after the9-byte selector array remains a neutral scalar. Final two alignment bytes before the next TaskDesc remain outside this batch."
+    "boss_jafar_indices": "JfMajin state functions use background phases0..47: func_080BF4F4 and func_080BF8C4 initialize45 and later select+2. Independently referenced map/tile bases bound the final neutral blank-map and NULL scalars. func_080BF8C4 starts angle148/108 and increments/decrements26 times, proving parameter index26. Eight further monotonic u32 values are separate unused scalars before the independently owned TaskDesc. task_bos_jf_rock_1 explicitly clamps animation selector8 and gfx selector11; unused -1 after the9-byte selector array remains a neutral scalar. Final two alignment bytes before the next TaskDesc remain outside this batch.",
+    "native_boss_jafar_background": "The boss Jafar background pointer/table cluster (.data_boss_jafar_background) is a contiguous 532-byte initialized-data run with matching source order in boss_jafar_data.c across US/JP/EU; ordinary .data replaces its forced section attributes while preserving aligned(4). .data_09EF275C and rock_indices stay sectioned."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_background",
+          "section": ".data",
           "address": "0x9ef280c",
           "size": 532,
           "sha256": "7e137d3e062b050839f828185cf73079f8fa554ebbcd53db82824197e20d2652",
@@ -110,7 +111,7 @@
       "placements": [
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_background",
+          "section": ".data",
           "address": "0x9ec9bf8",
           "size": 532,
           "sha256": "262aaa95951c0cfa4c2d3c893ec794403bc182cc22174d4f2d3329c7380f8c5e",
@@ -212,7 +213,7 @@
       "placements": [
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_background",
+          "section": ".data",
           "address": "0x9f7da44",
           "size": 532,
           "sha256": "bcc1afc9eed3260d3e9ff947b88aa9c8fb57eb301b82e3b7a260f35daab364d7",
