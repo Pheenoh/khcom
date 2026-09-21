@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_event_sequence_0902FC00_data": "gUnk_0902FC00 formerly .data_event_sequence_0902FC00 stays mutable in existing event_sequence_data.c; ordinary .data replaces the forced section (TU already has .rodata from FCB8).",
     "native_event_sequence_0902FCB8_rodata": "gUnk_0902FCB8 formerly .data_event_sequence_0902FCB8 is const EventSequenceDef in existing event_sequence_data.c; ordinary .rodata replaces the forced section (first native slot for this TU).",
     "descriptors": "Each native48-byte EventSequenceDef is independently reached through the event-sequence index, whose endpoints are selected by the sentinel-terminated debug selectors. The parallel byte-identical Shift-JIS event titles prove the regional correspondence; EU genuinely omits US event IDs127/128. Character tracks, camera keyframes, message entries, sound cues and background-effect entries are consumed through five distinct canonical pointer fields. Complete scalar fields match US/JP; EU native next-event IDs and the one timing change are preserved explicitly. No larger backing-script extent is inferred."
   },
@@ -4104,7 +4105,7 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_0902FC00",
+          "section": ".data",
           "address": "0x902fc00",
           "size": 48,
           "sha256": "3d19a8034cbd0040a926db0c6f63037a6bbc2a9441e504b332ca7dc29991d933",
@@ -8245,7 +8246,7 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_0902FC00",
+          "section": ".data",
           "address": "0x9002ec4",
           "size": 48,
           "sha256": "0f132987685f8f22543f1786880535f04dcd9b5572b71b3cb6cf79cbd2b51aaa",
@@ -12344,7 +12345,7 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_0902FC00",
+          "section": ".data",
           "address": "0x90c8f78",
           "size": 48,
           "sha256": "80d7975aface699401de2a68d73e0ba969ccfe0aa12d7555870870bf907c6c8c",
