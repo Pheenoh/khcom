@@ -4,7 +4,8 @@
     "bounds": "Twelve physical gaps are bounded by already-proven neighboring C sections, independently for each region. The gap file named5C6C actually starts5CAC, after the already-owned64-byte pool. Native EU SIO/status expansions retain their actual extra resource arrays; inactive interpolated US aliases are not fabricated as objects.",
     "consumers": "All native complete AnimHeader frame indices prove gfx extents except explicit consumer bounds: SIO battle three graphics and Boolean two-player state; SIO options gfx0..2; Wlogo Won loop0..9; status scrollbar gfx4; status tab GetMaxSpriteTileBytes4; stock_mes_disp_0 selectors0/1. EU five-language status wrappers prove their actual gfx3/gfx4 target arrays. gUnk_09EF3884 dormant EU three-Sprite counterpart has exactly the same complete renderer payloads as the US/JP explicitly indexed array.",
     "unused": "Unselected native pairs retain decoded complete header/frame shape without claiming runtime reachability. Suffix words remain neutral scalar graphics pointers. One separate unused animation pointer follows an already-owned animation group. Zero-frame animation headers are preserved; they do not imply invented gfx array bounds.",
-    "assets": "Version-active Sprite/AnimHeader asset bindings have exact complete format extents and original ROM hashes. Metadata stays counted. Existing native symbol policies are removed only after exact address equality, with one canonical declaration header."
+    "assets": "Version-active Sprite/AnimHeader asset bindings have exact complete format extents and original ROM hashes. Metadata stays counted. Existing native symbol policies are removed only after exact address equality, with one canonical declaration header.",
+    "native_remaining_3884": "The remaining-resource pointer cluster at .data_remaining_09EF3884 is a contiguous initialized-data run (204B US/JP, 372B EU) with matching source order in remaining_resource_data.c; ordinary .data replaces its forced section attributes. Neighboring remaining-resource clusters stay sectioned."
   },
   "regions": {
     "us": {
@@ -30,7 +31,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF3884",
+          "section": ".data",
           "address": "0x9ef3884",
           "size": 204,
           "sha256": "8b3f9286e6f0997e7e9c7abd1052f7c8c2b171c4550853649d032893b39973a8",
@@ -1887,7 +1888,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF3884",
+          "section": ".data",
           "address": "0x9ecac70",
           "size": 204,
           "sha256": "f6901aa10bd05d340a6ef1689ff3127918f44c4c998a0157362d5149f3f7d804",
@@ -3744,7 +3745,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF3884",
+          "section": ".data",
           "address": "0x9f7ead0",
           "size": 372,
           "sha256": "7f73875a83c28979d6913c0fa480e5db32a233baea6ad7bd2f9ad47bf57ed963",
