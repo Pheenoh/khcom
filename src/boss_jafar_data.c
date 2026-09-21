@@ -125,11 +125,11 @@ u32 gUnk_09EF2A18 __attribute__((aligned(4))) = 668;
 
 u32 gUnk_09EF2A1C __attribute__((aligned(4))) = 683;
 
-s8 gUnk_09EF2A38[9] __attribute__((section(".data_boss_jafar_rock_indices"), aligned(1))) = { 9, 10, 11, 12, 13, 14, 15, 26, 0 };
+s8 const gUnk_09EF2A38[9] __attribute__((aligned(1))) = { 9, 10, 11, 12, 13, 14, 15, 26, 0 };
 
-s8 gUnk_09EF2A41 __attribute__((section(".data_boss_jafar_rock_indices"), aligned(1))) = -1;
+s8 const gUnk_09EF2A41 __attribute__((aligned(1))) = -1;
 
-s16 gUnk_09EF2A42[12] __attribute__((section(".data_boss_jafar_rock_indices"), aligned(2))) = { 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 55 };
+s16 const gUnk_09EF2A42[12] __attribute__((aligned(2))) = { 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 55 };
 
 void* gUnk_09EF275C[2][15] __attribute__((section(".data_09EF275C"))) = {
     {

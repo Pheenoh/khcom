@@ -16,9 +16,9 @@ extern u32 gUnk_09EF2A10;
 extern u32 gUnk_09EF2A14;
 extern u32 gUnk_09EF2A18;
 extern u32 gUnk_09EF2A1C;
-extern s8 gUnk_09EF2A38[9];
-extern s8 gUnk_09EF2A41;
-extern s16 gUnk_09EF2A42[12];
+extern s8 const gUnk_09EF2A38[9];
+extern s8 const gUnk_09EF2A41;
+extern s16 const gUnk_09EF2A42[12];
 
 extern void* gUnk_09EF275C[2][15];
 

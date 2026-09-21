@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_boss_jafar_rock_indices_rodata": "Rock-index bytes formerly .data_boss_jafar_rock_indices are const in existing boss_jafar_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "boss_jafar_indices": "JfMajin state functions use background phases0..47: func_080BF4F4 and func_080BF8C4 initialize45 and later select+2. Independently referenced map/tile bases bound the final neutral blank-map and NULL scalars. func_080BF8C4 starts angle148/108 and increments/decrements26 times, proving parameter index26. Eight further monotonic u32 values are separate unused scalars before the independently owned TaskDesc. task_bos_jf_rock_1 explicitly clamps animation selector8 and gfx selector11; unused -1 after the9-byte selector array remains a neutral scalar. Final two alignment bytes before the next TaskDesc remain outside this batch.",
     "native_boss_jafar_background": "The boss Jafar background pointer/table cluster (.data_boss_jafar_background) is a contiguous 532-byte initialized-data run with matching source order in boss_jafar_data.c across US/JP/EU; ordinary .data replaces its forced section attributes while preserving aligned(4). .data_09EF275C and rock_indices stay sectioned."
   },
@@ -83,7 +84,7 @@
         },
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_rock_indices",
+          "section": ".rodata",
           "address": "0x9ef2a38",
           "size": 34,
           "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
@@ -185,7 +186,7 @@
         },
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_rock_indices",
+          "section": ".rodata",
           "address": "0x9ec9e24",
           "size": 34,
           "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
@@ -287,7 +288,7 @@
         },
         {
           "unit": "boss_jafar_data.c",
-          "section": ".data_boss_jafar_rock_indices",
+          "section": ".rodata",
           "address": "0x9f7dc70",
           "size": 34,
           "sha256": "7b6721af7fe26570531a39872bdde94638f2a94f7fb6d0161b5b1b771b18bde9",
