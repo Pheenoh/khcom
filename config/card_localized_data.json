@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_card_localized_level_up_rodata": "Level-up pointer cluster formerly .data_level_up is const tables in existing card_localized_data.c; ordinary .rodata replaces the forced section (TU already has .data for labels).",
     "native_labels": "The regional card-label pointer clusters (.data_labels) are contiguous initialized-data runs with matching source order under VERSION_US/JP/EU in card_localized_data.c; ordinary .data replaces forced section attributes. level_up, deck_labels, and EU-only earlier clusters stay sectioned."
   },
   "regions": {
@@ -867,7 +868,7 @@
         },
         {
           "unit": "card_localized_data.c",
-          "section": ".data_level_up",
+          "section": ".rodata",
           "address": "0x9eea19c",
           "size": 344,
           "sha256": "5729fffdecb24692076ab0c4f5a77e32e5a485a6d1984488e1a4d9f43ce4656b",
@@ -4202,7 +4203,7 @@
         },
         {
           "unit": "card_localized_data.c",
-          "section": ".data_level_up",
+          "section": ".rodata",
           "address": "0x9ec1590",
           "size": 344,
           "sha256": "940c978ca2773bb9672c34634e4d6e50c86e7e7f91250bc882518847429be3b7",
@@ -7672,7 +7673,7 @@
         },
         {
           "unit": "card_localized_data.c",
-          "section": ".data_level_up",
+          "section": ".rodata",
           "address": "0x9f75fb4",
           "size": 944,
           "sha256": "a1d34befc79f0132a6043b969f385293c305627cb1b8c41f841403fa3006e7b6",
