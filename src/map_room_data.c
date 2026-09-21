@@ -91,7 +91,7 @@ UnkStruct_09EF70D0 gUnk_09850428 __attribute__((section(".data_map_room_09850428
     21,
 };
 
-UnkStruct_09EF70D0 gUnk_09856678 __attribute__((section(".data_map_room_09856678"))) = {
+const UnkStruct_09EF70D0 gUnk_09856678 = {
     gUnk_099903C4,
     352, { 0, 0 },
     gUnk_098D4504,
