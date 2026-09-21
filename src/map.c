@@ -9654,7 +9654,7 @@ const char gModeNameMapFix[] __attribute__((section(".rodata_registration_name_g
 
 const char gModeNameMenuNew[] __attribute__((section(".rodata_registration_name_gModeMenuNew"), aligned(1))) = "Mode_MenuNew";
 
-const char gModeNameMenuLoad[] __attribute__((section(".rodata_registration_name_gModeMenuLoad"), aligned(1))) = "Mode_MenuLoad";
+const char gModeNameMenuLoad[] __attribute__((aligned(1))) = "Mode_MenuLoad";
 
 const char gModeNameMenuMsg[] __attribute__((section(".rodata_registration_name_gModeMenuMsg"), aligned(1))) = "Mode_MenuMsg";
 

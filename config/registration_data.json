@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_map_mode_menu_load_name_rodata": "gModeNameMenuLoad formerly forced registration-name section; stays const char[] in existing map.c; ordinary .rodata replaces it (first native slot).",
     "native_bos6_pc_flt_name_rodata": "gTaskNameBosPcFlt formerly forced registration-name section; stays const char[] in existing bos6.c; ordinary .rodata replaces it (first native slot).",
     "native_bos5_md_hahen_name_rodata": "gTaskNameBosMdHahen formerly forced registration-name section; stays const char[] in existing bos5.c; ordinary .rodata replaces it (first native slot).",
     "native_sroll_c_char_name_rodata": "gTaskNameSrollCChar formerly forced registration-name section; stays const char[] in existing sroll.c; ordinary .rodata replaces it (first native slot).",
@@ -4865,7 +4866,7 @@
         },
         {
           "unit": "map.c",
-          "section": ".rodata_registration_name_gModeMenuLoad",
+          "section": ".rodata",
           "address": "0x0984B930",
           "size": 14,
           "sha256": "37f988c3fb83a3f93781536742879b0d16116b194810e5e932362f0a7394dc58",
@@ -11435,7 +11436,7 @@
         },
         {
           "unit": "map.c",
-          "section": ".rodata_registration_name_gModeMenuLoad",
+          "section": ".rodata",
           "address": "0x09800444",
           "size": 14,
           "sha256": "37f988c3fb83a3f93781536742879b0d16116b194810e5e932362f0a7394dc58",
@@ -18002,7 +18003,7 @@
         },
         {
           "unit": "map.c",
-          "section": ".rodata_registration_name_gModeMenuLoad",
+          "section": ".rodata",
           "address": "0x09828304",
           "size": 14,
           "sha256": "37f988c3fb83a3f93781536742879b0d16116b194810e5e932362f0a7394dc58",
