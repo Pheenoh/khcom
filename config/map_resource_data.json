@@ -1,14 +1,15 @@
 {
   "version": 1,
   "provenance": {
-    "map_resources": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented."
+    "map_resources": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented.",
+    "native_map_resources_8494": "The gUnk_09EF8494 map-resource pointer/AnimHeader cluster is a contiguous 2060-byte initialized-data run with matching source order in map_resource_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. The later 09EF8CD8 cluster stays sectioned where animation_resource_data interrupts the link order."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8494",
+          "section": ".data",
           "address": "0x09EF8494",
           "size": 2060,
           "sha256": "84b04e3d9ed01dcd880777be1fe4f55ef7101baf852cadc68d4da1ba66c5b2fb",
@@ -2675,7 +2676,7 @@
       "placements": [
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8494",
+          "section": ".data",
           "address": "0x09ECF880",
           "size": 2060,
           "sha256": "a317f4b060d76568b53eb967ca43f80d980cb05fabb3b4093746455002b87c56",
@@ -5342,7 +5343,7 @@
       "placements": [
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8494",
+          "section": ".data",
           "address": "0x09F83B04",
           "size": 2060,
           "sha256": "b68ce5f8e5d4f2e4e74075a2befa39c9042fbcf83d13db39b0e864eff4c4b310",
