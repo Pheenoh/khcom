@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_battle_localized_1520_rodata": "Cluster formerly .data_09EE1520 is const pointer tables in existing battle_localized_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "native_resources": "Native regional spans are bounded by independently owned neighboring sections. Consumer animation indices and complete selected AnimHeader frame graphs establish array extents. Pause uses2 gfx, escape uses3, card digits use16, experience uses14. Native EU task_btl_pop_0 directly loads19 gfx/animation pairs and selects animation0. Remaining individual words are typed scalar pointers, not invented array suffixes. JP experience and card digits share the same physical array, owned once. Binary asset bindings use complete exact native ROM extents and hashes; no cross-region identity is inferred.",
     "native_battle_localized_10EC": "The gUnk_09EE10EC battle-localized pointer cluster is a contiguous initialized-data run (344B US/JP, 280B EU) with matching source order in battle_localized_data.c; ordinary .data replaces its forced section attributes. Later 09EE1520 and 09EE25D0 clusters stay sectioned."
   },
@@ -393,7 +394,7 @@
         },
         {
           "unit": "battle_localized_data.c",
-          "section": ".data_09EE1520",
+          "section": ".rodata",
           "address": "0x9ee1520",
           "size": 220,
           "sha256": "6f4121a92cb5cc9dd6b00520009947f532dbe0925f19e0b50f74202dee9a85f3",
@@ -2409,7 +2410,7 @@
         },
         {
           "unit": "battle_localized_data.c",
-          "section": ".data_09EE1520",
+          "section": ".rodata",
           "address": "0x9eb8f9c",
           "size": 220,
           "sha256": "688622834ca070f33696258413524620e298e0271e367ba3522a7198743bd06e",
@@ -4440,7 +4441,7 @@
         },
         {
           "unit": "battle_localized_data.c",
-          "section": ".data_09EE1520",
+          "section": ".rodata",
           "address": "0x9f5c0ec",
           "size": 796,
           "sha256": "5634a00d22c74d94bef2a1a577972c34e0c049ee3d518a616f0d213c585af6bc",

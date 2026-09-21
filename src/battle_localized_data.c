@@ -203,19 +203,19 @@ void* gUnkUs_09EE123C = gUnkUs_08B1FD4C;
 
 AnimHeader* gUnkUs_09EE1240 = &gUnkUs_08B1FD5C;
 
-void* gUnkUs_09EE1520 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B2556C;
+void* const gUnkUs_09EE1520 = gUnkUs_08B2556C;
 
-void* gUnkUs_09EE1524 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B2557C;
+void* const gUnkUs_09EE1524 = gUnkUs_08B2557C;
 
-void* gUnkUs_09EE1528 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B25586;
+void* const gUnkUs_09EE1528 = gUnkUs_08B25586;
 
-void* gUnkUs_09EE152C __attribute__((section(".data_09EE1520"))) = gUnkUs_08B25590;
+void* const gUnkUs_09EE152C = gUnkUs_08B25590;
 
-void* gUnkUs_09EE1530 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B2559A;
+void* const gUnkUs_09EE1530 = gUnkUs_08B2559A;
 
-AnimHeader* gUnkUs_09EE1534 __attribute__((section(".data_09EE1520"))) = &gUnkUs_08B255AA;
+AnimHeader* const gUnkUs_09EE1534 = &gUnkUs_08B255AA;
 
-void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE1538[16] = {
     gUnkUs_08B25A34,
     gUnkUs_08B25A3E,
     gUnkUs_08B25A48,
@@ -234,9 +234,9 @@ void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
     gUnkUs_08B25ACA,
 };
 
-AnimHeader* gUnkUs_09EE1578 __attribute__((section(".data_09EE1520"))) = &gUnkUs_08B25AD4;
+AnimHeader* const gUnkUs_09EE1578 = &gUnkUs_08B25AD4;
 
-void* gUnk_09EE157C[14] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE157C[14] = {
     gUnkUs_08B25E40,
     gUnkUs_08B25E4A,
     gUnkUs_08B25E54,
@@ -253,42 +253,42 @@ void* gUnk_09EE157C[14] __attribute__((section(".data_09EE1520"))) = {
     gUnkUs_08B25EC8,
 };
 
-void* gUnkUs_09EE15B4 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B25ED2;
+void* const gUnkUs_09EE15B4 = gUnkUs_08B25ED2;
 
-void* gUnkUs_09EE15B8 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B25EDC;
+void* const gUnkUs_09EE15B8 = gUnkUs_08B25EDC;
 
-AnimHeader* gUnkUs_09EE15BC __attribute__((section(".data_09EE1520"))) = &gUnkUs_08B25EE6;
+AnimHeader* const gUnkUs_09EE15BC = &gUnkUs_08B25EE6;
 
-void* gUnk_09EE15C0[4] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE15C0[4] = {
     gUnkUs_08B26270,
     gUnkUs_08B26286,
     gUnkUs_08B2629C,
     gUnkUs_08B262B2,
 };
 
-void* gUnkUs_09EE15D0 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B262C8;
+void* const gUnkUs_09EE15D0 = gUnkUs_08B262C8;
 
-void* gUnkUs_09EE15D4 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B262DE;
+void* const gUnkUs_09EE15D4 = gUnkUs_08B262DE;
 
-void* gUnkUs_09EE15D8 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B262F4;
+void* const gUnkUs_09EE15D8 = gUnkUs_08B262F4;
 
-void* gUnkUs_09EE15DC __attribute__((section(".data_09EE1520"))) = gUnkUs_08B2630A;
+void* const gUnkUs_09EE15DC = gUnkUs_08B2630A;
 
-void* gUnkUs_09EE15E0 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B26320;
+void* const gUnkUs_09EE15E0 = gUnkUs_08B26320;
 
-void* gUnkUs_09EE15E4 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B26336;
+void* const gUnkUs_09EE15E4 = gUnkUs_08B26336;
 
-void* gUnkUs_09EE15E8 __attribute__((section(".data_09EE1520"))) = gUnkUs_08B2634C;
+void* const gUnkUs_09EE15E8 = gUnkUs_08B2634C;
 
-void* gUnkUs_09EE15EC __attribute__((section(".data_09EE1520"))) = gUnkUs_08B26362;
+void* const gUnkUs_09EE15EC = gUnkUs_08B26362;
 
-AnimHeader* gUnk_09EE15F0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnk_09EE15F0[1] = {
     &gUnkUs_08B26378,
 };
 
-AnimHeader* gUnkUs_09EE15F4 __attribute__((section(".data_09EE1520"))) = &gUnkUs_08B26396;
+AnimHeader* const gUnkUs_09EE15F4 = &gUnkUs_08B26396;
 
-AnimHeader* gUnkUs_09EE15F8 __attribute__((section(".data_09EE1520"))) = &gUnkUs_08B263B4;
+AnimHeader* const gUnkUs_09EE15F8 = &gUnkUs_08B263B4;
 
 void* gUnk_09EE25D0[5] __attribute__((section(".data_09EE25D0"))) = {
     gUnkUs_08C665DC,
@@ -589,19 +589,19 @@ void* gUnkJp_09EB8CB8 = gUnkJp_08B13334;
 
 AnimHeader* gUnkJp_09EB8CBC = &gUnkJp_08B13344;
 
-void* gUnkJp_09EB8F9C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B18B54;
+void* const gUnkJp_09EB8F9C = gUnkJp_08B18B54;
 
-void* gUnkJp_09EB8FA0 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B18B64;
+void* const gUnkJp_09EB8FA0 = gUnkJp_08B18B64;
 
-void* gUnkJp_09EB8FA4 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B18B6E;
+void* const gUnkJp_09EB8FA4 = gUnkJp_08B18B6E;
 
-void* gUnkJp_09EB8FA8 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B18B78;
+void* const gUnkJp_09EB8FA8 = gUnkJp_08B18B78;
 
-void* gUnkJp_09EB8FAC __attribute__((section(".data_09EE1520"))) = gUnkJp_08B18B82;
+void* const gUnkJp_09EB8FAC = gUnkJp_08B18B82;
 
-AnimHeader* gUnkJp_09EB8FB0 __attribute__((section(".data_09EE1520"))) = &gUnkJp_08B18B92;
+AnimHeader* const gUnkJp_09EB8FB0 = &gUnkJp_08B18B92;
 
-void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE1538[16] = {
     gUnkJp_08B1901C,
     gUnkJp_08B19026,
     gUnkJp_08B19030,
@@ -620,72 +620,72 @@ void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
     gUnkJp_08B190B2,
 };
 
-AnimHeader* gUnkJp_09EB8FF4 __attribute__((section(".data_09EE1520"))) = &gUnkJp_08B190BC;
+AnimHeader* const gUnkJp_09EB8FF4 = &gUnkJp_08B190BC;
 
-void* gUnkJp_09EB8FF8 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19428;
+void* const gUnkJp_09EB8FF8 = gUnkJp_08B19428;
 
-void* gUnkJp_09EB8FFC __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19432;
+void* const gUnkJp_09EB8FFC = gUnkJp_08B19432;
 
-void* gUnkJp_09EB9000 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1943C;
+void* const gUnkJp_09EB9000 = gUnkJp_08B1943C;
 
-void* gUnkJp_09EB9004 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19446;
+void* const gUnkJp_09EB9004 = gUnkJp_08B19446;
 
-void* gUnkJp_09EB9008 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19456;
+void* const gUnkJp_09EB9008 = gUnkJp_08B19456;
 
-void* gUnkJp_09EB900C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19460;
+void* const gUnkJp_09EB900C = gUnkJp_08B19460;
 
-void* gUnkJp_09EB9010 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1946A;
+void* const gUnkJp_09EB9010 = gUnkJp_08B1946A;
 
-void* gUnkJp_09EB9014 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19474;
+void* const gUnkJp_09EB9014 = gUnkJp_08B19474;
 
-void* gUnkJp_09EB9018 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1947E;
+void* const gUnkJp_09EB9018 = gUnkJp_08B1947E;
 
-void* gUnkJp_09EB901C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19488;
+void* const gUnkJp_09EB901C = gUnkJp_08B19488;
 
-void* gUnkJp_09EB9020 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19492;
+void* const gUnkJp_09EB9020 = gUnkJp_08B19492;
 
-void* gUnkJp_09EB9024 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1949C;
+void* const gUnkJp_09EB9024 = gUnkJp_08B1949C;
 
-void* gUnkJp_09EB9028 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B194A6;
+void* const gUnkJp_09EB9028 = gUnkJp_08B194A6;
 
-void* gUnkJp_09EB902C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B194B0;
+void* const gUnkJp_09EB902C = gUnkJp_08B194B0;
 
-void* gUnkJp_09EB9030 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B194BA;
+void* const gUnkJp_09EB9030 = gUnkJp_08B194BA;
 
-void* gUnkJp_09EB9034 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B194C4;
+void* const gUnkJp_09EB9034 = gUnkJp_08B194C4;
 
-AnimHeader* gUnkJp_09EB9038 __attribute__((section(".data_09EE1520"))) = &gUnkJp_08B194CE;
+AnimHeader* const gUnkJp_09EB9038 = &gUnkJp_08B194CE;
 
-void* gUnk_09EE15C0[4] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE15C0[4] = {
     gUnkJp_08B19858,
     gUnkJp_08B1986E,
     gUnkJp_08B19884,
     gUnkJp_08B1989A,
 };
 
-void* gUnkJp_09EB904C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B198B0;
+void* const gUnkJp_09EB904C = gUnkJp_08B198B0;
 
-void* gUnkJp_09EB9050 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B198C6;
+void* const gUnkJp_09EB9050 = gUnkJp_08B198C6;
 
-void* gUnkJp_09EB9054 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B198DC;
+void* const gUnkJp_09EB9054 = gUnkJp_08B198DC;
 
-void* gUnkJp_09EB9058 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B198F2;
+void* const gUnkJp_09EB9058 = gUnkJp_08B198F2;
 
-void* gUnkJp_09EB905C __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19908;
+void* const gUnkJp_09EB905C = gUnkJp_08B19908;
 
-void* gUnkJp_09EB9060 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1991E;
+void* const gUnkJp_09EB9060 = gUnkJp_08B1991E;
 
-void* gUnkJp_09EB9064 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B19934;
+void* const gUnkJp_09EB9064 = gUnkJp_08B19934;
 
-void* gUnkJp_09EB9068 __attribute__((section(".data_09EE1520"))) = gUnkJp_08B1994A;
+void* const gUnkJp_09EB9068 = gUnkJp_08B1994A;
 
-AnimHeader* gUnk_09EE15F0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnk_09EE15F0[1] = {
     &gUnkJp_08B19960,
 };
 
-AnimHeader* gUnkJp_09EB9070 __attribute__((section(".data_09EE1520"))) = &gUnkJp_08B1997E;
+AnimHeader* const gUnkJp_09EB9070 = &gUnkJp_08B1997E;
 
-AnimHeader* gUnkJp_09EB9074 __attribute__((section(".data_09EE1520"))) = &gUnkJp_08B1999C;
+AnimHeader* const gUnkJp_09EB9074 = &gUnkJp_08B1999C;
 
 void* gUnk_09EE25D0[5] __attribute__((section(".data_09EE25D0"))) = {
     gUnkJp_08C59BC4,
@@ -944,50 +944,50 @@ void* gUnkEu_09F5BE54 = gUnkEu_08B4AC2C;
 
 AnimHeader* gUnkEu_09F5BE58 = &gUnkEu_08B4AC3C;
 
-void* gUnkEu_09F5C0EC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B4FB78;
+void* const gUnkEu_09F5C0EC = gUnkEu_08B4FB78;
 
-void* gUnkEu_09F5C0F0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B4FB88;
+void* const gUnkEu_09F5C0F0 = gUnkEu_08B4FB88;
 
-void* gUnkEu_09F5C0F4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B4FB92;
+void* const gUnkEu_09F5C0F4 = gUnkEu_08B4FB92;
 
-void* gUnkEu_09F5C0F8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B4FB9C;
+void* const gUnkEu_09F5C0F8 = gUnkEu_08B4FB9C;
 
-void* gUnkEu_09F5C0FC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B4FBA6;
+void* const gUnkEu_09F5C0FC = gUnkEu_08B4FBA6;
 
-AnimHeader* gUnkEu_09F5C100 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B4FBB6;
+AnimHeader* const gUnkEu_09F5C100 = &gUnkEu_08B4FBB6;
 
-void* gUnk_09EE15C0[4] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE15C0[4] = {
     gUnkEu_08B50040,
     gUnkEu_08B50056,
     gUnkEu_08B5006C,
     gUnkEu_08B50082,
 };
 
-void* gUnkEu_09F5C114 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B50098;
+void* const gUnkEu_09F5C114 = gUnkEu_08B50098;
 
-void* gUnkEu_09F5C118 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B500AE;
+void* const gUnkEu_09F5C118 = gUnkEu_08B500AE;
 
-void* gUnkEu_09F5C11C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B500C4;
+void* const gUnkEu_09F5C11C = gUnkEu_08B500C4;
 
-void* gUnkEu_09F5C120 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B500DA;
+void* const gUnkEu_09F5C120 = gUnkEu_08B500DA;
 
-void* gUnkEu_09F5C124 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B500F0;
+void* const gUnkEu_09F5C124 = gUnkEu_08B500F0;
 
-void* gUnkEu_09F5C128 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B50106;
+void* const gUnkEu_09F5C128 = gUnkEu_08B50106;
 
-void* gUnkEu_09F5C12C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B5011C;
+void* const gUnkEu_09F5C12C = gUnkEu_08B5011C;
 
-void* gUnkEu_09F5C130 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B50132;
+void* const gUnkEu_09F5C130 = gUnkEu_08B50132;
 
-AnimHeader* gUnk_09EE15F0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnk_09EE15F0[1] = {
     &gUnkEu_08B50148,
 };
 
-AnimHeader* gUnkEu_09F5C138 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B50166;
+AnimHeader* const gUnkEu_09F5C138 = &gUnkEu_08B50166;
 
-AnimHeader* gUnkEu_09F5C13C __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B50184;
+AnimHeader* const gUnkEu_09F5C13C = &gUnkEu_08B50184;
 
-void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE1538[16] = {
     gUnkEu_08B50624,
     gUnkEu_08B5062E,
     gUnkEu_08B50638,
@@ -1006,334 +1006,334 @@ void* gUnk_09EE1538[16] __attribute__((section(".data_09EE1520"))) = {
     gUnkEu_08B506BA,
 };
 
-AnimHeader* gUnkEu_09F5C180 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B506C4;
+AnimHeader* const gUnkEu_09F5C180 = &gUnkEu_08B506C4;
 
-void* gUnkEu_09F5C184[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C184[1] = {
     gUnkEu_08B50A30,
 };
 
-AnimHeader* gUnkEu_09F5C188[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C188[1] = {
     &gUnkEu_08B50A40,
 };
 
-void* gUnkEu_09F5C18C[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C18C[1] = {
     gUnkEu_08B50BCC,
 };
 
-AnimHeader* gUnkEu_09F5C190[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C190[1] = {
     &gUnkEu_08B50BDC,
 };
 
-void* gUnkEu_09F5C194[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C194[1] = {
     gUnkEu_08B50D68,
 };
 
-AnimHeader* gUnkEu_09F5C198[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C198[1] = {
     &gUnkEu_08B50D78,
 };
 
-void* gUnkEu_09F5C19C[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C19C[1] = {
     gUnkEu_08B50F04,
 };
 
-AnimHeader* gUnkEu_09F5C1A0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1A0[1] = {
     &gUnkEu_08B50F0E,
 };
 
-void* gUnkEu_09F5C1A4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1A4[1] = {
     gUnkEu_08B51018,
 };
 
-AnimHeader* gUnkEu_09F5C1A8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1A8[1] = {
     &gUnkEu_08B51022,
 };
 
-void* gUnkEu_09F5C1AC[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1AC[1] = {
     gUnkEu_08B5112C,
 };
 
-AnimHeader* gUnkEu_09F5C1B0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1B0[1] = {
     &gUnkEu_08B51136,
 };
 
-void* gUnkEu_09F5C1B4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1B4[1] = {
     gUnkEu_08B51240,
 };
 
-AnimHeader* gUnkEu_09F5C1B8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1B8[1] = {
     &gUnkEu_08B5124A,
 };
 
-void* gUnkEu_09F5C1BC[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1BC[1] = {
     gUnkEu_08B51354,
 };
 
-AnimHeader* gUnkEu_09F5C1C0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1C0[1] = {
     &gUnkEu_08B5135E,
 };
 
-void* gUnkEu_09F5C1C4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1C4[1] = {
     gUnkEu_08B51468,
 };
 
-AnimHeader* gUnkEu_09F5C1C8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1C8[1] = {
     &gUnkEu_08B51472,
 };
 
-void* gUnkEu_09F5C1CC[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1CC[1] = {
     gUnkEu_08B5157C,
 };
 
-AnimHeader* gUnkEu_09F5C1D0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1D0[1] = {
     &gUnkEu_08B51586,
 };
 
-void* gUnkEu_09F5C1D4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1D4[1] = {
     gUnkEu_08B51690,
 };
 
-AnimHeader* gUnkEu_09F5C1D8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1D8[1] = {
     &gUnkEu_08B5169A,
 };
 
-void* gUnkEu_09F5C1DC[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1DC[1] = {
     gUnkEu_08B517A4,
 };
 
-AnimHeader* gUnkEu_09F5C1E0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1E0[1] = {
     &gUnkEu_08B517AE,
 };
 
-void* gUnkEu_09F5C1E4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1E4[1] = {
     gUnkEu_08B518B8,
 };
 
-AnimHeader* gUnkEu_09F5C1E8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1E8[1] = {
     &gUnkEu_08B518C2,
 };
 
-void* gUnkEu_09F5C1EC[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1EC[1] = {
     gUnkEu_08B519CC,
 };
 
-AnimHeader* gUnkEu_09F5C1F0[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1F0[1] = {
     &gUnkEu_08B519D6,
 };
 
-void* gUnkEu_09F5C1F4[1] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1F4[1] = {
     gUnkEu_08B51A60,
 };
 
-AnimHeader* gUnkEu_09F5C1F8[1] __attribute__((section(".data_09EE1520"))) = {
+AnimHeader* const gUnkEu_09F5C1F8[1] = {
     &gUnkEu_08B51A6A,
 };
 
-void* gUnkEu_09F5C1FC[2] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C1FC[2] = {
     gUnkEu_08B51B74,
     gUnkEu_08B51B84,
 };
 
-AnimHeader* gUnkEu_09F5C204 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B51B94;
+AnimHeader* const gUnkEu_09F5C204 = &gUnkEu_08B51B94;
 
-AnimHeader* gUnkEu_09F5C208 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B51B9E;
+AnimHeader* const gUnkEu_09F5C208 = &gUnkEu_08B51B9E;
 
-void* gUnkEu_09F5C20C[3] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C20C[3] = {
     gUnkEu_08B51D28,
     gUnkEu_08B51D32,
     gUnkEu_08B51D3C,
 };
 
-AnimHeader* gUnkEu_09F5C218 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B51D46;
+AnimHeader* const gUnkEu_09F5C218 = &gUnkEu_08B51D46;
 
-void* gUnkEu_09F5C21C[3] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C21C[3] = {
     gUnkEu_08B51F90,
     gUnkEu_08B51F9A,
     gUnkEu_08B51FA4,
 };
 
-AnimHeader* gUnkEu_09F5C228 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B51FAE;
+AnimHeader* const gUnkEu_09F5C228 = &gUnkEu_08B51FAE;
 
-void* gUnkEu_09F5C22C[3] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C22C[3] = {
     gUnkEu_08B521F8,
     gUnkEu_08B52202,
     gUnkEu_08B5220C,
 };
 
-AnimHeader* gUnkEu_09F5C238 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B52216;
+AnimHeader* const gUnkEu_09F5C238 = &gUnkEu_08B52216;
 
-void* gUnkEu_09F5C23C[3] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnkEu_09F5C23C[3] = {
     gUnkEu_08B52460,
     gUnkEu_08B5246A,
     gUnkEu_08B52474,
 };
 
-AnimHeader* gUnkEu_09F5C248 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B5247E;
+AnimHeader* const gUnkEu_09F5C248 = &gUnkEu_08B5247E;
 
-void* gUnkEu_09F5C24C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B526C8;
+void* const gUnkEu_09F5C24C = gUnkEu_08B526C8;
 
-void* gUnkEu_09F5C250 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B526D8;
+void* const gUnkEu_09F5C250 = gUnkEu_08B526D8;
 
-void* gUnkEu_09F5C254 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B526E8;
+void* const gUnkEu_09F5C254 = gUnkEu_08B526E8;
 
-void* gUnkEu_09F5C258 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B526F8;
+void* const gUnkEu_09F5C258 = gUnkEu_08B526F8;
 
-void* gUnkEu_09F5C25C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52708;
+void* const gUnkEu_09F5C25C = gUnkEu_08B52708;
 
-void* gUnkEu_09F5C260 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52718;
+void* const gUnkEu_09F5C260 = gUnkEu_08B52718;
 
-void* gUnkEu_09F5C264 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52728;
+void* const gUnkEu_09F5C264 = gUnkEu_08B52728;
 
-void* gUnkEu_09F5C268 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52738;
+void* const gUnkEu_09F5C268 = gUnkEu_08B52738;
 
-void* gUnkEu_09F5C26C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52748;
+void* const gUnkEu_09F5C26C = gUnkEu_08B52748;
 
-void* gUnkEu_09F5C270 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52758;
+void* const gUnkEu_09F5C270 = gUnkEu_08B52758;
 
-void* gUnkEu_09F5C274 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B52768;
+void* const gUnkEu_09F5C274 = gUnkEu_08B52768;
 
-AnimHeader* gUnkEu_09F5C278 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B52778;
+AnimHeader* const gUnkEu_09F5C278 = &gUnkEu_08B52778;
 
-void* gUnkEu_09F5C27C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53304;
+void* const gUnkEu_09F5C27C = gUnkEu_08B53304;
 
-void* gUnkEu_09F5C280 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53314;
+void* const gUnkEu_09F5C280 = gUnkEu_08B53314;
 
-void* gUnkEu_09F5C284 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53324;
+void* const gUnkEu_09F5C284 = gUnkEu_08B53324;
 
-void* gUnkEu_09F5C288 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53334;
+void* const gUnkEu_09F5C288 = gUnkEu_08B53334;
 
-void* gUnkEu_09F5C28C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53344;
+void* const gUnkEu_09F5C28C = gUnkEu_08B53344;
 
-void* gUnkEu_09F5C290 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53354;
+void* const gUnkEu_09F5C290 = gUnkEu_08B53354;
 
-void* gUnkEu_09F5C294 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53364;
+void* const gUnkEu_09F5C294 = gUnkEu_08B53364;
 
-void* gUnkEu_09F5C298 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53374;
+void* const gUnkEu_09F5C298 = gUnkEu_08B53374;
 
-void* gUnkEu_09F5C29C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53384;
+void* const gUnkEu_09F5C29C = gUnkEu_08B53384;
 
-void* gUnkEu_09F5C2A0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53394;
+void* const gUnkEu_09F5C2A0 = gUnkEu_08B53394;
 
-void* gUnkEu_09F5C2A4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B533A4;
+void* const gUnkEu_09F5C2A4 = gUnkEu_08B533A4;
 
-AnimHeader* gUnkEu_09F5C2A8 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B533B4;
+AnimHeader* const gUnkEu_09F5C2A8 = &gUnkEu_08B533B4;
 
-void* gUnkEu_09F5C2AC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F40;
+void* const gUnkEu_09F5C2AC = gUnkEu_08B53F40;
 
-void* gUnkEu_09F5C2B0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F50;
+void* const gUnkEu_09F5C2B0 = gUnkEu_08B53F50;
 
-void* gUnkEu_09F5C2B4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F60;
+void* const gUnkEu_09F5C2B4 = gUnkEu_08B53F60;
 
-void* gUnkEu_09F5C2B8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F70;
+void* const gUnkEu_09F5C2B8 = gUnkEu_08B53F70;
 
-void* gUnkEu_09F5C2BC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F80;
+void* const gUnkEu_09F5C2BC = gUnkEu_08B53F80;
 
-void* gUnkEu_09F5C2C0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53F90;
+void* const gUnkEu_09F5C2C0 = gUnkEu_08B53F90;
 
-void* gUnkEu_09F5C2C4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53FA0;
+void* const gUnkEu_09F5C2C4 = gUnkEu_08B53FA0;
 
-void* gUnkEu_09F5C2C8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53FB0;
+void* const gUnkEu_09F5C2C8 = gUnkEu_08B53FB0;
 
-void* gUnkEu_09F5C2CC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53FC0;
+void* const gUnkEu_09F5C2CC = gUnkEu_08B53FC0;
 
-void* gUnkEu_09F5C2D0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53FD0;
+void* const gUnkEu_09F5C2D0 = gUnkEu_08B53FD0;
 
-void* gUnkEu_09F5C2D4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B53FE0;
+void* const gUnkEu_09F5C2D4 = gUnkEu_08B53FE0;
 
-AnimHeader* gUnkEu_09F5C2D8 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B53FF0;
+AnimHeader* const gUnkEu_09F5C2D8 = &gUnkEu_08B53FF0;
 
-void* gUnkEu_09F5C2DC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54B7C;
+void* const gUnkEu_09F5C2DC = gUnkEu_08B54B7C;
 
-void* gUnkEu_09F5C2E0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54B86;
+void* const gUnkEu_09F5C2E0 = gUnkEu_08B54B86;
 
-void* gUnkEu_09F5C2E4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54B96;
+void* const gUnkEu_09F5C2E4 = gUnkEu_08B54B96;
 
-void* gUnkEu_09F5C2E8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BA6;
+void* const gUnkEu_09F5C2E8 = gUnkEu_08B54BA6;
 
-void* gUnkEu_09F5C2EC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BB6;
+void* const gUnkEu_09F5C2EC = gUnkEu_08B54BB6;
 
-void* gUnkEu_09F5C2F0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BC6;
+void* const gUnkEu_09F5C2F0 = gUnkEu_08B54BC6;
 
-void* gUnkEu_09F5C2F4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BDC;
+void* const gUnkEu_09F5C2F4 = gUnkEu_08B54BDC;
 
-void* gUnkEu_09F5C2F8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BF2;
+void* const gUnkEu_09F5C2F8 = gUnkEu_08B54BF2;
 
-void* gUnkEu_09F5C2FC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54BFC;
+void* const gUnkEu_09F5C2FC = gUnkEu_08B54BFC;
 
-void* gUnkEu_09F5C300 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C06;
+void* const gUnkEu_09F5C300 = gUnkEu_08B54C06;
 
-void* gUnkEu_09F5C304 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C10;
+void* const gUnkEu_09F5C304 = gUnkEu_08B54C10;
 
-void* gUnkEu_09F5C308 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C26;
+void* const gUnkEu_09F5C308 = gUnkEu_08B54C26;
 
-void* gUnkEu_09F5C30C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C3C;
+void* const gUnkEu_09F5C30C = gUnkEu_08B54C3C;
 
-void* gUnkEu_09F5C310 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C52;
+void* const gUnkEu_09F5C310 = gUnkEu_08B54C52;
 
-void* gUnkEu_09F5C314 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C5C;
+void* const gUnkEu_09F5C314 = gUnkEu_08B54C5C;
 
-void* gUnkEu_09F5C318 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C6C;
+void* const gUnkEu_09F5C318 = gUnkEu_08B54C6C;
 
-void* gUnkEu_09F5C31C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C7C;
+void* const gUnkEu_09F5C31C = gUnkEu_08B54C7C;
 
-void* gUnkEu_09F5C320 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C8C;
+void* const gUnkEu_09F5C320 = gUnkEu_08B54C8C;
 
-void* gUnkEu_09F5C324 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54C9C;
+void* const gUnkEu_09F5C324 = gUnkEu_08B54C9C;
 
-void* gUnkEu_09F5C328 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54CB2;
+void* const gUnkEu_09F5C328 = gUnkEu_08B54CB2;
 
-void* gUnkEu_09F5C32C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54CC8;
+void* const gUnkEu_09F5C32C = gUnkEu_08B54CC8;
 
-void* gUnkEu_09F5C330 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54CDE;
+void* const gUnkEu_09F5C330 = gUnkEu_08B54CDE;
 
-void* gUnkEu_09F5C334 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54CF4;
+void* const gUnkEu_09F5C334 = gUnkEu_08B54CF4;
 
-void* gUnkEu_09F5C338 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D0A;
+void* const gUnkEu_09F5C338 = gUnkEu_08B54D0A;
 
-void* gUnkEu_09F5C33C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D1A;
+void* const gUnkEu_09F5C33C = gUnkEu_08B54D1A;
 
-void* gUnkEu_09F5C340 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D2A;
+void* const gUnkEu_09F5C340 = gUnkEu_08B54D2A;
 
-void* gUnkEu_09F5C344 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D3A;
+void* const gUnkEu_09F5C344 = gUnkEu_08B54D3A;
 
-void* gUnkEu_09F5C348 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D4A;
+void* const gUnkEu_09F5C348 = gUnkEu_08B54D4A;
 
-void* gUnkEu_09F5C34C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D60;
+void* const gUnkEu_09F5C34C = gUnkEu_08B54D60;
 
-void* gUnkEu_09F5C350 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D76;
+void* const gUnkEu_09F5C350 = gUnkEu_08B54D76;
 
-void* gUnkEu_09F5C354 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54D8C;
+void* const gUnkEu_09F5C354 = gUnkEu_08B54D8C;
 
-void* gUnkEu_09F5C358 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DA2;
+void* const gUnkEu_09F5C358 = gUnkEu_08B54DA2;
 
-void* gUnkEu_09F5C35C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DB8;
+void* const gUnkEu_09F5C35C = gUnkEu_08B54DB8;
 
-void* gUnkEu_09F5C360 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DC8;
+void* const gUnkEu_09F5C360 = gUnkEu_08B54DC8;
 
-void* gUnkEu_09F5C364 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DD8;
+void* const gUnkEu_09F5C364 = gUnkEu_08B54DD8;
 
-void* gUnkEu_09F5C368 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DE8;
+void* const gUnkEu_09F5C368 = gUnkEu_08B54DE8;
 
-void* gUnkEu_09F5C36C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54DF8;
+void* const gUnkEu_09F5C36C = gUnkEu_08B54DF8;
 
-void* gUnkEu_09F5C370 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54E0E;
+void* const gUnkEu_09F5C370 = gUnkEu_08B54E0E;
 
-void* gUnkEu_09F5C374 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54E24;
+void* const gUnkEu_09F5C374 = gUnkEu_08B54E24;
 
-void* gUnkEu_09F5C378 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54E3A;
+void* const gUnkEu_09F5C378 = gUnkEu_08B54E3A;
 
-void* gUnkEu_09F5C37C __attribute__((section(".data_09EE1520"))) = gUnkEu_08B54E50;
+void* const gUnkEu_09F5C37C = gUnkEu_08B54E50;
 
-AnimHeader* gUnkEu_09F5C380 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B54E66;
+AnimHeader* const gUnkEu_09F5C380 = &gUnkEu_08B54E66;
 
-AnimHeader* gUnkEu_09F5C384 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B54E70;
+AnimHeader* const gUnkEu_09F5C384 = &gUnkEu_08B54E70;
 
-AnimHeader* gUnkEu_09F5C388 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B54E7A;
+AnimHeader* const gUnkEu_09F5C388 = &gUnkEu_08B54E7A;
 
-AnimHeader* gUnkEu_09F5C38C __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B54E84;
+AnimHeader* const gUnkEu_09F5C38C = &gUnkEu_08B54E84;
 
-AnimHeader* gUnkEu_09F5C390 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B54E8E;
+AnimHeader* const gUnkEu_09F5C390 = &gUnkEu_08B54E8E;
 
-void* gUnk_09EE157C[14] __attribute__((section(".data_09EE1520"))) = {
+void* const gUnk_09EE157C[14] = {
     gUnkEu_08B55C58,
     gUnkEu_08B55C62,
     gUnkEu_08B55C6C,
@@ -1350,35 +1350,35 @@ void* gUnk_09EE157C[14] __attribute__((section(".data_09EE1520"))) = {
     gUnkEu_08B55CE0,
 };
 
-void* gUnkEu_09F5C3CC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55CEA;
+void* const gUnkEu_09F5C3CC = gUnkEu_08B55CEA;
 
-void* gUnkEu_09F5C3D0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55CF4;
+void* const gUnkEu_09F5C3D0 = gUnkEu_08B55CF4;
 
-void* gUnkEu_09F5C3D4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55CFE;
+void* const gUnkEu_09F5C3D4 = gUnkEu_08B55CFE;
 
-void* gUnkEu_09F5C3D8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D08;
+void* const gUnkEu_09F5C3D8 = gUnkEu_08B55D08;
 
-void* gUnkEu_09F5C3DC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D18;
+void* const gUnkEu_09F5C3DC = gUnkEu_08B55D18;
 
-void* gUnkEu_09F5C3E0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D22;
+void* const gUnkEu_09F5C3E0 = gUnkEu_08B55D22;
 
-void* gUnkEu_09F5C3E4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D32;
+void* const gUnkEu_09F5C3E4 = gUnkEu_08B55D32;
 
-void* gUnkEu_09F5C3E8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D3C;
+void* const gUnkEu_09F5C3E8 = gUnkEu_08B55D3C;
 
-void* gUnkEu_09F5C3EC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D4C;
+void* const gUnkEu_09F5C3EC = gUnkEu_08B55D4C;
 
-void* gUnkEu_09F5C3F0 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D56;
+void* const gUnkEu_09F5C3F0 = gUnkEu_08B55D56;
 
-void* gUnkEu_09F5C3F4 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D66;
+void* const gUnkEu_09F5C3F4 = gUnkEu_08B55D66;
 
-void* gUnkEu_09F5C3F8 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D70;
+void* const gUnkEu_09F5C3F8 = gUnkEu_08B55D70;
 
-void* gUnkEu_09F5C3FC __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D80;
+void* const gUnkEu_09F5C3FC = gUnkEu_08B55D80;
 
-void* gUnkEu_09F5C400 __attribute__((section(".data_09EE1520"))) = gUnkEu_08B55D8A;
+void* const gUnkEu_09F5C400 = gUnkEu_08B55D8A;
 
-AnimHeader* gUnkEu_09F5C404 __attribute__((section(".data_09EE1520"))) = &gUnkEu_08B55D9A;
+AnimHeader* const gUnkEu_09F5C404 = &gUnkEu_08B55D9A;
 
 void* gUnk_09EE25D0[5] __attribute__((section(".data_09EE25D0"))) = {
     gUnkEu_08C9658C,
