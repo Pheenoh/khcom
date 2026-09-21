@@ -6,7 +6,8 @@
     "localized_sroll_resources": "sroll.c task_sroll_c_char_0 independently passes these table bases to AnimInit in each region and loops animation IDs0..4. All five real AnimHeader prefixes and frame sequences are decoded per region; maximum gfxIndex is65 in US/EU and62 in JP. Those exact extents independently reach the animation-table base. JP localized frames differ and its gfx pointers use JP-only names, not assumed US slot correspondence.",
     "resource_unused_suffixes": "Nineteen ObjDef-referenced gfx tables have a proven used prefix bounded by max AnimFrame.gfxIndex+1 and a separate trailing group of words before the independently referenced animation-table base. The used prefix is a real void* array; each trailing word is a separate neutral void* scalar without claiming it is accessed as an array element. Every pointer target independently decodes as Sprite/OAM metadata, with all minimum consumed payload bytes identical across US/JP/EU.",
     "direct_animation_resources": "Actual map and world-logo consumers independently bound each array. Canonical animation and consumed gfx payloads match exactly in all regions. Unused suffix pointers are separate neutral scalar objects.",
-    "native_efb840_cluster": "gUnk_09EFB840 and gUnk_09EFB9CC form a contiguous 680-byte initialized-data run with matching source order in animation_resource_data.c, so ordinary .data replaces the two forced section attributes."
+    "native_efb840_cluster": "gUnk_09EFB840 and gUnk_09EFB9CC form a contiguous 680-byte initialized-data run with matching source order in animation_resource_data.c, so ordinary .data replaces the two forced section attributes.",
+    "native_animation_resource_c670": "The gUnk_09EEC670 animation-resource pointer cluster is a contiguous 4472-byte initialized-data run with matching source order; split into TU animation_resource_data_c670.c so ordinary .data can own it without colliding with other native .data already in animation_resource_data.c."
   },
   "regions": {
     "us": {
@@ -5350,8 +5351,8 @@
           "sha256": "556a9cf7c4df344de2ed2be98601888ee717f2d651f5693f33205eff50b18ef8"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEC670",
+          "unit": "animation_resource_data_c670.c",
+          "section": ".data",
           "address": "0x9eec670",
           "size": 4472,
           "objects": [
@@ -18437,8 +18438,8 @@
           "sha256": "b3b264a9b7424af932ee8eb3074edcb60a0b163a6d28f5fa97808a3d4d044c73"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEC670",
+          "unit": "animation_resource_data_c670.c",
+          "section": ".data",
           "address": "0x9ec3a5c",
           "size": 4472,
           "objects": [
@@ -31524,8 +31525,8 @@
           "sha256": "6f2335b13e1ffcf7f98d4865e738c009c2709d9d53fe1e73602f0a39c659f437"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEC670",
+          "unit": "animation_resource_data_c670.c",
+          "section": ".data",
           "address": "0x9f77854",
           "size": 4472,
           "objects": [
