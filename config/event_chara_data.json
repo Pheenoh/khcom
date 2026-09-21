@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_event_chara_08FA165C_rodata": "gUnk_08FA165C EventCharaTrack[12] formerly .data_event_chara_tracks_08FA165C is const in existing event_chara_data.c; ordinary .rodata replaces the forced section (TU had no native .data/.rodata).",
     "character_tracks": "EventSequenceDef.unk_00 is the exact character-track count: event_seq_1 loops j from 0 while j < count and passes track[j].unk_04 plus j into event_chara_0; event_chara_0 reads track[j].unk_00 as EventCharaKeyframe*. The two camera helpers likewise use this count. Each 8-byte track has a canonical keyframe pointer, character selector byte and three zero padding bytes. All scalar bytes and native counts match in every present region; EU omits the two independently established dummy events. No keyframe extent is inferred from these track bounds."
   },
   "regions": {
@@ -764,7 +765,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08FA165C",
+          "section": ".rodata",
           "address": "0x8fa165c",
           "size": 96,
           "sha256": "8ad8c538ad6ec258bd1a8c86eec0bc31ba3e5cc6c47858487774810ce3358ba7",
@@ -4905,7 +4906,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08FA165C",
+          "section": ".rodata",
           "address": "0x8f8f784",
           "size": 96,
           "sha256": "bda94dd952c14060bd20bd1e59a62b707a4ea95e348044d4bbee2df880ca1780",
@@ -9046,7 +9047,7 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_08FA165C",
+          "section": ".rodata",
           "address": "0x9070834",
           "size": 96,
           "sha256": "69e18047cb042db86e90f8dad22776430b6a7a8c4cd2e9fa2b2a26bb3d9dcc57",

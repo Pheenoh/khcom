@@ -305,7 +305,7 @@ EventCharaTrack gUnk_08FA007C[5] __attribute__((section(".data_event_chara_track
     { gUnk_08F9F7E8, 1, { 0, 0, 0 } },
 };
 
-EventCharaTrack gUnk_08FA165C[12] __attribute__((section(".data_event_chara_tracks_08FA165C"))) = {
+const EventCharaTrack gUnk_08FA165C[12] = {
     { gUnk_08FA0654, 0, { 0, 0, 0 } },
     { gUnk_08FA0894, 1, { 0, 0, 0 } },
     { gUnk_08FA0A44, 2, { 0, 0, 0 } },
