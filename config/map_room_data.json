@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_map_room_09855FA8_data": "gUnk_09855FA8 formerly .data_map_room_09855FA8 stays mutable in existing map_room_data.c; ordinary .data replaces the forced section (TU already has .rodata from 56678).",
     "native_map_room_09856678_rodata": "gUnk_09856678 formerly .data_map_room_09856678 is const UnkStruct_09EF70D0 in existing map_room_data.c; ordinary .rodata replaces the forced section (first native slot for this TU).",
     "map_room_data": "Map room index is selected by the world/room theme index in map.c. Thirteen distinct canonical 60-byte room definitions plus repeated initial entry have corresponding regional pointer roles and equal complete scalar bytes. The three former byte-padding words at offsets24/28/32 are nonzero ROM resource pointers in every region and are typed explicitly."
   },
@@ -163,7 +164,7 @@
         },
         {
           "unit": "map_room_data.c",
-          "section": ".data_map_room_09855FA8",
+          "section": ".data",
           "address": "0x9855fa8",
           "size": 60,
           "sha256": "08809b8235ff47ba59db857524c38feb3090b72648aaf4008f2633e80b11149e",
@@ -363,7 +364,7 @@
         },
         {
           "unit": "map_room_data.c",
-          "section": ".data_map_room_09855FA8",
+          "section": ".data",
           "address": "0x980aabc",
           "size": 60,
           "sha256": "89100ede7b96bc62801ebf22a814e160d8fe84f7211b677f44a09b7c5a760ea7",
@@ -563,7 +564,7 @@
         },
         {
           "unit": "map_room_data.c",
-          "section": ".data_map_room_09855FA8",
+          "section": ".data",
           "address": "0x983297c",
           "size": 60,
           "sha256": "8f3daf50f20461e114dca26066e1bdc7ca3c17fdd772f5d0f6c9be75f1b4af5e",
