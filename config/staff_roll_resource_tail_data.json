@@ -4,7 +4,8 @@
     "pc": "The96 owned PcSpriteCmd streams contain4284 nonterminal records in each region. func_0810A018 branches on flagbit0: set selects every value0..18 from gUnk_09EFAB18; clear selects every value0..39 from gUnk_09EFBB18. Each latter target is a complete single-OAM Sprite of8 bytes and retains the existing canonical PcSpriteDef type. Each index is followed by a distinct AnimHeader pointer, not an extra gfx element.",
     "timer": "task_sroll_tmr_2 directly selects decimal digits0..9 and separator10 from gUnk_09EFBAE8[11]. The next word is a separate complete AnimHeader target.",
     "dormant": "Remaining native resource pairs have complete Sprite and AnimHeader formats. Graphics array bounds follow maximum actual frame indices. Twenty-three unused graphics suffix words remain separate scalar pointers; no extra runtime-reachable elements are claimed.",
-    "assets": "Native binary Sprite/AnimHeader bindings retain exact format extents and ROM hashes. The PcSpriteDef view is canonical for the40 single-OAM records used directly by bos6; this is not metadata reclassification. No cross-region inferred asset correspondence is introduced."
+    "assets": "Native binary Sprite/AnimHeader bindings retain exact format extents and ROM hashes. The PcSpriteDef view is canonical for the40 single-OAM records used directly by bos6; this is not metadata reclassification. No cross-region inferred asset correspondence is introduced.",
+    "native_staff_roll_tail_bc40": "The gUnk_*09EFBC40 staff-roll pointer/AnimHeader cluster is a contiguous 644-byte initialized-data run with matching source order under each VERSION_* block in staff_roll_resource_tail_data.c; ordinary .data replaces its forced section attributes. Earlier smaller staff-roll tail clusters stay sectioned."
   },
   "regions": {
     "us": {
@@ -93,7 +94,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBC40",
+          "section": ".data",
           "address": "0x9efbc40",
           "size": 644,
           "sha256": "9f5ce28833a92dc8b60141e1165dc1ad104b3418d841d2d1791a71218af09ac6",
@@ -2263,7 +2264,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBC40",
+          "section": ".data",
           "address": "0x9ed31b8",
           "size": 644,
           "sha256": "2e65783a8b984a5ee8c1eb31318a1aec5c4ffd3aa7e292fc172d854f7e068955",
@@ -4433,7 +4434,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBC40",
+          "section": ".data",
           "address": "0x9f88454",
           "size": 644,
           "sha256": "de42a52976e6719c137234a23e73b6a8105db84545b6dfbae20b45d85727be75",
