@@ -1035,27 +1035,27 @@ AnimHeader* gUnk_09EF8C98 = &gUnk_098A3CC6;
 
 AnimHeader* gUnk_09EF8C9C = &gUnk_098A3CE0;
 
-void* gUnk_09EF8CD8 __attribute__((section(".data_map_resources_09EF8CD8"))) = gUnk_098A5C90;
+void* const gUnk_09EF8CD8 = gUnk_098A5C90;
 
-void* gUnk_09EF8CDC __attribute__((section(".data_map_resources_09EF8CD8"))) = gUnk_098A5C9A;
+void* const gUnk_09EF8CDC = gUnk_098A5C9A;
 
-void* gUnk_09EF8CE0 __attribute__((section(".data_map_resources_09EF8CD8"))) = gUnk_098A5CA4;
+void* const gUnk_09EF8CE0 = gUnk_098A5CA4;
 
-void* gUnk_09EF8CE4 __attribute__((section(".data_map_resources_09EF8CD8"))) = gUnk_098A5CAE;
+void* const gUnk_09EF8CE4 = gUnk_098A5CAE;
 
-void* gUnk_09EF8CE8 __attribute__((section(".data_map_resources_09EF8CD8"))) = gUnk_098A5CB8;
+void* const gUnk_09EF8CE8 = gUnk_098A5CB8;
 
-AnimHeader* gUnk_09EF8CEC __attribute__((section(".data_map_resources_09EF8CD8"))) = &gUnk_098A5CC2;
+AnimHeader* const gUnk_09EF8CEC = &gUnk_098A5CC2;
 
-AnimHeader* gUnk_09EF8CF0 __attribute__((section(".data_map_resources_09EF8CD8"))) = &gUnk_098A5CCC;
+AnimHeader* const gUnk_09EF8CF0 = &gUnk_098A5CCC;
 
-AnimHeader* gUnk_09EF8CF4 __attribute__((section(".data_map_resources_09EF8CD8"))) = &gUnk_098A5CD6;
+AnimHeader* const gUnk_09EF8CF4 = &gUnk_098A5CD6;
 
-AnimHeader* gUnk_09EF8CF8 __attribute__((section(".data_map_resources_09EF8CD8"))) = &gUnk_098A5CE0;
+AnimHeader* const gUnk_09EF8CF8 = &gUnk_098A5CE0;
 
-AnimHeader* gUnk_09EF8CFC __attribute__((section(".data_map_resources_09EF8CD8"))) = &gUnk_098A5CEA;
+AnimHeader* const gUnk_09EF8CFC = &gUnk_098A5CEA;
 
-void* gUnk_09EF8D00[6] __attribute__((section(".data_map_resources_09EF8CD8"))) = {
+void* const gUnk_09EF8D00[6] = {
     gUnk_098A5E54,
     gUnk_098A5E70,
     gUnk_098A5E8C,
@@ -1064,13 +1064,13 @@ void* gUnk_09EF8D00[6] __attribute__((section(".data_map_resources_09EF8CD8"))) 
     gUnk_098A5ED4,
 };
 
-AnimHeader* gUnk_09EF8D18[3] __attribute__((section(".data_map_resources_09EF8CD8"))) = {
+AnimHeader* const gUnk_09EF8D18[3] = {
     &gUnk_098A5EE4,
     &gUnk_098A5F06,
     &gUnk_098A5F14,
 };
 
-void* gUnk_09EF8D24[8] __attribute__((section(".data_map_resources_09EF8CD8"))) = {
+void* const gUnk_09EF8D24[8] = {
     gUnk_098A6524,
     gUnk_098A652E,
     gUnk_098A6538,
@@ -1081,7 +1081,7 @@ void* gUnk_09EF8D24[8] __attribute__((section(".data_map_resources_09EF8CD8"))) 
     gUnk_098A656A,
 };
 
-AnimHeader* gUnk_09EF8D44[1] __attribute__((section(".data_map_resources_09EF8CD8"))) = {
+AnimHeader* const gUnk_09EF8D44[1] = {
     &gUnk_098A6574,
 };
 

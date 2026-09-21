@@ -518,20 +518,20 @@ extern void* gUnk_09EF8C90;
 extern AnimHeader* gUnk_09EF8C94;
 extern AnimHeader* gUnk_09EF8C98;
 extern AnimHeader* gUnk_09EF8C9C;
-extern void* gUnk_09EF8CD8;
-extern void* gUnk_09EF8CDC;
-extern void* gUnk_09EF8CE0;
-extern void* gUnk_09EF8CE4;
-extern void* gUnk_09EF8CE8;
-extern AnimHeader* gUnk_09EF8CEC;
-extern AnimHeader* gUnk_09EF8CF0;
-extern AnimHeader* gUnk_09EF8CF4;
-extern AnimHeader* gUnk_09EF8CF8;
-extern AnimHeader* gUnk_09EF8CFC;
-extern void* gUnk_09EF8D00[6];
-extern AnimHeader* gUnk_09EF8D18[3];
-extern void* gUnk_09EF8D24[8];
-extern AnimHeader* gUnk_09EF8D44[1];
+extern void* const gUnk_09EF8CD8;
+extern void* const gUnk_09EF8CDC;
+extern void* const gUnk_09EF8CE0;
+extern void* const gUnk_09EF8CE4;
+extern void* const gUnk_09EF8CE8;
+extern AnimHeader* const gUnk_09EF8CEC;
+extern AnimHeader* const gUnk_09EF8CF0;
+extern AnimHeader* const gUnk_09EF8CF4;
+extern AnimHeader* const gUnk_09EF8CF8;
+extern AnimHeader* const gUnk_09EF8CFC;
+extern void* const gUnk_09EF8D00[6];
+extern AnimHeader* const gUnk_09EF8D18[3];
+extern void* const gUnk_09EF8D24[8];
+extern AnimHeader* const gUnk_09EF8D44[1];
 #ifdef VERSION_EU
 #endif
 

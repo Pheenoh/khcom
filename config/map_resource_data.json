@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_map_resource_8cd8_rodata": "Forced .data_map_resources_09EF8CD8 is const pointer tables in existing map_resource_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "map_resources": "Neighboring independently owned map resources establish exact regional bounds. Every pointer targets a completely decoded, byte-identical Sprite/OAM or AnimHeader/frame resource in all three ROMs. EvtAnimDef directly selects8C70/8C74; directional map-enemy AnimDef records explicitly select8D18 indices0..2 and8D44 index0, whose complete animation frame graphs bound their gfx arrays. Map UI draw calls explicitly consume8D68[0..2]. All remaining unconsumed pointer words are individually typed scalar objects; no historical aggregate extent is invented.",
     "native_map_resources_8494": "The gUnk_09EF8494 map-resource pointer/AnimHeader cluster is a contiguous 2060-byte initialized-data run with matching source order in map_resource_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. The later 09EF8CD8 cluster stays sectioned where animation_resource_data interrupts the link order."
   },
@@ -2593,7 +2594,7 @@
         },
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8CD8",
+          "section": ".rodata",
           "address": "0x09EF8CD8",
           "size": 112,
           "sha256": "eded5f8dbcf1f1c5e8fcabc0141bb27bf9303cef3f3f154bd8232e9523cec607",
@@ -5260,7 +5261,7 @@
         },
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8CD8",
+          "section": ".rodata",
           "address": "0x09ED00C4",
           "size": 112,
           "sha256": "4b87433da58489361cbdc1222eb916ad5b3aa5cd6577febd4020378301918d9f",
@@ -7927,7 +7928,7 @@
         },
         {
           "unit": "map_resource_data.c",
-          "section": ".data_map_resources_09EF8CD8",
+          "section": ".rodata",
           "address": "0x09F84348",
           "size": 112,
           "sha256": "b0a06f93ed0353c51d92ca7e424ed439d2a1fd13fe1353cff441293046c369f7",
