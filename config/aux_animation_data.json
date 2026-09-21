@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_aux_animation_f764_rodata": "Cluster formerly .data_09EDF764 is const pointer tables in existing aux_animation_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     ".data_09EDE594": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EDE7B4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EDE848": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
@@ -254,7 +255,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EDF764",
+          "section": ".rodata",
           "address": "0x09EDF764",
           "size": 208,
           "sha256": "bd5909d8c7e7e82c5262faa876b7dd41ceffa38210b962f8c5e58e1185c92c40",
@@ -1330,7 +1331,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EDF764",
+          "section": ".rodata",
           "address": "0x09EB71E0",
           "size": 208,
           "sha256": "acb89011dfbdbeb351e73ce6cd7a687334cefc0014e38f8fdea757e2b01313db",
@@ -2406,7 +2407,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EDF764",
+          "section": ".rodata",
           "address": "0x09F5A3BC",
           "size": 208,
           "sha256": "ccffbc381aff0332deb3568a7a7a3814fd9eb4fdf77108900a6ec9894c547308",
