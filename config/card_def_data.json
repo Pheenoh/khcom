@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_card_defs_rodata": "gCardDefs formerly .data_card_defs is const CardDef[950] in existing card_def_data.c; ordinary .rodata replaces the forced section (TU already has .data for CardBack tables).",
     "cards": "The collection initializer scans exactly950 CardDef records at52-byte stride. Independent next SpriteFrameResourceDef metadata begins immediately after those records in every region. All24 non-pointer bytes per card agree across US/JP/EU. Seven actual pointer fields retain each native regional value; localized name records and text literals reuse their existing canonical owners. Native resource targets are exact pointer-field bindings, not interpolation or cross-language glyph guesses.",
     "backs": "Two physically distinct groups each contain five complete24-byte CardBack records before the four independent Shift-JIS marker strings. The first group is indexed by the actual CardDef category byte and explicit category4 calls. The second group contains five identical records; only runtime index0 is established from the current950 card identifiers. Its full native record run is preserved without claiming runtime reachability for the trailing four records. Previously opaque08/14 fields are actual ROM resource pointers in every record and region. The two CardBack groups form one contiguous 240-byte initialized-data run in every region; ordinary .data reproduces both groups without per-object section attributes. The independent 16-byte asset gap before gCardDefs still interrupts that catalog, so gCardDefs retains its existing named section."
   },
@@ -28,7 +29,7 @@
         },
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs",
+          "section": ".rodata",
           "address": "0x8f70ab0",
           "size": 49400,
           "sha256": "1133fa47b8853bece626f33e3434e259ef7b1331854c86f75187767063d50ca5",
@@ -65,7 +66,7 @@
         },
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs",
+          "section": ".rodata",
           "address": "0x8f63fb8",
           "size": 49400,
           "sha256": "af7679ddb3eb2bfd53e520f169060b90b339651616deeaa98b7737226ae6e509",
@@ -102,7 +103,7 @@
         },
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs",
+          "section": ".rodata",
           "address": "0x8f81a88",
           "size": 49400,
           "sha256": "5847c5d36d1b09c2bd1769855a4d895ddb8d950177be60f7793a7e8c70bf7d81",

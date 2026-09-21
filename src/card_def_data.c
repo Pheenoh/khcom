@@ -38,7 +38,7 @@ CardBack gUnk_08F70A28[5] = {
     },
 };
 
-CardDef gCardDefs[950] __attribute__((section(".data_card_defs"))) = {
+const CardDef gCardDefs[950] = {
     {
 #if defined(VERSION_US)
         gUnk_09051580, gUnk_09051594, gUnk_09611E58, gUnk_0815A66A, gUnk_0905F0BC, gUnk_0905F0D0, gUnk_09612C38,
