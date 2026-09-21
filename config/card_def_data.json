@@ -2,35 +2,26 @@
   "version": 1,
   "provenance": {
     "cards": "The collection initializer scans exactly950 CardDef records at52-byte stride. Independent next SpriteFrameResourceDef metadata begins immediately after those records in every region. All24 non-pointer bytes per card agree across US/JP/EU. Seven actual pointer fields retain each native regional value; localized name records and text literals reuse their existing canonical owners. Native resource targets are exact pointer-field bindings, not interpolation or cross-language glyph guesses.",
-    "backs": "Two physically distinct groups each contain five complete24-byte CardBack records before the four independent Shift-JIS marker strings. The first group is indexed by the actual CardDef category byte and explicit category4 calls. The second group contains five identical records; only runtime index0 is established from the current950 card identifiers. Its full native record run is preserved without claiming runtime reachability for the trailing four records. Previously opaque08/14 fields are actual ROM resource pointers in every record and region."
+    "backs": "Two physically distinct groups each contain five complete24-byte CardBack records before the four independent Shift-JIS marker strings. The first group is indexed by the actual CardDef category byte and explicit category4 calls. The second group contains five identical records; only runtime index0 is established from the current950 card identifiers. Its full native record run is preserved without claiming runtime reachability for the trailing four records. Previously opaque08/14 fields are actual ROM resource pointers in every record and region. The two CardBack groups form one contiguous 240-byte initialized-data run in every region; ordinary .data reproduces both groups without per-object section attributes. The independent 16-byte asset gap before gCardDefs still interrupts that catalog, so gCardDefs retains its existing named section."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F709B0",
+          "section": ".data",
           "address": "0x8f709b0",
-          "size": 120,
-          "sha256": "5359438395cebbcb501adb47ee0e8d94f7d0aa0b46645c2ca879e7e10c4b22f1",
+          "size": 240,
+          "sha256": "e4301829b763b139a9485f2efdfac6e494aaef1c7e882e3c5717ec867d82eb87",
           "objects": [
             {
               "name": "gUnk_08F709B0",
               "offset": 0,
               "size": 120
-            }
-          ]
-        },
-        {
-          "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F70A28",
-          "address": "0x8f70a28",
-          "size": 120,
-          "sha256": "d23917c47f9639ab892fc040557df8fdac1c78fb7eabb76a95c6645588c30414",
-          "objects": [
+            },
             {
               "name": "gUnk_08F70A28",
-              "offset": 0,
+              "offset": 120,
               "size": 120
             }
           ]
@@ -55,28 +46,19 @@
       "placements": [
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F709B0",
+          "section": ".data",
           "address": "0x8f63eb8",
-          "size": 120,
-          "sha256": "e8ba18cef5e9508d24f7656316b4c6b70514b1b6e8b51c8688840f50c3fb72f4",
+          "size": 240,
+          "sha256": "af58792601f1e65d2c9b44fb99b0a093e9bc5468344019541dd6a2c715ff6790",
           "objects": [
             {
               "name": "gUnk_08F709B0",
               "offset": 0,
               "size": 120
-            }
-          ]
-        },
-        {
-          "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F70A28",
-          "address": "0x8f63f30",
-          "size": 120,
-          "sha256": "9f1427b89495f823a615b25d9510614d194b57a408ede48971d79e6e0ae7a875",
-          "objects": [
+            },
             {
               "name": "gUnk_08F70A28",
-              "offset": 0,
+              "offset": 120,
               "size": 120
             }
           ]
@@ -101,28 +83,19 @@
       "placements": [
         {
           "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F709B0",
+          "section": ".data",
           "address": "0x8f81988",
-          "size": 120,
-          "sha256": "aab5afc0cf0adb8330d15790e200a6d2e9f5e18f4edec31afce7ab52e49c8db6",
+          "size": 240,
+          "sha256": "ce20f6f256cf729e5b7a3839d92218828f693d2606bce3918b7133c6496dd8b2",
           "objects": [
             {
               "name": "gUnk_08F709B0",
               "offset": 0,
               "size": 120
-            }
-          ]
-        },
-        {
-          "unit": "card_def_data.c",
-          "section": ".data_card_defs_gUnk_08F70A28",
-          "address": "0x8f81a00",
-          "size": 120,
-          "sha256": "4333fd4ec24ad3f8919cbd5f8ce9c547f510dd024f961e88a8aed012f6f11edf",
-          "objects": [
+            },
             {
               "name": "gUnk_08F70A28",
-              "offset": 0,
+              "offset": 120,
               "size": 120
             }
           ]

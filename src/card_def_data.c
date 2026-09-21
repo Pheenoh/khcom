@@ -2,7 +2,7 @@
 #include "card_def_data.h"
 #include "card_def_assets.h"
 
-CardBack gUnk_08F709B0[5] __attribute__((section(".data_card_defs_gUnk_08F709B0"))) = {
+CardBack gUnk_08F709B0[5] = {
     {
         gUnk_0905A668, gUnk_0905D564, gUnk_09047A10, gUnk_0905A682, gUnk_0905D64E, gUnk_09047A2A,
     },
@@ -20,7 +20,7 @@ CardBack gUnk_08F709B0[5] __attribute__((section(".data_card_defs_gUnk_08F709B0"
     },
 };
 
-CardBack gUnk_08F70A28[5] __attribute__((section(".data_card_defs_gUnk_08F70A28"))) = {
+CardBack gUnk_08F70A28[5] = {
     {
         gUnk_0905A130, gUnk_0905B98C, gUnk_0904A190, gUnk_0905A14A, gUnk_0905BA76, gUnk_0904A1AA,
     },
