@@ -1,7 +1,8 @@
 {
   "version": 1,
   "provenance": {
-    "card_animation": "Direct AnimInit tables and explicit animation/index bounds establish eleven common pairs. Full animation-frame and renderer sprite payloads agree in all regions. Pointer words outside proven consumer arrays are neutral scalar objects. EU selectors establish two additional localized pairs."
+    "card_animation": "Direct AnimInit tables and explicit animation/index bounds establish eleven common pairs. Full animation-frame and renderer sprite payloads agree in all regions. Pointer words outside proven consumer arrays are neutral scalar objects. EU selectors establish two additional localized pairs.",
+    "native_b008_cluster": "The three pointer/AnimHeader clusters at gUnk_09EEB008, gUnk_09EEB050 and gUnk_09EEB068 form one contiguous 120-byte initialized-data run in every region; ordinary definitions in card_animation_data.c reproduce that run as native .data. event_sprite_data still owns the following 09EEB080 interrupt before the later 09EEB08C cluster."
   },
   "regions": {
     "us": {
@@ -75,10 +76,10 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEB008",
-          "address": "0x09EEB008",
-          "size": 72,
-          "sha256": "7f61e73b8418530fb81af0ec0625997ac72cf83eeaa8d93726b528a1d3e26ec6",
+          "section": ".data",
+          "address": "0x9eeb008",
+          "size": 120,
+          "sha256": "8ae6d5b8af3a927952ca41b30ea1bf29bbb8064214c17206dc5d38376be70c57",
           "objects": [
             {
               "name": "gUnk_09EEB008",
@@ -124,43 +125,25 @@
               "name": "gUnk_09EEB04C",
               "offset": 68,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB050",
-          "address": "0x09EEB050",
-          "size": 24,
-          "sha256": "a9167f1cf8e2016b5231727d6a1c232f4c3afef4f14faed66a4ef15660f250aa",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB050",
-              "offset": 0,
+              "offset": 72,
               "size": 20
             },
             {
               "name": "gUnk_09EEB064",
-              "offset": 20,
+              "offset": 92,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB068",
-          "address": "0x09EEB068",
-          "size": 24,
-          "sha256": "e83ffb203019838331d5bcebcf41a7c9b90d124e32b2ea79928e9503e45b5d8f",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB068",
-              "offset": 0,
+              "offset": 96,
               "size": 20
             },
             {
               "name": "gUnk_09EEB07C",
-              "offset": 20,
+              "offset": 116,
               "size": 4
             }
           ]
@@ -403,10 +386,10 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEB008",
-          "address": "0x09EC23F4",
-          "size": 72,
-          "sha256": "8148ca30359795f4d881fb6990cfeb5b3e207441dc2b302f8436c65d939a31a1",
+          "section": ".data",
+          "address": "0x9ec23f4",
+          "size": 120,
+          "sha256": "a5c21ad825958e9285c332440704df70af130871c45ed5f83a3bad003176b719",
           "objects": [
             {
               "name": "gUnk_09EEB008",
@@ -452,43 +435,25 @@
               "name": "gUnk_09EEB04C",
               "offset": 68,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB050",
-          "address": "0x09EC243C",
-          "size": 24,
-          "sha256": "680ce9bbd160e4dfc6d33d02aecf7328245cd3ead24bddd2502a5a5880096957",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB050",
-              "offset": 0,
+              "offset": 72,
               "size": 20
             },
             {
               "name": "gUnk_09EEB064",
-              "offset": 20,
+              "offset": 92,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB068",
-          "address": "0x09EC2454",
-          "size": 24,
-          "sha256": "62a72d2929841ae6ffadd49561b790bcba2d57fd4caea56d72dd0916a6788edc",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB068",
-              "offset": 0,
+              "offset": 96,
               "size": 20
             },
             {
               "name": "gUnk_09EEB07C",
-              "offset": 20,
+              "offset": 116,
               "size": 4
             }
           ]
@@ -731,10 +696,10 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEB008",
-          "address": "0x09F77128",
-          "size": 72,
-          "sha256": "bbd6e1c3396025796df5a97583a15d825c3c7ca597deb2bf4da55794e42308d1",
+          "section": ".data",
+          "address": "0x9f77128",
+          "size": 120,
+          "sha256": "a1e7d063229e2518324f2f8b30dd3197eec3c21092527ab7b2235b92a56abd0c",
           "objects": [
             {
               "name": "gUnk_09EEB008",
@@ -780,43 +745,25 @@
               "name": "gUnk_09EEB04C",
               "offset": 68,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB050",
-          "address": "0x09F77170",
-          "size": 24,
-          "sha256": "ab64efd417cb6ec98b803d678458693b19a46db21eafee6fbcd553f3dc06038a",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB050",
-              "offset": 0,
+              "offset": 72,
               "size": 20
             },
             {
               "name": "gUnk_09EEB064",
-              "offset": 20,
+              "offset": 92,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB068",
-          "address": "0x09F77188",
-          "size": 24,
-          "sha256": "160640e1f2676092bc8ebba62066129b3b70e597a7a6df125b48f9086dca7f3a",
-          "objects": [
+            },
             {
               "name": "gUnk_09EEB068",
-              "offset": 0,
+              "offset": 96,
               "size": 20
             },
             {
               "name": "gUnk_09EEB07C",
-              "offset": 20,
+              "offset": 116,
               "size": 4
             }
           ]

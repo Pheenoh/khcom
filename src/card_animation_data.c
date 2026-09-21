@@ -75,7 +75,7 @@ AnimHeader* gUnk_09EEA4E0[19] __attribute__((section(".data_09EEA494"))) = {
     &gUnk_0909A4D6,
 };
 
-void* gUnk_09EEB008[8] __attribute__((section(".data_09EEB008"))) = {
+void* gUnk_09EEB008[8] = {
     gUnk_090A44E4,
     gUnk_090A44FA,
     gUnk_090A4510,
@@ -86,27 +86,27 @@ void* gUnk_09EEB008[8] __attribute__((section(".data_09EEB008"))) = {
     gUnk_090A457E,
 };
 
-void* gUnk_09EEB028 __attribute__((section(".data_09EEB008"))) = gUnk_090A4594;
+void* gUnk_09EEB028 = gUnk_090A4594;
 
-void* gUnk_09EEB02C __attribute__((section(".data_09EEB008"))) = gUnk_090A45AA;
+void* gUnk_09EEB02C = gUnk_090A45AA;
 
-void* gUnk_09EEB030 __attribute__((section(".data_09EEB008"))) = gUnk_090A45C0;
+void* gUnk_09EEB030 = gUnk_090A45C0;
 
-void* gUnk_09EEB034 __attribute__((section(".data_09EEB008"))) = gUnk_090A45D6;
+void* gUnk_09EEB034 = gUnk_090A45D6;
 
-void* gUnk_09EEB038 __attribute__((section(".data_09EEB008"))) = gUnk_090A45EC;
+void* gUnk_09EEB038 = gUnk_090A45EC;
 
-AnimHeader* gUnk_09EEB03C[3] __attribute__((section(".data_09EEB008"))) = {
+AnimHeader* gUnk_09EEB03C[3] = {
     &gUnk_090A45F6,
     &gUnk_090A4614,
     &gUnk_090A461E,
 };
 
-AnimHeader* gUnk_09EEB048 __attribute__((section(".data_09EEB008"))) = &gUnk_090A463C;
+AnimHeader* gUnk_09EEB048 = &gUnk_090A463C;
 
-AnimHeader* gUnk_09EEB04C __attribute__((section(".data_09EEB008"))) = &gUnk_090A4646;
+AnimHeader* gUnk_09EEB04C = &gUnk_090A4646;
 
-void* gUnk_09EEB050[5] __attribute__((section(".data_09EEB050"))) = {
+void* gUnk_09EEB050[5] = {
     gUnk_090A4984,
     gUnk_090A49A0,
     gUnk_090A49BC,
@@ -114,11 +114,11 @@ void* gUnk_09EEB050[5] __attribute__((section(".data_09EEB050"))) = {
     gUnk_090A49E2,
 };
 
-AnimHeader* gUnk_09EEB064[1] __attribute__((section(".data_09EEB050"))) = {
+AnimHeader* gUnk_09EEB064[1] = {
     &gUnk_090A49F2,
 };
 
-void* gUnk_09EEB068[5] __attribute__((section(".data_09EEB068"))) = {
+void* gUnk_09EEB068[5] = {
     gUnk_090A518C,
     gUnk_090A519C,
     gUnk_090A51AC,
@@ -126,7 +126,7 @@ void* gUnk_09EEB068[5] __attribute__((section(".data_09EEB068"))) = {
     gUnk_090A51CC,
 };
 
-AnimHeader* gUnk_09EEB07C[1] __attribute__((section(".data_09EEB068"))) = {
+AnimHeader* gUnk_09EEB07C[1] = {
     &gUnk_090A51DC,
 };
 
