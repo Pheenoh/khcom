@@ -185,7 +185,7 @@ void func_080C88C4(PooWork* w, PooNode* n) {
     }
 }
 
-void func_080C89B4(PooWork* w, PooSpot* b, u16 c) {
+void func_080C89B4(PooWork* w, const PooSpot* b, u16 c) {
     u16 f;
     s32 v;
     s32 i;

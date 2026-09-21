@@ -1,7 +1,7 @@
 #include "poo_data.h"
 #include "event_background_assets.h"
 
-PooSpot gUnk_096FC05C[55] __attribute__((section(".data_poo_motion"))) = {
+const PooSpot gUnk_096FC05C[55] = {
     { 0, 0, 0 },
     { 0, -512, 0 },
     { 0, -512, 0 },
@@ -59,7 +59,7 @@ PooSpot gUnk_096FC05C[55] __attribute__((section(".data_poo_motion"))) = {
     { 0, 0, 0 },
 };
 
-PooSpot gUnk_096FC2F0[80] __attribute__((section(".data_poo_motion"))) = {
+const PooSpot gUnk_096FC2F0[80] = {
     { 0, 0, 0 },
     { 0, 512, 0 },
     { 0, 256, 0 },
@@ -142,7 +142,7 @@ PooSpot gUnk_096FC2F0[80] __attribute__((section(".data_poo_motion"))) = {
     { 0, 0, 0 },
 };
 
-const PooPoint gUnk_096FC6B0[4] __attribute__((section(".rodata_poo_points"))) = {
+const PooPoint gUnk_096FC6B0[4] = {
     { 593408, 315648 },
     { 584192, 320256 },
     { 593408, 324864 },

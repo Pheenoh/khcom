@@ -28,8 +28,8 @@ typedef struct PooMapBgDesc {
     u8 mapHeight;
 } PooMapBgDesc;
 
-extern PooSpot gUnk_096FC05C[];
-extern PooSpot gUnk_096FC2F0[];
+extern const PooSpot gUnk_096FC05C[];
+extern const PooSpot gUnk_096FC2F0[];
 extern const PooPoint gUnk_096FC6B0[];
 extern PooMapBgDesc gUnk_096FC6E0;
 extern const PooSpot gUnk_096FD778[];

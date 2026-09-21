@@ -1437,7 +1437,7 @@ void task_poo_shadowscale_3(PooScaleWork* w);
 void func_080CC178(void* pool, void* a, s32 b);
 s32 func_080CD1DC(u32 a);
 s32 func_080CD1F8(u32 a);
-void func_080C89B4(PooWork* w, PooSpot* b, u16 c);
+void func_080C89B4(PooWork* w, const PooSpot* b, u16 c);
 u16 func_080CCB80(u16* p);
 void func_080CCB84(u16* p, u16 v);
 u16 func_080CCB88(u16* p);
