@@ -1,101 +1,101 @@
 #include "card_lookup_data.h"
 #include "card_lookup_assets.h"
 
-void* gUnk_09EEA344[1] __attribute__((section(".data_09EEA344"))) = {
+void* const gUnk_09EEA344[1] = {
     gUnk_09099368,
 };
 
-AnimHeader* gUnk_09EEA348 __attribute__((section(".data_09EEA344"))) = &gUnk_09099372;
+AnimHeader* const gUnk_09EEA348 = &gUnk_09099372;
 
-void* gUnk_09EEA34C __attribute__((section(".data_09EEA344"))) = gUnk_090993FC;
+void* const gUnk_09EEA34C = gUnk_090993FC;
 
-AnimHeader* gUnk_09EEA350 __attribute__((section(".data_09EEA344"))) = &gUnk_09099406;
+AnimHeader* const gUnk_09EEA350 = &gUnk_09099406;
 
-void* gUnk_09EEA354 __attribute__((section(".data_09EEA344"))) = gUnk_09099490;
+void* const gUnk_09EEA354 = gUnk_09099490;
 
-AnimHeader* gUnk_09EEA358 __attribute__((section(".data_09EEA344"))) = &gUnk_0909949A;
+AnimHeader* const gUnk_09EEA358 = &gUnk_0909949A;
 
-void* gUnk_09EEA35C __attribute__((section(".data_09EEA344"))) = gUnk_09099524;
+void* const gUnk_09EEA35C = gUnk_09099524;
 
-AnimHeader* gUnk_09EEA360 __attribute__((section(".data_09EEA344"))) = &gUnk_0909952E;
+AnimHeader* const gUnk_09EEA360 = &gUnk_0909952E;
 
-void* gUnk_09EEA364 __attribute__((section(".data_09EEA344"))) = gUnk_090995B8;
+void* const gUnk_09EEA364 = gUnk_090995B8;
 
-void* gUnk_09EEA368 __attribute__((section(".data_09EEA344"))) = gUnk_090995C2;
+void* const gUnk_09EEA368 = gUnk_090995C2;
 
-void* gUnk_09EEA36C __attribute__((section(".data_09EEA344"))) = gUnk_090995CC;
+void* const gUnk_09EEA36C = gUnk_090995CC;
 
-void* gUnk_09EEA370 __attribute__((section(".data_09EEA344"))) = gUnk_090995D6;
+void* const gUnk_09EEA370 = gUnk_090995D6;
 
-void* gUnk_09EEA374 __attribute__((section(".data_09EEA344"))) = gUnk_090995E0;
+void* const gUnk_09EEA374 = gUnk_090995E0;
 
-void* gUnk_09EEA378 __attribute__((section(".data_09EEA344"))) = gUnk_090995EA;
+void* const gUnk_09EEA378 = gUnk_090995EA;
 
-void* gUnk_09EEA37C __attribute__((section(".data_09EEA344"))) = gUnk_090995F4;
+void* const gUnk_09EEA37C = gUnk_090995F4;
 
-void* gUnk_09EEA380 __attribute__((section(".data_09EEA344"))) = gUnk_090995FE;
+void* const gUnk_09EEA380 = gUnk_090995FE;
 
-void* gUnk_09EEA384 __attribute__((section(".data_09EEA344"))) = gUnk_09099608;
+void* const gUnk_09EEA384 = gUnk_09099608;
 
-void* gUnk_09EEA388 __attribute__((section(".data_09EEA344"))) = gUnk_09099612;
+void* const gUnk_09EEA388 = gUnk_09099612;
 
-void* gUnk_09EEA38C __attribute__((section(".data_09EEA344"))) = gUnk_09099622;
+void* const gUnk_09EEA38C = gUnk_09099622;
 
-void* gUnk_09EEA390 __attribute__((section(".data_09EEA344"))) = gUnk_09099632;
+void* const gUnk_09EEA390 = gUnk_09099632;
 
-void* gUnk_09EEA394 __attribute__((section(".data_09EEA344"))) = gUnk_09099642;
+void* const gUnk_09EEA394 = gUnk_09099642;
 
-void* gUnk_09EEA398 __attribute__((section(".data_09EEA344"))) = gUnk_09099652;
+void* const gUnk_09EEA398 = gUnk_09099652;
 
-void* gUnk_09EEA39C __attribute__((section(".data_09EEA344"))) = gUnk_09099662;
+void* const gUnk_09EEA39C = gUnk_09099662;
 
-void* gUnk_09EEA3A0 __attribute__((section(".data_09EEA344"))) = gUnk_09099672;
+void* const gUnk_09EEA3A0 = gUnk_09099672;
 
-void* gUnk_09EEA3A4 __attribute__((section(".data_09EEA344"))) = gUnk_09099682;
+void* const gUnk_09EEA3A4 = gUnk_09099682;
 
-void* gUnk_09EEA3A8 __attribute__((section(".data_09EEA344"))) = gUnk_09099692;
+void* const gUnk_09EEA3A8 = gUnk_09099692;
 
-void* gUnk_09EEA3AC __attribute__((section(".data_09EEA344"))) = gUnk_090996A2;
+void* const gUnk_09EEA3AC = gUnk_090996A2;
 
-AnimHeader* gUnk_09EEA3B0 __attribute__((section(".data_09EEA344"))) = &gUnk_090996B2;
+AnimHeader* const gUnk_09EEA3B0 = &gUnk_090996B2;
 
-AnimHeader* gUnk_09EEA3B4 __attribute__((section(".data_09EEA344"))) = &gUnk_090996BC;
+AnimHeader* const gUnk_09EEA3B4 = &gUnk_090996BC;
 
-AnimHeader* gUnk_09EEA3B8 __attribute__((section(".data_09EEA344"))) = &gUnk_090996C6;
+AnimHeader* const gUnk_09EEA3B8 = &gUnk_090996C6;
 
-AnimHeader* gUnk_09EEA3BC __attribute__((section(".data_09EEA344"))) = &gUnk_090996D0;
+AnimHeader* const gUnk_09EEA3BC = &gUnk_090996D0;
 
-AnimHeader* gUnk_09EEA3C0 __attribute__((section(".data_09EEA344"))) = &gUnk_090996DA;
+AnimHeader* const gUnk_09EEA3C0 = &gUnk_090996DA;
 
-AnimHeader* gUnk_09EEA3C4 __attribute__((section(".data_09EEA344"))) = &gUnk_090996E4;
+AnimHeader* const gUnk_09EEA3C4 = &gUnk_090996E4;
 
-AnimHeader* gUnk_09EEA3C8 __attribute__((section(".data_09EEA344"))) = &gUnk_090996EE;
+AnimHeader* const gUnk_09EEA3C8 = &gUnk_090996EE;
 
-AnimHeader* gUnk_09EEA3CC __attribute__((section(".data_09EEA344"))) = &gUnk_090996F8;
+AnimHeader* const gUnk_09EEA3CC = &gUnk_090996F8;
 
-AnimHeader* gUnk_09EEA3D0 __attribute__((section(".data_09EEA344"))) = &gUnk_09099702;
+AnimHeader* const gUnk_09EEA3D0 = &gUnk_09099702;
 
-AnimHeader* gUnk_09EEA3D4 __attribute__((section(".data_09EEA344"))) = &gUnk_0909970C;
+AnimHeader* const gUnk_09EEA3D4 = &gUnk_0909970C;
 
-AnimHeader* gUnk_09EEA3D8 __attribute__((section(".data_09EEA344"))) = &gUnk_09099716;
+AnimHeader* const gUnk_09EEA3D8 = &gUnk_09099716;
 
-AnimHeader* gUnk_09EEA3DC __attribute__((section(".data_09EEA344"))) = &gUnk_09099720;
+AnimHeader* const gUnk_09EEA3DC = &gUnk_09099720;
 
-AnimHeader* gUnk_09EEA3E0 __attribute__((section(".data_09EEA344"))) = &gUnk_0909972A;
+AnimHeader* const gUnk_09EEA3E0 = &gUnk_0909972A;
 
-AnimHeader* gUnk_09EEA3E4 __attribute__((section(".data_09EEA344"))) = &gUnk_09099734;
+AnimHeader* const gUnk_09EEA3E4 = &gUnk_09099734;
 
-AnimHeader* gUnk_09EEA3E8 __attribute__((section(".data_09EEA344"))) = &gUnk_0909973E;
+AnimHeader* const gUnk_09EEA3E8 = &gUnk_0909973E;
 
-AnimHeader* gUnk_09EEA3EC __attribute__((section(".data_09EEA344"))) = &gUnk_09099748;
+AnimHeader* const gUnk_09EEA3EC = &gUnk_09099748;
 
-AnimHeader* gUnk_09EEA3F0 __attribute__((section(".data_09EEA344"))) = &gUnk_09099752;
+AnimHeader* const gUnk_09EEA3F0 = &gUnk_09099752;
 
-AnimHeader* gUnk_09EEA3F4 __attribute__((section(".data_09EEA344"))) = &gUnk_0909975C;
+AnimHeader* const gUnk_09EEA3F4 = &gUnk_0909975C;
 
-AnimHeader* gUnk_09EEA3F8 __attribute__((section(".data_09EEA344"))) = &gUnk_09099766;
+AnimHeader* const gUnk_09EEA3F8 = &gUnk_09099766;
 
-void* gUnk_09EEA3FC[19] __attribute__((section(".data_09EEA344"))) = {
+void* const gUnk_09EEA3FC[19] = {
     gUnk_09099C70,
     gUnk_09099C7A,
     gUnk_09099C84,
@@ -117,7 +117,7 @@ void* gUnk_09EEA3FC[19] __attribute__((section(".data_09EEA344"))) = {
     gUnk_09099D5A,
 };
 
-AnimHeader* gUnk_09EEA448[19] __attribute__((section(".data_09EEA344"))) = {
+AnimHeader* const gUnk_09EEA448[19] = {
     &gUnk_09099D6A,
     &gUnk_09099D74,
     &gUnk_09099D7E,

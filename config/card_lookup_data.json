@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_card_lookup_a344_rodata": "Pointer cluster formerly .data_09EEA344 is const tables in existing card_lookup_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     ".data_09EEA344": "RELOAD_CHILDREN drawing explicitly usesA344[0]. Independent selector arrays7588/7598 point toA448/A3FC; func_08095AD8 guards animation<=18, and all19 one-frame headers reference corresponding gfx0..18. Other words are neutral typed scalars.",
     ".data_09EEA52C": "7588/7598 independently selectA578/A52C with animation<=18. REV_COUNT_0 independently selectsA5C4 and explicitly reads gfx98, proving99 entries. 75B8/75C8 select three13-gfx/5-animation pairs; func_08095C00 reaches animation4 and their complete frame graph coversgfx0..12. All unconsumed adjacent sprite/animation words are neutral typed scalars, including four40-header groups; no fabricated99-element use is inferred from those40 headers.",
     ".data_09EEB604": "The independent256-glyph shared font ends exactly atB604 and the corresponding regions contain one complete AnimHeader pointer there; the pointer is a separate neutral scalar, not an extra glyph.",
@@ -1773,7 +1774,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA344",
+          "section": ".rodata",
           "address": "0x09EEA344",
           "size": 336,
           "sha256": "2432d478bb522dc493bfe8c48a83c12d5af834983886b816432037f6c58eb1b1",
@@ -6228,7 +6229,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA344",
+          "section": ".rodata",
           "address": "0x09EC1738",
           "size": 336,
           "sha256": "9087cd5f7aa37349afddbdbbca82d9f3dfa7ec791ecc5df4cc1f71646b8d5fde",
@@ -10683,7 +10684,7 @@
         },
         {
           "unit": "card_lookup_data.c",
-          "section": ".data_09EEA344",
+          "section": ".rodata",
           "address": "0x09F763B4",
           "size": 336,
           "sha256": "45e5d2f59e3bbc8c1c3b828ef517eb013fa8fec97295a83de5134daa0c67cb59",
