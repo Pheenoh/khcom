@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_sroll_c_char_name_rodata": "gTaskNameSrollCChar formerly forced registration-name section; stays const char[] in existing sroll.c; ordinary .rodata replaces it (first native slot).",
     "native_poo_cabbage_after_event_name_rodata": "gTaskNamePooCabbageAfterEvent formerly forced registration-name section; stays const char[] in existing poo.c; ordinary .rodata replaces it (first native slot).",
     "native_bos4_ursula_bubble_single_name_rodata": "gTaskNameBosUrsulaBubbleSingle formerly .rodata_registration_name_gTaskDescBosUrsulaBubbleSingle stays const char[] in existing bos4.c; ordinary .rodata replaces the forced section (first native slot).",
     "registrations": "TaskCreate consumes canonical 24-byte TaskDesc records; ModeRequest consumes canonical 16-byte Mode records. Callback tuples and ASCII names identify regional registrations. EU Monsgage callbacks are explicitly exposed within existing opaque native code. Message face/wait tasks form a real three-record array. Only absent EU link-exchange tasks omit records; work-size and callback differences use field-level guards.",
@@ -5884,7 +5885,7 @@
         },
         {
           "unit": "sroll.c",
-          "section": ".rodata_registration_name_gTaskDescSrollCChar",
+          "section": ".rodata",
           "address": "0x09A544DC",
           "size": 18,
           "sha256": "a487a7406600c78f019d48436a484f0f466de2333707c0bf91f9c9c93e587a47",
@@ -12454,7 +12455,7 @@
         },
         {
           "unit": "sroll.c",
-          "section": ".rodata_registration_name_gTaskDescSrollCChar",
+          "section": ".rodata",
           "address": "0x09A093AC",
           "size": 18,
           "sha256": "a487a7406600c78f019d48436a484f0f466de2333707c0bf91f9c9c93e587a47",
@@ -19078,7 +19079,7 @@
         },
         {
           "unit": "sroll.c",
-          "section": ".rodata_registration_name_gTaskDescSrollCChar",
+          "section": ".rodata",
           "address": "0x09AB2224",
           "size": 18,
           "sha256": "a487a7406600c78f019d48436a484f0f466de2333707c0bf91f9c9c93e587a47",

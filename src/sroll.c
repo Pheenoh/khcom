@@ -1985,7 +1985,7 @@ TaskDesc gTaskDescSrollBCrtn = {
     0x30,
 };
 
-const char gTaskNameSrollCChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollCChar"), aligned(1))) = "task_sroll_c_char";
+const char gTaskNameSrollCChar[] __attribute__((aligned(1))) = "task_sroll_c_char";
 
 TaskDesc gTaskDescSrollCChar = {
     gTaskNameSrollCChar,
