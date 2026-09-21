@@ -1,14 +1,14 @@
 {
   "version": 1,
   "provenance": {
-    "native_labels": "55 CBA8 records index battle labels, while106 canonical SpriteFrameResourceDef records end at Mode_Deck and match consuming recipe/status IDs through105. Native table bounds use their actual regional indices. Level-up/reload indices are direct consumer constants and typed animation-frame indices. Unconsumed adjacent pointers remain individual typed scalar objects. The five trailing font headers exist only in US/JP. No regional payload correspondence is inferred."
+    "native_labels": "The regional card-label pointer clusters (.data_labels) are contiguous initialized-data runs with matching source order under VERSION_US/JP/EU in card_localized_data.c; ordinary .data replaces forced section attributes. level_up, deck_labels, and EU-only earlier clusters stay sectioned."
   },
   "regions": {
     "us": {
       "placements": [
         {
           "unit": "card_localized_data.c",
-          "section": ".data_labels",
+          "section": ".data",
           "address": "0x9ee9c90",
           "size": 1208,
           "sha256": "626409805c0765977fad7fab4a9cfea213cfed5426f62673431989e228537a48",
@@ -4108,7 +4108,7 @@
       "placements": [
         {
           "unit": "card_localized_data.c",
-          "section": ".data_labels",
+          "section": ".data",
           "address": "0x9ec12d4",
           "size": 616,
           "sha256": "7c66e4ec3d0c7dbaf0b8639112d7574768a26b4fa11bb277b97b825b47ed0df4",
@@ -6383,7 +6383,7 @@
       "placements": [
         {
           "unit": "card_localized_data.c",
-          "section": ".data_labels",
+          "section": ".data",
           "address": "0x9f75110",
           "size": 3664,
           "sha256": "23451a9ef2d41e8645a87478fc6bd3f1b803ff075e588dafac9fe33449c9824e",
