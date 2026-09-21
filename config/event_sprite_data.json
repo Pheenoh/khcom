@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_event_sprite_fda4_rodata": "Cluster formerly .data_09EEFDA4 is const pointer tables in existing event_sprite_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     ".data_09EE91A8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EE91E8": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EE9240": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
@@ -810,7 +811,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EEFDA4",
+          "section": ".rodata",
           "address": "0x09EEFDA4",
           "size": 204,
           "sha256": "7b798d28d60d77ff76e4e8765d246ea1140214e4c7d7bf8dd58ae2acbd6321e0",
@@ -2095,7 +2096,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EEFDA4",
+          "section": ".rodata",
           "address": "0x09EC7190",
           "size": 204,
           "sha256": "c55c183ba811e4c651e0568a9f6a551a4df627288da03cc9a1a08a6a829c9754",
@@ -3380,7 +3381,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EEFDA4",
+          "section": ".rodata",
           "address": "0x09F7AF88",
           "size": 204,
           "sha256": "7c09ebf4e58eb154fc2863febdd5170db4a995482ed091162da474cb1492def7",

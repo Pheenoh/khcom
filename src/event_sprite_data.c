@@ -310,7 +310,7 @@ AnimHeader* gUnk_09EEF718[1] __attribute__((section(".data_09EEF6F0"))) = {
     &gUnk_092D69BC,
 };
 
-void* gUnk_09EEFDA4[32] __attribute__((section(".data_09EEFDA4"))) = {
+void* const gUnk_09EEFDA4[32] = {
     gUnk_09321C04,
     gUnk_09321C0E,
     gUnk_09321C18,
@@ -345,7 +345,7 @@ void* gUnk_09EEFDA4[32] __attribute__((section(".data_09EEFDA4"))) = {
     gUnk_09321D7C,
 };
 
-AnimHeader* gUnk_09EEFE24[19] __attribute__((section(".data_09EEFDA4"))) = {
+AnimHeader* const gUnk_09EEFE24[19] = {
     &gUnk_09321D86,
     &gUnk_09321D90,
     &gUnk_09321DB6,
