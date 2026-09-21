@@ -154,7 +154,7 @@ TaskDesc gTaskDescBosPcFld = {
     0x6C,
 };
 
-const char gTaskNameBosPcFlt[] __attribute__((section(".rodata_registration_name_gTaskDescBosPcFlt"), aligned(1))) = "task_bos_pc_flt";
+const char gTaskNameBosPcFlt[] __attribute__((aligned(1))) = "task_bos_pc_flt";
 
 TaskDesc gTaskDescBosPcFlt = {
     gTaskNameBosPcFlt,

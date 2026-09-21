@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_bos6_pc_flt_name_rodata": "gTaskNameBosPcFlt formerly forced registration-name section; stays const char[] in existing bos6.c; ordinary .rodata replaces it (first native slot).",
     "native_bos5_md_hahen_name_rodata": "gTaskNameBosMdHahen formerly forced registration-name section; stays const char[] in existing bos5.c; ordinary .rodata replaces it (first native slot).",
     "native_sroll_c_char_name_rodata": "gTaskNameSrollCChar formerly forced registration-name section; stays const char[] in existing sroll.c; ordinary .rodata replaces it (first native slot).",
     "native_poo_cabbage_after_event_name_rodata": "gTaskNamePooCabbageAfterEvent formerly forced registration-name section; stays const char[] in existing poo.c; ordinary .rodata replaces it (first native slot).",
@@ -5542,7 +5543,7 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFlt",
+          "section": ".rodata",
           "address": "0x09A4CF3C",
           "size": 16,
           "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
@@ -12112,7 +12113,7 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFlt",
+          "section": ".rodata",
           "address": "0x09A019C4",
           "size": 16,
           "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
@@ -18736,7 +18737,7 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFlt",
+          "section": ".rodata",
           "address": "0x09AAAA00",
           "size": 16,
           "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
