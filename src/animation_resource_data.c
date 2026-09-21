@@ -16432,7 +16432,7 @@ AnimHeader* gUnk_09EFAF50[4] __attribute__((section(".data_09EFAEF8"))) = {
     &gUnk_09C5C6D6,
 };
 
-void* gUnk_09EFB840[94] __attribute__((section(".data_09EFB840"))) = {
+void* gUnk_09EFB840[94] = {
     gUnk_09C8C5D0,
     gUnk_09C8C5F2,
     gUnk_09C8C614,
@@ -16529,7 +16529,7 @@ void* gUnk_09EFB840[94] __attribute__((section(".data_09EFB840"))) = {
     gUnk_09C8D2AE,
 };
 
-AnimHeader* gUnk_09EFB9B8[5] __attribute__((section(".data_09EFB840"))) = {
+AnimHeader* gUnk_09EFB9B8[5] = {
     &gUnk_09C8D2B0,
     &gUnk_09C8D31E,
     &gUnk_09C8D39C,
@@ -16633,9 +16633,9 @@ AnimHeader* gUnk_09EFBFC4[6] __attribute__((section(".data_09EFBF40"))) = {
     &gUnk_09C9173E,
 };
 #ifdef VERSION_JP
-void* gUnk_09EFB9CC[63] __attribute__((section(".data_09EFB9CC"))) = {
+void* gUnk_09EFB9CC[63] = {
 #else
-void* gUnk_09EFB9CC[66] __attribute__((section(".data_09EFB9CC"))) = {
+void* gUnk_09EFB9CC[66] = {
 #endif
 #ifdef VERSION_JP
     gUnkJp_09C68534,
@@ -16771,7 +16771,7 @@ void* gUnk_09EFB9CC[66] __attribute__((section(".data_09EFB9CC"))) = {
 #endif
 };
 
-AnimHeader* gUnk_09EFBAD4[5] __attribute__((section(".data_09EFB9CC"))) = {
+AnimHeader* gUnk_09EFBAD4[5] = {
     &gUnk_09C8F090,
     &gUnk_09C8F0FE,
     &gUnk_09C8F17C,
