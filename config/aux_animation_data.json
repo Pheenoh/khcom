@@ -18,7 +18,8 @@
     ".data_09EE12A4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EE17B4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EE1F90": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
-    ".data_09EE2098": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects."
+    ".data_09EE2098": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
+    "native_aux_anim_12A4": "The gUnk_09EE12A4 aux-animation pointer cluster is a contiguous 380-byte initialized-data run with matching source order in aux_animation_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Neighboring aux-animation clusters stay sectioned."
   },
   "regions": {
     "us": {
@@ -686,7 +687,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EE12A4",
+          "section": ".data",
           "address": "0x09EE12A4",
           "size": 380,
           "sha256": "de2937bd4b80f6cc9c6b85fc6e955941f3653944973e5ec6af58e2fc35b21341",
@@ -1762,7 +1763,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EE12A4",
+          "section": ".data",
           "address": "0x09EB8D20",
           "size": 380,
           "sha256": "fac5986444e534d4f27a28612aec2a599ad6473b3689cc4ed79bb065d8d90753",
@@ -2838,7 +2839,7 @@
         },
         {
           "unit": "aux_animation_data.c",
-          "section": ".data_09EE12A4",
+          "section": ".data",
           "address": "0x09F5BEBC",
           "size": 380,
           "sha256": "239e74866999ba2620ea57f5d90ad81b9cb8b8b1b4ed80e26c706c5d3e66f598",
