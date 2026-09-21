@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_remaining_68e0_rodata": "Cluster formerly .data_remaining_09EF68E0 is const pointer tables in existing remaining_resource_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "bounds": "Twelve physical gaps are bounded by already-proven neighboring C sections, independently for each region. The gap file named5C6C actually starts5CAC, after the already-owned64-byte pool. Native EU SIO/status expansions retain their actual extra resource arrays; inactive interpolated US aliases are not fabricated as objects.",
     "consumers": "All native complete AnimHeader frame indices prove gfx extents except explicit consumer bounds: SIO battle three graphics and Boolean two-player state; SIO options gfx0..2; Wlogo Won loop0..9; status scrollbar gfx4; status tab GetMaxSpriteTileBytes4; stock_mes_disp_0 selectors0/1. EU five-language status wrappers prove their actual gfx3/gfx4 target arrays. gUnk_09EF3884 dormant EU three-Sprite counterpart has exactly the same complete renderer payloads as the US/JP explicitly indexed array.",
     "unused": "Unselected native pairs retain decoded complete header/frame shape without claiming runtime reachability. Suffix words remain neutral scalar graphics pointers. One separate unused animation pointer follows an already-owned animation group. Zero-frame animation headers are preserved; they do not imply invented gfx array bounds.",
@@ -446,7 +447,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF68E0",
+          "section": ".rodata",
           "address": "0x9ef68e0",
           "size": 128,
           "sha256": "a7586963a46177c94174b9ee5c86128a319172076141ceee3869f7cf851f7e46",
@@ -2303,7 +2304,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF68E0",
+          "section": ".rodata",
           "address": "0x9ecdccc",
           "size": 128,
           "sha256": "07922b91f4028bc420212ccf29ac35c6640f3e05ff81d07779e9571860f306f1",
@@ -4350,7 +4351,7 @@
         },
         {
           "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF68E0",
+          "section": ".rodata",
           "address": "0x9f81ec8",
           "size": 264,
           "sha256": "8387873a82299580c988221c4812192bd7cf742fa279fade21ec447d1e6b3486",
