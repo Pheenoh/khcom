@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_animation_resource_data_f0054": "Split contiguous forced section .data_09EF0054 into TU animation_resource_data_f0054.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_data_edecfc": "Split contiguous forced section .data_09EDECFC into TU animation_resource_data_edecfc.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_data_20b4.c with ordinary .data ownership; source order matches ROM.",
     "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_data_f0930.c for ordinary .data ownership.",
@@ -9746,8 +9747,8 @@
           "sha256": "7e164672a95dcbf433ac2a18c0e2a0ff655e82debade6b4e90be102653d8443b"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0054",
+          "unit": "animation_resource_data_f0054.c",
+          "section": ".data",
           "address": "0x9ef0054",
           "size": 1192,
           "objects": [
@@ -22833,8 +22834,8 @@
           "sha256": "2dced06a271bef1e39894394af60fc18fde051586526211322df615c662e9310"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0054",
+          "unit": "animation_resource_data_f0054.c",
+          "section": ".data",
           "address": "0x9ec7440",
           "size": 1192,
           "objects": [
@@ -35920,8 +35921,8 @@
           "sha256": "eb8fd3011cbb5bbb60197f518dbe1a77edf464742f7af66c1b29902ef9587002"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0054",
+          "unit": "animation_resource_data_f0054.c",
+          "section": ".data",
           "address": "0x9f7b238",
           "size": 1192,
           "objects": [
