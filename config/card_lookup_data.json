@@ -1,19 +1,20 @@
 {
   "version": 1,
   "provenance": {
-    ".data_09EE96AC": "Existing ObjDef resource endpoint establishes96AC; MapCardBackDef pointers independently anchor96D4/9764/97AC/97F4 and consumers dereference sprite0. Card digit consumers select0..9, including modulo10 paths and all450 normal CardDef digit fields. Direct literal pools anchor981C/9894/98C0/98EC. Unused words remain neutral typed scalars; no historical aggregate boundary is asserted.",
     ".data_09EEA344": "RELOAD_CHILDREN drawing explicitly usesA344[0]. Independent selector arrays7588/7598 point toA448/A3FC; func_08095AD8 guards animation<=18, and all19 one-frame headers reference corresponding gfx0..18. Other words are neutral typed scalars.",
     ".data_09EEA52C": "7588/7598 independently selectA578/A52C with animation<=18. REV_COUNT_0 independently selectsA5C4 and explicitly reads gfx98, proving99 entries. 75B8/75C8 select three13-gfx/5-animation pairs; func_08095C00 reaches animation4 and their complete frame graph coversgfx0..12. All unconsumed adjacent sprite/animation words are neutral typed scalars, including four40-header groups; no fabricated99-element use is inferred from those40 headers.",
     ".data_09EEB604": "The independent256-glyph shared font ends exactly atB604 and the corresponding regions contain one complete AnimHeader pointer there; the pointer is a separate neutral scalar, not an extra glyph.",
     ".data_09EEC5EC": "The independent45-glyph font ends atC5EC. menu_0/menu_1/menu_2 initializes, bounds, and indexes menu glyphs0..9 atC600. Remaining sprite and animation words are separately typed neutral scalar objects. The subsequent independently linked lock-on pair startsC660.",
-    "native_a52c_cluster": "The gUnk_09EEA52C pointer/AnimHeader cluster is a contiguous 2592-byte initialized-data run with matching source order in card_lookup_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Other card_lookup_data clusters remain sectioned where they occupy separate link addresses."
+    "native_a52c_cluster": "The gUnk_09EEA52C pointer/AnimHeader cluster is a contiguous 2592-byte initialized-data run with matching source order in card_lookup_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Other card_lookup_data clusters remain sectioned where they occupy separate link addresses.",
+    "native_card_lookup_96ac": "The gUnk_09EE96AC card-lookup pointer/AnimHeader cluster is a contiguous 1508-byte initialized-data run with matching source order; it lives in its own TU card_lookup_data_96ac.c so ordinary .data can own it without colliding with the later native .data cluster at 09EEA52C in card_lookup_data.c.",
+    "native_card_lookup_96ac_prior": "Existing ObjDef resource endpoint establishes96AC; MapCardBackDef pointers independently anchor96D4/9764/97AC/97F4 and consumers dereference sprite0. Card digit consumers select0..9, including modulo10 paths and all450 normal CardDef digit fields. Direct literal pools anchor981C/9894/98C0/98EC. Unused words remain neutral typed scalars; no historical aggregate boundary is asserted."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EE96AC",
+          "unit": "card_lookup_data_96ac.c",
+          "section": ".data",
           "address": "0x09EE96AC",
           "size": 1508,
           "sha256": "05332fdc16654c5192c2d1280c396f3b2ca2fdceac7edb0bd087bddc820df014",
@@ -4467,8 +4468,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EE96AC",
+          "unit": "card_lookup_data_96ac.c",
+          "section": ".data",
           "address": "0x09EC0CF0",
           "size": 1508,
           "sha256": "44854e961a731d232f94984cd4029ceefd0ecd3f10d5ba92263a010b0111315c",
@@ -8922,8 +8923,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EE96AC",
+          "unit": "card_lookup_data_96ac.c",
+          "section": ".data",
           "address": "0x09F74B2C",
           "size": 1508,
           "sha256": "04e50476596d671c5a156c908a9dab1db54abaf01bc3c82f69d09f27cb9f072f",
