@@ -394,7 +394,7 @@ typedef struct WorldSelAnim {
     u8 unk_02[0x2];
 } WorldSelAnim;
 
-extern WorldSelAnim gUnk_09EE8E60[30];
+extern const WorldSelAnim gUnk_09EE8E60[30];
 extern u8 gUnk_093FB1AC[];
 extern u8 gUnk_09619378[];
 extern u8 gUnk_093FB0CC[];

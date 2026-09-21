@@ -1,6 +1,7 @@
 {
   "version": 1,
   "provenance": {
+    "native_card_ui_09EE8E60": "WorldSelAnim gUnk_09EE8E60 is a contiguous 120-byte const table; ordinary .rodata replaces its forced section in card.c (const added).",
     "registrations": "Each 24-byte TaskDesc is independently corroborated by a unique tuple of all four real linked callback symbols and its exact bounded ASCII name in every region. All 45 records exist in all three regions. Only three workSize fields differ.",
     "world": "WorldSel_Before_1 wraps 29 to 0, proving 30 four-byte WorldSelAnim records. Its end is the independently owned WorldSel Before TaskDesc.",
     "selection": "func_080792AC chooses GetRandom()%47; func_080792D0 wraps after 46. This proves 47 u16 entries.",
@@ -882,7 +883,7 @@
         },
         {
           "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE8E60",
+          "section": ".rodata",
           "address": "0x9ee8e60",
           "size": 120,
           "sha256": "c4b345a52a6d689502356d9c6ad2090e607b4e01b89b367f8ff9004c2e04bfbc",
@@ -1787,7 +1788,7 @@
         },
         {
           "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE8E60",
+          "section": ".rodata",
           "address": "0x9ec04a4",
           "size": 120,
           "sha256": "c4b345a52a6d689502356d9c6ad2090e607b4e01b89b367f8ff9004c2e04bfbc",
@@ -2702,7 +2703,7 @@
         },
         {
           "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE8E60",
+          "section": ".rodata",
           "address": "0x9f742bc",
           "size": 120,
           "sha256": "c4b345a52a6d689502356d9c6ad2090e607b4e01b89b367f8ff9004c2e04bfbc",

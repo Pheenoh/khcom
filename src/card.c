@@ -35531,7 +35531,7 @@ TaskDesc gUnk_09EE8F30 __attribute__((section(".data_registration_gUnk_09EE8F30"
     0x10,
 };
 
-WorldSelAnim gUnk_09EE8E60[30] __attribute__((section(".rodata_card_ui_gUnk_09EE8E60"))) = {
+const WorldSelAnim gUnk_09EE8E60[30] = {
     { 0, 10, { 0, 0 } },
     { 1, 6, { 0, 0 } },
     { 2, 4, { 0, 0 } },
