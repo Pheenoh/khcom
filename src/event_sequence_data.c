@@ -4985,7 +4985,7 @@ EventSequenceDef gUnk_0902FC00 __attribute__((section(".data_event_sequence_0902
     255,
 };
 
-EventSequenceDef gUnk_0902FCB8 __attribute__((section(".data_event_sequence_0902FCB8"))) = {
+const EventSequenceDef gUnk_0902FCB8 = {
     1,
     { 0, 0, 0 },
     gUnk_0902FCB0,

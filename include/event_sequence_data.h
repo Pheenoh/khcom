@@ -203,6 +203,6 @@ extern EventSequenceDef gUnk_0902DE74;
 extern EventSequenceDef gUnk_0902E8A8;
 extern EventSequenceDef gUnk_0902F2C8;
 extern EventSequenceDef gUnk_0902FC00;
-extern EventSequenceDef gUnk_0902FCB8;
+extern const EventSequenceDef gUnk_0902FCB8;
 
 #endif
