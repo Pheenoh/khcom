@@ -29,7 +29,8 @@
     ".data_09EF090C": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EF0EB4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EF0F64": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
-    ".data_09EF1060": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables."
+    ".data_09EF1060": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
+    "native_event_sprite_1060": "The gUnk_09EF1060 event-sprite pointer cluster is a contiguous 216-byte initialized-data run with matching source order in event_sprite_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Earlier event-sprite clusters stay sectioned."
   },
   "regions": {
     "us": {
@@ -1038,7 +1039,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EF1060",
+          "section": ".data",
           "address": "0x09EF1060",
           "size": 216,
           "sha256": "438e28a2d3bf1295411e95c83fe1fcb9318de85fa84bcd9729dc333a3122ac0d",
@@ -2323,7 +2324,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EF1060",
+          "section": ".data",
           "address": "0x09EC844C",
           "size": 216,
           "sha256": "9ff97cc37853482feb6809efe7d6c855ef8778e58fe21ae67591de790c61bf02",
@@ -3608,7 +3609,7 @@
         },
         {
           "unit": "event_sprite_data.c",
-          "section": ".data_09EF1060",
+          "section": ".data",
           "address": "0x09F7C244",
           "size": 216,
           "sha256": "67cbe7e6d169abfe5e438b3e378e1aad8caae33ea07525fe27836d567853ff5d",
