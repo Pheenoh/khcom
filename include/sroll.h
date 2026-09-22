@@ -293,9 +293,79 @@ typedef struct SrollWork {
 
 
 extern void* gUnk_09A54218[][2];
-extern void* gUnk_09A54374[][4];
-extern s32 gUnk_09A542CC[];
-extern s32 gUnk_09A5430C[];
+#if defined(VERSION_US)
+extern u8 gUnk_09C5D922[];
+extern u8 gUnk_09C5DD46[];
+extern u8 gUnk_09C5E15E[];
+extern u8 gUnk_09C5E6E6[];
+extern u8 gUnk_09C5EB5E[];
+extern u8 gUnk_09C5F12C[];
+extern u8 gUnk_09C5F678[];
+extern u8 gUnk_09C5FC54[];
+extern u8 gUnk_09C6000A[];
+extern u8 gUnk_09C60662[];
+extern u8 gUnk_09C60F20[];
+extern u8 gUnk_09C61676[];
+extern u8 gUnk_09C6259C[];
+extern u8 gUnk_09C62CC8[];
+extern u8 gUnk_09C63244[];
+extern u8 gUnk_09C853DA[];
+extern u8 gUnk_09C85EDE[];
+extern u8 gUnk_09C865FC[];
+extern u8 gUnk_09C86C68[];
+extern u8 gUnk_09C872D4[];
+#elif defined(VERSION_JP)
+extern u8 gUnkJp_09C36046[];
+extern u8 gUnkJp_09C3646A[];
+extern u8 gUnkJp_09C36882[];
+extern u8 gUnkJp_09C36E0A[];
+extern u8 gUnkJp_09C37282[];
+extern u8 gUnkJp_09C37850[];
+extern u8 gUnkJp_09C37D9C[];
+extern u8 gUnkJp_09C38378[];
+extern u8 gUnkJp_09C3872E[];
+extern u8 gUnkJp_09C38D86[];
+extern u8 gUnkJp_09C39644[];
+extern u8 gUnkJp_09C39D9A[];
+extern u8 gUnkJp_09C3A652[];
+extern u8 gUnkJp_09C3ACC0[];
+extern u8 gUnkJp_09C3B3EC[];
+extern u8 gUnkJp_09C3B968[];
+extern u8 gUnkJp_09C5DC00[];
+extern u8 gUnkJp_09C5E4D2[];
+extern u8 gUnkJp_09C5F020[];
+extern u8 gUnkJp_09C5F6C2[];
+extern u8 gUnkJp_09C6012C[];
+extern u8 gUnkJp_09C60C7E[];
+extern u8 gUnkJp_09C6174C[];
+extern u8 gUnkJp_09C61DB8[];
+#else
+extern u8 gUnkEu_09CBAA32[];
+extern u8 gUnkEu_09CBAE56[];
+extern u8 gUnkEu_09CBB26E[];
+extern u8 gUnkEu_09CBB7F6[];
+extern u8 gUnkEu_09CBBC6E[];
+extern u8 gUnkEu_09CBC23C[];
+extern u8 gUnkEu_09CBC788[];
+extern u8 gUnkEu_09CBCD64[];
+extern u8 gUnkEu_09CBD11A[];
+extern u8 gUnkEu_09CBD772[];
+extern u8 gUnkEu_09CBE030[];
+extern u8 gUnkEu_09CE57D2[];
+extern u8 gUnkEu_09CBE786[];
+extern u8 gUnkEu_09CBF6AC[];
+extern u8 gUnkEu_09CBFDD8[];
+extern u8 gUnkEu_09CC0354[];
+extern u8 gUnkEu_09CE3122[];
+extern u8 gUnkEu_09CE3C26[];
+extern u8 gUnkEu_09CE4344[];
+extern u8 gUnkEu_09CE49B0[];
+extern u8 gUnkEu_09CE501C[];
+#endif
+
+extern void* const gUnk_09A54374[][4];
+extern const s32 gUnk_09A542CC[16];
+extern const s32 gUnk_09A5430C[16];
 extern SrollShift gUnk_09A54C78[];
 extern SrollMask gUnk_09A54918[][8];
 extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);

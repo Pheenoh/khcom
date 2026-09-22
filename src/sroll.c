@@ -1930,7 +1930,11 @@ void SetDecodedAudioReadPosition(s32 pos) {
     gUnk_02038098 = pos;
 }
 
-const char gTaskNameSrollAName[] __attribute__((section(".rodata_registration_name_gTaskDescSrollAName"), aligned(1))) = "task_sroll_a_name";
+const char gTaskNameSrollAName[] = "task_sroll_a_name";
+
+const s32 gUnk_09A542CC[16] = { -1, -2, -3, -4, -3, -2, -1, 0, 1, 2, 3, 4, 3, 2, 1, 0 };
+
+const s32 gUnk_09A5430C[16] = { -1, -2, -3, -4, -5, -6, -7, -8, -7, -6, -5, -4, -3, -2, -1, 0 };
 
 TaskDesc gTaskDescSrollAName = {
     gTaskNameSrollAName,
@@ -1941,7 +1945,7 @@ TaskDesc gTaskDescSrollAName = {
     0x38,
 };
 
-const char gTaskNameSrollBChar[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBChar"), aligned(1))) = "task_sroll_b_char";
+const char gTaskNameSrollBChar[] = "task_sroll_b_char";
 
 TaskDesc gTaskDescSrollBChar = {
     gTaskNameSrollBChar,
@@ -1952,7 +1956,79 @@ TaskDesc gTaskDescSrollBChar = {
     0x40,
 };
 
-const char gTaskNameSrollBLogo[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBLogo"), aligned(1))) = "task_sroll_b_logo";
+const char gTaskNameSrollBLogo[] = "task_sroll_b_logo";
+
+void* const gUnk_09A54374[][4] = {
+#if defined(VERSION_US)
+    { gUnk_09C5D922, (void*)(27 * 32), gUnkUs_09EFAF98, gUnkUs_09EFAF78 },
+    { gUnk_09C5DD46, (void*)(24 * 32), gUnkUs_09EFAFC0, gUnkUs_09EFAFA0 },
+    { gUnk_09C5E15E, (void*)(37 * 32), gUnkUs_09EFAFE8, gUnkUs_09EFAFC8 },
+    { gUnk_09C5E6E6, (void*)(27 * 32), gUnkUs_09EFB010, gUnkUs_09EFAFF0 },
+    { gUnk_09C5EB5E, (void*)(39 * 32), gUnkUs_09EFB038, gUnkUs_09EFB018 },
+    { gUnk_09C5F12C, (void*)(35 * 32), gUnkUs_09EFB060, gUnkUs_09EFB040 },
+    { gUnk_09C5F678, (void*)(41 * 32), gUnkUs_09EFB088, gUnkUs_09EFB068 },
+    { gUnk_09C5FC54, (void*)(21 * 32), gUnkUs_09EFB0B0, gUnkUs_09EFB090 },
+    { gUnk_09C6000A, (void*)(39 * 32), gUnkUs_09EFB0D8, gUnkUs_09EFB0B8 },
+    { gUnk_09C60662, (void*)(61 * 32), gUnkUs_09EFB100, gUnkUs_09EFB0E0 },
+    { gUnk_09C60F20, (void*)(47 * 32), gUnkUs_09EFB128, gUnkUs_09EFB108 },
+    { gUnk_09C61676, (void*)(61 * 32), gUnkUs_09EFB150, gUnkUs_09EFB130 },
+    { gUnk_09C6259C, (void*)(50 * 32), gUnkUs_09EFB1A0, gUnkUs_09EFB180 },
+    { gUnk_09C62CC8, (void*)(35 * 32), gUnkUs_09EFB1C8, gUnkUs_09EFB1A8 },
+    { gUnk_09C63244, (void*)(47 * 32), gUnkUs_09EFB1F0, gUnkUs_09EFB1D0 },
+    { gUnk_09C853DA, (void*)(79 * 32), gUnkUs_09EFB780, gUnkUs_09EFB760 },
+    { gUnk_09C85EDE, (void*)(48 * 32), gUnkUs_09EFB7A8, gUnkUs_09EFB788 },
+    { gUnk_09C865FC, (void*)(44 * 32), gUnkUs_09EFB7D0, gUnkUs_09EFB7B0 },
+    { gUnk_09C86C68, (void*)(41 * 32), gUnkUs_09EFB7F8, gUnkUs_09EFB7D8 },
+    { gUnk_09C872D4, (void*)(50 * 32), gUnkUs_09EFB820, gUnkUs_09EFB800 },
+#elif defined(VERSION_JP)
+    { gUnkJp_09C36046, (void*)(27 * 32), gUnkJp_09ED24A4, gUnkJp_09ED2484 },
+    { gUnkJp_09C3646A, (void*)(24 * 32), gUnkJp_09ED24CC, gUnkJp_09ED24AC },
+    { gUnkJp_09C36882, (void*)(37 * 32), gUnkJp_09ED24F4, gUnkJp_09ED24D4 },
+    { gUnkJp_09C36E0A, (void*)(27 * 32), gUnkJp_09ED251C, gUnkJp_09ED24FC },
+    { gUnkJp_09C37282, (void*)(39 * 32), gUnkJp_09ED2544, gUnkJp_09ED2524 },
+    { gUnkJp_09C37850, (void*)(35 * 32), gUnkJp_09ED256C, gUnkJp_09ED254C },
+    { gUnkJp_09C37D9C, (void*)(41 * 32), gUnkJp_09ED2594, gUnkJp_09ED2574 },
+    { gUnkJp_09C38378, (void*)(21 * 32), gUnkJp_09ED25BC, gUnkJp_09ED259C },
+    { gUnkJp_09C3872E, (void*)(39 * 32), gUnkJp_09ED25E4, gUnkJp_09ED25C4 },
+    { gUnkJp_09C38D86, (void*)(61 * 32), gUnkJp_09ED260C, gUnkJp_09ED25EC },
+    { gUnkJp_09C39644, (void*)(47 * 32), gUnkJp_09ED2634, gUnkJp_09ED2614 },
+    { gUnkJp_09C39D9A, (void*)(61 * 32), gUnkJp_09ED265C, gUnkJp_09ED263C },
+    { gUnkJp_09C3A652, (void*)(41 * 32), gUnkJp_09ED2684, gUnkJp_09ED2664 },
+    { gUnkJp_09C3ACC0, (void*)(50 * 32), gUnkJp_09ED26AC, gUnkJp_09ED268C },
+    { gUnkJp_09C3B3EC, (void*)(35 * 32), gUnkJp_09ED26D4, gUnkJp_09ED26B4 },
+    { gUnkJp_09C3B968, (void*)(47 * 32), gUnkJp_09ED26FC, gUnkJp_09ED26DC },
+    { gUnkJp_09C5DC00, (void*)(57 * 32), gUnkJp_09ED2C8C, gUnkJp_09ED2C6C },
+    { gUnkJp_09C5E4D2, (void*)(83 * 32), gUnkJp_09ED2CB4, gUnkJp_09ED2C94 },
+    { gUnkJp_09C5F020, (void*)(41 * 32), gUnkJp_09ED2CDC, gUnkJp_09ED2CBC },
+    { gUnkJp_09C5F6C2, (void*)(71 * 32), gUnkJp_09ED2D04, gUnkJp_09ED2CE4 },
+    { gUnkJp_09C6012C, (void*)(77 * 32), gUnkJp_09ED2D2C, gUnkJp_09ED2D0C },
+    { gUnkJp_09C60C7E, (void*)(79 * 32), gUnkJp_09ED2D54, gUnkJp_09ED2D34 },
+    { gUnkJp_09C6174C, (void*)(41 * 32), gUnkJp_09ED2D7C, gUnkJp_09ED2D5C },
+    { gUnkJp_09C61DB8, (void*)(50 * 32), gUnkJp_09ED2DA4, gUnkJp_09ED2D84 },
+#else
+    { gUnkEu_09CBAA32, (void*)(27 * 32), gUnkEu_09F86CCC, gUnkEu_09F86CAC },
+    { gUnkEu_09CBAE56, (void*)(24 * 32), gUnkEu_09F86CF4, gUnkEu_09F86CD4 },
+    { gUnkEu_09CBB26E, (void*)(37 * 32), gUnkEu_09F86D1C, gUnkEu_09F86CFC },
+    { gUnkEu_09CBB7F6, (void*)(27 * 32), gUnkEu_09F86D44, gUnkEu_09F86D24 },
+    { gUnkEu_09CBBC6E, (void*)(39 * 32), gUnkEu_09F86D6C, gUnkEu_09F86D4C },
+    { gUnkEu_09CBC23C, (void*)(35 * 32), gUnkEu_09F86D94, gUnkEu_09F86D74 },
+    { gUnkEu_09CBC788, (void*)(41 * 32), gUnkEu_09F86DBC, gUnkEu_09F86D9C },
+    { gUnkEu_09CBCD64, (void*)(21 * 32), gUnkEu_09F86DE4, gUnkEu_09F86DC4 },
+    { gUnkEu_09CBD11A, (void*)(39 * 32), gUnkEu_09F86E0C, gUnkEu_09F86DEC },
+    { gUnkEu_09CBD772, (void*)(61 * 32), gUnkEu_09F86E34, gUnkEu_09F86E14 },
+    { gUnkEu_09CBE030, (void*)(47 * 32), gUnkEu_09F86E5C, gUnkEu_09F86E3C },
+    { gUnkEu_09CE57D2, (void*)(61 * 32), gUnkEu_09F87594, gUnkEu_09F87574 },
+    { gUnkEu_09CBE786, (void*)(61 * 32), gUnkEu_09F86E84, gUnkEu_09F86E64 },
+    { gUnkEu_09CBF6AC, (void*)(50 * 32), gUnkEu_09F86ED4, gUnkEu_09F86EB4 },
+    { gUnkEu_09CBFDD8, (void*)(35 * 32), gUnkEu_09F86EFC, gUnkEu_09F86EDC },
+    { gUnkEu_09CC0354, (void*)(47 * 32), gUnkEu_09F86F24, gUnkEu_09F86F04 },
+    { gUnkEu_09CE3122, (void*)(79 * 32), gUnkEu_09F874CC, gUnkEu_09F874AC },
+    { gUnkEu_09CE3C26, (void*)(48 * 32), gUnkEu_09F874F4, gUnkEu_09F874D4 },
+    { gUnkEu_09CE4344, (void*)(44 * 32), gUnkEu_09F8751C, gUnkEu_09F874FC },
+    { gUnkEu_09CE49B0, (void*)(41 * 32), gUnkEu_09F87544, gUnkEu_09F87524 },
+    { gUnkEu_09CE501C, (void*)(50 * 32), gUnkEu_09F8756C, gUnkEu_09F8754C },
+#endif
+};
 
 TaskDesc gTaskDescSrollBLogo = {
     gTaskNameSrollBLogo,
@@ -1963,7 +2039,7 @@ TaskDesc gTaskDescSrollBLogo = {
     0x30,
 };
 
-const char gTaskNameSrollBSecn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBSecn"), aligned(1))) = "task_sroll_b_secn";
+const char gTaskNameSrollBSecn[] = "task_sroll_b_secn";
 
 TaskDesc gTaskDescSrollBSecn = {
     gTaskNameSrollBSecn,
@@ -1974,7 +2050,7 @@ TaskDesc gTaskDescSrollBSecn = {
     0x4C,
 };
 
-const char gTaskNameSrollBCrtn[] __attribute__((section(".rodata_registration_name_gTaskDescSrollBCrtn"), aligned(1))) = "task_sroll_b_crtn";
+const char gTaskNameSrollBCrtn[] = "task_sroll_b_crtn";
 
 TaskDesc gTaskDescSrollBCrtn = {
     gTaskNameSrollBCrtn,
@@ -1985,7 +2061,7 @@ TaskDesc gTaskDescSrollBCrtn = {
     0x30,
 };
 
-const char gTaskNameSrollCChar[] __attribute__((aligned(1))) = "task_sroll_c_char";
+const char gTaskNameSrollCChar[] = "task_sroll_c_char";
 
 TaskDesc gTaskDescSrollCChar = {
     gTaskNameSrollCChar,
@@ -1996,7 +2072,7 @@ TaskDesc gTaskDescSrollCChar = {
     0x98,
 };
 
-const char gTaskName_09EFAA64[] __attribute__((section(".rodata_registration_name_gUnk_09EFAA64"), aligned(1))) = "task_sroll_tmr";
+const char gTaskName_09EFAA64[] = "task_sroll_tmr";
 
 TaskDesc gUnk_09EFAA64 = {
     gTaskName_09EFAA64,

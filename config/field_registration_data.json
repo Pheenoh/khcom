@@ -440,22 +440,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "sroll.c",
-          "section": ".rodata_registration_name_gUnk_09EFAA64",
-          "address": "0x9a544f0",
-          "size": 15,
-          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
-          "objects": [
-            {
-              "name": "gTaskName_09EFAA64",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         }
       ]
     },
@@ -893,22 +877,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "sroll.c",
-          "section": ".rodata_registration_name_gUnk_09EFAA64",
-          "address": "0x9a093c0",
-          "size": 15,
-          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
-          "objects": [
-            {
-              "name": "gTaskName_09EFAA64",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         }
       ]
     },
@@ -1346,22 +1314,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "sroll.c",
-          "section": ".rodata_registration_name_gUnk_09EFAA64",
-          "address": "0x9ab2238",
-          "size": 15,
-          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
-          "objects": [
-            {
-              "name": "gTaskName_09EFAA64",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         }
       ]
     }
