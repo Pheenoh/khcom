@@ -95,7 +95,6 @@ u16 gCardCount EWRAM_COMMON(4);
 CardUiSpriteState gUnk_0203A860 EWRAM_COMMON(16);
 MapCardUiResources gUnk_0203A890 EWRAM_COMMON(16);
 u8 gUnk_0203A8C0[270] EWRAM_COMMON(16);
-struct CardListWork* gUnk_0203A9D0 EWRAM_COMMON(4);
 
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0809511C(ReloadGageWork* w, void* a);
@@ -1317,71 +1316,4 @@ TaskDesc gTaskDescScrollbar = {
     (void (*)(void*))scrollbar_2,
     (void (*)(void*))scrollbar_3,
     0x18,
-};
-
-const char gTaskName_09EE778C[] __attribute__((section(".rodata_registration_name_gUnk_09EE778C"), aligned(1))) = "Friend card";
-
-TaskDesc gUnk_09EE778C = {
-    gTaskName_09EE778C,
-    (void (*)(void*, void*))func_0809A02C,
-    func_0809A54C,
-    (void (*)(void*))func_0809B200,
-    (void (*)(void*))func_0809B59C,
-    0x1D4,
-};
-
-const char gTaskName_09EE77A4[] __attribute__((section(".rodata_registration_name_gUnk_09EE77A4"), aligned(1))) = "Heartless card";
-
-TaskDesc gUnk_09EE77A4 = {
-    gTaskName_09EE77A4,
-    (void (*)(void*, void*))func_0809A1B8,
-    func_0809AF84,
-    (void (*)(void*))func_0809B3F4,
-    (void (*)(void*))func_0809B5F4,
-    0x1D4,
-};
-
-const char gTaskName_09EE77BC[] __attribute__((section(".rodata_registration_name_gUnk_09EE77BC"), aligned(1))) = "Gimmick card";
-
-TaskDesc gUnk_09EE77BC = {
-    gTaskName_09EE77BC,
-    (void (*)(void*, void*))func_0809A368,
-    func_0809A840,
-    (void (*)(void*))func_0809B200,
-    (void (*)(void*))func_0809B59C,
-    0x1D4,
-};
-
-const char gTaskName_09EE77D4[] __attribute__((section(".rodata_registration_name_gUnk_09EE77D4"), aligned(1))) = "StockName";
-
-TaskDesc gUnk_09EE77D4 = {
-    gTaskName_09EE77D4,
-    (void (*)(void*, void*))func_0809B76C,
-    func_0809B840,
-    (void (*)(void*))func_0809B8F0,
-    (void (*)(void*))func_0809BB18,
-    0x34,
-};
-
-TaskDesc gUnk_09EE77EC = {
-    gTaskName_09EE77D4,
-    (void (*)(void*, void*))func_0809B920,
-    func_0809B9F4,
-    (void (*)(void*))func_0809BAA4,
-    (void (*)(void*))func_0809BAE4,
-    0x34,
-};
-#ifdef VERSION_EU
-void** gUnkEu_09F72BFC[5] = { gUnk_09EEA16C, &gUnkEu_09F75FB4, &gUnkEu_09F75FCC, &gUnkEu_09F75FC4, &gUnkEu_09F75FBC };
-#endif
-
-const char gTaskName_09EE7804[] __attribute__((section(".rodata_registration_name_gUnk_09EE7804"), aligned(1))) = "Premire Chance";
-
-TaskDesc gUnk_09EE7804 = {
-    gTaskName_09EE7804,
-    (void (*)(void*, void*))func_0809BB4C,
-    func_0809C078,
-    (void (*)(void*))func_0809C110,
-    (void (*)(void*))func_0809C1EC,
-    0x90,
 };

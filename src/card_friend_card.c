@@ -41,6 +41,8 @@
 #include "game.h"
 #include "bos4_api.h"
 
+struct CardListWork* gUnk_0203A9D0 EWRAM_COMMON(4);
+
 #ifdef VERSION_EU
 extern void** gUnkEu_09F72BFC[5];
 #endif
@@ -1417,3 +1419,70 @@ u8 func_0809C4B0(u8* work, void* a) {
 
 struct UnkStruct_0809BB4C;
 void func_0809BB4C(struct UnkStruct_0809BB4C* w);
+
+const char gTaskName_09EE778C[] = "Friend card";
+
+TaskDesc gUnk_09EE778C = {
+    gTaskName_09EE778C,
+    (void (*)(void*, void*))func_0809A02C,
+    func_0809A54C,
+    (void (*)(void*))func_0809B200,
+    (void (*)(void*))func_0809B59C,
+    0x1D4,
+};
+
+const char gTaskName_09EE77A4[] = "Heartless card";
+
+TaskDesc gUnk_09EE77A4 = {
+    gTaskName_09EE77A4,
+    (void (*)(void*, void*))func_0809A1B8,
+    func_0809AF84,
+    (void (*)(void*))func_0809B3F4,
+    (void (*)(void*))func_0809B5F4,
+    0x1D4,
+};
+
+const char gTaskName_09EE77BC[] = "Gimmick card";
+
+TaskDesc gUnk_09EE77BC = {
+    gTaskName_09EE77BC,
+    (void (*)(void*, void*))func_0809A368,
+    func_0809A840,
+    (void (*)(void*))func_0809B200,
+    (void (*)(void*))func_0809B59C,
+    0x1D4,
+};
+
+const char gTaskName_09EE77D4[] = "StockName";
+
+TaskDesc gUnk_09EE77D4 = {
+    gTaskName_09EE77D4,
+    (void (*)(void*, void*))func_0809B76C,
+    func_0809B840,
+    (void (*)(void*))func_0809B8F0,
+    (void (*)(void*))func_0809BB18,
+    0x34,
+};
+
+TaskDesc gUnk_09EE77EC = {
+    gTaskName_09EE77D4,
+    (void (*)(void*, void*))func_0809B920,
+    func_0809B9F4,
+    (void (*)(void*))func_0809BAA4,
+    (void (*)(void*))func_0809BAE4,
+    0x34,
+};
+#ifdef VERSION_EU
+void** gUnkEu_09F72BFC[5] = { gUnk_09EEA16C, &gUnkEu_09F75FB4, &gUnkEu_09F75FCC, &gUnkEu_09F75FC4, &gUnkEu_09F75FBC };
+#endif
+
+const char gTaskName_09EE7804[] = "Premire Chance";
+
+TaskDesc gUnk_09EE7804 = {
+    gTaskName_09EE7804,
+    (void (*)(void*, void*))func_0809BB4C,
+    func_0809C078,
+    (void (*)(void*))func_0809C110,
+    (void (*)(void*))func_0809C1EC,
+    0x90,
+};
