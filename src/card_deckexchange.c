@@ -41,6 +41,24 @@
 #include "game.h"
 #include "bos4_api.h"
 
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+u16 gUnk_0203A9DC EWRAM_COMMON(4);
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+
 u16 func_080857D4(u8 slot);
 u8 func_080A8C20(u8* work);
 u8 func_080A86F4(UnkStruct_0808C940* w, void* a);
@@ -1993,4 +2011,31 @@ void func_080AAF20(u8* work) {
         *(s32*)&work[0x6A0] = 0x2800;
     }
 }
+#endif
+
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+const char gTaskNameDeckexchange[] = "deckexchange";
+
+TaskDesc gTaskDescDeckexchange = {
+    gTaskNameDeckexchange,
+    (void (*)(void*, void*))deckexchange_0,
+    deckexchange_1,
+    (void (*)(void*))deckexchange_2,
+    (void (*)(void*))deckexchange_3,
+    0x718,
+};
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
 #endif

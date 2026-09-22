@@ -363,6 +363,8 @@ TARGET_ANCHORS = {
         0x09EE9170: 0x09EC07B4,
         0x09041F64: 0x090105A4,
         0x09EE8F20: 0x09EC0564,
+        0x09041F48: 0x09010588,
+        0x09EE8F08: 0x09EC054C,
     },
 }
 
@@ -3261,11 +3263,13 @@ TARGET_DATA_SIZE = {
         ("map_fixed_data.c", ".rodata"): 0xA8,
         ("card_riku_tutorial.c", ".data"): 0x30,
         ("card_mode_deck.c", ".data"): 0x240,
+        ("card_deckexchange.c", ".rodata"): 0,
+        ("card_deckexchange.c", ".data"): 0,
     },
     "jp": {
         ("sroll.c", ".rodata"): 0x287,
         ("event_index_data.c", ".data"): 0x93C,
-        ("card.c", ".data"): 0x45D8,
+        ("card.c", ".data"): 0x45C0,
         ("card_localized_09EE9C90_data.c", ".data"): 0x28C,
         ("animation_resource_09EFB840_data.c", ".data"): 0x29C,
     },

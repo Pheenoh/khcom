@@ -939,20 +939,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescDeckexchange",
-          "address": "0x09041F48",
-          "size": 13,
-          "sha256": "42fcbc835771845fbf65fcd82c99beb351c254751175794082746ec3b36b29e9",
-          "objects": [
-            {
-              "name": "gTaskNameDeckexchange",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4822,20 +4808,6 @@
               "name": "gTaskNameWorldSelBefore",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescDeckexchange",
-          "address": "0x09010588",
-          "size": 13,
-          "sha256": "42fcbc835771845fbf65fcd82c99beb351c254751175794082746ec3b36b29e9",
-          "objects": [
-            {
-              "name": "gTaskNameDeckexchange",
-              "offset": 0,
-              "size": 13
             }
           ]
         },
