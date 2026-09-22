@@ -37,9 +37,6 @@ void** gUnkEu_09F6FF70[5] = {
 };
 #endif
 
-u16 gUnk_09EE4BE0[10] __attribute__((section(".data_card_selection_09EE4BE0"), aligned(2))) = {
-    72, 77, 82, 87, 92, 168, 173, 178, 183, 188,
-};
 
 #ifdef VERSION_EU
 const u16 gUnkEu_090CED64[5] = {

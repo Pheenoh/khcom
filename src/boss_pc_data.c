@@ -4963,21 +4963,3 @@ const PcShot gUnk_09A4C9F8[9] = {
     { 77056, 94464, 16, { 0, 0 }, 512 },
 };
 
-s8 gUnk_09A4CA94[33] __attribute__((section(".data_pc_shake"), aligned(1))) = {
-    4, 4, 4, 4, -4, -4, -4, -4, 3, 3, 3, 3, -3, -3, -3, -3, 2, 2, 2, 2, -2, -2, -2, -2, 1, 1, 1, 1, -1, -1, -1, -1, 0,
-};
-
-s8 gUnk_09A4CAB5[9] __attribute__((section(".data_pc_shake"), aligned(1))) = {
-    1, 2, 2, 1, -1, -2, -2, -1, 0,
-};
-
-
-
-u16 gUnk_09A4CABE[3] __attribute__((section(".data_pc_secondary_palette_cycle"), aligned(2))) = {
-    1, 2, 0,
-};
-
-
-s16 gUnk_09A4CAC4[3] __attribute__((section(".data_pc_secondary_palette_cycle"), aligned(2))) = {
-    6, 6, 6,
-};

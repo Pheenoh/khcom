@@ -6,14 +6,15 @@
     "shake_curves": "func_0810B434 indexes signed-byte control samples, advances, and terminates on the following zero byte. Its two actual selector calls use0 and1. Both complete curves include the required zero terminator (33 and9 bytes); all three regions agree byte-for-byte and the second base independently bounds the first. The identical Lst control updater func_0810FEDC has a separate native two-pointer index and its own33/9-byte curves; its enable is never set and its selector setter has no visible caller, so those real dormant records are not claimed runtime-reachable. Preserve unsigned alignment bytes and neighboring parameter records outside these exact42-byte spans.",
     "lst_anim_set": "The existing8-byte LstAnimSet type is consumed by LstState animation-selection logic. Four complete physical records occupy32 bytes and end at an independently owned TaskDesc. State0 initialization and state1 mutation are explicit; the table retains additional original records without claiming every row is currently reached. Public declaration remains unsized so ownership does not alter existing optimizer bounds.",
     "native_lst_curves": "The two shake curves and the palette-fade ramp belong to the same Lst effect family and are read only by the existing bos7 control and field-effect callbacks. Treating the ramp as const is an explicit reconstruction assumption supported by those read-only uses. Their original sequence becomes one 300-byte native readonly catalog in every region; normal four-byte alignment before the signed32-bit ramp supplies the two intervening zero bytes. All three original object extents and values remain unchanged, and the separately rooted following zero word remains outside the catalog.",
-    "lst_fade": "task_bos_lst_fld_1 only accesses gUnk_09A4FC20 while its counter is<=63, increments after use and feeds each value to func_08110058 palette interpolation. This proves64 signed32-bit values forming the complete1..32..0 ramp. A separate following zero word before the registration name remains outside this ownership claim. All268 scalar bytes are identical in US/JP/EU; no asset/address aliases or evidence mining is needed."
+    "lst_fade": "task_bos_lst_fld_1 only accesses gUnk_09A4FC20 while its counter is<=63, increments after use and feeds each value to func_08110058 palette interpolation. This proves64 signed32-bit values forming the complete1..32..0 ramp. A separate following zero word before the registration name remains outside this ownership claim. All268 scalar bytes are identical in US/JP/EU; no asset/address aliases or evidence mining is needed.",
+    "native_pc_shake": "Exclusive bos6 island .data_pc_shake -> boss_pc_shake_data.c native .data"
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_shake",
+          "unit": "boss_pc_shake_data.c",
+          "section": ".data",
           "address": "0x9a4ca94",
           "size": 42,
           "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
@@ -59,8 +60,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_shake",
+          "unit": "boss_pc_shake_data.c",
+          "section": ".data",
           "address": "0x9a0151c",
           "size": 42,
           "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
@@ -106,8 +107,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_shake",
+          "unit": "boss_pc_shake_data.c",
+          "section": ".data",
           "address": "0x9aaa558",
           "size": 42,
           "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",

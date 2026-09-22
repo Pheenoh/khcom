@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "native_poo_map_bg": "PooMapBgDesc gUnk_096FC6E0 is a 24-byte initialized object; ordinary .data replaces its forced section in poo_data.c.",
-    "pooh_motion_and_map": "PooSpot motion tables use five direction groups chosen by func_080C7D60 for states17/18. Mode_sio2 selects independently owned AnimDef arrays09EF3CE8/09EF3D38: all five first-state animations have10 frames and second-state counts are14,15,15,15,14 in every region. func_080C89B4 indexes direction*11 or direction*16 plus AnimGetFrame+1, proving fixed native group strides and bounded used rows. The complete55/80-record arrays preserve their real initial/unused slots without claiming every slot is read; they meet independently rooted next arrays. func_080C8A50 copies exactly4 PooPoint records, ending at the owned task_poo_pooh string. func_080D1078 copies exactly18 PooSpot records, ending at gUnk_096FD850. PooMapBgDesc is a24-byte scalar consumed directly by task_poo_map_0 and ending at the separately rooted spawn table. All scalar/coordinate bytes match across regions. Its three existing tile/palette targets match each native record and every raw payload compares byte-identically; declarations are reused from event_background_assets.h. No pixels, palettes or animation-frame assets are converted to C. The 55- and 80-record PooSpot motion tables plus the four PooPoint records form one contiguous 1652-byte readonly run in every region; ordinary const definitions in poo_data.c reproduce that run as native .rodata. Consumers only read these tables (func_080C89B4 indexes spots; func_080C8A50 copies the four points). The owned task_poo_pooh registration name still interrupts before PooMapBgDesc, and the cabbage-spot table remains a separate later readonly placement."
+    "pooh_motion_and_map": "PooSpot motion tables use five direction groups chosen by func_080C7D60 for states17/18. Mode_sio2 selects independently owned AnimDef arrays09EF3CE8/09EF3D38: all five first-state animations have10 frames and second-state counts are14,15,15,15,14 in every region. func_080C89B4 indexes direction*11 or direction*16 plus AnimGetFrame+1, proving fixed native group strides and bounded used rows. The complete55/80-record arrays preserve their real initial/unused slots without claiming every slot is read; they meet independently rooted next arrays. func_080C8A50 copies exactly4 PooPoint records, ending at the owned task_poo_pooh string. func_080D1078 copies exactly18 PooSpot records, ending at gUnk_096FD850. PooMapBgDesc is a24-byte scalar consumed directly by task_poo_map_0 and ending at the separately rooted spawn table. All scalar/coordinate bytes match across regions. Its three existing tile/palette targets match each native record and every raw payload compares byte-identically; declarations are reused from event_background_assets.h. No pixels, palettes or animation-frame assets are converted to C. The 55- and 80-record PooSpot motion tables plus the four PooPoint records form one contiguous 1652-byte readonly run in every region; ordinary const definitions in poo_data.c reproduce that run as native .rodata. Consumers only read these tables (func_080C89B4 indexes spots; func_080C8A50 copies the four points). The owned task_poo_pooh registration name still interrupts before PooMapBgDesc, and the cabbage-spot table remains a separate later readonly placement.",
+    "native_poo_cabbage_spots": "Exclusive poo island .rodata_poo_cabbage_spots -> poo_cabbage_spots_data.c native .rodata"
   },
   "regions": {
     "us": {
@@ -46,8 +47,8 @@
           ]
         },
         {
-          "unit": "poo_data.c",
-          "section": ".rodata_poo_cabbage_spots",
+          "unit": "poo_cabbage_spots_data.c",
+          "section": ".rodata",
           "address": "0x96fd778",
           "size": 216,
           "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
@@ -102,8 +103,8 @@
           ]
         },
         {
-          "unit": "poo_data.c",
-          "section": ".rodata_poo_cabbage_spots",
+          "unit": "poo_cabbage_spots_data.c",
+          "section": ".rodata",
           "address": "0x96b5f54",
           "size": 216,
           "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
@@ -158,8 +159,8 @@
           ]
         },
         {
-          "unit": "poo_data.c",
-          "section": ".rodata_poo_cabbage_spots",
+          "unit": "poo_cabbage_spots_data.c",
+          "section": ".rodata",
           "address": "0x96caac0",
           "size": 216,
           "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",

@@ -8,7 +8,8 @@
     ".data_09EEC5EC": "The independent45-glyph font ends atC5EC. menu_0/menu_1/menu_2 initializes, bounds, and indexes menu glyphs0..9 atC600. Remaining sprite and animation words are separately typed neutral scalar objects. The subsequent independently linked lock-on pair startsC660.",
     "native_a52c_cluster": "The gUnk_09EEA52C pointer/AnimHeader cluster is a contiguous 2592-byte initialized-data run with matching source order in card_lookup_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Other card_lookup_data clusters remain sectioned where they occupy separate link addresses.",
     "native_card_lookup_96ac": "The gUnk_09EE96AC card-lookup pointer/AnimHeader cluster is a contiguous 1508-byte initialized-data run with matching source order; it lives in its own TU card_lookup_data_96ac.c so ordinary .data can own it without colliding with the later native .data cluster at 09EEA52C in card_lookup_data.c.",
-    "native_card_lookup_96ac_prior": "Existing ObjDef resource endpoint establishes96AC; MapCardBackDef pointers independently anchor96D4/9764/97AC/97F4 and consumers dereference sprite0. Card digit consumers select0..9, including modulo10 paths and all450 normal CardDef digit fields. Direct literal pools anchor981C/9894/98C0/98EC. Unused words remain neutral typed scalars; no historical aggregate boundary is asserted."
+    "native_card_lookup_96ac_prior": "Existing ObjDef resource endpoint establishes96AC; MapCardBackDef pointers independently anchor96D4/9764/97AC/97F4 and consumers dereference sprite0. Card digit consumers select0..9, including modulo10 paths and all450 normal CardDef digit fields. Direct literal pools anchor981C/9894/98C0/98EC. Unused words remain neutral typed scalars; no historical aggregate boundary is asserted.",
+    "native_card_lookup_menu_glyph": "Exclusive mode_deck island .data_09EEC5EC -> card_lookup_menu_glyph_data.c native .data"
   },
   "regions": {
     "us": {
@@ -4361,8 +4362,8 @@
           ]
         },
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EEC5EC",
+          "unit": "card_lookup_menu_glyph_data.c",
+          "section": ".data",
           "address": "0x9eec5f0",
           "size": 112,
           "sha256": "dd3634b38b9fb4b9e051dc415337590a1bf2b256899e61b2fb327ec596509cb4",
@@ -8816,8 +8817,8 @@
           ]
         },
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EEC5EC",
+          "unit": "card_lookup_menu_glyph_data.c",
+          "section": ".data",
           "address": "0x9ec39dc",
           "size": 112,
           "sha256": "929c712ab0f65d636a2eb8e28dc2b47bd08aaa08fadeb12ec6c280212cb5441b",
@@ -13271,8 +13272,8 @@
           ]
         },
         {
-          "unit": "card_lookup_data.c",
-          "section": ".data_09EEC5EC",
+          "unit": "card_lookup_menu_glyph_data.c",
+          "section": ".data",
           "address": "0x9f777d4",
           "size": 112,
           "sha256": "82d6e498664fdd6eafcfa2544365136c2977f76fd8df256fa29587a0a43ea270",

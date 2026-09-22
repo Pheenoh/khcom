@@ -1,14 +1,15 @@
 {
   "version": 1,
   "provenance": {
-    "pc_cycle": "func_0810B4A8 initializes secondary palette-cycle state0. func_0810B4B4 follows the complete three-state1,2,0 successor cycle and compares against the corresponding three signed durations6,6,6. Those independently rooted halfword tables are six bytes each; no following two-byte padding is counted."
+    "pc_cycle": "func_0810B4A8 initializes secondary palette-cycle state0. func_0810B4B4 follows the complete three-state1,2,0 successor cycle and compares against the corresponding three signed durations6,6,6. Those independently rooted halfword tables are six bytes each; no following two-byte padding is counted.",
+    "native_pc_palette_cycle": "Exclusive bos6 island .data_pc_secondary_palette_cycle -> boss_pc_secondary_palette_cycle_data.c native .data"
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_secondary_palette_cycle",
+          "unit": "boss_pc_secondary_palette_cycle_data.c",
+          "section": ".data",
           "address": "0x9a4cabe",
           "size": 12,
           "objects": [
@@ -30,8 +31,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_secondary_palette_cycle",
+          "unit": "boss_pc_secondary_palette_cycle_data.c",
+          "section": ".data",
           "address": "0x9a01546",
           "size": 12,
           "objects": [
@@ -53,8 +54,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "boss_pc_data.c",
-          "section": ".data_pc_secondary_palette_cycle",
+          "unit": "boss_pc_secondary_palette_cycle_data.c",
+          "section": ".data",
           "address": "0x9aaa582",
           "size": 12,
           "objects": [

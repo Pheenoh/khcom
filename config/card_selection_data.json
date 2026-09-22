@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "map_selection": "MapSelect passes gUnk_09EE4BB0 to SetBgMapBlocks with 1 by 2 blocks. The cursor index is explicitly cycled through 0..4 and its row is XORed with 1, proving the separate s16[5] and s16[2] coordinate arrays. func_08093E34 loops i from a to a+9 and indexes gUnk_09EE4BE0[i-a], proving ten u16 tile destinations. The WORLDSELECT Mode is independently identified by its exact ASCII name and the unique ordered triple WORLDSELECT_0/1/2 callbacks in each native ROM.",
-    "native_selection_catalog": "The existing MapSelect resource pointers, cursor coordinates and EU language selectors form one native initialized-data prefix: 22 bytes in US/JP and 84 bytes in EU, including the native two-byte pointer-alignment gap in EU. Complete definitions are ordered by their original regional positions without changing types, bounds, initializer tokens or regional presence. The EU five-entry tile-size table is read only as a scalar LoadObjTiles argument and is reconstructed as const, yielding its existing 10-byte readonly span. The ten-entry tile-destination table remains explicitly placed because the owning MapSelect TaskDesc interrupts the initialized-data run; no callback metadata is moved to this catalog merely to close that gap. All existing object contracts and payloads are retained, and no new translation-unit boundary is claimed."
+    "native_selection_catalog": "The existing MapSelect resource pointers, cursor coordinates and EU language selectors form one native initialized-data prefix: 22 bytes in US/JP and 84 bytes in EU, including the native two-byte pointer-alignment gap in EU. Complete definitions are ordered by their original regional positions without changing types, bounds, initializer tokens or regional presence. The EU five-entry tile-size table is read only as a scalar LoadObjTiles argument and is reconstructed as const, yielding its existing 10-byte readonly span. The ten-entry tile-destination table remains explicitly placed because the owning MapSelect TaskDesc interrupts the initialized-data run; no callback metadata is moved to this catalog merely to close that gap. All existing object contracts and payloads are retained, and no new translation-unit boundary is claimed.",
+    "native_card_selection_cursor_x": "Exclusive card island .data_card_selection_09EE4BE0 -> card_selection_cursor_x_data.c native .data"
   },
   "regions": {
     "us": {
@@ -44,8 +45,8 @@
           ]
         },
         {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BE0",
+          "unit": "card_selection_cursor_x_data.c",
+          "section": ".data",
           "address": "0x9ee4be0",
           "size": 20,
           "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
@@ -139,8 +140,8 @@
           ]
         },
         {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BE0",
+          "unit": "card_selection_cursor_x_data.c",
+          "section": ".data",
           "address": "0x9ebc238",
           "size": 20,
           "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
@@ -261,8 +262,8 @@
           ]
         },
         {
-          "unit": "card_selection_data.c",
-          "section": ".data_card_selection_09EE4BE0",
+          "unit": "card_selection_cursor_x_data.c",
+          "section": ".data",
           "address": "0x9f6ff9c",
           "size": 20,
           "sha256": "19f8ae469ea5de1c36d5acfcfe7afd69e24fd3b749346d39d9aaba779506a367",
