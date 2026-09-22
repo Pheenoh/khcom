@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
+import json
 import os
-import re
 import subprocess
 import sys
 import tempfile
@@ -13,180 +13,17 @@ GBAGFX = ROOT / "tools" / "gbagfx" / "gbagfx"
 VERSIONS = ("us", "jp", "eu")
 SOURCE_EXT = {"tiles4": "png", "tiles8": "png", "palette": "pal", "tilemap": "bin", "raw": "bin"}
 BINARY_EXT = {"tiles4": "4bpp", "tiles8": "8bpp", "palette": "gbapal", "tilemap": "bin", "raw": "bin"}
-INT_RE = re.compile(r"-?(0x[0-9A-Fa-f]+|\d+)$")
-BARE_RE = re.compile(r"[A-Za-z0-9_./*\-+]+( [A-Za-z0-9_./*\-+]+)*$")
 
 
 class ManifestError(Exception):
     pass
 
 
-def parse_scalar(text):
-    text = text.strip()
-    if text in ("null", "~", ""):
-        return None
-    if text == "true":
-        return True
-    if text == "false":
-        return False
-    if INT_RE.match(text):
-        return int(text, 0)
-    if text[0] in "\"'":
-        return text[1:-1]
-    return text
-
-
-def split_flow(text):
-    parts, depth, cur = [], 0, ""
-    for ch in text:
-        if ch in "[{":
-            depth += 1
-        elif ch in "]}":
-            depth -= 1
-        if ch == "," and depth == 0:
-            parts.append(cur)
-            cur = ""
-        else:
-            cur += ch
-    if cur.strip():
-        parts.append(cur)
-    return parts
-
-
-def parse_flow(text):
-    text = text.strip()
-    if text.startswith("["):
-        return [parse_flow(p) for p in split_flow(text[1:-1])]
-    if text.startswith("{"):
-        out = {}
-        for part in split_flow(text[1:-1]):
-            key, _sep, value = part.partition(":")
-            out[key.strip()] = parse_flow(value)
-        return out
-    return parse_scalar(text)
-
-
-def parse_block(lines, index, indent):
-    out = None
-    while index < len(lines):
-        raw = lines[index]
-        if not raw.strip():
-            index += 1
-            continue
-        current = len(raw) - len(raw.lstrip(" "))
-        if current < indent:
-            break
-        if current > indent:
-            raise ManifestError(f"line {index + 1}: unexpected indentation")
-        body = raw.strip()
-        if body.startswith("- "):
-            if out is None:
-                out = []
-            if not isinstance(out, list):
-                raise ManifestError(f"line {index + 1}: sequence item inside a mapping")
-            item = body[2:]
-            if ":" in item and not item.startswith(("[", "{", "\"", "'")):
-                lines[index] = " " * (indent + 2) + item
-                value, index = parse_block(lines, index, indent + 2)
-                out.append(value)
-            else:
-                out.append(parse_flow(item))
-                index += 1
-            continue
-        if out is None:
-            out = {}
-        if not isinstance(out, dict):
-            raise ManifestError(f"line {index + 1}: mapping key inside a sequence")
-        key, sep, value = body.partition(":")
-        if not sep:
-            raise ManifestError(f"line {index + 1}: expected key: value")
-        value = value.strip()
-        if value:
-            out[key.strip()] = parse_flow(value)
-            index += 1
-        else:
-            nested, index = parse_block(lines, index + 1, indent + 2)
-            out[key.strip()] = nested
-    return out, index
-
-
-def load_yaml(path):
-    lines = Path(path).read_text().splitlines()
-    value, index = parse_block(lines, 0, 0)
-    if index != len(lines):
-        raise ManifestError(f"{path}: trailing content at line {index + 1}")
-    return value
-
-
-def format_scalar(value, hex_keys=False):
-    if value is None:
-        return "null"
-    if value is True:
-        return "true"
-    if value is False:
-        return "false"
-    if isinstance(value, int):
-        return f"0x{value:08X}" if hex_keys else str(value)
-    if BARE_RE.match(value) and not INT_RE.match(value) and value not in ("null", "true", "false", "~"):
-        return value
-    return "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
-
-
-HEX_KEYS = {"address", "start", "end"}
-
-
-def format_flow(value, key=None):
-    if isinstance(value, dict):
-        return "{" + ", ".join(f"{k}: {format_flow(v, k)}" for k, v in value.items()) + "}"
-    if isinstance(value, list):
-        return "[" + ", ".join(format_flow(v, key) for v in value) + "]"
-    return format_scalar(value, key in HEX_KEYS)
-
-
-def is_flat(value):
-    if isinstance(value, dict):
-        return all(not isinstance(v, (dict, list)) or is_flat(v) for v in value.values()) and len(value) <= 24
-    if isinstance(value, list):
-        return all(not isinstance(v, (dict, list)) for v in value)
-    return True
-
-
-def dump_lines(value, indent, out, key=None):
-    pad = " " * indent
-    if isinstance(value, dict):
-        for k, v in value.items():
-            if isinstance(v, dict) and (not is_flat(v) or k in ("types", "objects", "fields") and indent == 0):
-                out.append(f"{pad}{k}:")
-                dump_lines(v, indent + 2, out, k)
-            elif isinstance(v, list) and any(isinstance(x, (dict, list)) for x in v):
-                out.append(f"{pad}{k}:")
-                dump_lines(v, indent + 2, out, k)
-            else:
-                out.append(f"{pad}{k}: {format_flow(v, k)}")
-    elif isinstance(value, list):
-        for v in value:
-            if isinstance(v, dict) and (not is_flat(v) or len(v) > 2):
-                items = list(v.items())
-                first_key, first_value = items[0]
-                out.append(f"{pad}- {first_key}: {format_flow(first_value, first_key)}")
-                rest = dict(items[1:])
-                dump_lines(rest, indent + 2, out)
-            else:
-                out.append(f"{pad}- {format_flow(v, key)}")
-    else:
-        out.append(f"{pad}{format_flow(value, key)}")
-
-
-def dump_yaml(value, path):
-    out = []
-    dump_lines(value, 0, out)
-    Path(path).write_text("\n".join(out) + "\n")
-
-
 class Manifest:
     def __init__(self, path):
         self.path = Path(path)
-        doc = load_yaml(self.path)
+        with self.path.open() as handle:
+            doc = json.load(handle)
         for key in ("group", "types", "objects", "entries"):
             if key not in doc:
                 raise ManifestError(f"{self.path}: missing {key}")
@@ -266,7 +103,7 @@ def record_size(rtype, version):
 
 
 def load_manifests(directory=MANIFEST_DIR):
-    return [Manifest(path) for path in sorted(Path(directory).glob("*.yaml"))]
+    return [Manifest(path) for path in sorted(Path(directory).glob("*.json"))]
 
 
 def plan(version, manifests=None):
