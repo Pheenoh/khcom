@@ -2189,17 +2189,55 @@ const char gTaskNameWlogoTvt[] = "task_wlogo_tvt";
 
 const char gTaskNameWlogoPoo[] = "task_wlogo_poo";
 
-const char gTaskNameWlogoPooObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoPooObj"), aligned(1))) = "task_wlogo_poo_obj";
+const WlogoPooObjStep gUnk_09619A04[5][5] = {
+    {
+        { 20, { 0, 0 }, -128, 0, 0, -2 },
+        { 20, { 0, 0 }, -128, -51, 0, -2 },
+        { 20, { 0, 0 }, -128, -102, 0, -2 },
+        { 20, { 0, 0 }, -128, -153, 0, -2 },
+        { 10, { 0, 0 }, -128, -204, 0, 0 },
+    },
+    {
+        { 20, { 0, 0 }, -128, 0, 0, 5 },
+        { 20, { 0, 0 }, -128, 0, 0, -5 },
+        { 20, { 0, 0 }, -128, 0, 0, 5 },
+        { 20, { 0, 0 }, -128, 0, 0, -7 },
+        { 10, { 0, 0 }, -128, -25, 0, 0 },
+    },
+    {
+        { 20, { 0, 0 }, 128, 0, 0, -5 },
+        { 20, { 0, 0 }, 128, 0, 0, 7 },
+        { 20, { 0, 0 }, 128, 0, 0, -5 },
+        { 20, { 0, 0 }, 128, 0, 0, 2 },
+        { 10, { 0, 0 }, 128, -51, 0, 0 },
+    },
+    {
+        { 20, { 0, 0 }, 128, 0, 0, 5 },
+        { 20, { 0, 0 }, 128, 51, 0, 2 },
+        { 20, { 0, 0 }, 128, 76, 0, -5 },
+        { 20, { 0, 0 }, 128, 25, 0, -2 },
+        { 10, { 0, 0 }, 128, 25, 0, 0 },
+    },
+    {
+        { 0, { 0, 0 }, 0, 0, 0, 0 },
+        { 0, { 0, 0 }, 0, 0, 0, 0 },
+        { 0, { 0, 0 }, 0, 0, 0, 0 },
+        { 0, { 0, 0 }, 0, 0, 0, 0 },
+        { 0, { 0, 0 }, 0, 0, 0, 0 },
+    },
+};
 
-const char gTaskNameWlogoTt[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTt"), aligned(1))) = "task_wlogo_tt";
+const char gTaskNameWlogoPooObj[] = "task_wlogo_poo_obj";
 
-const char gTaskNameWlogoTtObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTtObj"), aligned(1))) = "task_wlogo_tt_obj";
+const char gTaskNameWlogoTt[] = "task_wlogo_tt";
 
-const char gTaskNameWlogoTtLine[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoTtLine"), aligned(1))) = "task_wlogo_tt_line";
+const char gTaskNameWlogoTtObj[] = "task_wlogo_tt_obj";
 
-const char gTaskNameWlogoBks[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoBks"), aligned(1))) = "task_wlogo_bks";
+const char gTaskNameWlogoTtLine[] = "task_wlogo_tt_line";
 
-const char gTaskNameWlogoBksObj[] __attribute__((section(".rodata_registration_name_gTaskDescWlogoBksObj"), aligned(1))) = "task_wlogo_bks_obj";
+const char gTaskNameWlogoBks[] = "task_wlogo_bks";
+
+const char gTaskNameWlogoBksObj[] = "task_wlogo_bks_obj";
 
 TaskDesc gTaskDescWlogoMons = {
     gTaskNameWlogoMons,

@@ -445,7 +445,7 @@ typedef struct WlogoMonsWork {
     u8 unk_02F;
 } WlogoMonsWork;
 extern s32 gUnk_0203AB38;
-extern WlogoPooObjStep gUnk_09619A04[][5];
+extern const WlogoPooObjStep gUnk_09619A04[5][5];
 extern u8 gUnk_0961AA92[];
 extern u8 gUnk_0961B072[];
 extern u8 gUnk_0961C062[];
