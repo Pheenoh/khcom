@@ -29,11 +29,10 @@ from rom_data_evidence import data_symbol_map, load_evidence
 from movie_assets import apply_movie_regions, load_movie_assets
 from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_function_modes, trace_literal_loads
 import baserom
-from regional_data import asset_symbols, load_sidecars, managed_asset_names, managed_placements, merge_placements, placement_overrides
+from regional_data import asset_symbols, load_sidecars, managed_asset_names
 
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
-ROM_END = 0x0A000000
 
 VENEER_STUB = bytes((0x78, 0x47, 0xC0, 0x46))
 VENEER_SIZE = 8
@@ -3393,6 +3392,72 @@ TARGET_DATA_SIZE = {
         ("card_worldselect.c", ".rodata"): 0x38,
         ("card_worldselect.c", ".data"): 0x2A74,
         ("card_deckmenu2.c", ".data"): 0x194,
+        ("mode_battle.c", ".data"): 0x20,
+        ("jiminy_data.c", ".data"): 0xd994,
+        ("mode_test.c", ".rodata"): 0xe,
+        ("mode_test.c", ".data"): 0x18,
+        ("animation_resource_mode_test_data.c", ".data"): 0x0,
+        ("card_label_data.c", ".rodata"): 0x78c,
+        ("continue_ui.c", ".data"): 0x44,
+        ("card_help_data.c", ".rodata"): 0x298,
+        ("card_localized_deck_labels_data.c", ".data"): 0xe4,
+        ("msg_font_data.c", ".data"): 0x4bc,
+        ("card_sprite_data.c", ".data"): 0x2b8,
+        ("mode_sio_dbg.c", ".data"): 0x40,
+        ("poo.c", ".data"): 0xc00,
+        ("allmap.c", ".data"): 0xb8,
+        ("title.c", ".data"): 0x9c,
+        ("status.c", ".rodata"): 0x137,
+        ("status.c", ".data"): 0x198,
+        ("actor_ui_resource_data.c", ".data"): 0x6c8,
+        ("map_ui_data.c", ".data"): 0x36c,
+        ("bos5.c", ".data"): 0x168,
+        ("mode_ms_top.c", ".data"): 0x74,
+        ("mode_ms.c", ".data"): 0x4c,
+        ("ms_charge.c", ".data"): 0x60,
+        ("mode_mapinspect.c", ".rodata"): 0x24,
+        ("mode_mapinspect.c", ".data"): 0xc4,
+        ("room_resources_data.c", ".data"): 0x71c,
+        ("staff_roll_script_data.c", ".data"): 0xb50,
+        ("staff_roll_resource_data.c", ".data"): 0x908,
+        ("movie_debug.c", ".rodata"): 0x84,
+        ("jiminy_eu_localized_text_data.c", ".rodata"): 0x3ba89,
+        ("jiminy_inline_text_data.c", ".rodata"): 0x1c4,
+        ("jiminy_eu_localized_name_data.c", ".rodata"): 0x4150,
+        ("map_text_eu_castle_oblivion_hall_name.c", ".rodata"): 0x14,
+        ("jiminy_eu_room_name_data.c", ".rodata"): 0xc14,
+        ("map_text_eu_unknown_place_name.c", ".rodata"): 0x14,
+        ("map_text_eu_hidden_room_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_1f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_2f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_3f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_4f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_5f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_6f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_7f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_8f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_9f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_10f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_11f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_12f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_13f_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b12_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b11_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b10_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b9_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b8_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b7_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b6_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b5_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b4_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b3_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b2_name.c", ".rodata"): 0x14,
+        ("map_text_eu_castle_oblivion_b1_name.c", ".rodata"): 0x14,
+        ("jiminy_eu_epilogue_name_data.c", ".rodata"): 0x1034,
+        ("movie_debug.c", ".data"): 0x10,
+        ("mode_test_data.c", ".data"): 0x140,
+        ("msg_localized_data.c", ".data"): 0x1075c,
+        ("staff_roll_localized_resource_data.c", ".data"): 0xaa0,
     },
     "jp": {
         ("sroll.c", ".rodata"): 0x287,
@@ -3401,6 +3466,88 @@ TARGET_DATA_SIZE = {
         ("animation_resource_09EFB840_data.c", ".data"): 0x29C,
         ("card_help_data.c", ".data"): 0x384,
         ("card_deckmenu2.c", ".data"): 0xF8,
+        ("jiminy_data.c", ".data"): 0x23d4,
+        ("card_help_data.c", ".rodata"): 0x1a28,
+        ("card_localized_deck_labels_data.c", ".data"): 0x2c,
+        ("staff_roll_script_data.c", ".data"): 0xb90,
+        ("staff_roll_resource_data.c", ".data"): 0x958,
+        ("jiminy_inline_text_data.c", ".rodata"): 0x1c9,
+    },
+}
+
+TARGET_DATA_ADDR = {
+    "jp": {
+        ("jiminy_inline_text_data.c", ".rodata"): 0x0813feb8,
+        ("mode_jiminy.c", ".rodata"): 0x0814e570,
+        ("monsgage.c", ".rodata"): 0x0814fc14,
+        ("btl4.c", ".rodata"): 0x0814fc24,
+        ("tutorial.c", ".rodata"): 0x0814fc68,
+        ("card_help_data.c", ".rodata"): 0x0900ba1c,
+        ("staff_roll_script_data.c", ".rodata"): 0x09a06558,
+    },
+    "eu": {
+        ("movie_debug.c", ".rodata"): 0x0812f680,
+        ("jiminy_eu_localized_text_data.c", ".rodata"): 0x0883f2db,
+        ("mode_jiminy.c", ".rodata"): 0x0887f334,
+        ("jiminy_inline_text_data.c", ".rodata"): 0x0888e310,
+        ("jiminy_eu_localized_name_data.c", ".rodata"): 0x0888e530,
+        ("map_text_eu_castle_oblivion_hall_name.c", ".rodata"): 0x088926fc,
+        ("jiminy_eu_room_name_data.c", ".rodata"): 0x08892710,
+        ("map_text_eu_unknown_place_name.c", ".rodata"): 0x08893370,
+        ("map_text_eu_hidden_room_name.c", ".rodata"): 0x088933d4,
+        ("map_text_eu_castle_oblivion_1f_name.c", ".rodata"): 0x08893480,
+        ("map_text_eu_castle_oblivion_2f_name.c", ".rodata"): 0x0889352c,
+        ("map_text_eu_castle_oblivion_3f_name.c", ".rodata"): 0x088935d8,
+        ("map_text_eu_castle_oblivion_4f_name.c", ".rodata"): 0x08893684,
+        ("map_text_eu_castle_oblivion_5f_name.c", ".rodata"): 0x08893730,
+        ("map_text_eu_castle_oblivion_6f_name.c", ".rodata"): 0x088937dc,
+        ("map_text_eu_castle_oblivion_7f_name.c", ".rodata"): 0x0889388c,
+        ("map_text_eu_castle_oblivion_8f_name.c", ".rodata"): 0x08893938,
+        ("map_text_eu_castle_oblivion_9f_name.c", ".rodata"): 0x088939e4,
+        ("map_text_eu_castle_oblivion_10f_name.c", ".rodata"): 0x08893a94,
+        ("map_text_eu_castle_oblivion_11f_name.c", ".rodata"): 0x08893b48,
+        ("map_text_eu_castle_oblivion_12f_name.c", ".rodata"): 0x08893bfc,
+        ("map_text_eu_castle_oblivion_13f_name.c", ".rodata"): 0x08893cb8,
+        ("map_text_eu_castle_oblivion_b12_name.c", ".rodata"): 0x08893d78,
+        ("map_text_eu_castle_oblivion_b11_name.c", ".rodata"): 0x08893e38,
+        ("map_text_eu_castle_oblivion_b10_name.c", ".rodata"): 0x08893ef4,
+        ("map_text_eu_castle_oblivion_b9_name.c", ".rodata"): 0x08893fac,
+        ("map_text_eu_castle_oblivion_b8_name.c", ".rodata"): 0x08894068,
+        ("map_text_eu_castle_oblivion_b7_name.c", ".rodata"): 0x08894124,
+        ("map_text_eu_castle_oblivion_b6_name.c", ".rodata"): 0x088941dc,
+        ("map_text_eu_castle_oblivion_b5_name.c", ".rodata"): 0x08894294,
+        ("map_text_eu_castle_oblivion_b4_name.c", ".rodata"): 0x0889434c,
+        ("map_text_eu_castle_oblivion_b3_name.c", ".rodata"): 0x08894408,
+        ("map_text_eu_castle_oblivion_b2_name.c", ".rodata"): 0x088944c0,
+        ("map_text_eu_castle_oblivion_b1_name.c", ".rodata"): 0x08894578,
+        ("jiminy_eu_epilogue_name_data.c", ".rodata"): 0x0889548c,
+        ("monsgage.c", ".rodata"): 0x088964c0,
+        ("btl4.c", ".rodata"): 0x088964d0,
+        ("tutorial.c", ".rodata"): 0x08896514,
+        ("mode_test.c", ".rodata"): 0x08896644,
+        ("mode_test_support.c", ".rodata"): 0x08f7f15c,
+        ("msg_portrait_data.c", ".rodata"): 0x090cb778,
+        ("card_help_data.c", ".rodata"): 0x090d15a0,
+        ("mode_wlogo.c", ".rodata"): 0x095da8ac,
+        ("mode_sio2.c", ".rodata"): 0x096c934c,
+        ("mode_mapinspect.c", ".rodata"): 0x09999a50,
+        ("ms.c", ".rodata"): 0x09999a74,
+        ("mode_backupstat.c", ".rodata"): 0x09999a88,
+        ("staff_roll_script_data.c", ".rodata"): 0x09aaf400,
+        ("mode_battle.c", ".data"): 0x09f3ea64,
+        ("movie_debug.c", ".data"): 0x09f49a6c,
+        ("jiminy_data.c", ".data"): 0x09f49abc,
+        ("mode_test.c", ".data"): 0x09f59130,
+        ("mode_test_data.c", ".data"): 0x09f5d574,
+        ("continue_ui.c", ".data"): 0x09f5d7e4,
+        ("msg_localized_data.c", ".data"): 0x09f5d828,
+        ("event_background_data.c", ".data"): 0x09f6df84,
+        ("map_ui_data.c", ".data"): 0x09f843d8,
+        ("mode_ms_top.c", ".data"): 0x09f84ee8,
+        ("ms_charge.c", ".data"): 0x09f84fa8,
+        ("mode_mapinspect.c", ".data"): 0x09f85008,
+        ("staff_roll_resource_data.c", ".data"): 0x09f86cac,
+        ("staff_roll_localized_resource_data.c", ".data"): 0x09f8785c,
     },
 }
 
@@ -3736,8 +3883,6 @@ def main():
     ot = baserom.read(ver, purpose="gen_version.py")
     regional = load_sidecars("config", {"us": us, ver: ot})
     regional_plan = regional["regions"][ver]
-    regional_managed = managed_placements(regional)
-    regional_overrides = placement_overrides(regional_plan)
     literal_loads = load_literal_loads("build/us/com_us.elf", ROM_BASE, CODE_HI)
     function_modes = load_function_modes("build/us/com_us.elf", ROM_BASE, CODE_HI)
     rows = load_rows(ver)
@@ -3959,7 +4104,7 @@ def main():
         placed_in = sections.get(nm, set())
         return bool(placed_in) and placed_in <= {".rodata", ".data"}
 
-    head, body, cdata, blobs = [], [], [], []
+    head, body, cdata, blobs, placed = [], [], [], [], set()
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
         if not t or t.startswith("#"):
@@ -3978,15 +4123,13 @@ def main():
                 key = nm, sec
                 if key not in spans:
                     continue
-                if key in regional_managed:
-                    if key not in regional_overrides:
-                        continue
-                    here, size = regional_overrides[key]
-                else:
-                    lo, size = spans[key]
+                lo, size = spans[key]
+                here = TARGET_DATA_ADDR.get(ver, {}).get(key)
+                if here is None:
                     here, _ = tr(lo)
-                    size = TARGET_DATA_SIZE.get(ver, {}).get(key, size)
+                size = TARGET_DATA_SIZE.get(ver, {}).get(key, size)
                 cdata.append((here, size, f"{nm}({sec})"))
+                placed.add(key)
             if data_only(nm):
                 continue
         key = unit_key(nm)
@@ -3994,7 +4137,9 @@ def main():
             head.append(line)
             continue
         body.append((key, line))
-    cdata = merge_placements(cdata, regional_plan, code_end, min(ROM_END, ROM_BASE + len(ot)), regional_managed)
+    for key, here in TARGET_DATA_ADDR.get(ver, {}).items():
+        if key not in placed:
+            cdata.append((here, TARGET_DATA_SIZE.get(ver, {})[key], f"{key[0]}({key[1]})"))
     dropped = [l for k, l in body if k == "absent"]
     for l in dropped:
         print(f"  unit dropped: {l}")
@@ -4065,6 +4210,8 @@ def main():
     tail, bounds = [], []
     pos = code_end
     for lo, size, line in sorted(cdata):
+        if pos < lo < pos + 4 and lo % 4 == 0 and not any(ot[pos - ROM_BASE:lo - ROM_BASE]):
+            pos = lo
         if lo > pos:
             for nm, a, b in blob(pos, lo):
                 bounds.append((nm, a, b))

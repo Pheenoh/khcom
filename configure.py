@@ -11,7 +11,7 @@ sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
 from assembler_flags import software_fp_flags
 from asset_objects import materialize_assets
-from regional_data import asset_symbols, linker_assertions, load_sidecars, managed_placements, validate_active_sections
+from regional_data import asset_symbols, load_sidecars
 
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
 LEGACY_ASM_UNITS = {"libagbsyscall.s", "m4a_1.s", "transform_veneers.s"}
@@ -169,8 +169,6 @@ regional_files = sorted(Path("config").glob("*_data.json"))
 regional = load_sidecars("config")
 regional_plan = regional["regions"][version]
 symbols.extend(asset_symbols(regional_plan, symbols))
-regional_sections = {(placement["unit"], placement["section"]): placement
-                     for placement in regional_plan["placements"]}
 
 units_file = Path(f"config/{version}/units.txt")
 units = []
@@ -550,11 +548,6 @@ if pending_uncovered:
         f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
     )
 
-listed_units = {src.name for src, _obj, _flags in units if src is not None and src.suffix == ".c"}
-validate_active_sections(regional_plan,
-                         [(placement["unit"], placement["section"]) for placement in regional_plan["placements"]
-                          if placement["unit"] in listed_units],
-                         managed_placements(regional))
 
 
 objs_linked = [obj for _src, obj, _flags in units]
@@ -619,8 +612,7 @@ with out.open("w") as f:
     )
     n.rule(
         "ld",
-        command="$ld -T $ldscript -Map $map -o $out $in" +
-                (f" && {report_python} tools/regional_data.py {version} --binutils-prefix {prefix}" if regional_files else ""),
+        command="$ld -T $ldscript -Map $map -o $out $in",
         description="LD $out",
     )
     n.rule(
@@ -779,12 +771,14 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript, str(legacy_linker)] + (["tools/regional_data.py", "tools/rom_data_evidence.py"]
-                              + [str(path) for path in regional_files] if regional_files else []),
+        implicit=[ldscript, str(legacy_linker)],
         variables={"ldscript": ldscript, "map": mapfile},
     )
     n.build(rom, "rom", elf, implicit=["tools/gbafix.py"])
-    n.build(f"{build_dir}/ok", "check", rom, implicit_outputs=[verified])
+    n.build(f"{build_dir}/ok", "check", rom,
+            implicit=(["tools/regional_data.py", "tools/rom_data_evidence.py"] + [str(path) for path in regional_files]
+                      if regional_files else []),
+            implicit_outputs=[verified])
     n.newline()
 
     report = f"{build_dir}/report.json"

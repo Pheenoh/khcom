@@ -8,46 +8,6 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".rodata",
-          "address": "0x961a9ec",
-          "size": 17,
-          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
-          "objects": [
-            {
-              "name": "gModeNameSioDbgFlg",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".data",
-          "address": "0x9ef34f0",
-          "size": 44,
-          "sha256": "9b7f238168b1e307d2dba6e4435d5b4dfd7db684960ea0e8b2634666979a1461",
-          "objects": [
-            {
-              "name": "gUnk_09EF34F0",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF3504",
-              "offset": 20,
-              "size": 8
-            },
-            {
-              "name": "gModeSioDbgFlg",
-              "offset": 28,
-              "size": 16
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gDebugMenuTextUs_0984B648",
@@ -202,46 +162,6 @@
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".rodata",
-          "address": "0x95d34c8",
-          "size": 17,
-          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
-          "objects": [
-            {
-              "name": "gModeNameSioDbgFlg",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".data",
-          "address": "0x9eca8dc",
-          "size": 44,
-          "sha256": "068dbd0268de379398298c4a39c6934235b361d66445ea8c14943ca5acddfbc6",
-          "objects": [
-            {
-              "name": "gUnk_09EF34F0",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF3504",
-              "offset": 20,
-              "size": 8
-            },
-            {
-              "name": "gModeSioDbgFlg",
-              "offset": 28,
-              "size": 16
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gDebugMenuTextJp_0980015C",
@@ -396,51 +316,6 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".rodata",
-          "address": "0x95dbecc",
-          "size": 17,
-          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
-          "objects": [
-            {
-              "name": "gModeNameSioDbgFlg",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio_dbg.c",
-          "section": ".data",
-          "address": "0x9f7e728",
-          "size": 64,
-          "sha256": "a4dd1d05987f9d9bb86ed3343351b00982510f18b4c305b006e4ebf2eaa500fc",
-          "objects": [
-            {
-              "name": "gUnk_09EF34F0",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gSioUnusedFlagLabelEu_09F7E750",
-              "offset": 40,
-              "size": 4
-            },
-            {
-              "name": "gSioUnusedFlagLabelEu_09F7E754",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gModeSioDbgFlg",
-              "offset": 48,
-              "size": 16
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gDebugMenuTextEu_0982801C",

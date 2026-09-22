@@ -6,7 +6,6 @@
   },
   "regions": {
     "us": {
-      "placements": [],
       "named_assets": [
         {
           "name": "gCardDescriptionTextUs_09042080",
@@ -827,7 +826,6 @@
       ]
     },
     "jp": {
-      "placements": [],
       "named_assets": [
         {
           "name": "gCardDescriptionTextJp_090106C0",
@@ -1648,7 +1646,6 @@
       ]
     },
     "eu": {
-      "placements": [],
       "named_assets": []
     }
   }

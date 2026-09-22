@@ -8,61 +8,6 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "mode_mapchk.c",
-          "section": ".data",
-          "address": "0x9ef6960",
-          "size": 128,
-          "sha256": "13f7f3ef83388e3310848851eb5dc2bcaeb89afc947cd2bc1f343e7054ef8f37",
-          "objects": [
-            {
-              "name": "gUnk_09EF6960",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF6974",
-              "offset": 20,
-              "size": 52
-            },
-            {
-              "name": "gUnk_09EF69A8",
-              "offset": 72,
-              "size": 40
-            },
-            {
-              "name": "gModeMapChk",
-              "offset": 112,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data",
-          "address": "0x9ef69e0",
-          "size": 84,
-          "sha256": "d85dda84bafc80542a0800944088d0edcc3b61393684221b0241c6146408c954",
-          "objects": [
-            {
-              "name": "gUnk_09EF69E0",
-              "offset": 0,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69EE",
-              "offset": 14,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69FC",
-              "offset": 28,
-              "size": 56
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gMapWorldNameTextUs_0815B57A",
@@ -73,61 +18,6 @@
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "mode_mapchk.c",
-          "section": ".data",
-          "address": "0x9ecdd4c",
-          "size": 128,
-          "sha256": "9a48e587d19c134ebc827a1ce63d6b4b410f7cacdd89d26a53557b3e11eb8c94",
-          "objects": [
-            {
-              "name": "gUnk_09EF6960",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF6974",
-              "offset": 20,
-              "size": 52
-            },
-            {
-              "name": "gUnk_09EF69A8",
-              "offset": 72,
-              "size": 40
-            },
-            {
-              "name": "gModeMapChk",
-              "offset": 112,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data",
-          "address": "0x9ecddcc",
-          "size": 84,
-          "sha256": "3ddcf02ecda4aaa7f349e379ed2623da158532177a6acca8a5275b509d4e8fc7",
-          "objects": [
-            {
-              "name": "gUnk_09EF69E0",
-              "offset": 0,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69EE",
-              "offset": 14,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69FC",
-              "offset": 28,
-              "size": 56
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gMapWorldNameTextJp_0814F2E0",
@@ -138,75 +28,6 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "map_text_eu_castle_oblivion_hall_name.c",
-          "section": ".rodata",
-          "address": "0x88926fc",
-          "size": 20,
-          "sha256": "bd6e133583cfc69e633e7e415036e442ad4840c3aa150d28a79f413dab47ea0f",
-          "objects": [
-            {
-              "name": "gMapWorldNameEu_088926FC",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "mode_mapchk.c",
-          "section": ".data",
-          "address": "0x9f81fd0",
-          "size": 128,
-          "sha256": "c7dd07cd8bbcbaad93724001202ed8d60fe1404700bb7918b20b30496df942fe",
-          "objects": [
-            {
-              "name": "gUnk_09EF6960",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF6974",
-              "offset": 20,
-              "size": 52
-            },
-            {
-              "name": "gUnk_09EF69A8",
-              "offset": 72,
-              "size": 40
-            },
-            {
-              "name": "gModeMapChk",
-              "offset": 112,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "map_runtime.c",
-          "section": ".data",
-          "address": "0x9f82050",
-          "size": 84,
-          "sha256": "09475b108e08043e171aee1c71a06b043e024699f0ad0e6aef54050daca377a6",
-          "objects": [
-            {
-              "name": "gUnk_09EF69E0",
-              "offset": 0,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69EE",
-              "offset": 14,
-              "size": 14
-            },
-            {
-              "name": "gUnk_09EF69FC",
-              "offset": 28,
-              "size": 56
-            }
-          ]
-        }
-      ],
       "named_assets": [
         {
           "name": "gMapWorldNameTextEu_08892680",

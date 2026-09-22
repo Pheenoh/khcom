@@ -1,6 +1,8 @@
 #include "animation_resource_data.h"
 #include "animation_resource_assets.h"
 
+#ifndef VERSION_EU
+
 void* gUnk_09EE14D4[14] = {
     gUnk_08B24C98,
     gUnk_08B24CA2,
@@ -25,3 +27,5 @@ AnimHeader* gUnk_09EE150C[5] = {
     &gUnk_08B24D96,
     &gUnk_08B24DA0,
 };
+
+#endif

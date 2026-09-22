@@ -6,14 +6,7 @@
     "native_owner": "The 17 existing reload/prize table objects are consumed only by card.c, or are retained named dormant pointers, and interleave 27 task descriptors that name callbacks in the same owner. Ordinary definitions reproduce the complete native initialized-data run: 44 objects in US/JP and 48 in EU, where four five-language indexes are read only by the corresponding event-key and premiere callbacks. The three tile/animation/gfx indexes share the same language selection; the fourth selects the premiere sprite. Five EU tile extents come from complete Sprite tile spans decoded using GetObjTileCount and the engine DMA offset formula. Each tile span ends at the next independently identified Sprite, apart from two retained alignment bytes after the 0x580 and 0x800 spans. Real bounded Tiles4bpp labels remain inside the unchanged original asset stream. All existing types, guards, object bounds, pointer targets and dormant objects are preserved. This recovers the native ownership of this contiguous data group without claiming complete original boundaries for the remaining card code and interleaved data."
   },
   "regions": {
-    "us": {
-      "placements": []
-    },
-    "jp": {
-      "placements": []
-    },
     "eu": {
-      "placements": [],
       "binary_assets": [
         {
           "name": "gUnkEu_094C6154",

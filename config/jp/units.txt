@@ -20,7 +20,6 @@ mode_chkeff.c
 mode_dummy.c
 mode_debflag.c
 mode_vsbattle.c
-data.s
 formation_data.c
 enemy_tile_counts.c
 emy_common.c
@@ -50,13 +49,11 @@ smn.c
 frd.c
 pc.c
 hum.c
-data_at_0813FE9A.s
 save_signature.c
 jiminy_data.c
 jiminy_inline_text_data.c
 rodata_script.s
 jiminy_records_index_data.c
-rodata_script_at_08149CD2.s
 jiminy_records_data.c
 rodata_script_jiminy_gap_08159D14.s
 jiminy_list.c
@@ -125,7 +122,6 @@ asset_gfx_gap_3_at_08F7D436.s
 boss_card_data.c
 msg.c
 continue_ui.c
-asset_gfx_gap_3_at_08F7D436_at_08F71015.s
 event_background_08F7DB10_data.c
 event_background_08F7DB40_data.c
 event_background_defs_01_data.c
@@ -613,9 +609,8 @@ asset_gfx_gap_18.s
 card_card.c
 asset_gfx_gap_18_at_09034084.s
 card_battle_riku.c
-asset_gfx_gap_20.s
 card_map_anim.c
-asset_gfx_gap_20_at_090089AE.s
+asset_gfx_gap_20.s
 rodata_regtables3_gap_10.s
 asset_gfx_gap_21_at_090356EA.s
 card_deckmenu2.c
@@ -623,7 +618,6 @@ asset_gfx_gap_21_at_09035742.s
 card_deckcard2.c
 asset_gfx_gap_21_at_09035976.s
 card_enemy.c
-asset_gfx_gap_21_at_090359B9.s
 card_worldselect.c
 asset_gfx_gap_23.s
 card_prize_card.c
@@ -649,7 +643,6 @@ asset_gfx_gap_38.s
 card_help_data.c
 asset_gfx_gap_38_at_0903BFBC.s
 card_stock_info.c
-asset_gfx_gap_38_at_0903BFF6.s
 card_lvup_msg.c
 asset_gfx_gap_38_at_0903C005.s
 card_deck_equip.c
@@ -732,7 +725,6 @@ card_sprite_data.c
 asset_gfx_gap_43.s
 mode_sio.c
 mode_wlogo.c
-asset_gfx_gap_43_at_095D1F8B.s
 wlogo.c
 asset_gfx_gap_72.s
 boss_tm.c
@@ -855,7 +847,6 @@ bos5.c
 asset_gfx_gap_190.s
 mode_worldinspect.c
 mode_worldwarp.c
-asset_gfx_gap_192.s
 mode_ms_top.c
 mode_ms.c
 ms_charge.c

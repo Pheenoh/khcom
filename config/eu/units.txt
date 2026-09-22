@@ -62,7 +62,6 @@ smn.c
 frd.c
 pc.c
 hum.c
-rodata_script_gap_1.s
 save_signature.c
 jiminy_inline_text_data.c
 rodata_script.s
@@ -160,6 +159,7 @@ animation_resource_emy_data.c
 animation_resource_09EE10E0_data.c
 animation_resource_btl_premiere_data.c
 aux_animation_09EE12A4_data.c
+animation_resource_mode_test_data.c
 battle_localized_09EE1520_data.c
 animation_resource_hum_cloud_data.c
 aux_animation_09EE17B4_data.c
@@ -670,7 +670,6 @@ asset_gfx_gap_18.s
 card_card.c
 asset_gfx_gap_18_at_09034084.s
 card_battle_riku.c
-asset_gfx_gap_20.s
 card_map_anim.c
 asset_gfx_gap_21_at_090356EA.s
 card_deckmenu2.c
@@ -678,7 +677,6 @@ asset_gfx_gap_21_at_09035742.s
 card_deckcard2.c
 asset_gfx_gap_21_at_09035976.s
 card_enemy.c
-asset_gfx_gap_21_at_090359B9.s
 card_worldselect.c
 asset_gfx_gap_23.s
 card_prize_card.c
@@ -717,7 +715,6 @@ card_worldsel_before.c
 asset_gfx_gap_38_at_09041E9A_at_090D1DF4.s
 asset_gfx_gap_39.s
 card_deckmenu2_2.c
-asset_gfx_gap_39_at_09041F02.s
 card_deckexchange.c
 card_mode_deck.c
 asset_gfx_gap_40_at_09041F6E.s
@@ -789,7 +786,6 @@ asset_gfx_gap_43.s
 asset_gfx_gap_38_at_09041E7F.s
 mode_sio.c
 mode_wlogo.c
-asset_gfx_gap_38_at_09041E7F_at_095DA8C3.s
 wlogo.c
 asset_gfx_gap_72.s
 boss_tm.c
@@ -912,7 +908,6 @@ bos5.c
 asset_gfx_gap_190.s
 mode_worldinspect.c
 mode_worldwarp.c
-asset_gfx_gap_192.s
 mode_ms_top.c
 mode_ms.c
 ms_charge.c

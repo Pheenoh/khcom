@@ -7,7 +7,6 @@
   },
   "regions": {
     "us": {
-      "placements": [],
       "binary_assets": [
         {
           "name": "gUnkUs_08B1D888",
@@ -1335,7 +1334,6 @@
       ]
     },
     "jp": {
-      "placements": [],
       "binary_assets": [
         {
           "name": "gUnkJp_08B10E70",
@@ -2663,7 +2661,6 @@
       ]
     },
     "eu": {
-      "placements": [],
       "binary_assets": [
         {
           "name": "gUnkEu_08B491AC",

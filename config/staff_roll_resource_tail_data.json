@@ -11,56 +11,6 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "staff_roll_command_sprite_data.c",
-          "section": ".data",
-          "address": "0x9efab18",
-          "size": 80,
-          "sha256": "4d1350d730b4a95f3774c6ef6203449d79757785b01cccac75731d2967e3567a",
-          "objects": [
-            {
-              "name": "gUnk_09EFAB18",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnkUs_09EFAB64",
-              "offset": 76,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "staff_roll_timer_sprite_data.c",
-          "section": ".data",
-          "address": "0x9efbae8",
-          "size": 212,
-          "sha256": "f9908c9c6db9227f77de7976ae44c90c4d098046baa86ea0cd3654abf60aa971",
-          "objects": [
-            {
-              "name": "gUnk_09EFBAE8",
-              "offset": 0,
-              "size": 44
-            },
-            {
-              "name": "gUnkUs_09EFBB14",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EFBB18",
-              "offset": 48,
-              "size": 160
-            },
-            {
-              "name": "gUnkUs_09EFBBB8",
-              "offset": 208,
-              "size": 4
-            }
-          ]
-        }
-      ],
       "binary_assets": [
         {
           "name": "gUnkUs_09C44708",
@@ -1738,56 +1688,6 @@
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "staff_roll_command_sprite_data.c",
-          "section": ".data",
-          "address": "0x9ed2024",
-          "size": 80,
-          "sha256": "7c1409778f696c84b11bfb8f94e680931b2d77dc717a8a299e5dbe328be83fbf",
-          "objects": [
-            {
-              "name": "gUnk_09EFAB18",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnkJp_09ED2070",
-              "offset": 76,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "staff_roll_timer_sprite_data.c",
-          "section": ".data",
-          "address": "0x9ed3060",
-          "size": 212,
-          "sha256": "cdb0951f39eabb0f40f626127c408a1fb0ca07561b7b6c5ac887bf9ae8a5bf4b",
-          "objects": [
-            {
-              "name": "gUnk_09EFBAE8",
-              "offset": 0,
-              "size": 44
-            },
-            {
-              "name": "gUnkJp_09ED308C",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EFBB18",
-              "offset": 48,
-              "size": 160
-            },
-            {
-              "name": "gUnkJp_09ED3130",
-              "offset": 208,
-              "size": 4
-            }
-          ]
-        }
-      ],
       "binary_assets": [
         {
           "name": "gUnkJp_09C1CE2C",
@@ -3465,56 +3365,6 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "staff_roll_command_sprite_data.c",
-          "section": ".data",
-          "address": "0x9f86864",
-          "size": 80,
-          "sha256": "eb0b07e21225ead9aa16fc0df6fc3a282cef519db4bf482a72f454070217e4bb",
-          "objects": [
-            {
-              "name": "gUnk_09EFAB18",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnkEu_09F868B0",
-              "offset": 76,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "staff_roll_timer_sprite_data.c",
-          "section": ".data",
-          "address": "0x9f882fc",
-          "size": 212,
-          "sha256": "b8aa298c2f1fb7d4bdc50c9acaebba67c07bee04e9e4144c30382ea4fb8be81b",
-          "objects": [
-            {
-              "name": "gUnk_09EFBAE8",
-              "offset": 0,
-              "size": 44
-            },
-            {
-              "name": "gUnkEu_09F88328",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EFBB18",
-              "offset": 48,
-              "size": 160
-            },
-            {
-              "name": "gUnkEu_09F883CC",
-              "offset": 208,
-              "size": 4
-            }
-          ]
-        }
-      ],
       "binary_assets": [
         {
           "name": "gUnkEu_09CA2450",

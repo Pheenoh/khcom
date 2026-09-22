@@ -2,7 +2,6 @@
   "version": 1,
   "regions": {
     "us": {
-      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextUs_09035742",
@@ -49,7 +48,6 @@
       ]
     },
     "jp": {
-      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextJp_09008AE0",
@@ -198,7 +196,6 @@
       ]
     },
     "eu": {
-      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextEu_090CEA56",

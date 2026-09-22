@@ -13,8 +13,6 @@ VERSIONS = {'us': 'B8CE', 'jp': 'B8CJ', 'eu': 'B8CP'}
 ENCODINGS = {'utf16le': ('u16', 2), 'shift_jis': ('u8', 1),
              'singlebyte': ('u8', 1), 'ascii': ('u8', 1)}
 IDENTIFIER = re.compile(r'[A-Za-z_][A-Za-z0-9_]*')
-UNIT = re.compile(r'[A-Za-z_][A-Za-z0-9_]*\.c')
-SECTION = re.compile(r'\.(?:data|rodata)(?:[._][A-Za-z0-9_]+)*')
 
 
 def fields(value, required, optional, label):
@@ -59,78 +57,14 @@ def normalize_sidecar(document, roms=None):
     result = {'version': 1, 'provenance': dict(provenance), 'regions': {}}
     for version in VERSIONS:
         region = regions.get(version, {})
-        fields(region, set(), {'placements', 'assets', 'named_assets', 'binary_assets'}, version)
-        for key in ('placements', 'assets', 'named_assets', 'binary_assets'):
+        fields(region, set(), {'assets', 'named_assets', 'binary_assets'}, version)
+        for key in ('assets', 'named_assets', 'binary_assets'):
             if not isinstance(region.get(key, []), list):
                 raise ValueError(f'{version}: {key} must be a list')
         rom = roms.get(version)
         limit = ROM_END if rom is None else min(ROM_END, ROM_BASE + len(rom))
-        placements, assets, spans = [], {}, []
-        owners, names = set(), set()
-        for placement in region.get('placements', []):
-            fields(placement, {'unit', 'section', 'address', 'size', 'objects'},
-                   {'sha256', 'alignment_before', 'padding_before'}, version + ' placement')
-            unit, section = placement['unit'], placement['section']
-            if not isinstance(unit, str) or not UNIT.fullmatch(unit):
-                raise ValueError(f'{version}: placement unit must be a C filename')
-            if not isinstance(section, str) or not SECTION.fullmatch(section):
-                raise ValueError(f'{unit}: placement requires a ROM data section')
-            key = unit, section
-            label = f'{version}: {unit}({section})'
-            if key in owners:
-                raise ValueError(f'{label}: duplicate placement')
-            owners.add(key)
-            address, size = extent(placement['address'], placement['size'], limit, label)
-            padding = placement.get('padding_before', 0)
-            alignment = placement.get('alignment_before')
-            if 'padding_before' in placement or 'alignment_before' in placement:
-                if type(alignment) is not int or alignment != 4 or type(padding) is not int or not 0 < padding < alignment:
-                    raise ValueError(f'{label}: alignment requires alignment_before=4 and padding_before=1..3')
-                if address % alignment or address - padding < ROM_BASE:
-                    raise ValueError(f'{label}: alignment padding is outside ROM or does not end on its boundary')
-                if rom is not None and rom[address - ROM_BASE - padding:address - ROM_BASE] != bytes(padding):
-                    raise ValueError(f'{label}: original ROM alignment padding is not zero')
-            digest = placement.get('sha256')
-            if digest is not None:
-                if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
-                    raise ValueError(f'{label}: invalid SHA-256')
-                if rom is not None and hashlib.sha256(rom[address - ROM_BASE:address - ROM_BASE + size]).hexdigest() != digest:
-                    raise ValueError(f'{label}: original ROM SHA-256 differs')
-            objects = placement['objects']
-            if not isinstance(objects, list) or not objects:
-                raise ValueError(f'{label}: objects must be a nonempty list')
-            normalized, occupied = [], []
-            for obj in objects:
-                fields(obj, {'name', 'offset', 'size'}, {'consumer'}, label + ' object')
-                name = identifier(obj['name'], label)
-                offset, length = number(obj['offset'], name + ' offset'), number(obj['size'], name + ' size')
-                if name in names:
-                    raise ValueError(f'{version}: duplicate object name {name}')
-                if not length or offset + length > size:
-                    raise ValueError(f'{name}: object is outside its placement or empty')
-                names.add(name)
-                item = {'name': name, 'offset': offset, 'size': length}
-                if 'consumer' in obj:
-                    consumer = obj['consumer']
-                    if (not isinstance(consumer, list) or not consumer
-                            or not isinstance(consumer[0], str) or not IDENTIFIER.fullmatch(consumer[0])
-                            or any(not (type(index) is int and index >= 0)
-                                   and not (isinstance(index, str) and index.strip()) for index in consumer[1:])):
-                        raise ValueError(f'{name}: consumer must identify a symbol and indices or explanatory text')
-                    item['consumer'] = list(consumer)
-                normalized.append(item)
-                occupied.append((offset, offset + length, name))
-            disjoint(occupied, label + ' objects')
-            item = {'unit': unit, 'section': section, 'address': address, 'size': size,
-                    'objects': normalized}
-            if digest is not None:
-                item['sha256'] = digest
-            if alignment is not None:
-                item['alignment_before'] = alignment
-                item['padding_before'] = padding
-            placements.append(item)
-            spans.append((address - padding, address + size, unit + '(' + section + ')'))
-
+        assets, spans = {}, []
+        names = set()
         def add_asset(name, address, size, encoding, group):
             identifier(name, version + ' asset')
             if not isinstance(encoding, str) or encoding not in ENCODINGS:
@@ -228,7 +162,7 @@ def normalize_sidecar(document, roms=None):
             assets[address] = item
             spans.append((address, address + size, name))
         disjoint(spans, version + ' ROM data')
-        result['regions'][version] = {'placements': placements, 'assets': list(assets.values())}
+        result['regions'][version] = {'assets': list(assets.values())}
     return result
 
 
@@ -240,20 +174,16 @@ def load_sidecar(path, roms=None):
 
 def load_sidecars(directory, roms=None):
     combined = {'version': 1, 'provenance': {}, 'regions': {version: {
-        'placements': [], 'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
+        'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
     for path in sorted(Path(directory).glob('*_data.json')):
         document = json.loads(path.read_text())
         normalize_sidecar(document, roms)
         for key, value in document.get('provenance', {}).items():
             combined['provenance'][path.name + ':' + key] = value
         for version, region in document['regions'].items():
-            for key in ('placements', 'assets', 'named_assets', 'binary_assets'):
+            for key in ('assets', 'named_assets', 'binary_assets'):
                 combined['regions'][version][key].extend(region.get(key, []))
     return normalize_sidecar(combined, roms)
-
-
-def managed_placements(document):
-    return set().union(*(placement_overrides(plan) for plan in document['regions'].values()))
 
 
 def managed_asset_names(document):
@@ -262,85 +192,10 @@ def managed_asset_names(document):
 
 def asset_symbols(plan, ledger=()):
     existing = dict(ledger)
-    owned = {obj['name'] for placement in plan['placements'] for obj in placement['objects']}
-    collisions = (owned | {asset['name'] for asset in plan['assets']}) & existing.keys()
+    collisions = {asset['name'] for asset in plan['assets']} & existing.keys()
     if collisions:
         raise ValueError('regional data collides with symbols.txt: ' + ', '.join(sorted(collisions)))
     return [(asset['name'], asset['address']) for asset in plan['assets'] if 'unit' not in asset]
-
-
-def placement_overrides(plan):
-    return {(placement['unit'], placement['section']): (placement['address'], placement['size'])
-            for placement in plan['placements']}
-
-
-def merge_placements(base, plan, code_end=ROM_BASE, rom_end=ROM_END, managed=()):
-    if not plan['placements'] and not managed:
-        return list(base)
-    replacements = {(placement['unit'], placement['section']):
-                    (placement['address'] - placement.get('padding_before', 0),
-                     placement['size'] + placement.get('padding_before', 0))
-                    for placement in plan['placements']}
-    result, seen = [], set()
-    for address, size, line in base:
-        match = re.fullmatch(r'\s*([^()]+)\(([^()]+)\)\s*', line)
-        if match is None:
-            raise ValueError(f'invalid C data placement line {line!r}')
-        key = match[1], match[2]
-        if key in seen:
-            raise ValueError(f'duplicate C data placement {line}')
-        seen.add(key)
-        if key in managed and key not in replacements:
-            continue
-        if key in replacements:
-            address, size = replacements[key]
-        result.append((address, size, line))
-    for (unit, section), (address, size) in replacements.items():
-        if (unit, section) not in seen:
-            result.append((address, size, f'{unit}({section})'))
-    spans = []
-    for address, size, line in result:
-        if type(address) is not int or type(size) is not int or size < 0 or address < code_end or address + size > rom_end:
-            raise ValueError(f'{line}: placement is outside post-code ROM data')
-        if size:
-            spans.append((address, address + size, line))
-    disjoint(spans, 'merged C data')
-    return sorted(result)
-
-
-def validate_active_sections(plan, active, managed=()):
-    expected = set(placement_overrides(plan))
-    active = list(active)
-    missing = expected - set(active)
-    absent = (set(active) & set(managed)) - expected
-    duplicated = {key for key in expected if active.count(key) > 1}
-    if missing or absent or duplicated:
-        raise ValueError(f'regional data active sections differ: missing={sorted(missing)}, '
-                         f'absent={sorted(absent)}, duplicate={sorted(duplicated)}')
-
-
-def linker_assertion(actual, expected, label):
-    value = f'(ABSOLUTE(. + {expected:#010x}) - ABSOLUTE(.))'
-    return f'__data_layout_valid = ABSOLUTE(ASSERT({actual} == {value}, "{label}"));'
-
-
-def linker_assertions(placement, after=False):
-    label = placement['unit'] + '(' + placement['section'] + ')'
-    address = placement['address'] + (placement['size'] if after else 0)
-    edge = 'end' if after else 'start'
-    result = []
-    position = 'ABSOLUTE(.)'
-    if not after and placement.get('padding_before'):
-        before = placement['address'] - placement['padding_before']
-        result.append(linker_assertion('ABSOLUTE(.)', before, f'regional alignment start: {label}'))
-        position = f'ABSOLUTE(ALIGN({placement["alignment_before"]}))'
-    result.append(linker_assertion(position, address, f'regional data {edge}: {label}'))
-    if after:
-        for obj in placement['objects']:
-            name = obj['name']
-            address = placement['address'] + obj['offset']
-            result.append(linker_assertion(f'ABSOLUTE({name})', address, f'regional data object: {name}'))
-    return result
 
 
 def read_layout(path, prefix='arm-none-eabi-'):
@@ -369,36 +224,6 @@ def check_layout(plan, objects, linked):
         for symbol in layout['symbols']:
             if symbol['name'] in asset_names and 'g' in symbol['flags']:
                 errors.append(f'{unit}: asset binding shadows a compiled definition of {symbol["name"]}')
-    for placement in plan['placements']:
-        unit, section = placement['unit'], placement['section']
-        label = unit + '(' + section + ')'
-        layout = objects.get(unit)
-        if layout is None:
-            errors.append(f'{label}: placement owner is not active')
-            continue
-        actual_section = layout['sections'].get(section)
-        if actual_section is None or actual_section['size'] != placement['size']:
-            errors.append(f'{label}: compiled section size differs from placement')
-        if placement.get('alignment_before') and (actual_section is None
-                or actual_section.get('alignment') != placement['alignment_before']):
-            errors.append(f'{label}: compiled section alignment differs from alignment contract')
-        actual = {}
-        for symbol in layout['symbols']:
-            if symbol['section'] == section and 'O' in symbol['flags'] and symbol['size']:
-                actual.setdefault(symbol['name'], []).append(symbol)
-        expected = {obj['name'] for obj in placement['objects']}
-        if set(actual) != expected:
-            errors.append(f'{label}: compiled object set differs from placement')
-        for obj in placement['objects']:
-            name, offset, size = obj['name'], obj['offset'], obj['size']
-            definitions = actual.get(name, [])
-            if len(definitions) != 1 or definitions[0]['value'] != offset or definitions[0]['size'] != size:
-                errors.append(f'{label}: {name} compiled offset or size differs from placement')
-            definitions = final.get(name, [])
-            if (len(definitions) != 1 or definitions[0]['value'] != placement['address'] + offset
-                    or definitions[0]['size'] != size or 'O' not in definitions[0]['flags']
-                    or definitions[0]['section'] == '*ABS*'):
-                errors.append(f'{label}: {name} linked address or size differs from placement')
     for asset in plan['assets']:
         definitions = final.get(asset['name'], [])
         if 'unit' in asset:
@@ -432,7 +257,7 @@ def main():
     document = (load_sidecar(root / args.manifest, roms) if args.manifest
                 else load_sidecars(root / 'config', roms))
     plan = document['regions'][version]
-    if not plan['placements'] and not plan['assets']:
+    if not plan['assets']:
         print(f'{version}: no regional data contracts')
         return
     ledger = []
@@ -448,8 +273,6 @@ def main():
         if line:
             listed.add(line.split()[0])
     units = {unit for unit in listed if unit.endswith('.c')}
-    validate_active_sections(plan, [key for key in placement_overrides(plan) if key[0] in units],
-                             managed_placements(document))
     build = root / 'build' / version
     objects = {unit: read_layout(build / 'src' / (Path(unit).stem + '.o'), args.binutils_prefix) for unit in sorted(units)}
     for unit in {asset['unit'] for asset in plan['assets'] if 'unit' in asset}:
@@ -462,12 +285,11 @@ def main():
         print(f'{version}: {error}')
     if errors:
         raise SystemExit(1)
-    count = sum(len(placement['objects']) for placement in plan['placements'])
     binary_count = sum('kind' in asset for asset in plan['assets'])
     label = f'{len(plan["assets"]) - binary_count} literals'
     if binary_count:
         label += f', {binary_count} binary bindings'
-    print(f'{version}: regional data OK ({len(plan["placements"])} sections, {count} objects, {label})')
+    print(f'{version}: regional data OK ({label})')
 
 
 if __name__ == '__main__':
