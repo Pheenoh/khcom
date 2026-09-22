@@ -68,14 +68,20 @@ def migrate(root=ROOT):
     return changed, lines
 
 
+def generated_units(root):
+    return {obj["name"] for manifest in assetgen.load_manifests(root / "config" / "assets")
+            for objects in manifest.objects.values() for obj in objects}
+
+
 def unit_roots(root, version):
     roots = []
+    generated = generated_units(root)
     for line in (root / "config" / version / "units.txt").read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
         name = line.split(None, 1)[0]
-        if name.startswith("@"):
+        if name.startswith("@") or name in generated:
             continue
         if name.endswith(".c"):
             continue

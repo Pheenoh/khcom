@@ -1,6 +1,8 @@
 #include "map_fixed_data.h"
 #include "map.h"
-#include "map_fixed_assets.h"
+#include "map_spawn_data.h"
+#include "mode_battle_data.h"
+#include "event_backgrounds.h"
 
 u8 gUnk_09EF7108[1536] = {
     8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
@@ -381,60 +383,4 @@ UnkStruct_080E8E24* gUnk_09EF83C0[14] = {
     gUnk_098582C4,
     gUnk_098582DC,
     gUnk_0985824C,
-};
-
-const UnkStruct_09EF8370 gUnk_09856F14 = {
-    gUnk_09990C64,
-    352, { 0, 0 },
-    gUnk_099199C4,
-    30720, { 0, 0 },
-    gUnk_099211C4,
-    12224, { 0, 0 },
-    gUnk_09EF8328,
-    gUnk_09EF8338,
-    gUnk_09EF8348,
-    2, 2, { 0, 0 },
-    gUnk_09EF8008,
-    gUnk_09856ED8,
-    0,
-    28, { 0, 0 },
-    0,
-    0,
-    0,
-    0,
-    49152,
-    69632,
-#ifdef VERSION_EU
-    1,
-#endif
-};
-
-const UnkStruct_09EF8370 gUnk_09856F64 = {
-    gUnk_09616E98,
-    320, { 0, 0 },
-    gUnk_094C05F8,
-#ifdef VERSION_EU
-    11092, { 0, 0 },
-#else
-    23936, { 0, 0 },
-#endif
-    0,
-    0, { 0, 0 },
-    gUnk_09EF8298,
-    gUnk_09EF8358,
-    0,
-    3, 2, { 0, 0 },
-    gUnk_09EF7708,
-    gUnk_09856CE0,
-    gUnk_09856D04,
-    30, { 0, 0 },
-    137728,
-    61952,
-    0,
-    0,
-    131072,
-    65536,
-#ifdef VERSION_EU
-    0,
-#endif
 };

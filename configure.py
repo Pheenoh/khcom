@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
@@ -147,7 +148,6 @@ asset_gfx_gap_158_mode = args.asset_gfx_gap_158_mode
 asset_gfx_gap_87_mode = args.asset_gfx_gap_87_mode
 
 build_dir = f"build/{version}"
-ROOT_GEN = Path("build")
 name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
@@ -185,6 +185,11 @@ generated = {}
 for group_name, group in groups.items():
     for unit_name, unit in group["objects"].items():
         generated[unit_name] = (group_name, unit)
+
+
+def rel(path):
+    return os.path.relpath(str(path))
+
 
 units = []
 archives = []
@@ -413,7 +418,7 @@ if asset_gfx_gap_87_mode == "built":
 units = materialize_assets(regional_plan, units, version, build_dir)
 
 headers = sorted(str(p) for p in Path("include").glob("*.h"))
-generated_headers = sorted(str(group["header"]) for group in groups.values())
+generated_headers = sorted(rel(group["header"]) for group in groups.values())
 asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
 missing_assets = set()
 edges = []
@@ -427,9 +432,9 @@ for src, obj, flags in units:
     deps = []
     if src.name in generated:
         group_name, unit = generated[src.name]
-        deps += [str(groups[group_name]["header"])]
+        deps += [rel(groups[group_name]["header"])]
         if rule == "as":
-            deps += [str(ROOT_GEN / version / "gen" / group_name / f"{entry['name']}.{BINARY_EXT[entry['format']]}")
+            deps += [f"{build_dir}/gen/{group_name}/{entry['name']}.{BINARY_EXT[entry['format']]}"
                      for entry in unit["members"]]
         else:
             deps += headers + generated_headers + ["tools/legacy/bin/arm-elf-as"]
@@ -796,16 +801,16 @@ with out.open("w") as f:
                 asset_gfx_gap_87_extract,
             ],
         )
-    manifests = sorted(str(group["manifest"].path) for group in groups.values())
+    manifests = sorted(rel(group["manifest"].path) for group in groups.values())
     for group_name, group in groups.items():
-        outputs = [str(unit["source"]) for unit in group["objects"].values()] + [str(group["header"])]
+        outputs = [rel(unit["source"]) for unit in group["objects"].values()] + [rel(group["header"])]
         n.build(
             outputs,
             "assetgen",
             implicit=manifests + ["tools/assetgen.py", "tools/gbagfx/gbagfx", assets_stamp]
-            + [str(path) for path in group["sources"]],
-            implicit_outputs=[str(path) for path in group["binaries"]],
-            variables={"version": version, "manifest": str(group["manifest"].path)},
+            + [rel(path) for path in group["sources"]],
+            implicit_outputs=[rel(path) for path in group["binaries"]],
+            variables={"version": version, "manifest": rel(group["manifest"].path)},
         )
     for obj, rule, src, deps, variables in edges:
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
