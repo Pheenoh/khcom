@@ -109,6 +109,7 @@ TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 TARGET_ANCHORS = {
     "eu": {
+        0x08f7f66c: 0x0905984c,
         0x09ED9BA8: 0x09F57460,
         0x09EE3844: 0x09F6EF64,
         0x09EE1520: 0x09F5C0EC,
@@ -306,10 +307,6 @@ TARGET_ANCHORS = {
         0x090352FC: 0x090CE5F0,
         0x09511AB8: 0x09531724,
         0x095122B8: 0x09531C24,
-        0x08FB62F8: 0x0907DE9C,
-        0x08FB6348: 0x0907DE9C,
-        0x08FB6590: 0x0907DE9C,
-        0x08FB65F0: 0x0907DE9C,
         0x08F7DB10: 0x09057CF0,
         0x08F7DB40: 0x09057D20,
         0x08F7DC60: 0x09057E40,
@@ -377,6 +374,7 @@ TARGET_ANCHORS = {
         0x09EE496C: 0x09F6FC18,
     },
     "jp": {
+        0x08f7f66c: 0x08f72b74,
         0x09079EB2: 0x09033FA2,
         0x09080074: 0x0903AE74,
         0x090822F2: 0x0903D494,
@@ -3369,8 +3367,7 @@ TARGET_DATA_SIZE = {
         ("mode_chksnd.c", ".rodata"): 0x20E8,
         ("mode_dummy.c", ".rodata"): 0x19C,
         ("event_index_data.c", ".data"): 0x924,
-        ("event_127_data.c", ".rodata"): 0,
-        ("event_128_data.c", ".rodata"): 0,
+        ("events_074_133.c", ".rodata"): 0x28fe0,
         ("map_fixed_09856C90_data.c", ".rodata"): 0x54,
         ("map_fixed_09856D34_data.c", ".rodata"): 0x54,
         ("map_fixed_09856DE4_data.c", ".rodata"): 0x54,
@@ -3461,6 +3458,7 @@ TARGET_DATA_SIZE = {
     },
     "jp": {
         ("sroll.c", ".rodata"): 0x287,
+        ("events_074_133.c", ".rodata"): 0x33ea0,
         ("event_index_data.c", ".data"): 0x93C,
         ("card_localized_09EE9C90_data.c", ".data"): 0x28C,
         ("animation_resource_09EFB840_data.c", ".data"): 0x29C,

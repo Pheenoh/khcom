@@ -47,7 +47,7 @@ typedef struct DownWork {
 } DownWork;
 
 typedef struct EvSoundWork {
-    EvSoundCue* soundCues;
+    const EvSoundCue* soundCues;
     u8 unk_04;
     u8 unk_05;
     u8 unk_06;

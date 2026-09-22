@@ -704,7 +704,7 @@ void EV_SOUND_0(EvSoundWork* w, u8* arg) {
 }
 
 s32 EV_SOUND_1(EvSoundWork* w) {
-    EvSoundCue* p;
+    const EvSoundCue* p;
     MusicPlayerInfo* mp;
     u8 idx;
     u8 n;

@@ -267,7 +267,7 @@ u8 eu_0806C848(EventSeqWork* work) {
 }
 u8 eu_0806C974(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
-    EventCameraKeyframe* q = work->seqDef->keyframes;
+    const EventCameraKeyframe* q = work->seqDef->keyframes;
     u16 i;
     gUnk_02039DC8->unk_50 = q->unk_04;
     gUnk_02039DC8->unk_54 = q->unk_08;
@@ -303,7 +303,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     EventBackgroundDef* u;
     EventSequenceDef* t;
 #ifndef VERSION_EU
-    EventCameraKeyframe* q;
+    const EventCameraKeyframe* q;
     u16 i;
 #endif
     u8 j;
@@ -927,7 +927,7 @@ static inline s16 GetEventCharaScreenX(EventCharaWork* p) {
 }
 
 void event_chara_2(EventCharaWork* p) {
-    EventCharaKeyframe* e;
+    const EventCharaKeyframe* e;
     s32 save;
     s32 x;
     s32 y;
@@ -974,7 +974,7 @@ void event_chara_3(EventCharaWork* p) {
     }
 }
 u8 func_0806E570(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
+    const EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
     u16 v;
 
     if (p->keyframes[p->unk_1A0].unk_04 > gUnk_02039DC8->unk_6C) {
@@ -1038,7 +1038,7 @@ u8 func_0806E570(EventCharaWork* p) {
     return 0;
 }
 void func_0806E7A8(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
+    const EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
     BtlObj* t;
 
     if (e->unk_00 == 0x3A7) {
@@ -1099,7 +1099,7 @@ void func_0806E7A8(EventCharaWork* p) {
 }
 
 void func_0806E9BC(EventCharaWork* p) {
-    EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
+    const EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
 
     func_0801CD74(p->unk_028, e->unk_14);
 }
@@ -1312,7 +1312,7 @@ u8 func_0806EE6C(EventCharaWork* p, void* a) {
 }
 u8 func_0806EF40(void* work, void* a) {
     EventCharaWork* p = work;
-    EventCharaKeyframe* e;
+    const EventCharaKeyframe* e;
     u16 z;
 
     func_0806E7A8(p);
@@ -1386,7 +1386,7 @@ u8 func_0806F02C(EventCharaWork* p, void* a) {
 }
 u8 func_0806F114(void* work, void* a) {
     EventCharaWork* p = work;
-    EventCharaKeyframe* e;
+    const EventCharaKeyframe* e;
     u16 z;
 
     func_0806E7A8(p);
@@ -3544,7 +3544,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
 }
 
 u8 func_08072EAC(MsgWinWork* p, void* a) {
-    MessageScriptEntry* e;
+    const MessageScriptEntry* e;
 
     if (p->unk_29 == 0) {
         if (gUnk_02039DC8->unk_80 == 0) {
@@ -3716,7 +3716,7 @@ u8 func_08073170(MsgWinWork* p, void* a) {
     return 1;
 }
 void func_08073238(MsgWinWork* p) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
 
     if (e->unk_00 != 62) {
         func_080658B8(p->unk_24);
@@ -3733,7 +3733,7 @@ void func_08073274(MsgWinWork* p) {
     TaskPoolDestroy(p);
 }
 u8 func_08073294(MsgWinWork* p, void* a) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
 
     ApproachValue(&p->unk_18, gUnk_09033CA0[p->unk_20], p->unk_1E);
 
@@ -3755,7 +3755,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     return 1;
 }
 u8 func_08073318(MsgWinWork* p, void* a) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
 
     func_0807361C(p);
 
@@ -3808,7 +3808,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
     return 1;
 }
 u8 func_0807344C(MsgWinWork* p, void* a) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
 
     ApproachValue(&p->unk_18, gUnk_09033C98[p->unk_20], p->unk_1E);
 
@@ -3839,7 +3839,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     return 1;
 }
 void func_08073508(MsgWinWork* p) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
     s32 n;
 
     n = e->unk_08;
@@ -3883,7 +3883,7 @@ void func_08073508(MsgWinWork* p) {
 }
 
 void func_0807361C(MsgWinWork* p) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
     u8 v;
 
     if (p->unk_25 >= e->unk_0C) {
@@ -3918,7 +3918,7 @@ void func_0807361C(MsgWinWork* p) {
     }
 }
 void func_080736F8(MsgWinWork* p) {
-    MessageScriptEntry* e = &p->script[p->unk_27];
+    const MessageScriptEntry* e = &p->script[p->unk_27];
 
     if (gUnk_02039DC8->unk_6C >= e->unk_16) {
         if (p->unk_2A == 0) {
@@ -4423,7 +4423,7 @@ void func_08074564(void) {
 void view_0(EventCameraWork* p, u8* arg) {
     EventSequenceDef* t;
     EventBackgroundDef* u;
-    EventCameraKeyframe* q;
+    const EventCameraKeyframe* q;
     u8 n;
 
     gUnk_02039DCC = (EventScanlineScroll*)p->unk_18;
@@ -4493,7 +4493,7 @@ void func_080746D8(void) {
 
 u8 view_1(EventCameraWork* p, u8* task) {
     EventBackgroundDef* u = gUnk_09EE3CA0[p->unk_08];
-    EventCameraKeyframe* e;
+    const EventCameraKeyframe* e;
     Ent08074EC8* q;
     u8 n;
 
@@ -4769,7 +4769,7 @@ void func_08074D00(EventCameraWork* p) {
 }
 
 void func_08074D14(EventCameraWork* a) {
-    EventCameraKeyframe* e;
+    const EventCameraKeyframe* e;
     s32 x;
     s32 y;
 
@@ -4823,7 +4823,7 @@ u8 func_08074E40(EventCameraWork* p) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
     const EventCharaTrack* q = t->charaTracks;
-    EventCameraKeyframe* e = &p->keyframes[p->unk_09];
+    const EventCameraKeyframe* e = &p->keyframes[p->unk_09];
     u8 i;
 
     for (i = 0; i < n; i++) {

@@ -27,6 +27,8 @@ typedef struct MessageScriptEntry {
     u16 unk_16;
 } MessageScriptEntry;
 
+typedef void (*EventCharaKeyframeFunc)(void*);
+
 typedef struct EventCharaKeyframe {
     u32 unk_00;
     u16 unk_04;
@@ -38,11 +40,11 @@ typedef struct EventCharaKeyframe {
     u8 unk_16[2];
     u32 unk_18;
     void* unk_1C;
-    void (*unk_20)(void*);
+    EventCharaKeyframeFunc unk_20;
 } EventCharaKeyframe;
 
 typedef struct EventCharaTrack {
-    EventCharaKeyframe* keyframes;
+    const EventCharaKeyframe* keyframes;
     u8 unk_04;
     u8 unk_05[3];
 } EventCharaTrack;
@@ -66,10 +68,10 @@ typedef struct EventSequenceDef {
     u8 unk_00;
     u8 unk_01[3];
     const EventCharaTrack* charaTracks;
-    EventCameraKeyframe* keyframes;
-    MessageScriptEntry* script;
-    EvSoundCue* soundCues;
-    EventBgEffectEntry* bgEffects;
+    const EventCameraKeyframe* keyframes;
+    const MessageScriptEntry* script;
+    const EvSoundCue* soundCues;
+    const EventBgEffectEntry* bgEffects;
     u16 unk_18;
     u8 unk_1A;
     u8 unk_1B;

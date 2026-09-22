@@ -62,7 +62,7 @@
 #define NULL ((void*)0)
 
 typedef struct EventCharaWork {
-    EventCharaKeyframe* keyframes;
+    const EventCharaKeyframe* keyframes;
     void* tiles;
     void* palette;
     void* gfx;
@@ -173,7 +173,7 @@ typedef struct MsgWinWork {
     MsgFaceControl face;
     u8 unk_38;
     u8 unk_39[3];
-    MessageScriptEntry* script;
+    const MessageScriptEntry* script;
     s32 unk_40;
 } MsgWinWork;
 
@@ -233,7 +233,7 @@ typedef struct EventCameraWork {
     u8 unk_08;
     u8 unk_09;
     u8 unk_0A[2];
-    EventCameraKeyframe* keyframes;
+    const EventCameraKeyframe* keyframes;
     u16 unk_10;
     u16 unk_12;
     u8 unk_14;
@@ -374,6 +374,7 @@ void func_08066E40(u16 a, u16* b, u8* c);
 
 u8 event_chara_1(EventCharaWork* p, void* a);
 u8 func_0806FA84(EventCharaWork* p, void* a);
+u8 func_0806FB6C(void* work, void* a);
 u8 func_0806FDB0(EventCharaWork* p, void* a);
 u8 func_0806FC28(EventCharaWork* p, void* a);
 u8 func_0806FAB8(EventCharaWork* p, void* a);
