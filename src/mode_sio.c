@@ -1,8 +1,8 @@
+#include "macros.h"
 #include "mode_sio_dbg.h"
 #include "mode_chkobj_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
-#include "sio_battle_options_state.h"
 #include "chara_link_state.h"
 #include "chara_api.h"
 #include "map_api.h"
@@ -18,6 +18,29 @@
 #include "mode_sio.h"
 #include "gba/keys.h"
 #include "world_intro_assets.h"
+
+u16 gUnk_0203A9EC EWRAM_COMMON(4);
+u16 gUnk_0203A9F0 EWRAM_COMMON(4);
+s8 gUnk_0203AA00 EWRAM_COMMON(16);
+CharaLinkData gUnk_0203AA10 EWRAM_COMMON(16);
+u8 gUnk_0203AA30[2][20] EWRAM_COMMON(16);
+u8 gUnk_0203AA58[2] EWRAM_COMMON(4);
+u8 gUnk_0203AA60[2][20] EWRAM_COMMON(16);
+u8 gUnk_0203AA88 EWRAM_COMMON(4);
+s8 gUnk_0203AA8C EWRAM_COMMON(4);
+s8 gUnk_0203AA90 EWRAM_COMMON(4);
+s8 gUnk_0203AAA0[14] EWRAM_COMMON(16);
+u8 gUnk_0203AAB0 EWRAM_COMMON(4);
+CharaLinkData gUnk_0203AAC0 EWRAM_COMMON(16);
+u8 gUnk_0203AAE0[2][20] EWRAM_COMMON(16);
+#ifdef VERSION_EU
+s8 gUnkEu_0203B108[2] EWRAM_COMMON(4);
+#endif
+#ifndef VERSION_EU
+s8 gUnk_0203AB10 EWRAM_COMMON(16);
+u16 gUnk_0203AB20[10] EWRAM_COMMON(16);
+s8 gUnk_0203AB34[2] EWRAM_COMMON(4);
+#endif
 
 const char gModeNameSioBtlConnect[] = "mode_sio_btl_connect";
 

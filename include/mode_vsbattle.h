@@ -4,7 +4,7 @@
 #include "task_descriptors.h"
 #include "registration_data.h"
 
-#include "sio_battle_options_state.h"
+#include "mode_sio_api.h"
 
 #include "sio_api.h"
 

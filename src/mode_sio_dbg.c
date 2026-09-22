@@ -3,7 +3,7 @@
 #include "mode_chkbtl.h"
 #include "debug_menu_assets.h"
 #include "sio_debug_state.h"
-#include "sio_battle_options_state.h"
+#include "mode_sio_api.h"
 #include "game_state.h"
 #include "obj_api.h"
 #include "display.h"

@@ -12,11 +12,8 @@
 
 #include "animation_resource_data.h"
 
-#include "sio_card_trade_state.h"
 
-#include "sio_battle_options_state.h"
 
-#include "sio_handshake_state.h"
 
 
 #include "chara_link_state.h"

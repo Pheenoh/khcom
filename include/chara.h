@@ -2,9 +2,8 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
-#include "sio_battle_options_state.h"
+#include "mode_sio_api.h"
 
-#include "sio_handshake_state.h"
 
 
 
