@@ -3,8 +3,6 @@
 
 #define INCLUDE_ASM(path) asm(".include \"" path "\"")
 
-#define COMMON __attribute__((aligned(4)))
-
 #define STRINGIFY_(x) #x
 #define STRINGIFY(x) STRINGIFY_(x)
 

@@ -63,40 +63,6 @@ IWRAM_AFTER_HEAP = [
 ]
 BIOS_SYMBOLS = {"gSoundInfoPtr": 0x03007FF0, "gIntrCheck": 0x03007FF8}
 
-EWRAM_COMMON_ORDER = [
-    ("src/sio.o", ".ewram_common.*"),
-    ("src/pallet.o", ".ewram_common.*"),
-    ("src/mode_chkbtl.o", ".ewram_common.*"),
-    ("src/mode_debflag.o", ".ewram_common.*"),
-    ("src/mode_vsbattle.o", ".ewram_common.*"),
-    ("src/btl_actor.o", ".ewram_common.*"),
-    ("src/player_progression.o", ".ewram_common.*"),
-    ("src/battle_runtime.o", ".ewram_common.*"),
-    ("src/evt.o", ".ewram_common.*"),
-    ("src/event_message.o", ".ewram_common.*"),
-    ("src/mode_eventselect.o", ".ewram_common.*"),
-    ("src/card_battle.o", ".ewram_common.*"),
-    ("src/card.o", ".ewram_common.*"),
-    ("src/mode_sio.o", ".ewram_common.*"),
-    ("src/wlogo.o", ".ewram_common.*"),
-    ("src/boss_tm.o", ".ewram_common.*"),
-    ("src/bos2.o", ".ewram_common.*"),
-    ("src/chara.o", ".ewram_common.*"),
-    ("src/bos3.o", ".ewram_common.*"),
-    ("src/mode_sio_dbg.o", ".ewram_common.*"),
-    ("src/poo.o", ".ewram_common.*"),
-    ("src/mode_allmap.o", ".ewram_common.*"),
-    ("src/allmap.o", ".ewram_common.*"),
-    ("src/mode_title.o", ".ewram_common.*"),
-    ("src/status.o", ".ewram_common.*"),
-    ("src/bos4.o", ".ewram_common.*"),
-    ("src/map.o", ".ewram_common.*"),
-    ("src/agb_sram.o", ".ewram_common.*"),
-    ("src/movie.o", ".ewram_common.*"),
-    ("src/snd_stream.o", ".ewram_common.*"),
-    ("src/m4a2.o", ".ewram_common.*"),
-]
-
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
 ROM_MAKER_CODE = "GD"
@@ -618,20 +584,9 @@ with open(ldscript, "w") as f:
     f.write("    }\n")
     for name, addr in BIOS_SYMBOLS.items():
         f.write(f"    {name} = {addr:#010x};\n")
-    linked = {o for _s, o, _f, _sec in units}
     f.write("\n    .ewram 0x02000000 (NOLOAD) :\n    {\n")
     f.write(f"        gEwramHeapStart = .;\n        . += {EWRAM_HEAP_SIZE:#x};\n")
-    claimed = {obj for obj, section in IWRAM_BEFORE_HEAP + IWRAM_AFTER_HEAP + EWRAM_COMMON_ORDER if section == ".bss"}
-    if any(section == ".bss" for _obj, section in EWRAM_COMMON_ORDER):
-        for obj in objs_linked:
-            if obj.removeprefix(f"{build_dir}/") not in claimed:
-                f.write(f"        {obj}(.bss);\n")
-    else:
-        f.write("        *(.bss);\n")
-    for obj, section in EWRAM_COMMON_ORDER:
-        if f"{build_dir}/{obj}" in linked:
-            f.write(f"        {build_dir}/{obj}({section});\n")
-    f.write("        *(.ewram_common.*);\n    }\n")
+    f.write("        *(.bss);\n        *(.ewram_common.*);\n    }\n")
     f.write("\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")
