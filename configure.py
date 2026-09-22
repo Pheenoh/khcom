@@ -80,7 +80,6 @@ EWRAM_COMMON_ORDER = [
     ("src/mode_sio.o", ".ewram_common.*"),
     ("src/wlogo.o", ".ewram_common.*"),
     ("src/boss_tm.o", ".ewram_common.*"),
-    ("src/boss_jafar_state.o", ".bss"),
     ("src/bos2.o", ".ewram_common.*"),
     ("src/chara_link_buffers.o", ".bss"),
     ("src/chara_link_cursor.o", ".bss"),

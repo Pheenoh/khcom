@@ -69,7 +69,6 @@ allmap_bottom_state.c -O2 -fprologue-bugfix -fno-common
 allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
 allmap_top_state.c -O2 -fprologue-bugfix -fno-common
 pooh_actor_state.c -O2 -fprologue-bugfix -fno-common
-boss_jafar_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_cursor.c -O2 -fprologue-bugfix -fno-common
 sio_debug_state.c -O2 -fprologue-bugfix -fno-common
