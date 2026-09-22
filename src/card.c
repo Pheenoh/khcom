@@ -645,14 +645,3 @@ const u8* gUnkEu_09F6FE8C[7] = {
     gKeyboardTextEu_090CEB15,
 };
 #endif
-
-const char gTaskName_09EE4B28[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B28"), aligned(1))) = "DeckCard2";
-
-TaskDesc gUnk_09EE4B28 = {
-    gTaskName_09EE4B28,
-    (void (*)(void*, void*))DeckCard2_0,
-    DeckCard2_1,
-    (void (*)(void*))DeckCard2_2,
-    (void (*)(void*))DeckCard2_3,
-    0x50,
-};

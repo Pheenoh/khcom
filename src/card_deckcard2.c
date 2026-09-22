@@ -208,3 +208,14 @@ u8 func_080901B8(u8* p) {
 
     return 1;
 }
+
+const char gTaskName_09EE4B28[] = "DeckCard2";
+
+TaskDesc gUnk_09EE4B28 = {
+    gTaskName_09EE4B28,
+    (void (*)(void*, void*))DeckCard2_0,
+    DeckCard2_1,
+    (void (*)(void*))DeckCard2_2,
+    (void (*)(void*))DeckCard2_3,
+    0x50,
+};
