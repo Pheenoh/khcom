@@ -233,3 +233,25 @@ void EV_BG_EFFECT_3(void) {
 void func_080A2124(u8* work) {
     TaskCreate(&work[0x10], &gTaskDescEVBGEFFECT, work);
 }
+
+EventBgEffectDef* gUnk_09EE79B4[8] = {
+    &gUnk_0903803C,
+    &gUnk_09038078,
+    &gUnk_090380B4,
+    &gUnk_090380F8,
+    &gUnk_0903813C,
+    &gUnk_09038198,
+    &gUnk_090381CC,
+    NULL,
+};
+
+const char gTaskNameEVBGEFFECT[] = "EV_BG_EFFECT";
+
+TaskDesc gTaskDescEVBGEFFECT = {
+    gTaskNameEVBGEFFECT,
+    (void (*)(void*, void*))EV_BG_EFFECT_0,
+    EV_BG_EFFECT_1,
+    (void (*)(void*))EV_BG_EFFECT_2,
+    (void (*)(void*))EV_BG_EFFECT_3,
+    0x18,
+};

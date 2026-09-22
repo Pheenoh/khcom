@@ -911,20 +911,6 @@
           "padding_before": 2
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEVBGEFFECT",
-          "address": "0x090381E8",
-          "size": 13,
-          "sha256": "bb8151855c4afa251a4a76c52575e98a8be2319dfdf50f1faa43c964f0bf2867",
-          "objects": [
-            {
-              "name": "gTaskNameEVBGEFFECT",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4770,20 +4756,6 @@
           "padding_before": 2
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEVBGEFFECT",
-          "address": "0x0900B674",
-          "size": 13,
-          "sha256": "bb8151855c4afa251a4a76c52575e98a8be2319dfdf50f1faa43c964f0bf2867",
-          "objects": [
-            {
-              "name": "gTaskNameEVBGEFFECT",
-              "offset": 0,
-              "size": 13
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8599,20 +8571,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEVBGEFFECT",
-          "address": "0x090D1588",
-          "size": 13,
-          "sha256": "bb8151855c4afa251a4a76c52575e98a8be2319dfdf50f1faa43c964f0bf2867",
-          "objects": [
-            {
-              "name": "gTaskNameEVBGEFFECT",
-              "offset": 0,
-              "size": 13
-            }
-          ]
         },
         {
           "unit": "mode_wlogo.c",

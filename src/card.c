@@ -1591,25 +1591,3 @@ TaskDesc gTaskDescEvMapObj = {
 };
 
 void* gUnk_09EE7998[7] = { gUnk_0951F2B8, gUnk_0951FAB8, gUnk_095202B8, gUnk_095212B8, gUnk_09520AB8, gUnk_09521AB8, gUnk_095222B8 };
-
-EventBgEffectDef* gUnk_09EE79B4[8] = {
-    &gUnk_0903803C,
-    &gUnk_09038078,
-    &gUnk_090380B4,
-    &gUnk_090380F8,
-    &gUnk_0903813C,
-    &gUnk_09038198,
-    &gUnk_090381CC,
-    NULL,
-};
-
-const char gTaskNameEVBGEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescEVBGEFFECT"), aligned(1))) = "EV_BG_EFFECT";
-
-TaskDesc gTaskDescEVBGEFFECT = {
-    gTaskNameEVBGEFFECT,
-    (void (*)(void*, void*))EV_BG_EFFECT_0,
-    EV_BG_EFFECT_1,
-    (void (*)(void*))EV_BG_EFFECT_2,
-    (void (*)(void*))EV_BG_EFFECT_3,
-    0x18,
-};
