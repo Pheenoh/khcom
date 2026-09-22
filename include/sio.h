@@ -1,11 +1,8 @@
 #ifndef GUARD_SIO_H
 #define GUARD_SIO_H
 
-#include "sio_runtime_state.h"
 
-#include "sio_callback_state.h"
 
-#include "sio_link_header_state.h"
 
 #include "display.h"
 #include "sio_api.h"

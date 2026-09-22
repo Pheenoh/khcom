@@ -6,7 +6,7 @@
 
 #include "sio_battle_options_state.h"
 
-#include "sio_runtime_state.h"
+#include "sio_api.h"
 
 #include "graphics_state.h"
 

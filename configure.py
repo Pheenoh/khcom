@@ -64,9 +64,7 @@ IWRAM_AFTER_HEAP = [
 BIOS_SYMBOLS = {"gSoundInfoPtr": 0x03007FF0, "gIntrCheck": 0x03007FF8}
 
 EWRAM_COMMON_ORDER = [
-    ("src/sio_link_header_state.o", ".bss"),
-    ("src/sio_callback_state.o", ".bss"),
-    ("src/sio_runtime_state.o", ".bss"),
+    ("src/sio.o", ".ewram_common.*"),
     ("src/pallet.o", ".ewram_common.*"),
     ("src/mode_chkbtl.o", ".ewram_common.*"),
     ("src/mode_debflag.o", ".ewram_common.*"),

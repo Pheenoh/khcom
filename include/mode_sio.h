@@ -18,7 +18,6 @@
 
 #include "sio_handshake_state.h"
 
-#include "sio_runtime_state.h"
 
 #include "chara_link_state.h"
 

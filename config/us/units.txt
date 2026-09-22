@@ -74,9 +74,6 @@ boss_jafar_state.c -O2 -fprologue-bugfix -fno-common
 sio_card_trade_state.c -O2 -fprologue-bugfix -fno-common
 sio_battle_options_state.c -O2 -fprologue-bugfix -fno-common
 sio_handshake_state.c -O2 -fprologue-bugfix -fno-common
-sio_runtime_state.c -O2 -fprologue-bugfix -fno-common
-sio_callback_state.c -O2 -fprologue-bugfix -fno-common
-sio_link_header_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
 battle_field_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_cursor.c -O2 -fprologue-bugfix -fno-common

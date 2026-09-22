@@ -6,11 +6,8 @@
 
 #include "sio_handshake_state.h"
 
-#include "sio_runtime_state.h"
 
-#include "sio_callback_state.h"
 
-#include "sio_link_header_state.h"
 
 #include "chara_link_cursor.h"
 

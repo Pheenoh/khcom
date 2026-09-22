@@ -1,7 +1,26 @@
+#include "macros.h"
 #include "display.h"
 #include "intr.h"
 #include "sio_api.h"
 #include "sio.h"
+
+u8 gUnk_020397D0 EWRAM_COMMON(4);
+s16 gUnk_020397D4 EWRAM_COMMON(4);
+u16 gUnk_020397E0[4][2] EWRAM_COMMON(16);
+u32 gUnk_020397F0 EWRAM_COMMON(4);
+s32 (*gUnk_020397F8)(void) EWRAM_COMMON(8);
+u8 gUnk_020397FC EWRAM_COMMON(4);
+u8 gUnk_02039800 EWRAM_COMMON(4);
+s32 (*gUnk_02039804)(void) EWRAM_COMMON(4);
+u16 gUnk_02039810[4][2] EWRAM_COMMON(16);
+u32 gSioStatus EWRAM_COMMON(4);
+u8 gUnk_02039824 EWRAM_COMMON(4);
+u32 gSioPlayerId EWRAM_COMMON(4);
+u8 gUnk_0203982C EWRAM_COMMON(4);
+SioWork gUnk_02039830 EWRAM_COMMON(16);
+u16 gUnk_02039B58[4] EWRAM_COMMON(8);
+u8 gUnk_02039B60 EWRAM_COMMON(4);
+u16 gUnk_02039B68[4] EWRAM_COMMON(8);
 
 extern IntrFunc* gIntrTableSerial;
 extern IntrFunc* gIntrTableVCount;
