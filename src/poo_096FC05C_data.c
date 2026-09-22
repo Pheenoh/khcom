@@ -1,5 +1,4 @@
 #include "poo_data.h"
-#include "event_background_assets.h"
 
 const PooSpot gUnk_096FC05C[55] = {
     { 0, 0, 0 },
@@ -148,8 +147,3 @@ const PooPoint gUnk_096FC6B0[4] = {
     { 593408, 324864 },
     { 602624, 320256 },
 };
-
-PooMapBgDesc gUnk_096FC6E0 = {
-    gUnk_097A2ED8, 32768, 0, gUnk_09849898, 512, 0, gUnk_097AAED8, 16032, 16, 9
-};
-

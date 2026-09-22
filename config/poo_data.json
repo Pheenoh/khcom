@@ -9,44 +9,6 @@
     "us": {
       "placements": [
         {
-          "unit": "poo_data.c",
-          "section": ".rodata",
-          "address": "0x96fc05c",
-          "size": 1652,
-          "sha256": "db8921cac527537683092682a339075eb1bcf543a0998ddd1985c00ce6e6318b",
-          "objects": [
-            {
-              "name": "gUnk_096FC05C",
-              "offset": 0,
-              "size": 660
-            },
-            {
-              "name": "gUnk_096FC2F0",
-              "offset": 660,
-              "size": 960
-            },
-            {
-              "name": "gUnk_096FC6B0",
-              "offset": 1620,
-              "size": 32
-            }
-          ]
-        },
-        {
-          "unit": "poo_data.c",
-          "section": ".data",
-          "address": "0x96fc6e0",
-          "size": 24,
-          "sha256": "16b38b25ea5b95c0a65b97de9d704739477da203c9349660be352dc05d809139",
-          "objects": [
-            {
-              "name": "gUnk_096FC6E0",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
           "unit": "poo_cabbage_spots_data.c",
           "section": ".rodata",
           "address": "0x96fd778",
@@ -65,44 +27,6 @@
     "jp": {
       "placements": [
         {
-          "unit": "poo_data.c",
-          "section": ".rodata",
-          "address": "0x96b4838",
-          "size": 1652,
-          "sha256": "db8921cac527537683092682a339075eb1bcf543a0998ddd1985c00ce6e6318b",
-          "objects": [
-            {
-              "name": "gUnk_096FC05C",
-              "offset": 0,
-              "size": 660
-            },
-            {
-              "name": "gUnk_096FC2F0",
-              "offset": 660,
-              "size": 960
-            },
-            {
-              "name": "gUnk_096FC6B0",
-              "offset": 1620,
-              "size": 32
-            }
-          ]
-        },
-        {
-          "unit": "poo_data.c",
-          "section": ".data",
-          "address": "0x96b4ebc",
-          "size": 24,
-          "sha256": "57ee8d1cbbf8ed4a934fc7625d5c1171a70083233d3062225dadda28e7e03ff1",
-          "objects": [
-            {
-              "name": "gUnk_096FC6E0",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
           "unit": "poo_cabbage_spots_data.c",
           "section": ".rodata",
           "address": "0x96b5f54",
@@ -120,44 +44,6 @@
     },
     "eu": {
       "placements": [
-        {
-          "unit": "poo_data.c",
-          "section": ".rodata",
-          "address": "0x96c93a4",
-          "size": 1652,
-          "sha256": "db8921cac527537683092682a339075eb1bcf543a0998ddd1985c00ce6e6318b",
-          "objects": [
-            {
-              "name": "gUnk_096FC05C",
-              "offset": 0,
-              "size": 660
-            },
-            {
-              "name": "gUnk_096FC2F0",
-              "offset": 660,
-              "size": 960
-            },
-            {
-              "name": "gUnk_096FC6B0",
-              "offset": 1620,
-              "size": 32
-            }
-          ]
-        },
-        {
-          "unit": "poo_data.c",
-          "section": ".data",
-          "address": "0x96c9a28",
-          "size": 24,
-          "sha256": "4e5a5181c4ad2e5c71b74963958ee7837d37e0d84f047148073d284c3696baa4",
-          "objects": [
-            {
-              "name": "gUnk_096FC6E0",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
         {
           "unit": "poo_cabbage_spots_data.c",
           "section": ".rodata",
