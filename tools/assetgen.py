@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import argparse
-import hashlib
 import os
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -305,16 +303,11 @@ def write_jasc(path, data):
     Path(path).write_text("\r\n".join(lines) + "\r\n")
 
 
-def read_source(manifest, entry, version, tmp):
+def read_source(entry, source, tmp):
     fmt = entry["format"]
-    source = manifest.source(entry, version)
     if not source.exists():
-        raise ManifestError(f"{source.relative_to(ROOT)} is missing; run python3 tools/extract_assets.py {version}")
-    if fmt == "palette":
-        out = tmp / f"{entry['name']}.gbapal"
-        run_gbagfx(source, out)
-        return out.read_bytes()
-    if fmt in ("tiles4", "tiles8"):
+        raise ManifestError(f"{source} is missing; run python3 tools/extract_assets.py")
+    if fmt in ("palette", "tiles4", "tiles8"):
         out = tmp / f"{entry['name']}.{BINARY_EXT[fmt]}"
         run_gbagfx(source, out)
         return out.read_bytes()
@@ -331,8 +324,9 @@ def compress(data, method, tmp, name):
     return packed.read_bytes()
 
 
-def encode(manifest, entry, version, tmp):
-    data = read_source(manifest, entry, version, tmp)
+def encode(manifest, entry, version, tmp, source=None):
+    source = manifest.source(entry, version) if source is None else source
+    data = read_source(entry, source, tmp)
     method = entry[version].get("compress")
     if method:
         data = compress(data, method, tmp, entry["name"])
@@ -341,7 +335,7 @@ def encode(manifest, entry, version, tmp):
     return data
 
 
-def decode_one(manifest, entry, version, data, tmp):
+def decode_one(manifest, entry, version, data, tmp, palette_bytes):
     fmt = entry["format"]
     method = entry[version].get("compress")
     if method == "lz77":
@@ -367,16 +361,8 @@ def decode_one(manifest, entry, version, data, tmp):
     if tiles % width:
         raise ManifestError(f"{entry['name']}: width {width} does not divide {tiles} tiles")
     colors = 16 if depth == 4 else 256
-    palette = manifest.by_name.get(entry.get("palette"))
-    gbapal = bytes(colors * 2)
-    if palette is not None and version in palette:
-        source = manifest.source(palette, version)
-        if source.exists():
-            out = tmp / "palette.gbapal"
-            run_gbagfx(source, out)
-            gbapal = (out.read_bytes() + bytes(colors * 2))[:colors * 2]
     pal_path = tmp / f"{entry['name']}.hint.gbapal"
-    pal_path.write_bytes(gbapal)
+    pal_path.write_bytes((palette_bytes + bytes(colors * 2))[:colors * 2])
     raw = tmp / f"{entry['name']}.{BINARY_EXT[fmt]}"
     png = tmp / f"{entry['name']}.png"
     raw.write_bytes(data)
@@ -386,31 +372,33 @@ def decode_one(manifest, entry, version, data, tmp):
 
 def decode(manifest, version, rom, rom_base=0x08000000):
     written = checked = 0
+
+    def rom_bytes(entry):
+        address, size = entry[version]["address"], entry[version]["size"]
+        data = rom[address - rom_base:address - rom_base + size]
+        if len(data) != size:
+            raise ManifestError(f"{entry['name']}: {version} extent is outside the ROM")
+        return data
+
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = Path(tmpdir)
+        probe_dir = tmp / "probe"
+        probe_dir.mkdir()
         for entry in manifest.entries:
             if "record" in entry or version not in entry:
                 continue
-            address, size = entry[version]["address"], entry[version]["size"]
-            data = rom[address - rom_base:address - rom_base + size]
-            if len(data) != size:
-                raise ManifestError(f"{entry['name']}: {version} extent is outside the ROM")
+            data = rom_bytes(entry)
+            palette = manifest.by_name.get(entry.get("palette"))
+            palette_bytes = rom_bytes(palette) if palette is not None and version in palette else b""
+            decoded = decode_one(manifest, entry, version, data, tmp, palette_bytes)
             source = manifest.source(entry, version)
-            decoded = decode_one(manifest, entry, version, data, tmp)
-            source.parent.mkdir(parents=True, exist_ok=True)
-            probe = tmp / "probe" / version / manifest.group / source.name
-            probe.parent.mkdir(parents=True, exist_ok=True)
+            probe = probe_dir / source.name
             probe.write_bytes(decoded)
-            saved = manifest.source
-            manifest.source = lambda e, v, _p=probe: _p
-            try:
-                again = encode(manifest, entry, version, tmp)
-            finally:
-                manifest.source = saved
-            if again != data:
+            if encode(manifest, entry, version, tmp, probe) != data:
                 raise ManifestError(f"{entry['name']}: {version} {entry['format']} source does not re-encode to the ROM bytes")
             checked += 1
             if not source.exists() or source.read_bytes() != decoded:
+                source.parent.mkdir(parents=True, exist_ok=True)
                 source.write_bytes(decoded)
                 written += 1
     return checked, written

@@ -4,9 +4,11 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
+import assetgen
 import baserom
 
 ROOT = baserom.ROOT
@@ -177,11 +179,52 @@ def manifest_bytes(version, code, sha1, entries):
     return (json.dumps(document, indent=1, sort_keys=True) + "\n").encode()
 
 
-def extract(root, version, rom):
+def decoded_sources(root, version):
+    root = Path(root)
+    refs = {}
+    for manifest in assetgen.load_manifests(root / "config" / "assets"):
+        for entry in manifest.entries:
+            if "record" in entry or version not in entry:
+                continue
+            refs[manifest.source(entry, version).relative_to(root).as_posix()] = manifest
+    return refs
+
+
+def decode(root, version, rom):
+    root = Path(root)
+    checked = written = 0
+    try:
+        for manifest in assetgen.load_manifests(root / "config" / "assets"):
+            done, wrote = assetgen.decode(manifest, version, rom)
+            checked += done
+            written += wrote
+    except (assetgen.ManifestError, subprocess.CalledProcessError) as error:
+        raise AssetError(str(error))
+    return checked, written
+
+
+def write_manifest(root, version, ranges):
     root = Path(root)
     _name, code, sha1 = baserom.resolve(version, root)
-    ranges = plan(root, version)
     entries = {}
+    for ref, (start, end) in sorted(ranges.items()):
+        data = (root / ref).read_bytes()
+        entries[ref] = {"start": f"{start:#010x}", "end": f"{end:#010x}", "sha256": hashlib.sha256(data).hexdigest()}
+    for ref in sorted(decoded_sources(root, version)):
+        path = root / ref
+        if not path.exists():
+            raise AssetError(f"{ref} was not decoded")
+        entries[ref] = {"sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    manifest = manifest_bytes(version, code, sha1, entries)
+    write_if_changed(root / "assets" / version / "manifest.json", manifest)
+    write_if_changed(root / "assets" / version / ".stamp", (hashlib.sha256(manifest).hexdigest() + "\n").encode())
+    return entries
+
+
+def extract(root, version, rom):
+    root = Path(root)
+    _name, code, _sha1 = baserom.resolve(version, root)
+    ranges = plan(root, version)
     written = total = 0
     for ref, (start, end) in sorted(ranges.items()):
         if end - ROM_BASE > len(rom):
@@ -189,10 +232,6 @@ def extract(root, version, rom):
         data = rom[start - ROM_BASE:end - ROM_BASE]
         written += write_if_changed(root / ref, data)
         total += end - start
-        entries[ref] = {"start": f"{start:#010x}", "end": f"{end:#010x}", "sha256": hashlib.sha256(data).hexdigest()}
-    manifest = manifest_bytes(version, code, sha1, entries)
-    write_if_changed(root / "assets" / version / "manifest.json", manifest)
-    write_if_changed(root / "assets" / version / ".stamp", (hashlib.sha256(manifest).hexdigest() + "\n").encode())
     return ranges, written, total
 
 
@@ -216,7 +255,17 @@ def verify(root, version):
             problems.append(f"{ref} is missing")
         elif hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
             problems.append(f"{ref} differs from the manifest")
-    problems += [f"{ref} is in the manifest but no linked asm incbins it" for ref in sorted(set(entries) - set(ranges))]
+    sources = decoded_sources(root, version)
+    for ref in sorted(sources):
+        entry = entries.get(ref)
+        path = root / ref
+        if entry is None:
+            problems.append(f"{ref} is not in the manifest")
+        elif not path.exists():
+            problems.append(f"{ref} is missing")
+        elif hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
+            problems.append(f"{ref} differs from the manifest")
+    problems += [f"{ref} is in the manifest but nothing uses it" for ref in sorted(set(entries) - set(ranges) - set(sources))]
     stamp = root / "assets" / version / ".stamp"
     if not stamp.exists() or stamp.read_text().strip() != hashlib.sha256(manifest).hexdigest():
         problems.append(f"{stamp.relative_to(root)} does not match the manifest")
@@ -243,6 +292,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("versions", nargs="*", metavar="version")
     parser.add_argument("--verify", action="store_true")
+    parser.add_argument("--decode", action="store_true")
     parser.add_argument("--prune", action="store_true")
     parser.add_argument("--migrate", action="store_true")
     args = parser.parse_args()
@@ -274,10 +324,16 @@ def main():
             source, rom = baserom.load(version)
             if source is None:
                 raise AssetError(baserom.missing_message(version, purpose="extraction").removeprefix("error: "))
-            ranges, written, total = extract(ROOT, version, rom)
-            pruned = prune(ROOT, version, set(ranges)) if args.prune else 0
-            print(f"{version}: {len(ranges)} files, {total} bytes, {written} written, {pruned} pruned,"
-                  f" from {source.relative_to(ROOT)}")
+            if args.decode:
+                ranges = plan(ROOT, version)
+                written = total = 0
+            else:
+                ranges, written, total = extract(ROOT, version, rom)
+            checked, decoded = decode(ROOT, version, rom)
+            entries = write_manifest(ROOT, version, ranges)
+            pruned = prune(ROOT, version, set(entries)) if args.prune else 0
+            print(f"{version}: {len(ranges)} files, {total} bytes, {written} written, {checked} sources checked,"
+                  f" {decoded} decoded, {pruned} pruned, from {source.relative_to(ROOT)}")
     except AssetError as error:
         sys.exit(f"error: {error}")
     return 0
