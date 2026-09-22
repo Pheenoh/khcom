@@ -8,12 +8,6 @@
     "us": {
       "named_assets": [
         {
-          "name": "gCardMessageTextUs_0900868C",
-          "address": "0x900868c",
-          "size": 80,
-          "encoding": "utf16le"
-        },
-        {
           "name": "gCardMessageTextUs_0903C03C",
           "address": "0x903c03c",
           "size": 36,

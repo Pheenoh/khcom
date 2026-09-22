@@ -5,7 +5,6 @@
 #include "msg_localized_data.h"
 
 #ifdef VERSION_US
-extern u16 gCardMessageTextUs_0900868C[];
 extern u16 gCardMessageTextUs_0903C03C[];
 extern u16 gCardMessageTextUs_0903C060[];
 extern u16 gCardMessageTextUs_0903C0D4[];

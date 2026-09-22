@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "events_134_196.h"
 
 UnkStruct_02034AFC* gUnk_02034AFC;
 
@@ -1265,7 +1266,7 @@ CardMessageDef gUnk_09EE8008[] = {
 #elif defined(VERSION_JP)
         gCardMessageTextJp_0900F8B0,
 #elif defined(VERSION_US)
-        gCardMessageTextUs_0900868C,
+        gEventTextUs_0900868C,
 #endif
         1,
         0,
