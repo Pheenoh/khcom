@@ -2140,7 +2140,7 @@ s32 func_080F1EA0(MapGmkGpWork* w) {
 
 void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -2235,7 +2235,7 @@ s32 func_080F2130(MapGmkGp1Work* w) {
 
 void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->cell = arg;
@@ -2327,7 +2327,7 @@ u8 func_080F238C(MapGmkGpWork* w) {
 
 void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->cell = arg;
@@ -2431,7 +2431,7 @@ u8 func_080F2654(MapGmkGpWork* w) {
 
 void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->cell = arg;
@@ -2522,7 +2522,7 @@ s32 func_080F28F4(MapGmkGpWork* w) {
 
 void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -2615,7 +2615,7 @@ s32 func_080F2B78(MapGmkGpWork* w) {
 
 void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -2722,7 +2722,7 @@ s32 func_080F2E4C(MapGmkGpWork* w) {
 
 void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -2828,7 +2828,7 @@ s32 func_080F3108(MapGmkGp8Work* w) {
 
 void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -2921,7 +2921,7 @@ s32 func_080F3384(MapGmkGp8Work* w) {
 
 void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -3021,7 +3021,7 @@ s32 func_080F3674(MapGmkGp8Work* w) {
 
 void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
@@ -3082,7 +3082,7 @@ void func_080F3864(MapGmkGp8Work* w) {
 
 void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->unk_000 = arg;
@@ -3209,7 +3209,7 @@ s32 func_080F3B84(MapGmk01Work* w) {
 
 void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->unk_000 = arg;
@@ -3348,7 +3348,7 @@ s32 func_080F3F6C(MapGmkBarrelWork* w) {
 
 void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     w->unk_000 = arg;
@@ -3444,7 +3444,7 @@ void func_080F4258(MapGmk04Work* w) {
 
 void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     w->unk_000 = arg;
     e->unk_00 = arg->unk_04;
@@ -3539,7 +3539,7 @@ void func_080F44AC(MapGmk04Work* w) {
 
 void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
 
     e->unk_00 = arg->unk_04;
@@ -3648,7 +3648,7 @@ void func_080F47DC(MapGmk06Work* w) {
 
 void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
-    UnkStruct_080E7D80* d = arg->unk_14;
+    const UnkStruct_080E7D80* d = arg->unk_14;
 
     e->unk_00 = arg->unk_04;
     e->unk_1A = d->unk_1E;
@@ -5539,50 +5539,84 @@ void func_080F7BB8(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 &= ~0x1000;
 }
 
-const char gTaskNameMapPrize[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrize"), aligned(1))) = "Task_MapPrize";
+const UnkStruct_080E7D80 gUnk_0984C158 = {
+    gUnk_099912C4, gUnk_09858320, 0x200, 0, 0, gUnk_09EF8414, gUnk_09EF841C,
+    1, 13, 0, 0, 0, 16, 16, 208, 0, &gUnk_09EF6DD4,
+};
 
-const char gTaskNameMapPrzCard[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrzCard"), aligned(1))) = "Task_MapPrzCard";
+const char gTaskName_09EF6DD4[] = "Task_MapGmk01";
 
-const char gTaskNameMapPrzStock[] __attribute__((section(".rodata_registration_name_gTaskDescMapPrzStock"), aligned(1))) = "Task_MapPrzStock";
+const UnkStruct_080E7D80 gUnk_0984C190 = {
+    gUnk_099912E4, gUnk_09858B3C, 0x400, 0, 0, gUnk_09EF8424, gUnk_09EF8460,
+    1, 0, 0, 0, 0, 12, 24, 144, 0, &gUnk_09EF6DEC,
+};
 
-const char gTaskNameMapMsg[] __attribute__((section(".rodata_registration_name_gTaskDescMapMsg"), aligned(1))) = "Task_MapMsg";
+const char gTaskName_09EF6DEC[] = "Task_MapGmk_Barrel";
 
-const char gTaskNameMapSpark[] __attribute__((section(".rodata_registration_name_gTaskDescMapSpark"), aligned(1))) = "Task_MapSpark";
+const UnkStruct_080E7D80 gUnk_0984C1CC = {
+    gUnk_09991324, gUnk_0985ADAA, 0x400, 0, 0, &gUnk_09EF8494, &gUnk_09EF84A4,
+    1, 13, 0, 0, 0, 24, 62, 102, 0, &gUnk_09EF6E04,
+};
 
-const char gTaskNameMapTalk[] __attribute__((section(".rodata_registration_name_gTaskDescMapTalk"), aligned(1))) = "Task_MapTalk";
+const char gTaskName_09EF6E04[] = "Task_MapGmk04";
 
-const char gTaskNameMapDonald[] __attribute__((section(".rodata_registration_name_gTaskDescMapDonald"), aligned(1))) = "Task_MapDonald";
+const UnkStruct_080E7D80 gUnk_0984C204 = {
+    gUnk_09617D58, gUnk_092028EC, 0x100, 0, 0, gUnk_09EEEA98, gUnk_09EEEAC8,
+    1, 13, 0, 0, 0, 16, 24, 207, 0, &gUnk_09EF6E1C,
+};
 
-const char gTaskNameMapGoofy[] __attribute__((section(".rodata_registration_name_gTaskDescMapGoofy"), aligned(1))) = "Task_MapGoofy";
+const char gTaskName_09EF6E1C[] = "Task_MapGmk05";
 
-const char gTaskNameMapNamine[] __attribute__((section(".rodata_registration_name_gTaskDescMapNamine"), aligned(1))) = "Task_MapNamine";
+const UnkStruct_080E7D80 gUnk_0984C23C = {
+    gUnk_09991344, gUnk_0985BDEA, 0x400, 0, 0, &gUnk_09EF84A8, &gUnk_09EF84B8,
+    1, 13, 0, 0, 0, 24, 54, 102, 0, &gUnk_09EF6E34,
+};
 
-const char gTaskNameMapNiseriku[] __attribute__((section(".rodata_registration_name_gTaskDescMapNiseriku"), aligned(1))) = "Task_MapNiseriku";
+const char gTaskName_09EF6E34[] = "Task_MapGmk06";
 
-const char gTaskNameMapMickey[] __attribute__((section(".rodata_registration_name_gTaskDescMapMickey"), aligned(1))) = "Task_MapMickey";
+const char gTaskNameMapPrize[] = "Task_MapPrize";
 
-const char gTaskNameMapTutorial[] __attribute__((section(".rodata_registration_name_gTaskDescMapTutorial"), aligned(1))) = "Task_MapTutorial";
+const char gTaskNameMapPrzCard[] = "Task_MapPrzCard";
 
-const char gTaskNameMapStair[] __attribute__((section(".rodata_registration_name_gTaskDescMapStair"), aligned(1))) = "Task_MapStair";
+const char gTaskNameMapPrzStock[] = "Task_MapPrzStock";
 
-const char gTaskNameMapDmg[] __attribute__((section(".rodata_registration_name_gTaskDescMapDmg"), aligned(1))) = "Task_MapDmg";
+const char gTaskNameMapMsg[] = "Task_MapMsg";
 
-const char gTaskNameMapFloor[] __attribute__((section(".rodata_registration_name_gTaskDescMapFloor"), aligned(1))) = "Task_MapFloor";
+const char gTaskName_09EF6EAC[] = "Task_MapMsg2";
 
-const char gTaskName_09EF6DD4[] __attribute__((section(".rodata_registration_name_gUnk_09EF6DD4"), aligned(1))) = "Task_MapGmk01";
+const char gTaskNameMapSpark[] = "Task_MapSpark";
 
-const char gTaskName_09EF6DEC[] __attribute__((section(".rodata_registration_name_gUnk_09EF6DEC"), aligned(1))) = "Task_MapGmk_Barrel";
+const char gTaskNameMapTalk[] = "Task_MapTalk";
 
-const char gTaskName_09EF6E04[] __attribute__((section(".rodata_registration_name_gUnk_09EF6E04"), aligned(1))) = "Task_MapGmk04";
+const u8 gUnk_0984C2E4[28] __attribute__((aligned(4))) = {
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+    14, 15, 16, 17, 18, 19, 20, 21, 21, 21, 22, 22, 23, 23,
+};
 
-const char gTaskName_09EF6E1C[] __attribute__((section(".rodata_registration_name_gUnk_09EF6E1C"), aligned(1))) = "Task_MapGmk05";
+const char gTaskNameMapDonald[] = "Task_MapDonald";
 
-const char gTaskName_09EF6E34[] __attribute__((section(".rodata_registration_name_gUnk_09EF6E34"), aligned(1))) = "Task_MapGmk06";
+const u8 gUnk_0984C310[28] __attribute__((aligned(4))) = {
+    25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+    39, 40, 41, 42, 43, 44, 45, 46, 46, 46, 47, 47, 48, 48,
+};
 
-const char gTaskName_09EF6EAC[] __attribute__((section(".rodata_registration_name_gUnk_09EF6EAC"), aligned(1))) = "Task_MapMsg2";
+const char gTaskNameMapGoofy[] = "Task_MapGoofy";
 
-const char gTaskName_09EF6F9C[] __attribute__((section(".rodata_registration_name_gUnk_09EF6F9C"), aligned(1))) = "Task_MapFaint";
+const char gTaskNameMapNamine[] = "Task_MapNamine";
 
+const char gTaskNameMapNiseriku[] = "Task_MapNiseriku";
+
+const char gTaskNameMapMickey[] = "Task_MapMickey";
+
+const char gTaskNameMapTutorial[] = "Task_MapTutorial";
+
+const char gTaskNameMapStair[] = "Task_MapStair";
+
+const char gTaskName_09EF6F9C[] = "Task_MapFaint";
+
+const char gTaskNameMapDmg[] = "Task_MapDmg";
+
+const char gTaskNameMapFloor[] = "Task_MapFloor";
 TaskDesc gUnk_09EF6B90 = {
     gTaskName_09EF6B90,
     (void (*)(void*, void*))func_080EF914,

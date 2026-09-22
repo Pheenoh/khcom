@@ -4646,7 +4646,7 @@ void func_080E7DF8(void) {
 void func_080E7E3C(void) {
     UnkStruct_080DFF1C w;
     UnkStruct_080DEE18* e;
-    UnkStruct_080E7D80* q;
+    const UnkStruct_080E7D80* q;
     s32 i;
 
     e = func_080DEE18(gUnk_0203C590.unk_06);
@@ -4731,7 +4731,7 @@ void func_080E8058(void) {
 
 void func_080E80E0(void) {
     UnkStruct_080DFF1C w;
-    UnkStruct_080E7D80* t;
+    const UnkStruct_080E7D80* t;
     s32 i;
     s32 f;
 
@@ -4796,7 +4796,7 @@ void func_080E826C(void) {
 
     for (i = gUnk_02034F78; i < 16; i++) {
         UnkStruct_080DFF1C w;
-        UnkStruct_080E7D80* e = &gUnk_09856FB4[func_080E6634(i)];
+        const UnkStruct_080E7D80* e = &gUnk_09856FB4[func_080E6634(i)];
         u8 f = func_080E7DB8(e->unk_14, e->tiles);
         u8 g;
 
@@ -4910,7 +4910,7 @@ void func_080E853C(void) {
 void func_080E8594(void) {
     s32 i;
     UnkStruct_02034F20* p;
-    UnkStruct_080E7D80* d;
+    const UnkStruct_080E7D80* d;
 
     for (i = 0; i < 12; i++) {
         p = func_080E54A0(i);
@@ -5149,7 +5149,7 @@ void func_080E8AE8(void) {
     }
 }
 
-void func_080E8B1C(UnkStruct_080E8B1C* p, UnkStruct_080E7D80* q) {
+void func_080E8B1C(UnkStruct_080E8B1C* p, const UnkStruct_080E7D80* q) {
     p->unk_00 = q->tiles;
     p->unk_04 = q->tilesSize;
     p->unk_08 += q->unk_0A << 5;
@@ -9626,7 +9626,7 @@ void func_080EF32C(MapAnmWork* work, MapAnmEntry* list) {
             e = work->unk_00;
 
             do {
-                func_080E8B1C(e, (UnkStruct_080E7D80*)list);
+                func_080E8B1C(e, (const UnkStruct_080E7D80*)list);
                 e++;
                 list++;
             } while (list->unk_00 != 0);
