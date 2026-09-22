@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "task_descriptors.h"
 #include "evt.h"
 #include "evt_api.h"
@@ -6,7 +7,7 @@ const char gTaskNameEvtObj[] = "task_evt_obj";
 
 const char gTaskNameEvtShadow[] = "task_evt_shadow";
 
-EventState* gUnk_02039DC8;
+EventState* gUnk_02039DC8 EWRAM_COMMON(4);
 
 void func_0801CD74(EvtObj* obj, s32 anim) {
     u16 t = obj->flags | 1;

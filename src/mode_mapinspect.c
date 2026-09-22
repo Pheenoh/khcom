@@ -101,7 +101,7 @@ const u16 gUnk_099937A0[4] = {2, 1, 3, 4};
 MapCardInventoryEntry* gUnk_02035E28;
 s16 gUnk_02035E2C;
 s16 gUnk_02035E2E;
-u16 gUnk_02035E30[4];
+u16 gUnk_02035E30[4] __attribute__((aligned(8)));
 u16 gUnk_02035E38[4];
 s16 gUnk_02035E40[4];
 s16 gUnk_02035E48;

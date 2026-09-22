@@ -11,7 +11,7 @@ sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c -O2 -fprologue-bugfix
 util.c -O2 -fprologue-bugfix -fno-common
 save.c -O2 -fprologue-bugfix -fno-common
-mode_battle.c
+mode_battle.c -O2 -fprologue-bugfix -fno-common
 mode_chkbtl.c -O2 -fprologue-bugfix -fno-common
 mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
@@ -60,7 +60,7 @@ mode_event.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix
 continue_ui.c -O2 -fprologue-bugfix
 event_message.c -O2 -fprologue-bugfix
-mode_eventselect.c -O2 -fprologue-bugfix
+mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card_battle.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c
@@ -129,7 +129,6 @@ m4a_1.s
 m4a2.c -O2 -fno-common
 movie_debug.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
-memory_regions.c -O2 -fprologue-bugfix -fno-common
 map_transition_state.c -O2 -fprologue-bugfix -fno-common
 allmap_bottom_state.c -O2 -fprologue-bugfix -fno-common
 allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
@@ -155,6 +154,7 @@ pooh_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_state.c -O2 -fprologue-bugfix -fno-common
 card_ui_state.c -O2 -fprologue-bugfix -fno-common
+m4a_catalog_data.c
 transform_veneers.s(.text)
 malloc.c(.rodata)
 sprite.c(.rodata)
@@ -1314,7 +1314,7 @@ asset_misc2_at_09D6D620.s(.rodata)
 m4a_catalog_data.c(.rodata)
 asset_misc2_at_09D71554.s(.rodata)
 mode_battle.c(.data)
-mode_chkbtl_data.c(.data)
+mode_chkbtl.c(.data)
 mode_debug.c(.data)
 mode_chkobj.c(.data)
 mode_chksnd.c(.data)

@@ -2,29 +2,29 @@
 #include "m4a_catalog_data.h"
 #include "m4a_catalog_assets.h"
 
-MusicPlayerTrack gMPlayTracks0[14] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks1[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks2[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks3[2] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks4[4] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks5[6] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks6[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks7[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks8[2] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks9[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks10[3] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks11[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks12[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks16[2] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks17[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks18[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks19[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks20[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks21[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks22[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks23[1] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks24[2] __attribute__((nocommon, aligned(4)));
-MusicPlayerTrack gMPlayTracks25[2] __attribute__((nocommon, aligned(4)));
+MusicPlayerTrack gMPlayTracks0[14] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks1[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks2[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks3[2] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks4[4] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks5[6] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks6[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks7[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks8[2] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks9[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks10[3] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks11[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks12[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks16[2] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks17[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks18[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks19[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks20[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks21[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks22[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks23[1] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks24[2] __attribute__((nocommon, aligned(8)));
+MusicPlayerTrack gMPlayTracks25[2] __attribute__((nocommon, aligned(8)));
 
 const MusicPlayer gMPlayTable[26] = {
     {&gMPlayInfo_BGM, gMPlayTracks0, 14, 0},

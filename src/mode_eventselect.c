@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "msg_api.h"
 #include "card_api.h"
@@ -57,9 +58,9 @@ const char gUnk_09033EF8[] = "\x82\x64\x82\x75\x82\x64\x82\x6d\x82\x73\x81\x40\x
 
 const char gUnk_09033F10[] = "\x82\x6d\x82\x8f\x81\x40\x81\x81";
 
-static s16 gUnk_02034A94;
+s16 gUnk_02034A94 __attribute__((aligned(4)));
 static u8 gUnk_02034A96;
-UnkStruct_02039DD0* gUnk_02039DD0;
+UnkStruct_02039DD0* gUnk_02039DD0 EWRAM_COMMON(4);
 
 s16 func_08075064(u8 a) {
     s16 n = 0;

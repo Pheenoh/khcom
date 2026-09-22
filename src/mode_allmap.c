@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "map_api.h"
 #include "mode_allmap_api.h"
@@ -13,7 +14,7 @@ const AllmapRoomOrder gUnk_096FDB70 = {{
 
 const AllmapRoomDirs gUnk_096FDBB0 = {{1, 2, 3, 0}};
 
-TaskPool gUnk_0203C4F0 __attribute__((common));
+TaskPool gUnk_0203C4F0 EWRAM_COMMON(16);
 
 s16 gUnk_02034E3C;
 s16 gUnk_02034E3E;

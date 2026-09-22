@@ -60,7 +60,7 @@ const s16 gUnk_096FDCE8[3] = {-7, 0, 3};
 
 const char gTaskNameTitleLumichange[] = "task_title_lumichange";
 
-u8 gUnk_02034ED0;
+u8 gUnk_02034ED0 __attribute__((aligned(4)));
 
 void task_title_logo_0(TitleLogoWork* work) {
     func_080D62A8(work);

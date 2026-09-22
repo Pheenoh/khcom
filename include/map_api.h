@@ -2,6 +2,7 @@
 #define GUARD_MAP_API_H
 
 #include "types.h"
+#include "map_types.h"
 
 struct UnkStruct_02034F24;
 struct UnkStruct_02034F80;
@@ -30,5 +31,7 @@ struct UnkStruct_02034F80* func_080E8D1C(u8 a);
 u8 func_080E924C(void);
 void func_080E92B8(struct UnkStruct_080E92B8* p);
 void func_080E92F8(struct UnkStruct_080E92B8* p);
+
+extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 
 #endif

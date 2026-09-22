@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "map_api.h"
 #include "mode_chkbtl.h"
 #include "mode_debflag.h"
@@ -11,7 +12,7 @@ static u32 gUnkEu_020348D4;
 #endif
 
 
-u8 gUnk_02039B94;
+u8 gUnk_02039B94 EWRAM_COMMON(4);
 
 const DebugFlag gUnk_08130BE8[14] = {
     { "\x82\x6c\x82\x74\x82\x73\x82\x64\x82\x6a\x82\x68\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x46", 0x2 },

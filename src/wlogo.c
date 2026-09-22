@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "chara_api.h"
 #include "intr.h"
@@ -29,7 +30,7 @@ static TaskPool gWlogoNvlTaskPool;
 static TaskPool gWlogoNvlMovTaskPool;
 static TaskPool gWlogoAgrTaskPool;
 static TaskPool gWlogoPooTaskPool;
-s32 gUnk_0203AB38;
+s32 gUnk_0203AB38 EWRAM_COMMON(4);
 
 void task_wlogo_mons_0(WlogoMonsWork* work) {
     LoadBgPalette(0, gUnk_096FACA4, 0x20);

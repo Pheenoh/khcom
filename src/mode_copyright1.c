@@ -2,9 +2,11 @@
 #include "mode_copyright1.h"
 
 #ifndef VERSION_JP
-u8 gUnk_02034ED4;
-#endif
+u8 gUnk_02034ED4 __attribute__((aligned(4)));
 u16 gUnk_02034ED6;
+#else
+u16 gUnk_02034ED6 __attribute__((aligned(4)));
+#endif
 u8 gUnk_02034ED8;
 
 void mode_copyright1_0(s32 arg) {

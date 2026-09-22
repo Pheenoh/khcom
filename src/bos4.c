@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "map_index_assets.h"
 #include "boss_map_block_assets.h"
 #include "registration_data.h"
@@ -1161,7 +1162,7 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z) {
     return r;
 }
 
-UnkStruct_0203C590 gUnk_0203C590 __attribute__((common));
+UnkStruct_0203C590 gUnk_0203C590 EWRAM_COMMON(16);
 
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 x;

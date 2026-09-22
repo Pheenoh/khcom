@@ -7,7 +7,7 @@
 #include "types.h"
 #include "sroll_api.h"
 
-DmaStream gUnk_02036028;
+DmaStream gUnk_02036028 __attribute__((aligned(8)));
 u8 gUnk_02036048;
 u32 gUnk_0203604C;
 s32 gUnk_02036050[0x810];

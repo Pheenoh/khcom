@@ -7,7 +7,7 @@
 
 u32 gUnk_02034E98;
 u32 gUnk_02034E9C;
-TaskPool gTitleTaskPool;
+TaskPool gTitleTaskPool __attribute__((aligned(8)));
 Task* gTitleMenuTask;
 Task* gTitleLogoTask;
 Task* gTitleObjTask;

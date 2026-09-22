@@ -5,7 +5,7 @@
 
 static u16 gRawKeys;
 static u16 gRawKeysPrev;
-static u8 gSramErrorTilemapBuf[0x500];
+static u8 gSramErrorTilemapBuf[0x800];
 extern u16 gSystemFlags;
 extern u8 gSramErrorPalette[];
 extern u8 gSramErrorTiles[];

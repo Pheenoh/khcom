@@ -281,9 +281,6 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     SetObjTileSource(work->tiles, e->tiles);
 }
 
-
-UnkStruct_0203C7AC* gUnk_0203C7AC;
-
 void task_fld_sora_0(FldWork* work) {
     FldActor* act;
 

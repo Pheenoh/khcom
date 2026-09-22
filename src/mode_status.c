@@ -12,7 +12,7 @@ extern u8 gUnkEu_097D9B00[];
 extern u8 gUnkEu_097DA700[];
 #endif
 
-TaskPool gUnk_02034EE0;
+TaskPool gUnk_02034EE0 __attribute__((aligned(8)));
 Task* gUnk_02034EF4;
 u8 gUnk_02034EF8;
 

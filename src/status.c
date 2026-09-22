@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "localized_resource_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -65,7 +66,7 @@ static u8 gUnk_02034F00;
 static s16 gUnk_02034F02;
 static StatusStocklistWork* gStatusStocklistWork;
 
-s32 gUnk_0203C550;
+s32 gUnk_0203C550 EWRAM_COMMON(4);
 
 void task_status_0(StatusWork* work) {
     gStatusWork = work;

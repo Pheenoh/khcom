@@ -1,4 +1,5 @@
 #include "graphics_state.h"
+#include "macros.h"
 #include "engine_math.h"
 #include "fade.h"
 #include "pallet.h"
@@ -3305,4 +3306,4 @@ BgAnimationDef* BgAnimGetCurrent(void) {
     return gUnk_02034040;
 }
 
-Dma3Queue* gDma3Requests __attribute__((common));
+Dma3Queue* gDma3Requests IWRAM_COMMON(4);

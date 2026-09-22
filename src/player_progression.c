@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "ms_api.h"
 #include "player_progression.h"
 #include "battle.h"
@@ -59,7 +60,7 @@ const EnemyBaseStats gUnk_08133E5C[54] = {
     { 500, 3, 133, 0 },
 };
 
-GameState gGameState;
+GameState gGameState EWRAM_COMMON(16);
 
 void AdvanceLevelExpThreshold(PlayerProgression* p) {
     s32 n = p->level + 1;

@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "map_ui_data.h"
 #include "map_text_assets.h"
 #include "registration_data.h"
@@ -17,6 +18,8 @@
 #include "map_spawn_data.h"
 #include "map_resource_assets.h"
 #include "map_text_data.h"
+
+UnkStruct_0203C7AC* gUnk_0203C7AC EWRAM_COMMON(4);
 
 extern u8 gUnk_09EF6A34[];
 extern u8 gUnk_09EF6A42[];

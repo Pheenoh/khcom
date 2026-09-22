@@ -1,7 +1,8 @@
+#include "macros.h"
 #include "agb_sram.h"
 
-void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
-u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size);
+void (*ReadSramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
+u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
 
 #define REG_WAITCNT (*(vu16*)0x4000204)
 

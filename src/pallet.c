@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "pallet.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -18,7 +19,7 @@ static PaletteBuffer* gPaletteBuffer;
 static s16 gPaletteEffect;
 static s16 gPaletteEffectSaved;
 
-PaletteWave gBgWaves[5];
+PaletteWave gBgWaves[5] EWRAM_COMMON(16);
 
 
 u16* FadePaletteToBlack(u16* src, u16* dst, u16 size, u16 amount) {

@@ -1,4 +1,3 @@
-#include "memory_regions.h"
 #include "chara_api.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -260,8 +259,6 @@ void VBlankIntr(void) {
     gFrameSyncFlags &= 0xFFFD;
     gVBlankCounter++;
 }
-
-vu16 gIntrCheck __attribute__((common));
 
 void HBlankIntrDummy(void) {
 }

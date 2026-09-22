@@ -49,146 +49,69 @@ def asm_file_deps(path, missing):
     return out
 
 
-ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728, "eu": 0x02038DC8}
-BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
+EWRAM_HEAP_SIZE = 0x34000
+IWRAM_HEAP_SIZE = 0x6800
+IWRAM_BEFORE_HEAP = [("src/m4a2.o", ".bss")]
+IWRAM_AFTER_HEAP = [
+    ("src/main.o", ".bss"),
+    ("src/taskpool.o", ".bss"),
+    ("src/malloc.o", ".bss"),
+    ("src/sprite.o", ".bss"),
+    ("src/graphics_state.o", ".bss"),
+    ("src/pallet.o", ".bss"),
+    ("src/engine.o", ".iwram_common.*"),
+]
+BIOS_SYMBOLS = {"gSoundInfoPtr": 0x03007FF0, "gIntrCheck": 0x03007FF8}
 
-# Source units whose globals are defined in C rather than given an address in
-# symbols.txt. The linker script ends in /DISCARD/, so a unit's .bss is thrown
-# away unless it is placed here.
-# An int means every version places the unit at the same address; a dict gives
-# a per-version address. US and JP agree below 0x02034A08 and in IWRAM, and JP
-# is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
-# in IWRAM from 0x03007484, so most units need the dict form.
-UNIT_COMMON = {
-    "src/agb_sram.o": {"us": 0x0203C7BC, "jp": 0x0203C72C, "eu": 0x0203CDAC},
-    "src/card.o": {"us": 0x02034B38, "jp": 0x02034A98, "eu": 0x02034B50},
-    "src/main.o": 0x03007FF8,
-    "src/memory_regions.o": 0x02000000,
-    "src/boss_tm_state.o": {"us": 0x203ab50, "jp": 0x203aac0, "eu": 0x203b120},
-    "src/bos4.o": {"us": 0x203c590, "jp": 0x203c500, "eu": 0x203cb80},
-    "src/m4a2.o": {"us": 0x3007ff0, "jp": 0x3007ff0, "eu": 0x3007ff0},
-    "src/engine.o": {"us": 0x3007574, "jp": 0x3007574, "eu": 0x300757c},
-    "src/card_battle.o": {"us": 0x02039DD4, "jp": 0x02039D44, "eu": 0x0203A3E4},
-    "src/mode_test_support.o": {"us": 0x02039DC4, "jp": 0x02039D34, "eu": 0x0203A3D4},
-    "src/pallet.o": {"us": 0X02039B70, "jp": 0x02039ae0, "eu": 0x0203a180},
-    "src/status.o": {"us": 0X0203C550, "jp": 0x0203c4c0, "eu": 0x0203cb40},
-    "src/mode_debflag.o": {"us": 0X02039B94, "jp": 0x02039b04, "eu": 0x0203a1a4},
-    "src/wlogo.o": {"us": 0X0203AB38, "jp": 0x0203aaa8, "eu": 0x0203b10c},
-    "src/event_message.o": {"us": 0x02039DCC, "jp": 0x02039D3C, "eu": 0x0203A3DC},
-    "src/mode_eventselect.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
-    "src/mode_allmap.o": {"us": 0x0203C4F0, "jp": 0x0203C460, "eu": 0x0203CAE0},
-}
-
-UNIT_BSS = {
-    "src/m4a_catalog_data.o": {"us": 0x20387e0, "jp": 0x2038750, "eu": 0x2038df0},
-    "src/memory_regions.o": 0x03000000,
-    "src/mode_chkbtl_data.o": {"us": 0x02034890, "jp": 0x02034890, "eu": 0x02034898},
-    "src/mode_battle.o": {"eu": 0x02034890},
-    "src/map_transition_state.o": {"us": 0x0203C7B0, "jp": 0x0203C720, "eu": 0x0203CDA0},
-    "src/allmap_bottom_state.o": {"us": 0x0203C510, "jp": 0x0203C480, "eu": 0x0203CB00},
-    "src/allmap_scroll_state.o": {"us": 0x0203C504, "jp": 0x0203C474, "eu": 0x0203CAF4},
-    "src/allmap_top_state.o": {"us": 0x0203C4C0, "jp": 0x0203C430, "eu": 0x0203CAB0},
-    "src/pooh_actor_state.o": {"us": 0x0203C420, "jp": 0x0203C390, "eu": 0x0203CA10},
-    "src/boss_jafar_state.o": {"us": 0x0203AC80, "jp": 0x0203ABF0, "eu": 0x0203B250},
-    "src/sio_card_trade_state.o": {"us": 0x0203AB10, "jp": 0x0203AA80},
-    "src/sio_battle_options_state.o": {"us": 0x0203AA00, "jp": 0x0203A970, "eu": 0x0203B000},
-    "src/sio_handshake_state.o": {"us": 0x0203A9EC, "jp": 0x0203A95C, "eu": 0x0203AFF8},
-    "src/sio_runtime_state.o": {"us": 0x02039810, "jp": 0x02039780, "eu": 0x02039E20},
-    "src/sio_callback_state.o": {"us": 0x020397F8, "jp": 0x02039768, "eu": 0x02039E08},
-    "src/sio_link_header_state.o": {"us": 0x020397D0, "jp": 0x02039740, "eu": 0x02039DE0},
-    "src/allmap_cursor_state.o": {"us": 0x0203C538, "jp": 0x0203C4A8, "eu": 0x0203CB28},
-    "src/battle_field_state.o": {"us": 0x02039B9C, "jp": 0x02039B0C, "eu": 0x0203A1AC},
-    "src/chara_link_cursor.o": {"us": 0x0203BEB8, "jp": 0x0203BE28, "eu": 0x0203C488},
-    "src/worldlogo_state.o": {"us": 0x0203AB3C, "jp": 0x0203AAAC, "eu": 0x0203B110},
-    "src/sio_debug_state.o": {"us": 0x0203C3C4, "jp": 0x0203C334, "eu": 0x0203C9A0},
-    "src/title_background_state.o": {"us": 0x0203C544, "jp": 0x0203C4B4, "eu": 0x0203CB34},
-    "src/chara_link_buffers.o": {"us": 0x0203BD10, "jp": 0x0203BC80, "eu": 0x0203C2E0},
-    "src/boss_tm_state.o": {"us": 0x0203AC60, "jp": 0x0203ABD0, "eu": 0x0203B230},
-    "src/boss_status_state.o": {"us": 0x0203C554, "jp": 0x0203C4C4, "eu": 0x0203CB44},
-    "src/pooh_state.o": {"us": 0x0203C3D8, "jp": 0x0203C348, "eu": 0x0203C9C8},
-    "src/graphics_state.o": {"us": 0x030074CC, "jp": 0x030074CC, "eu": 0x030074D4},
-    "src/chara_link_state.o": {"us": 0x0203BEC0, "jp": 0x0203BE30, "eu": 0x0203C490},
-    "src/mode_ms_top.o": {"us": 0x020357C0, "jp": 0x02035720, "eu": 0x02035DD0},
-    "src/mode_chkbtl.o": {"us": 0X02039B84, "jp": 0x02039af4, "eu": 0x0203a194},
-    "src/mode_vsbattle.o": {"us": 0X02039B98, "jp": 0x02039b08, "eu": 0x0203a1a8},
-    "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},
-    "src/fld.o": {"us": 0X0203C7AC, "jp": 0x0203c71c, "eu": 0x0203cd9c},
-    "src/player_progression.o": {"us": 0x02039BB0, "jp": 0x02039B20, "eu": 0x0203A1C0},
-    "src/battle_runtime.o": {"us": 0X02039DC0, "jp": 0x02039d30, "eu": 0x0203a3d0},
-    "src/taskpool.o": {"us": 0x03007488, "jp": 0x03007488, "eu": 0x0300748C},
-    "src/malloc.o": {"us": 0x030074A8, "jp": 0x030074A8, "eu": 0x030074B0},
-    "src/engine.o": 0x0203401C,
-    "src/mode_ms.o": {"us": 0x020358C8, "jp": 0x02035828, "eu": 0x02035ED8},
-    "src/card.o": {"us": 0x02034AA4, "jp": 0x02034A04, "eu": 0x02034AC0},
-    "src/card_state.o": {"us": 0x02039DD8, "jp": 0x02039D48, "eu": 0x0203A3E8},
-    "src/card_ui_state.o": {"us": 0x0203A860, "jp": 0x0203A7D0, "eu": 0x0203AE70},
-    "src/util.o": 0x0203407C,
-    "src/save.o": 0x02034088,
-    "src/mode_debug.o": {"us": 0x02034898, "jp": 0x02034898, "eu": 0x020348A0},
-    "src/mode_chksnd.o": {"us": 0x020348A0, "jp": 0x020348A0, "eu": 0x020348A8},
-    "src/mode_chkeff.o": {"us": 0x020348B8, "jp": 0x020348B8, "eu": 0x020348C0},
-    "src/movie_debug.o": {"eu": 0x020348C4},
-    "src/mode_dummy.o": {"us": 0x020348BC, "jp": 0x020348BC, "eu": 0x020348C8},
-    "src/mode_debflag.o": {"us": 0x020348C0, "jp": 0x020348C0, "eu": 0x020348CC},
-    "src/field_transition.o": {"us": 0x020348C8, "jp": 0x020348C8, "eu": 0x020349CC},
-    "src/btl_vs.o": {"us": 0x020348CC, "jp": 0x020348CC, "eu": 0x020349D0},
-    "src/btl_collision.o": {"us": 0x020348E8, "jp": 0x020348E8, "eu": 0x020349E8},
-    "src/btl_effect.o": {"us": 0x02034928, "jp": 0x02034928, "eu": 0x02034A28},
-    "src/btl_map.o": {"us": 0x0203492C, "jp": 0x0203492C, "eu": 0x02034A2C},
-    "src/msg.o": {"us": 0x02034A80, "jp": 0x020349E0, "eu": 0x02034AA0},
-    "src/mode_eventselect.o": {"us": 0x02034A94, "jp": 0x020349F4, "eu": 0x02034AB0},
-    "src/card_battle.o": {"us": 0x02034A98, "jp": 0x020349F8, "eu": 0x02034AB4},
-    "src/wlogo.o": {"us": 0x02034C38, "jp": 0x02034B98, "eu": 0x02034E28},
-    "src/boss_tm.o": {"us": 0x02034CB0, "jp": 0x02034C10, "eu": 0x02034EA0},
-    "src/chara.o": {"us": 0x02034CD8, "jp": 0x02034C38, "eu": 0x02034EC8},
-    "src/mode_copyright1.o": {"us": 0x02034ED4, "jp": 0x02034E34, "eu": 0x020350C4},
-    "src/mode_status.o": {"us": 0x02034EE0, "jp": 0x02034E40, "eu": 0x020350D0},
-    "src/status.o": {"us": 0x02034EFC, "jp": 0x02034E5C, "eu": 0x020350EC},
-    "src/boss_boogie.o": {"us": 0x02034F08, "jp": 0x02034E68, "eu": 0x020350F8},
-    "src/key.o": 0x02034000,
-    "src/mode_movie.o": {"us": 0x02034938, "jp": 0x02034938, "eu": 0x020348D8},
-    "src/bos4.o": {"us": 0x02034F0C, "jp": 0x02034E6C, "eu": 0x020350FC},
-    "src/mode_mapchk.o": {"us": 0x02034F14, "jp": 0x02034E74, "eu": 0x02035108},
-    "src/map.o": {"us": 0x02034F1C, "jp": 0x02034E7C, "eu": 0x02035110},
-    "src/poo.o": {"us": 0x02034DA8, "jp": 0x02034D08, "eu": 0x02034F98},
-    "src/mode_allmap.o": {"us": 0x02034E3C, "jp": 0x02034D9C, "eu": 0x0203502C},
-    "src/allmap.o": {"us": 0x02034E84, "jp": 0x02034DE4, "eu": 0x02035074},
-    "src/mode_title.o": {"us": 0x02034E98, "jp": 0x02034DF8, "eu": 0x02035088},
-    "src/title.o": {"us": 0x02034ED0, "jp": 0x02034E30, "eu": 0x020350C0},
-    "src/mode_copyright2.o": {"us": 0x02034EDC, "jp": 0x02034E38, "eu": 0x020350CC},
-    "src/mode_backupstat.o": {"us": 0x02035FE8, "jp": 0x02035F58, "eu": 0x020365F8},
-    "src/sroll.o": {"us": 0x02036028, "jp": 0x02035F98, "eu": 0x02036638},
-    "src/pcm_audio.o": {"us": 0x020380A0, "jp": 0x02038010, "eu": 0x020386B0},
-    "src/audio_block_codec.o": {"us": 0x02038628, "jp": 0x02038598, "eu": 0x02038C38},
-    "src/agb_sram.o": {"us": 0x02038698, "jp": 0x02038608, "eu": 0x02038CA8},
-    "src/ms_charge.o": {"us": 0x02035C10, "jp": 0x02035B70, "eu": 0x02036220},
-    "src/mode_mapinspect.o": {"us": 0x02035E28, "jp": 0x02035D88, "eu": 0x02036438},
-    "src/mode_test.o": {"us": 0x02034A08, "jp": 0x02034964},
-    "src/mode_test_support.o": {"us": 0x02034A14, "jp": 0x02034970, "eu": 0x02034A34},
-    "src/mode_deck.o": {"us": 0x2034a30, "jp": 0x2034990, "eu": 0x2034a50},
-    "src/mode_continue.o": {"us": 0x2034a48, "jp": 0x20349a8, "eu": 0x2034a68},
-    "src/mode_event.o": {"us": 0x2034a60, "jp": 0x20349c0, "eu": 0x2034a80},
-    "src/main.o": 0x03006C00,
-    "src/sprite.o": {"us": 0x030074C8, "jp": 0x030074C8, "eu": 0x030074D0},
-    "src/pallet.o": {"us": 0x0300756C, "jp": 0x0300756C, "eu": 0x03007574},
-    "src/mode_jiminy.o": {"us": 0x02034934, "jp": 0x02034934, "eu": 0x020349C8},
-    "src/bos5.o": {"us": 0x02034FE8, "jp": 0x02034F48, "eu": 0x020351D8},
-    "src/bos7.o": {"us": 0x02036014, "jp": 0x02035F84, "eu": 0x02036624},
-    "src/mode_staffroll.o": {"us": 0x02036020, "jp": 0x02035F90, "eu": 0x02036630},
-    "src/bos6.o": {"us": 0x02036008, "jp": 0x02035F78, "eu": 0x02036618},
-    "src/mode_worldinspect.o": {"us": 0x020350F8, "jp": 0x02035058, "eu": 0x020352E8},
-    "src/mode_sio_dbg.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": 0x02034EE4},
-    "src/mode_sio2.o": {"us": 0x02034CF8, "jp": 0x02034C58, "eu": 0x02034EE8},
-    "src/sio.o": 0x0203406C,
-    "src/mode_sio.o": {"us": 0x02034B3C, "jp": 0x02034A9C, "eu": 0x02034B54},
-    "src/mode_wlogo.o": {"us": 0x02034B58, "jp": 0x02034AB8, "eu": 0x02034B68},
-    "src/mode_worldwarp.o": {"us": 0x020354E8, "jp": 0x02035448, "eu": 0x02035978},
-    "src/bos3.o": {"us": 0x0203C3BC, "jp": 0x0203C32C, "eu": 0x0203C998},
-    "src/snd_stream.o": {"us": 0x0203C7F0, "jp": 0x0203C760, "eu": 0x0203CDE0},
-    "src/movie.o": {"us": 0x0203C7C4, "jp": 0x0203C734, "eu": 0x0203CDB4},
-    "src/m4a2.o": {"us": 0x0203C850, "jp": 0x0203C7C0, "eu": 0x0203CE40},
-    "src/bos2.o": {"us": 0x0203ACC0, "jp": 0x0203AC30, "eu": 0x0203B290},
-}
+EWRAM_COMMON_ORDER = [
+    ("src/sio_link_header_state.o", ".bss"),
+    ("src/sio_callback_state.o", ".bss"),
+    ("src/sio_runtime_state.o", ".bss"),
+    ("src/pallet.o", ".ewram_common.*"),
+    ("src/mode_chkbtl.o", ".ewram_common.*"),
+    ("src/mode_debflag.o", ".ewram_common.*"),
+    ("src/mode_vsbattle.o", ".ewram_common.*"),
+    ("src/battle_field_state.o", ".bss"),
+    ("src/player_progression.o", ".ewram_common.*"),
+    ("src/battle_runtime.o", ".ewram_common.*"),
+    ("src/evt.o", ".ewram_common.*"),
+    ("src/event_message.o", ".ewram_common.*"),
+    ("src/mode_eventselect.o", ".ewram_common.*"),
+    ("src/card_battle.o", ".ewram_common.*"),
+    ("src/card_state.o", ".bss"),
+    ("src/card_ui_state.o", ".bss"),
+    ("src/sio_handshake_state.o", ".bss"),
+    ("src/sio_battle_options_state.o", ".bss"),
+    ("src/sio_card_trade_state.o", ".bss"),
+    ("src/wlogo.o", ".ewram_common.*"),
+    ("src/worldlogo_state.o", ".bss"),
+    ("src/boss_tm_state.o", "COMMON"),
+    ("src/boss_tm_state.o", ".bss"),
+    ("src/boss_jafar_state.o", ".bss"),
+    ("src/bos2.o", ".ewram_common.*"),
+    ("src/chara_link_buffers.o", ".bss"),
+    ("src/chara_link_cursor.o", ".bss"),
+    ("src/chara_link_state.o", ".bss"),
+    ("src/bos3.o", ".ewram_common.*"),
+    ("src/sio_debug_state.o", ".bss"),
+    ("src/pooh_state.o", ".bss"),
+    ("src/pooh_actor_state.o", ".bss"),
+    ("src/allmap_top_state.o", ".bss"),
+    ("src/mode_allmap.o", ".ewram_common.*"),
+    ("src/allmap_scroll_state.o", ".bss"),
+    ("src/allmap_bottom_state.o", ".bss"),
+    ("src/allmap_cursor_state.o", ".bss"),
+    ("src/title_background_state.o", ".bss"),
+    ("src/status.o", ".ewram_common.*"),
+    ("src/boss_status_state.o", ".bss"),
+    ("src/bos4.o", ".ewram_common.*"),
+    ("src/map.o", ".ewram_common.*"),
+    ("src/map_transition_state.o", ".bss"),
+    ("src/agb_sram.o", ".ewram_common.*"),
+    ("src/movie.o", ".ewram_common.*"),
+    ("src/snd_stream.o", ".ewram_common.*"),
+    ("src/m4a2.o", ".ewram_common.*"),
+]
 
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
@@ -680,7 +603,10 @@ validate_active_sections(regional_plan,
                          [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
                          managed_placements(regional))
 objs_in_order = [(obj, section) for _, obj, _flags, section in units]
-bss_members = [obj for src, obj, _f, _s in units if src is None and BSS_MEMBERS.get(obj.rsplit("/", 1)[-1])]
+objs_linked = []
+for _src, obj, _flags, _section in units:
+    if obj not in objs_linked:
+        objs_linked.append(obj)
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -699,29 +625,29 @@ with open(ldscript, "w") as f:
             for assertion in linker_assertions(placement, after=True):
                 f.write(f"        {assertion}\n")
     f.write("    }\n")
-    if bss_members:
-        f.write(f"\n    .bss {ARCHIVE_BSS[version]:#x} (NOLOAD) :\n    {{\n")
-        for obj in bss_members:
-            f.write(f"        {obj}(.bss);\n")
-        f.write("    }\n")
+    f.write("\n    .iwram 0x03000000 (NOLOAD) :\n    {\n")
+    for obj, section in IWRAM_BEFORE_HEAP:
+        f.write(f"        {build_dir}/{obj}({section});\n")
+    f.write(f"        gIwramHeapStart = .;\n        . += {IWRAM_HEAP_SIZE:#x};\n")
+    for obj, section in IWRAM_AFTER_HEAP:
+        f.write(f"        {build_dir}/{obj}({section});\n")
+    f.write("    }\n")
+    for name, addr in BIOS_SYMBOLS.items():
+        f.write(f"    {name} = {addr:#010x};\n")
     linked = {o for _s, o, _f, _sec in units}
-    unit_bss = {}
-    for obj, addr in UNIT_BSS.items():
-        a = addr.get(version) if isinstance(addr, dict) else addr
-        if a is not None and f"{build_dir}/{obj}" in linked:
-            unit_bss[obj] = a
-    unit_common = {}
-    for obj, addr in UNIT_COMMON.items():
-        a = addr.get(version) if isinstance(addr, dict) else addr
-        if a is not None and f"{build_dir}/{obj}" in linked:
-            unit_common[obj] = a
-    placements = [(a, obj, ".bss COMMON" if obj not in unit_common else ".bss") for obj, a in unit_bss.items()]
-    placements += [(a, obj, "COMMON") for obj, a in unit_common.items()]
-    for addr, obj, sec in sorted(placements):
-        name = obj.rsplit("/", 1)[-1].removesuffix(".o")
-        tag = "bss" if sec != "COMMON" else "common"
-        f.write(f"\n    .{tag}.{name} {addr:#x} (NOLOAD) :\n"
-                f"    {{\n        {build_dir}/{obj}({sec});\n    }}\n")
+    f.write("\n    .ewram 0x02000000 (NOLOAD) :\n    {\n")
+    f.write(f"        gEwramHeapStart = .;\n        . += {EWRAM_HEAP_SIZE:#x};\n")
+    claimed = {obj for obj, section in IWRAM_BEFORE_HEAP + IWRAM_AFTER_HEAP + EWRAM_COMMON_ORDER if section == ".bss"}
+    if any(section == ".bss" for _obj, section in EWRAM_COMMON_ORDER):
+        for obj in objs_linked:
+            if obj.removeprefix(f"{build_dir}/") not in claimed:
+                f.write(f"        {obj}(.bss);\n")
+    else:
+        f.write("        *(.bss);\n")
+    for obj, section in EWRAM_COMMON_ORDER:
+        if f"{build_dir}/{obj}" in linked:
+            f.write(f"        {build_dir}/{obj}({section});\n")
+    f.write("        *(.ewram_common.*);\n    }\n")
     f.write("\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")
@@ -834,11 +760,9 @@ with out.open("w") as f:
         )
     n.newline()
 
-    objs = []
     for path, member, obj in archives:
         n.build(obj, "arx", implicit=[path],
                 variables={"archive": path, "member": member})
-        objs.append(obj)
     if asset_gfx_mode == "built":
         n.build(
             asset_gfx_build,
@@ -914,7 +838,7 @@ with out.open("w") as f:
         )
     for obj, rule, src, deps, variables in edges:
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
-        objs.append(obj)
+    objs = list(objs_linked)
     n.newline()
 
     n.build(

@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "mode_continue.h"
 #include "registration_data.h"
 #include "map_api.h"
@@ -9,7 +10,8 @@
 #include "battle.h"
 #include "battle_actor.h"
 
-s32 gUnk_02039DC0;
+s32 gUnk_02039DC0 EWRAM_COMMON(4);
+s32* gUnk_02039DC4 EWRAM_COMMON(4);
 
 void func_08019050(u16 a, s32 b, s32 c, s32 d) {
     gBtlWork->unk_028 = b;

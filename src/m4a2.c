@@ -1,35 +1,38 @@
 #include "m4a_song.h"
 #include "m4a.h"
+#include "macros.h"
 #define M4A_CATALOG_NO_PLAYER_EXTERNS
 #include "m4a_catalog_data.h"
 
-SoundInfo gSoundInfo;
-MPlayFunc gMPlayJumpTable[36];
-CgbChannel gCgbChans[4];
-MusicPlayerInfo gUnk_0203D990;
-MusicPlayerInfo gUnk_0203D9D0;
-MusicPlayerInfo gUnk_0203DA10;
-MusicPlayerInfo gUnk_0203DA50;
-MusicPlayerInfo gUnk_0203DA90;
-MusicPlayerInfo gUnk_0203DAD0;
-MusicPlayerInfo gMPlayInfo_BGM;
-MusicPlayerInfo gUnk_0203DB50;
-MusicPlayerInfo gUnk_0203DB90;
-MusicPlayerInfo gUnk_0203DBD0;
-MusicPlayerInfo gUnk_0203DC10;
-MusicPlayerInfo gUnk_0203DC50;
-MusicPlayerInfo gUnk_0203DC90;
-MusicPlayerInfo gUnk_0203DCD0;
-MusicPlayerInfo gUnk_0203DD10;
-MusicPlayerInfo gUnk_0203DD50;
-MusicPlayerInfo gUnk_0203DD90;
-MusicPlayerInfo gUnk_0203DDD0;
-MusicPlayerInfo gUnk_0203DE10;
-MusicPlayerInfo gUnk_0203DE50;
-u8 gMPlayMemAccArea[16];
-MusicPlayerInfo gUnk_0203DEA0;
-MusicPlayerInfo gUnk_0203DEE0;
-MusicPlayerInfo gUnk_0203DF20;
+char SoundMainRAM_Buffer[0x400];
+
+SoundInfo gSoundInfo EWRAM_COMMON(16);
+MPlayFunc gMPlayJumpTable[36] EWRAM_COMMON(16);
+CgbChannel gCgbChans[4] EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203D990 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203D9D0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DA10 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DA50 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DA90 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DAD0 EWRAM_COMMON(16);
+MusicPlayerInfo gMPlayInfo_BGM EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DB50 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DB90 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DBD0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DC10 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DC50 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DC90 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DCD0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DD10 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DD50 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DD90 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DDD0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DE10 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DE50 EWRAM_COMMON(16);
+u8 gMPlayMemAccArea[16] EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DEA0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DEE0 EWRAM_COMMON(16);
+MusicPlayerInfo gUnk_0203DF20 EWRAM_COMMON(16);
 
 
 u32 MidiKeyToFreq(WaveData* wav, u8 key, u8 fineAdjust) {
@@ -1426,4 +1429,3 @@ void ply_xswee(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
 void DummyFunc(void) {
 }
 
-SoundInfo* gSoundInfoPtr __attribute__((common));

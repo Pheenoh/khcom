@@ -15,7 +15,6 @@ u8 gUnk_02034A21;
 s32 gUnk_02034A24;
 s32 gUnk_02034A28;
 void* gUnk_02034A2C;
-s32* gUnk_02039DC4 __attribute__((common));
 
 void task_lockon_0(LockonWork* w) {
     s32 i;

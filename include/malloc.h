@@ -41,4 +41,10 @@ extern Heap gEwramHeap;
 
 extern Heap gIwramHeap;
 
+#define EWRAM_HEAP_SIZE 0x34000
+#define IWRAM_HEAP_SIZE 0x6800
+
+extern u8 gEwramHeapStart[];
+extern u8 gIwramHeapStart[];
+
 #endif

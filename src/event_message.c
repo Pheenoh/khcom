@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "eventselect_api.h"
 #include "system_state.h"
@@ -89,7 +90,7 @@ const char gTaskNameMsgwaitYesno[] = "msgwait_yesno";
 
 const char gTaskNameView[] = "view";
 
-EventScanlineScroll* gUnk_02039DCC;
+EventScanlineScroll* gUnk_02039DCC EWRAM_COMMON(4);
 
 
 void event_seq_0(EventSeqWork* work, u8* a) {

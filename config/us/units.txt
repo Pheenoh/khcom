@@ -11,7 +11,7 @@ sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c -O2 -fprologue-bugfix
 util.c -O2 -fprologue-bugfix -fno-common
 save.c -O2 -fprologue-bugfix -fno-common
-mode_battle.c
+mode_battle.c -O2 -fprologue-bugfix -fno-common
 mode_chkbtl.c -O2 -fprologue-bugfix -fno-common
 mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
@@ -61,11 +61,10 @@ mode_event.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix
 continue_ui.c -O2 -fprologue-bugfix
 event_message.c -O2 -fprologue-bugfix
-mode_eventselect.c -O2 -fprologue-bugfix
+mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card_battle.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
-memory_regions.c -O2 -fprologue-bugfix -fno-common
 map_transition_state.c -O2 -fprologue-bugfix -fno-common
 allmap_bottom_state.c -O2 -fprologue-bugfix -fno-common
 allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
@@ -153,6 +152,7 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libc.a:memcpy.o
 @libc.a:memset.o
 @libc.a:strcmp.o
+m4a_catalog_data.c
 m4a_1.s
 m4a2.c -O2 -fno-common
 transform_veneers.s(.text)
@@ -1304,7 +1304,7 @@ asset_misc2_at_09D6D620.s(.rodata)
 m4a_catalog_data.c(.rodata)
 asset_misc2_at_09D71554.s(.rodata)
 mode_battle.c(.data)
-mode_chkbtl_data.c(.data)
+mode_chkbtl.c(.data)
 mode_debug.c(.data)
 mode_chkobj.c(.data)
 mode_chksnd.c(.data)

@@ -1,7 +1,7 @@
 #include "registration_data.h"
 #include "mode_copyright2.h"
 
-u16 gUnk_02034EDC;
+u16 gUnk_02034EDC __attribute__((aligned(4)));
 
 void mode_copyright2_0(s32 arg) {
     SetBgMode0();

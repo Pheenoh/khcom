@@ -2,8 +2,8 @@
 #include "macros.h"
 #include "bos3.h"
 
-u16 gUnk_0203C3BC COMMON;
-u16 gUnk_0203C3C0 COMMON;
+u16 gUnk_0203C3BC EWRAM_COMMON(4);
+u16 gUnk_0203C3C0 EWRAM_COMMON(4);
 
 void task_bos_jf_shadow_0(JfShadowWork* work, BtlObj* obj) {
     work->actor = obj;

@@ -1,8 +1,9 @@
+#include "macros.h"
 #include <string.h>
 #include "types.h"
 #include "snd_stream.h"
 
-SoundStream gSndStream;
+SoundStream gSndStream EWRAM_COMMON(16);
 
 #define REG_SOUNDCNT_H (*(vu16*)0x04000082)
 #define REG_SOUNDCNT_X (*(vu16*)0x04000084)

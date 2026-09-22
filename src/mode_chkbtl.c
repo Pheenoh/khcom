@@ -3,10 +3,12 @@
 #include "mode_chkbtl.h"
 #include "gba/keys.h"
 
-BtlWork* gBtlWork;
-COMMON u16 gUnk_02039B88;
-COMMON u16 gUnk_02039B8C;
-COMMON u16 gUnk_02039B90;
+static ChkBtlWork gUnk_02034890;
+
+BtlWork* gBtlWork EWRAM_COMMON(4);
+u16 gUnk_02039B88 EWRAM_COMMON(4);
+u16 gUnk_02039B8C EWRAM_COMMON(4);
+u16 gUnk_02039B90 EWRAM_COMMON(4);
 
 const ChkBtlEntry gChkBtlEntries[209] = {
     { 10, { 0 }, 0, 10, 0, "\x82\x73\x82\x76\x82\x6d\x82\x4f" },
@@ -450,3 +452,7 @@ void func_0800ABD8(void) {
 }
 
 const char gModeNameChkbtl[12] = "mode_chkbtl";
+
+ChkBtlWork* gChkBtlWork = &gUnk_02034890;
+
+Mode gModeChkbtl = { gModeNameChkbtl, mode_chkbtl_0, mode_chkbtl_1, mode_chkbtl_2 };

@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "msg_api.h"
 #include "card_api.h"
@@ -41,7 +42,7 @@ void func_08076458(void);
 CardDisplayWork* gUnk_02034A98;
 u32 gUnk_02034A9C;
 u32 gUnk_02034AA0;
-UnkStruct_02039DD4* gUnk_02039DD4 __attribute__((common));
+UnkStruct_02039DD4* gUnk_02039DD4 EWRAM_COMMON(4);
 
 void func_08076284(void) {
     gUnk_02034AA0 = 14;

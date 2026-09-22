@@ -161,6 +161,7 @@ u8 gUnk_02034B1D[3];
 #endif
 u8 gUnk_02034B20[20];
 void* gUnk_02034B34;
+static void** gUnk_02034B38;
 #ifdef VERSION_EU
 TaskPool gUnkEu_02034B38;
 u32 gUnkEu_02034B4C;
@@ -35000,8 +35001,6 @@ void mode_sio_battle_2(void) {
 void func_080AEB94(void) {
     gUnk_0203A9E8 = 0;
 }
-
-void** gUnk_02034B38 __attribute__((common));
 
 const char gTaskNameCardBattleRiku[] __attribute__((section(".rodata_registration_name_gTaskDescCardBattleRiku"), aligned(1))) = "cardbattle";
 
