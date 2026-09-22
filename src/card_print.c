@@ -46,31 +46,6 @@ static void** gUnk_02034B38;
 void func_0809D1FC(u8 bg);
 void func_0809D26C(void);
 void func_0809D3F0(void);
-void func_080A411C(void* pool, u32 a, u16 b);
-u8 func_080A42C8(void);
-#ifdef VERSION_EU
-void eu_080AB9FC(void) {
-    gUnkEu_02034B4C = 0;
-    SetBgMode0();
-    SetupBg(0, 0, 28, 14);
-    TaskPoolInit(&gUnkEu_02034B38, 1);
-    func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
-}
-void eu_080ABA38(void) {
-    if (func_080A42C8() == 0) {
-        gUnkEu_02034B4C++;
-        if (gUnkEu_02034B4C == 179) {
-            gUnkEu_02034B4C = 0;
-        }
-        func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
-    }
-    TaskPoolUpdate(&gUnkEu_02034B38);
-    TaskPoolDraw(&gUnkEu_02034B38);
-}
-void eu_080ABA7C(void) {
-    TaskPoolDestroy(&gUnkEu_02034B38);
-}
-#endif
 void task_print_0(void) {
     func_0809D1FC(0);
 }
