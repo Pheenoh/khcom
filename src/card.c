@@ -88,10 +88,6 @@ void* gUnk_02034AD4;
 u8 gUnk_02034AD8;
 u8 gUnk_02034AD9;
 u8 gUnk_02034ADA[6];
-u8 gUnk_02034AE0[20];
-#ifndef VERSION_EU
-u8 gUnk_02034AF4[4];
-#endif
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 u8 gUnk_02039DDC EWRAM_COMMON(4);
@@ -1449,38 +1445,4 @@ TaskDesc gUnk_09EE787C = {
     (void (*)(void*))func_0809D0CC,
     (void (*)(void*))func_0809D0FC,
     0x54,
-};
-
-Mode gUnk_09EE7894 = {
-    gUnk_09037F80,
-    (void (*)(s32))Mode_Premire_0,
-    Mode_Premire_1,
-    Mode_Premire_2,
-};
-#ifdef VERSION_EU
-void* gUnkEu_09F72CB0[5] = { gUnk_093FB954, gUnkEu_094CE490, gUnkEu_094CE820, gUnkEu_094CE6F0, gUnkEu_094CE5C0 };
-
-void** gUnkEu_09F72CC4[5] = { gUnk_09EF12C8, gUnkEu_09F7C55C, gUnkEu_09F7C57C, gUnkEu_09F7C59C, gUnkEu_09F7C5BC };
-#endif
-
-const char gTaskNameHCEffectName[] __attribute__((section(".rodata_registration_name_gTaskDescHCEffectName"), aligned(1))) = "HCEffectName";
-
-TaskDesc gTaskDescHCEffectName = {
-    gTaskNameHCEffectName,
-    (void (*)(void*, void*))HCEffectName_0,
-    HCEffectName_1,
-    (void (*)(void*))HCEffectName_2,
-    (void (*)(void*))HCEffectName_3,
-    0x28,
-};
-
-const char gTaskNameNumberPlus[] __attribute__((section(".rodata_registration_name_gTaskDescNumberPlus"), aligned(1))) = "NumberPlus";
-
-TaskDesc gTaskDescNumberPlus = {
-    gTaskNameNumberPlus,
-    (void (*)(void*, void*))NumberPlus_0,
-    NumberPlus_1,
-    (void (*)(void*))NumberPlus_2,
-    (void (*)(void*))NumberPlus_3,
-    0x2C,
 };

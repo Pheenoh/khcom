@@ -41,6 +41,11 @@
 #include "game.h"
 #include "bos4_api.h"
 
+u8 gUnk_02034AE0[20];
+#ifndef VERSION_EU
+u8 gUnk_02034AF4[4];
+#endif
+
 #ifdef VERSION_EU
 extern void** gUnkEu_09F72CC4[];
 extern void* gUnkEu_09F72CB0[];
@@ -440,3 +445,37 @@ void NumberPlus_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjPalette(p[1]);
 }
+
+Mode gUnk_09EE7894 = {
+    gUnk_09037F80,
+    (void (*)(s32))Mode_Premire_0,
+    Mode_Premire_1,
+    Mode_Premire_2,
+};
+#ifdef VERSION_EU
+void* gUnkEu_09F72CB0[5] = { gUnk_093FB954, gUnkEu_094CE490, gUnkEu_094CE820, gUnkEu_094CE6F0, gUnkEu_094CE5C0 };
+
+void** gUnkEu_09F72CC4[5] = { gUnk_09EF12C8, gUnkEu_09F7C55C, gUnkEu_09F7C57C, gUnkEu_09F7C59C, gUnkEu_09F7C5BC };
+#endif
+
+const char gTaskNameHCEffectName[] = "HCEffectName";
+
+TaskDesc gTaskDescHCEffectName = {
+    gTaskNameHCEffectName,
+    (void (*)(void*, void*))HCEffectName_0,
+    HCEffectName_1,
+    (void (*)(void*))HCEffectName_2,
+    (void (*)(void*))HCEffectName_3,
+    0x28,
+};
+
+const char gTaskNameNumberPlus[] = "NumberPlus";
+
+TaskDesc gTaskDescNumberPlus = {
+    gTaskNameNumberPlus,
+    (void (*)(void*, void*))NumberPlus_0,
+    NumberPlus_1,
+    (void (*)(void*))NumberPlus_2,
+    (void (*)(void*))NumberPlus_3,
+    0x2C,
+};
