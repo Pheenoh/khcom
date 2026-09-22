@@ -83,7 +83,7 @@ EWRAM_COMMON_ORDER = [
     ("src/bos2.o", ".ewram_common.*"),
     ("src/chara.o", ".ewram_common.*"),
     ("src/bos3.o", ".ewram_common.*"),
-    ("src/sio_debug_state.o", ".bss"),
+    ("src/mode_sio_dbg.o", ".ewram_common.*"),
     ("src/pooh_state.o", ".bss"),
     ("src/pooh_actor_state.o", ".bss"),
     ("src/allmap_top_state.o", ".bss"),

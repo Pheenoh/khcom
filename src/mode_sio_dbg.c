@@ -1,8 +1,8 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "mode_sio_dbg.h"
 #include "mode_chkbtl.h"
 #include "debug_menu_assets.h"
-#include "sio_debug_state.h"
 #include "mode_sio_api.h"
 #include "game_state.h"
 #include "obj_api.h"
@@ -11,6 +11,25 @@
 #include "gba/keys.h"
 #include "mode.h"
 #include "mode_test_api.h"
+
+#ifdef VERSION_EU
+u16 gUnk_0203C3C4 EWRAM_COMMON(4);
+#else
+s8 gUnk_0203C3C4 EWRAM_COMMON(4);
+#endif
+u16 gUnk_0203C3C8 EWRAM_COMMON(4);
+u16 gUnk_0203C3CC EWRAM_COMMON(4);
+u16 gUnk_0203C3D0 EWRAM_COMMON(4);
+#ifdef VERSION_EU
+u16 gUnk_0203C3D4 EWRAM_COMMON(4);
+u16 gUnkEu_0203C9B4 EWRAM_COMMON(4);
+u16 gUnkEu_0203C9B8 EWRAM_COMMON(4);
+u16 gUnkEu_0203C9BC EWRAM_COMMON(4);
+u16 gUnkEu_0203C9C0 EWRAM_COMMON(4);
+u16 gUnkEu_0203C9C4 EWRAM_COMMON(4);
+#else
+s8 gUnk_0203C3D4 EWRAM_COMMON(4);
+#endif
 
 extern const char gUnk_0961A9C8[];
 extern const char gUnk_0961A9CC[];

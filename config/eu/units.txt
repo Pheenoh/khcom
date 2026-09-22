@@ -134,7 +134,6 @@ allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
 allmap_top_state.c -O2 -fprologue-bugfix -fno-common
 pooh_actor_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
-sio_debug_state.c -O2 -fprologue-bugfix -fno-common
 title_background_state.c -O2 -fprologue-bugfix -fno-common
 boss_status_state.c -O2 -fprologue-bugfix -fno-common
 pooh_state.c -O2 -fprologue-bugfix -fno-common
