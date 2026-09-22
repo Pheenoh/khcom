@@ -1111,14 +1111,3 @@ AnimHeader** gUnk_09EE75C8[4] = {
     gUnk_09EEAEA8,
     gUnk_09EEAEF0,
 };
-
-const char gTaskName_09EE75D8[] __attribute__((section(".rodata_registration_name_gUnk_09EE75D8"), aligned(1))) = "PrizeCard";
-
-TaskDesc gUnk_09EE75D8 = {
-    gTaskName_09EE75D8,
-    (void (*)(void*, void*))PrizeCard_0,
-    func_08095E68,
-    (void (*)(void*))func_08096428,
-    (void (*)(void*))func_080965CC,
-    0x100,
-};

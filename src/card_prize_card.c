@@ -385,3 +385,14 @@ void func_080966E4(void* a, s32 b, s32 c, s32 d, s32 e) {
 void func_08096700(void* a, void* b) {
     TaskCreate(a, &gUnk_09EE75D8, b);
 }
+
+const char gTaskName_09EE75D8[] = "PrizeCard";
+
+TaskDesc gUnk_09EE75D8 = {
+    gTaskName_09EE75D8,
+    (void (*)(void*, void*))PrizeCard_0,
+    func_08095E68,
+    (void (*)(void*))func_08096428,
+    (void (*)(void*))func_080965CC,
+    0x100,
+};
