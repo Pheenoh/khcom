@@ -3,6 +3,6 @@
 
 #include "types.h"
 
-extern const u16 gUnk_09EDA4EC[54];
+extern u16 gUnk_09EDA4EC[54];
 
 #endif
