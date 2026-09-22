@@ -93,6 +93,7 @@ TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 TARGET_ANCHORS = {
     "eu": {
         0x09ED9BA8: 0x09F57460,
+        0x09EE3844: 0x09F6EF64,
         0x0813B67C: 0x08889B50,
         0x08135EFC: 0x088843D0,
         0x09A10A3C: 0x09A60380,
@@ -3068,6 +3069,10 @@ TARGET_DATA_SIZE = {
         ("mode_chkobj.c", ".rodata"): 0x6350,
         ("mode_chksnd.c", ".rodata"): 0x20E8,
         ("mode_dummy.c", ".rodata"): 0x19C,
+        ("event_index_data.c", ".data"): 0x924,
+    },
+    "jp": {
+        ("event_index_data.c", ".data"): 0x93C,
     },
 }
 

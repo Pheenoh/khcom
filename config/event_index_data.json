@@ -863,42 +863,6 @@
               ]
             }
           ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data",
-          "address": "0x9ee3ca0",
-          "size": 2364,
-          "sha256": "089ed801e5f97215e49b066c70293c83a9310533262fdd5221cd115f3c1b447a",
-          "objects": [
-            {
-              "name": "gUnk_09EE3CA0",
-              "offset": 0,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            },
-            {
-              "name": "gUnk_09EE3FB4",
-              "offset": 788,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            },
-            {
-              "name": "gEventNames",
-              "offset": 1576,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            }
-          ]
         }
       ],
       "named_assets": [
@@ -2929,42 +2893,6 @@
               ]
             }
           ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data",
-          "address": "0x9ebb2c0",
-          "size": 2364,
-          "sha256": "42171237a47ba2669f80f4255e48c7e36f36491c322cb9337c61a98b630a7048",
-          "objects": [
-            {
-              "name": "gUnk_09EE3CA0",
-              "offset": 0,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            },
-            {
-              "name": "gUnk_09EE3FB4",
-              "offset": 788,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            },
-            {
-              "name": "gEventNames",
-              "offset": 1576,
-              "size": 788,
-              "consumer": [
-                "mode_eventselect_1",
-                196
-              ]
-            }
-          ]
         }
       ],
       "named_assets": [
@@ -4992,42 +4920,6 @@
               "consumer": [
                 "event_seq_1",
                 "native scalar background definition"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_index_data.c",
-          "section": ".data",
-          "address": "0x9f6ef64",
-          "size": 2340,
-          "sha256": "6f1d230d827a2254a67aa6757deff08cacbdc8fded1e8a04346f5433d9609978",
-          "objects": [
-            {
-              "name": "gUnk_09EE3CA0",
-              "offset": 0,
-              "size": 780,
-              "consumer": [
-                "mode_eventselect_1",
-                194
-              ]
-            },
-            {
-              "name": "gUnk_09EE3FB4",
-              "offset": 780,
-              "size": 780,
-              "consumer": [
-                "mode_eventselect_1",
-                194
-              ]
-            },
-            {
-              "name": "gEventNames",
-              "offset": 1560,
-              "size": 780,
-              "consumer": [
-                "mode_eventselect_1",
-                194
               ]
             }
           ]

@@ -10,60 +10,6 @@
     "us": {
       "named_assets": [
         {
-          "name": "gUnk_09EE3844",
-          "address": "0x9ee3844",
-          "size": 100,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE38A8",
-          "address": "0x9ee38a8",
-          "size": 154,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3942",
-          "address": "0x9ee3942",
-          "size": 110,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE39B0",
-          "address": "0x9ee39b0",
-          "size": 168,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3A58",
-          "address": "0x9ee3a58",
-          "size": 86,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3AAE",
-          "address": "0x9ee3aae",
-          "size": 168,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3B56",
-          "address": "0x9ee3b56",
-          "size": 136,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3BDE",
-          "address": "0x9ee3bde",
-          "size": 126,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE3C5C",
-          "address": "0x9ee3c5c",
-          "size": 66,
-          "encoding": "utf16le"
-        },
-        {
           "name": "gUnk_0813FE3C",
           "address": "0x813fe3c",
           "size": 16,
