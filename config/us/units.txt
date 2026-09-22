@@ -65,7 +65,6 @@ mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card_battle.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 map_transition_state.c -O2 -fprologue-bugfix -fno-common
-boss_status_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c
 mode_wlogo.c

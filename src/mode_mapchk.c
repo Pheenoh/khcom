@@ -7,7 +7,7 @@
 #include "card_api.h"
 #include "save_api.h"
 #include "map_transition_state.h"
-#include "boss_status_state.h"
+#include "bos4_api.h"
 #include "game_state.h"
 #include "m4a_song.h"
 #include "display.h"

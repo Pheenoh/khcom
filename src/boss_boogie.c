@@ -1,5 +1,5 @@
 #include "boss_boogie.h"
-#include "boss_status_state.h"
+#include "bos4_api.h"
 #include "registration_data.h"
 #include "card_api.h"
 #include "engine_math.h"

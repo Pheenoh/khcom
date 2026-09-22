@@ -11,7 +11,7 @@
 
 #include "poo_api.h"
 
-#include "boss_status_state.h"
+#include "bos4_api.h"
 
 #include "card_ui_types.h"
 

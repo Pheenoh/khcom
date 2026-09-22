@@ -12,7 +12,6 @@
 
 #include "map_transition_state.h"
 
-#include "boss_status_state.h"
 
 #include "graphics_state.h"
 

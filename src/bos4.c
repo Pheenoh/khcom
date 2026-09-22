@@ -9,6 +9,21 @@
 #include "bos4.h"
 #include "bos4_api.h"
 
+u16 gUnk_0203C554 EWRAM_COMMON(4);
+u8 gUnk_0203C558 EWRAM_COMMON(4);
+struct BtlObj* gUnk_0203C55C EWRAM_COMMON(4);
+u16 gUnk_0203C560 EWRAM_COMMON(4);
+u8 gUnk_0203C564 EWRAM_COMMON(4);
+u8 gUnk_0203C568 EWRAM_COMMON(4);
+u8 gUnk_0203C56C EWRAM_COMMON(4);
+u8 gUnk_0203C570 EWRAM_COMMON(4);
+u8 gUnk_0203C574 EWRAM_COMMON(4);
+u8 gUnk_0203C578 EWRAM_COMMON(4);
+u8 gUnk_0203C57C EWRAM_COMMON(4);
+s32 gUnk_0203C580 EWRAM_COMMON(4);
+u8 gUnk_0203C584 EWRAM_COMMON(4);
+UnkStruct_0203C590 gUnk_0203C590 EWRAM_COMMON(16);
+
 void task_bos_boogie_saku_2(BoogieSakuWork* work);
 u8 task_bos_ursula_1(UrsulaWork* work);
 
@@ -1161,8 +1176,6 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z) {
 
     return r;
 }
-
-UnkStruct_0203C590 gUnk_0203C590 EWRAM_COMMON(16);
 
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 x;
