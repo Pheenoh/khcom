@@ -5,7 +5,7 @@
 #include "bos7_api.h"
 
 
-const s8* const gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
+const s8* gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
 
 const char gTaskNameBosLstFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstFld"), aligned(1))) = "task_bos_lst_fld";
 
