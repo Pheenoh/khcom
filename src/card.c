@@ -33,6 +33,7 @@
 #include "card.h"
 #include "card_reload_assets.h"
 #include "map_card_assets.h"
+#include "card_localized_assets.h"
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
@@ -25364,7 +25365,7 @@ extern u8 gUnkEu_091759BA[];
 #endif
 u8 func_0809F390(LevelUpWork* w, void* a);
 
-extern u8 gUnk_09EE790C[];
+extern const void* gUnk_09EE790C[];
 extern u8 gUnk_093FF8F8[];
 extern u8 gUnk_09614018[];
 extern u8 gUnk_09614098[];
@@ -25905,7 +25906,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
     return 1;
 }
 
-extern u8 gUnk_09EE790C[];
+extern const void* gUnk_09EE790C[];
 u8 func_0809FBCC(u8* work, void* a);
 
 
@@ -36112,9 +36113,22 @@ TaskDesc gUnk_09EE787C = {
     0x54,
 };
 
+Mode gUnk_09EE7894 = {
+    gUnk_09037F80,
+    (void (*)(s32))Mode_Premire_0,
+    Mode_Premire_1,
+    Mode_Premire_2,
+};
+
+#ifdef VERSION_EU
+void* gUnkEu_09F72CB0[5] = { gUnk_093FB954, gUnkEu_094CE490, gUnkEu_094CE820, gUnkEu_094CE6F0, gUnkEu_094CE5C0 };
+
+void** gUnkEu_09F72CC4[5] = { gUnk_09EF12C8, gUnkEu_09F7C55C, gUnkEu_09F7C57C, gUnkEu_09F7C59C, gUnkEu_09F7C5BC };
+#endif
+
 const char gTaskNameHCEffectName[] __attribute__((section(".rodata_registration_name_gTaskDescHCEffectName"), aligned(1))) = "HCEffectName";
 
-TaskDesc gTaskDescHCEffectName __attribute__((section(".data_registration_gTaskDescHCEffectName"))) = {
+TaskDesc gTaskDescHCEffectName = {
     gTaskNameHCEffectName,
     (void (*)(void*, void*))HCEffectName_0,
     HCEffectName_1,
@@ -36125,7 +36139,7 @@ TaskDesc gTaskDescHCEffectName __attribute__((section(".data_registration_gTaskD
 
 const char gTaskNameNumberPlus[] __attribute__((section(".rodata_registration_name_gTaskDescNumberPlus"), aligned(1))) = "NumberPlus";
 
-TaskDesc gTaskDescNumberPlus __attribute__((section(".data_registration_gTaskDescNumberPlus"))) = {
+TaskDesc gTaskDescNumberPlus = {
     gTaskNameNumberPlus,
     (void (*)(void*, void*))NumberPlus_0,
     NumberPlus_1,
@@ -36134,9 +36148,49 @@ TaskDesc gTaskDescNumberPlus __attribute__((section(".data_registration_gTaskDes
     0x2C,
 };
 
+#ifdef VERSION_EU
+void* gUnkEu_09F72D08[5] = { gUnkEu_094CF704, gUnkEu_094D72E4, gUnkEu_094DB664, gUnkEu_094D9FE4, gUnkEu_094D8964 };
+
+void* gUnkEu_09F72D1C[5] = { gUnk_0908CAEC, gUnkEu_09170AA0, gUnkEu_09171B2C, gUnkEu_091715A8, gUnkEu_09171024 };
+
+void** gUnk_09EEA1BC[5] = {
+    gUnkEu_09F75FF4,
+    gUnkEu_09F761AC,
+    gUnkEu_09F7623C,
+    gUnkEu_09F7620C,
+    gUnkEu_09F761DC,
+};
+
+void* gUnkEu_09F72D44[5] = {
+    gUnkEu_09178D40,
+    gUnkEu_09179CEE,
+    gUnkEu_0917CFE2,
+    gUnkEu_0917BFA6,
+    gUnkEu_0917AF3A,
+};
+
+void** gUnkEu_09F72D58[5] = {
+    gUnkEu_09F762C4,
+    gUnkEu_09F762E4,
+    gUnkEu_09F76344,
+    gUnkEu_09F76324,
+    gUnkEu_09F76304,
+};
+#endif
+
+#ifndef VERSION_EU
+u16* gUnk_09EE78D4[7] = { gUnk_0815A066, gUnk_0815A0BA, gUnk_0815B1D2, gUnk_0815A078, gUnk_0815A0CC, gUnk_0815B1A8, gUnk_09037FAC };
+
+u16* gUnk_09EE78F0[7] = { gUnk_0815A066, gUnk_0815A116, gUnk_0815A158, gUnk_0815A0F4, gUnk_0815A130, gUnk_0815A176, gUnk_09037FAC };
+#endif
+
+const void* gUnk_09EE790C[2] = { gUnk_08125E24, gUnk_0950F2B8 };
+
+void* gUnk_09EE7914[3] = { gUnk_095112B8, gUnk_09511AB8, gUnk_095122B8 };
+
 const char gTaskNameLevelUp[] __attribute__((section(".rodata_registration_name_gTaskDescLevelUp"), aligned(1))) = "Level_Up";
 
-TaskDesc gTaskDescLevelUp __attribute__((section(".data_registration_gTaskDescLevelUp"))) = {
+TaskDesc gTaskDescLevelUp = {
     gTaskNameLevelUp,
     (void (*)(void*, void*))Level_Up_0,
     Level_Up_1,
@@ -36149,9 +36203,27 @@ TaskDesc gTaskDescLevelUp __attribute__((section(".data_registration_gTaskDescLe
 #endif
 };
 
+#ifdef VERSION_EU
+void* gUnk_09EE7938[6] = { gUnkEu_09163774, gUnkEu_0916377E, gUnkEu_09163788, gUnkEu_09163792, gUnkEu_0916379C, gUnkEu_091637A6 };
+
+void* gUnkEu_09F72DB0[6] = { gUnkEu_0916F94C, gUnkEu_0916F956, gUnkEu_0916F960, gUnkEu_0916F96A, gUnkEu_0916F974, gUnkEu_0916F97E };
+
+void* gUnkEu_09F72DC8[6] = { gUnkEu_0916FD84, gUnkEu_0916FD8E, gUnkEu_0916FD98, gUnkEu_0916FDA2, gUnkEu_0916FDAC, gUnkEu_0916FDB6 };
+
+void* gUnkEu_09F72DE0[6] = { gUnkEu_091701BC, gUnkEu_091701C6, gUnkEu_091701D0, gUnkEu_091701DA, gUnkEu_091701E4, gUnkEu_091701EE };
+
+void* gUnkEu_09F72DF8[6] = { gUnkEu_091705F4, gUnkEu_091705FE, gUnkEu_09170608, gUnkEu_09170612, gUnkEu_0917061C, gUnkEu_09170626 };
+
+void** gUnkEu_09F72E10[5] = { gUnk_09EE7938, gUnkEu_09F72DB0, gUnkEu_09F72DF8, gUnkEu_09F72DE0, gUnkEu_09F72DC8 };
+#elif defined(VERSION_JP)
+void* gUnk_09EE7938[6] = { gUnkJp_09047EB0, gUnkJp_09047EBA, gUnkJp_09047EC4, gUnkJp_09047ECE, gUnkJp_09047ED8, gUnkJp_09047EE2 };
+#else
+void* gUnk_09EE7938[6] = { gUnkUs_0908C640, gUnkUs_0908C64A, gUnkUs_0908C654, gUnkUs_0908C65E, gUnkUs_0908C668, gUnkUs_0908C672 };
+#endif
+
 const char gTaskNameLVUPEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescLVUPEFFECT"), aligned(1))) = "LVUP_EFFECT";
 
-TaskDesc gTaskDescLVUPEFFECT __attribute__((section(".data_registration_gTaskDescLVUPEFFECT"))) = {
+TaskDesc gTaskDescLVUPEFFECT = {
     gTaskNameLVUPEFFECT,
     (void (*)(void*, void*))LVUP_EFFECT_0,
     LVUP_EFFECT_1,
@@ -36162,7 +36234,7 @@ TaskDesc gTaskDescLVUPEFFECT __attribute__((section(".data_registration_gTaskDes
 
 const char gTaskNameLvupLogo[] __attribute__((section(".rodata_registration_name_gTaskDescLvupLogo"), aligned(1))) = "Lvup_Logo";
 
-TaskDesc gTaskDescLvupLogo __attribute__((section(".data_registration_gTaskDescLvupLogo"))) = {
+TaskDesc gTaskDescLvupLogo = {
     gTaskNameLvupLogo,
     (void (*)(void*, void*))Lvup_Logo_0,
     Lvup_Logo_1,
@@ -36173,7 +36245,7 @@ TaskDesc gTaskDescLvupLogo __attribute__((section(".data_registration_gTaskDescL
 
 const char gTaskNameEvMapObj[] __attribute__((section(".rodata_registration_name_gTaskDescEvMapObj"), aligned(1))) = "Ev_mapObj";
 
-TaskDesc gTaskDescEvMapObj __attribute__((section(".data_registration_gTaskDescEvMapObj"))) = {
+TaskDesc gTaskDescEvMapObj = {
     gTaskNameEvMapObj,
     (void (*)(void*, void*))Ev_mapObj_0,
     Ev_mapObj_1,
@@ -36182,9 +36254,22 @@ TaskDesc gTaskDescEvMapObj __attribute__((section(".data_registration_gTaskDescE
     0x5C,
 };
 
+void* gUnk_09EE7998[7] = { gUnk_0951F2B8, gUnk_0951FAB8, gUnk_095202B8, gUnk_095212B8, gUnk_09520AB8, gUnk_09521AB8, gUnk_095222B8 };
+
+EventBgEffectDef* gUnk_09EE79B4[8] = {
+    &gUnk_0903803C,
+    &gUnk_09038078,
+    &gUnk_090380B4,
+    &gUnk_090380F8,
+    &gUnk_0903813C,
+    &gUnk_09038198,
+    &gUnk_090381CC,
+    NULL,
+};
+
 const char gTaskNameEVBGEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescEVBGEFFECT"), aligned(1))) = "EV_BG_EFFECT";
 
-TaskDesc gTaskDescEVBGEFFECT __attribute__((section(".data_registration_gTaskDescEVBGEFFECT"))) = {
+TaskDesc gTaskDescEVBGEFFECT = {
     gTaskNameEVBGEFFECT,
     (void (*)(void*, void*))EV_BG_EFFECT_0,
     EV_BG_EFFECT_1,

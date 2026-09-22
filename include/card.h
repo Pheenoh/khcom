@@ -2664,4 +2664,65 @@ extern s16 gUnk_09EE4BB8[5];
 extern s16 gUnk_09EE4BC2[2];
 extern u16 gUnk_09EE4BE0[10];
 
+extern Mode gUnk_09EE7894;
+extern const char gUnk_09037F80[];
+#ifdef VERSION_EU
+extern void* gUnkEu_09F72CB0[5];
+extern void** gUnkEu_09F72CC4[5];
+extern void* gUnkEu_09F72D08[5];
+extern void* gUnkEu_09F72D1C[5];
+extern void* gUnkEu_09F72DB0[6];
+extern void* gUnkEu_09F72DC8[6];
+extern void* gUnkEu_09F72DE0[6];
+extern void* gUnkEu_09F72DF8[6];
+extern void** gUnkEu_09F72E10[5];
+extern u8 gUnkEu_094CE490[];
+extern u8 gUnkEu_094CE820[];
+extern u8 gUnkEu_094CE6F0[];
+extern u8 gUnkEu_094CE5C0[];
+extern u8 gUnkEu_094CF704[];
+extern u8 gUnkEu_094D72E4[];
+extern u8 gUnkEu_094DB664[];
+extern u8 gUnkEu_094D9FE4[];
+extern u8 gUnkEu_094D8964[];
+extern u8 gUnkEu_09170AA0[];
+extern u8 gUnkEu_09171B2C[];
+extern u8 gUnkEu_091715A8[];
+extern u8 gUnkEu_09171024[];
+#else
+extern u16 gUnk_09037FAC[];
+extern u16 gUnk_0815A066[];
+extern u16 gUnk_0815A0BA[];
+extern u16 gUnk_0815B1D2[];
+extern u16 gUnk_0815A078[];
+extern u16 gUnk_0815A0CC[];
+extern u16 gUnk_0815B1A8[];
+extern u16 gUnk_0815A116[];
+extern u16 gUnk_0815A158[];
+extern u16 gUnk_0815A0F4[];
+extern u16 gUnk_0815A130[];
+extern u16 gUnk_0815A176[];
+extern u16* gUnk_09EE78D4[7];
+extern u16* gUnk_09EE78F0[7];
+#endif
+extern const void* gUnk_09EE790C[2];
+extern void* gUnk_09EE7914[3];
+extern u8 gUnk_09511AB8[];
+extern u8 gUnk_095122B8[];
+extern void* gUnk_09EE7998[7];
+extern u8 gUnk_0951F2B8[];
+extern u8 gUnk_0951FAB8[];
+extern u8 gUnk_095202B8[];
+extern u8 gUnk_095212B8[];
+extern u8 gUnk_09520AB8[];
+extern u8 gUnk_09521AB8[];
+extern u8 gUnk_095222B8[];
+extern EventBgEffectDef gUnk_0903803C;
+extern EventBgEffectDef gUnk_09038078;
+extern EventBgEffectDef gUnk_090380B4;
+extern EventBgEffectDef gUnk_090380F8;
+extern EventBgEffectDef gUnk_0903813C;
+extern EventBgEffectDef gUnk_09038198;
+extern EventBgEffectDef gUnk_090381CC;
+
 #endif /* GUARD_CARD_H */
