@@ -4822,7 +4822,7 @@ void func_08074DC4(EventCameraWork* a) {
 u8 func_08074E40(EventCameraWork* p) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    EventCharaTrack* q = t->charaTracks;
+    const EventCharaTrack* q = t->charaTracks;
     EventCameraKeyframe* e = &p->keyframes[p->unk_09];
     u8 i;
 
@@ -4837,7 +4837,7 @@ u8 func_08074E40(EventCameraWork* p) {
 u8 func_08074E88(EventCameraWork* p, u8 v) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    EventCharaTrack* q = t->charaTracks;
+    const EventCharaTrack* q = t->charaTracks;
     u8 i;
 
     for (i = 0; i < n; i++) {
