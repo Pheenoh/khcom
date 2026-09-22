@@ -2071,20 +2071,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJf",
-          "address": "0x09EF2744",
-          "size": 24,
-          "sha256": "796fe9a5ca6fe445bbb8624e680cdbdaa02f772396e204ea7df8788053ca7bcf",
-          "objects": [
-            {
-              "name": "gTaskDescBosJf",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMap",
           "address": "0x0961A684",
           "size": 16,
@@ -2094,20 +2080,6 @@
               "name": "gTaskNameBosJfMap",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMap",
-          "address": "0x09EF27D4",
-          "size": 24,
-          "sha256": "88553152dcc7dfba87eeb9f6eac30c946925a03ba3f239bdc730cbd68298d23b",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -2127,20 +2099,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfLamp",
-          "address": "0x09EF27F4",
-          "size": 24,
-          "sha256": "d801a2ad7b7dadec34d3e143c99cfc8bb30793ed1617c9dcd91c7ec785a2507b",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfLamp",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMajin",
           "address": "0x0961A770",
           "size": 18,
@@ -2155,20 +2113,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMajin",
-          "address": "0x09EF2A20",
-          "size": 24,
-          "sha256": "a243b7db49f86d4a3fc97f3051416230d05536214dad518999255d0e6ab257ea",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMajin",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosDsd",
           "address": "0x0961A7C0",
           "size": 13,
@@ -2178,140 +2122,6 @@
               "name": "gTaskNameBosDsd",
               "offset": 0,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data",
-          "address": "0x9ef2a8c",
-          "size": 1148,
-          "sha256": "340ab3e1e2f9dd9d29096d76c6c06b9597073d6c0fd087959328d0ab9dcd077e",
-          "objects": [
-            {
-              "name": "gTaskDescBosDsd",
-              "offset": 0,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2AA4",
-              "offset": 24,
-              "size": 736
-            },
-            {
-              "name": "gUnk_09EF2D84",
-              "offset": 760,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D88",
-              "offset": 764,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D8C",
-              "offset": 768,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D90",
-              "offset": 772,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D94",
-              "offset": 776,
-              "size": 148
-            },
-            {
-              "name": "gUnk_09EF2E28",
-              "offset": 924,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E2C",
-              "offset": 928,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E30",
-              "offset": 932,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E34",
-              "offset": 936,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E38",
-              "offset": 940,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E3C",
-              "offset": 944,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E40",
-              "offset": 948,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E44",
-              "offset": 952,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E48",
-              "offset": 956,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E4C",
-              "offset": 960,
-              "size": 4
-            },
-            {
-              "name": "gTaskDescBosDsdMain",
-              "offset": 964,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2E68",
-              "offset": 988,
-              "size": 16
-            },
-            {
-              "name": "gTaskDescBosDsdMap",
-              "offset": 1004,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdIta",
-              "offset": 1028,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdRock",
-              "offset": 1052,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdCircle",
-              "offset": 1076,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy1",
-              "offset": 1100,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy2",
-              "offset": 1124,
-              "size": 24
             }
           ]
         },
@@ -8486,20 +8296,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJf",
-          "address": "0x09EC9B30",
-          "size": 24,
-          "sha256": "62102ac838b58675965adbe03e40292008dd545d4e8f13e1d2eb5b248399b77f",
-          "objects": [
-            {
-              "name": "gTaskDescBosJf",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMap",
           "address": "0x095D3160",
           "size": 16,
@@ -8509,20 +8305,6 @@
               "name": "gTaskNameBosJfMap",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMap",
-          "address": "0x09EC9BC0",
-          "size": 24,
-          "sha256": "c253443b796da1a43b288bd592e40396622832cd63c1047b95ccb94e88b01d28",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -8542,20 +8324,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfLamp",
-          "address": "0x09EC9BE0",
-          "size": 24,
-          "sha256": "3241bf6765927d980817d60decc31f18f285155a0922ece73f7494beb6b0265d",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfLamp",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMajin",
           "address": "0x095D324C",
           "size": 18,
@@ -8570,20 +8338,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMajin",
-          "address": "0x09EC9E0C",
-          "size": 24,
-          "sha256": "e7eed27ed431cf91291431d34954bcca5ae12ef63836d32cc40bbccb36a224ae",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMajin",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosDsd",
           "address": "0x095D329C",
           "size": 13,
@@ -8593,140 +8347,6 @@
               "name": "gTaskNameBosDsd",
               "offset": 0,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data",
-          "address": "0x9ec9e78",
-          "size": 1148,
-          "sha256": "7db84208e2cddfaef5fdd054505ef6b4eb526ef72ad32697d02f3afca358eaf1",
-          "objects": [
-            {
-              "name": "gTaskDescBosDsd",
-              "offset": 0,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2AA4",
-              "offset": 24,
-              "size": 736
-            },
-            {
-              "name": "gUnk_09EF2D84",
-              "offset": 760,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D88",
-              "offset": 764,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D8C",
-              "offset": 768,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D90",
-              "offset": 772,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D94",
-              "offset": 776,
-              "size": 148
-            },
-            {
-              "name": "gUnk_09EF2E28",
-              "offset": 924,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E2C",
-              "offset": 928,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E30",
-              "offset": 932,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E34",
-              "offset": 936,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E38",
-              "offset": 940,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E3C",
-              "offset": 944,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E40",
-              "offset": 948,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E44",
-              "offset": 952,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E48",
-              "offset": 956,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E4C",
-              "offset": 960,
-              "size": 4
-            },
-            {
-              "name": "gTaskDescBosDsdMain",
-              "offset": 964,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2E68",
-              "offset": 988,
-              "size": 16
-            },
-            {
-              "name": "gTaskDescBosDsdMap",
-              "offset": 1004,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdIta",
-              "offset": 1028,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdRock",
-              "offset": 1052,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdCircle",
-              "offset": 1076,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy1",
-              "offset": 1100,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy2",
-              "offset": 1124,
-              "size": 24
             }
           ]
         },
@@ -14838,20 +14458,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJf",
-          "address": "0x09F7D97C",
-          "size": 24,
-          "sha256": "f65553df206f2f5b8abb9bc030fc977e6cbac4a6ca2d45045dfcaf12a8c126d7",
-          "objects": [
-            {
-              "name": "gTaskDescBosJf",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMap",
           "address": "0x095DBA98",
           "size": 16,
@@ -14861,20 +14467,6 @@
               "name": "gTaskNameBosJfMap",
               "offset": 0,
               "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMap",
-          "address": "0x09F7DA0C",
-          "size": 24,
-          "sha256": "be618cf52a1d66c4a41d3f754dfbcbbe7594aa4fb66f170dd99f29c8ae99cb9b",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMap",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -14894,20 +14486,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfLamp",
-          "address": "0x09F7DA2C",
-          "size": 24,
-          "sha256": "38bf39c8b162de04c6d1ae68ca63b0b9e78fe2e376df620a87007f7154616c56",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfLamp",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosJfMajin",
           "address": "0x095DBB84",
           "size": 18,
@@ -14922,20 +14500,6 @@
         },
         {
           "unit": "bos2.c",
-          "section": ".data_registration_gTaskDescBosJfMajin",
-          "address": "0x09F7DC58",
-          "size": 24,
-          "sha256": "291ace9127e384f34fc0fb347d9cf4de8cdacbdd510e2c724382427d6c745b77",
-          "objects": [
-            {
-              "name": "gTaskDescBosJfMajin",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
           "section": ".rodata_registration_name_gTaskDescBosDsd",
           "address": "0x095DBBD4",
           "size": 13,
@@ -14945,140 +14509,6 @@
               "name": "gTaskNameBosDsd",
               "offset": 0,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "bos2.c",
-          "section": ".data",
-          "address": "0x9f7dcc4",
-          "size": 1148,
-          "sha256": "c3029f5c8ce0ae85be4905aa11141d87ffb08520bb757557c9d40361b924b55c",
-          "objects": [
-            {
-              "name": "gTaskDescBosDsd",
-              "offset": 0,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2AA4",
-              "offset": 24,
-              "size": 736
-            },
-            {
-              "name": "gUnk_09EF2D84",
-              "offset": 760,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D88",
-              "offset": 764,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D8C",
-              "offset": 768,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D90",
-              "offset": 772,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2D94",
-              "offset": 776,
-              "size": 148
-            },
-            {
-              "name": "gUnk_09EF2E28",
-              "offset": 924,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E2C",
-              "offset": 928,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E30",
-              "offset": 932,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E34",
-              "offset": 936,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E38",
-              "offset": 940,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E3C",
-              "offset": 944,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E40",
-              "offset": 948,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E44",
-              "offset": 952,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E48",
-              "offset": 956,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF2E4C",
-              "offset": 960,
-              "size": 4
-            },
-            {
-              "name": "gTaskDescBosDsdMain",
-              "offset": 964,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EF2E68",
-              "offset": 988,
-              "size": 16
-            },
-            {
-              "name": "gTaskDescBosDsdMap",
-              "offset": 1004,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdIta",
-              "offset": 1028,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdRock",
-              "offset": 1052,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdCircle",
-              "offset": 1076,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy1",
-              "offset": 1100,
-              "size": 24
-            },
-            {
-              "name": "gTaskDescBosDsdEnergy2",
-              "offset": 1124,
-              "size": 24
             }
           ]
         },

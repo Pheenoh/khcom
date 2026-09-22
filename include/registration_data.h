@@ -496,7 +496,7 @@ extern const char gTaskName_09EE8E30[];
 extern const char gTaskName_09EE8EF0[];
 extern const char gTaskName_09EE8F30[];
 
-extern const TaskDesc gUnk_09EF2A5C;
+extern TaskDesc gUnk_09EF2A5C;
 extern TaskDesc gUnk_09EF2A74;
 extern TaskDesc gUnk_09EF34A8;
 extern TaskDesc gUnk_09EF34D8;
