@@ -14,7 +14,7 @@
     "native_jiminy_name_275_rodata": "EU JiminyLocalizedName gUnkEu_0888E530 (20B) formerly .rodata_jiminy_name_275 is const in existing jiminy_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot, EU-only).",
     "split_eu_jiminy_localized_names": "EU JiminyLocalizedName records were each an island in units.txt, interleaved with rodata_script_at_*.s string blobs, so they could not share one native .rodata with jiminy_data.c (already holding gUnkEu_0888E530). Split each remaining forced record into jiminy_eu_<name>_name.c (content slug from English label) with ordinary const .rodata; same interleaving evidence pattern as map_text_eu_*_name and staff_roll sprite splits.",
     "split_eu_jiminy_localized_texts": "SUPERSEDED by rebank_eu_jiminy_localized_texts.",
-    "rebank_eu_jiminy_localized_texts": "Collapsed 270 jiminy_eu_*_text.c micro-TUs and their preceding mislabeled asset_gfx_at_* string-pool units into one native .rodata bank jiminy_eu_localized_text_data.c (pools as JiminyTextChar[] + headers as const JiminyLocalizedText, interleaved in ROM order). No forced sections; matches jiminy_inline_text_data.c ownership. Description literal absolute symbols in 0x0883F2DB..0x0887AD64 removed because the bank now defines them."
+    "rebank_eu_jiminy_localized_texts": "Collapsed 270 jiminy_eu_*_text.c micro-TUs and mislabeled asset_gfx_at_* pools into one native .rodata bank (jiminy_eu_localized_text_data.c). Payload is asm/eu/jiminy_eu_localized_text_data.inc (.byte data + labels) included via asm(), because agbcc structs pad to align-4 and legacy as has no .incbin. No forced sections."
   },
   "regions": {
     "us": {
