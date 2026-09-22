@@ -41,6 +41,13 @@
 #include "game.h"
 #include "bos4_api.h"
 
+s16 gUnk_02034AB4;
+
+u8 gUnk_02034AB6[2];
+#ifdef VERSION_EU
+u8 gUnkEu_02034AD4[4];
+#endif
+
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
@@ -1030,3 +1037,43 @@ u16 func_08091B44(void) {
 
     return gUnk_02039DD4->unk_0D7;
 }
+
+const char gTaskName_09EE4B40[] = "card_enemy";
+
+TaskDesc gUnk_09EE4B40 = {
+    gTaskName_09EE4B40,
+    (void (*)(void*, void*))card_enemy_0,
+    card_enemy_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+const char gTaskName_09EE4B58[] = "EnemyUsecard";
+
+TaskDesc gUnk_09EE4B58 = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08090EA0,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+TaskDesc gUnk_09EE4B70 = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08091048,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};
+
+TaskDesc gUnk_09EE4B88 = {
+    gTaskName_09EE4B58,
+    (void (*)(void*, void*))func_08091138,
+    EnemyUsecard_1,
+    (void (*)(void*))func_08090374,
+    (void (*)(void*))func_08090530,
+    0xA8,
+};

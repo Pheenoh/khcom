@@ -75,11 +75,6 @@ u32 gUnk_02034AA8;
 CardDisplayWork* gUnk_02034AAC;
 u8 gActiveDeck;
 u8 gUnk_02034AB1[3];
-s16 gUnk_02034AB4;
-u8 gUnk_02034AB6[2];
-#ifdef VERSION_EU
-u8 gUnkEu_02034AD4[4];
-#endif
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 u8 gUnk_02039DDC EWRAM_COMMON(4);
@@ -660,44 +655,4 @@ TaskDesc gUnk_09EE4B28 = {
     (void (*)(void*))DeckCard2_2,
     (void (*)(void*))DeckCard2_3,
     0x50,
-};
-
-const char gTaskName_09EE4B40[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B40"), aligned(1))) = "card_enemy";
-
-TaskDesc gUnk_09EE4B40 = {
-    gTaskName_09EE4B40,
-    (void (*)(void*, void*))card_enemy_0,
-    card_enemy_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
-    0xA8,
-};
-
-const char gTaskName_09EE4B58[] __attribute__((section(".rodata_registration_name_gUnk_09EE4B58"), aligned(1))) = "EnemyUsecard";
-
-TaskDesc gUnk_09EE4B58 = {
-    gTaskName_09EE4B58,
-    (void (*)(void*, void*))func_08090EA0,
-    EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
-    0xA8,
-};
-
-TaskDesc gUnk_09EE4B70 = {
-    gTaskName_09EE4B58,
-    (void (*)(void*, void*))func_08091048,
-    EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
-    0xA8,
-};
-
-TaskDesc gUnk_09EE4B88 = {
-    gTaskName_09EE4B58,
-    (void (*)(void*, void*))func_08091138,
-    EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
-    0xA8,
 };
