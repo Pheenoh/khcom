@@ -214,23 +214,6 @@ void* gUnk_09EDF90C __attribute__((section(".data_09EDF8F0"))) = gUnk_0895D97E;
 
 AnimHeader* gUnk_09EDF910 __attribute__((section(".data_09EDF8F0"))) = &gUnk_0895D994;
 
-void* gUnk_09EDF97C[10] __attribute__((section(".data_09EDF97C"))) = {
-    gUnk_0896207C,
-    gUnk_0896208C,
-    gUnk_0896209C,
-    gUnk_089620AC,
-    gUnk_089620C2,
-    gUnk_089620D2,
-    gUnk_089620E2,
-    gUnk_089620F2,
-    gUnk_08962102,
-    gUnk_0896210C,
-};
-
-AnimHeader* gUnk_09EDF9A4[1] __attribute__((section(".data_09EDF97C"))) = {
-    &gUnk_0896210E,
-};
-
 void* gUnk_09EDFD70 __attribute__((section(".data_09EDFD70"))) = gUnk_089AB1A8;
 
 void* gUnk_09EDFD74 __attribute__((section(".data_09EDFD70"))) = gUnk_089AB1B8;

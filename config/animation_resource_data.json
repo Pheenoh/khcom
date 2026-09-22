@@ -25,7 +25,8 @@
     "native_hum_exclusive_leftovers": "Split exclusive-consumer hum AnimDef/AnimInit islands from animation_resource_data.c: hum_cloud (.data_09EE15FC), hum_axcel (.data_09EE1FCC), hum_vixen_ndl (.data_09EE2690).",
     "native_btl_and_bambi_header": "Merged smn bambi AnimHeader .data_09EDE7B0 into animation_resource_smn_bambi_data.c (contiguous with gfx island; AnimDef pairs gUnk_09EDE790/gUnk_09EDE7B0). Split exclusive btl islands: btl_lockon (.data_09EDF1C0..09EDF2FC contiguous), btl_premiere (.data_09EE1244, task_btl_premiere_0).",
     "native_map_card_mode_test_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: mode_test (.data_09EE14D4; US/JP only \u2014 absent from EU units), card_display (.data_09EEAF4C, CardDisplayWork), map_menu (.data_09EF8D48, MapMenuWork), map_tutorial (.data_09EF8414, MapTutorialWork), map_card (.data_09EF0FA8) + map_card_world (.data_09EF1138) MapCardDef anim banks.",
-    "native_fld_emy_portrait_evt_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: fld_tail (.data_09EDF694), emy_pre (.data_09EDF8CC), msg_portrait_mid/tail (.data_09EED800/.data_09EEDB9C), evt_head (.data_09EEE268..294), evt_pre (.data_09EEE554..574), evt_gap/gap2 (.data_09EEEE4C/.data_09EEEE70), evt_before_shared (.data_09EEFBB8), evt_pre_mid (.data_09EF0034), evt_mid_gap (.data_09EF06CC), evt_post_tail (.data_09EF0ED8), evt_far (.data_09EF5B54)."
+    "native_fld_emy_portrait_evt_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: fld_tail (.data_09EDF694), emy_pre (.data_09EDF8CC), msg_portrait_mid/tail (.data_09EED800/.data_09EEDB9C), evt_head (.data_09EEE268..294), evt_pre (.data_09EEE554..574), evt_gap/gap2 (.data_09EEEE4C/.data_09EEEE70), evt_before_shared (.data_09EEFBB8), evt_pre_mid (.data_09EF0034), evt_mid_gap (.data_09EF06CC), evt_post_tail (.data_09EF0ED8), evt_far (.data_09EF5B54).",
+    "native_fld_mid_09EDF320": "Exclusive fld island .data_09EDF320 -> animation_resource_fld_mid_data.c"
   },
   "regions": {
     "us": {
@@ -915,8 +916,8 @@
           "sha256": "9b0c9249f7b93f2f82faa3971d670360a724027d6a32e78ce5564642697e175c"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
+          "unit": "animation_resource_fld_mid_data.c",
+          "section": ".data",
           "address": "0x9edf320",
           "size": 20,
           "objects": [
@@ -13895,8 +13896,8 @@
           "sha256": "fdafb7b3b34b9cee8c20f005b36ae86947718cf16de4f5680fbff12727b7c951"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
+          "unit": "animation_resource_fld_mid_data.c",
+          "section": ".data",
           "address": "0x9eb6d9c",
           "size": 20,
           "objects": [
@@ -26875,8 +26876,8 @@
           "sha256": "ea6c3a275aec57e85ceadbb4bdeb18f639e6d7f833d0aab90dcf8af23c06c082"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
+          "unit": "animation_resource_fld_mid_data.c",
+          "section": ".data",
           "address": "0x9f59f78",
           "size": 20,
           "objects": [

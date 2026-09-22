@@ -6377,15 +6377,6 @@ void* gUnk_09EDF308[4] __attribute__((section(".data_09EDF308"))) = {
 
 void* gUnk_09EDF318 __attribute__((section(".data_09EDF308"))) = gUnk_0891A13A;
 
-void* gUnk_09EDF320[4] __attribute__((section(".data_09EDF320"))) = {
-    gUnk_0891B1E8,
-    gUnk_0891B1FE,
-    gUnk_0891B214,
-    gUnk_0891B22A,
-};
-
-void* gUnk_09EDF330 __attribute__((section(".data_09EDF320"))) = gUnk_0891B240;
-
 void* gUnk_09EE00F4[7] __attribute__((section(".data_09EE00F4"))) = {
     gUnk_089DA188,
     gUnk_089DA192,

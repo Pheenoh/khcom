@@ -21,7 +21,8 @@
     ".data_09EE1F90": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EE2098": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     "native_aux_anim_12A4": "The gUnk_09EE12A4 aux-animation pointer cluster is a contiguous 380-byte initialized-data run with matching source order in aux_animation_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Neighboring aux-animation clusters stay sectioned.",
-    "native_aux_exclusive_leftovers": "Split exclusive-consumer islands from aux_animation_data.c: frd_ariel (.data_09EDE594), smn_mushu (.data_09EDE848), evt (.data_09EDECC0), btl (.data_09EDF3E8), fld (.data_09EDF5F4), emy_07 (.data_09EDFFDC), hum_axcel_ptc (.data_09EE1F90), hum_org (.data_09EE2098). Left map_tasks-only .data_09EDF97C and shared islands forced."
+    "native_aux_exclusive_leftovers": "Split exclusive-consumer islands from aux_animation_data.c: frd_ariel (.data_09EDE594), smn_mushu (.data_09EDE848), evt (.data_09EDECC0), btl (.data_09EDF3E8), fld (.data_09EDF5F4), emy_07 (.data_09EDFFDC), hum_axcel_ptc (.data_09EE1F90), hum_org (.data_09EE2098). Left map_tasks-only .data_09EDF97C and shared islands forced.",
+    "native_map_tasks_09EDF97C": "Exclusive map_tasks island .data_09EDF97C -> aux_animation_map_tasks_data.c"
   },
   "regions": {
     "us": {
@@ -541,8 +542,8 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF97C",
+          "unit": "aux_animation_map_tasks_data.c",
+          "section": ".data",
           "address": "0x09EDF97C",
           "size": 44,
           "sha256": "8f186bbe815007cd8bbbd2339b317b078e5be456d1f36afde558a7305dce86a3",
@@ -1609,8 +1610,8 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF97C",
+          "unit": "aux_animation_map_tasks_data.c",
+          "section": ".data",
           "address": "0x09EB73F8",
           "size": 44,
           "sha256": "2db02c89e1361afbe5de1b55199d74832ca97b56b4275841e298533552258a83",
@@ -2677,8 +2678,8 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF97C",
+          "unit": "aux_animation_map_tasks_data.c",
+          "section": ".data",
           "address": "0x09F5A5D4",
           "size": 44,
           "sha256": "225de8d31007837014d8edc34206102ad0e4c8c3857186736b8b9edb02152c60",
