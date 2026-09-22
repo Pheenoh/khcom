@@ -12,3 +12,7 @@ void* gUnk_09EDE790[7] = {
 };
 
 void* gUnk_09EDE7AC = gUnk_088A4AAC;
+
+AnimHeader* gUnk_09EDE7B0[1] = {
+    &gUnk_088A4ABC,
+};
