@@ -326,52 +326,6 @@
               "size": 15
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7834",
-          "address": "0x90362d4",
-          "size": 9,
-          "sha256": "924632ee46f5a985de0f459a9e151f9b10a7f57dca212c4a4e00f9a74e7afe4f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7834",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE784C",
-          "address": "0x90362e0",
-          "size": 15,
-          "sha256": "5a7fdc1899a50e9028365ef69231281a191007cdaa642f4b97ee1344a32ef17d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE784C",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7864",
-          "address": "0x90362f0",
-          "size": 16,
-          "sha256": "206014f5cc5a7ef78e0c8b7788b7af79667dea87d5b233fee9b03a361ba5b71d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7864",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
         }
       ]
     },
@@ -693,52 +647,6 @@
               "size": 15
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7834",
-          "address": "0x9009760",
-          "size": 9,
-          "sha256": "924632ee46f5a985de0f459a9e151f9b10a7f57dca212c4a4e00f9a74e7afe4f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7834",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE784C",
-          "address": "0x900976c",
-          "size": 15,
-          "sha256": "5a7fdc1899a50e9028365ef69231281a191007cdaa642f4b97ee1344a32ef17d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE784C",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7864",
-          "address": "0x900977c",
-          "size": 16,
-          "sha256": "206014f5cc5a7ef78e0c8b7788b7af79667dea87d5b233fee9b03a361ba5b71d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7864",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
         }
       ]
     },
@@ -1070,52 +978,6 @@
               "size": 15
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7834",
-          "address": "0x90cf650",
-          "size": 9,
-          "sha256": "924632ee46f5a985de0f459a9e151f9b10a7f57dca212c4a4e00f9a74e7afe4f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7834",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE784C",
-          "address": "0x90cf65c",
-          "size": 15,
-          "sha256": "5a7fdc1899a50e9028365ef69231281a191007cdaa642f4b97ee1344a32ef17d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE784C",
-              "offset": 0,
-              "size": 15
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7864",
-          "address": "0x90cf66c",
-          "size": 16,
-          "sha256": "206014f5cc5a7ef78e0c8b7788b7af79667dea87d5b233fee9b03a361ba5b71d",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7864",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 1
         }
       ]
     }

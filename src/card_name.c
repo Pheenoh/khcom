@@ -41,6 +41,14 @@
 #include "game.h"
 #include "bos4_api.h"
 
+void* gUnk_02034AD4;
+
+u8 gUnk_02034AD8;
+
+u8 gUnk_02034AD9;
+
+u8 gUnk_02034ADA[6];
+
 void func_0809D124(PremiumCardEffectWork* w);
 void func_0809D1B0(PremiumCardEffectWork* w);
 void func_0809D160(PremiumCardEffectWork* w);
@@ -476,3 +484,49 @@ void func_0809D900(u16 a, u16 b, u16 c, u32 v) {
     s[10] = 0;
     func_0809D2B0(a, b, c, s);
 }
+
+const char gTaskName_09EE7834[] = "CardName";
+
+TaskDesc gUnk_09EE7834 = {
+    gTaskName_09EE7834,
+    (void (*)(void*, void*))CardName_0,
+    CardName_1,
+    (void (*)(void*))CardName_2,
+    (void (*)(void*))CardName_3,
+#ifdef VERSION_EU
+    0x31C,
+#else
+    0x22C,
+#endif
+};
+
+const char gTaskName_09EE784C[] = "Premire_EFFECT";
+
+TaskDesc gUnk_09EE784C = {
+    gTaskName_09EE784C,
+    (void (*)(void*, void*))func_0809CE88,
+    func_0809D040,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};
+
+const char gTaskName_09EE7864[] = "Premire_EFFECT2";
+
+TaskDesc gUnk_09EE7864 = {
+    gTaskName_09EE7864,
+    (void (*)(void*, void*))func_0809CE88,
+    Premire_EFFECT2_1,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};
+
+TaskDesc gUnk_09EE787C = {
+    gTaskName_09EE784C,
+    (void (*)(void*, void*))func_0809CF64,
+    func_0809D09C,
+    (void (*)(void*))func_0809D0CC,
+    (void (*)(void*))func_0809D0FC,
+    0x54,
+};

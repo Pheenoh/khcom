@@ -84,10 +84,6 @@ u8 gUnkEu_02034AD4[4];
 u8 gUnk_02034AB8[20];
 u8 gUnk_02034ACC;
 u32 gUnk_02034AD0;
-void* gUnk_02034AD4;
-u8 gUnk_02034AD8;
-u8 gUnk_02034AD9;
-u8 gUnk_02034ADA[6];
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 u8 gUnk_02039DDC EWRAM_COMMON(4);
@@ -1399,50 +1395,4 @@ TaskDesc gUnk_09EE781C = {
     (void (*)(void*))func_0809C78C,
     (void (*)(void*))func_0809C98C,
     0x78,
-};
-
-const char gTaskName_09EE7834[] __attribute__((section(".rodata_registration_name_gUnk_09EE7834"), aligned(1))) = "CardName";
-
-TaskDesc gUnk_09EE7834 = {
-    gTaskName_09EE7834,
-    (void (*)(void*, void*))CardName_0,
-    CardName_1,
-    (void (*)(void*))CardName_2,
-    (void (*)(void*))CardName_3,
-#ifdef VERSION_EU
-    0x31C,
-#else
-    0x22C,
-#endif
-};
-
-const char gTaskName_09EE784C[] __attribute__((section(".rodata_registration_name_gUnk_09EE784C"), aligned(1))) = "Premire_EFFECT";
-
-TaskDesc gUnk_09EE784C = {
-    gTaskName_09EE784C,
-    (void (*)(void*, void*))func_0809CE88,
-    func_0809D040,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
-    0x54,
-};
-
-const char gTaskName_09EE7864[] __attribute__((section(".rodata_registration_name_gUnk_09EE7864"), aligned(1))) = "Premire_EFFECT2";
-
-TaskDesc gUnk_09EE7864 = {
-    gTaskName_09EE7864,
-    (void (*)(void*, void*))func_0809CE88,
-    Premire_EFFECT2_1,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
-    0x54,
-};
-
-TaskDesc gUnk_09EE787C = {
-    gTaskName_09EE784C,
-    (void (*)(void*, void*))func_0809CF64,
-    func_0809D09C,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
-    0x54,
 };
