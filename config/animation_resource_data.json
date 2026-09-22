@@ -23,7 +23,8 @@
     "native_exclusive_actor_animation_leftovers": "Split exclusive-consumer forced islands from animation_resource_data.c into content-named native .data TUs: bos6_lst, bos6_flt, bos7_edg, bos7_ptl, bos4_saku, wlogo_mons, wlogo_tvt, pooh_honeycomb (.data_09EF5FF0), pooh_cabbage (.data_09EF602C+.data_09EF6060), pooh_wagonwheel (.data_09EF6078+.data_09EF60AC).",
     "native_frd_smn_exclusive_leftovers": "Split exclusive-consumer character AnimDef islands from animation_resource_data.c: frd_goofy (.data_09EDE4F0), smn_bambi (.data_09EDE790), smn_simba (.data_09EDE7F0). Left .data_09EDE5FC forced \u2014 shared with hum/smn tables, not a single-friend island.",
     "native_hum_exclusive_leftovers": "Split exclusive-consumer hum AnimDef/AnimInit islands from animation_resource_data.c: hum_cloud (.data_09EE15FC), hum_axcel (.data_09EE1FCC), hum_vixen_ndl (.data_09EE2690).",
-    "native_btl_and_bambi_header": "Merged smn bambi AnimHeader .data_09EDE7B0 into animation_resource_smn_bambi_data.c (contiguous with gfx island; AnimDef pairs gUnk_09EDE790/gUnk_09EDE7B0). Split exclusive btl islands: btl_lockon (.data_09EDF1C0..09EDF2FC contiguous), btl_premiere (.data_09EE1244, task_btl_premiere_0)."
+    "native_btl_and_bambi_header": "Merged smn bambi AnimHeader .data_09EDE7B0 into animation_resource_smn_bambi_data.c (contiguous with gfx island; AnimDef pairs gUnk_09EDE790/gUnk_09EDE7B0). Split exclusive btl islands: btl_lockon (.data_09EDF1C0..09EDF2FC contiguous), btl_premiere (.data_09EE1244, task_btl_premiere_0).",
+    "native_map_card_mode_test_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: mode_test (.data_09EE14D4; US/JP only \u2014 absent from EU units), card_display (.data_09EEAF4C, CardDisplayWork), map_menu (.data_09EF8D48, MapMenuWork), map_tutorial (.data_09EF8414, MapTutorialWork), map_card (.data_09EF0FA8) + map_card_world (.data_09EF1138) MapCardDef anim banks."
   },
   "regions": {
     "us": {
@@ -5128,8 +5129,8 @@
           "sha256": "05048115113c767d3d9f6dcd2b1016b583666fba8416b007f350d1235d586cfa"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEAF4C",
+          "unit": "animation_resource_card_display_data.c",
+          "section": ".data",
           "address": "0x9eeaf4c",
           "size": 136,
           "objects": [
@@ -10808,8 +10809,8 @@
           "sha256": "5af06f010e6e1cd2b19efb6ad39f32f5cc3e24a0fb377309871865f3b2b7dd47"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0FA8",
+          "unit": "animation_resource_map_card_data.c",
+          "section": ".data",
           "address": "0x9ef0fa8",
           "size": 184,
           "objects": [
@@ -11047,8 +11048,8 @@
           "sha256": "a7ba8c0b8eb1a2fd64fdbf8067dff0769836ba736ea065a4432b295287cb596d"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF1138",
+          "unit": "animation_resource_map_card_world_data.c",
+          "section": ".data",
           "address": "0x9ef1138",
           "size": 24,
           "objects": [
@@ -12029,8 +12030,8 @@
           "sha256": "30d782cf0f63b8ffe43a24736518d107b9b41747c9bc93d4d1199c3d096a7f45"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE14D4",
+          "unit": "animation_resource_mode_test_data.c",
+          "section": ".data",
           "address": "0x9ee14d4",
           "size": 76,
           "sha256": "01ef628f01c8b948b5d68f5a251e92d1bf53066aa408697f072131c6c438e74e",
@@ -12662,8 +12663,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8414",
+          "unit": "animation_resource_map_tutorial_data.c",
+          "section": ".data",
           "address": "0x9ef8414",
           "size": 128,
           "sha256": "1327f6fef5cbb0ad6caea9240acb707e29b0891cb9dea38b75d0cb89fd7efd15",
@@ -12730,8 +12731,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8D48",
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
           "address": "0x9ef8d48",
           "size": 32,
           "sha256": "c82293e4170768bdcbf1f52151c02efcfa536f3a6dd6b71e9dc7121483a60fb9",
@@ -18157,8 +18158,8 @@
           "sha256": "cfe430f3c2860f819d1d2ea0742704692071d8991c1bbd373a361c38353b0fe0"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEAF4C",
+          "unit": "animation_resource_card_display_data.c",
+          "section": ".data",
           "address": "0x9ec2340",
           "size": 136,
           "objects": [
@@ -23837,8 +23838,8 @@
           "sha256": "94d02a71b067851fd6a392cbd9178f23e5b9515fbe57aa8f07157e2c268bb054"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0FA8",
+          "unit": "animation_resource_map_card_data.c",
+          "section": ".data",
           "address": "0x9ec8394",
           "size": 184,
           "objects": [
@@ -24076,8 +24077,8 @@
           "sha256": "c8b2691bfaf86e3199a9af357cac76056484370abe5b205f5cefbf7480353eba"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF1138",
+          "unit": "animation_resource_map_card_world_data.c",
+          "section": ".data",
           "address": "0x9ec8524",
           "size": 24,
           "objects": [
@@ -25058,8 +25059,8 @@
           "sha256": "605e88450487ac204e6fc18719e1035e168cf1d02fa62283f2b053a79b97123a"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE14D4",
+          "unit": "animation_resource_mode_test_data.c",
+          "section": ".data",
           "address": "0x9eb8f50",
           "size": 76,
           "sha256": "4b5820285127a6905bf8c55013c10fec4243b188a028dcadcfcaba7508a0d2f5",
@@ -25691,8 +25692,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8414",
+          "unit": "animation_resource_map_tutorial_data.c",
+          "section": ".data",
           "address": "0x9ecf800",
           "size": 128,
           "sha256": "9ea564a35e775513e6619a67a8c2757bfd2a03da0d548b051219fb515d2aff66",
@@ -25759,8 +25760,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8D48",
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
           "address": "0x9ed0134",
           "size": 32,
           "sha256": "e24cb10b921f15570e646e75c3ab954de621c85792bb101a0a2a4a8910bc2fe5",
@@ -31186,8 +31187,8 @@
           "sha256": "1b45589a2b2db753bbc849e218ec1593af6926e5ada714b0777aca6f65758046"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEAF4C",
+          "unit": "animation_resource_card_display_data.c",
+          "section": ".data",
           "address": "0x9f76fbc",
           "size": 136,
           "objects": [
@@ -36866,8 +36867,8 @@
           "sha256": "336fbf31f7738c5265a2929826064997cfd3a3613877b57075d2300d45fdbf8b"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0FA8",
+          "unit": "animation_resource_map_card_data.c",
+          "section": ".data",
           "address": "0x9f7c18c",
           "size": 184,
           "objects": [
@@ -37105,8 +37106,8 @@
           "sha256": "33deaa93758ff77eeb62da8e3bbae5eedb14dec4f6ee2d93c29019f9c67dd4c8"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF1138",
+          "unit": "animation_resource_map_card_world_data.c",
+          "section": ".data",
           "address": "0x9f7c31c",
           "size": 24,
           "objects": [
@@ -38701,8 +38702,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8414",
+          "unit": "animation_resource_map_tutorial_data.c",
+          "section": ".data",
           "address": "0x9f83a84",
           "size": 128,
           "sha256": "b7b656faa38f5faab85aa7631661c1448ea3054285a4c47f4c1023a3f6296ae7",
@@ -38769,8 +38770,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8D48",
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
           "address": "0x9f843b8",
           "size": 32,
           "sha256": "3ded8bfd7bab996eb13409673bbfaabf02150cdd9ca64332fdd58a47b674c5e1",
