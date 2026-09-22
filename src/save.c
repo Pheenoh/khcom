@@ -11,15 +11,6 @@ extern u8 gSramErrorPalette[];
 extern u8 gSramErrorTiles[];
 extern u8 gSramErrorTilemap[];
 
-const u8* gSaveSignature = gSaveSignatureText;
-
-const u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1] =
-#ifdef VERSION_EU
-    "KHCOM_BACKUP_VER00000013";
-#else
-    "KHCOM_BACKUP_VER00000012";
-#endif
-
 void WaitSramErrorInput(void);
 void ReadKeysRaw(void);
 
