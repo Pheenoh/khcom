@@ -3117,6 +3117,7 @@ TARGET_DATA_SIZE = {
         ("remaining_resource_09EF3884_data.c", ".data"): 0x174,
         ("remaining_resource_09EF68E0_data.c", ".data"): 0x108,
         ("card_animation_card_ui_data.c", ".data"): 0xA8,
+        ("jiminy_records_data.c", ".rodata"): 0x42C4,
         ("mode_chkobj.c", ".data"): 0x9A90,
         ("mode_sio.c", ".data"): 0x214,
         ("mode_battle.c", ".rodata"): 0x914,
