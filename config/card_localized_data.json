@@ -2,7 +2,8 @@
   "version": 1,
   "provenance": {
     "native_card_localized_level_up_rodata": "Level-up pointer cluster formerly .data_level_up is const tables in existing card_localized_data.c; ordinary .rodata replaces the forced section (TU already has .data for labels).",
-    "native_labels": "The regional card-label pointer clusters (.data_labels) are contiguous initialized-data runs with matching source order under VERSION_US/JP/EU in card_localized_data.c; ordinary .data replaces forced section attributes. level_up, deck_labels, and EU-only earlier clusters stay sectioned."
+    "native_labels": "The regional card-label pointer clusters (.data_labels) are contiguous initialized-data runs with matching source order under VERSION_US/JP/EU in card_localized_data.c; ordinary .data replaces forced section attributes. level_up, deck_labels, and EU-only earlier clusters stay sectioned.",
+    "native_card_localized_exclusive_leftovers": "Split exclusive card_localized islands: deck_labels; EU overlay_a/b/c and level_up."
   },
   "regions": {
     "us": {
@@ -1186,11 +1187,10 @@
           ]
         },
         {
-          "unit": "card_localized_data.c",
-          "section": ".data_deck_labels",
+          "unit": "card_localized_deck_labels_data.c",
+          "section": ".data",
           "address": "0x9eeafd4",
           "size": 52,
-          "sha256": "d413716e1de06d8b447bb5a5dcec7ac1282bdbd777345d7e40dbcab2624cc6de",
           "objects": [
             {
               "name": "gUnk_09EEAFD4",
@@ -4521,11 +4521,10 @@
           ]
         },
         {
-          "unit": "card_localized_data.c",
-          "section": ".data_deck_labels",
+          "unit": "card_localized_deck_labels_data.c",
+          "section": ".data",
           "address": "0x9ec23c8",
           "size": 44,
-          "sha256": "9961098c055456e3f06d7a1585828825a58d276ada8732022ddd3d788827e975",
           "objects": [
             {
               "name": "gUnk_09EEAFD4",
@@ -6382,6 +6381,68 @@
     },
     "eu": {
       "placements": [
+        {
+          "unit": "card_localized_eu_overlay_a_data.c",
+          "section": ".data",
+          "address": "0x9f6fdc8",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnkEu_09F6FDC8",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "card_localized_eu_overlay_b_data.c",
+          "section": ".data",
+          "address": "0x9f6fdf0",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnkEu_09F6FDF0",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "card_localized_eu_level_up_data.c",
+          "section": ".data",
+          "address": "0x9f72d30",
+          "size": 60,
+          "objects": [
+            {
+              "name": "gUnk_09EEA1BC",
+              "offset": 0,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F72D44",
+              "offset": 20,
+              "size": 20
+            },
+            {
+              "name": "gUnkEu_09F72D58",
+              "offset": 40,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "card_localized_eu_overlay_c_data.c",
+          "section": ".data",
+          "address": "0x9f74360",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnkEu_09F74360",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
         {
           "unit": "card_localized_data.c",
           "section": ".data",
@@ -8371,11 +8432,10 @@
           ]
         },
         {
-          "unit": "card_localized_data.c",
-          "section": ".data_deck_labels",
+          "unit": "card_localized_deck_labels_data.c",
+          "section": ".data",
           "address": "0x9f77044",
           "size": 228,
-          "sha256": "3c326fb93a9b698d59f9d42e310a99246c9c6cbccc4b38257c98cee848423794",
           "objects": [
             {
               "name": "gUnk_09EEAFD4",
@@ -8661,72 +8721,6 @@
               "name": "gUnkEu_09F77124",
               "offset": 224,
               "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_localized_data.c",
-          "section": ".data_eu_09F72D30",
-          "address": "0x9f72d30",
-          "size": 60,
-          "sha256": "eba1814d000ceae7148624d802ae7cd7ebacbb9914497a9c91e29a3397ac9823",
-          "objects": [
-            {
-              "name": "gUnk_09EEA1BC",
-              "offset": 0,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F72D44",
-              "offset": 20,
-              "size": 20
-            },
-            {
-              "name": "gUnkEu_09F72D58",
-              "offset": 40,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "card_localized_data.c",
-          "section": ".data_eu_09F6FDC8",
-          "address": "0x9f6fdc8",
-          "size": 20,
-          "sha256": "24431dbd4972c5d32119e1f6fed180aab6bc13045289572dfd2e9decd6af9a09",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FDC8",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "card_localized_data.c",
-          "section": ".data_eu_09F6FDF0",
-          "address": "0x9f6fdf0",
-          "size": 20,
-          "sha256": "51099a7c1935c80d97f91cfd59031f13061e9f15734662d7c5f5dc2f4d76689e",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FDF0",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "card_localized_data.c",
-          "section": ".data_eu_09F74360",
-          "address": "0x9f74360",
-          "size": 20,
-          "sha256": "bf512547f471f36557d7eadb1de8df0b47f7259fd15d4f424708d80b610099eb",
-          "objects": [
-            {
-              "name": "gUnkEu_09F74360",
-              "offset": 0,
-              "size": 20
             }
           ]
         }

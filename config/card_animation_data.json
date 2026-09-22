@@ -3,7 +3,8 @@
   "provenance": {
     "native_card_animation_a494_rodata": "Cluster formerly .data_09EEA494 is const pointer tables in existing card_animation_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
     "card_animation": "Direct AnimInit tables and explicit animation/index bounds establish eleven common pairs. Full animation-frame and renderer sprite payloads agree in all regions. Pointer words outside proven consumer arrays are neutral scalar objects. EU selectors establish two additional localized pairs.",
-    "native_b008_cluster": "The three pointer/AnimHeader clusters at gUnk_09EEB008, gUnk_09EEB050 and gUnk_09EEB068 form one contiguous 120-byte initialized-data run in every region; ordinary definitions in card_animation_data.c reproduce that run as native .data. event_sprite_data still owns the following 09EEB080 interrupt before the later 09EEB08C cluster."
+    "native_b008_cluster": "The three pointer/AnimHeader clusters at gUnk_09EEB008, gUnk_09EEB050 and gUnk_09EEB068 form one contiguous 120-byte initialized-data run in every region; ordinary definitions in card_animation_data.c reproduce that run as native .data. event_sprite_data still owns the following 09EEB080 interrupt before the later 09EEB08C cluster.",
+    "native_card_animation_exclusive_leftovers": "Split exclusive card_animation islands: card_ui (.data_09EEB08C), continue_ui (.data_09EEB0C4), lockon (.data_09EEC660, mode_test_support), event_actor (.data_09EEFD60, mode_eventselect)."
   },
   "regions": {
     "us": {
@@ -150,11 +151,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB08C",
+          "unit": "card_animation_card_ui_data.c",
+          "section": ".data",
           "address": "0x09EEB08C",
           "size": 56,
-          "sha256": "5d35ecd10df930e9961140998e9bd565c1fb3fced5bcb2d619eba67926ee3381",
           "objects": [
             {
               "name": "gUnk_09EEB08C",
@@ -174,11 +174,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB0C4",
+          "unit": "card_animation_continue_ui_data.c",
+          "section": ".data",
           "address": "0x09EEB0C4",
           "size": 76,
-          "sha256": "1a640aa7e97c0e530c0ba2a06202f632bbd12887ed4397ef1be6f8200d9e1ab6",
           "objects": [
             {
               "name": "gUnk_09EEB0C4",
@@ -258,11 +257,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEC660",
+          "unit": "card_animation_lockon_data.c",
+          "section": ".data",
           "address": "0x09EEC660",
           "size": 16,
-          "sha256": "191e3fb8cd3695ed81626d4e005c7ba3579465d73efe2d1073cba126fd7bb4d9",
           "objects": [
             {
               "name": "gUnk_09EEC660",
@@ -277,11 +275,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEFD60",
+          "unit": "card_animation_event_actor_data.c",
+          "section": ".data",
           "address": "0x09EEFD60",
           "size": 28,
-          "sha256": "b302b4ac9ecfa3810278c3e83bbe0ddc6b0b4c853b5172c54938a035fd5b262c",
           "objects": [
             {
               "name": "gUnk_09EEFD60",
@@ -460,11 +457,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB08C",
+          "unit": "card_animation_card_ui_data.c",
+          "section": ".data",
           "address": "0x09EC2478",
           "size": 56,
-          "sha256": "c7dd1197858b5ba50fdd1a8e35611a5c5954d8dabd04cc70fdc2bd1febf987a7",
           "objects": [
             {
               "name": "gUnk_09EEB08C",
@@ -484,11 +480,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB0C4",
+          "unit": "card_animation_continue_ui_data.c",
+          "section": ".data",
           "address": "0x09EC24B0",
           "size": 76,
-          "sha256": "aa00db0e7d059e820dfb0a81e0520f0a90be5f9ee65145ab9e5e4af9205e3a58",
           "objects": [
             {
               "name": "gUnk_09EEB0C4",
@@ -568,11 +563,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEC660",
+          "unit": "card_animation_lockon_data.c",
+          "section": ".data",
           "address": "0x09EC3A4C",
           "size": 16,
-          "sha256": "677068a8674b492648f14411b04cadb5481116a665a05160301b66d43210018e",
           "objects": [
             {
               "name": "gUnk_09EEC660",
@@ -587,11 +581,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEFD60",
+          "unit": "card_animation_event_actor_data.c",
+          "section": ".data",
           "address": "0x09EC714C",
           "size": 28,
-          "sha256": "4cee92b36687e9e310e1fcb2dca693ffe25ba714b6cc1bf9a76b4f6596bb4325",
           "objects": [
             {
               "name": "gUnk_09EEFD60",
@@ -770,11 +763,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEB08C",
+          "unit": "card_animation_card_ui_data.c",
+          "section": ".data",
           "address": "0x09F771AC",
           "size": 56,
-          "sha256": "4d8d3b7d61cca24a30c7a4c3ea1523773042869eebda93a76bf3b54b8a695ecd",
           "objects": [
             {
               "name": "gUnk_09EEB08C",
@@ -795,10 +787,57 @@
         },
         {
           "unit": "card_animation_data.c",
-          "section": ".data_09EEB0C4",
+          "section": ".data_eu_09F771E4",
+          "address": "0x09F771E4",
+          "size": 56,
+          "sha256": "6208e40200a50e3c5e720b5fe7880ce38809c5849539576f2472eb76eaefb266",
+          "objects": [
+            {
+              "name": "gUnkEu_09F771E4",
+              "offset": 0,
+              "size": 44
+            },
+            {
+              "name": "gUnkEu_09F77210",
+              "offset": 44,
+              "size": 8
+            },
+            {
+              "name": "gUnkEu_09F77218",
+              "offset": 52,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_animation_data.c",
+          "section": ".data_eu_09F7721C",
+          "address": "0x09F7721C",
+          "size": 56,
+          "sha256": "77f7ffaa49f1bb7f48e4e115c2e6d140db4774c2ab350ece92c742269545439c",
+          "objects": [
+            {
+              "name": "gUnkEu_09F7721C",
+              "offset": 0,
+              "size": 44
+            },
+            {
+              "name": "gUnkEu_09F77248",
+              "offset": 44,
+              "size": 8
+            },
+            {
+              "name": "gUnkEu_09F77250",
+              "offset": 52,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_animation_continue_ui_data.c",
+          "section": ".data",
           "address": "0x09F77254",
           "size": 76,
-          "sha256": "74f18a33843fb1c4075caca9a9fc49043360b29c3ba12596057862b2cca10bd4",
           "objects": [
             {
               "name": "gUnk_09EEB0C4",
@@ -878,11 +917,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEC660",
+          "unit": "card_animation_lockon_data.c",
+          "section": ".data",
           "address": "0x09F77844",
           "size": 16,
-          "sha256": "528ef37d5dcc584f3573cb14e574f2a193d96950019086fb5f22f071337fd25c",
           "objects": [
             {
               "name": "gUnk_09EEC660",
@@ -897,11 +935,10 @@
           ]
         },
         {
-          "unit": "card_animation_data.c",
-          "section": ".data_09EEFD60",
+          "unit": "card_animation_event_actor_data.c",
+          "section": ".data",
           "address": "0x09F7AF44",
           "size": 28,
-          "sha256": "893f58c26623d93cea36b0044be627224c61ee8f9905087d4cef32017e0b0567",
           "objects": [
             {
               "name": "gUnk_09EEFD60",
@@ -931,54 +968,6 @@
               "name": "gUnk_09EEFD9C",
               "offset": 32,
               "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_eu_09F771E4",
-          "address": "0x09F771E4",
-          "size": 56,
-          "sha256": "6208e40200a50e3c5e720b5fe7880ce38809c5849539576f2472eb76eaefb266",
-          "objects": [
-            {
-              "name": "gUnkEu_09F771E4",
-              "offset": 0,
-              "size": 44
-            },
-            {
-              "name": "gUnkEu_09F77210",
-              "offset": 44,
-              "size": 8
-            },
-            {
-              "name": "gUnkEu_09F77218",
-              "offset": 52,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "card_animation_data.c",
-          "section": ".data_eu_09F7721C",
-          "address": "0x09F7721C",
-          "size": 56,
-          "sha256": "77f7ffaa49f1bb7f48e4e115c2e6d140db4774c2ab350ece92c742269545439c",
-          "objects": [
-            {
-              "name": "gUnkEu_09F7721C",
-              "offset": 0,
-              "size": 44
-            },
-            {
-              "name": "gUnkEu_09F77248",
-              "offset": 44,
-              "size": 8
-            },
-            {
-              "name": "gUnkEu_09F77250",
-              "offset": 52,
-              "size": 4
             }
           ]
         }
