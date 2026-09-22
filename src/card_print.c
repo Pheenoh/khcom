@@ -41,11 +41,16 @@
 #include "game.h"
 #include "bos4_api.h"
 
+s8 gUnk_0203A9E4 EWRAM_COMMON(4);
+
+u8 gUnk_0203A9E8 EWRAM_COMMON(4);
+
 static void** gUnk_02034B38;
 
 void func_0809D1FC(u8 bg);
 void func_0809D26C(void);
 void func_0809D3F0(void);
+
 void task_print_0(void) {
     func_0809D1FC(0);
 }
@@ -422,3 +427,14 @@ void mode_sio_battle_2(void) {
 void func_080AEB94(void) {
     gUnk_0203A9E8 = 0;
 }
+
+const char gTaskNamePrint[] = "task_print";
+
+TaskDesc gTaskDescPrint = {
+    gTaskNamePrint,
+    (void (*)(void*, void*))task_print_0,
+    task_print_1,
+    (void (*)(void*))task_print_2,
+    (void (*)(void*))task_print_3,
+    0x4,
+};

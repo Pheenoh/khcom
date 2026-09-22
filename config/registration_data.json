@@ -983,20 +983,6 @@
           "padding_before": 2
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescPrint",
-          "address": "0x090451A0",
-          "size": 11,
-          "sha256": "97d6d37087c5b6bfb17eee86ffa6bb322db3f24fc7b0b06a106931a3807158a5",
-          "objects": [
-            {
-              "name": "gTaskNamePrint",
-              "offset": 0,
-              "size": 11
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4914,20 +4900,6 @@
           "padding_before": 2
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescPrint",
-          "address": "0x09012048",
-          "size": 11,
-          "sha256": "97d6d37087c5b6bfb17eee86ffa6bb322db3f24fc7b0b06a106931a3807158a5",
-          "objects": [
-            {
-              "name": "gTaskNamePrint",
-              "offset": 0,
-              "size": 11
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8801,20 +8773,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 2
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescPrint",
-          "address": "0x090D1FC0",
-          "size": 11,
-          "sha256": "97d6d37087c5b6bfb17eee86ffa6bb322db3f24fc7b0b06a106931a3807158a5",
-          "objects": [
-            {
-              "name": "gTaskNamePrint",
-              "offset": 0,
-              "size": 11
-            }
-          ]
         },
         {
           "unit": "mode_wlogo.c",
