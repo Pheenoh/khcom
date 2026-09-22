@@ -11,6 +11,8 @@ sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
 from assembler_flags import software_fp_flags
 from asset_objects import materialize_assets
+from assetgen import BINARY_EXT, ManifestError
+from assetgen import plan as asset_plan
 from regional_data import asset_symbols, load_sidecars
 
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
@@ -145,6 +147,7 @@ asset_gfx_gap_158_mode = args.asset_gfx_gap_158_mode
 asset_gfx_gap_87_mode = args.asset_gfx_gap_87_mode
 
 build_dir = f"build/{version}"
+ROOT_GEN = Path("build")
 name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
@@ -170,7 +173,19 @@ regional = load_sidecars("config")
 regional_plan = regional["regions"][version]
 symbols.extend(asset_symbols(regional_plan, symbols))
 
+try:
+    groups = asset_plan(version)
+except ManifestError as error:
+    sys.exit(f"error: {error}")
 units_file = Path(f"config/{version}/units.txt")
+listed = {line.split()[0] for line in units_file.read_text().splitlines() if line.strip() and not line.startswith("#")}
+groups = {group_name: group for group_name, group in groups.items()
+          if any(unit_name in listed for unit_name in group["objects"])}
+generated = {}
+for group_name, group in groups.items():
+    for unit_name, unit in group["objects"].items():
+        generated[unit_name] = (group_name, unit)
+
 units = []
 archives = []
 linked = set()
@@ -188,7 +203,10 @@ for line in units_file.read_text().splitlines():
         archives.append((path, member, obj))
         units.append((None, obj, None))
         continue
-    if name.endswith(".c"):
+    if name in generated:
+        src = Path(f"{build_dir}/gen") / name
+        obj = f"{build_dir}/gen/{src.stem}.o"
+    elif name.endswith(".c"):
         src = Path("src") / name
         obj = f"{build_dir}/src/{src.stem}.o"
     else:
@@ -196,7 +214,7 @@ for line in units_file.read_text().splitlines():
         if not src.exists():
             src = Path("asm") / name
         obj = f"{build_dir}/asm/{src.stem}.o"
-    if not src.exists():
+    if name not in generated and not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
     if obj in linked:
         sys.exit(f"error: unit {name} is listed twice in {units_file}")
@@ -395,6 +413,7 @@ if asset_gfx_gap_87_mode == "built":
 units = materialize_assets(regional_plan, units, version, build_dir)
 
 headers = sorted(str(p) for p in Path("include").glob("*.h"))
+generated_headers = sorted(str(group["header"]) for group in groups.values())
 asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
 missing_assets = set()
 edges = []
@@ -406,6 +425,16 @@ for src, obj, flags in units:
     rule = "cc" if src.suffix == ".c" else "as"
     variables = {"cflags": f"-mthumb-interwork -fno-common {flags}"} if flags else None
     deps = []
+    if src.name in generated:
+        group_name, unit = generated[src.name]
+        deps += [str(groups[group_name]["header"])]
+        if rule == "as":
+            deps += [str(ROOT_GEN / version / "gen" / group_name / f"{entry['name']}.{BINARY_EXT[entry['format']]}")
+                     for entry in unit["members"]]
+        else:
+            deps += headers + generated_headers + ["tools/legacy/bin/arm-elf-as"]
+        edges.append((obj, rule, src, deps, variables))
+        continue
     if rule == "as":
         deps += asm_includes
         deps.extend(asm_file_deps(src, missing_assets))
@@ -413,7 +442,7 @@ for src, obj, flags in units:
             variables = {"as": "$legacy_as", "asflags": "$legacy_asflags"}
             deps.append(str(legacy_assembler))
     if rule == "cc":
-        deps += headers + ["tools/legacy/bin/arm-elf-as"]
+        deps += headers + generated_headers + ["tools/legacy/bin/arm-elf-as"]
     if any(dep.startswith("assets/") for dep in deps):
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
@@ -595,7 +624,7 @@ with out.open("w") as f:
         f"{raw_as_flags} -I . -I include",
     )
     n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
-    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
+    n.variable("cppflags", f"-nostdinc -undef -I include -I {build_dir}/gen -I tools/agbcc/include -DVERSION_{version.upper()}")
     n.variable("cflags", "-mthumb-interwork -fno-common -O2 -fprologue-bugfix")
     n.variable("pyreport", report_python)
     n.newline()
@@ -638,6 +667,11 @@ with out.open("w") as f:
         command="python3 tools/progress.py $in",
         description="PROGRESS",
         pool="console",
+    )
+    n.rule(
+        "assetgen",
+        command="python3 tools/assetgen.py $version $manifest",
+        description="ASSETGEN $manifest",
     )
     n.rule(
         "check",
@@ -761,6 +795,17 @@ with out.open("w") as f:
                 f"config/asset_inventory_{version}_gfx_gap_87.yaml",
                 asset_gfx_gap_87_extract,
             ],
+        )
+    manifests = sorted(str(group["manifest"].path) for group in groups.values())
+    for group_name, group in groups.items():
+        outputs = [str(unit["source"]) for unit in group["objects"].values()] + [str(group["header"])]
+        n.build(
+            outputs,
+            "assetgen",
+            implicit=manifests + ["tools/assetgen.py", "tools/gbagfx/gbagfx", assets_stamp]
+            + [str(path) for path in group["sources"]],
+            implicit_outputs=[str(path) for path in group["binaries"]],
+            variables={"version": version, "manifest": str(group["manifest"].path)},
         )
     for obj, rule, src, deps, variables in edges:
         n.build(obj, rule, str(src), implicit=deps, variables=variables)

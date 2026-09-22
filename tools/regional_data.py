@@ -240,6 +240,11 @@ def check_layout(plan, objects, linked):
     return errors
 
 
+def object_path(build, unit):
+    compiled = build / 'src' / (Path(unit).stem + '.o')
+    return compiled if compiled.exists() else build / 'gen' / (Path(unit).stem + '.o')
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('version', choices=VERSIONS)
@@ -274,7 +279,7 @@ def main():
             listed.add(line.split()[0])
     units = {unit for unit in listed if unit.endswith('.c')}
     build = root / 'build' / version
-    objects = {unit: read_layout(build / 'src' / (Path(unit).stem + '.o'), args.binutils_prefix) for unit in sorted(units)}
+    objects = {unit: read_layout(object_path(build, unit), args.binutils_prefix) for unit in sorted(units)}
     for unit in {asset['unit'] for asset in plan['assets'] if 'unit' in asset}:
         if unit not in listed:
             raise ValueError(f'{unit}: asset definition owner is not active')
