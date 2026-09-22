@@ -12,7 +12,8 @@
     "save_native_owner": "The version signature is only compared and copied from by save.c; the pointer has no other consumer. Treating the unchanged signature bytes as const is an explicit reconstruction assumption supported by these read-only uses. Both signature and pointer use the code owner's ordinary readonly and initialized-data sections, retaining their original independent addresses, sizes, regional version text and natural alignment. The error-screen asset arrays stay unchanged in save_data.c.",
     "inline_native_catalog": "The existing mutable text definitions are retained as an explicit generated-catalog storage assumption, not evidence of runtime writes. EU world-name strings and their five language-pointer wrappers form one complete run shared by journal, SIO, map and world UI consumers; keeping the wrappers beside their strings removes the earlier split by C type. JP description lines form the complete existing string run. Ordinary initialized data reproduces each unchanged object, string terminator, interior alignment and existing initial three-byte alignment gap. No asset bytes, array extents, qualifiers or unrelated Jiminy wrappers are changed.",
     "native_jiminy_name_275_rodata": "EU JiminyLocalizedName gUnkEu_0888E530 (20B) formerly .rodata_jiminy_name_275 is const in existing jiminy_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot, EU-only).",
-    "split_eu_jiminy_localized_names": "EU JiminyLocalizedName records were each an island in units.txt, interleaved with rodata_script_at_*.s string blobs, so they could not share one native .rodata with jiminy_data.c (already holding gUnkEu_0888E530). Split each remaining forced record into jiminy_eu_<name>_name.c (content slug from English label) with ordinary const .rodata; same interleaving evidence pattern as map_text_eu_*_name and staff_roll sprite splits."
+    "split_eu_jiminy_localized_names": "EU JiminyLocalizedName records were each an island in units.txt, interleaved with rodata_script_at_*.s string blobs, so they could not share one native .rodata with jiminy_data.c (already holding gUnkEu_0888E530). Split each remaining forced record into jiminy_eu_<name>_name.c (content slug from English label) with ordinary const .rodata; same interleaving evidence pattern as map_text_eu_*_name and staff_roll sprite splits.",
+    "split_eu_jiminy_localized_texts": "EU JiminyLocalizedText records were each an island in units.txt, interleaved with asset_gfx_at_*.s blobs, so they could not share one native .rodata with jiminy_data.c (slot already used by name 275). Split each forced record into jiminy_eu_<entry>_text.c (content slug from US journal UTF-16 title; duplicate titles get _2/_3) with ordinary const .rodata; same interleaving evidence as jiminy_eu_*_name and map_text_eu_*_name."
   },
   "regions": {
     "us": {
@@ -23903,8 +23904,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_000",
+          "unit": "jiminy_eu_soras_tale_i_text.c",
+          "section": ".rodata",
           "address": "0x0883FB1C",
           "size": 32,
           "sha256": "88161e2d7ca233d1b02d0f981b25a01a1f8150b7ce78e7b2a43f20759f47b810",
@@ -23921,8 +23922,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_001",
+          "unit": "jiminy_eu_soras_tale_ii_text.c",
+          "section": ".rodata",
           "address": "0x088402A4",
           "size": 32,
           "sha256": "b3aec5878b9f1d6ee2e5df0b05c572f1235ae4a49c944d71bd65a3aed2763805",
@@ -23939,8 +23940,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_002",
+          "unit": "jiminy_eu_soras_tale_iii_text.c",
+          "section": ".rodata",
           "address": "0x08840A14",
           "size": 32,
           "sha256": "7c40ac282244c605456031194d7926c67968746f95c8f134287bae810274ce52",
@@ -23957,8 +23958,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_003",
+          "unit": "jiminy_eu_soras_tale_iv_text.c",
+          "section": ".rodata",
           "address": "0x08841350",
           "size": 32,
           "sha256": "f4c5375b00fefdbf317ef848d7d6eb80ddeaaf85e3db1dc532e76ac09c181ce5",
@@ -23975,8 +23976,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_004",
+          "unit": "jiminy_eu_traverse_town_text.c",
+          "section": ".rodata",
           "address": "0x08841BD8",
           "size": 32,
           "sha256": "85548ee00b25788fdd0a8e21e80b5f1a35993c3305cef0560b72d5b52634c7ed",
@@ -23993,8 +23994,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_005",
+          "unit": "jiminy_eu_wonderland_text.c",
+          "section": ".rodata",
           "address": "0x088425D4",
           "size": 32,
           "sha256": "c4e84c19a74f1fd6735e6b4e4161eef82603f532eee87bb59bbb05a0546a3510",
@@ -24011,8 +24012,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_006",
+          "unit": "jiminy_eu_olympus_coliseum_text.c",
+          "section": ".rodata",
           "address": "0x08842D0C",
           "size": 32,
           "sha256": "6bb77b6123a5b7761eacbd324abd24cc51c2efc24d8bd16b6a7fe7128d887ba0",
@@ -24029,8 +24030,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_007",
+          "unit": "jiminy_eu_agrabah_text.c",
+          "section": ".rodata",
           "address": "0x08843A70",
           "size": 32,
           "sha256": "b8447b60cf26862cc04f89a9482bdbbfd6381f1901f5d8356fff41ad08e0ba0f",
@@ -24047,8 +24048,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_008",
+          "unit": "jiminy_eu_halloween_town_text.c",
+          "section": ".rodata",
           "address": "0x088443FC",
           "size": 32,
           "sha256": "15e3a5aadaf417d87ad0fa39c8d8b6176d29211072ff0d4da751ca580a5738ea",
@@ -24065,8 +24066,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_009",
+          "unit": "jiminy_eu_monstro_text.c",
+          "section": ".rodata",
           "address": "0x08844E8C",
           "size": 32,
           "sha256": "710f5a27b49a27e308e69195b39d1bcf60cb9eb5537323bf96300215f487f306",
@@ -24083,8 +24084,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_010",
+          "unit": "jiminy_eu_atlantica_text.c",
+          "section": ".rodata",
           "address": "0x08845978",
           "size": 32,
           "sha256": "c588842a075dbc992af5f1bdf228d010a0b4fb487a165db0e7f54cfe34a5c773",
@@ -24101,8 +24102,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_011",
+          "unit": "jiminy_eu_never_land_text.c",
+          "section": ".rodata",
           "address": "0x0884642C",
           "size": 32,
           "sha256": "ca294ad702fa704c013a648c29d17f54872c5610a3b21c797d8b3d68b7a66057",
@@ -24119,8 +24120,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_012",
+          "unit": "jiminy_eu_hollow_bastion_text.c",
+          "section": ".rodata",
           "address": "0x08846E6C",
           "size": 32,
           "sha256": "9f1b2cdf5939984b8d0c1ddc5703c565969936d3109205d89ab664aab6d88fc1",
@@ -24137,8 +24138,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_013",
+          "unit": "jiminy_eu_100_acre_wood_text.c",
+          "section": ".rodata",
           "address": "0x0884721C",
           "size": 32,
           "sha256": "ed535b420f16a8123aa729ebf0559ab077024f8bb52fedd74101158e3aa20965",
@@ -24155,8 +24156,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_014",
+          "unit": "jiminy_eu_twilight_town_text.c",
+          "section": ".rodata",
           "address": "0x0884783C",
           "size": 32,
           "sha256": "2fea9eeeb85ca3c142a11faf06a6f5aff506032f2084c651b69b88b31a601b87",
@@ -24173,8 +24174,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_015",
+          "unit": "jiminy_eu_destiny_islands_text.c",
+          "section": ".rodata",
           "address": "0x08847E04",
           "size": 32,
           "sha256": "0fb9598274d0c97a4adaf0c004b64f6c6679bca093eb574ced5c7eccac6853c5",
@@ -24191,8 +24192,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_016",
+          "unit": "jiminy_eu_castle_oblivion_text.c",
+          "section": ".rodata",
           "address": "0x08848808",
           "size": 32,
           "sha256": "5bbd685ee392bb6ad2933b6e04f99139a0b29a0022bcb30555f52c9f9c6b63ee",
@@ -24209,8 +24210,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_017",
+          "unit": "jiminy_eu_rikus_tale_i_text.c",
+          "section": ".rodata",
           "address": "0x08849768",
           "size": 32,
           "sha256": "f1d566bfc01ae39442b0b26d14de87fc2ca846fec69887311059587a4028de0d",
@@ -24227,8 +24228,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_018",
+          "unit": "jiminy_eu_rikus_tale_ii_text.c",
+          "section": ".rodata",
           "address": "0x0884A1C8",
           "size": 32,
           "sha256": "c1a140cf3be92f9a6ff5f8f043c82b4d28c5bdc630497cda6f940aeb124dfa9c",
@@ -24245,8 +24246,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_019",
+          "unit": "jiminy_eu_rikus_tale_iii_text.c",
+          "section": ".rodata",
           "address": "0x0884AA20",
           "size": 32,
           "sha256": "f56ee6b877714cbf3ecc80c0f680f6bd43ca5e93173ee686555c057a71b79366",
@@ -24263,8 +24264,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_020",
+          "unit": "jiminy_eu_rikus_tale_iv_text.c",
+          "section": ".rodata",
           "address": "0x0884B1AC",
           "size": 32,
           "sha256": "644a56bc227996182f86b13ca8d2a0f9f1edd020495c742d35905c6beff67c5f",
@@ -24281,8 +24282,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_021",
+          "unit": "jiminy_eu_rikus_tale_v_text.c",
+          "section": ".rodata",
           "address": "0x0884BB40",
           "size": 32,
           "sha256": "93aa38cf58dace19aab69eb5b736e177c63a6c0bb66e5270514e00f7b367156a",
@@ -24299,8 +24300,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_022",
+          "unit": "jiminy_eu_rikus_tale_vi_text.c",
+          "section": ".rodata",
           "address": "0x0884C7C0",
           "size": 32,
           "sha256": "35f09bca4816cde4fd1836e68ff5bffd9a8f8ad9d752ddaf50dc6b3caa667bef",
@@ -24317,8 +24318,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_023",
+          "unit": "jiminy_eu_kingdom_key_text.c",
+          "section": ".rodata",
           "address": "0x0884CB9C",
           "size": 32,
           "sha256": "fcb4c675daf3e8c3701b2527c29323d603c245aa75be8dbf7b0679d6a6b9d989",
@@ -24335,8 +24336,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_024",
+          "unit": "jiminy_eu_three_wishes_text.c",
+          "section": ".rodata",
           "address": "0x0884CF0C",
           "size": 32,
           "sha256": "807af2ca96f72bed24c3d75450b7cc724c3a5f43c91bdd70c1bb6eb6af05e9ce",
@@ -24353,8 +24354,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_025",
+          "unit": "jiminy_eu_crabclaw_text.c",
+          "section": ".rodata",
           "address": "0x0884D304",
           "size": 32,
           "sha256": "45dc499dbf4036ebef2b3acfe5a3002b0a625e6ad5cbfff20a57d3b898f9d431",
@@ -24371,8 +24372,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_026",
+          "unit": "jiminy_eu_pumpkinhead_text.c",
+          "section": ".rodata",
           "address": "0x0884D708",
           "size": 32,
           "sha256": "479ee28821e188ac62cea50d4c9841b59d52cd63fb38d0bb37b5ad0077e5e593",
@@ -24389,8 +24390,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_027",
+          "unit": "jiminy_eu_fairy_harp_text.c",
+          "section": ".rodata",
           "address": "0x0884DAB0",
           "size": 32,
           "sha256": "b7d19ac37331ab99ccfc037d6e5df07df07b15777d964ac28e459c1276e2c05d",
@@ -24407,8 +24408,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_028",
+          "unit": "jiminy_eu_wishing_star_text.c",
+          "section": ".rodata",
           "address": "0x0884DE4C",
           "size": 32,
           "sha256": "106095300c8433179725d802f226172ac8a3bf01b6cf8f51acde250dc6379583",
@@ -24425,8 +24426,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_029",
+          "unit": "jiminy_eu_spellbinder_text.c",
+          "section": ".rodata",
           "address": "0x0884E1C4",
           "size": 32,
           "sha256": "a9009e11a4e533c69b3cdde8d29b3d5e03ad2171b558254217c786c7fa22345e",
@@ -24443,8 +24444,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_030",
+          "unit": "jiminy_eu_metal_chocobo_text.c",
+          "section": ".rodata",
           "address": "0x0884E5D0",
           "size": 32,
           "sha256": "4dc9a658e655559b6a9ac1d562d96f540f9d7065e2173ccc7574da48c8ebd018",
@@ -24461,8 +24462,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_031",
+          "unit": "jiminy_eu_olympia_text.c",
+          "section": ".rodata",
           "address": "0x0884E9D4",
           "size": 32,
           "sha256": "a737eaa0202d97776ce612d710c9439f55d339a01b81b942eadcce47c82e52c2",
@@ -24479,8 +24480,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_032",
+          "unit": "jiminy_eu_lionheart_text.c",
+          "section": ".rodata",
           "address": "0x0884ED28",
           "size": 32,
           "sha256": "036f3d0b129b48b37f88e3770ea9b66f0f443f487adaf7b957a9f40ac2e1b56c",
@@ -24497,8 +24498,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_033",
+          "unit": "jiminy_eu_lady_luck_text.c",
+          "section": ".rodata",
           "address": "0x0884F0D8",
           "size": 32,
           "sha256": "683b6c58bbf2915b885098e1a536696d4e2e5c1db9639c0e4e579db88f7128d1",
@@ -24515,8 +24516,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_034",
+          "unit": "jiminy_eu_divine_rose_text.c",
+          "section": ".rodata",
           "address": "0x0884F478",
           "size": 32,
           "sha256": "d3a5b6cd81bafd641cfaae0f905b325ea5423038541876dd1bb897f289fbfc53",
@@ -24533,8 +24534,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_035",
+          "unit": "jiminy_eu_oathkeeper_text.c",
+          "section": ".rodata",
           "address": "0x0884F7D4",
           "size": 32,
           "sha256": "036cb67a554a6e02ed6541a72fd1d5c39e2e369e762826ea1bbab6955c6ae48d",
@@ -24551,8 +24552,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_036",
+          "unit": "jiminy_eu_oblivion_text.c",
+          "section": ".rodata",
           "address": "0x0884FBD8",
           "size": 32,
           "sha256": "5d1432ef3c55c842d006837c87b8c20e43ba7729e4d512921d086ca179c1dc53",
@@ -24569,8 +24570,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_037",
+          "unit": "jiminy_eu_diamond_dust_text.c",
+          "section": ".rodata",
           "address": "0x0884FFF8",
           "size": 32,
           "sha256": "cf01a5c1d90078c8cbc84db80d7a6f847c9f6f6ac0a14656050b4357b942e721",
@@ -24587,8 +24588,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_038",
+          "unit": "jiminy_eu_one_winged_angel_text.c",
+          "section": ".rodata",
           "address": "0x08850400",
           "size": 32,
           "sha256": "e3ef89a71b2606353f794a3fd5356bcdb916a8993e1e17ae23664005e80e961d",
@@ -24605,8 +24606,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_039",
+          "unit": "jiminy_eu_ultima_weapon_text.c",
+          "section": ".rodata",
           "address": "0x08850724",
           "size": 32,
           "sha256": "2a1100b40a48e16f735d752d632d26c8901393562ad5ad0d80aa852c1d740441",
@@ -24623,8 +24624,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_040",
+          "unit": "jiminy_eu_fire_text.c",
+          "section": ".rodata",
           "address": "0x088508FC",
           "size": 32,
           "sha256": "afb4ddaf0946cb665545d8497ae34dfd30b4864a9bb05d909e4a95ace6ca3eb1",
@@ -24641,8 +24642,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_041",
+          "unit": "jiminy_eu_blizzard_text.c",
+          "section": ".rodata",
           "address": "0x08850AE0",
           "size": 32,
           "sha256": "f9c1999b814a39637984e1c4837595360f51e62207632f2eb72e7a31054a58ba",
@@ -24659,8 +24660,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_042",
+          "unit": "jiminy_eu_thunder_text.c",
+          "section": ".rodata",
           "address": "0x08850CD0",
           "size": 32,
           "sha256": "0bda94a025c71cf20ab805c5a08d7f2d9f2d5b22b44e7f5d54ad981c96a25470",
@@ -24677,8 +24678,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_043",
+          "unit": "jiminy_eu_cure_text.c",
+          "section": ".rodata",
           "address": "0x08850E80",
           "size": 32,
           "sha256": "6e72120995560fe24377094b76b10160b0cf6e59e73a82bf737aaaff303b2449",
@@ -24695,8 +24696,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_044",
+          "unit": "jiminy_eu_gravity_text.c",
+          "section": ".rodata",
           "address": "0x08851108",
           "size": 32,
           "sha256": "45a1fbd2f8cdcccb3ff021a5c1a502b83da4fffc3da0fa2acd3b39eeb73a0db9",
@@ -24713,8 +24714,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_045",
+          "unit": "jiminy_eu_stop_text.c",
+          "section": ".rodata",
           "address": "0x08851358",
           "size": 32,
           "sha256": "8c67c3adeb1b52eea0822628e48d38cb81b2ab9d8e9827ab4cbe6d5d58a37a36",
@@ -24731,8 +24732,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_046",
+          "unit": "jiminy_eu_aero_text.c",
+          "section": ".rodata",
           "address": "0x088515B4",
           "size": 32,
           "sha256": "4afff57469f383f6f68703335f201230c6c737897984224e9416d1b56cba6763",
@@ -24749,8 +24750,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_047",
+          "unit": "jiminy_eu_simba_text.c",
+          "section": ".rodata",
           "address": "0x0885188C",
           "size": 32,
           "sha256": "aa7260cf3b9f192a91054445dc84a464726ebfcb11edd5bae1acde106be8df73",
@@ -24767,8 +24768,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_048",
+          "unit": "jiminy_eu_genie_text.c",
+          "section": ".rodata",
           "address": "0x08851ADC",
           "size": 32,
           "sha256": "1f438326ce9834e464b30787759ee2dbd865c4d2e1638d314be22de175e7e853",
@@ -24785,8 +24786,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_049",
+          "unit": "jiminy_eu_bambi_text.c",
+          "section": ".rodata",
           "address": "0x08851CDC",
           "size": 32,
           "sha256": "e19104456fd22ddc5bd5d918c406075805bfa3d34a75d405d60d96e1933fc063",
@@ -24803,8 +24804,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_050",
+          "unit": "jiminy_eu_dumbo_text.c",
+          "section": ".rodata",
           "address": "0x08851F64",
           "size": 32,
           "sha256": "9aafe3b7b0c81452e9737129148384eef01178438d113510f6e649cc4fceee38",
@@ -24821,8 +24822,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_051",
+          "unit": "jiminy_eu_tinker_bell_text.c",
+          "section": ".rodata",
           "address": "0x08852150",
           "size": 32,
           "sha256": "1c92838255e8983a377db2379085274d6797f8206ad2171a0a68be1dc56746aa",
@@ -24839,8 +24840,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_052",
+          "unit": "jiminy_eu_mushu_text.c",
+          "section": ".rodata",
           "address": "0x08852398",
           "size": 32,
           "sha256": "511135362ec13f272bb88b64eb65b78780e1050a5eb0b9957cc8a056ce7325a3",
@@ -24857,8 +24858,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_053",
+          "unit": "jiminy_eu_cloud_text.c",
+          "section": ".rodata",
           "address": "0x08852574",
           "size": 32,
           "sha256": "81bcb9ef6a1f4c265a615a1dc61436e495a4140fde5f80b8afac59505cd22a3e",
@@ -24875,8 +24876,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_054",
+          "unit": "jiminy_eu_potion_text.c",
+          "section": ".rodata",
           "address": "0x088527E4",
           "size": 32,
           "sha256": "6093a946aa6deba5d0ff488019777cbc5a1584d88151cd8beb7a170739efe55f",
@@ -24893,8 +24894,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_055",
+          "unit": "jiminy_eu_hi_potion_text.c",
+          "section": ".rodata",
           "address": "0x08852A50",
           "size": 32,
           "sha256": "73c77d2ce7552d421c2283dd4c186f1082190d5f4d7b4ee17bfeadb7977c6ed3",
@@ -24911,8 +24912,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_056",
+          "unit": "jiminy_eu_mega_potion_text.c",
+          "section": ".rodata",
           "address": "0x08852D50",
           "size": 32,
           "sha256": "5f5cca09271017c89b0f2eca7d62b98899b5f8c204cacf5d2408b1a4cd6c5270",
@@ -24929,8 +24930,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_057",
+          "unit": "jiminy_eu_ether_text.c",
+          "section": ".rodata",
           "address": "0x08852FB8",
           "size": 32,
           "sha256": "cb440c145f2ec271f67fa6ba87f953ea451473146855d502adcb663edd201a45",
@@ -24947,8 +24948,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_058",
+          "unit": "jiminy_eu_mega_ether_text.c",
+          "section": ".rodata",
           "address": "0x088532A8",
           "size": 32,
           "sha256": "0f6e5d46e25314f2007774ea8b0a10d6afa751e2916ed630de4f9860081b874a",
@@ -24965,8 +24966,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_059",
+          "unit": "jiminy_eu_elixir_text.c",
+          "section": ".rodata",
           "address": "0x088534A4",
           "size": 32,
           "sha256": "a510df02663a5aca3d8ecaa99f409a0ee798614777b06317a6aee53be846e893",
@@ -24983,8 +24984,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_060",
+          "unit": "jiminy_eu_megalixir_text.c",
+          "section": ".rodata",
           "address": "0x08853754",
           "size": 32,
           "sha256": "6486377f7e2233fb58bcf428032951758246fa72a42f83da60774d7717787adf",
@@ -25001,8 +25002,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_061",
+          "unit": "jiminy_eu_donald_duck_text.c",
+          "section": ".rodata",
           "address": "0x08853980",
           "size": 32,
           "sha256": "9546b8a1c7e8b43e2d986e8f0bf64444219dac180720dd7f9f04244707eae49d",
@@ -25019,8 +25020,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_062",
+          "unit": "jiminy_eu_goofy_text.c",
+          "section": ".rodata",
           "address": "0x08853B98",
           "size": 32,
           "sha256": "480ca406fb4360c153ae0ffdab0d4da05e7c8a998220d358b627c95c7f861a43",
@@ -25037,8 +25038,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_063",
+          "unit": "jiminy_eu_aladdin_text.c",
+          "section": ".rodata",
           "address": "0x08853DAC",
           "size": 32,
           "sha256": "4b7aec7c2cd8b54df0127ec8d65cc7a9c5ef5b7c56b009ddbeba15bfae99e686",
@@ -25055,8 +25056,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_064",
+          "unit": "jiminy_eu_ariel_text.c",
+          "section": ".rodata",
           "address": "0x08853FE4",
           "size": 32,
           "sha256": "dc706cc9b2c41fabdf487c2e1cc87913618d8765bd8febbc6fb5991e7e2ccb01",
@@ -25073,8 +25074,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_065",
+          "unit": "jiminy_eu_jack_text.c",
+          "section": ".rodata",
           "address": "0x088541F8",
           "size": 32,
           "sha256": "0f696a3b2807ae62f431942cce95e33fcd735310605489957cd8b0e9b0e87d14",
@@ -25091,8 +25092,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_066",
+          "unit": "jiminy_eu_peter_pan_text.c",
+          "section": ".rodata",
           "address": "0x088543D8",
           "size": 32,
           "sha256": "10295e31d40772df519059f7a09fd56a9124271dcb5ce61fb97ab4e0d620fd7f",
@@ -25109,8 +25110,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_067",
+          "unit": "jiminy_eu_the_beast_text.c",
+          "section": ".rodata",
           "address": "0x088545F8",
           "size": 32,
           "sha256": "be3ed4d44ddb022612be2af6e439fe9c04ee52c4dc314a125d7f7bbc800689ad",
@@ -25127,8 +25128,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_068",
+          "unit": "jiminy_eu_shadow_text.c",
+          "section": ".rodata",
           "address": "0x0885479C",
           "size": 32,
           "sha256": "582c038d7b4ed3090ee128252dde9160ddacc19d81951c9b0af030ea2d1ee6b7",
@@ -25145,8 +25146,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_069",
+          "unit": "jiminy_eu_red_nocturne_text.c",
+          "section": ".rodata",
           "address": "0x08854940",
           "size": 32,
           "sha256": "82669eb87662129443d366f00f3fd1b426046582076e49e24b7d4580e122ec51",
@@ -25163,8 +25164,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_070",
+          "unit": "jiminy_eu_blue_rhapsody_text.c",
+          "section": ".rodata",
           "address": "0x08854AF0",
           "size": 32,
           "sha256": "fec3913b181e8c49c451cfbc014b6d4e3a9fc19e9e89ca5ce237dd17c93b69ea",
@@ -25181,8 +25182,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_071",
+          "unit": "jiminy_eu_yellow_opera_text.c",
+          "section": ".rodata",
           "address": "0x08854CA4",
           "size": 32,
           "sha256": "353c1c7e675d9bfcded3748a680ed5dba3dfcc77136d69901f96fc21d8a75050",
@@ -25199,8 +25200,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_072",
+          "unit": "jiminy_eu_green_requiem_text.c",
+          "section": ".rodata",
           "address": "0x08854E38",
           "size": 32,
           "sha256": "32e881da04f957c4974a4f2bb39120fc5f59733241b37ff7ef7e0a9cb7da9345",
@@ -25217,8 +25218,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_073",
+          "unit": "jiminy_eu_sea_neon_text.c",
+          "section": ".rodata",
           "address": "0x08854FF8",
           "size": 32,
           "sha256": "e613a3bb883d20a30d2c0843c9745ffc367ba5d8ee5d8f39d82cd83a0c88fcbc",
@@ -25235,8 +25236,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_074",
+          "unit": "jiminy_eu_white_mushroom_text.c",
+          "section": ".rodata",
           "address": "0x08855208",
           "size": 32,
           "sha256": "a847dab435802156e37ce76f3bcb1bbb0ccc1d4ff11ba002e4b93921005fdb5c",
@@ -25253,8 +25254,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_075",
+          "unit": "jiminy_eu_black_fungus_text.c",
+          "section": ".rodata",
           "address": "0x088553A8",
           "size": 32,
           "sha256": "23f0de08bca7b8fa770689f2ec9060617f852608ab885df33249b3dc64e9d04b",
@@ -25271,8 +25272,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_076",
+          "unit": "jiminy_eu_soldier_text.c",
+          "section": ".rodata",
           "address": "0x08855548",
           "size": 32,
           "sha256": "ed96093b5db9504b3c40a7dd2e27b0108cc6ec8735061ac61a52a19ae8aa536a",
@@ -25289,8 +25290,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_077",
+          "unit": "jiminy_eu_powerwild_text.c",
+          "section": ".rodata",
           "address": "0x08855834",
           "size": 32,
           "sha256": "a74aa98cfb42d71e3b62c31961b7318db6d830f3c78dbb19d61d7a9bee77517a",
@@ -25307,8 +25308,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_078",
+          "unit": "jiminy_eu_bouncywild_text.c",
+          "section": ".rodata",
           "address": "0x08855A14",
           "size": 32,
           "sha256": "11cf43ecdcf3b7f44200b30faaf5aa67e5e309d6ec676c1881283917139d0870",
@@ -25325,8 +25326,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_079",
+          "unit": "jiminy_eu_air_soldier_text.c",
+          "section": ".rodata",
           "address": "0x08855BD0",
           "size": 32,
           "sha256": "714563c04e76b8f7c219476dab3cc12f1ecfd4508044ddc5f7abbd2423ace499",
@@ -25343,8 +25344,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_080",
+          "unit": "jiminy_eu_bandit_text.c",
+          "section": ".rodata",
           "address": "0x08855DE4",
           "size": 32,
           "sha256": "74a699744ca3499cdc10925a4d3ef571f627fdcda906d5d31685c0e0c5a1f760",
@@ -25361,8 +25362,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_081",
+          "unit": "jiminy_eu_barrel_spider_text.c",
+          "section": ".rodata",
           "address": "0x08855F6C",
           "size": 32,
           "sha256": "3fef214ad36420aa5fc16a4bc12925fadc434f820f127c85efd212c48d68b501",
@@ -25379,8 +25380,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_082",
+          "unit": "jiminy_eu_search_ghost_text.c",
+          "section": ".rodata",
           "address": "0x08856204",
           "size": 32,
           "sha256": "63028e94ff51457a4ace6b143f683ce8957d650aaf7166873a1c4a1e43d9ea95",
@@ -25397,8 +25398,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_083",
+          "unit": "jiminy_eu_screwdiver_text.c",
+          "section": ".rodata",
           "address": "0x088563AC",
           "size": 32,
           "sha256": "ea3aae00d680925fe0ef337070bd814550a0b97072be73793513da4ef047c828",
@@ -25415,8 +25416,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_084",
+          "unit": "jiminy_eu_wight_knight_text.c",
+          "section": ".rodata",
           "address": "0x0885657C",
           "size": 32,
           "sha256": "998d48231be84259dc93c4f1ae185ca298bc4a7439aeb6edf17f2b6e6edeac10",
@@ -25433,8 +25434,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_085",
+          "unit": "jiminy_eu_gargoyle_text.c",
+          "section": ".rodata",
           "address": "0x08856760",
           "size": 32,
           "sha256": "49fcb98a5d8befae47d8e85bbdcf711fe9d618d347dd2ea7e3ec2fdf27afcaaf",
@@ -25451,8 +25452,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_086",
+          "unit": "jiminy_eu_pirate_text.c",
+          "section": ".rodata",
           "address": "0x08856900",
           "size": 32,
           "sha256": "7a72b4d120bcd7a212058a8409b7c8915b9bf259d0c5a3f0ebdf21615d3baee7",
@@ -25469,8 +25470,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_087",
+          "unit": "jiminy_eu_air_pirate_text.c",
+          "section": ".rodata",
           "address": "0x08856AFC",
           "size": 32,
           "sha256": "c4d09e1c2a60d5516ff4fb70dc6b0abbc5074deb51354c9bf212acb2ef32909f",
@@ -25487,8 +25488,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_088",
+          "unit": "jiminy_eu_darkball_text.c",
+          "section": ".rodata",
           "address": "0x08856CB4",
           "size": 32,
           "sha256": "c83764121b880b5cad1f4e40601fe0607a456a57005bd60d5cc54b461be093c3",
@@ -25505,8 +25506,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_089",
+          "unit": "jiminy_eu_wyvern_text.c",
+          "section": ".rodata",
           "address": "0x08856EB4",
           "size": 32,
           "sha256": "3d80c36ab43135155b430969938ae4ba2ed5b9f53452eb2e09a86c69801464f1",
@@ -25523,8 +25524,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_090",
+          "unit": "jiminy_eu_wizard_text.c",
+          "section": ".rodata",
           "address": "0x088570D8",
           "size": 32,
           "sha256": "270d0e5dc66f08f79df89fc166393fae2dad3b7c9b8d2e86aaeb140d7cb42728",
@@ -25541,8 +25542,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_091",
+          "unit": "jiminy_eu_neoshadow_text.c",
+          "section": ".rodata",
           "address": "0x08857244",
           "size": 32,
           "sha256": "6e8af01575c0585da0445a6f29bc719361f59492cc62c8931ca425bcbf9240d2",
@@ -25559,8 +25560,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_092",
+          "unit": "jiminy_eu_large_body_text.c",
+          "section": ".rodata",
           "address": "0x08857454",
           "size": 32,
           "sha256": "22cc8cf96a32e7fd842fc80ee5ec681c9c170635d1da5561051604f5c1b6b506",
@@ -25577,8 +25578,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_093",
+          "unit": "jiminy_eu_fat_bandit_text.c",
+          "section": ".rodata",
           "address": "0x08857650",
           "size": 32,
           "sha256": "30cfcf4ab68448075bb1cfb8dd9a35efda172a3aa980ebbada4405bff8a07b57",
@@ -25595,8 +25596,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_094",
+          "unit": "jiminy_eu_aquatank_text.c",
+          "section": ".rodata",
           "address": "0x08857848",
           "size": 32,
           "sha256": "dbb77637b41a5ea8f79d191320d8c7c0fc63707fb05bb98548d93f5a9ca50b56",
@@ -25613,8 +25614,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_095",
+          "unit": "jiminy_eu_defender_text.c",
+          "section": ".rodata",
           "address": "0x08857AD4",
           "size": 32,
           "sha256": "73ab2caa77bee98735c943cb8170243ff729d03a8d23b2c04a614255d60aa869",
@@ -25631,8 +25632,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_096",
+          "unit": "jiminy_eu_tornado_step_text.c",
+          "section": ".rodata",
           "address": "0x08857C74",
           "size": 32,
           "sha256": "c806edf608edb73a52d9fd9a2344555143d7e55e4f14a8008a85db8e0dc09ee9",
@@ -25649,8 +25650,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_097",
+          "unit": "jiminy_eu_crescendo_text.c",
+          "section": ".rodata",
           "address": "0x08857EA4",
           "size": 32,
           "sha256": "d3396c7c9a207efa067aeab41889c21fe384a21b8a022b2554f19ea03d8bdb68",
@@ -25667,8 +25668,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_098",
+          "unit": "jiminy_eu_creeper_plant_text.c",
+          "section": ".rodata",
           "address": "0x088580B0",
           "size": 32,
           "sha256": "5b918e71184d095016189b9e1498094c94676182d550e7df62bb5b610921572e",
@@ -25685,8 +25686,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_099",
+          "unit": "jiminy_eu_guard_armor_text.c",
+          "section": ".rodata",
           "address": "0x08858284",
           "size": 32,
           "sha256": "7f78b35d32f777b4e1e15a74d17cdc9aed1ec5f61b1504a2cf94f0af1d257f1b",
@@ -25703,8 +25704,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_100",
+          "unit": "jiminy_eu_card_soldier_text.c",
+          "section": ".rodata",
           "address": "0x08858454",
           "size": 32,
           "sha256": "2e867f15a707ee8da56e81d9182c4a05590acfad86257e34877a0a959877d302",
@@ -25721,8 +25722,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_101",
+          "unit": "jiminy_eu_hades_text.c",
+          "section": ".rodata",
           "address": "0x088587B0",
           "size": 32,
           "sha256": "2c1d619dba29cd0488e8ec129f68f32f61a996773b98c5931903ff27fe482752",
@@ -25739,8 +25740,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_102",
+          "unit": "jiminy_eu_trickmaster_text.c",
+          "section": ".rodata",
           "address": "0x08858A8C",
           "size": 32,
           "sha256": "fda8dfbaa07b574915b21b1d0f2671bef7381e0b1c3d1cb3d1ab09fa9fad4679",
@@ -25757,8 +25758,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_103",
+          "unit": "jiminy_eu_jafar_text.c",
+          "section": ".rodata",
           "address": "0x08858C90",
           "size": 32,
           "sha256": "e1776a70af6dbde8362cb01b1b5ce66139d016f5cb292402f0e6a7c38156d841",
@@ -25775,8 +25776,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_104",
+          "unit": "jiminy_eu_ursula_text.c",
+          "section": ".rodata",
           "address": "0x08858F38",
           "size": 32,
           "sha256": "648af3e37fb5653f54b17796bf16046cd8f7306951c9324044a1d72802bc6bd9",
@@ -25793,8 +25794,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_105",
+          "unit": "jiminy_eu_oogie_boogie_text.c",
+          "section": ".rodata",
           "address": "0x0885917C",
           "size": 32,
           "sha256": "0dd21e33219f19b829306a11cda8e39122c9aed152580051114ee88e778926dd",
@@ -25811,8 +25812,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_106",
+          "unit": "jiminy_eu_parasite_cage_text.c",
+          "section": ".rodata",
           "address": "0x08859410",
           "size": 32,
           "sha256": "d25686047c80dcd119d4dc28a098327535f0d03ee669435965f0c6ad9bc016f0",
@@ -25829,8 +25830,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_107",
+          "unit": "jiminy_eu_hook_text.c",
+          "section": ".rodata",
           "address": "0x08859768",
           "size": 32,
           "sha256": "d7e411c3c88665f6c1a2b44258c0c4472c50632d091f7e438a3436c028cb684b",
@@ -25847,8 +25848,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_108",
+          "unit": "jiminy_eu_dragon_maleficent_text.c",
+          "section": ".rodata",
           "address": "0x08859974",
           "size": 32,
           "sha256": "84181014999bb5054d6c2282fe59dea3baca5f7a6b9ca40ed24a6471fa1f35c0",
@@ -25865,8 +25866,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_109",
+          "unit": "jiminy_eu_darkside_text.c",
+          "section": ".rodata",
           "address": "0x08859BE0",
           "size": 32,
           "sha256": "e828a6efc13094325eec4958f3bb3ceda2ebc5832feceec1ba9687ce15e53eff",
@@ -25883,8 +25884,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_110",
+          "unit": "jiminy_eu_larxene_text.c",
+          "section": ".rodata",
           "address": "0x08859E54",
           "size": 32,
           "sha256": "afd402823638c858139f1daeb98afdaabffaa3389194c04dc721f5bdc682c90b",
@@ -25901,8 +25902,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_111",
+          "unit": "jiminy_eu_riku_text.c",
+          "section": ".rodata",
           "address": "0x0885A13C",
           "size": 32,
           "sha256": "42c4f34f59c4ed3df54822f8b1b6ca0fbdf60ddb13adf0aae8828871e1b205e4",
@@ -25919,8 +25920,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_112",
+          "unit": "jiminy_eu_axel_text.c",
+          "section": ".rodata",
           "address": "0x0885A450",
           "size": 32,
           "sha256": "62e915a51c14df6d19b708d7167536ab3ef8ca9c8b9c463db15561eb9d7b59fa",
@@ -25937,8 +25938,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_113",
+          "unit": "jiminy_eu_vexen_text.c",
+          "section": ".rodata",
           "address": "0x0885A7A4",
           "size": 32,
           "sha256": "6c36fff807e2c3b7e3baca6dbb6cd68514a443b33937297669c81a9ac1818bdb",
@@ -25955,8 +25956,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_114",
+          "unit": "jiminy_eu_lexaeus_text.c",
+          "section": ".rodata",
           "address": "0x0885ACC0",
           "size": 32,
           "sha256": "6ca17bb38a3ad6a85793eb1ee86780655054f64cd50f8069a52992644c085d82",
@@ -25973,8 +25974,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_115",
+          "unit": "jiminy_eu_ansem_text.c",
+          "section": ".rodata",
           "address": "0x0885AF84",
           "size": 32,
           "sha256": "68dce781485eca70adf3cd51f357cde25d830eea018c28ea1a13b8d44552f49b",
@@ -25991,8 +25992,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_116",
+          "unit": "jiminy_eu_marluxia_text.c",
+          "section": ".rodata",
           "address": "0x0885B4CC",
           "size": 32,
           "sha256": "dd557cb3fa7ace002646a7f7589d43a08f55e366d82eba84bc2ca2ada5695dca",
@@ -26009,8 +26010,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_117",
+          "unit": "jiminy_eu_soul_eater_text.c",
+          "section": ".rodata",
           "address": "0x0885B6AC",
           "size": 32,
           "sha256": "9730bf225c27b4fb5a991e68e47e50064d10bfe46c23c52e0aa3986aed0eec94",
@@ -26027,8 +26028,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_118",
+          "unit": "jiminy_eu_the_king_text.c",
+          "section": ".rodata",
           "address": "0x0885B870",
           "size": 32,
           "sha256": "0c7b7223345b95f75557c5e85f09335889b24bf53892196950499fa5c0e4c38e",
@@ -26045,8 +26046,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_119",
+          "unit": "jiminy_eu_teeming_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885BA50",
           "size": 32,
           "sha256": "1ea8c2ad17dbfdacb85789316e6f93f9ee5a7c38ae70359989fc82a08131ee8b",
@@ -26063,8 +26064,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_120",
+          "unit": "jiminy_eu_tranquil_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885BB4C",
           "size": 32,
           "sha256": "f10760226fc0bef3e44a362c8893cdb9457e47d951fcca7e68206e93039d2f7e",
@@ -26081,8 +26082,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_121",
+          "unit": "jiminy_eu_guarded_trove_text.c",
+          "section": ".rodata",
           "address": "0x0885BC78",
           "size": 32,
           "sha256": "238721f3a993302f59c00fb6df9074e31ecf543f88444555ebeb88ad2dc5b645",
@@ -26099,8 +26100,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_122",
+          "unit": "jiminy_eu_looming_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885BE74",
           "size": 32,
           "sha256": "808ac9224bc639eafb68e1e976122aa8c05c485db471ebfc0c55f36c7c9515b4",
@@ -26117,8 +26118,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_123",
+          "unit": "jiminy_eu_sleeping_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885BFC4",
           "size": 32,
           "sha256": "e7b7bd04af8bee83ce36eaad89b8142749c9cf4b210f0fc12bfac75b9db65100",
@@ -26135,8 +26136,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_124",
+          "unit": "jiminy_eu_moments_reprieve_text.c",
+          "section": ".rodata",
           "address": "0x0885C108",
           "size": 32,
           "sha256": "f157242f8654876fb4ffa5898ed3bd2f2b81d388f69d73f451d239ba7fd3b5ca",
@@ -26153,8 +26154,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_125",
+          "unit": "jiminy_eu_feeble_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885C230",
           "size": 32,
           "sha256": "ea0db318c704517b7c0654179b26797a09292c133f535444cfea19bdc3ff0a2b",
@@ -26171,8 +26172,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_126",
+          "unit": "jiminy_eu_almighty_darkness_text.c",
+          "section": ".rodata",
           "address": "0x0885C450",
           "size": 32,
           "sha256": "2a83aed00d03b9562893fec01aa40af9b558878ca6baf830f22714220d47ea02",
@@ -26189,8 +26190,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_127",
+          "unit": "jiminy_eu_calm_bounty_text.c",
+          "section": ".rodata",
           "address": "0x0885C514",
           "size": 32,
           "sha256": "339f6a22ff66967634cc6a669392f15f76ae029212ae1c6579f0f43cfa84bd3a",
@@ -26207,8 +26208,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_128",
+          "unit": "jiminy_eu_false_bounty_text.c",
+          "section": ".rodata",
           "address": "0x0885C6FC",
           "size": 32,
           "sha256": "1daa0e2d94e604bbd0ee8fc288e86805050ddef6b5f9df34dee1d732cb08dfaa",
@@ -26225,8 +26226,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_129",
+          "unit": "jiminy_eu_moogle_room_text.c",
+          "section": ".rodata",
           "address": "0x0885C86C",
           "size": 32,
           "sha256": "e2dad60201dc6313546e9c7649ff53ad30c0fcafaef2c759b41ffd2c936f9310",
@@ -26243,8 +26244,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_130",
+          "unit": "jiminy_eu_sorcerous_waking_text.c",
+          "section": ".rodata",
           "address": "0x0885C990",
           "size": 32,
           "sha256": "508c82bc39b170127207e3fe1fd47d0c136d82883c662c49dfaa6bdc05a28d54",
@@ -26261,8 +26262,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_131",
+          "unit": "jiminy_eu_martial_waking_text.c",
+          "section": ".rodata",
           "address": "0x0885CAC0",
           "size": 32,
           "sha256": "9fa0bca639447b4c3cea6e8623c583406fbdb26e85997f3639440fdd76f85027",
@@ -26279,8 +26280,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_132",
+          "unit": "jiminy_eu_alchemic_waking_text.c",
+          "section": ".rodata",
           "address": "0x0885CBE4",
           "size": 32,
           "sha256": "66df4a94e6ee732ce1612dcb240582a2f6388a9881522d945bf71ad7f337cf1d",
@@ -26297,8 +26298,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_133",
+          "unit": "jiminy_eu_meeting_ground_text.c",
+          "section": ".rodata",
           "address": "0x0885CDF0",
           "size": 32,
           "sha256": "f262fdc18cb7a7ef7e39ba13730deef0396ed3598d1ad8872e6c3da1bf2acff6",
@@ -26315,8 +26316,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_134",
+          "unit": "jiminy_eu_mingling_worlds_text.c",
+          "section": ".rodata",
           "address": "0x0885CECC",
           "size": 32,
           "sha256": "b709399ae10f9033952c93d0ab22ee108658248ffbb1a69183793ab15d20b8ac",
@@ -26333,8 +26334,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_135",
+          "unit": "jiminy_eu_strong_initiative_text.c",
+          "section": ".rodata",
           "address": "0x0885D06C",
           "size": 32,
           "sha256": "963b44270150e029b145e94c15e0c8f0dc5cf9587343fb287690ab1c2b2d8cf4",
@@ -26351,8 +26352,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_136",
+          "unit": "jiminy_eu_lasting_daze_text.c",
+          "section": ".rodata",
           "address": "0x0885D254",
           "size": 32,
           "sha256": "ce45c2555a89d71b3560ea9abaa009f1d06ca04062d2b370f227102fe6b563e5",
@@ -26369,8 +26370,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_137",
+          "unit": "jiminy_eu_stagnant_space_text.c",
+          "section": ".rodata",
           "address": "0x0885D364",
           "size": 32,
           "sha256": "eda2b9401521e12828ba78d425b26dedc5a3e53ddd548ad41a4cb2d8479d35f2",
@@ -26387,8 +26388,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_138",
+          "unit": "jiminy_eu_premium_room_text.c",
+          "section": ".rodata",
           "address": "0x0885D4B0",
           "size": 32,
           "sha256": "f80f7b395e7fe083c276f1cd595c1bbb8364c0bea86cd6aeccaa3fa6d162c390",
@@ -26405,8 +26406,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_139",
+          "unit": "jiminy_eu_white_room_text.c",
+          "section": ".rodata",
           "address": "0x0885D688",
           "size": 32,
           "sha256": "741ed2e8d334fa5f39902a396a276277da1df3b7a218ef28c7efcb2fb3111a45",
@@ -26423,8 +26424,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_140",
+          "unit": "jiminy_eu_black_room_text.c",
+          "section": ".rodata",
           "address": "0x0885D85C",
           "size": 32,
           "sha256": "7738aebc5b547cc1a34ca16654c8f1fa0600e85f9988064f67e2b449999cfeb3",
@@ -26441,8 +26442,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_141",
+          "unit": "jiminy_eu_key_of_beginnings_text.c",
+          "section": ".rodata",
           "address": "0x0885D950",
           "size": 32,
           "sha256": "2dbb8ad2d9a9bd62ba01188700f363221b5888b5fd5bfc74c1c3f1fb843ca866",
@@ -26459,8 +26460,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_142",
+          "unit": "jiminy_eu_key_of_guidance_text.c",
+          "section": ".rodata",
           "address": "0x0885DA48",
           "size": 32,
           "sha256": "2ee2b12f07759ca30905d25f9727ff4ebfdb899325a6260eff517dc779e0e5b5",
@@ -26477,8 +26478,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_143",
+          "unit": "jiminy_eu_key_to_truth_text.c",
+          "section": ".rodata",
           "address": "0x0885DB40",
           "size": 32,
           "sha256": "2b1da991724da15e397d48ffc11134ed6a54ecbaaadb27c5aaa5833900da3697",
@@ -26495,8 +26496,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_144",
+          "unit": "jiminy_eu_key_to_rewards_text.c",
+          "section": ".rodata",
           "address": "0x0885DC30",
           "size": 32,
           "sha256": "f3edfe72d47e963fbaa368d8ccee5ee65f0c521ee37b0961c3d4d9f6f2f10904",
@@ -26513,8 +26514,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_145",
+          "unit": "jiminy_eu_about_premium_cards_text.c",
+          "section": ".rodata",
           "address": "0x0885E1D8",
           "size": 32,
           "sha256": "e65ea78d6372d3873a94c4adf6b1063c8daa24e76e28fe3f71e69c0c322b6bf9",
@@ -26531,8 +26532,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_146",
+          "unit": "jiminy_eu_sora_text.c",
+          "section": ".rodata",
           "address": "0x0885E7B8",
           "size": 32,
           "sha256": "da1846f3e45a65cee36fe9a8e6c9c9909cc1f7dfbef1dc0282beb52001aab08c",
@@ -26549,8 +26550,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_147",
+          "unit": "jiminy_eu_donald_duck_2_text.c",
+          "section": ".rodata",
           "address": "0x0885ED64",
           "size": 32,
           "sha256": "bb05a404a41c430e132a2501b55cbc4470d5a8dc89abc8ae80df28b250099983",
@@ -26567,8 +26568,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_148",
+          "unit": "jiminy_eu_goofy_2_text.c",
+          "section": ".rodata",
           "address": "0x0885F1AC",
           "size": 32,
           "sha256": "94e3fde9a43615551824cd70d343116009128215f38c550529436d474c53a819",
@@ -26585,8 +26586,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_149",
+          "unit": "jiminy_eu_jiminy_cricket_text.c",
+          "section": ".rodata",
           "address": "0x0885F518",
           "size": 32,
           "sha256": "08b9b63cb4acc930b475ae1a9bdd3e274e233c5ac85bbc46ad049684fc47a978",
@@ -26603,8 +26604,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_150",
+          "unit": "jiminy_eu_riku_2_text.c",
+          "section": ".rodata",
           "address": "0x0885FB34",
           "size": 32,
           "sha256": "bc18011f5e0fe3265f31e4fc7a9a9a9a251b3b2c8a14801b1a955701286f3da0",
@@ -26621,8 +26622,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_151",
+          "unit": "jiminy_eu_kairi_text.c",
+          "section": ".rodata",
           "address": "0x08860154",
           "size": 32,
           "sha256": "310dadffb34e580af99444aedd18f27b4cb9da2e996d46c5cd6844d122f06528",
@@ -26639,8 +26640,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_152",
+          "unit": "jiminy_eu_simba_2_text.c",
+          "section": ".rodata",
           "address": "0x0886040C",
           "size": 32,
           "sha256": "281095f2aa3d905255356c4814ab8290d62f9a053a60f5083b6a802b83911075",
@@ -26657,8 +26658,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_153",
+          "unit": "jiminy_eu_dumbo_2_text.c",
+          "section": ".rodata",
           "address": "0x08860848",
           "size": 32,
           "sha256": "26a02ea008a8516b0904d0b791f344e179978de2b158f140884733fdf8e0082f",
@@ -26675,8 +26676,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_154",
+          "unit": "jiminy_eu_bambi_2_text.c",
+          "section": ".rodata",
           "address": "0x08860A78",
           "size": 32,
           "sha256": "3fe96b2c9b712ca2f238783b8d71f1452b54915ae0ca6d9f6cc51c7cf8967704",
@@ -26693,8 +26694,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_155",
+          "unit": "jiminy_eu_mushu_2_text.c",
+          "section": ".rodata",
           "address": "0x08860DB4",
           "size": 32,
           "sha256": "3adbd3e67fe8603ff11b7d924496fa3ed4eb3eb14ead3a804ed09f830ab4cfe1",
@@ -26711,8 +26712,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_156",
+          "unit": "jiminy_eu_the_moogles_text.c",
+          "section": ".rodata",
           "address": "0x088610E8",
           "size": 32,
           "sha256": "e42007109cb9f8ea9e0a9992e81a357aaff5a1494b992ab3ae6aad02ca9f61b1",
@@ -26729,8 +26730,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_157",
+          "unit": "jiminy_eu_leon_text.c",
+          "section": ".rodata",
           "address": "0x08861624",
           "size": 32,
           "sha256": "0741b832d04a00b84703ec1a18ad10864f980363faf0ccac18b518b10274b9cf",
@@ -26747,8 +26748,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_158",
+          "unit": "jiminy_eu_yuffie_text.c",
+          "section": ".rodata",
           "address": "0x08861A78",
           "size": 32,
           "sha256": "63831309e27edd3aea0abdfd4d24ee197aef2e12c1b70b4974f616129452a4bf",
@@ -26765,8 +26766,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_159",
+          "unit": "jiminy_eu_aerith_text.c",
+          "section": ".rodata",
           "address": "0x08861F4C",
           "size": 32,
           "sha256": "80befb99bf7cee630c6e3dfd9dd42309a7e5c8a71a7a8766cc8b9f5dbadbbe01",
@@ -26783,8 +26784,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_160",
+          "unit": "jiminy_eu_cid_text.c",
+          "section": ".rodata",
           "address": "0x08862214",
           "size": 32,
           "sha256": "273d4a880bfe2ede353c020a6edcd41af4e186b442cb9f36cb6301ec0efabb97",
@@ -26801,8 +26802,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_161",
+          "unit": "jiminy_eu_cloud_2_text.c",
+          "section": ".rodata",
           "address": "0x08862634",
           "size": 32,
           "sha256": "4990ef0fe6ece0ccf708c46fde637b06875623e6c2a1b444d2de6fc6e3d686a8",
@@ -26819,8 +26820,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_162",
+          "unit": "jiminy_eu_tidus_text.c",
+          "section": ".rodata",
           "address": "0x08862984",
           "size": 32,
           "sha256": "6740d614bea643a4db72ad18856179d72cbd4bd8f7c9047fbd711103bc8a712b",
@@ -26837,8 +26838,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_163",
+          "unit": "jiminy_eu_wakka_text.c",
+          "section": ".rodata",
           "address": "0x08862C30",
           "size": 32,
           "sha256": "ba920177a480d71f43ddd73dc531eee56ca3b6de316a1315e44e2ad998395b25",
@@ -26855,8 +26856,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_164",
+          "unit": "jiminy_eu_selphie_text.c",
+          "section": ".rodata",
           "address": "0x08862EEC",
           "size": 32,
           "sha256": "ded92ffbaf00632cee20baa46af3ffa147dd5e5c27b1932a40d27efb013d564a",
@@ -26873,8 +26874,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_165",
+          "unit": "jiminy_eu_namine_text.c",
+          "section": ".rodata",
           "address": "0x0886347C",
           "size": 32,
           "sha256": "e3e0474cc277198accf65e8abac6b4e6d18e60104a8c3aeac54f1a43b3f50555",
@@ -26891,8 +26892,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_166",
+          "unit": "jiminy_eu_riku_replica_text.c",
+          "section": ".rodata",
           "address": "0x088638D4",
           "size": 32,
           "sha256": "9249a8301e2b3d2088500b0de686e8e5c6102165ed37ee26278e85e47b1e7dfb",
@@ -26909,8 +26910,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_167",
+          "unit": "jiminy_eu_axel_2_text.c",
+          "section": ".rodata",
           "address": "0x08863D04",
           "size": 32,
           "sha256": "ba10d54cbdf0e88844a3211960694156f840cc24388e3dad9e1f77b2bf67beb6",
@@ -26927,8 +26928,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_168",
+          "unit": "jiminy_eu_larxene_2_text.c",
+          "section": ".rodata",
           "address": "0x08864160",
           "size": 32,
           "sha256": "0aeb6534fc8660633a7ba61c001d3855079037cecf12add1c2d139e99a03459c",
@@ -26945,8 +26946,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_169",
+          "unit": "jiminy_eu_vexen_2_text.c",
+          "section": ".rodata",
           "address": "0x088645FC",
           "size": 32,
           "sha256": "73ae41abfa11d891115968cc6816b9ba6faf0091a6dd78d1eb4852eab9dc971a",
@@ -26963,8 +26964,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_170",
+          "unit": "jiminy_eu_marluxia_2_text.c",
+          "section": ".rodata",
           "address": "0x08864A34",
           "size": 32,
           "sha256": "815892e94de9c41cc9a6b921aef26d9eefe93854ea006a8c8b3a66446932cc04",
@@ -26981,8 +26982,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_171",
+          "unit": "jiminy_eu_aladdin_2_text.c",
+          "section": ".rodata",
           "address": "0x08865050",
           "size": 32,
           "sha256": "0db67ad70e82b33e6c06a9d2e546ac686a1fc8289baad17b9a950c36d4df7f47",
@@ -26999,8 +27000,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_172",
+          "unit": "jiminy_eu_genie_2_text.c",
+          "section": ".rodata",
           "address": "0x08865450",
           "size": 32,
           "sha256": "3cc4be852ed533de3a68551cd4c07ce4aedbcc838eb2a255c6f377025eeecdb7",
@@ -27017,8 +27018,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_173",
+          "unit": "jiminy_eu_jasmine_text.c",
+          "section": ".rodata",
           "address": "0x088656A0",
           "size": 32,
           "sha256": "40f0f30933fee956145fbb58b5f8514dcb7c5c8db1066896716981596e27c634",
@@ -27035,8 +27036,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_174",
+          "unit": "jiminy_eu_iago_text.c",
+          "section": ".rodata",
           "address": "0x088658CC",
           "size": 32,
           "sha256": "00fb3843a4686b1883ade6777f0216b65eb93f3b4ac25fa0a1ce43150cf96140",
@@ -27053,8 +27054,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_175",
+          "unit": "jiminy_eu_jafar_2_text.c",
+          "section": ".rodata",
           "address": "0x08865BD8",
           "size": 32,
           "sha256": "5a2b1cc1fe57612aae8d4f00c98493f5f1b695aafc1f02c07d9976ffc184e7f1",
@@ -27071,8 +27072,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_176",
+          "unit": "jiminy_eu_jafar_genie_text.c",
+          "section": ".rodata",
           "address": "0x08865EE4",
           "size": 32,
           "sha256": "c7fdce54e19a3c687cf5ab597e0f392be0e48cb4836e26d6a35783fcd8591032",
@@ -27089,8 +27090,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_177",
+          "unit": "jiminy_eu_jack_2_text.c",
+          "section": ".rodata",
           "address": "0x088661B0",
           "size": 32,
           "sha256": "45c0b8dbf02e011e5666a6cc73fade15cac881d2ccc36d374d29385532290a2c",
@@ -27107,8 +27108,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_178",
+          "unit": "jiminy_eu_sally_text.c",
+          "section": ".rodata",
           "address": "0x08866440",
           "size": 32,
           "sha256": "692ce9269a8b634e50f472c82a178fc0fb395d9e31262c0e0f246594db03c5a0",
@@ -27125,8 +27126,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_179",
+          "unit": "jiminy_eu_dr_finkelstein_text.c",
+          "section": ".rodata",
           "address": "0x088668B0",
           "size": 32,
           "sha256": "35df4341a30f8215df57598f0b887b1bd09d4920a07fa5381c520c4bda0db09f",
@@ -27143,8 +27144,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_180",
+          "unit": "jiminy_eu_oogie_boogie_2_text.c",
+          "section": ".rodata",
           "address": "0x08866C54",
           "size": 32,
           "sha256": "5006991d9fcb4803e3fcc890c84e976e5c1e5bc232f5d2b9f84e6176a5d844db",
@@ -27161,8 +27162,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_181",
+          "unit": "jiminy_eu_pinocchio_text.c",
+          "section": ".rodata",
           "address": "0x08867190",
           "size": 32,
           "sha256": "5abc6c46fbcb7b1c16895502c8f42628f7d91b0103ab0622f462065bfcacf1d4",
@@ -27179,8 +27180,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_182",
+          "unit": "jiminy_eu_geppetto_text.c",
+          "section": ".rodata",
           "address": "0x08867690",
           "size": 32,
           "sha256": "2ef62958caaf85f4ff23f718b39e416e68e044533cc7b54aa87e64d725ecce6c",
@@ -27197,8 +27198,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_183",
+          "unit": "jiminy_eu_hercules_text.c",
+          "section": ".rodata",
           "address": "0x08867A20",
           "size": 32,
           "sha256": "db970e58e7d6b842256860c4f079af2ce3a0b955a9d55ef45139d8d97c7fc115",
@@ -27215,8 +27216,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_184",
+          "unit": "jiminy_eu_philoctetes_text.c",
+          "section": ".rodata",
           "address": "0x08867C68",
           "size": 32,
           "sha256": "55a9b941d2e01f41445867c2639b1b0bf0f5e02442fe17a7622e10b259ba3550",
@@ -27233,8 +27234,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_185",
+          "unit": "jiminy_eu_hades_2_text.c",
+          "section": ".rodata",
           "address": "0x08867FA0",
           "size": 32,
           "sha256": "11b67d33f0c9c1125eed3e72bdad9547c4650de55ea85bd43ba1041bc14baa4e",
@@ -27251,8 +27252,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_186",
+          "unit": "jiminy_eu_alice_text.c",
+          "section": ".rodata",
           "address": "0x088683FC",
           "size": 32,
           "sha256": "042afb9eaa795887f3d534d1be31e0625decdd219708102e7db9b943f7f4ef19",
@@ -27269,8 +27270,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_187",
+          "unit": "jiminy_eu_the_queen_of_hearts_text.c",
+          "section": ".rodata",
           "address": "0x0886871C",
           "size": 32,
           "sha256": "8d725ab9fdfbf0897145f1712f363705ea37d22e4af4be923926209388888c5b",
@@ -27287,8 +27288,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_188",
+          "unit": "jiminy_eu_the_white_rabbit_text.c",
+          "section": ".rodata",
           "address": "0x08868954",
           "size": 32,
           "sha256": "c256fba820426a902495eaf32f72a8b1996ae04e8815f1760391545461e4abe8",
@@ -27305,8 +27306,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_189",
+          "unit": "jiminy_eu_card_of_hearts_text.c",
+          "section": ".rodata",
           "address": "0x08868B78",
           "size": 32,
           "sha256": "02ccae4723422621ea5246d28346b852912ca5b7e7d43b9a21d6c25aa0780051",
@@ -27323,8 +27324,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_190",
+          "unit": "jiminy_eu_card_of_spades_text.c",
+          "section": ".rodata",
           "address": "0x08868D9C",
           "size": 32,
           "sha256": "15393ad3a13434acbf86140a9b239663079c3d7da5ec7871a20a8087cf105ed9",
@@ -27341,8 +27342,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_191",
+          "unit": "jiminy_eu_the_cheshire_cat_text.c",
+          "section": ".rodata",
           "address": "0x08869070",
           "size": 32,
           "sha256": "87c9a4f17bbc2b736f6f285531285d97b9f6bacfe02d714bbc682bc8b29bb2df",
@@ -27359,8 +27360,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_192",
+          "unit": "jiminy_eu_ariel_2_text.c",
+          "section": ".rodata",
           "address": "0x0886961C",
           "size": 32,
           "sha256": "d0d6711d6a28e102d8c54a92739849ec0efbdb8bfde760e7a74c31727df5fd66",
@@ -27377,8 +27378,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_193",
+          "unit": "jiminy_eu_sebastian_text.c",
+          "section": ".rodata",
           "address": "0x08869944",
           "size": 32,
           "sha256": "2651635942758e221ebbf1f92a322739bb102ae080227cbb16c05ff16faedf0b",
@@ -27395,8 +27396,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_194",
+          "unit": "jiminy_eu_flounder_text.c",
+          "section": ".rodata",
           "address": "0x08869CB0",
           "size": 32,
           "sha256": "e7f1ff94cc9fc392f1bfb9100f614d893405e8f7cd56e448653dbdbf92ba8496",
@@ -27413,8 +27414,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_195",
+          "unit": "jiminy_eu_ursula_2_text.c",
+          "section": ".rodata",
           "address": "0x0886A024",
           "size": 32,
           "sha256": "ffc9c130318c1cddf92d611fd6c6d143a84f207c3a6597c4f43244a2dd145137",
@@ -27431,8 +27432,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_196",
+          "unit": "jiminy_eu_peter_pan_2_text.c",
+          "section": ".rodata",
           "address": "0x0886A49C",
           "size": 32,
           "sha256": "8921a6129f0298483bfd0871860d19bf2f66b49f12da0d60b5c4d675d0f23047",
@@ -27449,8 +27450,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_197",
+          "unit": "jiminy_eu_tinker_bell_2_text.c",
+          "section": ".rodata",
           "address": "0x0886A654",
           "size": 32,
           "sha256": "2e519bb976c887ac37f6c97aaed5b1f1323a89d8ddc520007370fbbfb26ba83f",
@@ -27467,8 +27468,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_198",
+          "unit": "jiminy_eu_wendy_text.c",
+          "section": ".rodata",
           "address": "0x0886A94C",
           "size": 32,
           "sha256": "11863163909409f7996d5fc5ba8253a26e3bfb2ca6c2430e4fc81cd57a76f40b",
@@ -27485,8 +27486,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_199",
+          "unit": "jiminy_eu_hook_2_text.c",
+          "section": ".rodata",
           "address": "0x0886AD64",
           "size": 32,
           "sha256": "f742a173e1d8a19e29bef78aa35138b374cfc31a6d23cd27e0cf0d698fd7bfdd",
@@ -27503,8 +27504,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_200",
+          "unit": "jiminy_eu_the_beast_2_text.c",
+          "section": ".rodata",
           "address": "0x0886B178",
           "size": 32,
           "sha256": "20ffcfecc83d80d9ecc36ec229945d3221cde78ed9945c294446331473158af7",
@@ -27521,8 +27522,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_201",
+          "unit": "jiminy_eu_belle_text.c",
+          "section": ".rodata",
           "address": "0x0886B574",
           "size": 32,
           "sha256": "f9e2393b4cb6e343fcf7c85ce393eb6aac1ebeb25f900de029fb1c1caf822efb",
@@ -27539,8 +27540,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_202",
+          "unit": "jiminy_eu_maleficent_text.c",
+          "section": ".rodata",
           "address": "0x0886B974",
           "size": 32,
           "sha256": "3c63c28890858ea220db4ef386f2f73660c69ccf68090a8669d95560ac721ff6",
@@ -27557,8 +27558,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_203",
+          "unit": "jiminy_eu_dragon_maleficent_2_text.c",
+          "section": ".rodata",
           "address": "0x0886BC2C",
           "size": 32,
           "sha256": "1a4ab9f733cc1f4bf88a2c3f1ceb00245c32090ec2be6d44996cb4d343f42dc4",
@@ -27575,8 +27576,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_204",
+          "unit": "jiminy_eu_winnie_the_pooh_text.c",
+          "section": ".rodata",
           "address": "0x0886BF6C",
           "size": 32,
           "sha256": "7d62834c711e0ae03a3a9e34073008f73c04b211440777b1652ab28e0bddb4ea",
@@ -27593,8 +27594,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_205",
+          "unit": "jiminy_eu_piglet_text.c",
+          "section": ".rodata",
           "address": "0x0886C1B8",
           "size": 32,
           "sha256": "be338a2697a6769b406b289d9d47f33762af6c457b15f3644093e2dbf20cc93c",
@@ -27611,8 +27612,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_206",
+          "unit": "jiminy_eu_owl_text.c",
+          "section": ".rodata",
           "address": "0x0886C3D4",
           "size": 32,
           "sha256": "75032943b81e16b6493c60214743c1fcf9beeee1115d7dbcc5e5866943131ca9",
@@ -27629,8 +27630,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_207",
+          "unit": "jiminy_eu_roo_text.c",
+          "section": ".rodata",
           "address": "0x0886C5E0",
           "size": 32,
           "sha256": "b30a701f3b65e145079f9fb2f7a0f1f585b9f1177bbaa1407ca108dc2998ee70",
@@ -27647,8 +27648,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_208",
+          "unit": "jiminy_eu_eeyore_text.c",
+          "section": ".rodata",
           "address": "0x0886C8D0",
           "size": 32,
           "sha256": "57b71d9dbcf8aafff7e2791dd5cfdadbda56e5890920712ba26c83ea5d6ae594",
@@ -27665,8 +27666,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_209",
+          "unit": "jiminy_eu_tigger_text.c",
+          "section": ".rodata",
           "address": "0x0886CC00",
           "size": 32,
           "sha256": "4feb484308c276d0273aaa2c7d981edc7cb178b047ca800d08343eaed3758ce6",
@@ -27683,8 +27684,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_210",
+          "unit": "jiminy_eu_rabbit_text.c",
+          "section": ".rodata",
           "address": "0x0886CF18",
           "size": 32,
           "sha256": "dd63a92be21ad196cffc46a251ed625732ffcb26112eb573d55d7afca27105b3",
@@ -27701,8 +27702,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_211",
+          "unit": "jiminy_eu_guard_armor_2_text.c",
+          "section": ".rodata",
           "address": "0x0886D198",
           "size": 32,
           "sha256": "decf272e058195b2e31db0bf14a1a2bc2b57b6bf01df3a4866da63141160e817",
@@ -27719,8 +27720,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_212",
+          "unit": "jiminy_eu_parasite_cage_2_text.c",
+          "section": ".rodata",
           "address": "0x0886D560",
           "size": 32,
           "sha256": "a1146c0b8ccc1c25a35486ffaaa2169861cf25f9ae7c422dc647eae4eed984eb",
@@ -27737,8 +27738,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_213",
+          "unit": "jiminy_eu_trickmaster_2_text.c",
+          "section": ".rodata",
           "address": "0x0886D8F0",
           "size": 32,
           "sha256": "09fd68b1aaf76e829ec872265c78c092e7ee4c4942f012a052ff1ceb0f546d28",
@@ -27755,8 +27756,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_214",
+          "unit": "jiminy_eu_darkside_2_text.c",
+          "section": ".rodata",
           "address": "0x0886DBF8",
           "size": 32,
           "sha256": "3a7e96730188eac118aded0d29419c1db59b43ae92b029db0b7d9cb1912377e0",
@@ -27773,8 +27774,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_215",
+          "unit": "jiminy_eu_shadow_2_text.c",
+          "section": ".rodata",
           "address": "0x0886DF4C",
           "size": 32,
           "sha256": "f3e6ed2a3d42f01699108023c8d897f0fdb827031f12ab600a5c398674f4d51f",
@@ -27791,8 +27792,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_216",
+          "unit": "jiminy_eu_soldier_2_text.c",
+          "section": ".rodata",
           "address": "0x0886E1FC",
           "size": 32,
           "sha256": "6bd101ffa3b584aee47902f196d4bf61744b5964ddb25daa5ea37e5401b03b9c",
@@ -27809,8 +27810,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_217",
+          "unit": "jiminy_eu_large_body_2_text.c",
+          "section": ".rodata",
           "address": "0x0886E5EC",
           "size": 32,
           "sha256": "625619ba2f2dce115c19428a2ce3b836f8b8d20083102f01ac0876dab09a6840",
@@ -27827,8 +27828,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_218",
+          "unit": "jiminy_eu_red_nocturne_2_text.c",
+          "section": ".rodata",
           "address": "0x0886E9AC",
           "size": 32,
           "sha256": "f9df7b09d503ebca58650a716eceabd3362dcaec8167324c8a72380f5efe92b5",
@@ -27845,8 +27846,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_219",
+          "unit": "jiminy_eu_blue_rhapsody_2_text.c",
+          "section": ".rodata",
           "address": "0x0886ECC0",
           "size": 32,
           "sha256": "7e51cc323279984a2990521c62993b9511371c3bccd7a91bfc2e5d81fab60425",
@@ -27863,8 +27864,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_220",
+          "unit": "jiminy_eu_yellow_opera_2_text.c",
+          "section": ".rodata",
           "address": "0x0886EFE8",
           "size": 32,
           "sha256": "db1b6dd3fbb1bd761dc8b2d337b2f79ca68a30331dfe12280ec307c55ffafc5c",
@@ -27881,8 +27882,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_221",
+          "unit": "jiminy_eu_green_requiem_2_text.c",
+          "section": ".rodata",
           "address": "0x0886F410",
           "size": 32,
           "sha256": "3c9454a17626ab74b14e08df3899e2ee56a107f48d6ecf339fffaf1292cabaa9",
@@ -27899,8 +27900,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_222",
+          "unit": "jiminy_eu_powerwild_2_text.c",
+          "section": ".rodata",
           "address": "0x0886F6B4",
           "size": 32,
           "sha256": "01c9cdb39f42223458f952d8381017cb851787362be1f7496ad5dffc92260afb",
@@ -27917,8 +27918,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_223",
+          "unit": "jiminy_eu_bouncywild_2_text.c",
+          "section": ".rodata",
           "address": "0x0886F94C",
           "size": 32,
           "sha256": "30d82c3708447d867e14cbf879c2d4d56e90a4e74be537343d58e02cbd13769c",
@@ -27935,8 +27936,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_224",
+          "unit": "jiminy_eu_air_soldier_2_text.c",
+          "section": ".rodata",
           "address": "0x0886FCC4",
           "size": 32,
           "sha256": "9a748d93ae52815e339968975d251f3e3a977629d0ca61e75a1a545707680e07",
@@ -27953,8 +27954,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_225",
+          "unit": "jiminy_eu_bandit_2_text.c",
+          "section": ".rodata",
           "address": "0x0886FFC8",
           "size": 32,
           "sha256": "a7b48c21dd41ec5fe95a8c38805ca9e9bd3b859ceba80256706889e1e1b4edaa",
@@ -27971,8 +27972,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_226",
+          "unit": "jiminy_eu_fat_bandit_2_text.c",
+          "section": ".rodata",
           "address": "0x08870298",
           "size": 32,
           "sha256": "5c305e7176a438749c632bb46eea811f8de20b43efcbba8805e89103678f27fc",
@@ -27989,8 +27990,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_227",
+          "unit": "jiminy_eu_barrel_spider_2_text.c",
+          "section": ".rodata",
           "address": "0x088705F0",
           "size": 32,
           "sha256": "23ba75d0181c2f2236c599362ce7bc9e9bc1d1b9f684a89a05950f075a6c2e82",
@@ -28007,8 +28008,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_228",
+          "unit": "jiminy_eu_search_ghost_2_text.c",
+          "section": ".rodata",
           "address": "0x088708C4",
           "size": 32,
           "sha256": "3c1c2bb15f758f5364f7251b10f94f4a0fad640ff9fc6184e0890462b4fd0c70",
@@ -28025,8 +28026,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_229",
+          "unit": "jiminy_eu_sea_neon_2_text.c",
+          "section": ".rodata",
           "address": "0x08870BC4",
           "size": 32,
           "sha256": "d39e53f0c1f1c2def27c8dc7918f8b47066ad7ad323702562fe2f274a905a28e",
@@ -28043,8 +28044,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_230",
+          "unit": "jiminy_eu_screwdiver_2_text.c",
+          "section": ".rodata",
           "address": "0x08870E2C",
           "size": 32,
           "sha256": "b808700e791ec05c021646eac34f7ea505cab65ded20d3b01a7368a15e2b0fa0",
@@ -28061,8 +28062,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_231",
+          "unit": "jiminy_eu_aquatank_2_text.c",
+          "section": ".rodata",
           "address": "0x088710CC",
           "size": 32,
           "sha256": "af9c331142d8135544380dec5e0ef8407d095dc76aa12d4a587033219bd6e42a",
@@ -28079,8 +28080,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_232",
+          "unit": "jiminy_eu_wight_knight_2_text.c",
+          "section": ".rodata",
           "address": "0x088713AC",
           "size": 32,
           "sha256": "6352b41d45e226788c947f610ffc1ebae9a5bece47d63c6afbc4aecddbab963b",
@@ -28097,8 +28098,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_233",
+          "unit": "jiminy_eu_gargoyle_2_text.c",
+          "section": ".rodata",
           "address": "0x08871634",
           "size": 32,
           "sha256": "927fd5f0f04661a7578b5071134857f57f7a25d3cf2be6669d2143739b41faf7",
@@ -28115,8 +28116,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_234",
+          "unit": "jiminy_eu_pirate_2_text.c",
+          "section": ".rodata",
           "address": "0x08871A6C",
           "size": 32,
           "sha256": "70ea58ebb00a1366734cf283e260cf16cd9e47db1392f8688bf58e01537abf11",
@@ -28133,8 +28134,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_235",
+          "unit": "jiminy_eu_air_pirate_2_text.c",
+          "section": ".rodata",
           "address": "0x08871E00",
           "size": 32,
           "sha256": "b67ff1aeaaf5e4cb12800b2a4b15940953842bda6f7bf501fa79d399531910a7",
@@ -28151,8 +28152,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_236",
+          "unit": "jiminy_eu_darkball_2_text.c",
+          "section": ".rodata",
           "address": "0x0887215C",
           "size": 32,
           "sha256": "44c4f3377283f363949fc8db7bd01da7c86c9eb9dc17e5612abbbabf9d9335a1",
@@ -28169,8 +28170,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_237",
+          "unit": "jiminy_eu_defender_2_text.c",
+          "section": ".rodata",
           "address": "0x08872678",
           "size": 32,
           "sha256": "b99a33a49514f06ff45f0fc19d2097cfaafad344b1d112d0e6330b4778a8b203",
@@ -28187,8 +28188,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_238",
+          "unit": "jiminy_eu_wyvern_2_text.c",
+          "section": ".rodata",
           "address": "0x08872A00",
           "size": 32,
           "sha256": "fadd57c15ce7beefb8471007c089d8b9be56468479343d1302e4fde3a09e9fa1",
@@ -28205,8 +28206,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_239",
+          "unit": "jiminy_eu_wizard_2_text.c",
+          "section": ".rodata",
           "address": "0x08872C8C",
           "size": 32,
           "sha256": "b60d3882d0b8b313f54b700407e40d52649e878e536ca981262d397d7d4f68fd",
@@ -28223,8 +28224,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_240",
+          "unit": "jiminy_eu_neoshadow_2_text.c",
+          "section": ".rodata",
           "address": "0x08872DE4",
           "size": 32,
           "sha256": "18caa11950a34df5bce479cac64a873d1e871cc70f3f8c7b56ac9ba608d9cb05",
@@ -28241,8 +28242,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_241",
+          "unit": "jiminy_eu_white_mushroom_2_text.c",
+          "section": ".rodata",
           "address": "0x088730C4",
           "size": 32,
           "sha256": "e0a30770894869c7770579e64bb72bddf2a558af42220aac26917e61f2f17500",
@@ -28259,8 +28260,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_242",
+          "unit": "jiminy_eu_black_fungus_2_text.c",
+          "section": ".rodata",
           "address": "0x08873500",
           "size": 32,
           "sha256": "05cba5b921e073ab20e7db3045cc9319e7499258bf42e688a01736bb10bed430",
@@ -28277,8 +28278,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_243",
+          "unit": "jiminy_eu_creeper_plant_2_text.c",
+          "section": ".rodata",
           "address": "0x08873838",
           "size": 32,
           "sha256": "4426fc717d4819e96d1e23337bf05a030ddc538f65647d2275c280705a2b9eb7",
@@ -28295,8 +28296,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_244",
+          "unit": "jiminy_eu_tornado_step_2_text.c",
+          "section": ".rodata",
           "address": "0x08873B94",
           "size": 32,
           "sha256": "63164303cbf70e835afe4d78e12841a941cc2821ace0a56f42b67718f11cfadf",
@@ -28313,8 +28314,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_245",
+          "unit": "jiminy_eu_crescendo_2_text.c",
+          "section": ".rodata",
           "address": "0x08873DB0",
           "size": 32,
           "sha256": "00289abb340324b1c352fb5a216b3181d94ac70f0dac6496fafa846a918bf1c1",
@@ -28331,8 +28332,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_246",
+          "unit": "jiminy_eu_riku_3_text.c",
+          "section": ".rodata",
           "address": "0x08874658",
           "size": 32,
           "sha256": "01838951ef84f48414b3181a1f8838dcee3e3c7bfe4f4a727fab917cfe75ff91",
@@ -28349,8 +28350,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_247",
+          "unit": "jiminy_eu_the_king_2_text.c",
+          "section": ".rodata",
           "address": "0x08874BC8",
           "size": 32,
           "sha256": "7f4da2d5f953f30a1d26b49ce4cfbb7aff86401d1e90a9a9e080f89568121aee",
@@ -28367,8 +28368,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_248",
+          "unit": "jiminy_eu_sora_2_text.c",
+          "section": ".rodata",
           "address": "0x088750B8",
           "size": 32,
           "sha256": "7ec140f1057d9aec44a4e9744d7427230d82431151caf107646d8b2560a4c8a5",
@@ -28385,8 +28386,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_249",
+          "unit": "jiminy_eu_kairi_2_text.c",
+          "section": ".rodata",
           "address": "0x088756D4",
           "size": 32,
           "sha256": "7ad0bc7fb812a5abf0c6c5883f738807c76fad85f808bcd88c4275965ee01ad9",
@@ -28403,8 +28404,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_250",
+          "unit": "jiminy_eu_namine_2_text.c",
+          "section": ".rodata",
           "address": "0x08875D30",
           "size": 32,
           "sha256": "a6c61ab6bb0a3ad7b311b1418dbc95f09a02b38e9205f061f872c48e74cc0aa4",
@@ -28421,8 +28422,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_251",
+          "unit": "jiminy_eu_riku_replica_2_text.c",
+          "section": ".rodata",
           "address": "0x08876100",
           "size": 32,
           "sha256": "481044a32caa7b0929d1c5d10d9f896690542113d92c17cd63595d3f18f6d670",
@@ -28439,8 +28440,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_252",
+          "unit": "jiminy_eu_ansem_2_text.c",
+          "section": ".rodata",
           "address": "0x088765D4",
           "size": 32,
           "sha256": "f63ec2d9b1a2d1f9a2820041c87b85099eebf22b42ad6d4660ff96aa87e03cb1",
@@ -28457,8 +28458,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_253",
+          "unit": "jiminy_eu_vexen_3_text.c",
+          "section": ".rodata",
           "address": "0x08876BC4",
           "size": 32,
           "sha256": "8ff07a9a050aa31b4204526d0fe50669c6b39d350cee5d4fee8236a6da219d71",
@@ -28475,8 +28476,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_254",
+          "unit": "jiminy_eu_lexaeus_2_text.c",
+          "section": ".rodata",
           "address": "0x088771B0",
           "size": 32,
           "sha256": "490b158371fe37e46f34729e77bbc0c89f1d5ec2cacb057c409b5720be28a0ae",
@@ -28493,8 +28494,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_255",
+          "unit": "jiminy_eu_zexion_text.c",
+          "section": ".rodata",
           "address": "0x0887781C",
           "size": 32,
           "sha256": "00a0f2a0afa1ed2c45a939b0a2986d6c9a501f447528db1c820dda6fb3be41e4",
@@ -28511,8 +28512,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_256",
+          "unit": "jiminy_eu_axel_3_text.c",
+          "section": ".rodata",
           "address": "0x08877E8C",
           "size": 32,
           "sha256": "a497f61cedcb14baa698b30ce646e497692fccaaaad04f23ea50572789004114",
@@ -28529,8 +28530,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_257",
+          "unit": "jiminy_eu_marluxia_3_text.c",
+          "section": ".rodata",
           "address": "0x088785F0",
           "size": 32,
           "sha256": "2a48d48f340053b9bd37a3b77e626deea4be8ad9356b4a499179747c1d5b1d2c",
@@ -28547,8 +28548,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_258",
+          "unit": "jiminy_eu_larxene_3_text.c",
+          "section": ".rodata",
           "address": "0x08878B64",
           "size": 32,
           "sha256": "920912386ba7807f17d2a9a38fb1ff2657cef8cadd112af300f277ef7625ae4e",
@@ -28565,8 +28566,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_259",
+          "unit": "jiminy_eu_diz_text.c",
+          "section": ".rodata",
           "address": "0x08878F40",
           "size": 32,
           "sha256": "22e41fa5c8e0e34e160ea908bd0b32362db2d195385b97940b4626cdd20425bd",
@@ -28583,8 +28584,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_260",
+          "unit": "jiminy_eu_maleficent_2_text.c",
+          "section": ".rodata",
           "address": "0x088793FC",
           "size": 32,
           "sha256": "1fd85fcf9db0b5b42debc1d37f331b8ef6b0a90aae58ede8da87fa4aac473910",
@@ -28601,8 +28602,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_261",
+          "unit": "jiminy_eu_jafar_genie_2_text.c",
+          "section": ".rodata",
           "address": "0x08879700",
           "size": 32,
           "sha256": "0465182fe4b551e4b23111619ecf79a4fc2b562d7ec58e813b3ab629c858f3aa",
@@ -28619,8 +28620,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_262",
+          "unit": "jiminy_eu_ursula_3_text.c",
+          "section": ".rodata",
           "address": "0x08879A6C",
           "size": 32,
           "sha256": "51079e5626c46859b62dc9decc50ef1e530d7292ab62a93b8fb35deabf5d70f8",
@@ -28637,8 +28638,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_263",
+          "unit": "jiminy_eu_hades_3_text.c",
+          "section": ".rodata",
           "address": "0x08879D24",
           "size": 32,
           "sha256": "ed44302bb6cebba5ff742d69c2aa68ebc04df5583af87c98d5889c40291d41e6",
@@ -28655,8 +28656,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_264",
+          "unit": "jiminy_eu_oogie_boogie_3_text.c",
+          "section": ".rodata",
           "address": "0x08879FFC",
           "size": 32,
           "sha256": "30c073a57cf93b154a69d03d9b0f3eeaa48de566d9c5c58f6baffc42cc85bc0d",
@@ -28673,8 +28674,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_265",
+          "unit": "jiminy_eu_hook_3_text.c",
+          "section": ".rodata",
           "address": "0x0887A250",
           "size": 32,
           "sha256": "b231f911f1a0986f423894b82eb8d4594a91fbc30f180da8b61f8f8d50a71108",
@@ -28691,8 +28692,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_266",
+          "unit": "jiminy_eu_guard_armor_3_text.c",
+          "section": ".rodata",
           "address": "0x0887A4D8",
           "size": 32,
           "sha256": "c33631ba5ce61b1ab804c95a9af48c6ca683a8fef7fdefe7df967b39271a0a27",
@@ -28709,8 +28710,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_267",
+          "unit": "jiminy_eu_parasite_cage_3_text.c",
+          "section": ".rodata",
           "address": "0x0887A744",
           "size": 32,
           "sha256": "dda9cc9a0f37c23612f0f4a086593a7511f9d6b6dbcac22666b079bfe1410982",
@@ -28727,8 +28728,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_268",
+          "unit": "jiminy_eu_trickmaster_3_text.c",
+          "section": ".rodata",
           "address": "0x0887AA0C",
           "size": 32,
           "sha256": "15d8d5913ea97cb47c845712ce3eb74d7b97f3f7e0553c2292beda238fd126e9",
@@ -28745,8 +28746,8 @@
           ]
         },
         {
-          "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_text_269",
+          "unit": "jiminy_eu_darkside_3_text.c",
+          "section": ".rodata",
           "address": "0x0887AD44",
           "size": 32,
           "sha256": "9a0fa342bccef2f30044c0b89b4bf132c9471f74295a1bac453222289ff4dad1",
