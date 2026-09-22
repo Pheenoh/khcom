@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "localized_resource_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -6,6 +7,27 @@
 #include "poo_api.h"
 #include "background_actor_assets.h"
 #include "mode_chkobj_assets.h"
+
+u8 gUnk_0203C3D8 EWRAM_COMMON(4);
+s32 gUnk_0203C3DC EWRAM_COMMON(4);
+u16 gUnk_0203C3E0 EWRAM_COMMON(4);
+u16 gUnk_0203C3E4 EWRAM_COMMON(4);
+s32 gUnk_0203C3E8 EWRAM_COMMON(4);
+struct PooPos* gUnk_0203C3EC EWRAM_COMMON(4);
+u32 gUnk_0203C3F0 EWRAM_COMMON(4);
+u32 gUnk_0203C3F4 EWRAM_COMMON(4);
+u16 gUnk_0203C3F8 EWRAM_COMMON(4);
+s32 gUnk_0203C3FC EWRAM_COMMON(4);
+s32 gUnk_0203C400 EWRAM_COMMON(4);
+s32 gUnk_0203C404 EWRAM_COMMON(4);
+s32 gUnk_0203C408 EWRAM_COMMON(4);
+u16 gUnk_0203C40C EWRAM_COMMON(4);
+struct PooNode* gUnk_0203C410 EWRAM_COMMON(4);
+void* gUnk_0203C414 EWRAM_COMMON(4);
+PooActor gUnk_0203C420 EWRAM_COMMON(16);
+u8* gStockMesDispWork EWRAM_COMMON(4);
+PooState gUnk_0203C470 EWRAM_COMMON(16);
+void* gUnk_0203C4B4 EWRAM_COMMON(4);
 
 extern AnimDef gUnk_09EF4C88[5];
 

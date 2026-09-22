@@ -18,11 +18,9 @@
 
 #include "allmap_top_state.h"
 
-#include "pooh_actor_state.h"
 
 #include "pooh_actor_types.h"
 
-#include "pooh_state.h"
 
 #include "prize_types.h"
 

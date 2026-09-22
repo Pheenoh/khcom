@@ -2,7 +2,6 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
-#include "pooh_state.h"
 
 #include "chara_types.h"
 

@@ -9,7 +9,7 @@
 
 #include "animation_resource_data.h"
 
-#include "pooh_actor_state.h"
+#include "poo_api.h"
 
 #include "boss_status_state.h"
 

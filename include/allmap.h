@@ -11,7 +11,7 @@
 
 #include "allmap_top_state.h"
 
-#include "pooh_actor_state.h"
+#include "poo_api.h"
 
 #include "allmap_cursor_state.h"
 
