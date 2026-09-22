@@ -310,3 +310,14 @@ u8 func_0809CBF8(u8* work, void* a) {
 
     return 1;
 }
+
+const char gTaskName_09EE781C[] = "Premire Chance";
+
+TaskDesc gUnk_09EE781C = {
+    gTaskName_09EE781C,
+    (void (*)(void*, void*))func_0809C534,
+    func_0809C710,
+    (void (*)(void*))func_0809C78C,
+    (void (*)(void*))func_0809C98C,
+    0x78,
+};

@@ -1385,14 +1385,3 @@ TaskDesc gUnk_09EE7804 = {
     (void (*)(void*))func_0809C1EC,
     0x90,
 };
-
-const char gTaskName_09EE781C[] __attribute__((section(".rodata_registration_name_gUnk_09EE781C"), aligned(1))) = "Premire Chance";
-
-TaskDesc gUnk_09EE781C = {
-    gTaskName_09EE781C,
-    (void (*)(void*, void*))func_0809C534,
-    func_0809C710,
-    (void (*)(void*))func_0809C78C,
-    (void (*)(void*))func_0809C98C,
-    0x78,
-};
