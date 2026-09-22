@@ -8016,7 +8016,7 @@ u8 func_080ECC8C(UnkStruct_080ECA88* p) {
 void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
     UnkStruct_080DFF1C* v = &e->unk_00;
-    UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
+    const UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
 
     w->unk_00 = p;
     w->unk_71 = 0;
@@ -9651,29 +9651,54 @@ void func_080EF398(MapAnmWork* w) {
 void func_080EF39C(MapAnmWork* w) {
 }
 
-const char gModeNameMapDbg[] __attribute__((section(".rodata_registration_name_gModeMapDbg"), aligned(1))) = "Mode_MapDbg";
+const char gModeNameMapDbg[] = "Mode_MapDbg";
 
-const char gModeNameMapFld[] __attribute__((section(".rodata_registration_name_gModeMapFld"), aligned(1))) = "Mode_MapFld";
+const char gModeNameMapFld[] = "Mode_MapFld";
 
-const char gModeNameMapFix[] __attribute__((section(".rodata_registration_name_gModeMapFix"), aligned(1))) = "Mode_MapFix";
+const u8 gUnk_0984B8F8[13] = { 12, 14, 17, 20, 23, 28, 32, 35, 38, 42, 50, 255, 68 };
 
-const char gModeNameMenuNew[] __attribute__((section(".rodata_registration_name_gModeMenuNew"), aligned(1))) = "Mode_MenuNew";
+#ifdef VERSION_EU
+const u8 gUnk_0984B905[13] = { 155, 157, 255, 160, 163, 165, 166, 167, 173, 182, 189, 255, 0 };
+#else
+const u8 gUnk_0984B905[13] = { 157, 159, 255, 162, 165, 167, 168, 169, 175, 184, 191, 255, 0 };
+#endif
 
-const char gModeNameMenuLoad[] __attribute__((aligned(1))) = "Mode_MenuLoad";
+const char gModeNameMapFix[] = "Mode_MapFix";
 
-const char gModeNameMenuMsg[] __attribute__((section(".rodata_registration_name_gModeMenuMsg"), aligned(1))) = "Mode_MenuMsg";
+const char gModeNameMenuNew[] = "Mode_MenuNew";
 
-const char gTaskNameMapRnd[] __attribute__((section(".rodata_registration_name_gTaskDescMapRnd"), aligned(1))) = "Task_MapRnd";
+const char gModeNameMenuLoad[] = "Mode_MenuLoad";
 
-const char gTaskNameMapFix[] __attribute__((section(".rodata_registration_name_gTaskDescMapFix"), aligned(1))) = "Task_MapFix";
+const char gModeNameMenuMsg[] = "Mode_MenuMsg";
 
-const char gTaskNameMapDoor[] __attribute__((section(".rodata_registration_name_gTaskDescMapDoor"), aligned(1))) = "Task_MapDoor";
+const char gTaskNameMapRnd[] = "Task_MapRnd";
 
-const char gTaskNameMapMenu[] __attribute__((section(".rodata_registration_name_gTaskDescMapMenu"), aligned(1))) = "Task_MapMenu";
+const char gTaskNameMapFix[] = "Task_MapFix";
 
-const char gTaskNameMapSave[] __attribute__((section(".rodata_registration_name_gTaskDescMapSave"), aligned(1))) = "Task_MapSave";
+const UnkStruct_0984B968 gUnk_0984B968[14] = {
+    { gUnk_09991224, gUnk_0994DF64, gUnk_0994E364, gUnk_0994D764, gUnk_0994DB64, gUnk_0994EF64, gUnk_0994F364, gUnk_0994E764, gUnk_0994EB64 },
+    { gUnk_09991104, gUnk_0993BF64, gUnk_0993C364, gUnk_0993B764, gUnk_0993BB64, gUnk_0993CF64, gUnk_0993D364, gUnk_0993C764, gUnk_0993CB64 },
+    { gUnk_09991124, gUnk_0993DF64, gUnk_0993E364, gUnk_0993D764, gUnk_0993DB64, gUnk_0993EF64, gUnk_0993F364, gUnk_0993E764, gUnk_0993EB64 },
+    { gUnk_09991144, gUnk_0993FF64, gUnk_09940364, gUnk_0993F764, gUnk_0993FB64, gUnk_09940F64, gUnk_09941364, gUnk_09940764, gUnk_09940B64 },
+    { gUnk_09991224, gUnk_0994DF64, gUnk_0994E364, gUnk_0994D764, gUnk_0994DB64, gUnk_0994EF64, gUnk_0994F364, gUnk_0994E764, gUnk_0994EB64 },
+    { gUnk_099911C4, gUnk_09947F64, gUnk_09948364, gUnk_09947764, gUnk_09947B64, gUnk_09948F64, gUnk_09949364, gUnk_09948764, gUnk_09948B64 },
+    { gUnk_09991184, gUnk_09943F64, gUnk_09944364, gUnk_09943764, gUnk_09943B64, gUnk_09944F64, gUnk_09945364, gUnk_09944764, gUnk_09944B64 },
+    { gUnk_099911E4, gUnk_09949F64, gUnk_0994A364, gUnk_09949764, gUnk_09949B64, gUnk_0994AF64, gUnk_0994B364, gUnk_0994A764, gUnk_0994AB64 },
+    { gUnk_099911A4, gUnk_09945F64, gUnk_09946364, gUnk_09945764, gUnk_09945B64, gUnk_09946F64, gUnk_09947364, gUnk_09946764, gUnk_09946B64 },
+    { gUnk_09991164, gUnk_09941F64, gUnk_09942364, gUnk_09941764, gUnk_09941B64, gUnk_09942F64, gUnk_09943364, gUnk_09942764, gUnk_09942B64 },
+    { gUnk_09991204, gUnk_0994BF64, gUnk_0994C364, gUnk_0994B764, gUnk_0994BB64, gUnk_0994CF64, gUnk_0994D364, gUnk_0994C764, gUnk_0994CB64 },
+    { gUnk_09991264, gUnk_09951F64, gUnk_09952364, gUnk_09951764, gUnk_09951B64, gUnk_09952F64, gUnk_09953364, gUnk_09952764, gUnk_09952B64 },
+    { gUnk_09991244, gUnk_0994FF64, gUnk_09950364, gUnk_0994F764, gUnk_0994FB64, gUnk_09950F64, gUnk_09951364, gUnk_09950764, gUnk_09950B64 },
+    { gUnk_09991224, gUnk_0994DF64, gUnk_0994E364, gUnk_0994D764, gUnk_0994DB64, gUnk_0994EF64, gUnk_0994F364, gUnk_0994E764, gUnk_0994EB64 },
+};
 
-const char gTaskNameMapAnm[] __attribute__((section(".rodata_registration_name_gTaskDescMapAnm"), aligned(1))) = "Task_MapAnm";
+const char gTaskNameMapDoor[] = "Task_MapDoor";
+
+const char gTaskNameMapMenu[] = "Task_MapMenu";
+
+const char gTaskNameMapSave[] = "Task_MapSave";
+
+const char gTaskNameMapAnm[] = "Task_MapAnm";
 
 u8 gUnk_09EF6A34[14] = {
     40,
