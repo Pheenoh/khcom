@@ -307,33 +307,3 @@ const u16 gUnk_090356D2[12] = {
     0,
     0,
 };
-
-const u16* gUnk_09EE4A68[12] = {
-    gUnk_090354E8,
-    gUnk_09035512,
-    gUnk_0903553A,
-    gUnk_09035564,
-    gUnk_0903557C,
-    gUnk_090355A4,
-    gUnk_090355C8,
-    gUnk_090355EA,
-    gUnk_0903560A,
-    gUnk_09035630,
-    gUnk_0903563A,
-    gUnk_0903566C,
-};
-
-const u16* gUnk_09EE4A98[12] = {
-    &gUnk_090356A8,
-    &gUnk_090356AA,
-    &gUnk_090356AC,
-    &gUnk_090356AE,
-    &gUnk_090356B0,
-    &gUnk_090356B2,
-    &gUnk_090356B4,
-    &gUnk_090356B6,
-    &gUnk_090356B8,
-    &gUnk_090356B8,
-    gUnk_090356BA,
-    gUnk_090356BA,
-};

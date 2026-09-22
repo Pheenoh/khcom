@@ -2,27 +2,7 @@
   "version": 1,
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data",
-          "address": "0x9ee4b0c",
-          "size": 28,
-          "sha256": "0df461c26179247cce0f94a75417250dc2741de7abc8823a6ad49604c1c83288",
-          "objects": [
-            {
-              "name": "gUnk_09EE4B0C",
-              "offset": 0,
-              "size": 28,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextUs_09035742",
@@ -65,69 +45,11 @@
           "address": "0x90357f2",
           "size": 22,
           "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE4AC8",
-          "address": "0x9ee4ac8",
-          "size": 14,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE4AD6",
-          "address": "0x9ee4ad6",
-          "size": 14,
-          "encoding": "utf16le"
-        },
-        {
-          "name": "gUnk_09EE4AE4",
-          "address": "0x9ee4ae4",
-          "size": 14,
-          "encoding": "utf16le"
         }
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data",
-          "address": "0x9ebc12c",
-          "size": 84,
-          "sha256": "892e0d2b8d9ede44a6edad8ce0c7ef09e8eb2a07a9e343d22f60ed531ee267b8",
-          "objects": [
-            {
-              "name": "gUnk_09EE4B0C",
-              "offset": 0,
-              "size": 28,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            },
-            {
-              "name": "gUnkJp_09EBC148",
-              "offset": 28,
-              "size": 28,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            },
-            {
-              "name": "gUnkJp_09EBC164",
-              "offset": 56,
-              "size": 28,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextJp_09008AE0",
@@ -256,19 +178,19 @@
           "encoding": "shift_jis"
         },
         {
-          "name": "gUnk_09EE4AC8",
+          "name": "gUnkJp_090089B0",
           "address": "0x90089b0",
           "size": 9,
           "encoding": "shift_jis"
         },
         {
-          "name": "gUnk_09EE4AD6",
+          "name": "gUnkJp_090089BC",
           "address": "0x90089bc",
           "size": 9,
           "encoding": "shift_jis"
         },
         {
-          "name": "gUnk_09EE4AE4",
+          "name": "gUnkJp_090089C8",
           "address": "0x90089c8",
           "size": 9,
           "encoding": "shift_jis"
@@ -276,37 +198,7 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "card_keyboard_data.c",
-          "section": ".data",
-          "address": "0x9f6fe6c",
-          "size": 60,
-          "sha256": "74b2ac66e47a3f087be9a333a9c0a389cd3b66e2021343a39dbef3bc0ea5780b",
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FE6C",
-              "offset": 0,
-              "size": 32,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            },
-            {
-              "name": "gUnkEu_09F6FE8C",
-              "offset": 32,
-              "size": 28,
-              "consumer": [
-                "func_0808F358",
-                "func_0808F0C0",
-                "native row selection and byte copy; JP has three seven-row banks, EU has eight-row alphabet and seven-row symbol banks"
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gKeyboardTextEu_090CEA56",
@@ -397,24 +289,6 @@
           "address": "0x90ceb15",
           "size": 6,
           "encoding": "singlebyte"
-        },
-        {
-          "name": "gUnkEu_09F6FD74",
-          "address": "0x9f6fd74",
-          "size": 7,
-          "encoding": "singlebyte"
-        },
-        {
-          "name": "gUnkEu_09F6FD7B",
-          "address": "0x9f6fd7b",
-          "size": 7,
-          "encoding": "singlebyte"
-        },
-        {
-          "name": "gUnkEu_09F6FD82",
-          "address": "0x9f6fd82",
-          "size": 7,
-          "encoding": "singlebyte"
         }
       ]
     }
@@ -422,7 +296,7 @@
   "provenance": {
     "keyboard_indices": "US func_0808F358 uses seven row pointers and copies two bytes for each 16-bit glyph. Native JP func_0808F358 at 0808F15C branches on keyboard kind 0/1/2 and loads row pointers from 09EBC12C/09EBC148/09EBC164; its row cursor is clamped to 0..6. Native EU function at 0808EBF0 selects 09F6FE6C for kind 2 and 09F6FE8C otherwise; C cursor logic proves respective row domains 0..7 and 0..6, and native code copies one byte. The old EU gUnk_09EE4B0C raw alias at 09F6FE30 denotes graphics, not a keyboard index, and is removed without inventing a common table.",
     "encoded_assets": "Keyboard and default deck text remain binary-backed assets. US utf16le denotes exact little-endian 16-bit game glyph storage, preserving musical, gender, arrow and bracket glyph code units. JP uses Shift-JIS byte pairs, including full-width spaces and punctuation. EU singlebyte is a game glyph encoding: bytes 01..17 and 83..97 in symbol rows are selectable glyph codes, not text transformations or ASCII normalization. Every binding ends at its first native zero terminator. Byte-view declarations for keyboard payloads match the native byte-copy consumer.",
-    "default_deck_names": "US and JP SetDeckName callers use their three native encoded Deck 1/2/3 literals. EU active callers already use separately owned LocalizedText wrappers at 09F65FDC/09F65FF0/09F66004; the three adjacent English single-byte literals 09F6FD74/7B/82 are coherent unused native duplicates and get honest EU-only asset names, not false mappings to the US UTF-16 names. US text is 42 bytes followed by two alignment zero bytes; EU text is 21 bytes followed by three alignment zero bytes. Metadata immediately after those exact boundaries remains counted.",
+    "default_deck_names": "The three Deck 1/2/3 arrays inside card.c(.data) are C definitions in card.c: u16 in US and JP, u8 in EU. JP SetDeckName callers use the three shift_jis literals bound here; EU active callers use the LocalizedText wrappers.",
     "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced."
   }
 }

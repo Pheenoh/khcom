@@ -6382,32 +6382,6 @@
     "eu": {
       "placements": [
         {
-          "unit": "card_localized_eu_overlay_a_data.c",
-          "section": ".data",
-          "address": "0x9f6fdc8",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FDC8",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
-          "unit": "card_localized_eu_overlay_b_data.c",
-          "section": ".data",
-          "address": "0x9f6fdf0",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnkEu_09F6FDF0",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
           "unit": "card_localized_eu_level_up_data.c",
           "section": ".data",
           "address": "0x9f72d30",

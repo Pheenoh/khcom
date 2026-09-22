@@ -1,5 +1,4 @@
 #include "mode_deck.h"
-#include "card_keyboard_data.h"
 #include "card_keyboard_text.h"
 #include "boss_card_data.h"
 #include "map_animation_data.h"
@@ -2602,5 +2601,67 @@ typedef struct UnkStruct_08091978_Args {
 } UnkStruct_08091978_Args;
 
 extern s8 gUnk_0203C374;
+
+extern const MapTileAnimationDef* gUnk_09EE4A2C[6];
+extern const MapTileAnimationDef* gUnk_09EE4A44;
+extern const MapTileAnimationDef* gUnk_09EE4A48;
+extern const MapTileAnimationDef* gUnk_09EE4A4C;
+extern const u16* gUnk_09EE4A68[12];
+extern const u16* gUnk_09EE4A98[12];
+#ifdef VERSION_EU
+extern u8 gUnkEu_09F6FD74[7];
+extern u8 gUnkEu_09F6FD7B[7];
+extern u8 gUnkEu_09F6FD82[7];
+extern void* gUnkEu_09F6FD8C[5];
+extern void** gUnkEu_09F6FDA0[5];
+extern void* gUnkEu_09F6FDB4[5];
+extern void* gUnkEu_09F6FDDC[5];
+extern u8* gUnkEu_09F6FE04[5];
+extern void* gUnkEu_09F6FE30[5];
+extern void** gUnkEu_09F6FE44[5];
+extern void* gUnkEu_09F6FE58[5];
+extern const u8* gUnkEu_09F6FE6C[8];
+extern const u8* gUnkEu_09F6FE8C[7];
+extern void* gUnkEu_09F6FF30[5];
+extern void** gUnkEu_09F6FF44[5];
+extern void** gUnkEu_09F6FF70[5];
+extern u8 gUnkEu_09187A0E[];
+extern u8 gUnkEu_09189F36[];
+extern u8 gUnkEu_0918A73A[];
+extern u8 gUnkEu_0918A48E[];
+extern u8 gUnkEu_0918A1E2[];
+extern u8 gUnkEu_0918B8F2[];
+extern u8 gUnkEu_0919016A[];
+extern u8 gUnkEu_0918E942[];
+extern u8 gUnkEu_0918D11A[];
+extern u8 gUnkEu_09191992[];
+extern u8 gUnkEu_0919236A[];
+extern u8 gUnkEu_09192022[];
+extern u8 gUnkEu_09191CDA[];
+extern u8 gUnkEu_094EAD64[];
+extern u8 gUnkEu_094E90E4[];
+extern u8 gUnkEu_094EA2E4[];
+extern u8 gUnkEu_094E9CE4[];
+extern u8 gUnkEu_094E96E4[];
+extern u8 gUnkEu_091965CA[];
+extern u8 gUnkEu_091959DA[];
+extern u8 gUnkEu_094C9860[];
+extern u8 gUnkEu_094C9C20[];
+#else
+extern u16 gUnk_09EE4AC8[7];
+extern u16 gUnk_09EE4AD6[7];
+extern u16 gUnk_09EE4AE4[7];
+extern const u8* gUnk_09EE4B0C[7];
+#endif
+#ifdef VERSION_JP
+extern const u8* gUnkJp_09EBC148[7];
+extern const u8* gUnkJp_09EBC164[7];
+#endif
+extern u8 gUnk_093F6734[];
+extern const u16 gUnk_096102B8[];
+extern const void* gUnk_09EE4BB0[2];
+extern s16 gUnk_09EE4BB8[5];
+extern s16 gUnk_09EE4BC2[2];
+extern u16 gUnk_09EE4BE0[10];
 
 #endif /* GUARD_CARD_H */

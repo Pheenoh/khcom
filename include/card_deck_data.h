@@ -26,7 +26,5 @@ extern const u16 gUnk_090356B6;
 extern const u16 gUnk_090356B8;
 extern const u16 gUnk_090356BA[12];
 extern const u16 gUnk_090356D2[12];
-extern const u16* gUnk_09EE4A68[12];
-extern const u16* gUnk_09EE4A98[12];
 
 #endif

@@ -52,20 +52,10 @@ extern const u8 gKeyboardTextEu_090CEAFF[];
 extern const u8 gKeyboardTextEu_090CEB05[];
 extern const u8 gKeyboardTextEu_090CEB15[];
 #endif
-#ifdef VERSION_US
-extern const u16 gUnk_09EE4AC8[];
-extern const u16 gUnk_09EE4AD6[];
-extern const u16 gUnk_09EE4AE4[];
-#endif
 #ifdef VERSION_JP
-extern const u8 gUnk_09EE4AC8[];
-extern const u8 gUnk_09EE4AD6[];
-extern const u8 gUnk_09EE4AE4[];
-#endif
-#ifdef VERSION_EU
-extern const u8 gUnkEu_09F6FD74[];
-extern const u8 gUnkEu_09F6FD7B[];
-extern const u8 gUnkEu_09F6FD82[];
+extern const u8 gUnkJp_090089B0[];
+extern const u8 gUnkJp_090089BC[];
+extern const u8 gUnkJp_090089C8[];
 #endif
 
 #endif

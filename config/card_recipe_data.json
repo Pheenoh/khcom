@@ -218,51 +218,6 @@
           ]
         },
         {
-          "unit": "map_animation_data.c",
-          "section": ".data",
-          "address": "0x9ee4a2c",
-          "size": 36,
-          "sha256": "3bbbbbb7a6025fd63e32be174c30592677de47c53d729edb2fa25ad100862961",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A2C",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "map_anim_0",
-                "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A44",
-              "offset": 24,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A48",
-              "offset": 28,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A4C",
-              "offset": 32,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            }
-          ]
-        },
-        {
           "unit": "card_deck_data.c",
           "section": ".rodata",
           "address": "0x90354e8",
@@ -479,33 +434,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data",
-          "address": "0x9ee4a68",
-          "size": 96,
-          "sha256": "c50077cddc2ca50c06b05202e1b95049c7aa91d8d0acce0fca3357a200dc3d97",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A68",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A98",
-              "offset": 48,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            }
-          ]
         }
       ]
     },
@@ -715,51 +643,6 @@
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data",
-          "address": "0x9ebc04c",
-          "size": 36,
-          "sha256": "b1ed6537bcdad3b26d236ae7cd7e35222541bd65a5e2993b8ee67c8c24745b10",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A2C",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "map_anim_0",
-                "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A44",
-              "offset": 24,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A48",
-              "offset": 28,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A4C",
-              "offset": 32,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
             }
           ]
@@ -981,33 +864,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data",
-          "address": "0x9ebc088",
-          "size": 96,
-          "sha256": "214bb4aacf1cfae578a852b0c6df700275aba3183e520bbeeed548b491316719",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A68",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A98",
-              "offset": 48,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            }
-          ]
         }
       ]
     },
@@ -1217,51 +1073,6 @@
                 "map_anim_0",
                 "map_anim_1",
                 "animation selector 4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "map_animation_data.c",
-          "section": ".data",
-          "address": "0x9f6fcd8",
-          "size": 36,
-          "sha256": "fcb38ca7d8370deb8305f1eda68d885831333e3c2145397a6534ffc0d17cd391",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A2C",
-              "offset": 0,
-              "size": 24,
-              "consumer": [
-                "map_anim_0",
-                "event_seq_1 / eu_0806C974 copy EventBackgroundDef.unk_20; native producer values cover 0..5"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A44",
-              "offset": 24,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A48",
-              "offset": 28,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A4C",
-              "offset": 32,
-              "size": 4,
-              "consumer": [
-                "map_anim_0",
-                "unused neutral NULL selector continuation before independent gTaskDescMapAnim registration; no live index is claimed"
               ]
             }
           ]
@@ -1483,33 +1294,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card_deck_data.c",
-          "section": ".data",
-          "address": "0x9f6fd14",
-          "size": 96,
-          "sha256": "89b3c3357932c06237b44f08e5f946fb7ab6c841a5cecd061065409e359a4e39",
-          "objects": [
-            {
-              "name": "gUnk_09EE4A68",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            },
-            {
-              "name": "gUnk_09EE4A98",
-              "offset": 48,
-              "size": 48,
-              "consumer": [
-                "func_08085DA0",
-                "_08085D04 switch produces all twelve selectors 0..11; zero counts preserve pointers into real existing objects"
-              ]
-            }
-          ]
         }
       ]
     }

@@ -1,5 +1,4 @@
 #include "map_animation_data.h"
-#include <stddef.h>
 extern u8 gUnk_098EB224[];
 extern u8 gUnk_098EAF64[];
 extern u8 gUnk_098EADE4[];
@@ -136,25 +135,4 @@ const MapTileAnimationTrack gUnk_090354C4 = {
 
 const MapTileAnimationDef gUnk_090354D4 = {
     &gUnk_090354C4, 1, 1, 0,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A2C[6] = {
-    &gUnk_09035388,
-    &gUnk_09035450,
-    &gUnk_0903547C,
-    &gUnk_090354A4,
-    &gUnk_090354D4,
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A44 = {
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A48 = {
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A4C = {
-    NULL,
 };
