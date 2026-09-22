@@ -3,11 +3,11 @@
 
 #include "types.h"
 
-extern const u8 gUnk_09EF7108[1536];
-extern const u8 gUnk_09EF7708[768];
-extern const u8 gUnk_09EF7A08[768];
-extern const u8 gUnk_09EF7D08[768];
-extern const u8 gUnk_09EF8008[512];
+extern u8 gUnk_09EF7108[1536];
+extern u8 gUnk_09EF7708[768];
+extern u8 gUnk_09EF7A08[768];
+extern u8 gUnk_09EF7D08[768];
+extern u8 gUnk_09EF8008[512];
 
 struct UnkStruct_09EF8370;
 struct UnkStruct_080E8E74;
