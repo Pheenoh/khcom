@@ -94,6 +94,7 @@ TARGET_ANCHORS = {
     "eu": {
         0x09ED9BA8: 0x09F57460,
         0x09EE3844: 0x09F6EF64,
+        0x09EE1520: 0x09F5C0EC,
         0x0813B67C: 0x08889B50,
         0x08135EFC: 0x088843D0,
         0x09A10A3C: 0x09A60380,
@@ -3108,6 +3109,14 @@ TARGET_FUNC_ADDR = {
 
 TARGET_DATA_SIZE = {
     "eu": {
+        ("animation_resource_09EE10E0_data.c", ".data"): 0x124,
+        ("battle_localized_09EE1520_data.c", ".data"): 0x31C,
+        ("battle_localized_09EE25D0_data.c", ".data"): 0x124,
+        ("card_localized_09EE9C90_data.c", ".data"): 0xE74,
+        ("card_animation_09EEA180_data.c", ".data"): 0x3CC,
+        ("remaining_resource_09EF3884_data.c", ".data"): 0x174,
+        ("remaining_resource_09EF68E0_data.c", ".data"): 0x108,
+        ("card_animation_card_ui_data.c", ".data"): 0xA8,
         ("mode_chkobj.c", ".data"): 0x9A90,
         ("mode_sio.c", ".data"): 0x214,
         ("mode_battle.c", ".rodata"): 0x914,
@@ -3122,6 +3131,8 @@ TARGET_DATA_SIZE = {
     "jp": {
         ("event_index_data.c", ".data"): 0x93C,
         ("card.c", ".data"): 0x4860,
+        ("card_localized_09EE9C90_data.c", ".data"): 0x28C,
+        ("animation_resource_09EFB840_data.c", ".data"): 0x29C,
     },
 }
 
