@@ -42,17 +42,11 @@
 #include "bos4_api.h"
 
 #ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
 u8 gUnk_02034B08[20];
 
 u8 gUnk_02034B1C;
 
 u8 gUnk_02034B1D[3];
-#endif
-#endif
-#endif
 #endif
 
 void func_080AB22C(u8 a);
@@ -403,18 +397,12 @@ void func_080AB968(void) {
 }
 
 #ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
 Mode gUnk_09EE8F20 = {
     gUnk_09041F58,
     (void (*)(s32))func_080AAF78,
     func_080AAFB4,
     func_080AB008,
 };
-#endif
-#endif
-#endif
 #endif
 
 const char gTaskName_09EE8F30[] = "DarkPoint";

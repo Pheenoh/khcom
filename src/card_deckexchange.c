@@ -42,21 +42,7 @@
 #include "bos4_api.h"
 
 #ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
 u16 gUnk_0203A9DC EWRAM_COMMON(4);
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
 #endif
 
 u16 func_080857D4(u8 slot);
@@ -2014,13 +2000,6 @@ void func_080AAF20(u8* work) {
 #endif
 
 #ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
-#ifndef VERSION_EU
 const char gTaskNameDeckexchange[] = "deckexchange";
 
 TaskDesc gTaskDescDeckexchange = {
@@ -2031,11 +2010,4 @@ TaskDesc gTaskDescDeckexchange = {
     (void (*)(void*))deckexchange_3,
     0x718,
 };
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
 #endif

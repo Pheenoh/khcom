@@ -1068,21 +1068,6 @@ u8 func_080A7388(u8* work, s16 x, s16 y, u16 dir) {
 void func_080A584C(u8* work, void* a);
 
 #ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
-#ifdef VERSION_EU
 void* gUnkEu_09F7434C[5] = { gUnk_090A418E, gUnkEu_091926B2, gUnkEu_0919308A, gUnkEu_09192D42, gUnkEu_091929FA };
 
 void** gUnkEu_09F74360[5] = {
@@ -1094,21 +1079,6 @@ void** gUnkEu_09F74360[5] = {
 };
 
 u8* gUnkEu_09F74374[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gUnkEu_094E9CE4, gUnkEu_094E96E4 };
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
-#endif
 #endif
 
 const char gTaskName_09EE8EF0[] = "Deckmenu2";

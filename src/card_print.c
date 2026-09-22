@@ -50,7 +50,6 @@ static void** gUnk_02034B38;
 void func_0809D1FC(u8 bg);
 void func_0809D26C(void);
 void func_0809D3F0(void);
-
 void task_print_0(void) {
     func_0809D1FC(0);
 }

@@ -45,11 +45,9 @@ u8 gUnk_02034B20[20];
 
 void* gUnk_02034B34;
 #ifdef VERSION_EU
-#ifdef VERSION_EU
 TaskPool gUnkEu_02034B38;
 
 u32 gUnkEu_02034B4C;
-#endif
 #endif
 
 u8 gUnk_0203A9E0 EWRAM_COMMON(4);
@@ -2051,12 +2049,10 @@ Mode gModeRikuDeckTutorial = {
     (void (*)(void))func_080ABA70,
 };
 #ifdef VERSION_EU
-#ifdef VERSION_EU
 Mode gUnkEu_09F74600 = {
     gUnkEu_090D1FB0,
     (void (*)(s32))eu_080AB9FC,
     eu_080ABA38,
     eu_080ABA7C,
 };
-#endif
 #endif
