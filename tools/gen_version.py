@@ -290,6 +290,10 @@ TARGET_ANCHORS = {
         0x090352FC: 0x090CE5F0,
         0x09511AB8: 0x09531724,
         0x095122B8: 0x09531C24,
+        0x08FB62F8: 0x0907DE9C,
+        0x08FB6348: 0x0907DE9C,
+        0x08FB6590: 0x0907DE9C,
+        0x08FB65F0: 0x0907DE9C,
     },
     "jp": {
         0x09079EB2: 0x09033FA2,
@@ -3127,6 +3131,8 @@ TARGET_DATA_SIZE = {
         ("mode_chksnd.c", ".rodata"): 0x20E8,
         ("mode_dummy.c", ".rodata"): 0x19C,
         ("event_index_data.c", ".data"): 0x924,
+        ("event_127_data.c", ".rodata"): 0,
+        ("event_128_data.c", ".rodata"): 0,
         ("card.c", ".data"): 0x4A10,
     },
     "jp": {

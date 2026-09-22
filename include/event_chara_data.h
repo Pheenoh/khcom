@@ -3,49 +3,6 @@
 
 #include "msg_types.h"
 
-extern EventCharaTrack gUnk_08FA5E6C[10];
-extern EventCharaTrack gUnk_08FA6A3C[5];
-extern EventCharaTrack gUnk_08FA8848[5];
-extern EventCharaTrack gUnk_08FAA278[6];
-extern EventCharaTrack gUnk_08FABC04[6];
-extern EventCharaTrack gUnk_08FAD684[8];
-extern EventCharaTrack gUnk_08FAF418[8];
-extern EventCharaTrack gUnk_08FB15F4[6];
-extern EventCharaTrack gUnk_08FB29C8[4];
-extern EventCharaTrack gUnk_08FB31FC[4];
-extern EventCharaTrack gUnk_08FB4AB0[8];
-extern EventCharaTrack gUnk_08FB4C3C[2];
-extern EventCharaTrack gUnk_08FB5EC4[8];
-#ifndef VERSION_EU
-extern EventCharaTrack gUnk_08FB62F8[4];
-#endif
-#ifndef VERSION_EU
-extern EventCharaTrack gUnk_08FB6590[6];
-#endif
-extern EventCharaTrack gUnk_08FB7684[6];
-extern EventCharaTrack gUnk_08FB9278[5];
-extern EventCharaTrack gUnk_08FBB638[10];
-extern EventCharaTrack gUnk_08FBC4F8[5];
-extern EventCharaTrack gUnk_08FBD318[6];
-extern EventCharaTrack gUnk_08FC0C6C[8];
-extern EventCharaTrack gUnk_08FC139C[4];
-extern EventCharaTrack gUnk_08FC22B0[3];
-extern EventCharaTrack gUnk_08FC3BC8[5];
-extern EventCharaTrack gUnk_08FC6368[7];
-extern EventCharaTrack gUnk_08FC69B0[5];
-extern EventCharaTrack gUnk_08FC8708[6];
-extern EventCharaTrack gUnk_08FC9770[4];
-extern EventCharaTrack gUnk_08FC9A08[2];
-extern EventCharaTrack gUnk_08FCBD58[7];
-extern EventCharaTrack gUnk_08FCCFC0[7];
-extern EventCharaTrack gUnk_08FCE7BC[6];
-extern EventCharaTrack gUnk_08FCF6D4[4];
-extern EventCharaTrack gUnk_08FD0958[4];
-extern EventCharaTrack gUnk_08FD0B54[2];
-extern EventCharaTrack gUnk_08FD262C[4];
-extern EventCharaTrack gUnk_08FD3048[3];
-extern EventCharaTrack gUnk_08FD3964[2];
-extern EventCharaTrack gUnk_08FD4C70[6];
 extern EventCharaTrack gUnk_08FD540C[3];
 extern EventCharaTrack gUnk_08FD55DC[2];
 extern EventCharaTrack gUnk_08FD690C[4];

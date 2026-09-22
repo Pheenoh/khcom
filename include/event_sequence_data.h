@@ -2,6 +2,25 @@
 #define GUARD_EVENT_SEQUENCE_DATA_H
 
 #include "msg_types.h"
+#include "event_000_data.h"
+#include "event_001_data.h"
+#include "event_002_data.h"
+#include "event_003_data.h"
+#include "event_004_data.h"
+#include "event_005_data.h"
+#include "event_006_data.h"
+#include "event_007_data.h"
+#include "event_008_data.h"
+#include "event_009_data.h"
+#include "event_010_data.h"
+#include "event_011_data.h"
+#include "event_012_data.h"
+#include "event_013_data.h"
+#include "event_014_data.h"
+#include "event_015_data.h"
+#include "event_016_data.h"
+#include "event_017_data.h"
+#include "event_018_data.h"
 #include "event_074_data.h"
 #include "event_075_data.h"
 #include "event_076_data.h"
@@ -42,51 +61,28 @@
 #include "event_111_data.h"
 #include "event_112_data.h"
 #include "event_113_data.h"
+#include "event_114_data.h"
+#include "event_115_data.h"
+#include "event_116_data.h"
+#include "event_117_data.h"
+#include "event_118_data.h"
+#include "event_119_data.h"
+#include "event_120_data.h"
+#include "event_121_data.h"
+#include "event_122_data.h"
+#include "event_123_data.h"
+#include "event_124_data.h"
+#include "event_125_data.h"
+#include "event_126_data.h"
+#include "event_127_data.h"
+#include "event_128_data.h"
+#include "event_129_data.h"
+#include "event_130_data.h"
+#include "event_131_data.h"
+#include "event_132_data.h"
+#include "event_133_data.h"
 #include "event_195_data.h"
 
-extern EventSequenceDef gUnk_08FA5EBC;
-extern EventSequenceDef gUnk_08FA6A64;
-extern EventSequenceDef gUnk_08FA8870;
-extern EventSequenceDef gUnk_08FAA2A8;
-extern EventSequenceDef gUnk_08FABC34;
-extern EventSequenceDef gUnk_08FAD6C4;
-extern EventSequenceDef gUnk_08FAF458;
-extern EventSequenceDef gUnk_08FB1624;
-extern EventSequenceDef gUnk_08FB29E8;
-extern EventSequenceDef gUnk_08FB321C;
-extern EventSequenceDef gUnk_08FB4AF0;
-extern EventSequenceDef gUnk_08FB4C4C;
-extern EventSequenceDef gUnk_08FB5F04;
-#ifndef VERSION_EU
-extern EventSequenceDef gUnk_08FB6318;
-#endif
-#ifndef VERSION_EU
-extern EventSequenceDef gUnk_08FB65C0;
-#endif
-extern EventSequenceDef gUnk_08FB76B4;
-extern EventSequenceDef gUnk_08FB92A0;
-extern EventSequenceDef gUnk_08FBB688;
-extern EventSequenceDef gUnk_08FBC520;
-extern EventSequenceDef gUnk_08FBD348;
-extern EventSequenceDef gUnk_08FC0CAC;
-extern EventSequenceDef gUnk_08FC13BC;
-extern EventSequenceDef gUnk_08FC22C8;
-extern EventSequenceDef gUnk_08FC3BF0;
-extern EventSequenceDef gUnk_08FC63A0;
-extern EventSequenceDef gUnk_08FC69D8;
-extern EventSequenceDef gUnk_08FC8738;
-extern EventSequenceDef gUnk_08FC9790;
-extern EventSequenceDef gUnk_08FC9A18;
-extern EventSequenceDef gUnk_08FCBD90;
-extern EventSequenceDef gUnk_08FCCFF8;
-extern EventSequenceDef gUnk_08FCE7EC;
-extern EventSequenceDef gUnk_08FCF6F4;
-extern EventSequenceDef gUnk_08FD0978;
-extern EventSequenceDef gUnk_08FD0B64;
-extern EventSequenceDef gUnk_08FD264C;
-extern EventSequenceDef gUnk_08FD3060;
-extern EventSequenceDef gUnk_08FD3974;
-extern EventSequenceDef gUnk_08FD4CA0;
 extern EventSequenceDef gUnk_08FD5424;
 extern EventSequenceDef gUnk_08FD55EC;
 extern EventSequenceDef gUnk_08FD692C;
