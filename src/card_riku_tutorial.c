@@ -41,6 +41,19 @@
 #include "game.h"
 #include "bos4_api.h"
 
+u8 gUnk_02034B20[20];
+
+void* gUnk_02034B34;
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+TaskPool gUnkEu_02034B38;
+
+u32 gUnkEu_02034B4C;
+#endif
+#endif
+
+u8 gUnk_0203A9E0 EWRAM_COMMON(4);
+
 u8 func_080ABEF8(u32* a, u8* b);
 s32 func_080AC140(s32 a);
 void func_080A4188(void* pool, u16 b);
@@ -2018,4 +2031,32 @@ void eu_080ABA38(void) {
 void eu_080ABA7C(void) {
     TaskPoolDestroy(&gUnkEu_02034B38);
 }
+#endif
+
+const char gModeNameRikuBtlTutorial[] = "Mode_riku_btlTutorial";
+
+Mode gModeRikuBtlTutorial = {
+    gModeNameRikuBtlTutorial,
+    (void (*)(s32))func_080AB96C,
+    (void (*)(void))Mode_riku_btlTutorial_1,
+    (void (*)(void))func_080ABA70,
+};
+
+const char gModeNameRikuDeckTutorial[] = "Mode_riku_deckTutorial";
+
+Mode gModeRikuDeckTutorial = {
+    gModeNameRikuDeckTutorial,
+    (void (*)(s32))func_080AB96C,
+    (void (*)(void))Mode_riku_deckTutorial_1,
+    (void (*)(void))func_080ABA70,
+};
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+Mode gUnkEu_09F74600 = {
+    gUnkEu_090D1FB0,
+    (void (*)(s32))eu_080AB9FC,
+    eu_080ABA38,
+    eu_080ABA7C,
+};
+#endif
 #endif

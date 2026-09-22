@@ -953,36 +953,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuBtlTutorial",
-          "address": "0x09045158",
-          "size": 22,
-          "sha256": "63c717b78f7a36f7fa5bcfe45a89b6b6c6b0023eff5f7a7eb535a1d5abc9f0d9",
-          "objects": [
-            {
-              "name": "gModeNameRikuBtlTutorial",
-              "offset": 0,
-              "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuDeckTutorial",
-          "address": "0x09045170",
-          "size": 23,
-          "sha256": "8fb48c0867446fd90ec9d86a888b381068529a40ba3f23e70b36806ca363b11c",
-          "objects": [
-            {
-              "name": "gModeNameRikuDeckTutorial",
-              "offset": 0,
-              "size": 23
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4870,36 +4840,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuBtlTutorial",
-          "address": "0x09012000",
-          "size": 22,
-          "sha256": "63c717b78f7a36f7fa5bcfe45a89b6b6c6b0023eff5f7a7eb535a1d5abc9f0d9",
-          "objects": [
-            {
-              "name": "gModeNameRikuBtlTutorial",
-              "offset": 0,
-              "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuDeckTutorial",
-          "address": "0x09012018",
-          "size": 23,
-          "sha256": "8fb48c0867446fd90ec9d86a888b381068529a40ba3f23e70b36806ca363b11c",
-          "objects": [
-            {
-              "name": "gModeNameRikuDeckTutorial",
-              "offset": 0,
-              "size": 23
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8743,36 +8683,6 @@
               "size": 16
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuBtlTutorial",
-          "address": "0x090D1F68",
-          "size": 22,
-          "sha256": "63c717b78f7a36f7fa5bcfe45a89b6b6c6b0023eff5f7a7eb535a1d5abc9f0d9",
-          "objects": [
-            {
-              "name": "gModeNameRikuBtlTutorial",
-              "offset": 0,
-              "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeRikuDeckTutorial",
-          "address": "0x090D1F80",
-          "size": 23,
-          "sha256": "8fb48c0867446fd90ec9d86a888b381068529a40ba3f23e70b36806ca363b11c",
-          "objects": [
-            {
-              "name": "gModeNameRikuDeckTutorial",
-              "offset": 0,
-              "size": 23
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         },
         {
           "unit": "mode_wlogo.c",

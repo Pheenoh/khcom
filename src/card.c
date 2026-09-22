@@ -56,6 +56,8 @@ extern void** gUnk_09EE7720[];
 extern UnkStruct_09EE752C gUnk_09EE752C[7];
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 extern void* gUnkEu_09F72A3C[5];
 extern void* gUnkEu_09F72A50[5];
 extern void* gUnkEu_09F72A64[5];
@@ -72,6 +74,9 @@ extern u8* gUnkEu_09F74374[];
 #endif
 
 #endif
+#endif
+
+#endif
 u32 gUnk_02034AA4;
 u32 gUnk_02034AA8;
 CardDisplayWork* gUnk_02034AAC;
@@ -81,7 +86,12 @@ s16 gUnk_02034AB4;
 u8 gUnk_02034AB6[2];
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 u8 gUnkEu_02034AD4[4];
+#endif
+
+#endif
 #endif
 
 #endif
@@ -95,13 +105,20 @@ u8 gUnk_02034ADA[6];
 u8 gUnk_02034AE0[20];
 #ifndef VERSION_EU
 #ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 u8 gUnk_02034AF4[4];
+#endif
+
+#endif
 #endif
 
 #endif
 u8 gUnk_02034AF8;
 UnkStruct_02034AFC* gUnk_02034AFC;
 UnkStruct_02034AFC* gUnk_02034B00;
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 #ifndef VERSION_EU
 #ifndef VERSION_EU
 u8 gUnk_02034B04[4];
@@ -111,12 +128,15 @@ u8 gUnk_02034B1D[3];
 #endif
 
 #endif
-u8 gUnk_02034B20[20];
-void* gUnk_02034B34;
+#endif
+
+#endif
+
 #ifdef VERSION_EU
 #ifdef VERSION_EU
-TaskPool gUnkEu_02034B38;
-u32 gUnkEu_02034B4C;
+#ifdef VERSION_EU
+
+#endif
 #endif
 
 #endif
@@ -135,18 +155,27 @@ u8 gUnk_0203A9D4 EWRAM_COMMON(4);
 u8 gUnk_0203A9D8 EWRAM_COMMON(4);
 #ifndef VERSION_EU
 #ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 u16 gUnk_0203A9DC EWRAM_COMMON(4);
 #endif
 
 #endif
-u8 gUnk_0203A9E0 EWRAM_COMMON(4);
+#endif
+
+#endif
 
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0809511C(ReloadGageWork* w, void* a);
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 extern u8* gUnkEu_09F6FE04[];
 extern void* gUnkEu_09F72D08[];
+#endif
+
+#endif
 #endif
 
 #endif
@@ -190,9 +219,14 @@ void func_0808C2F0(u8* work);
 extern u8 gUnk_090A5F1E[];
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 extern void* gUnkEu_09F6FE30[];
 extern void* gUnkEu_09F6FE58[];
 extern void** gUnkEu_09F6FE44[];
+#endif
+
+#endif
 #endif
 
 #endif
@@ -328,7 +362,12 @@ void NumberPlus_3(void** p);
 extern u8 gUnk_0908CAEC[];
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 extern void* gUnkEu_09F72D1C[];
+#endif
+
+#endif
 #endif
 
 #endif
@@ -400,6 +439,8 @@ void func_080A6500(u8* work);
 void func_080A676C(u8* work);
 #ifndef VERSION_EU
 #ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 void deckexchange_0(u8* work, void* a);
 u8 deckexchange_1(u8* work, void* a);
 void deckexchange_2(UnkStruct_0808C940* w);
@@ -407,6 +448,9 @@ void deckexchange_3(u8* work);
 void func_080AAF78(void);
 void func_080AAFB4(void);
 void func_080AB008(void);
+#endif
+
+#endif
 #endif
 
 #endif
@@ -420,9 +464,14 @@ void Mode_riku_deckTutorial_1(void);
 void func_080ABA70(void);
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void eu_080AB9FC(void);
 void eu_080ABA38(void);
 void eu_080ABA7C(void);
+#endif
+
+#endif
 #endif
 
 #endif
@@ -587,6 +636,8 @@ const u16* gUnk_09EE4A98[12] = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 u8 gUnkEu_09F6FD74[7] = { 'D', 'e', 'c', 'k', ' ', '1', 0 };
 
 u8 gUnkEu_09F6FD7B[7] = { 'D', 'e', 'c', 'k', ' ', '2', 0 };
@@ -594,6 +645,13 @@ u8 gUnkEu_09F6FD7B[7] = { 'D', 'e', 'c', 'k', ' ', '2', 0 };
 u8 gUnkEu_09F6FD82[7] = { 'D', 'e', 'c', 'k', ' ', '3', 0 };
 #endif
 
+#endif
+#endif
+
+#else
+#ifdef VERSION_EU
+#else
+#ifdef VERSION_EU
 #else
 #ifdef VERSION_EU
 #else
@@ -605,6 +663,11 @@ u16 gUnk_09EE4AE4[7] = { 'D', 'e', 'c', 'k', ' ', '3', 0 };
 #endif
 
 #endif
+#endif
+
+#endif
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 #ifdef VERSION_EU
 #ifdef VERSION_EU
 void* gUnkEu_09F6FD8C[5] = { gUnkEu_09187A0E, gUnkEu_09189F36, gUnkEu_0918A73A, gUnkEu_0918A48E, gUnkEu_0918A1E2 };
@@ -635,6 +698,9 @@ u8* gUnkEu_09F6FE04[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gU
 #endif
 
 #endif
+#endif
+
+#endif
 const char gTaskName_09EE4AF4[] __attribute__((section(".rodata_registration_name_gUnk_09EE4AF4"), aligned(1))) = "Deckmenu2";
 
 TaskDesc gUnk_09EE4AF4 = {
@@ -651,6 +717,8 @@ TaskDesc gUnk_09EE4AF4 = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnkEu_09F6FE30[5] = { gUnk_090A5F1E, gUnk_090A5F1E, gUnkEu_091965CA, gUnkEu_091959DA, gUnk_090A5F1E };
 
 void** gUnkEu_09F6FE44[5] = { gUnk_09EEB08C, gUnk_09EEB08C, gUnkEu_09F7721C, gUnkEu_09F771E4, gUnk_09EEB08C };
@@ -659,6 +727,11 @@ void* gUnkEu_09F6FE58[5] = { gUnk_09EEB0B8, gUnk_09EEB0B8, gUnkEu_09F77248, gUnk
 #endif
 
 #endif
+#endif
+
+#endif
+#ifdef VERSION_US
+#ifdef VERSION_US
 #ifdef VERSION_US
 #ifdef VERSION_US
 const u8* gUnk_09EE4B0C[7] = {
@@ -673,6 +746,11 @@ const u8* gUnk_09EE4B0C[7] = {
 #endif
 
 #endif
+#endif
+
+#endif
+#ifdef VERSION_JP
+#ifdef VERSION_JP
 #ifdef VERSION_JP
 #ifdef VERSION_JP
 const u8* gUnk_09EE4B0C[7] = {
@@ -707,6 +785,11 @@ const u8* gUnkJp_09EBC164[7] = {
 #endif
 
 #endif
+#endif
+
+#endif
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 #ifdef VERSION_EU
 #ifdef VERSION_EU
 const u8* gUnkEu_09F6FE6C[8] = {
@@ -729,6 +812,9 @@ const u8* gUnkEu_09F6FE8C[7] = {
     gKeyboardTextEu_090CEB05,
     gKeyboardTextEu_090CEB15,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -793,6 +879,8 @@ Mode gUnk_09EE4BA0 = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnkEu_09F6FF30[5] = {
     gUnk_093F6734, gUnkEu_094C9860, gUnk_093F6734, gUnkEu_094C9860, gUnkEu_094C9C20,
 };
@@ -800,6 +888,9 @@ void* gUnkEu_09F6FF30[5] = {
 void** gUnkEu_09F6FF44[5] = {
     gUnk_09EF11F8, gUnkEu_09F7C454, gUnk_09EF11F8, gUnkEu_09F7C454, gUnkEu_09F7C47C,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -816,9 +907,14 @@ s16 gUnk_09EE4BC2[2] = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void** gUnkEu_09F6FF70[5] = {
     gUnk_09EF1228, gUnkEu_09F7C414, gUnkEu_09F7C42C, gUnkEu_09F7C424, gUnkEu_09F7C41C,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1269,9 +1365,14 @@ TaskDesc gTaskDescSpotLight = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnkEu_09F72A3C[5] = { gUnk_09EF1224, gUnkEu_09F7C438, gUnkEu_09F7C450, gUnkEu_09F7C448, gUnkEu_09F7C440 };
 void* gUnkEu_09F72A50[5] = { gUnk_09EF1220, gUnkEu_09F7C434, gUnkEu_09F7C44C, gUnkEu_09F7C444, gUnkEu_09F7C43C };
 void* gUnkEu_09F72A64[5] = { gUnkEu_094C6154, gUnkEu_094C7CCE, gUnkEu_094C9180, gUnkEu_094C8946, gUnkEu_094C8288 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1453,7 +1554,12 @@ TaskDesc gUnk_09EE77EC = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void** gUnkEu_09F72BFC[5] = { gUnk_09EEA16C, &gUnkEu_09F75FB4, &gUnkEu_09F75FCC, &gUnkEu_09F75FC4, &gUnkEu_09F75FBC };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1533,9 +1639,14 @@ Mode gUnk_09EE7894 = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnkEu_09F72CB0[5] = { gUnk_093FB954, gUnkEu_094CE490, gUnkEu_094CE820, gUnkEu_094CE6F0, gUnkEu_094CE5C0 };
 
 void** gUnkEu_09F72CC4[5] = { gUnk_09EF12C8, gUnkEu_09F7C55C, gUnkEu_09F7C57C, gUnkEu_09F7C59C, gUnkEu_09F7C5BC };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1560,6 +1671,8 @@ TaskDesc gTaskDescNumberPlus = {
     (void (*)(void*))NumberPlus_3,
     0x2C,
 };
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 #ifdef VERSION_EU
 #ifdef VERSION_EU
 void* gUnkEu_09F72D08[5] = { gUnkEu_094CF704, gUnkEu_094D72E4, gUnkEu_094DB664, gUnkEu_094D9FE4, gUnkEu_094D8964 };
@@ -1592,11 +1705,19 @@ void** gUnkEu_09F72D58[5] = {
 #endif
 
 #endif
+#endif
+
+#endif
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 #ifndef VERSION_EU
 #ifndef VERSION_EU
 u16* gUnk_09EE78D4[7] = { gUnk_0815A066, gUnk_0815A0BA, gUnk_0815B1D2, gUnk_0815A078, gUnk_0815A0CC, gUnk_0815B1A8, gUnk_09037FAC };
 
 u16* gUnk_09EE78F0[7] = { gUnk_0815A066, gUnk_0815A116, gUnk_0815A158, gUnk_0815A0F4, gUnk_0815A130, gUnk_0815A176, gUnk_09037FAC };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1620,6 +1741,8 @@ TaskDesc gTaskDescLevelUp = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnk_09EE7938[6] = { gUnkEu_09163774, gUnkEu_0916377E, gUnkEu_09163788, gUnkEu_09163792, gUnkEu_0916379C, gUnkEu_091637A6 };
 
 void* gUnkEu_09F72DB0[6] = { gUnkEu_0916F94C, gUnkEu_0916F956, gUnkEu_0916F960, gUnkEu_0916F96A, gUnkEu_0916F974, gUnkEu_0916F97E };
@@ -1633,17 +1756,36 @@ void* gUnkEu_09F72DF8[6] = { gUnkEu_091705F4, gUnkEu_091705FE, gUnkEu_09170608, 
 void** gUnkEu_09F72E10[5] = { gUnk_09EE7938, gUnkEu_09F72DB0, gUnkEu_09F72DF8, gUnkEu_09F72DE0, gUnkEu_09F72DC8 };
 #endif
 
+#endif
+#endif
+
+#elif defined(VERSION_JP)
+#ifdef VERSION_EU
+#elif defined(VERSION_JP)
+#ifdef VERSION_EU
 #elif defined(VERSION_JP)
 #ifdef VERSION_EU
 #elif defined(VERSION_JP)
 void* gUnk_09EE7938[6] = { gUnkJp_09047EB0, gUnkJp_09047EBA, gUnkJp_09047EC4, gUnkJp_09047ECE, gUnkJp_09047ED8, gUnkJp_09047EE2 };
 #endif
 
+#endif
+#endif
+
+#else
+#ifdef VERSION_EU
+#elif defined(VERSION_JP)
+#else
+#ifdef VERSION_EU
+#elif defined(VERSION_JP)
 #else
 #ifdef VERSION_EU
 #elif defined(VERSION_JP)
 #else
 void* gUnk_09EE7938[6] = { gUnkUs_0908C640, gUnkUs_0908C64A, gUnkUs_0908C654, gUnkUs_0908C65E, gUnkUs_0908C668, gUnkUs_0908C672 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1705,6 +1847,8 @@ TaskDesc gTaskDescEVBGEFFECT = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE79EC[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_090381F8,
@@ -1714,6 +1858,9 @@ CardHelpText* gUnk_09EE79EC[] = {
     &gUnkEu_09F6C9CC,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1733,6 +1880,8 @@ CardHelpText* gUnk_09EE79F4[] = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7A00[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_09038440,
@@ -1742,6 +1891,9 @@ CardHelpText* gUnk_09EE7A00[] = {
     &gUnkEu_09F6CA30,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1757,6 +1909,8 @@ CardHelpText* gUnk_09EE7A08[] = {
     &gUnkEu_09F6CA58,
 #endif
 };
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7A10[] = {
@@ -1808,6 +1962,9 @@ CardHelpText* gUnk_09EE7A30[] = {
     &gUnkEu_09F6CB20,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1864,6 +2021,8 @@ CardHelpText* gUnk_09EE7A50[] = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7A58[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_09038BAC,
@@ -1873,6 +2032,9 @@ CardHelpText* gUnk_09EE7A58[] = {
     &gUnkEu_09F6CBE8,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1890,6 +2052,8 @@ CardHelpText* gUnk_09EE7A60[] = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7A68[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_09038CB2,
@@ -1899,6 +2063,9 @@ CardHelpText* gUnk_09EE7A68[] = {
     &gUnkEu_09F6CC38,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1955,10 +2122,15 @@ CardHelpText* gUnk_09EE7A88[] = {
 };
 #if defined(VERSION_JP)
 #if defined(VERSION_JP)
+#if defined(VERSION_JP)
+#if defined(VERSION_JP)
 CardHelpText* gUnk_09EE7A58[] = {
     gCardHelpTextJp_0900BBB8,
     gCardHelpTextJp_0900BBE4,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -1989,6 +2161,8 @@ CardHelpText* gUnk_09EE7A98[] = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7AA0[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_09039098,
@@ -1998,6 +2172,9 @@ CardHelpText* gUnk_09EE7AA0[] = {
     &gUnkEu_09F6CD50,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -2154,10 +2331,15 @@ CardHelpText* gUnk_09EE7B18[] = {
 };
 #if defined(VERSION_JP)
 #if defined(VERSION_JP)
+#if defined(VERSION_JP)
+#if defined(VERSION_JP)
 CardHelpText* gUnk_09EE7B30[] = {
     gCardHelpTextJp_0900BF88,
     gCardHelpTextJp_0900BF9C,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -2175,6 +2357,8 @@ CardHelpText* gUnk_09EE7B28[] = {
 };
 #if defined(VERSION_US) || defined(VERSION_EU)
 #if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU)
 CardHelpText* gUnk_09EE7B30[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_09039738,
@@ -2184,6 +2368,9 @@ CardHelpText* gUnk_09EE7B30[] = {
     &gUnkEu_09F6CEB8,
 #endif
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -2518,6 +2705,8 @@ CardHelpText* gUnk_09EE7C38[] = {
 };
 #if defined(VERSION_JP)
 #if defined(VERSION_JP)
+#if defined(VERSION_JP)
+#if defined(VERSION_JP)
 CardHelpText* gUnk_09EE7D54[] = {
     gCardHelpTextJp_0900D0D8,
     gCardHelpTextJp_0900D110,
@@ -2582,6 +2771,9 @@ CardHelpText* gUnk_09EE7A30[] = {
 #endif
 
 #endif
+#endif
+
+#endif
 CardHelpText* gUnk_09EE7C48[] = {
 #if defined(VERSION_US)
     gCardHelpTextUs_0903A490,
@@ -2638,10 +2830,15 @@ CardHelpText* gUnk_09EE7C64[] = {
 };
 #if defined(VERSION_JP)
 #if defined(VERSION_JP)
+#if defined(VERSION_JP)
+#if defined(VERSION_JP)
 CardHelpText* gUnk_09EE7D74[] = {
     gCardHelpTextJp_0900C6E0,
     gCardHelpTextJp_0900C718,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -2776,10 +2973,15 @@ CardHelpText* gUnk_09EE7CB4[] = {
 };
 #if defined(VERSION_JP)
 #if defined(VERSION_JP)
+#if defined(VERSION_JP)
+#if defined(VERSION_JP)
 CardHelpText* gUnk_09EE7D7C[] = {
     gCardHelpTextJp_0900CAC4,
     gCardHelpTextJp_0900CAFC,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -2998,6 +3200,8 @@ CardHelpText* gUnk_09EE7D3C[] = {
 };
 #if defined(VERSION_US)
 #if defined(VERSION_US)
+#if defined(VERSION_US)
+#if defined(VERSION_US)
 CardHelpText* gUnk_09EE7D44[] = {
     gCardHelpTextUs_0903BCFA,
     gCardHelpTextUs_0903BCFA,
@@ -3031,6 +3235,11 @@ CardHelpText* gUnk_09EE7D7C[] = {
 #endif
 
 #endif
+#endif
+
+#endif
+#if defined(VERSION_EU)
+#if defined(VERSION_EU)
 #if defined(VERSION_EU)
 #if defined(VERSION_EU)
 CardHelpText* gUnk_09EE7D54[] = {
@@ -3046,6 +3255,9 @@ CardHelpText* gUnk_09EE7D64[] = {
     &gUnkEu_09F6D6D8,
     &gUnkEu_09F6D6EC,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -3267,7 +3479,12 @@ TaskDesc gUnk_09EE7FF0 = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 u8* gUnkEu_09F73464[5] = { gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -5666,6 +5883,8 @@ TaskDesc gTaskDescWorldSelBefore = {
 };
 #ifdef VERSION_EU
 #ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
 void* gUnkEu_09F7434C[5] = { gUnk_090A418E, gUnkEu_091926B2, gUnkEu_0919308A, gUnkEu_09192D42, gUnkEu_091929FA };
 
 void** gUnkEu_09F74360[5] = {
@@ -5680,6 +5899,9 @@ u8* gUnkEu_09F74374[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gU
 #endif
 
 #endif
+#endif
+
+#endif
 const char gTaskName_09EE8EF0[] __attribute__((section(".rodata_registration_name_gUnk_09EE8EF0"), aligned(1))) = "Deckmenu2";
 
 TaskDesc gUnk_09EE8EF0 = {
@@ -5690,6 +5912,8 @@ TaskDesc gUnk_09EE8EF0 = {
     (void (*)(void*))func_080A676C,
     0x510,
 };
+#ifndef VERSION_EU
+#ifndef VERSION_EU
 #ifndef VERSION_EU
 #ifndef VERSION_EU
 const char gTaskNameDeckexchange[] __attribute__((section(".rodata_registration_name_gTaskDescDeckexchange"), aligned(1))) = "deckexchange";
@@ -5709,6 +5933,9 @@ Mode gUnk_09EE8F20 = {
     func_080AAFB4,
     func_080AB008,
 };
+#endif
+
+#endif
 #endif
 
 #endif
@@ -6698,31 +6925,11 @@ CardDescriptionText* gUnk_09EE9138[14] = {
 #endif
 };
 
-const char gModeNameRikuBtlTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuBtlTutorial"), aligned(1))) = "Mode_riku_btlTutorial";
-
-Mode gModeRikuBtlTutorial = {
-    gModeNameRikuBtlTutorial,
-    (void (*)(s32))func_080AB96C,
-    (void (*)(void))Mode_riku_btlTutorial_1,
-    (void (*)(void))func_080ABA70,
-};
-
-const char gModeNameRikuDeckTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuDeckTutorial"), aligned(1))) = "Mode_riku_deckTutorial";
-
-Mode gModeRikuDeckTutorial = {
-    gModeNameRikuDeckTutorial,
-    (void (*)(s32))func_080AB96C,
-    (void (*)(void))Mode_riku_deckTutorial_1,
-    (void (*)(void))func_080ABA70,
-};
 #ifdef VERSION_EU
 #ifdef VERSION_EU
-Mode gUnkEu_09F74600 = {
-    gUnkEu_090D1FB0,
-    (void (*)(s32))eu_080AB9FC,
-    eu_080ABA38,
-    eu_080ABA7C,
-};
+#ifdef VERSION_EU
+
+#endif
 #endif
 
 #endif
