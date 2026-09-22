@@ -93,8 +93,6 @@ u8 gUnk_02034AE0[20];
 u8 gUnk_02034AF4[4];
 #endif
 
-u8 gUnk_02034AF8;
-
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 u8 gUnk_02039DDC EWRAM_COMMON(4);
 Deck gDecks[3] EWRAM_COMMON(16);
@@ -1485,85 +1483,4 @@ TaskDesc gTaskDescNumberPlus = {
     (void (*)(void*))NumberPlus_2,
     (void (*)(void*))NumberPlus_3,
     0x2C,
-};
-#ifdef VERSION_EU
-void* gUnkEu_09F72D08[5] = { gUnkEu_094CF704, gUnkEu_094D72E4, gUnkEu_094DB664, gUnkEu_094D9FE4, gUnkEu_094D8964 };
-
-void* gUnkEu_09F72D1C[5] = { gUnk_0908CAEC, gUnkEu_09170AA0, gUnkEu_09171B2C, gUnkEu_091715A8, gUnkEu_09171024 };
-
-void** gUnk_09EEA1BC[5] = {
-    gUnkEu_09F75FF4,
-    gUnkEu_09F761AC,
-    gUnkEu_09F7623C,
-    gUnkEu_09F7620C,
-    gUnkEu_09F761DC,
-};
-
-void* gUnkEu_09F72D44[5] = {
-    gUnkEu_09178D40,
-    gUnkEu_09179CEE,
-    gUnkEu_0917CFE2,
-    gUnkEu_0917BFA6,
-    gUnkEu_0917AF3A,
-};
-
-void** gUnkEu_09F72D58[5] = {
-    gUnkEu_09F762C4,
-    gUnkEu_09F762E4,
-    gUnkEu_09F76344,
-    gUnkEu_09F76324,
-    gUnkEu_09F76304,
-};
-#endif
-#ifndef VERSION_EU
-u16* gUnk_09EE78D4[7] = { gUnk_0815A066, gUnk_0815A0BA, gUnk_0815B1D2, gUnk_0815A078, gUnk_0815A0CC, gUnk_0815B1A8, gUnk_09037FAC };
-
-u16* gUnk_09EE78F0[7] = { gUnk_0815A066, gUnk_0815A116, gUnk_0815A158, gUnk_0815A0F4, gUnk_0815A130, gUnk_0815A176, gUnk_09037FAC };
-#endif
-
-const void* gUnk_09EE790C[2] = { gUnk_08125E24, gUnk_0950F2B8 };
-
-void* gUnk_09EE7914[3] = { gUnk_095112B8, gUnk_09511AB8, gUnk_095122B8 };
-
-const char gTaskNameLevelUp[] __attribute__((section(".rodata_registration_name_gTaskDescLevelUp"), aligned(1))) = "Level_Up";
-
-TaskDesc gTaskDescLevelUp = {
-    gTaskNameLevelUp,
-    (void (*)(void*, void*))Level_Up_0,
-    Level_Up_1,
-    (void (*)(void*))Level_Up_2,
-    (void (*)(void*))Level_Up_3,
-#ifdef VERSION_EU
-    0x124,
-#else
-    0x7CC,
-#endif
-};
-#ifdef VERSION_EU
-void* gUnk_09EE7938[6] = { gUnkEu_09163774, gUnkEu_0916377E, gUnkEu_09163788, gUnkEu_09163792, gUnkEu_0916379C, gUnkEu_091637A6 };
-
-void* gUnkEu_09F72DB0[6] = { gUnkEu_0916F94C, gUnkEu_0916F956, gUnkEu_0916F960, gUnkEu_0916F96A, gUnkEu_0916F974, gUnkEu_0916F97E };
-
-void* gUnkEu_09F72DC8[6] = { gUnkEu_0916FD84, gUnkEu_0916FD8E, gUnkEu_0916FD98, gUnkEu_0916FDA2, gUnkEu_0916FDAC, gUnkEu_0916FDB6 };
-
-void* gUnkEu_09F72DE0[6] = { gUnkEu_091701BC, gUnkEu_091701C6, gUnkEu_091701D0, gUnkEu_091701DA, gUnkEu_091701E4, gUnkEu_091701EE };
-
-void* gUnkEu_09F72DF8[6] = { gUnkEu_091705F4, gUnkEu_091705FE, gUnkEu_09170608, gUnkEu_09170612, gUnkEu_0917061C, gUnkEu_09170626 };
-
-void** gUnkEu_09F72E10[5] = { gUnk_09EE7938, gUnkEu_09F72DB0, gUnkEu_09F72DF8, gUnkEu_09F72DE0, gUnkEu_09F72DC8 };
-#elif defined(VERSION_JP)
-void* gUnk_09EE7938[6] = { gUnkJp_09047EB0, gUnkJp_09047EBA, gUnkJp_09047EC4, gUnkJp_09047ECE, gUnkJp_09047ED8, gUnkJp_09047EE2 };
-#else
-void* gUnk_09EE7938[6] = { gUnkUs_0908C640, gUnkUs_0908C64A, gUnkUs_0908C654, gUnkUs_0908C65E, gUnkUs_0908C668, gUnkUs_0908C672 };
-#endif
-
-const char gTaskNameLVUPEFFECT[] __attribute__((section(".rodata_registration_name_gTaskDescLVUPEFFECT"), aligned(1))) = "LVUP_EFFECT";
-
-TaskDesc gTaskDescLVUPEFFECT = {
-    gTaskNameLVUPEFFECT,
-    (void (*)(void*, void*))LVUP_EFFECT_0,
-    LVUP_EFFECT_1,
-    (void (*)(void*))LVUP_EFFECT_2,
-    (void (*)(void*))LVUP_EFFECT_3,
-    0xAC,
 };
