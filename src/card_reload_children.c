@@ -1001,3 +1001,116 @@ s32 CreateScrollbar(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {
     args[4] = e;
     return (s32)((void**)TaskCreate(pool, &gTaskDescScrollbar, args))[1];
 }
+
+void* gUnk_09EE7698[4] = {
+    gUnk_090994A4,
+    gUnk_0909937C,
+    gUnk_09099410,
+    gUnk_09099538,
+};
+
+const char gTaskNameReloadChildren[] = "RELOAD_CHILDREN";
+
+TaskDesc gTaskDescReloadChildren = {
+    gTaskNameReloadChildren,
+    (void (*)(void*, void*))RELOAD_CHILDREN_0,
+    RELOAD_CHILDREN_1,
+    (void (*)(void*))RELOAD_CHILDREN_2,
+    (void (*)(void*))RELOAD_CHILDREN_3,
+    0x48,
+};
+
+void* gUnk_09EE76C0[4] = {
+    gUnk_0909D2AC,
+    gUnk_0909D2AC,
+    gUnk_0909D2AC,
+    gUnk_0909D2AC,
+};
+
+void** gUnk_09EE76D0[4] = {
+    gUnk_09EEA5C4,
+    gUnk_09EEA5C4,
+    gUnk_09EEA5C4,
+    gUnk_09EEA5C4,
+};
+
+AnimHeader** gUnk_09EE76E0 = &gUnk_09EEA750;
+
+AnimHeader** gUnk_09EE76E4 = &gUnk_09EEABA8;
+
+AnimHeader** gUnk_09EE76E8 = &gUnk_09EEA97C;
+
+AnimHeader** gUnk_09EE76EC = &gUnk_09EEADD4;
+
+const char gTaskNameREVCOUNT[] = "REV_COUNT";
+
+TaskDesc gTaskDescREVCOUNT = {
+    gTaskNameREVCOUNT,
+    (void (*)(void*, void*))REV_COUNT_0,
+    REV_COUNT_1,
+    (void (*)(void*))REV_COUNT_2,
+    (void (*)(void*))REV_COUNT_3,
+    0x44,
+};
+
+void* gUnk_09EE7708[3] = {
+    gUnk_0909885E,
+    gUnk_09098E0E,
+    gUnk_09098B36,
+};
+
+AnimHeader** gUnk_09EE7714[3] = {
+    gUnk_09EEA304,
+    gUnk_09EEA32C,
+    gUnk_09EEA318,
+};
+
+void** gUnk_09EE7720[3] = {
+    gUnk_09EEA2F4,
+    gUnk_09EEA31C,
+    gUnk_09EEA308,
+};
+
+const char gTaskName_09EE772C[] = "RELOAD";
+
+TaskDesc gUnk_09EE772C = {
+    gTaskName_09EE772C,
+    (void (*)(void*, void*))RELOAD_0,
+    RELOAD_1,
+    (void (*)(void*))RELOAD_2,
+    (void (*)(void*))RELOAD_3,
+    0x38,
+};
+
+const char gTaskNamePrizeBoss[] = "PrizeBoss";
+
+TaskDesc gTaskDescPrizeBoss = {
+    gTaskNamePrizeBoss,
+    (void (*)(void*, void*))PrizeBoss_0,
+    PrizeBoss_1,
+    (void (*)(void*))PrizeBoss_2,
+    (void (*)(void*))PrizeBoss_3,
+    0xF0,
+};
+
+const char gTaskNameCardEFFECT[] = "Card_EFFECT";
+
+TaskDesc gTaskDescCardEFFECT = {
+    gTaskNameCardEFFECT,
+    (void (*)(void*, void*))Card_EFFECT_0,
+    Card_EFFECT_1,
+    (void (*)(void*))Card_EFFECT_2,
+    (void (*)(void*))Card_EFFECT_3,
+    0x4C,
+};
+
+const char gTaskNameScrollbar[] = "scrollbar";
+
+TaskDesc gTaskDescScrollbar = {
+    gTaskNameScrollbar,
+    (void (*)(void*, void*))scrollbar_0,
+    scrollbar_1,
+    (void (*)(void*))scrollbar_2,
+    (void (*)(void*))scrollbar_3,
+    0x18,
+};

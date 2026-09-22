@@ -338,6 +338,8 @@ TARGET_ANCHORS = {
         0x09EE781C: 0x09F72C28,
         0x09036230: 0x090CF5D4,
         0x09EE778C: 0x09F72B84,
+        0x090361C8: 0x090CF56C,
+        0x09EE7698: 0x09F72A90,
     },
     "jp": {
         0x09079EB2: 0x09033FA2,
@@ -424,6 +426,8 @@ TARGET_ANCHORS = {
         0x09EE781C: 0x09EBEE74,
         0x09036230: 0x090096D4,
         0x09EE778C: 0x09EBEDE4,
+        0x090361C8: 0x0900966C,
+        0x09EE7698: 0x09EBECF0,
     },
 }
 
@@ -3314,7 +3318,7 @@ TARGET_DATA_SIZE = {
         ("event_index_data.c", ".data"): 0x924,
         ("event_127_data.c", ".rodata"): 0,
         ("event_128_data.c", ".rodata"): 0,
-        ("card.c", ".data"): 0x2F6C,
+        ("card.c", ".data"): 0x2E78,
         ("map_fixed_09856C90_data.c", ".rodata"): 0x54,
         ("map_fixed_09856D34_data.c", ".rodata"): 0x54,
         ("map_fixed_09856DE4_data.c", ".rodata"): 0x54,
@@ -3336,7 +3340,7 @@ TARGET_DATA_SIZE = {
     "jp": {
         ("sroll.c", ".rodata"): 0x287,
         ("event_index_data.c", ".data"): 0x93C,
-        ("card.c", ".data"): 0x2E58,
+        ("card.c", ".data"): 0x2D64,
         ("card_localized_09EE9C90_data.c", ".data"): 0x28C,
         ("animation_resource_09EFB840_data.c", ".data"): 0x29C,
         ("card_help_data.c", ".data"): 0x384,
