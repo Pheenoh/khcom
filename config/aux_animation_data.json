@@ -20,17 +20,17 @@
     ".data_09EE17B4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EE1F90": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
     ".data_09EE2098": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects.",
-    "native_aux_anim_12A4": "The gUnk_09EE12A4 aux-animation pointer cluster is a contiguous 380-byte initialized-data run with matching source order in aux_animation_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Neighboring aux-animation clusters stay sectioned."
+    "native_aux_anim_12A4": "The gUnk_09EE12A4 aux-animation pointer cluster is a contiguous 380-byte initialized-data run with matching source order in aux_animation_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Neighboring aux-animation clusters stay sectioned.",
+    "native_aux_exclusive_leftovers": "Split exclusive-consumer islands from aux_animation_data.c: frd_ariel (.data_09EDE594), smn_mushu (.data_09EDE848), evt (.data_09EDECC0), btl (.data_09EDF3E8), fld (.data_09EDF5F4), emy_07 (.data_09EDFFDC), hum_axcel_ptc (.data_09EE1F90), hum_org (.data_09EE2098). Left map_tasks-only .data_09EDF97C and shared islands forced."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE594",
+          "unit": "aux_animation_frd_ariel_data.c",
+          "section": ".data",
           "address": "0x09EDE594",
           "size": 104,
-          "sha256": "6afd27f7fb14bcc8a10d0bca68acc1c2c8506d7366c865106a9a241a40aeb570",
           "objects": [
             {
               "name": "gUnk_09EDE594",
@@ -74,11 +74,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE848",
+          "unit": "aux_animation_smn_mushu_data.c",
+          "section": ".data",
           "address": "0x09EDE848",
           "size": 48,
-          "sha256": "e604d1957b24e88fd935b3d6a9c6f5485c18a0a3a1b0b0cd511a49f9539ddf49",
           "objects": [
             {
               "name": "gUnk_09EDE848",
@@ -93,11 +92,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDECC0",
+          "unit": "aux_animation_evt_data.c",
+          "section": ".data",
           "address": "0x09EDECC0",
           "size": 60,
-          "sha256": "dbdeada5c6dffb8c4d3d029f5f6c302ac640c090de98ec4be7216a47787e59f8",
           "objects": [
             {
               "name": "gUnk_09EDECC0",
@@ -112,11 +110,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF3E8",
+          "unit": "aux_animation_btl_data.c",
+          "section": ".data",
           "address": "0x09EDF3E8",
           "size": 28,
-          "sha256": "48792ddb42bb1a26c69b5243478f9226bf9045d1c3a2272f4654cd91ed7ee89a",
           "objects": [
             {
               "name": "gUnk_09EDF3E8",
@@ -180,11 +177,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF5F4",
+          "unit": "aux_animation_fld_data.c",
+          "section": ".data",
           "address": "0x09EDF5F4",
           "size": 160,
-          "sha256": "501e020b9457a8d6ed4c1700fc6efb07450c9e894d2a6b1a6f5bf5bb5766758c",
           "objects": [
             {
               "name": "gUnk_09EDF5F4",
@@ -668,11 +664,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDFFDC",
+          "unit": "aux_animation_emy_07_data.c",
+          "section": ".data",
           "address": "0x09EDFFDC",
           "size": 44,
-          "sha256": "c35e165caca06aef0fe7e79efa2aa3beeb5e219a34836847204f3cca2a67d708",
           "objects": [
             {
               "name": "gUnk_09EDFFDC",
@@ -1060,11 +1055,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE1F90",
+          "unit": "aux_animation_hum_axcel_ptc_data.c",
+          "section": ".data",
           "address": "0x09EE1F90",
           "size": 60,
-          "sha256": "87b7d4abd28ae05a80816eea999f35fdecad2333471b486c27a4063ec5da75db",
           "objects": [
             {
               "name": "gUnk_09EE1F90",
@@ -1079,11 +1073,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE2098",
+          "unit": "aux_animation_hum_org_data.c",
+          "section": ".data",
           "address": "0x09EE2098",
           "size": 28,
-          "sha256": "7e17a3abe220106b915d534b909535574c0e2bb5e0652a7532db36a9dc9be465",
           "objects": [
             {
               "name": "gUnk_09EE2098",
@@ -1102,11 +1095,10 @@
     "jp": {
       "placements": [
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE594",
+          "unit": "aux_animation_frd_ariel_data.c",
+          "section": ".data",
           "address": "0x09EB6010",
           "size": 104,
-          "sha256": "3e3df91dfadae1d6c4b19f69c114befc5c94ddf7edba378c328ccfa26bc72972",
           "objects": [
             {
               "name": "gUnk_09EDE594",
@@ -1150,11 +1142,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE848",
+          "unit": "aux_animation_smn_mushu_data.c",
+          "section": ".data",
           "address": "0x09EB62C4",
           "size": 48,
-          "sha256": "794f1ca09de259b477c5623137c8bd8b16b8bd091ed4c26a8fade10a5b149cf5",
           "objects": [
             {
               "name": "gUnk_09EDE848",
@@ -1169,11 +1160,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDECC0",
+          "unit": "aux_animation_evt_data.c",
+          "section": ".data",
           "address": "0x09EB673C",
           "size": 60,
-          "sha256": "66051e1bbbfb469133cb1d934b7ba81f2ecf680086b4cfd6a40821aa86469a02",
           "objects": [
             {
               "name": "gUnk_09EDECC0",
@@ -1188,11 +1178,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF3E8",
+          "unit": "aux_animation_btl_data.c",
+          "section": ".data",
           "address": "0x09EB6E64",
           "size": 28,
-          "sha256": "e6894bc9d859bded66857de0604060fc06a681aa3fdc91ddd76693cb3685e4fd",
           "objects": [
             {
               "name": "gUnk_09EDF3E8",
@@ -1256,11 +1245,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF5F4",
+          "unit": "aux_animation_fld_data.c",
+          "section": ".data",
           "address": "0x09EB7070",
           "size": 160,
-          "sha256": "684960ea805409dccfb128663437180e27c80f383e7275d494e917b6f88df1bf",
           "objects": [
             {
               "name": "gUnk_09EDF5F4",
@@ -1744,11 +1732,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDFFDC",
+          "unit": "aux_animation_emy_07_data.c",
+          "section": ".data",
           "address": "0x09EB7A58",
           "size": 44,
-          "sha256": "bd1c600bb77186d3d373bfc70e5f83922213928614324c15c0bae5fa5285bb7b",
           "objects": [
             {
               "name": "gUnk_09EDFFDC",
@@ -2136,11 +2123,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE1F90",
+          "unit": "aux_animation_hum_axcel_ptc_data.c",
+          "section": ".data",
           "address": "0x09EB9A0C",
           "size": 60,
-          "sha256": "888f65fb9350fc8ede8b1239fffcdbc3e93de9f992a3bdd8d9446b34928f5b1e",
           "objects": [
             {
               "name": "gUnk_09EE1F90",
@@ -2155,11 +2141,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE2098",
+          "unit": "aux_animation_hum_org_data.c",
+          "section": ".data",
           "address": "0x09EB9B14",
           "size": 28,
-          "sha256": "ad51e6b2619394cda99e5e05349678e422a662614cf7c84cd5580288375012b3",
           "objects": [
             {
               "name": "gUnk_09EE2098",
@@ -2178,11 +2163,10 @@
     "eu": {
       "placements": [
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE594",
+          "unit": "aux_animation_frd_ariel_data.c",
+          "section": ".data",
           "address": "0x09F591EC",
           "size": 104,
-          "sha256": "a87a1e031733157a738ec50a36aaa0a678d3daf5237ee90a09dca8ad715ef8b0",
           "objects": [
             {
               "name": "gUnk_09EDE594",
@@ -2226,11 +2210,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDE848",
+          "unit": "aux_animation_smn_mushu_data.c",
+          "section": ".data",
           "address": "0x09F594A0",
           "size": 48,
-          "sha256": "073d76289455d8ffe644ee5bdccc80804d3c67c257072c4fb015ce659adde4b2",
           "objects": [
             {
               "name": "gUnk_09EDE848",
@@ -2245,11 +2228,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDECC0",
+          "unit": "aux_animation_evt_data.c",
+          "section": ".data",
           "address": "0x09F59918",
           "size": 60,
-          "sha256": "9fff06774462af9d32ade1cfa53a201cba553bf103af3e8ad733c80126fb3034",
           "objects": [
             {
               "name": "gUnk_09EDECC0",
@@ -2264,11 +2246,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF3E8",
+          "unit": "aux_animation_btl_data.c",
+          "section": ".data",
           "address": "0x09F5A040",
           "size": 28,
-          "sha256": "12d6ea0ac68e5ed8c102995fb9bfa95339909ea018bf6ba058e6cc0790aeb08c",
           "objects": [
             {
               "name": "gUnk_09EDF3E8",
@@ -2332,11 +2313,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDF5F4",
+          "unit": "aux_animation_fld_data.c",
+          "section": ".data",
           "address": "0x09F5A24C",
           "size": 160,
-          "sha256": "8d1f2e3447f398d5c70eaae0d659c6cc61b84988d3682ad42cb627c6bafba4f2",
           "objects": [
             {
               "name": "gUnk_09EDF5F4",
@@ -2820,11 +2800,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EDFFDC",
+          "unit": "aux_animation_emy_07_data.c",
+          "section": ".data",
           "address": "0x09F5AC34",
           "size": 44,
-          "sha256": "a3ad8bdd36cfb5eb84f53d3b9b832bd093056e6f93a47ed86a17ef52fadb5f7b",
           "objects": [
             {
               "name": "gUnk_09EDFFDC",
@@ -3212,11 +3191,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE1F90",
+          "unit": "aux_animation_hum_axcel_ptc_data.c",
+          "section": ".data",
           "address": "0x09F5CD9C",
           "size": 60,
-          "sha256": "867aef246cdcaf2d519b83571484644998821bb229f9496d0a661f1fbfbba2f7",
           "objects": [
             {
               "name": "gUnk_09EE1F90",
@@ -3231,11 +3209,10 @@
           ]
         },
         {
-          "unit": "aux_animation_data.c",
-          "section": ".data_09EE2098",
+          "unit": "aux_animation_hum_org_data.c",
+          "section": ".data",
           "address": "0x09F5CEA4",
           "size": 28,
-          "sha256": "c7b86e2098950d5ee5f465ddee799b50fb800ef79892efd4ccc532a1325e0fc0",
           "objects": [
             {
               "name": "gUnk_09EE2098",

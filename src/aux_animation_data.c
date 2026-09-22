@@ -1,44 +1,6 @@
 #include "aux_animation_data.h"
 #include "aux_animation_assets.h"
 
-void* gUnk_09EDE594[8] __attribute__((section(".data_09EDE594"))) = {
-    gUnk_08874FE4,
-    gUnk_08875006,
-    gUnk_08875010,
-    gUnk_0887504A,
-    gUnk_0887505A,
-    gUnk_08875076,
-    gUnk_0887508C,
-    gUnk_088750A8,
-};
-
-AnimHeader* gUnk_09EDE5B4[5] __attribute__((section(".data_09EDE594"))) = {
-    &gUnk_088750D0,
-    &gUnk_088750F6,
-    &gUnk_08875100,
-    &gUnk_0887510A,
-    &gUnk_08875114,
-};
-
-void* gUnk_09EDE5C8[10] __attribute__((section(".data_09EDE594"))) = {
-    gUnk_08877704,
-    gUnk_0887771A,
-    gUnk_0887772A,
-    gUnk_08877740,
-    gUnk_08877750,
-    gUnk_08877766,
-    gUnk_0887777C,
-    gUnk_08877792,
-    gUnk_088777A2,
-    gUnk_088777AC,
-};
-
-AnimHeader* gUnk_09EDE5F0[3] __attribute__((section(".data_09EDE594"))) = {
-    &gUnk_088777BC,
-    &gUnk_088777D2,
-    &gUnk_088777DC,
-};
-
 void* gUnk_09EDE7B4[12] __attribute__((section(".data_09EDE7B4"))) = {
     gUnk_088A5CC0,
     gUnk_088A5CCA,
@@ -58,58 +20,6 @@ AnimHeader* gUnk_09EDE7E4[3] __attribute__((section(".data_09EDE7B4"))) = {
     &gUnk_088A5D38,
     &gUnk_088A5D4E,
     &gUnk_088A5D64,
-};
-
-void* gUnk_09EDE848[9] __attribute__((section(".data_09EDE848"))) = {
-    gUnk_088ABEF4,
-    gUnk_088ABEFE,
-    gUnk_088ABF08,
-    gUnk_088ABF12,
-    gUnk_088ABF1C,
-    gUnk_088ABF26,
-    gUnk_088ABF30,
-    gUnk_088ABF3A,
-    gUnk_088ABF44,
-};
-
-AnimHeader* gUnk_09EDE86C[3] __attribute__((section(".data_09EDE848"))) = {
-    &gUnk_088ABF4E,
-    &gUnk_088ABF5C,
-    &gUnk_088ABF7A,
-};
-
-void* gUnk_09EDECC0[8] __attribute__((section(".data_09EDECC0"))) = {
-    gUnk_088D8110,
-    gUnk_088D8132,
-    gUnk_088D8142,
-    gUnk_088D815E,
-    gUnk_088D817A,
-    gUnk_088D818A,
-    gUnk_088D81AC,
-    gUnk_088D81BC,
-};
-
-AnimHeader* gUnk_09EDECE0[7] __attribute__((section(".data_09EDECC0"))) = {
-    &gUnk_088D81E4,
-    &gUnk_088D81F6,
-    &gUnk_088D8200,
-    &gUnk_088D820E,
-    &gUnk_088D821C,
-    &gUnk_088D8226,
-    &gUnk_088D8234,
-};
-
-void* gUnk_09EDF3E8[6] __attribute__((section(".data_09EDF3E8"))) = {
-    gUnk_08925AB4,
-    gUnk_08925AC4,
-    gUnk_08925AD4,
-    gUnk_08925AE4,
-    gUnk_08925AF4,
-    gUnk_08925B10,
-};
-
-AnimHeader* gUnk_09EDF400[1] __attribute__((section(".data_09EDF3E8"))) = {
-    &gUnk_08925B26,
 };
 
 void* gUnk_09EDF4C0[1] __attribute__((section(".data_09EDF4C0"))) = {
@@ -157,79 +67,6 @@ void* gUnk_09EDF4F4[8] __attribute__((section(".data_09EDF4C0"))) = {
 AnimHeader* gUnk_09EDF514[1] __attribute__((section(".data_09EDF4C0"))) = {
     &gUnk_08935B9C,
 };
-
-void* gUnk_09EDF5F4[6] __attribute__((section(".data_09EDF5F4"))) = {
-    gUnk_0893DBC8,
-    gUnk_0893DBDE,
-    gUnk_0893DBF4,
-    gUnk_0893DC0A,
-    gUnk_0893DC20,
-    gUnk_0893DC36,
-};
-
-AnimHeader* gUnk_09EDF60C[1] __attribute__((section(".data_09EDF5F4"))) = {
-    &gUnk_0893DC4C,
-};
-
-AnimHeader* gUnk_09EDF610 __attribute__((section(".data_09EDF5F4"))) = &gUnk_0893DCD2;
-
-void* gUnk_09EDF614[8] __attribute__((section(".data_09EDF5F4"))) = {
-    gUnk_0893EFBC,
-    gUnk_0893EFD2,
-    gUnk_0893EFE2,
-    gUnk_0893EFF2,
-    gUnk_0893F002,
-    gUnk_0893F00C,
-    gUnk_0893F022,
-    gUnk_0893F038,
-};
-
-AnimHeader* gUnk_09EDF634[3] __attribute__((section(".data_09EDF5F4"))) = {
-    &gUnk_0893F04E,
-    &gUnk_0893F060,
-    &gUnk_0893F06A,
-};
-
-void* gUnk_09EDF640[8] __attribute__((section(".data_09EDF5F4"))) = {
-    gUnk_08940CC0,
-    gUnk_08940CDC,
-    gUnk_08940CE6,
-    gUnk_08940D02,
-    gUnk_08940D0C,
-    gUnk_08940D22,
-    gUnk_08940D38,
-    gUnk_08940D48,
-};
-
-AnimHeader* gUnk_09EDF660[3] __attribute__((section(".data_09EDF5F4"))) = {
-    &gUnk_08940D5E,
-    &gUnk_08940D70,
-    &gUnk_08940D7A,
-};
-
-void* gUnk_09EDF66C[3] __attribute__((section(".data_09EDF5F4"))) = {
-    gUnk_08942950,
-    gUnk_08942966,
-    gUnk_0894297C,
-};
-
-AnimHeader* gUnk_09EDF678[1] __attribute__((section(".data_09EDF5F4"))) = {
-    &gUnk_08942992,
-};
-
-AnimHeader* gUnk_09EDF67C __attribute__((section(".data_09EDF5F4"))) = &gUnk_089429A4;
-
-void* gUnk_09EDF680[3] __attribute__((section(".data_09EDF5F4"))) = {
-    gUnk_08943470,
-    gUnk_08943486,
-    gUnk_0894349C,
-};
-
-AnimHeader* gUnk_09EDF68C[1] __attribute__((section(".data_09EDF5F4"))) = {
-    &gUnk_089434AC,
-};
-
-AnimHeader* gUnk_09EDF690 __attribute__((section(".data_09EDF5F4"))) = &gUnk_089434BE;
 
 void* const gUnk_09EDF764[4] = {
     gUnk_0895085C,
@@ -432,23 +269,6 @@ void* gUnk_09EDFDB4 __attribute__((section(".data_09EDFD70"))) = gUnk_089AC4BC;
 
 AnimHeader* gUnk_09EDFDB8 __attribute__((section(".data_09EDFD70"))) = &gUnk_089AC4C6;
 
-void* gUnk_09EDFFDC[10] __attribute__((section(".data_09EDFFDC"))) = {
-    gUnk_089C2868,
-    gUnk_089C2878,
-    gUnk_089C2888,
-    gUnk_089C2898,
-    gUnk_089C28A2,
-    gUnk_089C28B2,
-    gUnk_089C28C2,
-    gUnk_089C28CC,
-    gUnk_089C28D6,
-    gUnk_089C28E6,
-};
-
-AnimHeader* gUnk_09EE0004[1] __attribute__((section(".data_09EDFFDC"))) = {
-    &gUnk_089C28F6,
-};
-
 void* gUnk_09EE12A4[3] = {
     gUnk_08B20D20,
     gUnk_08B20D30,
@@ -649,40 +469,6 @@ void* gUnk_09EE17B4 __attribute__((section(".data_09EE17B4"))) = gUnk_08B5A854;
 void* gUnk_09EE17B8 __attribute__((section(".data_09EE17B4"))) = gUnk_08B5A85E;
 
 AnimHeader* gUnk_09EE17BC __attribute__((section(".data_09EE17B4"))) = &gUnk_08B5A868;
-
-void* gUnk_09EE1F90[12] __attribute__((section(".data_09EE1F90"))) = {
-    gUnk_08BF730C,
-    gUnk_08BF7316,
-    gUnk_08BF7320,
-    gUnk_08BF732A,
-    gUnk_08BF7334,
-    gUnk_08BF733E,
-    gUnk_08BF7348,
-    gUnk_08BF7352,
-    gUnk_08BF735C,
-    gUnk_08BF7366,
-    gUnk_08BF7370,
-    gUnk_08BF737A,
-};
-
-AnimHeader* gUnk_09EE1FC0[3] __attribute__((section(".data_09EE1F90"))) = {
-    &gUnk_08BF737C,
-    &gUnk_08BF7396,
-    &gUnk_08BF73B0,
-};
-
-void* gUnk_09EE2098[4] __attribute__((section(".data_09EE2098"))) = {
-    gUnk_08C08D8C,
-    gUnk_08C08DB4,
-    gUnk_08C08DD0,
-    gUnk_08C08DEC,
-};
-
-AnimHeader* gUnk_09EE20A8[3] __attribute__((section(".data_09EE2098"))) = {
-    &gUnk_08C08E26,
-    &gUnk_08C08E30,
-    &gUnk_08C08E3E,
-};
 
 #ifdef VERSION_EU
 #endif
