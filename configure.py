@@ -439,7 +439,7 @@ for src, obj, flags, _section in units:
         continue
     emitted.add(obj)
     rule = "cc" if src.suffix == ".c" else "as"
-    variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
+    variables = {"cflags": f"-mthumb-interwork -fno-common {flags}"} if flags else None
     deps = []
     if rule == "as":
         deps += asm_includes
@@ -653,7 +653,7 @@ with out.open("w") as f:
     )
     n.variable("asdefines", f"--defsym VERSION_{version.upper()}=1")
     n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
-    n.variable("cflags", "-mthumb-interwork -O2 -fprologue-bugfix")
+    n.variable("cflags", "-mthumb-interwork -fno-common -O2 -fprologue-bugfix")
     n.variable("pyreport", report_python)
     n.newline()
 
