@@ -741,6 +741,27 @@ def main():
                     demoted.append(funcs[i][2])
                     addr[i] = None
                     how[i] = "-"
+        placed = {}
+        for o, idx in by_obj.items():
+            kept = [i for i in idx if addr[i] is not None]
+            if kept:
+                placed[o] = kept
+
+        def weight(rows):
+            return sum(1000 if how[i] in ("named", "xref") else 1 for i in rows)
+
+        nested = []
+        for o, kept in placed.items():
+            lo = min(addr[i] for i in kept)
+            hi = max(addr[i] for i in kept)
+            foreign = [i for p, others in placed.items() if p != o for i in others if lo < addr[i] < hi]
+            if weight(foreign) > weight(kept):
+                nested.append(o)
+        for o in nested:
+            for i in placed[o]:
+                demoted.append(funcs[i][2])
+                addr[i] = None
+                how[i] = "-"
         if demoted:
             print(f"  {len(demoted)} out-of-order placements demoted: " + " ".join(demoted))
 

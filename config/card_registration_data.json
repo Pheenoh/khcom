@@ -488,20 +488,6 @@
               "size": 10
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8EF0",
-          "address": "0x9041ef8",
-          "size": 10,
-          "sha256": "408c9aad1b3645618885642db939c7f6762b2f78b47ac60f0e6aef4b2ef89581",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8EF0",
-              "offset": 0,
-              "size": 10
-            }
-          ]
         }
       ]
     },
@@ -983,20 +969,6 @@
           "objects": [
             {
               "name": "gTaskName_09EE8E30",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8EF0",
-          "address": "0x9010538",
-          "size": 10,
-          "sha256": "408c9aad1b3645618885642db939c7f6762b2f78b47ac60f0e6aef4b2ef89581",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8EF0",
               "offset": 0,
               "size": 10
             }
@@ -1490,20 +1462,6 @@
           "objects": [
             {
               "name": "gTaskName_09EE8E30",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8EF0",
-          "address": "0x90d1e40",
-          "size": 10,
-          "sha256": "408c9aad1b3645618885642db939c7f6762b2f78b47ac60f0e6aef4b2ef89581",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8EF0",
               "offset": 0,
               "size": 10
             }

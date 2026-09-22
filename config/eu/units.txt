@@ -66,7 +66,6 @@ card_battle.c
 card_card.c
 card_battle_riku.c
 card_map_anim.c
-card_deckexchange.c
 card_deckmenu2.c
 card_deckcard2.c
 card_enemy.c
@@ -852,12 +851,11 @@ asset_gfx_gap_38_at_09041E9A.s(.rodata)
 card.c(.rodata_registration_name_gTaskDescWorldSelBefore)
 asset_gfx_gap_38_at_09041E9A_at_090D1DF4.s(.rodata)
 asset_gfx_gap_39.s(.rodata)
-card.c(.rodata_registration_name_gUnk_09EE8EF0)
-asset_gfx_gap_39_at_090D1E4A.s(.rodata)
+card_deckmenu2_2.c(.rodata)
+asset_gfx_gap_39_at_09041F02.s(.rodata)
+card_deckexchange.c(.rodata)
 card_mode_deck.c(.rodata)
 asset_gfx_gap_40_at_09041F6E.s(.rodata)
-card_deckexchange.c(.rodata)
-asset_gfx_gap_40_at_09041F6E_at_090D1E92.s(.rodata)
 asset_gfx_gap_40.s(.rodata)
 card_riku_tutorial.c(.rodata)
 asset_gfx_gap_42.s(.rodata)
@@ -1062,6 +1060,7 @@ event_message.c(.data)
 mode_eventselect.c(.data)
 card_battle.c(.data)
 card.c(.data)
+card_deckmenu2_2.c(.data)
 card_deckexchange.c(.data)
 card_mode_deck.c(.data)
 card_riku_tutorial.c(.data)
