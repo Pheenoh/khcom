@@ -28,6 +28,7 @@ from pathlib import Path
 from rom_data_evidence import data_symbol_map, load_evidence
 from movie_assets import apply_movie_regions, load_movie_assets
 from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_function_modes, trace_literal_loads
+import assetgen
 import baserom
 from regional_data import asset_symbols, load_sidecars, managed_asset_names
 
@@ -4112,13 +4113,23 @@ def main():
         placed_in = sections.get(nm, set())
         return bool(placed_in) and placed_in <= {".rodata", ".data"}
 
+    us_units = [line.split()[0] for line in Path("config/us/units.txt").read_text().splitlines()
+                if line.strip() and not line.startswith("#")]
+    manifests = [manifest for manifest in assetgen.load_manifests()
+                 if any(obj["name"] in us_units for obj in manifest.objects.get("us", []))]
+    generated = {obj["name"] for manifest in manifests for objects in manifest.objects.values() for obj in objects}
     head, body, cdata, blobs, placed = [], [], [], [], set()
+    for manifest in manifests:
+        for obj in manifest.objects.get(ver, []):
+            cdata.append((obj["start"], obj["end"] - obj["start"], f"{obj['name']}(.rodata)"))
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
         if not t or t.startswith("#"):
             head.append(line)
             continue
         nm = t.split()[0]
+        if nm in generated:
+            continue
         if nm == "transform_veneers.s":
             size = validate_transform_veneers(ot, code_end, byname["func_08109AAC"][3])
             cdata.append((code_end, size, "transform_veneers.s(.text)"))
