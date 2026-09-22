@@ -41,6 +41,16 @@
 #include "game.h"
 #include "bos4_api.h"
 
+Deck gDecks[3] EWRAM_COMMON(16);
+
+u16 gCardCollection[999] EWRAM_COMMON(16);
+
+Deck* gUnk_0203A850 EWRAM_COMMON(4);
+
+void* gUnk_0203A854 EWRAM_COMMON(4);
+
+u16 gCardCount EWRAM_COMMON(4);
+
 Deck* sub_08083EFC(void);
 extern u8* gUnk_02039DC8;
 
@@ -1096,3 +1106,481 @@ u16 func_08084C40(u8 deck, u8 mode, u16* out) {
     EwramFree(present);
     return total;
 }
+
+extern u8 gUnk_098EB224[];
+extern u8 gUnk_098EAF64[];
+extern u8 gUnk_098EADE4[];
+extern u8 gUnk_098EACC4[];
+extern u8 gUnk_098EAA84[];
+extern u8 gUnk_098EA844[];
+extern u8 gUnk_094F4238[];
+extern u8 gUnk_094EABF8[];
+extern u8 gUnk_0948A918[];
+extern u8 gUnk_09469B58[];
+extern u8 gUnk_09468FF8[];
+
+const MapTileAnimationFrame gUnk_09035348[4] = {
+    {0, 18, 0},
+    {1024, 12, 0},
+    {2048, 12, 0},
+    {1024, 12, 0},
+};
+
+const MapTileAnimationFrame gUnk_09035358[4] = {
+    {0, 15, 0},
+    {3232, 15, 0},
+    {6464, 15, 0},
+    {9696, 15, 0},
+};
+
+const MapTileAnimationTrack gUnk_09035368[2] = {
+    {gUnk_09035348, gUnk_09468FF8, 4, 0, 3232, 864, {0, 0}},
+    {gUnk_09035358, gUnk_09469B58, 4, 0, 0, 3232, {0, 0}},
+};
+
+const MapTileAnimationDef gUnk_09035388 = {
+    gUnk_09035368, 2, 1, 0,
+};
+
+const MapTileAnimationFrame gUnk_09035390[4] = {
+    {0, 70, 0},
+    {192, 7, 0},
+    {384, 15, 0},
+    {192, 7, 0},
+};
+
+const MapTileAnimationFrame gUnk_090353A0[4] = {
+    {0, 25, 0},
+    {192, 7, 0},
+    {384, 15, 0},
+    {192, 7, 0},
+};
+
+const MapTileAnimationFrame gUnk_090353B0[4] = {
+    {0, 10, 0},
+    {96, 10, 0},
+    {192, 10, 0},
+    {96, 10, 0},
+};
+
+const MapTileAnimationFrame gUnk_090353C0[4] = {
+    {0, 50, 0},
+    {128, 7, 0},
+    {256, 10, 0},
+    {128, 10, 0},
+};
+
+const MapTileAnimationFrame gUnk_090353D0[4] = {
+    {0, 10, 0},
+    {352, 20, 0},
+    {0, 7, 0},
+    {352, 150, 0},
+};
+
+const MapTileAnimationFrame gUnk_090353E0[4] = {
+    {0, 50, 0},
+    {128, 5, 0},
+    {0, 7, 0},
+    {128, 5, 0},
+};
+
+const MapTileAnimationTrack gUnk_090353F0[6] = {
+    {gUnk_09035390, gUnk_098EA844, 4, 0, 2048, 192, {0, 0}},
+    {gUnk_090353A0, gUnk_098EAA84, 4, 0, 2240, 192, {0, 0}},
+    {gUnk_090353B0, gUnk_098EACC4, 4, 0, 2432, 96, {0, 0}},
+    {gUnk_090353C0, gUnk_098EADE4, 4, 0, 2528, 128, {0, 0}},
+    {gUnk_090353D0, gUnk_098EAF64, 4, 0, 3072, 352, {0, 0}},
+    {gUnk_090353E0, gUnk_098EB224, 4, 0, 3424, 128, {0, 0}},
+};
+
+const MapTileAnimationDef gUnk_09035450 = {
+    gUnk_090353F0, 6, 0, 0,
+};
+
+const MapTileAnimationFrame gUnk_09035458[5] = {
+    {0, 6, 0},
+    {1024, 6, 0},
+    {2048, 6, 0},
+    {3072, 6, 0},
+    {4096, 6, 0},
+};
+
+const MapTileAnimationTrack gUnk_0903546C = {
+    gUnk_09035458, gUnk_0948A918, 5, 0, 3072, 896, {0, 0},
+};
+
+const MapTileAnimationDef gUnk_0903547C = {
+    &gUnk_0903546C, 1, 1, 0,
+};
+
+const MapTileAnimationFrame gUnk_09035484[4] = {
+    {0, 30, 0},
+    {3072, 30, 0},
+    {6144, 30, 0},
+    {9216, 30, 0},
+};
+
+const MapTileAnimationTrack gUnk_09035494 = {
+    gUnk_09035484, gUnk_094EABF8, 4, 0, -15360, 3072, {0, 0},
+};
+
+const MapTileAnimationDef gUnk_090354A4 = {
+    &gUnk_09035494, 1, 1, 0,
+};
+
+const MapTileAnimationFrame gUnk_090354AC[6] = {
+    {0, 20, 0},
+    {1024, 20, 0},
+    {2048, 20, 0},
+    {3072, 20, 0},
+    {4096, 20, 0},
+    {5120, 20, 0},
+};
+
+const MapTileAnimationTrack gUnk_090354C4 = {
+    gUnk_090354AC, gUnk_094F4238, 6, 0, -5120, 1024, {0, 0},
+};
+
+const MapTileAnimationDef gUnk_090354D4 = {
+    &gUnk_090354C4, 1, 1, 0,
+};
+
+const MapTileAnimationDef* gUnk_09EE4A2C[6] = {
+    &gUnk_09035388,
+    &gUnk_09035450,
+    &gUnk_0903547C,
+    &gUnk_090354A4,
+    &gUnk_090354D4,
+    NULL,
+};
+
+const MapTileAnimationDef* gUnk_09EE4A44 = {
+    NULL,
+};
+
+const MapTileAnimationDef* gUnk_09EE4A48 = {
+    NULL,
+};
+
+const MapTileAnimationDef* gUnk_09EE4A4C = {
+    NULL,
+};
+
+const char gTaskNameMapAnim[] = "map_anim";
+
+TaskDesc gTaskDescMapAnim = {
+    gTaskNameMapAnim,
+    (void (*)(void*, void*))map_anim_0,
+    map_anim_1,
+    (void (*)(void*))map_anim_2,
+    (void (*)(void*))map_anim_3,
+    0x18,
+};
+
+const u16 gUnk_090354E8[21] __attribute__((aligned(4))) = {
+    667,
+    666,
+    664,
+    663,
+    667,
+    666,
+    664,
+    663,
+    667,
+    666,
+    664,
+    663,
+    667,
+    666,
+    664,
+    663,
+    667,
+    666,
+    664,
+    663,
+    397,
+};
+
+const u16 gUnk_09035512[20] = {
+    665,
+    665,
+    665,
+    665,
+    664,
+    664,
+    664,
+    664,
+    663,
+    663,
+    663,
+    663,
+    662,
+    662,
+    662,
+    662,
+    661,
+    661,
+    661,
+    661,
+};
+
+const u16 gUnk_0903553A[21] = {
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    661,
+    661,
+    661,
+    661,
+    661,
+    661,
+    661,
+    661,
+    661,
+    660,
+    660,
+    660,
+};
+
+const u16 gUnk_09035564[12] = {
+    663,
+    664,
+    665,
+    663,
+    664,
+    665,
+    663,
+    664,
+    665,
+    663,
+    664,
+    665,
+};
+
+const u16 gUnk_0903557C[20] = {
+    667,
+    665,
+    664,
+    661,
+    667,
+    665,
+    664,
+    661,
+    667,
+    666,
+    664,
+    661,
+    667,
+    666,
+    664,
+    661,
+    667,
+    666,
+    664,
+    661,
+};
+
+const u16 gUnk_090355A4[18] = {
+    667,
+    667,
+    666,
+    666,
+    665,
+    665,
+    664,
+    664,
+    665,
+    665,
+    666,
+    666,
+    667,
+    667,
+    667,
+    666,
+    665,
+    664,
+};
+
+const u16 gUnk_090355C8[17] = {
+    667,
+    666,
+    665,
+    664,
+    663,
+    662,
+    661,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+};
+
+const u16 gUnk_090355EA[16] = {
+    669,
+    668,
+    667,
+    668,
+    667,
+    666,
+    667,
+    666,
+    665,
+    666,
+    665,
+    664,
+    665,
+    664,
+    663,
+    389,
+};
+
+const u16 gUnk_0903560A[19] = {
+    660,
+    661,
+    663,
+    665,
+    667,
+    660,
+    662,
+    664,
+    666,
+    668,
+    666,
+    664,
+    662,
+    660,
+    667,
+    665,
+    663,
+    662,
+    660,
+};
+
+const u16 gUnk_09035630[5] = {
+    664,
+    665,
+    666,
+    667,
+    668,
+};
+
+const u16 gUnk_0903563A[25] = {
+    669,
+    666,
+    663,
+    668,
+    665,
+    662,
+    667,
+    664,
+    661,
+    666,
+    663,
+    660,
+    669,
+    667,
+    665,
+    663,
+    661,
+    660,
+    662,
+    664,
+    666,
+    668,
+    660,
+    662,
+    669,
+};
+
+const u16 gUnk_0903566C[30] = {
+    668,
+    668,
+    668,
+    667,
+    667,
+    667,
+    666,
+    666,
+    666,
+    669,
+    669,
+    669,
+    666,
+    667,
+    668,
+    669,
+    668,
+    666,
+    667,
+    669,
+    669,
+    666,
+    667,
+    668,
+    399,
+    390,
+    660,
+    660,
+    660,
+    660,
+};
+
+const u16 gUnk_090356A8 = 483;
+
+const u16 gUnk_090356AA = 492;
+
+const u16 gUnk_090356AC = 471;
+
+const u16 gUnk_090356AE = 456;
+
+const u16 gUnk_090356B0 = 489;
+
+const u16 gUnk_090356B2 = 501;
+
+const u16 gUnk_090356B4 = 507;
+
+const u16 gUnk_090356B6 = 516;
+
+const u16 gUnk_090356B8 = 450;
+
+const u16 gUnk_090356BA[12] = {
+    21,
+    20,
+    21,
+    12,
+    20,
+    18,
+    17,
+    16,
+    19,
+    5,
+    25,
+    30,
+};
+
+const u16 gUnk_090356D2[12] = {
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+};

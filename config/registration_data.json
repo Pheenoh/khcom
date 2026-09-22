@@ -625,20 +625,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescMapAnim",
-          "address": "0x090354DC",
-          "size": 9,
-          "sha256": "f472aead5b5a95be816cc0d68d5f95f3835c038503f1b7493a0a4b5ca5a60e47",
-          "objects": [
-            {
-              "name": "gTaskNameMapAnim",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4182,20 +4168,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescMapAnim",
-          "address": "0x090087A0",
-          "size": 9,
-          "sha256": "f472aead5b5a95be816cc0d68d5f95f3835c038503f1b7493a0a4b5ca5a60e47",
-          "objects": [
-            {
-              "name": "gTaskNameMapAnim",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -7705,20 +7677,6 @@
           "objects": [
             {
               "name": "gTaskNameBosscard",
-              "offset": 0,
-              "size": 9
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescMapAnim",
-          "address": "0x090CE7D0",
-          "size": 9,
-          "sha256": "f472aead5b5a95be816cc0d68d5f95f3835c038503f1b7493a0a4b5ca5a60e47",
-          "objects": [
-            {
-              "name": "gTaskNameMapAnim",
               "offset": 0,
               "size": 9
             }

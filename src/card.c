@@ -76,11 +76,6 @@ CardDisplayWork* gUnk_02034AAC;
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 u8 gUnk_02039DDC EWRAM_COMMON(4);
-Deck gDecks[3] EWRAM_COMMON(16);
-u16 gCardCollection[999] EWRAM_COMMON(16);
-Deck* gUnk_0203A850 EWRAM_COMMON(4);
-void* gUnk_0203A854 EWRAM_COMMON(4);
-u16 gCardCount EWRAM_COMMON(4);
 
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0809511C(ReloadGageWork* w, void* a);
@@ -453,36 +448,4 @@ TaskDesc gTaskDescBosscard = {
     (void (*)(void*))Bosscard_2,
     (void (*)(void*))Bosscard_3,
     0x38,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A2C[6] = {
-    &gUnk_09035388,
-    &gUnk_09035450,
-    &gUnk_0903547C,
-    &gUnk_090354A4,
-    &gUnk_090354D4,
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A44 = {
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A48 = {
-    NULL,
-};
-
-const MapTileAnimationDef* gUnk_09EE4A4C = {
-    NULL,
-};
-
-const char gTaskNameMapAnim[] __attribute__((section(".rodata_registration_name_gTaskDescMapAnim"), aligned(1))) = "map_anim";
-
-TaskDesc gTaskDescMapAnim = {
-    gTaskNameMapAnim,
-    (void (*)(void*, void*))map_anim_0,
-    map_anim_1,
-    (void (*)(void*))map_anim_2,
-    (void (*)(void*))map_anim_3,
-    0x18,
 };
