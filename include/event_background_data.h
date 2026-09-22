@@ -3,17 +3,40 @@
 
 #include "event_background_types.h"
 
-extern EventBackgroundDef gUnk_08F7DB10;
-extern EventBackgroundDef gUnk_08F7DB40;
-extern EventBackgroundDef gUnk_08F7DC60;
-extern EventBackgroundDef gUnk_08F7DCF0;
-extern EventBackgroundDef gUnk_08F7DD20;
-extern EventBackgroundDef gUnk_08F7DD50;
-extern EventBackgroundDef gUnk_08F7DD80;
-extern EventBackgroundDef gUnk_08F7E008;
-extern EventBackgroundDef gUnk_08F7E038;
-extern EventBackgroundDef gUnk_08F7EB90;
-extern EventBackgroundDef gUnk_08F7EF7C;
+#include "event_background_08F7DB10_data.h"
+#include "event_background_08F7DB40_data.h"
+#include "event_background_08F7DC60_data.h"
+#include "event_background_08F7DCF0_data.h"
+#include "event_background_08F7DD20_data.h"
+#include "event_background_08F7DD50_data.h"
+#include "event_background_08F7DD80_data.h"
+#include "event_background_08F7E008_data.h"
+#include "event_background_08F7E038_data.h"
+#include "event_background_074_data.h"
+#include "event_background_081_data.h"
+#include "event_background_094_data.h"
+#include "event_background_097_data.h"
+#include "event_background_110_data.h"
+#include "event_background_112_data.h"
+#include "event_background_109_data.h"
+#include "event_background_107_data.h"
+#include "event_background_115_data.h"
+#include "event_background_116_data.h"
+#include "event_background_122_data.h"
+#include "event_background_121_data.h"
+#include "event_background_120_data.h"
+#include "event_background_08F7EB90_data.h"
+#include "event_background_124_data.h"
+#include "event_background_000_data.h"
+#include "event_background_010_data.h"
+#include "event_background_014_data.h"
+#include "event_background_08F7EF7C_data.h"
+#include "event_background_053_data.h"
+#include "event_background_054_data.h"
+#include "event_background_055_data.h"
+#include "event_background_057_data.h"
+#include "event_background_002_data.h"
+#include "event_background_157_data.h"
 
 extern const EventBackgroundDef gUnk_08F7DB70;
 extern const EventBackgroundDef gUnk_08F7DBA0;
@@ -33,29 +56,12 @@ extern const EventBackgroundDef gUnk_08F7E210;
 extern const EventBackgroundDef gUnk_08F7E240;
 extern const EventBackgroundDef gUnk_08F7E270;
 extern const EventBackgroundDef gUnk_08F7E2A0;
-extern EventBackgroundDef gUnk_08F7E358;
-extern EventBackgroundDef gUnk_08F7E3C0;
-extern EventBackgroundDef gUnk_08F7E4A4;
-extern EventBackgroundDef gUnk_08F7E500;
-extern EventBackgroundDef gUnk_08F7E620;
-extern EventBackgroundDef gUnk_08F7E688;
-extern EventBackgroundDef gUnk_08F7E6F0;
-extern EventBackgroundDef gUnk_08F7E764;
-extern EventBackgroundDef gUnk_08F7E7FC;
-extern EventBackgroundDef gUnk_08F7E84C;
 extern const EventBackgroundDef gUnk_08F7E8B4;
 extern const EventBackgroundDef gUnk_08F7E8E4;
-extern EventBackgroundDef gUnk_08F7EA28;
-extern EventBackgroundDef gUnk_08F7EAA8;
-extern EventBackgroundDef gUnk_08F7EB10;
-extern EventBackgroundDef gUnk_08F7EC1C;
 extern const EventBackgroundDef gUnk_08F7ECB0;
 extern const EventBackgroundDef gUnk_08F7ECE0;
 extern const EventBackgroundDef gUnk_08F7ED48;
 extern const EventBackgroundDef gUnk_08F7ED78;
-extern EventBackgroundDef gUnk_08F7EE70;
-extern EventBackgroundDef gUnk_08F7EECC;
-extern EventBackgroundDef gUnk_08F7EF4C;
 extern const EventBackgroundDef gUnk_08F7EFD8;
 extern const EventBackgroundDef gUnk_08F7F008;
 extern const EventBackgroundDef gUnk_08F7F038;
@@ -66,16 +72,10 @@ extern const EventBackgroundDef gUnk_08F7F0F8;
 extern const EventBackgroundDef gUnk_08F7F16C;
 extern const EventBackgroundDef gUnk_08F7F19C;
 extern const EventBackgroundDef gUnk_08F7F1CC;
-extern EventBackgroundDef gUnk_08F7F26C;
-extern EventBackgroundDef gUnk_08F7F2D4;
-extern EventBackgroundDef gUnk_08F7F324;
-extern EventBackgroundDef gUnk_08F7F374;
 extern const EventBackgroundDef gUnk_08F7F408;
 extern const EventBackgroundDef gUnk_08F7F438;
 extern const EventBackgroundDef gUnk_08F7F468;
-extern EventBackgroundDef gUnk_08F7F4E8;
 extern const EventBackgroundDef gUnk_08F7F598;
 extern const EventBackgroundDef gUnk_08F7F5C8;
-extern EventBackgroundDef gUnk_08F7F63C;
 
 #endif
