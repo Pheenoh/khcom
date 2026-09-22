@@ -3,7 +3,7 @@
 #include "jiminy_data.h"
 
 #ifdef VERSION_EU
-LocalizedText gMapNameEu_08893370 __attribute__((section(".data_map_text_gMapNameEu_08893370"))) = { {
+const LocalizedText gMapNameEu_08893370 = { {
     gMapNameTextEu_08893324,
     gMapNameTextEu_08893332,
     gMapNameTextEu_08893342,
