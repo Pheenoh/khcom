@@ -12982,7 +12982,7 @@ JiminyLocalizedText gUnkEu_0887AD44 __attribute__((section(".rodata_jiminy_text_
     0
 };
 
-JiminyLocalizedName gUnkEu_0888E530 __attribute__((section(".rodata_jiminy_name_275"))) = {
+const JiminyLocalizedName gUnkEu_0888E530 = {
     { gUnkEu_0888E4D4, gUnkEu_0888E4E5, gUnkEu_0888E4F9, gUnkEu_0888E50A, gUnkEu_0888E51A }
 };
 

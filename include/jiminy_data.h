@@ -2232,7 +2232,7 @@ extern JiminyLocalizedText gUnkEu_0887A4D8;
 extern JiminyLocalizedText gUnkEu_0887A744;
 extern JiminyLocalizedText gUnkEu_0887AA0C;
 extern JiminyLocalizedText gUnkEu_0887AD44;
-extern JiminyLocalizedName gUnkEu_0888E530;
+extern const JiminyLocalizedName gUnkEu_0888E530;
 extern JiminyLocalizedName gUnkEu_0888E578;
 extern JiminyLocalizedName gUnkEu_0888E5DC;
 extern JiminyLocalizedName gUnkEu_0888E654;

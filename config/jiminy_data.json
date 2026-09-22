@@ -10,7 +10,8 @@
     "inline_eu_world_names": "Twenty-five original single-byte null-terminated strings are defined by the five established JiminyLocalizedName language-pointer records at 0888E364 through 0888E4C0. Individual extents end at their native terminators; the six remaining bytes are independently checked native four-byte object alignment, not fabricated data. Existing pointer identities and all encoded byte values are preserved.",
     "inline_jp_description_text": "Eighteen existing Jiminy description-pointer targets at 0813FEB8..08140081 are native Shift-JIS null-terminated strings, each independently bounded by the original text asset evidence and its terminator. Compiler definitions retain every native byte and symbol, including five text bytes beyond the old accidental report-classification boundary. All three-byte or one-byte alignment between strings and the initial three-byte gap are separately checked native four-byte alignment, not array elements.",
     "save_native_owner": "The version signature is only compared and copied from by save.c; the pointer has no other consumer. Treating the unchanged signature bytes as const is an explicit reconstruction assumption supported by these read-only uses. Both signature and pointer use the code owner's ordinary readonly and initialized-data sections, retaining their original independent addresses, sizes, regional version text and natural alignment. The error-screen asset arrays stay unchanged in save_data.c.",
-    "inline_native_catalog": "The existing mutable text definitions are retained as an explicit generated-catalog storage assumption, not evidence of runtime writes. EU world-name strings and their five language-pointer wrappers form one complete run shared by journal, SIO, map and world UI consumers; keeping the wrappers beside their strings removes the earlier split by C type. JP description lines form the complete existing string run. Ordinary initialized data reproduces each unchanged object, string terminator, interior alignment and existing initial three-byte alignment gap. No asset bytes, array extents, qualifiers or unrelated Jiminy wrappers are changed."
+    "inline_native_catalog": "The existing mutable text definitions are retained as an explicit generated-catalog storage assumption, not evidence of runtime writes. EU world-name strings and their five language-pointer wrappers form one complete run shared by journal, SIO, map and world UI consumers; keeping the wrappers beside their strings removes the earlier split by C type. JP description lines form the complete existing string run. Ordinary initialized data reproduces each unchanged object, string terminator, interior alignment and existing initial three-byte alignment gap. No asset bytes, array extents, qualifiers or unrelated Jiminy wrappers are changed.",
+    "native_jiminy_name_275_rodata": "EU JiminyLocalizedName gUnkEu_0888E530 (20B) formerly .rodata_jiminy_name_275 is const in existing jiminy_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot, EU-only)."
   },
   "regions": {
     "us": {
@@ -28923,7 +28924,7 @@
         },
         {
           "unit": "jiminy_data.c",
-          "section": ".rodata_jiminy_name_275",
+          "section": ".rodata",
           "address": "0x0888E530",
           "size": 20,
           "sha256": "e7e9a951e55707c9fd3caa08ac517fa8d1245b6ab3ed7525f15b135c5d1f8511",
