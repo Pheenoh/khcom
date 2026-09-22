@@ -3,77 +3,9 @@
 #include "map_room_assets.h"
 
 
-UnkStruct_09EF70D0 gUnk_0984D2D8 __attribute__((section(".data_map_room_0984D2D8"))) = {
-    gUnk_0998FF44,
-    96, { 0, 0 },
-    gUnk_098A9C84,
-    32192, { 0, 0 },
-    gUnk_098B1A44,
-    8192, { 0, 0 },
-    gUnk_09968144,
-    gUnk_09968944,
-    gUnk_09969944,
-    0,
-    0,
-    0,
-    gUnk_0984D2D4,
-    gUnk_0984D2D4,
-    13,
-};
 
-UnkStruct_09EF70D0 gUnk_0984DFD8 __attribute__((section(".data_map_room_0984DFD8"))) = {
-    gUnk_0998FFA4,
-    352, { 0, 0 },
-    gUnk_098B3A44,
-    30720, { 0, 0 },
-    gUnk_098BB244,
-    10240, { 0, 0 },
-    gUnk_09969C44,
-    gUnk_0996A444,
-    gUnk_0996BC44,
-    gUnk_0984DCF0,
-    gUnk_0984DF68,
-    0,
-    gUnk_0984D494,
-    gUnk_0984D4A4,
-    31,
-};
 
-UnkStruct_09EF70D0 gUnk_0984E734 __attribute__((section(".data_map_room_0984E734"))) = {
-    gUnk_09990104,
-    352, { 0, 0 },
-    gUnk_098BDA44,
-    32256, { 0, 0 },
-    gUnk_098C5844,
-    12160, { 0, 0 },
-    gUnk_0996C144,
-    gUnk_0996C944,
-    gUnk_0996E144,
-    gUnk_0984E48C,
-    gUnk_0984E704,
-    gUnk_0984E054,
-    gUnk_0984E014,
-    gUnk_0984E024,
-    22,
-};
 
-UnkStruct_09EF70D0 gUnk_09850428 __attribute__((section(".data_map_room_09850428"))) = {
-    gUnk_09990264,
-    352, { 0, 0 },
-    gUnk_098C9D84,
-    30720, { 0, 0 },
-    gUnk_098D1584,
-    12160, { 0, 0 },
-    gUnk_0996E544,
-    gUnk_0996ED44,
-    gUnk_09970544,
-    gUnk_09850250,
-    gUnk_098503F8,
-    0,
-    gUnk_0984F6D0,
-    gUnk_0984F6E0,
-    21,
-};
 
 const UnkStruct_09EF70D0 gUnk_09856678 = {
     gUnk_099903C4,
@@ -93,95 +25,10 @@ const UnkStruct_09EF70D0 gUnk_09856678 = {
     2,
 };
 
-UnkStruct_09EF70D0 gUnk_098535BC __attribute__((section(".data_map_room_098535BC"))) = {
-    gUnk_09990524,
-    384, { 0, 0 },
-    gUnk_098DF184,
-    32768, { 0, 0 },
-    gUnk_098E7184,
-    14016, { 0, 0 },
-    gUnk_09972D44,
-    gUnk_09973544,
-    gUnk_09974D44,
-    gUnk_09853354,
-    gUnk_0985358C,
-    gUnk_09852FFC,
-    gUnk_09852F88,
-    gUnk_09852F98,
-    8,
-};
 
-UnkStruct_09EF70D0 gUnk_0985221C __attribute__((section(".data_map_room_0985221C"))) = {
-    gUnk_099906A4,
-    352, { 0, 0 },
-    gUnk_098EB324,
-    32128, { 0, 0 },
-    gUnk_098F30A4,
-    11520, { 0, 0 },
-    gUnk_09975144,
-    gUnk_09975944,
-    gUnk_09977144,
-    gUnk_09851E54,
-    gUnk_098521EC,
-    gUnk_09850E5C,
-    gUnk_09850E30,
-    gUnk_09850E40,
-    15,
-};
 
-UnkStruct_09EF70D0 gUnk_09854258 __attribute__((section(".data_map_room_09854258"))) = {
-    gUnk_09990804,
-    384, { 0, 0 },
-    gUnk_098F71A4,
-    32768, { 0, 0 },
-    gUnk_098FF1A4,
-    12288, { 0, 0 },
-    gUnk_09977544,
-    gUnk_09977D44,
-    gUnk_09979544,
-    gUnk_09854080,
-    gUnk_09854228,
-    gUnk_09853624,
-    gUnk_098535F8,
-    gUnk_09853608,
-    10,
-};
 
-UnkStruct_09EF70D0 gUnk_09852F4C __attribute__((section(".data_map_room_09852F4C"))) = {
-    gUnk_09990984,
-    384, { 0, 0 },
-    gUnk_09902DA4,
-    32768, { 0, 0 },
-    gUnk_0990ADA4,
-    15520, { 0, 0 },
-    gUnk_09979944,
-    gUnk_0997A144,
-    gUnk_0997B944,
-    gUnk_09852C68,
-    gUnk_09852EDC,
-    0,
-    gUnk_09852258,
-    gUnk_09852268,
-    25,
-};
 
-UnkStruct_09EF70D0 gUnk_09850DF4 __attribute__((section(".data_map_room_09850DF4"))) = {
-    gUnk_09990B04,
-    352, { 0, 0 },
-    gUnk_0990EA44,
-    32768, { 0, 0 },
-    gUnk_09916A44,
-    12160, { 0, 0 },
-    gUnk_0997BD44,
-    gUnk_0997C544,
-    gUnk_0997DD44,
-    gUnk_09850C1C,
-    gUnk_09850DC4,
-    0,
-    gUnk_09850464,
-    gUnk_09850470,
-    33,
-};
 
 UnkStruct_09EF70D0 gUnk_09855FA8 = {
     gUnk_09990C64,
@@ -201,38 +48,4 @@ UnkStruct_09EF70D0 gUnk_09855FA8 = {
     13,
 };
 
-UnkStruct_09EF70D0 gUnk_098552E8 __attribute__((section(".data_map_room_098552E8"))) = {
-    gUnk_09990DC4,
-    384, { 0, 0 },
-    gUnk_09924184,
-    32736, { 0, 0 },
-    gUnk_0992C164,
-    15872, { 0, 0 },
-    gUnk_09980644,
-    gUnk_09980E44,
-    gUnk_09982644,
-    gUnk_09854F70,
-    gUnk_09855278,
-    0,
-    gUnk_09854294,
-    gUnk_0985429C,
-    36,
-};
 
-UnkStruct_09EF70D0 gUnk_0984F694 __attribute__((section(".data_map_room_0984F694"))) = {
-    gUnk_09990F44,
-    384, { 0, 0 },
-    gUnk_0992FF64,
-    32768, { 0, 0 },
-    gUnk_09937F64,
-    12288, { 0, 0 },
-    gUnk_09982A44,
-    gUnk_09983244,
-    gUnk_09984A44,
-    gUnk_0984F31C,
-    gUnk_0984F624,
-    0,
-    gUnk_0984E770,
-    gUnk_0984E780,
-    38,
-};
