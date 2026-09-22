@@ -17,7 +17,8 @@
     "native_animation_resource_0114": "The gUnk_09EE0114 animation-resource AnimHeader cluster is a contiguous 4044-byte initialized-data run with matching source order; split into TU animation_resource_emy_data.c so ordinary .data can own it without colliding with other native .data clusters already extracted from animation_resource_data.c.",
     "native_animation_resource_e588": "The gUnk_09EEE588 animation-resource pointer cluster is a contiguous 2224-byte initialized-data run with matching source order; split into TU animation_resource_evt_data.c for ordinary .data ownership.",
     "native_animation_resource_17c0": "The gUnk_09EE17C0 animation-resource pointer cluster is a contiguous 2000-byte initialized-data run with matching source order; split into TU animation_resource_hum_data.c for ordinary .data ownership.",
-    "native_animation_resource_bos5_9bb0": "Split contiguous forced section .data_09EF9BB0 (gUnk_09EF9BB0/gUnk_09EF9BC0) into TU animation_resource_bos5_data.c with ordinary .data ownership; bos5.c AnimInit is the direct consumer."
+    "native_animation_resource_bos5_9bb0": "Split contiguous forced section .data_09EF9BB0 (gUnk_09EF9BB0/gUnk_09EF9BC0) into TU animation_resource_bos5_data.c with ordinary .data ownership; bos5.c AnimInit is the direct consumer.",
+    "native_animation_resource_pooh_boss_leftovers": "Split pooh/boss leftover forced sections into content-named native TUs; see pooh_resources_data.json."
   },
   "regions": {
     "us": {
