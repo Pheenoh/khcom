@@ -5,15 +5,11 @@
 
 #include "actor_ui_resource_data.h"
 
-#include "allmap_bottom_state.h"
 
-#include "allmap_scroll_state.h"
 
-#include "allmap_top_state.h"
 
 #include "poo_api.h"
 
-#include "allmap_cursor_state.h"
 
 #include "obj.h"
 
@@ -232,5 +228,9 @@ extern u8 gUnk_09618D38[];
 extern u8 gUnk_0905E3BA[];
 extern u8 gUnk_0976DD62[];
 extern u8 gUnk_0984A1F8[];
+
+extern u8 gUnk_0203C538;
+extern s16 gUnk_0203C53C;
+extern s16 gUnk_0203C540;
 
 #endif /* GUARD_ALLMAP_H */

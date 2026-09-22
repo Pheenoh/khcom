@@ -12,11 +12,9 @@
 
 #include "animation_resource_data.h"
 
-#include "allmap_bottom_state.h"
+#include "mode_allmap_api.h"
 
-#include "allmap_scroll_state.h"
 
-#include "allmap_top_state.h"
 
 
 #include "pooh_actor_types.h"

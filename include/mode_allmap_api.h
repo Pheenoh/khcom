@@ -11,4 +11,12 @@ u8 func_080D358C(u8 a, u8 b);
 s32 func_080D35B0(struct AllmapRoomWork* work);
 s32 func_080D37BC(u8 a);
 
+extern u16* gUnk_0203C4C0[8];
+extern u32 gUnk_0203C4E0;
+extern u16* gUnk_0203C504;
+extern u16 gUnk_0203C508;
+extern u16* gUnk_0203C510[8];
+extern u16* gUnk_0203C530;
+extern u16 gUnk_0203C534;
+
 #endif

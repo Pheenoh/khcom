@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "localized_resource_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -7,6 +8,10 @@
 #include "allmap.h"
 #include "gba/keys.h"
 #include "allmap_api.h"
+
+u8 gUnk_0203C538 EWRAM_COMMON(4);
+s16 gUnk_0203C53C EWRAM_COMMON(4);
+s16 gUnk_0203C540 EWRAM_COMMON(4);
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F80124[5];
