@@ -1,7 +1,8 @@
 {
   "version": 1,
   "provenance": {
-    "actor_animation_resources": "Actual Pooh and boss consumers independently bound each array. Canonical animation and consumed gfx payloads match exactly in all regions. Unused suffix pointers are separate neutral scalar objects."
+    "actor_animation_resources": "Actual Pooh and boss consumers independently bound each array. Canonical animation and consumed gfx payloads match exactly in all regions. Unused suffix pointers are separate neutral scalar objects.",
+    "native_animation_resource_bos5_9bb0": "Split contiguous forced section .data_09EF9BB0 (gUnk_09EF9BB0/gUnk_09EF9BC0) into TU animation_resource_bos5_data.c with ordinary .data ownership; bos5.c task_bos_md_fire_0 AnimInit is the direct consumer (rom_data_evidence actor_animation_resources_09EF9BB0)."
   },
   "regions": {
     "us": {
@@ -267,8 +268,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF9BB0",
+          "unit": "animation_resource_bos5_data.c",
+          "section": ".data",
           "address": "0x9ef9bb0",
           "size": 20,
           "sha256": "1b67ac3cdeb21df90e9433fe1c4020e7164a7dff2137193c8d20c3db1f16d30f",
@@ -608,8 +609,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF9BB0",
+          "unit": "animation_resource_bos5_data.c",
+          "section": ".data",
           "address": "0x9ed0f9c",
           "size": 20,
           "sha256": "5a0a70742c888a730d20e91e3a805aefd269a8ee4f04f6d5bf5561bb468aacf4",
@@ -949,8 +950,8 @@
           ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF9BB0",
+          "unit": "animation_resource_bos5_data.c",
+          "section": ".data",
           "address": "0x9f8581c",
           "size": 20,
           "sha256": "c9c2f025e59175a671867429c9a3b0fdf7368eb8f4e73a5ef8e03ad8ea33a4ee",

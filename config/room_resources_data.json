@@ -3,14 +3,15 @@
   "provenance": {
     "runtime_roots": "RoomTableEntry[6] supplies both index bases and graphics counts8,6,7,7,1,1 to room.c AnimInit/GetMaxSpriteTileBytes. The following native complete AnimHeader-pointer runs have counts3,2,2,2,1,1; room.c separately roots9728/9738 with count4. WarpDef records and mode_ms2 AnimInit independently root the20-sprite/four-animation family plus two single-sprite/single-animation families; mode_ms2 selects animation3 and0. Other direct AnimInit pairs occur in mode_worldinspect,mode_mapinspect,mode_worldwarp,mode_ms and mode_ms2. bos5 directly indexes9740 and all five9770 graphics using bounded angle buckets. ms task_ms_shop_hosi progresses its graphics index0..5, proving six9A4C entries independently of the neighboring one-frame animation. Typed RoomTableEntry,WarpGfx and MdHahenWork fields preserve their actual pointer-array or Sprite-pointer roles.",
     "dormant_indexes": "Pairs without direct consumers are dormant native resource indexes, not claimed reachable code. Every pointer independently resolves to a complete self-counted Sprite or AnimHeader stream, in all three native layouts. Each maximal sprite-pointer run ends at a complete animation-pointer run; all animation gfxIndex values are bounded by the preceding sprite run. Graphics array bounds come from max(gfxIndex)+1, except the independently consumed five9770 and six9A4C entries. Physically trailing sprite pointers without proven indexed access are separate neutral scalar objects: six words in US/JP and30 in EU. The14 pairs between the independently owned9BC0 and9C34 objects each contain one Sprite pointer and one single-frame AnimHeader pointer; these are not28 animation pointers. Their Sprite targets also occur in existing WorldinspectMsg records, but that does not establish a runtime consumer of these dormant index pairs.",
-    "regional_correspondence": "First-six native roots, existing adjacent owner endpoints, complete target payloads and preserved within-pair record identities establish75 US/JP families plus20 independently partitioned EU localized insertions. JP families12 and15 and EU family41 retain native resource content; no claim of byte-identical localized assets. Fourteen following pairs agree structurally in every region. Seven stale EU Sprite ledger guesses are replaced by complete native targets; their existing bos5/mode_ms2 consumers already select native EU aliases or language wrappers under VERSION_EU, so no active raw reference is redirected. Every encoded asset binding has its full format extent and SHA256, independently validated by regional_data. These encoded resources remain excluded assets; only real pointer arrays/scalars gain C ownership."
+    "regional_correspondence": "First-six native roots, existing adjacent owner endpoints, complete target payloads and preserved within-pair record identities establish75 US/JP families plus20 independently partitioned EU localized insertions. JP families12 and15 and EU family41 retain native resource content; no claim of byte-identical localized assets. Fourteen following pairs agree structurally in every region. Seven stale EU Sprite ledger guesses are replaced by complete native targets; their existing bos5/mode_ms2 consumers already select native EU aliases or language wrappers under VERSION_EU, so no active raw reference is redirected. Every encoded asset binding has its full format extent and SHA256, independently validated by regional_data. These encoded resources remain excluded assets; only real pointer arrays/scalars gain C ownership.",
+    "native_room_and_worldinspect_resources": "Split forced .data_room_resources and .data_worldinspect_resources out of animation_resource_data.c into room_resources_data.c and worldinspect_resources_data.c with ordinary .data ownership; source order matches ROM. Room tables are consumed via RoomTableEntry/room.c; worldinspect tables via mode_worldinspect AnimInit roots (see runtime_roots)."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_room_resources",
+          "unit": "room_resources_data.c",
+          "section": ".data",
           "address": "0x9ef9684",
           "size": 1324,
           "objects": [
@@ -798,8 +799,8 @@
           "sha256": "66d1e00c07c433047d47f0c39a418b2a257446a4014759ed34a311a50b12c9b0"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_worldinspect_resources",
+          "unit": "worldinspect_resources_data.c",
+          "section": ".data",
           "address": "0x9ef9bc4",
           "size": 112,
           "objects": [
@@ -3466,8 +3467,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_room_resources",
+          "unit": "room_resources_data.c",
+          "section": ".data",
           "address": "0x9ed0a70",
           "size": 1324,
           "objects": [
@@ -4255,8 +4256,8 @@
           "sha256": "bb95d369da24e4b39c0461a65ec266b05c7c4a824f06d0c8077b7027d3290360"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_worldinspect_resources",
+          "unit": "worldinspect_resources_data.c",
+          "section": ".data",
           "address": "0x9ed0fb0",
           "size": 112,
           "objects": [
@@ -6923,8 +6924,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_room_resources",
+          "unit": "room_resources_data.c",
+          "section": ".data",
           "address": "0x9f85100",
           "size": 1820,
           "objects": [
@@ -8032,8 +8033,8 @@
           "sha256": "c10fbc8b0201bb8665bf04f04724e10c45b04fefc62792b268b0120c99abcb7a"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_worldinspect_resources",
+          "unit": "worldinspect_resources_data.c",
+          "section": ".data",
           "address": "0x9f85830",
           "size": 112,
           "objects": [
