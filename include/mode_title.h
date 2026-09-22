@@ -4,7 +4,6 @@
 
 #include "actor_ui_resource_data.h"
 
-#include "title_background_state.h"
 
 #include "card_api.h"
 
@@ -61,5 +60,9 @@ void func_080D5A4C(u16 a);
 void func_080D5B04(void);
 void func_080D5B30(void);
 void func_080D59B4(void);
+
+extern s32 gTitleBgScale;
+extern s32 gTitleBgX;
+extern s32 gTitleBgY;
 
 #endif /* GUARD_MODE_TITLE_H */

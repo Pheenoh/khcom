@@ -1,9 +1,14 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "title_api.h"
 #include "map_api.h"
 #include "task.h"
 #include "system_state.h"
 #include "mode_title.h"
+
+s32 gTitleBgScale EWRAM_COMMON(4);
+s32 gTitleBgX EWRAM_COMMON(4);
+s32 gTitleBgY EWRAM_COMMON(4);
 
 u32 gUnk_02034E98;
 u32 gUnk_02034E9C;

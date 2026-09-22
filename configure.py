@@ -87,7 +87,7 @@ EWRAM_COMMON_ORDER = [
     ("src/poo.o", ".ewram_common.*"),
     ("src/mode_allmap.o", ".ewram_common.*"),
     ("src/allmap.o", ".ewram_common.*"),
-    ("src/title_background_state.o", ".bss"),
+    ("src/mode_title.o", ".ewram_common.*"),
     ("src/status.o", ".ewram_common.*"),
     ("src/boss_status_state.o", ".bss"),
     ("src/bos4.o", ".ewram_common.*"),
