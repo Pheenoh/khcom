@@ -10,7 +10,7 @@
       "placements": [
         {
           "unit": "map_spawn_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9857b44",
           "size": 1948,
           "sha256": "f7ed37604ed627d7269887b2e7c5eabef2ce7e031625f658abe65fee64524798",
@@ -210,7 +210,7 @@
       "placements": [
         {
           "unit": "map_spawn_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x980c658",
           "size": 1948,
           "sha256": "f7ed37604ed627d7269887b2e7c5eabef2ce7e031625f658abe65fee64524798",
@@ -410,7 +410,7 @@
       "placements": [
         {
           "unit": "map_spawn_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9834530",
           "size": 1948,
           "sha256": "f7ed37604ed627d7269887b2e7c5eabef2ce7e031625f658abe65fee64524798",

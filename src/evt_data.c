@@ -2,7 +2,7 @@
 #include "mode_chkobj_assets.h"
 #include "evt_assets.h"
 
-EvtAnimDef gUnk_08135EFC[500] = {
+const EvtAnimDef gUnk_08135EFC[500] = {
     { gUnk_09EEF89C, gUnk_09EEF8C0, gUnk_092EB78A },
     { gUnk_09EF0F2C, gUnk_09EF0F5C, gUnk_093EC8A4 },
     { gUnk_09EF0ED8, gUnk_09EF0EF0, gUnk_093EB4CC },
@@ -505,7 +505,7 @@ EvtAnimDef gUnk_08135EFC[500] = {
     { gUnk_09EEF4B8, gUnk_09EEF4E0, gUnk_092B769C },
 };
 
-EvtObjAnim gUnk_0813766C[931] = {
+const EvtObjAnim gUnk_0813766C[931] = {
     { &gUnk_08135EFC[11], { 0 }, 0, 0 },
     { &gUnk_08135EFC[10], { 0 }, 0, 0 },
     { &gUnk_08135EFC[13], { 0 }, 0, 0 },
@@ -1439,7 +1439,7 @@ EvtObjAnim gUnk_0813766C[931] = {
     { &gUnk_08135EFC[7], { 0 }, 6, 1 },
 };
 
-EvtObjResTable gUnk_0813B09C[94] = {
+const EvtObjResTable gUnk_0813B09C[94] = {
     { { 40, { 0 }, gUnk_08F683A4 }, { 0 } },
     { { 26, { 0 }, gUnk_09617C58 }, { 0 } },
     { { 65, { 0 }, gUnk_08F68384 }, { 0 } },

@@ -16,7 +16,7 @@ typedef struct UnkStruct_08F7CBA8 {
     u16 unk_0E;
 } UnkStruct_08F7CBA8;
 
-extern UnkStruct_08F7CBA8 gUnk_08F7CBA8[];
-extern SpriteFrameResourceDef gUnk_08F7CF18[];
+extern const UnkStruct_08F7CBA8 gUnk_08F7CBA8[];
+extern const SpriteFrameResourceDef gUnk_08F7CF18[];
 
 #endif

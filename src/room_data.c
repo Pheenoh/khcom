@@ -2,11 +2,11 @@
 #include "room_data.h"
 #include "room_record_assets.h"
 
-EmyKind gUnk_09991F44 =
+const EmyKind gUnk_09991F44 =
 {32, 100, 16, 16, 0, 100, 1}
 ;
 
-RoomTableEntry gUnk_09991F54[6] = {
+const RoomTableEntry gUnk_09991F54[6] = {
 #if defined(VERSION_US)
     {256, 0, 0, -15872, 0, 0, gRoomAssetUs_099939FA, gUnk_09EF96A4, gUnk_09EF9684, 8, 0},
     {256, -2560, 2048, -25088, 0, 0, gRoomAssetUs_09995E9C, gUnk_09EF96C8, gUnk_09EF96B0, 6, 0},
@@ -31,7 +31,7 @@ RoomTableEntry gUnk_09991F54[6] = {
 #endif
 };
 
-BosMapConfig gUnk_0999202C =
+const BosMapConfig gUnk_0999202C =
 #if defined(VERSION_US)
 {gRoomAssetUs_099A899C, 16352, 0, gRoomAssetUs_09A3C75C, 320, 0, {gRoomAssetUs_09A1E0DC, gRoomAssetUs_09A1F0DC, gRoomAssetUs_09A1E8DC, gRoomAssetUs_09A1F8DC}}
 #elif defined(VERSION_JP)
@@ -41,7 +41,7 @@ BosMapConfig gUnk_0999202C =
 #endif
 ;
 
-s32 gUnk_0999204C[32] = {
+const s32 gUnk_0999204C[32] = {
     6,
     12,
     18,

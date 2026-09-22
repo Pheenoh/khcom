@@ -36,7 +36,7 @@
         },
         {
           "unit": "map_room_0984D2D8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x984d2d8",
           "size": 60,
           "sha256": "ff99d55ea410ad05b338550e94552d3c9b810396a753fd5f775c29a1101de672",
@@ -50,7 +50,7 @@
         },
         {
           "unit": "map_room_0984DFD8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x984dfd8",
           "size": 60,
           "sha256": "2ff499192cba61492ee30283339a8892bbbbf6dfa38947985621d0bd8d63bb70",
@@ -64,7 +64,7 @@
         },
         {
           "unit": "map_room_0984E734_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x984e734",
           "size": 60,
           "sha256": "004cc5ca4e7bd8d36685a58d74a28436eddab38ea3f6d51fbe340b98b3b1176a",
@@ -78,7 +78,7 @@
         },
         {
           "unit": "map_room_09850428_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9850428",
           "size": 60,
           "sha256": "c14d0d7b39f52b6a365f9e0d73643bba2640a42de4f7375fcec3482266740156",
@@ -106,7 +106,7 @@
         },
         {
           "unit": "map_room_098535BC_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x98535bc",
           "size": 60,
           "sha256": "cb841c428183172b8298fb481f332eafd8a1f553ce65c7d4f0fb1ce7395cbf86",
@@ -120,7 +120,7 @@
         },
         {
           "unit": "map_room_0985221C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x985221c",
           "size": 60,
           "sha256": "a6d2b4d67406c9effe10c7a121fcfa62e135aaa7b3a6477a2b1ac343c60527b3",
@@ -134,7 +134,7 @@
         },
         {
           "unit": "map_room_09854258_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9854258",
           "size": 60,
           "sha256": "5ba32b2e3ddc7834673d38fb5841ce050a2dfa7bf2cbdc4f41f3120141840e6a",
@@ -148,7 +148,7 @@
         },
         {
           "unit": "map_room_09852F4C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9852f4c",
           "size": 60,
           "sha256": "1057e98a0921a25ac0af63d4b0214551d699725251719de7734e98059b4b885d",
@@ -162,7 +162,7 @@
         },
         {
           "unit": "map_room_09850DF4_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9850df4",
           "size": 60,
           "sha256": "49fb72f5d182f674cf7fb5ba777074d29807b5866f545dbadcb1e14e6f22b25a",
@@ -190,7 +190,7 @@
         },
         {
           "unit": "map_room_098552E8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x98552e8",
           "size": 60,
           "sha256": "093df242e555df090f4af47319bbdd2b9120f81a7efad06b7021864e428149a3",
@@ -204,7 +204,7 @@
         },
         {
           "unit": "map_room_0984F694_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x984f694",
           "size": 60,
           "sha256": "d9261a22354d543d877d6e9896f7db51081a6f1b32ba1a3e5a969fea9c1f00af",
@@ -236,7 +236,7 @@
         },
         {
           "unit": "map_room_0984D2D8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9801dec",
           "size": 60,
           "sha256": "ccf8fa12718fb5abb536cab4b8ba35e583c00fcd1bac71d0630bf5c3cafa2be3",
@@ -250,7 +250,7 @@
         },
         {
           "unit": "map_room_0984DFD8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9802aec",
           "size": 60,
           "sha256": "e6c2ee905bd41f0a231b439bb804ac1fb9352d13e14a9a848b3184c4266fbb8f",
@@ -264,7 +264,7 @@
         },
         {
           "unit": "map_room_0984E734_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9803248",
           "size": 60,
           "sha256": "13143e70bd9ee3f651b6763dcd9ea53a17ad5b3a3deda000594057f79ffaec5f",
@@ -278,7 +278,7 @@
         },
         {
           "unit": "map_room_09850428_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9804f3c",
           "size": 60,
           "sha256": "0b66141837cd91fc565a99343f451f8c9274da215f8329a798c48278c0a7f527",
@@ -306,7 +306,7 @@
         },
         {
           "unit": "map_room_098535BC_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x98080d0",
           "size": 60,
           "sha256": "ac8cf4bbf9f9e3ea010afb35354653089ad6f06684b8347d24e35c7d69e62d58",
@@ -320,7 +320,7 @@
         },
         {
           "unit": "map_room_0985221C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9806d30",
           "size": 60,
           "sha256": "69439e7378b6fc219d0e91609acc1c73747e8c4648d1c838bdf37077cc4ef37d",
@@ -334,7 +334,7 @@
         },
         {
           "unit": "map_room_09854258_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9808d6c",
           "size": 60,
           "sha256": "5619dfec5ba0df8413964621254c450086bbf5621d6cea7c8a3a475659dbb374",
@@ -348,7 +348,7 @@
         },
         {
           "unit": "map_room_09852F4C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9807a60",
           "size": 60,
           "sha256": "ca45df95cc77770000edfa39130204a790c8a15b8d469abb53514d6fc385915c",
@@ -362,7 +362,7 @@
         },
         {
           "unit": "map_room_09850DF4_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9805908",
           "size": 60,
           "sha256": "7a485a35c90d6c089470edbcc21925bec1b2d81adfa91af7e827a0eff0dbe4f5",
@@ -390,7 +390,7 @@
         },
         {
           "unit": "map_room_098552E8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9809dfc",
           "size": 60,
           "sha256": "d592dd9694a203214649bd7a87aabf0b4408bbc03d84a7013607665b009bde35",
@@ -404,7 +404,7 @@
         },
         {
           "unit": "map_room_0984F694_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x98041a8",
           "size": 60,
           "sha256": "5ad75004e00652cac0e01962e71cc6a32ce36be0a97ca7761f77ce30bcd41d81",
@@ -436,7 +436,7 @@
         },
         {
           "unit": "map_room_0984D2D8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9829cac",
           "size": 60,
           "sha256": "62742980630b20bcafbd08a1ff48a0e1c429d33d65fc047ca4a6b058ee34e78a",
@@ -450,7 +450,7 @@
         },
         {
           "unit": "map_room_0984DFD8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982a9ac",
           "size": 60,
           "sha256": "7152776bc16efbee04b0a66da12abdb1dc5c36618afbff59dbb0f2a6a8ba3081",
@@ -464,7 +464,7 @@
         },
         {
           "unit": "map_room_0984E734_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982b108",
           "size": 60,
           "sha256": "4c50faa99c63738fc76d14991a224453e48a37cdaf5216937c199c2109a27fe3",
@@ -478,7 +478,7 @@
         },
         {
           "unit": "map_room_09850428_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982cdfc",
           "size": 60,
           "sha256": "5f299a1875598e05ebe69baf8638ca8207091290195dd6c1a529bf9a06ede222",
@@ -506,7 +506,7 @@
         },
         {
           "unit": "map_room_098535BC_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982ff90",
           "size": 60,
           "sha256": "f954202da5339f31c4d9fd39d266210716f087bf5d7f2b9bdd770d10e264974c",
@@ -520,7 +520,7 @@
         },
         {
           "unit": "map_room_0985221C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982ebf0",
           "size": 60,
           "sha256": "055d259e496dd564d597212c8f73a5ff9e2839eed2ffb27e137262486c3f8211",
@@ -534,7 +534,7 @@
         },
         {
           "unit": "map_room_09854258_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9830c2c",
           "size": 60,
           "sha256": "6f995588959647b0754c5c9904d8e5c1c8ed0eb1251e822a4f1a34df44d7b54e",
@@ -548,7 +548,7 @@
         },
         {
           "unit": "map_room_09852F4C_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982f920",
           "size": 60,
           "sha256": "baa0495546e934e154bac8e4477ffb7974fa8d99bdbecde0d04013b383d3a5b7",
@@ -562,7 +562,7 @@
         },
         {
           "unit": "map_room_09850DF4_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982d7c8",
           "size": 60,
           "sha256": "f3ec8c3c3e2779358de21cc1571f61709c814f93761151071167bb8f7a5d70c1",
@@ -590,7 +590,7 @@
         },
         {
           "unit": "map_room_098552E8_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9831cbc",
           "size": 60,
           "sha256": "fe78be86fbd64c6300970b86b8256c4f3c0dbc778167b40ebc4c2d9c03a1886f",
@@ -604,7 +604,7 @@
         },
         {
           "unit": "map_room_0984F694_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x982c068",
           "size": 60,
           "sha256": "4723e361a6dccb280b987af2ee31c0af670a84568f87c5dc070519984d8ebeb8",

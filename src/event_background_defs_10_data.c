@@ -8,7 +8,7 @@ extern const void* gUnk_09EE35CC[];
 extern const void* gUnk_09EE35DC[];
 extern const void* gUnk_09EE35EC[];
 
-EventBackgroundDef gUnk_08F7F16C = {
+const EventBackgroundDef gUnk_08F7F16C = {
     gUnk_0992FF64,
     0,
     gUnk_09990F44,
@@ -33,7 +33,7 @@ EventBackgroundDef gUnk_08F7F16C = {
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F19C = {
+const EventBackgroundDef gUnk_08F7F19C = {
     gUnk_094DB238,
     0,
     gUnk_09617578,
@@ -62,7 +62,7 @@ EventBackgroundDef gUnk_08F7F19C = {
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F1CC = {
+const EventBackgroundDef gUnk_08F7F1CC = {
     gUnk_094E1138,
     0,
     gUnk_09617758,

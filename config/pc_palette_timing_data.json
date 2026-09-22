@@ -9,7 +9,7 @@
       "placements": [
         {
           "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9a4cabe",
           "size": 12,
           "objects": [
@@ -32,7 +32,7 @@
       "placements": [
         {
           "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9a01546",
           "size": 12,
           "objects": [
@@ -55,7 +55,7 @@
       "placements": [
         {
           "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9aaa582",
           "size": 12,
           "objects": [

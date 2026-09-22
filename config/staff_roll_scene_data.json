@@ -11,7 +11,7 @@
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9a538d8",
           "size": 2288,
           "sha256": "5de00d82727c5866a26d083afb3c907aa502456a112e227bf11fd269e8afa87a",
@@ -42,7 +42,7 @@
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9a08768",
           "size": 2288,
           "sha256": "a16e5dd0664bcdeab29c3d94d034f3e399609381484d17e97ba38284277070dd",
@@ -73,7 +73,7 @@
       "placements": [
         {
           "unit": "staff_roll_scene_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9ab1610",
           "size": 2288,
           "sha256": "362224a6f2e95a38e8e2f51c8939323b544d46911b26e8d2238e2cd69075b07d",

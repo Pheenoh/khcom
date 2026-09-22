@@ -1,7 +1,7 @@
 #include "event_background_data.h"
 #include "event_background_assets.h"
 
-EventBackgroundDef gUnk_08F7E0EC = {
+const EventBackgroundDef gUnk_08F7E0EC = {
     gUnk_097A2ED8,
     gUnk_097AAED8,
     gUnk_09849898,
@@ -22,7 +22,7 @@ EventBackgroundDef gUnk_08F7E0EC = {
     { 0, 0 },
 };
 
-EventBackgroundDef gUnk_08F7E11C = {
+const EventBackgroundDef gUnk_08F7E11C = {
     gUnk_097A2ED8,
     gUnk_097AAED8,
     gUnk_09849898,
@@ -43,7 +43,7 @@ EventBackgroundDef gUnk_08F7E11C = {
     { 0, 0 },
 };
 
-EventBackgroundDef gUnk_08F7E14C = {
+const EventBackgroundDef gUnk_08F7E14C = {
     gUnk_097A2ED8,
     gUnk_097AAED8,
     gUnk_09849898,

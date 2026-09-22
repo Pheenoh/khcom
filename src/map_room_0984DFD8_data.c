@@ -2,7 +2,7 @@
 #include "map_room_data.h"
 #include "map_room_assets.h"
 
-UnkStruct_09EF70D0 gUnk_0984DFD8 = {
+const UnkStruct_09EF70D0 gUnk_0984DFD8 = {
     gUnk_0998FFA4,
     352, { 0, 0 },
     gUnk_098B3A44,

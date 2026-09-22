@@ -3,7 +3,7 @@
 
 extern const void* gUnk_09EE3814[];
 
-EventBackgroundDef gUnk_08F7F598 = {
+const EventBackgroundDef gUnk_08F7F598 = {
     gUnk_094FB098,
     0,
     gUnk_09617C18,
@@ -32,7 +32,7 @@ EventBackgroundDef gUnk_08F7F598 = {
 #endif
 };
 
-EventBackgroundDef gUnk_08F7F5C8 = {
+const EventBackgroundDef gUnk_08F7F5C8 = {
     gUnk_094FB098,
     0,
     gUnk_09617BB8,

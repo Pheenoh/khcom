@@ -9,7 +9,7 @@
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9991f44",
           "size": 392,
           "sha256": "c6ec823d321a1d2e5d68edd86bbb8edac494651d00ae3ca4c21db56c0973adbb",
@@ -42,7 +42,7 @@
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x9946a58",
           "size": 392,
           "sha256": "427d40a6c07bcabac052f557f982480ca05506a3ef228be8bbeb0a68b16389d9",
@@ -75,7 +75,7 @@
       "placements": [
         {
           "unit": "room_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x99981b4",
           "size": 392,
           "sha256": "9b437c96017da0ef47125e71fb92e2ccb8fd48dcb7bac682062af4ef3f0ff516",

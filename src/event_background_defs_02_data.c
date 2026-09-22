@@ -5,7 +5,7 @@ extern const void* gUnk_09EE2AA8[];
 extern const void* gUnk_09EE2AE8[];
 extern const void* gUnk_09EE2B68[];
 
-EventBackgroundDef gUnk_08F7DC90 = {
+const EventBackgroundDef gUnk_08F7DC90 = {
     gUnk_09461018,
     0,
     gUnk_09615698,
@@ -34,7 +34,7 @@ EventBackgroundDef gUnk_08F7DC90 = {
 #endif
 };
 
-EventBackgroundDef gUnk_08F7DCC0 = {
+const EventBackgroundDef gUnk_08F7DCC0 = {
 #ifdef VERSION_EU
     gUnkEu_08F7042C,
 #else

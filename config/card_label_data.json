@@ -10,7 +10,7 @@
       "placements": [
         {
           "unit": "card_label_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x8f7cba8",
           "size": 2152,
           "sha256": "960bcdf81fc5da30d479322c07cedef53fac1c79ea38f3db3193701494a4b37c",
@@ -33,7 +33,7 @@
       "placements": [
         {
           "unit": "card_label_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x8f700b0",
           "size": 2152,
           "sha256": "91eb71cf33e8fcef2828a2992068f46fcbeaca959cd8a1195e6a62128819caeb",
@@ -56,7 +56,7 @@
       "placements": [
         {
           "unit": "card_label_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x8f8db80",
           "size": 1932,
           "sha256": "6f0374e96ebf4219daf8526ec13ef451344e247eb0bf73cf0f52b4bf128dcff0",

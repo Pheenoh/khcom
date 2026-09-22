@@ -20,9 +20,9 @@ typedef struct RoomTableEntry {
     u16 unk_22;
 } RoomTableEntry;
 
-extern EmyKind gUnk_09991F44;
-extern RoomTableEntry gUnk_09991F54[];
-extern BosMapConfig gUnk_0999202C;
-extern s32 gUnk_0999204C[];
+extern const EmyKind gUnk_09991F44;
+extern const RoomTableEntry gUnk_09991F54[];
+extern const BosMapConfig gUnk_0999202C;
+extern const s32 gUnk_0999204C[];
 
 #endif
