@@ -18,7 +18,8 @@
     "native_animation_resource_e588": "The gUnk_09EEE588 animation-resource pointer cluster is a contiguous 2224-byte initialized-data run with matching source order; split into TU animation_resource_evt_data.c for ordinary .data ownership.",
     "native_animation_resource_17c0": "The gUnk_09EE17C0 animation-resource pointer cluster is a contiguous 2000-byte initialized-data run with matching source order; split into TU animation_resource_hum_data.c for ordinary .data ownership.",
     "native_animation_resource_bos5_9bb0": "Split contiguous forced section .data_09EF9BB0 (gUnk_09EF9BB0/gUnk_09EF9BC0) into TU animation_resource_bos5_data.c with ordinary .data ownership; bos5.c AnimInit is the direct consumer.",
-    "native_animation_resource_pooh_boss_leftovers": "Split pooh/boss leftover forced sections into content-named native TUs; see pooh_resources_data.json."
+    "native_animation_resource_pooh_boss_leftovers": "Split pooh/boss leftover forced sections into content-named native TUs; see pooh_resources_data.json.",
+    "native_boss_sprite_leftovers": "Split contiguous forced boss_sprite_data.json islands from animation_resource_data.c into content-named native .data TUs: boss_tm_body (.data_09EF3950), boss_tm_foot (.data_09EF39BC), boss_tm_walk (.data_09EF3A1C), bos2_dsd_ita (.data_09EF3BF8), bos2_dsd_circle (.data_09EF3C50); consumers are task_bos_tm_body_*/foot_0 and task_bos_dsd_ita_0/circle_0."
   },
   "regions": {
     "us": {
