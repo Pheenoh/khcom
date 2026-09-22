@@ -1069,12 +1069,15 @@ extern const PooPalStep gUnk_096FDB40[];
 
 
 
-extern u8 gUnk_096FD3E8[];
+extern const UnkStruct_096FE034Entry gUnk_096FD3C8[4];
+extern const UnkStruct_096FE034Entry gUnk_096FD3D8[4];
+extern const UnkStruct_096FE034 gUnk_096FD3E8;
 extern const s32 gUnk_096FD43C[];
 extern u8 gUnk_097561D4[];
 extern u8 gUnk_09755F34[];
 extern const PooAnimDesc gUnk_096FD47C[];
-extern const PooAnimDesc gUnk_096FCF54[][5];
+extern const PooAnimDesc gUnk_096FCF54[11][5];
+extern const u16 gUnk_096FD2C4[8];
 extern const PooAnimDesc gUnk_096FD59C[];
 extern u8 gUnk_097565FC[];
 extern u8 gUnk_097565E8[];
@@ -1134,9 +1137,36 @@ extern u8 gUnk_09760986[];
 extern u8 gUnk_09849E58[];
 extern u8 gUnk_08B22BBC[];
 extern const PooHitBox gUnk_096FC010;
-extern const PooSpawn gUnk_096FC6F8[];
+extern const PooSpawn gUnk_096FC6F8[85];
+extern u8 gUnk_097A2ED8[];
+extern u8 gUnk_097AAED8[];
+extern u8 gUnk_09849898[];
+extern u8 gUnk_09742FD8[];
+extern u8 gUnk_097430EC[];
+extern u8 gUnk_09743262[];
+extern u8 gUnk_09743ADA[];
+extern u8 gUnk_09760D00[];
+extern u8 gUnk_09761824[];
+extern u8 gUnk_09762542[];
+extern u8 gUnk_097634D0[];
+extern u8 gUnk_09763B54[];
+extern u8 gUnk_09764BB8[];
+extern u8 gUnk_09765012[];
+extern u8 gUnk_0976626E[];
+extern u8 gUnk_09767562[];
+extern u8 gUnk_09769416[];
+extern u8 gUnk_097B4578[];
+extern u8 gUnk_097B5418[];
+extern u8 gUnk_09849E78[];
+extern u8 gUnk_09849E98[];
+extern u8 gUnk_09849EB8[];
+extern u8 gUnk_09849ED8[];
+extern u8 gUnk_09849EF8[];
+extern u8 gUnk_09849F18[];
+extern u8 gUnk_09849F38[];
+extern u8 gUnk_09849F58[];
 extern const s32 gUnk_096FD61C[];
-extern s32 gUnk_096FD5FC[];
+extern const s32 gUnk_096FD5FC[8];
 extern const PooGfxDesc gUnk_096FD5DC[];
 extern const PooGfxDesc gUnk_096FD57C[];
 extern const PooGfxDesc gUnk_096FD4BC[];
@@ -1163,7 +1193,7 @@ extern u8 gUnk_09849A98[];
 extern u8 gUnk_097606E8[];
 extern u8 gUnk_09849E38[];
 extern u8 gUnk_09849BB8[];
-extern u8 gUnk_096FD400[];
+extern const UnkStruct_096FE034 gUnk_096FD400;
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_BG3CNT (*(vu16*)0x0400000C)

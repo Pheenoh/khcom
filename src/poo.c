@@ -7,6 +7,7 @@
 #include "poo_api.h"
 #include "background_actor_assets.h"
 #include "mode_chkobj_assets.h"
+#include "actor_ui_resource_data.h"
 
 u8 gUnk_0203C3D8 EWRAM_COMMON(4);
 s32 gUnk_0203C3DC EWRAM_COMMON(4);
@@ -1735,7 +1736,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     AnimInit((AnimState*)w->unk_08, 0, 0);
     func_080CAA50(w, 0, 1);
     w->gfx = AnimGetGfx((AnimState*)w->unk_08);
-    w->animDesc = gUnk_096FCF54[11];
+    w->animDesc = (const PooAnimDesc*)gUnk_096FD2C4;
     TaskPoolInit(&w->tasks, 2);
     gUnk_02039BA0 = EwramAlloc(0xE8);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, a);
@@ -3230,8 +3231,8 @@ void task_poo_honey_3(PooHoneyWork* w) {
 }
 
 void task_poo_mapanime_0(PooMapAnimeWork* w) {
-    func_080DDDDC(&w->unk_00[0], gUnk_096FD3E8);
-    func_080DDDDC(&w->unk_00[1], gUnk_096FD400);
+    func_080DDDDC(&w->unk_00[0], &gUnk_096FD3E8);
+    func_080DDDDC(&w->unk_00[1], &gUnk_096FD400);
 }
 
 u8 task_poo_mapanime_1(PooMapAnimeWork* w) {
@@ -7101,7 +7102,197 @@ void func_080D313C(void) {
     RequestDma3Copy(src, dst, 10);
 }
 
-const char gTaskNamePooPooh[] __attribute__((section(".rodata_registration_name_gTaskDescPooPooh"), aligned(1))) = "task_poo_pooh";
+const char gTaskNamePooPooh[] = "task_poo_pooh";
+
+const PooMapBgDesc gUnk_096FC6E0 = {
+    gUnk_097A2ED8, 32768, 0, gUnk_09849898, 512, 0, gUnk_097AAED8, 16032, 16, 9
+};
+
+const PooSpawn gUnk_096FC6F8[85] = {
+    { 130816, 99328, &gUnk_09EF49D0 },
+    { 223232, 130304, &gUnk_09EF49A0 },
+    { 229888, 153088, &gUnk_09EF49A0 },
+    { 251392, 143104, &gUnk_09EF48F8 },
+    { 242688, 159488, &gUnk_09EF48E0 },
+    { 263936, 162816, &gUnk_09EF49D0 },
+    { 279040, 175104, &gUnk_09EF48E0 },
+    { 304896, 167424, &gUnk_09EF48E0 },
+    { 301824, 182784, &gUnk_09EF49A0 },
+    { 444672, 238848, &gUnk_09EF4A18 },
+    { 411904, 238848, &gUnk_09EF4A18 },
+    { 428288, 247040, &gUnk_09EF4A18 },
+    { 428288, 230656, &gUnk_09EF4A18 },
+    { 440576, 231680, &gUnk_09EF4B38 },
+    { 407040, 218624, &gUnk_09EF49D0 },
+    { 463104, 266496, &gUnk_09EF48E0 },
+    { 476672, 251136, &gUnk_09EF48F8 },
+    { 502272, 262912, &gUnk_09EF48E0 },
+    { 489216, 277504, &gUnk_09EF48F8 },
+    { 484096, 265472, &gUnk_09EF49A0 },
+    { 518400, 271616, &gUnk_09EF49D0 },
+    { 648960, 335616, &gUnk_09EF49D0 },
+    { 602624, 320256, &gUnk_09EF4A30 },
+    { 584192, 320256, &gUnk_09EF4A30 },
+    { 593408, 315648, &gUnk_09EF4A30 },
+    { 593408, 324864, &gUnk_09EF4A30 },
+    { 602624, 315136, &gUnk_09EF4B38 },
+    { 585984, 305920, &gUnk_09EF4A30 },
+    { 573440, 329472, &gUnk_09EF4A30 },
+    { 566016, 325376, &gUnk_09EF4A30 },
+    { 617728, 319488, &gUnk_09EF4A30 },
+    { 282624, 150272, &gTaskDescPooLeaf },
+    { 512000, 285440, &gTaskDescPooLeaf },
+    { 159744, 102400, &gTaskDescPooTanpopo },
+    { 194560, 114688, &gTaskDescPooTanpopo },
+    { 200704, 118784, &gTaskDescPooButterfly },
+    { 167936, 120832, &gTaskDescPooTanpopo },
+    { 174080, 124928, &gUnk_09EF4CF0 },
+    { 198656, 133120, &gTaskDescPooTanpopo },
+    { 323584, 167936, &gTaskDescPooTanpopo },
+    { 313344, 180224, &gTaskDescPooTanpopo },
+    { 323584, 192512, &gTaskDescPooTanpopo },
+    { 333824, 182272, &gTaskDescPooTanpopo },
+    { 339968, 186368, &gUnk_09EF4CF0 },
+    { 350208, 182272, &gTaskDescPooTanpopo },
+    { 337920, 190464, &gTaskDescPooTanpopo },
+    { 358400, 190464, &gTaskDescPooTanpopo },
+    { 301056, 196608, &gTaskDescPooTanpopo },
+    { 325632, 212992, &gTaskDescPooTanpopo },
+    { 350208, 198656, &gTaskDescPooTanpopo },
+    { 374784, 200704, &gTaskDescPooTanpopo },
+    { 362496, 204800, &gTaskDescPooTanpopo },
+    { 382976, 210944, &gTaskDescPooTanpopo },
+    { 370688, 212992, &gTaskDescPooTanpopo },
+    { 391168, 219136, &gTaskDescPooTanpopo },
+    { 374784, 221184, &gTaskDescPooTanpopo },
+    { 358400, 225280, &gTaskDescPooTanpopo },
+    { 387072, 229376, &gTaskDescPooTanpopo },
+    { 374784, 233472, &gTaskDescPooTanpopo },
+    { 391168, 241664, &gTaskDescPooTanpopo },
+    { 395264, 204800, &gTaskDescPooTanpopo },
+    { 405504, 221184, &gTaskDescPooTanpopo },
+    { 403456, 247808, &gTaskDescPooTanpopo },
+    { 313344, 200704, &gTaskDescPooTanpopo },
+    { 325632, 202752, &gTaskDescPooTanpopo },
+    { 337920, 198656, &gTaskDescPooTanpopo },
+    { 344064, 206848, &gTaskDescPooTanpopo },
+    { 350208, 210944, &gUnk_09EF4D08 },
+    { 356352, 212992, &gTaskDescPooTanpopo },
+    { 342016, 215040, &gTaskDescPooTanpopo },
+    { 79872, 38912, &gUnk_09EF4D38 },
+    { 153600, 75776, &gUnk_09EF4D38 },
+    { 559104, 278528, &gUnk_09EF4D38 },
+    { 632832, 315392, &gUnk_09EF4D38 },
+    { 706560, 352256, &gUnk_09EF4D38 },
+    { 780288, 389120, &gUnk_09EF4D38 },
+    { 131072, 63488, &gUnk_09EF4D68 },
+    { 278528, 137216, &gUnk_09EF4D68 },
+    { 352256, 174080, &gUnk_09EF4D68 },
+    { 536576, 266240, &gUnk_09EF4D68 },
+    { 610304, 303104, &gUnk_09EF4D68 },
+    { 684032, 339968, &gUnk_09EF4D68 },
+    { 757760, 376832, &gUnk_09EF4D68 },
+    { 794624, 395264, &gUnk_09EF4D68 },
+    { 831488, 413696, &gUnk_09EF4D68 },
+};
+
+const PooStumpDesc gUnk_096FCAF4[12] = {
+    { 611584, 339200, 4, 0 },
+    { 619264, 343296, 3, 0 },
+    { 626944, 347392, 2, 0 },
+    { 634624, 351488, 1, 0 },
+    { 642304, 355584, 2, 0 },
+    { 649984, 359680, 3, 0 },
+    { 657664, 363776, 4, 0 },
+    { 763904, 389632, 0, 0 },
+    { 759552, 398336, 0, 0 },
+    { 754688, 405760, 0, 0 },
+    { 747264, 411904, 0, 0 },
+    { 739072, 416768, 0, 0 },
+};
+
+const PooTileDesc gUnk_096FCB84[80] = {
+    { 106496, 49152, 0x3 },
+    { 180224, 86016, 0x3 },
+    { 327680, 159744, 0x3 },
+    { 512000, 251904, 0x3 },
+    { 585728, 288768, 0x3 },
+    { 659456, 325632, 0x3 },
+    { 770048, 380928, 0x3 },
+    { 217088, 104448, 0x5 },
+    { 253952, 122880, 0x5 },
+    { 290816, 141312, 0x5 },
+    { 364544, 178176, 0x5 },
+    { 401408, 196608, 0x5 },
+    { 438272, 215040, 0x5 },
+    { 475136, 233472, 0x5 },
+    { 548864, 270336, 0x5 },
+    { 622592, 307200, 0x5 },
+    { 696320, 344064, 0x5 },
+    { 806912, 399360, 0x5 },
+    { 131072, 63488, 0x8 },
+    { 204800, 100352, 0x8 },
+    { 278528, 137216, 0x8 },
+    { 389120, 192512, 0x8 },
+    { 352256, 174080, 0x8 },
+    { 462848, 229376, 0x8 },
+    { 536576, 266240, 0x8 },
+    { 610304, 303104, 0x8 },
+    { 684032, 339968, 0x8 },
+    { 757760, 376832, 0x8 },
+    { 794624, 395264, 0x8 },
+    { 831488, 413696, 0x9 },
+    { 94208, 45056, 0x4 },
+    { 167936, 81920, 0x4 },
+    { 241664, 118784, 0x4 },
+    { 315392, 155648, 0x4 },
+    { 425984, 210944, 0x4 },
+    { 499712, 247808, 0x4 },
+    { 647168, 321536, 0x4 },
+    { 720896, 358400, 0x4 },
+    { 116736, 57344, 0x1 },
+    { 227328, 112640, 0x1 },
+    { 301056, 149504, 0x1 },
+    { 337920, 167936, 0x1 },
+    { 374784, 186368, 0x1 },
+    { 485376, 241664, 0x1 },
+    { 522240, 260096, 0x1 },
+    { 595968, 296960, 0x1 },
+    { 669696, 333824, 0x1 },
+    { 743424, 370688, 0x1 },
+    { 817152, 407552, 0x1 },
+    { 120832, 63488, 0x0 },
+    { 194560, 100352, 0x0 },
+    { 305152, 155648, 0x0 },
+    { 342016, 174080, 0x0 },
+    { 378880, 192512, 0x0 },
+    { 526336, 266240, 0x0 },
+    { 600064, 303104, 0x0 },
+    { 673792, 339968, 0x0 },
+    { 747520, 376832, 0x0 },
+    { 153600, 75776, 0x6 },
+    { 190464, 94208, 0x6 },
+    { 264192, 131072, 0x6 },
+    { 411648, 204800, 0x6 },
+    { 448512, 223232, 0x6 },
+    { 559104, 278528, 0x6 },
+    { 632832, 315392, 0x6 },
+    { 706560, 352256, 0x6 },
+    { 780288, 389120, 0x6 },
+    { 79872, 38912, 0x7 },
+    { 83968, 45056, 0x2 },
+    { 157696, 81920, 0x2 },
+    { 231424, 118784, 0x2 },
+    { 268288, 137216, 0x2 },
+    { 415744, 210944, 0x2 },
+    { 452608, 229376, 0x2 },
+    { 489472, 247808, 0x2 },
+    { 563200, 284672, 0x2 },
+    { 636928, 321536, 0x2 },
+    { 710656, 358400, 0x2 },
+    { 784384, 395264, 0x2 },
+    { 821248, 413696, 0x2 },
+};
 
 TaskDesc gTaskDescPooPooh = {
     gTaskNamePooPooh,
@@ -7112,7 +7303,89 @@ TaskDesc gTaskDescPooPooh = {
     0xFC,
 };
 
-const char gTaskNamePooMap[] __attribute__((section(".rodata_registration_name_gTaskDescPooMap"), aligned(1))) = "task_poo_map";
+const char gTaskNamePooMap[] = "task_poo_map";
+
+const PooAnimDesc gUnk_096FCF54[11][5] = {
+    {
+        { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, 0 },
+        { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, 0 },
+        { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, 0 },
+        { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, 0 },
+        { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, 0 },
+    },
+    {
+        { gUnk_09EDED3C, gUnk_09EDED5C, gUnk_088DC192, 0, 0 },
+        { gUnk_09EDE920, gUnk_09EDE940, gUnk_088BAC36, 0, 0 },
+        { gUnk_09EDE9EC, gUnk_09EDEA0C, gUnk_088C1388, 0, 0 },
+        { gUnk_09EDEA70, gUnk_09EDEA90, gUnk_088C5AAA, 0, 0 },
+        { gUnk_09EDEB68, gUnk_09EDEB88, gUnk_088CE0C2, 0, 0 },
+    },
+    {
+        { gUnk_09EDED60, gUnk_09EDED80, gUnk_088DDAF6, 0, 0 },
+        { gUnk_09EDE944, gUnk_09EDE964, gUnk_088BC6DE, 0, 0 },
+        { gUnk_09EDEA10, gUnk_09EDEA30, gUnk_088C2D72, 0, 0 },
+        { gUnk_09EDEA94, gUnk_09EDEAB4, gUnk_088C75A0, 0, 0 },
+        { gUnk_09EDEB8C, gUnk_09EDEBAC, gUnk_088CF9CE, 0, 0 },
+    },
+    {
+        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 0, 0 },
+        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 0, 0 },
+        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 0, 0 },
+        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 0, 0 },
+        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 0, 0 },
+    },
+    {
+        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 1, 0 },
+        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 1, 0 },
+        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 1, 0 },
+        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 1, 0 },
+        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 1, 0 },
+    },
+    {
+        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 2, 0 },
+        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 2, 0 },
+        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 2, 0 },
+        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 2, 0 },
+        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 2, 0 },
+    },
+    {
+        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 3, 0 },
+        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 3, 0 },
+        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 3, 0 },
+        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 3, 0 },
+        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 3, 0 },
+    },
+    {
+        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 4, 0 },
+        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 4, 0 },
+        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 4, 0 },
+        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 4, 0 },
+        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 4, 0 },
+    },
+    {
+        { gUnk_09EDEC38, gUnk_09EDEC44, gUnk_088D5AB0, 2, 0 },
+        { gUnk_09EDECA8, gUnk_09EDECB4, gUnk_088D7CCE, 2, 0 },
+        { gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 2, 0 },
+        { gUnk_09EDEC50, gUnk_09EDEC5C, gUnk_088D5E98, 2, 0 },
+        { gUnk_09EDEC68, gUnk_09EDEC7C, gUnk_088D6282, 2, 0 },
+    },
+    {
+        { gUnk_09EDF360, gUnk_09EDF370, gUnk_0891DFC4, 0, 0 },
+        { gUnk_09EDF34C, gUnk_09EDF35C, gUnk_0891D344, 0, 0 },
+        { gUnk_09EDF308, gUnk_09EDF31C, gUnk_0891A166, 0, 0 },
+        { gUnk_09EDF338, gUnk_09EDF348, gUnk_0891C1E8, 0, 0 },
+        { gUnk_09EDF320, gUnk_09EDF334, gUnk_0891B26C, 0, 0 },
+    },
+    {
+        { gUnk_09EDF090, gUnk_09EDF0A8, gUnk_088FB5F2, 0, 0 },
+        { gUnk_09EDF004, gUnk_09EDF01C, gUnk_088F5298, 0, 0 },
+        { gUnk_09EDF020, gUnk_09EDF03C, gUnk_088F695C, 0, 0 },
+        { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 0, 0 },
+        { gUnk_09EDF074, gUnk_09EDF08C, gUnk_088FA0DA, 0, 0 },
+    },
+};
+
+const u16 gUnk_096FD2C4[8] = { 109, 110, 111, 112, 133, 133, 134, 0 };
 
 TaskDesc gTaskDescPooMap = {
     gTaskNamePooMap,
@@ -7564,7 +7837,7 @@ const u16* gUnk_09EF4688[144] = {
     gUnk_08125E24,
 };
 
-const char gTaskNamePooSora[] __attribute__((section(".rodata_registration_name_gTaskDescPooSora"), aligned(1))) = "task_poo_sora";
+const char gTaskNamePooSora[] = "task_poo_sora";
 
 TaskDesc gTaskDescPooSora = {
     gTaskNamePooSora,
@@ -7575,7 +7848,7 @@ TaskDesc gTaskDescPooSora = {
     0xD0,
 };
 
-const char gTaskName_09EF48E0[] __attribute__((section(".rodata_registration_name_gUnk_09EF48E0"), aligned(1))) = "task_poo_trap";
+const char gTaskName_09EF48E0[] = "task_poo_trap";
 
 TaskDesc gUnk_09EF48E0 = {
     gTaskName_09EF48E0,
@@ -7586,7 +7859,7 @@ TaskDesc gUnk_09EF48E0 = {
     0xB0,
 };
 
-const char gTaskName_09EF48F8[] __attribute__((section(".rodata_registration_name_gUnk_09EF48F8"), aligned(1))) = "task_poo_pitAndButterfly";
+const char gTaskName_09EF48F8[] = "task_poo_pitAndButterfly";
 
 TaskDesc gUnk_09EF48F8 = {
     gTaskName_09EF48F8,
@@ -7597,7 +7870,7 @@ TaskDesc gUnk_09EF48F8 = {
     0xB0,
 };
 
-const char gTaskNamePooBalloon[] __attribute__((section(".rodata_registration_name_gTaskDescPooBalloon"), aligned(1))) = "task_poo_balloon";
+const char gTaskNamePooBalloon[] = "task_poo_balloon";
 
 TaskDesc gTaskDescPooBalloon = {
     gTaskNamePooBalloon,
@@ -7608,7 +7881,7 @@ TaskDesc gTaskDescPooBalloon = {
     0x28,
 };
 
-const char gTaskNamePooShadow[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadow"), aligned(1))) = "task_poo_shadow";
+const char gTaskNamePooShadow[] = "task_poo_shadow";
 
 TaskDesc gTaskDescPooShadow = {
     gTaskNamePooShadow,
@@ -7619,7 +7892,7 @@ TaskDesc gTaskDescPooShadow = {
     0x14,
 };
 
-const char gTaskNamePooShadowdodai[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowdodai"), aligned(1))) = "task_poo_shadowdodai";
+const char gTaskNamePooShadowdodai[] = "task_poo_shadowdodai";
 
 TaskDesc gTaskDescPooShadowdodai = {
     gTaskNamePooShadowdodai,
@@ -7630,7 +7903,7 @@ TaskDesc gTaskDescPooShadowdodai = {
     0x34,
 };
 
-const char gTaskNamePooShadowscale[] __attribute__((section(".rodata_registration_name_gTaskDescPooShadowscale"), aligned(1))) = "task_poo_shadowscale";
+const char gTaskNamePooShadowscale[] = "task_poo_shadowscale";
 
 TaskDesc gTaskDescPooShadowscale = {
     gTaskNamePooShadowscale,
@@ -7641,7 +7914,7 @@ TaskDesc gTaskDescPooShadowscale = {
     0x34,
 };
 
-const char gTaskNamePooFreeballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooFreeballoon"), aligned(1))) = "task_poo_freeballoon";
+const char gTaskNamePooFreeballoon[] = "task_poo_freeballoon";
 
 TaskDesc gTaskDescPooFreeballoon = {
     gTaskNamePooFreeballoon,
@@ -7652,7 +7925,7 @@ TaskDesc gTaskDescPooFreeballoon = {
     0x98,
 };
 
-const char gTaskNamePooGauge[] __attribute__((section(".rodata_registration_name_gTaskDescPooGauge"), aligned(1))) = "task_poo_gauge";
+const char gTaskNamePooGauge[] = "task_poo_gauge";
 
 TaskDesc gTaskDescPooGauge = {
     gTaskNamePooGauge,
@@ -7663,7 +7936,7 @@ TaskDesc gTaskDescPooGauge = {
     0x14,
 };
 
-const char gTaskName_09EF49A0[] __attribute__((section(".rodata_registration_name_gUnk_09EF49A0"), aligned(1))) = "task_poo_trapballoon";
+const char gTaskName_09EF49A0[] = "task_poo_trapballoon";
 
 TaskDesc gUnk_09EF49A0 = {
     gTaskName_09EF49A0,
@@ -7674,7 +7947,7 @@ TaskDesc gUnk_09EF49A0 = {
     0xD0,
 };
 
-const char gTaskNamePooOwlballoon[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwlballoon"), aligned(1))) = "task_poo_owlballoon";
+const char gTaskNamePooOwlballoon[] = "task_poo_owlballoon";
 
 TaskDesc gTaskDescPooOwlballoon = {
     gTaskNamePooOwlballoon,
@@ -7685,7 +7958,15 @@ TaskDesc gTaskDescPooOwlballoon = {
     0xCC,
 };
 
-const char gTaskName_09EF49D0[] __attribute__((section(".rodata_registration_name_gUnk_09EF49D0"), aligned(1))) = "task_poo_honey";
+const char gTaskName_09EF49D0[] = "task_poo_honey";
+
+const UnkStruct_096FE034Entry gUnk_096FD3C8[4] = { { 18, 0 }, { 18, 1 }, { 18, 2 }, { 18, 3 } };
+
+const UnkStruct_096FE034Entry gUnk_096FD3D8[4] = { { 18, 0 }, { 18, 1 }, { 18, 2 }, { 18, 3 } };
+
+const UnkStruct_096FE034 gUnk_096FD3E8 = { gUnk_096FD3C8, 4, 0, gUnk_097B4578, 0X2080, 0X0240, 0X0400, 0, 3 };
+
+const UnkStruct_096FE034 gUnk_096FD400 = { gUnk_096FD3D8, 4, 0, gUnk_097B5418, 0X3880, 0X0240, 0X0400, 0, 3 };
 
 TaskDesc gUnk_09EF49D0 = {
     gTaskName_09EF49D0,
@@ -7696,7 +7977,7 @@ TaskDesc gUnk_09EF49D0 = {
     0x10C,
 };
 
-const char gTaskNamePooMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapanime"), aligned(1))) = "task_poo_mapanime";
+const char gTaskNamePooMapanime[] = "task_poo_mapanime";
 
 TaskDesc gTaskDescPooMapanime = {
     gTaskNamePooMapanime,
@@ -7707,7 +7988,9 @@ TaskDesc gTaskDescPooMapanime = {
     0x18,
 };
 
-const char gTaskNamePooPile[] __attribute__((section(".rodata_registration_name_gTaskDescPooPile"), aligned(1))) = "task_poo_pile";
+const char gTaskNamePooPile[] = "task_poo_pile";
+
+const s32 gUnk_096FD43C[6] = { 8, 0, 2, 4, 6, 7 };
 
 TaskDesc gTaskDescPooPile = {
     gTaskNamePooPile,
@@ -7718,7 +8001,7 @@ TaskDesc gTaskDescPooPile = {
     0xD0,
 };
 
-const char gTaskName_09EF4A18[] __attribute__((section(".rodata_registration_name_gUnk_09EF4A18"), aligned(1))) = "task_poo_tigerstump";
+const char gTaskName_09EF4A18[] = "task_poo_tigerstump";
 
 TaskDesc gUnk_09EF4A18 = {
     gTaskName_09EF4A18,
@@ -7729,7 +8012,21 @@ TaskDesc gUnk_09EF4A18 = {
     0x90,
 };
 
-const char gTaskName_09EF4A30[] __attribute__((section(".rodata_registration_name_gUnk_09EF4A30"), aligned(1))) = "task_poo_poohstump";
+const char gTaskName_09EF4A30[] = "task_poo_poohstump";
+
+const PooAnimDesc gUnk_096FD47C[4] = {
+    { gUnk_09EF5CB0, gUnk_09EF5CAC, gUnk_09742FD8, 0, 0 },
+    { gUnk_09EF5CB8, gUnk_09EF5CB4, gUnk_097430EC, 0, 0 },
+    { gUnk_09EF5CDC, gUnk_09EF5CBC, gUnk_09743262, 0, 0 },
+    { gUnk_09EF5D00, gUnk_09EF5CE0, gUnk_09743ADA, 0, 0 },
+};
+
+const PooGfxDesc gUnk_096FD4BC[4] = {
+    { gUnk_09EF5CAC, 1, 0 },
+    { gUnk_09EF5CB4, 1, 0 },
+    { gUnk_09EF5CBC, 8, 0 },
+    { gUnk_09EF5CE0, 8, 0 },
+};
 
 TaskDesc gUnk_09EF4A30 = {
     gTaskName_09EF4A30,
@@ -7740,7 +8037,7 @@ TaskDesc gUnk_09EF4A30 = {
     0x90,
 };
 
-const char gTaskNamePooPiglet[] __attribute__((section(".rodata_registration_name_gTaskDescPooPiglet"), aligned(1))) = "task_poo_piglet";
+const char gTaskNamePooPiglet[] = "task_poo_piglet";
 
 TaskDesc gTaskDescPooPiglet = {
     gTaskNamePooPiglet,
@@ -7751,7 +8048,7 @@ TaskDesc gTaskDescPooPiglet = {
     0xB8,
 };
 
-const char gTaskNamePooEeyore[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyore"), aligned(1))) = "task_poo_eeyore";
+const char gTaskNamePooEeyore[] = "task_poo_eeyore";
 
 TaskDesc gTaskDescPooEeyore = {
     gTaskNamePooEeyore,
@@ -7762,7 +8059,22 @@ TaskDesc gTaskDescPooEeyore = {
     0xB0,
 };
 
-const char gTaskNamePooOwl[] __attribute__((section(".rodata_registration_name_gTaskDescPooOwl"), aligned(1))) = "task_poo_owl";
+const char gTaskNamePooOwl[] = "task_poo_owl";
+
+const PooAnimDesc gUnk_096FD50C[7] = {
+    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 0, 0 },
+    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 1, 0 },
+    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 2, 0 },
+    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 0, 0 },
+    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 2, 0 },
+    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 3, 0 },
+    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 4, 0 },
+};
+
+const PooGfxDesc gUnk_096FD57C[2] = {
+    { gUnk_09EF5E48, 14, 0 },
+    { gUnk_09EF5EA8, 15, 0 },
+};
 
 TaskDesc gTaskDescPooOwl = {
     gTaskNamePooOwl,
@@ -7773,7 +8085,25 @@ TaskDesc gTaskDescPooOwl = {
     0x50,
 };
 
-const char gTaskNamePooRabbit[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbit"), aligned(1))) = "task_poo_rabbit";
+const char gTaskNamePooRabbit[] = "task_poo_rabbit";
+
+const PooAnimDesc gUnk_096FD59C[4] = {
+    { gUnk_09EF5B58, gUnk_09EF5B54, gUnk_0973700E, 0, 0 },
+    { gUnk_09EF5B80, gUnk_09EF5B5C, gUnk_097373D6, 0, 0 },
+    { gUnk_09EF5BA4, gUnk_09EF5B84, gUnk_0973900E, 0, 0 },
+    { gUnk_09EF5BCC, gUnk_09EF5BAC, gUnk_0973AC64, 0, 0 },
+};
+
+const PooGfxDesc gUnk_096FD5DC[4] = {
+    { gUnk_09EF5B54, 1, 0 },
+    { gUnk_09EF5B5C, 9, 0 },
+    { gUnk_09EF5B84, 8, 0 },
+    { gUnk_09EF5BAC, 8, 0 },
+};
+
+const s32 gUnk_096FD5FC[8] = { 428288, 232704, 411904, 240896, 428288, 249088, 444672, 240896 };
+
+const s32 gUnk_096FD61C[8] = { -512, -2560, -4096, -5120, -5120, -4096, -2560, -512 };
 
 TaskDesc gTaskDescPooRabbit = {
     gTaskNamePooRabbit,
@@ -7784,7 +8114,7 @@ TaskDesc gTaskDescPooRabbit = {
     0xB4,
 };
 
-const char gTaskNamePooTigger[] __attribute__((section(".rodata_registration_name_gTaskDescPooTigger"), aligned(1))) = "task_poo_tigger";
+const char gTaskNamePooTigger[] = "task_poo_tigger";
 
 TaskDesc gTaskDescPooTigger = {
     gTaskNamePooTigger,
@@ -7795,7 +8125,7 @@ TaskDesc gTaskDescPooTigger = {
     0xD4,
 };
 
-const char gTaskNamePooTiggerroo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTiggerroo"), aligned(1))) = "task_poo_tiggerroo";
+const char gTaskNamePooTiggerroo[] = "task_poo_tiggerroo";
 
 TaskDesc gTaskDescPooTiggerroo = {
     gTaskNamePooTiggerroo,
@@ -7806,7 +8136,7 @@ TaskDesc gTaskDescPooTiggerroo = {
     0xD4,
 };
 
-const char gTaskNamePooRoo[] __attribute__((section(".rodata_registration_name_gTaskDescPooRoo"), aligned(1))) = "task_poo_roo";
+const char gTaskNamePooRoo[] = "task_poo_roo";
 
 TaskDesc gTaskDescPooRoo = {
     gTaskNamePooRoo,
@@ -7817,7 +8147,7 @@ TaskDesc gTaskDescPooRoo = {
     0xBC,
 };
 
-const char gTaskNamePooRooFootmark[] __attribute__((section(".rodata_registration_name_gTaskDescPooRooFootmark"), aligned(1))) = "task_poo_roo_footmark";
+const char gTaskNamePooRooFootmark[] = "task_poo_roo_footmark";
 
 TaskDesc gTaskDescPooRooFootmark = {
     gTaskNamePooRooFootmark,
@@ -7828,7 +8158,7 @@ TaskDesc gTaskDescPooRooFootmark = {
     0x3C,
 };
 
-const char gTaskNamePooLeaf[] __attribute__((section(".rodata_registration_name_gTaskDescPooLeaf"), aligned(1))) = "task_poo_leaf";
+const char gTaskNamePooLeaf[] = "task_poo_leaf";
 
 TaskDesc gTaskDescPooLeaf = {
     gTaskNamePooLeaf,
@@ -7839,7 +8169,7 @@ TaskDesc gTaskDescPooLeaf = {
     0x98,
 };
 
-const char gTaskNamePooTanpopo[] __attribute__((section(".rodata_registration_name_gTaskDescPooTanpopo"), aligned(1))) = "task_poo_tanpopo";
+const char gTaskNamePooTanpopo[] = "task_poo_tanpopo";
 
 TaskDesc gTaskDescPooTanpopo = {
     gTaskNamePooTanpopo,
@@ -7850,7 +8180,7 @@ TaskDesc gTaskDescPooTanpopo = {
     0xB8,
 };
 
-const char gTaskName_09EF4B38[] __attribute__((section(".rodata_registration_name_gUnk_09EF4B38"), aligned(1))) = "task_poo_ti_board";
+const char gTaskName_09EF4B38[] = "task_poo_ti_board";
 
 TaskDesc gUnk_09EF4B38 = {
     gTaskName_09EF4B38,
@@ -7861,7 +8191,7 @@ TaskDesc gUnk_09EF4B38 = {
     0x78,
 };
 
-const char gTaskNamePooEeyoretail[] __attribute__((section(".rodata_registration_name_gTaskDescPooEeyoretail"), aligned(1))) = "task_poo_eeyoretail";
+const char gTaskNamePooEeyoretail[] = "task_poo_eeyoretail";
 
 TaskDesc gTaskDescPooEeyoretail = {
     gTaskNamePooEeyoretail,
@@ -7872,7 +8202,7 @@ TaskDesc gTaskDescPooEeyoretail = {
     0x38,
 };
 
-const char gTaskNamePooHoneycomb[] __attribute__((section(".rodata_registration_name_gTaskDescPooHoneycomb"), aligned(1))) = "task_poo_honeycomb";
+const char gTaskNamePooHoneycomb[] = "task_poo_honeycomb";
 
 TaskDesc gTaskDescPooHoneycomb = {
     gTaskNamePooHoneycomb,
@@ -7883,7 +8213,7 @@ TaskDesc gTaskDescPooHoneycomb = {
     0xA0,
 };
 
-const char gTaskNamePooVegetable[] __attribute__((section(".rodata_registration_name_gTaskDescPooVegetable"), aligned(1))) = "task_poo_vegetable";
+const char gTaskNamePooVegetable[] = "task_poo_vegetable";
 
 TaskDesc gTaskDescPooVegetable = {
     gTaskNamePooVegetable,
@@ -7894,7 +8224,7 @@ TaskDesc gTaskDescPooVegetable = {
     0x94,
 };
 
-const char gTaskNamePooWagon[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagon"), aligned(1))) = "task_poo_wagon";
+const char gTaskNamePooWagon[] = "task_poo_wagon";
 
 TaskDesc gTaskDescPooWagon = {
     gTaskNamePooWagon,
@@ -7905,7 +8235,7 @@ TaskDesc gTaskDescPooWagon = {
     0x44,
 };
 
-const char gTaskNamePooWagonwheel[] __attribute__((section(".rodata_registration_name_gTaskDescPooWagonwheel"), aligned(1))) = "task_poo_wagonwheel";
+const char gTaskNamePooWagonwheel[] = "task_poo_wagonwheel";
 
 TaskDesc gTaskDescPooWagonwheel = {
     gTaskNamePooWagonwheel,
@@ -7916,7 +8246,9 @@ TaskDesc gTaskDescPooWagonwheel = {
     0x44,
 };
 
-const char gTaskNamePooSpark[] __attribute__((section(".rodata_registration_name_gTaskDescPooSpark"), aligned(1))) = "task_poo_spark";
+const char gTaskNamePooSpark[] = "task_poo_spark";
+
+const PooPoint gUnk_096FD730[4] = { { -512, -1792 }, { -2304, 512 }, { 2304, -768 }, { 768, 1792 } };
 
 TaskDesc gTaskDescPooSpark = {
     gTaskNamePooSpark,
@@ -7927,7 +8259,7 @@ TaskDesc gTaskDescPooSpark = {
     0x34,
 };
 
-const char gTaskNamePooBee[] __attribute__((section(".rodata_registration_name_gTaskDescPooBee"), aligned(1))) = "task_poo_bee";
+const char gTaskNamePooBee[] = "task_poo_bee";
 
 TaskDesc gTaskDescPooBee = {
     gTaskNamePooBee,
@@ -7938,7 +8270,32 @@ TaskDesc gTaskDescPooBee = {
     0xCC,
 };
 
-const char gTaskNamePooBeeAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooBeeAfterEvent"), aligned(1))) = "task_poo_beeAfterEvent";
+const char gTaskNamePooBeeAfterEvent[] = "task_poo_beeAfterEvent";
+
+const PooSpot gUnk_096FD778[18] = {
+    { 0, 0, 0 },
+    { -2560, -1280, 0 },
+    { -5120, -2560, 0 },
+    { -2560, -3840, 0 },
+    { 0, -2560, 0 },
+    { 2560, -1280, 0 },
+    { 5120, -2560, 0 },
+    { 2560, -3840, 0 },
+    { 0, -5120, 0 },
+    { 0, -640, -3200 },
+    { -2560, -1920, -3200 },
+    { 0, -3200, -3200 },
+    { 2560, -1920, -3200 },
+    { 0, -1280, -5888 },
+    { 61440, 40960, 0 },
+    { 0, 40960, 0 },
+    { 61440, 0, 0 },
+    { 0, 0, 0 },
+};
+
+const u16 gUnk_096FD850[15] = { 6, 6, 6, 6, 6, 9, 9, 9, 65535, 65535, 65535, 65535, 65535, 65535, 65535 };
+
+const u16 gUnk_096FD86E[5] = { 3, 2, 1, 2, 4 };
 
 TaskDesc gTaskDescPooBeeAfterEvent = {
     gTaskNamePooBeeAfterEvent,
@@ -7949,7 +8306,7 @@ TaskDesc gTaskDescPooBeeAfterEvent = {
     0x54,
 };
 
-const char gTaskNamePooCabbage[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbage"), aligned(1))) = "task_poo_cabbage";
+const char gTaskNamePooCabbage[] = "task_poo_cabbage";
 
 TaskDesc gTaskDescPooCabbage = {
     gTaskNamePooCabbage,
@@ -7960,7 +8317,44 @@ TaskDesc gTaskDescPooCabbage = {
     0xD8,
 };
 
-const char gTaskNamePooCabbageborn[] __attribute__((section(".rodata_registration_name_gTaskDescPooCabbageborn"), aligned(1))) = "task_poo_cabbageborn";
+const char gTaskNamePooCabbageborn[] = "task_poo_cabbageborn";
+
+const PooMapObjHitDesc gUnk_096FD8A4[10] = {
+#if defined(VERSION_US)
+    { gUnk_09760D00, 5, 0, gUnkUs_09EF62B4, gUnkUs_09EF629C, gUnk_09849E78 },
+    { gUnk_09761824, 11, 0, gUnkUs_09EF62E4, gUnkUs_09EF62B8, gUnk_09849E98 },
+    { gUnk_09762542, 24, 0, gUnkUs_09EF6348, gUnkUs_09EF62E8, gUnk_09849EB8 },
+    { gUnk_097634D0, 3, 0, gUnkUs_09EF6358, gUnkUs_09EF634C, gUnk_09849ED8 },
+    { gUnk_09763B54, 9, 0, gUnkUs_09EF6380, gUnkUs_09EF635C, gUnk_09849EF8 },
+    { gUnk_09764BB8, 2, 0, gUnkUs_09EF638C, gUnkUs_09EF6384, gUnk_09849F18 },
+    { gUnk_09765012, 6, 0, gUnkUs_09EF63AC, gUnkUs_09EF6394, gUnk_09849F38 },
+    { gUnk_0976626E, 6, 0, gUnkUs_09EF63C8, gUnkUs_09EF63B0, gUnk_09849F38 },
+    { gUnk_09767562, 10, 0, gUnkUs_09EF63F4, gUnkUs_09EF63CC, gUnk_09849F58 },
+    { gUnk_09769416, 10, 0, gUnkUs_09EF6420, gUnkUs_09EF63F8, gUnk_09849F58 },
+#elif defined(VERSION_JP)
+    { gUnk_09760D00, 5, 0, gUnkJp_09ECD6A0, gUnkJp_09ECD688, gUnk_09849E78 },
+    { gUnk_09761824, 11, 0, gUnkJp_09ECD6D0, gUnkJp_09ECD6A4, gUnk_09849E98 },
+    { gUnk_09762542, 24, 0, gUnkJp_09ECD734, gUnkJp_09ECD6D4, gUnk_09849EB8 },
+    { gUnk_097634D0, 3, 0, gUnkJp_09ECD744, gUnkJp_09ECD738, gUnk_09849ED8 },
+    { gUnk_09763B54, 9, 0, gUnkJp_09ECD76C, gUnkJp_09ECD748, gUnk_09849EF8 },
+    { gUnk_09764BB8, 2, 0, gUnkJp_09ECD778, gUnkJp_09ECD770, gUnk_09849F18 },
+    { gUnk_09765012, 6, 0, gUnkJp_09ECD798, gUnkJp_09ECD780, gUnk_09849F38 },
+    { gUnk_0976626E, 6, 0, gUnkJp_09ECD7B4, gUnkJp_09ECD79C, gUnk_09849F38 },
+    { gUnk_09767562, 10, 0, gUnkJp_09ECD7E0, gUnkJp_09ECD7B8, gUnk_09849F58 },
+    { gUnk_09769416, 10, 0, gUnkJp_09ECD80C, gUnkJp_09ECD7E4, gUnk_09849F58 },
+#else
+    { gUnk_09760D00, 5, 0, gUnkEu_09F816AC, gUnkEu_09F81694, gUnk_09849E78 },
+    { gUnk_09761824, 11, 0, gUnkEu_09F816DC, gUnkEu_09F816B0, gUnk_09849E98 },
+    { gUnk_09762542, 24, 0, gUnkEu_09F81740, gUnkEu_09F816E0, gUnk_09849EB8 },
+    { gUnk_097634D0, 3, 0, gUnkEu_09F81750, gUnkEu_09F81744, gUnk_09849ED8 },
+    { gUnk_09763B54, 9, 0, gUnkEu_09F81778, gUnkEu_09F81754, gUnk_09849EF8 },
+    { gUnk_09764BB8, 2, 0, gUnkEu_09F81784, gUnkEu_09F8177C, gUnk_09849F18 },
+    { gUnk_09765012, 6, 0, gUnkEu_09F817A4, gUnkEu_09F8178C, gUnk_09849F38 },
+    { gUnk_0976626E, 6, 0, gUnkEu_09F817C0, gUnkEu_09F817A8, gUnk_09849F38 },
+    { gUnk_09767562, 10, 0, gUnkEu_09F817EC, gUnkEu_09F817C4, gUnk_09849F58 },
+    { gUnk_09769416, 10, 0, gUnkEu_09F81818, gUnkEu_09F817F0, gUnk_09849F58 },
+#endif
+};
 
 TaskDesc gTaskDescPooCabbageborn = {
     gTaskNamePooCabbageborn,
@@ -7971,7 +8365,7 @@ TaskDesc gTaskDescPooCabbageborn = {
     0x18,
 };
 
-const char gTaskNamePooMapobjhit[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapobjhit"), aligned(1))) = "task_poo_mapobjhit";
+const char gTaskNamePooMapobjhit[] = "task_poo_mapobjhit";
 
 TaskDesc gTaskDescPooMapobjhit = {
     gTaskNamePooMapobjhit,
@@ -7982,7 +8376,7 @@ TaskDesc gTaskDescPooMapobjhit = {
     0xA0,
 };
 
-const char gTaskNamePooPrize[] __attribute__((section(".rodata_registration_name_gTaskDescPooPrize"), aligned(1))) = "task_poo_prize";
+const char gTaskNamePooPrize[] = "task_poo_prize";
 
 TaskDesc gTaskDescPooPrize = {
     gTaskNamePooPrize,
@@ -7993,7 +8387,7 @@ TaskDesc gTaskDescPooPrize = {
     0x98,
 };
 
-const char gTaskNamePooZzz[] __attribute__((section(".rodata_registration_name_gTaskDescPooZzz"), aligned(1))) = "task_poo_zzz";
+const char gTaskNamePooZzz[] = "task_poo_zzz";
 
 TaskDesc gTaskDescPooZzz = {
     gTaskNamePooZzz,
@@ -8012,7 +8406,7 @@ AnimDef gUnk_09EF4C88[5] = {
     { gUnk_09EF5D40, gUnk_09EF5D50, gUnk_0974459A, 0, { 0, 0, 0 } },
 };
 
-const char gTaskNamePooButterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooButterfly"), aligned(1))) = "task_poo_butterfly";
+const char gTaskNamePooButterfly[] = "task_poo_butterfly";
 
 TaskDesc gTaskDescPooButterfly = {
     gTaskNamePooButterfly,
@@ -8023,7 +8417,7 @@ TaskDesc gTaskDescPooButterfly = {
     0xE4,
 };
 
-const char gTaskName_09EF4CF0[] __attribute__((section(".rodata_registration_name_gUnk_09EF4CF0"), aligned(1))) = "task_poo_butterflyRight";
+const char gTaskName_09EF4CF0[] = "task_poo_butterflyRight";
 
 TaskDesc gUnk_09EF4CF0 = {
     gTaskName_09EF4CF0,
@@ -8034,7 +8428,7 @@ TaskDesc gUnk_09EF4CF0 = {
     0xE4,
 };
 
-const char gTaskName_09EF4D08[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D08"), aligned(1))) = "task_poo_butterflyLeft";
+const char gTaskName_09EF4D08[] = "task_poo_butterflyLeft";
 
 TaskDesc gUnk_09EF4D08 = {
     gTaskName_09EF4D08,
@@ -8045,7 +8439,7 @@ TaskDesc gUnk_09EF4D08 = {
     0xE4,
 };
 
-const char gTaskNamePooMapbee[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbee"), aligned(1))) = "task_poo_mapbee";
+const char gTaskNamePooMapbee[] = "task_poo_mapbee";
 
 TaskDesc gTaskDescPooMapbee = {
     gTaskNamePooMapbee,
@@ -8056,7 +8450,7 @@ TaskDesc gTaskDescPooMapbee = {
     0x38,
 };
 
-const char gTaskName_09EF4D38[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D38"), aligned(1))) = "task_poo_mapbeeborn";
+const char gTaskName_09EF4D38[] = "task_poo_mapbeeborn";
 
 TaskDesc gUnk_09EF4D38 = {
     gTaskName_09EF4D38,
@@ -8067,7 +8461,7 @@ TaskDesc gUnk_09EF4D38 = {
     0x9C,
 };
 
-const char gTaskNamePooMapbutterfly[] __attribute__((section(".rodata_registration_name_gTaskDescPooMapbutterfly"), aligned(1))) = "task_poo_mapbutterfly";
+const char gTaskNamePooMapbutterfly[] = "task_poo_mapbutterfly";
 
 TaskDesc gTaskDescPooMapbutterfly = {
     gTaskNamePooMapbutterfly,
@@ -8078,7 +8472,7 @@ TaskDesc gTaskDescPooMapbutterfly = {
     0x38,
 };
 
-const char gTaskName_09EF4D68[] __attribute__((section(".rodata_registration_name_gUnk_09EF4D68"), aligned(1))) = "task_poo_mapbutterflyborn";
+const char gTaskName_09EF4D68[] = "task_poo_mapbutterflyborn";
 
 TaskDesc gUnk_09EF4D68 = {
     gTaskName_09EF4D68,
@@ -8089,7 +8483,7 @@ TaskDesc gUnk_09EF4D68 = {
     0x9C,
 };
 
-const char gTaskNamePooRabbitAfterEvent[] __attribute__((section(".rodata_registration_name_gTaskDescPooRabbitAfterEvent"), aligned(1))) = "task_poo_rabbitAfterEvent";
+const char gTaskNamePooRabbitAfterEvent[] = "task_poo_rabbitAfterEvent";
 
 TaskDesc gTaskDescPooRabbitAfterEvent = {
     gTaskNamePooRabbitAfterEvent,
@@ -8100,7 +8494,7 @@ TaskDesc gTaskDescPooRabbitAfterEvent = {
     0xA8,
 };
 
-const char gTaskNamePooCabbageAfterEvent[] __attribute__((aligned(1))) = "task_poo_cabbageAfterEvent";
+const char gTaskNamePooCabbageAfterEvent[] = "task_poo_cabbageAfterEvent";
 
 TaskDesc gTaskDescPooCabbageAfterEvent = {
     gTaskNamePooCabbageAfterEvent,

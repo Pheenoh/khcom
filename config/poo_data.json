@@ -7,58 +7,13 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "poo_cabbage_spots_data.c",
-          "section": ".rodata",
-          "address": "0x96fd778",
-          "size": 216,
-          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
-          "objects": [
-            {
-              "name": "gUnk_096FD778",
-              "offset": 0,
-              "size": 216
-            }
-          ]
-        }
-      ]
+      "placements": []
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "poo_cabbage_spots_data.c",
-          "section": ".rodata",
-          "address": "0x96b5f54",
-          "size": 216,
-          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
-          "objects": [
-            {
-              "name": "gUnk_096FD778",
-              "offset": 0,
-              "size": 216
-            }
-          ]
-        }
-      ]
+      "placements": []
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "poo_cabbage_spots_data.c",
-          "section": ".rodata",
-          "address": "0x96caac0",
-          "size": 216,
-          "sha256": "dc07b30aaf7f23062fc2747fb5a2cc2d51bc386b05178f67d6e585c754d8ed26",
-          "objects": [
-            {
-              "name": "gUnk_096FD778",
-              "offset": 0,
-              "size": 216
-            }
-          ]
-        }
-      ]
+      "placements": []
     }
   }
 }

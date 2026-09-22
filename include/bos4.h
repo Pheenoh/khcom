@@ -58,23 +58,6 @@ extern UnkStruct_0203C590 gUnk_0203C590;
 
 
 
-typedef struct UnkStruct_096FE034Entry {
-    u16 unk_00;
-    u16 unk_02;
-} UnkStruct_096FE034Entry;
-
-typedef struct UnkStruct_096FE034 {
-    const UnkStruct_096FE034Entry* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    s32 unk_14;
-} UnkStruct_096FE034;
-
 typedef struct UnkStruct_080DDDDC {
     u16 unk_00;
     u16 unk_02;
