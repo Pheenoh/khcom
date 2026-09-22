@@ -175,6 +175,7 @@ regional_sections = {(placement["unit"], placement["section"]): placement
 units_file = Path(f"config/{version}/units.txt")
 units = []
 archives = []
+sectioned = False
 for line in units_file.read_text().splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
@@ -186,6 +187,7 @@ for line in units_file.read_text().splitlines():
     if name.endswith(")") and "(" in name:
         name, _, spec = name.partition("(")
         section = spec[:-1]
+        sectioned = True
     if name.startswith("@"):
         arch, member = name[1:].split(":")
         path = f"tools/legacy/lib/{arch}"
@@ -550,9 +552,13 @@ if pending_uncovered:
         f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
     )
 
-validate_active_sections(regional_plan,
-                         [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
-                         managed_placements(regional))
+if sectioned:
+    active_sections = [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"]
+else:
+    listed_units = {src.name for src, _obj, _flags, _section in units if src is not None and src.suffix == ".c"}
+    active_sections = [(placement["unit"], placement["section"]) for placement in regional_plan["placements"]
+                       if placement["unit"] in listed_units]
+validate_active_sections(regional_plan, active_sections, managed_placements(regional))
 objs_in_order = [(obj, section) for _, obj, _flags, section in units]
 
 
@@ -579,26 +585,33 @@ def link_order(units):
     return order, position, violations
 
 
-objs_linked, link_position, link_violations = link_order(units)
-data_objects = []
-for _src, obj, _flags, section in units:
-    if section == ".data" and obj not in data_objects:
-        data_objects.append(obj)
-data_positions = [link_position[obj] for obj in data_objects]
-if data_positions != sorted(data_positions):
-    offenders = [obj for obj, pos, nxt in zip(data_objects, data_positions, data_positions[1:]) if pos > nxt]
-    sys.exit(f"error: .data objects are not in link order: {offenders[:10]}")
-rodata_objects = []
-for _src, obj, _flags, section in units:
-    if section == ".rodata" and obj not in rodata_objects:
-        rodata_objects.append(obj)
-rodata_positions = [link_position[obj] for obj in rodata_objects]
-if rodata_positions != sorted(rodata_positions):
-    offenders = [obj for obj, pos, nxt in zip(rodata_objects, rodata_positions, rodata_positions[1:]) if pos > nxt]
-    sys.exit(f"error: .rodata objects are not in link order: {offenders[:10]}")
-leftover_sections = [(obj, section) for _src, obj, _flags, section in units if section not in (".text", ".rodata", ".data")]
-if leftover_sections:
-    sys.exit(f"error: sections that link order cannot place: {leftover_sections[:10]}")
+if sectioned:
+    objs_linked, link_position, link_violations = link_order(units)
+    data_objects = []
+    for _src, obj, _flags, section in units:
+        if section == ".data" and obj not in data_objects:
+            data_objects.append(obj)
+    data_positions = [link_position[obj] for obj in data_objects]
+    if data_positions != sorted(data_positions):
+        offenders = [obj for obj, pos, nxt in zip(data_objects, data_positions, data_positions[1:]) if pos > nxt]
+        sys.exit(f"error: .data objects are not in link order: {offenders[:10]}")
+    rodata_objects = []
+    for _src, obj, _flags, section in units:
+        if section == ".rodata" and obj not in rodata_objects:
+            rodata_objects.append(obj)
+    rodata_positions = [link_position[obj] for obj in rodata_objects]
+    if rodata_positions != sorted(rodata_positions):
+        offenders = [obj for obj, pos, nxt in zip(rodata_objects, rodata_positions, rodata_positions[1:]) if pos > nxt]
+        sys.exit(f"error: .rodata objects are not in link order: {offenders[:10]}")
+    leftover_sections = [(obj, section) for _src, obj, _flags, section in units if section not in (".text", ".rodata", ".data")]
+    if leftover_sections:
+        sys.exit(f"error: sections that link order cannot place: {leftover_sections[:10]}")
+else:
+    objs_linked = []
+    for _src, obj, _flags, _section in units:
+        if obj in objs_linked:
+            sys.exit(f"error: unit {obj} is listed twice in {units_file}")
+        objs_linked.append(obj)
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
