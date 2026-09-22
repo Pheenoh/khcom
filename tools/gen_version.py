@@ -3919,43 +3919,60 @@ def main():
             return "absent"
         return addrs[len(addrs) // 2] if addrs else None
 
-    placed = re.compile(r"^ (\.[\w.]+) +0x(0*[89][0-9a-f]{6}) +0x([0-9a-f]+) "
-                        r"build/us/src/(\S+)\.o$")
-    spans = {}
+    placed = re.compile(r"^ (\.[\w.]+)? +0x([0-9a-f]+) +0x([0-9a-f]+) build/us/src/(\S+)\.o$")
+    spans, sections = {}, {}
+    pending = None
     for line in Path("build/us/com_us.map").read_text().splitlines():
-        m = placed.match(line)
+        m = re.fullmatch(r" (\.[\w.]+)", line)
         if m:
-            spans[(m.group(4) + ".c", m.group(1))] = (int(m.group(2), 16),
-                                                      int(m.group(3), 16))
+            pending = m.group(1)
+            continue
+        m = placed.match(line)
+        if not m or not int(m.group(3), 16):
+            continue
+        section = m.group(1) or pending
+        pending = None
+        unit = m.group(4) + ".c"
+        sections.setdefault(unit, set()).add(section)
+        if section in (".rodata", ".data"):
+            spans[(unit, section)] = (int(m.group(2), 16), int(m.group(3), 16))
 
-    head, body, cdata = [], [], []
+    def data_only(nm):
+        placed_in = sections.get(nm, set())
+        return bool(placed_in) and placed_in <= {".rodata", ".data"}
+
+    head, body, cdata, blobs = [], [], [], []
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
-        if t.endswith(")"):
-            nm, _, sec = t.partition("(")
-            if t == "transform_veneers.s(.text)":
-                size = validate_transform_veneers(ot, code_end, byname["func_08109AAC"][3])
-                cdata.append((code_end, size, line))
-                continue
-            if nm.endswith(".s"):
-                continue
-            key = nm, sec[:-1]
-            if key in regional_managed:
-                if key not in regional_overrides:
-                    continue
-                here, size = regional_overrides[key]
-            else:
-                lo, size = spans[key]
-                here, _ = tr(lo)
-                size = TARGET_DATA_SIZE.get(ver, {}).get(key, size)
-            cdata.append((here, size, line))
-            continue
         if not t or t.startswith("#"):
             head.append(line)
             continue
-        key = unit_key(t.split()[0])
-
-        if key is None and t.endswith(".s"):
+        nm = t.split()[0]
+        if nm == "transform_veneers.s":
+            size = validate_transform_veneers(ot, code_end, byname["func_08109AAC"][3])
+            cdata.append((code_end, size, "transform_veneers.s(.text)"))
+            continue
+        if nm.endswith(".s") and (Path("asm/us") / nm).exists():
+            blobs.append(nm)
+            continue
+        if nm.endswith(".c"):
+            for sec in (".rodata", ".data"):
+                key = nm, sec
+                if key not in spans:
+                    continue
+                if key in regional_managed:
+                    if key not in regional_overrides:
+                        continue
+                    here, size = regional_overrides[key]
+                else:
+                    lo, size = spans[key]
+                    here, _ = tr(lo)
+                    size = TARGET_DATA_SIZE.get(ver, {}).get(key, size)
+                cdata.append((here, size, f"{nm}({sec})"))
+            if data_only(nm):
+                continue
+        key = unit_key(nm)
+        if key is None and nm.endswith(".s"):
             head.append(line)
             continue
         body.append((key, line))
@@ -3976,14 +3993,8 @@ def main():
         pad -= 1
     found = []
     incbin = re.compile(r'\.incbin\s+"assets/us/([0-9A-F]{8})-([0-9A-F]{8})\.bin"')
-    for line in Path("config/us/units.txt").read_text().splitlines():
-        t = line.strip()
-        if not t.endswith(".s(.rodata)"):
-            continue
-        nm = t[:-len("(.rodata)")]
+    for nm in blobs:
         src = Path("asm/us") / nm
-        if not src.exists():
-            continue
         m = incbin.search(src.read_text())
         if not m:
             raise SystemExit(f"error: {src} is a US data unit with no assets/us incbin to anchor its offset")

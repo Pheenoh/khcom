@@ -443,21 +443,27 @@ def main():
             ledger.append((name.strip(), int(address.strip(), 16)))
     asset_symbols(plan, ledger)
     units = set()
+    listed = set()
     active = []
     for line in (root / 'config' / version / 'units.txt').read_text().splitlines():
         line = line.split('#', 1)[0].strip()
         if not line:
             continue
         match = re.fullmatch(r'([^()\s]+)(?:\(([^()]+)\))?(?:\s+.*)?', line)
-        if match and match[1].endswith('.c'):
+        if not match:
+            continue
+        listed.add(match[1])
+        if match[1].endswith('.c'):
             units.add(match[1])
-            active.append((match[1], match[2] or '.text'))
+            if match[2]:
+                active.append((match[1], match[2]))
+    if not active:
+        active = [key for key in placement_overrides(plan) if key[0] in units]
     validate_active_sections(plan, active, managed_placements(document))
     build = root / 'build' / version
     objects = {unit: read_layout(build / 'src' / (Path(unit).stem + '.o'), args.binutils_prefix) for unit in sorted(units)}
     for unit in {asset['unit'] for asset in plan['assets'] if 'unit' in asset}:
-        if not re.search(r'^' + re.escape(unit) + r'\(\.rodata\)\s*$',
-                         (root / 'config' / version / 'units.txt').read_text(), re.M):
+        if unit not in listed:
             raise ValueError(f'{unit}: asset definition owner is not active')
         objects[unit] = read_layout(build / 'asm' / (Path(unit).stem + '.o'), args.binutils_prefix)
     linked = read_layout(build / f'com_{version}.elf', args.binutils_prefix)
