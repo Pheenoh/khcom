@@ -111,6 +111,7 @@ TARGET_ANCHORS = {
     "eu": {
         0x08f7f66c: 0x0905984c,
         0x08fbd378: 0x0908282c,
+        0x09007134: 0x090b2510,
         0x09ED9BA8: 0x09F57460,
         0x09EE3844: 0x09F6EF64,
         0x09EE1520: 0x09F5C0EC,
@@ -377,6 +378,7 @@ TARGET_ANCHORS = {
     "jp": {
         0x08f7f66c: 0x08f72b74,
         0x08fbd378: 0x08fa6a14,
+        0x09007134: 0x08fe380c,
         0x09079EB2: 0x09033FA2,
         0x09080074: 0x0903AE74,
         0x090822F2: 0x0903D494,
@@ -3371,6 +3373,7 @@ TARGET_DATA_SIZE = {
         ("event_index_data.c", ".data"): 0x924,
         ("events_074_133.c", ".rodata"): 0x28fe0,
         ("events_000_073.c", ".rodata"): 0x2fce4,
+        ("events_134_196.c", ".rodata"): 0x16b34,
         ("map_fixed_09856C90_data.c", ".rodata"): 0x54,
         ("map_fixed_09856D34_data.c", ".rodata"): 0x54,
         ("map_fixed_09856DE4_data.c", ".rodata"): 0x54,
@@ -3463,6 +3466,7 @@ TARGET_DATA_SIZE = {
         ("sroll.c", ".rodata"): 0x287,
         ("events_074_133.c", ".rodata"): 0x33ea0,
         ("events_000_073.c", ".rodata"): 0x3cdf8,
+        ("events_134_196.c", ".rodata"): 0x1f7a0,
         ("event_index_data.c", ".data"): 0x93C,
         ("card_localized_09EE9C90_data.c", ".data"): 0x28C,
         ("animation_resource_09EFB840_data.c", ".data"): 0x29C,
