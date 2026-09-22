@@ -41,6 +41,8 @@ u16 gUnk_0203AB20[10] EWRAM_COMMON(16);
 s8 gUnk_0203AB34[2] EWRAM_COMMON(4);
 #endif
 
+const char gModeNameSioBattle[] = "mode_sio_battle";
+
 const char gModeNameSioBtlConnect[] = "mode_sio_btl_connect";
 
 const SioAnimDef gUnk_096193E0[2] = {

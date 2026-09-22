@@ -301,6 +301,7 @@ TARGET_ANCHORS = {
         0x08F7DD50: 0x09057F30,
         0x08F7DD80: 0x09057F60,
         0x096194B0: 0x095DA8C4,
+        0x096193B8: 0x095DA818,
     },
     "jp": {
         0x09079EB2: 0x09033FA2,
@@ -3217,6 +3218,7 @@ TARGET_FUNC_ADDR = {
 
 TARGET_DATA_SIZE = {
     "eu": {
+        ("mode_sio.c", ".rodata"): 0x92,
         ("sroll.c", ".rodata"): 0x257,
         ("bos5.c", ".rodata"): 0x102D,
         ("animation_resource_09EE10E0_data.c", ".data"): 0x124,

@@ -997,69 +997,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeSioBattle",
-          "address": "0x096193B8",
-          "size": 16,
-          "sha256": "c5b6b4560a2adcabdf2abecf12cf9166f4700423a98f417ab41ac5368fab77ce",
-          "objects": [
-            {
-              "name": "gModeNameSioBattle",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata",
-          "address": "0x096193C8",
-          "size": 206,
-          "sha256": "000e17a28be4aa56a4c1371053a1390562a3514b2ca6ed1d63315e724a24ff30",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlConnect",
-              "offset": 0,
-              "size": 21
-            },
-            {
-              "name": "gUnk_096193E0",
-              "offset": 24,
-              "size": 32
-            },
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 56,
-              "size": 20
-            },
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 76,
-              "size": 21
-            },
-            {
-              "name": "gModeNameSioChgConnect",
-              "offset": 100,
-              "size": 21
-            },
-            {
-              "name": "gUnk_09619444",
-              "offset": 124,
-              "size": 48
-            },
-            {
-              "name": "gModeNameSioChgCard",
-              "offset": 172,
-              "size": 18
-            },
-            {
-              "name": "gModeNameSioError",
-              "offset": 192,
-              "size": 14
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4991,69 +4928,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeSioBattle",
-          "address": "0x095D1E94",
-          "size": 16,
-          "sha256": "c5b6b4560a2adcabdf2abecf12cf9166f4700423a98f417ab41ac5368fab77ce",
-          "objects": [
-            {
-              "name": "gModeNameSioBattle",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata",
-          "address": "0x095D1EA4",
-          "size": 206,
-          "sha256": "7a3595b49ce8d0e5727bac219b57bb88d8139d88d22fe2551d31cec3c73240bf",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlConnect",
-              "offset": 0,
-              "size": 21
-            },
-            {
-              "name": "gUnk_096193E0",
-              "offset": 24,
-              "size": 32
-            },
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 56,
-              "size": 20
-            },
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 76,
-              "size": 21
-            },
-            {
-              "name": "gModeNameSioChgConnect",
-              "offset": 100,
-              "size": 21
-            },
-            {
-              "name": "gUnk_09619444",
-              "offset": 124,
-              "size": 48
-            },
-            {
-              "name": "gModeNameSioChgCard",
-              "offset": 172,
-              "size": 18
-            },
-            {
-              "name": "gModeNameSioError",
-              "offset": 192,
-              "size": 14
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8939,64 +8813,6 @@
               "name": "gTaskNamePrint",
               "offset": 0,
               "size": 11
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gModeSioBattle",
-          "address": "0x095DA818",
-          "size": 16,
-          "sha256": "c5b6b4560a2adcabdf2abecf12cf9166f4700423a98f417ab41ac5368fab77ce",
-          "objects": [
-            {
-              "name": "gModeNameSioBattle",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "mode_sio.c",
-          "section": ".rodata",
-          "address": "0x095DA828",
-          "size": 130,
-          "sha256": "5280b497c2bedf82306fdf4d1b4f2019b1f2cb46c41f7573b89bdf4f37e8fe84",
-          "objects": [
-            {
-              "name": "gModeNameSioBtlConnect",
-              "offset": 0,
-              "size": 21
-            },
-            {
-              "name": "gUnk_096193E0",
-              "offset": 24,
-              "size": 32
-            },
-            {
-              "name": "gUnkEu_095DA860",
-              "offset": 56,
-              "size": 7
-            },
-            {
-              "name": "gUnkEu_095DA867",
-              "offset": 63,
-              "size": 8
-            },
-            {
-              "name": "gModeNameSioBtlOption",
-              "offset": 72,
-              "size": 20
-            },
-            {
-              "name": "gModeNameSioBtlCardget",
-              "offset": 92,
-              "size": 21
-            },
-            {
-              "name": "gModeNameSioError",
-              "offset": 116,
-              "size": 14
             }
           ]
         },

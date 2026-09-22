@@ -41334,5 +41334,3 @@ TaskDesc gTaskDescPrint = {
     (void (*)(void*))task_print_3,
     0x4,
 };
-
-const char gModeNameSioBattle[] __attribute__((section(".rodata_registration_name_gModeSioBattle"), aligned(1))) = "mode_sio_battle";
