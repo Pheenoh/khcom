@@ -41,6 +41,12 @@
 #include "game.h"
 #include "bos4_api.h"
 
+u8 gActiveDeck;
+
+u8 gUnk_02034AB1[3];
+
+CardUiSpriteState gUnk_0203A860 EWRAM_COMMON(16);
+
 u8 func_080892E8(u8* work, void* a);
 #ifdef VERSION_EU
 extern AnimHeader gUnkEu_091933B6;
@@ -7206,3 +7212,159 @@ void func_0808FA8C(UnkStruct_0808FA8C* w) {
 }
 
 void func_08085FB4(u8* work, void* a);
+
+const u16* gUnk_09EE4A68[12] = {
+    gUnk_090354E8,
+    gUnk_09035512,
+    gUnk_0903553A,
+    gUnk_09035564,
+    gUnk_0903557C,
+    gUnk_090355A4,
+    gUnk_090355C8,
+    gUnk_090355EA,
+    gUnk_0903560A,
+    gUnk_09035630,
+    gUnk_0903563A,
+    gUnk_0903566C,
+};
+
+const u16* gUnk_09EE4A98[12] = {
+    &gUnk_090356A8,
+    &gUnk_090356AA,
+    &gUnk_090356AC,
+    &gUnk_090356AE,
+    &gUnk_090356B0,
+    &gUnk_090356B2,
+    &gUnk_090356B4,
+    &gUnk_090356B6,
+    &gUnk_090356B8,
+    &gUnk_090356B8,
+    gUnk_090356BA,
+    gUnk_090356BA,
+};
+#ifdef VERSION_EU
+u8 gUnkEu_09F6FD74[7] = { 'D', 'e', 'c', 'k', ' ', '1', 0 };
+
+u8 gUnkEu_09F6FD7B[7] = { 'D', 'e', 'c', 'k', ' ', '2', 0 };
+
+u8 gUnkEu_09F6FD82[7] = { 'D', 'e', 'c', 'k', ' ', '3', 0 };
+#else
+u16 gUnk_09EE4AC8[7] = { 'D', 'e', 'c', 'k', ' ', '1', 0 };
+
+u16 gUnk_09EE4AD6[7] = { 'D', 'e', 'c', 'k', ' ', '2', 0 };
+
+u16 gUnk_09EE4AE4[7] = { 'D', 'e', 'c', 'k', ' ', '3', 0 };
+#endif
+#ifdef VERSION_EU
+void* gUnkEu_09F6FD8C[5] = { gUnkEu_09187A0E, gUnkEu_09189F36, gUnkEu_0918A73A, gUnkEu_0918A48E, gUnkEu_0918A1E2 };
+
+void** gUnkEu_09F6FDA0[5] = { &gUnk_09EEAFD4, &gUnkEu_09F77070, &gUnkEu_09F77094, &gUnkEu_09F77088, &gUnkEu_09F7707C };
+
+void* gUnkEu_09F6FDB4[5] = { gUnk_090A261E, gUnkEu_0918B8F2, gUnkEu_0919016A, gUnkEu_0918E942, gUnkEu_0918D11A };
+
+void** gUnkEu_09F6FDC8[5] = {
+    &gUnk_09EEAFE8,
+    &gUnkEu_09F770C0,
+    &gUnkEu_09F770D8,
+    &gUnkEu_09F770D0,
+    &gUnkEu_09F770C8,
+};
+
+void* gUnkEu_09F6FDDC[5] = { gUnk_090A3E46, gUnkEu_09191992, gUnkEu_0919236A, gUnkEu_09192022, gUnkEu_09191CDA };
+
+void** gUnkEu_09F6FDF0[5] = {
+    &gUnk_09EEAFF0,
+    &gUnkEu_09F770E0,
+    &gUnkEu_09F770F8,
+    &gUnkEu_09F770F0,
+    &gUnkEu_09F770E8,
+};
+
+u8* gUnkEu_09F6FE04[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gUnkEu_094E9CE4, gUnkEu_094E96E4 };
+#endif
+
+const char gTaskName_09EE4AF4[] = "Deckmenu2";
+
+TaskDesc gUnk_09EE4AF4 = {
+    gTaskName_09EE4AF4,
+    (void (*)(void*, void*))func_08085FB4,
+    func_080863C0,
+    (void (*)(void*))func_0808B66C,
+    (void (*)(void*))func_0808C2F0,
+#ifdef VERSION_EU
+    0x8DC,
+#else
+    0x8D8,
+#endif
+};
+#ifdef VERSION_EU
+void* gUnkEu_09F6FE30[5] = { gUnk_090A5F1E, gUnk_090A5F1E, gUnkEu_091965CA, gUnkEu_091959DA, gUnk_090A5F1E };
+
+void** gUnkEu_09F6FE44[5] = { gUnk_09EEB08C, gUnk_09EEB08C, gUnkEu_09F7721C, gUnkEu_09F771E4, gUnk_09EEB08C };
+
+void* gUnkEu_09F6FE58[5] = { gUnk_09EEB0B8, gUnk_09EEB0B8, gUnkEu_09F77248, gUnkEu_09F77210, gUnk_09EEB0B8 };
+#endif
+#ifdef VERSION_US
+const u8* gUnk_09EE4B0C[7] = {
+    gKeyboardTextUs_09035742,
+    gKeyboardTextUs_09035762,
+    gKeyboardTextUs_0903577A,
+    gKeyboardTextUs_0903579A,
+    gKeyboardTextUs_090357B2,
+    gKeyboardTextUs_090357D2,
+    gKeyboardTextUs_090357F2,
+};
+#endif
+#ifdef VERSION_JP
+const u8* gUnk_09EE4B0C[7] = {
+    gKeyboardTextJp_09008AE0,
+    gKeyboardTextJp_09008AC0,
+    gKeyboardTextJp_09008AA0,
+    gKeyboardTextJp_09008A88,
+    gKeyboardTextJp_09008A68,
+    gKeyboardTextJp_09008A48,
+    gKeyboardTextJp_09008A2C,
+};
+
+const u8* gUnkJp_09EBC148[7] = {
+    gKeyboardTextJp_09008BB4,
+    gKeyboardTextJp_09008B94,
+    gKeyboardTextJp_09008B74,
+    gKeyboardTextJp_09008B5C,
+    gKeyboardTextJp_09008B3C,
+    gKeyboardTextJp_09008B1C,
+    gKeyboardTextJp_09008B00,
+};
+
+const u8* gUnkJp_09EBC164[7] = {
+    gKeyboardTextJp_09008C84,
+    gKeyboardTextJp_09008C64,
+    gKeyboardTextJp_09008C44,
+    gKeyboardTextJp_09008C24,
+    gKeyboardTextJp_09008C0C,
+    gKeyboardTextJp_09008BEC,
+    gKeyboardTextJp_09008BD4,
+};
+#endif
+#ifdef VERSION_EU
+const u8* gUnkEu_09F6FE6C[8] = {
+    gKeyboardTextEu_090CEA56,
+    gKeyboardTextEu_090CEA66,
+    gKeyboardTextEu_090CEA72,
+    gKeyboardTextEu_090CEA82,
+    gKeyboardTextEu_090CEA8E,
+    gKeyboardTextEu_090CEA9E,
+    gKeyboardTextEu_090CEAA9,
+    gKeyboardTextEu_090CEAB9,
+};
+
+const u8* gUnkEu_09F6FE8C[7] = {
+    gKeyboardTextEu_090CEAC4,
+    gKeyboardTextEu_090CEAD4,
+    gKeyboardTextEu_090CEADF,
+    gKeyboardTextEu_090CEAEF,
+    gKeyboardTextEu_090CEAFF,
+    gKeyboardTextEu_090CEB05,
+    gKeyboardTextEu_090CEB15,
+};
+#endif
