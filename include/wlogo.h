@@ -8,7 +8,6 @@
 
 #include "animation_resource_data.h"
 
-#include "worldlogo_state.h"
 
 #include "obj.h"
 

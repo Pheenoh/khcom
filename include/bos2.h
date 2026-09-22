@@ -13,7 +13,6 @@
 
 #include "boss_jafar_types.h"
 
-#include "boss_tm_state.h"
 
 #include "prize_types.h"
 

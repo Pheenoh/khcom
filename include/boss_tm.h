@@ -368,4 +368,17 @@ void func_080BA8C8(TmFootWork* work, s16 a);
 void func_080BB588(TmArmJoint* joints, u16 a);
 void func_080BB5E8(u8* joints, TmAnim* a);
 
+extern s16 gUnk_0203AB3C;
+extern s16 gUnk_0203AB40;
+extern s16 gUnk_0203AB44;
+extern s16 gUnk_0203AB48;
+extern BtlObj gUnk_0203AB50;
+extern s16 gUnk_0203AC60;
+extern s32 gUnk_0203AC64;
+extern s16 gUnk_0203AC68;
+extern s16 gUnk_0203AC6C;
+extern s32 gUnk_0203AC70;
+extern u16 gUnk_0203AC74;
+extern s32 gUnk_0203AC78;
+
 #endif

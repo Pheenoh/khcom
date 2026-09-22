@@ -1,8 +1,7 @@
+#include "macros.h"
 #include "registration_data.h"
 #include "boss_tm.h"
 #include "boss_tm_assets.h"
-#include "boss_tm_state.h"
-#include "worldlogo_state.h"
 #include "animation_resource_data.h"
 #include "animation_resource_assets.h"
 #include "chara_api.h"
@@ -25,6 +24,19 @@
 #include "acgtrans.h"
 #include "mode_battle_data.h"
 #include <string.h>
+
+s16 gUnk_0203AB3C EWRAM_COMMON(4);
+s16 gUnk_0203AB40 EWRAM_COMMON(4);
+s16 gUnk_0203AB44 EWRAM_COMMON(4);
+s16 gUnk_0203AB48 EWRAM_COMMON(4);
+BtlObj gUnk_0203AB50 EWRAM_COMMON(16);
+s16 gUnk_0203AC60 EWRAM_COMMON(4);
+s32 gUnk_0203AC64 EWRAM_COMMON(4);
+s16 gUnk_0203AC68 EWRAM_COMMON(4);
+s16 gUnk_0203AC6C EWRAM_COMMON(4);
+s32 gUnk_0203AC70 EWRAM_COMMON(4);
+u16 gUnk_0203AC74 EWRAM_COMMON(4);
+s32 gUnk_0203AC78 EWRAM_COMMON(4);
 
 extern u8 gUnk_09EF1D58[11];
 extern s16 gUnk_09EF1D64[8];
