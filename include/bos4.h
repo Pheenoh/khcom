@@ -1,4 +1,6 @@
 #include "registration_data.h"
+#include "remaining_resource_09EF679C_data.h"
+#include "battle_actor_types.h"
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
@@ -62,7 +64,7 @@ typedef struct UnkStruct_096FE034Entry {
 } UnkStruct_096FE034Entry;
 
 typedef struct UnkStruct_096FE034 {
-    UnkStruct_096FE034Entry* unk_00;
+    const UnkStruct_096FE034Entry* unk_00;
     u16 unk_04;
     u16 unk_06;
     void* unk_08;
@@ -78,12 +80,13 @@ typedef struct UnkStruct_080DDDDC {
     u16 unk_02;
     u8 unk_04;
     u8 unk_05[0x03];
-    UnkStruct_096FE034* unk_08;
+    const UnkStruct_096FE034* unk_08;
 } UnkStruct_080DDDDC;
 
-extern UnkStruct_096FE034 gUnk_096FE034;
-extern UnkStruct_096FE034 gUnk_096FE04C;
-extern UnkStruct_096FE034 gUnk_096FE064;
+extern const UnkStruct_096FE034Entry gUnk_096FE020[5];
+extern const UnkStruct_096FE034 gUnk_096FE034;
+extern const UnkStruct_096FE034 gUnk_096FE04C;
+extern const UnkStruct_096FE034 gUnk_096FE064;
 
 typedef struct BoogieExplosiondiceWork {
     u32 unk_000;
@@ -329,9 +332,14 @@ typedef struct UrsulaTakoWork {
 } UrsulaTakoWork;
 
 extern u8 gUnk_0979D0B6[];
-extern UnkStruct_096FE034 gUnk_096FE278;
-extern UnkStruct_096FE034 gUnk_096FE290;
-extern UnkStruct_096FE034 gUnk_096FE2A8;
+extern const UnkStruct_096FE034Entry gUnk_096FE1EC[6];
+extern const UnkStruct_096FE034Entry gUnk_096FE204[12];
+extern const UnkStruct_096FE034Entry gUnk_096FE234[5];
+extern const UnkStruct_096FE034Entry gUnk_096FE248[5];
+extern const UnkStruct_096FE034Entry gUnk_096FE25C[1];
+extern const UnkStruct_096FE034 gUnk_096FE278;
+extern const UnkStruct_096FE034 gUnk_096FE290;
+extern const UnkStruct_096FE034 gUnk_096FE2A8;
 extern u8 gUnk_0984B0D8[];
 
 extern UnkStruct_02034F7C gUnk_0984CECC[];
@@ -342,7 +350,7 @@ extern vu32 gFrameCounter;
 
 void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg);
 
-extern u8 gUnk_096FE0E8[];
+extern const EmyKind gUnk_096FE0E8;
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
 
@@ -523,7 +531,7 @@ void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work);
 void task_bos_ursula_tako_2(UrsulaTakoWork* work);
 void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg);
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work);
-extern u8 gUnk_096FE1A8[];
+extern const EmyKind gUnk_096FE1A8;
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work);
 void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 
@@ -532,9 +540,9 @@ void func_080DB04C(BoogieKnifeWork* work);
 
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 void task_bos_ursula_0(UrsulaWork* work);
-extern u8 gUnk_096FE14C[];
-extern u8 gUnk_096FE13C[];
-extern u8 gUnk_096FE098[];
+extern const BattleBackgroundDef gUnk_096FE14C;
+extern const EmyKind gUnk_096FE13C;
+extern const EmyKind gUnk_096FE098;
 extern u8 gUnk_0979A426[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
@@ -546,7 +554,7 @@ void func_080D9B6C(BoogieDiceWork* work);
 extern u8 gUnk_09796EAA[];
 u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
 
-extern UnkStruct_096FE034 gUnk_096FE260;
+extern const UnkStruct_096FE034 gUnk_096FE260;
 
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg);
 extern u8 gUnk_0979C44E[];
@@ -562,13 +570,17 @@ extern u8 gUnk_0979666A[];
 extern u8 gUnk_0984AF98[];
 
 typedef struct UnkStruct_096FDFC4 {
-    u8 unk_00[0x06];
+    u32 unk_00;
+    u16 unk_04;
     u16 unk_06;
     u16 unk_08;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
 } UnkStruct_096FDFC4;
 
-extern UnkStruct_096FDFC4 gUnk_096FDFC4;
-extern UnkStruct_096FDFC4 gUnk_096FE0C0;
+extern const UnkStruct_096FDFC4 gUnk_096FDFC4;
+extern const UnkStruct_096FDFC4 gUnk_096FE0C0;
 extern UnkStruct_096FDFC4 gUnk_096FDF54;
 u8 task_bos_boogie_map_1(void);
 
@@ -577,20 +589,42 @@ u8 func_080D9B28(BoogieDiceWork* work);
 void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg);
 extern u8 gUnk_0979E344[];
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg);
-extern u8 gUnk_096FE324[];
+extern const EmyKind gUnk_096FE324;
 extern u8 gUnk_097A0DE4[];
 extern u8 gUnk_0984B0F8[];
 void task_bos_ursula_border_2(UrsulaBorderWork* work);
 extern u8 gUnk_0979D090[];
 extern u8 gUnk_0979D8B8[];
 s32 strcmp(const char* a, const char* b);
-extern const char gUnk_096FE2F4[];
-extern UnkStruct_096FE034 gUnk_096FE2C0;
+extern const UnkStruct_096FE034 gUnk_096FE2C0;
 void func_080DA42C(BoogieDiceWork* work);
-extern u8 gUnk_096FDF7C[];
+extern void* const gUnk_096FDF7C[6][3];
+extern const char gTaskNameBosUrsulaBubble[];
+extern const char gTaskNameBosUrsulaBubbleSingle[];
+extern const char gTaskNameBosUrsulaThunder[];
+extern u8 gUnk_097976DC[];
+extern u8 gUnk_09797D0C[];
+extern u8 gUnk_0979833C[];
+extern u8 gUnk_0979896C[];
+extern u8 gUnk_09798F9C[];
+extern u8 gUnk_097995CC[];
+extern u8 gUnk_097ED478[];
+extern u8 gUnk_097ED578[];
+extern u8 gUnk_097ED678[];
+extern u8 gUnk_097EE378[];
+extern u8 gUnk_097EEF78[];
+extern u8 gUnk_097F5378[];
+extern u8 gUnk_097F5E78[];
+extern u8 gUnk_097F8AD8[];
+extern u8 gUnk_097FC338[];
+extern u8 gUnk_09843798[];
+extern u8 gUnk_09843F98[];
+extern u8 gUnk_09844798[];
+extern u8 gUnk_09844F98[];
+extern u8 gUnk_0984AFF8[];
 
 void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);
-extern u8 gUnk_096FE114[];
+extern const EmyKind gUnk_096FE114;
 extern u8 gUnk_09799FB0[];
 extern u8 gUnk_0984AFB8[];
 extern u8 gUnk_08F69BC4[];

@@ -27,7 +27,34 @@ UnkStruct_0203C590 gUnk_0203C590 EWRAM_COMMON(16);
 void task_bos_boogie_saku_2(BoogieSakuWork* work);
 u8 task_bos_ursula_1(UrsulaWork* work);
 
-const char gTaskNameBosBoogieDice[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieDice"), aligned(1))) = "task_bos_boogie_dice";
+const char gTaskNameBosBoogieDice[] = "task_bos_boogie_dice";
+
+void* const gUnk_096FDF7C[6][3] = {
+#if defined(VERSION_US)
+    { gUnkUs_09EF67A8, gUnkUs_09EF679C, gUnk_097976DC },
+    { gUnkUs_09EF67B8, gUnkUs_09EF67AC, gUnk_09797D0C },
+    { gUnkUs_09EF67C8, gUnkUs_09EF67BC, gUnk_0979833C },
+    { gUnkUs_09EF67D8, gUnkUs_09EF67CC, gUnk_0979896C },
+    { gUnkUs_09EF67E8, gUnkUs_09EF67DC, gUnk_09798F9C },
+    { gUnkUs_09EF67F8, gUnkUs_09EF67EC, gUnk_097995CC },
+#elif defined(VERSION_JP)
+    { gUnkJp_09ECDB94, gUnkJp_09ECDB88, gUnk_097976DC },
+    { gUnkJp_09ECDBA4, gUnkJp_09ECDB98, gUnk_09797D0C },
+    { gUnkJp_09ECDBB4, gUnkJp_09ECDBA8, gUnk_0979833C },
+    { gUnkJp_09ECDBC4, gUnkJp_09ECDBB8, gUnk_0979896C },
+    { gUnkJp_09ECDBD4, gUnkJp_09ECDBC8, gUnk_09798F9C },
+    { gUnkJp_09ECDBE4, gUnkJp_09ECDBD8, gUnk_097995CC },
+#else
+    { gUnkEu_09F81D90, gUnkEu_09F81D84, gUnk_097976DC },
+    { gUnkEu_09F81DA0, gUnkEu_09F81D94, gUnk_09797D0C },
+    { gUnkEu_09F81DB0, gUnkEu_09F81DA4, gUnk_0979833C },
+    { gUnkEu_09F81DC0, gUnkEu_09F81DB4, gUnk_0979896C },
+    { gUnkEu_09F81DD0, gUnkEu_09F81DC4, gUnk_09798F9C },
+    { gUnkEu_09F81DE0, gUnkEu_09F81DD4, gUnk_097995CC },
+#endif
+};
+
+const UnkStruct_096FDFC4 gUnk_096FDFC4 = { 39, 0, 16, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieDice = {
     gTaskNameBosBoogieDice,
@@ -38,7 +65,7 @@ TaskDesc gTaskDescBosBoogieDice = {
     0x174,
 };
 
-const char gTaskNameBosBoogieExplosiondice[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieExplosiondice"), aligned(1))) = "task_bos_boogie_explosiondice";
+const char gTaskNameBosBoogieExplosiondice[] = "task_bos_boogie_explosiondice";
 
 TaskDesc gTaskDescBosBoogieExplosiondice = {
     gTaskNameBosBoogieExplosiondice,
@@ -49,7 +76,7 @@ TaskDesc gTaskDescBosBoogieExplosiondice = {
     0x160,
 };
 
-const char gTaskNameBosBoogieSaku[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieSaku"), aligned(1))) = "task_bos_boogie_saku";
+const char gTaskNameBosBoogieSaku[] = "task_bos_boogie_saku";
 
 TaskDesc gTaskDescBosBoogieSaku = {
     gTaskNameBosBoogieSaku,
@@ -60,7 +87,15 @@ TaskDesc gTaskDescBosBoogieSaku = {
     0x44,
 };
 
-const char gTaskNameBosBoogieMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieMap"), aligned(1))) = "task_bos_boogie_map";
+const char gTaskNameBosBoogieMap[] = "task_bos_boogie_map";
+
+const UnkStruct_096FE034Entry gUnk_096FE020[5] = { { 5, 0 }, { 5, 1 }, { 5, 2 }, { 5, 3 }, { 5, 4 } };
+
+const UnkStruct_096FE034 gUnk_096FE034 = { gUnk_096FE020, 5, 0, gUnk_097ED478, 0X7C00, 0X0100, 0X0300, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE04C = { gUnk_096FE020, 5, 0, gUnk_097ED578, 0X7D00, 0X0100, 0X0300, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE064 = { gUnk_096FE020, 5, 0, gUnk_097ED678, 0X7E00, 0X0100, 0X0300, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieMap = {
     gTaskNameBosBoogieMap,
@@ -71,7 +106,9 @@ TaskDesc gTaskDescBosBoogieMap = {
     0x4,
 };
 
-const char gTaskNameBosBoogieMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieMapanime"), aligned(1))) = "task_bos_boogie_mapanime";
+const char gTaskNameBosBoogieMapanime[] = "task_bos_boogie_mapanime";
+
+const EmyKind gUnk_096FE098 = { 39, 0, 16, 16, 0, 0, 4 };
 
 TaskDesc gTaskDescBosBoogieMapanime = {
     gTaskNameBosBoogieMapanime,
@@ -82,7 +119,9 @@ TaskDesc gTaskDescBosBoogieMapanime = {
     0x24,
 };
 
-const char gTaskNameBosBoogieDisk[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieDisk"), aligned(1))) = "task_bos_boogie_disk";
+const char gTaskNameBosBoogieDisk[] = "task_bos_boogie_disk";
+
+const UnkStruct_096FDFC4 gUnk_096FE0C0 = { 39, 0, 192, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieDisk = {
     gTaskNameBosBoogieDisk,
@@ -93,7 +132,9 @@ TaskDesc gTaskDescBosBoogieDisk = {
     0x160,
 };
 
-const char gTaskNameBosBoogieKnife[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKnife"), aligned(1))) = "task_bos_boogie_knife";
+const char gTaskNameBosBoogieKnife[] = "task_bos_boogie_knife";
+
+const EmyKind gUnk_096FE0E8 = { 39, 0, 0, 0, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnife = {
     gTaskNameBosBoogieKnife,
@@ -104,7 +145,9 @@ TaskDesc gTaskDescBosBoogieKnife = {
     0x158,
 };
 
-const char gTaskNameBosBoogieKnifereader[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKnifereader"), aligned(1))) = "task_bos_boogie_knifereader";
+const char gTaskNameBosBoogieKnifereader[] = "task_bos_boogie_knifereader";
+
+const EmyKind gUnk_096FE114 = { 39, 0, 16, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnifereader = {
     gTaskNameBosBoogieKnifereader,
@@ -115,7 +158,13 @@ TaskDesc gTaskDescBosBoogieKnifereader = {
     0x140,
 };
 
-const char gTaskNameBosBoogieKaihuku[] __attribute__((section(".rodata_registration_name_gTaskDescBosBoogieKaihuku"), aligned(1))) = "task_bos_boogie_kaihuku";
+const char gTaskNameBosBoogieKaihuku[] = "task_bos_boogie_kaihuku";
+
+const EmyKind gUnk_096FE13C = { 35, 0, 32, 24, 0, 0, 0 };
+
+const BattleBackgroundDef gUnk_096FE14C = {
+    gUnk_097EE378, 0x7000, { 0, 0 }, gUnk_0984AFF8, 0xe0, { 0, 0 }, { gUnk_09843798, gUnk_09843F98, gUnk_09844798, gUnk_09844F98 }
+};
 
 TaskDesc gTaskDescBosBoogieKaihuku = {
     gTaskNameBosBoogieKaihuku,
@@ -298,7 +347,7 @@ const u16* gUnk_09EF5190[12] = {
 #endif
 };
 
-const char gTaskNameBosUrsula[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsula"), aligned(1))) = "task_bos_ursula";
+const char gTaskNameBosUrsula[] = "task_bos_ursula";
 
 TaskDesc gTaskDescBosUrsula = {
     gTaskNameBosUrsula,
@@ -309,7 +358,7 @@ TaskDesc gTaskDescBosUrsula = {
     0x164,
 };
 
-const char gTaskNameBosUrsulaMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaMap"), aligned(1))) = "task_bos_ursula_map";
+const char gTaskNameBosUrsulaMap[] = "task_bos_ursula_map";
 
 TaskDesc gTaskDescBosUrsulaMap = {
     gTaskNameBosUrsulaMap,
@@ -320,7 +369,9 @@ TaskDesc gTaskDescBosUrsulaMap = {
     0xC,
 };
 
-const char gTaskNameBosUrsulaBorder[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBorder"), aligned(1))) = "task_bos_ursula_border";
+const char gTaskNameBosUrsulaBorder[] = "task_bos_ursula_border";
+
+const EmyKind gUnk_096FE1A8 = { 35, 0, 48, 16, 24, 0, 1 };
 
 TaskDesc gTaskDescBosUrsulaBorder = {
     gTaskNameBosUrsulaBorder,
@@ -331,7 +382,7 @@ TaskDesc gTaskDescBosUrsulaBorder = {
     0x8,
 };
 
-const char gTaskNameBosUrsulaTako[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaTako"), aligned(1))) = "task_bos_ursula_tako";
+const char gTaskNameBosUrsulaTako[] = "task_bos_ursula_tako";
 
 TaskDesc gTaskDescBosUrsulaTako = {
     gTaskNameBosUrsulaTako,
@@ -342,7 +393,27 @@ TaskDesc gTaskDescBosUrsulaTako = {
     0x204,
 };
 
-const char gTaskNameBosUrsulaBacktako[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBacktako"), aligned(1))) = "task_bos_ursula_backtako";
+const char gTaskNameBosUrsulaBacktako[] = "task_bos_ursula_backtako";
+
+const UnkStruct_096FE034Entry gUnk_096FE1EC[6] = { { 60, 0 }, { 4, 1 }, { 6, 2 }, { 20, 0 }, { 4, 1 }, { 6, 2 } };
+
+const UnkStruct_096FE034Entry gUnk_096FE204[12] = { { 5, 0 }, { 5, 1 }, { 5, 2 }, { 5, 3 }, { 5, 2 }, { 5, 1 }, { 5, 2 }, { 5, 3 }, { 5, 2 }, { 5, 1 }, { 5, 2 }, { 5, 3 } };
+
+const UnkStruct_096FE034Entry gUnk_096FE234[5] = { { 10, 0 }, { 10, 1 }, { 10, 2 }, { 10, 3 }, { 10, 4 } };
+
+const UnkStruct_096FE034Entry gUnk_096FE248[5] = { { 10, 0 }, { 10, 1 }, { 120, 2 }, { 10, 3 }, { 10, 4 } };
+
+const UnkStruct_096FE034Entry gUnk_096FE25C[1] = { { 0, 0 } };
+
+const UnkStruct_096FE034 gUnk_096FE260 = { gUnk_096FE1EC, 6, 0, gUnk_097F5378, 0X0C00, 0X0300, 0X0400, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE278 = { gUnk_096FE204, 12, 0, gUnk_097F5E78, 0X0C00, 0X0860, 0X0C00, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE290 = { gUnk_096FE234, 5, 0, gUnk_097F8AD8, 0X0C00, 0X0860, 0X0C00, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE2A8 = { gUnk_096FE248, 5, 0, gUnk_097FC338, 0X0C00, 0X0860, 0X0C00, 0, 0 };
+
+const UnkStruct_096FE034 gUnk_096FE2C0 = { gUnk_096FE25C, 1, 0, gUnk_097EEF78, 0X0C00, 0X0860, 0X0C00, 0, 0 };
 
 TaskDesc gTaskDescBosUrsulaBacktako = {
     gTaskNameBosUrsulaBacktako,
@@ -353,7 +424,7 @@ TaskDesc gTaskDescBosUrsulaBacktako = {
     0x44,
 };
 
-const char gTaskNameBosUrsulaMapanime[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaMapanime"), aligned(1))) = "task_bos_ursula_mapanime";
+const char gTaskNameBosUrsulaMapanime[] = "task_bos_ursula_mapanime";
 
 TaskDesc gTaskDescBosUrsulaMapanime = {
     gTaskNameBosUrsulaMapanime,
@@ -363,8 +434,6 @@ TaskDesc gTaskDescBosUrsulaMapanime = {
     (void (*)(void*))task_bos_ursula_mapanime_3,
     0x2C,
 };
-
-const char gTaskNameBosUrsulaBubble[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaBubble"), aligned(1))) = "task_bos_ursula_bubble";
 
 TaskDesc gTaskDescBosUrsulaBubble = {
     gTaskNameBosUrsulaBubble,
@@ -379,8 +448,6 @@ TaskDesc gTaskDescBosUrsulaBubble = {
 #endif
 };
 
-const char gTaskNameBosUrsulaBubbleSingle[] __attribute__((aligned(1))) = "task_bos_ursula_bubble_single";
-
 TaskDesc gTaskDescBosUrsulaBubbleSingle = {
     gTaskNameBosUrsulaBubbleSingle,
     (void (*)(void*, void*))task_bos_ursula_bubble_single_0,
@@ -393,8 +460,6 @@ TaskDesc gTaskDescBosUrsulaBubbleSingle = {
     0x148,
 #endif
 };
-
-const char gTaskNameBosUrsulaThunder[] __attribute__((section(".rodata_registration_name_gTaskDescBosUrsulaThunder"), aligned(1))) = "task_bos_ursula_thunder";
 
 TaskDesc gTaskDescBosUrsulaThunder = {
     gTaskNameBosUrsulaThunder,
@@ -1209,7 +1274,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
 
     d = gBtlWork->actor->y;
     e = -0x1000;
-    func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
+    func_0801B37C(&work->unk_040, &gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6824, 8), gUnk_0979A426);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
@@ -1530,7 +1595,7 @@ void task_bos_boogie_knifereader_0(BoogieKnifereaderWork* work) {
         work->unk_12C[i] = 0;
     }
 
-    func_0801B37C(&work->unk_01C, gUnk_096FE0E8, 0xF800, 0x24000, 0);
+    func_0801B37C(&work->unk_01C, &gUnk_096FE0E8, 0xF800, 0x24000, 0);
     func_0801C2DC(&work->unk_01C, 1);
     func_0801BCD4(&work->unk_01C);
 }
@@ -1642,7 +1707,7 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     c = arg->unk_044;
     d = arg->unk_048 + 0x100;
     e = arg->unk_04C - 0x7C00;
-    func_0801B37C(&work->unk_040, gUnk_096FE114, c, d, e);
+    func_0801B37C(&work->unk_040, &gUnk_096FE114, c, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)LoadObjTiles(gUnk_09799FB0, 0x400);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
@@ -1804,7 +1869,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
 
     gUrsulaWork = work;
     gUnk_0203C57C = 1;
-    TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, gUnk_096FE14C);
+    TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, (void*)&gUnk_096FE14C);
     TaskCreate((u8*)gBtlWork + 0x2C, &gTaskDescBosUrsulaBorder, 0);
     work->unk_000 = 0;
     work->unk_004 = 0;
@@ -1818,7 +1883,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     func_0801BCC0(0x10000, 0x1A800, 0);
     gBtlWork->unk_0D8 = 0xFF00;
     gUnk_0203C580 = -0x5000;
-    func_0801B37C(&work->unk_024, gUnk_096FE13C, 0x10000, 0x19800, -0x5000);
+    func_0801B37C(&work->unk_024, &gUnk_096FE13C, 0x10000, 0x19800, -0x5000);
     work->unk_034 = 0;
     work->unk_058 |= 4;
     func_0801C2DC(&work->unk_024, 1);
@@ -2437,7 +2502,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     work->unk_1FC = 0;
     work->unk_200 = 0;
     func_080DC9DC(&x, &y, &z, work);
-    func_0801B37C(&work->unk_028, gUnk_096FE1A8, x, y, z);
+    func_0801B37C(&work->unk_028, &gUnk_096FE1A8, x, y, z);
     ColliderInit(&work->unk_19C, 7, 0x28, 0x20);
 
     if (work->unk_13E != 0) {
@@ -2563,7 +2628,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         if (work->unk_13C == 5) {
             func_0801B7D8(&work->unk_028);
             func_080DC9DC(&x, &y, &z, work);
-            func_0801B37C(&work->unk_028, gUnk_096FE1A8, x, y, z);
+            func_0801B37C(&work->unk_028, &gUnk_096FE1A8, x, y, z);
             work->unk_05C |= 0x400;
             func_0801C7FC(&work->unk_028, 35, 25);
         }
@@ -2828,7 +2893,7 @@ void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work) {
 
 void func_080DD69C(s32 a) {
     if (IsTaskActive(gUrsulaMapanimeWork->unk_024) != 0) {
-        if (strcmp(GetTaskName(gUrsulaMapanimeWork->unk_024), gUnk_096FE2F4) == 0) {
+        if (strcmp(GetTaskName(gUrsulaMapanimeWork->unk_024), "task_bos_ursula_bubble") == 0) {
             func_080DD9B0(((UrsulaBubbleWork**)gUrsulaMapanimeWork->unk_024)[1]);
         } else {
             func_08000DE8(&gUrsulaMapanimeWork->unk_010, gUrsulaMapanimeWork->unk_024);
@@ -2850,6 +2915,14 @@ void func_080DD69C(s32 a) {
         }
     }
 }
+
+const char gTaskNameBosUrsulaBubble[] = "task_bos_ursula_bubble";
+
+const EmyKind gUnk_096FE324 = { 35, 0, 1, 1, 0, 0, 0 };
+
+const char gTaskNameBosUrsulaBubbleSingle[] = "task_bos_ursula_bubble_single";
+
+const char gTaskNameBosUrsulaThunder[] = "task_bos_ursula_thunder";
 
 u8 func_080DD754(void) {
     if (gUrsulaMapanimeWork->unk_000.unk_08 == &gUnk_096FE290 || gUrsulaMapanimeWork->unk_000.unk_08 == &gUnk_096FE2A8 || gUrsulaMapanimeWork->unk_000.unk_08 == &gUnk_096FE278) {
@@ -3021,7 +3094,7 @@ void* eu_080DA860(void) {
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->unk_13C = *arg;
     work->unk_140 = 0x333;
-    func_0801B37C(&work->unk_024, gUnk_096FE324, gBtlWork->unk_0CC,
+    func_0801B37C(&work->unk_024, &gUnk_096FE324, gBtlWork->unk_0CC,
         gBtlWork->unk_0D0 + 0x1000, gBtlWork->unk_0D4);
     func_0801C2DC(&work->unk_024, 1);
 #ifdef VERSION_EU
@@ -3192,14 +3265,14 @@ void task_bos_ursula_thunder_2(void) {
 void task_bos_ursula_thunder_3(void) {
 }
 
-void func_080DDDDC(UnkStruct_080DDDDC* p, UnkStruct_096FE034* q) {
+void func_080DDDDC(UnkStruct_080DDDDC* p, const UnkStruct_096FE034* q) {
     p->unk_00 = 0;
     p->unk_02 = 0;
     p->unk_04 = 1;
     p->unk_08 = q;
 }
 
-u8 func_080DDDEC(UnkStruct_080DDDDC* p, UnkStruct_096FE034* q, u8 a) {
+u8 func_080DDDEC(UnkStruct_080DDDDC* p, const UnkStruct_096FE034* q, u8 a) {
     if (p->unk_04 == 0) {
         p->unk_00++;
 
@@ -3227,7 +3300,7 @@ u8 func_080DDDEC(UnkStruct_080DDDDC* p, UnkStruct_096FE034* q, u8 a) {
 }
 
 u8 func_080DDE74(UnkStruct_080DDDDC* p) {
-    UnkStruct_096FE034* q = p->unk_08;
+    const UnkStruct_096FE034* q = p->unk_08;
 
     if (p->unk_00 + 1 > q->unk_00[p->unk_02].unk_00 && p->unk_02 + 1 >= q->unk_04) {
         return 1;
