@@ -3374,6 +3374,13 @@ void mode_sioError_2(void) {
     EwramFree(gSioErrorWork);
 }
 
+Mode gModeSioBattle = {
+    gModeNameSioBattle,
+    (void (*)(s32))mode_sio_battle_0,
+    (void (*)(void))mode_sio_battle_1,
+    (void (*)(void))mode_sio_battle_2,
+};
+
 Mode gModeSioBtlConnect = {
     gModeNameSioBtlConnect,
     (void (*)(s32))mode_sio_btl_connect_0,

@@ -17,6 +17,7 @@ void Mapcard_2(struct MapcardWork* w);
 void Level_Up_3(u8* work);
 void mode_sio_battle_0(s32 a);
 void mode_sio_battle_1(void);
+void mode_sio_battle_2(void);
 
 void _08085D04(u8 a);
 void func_08078E34(struct UnkStruct_08080268* w, u8 b, u8 c);

@@ -35217,13 +35217,6 @@ TaskDesc gTaskDescPrint __attribute__((section(".data_registration_gTaskDescPrin
 
 const char gModeNameSioBattle[] __attribute__((section(".rodata_registration_name_gModeSioBattle"), aligned(1))) = "mode_sio_battle";
 
-Mode gModeSioBattle __attribute__((section(".data_registration_gModeSioBattle"))) = {
-    gModeNameSioBattle,
-    (void (*)(s32))mode_sio_battle_0,
-    (void (*)(void))mode_sio_battle_1,
-    (void (*)(void))mode_sio_battle_2,
-};
-
 const char gTaskNameNumberPlus[] __attribute__((section(".rodata_registration_name_gTaskDescNumberPlus"), aligned(1))) = "NumberPlus";
 
 TaskDesc gTaskDescNumberPlus __attribute__((section(".data_registration_gTaskDescNumberPlus"))) = {
