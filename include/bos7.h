@@ -1,4 +1,5 @@
 #include "registration_data.h"
+#include "battle_actor_types.h"
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
@@ -300,6 +301,11 @@ typedef struct LstLsrArg {
     u16* unk_08;
 } LstLsrArg;
 
+typedef struct LstFalAnim {
+    u16 anim;
+    u16 unk_02;
+} LstFalAnim;
+
 typedef struct LstFalArg {
     s32 unk_00;
     s32 x;
@@ -324,14 +330,15 @@ typedef struct LstSnpArg {
     s16 unk_0C;
 } LstSnpArg;
 
-extern u16 gUnk_09A4FE64[][2];
+extern const LstFalAnim gUnk_09A4FE64[8];
 extern u8 gUnk_09A4D234[];
 extern u8 gUnk_09A4F2B4[];
-extern s32 gUnk_09A4FDDC[];
-extern s32 gUnk_09A4FDE8[];
-extern u8 gUnk_09A4FD4C[];
-extern s32 gUnk_09A4FD5C[];
-extern u32 gUnk_09A4FEA8[][5];
+extern const s32 gUnk_09A4FDDC[3];
+extern const s32 gUnk_09A4FDE8[16];
+extern const EmyKind gUnk_09A4FD4C;
+extern const EmyKind gUnk_09A4FE98;
+extern const s32 gUnk_09A4FD5C[32];
+extern const u32 gUnk_09A4FEA8[6][5];
 extern u8 gUnk_09CD1074[];
 extern u8 gUnk_09CD0C34[];
 extern u8 gUnk_08F69BC4[];

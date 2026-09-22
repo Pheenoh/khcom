@@ -7,7 +7,7 @@
 
 const s8* gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
 
-const char gTaskNameBosLstFld[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstFld"), aligned(1))) = "task_bos_lst_fld";
+const char gTaskNameBosLstFld[] = "task_bos_lst_fld";
 
 TaskDesc gTaskDescBosLstFld = {
     gTaskNameBosLstFld,
@@ -18,7 +18,18 @@ TaskDesc gTaskDescBosLstFld = {
     0x1304,
 };
 
-const char gTaskName_09EF9E8C[] __attribute__((section(".rodata_registration_name_gUnk_09EF9E8C"), aligned(1))) = "task_bos_lst_edg";
+const char gTaskName_09EF9E8C[] = "task_bos_lst_edg";
+
+const EmyKind gUnk_09A4FD4C = { 0, 1, 8, 8, 0, 128, 0 };
+
+const s32 gUnk_09A4FD5C[32] = {
+    6, 12, 18, 25, 31, 37, 44, 50, 57, 64, 70, 77, 84, 91, 98, 106,
+    113, 121, 128, 136, 145, 153, 162, 171, 180, 189, 199, 210, 220, 232, 243, 256,
+};
+
+const s32 gUnk_09A4FDDC[3] = { 0, -8, 8 };
+
+const s32 gUnk_09A4FDE8[16] = { -1, -2, -3, -4, -5, -6, -7, -8, -7, -6, -5, -4, -3, -2, -1, 0 };
 
 TaskDesc gUnk_09EF9E8C = {
     gTaskName_09EF9E8C,
@@ -36,7 +47,7 @@ LstAnimSet gUnk_09EF9EA4[4] = {
     { 5, 0, 4, 14 },
 };
 
-const char gTaskNameBosLstBit[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstBit"), aligned(1))) = "task_bos_lst_bit";
+const char gTaskNameBosLstBit[] = "task_bos_lst_bit";
 
 TaskDesc gTaskDescBosLstBit = {
     gTaskNameBosLstBit,
@@ -47,7 +58,7 @@ TaskDesc gTaskDescBosLstBit = {
     0x1D0,
 };
 
-const char gTaskNameBosLstLsr[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstLsr"), aligned(1))) = "task_bos_lst_lsr";
+const char gTaskNameBosLstLsr[] = "task_bos_lst_lsr";
 
 TaskDesc gTaskDescBosLstLsr = {
     gTaskNameBosLstLsr,
@@ -58,7 +69,9 @@ TaskDesc gTaskDescBosLstLsr = {
     0x5C,
 };
 
-const char gTaskName_09EF9EF4[] __attribute__((section(".rodata_registration_name_gUnk_09EF9EF4"), aligned(1))) = "task_bos_lst_ptl";
+const char gTaskName_09EF9EF4[] = "task_bos_lst_ptl";
+
+const LstFalAnim gUnk_09A4FE64[8] = { { 0, 0 }, { 1, 0 }, { 2, 0 }, { 3, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, { 5, 0 } };
 
 TaskDesc gUnk_09EF9EF4 = {
     gTaskName_09EF9EF4,
@@ -69,7 +82,18 @@ TaskDesc gUnk_09EF9EF4 = {
     0x38,
 };
 
-const char gTaskNameBosLstFal[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstFal"), aligned(1))) = "task_bos_lst_fal";
+const char gTaskNameBosLstFal[] = "task_bos_lst_fal";
+
+const EmyKind gUnk_09A4FE98 = { 0, 1, 8, 8, 0, 128, 0 };
+
+const u32 gUnk_09A4FEA8[6][5] = {
+    { 0, 0, 0, 0, 0 },
+    { 0, 0, 0, 0, 0 },
+    { 0, 128, 0, 0, 0 },
+    { 0, 86, 171, 0, 0 },
+    { 0, 64, 128, 192, 0 },
+    { 0, 51, 102, 153, 204 },
+};
 
 TaskDesc gTaskDescBosLstFal = {
     gTaskNameBosLstFal,
@@ -80,7 +104,7 @@ TaskDesc gTaskDescBosLstFal = {
     0x40,
 };
 
-const char gTaskNameBosLstCtr[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstCtr"), aligned(1))) = "task_bos_lst_ctr";
+const char gTaskNameBosLstCtr[] = "task_bos_lst_ctr";
 
 TaskDesc gTaskDescBosLstCtr = {
     gTaskNameBosLstCtr,
@@ -91,7 +115,7 @@ TaskDesc gTaskDescBosLstCtr = {
     0x188,
 };
 
-const char gTaskNameBosLstSnp[] __attribute__((section(".rodata_registration_name_gTaskDescBosLstSnp"), aligned(1))) = "task_bos_lst_snp";
+const char gTaskNameBosLstSnp[] = "task_bos_lst_snp";
 
 TaskDesc gTaskDescBosLstSnp = {
     gTaskNameBosLstSnp,
@@ -829,7 +853,7 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
     AnimStart(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
-    func_0801B37C(&work->unk_0A0, gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
+    func_0801B37C(&work->unk_0A0, &gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
     pool = &work->unk_1B0;
     TaskPoolInit(pool, 4);
     sub.unk_00 = work->unk_00E;
@@ -1499,7 +1523,7 @@ s32 func_08111BFC(s32 x) {
 void task_bos_lst_fal_0(LstFalWork* work, LstFalArg* arg) {
     u16 anim;
 
-    anim = gUnk_09A4FE64[GetRandom() & 7][0];
+    anim = gUnk_09A4FE64[GetRandom() & 7].anim;
     work->unk_000 = arg->unk_00;
     work->x = arg->x;
     work->y = arg->y;
