@@ -11363,9 +11363,6 @@ JiminyTextChar* gUnk_09EDE3FC[13] = {
 };
 
 
-const JiminyLocalizedName gUnkEu_0888E530 = {
-    { gUnkEu_0888E4D4, gUnkEu_0888E4E5, gUnkEu_0888E4F9, gUnkEu_0888E50A, gUnkEu_0888E51A }
-};
 
 
 #endif
