@@ -159,46 +159,45 @@
 #include "event_154_data.h"
 #include "event_155_data.h"
 #include "event_156_data.h"
+#include "event_157_data.h"
+#include "event_158_data.h"
+#include "event_159_data.h"
+#include "event_160_data.h"
+#include "event_161_data.h"
+#include "event_162_data.h"
+#include "event_163_data.h"
+#include "event_164_data.h"
+#include "event_165_data.h"
+#include "event_166_data.h"
+#include "event_167_data.h"
+#include "event_168_data.h"
+#include "event_169_data.h"
+#include "event_170_data.h"
+#include "event_171_data.h"
+#include "event_172_data.h"
+#include "event_173_data.h"
+#include "event_174_data.h"
+#include "event_175_data.h"
+#include "event_176_data.h"
+#include "event_177_data.h"
+#include "event_178_data.h"
+#include "event_179_data.h"
+#include "event_180_data.h"
+#include "event_181_data.h"
+#include "event_182_data.h"
+#include "event_183_data.h"
+#include "event_184_data.h"
+#include "event_185_data.h"
+#include "event_186_data.h"
+#include "event_187_data.h"
+#include "event_188_data.h"
+#include "event_189_data.h"
+#include "event_190_data.h"
+#include "event_191_data.h"
+#include "event_192_data.h"
+#include "event_193_data.h"
+#include "event_194_data.h"
 #include "event_195_data.h"
-
-extern EventSequenceDef gUnk_09016CB8;
-extern EventSequenceDef gUnk_09017EE4;
-extern EventSequenceDef gUnk_09018994;
-extern EventSequenceDef gUnk_0901930C;
-extern EventSequenceDef gUnk_09019718;
-extern EventSequenceDef gUnk_09019DEC;
-extern EventSequenceDef gUnk_0901A90C;
-extern EventSequenceDef gUnk_0901B36C;
-extern EventSequenceDef gUnk_0901B8A4;
-extern EventSequenceDef gUnk_0901C68C;
-extern EventSequenceDef gUnk_0901DBB4;
-extern EventSequenceDef gUnk_0901EAD8;
-extern EventSequenceDef gUnk_0901F198;
-extern EventSequenceDef gUnk_0901F3F4;
-extern EventSequenceDef gUnk_0901FD60;
-extern EventSequenceDef gUnk_09020324;
-extern EventSequenceDef gUnk_09020E8C;
-extern EventSequenceDef gUnk_09021230;
-extern EventSequenceDef gUnk_09021AEC;
-extern EventSequenceDef gUnk_09022690;
-extern EventSequenceDef gUnk_090230C4;
-extern EventSequenceDef gUnk_09023CAC;
-extern EventSequenceDef gUnk_090244B0;
-extern EventSequenceDef gUnk_090245CC;
-extern EventSequenceDef gUnk_09024DC0;
-extern EventSequenceDef gUnk_09025B40;
-extern EventSequenceDef gUnk_0902626C;
-extern EventSequenceDef gUnk_09026FEC;
-extern EventSequenceDef gUnk_09028540;
-extern EventSequenceDef gUnk_09029520;
-extern EventSequenceDef gUnk_09029F5C;
-extern EventSequenceDef gUnk_0902A598;
-extern EventSequenceDef gUnk_0902C2DC;
-extern EventSequenceDef gUnk_0902D130;
-extern EventSequenceDef gUnk_0902DB20;
-extern EventSequenceDef gUnk_0902DE74;
-extern EventSequenceDef gUnk_0902E8A8;
-extern EventSequenceDef gUnk_0902F2C8;
-extern const EventSequenceDef gUnk_0902FCB8;
+#include "event_196_data.h"
 
 #endif

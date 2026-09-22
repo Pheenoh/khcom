@@ -2,7 +2,6 @@
 #define GUARD_EVENT_SEQUENCE_ASSETS_H
 
 #include "msg_types.h"
-#include "event_chara_data.h"
 
 extern MessageScriptEntry gUnk_08F7FD30[];
 extern EventCameraKeyframe gUnk_08F7FF10[];
