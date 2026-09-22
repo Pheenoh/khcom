@@ -1,72 +1,6 @@
 #include "animation_resource_data.h"
 #include "animation_resource_assets.h"
 #include "room_resource_assets.h"
-
-void* gUnk_09EDE4F0[7] __attribute__((section(".data_09EDE4F0"))) = {
-    gUnk_0886AD30,
-    gUnk_0886AD4C,
-    gUnk_0886AD68,
-    gUnk_0886AD78,
-    gUnk_0886AD88,
-    gUnk_0886AD98,
-    gUnk_0886ADAE,
-};
-
-AnimHeader* gUnk_09EDE50C[3] __attribute__((section(".data_09EDE4F0"))) = {
-    &gUnk_0886ADBE,
-    &gUnk_0886ADC8,
-    &gUnk_0886ADD6,
-};
-
-void* gUnk_09EDE518[7] __attribute__((section(".data_09EDE4F0"))) = {
-    gUnk_0886E2EC,
-    gUnk_0886E302,
-    gUnk_0886E318,
-    gUnk_0886E32E,
-    gUnk_0886E350,
-    gUnk_0886E35A,
-    gUnk_0886E36A,
-};
-
-AnimHeader* gUnk_09EDE534[1] __attribute__((section(".data_09EDE4F0"))) = {
-    &gUnk_0886E374,
-};
-
-void* gUnk_09EDE538[2] __attribute__((section(".data_09EDE4F0"))) = {
-    gUnk_08871798,
-    gUnk_088717AE,
-};
-
-AnimHeader* gUnk_09EDE540[2] __attribute__((section(".data_09EDE4F0"))) = {
-    &gUnk_088717C4,
-    &gUnk_088717CE,
-};
-
-void* gUnk_09EDE548[15] __attribute__((section(".data_09EDE4F0"))) = {
-    gUnk_08872358,
-    gUnk_08872368,
-    gUnk_0887237E,
-    gUnk_0887238E,
-    gUnk_0887239E,
-    gUnk_088723B4,
-    gUnk_088723CA,
-    gUnk_088723DA,
-    gUnk_088723EA,
-    gUnk_08872400,
-    gUnk_08872410,
-    gUnk_08872420,
-    gUnk_08872436,
-    gUnk_08872446,
-    gUnk_08872456,
-};
-
-AnimHeader* gUnk_09EDE584[4] __attribute__((section(".data_09EDE4F0"))) = {
-    &gUnk_08872466,
-    &gUnk_0887249C,
-    &gUnk_088724CE,
-    &gUnk_088724D8,
-};
-
 void* gUnk_09EDE5FC[13] __attribute__((section(".data_09EDE5FC"))) = {
     gUnk_0887A298,
     gUnk_0887A2B4,
@@ -231,41 +165,6 @@ AnimHeader* gUnk_09EDE78C[1] __attribute__((section(".data_09EDE5FC"))) = {
 AnimHeader* gUnk_09EDE7B0[1] __attribute__((section(".data_09EDE7B0"))) = {
     &gUnk_088A4ABC,
 };
-
-void* gUnk_09EDE7F0[8] __attribute__((section(".data_09EDE7F0"))) = {
-    gUnk_088A5F7C,
-    gUnk_088A5F8C,
-    gUnk_088A5F9C,
-    gUnk_088A5FAC,
-    gUnk_088A5FBC,
-    gUnk_088A5FCC,
-    gUnk_088A5FDC,
-    gUnk_088A5FEC,
-};
-
-AnimHeader* gUnk_09EDE810[1] __attribute__((section(".data_09EDE7F0"))) = {
-    &gUnk_088A5FFC,
-};
-
-void* gUnk_09EDE814[8] __attribute__((section(".data_09EDE7F0"))) = {
-    gUnk_088AAA24,
-    gUnk_088AAA3A,
-    gUnk_088AAA50,
-    gUnk_088AAA60,
-    gUnk_088AAA70,
-    gUnk_088AAA7A,
-    gUnk_088AAA8A,
-    gUnk_088AAA9A,
-};
-
-AnimHeader* gUnk_09EDE834[5] __attribute__((section(".data_09EDE7F0"))) = {
-    &gUnk_088AAAA4,
-    &gUnk_088AAACE,
-    &gUnk_088AAAF8,
-    &gUnk_088AAB0A,
-    &gUnk_088AAB20,
-};
-
 void* gUnk_09EDE878[8] __attribute__((section(".data_09EDE878"))) = {
     gUnk_088B0788,
     gUnk_088B079E,
@@ -8347,18 +8246,6 @@ AnimHeader* gUnk_09EFBAD4[5] = {
     &gUnk_09C8F1B6,
     &gUnk_09C8F1F0,
 };
-void* gUnk_09EDE790[7] __attribute__((section(".data_09EDE790"))) = {
-    gUnk_088A4A3C,
-    gUnk_088A4A52,
-    gUnk_088A4A68,
-    gUnk_088A4A7E,
-    gUnk_088A4A8E,
-    gUnk_088A4A98,
-    gUnk_088A4AA2,
-};
-
-void* gUnk_09EDE7AC __attribute__((section(".data_09EDE790"))) = gUnk_088A4AAC;
-
 void* gUnk_09EDF1C0[12] __attribute__((section(".data_09EDF1C0"))) = {
     gUnk_08908BFC,
     gUnk_08908C1E,
