@@ -3,17 +3,11 @@
 
 #ifdef VERSION_US
 
-void* gUnk_09EFAB18[19] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { gUnkUs_09C44708, gUnkUs_09C4471E, gUnkUs_09C44734, gUnkUs_09C4474A, gUnkUs_09C44766, gUnkUs_09C4477C, gUnkUs_09C44798, gUnkUs_09C447AE, gUnkUs_09C447CA, gUnkUs_09C447E0, gUnkUs_09C447F6, gUnkUs_09C4480C, gUnkUs_09C44828, gUnkUs_09C4483E, gUnkUs_09C4485A, gUnkUs_09C44870, gUnkUs_09C44886, gUnkUs_09C4489C, gUnkUs_09C448B2 };
-AnimHeader* gUnkUs_09EFAB64[1] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { &gUnkUs_09C448C8 };
 void* const gUnkUs_09EFAEE4[1] = { gUnkUs_09C5B8B0 };
 AnimHeader* const gUnkUs_09EFAEE8[1] = { &gUnkUs_09C5B8DE };
 void* const gUnkUs_09EFAEEC[1] = { gUnkUs_09C5BAE8 };
 void* const gUnkUs_09EFAEF0 = gUnkUs_09C5BB16;
 AnimHeader* const gUnkUs_09EFAEF4[1] = { &gUnkUs_09C5BB56 };
-void* gUnk_09EFBAE8[11] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { gUnkUs_09C9043C, gUnkUs_09C90446, gUnkUs_09C90450, gUnkUs_09C9045A, gUnkUs_09C90464, gUnkUs_09C9046E, gUnkUs_09C90478, gUnkUs_09C90482, gUnkUs_09C9048C, gUnkUs_09C90496, gUnkUs_09C904A0 };
-AnimHeader* gUnkUs_09EFBB14[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkUs_09C904AA };
-PcSpriteDef* gUnk_09EFBB18[40] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkUs_09C90614, &gUnkUs_09C9061E, &gUnkUs_09C90628, &gUnkUs_09C90632, &gUnkUs_09C9063C, &gUnkUs_09C90646, &gUnkUs_09C90650, &gUnkUs_09C9065A, &gUnkUs_09C90664, &gUnkUs_09C9066E, &gUnkUs_09C90678, &gUnkUs_09C90682, &gUnkUs_09C9068C, &gUnkUs_09C90696, &gUnkUs_09C906A0, &gUnkUs_09C906AA, &gUnkUs_09C906B4, &gUnkUs_09C906BE, &gUnkUs_09C906C8, &gUnkUs_09C906D2, &gUnkUs_09C906DC, &gUnkUs_09C906E6, &gUnkUs_09C906F0, &gUnkUs_09C906FA, &gUnkUs_09C90704, &gUnkUs_09C9070E, &gUnkUs_09C90718, &gUnkUs_09C90722, &gUnkUs_09C9072C, &gUnkUs_09C90736, &gUnkUs_09C90740, &gUnkUs_09C9074A, &gUnkUs_09C90754, &gUnkUs_09C9075E, &gUnkUs_09C90768, &gUnkUs_09C90772, &gUnkUs_09C9077C, &gUnkUs_09C90786, &gUnkUs_09C90790, &gUnkUs_09C9079A };
-AnimHeader* gUnkUs_09EFBBB8[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkUs_09C907A4 };
 void* gUnkUs_09EFBC40[4] = { gUnkUs_09C90A30, gUnkUs_09C90A3A, gUnkUs_09C90A44, gUnkUs_09C90A4E };
 AnimHeader* gUnkUs_09EFBC50[1] = { &gUnkUs_09C90A58 };
 void* gUnkUs_09EFBC54[1] = { gUnkUs_09C90A70 };
@@ -95,21 +89,16 @@ void* gUnk_09EFBEB8 = gUnkUs_09C91350;
 void* gUnkUs_09EFBEBC = gUnkUs_09C913A8;
 AnimHeader* gUnkUs_09EFBEC0[1] = { &gUnkUs_09C913E8 };
 
+
 #endif
 
 #ifdef VERSION_JP
 
-void* gUnk_09EFAB18[19] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { gUnkJp_09C1CE2C, gUnkJp_09C1CE42, gUnkJp_09C1CE58, gUnkJp_09C1CE6E, gUnkJp_09C1CE8A, gUnkJp_09C1CEA0, gUnkJp_09C1CEBC, gUnkJp_09C1CED2, gUnkJp_09C1CEEE, gUnkJp_09C1CF04, gUnkJp_09C1CF1A, gUnkJp_09C1CF30, gUnkJp_09C1CF4C, gUnkJp_09C1CF62, gUnkJp_09C1CF7E, gUnkJp_09C1CF94, gUnkJp_09C1CFAA, gUnkJp_09C1CFC0, gUnkJp_09C1CFD6 };
-AnimHeader* gUnkJp_09ED2070[1] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { &gUnkJp_09C1CFEC };
 void* const gUnkJp_09ED23F0[1] = { gUnkJp_09C33FD4 };
 AnimHeader* const gUnkJp_09ED23F4[1] = { &gUnkJp_09C34002 };
 void* const gUnkJp_09ED23F8[1] = { gUnkJp_09C3420C };
 void* const gUnkJp_09ED23FC = gUnkJp_09C3423A;
 AnimHeader* const gUnkJp_09ED2400[1] = { &gUnkJp_09C3427A };
-void* gUnk_09EFBAE8[11] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { gUnkJp_09C69948, gUnkJp_09C69952, gUnkJp_09C6995C, gUnkJp_09C69966, gUnkJp_09C69970, gUnkJp_09C6997A, gUnkJp_09C69984, gUnkJp_09C6998E, gUnkJp_09C69998, gUnkJp_09C699A2, gUnkJp_09C699AC };
-AnimHeader* gUnkJp_09ED308C[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkJp_09C699B6 };
-PcSpriteDef* gUnk_09EFBB18[40] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkJp_09C69B20, &gUnkJp_09C69B2A, &gUnkJp_09C69B34, &gUnkJp_09C69B3E, &gUnkJp_09C69B48, &gUnkJp_09C69B52, &gUnkJp_09C69B5C, &gUnkJp_09C69B66, &gUnkJp_09C69B70, &gUnkJp_09C69B7A, &gUnkJp_09C69B84, &gUnkJp_09C69B8E, &gUnkJp_09C69B98, &gUnkJp_09C69BA2, &gUnkJp_09C69BAC, &gUnkJp_09C69BB6, &gUnkJp_09C69BC0, &gUnkJp_09C69BCA, &gUnkJp_09C69BD4, &gUnkJp_09C69BDE, &gUnkJp_09C69BE8, &gUnkJp_09C69BF2, &gUnkJp_09C69BFC, &gUnkJp_09C69C06, &gUnkJp_09C69C10, &gUnkJp_09C69C1A, &gUnkJp_09C69C24, &gUnkJp_09C69C2E, &gUnkJp_09C69C38, &gUnkJp_09C69C42, &gUnkJp_09C69C4C, &gUnkJp_09C69C56, &gUnkJp_09C69C60, &gUnkJp_09C69C6A, &gUnkJp_09C69C74, &gUnkJp_09C69C7E, &gUnkJp_09C69C88, &gUnkJp_09C69C92, &gUnkJp_09C69C9C, &gUnkJp_09C69CA6 };
-AnimHeader* gUnkJp_09ED3130[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkJp_09C69CB0 };
 void* gUnkJp_09ED31B8[4] = { gUnkJp_09C69F3C, gUnkJp_09C69F46, gUnkJp_09C69F50, gUnkJp_09C69F5A };
 AnimHeader* gUnkJp_09ED31C8[1] = { &gUnkJp_09C69F64 };
 void* gUnkJp_09ED31CC[1] = { gUnkJp_09C69F7C };
@@ -191,21 +180,16 @@ void* gUnk_09EFBEB8 = gUnkJp_09C6A85C;
 void* gUnkJp_09ED3434 = gUnkJp_09C6A8B4;
 AnimHeader* gUnkJp_09ED3438[1] = { &gUnkJp_09C6A8F4 };
 
+
 #endif
 
 #ifdef VERSION_EU
 
-void* gUnk_09EFAB18[19] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { gUnkEu_09CA2450, gUnkEu_09CA2466, gUnkEu_09CA247C, gUnkEu_09CA2492, gUnkEu_09CA24AE, gUnkEu_09CA24C4, gUnkEu_09CA24E0, gUnkEu_09CA24F6, gUnkEu_09CA2512, gUnkEu_09CA2528, gUnkEu_09CA253E, gUnkEu_09CA2554, gUnkEu_09CA2570, gUnkEu_09CA2586, gUnkEu_09CA25A2, gUnkEu_09CA25B8, gUnkEu_09CA25CE, gUnkEu_09CA25E4, gUnkEu_09CA25FA };
-AnimHeader* gUnkEu_09F868B0[1] __attribute__((section(".data_staff_roll_tail_09EFAB18"))) = { &gUnkEu_09CA2610 };
 void* const gUnkEu_09F86C30[1] = { gUnkEu_09CB95F8 };
 AnimHeader* const gUnkEu_09F86C34[1] = { &gUnkEu_09CB9626 };
 void* const gUnkEu_09F86C38[1] = { gUnkEu_09CB9830 };
 void* const gUnkEu_09F86C3C = gUnkEu_09CB985E;
 AnimHeader* const gUnkEu_09F86C40[1] = { &gUnkEu_09CB989E };
-void* gUnk_09EFBAE8[11] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { gUnkEu_09D00768, gUnkEu_09D00772, gUnkEu_09D0077C, gUnkEu_09D00786, gUnkEu_09D00790, gUnkEu_09D0079A, gUnkEu_09D007A4, gUnkEu_09D007AE, gUnkEu_09D007B8, gUnkEu_09D007C2, gUnkEu_09D007CC };
-AnimHeader* gUnkEu_09F88328[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkEu_09D007D6 };
-PcSpriteDef* gUnk_09EFBB18[40] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkEu_09D00940, &gUnkEu_09D0094A, &gUnkEu_09D00954, &gUnkEu_09D0095E, &gUnkEu_09D00968, &gUnkEu_09D00972, &gUnkEu_09D0097C, &gUnkEu_09D00986, &gUnkEu_09D00990, &gUnkEu_09D0099A, &gUnkEu_09D009A4, &gUnkEu_09D009AE, &gUnkEu_09D009B8, &gUnkEu_09D009C2, &gUnkEu_09D009CC, &gUnkEu_09D009D6, &gUnkEu_09D009E0, &gUnkEu_09D009EA, &gUnkEu_09D009F4, &gUnkEu_09D009FE, &gUnkEu_09D00A08, &gUnkEu_09D00A12, &gUnkEu_09D00A1C, &gUnkEu_09D00A26, &gUnkEu_09D00A30, &gUnkEu_09D00A3A, &gUnkEu_09D00A44, &gUnkEu_09D00A4E, &gUnkEu_09D00A58, &gUnkEu_09D00A62, &gUnkEu_09D00A6C, &gUnkEu_09D00A76, &gUnkEu_09D00A80, &gUnkEu_09D00A8A, &gUnkEu_09D00A94, &gUnkEu_09D00A9E, &gUnkEu_09D00AA8, &gUnkEu_09D00AB2, &gUnkEu_09D00ABC, &gUnkEu_09D00AC6 };
-AnimHeader* gUnkEu_09F883CC[1] __attribute__((section(".data_staff_roll_tail_09EFBAE8"))) = { &gUnkEu_09D00AD0 };
 void* gUnkEu_09F88454[4] = { gUnkEu_09D00D5C, gUnkEu_09D00D66, gUnkEu_09D00D70, gUnkEu_09D00D7A };
 AnimHeader* gUnkEu_09F88464[1] = { &gUnkEu_09D00D84 };
 void* gUnkEu_09F88468[1] = { gUnkEu_09D00D9C };
@@ -287,4 +271,6 @@ void* gUnk_09EFBEB8 = gUnkEu_09D0167C;
 void* gUnkEu_09F886D0 = gUnkEu_09D016D4;
 AnimHeader* gUnkEu_09F886D4[1] = { &gUnkEu_09D01714 };
 
+
 #endif
+

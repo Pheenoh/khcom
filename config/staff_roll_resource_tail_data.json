@@ -6,14 +6,15 @@
     "dormant": "Remaining native resource pairs have complete Sprite and AnimHeader formats. Graphics array bounds follow maximum actual frame indices. Twenty-three unused graphics suffix words remain separate scalar pointers; no extra runtime-reachable elements are claimed.",
     "assets": "Native binary Sprite/AnimHeader bindings retain exact format extents and ROM hashes. The PcSpriteDef view is canonical for the40 single-OAM records used directly by bos6; this is not metadata reclassification. No cross-region inferred asset correspondence is introduced.",
     "native_staff_roll_tail_bc40": "The gUnk_*09EFBC40 staff-roll pointer/AnimHeader cluster is a contiguous 644-byte initialized-data run with matching source order under each VERSION_* block in staff_roll_resource_tail_data.c; ordinary .data replaces its forced section attributes. Earlier smaller staff-roll tail clusters stay sectioned.",
-    "native_staff_roll_tail_AEE4_rodata": "Five pointer/AnimHeader words formerly .data_staff_roll_tail_09EFAEE4 (20B) are const in existing staff_roll_resource_tail_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot)."
+    "native_staff_roll_tail_AEE4_rodata": "Five pointer/AnimHeader words formerly .data_staff_roll_tail_09EFAEE4 (20B) are const in existing staff_roll_resource_tail_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot).",
+    "split_command_and_timer_sprite_tus": "ROM islands for the bos6 command-sprite pointer cluster and the staff-roll timer-digit/sprite cluster were interleaved with animation_resource_data (and related) units, so they could not share native .data with staff_roll_resource_tail_data.c. Split into staff_roll_command_sprite_data.c and staff_roll_timer_sprite_data.c (content names) with ordinary .data; same interleaving evidence pattern as animation_resource_data_* splits."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAB18",
+          "unit": "staff_roll_command_sprite_data.c",
+          "section": ".data",
           "address": "0x9efab18",
           "size": 80,
           "sha256": "4d1350d730b4a95f3774c6ef6203449d79757785b01cccac75731d2967e3567a",
@@ -65,8 +66,8 @@
           ]
         },
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBAE8",
+          "unit": "staff_roll_timer_sprite_data.c",
+          "section": ".data",
           "address": "0x9efbae8",
           "size": 212,
           "sha256": "f9908c9c6db9227f77de7976ae44c90c4d098046baa86ea0cd3654abf60aa971",
@@ -2182,8 +2183,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAB18",
+          "unit": "staff_roll_command_sprite_data.c",
+          "section": ".data",
           "address": "0x9ed2024",
           "size": 80,
           "sha256": "7c1409778f696c84b11bfb8f94e680931b2d77dc717a8a299e5dbe328be83fbf",
@@ -2235,8 +2236,8 @@
           ]
         },
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBAE8",
+          "unit": "staff_roll_timer_sprite_data.c",
+          "section": ".data",
           "address": "0x9ed3060",
           "size": 212,
           "sha256": "cdb0951f39eabb0f40f626127c408a1fb0ca07561b7b6c5ac887bf9ae8a5bf4b",
@@ -4352,8 +4353,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAB18",
+          "unit": "staff_roll_command_sprite_data.c",
+          "section": ".data",
           "address": "0x9f86864",
           "size": 80,
           "sha256": "eb0b07e21225ead9aa16fc0df6fc3a282cef519db4bf482a72f454070217e4bb",
@@ -4405,8 +4406,8 @@
           ]
         },
         {
-          "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFBAE8",
+          "unit": "staff_roll_timer_sprite_data.c",
+          "section": ".data",
           "address": "0x9f882fc",
           "size": 212,
           "sha256": "b8aa298c2f1fb7d4bdc50c9acaebba67c07bee04e9e4144c30382ea4fb8be81b",
