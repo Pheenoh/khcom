@@ -24,7 +24,8 @@
     "native_frd_smn_exclusive_leftovers": "Split exclusive-consumer character AnimDef islands from animation_resource_data.c: frd_goofy (.data_09EDE4F0), smn_bambi (.data_09EDE790), smn_simba (.data_09EDE7F0). Left .data_09EDE5FC forced \u2014 shared with hum/smn tables, not a single-friend island.",
     "native_hum_exclusive_leftovers": "Split exclusive-consumer hum AnimDef/AnimInit islands from animation_resource_data.c: hum_cloud (.data_09EE15FC), hum_axcel (.data_09EE1FCC), hum_vixen_ndl (.data_09EE2690).",
     "native_btl_and_bambi_header": "Merged smn bambi AnimHeader .data_09EDE7B0 into animation_resource_smn_bambi_data.c (contiguous with gfx island; AnimDef pairs gUnk_09EDE790/gUnk_09EDE7B0). Split exclusive btl islands: btl_lockon (.data_09EDF1C0..09EDF2FC contiguous), btl_premiere (.data_09EE1244, task_btl_premiere_0).",
-    "native_map_card_mode_test_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: mode_test (.data_09EE14D4; US/JP only \u2014 absent from EU units), card_display (.data_09EEAF4C, CardDisplayWork), map_menu (.data_09EF8D48, MapMenuWork), map_tutorial (.data_09EF8414, MapTutorialWork), map_card (.data_09EF0FA8) + map_card_world (.data_09EF1138) MapCardDef anim banks."
+    "native_map_card_mode_test_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: mode_test (.data_09EE14D4; US/JP only \u2014 absent from EU units), card_display (.data_09EEAF4C, CardDisplayWork), map_menu (.data_09EF8D48, MapMenuWork), map_tutorial (.data_09EF8414, MapTutorialWork), map_card (.data_09EF0FA8) + map_card_world (.data_09EF1138) MapCardDef anim banks.",
+    "native_fld_emy_portrait_evt_leftovers": "Split exclusive-consumer islands from animation_resource_data.c: fld_tail (.data_09EDF694), emy_pre (.data_09EDF8CC), msg_portrait_mid/tail (.data_09EED800/.data_09EEDB9C), evt_head (.data_09EEE268..294), evt_pre (.data_09EEE554..574), evt_gap/gap2 (.data_09EEEE4C/.data_09EEEE70), evt_before_shared (.data_09EEFBB8), evt_pre_mid (.data_09EF0034), evt_mid_gap (.data_09EF06CC), evt_post_tail (.data_09EF0ED8), evt_far (.data_09EF5B54)."
   },
   "regions": {
     "us": {
@@ -77,6 +78,138 @@
             }
           ],
           "sha256": "c7aa90769acb6718e048040ddc3b6bd3ae78518a373f1775a063d38086e4707f"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDE5FC",
+          "address": "0x9ede5fc",
+          "size": 404,
+          "objects": [
+            {
+              "name": "gUnk_09EDE5FC",
+              "offset": 0,
+              "size": 52
+            },
+            {
+              "name": "gUnk_09EDE630",
+              "offset": 52,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDE63C",
+              "offset": 64,
+              "size": 24
+            },
+            {
+              "name": "gUnk_09EDE654",
+              "offset": 88,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDE664",
+              "offset": 104,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EDE680",
+              "offset": 132,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EDE688",
+              "offset": 140,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EDE69C",
+              "offset": 160,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDE6AC",
+              "offset": 176,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EDE6D4",
+              "offset": 216,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDE6E0",
+              "offset": 228,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EDE70C",
+              "offset": 272,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EDE714",
+              "offset": 280,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDE720",
+              "offset": 292,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDE724",
+              "offset": 296,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EDE740",
+              "offset": 324,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDE744",
+              "offset": 328,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EDE764",
+              "offset": 360,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDE768",
+              "offset": 364,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EDE78C",
+              "offset": 400,
+              "size": 4
+            }
+          ],
+          "sha256": "f43d6487039c72befd55d28ead50d88a0702188981f3831eb8f595ee4c2bc229"
+        },
+        {
+          "unit": "animation_resource_smn_bambi_data.c",
+          "section": ".data",
+          "address": "0x9ede790",
+          "size": 36,
+          "objects": [
+            {
+              "name": "gUnk_09EDE790",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EDE7AC",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDE7B0",
+              "offset": 32,
+              "size": 4
+            }
+          ]
         },
         {
           "unit": "animation_resource_smn_simba_data.c",
@@ -666,6 +799,108 @@
           "sha256": "e4a3f776f1643fe40c9387daf833e74f387afb4b030adefd5dfe93c92ff5d11d"
         },
         {
+          "unit": "animation_resource_btl_lockon_data.c",
+          "section": ".data",
+          "address": "0x9edf1c0",
+          "size": 328,
+          "objects": [
+            {
+              "name": "gUnk_09EDF1C0",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF1F0",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F4",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F8",
+              "offset": 56,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EDF20C",
+              "offset": 76,
+              "size": 56
+            },
+            {
+              "name": "gUnk_09EDF244",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF248",
+              "offset": 136,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EDF268",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF26C",
+              "offset": 172,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EDF290",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF294",
+              "offset": 212,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF2C4",
+              "offset": 260,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDF2D0",
+              "offset": 272,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EDF2F8",
+              "offset": 312,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF2FC",
+              "offset": 316,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF308",
+          "address": "0x9edf308",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF308",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF318",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "fc332612319e03c758b16dbae14a0fed54cdbd8be0e01ba7aed10fe4447215f4"
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EDF31C",
           "address": "0x9edf31c",
@@ -678,6 +913,25 @@
             }
           ],
           "sha256": "9b0c9249f7b93f2f82faa3971d670360a724027d6a32e78ce5564642697e175c"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF320",
+          "address": "0x9edf320",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF320",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF330",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "20a0f94b53fa66f5901e39e5c58cc3076565e2af9df574e99296b958a3b2bfd2"
         },
         {
           "unit": "animation_resource_data.c",
@@ -872,8 +1126,8 @@
           "sha256": "28dacf9b8c861b05bb410063bfe70ebeb4e4ec427be9aacbf907bfc3b9c41972"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF694",
+          "unit": "animation_resource_fld_tail_data.c",
+          "section": ".data",
           "address": "0x9edf694",
           "size": 208,
           "objects": [
@@ -957,8 +1211,7 @@
               "offset": 204,
               "size": 4
             }
-          ],
-          "sha256": "709006760ab5d11e0c736e87e5f7430873d78063984fc179aa15047f16fb82ea"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -999,8 +1252,8 @@
           "sha256": "dc57066ea37b4aa9bab52b7de26b5804983c7012664e374cb05045ad35148eae"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF8CC",
+          "unit": "animation_resource_emy_pre_data.c",
+          "section": ".data",
           "address": "0x9edf8cc",
           "size": 36,
           "objects": [
@@ -1014,8 +1267,7 @@
               "offset": 32,
               "size": 4
             }
-          ],
-          "sha256": "794bdae815d00f1aa020211b8fa6572575f8b5651870c8653f996b8a42de55db"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -1512,6 +1764,25 @@
             }
           ],
           "sha256": "d974ccb3a7dd944c7de2a96628660c6e02ae7efd142775261fd06de90f3c0c5f"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE00F4",
+          "address": "0x9ee00f4",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EE00F4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EE0110",
+              "offset": 28,
+              "size": 4
+            }
+          ],
+          "sha256": "13e87eb69a02428f556785bfd1b09168ab797c163eec89f680e25035f76311a0"
         },
         {
           "unit": "animation_resource_emy_data.c",
@@ -2599,6 +2870,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE10E0",
+          "address": "0x9ee10e0",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE10E0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE10E4",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "85a734f9524287f66283fc781176bf8d064a5d8c453c312216253a354843a774"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE10E8",
           "address": "0x9ee10e8",
           "size": 4,
@@ -2648,6 +2938,25 @@
             }
           ],
           "sha256": "5708cbda3bda708779ed617ff49ca03167fb19001c96caf13fecdfcb2d4a9ee8"
+        },
+        {
+          "unit": "animation_resource_mode_test_data.c",
+          "section": ".data",
+          "address": "0x9ee14d4",
+          "size": 76,
+          "sha256": "01ef628f01c8b948b5d68f5a251e92d1bf53066aa408697f072131c6c438e74e",
+          "objects": [
+            {
+              "name": "gUnk_09EE14D4",
+              "offset": 0,
+              "size": 56
+            },
+            {
+              "name": "gUnk_09EE150C",
+              "offset": 56,
+              "size": 20
+            }
+          ]
         },
         {
           "unit": "animation_resource_hum_cloud_data.c",
@@ -4390,6 +4699,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE9450",
+          "address": "0x9ee9450",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE9450",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9454",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "ca93a2fe838be97f65d7bffaf8a99eeb0d66fb9fb6f2ddd5a40407ecb294a107"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE9458",
           "address": "0x9ee9458",
           "size": 84,
@@ -4504,6 +4832,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE94B4",
+          "address": "0x9ee94b4",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B8",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "91afd842305ed6088a6c94ac5f3766b47f2df2ea5a5cc172ee693e5438212d3d"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE94BC",
           "address": "0x9ee94bc",
           "size": 12,
@@ -4525,6 +4872,25 @@
             }
           ],
           "sha256": "ac83981cc442d9cbf1357de021d13f6433d07263a0739284c98b74a5de3ab353"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE94C8",
+          "address": "0x9ee94c8",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94CC",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "51a757adfcf5660693911485c37049714cb4116fb065b7f9ae8e4c619f2c4597"
         },
         {
           "unit": "animation_resource_data.c",
@@ -6316,8 +6682,8 @@
           "sha256": "a5a172aa8ecf6b16c49b48f74bb6bf283cee1578116fb3912865dc2b996cdc81"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EED800",
+          "unit": "animation_resource_msg_portrait_mid_data.c",
+          "section": ".data",
           "address": "0x9eed800",
           "size": 900,
           "objects": [
@@ -6501,12 +6867,11 @@
               "offset": 868,
               "size": 32
             }
-          ],
-          "sha256": "0ed993880624e4054af5c772124b31a1444fc4d141627d862d77ee4e04c911fb"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEDB9C",
+          "unit": "animation_resource_msg_portrait_tail_data.c",
+          "section": ".data",
           "address": "0x9eedb9c",
           "size": 1036,
           "objects": [
@@ -6800,8 +7165,7 @@
               "offset": 1012,
               "size": 24
             }
-          ],
-          "sha256": "e2a8835caebf155e8250754771cce4fb3ddec28747b29ca5154dabbf145d3601"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -6953,132 +7317,161 @@
           "sha256": "f2636ccfe3dbec46501d513c2c24186b595608bd5df8e050fb7a403d48f95baf"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE278",
-          "address": "0x9eee278",
-          "size": 12,
+          "unit": "animation_resource_evt_head_data.c",
+          "section": ".data",
+          "address": "0x9eee268",
+          "size": 260,
           "objects": [
             {
-              "name": "gUnk_09EEE278",
+              "name": "gUnk_09EEE268",
               "offset": 0,
               "size": 12
-            }
-          ],
-          "sha256": "cce6eb14bd83aa8cb895c5ced75105e5733a8bb23973a20556688d80bcbaf30d"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE294",
-          "address": "0x9eee294",
-          "size": 216,
-          "objects": [
+            },
+            {
+              "name": "gUnk_09EEE274",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE278",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE284",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE290",
+              "offset": 40,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEE294",
-              "offset": 0,
+              "offset": 44,
               "size": 12
             },
             {
               "name": "gUnk_09EEE2A0",
-              "offset": 12,
+              "offset": 56,
               "size": 16
             },
             {
               "name": "gUnk_09EEE2B0",
-              "offset": 28,
+              "offset": 72,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2B8",
-              "offset": 36,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EEE2C0",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2C4",
-              "offset": 48,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE2D4",
-              "offset": 64,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2D8",
-              "offset": 68,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE2E4",
               "offset": 80,
               "size": 8
             },
             {
-              "name": "gUnk_09EEE2EC",
+              "name": "gUnk_09EEE2C0",
               "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2C4",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE2D4",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2D8",
+              "offset": 112,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE2E4",
+              "offset": 124,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEE2EC",
+              "offset": 132,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2F4",
-              "offset": 96,
+              "offset": 140,
               "size": 4
             },
             {
               "name": "gUnk_09EEE2F8",
-              "offset": 100,
+              "offset": 144,
               "size": 16
             },
             {
               "name": "gUnk_09EEE308",
-              "offset": 116,
+              "offset": 160,
               "size": 8
             },
             {
               "name": "gUnk_09EEE310",
-              "offset": 124,
+              "offset": 168,
               "size": 4
             },
             {
               "name": "gUnk_09EEE314",
-              "offset": 128,
+              "offset": 172,
               "size": 4
             },
             {
               "name": "gUnk_09EEE318",
-              "offset": 132,
+              "offset": 176,
               "size": 12
             },
             {
               "name": "gUnk_09EEE324",
-              "offset": 144,
+              "offset": 188,
               "size": 4
             },
             {
               "name": "gUnk_09EEE328",
-              "offset": 148,
+              "offset": 192,
               "size": 16
             },
             {
               "name": "gUnk_09EEE338",
-              "offset": 164,
+              "offset": 208,
               "size": 8
             },
             {
               "name": "gUnk_09EEE340",
-              "offset": 172,
+              "offset": 216,
               "size": 32
             },
             {
               "name": "gUnk_09EEE360",
-              "offset": 204,
+              "offset": 248,
               "size": 12
             }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EEE36C",
+          "address": "0x9eee36c",
+          "size": 80,
+          "objects": [
+            {
+              "name": "gUnk_09EEE36C",
+              "offset": 0,
+              "size": 76
+            },
+            {
+              "name": "gUnk_09EEE3B8",
+              "offset": 76,
+              "size": 4
+            }
           ],
-          "sha256": "f2b10662a2e6acd96202a7d77461100f69093263e02791eee5e13573860241a5"
+          "sha256": "b02d4f001abca6f83f2923909dea064324c8a32ff133b8e61996faaf2b20de6f"
         },
         {
           "unit": "animation_resource_data.c",
@@ -7204,10 +7597,10 @@
           "sha256": "fb99825821270985f2703c9b72f5050a57fe6ab2b3c7e9088836d4ab95c62fba"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE554",
+          "unit": "animation_resource_evt_pre_data.c",
+          "section": ".data",
           "address": "0x9eee554",
-          "size": 32,
+          "size": 52,
           "objects": [
             {
               "name": "gUnk_09EEE554",
@@ -7228,9 +7621,18 @@
               "name": "gUnk_09EEE570",
               "offset": 28,
               "size": 4
+            },
+            {
+              "name": "gUnk_09EEE574",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE584",
+              "offset": 48,
+              "size": 4
             }
-          ],
-          "sha256": "209fa2e05513b9adb467bfe0ba5169277a70e972f322d0e60da48b54cfdaf603"
+          ]
         },
         {
           "unit": "animation_resource_evt_data.c",
@@ -7907,8 +8309,8 @@
           "sha256": "ef44da165b33b1dec407eaa01bdae753fd4925be03f6608b00031d90b8f0a5f2"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE4C",
+          "unit": "animation_resource_evt_gap_data.c",
+          "section": ".data",
           "address": "0x9eeee4c",
           "size": 16,
           "objects": [
@@ -7922,12 +8324,11 @@
               "offset": 8,
               "size": 8
             }
-          ],
-          "sha256": "fb07108f7e7206b0720bb479705977535ef3345fe623b03c3b977a6a4ffddd2f"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE70",
+          "unit": "animation_resource_evt_gap2_data.c",
+          "section": ".data",
           "address": "0x9eeee70",
           "size": 632,
           "objects": [
@@ -8201,8 +8602,7 @@
               "offset": 628,
               "size": 4
             }
-          ],
-          "sha256": "265b854a8e9938ef0b3b56ea6548470fb6e8b4bd0712e17233fa1f9a90a664b4"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -9292,6 +9692,24 @@
           "sha256": "44013e66bf3b628578dfb27e2316b11c992a2f1c5286b179f65ffb2a3ba4fd6c"
         },
         {
+          "unit": "animation_resource_evt_before_shared_data.c",
+          "section": ".data",
+          "address": "0x9eefbb8",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EEFBB8",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEFBC8",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EEFBCC",
           "address": "0x9eefbcc",
@@ -9563,6 +9981,44 @@
             }
           ],
           "sha256": "7e164672a95dcbf433ac2a18c0e2a0ff655e82debade6b4e90be102653d8443b"
+        },
+        {
+          "unit": "animation_resource_evt_pre_mid_data.c",
+          "section": ".data",
+          "address": "0x9ef0034",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EF0034",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF0040",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0044",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0048",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF004C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0050",
+              "offset": 28,
+              "size": 4
+            }
+          ]
         },
         {
           "unit": "animation_resource_evt_mid_data.c",
@@ -10110,6 +10566,40 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EF04FC",
+          "address": "0x9ef04fc",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EF04FC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0500",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0504",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0508",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF050C",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "6f12ecee5551d4304f1ce961c4739f461a4f5cfac37404eb5388d22447a6120e"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EF0510",
           "address": "0x9ef0510",
           "size": 408,
@@ -10273,8 +10763,8 @@
           "sha256": "8f17029c7c105720546609a8a18d92b04decad195f32266ae248b33820d16b8a"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF06CC",
+          "unit": "animation_resource_evt_mid_gap_data.c",
+          "section": ".data",
           "address": "0x9ef06cc",
           "size": 264,
           "objects": [
@@ -10338,8 +10828,7 @@
               "offset": 260,
               "size": 4
             }
-          ],
-          "sha256": "16711d29b0464b53c13fac2e8d2fb7e46fc1f04375f55a7120b0c94aa298cfe7"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -10770,8 +11259,8 @@
           "sha256": "05ef18edfed1221ee62453ada2f50e02bfe5963f228b8d5c21c6d727353b1273"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0ED8",
+          "unit": "animation_resource_evt_post_tail_data.c",
+          "section": ".data",
           "address": "0x9ef0ed8",
           "size": 140,
           "objects": [
@@ -10805,8 +11294,7 @@
               "offset": 132,
               "size": 8
             }
-          ],
-          "sha256": "5af06f010e6e1cd2b19efb6ad39f32f5cc3e24a0fb377309871865f3b2b7dd47"
+          ]
         },
         {
           "unit": "animation_resource_map_card_data.c",
@@ -11085,6 +11573,154 @@
             }
           ],
           "sha256": "726c2cb4af6b45be8beb147ca1298bb4ba2d226b8036895e05657c658b0eba78"
+        },
+        {
+          "unit": "animation_resource_wlogo_mons_data.c",
+          "section": ".data",
+          "address": "0x9ef351c",
+          "size": 436,
+          "sha256": "402bf242fd460d36d59a057d2f76c5c5065285c04a341d2f8d5a531f108db4e7",
+          "objects": [
+            {
+              "name": "gUnk_09EF351C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF3544",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3548",
+              "offset": 44,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF356C",
+              "offset": 80,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF3574",
+              "offset": 88,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF35A4",
+              "offset": 136,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF35B8",
+              "offset": 156,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3610",
+              "offset": 244,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3614",
+              "offset": 248,
+              "size": 152
+            },
+            {
+              "name": "gUnk_09EF36AC",
+              "offset": 400,
+              "size": 36
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_wlogo_tvt_data.c",
+          "section": ".data",
+          "address": "0x9ef36d8",
+          "size": 428,
+          "sha256": "6c121a70c5064e741f322b72787813c06716721b834f55aa327e562554f1c41c",
+          "objects": [
+            {
+              "name": "gUnk_09EF36D8",
+              "offset": 0,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3730",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3734",
+              "offset": 92,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF375C",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3760",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3764",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3768",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF376C",
+              "offset": 148,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF3778",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF377C",
+              "offset": 164,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF37DC",
+              "offset": 260,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF37F0",
+              "offset": 280,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF37F4",
+              "offset": 284,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3804",
+              "offset": 300,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF380C",
+              "offset": 308,
+              "size": 68
+            },
+            {
+              "name": "gUnk_09EF3850",
+              "offset": 376,
+              "size": 52
+            }
+          ]
         },
         {
           "unit": "animation_resource_pooh_data.c",
@@ -11774,8 +12410,8 @@
           "sha256": "80ea20057bf6fb6e4ee123aa94a7fb8ed1d48fffa46199e749cb56256689e850"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF5B54",
+          "unit": "animation_resource_evt_far_data.c",
+          "section": ".data",
           "address": "0x9ef5b54",
           "size": 280,
           "objects": [
@@ -11849,8 +12485,7 @@
               "offset": 272,
               "size": 8
             }
-          ],
-          "sha256": "f2d118172e60c70fc1574c18850167344f1197cd490fe7758402b7f366fde082"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -11981,6 +12616,91 @@
           "sha256": "6f9694973936abc2ee311ed56caba621758dec730ce91910b9573926ed8c0874"
         },
         {
+          "unit": "animation_resource_pooh_honeycomb_data.c",
+          "section": ".data",
+          "address": "0x9ef5ff0",
+          "size": 60,
+          "objects": [
+            {
+              "name": "gUnk_09EF5FF0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF4",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF8",
+              "offset": 8,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF6024",
+              "offset": 52,
+              "size": 8
+            }
+          ],
+          "sha256": "ecfafa70c84bdd6364e3c8f43ae22b93f1a02681685082932d99fce606174166"
+        },
+        {
+          "unit": "animation_resource_pooh_cabbage_data.c",
+          "section": ".data",
+          "address": "0x9ef602c",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF602C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF6054",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6058",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF605C",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6060",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_pooh_wagonwheel_data.c",
+          "section": ".data",
+          "address": "0x9ef6078",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF6078",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF60A8",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF60AC",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_bos4_saku_data.c",
           "section": ".data",
           "address": "0x9ef67fc",
@@ -12030,21 +12750,94 @@
           "sha256": "30d782cf0f63b8ffe43a24736518d107b9b41747c9bc93d4d1199c3d096a7f45"
         },
         {
-          "unit": "animation_resource_mode_test_data.c",
+          "unit": "animation_resource_map_tutorial_data.c",
           "section": ".data",
-          "address": "0x9ee14d4",
-          "size": 76,
-          "sha256": "01ef628f01c8b948b5d68f5a251e92d1bf53066aa408697f072131c6c438e74e",
+          "address": "0x9ef8414",
+          "size": 128,
+          "sha256": "1327f6fef5cbb0ad6caea9240acb707e29b0891cb9dea38b75d0cb89fd7efd15",
           "objects": [
             {
-              "name": "gUnk_09EE14D4",
+              "name": "gUnk_09EF8414",
               "offset": 0,
-              "size": 56
+              "size": 8
             },
             {
-              "name": "gUnk_09EE150C",
-              "offset": 56,
-              "size": 20
+              "name": "gUnk_09EF841C",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8424",
+              "offset": 16,
+              "size": 60
+            },
+            {
+              "name": "gUnk_09EF8460",
+              "offset": 76,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8468",
+              "offset": 84,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8488",
+              "offset": 116,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EF8CA0",
+          "address": "0x9ef8ca0",
+          "size": 56,
+          "sha256": "4d48b3b1cb9c483995cf798d3962eb60539f3a54e863b2aecacee27f439c5047",
+          "objects": [
+            {
+              "name": "gUnk_09EF8CA0",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8CC0",
+              "offset": 32,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CC8",
+              "offset": 40,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CD0",
+              "offset": 48,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
+          "address": "0x9ef8d48",
+          "size": 32,
+          "sha256": "c82293e4170768bdcbf1f52151c02efcfa536f3a6dd6b71e9dc7121483a60fb9",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D48",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF8D58",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF8D64",
+              "offset": 28,
+              "size": 4
             }
           ]
         },
@@ -12212,637 +13005,64 @@
               "size": 24
             }
           ]
-        },
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF308",
-          "address": "0x9edf308",
-          "size": 20,
+          "unit": "animation_resource_frd_goofy_data.c",
+          "section": ".data",
+          "address": "0x9eb5f6c",
+          "size": 164,
           "objects": [
             {
-              "name": "gUnk_09EDF308",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF318",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "fc332612319e03c758b16dbae14a0fed54cdbd8be0e01ba7aed10fe4447215f4"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
-          "address": "0x9edf320",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EDF320",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF330",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "20a0f94b53fa66f5901e39e5c58cc3076565e2af9df574e99296b958a3b2bfd2"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE00F4",
-          "address": "0x9ee00f4",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EE00F4",
+              "name": "gUnk_09EDE4F0",
               "offset": 0,
               "size": 28
             },
             {
-              "name": "gUnk_09EE0110",
+              "name": "gUnk_09EDE50C",
               "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "13e87eb69a02428f556785bfd1b09168ab797c163eec89f680e25035f76311a0"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE10E0",
-          "address": "0x9ee10e0",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE10E0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE10E4",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "85a734f9524287f66283fc781176bf8d064a5d8c453c312216253a354843a774"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE9450",
-          "address": "0x9ee9450",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE9450",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE9454",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "ca93a2fe838be97f65d7bffaf8a99eeb0d66fb9fb6f2ddd5a40407ecb294a107"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94B4",
-          "address": "0x9ee94b4",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94B4",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94B8",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "91afd842305ed6088a6c94ac5f3766b47f2df2ea5a5cc172ee693e5438212d3d"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94C8",
-          "address": "0x9ee94c8",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94C8",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94CC",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "51a757adfcf5660693911485c37049714cb4116fb065b7f9ae8e4c619f2c4597"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE268",
-          "address": "0x9eee268",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE268",
-              "offset": 0,
               "size": 12
             },
             {
-              "name": "gUnk_09EEE274",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "03aac806b2c810a350a4480f6128efdbe57995b9662bc87b6441e2559a1c43d1"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE284",
-          "address": "0x9eee284",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE284",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE290",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "95030d69f589d9dbf5cd08c82af051d584bbe48e541bdbd7cd2ef8a86b6ceacd"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE36C",
-          "address": "0x9eee36c",
-          "size": 80,
-          "objects": [
-            {
-              "name": "gUnk_09EEE36C",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnk_09EEE3B8",
-              "offset": 76,
-              "size": 4
-            }
-          ],
-          "sha256": "b02d4f001abca6f83f2923909dea064324c8a32ff133b8e61996faaf2b20de6f"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE574",
-          "address": "0x9eee574",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEE574",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE584",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "f9546a97ab1f6a50ac56d15e5bb445fc6123823f5d1837bc6c385bbb65842a9c"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEFBB8",
-          "address": "0x9eefbb8",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEFBB8",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEFBC8",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "34ce8d58d79e58149bb4aa4decbcf25a3690af7f8d0418b625b16540ffa442f0"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0034",
-          "address": "0x9ef0034",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EF0034",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF0040",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0044",
-              "offset": 16,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0048",
-              "offset": 20,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF004C",
-              "offset": 24,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0050",
-              "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "faca0b53214a5732a8b0ce45e79be2746691de42d4918191584a4d43980c170e"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF04FC",
-          "address": "0x9ef04fc",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EF04FC",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0500",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0504",
-              "offset": 8,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0508",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF050C",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "6f12ecee5551d4304f1ce961c4739f461a4f5cfac37404eb5388d22447a6120e"
-        },
-        {
-          "unit": "animation_resource_wlogo_mons_data.c",
-          "section": ".data",
-          "address": "0x9ef351c",
-          "size": 436,
-          "sha256": "402bf242fd460d36d59a057d2f76c5c5065285c04a341d2f8d5a531f108db4e7",
-          "objects": [
-            {
-              "name": "gUnk_09EF351C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF3544",
+              "name": "gUnk_09EDE518",
               "offset": 40,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EDE534",
+              "offset": 68,
               "size": 4
             },
             {
-              "name": "gUnk_09EF3548",
-              "offset": 44,
-              "size": 36
+              "name": "gUnk_09EDE538",
+              "offset": 72,
+              "size": 8
             },
             {
-              "name": "gUnk_09EF356C",
+              "name": "gUnk_09EDE540",
               "offset": 80,
               "size": 8
             },
             {
-              "name": "gUnk_09EF3574",
+              "name": "gUnk_09EDE548",
               "offset": 88,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF35A4",
-              "offset": 136,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF35B8",
-              "offset": 156,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3610",
-              "offset": 244,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3614",
-              "offset": 248,
-              "size": 152
-            },
-            {
-              "name": "gUnk_09EF36AC",
-              "offset": 400,
-              "size": 36
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_wlogo_tvt_data.c",
-          "section": ".data",
-          "address": "0x9ef36d8",
-          "size": 428,
-          "sha256": "6c121a70c5064e741f322b72787813c06716721b834f55aa327e562554f1c41c",
-          "objects": [
-            {
-              "name": "gUnk_09EF36D8",
-              "offset": 0,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3730",
-              "offset": 88,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3734",
-              "offset": 92,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF375C",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3760",
-              "offset": 136,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3764",
-              "offset": 140,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3768",
-              "offset": 144,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF376C",
-              "offset": 148,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF3778",
-              "offset": 160,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF377C",
-              "offset": 164,
-              "size": 96
-            },
-            {
-              "name": "gUnk_09EF37DC",
-              "offset": 260,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF37F0",
-              "offset": 280,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF37F4",
-              "offset": 284,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EF3804",
-              "offset": 300,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF380C",
-              "offset": 308,
-              "size": 68
-            },
-            {
-              "name": "gUnk_09EF3850",
-              "offset": 376,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_tutorial_data.c",
-          "section": ".data",
-          "address": "0x9ef8414",
-          "size": 128,
-          "sha256": "1327f6fef5cbb0ad6caea9240acb707e29b0891cb9dea38b75d0cb89fd7efd15",
-          "objects": [
-            {
-              "name": "gUnk_09EF8414",
-              "offset": 0,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF841C",
-              "offset": 8,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8424",
-              "offset": 16,
               "size": 60
             },
             {
-              "name": "gUnk_09EF8460",
-              "offset": 76,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8468",
-              "offset": 84,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8488",
-              "offset": 116,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8CA0",
-          "address": "0x9ef8ca0",
-          "size": 56,
-          "sha256": "4d48b3b1cb9c483995cf798d3962eb60539f3a54e863b2aecacee27f439c5047",
-          "objects": [
-            {
-              "name": "gUnk_09EF8CA0",
-              "offset": 0,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8CC0",
-              "offset": 32,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CC8",
-              "offset": 40,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CD0",
-              "offset": 48,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_menu_data.c",
-          "section": ".data",
-          "address": "0x9ef8d48",
-          "size": 32,
-          "sha256": "c82293e4170768bdcbf1f52151c02efcfa536f3a6dd6b71e9dc7121483a60fb9",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D48",
-              "offset": 0,
+              "name": "gUnk_09EDE584",
+              "offset": 148,
               "size": 16
-            },
-            {
-              "name": "gUnk_09EF8D58",
-              "offset": 16,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D64",
-              "offset": 28,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_honeycomb_data.c",
-          "section": ".data",
-          "address": "0x9ef5ff0",
-          "size": 60,
-          "objects": [
-            {
-              "name": "gUnk_09EF5FF0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF4",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF8",
-              "offset": 8,
-              "size": 44
-            },
-            {
-              "name": "gUnk_09EF6024",
-              "offset": 52,
-              "size": 8
             }
           ],
-          "sha256": "ecfafa70c84bdd6364e3c8f43ae22b93f1a02681685082932d99fce606174166"
-        },
-        {
-          "unit": "animation_resource_pooh_cabbage_data.c",
-          "section": ".data",
-          "address": "0x9ef602c",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF602C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF6054",
-              "offset": 40,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6058",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF605C",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6060",
-              "offset": 52,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_wagonwheel_data.c",
-          "section": ".data",
-          "address": "0x9ef6078",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF6078",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF60A8",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF60AC",
-              "offset": 52,
-              "size": 24
-            }
-          ]
+          "sha256": "50436b12be4b3a83ac6066696eb512645001130e92fd2ac596add1349ffa89b2"
         },
         {
           "unit": "animation_resource_data.c",
           "section": ".data_09EDE5FC",
-          "address": "0x9ede5fc",
+          "address": "0x9eb6078",
           "size": 404,
           "objects": [
             {
@@ -12946,12 +13166,12 @@
               "size": 4
             }
           ],
-          "sha256": "f43d6487039c72befd55d28ead50d88a0702188981f3831eb8f595ee4c2bc229"
+          "sha256": "65aa50b62d78d2f388316f59955ec1800d48504b78bb0256dde5a4cbfa616d7b"
         },
         {
           "unit": "animation_resource_smn_bambi_data.c",
           "section": ".data",
-          "address": "0x9ede790",
+          "address": "0x9eb620c",
           "size": 36,
           "objects": [
             {
@@ -12970,142 +13190,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "animation_resource_btl_lockon_data.c",
-          "section": ".data",
-          "address": "0x9edf1c0",
-          "size": 328,
-          "objects": [
-            {
-              "name": "gUnk_09EDF1C0",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF1F0",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F4",
-              "offset": 52,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F8",
-              "offset": 56,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EDF20C",
-              "offset": 76,
-              "size": 56
-            },
-            {
-              "name": "gUnk_09EDF244",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF248",
-              "offset": 136,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EDF268",
-              "offset": 168,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF26C",
-              "offset": 172,
-              "size": 36
-            },
-            {
-              "name": "gUnk_09EDF290",
-              "offset": 208,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF294",
-              "offset": 212,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF2C4",
-              "offset": 260,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDF2D0",
-              "offset": 272,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EDF2F8",
-              "offset": 312,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF2FC",
-              "offset": 316,
-              "size": 12
-            }
-          ]
-        }
-      ]
-    },
-    "jp": {
-      "placements": [
-        {
-          "unit": "animation_resource_frd_goofy_data.c",
-          "section": ".data",
-          "address": "0x9eb5f6c",
-          "size": 164,
-          "objects": [
-            {
-              "name": "gUnk_09EDE4F0",
-              "offset": 0,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE50C",
-              "offset": 28,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDE518",
-              "offset": 40,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE534",
-              "offset": 68,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE538",
-              "offset": 72,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE540",
-              "offset": 80,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE548",
-              "offset": 88,
-              "size": 60
-            },
-            {
-              "name": "gUnk_09EDE584",
-              "offset": 148,
-              "size": 16
-            }
-          ],
-          "sha256": "50436b12be4b3a83ac6066696eb512645001130e92fd2ac596add1349ffa89b2"
         },
         {
           "unit": "animation_resource_smn_simba_data.c",
@@ -13695,6 +13779,108 @@
           "sha256": "c51cac0c7772caa17ab8619e699a5fea6cec43efca35fa4f3e72ecea3ee4c2fe"
         },
         {
+          "unit": "animation_resource_btl_lockon_data.c",
+          "section": ".data",
+          "address": "0x9eb6c3c",
+          "size": 328,
+          "objects": [
+            {
+              "name": "gUnk_09EDF1C0",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF1F0",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F4",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F8",
+              "offset": 56,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EDF20C",
+              "offset": 76,
+              "size": 56
+            },
+            {
+              "name": "gUnk_09EDF244",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF248",
+              "offset": 136,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EDF268",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF26C",
+              "offset": 172,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EDF290",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF294",
+              "offset": 212,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF2C4",
+              "offset": 260,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDF2D0",
+              "offset": 272,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EDF2F8",
+              "offset": 312,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF2FC",
+              "offset": 316,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF308",
+          "address": "0x9eb6d84",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF308",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF318",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "0a34325f693c5cef66972ee6aba1b29886f994a8b8f1b9b8d662035db3a65037"
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EDF31C",
           "address": "0x9eb6d98",
@@ -13707,6 +13893,25 @@
             }
           ],
           "sha256": "fdafb7b3b34b9cee8c20f005b36ae86947718cf16de4f5680fbff12727b7c951"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF320",
+          "address": "0x9eb6d9c",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF320",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF330",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "dc5fc6ba45db370b6cf29abdd3580d17cb171bd53fa399f1668a08779a9d5731"
         },
         {
           "unit": "animation_resource_data.c",
@@ -13901,8 +14106,8 @@
           "sha256": "3d929d9fb7183479887b3ab91e11701be0f6d0039feb2fa4fed08adf925561c2"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF694",
+          "unit": "animation_resource_fld_tail_data.c",
+          "section": ".data",
           "address": "0x9eb7110",
           "size": 208,
           "objects": [
@@ -13986,8 +14191,7 @@
               "offset": 204,
               "size": 4
             }
-          ],
-          "sha256": "ef3ec7e0400d0792dccf9c5414aa0772b427f69c7fe899df03de66179ca51511"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -14028,8 +14232,8 @@
           "sha256": "8b42621d2ad11d36e99214125a78b92c94b52f4f9d3d4fd042df284223bb2b05"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF8CC",
+          "unit": "animation_resource_emy_pre_data.c",
+          "section": ".data",
           "address": "0x9eb7348",
           "size": 36,
           "objects": [
@@ -14043,8 +14247,7 @@
               "offset": 32,
               "size": 4
             }
-          ],
-          "sha256": "d44eb15d9f199cd0f6a34e9ec5240aac5c35b2dc24defaf45288b34bf6233a38"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -14541,6 +14744,25 @@
             }
           ],
           "sha256": "825625f84c79ff40c4a12792988c10a3aba2c0fbecc1ec41ca325380c09bdd76"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE00F4",
+          "address": "0x9eb7b70",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EE00F4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EE0110",
+              "offset": 28,
+              "size": 4
+            }
+          ],
+          "sha256": "52f85e0ce3dd1117f58f3b62835241d9860b180fa2d5e89725575a9b190a4db9"
         },
         {
           "unit": "animation_resource_emy_data.c",
@@ -15628,6 +15850,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE10E0",
+          "address": "0x9eb8b5c",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE10E0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE10E4",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "510f89ed362e0bcf53de2956ef4e04919275e5f9b3f6c44805dabd9971d14485"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE10E8",
           "address": "0x9eb8b64",
           "size": 4,
@@ -15677,6 +15918,25 @@
             }
           ],
           "sha256": "01b8743b09fae7d6de492a26ef842cbb1c89b1da2438aa0547db05bb96f4612b"
+        },
+        {
+          "unit": "animation_resource_mode_test_data.c",
+          "section": ".data",
+          "address": "0x9eb8f50",
+          "size": 76,
+          "sha256": "4b5820285127a6905bf8c55013c10fec4243b188a028dcadcfcaba7508a0d2f5",
+          "objects": [
+            {
+              "name": "gUnk_09EE14D4",
+              "offset": 0,
+              "size": 56
+            },
+            {
+              "name": "gUnk_09EE150C",
+              "offset": 56,
+              "size": 20
+            }
+          ]
         },
         {
           "unit": "animation_resource_hum_cloud_data.c",
@@ -17419,6 +17679,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE9450",
+          "address": "0x9ec0a94",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE9450",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9454",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "12a02cafa1780b3a807d1d5fb123ad23f2f7b939907cbe911d5e9cc5dd53c260"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE9458",
           "address": "0x9ec0a9c",
           "size": 84,
@@ -17533,6 +17812,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE94B4",
+          "address": "0x9ec0af8",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B8",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "613970e8e394fa77bb3528c75afa11ac0c4f2552e30bc2b8606d4cf4225f8983"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE94BC",
           "address": "0x9ec0b00",
           "size": 12,
@@ -17554,6 +17852,25 @@
             }
           ],
           "sha256": "ec3f450473cbdf2457c5545cbd8291234dfb2d0fe200f4a77ebb35fd0055b263"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE94C8",
+          "address": "0x9ec0b0c",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94CC",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "ab9bd6f9c517997ae540cd747afe07fd4cb16511260436ccb8fd0f365cf6900c"
         },
         {
           "unit": "animation_resource_data.c",
@@ -19345,8 +19662,8 @@
           "sha256": "d7827577f656ce5179cb70813e1aba38a414d88b489d1040ae8218e8e38d617b"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EED800",
+          "unit": "animation_resource_msg_portrait_mid_data.c",
+          "section": ".data",
           "address": "0x9ec4bec",
           "size": 900,
           "objects": [
@@ -19530,12 +19847,11 @@
               "offset": 868,
               "size": 32
             }
-          ],
-          "sha256": "caf8f1a7b3921420eff49ac66bcaa61fefdfc67a4f99f69f9f9a0a1446d548d2"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEDB9C",
+          "unit": "animation_resource_msg_portrait_tail_data.c",
+          "section": ".data",
           "address": "0x9ec4f88",
           "size": 1036,
           "objects": [
@@ -19829,8 +20145,7 @@
               "offset": 1012,
               "size": 24
             }
-          ],
-          "sha256": "3cd66ed3d52cf0f0f19db678226972926d8e95bbbbd1c61a2214d6504e26064d"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -19982,132 +20297,161 @@
           "sha256": "169392672d06f14e154d5473387a06d0e177f1d8db0b8a4ecaf163a8e435f6ef"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE278",
-          "address": "0x9ec5664",
-          "size": 12,
+          "unit": "animation_resource_evt_head_data.c",
+          "section": ".data",
+          "address": "0x9ec5654",
+          "size": 260,
           "objects": [
             {
-              "name": "gUnk_09EEE278",
+              "name": "gUnk_09EEE268",
               "offset": 0,
               "size": 12
-            }
-          ],
-          "sha256": "ea450e877efaf21717e350d589c5fe942025045389a3d1433a3c0c5eed555907"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE294",
-          "address": "0x9ec5680",
-          "size": 216,
-          "objects": [
+            },
+            {
+              "name": "gUnk_09EEE274",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE278",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE284",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE290",
+              "offset": 40,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEE294",
-              "offset": 0,
+              "offset": 44,
               "size": 12
             },
             {
               "name": "gUnk_09EEE2A0",
-              "offset": 12,
+              "offset": 56,
               "size": 16
             },
             {
               "name": "gUnk_09EEE2B0",
-              "offset": 28,
+              "offset": 72,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2B8",
-              "offset": 36,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EEE2C0",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2C4",
-              "offset": 48,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE2D4",
-              "offset": 64,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2D8",
-              "offset": 68,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE2E4",
               "offset": 80,
               "size": 8
             },
             {
-              "name": "gUnk_09EEE2EC",
+              "name": "gUnk_09EEE2C0",
               "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2C4",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE2D4",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2D8",
+              "offset": 112,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE2E4",
+              "offset": 124,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEE2EC",
+              "offset": 132,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2F4",
-              "offset": 96,
+              "offset": 140,
               "size": 4
             },
             {
               "name": "gUnk_09EEE2F8",
-              "offset": 100,
+              "offset": 144,
               "size": 16
             },
             {
               "name": "gUnk_09EEE308",
-              "offset": 116,
+              "offset": 160,
               "size": 8
             },
             {
               "name": "gUnk_09EEE310",
-              "offset": 124,
+              "offset": 168,
               "size": 4
             },
             {
               "name": "gUnk_09EEE314",
-              "offset": 128,
+              "offset": 172,
               "size": 4
             },
             {
               "name": "gUnk_09EEE318",
-              "offset": 132,
+              "offset": 176,
               "size": 12
             },
             {
               "name": "gUnk_09EEE324",
-              "offset": 144,
+              "offset": 188,
               "size": 4
             },
             {
               "name": "gUnk_09EEE328",
-              "offset": 148,
+              "offset": 192,
               "size": 16
             },
             {
               "name": "gUnk_09EEE338",
-              "offset": 164,
+              "offset": 208,
               "size": 8
             },
             {
               "name": "gUnk_09EEE340",
-              "offset": 172,
+              "offset": 216,
               "size": 32
             },
             {
               "name": "gUnk_09EEE360",
-              "offset": 204,
+              "offset": 248,
               "size": 12
             }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EEE36C",
+          "address": "0x9ec5758",
+          "size": 80,
+          "objects": [
+            {
+              "name": "gUnk_09EEE36C",
+              "offset": 0,
+              "size": 76
+            },
+            {
+              "name": "gUnk_09EEE3B8",
+              "offset": 76,
+              "size": 4
+            }
           ],
-          "sha256": "259ea4baf403f52811abea6bf0f19e63ab4a97682de2069317596bb4073dd5e1"
+          "sha256": "f1a623821632c8fc5307d72e348c5e6e2a74182559c931241fc65745fe84fec2"
         },
         {
           "unit": "animation_resource_data.c",
@@ -20233,10 +20577,10 @@
           "sha256": "9e19b89300453dafaf9a2ca1b52d57ecde757498a1dbe540f002c9de1dbb94c1"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE554",
+          "unit": "animation_resource_evt_pre_data.c",
+          "section": ".data",
           "address": "0x9ec5940",
-          "size": 32,
+          "size": 52,
           "objects": [
             {
               "name": "gUnk_09EEE554",
@@ -20257,9 +20601,18 @@
               "name": "gUnk_09EEE570",
               "offset": 28,
               "size": 4
+            },
+            {
+              "name": "gUnk_09EEE574",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE584",
+              "offset": 48,
+              "size": 4
             }
-          ],
-          "sha256": "8a3269d72d6eb887a917ca40e9e2c6a29d20ed0124c8814138a170f6255f57f1"
+          ]
         },
         {
           "unit": "animation_resource_evt_data.c",
@@ -20936,8 +21289,8 @@
           "sha256": "b36e62ed5b063d556b80adcc1e4d3d854abb35a1384761c19917b316f70b336f"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE4C",
+          "unit": "animation_resource_evt_gap_data.c",
+          "section": ".data",
           "address": "0x9ec6238",
           "size": 16,
           "objects": [
@@ -20951,12 +21304,11 @@
               "offset": 8,
               "size": 8
             }
-          ],
-          "sha256": "e3bc417fb41030475e95c85415f2c314c2a686a736d045aae2a3b6656b3ae304"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE70",
+          "unit": "animation_resource_evt_gap2_data.c",
+          "section": ".data",
           "address": "0x9ec625c",
           "size": 632,
           "objects": [
@@ -21230,8 +21582,7 @@
               "offset": 628,
               "size": 4
             }
-          ],
-          "sha256": "04ccab8bcd22d4c15230af5c01249d58731b3efb8acd7ee60ef11de170557cdf"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -22321,6 +22672,24 @@
           "sha256": "2d2aedf4ab88d660adcd63113d4e7e550824ef0ff6e62ae77adc8abfe1f16cdb"
         },
         {
+          "unit": "animation_resource_evt_before_shared_data.c",
+          "section": ".data",
+          "address": "0x9ec6fa4",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EEFBB8",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEFBC8",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EEFBCC",
           "address": "0x9ec6fb8",
@@ -22592,6 +22961,44 @@
             }
           ],
           "sha256": "2dced06a271bef1e39894394af60fc18fde051586526211322df615c662e9310"
+        },
+        {
+          "unit": "animation_resource_evt_pre_mid_data.c",
+          "section": ".data",
+          "address": "0x9ec7420",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EF0034",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF0040",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0044",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0048",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF004C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0050",
+              "offset": 28,
+              "size": 4
+            }
+          ]
         },
         {
           "unit": "animation_resource_evt_mid_data.c",
@@ -23139,6 +23546,40 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EF04FC",
+          "address": "0x9ec78e8",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EF04FC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0500",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0504",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0508",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF050C",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "cb8b51695261e1a5194c6de7c368b3bb061cb38b5d7a4264c1a5b14ef9304897"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EF0510",
           "address": "0x9ec78fc",
           "size": 408,
@@ -23302,8 +23743,8 @@
           "sha256": "fb3ff8dbc7ba315c18ff36c015ab357a4ac35a808cac56aee7fb6879263baac7"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF06CC",
+          "unit": "animation_resource_evt_mid_gap_data.c",
+          "section": ".data",
           "address": "0x9ec7ab8",
           "size": 264,
           "objects": [
@@ -23367,8 +23808,7 @@
               "offset": 260,
               "size": 4
             }
-          ],
-          "sha256": "ef6d59e06a66494157093e8153443fe0a8bde45090bbfc9973c3a4772b0737c9"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -23799,8 +24239,8 @@
           "sha256": "a6023cb7bfc5e3ecd170b624f5ac95b15ecff0158319b91af3f4524a6e3c229a"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0ED8",
+          "unit": "animation_resource_evt_post_tail_data.c",
+          "section": ".data",
           "address": "0x9ec82c4",
           "size": 140,
           "objects": [
@@ -23834,8 +24274,7 @@
               "offset": 132,
               "size": 8
             }
-          ],
-          "sha256": "94d02a71b067851fd6a392cbd9178f23e5b9515fbe57aa8f07157e2c268bb054"
+          ]
         },
         {
           "unit": "animation_resource_map_card_data.c",
@@ -24114,6 +24553,154 @@
             }
           ],
           "sha256": "262dff930b3ba950d7f684b5d573ef0f929cb3763fd91e35edf751d5ab7377c0"
+        },
+        {
+          "unit": "animation_resource_wlogo_mons_data.c",
+          "section": ".data",
+          "address": "0x9eca908",
+          "size": 436,
+          "sha256": "2340381d11c636474551da5dce82ff9b1351fb7bd49177c30dbdcd046f3e1881",
+          "objects": [
+            {
+              "name": "gUnk_09EF351C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF3544",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3548",
+              "offset": 44,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF356C",
+              "offset": 80,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF3574",
+              "offset": 88,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF35A4",
+              "offset": 136,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF35B8",
+              "offset": 156,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3610",
+              "offset": 244,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3614",
+              "offset": 248,
+              "size": 152
+            },
+            {
+              "name": "gUnk_09EF36AC",
+              "offset": 400,
+              "size": 36
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_wlogo_tvt_data.c",
+          "section": ".data",
+          "address": "0x9ecaac4",
+          "size": 428,
+          "sha256": "90c5d9a6889384acd011ed10510f5e1d4709ddec39dc0a563814079bcdc3a9ca",
+          "objects": [
+            {
+              "name": "gUnk_09EF36D8",
+              "offset": 0,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3730",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3734",
+              "offset": 92,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF375C",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3760",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3764",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3768",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF376C",
+              "offset": 148,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF3778",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF377C",
+              "offset": 164,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF37DC",
+              "offset": 260,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF37F0",
+              "offset": 280,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF37F4",
+              "offset": 284,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3804",
+              "offset": 300,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF380C",
+              "offset": 308,
+              "size": 68
+            },
+            {
+              "name": "gUnk_09EF3850",
+              "offset": 376,
+              "size": 52
+            }
+          ]
         },
         {
           "unit": "animation_resource_pooh_data.c",
@@ -24803,8 +25390,8 @@
           "sha256": "7e005107fb3c37c949ac12450f98bc67c0ee4a18188e2d5d099d36f40a5ad5fa"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF5B54",
+          "unit": "animation_resource_evt_far_data.c",
+          "section": ".data",
           "address": "0x9eccf40",
           "size": 280,
           "objects": [
@@ -24878,8 +25465,7 @@
               "offset": 272,
               "size": 8
             }
-          ],
-          "sha256": "ef23028ffab2ae2a3efb66981822d9ed8d73b6607f863f191a863ba6fc020798"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -25010,6 +25596,91 @@
           "sha256": "80cd049ecf5afa2b60304b864df67a71eaf7e52cb352c9f533323b3adfb6fd6d"
         },
         {
+          "unit": "animation_resource_pooh_honeycomb_data.c",
+          "section": ".data",
+          "address": "0x9ecd3dc",
+          "size": 60,
+          "objects": [
+            {
+              "name": "gUnk_09EF5FF0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF4",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF8",
+              "offset": 8,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF6024",
+              "offset": 52,
+              "size": 8
+            }
+          ],
+          "sha256": "fc9732c15d78884321791300e936c567d3201c693eecc90629efbb66f210773a"
+        },
+        {
+          "unit": "animation_resource_pooh_cabbage_data.c",
+          "section": ".data",
+          "address": "0x9ecd418",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF602C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF6054",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6058",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF605C",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6060",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_pooh_wagonwheel_data.c",
+          "section": ".data",
+          "address": "0x9ecd464",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF6078",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF60A8",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF60AC",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_bos4_saku_data.c",
           "section": ".data",
           "address": "0x9ecdbe8",
@@ -25059,21 +25730,94 @@
           "sha256": "605e88450487ac204e6fc18719e1035e168cf1d02fa62283f2b053a79b97123a"
         },
         {
-          "unit": "animation_resource_mode_test_data.c",
+          "unit": "animation_resource_map_tutorial_data.c",
           "section": ".data",
-          "address": "0x9eb8f50",
-          "size": 76,
-          "sha256": "4b5820285127a6905bf8c55013c10fec4243b188a028dcadcfcaba7508a0d2f5",
+          "address": "0x9ecf800",
+          "size": 128,
+          "sha256": "9ea564a35e775513e6619a67a8c2757bfd2a03da0d548b051219fb515d2aff66",
           "objects": [
             {
-              "name": "gUnk_09EE14D4",
+              "name": "gUnk_09EF8414",
               "offset": 0,
-              "size": 56
+              "size": 8
             },
             {
-              "name": "gUnk_09EE150C",
-              "offset": 56,
-              "size": 20
+              "name": "gUnk_09EF841C",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8424",
+              "offset": 16,
+              "size": 60
+            },
+            {
+              "name": "gUnk_09EF8460",
+              "offset": 76,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8468",
+              "offset": 84,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8488",
+              "offset": 116,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EF8CA0",
+          "address": "0x9ed008c",
+          "size": 56,
+          "sha256": "61881743d9134efa7b4786b71201f929ef60f48b5069914ac9b191c68b9fa2d2",
+          "objects": [
+            {
+              "name": "gUnk_09EF8CA0",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8CC0",
+              "offset": 32,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CC8",
+              "offset": 40,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CD0",
+              "offset": 48,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
+          "address": "0x9ed0134",
+          "size": 32,
+          "sha256": "e24cb10b921f15570e646e75c3ab954de621c85792bb101a0a2a4a8910bc2fe5",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D48",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF8D58",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF8D64",
+              "offset": 28,
+              "size": 4
             }
           ]
         },
@@ -25241,637 +25985,64 @@
               "size": 24
             }
           ]
-        },
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF308",
-          "address": "0x9eb6d84",
-          "size": 20,
+          "unit": "animation_resource_frd_goofy_data.c",
+          "section": ".data",
+          "address": "0x9f59148",
+          "size": 164,
           "objects": [
             {
-              "name": "gUnk_09EDF308",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF318",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "0a34325f693c5cef66972ee6aba1b29886f994a8b8f1b9b8d662035db3a65037"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
-          "address": "0x9eb6d9c",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EDF320",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF330",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "dc5fc6ba45db370b6cf29abdd3580d17cb171bd53fa399f1668a08779a9d5731"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE00F4",
-          "address": "0x9eb7b70",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EE00F4",
+              "name": "gUnk_09EDE4F0",
               "offset": 0,
               "size": 28
             },
             {
-              "name": "gUnk_09EE0110",
+              "name": "gUnk_09EDE50C",
               "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "52f85e0ce3dd1117f58f3b62835241d9860b180fa2d5e89725575a9b190a4db9"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE10E0",
-          "address": "0x9eb8b5c",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE10E0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE10E4",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "510f89ed362e0bcf53de2956ef4e04919275e5f9b3f6c44805dabd9971d14485"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE9450",
-          "address": "0x9ec0a94",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE9450",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE9454",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "12a02cafa1780b3a807d1d5fb123ad23f2f7b939907cbe911d5e9cc5dd53c260"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94B4",
-          "address": "0x9ec0af8",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94B4",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94B8",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "613970e8e394fa77bb3528c75afa11ac0c4f2552e30bc2b8606d4cf4225f8983"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94C8",
-          "address": "0x9ec0b0c",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94C8",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94CC",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "ab9bd6f9c517997ae540cd747afe07fd4cb16511260436ccb8fd0f365cf6900c"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE268",
-          "address": "0x9ec5654",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE268",
-              "offset": 0,
               "size": 12
             },
             {
-              "name": "gUnk_09EEE274",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "ed29d7e8b450aa4c6832c99046fb31bfaa29ef0fd1cc27bd92e3e3159a738369"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE284",
-          "address": "0x9ec5670",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE284",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE290",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "f22e8a6928f6e5eda397c204a1e3f07ac2909212ee7839bd94c8992448b7d481"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE36C",
-          "address": "0x9ec5758",
-          "size": 80,
-          "objects": [
-            {
-              "name": "gUnk_09EEE36C",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnk_09EEE3B8",
-              "offset": 76,
-              "size": 4
-            }
-          ],
-          "sha256": "f1a623821632c8fc5307d72e348c5e6e2a74182559c931241fc65745fe84fec2"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE574",
-          "address": "0x9ec5960",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEE574",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE584",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "b7eed002f213c0c5baed70b23d1442d2a90da771ab4aca0c329c18c6ff093da0"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEFBB8",
-          "address": "0x9ec6fa4",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEFBB8",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEFBC8",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "ec0055a7c6faf159e512820f506af9bac04197e8bed2ada29fbb1c58cb3072e1"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0034",
-          "address": "0x9ec7420",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EF0034",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF0040",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0044",
-              "offset": 16,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0048",
-              "offset": 20,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF004C",
-              "offset": 24,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0050",
-              "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "88390a6c72ab6b39a0f6a35af62237342f4172788bffffbd60d9b8bdc4d89a34"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF04FC",
-          "address": "0x9ec78e8",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EF04FC",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0500",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0504",
-              "offset": 8,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0508",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF050C",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "cb8b51695261e1a5194c6de7c368b3bb061cb38b5d7a4264c1a5b14ef9304897"
-        },
-        {
-          "unit": "animation_resource_wlogo_mons_data.c",
-          "section": ".data",
-          "address": "0x9eca908",
-          "size": 436,
-          "sha256": "2340381d11c636474551da5dce82ff9b1351fb7bd49177c30dbdcd046f3e1881",
-          "objects": [
-            {
-              "name": "gUnk_09EF351C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF3544",
+              "name": "gUnk_09EDE518",
               "offset": 40,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EDE534",
+              "offset": 68,
               "size": 4
             },
             {
-              "name": "gUnk_09EF3548",
-              "offset": 44,
-              "size": 36
+              "name": "gUnk_09EDE538",
+              "offset": 72,
+              "size": 8
             },
             {
-              "name": "gUnk_09EF356C",
+              "name": "gUnk_09EDE540",
               "offset": 80,
               "size": 8
             },
             {
-              "name": "gUnk_09EF3574",
+              "name": "gUnk_09EDE548",
               "offset": 88,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF35A4",
-              "offset": 136,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF35B8",
-              "offset": 156,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3610",
-              "offset": 244,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3614",
-              "offset": 248,
-              "size": 152
-            },
-            {
-              "name": "gUnk_09EF36AC",
-              "offset": 400,
-              "size": 36
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_wlogo_tvt_data.c",
-          "section": ".data",
-          "address": "0x9ecaac4",
-          "size": 428,
-          "sha256": "90c5d9a6889384acd011ed10510f5e1d4709ddec39dc0a563814079bcdc3a9ca",
-          "objects": [
-            {
-              "name": "gUnk_09EF36D8",
-              "offset": 0,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3730",
-              "offset": 88,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3734",
-              "offset": 92,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF375C",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3760",
-              "offset": 136,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3764",
-              "offset": 140,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3768",
-              "offset": 144,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF376C",
-              "offset": 148,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF3778",
-              "offset": 160,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF377C",
-              "offset": 164,
-              "size": 96
-            },
-            {
-              "name": "gUnk_09EF37DC",
-              "offset": 260,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF37F0",
-              "offset": 280,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF37F4",
-              "offset": 284,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EF3804",
-              "offset": 300,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF380C",
-              "offset": 308,
-              "size": 68
-            },
-            {
-              "name": "gUnk_09EF3850",
-              "offset": 376,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_tutorial_data.c",
-          "section": ".data",
-          "address": "0x9ecf800",
-          "size": 128,
-          "sha256": "9ea564a35e775513e6619a67a8c2757bfd2a03da0d548b051219fb515d2aff66",
-          "objects": [
-            {
-              "name": "gUnk_09EF8414",
-              "offset": 0,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF841C",
-              "offset": 8,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8424",
-              "offset": 16,
               "size": 60
             },
             {
-              "name": "gUnk_09EF8460",
-              "offset": 76,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8468",
-              "offset": 84,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8488",
-              "offset": 116,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8CA0",
-          "address": "0x9ed008c",
-          "size": 56,
-          "sha256": "61881743d9134efa7b4786b71201f929ef60f48b5069914ac9b191c68b9fa2d2",
-          "objects": [
-            {
-              "name": "gUnk_09EF8CA0",
-              "offset": 0,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8CC0",
-              "offset": 32,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CC8",
-              "offset": 40,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CD0",
-              "offset": 48,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_menu_data.c",
-          "section": ".data",
-          "address": "0x9ed0134",
-          "size": 32,
-          "sha256": "e24cb10b921f15570e646e75c3ab954de621c85792bb101a0a2a4a8910bc2fe5",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D48",
-              "offset": 0,
+              "name": "gUnk_09EDE584",
+              "offset": 148,
               "size": 16
-            },
-            {
-              "name": "gUnk_09EF8D58",
-              "offset": 16,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D64",
-              "offset": 28,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_honeycomb_data.c",
-          "section": ".data",
-          "address": "0x9ecd3dc",
-          "size": 60,
-          "objects": [
-            {
-              "name": "gUnk_09EF5FF0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF4",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF8",
-              "offset": 8,
-              "size": 44
-            },
-            {
-              "name": "gUnk_09EF6024",
-              "offset": 52,
-              "size": 8
             }
           ],
-          "sha256": "fc9732c15d78884321791300e936c567d3201c693eecc90629efbb66f210773a"
-        },
-        {
-          "unit": "animation_resource_pooh_cabbage_data.c",
-          "section": ".data",
-          "address": "0x9ecd418",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF602C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF6054",
-              "offset": 40,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6058",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF605C",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6060",
-              "offset": 52,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_wagonwheel_data.c",
-          "section": ".data",
-          "address": "0x9ecd464",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF6078",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF60A8",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF60AC",
-              "offset": 52,
-              "size": 24
-            }
-          ]
+          "sha256": "37372aa9b613b7158bf9588da1dc2e9a61510608db3a672d610b159966ec403c"
         },
         {
           "unit": "animation_resource_data.c",
           "section": ".data_09EDE5FC",
-          "address": "0x9eb6078",
+          "address": "0x9f59254",
           "size": 404,
           "objects": [
             {
@@ -25975,12 +26146,12 @@
               "size": 4
             }
           ],
-          "sha256": "65aa50b62d78d2f388316f59955ec1800d48504b78bb0256dde5a4cbfa616d7b"
+          "sha256": "1e034289effcd1b06db40b544663efbd52f90d3dce557e6049e607bb17d55d34"
         },
         {
           "unit": "animation_resource_smn_bambi_data.c",
           "section": ".data",
-          "address": "0x9eb620c",
+          "address": "0x9f593e8",
           "size": 36,
           "objects": [
             {
@@ -25999,142 +26170,6 @@
               "size": 4
             }
           ]
-        },
-        {
-          "unit": "animation_resource_btl_lockon_data.c",
-          "section": ".data",
-          "address": "0x9eb6c3c",
-          "size": 328,
-          "objects": [
-            {
-              "name": "gUnk_09EDF1C0",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF1F0",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F4",
-              "offset": 52,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F8",
-              "offset": 56,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EDF20C",
-              "offset": 76,
-              "size": 56
-            },
-            {
-              "name": "gUnk_09EDF244",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF248",
-              "offset": 136,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EDF268",
-              "offset": 168,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF26C",
-              "offset": 172,
-              "size": 36
-            },
-            {
-              "name": "gUnk_09EDF290",
-              "offset": 208,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF294",
-              "offset": 212,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF2C4",
-              "offset": 260,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDF2D0",
-              "offset": 272,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EDF2F8",
-              "offset": 312,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF2FC",
-              "offset": 316,
-              "size": 12
-            }
-          ]
-        }
-      ]
-    },
-    "eu": {
-      "placements": [
-        {
-          "unit": "animation_resource_frd_goofy_data.c",
-          "section": ".data",
-          "address": "0x9f59148",
-          "size": 164,
-          "objects": [
-            {
-              "name": "gUnk_09EDE4F0",
-              "offset": 0,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE50C",
-              "offset": 28,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDE518",
-              "offset": 40,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE534",
-              "offset": 68,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE538",
-              "offset": 72,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE540",
-              "offset": 80,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE548",
-              "offset": 88,
-              "size": 60
-            },
-            {
-              "name": "gUnk_09EDE584",
-              "offset": 148,
-              "size": 16
-            }
-          ],
-          "sha256": "37372aa9b613b7158bf9588da1dc2e9a61510608db3a672d610b159966ec403c"
         },
         {
           "unit": "animation_resource_smn_simba_data.c",
@@ -26724,6 +26759,108 @@
           "sha256": "5a93b3de7a60d752842035f6b06ac108b02959af9364586fc9443f8bf0f7ca8a"
         },
         {
+          "unit": "animation_resource_btl_lockon_data.c",
+          "section": ".data",
+          "address": "0x9f59e18",
+          "size": 328,
+          "objects": [
+            {
+              "name": "gUnk_09EDF1C0",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF1F0",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F4",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF1F8",
+              "offset": 56,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EDF20C",
+              "offset": 76,
+              "size": 56
+            },
+            {
+              "name": "gUnk_09EDF244",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF248",
+              "offset": 136,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EDF268",
+              "offset": 168,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF26C",
+              "offset": 172,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EDF290",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF294",
+              "offset": 212,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EDF2C4",
+              "offset": 260,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EDF2D0",
+              "offset": 272,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EDF2F8",
+              "offset": 312,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EDF2FC",
+              "offset": 316,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF308",
+          "address": "0x9f59f60",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF308",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF318",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "2fafbc6c38798111e8b820f1030e39e6dfbb40f8c06e2ad09f6154b4e8dfa2c0"
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EDF31C",
           "address": "0x9f59f74",
@@ -26736,6 +26873,25 @@
             }
           ],
           "sha256": "ea6c3a275aec57e85ceadbb4bdeb18f639e6d7f833d0aab90dcf8af23c06c082"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EDF320",
+          "address": "0x9f59f78",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EDF320",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EDF330",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "14af2d27dec3cbec8602f51a8577f6611739203c948245852ef82a1b11e112c0"
         },
         {
           "unit": "animation_resource_data.c",
@@ -26930,8 +27086,8 @@
           "sha256": "b333093eef58cceb5b18e3039458593fd6d7bb9d7d2668d91c2c2aced59ca0e4"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF694",
+          "unit": "animation_resource_fld_tail_data.c",
+          "section": ".data",
           "address": "0x9f5a2ec",
           "size": 208,
           "objects": [
@@ -27015,8 +27171,7 @@
               "offset": 204,
               "size": 4
             }
-          ],
-          "sha256": "39b30fc5d8c9e59001ce1a50e8594b2a53ab2b72bf4207449ca2452ccde63c11"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -27057,8 +27212,8 @@
           "sha256": "dfb4d4a6ba9684c86bcc5d998c117def252373c0c0c46af35226b32d022d7480"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF8CC",
+          "unit": "animation_resource_emy_pre_data.c",
+          "section": ".data",
           "address": "0x9f5a524",
           "size": 36,
           "objects": [
@@ -27072,8 +27227,7 @@
               "offset": 32,
               "size": 4
             }
-          ],
-          "sha256": "524580ded9eb2c3bef182339c8ba9c324a65de66c937251f84f29a982780c0b1"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -27570,6 +27724,25 @@
             }
           ],
           "sha256": "6c48f96f2648db07bab34bdb2f787cf5738d0188c804018d98205467951e5c8a"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE00F4",
+          "address": "0x9f5ad4c",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EE00F4",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EE0110",
+              "offset": 28,
+              "size": 4
+            }
+          ],
+          "sha256": "45b52b9f7a331274db6fae4a2a72a91d25abc58a16d336a8d5ebb61f1a450c6e"
         },
         {
           "unit": "animation_resource_emy_data.c",
@@ -28654,6 +28827,25 @@
             }
           ],
           "sha256": "2c0b9880e13541f9974e9d9f5a192e55d80dd197a7462930514c2dbaba1610ae"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE10E0",
+          "address": "0x9f5bd38",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE10E0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE10E4",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "776fb96c135e22dcda2ebc553f0295c11fd253ec696a39fbf50ce24311c57b7d"
         },
         {
           "unit": "animation_resource_data.c",
@@ -30448,6 +30640,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE9450",
+          "address": "0x9f748d0",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE9450",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE9454",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "40e90af048369cb9e82ff3225e0f6735c7320de87e6b7b8de645a18d27f8903d"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE9458",
           "address": "0x9f748d8",
           "size": 84,
@@ -30562,6 +30773,25 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EE94B4",
+          "address": "0x9f74934",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94B4",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94B8",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "cf00f3c72f3d6273a9ad1db50df78e8c1d57fcbae3834de80715133f455487c9"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EE94BC",
           "address": "0x9f7493c",
           "size": 12,
@@ -30583,6 +30813,25 @@
             }
           ],
           "sha256": "359f56f34d139ee8f70797286d9347a54d1e154806e9d3dad1f402d574f4a5c1"
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EE94C8",
+          "address": "0x9f74948",
+          "size": 8,
+          "objects": [
+            {
+              "name": "gUnk_09EE94C8",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EE94CC",
+              "offset": 4,
+              "size": 4
+            }
+          ],
+          "sha256": "750bc9a44fef920d5790099d4052dee98c9f1f09f0ba93d607de57c0e153d895"
         },
         {
           "unit": "animation_resource_data.c",
@@ -32374,8 +32623,8 @@
           "sha256": "05cf46f8c7ebdb1ba9735a8e0b49ce35c4d86fa482f5df207bdbd59efa4baf7a"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EED800",
+          "unit": "animation_resource_msg_portrait_mid_data.c",
+          "section": ".data",
           "address": "0x9f789e4",
           "size": 900,
           "objects": [
@@ -32559,12 +32808,11 @@
               "offset": 868,
               "size": 32
             }
-          ],
-          "sha256": "3eb814faad9f7719f7d19504505c7cf021f93b9d804579c7358d0be4e1e9255f"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEDB9C",
+          "unit": "animation_resource_msg_portrait_tail_data.c",
+          "section": ".data",
           "address": "0x9f78d80",
           "size": 1036,
           "objects": [
@@ -32858,8 +33106,7 @@
               "offset": 1012,
               "size": 24
             }
-          ],
-          "sha256": "d1182c3441519c011e6d926d9ab2b6890b1a22b4a867cec067358dac629d50d9"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -33011,132 +33258,161 @@
           "sha256": "74adc931fe60e3a144a8864d905e4b261a51714ad81fcd47747c9427323556ba"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE278",
-          "address": "0x9f7945c",
-          "size": 12,
+          "unit": "animation_resource_evt_head_data.c",
+          "section": ".data",
+          "address": "0x9f7944c",
+          "size": 260,
           "objects": [
             {
-              "name": "gUnk_09EEE278",
+              "name": "gUnk_09EEE268",
               "offset": 0,
               "size": 12
-            }
-          ],
-          "sha256": "09331bef48c7d317747524706825bee2f6cccf1c2043356a69ee87b450828ecb"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE294",
-          "address": "0x9f79478",
-          "size": 216,
-          "objects": [
+            },
+            {
+              "name": "gUnk_09EEE274",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE278",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE284",
+              "offset": 28,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE290",
+              "offset": 40,
+              "size": 4
+            },
             {
               "name": "gUnk_09EEE294",
-              "offset": 0,
+              "offset": 44,
               "size": 12
             },
             {
               "name": "gUnk_09EEE2A0",
-              "offset": 12,
+              "offset": 56,
               "size": 16
             },
             {
               "name": "gUnk_09EEE2B0",
-              "offset": 28,
+              "offset": 72,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2B8",
-              "offset": 36,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EEE2C0",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2C4",
-              "offset": 48,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE2D4",
-              "offset": 64,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EEE2D8",
-              "offset": 68,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE2E4",
               "offset": 80,
               "size": 8
             },
             {
-              "name": "gUnk_09EEE2EC",
+              "name": "gUnk_09EEE2C0",
               "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2C4",
+              "offset": 92,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE2D4",
+              "offset": 108,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EEE2D8",
+              "offset": 112,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EEE2E4",
+              "offset": 124,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EEE2EC",
+              "offset": 132,
               "size": 8
             },
             {
               "name": "gUnk_09EEE2F4",
-              "offset": 96,
+              "offset": 140,
               "size": 4
             },
             {
               "name": "gUnk_09EEE2F8",
-              "offset": 100,
+              "offset": 144,
               "size": 16
             },
             {
               "name": "gUnk_09EEE308",
-              "offset": 116,
+              "offset": 160,
               "size": 8
             },
             {
               "name": "gUnk_09EEE310",
-              "offset": 124,
+              "offset": 168,
               "size": 4
             },
             {
               "name": "gUnk_09EEE314",
-              "offset": 128,
+              "offset": 172,
               "size": 4
             },
             {
               "name": "gUnk_09EEE318",
-              "offset": 132,
+              "offset": 176,
               "size": 12
             },
             {
               "name": "gUnk_09EEE324",
-              "offset": 144,
+              "offset": 188,
               "size": 4
             },
             {
               "name": "gUnk_09EEE328",
-              "offset": 148,
+              "offset": 192,
               "size": 16
             },
             {
               "name": "gUnk_09EEE338",
-              "offset": 164,
+              "offset": 208,
               "size": 8
             },
             {
               "name": "gUnk_09EEE340",
-              "offset": 172,
+              "offset": 216,
               "size": 32
             },
             {
               "name": "gUnk_09EEE360",
-              "offset": 204,
+              "offset": 248,
               "size": 12
             }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EEE36C",
+          "address": "0x9f79550",
+          "size": 80,
+          "objects": [
+            {
+              "name": "gUnk_09EEE36C",
+              "offset": 0,
+              "size": 76
+            },
+            {
+              "name": "gUnk_09EEE3B8",
+              "offset": 76,
+              "size": 4
+            }
           ],
-          "sha256": "91db40a42f07973c300af928e62edf072c0a73f760cb6fa9da12275732ce4da5"
+          "sha256": "276a6490678848b4ffabac18d9e4f22b6fc7eb44c7bf9b0c6020e701b5b6d619"
         },
         {
           "unit": "animation_resource_data.c",
@@ -33262,10 +33538,10 @@
           "sha256": "6daeba973205004f685fa60dc79efb2fa550274ef78ef1a8f9d82820a04f3cbf"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE554",
+          "unit": "animation_resource_evt_pre_data.c",
+          "section": ".data",
           "address": "0x9f79738",
-          "size": 32,
+          "size": 52,
           "objects": [
             {
               "name": "gUnk_09EEE554",
@@ -33286,9 +33562,18 @@
               "name": "gUnk_09EEE570",
               "offset": 28,
               "size": 4
+            },
+            {
+              "name": "gUnk_09EEE574",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEE584",
+              "offset": 48,
+              "size": 4
             }
-          ],
-          "sha256": "b648f12ee05d56f207f428c87fb941f716684545877550f12affb762775114d4"
+          ]
         },
         {
           "unit": "animation_resource_evt_data.c",
@@ -33965,8 +34250,8 @@
           "sha256": "812519eb9813700e96a1387c3d0f1225a7c95b4cd3dbc3dddbbdf02c8c8b2ab2"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE4C",
+          "unit": "animation_resource_evt_gap_data.c",
+          "section": ".data",
           "address": "0x9f7a030",
           "size": 16,
           "objects": [
@@ -33980,12 +34265,11 @@
               "offset": 8,
               "size": 8
             }
-          ],
-          "sha256": "9c4710001177339c5edab5f61e2b631d5912fc7c5a439acb856223336ea7dc53"
+          ]
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEEE70",
+          "unit": "animation_resource_evt_gap2_data.c",
+          "section": ".data",
           "address": "0x9f7a054",
           "size": 632,
           "objects": [
@@ -34259,8 +34543,7 @@
               "offset": 628,
               "size": 4
             }
-          ],
-          "sha256": "6bfc531b44b05e3e284395c5ae7a59869a9fc366c7c1867c6e1961a97fb6c8a1"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -35350,6 +35633,24 @@
           "sha256": "f9d12ed562dbe67f2392abf1a5db49947bc9e0cb99c2ec7a3c75f997ea9e065f"
         },
         {
+          "unit": "animation_resource_evt_before_shared_data.c",
+          "section": ".data",
+          "address": "0x9f7ad9c",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EEFBB8",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EEFBC8",
+              "offset": 16,
+              "size": 4
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_data.c",
           "section": ".data_09EEFBCC",
           "address": "0x9f7adb0",
@@ -35621,6 +35922,44 @@
             }
           ],
           "sha256": "eb8fd3011cbb5bbb60197f518dbe1a77edf464742f7af66c1b29902ef9587002"
+        },
+        {
+          "unit": "animation_resource_evt_pre_mid_data.c",
+          "section": ".data",
+          "address": "0x9f7b218",
+          "size": 32,
+          "objects": [
+            {
+              "name": "gUnk_09EF0034",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF0040",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0044",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0048",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF004C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0050",
+              "offset": 28,
+              "size": 4
+            }
+          ]
         },
         {
           "unit": "animation_resource_evt_mid_data.c",
@@ -36168,6 +36507,40 @@
         },
         {
           "unit": "animation_resource_data.c",
+          "section": ".data_09EF04FC",
+          "address": "0x9f7b6e0",
+          "size": 20,
+          "objects": [
+            {
+              "name": "gUnk_09EF04FC",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0500",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0504",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF0508",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF050C",
+              "offset": 16,
+              "size": 4
+            }
+          ],
+          "sha256": "12ce21432117349d6310b0d2d98231c4f7dc9a6fcd5b1bffd209d5d872945d5f"
+        },
+        {
+          "unit": "animation_resource_data.c",
           "section": ".data_09EF0510",
           "address": "0x9f7b6f4",
           "size": 408,
@@ -36331,8 +36704,8 @@
           "sha256": "a30250e2726e14e412e29ec203336eeaab40be0e3fbf73c8b159a32eec737f65"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF06CC",
+          "unit": "animation_resource_evt_mid_gap_data.c",
+          "section": ".data",
           "address": "0x9f7b8b0",
           "size": 264,
           "objects": [
@@ -36396,8 +36769,7 @@
               "offset": 260,
               "size": 4
             }
-          ],
-          "sha256": "993967b40d4605422a5d76bbdd5a7bda009a84de9827a1b2501347395c4aaaea"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -36828,8 +37200,8 @@
           "sha256": "939b4b7f45b0b8b82b4eb002042a2a8472aef0b17b6ede5b0a3062fc50339a57"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0ED8",
+          "unit": "animation_resource_evt_post_tail_data.c",
+          "section": ".data",
           "address": "0x9f7c0bc",
           "size": 140,
           "objects": [
@@ -36863,8 +37235,7 @@
               "offset": 132,
               "size": 8
             }
-          ],
-          "sha256": "336fbf31f7738c5265a2929826064997cfd3a3613877b57075d2300d45fdbf8b"
+          ]
         },
         {
           "unit": "animation_resource_map_card_data.c",
@@ -37143,6 +37514,154 @@
             }
           ],
           "sha256": "8336316e72edcf484732374204693ee715b7ed10b250f419e8c3b86c87326bb5"
+        },
+        {
+          "unit": "animation_resource_wlogo_mons_data.c",
+          "section": ".data",
+          "address": "0x9f7e768",
+          "size": 436,
+          "sha256": "9beef2ee3630177b939aaa61d885c465137b218026975ddb157c7f835b87b7a3",
+          "objects": [
+            {
+              "name": "gUnk_09EF351C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF3544",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3548",
+              "offset": 44,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF356C",
+              "offset": 80,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF3574",
+              "offset": 88,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF35A4",
+              "offset": 136,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF35B8",
+              "offset": 156,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3610",
+              "offset": 244,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3614",
+              "offset": 248,
+              "size": 152
+            },
+            {
+              "name": "gUnk_09EF36AC",
+              "offset": 400,
+              "size": 36
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_wlogo_tvt_data.c",
+          "section": ".data",
+          "address": "0x9f7e924",
+          "size": 428,
+          "sha256": "214588189adf112b7024c0965aea9be2b852f0986267f6b395654f03bcab527a",
+          "objects": [
+            {
+              "name": "gUnk_09EF36D8",
+              "offset": 0,
+              "size": 88
+            },
+            {
+              "name": "gUnk_09EF3730",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3734",
+              "offset": 92,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF375C",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3760",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3764",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF3768",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF376C",
+              "offset": 148,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF3778",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF377C",
+              "offset": 164,
+              "size": 96
+            },
+            {
+              "name": "gUnk_09EF37DC",
+              "offset": 260,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF37F0",
+              "offset": 280,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF37F4",
+              "offset": 284,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF3804",
+              "offset": 300,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF380C",
+              "offset": 308,
+              "size": 68
+            },
+            {
+              "name": "gUnk_09EF3850",
+              "offset": 376,
+              "size": 52
+            }
+          ]
         },
         {
           "unit": "animation_resource_pooh_data.c",
@@ -37832,8 +38351,8 @@
           "sha256": "873555d53a819f7134608d918eb5af941f898112a9dfabb2e07b6524596b866e"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF5B54",
+          "unit": "animation_resource_evt_far_data.c",
+          "section": ".data",
           "address": "0x9f80f4c",
           "size": 280,
           "objects": [
@@ -37907,8 +38426,7 @@
               "offset": 272,
               "size": 8
             }
-          ],
-          "sha256": "ca03152aaa00c7864b0525233c7a84b2db9dd6f4d4051439fcc40e2bbcd3c7ea"
+          ]
         },
         {
           "unit": "animation_resource_data.c",
@@ -38039,6 +38557,91 @@
           "sha256": "f8e8456b464fc16d16988c72d430923a0449445cf18f3a81d540b6a86e1d77c7"
         },
         {
+          "unit": "animation_resource_pooh_honeycomb_data.c",
+          "section": ".data",
+          "address": "0x9f813e8",
+          "size": 60,
+          "objects": [
+            {
+              "name": "gUnk_09EF5FF0",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF4",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF5FF8",
+              "offset": 8,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF6024",
+              "offset": 52,
+              "size": 8
+            }
+          ],
+          "sha256": "8c87df98f86d4d35762758df3fa370bbce2368afed671c764f5756d24fff4c33"
+        },
+        {
+          "unit": "animation_resource_pooh_cabbage_data.c",
+          "section": ".data",
+          "address": "0x9f81424",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF602C",
+              "offset": 0,
+              "size": 40
+            },
+            {
+              "name": "gUnk_09EF6054",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6058",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF605C",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF6060",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_pooh_wagonwheel_data.c",
+          "section": ".data",
+          "address": "0x9f81470",
+          "size": 76,
+          "objects": [
+            {
+              "name": "gUnk_09EF6078",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF60A8",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF60AC",
+              "offset": 52,
+              "size": 24
+            }
+          ]
+        },
+        {
           "unit": "animation_resource_bos4_saku_data.c",
           "section": ".data",
           "address": "0x9f81de4",
@@ -38086,6 +38689,98 @@
             }
           ],
           "sha256": "23ff9071703b03ef000d3fceb277a2f3b9891020c21e1a8445fab57155c9a220"
+        },
+        {
+          "unit": "animation_resource_map_tutorial_data.c",
+          "section": ".data",
+          "address": "0x9f83a84",
+          "size": 128,
+          "sha256": "b7b656faa38f5faab85aa7631661c1448ea3054285a4c47f4c1023a3f6296ae7",
+          "objects": [
+            {
+              "name": "gUnk_09EF8414",
+              "offset": 0,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF841C",
+              "offset": 8,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8424",
+              "offset": 16,
+              "size": 60
+            },
+            {
+              "name": "gUnk_09EF8460",
+              "offset": 76,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8468",
+              "offset": 84,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8488",
+              "offset": 116,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_data.c",
+          "section": ".data_09EF8CA0",
+          "address": "0x9f84310",
+          "size": 56,
+          "sha256": "c5905ef401b34e2376242b0551648cf4b2fdb8ddc7ec74802501c1eb2971b7f4",
+          "objects": [
+            {
+              "name": "gUnk_09EF8CA0",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF8CC0",
+              "offset": 32,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CC8",
+              "offset": 40,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF8CD0",
+              "offset": 48,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "animation_resource_map_menu_data.c",
+          "section": ".data",
+          "address": "0x9f843b8",
+          "size": 32,
+          "sha256": "3ded8bfd7bab996eb13409673bbfaabf02150cdd9ca64332fdd58a47b674c5e1",
+          "objects": [
+            {
+              "name": "gUnk_09EF8D48",
+              "offset": 0,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF8D58",
+              "offset": 16,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF8D64",
+              "offset": 28,
+              "size": 4
+            }
+          ]
         },
         {
           "unit": "animation_resource_bos6_lst_data.c",
@@ -38249,847 +38944,6 @@
               "name": "gUnk_09EFBFC4",
               "offset": 132,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF308",
-          "address": "0x9f59f60",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EDF308",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF318",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "2fafbc6c38798111e8b820f1030e39e6dfbb40f8c06e2ad09f6154b4e8dfa2c0"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDF320",
-          "address": "0x9f59f78",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EDF320",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDF330",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "14af2d27dec3cbec8602f51a8577f6611739203c948245852ef82a1b11e112c0"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE00F4",
-          "address": "0x9f5ad4c",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EE00F4",
-              "offset": 0,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EE0110",
-              "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "45b52b9f7a331274db6fae4a2a72a91d25abc58a16d336a8d5ebb61f1a450c6e"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE10E0",
-          "address": "0x9f5bd38",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE10E0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE10E4",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "776fb96c135e22dcda2ebc553f0295c11fd253ec696a39fbf50ce24311c57b7d"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE9450",
-          "address": "0x9f748d0",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE9450",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE9454",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "40e90af048369cb9e82ff3225e0f6735c7320de87e6b7b8de645a18d27f8903d"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94B4",
-          "address": "0x9f74934",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94B4",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94B8",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "cf00f3c72f3d6273a9ad1db50df78e8c1d57fcbae3834de80715133f455487c9"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE94C8",
-          "address": "0x9f74948",
-          "size": 8,
-          "objects": [
-            {
-              "name": "gUnk_09EE94C8",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EE94CC",
-              "offset": 4,
-              "size": 4
-            }
-          ],
-          "sha256": "750bc9a44fef920d5790099d4052dee98c9f1f09f0ba93d607de57c0e153d895"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE268",
-          "address": "0x9f7944c",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE268",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE274",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "5a54136a0606c1902146832d495dc1c54f718a269735c0ed8636648f01f9d3de"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE284",
-          "address": "0x9f79468",
-          "size": 16,
-          "objects": [
-            {
-              "name": "gUnk_09EEE284",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EEE290",
-              "offset": 12,
-              "size": 4
-            }
-          ],
-          "sha256": "9c8e283a685ced44d29b7e9d847976a82fab435ff129a8dfd2fdc12a7b6e093b"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE36C",
-          "address": "0x9f79550",
-          "size": 80,
-          "objects": [
-            {
-              "name": "gUnk_09EEE36C",
-              "offset": 0,
-              "size": 76
-            },
-            {
-              "name": "gUnk_09EEE3B8",
-              "offset": 76,
-              "size": 4
-            }
-          ],
-          "sha256": "276a6490678848b4ffabac18d9e4f22b6fc7eb44c7bf9b0c6020e701b5b6d619"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEE574",
-          "address": "0x9f79758",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEE574",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEE584",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "0ebcdf8a84bf1a2379827699703639255ffa915682b087d537c97d8aed82f8f8"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EEFBB8",
-          "address": "0x9f7ad9c",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EEFBB8",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EEFBC8",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "8210c900cb04eeaf95a595102d36afa996dff48f203ca8d20e666c71ea7d395e"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF0034",
-          "address": "0x9f7b218",
-          "size": 32,
-          "objects": [
-            {
-              "name": "gUnk_09EF0034",
-              "offset": 0,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF0040",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0044",
-              "offset": 16,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0048",
-              "offset": 20,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF004C",
-              "offset": 24,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0050",
-              "offset": 28,
-              "size": 4
-            }
-          ],
-          "sha256": "6365518bb2f655d9a1587131bfe6fea88b5abe08bd40bf9a2a96aa7dfc324083"
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF04FC",
-          "address": "0x9f7b6e0",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnk_09EF04FC",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0500",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0504",
-              "offset": 8,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF0508",
-              "offset": 12,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF050C",
-              "offset": 16,
-              "size": 4
-            }
-          ],
-          "sha256": "12ce21432117349d6310b0d2d98231c4f7dc9a6fcd5b1bffd209d5d872945d5f"
-        },
-        {
-          "unit": "animation_resource_wlogo_mons_data.c",
-          "section": ".data",
-          "address": "0x9f7e768",
-          "size": 436,
-          "sha256": "9beef2ee3630177b939aaa61d885c465137b218026975ddb157c7f835b87b7a3",
-          "objects": [
-            {
-              "name": "gUnk_09EF351C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF3544",
-              "offset": 40,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3548",
-              "offset": 44,
-              "size": 36
-            },
-            {
-              "name": "gUnk_09EF356C",
-              "offset": 80,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF3574",
-              "offset": 88,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF35A4",
-              "offset": 136,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF35B8",
-              "offset": 156,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3610",
-              "offset": 244,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3614",
-              "offset": 248,
-              "size": 152
-            },
-            {
-              "name": "gUnk_09EF36AC",
-              "offset": 400,
-              "size": 36
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_wlogo_tvt_data.c",
-          "section": ".data",
-          "address": "0x9f7e924",
-          "size": 428,
-          "sha256": "214588189adf112b7024c0965aea9be2b852f0986267f6b395654f03bcab527a",
-          "objects": [
-            {
-              "name": "gUnk_09EF36D8",
-              "offset": 0,
-              "size": 88
-            },
-            {
-              "name": "gUnk_09EF3730",
-              "offset": 88,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3734",
-              "offset": 92,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF375C",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3760",
-              "offset": 136,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3764",
-              "offset": 140,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF3768",
-              "offset": 144,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF376C",
-              "offset": 148,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF3778",
-              "offset": 160,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF377C",
-              "offset": 164,
-              "size": 96
-            },
-            {
-              "name": "gUnk_09EF37DC",
-              "offset": 260,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EF37F0",
-              "offset": 280,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF37F4",
-              "offset": 284,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EF3804",
-              "offset": 300,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF380C",
-              "offset": 308,
-              "size": 68
-            },
-            {
-              "name": "gUnk_09EF3850",
-              "offset": 376,
-              "size": 52
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_tutorial_data.c",
-          "section": ".data",
-          "address": "0x9f83a84",
-          "size": 128,
-          "sha256": "b7b656faa38f5faab85aa7631661c1448ea3054285a4c47f4c1023a3f6296ae7",
-          "objects": [
-            {
-              "name": "gUnk_09EF8414",
-              "offset": 0,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF841C",
-              "offset": 8,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8424",
-              "offset": 16,
-              "size": 60
-            },
-            {
-              "name": "gUnk_09EF8460",
-              "offset": 76,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8468",
-              "offset": 84,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8488",
-              "offset": 116,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EF8CA0",
-          "address": "0x9f84310",
-          "size": 56,
-          "sha256": "c5905ef401b34e2376242b0551648cf4b2fdb8ddc7ec74802501c1eb2971b7f4",
-          "objects": [
-            {
-              "name": "gUnk_09EF8CA0",
-              "offset": 0,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EF8CC0",
-              "offset": 32,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CC8",
-              "offset": 40,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EF8CD0",
-              "offset": 48,
-              "size": 8
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_map_menu_data.c",
-          "section": ".data",
-          "address": "0x9f843b8",
-          "size": 32,
-          "sha256": "3ded8bfd7bab996eb13409673bbfaabf02150cdd9ca64332fdd58a47b674c5e1",
-          "objects": [
-            {
-              "name": "gUnk_09EF8D48",
-              "offset": 0,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EF8D58",
-              "offset": 16,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EF8D64",
-              "offset": 28,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_honeycomb_data.c",
-          "section": ".data",
-          "address": "0x9f813e8",
-          "size": 60,
-          "objects": [
-            {
-              "name": "gUnk_09EF5FF0",
-              "offset": 0,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF4",
-              "offset": 4,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF5FF8",
-              "offset": 8,
-              "size": 44
-            },
-            {
-              "name": "gUnk_09EF6024",
-              "offset": 52,
-              "size": 8
-            }
-          ],
-          "sha256": "8c87df98f86d4d35762758df3fa370bbce2368afed671c764f5756d24fff4c33"
-        },
-        {
-          "unit": "animation_resource_pooh_cabbage_data.c",
-          "section": ".data",
-          "address": "0x9f81424",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF602C",
-              "offset": 0,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EF6054",
-              "offset": 40,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6058",
-              "offset": 44,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF605C",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF6060",
-              "offset": 52,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_pooh_wagonwheel_data.c",
-          "section": ".data",
-          "address": "0x9f81470",
-          "size": 76,
-          "objects": [
-            {
-              "name": "gUnk_09EF6078",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EF60A8",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EF60AC",
-              "offset": 52,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EDE5FC",
-          "address": "0x9f59254",
-          "size": 404,
-          "objects": [
-            {
-              "name": "gUnk_09EDE5FC",
-              "offset": 0,
-              "size": 52
-            },
-            {
-              "name": "gUnk_09EDE630",
-              "offset": 52,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDE63C",
-              "offset": 64,
-              "size": 24
-            },
-            {
-              "name": "gUnk_09EDE654",
-              "offset": 88,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDE664",
-              "offset": 104,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE680",
-              "offset": 132,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE688",
-              "offset": 140,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EDE69C",
-              "offset": 160,
-              "size": 16
-            },
-            {
-              "name": "gUnk_09EDE6AC",
-              "offset": 176,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EDE6D4",
-              "offset": 216,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDE6E0",
-              "offset": 228,
-              "size": 44
-            },
-            {
-              "name": "gUnk_09EDE70C",
-              "offset": 272,
-              "size": 8
-            },
-            {
-              "name": "gUnk_09EDE714",
-              "offset": 280,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDE720",
-              "offset": 292,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE724",
-              "offset": 296,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE740",
-              "offset": 324,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE744",
-              "offset": 328,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EDE764",
-              "offset": 360,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE768",
-              "offset": 364,
-              "size": 36
-            },
-            {
-              "name": "gUnk_09EDE78C",
-              "offset": 400,
-              "size": 4
-            }
-          ],
-          "sha256": "1e034289effcd1b06db40b544663efbd52f90d3dce557e6049e607bb17d55d34"
-        },
-        {
-          "unit": "animation_resource_smn_bambi_data.c",
-          "section": ".data",
-          "address": "0x9f593e8",
-          "size": 36,
-          "objects": [
-            {
-              "name": "gUnk_09EDE790",
-              "offset": 0,
-              "size": 28
-            },
-            {
-              "name": "gUnk_09EDE7AC",
-              "offset": 28,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDE7B0",
-              "offset": 32,
-              "size": 4
-            }
-          ]
-        },
-        {
-          "unit": "animation_resource_btl_lockon_data.c",
-          "section": ".data",
-          "address": "0x9f59e18",
-          "size": 328,
-          "objects": [
-            {
-              "name": "gUnk_09EDF1C0",
-              "offset": 0,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF1F0",
-              "offset": 48,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F4",
-              "offset": 52,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF1F8",
-              "offset": 56,
-              "size": 20
-            },
-            {
-              "name": "gUnk_09EDF20C",
-              "offset": 76,
-              "size": 56
-            },
-            {
-              "name": "gUnk_09EDF244",
-              "offset": 132,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF248",
-              "offset": 136,
-              "size": 32
-            },
-            {
-              "name": "gUnk_09EDF268",
-              "offset": 168,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF26C",
-              "offset": 172,
-              "size": 36
-            },
-            {
-              "name": "gUnk_09EDF290",
-              "offset": 208,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF294",
-              "offset": 212,
-              "size": 48
-            },
-            {
-              "name": "gUnk_09EDF2C4",
-              "offset": 260,
-              "size": 12
-            },
-            {
-              "name": "gUnk_09EDF2D0",
-              "offset": 272,
-              "size": 40
-            },
-            {
-              "name": "gUnk_09EDF2F8",
-              "offset": 312,
-              "size": 4
-            },
-            {
-              "name": "gUnk_09EDF2FC",
-              "offset": 316,
-              "size": 12
             }
           ]
         }
