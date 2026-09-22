@@ -3060,18 +3060,3 @@ TaskDesc gUnk_09EE7F30 = {
     (void (*)(void*))StockInfo_3,
     0x2C,
 };
-
-const char gTaskName_09EE7F48[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F48"), aligned(1))) = "Lvup msg";
-
-TaskDesc gUnk_09EE7F48 = {
-    gTaskName_09EE7F48,
-    (void (*)(void*, void*))func_080A23A0,
-    func_080A25B8,
-    (void (*)(void*))func_080A2678,
-    (void (*)(void*))func_080A27EC,
-#ifdef VERSION_JP
-    0x218,
-#else
-    0x2B8,
-#endif
-};

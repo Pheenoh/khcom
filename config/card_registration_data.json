@@ -386,20 +386,6 @@
               "size": 10
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7F48",
-          "address": "0x903bffc",
-          "size": 9,
-          "sha256": "956884b843452467925c3e022cb8f432d0a5fcd7ce145d0c5a5f7aaf05c08dd0",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7F48",
-              "offset": 0,
-              "size": 9
-            }
-          ]
         }
       ]
     },
@@ -781,22 +767,6 @@
               "size": 10
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7F48",
-          "address": "0x900d480",
-          "size": 9,
-          "sha256": "956884b843452467925c3e022cb8f432d0a5fcd7ce145d0c5a5f7aaf05c08dd0",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7F48",
-              "offset": 0,
-              "size": 9
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         }
       ]
     },
@@ -1186,20 +1156,6 @@
               "name": "gTaskName_09EE7F30",
               "offset": 0,
               "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE7F48",
-          "address": "0x90d1878",
-          "size": 9,
-          "sha256": "956884b843452467925c3e022cb8f432d0a5fcd7ce145d0c5a5f7aaf05c08dd0",
-          "objects": [
-            {
-              "name": "gTaskName_09EE7F48",
-              "offset": 0,
-              "size": 9
             }
           ]
         }
