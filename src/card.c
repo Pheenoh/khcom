@@ -35583,10 +35583,6 @@ const WorldSelAnim gUnk_09EE8E60[30] = {
     { 1, 6, { 0, 0 } },
 };
 
-u16 gUnk_09EE48F4[47] __attribute__((section(".rodata_card_ui_gUnk_09EE48F4"))) = {
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 53,
-};
-
 const char gUnk_090359BC[] __attribute__((section(".rodata_registration_name_gUnk_09EE4BA0"), aligned(1))) = "WORLDSELECT";
 
 Mode gUnk_09EE4BA0 __attribute__((section(".data_registration_gUnk_09EE4BA0"))) = {

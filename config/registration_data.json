@@ -597,20 +597,6 @@
           ]
         },
         {
-          "unit": "card_battle.c",
-          "section": ".data",
-          "address": "0x09EE4954",
-          "size": 24,
-          "sha256": "5e63e287fd0cc171409495c1afbcd0761eb8db7e40f5e0f50667d4e5e6d5bf0c",
-          "objects": [
-            {
-              "name": "gTaskDescCardBattleSora",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
           "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescCardBattleRiku",
           "address": "0x09035314",
@@ -7167,20 +7153,6 @@
           ]
         },
         {
-          "unit": "card_battle.c",
-          "section": ".data",
-          "address": "0x09EBBF74",
-          "size": 24,
-          "sha256": "f0e2db81bb805853ec8d19c291d6f91d4b26f29f10ac3c5f7486415847608f5c",
-          "objects": [
-            {
-              "name": "gTaskDescCardBattleSora",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
           "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescCardBattleRiku",
           "address": "0x090085D8",
@@ -13705,20 +13677,6 @@
               "name": "gTaskNameCardBattleSora",
               "offset": 0,
               "size": 11
-            }
-          ]
-        },
-        {
-          "unit": "card_battle.c",
-          "section": ".data",
-          "address": "0x09F6FC00",
-          "size": 24,
-          "sha256": "9a7d17f5641bab27dad2782e77fd1301cb2d9e21d5a7232ecefe4b76a38c495c",
-          "objects": [
-            {
-              "name": "gTaskDescCardBattleSora",
-              "offset": 0,
-              "size": 24
             }
           ]
         },

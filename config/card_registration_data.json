@@ -894,20 +894,6 @@
               "size": 120
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE48F4",
-          "address": "0x9ee48f4",
-          "size": 94,
-          "sha256": "86b2415021d8714c85dfd09ef5319a9e7d1364b8db0ac111b09fb814e953202a",
-          "objects": [
-            {
-              "name": "gUnk_09EE48F4",
-              "offset": 0,
-              "size": 94
-            }
-          ]
         }
       ]
     },
@@ -1797,20 +1783,6 @@
               "name": "gUnk_09EE8E60",
               "offset": 0,
               "size": 120
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE48F4",
-          "address": "0x9ebbf14",
-          "size": 94,
-          "sha256": "86b2415021d8714c85dfd09ef5319a9e7d1364b8db0ac111b09fb814e953202a",
-          "objects": [
-            {
-              "name": "gUnk_09EE48F4",
-              "offset": 0,
-              "size": 94
             }
           ]
         }
@@ -2712,20 +2684,6 @@
               "name": "gUnk_09EE8E60",
               "offset": 0,
               "size": 120
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_card_ui_gUnk_09EE48F4",
-          "address": "0x9f6fba0",
-          "size": 94,
-          "sha256": "86b2415021d8714c85dfd09ef5319a9e7d1364b8db0ac111b09fb814e953202a",
-          "objects": [
-            {
-              "name": "gUnk_09EE48F4",
-              "offset": 0,
-              "size": 94
             }
           ]
         }
