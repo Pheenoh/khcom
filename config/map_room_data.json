@@ -91,20 +91,6 @@
           ]
         },
         {
-          "unit": "map_room_data.c",
-          "section": ".rodata",
-          "address": "0x9856678",
-          "size": 60,
-          "sha256": "b51f3efacd14fa1794a53b1dc5bdcd4d10b3d8f3fbf140cf6bddfbd8fa40150b",
-          "objects": [
-            {
-              "name": "gUnk_09856678",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
           "unit": "map_room_098535BC_data.c",
           "section": ".rodata",
           "address": "0x98535bc",
@@ -169,20 +155,6 @@
           "objects": [
             {
               "name": "gUnk_09850DF4",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
-          "unit": "map_room_data.c",
-          "section": ".data",
-          "address": "0x9855fa8",
-          "size": 60,
-          "sha256": "08809b8235ff47ba59db857524c38feb3090b72648aaf4008f2633e80b11149e",
-          "objects": [
-            {
-              "name": "gUnk_09855FA8",
               "offset": 0,
               "size": 60
             }
@@ -291,20 +263,6 @@
           ]
         },
         {
-          "unit": "map_room_data.c",
-          "section": ".rodata",
-          "address": "0x980b18c",
-          "size": 60,
-          "sha256": "103d68adacb38670117f0fda2d50a3e0a14ef94cc7a6b1775c6f5b19502f3381",
-          "objects": [
-            {
-              "name": "gUnk_09856678",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
           "unit": "map_room_098535BC_data.c",
           "section": ".rodata",
           "address": "0x98080d0",
@@ -369,20 +327,6 @@
           "objects": [
             {
               "name": "gUnk_09850DF4",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
-          "unit": "map_room_data.c",
-          "section": ".data",
-          "address": "0x980aabc",
-          "size": 60,
-          "sha256": "89100ede7b96bc62801ebf22a814e160d8fe84f7211b677f44a09b7c5a760ea7",
-          "objects": [
-            {
-              "name": "gUnk_09855FA8",
               "offset": 0,
               "size": 60
             }
@@ -491,20 +435,6 @@
           ]
         },
         {
-          "unit": "map_room_data.c",
-          "section": ".rodata",
-          "address": "0x983304c",
-          "size": 60,
-          "sha256": "ad662e2e935fc8ef6464f74120a1c5ac15884c8c97807e3492882594e2f062e5",
-          "objects": [
-            {
-              "name": "gUnk_09856678",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
           "unit": "map_room_098535BC_data.c",
           "section": ".rodata",
           "address": "0x982ff90",
@@ -569,20 +499,6 @@
           "objects": [
             {
               "name": "gUnk_09850DF4",
-              "offset": 0,
-              "size": 60
-            }
-          ]
-        },
-        {
-          "unit": "map_room_data.c",
-          "section": ".data",
-          "address": "0x983297c",
-          "size": 60,
-          "sha256": "8f3daf50f20461e114dca26066e1bdc7ca3c17fdd772f5d0f6c9be75f1b4af5e",
-          "objects": [
-            {
-              "name": "gUnk_09855FA8",
               "offset": 0,
               "size": 60
             }

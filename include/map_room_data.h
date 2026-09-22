@@ -14,7 +14,7 @@ extern const struct UnkStruct_09EF70D0 gUnk_0985221C;
 extern const struct UnkStruct_09EF70D0 gUnk_09854258;
 extern const struct UnkStruct_09EF70D0 gUnk_09852F4C;
 extern const struct UnkStruct_09EF70D0 gUnk_09850DF4;
-extern struct UnkStruct_09EF70D0 gUnk_09855FA8;
+extern const struct UnkStruct_09EF70D0 gUnk_09855FA8;
 extern const struct UnkStruct_09EF70D0 gUnk_098552E8;
 extern const struct UnkStruct_09EF70D0 gUnk_0984F694;
 
