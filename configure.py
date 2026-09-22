@@ -19,7 +19,6 @@ from regional_data import asset_symbols, load_sidecars
 ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
 LEGACY_ASM_UNITS = {"libagbsyscall.s", "m4a_1.s", "transform_veneers.s"}
 
-
 def asm_file_deps(path, missing):
     seen = set()
     queued = set()
@@ -50,7 +49,6 @@ def asm_file_deps(path, missing):
             if ref.suffix in {".s", ".inc", ".asm"}:
                 stack.append(ref)
     return out
-
 
 EWRAM_HEAP_SIZE = 0x34000
 IWRAM_HEAP_SIZE = 0x6800
@@ -101,30 +99,6 @@ parser.add_argument(
     default="slice",
     help="asset_gfx_gap_195 path: baserom slice (default) or leaf-patched built mega (gap_195 palettes via gbagfx)",
 )
-parser.add_argument(
-    "--asset-gfx-gap-1-mode",
-    choices=("slice", "built"),
-    default="slice",
-    help="asset_gfx_gap_1 path: baserom slice (default) or leaf-patched built mega (gUnk_08C6A88C tiles4 via gbagfx)",
-)
-parser.add_argument(
-    "--asset-gfx-gap-43-mode",
-    choices=("slice", "built"),
-    default="slice",
-    help="asset_gfx_gap_43 path: baserom slice (default) or leaf-patched built mega (gap_43 palettes via gbagfx)",
-)
-parser.add_argument(
-    "--asset-gfx-gap-158-mode",
-    choices=("slice", "built"),
-    default="slice",
-    help="asset_gfx_gap_158 path: baserom slice (default) or leaf-patched built mega (gap_158 title palettes via gbagfx)",
-)
-parser.add_argument(
-    "--asset-gfx-gap-87-mode",
-    choices=("slice", "built"),
-    default="slice",
-    help="asset_gfx_gap_87 path: baserom slice (default) or leaf-patched built mega (gap_87 palettes via gbagfx)",
-)
 args = parser.parse_args()
 
 legacy_assembler = Path("tools/legacy/bin/arm-elf-as")
@@ -142,10 +116,6 @@ prefix = args.binutils_prefix
 raw_as_flags = software_fp_flags(f"{prefix}as")
 asset_gfx_mode = args.asset_gfx_mode
 asset_gfx_gap_195_mode = args.asset_gfx_gap_195_mode
-asset_gfx_gap_1_mode = args.asset_gfx_gap_1_mode
-asset_gfx_gap_43_mode = args.asset_gfx_gap_43_mode
-asset_gfx_gap_158_mode = args.asset_gfx_gap_158_mode
-asset_gfx_gap_87_mode = args.asset_gfx_gap_87_mode
 
 build_dir = f"build/{version}"
 name = f"com_{version}"
@@ -186,10 +156,8 @@ for group_name, group in groups.items():
     for unit_name, unit in group["objects"].items():
         generated[unit_name] = (group_name, unit)
 
-
 def rel(path):
     return os.path.relpath(str(path))
-
 
 units = []
 archives = []
@@ -254,71 +222,6 @@ asset_gfx_gap_195_extract = {
     "eu": "assets/eu/09999B58-09A9B9F8.bin",
 }[version]
 asset_gfx_gap_195_manifest = f"config/asset_gfx_gap_195_{version}.yaml"
-asset_gfx_gap_1_build = f"{build_dir}/assets/asset_gfx_gap_1.bin"
-asset_gfx_gap_1_asm = f"{build_dir}/asm/asset_gfx_gap_1.s"
-asset_gfx_gap_1_unit = {
-    "us": "asset_gfx_gap_1.s",
-    "jp": "asset_gfx_gap_1.s",
-    "eu": "asset_gfx_gap_1.s",
-}[version]
-asset_gfx_gap_1_sym = {
-    "us": "data_0886AD2E",
-    "jp": "data_0885E316",
-    "eu": "data_08896652",
-}[version]
-asset_gfx_gap_1_extract = {
-    "us": "assets/us/0886AD2E-08F6E184.bin",
-    "jp": "assets/jp/0885E316-08F6168C.bin",
-    "eu": "assets/eu/08896652-08F7F15C.bin",
-}[version]
-asset_gfx_gap_1_manifest = f"config/asset_gfx_gap_1_{version}.yaml"
-asset_gfx_gap_43_build = f"{build_dir}/assets/asset_gfx_gap_43.bin"
-asset_gfx_gap_43_asm = f"{build_dir}/asm/asset_gfx_gap_43.s"
-# EU leaf host is asset_gfx_gap_38_at_09041E7F.s; US/JP use asset_gfx_gap_43.s.
-asset_gfx_gap_43_unit = {
-    "us": "asset_gfx_gap_43.s",
-    "jp": "asset_gfx_gap_43.s",
-    "eu": "asset_gfx_gap_38_at_09041E7F.s",
-}[version]
-asset_gfx_gap_43_sym = {
-    "us": "data_090451AB",
-    "jp": "data_09012053",
-    "eu": "data_090D76FB",
-}[version]
-asset_gfx_gap_43_extract = {
-    "us": "assets/us/090451AB-096193B8.bin",
-    "jp": "assets/jp/09012053-095D1E94.bin",
-    "eu": "assets/eu/090D76FB-0954C2C9.bin",
-}[version]
-asset_gfx_gap_43_manifest = f"config/asset_gfx_gap_43_{version}.yaml"
-asset_gfx_gap_158_build = f"{build_dir}/assets/asset_gfx_gap_158.bin"
-asset_gfx_gap_158_asm = f"{build_dir}/asm/asset_gfx_gap_158.s"
-asset_gfx_gap_158_unit = "asset_gfx_gap_158.s"
-asset_gfx_gap_158_sym = {
-    "us": "data_096FE36C",
-    "jp": "data_096B6B48",
-    "eu": "data_096CB6CC",
-}[version]
-asset_gfx_gap_158_extract = {
-    "us": "assets/us/096FE36C-0984B838.bin",
-    "jp": "assets/jp/096B6B48-0980034C.bin",
-    "eu": "assets/eu/096CB6CC-0982820C.bin",
-}[version]
-asset_gfx_gap_158_manifest = f"config/asset_gfx_gap_158_{version}.yaml"
-asset_gfx_gap_87_build = f"{build_dir}/assets/asset_gfx_gap_87.bin"
-asset_gfx_gap_87_asm = f"{build_dir}/asm/asset_gfx_gap_87.s"
-asset_gfx_gap_87_unit = "asset_gfx_gap_87_at_0961A9FD.s"
-asset_gfx_gap_87_sym = {
-    "us": "data_0961A9FD",
-    "jp": "data_095D34D9",
-    "eu": "data_095DBEDD",
-}[version]
-asset_gfx_gap_87_extract = {
-    "us": "assets/us/0961A9FD-096FC004.bin",
-    "jp": "assets/jp/095D34D9-096B47E0.bin",
-    "eu": "assets/eu/095DBEDD-096C934C.bin",
-}[version]
-asset_gfx_gap_87_manifest = f"config/asset_gfx_gap_87_{version}.yaml"
 if asset_gfx_mode == "built":
     Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
     Path(asset_gfx_asm).write_text(
@@ -347,70 +250,6 @@ if asset_gfx_gap_195_mode == "built":
     for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_195_unit:
             rewritten.append((Path(asset_gfx_gap_195_asm), obj, flags))
-        else:
-            rewritten.append((src, obj, flags))
-    units = rewritten
-
-if asset_gfx_gap_1_mode == "built":
-    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
-    Path(asset_gfx_gap_1_asm).write_text(
-        "\t.section .rodata\n"
-        f"\t.global {asset_gfx_gap_1_sym}\n"
-        f"{asset_gfx_gap_1_sym}:\n"
-        f'\t.incbin "{asset_gfx_gap_1_build}"\n'
-    )
-    rewritten = []
-    for src, obj, flags in units:
-        if src is not None and src.name == asset_gfx_gap_1_unit:
-            rewritten.append((Path(asset_gfx_gap_1_asm), obj, flags))
-        else:
-            rewritten.append((src, obj, flags))
-    units = rewritten
-
-if asset_gfx_gap_43_mode == "built":
-    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
-    Path(asset_gfx_gap_43_asm).write_text(
-        "\t.section .rodata\n"
-        f"\t.global {asset_gfx_gap_43_sym}\n"
-        f"{asset_gfx_gap_43_sym}:\n"
-        f'\t.incbin "{asset_gfx_gap_43_build}"\n'
-    )
-    rewritten = []
-    for src, obj, flags in units:
-        if src is not None and src.name == asset_gfx_gap_43_unit:
-            rewritten.append((Path(asset_gfx_gap_43_asm), obj, flags))
-        else:
-            rewritten.append((src, obj, flags))
-    units = rewritten
-
-if asset_gfx_gap_158_mode == "built":
-    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
-    Path(asset_gfx_gap_158_asm).write_text(
-        "\t.section .rodata\n"
-        f"\t.global {asset_gfx_gap_158_sym}\n"
-        f"{asset_gfx_gap_158_sym}:\n"
-        f'\t.incbin "{asset_gfx_gap_158_build}"\n'
-    )
-    rewritten = []
-    for src, obj, flags in units:
-        if src is not None and src.name == asset_gfx_gap_158_unit:
-            rewritten.append((Path(asset_gfx_gap_158_asm), obj, flags))
-        else:
-            rewritten.append((src, obj, flags))
-    units = rewritten
-
-if asset_gfx_gap_87_mode == "built":
-    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
-    Path(asset_gfx_gap_87_asm).write_text(
-        "\t.section .rodata\n"
-        f"\t.global {asset_gfx_gap_87_sym}\n"
-        f"{asset_gfx_gap_87_sym}:\n"
-        f'\t.incbin "{asset_gfx_gap_87_build}"\n'
-    )
-    rewritten = []
-    for src, obj, flags in units:
-        if src is not None and src.name == asset_gfx_gap_87_unit:
-            rewritten.append((Path(asset_gfx_gap_87_asm), obj, flags))
         else:
             rewritten.append((src, obj, flags))
     units = rewritten
@@ -482,72 +321,6 @@ if asset_gfx_gap_195_mode == "built":
         p for p in list(missing_assets)
         if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_195_extract).name
     )
-if asset_gfx_gap_1_mode == "built":
-    gap_1_obj_suffix = "/" + Path(asset_gfx_gap_1_unit).with_suffix(".o").name
-    patched = []
-    for obj, rule, src, deps, variables in edges:
-        if obj.endswith(gap_1_obj_suffix):
-            deps = [d for d in deps if not d.startswith("assets/")]
-            if asset_gfx_gap_1_build not in deps:
-                deps.append(asset_gfx_gap_1_build)
-            if asset_gfx_gap_1_asm not in deps:
-                deps.append(asset_gfx_gap_1_asm)
-        patched.append((obj, rule, src, deps, variables))
-    edges = patched
-    missing_assets.difference_update(
-        p for p in list(missing_assets)
-        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_1_extract).name
-    )
-
-if asset_gfx_gap_43_mode == "built":
-    gap_43_obj_suffix = "/" + Path(asset_gfx_gap_43_unit).with_suffix(".o").name
-    patched = []
-    for obj, rule, src, deps, variables in edges:
-        if obj.endswith(gap_43_obj_suffix):
-            deps = [d for d in deps if not d.startswith("assets/")]
-            if asset_gfx_gap_43_build not in deps:
-                deps.append(asset_gfx_gap_43_build)
-            if asset_gfx_gap_43_asm not in deps:
-                deps.append(asset_gfx_gap_43_asm)
-        patched.append((obj, rule, src, deps, variables))
-    edges = patched
-    missing_assets.difference_update(
-        p for p in list(missing_assets)
-        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_43_extract).name
-    )
-
-if asset_gfx_gap_158_mode == "built":
-    patched = []
-    for obj, rule, src, deps, variables in edges:
-        if obj.endswith("/asset_gfx_gap_158.o"):
-            deps = [d for d in deps if not d.startswith("assets/")]
-            if asset_gfx_gap_158_build not in deps:
-                deps.append(asset_gfx_gap_158_build)
-            if asset_gfx_gap_158_asm not in deps:
-                deps.append(asset_gfx_gap_158_asm)
-        patched.append((obj, rule, src, deps, variables))
-    edges = patched
-    missing_assets.difference_update(
-        p for p in list(missing_assets)
-        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_158_extract).name
-    )
-
-if asset_gfx_gap_87_mode == "built":
-    gap_87_obj_suffix = "/" + Path(asset_gfx_gap_87_unit).with_suffix(".o").name
-    patched = []
-    for obj, rule, src, deps, variables in edges:
-        if obj.endswith(gap_87_obj_suffix):
-            deps = [d for d in deps if not d.startswith("assets/")]
-            if asset_gfx_gap_87_build not in deps:
-                deps.append(asset_gfx_gap_87_build)
-            if asset_gfx_gap_87_asm not in deps:
-                deps.append(asset_gfx_gap_87_asm)
-        patched.append((obj, rule, src, deps, variables))
-    edges = patched
-    missing_assets.difference_update(
-        p for p in list(missing_assets)
-        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_87_extract).name
-    )
 
 if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
     missing_assets.add(assets_stamp)
@@ -562,27 +335,14 @@ if asset_gfx_mode == "built":
     allowed_build_assets.add(asset_gfx_build)
 if asset_gfx_gap_195_mode == "built":
     allowed_build_assets.add(asset_gfx_gap_195_build)
-if asset_gfx_gap_1_mode == "built":
-    allowed_build_assets.add(asset_gfx_gap_1_build)
-if asset_gfx_gap_43_mode == "built":
-    allowed_build_assets.add(asset_gfx_gap_43_build)
-if asset_gfx_gap_158_mode == "built":
-    allowed_build_assets.add(asset_gfx_gap_158_build)
-if asset_gfx_gap_87_mode == "built":
-    allowed_build_assets.add(asset_gfx_gap_87_build)
 pending_uncovered = [p for p in pending_build_assets if p not in allowed_build_assets]
 if pending_uncovered:
     first = pending_uncovered[0]
     sys.exit(
         f"error: build asset {first} is missing; use --asset-gfx-mode=built "
         f"and/or --asset-gfx-gap-195-mode=built "
-        f"and/or --asset-gfx-gap-1-mode=built "
-        f"and/or --asset-gfx-gap-43-mode=built "
-        f"and/or --asset-gfx-gap-158-mode=built "
         f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
     )
-
-
 
 objs_linked = [obj for _src, obj, _flags in units]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
@@ -699,30 +459,6 @@ with out.open("w") as f:
             command=f"python3 tools/gfx/asset_gfx_gap_195_pack.py --mode built --version {version} && test -f $out",
             description="ASSET_GFX_GAP_195 $out",
         )
-    if asset_gfx_gap_1_mode == "built":
-        n.rule(
-            "asset_gfx_gap_1_pack",
-            command=f"python3 tools/gfx/asset_gfx_gap_1_pack.py --mode built --version {version} && test -f $out",
-            description="ASSET_GFX_GAP_1 $out",
-        )
-    if asset_gfx_gap_43_mode == "built":
-        n.rule(
-            "asset_gfx_gap_43_pack",
-            command=f"python3 tools/gfx/asset_gfx_gap_43_pack.py --mode built --version {version} && test -f $out",
-            description="ASSET_GFX_GAP_43 $out",
-        )
-    if asset_gfx_gap_158_mode == "built":
-        n.rule(
-            "asset_gfx_gap_158_pack",
-            command=f"python3 tools/gfx/asset_gfx_gap_158_pack.py --mode built --version {version} && test -f $out",
-            description="ASSET_GFX_GAP_158 $out",
-        )
-    if asset_gfx_gap_87_mode == "built":
-        n.rule(
-            "asset_gfx_gap_87_pack",
-            command=f"python3 tools/gfx/asset_gfx_gap_87_pack.py --mode built --version {version} && test -f $out",
-            description="ASSET_GFX_GAP_87 $out",
-        )
     n.newline()
 
     for path, member, obj in archives:
@@ -751,54 +487,6 @@ with out.open("w") as f:
                 asset_gfx_gap_195_manifest,
                 f"config/asset_inventory_{version}_gfx_gap_195.yaml",
                 asset_gfx_gap_195_extract,
-            ],
-        )
-    if asset_gfx_gap_1_mode == "built":
-        n.build(
-            asset_gfx_gap_1_build,
-            "asset_gfx_gap_1_pack",
-            implicit=[
-                "tools/gfx/asset_gfx_gap_1_pack.py",
-                "tools/gfx/asset_gfx_gap_1_layout.py",
-                asset_gfx_gap_1_manifest,
-                f"config/asset_inventory_{version}_gfx_gap_1.yaml",
-                asset_gfx_gap_1_extract,
-            ],
-        )
-    if asset_gfx_gap_43_mode == "built":
-        n.build(
-            asset_gfx_gap_43_build,
-            "asset_gfx_gap_43_pack",
-            implicit=[
-                "tools/gfx/asset_gfx_gap_43_pack.py",
-                "tools/gfx/asset_gfx_gap_43_layout.py",
-                asset_gfx_gap_43_manifest,
-                f"config/asset_inventory_{version}_gfx_gap_43.yaml",
-                asset_gfx_gap_43_extract,
-            ],
-        )
-    if asset_gfx_gap_158_mode == "built":
-        n.build(
-            asset_gfx_gap_158_build,
-            "asset_gfx_gap_158_pack",
-            implicit=[
-                "tools/gfx/asset_gfx_gap_158_pack.py",
-                "tools/gfx/asset_gfx_gap_158_layout.py",
-                asset_gfx_gap_158_manifest,
-                f"config/asset_inventory_{version}_gfx_gap_158.yaml",
-                asset_gfx_gap_158_extract,
-            ],
-        )
-    if asset_gfx_gap_87_mode == "built":
-        n.build(
-            asset_gfx_gap_87_build,
-            "asset_gfx_gap_87_pack",
-            implicit=[
-                "tools/gfx/asset_gfx_gap_87_pack.py",
-                "tools/gfx/asset_gfx_gap_87_layout.py",
-                asset_gfx_gap_87_manifest,
-                f"config/asset_inventory_{version}_gfx_gap_87.yaml",
-                asset_gfx_gap_87_extract,
             ],
         )
     manifests = sorted(rel(group["manifest"].path) for group in groups.values())
