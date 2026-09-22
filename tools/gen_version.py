@@ -3141,6 +3141,11 @@ TARGET_DATA_SIZE = {
         ("event_127_data.c", ".rodata"): 0,
         ("event_128_data.c", ".rodata"): 0,
         ("card.c", ".data"): 0x4A10,
+        ("map_fixed_09856C90_data.c", ".rodata"): 0x54,
+        ("map_fixed_09856D34_data.c", ".rodata"): 0x54,
+        ("map_fixed_09856DE4_data.c", ".rodata"): 0x54,
+        ("map_fixed_09856E88_data.c", ".rodata"): 0x54,
+        ("map_fixed_data.c", ".rodata"): 0xA8,
     },
     "jp": {
         ("event_index_data.c", ".data"): 0x93C,

@@ -3,6 +3,11 @@
 
 #include "types.h"
 
+#include "map_fixed_09856C90_data.h"
+#include "map_fixed_09856D34_data.h"
+#include "map_fixed_09856DE4_data.h"
+#include "map_fixed_09856E88_data.h"
+
 extern u8 gUnk_09EF7108[1536];
 extern u8 gUnk_09EF7708[768];
 extern u8 gUnk_09EF7A08[768];
@@ -29,11 +34,7 @@ extern const void* gUnk_09EF8358[6];
 extern struct UnkStruct_09EF8370* gUnk_09EF8370[6];
 extern struct UnkStruct_080E8E74* gUnk_09EF8388[14];
 extern struct UnkStruct_080E8E24* gUnk_09EF83C0[14];
-extern struct UnkStruct_09EF8370 gUnk_09856C90;
-extern struct UnkStruct_09EF8370 gUnk_09856D34;
-extern struct UnkStruct_09EF8370 gUnk_09856DE4;
-extern struct UnkStruct_09EF8370 gUnk_09856E88;
-extern struct UnkStruct_09EF8370 gUnk_09856F14;
-extern struct UnkStruct_09EF8370 gUnk_09856F64;
+extern const struct UnkStruct_09EF8370 gUnk_09856F14;
+extern const struct UnkStruct_09EF8370 gUnk_09856F64;
 
 #endif

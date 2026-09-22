@@ -383,131 +383,7 @@ UnkStruct_080E8E24* gUnk_09EF83C0[14] = {
     gUnk_0985824C,
 };
 
-UnkStruct_09EF8370 gUnk_09856C90 __attribute__((section(".data_map_fixed_09856C90"))) = {
-    gUnk_09616D58,
-    320, { 0, 0 },
-    gUnk_094B9798,
-#ifdef VERSION_EU
-    13896, { 0, 0 },
-#else
-    28256, { 0, 0 },
-#endif
-    gUnk_094B9798,
-#ifdef VERSION_EU
-    13896, { 0, 0 },
-#else
-    28256, { 0, 0 },
-#endif
-    gUnk_09EF8208,
-    gUnk_09EF8238,
-    gUnk_09EF8268,
-    4, 3, { 0, 0 },
-    gUnk_09EF7108,
-    gUnk_09856BE8,
-    gUnk_09856C48,
-    30, { 0, 0 },
-    203264,
-    61952,
-    0,
-    0,
-    196608,
-    65536,
-#ifdef VERSION_EU
-    0,
-#endif
-};
-
-UnkStruct_09EF8370 gUnk_09856D34 __attribute__((section(".data_map_fixed_09856D34"))) = {
-    gUnk_09616E98,
-    320, { 0, 0 },
-    gUnk_094C05F8,
-#ifdef VERSION_EU
-    11092, { 0, 0 },
-#else
-    23936, { 0, 0 },
-#endif
-    0,
-    0, { 0, 0 },
-    gUnk_09EF8298,
-    gUnk_09EF82B0,
-    0,
-    3, 2, { 0, 0 },
-    gUnk_09EF7708,
-    gUnk_09856CE0,
-    gUnk_09856D04,
-    30, { 0, 0 },
-    137728,
-    61952,
-    67584,
-    97280,
-    131072,
-    65536,
-#ifdef VERSION_EU
-    0,
-#endif
-};
-
-UnkStruct_09EF8370 gUnk_09856DE4 __attribute__((section(".data_map_fixed_09856DE4"))) = {
-    gUnk_09616FD8,
-    320, { 0, 0 },
-    gUnk_094C6378,
-#ifdef VERSION_EU
-    6096, { 0, 0 },
-#else
-    14816, { 0, 0 },
-#endif
-    0,
-    0, { 0, 0 },
-    gUnk_09EF82C8,
-    gUnk_09EF82E0,
-    0,
-    3, 2, { 0, 0 },
-    gUnk_09EF7A08,
-    gUnk_09856D84,
-    gUnk_09856DA8,
-    30, { 0, 0 },
-    158208,
-    51968,
-    67584,
-    97280,
-    131072,
-    65536,
-#ifdef VERSION_EU
-    0,
-#endif
-};
-
-UnkStruct_09EF8370 gUnk_09856E88 __attribute__((section(".data_map_fixed_09856E88"))) = {
-    gUnk_09617438,
-    320, { 0, 0 },
-    gUnk_094D7E58,
-#ifdef VERSION_EU
-    8232, { 0, 0 },
-#else
-    13280, { 0, 0 },
-#endif
-    0,
-    0, { 0, 0 },
-    gUnk_09EF82F8,
-    gUnk_09EF8310,
-    0,
-    3, 2, { 0, 0 },
-    gUnk_09EF7D08,
-    gUnk_09856E34,
-    gUnk_09856E40,
-    30, { 0, 0 },
-    159744,
-    51200,
-    71680,
-    95232,
-    114688,
-    73728,
-#ifdef VERSION_EU
-    0,
-#endif
-};
-
-UnkStruct_09EF8370 gUnk_09856F14 __attribute__((section(".data_map_fixed_09856F14"))) = {
+const UnkStruct_09EF8370 gUnk_09856F14 = {
     gUnk_09990C64,
     352, { 0, 0 },
     gUnk_099199C4,
@@ -533,7 +409,7 @@ UnkStruct_09EF8370 gUnk_09856F14 __attribute__((section(".data_map_fixed_09856F1
 #endif
 };
 
-UnkStruct_09EF8370 gUnk_09856F64 __attribute__((section(".data_map_fixed_09856F64"))) = {
+const UnkStruct_09EF8370 gUnk_09856F64 = {
     gUnk_09616E98,
     320, { 0, 0 },
     gUnk_094C05F8,
