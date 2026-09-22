@@ -502,20 +502,6 @@
               "size": 10
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8F30",
-          "address": "0x9041f64",
-          "size": 10,
-          "sha256": "ed9f2192e9b3d92ab4fe713e97568f99039babfe07a9f0e4d061d8cf3196576f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8F30",
-              "offset": 0,
-              "size": 10
-            }
-          ]
         }
       ]
     },
@@ -1011,20 +997,6 @@
           "objects": [
             {
               "name": "gTaskName_09EE8EF0",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8F30",
-          "address": "0x90105a4",
-          "size": 10,
-          "sha256": "ed9f2192e9b3d92ab4fe713e97568f99039babfe07a9f0e4d061d8cf3196576f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8F30",
               "offset": 0,
               "size": 10
             }
@@ -1536,22 +1508,6 @@
               "size": 10
             }
           ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE8F30",
-          "address": "0x90d1e4c",
-          "size": 10,
-          "sha256": "ed9f2192e9b3d92ab4fe713e97568f99039babfe07a9f0e4d061d8cf3196576f",
-          "objects": [
-            {
-              "name": "gTaskName_09EE8F30",
-              "offset": 0,
-              "size": 10
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         }
       ]
     }
