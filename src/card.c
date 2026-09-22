@@ -34,6 +34,9 @@
 #include "card_reload_assets.h"
 #include "map_card_assets.h"
 #include "card_localized_assets.h"
+#include "card_help_assets.h"
+#include "card_message_assets.h"
+#include "card_description_assets.h"
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
@@ -36278,9 +36281,1499 @@ TaskDesc gTaskDescEVBGEFFECT = {
     0x18,
 };
 
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE79EC[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090381F8,
+    gCardHelpTextUs_09038260,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6C9B8,
+    &gUnkEu_09F6C9CC,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE79F4[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090382DC,
+    gCardHelpTextUs_0903835A,
+    gCardHelpTextUs_090383C4,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900B6E8,
+    gCardHelpTextJp_0900B734,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6C9E0,
+    &gUnkEu_09F6C9F4,
+    &gUnkEu_09F6CA08,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A00[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038440,
+    gCardHelpTextUs_0903848E,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CA1C,
+    &gUnkEu_09F6CA30,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7A08[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090384DC,
+    gCardHelpTextUs_0903857A,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900B7B4,
+    gCardHelpTextJp_0900B7F0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CA44,
+    &gUnkEu_09F6CA58,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A10[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090385CC,
+    gCardHelpTextUs_09038646,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CA6C,
+    &gUnkEu_09F6CA80,
+#endif
+};
+#endif
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A18[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038694,
+    gCardHelpTextUs_090386F0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CA94,
+    &gUnkEu_09F6CAA8,
+#endif
+};
+#endif
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A20[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038736,
+    gCardHelpTextUs_090387A4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CABC,
+    &gUnkEu_09F6CAD0,
+#endif
+};
+#endif
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A28[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903881C,
+    gCardHelpTextUs_0903887A,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CAE4,
+    &gUnkEu_09F6CAF8,
+#endif
+};
+#endif
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A30[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090388F2,
+    gCardHelpTextUs_0903897C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CB0C,
+    &gUnkEu_09F6CB20,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7A38[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090389D2,
+    gCardHelpTextUs_09038A32,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900B9F0,
+    gCardHelpTextJp_0900BA08,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CB34,
+    &gUnkEu_09F6CB48,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A40[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038A4E,
+    gCardHelpTextUs_09038AAA,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BA24,
+    gCardHelpTextJp_0900BA3C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CB5C,
+    &gUnkEu_09F6CB70,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A48[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038AD6,
+    gCardHelpTextUs_09038B3E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BA58,
+    gCardHelpTextJp_0900BA70,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CB84,
+    &gUnkEu_09F6CB98,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A50[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038B66,
+    gCardHelpTextUs_09038B90,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BA84,
+    gCardHelpTextJp_0900BA9C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CBAC,
+    &gUnkEu_09F6CBC0,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A58[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038BAC,
+    gCardHelpTextUs_09038C10,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CBD4,
+    &gUnkEu_09F6CBE8,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7A60[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038C38,
+    gCardHelpTextUs_09038C96,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BAAC,
+    gCardHelpTextJp_0900BAC8,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CBFC,
+    &gUnkEu_09F6CC10,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7A68[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038CB2,
+    gCardHelpTextUs_09038D16,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CC24,
+    &gUnkEu_09F6CC38,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7A70[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038D32,
+    gCardHelpTextUs_09038D90,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BADC,
+    gCardHelpTextJp_0900BAF4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CC4C,
+    &gUnkEu_09F6CC60,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A78[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038DBA,
+    gCardHelpTextUs_09038E16,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BB14,
+    gCardHelpTextJp_0900BB2C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CC74,
+    &gUnkEu_09F6CC88,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A80[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038E58,
+    gCardHelpTextUs_09038EBA,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BB4C,
+    gCardHelpTextJp_0900BB64,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CC9C,
+    &gUnkEu_09F6CCB0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A88[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038EF6,
+    gCardHelpTextUs_09038F3C,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BB84,
+    gCardHelpTextJp_0900BBA0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CCC4,
+    &gUnkEu_09F6CCD8,
+#endif
+};
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A58[] = {
+    gCardHelpTextJp_0900BBB8,
+    gCardHelpTextJp_0900BBE4,
+};
+#endif
+
+CardHelpText* gUnk_09EE7A90[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09038F66,
+    gCardHelpTextUs_09038FCA,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BBF8,
+    gCardHelpTextJp_0900BC24,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CCEC,
+    &gUnkEu_09F6CD00,
+#endif
+};
+
+CardHelpText* gUnk_09EE7A98[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039006,
+    gCardHelpTextUs_0903906E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BC44,
+    gCardHelpTextJp_0900BC6C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CD14,
+    &gUnkEu_09F6CD28,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7AA0[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039098,
+    gCardHelpTextUs_09039110,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CD3C,
+    &gUnkEu_09F6CD50,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7AA8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903913A,
+    gCardHelpTextUs_090391BA,
+    gCardHelpTextUs_090391DA,
+    gCardHelpTextUs_0903926E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BD20,
+    gCardHelpTextJp_0900BD4C,
+    gCardHelpTextJp_0900BD5C,
+    gCardHelpTextJp_0900BD90,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CD64,
+    &gUnkEu_09F6CD78,
+    &gUnkEu_09F6CD8C,
+    &gUnkEu_09F6CDA0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7AB8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903913A,
+    gCardHelpTextUs_090391BA,
+    gCardHelpTextUs_090391DA,
+    gCardHelpTextUs_0903926E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BD20,
+    gCardHelpTextJp_0900BD4C,
+    gCardHelpTextJp_0900BD5C,
+    gCardHelpTextJp_0900BD90,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CD64,
+    &gUnkEu_09F6CD78,
+    &gUnkEu_09F6CD8C,
+    &gUnkEu_09F6CDA0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7AC8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903929E,
+    gCardHelpTextUs_09039334,
+    gCardHelpTextUs_09039354,
+    gCardHelpTextUs_090393EE,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BDA8,
+    gCardHelpTextJp_0900BDE0,
+    gCardHelpTextJp_0900BDF4,
+    gCardHelpTextJp_0900BE2C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CDB4,
+    &gUnkEu_09F6CDC8,
+    &gUnkEu_09F6CDDC,
+    &gUnkEu_09F6CDF0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7AD8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903929E,
+    gCardHelpTextUs_09039334,
+    gCardHelpTextUs_09039354,
+    gCardHelpTextUs_090393EE,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BDA8,
+    gCardHelpTextJp_0900BDE0,
+    gCardHelpTextJp_0900BDF4,
+    gCardHelpTextJp_0900BE2C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CDB4,
+    &gUnkEu_09F6CDC8,
+    &gUnkEu_09F6CDDC,
+    &gUnkEu_09F6CDF0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7AE8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903941E,
+    gCardHelpTextUs_09039490,
+    gCardHelpTextUs_090394C8,
+    gCardHelpTextUs_09039562,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BE4C,
+    gCardHelpTextJp_0900BE7C,
+    gCardHelpTextJp_0900BE90,
+    gCardHelpTextJp_0900BEC4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CE04,
+    &gUnkEu_09F6CE18,
+    &gUnkEu_09F6CE2C,
+    &gUnkEu_09F6CE40,
+#endif
+};
+
+CardHelpText* gUnk_09EE7AF8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903941E,
+    gCardHelpTextUs_09039490,
+    gCardHelpTextUs_090394C8,
+    gCardHelpTextUs_09039562,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BE4C,
+    gCardHelpTextJp_0900BE7C,
+    gCardHelpTextJp_0900BE90,
+    gCardHelpTextJp_0900BEC4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CE04,
+    &gUnkEu_09F6CE18,
+    &gUnkEu_09F6CE2C,
+    &gUnkEu_09F6CE40,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B08[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090395B6,
+    gCardHelpTextUs_09039646,
+    gCardHelpTextUs_09039666,
+    gCardHelpTextUs_09039708,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BEE4,
+    gCardHelpTextJp_0900BF14,
+    gCardHelpTextJp_0900BF2C,
+    gCardHelpTextJp_0900BF64,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CE54,
+    &gUnkEu_09F6CE68,
+    &gUnkEu_09F6CE7C,
+    &gUnkEu_09F6CE90,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B18[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090395B6,
+    gCardHelpTextUs_09039646,
+    gCardHelpTextUs_09039666,
+    gCardHelpTextUs_09039708,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BEE4,
+    gCardHelpTextJp_0900BF14,
+    gCardHelpTextJp_0900BF2C,
+    gCardHelpTextJp_0900BF64,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CE54,
+    &gUnkEu_09F6CE68,
+    &gUnkEu_09F6CE7C,
+    &gUnkEu_09F6CE90,
+#endif
+};
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7B30[] = {
+    gCardHelpTextJp_0900BF88,
+    gCardHelpTextJp_0900BF9C,
+};
+#endif
+
+CardHelpText* gUnk_09EE7B28[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090397BA,
+    gCardHelpTextUs_09039842,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BFB0,
+    gCardHelpTextJp_0900BFDC,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CECC,
+    &gUnkEu_09F6CEE0,
+#endif
+};
+
+#if defined(VERSION_US) || defined(VERSION_EU)
+CardHelpText* gUnk_09EE7B30[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039738,
+    gCardHelpTextUs_0903979A,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CEA4,
+    &gUnkEu_09F6CEB8,
+#endif
+};
+#endif
+
+CardHelpText* gUnk_09EE7B38[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039872,
+    gCardHelpTextUs_090398D4,
+    gCardHelpTextUs_090398F4,
+    gCardHelpTextUs_09039988,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BFFC,
+    gCardHelpTextJp_0900C02C,
+    gCardHelpTextJp_0900C03C,
+    gCardHelpTextJp_0900C084,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CEF4,
+    &gUnkEu_09F6CF08,
+    &gUnkEu_09F6CF1C,
+    &gUnkEu_09F6CF30,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B48[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039872,
+    gCardHelpTextUs_090398D4,
+    gCardHelpTextUs_090398F4,
+    gCardHelpTextUs_09039988,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900BFFC,
+    gCardHelpTextJp_0900C02C,
+    gCardHelpTextJp_0900C03C,
+    gCardHelpTextJp_0900C084,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CEF4,
+    &gUnkEu_09F6CF08,
+    &gUnkEu_09F6CF1C,
+    &gUnkEu_09F6CF30,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B58[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090399B8,
+    gCardHelpTextUs_09039A3A,
+    gCardHelpTextUs_09039A5A,
+    gCardHelpTextUs_09039AF8,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C09C,
+    gCardHelpTextJp_0900C0CC,
+    gCardHelpTextJp_0900C0DC,
+    gCardHelpTextJp_0900C118,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CF44,
+    &gUnkEu_09F6CF58,
+    &gUnkEu_09F6CF6C,
+    &gUnkEu_09F6CF80,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B68[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_090399B8,
+    gCardHelpTextUs_09039A3A,
+    gCardHelpTextUs_09039A5A,
+    gCardHelpTextUs_09039AF8,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C09C,
+    gCardHelpTextJp_0900C0CC,
+    gCardHelpTextJp_0900C0DC,
+    gCardHelpTextJp_0900C118,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CF44,
+    &gUnkEu_09F6CF58,
+    &gUnkEu_09F6CF6C,
+    &gUnkEu_09F6CF80,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B78[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039B28,
+    gCardHelpTextUs_09039B96,
+    gCardHelpTextUs_09039BBA,
+    gCardHelpTextUs_09039C30,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C130,
+    gCardHelpTextJp_0900C174,
+    gCardHelpTextJp_0900C188,
+    gCardHelpTextJp_0900C1CC,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CF94,
+    &gUnkEu_09F6CFA8,
+    &gUnkEu_09F6CFBC,
+    &gUnkEu_09F6CFD0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B88[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039B28,
+    gCardHelpTextUs_09039B96,
+    gCardHelpTextUs_09039BBA,
+    gCardHelpTextUs_09039C30,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C188,
+    gCardHelpTextJp_0900C1CC,
+    gCardHelpTextJp_0900C130,
+    gCardHelpTextJp_0900C174,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CF94,
+    &gUnkEu_09F6CFA8,
+    &gUnkEu_09F6CFBC,
+    &gUnkEu_09F6CFD0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7B98[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039C66,
+    gCardHelpTextUs_09039CEE,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C1EC,
+    gCardHelpTextJp_0900C218,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6CFE4,
+    &gUnkEu_09F6CFF8,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BA0[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039D0E,
+    gCardHelpTextUs_09039D8E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C230,
+    gCardHelpTextJp_0900C25C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D00C,
+    &gUnkEu_09F6D020,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BA8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039DBE,
+    gCardHelpTextUs_09039E1A,
+    gCardHelpTextUs_09039E42,
+    gCardHelpTextUs_09039ED6,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C280,
+    gCardHelpTextJp_0900C29C,
+    gCardHelpTextJp_0900C2B0,
+    gCardHelpTextJp_0900C2E0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D034,
+    &gUnkEu_09F6D048,
+    &gUnkEu_09F6D05C,
+    &gUnkEu_09F6D070,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BB8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039DBE,
+    gCardHelpTextUs_09039E1A,
+    gCardHelpTextUs_09039E42,
+    gCardHelpTextUs_09039ED6,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C280,
+    gCardHelpTextJp_0900C29C,
+    gCardHelpTextJp_0900C2B0,
+    gCardHelpTextJp_0900C2E0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D034,
+    &gUnkEu_09F6D048,
+    &gUnkEu_09F6D05C,
+    &gUnkEu_09F6D070,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BC8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039F12,
+    gCardHelpTextUs_09039F82,
+    gCardHelpTextUs_09039F9E,
+    gCardHelpTextUs_0903A012,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C300,
+    gCardHelpTextJp_0900C33C,
+    gCardHelpTextJp_0900C350,
+    gCardHelpTextJp_0900C38C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D084,
+    &gUnkEu_09F6D098,
+    &gUnkEu_09F6D0AC,
+    &gUnkEu_09F6D0C0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BD8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_09039F12,
+    gCardHelpTextUs_09039F82,
+    gCardHelpTextUs_09039F9E,
+    gCardHelpTextUs_0903A012,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C300,
+    gCardHelpTextJp_0900C33C,
+    gCardHelpTextJp_0900C350,
+    gCardHelpTextJp_0900C38C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D084,
+    &gUnkEu_09F6D098,
+    &gUnkEu_09F6D0AC,
+    &gUnkEu_09F6D0C0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BE8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A03C,
+    gCardHelpTextUs_0903A0A4,
+    gCardHelpTextUs_0903A0C4,
+    gCardHelpTextUs_0903A15C,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C3AC,
+    gCardHelpTextJp_0900C3DC,
+    gCardHelpTextJp_0900C3F0,
+    gCardHelpTextJp_0900C428,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D0D4,
+    &gUnkEu_09F6D0E8,
+    &gUnkEu_09F6D0FC,
+    &gUnkEu_09F6D110,
+#endif
+};
+
+CardHelpText* gUnk_09EE7BF8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A03C,
+    gCardHelpTextUs_0903A0A4,
+    gCardHelpTextUs_0903A0C4,
+    gCardHelpTextUs_0903A15C,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C3AC,
+    gCardHelpTextJp_0900C3DC,
+    gCardHelpTextJp_0900C3F0,
+    gCardHelpTextJp_0900C428,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D0D4,
+    &gUnkEu_09F6D0E8,
+    &gUnkEu_09F6D0FC,
+    &gUnkEu_09F6D110,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C08[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A18C,
+    gCardHelpTextUs_0903A1FE,
+    gCardHelpTextUs_0903A22E,
+    gCardHelpTextUs_0903A2D0,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C448,
+    gCardHelpTextJp_0900C474,
+    gCardHelpTextJp_0900C490,
+    gCardHelpTextJp_0900C4C0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D124,
+    &gUnkEu_09F6D138,
+    &gUnkEu_09F6D14C,
+    &gUnkEu_09F6D160,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C18[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A18C,
+    gCardHelpTextUs_0903A1FE,
+    gCardHelpTextUs_0903A22E,
+    gCardHelpTextUs_0903A2D0,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C448,
+    gCardHelpTextJp_0900C474,
+    gCardHelpTextJp_0900C490,
+    gCardHelpTextJp_0900C4C0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D124,
+    &gUnkEu_09F6D138,
+    &gUnkEu_09F6D14C,
+    &gUnkEu_09F6D160,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C28[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A318,
+    gCardHelpTextUs_0903A39A,
+    gCardHelpTextUs_0903A3CA,
+    gCardHelpTextUs_0903A448,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C4EC,
+    gCardHelpTextJp_0900C524,
+    gCardHelpTextJp_0900C538,
+    gCardHelpTextJp_0900C568,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D174,
+    &gUnkEu_09F6D188,
+    &gUnkEu_09F6D19C,
+    &gUnkEu_09F6D1B0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C38[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A318,
+    gCardHelpTextUs_0903A39A,
+    gCardHelpTextUs_0903A3CA,
+    gCardHelpTextUs_0903A448,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C4EC,
+    gCardHelpTextJp_0900C524,
+    gCardHelpTextJp_0900C538,
+    gCardHelpTextJp_0900C568,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D174,
+    &gUnkEu_09F6D188,
+    &gUnkEu_09F6D19C,
+    &gUnkEu_09F6D1B0,
+#endif
+};
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7D54[] = {
+    gCardHelpTextJp_0900D0D8,
+    gCardHelpTextJp_0900D110,
+    gCardHelpTextJp_0900D11C,
+    gCardHelpTextJp_0900D158,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7D44[] = {
+    gCardHelpTextJp_0900D16C,
+    gCardHelpTextJp_0900D174,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7D64[] = {
+    gCardHelpTextJp_0900D11C,
+    gCardHelpTextJp_0900D158,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A68[] = {
+    gCardHelpTextJp_0900BC8C,
+    gCardHelpTextJp_0900BCC0,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7AA0[] = {
+    gCardHelpTextJp_0900BCD0,
+    gCardHelpTextJp_0900BD08,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE79EC[] = {
+    gCardHelpTextJp_0900B684,
+    gCardHelpTextJp_0900B6B0,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A00[] = {
+    gCardHelpTextJp_0900B76C,
+    gCardHelpTextJp_0900B78C,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A10[] = {
+    gCardHelpTextJp_0900B81C,
+    gCardHelpTextJp_0900B83C,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A18[] = {
+    gCardHelpTextJp_0900B864,
+    gCardHelpTextJp_0900B8A0,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A20[] = {
+    gCardHelpTextJp_0900B8C8,
+    gCardHelpTextJp_0900B8F0,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A28[] = {
+    gCardHelpTextJp_0900B928,
+    gCardHelpTextJp_0900B950,
+};
+#endif
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7A30[] = {
+    gCardHelpTextJp_0900B988,
+    gCardHelpTextJp_0900B9C4,
+};
+#endif
+
+CardHelpText* gUnk_09EE7C48[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A490,
+    gCardHelpTextUs_0903A4D0,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C588,
+    gCardHelpTextJp_0900C5B0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D1C4,
+    &gUnkEu_09F6D1D8,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C50[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A4FA,
+    gCardHelpTextUs_0903A562,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C5CC,
+    gCardHelpTextJp_0900C600,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D1EC,
+    &gUnkEu_09F6D200,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C58[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A592,
+    gCardHelpTextUs_0903A5FC,
+    gCardHelpTextUs_0903A652,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C61C,
+    gCardHelpTextJp_0900C644,
+    gCardHelpTextJp_0900C668,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D214,
+    &gUnkEu_09F6D228,
+    &gUnkEu_09F6D23C,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C64[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A692,
+    gCardHelpTextUs_0903A700,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C68C,
+    gCardHelpTextJp_0900C6C0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D250,
+    &gUnkEu_09F6D264,
+#endif
+};
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7D74[] = {
+    gCardHelpTextJp_0900C6E0,
+    gCardHelpTextJp_0900C718,
+};
+#endif
+
+CardHelpText* gUnk_09EE7C6C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A750,
+    gCardHelpTextUs_0903A7B0,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C728,
+    gCardHelpTextJp_0900C75C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D278,
+    &gUnkEu_09F6D28C,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C74[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A806,
+    gCardHelpTextUs_0903A878,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C788,
+    gCardHelpTextJp_0900C7B8,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D2A0,
+    &gUnkEu_09F6D2B4,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C7C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A8CE,
+    gCardHelpTextUs_0903A95A,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C7E0,
+    gCardHelpTextJp_0900C82C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D2C8,
+    &gUnkEu_09F6D2DC,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C84[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903A9B2,
+    gCardHelpTextUs_0903AA08,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C858,
+    gCardHelpTextJp_0900C880,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D2F0,
+    &gUnkEu_09F6D304,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C8C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AA5E,
+    gCardHelpTextUs_0903AAB2,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C8AC,
+    gCardHelpTextJp_0900C8D4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D318,
+    &gUnkEu_09F6D32C,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C94[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AB10,
+    gCardHelpTextUs_0903AB70,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C900,
+    gCardHelpTextJp_0900C928,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D340,
+    &gUnkEu_09F6D354,
+#endif
+};
+
+CardHelpText* gUnk_09EE7C9C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903ABCC,
+    gCardHelpTextUs_0903AC32,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C954,
+    gCardHelpTextJp_0900C988,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D368,
+    &gUnkEu_09F6D37C,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CA4[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AC8E,
+    gCardHelpTextUs_0903AD26,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900C9B4,
+    gCardHelpTextJp_0900C9F0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D390,
+    &gUnkEu_09F6D3A4,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CAC[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AD58,
+    gCardHelpTextUs_0903ADD8,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CA0C,
+    gCardHelpTextJp_0900CA48,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D3B8,
+    &gUnkEu_09F6D3CC,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CB4[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AE2A,
+    gCardHelpTextUs_0903AE60,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CA78,
+    gCardHelpTextJp_0900CAA4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D3E0,
+    &gUnkEu_09F6D3F4,
+#endif
+};
+
+#if defined(VERSION_JP)
+CardHelpText* gUnk_09EE7D7C[] = {
+    gCardHelpTextJp_0900CAC4,
+    gCardHelpTextJp_0900CAFC,
+};
+#endif
+
+CardHelpText* gUnk_09EE7CBC[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AEA2,
+    gCardHelpTextUs_0903AF44,
+    gCardHelpTextUs_0903AF98,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CB0C,
+    gCardHelpTextJp_0900CB48,
+    gCardHelpTextJp_0900CB6C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D408,
+    &gUnkEu_09F6D41C,
+    &gUnkEu_09F6D430,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CC8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903AFDE,
+    gCardHelpTextUs_0903B02C,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CB90,
+    gCardHelpTextJp_0900CBAC,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D444,
+    &gUnkEu_09F6D458,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CD0[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B058,
+    gCardHelpTextUs_0903B0E6,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CBCC,
+    gCardHelpTextJp_0900CBF8,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D46C,
+    &gUnkEu_09F6D480,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CD8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B128,
+    gCardHelpTextUs_0903B192,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CC20,
+    gCardHelpTextJp_0900CC50,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D494,
+    &gUnkEu_09F6D4A8,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CE0[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B1EA,
+    gCardHelpTextUs_0903B260,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CC78,
+    gCardHelpTextJp_0900CCA4,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D4BC,
+    &gUnkEu_09F6D4D0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CE8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B2B8,
+    gCardHelpTextUs_0903B31A,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CCCC,
+    gCardHelpTextJp_0900CCFC,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D4E4,
+    &gUnkEu_09F6D4F8,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CF0[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B35C,
+    gCardHelpTextUs_0903B3C6,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CD20,
+    gCardHelpTextJp_0900CD50,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D50C,
+    &gUnkEu_09F6D520,
+#endif
+};
+
+CardHelpText* gUnk_09EE7CF8[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B404,
+    gCardHelpTextUs_0903B476,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CD70,
+    gCardHelpTextJp_0900CDA0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D534,
+    &gUnkEu_09F6D548,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D00[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B4BC,
+    gCardHelpTextUs_0903B522,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CDC0,
+    gCardHelpTextJp_0900CDFC,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D55C,
+    &gUnkEu_09F6D570,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D08[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B552,
+    gCardHelpTextUs_0903B5DE,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CE18,
+    gCardHelpTextJp_0900CE54,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D584,
+    &gUnkEu_09F6D598,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D10[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B622,
+    gCardHelpTextUs_0903B6B0,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CE74,
+    gCardHelpTextJp_0900CEB0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D5AC,
+    &gUnkEu_09F6D5C0,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D18[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B6F6,
+    gCardHelpTextUs_0903B76E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CED0,
+    gCardHelpTextJp_0900CF0C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D5D4,
+    &gUnkEu_09F6D5E8,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D20[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B7B4,
+    gCardHelpTextUs_0903B842,
+    gCardHelpTextUs_0903B89E,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CF2C,
+    gCardHelpTextJp_0900CF68,
+    gCardHelpTextJp_0900CF90,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D5FC,
+    &gUnkEu_09F6D610,
+    &gUnkEu_09F6D624,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D2C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B8DA,
+    gCardHelpTextUs_0903B976,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900CFB4,
+    gCardHelpTextJp_0900CFE8,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D638,
+    &gUnkEu_09F6D64C,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D34[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903B9C4,
+    gCardHelpTextUs_0903BA4A,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900D014,
+    gCardHelpTextJp_0900D04C,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D660,
+    &gUnkEu_09F6D674,
+#endif
+};
+
+CardHelpText* gUnk_09EE7D3C[] = {
+#if defined(VERSION_US)
+    gCardHelpTextUs_0903BA9A,
+    gCardHelpTextUs_0903BB2C,
+#elif defined(VERSION_JP)
+    gCardHelpTextJp_0900D078,
+    gCardHelpTextJp_0900D0B0,
+#elif defined(VERSION_EU)
+    &gUnkEu_09F6D688,
+    &gUnkEu_09F6D69C,
+#endif
+};
+
+#if defined(VERSION_US)
+CardHelpText* gUnk_09EE7D44[] = {
+    gCardHelpTextUs_0903BCFA,
+    gCardHelpTextUs_0903BCFA,
+    gCardHelpTextUs_0903BCFA,
+    gCardHelpTextUs_0903BCFA,
+};
+#endif
+
+#if defined(VERSION_US)
+CardHelpText* gUnk_09EE7D54[] = {
+    gCardHelpTextUs_0903BB76,
+    gCardHelpTextUs_0903BBF8,
+    gCardHelpTextUs_0903BC24,
+    gCardHelpTextUs_0903BCB8,
+};
+#endif
+
+#if defined(VERSION_US)
+CardHelpText* gUnk_09EE7D64[] = {
+    gCardHelpTextUs_0903BB76,
+    gCardHelpTextUs_0903BBF8,
+    gCardHelpTextUs_0903BC24,
+    gCardHelpTextUs_0903BCB8,
+};
+#endif
+
+#if defined(VERSION_US)
+CardHelpText* gUnk_09EE7D74[] = {
+    gCardHelpTextUs_0903BCFA,
+    gCardHelpTextUs_0903BCFA,
+};
+#endif
+
+#if defined(VERSION_US)
+CardHelpText* gUnk_09EE7D7C[] = {
+    gCardHelpTextUs_0903BCFA,
+    gCardHelpTextUs_0903BCFA,
+};
+#endif
+
+#if defined(VERSION_EU)
+CardHelpText* gUnk_09EE7D54[] = {
+    &gUnkEu_09F6D6B0,
+    &gUnkEu_09F6D6C4,
+    &gUnkEu_09F6D6D8,
+    &gUnkEu_09F6D6EC,
+};
+#endif
+
+#if defined(VERSION_EU)
+CardHelpText* gUnk_09EE7D64[] = {
+    &gUnkEu_09F6D6B0,
+    &gUnkEu_09F6D6C4,
+    &gUnkEu_09F6D6D8,
+    &gUnkEu_09F6D6EC,
+};
+#endif
+
+const CardHelpDef* gUnk_09EE7D84[] = {
+    &gUnk_0903BD0C,
+    &gUnk_0903BD14,
+    &gUnk_0903BD1C,
+    &gUnk_0903BD24,
+    &gUnk_0903BD2C,
+    &gUnk_0903BD34,
+    &gUnk_0903BD3C,
+    &gUnk_0903BD44,
+    &gUnk_0903BD4C,
+    &gUnk_0903BD54,
+    &gUnk_0903BD5C,
+    &gUnk_0903BD64,
+    &gUnk_0903BD6C,
+    &gUnk_0903BD74,
+    &gUnk_0903BD84,
+    &gUnk_0903BD7C,
+    &gUnk_0903BD8C,
+    &gUnk_0903BD94,
+    &gUnk_0903BD9C,
+    &gUnk_0903BDA4,
+    &gUnk_0903BDAC,
+    &gUnk_0903BDB4,
+    &gUnk_0903BDBC,
+    &gUnk_0903BDC4,
+    &gUnk_0903BDCC,
+    &gUnk_0903BDD4,
+    &gUnk_0903BDDC,
+    &gUnk_0903BDE4,
+    &gUnk_0903BDEC,
+    &gUnk_0903BDF4,
+    &gUnk_0903BDFC,
+    &gUnk_0903BE04,
+    &gUnk_0903BE0C,
+    &gUnk_0903BE14,
+    &gUnk_0903BE1C,
+    &gUnk_0903BE24,
+    &gUnk_0903BE2C,
+    &gUnk_0903BE34,
+    &gUnk_0903BE3C,
+    &gUnk_0903BE44,
+    &gUnk_0903BE4C,
+    &gUnk_0903BE54,
+    &gUnk_0903BE5C,
+    &gUnk_0903BE64,
+    &gUnk_0903BE6C,
+    &gUnk_0903BE74,
+    &gUnk_0903BE7C,
+    &gUnk_0903BE84,
+    &gUnk_0903BE8C,
+    &gUnk_0903BE94,
+    &gUnk_0903BE9C,
+    &gUnk_0903BEA4,
+    &gUnk_0903BEAC,
+    &gUnk_0903BEB4,
+    &gUnk_0903BEBC,
+    &gUnk_0903BEC4,
+    &gUnk_0903BECC,
+#if defined(VERSION_US) || defined(VERSION_JP)
+    &gUnk_0903BED4,
+#elif defined(VERSION_EU)
+    0,
+#endif
+    &gUnk_0903BEDC,
+    &gUnk_0903BEE4,
+    &gUnk_0903BEEC,
+    &gUnk_0903BEF4,
+    &gUnk_0903BEFC,
+    &gUnk_0903BF04,
+    &gUnk_0903BF0C,
+    &gUnk_0903BF14,
+    &gUnk_0903BF1C,
+    &gUnk_0903BF24,
+#if defined(VERSION_US) || defined(VERSION_JP)
+    &gUnk_0903BF2C,
+#elif defined(VERSION_EU)
+    0,
+#endif
+    &gUnk_0903BF34,
+    &gUnk_0903BF3C,
+    &gUnk_0903BF44,
+    &gUnk_0903BF4C,
+    &gUnk_0903BF54,
+    &gUnk_0903BF5C,
+    &gUnk_0903BF64,
+    &gUnk_0903BF6C,
+    &gUnk_0903BF74,
+    &gUnk_0903BF7C,
+    &gUnk_0903BF84,
+    &gUnk_0903BF8C,
+    &gUnk_0903BF94,
+    &gUnk_0903BF9C,
+    &gUnk_0903BFA4,
+    &gUnk_0903BFAC,
+#if defined(VERSION_US) || defined(VERSION_JP)
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+    &gUnk_0903BFB4,
+#endif
+};
+
 const char gTaskName_09EE7F30[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F30"), aligned(1))) = "StockInfo";
 
-TaskDesc gUnk_09EE7F30 __attribute__((section(".data_registration_gUnk_09EE7F30"))) = {
+TaskDesc gUnk_09EE7F30 = {
     gTaskName_09EE7F30,
     (void (*)(void*, void*))StockInfo_0,
     StockInfo_1,
@@ -36291,7 +37784,7 @@ TaskDesc gUnk_09EE7F30 __attribute__((section(".data_registration_gUnk_09EE7F30"
 
 const char gTaskName_09EE7F48[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F48"), aligned(1))) = "Lvup msg";
 
-TaskDesc gUnk_09EE7F48 __attribute__((section(".data_registration_gUnk_09EE7F48"))) = {
+TaskDesc gUnk_09EE7F48 = {
     gTaskName_09EE7F48,
     (void (*)(void*, void*))func_080A23A0,
     func_080A25B8,
@@ -36306,7 +37799,7 @@ TaskDesc gUnk_09EE7F48 __attribute__((section(".data_registration_gUnk_09EE7F48"
 
 const char gTaskName_09EE7F60[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F60"), aligned(1))) = "Deck Equip";
 
-TaskDesc gUnk_09EE7F60 __attribute__((section(".data_registration_gUnk_09EE7F60"))) = {
+TaskDesc gUnk_09EE7F60 = {
     gTaskName_09EE7F60,
     (void (*)(void*, void*))func_080A2844,
     func_080A2DE4,
@@ -36317,7 +37810,7 @@ TaskDesc gUnk_09EE7F60 __attribute__((section(".data_registration_gUnk_09EE7F60"
 
 const char gTaskName_09EE7F78[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F78"), aligned(1))) = "Deck_Yes_No";
 
-TaskDesc gUnk_09EE7F78 __attribute__((section(".data_registration_gUnk_09EE7F78"))) = {
+TaskDesc gUnk_09EE7F78 = {
     gTaskName_09EE7F78,
     (void (*)(void*, void*))Deck_Yes_No_0,
     func_080A30C0,
@@ -36328,7 +37821,7 @@ TaskDesc gUnk_09EE7F78 __attribute__((section(".data_registration_gUnk_09EE7F78"
 
 const char gTaskName_09EE7F90[] __attribute__((section(".rodata_registration_name_gUnk_09EE7F90"), aligned(1))) = "Deck_Clear";
 
-TaskDesc gUnk_09EE7F90 __attribute__((section(".data_registration_gUnk_09EE7F90"))) = {
+TaskDesc gUnk_09EE7F90 = {
     gTaskName_09EE7F90,
     (void (*)(void*, void*))Deck_Clear_0,
     func_080A30C0,
@@ -36339,7 +37832,7 @@ TaskDesc gUnk_09EE7F90 __attribute__((section(".data_registration_gUnk_09EE7F90"
 
 const char gTaskName_09EE7FA8[] __attribute__((section(".rodata_registration_name_gUnk_09EE7FA8"), aligned(1))) = "Deck Error";
 
-TaskDesc gUnk_09EE7FA8 __attribute__((section(".data_registration_gUnk_09EE7FA8"))) = {
+TaskDesc gUnk_09EE7FA8 = {
     gTaskName_09EE7FA8,
     (void (*)(void*, void*))func_080A2980,
     func_080A2DE4,
@@ -36348,7 +37841,7 @@ TaskDesc gUnk_09EE7FA8 __attribute__((section(".data_registration_gUnk_09EE7FA8"
     0x7A8,
 };
 
-TaskDesc gUnk_09EE7FC0 __attribute__((section(".data_registration_gUnk_09EE7FC0"))) = {
+TaskDesc gUnk_09EE7FC0 = {
     gTaskName_09EE7FA8,
     (void (*)(void*, void*))func_080A2A80,
     func_080A2DE4,
@@ -36357,7 +37850,7 @@ TaskDesc gUnk_09EE7FC0 __attribute__((section(".data_registration_gUnk_09EE7FC0"
     0x7A8,
 };
 
-TaskDesc gUnk_09EE7FD8 __attribute__((section(".data_registration_gUnk_09EE7FD8"))) = {
+TaskDesc gUnk_09EE7FD8 = {
     gTaskName_09EE7FA8,
     (void (*)(void*, void*))func_080A2BA4,
     func_080A2DE4,
@@ -36366,7 +37859,7 @@ TaskDesc gUnk_09EE7FD8 __attribute__((section(".data_registration_gUnk_09EE7FD8"
     0x7A8,
 };
 
-TaskDesc gUnk_09EE7FF0 __attribute__((section(".data_registration_gUnk_09EE7FF0"))) = {
+TaskDesc gUnk_09EE7FF0 = {
     gTaskName_09EE7FA8,
     (void (*)(void*, void*))func_080A2CC4,
     func_080A2DE4,
@@ -36375,9 +37868,2332 @@ TaskDesc gUnk_09EE7FF0 __attribute__((section(".data_registration_gUnk_09EE7FF0"
     0x7A8,
 };
 
+#ifdef VERSION_EU
+u8* gUnkEu_09F73464[5] = { gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5 };
+#endif
+
+CardMessageDef gUnk_09EE8008[] = {
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660F4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0901048C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F5B8,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66108,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010454,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F642,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6611C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010410,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F6A2,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66130,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090103D0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F714,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66144,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010394,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F778,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66158,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010348,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F7F0,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6616C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010314,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F87C,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66180,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090102E0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F8E4,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66194,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090102A0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F94C,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F661A8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010250,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F9BC,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F661BC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010218,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FA2A,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F661D0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090101DC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FAB2,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F661E4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090101A0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FB04,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F661F8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010184,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FB76,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6620C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010154,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FBAC,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66220,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010124,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FBFA,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 2, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66234,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090100E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FC6A,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66248,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_090100A4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FCDE,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6625C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010078,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FD46,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66270,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0901003C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FDAA,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66284,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_09010000,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FE34,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 2, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66298,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FFD0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FEA2,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F662AC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FF8C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FEF8,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F662C0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FF54,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FF4E,
+#endif
+        0,
+        0,
+    },
+    {
+        1, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F662D4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FF08,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903FFC4,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F662E8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FED0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040042,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F662FC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FEA0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090400DC,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66310,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FE58,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040170,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66324,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FE14,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090401E4,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66338,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FDE8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904026E,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6634C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FDC0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090402D0,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66360,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FD8C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040328,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66374,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FD50,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090403A0,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66388,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FD18,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904041C,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6639C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FCD0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090404AA,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F663B0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FC80,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040552,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F663C4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FC38,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090405D8,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F663D8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FC00,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040662,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F663EC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FBCC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090406E4,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66400,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FB90,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040758,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66414,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FB5C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090407B2,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66428,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FB20,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904083C,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6643C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FAE8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090408CC,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66450,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FA90,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040932,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66464,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FA60,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090409E6,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 3, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66478,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FA2C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040A5C,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 2, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6648C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900FA04,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040AEE,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F664A0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F9C4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040B46,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F664B4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F998,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040BA8,
+#endif
+        0,
+        0,
+    },
+    {
+        2, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F664C8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F968,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040C0C,
+#endif
+        0,
+        0,
+    },
+    {
+        60, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F664DC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F934,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040C98,
+#endif
+        0,
+        0,
+    },
+    {
+        60, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F664F0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F8F4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040D0E,
+#endif
+        0,
+        0,
+    },
+    {
+        27, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66504,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F8D0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040D90,
+#endif
+        0,
+        0,
+    },
+    {
+        36, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F69614,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F8B0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0900868C,
+#endif
+        1,
+        0,
+    },
+    {
+        47, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68368,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F880,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C10C,
+#endif
+        0,
+        0,
+    },
+    {
+        48, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68354,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F844,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C186,
+#endif
+        0,
+        0,
+    },
+    {
+        50, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68340,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F820,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C0D4,
+#endif
+        0,
+        0,
+    },
+    {
+        50, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6832C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F7E0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C060,
+#endif
+        0,
+        0,
+    },
+    {
+        51, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F683A4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F798,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C20C,
+#endif
+        0,
+        0,
+    },
+    {
+        49, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68390,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F75C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C2F4,
+#endif
+        0,
+        0,
+    },
+    {
+        49, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6837C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F720,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C272,
+#endif
+        0,
+        0,
+    },
+    {
+        61, 3, 4, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6C97C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F6E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040DDA,
+#endif
+        0,
+        0,
+    },
+    {
+        61, 3, 1, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6C990,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F6B4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040E4C,
+#endif
+        0,
+        0,
+    },
+    {
+        61, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6C9A4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F668,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040ED6,
+#endif
+        0,
+        0,
+    },
+    {
+        7, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660CC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F638,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090411BA,
+#endif
+        0,
+        0,
+    },
+    {
+        7, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660E0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F608,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041224,
+#endif
+        0,
+        0,
+    },
+    {
+        7, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660B8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F5E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041176,
+#endif
+        0,
+        0,
+    },
+    {
+        7, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660E0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F5C8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041E66,
+#endif
+        0,
+        0,
+    },
+    {
+        7, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660E0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F5A0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041E66,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66068,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F588,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C03C,
+#endif
+        3,
+        0,
+    },
+    {
+        3, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63E44,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F554,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C37E,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63E58,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F50C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C410,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63E6C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F4D4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C656,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63E80,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F4AC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C6F0,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63E94,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F498,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C76E,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63EA8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F424,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C79A,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63EBC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F40C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C86C,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63ED0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F3A8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C898,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63EE4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F2E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C97C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63EF8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F2A8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CAD0,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F0C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F274,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CB7C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F20,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F40C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CBE4,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F34,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F234,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CC10,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F48,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F1FC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CC80,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F5C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F1B4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CCF2,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F70,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F180,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CD96,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F84,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F134,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CE0C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63F98,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F0EC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CEC4,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63FAC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900F010,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903CF58,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63FC0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EF60,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D0BE,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63FD4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EF2C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D1FA,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63FE8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EEE4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D294,
+#endif
+        0,
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F63FFC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EE28,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D32E,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64010,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EE00,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D47A,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        3, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64024,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900ED7C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D4C2,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64164,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900ED44,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E7EC,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64178,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900ED0C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E854,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6418C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900ECD4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E8C4,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F641A0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EC94,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E91C,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F641B4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EC58,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E9C8,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F641C8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EC14,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903EA78,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F641DC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EBD8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903EB28,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F641F0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EB18,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903EB8E,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64204,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EAA0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903ED16,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64204,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900EA28,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903ED16,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64218,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E980,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903EE14,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6422C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E914,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903EF68,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64240,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E8E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F02C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64254,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E854,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F098,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64268,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E824,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F180,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6427C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E7F0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F1E2,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64290,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E7C4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F25A,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F642A4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E768,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F2D0,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F642B8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E710,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F410,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64038,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E648,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D5E8,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6404C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E5E4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D774,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64060,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E528,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903D872,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64074,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E4F4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DA40,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64088,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E450,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DA92,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6409C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E3E8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DC44,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F640B0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E398,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DD36,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F640C4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E364,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DDCA,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F640D8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E2EC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DE28,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F640EC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E240,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903DF44,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 1, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64100,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E210,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E0CA,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        31, 1, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64114,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E144,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E142,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 1, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64128,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E0F8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E2C8,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        31, 1, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6413C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900E00C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E370,
+#endif
+        0,
+        0,
+    },
+    {
+        31, 0, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F64150,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DF14,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903E5D4,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F682F0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DED0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040F4E,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68304,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DE50,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09040FE2,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F68318,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DE04,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090410E8,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6459C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DD60,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903C4C2,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66518,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DD34,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041492,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6652C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DCEC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090414BE,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66540,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DCC8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041522,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66554,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DCA4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041548,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66568,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DC74,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041568,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6657C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DC20,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041594,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66590,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DBFC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041606,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F665A4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DBD0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904162C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F665B8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DBA4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904165C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F665CC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DB78,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041690,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F665E0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DB4C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090416C0,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F665F4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DB1C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090416EA,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66608,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DAF0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041718,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6661C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DAC4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904174A,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66630,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DA94,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041774,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66644,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DA64,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090417A4,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66658,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DA40,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090417DA,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6666C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900DA14,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090417FC,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66680,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D9E4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041830,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66694,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D9C0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904185E,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F666A8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D99C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041886,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F666BC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D974,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090418AC,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F666D0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D948,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090418DC,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F666E4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D91C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904190C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F666F8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D8F8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904193C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6670C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D8CC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904195C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66798,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D8B0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090419E2,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66784,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D88C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041A08,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F667C0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D870,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041A38,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F667E8,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D854,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041A5C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F667FC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D834,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041AE2,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66810,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D810,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041CAC,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66824,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D7DC,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041B10,
+#endif
+        1,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66838,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D7C4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041B6C,
+#endif
+        1,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F642CC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D728,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0903F492,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66748,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D700,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041BA0,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6675C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D6D8,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041BDC,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66770,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D6B4,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041C14,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F6684C,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D68C,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041C46,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F667D4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D670,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041C7C,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66734,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D650,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041D06,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66720,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D650,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041CD6,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F667AC,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D610,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041D38,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F66018,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D5E0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041D98,
+#endif
+        0,
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F697E0,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D560,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_0904128A,
+#endif
+#if defined(VERSION_EU)
+        4,
+#elif defined(VERSION_JP)
+        0,
+#elif defined(VERSION_US)
+        4,
+#endif
+        0,
+    },
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_EU)
+        &gUnkEu_09F660A4,
+#elif defined(VERSION_JP)
+        gCardMessageTextJp_0900D500,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_090413BE,
+#endif
+        0,
+        0,
+    },
+#ifndef VERSION_EU
+    {
+        62, 3, 0, 3, 0,
+#if defined(VERSION_JP)
+        gCardMessageTextJp_0900D4C0,
+#elif defined(VERSION_US)
+        gCardMessageTextUs_09041DE2,
+#endif
+        0,
+        0,
+    },
+#endif
+};
+
 const char gTaskName_09EE8E18[] __attribute__((section(".rodata_registration_name_gUnk_09EE8E18"), aligned(1))) = "msgwin";
 
-TaskDesc gUnk_09EE8E18 __attribute__((section(".data_registration_gUnk_09EE8E18"))) = {
+TaskDesc gUnk_09EE8E18 = {
     gTaskName_09EE8E18,
     (void (*)(void*, void*))func_080A33C4,
     func_080A3640,
@@ -36388,7 +40204,7 @@ TaskDesc gUnk_09EE8E18 __attribute__((section(".data_registration_gUnk_09EE8E18"
 
 const char gTaskName_09EE8E30[] __attribute__((section(".rodata_registration_name_gUnk_09EE8E30"), aligned(1))) = "sysmsgwin";
 
-TaskDesc gUnk_09EE8E30 __attribute__((section(".data_registration_gUnk_09EE8E30"))) = {
+TaskDesc gUnk_09EE8E30 = {
     gTaskName_09EE8E30,
     (void (*)(void*, void*))func_080A430C,
     func_080A4578,
@@ -36397,7 +40213,7 @@ TaskDesc gUnk_09EE8E30 __attribute__((section(".data_registration_gUnk_09EE8E30"
     0x148,
 };
 
-TaskDesc gUnk_09EE8E48 __attribute__((section(".data_registration_gUnk_09EE8E48"))) = {
+TaskDesc gUnk_09EE8E48 = {
     gTaskName_09EE8E30,
     (void (*)(void*, void*))func_080A4DCC,
     func_080A4F14,
@@ -36406,7 +40222,7 @@ TaskDesc gUnk_09EE8E48 __attribute__((section(".data_registration_gUnk_09EE8E48"
     0x148,
 };
 
-const WorldSelAnim gUnk_09EE8E60[30] = {
+WorldSelAnim gUnk_09EE8E60[30] = {
     { 0, 10, { 0, 0 } },
     { 1, 6, { 0, 0 } },
     { 2, 4, { 0, 0 } },
@@ -36441,7 +40257,7 @@ const WorldSelAnim gUnk_09EE8E60[30] = {
 
 const char gTaskNameWorldSelBefore[] __attribute__((section(".rodata_registration_name_gTaskDescWorldSelBefore"), aligned(1))) = "WorldSel Before";
 
-TaskDesc gTaskDescWorldSelBefore __attribute__((section(".data_registration_gTaskDescWorldSelBefore"))) = {
+TaskDesc gTaskDescWorldSelBefore = {
     gTaskNameWorldSelBefore,
     (void (*)(void*, void*))WorldSel_Before_0,
     WorldSel_Before_1,
@@ -36450,9 +40266,23 @@ TaskDesc gTaskDescWorldSelBefore __attribute__((section(".data_registration_gTas
     0xB8,
 };
 
+#ifdef VERSION_EU
+void* gUnkEu_09F7434C[5] = { gUnk_090A418E, gUnkEu_091926B2, gUnkEu_0919308A, gUnkEu_09192D42, gUnkEu_091929FA };
+
+void** gUnkEu_09F74360[5] = {
+    &gUnk_09EEAFF8,
+    &gUnkEu_09F77100,
+    &gUnkEu_09F77118,
+    &gUnkEu_09F77110,
+    &gUnkEu_09F77108,
+};
+
+u8* gUnkEu_09F74374[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gUnkEu_094E9CE4, gUnkEu_094E96E4 };
+#endif
+
 const char gTaskName_09EE8EF0[] __attribute__((section(".rodata_registration_name_gUnk_09EE8EF0"), aligned(1))) = "Deckmenu2";
 
-TaskDesc gUnk_09EE8EF0 __attribute__((section(".data_registration_gUnk_09EE8EF0"))) = {
+TaskDesc gUnk_09EE8EF0 = {
     gTaskName_09EE8EF0,
     (void (*)(void*, void*))func_080A584C,
     func_080A5C9C,
@@ -36463,10 +40293,8 @@ TaskDesc gUnk_09EE8EF0 __attribute__((section(".data_registration_gUnk_09EE8EF0"
 
 #ifndef VERSION_EU
 const char gTaskNameDeckexchange[] __attribute__((section(".rodata_registration_name_gTaskDescDeckexchange"), aligned(1))) = "deckexchange";
-#endif
 
-#ifndef VERSION_EU
-TaskDesc gTaskDescDeckexchange __attribute__((section(".data_registration_gTaskDescDeckexchange"))) = {
+TaskDesc gTaskDescDeckexchange = {
     gTaskNameDeckexchange,
     (void (*)(void*, void*))deckexchange_0,
     deckexchange_1,
@@ -36474,11 +40302,18 @@ TaskDesc gTaskDescDeckexchange __attribute__((section(".data_registration_gTaskD
     (void (*)(void*))deckexchange_3,
     0x718,
 };
+
+Mode gUnk_09EE8F20 = {
+    gUnk_09041F58,
+    (void (*)(s32))func_080AAF78,
+    func_080AAFB4,
+    func_080AB008,
+};
 #endif
 
 const char gTaskName_09EE8F30[] __attribute__((section(".rodata_registration_name_gUnk_09EE8F30"), aligned(1))) = "DarkPoint";
 
-TaskDesc gUnk_09EE8F30 __attribute__((section(".data_registration_gUnk_09EE8F30"))) = {
+TaskDesc gUnk_09EE8F30 = {
     gTaskName_09EE8F30,
     (void (*)(void*, void*))DarkPoint_0,
     DarkPoint_1,
@@ -36487,9 +40322,984 @@ TaskDesc gUnk_09EE8F30 __attribute__((section(".data_registration_gUnk_09EE8F30"
     0x10,
 };
 
+CardDescriptionText* gUnk_09EE8F48[98] = {
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA0C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090106C0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042080,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA20,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090106F4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090420FC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA34,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010728,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042176,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA48,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010760,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090421EE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA5C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010794,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904226A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA70,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090107CC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090422E4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA84,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010800,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904235E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EA98,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010834,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090423D6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EAAC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010868,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042452,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EAC0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901089C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090424CC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EAD4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090108D0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904254E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EAE8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010904,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090425CA,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EAFC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010938,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042646,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB10,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901096C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090426C0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB24,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090109A0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904273C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB38,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090109D8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090427BC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB4C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010A0C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042840,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB60,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010A40,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904434A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB74,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010A6C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042F40,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB88,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010A8C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042F6A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EB9C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010AAC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042F92,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EBB0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010ACC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042FC6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EBC4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010AE0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042FDE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EBD8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010B10,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090428BC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EBEC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010B2C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043042,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC00,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010B60,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042912,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC14,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010B84,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904309C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC28,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010BB4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042984,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC3C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010BE4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090429E6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC50,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010C0C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042A40,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC64,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010C38,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090430F0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC78,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010C58,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042AA0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EC8C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010C6C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904315A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ECA0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010CA8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042AFC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ECB4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010CE4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090431C6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ECC8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010D20,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043230,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ECDC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010D5C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904329A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ECF0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010D98,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042B5C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED04,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010DD4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043302,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED18,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010E10,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904336A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED2C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010E4C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090433DA,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED40,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010E6C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043426,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED54,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010E88,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043474,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED68,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010EBC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090434E0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED7C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010EF4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043540,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5ED90,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010F08,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043586,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EDA4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010F30,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09045146,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EDB8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010F68,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090435E4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EDCC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010F94,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043632,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EDE0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011018,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043746,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EDF4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901111C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090438CA,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE08,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011144,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904391C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE1C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901116C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043976,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE30,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011194,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090439CE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE44,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010FB4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043678,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE58,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09010FE4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090436E0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE6C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090111F8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043A80,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE80,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090110BC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043814,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EE94,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011050,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090437B0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EEA8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011224,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042C02,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EEBC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090112D8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043B7C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EED0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901108C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042BB4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EEE4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011344,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043BDE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EEF8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011314,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042C88,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF0C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011248,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042C32,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF20,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090112B0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043B0E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF34,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090110F0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043880,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF48,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011278,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043AB0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF5C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011370,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043C2C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF70,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090113D0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043CE2,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF84,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901139C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043C82,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EF98,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090111BC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043A1E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EFAC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011500,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043F00,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EFC0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090113F8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043D42,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EFD4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011428,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043DA6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EFE8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011460,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043DF0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5EFFC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011488,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043E56,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F010,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090114C4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043E9E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F024,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901152C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043F4A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F038,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011654,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904408C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F04C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901159C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090442E0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F060,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090116F8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042D38,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F074,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011810,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042CE4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F074,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011810,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042CE4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F088,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011564,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09043FA0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F09C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090115D8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042D90,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F0B0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011638,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044060,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F0C4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901160C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044000,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F0D8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011684,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090440E6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F0EC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090116BC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044160,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F100,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011770,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090441C2,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F114,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011724,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042DF2,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F128,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011754,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042E4C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F13C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090117AC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904422C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F150,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090117D4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044282,
+#endif
+#if defined(VERSION_EU)
+    0,
+#elif defined(VERSION_JP)
+    0,
+#elif defined(VERSION_US)
+    0,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F164,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011844,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042E7C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F178,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011870,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09042EEA,
+#endif
+};
+
+CardDescriptionText* gUnk_09EE90D0[26] = {
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F18C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011B30,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044886,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F1A0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011B5C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090448CE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F1B4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011B84,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044922,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F1C8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011BB0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044980,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F1DC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011BE0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090449D8,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F1F0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011C18,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044A44,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F204,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011C44,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044A96,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F218,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011C74,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044AF4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F22C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011CA4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044B56,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F240,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011CB8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044B8E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F254,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011CE0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044BEA,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F268,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011D08,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044C48,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F27C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011D3C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044CA2,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F290,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011D70,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044CFE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F2A4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011DA4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044D56,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F2B8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011DE0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044DBE,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F2CC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011E04,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044E06,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F2E0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011E40,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044E6E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F2F4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011E78,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044EC6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F308,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011EB4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044F16,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F31C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011EEC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044F80,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F330,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011F1C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044FD4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F344,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011F48,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09045026,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F358,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011F78,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904506E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F36C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011FA8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090450B6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F380,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011FD8,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090450FE,
+#endif
+};
+
+CardDescriptionText* gUnk_09EE9138[14] = {
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F394,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_0901192C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904446C,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F3A8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090119EC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090445B4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F3BC,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090119B4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904455E,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F3D0,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011984,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044514,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F3E4,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090118D0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090443B2,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F3F8,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011960,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090444C4,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F40C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090118FC,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_0904440A,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F420,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011A04,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090445FA,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F434,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011AA0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090446FC,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F448,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_090118A0,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090447B6,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F45C,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011A74,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_090446A8,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F470,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011AD4,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044758,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F484,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011A3C,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044654,
+#endif
+#if defined(VERSION_EU)
+    &gUnkEu_09F5F498,
+#elif defined(VERSION_JP)
+    gCardDescriptionTextJp_09011B04,
+#elif defined(VERSION_US)
+    gCardDescriptionTextUs_09044816,
+#endif
+};
+
 const char gModeNameRikuBtlTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuBtlTutorial"), aligned(1))) = "Mode_riku_btlTutorial";
 
-Mode gModeRikuBtlTutorial __attribute__((section(".data_registration_gModeRikuBtlTutorial"))) = {
+Mode gModeRikuBtlTutorial = {
     gModeNameRikuBtlTutorial,
     (void (*)(s32))func_080AB96C,
     (void (*)(void))Mode_riku_btlTutorial_1,
@@ -36498,16 +41308,25 @@ Mode gModeRikuBtlTutorial __attribute__((section(".data_registration_gModeRikuBt
 
 const char gModeNameRikuDeckTutorial[] __attribute__((section(".rodata_registration_name_gModeRikuDeckTutorial"), aligned(1))) = "Mode_riku_deckTutorial";
 
-Mode gModeRikuDeckTutorial __attribute__((section(".data_registration_gModeRikuDeckTutorial"))) = {
+Mode gModeRikuDeckTutorial = {
     gModeNameRikuDeckTutorial,
     (void (*)(s32))func_080AB96C,
     (void (*)(void))Mode_riku_deckTutorial_1,
     (void (*)(void))func_080ABA70,
 };
 
+#ifdef VERSION_EU
+Mode gUnkEu_09F74600 = {
+    gUnkEu_090D1FB0,
+    (void (*)(s32))eu_080AB9FC,
+    eu_080ABA38,
+    eu_080ABA7C,
+};
+#endif
+
 const char gTaskNamePrint[] __attribute__((section(".rodata_registration_name_gTaskDescPrint"), aligned(1))) = "task_print";
 
-TaskDesc gTaskDescPrint __attribute__((section(".data_registration_gTaskDescPrint"))) = {
+TaskDesc gTaskDescPrint = {
     gTaskNamePrint,
     (void (*)(void*, void*))task_print_0,
     task_print_1,

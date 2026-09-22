@@ -940,20 +940,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescWorldSelBefore",
-          "address": "0x09EE8ED8",
-          "size": 24,
-          "sha256": "394c81b3471438e5f787eb61ac08c89ddf28f55d384efc2f3f0c61849dcbd088",
-          "objects": [
-            {
-              "name": "gTaskDescWorldSelBefore",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescDeckexchange",
           "address": "0x09041F48",
           "size": 13,
@@ -968,20 +954,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescDeckexchange",
-          "address": "0x09EE8F08",
-          "size": 24,
-          "sha256": "63ec8cfb6c45980d1c8e79bfea7a4ba34e521b58552e8a80fff6304584b4e0cb",
-          "objects": [
-            {
-              "name": "gTaskDescDeckexchange",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gModeRikuBtlTutorial",
           "address": "0x09045158",
           "size": 22,
@@ -991,20 +963,6 @@
               "name": "gModeNameRikuBtlTutorial",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gModeRikuBtlTutorial",
-          "address": "0x09EE9170",
-          "size": 16,
-          "sha256": "411558e0f8d5b3956d59e7795e00756c813a9da6315712119b51b89e99d5796c",
-          "objects": [
-            {
-              "name": "gModeRikuBtlTutorial",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -1026,20 +984,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gModeRikuDeckTutorial",
-          "address": "0x09EE9180",
-          "size": 16,
-          "sha256": "dd4beedd575a8062e3255e864e889a2b96a9d59ad46925e3f528a17e4241d849",
-          "objects": [
-            {
-              "name": "gModeRikuDeckTutorial",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrint",
           "address": "0x090451A0",
           "size": 11,
@@ -1049,20 +993,6 @@
               "name": "gTaskNamePrint",
               "offset": 0,
               "size": 11
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrint",
-          "address": "0x09EE9190",
-          "size": 24,
-          "sha256": "d7f1026a0189e428eaa9b511926671c233ae685491ffd07bc4d0151209d5ec74",
-          "objects": [
-            {
-              "name": "gTaskDescPrint",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -7009,20 +6939,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescWorldSelBefore",
-          "address": "0x09EC051C",
-          "size": 24,
-          "sha256": "40a53204e255fa397bbc9e32efb3fe48681e790e0deb55843a5955c373c0b2d2",
-          "objects": [
-            {
-              "name": "gTaskDescWorldSelBefore",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescDeckexchange",
           "address": "0x09010588",
           "size": 13,
@@ -7037,20 +6953,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescDeckexchange",
-          "address": "0x09EC054C",
-          "size": 24,
-          "sha256": "5b36d2ad382c5e0674c9e1dde0ea4c20dbcf4e515f78d53f85c39c1f2d65fd76",
-          "objects": [
-            {
-              "name": "gTaskDescDeckexchange",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gModeRikuBtlTutorial",
           "address": "0x09012000",
           "size": 22,
@@ -7060,20 +6962,6 @@
               "name": "gModeNameRikuBtlTutorial",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gModeRikuBtlTutorial",
-          "address": "0x09EC07B4",
-          "size": 16,
-          "sha256": "bd96a87ed1c3bae8ac7a0cf5c731b516fd8bf4a492f546b757b54216030016e7",
-          "objects": [
-            {
-              "name": "gModeRikuBtlTutorial",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -7095,20 +6983,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gModeRikuDeckTutorial",
-          "address": "0x09EC07C4",
-          "size": 16,
-          "sha256": "8a164e26c4ba250d228ec09767a7eedbac8ebba853f67c7377e3dcb37aff4275",
-          "objects": [
-            {
-              "name": "gModeRikuDeckTutorial",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrint",
           "address": "0x09012048",
           "size": 11,
@@ -7118,20 +6992,6 @@
               "name": "gTaskNamePrint",
               "offset": 0,
               "size": 11
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrint",
-          "address": "0x09EC07D4",
-          "size": 24,
-          "sha256": "a5cbbb37f7a64596103afc65a61e0e1b9b9a0c4de9129a7073b9ede967121894",
-          "objects": [
-            {
-              "name": "gTaskDescPrint",
-              "offset": 0,
-              "size": 24
             }
           ]
         },
@@ -13050,20 +12910,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gTaskDescWorldSelBefore",
-          "address": "0x09F74334",
-          "size": 24,
-          "sha256": "1b98f126ec6ec2c2f3c9c2b06446d1e143294325eef06275d88102e0bb4040e7",
-          "objects": [
-            {
-              "name": "gTaskDescWorldSelBefore",
-              "offset": 0,
-              "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gModeRikuBtlTutorial",
           "address": "0x090D1F68",
           "size": 22,
@@ -13073,20 +12919,6 @@
               "name": "gModeNameRikuBtlTutorial",
               "offset": 0,
               "size": 22
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gModeRikuBtlTutorial",
-          "address": "0x09F745E0",
-          "size": 16,
-          "sha256": "88c9fa0beed6724c5add6c5c4c99b61740e1e7592bd67cdb474f18209344ded6",
-          "objects": [
-            {
-              "name": "gModeRikuBtlTutorial",
-              "offset": 0,
-              "size": 16
             }
           ]
         },
@@ -13108,20 +12940,6 @@
         },
         {
           "unit": "card.c",
-          "section": ".data_registration_gModeRikuDeckTutorial",
-          "address": "0x09F745F0",
-          "size": 16,
-          "sha256": "b9b6322acc7cbc0cf9078b19cc0fb89d6861bbd008f169a822b45e917d07e9e6",
-          "objects": [
-            {
-              "name": "gModeRikuDeckTutorial",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
           "section": ".rodata_registration_name_gTaskDescPrint",
           "address": "0x090D1FC0",
           "size": 11,
@@ -13131,20 +12949,6 @@
               "name": "gTaskNamePrint",
               "offset": 0,
               "size": 11
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".data_registration_gTaskDescPrint",
-          "address": "0x09F74610",
-          "size": 24,
-          "sha256": "2b7cbebaf83d28e0ce68d4f5f1e44bd9c4795c1832873139daaec99d3cd4d8b2",
-          "objects": [
-            {
-              "name": "gTaskDescPrint",
-              "offset": 0,
-              "size": 24
             }
           ]
         },

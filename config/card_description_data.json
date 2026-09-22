@@ -6,32 +6,7 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "card_description_data.c",
-          "section": ".data",
-          "address": "0x9ee8f48",
-          "size": 552,
-          "sha256": "4154c7942821671a8c2e9db98216b1f1c06d3db1f3971af21f552645a83c3160",
-          "objects": [
-            {
-              "name": "gUnk_09EE8F48",
-              "offset": 0,
-              "size": 392
-            },
-            {
-              "name": "gUnk_09EE90D0",
-              "offset": 392,
-              "size": 104
-            },
-            {
-              "name": "gUnk_09EE9138",
-              "offset": 496,
-              "size": 56
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gCardDescriptionTextUs_09042080",
@@ -852,32 +827,7 @@
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "card_description_data.c",
-          "section": ".data",
-          "address": "0x9ec058c",
-          "size": 552,
-          "sha256": "5d0e2ca32c08b48fa5f2e10532c80e7d361b1aa0e8db4b835078b469da1fd3bf",
-          "objects": [
-            {
-              "name": "gUnk_09EE8F48",
-              "offset": 0,
-              "size": 392
-            },
-            {
-              "name": "gUnk_09EE90D0",
-              "offset": 392,
-              "size": 104
-            },
-            {
-              "name": "gUnk_09EE9138",
-              "offset": 496,
-              "size": 56
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gCardDescriptionTextJp_090106C0",
@@ -1698,32 +1648,7 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "card_description_data.c",
-          "section": ".data",
-          "address": "0x9f743b8",
-          "size": 552,
-          "sha256": "af77aab55b53292ad4450e5c7bca32733ef99cacfe6f2ce1bdcf8f653ece03b9",
-          "objects": [
-            {
-              "name": "gUnk_09EE8F48",
-              "offset": 0,
-              "size": 392
-            },
-            {
-              "name": "gUnk_09EE90D0",
-              "offset": 392,
-              "size": 104
-            },
-            {
-              "name": "gUnk_09EE9138",
-              "offset": 496,
-              "size": 56
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": []
     }
   }

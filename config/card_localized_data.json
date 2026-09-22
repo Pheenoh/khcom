@@ -6382,19 +6382,6 @@
     "eu": {
       "placements": [
         {
-          "unit": "card_localized_eu_overlay_c_data.c",
-          "section": ".data",
-          "address": "0x9f74360",
-          "size": 20,
-          "objects": [
-            {
-              "name": "gUnkEu_09F74360",
-              "offset": 0,
-              "size": 20
-            }
-          ]
-        },
-        {
           "unit": "card_localized_data.c",
           "section": ".data",
           "address": "0x9f75110",

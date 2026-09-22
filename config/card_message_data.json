@@ -6,26 +6,7 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "card_message_data.c",
-          "section": ".data",
-          "address": "0x9ee8008",
-          "size": 3600,
-          "sha256": "c3c24256626ff654e724d1a0ea14d636b70fc296f3554e49f061c45c4d22ecf7",
-          "objects": [
-            {
-              "name": "gUnk_09EE8008",
-              "offset": 0,
-              "size": 3600,
-              "consumer": [
-                "func_080EC57C",
-                179
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gCardMessageTextUs_0900868C",
@@ -1098,26 +1079,7 @@
       ]
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "card_message_data.c",
-          "section": ".data",
-          "address": "0x9ebf64c",
-          "size": 3600,
-          "sha256": "6f83101fbb1440a79d6d65175ea78d9ac2eca6a93b23ffd579bb12fa143e5fd2",
-          "objects": [
-            {
-              "name": "gUnk_09EE8008",
-              "offset": 0,
-              "size": 3600,
-              "consumer": [
-                "func_080EC57C",
-                179
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": [
         {
           "name": "gCardMessageTextJp_0900D4C0",
@@ -2190,26 +2152,7 @@
       ]
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "card_message_data.c",
-          "section": ".data",
-          "address": "0x9f73478",
-          "size": 3580,
-          "sha256": "11a4b71e4d69970c144d12ea34e37bc72a9618ea6d1b76c09cb629c281952a6a",
-          "objects": [
-            {
-              "name": "gUnk_09EE8008",
-              "offset": 0,
-              "size": 3580,
-              "consumer": [
-                "func_080EC57C",
-                178
-              ]
-            }
-          ]
-        }
-      ],
+      "placements": [],
       "named_assets": []
     }
   }
