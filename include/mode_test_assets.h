@@ -7,10 +7,6 @@
 #endif
 extern u8 gUnk_08F6E190[];
 extern u8 gUnk_08F6F190[];
-extern u8 gUnk_08F70AAC[3];
-extern u8 gUnk_08F70AA8[3];
-extern u8 gUnk_08F70AA4[3];
-extern u8 gUnk_08F70AA0[3];
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_091078AE[];

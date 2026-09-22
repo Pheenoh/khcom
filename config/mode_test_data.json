@@ -80,32 +80,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gUnk_08F70AAC",
-          "address": "0x8f70aac",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA8",
-          "address": "0x8f70aa8",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA4",
-          "address": "0x8f70aa4",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA0",
-          "address": "0x8f70aa0",
-          "size": 3,
-          "encoding": "shift_jis"
-        }
-      ]
+      "named_assets": []
     },
     "jp": {
       "placements": [
@@ -178,32 +153,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gUnk_08F70AAC",
-          "address": "0x8f63fb4",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA8",
-          "address": "0x8f63fb0",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA4",
-          "address": "0x8f63fac",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA0",
-          "address": "0x8f63fa8",
-          "size": 3,
-          "encoding": "shift_jis"
-        }
-      ]
+      "named_assets": []
     },
     "eu": {
       "placements": [
@@ -335,32 +285,7 @@
           ]
         }
       ],
-      "named_assets": [
-        {
-          "name": "gUnk_08F70AAC",
-          "address": "0x8f81a84",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA8",
-          "address": "0x8f81a80",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA4",
-          "address": "0x8f81a7c",
-          "size": 3,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gUnk_08F70AA0",
-          "address": "0x8f81a78",
-          "size": 3,
-          "encoding": "shift_jis"
-        }
-      ]
+      "named_assets": []
     }
   }
 }

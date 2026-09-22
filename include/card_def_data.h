@@ -4,7 +4,11 @@
 #include "card_types.h"
 
 extern const CardDef gCardDefs[];
-extern CardBack gUnk_08F709B0[];
-extern CardBack gUnk_08F70A28[];
+extern const CardBack gUnk_08F709B0[];
+extern const CardBack gUnk_08F70A28[];
+extern const u8 gUnk_08F70AA0[3];
+extern const u8 gUnk_08F70AA4[3];
+extern const u8 gUnk_08F70AA8[3];
+extern const u8 gUnk_08F70AAC[3];
 
 #endif
