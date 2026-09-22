@@ -41,6 +41,137 @@
 #include "game.h"
 #include "bos4_api.h"
 
+UnkStruct_02034AFC* gUnk_02034B00;
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+#ifndef VERSION_EU
+u8 gUnk_02034B04[4];
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+
 #ifdef VERSION_EU
 extern s32 gUnkEu_090D1DC0[];
 extern void* gUnkEu_08890E1C[];
@@ -819,3 +950,23 @@ void func_080A53E4(UnkStruct_080A3F5C* w) {
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }
+
+const char gTaskName_09EE8E30[] = "sysmsgwin";
+
+TaskDesc gUnk_09EE8E30 = {
+    gTaskName_09EE8E30,
+    (void (*)(void*, void*))func_080A430C,
+    func_080A4578,
+    (void (*)(void*))func_080A4A50,
+    (void (*)(void*))func_080A4C1C,
+    0x148,
+};
+
+TaskDesc gUnk_09EE8E48 = {
+    gTaskName_09EE8E30,
+    (void (*)(void*, void*))func_080A4DCC,
+    func_080A4F14,
+    (void (*)(void*))func_080A52BC,
+    (void (*)(void*))func_080A53E4,
+    0x148,
+};
