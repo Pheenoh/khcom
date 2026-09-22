@@ -41,6 +41,12 @@
 #include "game.h"
 #include "bos4_api.h"
 
+u32 gUnk_02034AA4;
+
+u32 gUnk_02034AA8;
+
+CardDisplayWork* gUnk_02034AAC;
+
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
@@ -4118,3 +4124,36 @@ u8 func_0807E34C(void) {
 }
 
 void func_0807BEC0(CardDisplayWork* p);
+
+const char gTaskName_09EE496C[] = "card";
+
+TaskDesc gUnk_09EE496C = {
+    gTaskName_09EE496C,
+    (void (*)(void*, void*))func_0807BC24,
+    func_0807BD64,
+    (void (*)(void*))func_0807BEC0,
+    (void (*)(void*))func_0807C2E0,
+    0xA8,
+};
+
+const char gTaskName_09EE4984[] = "card_not_have";
+
+TaskDesc gUnk_09EE4984 = {
+    gTaskName_09EE4984,
+    (void (*)(void*, void*))func_0807BC24,
+    func_0807BD64,
+    (void (*)(void*))card_not_have_2,
+    (void (*)(void*))func_0807C2E0,
+    0xA8,
+};
+
+const char gTaskName_09EE499C[] = "card_reload";
+
+TaskDesc gUnk_09EE499C = {
+    gTaskName_09EE499C,
+    (void (*)(void*, void*))card_reload_0,
+    card_reload_1,
+    (void (*)(void*))card_reload_2,
+    (void (*)(void*))card_reload_3,
+    0xA8,
+};
