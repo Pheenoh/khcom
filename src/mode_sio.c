@@ -3,7 +3,6 @@
 #include "mode_chkobj_assets.h"
 #include "registration_data.h"
 #include "system_state.h"
-#include "chara_link_state.h"
 #include "chara_api.h"
 #include "map_api.h"
 #include "msg_api.h"

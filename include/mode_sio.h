@@ -16,7 +16,6 @@
 
 
 
-#include "chara_link_state.h"
 
 #include "chara_types.h"
 

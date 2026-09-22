@@ -8,11 +8,8 @@
 
 
 
-#include "chara_link_cursor.h"
 
-#include "chara_link_buffers.h"
 
-#include "chara_link_state.h"
 
 #include "chara_types.h"
 

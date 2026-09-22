@@ -134,14 +134,11 @@ allmap_scroll_state.c -O2 -fprologue-bugfix -fno-common
 allmap_top_state.c -O2 -fprologue-bugfix -fno-common
 pooh_actor_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
-chara_link_cursor.c -O2 -fprologue-bugfix -fno-common
 sio_debug_state.c -O2 -fprologue-bugfix -fno-common
 title_background_state.c -O2 -fprologue-bugfix -fno-common
-chara_link_buffers.c -O2 -fprologue-bugfix -fno-common
 boss_status_state.c -O2 -fprologue-bugfix -fno-common
 pooh_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common
-chara_link_state.c -O2 -fprologue-bugfix -fno-common
 m4a_catalog_data.c
 transform_veneers.s(.text)
 malloc.c(.rodata)

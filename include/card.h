@@ -35,7 +35,6 @@
 
 #include "bg_animation_data.h"
 
-#include "chara_link_state.h"
 
 #include "msg_types.h"
 
@@ -2601,5 +2600,7 @@ typedef struct UnkStruct_08091978_Args {
     u8 unk_0E;
     u8 unk_0F;
 } UnkStruct_08091978_Args;
+
+extern s8 gUnk_0203C374;
 
 #endif /* GUARD_CARD_H */

@@ -28,4 +28,44 @@ void func_080C6894(struct CharaObjParam* param);
 u8 func_080C69B4(void);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
+extern u32 gUnk_0203BD10[100];
+extern u32 gUnk_0203BEA0;
+extern s16 gUnk_0203BEA4;
+extern s16 gUnk_0203BEA8;
+extern void (*gUnk_0203BEAC)(void);
+extern u32 gUnk_0203BEB0;
+extern s16 gUnk_0203BEB8;
+extern u32 gUnk_0203BEBC;
+extern u32 gUnk_0203BEC0[100];
+extern u32 gUnk_0203C050[100];
+extern u32 gUnk_0203C1E0[100];
+extern u16 gUnk_0203C370;
+extern s8 gUnk_0203C374;
+extern u16 gUnk_0203C378;
+extern u16* gUnk_0203C37C;
+extern s8 gUnk_0203C380;
+extern s8 gUnk_0203C384;
+extern u16 gUnk_0203C388;
+extern s8 gUnk_0203C38C;
+extern u16* gUnk_0203C390;
+#ifdef VERSION_EU
+extern u16 gUnkEu_0203C964;
+#endif
+extern u16 gUnk_0203C394;
+extern u16* gUnk_0203C398;
+#ifdef VERSION_EU
+extern u16 gUnkEu_0203C970;
+#endif
+extern u16* gUnk_0203C39C;
+extern s8 gUnk_0203C3A0;
+#ifdef VERSION_EU
+extern u16 gUnkEu_0203C97C;
+#endif
+extern s8 gUnk_0203C3A4;
+extern s8 gUnk_0203C3A8;
+extern void (*gUnk_0203C3AC)(void);
+extern u16 gUnk_0203C3B0;
+extern u16 gUnk_0203C3B4;
+extern u16 gUnk_0203C3B8;
+
 #endif
