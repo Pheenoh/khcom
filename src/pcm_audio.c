@@ -2,7 +2,7 @@
 #include "sroll_api.h"
 #include "m4a.h"
 
-const SoundEntry gPcmPlaybackConfigs[13] = {
+SoundEntry gPcmPlaybackConfigs[13] = {
     {5734, 96, 62610},
     {7884, 132, 63408},
     {10512, 176, 63940},
