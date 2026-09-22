@@ -31,17 +31,17 @@
     ".data_09EF0EB4": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EF0F64": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
     ".data_09EF1060": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables.",
-    "native_event_sprite_1060": "The gUnk_09EF1060 event-sprite pointer cluster is a contiguous 216-byte initialized-data run with matching source order in event_sprite_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Earlier event-sprite clusters stay sectioned."
+    "native_event_sprite_1060": "The gUnk_09EF1060 event-sprite pointer cluster is a contiguous 216-byte initialized-data run with matching source order in event_sprite_data.c across US/JP/EU; ordinary .data replaces its forced section attributes. Earlier event-sprite clusters stay sectioned.",
+    "native_event_sprite_exclusive_leftovers": "Split exclusive-consumer islands from event_sprite_data.c: card NumberPlus (.data_09EE91A8), Premiere Chance (.data_09EEA16C), Deckmenu2 (.data_09EEB080); evt_data companions (.data_09EEDFA8, .data_09EEE544, .data_09EEEE38/.data_09EEEE5C, .data_09EEF0E8/.data_09EEF480/.data_09EEF6F0, .data_09EF06A8/.data_09EF07D4/.data_09EF090C/.data_09EF0EB4). Left mode_chkobj-only / shared NONE islands forced."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EE91A8",
+          "unit": "event_sprite_card_number_plus_data.c",
+          "section": ".data",
           "address": "0x09EE91A8",
           "size": 8,
-          "sha256": "575308b65c9d830fce6bc5b084cfc2aed89a95290fe5d22b13f517e9e16f21de",
           "objects": [
             {
               "name": "gUnk_09EE91A8",
@@ -348,11 +348,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEA16C",
+          "unit": "event_sprite_card_premiere_chance_data.c",
+          "section": ".data",
           "address": "0x09EEA16C",
           "size": 20,
-          "sha256": "089ef51e6c7a67773957504e3e986348626cea34423a69aba2f24184e30c4758",
           "objects": [
             {
               "name": "gUnk_09EEA16C",
@@ -377,11 +376,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEB080",
+          "unit": "event_sprite_card_deckmenu2_data.c",
+          "section": ".data",
           "address": "0x09EEB080",
           "size": 12,
-          "sha256": "084a8e53c152d3f4d7254dae8ecb5e0863e4c2ccdb4ad2f4eea1f9d7c3a843b9",
           "objects": [
             {
               "name": "gUnk_09EEB080",
@@ -498,11 +496,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEDFA8",
+          "unit": "event_sprite_evt_early_data.c",
+          "section": ".data",
           "address": "0x09EEDFA8",
           "size": 100,
-          "sha256": "33133f1c2c970b03cf872dabf4ea240ab05b87f888e55fc80fa4b378aa6bd518",
           "objects": [
             {
               "name": "gUnk_09EEDFA8",
@@ -696,11 +693,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEE544",
+          "unit": "event_sprite_evt_pre_data.c",
+          "section": ".data",
           "address": "0x09EEE544",
           "size": 16,
-          "sha256": "a5a2fae8550228561b371b0016bb73c15e77009e5c8b01544d4fab26c36962dd",
           "objects": [
             {
               "name": "gUnk_09EEE544",
@@ -715,11 +711,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE38",
+          "unit": "event_sprite_evt_gap_a_data.c",
+          "section": ".data",
           "address": "0x09EEEE38",
           "size": 20,
-          "sha256": "ef926597e5295b94fe142ba0c47f0b78a7d1436292b4b6389208d3aa92d18ea5",
           "objects": [
             {
               "name": "gUnk_09EEEE38",
@@ -734,11 +729,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE5C",
+          "unit": "event_sprite_evt_gap_b_data.c",
+          "section": ".data",
           "address": "0x09EEEE5C",
           "size": 20,
-          "sha256": "5ce6cdd056607a199370f98791e1e23f2eab9811db4769283617288b37a9528a",
           "objects": [
             {
               "name": "gUnk_09EEEE5C",
@@ -753,11 +747,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF0E8",
+          "unit": "event_sprite_evt_mid_a_data.c",
+          "section": ".data",
           "address": "0x09EEF0E8",
           "size": 32,
-          "sha256": "42407a126da5c896ffcdc8e5639cf68aeac2428d0884c9c415e74ba572994611",
           "objects": [
             {
               "name": "gUnk_09EEF0E8",
@@ -772,11 +765,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF480",
+          "unit": "event_sprite_evt_mid_b_data.c",
+          "section": ".data",
           "address": "0x09EEF480",
           "size": 28,
-          "sha256": "d64330882b4e64f705b65a52869c100f1e5e706871224847a34e0f47a76f373b",
           "objects": [
             {
               "name": "gUnk_09EEF480",
@@ -791,11 +783,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF6F0",
+          "unit": "event_sprite_evt_mid_c_data.c",
+          "section": ".data",
           "address": "0x09EEF6F0",
           "size": 44,
-          "sha256": "5bb54159efcaed2bbb996d7f89b315cd2154035248fb3929008861f82ac281be",
           "objects": [
             {
               "name": "gUnk_09EEF6F0",
@@ -829,11 +820,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF06A8",
+          "unit": "event_sprite_evt_late_a_data.c",
+          "section": ".data",
           "address": "0x09EF06A8",
           "size": 36,
-          "sha256": "be5068a5a3aad39163ba0da8254809f4c6063f826b4c925004680b1b58dc3de5",
           "objects": [
             {
               "name": "gUnk_09EF06A8",
@@ -868,11 +858,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF07D4",
+          "unit": "event_sprite_evt_late_b_data.c",
+          "section": ".data",
           "address": "0x09EF07D4",
           "size": 76,
-          "sha256": "094fa48c8781eaf4d2fa67c30250c60cfd07a957b5c19b6568bfcd2df79d1c8e",
           "objects": [
             {
               "name": "gUnk_09EF07D4",
@@ -897,11 +886,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF090C",
+          "unit": "event_sprite_evt_late_c_data.c",
+          "section": ".data",
           "address": "0x09EF090C",
           "size": 36,
-          "sha256": "7c93c959c6b2da22e1c272bac516d018428d0bc8ce5ecfec42e4b889ee682a4c",
           "objects": [
             {
               "name": "gUnk_09EF090C",
@@ -916,11 +904,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF0EB4",
+          "unit": "event_sprite_evt_late_d_data.c",
+          "section": ".data",
           "address": "0x09EF0EB4",
           "size": 36,
-          "sha256": "2bc4ba30345b12ecde0cc7f2e84bab1db687b173ff452e807a870f0a687ed4c2",
           "objects": [
             {
               "name": "gUnk_09EF0EB4",
@@ -1322,11 +1309,10 @@
     "jp": {
       "placements": [
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EE91A8",
+          "unit": "event_sprite_card_number_plus_data.c",
+          "section": ".data",
           "address": "0x09EC07EC",
           "size": 8,
-          "sha256": "8c6cee623427b4cb25a8ca52a316e479bc8610109a6016492ab8b0ddda79a846",
           "objects": [
             {
               "name": "gUnk_09EE91A8",
@@ -1633,11 +1619,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEA16C",
+          "unit": "event_sprite_card_premiere_chance_data.c",
+          "section": ".data",
           "address": "0x09EC1560",
           "size": 20,
-          "sha256": "f06b6f2ac05e290c6857765f49a2c0a92b4b40dafe86c3006edaaef1059ca28f",
           "objects": [
             {
               "name": "gUnk_09EEA16C",
@@ -1662,11 +1647,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEB080",
+          "unit": "event_sprite_card_deckmenu2_data.c",
+          "section": ".data",
           "address": "0x09EC246C",
           "size": 12,
-          "sha256": "e04f7ee8e3632b20d0575a213b7cccdfc513091140dd02725570c218c9998e5b",
           "objects": [
             {
               "name": "gUnk_09EEB080",
@@ -1783,11 +1767,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEDFA8",
+          "unit": "event_sprite_evt_early_data.c",
+          "section": ".data",
           "address": "0x09EC5394",
           "size": 100,
-          "sha256": "68625668e201260cd3ce73846d4ef7625295750708cd488348be98bdd8eca29f",
           "objects": [
             {
               "name": "gUnk_09EEDFA8",
@@ -1981,11 +1964,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEE544",
+          "unit": "event_sprite_evt_pre_data.c",
+          "section": ".data",
           "address": "0x09EC5930",
           "size": 16,
-          "sha256": "99781b9f4a6a1c47e0b98d43816a9b7b606e6053a6b2d43d7a555c944bafc82a",
           "objects": [
             {
               "name": "gUnk_09EEE544",
@@ -2000,11 +1982,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE38",
+          "unit": "event_sprite_evt_gap_a_data.c",
+          "section": ".data",
           "address": "0x09EC6224",
           "size": 20,
-          "sha256": "6e3286a26b01fc114f7f618a2b3c760c66f10c3c952193f8af8854c7414fe6ca",
           "objects": [
             {
               "name": "gUnk_09EEEE38",
@@ -2019,11 +2000,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE5C",
+          "unit": "event_sprite_evt_gap_b_data.c",
+          "section": ".data",
           "address": "0x09EC6248",
           "size": 20,
-          "sha256": "aadf6b8ee2472101fec0f668a86f86602aa1d1ca41cf4be05a472c3f763d6274",
           "objects": [
             {
               "name": "gUnk_09EEEE5C",
@@ -2038,11 +2018,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF0E8",
+          "unit": "event_sprite_evt_mid_a_data.c",
+          "section": ".data",
           "address": "0x09EC64D4",
           "size": 32,
-          "sha256": "92628537a2b0c768b2736f8a5a12d9ee249c374ddd9fca9293dad3a8099cbc16",
           "objects": [
             {
               "name": "gUnk_09EEF0E8",
@@ -2057,11 +2036,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF480",
+          "unit": "event_sprite_evt_mid_b_data.c",
+          "section": ".data",
           "address": "0x09EC686C",
           "size": 28,
-          "sha256": "189fec784419aceb5f861c28ec68aa97760f013c230eede290359d34516409f9",
           "objects": [
             {
               "name": "gUnk_09EEF480",
@@ -2076,11 +2054,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF6F0",
+          "unit": "event_sprite_evt_mid_c_data.c",
+          "section": ".data",
           "address": "0x09EC6ADC",
           "size": 44,
-          "sha256": "47f30aa5cd70becca444883e55d087b5843e9a882c018e67fb1e07983fe0931a",
           "objects": [
             {
               "name": "gUnk_09EEF6F0",
@@ -2114,11 +2091,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF06A8",
+          "unit": "event_sprite_evt_late_a_data.c",
+          "section": ".data",
           "address": "0x09EC7A94",
           "size": 36,
-          "sha256": "5234feba5b0a1c8462fdc8913f94d17de06248b75a1c5a150df9d1a2b955e1a0",
           "objects": [
             {
               "name": "gUnk_09EF06A8",
@@ -2153,11 +2129,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF07D4",
+          "unit": "event_sprite_evt_late_b_data.c",
+          "section": ".data",
           "address": "0x09EC7BC0",
           "size": 76,
-          "sha256": "792f299e546099918128617c67ffd2c4bd12beded86110de5919e4f531672064",
           "objects": [
             {
               "name": "gUnk_09EF07D4",
@@ -2182,11 +2157,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF090C",
+          "unit": "event_sprite_evt_late_c_data.c",
+          "section": ".data",
           "address": "0x09EC7CF8",
           "size": 36,
-          "sha256": "f9d8f0caa0dcc2f26a31f181059b018ca6bd8f80e416b019064d14a8449382c2",
           "objects": [
             {
               "name": "gUnk_09EF090C",
@@ -2201,11 +2175,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF0EB4",
+          "unit": "event_sprite_evt_late_d_data.c",
+          "section": ".data",
           "address": "0x09EC82A0",
           "size": 36,
-          "sha256": "f13e5b11677ba2103ced87f833327cc45837fd66ceb6cc822b2ce6421650bd9f",
           "objects": [
             {
               "name": "gUnk_09EF0EB4",
@@ -2607,11 +2580,10 @@
     "eu": {
       "placements": [
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EE91A8",
+          "unit": "event_sprite_card_number_plus_data.c",
+          "section": ".data",
           "address": "0x09F74628",
           "size": 8,
-          "sha256": "ac9634070f69f35fe46cea8ead8e1ca2c2645650f5325f9966bece9b47b0ab23",
           "objects": [
             {
               "name": "gUnk_09EE91A8",
@@ -2918,11 +2890,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEA16C",
+          "unit": "event_sprite_card_premiere_chance_data.c",
+          "section": ".data",
           "address": "0x09F75F84",
           "size": 20,
-          "sha256": "d73f517d9410616071be3373601f74c89c6d3154bd9bf7b6435f8faeb9257ec1",
           "objects": [
             {
               "name": "gUnk_09EEA16C",
@@ -2947,11 +2918,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEB080",
+          "unit": "event_sprite_card_deckmenu2_data.c",
+          "section": ".data",
           "address": "0x09F771A0",
           "size": 12,
-          "sha256": "f6eed4d81bcfcca3e8e4064e5c2a4db9c74ae924be3575e3c2b1893639c84240",
           "objects": [
             {
               "name": "gUnk_09EEB080",
@@ -3068,11 +3038,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEDFA8",
+          "unit": "event_sprite_evt_early_data.c",
+          "section": ".data",
           "address": "0x09F7918C",
           "size": 100,
-          "sha256": "f3478d149584c873dd483df0322dbe42b3ea273f1790e563b0de9e180d778ca7",
           "objects": [
             {
               "name": "gUnk_09EEDFA8",
@@ -3266,11 +3235,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEE544",
+          "unit": "event_sprite_evt_pre_data.c",
+          "section": ".data",
           "address": "0x09F79728",
           "size": 16,
-          "sha256": "4fed419278c952d32106588f24f2ac2239f0d68db29c95a44ae1d70702b9b34d",
           "objects": [
             {
               "name": "gUnk_09EEE544",
@@ -3285,11 +3253,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE38",
+          "unit": "event_sprite_evt_gap_a_data.c",
+          "section": ".data",
           "address": "0x09F7A01C",
           "size": 20,
-          "sha256": "11ffa2cbb5706124ce0bd57c73f44ab30548c5c53efeb30642aa9ee49994a91e",
           "objects": [
             {
               "name": "gUnk_09EEEE38",
@@ -3304,11 +3271,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEEE5C",
+          "unit": "event_sprite_evt_gap_b_data.c",
+          "section": ".data",
           "address": "0x09F7A040",
           "size": 20,
-          "sha256": "e8fe8720bba5d19d6fd6df1d3514601fbac06b3a6fd8786691ffe5442b31ed8b",
           "objects": [
             {
               "name": "gUnk_09EEEE5C",
@@ -3323,11 +3289,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF0E8",
+          "unit": "event_sprite_evt_mid_a_data.c",
+          "section": ".data",
           "address": "0x09F7A2CC",
           "size": 32,
-          "sha256": "3602dc4d5a0c44f12314e16a9799bcf9e6bf36ffd38d3a49a7ee66e77c749fd3",
           "objects": [
             {
               "name": "gUnk_09EEF0E8",
@@ -3342,11 +3307,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF480",
+          "unit": "event_sprite_evt_mid_b_data.c",
+          "section": ".data",
           "address": "0x09F7A664",
           "size": 28,
-          "sha256": "752423dac1a52a0601974c76c98564bc6b869e0efd95e15d191bd001d8d126cf",
           "objects": [
             {
               "name": "gUnk_09EEF480",
@@ -3361,11 +3325,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EEF6F0",
+          "unit": "event_sprite_evt_mid_c_data.c",
+          "section": ".data",
           "address": "0x09F7A8D4",
           "size": 44,
-          "sha256": "d8382c7bf024c0c62e4ad9783cd954678ce468d55c8f56369c90b85e3f3df2dc",
           "objects": [
             {
               "name": "gUnk_09EEF6F0",
@@ -3399,11 +3362,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF06A8",
+          "unit": "event_sprite_evt_late_a_data.c",
+          "section": ".data",
           "address": "0x09F7B88C",
           "size": 36,
-          "sha256": "e7b93f39f8af4625a282e41fc92418ab187761f0e8fde2e258bb842fcf3fabac",
           "objects": [
             {
               "name": "gUnk_09EF06A8",
@@ -3438,11 +3400,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF07D4",
+          "unit": "event_sprite_evt_late_b_data.c",
+          "section": ".data",
           "address": "0x09F7B9B8",
           "size": 76,
-          "sha256": "be8a2da71e10a7e16ab0d37c9908b920e2527c474efc79a0e42c29113ddc0c5d",
           "objects": [
             {
               "name": "gUnk_09EF07D4",
@@ -3467,11 +3428,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF090C",
+          "unit": "event_sprite_evt_late_c_data.c",
+          "section": ".data",
           "address": "0x09F7BAF0",
           "size": 36,
-          "sha256": "73d02df5f0d60d18666e02491e6b1f775ca52ef003a560ef656eb78cb5197be3",
           "objects": [
             {
               "name": "gUnk_09EF090C",
@@ -3486,11 +3446,10 @@
           ]
         },
         {
-          "unit": "event_sprite_data.c",
-          "section": ".data_09EF0EB4",
+          "unit": "event_sprite_evt_late_d_data.c",
+          "section": ".data",
           "address": "0x09F7C098",
           "size": 36,
-          "sha256": "60515c9c5d5fa869620a42f919d437da12b6039c102b9b2cef5510e5090fda6c",
           "objects": [
             {
               "name": "gUnk_09EF0EB4",

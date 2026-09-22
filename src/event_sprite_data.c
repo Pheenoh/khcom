@@ -1,12 +1,6 @@
 #include "event_sprite_data.h"
 #include "event_sprite_assets.h"
 
-void* gUnk_09EE91A8[1] __attribute__((section(".data_09EE91A8"))) = {
-    gUnk_090451AC,
-};
-
-AnimHeader* gUnk_09EE91AC __attribute__((section(".data_09EE91A8"))) = &gUnk_090451B6;
-
 void* gUnk_09EE91E8 __attribute__((section(".data_09EE91E8"))) = gUnk_090460CC;
 
 AnimHeader* gUnk_09EE91EC __attribute__((section(".data_09EE91E8"))) = &gUnk_090460D6;
@@ -95,26 +89,6 @@ void* gUnk_09EE95B4 __attribute__((section(".data_09EE95B4"))) = gUnk_09055E28;
 
 AnimHeader* gUnk_09EE95B8 __attribute__((section(".data_09EE95B4"))) = &gUnk_09055E32;
 
-void* gUnk_09EEA16C[1] __attribute__((section(".data_09EEA16C"))) = {
-    gUnk_0908BB54,
-};
-
-AnimHeader* gUnk_09EEA170 __attribute__((section(".data_09EEA16C"))) = &gUnk_0908BB76;
-
-void* gUnk_09EEA174[2] __attribute__((section(".data_09EEA16C"))) = {
-    gUnk_0908BF40,
-    gUnk_0908BF74,
-};
-
-AnimHeader* gUnk_09EEA17C __attribute__((section(".data_09EEA16C"))) = &gUnk_0908BFA8;
-
-void* gUnk_09EEB080[2] __attribute__((section(".data_09EEB080"))) = {
-    gUnk_090A57D8,
-    gUnk_090A580C,
-};
-
-AnimHeader* gUnk_09EEB088 __attribute__((section(".data_09EEB080"))) = &gUnk_090A5834;
-
 void* gUnk_09EEB110 __attribute__((section(".data_09EEB110"))) = gUnk_090A7D28;
 
 void* gUnk_09EEB114 __attribute__((section(".data_09EEB110"))) = gUnk_090A7D5C;
@@ -144,55 +118,6 @@ AnimHeader* gUnk_09EEDB90 __attribute__((section(".data_09EEDB84"))) = &gUnk_091
 void* gUnk_09EEDB94 __attribute__((section(".data_09EEDB84"))) = gUnk_0917C678;
 
 AnimHeader* gUnk_09EEDB98 __attribute__((section(".data_09EEDB84"))) = &gUnk_0917C688;
-
-void* gUnk_09EEDFA8 __attribute__((section(".data_09EEDFA8"))) = gUnk_0919752C;
-
-AnimHeader* gUnk_09EEDFAC __attribute__((section(".data_09EEDFA8"))) = &gUnk_0919753C;
-
-void* gUnk_09EEDFB0 __attribute__((section(".data_09EEDFA8"))) = gUnk_09197648;
-
-AnimHeader* gUnk_09EEDFB4 __attribute__((section(".data_09EEDFA8"))) = &gUnk_09197652;
-
-void* gUnk_09EEDFB8[3] __attribute__((section(".data_09EEDFA8"))) = {
-    gUnk_0919785C,
-    gUnk_0919786C,
-    gUnk_0919787C,
-};
-
-AnimHeader* gUnk_09EEDFC4[3] __attribute__((section(".data_09EEDFA8"))) = {
-    &gUnk_0919788C,
-    &gUnk_09197896,
-    &gUnk_091978A8,
-};
-
-void* gUnk_09EEDFD0[4] __attribute__((section(".data_09EEDFA8"))) = {
-    gUnk_0919A0B4,
-    gUnk_0919A0C4,
-    gUnk_0919A0D4,
-    gUnk_0919A0E4,
-};
-
-AnimHeader* gUnk_09EEDFE0[3] __attribute__((section(".data_09EEDFA8"))) = {
-    &gUnk_0919A0F4,
-    &gUnk_0919A0FE,
-    &gUnk_0919A110,
-};
-
-void* gUnk_09EEDFEC __attribute__((section(".data_09EEDFA8"))) = gUnk_0919C91C;
-
-AnimHeader* gUnk_09EEDFF0 __attribute__((section(".data_09EEDFA8"))) = &gUnk_0919C92C;
-
-void* gUnk_09EEDFF4 __attribute__((section(".data_09EEDFA8"))) = gUnk_0919CF38;
-
-AnimHeader* gUnk_09EEDFF8 __attribute__((section(".data_09EEDFA8"))) = &gUnk_0919CF42;
-
-void* gUnk_09EEDFFC __attribute__((section(".data_09EEDFA8"))) = gUnk_0919D74C;
-
-AnimHeader* gUnk_09EEE000 __attribute__((section(".data_09EEDFA8"))) = &gUnk_0919D75C;
-
-void* gUnk_09EEE004 __attribute__((section(".data_09EEDFA8"))) = gUnk_0919DD68;
-
-AnimHeader* gUnk_09EEE008 __attribute__((section(".data_09EEDFA8"))) = &gUnk_0919DD78;
 
 void* gUnk_09EEE454 __attribute__((section(".data_09EEE454"))) = gUnk_091CD840;
 
@@ -233,82 +158,6 @@ AnimHeader* gUnk_09EEE498 __attribute__((section(".data_09EEE454"))) = &gUnk_091
 AnimHeader* gUnk_09EEE49C __attribute__((section(".data_09EEE454"))) = &gUnk_091CDB00;
 
 AnimHeader* gUnk_09EEE4A0 __attribute__((section(".data_09EEE454"))) = &gUnk_091CDB0E;
-
-void* gUnk_09EEE544[3] __attribute__((section(".data_09EEE544"))) = {
-    gUnk_091D27B0,
-    gUnk_091D27C6,
-    gUnk_091D27D6,
-};
-
-AnimHeader* gUnk_09EEE550[1] __attribute__((section(".data_09EEE544"))) = {
-    &gUnk_091D27E6,
-};
-
-void* gUnk_09EEEE38[3] __attribute__((section(".data_09EEEE38"))) = {
-    gUnk_0922D7B4,
-    gUnk_0922D7CA,
-    gUnk_0922D7E0,
-};
-
-AnimHeader* gUnk_09EEEE44[2] __attribute__((section(".data_09EEEE38"))) = {
-    &gUnk_0922D7F6,
-    &gUnk_0922D808,
-};
-
-void* gUnk_09EEEE5C[3] __attribute__((section(".data_09EEEE5C"))) = {
-    gUnk_0922E9FC,
-    gUnk_0922EA12,
-    gUnk_0922EA28,
-};
-
-AnimHeader* gUnk_09EEEE68[2] __attribute__((section(".data_09EEEE5C"))) = {
-    &gUnk_0922EA32,
-    &gUnk_0922EA44,
-};
-
-void* gUnk_09EEF0E8[7] __attribute__((section(".data_09EEF0E8"))) = {
-    gUnk_0926AAD0,
-    gUnk_0926AB04,
-    gUnk_0926AB2C,
-    gUnk_0926AB4E,
-    gUnk_0926AB70,
-    gUnk_0926AB92,
-    gUnk_0926ABC0,
-};
-
-AnimHeader* gUnk_09EEF104[1] __attribute__((section(".data_09EEF0E8"))) = {
-    &gUnk_0926ABE2,
-};
-
-void* gUnk_09EEF480[6] __attribute__((section(".data_09EEF480"))) = {
-    gUnk_092B4524,
-    gUnk_092B452E,
-    gUnk_092B4538,
-    gUnk_092B4542,
-    gUnk_092B454C,
-    gUnk_092B4556,
-};
-
-AnimHeader* gUnk_09EEF498[1] __attribute__((section(".data_09EEF480"))) = {
-    &gUnk_092B4560,
-};
-
-void* gUnk_09EEF6F0[10] __attribute__((section(".data_09EEF6F0"))) = {
-    gUnk_092D6958,
-    gUnk_092D6962,
-    gUnk_092D696C,
-    gUnk_092D6976,
-    gUnk_092D6980,
-    gUnk_092D698A,
-    gUnk_092D6994,
-    gUnk_092D699E,
-    gUnk_092D69A8,
-    gUnk_092D69B2,
-};
-
-AnimHeader* gUnk_09EEF718[1] __attribute__((section(".data_09EEF6F0"))) = {
-    &gUnk_092D69BC,
-};
 
 void* const gUnk_09EEFDA4[32] = {
     gUnk_09321C04,
@@ -365,92 +214,6 @@ AnimHeader* const gUnk_09EEFE24[19] = {
     &gUnk_09321E7A,
     &gUnk_09321E8C,
     &gUnk_09321E9A,
-};
-
-void* gUnk_09EF06A8[1] __attribute__((section(".data_09EF06A8"))) = {
-    gUnk_09393218,
-};
-
-AnimHeader* gUnk_09EF06AC[1] __attribute__((section(".data_09EF06A8"))) = {
-    &gUnk_09393222,
-};
-
-void* gUnk_09EF06B0[4] __attribute__((section(".data_09EF06A8"))) = {
-    gUnk_0939342C,
-    gUnk_09393436,
-    gUnk_09393440,
-    gUnk_0939344A,
-};
-
-AnimHeader* gUnk_09EF06C0[1] __attribute__((section(".data_09EF06A8"))) = {
-    &gUnk_09393454,
-};
-
-AnimHeader* gUnk_09EF06C4 __attribute__((section(".data_09EF06A8"))) = &gUnk_0939346A;
-
-AnimHeader* gUnk_09EF06C8 __attribute__((section(".data_09EF06A8"))) = &gUnk_09393474;
-
-void* gUnk_09EF07D4[7] __attribute__((section(".data_09EF07D4"))) = {
-    gUnk_093A1DA0,
-    gUnk_093A1DAA,
-    gUnk_093A1DBA,
-    gUnk_093A1DCA,
-    gUnk_093A1DDA,
-    gUnk_093A1DEA,
-    gUnk_093A1DFA,
-};
-
-AnimHeader* gUnk_09EF07F0[1] __attribute__((section(".data_09EF07D4"))) = {
-    &gUnk_093A1E04,
-};
-
-void* gUnk_09EF07F4[10] __attribute__((section(".data_09EF07D4"))) = {
-    gUnk_093A3148,
-    gUnk_093A3152,
-    gUnk_093A315C,
-    gUnk_093A316C,
-    gUnk_093A3182,
-    gUnk_093A3192,
-    gUnk_093A31A8,
-    gUnk_093A31BE,
-    gUnk_093A31D4,
-    gUnk_093A31EA,
-};
-
-AnimHeader* gUnk_09EF081C[1] __attribute__((section(".data_09EF07D4"))) = {
-    &gUnk_093A3200,
-};
-
-void* gUnk_09EF090C[8] __attribute__((section(".data_09EF090C"))) = {
-    gUnk_093AE9BC,
-    gUnk_093AE9C6,
-    gUnk_093AE9D0,
-    gUnk_093AE9DA,
-    gUnk_093AE9E4,
-    gUnk_093AE9EE,
-    gUnk_093AE9F8,
-    gUnk_093AEA02,
-};
-
-AnimHeader* gUnk_09EF092C[1] __attribute__((section(".data_09EF090C"))) = {
-    &gUnk_093AEA0C,
-};
-
-void* gUnk_09EF0EB4 __attribute__((section(".data_09EF0EB4"))) = gUnk_093E9F04;
-
-AnimHeader* gUnk_09EF0EB8 __attribute__((section(".data_09EF0EB4"))) = &gUnk_093E9F0E;
-
-void* gUnk_09EF0EBC[6] __attribute__((section(".data_09EF0EB4"))) = {
-    gUnk_093EA318,
-    gUnk_093EA33A,
-    gUnk_093EA350,
-    gUnk_093EA366,
-    gUnk_093EA388,
-    gUnk_093EA3A4,
-};
-
-AnimHeader* gUnk_09EF0ED4[1] __attribute__((section(".data_09EF0EB4"))) = {
-    &gUnk_093EA3A6,
 };
 
 void* gUnk_09EF0F64 __attribute__((section(".data_09EF0F64"))) = gUnk_093EDD44;
