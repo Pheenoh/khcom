@@ -390,7 +390,7 @@
           ]
         },
         {
-          "unit": "map_text_data.c",
+          "unit": "map_text_eu_unknown_place_name.c",
           "section": ".rodata",
           "address": "0x8893370",
           "size": 20,
