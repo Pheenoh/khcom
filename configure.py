@@ -91,7 +91,6 @@ EWRAM_COMMON_ORDER = [
     ("src/status.o", ".ewram_common.*"),
     ("src/bos4.o", ".ewram_common.*"),
     ("src/map.o", ".ewram_common.*"),
-    ("src/map_transition_state.o", ".bss"),
     ("src/agb_sram.o", ".ewram_common.*"),
     ("src/movie.o", ".ewram_common.*"),
     ("src/snd_stream.o", ".ewram_common.*"),

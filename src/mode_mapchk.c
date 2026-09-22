@@ -6,7 +6,6 @@
 #include "mode_test_api.h"
 #include "card_api.h"
 #include "save_api.h"
-#include "map_transition_state.h"
 #include "bos4_api.h"
 #include "game_state.h"
 #include "m4a_song.h"

@@ -20,6 +20,8 @@
 #include "map_text_data.h"
 
 UnkStruct_0203C7AC* gUnk_0203C7AC EWRAM_COMMON(4);
+UnkStruct_0203C7B0 gUnk_0203C7B0 EWRAM_COMMON(8);
+struct UnkStruct_0203C7B8* gUnk_0203C7B8 EWRAM_COMMON(4);
 
 extern u8 gUnk_09EF6A34[];
 extern u8 gUnk_09EF6A42[];

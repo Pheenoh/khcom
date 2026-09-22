@@ -32,6 +32,10 @@ u8 func_080E924C(void);
 void func_080E92B8(struct UnkStruct_080E92B8* p);
 void func_080E92F8(struct UnkStruct_080E92B8* p);
 
+struct UnkStruct_0203C7B8;
+
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
+extern UnkStruct_0203C7B0 gUnk_0203C7B0;
+extern struct UnkStruct_0203C7B8* gUnk_0203C7B8;
 
 #endif

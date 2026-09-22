@@ -16,7 +16,6 @@
 
 #include "animation_resource_data.h"
 
-#include "map_transition_state.h"
 
 #include "graphics_state.h"
 
