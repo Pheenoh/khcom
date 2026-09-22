@@ -36,8 +36,7 @@
 #include "engine_math.h"
 
 #include "card_deck.h"
-#include "card_state.h"
-#include "card_ui_state.h"
+#include "card_api.h"
 
 #include "text.h"
 #include "fade.h"

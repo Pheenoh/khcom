@@ -4,7 +4,6 @@
 #include "debug_menu_assets.h"
 #include "sio_debug_state.h"
 #include "sio_battle_options_state.h"
-#include "card_ui_state.h"
 #include "game_state.h"
 #include "obj_api.h"
 #include "display.h"

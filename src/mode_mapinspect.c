@@ -5,7 +5,6 @@
 #include "text.h"
 #include "monsgage.h"
 #include "mode_mapinspect.h"
-#include "card_ui_state.h"
 #include "gba/keys.h"
 
 extern u8 gUnk_09A3D23C[];

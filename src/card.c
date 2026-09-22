@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "card_localized_data.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
@@ -166,6 +167,26 @@ static void** gUnk_02034B38;
 TaskPool gUnkEu_02034B38;
 u32 gUnkEu_02034B4C;
 #endif
+
+u8 gUnk_02039DD8 EWRAM_COMMON(4);
+u8 gUnk_02039DDC EWRAM_COMMON(4);
+Deck gDecks[3] EWRAM_COMMON(16);
+u16 gCardCollection[999] EWRAM_COMMON(16);
+Deck* gUnk_0203A850 EWRAM_COMMON(4);
+void* gUnk_0203A854 EWRAM_COMMON(4);
+u16 gCardCount EWRAM_COMMON(4);
+CardUiSpriteState gUnk_0203A860 EWRAM_COMMON(16);
+MapCardUiResources gUnk_0203A890 EWRAM_COMMON(16);
+u8 gUnk_0203A8C0[270] EWRAM_COMMON(16);
+struct CardListWork* gUnk_0203A9D0 EWRAM_COMMON(4);
+u8 gUnk_0203A9D4 EWRAM_COMMON(4);
+u8 gUnk_0203A9D8 EWRAM_COMMON(4);
+#ifndef VERSION_EU
+u16 gUnk_0203A9DC EWRAM_COMMON(4);
+#endif
+u8 gUnk_0203A9E0 EWRAM_COMMON(4);
+s8 gUnk_0203A9E4 EWRAM_COMMON(4);
+u8 gUnk_0203A9E8 EWRAM_COMMON(4);
 
 extern u8 gUnk_096112B8[];
 u8 func_080A470C(UnkStruct_080A3F5C* w, void* a);

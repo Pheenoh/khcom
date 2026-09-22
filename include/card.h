@@ -42,14 +42,12 @@
 #include "field_state.h"
 
 #include "card_ui_types.h"
-#include "card_ui_state.h"
 
 #include "obj_resource_types.h"
 
 #include "card_api.h"
 
 #include "card_deck.h"
-#include "card_state.h"
 
 #include "types.h"
 #include "engine_math.h"

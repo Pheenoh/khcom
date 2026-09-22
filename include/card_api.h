@@ -2,6 +2,8 @@
 #define GUARD_CARD_API_H
 
 #include "types.h"
+#include "card_types.h"
+#include "card_ui_types.h"
 
 struct UnkStruct_02039DD4;
 struct UnkStruct_08080268;
@@ -72,5 +74,27 @@ s32 func_080AC5E8(struct UnkStruct_02039DD4* g, u8 count, u8 kind, struct UnkStr
 s32 func_080AD144(struct UnkStruct_02039DD4* g, u8 count, u8 kind, struct UnkStruct_080ABA80* arr, u8* flag, void* b);
 
 void func_080AEB94(void);
+
+struct CardListWork;
+
+extern u8 gUnk_02039DD8;
+extern u8 gUnk_02039DDC;
+extern Deck gDecks[3];
+extern u16 gCardCollection[999];
+extern Deck* gUnk_0203A850;
+extern void* gUnk_0203A854;
+extern u16 gCardCount;
+extern CardUiSpriteState gUnk_0203A860;
+extern MapCardUiResources gUnk_0203A890;
+extern u8 gUnk_0203A8C0[270];
+extern struct CardListWork* gUnk_0203A9D0;
+extern u8 gUnk_0203A9D4;
+extern u8 gUnk_0203A9D8;
+#ifndef VERSION_EU
+extern u16 gUnk_0203A9DC;
+#endif
+extern u8 gUnk_0203A9E0;
+extern s8 gUnk_0203A9E4;
+extern u8 gUnk_0203A9E8;
 
 #endif

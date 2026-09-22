@@ -18,7 +18,6 @@
 #include "card_description_data.h"
 
 #include "card_types.h"
-#include "card_state.h"
 
 #include "ms_types.h"
 

@@ -5,7 +5,6 @@
 #include "text.h"
 #include "monsgage.h"
 #include "ms_charge.h"
-#include "card_ui_state.h"
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
