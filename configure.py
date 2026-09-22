@@ -553,10 +553,40 @@ validate_active_sections(regional_plan,
                          [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"],
                          managed_placements(regional))
 objs_in_order = [(obj, section) for _, obj, _flags, section in units]
-objs_linked = []
-for _src, obj, _flags, _section in units:
-    if obj not in objs_linked:
-        objs_linked.append(obj)
+
+
+def link_order(units):
+    order = []
+    position = {}
+    anchor = None
+    violations = []
+    for _src, obj, _flags, section in units:
+        if section == ".text":
+            if obj not in position:
+                position[obj] = len(order)
+                order.append(obj)
+            continue
+        if obj in position:
+            if anchor is not None and position[obj] < position[anchor]:
+                violations.append((obj, section, anchor))
+            anchor = obj
+            continue
+        index = len(order) if anchor is None else position[anchor] + 1
+        order.insert(index, obj)
+        position = {o: i for i, o in enumerate(order)}
+        anchor = obj
+    return order, position, violations
+
+
+objs_linked, link_position, link_violations = link_order(units)
+data_objects = []
+for _src, obj, _flags, section in units:
+    if section == ".data" and obj not in data_objects:
+        data_objects.append(obj)
+data_positions = [link_position[obj] for obj in data_objects]
+if data_positions != sorted(data_positions):
+    offenders = [obj for obj, pos, nxt in zip(data_objects, data_positions, data_positions[1:]) if pos > nxt]
+    sys.exit(f"error: .data objects are not in link order: {offenders[:10]}")
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -565,7 +595,17 @@ with open(ldscript, "w") as f:
     if symbols:
         f.write("\n")
     f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
+    for obj in objs_linked:
+        f.write(f"        {obj}(.text);\n")
+    data_gathered = False
     for obj, section in objs_in_order:
+        if section == ".text":
+            continue
+        if section == ".data":
+            if not data_gathered:
+                f.write("        *(.data);\n")
+                data_gathered = True
+            continue
         placement = regional_sections.get((Path(obj).stem + ".c", section)) if obj.startswith(f"{build_dir}/src/") else None
         if placement:
             for assertion in linker_assertions(placement):
