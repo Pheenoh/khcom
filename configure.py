@@ -62,6 +62,7 @@ IWRAM_AFTER_HEAP = [
     ("src/engine.o", ".iwram_common.*"),
 ]
 BIOS_SYMBOLS = {"gSoundInfoPtr": 0x03007FF0, "gIntrCheck": 0x03007FF8}
+LIBRARY_POOL_OBJECTS = ["agb_sram.o", "movie.o"]
 
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
@@ -587,6 +588,17 @@ data_positions = [link_position[obj] for obj in data_objects]
 if data_positions != sorted(data_positions):
     offenders = [obj for obj, pos, nxt in zip(data_objects, data_positions, data_positions[1:]) if pos > nxt]
     sys.exit(f"error: .data objects are not in link order: {offenders[:10]}")
+rodata_objects = []
+for _src, obj, _flags, section in units:
+    if section == ".rodata" and obj not in rodata_objects:
+        rodata_objects.append(obj)
+rodata_positions = [link_position[obj] for obj in rodata_objects]
+if rodata_positions != sorted(rodata_positions):
+    offenders = [obj for obj, pos, nxt in zip(rodata_objects, rodata_positions, rodata_positions[1:]) if pos > nxt]
+    sys.exit(f"error: .rodata objects are not in link order: {offenders[:10]}")
+leftover_sections = [(obj, section) for _src, obj, _flags, section in units if section not in (".text", ".rodata", ".data")]
+if leftover_sections:
+    sys.exit(f"error: sections that link order cannot place: {leftover_sections[:10]}")
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -597,24 +609,8 @@ with open(ldscript, "w") as f:
     f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
     for obj in objs_linked:
         f.write(f"        {obj}(.text);\n")
-    data_gathered = False
-    for obj, section in objs_in_order:
-        if section == ".text":
-            continue
-        if section == ".data":
-            if not data_gathered:
-                f.write("        *(.data);\n")
-                data_gathered = True
-            continue
-        placement = regional_sections.get((Path(obj).stem + ".c", section)) if obj.startswith(f"{build_dir}/src/") else None
-        if placement:
-            for assertion in linker_assertions(placement):
-                f.write(f"        {assertion}\n")
-        f.write(f"        {obj}({section});\n")
-        if placement:
-            for assertion in linker_assertions(placement, after=True):
-                f.write(f"        {assertion}\n")
-    f.write("    }\n")
+    excluded = " ".join(f"*/{name}" for name in LIBRARY_POOL_OBJECTS)
+    f.write(f"        *(EXCLUDE_FILE ({excluded}) .rodata);\n        *(.data);\n    }}\n")
     f.write("\n    .iwram 0x03000000 (NOLOAD) :\n    {\n")
     for obj, section in IWRAM_BEFORE_HEAP:
         f.write(f"        {build_dir}/{obj}({section});\n")
@@ -675,7 +671,7 @@ with out.open("w") as f:
     )
     n.rule(
         "rom",
-        command=f'$objcopy -O binary --only-section=.text $in $out'
+        command=f'$objcopy -O binary --only-section=.text --pad-to=0x0A000000 --gap-fill=0xFF $in $out'
                 f' && python3 tools/gbafix.py $out "{ROM_TITLE}" {code} {ROM_MAKER_CODE}',
         description="ROM $out",
     )

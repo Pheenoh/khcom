@@ -3992,9 +3992,6 @@ def main():
 
         if base.startswith(("asset_us_", "padding_us_")):
             continue
-        if base == "padding":
-            found.append((ROM_BASE + pad, base, "run"))
-            continue
         pat = us[off:off + 64]
         i = ot.find(pat)
         how = "content"
@@ -4046,7 +4043,7 @@ def main():
             pos = lo
         tail.append(line)
         pos += size
-    for nm, a, b in blob(pos, ROM_END):
+    for nm, a, b in blob(pos, ROM_BASE + pad):
         bounds.append((nm, a, b))
         tail.append(f"{nm}(.rodata)")
     units = head + ordered + tail
