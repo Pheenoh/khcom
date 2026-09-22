@@ -2922,22 +2922,22 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         work->unk_344 = 0x16800;
         work->unk_348 = -0x6400;
         w = work;
-        func_0801B37C(w, gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        func_0801B37C(w, &gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
         p1 = &w->body[1];
-        func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
+        func_0801B37C(p1, &gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
         p2 = &w->body[2];
-        func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, 0);
+        func_0801B37C(p2, &gUnk_0961A7B0, 0x9000, 0x16800, 0);
         TaskCreate(&w->tasks, &gTaskDescBosDsdMain, w);
     } else {
         work->unk_340 = 0xDC00;
         work->unk_344 = 0x16800;
         work->unk_348 = -0x6400;
         w = work;
-        func_0801B37C(w, gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        func_0801B37C(w, &gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
         w->body[0].unk_034 |= 0x1000000;
         w->body[0].unk_034 |= 4;
         p1 = &w->body[1];
-        func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
+        func_0801B37C(p1, &gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
         p1->unk_034 |= 4;
         p1->unk_034 |= 0x400;
         p1->unk_0A2 = v;
@@ -2945,7 +2945,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         p1->unk_0A0 = 16;
         p1->unk_09C = 16;
         p2 = &w->body[2];
-        func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, v);
+        func_0801B37C(p2, &gUnk_0961A7B0, 0x9000, 0x16800, v);
         p2->unk_034 |= 0x003C000001000004ULL;
         p2->unk_0A2 = v;
         p2->unk_09E = 16;
@@ -4948,7 +4948,7 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
 void task_bos_dsd_energy2_3(void) {
 }
 
-const char gTaskNameBosJf[] __attribute__((section(".rodata_registration_name_gTaskDescBosJf"), aligned(1))) = "task_bos_jf";
+const char gTaskNameBosJf[] = "task_bos_jf";
 
 TaskDesc gTaskDescBosJf = {
     gTaskNameBosJf,
@@ -4996,7 +4996,7 @@ void* gUnk_09EF275C[2][15] = {
     },
 };
 
-const char gTaskNameBosJfMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfMap"), aligned(1))) = "task_bos_jf_map";
+const char gTaskNameBosJfMap[] = "task_bos_jf_map";
 
 TaskDesc gTaskDescBosJfMap = {
     gTaskNameBosJfMap,
@@ -5009,7 +5009,35 @@ TaskDesc gTaskDescBosJfMap = {
 
 u8 gUnk_09EF27EC[8] = { 0, 1, 1, 0, 0, 0, 0, 0 };
 
-const char gTaskNameBosJfLamp[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfLamp"), aligned(1))) = "task_bos_jf_lamp";
+const char gTaskNameBosJfLamp[] = "task_bos_jf_lamp";
+
+const s16 gUnk_0961A6A8[49] __attribute__((aligned(4))) = {
+    9, 9, 8, 8, 8, 8, 8, 8, 30, 6, 6, 12, 6, 6, 2, 8,
+    8, 8, 8, 12, 2, 2, 2, 2, 12, 12, 12, 12, 30, 6, 6, 12,
+    6, 6, 2, 8, 8, 8, 8, 12, 2, 2, 2, 2, 12, 12, 12, 12,
+    0,
+};
+
+const s8 gUnk_0961A70A[6] = { 0, -1, -2, -2, -1, 0 };
+
+const u16 gUnk_0961A710[16][3] = {
+    { 0, 0, 0 },
+    { 7, 7, 7 },
+    { 7, 0, 0 },
+    { 0, 7, 0 },
+    { 0, 0, 7 },
+    { 7, 7, 0 },
+    { 7, 0, 7 },
+    { 0, 7, 7 },
+    { 0, 7, 14 },
+    { 0, 14, 7 },
+    { 7, 0, 14 },
+    { 7, 14, 0 },
+    { 14, 0, 7 },
+    { 14, 7, 0 },
+    { 14, 14, 14 },
+    { 0, 0, 0 },
+};
 
 TaskDesc gTaskDescBosJfLamp = {
     gTaskNameBosJfLamp,
@@ -5144,7 +5172,13 @@ u32 gUnk_09EF2A18 __attribute__((aligned(4))) = 668;
 
 u32 gUnk_09EF2A1C __attribute__((aligned(4))) = 683;
 
-const char gTaskNameBosJfMajin[] __attribute__((section(".rodata_registration_name_gTaskDescBosJfMajin"), aligned(1))) = "task_bos_jf_majin";
+const char gTaskNameBosJfMajin[] = "task_bos_jf_majin";
+
+const char gTaskName_09EF2A5C[] = "task_bos_jf_rock";
+
+const char gTaskName_09EF2A74[] = "task_bos_jf_borderline";
+
+const EmyKind gUnk_0961A7B0 = { 38, 1000, 16, 16, 40, 60, 0 };
 
 TaskDesc gTaskDescBosJfMajin = {
     gTaskNameBosJfMajin,
@@ -5161,23 +5195,37 @@ s8 gUnk_09EF2A41 __attribute__((aligned(1))) = -1;
 
 s16 gUnk_09EF2A42[12] __attribute__((aligned(2))) = { 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 55 };
 
-const char gTaskNameBosDsd[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsd"), aligned(1))) = "task_bos_dsd";
+const char gTaskNameBosDsd[] = "task_bos_dsd";
 
-const char gTaskNameBosDsdMain[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMain"), aligned(1))) = "task_bos_dsd_main";
+const s16 gUnk_0961A7D0[47] __attribute__((aligned(4))) = {
+    10, 10, 10, 10, 10, 10, 10, 10, 4, 2, 2, 10, 10, 10, 10, 10,
+    10, 10, 10, 10, 10, 4, 4, 4, 4, 4, 4, 4, 10, 10, 10, 10,
+    10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0,
+};
 
-const char gTaskNameBosDsdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdMap"), aligned(1))) = "task_bos_dsd_map";
+const s8 gUnk_0961A82E[10] = { -1, 1, 1, 1, 1, -1, -1, -1, 0, 0 };
 
-const char gTaskNameBosDsdIta[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdIta"), aligned(1))) = "task_bos_dsd_ita";
+const char gTaskNameBosDsdMain[] = "task_bos_dsd_main";
 
-const char gTaskNameBosDsdRock[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdRock"), aligned(1))) = "task_bos_dsd_rock";
+const char gTaskNameBosDsdMap[] = "task_bos_dsd_map";
 
-const char gTaskNameBosDsdCircle[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdCircle"), aligned(1))) = "task_bos_dsd_circle";
+const s16 gUnk_0961A860[6] __attribute__((aligned(4))) = { 3, 2, 1, 1, 0, 0 };
 
-const char gTaskNameBosDsdEnergy1[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy1"), aligned(1))) = "task_bos_dsd_energy1";
+const char gTaskNameBosDsdIta[] = "task_bos_dsd_ita";
 
-const char gTaskNameBosDsdEnergy2[] __attribute__((section(".rodata_registration_name_gTaskDescBosDsdEnergy2"), aligned(1))) = "task_bos_dsd_energy2";
+const char gTaskNameBosDsdRock[] = "task_bos_dsd_rock";
 
-const char gTaskName_09EF2A5C[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A5C"), aligned(1))) = "task_bos_jf_rock";
+const s8 gUnk_0961A894[10] __attribute__((aligned(4))) = { 6, 12, 10, 9, 7, 8, 9, 10, 0, 0 };
+
+const s16 gUnk_0961A89E[9] = { -97, -98, -98, -94, -92, -88, -82, 0, 0 };
+
+const s16 gUnk_0961A8B0[10] = { 2, 2, 2, 0, 0, 0, -1, 0, 0, 0 };
+
+const char gTaskNameBosDsdCircle[] = "task_bos_dsd_circle";
+
+const char gTaskNameBosDsdEnergy1[] = "task_bos_dsd_energy1";
+
+const char gTaskNameBosDsdEnergy2[] = "task_bos_dsd_energy2";
 
 TaskDesc gUnk_09EF2A5C = {
     gTaskName_09EF2A5C,
@@ -5187,8 +5235,6 @@ TaskDesc gUnk_09EF2A5C = {
     (void (*)(void*))task_bos_jf_rock_3,
     0x198,
 };
-
-const char gTaskName_09EF2A74[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A74"), aligned(1))) = "task_bos_jf_borderline";
 
 TaskDesc gUnk_09EF2A74 = {
     gTaskName_09EF2A74,

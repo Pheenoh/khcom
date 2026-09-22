@@ -1,4 +1,5 @@
 #include "registration_data.h"
+#include "battle_actor_types.h"
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
@@ -401,14 +402,14 @@ typedef struct JfBorderlineWork {
 typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
 
 extern u8 gUnk_096FB744[];
-extern void* gUnk_0961A7B0[];
-extern s16 gUnk_0961A89E[];
-extern s16 gUnk_0961A8B0[];
+extern const EmyKind gUnk_0961A7B0;
+extern const s16 gUnk_0961A89E[9];
+extern const s16 gUnk_0961A8B0[10];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB484[];
-extern s16 gUnk_0961A7D0[];
-extern s8 gUnk_0961A82E[];
+extern const s16 gUnk_0961A7D0[47];
+extern const s8 gUnk_0961A82E[10];
 extern u32 gFrameCounter;
 
 extern u8 gUnk_09665C04[];
@@ -421,7 +422,7 @@ extern u8 gUnk_096869A4[];
 extern u8 gUnk_096FB864[];
 extern u8 gUnk_096FB884[];
 extern u8 gUnk_08B22CE4[];
-extern s8 gUnk_0961A894[];
+extern const s8 gUnk_0961A894[10];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];
 extern u8 gUnk_096FB5A4[];
@@ -437,10 +438,10 @@ extern u8 gUnk_096C6464[];
 extern u8 gUnk_0961A668[];
 
 extern u8 gUnk_08F69BC4[];
-extern s16 gUnk_0961A860[];
-extern s16 gUnk_0961A6A8[];
-extern s8 gUnk_0961A70A[];
-extern u16 gUnk_0961A710[][3];
+extern const s16 gUnk_0961A860[6];
+extern const s16 gUnk_0961A6A8[49];
+extern const s8 gUnk_0961A70A[6];
+extern const u16 gUnk_0961A710[16][3];
 
 
 void func_080C1A48(JfBorderlineWork* work);
