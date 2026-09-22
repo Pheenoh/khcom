@@ -724,27 +724,6 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data",
-          "address": "0x8f9e804",
-          "size": 88,
-          "sha256": "a4320ffb8af9f90f8c453715dbd7ccd052a0d19e2e77f84db206e02484938e82",
-          "objects": [
-            {
-              "name": "gUnk_08F9E804",
-              "offset": 0,
-              "size": 88,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
           "section": ".data_event_chara_tracks_08FA007C",
           "address": "0x8fa007c",
           "size": 40,
@@ -4105,27 +4084,6 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_0902FBF0",
-          "address": "0x902fbf0",
-          "size": 16,
-          "sha256": "c8779a2477be09ea8ff33852139ae18fe7376d8e55755472f281aa184fbd5a79",
-          "objects": [
-            {
-              "name": "gUnk_0902FBF0",
-              "offset": 0,
-              "size": 16,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
           "section": ".data_event_chara_tracks_0902FCB0",
           "address": "0x902fcb0",
           "size": 8,
@@ -4853,27 +4811,6 @@
               "name": "gUnk_08F9CCD8",
               "offset": 0,
               "size": 72,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
-          "section": ".data",
-          "address": "0x8f8d0c4",
-          "size": 88,
-          "sha256": "23bf6fc95681f6f36159366278dd1e4107451dcbed440ae83de0f5229384060f",
-          "objects": [
-            {
-              "name": "gUnk_08F9E804",
-              "offset": 0,
-              "size": 88,
               "consumer": [
                 "event_seq_1",
                 "j < EventSequenceDef.unk_00",
@@ -8246,27 +8183,6 @@
         },
         {
           "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_0902FBF0",
-          "address": "0x9002eb4",
-          "size": 16,
-          "sha256": "9e7777432dea67416113e9a3caffa747767b5b857ca480b881476c55a83e9041",
-          "objects": [
-            {
-              "name": "gUnk_0902FBF0",
-              "offset": 0,
-              "size": 16,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
           "section": ".data_event_chara_tracks_0902FCB0",
           "address": "0x9002f74",
           "size": 8,
@@ -8994,27 +8910,6 @@
               "name": "gUnk_08F9CCD8",
               "offset": 0,
               "size": 72,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
-          "section": ".data",
-          "address": "0x906e8a8",
-          "size": 88,
-          "sha256": "872226910d2ef7f29d54fa3290c416ea44d94a06795241d26a2a06705cd8432e",
-          "objects": [
-            {
-              "name": "gUnk_08F9E804",
-              "offset": 0,
-              "size": 88,
               "consumer": [
                 "event_seq_1",
                 "j < EventSequenceDef.unk_00",
@@ -12333,27 +12228,6 @@
               "name": "gUnk_0902F2A0",
               "offset": 0,
               "size": 40,
-              "consumer": [
-                "event_seq_1",
-                "j < EventSequenceDef.unk_00",
-                "event_chara_0",
-                "func_08074E40",
-                "func_08074E88"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_chara_data.c",
-          "section": ".data_event_chara_tracks_0902FBF0",
-          "address": "0x90c8f68",
-          "size": 16,
-          "sha256": "e69384c128d8428cc5d9cac78a0a74e7c01ac45663706f8701906ad9d589d060",
-          "objects": [
-            {
-              "name": "gUnk_0902FBF0",
-              "offset": 0,
-              "size": 16,
               "consumer": [
                 "event_seq_1",
                 "j < EventSequenceDef.unk_00",

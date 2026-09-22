@@ -37,7 +37,6 @@ extern EventCharaTrack gUnk_08F9B2E8[7];
 extern EventCharaTrack gUnk_08F9B444[2];
 extern EventCharaTrack gUnk_08F9C384[6];
 extern EventCharaTrack gUnk_08F9CCD8[9];
-extern EventCharaTrack gUnk_08F9E804[11];
 extern EventCharaTrack gUnk_08FA007C[5];
 extern const EventCharaTrack gUnk_08FA165C[12];
 extern EventCharaTrack gUnk_08FA31B0[7];
@@ -202,7 +201,6 @@ extern EventCharaTrack gUnk_0902DB08[3];
 extern EventCharaTrack gUnk_0902DE6C[1];
 extern EventCharaTrack gUnk_0902E890[3];
 extern EventCharaTrack gUnk_0902F2A0[5];
-extern EventCharaTrack gUnk_0902FBF0[2];
 extern EventCharaTrack gUnk_0902FCB0[1];
 
 #endif

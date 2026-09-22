@@ -724,27 +724,6 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_08F9E85C",
-          "address": "0x8f9e85c",
-          "size": 48,
-          "sha256": "4d9adc46169a62c341353ba6951ce3160cf90e0f64ba9eadc25c666308228e2b",
-          "objects": [
-            {
-              "name": "gUnk_08F9E85C",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
           "section": ".data_event_sequence_08FA00A4",
           "address": "0x8fa00a4",
           "size": 48,
@@ -4105,27 +4084,6 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data",
-          "address": "0x902fc00",
-          "size": 48,
-          "sha256": "3d19a8034cbd0040a926db0c6f63037a6bbc2a9441e504b332ca7dc29991d933",
-          "objects": [
-            {
-              "name": "gUnk_0902FC00",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
           "section": ".rodata",
           "address": "0x902fcb8",
           "size": 48,
@@ -4851,27 +4809,6 @@
           "objects": [
             {
               "name": "gUnk_08F9CD20",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_08F9E85C",
-          "address": "0x8f8d11c",
-          "size": 48,
-          "sha256": "78c7c0e24863542a82e45f2f064580dfc992452996634dbcfa7e590d6ee2c72b",
-          "objects": [
-            {
-              "name": "gUnk_08F9E85C",
               "offset": 0,
               "size": 48,
               "consumer": [
@@ -8246,27 +8183,6 @@
         },
         {
           "unit": "event_sequence_data.c",
-          "section": ".data",
-          "address": "0x9002ec4",
-          "size": 48,
-          "sha256": "0f132987685f8f22543f1786880535f04dcd9b5572b71b3cb6cf79cbd2b51aaa",
-          "objects": [
-            {
-              "name": "gUnk_0902FC00",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
           "section": ".rodata",
           "address": "0x9002f7c",
           "size": 48,
@@ -8992,27 +8908,6 @@
           "objects": [
             {
               "name": "gUnk_08F9CD20",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
-          "section": ".data_event_sequence_08F9E85C",
-          "address": "0x906e900",
-          "size": 48,
-          "sha256": "6852803092961b6935b280c542cc1aa5051ef38a6b03410019aae26aa9468e10",
-          "objects": [
-            {
-              "name": "gUnk_08F9E85C",
               "offset": 0,
               "size": 48,
               "consumer": [
@@ -12331,27 +12226,6 @@
           "objects": [
             {
               "name": "gUnk_0902F2C8",
-              "offset": 0,
-              "size": 48,
-              "consumer": [
-                "event_seq_1",
-                "view_0",
-                "func_08072D98",
-                "EV_SOUND_0",
-                "EV_BG_EFFECT_0"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "event_sequence_data.c",
-          "section": ".data",
-          "address": "0x90c8f78",
-          "size": 48,
-          "sha256": "80d7975aface699401de2a68d73e0ba969ccfe0aa12d7555870870bf907c6c8c",
-          "objects": [
-            {
-              "name": "gUnk_0902FC00",
               "offset": 0,
               "size": 48,
               "consumer": [

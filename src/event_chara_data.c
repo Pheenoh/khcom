@@ -283,20 +283,6 @@ EventCharaTrack gUnk_08F9CCD8[9] __attribute__((section(".data_event_chara_track
     { gUnk_08F9CC90, 40, { 0, 0, 0 } },
 };
 
-EventCharaTrack gUnk_08F9E804[11] = {
-    { gUnk_08F9D790, 59, { 0, 0, 0 } },
-    { gUnk_08F9D9D0, 12, { 0, 0, 0 } },
-    { gUnk_08F9DF94, 2, { 0, 0, 0 } },
-    { gUnk_08F9DCA0, 0, { 0, 0, 0 } },
-    { gUnk_08F9E21C, 1, { 0, 0, 0 } },
-    { gUnk_08F9E4A4, 40, { 0, 0, 0 } },
-    { gUnk_08F9E57C, 40, { 0, 0, 0 } },
-    { gUnk_08F9E654, 40, { 0, 0, 0 } },
-    { gUnk_08F9E72C, 40, { 0, 0, 0 } },
-    { gUnk_08F9D6B8, 68, { 0, 0, 0 } },
-    { gUnk_08F9D724, 68, { 0, 0, 0 } },
-};
-
 EventCharaTrack gUnk_08FA007C[5] __attribute__((section(".data_event_chara_tracks_08FA007C"))) = {
     { gUnk_08F9FE84, 59, { 0, 0, 0 } },
     { gUnk_08F9FC20, 12, { 0, 0, 0 } },
@@ -1422,11 +1408,6 @@ EventCharaTrack gUnk_0902F2A0[5] __attribute__((section(".data_event_chara_track
     { gUnk_0902F060, 87, { 0, 0, 0 } },
     { gUnk_0902F138, 69, { 0, 0, 0 } },
     { gUnk_0902F1EC, 92, { 0, 0, 0 } },
-};
-
-EventCharaTrack gUnk_0902FBF0[2] __attribute__((section(".data_event_chara_tracks_0902FBF0"))) = {
-    { gUnk_0902F9F8, 44, { 0, 0, 0 } },
-    { gUnk_0902FB60, 69, { 0, 0, 0 } },
 };
 
 EventCharaTrack gUnk_0902FCB0[1] __attribute__((section(".data_event_chara_tracks_0902FCB0"))) = {

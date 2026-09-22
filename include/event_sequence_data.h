@@ -2,6 +2,8 @@
 #define GUARD_EVENT_SEQUENCE_DATA_H
 
 #include "msg_types.h"
+#include "event_108_data.h"
+#include "event_195_data.h"
 
 extern EventSequenceDef gUnk_08F80ACC;
 extern EventSequenceDef gUnk_08F82050;
@@ -37,7 +39,6 @@ extern EventSequenceDef gUnk_08F9B320;
 extern EventSequenceDef gUnk_08F9B454;
 extern EventSequenceDef gUnk_08F9C3B4;
 extern EventSequenceDef gUnk_08F9CD20;
-extern EventSequenceDef gUnk_08F9E85C;
 extern EventSequenceDef gUnk_08FA00A4;
 extern EventSequenceDef gUnk_08FA16BC;
 extern EventSequenceDef gUnk_08FA31E8;
@@ -202,7 +203,6 @@ extern EventSequenceDef gUnk_0902DB20;
 extern EventSequenceDef gUnk_0902DE74;
 extern EventSequenceDef gUnk_0902E8A8;
 extern EventSequenceDef gUnk_0902F2C8;
-extern EventSequenceDef gUnk_0902FC00;
 extern const EventSequenceDef gUnk_0902FCB8;
 
 #endif
