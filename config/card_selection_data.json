@@ -7,88 +7,13 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE4BA0",
-          "address": "0x90359bc",
-          "size": 12,
-          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
-          "objects": [
-            {
-              "name": "gUnk_090359BC",
-              "offset": 0,
-              "size": 12,
-              "consumer": [
-                "WORLDSELECT_0",
-                "unique native Mode name"
-              ]
-            }
-          ]
-        }
-      ]
+      "placements": []
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE4BA0",
-          "address": "0x9008e60",
-          "size": 12,
-          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
-          "objects": [
-            {
-              "name": "gUnk_090359BC",
-              "offset": 0,
-              "size": 12,
-              "consumer": [
-                "WORLDSELECT_0",
-                "unique native Mode name"
-              ]
-            }
-          ]
-        }
-      ]
+      "placements": []
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "card_selection_data.c",
-          "section": ".rodata",
-          "address": "0x90ced64",
-          "size": 10,
-          "sha256": "3ac178d10dafd3445d72d0fd1f36633bd75d52a5adfb7257f1a6154f80cc7e42",
-          "objects": [
-            {
-              "name": "gUnkEu_090CED64",
-              "offset": 0,
-              "size": 10,
-              "consumer": [
-                "MapSelect_0",
-                "gLanguage domain 0..4"
-              ]
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gUnk_09EE4BA0",
-          "address": "0x90ced58",
-          "size": 12,
-          "sha256": "78418c2095cea859709b6e2a668db69a56d5dab4ef8ea01d7c7fa3aff8fbe518",
-          "objects": [
-            {
-              "name": "gUnk_090359BC",
-              "offset": 0,
-              "size": 12,
-              "consumer": [
-                "WORLDSELECT_0",
-                "unique native Mode name"
-              ]
-            }
-          ]
-        }
-      ]
+      "placements": []
     }
   }
 }
