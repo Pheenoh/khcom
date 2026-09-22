@@ -34,6 +34,7 @@ The project can target the following versions:
 - git
 - ninja
 - python3
+- PyYAML (`python3 -m pip install pyyaml`)
 - `binutils-arm-none-eabi`
 - [agbcc](https://github.com/pret/agbcc):
 

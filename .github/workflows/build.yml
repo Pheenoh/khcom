@@ -36,6 +36,7 @@ jobs:
           cp -a /agbcc/tools/agbcc tools/
           python3 tools/setup_legacy_toolchain.py
           apt-get update -qq && apt-get install -y -qq --no-install-recommends libpng-dev pkg-config
+          python3 -m pip install --break-system-packages pyyaml || python3 -m pip install pyyaml
           sh tools/fetch_gbagfx.sh
           cp -a /orig/. roms/
           sha1sum -c --status <<'SUMS'
