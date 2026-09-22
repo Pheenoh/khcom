@@ -2,21 +2,21 @@
   "version": 1,
   "provenance": {
     "native_animation_resource_ef71c_rodata": "Contiguous pointer cluster formerly .data_09EEF71C is const tables in existing animation_resource_data.c; ordinary .rodata replaces the forced section (TU already has .data).",
-    "native_animation_resource_data_f0054": "Split contiguous forced section .data_09EF0054 into TU animation_resource_data_f0054.c with ordinary .data ownership; source order matches ROM.",
-    "native_animation_resource_data_edecfc": "Split contiguous forced section .data_09EDECFC into TU animation_resource_data_edecfc.c with ordinary .data ownership; source order matches ROM.",
-    "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_data_20b4.c with ordinary .data ownership; source order matches ROM.",
-    "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_data_f0930.c for ordinary .data ownership.",
-    "native_animation_resource_f5298": "The gUnk_09EF5298 animation-resource pointer cluster is a contiguous 1420-byte initialized-data run with matching source order; split into TU animation_resource_data_f5298.c for ordinary .data ownership.",
+    "native_animation_resource_data_f0054": "Split contiguous forced section .data_09EF0054 into TU animation_resource_evt_mid_data.c with ordinary .data ownership; source order matches ROM.",
+    "native_animation_resource_data_edecfc": "Split contiguous forced section .data_09EDECFC into TU animation_resource_fld_data.c with ordinary .data ownership; source order matches ROM.",
+    "native_animation_resource_data_20b4": "Split contiguous forced section .data_09EE20B4 into TU animation_resource_hum_org_data.c with ordinary .data ownership; source order matches ROM.",
+    "native_animation_resource_f0930": "The gUnk_09EF0930 animation-resource pointer cluster is a contiguous 1412-byte initialized-data run with matching source order; split into TU animation_resource_evt_tail_data.c for ordinary .data ownership.",
+    "native_animation_resource_f5298": "The gUnk_09EF5298 animation-resource pointer cluster is a contiguous 1420-byte initialized-data run with matching source order; split into TU animation_resource_pooh_data.c for ordinary .data ownership.",
     "animation_resources": "ObjDef first and second pointer fields establish corresponding table bases across regions; animCount bounds the AnimHeader pointer array. Canonical AnimHeader.frameCount and AnimFrame.gfxIndex establish max gfx index plus one, which must exactly meet the independently referenced animation-table base before a full gfx table is owned. All complete animation payload bytes agree across regions. Twenty gfx tables with unresolved trailing entries stay incbin.",
     "resource_followup": "Independent direct consumers and scalar selector bounds prove each array; corresponding complete animation payloads are identical. No unused suffix is incorporated. The ETC pair exists only in US/JP.",
     "localized_sroll_resources": "sroll.c task_sroll_c_char_0 independently passes these table bases to AnimInit in each region and loops animation IDs0..4. All five real AnimHeader prefixes and frame sequences are decoded per region; maximum gfxIndex is65 in US/EU and62 in JP. Those exact extents independently reach the animation-table base. JP localized frames differ and its gfx pointers use JP-only names, not assumed US slot correspondence.",
     "resource_unused_suffixes": "Nineteen ObjDef-referenced gfx tables have a proven used prefix bounded by max AnimFrame.gfxIndex+1 and a separate trailing group of words before the independently referenced animation-table base. The used prefix is a real void* array; each trailing word is a separate neutral void* scalar without claiming it is accessed as an array element. Every pointer target independently decodes as Sprite/OAM metadata, with all minimum consumed payload bytes identical across US/JP/EU.",
     "direct_animation_resources": "Actual map and world-logo consumers independently bound each array. Canonical animation and consumed gfx payloads match exactly in all regions. Unused suffix pointers are separate neutral scalar objects.",
     "native_efb840_cluster": "gUnk_09EFB840 and gUnk_09EFB9CC form a contiguous 680-byte initialized-data run with matching source order in animation_resource_data.c, so ordinary .data replaces the two forced section attributes.",
-    "native_animation_resource_c670": "The gUnk_09EEC670 animation-resource pointer cluster is a contiguous 4472-byte initialized-data run with matching source order; split into TU animation_resource_data_c670.c so ordinary .data can own it without colliding with other native .data already in animation_resource_data.c.",
-    "native_animation_resource_0114": "The gUnk_09EE0114 animation-resource AnimHeader cluster is a contiguous 4044-byte initialized-data run with matching source order; split into TU animation_resource_data_0114.c so ordinary .data can own it without colliding with other native .data clusters already extracted from animation_resource_data.c.",
-    "native_animation_resource_e588": "The gUnk_09EEE588 animation-resource pointer cluster is a contiguous 2224-byte initialized-data run with matching source order; split into TU animation_resource_data_e588.c for ordinary .data ownership.",
-    "native_animation_resource_17c0": "The gUnk_09EE17C0 animation-resource pointer cluster is a contiguous 2000-byte initialized-data run with matching source order; split into TU animation_resource_data_17c0.c for ordinary .data ownership."
+    "native_animation_resource_c670": "The gUnk_09EEC670 animation-resource pointer cluster is a contiguous 4472-byte initialized-data run with matching source order; split into TU animation_resource_msg_portrait_data.c so ordinary .data can own it without colliding with other native .data already in animation_resource_data.c.",
+    "native_animation_resource_0114": "The gUnk_09EE0114 animation-resource AnimHeader cluster is a contiguous 4044-byte initialized-data run with matching source order; split into TU animation_resource_emy_data.c so ordinary .data can own it without colliding with other native .data clusters already extracted from animation_resource_data.c.",
+    "native_animation_resource_e588": "The gUnk_09EEE588 animation-resource pointer cluster is a contiguous 2224-byte initialized-data run with matching source order; split into TU animation_resource_evt_data.c for ordinary .data ownership.",
+    "native_animation_resource_17c0": "The gUnk_09EE17C0 animation-resource pointer cluster is a contiguous 2000-byte initialized-data run with matching source order; split into TU animation_resource_hum_data.c for ordinary .data ownership."
   },
   "regions": {
     "us": {
@@ -492,7 +492,7 @@
           "sha256": "8b2cd9a6d4d1d3e6c4f0f9f6d31ae4dd9c8536f962f70bb8b49e2a96f5c08426"
         },
         {
-          "unit": "animation_resource_data_edecfc.c",
+          "unit": "animation_resource_fld_data.c",
           "section": ".data",
           "address": "0x9edecfc",
           "size": 1220,
@@ -1697,7 +1697,7 @@
           "sha256": "d974ccb3a7dd944c7de2a96628660c6e02ae7efd142775261fd06de90f3c0c5f"
         },
         {
-          "unit": "animation_resource_data_0114.c",
+          "unit": "animation_resource_emy_data.c",
           "section": ".data",
           "address": "0x9ee0114",
           "size": 4044,
@@ -2962,7 +2962,7 @@
           "sha256": "44dbc2a9a7090389b2112bbb5992c8684365c6e310edbc54b24c595d9bf596ca"
         },
         {
-          "unit": "animation_resource_data_17c0.c",
+          "unit": "animation_resource_hum_data.c",
           "section": ".data",
           "address": "0x9ee17c0",
           "size": 2000,
@@ -3540,7 +3540,7 @@
           "sha256": "ea89eb0e7b4ac2d1b2f966457b08404f458fccf09a67eddca10131191a64731c"
         },
         {
-          "unit": "animation_resource_data_20b4.c",
+          "unit": "animation_resource_hum_org_data.c",
           "section": ".data",
           "address": "0x9ee20b4",
           "size": 1308,
@@ -5360,7 +5360,7 @@
           "sha256": "556a9cf7c4df344de2ed2be98601888ee717f2d651f5693f33205eff50b18ef8"
         },
         {
-          "unit": "animation_resource_data_c670.c",
+          "unit": "animation_resource_msg_portrait_data.c",
           "section": ".data",
           "address": "0x9eec670",
           "size": 4472,
@@ -7416,7 +7416,7 @@
           "sha256": "209fa2e05513b9adb467bfe0ba5169277a70e972f322d0e60da48b54cfdaf603"
         },
         {
-          "unit": "animation_resource_data_e588.c",
+          "unit": "animation_resource_evt_data.c",
           "section": ".data",
           "address": "0x9eee588",
           "size": 2224,
@@ -9748,7 +9748,7 @@
           "sha256": "7e164672a95dcbf433ac2a18c0e2a0ff655e82debade6b4e90be102653d8443b"
         },
         {
-          "unit": "animation_resource_data_f0054.c",
+          "unit": "animation_resource_evt_mid_data.c",
           "section": ".data",
           "address": "0x9ef0054",
           "size": 1192,
@@ -10634,7 +10634,7 @@
           "sha256": "7e26bc3d94da6acc137f1d2cfa52226aa96b7f7a80c73718a0a5bb2b69117fbc"
         },
         {
-          "unit": "animation_resource_data_f0930.c",
+          "unit": "animation_resource_evt_tail_data.c",
           "section": ".data",
           "address": "0x9ef0930",
           "size": 1412,
@@ -11270,7 +11270,7 @@
           "sha256": "726c2cb4af6b45be8beb147ca1298bb4ba2d226b8036895e05657c658b0eba78"
         },
         {
-          "unit": "animation_resource_data_f5298.c",
+          "unit": "animation_resource_pooh_data.c",
           "section": ".data",
           "address": "0x9ef5298",
           "size": 1420,
@@ -13579,7 +13579,7 @@
           "sha256": "ff886f9909b67f6acbf06974fad66ebd1abd9b0676f8ecd33b8bf044ea062930"
         },
         {
-          "unit": "animation_resource_data_edecfc.c",
+          "unit": "animation_resource_fld_data.c",
           "section": ".data",
           "address": "0x9eb6778",
           "size": 1220,
@@ -14784,7 +14784,7 @@
           "sha256": "825625f84c79ff40c4a12792988c10a3aba2c0fbecc1ec41ca325380c09bdd76"
         },
         {
-          "unit": "animation_resource_data_0114.c",
+          "unit": "animation_resource_emy_data.c",
           "section": ".data",
           "address": "0x9eb7b90",
           "size": 4044,
@@ -16049,7 +16049,7 @@
           "sha256": "d31b0e85ad9097b3798194b79ca854167a8c59620aad6b8723088cd0e07e0638"
         },
         {
-          "unit": "animation_resource_data_17c0.c",
+          "unit": "animation_resource_hum_data.c",
           "section": ".data",
           "address": "0x9eb923c",
           "size": 2000,
@@ -16627,7 +16627,7 @@
           "sha256": "0688c31d5d121e263206327314d8ccd457f9a3f5f77c642bc878a8c856035e56"
         },
         {
-          "unit": "animation_resource_data_20b4.c",
+          "unit": "animation_resource_hum_org_data.c",
           "section": ".data",
           "address": "0x9eb9b30",
           "size": 1308,
@@ -18447,7 +18447,7 @@
           "sha256": "b3b264a9b7424af932ee8eb3074edcb60a0b163a6d28f5fa97808a3d4d044c73"
         },
         {
-          "unit": "animation_resource_data_c670.c",
+          "unit": "animation_resource_msg_portrait_data.c",
           "section": ".data",
           "address": "0x9ec3a5c",
           "size": 4472,
@@ -20503,7 +20503,7 @@
           "sha256": "8a3269d72d6eb887a917ca40e9e2c6a29d20ed0124c8814138a170f6255f57f1"
         },
         {
-          "unit": "animation_resource_data_e588.c",
+          "unit": "animation_resource_evt_data.c",
           "section": ".data",
           "address": "0x9ec5974",
           "size": 2224,
@@ -22835,7 +22835,7 @@
           "sha256": "2dced06a271bef1e39894394af60fc18fde051586526211322df615c662e9310"
         },
         {
-          "unit": "animation_resource_data_f0054.c",
+          "unit": "animation_resource_evt_mid_data.c",
           "section": ".data",
           "address": "0x9ec7440",
           "size": 1192,
@@ -23721,7 +23721,7 @@
           "sha256": "85cf506a2aa5f7f601cc9caa63781d19828f56a2591a4b19b9c7c3189a89a3c1"
         },
         {
-          "unit": "animation_resource_data_f0930.c",
+          "unit": "animation_resource_evt_tail_data.c",
           "section": ".data",
           "address": "0x9ec7d1c",
           "size": 1412,
@@ -24357,7 +24357,7 @@
           "sha256": "262dff930b3ba950d7f684b5d573ef0f929cb3763fd91e35edf751d5ab7377c0"
         },
         {
-          "unit": "animation_resource_data_f5298.c",
+          "unit": "animation_resource_pooh_data.c",
           "section": ".data",
           "address": "0x9ecc684",
           "size": 1420,
@@ -26666,7 +26666,7 @@
           "sha256": "182f5cadf56bb2c887529cc4bc3a1937b35e5b82a1c7b4ea3a9003fe38cf5015"
         },
         {
-          "unit": "animation_resource_data_edecfc.c",
+          "unit": "animation_resource_fld_data.c",
           "section": ".data",
           "address": "0x9f59954",
           "size": 1220,
@@ -27871,7 +27871,7 @@
           "sha256": "6c48f96f2648db07bab34bdb2f787cf5738d0188c804018d98205467951e5c8a"
         },
         {
-          "unit": "animation_resource_data_0114.c",
+          "unit": "animation_resource_emy_data.c",
           "section": ".data",
           "address": "0x9f5ad6c",
           "size": 4044,
@@ -29136,7 +29136,7 @@
           "sha256": "ece2a1e844f5b90f4b95531d40446ff42f8c3d751cd5b24291d3d1c9a945935f"
         },
         {
-          "unit": "animation_resource_data_17c0.c",
+          "unit": "animation_resource_hum_data.c",
           "section": ".data",
           "address": "0x9f5c5cc",
           "size": 2000,
@@ -29714,7 +29714,7 @@
           "sha256": "c188b9a95a5b6e393903a019561309d69806206a0b0d062ea2bbc7d5774014d7"
         },
         {
-          "unit": "animation_resource_data_20b4.c",
+          "unit": "animation_resource_hum_org_data.c",
           "section": ".data",
           "address": "0x9f5cec0",
           "size": 1308,
@@ -31534,7 +31534,7 @@
           "sha256": "6f2335b13e1ffcf7f98d4865e738c009c2709d9d53fe1e73602f0a39c659f437"
         },
         {
-          "unit": "animation_resource_data_c670.c",
+          "unit": "animation_resource_msg_portrait_data.c",
           "section": ".data",
           "address": "0x9f77854",
           "size": 4472,
@@ -33590,7 +33590,7 @@
           "sha256": "b648f12ee05d56f207f428c87fb941f716684545877550f12affb762775114d4"
         },
         {
-          "unit": "animation_resource_data_e588.c",
+          "unit": "animation_resource_evt_data.c",
           "section": ".data",
           "address": "0x9f7976c",
           "size": 2224,
@@ -35922,7 +35922,7 @@
           "sha256": "eb8fd3011cbb5bbb60197f518dbe1a77edf464742f7af66c1b29902ef9587002"
         },
         {
-          "unit": "animation_resource_data_f0054.c",
+          "unit": "animation_resource_evt_mid_data.c",
           "section": ".data",
           "address": "0x9f7b238",
           "size": 1192,
@@ -36808,7 +36808,7 @@
           "sha256": "e5fc09d30e2f34a861330d260518d6c1afeb154274266d37a802f6bb45ad231e"
         },
         {
-          "unit": "animation_resource_data_f0930.c",
+          "unit": "animation_resource_evt_tail_data.c",
           "section": ".data",
           "address": "0x9f7bb14",
           "size": 1412,
@@ -37444,7 +37444,7 @@
           "sha256": "8336316e72edcf484732374204693ee715b7ed10b250f419e8c3b86c87326bb5"
         },
         {
-          "unit": "animation_resource_data_f5298.c",
+          "unit": "animation_resource_pooh_data.c",
           "section": ".data",
           "address": "0x9f80690",
           "size": 1420,
