@@ -35,6 +35,7 @@ jobs:
           mkdir -p tools roms
           cp -a /agbcc/tools/agbcc tools/
           python3 tools/setup_legacy_toolchain.py
+          apt-get update -qq && apt-get install -y -qq --no-install-recommends libpng-dev pkg-config
           sh tools/fetch_gbagfx.sh
           cp -a /orig/. roms/
           sha1sum -c --status <<'SUMS'
