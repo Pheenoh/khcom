@@ -8,12 +8,301 @@
 #include "monsgage.h"
 #include "bos5.h"
 #include "room_resource_assets.h"
+#include "mode_battle_data.h"
+#include "worldinspect_assets.h"
 
-#ifdef VERSION_EU
-extern u16 gUnkEu_099991E0[];
-#endif
+const char gTaskNameBosGa[] = "task_bos_ga";
 
-const char gTaskNameBosGa[] __attribute__((section(".rodata_registration_name_gTaskDescBosGa"), aligned(1))) = "task_bos_ga";
+const EmyKind gUnk_099920D8 = { 37, 1000, 16, 16, 0, 60, 1 };
+
+const MdMapData gUnk_099920E8 = {
+    gUnk_099AC97C, 32768, { 0, 0 }, gUnk_09A3C8BC, 192, { 0, 0 }, { gUnk_09A208DC, gUnk_09A210DC, gUnk_09A218DC, gUnk_09A220DC }
+};
+
+const GaEntry gUnk_09992108[41] = {
+    {
+        32, 0, gUnk_099B497C, 16864, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A228DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D559C, 1952, gUnk_099A7E04 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -100, 0, -45, 0 } },
+    },
+    {
+        32, 0, gUnk_099B497C, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A228DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D559C, 1952, gUnk_099A7E04 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -100, 0, -45, 0 } },
+    },
+    {
+        32, 0, gUnk_099B8B5C, 3872, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A230DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D5D3C, 2176, gUnk_099A7E54 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D34 } },
+        { { -101, 0, -34, 0 } },
+    },
+    {
+        32, 0, gUnk_099B9A7C, 4064, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A238DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D65BC, 2048, gUnk_099A7EA0 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -103, 0, -28, 0 } },
+    },
+    {
+        0, 65521, gUnk_099C2E3C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A280DC },
+        { { 0xFFF8, 112, 0xFF90, 0, gUnk_099DED9C, 2368, gUnk_099A8400 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -131, 0, -108, 0 } },
+    },
+    {
+        3, 65524, gUnk_099C3F9C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A288DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DF6DC, 2400, gUnk_099A8468 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D34 } },
+        { { -142, 0, -105, 0 } },
+    },
+    {
+        4, 65529, gUnk_099C50FC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A290DC },
+        { { 0, 112, 0xFF8F, 0, gUnk_099E003C, 2432, gUnk_099A84C4 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -145, 0, -94, 0 } },
+    },
+    {
+        43, 65504, gUnk_099BAA5C, 3712, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A240DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D6DBC, 2368, gUnk_099A7EF8 }, { 11, 56, 0xFFE0, 0, gUnk_099D42FC, 4768, gUnk_099A7C98 } },
+        { { -67, 0, -126, 0 } },
+    },
+    {
+        43, 65528, gUnk_099BB8DC, 3712, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A248DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D76FC, 1952, gUnk_099A7F48 }, { 24, 56, 0xFFE2, 0, gUnk_099D42FC, 4768, gUnk_099A7D6E } },
+        { { -46, 0, -154, 0 } },
+    },
+    {
+        31, 0, gUnk_099BC75C, 4160, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A250DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D7E9C, 2112, gUnk_099A7FAC }, { 2, 56, 0xFFF2, 0, gUnk_099D42FC, 4768, gUnk_099A7DBE } },
+        { { -105, 0, -135, 0 } },
+    },
+    {
+        29, 65531, gUnk_099BD79C, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A258DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D86DC, 2080, gUnk_099A8004 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -123, 0, -42, 0 } },
+    },
+    {
+        25, 65527, gUnk_099BE91C, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A260DC },
+        { { 0, 112, 0xFF91, 0, gUnk_099D8EFC, 2368, gUnk_099A805C }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -123, 0, -30, 0 } },
+    },
+    {
+        22, 65519, gUnk_099BFA9C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A268DC },
+        { { 0xFFFF, 112, 0xFF90, 0, gUnk_099D983C, 2432, gUnk_099A80D0 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -129, 0, -36, 0 } },
+    },
+    {
+        36, 65518, gUnk_099C0BFC, 4384, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A270DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DA1BC, 2208, gUnk_099A8134 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -115, 0, -31, 0 } },
+    },
+    {
+        35, 65533, gUnk_099C1D1C, 4384, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A278DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DAA5C, 2016, gUnk_099A8190 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -98, 0, -49, 0 } },
+    },
+    {
+        35, 65530, gUnk_099C2E3C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A280DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DB23C, 2336, gUnk_099A81E0 }, { 20, 56, 0xFFCF, 0, gUnk_099D42FC, 4768, gUnk_099A7D6E } },
+        { { -94, 0, -100, 0 } },
+    },
+    {
+        45, 65535, gUnk_099C3F9C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A288DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DBB5C, 1920, gUnk_099A8218 }, { 19, 56, 0xFFED, 0, gUnk_099D42FC, 4768, gUnk_099A7D90 } },
+        { { -104, 0, -94, 0 } },
+    },
+    {
+        48, 6, gUnk_099C50FC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A290DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DC2DC, 1632, gUnk_099A8270 }, { 17, 56, 0xFFF3, 0, gUnk_099D42FC, 4768, gUnk_099A7DBE } },
+        { { -105, 0, -79, 0 } },
+    },
+    {
+        56, 11, gUnk_099C627C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A298DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DC93C, 1408, gUnk_099A82B0 }, { 23, 56, 0xFFF8, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -103, 0, -57, 0 } },
+    },
+    {
+        35, 65533, gUnk_099C73DC, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2A0DC },
+        { { 0, 112, 0xFF9A, 0, gUnk_099DCEBC, 2176, gUnk_099A82E4 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -98, 0, -78, 0 } },
+    },
+    {
+        36, 65535, gUnk_099C853C, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2A8DC },
+        { { 0, 112, 0xFF92, 0, gUnk_099DD73C, 1920, gUnk_099A8328 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D34 } },
+        { { -102, 0, -59, 0 } },
+    },
+    {
+        38, 0, gUnk_099C96BC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2B0DC },
+        { { 0, 112, 0xFF89, 0, gUnk_099DDEBC, 1824, gUnk_099A8368 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D34 } },
+        { { -102, 0, -52, 0 } },
+    },
+    {
+        37, 0, gUnk_099CA83C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2B8DC },
+        { { 0, 112, 0xFF8D, 0, gUnk_099DE5DC, 1984, gUnk_099A83B4 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -100, 0, -50, 0 } },
+    },
+    {
+        5, 5, gUnk_099B9A7C, 4064, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A238DC },
+        { { 0xFFFF, 112, 0xFF90, 0, gUnk_099E25DC, 2336, gUnk_099A865C }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -128, 0, -22, 0 } },
+    },
+    {
+        41, 65504, gUnk_099CDBDC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2D0DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D6DBC, 2368, gUnk_099A7EF8 }, { 13, 56, 0xFFDF, 0, gUnk_099D42FC, 4768, gUnk_099A7C98 } },
+        { { -108, 0, -88, 0 } },
+    },
+    {
+        46, 65499, gUnk_099BAA5C, 3712, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A240DC },
+        { { 11, 112, 0xFF85, 0, gUnk_099DCEBC, 2176, gUnk_099A82E4 }, { 29, 56, 0xFFBA, 0, gUnk_099D42FC, 4768, gUnk_099A7D6E } },
+        { { -62, 0, -126, 0 } },
+    },
+    {
+        60, 65491, gUnk_099CB99C, 4320, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2C0DC },
+        { { 21, 112, 0xFF70, 0, gUnk_099DD73C, 1920, gUnk_099A8328 }, { 40, 56, 0xFFC4, 0, gUnk_099D42FC, 4768, gUnk_099A7D90 } },
+        { { -3, 0, -168, 0 } },
+    },
+    {
+        36, 65527, gUnk_099BC75C, 4160, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A250DC },
+        { { 0, 112, 0xFF89, 0, gUnk_099DDEBC, 1824, gUnk_099A8368 }, { 17, 56, 0xFFF3, 0, gUnk_099D42FC, 4768, gUnk_099A7DBE } },
+        { { -103, 0, -142, 0 } },
+    },
+    {
+        1, 65530, gUnk_099C627C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A298DC },
+        { { 0, 112, 0xFF8F, 0, gUnk_099E003C, 2432, gUnk_099A84C4 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -158, 0, -75, 0 } },
+    },
+    {
+        36, 65518, gUnk_099C0BFC, 4384, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A270DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DA1BC, 2208, gUnk_099A8134 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -115, 0, -31, 0 } },
+    },
+    {
+        35, 65533, gUnk_099C1D1C, 4384, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A278DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DAA5C, 2016, gUnk_099A8190 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -98, 0, -49, 0 } },
+    },
+    {
+        0, 65525, gUnk_099CB99C, 4320, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2C0DC },
+        { { 0xFFF8, 112, 0xFF90, 0, gUnk_099DED9C, 2368, gUnk_099A8400 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -62, 0, -136, 0 } },
+    },
+    {
+        0, 65530, gUnk_099CCA7C, 4448, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2C8DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099DF6DC, 2400, gUnk_099A8468 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -98, 0, -135, 0 } },
+    },
+    {
+        0, 65535, gUnk_099CDBDC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2D0DC },
+        { { 0, 112, 0xFF8F, 0, gUnk_099E003C, 2432, gUnk_099A84C4 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -149, -20, -38, 0 } },
+    },
+    {
+        0, 65535, gUnk_099CED5C, 4256, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2D8DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E09BC, 2432, gUnk_099A8538 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -140, 17, -24, 0 } },
+    },
+    {
+        0, 65532, gUnk_099CFDFC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A2E0DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E133C, 2400, gUnk_099A8590 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -171, 0, -78, 0 } },
+    },
+    {
+        0, 14, gUnk_099D0F7C, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_09A2F0DC, gUnk_09A2E8DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E1C9C, 2368, gUnk_099A8600 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -190, -20, -33, 0 } },
+    },
+    {
+        3, 12, gUnk_099D20FC, 4480, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_09A300DC, gUnk_09A2F8DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E25DC, 2336, gUnk_099A865C }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -181, 17, -25, 0 } },
+    },
+    {
+        31, 2, gUnk_099D327C, 4224, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A308DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E2EFC, 1920, gUnk_099A86C0 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7D06 } },
+        { { -86, 0, -26, 0 } },
+    },
+    {
+        32, 65530, gUnk_099BAA5C, 3712, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A240DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099D559C, 1952, gUnk_099A7E04 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -79, 0, -98, 0 } },
+    },
+    {
+        32, 4, gUnk_099C0BFC, 4384, 0,
+        { gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_09A270DC },
+        { { 0, 112, 0xFF90, 0, gUnk_099E2EFC, 1920, gUnk_099A86C0 }, { 0, 56, 0xFFEE, 0, gUnk_099D42FC, 4768, gUnk_099A7CD2 } },
+        { { -119, 19, -27, 0 } },
+    },
+};
+
+const MdAnimFrame gUnk_09992D34[4] = { { 1, 18 }, { 2, 12 }, { 3, 24 }, { 2, 12 } };
+
+const MdAnimFrame gUnk_09992D44[4] = { { 4, 18 }, { 5, 12 }, { 6, 24 }, { 5, 12 } };
+
+const MdAnimFrame gUnk_09992D54[4] = { { 7, 12 }, { 8, 30 }, { 9, 3 }, { 10, 6 } };
+
+const MdAnimFrame gUnk_09992D64[2] = { { 11, 24 }, { 12, 6 } };
+
+const MdAnimFrame gUnk_09992D6C[2] = { { 13, 6 }, { 14, 6 } };
+
+const MdAnimFrame gUnk_09992D74[10] = { { 15, 6 }, { 16, 3 }, { 17, 3 }, { 18, 24 }, { 1, 6 }, { 19, 6 }, { 20, 3 }, { 21, 3 }, { 22, 24 }, { 1, 6 } };
+
+const MdAnimFrame gUnk_09992D9C[8] = { { 23, 6 }, { 24, 6 }, { 25, 6 }, { 26, 30 }, { 27, 3 }, { 28, 6 }, { 29, 6 }, { 30, 6 } };
+
+const MdAnimFrame gUnk_09992DBC[6] = { { 39, 3 }, { 31, 24 }, { 32, 3 }, { 33, 3 }, { 34, 24 }, { 40, 3 } };
+
+const MdAnimFrame gUnk_09992DD4[8] = { { 39, 3 }, { 31, 24 }, { 32, 3 }, { 35, 3 }, { 36, 3 }, { 37, 24 }, { 34, 6 }, { 40, 6 } };
+
+const MdAnimFrame gUnk_09992DF4[11] = { { 39, 3 }, { 31, 24 }, { 32, 3 }, { 33, 3 }, { 34, 24 }, { 35, 6 }, { 32, 12 }, { 36, 3 }, { 37, 24 }, { 34, 6 }, { 38, 6 } };
+
+const MdAnimFrame gUnk_09992E20[1] = { { 1, 32767 } };
+
+const MdAnimDef gUnk_09992E24[11] = {
+    { gUnk_09992D34, 4, 0 },
+    { gUnk_09992D44, 4, 0 },
+    { gUnk_09992D54, 4, 0 },
+    { gUnk_09992D64, 2, 0 },
+    { gUnk_09992D6C, 2, 0 },
+    { gUnk_09992D74, 10, 0 },
+    { gUnk_09992D9C, 8, 0 },
+    { gUnk_09992DBC, 6, 0 },
+    { gUnk_09992DD4, 8, 0 },
+    { gUnk_09992DF4, 11, 0 },
+    { gUnk_09992E20, 1, 0 },
+};
 
 TaskDesc gTaskDescBosGa = {
     gTaskNameBosGa,
@@ -24,7 +313,7 @@ TaskDesc gTaskDescBosGa = {
     0xA54,
 };
 
-const char gTaskNameBosMd[] __attribute__((section(".rodata_registration_name_gTaskDescBosMd"), aligned(1))) = "task_bos_md";
+const char gTaskNameBosMd[] = "task_bos_md";
 
 TaskDesc gTaskDescBosMd = {
     gTaskNameBosMd,
@@ -35,7 +324,24 @@ TaskDesc gTaskDescBosMd = {
     0x1B8,
 };
 
-const char gTaskNameBosMdMap[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdMap"), aligned(1))) = "task_bos_md_map";
+const char gTaskNameBosMdMap[] = "task_bos_md_map";
+
+const MdFirePoint gUnk_09992E98[4] = { { 88, 288, 240, 0 }, { 56, 312, 330, 0 }, { 72, 336, 420, 0 }, { 104, 360, 510, 0 } };
+
+const MdFirePoint gUnk_09992EB8[4] = { { 128, 304, 0, 0 }, { 104, 324, 0, 0 }, { 144, 344, 0, 0 }, { 112, 364, 0, 0 } };
+
+const MdFirePoint gUnk_09992ED8[4] = { { 128, 288, 0, 0 }, { 156, 312, 0, 0 }, { 172, 336, 0, 0 }, { 144, 360, 0, 0 } };
+
+const MdFireDef gUnk_09992EF8[6] = {
+    { gUnk_09992E98, 4, 0 },
+    { gUnk_09992EB8, 4, 0 },
+    { gUnk_09992ED8, 4, 0 },
+    { gUnk_09992E98, 4, 0 },
+    { gUnk_09992E98, 4, 0 },
+    { gUnk_09992E98, 4, 0 },
+};
+
+const EmyKind gUnk_09992F28 = { 37, 1000, 16, 16, 0, 60, 1 };
 
 TaskDesc gTaskDescBosMdMap = {
     gTaskNameBosMdMap,
@@ -46,7 +352,7 @@ TaskDesc gTaskDescBosMdMap = {
     0x4,
 };
 
-const char gTaskNameBosMdFire[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdFire"), aligned(1))) = "task_bos_md_fire";
+const char gTaskNameBosMdFire[] = "task_bos_md_fire";
 
 TaskDesc gTaskDescBosMdFire = {
     gTaskNameBosMdFire,
@@ -57,7 +363,7 @@ TaskDesc gTaskDescBosMdFire = {
     0x170,
 };
 
-const char gTaskNameBosMdDai[] __attribute__((section(".rodata_registration_name_gTaskDescBosMdDai"), aligned(1))) = "task_bos_md_dai";
+const char gTaskNameBosMdDai[] = "task_bos_md_dai";
 
 TaskDesc gTaskDescBosMdDai = {
     gTaskNameBosMdDai,
@@ -68,7 +374,7 @@ TaskDesc gTaskDescBosMdDai = {
     0x84,
 };
 
-const char gTaskNameBosMdHahen[] __attribute__((aligned(1))) = "task_bos_md_hahen";
+const char gTaskNameBosMdHahen[] = "task_bos_md_hahen";
 
 TaskDesc gTaskDescBosMdHahen = {
     gTaskNameBosMdHahen,
@@ -147,7 +453,79 @@ void* gUnk_09EF8F24[30] = {
     gUnk_09A3CA5C,
 };
 
-const char gModeNameWorldselect[] __attribute__((section(".rodata_registration_name_gModeWorldselect"), aligned(1))) = "mode_worldselect";
+#ifdef VERSION_EU
+const WorldselectTileSizes gUnkEu_099991E0 = { { 896, 960, 1024, 1024, 960 } };
+#endif
+
+const MdModel gUnk_09992F70[13] = {
+#ifdef VERSION_EU
+    { 1, 1, 107, -1, gUnk_09A3CD1C, gUnk_099E7E7C, gUnk_099A8824, gUnkEu_09F847E8, 8192, 0 },
+#else
+    { 1, 1, 107, -1, gUnk_09A3CD1C, gUnk_099E7E7C, gUnk_099A8824, gUnk_099F6D3C },
+#endif
+#ifdef VERSION_EU
+    { 2, 2, 101, -1, gUnk_09A3CD5C, gUnk_099E9E7C, gUnk_099A8880, gUnkEu_09F847E8, 12288, 0 },
+#else
+    { 2, 2, 101, -1, gUnk_09A3CD5C, gUnk_099E9E7C, gUnk_099A8880, gUnk_099F7D3C },
+#endif
+#ifdef VERSION_EU
+    { 4, 3, 120, -1, gUnk_09A3CCFC, gUnk_099E6E7C, gUnk_099A87F8, gUnkEu_09F847E8, 6144, 0 },
+#else
+    { 4, 3, 120, -1, gUnk_09A3CCFC, gUnk_099E6E7C, gUnk_099A87F8, gUnk_099F653C },
+#endif
+#ifdef VERSION_EU
+    { 8, 4, 94, -1, gUnk_09A3CC9C, gUnk_099E3E7C, gUnk_099A8758, gUnkEu_09F847E8, 0, 0 },
+#else
+    { 8, 4, 94, -1, gUnk_09A3CC9C, gUnk_099E3E7C, gUnk_099A8758, gUnk_099F4D3C },
+#endif
+#ifdef VERSION_EU
+    { 16, 5, 74, -1, gUnk_09A3CD3C, gUnk_099E8E7C, gUnk_099A884C, gUnkEu_09F847E8, 10240, 0 },
+#else
+    { 16, 5, 74, -1, gUnk_09A3CD3C, gUnk_099E8E7C, gUnk_099A884C, gUnk_099F753C },
+#endif
+#ifdef VERSION_EU
+    { 32, 6, 87, -1, gUnk_09A3CD7C, gUnk_099EAE7C, gUnk_099A88A0, gUnkEu_09F847E8, 14336, 0 },
+#else
+    { 32, 6, 87, -1, gUnk_09A3CD7C, gUnk_099EAE7C, gUnk_099A88A0, gUnk_099F853C },
+#endif
+#ifdef VERSION_EU
+    { 64, 7, 115, -1, gUnk_09A3CD9C, gUnk_099EBE7C, gUnk_099A88D4, gUnkEu_09F847E8, 16384, 0 },
+#else
+    { 64, 7, 115, -1, gUnk_09A3CD9C, gUnk_099EBE7C, gUnk_099A88D4, gUnk_099F8D3C },
+#endif
+#ifdef VERSION_EU
+    { 128, 8, 127, 149, gUnk_09A3CE1C, gUnk_099EEE7C, gUnk_099A8930, gUnkEu_09F847E8, 20480, 0 },
+#else
+    { 128, 8, 129, 151, gUnk_09A3CE1C, gUnk_099EEE7C, gUnk_099A8930, gUnk_099F9D3C },
+#endif
+#ifdef VERSION_EU
+    { 256, 9, 53, 175, gUnk_09A3CCBC, gUnk_099E4E7C, gUnk_099A8780, gUnkEu_09F847E8, 2048, 0 },
+#else
+    { 256, 9, 53, 177, gUnk_09A3CCBC, gUnk_099E4E7C, gUnk_099A8780, gUnk_099F553C },
+#endif
+#ifdef VERSION_EU
+    { 512, 10, 1, -1, gUnk_09A3CCDC, gUnk_099E5E7C, gUnk_099A87C0, gUnkEu_09F847E8, 4096, 0 },
+#else
+    { 512, 10, 1, -1, gUnk_09A3CCDC, gUnk_099E5E7C, gUnk_099A87C0, gUnk_099F5D3C },
+#endif
+#ifdef VERSION_EU
+    { 2048, 11, 44, 184, gUnk_09A3CE3C, gUnk_099EFE7C, gUnk_099A895C, gUnkEu_09F847E8, 22528, 0 },
+#else
+    { 2048, 11, 44, 186, gUnk_09A3CE3C, gUnk_099EFE7C, gUnk_099A895C, gUnk_099FA53C },
+#endif
+#ifdef VERSION_EU
+    { 4096, 12, 61, 190, gUnk_09A3CE5C, gUnk_099F0E7C, gUnk_099A897C, gUnkEu_09F847E8, 24576, 0 },
+#else
+    { 4096, 12, 61, 192, gUnk_09A3CE5C, gUnk_099F0E7C, gUnk_099A897C, gUnk_099FAD3C },
+#endif
+#ifdef VERSION_EU
+    { 1024, 13, 132, -1, gUnk_09A3CDBC, gUnk_099ECE7C, gUnk_099A8900, gUnkEu_09F847E8, 18432, 0 },
+#else
+    { 1024, 13, 134, -1, gUnk_09A3CDBC, gUnk_099ECE7C, gUnk_099A8900, gUnk_099F953C },
+#endif
+};
+
+const char gModeNameWorldselect[] = "mode_worldselect";
 
 Mode gModeWorldselect = {
     gModeNameWorldselect,
@@ -645,7 +1023,7 @@ void func_080FB8DC(MdWork* work, s32 state) {
 }
 
 void func_080FB8E8(MdWork* work, u16 index) {
-    SetBgMapBlocks(1, gUnk_09992114 + index * 0x4C, 2, 2);
+    SetBgMapBlocks(1, (void*)gUnk_09992108[index].blocks, 2, 2);
 }
 
 void func_080FB908(MdWork* work, u16 index) {
@@ -680,9 +1058,9 @@ void func_080FB930(MdWork* work, u16 id) {
 
 void func_080FBA14(MdWork* work, s16 id) {
     MdAnim* a;
-    MdAnimDef* base;
-    MdAnimDef* d;
-    MdAnimFrame* f;
+    const MdAnimDef* base;
+    const MdAnimDef* d;
+    const MdAnimFrame* f;
 
     a = &work->anim;
     a->animId = id;
@@ -1200,7 +1578,7 @@ void func_080FC3FC(MdWork* work) {
 void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
-    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMdMap, gUnk_099920E8);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMdMap, (void*)&gUnk_099920E8);
     gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;
     work->unk_000 = 0;
     work->unk_004 = 0;
@@ -1232,7 +1610,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     func_0801BCC0(0x7800, gBtlWork->unk_0D0, 0);
 
     for (i = 0; i < 1; i++) {
-        func_0801B37C(&work->sub[i], gUnk_099920D8, gBtlWork->unk_0CC,
+        func_0801B37C(&work->sub[i], &gUnk_099920D8, gBtlWork->unk_0CC,
                       gBtlWork->unk_0D0, gBtlWork->unk_0D4);
 #ifdef VERSION_EU
         ColliderInit(work->sub[i].unk_040, 8, 16, 24);
@@ -1596,7 +1974,7 @@ u8 func_080FCCB4(MdFireWork* work) {
     return result;
 }
 void func_080FCF78(MdFireWork* work) {
-    MdFirePoint* p;
+    const MdFirePoint* p;
 
     switch (work->unk_15E) {
     case 0:
@@ -1648,7 +2026,7 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->unk_160 = arg->unk_06;
     work->target = (MdFireTarget*)arg->unk_08;
     func_080FCF78(work);
-    func_0801B37C(&work->sub, gUnk_09992F28, work->x, work->y, work->z);
+    func_0801B37C(&work->sub, &gUnk_09992F28, work->x, work->y, work->z);
     ColliderInit(work->sub.unk_040, 3, 16, 16);
     ColliderSetPosition(work->sub.unk_040, work->sub.unk_004, work->sub.unk_008,
                   work->sub.unk_00C);
@@ -2500,7 +2878,7 @@ void mode_worldselect_0(void) {
     gUnk_02035098[1] = LoadObjTiles(gUnk_0999B052, 0x1340);
     gUnk_020350AC = LoadObjPalette(gUnk_09A3CC7C, 32);
 #ifdef VERSION_EU
-    gUnk_020350A8 = LoadObjTiles(gUnkEu_09F84810[gLanguage], gUnkEu_099991E0[gLanguage]);
+    gUnk_020350A8 = LoadObjTiles(gUnkEu_09F84810[gLanguage], gUnkEu_099991E0.sizes[gLanguage]);
 #else
     gUnk_020350A8 = LoadObjTiles(gUnk_0999CBB6, 0x380);
 #endif

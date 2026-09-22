@@ -4528,20 +4528,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosGa",
-          "address": "0x099920CC",
-          "size": 12,
-          "sha256": "2bf1bec5db210993c33c3d07f2c6cd3d4b6baa700bc00fd70377813e707c1f03",
-          "objects": [
-            {
-              "name": "gTaskNameBosGa",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".data",
           "address": "0x9ef8e94",
           "size": 280,
@@ -4588,92 +4574,6 @@
             }
           ],
           "sha256": "7672cdffdd150838ee6b722c0c27ea18129e07b424ff09c5c0d568a49101e79e"
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMd",
-          "address": "0x09992E7C",
-          "size": 12,
-          "sha256": "b2f398c98ad818cf62ab2bbf18f0cf181a30807ac7927c4aa531220c2c734223",
-          "objects": [
-            {
-              "name": "gTaskNameBosMd",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdMap",
-          "address": "0x09992E88",
-          "size": 16,
-          "sha256": "e065c7a99edefcda44b37b0ca377809407248bfb3e1bada9ae4136ccb03fe973",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdMap",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdFire",
-          "address": "0x09992F38",
-          "size": 17,
-          "sha256": "5c57a84ec9f73fac05c6b42ed9004ab02bde1910d3a4d1f35022c5a34c54a2f4",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdFire",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdDai",
-          "address": "0x09992F4C",
-          "size": 16,
-          "sha256": "269a14cee329004e1d52e5401d015241325a075a6207d2ef284b44c1576ee53e",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdDai",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata",
-          "address": "0x09992F5C",
-          "size": 18,
-          "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdHahen",
-              "offset": 0,
-              "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gModeWorldselect",
-          "address": "0x099930A8",
-          "size": 17,
-          "sha256": "bdaea8e87d80fe6837f8eb6b66bb1b38a1713d71ab1d145b34dbee80c3b07b23",
-          "objects": [
-            {
-              "name": "gModeNameWorldselect",
-              "offset": 0,
-              "size": 17
-            }
-          ]
         },
         {
           "unit": "mode_worldinspect.c",
@@ -10322,20 +10222,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosGa",
-          "address": "0x09946BE0",
-          "size": 12,
-          "sha256": "2bf1bec5db210993c33c3d07f2c6cd3d4b6baa700bc00fd70377813e707c1f03",
-          "objects": [
-            {
-              "name": "gTaskNameBosGa",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".data",
           "address": "0x9ed0280",
           "size": 280,
@@ -10382,92 +10268,6 @@
             }
           ],
           "sha256": "d27b818f3da1a591b8e4626b448115113a329b92e81d7d2478f37113383adcb4"
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMd",
-          "address": "0x09947990",
-          "size": 12,
-          "sha256": "b2f398c98ad818cf62ab2bbf18f0cf181a30807ac7927c4aa531220c2c734223",
-          "objects": [
-            {
-              "name": "gTaskNameBosMd",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdMap",
-          "address": "0x0994799C",
-          "size": 16,
-          "sha256": "e065c7a99edefcda44b37b0ca377809407248bfb3e1bada9ae4136ccb03fe973",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdMap",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdFire",
-          "address": "0x09947A4C",
-          "size": 17,
-          "sha256": "5c57a84ec9f73fac05c6b42ed9004ab02bde1910d3a4d1f35022c5a34c54a2f4",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdFire",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdDai",
-          "address": "0x09947A60",
-          "size": 16,
-          "sha256": "269a14cee329004e1d52e5401d015241325a075a6207d2ef284b44c1576ee53e",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdDai",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata",
-          "address": "0x09947A70",
-          "size": 18,
-          "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdHahen",
-              "offset": 0,
-              "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gModeWorldselect",
-          "address": "0x09947BBC",
-          "size": 17,
-          "sha256": "bdaea8e87d80fe6837f8eb6b66bb1b38a1713d71ab1d145b34dbee80c3b07b23",
-          "objects": [
-            {
-              "name": "gModeNameWorldselect",
-              "offset": 0,
-              "size": 17
-            }
-          ]
         },
         {
           "unit": "mode_worldinspect.c",
@@ -16144,20 +15944,6 @@
         },
         {
           "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosGa",
-          "address": "0x0999833C",
-          "size": 12,
-          "sha256": "2bf1bec5db210993c33c3d07f2c6cd3d4b6baa700bc00fd70377813e707c1f03",
-          "objects": [
-            {
-              "name": "gTaskNameBosGa",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
           "section": ".data",
           "address": "0x9f84744",
           "size": 360,
@@ -16236,92 +16022,6 @@
             }
           ],
           "sha256": "81b712790f3b6d37d078e3bf25436f0abb51e9ce6456b975bef6f30eb6670e28"
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMd",
-          "address": "0x099990EC",
-          "size": 12,
-          "sha256": "b2f398c98ad818cf62ab2bbf18f0cf181a30807ac7927c4aa531220c2c734223",
-          "objects": [
-            {
-              "name": "gTaskNameBosMd",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdMap",
-          "address": "0x099990F8",
-          "size": 16,
-          "sha256": "e065c7a99edefcda44b37b0ca377809407248bfb3e1bada9ae4136ccb03fe973",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdMap",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdFire",
-          "address": "0x099991A8",
-          "size": 17,
-          "sha256": "5c57a84ec9f73fac05c6b42ed9004ab02bde1910d3a4d1f35022c5a34c54a2f4",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdFire",
-              "offset": 0,
-              "size": 17
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gTaskDescBosMdDai",
-          "address": "0x099991BC",
-          "size": 16,
-          "sha256": "269a14cee329004e1d52e5401d015241325a075a6207d2ef284b44c1576ee53e",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdDai",
-              "offset": 0,
-              "size": 16
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 3
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata",
-          "address": "0x099991CC",
-          "size": 18,
-          "sha256": "4639ecc360ad9d8adbce4b7e575237d379bb7ea3066d38a4a7a89e7f063e3f1a",
-          "objects": [
-            {
-              "name": "gTaskNameBosMdHahen",
-              "offset": 0,
-              "size": 18
-            }
-          ]
-        },
-        {
-          "unit": "bos5.c",
-          "section": ".rodata_registration_name_gModeWorldselect",
-          "address": "0x09999358",
-          "size": 17,
-          "sha256": "bdaea8e87d80fe6837f8eb6b66bb1b38a1713d71ab1d145b34dbee80c3b07b23",
-          "objects": [
-            {
-              "name": "gModeNameWorldselect",
-              "offset": 0,
-              "size": 17
-            }
-          ]
         },
         {
           "unit": "mode_worldinspect.c",

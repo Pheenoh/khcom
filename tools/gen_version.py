@@ -155,7 +155,6 @@ TARGET_ANCHORS = {
         0x09EEB03C: 0x09F7715C,
         0x09035730: 0x090CEA44,
         0x096B2664: 0x09677C0C,
-        0x09992F70: 0x099991EC,
         0x09C5CC7C: 0x09CE23B0,
         0x09EFAF60: 0x09F87494,
         0x09EFAF6C: 0x09F874A0,
@@ -356,6 +355,19 @@ TARGET_ANCHORS = {
 
 TARGET_ABSENT_SYMBOLS = {
     "eu": {
+        "gUnk_099F4D3C",
+        "gUnk_099F553C",
+        "gUnk_099F5D3C",
+        "gUnk_099F653C",
+        "gUnk_099F6D3C",
+        "gUnk_099F753C",
+        "gUnk_099F7D3C",
+        "gUnk_099F853C",
+        "gUnk_099F8D3C",
+        "gUnk_099F953C",
+        "gUnk_099F9D3C",
+        "gUnk_099FA53C",
+        "gUnk_099FAD3C",
         "gUnk_09079EB2",
         "gUnk_09080074",
         "gUnk_090822F2",
@@ -1717,7 +1729,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_097D8F00": 0x097D8F00,
         "gUnkEu_097D9B00": 0x097D9B00,
         "gUnkEu_097DA700": 0x097DA700,
-        "gUnkEu_099991E0": 0x099991E0,
         "gUnkEu_090CE9F4": 0x090CE9F4,
         "gUnkEu_09955250": 0x09955250,
         "gUnkEu_09957550": 0x09957550,
@@ -3121,6 +3132,7 @@ TARGET_FUNC_ADDR = {
 
 TARGET_DATA_SIZE = {
     "eu": {
+        ("bos5.c", ".rodata"): 0x102D,
         ("animation_resource_09EE10E0_data.c", ".data"): 0x124,
         ("battle_localized_09EE1520_data.c", ".data"): 0x31C,
         ("battle_localized_09EE25D0_data.c", ".data"): 0x124,
