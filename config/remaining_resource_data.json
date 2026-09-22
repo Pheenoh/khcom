@@ -6,14 +6,15 @@
     "consumers": "All native complete AnimHeader frame indices prove gfx extents except explicit consumer bounds: SIO battle three graphics and Boolean two-player state; SIO options gfx0..2; Wlogo Won loop0..9; status scrollbar gfx4; status tab GetMaxSpriteTileBytes4; stock_mes_disp_0 selectors0/1. EU five-language status wrappers prove their actual gfx3/gfx4 target arrays. gUnk_09EF3884 dormant EU three-Sprite counterpart has exactly the same complete renderer payloads as the US/JP explicitly indexed array.",
     "unused": "Unselected native pairs retain decoded complete header/frame shape without claiming runtime reachability. Suffix words remain neutral scalar graphics pointers. One separate unused animation pointer follows an already-owned animation group. Zero-frame animation headers are preserved; they do not imply invented gfx array bounds.",
     "assets": "Version-active Sprite/AnimHeader asset bindings have exact complete format extents and original ROM hashes. Metadata stays counted. Existing native symbol policies are removed only after exact address equality, with one canonical declaration header.",
-    "native_remaining_3884": "The remaining-resource pointer cluster at .data_remaining_09EF3884 is a contiguous initialized-data run (204B US/JP, 372B EU) with matching source order in remaining_resource_data.c; ordinary .data replaces its forced section attributes. Neighboring remaining-resource clusters stay sectioned."
+    "native_remaining_3884": "The remaining-resource pointer cluster at .data_remaining_09EF3884 is a contiguous initialized-data run (204B US/JP, 372B EU) with matching source order in remaining_resource_data.c; ordinary .data replaces its forced section attributes. Neighboring remaining-resource clusters stay sectioned.",
+    "native_remaining_consumer_leftovers": "Split exclusive external-consumer remaining-resource islands into native .data TUs: wlogo (.data_remaining_09EF36D0), poo (.data_remaining_09EF5B2C), evt (.data_remaining_09EF5CAC)."
   },
   "regions": {
     "us": {
       "placements": [
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF36D0",
+          "unit": "remaining_resource_wlogo_data.c",
+          "section": ".data",
           "address": "0x9ef36d0",
           "size": 8,
           "sha256": "1e92e264088fa4b88565f48c73cae123beae74f39fabc0b8f6cdf32673ea41c5",
@@ -222,8 +223,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5B2C",
+          "unit": "remaining_resource_poo_data.c",
+          "section": ".data",
           "address": "0x9ef5b2c",
           "size": 40,
           "sha256": "37e2c5400432c69de73d8b17deb38e7bb47c14d8af08f3af9f83e1c6a2aa98d7",
@@ -241,8 +242,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5CAC",
+          "unit": "remaining_resource_evt_data.c",
+          "section": ".data",
           "address": "0x9ef5cac",
           "size": 88,
           "sha256": "7dcace3e46fee3f17b0ef855303b4bb4268248458a7dc8412336a8b07228c3e1",
@@ -1869,8 +1870,8 @@
     "jp": {
       "placements": [
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF36D0",
+          "unit": "remaining_resource_wlogo_data.c",
+          "section": ".data",
           "address": "0x9ecaabc",
           "size": 8,
           "sha256": "c5aa800878096f9a0c4d48e2d3716743811b073e89f0afe2aaff478e18049fc9",
@@ -2079,8 +2080,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5B2C",
+          "unit": "remaining_resource_poo_data.c",
+          "section": ".data",
           "address": "0x9eccf18",
           "size": 40,
           "sha256": "b254d09519bfe8f2c9d675b0a9ba4cbf2333f2e946b9705c55e38cfe4742ab62",
@@ -2098,8 +2099,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5CAC",
+          "unit": "remaining_resource_evt_data.c",
+          "section": ".data",
           "address": "0x9ecd098",
           "size": 88,
           "sha256": "f86bca8c6d2b07598e0d368fc595600b8050014e5a09834e0317d00f203c4b98",
@@ -3726,8 +3727,8 @@
     "eu": {
       "placements": [
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF36D0",
+          "unit": "remaining_resource_wlogo_data.c",
+          "section": ".data",
           "address": "0x9f7e91c",
           "size": 8,
           "sha256": "dd84d1b57f096cb1791194e99c8b4114ec047dde70aeb7fb53b1ad45a71793ff",
@@ -4126,8 +4127,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5B2C",
+          "unit": "remaining_resource_poo_data.c",
+          "section": ".data",
           "address": "0x9f80f24",
           "size": 40,
           "sha256": "a350a4cb5b0bdc601709059ea336e64ffc3dee197709c35b0f92dc0252084b41",
@@ -4145,8 +4146,8 @@
           ]
         },
         {
-          "unit": "remaining_resource_data.c",
-          "section": ".data_remaining_09EF5CAC",
+          "unit": "remaining_resource_evt_data.c",
+          "section": ".data",
           "address": "0x9f810a4",
           "size": 88,
           "sha256": "12d4ebd1b3abb2f38ab41859c69bba8f7a68bb2f6f9f46b2ac464e7a79371bd7",

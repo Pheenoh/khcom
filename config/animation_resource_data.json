@@ -21,7 +21,8 @@
     "native_animation_resource_pooh_boss_leftovers": "Split pooh/boss leftover forced sections into content-named native TUs; see pooh_resources_data.json.",
     "native_boss_sprite_leftovers": "Split contiguous forced boss_sprite_data.json islands from animation_resource_data.c into content-named native .data TUs: boss_tm_body (.data_09EF3950), boss_tm_foot (.data_09EF39BC), boss_tm_walk (.data_09EF3A1C), bos2_dsd_ita (.data_09EF3BF8), bos2_dsd_circle (.data_09EF3C50); consumers are task_bos_tm_body_*/foot_0 and task_bos_dsd_ita_0/circle_0.",
     "native_exclusive_actor_animation_leftovers": "Split exclusive-consumer forced islands from animation_resource_data.c into content-named native .data TUs: bos6_lst, bos6_flt, bos7_edg, bos7_ptl, bos4_saku, wlogo_mons, wlogo_tvt, pooh_honeycomb (.data_09EF5FF0), pooh_cabbage (.data_09EF602C+.data_09EF6060), pooh_wagonwheel (.data_09EF6078+.data_09EF60AC).",
-    "native_frd_smn_exclusive_leftovers": "Split exclusive-consumer character AnimDef islands from animation_resource_data.c: frd_goofy (.data_09EDE4F0), smn_bambi (.data_09EDE790), smn_simba (.data_09EDE7F0). Left .data_09EDE5FC forced \u2014 shared with hum/smn tables, not a single-friend island."
+    "native_frd_smn_exclusive_leftovers": "Split exclusive-consumer character AnimDef islands from animation_resource_data.c: frd_goofy (.data_09EDE4F0), smn_bambi (.data_09EDE790), smn_simba (.data_09EDE7F0). Left .data_09EDE5FC forced \u2014 shared with hum/smn tables, not a single-friend island.",
+    "native_hum_exclusive_leftovers": "Split exclusive-consumer hum AnimDef/AnimInit islands from animation_resource_data.c: hum_cloud (.data_09EE15FC), hum_axcel (.data_09EE1FCC), hum_vixen_ndl (.data_09EE2690)."
   },
   "regions": {
     "us": {
@@ -2729,8 +2730,8 @@
           "sha256": "5708cbda3bda708779ed617ff49ca03167fb19001c96caf13fecdfcb2d4a9ee8"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE15FC",
+          "unit": "animation_resource_hum_cloud_data.c",
+          "section": ".data",
           "address": "0x9ee15fc",
           "size": 440,
           "objects": [
@@ -3347,8 +3348,8 @@
           "sha256": "45045f051e05dec57f649319a5eb59adfa6372c7ee33be29c268ff870c9cd214"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE1FCC",
+          "unit": "animation_resource_hum_axcel_data.c",
+          "section": ".data",
           "address": "0x9ee1fcc",
           "size": 204,
           "objects": [
@@ -3735,8 +3736,8 @@
           "sha256": "44e1509c636c022736fd94f1a183fa3109368cccb0ddc6e12c928df5890b5ff8"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE2690",
+          "unit": "animation_resource_hum_vixen_ndl_data.c",
+          "section": ".data",
           "address": "0x9ee2690",
           "size": 68,
           "objects": [
@@ -15796,8 +15797,8 @@
           "sha256": "01b8743b09fae7d6de492a26ef842cbb1c89b1da2438aa0547db05bb96f4612b"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE15FC",
+          "unit": "animation_resource_hum_cloud_data.c",
+          "section": ".data",
           "address": "0x9eb9078",
           "size": 440,
           "objects": [
@@ -16414,8 +16415,8 @@
           "sha256": "777341985ea6511da5cbb40a7146ebd14c2b44e58d08173606592d109c233b59"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE1FCC",
+          "unit": "animation_resource_hum_axcel_data.c",
+          "section": ".data",
           "address": "0x9eb9a48",
           "size": 204,
           "objects": [
@@ -16802,8 +16803,8 @@
           "sha256": "8b6a3e43a92fbaa4f261ba97ac2497c172010fff343709b010508deb23cb682f"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE2690",
+          "unit": "animation_resource_hum_vixen_ndl_data.c",
+          "section": ".data",
           "address": "0x9eba10c",
           "size": 68,
           "objects": [
@@ -28863,8 +28864,8 @@
           "sha256": "9f630f36b93df44a7803ac4a03dccb46aaf82dba0be936673f1d1f92405c2c86"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE15FC",
+          "unit": "animation_resource_hum_cloud_data.c",
+          "section": ".data",
           "address": "0x9f5c408",
           "size": 440,
           "objects": [
@@ -29481,8 +29482,8 @@
           "sha256": "e23f660e541673f5f75c839dc5cb4c0fad10557da9a67a7bfd090e5781126266"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE1FCC",
+          "unit": "animation_resource_hum_axcel_data.c",
+          "section": ".data",
           "address": "0x9f5cdd8",
           "size": 204,
           "objects": [
@@ -29869,8 +29870,8 @@
           "sha256": "1b493d5500e77d55b9ea296e3ce9a9714adeaf46c42e3e1a8c8da874e75dc409"
         },
         {
-          "unit": "animation_resource_data.c",
-          "section": ".data_09EE2690",
+          "unit": "animation_resource_hum_vixen_ndl_data.c",
+          "section": ".data",
           "address": "0x9f5d500",
           "size": 68,
           "objects": [

@@ -2,9 +2,6 @@
 #include "remaining_resource_assets.h"
 
 #ifdef VERSION_US
-
-void* gUnk_09EF36D0[1] __attribute__((section(".data_remaining_09EF36D0"))) = { gUnkUs_0961F9F0 };
-AnimHeader* gUnkUs_09EF36D4[1] __attribute__((section(".data_remaining_09EF36D0"))) = { &gUnkUs_0961FA1E };
 void* gUnk_09EF3884[3] = { gUnkUs_0962ACE0, gUnkUs_0962ACF0, gUnkUs_0962AD24 };
 AnimHeader* gUnkUs_09EF3890[1] = { &gUnkUs_0962AD58 };
 void* gUnk_09EF3894[8] = { gUnkUs_0962AFA4, gUnkUs_0962AFBA, gUnkUs_0962AFD0, gUnkUs_0962AFE6, gUnkUs_0962AFFC, gUnkUs_0962B012, gUnkUs_0962B028, gUnkUs_0962B03E };
@@ -36,16 +33,6 @@ void* gUnkUs_09EF3BDC[6] __attribute__((section(".data_remaining_09EF3BB4"))) = 
 AnimHeader* gUnkUs_09EF3BF4[1] __attribute__((section(".data_remaining_09EF3BB4"))) = { &gUnkUs_0962FC18 };
 void* gUnkUs_09EF59BC[1] __attribute__((section(".data_remaining_09EF59BC"))) = { gUnkUs_0972BD78 };
 AnimHeader* gUnkUs_09EF59C0[1] __attribute__((section(".data_remaining_09EF59BC"))) = { &gUnkUs_0972BD82 };
-void* gUnk_09EF5B2C[8] __attribute__((section(".data_remaining_09EF5B2C"))) = { gUnkUs_097355E8, gUnkUs_09735604, gUnkUs_09735620, gUnkUs_0973563C, gUnkUs_09735658, gUnkUs_09735674, gUnkUs_09735690, gUnkUs_097356AC };
-AnimHeader* gUnkUs_09EF5B4C[2] __attribute__((section(".data_remaining_09EF5B2C"))) = { &gUnkUs_097356C8, &gUnkUs_097356DE };
-void* gUnk_09EF5CAC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkUs_09742FC4 };
-AnimHeader* gUnk_09EF5CB0[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkUs_09742FCE };
-void* gUnk_09EF5CB4[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkUs_097430D8 };
-AnimHeader* gUnk_09EF5CB8[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkUs_097430E2 };
-void* gUnk_09EF5CBC[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkUs_097431EC, gUnkUs_097431F6, gUnkUs_09743200, gUnkUs_0974320A, gUnkUs_09743214, gUnkUs_0974321E, gUnkUs_09743228, gUnkUs_09743232 };
-AnimHeader* gUnk_09EF5CDC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkUs_0974323C };
-void* gUnk_09EF5CE0[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkUs_09743A64, gUnkUs_09743A6E, gUnkUs_09743A78, gUnkUs_09743A82, gUnkUs_09743A8C, gUnkUs_09743A96, gUnkUs_09743AA0, gUnkUs_09743AAA };
-AnimHeader* gUnk_09EF5D00[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkUs_09743AB4 };
 void* gUnkUs_09EF5FD8[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkUs_09755F34 };
 AnimHeader* gUnkUs_09EF5FDC[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { &gUnkUs_09755F4A };
 void* gUnkUs_09EF5FE0[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkUs_097561D4 };
@@ -91,9 +78,6 @@ AnimHeader* const gUnkUs_09EF695C[1] = { &gUnkUs_097A2E0C };
 #endif
 
 #ifdef VERSION_JP
-
-void* gUnk_09EF36D0[1] __attribute__((section(".data_remaining_09EF36D0"))) = { gUnkJp_095D84CC };
-AnimHeader* gUnkJp_09ECAAC0[1] __attribute__((section(".data_remaining_09EF36D0"))) = { &gUnkJp_095D84FA };
 void* gUnk_09EF3884[3] = { gUnkJp_095E37BC, gUnkJp_095E37CC, gUnkJp_095E3800 };
 AnimHeader* gUnkJp_09ECAC7C[1] = { &gUnkJp_095E3834 };
 void* gUnk_09EF3894[8] = { gUnkJp_095E3A80, gUnkJp_095E3A96, gUnkJp_095E3AAC, gUnkJp_095E3AC2, gUnkJp_095E3AD8, gUnkJp_095E3AEE, gUnkJp_095E3B04, gUnkJp_095E3B1A };
@@ -125,16 +109,6 @@ void* gUnkJp_09ECAFC8[6] __attribute__((section(".data_remaining_09EF3BB4"))) = 
 AnimHeader* gUnkJp_09ECAFE0[1] __attribute__((section(".data_remaining_09EF3BB4"))) = { &gUnkJp_095E83F4 };
 void* gUnkJp_09ECCDA8[1] __attribute__((section(".data_remaining_09EF59BC"))) = { gUnkJp_096E4554 };
 AnimHeader* gUnkJp_09ECCDAC[1] __attribute__((section(".data_remaining_09EF59BC"))) = { &gUnkJp_096E455E };
-void* gUnk_09EF5B2C[8] __attribute__((section(".data_remaining_09EF5B2C"))) = { gUnkJp_096EDDC4, gUnkJp_096EDDE0, gUnkJp_096EDDFC, gUnkJp_096EDE18, gUnkJp_096EDE34, gUnkJp_096EDE50, gUnkJp_096EDE6C, gUnkJp_096EDE88 };
-AnimHeader* gUnkJp_09ECCF38[2] __attribute__((section(".data_remaining_09EF5B2C"))) = { &gUnkJp_096EDEA4, &gUnkJp_096EDEBA };
-void* gUnk_09EF5CAC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkJp_096FB7A0 };
-AnimHeader* gUnk_09EF5CB0[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkJp_096FB7AA };
-void* gUnk_09EF5CB4[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkJp_096FB8B4 };
-AnimHeader* gUnk_09EF5CB8[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkJp_096FB8BE };
-void* gUnk_09EF5CBC[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkJp_096FB9C8, gUnkJp_096FB9D2, gUnkJp_096FB9DC, gUnkJp_096FB9E6, gUnkJp_096FB9F0, gUnkJp_096FB9FA, gUnkJp_096FBA04, gUnkJp_096FBA0E };
-AnimHeader* gUnk_09EF5CDC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkJp_096FBA18 };
-void* gUnk_09EF5CE0[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkJp_096FC240, gUnkJp_096FC24A, gUnkJp_096FC254, gUnkJp_096FC25E, gUnkJp_096FC268, gUnkJp_096FC272, gUnkJp_096FC27C, gUnkJp_096FC286 };
-AnimHeader* gUnk_09EF5D00[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkJp_096FC290 };
 void* gUnkJp_09ECD3C4[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkJp_0970E710 };
 AnimHeader* gUnkJp_09ECD3C8[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { &gUnkJp_0970E726 };
 void* gUnkJp_09ECD3CC[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkJp_0970E9B0 };
@@ -180,9 +154,6 @@ AnimHeader* const gUnkJp_09ECDD48[1] = { &gUnkJp_0975D2A0 };
 #endif
 
 #ifdef VERSION_EU
-
-void* gUnk_09EF36D0[1] __attribute__((section(".data_remaining_09EF36D0"))) = { gUnkEu_095E0ED0 };
-AnimHeader* gUnkEu_09F7E920[1] __attribute__((section(".data_remaining_09EF36D0"))) = { &gUnkEu_095E0EFE };
 void* gUnk_09EF3884[3] = { gUnkEu_095EC1C0, gUnkEu_095EC1D0, gUnkEu_095EC204 };
 AnimHeader* gUnkEu_09F7EADC[1] = { &gUnkEu_095EC238 };
 void* gUnk_09EF3894[8] = { gUnkEu_095EC484, gUnkEu_095EC49A, gUnkEu_095EC4B0, gUnkEu_095EC4C6, gUnkEu_095EC4DC, gUnkEu_095EC4F2, gUnkEu_095EC508, gUnkEu_095EC51E };
@@ -252,16 +223,6 @@ void* gUnkEu_09F7EED0[6] __attribute__((section(".data_remaining_09EF3BB4"))) = 
 AnimHeader* gUnkEu_09F7EEE8[1] __attribute__((section(".data_remaining_09EF3BB4"))) = { &gUnkEu_095F9BA0 };
 void* gUnkEu_09F80DB4[1] __attribute__((section(".data_remaining_09EF59BC"))) = { gUnkEu_096F90D8 };
 AnimHeader* gUnkEu_09F80DB8[1] __attribute__((section(".data_remaining_09EF59BC"))) = { &gUnkEu_096F90E2 };
-void* gUnk_09EF5B2C[8] __attribute__((section(".data_remaining_09EF5B2C"))) = { gUnkEu_09702948, gUnkEu_09702964, gUnkEu_09702980, gUnkEu_0970299C, gUnkEu_097029B8, gUnkEu_097029D4, gUnkEu_097029F0, gUnkEu_09702A0C };
-AnimHeader* gUnkEu_09F80F44[2] __attribute__((section(".data_remaining_09EF5B2C"))) = { &gUnkEu_09702A28, &gUnkEu_09702A3E };
-void* gUnk_09EF5CAC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkEu_09710324 };
-AnimHeader* gUnk_09EF5CB0[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkEu_0971032E };
-void* gUnk_09EF5CB4[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkEu_09710438 };
-AnimHeader* gUnk_09EF5CB8[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkEu_09710442 };
-void* gUnk_09EF5CBC[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkEu_0971054C, gUnkEu_09710556, gUnkEu_09710560, gUnkEu_0971056A, gUnkEu_09710574, gUnkEu_0971057E, gUnkEu_09710588, gUnkEu_09710592 };
-AnimHeader* gUnk_09EF5CDC[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkEu_0971059C };
-void* gUnk_09EF5CE0[8] __attribute__((section(".data_remaining_09EF5CAC"))) = { gUnkEu_09710DC4, gUnkEu_09710DCE, gUnkEu_09710DD8, gUnkEu_09710DE2, gUnkEu_09710DEC, gUnkEu_09710DF6, gUnkEu_09710E00, gUnkEu_09710E0A };
-AnimHeader* gUnk_09EF5D00[1] __attribute__((section(".data_remaining_09EF5CAC"))) = { &gUnkEu_09710E14 };
 void* gUnkEu_09F813D0[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkEu_09723294 };
 AnimHeader* gUnkEu_09F813D4[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { &gUnkEu_097232AA };
 void* gUnkEu_09F813D8[1] __attribute__((section(".data_remaining_09EF5FD8"))) = { gUnkEu_09723534 };
