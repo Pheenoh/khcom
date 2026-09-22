@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import argparse
-import json
 import os
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_DIR = ROOT / "config" / "assets"
@@ -23,7 +24,7 @@ class Manifest:
     def __init__(self, path):
         self.path = Path(path)
         with self.path.open() as handle:
-            doc = json.load(handle)
+            doc = yaml.safe_load(handle)
         for key in ("group", "types", "objects", "entries"):
             if key not in doc:
                 raise ManifestError(f"{self.path}: missing {key}")
@@ -103,7 +104,7 @@ def record_size(rtype, version):
 
 
 def load_manifests(directory=MANIFEST_DIR):
-    return [Manifest(path) for path in sorted(Path(directory).glob("*.json"))]
+    return [Manifest(path) for path in sorted(Path(directory).glob("*.yaml"))]
 
 
 def plan(version, manifests=None):

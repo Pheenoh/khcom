@@ -1,0 +1,197 @@
+version: 1
+regions:
+  us:
+    named_assets:
+    - name: gKeyboardTextUs_09035742
+      address: '0x9035742'
+      size: 32
+      encoding: utf16le
+    - name: gKeyboardTextUs_09035762
+      address: '0x9035762'
+      size: 24
+      encoding: utf16le
+    - name: gKeyboardTextUs_0903577A
+      address: '0x903577a'
+      size: 32
+      encoding: utf16le
+    - name: gKeyboardTextUs_0903579A
+      address: '0x903579a'
+      size: 24
+      encoding: utf16le
+    - name: gKeyboardTextUs_090357B2
+      address: '0x90357b2'
+      size: 32
+      encoding: utf16le
+    - name: gKeyboardTextUs_090357D2
+      address: '0x90357d2'
+      size: 32
+      encoding: utf16le
+    - name: gKeyboardTextUs_090357F2
+      address: '0x90357f2'
+      size: 22
+      encoding: utf16le
+  jp:
+    named_assets:
+    - name: gKeyboardTextJp_09008AE0
+      address: '0x9008ae0'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008AC0
+      address: '0x9008ac0'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008AA0
+      address: '0x9008aa0'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008A88
+      address: '0x9008a88'
+      size: 21
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008A68
+      address: '0x9008a68'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008A48
+      address: '0x9008a48'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008A2C
+      address: '0x9008a2c'
+      size: 25
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008BB4
+      address: '0x9008bb4'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B94
+      address: '0x9008b94'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B74
+      address: '0x9008b74'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B5C
+      address: '0x9008b5c'
+      size: 21
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B3C
+      address: '0x9008b3c'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B1C
+      address: '0x9008b1c'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008B00
+      address: '0x9008b00'
+      size: 25
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008C84
+      address: '0x9008c84'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008C64
+      address: '0x9008c64'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008C44
+      address: '0x9008c44'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008C24
+      address: '0x9008c24'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008C0C
+      address: '0x9008c0c'
+      size: 21
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008BEC
+      address: '0x9008bec'
+      size: 31
+      encoding: shift_jis
+    - name: gKeyboardTextJp_09008BD4
+      address: '0x9008bd4'
+      size: 21
+      encoding: shift_jis
+    - name: gUnkJp_090089B0
+      address: '0x90089b0'
+      size: 9
+      encoding: shift_jis
+    - name: gUnkJp_090089BC
+      address: '0x90089bc'
+      size: 9
+      encoding: shift_jis
+    - name: gUnkJp_090089C8
+      address: '0x90089c8'
+      size: 9
+      encoding: shift_jis
+  eu:
+    named_assets:
+    - name: gKeyboardTextEu_090CEA56
+      address: '0x90cea56'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEA66
+      address: '0x90cea66'
+      size: 12
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEA72
+      address: '0x90cea72'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEA82
+      address: '0x90cea82'
+      size: 12
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEA8E
+      address: '0x90cea8e'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEA9E
+      address: '0x90cea9e'
+      size: 11
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAA9
+      address: '0x90ceaa9'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAB9
+      address: '0x90ceab9'
+      size: 11
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAC4
+      address: '0x90ceac4'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAD4
+      address: '0x90cead4'
+      size: 11
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEADF
+      address: '0x90ceadf'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAEF
+      address: '0x90ceaef'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEAFF
+      address: '0x90ceaff'
+      size: 6
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEB05
+      address: '0x90ceb05'
+      size: 16
+      encoding: singlebyte
+    - name: gKeyboardTextEu_090CEB15
+      address: '0x90ceb15'
+      size: 6
+      encoding: singlebyte
+provenance:
+  keyboard_indices: US func_0808F358 uses seven row pointers and copies two bytes for each 16-bit glyph. Native JP func_0808F358 at 0808F15C branches on keyboard kind 0/1/2 and loads row pointers from 09EBC12C/09EBC148/09EBC164; its row cursor is clamped to 0..6. Native EU function at 0808EBF0 selects 09F6FE6C for kind 2 and 09F6FE8C otherwise; C cursor logic proves respective row domains 0..7 and 0..6, and native code copies one byte. The old EU gUnk_09EE4B0C raw alias at 09F6FE30 denotes graphics, not a keyboard index, and is removed without inventing a common table.
+  encoded_assets: 'Keyboard and default deck text remain binary-backed assets. US utf16le denotes exact little-endian 16-bit game glyph storage, preserving musical, gender, arrow and bracket glyph code units. JP uses Shift-JIS byte pairs, including full-width spaces and punctuation. EU singlebyte is a game glyph encoding: bytes 01..17 and 83..97 in symbol rows are selectable glyph codes, not text transformations or ASCII normalization. Every binding ends at its first native zero terminator. Byte-view declarations for keyboard payloads match the native byte-copy consumer.'
+  default_deck_names: 'The three Deck 1/2/3 arrays inside card.c(.data) are C definitions in card.c: u16 in US and JP, u8 in EU. JP SetDeckName callers use the three shift_jis literals bound here; EU active callers use the LocalizedText wrappers.'
+  native_catalog: The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.

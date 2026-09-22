@@ -1,0 +1,771 @@
+version: 1
+provenance:
+  map_names: Native Sora thirteen-floor and Riku twelve-floor label tables selected by func_080F7AB4, plus the room-name pointer table used by func_08093C18 and task_room_name_0. The twenty-eight room names consist of twenty-six normal map-card names and Unknown Place/Hidden Chamber, ending at the next independent TaskDesc. EU pointers select real five-language LocalizedText records rather than text bytes. Every record and regional string terminator is checked directly against its original ROM; no localized address correspondence is inferred.
+  debug_underscore: EncodeSmallFontString consumes the original ASCII underscore and its byte terminator through the map-debug task. This is two bytes in all three ROMs, not a UTF-16 value or four-byte data array. The following native TaskDesc supplies separately verified two-byte four-byte alignment.
+  map_owner: The thirteen-floor and twelve-floor indexes and the two-byte debug underscore are defined in map.c with their actual consumers. Their original address, extent and content contracts are retained in that native owner run in registration_data.json. The shared room-name index and all EU localized records remain here with unchanged definitions and asset payloads.
+  shared_index_native: The twenty-eight room-name index is shared by room.c and the card name accessor, including allmap and map-inspection users of that accessor. It remains in this shared catalog with its existing type, bound, regional initializer and canonical declaration, and now uses ordinary .data. The EU localized records stay at their existing positions among their language-text payloads; their interleaved placement does not support a single native run without restructuring those resources. This change makes no new code-owner or translation-unit-boundary claim and changes no text payload.
+  native_map_text_08893370_rodata: EU LocalizedText gMapNameEu_08893370 (20B) formerly .data_map_text_gMapNameEu_08893370 is const in existing map_text_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot, EU-only).
+  split_eu_map_name_localized_texts: EU map-card LocalizedText records were each an island in units.txt, interleaved with rodata_script_at_*.s string blobs, so they could not share one native .rodata. Split each remaining forced record into map_text_eu_<place>_name.c (content slug from English label) with ordinary const .rodata; same interleaving evidence pattern as staff_roll sprite splits.
+regions:
+  us:
+    named_assets:
+    - name: gMapNameTextUs_0815B5F6
+      address: '0x815b5f6'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B630
+      address: '0x815b630'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B66C
+      address: '0x815b66c'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B6A6
+      address: '0x815b6a6'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B6E2
+      address: '0x815b6e2'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B71C
+      address: '0x815b71c'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B756
+      address: '0x815b756'
+      size: 62
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B794
+      address: '0x815b794'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B7D0
+      address: '0x815b7d0'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B80A
+      address: '0x815b80a'
+      size: 58
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B844
+      address: '0x815b844'
+      size: 64
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B884
+      address: '0x815b884'
+      size: 62
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B8C2
+      address: '0x815b8c2'
+      size: 68
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B906
+      address: '0x815b906'
+      size: 66
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B948
+      address: '0x815b948'
+      size: 66
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B98A
+      address: '0x815b98a'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B9C6
+      address: '0x815b9c6'
+      size: 62
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BA04
+      address: '0x815ba04'
+      size: 64
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BA44
+      address: '0x815ba44'
+      size: 64
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BA84
+      address: '0x815ba84'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BAC0
+      address: '0x815bac0'
+      size: 62
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BAFE
+      address: '0x815bafe'
+      size: 62
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BB3C
+      address: '0x815bb3c'
+      size: 64
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BB7C
+      address: '0x815bb7c'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815BBB8
+      address: '0x815bbb8'
+      size: 60
+      encoding: utf16le
+    - name: gMapNameTextUs_0815ADB6
+      address: '0x815adb6'
+      size: 28
+      encoding: utf16le
+    - name: gMapNameTextUs_0815B5C4
+      address: '0x815b5c4'
+      size: 30
+      encoding: utf16le
+  jp:
+    named_assets:
+    - name: gMapNameTextJp_0814F52C
+      address: '0x814f52c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F53C
+      address: '0x814f53c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F54C
+      address: '0x814f54c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F55C
+      address: '0x814f55c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F56C
+      address: '0x814f56c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F57C
+      address: '0x814f57c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F58C
+      address: '0x814f58c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F59C
+      address: '0x814f59c'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F5AC
+      address: '0x814f5ac'
+      size: 15
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F5BC
+      address: '0x814f5bc'
+      size: 17
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F5D0
+      address: '0x814f5d0'
+      size: 17
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F5E4
+      address: '0x814f5e4'
+      size: 17
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F5F8
+      address: '0x814f5f8'
+      size: 17
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F60C
+      address: '0x814f60c'
+      size: 21
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F624
+      address: '0x814f624'
+      size: 21
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F63C
+      address: '0x814f63c'
+      size: 21
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F654
+      address: '0x814f654'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F668
+      address: '0x814f668'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F67C
+      address: '0x814f67c'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F690
+      address: '0x814f690'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F6A4
+      address: '0x814f6a4'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F6B8
+      address: '0x814f6b8'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F6CC
+      address: '0x814f6cc'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F6E0
+      address: '0x814f6e0'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F6F4
+      address: '0x814f6f4'
+      size: 19
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F510
+      address: '0x814f510'
+      size: 13
+      encoding: shift_jis
+    - name: gMapNameTextJp_0814F520
+      address: '0x814f520'
+      size: 9
+      encoding: shift_jis
+  eu:
+    named_assets:
+    - name: gMapNameTextEu_088933E8
+      address: '0x88933e8'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893405
+      address: '0x8893405'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889341F
+      address: '0x889341f'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893440
+      address: '0x8893440'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889345B
+      address: '0x889345b'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893494
+      address: '0x8893494'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_088934B2
+      address: '0x88934b2'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_088934CC
+      address: '0x88934cc'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_088934ED
+      address: '0x88934ed'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893508
+      address: '0x8893508'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893540
+      address: '0x8893540'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889355D
+      address: '0x889355d'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893577
+      address: '0x8893577'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893598
+      address: '0x8893598'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_088935B3
+      address: '0x88935b3'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_088935EC
+      address: '0x88935ec'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889360A
+      address: '0x889360a'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893624
+      address: '0x8893624'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893645
+      address: '0x8893645'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893660
+      address: '0x8893660'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893698
+      address: '0x8893698'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_088936B5
+      address: '0x88936b5'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_088936CF
+      address: '0x88936cf'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_088936F0
+      address: '0x88936f0'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889370B
+      address: '0x889370b'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893744
+      address: '0x8893744'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893761
+      address: '0x8893761'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889377B
+      address: '0x889377b'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889379C
+      address: '0x889379c'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_088937B7
+      address: '0x88937b7'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_088937F0
+      address: '0x88937f0'
+      size: 31
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889380F
+      address: '0x889380f'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893829
+      address: '0x8893829'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889384A
+      address: '0x889384a'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893865
+      address: '0x8893865'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_088938A0
+      address: '0x88938a0'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_088938BE
+      address: '0x88938be'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_088938D8
+      address: '0x88938d8'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_088938F9
+      address: '0x88938f9'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893914
+      address: '0x8893914'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889394C
+      address: '0x889394c'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893969
+      address: '0x8893969'
+      size: 26
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893983
+      address: '0x8893983'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_088939A4
+      address: '0x88939a4'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_088939BF
+      address: '0x88939bf'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_088939F8
+      address: '0x88939f8'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893A15
+      address: '0x8893a15'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893A30
+      address: '0x8893a30'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893A52
+      address: '0x8893a52'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893A6E
+      address: '0x8893a6e'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893AA8
+      address: '0x8893aa8'
+      size: 32
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893AC8
+      address: '0x8893ac8'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893AE3
+      address: '0x8893ae3'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893B05
+      address: '0x8893b05'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893B21
+      address: '0x8893b21'
+      size: 37
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893B5C
+      address: '0x8893b5c'
+      size: 31
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893B7B
+      address: '0x8893b7b'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893B96
+      address: '0x8893b96'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893BB8
+      address: '0x8893bb8'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893BD4
+      address: '0x8893bd4'
+      size: 38
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893C10
+      address: '0x8893c10'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893C32
+      address: '0x8893c32'
+      size: 27
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893C4D
+      address: '0x8893c4d'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893C6F
+      address: '0x8893c6f'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893C8B
+      address: '0x8893c8b'
+      size: 43
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893CCC
+      address: '0x8893ccc'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893CED
+      address: '0x8893ced'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893D0A
+      address: '0x8893d0a'
+      size: 43
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893D35
+      address: '0x8893d35'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893D52
+      address: '0x8893d52'
+      size: 38
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893D8C
+      address: '0x8893d8c'
+      size: 33
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893DAD
+      address: '0x8893dad'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893DCA
+      address: '0x8893dca'
+      size: 43
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893DF5
+      address: '0x8893df5'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893E12
+      address: '0x8893e12'
+      size: 37
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893E4C
+      address: '0x8893e4c'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893E6A
+      address: '0x8893e6a'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893E87
+      address: '0x8893e87'
+      size: 43
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893EB2
+      address: '0x8893eb2'
+      size: 29
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893ECF
+      address: '0x8893ecf'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893F08
+      address: '0x8893f08'
+      size: 31
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893F27
+      address: '0x8893f27'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893F43
+      address: '0x8893f43'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893F6D
+      address: '0x8893f6d'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893F89
+      address: '0x8893f89'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893FC0
+      address: '0x8893fc0'
+      size: 32
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893FE0
+      address: '0x8893fe0'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893FFC
+      address: '0x8893ffc'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894026
+      address: '0x8894026'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894042
+      address: '0x8894042'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889407C
+      address: '0x889407c'
+      size: 32
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889409C
+      address: '0x889409c'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_088940B8
+      address: '0x88940b8'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_088940E2
+      address: '0x88940e2'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_088940FE
+      address: '0x88940fe'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894138
+      address: '0x8894138'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894156
+      address: '0x8894156'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894172
+      address: '0x8894172'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889419C
+      address: '0x889419c'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_088941B8
+      address: '0x88941b8'
+      size: 34
+      encoding: singlebyte
+    - name: gMapNameTextEu_088941F0
+      address: '0x88941f0'
+      size: 31
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889420F
+      address: '0x889420f'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889422B
+      address: '0x889422b'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894255
+      address: '0x8894255'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894271
+      address: '0x8894271'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_088942A8
+      address: '0x88942a8'
+      size: 31
+      encoding: singlebyte
+    - name: gMapNameTextEu_088942C7
+      address: '0x88942c7'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_088942E3
+      address: '0x88942e3'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889430D
+      address: '0x889430d'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894329
+      address: '0x8894329'
+      size: 35
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894360
+      address: '0x8894360'
+      size: 32
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894380
+      address: '0x8894380'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889439C
+      address: '0x889439c'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_088943C6
+      address: '0x88943c6'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_088943E2
+      address: '0x88943e2'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889441C
+      address: '0x889441c'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889443A
+      address: '0x889443a'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894456
+      address: '0x8894456'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894480
+      address: '0x8894480'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889449C
+      address: '0x889449c'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_088944D4
+      address: '0x88944d4'
+      size: 30
+      encoding: singlebyte
+    - name: gMapNameTextEu_088944F2
+      address: '0x88944f2'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889450E
+      address: '0x889450e'
+      size: 42
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894538
+      address: '0x8894538'
+      size: 28
+      encoding: singlebyte
+    - name: gMapNameTextEu_08894554
+      address: '0x8894554'
+      size: 36
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893324
+      address: '0x8893324'
+      size: 14
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893332
+      address: '0x8893332'
+      size: 16
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893342
+      address: '0x8893342'
+      size: 16
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893352
+      address: '0x8893352'
+      size: 13
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889335F
+      address: '0x889335f'
+      size: 16
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893384
+      address: '0x8893384'
+      size: 12
+      encoding: singlebyte
+    - name: gMapNameTextEu_08893390
+      address: '0x8893390'
+      size: 14
+      encoding: singlebyte
+    - name: gMapNameTextEu_0889339E
+      address: '0x889339e'
+      size: 17
+      encoding: singlebyte
+    - name: gMapNameTextEu_088933AF
+      address: '0x88933af'
+      size: 16
+      encoding: singlebyte
+    - name: gMapNameTextEu_088933BF
+      address: '0x88933bf'
+      size: 18
+      encoding: singlebyte

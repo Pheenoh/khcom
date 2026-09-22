@@ -1,10 +1,11 @@
 import argparse
 import hashlib
-import json
 import re
 import struct
 import subprocess
 from pathlib import Path
+
+import yaml
 
 from rom_data_evidence import ROM_BASE, ROM_END, number
 
@@ -168,15 +169,15 @@ def normalize_sidecar(document, roms=None):
 
 def load_sidecar(path, roms=None):
     path = Path(path)
-    document = json.loads(path.read_text()) if path.exists() else {'version': 1, 'regions': {}}
+    document = yaml.safe_load(path.read_text()) if path.exists() else {'version': 1, 'regions': {}}
     return normalize_sidecar(document, roms)
 
 
 def load_sidecars(directory, roms=None):
     combined = {'version': 1, 'provenance': {}, 'regions': {version: {
         'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
-    for path in sorted(Path(directory).glob('*_data.json')):
-        document = json.loads(path.read_text())
+    for path in sorted(Path(directory).glob('*_data.yaml')):
+        document = yaml.safe_load(path.read_text())
         normalize_sidecar(document, roms)
         for key, value in document.get('provenance', {}).items():
             combined['provenance'][path.name + ':' + key] = value
@@ -254,7 +255,7 @@ def main():
     parser.add_argument('--rom', type=Path)
     args = parser.parse_args()
     root, version = args.root, args.version
-    paths = [root / args.manifest] if args.manifest else sorted((root / 'config').glob('*_data.json'))
+    paths = [root / args.manifest] if args.manifest else sorted((root / 'config').glob('*_data.yaml'))
     if not any(path.exists() for path in paths):
         print(f'{version}: no regional data contracts')
         return

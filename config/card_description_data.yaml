@@ -1,0 +1,1099 @@
+version: 1
+provenance:
+  card_descriptions: Three independently referenced native description lists have98/26/14 text pointers and end at the already-owned RikuBtlTutorial Mode. All260 MapCardDef category fields cover0..25; the14 WorldinspectMsg/MdMsg records selected by mode_worldinspect_0 i<=13 cover description selectors0..13 in both modes. CardDef rows0..654 use selectors0..97; row655 is the first out-of-range selector98, and later placeholder rows reach141. Live collection code does not establish those placeholders unreachable. Original mode_ms2 <=26 allows a cross-object read into world description0; card selectors139..141 would read following Mode callbacks. Definitions preserve true physical extents and public externs remain unsized; no false larger bounds or behavior fixes are claimed. US UTF16 and JP Shift-JIS text remain named binary assets; EU entries refer existing compiler-owned five-language LocalizedText wrappers.
+  native_catalog: The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.
+regions:
+  us:
+    named_assets:
+    - name: gCardDescriptionTextUs_09042080
+      address: '0x9042080'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090420FC
+      address: '0x90420fc'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042176
+      address: '0x9042176'
+      size: 120
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090421EE
+      address: '0x90421ee'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904226A
+      address: '0x904226a'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090422E4
+      address: '0x90422e4'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904235E
+      address: '0x904235e'
+      size: 120
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090423D6
+      address: '0x90423d6'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042452
+      address: '0x9042452'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090424CC
+      address: '0x90424cc'
+      size: 130
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904254E
+      address: '0x904254e'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090425CA
+      address: '0x90425ca'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042646
+      address: '0x9042646'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090426C0
+      address: '0x90426c0'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904273C
+      address: '0x904273c'
+      size: 128
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090427BC
+      address: '0x90427bc'
+      size: 132
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042840
+      address: '0x9042840'
+      size: 124
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090428BC
+      address: '0x90428bc'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042912
+      address: '0x9042912'
+      size: 114
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042984
+      address: '0x9042984'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090429E6
+      address: '0x90429e6'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042A40
+      address: '0x9042a40'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042AA0
+      address: '0x9042aa0'
+      size: 92
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042AFC
+      address: '0x9042afc'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042B5C
+      address: '0x9042b5c'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042BB4
+      address: '0x9042bb4'
+      size: 78
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042C02
+      address: '0x9042c02'
+      size: 48
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042C32
+      address: '0x9042c32'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042C88
+      address: '0x9042c88'
+      size: 92
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042CE4
+      address: '0x9042ce4'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042D38
+      address: '0x9042d38'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042D90
+      address: '0x9042d90'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042DF2
+      address: '0x9042df2'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042E4C
+      address: '0x9042e4c'
+      size: 48
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042E7C
+      address: '0x9042e7c'
+      size: 110
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042EEA
+      address: '0x9042eea'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042F40
+      address: '0x9042f40'
+      size: 42
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042F6A
+      address: '0x9042f6a'
+      size: 40
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042F92
+      address: '0x9042f92'
+      size: 52
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042FC6
+      address: '0x9042fc6'
+      size: 24
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09042FDE
+      address: '0x9042fde'
+      size: 100
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043042
+      address: '0x9043042'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904309C
+      address: '0x904309c'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090430F0
+      address: '0x90430f0'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904315A
+      address: '0x904315a'
+      size: 108
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090431C6
+      address: '0x90431c6'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043230
+      address: '0x9043230'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904329A
+      address: '0x904329a'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043302
+      address: '0x9043302'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904336A
+      address: '0x904336a'
+      size: 112
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090433DA
+      address: '0x90433da'
+      size: 76
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043426
+      address: '0x9043426'
+      size: 78
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043474
+      address: '0x9043474'
+      size: 108
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090434E0
+      address: '0x90434e0'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043540
+      address: '0x9043540'
+      size: 70
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043586
+      address: '0x9043586'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090435E4
+      address: '0x90435e4'
+      size: 78
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043632
+      address: '0x9043632'
+      size: 70
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043678
+      address: '0x9043678'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090436E0
+      address: '0x90436e0'
+      size: 102
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043746
+      address: '0x9043746'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090437B0
+      address: '0x90437b0'
+      size: 100
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043814
+      address: '0x9043814'
+      size: 108
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043880
+      address: '0x9043880'
+      size: 74
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090438CA
+      address: '0x90438ca'
+      size: 82
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904391C
+      address: '0x904391c'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043976
+      address: '0x9043976'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090439CE
+      address: '0x90439ce'
+      size: 80
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043A1E
+      address: '0x9043a1e'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043A80
+      address: '0x9043a80'
+      size: 48
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043AB0
+      address: '0x9043ab0'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043B0E
+      address: '0x9043b0e'
+      size: 110
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043B7C
+      address: '0x9043b7c'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043BDE
+      address: '0x9043bde'
+      size: 78
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043C2C
+      address: '0x9043c2c'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043C82
+      address: '0x9043c82'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043CE2
+      address: '0x9043ce2'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043D42
+      address: '0x9043d42'
+      size: 100
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043DA6
+      address: '0x9043da6'
+      size: 74
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043DF0
+      address: '0x9043df0'
+      size: 102
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043E56
+      address: '0x9043e56'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043E9E
+      address: '0x9043e9e'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043F00
+      address: '0x9043f00'
+      size: 74
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043F4A
+      address: '0x9043f4a'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09043FA0
+      address: '0x9043fa0'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044000
+      address: '0x9044000'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044060
+      address: '0x9044060'
+      size: 44
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904408C
+      address: '0x904408c'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090440E6
+      address: '0x90440e6'
+      size: 122
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044160
+      address: '0x9044160'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090441C2
+      address: '0x90441c2'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904422C
+      address: '0x904422c'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044282
+      address: '0x9044282'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090442E0
+      address: '0x90442e0'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904434A
+      address: '0x904434a'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090443B2
+      address: '0x90443b2'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904440A
+      address: '0x904440a'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904446C
+      address: '0x904446c'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090444C4
+      address: '0x90444c4'
+      size: 80
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044514
+      address: '0x9044514'
+      size: 74
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904455E
+      address: '0x904455e'
+      size: 86
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090445B4
+      address: '0x90445b4'
+      size: 70
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090445FA
+      address: '0x90445fa'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044654
+      address: '0x9044654'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090446A8
+      address: '0x90446a8'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090446FC
+      address: '0x90446fc'
+      size: 92
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044758
+      address: '0x9044758'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090447B6
+      address: '0x90447b6'
+      size: 96
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044816
+      address: '0x9044816'
+      size: 112
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044886
+      address: '0x9044886'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090448CE
+      address: '0x90448ce'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044922
+      address: '0x9044922'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044980
+      address: '0x9044980'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090449D8
+      address: '0x90449d8'
+      size: 108
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044A44
+      address: '0x9044a44'
+      size: 82
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044A96
+      address: '0x9044a96'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044AF4
+      address: '0x9044af4'
+      size: 98
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044B56
+      address: '0x9044b56'
+      size: 56
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044B8E
+      address: '0x9044b8e'
+      size: 92
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044BEA
+      address: '0x9044bea'
+      size: 94
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044C48
+      address: '0x9044c48'
+      size: 90
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044CA2
+      address: '0x9044ca2'
+      size: 92
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044CFE
+      address: '0x9044cfe'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044D56
+      address: '0x9044d56'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044DBE
+      address: '0x9044dbe'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044E06
+      address: '0x9044e06'
+      size: 104
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044E6E
+      address: '0x9044e6e'
+      size: 88
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044EC6
+      address: '0x9044ec6'
+      size: 80
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044F16
+      address: '0x9044f16'
+      size: 106
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044F80
+      address: '0x9044f80'
+      size: 84
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09044FD4
+      address: '0x9044fd4'
+      size: 82
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09045026
+      address: '0x9045026'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_0904506E
+      address: '0x904506e'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090450B6
+      address: '0x90450b6'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_090450FE
+      address: '0x90450fe'
+      size: 72
+      encoding: utf16le
+    - name: gCardDescriptionTextUs_09045146
+      address: '0x9045146'
+      size: 16
+      encoding: utf16le
+  jp:
+    named_assets:
+    - name: gCardDescriptionTextJp_090106C0
+      address: '0x90106c0'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090106F4
+      address: '0x90106f4'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010728
+      address: '0x9010728'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010760
+      address: '0x9010760'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010794
+      address: '0x9010794'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090107CC
+      address: '0x90107cc'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010800
+      address: '0x9010800'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010834
+      address: '0x9010834'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010868
+      address: '0x9010868'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901089C
+      address: '0x901089c'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090108D0
+      address: '0x90108d0'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010904
+      address: '0x9010904'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010938
+      address: '0x9010938'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901096C
+      address: '0x901096c'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090109A0
+      address: '0x90109a0'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090109D8
+      address: '0x90109d8'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010A0C
+      address: '0x9010a0c'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010A40
+      address: '0x9010a40'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010A6C
+      address: '0x9010a6c'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010A8C
+      address: '0x9010a8c'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010AAC
+      address: '0x9010aac'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010ACC
+      address: '0x9010acc'
+      size: 17
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010AE0
+      address: '0x9010ae0'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010B10
+      address: '0x9010b10'
+      size: 27
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010B2C
+      address: '0x9010b2c'
+      size: 49
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010B60
+      address: '0x9010b60'
+      size: 35
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010B84
+      address: '0x9010b84'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010BB4
+      address: '0x9010bb4'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010BE4
+      address: '0x9010be4'
+      size: 37
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010C0C
+      address: '0x9010c0c'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010C38
+      address: '0x9010c38'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010C58
+      address: '0x9010c58'
+      size: 19
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010C6C
+      address: '0x9010c6c'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010CA8
+      address: '0x9010ca8'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010CE4
+      address: '0x9010ce4'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010D20
+      address: '0x9010d20'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010D5C
+      address: '0x9010d5c'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010D98
+      address: '0x9010d98'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010DD4
+      address: '0x9010dd4'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010E10
+      address: '0x9010e10'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010E4C
+      address: '0x9010e4c'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010E6C
+      address: '0x9010e6c'
+      size: 25
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010E88
+      address: '0x9010e88'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010EBC
+      address: '0x9010ebc'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010EF4
+      address: '0x9010ef4'
+      size: 19
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010F08
+      address: '0x9010f08'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010F30
+      address: '0x9010f30'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010F68
+      address: '0x9010f68'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010F94
+      address: '0x9010f94'
+      size: 29
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010FB4
+      address: '0x9010fb4'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09010FE4
+      address: '0x9010fe4'
+      size: 49
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011018
+      address: '0x9011018'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011050
+      address: '0x9011050'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901108C
+      address: '0x901108c'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090110BC
+      address: '0x90110bc'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090110F0
+      address: '0x90110f0'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901111C
+      address: '0x901111c'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011144
+      address: '0x9011144'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901116C
+      address: '0x901116c'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011194
+      address: '0x9011194'
+      size: 37
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090111BC
+      address: '0x90111bc'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090111F8
+      address: '0x90111f8'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011224
+      address: '0x9011224'
+      size: 35
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011248
+      address: '0x9011248'
+      size: 45
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011278
+      address: '0x9011278'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090112B0
+      address: '0x90112b0'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090112D8
+      address: '0x90112d8'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011314
+      address: '0x9011314'
+      size: 45
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011344
+      address: '0x9011344'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011370
+      address: '0x9011370'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901139C
+      address: '0x901139c'
+      size: 49
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090113D0
+      address: '0x90113d0'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090113F8
+      address: '0x90113f8'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011428
+      address: '0x9011428'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011460
+      address: '0x9011460'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011488
+      address: '0x9011488'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090114C4
+      address: '0x90114c4'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011500
+      address: '0x9011500'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901152C
+      address: '0x901152c'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011564
+      address: '0x9011564'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901159C
+      address: '0x901159c'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090115D8
+      address: '0x90115d8'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901160C
+      address: '0x901160c'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011638
+      address: '0x9011638'
+      size: 25
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011654
+      address: '0x9011654'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011684
+      address: '0x9011684'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090116BC
+      address: '0x90116bc'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090116F8
+      address: '0x90116f8'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011724
+      address: '0x9011724'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011754
+      address: '0x9011754'
+      size: 27
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011770
+      address: '0x9011770'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090117AC
+      address: '0x90117ac'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090117D4
+      address: '0x90117d4'
+      size: 57
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011810
+      address: '0x9011810'
+      size: 49
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011844
+      address: '0x9011844'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011870
+      address: '0x9011870'
+      size: 45
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090118A0
+      address: '0x90118a0'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090118D0
+      address: '0x90118d0'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090118FC
+      address: '0x90118fc'
+      size: 45
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_0901192C
+      address: '0x901192c'
+      size: 49
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011960
+      address: '0x9011960'
+      size: 35
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011984
+      address: '0x9011984'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090119B4
+      address: '0x90119b4'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_090119EC
+      address: '0x90119ec'
+      size: 23
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011A04
+      address: '0x9011a04'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011A3C
+      address: '0x9011a3c'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011A74
+      address: '0x9011a74'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011AA0
+      address: '0x9011aa0'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011AD4
+      address: '0x9011ad4'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011B04
+      address: '0x9011b04'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011B30
+      address: '0x9011b30'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011B5C
+      address: '0x9011b5c'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011B84
+      address: '0x9011b84'
+      size: 41
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011BB0
+      address: '0x9011bb0'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011BE0
+      address: '0x9011be0'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011C18
+      address: '0x9011c18'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011C44
+      address: '0x9011c44'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011C74
+      address: '0x9011c74'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011CA4
+      address: '0x9011ca4'
+      size: 19
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011CB8
+      address: '0x9011cb8'
+      size: 37
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011CE0
+      address: '0x9011ce0'
+      size: 39
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011D08
+      address: '0x9011d08'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011D3C
+      address: '0x9011d3c'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011D70
+      address: '0x9011d70'
+      size: 51
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011DA4
+      address: '0x9011da4'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011DE0
+      address: '0x9011de0'
+      size: 33
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011E04
+      address: '0x9011e04'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011E40
+      address: '0x9011e40'
+      size: 53
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011E78
+      address: '0x9011e78'
+      size: 59
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011EB4
+      address: '0x9011eb4'
+      size: 55
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011EEC
+      address: '0x9011eec'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011F1C
+      address: '0x9011f1c'
+      size: 43
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011F48
+      address: '0x9011f48'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011F78
+      address: '0x9011f78'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011FA8
+      address: '0x9011fa8'
+      size: 47
+      encoding: shift_jis
+    - name: gCardDescriptionTextJp_09011FD8
+      address: '0x9011fd8'
+      size: 37
+      encoding: shift_jis
+  eu:
+    named_assets: []

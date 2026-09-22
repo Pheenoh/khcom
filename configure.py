@@ -138,7 +138,7 @@ if symbols_file.exists():
         name, addr = (x.strip() for x in line.split("="))
         symbols.append((name, int(addr, 16)))
 
-regional_files = sorted(Path("config").glob("*_data.json"))
+regional_files = sorted(Path("config").glob("*_data.yaml"))
 regional = load_sidecars("config")
 regional_plan = regional["regions"][version]
 symbols.extend(asset_symbols(regional_plan, symbols))

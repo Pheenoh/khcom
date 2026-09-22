@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import hashlib
-import json
 import os
 import re
 import subprocess
 import sys
 from pathlib import Path
+
+import yaml
 
 import assetgen
 import baserom
@@ -16,7 +17,7 @@ ROM_BASE = 0x08000000
 ROM_LIMIT = 0x0A000000
 COMMON = {"assets/common/movie_codec.bin": ("gUnk_081196B4", 15100)}
 LEGACY_COMMON = {"asm/movie_codec.bin": "assets/common/movie_codec.bin"}
-KEEP = {"manifest.json", ".stamp", ".gitkeep"}
+KEEP = {"manifest.yaml", ".stamp", ".gitkeep"}
 
 DIRECTIVE_RE = re.compile(r'^[^@\n]*?\.(include|incbin)\s+"([^"]+)"([^@\n]*)', re.M)
 ROM_INCBIN_RE = re.compile(r'^(\s*)\.incbin\s+"roms/([A-Z0-9]{4})\.gba"\s*,\s*([^,\s]+)\s*,\s*([^,\s]+)\s*$')
@@ -182,7 +183,7 @@ def write_if_changed(path, data):
 
 def manifest_bytes(version, code, sha1, entries):
     document = {"version": version, "code": code, "rom_sha1": sha1, "files": entries}
-    return (json.dumps(document, indent=1, sort_keys=True) + "\n").encode()
+    return yaml.safe_dump(document, sort_keys=True).encode()
 
 
 def decoded_sources(root, version):
@@ -222,7 +223,7 @@ def write_manifest(root, version, ranges):
             raise AssetError(f"{ref} was not decoded")
         entries[ref] = {"sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
     manifest = manifest_bytes(version, code, sha1, entries)
-    write_if_changed(root / "assets" / version / "manifest.json", manifest)
+    write_if_changed(root / "assets" / version / "manifest.yaml", manifest)
     write_if_changed(root / "assets" / version / ".stamp", (hashlib.sha256(manifest).hexdigest() + "\n").encode())
     return entries
 
@@ -244,11 +245,11 @@ def extract(root, version, rom):
 def verify(root, version):
     root = Path(root)
     ranges = plan(root, version)
-    manifest_path = root / "assets" / version / "manifest.json"
+    manifest_path = root / "assets" / version / "manifest.yaml"
     if not manifest_path.exists():
         return [f"{manifest_path.relative_to(root)} is missing"]
     manifest = manifest_path.read_bytes()
-    entries = json.loads(manifest)["files"]
+    entries = yaml.safe_load(manifest)["files"]
     problems = []
     for ref, (start, end) in sorted(ranges.items()):
         entry = entries.get(ref)
@@ -311,7 +312,7 @@ def main():
             print(f"migrated {lines} incbin lines in {changed} files")
             return 0
         if args.verify:
-            chosen = args.versions or [v for v in known if (ROOT / "assets" / v / "manifest.json").exists()]
+            chosen = args.versions or [v for v in known if (ROOT / "assets" / v / "manifest.yaml").exists()]
             if not chosen:
                 raise AssetError("nothing to verify; run python3 tools/extract_assets.py first")
             failed = False

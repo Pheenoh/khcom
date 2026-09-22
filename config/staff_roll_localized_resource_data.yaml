@@ -1,0 +1,3408 @@
+version: 1
+provenance:
+  localized: EU-only task_sroll_c_char_0 language cases1..4 each select two native resource pairs. Every branch explicitly initializes AnimHeader* indices0..4. Complete native animation frames prove94 graphics for kind0 and66 for kind1. Actual Thumb PC-relative literal loads independently identify all16 bases.
+  native: The2720-byte block is extra EU character-name rendering metadata, not an expansion inferred onto a US table. US/JP have no corresponding placement or synthetic assets. All native Sprite/AnimHeader asset bindings have complete exact format extents and hashes; metadata remains counted.
+  native_catalog_section: Each existing shared staff-roll catalog already supplies one complete initialized-data run per active region. Ordinary definitions reproduce the same object sequence and native pointer alignment. Only redundant section annotations and corresponding section selectors are removed; types, initializers, object bounds, region guards and encoded assets are unchanged. The catalog grouping is retained as a reconstruction model without asserting an original source filename.
+regions:
+  eu:
+    binary_assets:
+    - name: gUnkEu_09CEEA9C
+      address: '0x9ceea9c'
+      size: 44
+      kind: Sprite
+      sha256: 7711a099e3f4a69dadb0c78983dda76f64cd0fe2f2e63a170f942241d78154df
+    - name: gUnkEu_09CEEACA
+      address: '0x9ceeaca'
+      size: 44
+      kind: Sprite
+      sha256: b92e629346d49c6ed347339f51c1479feff33385a06e2ef52304f2831933844c
+    - name: gUnkEu_09CEEAF8
+      address: '0x9ceeaf8'
+      size: 44
+      kind: Sprite
+      sha256: 8931e225f554950926cd2f4b660e9dbe69dbe09ef060a27f4bff1476dece906d
+    - name: gUnkEu_09CEEB26
+      address: '0x9ceeb26'
+      size: 44
+      kind: Sprite
+      sha256: 9c1e71cb3aaca014365ea0eaf8a427ce37d29fe3d8c43cffdcf1a3e9da41e7f8
+    - name: gUnkEu_09CEEB54
+      address: '0x9ceeb54'
+      size: 44
+      kind: Sprite
+      sha256: c0384a7267af8574eed426d6b1918efe9b64e642cff981bb9e40998117d3e77d
+    - name: gUnkEu_09CEEB82
+      address: '0x9ceeb82'
+      size: 44
+      kind: Sprite
+      sha256: fb71caf65d7ef04271c0198ec85150071b63cd52cb88a4f9db84f816433ea1d3
+    - name: gUnkEu_09CEEBB0
+      address: '0x9ceebb0'
+      size: 44
+      kind: Sprite
+      sha256: ab1f6fc1ac49048d676b137d8792c2922b693bb6d52212463d12de9fea0e00d6
+    - name: gUnkEu_09CEEBDE
+      address: '0x9ceebde'
+      size: 44
+      kind: Sprite
+      sha256: f2ee16520bd42e92113525a48a628b6f3c2d05dc2e47b6f1de436a8b6040afc9
+    - name: gUnkEu_09CEEC0C
+      address: '0x9ceec0c'
+      size: 44
+      kind: Sprite
+      sha256: 9b779792098699d9f771893e76904b4ba4b73d8a3e658a096410311e21952b0f
+    - name: gUnkEu_09CEEC3A
+      address: '0x9ceec3a'
+      size: 44
+      kind: Sprite
+      sha256: 9d5e99763b4c9e3fa02d9d80290e23f8aa4c3e40f08782c5dfb39b89df12abc4
+    - name: gUnkEu_09CEEC68
+      address: '0x9ceec68'
+      size: 44
+      kind: Sprite
+      sha256: 2f7976c761c47c87056f193881aa915701cfccab504b0931dd5b45f776c0072b
+    - name: gUnkEu_09CEEC96
+      address: '0x9ceec96'
+      size: 44
+      kind: Sprite
+      sha256: e6d5bfc13ec68abbe99efa8896e3c48eec388206fb1e6d0215031dd2de8dc1ed
+    - name: gUnkEu_09CEECC4
+      address: '0x9ceecc4'
+      size: 44
+      kind: Sprite
+      sha256: f3cc8b1df4e5ff1355696b3b3bd05340dd805870b86cf0835e5cfd076dc4617d
+    - name: gUnkEu_09CEECF2
+      address: '0x9ceecf2'
+      size: 44
+      kind: Sprite
+      sha256: 103f50f48033df0b2a2c97ac6b91e21d5344c0c43d557b6f7510fa92908101de
+    - name: gUnkEu_09CEED20
+      address: '0x9ceed20'
+      size: 44
+      kind: Sprite
+      sha256: faf03431f8211f849cad649b9a5a4c8b049a2356de765a9611d52b713f0eccdd
+    - name: gUnkEu_09CEED4E
+      address: '0x9ceed4e'
+      size: 44
+      kind: Sprite
+      sha256: 446a216237fe742ecd0be96755285e7dfff8494bc2d4aa532a7da62933d5eb31
+    - name: gUnkEu_09CEED7C
+      address: '0x9ceed7c'
+      size: 44
+      kind: Sprite
+      sha256: 8a872db579fc50f8b732bacbb6a0527c162733ff7d1389fbfb75c6eac960f42f
+    - name: gUnkEu_09CEEDAA
+      address: '0x9ceedaa'
+      size: 44
+      kind: Sprite
+      sha256: 6dadb8b329543e9bbfc49e5e9153aa53fddec68819e2f59661cb18ac342ab670
+    - name: gUnkEu_09CEEDD8
+      address: '0x9ceedd8'
+      size: 44
+      kind: Sprite
+      sha256: 0c8b8b8878b653d9374744fe46d7e851f8028e8104a5d0e1f7cfa70254e36a98
+    - name: gUnkEu_09CEEE06
+      address: '0x9ceee06'
+      size: 44
+      kind: Sprite
+      sha256: bcf9ca6eec1d127fc26b1e1d0b8576525de24a2b50ab19ddf0e5948f61f41d33
+    - name: gUnkEu_09CEEE34
+      address: '0x9ceee34'
+      size: 44
+      kind: Sprite
+      sha256: 6a82ba7b00600efc66aad324e696c4204790441caa413f59428e73e3d1fdee36
+    - name: gUnkEu_09CEEE62
+      address: '0x9ceee62'
+      size: 44
+      kind: Sprite
+      sha256: b0bc395f3418b45a77d67b8b43b68d2a39a84b8b3d21abf00fe6ce68b156abbb
+    - name: gUnkEu_09CEEE90
+      address: '0x9ceee90'
+      size: 44
+      kind: Sprite
+      sha256: 9e04327c43c6394340c00023edf482b7724130c864b28615c87bde9586f8de32
+    - name: gUnkEu_09CEEEBE
+      address: '0x9ceeebe'
+      size: 44
+      kind: Sprite
+      sha256: 22a85e24d9358c796d128973bdbedf877f3939fee12ac37ba079eaaa453c3f37
+    - name: gUnkEu_09CEEEEC
+      address: '0x9ceeeec'
+      size: 44
+      kind: Sprite
+      sha256: 3ad8de71b808fbf53bfea1667901db96284e9010ea1756fbbb88021d031be675
+    - name: gUnkEu_09CEEF1A
+      address: '0x9ceef1a'
+      size: 38
+      kind: Sprite
+      sha256: e28ba2c7c27813f0d6f6f6fc89c973c867366ea74ebf968c6eb595595ed12887
+    - name: gUnkEu_09CEEF42
+      address: '0x9ceef42'
+      size: 38
+      kind: Sprite
+      sha256: a327655733905efb2cf0321f10703a29677ed181a5b7e6ae1d4016dede16ec30
+    - name: gUnkEu_09CEEF6A
+      address: '0x9ceef6a'
+      size: 38
+      kind: Sprite
+      sha256: be9156c4c55854edf97d5df273dafe3a315b730b54a07c05cc93d92d7bfee318
+    - name: gUnkEu_09CEEF92
+      address: '0x9ceef92'
+      size: 38
+      kind: Sprite
+      sha256: 3ebcf16b6f7f244d1057e7af074f1d0d3407647a77ead2202caab9709f8c6d16
+    - name: gUnkEu_09CEEFBA
+      address: '0x9ceefba'
+      size: 38
+      kind: Sprite
+      sha256: d3a2d4bc4601f08a47e2f137cea370e9806ee1bf640b7f9a31f42fe6e6461e72
+    - name: gUnkEu_09CEEFE2
+      address: '0x9ceefe2'
+      size: 38
+      kind: Sprite
+      sha256: 48ad97025d7117211fda9c93a40c5fc03a242b04ec01da23865e93515d85e94f
+    - name: gUnkEu_09CEF00A
+      address: '0x9cef00a'
+      size: 38
+      kind: Sprite
+      sha256: 1d5586d94fc37e1eb602c370313a8ecd66cc2741d44c65c3898c9a4f698544d9
+    - name: gUnkEu_09CEF032
+      address: '0x9cef032'
+      size: 38
+      kind: Sprite
+      sha256: de0b824f242c1d91dcc33b022d6550bb1a81aef9651b20b98ca1bd223e525232
+    - name: gUnkEu_09CEF05A
+      address: '0x9cef05a'
+      size: 38
+      kind: Sprite
+      sha256: d693d8f7c46aae255131f9af21e0cc4941a38c1fb2f4fd77b202c5d4168fb4d5
+    - name: gUnkEu_09CEF082
+      address: '0x9cef082'
+      size: 38
+      kind: Sprite
+      sha256: d7520a2417b977a3ab3a42d307bdeeb8face9fb49aa7612161a3c1d55814f9c8
+    - name: gUnkEu_09CEF0AA
+      address: '0x9cef0aa'
+      size: 38
+      kind: Sprite
+      sha256: e1d7c32e8ef4c86115413ba31f2bf5ebc702904043520c8f9c18f048c2d270c1
+    - name: gUnkEu_09CEF0D2
+      address: '0x9cef0d2'
+      size: 38
+      kind: Sprite
+      sha256: d8e3f3c9f26fb61693e8821d305117900d26fe3b2f91cc6d8c0c9d7db24957c4
+    - name: gUnkEu_09CEF0FA
+      address: '0x9cef0fa'
+      size: 38
+      kind: Sprite
+      sha256: c213dfba82fc6e8a62adb9fbf2baa920f1c58d34b03d37c141c0c8e255364c20
+    - name: gUnkEu_09CEF122
+      address: '0x9cef122'
+      size: 38
+      kind: Sprite
+      sha256: 899992666918f4685457c0e280c069c42bbfd064d6449d23ac7444d5c0b8112c
+    - name: gUnkEu_09CEF14A
+      address: '0x9cef14a'
+      size: 38
+      kind: Sprite
+      sha256: 1f893c3e925886a1536ac3c680996a38a22666eb2074e246dc315b9b8880a298
+    - name: gUnkEu_09CEF172
+      address: '0x9cef172'
+      size: 38
+      kind: Sprite
+      sha256: 1bacb2942d2bc06e90fb1144d7a708b20e5aca6096cc3235e1ec2c3bdebb0106
+    - name: gUnkEu_09CEF19A
+      address: '0x9cef19a'
+      size: 38
+      kind: Sprite
+      sha256: 2ff9744578c112d2e36e7f72258ee83d1fff618b6f6e153fc8cfd977c54c91fe
+    - name: gUnkEu_09CEF1C2
+      address: '0x9cef1c2'
+      size: 38
+      kind: Sprite
+      sha256: b03705c88f9f7087d9a571b4f7ec6d5dedef454d4e9725bd94ed798b7242edd8
+    - name: gUnkEu_09CEF1EA
+      address: '0x9cef1ea'
+      size: 38
+      kind: Sprite
+      sha256: 278cd06d0139a3c5e65c77f28cb7c2452fdad0d0d6d5986ddad844d8f9a111b5
+    - name: gUnkEu_09CEF212
+      address: '0x9cef212'
+      size: 38
+      kind: Sprite
+      sha256: aec0c8d4ae5d0786ec25c39a051a99af940784b1374ca00e6fd99a66c79d862c
+    - name: gUnkEu_09CEF23A
+      address: '0x9cef23a'
+      size: 38
+      kind: Sprite
+      sha256: 903a27e9811967a57137b409ef603e485dfa3b172c32197d2c10de11c7d61e83
+    - name: gUnkEu_09CEF262
+      address: '0x9cef262'
+      size: 38
+      kind: Sprite
+      sha256: 4fbc11326cd8dbd8e3bd75716efe71a402a2fb74ecbe14d0ce9c2635c0120798
+    - name: gUnkEu_09CEF28A
+      address: '0x9cef28a'
+      size: 38
+      kind: Sprite
+      sha256: b96695980af4a2831cce5a652136b453d29eb7eed12a979327e8433f8a62ad81
+    - name: gUnkEu_09CEF2B2
+      address: '0x9cef2b2'
+      size: 38
+      kind: Sprite
+      sha256: e7776df109bacd4331877f56895d8eecc5969f3694d26a8c1d2e9b4073a89c69
+    - name: gUnkEu_09CEF2DA
+      address: '0x9cef2da'
+      size: 38
+      kind: Sprite
+      sha256: 84ebb59b269a39d5fa523412b073230d0998ee4af61485229597beba25b1cb3d
+    - name: gUnkEu_09CEF302
+      address: '0x9cef302'
+      size: 38
+      kind: Sprite
+      sha256: c8cea6e12b0759f5135074dcb2746d7e4155ca4839fef22f72e174561eba725f
+    - name: gUnkEu_09CEF32A
+      address: '0x9cef32a'
+      size: 38
+      kind: Sprite
+      sha256: 7f9b134bee788c46ddf6b8697b4d5c9a93a41b0c18fdd6287a0834b3ec5575eb
+    - name: gUnkEu_09CEF352
+      address: '0x9cef352'
+      size: 38
+      kind: Sprite
+      sha256: 84169ded225cd7cf486aa8ca4d9e89c9500e951fd62fb2fbdf69f50f679d0566
+    - name: gUnkEu_09CEF37A
+      address: '0x9cef37a'
+      size: 20
+      kind: Sprite
+      sha256: 9a9da5bd1cbfbd763283a80c4f8ad6be2e6a491e20ae354884c2107bf38bd004
+    - name: gUnkEu_09CEF390
+      address: '0x9cef390'
+      size: 20
+      kind: Sprite
+      sha256: e14b0d429505e67b0e1007145c5c5cce9b8dab8cd7f33c0ecd38c8b0730eaf80
+    - name: gUnkEu_09CEF3A6
+      address: '0x9cef3a6'
+      size: 20
+      kind: Sprite
+      sha256: 795e1939a85cb00004a70c1d154f68ba8a5f5209c23190e98fc4528f721fe73c
+    - name: gUnkEu_09CEF3BC
+      address: '0x9cef3bc'
+      size: 20
+      kind: Sprite
+      sha256: 8068e944a96f2da889ccb0da1efebee2c7f69e36e3af7e68f49be5dd30d65e17
+    - name: gUnkEu_09CEF3D2
+      address: '0x9cef3d2'
+      size: 20
+      kind: Sprite
+      sha256: a289b9c6df9c40248e1c288f8d550035c86e689ebc978a0b1c60074c6450fa52
+    - name: gUnkEu_09CEF3E8
+      address: '0x9cef3e8'
+      size: 20
+      kind: Sprite
+      sha256: 5e0666f6daa9ceb7d415fe7405b46a9b539fb21aa026dbcee0d3c4c0d59c893a
+    - name: gUnkEu_09CEF3FE
+      address: '0x9cef3fe'
+      size: 20
+      kind: Sprite
+      sha256: e0e18144b5297f5ec9bdfafcfc4bb9a0d57de5cac5c9b68dcf2921b424474d7a
+    - name: gUnkEu_09CEF414
+      address: '0x9cef414'
+      size: 20
+      kind: Sprite
+      sha256: a1063ddbef5e832921fe253310351902a74ce26539c29ea84564311cf1fe1556
+    - name: gUnkEu_09CEF42A
+      address: '0x9cef42a'
+      size: 20
+      kind: Sprite
+      sha256: 4c3a5e454e89c10127fb25b8abcb0cf750a554a85dc001d8f98dd2c1da34dd0c
+    - name: gUnkEu_09CEF440
+      address: '0x9cef440'
+      size: 20
+      kind: Sprite
+      sha256: d5ab7c9c56f38f65a8d07be1a8df0f8bc5c2f666bf7bd7d6b330e30976dadc50
+    - name: gUnkEu_09CEF456
+      address: '0x9cef456'
+      size: 20
+      kind: Sprite
+      sha256: 090d072951537be5629eaf3f04158b5b7765054105e05a620a768ab8e6a33b22
+    - name: gUnkEu_09CEF46C
+      address: '0x9cef46c'
+      size: 20
+      kind: Sprite
+      sha256: 74ac57e6fde025a0a29c3ac1ca5e1baae1096f39eaacf565d4814916da93b7b7
+    - name: gUnkEu_09CEF482
+      address: '0x9cef482'
+      size: 20
+      kind: Sprite
+      sha256: 45109902efcbfe7e76bc2a3e34356529ce9261cda182fcb238a804a3160a2fd4
+    - name: gUnkEu_09CEF498
+      address: '0x9cef498'
+      size: 20
+      kind: Sprite
+      sha256: 5f26ed4e797e044302b5bebbad044c79c97c157d10f888eb45003a04a5004313
+    - name: gUnkEu_09CEF4AE
+      address: '0x9cef4ae'
+      size: 20
+      kind: Sprite
+      sha256: b6c01579359f710431af090c49481bf11260144c324056ea71295d34c522ce2b
+    - name: gUnkEu_09CEF4C4
+      address: '0x9cef4c4'
+      size: 20
+      kind: Sprite
+      sha256: c3612ca6a120d0ff178094cba495fcaf528e08f1d4d3606793a6a95e034108c2
+    - name: gUnkEu_09CEF4DA
+      address: '0x9cef4da'
+      size: 20
+      kind: Sprite
+      sha256: 3557e1cb1cd1cebdc33d3c03b3659c1edd6e7f656233cd45322c0cc26036ed76
+    - name: gUnkEu_09CEF4F0
+      address: '0x9cef4f0'
+      size: 20
+      kind: Sprite
+      sha256: 960c2635e49d0293134ba023ed0334d9605a1732ca3898b43ecca160cf0f579e
+    - name: gUnkEu_09CEF506
+      address: '0x9cef506'
+      size: 20
+      kind: Sprite
+      sha256: eeab0ec102e76fdb7b7281cc81e40ba7707fd10cbe81281cfd71269f4cf9649d
+    - name: gUnkEu_09CEF51C
+      address: '0x9cef51c'
+      size: 20
+      kind: Sprite
+      sha256: 869fc7b90efc8a03092c7ca948e49e71dc8853a8739d88b5ab501374d8751c09
+    - name: gUnkEu_09CEF532
+      address: '0x9cef532'
+      size: 20
+      kind: Sprite
+      sha256: b22b3c35e450ff00b568a26ebe76858f24d577968bbb9704d6a8e51cd07bb153
+    - name: gUnkEu_09CEF548
+      address: '0x9cef548'
+      size: 20
+      kind: Sprite
+      sha256: d31d67c8ea265c8d1be1f64f7945535ffdb556cf22b71c11a8a8a91d76a63a97
+    - name: gUnkEu_09CEF55E
+      address: '0x9cef55e'
+      size: 20
+      kind: Sprite
+      sha256: 7d1ed4271267282782c7fb0a33e3c6d253c0de97249a62aff028e216542d3480
+    - name: gUnkEu_09CEF574
+      address: '0x9cef574'
+      size: 38
+      kind: Sprite
+      sha256: 4106f9ae20e3067e38cf7b7a3e06d5aa877b096a56395acd8c14385b5826b6ad
+    - name: gUnkEu_09CEF59C
+      address: '0x9cef59c'
+      size: 38
+      kind: Sprite
+      sha256: a435ee447bf8d527b7c68412133b067ddfdc6abcc8c34d639d973364c09f4b83
+    - name: gUnkEu_09CEF5C4
+      address: '0x9cef5c4'
+      size: 38
+      kind: Sprite
+      sha256: 0ae6851d1e8264bb37db8cdcab9bf6570ba60387a227df85fb1766060d62b908
+    - name: gUnkEu_09CEF5EC
+      address: '0x9cef5ec'
+      size: 38
+      kind: Sprite
+      sha256: a1f9ed8111b520b4971bc9c760ffd7deb2b61453d6664b57e62973b522605323
+    - name: gUnkEu_09CEF614
+      address: '0x9cef614'
+      size: 38
+      kind: Sprite
+      sha256: a9a04951be5e4757b7d6c1ce01a854fc40060b5a60a740515e93e2050e2f9d29
+    - name: gUnkEu_09CEF63C
+      address: '0x9cef63c'
+      size: 38
+      kind: Sprite
+      sha256: 25911a4d812305c787283473868c48ad579bec1c1e1783a69d5e3f69180f4fea
+    - name: gUnkEu_09CEF664
+      address: '0x9cef664'
+      size: 38
+      kind: Sprite
+      sha256: d071165f5479c815471399c1f42f6639adf2895f06c6c84b648d22fee42b382d
+    - name: gUnkEu_09CEF68C
+      address: '0x9cef68c'
+      size: 38
+      kind: Sprite
+      sha256: 63c6b268ab80a6df3ca4a46efe271ce7ba01a8cba8d52cda9e7857054dbf99e6
+    - name: gUnkEu_09CEF6B4
+      address: '0x9cef6b4'
+      size: 38
+      kind: Sprite
+      sha256: b59f2cf48029cee59ce7b9575c03edd08b99bf03941542ddc6619e97ef866454
+    - name: gUnkEu_09CEF6DC
+      address: '0x9cef6dc'
+      size: 38
+      kind: Sprite
+      sha256: e511db6252fc38895a60c8983afc0c2c2742dde58dac7726111dfa9a69743063
+    - name: gUnkEu_09CEF704
+      address: '0x9cef704'
+      size: 38
+      kind: Sprite
+      sha256: ccb59e91a58885e5b3cdb3c0adb443d9943a7d972b076a792afcfe8dadb16cd4
+    - name: gUnkEu_09CEF72C
+      address: '0x9cef72c'
+      size: 38
+      kind: Sprite
+      sha256: 03854a8719ce53ada1328bd1e5d247d638e0e94c752fcc9a725e7774deafab2e
+    - name: gUnkEu_09CEF754
+      address: '0x9cef754'
+      size: 38
+      kind: Sprite
+      sha256: d86aa503c46b17c96ce4e33d9a72ea923b8745e4c1c959811bef14843bf337e0
+    - name: gUnkEu_09CEF77C
+      address: '0x9cef77c'
+      size: 38
+      kind: Sprite
+      sha256: f830590caf21160094421a19f7575270142836264dabe7ae7268a4b0cda18ab5
+    - name: gUnkEu_09CEF7A4
+      address: '0x9cef7a4'
+      size: 38
+      kind: Sprite
+      sha256: 86ea89e992fd585378590d949d8d33b9c1d69bd03c44b5be961ef3cabf16c247
+    - name: gUnkEu_09CEF7CC
+      address: '0x9cef7cc'
+      size: 38
+      kind: Sprite
+      sha256: ce8f234c3a7bdc77853eef7f16ae47a9d5b9329729ff57a0b863123b0a52c29a
+    - name: gUnkEu_09CEF7F4
+      address: '0x9cef7f4'
+      size: 38
+      kind: Sprite
+      sha256: 02ac88391f7716ea65aa550d70a81c0b013f74c8802125f622072768fe3c4caf
+    - name: gUnkEu_09CEF81C
+      address: '0x9cef81c'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CEF81E
+      address: '0x9cef81e'
+      size: 110
+      kind: AnimHeader
+      sha256: 0023d2b79a6f3679bb0c1350c06b54fab9548baf5f83caf7caefe151e69681d0
+    - name: gUnkEu_09CEF88C
+      address: '0x9cef88c'
+      size: 126
+      kind: AnimHeader
+      sha256: 676c46c808670ee286a04a1162f7e4c7c12bcfc27a41eea702178f33da157c07
+    - name: gUnkEu_09CEF90A
+      address: '0x9cef90a'
+      size: 58
+      kind: AnimHeader
+      sha256: a9abd4b3aca879d7771b6965e003a9e00f56c3d1a6366d77f843ad707139f8ca
+    - name: gUnkEu_09CEF944
+      address: '0x9cef944'
+      size: 82
+      kind: AnimHeader
+      sha256: 6c5b74f1cce042a79251e6c24dfa62a92345b0b082cb1622a87fd956bccd8809
+    - name: gUnkEu_09CEF996
+      address: '0x9cef996'
+      size: 82
+      kind: AnimHeader
+      sha256: e0317869466d70c480d4a3472342af6bb811a39e93cfed9e7453db438e563eb7
+    - name: gUnkEu_09CF0EE8
+      address: '0x9cf0ee8'
+      size: 20
+      kind: Sprite
+      sha256: f2dd79baf3d5fdc3cad179ca52bb61a2fc57a1fab6503490b2a1df44003ab9a4
+    - name: gUnkEu_09CF0EFE
+      address: '0x9cf0efe'
+      size: 20
+      kind: Sprite
+      sha256: 09959deb9223f0f7cba1878d304508c0c60c28526ee7f7928580f4817519716a
+    - name: gUnkEu_09CF0F14
+      address: '0x9cf0f14'
+      size: 20
+      kind: Sprite
+      sha256: 3b6439346145f2952b6459eaae200ea5279f3643e70a085182c4c10cbcc0cba9
+    - name: gUnkEu_09CF0F2A
+      address: '0x9cf0f2a'
+      size: 20
+      kind: Sprite
+      sha256: 6538c6a42d94a5517442b968a33b67881bd21cf4100878623f61f80b757a53d0
+    - name: gUnkEu_09CF0F40
+      address: '0x9cf0f40'
+      size: 20
+      kind: Sprite
+      sha256: df9abcfd256603c186dec9947eb340ec05b9471b4960a991e90b448d28f998a4
+    - name: gUnkEu_09CF0F56
+      address: '0x9cf0f56'
+      size: 20
+      kind: Sprite
+      sha256: 8d91c46af6348b89ebed7f125159a5368a5449cfcb45e4cbafee143c3cd9173d
+    - name: gUnkEu_09CF0F6C
+      address: '0x9cf0f6c'
+      size: 20
+      kind: Sprite
+      sha256: 706b0c0d3077dd3e761ef4492be6ea7f4b37d2aafb8a0cefdbe8ba305a98233d
+    - name: gUnkEu_09CF0F82
+      address: '0x9cf0f82'
+      size: 20
+      kind: Sprite
+      sha256: 733c022b603dfdd63fd09c32c33d3c3366004f8c116c3ce45413c774dda11f51
+    - name: gUnkEu_09CF0F98
+      address: '0x9cf0f98'
+      size: 20
+      kind: Sprite
+      sha256: 34bfa4a414f1e811b08aa2b50b1a4a3e9f3bf83187604aed942a2628bcb2f44c
+    - name: gUnkEu_09CF0FAE
+      address: '0x9cf0fae'
+      size: 20
+      kind: Sprite
+      sha256: d89dcd543d2f592dadd6fa589c98124a110f73e22dd97613c73ed68edc57e274
+    - name: gUnkEu_09CF0FC4
+      address: '0x9cf0fc4'
+      size: 20
+      kind: Sprite
+      sha256: b4ca24570716a5b559015c972882257ba9f0f4bb908631e136d2b4de2f0bf6a2
+    - name: gUnkEu_09CF0FDA
+      address: '0x9cf0fda'
+      size: 20
+      kind: Sprite
+      sha256: 21bd653e1dc31951f3560b2f701f00b2e2ce55c300c1cd9e5c1bcfb3cb64d74b
+    - name: gUnkEu_09CF0FF0
+      address: '0x9cf0ff0'
+      size: 20
+      kind: Sprite
+      sha256: ffd70c2d0c5d9debba9eb3465234ca4740626ccf182176c85d06f85e98a29f67
+    - name: gUnkEu_09CF1006
+      address: '0x9cf1006'
+      size: 20
+      kind: Sprite
+      sha256: 9192ad792ca9887a8b85eb37edc65487982e261689dbf8013f4976059d60f3f7
+    - name: gUnkEu_09CF101C
+      address: '0x9cf101c'
+      size: 20
+      kind: Sprite
+      sha256: 6d07b5f45fd6409609e1589d4d558beeeceac18680e206c7f7877e9defb89f67
+    - name: gUnkEu_09CF1032
+      address: '0x9cf1032'
+      size: 20
+      kind: Sprite
+      sha256: dde02449e4ef669c988c7479a265bab24b76f5809d53fb58a2f6bbc8afef0dc5
+    - name: gUnkEu_09CF1048
+      address: '0x9cf1048'
+      size: 20
+      kind: Sprite
+      sha256: 5593158a5ee05ad63347f6144ed52341cd2754cc7781916856b8bf2cd92f4e72
+    - name: gUnkEu_09CF105E
+      address: '0x9cf105e'
+      size: 20
+      kind: Sprite
+      sha256: 9696ec88eebc98c359e2f63c65e0401dcd9c01a82c40a9aa8496ec06816a9e79
+    - name: gUnkEu_09CF1074
+      address: '0x9cf1074'
+      size: 20
+      kind: Sprite
+      sha256: f7c2a6d370590a365c84f70e4f0de1e334ba92eeb7b043de2900619f452c230c
+    - name: gUnkEu_09CF108A
+      address: '0x9cf108a'
+      size: 20
+      kind: Sprite
+      sha256: 44a7c81b851d9d7ec0100255909bebe6e9622e8916e994cd23e6a9b88635a700
+    - name: gUnkEu_09CF10A0
+      address: '0x9cf10a0'
+      size: 20
+      kind: Sprite
+      sha256: 83d02a4d5a1ae4f9e85c557e168a554a573b4cd5ad27f2fb475ed92f476acce7
+    - name: gUnkEu_09CF10B6
+      address: '0x9cf10b6'
+      size: 20
+      kind: Sprite
+      sha256: 1c77b8dcc41362bf679c2b6d62517f42852a24fae7418719763a162fa6675ce5
+    - name: gUnkEu_09CF10CC
+      address: '0x9cf10cc'
+      size: 20
+      kind: Sprite
+      sha256: bc73da9f1e25b77e9395c33462fdaece3664be374df877b675522d1350ccb127
+    - name: gUnkEu_09CF10E2
+      address: '0x9cf10e2'
+      size: 20
+      kind: Sprite
+      sha256: 4b88864b6dd6f5e856330f8356ed827b3c228039ae4226547055384171213104
+    - name: gUnkEu_09CF10F8
+      address: '0x9cf10f8'
+      size: 20
+      kind: Sprite
+      sha256: 7a60a24742b0d4a30ada786185e7ec11ccde14be445f1d06c1e816911edeb5b5
+    - name: gUnkEu_09CF110E
+      address: '0x9cf110e'
+      size: 62
+      kind: Sprite
+      sha256: 23420e1c3ec166e168df1226363dcc785d46dcb6d242f6875560d3564e251ebf
+    - name: gUnkEu_09CF114E
+      address: '0x9cf114e'
+      size: 62
+      kind: Sprite
+      sha256: 2a921945cfe288f8ca6a13682dc3273a3a157518d81860a9b128248847bb3bb9
+    - name: gUnkEu_09CF118E
+      address: '0x9cf118e'
+      size: 62
+      kind: Sprite
+      sha256: f1919cb0fd374afb35e024ab38ff22c5fc758d85b0a2ef35dea73b9e2477736f
+    - name: gUnkEu_09CF11CE
+      address: '0x9cf11ce'
+      size: 62
+      kind: Sprite
+      sha256: 26f794f9be5d4f413e461994de40953f93a64d7fc6c4f95736f417aac23263b9
+    - name: gUnkEu_09CF120E
+      address: '0x9cf120e'
+      size: 62
+      kind: Sprite
+      sha256: 1e9171bdb9837bcf1d479c3e0d7e0f3941b608712ea73c2ba8885f45e91aecad
+    - name: gUnkEu_09CF124E
+      address: '0x9cf124e'
+      size: 62
+      kind: Sprite
+      sha256: 96c654ef7b84837d8d12aab9d724f3bbcfbc365b11e53fb31ad2536d298f8f41
+    - name: gUnkEu_09CF128E
+      address: '0x9cf128e'
+      size: 62
+      kind: Sprite
+      sha256: 18d3d3e68ff2bcbf851e51f4c89748bc1b151846ab7770fc5af8661916d9172a
+    - name: gUnkEu_09CF12CE
+      address: '0x9cf12ce'
+      size: 62
+      kind: Sprite
+      sha256: 0a52322c378c7778e90fd33fb55378f16b096f9ec7db1e2b12dcf739ae4e166c
+    - name: gUnkEu_09CF130E
+      address: '0x9cf130e'
+      size: 62
+      kind: Sprite
+      sha256: e618967595c27ef8678a04672b15e4e03c95fd0a39f948a2d92a9a2e54361d4f
+    - name: gUnkEu_09CF134E
+      address: '0x9cf134e'
+      size: 62
+      kind: Sprite
+      sha256: a3719e970396da6ef4fbbcf711b08b4b82956fc13a6598e87f84063f4a16bc66
+    - name: gUnkEu_09CF138E
+      address: '0x9cf138e'
+      size: 62
+      kind: Sprite
+      sha256: a3a9df1f1b431d18668d623bb19c548f87c86045e4c5a9e15f8e5476bf48d298
+    - name: gUnkEu_09CF13CE
+      address: '0x9cf13ce'
+      size: 62
+      kind: Sprite
+      sha256: a5b8e263b45561fd96213542fbc69e86f2caba9cdbd63cf5ee215a85750f623d
+    - name: gUnkEu_09CF140E
+      address: '0x9cf140e'
+      size: 62
+      kind: Sprite
+      sha256: 83ff1d7a3614a0131c4d587e1707ecfb843efa5c66afcf4e2cf99f3032bdd2e7
+    - name: gUnkEu_09CF144E
+      address: '0x9cf144e'
+      size: 62
+      kind: Sprite
+      sha256: 9a72f842b7e067b5e02f6636d314cc89411cfec7612cf985b11456b9db5ca70a
+    - name: gUnkEu_09CF148E
+      address: '0x9cf148e'
+      size: 62
+      kind: Sprite
+      sha256: f5e628dbdb108d702742447523e56349393dc70a6d8f6198a961d7e3607dd797
+    - name: gUnkEu_09CF14CE
+      address: '0x9cf14ce'
+      size: 62
+      kind: Sprite
+      sha256: 839c8710a5e81afb34977c98b95be6134a72bf75749e7771a2f574dbdeb54e1e
+    - name: gUnkEu_09CF150E
+      address: '0x9cf150e'
+      size: 62
+      kind: Sprite
+      sha256: 215cd7cbc4d3f316c7168f83b56051cea036767a0b44f6b6f21aa618dde470ba
+    - name: gUnkEu_09CF154E
+      address: '0x9cf154e'
+      size: 62
+      kind: Sprite
+      sha256: 9dcdde1cf5df777ca003638c3624f06967fa3eb6fc80655ddcf2ca19c3573cd6
+    - name: gUnkEu_09CF158E
+      address: '0x9cf158e'
+      size: 62
+      kind: Sprite
+      sha256: 57e81612b2eb07c97adc811db9a6ad03386cd90328b645ec40f751c1ecf9e176
+    - name: gUnkEu_09CF15CE
+      address: '0x9cf15ce'
+      size: 62
+      kind: Sprite
+      sha256: 56f12122aa67084298cc9434a733898ebdf09c706be502a35d5aa011dda7aa5f
+    - name: gUnkEu_09CF160E
+      address: '0x9cf160e'
+      size: 62
+      kind: Sprite
+      sha256: 23658588c4b301d1f480e0836006dfaeac11da0bd9cf1042867e18a56df4c812
+    - name: gUnkEu_09CF164E
+      address: '0x9cf164e'
+      size: 62
+      kind: Sprite
+      sha256: 4f6f94a70396c32fbc4a4f2443586dc2d4b6b2241bf916ded7a2e872a512547e
+    - name: gUnkEu_09CF168E
+      address: '0x9cf168e'
+      size: 62
+      kind: Sprite
+      sha256: 8ead4dc44dae2b5b1a8f8e3c3ffc4448eabd159107a72d1f7deb4e15d445358a
+    - name: gUnkEu_09CF16CE
+      address: '0x9cf16ce'
+      size: 62
+      kind: Sprite
+      sha256: 7e66c690c94250fed484c090d831ff84845f48a1b7656c8f55c39998ad94de04
+    - name: gUnkEu_09CF170E
+      address: '0x9cf170e'
+      size: 62
+      kind: Sprite
+      sha256: ddc4db66214f7b967aa01e8c6d7b3acda64a64aac75d0f27c062c0deae2b0a45
+    - name: gUnkEu_09CF174E
+      address: '0x9cf174e'
+      size: 62
+      kind: Sprite
+      sha256: b733920d059035feedd052576a6e7d06b215245028b9d4b8f33b13bd765c2c25
+    - name: gUnkEu_09CF178E
+      address: '0x9cf178e'
+      size: 62
+      kind: Sprite
+      sha256: 10eb2c35c60b0ccf84d4fadf8534a55d446865dee6c9fa2460ceb7e5b4017d58
+    - name: gUnkEu_09CF17CE
+      address: '0x9cf17ce'
+      size: 62
+      kind: Sprite
+      sha256: e3a1a25dff3c067d2c5395ffe1f93dad84155d61b0485fa4fe8d2b12fa506120
+    - name: gUnkEu_09CF180E
+      address: '0x9cf180e'
+      size: 50
+      kind: Sprite
+      sha256: 22f3890bf6c6e919f1ca3dc6be6ffd96b14d6c07449523bf224a21b750eabc3d
+    - name: gUnkEu_09CF1842
+      address: '0x9cf1842'
+      size: 50
+      kind: Sprite
+      sha256: 2cca2a5f990b9f06c7e99d51d146ed445ab7004d90c873497f674655d992b163
+    - name: gUnkEu_09CF1876
+      address: '0x9cf1876'
+      size: 50
+      kind: Sprite
+      sha256: 7c267ccee101a78d9f3ed2afe2de42cd129175049866fe7abe608a1887d5abae
+    - name: gUnkEu_09CF18AA
+      address: '0x9cf18aa'
+      size: 50
+      kind: Sprite
+      sha256: 42da1edfb444d33460ed60b81b9f8423635d3c30240e184a4cd839650a11fd40
+    - name: gUnkEu_09CF18DE
+      address: '0x9cf18de'
+      size: 50
+      kind: Sprite
+      sha256: 6e4d7d3fc15a7ff53886736c02831d07c42213ae8e8de7c671b481e8d0900f8f
+    - name: gUnkEu_09CF1912
+      address: '0x9cf1912'
+      size: 50
+      kind: Sprite
+      sha256: 6c7e6e52e4991b18a85384efaea93ff13b671faf24adc4c0790ffdd74db74133
+    - name: gUnkEu_09CF1946
+      address: '0x9cf1946'
+      size: 32
+      kind: Sprite
+      sha256: 04b42a4f6033d94d13a631950c36d48f980d7dd3b98b3b1ac0eeccc0be66c36a
+    - name: gUnkEu_09CF1968
+      address: '0x9cf1968'
+      size: 32
+      kind: Sprite
+      sha256: deb970579653d69dc13baf1373c7bf6cf72f7fb2c89fea70e5ec13c4e43d214a
+    - name: gUnkEu_09CF198A
+      address: '0x9cf198a'
+      size: 32
+      kind: Sprite
+      sha256: 26c320c256f2b46e0553f720f92f86322f428def5c374f95c194f94b7c2e3d2e
+    - name: gUnkEu_09CF19AC
+      address: '0x9cf19ac'
+      size: 32
+      kind: Sprite
+      sha256: 0530742fb72078904edbd46c82d3618a115c7efadbfac86caca093e18dfadc10
+    - name: gUnkEu_09CF19CE
+      address: '0x9cf19ce'
+      size: 32
+      kind: Sprite
+      sha256: 1f4498aa2cbcfdafb5c33df3ef79b95d366bcd69b29d62affad7a967a32f7eec
+    - name: gUnkEu_09CF19F0
+      address: '0x9cf19f0'
+      size: 32
+      kind: Sprite
+      sha256: 85f153f1beb8c082e8120914fb1582ed80cce5c3c7934d4ddea26f6b9ebb8980
+    - name: gUnkEu_09CF1A12
+      address: '0x9cf1a12'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CF1A14
+      address: '0x9cf1a14'
+      size: 110
+      kind: AnimHeader
+      sha256: 15e8ab6db9e8ccfea6f8d0d337be2bc1581a6124575f4dd5ba4c7c6d0732a5f3
+    - name: gUnkEu_09CF1A82
+      address: '0x9cf1a82'
+      size: 126
+      kind: AnimHeader
+      sha256: aeed4b9d0932b699f7af096af9f981da358df8d414cf76e420d889cd75357c86
+    - name: gUnkEu_09CF1B00
+      address: '0x9cf1b00'
+      size: 58
+      kind: AnimHeader
+      sha256: 9a4bda9382379ea553fbb3b0ee5a7b018544731c5d41754f334f0b983c964262
+    - name: gUnkEu_09CF1B3A
+      address: '0x9cf1b3a'
+      size: 58
+      kind: AnimHeader
+      sha256: c46cfcbc839ec2c6b3c331a88161c482c070d06ba3a89833b9f8d4734e5a2a59
+    - name: gUnkEu_09CF1B74
+      address: '0x9cf1b74'
+      size: 10
+      kind: AnimHeader
+      sha256: 194a3b4ff73423867e0ad799314a5e09fa49d70b305c15d0bcbc93532df69749
+    - name: gUnkEu_09CF2F40
+      address: '0x9cf2f40'
+      size: 50
+      kind: Sprite
+      sha256: 3429d89d638cc1a3ab1b1b5230f937944c08da61375f2a4ad8596387e1d5c493
+    - name: gUnkEu_09CF2F74
+      address: '0x9cf2f74'
+      size: 50
+      kind: Sprite
+      sha256: 589f4548eae805950ef0f97fdd23ab2fbd508c00d2a167a2c43104f090bc85c7
+    - name: gUnkEu_09CF2FA8
+      address: '0x9cf2fa8'
+      size: 50
+      kind: Sprite
+      sha256: 819749bf6781bf0524cd5bfb69bc111a45ac37c70f4055bd85d8c4d4cbc313e4
+    - name: gUnkEu_09CF2FDC
+      address: '0x9cf2fdc'
+      size: 50
+      kind: Sprite
+      sha256: 765107bc46dab1a01564042894f1fbae795c881fe82700912c2beaf06cec2a04
+    - name: gUnkEu_09CF3010
+      address: '0x9cf3010'
+      size: 50
+      kind: Sprite
+      sha256: c98087c8de8e6b8d25ac9f5a6ac473fd7613a163c6a017278b2282ed084b76dd
+    - name: gUnkEu_09CF3044
+      address: '0x9cf3044'
+      size: 50
+      kind: Sprite
+      sha256: d585b488121bc3a8e49baa9ad8dfee68fd8646da7ad6119fdd8b582894f5b8b9
+    - name: gUnkEu_09CF3078
+      address: '0x9cf3078'
+      size: 50
+      kind: Sprite
+      sha256: 6ee6b6ddfa26b0144d9b270c64efd8389df0fe1dfa00309c7145f10c626fe052
+    - name: gUnkEu_09CF30AC
+      address: '0x9cf30ac'
+      size: 50
+      kind: Sprite
+      sha256: ab63058114ec3c82262900c22f6ca184597281a66c27426b5192c7567a2767d4
+    - name: gUnkEu_09CF30E0
+      address: '0x9cf30e0'
+      size: 50
+      kind: Sprite
+      sha256: 519496dcb4b370b813b5cc1f02823e0b5fc53fb88bf236cb8c75e89e1292af4f
+    - name: gUnkEu_09CF3114
+      address: '0x9cf3114'
+      size: 50
+      kind: Sprite
+      sha256: 79f5bda18eeef8a2bc7cf13abd4e3ae8cb2ae33b0e3b7625df762329bf9beccd
+    - name: gUnkEu_09CF3148
+      address: '0x9cf3148'
+      size: 50
+      kind: Sprite
+      sha256: 3a4f80617bfebf42232bd317037a48466ef4d99109be2cd70a297d86b283f41d
+    - name: gUnkEu_09CF317C
+      address: '0x9cf317c'
+      size: 50
+      kind: Sprite
+      sha256: aee80285ab03ea411c7120fd77e74596aa588ab0b5c4e8bb985bdba562efb327
+    - name: gUnkEu_09CF31B0
+      address: '0x9cf31b0'
+      size: 50
+      kind: Sprite
+      sha256: 8902cf10e50c408e6771ca078ac7d7bf708a55fa8d3224ac79be5b220c74c0ef
+    - name: gUnkEu_09CF31E4
+      address: '0x9cf31e4'
+      size: 50
+      kind: Sprite
+      sha256: 354a31d670ecb82254bf0c2b5fc061de5fbcb094da77715e6841cf6cebbc1205
+    - name: gUnkEu_09CF3218
+      address: '0x9cf3218'
+      size: 50
+      kind: Sprite
+      sha256: 8dfeb12225ad286d8b16461f8ca0b914366a697da3f570ccaa55c990c2e52b00
+    - name: gUnkEu_09CF324C
+      address: '0x9cf324c'
+      size: 50
+      kind: Sprite
+      sha256: 46a20a5f29cc161247579476a726217a196ba566edb45426fe57db99407ec2f9
+    - name: gUnkEu_09CF3280
+      address: '0x9cf3280'
+      size: 50
+      kind: Sprite
+      sha256: ccc4d9ccc8321123beef4be081703e06213f6c4fdf61187ccebcf6ff4580be94
+    - name: gUnkEu_09CF32B4
+      address: '0x9cf32b4'
+      size: 50
+      kind: Sprite
+      sha256: aaeeae8c5392a7fe4b2f76e69b86667a6a2833197f7c6670892fe9ffcbf7bde5
+    - name: gUnkEu_09CF32E8
+      address: '0x9cf32e8'
+      size: 50
+      kind: Sprite
+      sha256: fc617c9108a9db12a0995e03b4431150add93de7e4ca58e24a2fae26654f9ffb
+    - name: gUnkEu_09CF331C
+      address: '0x9cf331c'
+      size: 50
+      kind: Sprite
+      sha256: e35b0026ca34bda788e0d1787e506f83f8eb2430145ac38e5804348c857783ef
+    - name: gUnkEu_09CF3350
+      address: '0x9cf3350'
+      size: 50
+      kind: Sprite
+      sha256: be9d70b3f8613e6db06be5acb60d6cca283f961aaae751f28649df11b6f592c9
+    - name: gUnkEu_09CF3384
+      address: '0x9cf3384'
+      size: 50
+      kind: Sprite
+      sha256: 20769fe6fc07b57fab996206a3baff7cb4d67a1e850970c9aca379df619a18f2
+    - name: gUnkEu_09CF33B8
+      address: '0x9cf33b8'
+      size: 50
+      kind: Sprite
+      sha256: df74b4434c740ea3f03be04a4af57381d92c9305a06dbaaf7003749613dbae4f
+    - name: gUnkEu_09CF33EC
+      address: '0x9cf33ec'
+      size: 50
+      kind: Sprite
+      sha256: 1275d075fb770300abac5e7d80ade639f45fada7b64ff6077d0778778ac6d069
+    - name: gUnkEu_09CF3420
+      address: '0x9cf3420'
+      size: 50
+      kind: Sprite
+      sha256: 20aa5dd4814759b27b50ead510a626bb915cb3ed3e81455eb1a2f72892d56fe0
+    - name: gUnkEu_09CF3454
+      address: '0x9cf3454'
+      size: 44
+      kind: Sprite
+      sha256: 644c4918e7d54650418790fb82d13f0b59e2a5b853b0868f7a2a58c9d088198e
+    - name: gUnkEu_09CF3482
+      address: '0x9cf3482'
+      size: 44
+      kind: Sprite
+      sha256: 3d57841b43a96a85dbf65e5b0a80bbb4d808f954d1ab0464d266c467f6c3a5fc
+    - name: gUnkEu_09CF34B0
+      address: '0x9cf34b0'
+      size: 44
+      kind: Sprite
+      sha256: 77cdcd5dbfea50ac4a2313642480115fd0b888cfbddbea36a9c5e5c10def1b56
+    - name: gUnkEu_09CF34DE
+      address: '0x9cf34de'
+      size: 44
+      kind: Sprite
+      sha256: faa6dc72d8b8573d5f4670c8b2852e3c3a9d32d1a368f8729bbcbbcf5e68c60e
+    - name: gUnkEu_09CF350C
+      address: '0x9cf350c'
+      size: 44
+      kind: Sprite
+      sha256: 86ff754a6fb3fd8ee8aede46915a50f6c8604e05918d366f12eb00922f511084
+    - name: gUnkEu_09CF353A
+      address: '0x9cf353a'
+      size: 44
+      kind: Sprite
+      sha256: 43b2222e428e9e7801ba3bf97aec65cb0be657ceb0c796ffbaaecc9ee9bed88e
+    - name: gUnkEu_09CF3568
+      address: '0x9cf3568'
+      size: 44
+      kind: Sprite
+      sha256: f9978ae4f98183598daba16ed332e68ca7702e4de01e8e8987966a9ddcd6adf9
+    - name: gUnkEu_09CF3596
+      address: '0x9cf3596'
+      size: 44
+      kind: Sprite
+      sha256: 5c93955d0528b0e68f5044c5de027c523cacdb89bc9f8dacc2d199409c806b20
+    - name: gUnkEu_09CF35C4
+      address: '0x9cf35c4'
+      size: 44
+      kind: Sprite
+      sha256: 14eec6f8fd97150e95051505c40263cfe536e1d003f0eb327168e5ba34e7e95b
+    - name: gUnkEu_09CF35F2
+      address: '0x9cf35f2'
+      size: 44
+      kind: Sprite
+      sha256: 0a82722d17ea67794a6a7354870b0afb78f66d5d5f1aa588c1748f2a6a6c41b7
+    - name: gUnkEu_09CF3620
+      address: '0x9cf3620'
+      size: 44
+      kind: Sprite
+      sha256: 86fedaa628d95fc8db34c899d015956ee47868aa49a3f80fc41a5c27d6336d09
+    - name: gUnkEu_09CF364E
+      address: '0x9cf364e'
+      size: 44
+      kind: Sprite
+      sha256: 11f8542a2dc6c461a5dac1582ca5db47011288b8e238679e3dc48f72e775c49c
+    - name: gUnkEu_09CF367C
+      address: '0x9cf367c'
+      size: 44
+      kind: Sprite
+      sha256: c1b6a69073ea4638821440aa9ee3d8f74e1d4e96dcf49e829a6fc16b43ae47e8
+    - name: gUnkEu_09CF36AA
+      address: '0x9cf36aa'
+      size: 44
+      kind: Sprite
+      sha256: a23af3450d965ea2bea3e073fa49645eb1cac6d1f8d09d9bdac81d844fb7f804
+    - name: gUnkEu_09CF36D8
+      address: '0x9cf36d8'
+      size: 44
+      kind: Sprite
+      sha256: 2cf35443587e8048a4d576e72daec411976430a874883d69074a711aa16c4923
+    - name: gUnkEu_09CF3706
+      address: '0x9cf3706'
+      size: 44
+      kind: Sprite
+      sha256: 1132cc56c45b890a3559041d1c6157b20b6a27e4bb7918fca13dd73de7030f8f
+    - name: gUnkEu_09CF3734
+      address: '0x9cf3734'
+      size: 44
+      kind: Sprite
+      sha256: 4236e1b53310b9083c4c4377078eef5bf4c87a8ea6d6ef981f8c377222b83c39
+    - name: gUnkEu_09CF3762
+      address: '0x9cf3762'
+      size: 44
+      kind: Sprite
+      sha256: 0583b95e44bf2ef45da8cd493a037bc88f3a81bee66c9fc2db13c0aad9dd56ec
+    - name: gUnkEu_09CF3790
+      address: '0x9cf3790'
+      size: 44
+      kind: Sprite
+      sha256: 3d52ddecdf9e44c6cb6c389f32350ac676e3305ce25c56449e19a884a81367b4
+    - name: gUnkEu_09CF37BE
+      address: '0x9cf37be'
+      size: 44
+      kind: Sprite
+      sha256: 3f45449584aaff1e4aacf73e41b19ca337bd3aca6bba6ac0aebd00fe779d49b3
+    - name: gUnkEu_09CF37EC
+      address: '0x9cf37ec'
+      size: 44
+      kind: Sprite
+      sha256: 413625fa9a08f65606dbba338a5e5abef0207518e1cf4c423eb32723bd378377
+    - name: gUnkEu_09CF381A
+      address: '0x9cf381a'
+      size: 44
+      kind: Sprite
+      sha256: 3d1228fa08a6a649bcdaad77cc12701081fde50ebd8b37407149ab6d10118ca6
+    - name: gUnkEu_09CF3848
+      address: '0x9cf3848'
+      size: 44
+      kind: Sprite
+      sha256: f2c35ad10174bc81b1b071eeb1c94bb6b38486cfbc95373ac9a5fb9b5fee4511
+    - name: gUnkEu_09CF3876
+      address: '0x9cf3876'
+      size: 44
+      kind: Sprite
+      sha256: 2fd2f858d1cea43c53f8539a7557176f747479037b55208340c62c9c0b19c8a6
+    - name: gUnkEu_09CF38A4
+      address: '0x9cf38a4'
+      size: 44
+      kind: Sprite
+      sha256: 605a0e8a4f9c34603f8ec4b631aaa57e00922ed9d183670dbcc8ef1616d84d01
+    - name: gUnkEu_09CF38D2
+      address: '0x9cf38d2'
+      size: 44
+      kind: Sprite
+      sha256: 3823a73ff843d99cc58f59b3a5f40631f38eb6400593ce975bf3134943e80974
+    - name: gUnkEu_09CF3900
+      address: '0x9cf3900'
+      size: 44
+      kind: Sprite
+      sha256: 861e1079160e73268651c4f7cb5873378b0ff2ece976d4a46bdffa3a47317cdf
+    - name: gUnkEu_09CF392E
+      address: '0x9cf392e'
+      size: 44
+      kind: Sprite
+      sha256: e1bc1ee240a7990312764ca2c7ac28a3c18f775473286dbce2ea7cc52de2c256
+    - name: gUnkEu_09CF395C
+      address: '0x9cf395c'
+      size: 26
+      kind: Sprite
+      sha256: 1d38694a2c39ef6095a7200a8368f5f2e6e54791c345c3bf2e2d94f4c826a60f
+    - name: gUnkEu_09CF3978
+      address: '0x9cf3978'
+      size: 26
+      kind: Sprite
+      sha256: f3f0a9b110be761845f55fad9258322cdedc143d89e6597e6395bfabab7c4955
+    - name: gUnkEu_09CF3994
+      address: '0x9cf3994'
+      size: 26
+      kind: Sprite
+      sha256: f4242516d8f065d67c1719cde2aba0b84d12e9b3d8546844b06abb1582c78ac5
+    - name: gUnkEu_09CF39B0
+      address: '0x9cf39b0'
+      size: 26
+      kind: Sprite
+      sha256: 2be8298aa4c67fb824847e5b0a2421c20db016c4be4fc2b59553f639da15371f
+    - name: gUnkEu_09CF39CC
+      address: '0x9cf39cc'
+      size: 26
+      kind: Sprite
+      sha256: 9c161fa6381a68d4dbd02f9e380ffcaf3e2509a749ae5aa323a25fdac2ed0118
+    - name: gUnkEu_09CF39E8
+      address: '0x9cf39e8'
+      size: 26
+      kind: Sprite
+      sha256: 68cd64d0e8fc2ae095d4fe89aa8036716bc2ca507331676a122bfc048a4618cb
+    - name: gUnkEu_09CF3A04
+      address: '0x9cf3a04'
+      size: 26
+      kind: Sprite
+      sha256: c2be8f3f005d935d65f8f623c86924b1d094ee913284d8dbb7b3f1947b3d1e58
+    - name: gUnkEu_09CF3A20
+      address: '0x9cf3a20'
+      size: 26
+      kind: Sprite
+      sha256: 2b9789b84400aa929db6691d6c1c81e8ba1d26da0e75a43f4e4cc11137d53623
+    - name: gUnkEu_09CF3A3C
+      address: '0x9cf3a3c'
+      size: 26
+      kind: Sprite
+      sha256: d7a38d681c74b788177b17bb5797823682235f8a09a8a34f7b494a27ec695213
+    - name: gUnkEu_09CF3A58
+      address: '0x9cf3a58'
+      size: 26
+      kind: Sprite
+      sha256: 8b8856b1801eb275404d1f29faefdc5c83e3318b184bbc80daddccb8dd7add72
+    - name: gUnkEu_09CF3A74
+      address: '0x9cf3a74'
+      size: 26
+      kind: Sprite
+      sha256: 38bea0f8244b5908a7a0df7c42b74c759158f9880d1cb61b787d6670a79195fd
+    - name: gUnkEu_09CF3A90
+      address: '0x9cf3a90'
+      size: 26
+      kind: Sprite
+      sha256: db0604a79a6fbb5143235dcad711fda32891d6f1288547791d5a53db15cb343b
+    - name: gUnkEu_09CF3AAC
+      address: '0x9cf3aac'
+      size: 26
+      kind: Sprite
+      sha256: 76d9c0533cda8e329a96da5a06c0741b33038b88c9c0ef3523e6b2b8b7781701
+    - name: gUnkEu_09CF3AC8
+      address: '0x9cf3ac8'
+      size: 26
+      kind: Sprite
+      sha256: d88cadc791b129605c8603bcf0ea7b050c0720c835c82f377e3e621549ffc1aa
+    - name: gUnkEu_09CF3AE4
+      address: '0x9cf3ae4'
+      size: 26
+      kind: Sprite
+      sha256: 1993c9b2e16461900a80cfcdd8b4ed0fab024179b86e319e665fab3dd1b35521
+    - name: gUnkEu_09CF3B00
+      address: '0x9cf3b00'
+      size: 26
+      kind: Sprite
+      sha256: fd89c2b88024f33d4a77e5f7ea915ea28aa079442801005965cbce6770e0c2e2
+    - name: gUnkEu_09CF3B1C
+      address: '0x9cf3b1c'
+      size: 26
+      kind: Sprite
+      sha256: f4c1f536be974523703a79a62db3556928073e46a625403c8748c2fa0d003cc3
+    - name: gUnkEu_09CF3B38
+      address: '0x9cf3b38'
+      size: 26
+      kind: Sprite
+      sha256: b097ff6d45e732dec8f189df81b8ad7d8e1b32b4d130b28054051a389a7087fb
+    - name: gUnkEu_09CF3B54
+      address: '0x9cf3b54'
+      size: 26
+      kind: Sprite
+      sha256: d1cd3f6603c57f2a3b0bd25499d8e2d190406fc01af1952e275ee9fdf6f1a345
+    - name: gUnkEu_09CF3B70
+      address: '0x9cf3b70'
+      size: 26
+      kind: Sprite
+      sha256: 9ea329c01acade9bf70c6909a4fe54951ad8304a0233250527bf06ac98201c31
+    - name: gUnkEu_09CF3B8C
+      address: '0x9cf3b8c'
+      size: 26
+      kind: Sprite
+      sha256: e84e2ffa59dde8e36cf32f8027b6c2df8a5b2191b6205e747afda708937a5118
+    - name: gUnkEu_09CF3BA8
+      address: '0x9cf3ba8'
+      size: 26
+      kind: Sprite
+      sha256: e9abbe848c005799cd580dcdce320742414f929424174f24065eddc0e0fbb8f1
+    - name: gUnkEu_09CF3BC4
+      address: '0x9cf3bc4'
+      size: 26
+      kind: Sprite
+      sha256: 4473e1f88885e5e3f13728972909413f22806137001ad1e4dedababad3467345
+    - name: gUnkEu_09CF3BE0
+      address: '0x9cf3be0'
+      size: 32
+      kind: Sprite
+      sha256: d5960e6a7275b5b4fff8835dafedd3b8967dcbc9610964549ad01c858c49fef6
+    - name: gUnkEu_09CF3C02
+      address: '0x9cf3c02'
+      size: 32
+      kind: Sprite
+      sha256: 65647902fd20484f1db6a9cdb7bac4f93e1b7b01ffc303582db490b9faf0093d
+    - name: gUnkEu_09CF3C24
+      address: '0x9cf3c24'
+      size: 32
+      kind: Sprite
+      sha256: d5460fdaf0b375fa91a4487914d66ae5e099a7909c506a7ff22a6f48dd8edf45
+    - name: gUnkEu_09CF3C46
+      address: '0x9cf3c46'
+      size: 32
+      kind: Sprite
+      sha256: 2ec3bbbfa4e905b7f223b3ada4342e6144a335c9d0c1d4ae70b7cbfd2bc242df
+    - name: gUnkEu_09CF3C68
+      address: '0x9cf3c68'
+      size: 32
+      kind: Sprite
+      sha256: 79abb5ffdeb1b2a8d88e8222986bf091a2bb4551efbfbbc2ff1b8bb73d676406
+    - name: gUnkEu_09CF3C8A
+      address: '0x9cf3c8a'
+      size: 32
+      kind: Sprite
+      sha256: cb3be6d7b88ce3cdb554924274d3ca80d0646d80c25c8a49e0fbc651ebd8b8ff
+    - name: gUnkEu_09CF3CAC
+      address: '0x9cf3cac'
+      size: 32
+      kind: Sprite
+      sha256: 60d8f029d815150d5a6f0417db20015bf972b27aa12f82da8412969445c68003
+    - name: gUnkEu_09CF3CCE
+      address: '0x9cf3cce'
+      size: 32
+      kind: Sprite
+      sha256: f075a955f7baf68859c38cb4bacddc3700d5196dd0ab90b0d3b95523edcc5bb7
+    - name: gUnkEu_09CF3CF0
+      address: '0x9cf3cf0'
+      size: 32
+      kind: Sprite
+      sha256: 4ef5057d0cee08d16423d70fd30eb4f4b3730f796418b910dfdeabecfb2fd2c3
+    - name: gUnkEu_09CF3D12
+      address: '0x9cf3d12'
+      size: 32
+      kind: Sprite
+      sha256: 43d758773546ad21f99f08a1a95a59673feb164f73fc6f51f2cf234fd8804354
+    - name: gUnkEu_09CF3D34
+      address: '0x9cf3d34'
+      size: 32
+      kind: Sprite
+      sha256: 832d1e0f18d3a0eed8e8ec927893e136cd57d1174b058bed38ee105183489b6d
+    - name: gUnkEu_09CF3D56
+      address: '0x9cf3d56'
+      size: 32
+      kind: Sprite
+      sha256: 06a2f2736405653da5fecfedc677460af8e98c02f8652e6325c42c8a9c64e7b5
+    - name: gUnkEu_09CF3D78
+      address: '0x9cf3d78'
+      size: 32
+      kind: Sprite
+      sha256: c4d3a35012d8050283743b9790cf67508b9a37d43529e02ce6dbc6fc16f24c29
+    - name: gUnkEu_09CF3D9A
+      address: '0x9cf3d9a'
+      size: 32
+      kind: Sprite
+      sha256: bf9c34b9dc349d44a34d54a9cef9a39c1608c11d39dba26169841ebb80e922c0
+    - name: gUnkEu_09CF3DBC
+      address: '0x9cf3dbc'
+      size: 32
+      kind: Sprite
+      sha256: 62460cab956fa96614b9b8e205fa61d405eaac49ad66d37ac63073f93f71fba8
+    - name: gUnkEu_09CF3DDE
+      address: '0x9cf3dde'
+      size: 32
+      kind: Sprite
+      sha256: 1d88f1f6ca2cf52668b2545d6c30966bbd9c584af49c8937a29e7a0ce103138a
+    - name: gUnkEu_09CF3E00
+      address: '0x9cf3e00'
+      size: 32
+      kind: Sprite
+      sha256: a4485de914cebae8306073a7680f7c6d00cfd718bf165acd92ded6e3807b368a
+    - name: gUnkEu_09CF3E22
+      address: '0x9cf3e22'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CF3E24
+      address: '0x9cf3e24'
+      size: 110
+      kind: AnimHeader
+      sha256: 0023d2b79a6f3679bb0c1350c06b54fab9548baf5f83caf7caefe151e69681d0
+    - name: gUnkEu_09CF3E92
+      address: '0x9cf3e92'
+      size: 126
+      kind: AnimHeader
+      sha256: 676c46c808670ee286a04a1162f7e4c7c12bcfc27a41eea702178f33da157c07
+    - name: gUnkEu_09CF3F10
+      address: '0x9cf3f10'
+      size: 58
+      kind: AnimHeader
+      sha256: a9abd4b3aca879d7771b6965e003a9e00f56c3d1a6366d77f843ad707139f8ca
+    - name: gUnkEu_09CF3F4A
+      address: '0x9cf3f4a'
+      size: 82
+      kind: AnimHeader
+      sha256: 6c5b74f1cce042a79251e6c24dfa62a92345b0b082cb1622a87fd956bccd8809
+    - name: gUnkEu_09CF3F9C
+      address: '0x9cf3f9c'
+      size: 82
+      kind: AnimHeader
+      sha256: e0317869466d70c480d4a3472342af6bb811a39e93cfed9e7453db438e563eb7
+    - name: gUnkEu_09CF54D0
+      address: '0x9cf54d0'
+      size: 38
+      kind: Sprite
+      sha256: 83e39b19480919e1812dc5f466857f1f8a6e58bf03755ec6f62f4e29ae9f8c7a
+    - name: gUnkEu_09CF54F8
+      address: '0x9cf54f8'
+      size: 38
+      kind: Sprite
+      sha256: a83e7b4220dd4d915aa4e23ab4d2559472b82bcb5701084406f7fa397951129a
+    - name: gUnkEu_09CF5520
+      address: '0x9cf5520'
+      size: 38
+      kind: Sprite
+      sha256: 02da07255dccdb83ae339b19dcd36ce73a288d7b7674af4b639c47821bc7c4f2
+    - name: gUnkEu_09CF5548
+      address: '0x9cf5548'
+      size: 38
+      kind: Sprite
+      sha256: 9ea256f29518e39b0b98fea8ba3602d0ca2271bbb4531c3924ffda5e62df869f
+    - name: gUnkEu_09CF5570
+      address: '0x9cf5570'
+      size: 38
+      kind: Sprite
+      sha256: 1e61f881ff6af9492ffd23a17180a85237c4a6810888b92921ef7d36d928735a
+    - name: gUnkEu_09CF5598
+      address: '0x9cf5598'
+      size: 38
+      kind: Sprite
+      sha256: 069298efc485a0abcc335731b7ca6e29a8bd145e9d704ff7f82ffa9403cc46dc
+    - name: gUnkEu_09CF55C0
+      address: '0x9cf55c0'
+      size: 38
+      kind: Sprite
+      sha256: f1879d16c8ffdde0ecb424cf791196107aa84ceb48347fa2f57e42260640759d
+    - name: gUnkEu_09CF55E8
+      address: '0x9cf55e8'
+      size: 38
+      kind: Sprite
+      sha256: 1a22f114043a29df5b02e0180cd7b6d9bc34361fef0647205b00d7e55d37fedc
+    - name: gUnkEu_09CF5610
+      address: '0x9cf5610'
+      size: 38
+      kind: Sprite
+      sha256: 5326fb23b5d00a12847eb3360c5be21e72e93a3f39dd68e2e3c5607f0a15ddc5
+    - name: gUnkEu_09CF5638
+      address: '0x9cf5638'
+      size: 38
+      kind: Sprite
+      sha256: ada9d44a485dbabba2753e146f41ddeecaa338d19eb5e20a8ce56f7be0c00233
+    - name: gUnkEu_09CF5660
+      address: '0x9cf5660'
+      size: 38
+      kind: Sprite
+      sha256: f524af8472c74ae2062f0866dd17b666ce5631d6a9eae4d297ef69cb4c85eaad
+    - name: gUnkEu_09CF5688
+      address: '0x9cf5688'
+      size: 38
+      kind: Sprite
+      sha256: 7389c0a7b22bc643920512a3c6d3a7533509cd342d60f47d3f8fe25a8495c7db
+    - name: gUnkEu_09CF56B0
+      address: '0x9cf56b0'
+      size: 38
+      kind: Sprite
+      sha256: 322536b069bbb83dec91f557cffaa35d433b4b231acdc272f0d6c6a486efaa23
+    - name: gUnkEu_09CF56D8
+      address: '0x9cf56d8'
+      size: 38
+      kind: Sprite
+      sha256: 5807ac62369a730ec8f6db4528be3e69f38bf743d0c6773ade84ccb4218785b3
+    - name: gUnkEu_09CF5700
+      address: '0x9cf5700'
+      size: 38
+      kind: Sprite
+      sha256: d69aed19b2b72b1e02c28cd04be3d4f5de850b96abacdb6911cc57343bc9b534
+    - name: gUnkEu_09CF5728
+      address: '0x9cf5728'
+      size: 38
+      kind: Sprite
+      sha256: 32a229a50cdcfc74fdd36c63e5fb3dbdbeea09873ee4c117eeda1ca6c0db7c84
+    - name: gUnkEu_09CF5750
+      address: '0x9cf5750'
+      size: 38
+      kind: Sprite
+      sha256: 005ee733c6c0299502f58dcb8278677a8f7ddbc36624deb33dede4248a5cc0e0
+    - name: gUnkEu_09CF5778
+      address: '0x9cf5778'
+      size: 38
+      kind: Sprite
+      sha256: 7ba8b848009b5eca3843895c7874c8480e525084f61ffbf67f38244d3d79faa4
+    - name: gUnkEu_09CF57A0
+      address: '0x9cf57a0'
+      size: 38
+      kind: Sprite
+      sha256: a4d09b04e426b3721b49343f812b07eb3698670144604df3f186b198d3aa5982
+    - name: gUnkEu_09CF57C8
+      address: '0x9cf57c8'
+      size: 38
+      kind: Sprite
+      sha256: 793f23aa0f593d05daf706d68f7ffe5a912d0a50accb843dd83049aae5f045f9
+    - name: gUnkEu_09CF57F0
+      address: '0x9cf57f0'
+      size: 38
+      kind: Sprite
+      sha256: c794064c521179629e166d8b192c9a29e5d79972bf4b7e71abb46f35409437d5
+    - name: gUnkEu_09CF5818
+      address: '0x9cf5818'
+      size: 38
+      kind: Sprite
+      sha256: 70e2ed67a13eb22fb81352db1606fb3b234174ce11e19b5652b7977b4b23bd19
+    - name: gUnkEu_09CF5840
+      address: '0x9cf5840'
+      size: 38
+      kind: Sprite
+      sha256: 38750208e1f4f9d8533a4a8b57ec759130b001600c618a43f503df0e354614bf
+    - name: gUnkEu_09CF5868
+      address: '0x9cf5868'
+      size: 38
+      kind: Sprite
+      sha256: 3a86e33ddfb316b2c86dd6bfdb39479a6dc7ea180d7f8e93f73d511a74ecbf2a
+    - name: gUnkEu_09CF5890
+      address: '0x9cf5890'
+      size: 38
+      kind: Sprite
+      sha256: 6446f7a818e9bd172da301629612210c3de698c81ba97c16e073c63e4b0cecdd
+    - name: gUnkEu_09CF58B8
+      address: '0x9cf58b8'
+      size: 56
+      kind: Sprite
+      sha256: 8a87b7086cf9dd1c346924182ff9d746967eceb49ac9fc6420d9d7a3bd5ae271
+    - name: gUnkEu_09CF58F2
+      address: '0x9cf58f2'
+      size: 56
+      kind: Sprite
+      sha256: e18259230132ae32145e320b23b9b3241b3a354e67cc23b479c5c52e6b411e72
+    - name: gUnkEu_09CF592C
+      address: '0x9cf592c'
+      size: 56
+      kind: Sprite
+      sha256: 9c69383214d0662d975f4581c4950263fb6b2f5f5ad05319307552320c2521a4
+    - name: gUnkEu_09CF5966
+      address: '0x9cf5966'
+      size: 56
+      kind: Sprite
+      sha256: aab139f7863cf4d0baa09c54df347abd90ed57a55b831598f5bd82682b1031a1
+    - name: gUnkEu_09CF59A0
+      address: '0x9cf59a0'
+      size: 56
+      kind: Sprite
+      sha256: 7060e4d211534ca1ad0acd55a0c1aacd6dff219468a1d2e7321dab57c8ed5ce8
+    - name: gUnkEu_09CF59DA
+      address: '0x9cf59da'
+      size: 56
+      kind: Sprite
+      sha256: 4b9de32cc62da1aa883c60102ea7c5e097c4867efa0c06e6ce997824c5e557e0
+    - name: gUnkEu_09CF5A14
+      address: '0x9cf5a14'
+      size: 56
+      kind: Sprite
+      sha256: 929dea8079c371fe444f149da82c422223e1cda72c6401a1559f32025c8f2742
+    - name: gUnkEu_09CF5A4E
+      address: '0x9cf5a4e'
+      size: 56
+      kind: Sprite
+      sha256: 7a88b3a5237b6a0528dc5742ad66a9cbc13110592667630d0cbf61ea08d6b8b9
+    - name: gUnkEu_09CF5A88
+      address: '0x9cf5a88'
+      size: 56
+      kind: Sprite
+      sha256: 6f60b0ca4bf277636a0d02fcb4c3dc04f2e757efa8eb85433aa4d5512a6f2386
+    - name: gUnkEu_09CF5AC2
+      address: '0x9cf5ac2'
+      size: 56
+      kind: Sprite
+      sha256: 6f42435d5c875ac6fb427885dc46357a7302d1cabbccf4ad25b9aace1aaee8d8
+    - name: gUnkEu_09CF5AFC
+      address: '0x9cf5afc'
+      size: 56
+      kind: Sprite
+      sha256: 478190d0f81aa0baab71df50fed5cb71c276aa320fd8190ef691653b53b8e0f0
+    - name: gUnkEu_09CF5B36
+      address: '0x9cf5b36'
+      size: 56
+      kind: Sprite
+      sha256: c143969e25abf98833fa622eda95a98f5124202ef17389f03b0e4db299f32b9d
+    - name: gUnkEu_09CF5B70
+      address: '0x9cf5b70'
+      size: 56
+      kind: Sprite
+      sha256: e096bd0d049181809c1dbd398d7a5dbeb8eb9af4245ac91cfea7271746de2e20
+    - name: gUnkEu_09CF5BAA
+      address: '0x9cf5baa'
+      size: 56
+      kind: Sprite
+      sha256: 838bcf3e9e4eb735e51e4f0a2e5bfdfa43fd3ba2d7fed6c2bb62ecd71aa946d0
+    - name: gUnkEu_09CF5BE4
+      address: '0x9cf5be4'
+      size: 56
+      kind: Sprite
+      sha256: 5f3c03dda8094279fc5ac437c3d1c6ae7d91e35e280060f530d3ab54af5b89df
+    - name: gUnkEu_09CF5C1E
+      address: '0x9cf5c1e'
+      size: 56
+      kind: Sprite
+      sha256: 7170ae0b62b24d796249cb71b7967cb57a10e35abab8f30c03f3cfd9dde81ce4
+    - name: gUnkEu_09CF5C58
+      address: '0x9cf5c58'
+      size: 56
+      kind: Sprite
+      sha256: 1f956f165dff4ecb4b91c05772728c5c34e38f453ba0b390de8651956c944d64
+    - name: gUnkEu_09CF5C92
+      address: '0x9cf5c92'
+      size: 56
+      kind: Sprite
+      sha256: 8f61b0e2c970cd32bd6481dbe8fa8c1e0a5f94cc408d9db5f3ac9ebcc901cafe
+    - name: gUnkEu_09CF5CCC
+      address: '0x9cf5ccc'
+      size: 56
+      kind: Sprite
+      sha256: d3bc662695163982358c1f053b50bcf7b69a76c2930d904a59136a4c6815c144
+    - name: gUnkEu_09CF5D06
+      address: '0x9cf5d06'
+      size: 56
+      kind: Sprite
+      sha256: f85bac34b8d4540005158e4d2a8b48505881887c6bd6cfa75fb925c30776fea5
+    - name: gUnkEu_09CF5D40
+      address: '0x9cf5d40'
+      size: 56
+      kind: Sprite
+      sha256: 1681db838cabb92dd5cf36057c4052ab87ed9259089fccb1349f4374d60d70cc
+    - name: gUnkEu_09CF5D7A
+      address: '0x9cf5d7a'
+      size: 56
+      kind: Sprite
+      sha256: 880762c9245f1322d2e07a108825c7926b036ec013fffa079e663039227d9085
+    - name: gUnkEu_09CF5DB4
+      address: '0x9cf5db4'
+      size: 56
+      kind: Sprite
+      sha256: 8477c8d981b4094ce4b7b58492a45b5a119cd69269a643a32c6dead5cb9b3b2e
+    - name: gUnkEu_09CF5DEE
+      address: '0x9cf5dee'
+      size: 56
+      kind: Sprite
+      sha256: 8e94d484a6747bc1c935b3e81f837359198b7b2e943be4bb11590a20ecd3929e
+    - name: gUnkEu_09CF5E28
+      address: '0x9cf5e28'
+      size: 56
+      kind: Sprite
+      sha256: c43937ea859ae6ce1966767910d871a0fe814823a4aa04006e2a5a016406ae9e
+    - name: gUnkEu_09CF5E62
+      address: '0x9cf5e62'
+      size: 56
+      kind: Sprite
+      sha256: 074d58c8ff1314b0e916616b079eba933c9c98d9dc88fe85df36454a858de8d5
+    - name: gUnkEu_09CF5E9C
+      address: '0x9cf5e9c'
+      size: 56
+      kind: Sprite
+      sha256: 1cd0eb16164b6baa93bd8f9b3f7247d89e888c36f0a6eb9876300734eef87103
+    - name: gUnkEu_09CF5ED6
+      address: '0x9cf5ed6'
+      size: 56
+      kind: Sprite
+      sha256: f42e0401cc5eaaec279fd3c2a2b761ec1425ed9642a3cedf1691ba667eeae428
+    - name: gUnkEu_09CF5F10
+      address: '0x9cf5f10'
+      size: 50
+      kind: Sprite
+      sha256: 94ad257c5b7daa7bb0623859d33f285a1bca41efb2719d39261e6e4839893801
+    - name: gUnkEu_09CF5F44
+      address: '0x9cf5f44'
+      size: 50
+      kind: Sprite
+      sha256: 91d2dfcbdc97411cf25eeea026f5470314660ba0d78a99a63f87b3d21e982419
+    - name: gUnkEu_09CF5F78
+      address: '0x9cf5f78'
+      size: 50
+      kind: Sprite
+      sha256: d0dadbcced2824f41ac3de16ac0e27df8e4920c5241173d0f1fe24424bbfbb89
+    - name: gUnkEu_09CF5FAC
+      address: '0x9cf5fac'
+      size: 50
+      kind: Sprite
+      sha256: 186e084802f077196d543830535a65c44e165e3b24357c7c77ea69a56f498949
+    - name: gUnkEu_09CF5FE0
+      address: '0x9cf5fe0'
+      size: 50
+      kind: Sprite
+      sha256: e5c52aa366d1cca7c2d03223d6202910624d7e3d4a0ada58323b4a709624ec46
+    - name: gUnkEu_09CF6014
+      address: '0x9cf6014'
+      size: 50
+      kind: Sprite
+      sha256: 31cda9e05f8432a771b3c1b682838961ba366fcbb0c4a4bc99cf3c8ec620ed12
+    - name: gUnkEu_09CF6048
+      address: '0x9cf6048'
+      size: 62
+      kind: Sprite
+      sha256: 04684fe6e65450eee35b5f0541de7d28cdea0a0d30960967c96cf20436d1a74d
+    - name: gUnkEu_09CF6088
+      address: '0x9cf6088'
+      size: 62
+      kind: Sprite
+      sha256: 0a928c70e4ff7aeb8f717808e0bf4639e7ff227fa5e6a0a99df2605b6f156ed1
+    - name: gUnkEu_09CF60C8
+      address: '0x9cf60c8'
+      size: 62
+      kind: Sprite
+      sha256: adacb9444aa49d807fea04460380efc5017d4fd7f22e96a94679d5b3254ea83e
+    - name: gUnkEu_09CF6108
+      address: '0x9cf6108'
+      size: 62
+      kind: Sprite
+      sha256: 67ab48e566f1c0c45d762456ebdc8a4130be7ca26a037c98f3605d001277e10e
+    - name: gUnkEu_09CF6148
+      address: '0x9cf6148'
+      size: 62
+      kind: Sprite
+      sha256: 848e435471b8f67b8e8eea36e61e08b47fae38316ec6d4317424d91e4a3472f4
+    - name: gUnkEu_09CF6188
+      address: '0x9cf6188'
+      size: 62
+      kind: Sprite
+      sha256: ef23b160d451b7e6e1b807e4511274e26d9dce44a551f57330a41da73afcfd97
+    - name: gUnkEu_09CF61C8
+      address: '0x9cf61c8'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CF61CA
+      address: '0x9cf61ca'
+      size: 110
+      kind: AnimHeader
+      sha256: 15e8ab6db9e8ccfea6f8d0d337be2bc1581a6124575f4dd5ba4c7c6d0732a5f3
+    - name: gUnkEu_09CF6238
+      address: '0x9cf6238'
+      size: 126
+      kind: AnimHeader
+      sha256: aeed4b9d0932b699f7af096af9f981da358df8d414cf76e420d889cd75357c86
+    - name: gUnkEu_09CF62B6
+      address: '0x9cf62b6'
+      size: 58
+      kind: AnimHeader
+      sha256: 9a4bda9382379ea553fbb3b0ee5a7b018544731c5d41754f334f0b983c964262
+    - name: gUnkEu_09CF62F0
+      address: '0x9cf62f0'
+      size: 58
+      kind: AnimHeader
+      sha256: c46cfcbc839ec2c6b3c331a88161c482c070d06ba3a89833b9f8d4734e5a2a59
+    - name: gUnkEu_09CF632A
+      address: '0x9cf632a'
+      size: 10
+      kind: AnimHeader
+      sha256: 194a3b4ff73423867e0ad799314a5e09fa49d70b305c15d0bcbc93532df69749
+    - name: gUnkEu_09CF7A74
+      address: '0x9cf7a74'
+      size: 20
+      kind: Sprite
+      sha256: a3d9a716bde9adf702051a1341d94ecd3e714232cef6a4623c8afba067345b9f
+    - name: gUnkEu_09CF7A8A
+      address: '0x9cf7a8a'
+      size: 20
+      kind: Sprite
+      sha256: 21ae61850bd98a4b8c2e140a9758cd97b52e5612fa0801411d9f8371030dd35b
+    - name: gUnkEu_09CF7AA0
+      address: '0x9cf7aa0'
+      size: 20
+      kind: Sprite
+      sha256: 094f02a399920fc766e9d8e64a41f9faaed3e938bf4d435ca5290652bec6b525
+    - name: gUnkEu_09CF7AB6
+      address: '0x9cf7ab6'
+      size: 20
+      kind: Sprite
+      sha256: 562b476b76869483999c47eb83b08c00035ee09daae187067f68619cb1b41bba
+    - name: gUnkEu_09CF7ACC
+      address: '0x9cf7acc'
+      size: 20
+      kind: Sprite
+      sha256: 976ae9aff4e61114944e2511a0ee869c27b5f9f1026d5edfc2b1708418c210a4
+    - name: gUnkEu_09CF7AE2
+      address: '0x9cf7ae2'
+      size: 20
+      kind: Sprite
+      sha256: d0301e9fff6295751519014e2d84938a5346a2dc15b4655c4ab2fb86524fef3c
+    - name: gUnkEu_09CF7AF8
+      address: '0x9cf7af8'
+      size: 20
+      kind: Sprite
+      sha256: 285b36390d6baab63289604ee342d2819e24ebc6efc8f2b99c4780428ff46526
+    - name: gUnkEu_09CF7B0E
+      address: '0x9cf7b0e'
+      size: 20
+      kind: Sprite
+      sha256: c7ebc745de6f0ddcc8bd5900ef44cae73c6e82ef4cdbc7d37a6306aa194c523a
+    - name: gUnkEu_09CF7B24
+      address: '0x9cf7b24'
+      size: 20
+      kind: Sprite
+      sha256: 0cd72864bf70e2260f22d8d008a2598c162ed97eaefd0cc8293e637d45e3f15b
+    - name: gUnkEu_09CF7B3A
+      address: '0x9cf7b3a'
+      size: 20
+      kind: Sprite
+      sha256: 86afe269221b6ae24f70030d1a7880adc7cf847e530b309abd127443c068bad3
+    - name: gUnkEu_09CF7B50
+      address: '0x9cf7b50'
+      size: 20
+      kind: Sprite
+      sha256: 6ca3ef513a18eeb685ef4c68257803f9a65fce9c0a720d77fbef07e5428fe230
+    - name: gUnkEu_09CF7B66
+      address: '0x9cf7b66'
+      size: 20
+      kind: Sprite
+      sha256: 1a13e087e1bb6548d24d3b34b9c91615dd35dbc14051ad6c12e93d574aee2bef
+    - name: gUnkEu_09CF7B7C
+      address: '0x9cf7b7c'
+      size: 20
+      kind: Sprite
+      sha256: 6f6854da6df64ef4a3c1a0591444dcc0e708d94feb22f8bb839ebce322c5076a
+    - name: gUnkEu_09CF7B92
+      address: '0x9cf7b92'
+      size: 20
+      kind: Sprite
+      sha256: 5f98d0c28d6f3f4d499ef89b1e553fa16baf2289486dbb1f1bbe0722ab5daaeb
+    - name: gUnkEu_09CF7BA8
+      address: '0x9cf7ba8'
+      size: 20
+      kind: Sprite
+      sha256: 1c15f01e9d53fb942424fb99c78a64095529a129e1f0197fbacb836d07b4f3bd
+    - name: gUnkEu_09CF7BBE
+      address: '0x9cf7bbe'
+      size: 20
+      kind: Sprite
+      sha256: 48200ee017be9cfb96ed8bea6b3a85d8c468848103ff6c8d7675d1f52f45cb5e
+    - name: gUnkEu_09CF7BD4
+      address: '0x9cf7bd4'
+      size: 20
+      kind: Sprite
+      sha256: eda9c2a28bcd3309be068bccaf25faf2301741ad0d8e8226549773270f695d52
+    - name: gUnkEu_09CF7BEA
+      address: '0x9cf7bea'
+      size: 20
+      kind: Sprite
+      sha256: de4815508b0c82bde97b3ceb328845f209b7561b7580657419d6343ae39935b2
+    - name: gUnkEu_09CF7C00
+      address: '0x9cf7c00'
+      size: 20
+      kind: Sprite
+      sha256: d35de4a37c8bf1c4b5bccd71413c9a42cc1cf53b7746b86345aa7cd6e15be7aa
+    - name: gUnkEu_09CF7C16
+      address: '0x9cf7c16'
+      size: 20
+      kind: Sprite
+      sha256: 04bb8935c7e41c0d4942d122a73da3dd04c8fa8201edec5a655bca860c502744
+    - name: gUnkEu_09CF7C2C
+      address: '0x9cf7c2c'
+      size: 20
+      kind: Sprite
+      sha256: 28f8d1c854058e5b42eb1197cf82f432a3b73d944643fcbd6a2d04ee0ec6a8f5
+    - name: gUnkEu_09CF7C42
+      address: '0x9cf7c42'
+      size: 20
+      kind: Sprite
+      sha256: 82d70c10e544321704e38a064ca4c78e4d6efb6ac89f02b1c034028d3ccbdc56
+    - name: gUnkEu_09CF7C58
+      address: '0x9cf7c58'
+      size: 20
+      kind: Sprite
+      sha256: 5a2b55e82913e124d9d63da52a4c2143c9f1bbae6d80f1f900472b5f9641f2bb
+    - name: gUnkEu_09CF7C6E
+      address: '0x9cf7c6e'
+      size: 20
+      kind: Sprite
+      sha256: c73ba1a632d488cdfeb3290682f15a5d2e70efad1599be8a1cb009efc7652dd5
+    - name: gUnkEu_09CF7C84
+      address: '0x9cf7c84'
+      size: 20
+      kind: Sprite
+      sha256: 4dfe993c132b5ac7ec792aaf076ba3397ec22138d49129d266dc307dd2376cd4
+    - name: gUnkEu_09CF7C9A
+      address: '0x9cf7c9a'
+      size: 26
+      kind: Sprite
+      sha256: b34c8feeaa4f6b30a009dc3f0fd41e36e0b852bc0909c02d333f107123be6e2f
+    - name: gUnkEu_09CF7CB6
+      address: '0x9cf7cb6'
+      size: 26
+      kind: Sprite
+      sha256: 7ec9a9b3288515bb9aa7bb4eb80df67832952a20b3606d4c1150eaf99205f023
+    - name: gUnkEu_09CF7CD2
+      address: '0x9cf7cd2'
+      size: 26
+      kind: Sprite
+      sha256: 63513aaf09eb000e4146f870e648201bb1f381c4964cc1836e21e185701b1f3a
+    - name: gUnkEu_09CF7CEE
+      address: '0x9cf7cee'
+      size: 26
+      kind: Sprite
+      sha256: 6c9bc716bfd0f1230ec9803f0115515b3976b9b3f3ba4d5373b2d6227d4230e2
+    - name: gUnkEu_09CF7D0A
+      address: '0x9cf7d0a'
+      size: 26
+      kind: Sprite
+      sha256: 4e703bfaf7d40871c5fe0b9039fbde4f4fe15f3665a839590f189ecb9c4c287d
+    - name: gUnkEu_09CF7D26
+      address: '0x9cf7d26'
+      size: 26
+      kind: Sprite
+      sha256: 5e368f05928b98169bc015823eaffba4e19a69baf44ff6db9d09511b397d8922
+    - name: gUnkEu_09CF7D42
+      address: '0x9cf7d42'
+      size: 26
+      kind: Sprite
+      sha256: e17918917f8e794d465a7f1b6940410c7a5c77f295be1f5bf34f3ebe1a9f3688
+    - name: gUnkEu_09CF7D5E
+      address: '0x9cf7d5e'
+      size: 26
+      kind: Sprite
+      sha256: 78a7ea4f436bda269b7eb920c318bc4b7fc6be6de0c26e7b6ef0b99bd70dec69
+    - name: gUnkEu_09CF7D7A
+      address: '0x9cf7d7a'
+      size: 26
+      kind: Sprite
+      sha256: b2b5adefafe963a81010f20adccceb63cdfa3e224d520363182cb9fdb33f7a8c
+    - name: gUnkEu_09CF7D96
+      address: '0x9cf7d96'
+      size: 26
+      kind: Sprite
+      sha256: df2b50579a20d0062712b37f0d05d3293e65fd12e82e37e97a7c33f9cadece43
+    - name: gUnkEu_09CF7DB2
+      address: '0x9cf7db2'
+      size: 26
+      kind: Sprite
+      sha256: fc17519f743ea7e9c71549ea298e9e23d8dfcfc52df9b7df53cb7d2f4e3b2530
+    - name: gUnkEu_09CF7DCE
+      address: '0x9cf7dce'
+      size: 26
+      kind: Sprite
+      sha256: 4fee6562ca55402cf80464b083a0f89cc47333166ed071f2ee7d789834efe849
+    - name: gUnkEu_09CF7DEA
+      address: '0x9cf7dea'
+      size: 26
+      kind: Sprite
+      sha256: 90b3455967be373188cf47c93ebc4bd74d2ed69abf6952cca69efd765f58c3fb
+    - name: gUnkEu_09CF7E06
+      address: '0x9cf7e06'
+      size: 26
+      kind: Sprite
+      sha256: 6c29b172df96108f5e46388fb0176c8dd7e0fde8a79879c659de04ece0701ec2
+    - name: gUnkEu_09CF7E22
+      address: '0x9cf7e22'
+      size: 26
+      kind: Sprite
+      sha256: 9f12a9aaabb09fa80d8473379c43fa4aad7737c15083078956703abc651f684e
+    - name: gUnkEu_09CF7E3E
+      address: '0x9cf7e3e'
+      size: 26
+      kind: Sprite
+      sha256: cf293cd56a13688a0a9906f4ea415bf8413b865c4d7ea2eb6fb0508840671bcb
+    - name: gUnkEu_09CF7E5A
+      address: '0x9cf7e5a'
+      size: 26
+      kind: Sprite
+      sha256: 04e4d4301292cc32d731a430330ac9e070aa49d0ce4202e847f4188e5c082eab
+    - name: gUnkEu_09CF7E76
+      address: '0x9cf7e76'
+      size: 26
+      kind: Sprite
+      sha256: ed4911af6befd3088031e18a88d6612dbcfeed5c5cce8b70b2d54bf6cbd57d0b
+    - name: gUnkEu_09CF7E92
+      address: '0x9cf7e92'
+      size: 26
+      kind: Sprite
+      sha256: ce6c99b662707631a639f7aa91b07f49936d70c994dd05e6bb2d1246c7624a24
+    - name: gUnkEu_09CF7EAE
+      address: '0x9cf7eae'
+      size: 26
+      kind: Sprite
+      sha256: 3d6e83801096ddb323152e8ebf33b62d1ffcaa50f6ef596edf7c6b521755cab4
+    - name: gUnkEu_09CF7ECA
+      address: '0x9cf7eca'
+      size: 26
+      kind: Sprite
+      sha256: f40025d61c143593749804eb2a2fc0a90afbc7df6b42285c13dedad0e9ac2fe9
+    - name: gUnkEu_09CF7EE6
+      address: '0x9cf7ee6'
+      size: 26
+      kind: Sprite
+      sha256: ce1c2113821d104c7d200d91734241af56124bfd3288c94ab5d46c7bc0296aa9
+    - name: gUnkEu_09CF7F02
+      address: '0x9cf7f02'
+      size: 26
+      kind: Sprite
+      sha256: 09bd26366d9f4e38bd243a141e7a9b75863177a6cb5cce9e2189360d8f5ddcf1
+    - name: gUnkEu_09CF7F1E
+      address: '0x9cf7f1e'
+      size: 26
+      kind: Sprite
+      sha256: fc07ad86c58096944b592b868a8e80a46901e3eb04cf5b2dd81af46f7b4f8129
+    - name: gUnkEu_09CF7F3A
+      address: '0x9cf7f3a'
+      size: 26
+      kind: Sprite
+      sha256: 6471413cec0fcf019a330acf35225d71ea1bfaa15bc6a9ca3dc4d0502a39c040
+    - name: gUnkEu_09CF7F56
+      address: '0x9cf7f56'
+      size: 26
+      kind: Sprite
+      sha256: 7df43c120774efb15c7a6e617184d022206db27893d0a60ad2a89b96b21d99bb
+    - name: gUnkEu_09CF7F72
+      address: '0x9cf7f72'
+      size: 26
+      kind: Sprite
+      sha256: 0678f5c4d88584dc69064a967f26a1bfdd83808edb65efdfccf34977c5a1bd23
+    - name: gUnkEu_09CF7F8E
+      address: '0x9cf7f8e'
+      size: 26
+      kind: Sprite
+      sha256: 5687597ecae47c3a644133653c0e79e3187c8d56a2cceabc56c24e30655a9430
+    - name: gUnkEu_09CF7FAA
+      address: '0x9cf7faa'
+      size: 26
+      kind: Sprite
+      sha256: 98559f6cc3dead0d39af08140c157a3b5004b54313da68269e4f863a2aec6520
+    - name: gUnkEu_09CF7FC6
+      address: '0x9cf7fc6'
+      size: 26
+      kind: Sprite
+      sha256: fb520c1a6e9502b44508a089498d946f8e1f7c2c592e14095e26b0dfe87fa80f
+    - name: gUnkEu_09CF7FE2
+      address: '0x9cf7fe2'
+      size: 26
+      kind: Sprite
+      sha256: 296342dd70eaefe37a07acfb78f9bc96e1f3b10bb48cd11a917c6d422f837fb6
+    - name: gUnkEu_09CF7FFE
+      address: '0x9cf7ffe'
+      size: 26
+      kind: Sprite
+      sha256: 61359374406bcfe7a9480cb361cb1b7ad6e3343c974b987851637ce31d7fe8e1
+    - name: gUnkEu_09CF801A
+      address: '0x9cf801a'
+      size: 26
+      kind: Sprite
+      sha256: 8a06137dd9d2462eee4504739300b944dde1b809ba5775a85ffc1fd0847bcad0
+    - name: gUnkEu_09CF8036
+      address: '0x9cf8036'
+      size: 26
+      kind: Sprite
+      sha256: 5d47c6dd6d48ed2df56720909f354083e27eed96fceae138fd57a480fa855181
+    - name: gUnkEu_09CF8052
+      address: '0x9cf8052'
+      size: 32
+      kind: Sprite
+      sha256: a91e489834be9c575671a8f414befbe65166e6d4f0a886779b36a8aa0022eb62
+    - name: gUnkEu_09CF8074
+      address: '0x9cf8074'
+      size: 32
+      kind: Sprite
+      sha256: a4d57dac6d12ef3f3c583ac500022c4ac8980855bb92f0359cd3aef719b9339e
+    - name: gUnkEu_09CF8096
+      address: '0x9cf8096'
+      size: 32
+      kind: Sprite
+      sha256: 67b4e113e0a053a3437ae01792de71f47c7ad2e90129ed8c2aff5e0bccac244b
+    - name: gUnkEu_09CF80B8
+      address: '0x9cf80b8'
+      size: 32
+      kind: Sprite
+      sha256: a8609476e64d28bd5a33dbe5f2d5667dcdb1a82724624dafb383f61d572d4da0
+    - name: gUnkEu_09CF80DA
+      address: '0x9cf80da'
+      size: 32
+      kind: Sprite
+      sha256: 33b5a754bbd20d19e4ca0e93906c1d80ab01502b02ef811d391a9b0dc4072e77
+    - name: gUnkEu_09CF80FC
+      address: '0x9cf80fc'
+      size: 32
+      kind: Sprite
+      sha256: b5d29ac3fcb64a58c2a01b2bc2e03b5a0fd12ef72ebdd64c330e4208b2be86f9
+    - name: gUnkEu_09CF811E
+      address: '0x9cf811e'
+      size: 32
+      kind: Sprite
+      sha256: 6b47f93b8f49c5f73c2c875ea3b9163a3c54735e917a3372b474d05a11f686d5
+    - name: gUnkEu_09CF8140
+      address: '0x9cf8140'
+      size: 32
+      kind: Sprite
+      sha256: bbe8128fb3d06f45d275d3dac3eb34d91f2768de8a14ca2ee468e5284c28706c
+    - name: gUnkEu_09CF8162
+      address: '0x9cf8162'
+      size: 32
+      kind: Sprite
+      sha256: 831bbda7cae747ada04ddd2ac75c7e821540788aa0e310278a634830d775dc03
+    - name: gUnkEu_09CF8184
+      address: '0x9cf8184'
+      size: 32
+      kind: Sprite
+      sha256: 1f46a9c8c696442fb4c8f870260069e042a9e332054f0420671706032ca751f4
+    - name: gUnkEu_09CF81A6
+      address: '0x9cf81a6'
+      size: 32
+      kind: Sprite
+      sha256: 5ebc5ae04b766d58edbe7ec944dd39c8e7d29a74920aa3da3212f2ac84e2ad83
+    - name: gUnkEu_09CF81C8
+      address: '0x9cf81c8'
+      size: 32
+      kind: Sprite
+      sha256: dcb4b46338c63c4feb033fc91e16975132e6b13b980e8991b3a3635a5179402c
+    - name: gUnkEu_09CF81EA
+      address: '0x9cf81ea'
+      size: 32
+      kind: Sprite
+      sha256: 1714093f88669825b93d8e658e8fc6285bb479f6b26abe1f17de209963992daf
+    - name: gUnkEu_09CF820C
+      address: '0x9cf820c'
+      size: 32
+      kind: Sprite
+      sha256: 8bd61c2cbc48ef330e9591b6151f64138548664262dfbb2b81d395d87eb13aef
+    - name: gUnkEu_09CF822E
+      address: '0x9cf822e'
+      size: 32
+      kind: Sprite
+      sha256: 2e17cb35709179781558ee4f4fad5cee39097c2cf05ad81a2b7161df5e8083ce
+    - name: gUnkEu_09CF8250
+      address: '0x9cf8250'
+      size: 32
+      kind: Sprite
+      sha256: d174c57ea63c8ec77f4a40819b2a67f9fe5b2e03b59ef68b232384100b3877c8
+    - name: gUnkEu_09CF8272
+      address: '0x9cf8272'
+      size: 32
+      kind: Sprite
+      sha256: 9f3dd89a28c7f15aef683f8ee39dc4d6e7cb1a078a60372ef565f23679a69d15
+    - name: gUnkEu_09CF8294
+      address: '0x9cf8294'
+      size: 32
+      kind: Sprite
+      sha256: 5b4d14d7f24a878cea30bd124a0cc997b8c9b1be95a0ce442ea5cf94c5ff4ea1
+    - name: gUnkEu_09CF82B6
+      address: '0x9cf82b6'
+      size: 32
+      kind: Sprite
+      sha256: a80ff998f0a97c34de7c66594637b75d88c93457243bfd70357046dfcf32dd25
+    - name: gUnkEu_09CF82D8
+      address: '0x9cf82d8'
+      size: 32
+      kind: Sprite
+      sha256: 8b458aae98026f2a4cb11dcdb826f44a185d9ec222128fc6a4ab848980fbc051
+    - name: gUnkEu_09CF82FA
+      address: '0x9cf82fa'
+      size: 32
+      kind: Sprite
+      sha256: eba389cf8a198358c9e70cff2929f745f8dc404d5c059e4e9116329f8ae79ecf
+    - name: gUnkEu_09CF831C
+      address: '0x9cf831c'
+      size: 32
+      kind: Sprite
+      sha256: 991db1034e6d000207ec434951e719f718544ff8cc5df830a9c51668001dade1
+    - name: gUnkEu_09CF833E
+      address: '0x9cf833e'
+      size: 32
+      kind: Sprite
+      sha256: 9449cc358275193dfe1c3c5d4a8397b57025c774195131f3c18ddd5ef09dd1a1
+    - name: gUnkEu_09CF8360
+      address: '0x9cf8360'
+      size: 32
+      kind: Sprite
+      sha256: 1eaab439c2fb213af0de54f4dff53c79bd8011f9b7f4390f4b1a6111b05cb9dc
+    - name: gUnkEu_09CF8382
+      address: '0x9cf8382'
+      size: 32
+      kind: Sprite
+      sha256: 3c803d3b010208b925ba51a71d9a8cdb41285ea48b577404d35fbae5fb94f6bd
+    - name: gUnkEu_09CF83A4
+      address: '0x9cf83a4'
+      size: 32
+      kind: Sprite
+      sha256: e894aa01ea98d48457aef67a9afb687fda08abdef7ce5f42664f00383216cd18
+    - name: gUnkEu_09CF83C6
+      address: '0x9cf83c6'
+      size: 32
+      kind: Sprite
+      sha256: 08ac0c923d7e50d946942fbd53e67ec7da59f71f62377fa56e5cefadc61637ab
+    - name: gUnkEu_09CF83E8
+      address: '0x9cf83e8'
+      size: 32
+      kind: Sprite
+      sha256: 3898ef66547a982770f65e365c5245ae6c844e75e911a7847b42301c90de56e1
+    - name: gUnkEu_09CF840A
+      address: '0x9cf840a'
+      size: 32
+      kind: Sprite
+      sha256: ccf445bb2f0fa0c4d53bf4c0f116319470740a41a609f88371b27dfbd6d182c3
+    - name: gUnkEu_09CF842C
+      address: '0x9cf842c'
+      size: 32
+      kind: Sprite
+      sha256: 66c2cb942ae059fce6c1dd91f37b1238b4e9eaa1bcb9e623efd790aa445af613
+    - name: gUnkEu_09CF844E
+      address: '0x9cf844e'
+      size: 32
+      kind: Sprite
+      sha256: 882f0243a518e75cdd51a82d766122f4670861a950c311c4d8d05d2017c64f87
+    - name: gUnkEu_09CF8470
+      address: '0x9cf8470'
+      size: 32
+      kind: Sprite
+      sha256: 7932d22b533a9ec3d3b04f0f0238e1eea4aef31f13bb62672cd0124af859e951
+    - name: gUnkEu_09CF8492
+      address: '0x9cf8492'
+      size: 32
+      kind: Sprite
+      sha256: db46d768c7ad36a6f9a4d077741cdc76dba52f92572085aae081339a25766150
+    - name: gUnkEu_09CF84B4
+      address: '0x9cf84b4'
+      size: 32
+      kind: Sprite
+      sha256: 48f1282e786612f80219c0bc70f2dd76f0b1ed891195970f4cd186b584c1f5e3
+    - name: gUnkEu_09CF84D6
+      address: '0x9cf84d6'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CF84D8
+      address: '0x9cf84d8'
+      size: 110
+      kind: AnimHeader
+      sha256: 0023d2b79a6f3679bb0c1350c06b54fab9548baf5f83caf7caefe151e69681d0
+    - name: gUnkEu_09CF8546
+      address: '0x9cf8546'
+      size: 126
+      kind: AnimHeader
+      sha256: 676c46c808670ee286a04a1162f7e4c7c12bcfc27a41eea702178f33da157c07
+    - name: gUnkEu_09CF85C4
+      address: '0x9cf85c4'
+      size: 58
+      kind: AnimHeader
+      sha256: a9abd4b3aca879d7771b6965e003a9e00f56c3d1a6366d77f843ad707139f8ca
+    - name: gUnkEu_09CF85FE
+      address: '0x9cf85fe'
+      size: 82
+      kind: AnimHeader
+      sha256: 6c5b74f1cce042a79251e6c24dfa62a92345b0b082cb1622a87fd956bccd8809
+    - name: gUnkEu_09CF8650
+      address: '0x9cf8650'
+      size: 82
+      kind: AnimHeader
+      sha256: e0317869466d70c480d4a3472342af6bb811a39e93cfed9e7453db438e563eb7
+    - name: gUnkEu_09CF9864
+      address: '0x9cf9864'
+      size: 50
+      kind: Sprite
+      sha256: 75b7d6231789ee23b85d3a6593fb3c0822b51e29a8a4269933962fdff48df2f9
+    - name: gUnkEu_09CF9898
+      address: '0x9cf9898'
+      size: 50
+      kind: Sprite
+      sha256: 28b0e4b4e034fbeae096a17d85ae2d767c0ce481046a7ed02b3f893a9a6318f5
+    - name: gUnkEu_09CF98CC
+      address: '0x9cf98cc'
+      size: 50
+      kind: Sprite
+      sha256: 4fb3e59af646e2bf1503835bfe3b46f8cbdf7994e061c5e58a01679a60372799
+    - name: gUnkEu_09CF9900
+      address: '0x9cf9900'
+      size: 50
+      kind: Sprite
+      sha256: c6a26b05b5b7dee688cc7e027886409b63146d7242c5f5e1f6824ab4bd4200d3
+    - name: gUnkEu_09CF9934
+      address: '0x9cf9934'
+      size: 50
+      kind: Sprite
+      sha256: 3e0f6114e17ca6035cfed482536e701bfd1c9c50db3d7c32803082c3054ae7ea
+    - name: gUnkEu_09CF9968
+      address: '0x9cf9968'
+      size: 50
+      kind: Sprite
+      sha256: 72d49b103ae708625b68c186db81494d5b629ab60bc873a29291c13fe32dc7ab
+    - name: gUnkEu_09CF999C
+      address: '0x9cf999c'
+      size: 50
+      kind: Sprite
+      sha256: 821a45e8d5c8c8789a7ebc192e1746b5fca69dd245b3cd9d0edb779812bca375
+    - name: gUnkEu_09CF99D0
+      address: '0x9cf99d0'
+      size: 50
+      kind: Sprite
+      sha256: 33b9ed90822f1787e04f6a74b9c9885e521c9e1a2807465f37ce895522eeb6b6
+    - name: gUnkEu_09CF9A04
+      address: '0x9cf9a04'
+      size: 50
+      kind: Sprite
+      sha256: 52a2d10cd46c33377ac54d2ff0790e2b5a1ec7a12c0cea6c3fd0f8c108624199
+    - name: gUnkEu_09CF9A38
+      address: '0x9cf9a38'
+      size: 50
+      kind: Sprite
+      sha256: cbe1f97729204bf4779fad8513456adb722cb46832dc12839d1ec3e12ec2133b
+    - name: gUnkEu_09CF9A6C
+      address: '0x9cf9a6c'
+      size: 50
+      kind: Sprite
+      sha256: cf27bea5867a8340532cafeabbaf93452c5113258415f7aa9bd2b0f2bce28cfa
+    - name: gUnkEu_09CF9AA0
+      address: '0x9cf9aa0'
+      size: 50
+      kind: Sprite
+      sha256: 51cad4b317ffb9f382f57481bb10d4d783409693dc24d2ccc59c9181d4646c42
+    - name: gUnkEu_09CF9AD4
+      address: '0x9cf9ad4'
+      size: 50
+      kind: Sprite
+      sha256: a106c7a7d03255f78d248ac6355c3be27316571545ac86c3c82eb4d1e9dadeea
+    - name: gUnkEu_09CF9B08
+      address: '0x9cf9b08'
+      size: 50
+      kind: Sprite
+      sha256: d158f86c31fc776ab9a487a308e596a06bc0dce295fa4b2de021d4a595a7bdb6
+    - name: gUnkEu_09CF9B3C
+      address: '0x9cf9b3c'
+      size: 50
+      kind: Sprite
+      sha256: 4db445633c36c64ddd859a6be7ce3976922f8106432ea94f4e892e9cffb64db7
+    - name: gUnkEu_09CF9B70
+      address: '0x9cf9b70'
+      size: 50
+      kind: Sprite
+      sha256: a46a48c6b4675346e1960a5501de5e82a4cf405be015ab906157d3af0bb376cc
+    - name: gUnkEu_09CF9BA4
+      address: '0x9cf9ba4'
+      size: 50
+      kind: Sprite
+      sha256: c1b2a79e66916f2b670fb0d04f98ca2e709ee90e1458f3a49e74ecaaba8c26b9
+    - name: gUnkEu_09CF9BD8
+      address: '0x9cf9bd8'
+      size: 50
+      kind: Sprite
+      sha256: 56cc3facc19c12a224b61fcd5bf4af05971e2dc519eb202935dc6f83a649ef91
+    - name: gUnkEu_09CF9C0C
+      address: '0x9cf9c0c'
+      size: 50
+      kind: Sprite
+      sha256: 3a54638b968a25d8509aad65869f5df696819101a2cd8bcfc4e12bdbe90e25d5
+    - name: gUnkEu_09CF9C40
+      address: '0x9cf9c40'
+      size: 50
+      kind: Sprite
+      sha256: 7c190a79ae712ba509ac05432be549bb29c7dfd23ef3bca2a95b3c6a3c334576
+    - name: gUnkEu_09CF9C74
+      address: '0x9cf9c74'
+      size: 50
+      kind: Sprite
+      sha256: c2307852298a265ffcdd2ed952225bb3ade5d0f09b745ad4ec12cf327a6a7556
+    - name: gUnkEu_09CF9CA8
+      address: '0x9cf9ca8'
+      size: 50
+      kind: Sprite
+      sha256: 4494b91d8085e1d27f1b5c80183f1404eb8eaf69f3c7ec229a8e0a232b3199b8
+    - name: gUnkEu_09CF9CDC
+      address: '0x9cf9cdc'
+      size: 50
+      kind: Sprite
+      sha256: 8c95fba51fd0005d981269665466816d111cae588dd0b35b87291a1b9df1829c
+    - name: gUnkEu_09CF9D10
+      address: '0x9cf9d10'
+      size: 50
+      kind: Sprite
+      sha256: 6e66bdb21f528c05caf78e3f93b8fe829206c1c1d2f0ebbc915895264ab31aa6
+    - name: gUnkEu_09CF9D44
+      address: '0x9cf9d44'
+      size: 50
+      kind: Sprite
+      sha256: 176b29e24a03ba026bf5173f2ab76378952fc7dbf287da0459b6acd51a9c9359
+    - name: gUnkEu_09CF9D78
+      address: '0x9cf9d78'
+      size: 38
+      kind: Sprite
+      sha256: ab0a6b93903772b8aee7c0fe7dfc1581015b74716e5ff191a845fab2fbfab33f
+    - name: gUnkEu_09CF9DA0
+      address: '0x9cf9da0'
+      size: 38
+      kind: Sprite
+      sha256: 1a0c70acbcca0caba23abdbfeaa789d7a96b3b505402a4520766df4a334ce376
+    - name: gUnkEu_09CF9DC8
+      address: '0x9cf9dc8'
+      size: 38
+      kind: Sprite
+      sha256: 864d4bf7abb5e7cb6eb2eab40f2b5dd7bbe3458e2f9a05e8d41e1cecf4fbdf4b
+    - name: gUnkEu_09CF9DF0
+      address: '0x9cf9df0'
+      size: 38
+      kind: Sprite
+      sha256: c61559b4dcfcebacf65c7ac830773a0c782b083198bf5d0db3d29e8299b5c24b
+    - name: gUnkEu_09CF9E18
+      address: '0x9cf9e18'
+      size: 38
+      kind: Sprite
+      sha256: e9969852b6f964468b905a48c26f288931327297128833f0e6de71f0380548e1
+    - name: gUnkEu_09CF9E40
+      address: '0x9cf9e40'
+      size: 38
+      kind: Sprite
+      sha256: beafa7b9eb041621515b0cb502d1269677a11ef8b03dede493df024f4fdcee81
+    - name: gUnkEu_09CF9E68
+      address: '0x9cf9e68'
+      size: 38
+      kind: Sprite
+      sha256: 3193f237bc5bf78b163df508ad4d778c8fd1a493cd7fa86690e1c70e40518cf2
+    - name: gUnkEu_09CF9E90
+      address: '0x9cf9e90'
+      size: 38
+      kind: Sprite
+      sha256: a09710bb577dd9485d15a95229703d3242255f4d23b2e001db730d89ef95b4e9
+    - name: gUnkEu_09CF9EB8
+      address: '0x9cf9eb8'
+      size: 38
+      kind: Sprite
+      sha256: bb6f0dff3951f634617e3f7178e2594b683c77850a49577264312c5370ab7eda
+    - name: gUnkEu_09CF9EE0
+      address: '0x9cf9ee0'
+      size: 38
+      kind: Sprite
+      sha256: 9d8f923be1be721ea323b682ea883794801a8f0ac136bb2a18014456c3c1cd35
+    - name: gUnkEu_09CF9F08
+      address: '0x9cf9f08'
+      size: 38
+      kind: Sprite
+      sha256: 84607f24fcae12ea79d03a52472a62c2e4e4530454625e9db8dec1ccfe8ebe64
+    - name: gUnkEu_09CF9F30
+      address: '0x9cf9f30'
+      size: 38
+      kind: Sprite
+      sha256: 4472f3f55b6c4ec1796ca94d9108135503bfd2667a13aa1064ed3a60200d89c8
+    - name: gUnkEu_09CF9F58
+      address: '0x9cf9f58'
+      size: 38
+      kind: Sprite
+      sha256: e849f8796a04800c0906124f0342c9ebdbc288e4d7121e1f4bf813afea134fa7
+    - name: gUnkEu_09CF9F80
+      address: '0x9cf9f80'
+      size: 38
+      kind: Sprite
+      sha256: 829055d77daf77c4c256256bff23c0f43149f325f9311abe2ba831a20cc81211
+    - name: gUnkEu_09CF9FA8
+      address: '0x9cf9fa8'
+      size: 38
+      kind: Sprite
+      sha256: cac51d3cf7983f155a4a43947ffe7c4785a415194da574cfe8ebd51893cc89b1
+    - name: gUnkEu_09CF9FD0
+      address: '0x9cf9fd0'
+      size: 38
+      kind: Sprite
+      sha256: 2409c5a4650556cb140d645df340f3bb517518f8b7484a90be2e20bb679f0513
+    - name: gUnkEu_09CF9FF8
+      address: '0x9cf9ff8'
+      size: 38
+      kind: Sprite
+      sha256: 1bc2f89411fbf9432fec8eeaec2bd42d16acfafc6a363fadca822372ea7baac4
+    - name: gUnkEu_09CFA020
+      address: '0x9cfa020'
+      size: 38
+      kind: Sprite
+      sha256: 780c8476621d94324d4cbd7f5430ef4f11378cf8fb645a0ba7dc1f514ddc5f7f
+    - name: gUnkEu_09CFA048
+      address: '0x9cfa048'
+      size: 38
+      kind: Sprite
+      sha256: b5ad0e3139633241a4fcb3738626dca8141d5c47f78dd4c2a771f87a19206730
+    - name: gUnkEu_09CFA070
+      address: '0x9cfa070'
+      size: 38
+      kind: Sprite
+      sha256: 7a6698c386c29397becc5b8a887183432bd1bfdf6dc96d2fb4110f46dca674d4
+    - name: gUnkEu_09CFA098
+      address: '0x9cfa098'
+      size: 38
+      kind: Sprite
+      sha256: 42d943cbde915cd1c993f2c26d9cd376dfa1165a9b3069be5f5a615fd3291957
+    - name: gUnkEu_09CFA0C0
+      address: '0x9cfa0c0'
+      size: 38
+      kind: Sprite
+      sha256: 0f469fb5fa5ea003c0d8e9198abd76d2b13677d34d05958266c0e73ba5eaa733
+    - name: gUnkEu_09CFA0E8
+      address: '0x9cfa0e8'
+      size: 38
+      kind: Sprite
+      sha256: eab8adbe51618e5169adddf65f009a615e2ebd9bda6f6eaa34e8bbcb050dd666
+    - name: gUnkEu_09CFA110
+      address: '0x9cfa110'
+      size: 38
+      kind: Sprite
+      sha256: dce4f5eed7f2d4e941c07bb747214a0421aa898fd9a641d9aeb6177b2d07caae
+    - name: gUnkEu_09CFA138
+      address: '0x9cfa138'
+      size: 38
+      kind: Sprite
+      sha256: 6817d90a0e88cf069efa56347208844d93530733ced80756eccd52db979f23a7
+    - name: gUnkEu_09CFA160
+      address: '0x9cfa160'
+      size: 38
+      kind: Sprite
+      sha256: 773e91f0db0590ccdbe3b633338471007e9a19028c1c9b5cdb4866640e4a5beb
+    - name: gUnkEu_09CFA188
+      address: '0x9cfa188'
+      size: 38
+      kind: Sprite
+      sha256: 5539950043408a52c68fd23d289c88472046d9290a9b52934e2c1819da1ca3e6
+    - name: gUnkEu_09CFA1B0
+      address: '0x9cfa1b0'
+      size: 38
+      kind: Sprite
+      sha256: 2821491ed3080977ccd600b4f4b1dc87549b920dc226d357db686737b5746a1a
+    - name: gUnkEu_09CFA1D8
+      address: '0x9cfa1d8'
+      size: 44
+      kind: Sprite
+      sha256: 44139039113873057de0abb2c8aab7b9aa961a77cf1f2229336506b6abc98e4d
+    - name: gUnkEu_09CFA206
+      address: '0x9cfa206'
+      size: 44
+      kind: Sprite
+      sha256: b9508a78e909cd429592b3722e82d4667fe171db3f322f6ca4570cff18deaf35
+    - name: gUnkEu_09CFA234
+      address: '0x9cfa234'
+      size: 44
+      kind: Sprite
+      sha256: 18be25b3fbfd3ed2d482b7242823f2154e0d2acb3c68dda0bd30bc0423d90818
+    - name: gUnkEu_09CFA262
+      address: '0x9cfa262'
+      size: 44
+      kind: Sprite
+      sha256: d2f33578ed35215d98df3183b4ee8a67bdc41efd96485aaa9744d5736e45fcdc
+    - name: gUnkEu_09CFA290
+      address: '0x9cfa290'
+      size: 44
+      kind: Sprite
+      sha256: cf156445ec8363167e3980476dbe0e42d63ecab8255b6292b2a95f8cda32cf72
+    - name: gUnkEu_09CFA2BE
+      address: '0x9cfa2be'
+      size: 44
+      kind: Sprite
+      sha256: 7825105e2cf1884154941bd9d67fa780d8d92fda9cb7049bbe354a2b8c03a051
+    - name: gUnkEu_09CFA2EC
+      address: '0x9cfa2ec'
+      size: 44
+      kind: Sprite
+      sha256: 64182ed72cb5159930f8d1748712e248a8fe098b0fe0fcf0babc598463ebf7b1
+    - name: gUnkEu_09CFA31A
+      address: '0x9cfa31a'
+      size: 44
+      kind: Sprite
+      sha256: 28e396ac7038cc71ee6a5438565ab8de014e61d7f604f049d837f831d22c3b10
+    - name: gUnkEu_09CFA348
+      address: '0x9cfa348'
+      size: 44
+      kind: Sprite
+      sha256: 4932ad5c05eacf9cfa87fefd50ca91b47be8ae861bb1199367f5af8e51827248
+    - name: gUnkEu_09CFA376
+      address: '0x9cfa376'
+      size: 44
+      kind: Sprite
+      sha256: 087488e9bf5164838ab76d98eb45e8eb5206c5438072488fa761a3a8a36c121a
+    - name: gUnkEu_09CFA3A4
+      address: '0x9cfa3a4'
+      size: 44
+      kind: Sprite
+      sha256: 964192f039b936fa33dd8b71737ecb8e2ee46039f11c34d9fa30ab68a9391d36
+    - name: gUnkEu_09CFA3D2
+      address: '0x9cfa3d2'
+      size: 44
+      kind: Sprite
+      sha256: 453edc59675f74d89d732d180c72d40fb6aee894666a8703ffe99205862e1804
+    - name: gUnkEu_09CFA400
+      address: '0x9cfa400'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CFA402
+      address: '0x9cfa402'
+      size: 110
+      kind: AnimHeader
+      sha256: 15e8ab6db9e8ccfea6f8d0d337be2bc1581a6124575f4dd5ba4c7c6d0732a5f3
+    - name: gUnkEu_09CFA470
+      address: '0x9cfa470'
+      size: 126
+      kind: AnimHeader
+      sha256: aeed4b9d0932b699f7af096af9f981da358df8d414cf76e420d889cd75357c86
+    - name: gUnkEu_09CFA4EE
+      address: '0x9cfa4ee'
+      size: 58
+      kind: AnimHeader
+      sha256: 9a4bda9382379ea553fbb3b0ee5a7b018544731c5d41754f334f0b983c964262
+    - name: gUnkEu_09CFA528
+      address: '0x9cfa528'
+      size: 58
+      kind: AnimHeader
+      sha256: c46cfcbc839ec2c6b3c331a88161c482c070d06ba3a89833b9f8d4734e5a2a59
+    - name: gUnkEu_09CFA562
+      address: '0x9cfa562'
+      size: 10
+      kind: AnimHeader
+      sha256: 194a3b4ff73423867e0ad799314a5e09fa49d70b305c15d0bcbc93532df69749
+    - name: gUnkEu_09CFB9AC
+      address: '0x9cfb9ac'
+      size: 44
+      kind: Sprite
+      sha256: 6c65c8850273a5326222d94fc68b873cb36d60b1ce478288f80cd8b63e2dc3f2
+    - name: gUnkEu_09CFB9DA
+      address: '0x9cfb9da'
+      size: 44
+      kind: Sprite
+      sha256: db948d0cabb4fadab6a902e9c8d73d6ec07aa1c011cda440f600f00034c2312b
+    - name: gUnkEu_09CFBA08
+      address: '0x9cfba08'
+      size: 44
+      kind: Sprite
+      sha256: 5c6f0acbe7c2ae319c96c2f34cfe82370f628898a91a38a5f97cf4f863beaa9c
+    - name: gUnkEu_09CFBA36
+      address: '0x9cfba36'
+      size: 44
+      kind: Sprite
+      sha256: 78b4ce66d460b163e834d6528129bb7451d05d9fc7567cb8ec551eb223a4fa08
+    - name: gUnkEu_09CFBA64
+      address: '0x9cfba64'
+      size: 44
+      kind: Sprite
+      sha256: 1cf6154773435e035c25ce685feb08985957b4a24f76f9840ec9a8972a6f79be
+    - name: gUnkEu_09CFBA92
+      address: '0x9cfba92'
+      size: 44
+      kind: Sprite
+      sha256: b8e1ae90c208f8558989f41e0ed28b75fcb99f7670c70ea39bcc97f79c2b8d8d
+    - name: gUnkEu_09CFBAC0
+      address: '0x9cfbac0'
+      size: 44
+      kind: Sprite
+      sha256: 7c71fa9cc221d1b6b6dcab7935a62b2ab36ac449439123ded0a4bf319b124d3f
+    - name: gUnkEu_09CFBAEE
+      address: '0x9cfbaee'
+      size: 44
+      kind: Sprite
+      sha256: 5524f93f022e9597b2d87c5b2f762caca5ecf52b70fa888d09b29d79f2d29479
+    - name: gUnkEu_09CFBB1C
+      address: '0x9cfbb1c'
+      size: 44
+      kind: Sprite
+      sha256: 09eabbde3dafd17e8e87639b1c23b0a1b3553bfed9c05c3003a2d3006f9c58c6
+    - name: gUnkEu_09CFBB4A
+      address: '0x9cfbb4a'
+      size: 44
+      kind: Sprite
+      sha256: 2a741846e9be1941969328607030a02a864679db91fe41569e1f56b6f458df82
+    - name: gUnkEu_09CFBB78
+      address: '0x9cfbb78'
+      size: 44
+      kind: Sprite
+      sha256: 32e538e9a6fc1991301fdb5e7a4ef7678762568bfe8a4ac8c4b7efb37005e153
+    - name: gUnkEu_09CFBBA6
+      address: '0x9cfbba6'
+      size: 44
+      kind: Sprite
+      sha256: 778ed8cea5fb2adc4b658c74832c37c9de832925eeae738cada8987c880f52c9
+    - name: gUnkEu_09CFBBD4
+      address: '0x9cfbbd4'
+      size: 44
+      kind: Sprite
+      sha256: 9908dd0587a279a029b97a51a2ea9ea614813fa7976de8a65d39e4aff7e0fe81
+    - name: gUnkEu_09CFBC02
+      address: '0x9cfbc02'
+      size: 44
+      kind: Sprite
+      sha256: b52faaa732c6bba88ebf9ed604804c820a7ada1ed0716cbd7ce27a5bcbd170b7
+    - name: gUnkEu_09CFBC30
+      address: '0x9cfbc30'
+      size: 44
+      kind: Sprite
+      sha256: 9b49175b8cc2979148832530cef58b96754678a871bb21707bf089bf7368c728
+    - name: gUnkEu_09CFBC5E
+      address: '0x9cfbc5e'
+      size: 44
+      kind: Sprite
+      sha256: a5bda61aedc4a10afa3df52808e2f2d7a89a4a87b90d40133ab8687814ff8b0b
+    - name: gUnkEu_09CFBC8C
+      address: '0x9cfbc8c'
+      size: 44
+      kind: Sprite
+      sha256: f08c6f878119374fa9596be645871d258d5f1fc36a00f912bf7c4108fee3cc11
+    - name: gUnkEu_09CFBCBA
+      address: '0x9cfbcba'
+      size: 44
+      kind: Sprite
+      sha256: 6ee40700e9c2660f98d8b110a0c3750873de0efdaf78741c72c29461ad95f7ac
+    - name: gUnkEu_09CFBCE8
+      address: '0x9cfbce8'
+      size: 44
+      kind: Sprite
+      sha256: 6b70b044550c446575579a3320f79b980b202e304bf9a038ab5672229f100e7a
+    - name: gUnkEu_09CFBD16
+      address: '0x9cfbd16'
+      size: 44
+      kind: Sprite
+      sha256: f2ae74fb2a33e86c935bca26a22d31628029f7008e256e5ca6f7c122c2b112b7
+    - name: gUnkEu_09CFBD44
+      address: '0x9cfbd44'
+      size: 44
+      kind: Sprite
+      sha256: 2ee467e06e28b5870575b31dbc8dd98e5f00c0024861a2f0332c2908bafa3e11
+    - name: gUnkEu_09CFBD72
+      address: '0x9cfbd72'
+      size: 44
+      kind: Sprite
+      sha256: a79653f2425e4f2c3a0d3c01322e0cf32c678cff5b95348c00711731e9e3e8b4
+    - name: gUnkEu_09CFBDA0
+      address: '0x9cfbda0'
+      size: 44
+      kind: Sprite
+      sha256: eba9e623afd816aea0e5fbde10459911d1e0d619b222a52b416fe7eb4a4e86a3
+    - name: gUnkEu_09CFBDCE
+      address: '0x9cfbdce'
+      size: 44
+      kind: Sprite
+      sha256: 0bbafd09f565cfbc3062ee14769cee6e2449d7c0721460dadcd52c5038627fd9
+    - name: gUnkEu_09CFBDFC
+      address: '0x9cfbdfc'
+      size: 44
+      kind: Sprite
+      sha256: 2dbe6ff95717c84f08daae86d2b8feef762fad4c355ddd3b24b79e07ecd8bdbd
+    - name: gUnkEu_09CFBE2A
+      address: '0x9cfbe2a'
+      size: 50
+      kind: Sprite
+      sha256: 5988fa4ff07096b7336eb669af79c017589fde326b53e12cbf0ef05eefd80db3
+    - name: gUnkEu_09CFBE5E
+      address: '0x9cfbe5e'
+      size: 50
+      kind: Sprite
+      sha256: 531006071e848815437440fa854d630adba71319ae5e441605a6cd4834e6ed86
+    - name: gUnkEu_09CFBE92
+      address: '0x9cfbe92'
+      size: 50
+      kind: Sprite
+      sha256: 54feb624bd51d28b4eb47cf872dd96db6ef8363383d967040347a2abfe70b39f
+    - name: gUnkEu_09CFBEC6
+      address: '0x9cfbec6'
+      size: 50
+      kind: Sprite
+      sha256: 911f6f3e70ae2ede4c85dae37d29ae1d1d77c90721d5228f70506495c2822ee9
+    - name: gUnkEu_09CFBEFA
+      address: '0x9cfbefa'
+      size: 50
+      kind: Sprite
+      sha256: d4593a4b97bb9cf9bb2f317c25aae80b167f62d480f23e805249e73cdbeed25b
+    - name: gUnkEu_09CFBF2E
+      address: '0x9cfbf2e'
+      size: 50
+      kind: Sprite
+      sha256: a10260199fe69e9ae31f00269cf3c5a20a716d21ee4510581db8acd513795d7e
+    - name: gUnkEu_09CFBF62
+      address: '0x9cfbf62'
+      size: 50
+      kind: Sprite
+      sha256: 11fa830505d8f2cf91d341ee5f37da711676d2cbfbbb158a4b87214c84eaa78d
+    - name: gUnkEu_09CFBF96
+      address: '0x9cfbf96'
+      size: 50
+      kind: Sprite
+      sha256: 7774e2b170be43a8e068bfa8f13a1b5a41a4cfe2e12715054adfb41df526111d
+    - name: gUnkEu_09CFBFCA
+      address: '0x9cfbfca'
+      size: 50
+      kind: Sprite
+      sha256: 2e1f9e90a2da5e059d0f2d31b2b9af7c233ebfe5d712e618acdc99ef42156772
+    - name: gUnkEu_09CFBFFE
+      address: '0x9cfbffe'
+      size: 50
+      kind: Sprite
+      sha256: 2018efd5153f0f488448b8ac2235a8a30b85ae3917d50a5bc555c6fbdb9814f0
+    - name: gUnkEu_09CFC032
+      address: '0x9cfc032'
+      size: 50
+      kind: Sprite
+      sha256: 6d10e8035a54984007db3439336885b785a5c8fac666e26b32890350d5f49514
+    - name: gUnkEu_09CFC066
+      address: '0x9cfc066'
+      size: 50
+      kind: Sprite
+      sha256: b70b3b0e82b791078437277fc11d9fd8c214eee56dbf65447647f612ccb93d4d
+    - name: gUnkEu_09CFC09A
+      address: '0x9cfc09a'
+      size: 50
+      kind: Sprite
+      sha256: 93fd2190b61e2dbca8ebbdc5c7cd93beee04484fb52bb3392cd89e0150d6a287
+    - name: gUnkEu_09CFC0CE
+      address: '0x9cfc0ce'
+      size: 50
+      kind: Sprite
+      sha256: 33fa24569a22e4e3ce3e7878b6061c66857ea27fddd3729c007073abfdf6d008
+    - name: gUnkEu_09CFC102
+      address: '0x9cfc102'
+      size: 50
+      kind: Sprite
+      sha256: 3c01ad22a84e26c97f462b6f51bd1b4b9cb8459878f8e03f3f50cbbdb11f32fd
+    - name: gUnkEu_09CFC136
+      address: '0x9cfc136'
+      size: 50
+      kind: Sprite
+      sha256: 02342fdba9ce5be67ba847aa5f6f76c6bbb7cf42a78492c0caec21135aeca399
+    - name: gUnkEu_09CFC16A
+      address: '0x9cfc16a'
+      size: 50
+      kind: Sprite
+      sha256: b9346d7f997330efcb364852f37e0e0bdfc64c95a144701ba010bcf8c3da5ffa
+    - name: gUnkEu_09CFC19E
+      address: '0x9cfc19e'
+      size: 50
+      kind: Sprite
+      sha256: 501fb28b0341618b7681560cca693b69816379614f0ca01c9889b06b5c648c86
+    - name: gUnkEu_09CFC1D2
+      address: '0x9cfc1d2'
+      size: 50
+      kind: Sprite
+      sha256: 27cca7a47fbde67488881d701765dd88cc93178ee8f49fe065a374d9d997dc46
+    - name: gUnkEu_09CFC206
+      address: '0x9cfc206'
+      size: 50
+      kind: Sprite
+      sha256: f64b9d80b4bf415709fb3ba9af4d97b519af5cf05d9c25992fdaa8d7909ae9bb
+    - name: gUnkEu_09CFC23A
+      address: '0x9cfc23a'
+      size: 50
+      kind: Sprite
+      sha256: ae0cce0fc1d1c2ec7f62bc7f06654bc84cf17a135a4e150d5daf214e070365b4
+    - name: gUnkEu_09CFC26E
+      address: '0x9cfc26e'
+      size: 50
+      kind: Sprite
+      sha256: 076fa7be146a2d1bd6f5870ad6f58b43742ea31fc827de59b09b0daf14cde96a
+    - name: gUnkEu_09CFC2A2
+      address: '0x9cfc2a2'
+      size: 50
+      kind: Sprite
+      sha256: 8ceacc5395b01a8bfc1d72c97033a200626835fa3aa592424aba7c0fd2fc1cb9
+    - name: gUnkEu_09CFC2D6
+      address: '0x9cfc2d6'
+      size: 50
+      kind: Sprite
+      sha256: a3b48ae81a2016880f3e4506002899dbcad26ce1c822c5106393039563724f51
+    - name: gUnkEu_09CFC30A
+      address: '0x9cfc30a'
+      size: 50
+      kind: Sprite
+      sha256: e29793811c3f26c68612e586a4e30fac35051afb90800076760340d84f70ee88
+    - name: gUnkEu_09CFC33E
+      address: '0x9cfc33e'
+      size: 50
+      kind: Sprite
+      sha256: 464351053c316e6c59e689bcd601a57bf039eacf3657a65ea244a7ef95f2d3f1
+    - name: gUnkEu_09CFC372
+      address: '0x9cfc372'
+      size: 50
+      kind: Sprite
+      sha256: cef2b12ece0eb05c70d57ac2b38d08186faa03142487704c5b128b5b76c08cfd
+    - name: gUnkEu_09CFC3A6
+      address: '0x9cfc3a6'
+      size: 50
+      kind: Sprite
+      sha256: e847eb9232a50aea41cfbfba84057866d87d3e766930251bb2ae6bd5bb18f6e3
+    - name: gUnkEu_09CFC3DA
+      address: '0x9cfc3da'
+      size: 26
+      kind: Sprite
+      sha256: ebc73845407936f39eb3d069b8586b084bbf65245a4674980cf55b75e235d1e4
+    - name: gUnkEu_09CFC3F6
+      address: '0x9cfc3f6'
+      size: 26
+      kind: Sprite
+      sha256: c0685140fff4ddbb81a16ba83817efdb8b3eec5fb5ff72d0d9769ee68a1af88c
+    - name: gUnkEu_09CFC412
+      address: '0x9cfc412'
+      size: 26
+      kind: Sprite
+      sha256: b8e80f6d05e4d28edbf5437e1d051b244bc6c8956144438380e038608dcdf1bd
+    - name: gUnkEu_09CFC42E
+      address: '0x9cfc42e'
+      size: 26
+      kind: Sprite
+      sha256: bd753540454f48138700d25718206b72ab95da7d882348c6a38b058152cbd8fb
+    - name: gUnkEu_09CFC44A
+      address: '0x9cfc44a'
+      size: 26
+      kind: Sprite
+      sha256: fe57827bc3c4e311a63d7bfda3892f3b51daedbe1eef4f38bf92cd3c144b9cae
+    - name: gUnkEu_09CFC466
+      address: '0x9cfc466'
+      size: 26
+      kind: Sprite
+      sha256: 6cb2efe3275dcdf69b7b4127ae3bd3a3eabad6ded7d237231af6ff295727f966
+    - name: gUnkEu_09CFC482
+      address: '0x9cfc482'
+      size: 32
+      kind: Sprite
+      sha256: a92a015b98da51325185ec810ef0ec0e3618f3c07beb45196e28725a48dc6787
+    - name: gUnkEu_09CFC4A4
+      address: '0x9cfc4a4'
+      size: 32
+      kind: Sprite
+      sha256: 2421238bba11a3b3ef9993a92247e9c37fbc55e14b3ba58faf99491920502dff
+    - name: gUnkEu_09CFC4C6
+      address: '0x9cfc4c6'
+      size: 32
+      kind: Sprite
+      sha256: e77c656f55d6aa36ff4099ab9fe4c0d57bd4ec54780646a7c20991ee54696114
+    - name: gUnkEu_09CFC4E8
+      address: '0x9cfc4e8'
+      size: 32
+      kind: Sprite
+      sha256: 34a3d99e16c8fccb5632d4d7aeff92e95733ca01c51980924ff449b5c7afc495
+    - name: gUnkEu_09CFC50A
+      address: '0x9cfc50a'
+      size: 32
+      kind: Sprite
+      sha256: a1620f4954d9cfc7ab44372b4a44e3334f7bf1200e48d2727d76ef11885eb9a9
+    - name: gUnkEu_09CFC52C
+      address: '0x9cfc52c'
+      size: 32
+      kind: Sprite
+      sha256: 53b4364c0756169a55ea0a516d9f1adced1dc902b25326c144d1036e642f7036
+    - name: gUnkEu_09CFC54E
+      address: '0x9cfc54e'
+      size: 32
+      kind: Sprite
+      sha256: b0bcad8e6ca750fda97bf4011690490ed198b6a0bf25d698345cd9dc3778bbc6
+    - name: gUnkEu_09CFC570
+      address: '0x9cfc570'
+      size: 32
+      kind: Sprite
+      sha256: dc14be45bee6b0e7c1945d9b8356af4dbaaeb837a5d37b974a0424f552072b7c
+    - name: gUnkEu_09CFC592
+      address: '0x9cfc592'
+      size: 32
+      kind: Sprite
+      sha256: 22ed5bf33227a1de8a5e9abf1c319a55b43b5444a413b89d5e53db39779bddb7
+    - name: gUnkEu_09CFC5B4
+      address: '0x9cfc5b4'
+      size: 32
+      kind: Sprite
+      sha256: 2786172218af9ec0814b722d55bb6561a2e14f474e3019cf2b6029d3246ed52a
+    - name: gUnkEu_09CFC5D6
+      address: '0x9cfc5d6'
+      size: 32
+      kind: Sprite
+      sha256: 6cef44cb42f767779059b3806b332c0e369b1efc7c2469354c7f2b4fec3fc8d1
+    - name: gUnkEu_09CFC5F8
+      address: '0x9cfc5f8'
+      size: 32
+      kind: Sprite
+      sha256: e2211274133c28c845a02aa0c21e28394ed63d29d4750f4d308a774209403b7f
+    - name: gUnkEu_09CFC61A
+      address: '0x9cfc61a'
+      size: 32
+      kind: Sprite
+      sha256: 428b3d5485b1aa4b7bc9f3a5219c906473810620736a9b46bcae4d524037c8d3
+    - name: gUnkEu_09CFC63C
+      address: '0x9cfc63c'
+      size: 32
+      kind: Sprite
+      sha256: 4b8ae68ba5d4269fa5955902f5cb1b7daae5e5100e7410e4a691a2048bf4cb70
+    - name: gUnkEu_09CFC65E
+      address: '0x9cfc65e'
+      size: 32
+      kind: Sprite
+      sha256: 36492d5f991b185f204bf0b2761069b9b58287b082787e69641a527603b880fa
+    - name: gUnkEu_09CFC680
+      address: '0x9cfc680'
+      size: 32
+      kind: Sprite
+      sha256: 4e4d40c2dacd17baf6f002c3c4dbbbb3639bb9b4802e23eacd47fabdc3113614
+    - name: gUnkEu_09CFC6A2
+      address: '0x9cfc6a2'
+      size: 32
+      kind: Sprite
+      sha256: 12cb29af1260e75a2e49693a95f462bd60e9fde2a184af3de9ba87b2641a21bb
+    - name: gUnkEu_09CFC6C4
+      address: '0x9cfc6c4'
+      size: 38
+      kind: Sprite
+      sha256: c03f6a59041e5991741175922eb53551c12ed5bc0f79f76773d75e9c14d85937
+    - name: gUnkEu_09CFC6EC
+      address: '0x9cfc6ec'
+      size: 38
+      kind: Sprite
+      sha256: 013b6900f00a8ff5ac45c3a8c9d8d55657841fbb47601646d8d434f9b012336e
+    - name: gUnkEu_09CFC714
+      address: '0x9cfc714'
+      size: 38
+      kind: Sprite
+      sha256: bcf34a5bcf5e3884bb771ba3f727283acf03be66726f3058dce314e36354a0bf
+    - name: gUnkEu_09CFC73C
+      address: '0x9cfc73c'
+      size: 38
+      kind: Sprite
+      sha256: 307976d91c812e7e1ef3116f01f25ff47d465009a05f2cd479959b02623c9dbb
+    - name: gUnkEu_09CFC764
+      address: '0x9cfc764'
+      size: 38
+      kind: Sprite
+      sha256: f35278158bff6b0edbb6ee6036381243b42e5459cc626b7dd010d2cc062d65fe
+    - name: gUnkEu_09CFC78C
+      address: '0x9cfc78c'
+      size: 38
+      kind: Sprite
+      sha256: 31b42d1d36543c9fa41f949df37f63eb71b5b211eb50e513e254906b3e87210b
+    - name: gUnkEu_09CFC7B4
+      address: '0x9cfc7b4'
+      size: 38
+      kind: Sprite
+      sha256: dac809be7052d0045f5239f12dd99f0cdcdbbe8f6d06f3c706a9f09ed09acbc2
+    - name: gUnkEu_09CFC7DC
+      address: '0x9cfc7dc'
+      size: 38
+      kind: Sprite
+      sha256: 1e1413ce9966b8b01ee513073bfa6e3ce38f3464dc3a5b07ed1745260b40eaa7
+    - name: gUnkEu_09CFC804
+      address: '0x9cfc804'
+      size: 38
+      kind: Sprite
+      sha256: 36c1912749025bdf56f2bed03737fafcdb2c3f5f29f3371f9945a8846aab31b5
+    - name: gUnkEu_09CFC82C
+      address: '0x9cfc82c'
+      size: 38
+      kind: Sprite
+      sha256: 4c458f7d7fdf6350bfb98b50b560c9494c397448e78ef0ebf4ecd1ba9182e896
+    - name: gUnkEu_09CFC854
+      address: '0x9cfc854'
+      size: 38
+      kind: Sprite
+      sha256: 6967f2e0d8cebecfad1a9176bb23cde4f3b43476a9a33d2130e185a7605644d7
+    - name: gUnkEu_09CFC87C
+      address: '0x9cfc87c'
+      size: 38
+      kind: Sprite
+      sha256: 5a7a0e743ca161f47e76432ef8182b8e7cb71cb1e218cd5d21293c32f0a3dc3f
+    - name: gUnkEu_09CFC8A4
+      address: '0x9cfc8a4'
+      size: 38
+      kind: Sprite
+      sha256: 83078d1634d6bea532fa881dec4e3b3c713e91463bd7844b2b9f61a9b1b05768
+    - name: gUnkEu_09CFC8CC
+      address: '0x9cfc8cc'
+      size: 38
+      kind: Sprite
+      sha256: 30af922e54e5fc5ab81d0097ace24e71d124dd540c34cebbad9b3837bed8dd1e
+    - name: gUnkEu_09CFC8F4
+      address: '0x9cfc8f4'
+      size: 38
+      kind: Sprite
+      sha256: e5920f375994189323c060520bfdced0a04e94ef1dcd26faaafb3b5d3cbb4852
+    - name: gUnkEu_09CFC91C
+      address: '0x9cfc91c'
+      size: 38
+      kind: Sprite
+      sha256: e581968e0b0694853d02aeb9c96f1757eb24eaaac52eee391afaf166f826548f
+    - name: gUnkEu_09CFC944
+      address: '0x9cfc944'
+      size: 38
+      kind: Sprite
+      sha256: 1764e2a3435724de99f4eacaa72a45a89a19f9f9b30910a3719e4917c86ae7b2
+    - name: gUnkEu_09CFC96C
+      address: '0x9cfc96c'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CFC96E
+      address: '0x9cfc96e'
+      size: 110
+      kind: AnimHeader
+      sha256: 0023d2b79a6f3679bb0c1350c06b54fab9548baf5f83caf7caefe151e69681d0
+    - name: gUnkEu_09CFC9DC
+      address: '0x9cfc9dc'
+      size: 126
+      kind: AnimHeader
+      sha256: 676c46c808670ee286a04a1162f7e4c7c12bcfc27a41eea702178f33da157c07
+    - name: gUnkEu_09CFCA5A
+      address: '0x9cfca5a'
+      size: 58
+      kind: AnimHeader
+      sha256: a9abd4b3aca879d7771b6965e003a9e00f56c3d1a6366d77f843ad707139f8ca
+    - name: gUnkEu_09CFCA94
+      address: '0x9cfca94'
+      size: 82
+      kind: AnimHeader
+      sha256: 6c5b74f1cce042a79251e6c24dfa62a92345b0b082cb1622a87fd956bccd8809
+    - name: gUnkEu_09CFCAE6
+      address: '0x9cfcae6'
+      size: 82
+      kind: AnimHeader
+      sha256: e0317869466d70c480d4a3472342af6bb811a39e93cfed9e7453db438e563eb7
+    - name: gUnkEu_09CFE2B8
+      address: '0x9cfe2b8'
+      size: 62
+      kind: Sprite
+      sha256: d063cd7bdeb17c696d9006172f8a132d1dc951efcf0a8cd4fa32a1813a507a40
+    - name: gUnkEu_09CFE2F8
+      address: '0x9cfe2f8'
+      size: 62
+      kind: Sprite
+      sha256: 0dfcfd950a6b00d4ee9f8dfbfa4dd5779e228ac96da3d996d2bbc0115da23493
+    - name: gUnkEu_09CFE338
+      address: '0x9cfe338'
+      size: 62
+      kind: Sprite
+      sha256: 04c4945d1a88fab5ca6016dbc43f6e858c927797c54b5cc364f3f05b4baa0579
+    - name: gUnkEu_09CFE378
+      address: '0x9cfe378'
+      size: 62
+      kind: Sprite
+      sha256: 80a05abe1baecdea79757ff4e8dbd4d1a94155972b95bc748e118cc97a0bd07e
+    - name: gUnkEu_09CFE3B8
+      address: '0x9cfe3b8'
+      size: 62
+      kind: Sprite
+      sha256: 7509351a147d51eabd5189d688865dbd3e6bfec3ee7ab71d64684268ffda56db
+    - name: gUnkEu_09CFE3F8
+      address: '0x9cfe3f8'
+      size: 62
+      kind: Sprite
+      sha256: c42d565ec11afb7712a8cbefedc3ac2b27a3aa4457e68e92033eae5b5dc4a225
+    - name: gUnkEu_09CFE438
+      address: '0x9cfe438'
+      size: 62
+      kind: Sprite
+      sha256: be9538f53906edbb8c9fcaa357eb1daa46c364fd83a559bfc0a7f8a508a9741f
+    - name: gUnkEu_09CFE478
+      address: '0x9cfe478'
+      size: 62
+      kind: Sprite
+      sha256: 9b69cad9ab6f287672b1d6843a3f19c5f1466e6bc032658de19021a141a3405b
+    - name: gUnkEu_09CFE4B8
+      address: '0x9cfe4b8'
+      size: 62
+      kind: Sprite
+      sha256: 53830c6c0735df7e3d4d6a1c4815ccb49ba8135363dd60b6393db57d8459fdcf
+    - name: gUnkEu_09CFE4F8
+      address: '0x9cfe4f8'
+      size: 62
+      kind: Sprite
+      sha256: d5770fa6091c11707f636bbe130eb57f6cabb4c9e7fe4b9635df40d5fa209ffe
+    - name: gUnkEu_09CFE538
+      address: '0x9cfe538'
+      size: 62
+      kind: Sprite
+      sha256: bc836d62ac4bd79b692d0208d29f1dbafa55b54486150ebaba4d9c7fcee23176
+    - name: gUnkEu_09CFE578
+      address: '0x9cfe578'
+      size: 62
+      kind: Sprite
+      sha256: 7829b0953cab6816c0fdac476f1a6bfb59745cd3f2b35e12c68a77840776cf33
+    - name: gUnkEu_09CFE5B8
+      address: '0x9cfe5b8'
+      size: 62
+      kind: Sprite
+      sha256: 1e9de6aeb6d87c47cc6cc20614e2caba9a23dadb9a531dafa3269305a33fb510
+    - name: gUnkEu_09CFE5F8
+      address: '0x9cfe5f8'
+      size: 62
+      kind: Sprite
+      sha256: 05c1068be79d7c0738a58ea436f33e1e32e30ddda4593f57879de085e38f559e
+    - name: gUnkEu_09CFE638
+      address: '0x9cfe638'
+      size: 62
+      kind: Sprite
+      sha256: 32fae11d8d1ee77762a03f3c2f1d9abff8bc1bb3a58437dbf1fca7ec1b77f5e8
+    - name: gUnkEu_09CFE678
+      address: '0x9cfe678'
+      size: 62
+      kind: Sprite
+      sha256: 887af94be6ea1a0b16395b179bbd0665617c8c5336de269b24ed50fda37491b1
+    - name: gUnkEu_09CFE6B8
+      address: '0x9cfe6b8'
+      size: 62
+      kind: Sprite
+      sha256: 53e678c5e732357f6ce8ac561eecfa7c05109962162fc655a65e8cb6e858100e
+    - name: gUnkEu_09CFE6F8
+      address: '0x9cfe6f8'
+      size: 62
+      kind: Sprite
+      sha256: 499c5348845374325df292b17c62a34290d0bff2546b2f8152b94f6f715f8ff8
+    - name: gUnkEu_09CFE738
+      address: '0x9cfe738'
+      size: 62
+      kind: Sprite
+      sha256: bb15b24530c1d03280bbe3600b487732e984ff8faaaa76d8328031964fecad7e
+    - name: gUnkEu_09CFE778
+      address: '0x9cfe778'
+      size: 62
+      kind: Sprite
+      sha256: 02059ba35f3ca1cdd659ec0a1d92fdaef0457ab454e62ed74c5e5acd52d417d4
+    - name: gUnkEu_09CFE7B8
+      address: '0x9cfe7b8'
+      size: 62
+      kind: Sprite
+      sha256: 9c5ae3c5a3cf25a7d18112f30ca71f2a655b282f381e1b2b4dabed7acdf50155
+    - name: gUnkEu_09CFE7F8
+      address: '0x9cfe7f8'
+      size: 62
+      kind: Sprite
+      sha256: ed6e4215004565ad5533d8a9c022c92f20c70e2758b8a9ecd5ada0a3b5b7953d
+    - name: gUnkEu_09CFE838
+      address: '0x9cfe838'
+      size: 62
+      kind: Sprite
+      sha256: 43b5cc8ce50aff294b81368677fb342f97278e61c50a9ff8a230c50c184fe0dd
+    - name: gUnkEu_09CFE878
+      address: '0x9cfe878'
+      size: 62
+      kind: Sprite
+      sha256: 042b5f851e56efde2c2a6d0abfa8780556b91babf0c4b95b037f10100df5989a
+    - name: gUnkEu_09CFE8B8
+      address: '0x9cfe8b8'
+      size: 62
+      kind: Sprite
+      sha256: 18111c10afb03421443b8da3979e9cbe43d8e5a4f74ece4ca809fdfd7ace6503
+    - name: gUnkEu_09CFE8F8
+      address: '0x9cfe8f8'
+      size: 20
+      kind: Sprite
+      sha256: 7ee8a308f045a2ecb73f815226701f24747fa1d3a342143ba309aabb9951ebf0
+    - name: gUnkEu_09CFE90E
+      address: '0x9cfe90e'
+      size: 20
+      kind: Sprite
+      sha256: e992edd8b9b9422c289d4ced97f3e07b015a20bda65c6c3e34b27fc15fbd24ba
+    - name: gUnkEu_09CFE924
+      address: '0x9cfe924'
+      size: 20
+      kind: Sprite
+      sha256: a75205417c22d82178a2cbdb85d20ba855e78bd61a7dfdde4ab84f883c330ea5
+    - name: gUnkEu_09CFE93A
+      address: '0x9cfe93a'
+      size: 20
+      kind: Sprite
+      sha256: ff8169f1337e174a0f1c9e2a0a742428aa95a9e8820c5791a7f4acb4386ac7f0
+    - name: gUnkEu_09CFE950
+      address: '0x9cfe950'
+      size: 20
+      kind: Sprite
+      sha256: dfdc1a35a8f51039f4589182719fafd735cd46ec027677945bffa31d97cb770f
+    - name: gUnkEu_09CFE966
+      address: '0x9cfe966'
+      size: 20
+      kind: Sprite
+      sha256: 66cb3062a6431513b3c87dafe9dd1cf2db7872296a60114bca6432df839e3e19
+    - name: gUnkEu_09CFE97C
+      address: '0x9cfe97c'
+      size: 20
+      kind: Sprite
+      sha256: 8bf5e3b4846c3bfbbdf221f56f9826803737ca531ffb36ac4b92d417c1115868
+    - name: gUnkEu_09CFE992
+      address: '0x9cfe992'
+      size: 20
+      kind: Sprite
+      sha256: 3d15739608e27e31aef6754c3177e6e1366715178a5fe07d8c49995b242384b9
+    - name: gUnkEu_09CFE9A8
+      address: '0x9cfe9a8'
+      size: 20
+      kind: Sprite
+      sha256: d6a4da0007ba8d515c8f86cd86a5adf8f8fb769adcbe151d89740594cebdc1ae
+    - name: gUnkEu_09CFE9BE
+      address: '0x9cfe9be'
+      size: 20
+      kind: Sprite
+      sha256: 52576a09022f429cafe07eda2238e3b8b13518e10b57a14fbe3e2854c239ecd2
+    - name: gUnkEu_09CFE9D4
+      address: '0x9cfe9d4'
+      size: 20
+      kind: Sprite
+      sha256: 99d57db54e85704c40a811bbfdd644fca5ba1d611697590dbb7bfe51c6b7e72d
+    - name: gUnkEu_09CFE9EA
+      address: '0x9cfe9ea'
+      size: 20
+      kind: Sprite
+      sha256: a2071114a6210767175d075b10732d6e6e649f3da20c9bba433d774f1c0fd732
+    - name: gUnkEu_09CFEA00
+      address: '0x9cfea00'
+      size: 20
+      kind: Sprite
+      sha256: 2f3fc35418cdd1098d4c0997abfc5f38bd83ada0803b41b022892c63cf7ff069
+    - name: gUnkEu_09CFEA16
+      address: '0x9cfea16'
+      size: 20
+      kind: Sprite
+      sha256: ca000b3ea1590ff45a678b8c6b7e7e06413897297f9b70bc4ff23afe7c33a5e4
+    - name: gUnkEu_09CFEA2C
+      address: '0x9cfea2c'
+      size: 20
+      kind: Sprite
+      sha256: 4c461bfd350a732f729fc602ffb2671d59fc13a2cf81f2731dda1c4a62fca026
+    - name: gUnkEu_09CFEA42
+      address: '0x9cfea42'
+      size: 20
+      kind: Sprite
+      sha256: de425804aa8be4a52cf734644672618ff6825d1f90c432a233370ee355196f45
+    - name: gUnkEu_09CFEA58
+      address: '0x9cfea58'
+      size: 20
+      kind: Sprite
+      sha256: 5c7f3333e80652175d6be879e99e6000a4699e143eec00bf884147742e8e51cb
+    - name: gUnkEu_09CFEA6E
+      address: '0x9cfea6e'
+      size: 20
+      kind: Sprite
+      sha256: ac7493cc95298f8ea13c3011d6d5e5f7e67615c36911b6c2064eaf3cd75093c5
+    - name: gUnkEu_09CFEA84
+      address: '0x9cfea84'
+      size: 20
+      kind: Sprite
+      sha256: 339f76bffedcc6e109ae77b3fcdd0d6857bd4b9b7df860e405f559994669397b
+    - name: gUnkEu_09CFEA9A
+      address: '0x9cfea9a'
+      size: 20
+      kind: Sprite
+      sha256: 6a59483baba4e9cc2a30e8e6793b9a4778e9a907310df433d80746a839300a81
+    - name: gUnkEu_09CFEAB0
+      address: '0x9cfeab0'
+      size: 20
+      kind: Sprite
+      sha256: b146131abded687101f7991079dd465101b988b68655a989fdda8650414cfe1d
+    - name: gUnkEu_09CFEAC6
+      address: '0x9cfeac6'
+      size: 20
+      kind: Sprite
+      sha256: a683a60718a46037dc66054f70c2f4ade2b5f784b151fb33386ee3e9080c590b
+    - name: gUnkEu_09CFEADC
+      address: '0x9cfeadc'
+      size: 20
+      kind: Sprite
+      sha256: c461c6506683b57e7c4153b88c669fe6adb41b775551212f81a36a01f42a6c9d
+    - name: gUnkEu_09CFEAF2
+      address: '0x9cfeaf2'
+      size: 20
+      kind: Sprite
+      sha256: 5609fa61f8a4f7623a3dc0ae9d644f2f7eb70a214c985559da7aedf61041aac8
+    - name: gUnkEu_09CFEB08
+      address: '0x9cfeb08'
+      size: 20
+      kind: Sprite
+      sha256: 202841e4bb9d6ad44da2a1dfb4d81de6cf5078c6b613e471e0d16b7de89ada95
+    - name: gUnkEu_09CFEB1E
+      address: '0x9cfeb1e'
+      size: 20
+      kind: Sprite
+      sha256: 7f582827e653e008e200602ea73a82fa7cef9486337098c2d731bf7ad1031b91
+    - name: gUnkEu_09CFEB34
+      address: '0x9cfeb34'
+      size: 20
+      kind: Sprite
+      sha256: 440b147ad2a4589b529a4b1469996442233d2b9fb45c0f4a77bc6ede91c01fca
+    - name: gUnkEu_09CFEB4A
+      address: '0x9cfeb4a'
+      size: 20
+      kind: Sprite
+      sha256: c5130c25e519a515afcf2a9e895659468eab2cf400d4c7fff3c259371c6e0a54
+    - name: gUnkEu_09CFEB60
+      address: '0x9cfeb60'
+      size: 62
+      kind: Sprite
+      sha256: 7d05d8dfe254032d8c4035f208ab874b58aa800a41313a8078dae46d839aada0
+    - name: gUnkEu_09CFEBA0
+      address: '0x9cfeba0'
+      size: 62
+      kind: Sprite
+      sha256: ff3350a930b8318084b7c866cb15b67002b3543ea8fe431a2e25ce727bd81d25
+    - name: gUnkEu_09CFEBE0
+      address: '0x9cfebe0'
+      size: 62
+      kind: Sprite
+      sha256: 41669fbe21721be8129537db9c3afbb5dfb07c2b409b4d29aa8f949ad875c71e
+    - name: gUnkEu_09CFEC20
+      address: '0x9cfec20'
+      size: 62
+      kind: Sprite
+      sha256: 817c3d324ef275b2147f07d5b3ef3da6a21726201023d0028332d9fb5166def0
+    - name: gUnkEu_09CFEC60
+      address: '0x9cfec60'
+      size: 62
+      kind: Sprite
+      sha256: 3353edbc8f8001ef74aab0b91a357ef3de77dc1d1149015ff98996fbaefc1916
+    - name: gUnkEu_09CFECA0
+      address: '0x9cfeca0'
+      size: 62
+      kind: Sprite
+      sha256: f793a012fb314559072922f3970c3f483282a8cfe3fc010ed24a1a243d537300
+    - name: gUnkEu_09CFECE0
+      address: '0x9cfece0'
+      size: 56
+      kind: Sprite
+      sha256: 9071365812900c1264e8c53bf10424c9dabf6dbb0c4c403fbdc3c5992ae17ff5
+    - name: gUnkEu_09CFED1A
+      address: '0x9cfed1a'
+      size: 56
+      kind: Sprite
+      sha256: d59f97717c23e05266556cdd4db211608736c5a5fb216fec06502eaed0534544
+    - name: gUnkEu_09CFED54
+      address: '0x9cfed54'
+      size: 56
+      kind: Sprite
+      sha256: 7ce0a4ab56655372c57d6f8cb4380729c2ac1f48ca10eb30ecfcc9e234025394
+    - name: gUnkEu_09CFED8E
+      address: '0x9cfed8e'
+      size: 56
+      kind: Sprite
+      sha256: 9e576dbd4383d1f97bf6ceba176034ee8524b9474c3fb94f62cf454496c93221
+    - name: gUnkEu_09CFEDC8
+      address: '0x9cfedc8'
+      size: 56
+      kind: Sprite
+      sha256: 94d47742211c52c631650713a6e42090ccbd936bcc7512aabcccda9b5d6093be
+    - name: gUnkEu_09CFEE02
+      address: '0x9cfee02'
+      size: 56
+      kind: Sprite
+      sha256: f058dbee9fb56ab47382294d5f0d5bb582027f58f33210dc83a4a4857cdab851
+    - name: gUnkEu_09CFEE3C
+      address: '0x9cfee3c'
+      size: 2
+      kind: Sprite
+      sha256: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+    - name: gUnkEu_09CFEE3E
+      address: '0x9cfee3e'
+      size: 110
+      kind: AnimHeader
+      sha256: 15e8ab6db9e8ccfea6f8d0d337be2bc1581a6124575f4dd5ba4c7c6d0732a5f3
+    - name: gUnkEu_09CFEEAC
+      address: '0x9cfeeac'
+      size: 126
+      kind: AnimHeader
+      sha256: aeed4b9d0932b699f7af096af9f981da358df8d414cf76e420d889cd75357c86
+    - name: gUnkEu_09CFEF2A
+      address: '0x9cfef2a'
+      size: 58
+      kind: AnimHeader
+      sha256: 9a4bda9382379ea553fbb3b0ee5a7b018544731c5d41754f334f0b983c964262
+    - name: gUnkEu_09CFEF64
+      address: '0x9cfef64'
+      size: 58
+      kind: AnimHeader
+      sha256: c46cfcbc839ec2c6b3c331a88161c482c070d06ba3a89833b9f8d4734e5a2a59
+    - name: gUnkEu_09CFEF9E
+      address: '0x9cfef9e'
+      size: 10
+      kind: AnimHeader
+      sha256: 194a3b4ff73423867e0ad799314a5e09fa49d70b305c15d0bcbc93532df69749

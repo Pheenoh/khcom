@@ -3934,7 +3934,7 @@ def main():
         res = symbol_map(rows, us, ot, literal_loads, function_modes)
         res.update(anchors)
         tr = translator(res)
-    evidence = load_evidence("config/rom_data_evidence.json")
+    evidence = load_evidence("config/rom_data_evidence.yaml")
     data, provenance = data_symbol_map(evidence, ver, us, ot, res, CODE_HI, code_end)
     res.update(data)
     tr = translator(res, provenance)
@@ -4191,7 +4191,7 @@ def main():
         found.append((ROM_BASE + i, base, how))
     found.extend((address, name, "explicit")
                  for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
-    found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.json", ver, ot))
+    found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.yaml", ver, ot))
     regions = []
 
     for here, base, how in sorted(found, key=lambda item: (item[0], item[2] != "explicit", item[1])):

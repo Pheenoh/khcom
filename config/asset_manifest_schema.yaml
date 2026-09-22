@@ -31,13 +31,13 @@ classes:
   - code_blob         # machine code kept as blob or checked-in disasm (e.g. movie_codec)
 
 # ---------------------------------------------------------------------------
-# Sidecar-typed asset (mirrors config/*_data.json binary_assets / named_assets)
+# Sidecar-typed asset (mirrors config/*_data.yaml binary_assets / named_assets)
 # ---------------------------------------------------------------------------
 # kind: Sprite | AnimHeader | SongHeader | ...
 # encoding: utf16le | shift_jis | singlebyte | ascii   # literals only
 # symbol: linker ABS symbol name
 # size: byte length of the typed payload
-# sidecar: path to owning *_data.json
+# sidecar: path to owning *_data.yaml
 
 sidecar_asset_example:
   id: gMapUiSpriteUs_098A8BE4
@@ -47,7 +47,7 @@ sidecar_asset_example:
   symbol: gMapUiSpriteUs_098A8BE4
   rom: { start: 0x098A8BE4, size: 14 }
   sha256: e643a0c32bc7bd20a1d71393a880fa298f232e4cd44e97d8e36791106c9d48a3
-  sidecar: config/map_ui_data.json
+  sidecar: config/map_ui_data.yaml
   confidence: high
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,2481 @@
+group: map_rooms
+types:
+  UnkStruct_09EF70D0:
+    header: map_room_types.h
+    fields:
+    - name: palette
+      type: void*
+    - name: paletteSize
+      type: u16
+    - name: unk_06
+      type: u8
+      count: 2
+    - name: tiles
+      type: void*
+    - name: tilesSize
+      type: u16
+    - name: unk_0E
+      type: u8
+      count: 2
+    - name: tiles2
+      type: void*
+    - name: tilesSize2
+      type: u16
+    - name: unk_16
+      type: u8
+      count: 2
+    - name: map3
+      type: u16*
+    - name: map2
+      type: u16*
+    - name: map
+      type: u16*
+    - name: unk_24
+      type: UnkStruct_080E8864*
+    - name: unk_28
+      type: UnkStruct_080E8864*
+    - name: unk_2C
+      type: void*
+    - name: unk_30
+      type: s32*
+    - name: unk_34
+      type: s32*
+    - name: unk_38
+      type: u16
+  UnkStruct_09EF8370:
+    header: map_room_types.h
+    fields:
+    - name: palette
+      type: void*
+    - name: paletteSize
+      type: u16
+    - name: unk_06
+      type: u8
+      count: 2
+    - name: tiles
+      type: void*
+    - name: tilesSize
+      type: u16
+    - name: unk_0E
+      type: u8
+      count: 2
+    - name: tiles2
+      type: void*
+    - name: tilesSize2
+      type: u16
+    - name: unk_16
+      type: u8
+      count: 2
+    - name: map3
+      type: void*
+    - name: map2
+      type: void*
+    - name: map
+      type: void*
+    - name: mapWidth
+      type: u8
+    - name: mapHeight
+      type: u8
+    - name: unk_26
+      type: u8
+      count: 2
+    - name: unk_28
+      type: const u8*
+    - name: unk_2C
+      type: struct UnkStruct_080E56B4*
+    - name: unk_30
+      type: struct UnkStruct_080EC760Entry*
+    - name: unk_34
+      type: u16
+    - name: unk_36
+      type: u8
+      count: 2
+    - name: unk_38
+      type: s32
+    - name: unk_3C
+      type: s32
+    - name: unk_40
+      type: s32
+    - name: unk_44
+      type: s32
+    - name: unk_48
+      type: s32
+    - name: unk_4C
+      type: s32
+    - name: unk_50
+      type: u8
+      versions: [eu]
+objects:
+  us:
+  - name: map_rooms.c
+    start: 159699672
+    end: 159739828
+  - name: map_room_tiles_1.s
+    start: 160078980
+    end: 160344132
+  - name: map_room_tiles_2.s
+    start: 160346916
+    end: 160673636
+  - name: map_room_maps_1.s
+    start: 160858436
+    end: 160980804
+  - name: map_room_palettes_1.s
+    start: 161021764
+    end: 161026244
+  jp:
+  - name: map_rooms.c
+    start: 159391212
+    end: 159431368
+  - name: map_room_tiles_1.s
+    start: 159770520
+    end: 160035672
+  - name: map_room_tiles_2.s
+    start: 160038456
+    end: 160365176
+  - name: map_room_maps_1.s
+    start: 160549976
+    end: 160672344
+  - name: map_room_palettes_1.s
+    start: 160713304
+    end: 160717784
+  eu:
+  - name: map_rooms.c
+    start: 159554732
+    end: 159594912
+  - name: map_room_tiles_1.s
+    start: 159947536
+    end: 160212688
+  - name: map_room_tiles_2.s
+    start: 160215472
+    end: 160542192
+  - name: map_room_maps_1.s
+    start: 160887088
+    end: 161005360
+  - name: map_room_palettes_1.s
+    start: 161046320
+    end: 161050800
+  - name: map_room_maps_2.s
+    start: 161054512
+    end: 161055156
+entries:
+- name: map_room_00
+  symbol: gUnk_0984D2D8
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_0998FF44
+    paletteSize: 96
+    unk_06: [0, 0]
+    tiles: gUnk_098A9C84
+    tilesSize: 32192
+    unk_0E: [0, 0]
+    tiles2: gUnk_098B1A44
+    tilesSize2: 8192
+    unk_16: [0, 0]
+    map3: gUnk_09968144
+    map2: gUnk_09968944
+    map: gUnk_09969944
+    unk_24: 0
+    unk_28: 0
+    unk_2C: 0
+    unk_30: gUnk_0984D2D4
+    unk_34: gUnk_0984D2D4
+    unk_38: 13
+  index: [0, 13]
+  us:
+    address: 159699672
+  jp:
+    address: 159391212
+  eu:
+    address: 159554732
+- name: map_room_01
+  symbol: gUnk_0984DFD8
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_0998FFA4
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_098B3A44
+    tilesSize: 30720
+    unk_0E: [0, 0]
+    tiles2: gUnk_098BB244
+    tilesSize2: 10240
+    unk_16: [0, 0]
+    map3: gUnk_09969C44
+    map2: gUnk_0996A444
+    map: gUnk_0996BC44
+    unk_24: gUnk_0984DCF0
+    unk_28: gUnk_0984DF68
+    unk_2C: 0
+    unk_30: gUnk_0984D494
+    unk_34: gUnk_0984D4A4
+    unk_38: 31
+  index: [1]
+  us:
+    address: 159703000
+  jp:
+    address: 159394540
+  eu:
+    address: 159558060
+- name: map_room_02
+  symbol: gUnk_0984E734
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990104
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_098BDA44
+    tilesSize: 32256
+    unk_0E: [0, 0]
+    tiles2: gUnk_098C5844
+    tilesSize2: 12160
+    unk_16: [0, 0]
+    map3: gUnk_0996C144
+    map2: gUnk_0996C944
+    map: gUnk_0996E144
+    unk_24: gUnk_0984E48C
+    unk_28: gUnk_0984E704
+    unk_2C: gUnk_0984E054
+    unk_30: gUnk_0984E014
+    unk_34: gUnk_0984E024
+    unk_38: 22
+  index: [2]
+  us:
+    address: 159704884
+  jp:
+    address: 159396424
+  eu:
+    address: 159559944
+- name: map_room_12
+  symbol: gUnk_0984F694
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990F44
+    paletteSize: 384
+    unk_06: [0, 0]
+    tiles: gUnk_0992FF64
+    tilesSize: 32768
+    unk_0E: [0, 0]
+    tiles2: gUnk_09937F64
+    tilesSize2: 12288
+    unk_16: [0, 0]
+    map3: gUnk_09982A44
+    map2: gUnk_09983244
+    map: gUnk_09984A44
+    unk_24: gUnk_0984F31C
+    unk_28: gUnk_0984F624
+    unk_2C: 0
+    unk_30: gUnk_0984E770
+    unk_34: gUnk_0984E780
+    unk_38: 38
+  index: [12]
+  us:
+    address: 159708820
+  jp:
+    address: 159400360
+  eu:
+    address: 159563880
+- name: map_room_03
+  symbol: gUnk_09850428
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990264
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_098C9D84
+    tilesSize: 30720
+    unk_0E: [0, 0]
+    tiles2: gUnk_098D1584
+    tilesSize2: 12160
+    unk_16: [0, 0]
+    map3: gUnk_0996E544
+    map2: gUnk_0996ED44
+    map: gUnk_09970544
+    unk_24: gUnk_09850250
+    unk_28: gUnk_098503F8
+    unk_2C: 0
+    unk_30: gUnk_0984F6D0
+    unk_34: gUnk_0984F6E0
+    unk_38: 21
+  index: [3]
+  us:
+    address: 159712296
+  jp:
+    address: 159403836
+  eu:
+    address: 159567356
+- name: map_room_09
+  symbol: gUnk_09850DF4
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990B04
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_0990EA44
+    tilesSize: 32768
+    unk_0E: [0, 0]
+    tiles2: gUnk_09916A44
+    tilesSize2: 12160
+    unk_16: [0, 0]
+    map3: gUnk_0997BD44
+    map2: gUnk_0997C544
+    map: gUnk_0997DD44
+    unk_24: gUnk_09850C1C
+    unk_28: gUnk_09850DC4
+    unk_2C: 0
+    unk_30: gUnk_09850464
+    unk_34: gUnk_09850470
+    unk_38: 33
+  index: [9]
+  us:
+    address: 159714804
+  jp:
+    address: 159406344
+  eu:
+    address: 159569864
+- name: map_room_06
+  symbol: gUnk_0985221C
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_099906A4
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_098EB324
+    tilesSize: 32128
+    unk_0E: [0, 0]
+    tiles2: gUnk_098F30A4
+    tilesSize2: 11520
+    unk_16: [0, 0]
+    map3: gUnk_09975144
+    map2: gUnk_09975944
+    map: gUnk_09977144
+    unk_24: gUnk_09851E54
+    unk_28: gUnk_098521EC
+    unk_2C: gUnk_09850E5C
+    unk_30: gUnk_09850E30
+    unk_34: gUnk_09850E40
+    unk_38: 15
+  index: [6]
+  us:
+    address: 159719964
+  jp:
+    address: 159411504
+  eu:
+    address: 159575024
+- name: map_room_08
+  symbol: gUnk_09852F4C
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990984
+    paletteSize: 384
+    unk_06: [0, 0]
+    tiles: gUnk_09902DA4
+    tilesSize: 32768
+    unk_0E: [0, 0]
+    tiles2: gUnk_0990ADA4
+    tilesSize2: 15520
+    unk_16: [0, 0]
+    map3: gUnk_09979944
+    map2: gUnk_0997A144
+    map: gUnk_0997B944
+    unk_24: gUnk_09852C68
+    unk_28: gUnk_09852EDC
+    unk_2C: 0
+    unk_30: gUnk_09852258
+    unk_34: gUnk_09852268
+    unk_38: 25
+  index: [8]
+  us:
+    address: 159723340
+  jp:
+    address: 159414880
+  eu:
+    address: 159578400
+- name: map_room_05
+  symbol: gUnk_098535BC
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990524
+    paletteSize: 384
+    unk_06: [0, 0]
+    tiles: gUnk_098DF184
+    tilesSize: 32768
+    unk_0E: [0, 0]
+    tiles2: gUnk_098E7184
+    tilesSize2: 14016
+    unk_16: [0, 0]
+    map3: gUnk_09972D44
+    map2: gUnk_09973544
+    map: gUnk_09974D44
+    unk_24: gUnk_09853354
+    unk_28: gUnk_0985358C
+    unk_2C: gUnk_09852FFC
+    unk_30: gUnk_09852F88
+    unk_34: gUnk_09852F98
+    unk_38: 8
+  index: [5]
+  us:
+    address: 159724988
+  jp:
+    address: 159416528
+  eu:
+    address: 159580048
+- name: map_room_07
+  symbol: gUnk_09854258
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990804
+    paletteSize: 384
+    unk_06: [0, 0]
+    tiles: gUnk_098F71A4
+    tilesSize: 32768
+    unk_0E: [0, 0]
+    tiles2: gUnk_098FF1A4
+    tilesSize2: 12288
+    unk_16: [0, 0]
+    map3: gUnk_09977544
+    map2: gUnk_09977D44
+    map: gUnk_09979544
+    unk_24: gUnk_09854080
+    unk_28: gUnk_09854228
+    unk_2C: gUnk_09853624
+    unk_30: gUnk_098535F8
+    unk_34: gUnk_09853608
+    unk_38: 10
+  index: [7]
+  us:
+    address: 159728216
+  jp:
+    address: 159419756
+  eu:
+    address: 159583276
+- name: map_room_11
+  symbol: gUnk_098552E8
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990DC4
+    paletteSize: 384
+    unk_06: [0, 0]
+    tiles: gUnk_09924184
+    tilesSize: 32736
+    unk_0E: [0, 0]
+    tiles2: gUnk_0992C164
+    tilesSize2: 15872
+    unk_16: [0, 0]
+    map3: gUnk_09980644
+    map2: gUnk_09980E44
+    map: gUnk_09982644
+    unk_24: gUnk_09854F70
+    unk_28: gUnk_09855278
+    unk_2C: 0
+    unk_30: gUnk_09854294
+    unk_34: gUnk_0985429C
+    unk_38: 36
+  index: [11]
+  us:
+    address: 159732456
+  jp:
+    address: 159423996
+  eu:
+    address: 159587516
+- name: map_room_10
+  symbol: gUnk_09855FA8
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_09990C64
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_099199C4
+    tilesSize: 30720
+    unk_0E: [0, 0]
+    tiles2: gUnk_099211C4
+    tilesSize2: 12224
+    unk_16: [0, 0]
+    map3: gUnk_0997E144
+    map2: gUnk_0997E944
+    map: gUnk_09980144
+    unk_24: gUnk_09855C90
+    unk_28: gUnk_09855F38
+    unk_2C: 0
+    unk_30: gUnk_09855324
+    unk_34: gUnk_09855334
+    unk_38: 13
+  index: [10]
+  us:
+    address: 159735720
+  jp:
+    address: 159427260
+  eu:
+    address: 159590780
+- name: map_room_04
+  symbol: gUnk_09856678
+  record: UnkStruct_09EF70D0
+  fields:
+    palette: gUnk_099903C4
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_098D4504
+    tilesSize: 31040
+    unk_0E: [0, 0]
+    tiles2: gUnk_098DBE44
+    tilesSize2: 12160
+    unk_16: [0, 0]
+    map3: gUnk_09970944
+    map2: gUnk_09971144
+    map: gUnk_09972944
+    unk_24: gUnk_09856400
+    unk_28: gUnk_09856648
+    unk_2C: gUnk_09856010
+    unk_30: gUnk_09855FE4
+    unk_34: gUnk_09855FF4
+    unk_38: 2
+  index: [4]
+  us:
+    address: 159737464
+  jp:
+    address: 159429004
+  eu:
+    address: 159592524
+- name: map_fixed_0
+  symbol: gUnk_09856C90
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09616D58
+    paletteSize: 320
+    unk_06: [0, 0]
+    tiles: gUnk_094B9798
+    tilesSize: 28256
+    unk_0E: [0, 0]
+    tiles2: gUnk_094B9798
+    tilesSize2: 28256
+    unk_16: [0, 0]
+    map3: gUnk_09EF8208
+    map2: gUnk_09EF8238
+    map: gUnk_09EF8268
+    mapWidth: 4
+    mapHeight: 3
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF7108
+    unk_2C: gUnk_09856BE8
+    unk_30: gUnk_09856C48
+    unk_34: 30
+    unk_36: [0, 0]
+    unk_38: 203264
+    unk_3C: 61952
+    unk_40: 0
+    unk_44: 0
+    unk_48: 196608
+    unk_4C: 65536
+  index: [0]
+  us:
+    address: 159739024
+  jp:
+    address: 159430564
+  eu:
+    address: 159594084
+    fields:
+      tilesSize: 13896
+      tilesSize2: 13896
+      unk_50: 0
+- name: map_fixed_1
+  symbol: gUnk_09856D34
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09616E98
+    paletteSize: 320
+    unk_06: [0, 0]
+    tiles: gUnk_094C05F8
+    tilesSize: 23936
+    unk_0E: [0, 0]
+    tiles2: 0
+    tilesSize2: 0
+    unk_16: [0, 0]
+    map3: gUnk_09EF8298
+    map2: gUnk_09EF82B0
+    map: 0
+    mapWidth: 3
+    mapHeight: 2
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF7708
+    unk_2C: gUnk_09856CE0
+    unk_30: gUnk_09856D04
+    unk_34: 30
+    unk_36: [0, 0]
+    unk_38: 137728
+    unk_3C: 61952
+    unk_40: 67584
+    unk_44: 97280
+    unk_48: 131072
+    unk_4C: 65536
+  index: [1]
+  us:
+    address: 159739188
+  jp:
+    address: 159430728
+  eu:
+    address: 159594252
+    fields:
+      tilesSize: 11092
+      unk_50: 0
+- name: map_fixed_2
+  symbol: gUnk_09856DE4
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09616FD8
+    paletteSize: 320
+    unk_06: [0, 0]
+    tiles: gUnk_094C6378
+    tilesSize: 14816
+    unk_0E: [0, 0]
+    tiles2: 0
+    tilesSize2: 0
+    unk_16: [0, 0]
+    map3: gUnk_09EF82C8
+    map2: gUnk_09EF82E0
+    map: 0
+    mapWidth: 3
+    mapHeight: 2
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF7A08
+    unk_2C: gUnk_09856D84
+    unk_30: gUnk_09856DA8
+    unk_34: 30
+    unk_36: [0, 0]
+    unk_38: 158208
+    unk_3C: 51968
+    unk_40: 67584
+    unk_44: 97280
+    unk_48: 131072
+    unk_4C: 65536
+  index: [2]
+  us:
+    address: 159739364
+  jp:
+    address: 159430904
+  eu:
+    address: 159594432
+    fields:
+      tilesSize: 6096
+      unk_50: 0
+- name: map_fixed_3
+  symbol: gUnk_09856E88
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09617438
+    paletteSize: 320
+    unk_06: [0, 0]
+    tiles: gUnk_094D7E58
+    tilesSize: 13280
+    unk_0E: [0, 0]
+    tiles2: 0
+    tilesSize2: 0
+    unk_16: [0, 0]
+    map3: gUnk_09EF82F8
+    map2: gUnk_09EF8310
+    map: 0
+    mapWidth: 3
+    mapHeight: 2
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF7D08
+    unk_2C: gUnk_09856E34
+    unk_30: gUnk_09856E40
+    unk_34: 30
+    unk_36: [0, 0]
+    unk_38: 159744
+    unk_3C: 51200
+    unk_40: 71680
+    unk_44: 95232
+    unk_48: 114688
+    unk_4C: 73728
+  index: [3]
+  us:
+    address: 159739528
+  jp:
+    address: 159431068
+  eu:
+    address: 159594600
+    fields:
+      tilesSize: 8232
+      unk_50: 0
+- name: map_fixed_4
+  symbol: gUnk_09856F14
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09990C64
+    paletteSize: 352
+    unk_06: [0, 0]
+    tiles: gUnk_099199C4
+    tilesSize: 30720
+    unk_0E: [0, 0]
+    tiles2: gUnk_099211C4
+    tilesSize2: 12224
+    unk_16: [0, 0]
+    map3: gUnk_09EF8328
+    map2: gUnk_09EF8338
+    map: gUnk_09EF8348
+    mapWidth: 2
+    mapHeight: 2
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF8008
+    unk_2C: gUnk_09856ED8
+    unk_30: 0
+    unk_34: 28
+    unk_36: [0, 0]
+    unk_38: 0
+    unk_3C: 0
+    unk_40: 0
+    unk_44: 0
+    unk_48: 49152
+    unk_4C: 69632
+  index: [4]
+  us:
+    address: 159739668
+  jp:
+    address: 159431208
+  eu:
+    address: 159594744
+    fields:
+      unk_50: 1
+- name: map_fixed_5
+  symbol: gUnk_09856F64
+  record: UnkStruct_09EF8370
+  fields:
+    palette: gUnk_09616E98
+    paletteSize: 320
+    unk_06: [0, 0]
+    tiles: gUnk_094C05F8
+    tilesSize: 23936
+    unk_0E: [0, 0]
+    tiles2: 0
+    tilesSize2: 0
+    unk_16: [0, 0]
+    map3: gUnk_09EF8298
+    map2: gUnk_09EF8358
+    map: 0
+    mapWidth: 3
+    mapHeight: 2
+    unk_26: [0, 0]
+    unk_28: gUnk_09EF7708
+    unk_2C: gUnk_09856CE0
+    unk_30: gUnk_09856D04
+    unk_34: 30
+    unk_36: [0, 0]
+    unk_38: 137728
+    unk_3C: 61952
+    unk_40: 0
+    unk_44: 0
+    unk_48: 131072
+    unk_4C: 65536
+  index: [5]
+  us:
+    address: 159739748
+  jp:
+    address: 159431288
+  eu:
+    address: 159594828
+    fields:
+      tilesSize: 11092
+      unk_50: 0
+- name: gUnk_0984D314
+  format: raw
+  us:
+    address: 159699732
+    size: 24
+  jp:
+    address: 159391272
+    size: 24
+  eu:
+    address: 159554792
+    size: 24
+- name: gUnk_0984D32C
+  format: raw
+  us:
+    address: 159699756
+    size: 204
+  jp:
+    address: 159391296
+    size: 204
+  eu:
+    address: 159554816
+    size: 204
+- name: gUnk_0984D3F8
+  format: raw
+  us:
+    address: 159699960
+    size: 156
+  jp:
+    address: 159391500
+    size: 156
+  eu:
+    address: 159555020
+    size: 156
+- name: gUnk_0984D494
+  format: raw
+  us:
+    address: 159700116
+    size: 16
+  jp:
+    address: 159391656
+    size: 16
+  eu:
+    address: 159555176
+    size: 16
+- name: gUnk_0984D4A4
+  format: raw
+  us:
+    address: 159700132
+    size: 2124
+  jp:
+    address: 159391672
+    size: 2124
+  eu:
+    address: 159555192
+    size: 2124
+- name: gUnk_0984DCF0
+  format: raw
+  us:
+    address: 159702256
+    size: 632
+  jp:
+    address: 159393796
+    size: 632
+  eu:
+    address: 159557316
+    size: 632
+- name: gUnk_0984DF68
+  format: raw
+  us:
+    address: 159702888
+    size: 112
+  jp:
+    address: 159394428
+    size: 112
+  eu:
+    address: 159557948
+    size: 112
+- name: gUnk_0984E014
+  format: raw
+  us:
+    address: 159703060
+    size: 16
+  jp:
+    address: 159394600
+    size: 16
+  eu:
+    address: 159558120
+    size: 16
+- name: gUnk_0984E024
+  format: raw
+  us:
+    address: 159703076
+    size: 48
+  jp:
+    address: 159394616
+    size: 48
+  eu:
+    address: 159558136
+    size: 48
+- name: gUnk_0984E054
+  format: raw
+  us:
+    address: 159703124
+    size: 1080
+  jp:
+    address: 159394664
+    size: 1080
+  eu:
+    address: 159558184
+    size: 1080
+- name: gUnk_0984E48C
+  format: raw
+  us:
+    address: 159704204
+    size: 632
+  jp:
+    address: 159395744
+    size: 632
+  eu:
+    address: 159559264
+    size: 632
+- name: gUnk_0984E704
+  format: raw
+  us:
+    address: 159704836
+    size: 48
+  jp:
+    address: 159396376
+    size: 48
+  eu:
+    address: 159559896
+    size: 48
+- name: gUnk_0984E770
+  format: raw
+  us:
+    address: 159704944
+    size: 16
+  jp:
+    address: 159396484
+    size: 16
+  eu:
+    address: 159560004
+    size: 16
+- name: gUnk_0984E780
+  format: raw
+  us:
+    address: 159704960
+    size: 2972
+  jp:
+    address: 159396500
+    size: 2972
+  eu:
+    address: 159560020
+    size: 2972
+- name: gUnk_0984F31C
+  format: raw
+  us:
+    address: 159707932
+    size: 776
+  jp:
+    address: 159399472
+    size: 776
+  eu:
+    address: 159562992
+    size: 776
+- name: gUnk_0984F624
+  format: raw
+  us:
+    address: 159708708
+    size: 112
+  jp:
+    address: 159400248
+    size: 112
+  eu:
+    address: 159563768
+    size: 112
+- name: gUnk_0984F6D0
+  format: raw
+  us:
+    address: 159708880
+    size: 16
+  jp:
+    address: 159400420
+    size: 16
+  eu:
+    address: 159563940
+    size: 16
+- name: gUnk_0984F6E0
+  format: raw
+  us:
+    address: 159708896
+    size: 2928
+  jp:
+    address: 159400436
+    size: 2928
+  eu:
+    address: 159563956
+    size: 2928
+- name: gUnk_09850250
+  format: raw
+  us:
+    address: 159711824
+    size: 424
+  jp:
+    address: 159403364
+    size: 424
+  eu:
+    address: 159566884
+    size: 424
+- name: gUnk_098503F8
+  format: raw
+  us:
+    address: 159712248
+    size: 48
+  jp:
+    address: 159403788
+    size: 48
+  eu:
+    address: 159567308
+    size: 48
+- name: gUnk_09850464
+  format: raw
+  us:
+    address: 159712356
+    size: 12
+  jp:
+    address: 159403896
+    size: 12
+  eu:
+    address: 159567416
+    size: 12
+- name: gUnk_09850470
+  format: raw
+  us:
+    address: 159712368
+    size: 1964
+  jp:
+    address: 159403908
+    size: 1964
+  eu:
+    address: 159567428
+    size: 1964
+- name: gUnk_09850C1C
+  format: raw
+  us:
+    address: 159714332
+    size: 424
+  jp:
+    address: 159405872
+    size: 424
+  eu:
+    address: 159569392
+    size: 424
+- name: gUnk_09850DC4
+  format: raw
+  us:
+    address: 159714756
+    size: 48
+  jp:
+    address: 159406296
+    size: 48
+  eu:
+    address: 159569816
+    size: 48
+- name: gUnk_09850E30
+  format: raw
+  us:
+    address: 159714864
+    size: 16
+  jp:
+    address: 159406404
+    size: 16
+  eu:
+    address: 159569924
+    size: 16
+- name: gUnk_09850E40
+  format: raw
+  us:
+    address: 159714880
+    size: 28
+  jp:
+    address: 159406420
+    size: 28
+  eu:
+    address: 159569940
+    size: 28
+- name: gUnk_09850E5C
+  format: raw
+  us:
+    address: 159714908
+    size: 4088
+  jp:
+    address: 159406448
+    size: 4088
+  eu:
+    address: 159569968
+    size: 4088
+- name: gUnk_09851E54
+  format: raw
+  us:
+    address: 159718996
+    size: 920
+  jp:
+    address: 159410536
+    size: 920
+  eu:
+    address: 159574056
+    size: 920
+- name: gUnk_098521EC
+  format: raw
+  us:
+    address: 159719916
+    size: 48
+  jp:
+    address: 159411456
+    size: 48
+  eu:
+    address: 159574976
+    size: 48
+- name: gUnk_09852258
+  format: raw
+  us:
+    address: 159720024
+    size: 16
+  jp:
+    address: 159411564
+    size: 16
+  eu:
+    address: 159575084
+    size: 16
+- name: gUnk_09852268
+  format: raw
+  us:
+    address: 159720040
+    size: 2560
+  jp:
+    address: 159411580
+    size: 2560
+  eu:
+    address: 159575100
+    size: 2560
+- name: gUnk_09852C68
+  format: raw
+  us:
+    address: 159722600
+    size: 628
+  jp:
+    address: 159414140
+    size: 628
+  eu:
+    address: 159577660
+    size: 628
+- name: gUnk_09852EDC
+  format: raw
+  us:
+    address: 159723228
+    size: 112
+  jp:
+    address: 159414768
+    size: 112
+  eu:
+    address: 159578288
+    size: 112
+- name: gUnk_09852F88
+  format: raw
+  us:
+    address: 159723400
+    size: 16
+  jp:
+    address: 159414940
+    size: 16
+  eu:
+    address: 159578460
+    size: 16
+- name: gUnk_09852F98
+  format: raw
+  us:
+    address: 159723416
+    size: 100
+  jp:
+    address: 159414956
+    size: 100
+  eu:
+    address: 159578476
+    size: 100
+- name: gUnk_09852FFC
+  format: raw
+  us:
+    address: 159723516
+    size: 856
+  jp:
+    address: 159415056
+    size: 856
+  eu:
+    address: 159578576
+    size: 856
+- name: gUnk_09853354
+  format: raw
+  us:
+    address: 159724372
+    size: 568
+  jp:
+    address: 159415912
+    size: 568
+  eu:
+    address: 159579432
+    size: 568
+- name: gUnk_0985358C
+  format: raw
+  us:
+    address: 159724940
+    size: 48
+  jp:
+    address: 159416480
+    size: 48
+  eu:
+    address: 159580000
+    size: 48
+- name: gUnk_098535F8
+  format: raw
+  us:
+    address: 159725048
+    size: 16
+  jp:
+    address: 159416588
+    size: 16
+  eu:
+    address: 159580108
+    size: 16
+- name: gUnk_09853608
+  format: raw
+  us:
+    address: 159725064
+    size: 28
+  jp:
+    address: 159416604
+    size: 28
+  eu:
+    address: 159580124
+    size: 28
+- name: gUnk_09853624
+  format: raw
+  us:
+    address: 159725092
+    size: 2652
+  jp:
+    address: 159416632
+    size: 2652
+  eu:
+    address: 159580152
+    size: 2652
+- name: gUnk_09854080
+  format: raw
+  us:
+    address: 159727744
+    size: 424
+  jp:
+    address: 159419284
+    size: 424
+  eu:
+    address: 159582804
+    size: 424
+- name: gUnk_09854228
+  format: raw
+  us:
+    address: 159728168
+    size: 48
+  jp:
+    address: 159419708
+    size: 48
+  eu:
+    address: 159583228
+    size: 48
+- name: gUnk_09854294
+  format: raw
+  us:
+    address: 159728276
+    size: 8
+  jp:
+    address: 159419816
+    size: 8
+  eu:
+    address: 159583336
+    size: 8
+- name: gUnk_0985429C
+  format: raw
+  us:
+    address: 159728284
+    size: 3284
+  jp:
+    address: 159419824
+    size: 3284
+  eu:
+    address: 159583344
+    size: 3284
+- name: gUnk_09854F70
+  format: raw
+  us:
+    address: 159731568
+    size: 776
+  jp:
+    address: 159423108
+    size: 776
+  eu:
+    address: 159586628
+    size: 776
+- name: gUnk_09855278
+  format: raw
+  us:
+    address: 159732344
+    size: 112
+  jp:
+    address: 159423884
+    size: 112
+  eu:
+    address: 159587404
+    size: 112
+- name: gUnk_09855324
+  format: raw
+  us:
+    address: 159732516
+    size: 16
+  jp:
+    address: 159424056
+    size: 16
+  eu:
+    address: 159587576
+    size: 16
+- name: gUnk_09855334
+  format: raw
+  us:
+    address: 159732532
+    size: 2396
+  jp:
+    address: 159424072
+    size: 2396
+  eu:
+    address: 159587592
+    size: 2396
+- name: gUnk_09855C90
+  format: raw
+  us:
+    address: 159734928
+    size: 680
+  jp:
+    address: 159426468
+    size: 680
+  eu:
+    address: 159589988
+    size: 680
+- name: gUnk_09855F38
+  format: raw
+  us:
+    address: 159735608
+    size: 112
+  jp:
+    address: 159427148
+    size: 112
+  eu:
+    address: 159590668
+    size: 112
+- name: gUnk_09855FE4
+  format: raw
+  us:
+    address: 159735780
+    size: 16
+  jp:
+    address: 159427320
+    size: 16
+  eu:
+    address: 159590840
+    size: 16
+- name: gUnk_09855FF4
+  format: raw
+  us:
+    address: 159735796
+    size: 28
+  jp:
+    address: 159427336
+    size: 28
+  eu:
+    address: 159590856
+    size: 28
+- name: gUnk_09856010
+  format: raw
+  us:
+    address: 159735824
+    size: 1008
+  jp:
+    address: 159427364
+    size: 1008
+  eu:
+    address: 159590884
+    size: 1008
+- name: gUnk_09856400
+  format: raw
+  us:
+    address: 159736832
+    size: 584
+  jp:
+    address: 159428372
+    size: 584
+  eu:
+    address: 159591892
+    size: 584
+- name: gUnk_09856648
+  format: raw
+  us:
+    address: 159737416
+    size: 48
+  jp:
+    address: 159428956
+    size: 48
+  eu:
+    address: 159592476
+    size: 48
+- name: gUnk_098566B4
+  format: raw
+  us:
+    address: 159737524
+    size: 1332
+  jp:
+    address: 159429064
+    size: 1332
+  eu:
+    address: 159592584
+    size: 1332
+- name: gUnk_09856BE8
+  format: raw
+  us:
+    address: 159738856
+    size: 96
+  jp:
+    address: 159430396
+    size: 96
+  eu:
+    address: 159593916
+    size: 96
+- name: gUnk_09856C48
+  format: raw
+  us:
+    address: 159738952
+    size: 72
+  jp:
+    address: 159430492
+    size: 72
+  eu:
+    address: 159594012
+    size: 72
+- name: gUnk_09856CE0
+  format: raw
+  us:
+    address: 159739104
+    size: 36
+  jp:
+    address: 159430644
+    size: 36
+  eu:
+    address: 159594168
+    size: 36
+- name: gUnk_09856D04
+  format: raw
+  us:
+    address: 159739140
+    size: 48
+  jp:
+    address: 159430680
+    size: 48
+  eu:
+    address: 159594204
+    size: 48
+- name: gUnk_09856D84
+  format: raw
+  us:
+    address: 159739268
+    size: 36
+  jp:
+    address: 159430808
+    size: 36
+  eu:
+    address: 159594336
+    size: 36
+- name: gUnk_09856DA8
+  format: raw
+  us:
+    address: 159739304
+    size: 60
+  jp:
+    address: 159430844
+    size: 60
+  eu:
+    address: 159594372
+    size: 60
+- name: gUnk_09856E34
+  format: raw
+  us:
+    address: 159739444
+    size: 12
+  jp:
+    address: 159430984
+    size: 12
+  eu:
+    address: 159594516
+    size: 12
+- name: gUnk_09856E40
+  format: raw
+  us:
+    address: 159739456
+    size: 72
+  jp:
+    address: 159430996
+    size: 72
+  eu:
+    address: 159594528
+    size: 72
+- name: gUnk_09856ED8
+  format: raw
+  us:
+    address: 159739608
+    size: 60
+  jp:
+    address: 159431148
+    size: 60
+  eu:
+    address: 159594684
+    size: 60
+- name: gUnk_098A9C84
+  format: tiles4
+  width: 2
+  palette: gUnk_0998FF44
+  us:
+    address: 160078980
+    size: 32192
+  jp:
+    address: 159770520
+    size: 32192
+  eu:
+    address: 159947536
+    size: 32192
+- name: gUnk_098B1A44
+  format: tiles4
+  width: 32
+  palette: gUnk_0998FF44
+  us:
+    address: 160111172
+    size: 8192
+  jp:
+    address: 159802712
+    size: 8192
+  eu:
+    address: 159979728
+    size: 8192
+- name: gUnk_098B3A44
+  format: tiles4
+  width: 32
+  palette: gUnk_0998FFA4
+  us:
+    address: 160119364
+    size: 30720
+  jp:
+    address: 159810904
+    size: 30720
+  eu:
+    address: 159987920
+    size: 30720
+- name: gUnk_098BB244
+  format: tiles4
+  width: 32
+  palette: gUnk_0998FFA4
+  us:
+    address: 160150084
+    size: 10240
+  jp:
+    address: 159841624
+    size: 10240
+  eu:
+    address: 160018640
+    size: 10240
+- name: gUnk_098BDA44
+  format: tiles4
+  width: 28
+  palette: gUnk_09990104
+  us:
+    address: 160160324
+    size: 32256
+  jp:
+    address: 159851864
+    size: 32256
+  eu:
+    address: 160028880
+    size: 32256
+- name: gUnk_098C5844
+  format: tiles4
+  width: 20
+  palette: gUnk_09990104
+  us:
+    address: 160192580
+    size: 12160
+  jp:
+    address: 159884120
+    size: 12160
+  eu:
+    address: 160061136
+    size: 12160
+- name: gUnk_098C87C4
+  format: raw
+  us:
+    address: 160204740
+    size: 5568
+  jp:
+    address: 159896280
+    size: 5568
+  eu:
+    address: 160073296
+    size: 5568
+- name: gUnk_098C9D84
+  format: tiles4
+  width: 32
+  palette: gUnk_09990264
+  us:
+    address: 160210308
+    size: 30720
+  jp:
+    address: 159901848
+    size: 30720
+  eu:
+    address: 160078864
+    size: 30720
+- name: gUnk_098D1584
+  format: tiles4
+  width: 20
+  palette: gUnk_09990264
+  us:
+    address: 160241028
+    size: 12160
+  jp:
+    address: 159932568
+    size: 12160
+  eu:
+    address: 160109584
+    size: 12160
+- name: gUnk_098D4504
+  format: tiles4
+  width: 10
+  palette: gUnk_099903C4
+  us:
+    address: 160253188
+    size: 31040
+  jp:
+    address: 159944728
+    size: 31040
+  eu:
+    address: 160121744
+    size: 31040
+- name: gUnk_098DBE44
+  format: tiles4
+  width: 20
+  palette: gUnk_099903C4
+  us:
+    address: 160284228
+    size: 12160
+  jp:
+    address: 159975768
+    size: 12160
+  eu:
+    address: 160152784
+    size: 12160
+- name: gUnk_098DEDC4
+  format: raw
+  us:
+    address: 160296388
+    size: 960
+  jp:
+    address: 159987928
+    size: 960
+  eu:
+    address: 160164944
+    size: 960
+- name: gUnk_098DF184
+  format: tiles4
+  width: 32
+  palette: gUnk_09990524
+  us:
+    address: 160297348
+    size: 32768
+  jp:
+    address: 159988888
+    size: 32768
+  eu:
+    address: 160165904
+    size: 32768
+- name: gUnk_098E7184
+  format: tiles4
+  width: 6
+  palette: gUnk_09990524
+  us:
+    address: 160330116
+    size: 14016
+  jp:
+    address: 160021656
+    size: 14016
+  eu:
+    address: 160198672
+    size: 14016
+- name: gUnk_098EB324
+  format: tiles4
+  width: 4
+  palette: gUnk_099906A4
+  us:
+    address: 160346916
+    size: 32128
+  jp:
+    address: 160038456
+    size: 32128
+  eu:
+    address: 160215472
+    size: 32128
+- name: gUnk_098F30A4
+  format: tiles4
+  width: 30
+  palette: gUnk_099906A4
+  us:
+    address: 160379044
+    size: 11520
+  jp:
+    address: 160070584
+    size: 11520
+  eu:
+    address: 160247600
+    size: 11520
+- name: gUnk_098F5DA4
+  format: raw
+  us:
+    address: 160390564
+    size: 5120
+  jp:
+    address: 160082104
+    size: 5120
+  eu:
+    address: 160259120
+    size: 5120
+- name: gUnk_098F71A4
+  format: tiles4
+  width: 32
+  palette: gUnk_09990804
+  us:
+    address: 160395684
+    size: 32768
+  jp:
+    address: 160087224
+    size: 32768
+  eu:
+    address: 160264240
+    size: 32768
+- name: gUnk_098FF1A4
+  format: tiles4
+  width: 32
+  palette: gUnk_09990804
+  us:
+    address: 160428452
+    size: 12288
+  jp:
+    address: 160119992
+    size: 12288
+  eu:
+    address: 160297008
+    size: 12288
+- name: gUnk_099021A4
+  format: raw
+  us:
+    address: 160440740
+    size: 3072
+  jp:
+    address: 160132280
+    size: 3072
+  eu:
+    address: 160309296
+    size: 3072
+- name: gUnk_09902DA4
+  format: tiles4
+  width: 32
+  palette: gUnk_09990984
+  us:
+    address: 160443812
+    size: 32768
+  jp:
+    address: 160135352
+    size: 32768
+  eu:
+    address: 160312368
+    size: 32768
+- name: gUnk_0990ADA4
+  format: tiles4
+  width: 5
+  palette: gUnk_09990984
+  us:
+    address: 160476580
+    size: 15520
+  jp:
+    address: 160168120
+    size: 15520
+  eu:
+    address: 160345136
+    size: 15520
+- name: gUnk_0990EA44
+  format: tiles4
+  width: 32
+  palette: gUnk_09990B04
+  us:
+    address: 160492100
+    size: 32768
+  jp:
+    address: 160183640
+    size: 32768
+  eu:
+    address: 160360656
+    size: 32768
+- name: gUnk_09916A44
+  format: tiles4
+  width: 20
+  palette: gUnk_09990B04
+  us:
+    address: 160524868
+    size: 12160
+  jp:
+    address: 160216408
+    size: 12160
+  eu:
+    address: 160393424
+    size: 12160
+- name: gUnk_099199C4
+  format: tiles4
+  width: 32
+  palette: gUnk_09990C64
+  us:
+    address: 160537028
+    size: 30720
+  jp:
+    address: 160228568
+    size: 30720
+  eu:
+    address: 160405584
+    size: 30720
+- name: gUnk_099211C4
+  format: tiles4
+  width: 2
+  palette: gUnk_09990C64
+  us:
+    address: 160567748
+    size: 12224
+  jp:
+    address: 160259288
+    size: 12224
+  eu:
+    address: 160436304
+    size: 12224
+- name: gUnk_09924184
+  format: tiles4
+  width: 31
+  palette: gUnk_09990DC4
+  us:
+    address: 160579972
+    size: 32736
+  jp:
+    address: 160271512
+    size: 32736
+  eu:
+    address: 160448528
+    size: 32736
+- name: gUnk_0992C164
+  format: tiles4
+  width: 31
+  palette: gUnk_09990DC4
+  us:
+    address: 160612708
+    size: 15872
+  jp:
+    address: 160304248
+    size: 15872
+  eu:
+    address: 160481264
+    size: 15872
+- name: gUnk_0992FF64
+  format: tiles4
+  width: 32
+  palette: gUnk_09990F44
+  us:
+    address: 160628580
+    size: 32768
+  jp:
+    address: 160320120
+    size: 32768
+  eu:
+    address: 160497136
+    size: 32768
+- name: gUnk_09937F64
+  format: tiles4
+  width: 32
+  palette: gUnk_09990F44
+  us:
+    address: 160661348
+    size: 12288
+  jp:
+    address: 160352888
+    size: 12288
+  eu:
+    address: 160529904
+    size: 12288
+- name: gUnk_09968144
+  format: tilemap
+  us:
+    address: 160858436
+    size: 2048
+  jp:
+    address: 160549976
+    size: 2048
+  eu:
+    address: 160887088
+    size: 2048
+- name: gUnk_09968944
+  format: tilemap
+  us:
+    address: 160860484
+    size: 4096
+  jp:
+    address: 160552024
+    size: 4096
+  eu:
+    address: 160889136
+    size: 4096
+- name: gUnk_09969944
+  format: tilemap
+  us:
+    address: 160864580
+    size: 768
+  jp:
+    address: 160556120
+    size: 768
+  eu:
+    address: 160893232
+    size: 768
+- name: gUnk_09969C44
+  format: tilemap
+  us:
+    address: 160865348
+    size: 2048
+  jp:
+    address: 160556888
+    size: 2048
+  eu:
+    address: 160894000
+    size: 2048
+- name: gUnk_0996A444
+  format: tilemap
+  us:
+    address: 160867396
+    size: 6144
+  jp:
+    address: 160558936
+    size: 6144
+  eu:
+    address: 160896048
+    size: 6144
+- name: gUnk_0996BC44
+  format: tilemap
+  us:
+    address: 160873540
+    size: 1280
+  jp:
+    address: 160565080
+    size: 1280
+  eu:
+    address: 160902192
+    size: 1280
+- name: gUnk_0996C144
+  format: tilemap
+  us:
+    address: 160874820
+    size: 2048
+  jp:
+    address: 160566360
+    size: 2048
+  eu:
+    address: 160903472
+    size: 2048
+- name: gUnk_0996C944
+  format: tilemap
+  us:
+    address: 160876868
+    size: 6144
+  jp:
+    address: 160568408
+    size: 6144
+  eu:
+    address: 160905520
+    size: 6144
+- name: gUnk_0996E144
+  format: tilemap
+  us:
+    address: 160883012
+    size: 1024
+  jp:
+    address: 160574552
+    size: 1024
+  eu:
+    address: 160911664
+    size: 1024
+- name: gUnk_0996E544
+  format: tilemap
+  us:
+    address: 160884036
+    size: 2048
+  jp:
+    address: 160575576
+    size: 2048
+  eu:
+    address: 160912688
+    size: 2048
+- name: gUnk_0996ED44
+  format: tilemap
+  us:
+    address: 160886084
+    size: 6144
+  jp:
+    address: 160577624
+    size: 6144
+  eu:
+    address: 160914736
+    size: 6144
+- name: gUnk_09970544
+  format: tilemap
+  us:
+    address: 160892228
+    size: 1024
+  jp:
+    address: 160583768
+    size: 1024
+  eu:
+    address: 160920880
+    size: 1024
+- name: gUnk_09970944
+  format: tilemap
+  us:
+    address: 160893252
+    size: 2048
+  jp:
+    address: 160584792
+    size: 2048
+  eu:
+    address: 160921904
+    size: 2048
+- name: gUnk_09971144
+  format: tilemap
+  us:
+    address: 160895300
+    size: 6144
+  jp:
+    address: 160586840
+    size: 6144
+  eu:
+    address: 160923952
+    size: 6144
+- name: gUnk_09972944
+  format: tilemap
+  us:
+    address: 160901444
+    size: 1024
+  jp:
+    address: 160592984
+    size: 1024
+  eu:
+    address: 160930096
+    size: 1024
+- name: gUnk_09972D44
+  format: tilemap
+  us:
+    address: 160902468
+    size: 2048
+  jp:
+    address: 160594008
+    size: 2048
+  eu:
+    address: 160931120
+    size: 2048
+- name: gUnk_09973544
+  format: tilemap
+  us:
+    address: 160904516
+    size: 6144
+  jp:
+    address: 160596056
+    size: 6144
+  eu:
+    address: 160933168
+    size: 6144
+- name: gUnk_09974D44
+  format: tilemap
+  us:
+    address: 160910660
+    size: 1024
+  jp:
+    address: 160602200
+    size: 1024
+  eu:
+    address: 160939312
+    size: 1024
+- name: gUnk_09975144
+  format: tilemap
+  us:
+    address: 160911684
+    size: 2048
+  jp:
+    address: 160603224
+    size: 2048
+  eu:
+    address: 160940336
+    size: 2048
+- name: gUnk_09975944
+  format: tilemap
+  us:
+    address: 160913732
+    size: 6144
+  jp:
+    address: 160605272
+    size: 6144
+  eu:
+    address: 160942384
+    size: 6144
+- name: gUnk_09977144
+  format: tilemap
+  us:
+    address: 160919876
+    size: 1024
+  jp:
+    address: 160611416
+    size: 1024
+  eu:
+    address: 160948528
+    size: 1024
+- name: gUnk_09977544
+  format: tilemap
+  us:
+    address: 160920900
+    size: 2048
+  jp:
+    address: 160612440
+    size: 2048
+  eu:
+    address: 160949552
+    size: 2048
+- name: gUnk_09977D44
+  format: tilemap
+  us:
+    address: 160922948
+    size: 6144
+  jp:
+    address: 160614488
+    size: 6144
+  eu:
+    address: 160951600
+    size: 6144
+- name: gUnk_09979544
+  format: tilemap
+  us:
+    address: 160929092
+    size: 1024
+  jp:
+    address: 160620632
+    size: 1024
+  eu:
+    address: 160957744
+    size: 1024
+- name: gUnk_09979944
+  format: tilemap
+  us:
+    address: 160930116
+    size: 2048
+  jp:
+    address: 160621656
+    size: 2048
+  eu:
+    address: 160958768
+    size: 2048
+- name: gUnk_0997A144
+  format: tilemap
+  us:
+    address: 160932164
+    size: 6144
+  jp:
+    address: 160623704
+    size: 6144
+  eu:
+    address: 160960816
+    size: 6144
+- name: gUnk_0997B944
+  format: tilemap
+  us:
+    address: 160938308
+    size: 1024
+  jp:
+    address: 160629848
+    size: 1024
+  eu:
+    address: 160966960
+    size: 1024
+- name: gUnk_0997BD44
+  format: tilemap
+  us:
+    address: 160939332
+    size: 2048
+  jp:
+    address: 160630872
+    size: 2048
+  eu:
+    address: 160967984
+    size: 2048
+- name: gUnk_0997C544
+  format: tilemap
+  us:
+    address: 160941380
+    size: 6144
+  jp:
+    address: 160632920
+    size: 6144
+  eu:
+    address: 160970032
+    size: 6144
+- name: gUnk_0997DD44
+  format: tilemap
+  us:
+    address: 160947524
+    size: 1024
+  jp:
+    address: 160639064
+    size: 1024
+  eu:
+    address: 160976176
+    size: 1024
+- name: gUnk_0997E144
+  format: tilemap
+  us:
+    address: 160948548
+    size: 2048
+  jp:
+    address: 160640088
+    size: 2048
+  eu:
+    address: 160977200
+    size: 2048
+- name: gUnk_0997E944
+  format: tilemap
+  us:
+    address: 160950596
+    size: 6144
+  jp:
+    address: 160642136
+    size: 6144
+  eu:
+    address: 160979248
+    size: 6144
+- name: gUnk_09980144
+  format: tilemap
+  us:
+    address: 160956740
+    size: 1280
+  jp:
+    address: 160648280
+    size: 1280
+  eu:
+    address: 160985392
+    size: 1280
+- name: gUnk_09980644
+  format: tilemap
+  us:
+    address: 160958020
+    size: 2048
+  jp:
+    address: 160649560
+    size: 2048
+  eu:
+    address: 160986672
+    size: 2048
+- name: gUnk_09980E44
+  format: tilemap
+  us:
+    address: 160960068
+    size: 6144
+  jp:
+    address: 160651608
+    size: 6144
+  eu:
+    address: 160988720
+    size: 6144
+- name: gUnk_09982644
+  format: tilemap
+  us:
+    address: 160966212
+    size: 1024
+  jp:
+    address: 160657752
+    size: 1024
+  eu:
+    address: 160994864
+    size: 1024
+- name: gUnk_09982A44
+  format: tilemap
+  us:
+    address: 160967236
+    size: 2048
+  jp:
+    address: 160658776
+    size: 2048
+  eu:
+    address: 160995888
+    size: 2048
+- name: gUnk_09983244
+  format: tilemap
+  us:
+    address: 160969284
+    size: 6144
+  jp:
+    address: 160660824
+    size: 6144
+  eu:
+    address: 160997936
+    size: 6144
+- name: gUnk_09984A44
+  format: tilemap
+  us:
+    address: 160975428
+    size: 1280
+  jp:
+    address: 160666968
+    size: 1280
+  eu:
+    address: 161004080
+    size: 1280
+- name: gUnk_09984F44
+  format: tilemap
+  us:
+    address: 160976708
+    size: 2048
+  jp:
+    address: 160668248
+    size: 2048
+  eu:
+    address: 161054512
+    size: 348
+    compress: lz77
+- name: gUnk_09985744
+  format: tilemap
+  us:
+    address: 160978756
+    size: 2048
+  jp:
+    address: 160670296
+    size: 2048
+  eu:
+    address: 161054860
+    size: 296
+    compress: lz77
+- name: gUnk_0998FF44
+  format: palette
+  us:
+    address: 161021764
+    size: 96
+  jp:
+    address: 160713304
+    size: 96
+  eu:
+    address: 161046320
+    size: 96
+- name: gUnk_0998FFA4
+  format: palette
+  us:
+    address: 161021860
+    size: 352
+  jp:
+    address: 160713400
+    size: 352
+  eu:
+    address: 161046416
+    size: 352
+- name: gUnk_09990104
+  format: palette
+  us:
+    address: 161022212
+    size: 352
+  jp:
+    address: 160713752
+    size: 352
+  eu:
+    address: 161046768
+    size: 352
+- name: gUnk_09990264
+  format: palette
+  us:
+    address: 161022564
+    size: 352
+  jp:
+    address: 160714104
+    size: 352
+  eu:
+    address: 161047120
+    size: 352
+- name: gUnk_099903C4
+  format: palette
+  us:
+    address: 161022916
+    size: 352
+  jp:
+    address: 160714456
+    size: 352
+  eu:
+    address: 161047472
+    size: 352
+- name: gUnk_09990524
+  format: palette
+  us:
+    address: 161023268
+    size: 384
+  jp:
+    address: 160714808
+    size: 384
+  eu:
+    address: 161047824
+    size: 384
+- name: gUnk_099906A4
+  format: palette
+  us:
+    address: 161023652
+    size: 352
+  jp:
+    address: 160715192
+    size: 352
+  eu:
+    address: 161048208
+    size: 352
+- name: gUnk_09990804
+  format: palette
+  us:
+    address: 161024004
+    size: 384
+  jp:
+    address: 160715544
+    size: 384
+  eu:
+    address: 161048560
+    size: 384
+- name: gUnk_09990984
+  format: palette
+  us:
+    address: 161024388
+    size: 384
+  jp:
+    address: 160715928
+    size: 384
+  eu:
+    address: 161048944
+    size: 384
+- name: gUnk_09990B04
+  format: palette
+  us:
+    address: 161024772
+    size: 352
+  jp:
+    address: 160716312
+    size: 352
+  eu:
+    address: 161049328
+    size: 352
+- name: gUnk_09990C64
+  format: palette
+  us:
+    address: 161025124
+    size: 352
+  jp:
+    address: 160716664
+    size: 352
+  eu:
+    address: 161049680
+    size: 352
+- name: gUnk_09990DC4
+  format: palette
+  us:
+    address: 161025476
+    size: 384
+  jp:
+    address: 160717016
+    size: 384
+  eu:
+    address: 161050032
+    size: 384
+- name: gUnk_09990F44
+  format: palette
+  us:
+    address: 161025860
+    size: 384
+  jp:
+    address: 160717400
+    size: 384
+  eu:
+    address: 161050416
+    size: 384

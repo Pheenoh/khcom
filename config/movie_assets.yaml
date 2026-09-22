@@ -1,0 +1,24 @@
+version: 1
+provenance: Opening movie selected by mode_movie.c case1 as gUnk_0815C3EC. Extents follow MovieOpen exactly:32-byte header, frame-type byte block, frame-size u16 block, compressed video, optional audio-type block, audio-size block and encoded audio. Each frame/audio size sum equals the encoded payload extent. These are file-format assets, not unowned compiler data.
+regions:
+  us:
+  - name: asset_movie_opening
+    symbol: gUnk_0815C3EC
+    address: '0x815c3ec'
+    size: 3688216
+    sha256: 169ec603eb0af4621a277f7ff5b15a263df90151ff7d02a14c6ee921bd198c58
+    after: asset_gfx
+  jp:
+  - name: asset_movie_opening
+    symbol: gUnk_0815C3EC
+    address: '0x814fc78'
+    size: 3687708
+    sha256: eae9a1f66f9c6148f93f510d15971bb277d45a0e1faa1798d286dc59311213c1
+    after: asset_gfx
+  eu:
+  - name: asset_movie_opening
+    symbol: gUnk_0815C3EC
+    address: '0x812fb24'
+    size: 3688216
+    sha256: 169ec603eb0af4621a277f7ff5b15a263df90151ff7d02a14c6ee921bd198c58
+    after: asset_gfx

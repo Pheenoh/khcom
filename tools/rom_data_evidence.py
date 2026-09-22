@@ -1,6 +1,7 @@
-import json
 import struct
 from pathlib import Path
+
+import yaml
 
 
 ROM_BASE = 0x08000000
@@ -9,7 +10,7 @@ ROM_END = 0x0A000000
 
 def load_evidence(path):
     path = Path(path)
-    return json.loads(path.read_text()) if path.exists() else {'version': 1, 'tables': []}
+    return yaml.safe_load(path.read_text()) if path.exists() else {'version': 1, 'tables': []}
 
 
 def number(value, label):

@@ -1,9 +1,10 @@
 import hashlib
-import json
 import math
 import struct
 import sys
 from pathlib import Path
+
+import yaml
 
 import baserom
 
@@ -56,7 +57,7 @@ def movie_extent(data):
 
 
 def load_movie_assets(path, version, rom):
-    value = json.loads(Path(path).read_text())
+    value = yaml.safe_load(Path(path).read_text())
     if set(value) != {'version', 'provenance', 'regions'} or value['version'] != 1:
         raise ValueError('invalid movie asset manifest')
     if not isinstance(value['provenance'], str) or not value['provenance'].strip():
@@ -103,5 +104,5 @@ def apply_movie_regions(found, placements, assets):
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1]
     for version in ('us', 'jp', 'eu'):
-        assets = load_movie_assets(root / 'config/movie_assets.json', version, baserom.read(version, purpose='tools/movie_assets.py'))
+        assets = load_movie_assets(root / 'config/movie_assets.yaml', version, baserom.read(version, purpose='tools/movie_assets.py'))
         print(version + ': movie assets OK (' + str(sum(hi - lo for lo, hi, _, _ in assets)) + ' bytes)')

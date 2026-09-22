@@ -1,0 +1,84 @@
+version: 1
+provenance:
+  bounds: Four five-language indexes are consumed by world-selection callbacks in bos5.c. Tilemap extents agree with all five consecutive 32-by-20 maps and the 0x500-byte LoadBgMap operation. Object-tile extents agree with the per-language DMA sizes, sprite tile indices and the following complete Sprite headers. World-name banks have thirteen 0x800-byte slots in all regions; EU model offsets enumerate all thirteen slots and five language banks repeat the complete 0x6800-byte format. The independent mode_worldinspect_0 LoadBgTiles reference identifies the next asset gUnk_099FB53C exactly at US099FB53C, JP099AFFC4 and EU09A24480, bounding the last bank. These definitions expose original bounded assets in their existing byte stream without moving or modifying payload.
+regions:
+  eu:
+    binary_assets:
+    - name: gUnkEu_09A840A0
+      address: '0x9a840a0'
+      size: 1280
+      kind: Tilemap
+      sha256: aae670c649cb5a8c010c4a90cc2363cbf8f57c9787b42f4d549b9e38407686c8
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A84FA0
+      address: '0x9a84fa0'
+      size: 1280
+      kind: Tilemap
+      sha256: 5a262f4e6539cbd815c5361f19addd22fab5d42d49d6a5cc405054539d1c0bfd
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A84AA0
+      address: '0x9a84aa0'
+      size: 1280
+      kind: Tilemap
+      sha256: a5309379a8a114f81bd09b529269a780dbe19e94395c85a060d44a91cad5cd3a
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A845A0
+      address: '0x9a845a0'
+      size: 1280
+      kind: Tilemap
+      sha256: 97589a2afd3e223dd46ba5f810dfe636c9beaa60f2fec334ce2a9e8b18842981
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A03C80
+      address: '0x9a03c80'
+      size: 26624
+      kind: Tiles4bpp
+      sha256: 0f88953f76f07220e4c402d4dd1cde580dda284d43be8ff427f1e7008c17bfb0
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A0A480
+      address: '0x9a0a480'
+      size: 26624
+      kind: Tiles4bpp
+      sha256: a53ed745d8847561ea953fe2414199f439135e38e8902564415d2303b6a4a80e
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A1DC80
+      address: '0x9a1dc80'
+      size: 26624
+      kind: Tiles4bpp
+      sha256: 9600b2287108a92813253c05d06d11976b0239669dfc802daef30ea89967ae9f
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A17480
+      address: '0x9a17480'
+      size: 26624
+      kind: Tiles4bpp
+      sha256: b9be3646f609c4ca531c58685b52063942da3b9f4f976e3d11c9a159063e3084
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_09A10C80
+      address: '0x9a10c80'
+      size: 26624
+      kind: Tiles4bpp
+      sha256: 195a549085585374b4f316163858bf3d0d50ae9c4baef05b06976f186e23cd60
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_099A3220
+      address: '0x99a3220'
+      size: 960
+      kind: Tiles4bpp
+      sha256: 14b24b800e661edeb82d41659e87f7a349d20173850e8f19907b88ffd0db341e
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_099A3E1A
+      address: '0x99a3e1a'
+      size: 1024
+      kind: Tiles4bpp
+      sha256: 42a5604e8d5c3706f1f397df6bb0fe2542fccaa7ed9c7ccba1f7b9dac67e21dc
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_099A39F2
+      address: '0x99a39f2'
+      size: 1024
+      kind: Tiles4bpp
+      sha256: ddd96097e296920aebdcb15074ca4ab7e533e207f3ac64e93486374a1995a96f
+      unit: asset_gfx_gap_195.s
+    - name: gUnkEu_099A360C
+      address: '0x99a360c'
+      size: 960
+      kind: Tiles4bpp
+      sha256: 2fe4c9f8ae293a67a4af219c40c4a06b0814eaadb7e8f554438c77ce7a12fedf
+      unit: asset_gfx_gap_195.s
