@@ -5,8 +5,7 @@
     "backgrounds": "All62 distinct nonnull background pointers in the rooted event index are complete native48-byte EventBackgroundDef scalars. Their exact map-grid dimensions, graphics pointers, palette sizes, flags, object metadata and trailing fields are independently consumed by event_seq and Ev_mapObj tasks. All three versions preserve the corresponding record roles and complete native layout. Every map-grid pointer resolves to an existing compiler-owned array. Three native Pooh const u16* grids use a symbolic const void** view at the generic raw/compressed map interface; no alternate array bounds or storage are created. Existing explicit EU compressed-resource alternatives are selected symbolically, preserving the raw counterparts and all divergent flags/sizes.",
     "native_catalog": "The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.",
     "native_event_background_08F7EFD8_rodata": "Contiguous 7\u00d7EventBackgroundDef cluster formerly .data_event_background_definition_08F7EFD8..08F7F0F8 is const in existing event_background_data.c (source order already matched); ordinary .rodata replaces the forced sections (TU already has .data).",
-    "native_event_background_defs_banks": "Split 32 exclusive-to-event_index contiguous EventBackgroundDef runs into 12 native .data TUs (event_background_defs_01..); map pointer tables remain in event_background_data.c with externs from the banks. Singleton exclusives and mode_chkobj-only defs stay forced.",
-    "native_event_background_defs_singletons": "Remaining 23 exclusive-to-event_index EventBackgroundDef islands (non-contiguous) -> event_background_defs_13..35_data.c native .data; map pointer tables stay in event_background_data.c with externs. mode_chkobj-only defs remain forced."
+    "native_event_background_defs_banks": "Split 32 exclusive-to-event_index contiguous EventBackgroundDef runs into 12 native .data TUs (event_background_defs_01..); map pointer tables remain in event_background_data.c with externs from the banks. Singleton exclusives and mode_chkobj-only defs stay forced."
   },
   "regions": {
     "us": {
@@ -228,8 +227,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_13_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E358",
           "address": "0x8f7e358",
           "size": 48,
           "sha256": "d680a0f2de501b39ab75b250ac79d2cfcc43d13eb069c743306c2cf0eec064a4",
@@ -246,8 +245,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_14_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E3C0",
           "address": "0x8f7e3c0",
           "size": 48,
           "sha256": "6476ae8e44b6ee8e88222fb519fafebfad301cd44b43eaeabd44034a864624c7",
@@ -264,8 +263,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_15_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E4A4",
           "address": "0x8f7e4a4",
           "size": 48,
           "sha256": "a9cdb0b047c68434da8fdf2531a8b1c8b736b67ba9ad36a52c77e0ecf44c7002",
@@ -282,8 +281,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_16_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E500",
           "address": "0x8f7e500",
           "size": 48,
           "sha256": "9d1984cb4ee59f2cd7d32e8605048eca9ab6f7022afb1302bbbec6a261b3191b",
@@ -300,8 +299,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_17_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E620",
           "address": "0x8f7e620",
           "size": 48,
           "sha256": "03bdd7a929058e4514be028fb6992f395cf593113d3bcf354fee5c97183f4d99",
@@ -318,8 +317,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_18_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E688",
           "address": "0x8f7e688",
           "size": 48,
           "sha256": "5b83a704d3134048f81d6338cdfdd16af46bf73cde3821369af8a305497f3b25",
@@ -336,8 +335,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_19_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E6F0",
           "address": "0x8f7e6f0",
           "size": 48,
           "sha256": "78a955a3524e813ab060a882fa9b8bcd9c116f85a44b43da077c460d786124f6",
@@ -354,8 +353,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_20_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E764",
           "address": "0x8f7e764",
           "size": 48,
           "sha256": "15af18f73b7db66e105d02fc5febe64737307d11597573f6a97da79c87446aa6",
@@ -372,8 +371,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_21_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E7FC",
           "address": "0x8f7e7fc",
           "size": 48,
           "sha256": "06771d852111b8a13bf2ee52191d60b641a71c4672db8a9e66eff073e23ee0c3",
@@ -390,8 +389,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_22_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E84C",
           "address": "0x8f7e84c",
           "size": 48,
           "sha256": "8f5e304ed9e95ecc254567d68008dd23ba05bd8a3409b65ec3d04fb8f99df1d3",
@@ -435,8 +434,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_23_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EA28",
           "address": "0x8f7ea28",
           "size": 48,
           "sha256": "cf1542ed99f2c8af8bdff56e2e80b6a0e1efee600f8a6086c99cfd5138df2643",
@@ -453,8 +452,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_24_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EAA8",
           "address": "0x8f7eaa8",
           "size": 48,
           "sha256": "276d7d8e950bc692f6b089693bb08f2094bad5dc4086b49a0d46fad9f0a2b3ac",
@@ -471,8 +470,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_25_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB10",
           "address": "0x8f7eb10",
           "size": 48,
           "sha256": "340f8d72d9b5b4aeb7b7d1e7a621593509a7c64f1fe80276b82038eadcf4a439",
@@ -489,8 +488,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_26_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EC1C",
           "address": "0x8f7ec1c",
           "size": 48,
           "sha256": "f69158c5c4209a1d2b6a1ead76eac4e4458cbf5f84a457076cc8febc1fac8980",
@@ -561,8 +560,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_27_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EE70",
           "address": "0x8f7ee70",
           "size": 48,
           "sha256": "934b910f9546b8f8ce0c23fd7990f74ed278637001e3b4e29f08db1dab793e02",
@@ -579,8 +578,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_28_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EECC",
           "address": "0x8f7eecc",
           "size": 48,
           "sha256": "ed70479a934c137de090d5ca823e08d3ba66a95816a169da3f8e1249123ca114",
@@ -597,8 +596,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_29_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF4C",
           "address": "0x8f7ef4c",
           "size": 48,
           "sha256": "4746c6f66efa8f9155f801665b4369a4a33f116c85960cfbb063862900f3bcb6",
@@ -695,8 +694,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_30_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F26C",
           "address": "0x8f7f26c",
           "size": 48,
           "sha256": "b48e317adfb3b5e7be9cc2a4928cb65995530308200a7dc3932f787cc012116f",
@@ -713,8 +712,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_31_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F2D4",
           "address": "0x8f7f2d4",
           "size": 48,
           "sha256": "5463a2b2e8beeab501204e27e79c72995006fb827cdd2be7f0d6b07757f22d19",
@@ -731,8 +730,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_32_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F324",
           "address": "0x8f7f324",
           "size": 48,
           "sha256": "925a502e23b34cd1a3fb0f0c271aac03a754d723b451c3f3581ec3f79391bc28",
@@ -749,8 +748,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_33_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F374",
           "address": "0x8f7f374",
           "size": 48,
           "sha256": "e255b5b6e5790e7bbced4717e74819a411b821c6f7a09385edb11f5c7c7d6e95",
@@ -803,8 +802,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_34_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F4E8",
           "address": "0x8f7f4e8",
           "size": 48,
           "sha256": "80a9ae8d5253051d7700570749bc76174a748ee82fd812fa39669a1cf39b434d",
@@ -848,8 +847,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_35_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F63C",
           "address": "0x8f7f63c",
           "size": 48,
           "sha256": "e09a627cc3ce36ea20512b24e5c191b68572c2a13fdac3622b8260ca11dbec26",
@@ -2294,8 +2293,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_13_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E358",
           "address": "0x8f71860",
           "size": 48,
           "sha256": "ff4fcc173e123eb8aae440d8bea11da81fbe2f0c45806b0f0aeeb9eadb362a23",
@@ -2312,8 +2311,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_14_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E3C0",
           "address": "0x8f718c8",
           "size": 48,
           "sha256": "ca81b0b4e0d00d652f9b3eec53229a96108cf45903c44dfc411044c9766a45b8",
@@ -2330,8 +2329,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_15_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E4A4",
           "address": "0x8f719ac",
           "size": 48,
           "sha256": "ce8eb1a818bf7c2398cdf9d4dc9f2c93fa9a51d025fd2f5f28694664d3a6e6c2",
@@ -2348,8 +2347,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_16_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E500",
           "address": "0x8f71a08",
           "size": 48,
           "sha256": "4daa30d2d890a715337956dc80dde6cd1f535efedea991f2a68221e87cb12c39",
@@ -2366,8 +2365,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_17_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E620",
           "address": "0x8f71b28",
           "size": 48,
           "sha256": "dfb8047d5768eb5975f736aba8f3286d8b314403889c0fb008b1878d80b1e6e0",
@@ -2384,8 +2383,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_18_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E688",
           "address": "0x8f71b90",
           "size": 48,
           "sha256": "95a714e9692cdcf8b882ec44225391e13468df20c3de99c24ecd381d9a07c8fc",
@@ -2402,8 +2401,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_19_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E6F0",
           "address": "0x8f71bf8",
           "size": 48,
           "sha256": "33a253475cd5ac4c64da254e0619ce14e1effc3390ef82a4df7fe8293a3bf6ee",
@@ -2420,8 +2419,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_20_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E764",
           "address": "0x8f71c6c",
           "size": 48,
           "sha256": "19572e223eda4765e55ad4c49edc41ce22a3f636b08126f7fdca67181a74d403",
@@ -2438,8 +2437,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_21_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E7FC",
           "address": "0x8f71d04",
           "size": 48,
           "sha256": "c7e1d14bcb477adfcc04afecc6538528edbee19d8eabf065f09058677d283821",
@@ -2456,8 +2455,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_22_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E84C",
           "address": "0x8f71d54",
           "size": 48,
           "sha256": "d2284daf7fe27791741c021db1c1a2ea9cfadcf96370fdafc650d65d2f5892e1",
@@ -2501,8 +2500,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_23_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EA28",
           "address": "0x8f71f30",
           "size": 48,
           "sha256": "161ccb3747c06b457a454dc17947c2c62c85941efbd629ea5c8560faa950a5df",
@@ -2519,8 +2518,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_24_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EAA8",
           "address": "0x8f71fb0",
           "size": 48,
           "sha256": "e7abb14ea0d0193cb1b1871a6e7fa0893c9325cae32b3799b5db7c220fe2fa4f",
@@ -2537,8 +2536,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_25_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB10",
           "address": "0x8f72018",
           "size": 48,
           "sha256": "86ae24a6feff7264822939a31b30d0cca702eafe8496c7acd8255b5677e454f7",
@@ -2555,8 +2554,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_26_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EC1C",
           "address": "0x8f72124",
           "size": 48,
           "sha256": "4de9a22fe78dad37698297aace77dc6a0854ea04d6954c2ed5a3746546febd15",
@@ -2627,8 +2626,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_27_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EE70",
           "address": "0x8f72378",
           "size": 48,
           "sha256": "2cfc018be1c3dab514ab6a87d7d3b16e7cdb53fb23aaafb381648744761cdda6",
@@ -2645,8 +2644,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_28_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EECC",
           "address": "0x8f723d4",
           "size": 48,
           "sha256": "328cbbb41bf6c3ea72802a7f14fdf10a600abd64f83084a6b1db94d66e1f16c2",
@@ -2663,8 +2662,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_29_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF4C",
           "address": "0x8f72454",
           "size": 48,
           "sha256": "c531885c8687d4e38b04e8117b4740de148876a0d06276bd760bf88345b63c3f",
@@ -2761,8 +2760,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_30_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F26C",
           "address": "0x8f72774",
           "size": 48,
           "sha256": "d7680b54f4a26ee9ec9d7121c20e63fe134c317f8aa1bacf335cf4ff4318d758",
@@ -2779,8 +2778,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_31_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F2D4",
           "address": "0x8f727dc",
           "size": 48,
           "sha256": "6cfd3479866c8cc2004ba3b7b2d9a279877bc09bb9fadbc9429321116e1e8ec2",
@@ -2797,8 +2796,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_32_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F324",
           "address": "0x8f7282c",
           "size": 48,
           "sha256": "ebce6a696933709f31106760a23d14f526cb6cdb81be367f60a5b323f10e47d1",
@@ -2815,8 +2814,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_33_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F374",
           "address": "0x8f7287c",
           "size": 48,
           "sha256": "fb77330a7b345c56f479c6b26b49501ecab42817285ee011decbdb8ddeac31ff",
@@ -2869,8 +2868,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_34_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F4E8",
           "address": "0x8f729f0",
           "size": 48,
           "sha256": "d6ff57168a3b6ba0356111a5a8b20a1b95262a66a7b5da31a90b37baea4af97d",
@@ -2914,8 +2913,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_35_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F63C",
           "address": "0x8f72b44",
           "size": 48,
           "sha256": "4471540eac8980c807bfd457c445ea80720b231dfd52456203cf1c5ba5260716",
@@ -4360,8 +4359,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_13_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E358",
           "address": "0x9058538",
           "size": 48,
           "sha256": "301dfd1f738b36e828ed8f315361da3b61578a57647d6bb39bc83fdb0b951142",
@@ -4378,8 +4377,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_14_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E3C0",
           "address": "0x90585a0",
           "size": 48,
           "sha256": "047ac418f903c91c54cb7a20bf5a839575153015719d620d6801cbf7091f757c",
@@ -4396,8 +4395,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_15_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E4A4",
           "address": "0x9058684",
           "size": 48,
           "sha256": "ad884d59f9b0085581aded15afa4d88d0f56b0a8d5ca506ce80a7c60745d6567",
@@ -4414,8 +4413,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_16_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E500",
           "address": "0x90586e0",
           "size": 48,
           "sha256": "37acdf76b9036f0902bd9e83df5af5c5766d7357c745063585ddb7eb12bac70f",
@@ -4432,8 +4431,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_17_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E620",
           "address": "0x9058800",
           "size": 48,
           "sha256": "33a2e7fec99f479f4914e737824159df3569db3936ea7dcd94df425973231cf5",
@@ -4450,8 +4449,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_18_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E688",
           "address": "0x9058868",
           "size": 48,
           "sha256": "4c3a58530cb002f4189ffc5f62453222526b9654510df5aefc161ba67d1cc831",
@@ -4468,8 +4467,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_19_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E6F0",
           "address": "0x90588d0",
           "size": 48,
           "sha256": "35b6737299aeb68048493bb54f747af0d7241d16d85198d0b392c54015f171ae",
@@ -4486,8 +4485,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_20_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E764",
           "address": "0x9058944",
           "size": 48,
           "sha256": "34cb730126a5fba03a135806debe7a3d1ed7cd2bff5b1f442b78bce9e6675c16",
@@ -4504,8 +4503,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_21_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E7FC",
           "address": "0x90589dc",
           "size": 48,
           "sha256": "b1f2e6b7c5a189a15610b7386932fcf3540d97e9c65c68ad957dce068b750a7c",
@@ -4522,8 +4521,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_22_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7E84C",
           "address": "0x9058a2c",
           "size": 48,
           "sha256": "133f191c7116405af8d7ec3213994a24ee51ca43b7190e62f39f4f87853dfc32",
@@ -4567,8 +4566,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_23_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EA28",
           "address": "0x9058c08",
           "size": 48,
           "sha256": "7547d6afd2fa210c365baf5af5139c7c27d36167dece1c6b2971197c2de9af99",
@@ -4585,8 +4584,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_24_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EAA8",
           "address": "0x9058c88",
           "size": 48,
           "sha256": "cd626f8a473bc5c9c5e095f237495d7921850ace1aefa1a7da531036d24c729e",
@@ -4603,8 +4602,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_25_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EB10",
           "address": "0x9058cf0",
           "size": 48,
           "sha256": "9148dea71752b54a33920ea861950d77fd321619ac39ec7fbfc6abe83719c8ed",
@@ -4621,8 +4620,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_26_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EC1C",
           "address": "0x9058dfc",
           "size": 48,
           "sha256": "667ec5e77eb6c47ac776622df76b6182343613d4d0e38f232b693d60a8e6dc9b",
@@ -4693,8 +4692,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_27_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EE70",
           "address": "0x9059050",
           "size": 48,
           "sha256": "504b59c2850e48b6c411b5cfeba05753b96bd0840a44429b044b3515781feb19",
@@ -4711,8 +4710,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_28_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EECC",
           "address": "0x90590ac",
           "size": 48,
           "sha256": "372f34141e90489d682bd4363290d3af05f2da076cf38dcb65a0108b6966a713",
@@ -4729,8 +4728,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_29_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7EF4C",
           "address": "0x905912c",
           "size": 48,
           "sha256": "8cd6d417abb3ebc7b1e44159a37ef8a3d4f9c28b7a011b85376cf677f0ebefc7",
@@ -4827,8 +4826,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_30_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F26C",
           "address": "0x905944c",
           "size": 48,
           "sha256": "4f76e18baf042a94fa1e99cbaac163f4c5a97e2962337f29abb0f5f51dd8f5d5",
@@ -4845,8 +4844,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_31_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F2D4",
           "address": "0x90594b4",
           "size": 48,
           "sha256": "100c8ef3262e1a6a4dc0f7a004cc395bf8da78e54247d6e415b439c3a2e24742",
@@ -4863,8 +4862,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_32_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F324",
           "address": "0x9059504",
           "size": 48,
           "sha256": "a52b5987b29ba4ac760cca5712bc154282a4271c703765c73ca12f706bef2656",
@@ -4881,8 +4880,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_33_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F374",
           "address": "0x9059554",
           "size": 48,
           "sha256": "224f857fcb44e1bde93a3e689cc12c146306b10d4f55bb8496821148b041db62",
@@ -4935,8 +4934,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_34_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F4E8",
           "address": "0x90596c8",
           "size": 48,
           "sha256": "af70540423eac53b5de9eac288dc247561923608e2269ee13b400afb86130d5a",
@@ -4980,8 +4979,8 @@
           ]
         },
         {
-          "unit": "event_background_defs_35_data.c",
-          "section": ".data",
+          "unit": "event_background_data.c",
+          "section": ".data_event_background_definition_08F7F63C",
           "address": "0x905981c",
           "size": 48,
           "sha256": "cf2e8f0608de52bbe72a013b58913b98e6059fc375509c02d45b1095d408b9ad",
