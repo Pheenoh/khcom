@@ -16635,7 +16635,7 @@
         },
         {
           "unit": "jiminy_inline_text_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x813feb8",
           "size": 457,
           "sha256": "0da4132a0790051a32fecacfc7f016082cac42d71e828dff1c9ffad5b347ba0c",
@@ -94092,7 +94092,7 @@
         },
         {
           "unit": "jiminy_inline_text_data.c",
-          "section": ".data",
+          "section": ".rodata",
           "address": "0x888e310",
           "size": 452,
           "sha256": "a0f9020231bf2df96bff79f911de9417af1e26db16c3fcafea116178c5a74893",
