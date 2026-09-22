@@ -140,7 +140,7 @@
     "eu": {
       "placements": [
         {
-          "unit": "map_runtime.c",
+          "unit": "map_text_eu_castle_oblivion_hall_name.c",
           "section": ".rodata",
           "address": "0x88926fc",
           "size": 20,

@@ -2,6 +2,7 @@
 #define GUARD_MAP_RUNTIME_H
 
 #include "map_types.h"
+#include "text_types.h"
 
 typedef struct UnkStruct_0984C868 {
     u8 unk_00;
@@ -67,5 +68,9 @@ u8 func_080DFCDC(UnkStruct_080DFF1C* p);
 u8 func_080DFD84(UnkStruct_080DFF1C* p);
 u8 _080DFE1C(UnkStruct_080DFF1C* p);
 s32 func_080DFE7C(s32 x, s32 y, s32 z);
+
+#ifdef VERSION_EU
+extern const LocalizedText gMapWorldNameEu_088926FC;
+#endif
 
 #endif

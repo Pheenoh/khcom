@@ -1119,10 +1119,6 @@ s32 func_080DFE7C(s32 x, s32 y, s32 z) {
     return r;
 }
 
-#ifdef VERSION_EU
-const LocalizedText gMapWorldNameEu_088926FC = {{gMapWorldNameTextEu_08892680, gMapWorldNameTextEu_08892696, gMapWorldNameTextEu_088926AC, gMapWorldNameTextEu_088926C9, gMapWorldNameTextEu_088926E0}};
-#endif
-
 u8 gUnk_09EF69E0[14] = {
     12,
     3,
