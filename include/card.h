@@ -2828,4 +2828,214 @@ extern const char gUnk_09041F58[];
 extern Mode gUnk_09EE8F20;
 #endif
 
+extern u32 gUnk_02034AA4;
+extern u32 gUnk_02034AA8;
+extern CardDisplayWork* gUnk_02034AAC;
+extern u8 gActiveDeck;
+extern u8 gUnk_02034AB1[3];
+extern s16 gUnk_02034AB4;
+extern u8 gUnk_02034AB6[2];
+#ifdef VERSION_EU
+extern u8 gUnkEu_02034AD4[4];
+#endif
+extern u8 gUnk_02034AB8[20];
+extern u8 gUnk_02034ACC;
+extern u32 gUnk_02034AD0;
+extern void* gUnk_02034AD4;
+extern u8 gUnk_02034AD8;
+extern u8 gUnk_02034AD9;
+extern u8 gUnk_02034ADA[6];
+extern u8 gUnk_02034AE0[20];
+#ifndef VERSION_EU
+extern u8 gUnk_02034AF4[4];
+#endif
+extern u8 gUnk_02034AF8;
+extern UnkStruct_02034AFC* gUnk_02034AFC;
+extern UnkStruct_02034AFC* gUnk_02034B00;
+#ifndef VERSION_EU
+extern u8 gUnk_02034B04[4];
+extern u8 gUnk_02034B08[20];
+extern u8 gUnk_02034B1C;
+extern u8 gUnk_02034B1D[3];
+#endif
+extern u8 gUnk_02034B20[20];
+extern void* gUnk_02034B34;
+#ifdef VERSION_EU
+extern TaskPool gUnkEu_02034B38;
+extern u32 gUnkEu_02034B4C;
+#endif
+extern u8 gUnk_02039DD8;
+extern u8 gUnk_02039DDC;
+extern Deck gDecks[3];
+extern u16 gCardCollection[999];
+extern Deck* gUnk_0203A850;
+extern void* gUnk_0203A854;
+extern u16 gCardCount;
+extern CardUiSpriteState gUnk_0203A860;
+extern MapCardUiResources gUnk_0203A890;
+extern u8 gUnk_0203A8C0[270];
+extern struct CardListWork* gUnk_0203A9D0;
+extern u8 gUnk_0203A9D4;
+extern u8 gUnk_0203A9D8;
+#ifndef VERSION_EU
+extern u16 gUnk_0203A9DC;
+#endif
+extern u8 gUnk_0203A9E0;
+extern s8 gUnk_0203A9E4;
+extern u8 gUnk_0203A9E8;
+extern TaskDesc gUnk_09EE496C;
+extern TaskDesc gUnk_09EE4984;
+extern TaskDesc gUnk_09EE499C;
+extern TaskDesc gUnk_09EE49CC;
+extern TaskDesc gUnk_09EE49E4;
+extern TaskDesc gUnk_09EE49FC;
+extern TaskDesc gTaskDescBosscard;
+extern const MapTileAnimationDef* gUnk_09EE4A2C[6];
+extern const u16* gUnk_09EE4A68[12];
+extern const u16* gUnk_09EE4A98[12];
+#ifdef VERSION_EU
+#else
+extern u16 gUnk_09EE4AC8[7];
+extern u16 gUnk_09EE4AD6[7];
+extern u16 gUnk_09EE4AE4[7];
+#endif
+#ifdef VERSION_EU
+extern void* gUnkEu_09F6FD8C[5];
+extern void** gUnkEu_09F6FDA0[5];
+extern void* gUnkEu_09F6FDB4[5];
+extern void** gUnkEu_09F6FDC8[5];
+extern void* gUnkEu_09F6FDDC[5];
+extern void** gUnkEu_09F6FDF0[5];
+extern u8* gUnkEu_09F6FE04[5];
+extern void* gUnkEu_09F6FE30[5];
+extern void** gUnkEu_09F6FE44[5];
+extern void* gUnkEu_09F6FE58[5];
+#endif
+#ifdef VERSION_US
+extern const u8* gUnk_09EE4B0C[7];
+#endif
+#ifdef VERSION_JP
+extern const u8* gUnkJp_09EBC148[7];
+extern const u8* gUnkJp_09EBC164[7];
+#endif
+#ifdef VERSION_EU
+extern const u8* gUnkEu_09F6FE6C[8];
+extern const u8* gUnkEu_09F6FE8C[7];
+#endif
+extern TaskDesc gUnk_09EE4B28;
+extern TaskDesc gUnk_09EE4B58;
+extern TaskDesc gUnk_09EE4B70;
+extern TaskDesc gUnk_09EE4B88;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F6FF30[5];
+extern void** gUnkEu_09F6FF44[5];
+#endif
+extern const void* gUnk_09EE4BB0[2];
+extern s16 gUnk_09EE4BB8[5];
+extern s16 gUnk_09EE4BC2[2];
+#ifdef VERSION_EU
+extern void** gUnkEu_09F6FF70[5];
+#endif
+extern TaskDesc gTaskDescMapSelect;
+extern u16 gUnk_09EE4BE0[10];
+extern MapCardBackDef gUnk_09EE4BF4[5];
+extern MapCardDef gUnk_09EE4C80[260];
+extern s16 gUnk_09EE7520[6];
+extern UnkStruct_09EE752C gUnk_09EE752C[7];
+extern TaskDesc gTaskDescMapcard;
+extern TaskDesc gUnk_09EE7560;
+extern void* gUnk_09EE7578[4];
+extern AnimHeader** gUnk_09EE7588[4];
+extern void** gUnk_09EE7598[4];
+extern void* gUnk_09EE75A8[4];
+extern void** gUnk_09EE75B8[4];
+extern AnimHeader** gUnk_09EE75C8[4];
+extern TaskDesc gUnk_09EE75D8;
+extern TaskDesc gTaskDescPrizeCardInit;
+extern TaskDesc gTaskDescPrizeCardInitBoss;
+extern TaskDesc gTaskDescDispCardname;
+extern TaskDesc gTaskDescVersion;
+extern TaskDesc gUnk_09EE7650;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F72A3C[5];
+extern void* gUnkEu_09F72A50[5];
+extern void* gUnkEu_09F72A64[5];
+#endif
+extern TaskDesc gTaskDescSELMAPEVKEY;
+extern void* gUnk_09EE7698[4];
+extern TaskDesc gTaskDescReloadChildren;
+extern void* gUnk_09EE76C0[4];
+extern void** gUnk_09EE76D0[4];
+extern TaskDesc gTaskDescREVCOUNT;
+extern void* gUnk_09EE7708[3];
+extern AnimHeader** gUnk_09EE7714[3];
+extern void** gUnk_09EE7720[3];
+extern TaskDesc gUnk_09EE772C;
+extern TaskDesc gTaskDescPrizeBoss;
+extern TaskDesc gTaskDescCardEFFECT;
+extern TaskDesc gTaskDescScrollbar;
+extern TaskDesc gUnk_09EE778C;
+extern TaskDesc gUnk_09EE77A4;
+extern TaskDesc gUnk_09EE77BC;
+extern TaskDesc gUnk_09EE77EC;
+#ifdef VERSION_EU
+extern void** gUnkEu_09F72BFC[5];
+#endif
+extern TaskDesc gUnk_09EE7804;
+extern TaskDesc gUnk_09EE781C;
+extern TaskDesc gUnk_09EE7834;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F72CB0[5];
+extern void** gUnkEu_09F72CC4[5];
+#endif
+extern TaskDesc gTaskDescHCEffectName;
+extern TaskDesc gTaskDescNumberPlus;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F72D08[5];
+extern void* gUnkEu_09F72D1C[5];
+extern void** gUnk_09EEA1BC[5];
+extern void* gUnkEu_09F72D44[5];
+extern void** gUnkEu_09F72D58[5];
+#endif
+#ifndef VERSION_EU
+extern u16* gUnk_09EE78D4[7];
+extern u16* gUnk_09EE78F0[7];
+#endif
+extern const void* gUnk_09EE790C[2];
+extern void* gUnk_09EE7914[3];
+extern TaskDesc gTaskDescLevelUp;
+#ifdef VERSION_EU
+extern void* gUnk_09EE7938[6];
+extern void** gUnkEu_09F72E10[5];
+#endif
+extern TaskDesc gTaskDescLVUPEFFECT;
+extern TaskDesc gTaskDescLvupLogo;
+extern EventBgEffectDef* gUnk_09EE79B4[8];
+extern TaskDesc gTaskDescEVBGEFFECT;
+extern const CardHelpDef* gUnk_09EE7D84[];
+extern TaskDesc gUnk_09EE7F30;
+extern TaskDesc gUnk_09EE7F48;
+extern TaskDesc gUnk_09EE7F60;
+extern TaskDesc gUnk_09EE7F78;
+extern TaskDesc gUnk_09EE7F90;
+extern TaskDesc gUnk_09EE7FA8;
+extern TaskDesc gUnk_09EE7FC0;
+extern TaskDesc gUnk_09EE7FD8;
+extern TaskDesc gUnk_09EE7FF0;
+extern CardMessageDef gUnk_09EE8008[];
+extern TaskDesc gUnk_09EE8E18;
+extern TaskDesc gUnk_09EE8E30;
+extern TaskDesc gUnk_09EE8E48;
+extern WorldSelAnim gUnk_09EE8E60[30];
+extern TaskDesc gTaskDescWorldSelBefore;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F7434C[5];
+extern void** gUnkEu_09F74360[5];
+extern u8* gUnkEu_09F74374[5];
+#endif
+#ifndef VERSION_EU
+extern TaskDesc gTaskDescDeckexchange;
+#endif
+extern CardDescriptionText* gUnk_09EE8F48[98];
+
 #endif /* GUARD_CARD_H */
