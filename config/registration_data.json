@@ -925,20 +925,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescWorldSelBefore",
-          "address": "0x09041EA4",
-          "size": 16,
-          "sha256": "f65b7c5fc92bb93efa190ae961102f33d12bfd2cac4c3bda7ec65c51fed71333",
-          "objects": [
-            {
-              "name": "gTaskNameWorldSelBefore",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4798,20 +4784,6 @@
           ]
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescWorldSelBefore",
-          "address": "0x090104E4",
-          "size": 16,
-          "sha256": "f65b7c5fc92bb93efa190ae961102f33d12bfd2cac4c3bda7ec65c51fed71333",
-          "objects": [
-            {
-              "name": "gTaskNameWorldSelBefore",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8639,20 +8611,6 @@
               "name": "gTaskNameEVBGEFFECT",
               "offset": 0,
               "size": 13
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescWorldSelBefore",
-          "address": "0x090D1DE4",
-          "size": 16,
-          "sha256": "f65b7c5fc92bb93efa190ae961102f33d12bfd2cac4c3bda7ec65c51fed71333",
-          "objects": [
-            {
-              "name": "gTaskNameWorldSelBefore",
-              "offset": 0,
-              "size": 16
             }
           ]
         },

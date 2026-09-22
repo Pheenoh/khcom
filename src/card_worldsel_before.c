@@ -129,3 +129,47 @@ void func_080A5830(void* a, s32 b, s32 c, s32 d) {
     args[2] = d;
     TaskCreate(a, &gTaskDescWorldSelBefore, args);
 }
+
+WorldSelAnim gUnk_09EE8E60[30] = {
+    { 0, 10, { 0, 0 } },
+    { 1, 6, { 0, 0 } },
+    { 2, 4, { 0, 0 } },
+    { 3, 4, { 0, 0 } },
+    { 4, 4, { 0, 0 } },
+    { 5, 4, { 0, 0 } },
+    { 6, 4, { 0, 0 } },
+    { 7, 4, { 0, 0 } },
+    { 8, 4, { 0, 0 } },
+    { 9, 4, { 0, 0 } },
+    { 10, 4, { 0, 0 } },
+    { 11, 4, { 0, 0 } },
+    { 12, 4, { 0, 0 } },
+    { 13, 4, { 0, 0 } },
+    { 14, 6, { 0, 0 } },
+    { 15, 10, { 0, 0 } },
+    { 14, 6, { 0, 0 } },
+    { 13, 4, { 0, 0 } },
+    { 12, 4, { 0, 0 } },
+    { 11, 4, { 0, 0 } },
+    { 10, 4, { 0, 0 } },
+    { 9, 4, { 0, 0 } },
+    { 8, 4, { 0, 0 } },
+    { 7, 4, { 0, 0 } },
+    { 6, 4, { 0, 0 } },
+    { 5, 4, { 0, 0 } },
+    { 4, 4, { 0, 0 } },
+    { 3, 4, { 0, 0 } },
+    { 2, 4, { 0, 0 } },
+    { 1, 6, { 0, 0 } },
+};
+
+const char gTaskNameWorldSelBefore[] = "WorldSel Before";
+
+TaskDesc gTaskDescWorldSelBefore = {
+    gTaskNameWorldSelBefore,
+    (void (*)(void*, void*))WorldSel_Before_0,
+    WorldSel_Before_1,
+    (void (*)(void*))WorldSel_Before_2,
+    (void (*)(void*))WorldSel_Before_3,
+    0xB8,
+};
