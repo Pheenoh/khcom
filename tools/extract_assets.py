@@ -12,6 +12,12 @@ import yaml
 import assetgen
 import baserom
 
+YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def load_yaml(text):
+    return yaml.load(text, Loader=YAML_LOADER)
+
 ROOT = baserom.ROOT
 ROM_BASE = 0x08000000
 ROM_LIMIT = 0x0A000000
@@ -249,7 +255,7 @@ def verify(root, version):
     if not manifest_path.exists():
         return [f"{manifest_path.relative_to(root)} is missing"]
     manifest = manifest_path.read_bytes()
-    entries = yaml.safe_load(manifest)["files"]
+    entries = load_yaml(manifest)["files"]
     problems = []
     for ref, (start, end) in sorted(ranges.items()):
         entry = entries.get(ref)

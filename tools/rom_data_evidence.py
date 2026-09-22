@@ -3,6 +3,12 @@ from pathlib import Path
 
 import yaml
 
+YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def load_yaml(text):
+    return yaml.load(text, Loader=YAML_LOADER)
+
 
 ROM_BASE = 0x08000000
 ROM_END = 0x0A000000
@@ -10,7 +16,7 @@ ROM_END = 0x0A000000
 
 def load_evidence(path):
     path = Path(path)
-    return yaml.safe_load(path.read_text()) if path.exists() else {'version': 1, 'tables': []}
+    return load_yaml(path.read_text()) if path.exists() else {'version': 1, 'tables': []}
 
 
 def number(value, label):

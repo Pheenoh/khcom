@@ -8,6 +8,12 @@ import yaml
 
 import baserom
 
+YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def load_yaml(text):
+    return yaml.load(text, Loader=YAML_LOADER)
+
 
 def movie_extent(data):
     def need(at, size):
@@ -57,7 +63,7 @@ def movie_extent(data):
 
 
 def load_movie_assets(path, version, rom):
-    value = yaml.safe_load(Path(path).read_text())
+    value = load_yaml(Path(path).read_text())
     if set(value) != {'version', 'provenance', 'regions'} or value['version'] != 1:
         raise ValueError('invalid movie asset manifest')
     if not isinstance(value['provenance'], str) or not value['provenance'].strip():

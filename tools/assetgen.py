@@ -8,6 +8,12 @@ from pathlib import Path
 
 import yaml
 
+YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def load_yaml(text):
+    return yaml.load(text, Loader=YAML_LOADER)
+
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_DIR = ROOT / "config" / "assets"
 GBAGFX = ROOT / "tools" / "gbagfx" / "gbagfx"
@@ -24,7 +30,7 @@ class Manifest:
     def __init__(self, path):
         self.path = Path(path)
         with self.path.open() as handle:
-            doc = yaml.safe_load(handle)
+            doc = load_yaml(handle)
         for key in ("group", "types", "objects", "entries"):
             if key not in doc:
                 raise ManifestError(f"{self.path}: missing {key}")

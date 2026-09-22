@@ -9,6 +9,12 @@ import yaml
 
 from rom_data_evidence import ROM_BASE, ROM_END, number
 
+YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def load_yaml(text):
+    return yaml.load(text, Loader=YAML_LOADER)
+
 
 VERSIONS = {'us': 'B8CE', 'jp': 'B8CJ', 'eu': 'B8CP'}
 ENCODINGS = {'utf16le': ('u16', 2), 'shift_jis': ('u8', 1),
@@ -169,7 +175,7 @@ def normalize_sidecar(document, roms=None):
 
 def load_sidecar(path, roms=None):
     path = Path(path)
-    document = yaml.safe_load(path.read_text()) if path.exists() else {'version': 1, 'regions': {}}
+    document = load_yaml(path.read_text()) if path.exists() else {'version': 1, 'regions': {}}
     return normalize_sidecar(document, roms)
 
 
@@ -177,7 +183,7 @@ def load_sidecars(directory, roms=None):
     combined = {'version': 1, 'provenance': {}, 'regions': {version: {
         'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
     for path in sorted(Path(directory).glob('*_data.yaml')):
-        document = yaml.safe_load(path.read_text())
+        document = load_yaml(path.read_text())
         normalize_sidecar(document, roms)
         for key, value in document.get('provenance', {}).items():
             combined['provenance'][path.name + ':' + key] = value
