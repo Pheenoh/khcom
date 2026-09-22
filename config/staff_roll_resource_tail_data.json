@@ -5,7 +5,8 @@
     "timer": "task_sroll_tmr_2 directly selects decimal digits0..9 and separator10 from gUnk_09EFBAE8[11]. The next word is a separate complete AnimHeader target.",
     "dormant": "Remaining native resource pairs have complete Sprite and AnimHeader formats. Graphics array bounds follow maximum actual frame indices. Twenty-three unused graphics suffix words remain separate scalar pointers; no extra runtime-reachable elements are claimed.",
     "assets": "Native binary Sprite/AnimHeader bindings retain exact format extents and ROM hashes. The PcSpriteDef view is canonical for the40 single-OAM records used directly by bos6; this is not metadata reclassification. No cross-region inferred asset correspondence is introduced.",
-    "native_staff_roll_tail_bc40": "The gUnk_*09EFBC40 staff-roll pointer/AnimHeader cluster is a contiguous 644-byte initialized-data run with matching source order under each VERSION_* block in staff_roll_resource_tail_data.c; ordinary .data replaces its forced section attributes. Earlier smaller staff-roll tail clusters stay sectioned."
+    "native_staff_roll_tail_bc40": "The gUnk_*09EFBC40 staff-roll pointer/AnimHeader cluster is a contiguous 644-byte initialized-data run with matching source order under each VERSION_* block in staff_roll_resource_tail_data.c; ordinary .data replaces its forced section attributes. Earlier smaller staff-roll tail clusters stay sectioned.",
+    "native_staff_roll_tail_AEE4_rodata": "Five pointer/AnimHeader words formerly .data_staff_roll_tail_09EFAEE4 (20B) are const in existing staff_roll_resource_tail_data.c; ordinary .rodata replaces the forced section (TU free .rodata slot)."
   },
   "regions": {
     "us": {
@@ -31,7 +32,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAEE4",
+          "section": ".rodata",
           "address": "0x9efaee4",
           "size": 20,
           "sha256": "d22c111b23f99c89cfc172c63ff77dae5098f0129d2567fb14900774bacc5e6d",
@@ -2201,7 +2202,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAEE4",
+          "section": ".rodata",
           "address": "0x9ed23f0",
           "size": 20,
           "sha256": "d5744394b65c1f06ade7632efcbd5eb5d05e884509d8402e2fd1e8c1ee183eab",
@@ -4371,7 +4372,7 @@
         },
         {
           "unit": "staff_roll_resource_tail_data.c",
-          "section": ".data_staff_roll_tail_09EFAEE4",
+          "section": ".rodata",
           "address": "0x9f86c30",
           "size": 20,
           "sha256": "a4a56338bbbc2643475a89cc0230f4a959c9722323e4f08dc7cbe96616ebf5da",
