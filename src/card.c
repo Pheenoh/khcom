@@ -1567,27 +1567,3 @@ TaskDesc gTaskDescLVUPEFFECT = {
     (void (*)(void*))LVUP_EFFECT_3,
     0xAC,
 };
-
-const char gTaskNameLvupLogo[] __attribute__((section(".rodata_registration_name_gTaskDescLvupLogo"), aligned(1))) = "Lvup_Logo";
-
-TaskDesc gTaskDescLvupLogo = {
-    gTaskNameLvupLogo,
-    (void (*)(void*, void*))Lvup_Logo_0,
-    Lvup_Logo_1,
-    (void (*)(void*))Lvup_Logo_2,
-    (void (*)(void*))Lvup_Logo_3,
-    0xAC,
-};
-
-const char gTaskNameEvMapObj[] __attribute__((section(".rodata_registration_name_gTaskDescEvMapObj"), aligned(1))) = "Ev_mapObj";
-
-TaskDesc gTaskDescEvMapObj = {
-    gTaskNameEvMapObj,
-    (void (*)(void*, void*))Ev_mapObj_0,
-    Ev_mapObj_1,
-    (void (*)(void*))Ev_mapObj_2,
-    (void (*)(void*))Ev_mapObj_3,
-    0x5C,
-};
-
-void* gUnk_09EE7998[7] = { gUnk_0951F2B8, gUnk_0951FAB8, gUnk_095202B8, gUnk_095212B8, gUnk_09520AB8, gUnk_09521AB8, gUnk_095222B8 };

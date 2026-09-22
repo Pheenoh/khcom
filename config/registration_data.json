@@ -881,36 +881,6 @@
           "padding_before": 3
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescLvupLogo",
-          "address": "0x09038024",
-          "size": 10,
-          "sha256": "78fc9c6680f339d6cbbd16c1e89e179f881deb22c7a59abdf3e78547b262e3dd",
-          "objects": [
-            {
-              "name": "gTaskNameLvupLogo",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEvMapObj",
-          "address": "0x09038030",
-          "size": 10,
-          "sha256": "d0a27140c91131643e230b1111e43dd9f7889894396ac97d893f9980ecb11a01",
-          "objects": [
-            {
-              "name": "gTaskNameEvMapObj",
-              "offset": 0,
-              "size": 10
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x09619498",
@@ -4726,36 +4696,6 @@
           "padding_before": 3
         },
         {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescLvupLogo",
-          "address": "0x0900B4B0",
-          "size": 10,
-          "sha256": "78fc9c6680f339d6cbbd16c1e89e179f881deb22c7a59abdf3e78547b262e3dd",
-          "objects": [
-            {
-              "name": "gTaskNameLvupLogo",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEvMapObj",
-          "address": "0x0900B4BC",
-          "size": 10,
-          "sha256": "d0a27140c91131643e230b1111e43dd9f7889894396ac97d893f9980ecb11a01",
-          "objects": [
-            {
-              "name": "gTaskNameEvMapObj",
-              "offset": 0,
-              "size": 10
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
-        },
-        {
           "unit": "mode_wlogo.c",
           "section": ".rodata",
           "address": "0x095D1F74",
@@ -8541,36 +8481,6 @@
           ],
           "alignment_before": 4,
           "padding_before": 3
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescLvupLogo",
-          "address": "0x090D13C4",
-          "size": 10,
-          "sha256": "78fc9c6680f339d6cbbd16c1e89e179f881deb22c7a59abdf3e78547b262e3dd",
-          "objects": [
-            {
-              "name": "gTaskNameLvupLogo",
-              "offset": 0,
-              "size": 10
-            }
-          ]
-        },
-        {
-          "unit": "card.c",
-          "section": ".rodata_registration_name_gTaskDescEvMapObj",
-          "address": "0x090D13D0",
-          "size": 10,
-          "sha256": "d0a27140c91131643e230b1111e43dd9f7889894396ac97d893f9980ecb11a01",
-          "objects": [
-            {
-              "name": "gTaskNameEvMapObj",
-              "offset": 0,
-              "size": 10
-            }
-          ],
-          "alignment_before": 4,
-          "padding_before": 2
         },
         {
           "unit": "mode_wlogo.c",
