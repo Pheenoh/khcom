@@ -14,7 +14,6 @@
 
 #include "bg_animation_data.h"
 
-#include "graphics_state.h"
 
 #include "obj.h"
 

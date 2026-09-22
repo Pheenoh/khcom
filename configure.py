@@ -57,7 +57,7 @@ IWRAM_AFTER_HEAP = [
     ("src/taskpool.o", ".bss"),
     ("src/malloc.o", ".bss"),
     ("src/sprite.o", ".bss"),
-    ("src/graphics_state.o", ".bss"),
+    ("src/engine.o", ".iwram.*"),
     ("src/pallet.o", ".bss"),
     ("src/engine.o", ".iwram_common.*"),
 ]

@@ -8,7 +8,6 @@
 
 #include "sio_api.h"
 
-#include "graphics_state.h"
 
 #include "hum_types.h"
 

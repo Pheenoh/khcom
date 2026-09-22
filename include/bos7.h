@@ -10,7 +10,6 @@
 
 #include "animation_resource_data.h"
 
-#include "graphics_state.h"
 
 #include "evt_object_types.h"
 

@@ -8,7 +8,6 @@
 
 #include "animation_resource_data.h"
 
-#include "graphics_state.h"
 
 #include "jiminy_list.h"
 #include "map_api.h"

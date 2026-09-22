@@ -1,6 +1,5 @@
 #include "continue_ui.h"
 #include "system_state.h"
-#include "graphics_state.h"
 #include "animation_resource_data.h"
 #include "bg_animation_data.h"
 #include "card_animation_data.h"

@@ -2,7 +2,6 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
-#include "graphics_state.h"
 
 #include "card_api.h"
 

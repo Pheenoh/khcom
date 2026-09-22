@@ -12,7 +12,6 @@
 
 
 
-#include "graphics_state.h"
 
 #include "battle_bg_types.h"
 

@@ -1,4 +1,3 @@
-#include "graphics_state.h"
 #include "obj_api.h"
 #include "display.h"
 #include "gba/syscall.h"

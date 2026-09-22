@@ -1,7 +1,6 @@
 #ifndef GUARD_ENGINE_H
 #define GUARD_ENGINE_H
 
-#include "graphics_state.h"
 
 #include "fade.h"
 #include "obj_api.h"

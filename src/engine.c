@@ -1,4 +1,3 @@
-#include "graphics_state.h"
 #include "macros.h"
 #include "engine_math.h"
 #include "fade.h"
@@ -13,6 +12,47 @@
 #include "engine.h"
 #include "sprite.h"
 #include "types.h"
+
+u16 gUnk_030074CC IWRAM_DATA(4);
+u8 gBgPaletteBank[4] IWRAM_DATA(4);
+struct BgEntry* gBgEntries IWRAM_DATA(4);
+u16 gBackdropColor IWRAM_DATA(4);
+u16 gBg2Cnt IWRAM_DATA(4);
+u16 gBg3PB IWRAM_DATA(4);
+u16 gBg3VOfs IWRAM_DATA(4);
+u16 gBg3PA IWRAM_DATA(4);
+u16 gWin1V IWRAM_DATA(4);
+u16 gWin1H IWRAM_DATA(4);
+u32 gBg2Y IWRAM_DATA(4);
+u16 gBg2PB IWRAM_DATA(4);
+u16 gBg0VOfs IWRAM_DATA(4);
+u16 gDispCnt IWRAM_DATA(4);
+u16 gBg3PC IWRAM_DATA(4);
+u16 gBg1Cnt IWRAM_DATA(4);
+u16 gBg0Cnt IWRAM_DATA(4);
+u16 gBg2PA IWRAM_DATA(4);
+u16 gBg2PC IWRAM_DATA(4);
+u16 gWin0V IWRAM_DATA(4);
+u16 gBldY IWRAM_DATA(4);
+u16 gBg2HOfs IWRAM_DATA(4);
+u32 gBg3X IWRAM_DATA(4);
+vu16 gMosaic IWRAM_DATA(4);
+u32 gBg2X IWRAM_DATA(4);
+u16 gWin0H IWRAM_DATA(4);
+u16 gBg2VOfs IWRAM_DATA(4);
+u16 gBg1HOfs IWRAM_DATA(4);
+u16 gBg3Cnt IWRAM_DATA(4);
+u16 gBg3PD IWRAM_DATA(4);
+u16 gBg0HOfs IWRAM_DATA(4);
+u16 gWinOut IWRAM_DATA(4);
+u16 gBg2PD IWRAM_DATA(4);
+u16 gWinIn IWRAM_DATA(4);
+u16 gBldCnt IWRAM_DATA(4);
+u16 gBg1VOfs IWRAM_DATA(4);
+u16 gBg3HOfs IWRAM_DATA(4);
+u32 gBg3Y IWRAM_DATA(4);
+u16 gBldAlpha IWRAM_DATA(4);
+struct FadeWork* gFadeWork IWRAM_DATA(4);
 
 const s16 gSineTable[320] = {
         0,     6,    12,    18,    25,    31,    37,    43,    49,    56,    62,    68,

@@ -3,7 +3,6 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
-#include "graphics_state.h"
 
 #include "card_api.h"
 

@@ -4,8 +4,8 @@
 #define GUARD_BTL4_H
 
 #include "animation_resource_data.h"
+#include "display.h"
 
-#include "graphics_state.h"
 
 #include "card_api.h"
 

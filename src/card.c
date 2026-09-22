@@ -5,7 +5,6 @@
 #include "msg_localized_data.h"
 #include "registration_data.h"
 #include "system_state.h"
-#include "graphics_state.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode_sio_api.h"

@@ -128,7 +128,6 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libc.a:strcmp.o
 m4a_1.s
 m4a2.c -O2 -fno-common
-graphics_state.c -O2 -fprologue-bugfix -fno-common
 m4a_catalog_data.c
 transform_veneers.s(.text)
 malloc.c(.rodata)

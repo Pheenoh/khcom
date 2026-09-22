@@ -9,7 +9,6 @@
 
 #include "animation_resource_data.h"
 
-#include "graphics_state.h"
 
 #include "obj.h"
 

@@ -64,7 +64,6 @@ event_message.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card_battle.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
-graphics_state.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c
 mode_wlogo.c
 wlogo.c -O2 -fprologue-bugfix
