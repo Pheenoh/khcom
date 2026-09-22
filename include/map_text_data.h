@@ -15,31 +15,34 @@ extern MapNameText* gUnk_09EF7048[28];
 
 
 #ifdef VERSION_EU
-extern LocalizedText gMapNameEu_08893480;
-extern LocalizedText gMapNameEu_0889352C;
-extern LocalizedText gMapNameEu_088935D8;
-extern LocalizedText gMapNameEu_08893684;
-extern LocalizedText gMapNameEu_08893730;
-extern LocalizedText gMapNameEu_088937DC;
-extern LocalizedText gMapNameEu_0889388C;
-extern LocalizedText gMapNameEu_08893938;
-extern LocalizedText gMapNameEu_088939E4;
-extern LocalizedText gMapNameEu_08893A94;
-extern LocalizedText gMapNameEu_08893B48;
-extern LocalizedText gMapNameEu_08893BFC;
-extern LocalizedText gMapNameEu_08893CB8;
-extern LocalizedText gMapNameEu_08893D78;
-extern LocalizedText gMapNameEu_08893E38;
-extern LocalizedText gMapNameEu_08893EF4;
-extern LocalizedText gMapNameEu_08893FAC;
-extern LocalizedText gMapNameEu_08894068;
-extern LocalizedText gMapNameEu_08894124;
-extern LocalizedText gMapNameEu_088941DC;
-extern LocalizedText gMapNameEu_08894294;
-extern LocalizedText gMapNameEu_0889434C;
-extern LocalizedText gMapNameEu_08894408;
-extern LocalizedText gMapNameEu_088944C0;
-extern LocalizedText gMapNameEu_08894578;
+
+extern const LocalizedText gMapNameEu_08893370;
+extern const LocalizedText gMapNameEu_088933D4;
+extern const LocalizedText gMapNameEu_08893480;
+extern const LocalizedText gMapNameEu_0889352C;
+extern const LocalizedText gMapNameEu_088935D8;
+extern const LocalizedText gMapNameEu_08893684;
+extern const LocalizedText gMapNameEu_08893730;
+extern const LocalizedText gMapNameEu_088937DC;
+extern const LocalizedText gMapNameEu_0889388C;
+extern const LocalizedText gMapNameEu_08893938;
+extern const LocalizedText gMapNameEu_088939E4;
+extern const LocalizedText gMapNameEu_08893A94;
+extern const LocalizedText gMapNameEu_08893B48;
+extern const LocalizedText gMapNameEu_08893BFC;
+extern const LocalizedText gMapNameEu_08893CB8;
+extern const LocalizedText gMapNameEu_08893D78;
+extern const LocalizedText gMapNameEu_08893E38;
+extern const LocalizedText gMapNameEu_08893EF4;
+extern const LocalizedText gMapNameEu_08893FAC;
+extern const LocalizedText gMapNameEu_08894068;
+extern const LocalizedText gMapNameEu_08894124;
+extern const LocalizedText gMapNameEu_088941DC;
+extern const LocalizedText gMapNameEu_08894294;
+extern const LocalizedText gMapNameEu_0889434C;
+extern const LocalizedText gMapNameEu_08894408;
+extern const LocalizedText gMapNameEu_088944C0;
+extern const LocalizedText gMapNameEu_08894578;
 #endif
 
 #endif
