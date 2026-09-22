@@ -3827,20 +3827,6 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPc",
-          "address": "0x09A4CA88",
-          "size": 12,
-          "sha256": "add0433d5698ff7da7b042b751af2cb441267862042fe6930720984c2b597d42",
-          "objects": [
-            {
-              "name": "gTaskNameBosPc",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
           "section": ".data",
           "address": "0x9ef9c34",
           "size": 568,
@@ -3885,62 +3871,6 @@
               "name": "gTaskDescBosLst",
               "offset": 544,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFld",
-          "address": "0x09A4CACC",
-          "size": 16,
-          "sha256": "07c834515db2bf39748134a3d1d37a30e6dda609c55983df9946a395620b99ca",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFld",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata",
-          "address": "0x09A4CF3C",
-          "size": 16,
-          "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFlt",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcAcd",
-          "address": "0x09A4CF4C",
-          "size": 16,
-          "sha256": "9ee35b13fdbc1e52d438077d0fe35e12042505bee0d919a28e0e6ea4fd84c1e9",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcAcd",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosLst",
-          "address": "0x09A4D224",
-          "size": 13,
-          "sha256": "d8bee3a10ed3ce4e5229a6fb04436b8395802a5960297daa5587d98a0546b41b",
-          "objects": [
-            {
-              "name": "gTaskNameBosLst",
-              "offset": 0,
-              "size": 13
             }
           ]
         },
@@ -8497,20 +8427,6 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPc",
-          "address": "0x09A01510",
-          "size": 12,
-          "sha256": "add0433d5698ff7da7b042b751af2cb441267862042fe6930720984c2b597d42",
-          "objects": [
-            {
-              "name": "gTaskNameBosPc",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
           "section": ".data",
           "address": "0x9ed1020",
           "size": 568,
@@ -8555,62 +8471,6 @@
               "name": "gTaskDescBosLst",
               "offset": 544,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFld",
-          "address": "0x09A01554",
-          "size": 16,
-          "sha256": "07c834515db2bf39748134a3d1d37a30e6dda609c55983df9946a395620b99ca",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFld",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata",
-          "address": "0x09A019C4",
-          "size": 16,
-          "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFlt",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcAcd",
-          "address": "0x09A019D4",
-          "size": 16,
-          "sha256": "9ee35b13fdbc1e52d438077d0fe35e12042505bee0d919a28e0e6ea4fd84c1e9",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcAcd",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosLst",
-          "address": "0x09A01CAC",
-          "size": 13,
-          "sha256": "d8bee3a10ed3ce4e5229a6fb04436b8395802a5960297daa5587d98a0546b41b",
-          "objects": [
-            {
-              "name": "gTaskNameBosLst",
-              "offset": 0,
-              "size": 13
             }
           ]
         },
@@ -13252,20 +13112,6 @@
         },
         {
           "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPc",
-          "address": "0x09AAA54C",
-          "size": 12,
-          "sha256": "add0433d5698ff7da7b042b751af2cb441267862042fe6930720984c2b597d42",
-          "objects": [
-            {
-              "name": "gTaskNameBosPc",
-              "offset": 0,
-              "size": 12
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
           "section": ".data",
           "address": "0x9f858a0",
           "size": 568,
@@ -13310,62 +13156,6 @@
               "name": "gTaskDescBosLst",
               "offset": 544,
               "size": 24
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcFld",
-          "address": "0x09AAA590",
-          "size": 16,
-          "sha256": "07c834515db2bf39748134a3d1d37a30e6dda609c55983df9946a395620b99ca",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFld",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata",
-          "address": "0x09AAAA00",
-          "size": 16,
-          "sha256": "af852da6457e7ba70a8ca97de960454aecacc37752a9978bb1c8c02a55808c36",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcFlt",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosPcAcd",
-          "address": "0x09AAAA10",
-          "size": 16,
-          "sha256": "9ee35b13fdbc1e52d438077d0fe35e12042505bee0d919a28e0e6ea4fd84c1e9",
-          "objects": [
-            {
-              "name": "gTaskNameBosPcAcd",
-              "offset": 0,
-              "size": 16
-            }
-          ]
-        },
-        {
-          "unit": "bos6.c",
-          "section": ".rodata_registration_name_gTaskDescBosLst",
-          "address": "0x09AAACE8",
-          "size": 13,
-          "sha256": "d8bee3a10ed3ce4e5229a6fb04436b8395802a5960297daa5587d98a0546b41b",
-          "objects": [
-            {
-              "name": "gTaskNameBosLst",
-              "offset": 0,
-              "size": 13
             }
           ]
         },

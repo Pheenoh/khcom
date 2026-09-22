@@ -5,7 +5,179 @@
 
 #include "staff_roll_resource_tail_data.h"
 
-#include "boss_pc_data.h"
+#include "battle_actor_types.h"
+
+typedef struct PcAnimStep {
+    u16 unk_00;
+    u8 unk_02[0x2];
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u8 unk_0A[0x2];
+    u16 unk_0C;
+    s16 unk_0E;
+    s16 unk_10;
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16;
+    s16 unk_18;
+    u8 unk_1A[0x2];
+    u16 unk_1C;
+    s16 unk_1E;
+    s16 unk_20;
+    s16 unk_22;
+} PcAnimStep;
+
+extern const PcAnimStep gUnk_09A4AF34[];
+extern const PcAnimStep gUnk_09A4B174[];
+extern const PcAnimStep gUnk_09A4B3B4[];
+extern const PcAnimStep gUnk_09A4B5F4[];
+extern const PcAnimStep gUnk_09A4B834[];
+extern const PcAnimStep gUnk_09A4BBDC[];
+extern const PcAnimStep gUnk_09A4BD20[];
+extern const PcAnimStep gUnk_09A4BEAC[];
+extern const PcAnimStep gUnk_09A4C278[];
+extern const PcAnimStep gUnk_09A4C470[];
+extern const PcAnimStep gUnk_09A4C5B4[];
+extern const PcAnimStep gUnk_09A4C6F8[];
+extern const PcAnimStep gUnk_09A4C818[];
+extern const PcAnimStep gUnk_09A4C860[];
+
+typedef struct PcSpriteCmd {
+    u8 unk_00;
+    u8 unk_01;
+    s16 unk_02;
+    s16 x;
+    s16 y;
+    s16 unk_08;
+    u16 unk_0A;
+} PcSpriteCmd;
+
+extern const PcSpriteCmd gUnk_09A3DF34[];
+extern const PcSpriteCmd gUnk_09A3E198[];
+extern const PcSpriteCmd gUnk_09A3E3FC[];
+extern const PcSpriteCmd gUnk_09A3E660[];
+extern const PcSpriteCmd gUnk_09A3E8C4[];
+extern const PcSpriteCmd gUnk_09A3EB04[];
+extern const PcSpriteCmd gUnk_09A3ED44[];
+extern const PcSpriteCmd gUnk_09A3EF84[];
+extern const PcSpriteCmd gUnk_09A3F1C4[];
+extern const PcSpriteCmd gUnk_09A3F3E0[];
+extern const PcSpriteCmd gUnk_09A3F5D8[];
+extern const PcSpriteCmd gUnk_09A3F7F4[];
+extern const PcSpriteCmd gUnk_09A3F9EC[];
+extern const PcSpriteCmd gUnk_09A3FC2C[];
+extern const PcSpriteCmd gUnk_09A3FE90[];
+extern const PcSpriteCmd gUnk_09A400F4[];
+extern const PcSpriteCmd gUnk_09A40358[];
+extern const PcSpriteCmd gUnk_09A405BC[];
+extern const PcSpriteCmd gUnk_09A40820[];
+extern const PcSpriteCmd gUnk_09A409F4[];
+extern const PcSpriteCmd gUnk_09A40B80[];
+extern const PcSpriteCmd gUnk_09A40D0C[];
+extern const PcSpriteCmd gUnk_09A40E98[];
+extern const PcSpriteCmd gUnk_09A410FC[];
+extern const PcSpriteCmd gUnk_09A41360[];
+extern const PcSpriteCmd gUnk_09A415A0[];
+extern const PcSpriteCmd gUnk_09A417BC[];
+extern const PcSpriteCmd gUnk_09A419D8[];
+extern const PcSpriteCmd gUnk_09A41BD0[];
+extern const PcSpriteCmd gUnk_09A41DA4[];
+extern const PcSpriteCmd gUnk_09A41F78[];
+extern const PcSpriteCmd gUnk_09A4214C[];
+extern const PcSpriteCmd gUnk_09A42344[];
+extern const PcSpriteCmd gUnk_09A4253C[];
+extern const PcSpriteCmd gUnk_09A42734[];
+extern const PcSpriteCmd gUnk_09A42974[];
+extern const PcSpriteCmd gUnk_09A42BD8[];
+extern const PcSpriteCmd gUnk_09A42E3C[];
+extern const PcSpriteCmd gUnk_09A430A0[];
+extern const PcSpriteCmd gUnk_09A432BC[];
+extern const PcSpriteCmd gUnk_09A434B4[];
+extern const PcSpriteCmd gUnk_09A43718[];
+extern const PcSpriteCmd gUnk_09A4397C[];
+extern const PcSpriteCmd gUnk_09A43BE0[];
+extern const PcSpriteCmd gUnk_09A43D48[];
+extern const PcSpriteCmd gUnk_09A43FAC[];
+extern const PcSpriteCmd gUnk_09A44210[];
+extern const PcSpriteCmd gUnk_09A44474[];
+extern const PcSpriteCmd gUnk_09A446D8[];
+extern const PcSpriteCmd gUnk_09A4493C[];
+extern const PcSpriteCmd gUnk_09A44BA0[];
+extern const PcSpriteCmd gUnk_09A44E04[];
+extern const PcSpriteCmd gUnk_09A45044[];
+extern const PcSpriteCmd gUnk_09A451F4[];
+extern const PcSpriteCmd gUnk_09A453C8[];
+extern const PcSpriteCmd gUnk_09A455C0[];
+extern const PcSpriteCmd gUnk_09A457DC[];
+extern const PcSpriteCmd gUnk_09A459B0[];
+extern const PcSpriteCmd gUnk_09A45B84[];
+extern const PcSpriteCmd gUnk_09A45D34[];
+extern const PcSpriteCmd gUnk_09A45F50[];
+extern const PcSpriteCmd gUnk_09A46124[];
+extern const PcSpriteCmd gUnk_09A462F8[];
+extern const PcSpriteCmd gUnk_09A4655C[];
+extern const PcSpriteCmd gUnk_09A467C0[];
+extern const PcSpriteCmd gUnk_09A46994[];
+extern const PcSpriteCmd gUnk_09A46B8C[];
+extern const PcSpriteCmd gUnk_09A46DA8[];
+extern const PcSpriteCmd gUnk_09A46FC4[];
+extern const PcSpriteCmd gUnk_09A47204[];
+extern const PcSpriteCmd gUnk_09A47444[];
+extern const PcSpriteCmd gUnk_09A47684[];
+extern const PcSpriteCmd gUnk_09A478C4[];
+extern const PcSpriteCmd gUnk_09A47AE0[];
+extern const PcSpriteCmd gUnk_09A47D20[];
+extern const PcSpriteCmd gUnk_09A47F84[];
+extern const PcSpriteCmd gUnk_09A480EC[];
+extern const PcSpriteCmd gUnk_09A48308[];
+extern const PcSpriteCmd gUnk_09A48500[];
+extern const PcSpriteCmd gUnk_09A48764[];
+extern const PcSpriteCmd gUnk_09A489C8[];
+extern const PcSpriteCmd gUnk_09A48C2C[];
+extern const PcSpriteCmd gUnk_09A48E90[];
+extern const PcSpriteCmd gUnk_09A48FF8[];
+extern const PcSpriteCmd gUnk_09A49214[];
+extern const PcSpriteCmd gUnk_09A4940C[];
+extern const PcSpriteCmd gUnk_09A49670[];
+extern const PcSpriteCmd gUnk_09A498D4[];
+extern const PcSpriteCmd gUnk_09A49B38[];
+extern const PcSpriteCmd gUnk_09A49D9C[];
+extern const PcSpriteCmd gUnk_09A4A000[];
+extern const PcSpriteCmd gUnk_09A4A264[];
+extern const PcSpriteCmd gUnk_09A4A4C8[];
+extern const PcSpriteCmd gUnk_09A4A708[];
+extern const PcSpriteCmd gUnk_09A4A924[];
+extern const PcSpriteCmd gUnk_09A4AAD4[];
+
+typedef struct PcGfxSet {
+    void* tiles;
+    u16 tilesSize;
+    u8 unk_06[0x02];
+    void* map;
+    u16 mapSize;
+    u8 unk_0E[0x02];
+} PcGfxSet;
+
+extern const PcGfxSet gUnk_09A4AC84[];
+
+typedef struct PcShot {
+    s32 unk_00;
+    s32 unk_04;
+    u16 unk_08;
+    u8 unk_0A[0x2];
+    s32 unk_0C;
+} PcShot;
+
+extern const u16 gUnk_09A4C9EC[];
+extern const s16 gUnk_09A4C9F2[];
+extern const PcShot gUnk_09A4C9F8[];
+
+extern const s8 gUnk_09A4CA94[];
+extern const s8 gUnk_09A4CAB5[];
+
+extern const u16 gUnk_09A4CABE[];
+extern const s16 gUnk_09A4CAC4[];
 
 #include "animation_resource_data.h"
 
@@ -378,7 +550,7 @@ typedef struct UnkStruct_09A4CEDC {
     u16 unk_06;
 } UnkStruct_09A4CEDC;
 
-extern const UnkStruct_09A4CEDC gUnk_09A4CEDC[];
+extern const UnkStruct_09A4CEDC gUnk_09A4CEDC[12];
 
 
 extern u8 gUnk_09CC4E54[];
@@ -400,7 +572,7 @@ s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e);
 u8 func_0810AE74(PcWork* work, s32 arg);
 u8 func_0810D304(BosLstWork* work, s32 idx);
 
-extern s32 gUnk_09A4D154[];
+extern const s32 gUnk_09A4D154[16];
 
 u8 func_0810AED4(PcWork* work, s32 arg);
 void func_0810C754(BosLstWork* work);
@@ -413,7 +585,7 @@ u8 func_0810D3E0(BosLstWork* work, s32 idx, s16 a);
 u8 task_bos_pc_flt_1(PcFltWork* work);
 void func_0810BAE4(PcFltWork* work);
 
-extern u8 gUnk_09A4D14C[];
+extern const u8 gUnk_09A4D14C[8];
 extern u8 gUnk_09C4B012[];
 extern u8 gUnk_09C51CBC[];
 
@@ -441,8 +613,8 @@ extern u8 gUnk_09D34A74[];
 extern u8 gUnk_09CB84B4[];
 extern u8 gUnk_09C448D2[];
 extern u8 gUnk_08F69BC4[];
-extern u8 gUnk_09A4CF6C[];
-extern u8 gUnk_09A4CF5C[];
+extern const BattleBackgroundDef gUnk_09A4CF6C;
+extern const EmyKind gUnk_09A4CF5C;
 extern u8 gUnk_09C53724[];
 extern u8 gUnk_09C58590[];
 extern u8 gUnk_09D69594[];
@@ -475,7 +647,7 @@ typedef struct LstAnimDef {
     u8 unk_2A[0x2];
 } LstAnimDef;
 
-extern void* gUnk_09A4D194[][2];
+extern void* const gUnk_09A4D194[18][2];
 extern u8 gUnk_09D69454[];
 
 void task_bos_lst_2(BosLstWork* work);
@@ -485,8 +657,8 @@ u8 func_0810EBA0(BosLstWork* work);
 extern EventState* gUnk_02039DC8;
 void task_bos_pc_acd_2(PcAcdWork* work);
 
-extern u16 gUnk_09A4D0EC[];
-extern LstAnimDef gUnk_09A4CF8C[];
+extern const u16 gUnk_09A4D0EC[48];
+extern const LstAnimDef gUnk_09A4CF8C[8];
 PcSpriteCmd* func_08109ECC(PcWork* work);
 
 void func_0810A850(PcWork* work);
@@ -552,8 +724,40 @@ typedef struct LstSpawn {
 
 u8 func_0810ACB8(PcWork* work, s32 arg);
 
-extern const s16 gUnk_09A4CCDC[];
-extern const s16 gUnk_09A4CADC[];
+extern const s16 gUnk_09A4CCDC[256];
+extern const s16 gUnk_09A4CADC[256];
+extern u8 gUnk_09CC5054[];
+extern u8 gUnk_09CCD054[];
+extern u8 gUnk_09CCD694[];
+extern u8 gUnk_09CCDC14[];
+extern u8 gUnk_09CCE1D4[];
+extern u8 gUnk_09CCE7F4[];
+extern u8 gUnk_09CCEDB4[];
+extern u8 gUnk_09CCF374[];
+extern u8 gUnk_09CCFA54[];
+extern u8 gUnk_09D4E274[];
+extern u8 gUnk_09D4EA74[];
+extern u8 gUnk_09D4F274[];
+extern u8 gUnk_09D4FA74[];
+extern u8 gUnk_09D50274[];
+extern u8 gUnk_09D50A74[];
+extern u8 gUnk_09D51274[];
+extern u8 gUnk_09D51A74[];
+extern u8 gUnk_09D52274[];
+extern u8 gUnk_09D52A74[];
+extern u8 gUnk_09D53274[];
+extern u8 gUnk_09D53A74[];
+extern u8 gUnk_09D54274[];
+extern u8 gUnk_09D54A74[];
+extern u8 gUnk_09D55274[];
+extern u8 gUnk_09D55A74[];
+extern u8 gUnk_09D56274[];
+extern u8 gUnk_09D56A74[];
+extern u8 gUnk_09D57274[];
+extern u8 gUnk_09D57A74[];
+extern u8 gUnk_09D58274[];
+extern u8 gUnk_09D58A74[];
+extern u8 gUnk_09D59274[];
 
 typedef struct LstSpawn2 {
     void* unk_00;

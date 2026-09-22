@@ -6,73 +6,13 @@
   },
   "regions": {
     "us": {
-      "placements": [
-        {
-          "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".rodata",
-          "address": "0x9a4cabe",
-          "size": 12,
-          "objects": [
-            {
-              "name": "gUnk_09A4CABE",
-              "offset": 0,
-              "size": 6
-            },
-            {
-              "name": "gUnk_09A4CAC4",
-              "offset": 6,
-              "size": 6
-            }
-          ],
-          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
-        }
-      ]
+      "placements": []
     },
     "jp": {
-      "placements": [
-        {
-          "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".rodata",
-          "address": "0x9a01546",
-          "size": 12,
-          "objects": [
-            {
-              "name": "gUnk_09A4CABE",
-              "offset": 0,
-              "size": 6
-            },
-            {
-              "name": "gUnk_09A4CAC4",
-              "offset": 6,
-              "size": 6
-            }
-          ],
-          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
-        }
-      ]
+      "placements": []
     },
     "eu": {
-      "placements": [
-        {
-          "unit": "boss_pc_secondary_palette_cycle_data.c",
-          "section": ".rodata",
-          "address": "0x9aaa582",
-          "size": 12,
-          "objects": [
-            {
-              "name": "gUnk_09A4CABE",
-              "offset": 0,
-              "size": 6
-            },
-            {
-              "name": "gUnk_09A4CAC4",
-              "offset": 6,
-              "size": 6
-            }
-          ],
-          "sha256": "f122d8d736f469d966cfa2aa520de2d9cf829534aa9320ed6476528025b85a90"
-        }
-      ]
+      "placements": []
     }
   }
 }

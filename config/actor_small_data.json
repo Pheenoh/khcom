@@ -13,25 +13,6 @@
     "us": {
       "placements": [
         {
-          "unit": "boss_pc_shake_data.c",
-          "section": ".rodata",
-          "address": "0x9a4ca94",
-          "size": 42,
-          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
-          "objects": [
-            {
-              "name": "gUnk_09A4CA94",
-              "offset": 0,
-              "size": 33
-            },
-            {
-              "name": "gUnk_09A4CAB5",
-              "offset": 33,
-              "size": 9
-            }
-          ]
-        },
-        {
           "unit": "boss_lst_data.c",
           "section": ".rodata",
           "address": "0x9a4fbf4",
@@ -60,25 +41,6 @@
     "jp": {
       "placements": [
         {
-          "unit": "boss_pc_shake_data.c",
-          "section": ".rodata",
-          "address": "0x9a0151c",
-          "size": 42,
-          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
-          "objects": [
-            {
-              "name": "gUnk_09A4CA94",
-              "offset": 0,
-              "size": 33
-            },
-            {
-              "name": "gUnk_09A4CAB5",
-              "offset": 33,
-              "size": 9
-            }
-          ]
-        },
-        {
           "unit": "boss_lst_data.c",
           "section": ".rodata",
           "address": "0x9a0467c",
@@ -106,25 +68,6 @@
     },
     "eu": {
       "placements": [
-        {
-          "unit": "boss_pc_shake_data.c",
-          "section": ".rodata",
-          "address": "0x9aaa558",
-          "size": 42,
-          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
-          "objects": [
-            {
-              "name": "gUnk_09A4CA94",
-              "offset": 0,
-              "size": 33
-            },
-            {
-              "name": "gUnk_09A4CAB5",
-              "offset": 33,
-              "size": 9
-            }
-          ]
-        },
         {
           "unit": "boss_lst_data.c",
           "section": ".rodata",
