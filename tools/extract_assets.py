@@ -73,8 +73,6 @@ def unit_roots(root, version):
         if not line or line.startswith("#"):
             continue
         name = line.split(None, 1)[0]
-        if name.endswith(")") and "(" in name:
-            name = name.partition("(")[0]
         if name.startswith("@"):
             continue
         if name.endswith(".c"):

@@ -74,6 +74,24 @@ def asset(ver, lo, hi):
     return f"assets/{ver}/{lo:08X}-{hi:08X}.bin"
 
 
+def link_order(entries):
+    order, position, anchor = [], {}, None
+    for name, section in entries:
+        if section == ".text":
+            if name not in position:
+                position[name] = len(order)
+                order.append(name)
+            continue
+        if name in position:
+            anchor = name
+            continue
+        index = len(order) if anchor is None else position[anchor] + 1
+        order.insert(index, name)
+        position = {o: i for i, o in enumerate(order)}
+        anchor = name
+    return order
+
+
 def blob_source(ver, lo, hi, data):
     head = f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
     names = veneer_labels(data)
@@ -4057,7 +4075,19 @@ def main():
     for nm, a, b in blob(pos, ROM_BASE + pad):
         bounds.append((nm, a, b))
         tail.append(f"{nm}(.rodata)")
-    units = head + ordered + tail
+    entries, line_of = [], {}
+    for line in head + ordered + tail:
+        t = line.strip()
+        if not t or t.startswith("#"):
+            continue
+        nm, section = t.split()[0], ".text"
+        if nm.endswith(")"):
+            nm, _, spec = nm.partition("(")
+            section = spec[:-1]
+        else:
+            line_of[nm] = t
+        entries.append((nm, section))
+    units = [line_of.get(nm, nm) for nm in link_order(entries)]
 
     for nm, lo, hi in bounds:
         Path(f"asm/{ver}/{nm}").write_text(

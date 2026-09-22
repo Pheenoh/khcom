@@ -442,24 +442,14 @@ def main():
             name, address = line.split('=')
             ledger.append((name.strip(), int(address.strip(), 16)))
     asset_symbols(plan, ledger)
-    units = set()
     listed = set()
-    active = []
     for line in (root / 'config' / version / 'units.txt').read_text().splitlines():
         line = line.split('#', 1)[0].strip()
-        if not line:
-            continue
-        match = re.fullmatch(r'([^()\s]+)(?:\(([^()]+)\))?(?:\s+.*)?', line)
-        if not match:
-            continue
-        listed.add(match[1])
-        if match[1].endswith('.c'):
-            units.add(match[1])
-            if match[2]:
-                active.append((match[1], match[2]))
-    if not active:
-        active = [key for key in placement_overrides(plan) if key[0] in units]
-    validate_active_sections(plan, active, managed_placements(document))
+        if line:
+            listed.add(line.split()[0])
+    units = {unit for unit in listed if unit.endswith('.c')}
+    validate_active_sections(plan, [key for key in placement_overrides(plan) if key[0] in units],
+                             managed_placements(document))
     build = root / 'build' / version
     objects = {unit: read_layout(build / 'src' / (Path(unit).stem + '.o'), args.binutils_prefix) for unit in sorted(units)}
     for unit in {asset['unit'] for asset in plan['assets'] if 'unit' in asset}:

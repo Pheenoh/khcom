@@ -8,10 +8,10 @@ def materialize_assets(plan, units, version, build_dir):
         if 'unit' in asset:
             groups.setdefault(asset['unit'], []).append(asset)
     result, emitted = [], set()
-    for source, obj, flags, section in units:
+    for source, obj, flags in units:
         name = Path(obj).stem + '.s'
         if name not in groups:
-            result.append((source, obj, flags, section))
+            result.append((source, obj, flags))
             continue
         original = Path('asm') / version / name
         if not original.exists():
@@ -45,7 +45,7 @@ def materialize_assets(plan, units, version, build_dir):
         output = text[:match.start()] + '\n'.join(body) + text[match.end():]
         if not target.exists() or target.read_text() != output:
             target.write_text(output)
-        result.append((target, obj, flags, section))
+        result.append((target, obj, flags))
         emitted.add(name)
     if emitted != set(groups):
         raise ValueError('asset definition owners are inactive: ' + ', '.join(sorted(set(groups) - emitted)))

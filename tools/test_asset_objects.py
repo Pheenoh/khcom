@@ -71,7 +71,7 @@ class AssetObjectsTest(unittest.TestCase):
                 source.parent.mkdir(parents=True)
                 source.write_text('.section .rodata\n.global host\nhost:\n'
                                   '.incbin "assets/eu/08000000-08000060.bin"\n')
-                units = [(source, 'build/eu/asm/graphics.o', None, '.rodata')]
+                units = [(source, 'build/eu/asm/graphics.o', None)]
                 result = materialize_assets(self.plan(), units, 'eu', 'build/eu')
                 text = result[0][0].read_text()
                 self.assertIn('.type tiles, %object\ntiles:', text)

@@ -175,7 +175,7 @@ regional_sections = {(placement["unit"], placement["section"]): placement
 units_file = Path(f"config/{version}/units.txt")
 units = []
 archives = []
-sectioned = False
+linked = set()
 for line in units_file.read_text().splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
@@ -183,17 +183,12 @@ for line in units_file.read_text().splitlines():
     parts = line.split(None, 1)
     name = parts[0]
     flags = parts[1] if len(parts) > 1 else None
-    section = ".text"
-    if name.endswith(")") and "(" in name:
-        name, _, spec = name.partition("(")
-        section = spec[:-1]
-        sectioned = True
     if name.startswith("@"):
         arch, member = name[1:].split(":")
         path = f"tools/legacy/lib/{arch}"
         obj = f"{build_dir}/lib/{arch}/{member}"
         archives.append((path, member, obj))
-        units.append((None, obj, None, section))
+        units.append((None, obj, None))
         continue
     if name.endswith(".c"):
         src = Path("src") / name
@@ -205,7 +200,10 @@ for line in units_file.read_text().splitlines():
         obj = f"{build_dir}/asm/{src.stem}.o"
     if not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
-    units.append((src, obj, flags, section))
+    if obj in linked:
+        sys.exit(f"error: unit {name} is listed twice in {units_file}")
+    linked.add(obj)
+    units.append((src, obj, flags))
 
 asset_gfx_build = f"{build_dir}/assets/asset_gfx.bin"
 asset_gfx_asm = f"{build_dir}/asm/asset_gfx.s"
@@ -309,11 +307,11 @@ if asset_gfx_mode == "built":
         f'\t.incbin "{asset_gfx_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_unit:
-            rewritten.append((Path(asset_gfx_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 if asset_gfx_gap_195_mode == "built":
@@ -325,11 +323,11 @@ if asset_gfx_gap_195_mode == "built":
         f'\t.incbin "{asset_gfx_gap_195_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_195_unit:
-            rewritten.append((Path(asset_gfx_gap_195_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_gap_195_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 if asset_gfx_gap_1_mode == "built":
@@ -341,11 +339,11 @@ if asset_gfx_gap_1_mode == "built":
         f'\t.incbin "{asset_gfx_gap_1_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_1_unit:
-            rewritten.append((Path(asset_gfx_gap_1_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_gap_1_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 if asset_gfx_gap_43_mode == "built":
@@ -357,11 +355,11 @@ if asset_gfx_gap_43_mode == "built":
         f'\t.incbin "{asset_gfx_gap_43_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_43_unit:
-            rewritten.append((Path(asset_gfx_gap_43_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_gap_43_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 if asset_gfx_gap_158_mode == "built":
@@ -373,11 +371,11 @@ if asset_gfx_gap_158_mode == "built":
         f'\t.incbin "{asset_gfx_gap_158_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_158_unit:
-            rewritten.append((Path(asset_gfx_gap_158_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_gap_158_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 if asset_gfx_gap_87_mode == "built":
@@ -389,11 +387,11 @@ if asset_gfx_gap_87_mode == "built":
         f'\t.incbin "{asset_gfx_gap_87_build}"\n'
     )
     rewritten = []
-    for src, obj, flags, section in units:
+    for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_gap_87_unit:
-            rewritten.append((Path(asset_gfx_gap_87_asm), obj, flags, section))
+            rewritten.append((Path(asset_gfx_gap_87_asm), obj, flags))
         else:
-            rewritten.append((src, obj, flags, section))
+            rewritten.append((src, obj, flags))
     units = rewritten
 
 units = materialize_assets(regional_plan, units, version, build_dir)
@@ -403,7 +401,7 @@ asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
 missing_assets = set()
 edges = []
 emitted = set()
-for src, obj, flags, _section in units:
+for src, obj, flags in units:
     if src is None or obj in emitted:
         continue
     emitted.add(obj)
@@ -552,66 +550,14 @@ if pending_uncovered:
         f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
     )
 
-if sectioned:
-    active_sections = [(src.name, section) for src, _obj, _flags, section in units if src is not None and src.suffix == ".c"]
-else:
-    listed_units = {src.name for src, _obj, _flags, _section in units if src is not None and src.suffix == ".c"}
-    active_sections = [(placement["unit"], placement["section"]) for placement in regional_plan["placements"]
-                       if placement["unit"] in listed_units]
-validate_active_sections(regional_plan, active_sections, managed_placements(regional))
-objs_in_order = [(obj, section) for _, obj, _flags, section in units]
+listed_units = {src.name for src, _obj, _flags in units if src is not None and src.suffix == ".c"}
+validate_active_sections(regional_plan,
+                         [(placement["unit"], placement["section"]) for placement in regional_plan["placements"]
+                          if placement["unit"] in listed_units],
+                         managed_placements(regional))
 
 
-def link_order(units):
-    order = []
-    position = {}
-    anchor = None
-    violations = []
-    for _src, obj, _flags, section in units:
-        if section == ".text":
-            if obj not in position:
-                position[obj] = len(order)
-                order.append(obj)
-            continue
-        if obj in position:
-            if anchor is not None and position[obj] < position[anchor]:
-                violations.append((obj, section, anchor))
-            anchor = obj
-            continue
-        index = len(order) if anchor is None else position[anchor] + 1
-        order.insert(index, obj)
-        position = {o: i for i, o in enumerate(order)}
-        anchor = obj
-    return order, position, violations
-
-
-if sectioned:
-    objs_linked, link_position, link_violations = link_order(units)
-    data_objects = []
-    for _src, obj, _flags, section in units:
-        if section == ".data" and obj not in data_objects:
-            data_objects.append(obj)
-    data_positions = [link_position[obj] for obj in data_objects]
-    if data_positions != sorted(data_positions):
-        offenders = [obj for obj, pos, nxt in zip(data_objects, data_positions, data_positions[1:]) if pos > nxt]
-        sys.exit(f"error: .data objects are not in link order: {offenders[:10]}")
-    rodata_objects = []
-    for _src, obj, _flags, section in units:
-        if section == ".rodata" and obj not in rodata_objects:
-            rodata_objects.append(obj)
-    rodata_positions = [link_position[obj] for obj in rodata_objects]
-    if rodata_positions != sorted(rodata_positions):
-        offenders = [obj for obj, pos, nxt in zip(rodata_objects, rodata_positions, rodata_positions[1:]) if pos > nxt]
-        sys.exit(f"error: .rodata objects are not in link order: {offenders[:10]}")
-    leftover_sections = [(obj, section) for _src, obj, _flags, section in units if section not in (".text", ".rodata", ".data")]
-    if leftover_sections:
-        sys.exit(f"error: sections that link order cannot place: {leftover_sections[:10]}")
-else:
-    objs_linked = []
-    for _src, obj, _flags, _section in units:
-        if obj in objs_linked:
-            sys.exit(f"error: unit {obj} is listed twice in {units_file}")
-        objs_linked.append(obj)
+objs_linked = [obj for _src, obj, _flags in units]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -873,7 +819,7 @@ compile_commands = [
         "arguments": cc_args + [str(src)],
     }
     for obj, src in dict(
-        (obj, src) for src, obj, _flags, _section in units
+        (obj, src) for src, obj, _flags in units
         if src is not None and src.suffix == ".c"
     ).items()
 ]
