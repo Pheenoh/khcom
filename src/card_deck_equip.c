@@ -403,3 +403,587 @@ void RestoreMapCardInventory(u8* p) {
         gUnk_0203A8C0[i] = p[i];
     }
 }
+
+const char gTaskName_09EE7F60[] = "Deck Equip";
+
+TaskDesc gUnk_09EE7F60 = {
+    gTaskName_09EE7F60,
+    (void (*)(void*, void*))func_080A2844,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7F78[] = "Deck_Yes_No";
+
+TaskDesc gUnk_09EE7F78 = {
+    gTaskName_09EE7F78,
+    (void (*)(void*, void*))Deck_Yes_No_0,
+    func_080A30C0,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7F90[] = "Deck_Clear";
+
+TaskDesc gUnk_09EE7F90 = {
+    gTaskName_09EE7F90,
+    (void (*)(void*, void*))Deck_Clear_0,
+    func_080A30C0,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+const char gTaskName_09EE7FA8[] = "Deck Error";
+
+TaskDesc gUnk_09EE7FA8 = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2980,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FC0 = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2A80,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FD8 = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2BA4,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+
+TaskDesc gUnk_09EE7FF0 = {
+    gTaskName_09EE7FA8,
+    (void (*)(void*, void*))func_080A2CC4,
+    func_080A2DE4,
+    (void (*)(void*))func_080A2E14,
+    (void (*)(void*))func_080A2EF8,
+    0x7A8,
+};
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+#ifdef VERSION_EU
+u8* gUnkEu_09F73464[5] = { gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5, gUnkEu_090D1DA5 };
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
+#endif
