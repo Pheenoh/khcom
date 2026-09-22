@@ -713,6 +713,7 @@ extern EventCharaKeyframe gUnk_0900AEF4[];
 extern EventCharaKeyframe gUnk_0900B800[];
 extern EventCharaKeyframe gUnk_0900B8B4[];
 extern EventCharaKeyframe gUnk_0900B968[];
+extern EventCharaKeyframe gUnk_0900B9F8[];
 extern EventCharaKeyframe gUnk_0900C2A8[];
 extern EventCharaKeyframe gUnk_0900C47C[];
 extern EventCharaKeyframe gUnk_0900C8FC[];
