@@ -1,0 +1,1234 @@
+group: map_rooms
+types:
+  UnkStruct_09EF70D0:
+    header: map_room_types.h
+    fields:
+      - {name: palette, type: void*}
+      - {name: paletteSize, type: u16}
+      - name: unk_06
+        type: u8
+        count: 2
+      - {name: tiles, type: void*}
+      - {name: tilesSize, type: u16}
+      - name: unk_0E
+        type: u8
+        count: 2
+      - {name: tiles2, type: void*}
+      - {name: tilesSize2, type: u16}
+      - name: unk_16
+        type: u8
+        count: 2
+      - {name: map3, type: u16*}
+      - {name: map2, type: u16*}
+      - {name: map, type: u16*}
+      - {name: unk_24, type: UnkStruct_080E8864*}
+      - {name: unk_28, type: UnkStruct_080E8864*}
+      - {name: unk_2C, type: void*}
+      - {name: unk_30, type: s32*}
+      - {name: unk_34, type: s32*}
+      - {name: unk_38, type: u16}
+  UnkStruct_09EF8370:
+    header: map_room_types.h
+    fields:
+      - {name: palette, type: void*}
+      - {name: paletteSize, type: u16}
+      - name: unk_06
+        type: u8
+        count: 2
+      - {name: tiles, type: void*}
+      - {name: tilesSize, type: u16}
+      - name: unk_0E
+        type: u8
+        count: 2
+      - {name: tiles2, type: void*}
+      - {name: tilesSize2, type: u16}
+      - name: unk_16
+        type: u8
+        count: 2
+      - {name: map3, type: void*}
+      - {name: map2, type: void*}
+      - {name: map, type: void*}
+      - {name: mapWidth, type: u8}
+      - {name: mapHeight, type: u8}
+      - name: unk_26
+        type: u8
+        count: 2
+      - {name: unk_28, type: const u8*}
+      - {name: unk_2C, type: struct UnkStruct_080E56B4*}
+      - {name: unk_30, type: struct UnkStruct_080EC760Entry*}
+      - {name: unk_34, type: u16}
+      - name: unk_36
+        type: u8
+        count: 2
+      - {name: unk_38, type: s32}
+      - {name: unk_3C, type: s32}
+      - {name: unk_40, type: s32}
+      - {name: unk_44, type: s32}
+      - {name: unk_48, type: s32}
+      - {name: unk_4C, type: s32}
+      - name: unk_50
+        type: u8
+        versions: [eu]
+objects:
+  us:
+    - name: map_rooms.c
+      start: 0x0984D2D8
+      end: 0x09856FB4
+    - name: map_room_tiles_1.s
+      start: 0x098A9C84
+      end: 0x098EA844
+    - name: map_room_tiles_2.s
+      start: 0x098EB324
+      end: 0x0993AF64
+    - name: map_room_maps_1.s
+      start: 0x09968144
+      end: 0x09985F44
+    - name: map_room_palettes_1.s
+      start: 0x0998FF44
+      end: 0x099910C4
+  jp:
+    - name: map_rooms.c
+      start: 0x09801DEC
+      end: 0x0980BAC8
+    - name: map_room_tiles_1.s
+      start: 0x0985E798
+      end: 0x0989F358
+    - name: map_room_tiles_2.s
+      start: 0x0989FE38
+      end: 0x098EFA78
+    - name: map_room_maps_1.s
+      start: 0x0991CC58
+      end: 0x0993AA58
+    - name: map_room_palettes_1.s
+      start: 0x09944A58
+      end: 0x09945BD8
+  eu:
+    - name: map_rooms.c
+      start: 0x09829CAC
+      end: 0x098339A0
+    - name: map_room_tiles_1.s
+      start: 0x09889B10
+      end: 0x098CA6D0
+    - name: map_room_tiles_2.s
+      start: 0x098CB1B0
+      end: 0x0991ADF0
+    - name: map_room_maps_1.s
+      start: 0x0996F130
+      end: 0x0998BF30
+    - name: map_room_palettes_1.s
+      start: 0x09995F30
+      end: 0x099970B0
+    - name: map_room_maps_2.s
+      start: 0x09997F30
+      end: 0x099981B4
+entries:
+  - name: map_room_00
+    symbol: gUnk_0984D2D8
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_0998FF44, paletteSize: 96, unk_06: [0, 0], tiles: gUnk_098A9C84, tilesSize: 32192, unk_0E: [0, 0], tiles2: gUnk_098B1A44, tilesSize2: 8192, unk_16: [0, 0], map3: gUnk_09968144, map2: gUnk_09968944, map: gUnk_09969944, unk_24: 0, unk_28: 0, unk_2C: 0, unk_30: gUnk_0984D2D4, unk_34: gUnk_0984D2D4, unk_38: 13}
+    index: [0, 13]
+    us: {address: 0x0984D2D8}
+    jp: {address: 0x09801DEC}
+    eu: {address: 0x09829CAC}
+  - name: map_room_01
+    symbol: gUnk_0984DFD8
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_0998FFA4, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_098B3A44, tilesSize: 30720, unk_0E: [0, 0], tiles2: gUnk_098BB244, tilesSize2: 10240, unk_16: [0, 0], map3: gUnk_09969C44, map2: gUnk_0996A444, map: gUnk_0996BC44, unk_24: gUnk_0984DCF0, unk_28: gUnk_0984DF68, unk_2C: 0, unk_30: gUnk_0984D494, unk_34: gUnk_0984D4A4, unk_38: 31}
+    index: [1]
+    us: {address: 0x0984DFD8}
+    jp: {address: 0x09802AEC}
+    eu: {address: 0x0982A9AC}
+  - name: map_room_02
+    symbol: gUnk_0984E734
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990104, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_098BDA44, tilesSize: 32256, unk_0E: [0, 0], tiles2: gUnk_098C5844, tilesSize2: 12160, unk_16: [0, 0], map3: gUnk_0996C144, map2: gUnk_0996C944, map: gUnk_0996E144, unk_24: gUnk_0984E48C, unk_28: gUnk_0984E704, unk_2C: gUnk_0984E054, unk_30: gUnk_0984E014, unk_34: gUnk_0984E024, unk_38: 22}
+    index: [2]
+    us: {address: 0x0984E734}
+    jp: {address: 0x09803248}
+    eu: {address: 0x0982B108}
+  - name: map_room_12
+    symbol: gUnk_0984F694
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990F44, paletteSize: 384, unk_06: [0, 0], tiles: gUnk_0992FF64, tilesSize: 32768, unk_0E: [0, 0], tiles2: gUnk_09937F64, tilesSize2: 12288, unk_16: [0, 0], map3: gUnk_09982A44, map2: gUnk_09983244, map: gUnk_09984A44, unk_24: gUnk_0984F31C, unk_28: gUnk_0984F624, unk_2C: 0, unk_30: gUnk_0984E770, unk_34: gUnk_0984E780, unk_38: 38}
+    index: [12]
+    us: {address: 0x0984F694}
+    jp: {address: 0x098041A8}
+    eu: {address: 0x0982C068}
+  - name: map_room_03
+    symbol: gUnk_09850428
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990264, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_098C9D84, tilesSize: 30720, unk_0E: [0, 0], tiles2: gUnk_098D1584, tilesSize2: 12160, unk_16: [0, 0], map3: gUnk_0996E544, map2: gUnk_0996ED44, map: gUnk_09970544, unk_24: gUnk_09850250, unk_28: gUnk_098503F8, unk_2C: 0, unk_30: gUnk_0984F6D0, unk_34: gUnk_0984F6E0, unk_38: 21}
+    index: [3]
+    us: {address: 0x09850428}
+    jp: {address: 0x09804F3C}
+    eu: {address: 0x0982CDFC}
+  - name: map_room_09
+    symbol: gUnk_09850DF4
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990B04, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_0990EA44, tilesSize: 32768, unk_0E: [0, 0], tiles2: gUnk_09916A44, tilesSize2: 12160, unk_16: [0, 0], map3: gUnk_0997BD44, map2: gUnk_0997C544, map: gUnk_0997DD44, unk_24: gUnk_09850C1C, unk_28: gUnk_09850DC4, unk_2C: 0, unk_30: gUnk_09850464, unk_34: gUnk_09850470, unk_38: 33}
+    index: [9]
+    us: {address: 0x09850DF4}
+    jp: {address: 0x09805908}
+    eu: {address: 0x0982D7C8}
+  - name: map_room_06
+    symbol: gUnk_0985221C
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_099906A4, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_098EB324, tilesSize: 32128, unk_0E: [0, 0], tiles2: gUnk_098F30A4, tilesSize2: 11520, unk_16: [0, 0], map3: gUnk_09975144, map2: gUnk_09975944, map: gUnk_09977144, unk_24: gUnk_09851E54, unk_28: gUnk_098521EC, unk_2C: gUnk_09850E5C, unk_30: gUnk_09850E30, unk_34: gUnk_09850E40, unk_38: 15}
+    index: [6]
+    us: {address: 0x0985221C}
+    jp: {address: 0x09806D30}
+    eu: {address: 0x0982EBF0}
+  - name: map_room_08
+    symbol: gUnk_09852F4C
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990984, paletteSize: 384, unk_06: [0, 0], tiles: gUnk_09902DA4, tilesSize: 32768, unk_0E: [0, 0], tiles2: gUnk_0990ADA4, tilesSize2: 15520, unk_16: [0, 0], map3: gUnk_09979944, map2: gUnk_0997A144, map: gUnk_0997B944, unk_24: gUnk_09852C68, unk_28: gUnk_09852EDC, unk_2C: 0, unk_30: gUnk_09852258, unk_34: gUnk_09852268, unk_38: 25}
+    index: [8]
+    us: {address: 0x09852F4C}
+    jp: {address: 0x09807A60}
+    eu: {address: 0x0982F920}
+  - name: map_room_05
+    symbol: gUnk_098535BC
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990524, paletteSize: 384, unk_06: [0, 0], tiles: gUnk_098DF184, tilesSize: 32768, unk_0E: [0, 0], tiles2: gUnk_098E7184, tilesSize2: 14016, unk_16: [0, 0], map3: gUnk_09972D44, map2: gUnk_09973544, map: gUnk_09974D44, unk_24: gUnk_09853354, unk_28: gUnk_0985358C, unk_2C: gUnk_09852FFC, unk_30: gUnk_09852F88, unk_34: gUnk_09852F98, unk_38: 8}
+    index: [5]
+    us: {address: 0x098535BC}
+    jp: {address: 0x098080D0}
+    eu: {address: 0x0982FF90}
+  - name: map_room_07
+    symbol: gUnk_09854258
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990804, paletteSize: 384, unk_06: [0, 0], tiles: gUnk_098F71A4, tilesSize: 32768, unk_0E: [0, 0], tiles2: gUnk_098FF1A4, tilesSize2: 12288, unk_16: [0, 0], map3: gUnk_09977544, map2: gUnk_09977D44, map: gUnk_09979544, unk_24: gUnk_09854080, unk_28: gUnk_09854228, unk_2C: gUnk_09853624, unk_30: gUnk_098535F8, unk_34: gUnk_09853608, unk_38: 10}
+    index: [7]
+    us: {address: 0x09854258}
+    jp: {address: 0x09808D6C}
+    eu: {address: 0x09830C2C}
+  - name: map_room_11
+    symbol: gUnk_098552E8
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990DC4, paletteSize: 384, unk_06: [0, 0], tiles: gUnk_09924184, tilesSize: 32736, unk_0E: [0, 0], tiles2: gUnk_0992C164, tilesSize2: 15872, unk_16: [0, 0], map3: gUnk_09980644, map2: gUnk_09980E44, map: gUnk_09982644, unk_24: gUnk_09854F70, unk_28: gUnk_09855278, unk_2C: 0, unk_30: gUnk_09854294, unk_34: gUnk_0985429C, unk_38: 36}
+    index: [11]
+    us: {address: 0x098552E8}
+    jp: {address: 0x09809DFC}
+    eu: {address: 0x09831CBC}
+  - name: map_room_10
+    symbol: gUnk_09855FA8
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_09990C64, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_099199C4, tilesSize: 30720, unk_0E: [0, 0], tiles2: gUnk_099211C4, tilesSize2: 12224, unk_16: [0, 0], map3: gUnk_0997E144, map2: gUnk_0997E944, map: gUnk_09980144, unk_24: gUnk_09855C90, unk_28: gUnk_09855F38, unk_2C: 0, unk_30: gUnk_09855324, unk_34: gUnk_09855334, unk_38: 13}
+    index: [10]
+    us: {address: 0x09855FA8}
+    jp: {address: 0x0980AABC}
+    eu: {address: 0x0983297C}
+  - name: map_room_04
+    symbol: gUnk_09856678
+    record: UnkStruct_09EF70D0
+    fields: {palette: gUnk_099903C4, paletteSize: 352, unk_06: [0, 0], tiles: gUnk_098D4504, tilesSize: 31040, unk_0E: [0, 0], tiles2: gUnk_098DBE44, tilesSize2: 12160, unk_16: [0, 0], map3: gUnk_09970944, map2: gUnk_09971144, map: gUnk_09972944, unk_24: gUnk_09856400, unk_28: gUnk_09856648, unk_2C: gUnk_09856010, unk_30: gUnk_09855FE4, unk_34: gUnk_09855FF4, unk_38: 2}
+    index: [4]
+    us: {address: 0x09856678}
+    jp: {address: 0x0980B18C}
+    eu: {address: 0x0983304C}
+  - name: map_fixed_0
+    symbol: gUnk_09856C90
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09616D58
+      paletteSize: 320
+      unk_06: [0, 0]
+      tiles: gUnk_094B9798
+      tilesSize: 28256
+      unk_0E: [0, 0]
+      tiles2: gUnk_094B9798
+      tilesSize2: 28256
+      unk_16: [0, 0]
+      map3: gUnk_09EF8208
+      map2: gUnk_09EF8238
+      map: gUnk_09EF8268
+      mapWidth: 4
+      mapHeight: 3
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF7108
+      unk_2C: gUnk_09856BE8
+      unk_30: gUnk_09856C48
+      unk_34: 30
+      unk_36: [0, 0]
+      unk_38: 203264
+      unk_3C: 61952
+      unk_40: 0
+      unk_44: 0
+      unk_48: 196608
+      unk_4C: 65536
+    index: [0]
+    us: {address: 0x09856C90}
+    jp: {address: 0x0980B7A4}
+    eu: {address: 0x09833664, fields: {tilesSize: 13896, tilesSize2: 13896, unk_50: 0}}
+  - name: map_fixed_1
+    symbol: gUnk_09856D34
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09616E98
+      paletteSize: 320
+      unk_06: [0, 0]
+      tiles: gUnk_094C05F8
+      tilesSize: 23936
+      unk_0E: [0, 0]
+      tiles2: 0
+      tilesSize2: 0
+      unk_16: [0, 0]
+      map3: gUnk_09EF8298
+      map2: gUnk_09EF82B0
+      map: 0
+      mapWidth: 3
+      mapHeight: 2
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF7708
+      unk_2C: gUnk_09856CE0
+      unk_30: gUnk_09856D04
+      unk_34: 30
+      unk_36: [0, 0]
+      unk_38: 137728
+      unk_3C: 61952
+      unk_40: 67584
+      unk_44: 97280
+      unk_48: 131072
+      unk_4C: 65536
+    index: [1]
+    us: {address: 0x09856D34}
+    jp: {address: 0x0980B848}
+    eu: {address: 0x0983370C, fields: {tilesSize: 11092, unk_50: 0}}
+  - name: map_fixed_2
+    symbol: gUnk_09856DE4
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09616FD8
+      paletteSize: 320
+      unk_06: [0, 0]
+      tiles: gUnk_094C6378
+      tilesSize: 14816
+      unk_0E: [0, 0]
+      tiles2: 0
+      tilesSize2: 0
+      unk_16: [0, 0]
+      map3: gUnk_09EF82C8
+      map2: gUnk_09EF82E0
+      map: 0
+      mapWidth: 3
+      mapHeight: 2
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF7A08
+      unk_2C: gUnk_09856D84
+      unk_30: gUnk_09856DA8
+      unk_34: 30
+      unk_36: [0, 0]
+      unk_38: 158208
+      unk_3C: 51968
+      unk_40: 67584
+      unk_44: 97280
+      unk_48: 131072
+      unk_4C: 65536
+    index: [2]
+    us: {address: 0x09856DE4}
+    jp: {address: 0x0980B8F8}
+    eu: {address: 0x098337C0, fields: {tilesSize: 6096, unk_50: 0}}
+  - name: map_fixed_3
+    symbol: gUnk_09856E88
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09617438
+      paletteSize: 320
+      unk_06: [0, 0]
+      tiles: gUnk_094D7E58
+      tilesSize: 13280
+      unk_0E: [0, 0]
+      tiles2: 0
+      tilesSize2: 0
+      unk_16: [0, 0]
+      map3: gUnk_09EF82F8
+      map2: gUnk_09EF8310
+      map: 0
+      mapWidth: 3
+      mapHeight: 2
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF7D08
+      unk_2C: gUnk_09856E34
+      unk_30: gUnk_09856E40
+      unk_34: 30
+      unk_36: [0, 0]
+      unk_38: 159744
+      unk_3C: 51200
+      unk_40: 71680
+      unk_44: 95232
+      unk_48: 114688
+      unk_4C: 73728
+    index: [3]
+    us: {address: 0x09856E88}
+    jp: {address: 0x0980B99C}
+    eu: {address: 0x09833868, fields: {tilesSize: 8232, unk_50: 0}}
+  - name: map_fixed_4
+    symbol: gUnk_09856F14
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09990C64
+      paletteSize: 352
+      unk_06: [0, 0]
+      tiles: gUnk_099199C4
+      tilesSize: 30720
+      unk_0E: [0, 0]
+      tiles2: gUnk_099211C4
+      tilesSize2: 12224
+      unk_16: [0, 0]
+      map3: gUnk_09EF8328
+      map2: gUnk_09EF8338
+      map: gUnk_09EF8348
+      mapWidth: 2
+      mapHeight: 2
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF8008
+      unk_2C: gUnk_09856ED8
+      unk_30: 0
+      unk_34: 28
+      unk_36: [0, 0]
+      unk_38: 0
+      unk_3C: 0
+      unk_40: 0
+      unk_44: 0
+      unk_48: 49152
+      unk_4C: 69632
+    index: [4]
+    us: {address: 0x09856F14}
+    jp: {address: 0x0980BA28}
+    eu: {address: 0x098338F8, fields: {unk_50: 1}}
+  - name: map_fixed_5
+    symbol: gUnk_09856F64
+    record: UnkStruct_09EF8370
+    fields:
+      palette: gUnk_09616E98
+      paletteSize: 320
+      unk_06: [0, 0]
+      tiles: gUnk_094C05F8
+      tilesSize: 23936
+      unk_0E: [0, 0]
+      tiles2: 0
+      tilesSize2: 0
+      unk_16: [0, 0]
+      map3: gUnk_09EF8298
+      map2: gUnk_09EF8358
+      map: 0
+      mapWidth: 3
+      mapHeight: 2
+      unk_26: [0, 0]
+      unk_28: gUnk_09EF7708
+      unk_2C: gUnk_09856CE0
+      unk_30: gUnk_09856D04
+      unk_34: 30
+      unk_36: [0, 0]
+      unk_38: 137728
+      unk_3C: 61952
+      unk_40: 0
+      unk_44: 0
+      unk_48: 131072
+      unk_4C: 65536
+    index: [5]
+    us: {address: 0x09856F64}
+    jp: {address: 0x0980BA78}
+    eu: {address: 0x0983394C, fields: {tilesSize: 11092, unk_50: 0}}
+  - name: gUnk_0984D314
+    format: raw
+    us: {address: 0x0984D314, size: 24}
+    jp: {address: 0x09801E28, size: 24}
+    eu: {address: 0x09829CE8, size: 24}
+  - name: gUnk_0984D32C
+    format: raw
+    us: {address: 0x0984D32C, size: 204}
+    jp: {address: 0x09801E40, size: 204}
+    eu: {address: 0x09829D00, size: 204}
+  - name: gUnk_0984D3F8
+    format: raw
+    us: {address: 0x0984D3F8, size: 156}
+    jp: {address: 0x09801F0C, size: 156}
+    eu: {address: 0x09829DCC, size: 156}
+  - name: gUnk_0984D494
+    format: raw
+    us: {address: 0x0984D494, size: 16}
+    jp: {address: 0x09801FA8, size: 16}
+    eu: {address: 0x09829E68, size: 16}
+  - name: gUnk_0984D4A4
+    format: raw
+    us: {address: 0x0984D4A4, size: 2124}
+    jp: {address: 0x09801FB8, size: 2124}
+    eu: {address: 0x09829E78, size: 2124}
+  - name: gUnk_0984DCF0
+    format: raw
+    us: {address: 0x0984DCF0, size: 632}
+    jp: {address: 0x09802804, size: 632}
+    eu: {address: 0x0982A6C4, size: 632}
+  - name: gUnk_0984DF68
+    format: raw
+    us: {address: 0x0984DF68, size: 112}
+    jp: {address: 0x09802A7C, size: 112}
+    eu: {address: 0x0982A93C, size: 112}
+  - name: gUnk_0984E014
+    format: raw
+    us: {address: 0x0984E014, size: 16}
+    jp: {address: 0x09802B28, size: 16}
+    eu: {address: 0x0982A9E8, size: 16}
+  - name: gUnk_0984E024
+    format: raw
+    us: {address: 0x0984E024, size: 48}
+    jp: {address: 0x09802B38, size: 48}
+    eu: {address: 0x0982A9F8, size: 48}
+  - name: gUnk_0984E054
+    format: raw
+    us: {address: 0x0984E054, size: 1080}
+    jp: {address: 0x09802B68, size: 1080}
+    eu: {address: 0x0982AA28, size: 1080}
+  - name: gUnk_0984E48C
+    format: raw
+    us: {address: 0x0984E48C, size: 632}
+    jp: {address: 0x09802FA0, size: 632}
+    eu: {address: 0x0982AE60, size: 632}
+  - name: gUnk_0984E704
+    format: raw
+    us: {address: 0x0984E704, size: 48}
+    jp: {address: 0x09803218, size: 48}
+    eu: {address: 0x0982B0D8, size: 48}
+  - name: gUnk_0984E770
+    format: raw
+    us: {address: 0x0984E770, size: 16}
+    jp: {address: 0x09803284, size: 16}
+    eu: {address: 0x0982B144, size: 16}
+  - name: gUnk_0984E780
+    format: raw
+    us: {address: 0x0984E780, size: 2972}
+    jp: {address: 0x09803294, size: 2972}
+    eu: {address: 0x0982B154, size: 2972}
+  - name: gUnk_0984F31C
+    format: raw
+    us: {address: 0x0984F31C, size: 776}
+    jp: {address: 0x09803E30, size: 776}
+    eu: {address: 0x0982BCF0, size: 776}
+  - name: gUnk_0984F624
+    format: raw
+    us: {address: 0x0984F624, size: 112}
+    jp: {address: 0x09804138, size: 112}
+    eu: {address: 0x0982BFF8, size: 112}
+  - name: gUnk_0984F6D0
+    format: raw
+    us: {address: 0x0984F6D0, size: 16}
+    jp: {address: 0x098041E4, size: 16}
+    eu: {address: 0x0982C0A4, size: 16}
+  - name: gUnk_0984F6E0
+    format: raw
+    us: {address: 0x0984F6E0, size: 2928}
+    jp: {address: 0x098041F4, size: 2928}
+    eu: {address: 0x0982C0B4, size: 2928}
+  - name: gUnk_09850250
+    format: raw
+    us: {address: 0x09850250, size: 424}
+    jp: {address: 0x09804D64, size: 424}
+    eu: {address: 0x0982CC24, size: 424}
+  - name: gUnk_098503F8
+    format: raw
+    us: {address: 0x098503F8, size: 48}
+    jp: {address: 0x09804F0C, size: 48}
+    eu: {address: 0x0982CDCC, size: 48}
+  - name: gUnk_09850464
+    format: raw
+    us: {address: 0x09850464, size: 12}
+    jp: {address: 0x09804F78, size: 12}
+    eu: {address: 0x0982CE38, size: 12}
+  - name: gUnk_09850470
+    format: raw
+    us: {address: 0x09850470, size: 1964}
+    jp: {address: 0x09804F84, size: 1964}
+    eu: {address: 0x0982CE44, size: 1964}
+  - name: gUnk_09850C1C
+    format: raw
+    us: {address: 0x09850C1C, size: 424}
+    jp: {address: 0x09805730, size: 424}
+    eu: {address: 0x0982D5F0, size: 424}
+  - name: gUnk_09850DC4
+    format: raw
+    us: {address: 0x09850DC4, size: 48}
+    jp: {address: 0x098058D8, size: 48}
+    eu: {address: 0x0982D798, size: 48}
+  - name: gUnk_09850E30
+    format: raw
+    us: {address: 0x09850E30, size: 16}
+    jp: {address: 0x09805944, size: 16}
+    eu: {address: 0x0982D804, size: 16}
+  - name: gUnk_09850E40
+    format: raw
+    us: {address: 0x09850E40, size: 28}
+    jp: {address: 0x09805954, size: 28}
+    eu: {address: 0x0982D814, size: 28}
+  - name: gUnk_09850E5C
+    format: raw
+    us: {address: 0x09850E5C, size: 4088}
+    jp: {address: 0x09805970, size: 4088}
+    eu: {address: 0x0982D830, size: 4088}
+  - name: gUnk_09851E54
+    format: raw
+    us: {address: 0x09851E54, size: 920}
+    jp: {address: 0x09806968, size: 920}
+    eu: {address: 0x0982E828, size: 920}
+  - name: gUnk_098521EC
+    format: raw
+    us: {address: 0x098521EC, size: 48}
+    jp: {address: 0x09806D00, size: 48}
+    eu: {address: 0x0982EBC0, size: 48}
+  - name: gUnk_09852258
+    format: raw
+    us: {address: 0x09852258, size: 16}
+    jp: {address: 0x09806D6C, size: 16}
+    eu: {address: 0x0982EC2C, size: 16}
+  - name: gUnk_09852268
+    format: raw
+    us: {address: 0x09852268, size: 2560}
+    jp: {address: 0x09806D7C, size: 2560}
+    eu: {address: 0x0982EC3C, size: 2560}
+  - name: gUnk_09852C68
+    format: raw
+    us: {address: 0x09852C68, size: 628}
+    jp: {address: 0x0980777C, size: 628}
+    eu: {address: 0x0982F63C, size: 628}
+  - name: gUnk_09852EDC
+    format: raw
+    us: {address: 0x09852EDC, size: 112}
+    jp: {address: 0x098079F0, size: 112}
+    eu: {address: 0x0982F8B0, size: 112}
+  - name: gUnk_09852F88
+    format: raw
+    us: {address: 0x09852F88, size: 16}
+    jp: {address: 0x09807A9C, size: 16}
+    eu: {address: 0x0982F95C, size: 16}
+  - name: gUnk_09852F98
+    format: raw
+    us: {address: 0x09852F98, size: 100}
+    jp: {address: 0x09807AAC, size: 100}
+    eu: {address: 0x0982F96C, size: 100}
+  - name: gUnk_09852FFC
+    format: raw
+    us: {address: 0x09852FFC, size: 856}
+    jp: {address: 0x09807B10, size: 856}
+    eu: {address: 0x0982F9D0, size: 856}
+  - name: gUnk_09853354
+    format: raw
+    us: {address: 0x09853354, size: 568}
+    jp: {address: 0x09807E68, size: 568}
+    eu: {address: 0x0982FD28, size: 568}
+  - name: gUnk_0985358C
+    format: raw
+    us: {address: 0x0985358C, size: 48}
+    jp: {address: 0x098080A0, size: 48}
+    eu: {address: 0x0982FF60, size: 48}
+  - name: gUnk_098535F8
+    format: raw
+    us: {address: 0x098535F8, size: 16}
+    jp: {address: 0x0980810C, size: 16}
+    eu: {address: 0x0982FFCC, size: 16}
+  - name: gUnk_09853608
+    format: raw
+    us: {address: 0x09853608, size: 28}
+    jp: {address: 0x0980811C, size: 28}
+    eu: {address: 0x0982FFDC, size: 28}
+  - name: gUnk_09853624
+    format: raw
+    us: {address: 0x09853624, size: 2652}
+    jp: {address: 0x09808138, size: 2652}
+    eu: {address: 0x0982FFF8, size: 2652}
+  - name: gUnk_09854080
+    format: raw
+    us: {address: 0x09854080, size: 424}
+    jp: {address: 0x09808B94, size: 424}
+    eu: {address: 0x09830A54, size: 424}
+  - name: gUnk_09854228
+    format: raw
+    us: {address: 0x09854228, size: 48}
+    jp: {address: 0x09808D3C, size: 48}
+    eu: {address: 0x09830BFC, size: 48}
+  - name: gUnk_09854294
+    format: raw
+    us: {address: 0x09854294, size: 8}
+    jp: {address: 0x09808DA8, size: 8}
+    eu: {address: 0x09830C68, size: 8}
+  - name: gUnk_0985429C
+    format: raw
+    us: {address: 0x0985429C, size: 3284}
+    jp: {address: 0x09808DB0, size: 3284}
+    eu: {address: 0x09830C70, size: 3284}
+  - name: gUnk_09854F70
+    format: raw
+    us: {address: 0x09854F70, size: 776}
+    jp: {address: 0x09809A84, size: 776}
+    eu: {address: 0x09831944, size: 776}
+  - name: gUnk_09855278
+    format: raw
+    us: {address: 0x09855278, size: 112}
+    jp: {address: 0x09809D8C, size: 112}
+    eu: {address: 0x09831C4C, size: 112}
+  - name: gUnk_09855324
+    format: raw
+    us: {address: 0x09855324, size: 16}
+    jp: {address: 0x09809E38, size: 16}
+    eu: {address: 0x09831CF8, size: 16}
+  - name: gUnk_09855334
+    format: raw
+    us: {address: 0x09855334, size: 2396}
+    jp: {address: 0x09809E48, size: 2396}
+    eu: {address: 0x09831D08, size: 2396}
+  - name: gUnk_09855C90
+    format: raw
+    us: {address: 0x09855C90, size: 680}
+    jp: {address: 0x0980A7A4, size: 680}
+    eu: {address: 0x09832664, size: 680}
+  - name: gUnk_09855F38
+    format: raw
+    us: {address: 0x09855F38, size: 112}
+    jp: {address: 0x0980AA4C, size: 112}
+    eu: {address: 0x0983290C, size: 112}
+  - name: gUnk_09855FE4
+    format: raw
+    us: {address: 0x09855FE4, size: 16}
+    jp: {address: 0x0980AAF8, size: 16}
+    eu: {address: 0x098329B8, size: 16}
+  - name: gUnk_09855FF4
+    format: raw
+    us: {address: 0x09855FF4, size: 28}
+    jp: {address: 0x0980AB08, size: 28}
+    eu: {address: 0x098329C8, size: 28}
+  - name: gUnk_09856010
+    format: raw
+    us: {address: 0x09856010, size: 1008}
+    jp: {address: 0x0980AB24, size: 1008}
+    eu: {address: 0x098329E4, size: 1008}
+  - name: gUnk_09856400
+    format: raw
+    us: {address: 0x09856400, size: 584}
+    jp: {address: 0x0980AF14, size: 584}
+    eu: {address: 0x09832DD4, size: 584}
+  - name: gUnk_09856648
+    format: raw
+    us: {address: 0x09856648, size: 48}
+    jp: {address: 0x0980B15C, size: 48}
+    eu: {address: 0x0983301C, size: 48}
+  - name: gUnk_098566B4
+    format: raw
+    us: {address: 0x098566B4, size: 1332}
+    jp: {address: 0x0980B1C8, size: 1332}
+    eu: {address: 0x09833088, size: 1332}
+  - name: gUnk_09856BE8
+    format: raw
+    us: {address: 0x09856BE8, size: 96}
+    jp: {address: 0x0980B6FC, size: 96}
+    eu: {address: 0x098335BC, size: 96}
+  - name: gUnk_09856C48
+    format: raw
+    us: {address: 0x09856C48, size: 72}
+    jp: {address: 0x0980B75C, size: 72}
+    eu: {address: 0x0983361C, size: 72}
+  - name: gUnk_09856CE0
+    format: raw
+    us: {address: 0x09856CE0, size: 36}
+    jp: {address: 0x0980B7F4, size: 36}
+    eu: {address: 0x098336B8, size: 36}
+  - name: gUnk_09856D04
+    format: raw
+    us: {address: 0x09856D04, size: 48}
+    jp: {address: 0x0980B818, size: 48}
+    eu: {address: 0x098336DC, size: 48}
+  - name: gUnk_09856D84
+    format: raw
+    us: {address: 0x09856D84, size: 36}
+    jp: {address: 0x0980B898, size: 36}
+    eu: {address: 0x09833760, size: 36}
+  - name: gUnk_09856DA8
+    format: raw
+    us: {address: 0x09856DA8, size: 60}
+    jp: {address: 0x0980B8BC, size: 60}
+    eu: {address: 0x09833784, size: 60}
+  - name: gUnk_09856E34
+    format: raw
+    us: {address: 0x09856E34, size: 12}
+    jp: {address: 0x0980B948, size: 12}
+    eu: {address: 0x09833814, size: 12}
+  - name: gUnk_09856E40
+    format: raw
+    us: {address: 0x09856E40, size: 72}
+    jp: {address: 0x0980B954, size: 72}
+    eu: {address: 0x09833820, size: 72}
+  - name: gUnk_09856ED8
+    format: raw
+    us: {address: 0x09856ED8, size: 60}
+    jp: {address: 0x0980B9EC, size: 60}
+    eu: {address: 0x098338BC, size: 60}
+  - name: gUnk_098A9C84
+    format: tiles4
+    width: 2
+    palette: gUnk_0998FF44
+    us: {address: 0x098A9C84, size: 32192}
+    jp: {address: 0x0985E798, size: 32192}
+    eu: {address: 0x09889B10, size: 32192}
+  - name: gUnk_098B1A44
+    format: tiles4
+    width: 32
+    palette: gUnk_0998FF44
+    us: {address: 0x098B1A44, size: 8192}
+    jp: {address: 0x09866558, size: 8192}
+    eu: {address: 0x098918D0, size: 8192}
+  - name: gUnk_098B3A44
+    format: tiles4
+    width: 32
+    palette: gUnk_0998FFA4
+    us: {address: 0x098B3A44, size: 30720}
+    jp: {address: 0x09868558, size: 30720}
+    eu: {address: 0x098938D0, size: 30720}
+  - name: gUnk_098BB244
+    format: tiles4
+    width: 32
+    palette: gUnk_0998FFA4
+    us: {address: 0x098BB244, size: 10240}
+    jp: {address: 0x0986FD58, size: 10240}
+    eu: {address: 0x0989B0D0, size: 10240}
+  - name: gUnk_098BDA44
+    format: tiles4
+    width: 28
+    palette: gUnk_09990104
+    us: {address: 0x098BDA44, size: 32256}
+    jp: {address: 0x09872558, size: 32256}
+    eu: {address: 0x0989D8D0, size: 32256}
+  - name: gUnk_098C5844
+    format: tiles4
+    width: 20
+    palette: gUnk_09990104
+    us: {address: 0x098C5844, size: 12160}
+    jp: {address: 0x0987A358, size: 12160}
+    eu: {address: 0x098A56D0, size: 12160}
+  - name: gUnk_098C87C4
+    format: raw
+    us: {address: 0x098C87C4, size: 5568}
+    jp: {address: 0x0987D2D8, size: 5568}
+    eu: {address: 0x098A8650, size: 5568}
+  - name: gUnk_098C9D84
+    format: tiles4
+    width: 32
+    palette: gUnk_09990264
+    us: {address: 0x098C9D84, size: 30720}
+    jp: {address: 0x0987E898, size: 30720}
+    eu: {address: 0x098A9C10, size: 30720}
+  - name: gUnk_098D1584
+    format: tiles4
+    width: 20
+    palette: gUnk_09990264
+    us: {address: 0x098D1584, size: 12160}
+    jp: {address: 0x09886098, size: 12160}
+    eu: {address: 0x098B1410, size: 12160}
+  - name: gUnk_098D4504
+    format: tiles4
+    width: 10
+    palette: gUnk_099903C4
+    us: {address: 0x098D4504, size: 31040}
+    jp: {address: 0x09889018, size: 31040}
+    eu: {address: 0x098B4390, size: 31040}
+  - name: gUnk_098DBE44
+    format: tiles4
+    width: 20
+    palette: gUnk_099903C4
+    us: {address: 0x098DBE44, size: 12160}
+    jp: {address: 0x09890958, size: 12160}
+    eu: {address: 0x098BBCD0, size: 12160}
+  - name: gUnk_098DEDC4
+    format: raw
+    us: {address: 0x098DEDC4, size: 960}
+    jp: {address: 0x098938D8, size: 960}
+    eu: {address: 0x098BEC50, size: 960}
+  - name: gUnk_098DF184
+    format: tiles4
+    width: 32
+    palette: gUnk_09990524
+    us: {address: 0x098DF184, size: 32768}
+    jp: {address: 0x09893C98, size: 32768}
+    eu: {address: 0x098BF010, size: 32768}
+  - name: gUnk_098E7184
+    format: tiles4
+    width: 6
+    palette: gUnk_09990524
+    us: {address: 0x098E7184, size: 14016}
+    jp: {address: 0x0989BC98, size: 14016}
+    eu: {address: 0x098C7010, size: 14016}
+  - name: gUnk_098EB324
+    format: tiles4
+    width: 4
+    palette: gUnk_099906A4
+    us: {address: 0x098EB324, size: 32128}
+    jp: {address: 0x0989FE38, size: 32128}
+    eu: {address: 0x098CB1B0, size: 32128}
+  - name: gUnk_098F30A4
+    format: tiles4
+    width: 30
+    palette: gUnk_099906A4
+    us: {address: 0x098F30A4, size: 11520}
+    jp: {address: 0x098A7BB8, size: 11520}
+    eu: {address: 0x098D2F30, size: 11520}
+  - name: gUnk_098F5DA4
+    format: raw
+    us: {address: 0x098F5DA4, size: 5120}
+    jp: {address: 0x098AA8B8, size: 5120}
+    eu: {address: 0x098D5C30, size: 5120}
+  - name: gUnk_098F71A4
+    format: tiles4
+    width: 32
+    palette: gUnk_09990804
+    us: {address: 0x098F71A4, size: 32768}
+    jp: {address: 0x098ABCB8, size: 32768}
+    eu: {address: 0x098D7030, size: 32768}
+  - name: gUnk_098FF1A4
+    format: tiles4
+    width: 32
+    palette: gUnk_09990804
+    us: {address: 0x098FF1A4, size: 12288}
+    jp: {address: 0x098B3CB8, size: 12288}
+    eu: {address: 0x098DF030, size: 12288}
+  - name: gUnk_099021A4
+    format: raw
+    us: {address: 0x099021A4, size: 3072}
+    jp: {address: 0x098B6CB8, size: 3072}
+    eu: {address: 0x098E2030, size: 3072}
+  - name: gUnk_09902DA4
+    format: tiles4
+    width: 32
+    palette: gUnk_09990984
+    us: {address: 0x09902DA4, size: 32768}
+    jp: {address: 0x098B78B8, size: 32768}
+    eu: {address: 0x098E2C30, size: 32768}
+  - name: gUnk_0990ADA4
+    format: tiles4
+    width: 5
+    palette: gUnk_09990984
+    us: {address: 0x0990ADA4, size: 15520}
+    jp: {address: 0x098BF8B8, size: 15520}
+    eu: {address: 0x098EAC30, size: 15520}
+  - name: gUnk_0990EA44
+    format: tiles4
+    width: 32
+    palette: gUnk_09990B04
+    us: {address: 0x0990EA44, size: 32768}
+    jp: {address: 0x098C3558, size: 32768}
+    eu: {address: 0x098EE8D0, size: 32768}
+  - name: gUnk_09916A44
+    format: tiles4
+    width: 20
+    palette: gUnk_09990B04
+    us: {address: 0x09916A44, size: 12160}
+    jp: {address: 0x098CB558, size: 12160}
+    eu: {address: 0x098F68D0, size: 12160}
+  - name: gUnk_099199C4
+    format: tiles4
+    width: 32
+    palette: gUnk_09990C64
+    us: {address: 0x099199C4, size: 30720}
+    jp: {address: 0x098CE4D8, size: 30720}
+    eu: {address: 0x098F9850, size: 30720}
+  - name: gUnk_099211C4
+    format: tiles4
+    width: 2
+    palette: gUnk_09990C64
+    us: {address: 0x099211C4, size: 12224}
+    jp: {address: 0x098D5CD8, size: 12224}
+    eu: {address: 0x09901050, size: 12224}
+  - name: gUnk_09924184
+    format: tiles4
+    width: 31
+    palette: gUnk_09990DC4
+    us: {address: 0x09924184, size: 32736}
+    jp: {address: 0x098D8C98, size: 32736}
+    eu: {address: 0x09904010, size: 32736}
+  - name: gUnk_0992C164
+    format: tiles4
+    width: 31
+    palette: gUnk_09990DC4
+    us: {address: 0x0992C164, size: 15872}
+    jp: {address: 0x098E0C78, size: 15872}
+    eu: {address: 0x0990BFF0, size: 15872}
+  - name: gUnk_0992FF64
+    format: tiles4
+    width: 32
+    palette: gUnk_09990F44
+    us: {address: 0x0992FF64, size: 32768}
+    jp: {address: 0x098E4A78, size: 32768}
+    eu: {address: 0x0990FDF0, size: 32768}
+  - name: gUnk_09937F64
+    format: tiles4
+    width: 32
+    palette: gUnk_09990F44
+    us: {address: 0x09937F64, size: 12288}
+    jp: {address: 0x098ECA78, size: 12288}
+    eu: {address: 0x09917DF0, size: 12288}
+  - name: gUnk_09968144
+    format: tilemap
+    us: {address: 0x09968144, size: 2048}
+    jp: {address: 0x0991CC58, size: 2048}
+    eu: {address: 0x0996F130, size: 2048}
+  - name: gUnk_09968944
+    format: tilemap
+    us: {address: 0x09968944, size: 4096}
+    jp: {address: 0x0991D458, size: 4096}
+    eu: {address: 0x0996F930, size: 4096}
+  - name: gUnk_09969944
+    format: tilemap
+    us: {address: 0x09969944, size: 768}
+    jp: {address: 0x0991E458, size: 768}
+    eu: {address: 0x09970930, size: 768}
+  - name: gUnk_09969C44
+    format: tilemap
+    us: {address: 0x09969C44, size: 2048}
+    jp: {address: 0x0991E758, size: 2048}
+    eu: {address: 0x09970C30, size: 2048}
+  - name: gUnk_0996A444
+    format: tilemap
+    us: {address: 0x0996A444, size: 6144}
+    jp: {address: 0x0991EF58, size: 6144}
+    eu: {address: 0x09971430, size: 6144}
+  - name: gUnk_0996BC44
+    format: tilemap
+    us: {address: 0x0996BC44, size: 1280}
+    jp: {address: 0x09920758, size: 1280}
+    eu: {address: 0x09972C30, size: 1280}
+  - name: gUnk_0996C144
+    format: tilemap
+    us: {address: 0x0996C144, size: 2048}
+    jp: {address: 0x09920C58, size: 2048}
+    eu: {address: 0x09973130, size: 2048}
+  - name: gUnk_0996C944
+    format: tilemap
+    us: {address: 0x0996C944, size: 6144}
+    jp: {address: 0x09921458, size: 6144}
+    eu: {address: 0x09973930, size: 6144}
+  - name: gUnk_0996E144
+    format: tilemap
+    us: {address: 0x0996E144, size: 1024}
+    jp: {address: 0x09922C58, size: 1024}
+    eu: {address: 0x09975130, size: 1024}
+  - name: gUnk_0996E544
+    format: tilemap
+    us: {address: 0x0996E544, size: 2048}
+    jp: {address: 0x09923058, size: 2048}
+    eu: {address: 0x09975530, size: 2048}
+  - name: gUnk_0996ED44
+    format: tilemap
+    us: {address: 0x0996ED44, size: 6144}
+    jp: {address: 0x09923858, size: 6144}
+    eu: {address: 0x09975D30, size: 6144}
+  - name: gUnk_09970544
+    format: tilemap
+    us: {address: 0x09970544, size: 1024}
+    jp: {address: 0x09925058, size: 1024}
+    eu: {address: 0x09977530, size: 1024}
+  - name: gUnk_09970944
+    format: tilemap
+    us: {address: 0x09970944, size: 2048}
+    jp: {address: 0x09925458, size: 2048}
+    eu: {address: 0x09977930, size: 2048}
+  - name: gUnk_09971144
+    format: tilemap
+    us: {address: 0x09971144, size: 6144}
+    jp: {address: 0x09925C58, size: 6144}
+    eu: {address: 0x09978130, size: 6144}
+  - name: gUnk_09972944
+    format: tilemap
+    us: {address: 0x09972944, size: 1024}
+    jp: {address: 0x09927458, size: 1024}
+    eu: {address: 0x09979930, size: 1024}
+  - name: gUnk_09972D44
+    format: tilemap
+    us: {address: 0x09972D44, size: 2048}
+    jp: {address: 0x09927858, size: 2048}
+    eu: {address: 0x09979D30, size: 2048}
+  - name: gUnk_09973544
+    format: tilemap
+    us: {address: 0x09973544, size: 6144}
+    jp: {address: 0x09928058, size: 6144}
+    eu: {address: 0x0997A530, size: 6144}
+  - name: gUnk_09974D44
+    format: tilemap
+    us: {address: 0x09974D44, size: 1024}
+    jp: {address: 0x09929858, size: 1024}
+    eu: {address: 0x0997BD30, size: 1024}
+  - name: gUnk_09975144
+    format: tilemap
+    us: {address: 0x09975144, size: 2048}
+    jp: {address: 0x09929C58, size: 2048}
+    eu: {address: 0x0997C130, size: 2048}
+  - name: gUnk_09975944
+    format: tilemap
+    us: {address: 0x09975944, size: 6144}
+    jp: {address: 0x0992A458, size: 6144}
+    eu: {address: 0x0997C930, size: 6144}
+  - name: gUnk_09977144
+    format: tilemap
+    us: {address: 0x09977144, size: 1024}
+    jp: {address: 0x0992BC58, size: 1024}
+    eu: {address: 0x0997E130, size: 1024}
+  - name: gUnk_09977544
+    format: tilemap
+    us: {address: 0x09977544, size: 2048}
+    jp: {address: 0x0992C058, size: 2048}
+    eu: {address: 0x0997E530, size: 2048}
+  - name: gUnk_09977D44
+    format: tilemap
+    us: {address: 0x09977D44, size: 6144}
+    jp: {address: 0x0992C858, size: 6144}
+    eu: {address: 0x0997ED30, size: 6144}
+  - name: gUnk_09979544
+    format: tilemap
+    us: {address: 0x09979544, size: 1024}
+    jp: {address: 0x0992E058, size: 1024}
+    eu: {address: 0x09980530, size: 1024}
+  - name: gUnk_09979944
+    format: tilemap
+    us: {address: 0x09979944, size: 2048}
+    jp: {address: 0x0992E458, size: 2048}
+    eu: {address: 0x09980930, size: 2048}
+  - name: gUnk_0997A144
+    format: tilemap
+    us: {address: 0x0997A144, size: 6144}
+    jp: {address: 0x0992EC58, size: 6144}
+    eu: {address: 0x09981130, size: 6144}
+  - name: gUnk_0997B944
+    format: tilemap
+    us: {address: 0x0997B944, size: 1024}
+    jp: {address: 0x09930458, size: 1024}
+    eu: {address: 0x09982930, size: 1024}
+  - name: gUnk_0997BD44
+    format: tilemap
+    us: {address: 0x0997BD44, size: 2048}
+    jp: {address: 0x09930858, size: 2048}
+    eu: {address: 0x09982D30, size: 2048}
+  - name: gUnk_0997C544
+    format: tilemap
+    us: {address: 0x0997C544, size: 6144}
+    jp: {address: 0x09931058, size: 6144}
+    eu: {address: 0x09983530, size: 6144}
+  - name: gUnk_0997DD44
+    format: tilemap
+    us: {address: 0x0997DD44, size: 1024}
+    jp: {address: 0x09932858, size: 1024}
+    eu: {address: 0x09984D30, size: 1024}
+  - name: gUnk_0997E144
+    format: tilemap
+    us: {address: 0x0997E144, size: 2048}
+    jp: {address: 0x09932C58, size: 2048}
+    eu: {address: 0x09985130, size: 2048}
+  - name: gUnk_0997E944
+    format: tilemap
+    us: {address: 0x0997E944, size: 6144}
+    jp: {address: 0x09933458, size: 6144}
+    eu: {address: 0x09985930, size: 6144}
+  - name: gUnk_09980144
+    format: tilemap
+    us: {address: 0x09980144, size: 1280}
+    jp: {address: 0x09934C58, size: 1280}
+    eu: {address: 0x09987130, size: 1280}
+  - name: gUnk_09980644
+    format: tilemap
+    us: {address: 0x09980644, size: 2048}
+    jp: {address: 0x09935158, size: 2048}
+    eu: {address: 0x09987630, size: 2048}
+  - name: gUnk_09980E44
+    format: tilemap
+    us: {address: 0x09980E44, size: 6144}
+    jp: {address: 0x09935958, size: 6144}
+    eu: {address: 0x09987E30, size: 6144}
+  - name: gUnk_09982644
+    format: tilemap
+    us: {address: 0x09982644, size: 1024}
+    jp: {address: 0x09937158, size: 1024}
+    eu: {address: 0x09989630, size: 1024}
+  - name: gUnk_09982A44
+    format: tilemap
+    us: {address: 0x09982A44, size: 2048}
+    jp: {address: 0x09937558, size: 2048}
+    eu: {address: 0x09989A30, size: 2048}
+  - name: gUnk_09983244
+    format: tilemap
+    us: {address: 0x09983244, size: 6144}
+    jp: {address: 0x09937D58, size: 6144}
+    eu: {address: 0x0998A230, size: 6144}
+  - name: gUnk_09984A44
+    format: tilemap
+    us: {address: 0x09984A44, size: 1280}
+    jp: {address: 0x09939558, size: 1280}
+    eu: {address: 0x0998BA30, size: 1280}
+  - name: gUnk_09984F44
+    format: tilemap
+    us: {address: 0x09984F44, size: 2048}
+    jp: {address: 0x09939A58, size: 2048}
+    eu: {address: 0x09997F30, size: 348, compress: lz77}
+  - name: gUnk_09985744
+    format: tilemap
+    us: {address: 0x09985744, size: 2048}
+    jp: {address: 0x0993A258, size: 2048}
+    eu: {address: 0x0999808C, size: 296, compress: lz77}
+  - name: gUnk_0998FF44
+    format: palette
+    us: {address: 0x0998FF44, size: 96}
+    jp: {address: 0x09944A58, size: 96}
+    eu: {address: 0x09995F30, size: 96}
+  - name: gUnk_0998FFA4
+    format: palette
+    us: {address: 0x0998FFA4, size: 352}
+    jp: {address: 0x09944AB8, size: 352}
+    eu: {address: 0x09995F90, size: 352}
+  - name: gUnk_09990104
+    format: palette
+    us: {address: 0x09990104, size: 352}
+    jp: {address: 0x09944C18, size: 352}
+    eu: {address: 0x099960F0, size: 352}
+  - name: gUnk_09990264
+    format: palette
+    us: {address: 0x09990264, size: 352}
+    jp: {address: 0x09944D78, size: 352}
+    eu: {address: 0x09996250, size: 352}
+  - name: gUnk_099903C4
+    format: palette
+    us: {address: 0x099903C4, size: 352}
+    jp: {address: 0x09944ED8, size: 352}
+    eu: {address: 0x099963B0, size: 352}
+  - name: gUnk_09990524
+    format: palette
+    us: {address: 0x09990524, size: 384}
+    jp: {address: 0x09945038, size: 384}
+    eu: {address: 0x09996510, size: 384}
+  - name: gUnk_099906A4
+    format: palette
+    us: {address: 0x099906A4, size: 352}
+    jp: {address: 0x099451B8, size: 352}
+    eu: {address: 0x09996690, size: 352}
+  - name: gUnk_09990804
+    format: palette
+    us: {address: 0x09990804, size: 384}
+    jp: {address: 0x09945318, size: 384}
+    eu: {address: 0x099967F0, size: 384}
+  - name: gUnk_09990984
+    format: palette
+    us: {address: 0x09990984, size: 384}
+    jp: {address: 0x09945498, size: 384}
+    eu: {address: 0x09996970, size: 384}
+  - name: gUnk_09990B04
+    format: palette
+    us: {address: 0x09990B04, size: 352}
+    jp: {address: 0x09945618, size: 352}
+    eu: {address: 0x09996AF0, size: 352}
+  - name: gUnk_09990C64
+    format: palette
+    us: {address: 0x09990C64, size: 352}
+    jp: {address: 0x09945778, size: 352}
+    eu: {address: 0x09996C50, size: 352}
+  - name: gUnk_09990DC4
+    format: palette
+    us: {address: 0x09990DC4, size: 384}
+    jp: {address: 0x099458D8, size: 384}
+    eu: {address: 0x09996DB0, size: 384}
+  - name: gUnk_09990F44
+    format: palette
+    us: {address: 0x09990F44, size: 384}
+    jp: {address: 0x09945A58, size: 384}
+    eu: {address: 0x09996F30, size: 384}
