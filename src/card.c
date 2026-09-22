@@ -74,9 +74,6 @@ u32 gUnk_02034AA4;
 u32 gUnk_02034AA8;
 CardDisplayWork* gUnk_02034AAC;
 
-u8 gUnk_02039DD8 EWRAM_COMMON(4);
-u8 gUnk_02039DDC EWRAM_COMMON(4);
-
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0809511C(ReloadGageWork* w, void* a);
 #ifdef VERSION_EU
@@ -393,59 +390,4 @@ TaskDesc gUnk_09EE499C = {
     (void (*)(void*))card_reload_2,
     (void (*)(void*))card_reload_3,
     0xA8,
-};
-
-const char gTaskNameCardBattleRiku[] __attribute__((section(".rodata_registration_name_gTaskDescCardBattleRiku"), aligned(1))) = "cardbattle";
-
-TaskDesc gTaskDescCardBattleRiku = {
-    gTaskNameCardBattleRiku,
-    (void (*)(void*, void*))func_0807E8F4,
-    func_0807EDEC,
-    (void (*)(void*))func_0807F99C,
-    (void (*)(void*))func_0807FA0C,
-    0xCC,
-};
-
-const char gTaskName_09EE49CC[] __attribute__((section(".rodata_registration_name_gUnk_09EE49CC"), aligned(1))) = "card";
-
-TaskDesc gUnk_09EE49CC = {
-    gTaskName_09EE49CC,
-    (void (*)(void*, void*))func_08081A3C,
-    func_08081B70,
-    (void (*)(void*))func_08081C98,
-    (void (*)(void*))func_080820F4,
-    0xA8,
-};
-
-const char gTaskName_09EE49E4[] __attribute__((section(".rodata_registration_name_gUnk_09EE49E4"), aligned(1))) = "NO_Card";
-
-TaskDesc gUnk_09EE49E4 = {
-    gTaskName_09EE49E4,
-    (void (*)(void*, void*))func_08081A3C,
-    func_08081B70,
-    (void (*)(void*))NO_Card_2,
-    (void (*)(void*))func_080820F4,
-    0xA8,
-};
-
-const char gTaskName_09EE49FC[] __attribute__((section(".rodata_registration_name_gUnk_09EE49FC"), aligned(1))) = "Reload_Card";
-
-TaskDesc gUnk_09EE49FC = {
-    gTaskName_09EE49FC,
-    (void (*)(void*, void*))Reload_Card_0,
-    Reload_Card_1,
-    (void (*)(void*))Reload_Card_2,
-    (void (*)(void*))Reload_Card_3,
-    0xA8,
-};
-
-const char gTaskNameBosscard[] __attribute__((section(".rodata_registration_name_gTaskDescBosscard"), aligned(1))) = "Bosscard";
-
-TaskDesc gTaskDescBosscard = {
-    gTaskNameBosscard,
-    (void (*)(void*, void*))Bosscard_0,
-    Bosscard_1,
-    (void (*)(void*))Bosscard_2,
-    (void (*)(void*))Bosscard_3,
-    0x38,
 };

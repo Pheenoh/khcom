@@ -41,6 +41,10 @@
 #include "game.h"
 #include "bos4_api.h"
 
+u8 gUnk_02039DD8 EWRAM_COMMON(4);
+
+u8 gUnk_02039DDC EWRAM_COMMON(4);
+
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
@@ -3763,3 +3767,58 @@ u8 func_08083B20(UnkStruct_08083B20* w, u8 b) {
 }
 
 void func_08081C98(CardDisplayWork* p);
+
+const char gTaskNameCardBattleRiku[] = "cardbattle";
+
+TaskDesc gTaskDescCardBattleRiku = {
+    gTaskNameCardBattleRiku,
+    (void (*)(void*, void*))func_0807E8F4,
+    func_0807EDEC,
+    (void (*)(void*))func_0807F99C,
+    (void (*)(void*))func_0807FA0C,
+    0xCC,
+};
+
+const char gTaskName_09EE49CC[] = "card";
+
+TaskDesc gUnk_09EE49CC = {
+    gTaskName_09EE49CC,
+    (void (*)(void*, void*))func_08081A3C,
+    func_08081B70,
+    (void (*)(void*))func_08081C98,
+    (void (*)(void*))func_080820F4,
+    0xA8,
+};
+
+const char gTaskName_09EE49E4[] = "NO_Card";
+
+TaskDesc gUnk_09EE49E4 = {
+    gTaskName_09EE49E4,
+    (void (*)(void*, void*))func_08081A3C,
+    func_08081B70,
+    (void (*)(void*))NO_Card_2,
+    (void (*)(void*))func_080820F4,
+    0xA8,
+};
+
+const char gTaskName_09EE49FC[] = "Reload_Card";
+
+TaskDesc gUnk_09EE49FC = {
+    gTaskName_09EE49FC,
+    (void (*)(void*, void*))Reload_Card_0,
+    Reload_Card_1,
+    (void (*)(void*))Reload_Card_2,
+    (void (*)(void*))Reload_Card_3,
+    0xA8,
+};
+
+const char gTaskNameBosscard[] = "Bosscard";
+
+TaskDesc gTaskDescBosscard = {
+    gTaskNameBosscard,
+    (void (*)(void*, void*))Bosscard_0,
+    Bosscard_1,
+    (void (*)(void*))Bosscard_2,
+    (void (*)(void*))Bosscard_3,
+    0x38,
+};
