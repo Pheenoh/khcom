@@ -75,7 +75,6 @@ sio_card_trade_state.c -O2 -fprologue-bugfix -fno-common
 sio_battle_options_state.c -O2 -fprologue-bugfix -fno-common
 sio_handshake_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
-battle_field_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_cursor.c -O2 -fprologue-bugfix -fno-common
 worldlogo_state.c -O2 -fprologue-bugfix -fno-common
 sio_debug_state.c -O2 -fprologue-bugfix -fno-common

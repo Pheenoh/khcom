@@ -69,7 +69,7 @@ EWRAM_COMMON_ORDER = [
     ("src/mode_chkbtl.o", ".ewram_common.*"),
     ("src/mode_debflag.o", ".ewram_common.*"),
     ("src/mode_vsbattle.o", ".ewram_common.*"),
-    ("src/battle_field_state.o", ".bss"),
+    ("src/btl_actor.o", ".ewram_common.*"),
     ("src/player_progression.o", ".ewram_common.*"),
     ("src/battle_runtime.o", ".ewram_common.*"),
     ("src/evt.o", ".ewram_common.*"),
