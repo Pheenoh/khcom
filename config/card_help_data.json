@@ -1824,10 +1824,10 @@
       "placements": [
         {
           "unit": "card_help_data.c",
-          "section": ".data_card_help_def_0903BD0C",
+          "section": ".rodata",
           "address": "0x900ba1c",
-          "size": 8,
-          "sha256": "09eee9d9d93708769ee44db568cd07b0e5a89ee061e6388fc638423eca234c23",
+          "size": 6696,
+          "sha256": "3175450bbdf2c83ca24289d0724f2ce5d0da65c9a53223acadc7a3afb965d207",
           "objects": [
             {
               "name": "gUnk_0903BD0C",
@@ -1837,37 +1837,794 @@
                 "func_080A235C",
                 "explicit line count; struct scalar"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_help_data.c",
-          "section": ".data_card_help_def_0903BD14",
-          "address": "0x900ba50",
-          "size": 8,
-          "sha256": "6cecee66ae176da21622d3a887391c8dae0753d3c58bd9f35a5bca7766484031",
-          "objects": [
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA24",
+              "offset": 8,
+              "size": 21
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA3C",
+              "offset": 32,
+              "size": 19
+            },
             {
               "name": "gUnk_0903BD14",
-              "offset": 0,
+              "offset": 52,
               "size": 8,
               "consumer": [
                 "func_080A235C",
                 "explicit line count; struct scalar"
               ]
-            }
-          ]
-        },
-        {
-          "unit": "card_help_data.c",
-          "section": ".rodata",
-          "address": "0x900d1a4",
-          "size": 672,
-          "sha256": "3a907a15e98c7b0835bdb0c66d957962e1c5127bf443d81013e92174dcce9b7f",
-          "objects": [
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA58",
+              "offset": 60,
+              "size": 21
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA70",
+              "offset": 84,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA84",
+              "offset": 104,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BA9C",
+              "offset": 128,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900BAAC",
+              "offset": 144,
+              "size": 25
+            },
+            {
+              "name": "gCardHelpTextJp_0900BAC8",
+              "offset": 172,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BADC",
+              "offset": 192,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BAF4",
+              "offset": 216,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BB14",
+              "offset": 248,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BB2C",
+              "offset": 272,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BB4C",
+              "offset": 304,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BB64",
+              "offset": 328,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BB84",
+              "offset": 360,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900BBA0",
+              "offset": 388,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BBB8",
+              "offset": 412,
+              "size": 43
+            },
+            {
+              "name": "gCardHelpTextJp_0900BBE4",
+              "offset": 456,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BBF8",
+              "offset": 476,
+              "size": 43
+            },
+            {
+              "name": "gCardHelpTextJp_0900BC24",
+              "offset": 520,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BC44",
+              "offset": 552,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900BC6C",
+              "offset": 592,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BC8C",
+              "offset": 624,
+              "size": 51
+            },
+            {
+              "name": "gCardHelpTextJp_0900BCC0",
+              "offset": 676,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900BCD0",
+              "offset": 692,
+              "size": 55
+            },
+            {
+              "name": "gCardHelpTextJp_0900BD08",
+              "offset": 748,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BD20",
+              "offset": 772,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900BD4C",
+              "offset": 816,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900BD5C",
+              "offset": 832,
+              "size": 49
+            },
+            {
+              "name": "gCardHelpTextJp_0900BD90",
+              "offset": 884,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BDA8",
+              "offset": 908,
+              "size": 55
+            },
+            {
+              "name": "gCardHelpTextJp_0900BDE0",
+              "offset": 964,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BDF4",
+              "offset": 984,
+              "size": 55
+            },
+            {
+              "name": "gCardHelpTextJp_0900BE2C",
+              "offset": 1040,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BE4C",
+              "offset": 1072,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900BE7C",
+              "offset": 1120,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BE90",
+              "offset": 1140,
+              "size": 49
+            },
+            {
+              "name": "gCardHelpTextJp_0900BEC4",
+              "offset": 1192,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BEE4",
+              "offset": 1224,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900BF14",
+              "offset": 1272,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900BF2C",
+              "offset": 1296,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900BF64",
+              "offset": 1352,
+              "size": 35
+            },
+            {
+              "name": "gCardHelpTextJp_0900BF88",
+              "offset": 1388,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BF9C",
+              "offset": 1408,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900BFB0",
+              "offset": 1428,
+              "size": 43
+            },
+            {
+              "name": "gCardHelpTextJp_0900BFDC",
+              "offset": 1472,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900BFFC",
+              "offset": 1504,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900C02C",
+              "offset": 1552,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900C03C",
+              "offset": 1568,
+              "size": 69
+            },
+            {
+              "name": "gCardHelpTextJp_0900C084",
+              "offset": 1640,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900C09C",
+              "offset": 1664,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900C0CC",
+              "offset": 1712,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900C0DC",
+              "offset": 1728,
+              "size": 57
+            },
+            {
+              "name": "gCardHelpTextJp_0900C118",
+              "offset": 1788,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900C130",
+              "offset": 1812,
+              "size": 67
+            },
+            {
+              "name": "gCardHelpTextJp_0900C174",
+              "offset": 1880,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900C188",
+              "offset": 1900,
+              "size": 67
+            },
+            {
+              "name": "gCardHelpTextJp_0900C1CC",
+              "offset": 1968,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900C1EC",
+              "offset": 2000,
+              "size": 43
+            },
+            {
+              "name": "gCardHelpTextJp_0900C218",
+              "offset": 2044,
+              "size": 23
+            },
+            {
+              "name": "gCardHelpTextJp_0900C230",
+              "offset": 2068,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C25C",
+              "offset": 2112,
+              "size": 35
+            },
+            {
+              "name": "gCardHelpTextJp_0900C280",
+              "offset": 2148,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900C29C",
+              "offset": 2176,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900C2B0",
+              "offset": 2196,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900C2E0",
+              "offset": 2244,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900C300",
+              "offset": 2276,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900C33C",
+              "offset": 2336,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900C350",
+              "offset": 2356,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900C38C",
+              "offset": 2416,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900C3AC",
+              "offset": 2448,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900C3DC",
+              "offset": 2496,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900C3F0",
+              "offset": 2516,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900C428",
+              "offset": 2572,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900C448",
+              "offset": 2604,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C474",
+              "offset": 2648,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900C490",
+              "offset": 2676,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900C4C0",
+              "offset": 2724,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C4EC",
+              "offset": 2768,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900C524",
+              "offset": 2824,
+              "size": 19
+            },
+            {
+              "name": "gCardHelpTextJp_0900C538",
+              "offset": 2844,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900C568",
+              "offset": 2892,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900C588",
+              "offset": 2924,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900C5B0",
+              "offset": 2964,
+              "size": 25
+            },
+            {
+              "name": "gCardHelpTextJp_0900C5CC",
+              "offset": 2992,
+              "size": 49
+            },
+            {
+              "name": "gCardHelpTextJp_0900C600",
+              "offset": 3044,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900C61C",
+              "offset": 3072,
+              "size": 37
+            },
+            {
+              "name": "gCardHelpTextJp_0900C644",
+              "offset": 3112,
+              "size": 33
+            },
+            {
+              "name": "gCardHelpTextJp_0900C668",
+              "offset": 3148,
+              "size": 35
+            },
+            {
+              "name": "gCardHelpTextJp_0900C68C",
+              "offset": 3184,
+              "size": 51
+            },
+            {
+              "name": "gCardHelpTextJp_0900C6C0",
+              "offset": 3236,
+              "size": 31
+            },
+            {
+              "name": "gCardHelpTextJp_0900C6E0",
+              "offset": 3268,
+              "size": 55
+            },
+            {
+              "name": "gCardHelpTextJp_0900C718",
+              "offset": 3324,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900C728",
+              "offset": 3340,
+              "size": 49
+            },
+            {
+              "name": "gCardHelpTextJp_0900C75C",
+              "offset": 3392,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C788",
+              "offset": 3436,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900C7B8",
+              "offset": 3484,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900C7E0",
+              "offset": 3524,
+              "size": 73
+            },
+            {
+              "name": "gCardHelpTextJp_0900C82C",
+              "offset": 3600,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C858",
+              "offset": 3644,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900C880",
+              "offset": 3684,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C8AC",
+              "offset": 3728,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900C8D4",
+              "offset": 3768,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C900",
+              "offset": 3812,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900C928",
+              "offset": 3852,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C954",
+              "offset": 3896,
+              "size": 49
+            },
+            {
+              "name": "gCardHelpTextJp_0900C988",
+              "offset": 3948,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900C9B4",
+              "offset": 3992,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900C9F0",
+              "offset": 4052,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900CA0C",
+              "offset": 4080,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900CA48",
+              "offset": 4140,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900CA78",
+              "offset": 4188,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900CAA4",
+              "offset": 4232,
+              "size": 31
+            },
+            {
+              "name": "gCardHelpTextJp_0900CAC4",
+              "offset": 4264,
+              "size": 55
+            },
+            {
+              "name": "gCardHelpTextJp_0900CAFC",
+              "offset": 4320,
+              "size": 15
+            },
+            {
+              "name": "gCardHelpTextJp_0900CB0C",
+              "offset": 4336,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900CB48",
+              "offset": 4396,
+              "size": 33
+            },
+            {
+              "name": "gCardHelpTextJp_0900CB6C",
+              "offset": 4432,
+              "size": 33
+            },
+            {
+              "name": "gCardHelpTextJp_0900CB90",
+              "offset": 4468,
+              "size": 27
+            },
+            {
+              "name": "gCardHelpTextJp_0900CBAC",
+              "offset": 4496,
+              "size": 31
+            },
+            {
+              "name": "gCardHelpTextJp_0900CBCC",
+              "offset": 4528,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900CBF8",
+              "offset": 4572,
+              "size": 37
+            },
+            {
+              "name": "gCardHelpTextJp_0900CC20",
+              "offset": 4612,
+              "size": 47
+            },
+            {
+              "name": "gCardHelpTextJp_0900CC50",
+              "offset": 4660,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900CC78",
+              "offset": 4700,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900CCA4",
+              "offset": 4744,
+              "size": 39
+            },
+            {
+              "name": "gCardHelpTextJp_0900CCCC",
+              "offset": 4784,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900CCFC",
+              "offset": 4832,
+              "size": 35
+            },
+            {
+              "name": "gCardHelpTextJp_0900CD20",
+              "offset": 4868,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900CD50",
+              "offset": 4916,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900CD70",
+              "offset": 4948,
+              "size": 45
+            },
+            {
+              "name": "gCardHelpTextJp_0900CDA0",
+              "offset": 4996,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900CDC0",
+              "offset": 5028,
+              "size": 57
+            },
+            {
+              "name": "gCardHelpTextJp_0900CDFC",
+              "offset": 5088,
+              "size": 25
+            },
+            {
+              "name": "gCardHelpTextJp_0900CE18",
+              "offset": 5116,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900CE54",
+              "offset": 5176,
+              "size": 31
+            },
+            {
+              "name": "gCardHelpTextJp_0900CE74",
+              "offset": 5208,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900CEB0",
+              "offset": 5268,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900CED0",
+              "offset": 5300,
+              "size": 57
+            },
+            {
+              "name": "gCardHelpTextJp_0900CF0C",
+              "offset": 5360,
+              "size": 29
+            },
+            {
+              "name": "gCardHelpTextJp_0900CF2C",
+              "offset": 5392,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900CF68",
+              "offset": 5452,
+              "size": 37
+            },
+            {
+              "name": "gCardHelpTextJp_0900CF90",
+              "offset": 5492,
+              "size": 33
+            },
+            {
+              "name": "gCardHelpTextJp_0900CFB4",
+              "offset": 5528,
+              "size": 51
+            },
+            {
+              "name": "gCardHelpTextJp_0900CFE8",
+              "offset": 5580,
+              "size": 41
+            },
+            {
+              "name": "gCardHelpTextJp_0900D014",
+              "offset": 5624,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900D04C",
+              "offset": 5680,
+              "size": 43
+            },
+            {
+              "name": "gCardHelpTextJp_0900D078",
+              "offset": 5724,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900D0B0",
+              "offset": 5780,
+              "size": 37
+            },
+            {
+              "name": "gCardHelpTextJp_0900D0D8",
+              "offset": 5820,
+              "size": 53
+            },
+            {
+              "name": "gCardHelpTextJp_0900D110",
+              "offset": 5876,
+              "size": 11
+            },
+            {
+              "name": "gCardHelpTextJp_0900D11C",
+              "offset": 5888,
+              "size": 59
+            },
+            {
+              "name": "gCardHelpTextJp_0900D158",
+              "offset": 5948,
+              "size": 17
+            },
+            {
+              "name": "gCardHelpTextJp_0900D16C",
+              "offset": 5968,
+              "size": 7
+            },
+            {
+              "name": "gCardHelpTextJp_0900D174",
+              "offset": 5976,
+              "size": 45
+            },
             {
               "name": "gUnk_0903BFB4",
-              "offset": 0,
+              "offset": 6024,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1876,7 +2633,7 @@
             },
             {
               "name": "gUnk_0903BD1C",
-              "offset": 8,
+              "offset": 6032,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1885,7 +2642,7 @@
             },
             {
               "name": "gUnk_0903BD24",
-              "offset": 16,
+              "offset": 6040,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1894,7 +2651,7 @@
             },
             {
               "name": "gUnk_0903BD2C",
-              "offset": 24,
+              "offset": 6048,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1903,7 +2660,7 @@
             },
             {
               "name": "gUnk_0903BD34",
-              "offset": 32,
+              "offset": 6056,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1912,7 +2669,7 @@
             },
             {
               "name": "gUnk_0903BD3C",
-              "offset": 40,
+              "offset": 6064,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1921,7 +2678,7 @@
             },
             {
               "name": "gUnk_0903BD44",
-              "offset": 48,
+              "offset": 6072,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1930,7 +2687,7 @@
             },
             {
               "name": "gUnk_0903BD4C",
-              "offset": 56,
+              "offset": 6080,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1939,7 +2696,7 @@
             },
             {
               "name": "gUnk_0903BD54",
-              "offset": 64,
+              "offset": 6088,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1948,7 +2705,7 @@
             },
             {
               "name": "gUnk_0903BD5C",
-              "offset": 72,
+              "offset": 6096,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1957,7 +2714,7 @@
             },
             {
               "name": "gUnk_0903BD64",
-              "offset": 80,
+              "offset": 6104,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1966,7 +2723,7 @@
             },
             {
               "name": "gUnk_0903BD6C",
-              "offset": 88,
+              "offset": 6112,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1975,7 +2732,7 @@
             },
             {
               "name": "gUnk_0903BD74",
-              "offset": 96,
+              "offset": 6120,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1984,7 +2741,7 @@
             },
             {
               "name": "gUnk_0903BD7C",
-              "offset": 104,
+              "offset": 6128,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -1993,7 +2750,7 @@
             },
             {
               "name": "gUnk_0903BD84",
-              "offset": 112,
+              "offset": 6136,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2002,7 +2759,7 @@
             },
             {
               "name": "gUnk_0903BD8C",
-              "offset": 120,
+              "offset": 6144,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2011,7 +2768,7 @@
             },
             {
               "name": "gUnk_0903BD94",
-              "offset": 128,
+              "offset": 6152,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2020,7 +2777,7 @@
             },
             {
               "name": "gUnk_0903BD9C",
-              "offset": 136,
+              "offset": 6160,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2029,7 +2786,7 @@
             },
             {
               "name": "gUnk_0903BDA4",
-              "offset": 144,
+              "offset": 6168,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2038,7 +2795,7 @@
             },
             {
               "name": "gUnk_0903BDAC",
-              "offset": 152,
+              "offset": 6176,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2047,7 +2804,7 @@
             },
             {
               "name": "gUnk_0903BDB4",
-              "offset": 160,
+              "offset": 6184,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2056,7 +2813,7 @@
             },
             {
               "name": "gUnk_0903BDBC",
-              "offset": 168,
+              "offset": 6192,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2065,7 +2822,7 @@
             },
             {
               "name": "gUnk_0903BDC4",
-              "offset": 176,
+              "offset": 6200,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2074,7 +2831,7 @@
             },
             {
               "name": "gUnk_0903BDCC",
-              "offset": 184,
+              "offset": 6208,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2083,7 +2840,7 @@
             },
             {
               "name": "gUnk_0903BDD4",
-              "offset": 192,
+              "offset": 6216,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2092,7 +2849,7 @@
             },
             {
               "name": "gUnk_0903BDDC",
-              "offset": 200,
+              "offset": 6224,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2101,7 +2858,7 @@
             },
             {
               "name": "gUnk_0903BDE4",
-              "offset": 208,
+              "offset": 6232,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2110,7 +2867,7 @@
             },
             {
               "name": "gUnk_0903BDEC",
-              "offset": 216,
+              "offset": 6240,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2119,7 +2876,7 @@
             },
             {
               "name": "gUnk_0903BDF4",
-              "offset": 224,
+              "offset": 6248,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2128,7 +2885,7 @@
             },
             {
               "name": "gUnk_0903BDFC",
-              "offset": 232,
+              "offset": 6256,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2137,7 +2894,7 @@
             },
             {
               "name": "gUnk_0903BE04",
-              "offset": 240,
+              "offset": 6264,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2146,7 +2903,7 @@
             },
             {
               "name": "gUnk_0903BE0C",
-              "offset": 248,
+              "offset": 6272,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2155,7 +2912,7 @@
             },
             {
               "name": "gUnk_0903BE14",
-              "offset": 256,
+              "offset": 6280,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2164,7 +2921,7 @@
             },
             {
               "name": "gUnk_0903BE1C",
-              "offset": 264,
+              "offset": 6288,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2173,7 +2930,7 @@
             },
             {
               "name": "gUnk_0903BE24",
-              "offset": 272,
+              "offset": 6296,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2182,7 +2939,7 @@
             },
             {
               "name": "gUnk_0903BE2C",
-              "offset": 280,
+              "offset": 6304,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2191,7 +2948,7 @@
             },
             {
               "name": "gUnk_0903BE34",
-              "offset": 288,
+              "offset": 6312,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2200,7 +2957,7 @@
             },
             {
               "name": "gUnk_0903BE3C",
-              "offset": 296,
+              "offset": 6320,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2209,7 +2966,7 @@
             },
             {
               "name": "gUnk_0903BE44",
-              "offset": 304,
+              "offset": 6328,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2218,7 +2975,7 @@
             },
             {
               "name": "gUnk_0903BE4C",
-              "offset": 312,
+              "offset": 6336,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2227,7 +2984,7 @@
             },
             {
               "name": "gUnk_0903BE54",
-              "offset": 320,
+              "offset": 6344,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2236,7 +2993,7 @@
             },
             {
               "name": "gUnk_0903BE5C",
-              "offset": 328,
+              "offset": 6352,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2245,7 +3002,7 @@
             },
             {
               "name": "gUnk_0903BE64",
-              "offset": 336,
+              "offset": 6360,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2254,7 +3011,7 @@
             },
             {
               "name": "gUnk_0903BE6C",
-              "offset": 344,
+              "offset": 6368,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2263,7 +3020,7 @@
             },
             {
               "name": "gUnk_0903BE74",
-              "offset": 352,
+              "offset": 6376,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2272,7 +3029,7 @@
             },
             {
               "name": "gUnk_0903BE7C",
-              "offset": 360,
+              "offset": 6384,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2281,7 +3038,7 @@
             },
             {
               "name": "gUnk_0903BE84",
-              "offset": 368,
+              "offset": 6392,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2290,7 +3047,7 @@
             },
             {
               "name": "gUnk_0903BE8C",
-              "offset": 376,
+              "offset": 6400,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2299,7 +3056,7 @@
             },
             {
               "name": "gUnk_0903BE94",
-              "offset": 384,
+              "offset": 6408,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2308,7 +3065,7 @@
             },
             {
               "name": "gUnk_0903BE9C",
-              "offset": 392,
+              "offset": 6416,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2317,7 +3074,7 @@
             },
             {
               "name": "gUnk_0903BEA4",
-              "offset": 400,
+              "offset": 6424,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2326,7 +3083,7 @@
             },
             {
               "name": "gUnk_0903BEAC",
-              "offset": 408,
+              "offset": 6432,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2335,7 +3092,7 @@
             },
             {
               "name": "gUnk_0903BEB4",
-              "offset": 416,
+              "offset": 6440,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2344,7 +3101,7 @@
             },
             {
               "name": "gUnk_0903BEBC",
-              "offset": 424,
+              "offset": 6448,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2353,7 +3110,7 @@
             },
             {
               "name": "gUnk_0903BEC4",
-              "offset": 432,
+              "offset": 6456,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2362,7 +3119,7 @@
             },
             {
               "name": "gUnk_0903BECC",
-              "offset": 440,
+              "offset": 6464,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2371,7 +3128,7 @@
             },
             {
               "name": "gUnk_0903BED4",
-              "offset": 448,
+              "offset": 6472,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2380,7 +3137,7 @@
             },
             {
               "name": "gUnk_0903BEDC",
-              "offset": 456,
+              "offset": 6480,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2389,7 +3146,7 @@
             },
             {
               "name": "gUnk_0903BEE4",
-              "offset": 464,
+              "offset": 6488,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2398,7 +3155,7 @@
             },
             {
               "name": "gUnk_0903BEEC",
-              "offset": 472,
+              "offset": 6496,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2407,7 +3164,7 @@
             },
             {
               "name": "gUnk_0903BEF4",
-              "offset": 480,
+              "offset": 6504,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2416,7 +3173,7 @@
             },
             {
               "name": "gUnk_0903BEFC",
-              "offset": 488,
+              "offset": 6512,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2425,7 +3182,7 @@
             },
             {
               "name": "gUnk_0903BF04",
-              "offset": 496,
+              "offset": 6520,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2434,7 +3191,7 @@
             },
             {
               "name": "gUnk_0903BF0C",
-              "offset": 504,
+              "offset": 6528,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2443,7 +3200,7 @@
             },
             {
               "name": "gUnk_0903BF14",
-              "offset": 512,
+              "offset": 6536,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2452,7 +3209,7 @@
             },
             {
               "name": "gUnk_0903BF1C",
-              "offset": 520,
+              "offset": 6544,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2461,7 +3218,7 @@
             },
             {
               "name": "gUnk_0903BF24",
-              "offset": 528,
+              "offset": 6552,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2470,7 +3227,7 @@
             },
             {
               "name": "gUnk_0903BF2C",
-              "offset": 536,
+              "offset": 6560,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2479,7 +3236,7 @@
             },
             {
               "name": "gUnk_0903BF34",
-              "offset": 544,
+              "offset": 6568,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2488,7 +3245,7 @@
             },
             {
               "name": "gUnk_0903BF3C",
-              "offset": 552,
+              "offset": 6576,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2497,7 +3254,7 @@
             },
             {
               "name": "gUnk_0903BF44",
-              "offset": 560,
+              "offset": 6584,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2506,7 +3263,7 @@
             },
             {
               "name": "gUnk_0903BF4C",
-              "offset": 568,
+              "offset": 6592,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2515,7 +3272,7 @@
             },
             {
               "name": "gUnk_0903BF54",
-              "offset": 576,
+              "offset": 6600,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2524,7 +3281,7 @@
             },
             {
               "name": "gUnk_0903BF5C",
-              "offset": 584,
+              "offset": 6608,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2533,7 +3290,7 @@
             },
             {
               "name": "gUnk_0903BF64",
-              "offset": 592,
+              "offset": 6616,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2542,7 +3299,7 @@
             },
             {
               "name": "gUnk_0903BF6C",
-              "offset": 600,
+              "offset": 6624,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2551,7 +3308,7 @@
             },
             {
               "name": "gUnk_0903BF74",
-              "offset": 608,
+              "offset": 6632,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2560,7 +3317,7 @@
             },
             {
               "name": "gUnk_0903BF7C",
-              "offset": 616,
+              "offset": 6640,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2569,7 +3326,7 @@
             },
             {
               "name": "gUnk_0903BF84",
-              "offset": 624,
+              "offset": 6648,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2578,7 +3335,7 @@
             },
             {
               "name": "gUnk_0903BF8C",
-              "offset": 632,
+              "offset": 6656,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2587,7 +3344,7 @@
             },
             {
               "name": "gUnk_0903BF94",
-              "offset": 640,
+              "offset": 6664,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2596,7 +3353,7 @@
             },
             {
               "name": "gUnk_0903BF9C",
-              "offset": 648,
+              "offset": 6672,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2605,7 +3362,7 @@
             },
             {
               "name": "gUnk_0903BFA4",
-              "offset": 656,
+              "offset": 6680,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2614,7 +3371,7 @@
             },
             {
               "name": "gUnk_0903BFAC",
-              "offset": 664,
+              "offset": 6688,
               "size": 8,
               "consumer": [
                 "func_080A235C",
@@ -2743,936 +3500,6 @@
           "name": "gCardHelpTextJp_0900BA08",
           "address": "0x900ba08",
           "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA24",
-          "address": "0x900ba24",
-          "size": 21,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA3C",
-          "address": "0x900ba3c",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA58",
-          "address": "0x900ba58",
-          "size": 21,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA70",
-          "address": "0x900ba70",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA84",
-          "address": "0x900ba84",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BA9C",
-          "address": "0x900ba9c",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BAAC",
-          "address": "0x900baac",
-          "size": 25,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BAC8",
-          "address": "0x900bac8",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BADC",
-          "address": "0x900badc",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BAF4",
-          "address": "0x900baf4",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BB14",
-          "address": "0x900bb14",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BB2C",
-          "address": "0x900bb2c",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BB4C",
-          "address": "0x900bb4c",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BB64",
-          "address": "0x900bb64",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BB84",
-          "address": "0x900bb84",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BBA0",
-          "address": "0x900bba0",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BBB8",
-          "address": "0x900bbb8",
-          "size": 43,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BBE4",
-          "address": "0x900bbe4",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BBF8",
-          "address": "0x900bbf8",
-          "size": 43,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BC24",
-          "address": "0x900bc24",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BC44",
-          "address": "0x900bc44",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BC6C",
-          "address": "0x900bc6c",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BC8C",
-          "address": "0x900bc8c",
-          "size": 51,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BCC0",
-          "address": "0x900bcc0",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BCD0",
-          "address": "0x900bcd0",
-          "size": 55,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BD08",
-          "address": "0x900bd08",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BD20",
-          "address": "0x900bd20",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BD4C",
-          "address": "0x900bd4c",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BD5C",
-          "address": "0x900bd5c",
-          "size": 49,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BD90",
-          "address": "0x900bd90",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BDA8",
-          "address": "0x900bda8",
-          "size": 55,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BDE0",
-          "address": "0x900bde0",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BDF4",
-          "address": "0x900bdf4",
-          "size": 55,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BE2C",
-          "address": "0x900be2c",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BE4C",
-          "address": "0x900be4c",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BE7C",
-          "address": "0x900be7c",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BE90",
-          "address": "0x900be90",
-          "size": 49,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BEC4",
-          "address": "0x900bec4",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BEE4",
-          "address": "0x900bee4",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BF14",
-          "address": "0x900bf14",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BF2C",
-          "address": "0x900bf2c",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BF64",
-          "address": "0x900bf64",
-          "size": 35,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BF88",
-          "address": "0x900bf88",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BF9C",
-          "address": "0x900bf9c",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BFB0",
-          "address": "0x900bfb0",
-          "size": 43,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BFDC",
-          "address": "0x900bfdc",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900BFFC",
-          "address": "0x900bffc",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C02C",
-          "address": "0x900c02c",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C03C",
-          "address": "0x900c03c",
-          "size": 69,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C084",
-          "address": "0x900c084",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C09C",
-          "address": "0x900c09c",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C0CC",
-          "address": "0x900c0cc",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C0DC",
-          "address": "0x900c0dc",
-          "size": 57,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C118",
-          "address": "0x900c118",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C130",
-          "address": "0x900c130",
-          "size": 67,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C174",
-          "address": "0x900c174",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C188",
-          "address": "0x900c188",
-          "size": 67,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C1CC",
-          "address": "0x900c1cc",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C1EC",
-          "address": "0x900c1ec",
-          "size": 43,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C218",
-          "address": "0x900c218",
-          "size": 23,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C230",
-          "address": "0x900c230",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C25C",
-          "address": "0x900c25c",
-          "size": 35,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C280",
-          "address": "0x900c280",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C29C",
-          "address": "0x900c29c",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C2B0",
-          "address": "0x900c2b0",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C2E0",
-          "address": "0x900c2e0",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C300",
-          "address": "0x900c300",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C33C",
-          "address": "0x900c33c",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C350",
-          "address": "0x900c350",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C38C",
-          "address": "0x900c38c",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C3AC",
-          "address": "0x900c3ac",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C3DC",
-          "address": "0x900c3dc",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C3F0",
-          "address": "0x900c3f0",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C428",
-          "address": "0x900c428",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C448",
-          "address": "0x900c448",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C474",
-          "address": "0x900c474",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C490",
-          "address": "0x900c490",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C4C0",
-          "address": "0x900c4c0",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C4EC",
-          "address": "0x900c4ec",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C524",
-          "address": "0x900c524",
-          "size": 19,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C538",
-          "address": "0x900c538",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C568",
-          "address": "0x900c568",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C588",
-          "address": "0x900c588",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C5B0",
-          "address": "0x900c5b0",
-          "size": 25,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C5CC",
-          "address": "0x900c5cc",
-          "size": 49,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C600",
-          "address": "0x900c600",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C61C",
-          "address": "0x900c61c",
-          "size": 37,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C644",
-          "address": "0x900c644",
-          "size": 33,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C668",
-          "address": "0x900c668",
-          "size": 35,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C68C",
-          "address": "0x900c68c",
-          "size": 51,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C6C0",
-          "address": "0x900c6c0",
-          "size": 31,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C6E0",
-          "address": "0x900c6e0",
-          "size": 55,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C718",
-          "address": "0x900c718",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C728",
-          "address": "0x900c728",
-          "size": 49,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C75C",
-          "address": "0x900c75c",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C788",
-          "address": "0x900c788",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C7B8",
-          "address": "0x900c7b8",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C7E0",
-          "address": "0x900c7e0",
-          "size": 73,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C82C",
-          "address": "0x900c82c",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C858",
-          "address": "0x900c858",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C880",
-          "address": "0x900c880",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C8AC",
-          "address": "0x900c8ac",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C8D4",
-          "address": "0x900c8d4",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C900",
-          "address": "0x900c900",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C928",
-          "address": "0x900c928",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C954",
-          "address": "0x900c954",
-          "size": 49,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C988",
-          "address": "0x900c988",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C9B4",
-          "address": "0x900c9b4",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900C9F0",
-          "address": "0x900c9f0",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CA0C",
-          "address": "0x900ca0c",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CA48",
-          "address": "0x900ca48",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CA78",
-          "address": "0x900ca78",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CAA4",
-          "address": "0x900caa4",
-          "size": 31,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CAC4",
-          "address": "0x900cac4",
-          "size": 55,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CAFC",
-          "address": "0x900cafc",
-          "size": 15,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CB0C",
-          "address": "0x900cb0c",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CB48",
-          "address": "0x900cb48",
-          "size": 33,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CB6C",
-          "address": "0x900cb6c",
-          "size": 33,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CB90",
-          "address": "0x900cb90",
-          "size": 27,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CBAC",
-          "address": "0x900cbac",
-          "size": 31,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CBCC",
-          "address": "0x900cbcc",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CBF8",
-          "address": "0x900cbf8",
-          "size": 37,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CC20",
-          "address": "0x900cc20",
-          "size": 47,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CC50",
-          "address": "0x900cc50",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CC78",
-          "address": "0x900cc78",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CCA4",
-          "address": "0x900cca4",
-          "size": 39,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CCCC",
-          "address": "0x900cccc",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CCFC",
-          "address": "0x900ccfc",
-          "size": 35,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CD20",
-          "address": "0x900cd20",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CD50",
-          "address": "0x900cd50",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CD70",
-          "address": "0x900cd70",
-          "size": 45,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CDA0",
-          "address": "0x900cda0",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CDC0",
-          "address": "0x900cdc0",
-          "size": 57,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CDFC",
-          "address": "0x900cdfc",
-          "size": 25,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CE18",
-          "address": "0x900ce18",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CE54",
-          "address": "0x900ce54",
-          "size": 31,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CE74",
-          "address": "0x900ce74",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CEB0",
-          "address": "0x900ceb0",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CED0",
-          "address": "0x900ced0",
-          "size": 57,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CF0C",
-          "address": "0x900cf0c",
-          "size": 29,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CF2C",
-          "address": "0x900cf2c",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CF68",
-          "address": "0x900cf68",
-          "size": 37,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CF90",
-          "address": "0x900cf90",
-          "size": 33,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CFB4",
-          "address": "0x900cfb4",
-          "size": 51,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900CFE8",
-          "address": "0x900cfe8",
-          "size": 41,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D014",
-          "address": "0x900d014",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D04C",
-          "address": "0x900d04c",
-          "size": 43,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D078",
-          "address": "0x900d078",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D0B0",
-          "address": "0x900d0b0",
-          "size": 37,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D0D8",
-          "address": "0x900d0d8",
-          "size": 53,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D110",
-          "address": "0x900d110",
-          "size": 11,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D11C",
-          "address": "0x900d11c",
-          "size": 59,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D158",
-          "address": "0x900d158",
-          "size": 17,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D16C",
-          "address": "0x900d16c",
-          "size": 7,
-          "encoding": "shift_jis"
-        },
-        {
-          "name": "gCardHelpTextJp_0900D174",
-          "address": "0x900d174",
-          "size": 45,
           "encoding": "shift_jis"
         }
       ]
