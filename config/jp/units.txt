@@ -498,7 +498,6 @@ sprites_bos6_frames_1.s
 sprites_staff_roll_frames_1.s
 sprites_bos7_frames_1.s
 sprites_staff_roll_frames_2.s
-asset_fmv_at_09C69948.s
 sprites_bos6_frames_2.s
 sprites_staff_roll_frames_3.s
 sprites_bos7_frames_2.s
