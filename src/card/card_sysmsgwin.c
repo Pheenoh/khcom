@@ -44,6 +44,7 @@
 #include "sprites_deck_menu.h"
 #include "sprites_evt.h"
 #include "sprites_msg.h"
+#include "sprites_map.h"
 
 UnkStruct_02034AFC* gUnk_02034B00;
 #ifndef VERSION_EU

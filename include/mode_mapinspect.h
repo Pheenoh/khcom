@@ -14,7 +14,6 @@
 #include "mode.h"
 #include "m4a.h"
 
-
 #include "obj.h"
 
 #include "map_api.h"
@@ -36,8 +35,6 @@ extern u8 gUnk_08159FBC[];
 extern u8 gUnk_0815C136[];
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09611AB8[];
-extern u8 gUnk_099597E4[];
-extern u8 gUnk_09985F44[];
 extern u8 gUnk_09A03CFC[];
 extern u8 gUnk_09A3439C[];
 extern u8 gUnk_09A3501C[];

@@ -8,6 +8,7 @@
 #include "gba/keys.h"
 #include "sprites_card.h"
 #include "sprites_worldinspect.h"
+#include "sprites_map.h"
 
 extern u8 gUnk_09A3D23C[];
 

@@ -43,29 +43,17 @@ extern void* gUnkEu_08892864[];
 extern const u8 gUnkEu_09953BF0[];
 extern const u8 gUnkEu_099543F0[];
 extern const u8 gUnkEu_09954BF0[];
-extern u8 gUnkEu_09938170[];
-extern u8 gUnkEu_09939D30[];
-extern u8 gUnkEu_0993B8F0[];
-extern u8 gUnkEu_0993D4B0[];
-extern u8 gUnkEu_0993E9B0[];
-extern u8 gUnkEu_0993FEB0[];
-extern u8 gUnkEu_099413B0[];
-extern u8 gUnkEu_099428B0[];
-extern u8 gUnkEu_09943DB0[];
 extern u8 gUnkEu_099452B0[];
 extern u8 gUnkEu_099467B0[];
 extern u8 gUnkEu_09947CB0[];
 extern u8 gUnkEu_099491B0[];
-extern u8 gUnkEu_0994A6B0[];
 extern u8 gUnkEu_0994A8B0[];
 extern u8 gUnkEu_0994AAB0[];
-extern u8 gUnkEu_0994ACB0[];
 extern const u8 gUnkEu_0996D130[];
 extern const u8 gUnkEu_0996D930[];
 extern const u8 gUnkEu_0996E130[];
 extern const u8 gUnkEu_0996E930[];
 extern const u8 gUnkEu_09955250[][320];
-extern const u8 gUnkEu_09957550[][320];
 extern const u8 gUnkEu_09959850[][320];
 extern const u8 gUnkEu_0995BB50[][320];
 extern const u8 gUnkEu_0995DE50[][320];
@@ -74,8 +62,6 @@ extern const u8 gUnkEu_09962450[][320];
 extern const u8 gUnkEu_09964750[][320];
 extern const u8 gUnkEu_09966A50[][320];
 extern const u8 gUnkEu_09968D50[][320];
-extern const u8 gUnkEu_099563D0[][320];
-extern const u8 gUnkEu_099586D0[][320];
 extern const u8 gUnkEu_0995A9D0[][320];
 extern const u8 gUnkEu_0995CCD0[][320];
 extern const u8 gUnkEu_0995EFD0[][320];
@@ -6579,15 +6565,15 @@ void func_080EAB20(u8 a, u8 b, u8 c) {
     case 0:
         if (b != 0) {
             if (gGameState.flags & 8) {
-                src = gUnkEu_09957550[c];
+                src = gUnk_09963D64[c];
             } else {
                 src = gUnkEu_09955250[c];
             }
         } else {
             if (gGameState.flags & 8) {
-                src = gUnkEu_099586D0[c];
+                src = gUnk_09964EE4[c];
             } else {
-                src = gUnkEu_099563D0[c];
+                src = gUnk_09962BE4[c];
             }
         }
         break;
@@ -7078,13 +7064,13 @@ void func_080EB818(u8 a, u8 b, u8 c) {
             if (b != 0) {
                 src = gUnkEu_09955250[c];
             } else {
-                src = gUnkEu_099563D0[c];
+                src = gUnk_09962BE4[c];
             }
         } else {
             if (b != 0) {
-                src = gUnkEu_09957550[c];
+                src = gUnk_09963D64[c];
             } else {
-                src = gUnkEu_099586D0[c];
+                src = gUnk_09964EE4[c];
             }
         }
         break;
@@ -8360,7 +8346,7 @@ s32 func_080ED498(MapMenuWork* w) {
         switch (gLanguage) {
         case 0:
             if (gGameState.flags & 8) {
-                w->tiles6 = LoadObjTiles(gUnkEu_09943DB0, 0x1500);
+                w->tiles6 = LoadObjTiles(gUnk_099582E4, 0x1500);
             } else {
                 w->tiles6 = LoadObjTiles(gUnkEu_0993D4B0, 0x1500);
             }
@@ -8422,16 +8408,16 @@ s32 func_080ED498(MapMenuWork* w) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
-            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
             break;
         case 1:
-            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
             break;
         case 4:
             w->tiles3 = LoadObjTiles(gUnkEu_0994A8B0, 0x200);
             break;
         case 3:
-            w->tiles3 = LoadObjTiles(gUnkEu_0994A6B0, 0x200);
+            w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
             break;
         case 2:
         default:
@@ -8439,7 +8425,7 @@ s32 func_080ED498(MapMenuWork* w) {
             break;
         }
         w->x = -0x8000;
-        w->tiles4 = LoadObjTiles(gUnkEu_0994ACB0, 0x300);
+        w->tiles4 = LoadObjTiles(gUnk_09957C24, 0x300);
 #else
         w->tiles3 = LoadObjTiles(gUnk_09957F24, 0x200);
         w->x = -0x8000;
@@ -9085,7 +9071,7 @@ void func_080EE5E0(u8 a) {
     switch (gLanguage) {
     case 0:
         if (gGameState.flags & 8) {
-            src = gUnkEu_09957550[a];
+            src = gUnk_09963D64[a];
         } else {
             src = gUnkEu_09955250[a];
         }

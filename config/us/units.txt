@@ -431,13 +431,14 @@ map_room_tiles_1.s
 map_tile_animation_tiles_5.s
 map_room_tiles_2.s
 asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_0993AF64.s
+sprites_map_tiles.s
 map_room_maps_1.s
-asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_09985F44.s
+sprites_map_maps.s
 map_room_palettes_1.s
 sprite_palettes_12.s
 asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_099910C4.s
 sprite_palettes_13.s
-asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_099910C4_at_09991D44.s
+sprites_map_palettes.s
 room_data.c
 bos5.c
 asset_gfx_gap_190.s
