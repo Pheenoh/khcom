@@ -484,7 +484,6 @@ typedef struct BosLstWork {
     u8 unk_B48[0x55C];
 } BosLstWork;
 
-extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];
 
 void func_0810A018(PcWork* work);
@@ -551,9 +550,6 @@ typedef struct UnkStruct_09A4CEDC {
 
 extern const UnkStruct_09A4CEDC gUnk_09A4CEDC[12];
 
-extern u8 gUnk_09CC4E54[];
-extern u8 gUnk_09D693D4[];
-extern u8 gUnk_09D69434[];
 extern u8 gUnk_05000220[];
 
 void func_0810A4C4(PcWork* work);
@@ -605,17 +601,12 @@ void func_0810A51C(PcWork* work, TaskPool* pool);
 
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];
-extern u8 gUnk_09D34A74[];
-extern u8 gUnk_09CB84B4[];
 extern u8 gUnk_09C448D2[];
 extern u8 gUnk_08F69BC4[];
 extern const BattleBackgroundDef gUnk_09A4CF6C;
 extern const EmyKind gUnk_09A4CF5C;
 extern u8 gUnk_09C53724[];
 extern u8 gUnk_09C58590[];
-extern u8 gUnk_09D69594[];
-extern u8 gUnk_09D4DA74[];
-extern u8 gUnk_09D4B274[];
 
 void task_bos_lst_0(BosLstWork* work, void* pool);
 u8 task_bos_lst_1(BosLstWork* work);
@@ -644,7 +635,6 @@ typedef struct LstAnimDef {
 } LstAnimDef;
 
 extern void* const gUnk_09A4D194[18][2];
-extern u8 gUnk_09D69454[];
 
 void task_bos_lst_2(BosLstWork* work);
 u8 func_0810EBA0(BosLstWork* work);
@@ -670,8 +660,6 @@ typedef struct PcFltInit {
     u32 unk_0C;
     void* unk_10;
 } PcFltInit;
-
-extern u8 gUnk_09CB8F54[];
 
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
@@ -718,38 +706,6 @@ u8 func_0810ACB8(PcWork* work, s32 arg);
 
 extern const s16 gUnk_09A4CCDC[256];
 extern const s16 gUnk_09A4CADC[256];
-extern u8 gUnk_09CC5054[];
-extern u8 gUnk_09CCD054[];
-extern u8 gUnk_09CCD694[];
-extern u8 gUnk_09CCDC14[];
-extern u8 gUnk_09CCE1D4[];
-extern u8 gUnk_09CCE7F4[];
-extern u8 gUnk_09CCEDB4[];
-extern u8 gUnk_09CCF374[];
-extern u8 gUnk_09CCFA54[];
-extern u8 gUnk_09D4E274[];
-extern u8 gUnk_09D4EA74[];
-extern u8 gUnk_09D4F274[];
-extern u8 gUnk_09D4FA74[];
-extern u8 gUnk_09D50274[];
-extern u8 gUnk_09D50A74[];
-extern u8 gUnk_09D51274[];
-extern u8 gUnk_09D51A74[];
-extern u8 gUnk_09D52274[];
-extern u8 gUnk_09D52A74[];
-extern u8 gUnk_09D53274[];
-extern u8 gUnk_09D53A74[];
-extern u8 gUnk_09D54274[];
-extern u8 gUnk_09D54A74[];
-extern u8 gUnk_09D55274[];
-extern u8 gUnk_09D55A74[];
-extern u8 gUnk_09D56274[];
-extern u8 gUnk_09D56A74[];
-extern u8 gUnk_09D57274[];
-extern u8 gUnk_09D57A74[];
-extern u8 gUnk_09D58274[];
-extern u8 gUnk_09D58A74[];
-extern u8 gUnk_09D59274[];
 
 typedef struct LstSpawn2 {
     void* unk_00;
