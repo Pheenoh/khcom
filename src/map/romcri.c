@@ -1,6 +1,7 @@
 #include "task_descriptors.h"
 #include "pallet.h"
 #include "romcri.h"
+#include "romcri_backgrounds.h"
 
 const char gTaskNameRomcriEff[] = "task_romcri_eff";
 

@@ -4,7 +4,6 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
-
 #include "bg_animation_data.h"
 
 #include "field_state.h"
@@ -179,7 +178,6 @@ typedef struct BattleAttackDef {
 } BattleAttackDef;
 
 extern s32 gUnk_02039DC0;
-extern u8 gUnk_08F6DA04[];
 extern u8 gUnk_08F69BC4[];
 
 extern FieldTransitionWork* gUnk_020348C8;

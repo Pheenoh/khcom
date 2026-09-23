@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "battle.h"
 #include "battle_actor.h"
+#include "romcri_backgrounds.h"
 
 BtlWork* gUnk_02039B9C EWRAM_COMMON(4);
 FieldState* gUnk_02039BA0 EWRAM_COMMON(4);
