@@ -22,10 +22,7 @@ extern u16 gUnk_09A3CC1C[16];
 
 extern u8 gUnk_09A3CDDC[];
 extern u8 gUnk_099EDE7C[];
-extern u8 gUnk_099A8914[];
 extern u8 gUnk_09A3CC3C[];
-extern u8 gUnk_0999A394[];
-extern u8 gUnk_0999A350[];
 
 #ifdef VERSION_EU
 extern u16 gUnkEu_09A840A0[640];
@@ -37,10 +34,6 @@ extern u8 gUnkEu_09A0A480[26624];
 extern u8 gUnkEu_09A1DC80[26624];
 extern u8 gUnkEu_09A17480[26624];
 extern u8 gUnkEu_09A10C80[26624];
-extern u8 gUnkEu_099A3220[960];
-extern u8 gUnkEu_099A3E1A[1024];
-extern u8 gUnkEu_099A39F2[1024];
-extern u8 gUnkEu_099A360C[960];
 #endif
 
 #endif

@@ -5,6 +5,7 @@
 #include "btl3.h"
 #include "btl3_api.h"
 #include "task_animation_assets.h"
+#include "sprites_btl.h"
 #include "sprites_fld.h"
 
 const char gTaskNameBtlForm[] = "task_btl_form";

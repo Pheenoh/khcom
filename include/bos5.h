@@ -6,13 +6,6 @@
 #include "worldselect_assets.h"
 #include "battle_actor_types.h"
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "bg_animation_data.h"
 
@@ -285,7 +278,6 @@ typedef struct MdWork {
 } MdWork;
 
 extern u8 gUnk_09A3C9BC[];
-extern u8 gUnk_09999ED0[];
 
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
@@ -338,8 +330,6 @@ extern const EmyKind gUnk_09992F28;
 extern u8 gUnk_09A3C99C[];
 extern u8 gUnk_099E367C[];
 void task_bos_md_dai_2(MdDaiWork* work);
-extern u8 gUnk_09999E0C[];
-extern u8 gUnk_09999E1C[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
 u8 func_080F854C(GaWork* work);
@@ -360,9 +350,6 @@ u8 func_080FBFA8(MdWork* work);
 s32 task_bos_md_1(MdWork* work);
 void task_bos_md_0(MdWork* work, void* arg);
 void func_080FE854(void);
-extern u8 gUnk_0999CB90[];
-extern u8 gUnk_0999C394[];
-extern u8 gUnk_0999C3C8[];
 void mode_worldselect_1(void);
 void func_080FDC04(void);
 void func_080FE47C(void);
@@ -374,10 +361,7 @@ extern u8 gUnk_099F1E7C[];
 extern u8 gUnk_09A310DC[];
 extern u8 gUnk_09A31ADC[];
 extern u8 gUnk_09A3CC5C[];
-extern u8 gUnk_0999B052[];
 extern u8 gUnk_09A3CC7C[];
-extern u8 gUnk_0999CBB6[];
-extern u8 gUnk_0999C410[];
 
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);

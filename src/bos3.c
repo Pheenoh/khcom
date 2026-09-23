@@ -1,6 +1,7 @@
 #include "registration_data.h"
 #include "macros.h"
 #include "bos3.h"
+#include "sprites_btl.h"
 
 u16 gUnk_0203C3BC EWRAM_COMMON(4);
 u16 gUnk_0203C3C0 EWRAM_COMMON(4);

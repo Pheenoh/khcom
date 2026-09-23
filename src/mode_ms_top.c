@@ -5,8 +5,15 @@
 #include "mode_ms_top_api.h"
 #include "worldwarp_catalog_assets.h"
 #include "localized_resource_assets.h"
-#include "room_resource_assets.h"
+#include "anim.h"
+#include "bos5.h"
+#include "ms_charge.h"
+#include "mode_mapinspect.h"
+#include "mode_worldwarp.h"
+#include "worldinspect_assets.h"
+#include "sprites_btl.h"
 #include "sprites_evt.h"
+#include "sprites_moogle_shop.h"
 #include "sprites_sora.h"
 
 extern u8 gUnk_09A3D77C[];

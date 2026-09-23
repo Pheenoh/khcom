@@ -1,5 +1,6 @@
 #include "event_background_data.h"
 #include "event_background_assets.h"
+#include "sprites_evt.h"
 
 const void* gUnk_09EE2864[4] = {
     gUnk_0952EAB8,

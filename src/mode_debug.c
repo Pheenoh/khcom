@@ -10,6 +10,7 @@
 #include "mode_debug.h"
 #include "game_state.h"
 #include "gba/keys.h"
+#include "sprites_mode_debug.h"
 
 DebugWork* gDebugWork;
 ChkObjWork* gChkObjWork;

@@ -2,6 +2,7 @@
 #include "task_descriptors.h"
 #include "evt.h"
 #include "evt_api.h"
+#include "sprites_btl.h"
 
 const char gTaskNameEvtObj[] = "task_evt_obj";
 

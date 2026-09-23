@@ -2,7 +2,8 @@
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MSG_H
@@ -10,13 +11,6 @@
 
 #include "msg_font_data.h"
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "bg_animation_data.h"
 
@@ -328,7 +322,6 @@ extern u8 gUnk_090C51A6[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_09614418[];
-extern u8 gUnk_090A4664[];
 extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_09611AB8[];
 extern u16 gUnk_08159E10[];

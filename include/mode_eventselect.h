@@ -1,19 +1,12 @@
 #include "event_index_data.h"
-#include "aux_animation_data.h"
 #include "card_localized_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "card_api.h"
 
@@ -108,10 +101,7 @@ typedef struct EffectWork {
 extern EventState* gUnk_02039DC8;
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
-extern u8 gUnk_088A5D7A[];
 extern s16 gUnk_0903380C[][6];
-extern u8 gUnk_093215CA[];
-extern u8 gUnk_09321804[];
 extern const char gUnk_08F70990[];
 #ifdef VERSION_EU
 extern Mode gUnkEu_09F5D6EC;

@@ -12,6 +12,8 @@
 #include "gba/keys.h"
 #include "sprites_evt.h"
 #include "sprites_hum.h"
+#include "sprites_level_up.h"
+#include "sprites_smn.h"
 
 const s16 gUnk_09033D50[147] = {
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,

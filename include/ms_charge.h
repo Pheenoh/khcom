@@ -2,16 +2,10 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "registration_data.h"
 #include "map_card_data.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 #include "obj.h"
 #include "card_ui_types.h"
 #include "card_api.h"
@@ -47,7 +41,6 @@
 
 #define CARD_ID_MASK 0xFFF
 
-extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
 extern u8 gUnk_09A1DCDC[];
 extern u8 gUnk_09A1DE1C[];
@@ -83,7 +76,6 @@ s32 func_0810592C(void);
 s32 func_08105D24(MsCard* card, u16 col);
 
 extern u8 gUnk_0908B1B4[];
-extern u8 gUnk_0908C3CE[];
 extern u8 gUnk_092028EC[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_08159E18[];
@@ -91,9 +83,6 @@ extern u8 gUnk_08159F38[];
 extern u8 gUnk_0815C204[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_09617D58[];
-extern u8 gUnk_099A2194[];
-extern u8 gUnk_099A6C82[];
-extern u8 gUnk_099A7C78[];
 extern u8 gUnk_09A1913C[];
 extern u8 gUnk_09A3B25C[];
 extern u8 gUnk_09A3C25C[];

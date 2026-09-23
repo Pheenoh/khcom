@@ -1,6 +1,8 @@
 #include "evt_data.h"
 #include "mode_chkobj_assets.h"
 #include "evt_assets.h"
+#include "sprites_continue.h"
+#include "sprites_emy.h"
 #include "sprites_evt.h"
 #include "sprites_fld.h"
 #include "sprites_hum.h"

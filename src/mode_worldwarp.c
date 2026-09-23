@@ -7,6 +7,7 @@
 #include "system_state.h"
 #include "map_api.h"
 #include "mode_worldwarp.h"
+#include "sprites_worldinspect.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A4FBC0[];

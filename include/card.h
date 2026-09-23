@@ -9,13 +9,12 @@
 #include "battle_localized_data.h"
 #include "msg_portrait_data.h"
 #include "card_help_data.h"
-#include "aux_animation_data.h"
 #include "map_text_data.h"
 #include "card_localized_data.h"
-#include "event_sprite_data.h"
 #include "card_message_data.h"
 #include "card_lookup_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #include "system_state.h"
@@ -23,13 +22,6 @@
 #define GUARD_CARD_H
 
 #include "anim.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "card_label_data.h"
 
@@ -174,8 +166,6 @@ extern u8 gUnk_05000160[];
 extern u8 gUnk_0951B2B8[];
 extern u8 gUnk_09406F78[];
 extern void* gUnk_09EE7938[];
-extern u8 gUnk_0908C686[];
-extern u8 gUnk_0908FCEE[];
 extern u8 gUnk_09613F78[];
 
 typedef struct UnkStruct_0807FA0C {
@@ -415,7 +405,6 @@ extern u8 gUnk_08159FBC[];
 extern u8 gUnk_0815C204[];
 extern u8 gUnk_0815C1C2[];
 extern u8 gUnk_08159E10[];
-extern u8 gUnk_090A4664[];
 extern u8 gUnk_09614418[];
 extern u8 gUnk_09614438[];
 extern u8 gUnk_093F8C8E[];
@@ -1205,8 +1194,6 @@ extern s32 gUnk_0903401C[][2];
 extern s32 gUnk_0903404C[];
 extern u8 gUnk_090A261E[];
 extern u8 gUnk_096144D8[];
-extern u8 gUnk_090A4A0C[];
-extern u8 gUnk_090A51F6[];
 extern u8 gUnk_096ACA44[];
 extern u8 gUnk_096FBA04[];
 extern u8 gUnk_096F5464[];
@@ -1233,7 +1220,6 @@ extern u8 gUnkEu_095F0C6A[];
 extern u8 gUnkEu_095F12A2[];
 #endif
 
-extern u8 gUnk_090451C0[];
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];
@@ -1254,7 +1240,6 @@ extern u8 gUnk_08C8C824[];
 extern u8 gUnk_08F68A84[];
 extern u8 gUnk_08EF4384[];
 extern u8 gUnk_0905F03C[];
-extern u8 gUnk_090A583E[];
 extern u8 gUnk_090A418E[];
 extern u8 gUnk_090A44C4[];
 extern u8 gUnk_090A3E46[];
@@ -1291,7 +1276,6 @@ extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_09614798[];
-extern u8 gUnk_0908C3CE[];
 extern u8 gUnk_09501778[];
 extern u8 gUnk_09618C38[];
 extern u8 gUnk_0960F2B8[];
@@ -2641,8 +2625,6 @@ extern u8 gUnkEu_094E90E4[];
 extern u8 gUnkEu_094EA2E4[];
 extern u8 gUnkEu_094E9CE4[];
 extern u8 gUnkEu_094E96E4[];
-extern u8 gUnkEu_091965CA[];
-extern u8 gUnkEu_091959DA[];
 extern u8 gUnkEu_094C9860[];
 extern u8 gUnkEu_094C9C20[];
 #else
@@ -2683,10 +2665,6 @@ extern u8 gUnkEu_094D72E4[];
 extern u8 gUnkEu_094DB664[];
 extern u8 gUnkEu_094D9FE4[];
 extern u8 gUnkEu_094D8964[];
-extern u8 gUnkEu_09170AA0[];
-extern u8 gUnkEu_09171B2C[];
-extern u8 gUnkEu_091715A8[];
-extern u8 gUnkEu_09171024[];
 #else
 extern u16 gUnk_09037FAC[];
 extern u16 gUnk_0815A066[];

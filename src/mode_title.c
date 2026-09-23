@@ -5,6 +5,7 @@
 #include "task.h"
 #include "system_state.h"
 #include "mode_title.h"
+#include "sprites_title.h"
 
 s32 gTitleBgScale EWRAM_COMMON(4);
 s32 gTitleBgX EWRAM_COMMON(4);

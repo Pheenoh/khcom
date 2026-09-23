@@ -1,5 +1,6 @@
 #include "task_descriptors.h"
 #include "bos.h"
+#include "sprites_btl.h"
 
 const char gTaskNameBosMap[] = "task_bos_map";
 

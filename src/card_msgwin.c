@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "card_localized_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
 #include "registration_data.h"
@@ -41,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "events_134_196.h"
+#include "sprites_deck_menu.h"
 #include "sprites_evt.h"
 
 UnkStruct_02034AFC* gUnk_02034AFC;

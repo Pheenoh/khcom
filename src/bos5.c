@@ -7,10 +7,14 @@
 #include "text.h"
 #include "monsgage.h"
 #include "bos5.h"
-#include "room_resource_assets.h"
+#include "anim.h"
+#include "ms_charge.h"
+#include "mode_mapinspect.h"
+#include "mode_worldwarp.h"
 #include "mode_battle_data.h"
 #include "worldinspect_assets.h"
 #include "sprites_bos5.h"
+#include "sprites_worldinspect.h"
 
 const char gTaskNameBosGa[] = "task_bos_ga";
 

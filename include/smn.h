@@ -1,5 +1,4 @@
 #include "task_descriptors.h"
-#include "aux_animation_data.h"
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
@@ -242,7 +241,6 @@ typedef struct SmnKingWork {
 
 extern u8 gUnk_096183F8[];
 extern u8 gUnk_08F6DC24[];
-extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09617FF8[];
 extern u8 gUnk_09617F98[];
@@ -257,6 +255,5 @@ BtlObj* func_08042018(SmnBambiWork* work);
 BtlObj* func_08044450(SmnGenieWork* work);
 void func_080428E8(SmnTinkWork* work);
 u8 func_08044F98(SmnKingWork* work);
-
 
 #endif /* GUARD_SMN_H */

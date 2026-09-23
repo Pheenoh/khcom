@@ -1,13 +1,6 @@
 #ifndef GUARD_BTL3_H
 #define GUARD_BTL3_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "btl3_tasks.h"
 
@@ -132,8 +125,6 @@ typedef struct BtlAiWork {
 } BtlAiWork;
 
 extern u8 gUnk_08901C8A[];
-extern u8 gUnk_08B22CBC[];
-extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09611AB8[];

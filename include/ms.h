@@ -2,13 +2,6 @@
 #define GUARD_MS_H
 
 #include "anim.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "ms_types.h"
 
@@ -37,7 +30,5 @@ void task_ms_shop_hosi_0(MsShopHosiWork* work, MsShopHosiArg* arg);
 s32 task_ms_shop_hosi_1(MsShopHosiWork* work);
 void task_ms_shop_hosi_2(MsShopHosiWork* work);
 void task_ms_shop_hosi_3(MsShopHosiWork* work);
-
-extern u8 gUnk_099A6962[];
 
 #endif /* GUARD_MS_H */

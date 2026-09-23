@@ -30,6 +30,7 @@ extern u8 gUnk_09EF6C38[2];
 
 #include "map_tasks.h"
 #include "map_enemy_assets.h"
+#include "sprites_btl.h"
 #include "sprites_emy.h"
 #include "sprites_evt.h"
 #include "sprites_map.h"

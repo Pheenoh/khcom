@@ -5,6 +5,7 @@
 #include "pallet.h"
 #include "title.h"
 #include "gba/keys.h"
+#include "sprites_title.h"
 
 #ifdef VERSION_EU
 extern void** gUnkEu_09F801D4[5];

@@ -22,13 +22,6 @@ extern s16 gUnk_09EF2A42[12];
 
 extern void* gUnk_09EF275C[2][15];
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "background_actor_assets.h"
 
@@ -407,7 +400,6 @@ extern u8 gUnk_096FB744[];
 extern const EmyKind gUnk_0961A7B0;
 extern const s16 gUnk_0961A89E[9];
 extern const s16 gUnk_0961A8B0[10];
-extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB484[];
 extern const s16 gUnk_0961A7D0[47];
@@ -423,7 +415,6 @@ extern u8 gUnk_096FB8E4[];
 extern u8 gUnk_096869A4[];
 extern u8 gUnk_096FB864[];
 extern u8 gUnk_096FB884[];
-extern u8 gUnk_08B22CE4[];
 extern const s8 gUnk_0961A894[10];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];

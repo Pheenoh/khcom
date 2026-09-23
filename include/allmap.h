@@ -3,13 +3,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
-#include "actor_ui_resource_data.h"
-
-
-
 
 #include "poo_api.h"
-
 
 #include "obj.h"
 
@@ -57,7 +52,6 @@ typedef struct AllmapRoomnameWork {
     u8 unk_0CD;
     u16 x;
 } AllmapRoomnameWork;
-
 
 typedef struct AllmapRoomArg {
     u32 unk_00 : 16;
@@ -130,7 +124,6 @@ typedef struct AllmapState {
     u8 unk_C0;
     u8 unk_C1[0x03];
 } AllmapState;
-
 
 typedef struct AllmapDoorEntry {
     void* tiles;
@@ -207,15 +200,10 @@ void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 
 extern u8 gUnk_0203C590[];
 extern u8 gUnk_05000160[];
-extern u8 gUnk_0976B340[];
-extern u8 gUnk_0976D7C0[];
 extern u8 gUnk_0976D880[];
-extern u8 gUnk_0976D8A6[];
 extern u8 gUnk_0976DB68[];
 extern u8 gUnk_0976DB9C[];
-extern u8 gUnk_0976DBDA[];
 extern u8 gUnk_0976DC9C[];
-extern u8 gUnk_0976DCB0[];
 extern u8 gUnk_0983AD98[];
 extern u8 gUnk_0983B298[];
 extern u8 gUnk_0983B7B4[];
@@ -226,7 +214,6 @@ extern u8 gUnk_0984A138[];
 extern u8 gUnk_0984A1D8[];
 extern u8 gUnk_09618D38[];
 extern u8 gUnk_0905E3BA[];
-extern u8 gUnk_0976DD62[];
 extern u8 gUnk_0984A1F8[];
 
 extern u8 gUnk_0203C538;

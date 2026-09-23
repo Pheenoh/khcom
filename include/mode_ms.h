@@ -1,19 +1,13 @@
 #include "card_def_data.h"
 #include "card_lookup_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
 #include "card_description_data.h"
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "obj.h"
 
@@ -160,20 +154,16 @@ extern u8 gUnk_09A373DC[];
 extern u8 gUnk_09A378DC[];
 extern u8 gUnk_09A37DDC[];
 extern u8 gUnk_09A3D7FC[];
-extern u8 gUnk_099A2B62[];
 extern u8 gUnk_09A3D85C[];
-extern u8 gUnk_099A36F8[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088C56C6[];
 extern u8 gUnk_08F69BA4[];
-extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
 extern u8 gUnk_09A3DB1C[];
-extern u8 gUnk_099A4B9A[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
@@ -185,6 +175,5 @@ extern u8 gUnk_09A18D7C[];
 extern u8 gUnk_09A382DC[];
 extern u8 gUnk_09A3AD5C[];
 extern u8 gUnk_09A3DA7C[];
-extern u8 gUnk_099A3CE4[];
 extern u8 gUnk_09A18EBC[];
 #endif /* GUARD_MODE_MS_H */

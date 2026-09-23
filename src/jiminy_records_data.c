@@ -14,6 +14,10 @@
 #include "battle_localized_assets.h"
 #include "aux_animation_assets.h"
 #include "task_animation_assets.h"
+#include "sprites_emy.h"
+#include "sprites_evt.h"
+#include "sprites_smn.h"
+#include "sprites_worldinspect.h"
 
 const JiminyEntry gUnk_08155554[21] = {
     { gUnk_08F62384, gUnk_09EDDECC, 3, -1, gUnk_0815552E, 0, 0 },

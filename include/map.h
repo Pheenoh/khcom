@@ -1,16 +1,8 @@
 #include "mode_deck.h"
 #include "task_descriptors.h"
 #include "card_def_data.h"
-#include "aux_animation_data.h"
 #include "map_text_data.h"
 #include "map_ui_data.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 #include "card_lookup_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MAP_H
@@ -1143,9 +1135,7 @@ extern u8 gUnk_089D8148[];
 extern u8 gUnk_08F69924[];
 extern u8 gUnk_0899A8BE[];
 extern u8 gUnk_08F691E4[];
-extern u8 gUnk_0895EECC[];
 extern u8 gUnk_08963BAC[];
-extern u8 gUnk_08957290[];
 extern u8 gUnk_08B1E974[];
 extern u8 gUnk_08B1E97E[];
 extern u8 gUnk_08B1E988[];
@@ -1203,8 +1193,6 @@ extern u8 gUnk_0998CF44[];
 extern u8 gUnk_0998F744[];
 extern u8 gUnk_09991D24[];
 extern u8 gUnk_09991D44[];
-extern u8 gUnk_09322F50[];
-extern u8 gUnk_0932EDD8[];
 extern u8 gUnk_096181B8[];
 extern u8 gUnk_096181D8[];
 extern u8 gUnk_09991BE4[];
@@ -1260,7 +1248,6 @@ extern u8 gUnk_098A5CB8[];
 extern u8 gUnk_098A5CF4[];
 extern u8 gUnk_0919FDF8[];
 extern u8 gUnk_09958124[];
-extern u8 gUnk_08B22BBC[];
 extern const UnkStruct_0984B968 gUnk_0984B968[14];
 extern u8 gUnk_098A948C[];
 extern u8 gUnk_098A94A0[];
@@ -1379,7 +1366,6 @@ extern u8 gUnk_09991244[];
 extern u8 gUnk_09991264[];
 extern u8 gUnk_0994BF64[];
 extern u8 gUnk_0994C364[];
-extern u8 gUnk_08B21ACE[];
 
 void func_080ED250(u8* work);
 void func_080EBE90(LoadGameMenuWork* work);

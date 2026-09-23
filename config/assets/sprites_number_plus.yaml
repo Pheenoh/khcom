@@ -1,0 +1,92 @@
+group: sprites_number_plus
+types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
+  Sprite:
+    kind: sprite
+  AnimHeader:
+    kind: anim
+    header: anim.h
+objects:
+  us:
+  - name: sprites_number_plus.c
+    start: 0x09EE91A8
+    end: 0x09EE91B0
+  - name: sprites_number_plus_frames.s
+    start: 0x090451AC
+    end: 0x09045240
+  jp:
+  - name: sprites_number_plus.c
+    start: 0x09EC07EC
+    end: 0x09EC07F4
+  - name: sprites_number_plus_frames.s
+    start: 0x09012054
+    end: 0x090120E8
+  eu:
+  - name: sprites_number_plus.c
+    start: 0x09F74628
+    end: 0x09F74630
+  - name: sprites_number_plus_frames.s
+    start: 0x090D1FCC
+    end: 0x090D2060
+entries:
+- name: gUnk_09EE91A8
+  record: SpriteTable
+  items: [gUnk_090451AC]
+  us:
+    address: 0x09EE91A8
+  jp:
+    address: 0x09EC07EC
+  eu:
+    address: 0x09F74628
+- name: gUnk_09EE91AC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090451B6]
+  us:
+    address: 0x09EE91AC
+  jp:
+    address: 0x09EC07F0
+  eu:
+    address: 0x09F7462C
+- name: gUnk_090451AC
+  record: Sprite
+  align: 4
+  oam:
+  - [0, 16384, 0]
+  us:
+    address: 0x090451AC
+  jp:
+    address: 0x09012054
+  eu:
+    address: 0x090D1FCC
+- name: gUnk_090451B6
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  us:
+    address: 0x090451B6
+  jp:
+    address: 0x0901205E
+  eu:
+    address: 0x090D1FD6
+- name: gUnk_090451C0
+  format: tiles4
+  width: 2
+  us:
+    address: 0x090451C0
+    size: 128
+  jp:
+    address: 0x09012068
+    size: 128
+  eu:
+    address: 0x090D1FE0
+    size: 128

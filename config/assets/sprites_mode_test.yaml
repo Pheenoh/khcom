@@ -14,20 +14,38 @@ types:
     header: anim.h
 objects:
   us:
-  - name: sprites_mode_test.c
+  - name: sprites_mode_test_1.c
     start: 0x09EE14D4
     end: 0x09EE1520
-  - name: sprites_mode_test_frames.s
+  - name: sprites_mode_test_2.c
+    start: 0x09EEC660
+    end: 0x09EEC670
+  - name: sprites_mode_test_frames_1.s
     start: 0x08B24C98
     end: 0x08B2556C
+  - name: sprites_mode_test_frames_2.s
+    start: 0x090D7C50
+    end: 0x090D7E04
   jp:
-  - name: sprites_mode_test.c
+  - name: sprites_mode_test_1.c
     start: 0x09EB8F50
     end: 0x09EB8F9C
-  - name: sprites_mode_test_frames.s
+  - name: sprites_mode_test_2.c
+    start: 0x09EC3A4C
+    end: 0x09EC3A5C
+  - name: sprites_mode_test_frames_1.s
     start: 0x08B18280
     end: 0x08B18B54
-  eu: []
+  - name: sprites_mode_test_frames_2.s
+    start: 0x09093178
+    end: 0x0909332C
+  eu:
+  - name: sprites_mode_test.c
+    start: 0x09F77844
+    end: 0x09F77854
+  - name: sprites_mode_test_frames.s
+    start: 0x091A72D8
+    end: 0x091A748C
 entries:
 - name: gUnk_09EE14D4
   record: SpriteTable
@@ -43,6 +61,24 @@ entries:
     address: 0x09EE150C
   jp:
     address: 0x09EB8F88
+- name: gUnk_09EEC660
+  record: SpriteTable
+  items: [gUnk_090D7C50, gUnk_090D7C5A, gUnk_090D7C64]
+  us:
+    address: 0x09EEC660
+  jp:
+    address: 0x09EC3A4C
+  eu:
+    address: 0x09F77844
+- name: gUnk_09EEC66C
+  record: AnimTable
+  items: [gUnk_090D7C6E]
+  us:
+    address: 0x09EEC66C
+  jp:
+    address: 0x09EC3A58
+  eu:
+    address: 0x09F77850
 - name: gUnk_08B24C98
   record: Sprite
   align: 4
@@ -236,3 +272,62 @@ entries:
   jp:
     address: 0x08B18392
     size: 1984
+- name: gUnk_090D7C50
+  record: Sprite
+  align: 4
+  oam:
+  - [248, 16888, 0]
+  us:
+    address: 0x090D7C50
+  jp:
+    address: 0x09093178
+  eu:
+    address: 0x091A72D8
+- name: gUnk_090D7C5A
+  record: Sprite
+  oam:
+  - [248, 16888, 4]
+  us:
+    address: 0x090D7C5A
+  jp:
+    address: 0x09093182
+  eu:
+    address: 0x091A72E2
+- name: gUnk_090D7C64
+  record: Sprite
+  oam:
+  - [248, 16888, 8]
+  us:
+    address: 0x090D7C64
+  jp:
+    address: 0x0909318C
+  eu:
+    address: 0x091A72EC
+- name: gUnk_090D7C6E
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 10]
+  - [2, 10]
+  - [1, 10]
+  - [0, 10]
+  us:
+    address: 0x090D7C6E
+  jp:
+    address: 0x09093196
+  eu:
+    address: 0x091A72F6
+- name: gUnk_090D7C84
+  format: tiles4
+  width: 2
+  us:
+    address: 0x090D7C84
+    size: 384
+  jp:
+    address: 0x090931AC
+    size: 384
+  eu:
+    address: 0x091A730C
+    size: 384

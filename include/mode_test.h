@@ -2,19 +2,13 @@
 #include "mode_test_data.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "msg_types.h"
 
@@ -183,7 +177,6 @@ extern EventState* gUnk_02039DC8;
 extern Mode gModeChkbtl;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
-extern u8 gUnk_090D7C84[];
 extern u8 gUnk_0941BEB8[];
 extern u8 gUnk_0941DD38[];
 extern u8 gUnk_096148B8[];

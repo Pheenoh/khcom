@@ -7,6 +7,7 @@
 #include "sprites_card.h"
 #include "sprites_card_pictures.h"
 #include "sprites_cloud.h"
+#include "sprites_continue.h"
 #include "sprites_emy.h"
 #include "sprites_evt.h"
 #include "sprites_fld.h"

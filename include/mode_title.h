@@ -2,8 +2,7 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
-#include "actor_ui_resource_data.h"
-
+#include "anim.h"
 
 #include "card_api.h"
 
@@ -38,13 +37,6 @@ extern u8 gUnk_0983EB98[];
 extern u8 gUnk_097CF758[];
 extern u8 gUnk_0984A618[];
 extern u8 gUnk_0983FB98[];
-extern u8 gUnk_0976E9F4[];
-extern u8 gUnk_09776076[];
-extern u8 gUnk_0976EC54[];
-extern u8 gUnk_0976ED5A[];
-extern u8 gUnk_0976F0F6[];
-extern u8 gUnk_0976F1F0[];
-extern u8 gUnk_0976FD96[];
 extern u8 gUnk_0984AA18[];
 extern u8 gUnk_0984A6D8[];
 extern u8 gUnk_0984A6B8[];

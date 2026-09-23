@@ -10,6 +10,7 @@
 #include "gba/keys.h"
 #include "moogle_assets.h"
 #include "localized_resource_assets.h"
+#include "sprites_moogle_shop.h"
 
 #ifdef VERSION_EU
 #define LANGSTR(x) (((void**)(x))[gLanguage])

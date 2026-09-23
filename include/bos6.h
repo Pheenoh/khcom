@@ -6,13 +6,6 @@
 #include "pc_sprite_types.h"
 #include "staff_roll_command_sprite_data.h"
 #include "staff_roll_timer_sprite_data.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "battle_actor_types.h"
 

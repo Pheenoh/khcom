@@ -6,6 +6,8 @@
 #include "monsgage.h"
 #include "mode_mapinspect.h"
 #include "gba/keys.h"
+#include "sprites_card.h"
+#include "sprites_worldinspect.h"
 
 extern u8 gUnk_09A3D23C[];
 

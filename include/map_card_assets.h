@@ -1,17 +1,10 @@
-#include "event_sprite_data.h"
 #include "card_lookup_data.h"
 #include "card_sprite_data.h"
 #ifndef GUARD_MAP_CARD_ASSETS_H
 #define GUARD_MAP_CARD_ASSETS_H
 
 #include "anim.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
+#include "types.h"
 
 extern u8 gUnk_0905AC8A[];
 extern u8 gUnk_0905C862[];
@@ -40,32 +33,6 @@ extern u8 gUnk_093F17E4[];
 extern u8 gUnk_093F19F8[];
 extern u8 gUnk_093F1C0C[];
 extern u8 gUnk_093F1E20[];
-extern u8 gUnk_093F2034[];
-extern u8 gUnk_093F2148[];
-extern u8 gUnk_093F225C[];
-extern u8 gUnk_093F2370[];
-extern u8 gUnk_093F2484[];
-extern u8 gUnk_093F2598[];
-extern u8 gUnk_093F26AC[];
-extern u8 gUnk_093F27C0[];
-extern u8 gUnk_093F28D4[];
-extern u8 gUnk_093F29E8[];
-extern u8 gUnk_093F2AFC[];
-extern u8 gUnk_093F2C10[];
-extern u8 gUnk_093F2D24[];
-extern u8 gUnk_093F2E38[];
-extern u8 gUnk_093F2F4C[];
-extern u8 gUnk_093F3060[];
-extern u8 gUnk_093F3174[];
-extern u8 gUnk_093F3288[];
-extern u8 gUnk_093F339C[];
-extern u8 gUnk_093F34B0[];
-extern u8 gUnk_093F35C4[];
-extern u8 gUnk_093F36D8[];
-extern u8 gUnk_093F37EC[];
-extern u8 gUnk_093F3900[];
-extern u8 gUnk_093F3A14[];
-extern u8 gUnk_093F3B28[];
 extern u8 gUnk_093F3E50[];
 extern u8 gUnk_093F4064[];
 extern u8 gUnk_093F4278[];

@@ -2,7 +2,6 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
-#include "actor_ui_resource_data.h"
 
 #include "obj.h"
 
@@ -57,15 +56,6 @@ typedef struct TitleLumiChangeWork {
 
 extern u8 gUnk_02034ECC;
 
-extern u8 gUnk_09771060[];
-extern u8 gUnk_0977143A[];
-extern u8 gUnk_09771666[];
-extern u8 gUnk_09771DC0[];
-extern u8 gUnk_097720F2[];
-extern u8 gUnk_09772CC6[];
-extern u8 gUnk_09773426[];
-extern u8 gUnk_09773E1A[];
-extern u8 gUnk_0977548C[];
 extern u8 gUnk_0984A718[];
 extern u8 gUnk_0984A778[];
 extern u8 gUnk_0984A7B8[];

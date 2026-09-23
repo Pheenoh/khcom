@@ -8,6 +8,7 @@
 #include "allmap.h"
 #include "gba/keys.h"
 #include "allmap_api.h"
+#include "sprites_allmap.h"
 
 u8 gUnk_0203C538 EWRAM_COMMON(4);
 s16 gUnk_0203C53C EWRAM_COMMON(4);

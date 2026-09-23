@@ -1,0 +1,142 @@
+group: sprites_mode_debug
+types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
+  Sprite:
+    kind: sprite
+  AnimHeader:
+    kind: anim
+    header: anim.h
+objects:
+  us:
+  - name: sprites_mode_debug.c
+    start: 0x09EDF764
+    end: 0x09EDF778
+  - name: sprites_mode_debug_frames.s
+    start: 0x0895085C
+    end: 0x08950BE4
+  jp:
+  - name: sprites_mode_debug.c
+    start: 0x09EB71E0
+    end: 0x09EB71F4
+  - name: sprites_mode_debug_frames.s
+    start: 0x08943E44
+    end: 0x089441CC
+  eu:
+  - name: sprites_mode_debug.c
+    start: 0x09F5A3BC
+    end: 0x09F5A3D0
+  - name: sprites_mode_debug_frames.s
+    start: 0x0897C180
+    end: 0x0897C508
+entries:
+- name: gUnk_09EDF764
+  record: SpriteTable
+  items: [gUnk_0895085C, gUnk_0895087E, gUnk_089508A0, gUnk_089508C2]
+  us:
+    address: 0x09EDF764
+  jp:
+    address: 0x09EB71E0
+  eu:
+    address: 0x09F5A3BC
+- name: gUnk_09EDF774
+  record: AnimTable
+  items: [gUnk_089508E4]
+  us:
+    address: 0x09EDF774
+  jp:
+    address: 0x09EB71F0
+  eu:
+    address: 0x09F5A3CC
+- name: gUnk_0895085C
+  record: Sprite
+  align: 4
+  oam:
+  - [0, 16384, 0]
+  - [16392, 16400, 4]
+  - [16392, 16432, 4]
+  - [16392, 80, 8]
+  - [8, 96, 10]
+  us:
+    address: 0x0895085C
+  jp:
+    address: 0x08943E44
+  eu:
+    address: 0x0897C180
+- name: gUnk_0895087E
+  record: Sprite
+  oam:
+  - [16392, 16400, 4]
+  - [16392, 16432, 4]
+  - [16392, 80, 8]
+  - [8, 96, 10]
+  - [0, 16384, 11]
+  us:
+    address: 0x0895087E
+  jp:
+    address: 0x08943E66
+  eu:
+    address: 0x0897C1A2
+- name: gUnk_089508A0
+  record: Sprite
+  oam:
+  - [16392, 16400, 4]
+  - [16392, 16432, 4]
+  - [16392, 80, 8]
+  - [8, 96, 10]
+  - [0, 16384, 15]
+  us:
+    address: 0x089508A0
+  jp:
+    address: 0x08943E88
+  eu:
+    address: 0x0897C1C4
+- name: gUnk_089508C2
+  record: Sprite
+  oam:
+  - [16392, 16400, 4]
+  - [16392, 16432, 4]
+  - [16392, 80, 8]
+  - [8, 96, 10]
+  - [0, 16384, 19]
+  us:
+    address: 0x089508C2
+  jp:
+    address: 0x08943EAA
+  eu:
+    address: 0x0897C1E6
+- name: gUnk_089508E4
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 8]
+  - [1, 8]
+  - [2, 8]
+  - [1, 8]
+  - [0, 8]
+  - [3, 8]
+  us:
+    address: 0x089508E4
+  jp:
+    address: 0x08943ECC
+  eu:
+    address: 0x0897C208
+- name: gUnk_08950902
+  format: tiles4
+  width: 1
+  us:
+    address: 0x08950902
+    size: 736
+  jp:
+    address: 0x08943EEA
+    size: 736
+  eu:
+    address: 0x0897C226
+    size: 736

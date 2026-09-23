@@ -1,6 +1,7 @@
 #include "registration_data.h"
 #include "ms_api.h"
 #include "ms.h"
+#include "sprites_moogle_shop.h"
 
 void task_ms_shop_hosi_0(MsShopHosiWork* work, MsShopHosiArg* arg) {
     work->x = arg->x << 8;

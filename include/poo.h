@@ -1,16 +1,8 @@
 #include "task_descriptors.h"
-#include "aux_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "poo_data.h"
 
@@ -1128,7 +1120,6 @@ extern u8 gUnk_097356F4[];
 extern u8 gUnk_09849B98[];
 extern u8 gUnk_09760986[];
 extern u8 gUnk_09849E58[];
-extern u8 gUnk_08B22BBC[];
 extern const PooHitBox gUnk_096FC010;
 extern const PooSpawn gUnk_096FC6F8[85];
 extern u8 gUnk_097A2ED8[];
@@ -1138,16 +1129,6 @@ extern u8 gUnk_09742FD8[];
 extern u8 gUnk_097430EC[];
 extern u8 gUnk_09743262[];
 extern u8 gUnk_09743ADA[];
-extern u8 gUnk_09760D00[];
-extern u8 gUnk_09761824[];
-extern u8 gUnk_09762542[];
-extern u8 gUnk_097634D0[];
-extern u8 gUnk_09763B54[];
-extern u8 gUnk_09764BB8[];
-extern u8 gUnk_09765012[];
-extern u8 gUnk_0976626E[];
-extern u8 gUnk_09767562[];
-extern u8 gUnk_09769416[];
 extern u8 gUnk_097B4578[];
 extern u8 gUnk_097B5418[];
 extern u8 gUnk_09849E78[];

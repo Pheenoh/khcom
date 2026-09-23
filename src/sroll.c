@@ -7,6 +7,7 @@
 #include "types.h"
 #include "sroll_api.h"
 #include "sprites_evt.h"
+#include "sprites_smn.h"
 #include "sprites_staff_roll.h"
 
 DmaStream gUnk_02036028 __attribute__((aligned(8)));

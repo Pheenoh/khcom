@@ -2,10 +2,6 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
-#include "actor_ui_resource_data.h"
-
-
-
 
 #include "allmap_types.h"
 
@@ -46,9 +42,6 @@ extern u16 gUnk_02034E38;
 extern u16 gUnk_02034E3A;
 extern TaskPool gUnk_0203C4F0;
 extern u8 gUnk_05000140[];
-extern u8 gUnk_0976B340[];
-extern u8 gUnk_0976DEDC[];
-extern u8 gUnk_0976E4D4[];
 extern u8 gUnk_097B62B8[];
 extern u8 gUnk_0983AD98[];
 extern u8 gUnk_0984A0F8[];

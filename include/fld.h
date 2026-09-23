@@ -1,5 +1,4 @@
 #include "task_descriptors.h"
-#include "aux_animation_data.h"
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 

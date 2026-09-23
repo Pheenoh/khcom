@@ -1,16 +1,8 @@
 #include "task_descriptors.h"
 #include "jiminy_records_data.h"
-#include "aux_animation_data.h"
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "hum_types.h"
 
@@ -487,7 +479,6 @@ extern u8 gUnk_09618478[];
 extern u8 gUnk_08C3151E[];
 extern u8 gUnk_08BD99F4[];
 extern u8 gUnk_09618458[];
-extern u8 gUnk_08B5A872[];
 extern u8 gUnk_08F6DC64[];
 extern u8 gUnk_08C3724C[];
 extern u8 gUnk_09617F18[];
@@ -499,19 +490,12 @@ extern u8 gUnk_08F6DCC4[];
 extern u8 gUnk_08F6DCE4[];
 extern u8 gUnk_08C42BBE[];
 extern u8 gUnk_08C46790[];
-extern u8 gUnk_08B22BA8[];
-extern u8 gUnk_08B22BBC[];
-extern u8 gUnk_08BF73C6[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08EE3A84[];
 extern u8 gUnk_08C1E78C[];
 extern u8 gUnk_08BAFB62[];
 extern u8 gUnk_08F6DC44[];
 extern u8 gUnk_08B59E52[];
-extern u8 gUnk_08B5A854[];
-extern u8 gUnk_08B5A85E[];
-extern u8 gUnk_08B22CE4[];
-extern u8 gUnk_08B22CBC[];
 extern JiminyWork* gJiminyWork;
 
 void func_08054100(AxcelWork* work, HumSub* sub);

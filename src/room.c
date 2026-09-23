@@ -4,6 +4,7 @@
 #include "monsgage.h"
 #include "room.h"
 #include "room_api.h"
+#include "sprites_room.h"
 
 void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);

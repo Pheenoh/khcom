@@ -3,7 +3,6 @@
 
 #include "anim.h"
 #include "card_localized_09EE9C90_data.h"
-#include "card_animation_09EEA180_data.h"
 
 #ifdef VERSION_US
 extern void* gUnk_09EEAFD4;

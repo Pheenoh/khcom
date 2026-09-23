@@ -5,6 +5,7 @@
 #include "m4a_song.h"
 #include "obj_api.h"
 #include "mode_allmap.h"
+#include "sprites_allmap.h"
 
 const char gModeNameAllmap[] = "mode_allmap";
 

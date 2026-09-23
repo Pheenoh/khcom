@@ -15,44 +15,80 @@ types:
 objects:
   us:
   - name: sprites_map_tasks_1.c
+    start: 0x09EDF97C
+    end: 0x09EDF9A8
+  - name: sprites_map_tasks_2.c
     start: 0x09EF04FC
     end: 0x09EF06A8
-  - name: sprites_map_tasks_2.c
+  - name: sprites_map_tasks_3.c
     start: 0x09EF0820
     end: 0x09EF090C
   - name: sprites_map_tasks_frames_1.s
+    start: 0x0896207C
+    end: 0x08963B3C
+  - name: sprites_map_tasks_frames_2.s
     start: 0x093803D8
     end: 0x09393218
-  - name: sprites_map_tasks_frames_2.s
+  - name: sprites_map_tasks_frames_3.s
     start: 0x093A5DF0
     end: 0x093AE9BC
   jp:
   - name: sprites_map_tasks_1.c
+    start: 0x09EB73F8
+    end: 0x09EB7424
+  - name: sprites_map_tasks_2.c
     start: 0x09EC78E8
     end: 0x09EC7A94
-  - name: sprites_map_tasks_2.c
+  - name: sprites_map_tasks_3.c
     start: 0x09EC7C0C
     end: 0x09EC7CF8
   - name: sprites_map_tasks_frames_1.s
+    start: 0x08955664
+    end: 0x08957124
+  - name: sprites_map_tasks_frames_2.s
     start: 0x0933B900
     end: 0x0934E740
-  - name: sprites_map_tasks_frames_2.s
+  - name: sprites_map_tasks_frames_3.s
     start: 0x09361318
     end: 0x09369EE4
   eu:
   - name: sprites_map_tasks_1.c
+    start: 0x09F5A5D4
+    end: 0x09F5A600
+  - name: sprites_map_tasks_2.c
     start: 0x09F7B6E0
     end: 0x09F7B88C
-  - name: sprites_map_tasks_2.c
+  - name: sprites_map_tasks_3.c
     start: 0x09F7BA04
     end: 0x09F7BAF0
   - name: sprites_map_tasks_frames_1.s
+    start: 0x0898D9A0
+    end: 0x0898F460
+  - name: sprites_map_tasks_frames_2.s
     start: 0x0944FA60
     end: 0x094628A0
-  - name: sprites_map_tasks_frames_2.s
+  - name: sprites_map_tasks_frames_3.s
     start: 0x09475478
     end: 0x0947E044
 entries:
+- name: gUnk_09EDF97C
+  record: SpriteTable
+  items: [gUnk_0896207C, gUnk_0896208C, gUnk_0896209C, gUnk_089620AC, gUnk_089620C2, gUnk_089620D2, gUnk_089620E2, gUnk_089620F2, gUnk_08962102, gUnk_0896210C]
+  us:
+    address: 0x09EDF97C
+  jp:
+    address: 0x09EB73F8
+  eu:
+    address: 0x09F5A5D4
+- name: gUnk_09EDF9A4
+  record: AnimTable
+  items: [gUnk_0896210E]
+  us:
+    address: 0x09EDF9A4
+  jp:
+    address: 0x09EB7420
+  eu:
+    address: 0x09F5A5FC
 - name: gUnk_09EF04FC
   record: SpriteTable
   items: [gUnk_093803D8]
@@ -561,6 +597,149 @@ entries:
     address: 0x09EC7CF4
   eu:
     address: 0x09F7BAEC
+- name: gUnk_0896207C
+  record: Sprite
+  align: 4
+  oam:
+  - [221, 33262, 0]
+  - [229, 33262, 16]
+  us:
+    address: 0x0896207C
+  jp:
+    address: 0x08955664
+  eu:
+    address: 0x0898D9A0
+- name: gUnk_0896208C
+  record: Sprite
+  oam:
+  - [209, 33260, 32]
+  - [233, 33268, 48]
+  us:
+    address: 0x0896208C
+  jp:
+    address: 0x08955674
+  eu:
+    address: 0x0898D9B0
+- name: gUnk_0896209C
+  record: Sprite
+  oam:
+  - [216, 33259, 64]
+  - [232, 33267, 80]
+  us:
+    address: 0x0896209C
+  jp:
+    address: 0x08955684
+  eu:
+    address: 0x0898D9C0
+- name: gUnk_089620AC
+  record: Sprite
+  oam:
+  - [225, 33258, 96]
+  - [249, 16882, 112]
+  - [241, 16386, 116]
+  us:
+    address: 0x089620AC
+  jp:
+    address: 0x08955694
+  eu:
+    address: 0x0898D9D0
+- name: gUnk_089620C2
+  record: Sprite
+  oam:
+  - [230, 33259, 120]
+  - [246, 16387, 136]
+  us:
+    address: 0x089620C2
+  jp:
+    address: 0x089556AA
+  eu:
+    address: 0x0898D9E6
+- name: gUnk_089620D2
+  record: Sprite
+  oam:
+  - [231, 33258, 140]
+  - [239, 16386, 156]
+  us:
+    address: 0x089620D2
+  jp:
+    address: 0x089556BA
+  eu:
+    address: 0x0898D9F6
+- name: gUnk_089620E2
+  record: Sprite
+  oam:
+  - [235, 33257, 160]
+  - [243, 16385, 176]
+  us:
+    address: 0x089620E2
+  jp:
+    address: 0x089556CA
+  eu:
+    address: 0x0898DA06
+- name: gUnk_089620F2
+  record: Sprite
+  oam:
+  - [16622, 33263, 180]
+  - [16638, 16879, 188]
+  us:
+    address: 0x089620F2
+  jp:
+    address: 0x089556DA
+  eu:
+    address: 0x0898DA16
+- name: gUnk_08962102
+  record: Sprite
+  oam:
+  - [239, 33263, 192]
+  us:
+    address: 0x08962102
+  jp:
+    address: 0x089556EA
+  eu:
+    address: 0x0898DA26
+- name: gUnk_0896210C
+  record: Sprite
+  oam: []
+  us:
+    address: 0x0896210C
+  jp:
+    address: 0x089556F4
+  eu:
+    address: 0x0898DA30
+- name: gUnk_0896210E
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 10]
+  - [1, 10]
+  - [2, 10]
+  - [3, 10]
+  - [4, 10]
+  - [5, 10]
+  - [6, 10]
+  - [7, 10]
+  - [8, 10]
+  - [9, 10]
+  us:
+    address: 0x0896210E
+  jp:
+    address: 0x089556F6
+  eu:
+    address: 0x0898DA32
+- name: gUnk_0896213C
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0896213C
+    size: 6656
+  jp:
+    address: 0x08955724
+    size: 6656
+  eu:
+    address: 0x0898DA60
+    size: 6656
 - name: gUnk_093803D8
   record: Sprite
   align: 4

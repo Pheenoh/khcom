@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "card_localized_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
 #include "registration_data.h"
@@ -42,6 +43,7 @@
 #include "bos4_api.h"
 #include "sprites_evt.h"
 #include "sprites_fld.h"
+#include "sprites_level_up.h"
 #include "sprites_sora.h"
 
 u8 gUnk_02034AF8;

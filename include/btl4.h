@@ -1,15 +1,7 @@
 #include "battle_localized_data.h"
-#include "aux_animation_data.h"
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 #include "display.h"
 
 #include "card_api.h"
@@ -113,20 +105,6 @@ extern u8 gUnk_08B1FD2C[];
 extern u8 gUnk_08B1FD3C[];
 extern u8 gUnk_08B1FD4C[];
 extern u8 gUnk_08B1FD66[];
-extern u8 gUnk_08B20D20[];
-extern u8 gUnk_08B20D6E[];
-extern u8 gUnk_08B23CBA[];
-extern u8 gUnk_08B23E7C[];
-extern u8 gUnk_08B23E8C[];
-extern u8 gUnk_08B23E9C[];
-extern u8 gUnk_08B23EAC[];
-extern u8 gUnk_08B23EBC[];
-extern u8 gUnk_08B23ED2[];
-extern u8 gUnk_08B23EE8[];
-extern u8 gUnk_08B23F08[];
-extern u8 gUnk_08B23F24[];
-extern u8 gUnk_08B23F2E[];
-extern u8 gUnk_08B24016[];
 extern u8 gUnk_08B25E40[];
 extern u8 gUnk_08B25E54[];
 extern u8 gUnk_08B25E5E[];

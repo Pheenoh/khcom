@@ -1,4 +1,3 @@
-#include "aux_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
@@ -35,7 +34,6 @@ typedef struct DebugWork {
 } DebugWork;
 
 extern const char gUnk_08F68604[];
-extern u8 gUnk_08950902[];
 extern u8 gUnk_08C72CE4[];
 extern u8 gUnk_08EEEB84[];
 extern u8 gUnk_08F683E4[];

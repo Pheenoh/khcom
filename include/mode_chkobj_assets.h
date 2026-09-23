@@ -1,13 +1,6 @@
 #ifndef GUARD_MODE_CHKOBJ_ASSETS_H
 #define GUARD_MODE_CHKOBJ_ASSETS_H
 
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
 
 #include "types.h"
 #include "anim.h"
@@ -1631,11 +1624,7 @@ extern u8 gUnk_089492FC[];
 extern u8 gUnk_0894B386[];
 extern u8 gUnk_0894CECA[];
 extern u8 gUnk_0894EC7C[];
-extern u8 gUnk_08957290[];
-extern u8 gUnk_0895A12A[];
 extern u8 gUnk_0895C5E6[];
-extern u8 gUnk_0895EECC[];
-extern u8 gUnk_089605FC[];
 extern u8 gUnk_08963BAC[];
 extern u8 gUnk_08964BF6[];
 extern u8 gUnk_08965D48[];
@@ -1790,7 +1779,6 @@ extern u8 gUnk_08B1B854[];
 extern u8 gUnk_08B1BAA8[];
 extern u8 gUnk_08B1D846[];
 extern u8 gUnk_08B209E0[];
-extern u8 gUnk_08B24016[];
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_08B268D2[];
 extern u8 gUnk_08B2A57A[];
@@ -2068,8 +2056,6 @@ extern u8 gUnk_0905986C[];
 extern u8 gUnk_09059A80[];
 extern u8 gUnk_09059C94[];
 extern u8 gUnk_090A0C86[];
-extern u8 gUnk_090A7F0A[];
-extern u8 gUnk_090A8FC4[];
 extern u8 gUnk_090D806A[];
 extern u8 gUnk_090D923A[];
 extern u8 gUnk_090DA002[];
@@ -2484,18 +2470,6 @@ extern u8 gUnk_0931FC36[];
 extern u8 gUnk_0931FE92[];
 extern u8 gUnk_093202B4[];
 extern u8 gUnk_09320796[];
-extern u8 gUnk_09322A1A[];
-extern u8 gUnk_09322F50[];
-extern u8 gUnk_09323364[];
-extern u8 gUnk_09323816[];
-extern u8 gUnk_09326050[];
-extern u8 gUnk_09328920[];
-extern u8 gUnk_0932B7B6[];
-extern u8 gUnk_0932C85A[];
-extern u8 gUnk_0932D07E[];
-extern u8 gUnk_0932D8E0[];
-extern u8 gUnk_0932EDD8[];
-extern u8 gUnk_093319DA[];
 extern u8 gUnk_09334A18[];
 extern u8 gUnk_09335F02[];
 extern u8 gUnk_09336BEE[];

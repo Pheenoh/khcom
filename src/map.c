@@ -18,6 +18,7 @@
 #include "map_spawn_data.h"
 #include "map_resource_assets.h"
 #include "map_text_data.h"
+#include "sprites_btl.h"
 #include "sprites_evt.h"
 #include "sprites_map.h"
 #include "sprites_sora.h"

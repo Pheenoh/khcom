@@ -1,15 +1,10 @@
 #include "continue_ui.h"
 #include "system_state.h"
 #include "anim.h"
-#include "aux_animation_09EDF764_data.h"
-#include "aux_animation_09EDF8F0_data.h"
-#include "aux_animation_09EE12A4_data.h"
-#include "event_sprite_09EEB110_data.h"
-#include "card_animation_09EEFD7C_data.h"
-#include "room_resources_data.h"
-#include "worldinspect_resources_data.h"
+#include "types.h"
 #include "bg_animation_data.h"
-#include "card_animation_data.h"
+#include "card_localized_09EE9C90_data.h"
+#include "card_lookup_09EEA344_data.h"
 #include "mode_battle_data.h"
 #include "engine_math.h"
 #include "display.h"
@@ -18,6 +13,7 @@
 #include "pallet.h"
 #include "key.h"
 #include "m4a_song.h"
+#include "sprites_continue.h"
 
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_090A6B26[];

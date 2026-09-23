@@ -13,6 +13,7 @@
 #include "monsgage.h"
 #include "anim.h"
 #include "msg.h"
+#include "sprites_deck_menu.h"
 #include "sprites_evt.h"
 
 extern const u16 gUnk_0951D2B8[1024];

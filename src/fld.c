@@ -3,6 +3,7 @@
 #include "fld.h"
 #include "gba/keys.h"
 #include "task_animation_assets.h"
+#include "sprites_btl.h"
 #include "sprites_evt.h"
 #include "sprites_fld.h"
 #include "sprites_riku.h"

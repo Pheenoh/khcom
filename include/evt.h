@@ -15,7 +15,6 @@
 #include "game.h"
 #include "evt_api.h"
 
-
 typedef struct EvtObjParam {
     EvtObjRes* res;
     EvtObj* obj;
@@ -37,9 +36,6 @@ typedef struct EvtShadowWork {
     void* tiles3;
 } EvtShadowWork;
 
-
-extern u8 gUnk_08B22CBC[];
-extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08F69BE4[];
 
 void func_0801CD94(EvtObj* obj, s32 a);
