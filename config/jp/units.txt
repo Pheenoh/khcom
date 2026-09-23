@@ -385,9 +385,14 @@ sprites_evt_frames_7.s
 sprites_bos4_frames.s
 sprites_status_frames.s
 event_background_tiles_8.s
-asset_gfx_gap_158_at_097AED78.s
+sprites_pooh_tiles_1.s
+asset_gfx_gap_158_at_097B62B8.s
+sprites_pooh_tiles_2.s
+asset_gfx_gap_158_at_097C77B8.s
 event_background_maps_7.s
 asset_gfx_gap_158_at_0983AD98.s
+sprites_pooh_maps.s
+asset_gfx_gap_158_at_0983E398.s
 event_background_palettes_5.s
 sprite_palettes_10.s
 asset_gfx_gap_158_at_09849A98.s

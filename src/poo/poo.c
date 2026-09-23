@@ -8513,7 +8513,7 @@ TaskDesc gTaskDescPooCabbageAfterEvent = {
 
 #ifdef VERSION_EU
 u8* gUnkEu_09F800A4[5] = {
-    gUnkEu_09795660,
+    gUnk_097B7218,
     gUnkEu_097966A0,
     gUnkEu_09799760,
     gUnkEu_09798720,

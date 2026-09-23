@@ -3,7 +3,6 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
-
 #include "poo_data.h"
 
 #include "poo_background_data.h"
@@ -1048,9 +1047,6 @@ typedef struct PooPalStep {
 
 extern const s32 gUnk_096FDA74[];
 extern u8 gUnk_0984A138[];
-extern u8 gUnk_097B7218[];
-extern u8 gUnk_097B8258[];
-extern u8 gUnk_0983BC18[];
 extern const PooBgSet gUnk_096FDA8C[];
 extern const PooPalStep gUnk_096FDB40[];
 
@@ -1129,8 +1125,6 @@ extern u8 gUnk_09742FD8[];
 extern u8 gUnk_097430EC[];
 extern u8 gUnk_09743262[];
 extern u8 gUnk_09743ADA[];
-extern u8 gUnk_097B4578[];
-extern u8 gUnk_097B5418[];
 extern u8 gUnk_09849E78[];
 extern u8 gUnk_09849E98[];
 extern u8 gUnk_09849EB8[];

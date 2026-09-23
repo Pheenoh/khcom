@@ -2449,7 +2449,6 @@ TARGET_ONLY_SYMBOLS = {
         "gBossMapBlockEu_0981A640": 0x981a640,
         "gBossMapBlockEu_0981AE40": 0x981ae40,
         "gBossMapBlockEu_0981B640": 0x981b640,
-        "gUnkEu_09795660": 0x9795660,
         "gUnkEu_097966A0": 0x97966a0,
         "gUnkEu_09799760": 0x9799760,
         "gUnkEu_09798720": 0x9798720,

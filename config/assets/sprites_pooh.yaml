@@ -32,6 +32,15 @@ objects:
   - name: sprites_pooh_frames_3.s
     start: 0x097442DC
     end: 0x0976B1D8
+  - name: sprites_pooh_tiles_1.s
+    start: 0x097AED78
+    end: 0x097B62B8
+  - name: sprites_pooh_tiles_2.s
+    start: 0x097B7218
+    end: 0x097C77B8
+  - name: sprites_pooh_maps.s
+    start: 0x0983BC18
+    end: 0x0983E398
   jp:
   - name: sprites_pooh_1.c
     start: 0x09ECC684
@@ -51,6 +60,15 @@ objects:
   - name: sprites_pooh_frames_3.s
     start: 0x096FCAB8
     end: 0x097239B4
+  - name: sprites_pooh_tiles_1.s
+    start: 0x0976920C
+    end: 0x0977074C
+  - name: sprites_pooh_tiles_2.s
+    start: 0x097716AC
+    end: 0x09781C4C
+  - name: sprites_pooh_maps.s
+    start: 0x097F10EC
+    end: 0x097F386C
   eu:
   - name: sprites_pooh_1.c
     start: 0x09F80690
@@ -70,6 +88,15 @@ objects:
   - name: sprites_pooh_frames_3.s
     start: 0x0971163C
     end: 0x09738538
+  - name: sprites_pooh_tiles_1.s
+    start: 0x0978C6E0
+    end: 0x09793C20
+  - name: sprites_pooh_tiles_2.s
+    start: 0x09795660
+    end: 0x097966A0
+  - name: sprites_pooh_maps.s
+    start: 0x09811AC0
+    end: 0x09814240
 entries:
 - name: gUnk_09EF5298
   record: SpriteTable
@@ -16898,3 +16925,69 @@ entries:
   eu:
     address: 0x09736776
     size: 7616
+- name: gUnk_097AED78
+  format: raw
+  us:
+    address: 0x097AED78
+    size: 22528
+  jp:
+    address: 0x0976920C
+    size: 22528
+    symbol: gUnkJp_0976920C
+  eu:
+    address: 0x0978C6E0
+    size: 22528
+    symbol: gUnkEu_0978C6E0
+- name: gUnk_097B4578
+  format: tiles4
+  us:
+    address: 0x097B4578
+    size: 3744
+  jp:
+    address: 0x0976EA0C
+    size: 3744
+  eu:
+    address: 0x09791EE0
+    size: 3744
+- name: gUnk_097B5418
+  format: tiles4
+  us:
+    address: 0x097B5418
+    size: 3744
+  jp:
+    address: 0x0976F8AC
+    size: 3744
+  eu:
+    address: 0x09792D80
+    size: 3744
+- name: gUnk_097B7218
+  format: tiles4
+  width: 2
+  us:
+    address: 0x097B7218
+    size: 4160
+  jp:
+    address: 0x097716AC
+    size: 4160
+  eu:
+    address: 0x09795660
+    size: 4160
+- name: gUnk_097B8258
+  format: tiles4
+  us:
+    address: 0x097B8258
+    size: 62816
+  jp:
+    address: 0x097726EC
+    size: 62816
+- name: gUnk_0983BC18
+  format: tilemap
+  us:
+    address: 0x0983BC18
+    size: 10112
+  jp:
+    address: 0x097F10EC
+    size: 10112
+  eu:
+    address: 0x09811AC0
+    size: 10112
