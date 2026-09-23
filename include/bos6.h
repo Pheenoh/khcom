@@ -602,8 +602,8 @@ void CreateBosPcAcdTask(PcWork* work, TaskPool* pool);
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];
 extern u8 gUnk_08F69BC4[];
-extern const BattleBackgroundDef gUnk_09A4CF6C;
-extern const EmyKind gUnk_09A4CF5C;
+extern const BattleBackgroundDef gBosLstBattleBackgroundDef;
+extern const EmyKind gBosLstEmyKind;
 extern u8 gUnk_09C53724[];
 extern u8 gUnk_09C58590[];
 

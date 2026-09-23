@@ -1135,9 +1135,9 @@ extern u8 gUnk_09849F38[];
 extern u8 gUnk_09849F58[];
 extern const s32 gUnk_096FD61C[];
 extern const s32 gUnk_096FD5FC[8];
-extern const PooGfxDesc gUnk_096FD5DC[];
-extern const PooGfxDesc gUnk_096FD57C[];
-extern const PooGfxDesc gUnk_096FD4BC[];
+extern const PooGfxDesc gPooTiggerGfxDescs[];
+extern const PooGfxDesc gPooRabbitGfxDescs[];
+extern const PooGfxDesc gPooPigletGfxDescs[];
 
 extern u8 gUnk_09849C38[];
 extern u8 gUnk_09732272[];

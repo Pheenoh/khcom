@@ -332,7 +332,7 @@ extern u8 gUnk_09A4D234[];
 extern u8 gUnk_09A4F2B4[];
 extern const s32 gUnk_09A4FDDC[3];
 extern const s32 gUnk_09A4FDE8[16];
-extern const EmyKind gUnk_09A4FD4C;
+extern const EmyKind gBosLstBitEmyKind;
 extern const EmyKind gUnk_09A4FE98;
 extern const s32 gUnk_09A4FD5C[32];
 extern const u32 gUnk_09A4FEA8[6][5];

@@ -319,7 +319,7 @@ extern vu32 gFrameCounter;
 
 void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg);
 
-extern const EmyKind gUnk_096FE0E8;
+extern const EmyKind gBosBoogieKnifereaderEmyKind;
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
 
@@ -499,7 +499,7 @@ void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work);
 void task_bos_ursula_tako_2(UrsulaTakoWork* work);
 void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg);
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work);
-extern const EmyKind gUnk_096FE1A8;
+extern const EmyKind gBosUrsulaTakoEmyKind;
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work);
 void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 
@@ -507,9 +507,9 @@ void func_080DB04C(BoogieKnifeWork* work);
 
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 void task_bos_ursula_0(UrsulaWork* work);
-extern const BattleBackgroundDef gUnk_096FE14C;
-extern const EmyKind gUnk_096FE13C;
-extern const EmyKind gUnk_096FE098;
+extern const BattleBackgroundDef gBosUrsulaBattleBackgroundDef;
+extern const EmyKind gBosUrsulaEmyKind;
+extern const EmyKind gBosBoogieDiskEmyKind;
 extern u8 gUnk_0979A426[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
@@ -556,7 +556,7 @@ u8 func_080D9B28(BoogieDiceWork* work);
 void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg);
 extern u8 gUnk_0979E344[];
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg);
-extern const EmyKind gUnk_096FE324;
+extern const EmyKind gBosUrsulaBubbleSingleEmyKind;
 extern u8 gUnk_097A0DE4[];
 extern u8 gUnk_0984B0F8[];
 void task_bos_ursula_border_2(UrsulaBorderWork* work);
@@ -578,7 +578,7 @@ extern u8 gUnk_097995CC[];
 extern u8 gUnk_0984AFF8[];
 
 void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);
-extern const EmyKind gUnk_096FE114;
+extern const EmyKind gBosBoogieKaihukuEmyKind;
 extern u8 gUnk_09799FB0[];
 extern u8 gUnk_0984AFB8[];
 extern u8 gUnk_08F69BC4[];

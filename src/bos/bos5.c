@@ -18,7 +18,7 @@
 
 const char gTaskNameBosGa[] = "task_bos_ga";
 
-const EmyKind gUnk_099920D8 = { 37, 1000, 16, 16, 0, 60, 1 };
+const EmyKind gBosMdEmyKind = { 37, 1000, 16, 16, 0, 60, 1 };
 
 const MdMapData gMdMapData = {
     gUnk_099AC97C, 32768, { 0, 0 }, gUnk_09A3C8BC, 192, { 0, 0 }, { gUnk_09A208DC, gUnk_09A210DC, gUnk_09A218DC, gUnk_09A220DC }
@@ -346,7 +346,7 @@ const MdFireDef gMdFireDefs[6] = {
     { gUnk_09992E98, 4, 0 },
 };
 
-const EmyKind gUnk_09992F28 = { 37, 1000, 16, 16, 0, 60, 1 };
+const EmyKind gBosMdFireEmyKind = { 37, 1000, 16, 16, 0, 60, 1 };
 
 TaskDesc gTaskDescBosMdMap = {
     gTaskNameBosMdMap,
@@ -1615,7 +1615,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     SetBattleActorPosition(0x7800, gBtlWork->unk_0D0, 0);
 
     for (i = 0; i < 1; i++) {
-        func_0801B37C(&work->sub[i], &gUnk_099920D8, gBtlWork->unk_0CC,
+        func_0801B37C(&work->sub[i], &gBosMdEmyKind, gBtlWork->unk_0CC,
                       gBtlWork->unk_0D0, gBtlWork->unk_0D4);
 #ifdef VERSION_EU
         ColliderInit(work->sub[i].unk_040, 8, 16, 24);
@@ -2031,7 +2031,7 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->unk_160 = arg->unk_06;
     work->target = (MdFireTarget*)arg->unk_08;
     func_080FCF78(work);
-    func_0801B37C(&work->sub, &gUnk_09992F28, work->x, work->y, work->z);
+    func_0801B37C(&work->sub, &gBosMdFireEmyKind, work->x, work->y, work->z);
     ColliderInit(work->sub.unk_040, 3, 16, 16);
     ColliderSetPosition(work->sub.unk_040, work->sub.x, work->sub.y,
                   work->sub.z);

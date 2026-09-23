@@ -395,7 +395,7 @@ typedef struct JfBorderlineWork {
 
 typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
 
-extern const EmyKind gUnk_0961A7B0;
+extern const EmyKind gBosDsdEmyKind;
 extern const s16 gUnk_0961A89E[9];
 extern const s16 gUnk_0961A8B0[10];
 extern const s16 gUnk_0961A7D0[47];

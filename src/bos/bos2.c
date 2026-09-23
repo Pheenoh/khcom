@@ -2924,22 +2924,22 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         work->unk_344 = 0x16800;
         work->unk_348 = -0x6400;
         w = work;
-        func_0801B37C(w, &gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        func_0801B37C(w, &gBosDsdEmyKind, work->unk_340, work->unk_344, work->unk_348);
         p1 = &w->body[1];
-        func_0801B37C(p1, &gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
+        func_0801B37C(p1, &gBosDsdEmyKind, 0xDC00, 0x16800, -0x8C00);
         p2 = &w->body[2];
-        func_0801B37C(p2, &gUnk_0961A7B0, 0x9000, 0x16800, 0);
+        func_0801B37C(p2, &gBosDsdEmyKind, 0x9000, 0x16800, 0);
         TaskCreate(&w->tasks, &gTaskDescBosDsdMain, w);
     } else {
         work->unk_340 = 0xDC00;
         work->unk_344 = 0x16800;
         work->unk_348 = -0x6400;
         w = work;
-        func_0801B37C(w, &gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        func_0801B37C(w, &gBosDsdEmyKind, work->unk_340, work->unk_344, work->unk_348);
         w->body[0].flags |= 0x1000000;
         w->body[0].flags |= 4;
         p1 = &w->body[1];
-        func_0801B37C(p1, &gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
+        func_0801B37C(p1, &gBosDsdEmyKind, 0xDC00, 0x16800, -0x8C00);
         p1->flags |= 4;
         p1->flags |= 0x400;
         p1->unk_0A2 = v;
@@ -2947,7 +2947,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         p1->unk_0A0 = 16;
         p1->unk_09C = 16;
         p2 = &w->body[2];
-        func_0801B37C(p2, &gUnk_0961A7B0, 0x9000, 0x16800, v);
+        func_0801B37C(p2, &gBosDsdEmyKind, 0x9000, 0x16800, v);
         p2->flags |= 0x003C000001000004ULL;
         p2->unk_0A2 = v;
         p2->unk_09E = 16;
@@ -5165,7 +5165,7 @@ const char gTaskNameBosJfRock[] = "task_bos_jf_rock";
 
 const char gTaskNameBosJfBorderline[] = "task_bos_jf_borderline";
 
-const EmyKind gUnk_0961A7B0 = { 38, 1000, 16, 16, 40, 60, 0 };
+const EmyKind gBosDsdEmyKind = { 38, 1000, 16, 16, 40, 60, 0 };
 
 TaskDesc gTaskDescBosJfMajin = {
     gTaskNameBosJfMajin,

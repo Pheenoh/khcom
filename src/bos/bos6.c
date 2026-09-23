@@ -5200,9 +5200,9 @@ TaskDesc gTaskDescBosPcFlt = {
 
 const char gTaskNameBosPcAcd[] = "task_bos_pc_acd";
 
-const EmyKind gUnk_09A4CF5C = { 40, 256, 8, 8, 0, 128, 0 };
+const EmyKind gBosLstEmyKind = { 40, 256, 8, 8, 0, 128, 0 };
 
-const BattleBackgroundDef gUnk_09A4CF6C = {
+const BattleBackgroundDef gBosLstBattleBackgroundDef = {
     gUnk_09CC5054, 0x8000, { 0, 0 }, gUnk_09D69454, 0x140, { 0, 0 }, { gUnk_09D4B274, gUnk_09D4B274, gUnk_09D4B274, gUnk_09D4B274 }
 };
 
@@ -7024,14 +7024,14 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     if (pool == 0) {
         work->unk_000 = 0;
         work->unk_001 = 0;
-        work->task = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFld, (void*)&gUnk_09A4CF6C);
+        work->task = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstFld, (void*)&gBosLstBattleBackgroundDef);
         work->unk_008 = 0;
         work->x = 0x14000;
         work->z = -0x5400;
     } else {
         work->unk_000 = 1;
         work->unk_001 = 0;
-        work->task = TaskCreate(pool, &gTaskDescBosLstFld, (void*)&gUnk_09A4CF6C);
+        work->task = TaskCreate(pool, &gTaskDescBosLstFld, (void*)&gBosLstBattleBackgroundDef);
         work->unk_008 = 7;
         work->x = 0x1D000;
         work->z = -0x14400;
@@ -7097,7 +7097,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     for (; i < 32; i++) {
         work->lstTasks[i] = 0;
     }
-    tbl = &gUnk_09A4CF5C;
+    tbl = &gBosLstEmyKind;
     func_0801B37C(obj, tbl, work->x, work->y, work->z);
     work->unk_118 |= 0x200000000400;
     func_0801C2DC(obj, 1);

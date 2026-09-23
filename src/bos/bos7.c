@@ -21,7 +21,7 @@ TaskDesc gTaskDescBosLstFld = {
 
 const char gTaskNameBosLstEdg[] = "task_bos_lst_edg";
 
-const EmyKind gUnk_09A4FD4C = { 0, 1, 8, 8, 0, 128, 0 };
+const EmyKind gBosLstBitEmyKind = { 0, 1, 8, 8, 0, 128, 0 };
 
 const s32 gUnk_09A4FD5C[32] = {
     6, 12, 18, 25, 31, 37, 44, 50, 57, 64, 70, 77, 84, 91, 98, 106,
@@ -854,7 +854,7 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
     AnimStart(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
-    func_0801B37C(&work->unk_0A0, &gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
+    func_0801B37C(&work->unk_0A0, &gBosLstBitEmyKind, work->unk_028, work->unk_02C, work->unk_030);
     pool = &work->tasks;
     TaskPoolInit(pool, 4);
     sub.unk_00 = work->unk_00E;

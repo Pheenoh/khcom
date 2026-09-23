@@ -3560,7 +3560,7 @@ void task_poo_piglet_0(PooPigletWork* w) {
     m = 0;
 
     for (i = 0; i < 4; i++) {
-        n = GetMaxSpriteTileBytes(gUnk_096FD4BC[i].unk_00, gUnk_096FD4BC[i].unk_04);
+        n = GetMaxSpriteTileBytes(gPooPigletGfxDescs[i].unk_00, gPooPigletGfxDescs[i].unk_04);
 
         if (m < n) {
             m = n;
@@ -3969,7 +3969,7 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
     m = 0;
 
     for (i = 0; i < 2; i++) {
-        n = GetMaxSpriteTileBytes(gUnk_096FD57C[i].unk_00, gUnk_096FD57C[i].unk_04);
+        n = GetMaxSpriteTileBytes(gPooRabbitGfxDescs[i].unk_00, gPooRabbitGfxDescs[i].unk_04);
 
         if (m < n) {
             m = n;
@@ -4261,7 +4261,7 @@ void task_poo_tigger_0(PooTiggerWork* w) {
     m = 0;
 
     for (i = 0; i < 4; i++) {
-        t = GetMaxSpriteTileBytes(gUnk_096FD5DC[i].unk_00, gUnk_096FD5DC[i].unk_04);
+        t = GetMaxSpriteTileBytes(gPooTiggerGfxDescs[i].unk_00, gPooTiggerGfxDescs[i].unk_04);
         if (m < t) {
             m = t;
         }
@@ -8027,7 +8027,7 @@ const PooAnimDesc gUnk_096FD47C[4] = {
     { gUnk_09EF5D00, gUnk_09EF5CE0, gUnk_09743ADA, 0, 0 },
 };
 
-const PooGfxDesc gUnk_096FD4BC[4] = {
+const PooGfxDesc gPooPigletGfxDescs[4] = {
     { gUnk_09EF5CAC, 1, 0 },
     { gUnk_09EF5CB4, 1, 0 },
     { gUnk_09EF5CBC, 8, 0 },
@@ -8077,7 +8077,7 @@ const PooAnimDesc gUnk_096FD50C[7] = {
     { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 4, 0 },
 };
 
-const PooGfxDesc gUnk_096FD57C[2] = {
+const PooGfxDesc gPooRabbitGfxDescs[2] = {
     { gUnk_09EF5E48, 14, 0 },
     { gUnk_09EF5EA8, 15, 0 },
 };
@@ -8100,7 +8100,7 @@ const PooAnimDesc gUnk_096FD59C[4] = {
     { gUnk_09EF5BCC, gUnk_09EF5BAC, gUnk_0973AC64, 0, 0 },
 };
 
-const PooGfxDesc gUnk_096FD5DC[4] = {
+const PooGfxDesc gPooTiggerGfxDescs[4] = {
     { gUnk_09EF5B54, 1, 0 },
     { gUnk_09EF5B5C, 9, 0 },
     { gUnk_09EF5B84, 8, 0 },

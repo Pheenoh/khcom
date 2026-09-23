@@ -109,7 +109,7 @@ TaskDesc gTaskDescBosBoogieMap = {
 
 const char gTaskNameBosBoogieMapanime[] = "task_bos_boogie_mapanime";
 
-const EmyKind gUnk_096FE098 = { 39, 0, 16, 16, 0, 0, 4 };
+const EmyKind gBosBoogieDiskEmyKind = { 39, 0, 16, 16, 0, 0, 4 };
 
 TaskDesc gTaskDescBosBoogieMapanime = {
     gTaskNameBosBoogieMapanime,
@@ -135,7 +135,7 @@ TaskDesc gTaskDescBosBoogieDisk = {
 
 const char gTaskNameBosBoogieKnife[] = "task_bos_boogie_knife";
 
-const EmyKind gUnk_096FE0E8 = { 39, 0, 0, 0, 0, 0, 0 };
+const EmyKind gBosBoogieKnifereaderEmyKind = { 39, 0, 0, 0, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnife = {
     gTaskNameBosBoogieKnife,
@@ -148,7 +148,7 @@ TaskDesc gTaskDescBosBoogieKnife = {
 
 const char gTaskNameBosBoogieKnifereader[] = "task_bos_boogie_knifereader";
 
-const EmyKind gUnk_096FE114 = { 39, 0, 16, 16, 0, 0, 0 };
+const EmyKind gBosBoogieKaihukuEmyKind = { 39, 0, 16, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnifereader = {
     gTaskNameBosBoogieKnifereader,
@@ -161,9 +161,9 @@ TaskDesc gTaskDescBosBoogieKnifereader = {
 
 const char gTaskNameBosBoogieKaihuku[] = "task_bos_boogie_kaihuku";
 
-const EmyKind gUnk_096FE13C = { 35, 0, 32, 24, 0, 0, 0 };
+const EmyKind gBosUrsulaEmyKind = { 35, 0, 32, 24, 0, 0, 0 };
 
-const BattleBackgroundDef gUnk_096FE14C = {
+const BattleBackgroundDef gBosUrsulaBattleBackgroundDef = {
     gUnk_097EE378, 0x7000, { 0, 0 }, gUnk_0984AFF8, 0xe0, { 0, 0 }, { gUnk_09843798, gUnk_09843F98, gUnk_09844798, gUnk_09844F98 }
 };
 
@@ -372,7 +372,7 @@ TaskDesc gTaskDescBosUrsulaMap = {
 
 const char gTaskNameBosUrsulaBorder[] = "task_bos_ursula_border";
 
-const EmyKind gUnk_096FE1A8 = { 35, 0, 48, 16, 24, 0, 1 };
+const EmyKind gBosUrsulaTakoEmyKind = { 35, 0, 48, 16, 24, 0, 1 };
 
 TaskDesc gTaskDescBosUrsulaBorder = {
     gTaskNameBosUrsulaBorder,
@@ -1275,7 +1275,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
 
     d = gBtlWork->actor->y;
     e = -0x1000;
-    func_0801B37C(&work->unk_040, &gUnk_096FE098, x, d, e);
+    func_0801B37C(&work->unk_040, &gBosBoogieDiskEmyKind, x, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6824, 8), gUnk_0979A426);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
@@ -1596,7 +1596,7 @@ void task_bos_boogie_knifereader_0(BoogieKnifereaderWork* work) {
         work->unk_12C[i] = 0;
     }
 
-    func_0801B37C(&work->unk_01C, &gUnk_096FE0E8, 0xF800, 0x24000, 0);
+    func_0801B37C(&work->unk_01C, &gBosBoogieKnifereaderEmyKind, 0xF800, 0x24000, 0);
     func_0801C2DC(&work->unk_01C, 1);
     func_0801BCD4(&work->unk_01C);
 }
@@ -1708,7 +1708,7 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     c = arg->unk_044;
     d = arg->unk_048 + 0x100;
     e = arg->unk_04C - 0x7C00;
-    func_0801B37C(&work->unk_040, &gUnk_096FE114, c, d, e);
+    func_0801B37C(&work->unk_040, &gBosBoogieKaihukuEmyKind, c, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)LoadObjTiles(gUnk_09799FB0, 0x400);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
@@ -1870,7 +1870,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
 
     gUrsulaWork = work;
     gUnk_0203C57C = 1;
-    TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, (void*)&gUnk_096FE14C);
+    TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, (void*)&gBosUrsulaBattleBackgroundDef);
     TaskCreate((u8*)gBtlWork + 0x2C, &gTaskDescBosUrsulaBorder, 0);
     work->state = 0;
     work->unk_004 = 0;
@@ -1884,7 +1884,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     SetBattleActorPosition(0x10000, 0x1A800, 0);
     gBtlWork->unk_0D8 = 0xFF00;
     gUnk_0203C580 = -0x5000;
-    func_0801B37C(&work->unk_024, &gUnk_096FE13C, 0x10000, 0x19800, -0x5000);
+    func_0801B37C(&work->unk_024, &gBosUrsulaEmyKind, 0x10000, 0x19800, -0x5000);
     work->unk_034 = 0;
     work->unk_058 |= 4;
     func_0801C2DC(&work->unk_024, 1);
@@ -2503,7 +2503,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     work->unk_1FC = 0;
     work->unk_200 = 0;
     func_080DC9DC(&x, &y, &z, work);
-    func_0801B37C(&work->unk_028, &gUnk_096FE1A8, x, y, z);
+    func_0801B37C(&work->unk_028, &gBosUrsulaTakoEmyKind, x, y, z);
     ColliderInit(&work->unk_19C, 7, 0x28, 0x20);
 
     if (work->unk_13E != 0) {
@@ -2629,7 +2629,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         if (work->unk_13C == 5) {
             func_0801B7D8(&work->unk_028);
             func_080DC9DC(&x, &y, &z, work);
-            func_0801B37C(&work->unk_028, &gUnk_096FE1A8, x, y, z);
+            func_0801B37C(&work->unk_028, &gBosUrsulaTakoEmyKind, x, y, z);
             work->unk_05C |= 0x400;
             func_0801C7FC(&work->unk_028, 35, 25);
         }
@@ -2919,7 +2919,7 @@ void func_080DD69C(s32 a) {
 
 const char gTaskNameBosUrsulaBubble[] = "task_bos_ursula_bubble";
 
-const EmyKind gUnk_096FE324 = { 35, 0, 1, 1, 0, 0, 0 };
+const EmyKind gBosUrsulaBubbleSingleEmyKind = { 35, 0, 1, 1, 0, 0, 0 };
 
 const char gTaskNameBosUrsulaBubbleSingle[] = "task_bos_ursula_bubble_single";
 
@@ -3095,7 +3095,7 @@ void* eu_080DA860(void) {
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->angle = *arg;
     work->unk_140 = 0x333;
-    func_0801B37C(&work->unk_024, &gUnk_096FE324, gBtlWork->unk_0CC,
+    func_0801B37C(&work->unk_024, &gBosUrsulaBubbleSingleEmyKind, gBtlWork->unk_0CC,
         gBtlWork->unk_0D0 + 0x1000, gBtlWork->unk_0D4);
     func_0801C2DC(&work->unk_024, 1);
 #ifdef VERSION_EU

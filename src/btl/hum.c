@@ -40,7 +40,7 @@ const AnimDef gUnk_0813EDE8[20] = {
     { gUnk_09EDE6E0, gUnk_09EDE70C, gUnk_0888F218, 0, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813EF28 = { 128, 0, gUnk_08F6DC24, 0, { 43, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumCloudDef = { 128, 0, gUnk_08F6DC24, 0, { 43, 99, 38, 14, 24, 99, 0 } };
 
 const char gTaskNameHumCloud[] = "task_hum_cloud";
 
@@ -70,7 +70,7 @@ const AnimDef gUnk_0813EF6C[15] = {
     { gUnk_09EEFC38, gUnk_09EEFC60, gUnk_09317A62, 3, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813F05C = { 128, 0, gUnk_09618158, 0, { 42, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumHookDef = { 128, 0, gUnk_09618158, 0, { 42, 99, 38, 14, 24, 99, 0 } };
 
 const u8 gUnk_0813F078[8] = {
     0, 4, 4, 6, 8, 10, 8, 6,
@@ -113,9 +113,9 @@ const AnimDef gUnk_0813F140[10] = {
     { gUnk_09EE1920, gUnk_09EE1930, gUnk_08B82F32, 2, { 0, 0, 0 } },
 };
 
-const HumSubDef gUnk_0813F1E0 = { gUnk_09618378, 128, 0 };
+const HumSubDef gHumAnsemSubDef = { gUnk_09618378, 128, 0 };
 
-const HumDef gUnk_0813F1E8 = { 80, 0, gUnk_09618318, 0, { 52, 99, 65, 14, 42, 99, 0 } };
+const HumDef gHumAnsemDef = { 80, 0, gUnk_09618318, 0, { 52, 99, 65, 14, 42, 99, 0 } };
 
 const char gTaskNameHumAnsem[] = "task_hum_ansem";
 
@@ -148,9 +148,9 @@ const AnimDef gUnk_0813F2CC[5] = {
     { gUnk_09EE19CC, gUnk_09EE19F0, gUnk_08B95CE2, 0, { 0, 0, 0 } },
 };
 
-const HumSubDef gUnk_0813F31C = { gUnk_08F69BA4, 75, 0 };
+const HumSubDef gHumHadesSubDef = { gUnk_08F69BA4, 75, 0 };
 
-const HumDef gUnk_0813F324 = {
+const HumDef gHumHadesDef = {
 #ifdef VERSION_EU
         100
 #else
@@ -186,9 +186,9 @@ const AnimDef gUnk_0813F368[13] = {
 
 const AnimDef gUnk_0813F438 = { gUnk_09EE1C74, gUnk_09EE1C90, gUnk_08BCA01C, 0, { 0, 0, 0 } };
 
-const HumSubDef gUnk_0813F448 = { gUnk_08F6DC84, 90, 0 };
+const HumSubDef gHumMahluxiaSubDef = { gUnk_08F6DC84, 90, 0 };
 
-const HumDef gUnk_0813F450 = { 90, 0, gUnk_09618438, 0, { 51, 99, 60, 14, 40, 99, 0 } };
+const HumDef gHumMahluxiaDef = { 90, 0, gUnk_09618438, 0, { 51, 99, 60, 14, 40, 99, 0 } };
 
 const char gTaskNameHumMahluxia[] = "task_hum_mahluxia";
 
@@ -215,7 +215,7 @@ const AnimDef gUnk_0813F498[15] = {
     { gUnk_09EE1D04, gUnk_09EE1D38, gUnk_08BCFC2A, 4, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813F588 = { 128, 0, gUnk_09618458, 0, { 49, 99, 60, 14, 46, 99, 0 } };
+const HumDef gHumLaxeneDef = { 128, 0, gUnk_09618458, 0, { 49, 99, 60, 14, 46, 99, 0 } };
 
 const char gTaskNameHumLaxene[] = "task_hum_laxene";
 
@@ -256,9 +256,9 @@ const AnimDef gUnk_0813F6C0[10] = {
     { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 6, { 0, 0, 0 } },
 };
 
-const HumSubDef gUnk_0813F760 = { gUnk_08F69BA4, 64, 0 };
+const HumSubDef gHumAxcelSubDef = { gUnk_08F69BA4, 64, 0 };
 
-const HumDef gUnk_0813F768 = {
+const HumDef gHumAxcelDef = {
 #ifdef VERSION_EU
         102
 #else
@@ -304,7 +304,7 @@ const AnimDef gUnk_0813F7D8[15] = {
     { gUnk_09EE2098, gUnk_09EE20A8, gUnk_08C08E48, 2, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813F8C8 = { 83, 0, gUnk_096183B8, 0, { 50, 99, 80, 14, 48, 99, 0 } };
+const HumDef gHumVixenDef = { 83, 0, gUnk_096183B8, 0, { 50, 99, 80, 14, 48, 99, 0 } };
 
 const char gTaskNameHumVixen[] = "task_hum_vixen";
 
@@ -367,7 +367,7 @@ const AnimDef gUnk_0813FA98[10] = {
     { gUnk_09EE22E0, gUnk_09EE2308, gUnk_08C3D7E6, 0, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813FB38 = { 128, 0, gUnk_09618478, 0, { 53, 99, 70, 24, 52, 99, 4 } };
+const HumDef gHumLexceusDef = { 128, 0, gUnk_09618478, 0, { 53, 99, 70, 24, 52, 99, 4 } };
 
 const char gTaskNameHumLexceus[] = "task_hum_lexceus";
 
@@ -408,9 +408,9 @@ const AnimDef gUnk_0813FBD4[21] = {
     { gUnk_09EE2584, gUnk_09EE25A4, gUnk_08C61980, 0, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813FD24 = { 64, 0, gUnk_09618338, 0, { 45, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumRikuDef = { 64, 0, gUnk_09618338, 0, { 45, 99, 38, 14, 24, 99, 0 } };
 
-const HumSubDef gUnk_0813FD40 = { gUnk_09618338, 64, 0 };
+const HumSubDef gHumRikuSubDef = { gUnk_09618338, 64, 0 };
 
 const char gTaskNameHumRiku[] = "task_hum_riku";
 
@@ -422,7 +422,7 @@ const AnimDef gUnk_0813FD58[5] = {
     { gUnk_09EE25D0, gUnk_09EE25E4, gUnk_08C6668E, 2, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813FDA8 = { 128, 0, gUnk_09618258, 0, { 41, 99, 64, 14, 40, 99, 0 } };
+const HumDef gHumLeonDef = { 128, 0, gUnk_09618258, 0, { 41, 99, 64, 14, 40, 99, 0 } };
 
 const char gTaskNameHumLeon[] = "task_hum_leon";
 
@@ -431,12 +431,12 @@ const AnimDef gUnk_0813FDD4[2] = {
     { gUnk_09EE25F4, gUnk_09EE2604, gUnk_08C67F86, 0, { 0, 0, 0 } },
 };
 
-const HumDef gUnk_0813FDF4 = { 128, 0, gUnk_09617C78, 0, { 51, 99, 64, 14, 32, 99, 0 } };
+const HumDef gHumRobeDef = { 128, 0, gUnk_09617C78, 0, { 51, 99, 64, 14, 32, 99, 0 } };
 
 const char gTaskNameHumRobe[] = "task_hum_robe";
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {
-    HumInit(&work->base, &gUnk_0813EF28);
+    HumInit(&work->base, &gHumCloudDef);
     work->unk_188 = 0;
     work->base.unk_184 = gUnk_0813EDD0[0];
 }
@@ -1090,7 +1090,7 @@ u8 func_0804B4F4(CloudWork* work) {
 
 void task_hum_hook_0(HookWork* work, void* arg) {
     TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumHookMoon, 0);
-    HumInit(&work->base, &gUnk_0813F05C);
+    HumInit(&work->base, &gHumHookDef);
     work->base.actor.flags |= 0x10000000;
 
     if (GetRandom() % 2) {
@@ -1944,8 +1944,8 @@ void func_0804D060(AnsemWork* work) {
 }
 
 void task_hum_ansem_0(AnsemWork* work) {
-    HumInit(&work->base, &gUnk_0813F1E8);
-    HumSubInit(&work->base, &work->sub, &gUnk_0813F1E0);
+    HumInit(&work->base, &gHumAnsemDef);
+    HumSubInit(&work->base, &work->sub, &gHumAnsemSubDef);
     work->unk_1C4 = -0xC00;
     *(s32*)&work->unk_1C8 = 0;
     work->base.unk_174 = -50;
@@ -2538,8 +2538,8 @@ void func_0804E404(AnsemWork* work) {
 }
 
 void task_hum_hades_0(HadesWork* work) {
-    HumInit(&work->base, &gUnk_0813F324);
-    HumSubInit(&work->base, &work->sub, &gUnk_0813F31C);
+    HumInit(&work->base, &gHumHadesDef);
+    HumSubInit(&work->base, &work->sub, &gHumHadesSubDef);
     work->base.actor.flags |= 0x100000;
     work->base.flags |= 0x40;
     work->unk_1CA = 0;
@@ -3268,8 +3268,8 @@ void func_0804FBDC(HumWork* work, s32 a) {
 }
 
 void task_hum_mahluxia_0(MahluxiaWork* work) {
-    HumInit(&work->base, &gUnk_0813F450);
-    HumSubInit(&work->base, &work->sub, &gUnk_0813F448);
+    HumInit(&work->base, &gHumMahluxiaDef);
+    HumSubInit(&work->base, &work->sub, &gHumMahluxiaSubDef);
     work->flags = 0;
     work->unk_1C4 = -0x300;
     work->sub.flags |= 3;
@@ -3858,7 +3858,7 @@ void CreateHumLaxeneKnfTask(LaxeneWork* work, s16 a, s16 b) {
 }
 
 void task_hum_laxene_0(LaxeneWork* work) {
-    HumInit(&work->base, &gUnk_0813F588);
+    HumInit(&work->base, &gHumLaxeneDef);
     work->flags = 0;
     work->unk_188 = -0x3000;
     work->unk_190 = 0;
@@ -4696,9 +4696,9 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
 }
 
 void task_hum_axcel_0(AxcelWork* work) {
-    HumInit(&work->base, &gUnk_0813F768);
-    HumSubInit(&work->base, &work->sub, &gUnk_0813F760);
-    HumSubInit(&work->base, &work->sub2, &gUnk_0813F760);
+    HumInit(&work->base, &gHumAxcelDef);
+    HumSubInit(&work->base, &work->sub, &gHumAxcelSubDef);
+    HumSubInit(&work->base, &work->sub2, &gHumAxcelSubDef);
     work->base.actor.flags |= 0x04000000;
     work->base.unk_184 = gUnk_0813F5C8[0];
     work->flags = 0;
@@ -5509,7 +5509,7 @@ void func_080543F4(HumWork* work, s32 a) {
 }
 
 void task_hum_vixen_0(VixenWork* work) {
-    HumInit(&work->base, &gUnk_0813F8C8);
+    HumInit(&work->base, &gHumVixenDef);
     work->unk_188 = 0;
     work->base.actor.flags |= 0x08000000;
     work->flags = 0;
@@ -6524,7 +6524,7 @@ void func_080560AC(HumWork* work, s32 a) {
 }
 
 void task_hum_lexceus_0(LexceusWork* work) {
-    HumInit(&work->base, &gUnk_0813FB38);
+    HumInit(&work->base, &gHumLexceusDef);
     work->flags = 0;
     work->unk_1C4 = 0;
     work->unk_1CC = 0;
@@ -7594,8 +7594,8 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
 }
 
 void task_hum_riku_0(RikuWork* work) {
-    HumInit(&work->base, &gUnk_0813FD24);
-    HumSubInit(&work->base, &work->sub, &gUnk_0813FD40);
+    HumInit(&work->base, &gHumRikuDef);
+    HumSubInit(&work->base, &work->sub, &gHumRikuSubDef);
     work->unk_1C4 = 0;
     work->flags = 0;
     work->sub.flags |= 3;
@@ -8350,7 +8350,7 @@ void task_hum_riku_3(HumWork* work) {
 }
 
 void task_hum_leon_0(LeonWork* work) {
-    HumInit(&work->base, &gUnk_0813FDA8);
+    HumInit(&work->base, &gHumLeonDef);
     work->unk_188 = 0;
     work->unk_18A = 0;
     AnimChangeWithDef(gUnk_0813FD58, &work->base.anim, 0, 1, work->base.tiles);
@@ -8479,7 +8479,7 @@ void task_hum_leon_3(LeonWork* work) {
 }
 
 void task_hum_robe_0(RobeWork* work) {
-    HumInit(&work->base, &gUnk_0813FDF4);
+    HumInit(&work->base, &gHumRobeDef);
     work->unk_188 = 1;
     AnimChangeWithDef(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
 }
