@@ -275,6 +275,7 @@ asset_gfx_gap_43_at_093F4478.s
 sprites_level_up_tiles.s
 sprites_deck_menu_tiles.s
 asset_gfx_gap_43_at_0941A418.s
+sprites_msg_tiles_1.s
 event_background_tiles_2.s
 asset_gfx_gap_43_at_09468FF8.s
 event_background_tiles_3.s
@@ -285,9 +286,11 @@ event_background_tiles_5.s
 asset_gfx_gap_43_at_094F4238.s
 event_background_tiles_6.s
 asset_gfx_gap_43_at_09501378.s
+sprites_msg_tiles_2.s
 sprites_level_up_maps_1.s
 sprites_deck_menu_maps.s
 asset_gfx_gap_43_at_0951CAB8.s
+sprites_msg_maps.s
 sprites_level_up_maps_2.s
 event_background_maps_2.s
 asset_gfx_gap_43_at_0953C2B8.s

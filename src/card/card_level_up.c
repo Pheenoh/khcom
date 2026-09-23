@@ -45,6 +45,7 @@
 #include "sprites_fld.h"
 #include "sprites_level_up.h"
 #include "sprites_sora.h"
+#include "sprites_msg.h"
 
 u8 gUnk_02034AF8;
 

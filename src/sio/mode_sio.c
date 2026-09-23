@@ -27,6 +27,7 @@
 #include "sprites_fld.h"
 #include "sprites_sora.h"
 #include "battle_backgrounds.h"
+#include "sprites_msg.h"
 
 u16 gUnk_0203A9EC EWRAM_COMMON(4);
 u16 gUnk_0203A9F0 EWRAM_COMMON(4);

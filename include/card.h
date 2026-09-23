@@ -135,7 +135,6 @@ typedef struct CardDisplayWork {
 } CardDisplayWork;
 extern u16 gUnk_0903BFD4[];
 extern u16 gUnk_0903BFBC[];
-extern u8 gUnk_094233B8[];
 extern u8 gUnk_093FB6C4[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_0909A4E0[];
@@ -1242,7 +1241,6 @@ extern Deck gUnk_09034084[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_09611AB8[];
-extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_09614798[];

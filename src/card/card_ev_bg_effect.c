@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_msg.h"
 
 extern u8* gEventState;
 u8 func_080A2024(u8* work, void* a);

@@ -43,6 +43,7 @@
 #include "bos4_api.h"
 #include "sprites_deck_menu.h"
 #include "sprites_evt.h"
+#include "sprites_msg.h"
 
 UnkStruct_02034AFC* gUnk_02034B00;
 #ifndef VERSION_EU

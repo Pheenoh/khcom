@@ -20,6 +20,15 @@ objects:
   - name: sprites_msg_frames.s
     start: 0x090D7E04
     end: 0x0919752C
+  - name: sprites_msg_tiles_1.s
+    start: 0x094233B8
+    end: 0x09443138
+  - name: sprites_msg_tiles_2.s
+    start: 0x0950E2F8
+    end: 0x0950F2B8
+  - name: sprites_msg_maps.s
+    start: 0x0951D2B8
+    end: 0x0951F2B8
   jp:
   - name: sprites_msg.c
     start: 0x09EC3A5C
@@ -27,6 +36,15 @@ objects:
   - name: sprites_msg_frames.s
     start: 0x0909332C
     end: 0x09152A54
+  - name: sprites_msg_tiles_1.s
+    start: 0x093DB694
+    end: 0x093FB414
+  - name: sprites_msg_tiles_2.s
+    start: 0x094C65D4
+    end: 0x094C7594
+  - name: sprites_msg_maps.s
+    start: 0x094D5D94
+    end: 0x094D7D94
   eu:
   - name: sprites_msg.c
     start: 0x09F77854
@@ -34,6 +52,15 @@ objects:
   - name: sprites_msg_frames.s
     start: 0x091A748C
     end: 0x09266BB4
+  - name: sprites_msg_tiles_1.s
+    start: 0x094F97C4
+    end: 0x09519544
+  - name: sprites_msg_tiles_2.s
+    start: 0x09530064
+    end: 0x09531224
+  - name: sprites_msg_maps.s
+    start: 0x0953CB24
+    end: 0x0953EB24
 entries:
 - name: gUnk_09EEC670
   record: SpriteTable
@@ -30350,3 +30377,75 @@ entries:
   eu:
     address: 0x092659B4
     size: 4608
+- name: gUnk_094233B8
+  format: tiles4
+  width: 4
+  us:
+    address: 0x094233B8
+    size: 130432
+  jp:
+    address: 0x093DB694
+    size: 130432
+  eu:
+    address: 0x094F97C4
+    size: 130432
+- name: gUnk_0950E2F8
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0950E2F8
+    size: 4032
+  jp:
+    address: 0x094C65D4
+    size: 4032
+  eu:
+    address: 0x09530064
+    size: 4544
+- name: gUnk_0951D2B8
+  format: tilemap
+  declare: false
+  us:
+    address: 0x0951D2B8
+    size: 2048
+  jp:
+    address: 0x094D5D94
+    size: 2048
+  eu:
+    address: 0x0953CB24
+    size: 2048
+- name: gUnk_0951DAB8
+  format: tilemap
+  declare: false
+  us:
+    address: 0x0951DAB8
+    size: 2048
+  jp:
+    address: 0x094D6594
+    size: 2048
+  eu:
+    address: 0x0953D324
+    size: 2048
+- name: gUnk_0951E2B8
+  format: tilemap
+  declare: false
+  us:
+    address: 0x0951E2B8
+    size: 2048
+  jp:
+    address: 0x094D6D94
+    size: 2048
+  eu:
+    address: 0x0953DB24
+    size: 2048
+- name: gUnk_0951EAB8
+  format: tilemap
+  declare: false
+  us:
+    address: 0x0951EAB8
+    size: 2048
+  jp:
+    address: 0x094D7594
+    size: 2048
+  eu:
+    address: 0x0953E324
+    size: 2048
