@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "map_tile_animations.h"
 
 Deck gDecks[3] EWRAM_COMMON(16);
 
@@ -1107,18 +1108,6 @@ u16 func_08084C40(u8 deck, u8 mode, u16* out) {
     EwramFree(present);
     return total;
 }
-
-extern u8 gUnk_098EB224[];
-extern u8 gUnk_098EAF64[];
-extern u8 gUnk_098EADE4[];
-extern u8 gUnk_098EACC4[];
-extern u8 gUnk_098EAA84[];
-extern u8 gUnk_098EA844[];
-extern u8 gUnk_094F4238[];
-extern u8 gUnk_094EABF8[];
-extern u8 gUnk_0948A918[];
-extern u8 gUnk_09469B58[];
-extern u8 gUnk_09468FF8[];
 
 const MapTileAnimationFrame gUnk_09035348[4] = {
     {0, 18, 0},

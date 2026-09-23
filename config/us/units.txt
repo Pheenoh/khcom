@@ -278,13 +278,13 @@ sprites_continue_tiles.s
 debug_font_tiles_1.s
 sprites_msg_tiles_1.s
 event_background_tiles_2.s
-asset_gfx_gap_43_at_09468FF8.s
+map_tile_animation_tiles_1.s
 event_background_tiles_3.s
-asset_gfx_gap_43_at_0948A918.s
+map_tile_animation_tiles_2.s
 event_background_tiles_4.s
-asset_gfx_gap_43_at_094EABF8.s
+map_tile_animation_tiles_3.s
 event_background_tiles_5.s
-asset_gfx_gap_43_at_094F4238.s
+map_tile_animation_tiles_4.s
 event_background_tiles_6.s
 prize_card_tiles.s
 sprites_worldselect_tiles.s
@@ -406,7 +406,7 @@ map_spawn_data.c
 sprites_map_frames_3.s
 asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0.s
 map_room_tiles_1.s
-asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_098EA844.s
+map_tile_animation_tiles_5.s
 map_room_tiles_2.s
 asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0_at_0993AF64.s
 map_room_maps_1.s
