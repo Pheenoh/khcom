@@ -392,7 +392,7 @@ void mode_chkbtl_1(void) {
     }
 
     if (GetKeysPressed() & 4) {
-        ModeRequest(&gUnk_09EE2704, 0);
+        ModeRequest(&gModeDeck, 0);
     } else if (GetKeysPressed() & 9) {
         SeedRandom(gFrameCounter);
         gGameState.unk_00D = gChkBtlWorlds[gChkBtlWork->bg].unk_00;

@@ -85,7 +85,7 @@ void Mode_riku_deckTutorial_1(void) {
         case 1:
             if (!func_080A42C8()) {
                 gGameState.progression.unk_82 |= 0x800;
-                ModeRequest(&gUnk_09EE2704, (s32)gUnk_02034B34);
+                ModeRequest(&gModeDeck, (s32)gUnk_02034B34);
             }
             break;
         }

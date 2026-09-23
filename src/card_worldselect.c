@@ -2751,7 +2751,7 @@ const u16 gUnkEu_090CED64[5] = {
 };
 #endif
 
-Mode gUnk_09EE4BA0 = {
+Mode gModeWORLDSELECT = {
     gUnk_090359BC,
     (void (*)(s32))WORLDSELECT_0,
     WORLDSELECT_1,

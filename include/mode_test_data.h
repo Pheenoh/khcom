@@ -5,7 +5,7 @@
 #include "taskpool.h"
 
 #ifndef VERSION_EU
-extern Mode gUnk_09EDE4E0;
+extern Mode gModeTest;
 #endif
 
 #ifdef VERSION_EU

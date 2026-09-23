@@ -556,7 +556,7 @@ extern const char gTaskNamePooMapbutterflyborn[];
 
 extern const char gModeNameEvent[];
 
-extern Mode gUnk_09EE4BA0;
+extern Mode gModeWORLDSELECT;
 extern const char gUnk_090359BC[];
 
 extern Mode gModeSioDbgFlg;
