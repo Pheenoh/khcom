@@ -59,6 +59,9 @@ objects:
   - name: sprites_evt_palettes.s
     start: 0x09615F78
     end: 0x09615F98
+  - name: sprites_evt_palettes_2.s
+    start: 0x099918C4
+    end: 0x09991924
   jp:
   - name: sprites_evt_1.c
     start: 0x09EB673C
@@ -105,6 +108,9 @@ objects:
   - name: sprites_evt_palettes.s
     start: 0x095CEA54
     end: 0x095CEA74
+  - name: sprites_evt_palettes_2.s
+    start: 0x099463D8
+    end: 0x09946438
   eu:
   - name: sprites_evt_1.c
     start: 0x09F59918
@@ -151,6 +157,9 @@ objects:
   - name: sprites_evt_palettes.s
     start: 0x09548E64
     end: 0x09548E84
+  - name: sprites_evt_palettes_2.s
+    start: 0x099978B0
+    end: 0x09997910
 entries:
 - name: gUnk_09EDECC0
   record: SpriteTable
@@ -52931,3 +52940,14 @@ entries:
   eu:
     address: 0x09548E64
     size: 32
+- name: gUnk_099918C4
+  format: palette
+  us:
+    address: 0x099918C4
+    size: 96
+  jp:
+    address: 0x099463D8
+    size: 96
+  eu:
+    address: 0x099978B0
+    size: 96

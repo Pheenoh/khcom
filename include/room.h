@@ -6,7 +6,6 @@
 
 #include "registration_data.h"
 
-
 #include "ga_types.h"
 
 #include "field_state.h"
@@ -51,7 +50,6 @@ typedef struct RoomNameWork {
     u8 unk_3C[0x120];
 } RoomNameWork;
 
-extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
 
 extern GaWork* gGaWork;

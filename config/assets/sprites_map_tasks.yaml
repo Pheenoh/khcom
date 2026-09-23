@@ -32,6 +32,12 @@ objects:
   - name: sprites_map_tasks_frames_3.s
     start: 0x093A5DF0
     end: 0x093AE9BC
+  - name: sprites_map_tasks_tiles.s
+    start: 0x0993AF64
+    end: 0x0993B764
+  - name: sprites_map_tasks_palettes.s
+    start: 0x099912A4
+    end: 0x099918C4
   jp:
   - name: sprites_map_tasks_1.c
     start: 0x09EB73F8
@@ -51,6 +57,12 @@ objects:
   - name: sprites_map_tasks_frames_3.s
     start: 0x09361318
     end: 0x09369EE4
+  - name: sprites_map_tasks_tiles.s
+    start: 0x098EFA78
+    end: 0x098F0278
+  - name: sprites_map_tasks_palettes.s
+    start: 0x09945DB8
+    end: 0x099463D8
   eu:
   - name: sprites_map_tasks_1.c
     start: 0x09F5A5D4
@@ -70,6 +82,12 @@ objects:
   - name: sprites_map_tasks_frames_3.s
     start: 0x09475478
     end: 0x0947E044
+  - name: sprites_map_tasks_tiles.s
+    start: 0x0991ADF0
+    end: 0x0991B5F0
+  - name: sprites_map_tasks_palettes.s
+    start: 0x09997290
+    end: 0x099978B0
 entries:
 - name: gUnk_09EDF97C
   record: SpriteTable
@@ -3195,3 +3213,72 @@ entries:
   eu:
     address: 0x0947CB84
     size: 5312
+- name: gUnk_0993AF64
+  format: tiles4
+  width: 32
+  us:
+    address: 0x0993AF64
+    size: 2048
+  jp:
+    address: 0x098EFA78
+    size: 2048
+  eu:
+    address: 0x0991ADF0
+    size: 2048
+- name: gUnk_099912A4
+  format: raw
+  us:
+    address: 0x099912A4
+    size: 32
+  jp:
+    address: 0x09945DB8
+    size: 32
+    symbol: gUnkJp_09945DB8
+  eu:
+    address: 0x09997290
+    size: 32
+    symbol: gUnkEu_09997290
+- name: gUnk_099912C4
+  format: palette
+  us:
+    address: 0x099912C4
+    size: 32
+  jp:
+    address: 0x09945DD8
+    size: 32
+  eu:
+    address: 0x099972B0
+    size: 32
+- name: gUnk_099912E4
+  format: palette
+  us:
+    address: 0x099912E4
+    size: 64
+  jp:
+    address: 0x09945DF8
+    size: 64
+  eu:
+    address: 0x099972D0
+    size: 64
+- name: gUnk_09991324
+  format: palette
+  us:
+    address: 0x09991324
+    size: 32
+  jp:
+    address: 0x09945E38
+    size: 32
+  eu:
+    address: 0x09997310
+    size: 32
+- name: gUnk_09991344
+  format: raw
+  us:
+    address: 0x09991344
+    size: 1408
+  jp:
+    address: 0x09945E58
+    size: 1408
+  eu:
+    address: 0x09997330
+    size: 1408
