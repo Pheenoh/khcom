@@ -1,264 +1,265 @@
 #include "btl_hud_localized_data.h"
 #include "battle_localized_assets.h"
+#include "sprites_btl_hud.h"
 
 #ifdef VERSION_US
-void* gUnkUs_09EE1520 = gUnkUs_08B2556C;
+void* gUnkUs_09EE1520 = gUnk_08B2556C;
 
-void* gUnkUs_09EE1524 = gUnkUs_08B2557C;
+void* gUnkUs_09EE1524 = gUnk_08B2557C;
 
-void* gUnkUs_09EE1528 = gUnkUs_08B25586;
+void* gUnkUs_09EE1528 = gUnk_08B25586;
 
-void* gUnkUs_09EE152C = gUnkUs_08B25590;
+void* gUnkUs_09EE152C = gUnk_08B25590;
 
-void* gUnkUs_09EE1530 = gUnkUs_08B2559A;
+void* gUnkUs_09EE1530 = gUnk_08B2559A;
 
-AnimHeader* gUnkUs_09EE1534 = &gUnkUs_08B255AA;
+AnimHeader* gUnkUs_09EE1534 = &gUnk_08B255AA;
 
 void* gUnk_09EE1538[16] = {
-    gUnkUs_08B25A34,
-    gUnkUs_08B25A3E,
-    gUnkUs_08B25A48,
-    gUnkUs_08B25A52,
-    gUnkUs_08B25A5C,
-    gUnkUs_08B25A66,
-    gUnkUs_08B25A70,
-    gUnkUs_08B25A7A,
-    gUnkUs_08B25A84,
-    gUnkUs_08B25A8E,
-    gUnkUs_08B25A98,
-    gUnkUs_08B25AA2,
-    gUnkUs_08B25AAC,
-    gUnkUs_08B25AB6,
-    gUnkUs_08B25AC0,
-    gUnkUs_08B25ACA,
+    gUnk_08B25A34,
+    gUnk_08B25A3E,
+    gUnk_08B25A48,
+    gUnk_08B25A52,
+    gUnk_08B25A5C,
+    gUnk_08B25A66,
+    gUnk_08B25A70,
+    gUnk_08B25A7A,
+    gUnk_08B25A84,
+    gUnk_08B25A8E,
+    gUnk_08B25A98,
+    gUnk_08B25AA2,
+    gUnk_08B25AAC,
+    gUnk_08B25AB6,
+    gUnk_08B25AC0,
+    gUnk_08B25ACA,
 };
 
-AnimHeader* gUnkUs_09EE1578 = &gUnkUs_08B25AD4;
+AnimHeader* gUnkUs_09EE1578 = &gUnk_08B25AD4;
 
 void* gUnk_09EE157C[14] = {
-    gUnkUs_08B25E40,
-    gUnkUs_08B25E4A,
-    gUnkUs_08B25E54,
-    gUnkUs_08B25E5E,
-    gUnkUs_08B25E6E,
-    gUnkUs_08B25E78,
-    gUnkUs_08B25E82,
-    gUnkUs_08B25E8C,
-    gUnkUs_08B25E96,
-    gUnkUs_08B25EA0,
-    gUnkUs_08B25EAA,
-    gUnkUs_08B25EB4,
-    gUnkUs_08B25EBE,
-    gUnkUs_08B25EC8,
+    gUnk_08B25E40,
+    gUnk_08B25E4A,
+    gUnk_08B25E54,
+    gUnk_08B25E5E,
+    gUnk_08B25E6E,
+    gUnk_08B25E78,
+    gUnk_08B25E82,
+    gUnk_08B25E8C,
+    gUnk_08B25E96,
+    gUnk_08B25EA0,
+    gUnk_08B25EAA,
+    gUnk_08B25EB4,
+    gUnk_08B25EBE,
+    gUnk_08B25EC8,
 };
 
-void* gUnkUs_09EE15B4 = gUnkUs_08B25ED2;
+void* gUnkUs_09EE15B4 = gUnk_08B25ED2;
 
-void* gUnkUs_09EE15B8 = gUnkUs_08B25EDC;
+void* gUnkUs_09EE15B8 = gUnk_08B25EDC;
 
-AnimHeader* gUnkUs_09EE15BC = &gUnkUs_08B25EE6;
+AnimHeader* gUnkUs_09EE15BC = &gUnk_08B25EE6;
 
 void* gUnk_09EE15C0[4] = {
-    gUnkUs_08B26270,
-    gUnkUs_08B26286,
-    gUnkUs_08B2629C,
-    gUnkUs_08B262B2,
+    gUnk_08B26270,
+    gUnk_08B26286,
+    gUnk_08B2629C,
+    gUnk_08B262B2,
 };
 
-void* gUnkUs_09EE15D0 = gUnkUs_08B262C8;
+void* gUnkUs_09EE15D0 = gUnk_08B262C8;
 
-void* gUnkUs_09EE15D4 = gUnkUs_08B262DE;
+void* gUnkUs_09EE15D4 = gUnk_08B262DE;
 
-void* gUnkUs_09EE15D8 = gUnkUs_08B262F4;
+void* gUnkUs_09EE15D8 = gUnk_08B262F4;
 
-void* gUnkUs_09EE15DC = gUnkUs_08B2630A;
+void* gUnkUs_09EE15DC = gUnk_08B2630A;
 
-void* gUnkUs_09EE15E0 = gUnkUs_08B26320;
+void* gUnkUs_09EE15E0 = gUnk_08B26320;
 
-void* gUnkUs_09EE15E4 = gUnkUs_08B26336;
+void* gUnkUs_09EE15E4 = gUnk_08B26336;
 
-void* gUnkUs_09EE15E8 = gUnkUs_08B2634C;
+void* gUnkUs_09EE15E8 = gUnk_08B2634C;
 
-void* gUnkUs_09EE15EC = gUnkUs_08B26362;
+void* gUnkUs_09EE15EC = gUnk_08B26362;
 
 AnimHeader* gUnk_09EE15F0[1] = {
-    &gUnkUs_08B26378,
+    &gUnk_08B26378,
 };
 
-AnimHeader* gUnkUs_09EE15F4 = &gUnkUs_08B26396;
+AnimHeader* gUnkUs_09EE15F4 = &gUnk_08B26396;
 
-AnimHeader* gUnkUs_09EE15F8 = &gUnkUs_08B263B4;
+AnimHeader* gUnkUs_09EE15F8 = &gUnk_08B263B4;
 
 #endif
 
 #ifdef VERSION_JP
-void* gUnkJp_09EB8F9C = gUnkJp_08B18B54;
+void* gUnkJp_09EB8F9C = gUnk_08B2556C;
 
-void* gUnkJp_09EB8FA0 = gUnkJp_08B18B64;
+void* gUnkJp_09EB8FA0 = gUnk_08B2557C;
 
-void* gUnkJp_09EB8FA4 = gUnkJp_08B18B6E;
+void* gUnkJp_09EB8FA4 = gUnk_08B25586;
 
-void* gUnkJp_09EB8FA8 = gUnkJp_08B18B78;
+void* gUnkJp_09EB8FA8 = gUnk_08B25590;
 
-void* gUnkJp_09EB8FAC = gUnkJp_08B18B82;
+void* gUnkJp_09EB8FAC = gUnk_08B2559A;
 
-AnimHeader* gUnkJp_09EB8FB0 = &gUnkJp_08B18B92;
+AnimHeader* gUnkJp_09EB8FB0 = &gUnk_08B255AA;
 
 void* gUnk_09EE1538[16] = {
-    gUnkJp_08B1901C,
-    gUnkJp_08B19026,
-    gUnkJp_08B19030,
-    gUnkJp_08B1903A,
-    gUnkJp_08B19044,
-    gUnkJp_08B1904E,
-    gUnkJp_08B19058,
-    gUnkJp_08B19062,
-    gUnkJp_08B1906C,
-    gUnkJp_08B19076,
-    gUnkJp_08B19080,
-    gUnkJp_08B1908A,
-    gUnkJp_08B19094,
-    gUnkJp_08B1909E,
-    gUnkJp_08B190A8,
-    gUnkJp_08B190B2,
+    gUnk_08B25E40,
+    gUnk_08B25E4A,
+    gUnk_08B25E54,
+    gUnk_08B25E5E,
+    gUnk_08B25E6E,
+    gUnk_08B25E78,
+    gUnk_08B25E82,
+    gUnk_08B25E8C,
+    gUnk_08B25E96,
+    gUnk_08B25EA0,
+    gUnk_08B25EAA,
+    gUnk_08B25EB4,
+    gUnk_08B25EBE,
+    gUnk_08B25EC8,
+    gUnk_08B25ED2,
+    gUnk_08B25ACA,
 };
 
-AnimHeader* gUnkJp_09EB8FF4 = &gUnkJp_08B190BC;
+AnimHeader* gUnkJp_09EB8FF4 = &gUnk_08B25AD4;
 
-void* gUnkJp_09EB8FF8 = gUnkJp_08B19428;
+void* gUnkJp_09EB8FF8 = gUnk_08B25A34;
 
-void* gUnkJp_09EB8FFC = gUnkJp_08B19432;
+void* gUnkJp_09EB8FFC = gUnk_08B25A3E;
 
-void* gUnkJp_09EB9000 = gUnkJp_08B1943C;
+void* gUnkJp_09EB9000 = gUnk_08B25A48;
 
-void* gUnkJp_09EB9004 = gUnkJp_08B19446;
+void* gUnkJp_09EB9004 = gUnk_08B25A52;
 
-void* gUnkJp_09EB9008 = gUnkJp_08B19456;
+void* gUnkJp_09EB9008 = gUnk_08B25A66;
 
-void* gUnkJp_09EB900C = gUnkJp_08B19460;
+void* gUnkJp_09EB900C = gUnk_08B25A70;
 
-void* gUnkJp_09EB9010 = gUnkJp_08B1946A;
+void* gUnkJp_09EB9010 = gUnk_08B25A7A;
 
-void* gUnkJp_09EB9014 = gUnkJp_08B19474;
+void* gUnkJp_09EB9014 = gUnk_08B25A84;
 
-void* gUnkJp_09EB9018 = gUnkJp_08B1947E;
+void* gUnkJp_09EB9018 = gUnk_08B25A8E;
 
-void* gUnkJp_09EB901C = gUnkJp_08B19488;
+void* gUnkJp_09EB901C = gUnk_08B25A98;
 
-void* gUnkJp_09EB9020 = gUnkJp_08B19492;
+void* gUnkJp_09EB9020 = gUnk_08B25AA2;
 
-void* gUnkJp_09EB9024 = gUnkJp_08B1949C;
+void* gUnkJp_09EB9024 = gUnk_08B25AAC;
 
-void* gUnkJp_09EB9028 = gUnkJp_08B194A6;
+void* gUnkJp_09EB9028 = gUnk_08B25AB6;
 
-void* gUnkJp_09EB902C = gUnkJp_08B194B0;
+void* gUnkJp_09EB902C = gUnk_08B25AC0;
 
 void* gUnkJp_09EB9030 = gUnkJp_08B194BA;
 
-void* gUnkJp_09EB9034 = gUnkJp_08B194C4;
+void* gUnkJp_09EB9034 = gUnk_08B25EDC;
 
-AnimHeader* gUnkJp_09EB9038 = &gUnkJp_08B194CE;
+AnimHeader* gUnkJp_09EB9038 = &gUnk_08B25EE6;
 
 void* gUnk_09EE15C0[4] = {
-    gUnkJp_08B19858,
-    gUnkJp_08B1986E,
-    gUnkJp_08B19884,
-    gUnkJp_08B1989A,
+    gUnk_08B26270,
+    gUnk_08B26286,
+    gUnk_08B2629C,
+    gUnk_08B262B2,
 };
 
-void* gUnkJp_09EB904C = gUnkJp_08B198B0;
+void* gUnkJp_09EB904C = gUnk_08B262C8;
 
-void* gUnkJp_09EB9050 = gUnkJp_08B198C6;
+void* gUnkJp_09EB9050 = gUnk_08B262DE;
 
-void* gUnkJp_09EB9054 = gUnkJp_08B198DC;
+void* gUnkJp_09EB9054 = gUnk_08B262F4;
 
-void* gUnkJp_09EB9058 = gUnkJp_08B198F2;
+void* gUnkJp_09EB9058 = gUnk_08B2630A;
 
-void* gUnkJp_09EB905C = gUnkJp_08B19908;
+void* gUnkJp_09EB905C = gUnk_08B26320;
 
-void* gUnkJp_09EB9060 = gUnkJp_08B1991E;
+void* gUnkJp_09EB9060 = gUnk_08B26336;
 
-void* gUnkJp_09EB9064 = gUnkJp_08B19934;
+void* gUnkJp_09EB9064 = gUnk_08B2634C;
 
-void* gUnkJp_09EB9068 = gUnkJp_08B1994A;
+void* gUnkJp_09EB9068 = gUnk_08B26362;
 
 AnimHeader* gUnk_09EE15F0[1] = {
-    &gUnkJp_08B19960,
+    &gUnk_08B26378,
 };
 
-AnimHeader* gUnkJp_09EB9070 = &gUnkJp_08B1997E;
+AnimHeader* gUnkJp_09EB9070 = &gUnk_08B26396;
 
-AnimHeader* gUnkJp_09EB9074 = &gUnkJp_08B1999C;
+AnimHeader* gUnkJp_09EB9074 = &gUnk_08B263B4;
 
 #endif
 
 #ifdef VERSION_EU
-void* gUnkEu_09F5C0EC = gUnkEu_08B4FB78;
+void* gUnkEu_09F5C0EC = gUnk_08B2556C;
 
-void* gUnkEu_09F5C0F0 = gUnkEu_08B4FB88;
+void* gUnkEu_09F5C0F0 = gUnk_08B2557C;
 
-void* gUnkEu_09F5C0F4 = gUnkEu_08B4FB92;
+void* gUnkEu_09F5C0F4 = gUnk_08B25586;
 
-void* gUnkEu_09F5C0F8 = gUnkEu_08B4FB9C;
+void* gUnkEu_09F5C0F8 = gUnk_08B25590;
 
-void* gUnkEu_09F5C0FC = gUnkEu_08B4FBA6;
+void* gUnkEu_09F5C0FC = gUnk_08B2559A;
 
-AnimHeader* gUnkEu_09F5C100 = &gUnkEu_08B4FBB6;
+AnimHeader* gUnkEu_09F5C100 = &gUnk_08B255AA;
 
 void* gUnk_09EE15C0[4] = {
-    gUnkEu_08B50040,
-    gUnkEu_08B50056,
-    gUnkEu_08B5006C,
-    gUnkEu_08B50082,
+    gUnk_08B26270,
+    gUnk_08B26286,
+    gUnk_08B2629C,
+    gUnk_08B262B2,
 };
 
-void* gUnkEu_09F5C114 = gUnkEu_08B50098;
+void* gUnkEu_09F5C114 = gUnk_08B262C8;
 
-void* gUnkEu_09F5C118 = gUnkEu_08B500AE;
+void* gUnkEu_09F5C118 = gUnk_08B262DE;
 
-void* gUnkEu_09F5C11C = gUnkEu_08B500C4;
+void* gUnkEu_09F5C11C = gUnk_08B262F4;
 
-void* gUnkEu_09F5C120 = gUnkEu_08B500DA;
+void* gUnkEu_09F5C120 = gUnk_08B2630A;
 
-void* gUnkEu_09F5C124 = gUnkEu_08B500F0;
+void* gUnkEu_09F5C124 = gUnk_08B26320;
 
-void* gUnkEu_09F5C128 = gUnkEu_08B50106;
+void* gUnkEu_09F5C128 = gUnk_08B26336;
 
-void* gUnkEu_09F5C12C = gUnkEu_08B5011C;
+void* gUnkEu_09F5C12C = gUnk_08B2634C;
 
-void* gUnkEu_09F5C130 = gUnkEu_08B50132;
+void* gUnkEu_09F5C130 = gUnk_08B26362;
 
 AnimHeader* gUnk_09EE15F0[1] = {
-    &gUnkEu_08B50148,
+    &gUnk_08B26378,
 };
 
-AnimHeader* gUnkEu_09F5C138 = &gUnkEu_08B50166;
+AnimHeader* gUnkEu_09F5C138 = &gUnk_08B26396;
 
-AnimHeader* gUnkEu_09F5C13C = &gUnkEu_08B50184;
+AnimHeader* gUnkEu_09F5C13C = &gUnk_08B263B4;
 
 void* gUnk_09EE1538[16] = {
-    gUnkEu_08B50624,
-    gUnkEu_08B5062E,
-    gUnkEu_08B50638,
-    gUnkEu_08B50642,
-    gUnkEu_08B5064C,
-    gUnkEu_08B50656,
-    gUnkEu_08B50660,
-    gUnkEu_08B5066A,
-    gUnkEu_08B50674,
-    gUnkEu_08B5067E,
-    gUnkEu_08B50688,
-    gUnkEu_08B50692,
-    gUnkEu_08B5069C,
-    gUnkEu_08B506A6,
-    gUnkEu_08B506B0,
-    gUnkEu_08B506BA,
+    gUnk_08B25A34,
+    gUnk_08B25A3E,
+    gUnk_08B25A48,
+    gUnk_08B25A52,
+    gUnk_08B25A5C,
+    gUnk_08B25A66,
+    gUnk_08B25A70,
+    gUnk_08B25A7A,
+    gUnk_08B25A84,
+    gUnk_08B25A8E,
+    gUnk_08B25A98,
+    gUnk_08B25AA2,
+    gUnk_08B25AAC,
+    gUnk_08B25AB6,
+    gUnk_08B25AC0,
+    gUnk_08B25ACA,
 };
 
-AnimHeader* gUnkEu_09F5C180 = &gUnkEu_08B506C4;
+AnimHeader* gUnkEu_09F5C180 = &gUnk_08B25AD4;
 
 void* gUnkEu_09F5C184[1] = {
-    gUnkEu_08B50A30,
+    gUnk_08B25E40,
 };
 
 AnimHeader* gUnkEu_09F5C188[1] = {
@@ -584,24 +585,24 @@ AnimHeader* gUnkEu_09F5C390 = &gUnkEu_08B54E8E;
 
 void* gUnk_09EE157C[14] = {
     gUnkEu_08B55C58,
-    gUnkEu_08B55C62,
-    gUnkEu_08B55C6C,
-    gUnkEu_08B55C76,
-    gUnkEu_08B55C86,
-    gUnkEu_08B55C90,
-    gUnkEu_08B55C9A,
-    gUnkEu_08B55CA4,
-    gUnkEu_08B55CAE,
-    gUnkEu_08B55CB8,
-    gUnkEu_08B55CC2,
-    gUnkEu_08B55CCC,
-    gUnkEu_08B55CD6,
-    gUnkEu_08B55CE0,
+    gUnk_08B25E4A,
+    gUnk_08B25E54,
+    gUnk_08B25E5E,
+    gUnk_08B25E6E,
+    gUnk_08B25E78,
+    gUnk_08B25E82,
+    gUnk_08B25E8C,
+    gUnk_08B25E96,
+    gUnk_08B25EA0,
+    gUnk_08B25EAA,
+    gUnk_08B25EB4,
+    gUnk_08B25EBE,
+    gUnk_08B25EC8,
 };
 
-void* gUnkEu_09F5C3CC = gUnkEu_08B55CEA;
+void* gUnkEu_09F5C3CC = gUnk_08B25ED2;
 
-void* gUnkEu_09F5C3D0 = gUnkEu_08B55CF4;
+void* gUnkEu_09F5C3D0 = gUnk_08B25EDC;
 
 void* gUnkEu_09F5C3D4 = gUnkEu_08B55CFE;
 
@@ -627,6 +628,6 @@ void* gUnkEu_09F5C3FC = gUnkEu_08B55D80;
 
 void* gUnkEu_09F5C400 = gUnkEu_08B55D8A;
 
-AnimHeader* gUnkEu_09F5C404 = &gUnkEu_08B55D9A;
+AnimHeader* gUnkEu_09F5C404 = &gUnk_08B25EE6;
 
 #endif

@@ -1,6 +1,7 @@
 #include "registration_data.h"
 #include "tutorial.h"
 #include "gba/keys.h"
+#include "sprites_btl_hud.h"
 
 void task_tutorial_0(TutorialWork* work, s32 arg1) {
     gBg0Cnt = 0;

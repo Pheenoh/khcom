@@ -2,7 +2,6 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
-
 #include "card_api.h"
 
 #include "movie_text.h"
@@ -40,8 +39,5 @@ s32 task_tutorial_1(TutorialWork* work);
 void task_tutorial_2(TutorialWork* work);
 void task_tutorial_3(TutorialWork* work);
 extern u32 gFrameCounter;
-
-
-extern u8 gUnk_08B263D2[];
 
 #endif /* GUARD_TUTORIAL_H */

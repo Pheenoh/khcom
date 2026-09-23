@@ -33,15 +33,4 @@ void eu_0805EC60(MonsgageWork* work);
 void eu_0805ECE4(MonsgageWork* work);
 #endif
 
-
-extern u8 gUnk_08B2556C[];
-extern u8 gUnk_08B2557C[];
-extern u8 gUnk_08B25586[];
-extern u8 gUnk_08B25590[];
-extern u8 gUnk_08B2559A[];
-extern u8 gUnk_08B255B4[];
-#ifdef VERSION_EU
-extern u8 gUnkEu_08B4FBC0[];
-#endif
-
 #endif /* GUARD_MONSGAGE_H */

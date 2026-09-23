@@ -4,11 +4,10 @@
 #include "btl4.h"
 #include "btl4_api.h"
 #include "sprites_btl.h"
+#include "sprites_btl_hud.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08B55C58[];
-extern u8 gUnkEu_08B55C6C[];
-extern u8 gUnkEu_08B55C76[];
 extern u8 gUnkEu_08B55CFE[];
 extern u8 gUnkEu_08B55D08[];
 extern u8 gUnkEu_08B55D18[];
@@ -428,13 +427,13 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 #ifdef VERSION_EU
             switch (gLanguage) {
             case 0:
-                work->gfx = gUnkEu_08B55C6C;
+                work->gfx = gUnk_08B25E54;
                 break;
             case 1:
-                work->gfx = gUnkEu_08B55C6C;
+                work->gfx = gUnk_08B25E54;
                 break;
             case 4:
-                work->gfx = gUnkEu_08B55C6C;
+                work->gfx = gUnk_08B25E54;
                 break;
             case 3:
                 work->gfx = gUnkEu_08B55D4C;
@@ -466,7 +465,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 #ifdef VERSION_EU
                 switch (gLanguage) {
                 case 0:
-                    work->gfx = gUnkEu_08B55C76;
+                    work->gfx = gUnk_08B25E5E;
                     break;
                 case 1:
                     work->gfx = gUnkEu_08B55D08;
@@ -502,7 +501,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 #ifdef VERSION_EU
                 switch (gLanguage) {
                 case 0:
-                    work->gfx = gUnkEu_08B55C76;
+                    work->gfx = gUnk_08B25E5E;
                     break;
                 case 1:
                     work->gfx = gUnkEu_08B55D08;

@@ -43,6 +43,7 @@
 #include "bos4_api.h"
 #include "sprites_number_plus.h"
 #include "battle_backgrounds.h"
+#include "sprites_btl_hud.h"
 
 u8 gUnk_02034AE0[20];
 #ifndef VERSION_EU

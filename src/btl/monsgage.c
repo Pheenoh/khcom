@@ -4,6 +4,7 @@
 #include "monsgage.h"
 #include "obj_api.h"
 #include "game.h"
+#include "sprites_btl_hud.h"
 
 #ifndef VERSION_EU
 void task_monsgage_0(MonsgageWork* work) {
@@ -178,13 +179,13 @@ s32 eu_0805E9AC(void* text) {
 }
 
 void eu_0805E9F0(MonsgageWork* work) {
-    work->tiles = AllocObjTiles(0x200, gUnkEu_08B4FBC0);
-    work->tiles2 = AllocObjTiles(0x80, gUnkEu_08B4FBC0);
+    work->tiles = AllocObjTiles(0x200, gUnk_08B255B4);
+    work->tiles2 = AllocObjTiles(0x80, gUnk_08B255B4);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     work->unk_10 = 0;
     work->unk_0C = 0;
-    work->gfx = gUnkEu_08B4FB78;
-    work->gfx2 = gUnkEu_08B4FB88;
+    work->gfx = gUnk_08B2556C;
+    work->gfx2 = gUnk_08B2557C;
     work->unk_1C = 0;
     work->state = 0;
     work->unk_24 = 1;
@@ -200,7 +201,7 @@ s32 eu_0805EA44(MonsgageWork* work) {
         case 0:
             if (work->unk_1C == 0) {
                 work->unk_24 = 1;
-                work->gfx2 = gUnkEu_08B4FB88;
+                work->gfx2 = gUnk_08B2557C;
             }
 
             if (gBtlWork->flags & 0x10000) {
@@ -221,7 +222,7 @@ s32 eu_0805EA44(MonsgageWork* work) {
             break;
         case 1:
             if (work->unk_1C == 0) {
-                work->gfx2 = gUnkEu_08B4FB92;
+                work->gfx2 = gUnk_08B25586;
             }
 
             if (work->unk_1C % 8 < 4) {
@@ -253,8 +254,8 @@ s32 eu_0805EA44(MonsgageWork* work) {
             break;
         case 2:
             if (work->unk_1C == 0) {
-                work->gfx2 = gUnkEu_08B4FB9C;
-                work->gfx = gUnkEu_08B4FBA6;
+                work->gfx2 = gUnk_08B25590;
+                work->gfx = gUnk_08B2559A;
                 gBtlWork->flags |= 0x0100000000000000;
                 gBtlWork->flags |= 0x100000;
             }
