@@ -205,7 +205,7 @@ s32 Continue_1(ContinueWork* p) {
     BgAnimUpdate();
     p->gfx = AnimUpdate(&p->anim);
     p->gfx2 = AnimUpdate(&p->anim2);
-    gBldCnt = 0xB54;
+    gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_TGT1_OBJ | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = p->unk_66;
 
     if (p->unk_6A == 0) {

@@ -2427,7 +2427,7 @@ void func_080FDC04(void) {
             BgAnimInit(2, 0x8000, 128);
             BgAnimStart(&gUnk_09EDABB8, 112, 126);
             SetBgPriority(2, 1);
-            gBldCnt |= 0x1000;
+            gBldCnt |= BLDCNT_TGT2_OBJ;
             gUnk_020350EF = 1;
             m4aSongNumStart(206);
             gUnk_020350F0 = 0;
@@ -2781,7 +2781,7 @@ void func_080FE89C(void) {
     SetBgPriority(0, 3);
     SetBgPriority(1, 0);
     SetBgPriority(2, 2);
-    gBldCnt = 0x344;
+    gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1);
     gBldAlpha = 0x1010;
 }
 void func_080FE900(void) {

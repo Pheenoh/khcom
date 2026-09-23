@@ -45,6 +45,7 @@
 #include "sprites_card.h"
 #include "sprites_premire_chance.h"
 #include "sprites_card_pictures.h"
+#include "gba/io_reg.h"
 
 struct CardListWork* gCardListWork EWRAM_COMMON(4);
 
@@ -1349,7 +1350,7 @@ u8 func_0809C2D0(u8* work, void* a) {
         BgAnimStart(&gUnk_09EDA9A8, 120, 60);
         work[0x88] = BgAnimGetDuration(&gUnk_09EDA9A8);
         work[0x89] = z;
-        gBldCnt = 0x1B44;
+        gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
         gBldAlpha = 0x1010;
         BgAnimUpdate();
         FadeSetPaletteExcluded(10, 1);

@@ -23,7 +23,7 @@ u8 func_081125D8(StaffRollWork* w) {
 
     result = 1;
     if (w->unk_080 >= w->unk_07C) {
-        gBldCnt &= 0xFF3F;
+        gBldCnt &= ~BLDCNT_EFFECT_MASK;
         result = 0;
     }
 
@@ -38,7 +38,7 @@ void func_08112600(StaffRollWork* w) {
         w->unk_080 = w->unk_080 + 1;
     } else {
         v = 16;
-        gBldCnt &= 0xFF3F;
+        gBldCnt &= ~BLDCNT_EFFECT_MASK;
         gBldAlpha = 0;
         gBldY = 0;
     }
@@ -561,8 +561,8 @@ u8 func_08113180(StaffRollWork* w) {
         SrollTextInit(w->unk_1C0, gUnk_09A541C8);
         LoadBgPalette(0, gUnk_09D6BE14, 32);
         (*(volatile u16*)&gDispCnt) |= 0;
-        gWinIn = 31;
-        gWinOut = 30;
+        gWinIn = (WININ_WIN0_BG0 | WININ_WIN0_BG1 | WININ_WIN0_BG2 | WININ_WIN0_BG3 | WININ_WIN0_OBJ);
+        gWinOut = (WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG3 | WINOUT_WIN01_OBJ);
         gWin0H = 0x10E0;
         gWin0V = 0x898;
         w->unk_0A4 = 1;
@@ -736,7 +736,7 @@ u8 func_08113180(StaffRollWork* w) {
             FadeSetPaletteExcluded(i, 0);
         }
 
-        (*(volatile u16*)&gDispCnt) &= 0xDFFF;
+        (*(volatile u16*)&gDispCnt) &= ~DISPCNT_WIN0_ON;
         gWinIn = 0;
         gWinOut = 0;
         gWin0H = 0;

@@ -242,7 +242,7 @@ u8 eu_0806C848(EventSeqWork* work) {
         }
         if (u->maps3 != NULL) {
             if ((u->flags & 2) != 0) {
-                gBldCnt = 0x1844;
+                gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
                 (*(volatile u16*)&gBldAlpha) = 0x050E;
                 SetBgPriority(2, 1);
                 gEventState->unk_6E = 0x1D42;
@@ -364,7 +364,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
             if (u->maps3 != NULL) {
                 if ((u->flags & 2) != 0) {
-                    gBldCnt = 0x1844;
+                    gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
                     (*(volatile u16*)&gBldAlpha) = 0x050E;
                     SetBgPriority(2, 1);
                     gEventState->unk_6E = 0x1D42;
@@ -1009,7 +1009,7 @@ u8 func_0806E570(EventCharaWork* p) {
     }
 
     if ((p->keyframes[p->unk_1A0].unk_18 & 0x100000) != 0) {
-        gBldCnt = 0xF40;
+        gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
         v = p->unk_03E;
         func_0801CE00(p->unk_028, v | 4);
     } else {
@@ -1334,7 +1334,7 @@ u8 func_0806EF40(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
@@ -1408,7 +1408,7 @@ u8 func_0806F114(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 0x1000;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
@@ -1481,7 +1481,7 @@ u8 func_0806F2EC(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
@@ -1541,7 +1541,7 @@ u8 func_0806F47C(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 0x1010;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
@@ -1796,7 +1796,7 @@ u8 func_0806FB6C(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
@@ -1856,7 +1856,7 @@ u8 func_0806FCF4(void* work, void* a) {
     z = p->unk_03E;
     z |= 4;
     func_0801CE00(p->unk_028, z);
-    gBldCnt = 0xF40;
+    gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
     (*(volatile u16*)&gBldAlpha) = 0;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;

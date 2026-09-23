@@ -67,7 +67,7 @@ void mode_allmap_0(s32 a) {
     gUnk_0203C4E0 = 0;
     func_080D4EBC();
     REG_IME = 0;
-    REG_IE |= 4;
+    REG_IE |= INTR_FLAG_VCOUNT;
     REG_DISPSTAT &= 0xFF;
     REG_DISPSTAT |= 0x5020;
     SetVCountCallback(func_080D2F20);
@@ -144,8 +144,8 @@ void mode_allmap_2(void) {
     func_080D53A8();
     TaskPoolDestroy(&gUnk_0203C4F0);
     REG_IME = 0;
-    REG_IE &= 0xFFFB;
-    REG_DISPSTAT &= 0xFFDF;
+    REG_IE &= ~INTR_FLAG_VCOUNT;
+    REG_DISPSTAT &= ~DISPSTAT_VCOUNT_INTR;
     REG_IME = 1;
     ResetVCountCallback();
 

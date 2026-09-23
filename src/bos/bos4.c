@@ -9,6 +9,7 @@
 #include "bos4.h"
 #include "bos4_api.h"
 #include "sprites_bos4.h"
+#include "gba/io_reg.h"
 
 u16 gUnk_0203C554 EWRAM_COMMON(4);
 u8 gUnk_0203C558 EWRAM_COMMON(4);
@@ -2262,7 +2263,7 @@ void task_bos_ursula_2(UrsulaWork* work) {
 void task_bos_ursula_3(UrsulaWork* work) {
     func_0801B7D8(&work->unk_024);
     TaskPoolDestroy(&work->tasks);
-    gDispCnt &= 0xDFFF;
+    gDispCnt &= ~DISPCNT_WIN0_ON;
 }
 
 u8 func_080DC510(void) {
@@ -2351,11 +2352,11 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg) {
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
     ScrollBgMapTo(1, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
-    gDispCnt |= 0x2000;
+    gDispCnt |= DISPCNT_WIN0_ON;
     gWin0H = 0xF0;
     gWin0V = 0x50A0;
-    gWinIn = 0x3E;
-    gWinOut = 0x3F;
+    gWinIn = (WININ_WIN0_BG1 | WININ_WIN0_BG2 | WININ_WIN0_BG3 | WININ_WIN0_OBJ | WININ_WIN0_CLR);
+    gWinOut = (WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG3 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
     work->unk_00 = 0x1E000;
     work->unk_04 = 0x1E000;
     work->unk_08 = 0;
@@ -2420,9 +2421,9 @@ u8 task_bos_ursula_map_1(UrsulaMapWork* work) {
     v = -0x18 - (gBtlWork->unk_004 >> 8);
 
     if (v > 0xA0 || gUnk_0203C57C == 0) {
-        gDispCnt &= 0xDFFF;
+        gDispCnt &= ~DISPCNT_WIN0_ON;
     } else {
-        gDispCnt |= 0x2000;
+        gDispCnt |= DISPCNT_WIN0_ON;
         gWin0V = (v << 8) | 0xA0;
     }
 

@@ -46,6 +46,7 @@
 #include "sprites_worldselect.h"
 #include "sprites_card_pictures.h"
 #include "sprites_card.h"
+#include "gba/io_reg.h"
 
 extern UnkStruct_09EE752C gUnk_09EE752C[7];
 #ifdef VERSION_EU
@@ -815,7 +816,7 @@ void SpotLight_0(SpotlightWork* w, u8* src) {
     w->unk_04 = 0x1000;
     w->unk_08 = 0;
     FadeStartOut(0, 30);
-    gBldCnt = 0xE41;
+    gBldCnt = (BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
 }
 
 u8 SpotLight_1(SpotlightWork* w, void* a) {
@@ -830,7 +831,7 @@ u8 SpotLight_1(SpotlightWork* w, void* a) {
     if (*w->unk_10 == 1) {
         FadeStartIn(0, 30);
         w->unk_00 = 30;
-        gBldCnt = 0xE41;
+        gBldCnt = (BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
         SetTaskUpdate(a, (void*)func_08097A80);
     }
 

@@ -7016,7 +7016,7 @@ void func_080D2F10(u8 a) {
 }
 
 void func_080D2F20(void) {
-    while ((REG_DISPSTAT & 2) == 0) {
+    while ((REG_DISPSTAT & DISPSTAT_HBLANK) == 0) {
     }
     REG_BG2CNT &= 0xFFFC;
     REG_BG2CNT |= 2;

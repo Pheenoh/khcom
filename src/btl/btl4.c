@@ -5,6 +5,7 @@
 #include "btl4_api.h"
 #include "sprites_btl.h"
 #include "sprites_btl_hud.h"
+#include "gba/io_reg.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08B55C58[];
@@ -995,7 +996,7 @@ void task_btl_hpoth_3(BtlHpothWork* work) {
 }
 
 void func_0805DA64(u16 a) {
-    gDispCnt = (gDispCnt & 0xFFF8) | 1;
+    gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
     func_080A411C(&gBtlWork->taskPools[1], 0, a);
 }
 
@@ -1004,7 +1005,7 @@ void func_0805DA98(u16 a) {
 }
 
 void func_0805DAB4(void) {
-    gDispCnt = (gDispCnt & 0xFFF8) | 2;
+    gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_2;
 }
 
 void func_0805DACC(BtlEffect* p, u16 b, void* c) {

@@ -4,6 +4,7 @@
 #include "listpool.h"
 #include "malloc.h"
 #include "sprite.h"
+#include "gba/io_reg.h"
 
 const u8 sSpriteHeapName[8] = "SPRITE";
 
@@ -86,11 +87,11 @@ void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi) {
 }
 
 void EnableObj(void) {
-    gDispCnt |= 0x1000;
+    gDispCnt |= DISPCNT_OBJ_ON;
 }
 
 void DisableObj(void) {
-    gDispCnt &= 0xEFFF;
+    gDispCnt &= ~DISPCNT_OBJ_ON;
 }
 
 void SetObjTileRange(u16 a, u16 b) {

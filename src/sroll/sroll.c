@@ -58,7 +58,7 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
             AnimInit(anim, gUnk_09EFB244, gUnk_09EFB208);
         }
         AnimStart(anim, 2, 0);
-        gBldCnt = 0x140;
+        gBldCnt = (BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0);
         gBldAlpha = 0;
         break;
     }

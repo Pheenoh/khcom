@@ -625,7 +625,7 @@ s32 _0800CDF0(EmyWork* work) {
         actor->z -= (16 - work->unk_156) << 8;
 
         if (BgAnimIsStopped()) {
-            gBldCnt = 0xF10;
+            gBldCnt = (BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
             work->unk_162 = 4;
             SetBlendAlpha(16 - work->unk_156, work->unk_156);
         } else {

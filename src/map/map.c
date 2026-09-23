@@ -5624,7 +5624,7 @@ void func_080E935C(void) {
     }
     func_080E02A8(x, y);
     if (GetKeysPressed() & A_BUTTON) {
-        (*(volatile u16*)&gDispCnt) = ((*(volatile u16*)&gDispCnt) & 0xFDFF) | (m1 & ~(*(volatile u16*)&gDispCnt));
+        (*(volatile u16*)&gDispCnt) = ((*(volatile u16*)&gDispCnt) & ~DISPCNT_BG1_ON) | (m1 & ~(*(volatile u16*)&gDispCnt));
     }
     if (GetKeysPressed() & B_BUTTON) {
         (*(volatile u16*)&gDispCnt) = ((*(volatile u16*)&gDispCnt) & 0xEFFF) | (m2 & ~(*(volatile u16*)&gDispCnt));
@@ -8671,7 +8671,7 @@ s32 func_080EDC94(MapMenuWork* w) {
 }
 
 s32 func_080EDD7C(MapMenuWork* w) {
-    (*(volatile u16*)&gDispCnt) |= 0x1000;
+    (*(volatile u16*)&gDispCnt) |= DISPCNT_OBJ_ON;
     w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
     return 1;
 }

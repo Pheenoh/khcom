@@ -3223,7 +3223,7 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
     act = &work->base.actor;
 
     if (func_080128EC() == 0) {
-        gBldCnt = 0xF10;
+        gBldCnt = (BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
         SetBlendAlpha(4, 14);
         attr = 0x804;
     } else {
@@ -7561,7 +7561,7 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
     act = &work->base.actor;
 
     if (func_080128EC() == 0) {
-        gBldCnt = 0xF10;
+        gBldCnt = (BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
         SetBlendAlpha(6, 12);
         attr = 0x804;
     } else {

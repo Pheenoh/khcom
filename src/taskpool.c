@@ -195,7 +195,7 @@ s32 func_08000F90(void) {
 }
 
 void ModeBlankDisplay(void) {
-    REG_DISPCNT &= 0xE0FF;
+    REG_DISPCNT &= ~(DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON);
     *(vu16*)0x05000000 = gUnk_0300749E;
 }
 

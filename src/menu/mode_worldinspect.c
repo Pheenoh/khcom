@@ -455,7 +455,7 @@ void func_080FF330(void) {
             }
 
             gUnk_020354A0 = func_080FF25C(gUnk_02035100[gUnk_020350F8]);
-            gBldCnt = 0x744;
+            gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2);
             gBldAlpha = 0x808;
             EnableBg(2);
             EnableBg(3);

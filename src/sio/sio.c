@@ -43,9 +43,9 @@ u16 gUnk_02034078;
 
 u16 IsVBlankIntrLive(void) {
     if (REG_IME & 1) {
-        if (REG_DISPSTAT & 8) {
-            if (REG_IE & 1) {
-                if (!(REG_DISPCNT & 0x80)) {
+        if (REG_DISPSTAT & DISPSTAT_VBLANK_INTR) {
+            if (REG_IE & INTR_FLAG_VBLANK) {
+                if (!(REG_DISPCNT & DISPCNT_FORCED_BLANK)) {
                     return 1;
                 }
             }
@@ -117,7 +117,7 @@ void SioInit(void) {
     p = &gUnk_0203406E;
     ime = REG_IME;
     REG_IME = 0;
-    REG_IE &= 0xFF3F;
+    REG_IE &= ~(INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
     REG_IME = ime;
     REG_RCNT = 0;
     REG_SIOCNT = 0x2000;
@@ -127,7 +127,7 @@ void SioInit(void) {
     SetSerialCallback(SioSerialIntr);
     SetTimer3Callback(SioTimer3Intr);
     REG_IME = 0;
-    REG_IE |= 0x80;
+    REG_IE |= INTR_FLAG_SERIAL;
     REG_IME = *p;
     REG_SIOMLT_SEND = 0;
     *(u64*)REG_ADDR_SIOMULTI0 = 0;
@@ -167,11 +167,11 @@ void SioStop(void) {
 
     gUnk_0203406E = REG_IME;
     REG_IME = 0;
-    REG_IE &= 0xFF3F;
+    REG_IE &= ~(INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
     REG_IME = gUnk_0203406E;
     REG_SIOCNT = 0;
     REG_TM3CNT_H = 0;
-    REG_IF = 0xC0;
+    REG_IF = (INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
     zero = 0;
     CpuSet(&zero, &gSioWork, (sizeof(SioWork) / 4) | 0x05000000);
 }
@@ -301,10 +301,10 @@ void func_080070B4(void) {
 void func_080070DC(void) {
     if (gSioWork.unk_00 != 0) {
         REG_TM3CNT_L = 0xFF2D;
-        REG_TM3CNT_H = 0x41;
+        REG_TM3CNT_H = (TIMER_INTR_ENABLE | TIMER_64CLK);
         gUnk_0203406E = REG_IME;
         REG_IME = 0;
-        REG_IE |= 0x40;
+        REG_IE |= INTR_FLAG_TIMER3;
         REG_IME = gUnk_0203406E;
     }
 }
@@ -579,7 +579,7 @@ void func_08007694(void) {
 
 void func_08007768(void) {
     if (gSioWork.unk_00 != 0) {
-        REG_TM3CNT_H &= 0xFF7F;
+        REG_TM3CNT_H &= ~TIMER_ENABLE;
         REG_TM3CNT_L = 0xFF2D;
     }
 }
@@ -589,7 +589,7 @@ void func_08007798(void) {
         gSioWork.unk_18 = 0;
         gSioWork.unk_19 = 0;
     } else if (gSioWork.unk_00 != 0) {
-        REG_TM3CNT_H |= 0x80;
+        REG_TM3CNT_H |= TIMER_ENABLE;
     }
 }
 
@@ -643,8 +643,8 @@ void func_080078A4(void) {
     ResetVBlankCallback();
     ResetSerialCallback();
     ResetTimer3Callback();
-    REG_IE = 0x2001;
-    REG_DISPSTAT = 8;
+    REG_IE = (INTR_FLAG_VBLANK | INTR_FLAG_GAMEPAK);
+    REG_DISPSTAT = DISPSTAT_VBLANK_INTR;
     REG_IME = 1;
     SioStop();
 }

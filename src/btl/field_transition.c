@@ -30,7 +30,7 @@ void func_080100A0(void) {
         func_08001080();
         return;
     }
-    REG_DISPCNT |= 0x1000;
+    REG_DISPCNT |= DISPCNT_OBJ_ON;
     gSystemFlags |= 8;
     if (gFieldTransitionWork->initialized == 0) {
         gFieldTransitionWork->tiles = AllocObjTiles(0xA00, 0);

@@ -15,6 +15,7 @@
 #include "sprites_riku.h"
 #include "sprites_sora.h"
 #include "gba/keys.h"
+#include "gba/io_reg.h"
 
 const char gTaskNameBtlLockon[] = "task_btl_lockon";
 const char gTaskNameBtlArea[] = "task_btl_area";
@@ -6464,7 +6465,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
     a = &work->actor;
 
     if (func_080128EC() == 0) {
-        gBldCnt = 0xF10;
+        gBldCnt = (BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
         SetBlendAlpha(6, 12);
         flags = 0x804;
     } else {

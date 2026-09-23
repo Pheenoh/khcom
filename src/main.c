@@ -65,31 +65,31 @@ u32 GetIwramHeapSize(void) {
 
 void EnableVBlankIntr(void) {
     REG_IME = 0;
-    REG_IE |= 1;
-    REG_DISPSTAT |= 8;
+    REG_IE |= INTR_FLAG_VBLANK;
+    REG_DISPSTAT |= DISPSTAT_VBLANK_INTR;
     m4aSoundVSyncOn();
     REG_IME = 1;
 }
 
 void DisableVBlankIntr(void) {
     REG_IME = 0;
-    REG_IE &= 0xFFFE;
-    REG_DISPSTAT &= 0xFFF7;
+    REG_IE &= ~INTR_FLAG_VBLANK;
+    REG_DISPSTAT &= ~DISPSTAT_VBLANK_INTR;
     m4aSoundVSyncOff();
     REG_IME = 1;
 }
 
 void EnableHBlankIntr(void) {
     REG_IME = 0;
-    REG_IE |= 2;
-    REG_DISPSTAT |= 0x10;
+    REG_IE |= INTR_FLAG_HBLANK;
+    REG_DISPSTAT |= DISPSTAT_HBLANK_INTR;
     REG_IME = 1;
 }
 
 void DisableHBlankIntr(void) {
     REG_IME = 0;
-    REG_IE &= 0xFFFD;
-    REG_DISPSTAT &= 0xFFEF;
+    REG_IE &= ~INTR_FLAG_HBLANK;
+    REG_DISPSTAT &= ~DISPSTAT_HBLANK_INTR;
     REG_IME = 1;
 }
 
@@ -154,8 +154,8 @@ void InitSystem(void) {
     dma[2] = 0x84000200;
     dma[2];
     INTR_VECTOR = gIntrHandler;
-    REG_IE = 0x2000;
-    REG_IF = 0x2000;
+    REG_IE = INTR_FLAG_GAMEPAK;
+    REG_IF = INTR_FLAG_GAMEPAK;
     REG_IME = 1;
     InitIntrTable();
     m4aSoundInit();

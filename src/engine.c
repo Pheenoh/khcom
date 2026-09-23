@@ -1411,7 +1411,7 @@ void SplineFreeBuffers(Spline2D* p) {
     EwramFree(p->yCoefficients);
 }
 void InitDisplayRegs(void) {
-    gDispCnt = 0x40;
+    gDispCnt = DISPCNT_OBJ_1D_MAP;
     gMosaic = 0;
     gBldCnt = 0;
     gBldAlpha = 0;
@@ -1932,7 +1932,7 @@ void BgReset(void) {
 void SetBgMode0(void) {
     s32 i;
 
-    gDispCnt = gDispCnt & 0xFFF8;
+    gDispCnt = gDispCnt & ~DISPCNT_MODE_MASK;
     gBg0Cnt = 0;
     gBg1Cnt = 1;
     gBg2Cnt = 2;
@@ -1958,7 +1958,7 @@ void SetBgMode0(void) {
 void SetBgMode1(void) {
     s32 i;
 
-    gDispCnt = (gDispCnt & 0xFFF8) | 1;
+    gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
     gBg0Cnt = 0;
     gBg1Cnt = 1;
     gBg2Cnt = 0x82;
@@ -1981,7 +1981,7 @@ void SetBgMode1(void) {
 void SetBgMode2(void) {
     s32 i;
 
-    gDispCnt = (gDispCnt & 0xFFF8) | 2;
+    gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_2;
     gBg2Cnt = 0x6080;
     gBg3Cnt = 0x4081;
     SetupBg(2, 0, 15, 0);
@@ -1999,23 +1999,23 @@ void SetBgMode2(void) {
 }
 
 void SetBgMode3(void) {
-    gDispCnt = (gDispCnt & 0xFFF8) | 3;
+    gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_3;
     SetBgScroll(2, 0, 0);
 }
 
 void EnableBg(s32 bg) {
     switch ((u32)bg) {
     case 0:
-        gDispCnt |= 0x100;
+        gDispCnt |= DISPCNT_BG0_ON;
         break;
     case 1:
-        gDispCnt |= 0x200;
+        gDispCnt |= DISPCNT_BG1_ON;
         break;
     case 2:
-        gDispCnt |= 0x400;
+        gDispCnt |= DISPCNT_BG2_ON;
         break;
     case 3:
-        gDispCnt |= 0x800;
+        gDispCnt |= DISPCNT_BG3_ON;
         break;
     }
 }
@@ -2023,16 +2023,16 @@ void EnableBg(s32 bg) {
 void DisableBg(s32 bg) {
     switch ((u32)bg) {
     case 0:
-        gDispCnt &= 0xFEFF;
+        gDispCnt &= ~DISPCNT_BG0_ON;
         break;
     case 1:
-        gDispCnt &= 0xFDFF;
+        gDispCnt &= ~DISPCNT_BG1_ON;
         break;
     case 2:
-        gDispCnt &= 0xFBFF;
+        gDispCnt &= ~DISPCNT_BG2_ON;
         break;
     case 3:
-        gDispCnt &= 0xF7FF;
+        gDispCnt &= ~DISPCNT_BG3_ON;
         break;
     }
 }
@@ -2074,7 +2074,7 @@ void SetBgMapBlocks(s32 bg, void* src, u8 w, u8 h) {
     s32 ofs;
     u32 z;
 
-    if (gDispCnt & 7) {
+    if (gDispCnt & DISPCNT_MODE_MASK) {
         if (bg == 2 || bg == 3) {
             return;
         }
@@ -2363,19 +2363,19 @@ void SetBackdropColor(u32 r, u32 g, u32 b) {
 void SetBgBlend(s32 a, u16 b, u16 c) {
     switch ((u32)a) {
     case 0:
-        gBldCnt = 0x1E01;
+        gBldCnt = (BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
         break;
     case 1:
-        gBldCnt = 0x1D02;
+        gBldCnt = (BLDCNT_TGT1_BG1 | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
         break;
     case 2:
-        gBldCnt = 0x1B04;
+        gBldCnt = (BLDCNT_TGT1_BG2 | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ);
         break;
     default:
-        gBldCnt = 0x1708;
+        gBldCnt = (BLDCNT_TGT1_BG3 | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_OBJ);
         break;
     }
-    gBldCnt |= 0x40;
+    gBldCnt |= BLDCNT_EFFECT_BLEND;
     gBldAlpha = (b << 8) | c;
 }
 
@@ -2406,7 +2406,7 @@ u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h) {
     BgEntry* e;
     s32 count;
     s32 i;
-    if ((gDispCnt & 7) != 0 && (bg == 2 || bg == 3)) {
+    if ((gDispCnt & DISPCNT_MODE_MASK) != 0 && (bg == 2 || bg == 3)) {
         return 0;
     }
     e = &gBgEntries[bg];

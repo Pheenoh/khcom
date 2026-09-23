@@ -686,9 +686,9 @@ void ShowSramErrorScreen(void) {
     ime = (vu16*)REG_ADDR_IME;
     *ime = 0;
     ie = (vu16*)REG_ADDR_IE;
-    *ie |= 1;
+    *ie |= INTR_FLAG_VBLANK;
     dispstat = (vu16*)REG_ADDR_DISPSTAT;
-    *dispstat |= 8;
+    *dispstat |= DISPSTAT_VBLANK_INTR;
     *ime = 1;
     p = (vu16*)REG_ADDR_BG0CNT;
     do {
@@ -699,7 +699,7 @@ void ShowSramErrorScreen(void) {
     p += 2;
     *p = 0x10;
     dispcnt = (vu16*)REG_ADDR_DISPCNT;
-    *dispcnt = 0x1100;
+    *dispcnt = (DISPCNT_BG0_ON | DISPCNT_OBJ_ON);
     VBlankIntrWait();
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gSramErrorTiles;
@@ -720,8 +720,8 @@ void ShowSramErrorScreen(void) {
     dma[2];
     WaitSramErrorInput();
     *ime = 0;
-    *ie &= 0xFFFE;
-    *dispstat &= 0xFFF7;
+    *ie &= ~INTR_FLAG_VBLANK;
+    *dispstat &= ~DISPSTAT_VBLANK_INTR;
     *ime = 1;
     *dispcnt = 0;
 }

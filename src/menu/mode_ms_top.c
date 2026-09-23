@@ -348,7 +348,7 @@ void mode_ms_top_0(u32 a) {
     SpriteReset();
     FadeStartIn(0, 16);
     SetBgMode0();
-    gBldCnt = 0x142;
+    gBldCnt = (BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0);
     gBldAlpha = 0x1010;
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);

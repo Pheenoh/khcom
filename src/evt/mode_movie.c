@@ -153,7 +153,7 @@ void func_0805EA90(void) {
     u32 attr1;
 
     if (gUnk_02034958 & 8) {
-        REG_DISPCNT = 0xF43;
+        REG_DISPCNT = (DISPCNT_MODE_3 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON);
         MovieUpdate();
         if (gUnk_02034950 != 0) {
             if (gUnk_02034958 & 1) {
@@ -176,8 +176,8 @@ void func_0805EA90(void) {
             }
             if (gUnk_02034954 > 0 || gUnk_0203495A != 0 ||
                 gUnk_0203495C > 0 || gUnk_02034960 != 0) {
-                REG_DISPCNT |= 0x1000;
-                REG_BLDCNT = 0xF10;
+                REG_DISPCNT |= DISPCNT_OBJ_ON;
+                REG_BLDCNT = (BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
                 if (gUnk_0203495A < 16) {
                     if (gUnk_0203495A == 0) {
                         attr0 = 0x200;
@@ -315,7 +315,7 @@ void mode_movie_1(void) {
         s32 fill;
 
         InitDisplayRegs();
-        gDispCnt &= 0xE0FF;
+        gDispCnt &= ~(DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON);
         fill = 0;
         CpuSet(&fill, (void*)0x06000000, 0x05006000);
         gUnk_02034938++;

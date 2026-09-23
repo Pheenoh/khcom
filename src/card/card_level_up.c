@@ -47,6 +47,7 @@
 #include "sprites_sora.h"
 #include "sprites_msg.h"
 #include "sprites_card.h"
+#include "gba/io_reg.h"
 
 u8 gUnk_02034AF8;
 
@@ -152,7 +153,7 @@ void Level_Up_0(LevelUpWork* w) {
     w->gfx = AnimGetGfx(&w->anim2);
     if (!(gBtlWork->flags & 4)) {
         w->unk_7C6 = 0;
-        gDispCnt = (gDispCnt & 0xFFF8) | 1;
+        gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
         gBg1Cnt &= 0xFF7F;
         SetBgSize(1, 0);
         SetupBg(2, 0, 12, 0);
@@ -198,7 +199,7 @@ void Level_Up_0(LevelUpWork* w) {
             break;
         }
     }
-    gBldCnt &= 0xFFBF;
+    gBldCnt &= ~BLDCNT_EFFECT_BLEND;
     w->x6 = -128;
     w->x4[0] = -128;
     w->x4[1] = -128;

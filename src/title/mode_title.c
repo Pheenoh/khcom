@@ -253,7 +253,7 @@ void mode_title_1(void) {
         }
         gUnk_02034E98 = 4;
         gUnk_02034EC8 = 0;
-        gBldCnt = 0x1343;
+        gBldCnt = (BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ);
         gBldAlpha = 0x10;
         gUnk_02034EC0 = 4;
         EnableBg(1);
@@ -299,7 +299,7 @@ void mode_title_1(void) {
         DisableBg(0);
         gUnk_02034E98 = 6;
         gUnk_02034EC8 = 0;
-        gBldCnt = 0x250;
+        gBldCnt = (BLDCNT_TGT1_OBJ | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1);
         gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
         gUnk_02034EC0 = 4;
         break;
@@ -381,8 +381,8 @@ void mode_title_1(void) {
 void mode_title_2(void) {
     TaskPoolDestroy(&gTitleTaskPool);
     REG_IME = 0;
-    REG_IE &= 0xFFFB;
-    REG_DISPSTAT &= 0xFFDF;
+    REG_IE &= ~INTR_FLAG_VCOUNT;
+    REG_DISPSTAT &= ~DISPSTAT_VCOUNT_INTR;
     REG_IME = 1;
     ResetVCountCallback();
     EwramFree(gUnk_02034EC4);
