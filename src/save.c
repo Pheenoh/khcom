@@ -3,6 +3,7 @@
 #include "gba/syscall.h"
 #include "save.h"
 #include "gba/io_reg.h"
+#include "gba/keys.h"
 
 static u16 gRawKeys;
 static u16 gRawKeysPrev;
@@ -753,7 +754,7 @@ void WaitSramErrorInput(void) {
         do {
             ReadKeysRaw();
 
-            if ((((gRawKeysPrev ^ gRawKeys) & gRawKeys) & 0xF0) == 0xF0) {
+            if ((((gRawKeysPrev ^ gRawKeys) & gRawKeys) & DPAD_ANY) == DPAD_ANY) {
                 prev = cur;
                 cur = i;
             }
@@ -786,7 +787,7 @@ void WaitSramErrorInput(void) {
 }
 
 void ReadKeysRaw(void) {
-    u16 keys = 0x3FF ^ REG_KEYINPUT;
+    u16 keys = KEYS_MASK ^ REG_KEYINPUT;
 
     gRawKeysPrev = gRawKeys;
     gRawKeys = keys;
