@@ -51,7 +51,7 @@ extern u8 gUnk_0815A0A0[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_08895EDC[];
 #endif
-void func_080A23A0(LvupMsgWork* w, UnkStruct_080A23A0_Args* a) {
+void func_080A23A0(LvupMsgWork* w, LvupMsgArgs* a) {
     struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
     InitTextSlots(w->unk_000, 20);

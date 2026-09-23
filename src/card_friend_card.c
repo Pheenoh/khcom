@@ -157,7 +157,7 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
     gBtlWork->unk_0B0++;
 }
 
-void func_0809A368(UnkStruct_0809A02C* w, UnkStruct_0809A368_Args* args) {
+void func_0809A368(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     u8* p;
 
     w->unk_1A0 = args->unk_0C;

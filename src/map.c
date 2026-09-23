@@ -6906,7 +6906,7 @@ void func_080EB2D0(NewGameSlotMenuWork* w) {
     }
 }
 
-void func_080EB328(void) {
+void Mode_MenuNew_0(void) {
     u8 v;
     u8 u;
 
@@ -7007,14 +7007,14 @@ void func_080EB328(void) {
     FadeStartIn(0, 8);
 }
 
-void func_080EB698(void) {
+void Mode_MenuNew_1(void) {
     if (gUnk_02034FDC->update != 0) {
         gUnk_02034FDC->update(gUnk_02034FDC);
     }
     func_080EAF10();
 }
 
-void func_080EB6BC(void) {
+void Mode_MenuNew_2(void) {
     ReleaseObjPalette(gUnk_02034FDC->palette2);
     ReleaseObjTiles(gUnk_02034FDC->tiles2);
     ReleaseObjPalette(gUnk_02034FDC->palette3);
@@ -7495,7 +7495,7 @@ void func_080EC04C(LoadGameMenuWork* work) {
     }
 }
 
-void func_080EC0D4(s32 arg) {
+void Mode_MenuLoad_0(s32 arg) {
     s32 i;
 
     gUnk_02034FE0 = EwramAlloc(0x18C);
@@ -7621,14 +7621,14 @@ void func_080EC0D4(s32 arg) {
     FadeStartIn(0, 16);
 }
 
-void func_080EC424(void) {
+void Mode_MenuLoad_1(void) {
     if (gUnk_02034FE0->update != 0) {
         gUnk_02034FE0->update(gUnk_02034FE0);
     }
     func_080EBB24();
 }
 
-void func_080EC448(void) {
+void Mode_MenuLoad_2(void) {
     ReleaseObjPalette(gUnk_02034FE0->palette2);
     ReleaseObjTiles(gUnk_02034FE0->tiles2);
     ReleaseObjPalette(gUnk_02034FE0->palette);
@@ -7697,14 +7697,14 @@ void func_080EC57C(s32 arg) {
     gUnk_02034FE4->update = func_080EC500;
 }
 
-void func_080EC618(void) {
+void Mode_MenuMsg_1(void) {
     gUnk_02034FE4->update(gUnk_02034FE4);
     TaskPoolUpdate(&gUnk_02034FE4->tasks);
     TaskPoolDraw(&gUnk_02034FE4->tasks);
     func_080C73D8();
 }
 
-void func_080EC644(void) {
+void Mode_MenuMsg_2(void) {
     TaskPoolDestroy(&gUnk_02034FE4->tasks);
     EwramFree(gUnk_02034FE4);
 }
@@ -9832,23 +9832,23 @@ Mode gModeMapFix = {
 
 Mode gModeMenuNew = {
     gModeNameMenuNew,
-    (void (*)(s32))func_080EB328,
-    (void (*)(void))func_080EB698,
-    (void (*)(void))func_080EB6BC,
+    (void (*)(s32))Mode_MenuNew_0,
+    (void (*)(void))Mode_MenuNew_1,
+    (void (*)(void))Mode_MenuNew_2,
 };
 
 Mode gModeMenuLoad = {
     gModeNameMenuLoad,
-    (void (*)(s32))func_080EC0D4,
-    (void (*)(void))func_080EC424,
-    (void (*)(void))func_080EC448,
+    (void (*)(s32))Mode_MenuLoad_0,
+    (void (*)(void))Mode_MenuLoad_1,
+    (void (*)(void))Mode_MenuLoad_2,
 };
 
 Mode gModeMenuMsg = {
     gModeNameMenuMsg,
     (void (*)(s32))func_080EC57C,
-    (void (*)(void))func_080EC618,
-    (void (*)(void))func_080EC644,
+    (void (*)(void))Mode_MenuMsg_1,
+    (void (*)(void))Mode_MenuMsg_2,
 };
 
 TaskDesc gTaskDescMapRnd = {

@@ -1503,10 +1503,10 @@ typedef struct MapSelectWork {
 
 typedef char MapSelectWork_size[(sizeof(struct MapSelectWork) == 0x2E4) ? 1 : -1];
 
-typedef struct UnkStruct_080A23A0_Args {
+typedef struct LvupMsgArgs {
     u8* unk_00;
     u32 unk_04;
-} UnkStruct_080A23A0_Args;
+} LvupMsgArgs;
 
 typedef struct LvupMsgWork {
     TextSlot unk_000[20];
@@ -1670,12 +1670,12 @@ extern const UnkStruct_080ABA80 gUnk_09045188;
 extern const UnkStruct_080ABA80 gUnk_09033FD0;
 extern const UnkStruct_080ABA80 gUnk_090352FC;
 
-typedef struct UnkStruct_0809A368_Args {
+typedef struct GimmickCardArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-} UnkStruct_0809A368_Args;
+} GimmickCardArgs;
 
 typedef struct WorldSelBeforeWork {
     void* tiles;
