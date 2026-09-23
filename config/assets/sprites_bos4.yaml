@@ -20,6 +20,12 @@ objects:
   - name: sprites_bos4_frames.s
     start: 0x0979662C
     end: 0x097A1864
+  - name: sprites_bos4_tiles.s
+    start: 0x097ED478
+    end: 0x097FFB98
+  - name: sprites_bos4_maps.s
+    start: 0x09843798
+    end: 0x09847798
   jp:
   - name: sprites_bos4.c
     start: 0x09ECDB60
@@ -27,6 +33,12 @@ objects:
   - name: sprites_bos4_frames.s
     start: 0x09750AC0
     end: 0x0975BCF8
+  - name: sprites_bos4_tiles.s
+    start: 0x097A790C
+    end: 0x097BA02C
+  - name: sprites_bos4_maps.s
+    start: 0x097F8C6C
+    end: 0x097FCC6C
   eu:
   - name: sprites_bos4.c
     start: 0x09F81D5C
@@ -34,6 +46,12 @@ objects:
   - name: sprites_bos4_frames.s
     start: 0x09772840
     end: 0x0977DA78
+  - name: sprites_bos4_tiles.s
+    start: 0x097C3B80
+    end: 0x097D62A0
+  - name: sprites_bos4_maps.s
+    start: 0x09817E40
+    end: 0x0981BE40
 entries:
 - name: gUnk_09EF6774
   record: SpriteTable
@@ -1755,3 +1773,208 @@ entries:
   eu:
     address: 0x0977CFF8
     size: 2688
+- name: gUnk_097ED478
+  format: tiles4
+  width: 8
+  us:
+    address: 0x097ED478
+    size: 256
+  jp:
+    address: 0x097A790C
+    size: 256
+  eu:
+    address: 0x097C3B80
+    size: 256
+- name: gUnk_097ED578
+  format: tiles4
+  width: 8
+  us:
+    address: 0x097ED578
+    size: 256
+  jp:
+    address: 0x097A7A0C
+    size: 256
+  eu:
+    address: 0x097C3C80
+    size: 256
+- name: gUnk_097ED678
+  format: tiles4
+  width: 8
+  us:
+    address: 0x097ED678
+    size: 3328
+  jp:
+    address: 0x097A7B0C
+    size: 3328
+  eu:
+    address: 0x097C3D80
+    size: 3328
+- name: gUnk_097EE378
+  format: tiles4
+  width: 32
+  us:
+    address: 0x097EE378
+    size: 3072
+  jp:
+    address: 0x097A880C
+    size: 3072
+  eu:
+    address: 0x097C4A80
+    size: 3072
+- name: gUnk_097EEF78
+  format: tiles4
+  width: 32
+  us:
+    address: 0x097EEF78
+    size: 25600
+  jp:
+    address: 0x097A940C
+    size: 25600
+  eu:
+    address: 0x097C5680
+    size: 25600
+- name: gUnk_097F5378
+  format: tiles4
+  width: 8
+  us:
+    address: 0x097F5378
+    size: 2816
+  jp:
+    address: 0x097AF80C
+    size: 2816
+  eu:
+    address: 0x097CBA80
+    size: 2816
+- name: gUnk_097F5E78
+  format: tiles4
+  us:
+    address: 0x097F5E78
+    size: 11360
+  jp:
+    address: 0x097B030C
+    size: 11360
+  eu:
+    address: 0x097CC580
+    size: 11360
+- name: gUnk_097F8AD8
+  format: tiles4
+  us:
+    address: 0x097F8AD8
+    size: 14432
+  jp:
+    address: 0x097B2F6C
+    size: 14432
+  eu:
+    address: 0x097CF1E0
+    size: 14432
+- name: gUnk_097FC338
+  format: tiles4
+  us:
+    address: 0x097FC338
+    size: 14432
+  jp:
+    address: 0x097B67CC
+    size: 14432
+  eu:
+    address: 0x097D2A40
+    size: 14432
+- name: gUnk_09843798
+  format: tilemap
+  us:
+    address: 0x09843798
+    size: 2048
+  jp:
+    address: 0x097F8C6C
+    size: 2048
+  eu:
+    address: 0x09817E40
+    size: 2048
+- name: gUnk_09843F98
+  format: tilemap
+  us:
+    address: 0x09843F98
+    size: 2048
+  jp:
+    address: 0x097F946C
+    size: 2048
+  eu:
+    address: 0x09818640
+    size: 2048
+- name: gUnk_09844798
+  format: tilemap
+  us:
+    address: 0x09844798
+    size: 2048
+  jp:
+    address: 0x097F9C6C
+    size: 2048
+  eu:
+    address: 0x09818E40
+    size: 2048
+- name: gUnk_09844F98
+  format: tilemap
+  us:
+    address: 0x09844F98
+    size: 2048
+  jp:
+    address: 0x097FA46C
+    size: 2048
+  eu:
+    address: 0x09819640
+    size: 2048
+- name: gBossMapBlockUs_09845798
+  format: tilemap
+  declare: false
+  us:
+    address: 0x09845798
+    size: 2048
+  jp:
+    address: 0x097FAC6C
+    size: 2048
+    symbol: gBossMapBlockJp_097FAC6C
+  eu:
+    address: 0x09819E40
+    size: 2048
+    symbol: gBossMapBlockEu_09819E40
+- name: gBossMapBlockUs_09845F98
+  format: tilemap
+  declare: false
+  us:
+    address: 0x09845F98
+    size: 2048
+  jp:
+    address: 0x097FB46C
+    size: 2048
+    symbol: gBossMapBlockJp_097FB46C
+  eu:
+    address: 0x0981A640
+    size: 2048
+    symbol: gBossMapBlockEu_0981A640
+- name: gBossMapBlockUs_09846798
+  format: tilemap
+  declare: false
+  us:
+    address: 0x09846798
+    size: 2048
+  jp:
+    address: 0x097FBC6C
+    size: 2048
+    symbol: gBossMapBlockJp_097FBC6C
+  eu:
+    address: 0x0981AE40
+    size: 2048
+    symbol: gBossMapBlockEu_0981AE40
+- name: gBossMapBlockUs_09846F98
+  format: tilemap
+  declare: false
+  us:
+    address: 0x09846F98
+    size: 2048
+  jp:
+    address: 0x097FC46C
+    size: 2048
+    symbol: gBossMapBlockJp_097FC46C
+  eu:
+    address: 0x0981B640
+    size: 2048
+    symbol: gBossMapBlockEu_0981B640
