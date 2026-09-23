@@ -40,7 +40,7 @@ TaskDesc gTaskDescBosLstEdg = {
     0x4C,
 };
 
-LstAnimSet gUnk_09EF9EA4[4] = {
+LstAnimSet gLstAnimSets[4] = {
     { 5, 0, 4, 5 },
     { 5, 0, 4, 12 },
     { 5, 0, 4, 13 },
@@ -709,7 +709,7 @@ u8 func_081109B8(LstWork* work, u8 a) {
 
 #ifdef VERSION_EU
     AnimReset(&s->anim);
-    AnimChange(&s->anim, gUnk_09EF9EA4[s->unk_000].unk_00, 1);
+    AnimChange(&s->anim, gLstAnimSets[s->unk_000].unk_00, 1);
 
     if (s->unk_002 != 0 && s->unk_002 != 5) {
         s->unk_002 = 7;
@@ -852,7 +852,7 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
-    AnimStart(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+    AnimStart(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
     func_0801B37C(&work->unk_0A0, &gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
     pool = &work->tasks;
     TaskPoolInit(pool, 4);
@@ -949,7 +949,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
             }
 
             AnimReset(&work->anim);
-            AnimChange(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+            AnimChange(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
         }
 
         if (!(gBtlWork->flags & 0x2000000000000)) {
@@ -982,12 +982,12 @@ u8 task_bos_lst_bit_1(LstState* work) {
             }
 
             AnimReset(&work->anim);
-            AnimChange(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_02, 0);
+            AnimChange(&work->anim, gLstAnimSets[work->unk_000].unk_02, 0);
         }
 
         work->unk_006++;
 
-        if (AnimGetId(&work->anim) == (s16)gUnk_09EF9EA4[work->unk_000].unk_02 && AnimIsFinished(&work->anim) == 1) {
+        if (AnimGetId(&work->anim) == (s16)gLstAnimSets[work->unk_000].unk_02 && AnimIsFinished(&work->anim) == 1) {
             work->unk_002 = 3;
             work->unk_006 = 0;
             work->unk_018 = 1;
@@ -997,7 +997,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
             work->unk_064 = work->unk_030 + work->unk_03C;
             m4aSongNumStart(0x2C4);
             AnimReset(&work->anim);
-            AnimChange(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+            AnimChange(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
         }
         break;
     case 3:
@@ -1088,7 +1088,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
         AnimChange(&work->anim, 4, 1);
         break;
     case 7:
-        AnimChange(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+        AnimChange(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
         break;
     }
 

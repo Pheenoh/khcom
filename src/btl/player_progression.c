@@ -3,7 +3,7 @@
 #include "player_progression.h"
 #include "battle.h"
 
-const EnemyBaseStats gUnk_08133E5C[54] = {
+const EnemyBaseStats gEnemyBaseStats[54] = {
     { 33, 2, 3, 0 },
     { 35, 3, 3, 0 },
     { 35, 3, 3, 0 },
@@ -163,7 +163,7 @@ const EnemyBaseStats* func_0800FB14(u16 i) {
     if (i > 0x35) {
         return 0;
     }
-    return &gUnk_08133E5C[i];
+    return &gEnemyBaseStats[i];
 }
 
 void func_0800FB2C(u32 a) {

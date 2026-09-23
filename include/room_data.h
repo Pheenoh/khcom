@@ -21,7 +21,7 @@ typedef struct RoomTableEntry {
 } RoomTableEntry;
 
 extern const EmyKind gUnk_09991F44;
-extern const RoomTableEntry gUnk_09991F54[];
+extern const RoomTableEntry gRoomTableEntries[];
 extern const BosMapConfig gUnk_0999202C;
 extern const s32 gUnk_0999204C[];
 

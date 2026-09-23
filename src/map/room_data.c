@@ -9,7 +9,7 @@ const EmyKind gUnk_09991F44 =
 {32, 100, 16, 16, 0, 100, 1}
 ;
 
-const RoomTableEntry gUnk_09991F54[6] = {
+const RoomTableEntry gRoomTableEntries[6] = {
 #if defined(VERSION_US)
     {256, 0, 0, -15872, 0, 0, gRoomAssetUs_099939FA, gUnk_09EF96A4, gUnk_09EF9684, 8, 0},
     {256, -2560, 2048, -25088, 0, 0, gRoomAssetUs_09995E9C, gUnk_09EF96C8, gUnk_09EF96B0, 6, 0},

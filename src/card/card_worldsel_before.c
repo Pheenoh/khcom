@@ -55,7 +55,7 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
     w->unk_1C = 0;
     w->unk_1D = 0;
     w->unk_A3 = 0;
-    UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+    UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gWorldSelAnims[w->unk_1C].unk_00 << 5]);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->index + 16, 1);
     FadeSetPaletteExcluded(w->palette2->index + 16, 1);
 
@@ -85,13 +85,13 @@ s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
         w->angle[i] += 4;
     }
 
-    if (++w->unk_1D == gUnk_09EE8E60[w->unk_1C].unk_01) {
+    if (++w->unk_1D == gWorldSelAnims[w->unk_1C].unk_01) {
         do {
             w->unk_1C = w->unk_1C > 28 ? 0 : w->unk_1C + 1;
         } while (0);
 
         w->unk_1D = 0;
-        UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+        UpdateAllocatedObjPalette(w->palette2, &gUnk_09619178[gWorldSelAnims[w->unk_1C].unk_00 << 5]);
     }
 
     return 1;
@@ -131,7 +131,7 @@ void func_080A5830(void* a, s32 b, s32 c, s32 d) {
     TaskCreate(a, &gTaskDescWorldSelBefore, args);
 }
 
-WorldSelAnim gUnk_09EE8E60[30] = {
+WorldSelAnim gWorldSelAnims[30] = {
     { 0, 10, { 0, 0 } },
     { 1, 6, { 0, 0 } },
     { 2, 4, { 0, 0 } },

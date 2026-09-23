@@ -376,7 +376,7 @@ typedef struct WorldSelAnim {
     u8 unk_02[0x2];
 } WorldSelAnim;
 
-extern WorldSelAnim gUnk_09EE8E60[30];
+extern WorldSelAnim gWorldSelAnims[30];
 extern u8 gUnk_093FB1AC[];
 extern u8 gUnk_09619378[];
 extern u8 gUnk_093FB0CC[];
@@ -2952,7 +2952,7 @@ extern CardMessageDef gUnk_09EE8008[];
 extern TaskDesc gUnk_09EE8E18;
 extern TaskDesc gUnk_09EE8E30;
 extern TaskDesc gUnk_09EE8E48;
-extern WorldSelAnim gUnk_09EE8E60[30];
+extern WorldSelAnim gWorldSelAnims[30];
 extern TaskDesc gTaskDescWorldSelBefore;
 #ifdef VERSION_EU
 extern void* gUnkEu_09F7434C[5];

@@ -125,7 +125,7 @@ static s32 gUnk_020354D8;
 static s32 gUnk_020354DC;
 static u8 gUnk_020354E0;
 
-WorldinspectNav gUnk_09EF8FAC[12] = {
+WorldinspectNav gWorldinspectNavs[12] = {
     { 7, 8, 1, 3, 22, 14, 0, 21, 16, { 0, 0 } },
     { 6, 9, 2, 0, 15, 14, 0, 14, 16, { 0, 0 } },
     { 5, 10, 3, 1, 8, 14, 0, 7, 16, { 0, 0 } },
@@ -140,7 +140,7 @@ WorldinspectNav gUnk_09EF8FAC[12] = {
     { 3, 4, 8, 10, 1, 6, 0, 0, 8, { 0, 0 } },
 };
 
-WorldinspectMsg gUnk_09EF909C[14] = {
+WorldinspectMsg gWorldinspectMsgs[14] = {
     {
         0, 0, 0, 0, { 0, 0 }, 0, 0, { 0, 0 }, 0, 0, 0, { 0, 0 }, 0, 0, { 0, 0 }, 0,
         0,
@@ -331,7 +331,7 @@ u8 func_080FF228(s16 id) {
     u8 ret = 0;
 
     if (id != 0) {
-        ret = LoadTextSlots(eu_0805E924(gUnk_09EF909C[id].text), gUnk_020351F8);
+        ret = LoadTextSlots(eu_0805E924(gWorldinspectMsgs[id].text), gUnk_020351F8);
     }
     return ret;
 #else
@@ -339,7 +339,7 @@ u8 func_080FF228(s16 id) {
         return 0;
     }
 
-    return LoadTextSlots(gUnk_09EF909C[id].text, gUnk_020351F8);
+    return LoadTextSlots(gWorldinspectMsgs[id].text, gUnk_020351F8);
 #endif
 }
 u8 func_080FF25C(s16 id) {
@@ -351,9 +351,9 @@ u8 func_080FF25C(s16 id) {
         tbl = gUnk_09EE9138;
 
         if (gGameState.flags & 8) {
-            i = gUnk_09EF909C[id].descId2;
+            i = gWorldinspectMsgs[id].descId2;
         } else {
-            i = gUnk_09EF909C[id].descId;
+            i = gWorldinspectMsgs[id].descId;
         }
 
         p = &tbl[i];
@@ -476,12 +476,12 @@ void func_080FF330(void) {
                 gUnk_020354B8[1] = gUnk_099A8914;
             } else {
                 gUnk_020354A8[1] =
-                    LoadObjPalette(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].palette2,
-                                   gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].paletteSize2);
+                    LoadObjPalette(gWorldinspectMsgs[gUnk_02035100[gUnk_020350F8]].palette2,
+                                   gWorldinspectMsgs[gUnk_02035100[gUnk_020350F8]].paletteSize2);
                 gUnk_020354B0[1] =
-                    LoadObjTiles(gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].tiles2,
-                                 gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].tilesSize2);
-                gUnk_020354B8[1] = gUnk_09EF909C[gUnk_02035100[gUnk_020350F8]].sprite2;
+                    LoadObjTiles(gWorldinspectMsgs[gUnk_02035100[gUnk_020350F8]].tiles2,
+                                 gWorldinspectMsgs[gUnk_02035100[gUnk_020350F8]].tilesSize2);
+                gUnk_020354B8[1] = gWorldinspectMsgs[gUnk_02035100[gUnk_020350F8]].sprite2;
             }
 
             gUnk_020354A0 = func_080FF25C(gUnk_02035100[gUnk_020350F8]);
@@ -512,7 +512,7 @@ void func_080FF330(void) {
         gUnk_020354C0 = 5;
     } else if (keys & 0x40) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].up;
+            gUnk_020350F8 = gWorldinspectNavs[gUnk_020350F8].up;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -524,7 +524,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x80) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].down;
+            gUnk_020350F8 = gWorldinspectNavs[gUnk_020350F8].down;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -536,7 +536,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x20) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].left;
+            gUnk_020350F8 = gWorldinspectNavs[gUnk_020350F8].left;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -548,7 +548,7 @@ void func_080FF330(void) {
         }
     } else if (keys & 0x10) {
         while (1) {
-            gUnk_020350F8 = gUnk_09EF8FAC[gUnk_020350F8].right;
+            gUnk_020350F8 = gWorldinspectNavs[gUnk_020350F8].right;
 
             if (gUnk_020350F8 == old) {
                 break;
@@ -583,15 +583,15 @@ void func_080FF794(void) {
         if (gUnk_020350F8 <= 9) {
             for (i = 10; i < 12; i++) {
                 if (gUnk_02035100[i] != 0) {
-                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].palette,
-                                                      gUnk_09EF909C[gUnk_02035100[i]].paletteSize);
+                    gUnk_02035168[i] = LoadObjPalette(gWorldinspectMsgs[gUnk_02035100[i]].palette,
+                                                      gWorldinspectMsgs[gUnk_02035100[i]].paletteSize);
                 }
             }
         } else {
             for (i = 4; i < 6; i++) {
                 if (gUnk_02035100[i] != 0) {
-                    gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[gUnk_02035100[i]].palette,
-                                                      gUnk_09EF909C[gUnk_02035100[i]].paletteSize);
+                    gUnk_02035168[i] = LoadObjPalette(gWorldinspectMsgs[gUnk_02035100[i]].palette,
+                                                      gWorldinspectMsgs[gUnk_02035100[i]].paletteSize);
                 }
             }
         }
@@ -699,20 +699,20 @@ void func_080FF8CC(void) {
     }
 
     if (gUnk_020354C0 == 2) {
-        DrawSprite((s16)(gUnk_09EF8FAC[gUnk_020350F8].x * 8 + 22),
-                      (s16)(gUnk_09EF8FAC[gUnk_020350F8].y * 8 + 12),
+        DrawSprite((s16)(gWorldinspectNavs[gUnk_020350F8].x * 8 + 22),
+                      (s16)(gWorldinspectNavs[gUnk_020350F8].y * 8 + 12),
                       AnimUpdate(&gUnk_02035130), gUnk_02035128, gUnk_02035124, 0, prio, 2013);
         ApproachValueHalf(&gUnk_020354D8,
-                      (gUnk_09EF8FAC[gUnk_020350F8].x << 11) + 0x2000);
+                      (gWorldinspectNavs[gUnk_020350F8].x << 11) + 0x2000);
         ApproachValueHalf(&gUnk_020354DC,
-                      (gUnk_09EF8FAC[gUnk_020350F8].y << 11) + 0xFFFFFA00);
+                      (gWorldinspectNavs[gUnk_020350F8].y << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020354D8 >> 8, gUnk_020354DC >> 8, AnimUpdate(&gUnk_02035150),
                       gUnk_0203514C, gUnk_02035148, 0, prio, 2000);
     }
 
     for (i = 0; i < 12; i++) {
         if (gUnk_020351C8[i] != 0 && gUnk_02035168[i] != 0) {
-            DrawSprite((s16)(gUnk_09EF8FAC[i].x * 8 + 16), (s16)(gUnk_09EF8FAC[i].y * 8 + 16),
+            DrawSprite((s16)(gWorldinspectNavs[i].x * 8 + 16), (s16)(gWorldinspectNavs[i].y * 8 + 16),
                           gUnk_020351C8[i], gUnk_02035198[i], gUnk_02035168[i], 0, prio,
                           (u16)(i + 2001));
         }
@@ -788,8 +788,8 @@ void mode_worldinspect_0(void) {
     }
 
     for (i = 0, fa = gUnk_020350FA; i <= 13; i++) {
-        if ((gGameState.unk_180 & gUnk_09EF909C[i].flags) != 0) {
-            gUnk_02035100[fa++] = gUnk_09EF909C[i].world;
+        if ((gGameState.unk_180 & gWorldinspectMsgs[i].flags) != 0) {
+            gUnk_02035100[fa++] = gWorldinspectMsgs[i].world;
 
             if (fa > 11) {
                 break;
@@ -799,8 +799,8 @@ void mode_worldinspect_0(void) {
 
     gUnk_02035118 = 0;
     gUnk_0203511A = 0;
-    gUnk_020354D8 = (gUnk_09EF8FAC[gUnk_020350F8].x << 11) + 0x2000;
-    gUnk_020354DC = (gUnk_09EF8FAC[gUnk_020350F8].y << 11) - 0x600;
+    gUnk_020354D8 = (gWorldinspectNavs[gUnk_020350F8].x << 11) + 0x2000;
+    gUnk_020354DC = (gWorldinspectNavs[gUnk_020350F8].y << 11) - 0x600;
     gUnk_020354C0 = 0;
     gUnk_020354C2 = 16;
     gUnk_020354C8[0] = -0x800;
@@ -811,11 +811,11 @@ void mode_worldinspect_0(void) {
     for (i = 0; i <= 11; i++) {
         if (gUnk_02035100[i] != 0) {
             id = gUnk_02035100[i];
-            gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[id].palette, gUnk_09EF909C[id].paletteSize);
+            gUnk_02035168[i] = LoadObjPalette(gWorldinspectMsgs[id].palette, gWorldinspectMsgs[id].paletteSize);
             id = gUnk_02035100[i];
-            gUnk_02035198[i] = LoadObjTiles(gUnk_09EF909C[id].tiles, gUnk_09EF909C[id].tilesSize);
+            gUnk_02035198[i] = LoadObjTiles(gWorldinspectMsgs[id].tiles, gWorldinspectMsgs[id].tilesSize);
             id = gUnk_02035100[i];
-            gUnk_020351C8[i] = gUnk_09EF909C[id].sprite;
+            gUnk_020351C8[i] = gWorldinspectMsgs[id].sprite;
         } else {
             gUnk_02035168[i] = 0;
             gUnk_02035198[i] = 0;
@@ -867,15 +867,15 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i <= 11; i++) {
         if (gUnk_02035100[i] != 0) {
-            func_080FF19C(7, 4, gUnk_09A333DC, 0, 0, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
+            func_080FF19C(7, 4, gUnk_09A333DC, 0, 0, gUnk_020354D4, gWorldinspectNavs[i].x, gWorldinspectNavs[i].y);
         }
     }
 
     for (i = 0; i < gUnk_020350FA - 1; i++) {
         if (gUnk_02035100[i] != 0 && gUnk_02035100[i + 1] != 0) {
             WorldinspectConn* conn = gUnk_099930BC;
-            id = gUnk_09EF8FAC[i].rect;
-            func_080FF19C(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gUnk_09EF8FAC[i].x2, gUnk_09EF8FAC[i].y2);
+            id = gWorldinspectNavs[i].rect;
+            func_080FF19C(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gWorldinspectNavs[i].x2, gWorldinspectNavs[i].y2);
         }
     }
 
@@ -883,15 +883,15 @@ void mode_worldinspect_0(void) {
         if (gUnk_02035100[i] != 0) {
             if ((gGameState.flags & 8) == 0) {
                 if (i <= 8) {
-                    func_080FF19C(3, 1, gUnk_09A333DC, i * 3, 9, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
+                    func_080FF19C(3, 1, gUnk_09A333DC, i * 3, 9, gUnk_020354D4, gWorldinspectNavs[i].x + 3, gWorldinspectNavs[i].y + 2);
                 } else {
-                    func_080FF19C(4, 1, gUnk_09A333DC, (i - 9) * 4, 10, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
+                    func_080FF19C(4, 1, gUnk_09A333DC, (i - 9) * 4, 10, gUnk_020354D4, gWorldinspectNavs[i].x + 3, gWorldinspectNavs[i].y + 2);
                 }
             } else {
                 if (i <= 2) {
-                    func_080FF19C(4, 1, gUnk_09A333DC, i * 4, 0x15, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
+                    func_080FF19C(4, 1, gUnk_09A333DC, i * 4, 0x15, gUnk_020354D4, gWorldinspectNavs[i].x + 3, gWorldinspectNavs[i].y + 2);
                 } else {
-                    func_080FF19C(3, 1, gUnk_09A333DC, (i - 3) * 3, 0x16, gUnk_020354D4, gUnk_09EF8FAC[i].x + 3, gUnk_09EF8FAC[i].y + 2);
+                    func_080FF19C(3, 1, gUnk_09A333DC, (i - 3) * 3, 0x16, gUnk_020354D4, gWorldinspectNavs[i].x + 3, gWorldinspectNavs[i].y + 2);
                 }
             }
         }
@@ -899,9 +899,9 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i < gUnk_020350FA; i++) {
         if ((s16)floorKeep == i) {
-            func_080FF10C(3, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
+            func_080FF10C(3, 7, 4, gUnk_020354D4, gWorldinspectNavs[i].x, gWorldinspectNavs[i].y);
         } else {
-            func_080FF10C(2, 7, 4, gUnk_020354D4, gUnk_09EF8FAC[i].x, gUnk_09EF8FAC[i].y);
+            func_080FF10C(2, 7, 4, gUnk_020354D4, gWorldinspectNavs[i].x, gWorldinspectNavs[i].y);
         }
     }
 

@@ -330,7 +330,7 @@ const AnimDef gUnk_0813F91C[13] = {
 
 const char gTaskNameHumVixenFrz[] = "task_hum_vixen_frz";
 
-const VixenFrgDef gUnk_0813FA00[15] = {
+const VixenFrgDef gVixenFrgDefs[15] = {
     { 12, -29, 3, 0 },
     { 5, -37, 0, 0 },
     { -16, -24, 3, 2 },
@@ -6435,7 +6435,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     work->unk_21C = 0;
 
     for (i = 0; i < 15; i++) {
-        const VixenFrgDef* d = &gUnk_0813FA00[i];
+        const VixenFrgDef* d = &gVixenFrgDefs[i];
         e = &work->sub[i];
         e->x = args->x + (d->unk_00 << 8);
         e->y = args->y;

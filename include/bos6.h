@@ -161,7 +161,7 @@ typedef struct PcGfxSet {
     u8 unk_0E[0x02];
 } PcGfxSet;
 
-extern const PcGfxSet gUnk_09A4AC84[];
+extern const PcGfxSet gPcGfxSets[];
 
 typedef struct PcShot {
     s32 unk_00;
@@ -173,7 +173,7 @@ typedef struct PcShot {
 
 extern const u16 gUnk_09A4C9EC[];
 extern const s16 gUnk_09A4C9F2[];
-extern const PcShot gUnk_09A4C9F8[];
+extern const PcShot gPcShots[];
 
 extern const s8 gUnk_09A4CA94[];
 extern const s8 gUnk_09A4CAB5[];
@@ -653,7 +653,7 @@ extern EventState* gUnk_02039DC8;
 void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern const u16 gUnk_09A4D0EC[48];
-extern const LstAnimDef gUnk_09A4CF8C[8];
+extern const LstAnimDef gLstAnimDefs[8];
 PcSpriteCmd* func_08109ECC(PcWork* work);
 
 void func_0810A850(PcWork* work);

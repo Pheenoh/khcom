@@ -91,7 +91,7 @@ extern const MdAnimFrame gUnk_09992DBC[6];
 extern const MdAnimFrame gUnk_09992DD4[8];
 extern const MdAnimFrame gUnk_09992DF4[11];
 extern const MdAnimFrame gUnk_09992E20[1];
-extern const MdAnimDef gUnk_09992E24[11];
+extern const MdAnimDef gMdAnimDefs[11];
 
 typedef struct MdAnim {
     u16 animId;
@@ -237,7 +237,7 @@ typedef struct WorldselectTileSizes {
 #ifdef VERSION_EU
 extern const WorldselectTileSizes gUnkEu_099991E0;
 #endif
-extern const MdModel gUnk_09992F70[13];
+extern const MdModel gMdModels[13];
 
 typedef struct MdGfx {
     void* tiles;
@@ -282,7 +282,7 @@ extern u8 gUnk_09A3C9BC[];
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
 
-extern const GaEntry gUnk_09992108[41];
+extern const GaEntry gGaEntries[41];
 
 s32 task_bos_md_hahen_1(MdHahenWork* work);
 void task_bos_md_hahen_2(MdHahenWork* work);
@@ -325,7 +325,7 @@ void func_080FCF78(MdFireWork* work);
 extern const MdFirePoint gUnk_09992E98[4];
 extern const MdFirePoint gUnk_09992EB8[4];
 extern const MdFirePoint gUnk_09992ED8[4];
-extern const MdFireDef gUnk_09992EF8[6];
+extern const MdFireDef gMdFireDefs[6];
 extern const EmyKind gUnk_09992F28;
 extern u8 gUnk_09A3C99C[];
 extern u8 gUnk_099E367C[];

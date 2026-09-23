@@ -1170,7 +1170,7 @@ void func_080C9E84(void* pool) {
     u32 i;
 
     for (i = 0; i < 12; i++) {
-        CreatePooPileTask(pool, gUnk_096FCAF4[i].unk_08, gUnk_096FCAF4[i].unk_00, gUnk_096FCAF4[i].unk_04);
+        CreatePooPileTask(pool, gPooStumpDescs[i].unk_08, gPooStumpDescs[i].unk_00, gPooStumpDescs[i].unk_04);
     }
 }
 
@@ -1178,7 +1178,7 @@ u16 func_080C9EAC(void* pool, u16 b) {
     u32 i;
 
     for (i = 0; i < 80; i++) {
-        CreatePooMapobjhitTask(pool, gUnk_096FCB84[i].unk_08, gUnk_096FCB84[i].unk_00, gUnk_096FCB84[i].unk_04, b);
+        CreatePooMapobjhitTask(pool, gPooTileDescs[i].unk_08, gPooTileDescs[i].unk_00, gPooTileDescs[i].unk_04, b);
         b++;
     }
     return b;
@@ -1188,17 +1188,17 @@ u16 func_080C9EFC(void* pool, u16 b) {
     u32 i;
 
     for (i = 0; i < 85; i++) {
-        gUnk_02034DC8.x = gUnk_096FC6F8[i].unk_00;
-        gUnk_02034DC8.y = gUnk_096FC6F8[i].unk_04;
+        gUnk_02034DC8.x = gPooSpawns[i].unk_00;
+        gUnk_02034DC8.y = gPooSpawns[i].unk_04;
         gUnk_02034DC8.z = 0;
 
-        if (gUnk_096FC6F8[i].desc == &gTaskDescPooTanpopo || gUnk_096FC6F8[i].desc == &gTaskDescPooLeaf) {
+        if (gPooSpawns[i].desc == &gTaskDescPooTanpopo || gPooSpawns[i].desc == &gTaskDescPooLeaf) {
             gUnk_02034DB0.pos = gUnk_02034DC8;
             gUnk_02034DB0.unk_10 = b;
-            TaskCreate(pool, gUnk_096FC6F8[i].desc, &gUnk_02034DB0);
+            TaskCreate(pool, gPooSpawns[i].desc, &gUnk_02034DB0);
             b++;
         } else {
-            TaskCreate(pool, gUnk_096FC6F8[i].desc, &gUnk_02034DC8);
+            TaskCreate(pool, gPooSpawns[i].desc, &gUnk_02034DC8);
         }
     }
     return b;
@@ -6104,7 +6104,7 @@ void CreatePooMapobjhitTask(void* pool, u32 a, s32 x, s32 y, u16 e) {
 
     args.x = x;
     args.y = y;
-    args.desc = &gUnk_096FD8A4[a];
+    args.desc = &gPooMapObjHitDescs[a];
     args.unk_14 = a;
     args.unk_18 = e;
     TaskCreate(pool, &gTaskDescPooMapobjhit, &args);
@@ -7114,7 +7114,7 @@ const PooMapBgDesc gUnk_096FC6E0 = {
     gUnk_097A2ED8, 32768, 0, gUnk_09849898, 512, 0, gUnk_097AAED8, 16032, 16, 9
 };
 
-const PooSpawn gUnk_096FC6F8[85] = {
+const PooSpawn gPooSpawns[85] = {
     { 130816, 99328, &gTaskDescPooHoney },
     { 223232, 130304, &gTaskDescPooTrapballoon },
     { 229888, 153088, &gTaskDescPooTrapballoon },
@@ -7202,7 +7202,7 @@ const PooSpawn gUnk_096FC6F8[85] = {
     { 831488, 413696, &gTaskDescPooMapbutterflyborn },
 };
 
-const PooStumpDesc gUnk_096FCAF4[12] = {
+const PooStumpDesc gPooStumpDescs[12] = {
     { 611584, 339200, 4, 0 },
     { 619264, 343296, 3, 0 },
     { 626944, 347392, 2, 0 },
@@ -7217,7 +7217,7 @@ const PooStumpDesc gUnk_096FCAF4[12] = {
     { 739072, 416768, 0, 0 },
 };
 
-const PooTileDesc gUnk_096FCB84[80] = {
+const PooTileDesc gPooTileDescs[80] = {
     { 106496, 49152, 0x3 },
     { 180224, 86016, 0x3 },
     { 327680, 159744, 0x3 },
@@ -8325,7 +8325,7 @@ TaskDesc gTaskDescPooCabbage = {
 
 const char gTaskNamePooCabbageborn[] = "task_poo_cabbageborn";
 
-const PooMapObjHitDesc gUnk_096FD8A4[10] = {
+const PooMapObjHitDesc gPooMapObjHitDescs[10] = {
 #if defined(VERSION_US)
     { gUnk_09760D00, 5, 0, gUnkUs_09EF62B4, gUnkUs_09EF629C, gUnk_09849E78 },
     { gUnk_09761824, 11, 0, gUnkUs_09EF62E4, gUnkUs_09EF62B8, gUnk_09849E98 },

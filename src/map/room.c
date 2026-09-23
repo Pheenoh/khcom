@@ -211,7 +211,7 @@ void func_080F7F54(GaWork* work, s32 state) {
 s32 func_080F7F70(GaWork* work, s16 i) {
     s32 v;
 
-    v = gUnk_09991F54[i].unk_04;
+    v = gRoomTableEntries[i].unk_04;
 
     if (work->unk_018 != 0) {
         v = -v;
@@ -220,7 +220,7 @@ s32 func_080F7F70(GaWork* work, s16 i) {
 }
 
 s32 func_080F7F94(GaWork* work, s16 i) {
-    return gUnk_09991F54[i].unk_08;
+    return gRoomTableEntries[i].unk_08;
 }
 
 s32 func_080F7FAC(GaWork* work, s16 i) {
@@ -232,7 +232,7 @@ s32 func_080F7FC8(GaWork* work, s16 i) {
 }
 
 s32 func_080F7FE4(GaWork* work, s16 i) {
-    return gUnk_09991F54[i].unk_0C + gBtlWork->unk_0D4;
+    return gRoomTableEntries[i].unk_0C + gBtlWork->unk_0D4;
 }
 
 void func_080F800C(GaWork* work, s32 i) {
@@ -251,13 +251,13 @@ void func_080F800C(GaWork* work, s32 i) {
     e->unk_124 = func_080F7FAC(work, i);
     e->unk_128 = func_080F7FC8(work, i);
     e->unk_12C = func_080F7FE4(work, i);
-    v = gUnk_09991F54[i].x2;
+    v = gRoomTableEntries[i].x2;
 
     if (work->unk_018 != 0) {
         v = -v;
     }
     e->x2 = v;
-    e->y2 = gUnk_09991F54[i].y2;
+    e->y2 = gRoomTableEntries[i].y2;
 }
 
 void func_080F80C0(GaWork* work) {
@@ -307,7 +307,7 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         e->unk_12C -= 0xA000;
     }
     func_0801B37C(e, &gUnk_09991F44, e->unk_124, e->unk_128, e->unk_12C);
-    func_0801C7FC(e, gUnk_09991F44.unk_00, gUnk_09991F54[i].unk_00);
+    func_0801C7FC(e, gUnk_09991F44.unk_00, gRoomTableEntries[i].unk_00);
     e->unk_0A0 = 0x10;
 
     if (i == 0) {
@@ -325,9 +325,9 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
     }
     TaskPoolInit(&e->tasks, 1);
     TaskCreate(&e->tasks, &gTaskDescBtlShadow, e);
-    p = gUnk_09991F54[i].gfxTable;
-    e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].spriteCount), gUnk_09991F54[i].owner);
-    AnimInit(&e->anim, gUnk_09991F54[i].anims, p);
+    p = gRoomTableEntries[i].gfxTable;
+    e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gRoomTableEntries[i].spriteCount), gRoomTableEntries[i].owner);
+    AnimInit(&e->anim, gRoomTableEntries[i].anims, p);
     AnimStart(&e->anim, 0, 1);
     e->gfx = AnimGetGfx(&e->anim);
 

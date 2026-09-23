@@ -113,14 +113,14 @@ extern u8 gUnk_09A55A80[];
 extern u8 gUnk_09A5C280[];
 #endif
 
-const WarpRect gUnk_099930E8[4] = {
+const WarpRect gWarpRects[4] = {
     {2, 1, 20, 2},
     {2, 5, 0, 13},
     {2, 5, 3, 13},
     {4, 6, 6, 13},
 };
 
-WarpIcon gUnk_09EF9384[13] = {
+WarpIcon gWarpIcons[13] = {
     {7, 8, 1, 3, 22, 16, 0, 21, 18, {0, 0}},
     {6, 9, 2, 0, 15, 16, 0, 14, 18, {0, 0}},
     {5, 10, 3, 1, 8, 16, 0, 7, 18, {0, 0}},
@@ -136,7 +136,7 @@ WarpIcon gUnk_09EF9384[13] = {
     {3, 11, 12, 12, 3, 3, 0, 0, 0, {0, 0}},
 };
 
-WorldSelectDef gUnk_09EF9488[14] = {
+WorldSelectDef gWorldSelectDefs[14] = {
 #if defined(VERSION_US)
     {NULL, 0, {0, 0}, NULL, 0, {0, 0}, NULL, NULL},
     {gUnk_09A3D65C, 32, {0, 0}, gUnk_099A0B5C, 576, {0, 0}, gUnk_099A0B3C, gUnk_0815A56C},
@@ -226,9 +226,9 @@ u8 func_08100608(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].name), gUnk_02035618);
+    return LoadTextSlots(eu_0805E924(gWorldSelectDefs[a].name), gUnk_02035618);
 #else
-    return LoadTextSlots(gUnk_09EF9488[a].name, gUnk_02035618);
+    return LoadTextSlots(gWorldSelectDefs[a].name, gUnk_02035618);
 #endif
 }
 
@@ -237,9 +237,9 @@ u8 func_0810063C(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].name), gUnk_020356E0);
+    return LoadTextSlots(eu_0805E924(gWorldSelectDefs[a].name), gUnk_020356E0);
 #else
-    return LoadTextSlots(gUnk_09EF9488[a].name, gUnk_020356E0);
+    return LoadTextSlots(gWorldSelectDefs[a].name, gUnk_020356E0);
 #endif
 }
 
@@ -288,28 +288,28 @@ void func_081006AC(void) {
         m4aSongNumStart(0x68);
     } else if (keys & DPAD_UP) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].up;
+            gUnk_020354E8 = gWarpIcons[gUnk_020354E8].up;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_DOWN) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].down;
+            gUnk_020354E8 = gWarpIcons[gUnk_020354E8].down;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_LEFT) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].left;
+            gUnk_020354E8 = gWarpIcons[gUnk_020354E8].left;
             if (gUnk_020354E8 == prev) {
                 break;
             }
         } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_RIGHT) {
         do {
-            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].right;
+            gUnk_020354E8 = gWarpIcons[gUnk_020354E8].right;
             if (gUnk_020354E8 == prev) {
                 break;
             }
@@ -418,18 +418,18 @@ void func_08100980(void) {
 #endif
 
     if (gUnk_020357A2 == 2) {
-        DrawSprite((s16)(gUnk_09EF9384[gUnk_020354E8].x * 8 + 22),
-            (s16)(gUnk_09EF9384[gUnk_020354E8].y * 8 + 12),
+        DrawSprite((s16)(gWarpIcons[gUnk_020354E8].x * 8 + 22),
+            (s16)(gWarpIcons[gUnk_020354E8].y * 8 + 12),
             AnimUpdate(&gUnk_02035520), gUnk_02035518, gUnk_0203551C, 0, 0x800, 0x898);
-        ApproachValueHalf(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].x << 11) + 0x2000);
-        ApproachValueHalf(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].y << 11) + 0xFFFFFA00);
+        ApproachValueHalf(&gUnk_020357B4, (gWarpIcons[gUnk_020354E8].x << 11) + 0x2000);
+        ApproachValueHalf(&gUnk_020357B8, (gWarpIcons[gUnk_020354E8].y << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020357B4 >> 8, gUnk_020357B8 >> 8, AnimUpdate(&gUnk_02035558),
             gUnk_02035550, gUnk_02035554, 0, 0x800, 0x7D0);
     }
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020355E0[i] != 0) {
-            DrawSprite((s16)(gUnk_09EF9384[i].x * 8 + 16), (s16)(gUnk_09EF9384[i].y * 8 + 16),
+            DrawSprite((s16)(gWarpIcons[i].x * 8 + 16), (s16)(gWarpIcons[i].y * 8 + 16),
                 gUnk_020355E0[i], gUnk_02035570[i], gUnk_020355A8[i], 0, 0x800, (u16)(i + 0x834));
         }
     }
@@ -508,15 +508,15 @@ void mode_worldwarp_0(void) {
     gUnk_020357A8[0] = -0x800;
     gUnk_020357A8[1] = 0xA800;
     gUnk_020357B0 = -0x8000;
-    gUnk_020357B4 = (gUnk_09EF9384[gUnk_020354E8].x << 11) + 0x2000;
-    gUnk_020357B8 = (gUnk_09EF9384[gUnk_020354E8].y << 11) - 0x600;
+    gUnk_020357B4 = (gWarpIcons[gUnk_020354E8].x << 11) + 0x2000;
+    gUnk_020357B8 = (gWarpIcons[gUnk_020354E8].y << 11) - 0x600;
     LoadBgPalette(0, gUnk_09A3D37C, 0x200);
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020354F0[i] > 0) {
-            gUnk_020355A8[i] = LoadObjPalette(gUnk_09EF9488[gUnk_020354F0[i]].palette, gUnk_09EF9488[gUnk_020354F0[i]].paletteSize);
-            gUnk_02035570[i] = LoadObjTiles(gUnk_09EF9488[gUnk_020354F0[i]].tiles, gUnk_09EF9488[gUnk_020354F0[i]].tilesSize);
-            gUnk_020355E0[i] = gUnk_09EF9488[gUnk_020354F0[i]].sprite;
+            gUnk_020355A8[i] = LoadObjPalette(gWorldSelectDefs[gUnk_020354F0[i]].palette, gWorldSelectDefs[gUnk_020354F0[i]].paletteSize);
+            gUnk_02035570[i] = LoadObjTiles(gWorldSelectDefs[gUnk_020354F0[i]].tiles, gWorldSelectDefs[gUnk_020354F0[i]].tilesSize);
+            gUnk_020355E0[i] = gWorldSelectDefs[gUnk_020354F0[i]].sprite;
         } else {
             gUnk_020355A8[i] = 0;
             gUnk_02035570[i] = 0;
@@ -568,16 +568,16 @@ void mode_worldwarp_0(void) {
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020354F0[i] >= 0) {
-            func_0810057C(7, 4, gUnk_09A3691C, 0, 0, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
+            func_0810057C(7, 4, gUnk_09A3691C, 0, 0, gUnk_0203550C, gWarpIcons[i].x, gWarpIcons[i].y);
         }
     }
 
     for (i = 0; i < gUnk_020354EA - 1; i++) {
         if (gUnk_020354F0[i] >= 0 && gUnk_020354F0[i + 1] >= 0) {
-            func_0810057C(gUnk_099930E8[gUnk_09EF9384[i].rect].width, gUnk_099930E8[gUnk_09EF9384[i].rect].height,
-                gUnk_09A3691C, gUnk_099930E8[gUnk_09EF9384[i].rect].x,
-                gUnk_099930E8[gUnk_09EF9384[i].rect].y, gUnk_0203550C,
-                gUnk_09EF9384[i].x2, gUnk_09EF9384[i].y2);
+            func_0810057C(gWarpRects[gWarpIcons[i].rect].width, gWarpRects[gWarpIcons[i].rect].height,
+                gUnk_09A3691C, gWarpRects[gWarpIcons[i].rect].x,
+                gWarpRects[gWarpIcons[i].rect].y, gUnk_0203550C,
+                gWarpIcons[i].x2, gWarpIcons[i].y2);
         }
     }
 
@@ -586,26 +586,26 @@ void mode_worldwarp_0(void) {
             if ((gGameState.flags & 8) == 0) {
                 if (i <= 8) {
                     func_0810057C(3, 1, gUnk_09A3691C, i * 3, 9, gUnk_0203550C,
-                        gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
+                        gWarpIcons[i].x + 3, gWarpIcons[i].y + 2);
                 } else {
                     func_0810057C(4, 1, gUnk_09A3691C, (i - 9) * 4, 10, gUnk_0203550C,
-                        gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
+                        gWarpIcons[i].x + 3, gWarpIcons[i].y + 2);
                 }
             } else if (i <= 2) {
                 func_0810057C(4, 1, gUnk_09A3691C, i * 4, 21, gUnk_0203550C,
-                    gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
+                    gWarpIcons[i].x + 3, gWarpIcons[i].y + 2);
             } else {
                 func_0810057C(3, 1, gUnk_09A3691C, (i - 3) * 3, 22, gUnk_0203550C,
-                    gUnk_09EF9384[i].x + 3, gUnk_09EF9384[i].y + 2);
+                    gWarpIcons[i].x + 3, gWarpIcons[i].y + 2);
             }
         }
     }
 
     for (i = 0; i < gUnk_020354EA; i++) {
         if (gUnk_020354E8 == i) {
-            func_081004EC(3, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
+            func_081004EC(3, 7, 4, gUnk_0203550C, gWarpIcons[i].x, gWarpIcons[i].y);
         } else {
-            func_081004EC(2, 7, 4, gUnk_0203550C, gUnk_09EF9384[i].x, gUnk_09EF9384[i].y);
+            func_081004EC(2, 7, 4, gUnk_0203550C, gWarpIcons[i].x, gWarpIcons[i].y);
         }
     }
 

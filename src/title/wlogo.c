@@ -15,7 +15,7 @@ extern const WlogoHwtObjB gUnk_096198D4[4];
 extern WlogoWonEntry gUnk_09EF167C[];
 extern WlogoWonEntry gUnk_09EF1744[];
 extern s32 gUnk_09EF180C[];
-extern WlogoAgrEntry gUnk_09EF191C[];
+extern WlogoAgrEntry gWlogoAgrEntries[];
 extern WlogoTtMotion gUnk_09EF1B08;
 extern s16 gUnk_09EF1B68[][3];
 extern s8 gUnk_09EF1C48[];
@@ -1003,19 +1003,19 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
         work->state++;
         break;
     case 3:
-        if (work->unk_012 == gUnk_09EF191C[work->unk_014].unk_04) {
-            a.unk_00 = gUnk_09EF191C[work->unk_014].unk_00;
-            a.unk_02 = gUnk_09EF191C[work->unk_014].unk_02;
-            a.unk_06 = gUnk_09EF191C[work->unk_014].unk_06;
-            a.unk_07 = gUnk_09EF191C[work->unk_014].unk_07;
+        if (work->unk_012 == gWlogoAgrEntries[work->unk_014].unk_04) {
+            a.unk_00 = gWlogoAgrEntries[work->unk_014].unk_00;
+            a.unk_02 = gWlogoAgrEntries[work->unk_014].unk_02;
+            a.unk_06 = gWlogoAgrEntries[work->unk_014].unk_06;
+            a.unk_07 = gWlogoAgrEntries[work->unk_014].unk_07;
             TaskCreate(&gWlogoAgrTaskPool, &gTaskDescWlogoAgrSmoke, &a);
-            b.unk_08 = gUnk_09EF191C[work->unk_014].unk_08;
-            b.unk_0A = gUnk_09EF191C[work->unk_014].unk_0A;
-            b.unk_0C = gUnk_09EF191C[work->unk_014].unk_0C;
+            b.unk_08 = gWlogoAgrEntries[work->unk_014].unk_08;
+            b.unk_0A = gWlogoAgrEntries[work->unk_014].unk_0A;
+            b.unk_0C = gWlogoAgrEntries[work->unk_014].unk_0C;
             TaskCreate(&gWlogoAgrTaskPool, &gTaskDescWlogoAgrFlash1, &b);
-            b.unk_08 = gUnk_09EF191C[work->unk_014].unk_08 + 20;
-            b.unk_0A = gUnk_09EF191C[work->unk_014].unk_0A + 20;
-            b.unk_0C = gUnk_09EF191C[work->unk_014].unk_0C + 1;
+            b.unk_08 = gWlogoAgrEntries[work->unk_014].unk_08 + 20;
+            b.unk_0A = gWlogoAgrEntries[work->unk_014].unk_0A + 20;
+            b.unk_0C = gWlogoAgrEntries[work->unk_014].unk_0C + 1;
             TaskCreate(&gWlogoAgrTaskPool, &gTaskDescWlogoAgrFlash1, &b);
             work->unk_014++;
             if (work->unk_014 > 18) {
@@ -1040,9 +1040,9 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
     case 4:
         if (work->unk_012 <= 59) {
             if (work->unk_012 % 20 == 0) {
-                b.unk_08 = gUnk_09EF191C[work->unk_014].unk_08;
-                b.unk_0A = gUnk_09EF191C[work->unk_014].unk_0A;
-                b.unk_0C = gUnk_09EF191C[work->unk_014].unk_0C;
+                b.unk_08 = gWlogoAgrEntries[work->unk_014].unk_08;
+                b.unk_0A = gWlogoAgrEntries[work->unk_014].unk_0A;
+                b.unk_0C = gWlogoAgrEntries[work->unk_014].unk_0C;
                 TaskCreate(&gWlogoAgrTaskPool, &gTaskDescWlogoAgrFlash1, &b);
             }
             work->unk_014++;
@@ -1406,10 +1406,10 @@ void task_wlogo_poo_obj_0(WlogoPooObjWork* work, s32 arg) {
     work->palette = LoadObjPalette(gUnk_096FAE64, 0x20);
     work->x = 0x8200;
     work->y = 0x4000;
-    work->vx = gUnk_09619A04[work->unk_041][0].unk_04;
-    work->vy = gUnk_09619A04[work->unk_041][0].unk_08;
-    work->unk_034 = gUnk_09619A04[work->unk_041][0].unk_0C;
-    work->unk_038 = gUnk_09619A04[work->unk_041][0].unk_10;
+    work->vx = gWlogoPooObjSteps[work->unk_041][0].unk_04;
+    work->vy = gWlogoPooObjSteps[work->unk_041][0].unk_08;
+    work->unk_034 = gWlogoPooObjSteps[work->unk_041][0].unk_0C;
+    work->unk_038 = gWlogoPooObjSteps[work->unk_041][0].unk_10;
     work->unk_03C = 0;
     work->unk_03E = 0;
     work->unk_040 = 0;
@@ -1431,12 +1431,12 @@ u8 task_wlogo_poo_obj_1(WlogoPooObjWork* work) {
         if (work->unk_03E > 150) {
             return 0;
         }
-    } else if (work->unk_03E == gUnk_09619A04[work->unk_041][work->unk_03C].unk_00) {
+    } else if (work->unk_03E == gWlogoPooObjSteps[work->unk_041][work->unk_03C].unk_00) {
         work->unk_03E = 0;
-        work->vx = gUnk_09619A04[work->unk_041][work->unk_03C].unk_04;
-        work->vy = gUnk_09619A04[work->unk_041][work->unk_03C].unk_08;
-        work->unk_034 = gUnk_09619A04[work->unk_041][work->unk_03C].unk_0C;
-        work->unk_038 = gUnk_09619A04[work->unk_041][work->unk_03C].unk_10;
+        work->vx = gWlogoPooObjSteps[work->unk_041][work->unk_03C].unk_04;
+        work->vy = gWlogoPooObjSteps[work->unk_041][work->unk_03C].unk_08;
+        work->unk_034 = gWlogoPooObjSteps[work->unk_041][work->unk_03C].unk_0C;
+        work->unk_038 = gWlogoPooObjSteps[work->unk_041][work->unk_03C].unk_10;
         work->unk_03C++;
         if (work->unk_03C > 4) {
             work->unk_040++;
@@ -2189,7 +2189,7 @@ const char gTaskNameWlogoTvt[] = "task_wlogo_tvt";
 
 const char gTaskNameWlogoPoo[] = "task_wlogo_poo";
 
-const WlogoPooObjStep gUnk_09619A04[5][5] = {
+const WlogoPooObjStep gWlogoPooObjSteps[5][5] = {
     {
         { 20, { 0, 0 }, -128, 0, 0, -2 },
         { 20, { 0, 0 }, -128, -51, 0, -2 },
@@ -2387,7 +2387,7 @@ TaskDesc gTaskDescWlogoDil = {
     0x18,
 };
 
-WlogoAgrEntry gUnk_09EF191C[20] = {
+WlogoAgrEntry gWlogoAgrEntries[20] = {
     {99, 83, 10, 5, 0, 91, 85, 6, {0, 0, 0}},
     {88, 80, 20, 5, 0, 92, 85, 7, {0, 0, 0}},
     {84, 73, 26, 5, 0, 85, 73, 6, {0, 0, 0}},

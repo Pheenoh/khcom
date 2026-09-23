@@ -3,7 +3,7 @@
 
 #include "bg_animation_types.h"
 
-extern const BgAnimationChunk gUnk_0813B67C[108];
+extern const BgAnimationChunk gBgAnimationChunks[108];
 extern BgAnimationDef gUnk_09EDA558;
 extern BgAnimationDef gUnk_09EDA570;
 extern BgAnimationDef gUnk_09EDA588;

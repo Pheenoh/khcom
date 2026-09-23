@@ -46,7 +46,7 @@ u16* gUnkEu_09F84F84[5] = {
 };
 #endif
 
-const MooglePackMenuEntry gUnk_099931E4[4] = {
+const MooglePackMenuEntry gMooglePackMenuEntries[4] = {
 #if defined(VERSION_US)
     {-1, 2, 5, 1, 67, 16, gMoogleAssetUs_09A387DC, 1280, 5, 3, 40, 24, 0, {{(u16*)gMoogleAssetUs_09A39BDC, 0, 0}, {(u16*)gMoogleAssetUs_09A39BDC, 0, 16}, {(u16*)gMoogleAssetUs_09A3A3DC, 0, 0}, {(u16*)gMoogleAssetUs_09A3A3DC, 0, 16}}},
     {-1, 3, 0, -1, 163, 16, gMoogleAssetUs_09A38CDC, 1280, 17, 3, 136, 24, 0, {{(u16*)gMoogleAssetUs_09A39BDC, 12, 0}, {(u16*)gMoogleAssetUs_09A39BDC, 12, 16}, {(u16*)gMoogleAssetUs_09A3A3DC, 12, 0}, {(u16*)gMoogleAssetUs_09A3A3DC, 12, 16}}},
@@ -65,7 +65,7 @@ const MooglePackMenuEntry gUnk_099931E4[4] = {
 #endif
 };
 
-const MooglePackSpriteDef gUnk_099932D4[4] = {
+const MooglePackSpriteDef gMooglePackSpriteDefs[4] = {
 #if defined(VERSION_US)
     {gMoogleAssetUs_09A3DA9C, 32, {0, 0}, gMoogleAssetUs_099A3EC4, 800, {0, 0}, gMoogleAssetUs_099A3EA4, 10, 12},
     {gMoogleAssetUs_09A3DABC, 32, {0, 0}, gMoogleAssetUs_099A4204, 608, {0, 0}, gMoogleAssetUs_099A41E4, 12, 13},
@@ -232,7 +232,7 @@ const MooglePackCardDef gUnk_09993538[7] = {
 #endif
 };
 
-const MooglePackCardTable gUnk_099935A8[3] = {
+const MooglePackCardTable gMooglePackCardTables[3] = {
     {gUnk_09993348, 17, {0, 0}},
     {gUnk_09993458, 14, {0, 0}},
     {gUnk_09993538, 7, {0, 0}},
@@ -482,10 +482,10 @@ void func_08102984(s16 a) {
         if (gUnk_02035B18[a][j][0] >= 0) {
             LoadDecimalDigitTiles(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
                 (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
-            func_081028F8(12, 8, LANGSTR(gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].tilemap),
-                gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].srcX,
-                gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].srcY, gUnk_02035C00,
-                gUnk_099931E4[j].tilemapX, gUnk_099931E4[j].tilemapY);
+            func_081028F8(12, 8, LANGSTR(gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].tilemap),
+                gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].srcX,
+                gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].srcY, gUnk_02035C00,
+                gMooglePackMenuEntries[j].tilemapX, gMooglePackMenuEntries[j].tilemapY);
         }
     }
 
@@ -912,7 +912,7 @@ void func_08103CD8(s16 a) {
 }
 
 void func_08103D54(s16 a) {
-    LoadBgMap(1, gUnk_099931E4[a].selectionTilemap, gUnk_099931E4[a].selectionTilemapSize);
+    LoadBgMap(1, gMooglePackMenuEntries[a].selectionTilemap, gMooglePackMenuEntries[a].selectionTilemapSize);
 }
 
 void func_08103D7C(void) {
@@ -1051,15 +1051,15 @@ void func_08103F94(s16 a, s16 b) {
     cnt = 0;
 
     for (j = lo; j < hi; j++) {
-        cnt += gUnk_099935A8[j].count;
+        cnt += gMooglePackCardTables[j].count;
     }
 
     list = EwramAlloc(cnt * 4);
     k = 0;
 
     for (j = lo; j < hi; j++) {
-        e = gUnk_099935A8[j].cards;
-        n = gUnk_099935A8[j].count;
+        e = gMooglePackCardTables[j].cards;
+        n = gMooglePackCardTables[j].count;
 
         for (m = 0; m < n; m++) {
             if (e[m].weights[b] != 0) {
@@ -1146,13 +1146,13 @@ void func_081041B4(void) {
         gUnk_02035C0C = 0;
         gUnk_02035B02 = 5;
     } else if (keys & DPAD_UP) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].upEntry;
+        gUnk_02035B10 = gMooglePackMenuEntries[gUnk_02035B10].upEntry;
     } else if (keys & DPAD_DOWN) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].downEntry;
+        gUnk_02035B10 = gMooglePackMenuEntries[gUnk_02035B10].downEntry;
     } else if (keys & DPAD_LEFT) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].leftEntry;
+        gUnk_02035B10 = gMooglePackMenuEntries[gUnk_02035B10].leftEntry;
     } else if (keys & DPAD_RIGHT) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].rightEntry;
+        gUnk_02035B10 = gMooglePackMenuEntries[gUnk_02035B10].rightEntry;
     }
 
     if (gUnk_02035B10 == -1) {
@@ -1185,8 +1185,8 @@ void func_08104404(void) {
         }
         break;
     case 3:
-        ApproachValueHalf(&gUnk_02035C04, gUnk_099931E4[gUnk_02035B10].cursorX << 8);
-        ApproachValueHalf(&gUnk_02035C08, gUnk_099931E4[gUnk_02035B10].cursorY << 8);
+        ApproachValueHalf(&gUnk_02035C04, gMooglePackMenuEntries[gUnk_02035B10].cursorX << 8);
+        ApproachValueHalf(&gUnk_02035C08, gMooglePackMenuEntries[gUnk_02035B10].cursorY << 8);
         DrawSprite(gUnk_02035C04 >> 8, gUnk_02035C08 >> 8, AnimUpdate(&gUnk_02035BB8), gUnk_02035BAC, gUnk_02035BB0, 0, 0x400, 0x3E8);
         break;
     case 4:
@@ -1197,7 +1197,7 @@ void func_08104404(void) {
     for (i = 0; i < 4; i++) {
         if (gUnk_02035B18[gUnk_02035B04][i][0] >= 0) {
             v = gUnk_02035B18[gUnk_02035B04][i][1];
-            DrawSprite(gUnk_099931E4[i].spriteX + gUnk_099932D4[v].xOffset, gUnk_099931E4[i].spriteY + gUnk_099932D4[v].yOffset, gUnk_02035BF0[v], gUnk_02035BD0[v], gUnk_02035BE0[v], 0, 0x400, 0x3F2);
+            DrawSprite(gMooglePackMenuEntries[i].spriteX + gMooglePackSpriteDefs[v].xOffset, gMooglePackMenuEntries[i].spriteY + gMooglePackSpriteDefs[v].yOffset, gUnk_02035BF0[v], gUnk_02035BD0[v], gUnk_02035BE0[v], 0, 0x400, 0x3F2);
         }
     }
 }
@@ -1247,9 +1247,9 @@ void mode_ms_shop_0(void) {
     AnimStart(&gUnk_02035BB8, 0, 1);
 
     for (i = 0; i < 4; i++) {
-        gUnk_02035BE0[i] = LoadObjPalette(gUnk_099932D4[i].palette, gUnk_099932D4[i].paletteSize);
-        gUnk_02035BD0[i] = LoadObjTiles(gUnk_099932D4[i].tiles, gUnk_099932D4[i].tilesSize);
-        gUnk_02035BF0[i] = gUnk_099932D4[i].sprite;
+        gUnk_02035BE0[i] = LoadObjPalette(gMooglePackSpriteDefs[i].palette, gMooglePackSpriteDefs[i].paletteSize);
+        gUnk_02035BD0[i] = LoadObjTiles(gMooglePackSpriteDefs[i].tiles, gMooglePackSpriteDefs[i].tilesSize);
+        gUnk_02035BF0[i] = gMooglePackSpriteDefs[i].sprite;
     }
 
     EnableBg(0);

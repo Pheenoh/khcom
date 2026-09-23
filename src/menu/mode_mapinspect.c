@@ -85,7 +85,7 @@ void** gUnkEu_09F85080[5] = {
 };
 #endif
 
-MapCardCategoryDef gUnk_09EF9618[5] = {
+MapCardCategoryDef gMapCardCategoryDefs[5] = {
     {4, 1, 1, 0},
     {0, 2, 2, 0},
     {1, 3, 3, 0},
@@ -422,7 +422,7 @@ void func_081076D4(void) {
 }
 
 void func_081078F0(s16 a) {
-    RequestTilemapRectCopy(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].displayIndex * 2, 0, 2, 11, 2);
+    RequestTilemapRectCopy(gUnk_09A34D9C, GetBgScreenBase(0), 0, gMapCardCategoryDefs[a].displayIndex * 2, 0, 2, 11, 2);
 }
 
 void func_08107938(void) {
@@ -723,9 +723,9 @@ void func_08107FF0(void) {
                 m4aSongNumStart(0x69);
             }
         } else if (keys & 0x20) {
-            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].leftCategory;
+            gUnk_02035E2E = gMapCardCategoryDefs[gUnk_02035E2E].leftCategory;
         } else if (keys & 0x10) {
-            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].rightCategory;
+            gUnk_02035E2E = gMapCardCategoryDefs[gUnk_02035E2E].rightCategory;
         }
     }
 
@@ -962,7 +962,7 @@ void func_08108650(void) {
     if (gUnk_02035FCA == 2) {
         switch (gUnk_02035E2C) {
         case 1:
-            ApproachValueHalf(&gUnk_02035FDC, gUnk_09EF9618[gUnk_02035E2E].displayIndex * 3584 - 256);
+            ApproachValueHalf(&gUnk_02035FDC, gMapCardCategoryDefs[gUnk_02035E2E].displayIndex * 3584 - 256);
             ApproachValueHalf(&gUnk_02035FE0, 0);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x7D0);
             break;
@@ -1081,7 +1081,7 @@ void mode_mapinspect_0(void) {
         gUnk_02035FE0 = 0x1000;
         gUnk_02035E2C = v;
     } else {
-        gUnk_02035FDC = gUnk_09EF9618[4].displayIndex * 7 * 512 - 0x100;
+        gUnk_02035FDC = gMapCardCategoryDefs[4].displayIndex * 7 * 512 - 0x100;
         gUnk_02035FE0 = 0;
         gUnk_02035E2C = 1;
     }

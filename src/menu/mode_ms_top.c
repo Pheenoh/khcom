@@ -55,7 +55,7 @@ static s16 gUnk_020358BE;
 static u8 gUnk_020358C0;
 static s16 gUnk_020358C2;
 
-const WarpDef gUnk_09993118[2] = {
+const WarpDef gWarpDefs[2] = {
 #if defined(VERSION_US)
     {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetUs_09A3D81C, 32, {0, 0}, gWorldwarpAssetUs_099A2F84, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
     {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetUs_09A3D83C, 32, {0, 0}, gWorldwarpAssetUs_099A32E4, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
@@ -170,7 +170,7 @@ void func_081015E8(void) {
     s32 v;
     s32 base;
 
-    x = gUnk_09993118[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8);
+    x = gWarpDefs[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8);
     flag = 0;
     v = x;
     base = (-gUnk_02035880) >> 8;
@@ -189,7 +189,7 @@ void func_08101654(void) {
     s32 base;
 
     for (i = 0; i <= 1; i++) {
-        x = gUnk_09993118[0].gfx[i].x - (gUnk_02035884 >> 8);
+        x = gWarpDefs[0].gfx[i].x - (gUnk_02035884 >> 8);
         flag = 0;
         v = x;
         base = (-gUnk_02035880) >> 8;
@@ -204,15 +204,15 @@ void func_08101654(void) {
         if (gUnk_02035818[i] != 0) {
             ReleaseObjTiles(gUnk_02035818[i]);
         }
-        gUnk_02035820[i] = LoadObjPalette(gUnk_09993118[flag].gfx[i].palette, gUnk_09993118[flag].gfx[i].paletteSize);
-        gUnk_02035818[i] = LoadObjTiles(gUnk_09993118[flag].gfx[i].tiles, gUnk_09993118[flag].gfx[i].tilesSize);
-        AnimInit(&gUnk_02035828[i], gUnk_09993118[flag].gfx[i].anims, gUnk_09993118[flag].gfx[i].gfxTable);
-        AnimStart(&gUnk_02035828[i], gUnk_09993118[flag].gfx[i].animId, 1);
+        gUnk_02035820[i] = LoadObjPalette(gWarpDefs[flag].gfx[i].palette, gWarpDefs[flag].gfx[i].paletteSize);
+        gUnk_02035818[i] = LoadObjTiles(gWarpDefs[flag].gfx[i].tiles, gWarpDefs[flag].gfx[i].tilesSize);
+        AnimInit(&gUnk_02035828[i], gWarpDefs[flag].gfx[i].anims, gWarpDefs[flag].gfx[i].gfxTable);
+        AnimStart(&gUnk_02035828[i], gWarpDefs[flag].gfx[i].animId, 1);
     }
 }
 
 void func_08101740(s16 a) {
-    AnimStart(&gWorldwarpAnim, gUnk_09993118[a].animId, 1);
+    AnimStart(&gWorldwarpAnim, gWarpDefs[a].animId, 1);
 }
 
 void func_08101768(void) {
@@ -234,7 +234,7 @@ void func_081017A0(void) {
         if (gUnk_020357C0 == 1) {
             AnimStart(&gUnk_02035828[gUnk_020357C0], 2, 1);
         }
-        gUnk_020357C4 = gUnk_09993118[gUnk_020357C0].mode;
+        gUnk_020357C4 = gWarpDefs[gUnk_020357C0].mode;
         m4aSongNumStart(0x66);
         FadeStartOut(0, 16);
         FadeLock();
@@ -316,20 +316,20 @@ void func_08101970(void) {
         flags |= 1;
         break;
     }
-    DrawSprite(gUnk_09993118[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8), gUnk_09993118[0].y3,
+    DrawSprite(gWarpDefs[0].x3 + ((gUnk_0203588C - gUnk_02035884) >> 8), gWarpDefs[0].y3,
         AnimUpdate(&gUnk_02035860), gUnk_02035858, gUnk_0203585C, 0, flags, 0x834);
-    DrawSprite((gUnk_02035888 >> 8) + gUnk_09993118[0].x, gUnk_09993118[0].y,
+    DrawSprite((gUnk_02035888 >> 8) + gWarpDefs[0].x, gWarpDefs[0].y,
         AnimUpdate(&gWorldwarpAnim), gUnk_020357D0, gUnk_020357D4, 0, 0x800, 0x7D0);
 
-    DrawSprite(gUnk_09993118[0].x2 + (gUnk_02035888 >> 8), gUnk_09993118[0].y2,
+    DrawSprite(gWarpDefs[0].x2 + (gUnk_02035888 >> 8), gWarpDefs[0].y2,
         AnimUpdate(&gUnk_020357F8), gUnk_020357F0, gUnk_020357F4, 0,
-        0x800 | gUnk_09993118[gUnk_020357C0].flags, 0x7D0);
-    DrawSprite(gUnk_09993118[0].x2 + (gUnk_02035888 >> 8), gUnk_09993118[0].y2,
+        0x800 | gWarpDefs[gUnk_020357C0].flags, 0x7D0);
+    DrawSprite(gWarpDefs[0].x2 + (gUnk_02035888 >> 8), gWarpDefs[0].y2,
         gUnk_08B22BA8, gUnk_02035810, gUnk_02035814, 0,
-        0x800 | gUnk_09993118[gUnk_020357C0].flags, 0x7D1);
+        0x800 | gWarpDefs[gUnk_020357C0].flags, 0x7D1);
 
     for (i = 0; i <= 1; i++) {
-        DrawSprite(gUnk_09993118[0].gfx[i].x - (gUnk_02035884 >> 8), gUnk_09993118[0].gfx[i].y,
+        DrawSprite(gWarpDefs[0].gfx[i].x - (gUnk_02035884 >> 8), gWarpDefs[0].gfx[i].y,
             AnimUpdate(&gUnk_02035828[i]), gUnk_02035818[i], gUnk_02035820[i], 0, 0x800, 0x7D0);
     }
 

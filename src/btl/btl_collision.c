@@ -4,7 +4,7 @@
 #include "btl_collision.h"
 #include "btl_effect.h"
 
-const BattleAttackDef gUnk_0813400C[330] = {
+const BattleAttackDef gBattleAttackDefs[330] = {
     { 256, 204, 0, 3, func_080136E0, 0x80002000 },
     { 256, 204, 204, 3, func_080136E0, 0x80002000 },
     { 384, 384, 384, 16, func_080136E0, 0x80002000 },
@@ -388,7 +388,7 @@ void func_08011364(BtlObj* a, BtlObj* b, const BattleAttackDef* c) {
 }
 
 s32 func_08011398(BtlObj* hit, s32 index) {
-    const BattleAttackDef* attack = &gUnk_0813400C[index];
+    const BattleAttackDef* attack = &gBattleAttackDefs[index];
     s32 scale = gBtlWork->unk_124;
     BtlObj* target;
     BtlObj* source;
@@ -756,7 +756,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
     s32 res;
     s32 r2;
 
-    t = &gUnk_0813400C[a];
+    t = &gBattleAttackDefs[a];
     cnt = 0;
     flag = 0;
     gBtlWork->unk_0B4 = 1;
