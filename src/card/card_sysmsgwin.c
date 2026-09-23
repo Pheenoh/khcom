@@ -236,7 +236,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
     }
 
     if (GetKeysPressed() & A_BUTTON) {
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         if (w->gfx2 != 0) {
 #ifdef VERSION_JP
             w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->unk_04],
@@ -318,7 +318,7 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
     case DPAD_UP:
         if (w->unk_13D != 0) {
             w->unk_13D--;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         ((u8*)&w->unk_13E)[0] = 4;
@@ -326,14 +326,14 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
     case DPAD_DOWN:
         if (w->unk_13D == 0) {
             w->unk_13D++;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         ((u8*)&w->unk_13E)[0] = 4;
         break;
     case A_BUTTON:
     case START_BUTTON:
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
 
         if (w->unk_13D == 0) {
             gUnk_0203A9D8 = 1;
@@ -713,7 +713,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     case DPAD_LEFT:
         if (w->unk_13D != 0) {
             w->unk_13D--;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         ((u8*)&w->unk_13E)[0] = 1;
@@ -721,7 +721,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     case DPAD_RIGHT:
         if (w->unk_13D == 0) {
             w->unk_13D++;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         ((u8*)&w->unk_13E)[0] = 1;
@@ -731,7 +731,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     switch (GetKeysPressed()) {
     case A_BUTTON:
     case START_BUTTON:
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
 
         if (w->unk_13D == 0) {
             gUnk_0203A9D8 = 1;
@@ -743,7 +743,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
         SetTaskUpdate(a, (void*)func_080A5150);
         break;
     case B_BUTTON:
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_0203A9D8 = 0;
         w->unk_142 = 0;
         SetTaskUpdate(a, (void*)func_080A5150);

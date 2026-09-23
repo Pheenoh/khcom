@@ -730,7 +730,7 @@ u8 func_0810329C(u16 a) {
             ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].timer);
 
             if (--gUnk_020358C8[i].timer == 0) {
-                m4aSongNumStart(0xD2);
+                m4aSongNumStart(SONG_SYS_KAIHUKU);
                 gUnk_020358C8[i].state = 8;
 
                 for (j = 0; j < 5; j++) {
@@ -802,7 +802,7 @@ u8 func_0810329C(u16 a) {
             }
 
             if (--gUnk_020358C8[i].timer == 0) {
-                m4aSongNumStart(0xD2);
+                m4aSongNumStart(SONG_SYS_KAIHUKU);
                 gUnk_020358C8[i].state = 8;
 
                 for (j = 0; j < 5; j++) {
@@ -869,7 +869,7 @@ u8 func_0810329C(u16 a) {
             old = gUnk_02035B62;
 
             if (keys & (A_BUTTON | B_BUTTON)) {
-                m4aSongNumStart(0x68);
+                m4aSongNumStart(SONG_SYS_CLOSE);
                 result = 0;
             } else if (keys & DPAD_LEFT) {
                 gUnk_02035B62--;
@@ -888,7 +888,7 @@ u8 func_0810329C(u16 a) {
                 gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].name), gUnk_02035A44);
                 gUnk_02035A50 = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                 LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->index, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
-                m4aSongNumStart(0x65);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
 
             break;
@@ -922,12 +922,12 @@ void func_08103D7C(void) {
 
     if ((keys & A_BUTTON) == 0) {
         if (keys & B_BUTTON) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             FadeStartOut(0, 16);
             gUnk_02035C0C = 1;
             gUnk_02035B02 = 5;
         } else if (keys & START_BUTTON) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             FadeStartOut(0, 16);
             gUnk_02035C0C = 0;
             gUnk_02035B02 = 5;
@@ -945,12 +945,12 @@ void func_08103DE8(void) {
 
     if ((keys & A_BUTTON) == 0) {
         if (keys & B_BUTTON) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             FadeStartOut(0, 16);
             gUnk_02035C0C = 1;
             gUnk_02035B02 = 5;
         } else if (keys & START_BUTTON) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             FadeStartOut(0, 16);
             gUnk_02035C0C = 0;
             gUnk_02035B02 = 5;
@@ -984,7 +984,7 @@ void func_08103DE8(void) {
             gUnk_02035B02 = 3;
             gUnk_02035B10 = 0;
             func_08103D54(0);
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
 
@@ -995,7 +995,7 @@ void func_08103DE8(void) {
     if (gUnk_02035B04 != old) {
         func_08103CD8(gUnk_02035B04);
         func_08102984(gUnk_02035B04);
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -1131,18 +1131,18 @@ void func_081041B4(void) {
             func_08102AB4(gUnk_02035B10 % 2 * 96 + 72, gUnk_02035B10 / 2 * 64 + 48);
             FadeSetPaletteExcluded(13, 1);
             FadeToAmount(0, 16, 8);
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             gUnk_02035B02 = 4;
         } else {
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
         }
     } else if (keys & B_BUTTON) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         FadeStartOut(0, 16);
         gUnk_02035C0C = 1;
         gUnk_02035B02 = 5;
     } else if (keys & START_BUTTON) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         FadeStartOut(0, 16);
         gUnk_02035C0C = 0;
         gUnk_02035B02 = 5;
@@ -1162,14 +1162,14 @@ void func_081041B4(void) {
         gUnk_02035B10 = old;
         gUnk_02035B02 = 2;
         DisableBg(1);
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     } else if (gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] < 0) {
         gUnk_02035B10 = old;
     }
 
     if (gUnk_02035B10 != old) {
         func_08103D54(gUnk_02035B10);
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 

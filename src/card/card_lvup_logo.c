@@ -89,7 +89,7 @@ void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     w->unk_94 = 0;
     w->unk_95 = 0;
     w->unk_6C[0] = -0x280;
-    m4aSongNumStart(0x23A);
+    m4aSongNumStart(SONG_BTL_LVUP);
 }
 
 s32 Lvup_Logo_1(u8* work) {

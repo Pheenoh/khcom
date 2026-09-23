@@ -693,7 +693,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 if (w->unk_B9 == 3) {
                     func_0807ABC8(w);
                 } else if (gUnk_02034A98->cardDef->unk_2A == 3) {
-                    m4aSongNumStart(105);
+                    m4aSongNumStart(SONG_SYS_BEEP);
                 } else if (w->unk_C0[w->unk_B8] == 0) {
                     if (!(gUnk_02034A98->unk_78 & 2)) {
                         if (func_0807B60C() != 0) {
@@ -701,16 +701,16 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                                 func_0807A188(w);
                             }
                         } else if (gUnk_02034A98->unk_78 & 0x20) {
-                            m4aSongNumStart(105);
+                            m4aSongNumStart(SONG_SYS_BEEP);
                         }
                     } else if (gUnk_02034A98->unk_78 & 0x20) {
-                        m4aSongNumStart(105);
+                        m4aSongNumStart(SONG_SYS_BEEP);
                     }
                 }
             } else if (w->unk_B9 != 0) {
                 func_0807ABC8(w);
             } else {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
             w->unk_C4[4] = 1;
             break;
@@ -725,10 +725,10 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                             if (func_0807B60C() != 0) {
                                 func_08079600(w);
                             } else if (gUnk_02034A98->unk_78 & 0x20) {
-                                m4aSongNumStart(105);
+                                m4aSongNumStart(SONG_SYS_BEEP);
                             }
                         } else if (gUnk_02034A98->unk_78 & 0x20) {
-                            m4aSongNumStart(105);
+                            m4aSongNumStart(SONG_SYS_BEEP);
                         }
                     }
                 } else {
@@ -753,7 +753,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (w->unk_B9 != 0) {
                 func_0807ABC8(w);
             } else if (!(gBtlWork->flags & 0x80)) {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
             w->unk_C4[4] = 1;
             break;
@@ -815,7 +815,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             gBtlWork->flags |= 0x80000000LL;
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
@@ -833,7 +833,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
 #endif
                 gUnk_02034A98 = 0;
             }
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
@@ -854,7 +854,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
 #endif
                 gUnk_02034A98 = 0;
             }
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
@@ -1051,7 +1051,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
 #endif
                 gUnk_02034A98 = 0;
             }
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
@@ -1265,7 +1265,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
             gUnk_02039B9C->flags &= ~0x1000000;
         }
 
-        m4aSongNumStop(145);
+        m4aSongNumStop(SONG_SYS_RELOAD);
 
         return 0;
     }
@@ -1353,7 +1353,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
             gBtlWork->flags &= ~0x80000000LL;
             gBtlWork->flags &= ~0x100;
             w->unk_C4[0] = 0;
-            m4aSongNumStop(145);
+            m4aSongNumStop(SONG_SYS_RELOAD);
             gUnk_02034A9C = 0;
             SetTaskUpdate(task, (u32)func_08076F80);
         }
@@ -1363,7 +1363,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
         w->unk_BC[w->unk_B8] = 0;
         w->unk_C4[0] = 0;
         func_0807A75C(w);
-        m4aSongNumStop(145);
+        m4aSongNumStop(SONG_SYS_RELOAD);
     }
 
     TaskPoolUpdate((TaskPool*)w);

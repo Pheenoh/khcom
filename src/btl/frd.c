@@ -114,40 +114,40 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
         work->unk_160 = 1;
 #ifdef VERSION_EU
         if (gLanguage == 3) {
-            m4aSongNumStart(0xAB);
+            m4aSongNumStart(SONG_VO_SR_SUMMON00);
         } else {
-            m4aSongNumStart(0xB4);
+            m4aSongNumStart(SONG_VO_SR_SUMMON04);
         }
 #else
-        m4aSongNumStart(0xB4);
+        m4aSongNumStart(SONG_VO_SR_SUMMON04);
 #endif
         break;
     case 1:
         work->unk_160 = 1;
 #ifdef VERSION_EU
         if (gLanguage == 3) {
-            m4aSongNumStart(0xAB);
+            m4aSongNumStart(SONG_VO_SR_SUMMON00);
         } else {
-            m4aSongNumStart(0xB4);
+            m4aSongNumStart(SONG_VO_SR_SUMMON04);
         }
 #else
-        m4aSongNumStart(0xB4);
+        m4aSongNumStart(SONG_VO_SR_SUMMON04);
 #endif
         break;
     case 2:
         work->unk_160 = 1;
 #ifdef VERSION_EU
         if (gLanguage == 3) {
-            m4aSongNumStart(0xAB);
+            m4aSongNumStart(SONG_VO_SR_SUMMON00);
         } else {
-            m4aSongNumStart(0xB4);
+            m4aSongNumStart(SONG_VO_SR_SUMMON04);
         }
 #else
-        m4aSongNumStart(0xB4);
+        m4aSongNumStart(SONG_VO_SR_SUMMON04);
 #endif
         break;
     default:
-        m4aSongNumStart(0xB3);
+        m4aSongNumStart(SONG_VO_DL_ATTACK00);
         func_08017260(0, 0, 0, 0x180);
         func_08045494(body, 0, 8, 8);
         break;
@@ -184,7 +184,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             if (work->unk_14D == 3) work->state = 8;
             else {
                 work->state = 1;
-                m4aSongNumStart(0xB3);
+                m4aSongNumStart(SONG_VO_DL_ATTACK00);
             }
         }
         break;
@@ -584,12 +584,12 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     body = &work->body;
 #ifdef VERSION_EU
     if (gLanguage == 1 || gLanguage == 3) {
-        m4aSongNumStart(0xAB);
+        m4aSongNumStart(SONG_VO_SR_SUMMON00);
     } else {
-        m4aSongNumStart(0xAE);
+        m4aSongNumStart(SONG_VO_SR_SUMMON03);
     }
 #else
-    m4aSongNumStart(0xAE);
+    m4aSongNumStart(SONG_VO_SR_SUMMON03);
 #endif
 
     if (args->unk_02 != 0) {
@@ -655,7 +655,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         if (func_080465F0(work)) {
             work->state = 1;
             work->unk_14E = 0;
-            m4aSongNumStart(0xB2);
+            m4aSongNumStart(SONG_VO_GF_ATTACK00);
         }
         break;
     case 1:
@@ -737,7 +737,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
             if (body->flags & 4
                     ? func_08011F78(work->unk_14D + 120, body->x - 0xF00, body->y, body->z, 0x1E, 0x0C, 0x30)
                     : func_08011F78(work->unk_14D + 120, body->x + 0xF00, body->y, body->z, 0x1E, 0x0C, 0x30)) {
-                m4aSongNumStart(0x20A);
+                m4aSongNumStart(SONG_EF_GFHIT);
             }
 
             ClampBattlePosition(&body->x, &body->y, -16, 0);
@@ -780,7 +780,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         work->angle += 4;
 
         if (func_08011F78(0x7A, body->x, body->y, body->z, 0x23, 0x1C, 0x30)) {
-            m4aSongNumStart(0x20A);
+            m4aSongNumStart(SONG_EF_GFHIT);
         }
 
         func_080465F0(work);
@@ -854,7 +854,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     BtlObj* body;
 
     body = &work->body;
-    m4aSongNumStart(0xBB);
+    m4aSongNumStart(SONG_VO_SR_SUMMON10);
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -983,7 +983,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         if (body->flags & 4
                 ? func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)
                 : func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)) {
-            m4aSongNumStart(0x250);
+            m4aSongNumStart(SONG_BTL_AR_PUNCHHIT);
         }
 
         if (body->flags & 4) {
@@ -1020,7 +1020,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         body->y += (work->actor->y - body->y) >> 4;
 
         if (work->unk_14E == 20) {
-            m4aSongNumStart(0xBE);
+            m4aSongNumStart(SONG_VO_AR_ATTACK00);
         }
 
         work->unk_14E++;
@@ -1104,7 +1104,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     BtlObj* body;
 
     body = &work->body;
-    m4aSongNumStart(0xB8);
+    m4aSongNumStart(SONG_VO_SR_SUMMON07);
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -1183,7 +1183,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         if (func_080474A8(work)) {
             work->state = 1;
             work->unk_14E = 0;
-            m4aSongNumStart(0xC1);
+            m4aSongNumStart(SONG_VO_JC_ATTACK00);
         }
         break;
     case 1:
@@ -1242,7 +1242,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         if (AnimIsFinished(&work->anim)) {
             work->state = 9;
             GetRandom();
-            m4aSongNumStart(0xC1);
+            m4aSongNumStart(SONG_VO_JC_ATTACK00);
             work->unk_14E = 0;
         } else work->unk_14E++;
         break;
@@ -1574,7 +1574,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     BtlObj* body;
 
     body = &work->body;
-    m4aSongNumStart(0xB9);
+    m4aSongNumStart(SONG_VO_SR_SUMMON08);
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -1755,7 +1755,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         if (AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
             work->state = 4;
-            m4aSongNumStart(0xBF);
+            m4aSongNumStart(SONG_VO_PP_ATTACK00);
         } else {
             work->unk_14E++;
         }
@@ -1798,11 +1798,11 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         }
         if (body->flags & 4) {
             if (func_08011F78(150, body->x - 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
-                m4aSongNumStart(0x252);
+                m4aSongNumStart(SONG_BTL_PP_SWORDHIT);
             }
         } else {
             if (func_08011F78(150, body->x + 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
-                m4aSongNumStart(0x252);
+                m4aSongNumStart(SONG_BTL_PP_SWORDHIT);
             }
         }
         if (work->unk_14E > work->unk_152) {
@@ -1909,7 +1909,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     BtlObj* body;
 
     body = &work->body;
-    m4aSongNumStart(0xBC);
+    m4aSongNumStart(SONG_VO_SR_SUMMON11);
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -1984,7 +1984,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         if (func_080490FC(work)) {
             work->state = 1;
             work->unk_14E = 0;
-            m4aSongNumStart(0xC0);
+            m4aSongNumStart(SONG_VO_AD_ATTACK00);
         }
         break;
     case 1:
@@ -2051,7 +2051,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             case 5:
             case 6:
                 if ((body->flags & 4) ? func_08011F78(0x95, body->x - 0x1E00, body->y, body->z, 20, 20, 50) : func_08011F78(0x95, body->x + 0x1E00, body->y, body->z, 20, 20, 50)) {
-                    m4aSongNumStart(0x251);
+                    m4aSongNumStart(SONG_BTL_AD_SWORDHIT);
                 }
                 break;
             }
@@ -2146,12 +2146,12 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     body = &work->body;
 #ifdef VERSION_EU
     if (gLanguage == 0) {
-        m4aSongNumStart(0xBA);
+        m4aSongNumStart(SONG_VO_SR_SUMMON09);
     } else {
-        m4aSongNumStart(0xAB);
+        m4aSongNumStart(SONG_VO_SR_SUMMON00);
     }
 #else
-    m4aSongNumStart(0xBA);
+    m4aSongNumStart(SONG_VO_SR_SUMMON09);
 #endif
 
     if (args->unk_02 != 0) {
@@ -2234,12 +2234,12 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
     switch (work->state) {
     case 2:
         if (work->unk_14E == 0) {
-            m4aSongNumStart(0xBD);
+            m4aSongNumStart(SONG_VO_BE_ATTACK00);
         }
 
         if (work->anim.timer == 0 && AnimGetFrame(&work->anim) == 2) {
             work->unk_158 = -0x400;
-            m4aSongNumStart(0x270);
+            m4aSongNumStart(SONG_BTL_BE_ATT02);
         }
 
         if (body->z < body->unk_010) {
@@ -2270,7 +2270,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
             AnimChangeWithDef(gUnk_0813ED90, &work->anim, 1, 1, work->tiles);
 
             if (work->unk_14D != 2) {
-                m4aSongNumStart(0xBD);
+                m4aSongNumStart(SONG_VO_BE_ATTACK00);
             }
         }
 
@@ -2289,7 +2289,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
         }
 
         if (func_08011F78(work->unk_15C, body->x, body->y, body->z - 0x1800, 0x28, 0x14, 0x10)) {
-            m4aSongNumStart(0x26F);
+            m4aSongNumStart(SONG_BTL_BE_ATT01);
         }
 
         func_080497E8(work);

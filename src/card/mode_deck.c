@@ -70,7 +70,7 @@ void menu_0(MenuWork* w) {
     w->unk_10 = 0;
     w->tiles = LoadObjTiles(gUnk_090D4DD0, 0x2E80);
     w->palette = LoadObjPalette(gUnk_096148B8, 0x20);
-    m4aSongNumStart(103);
+    m4aSongNumStart(SONG_SYS_CANSEL);
 }
 
 u8 menu_1(MenuWork* w) {
@@ -95,7 +95,7 @@ u8 menu_1(MenuWork* w) {
                 w->unk_11 = 5;
             }
 
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         if (GetKeysRepeat() & DPAD_DOWN) {
@@ -105,7 +105,7 @@ u8 menu_1(MenuWork* w) {
                 w->unk_11 = 0;
             }
 
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         if (GetKeysPressed() & A_BUTTON) {
@@ -113,28 +113,28 @@ u8 menu_1(MenuWork* w) {
             case 0:
                 w->unk_10 = 2;
                 w->unk_11 = 6;
-                m4aSongNumStart(103);
+                m4aSongNumStart(SONG_SYS_CANSEL);
                 break;
             case 2:
                 func_0801CB0C();
                 FadeStartOut(0, 32);
                 w->unk_10 = 4;
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             case 1:
             case 3:
             case 4:
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
                 break;
             case 5:
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
                 break;
             }
         }
 
         if (GetKeysPressed() & B_BUTTON) {
             w->unk_10 = 5;
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         }
 
         break;
@@ -146,7 +146,7 @@ u8 menu_1(MenuWork* w) {
                 w->unk_11 = 9;
             }
 
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         if (GetKeysRepeat() & DPAD_DOWN) {
@@ -156,13 +156,13 @@ u8 menu_1(MenuWork* w) {
                 w->unk_11 = 6;
             }
 
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         if (GetKeysPressed() & B_BUTTON) {
             w->unk_10 = 1;
             w->unk_11 = 0;
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         }
 
         if (GetKeysPressed() & A_BUTTON) {
@@ -170,23 +170,23 @@ u8 menu_1(MenuWork* w) {
             case 6:
                 w->unk_11 = 0;
                 w->unk_10 = 1;
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             case 7:
                 w->unk_11 = 0;
                 w->unk_10 = 1;
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             case 8:
                 w->unk_11 = 0;
                 w->unk_10 = 1;
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             case 9:
                 func_0801CB0C();
                 FadeStartOut(0, 32);
                 w->unk_10 = 4;
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             }
         }

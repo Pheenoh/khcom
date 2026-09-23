@@ -99,43 +99,43 @@ void func_0800C6B4(void) {
 void func_0800C6B8(void) {
     switch (gGameState.unk_00D) {
     case 1:
-        m4aSongNumStart(1);
+        m4aSongNumStart(SONG_BGM_ALICE_BTL);
         break;
     case 3:
-        m4aSongNumStart(23);
+        m4aSongNumStart(SONG_BGM_ALADDIN_BATTLE);
         break;
     case 4:
-        m4aSongNumStart(17);
+        m4aSongNumStart(SONG_BGM_MARMAID_BATTLE);
         break;
     case 5:
-        m4aSongNumStart(9);
+        m4aSongNumStart(SONG_BGM_PINOCCHIO_BTL);
         break;
     case 6:
-        m4aSongNumStart(20);
+        m4aSongNumStart(SONG_BGM_HERCULES_BATTLE);
         break;
     case 7:
-        m4aSongNumStart(16);
+        m4aSongNumStart(SONG_BGM_HALLOWEEN_BTL);
         break;
     case 8:
-        m4aSongNumStart(11);
+        m4aSongNumStart(SONG_BGM_PETERPAN_BTL);
         break;
     case 10:
-        m4aSongNumStart(26);
+        m4aSongNumStart(SONG_BGM_HOLLOW_BATTLE);
         break;
     case 11:
-        m4aSongNumStart(12);
+        m4aSongNumStart(SONG_BGM_TOWN_BTL);
         break;
     case 9:
-        m4aSongNumStart(40);
+        m4aSongNumStart(SONG_BGM_DESTINY_BATTLE);
         break;
     case 12:
-        m4aSongNumStart(39);
+        m4aSongNumStart(SONG_BGM_F13F_FORGET_BATTLE);
         break;
     case 13:
-        m4aSongNumStart(43);
+        m4aSongNumStart(SONG_BGM_TWILIGHT_BATTLE);
         break;
     default:
-        m4aSongNumStart(3);
+        m4aSongNumStart(SONG_BGM_BOSS1_WORLD);
         break;
     }
 }

@@ -1520,13 +1520,13 @@ void func_080BA62C(TmFootWork* work) {
 
     if (work->tm->unk_34 == 2) {
         if (func_08011F78(239, work->body3.x, work->body3.y - 0x500, 0, 20, 16, 20) == 1) {
-            m4aSongNumStart(0x248);
+            m4aSongNumStart(SONG_BTL_MON_HIT03);
         }
     }
 
     if (work->tm->unk_34 == 7) {
         if (func_08011F78(239, work->body4.x, work->body4.y - 0x500, 0, 20, 16, 20) == 1) {
-            m4aSongNumStart(0x248);
+            m4aSongNumStart(SONG_BTL_MON_HIT03);
         }
     }
 }
@@ -2306,10 +2306,10 @@ void func_080BB924(TmArmWork* work) {
             }
 
             if (r == 1) {
-                m4aSongNumStart(0x248);
+                m4aSongNumStart(SONG_BTL_MON_HIT03);
             }
 
-            m4aSongNumStart(0x210);
+            m4aSongNumStart(SONG_BTL_LB_RUMB);
         }
 
         if (work->unk_1B0 > 50) {
@@ -2347,7 +2347,7 @@ void func_080BB924(TmArmWork* work) {
             }
 
             func_0802F1E8();
-            m4aSongNumStart(0x210);
+            m4aSongNumStart(SONG_BTL_LB_RUMB);
             func_08011F78(238, gBtlWork->unk_000, gBtlWork->unk_004, 0, 320, 240, 1);
             gUnk_0203AC64 = gBtlWork->unk_000;
             gUnk_0203AC78 = gBtlWork->unk_004;
@@ -2390,7 +2390,7 @@ void func_080BB924(TmArmWork* work) {
             }
 
             func_0802F1E8();
-            m4aSongNumStart(0x210);
+            m4aSongNumStart(SONG_BTL_LB_RUMB);
             func_08011F78(238, gBtlWork->unk_000, gBtlWork->unk_004, 0, 320, 240, 1);
             gUnk_0203AC64 = gBtlWork->unk_000;
             gUnk_0203AC78 = gBtlWork->unk_004;
@@ -2419,7 +2419,7 @@ void func_080BB924(TmArmWork* work) {
         if (work->unk_1B0 == 21) {
             if (func_08011F78(240, work->src->state->unk_08, work->src->state->unk_0C,
                               work->unk_1F8[1].z, 36, 32, 32) == 1) {
-                m4aSongNumStart(0x248);
+                m4aSongNumStart(SONG_BTL_MON_HIT03);
             }
         }
 
@@ -2775,7 +2775,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
     case 2:
         switch (work->unk_066) {
         case 0:
-            m4aSongNumStart(0x225);
+            m4aSongNumStart(SONG_BTL_TABLE_U);
             EnableBg(1);
             LoadBgMap(1, &gUnk_096BF464[0x5000], 0x800);
             ColliderSetDisabled(&work->collider, 0);

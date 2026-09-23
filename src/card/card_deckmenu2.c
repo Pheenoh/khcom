@@ -1439,7 +1439,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         } else {
             w->unk_8CB = 0;
@@ -1450,13 +1450,13 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         if (w->unk_886 > 0) {
             w->unk_886--;
             w->unk_8B7 = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else {
             if ((u8)func_0808CA78((u8*)w, 1) == 0) {
                 if (w->unk_8CF == 0) {
                     w->unk_884 = w->unk_8C1;
                     w->unk_8B7 = 1;
-                    m4aSongNumStart(121);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                     w->unk_8B2 = w->unk_8B1;
                     w->unk_8B1 = 2;
                     AnimStart(&w->anim2, 0, 1);
@@ -1480,7 +1480,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         if (w->unk_886 <= 2) {
             w->unk_886++;
             w->unk_8B7 = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else {
             func_0808C9CC((u8*)w);
             if (w->unk_8CF != 0) {
@@ -1496,7 +1496,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         if (w->unk_884 > 0) {
             w->unk_884--;
             w->unk_8B7 = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         break;
     case DPAD_RIGHT:
@@ -1508,14 +1508,14 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
                 w->unk_8B2 = w->unk_8B1;
                 w->unk_8B1 = 1;
                 func_0808CD48((u8*)w);
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
                 SetTaskUpdate(a, (void*)func_080889DC);
                 return 1;
             }
         } else {
             w->unk_884++;
             w->unk_8B7 = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         break;
     }
@@ -1528,11 +1528,11 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             w->unk_8B2 = w->unk_8B1;
             w->unk_8B1 = 1;
             func_0808CD48((u8*)w);
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
             SetTaskUpdate(a, (void*)func_080889DC);
             return 1;
         } else {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8CF = 0;
             AnimStart(&w->anim2, 0, 1);
             return 1;
@@ -1542,7 +1542,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             return 1;
         }
         if (w->unk_8CF == 0) {
-            m4aSongNumStart(140);
+            m4aSongNumStart(SONG_SYS_KETEI2);
             w->unk_8CF = 1;
             w->unk_874 = w->unk_884;
             w->unk_876 = w->unk_886;
@@ -1551,11 +1551,11 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
             AnimStart(&w->anim2, 4, 1);
         } else {
             if ((u8)func_0808EDA4((u8*)w) != 0) {
-                m4aSongNumStart(140);
+                m4aSongNumStart(SONG_SYS_KETEI2);
                 w->unk_8CF = 0;
                 AnimStart(&w->anim2, 0, 1);
             } else {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         }
         return 1;
@@ -1563,19 +1563,19 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8D2 = 7;
         }
         return 1;
     case L_BUTTON:
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         w->unk_8CF = 0;
         AnimStart(&w->anim2, 0, 1);
         SetTaskUpdate(a, (void*)func_08089EC0);
         return 1;
     case R_BUTTON:
         func_0808E2F0((UnkStruct_0808DB04*)w);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         w->unk_8CF = 0;
         AnimStart(&w->anim2, 0, 1);
         SetTaskUpdate(a, (void*)func_080892E8);
@@ -1590,7 +1590,7 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
         w->y2 = 0x2800;
         w->unk_884 = w->unk_8C1;
         w->unk_8B7 = 1;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         w->unk_8B1 = 2;
         AnimStart(&w->anim2, 0, 1);
         TaskPoolUpdate(&w->taskpool);
@@ -1631,7 +1631,7 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
         if ((u8)func_0808E750(w) != 0 && (u8)func_0808E79C(w) != 0) {
             SetTaskUpdate(a, (u32)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
         w->unk_8C8[3] = 0;
@@ -1641,7 +1641,7 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
         if (w->unk_884 > 0) {
             w->unk_884--;
             w->unk_8B7 = 1;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
             w->unk_8C1 = w->unk_884;
             func_0808D438(w->unk_8C1, w->unk_8C7);
             func_0808C90C((u8*)w);
@@ -1652,7 +1652,7 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
         if (w->unk_884 < 4) {
             w->unk_884++;
             w->unk_8B7 = 1;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
             w->unk_8C1 = w->unk_884;
             func_0808D438(w->unk_8C1, w->unk_8C7);
             func_0808C90C((u8*)w);
@@ -1666,7 +1666,7 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
         w->unk_884 = 0;
         w->unk_886 = 0;
         w->unk_8B7 = 1;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         if (w->unk_8B1 == 2) {
             w->unk_8B1 = 0;
             SetTaskUpdate(a, (u32)func_08086984);
@@ -1684,17 +1684,17 @@ u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
         func_0808E2F0(w);
         w->unk_8C8[2] = 1;
         SetTaskUpdate(a, (u32)func_080892E8);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     case L_BUTTON:
         if (w->unk_8B1 == 2) {
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             SetTaskUpdate(a, (u32)func_08089EC0);
         }
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750(w) != 0 && (u8)func_0808E79C(w) != 0) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             SetTaskUpdate(a, (u32)func_0808B208);
             FadeStartOut(0, 16);
             w->unk_8D1[1] = 7;
@@ -1718,14 +1718,14 @@ u8 func_08087438(UnkStruct_0808DB04* w, void* a) {
             w->unk_8D1[0]--;
         }
         w->unk_8B7 = 1;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
     if (GetKeysPressed() & DPAD_RIGHT) {
         if (w->unk_8D1[0] == 0) {
             w->unk_8D1[0]++;
         }
         w->unk_8B7 = 1;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
     if (GetKeysPressed() & A_BUTTON) {
         if (w->unk_8D1[0] == 1) {
@@ -1735,7 +1735,7 @@ u8 func_08087438(UnkStruct_0808DB04* w, void* a) {
             SetTaskUpdate(a, (u32)func_0808778C);
             TaskPoolUpdate(&w->tasks);
             TaskPoolUpdate(&w->tasks2);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
         w->unk_8B7 = 1;
@@ -1797,7 +1797,7 @@ u8 func_08087438(UnkStruct_0808DB04* w, void* a) {
         w->unk_8B7 = 1;
         w->unk_8B1 = 11;
         func_0808CD48((u8*)w);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (u32)func_0808778C);
         TaskPoolUpdate(&w->tasks);
         TaskPoolUpdate(&w->tasks2);
@@ -1832,7 +1832,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
@@ -1851,7 +1851,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
             w->unk_8B7 = 1;
 
             if ((u8)func_0808DED0((u8*)w, 32) != 0) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
@@ -1865,7 +1865,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
             w->unk_8B7 = 1;
 
             if ((u8)func_0808DED0((u8*)w, 16) != 0) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
@@ -1884,7 +1884,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         func_0808DED0((u8*)w, 64);
 
         if ((s8)n != w->unk_886) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         func_0808DDD0((u8*)w);
@@ -1902,7 +1902,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         func_0808DED0((u8*)w, 128);
 
         if ((s8)n != w->unk_886) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         func_0808DDD0((u8*)w);
@@ -1920,7 +1920,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         w->y = gUnk_09035964[w->unk_886] << 8;
         func_0808D828((u8*)w);
         w->unk_8B1 = 9;
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         SetTaskUpdate(a, (void*)func_0808AB48);
         return 1;
     case A_BUTTON:
@@ -1937,14 +1937,14 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
         SetTaskUpdate(a, (void*)func_08087438);
         w->unk_8B7 = 1;
         w->unk_8B1 = 12;
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         func_0808CD48((u8*)w);
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8D2 = 7;
         }
 
@@ -2033,7 +2033,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
@@ -2052,7 +2052,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
             w->unk_8B7 = 1;
 
             if ((u8)func_0808DED0((u8*)w, 32) != 0) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
@@ -2066,7 +2066,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
             w->unk_8B7 = 1;
 
             if ((u8)func_0808DED0((u8*)w, 16) != 0) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
@@ -2085,7 +2085,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         func_0808DED0((u8*)w, 64);
 
         if ((s8)n != w->unk_886) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         func_0808DDD0((u8*)w);
@@ -2103,7 +2103,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         func_0808DED0((u8*)w, 128);
 
         if ((s8)n != w->unk_886) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         func_0808DDD0((u8*)w);
@@ -2123,7 +2123,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         func_0808DE28(0);
         w->unk_8B1 = 4;
         SetTaskUpdate(a, (void*)func_080897CC);
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         return 1;
     case A_BUTTON:
         if ((u16)GetDeckCardCount(w->unk_8C0) <= 98) {
@@ -2180,7 +2180,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
                 func_0808DDD0((u8*)w);
             }
         } else {
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
             TaskCreate(&w->cardpool, &gUnk_09EE7FF0, &w->unk_8C9);
             return 1;
         }
@@ -2188,13 +2188,13 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
     case L_BUTTON:
         func_0808E2F0((UnkStruct_0808DB04*)w);
         SetTaskUpdate(a, (void*)func_08089EC0);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8D2 = 7;
         }
         return 1;
@@ -2230,7 +2230,7 @@ u8 func_080882DC(u8* work, void* a) {
         if ((u8)func_0808E750(work) != 0 && (u8)func_0808E79C(work) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
@@ -2242,7 +2242,7 @@ u8 func_080882DC(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x884)] > 1) {
             (*(s16*)&work[CARDWORK(0x884)])--;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
             n = *(u16*)&work[CARDWORK(0x884)];
             work[CARDWORK(0x8C1)] = n;
             func_0808D4E4(work[CARDWORK(0x8C1)], work[CARDWORK(0x8C7)]);
@@ -2263,7 +2263,7 @@ u8 func_080882DC(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x884)] <= 4) {
             (*(s16*)&work[CARDWORK(0x884)])++;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
             n = *(u16*)&work[CARDWORK(0x884)];
             work[CARDWORK(0x8C1)] = n;
             func_0808D4E4(work[CARDWORK(0x8C1)], work[CARDWORK(0x8C7)]);
@@ -2285,7 +2285,7 @@ u8 func_080882DC(u8* work, void* a) {
             *(s16*)&work[CARDWORK(0x884)] = 0;
             *(s16*)&work[CARDWORK(0x886)] = 0;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             func_0808D828(work);
 
             if (work[CARDWORK(0x8B1)] == 6) {
@@ -2298,7 +2298,7 @@ u8 func_080882DC(u8* work, void* a) {
                 SetTaskUpdate(a, (void*)func_0808AB48);
             }
         } else {
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
         }
 
         *(s32*)&work[CARDWORK(0x850)] = 0xA000;
@@ -2310,7 +2310,7 @@ u8 func_080882DC(u8* work, void* a) {
             *(s16*)&work[CARDWORK(0x884)] = 0;
             *(s16*)&work[CARDWORK(0x886)] = 0;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             func_0808D828(work);
 
             if (work[CARDWORK(0x8B1)] == 6) {
@@ -2323,7 +2323,7 @@ u8 func_080882DC(u8* work, void* a) {
                 SetTaskUpdate(a, (void*)func_0808AB48);
             }
         } else {
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
 
             if (work[CARDWORK(0x8B1)] == 6) {
                 SetTaskUpdate(a, (void*)func_08089D20);
@@ -2343,7 +2343,7 @@ u8 func_080882DC(u8* work, void* a) {
             FadeStartIn(0, 1);
             func_0808E2F0((UnkStruct_0808DB04*)work);
             SetTaskUpdate(a, (void*)func_08089EC0);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
         break;
@@ -2351,7 +2351,7 @@ u8 func_080882DC(u8* work, void* a) {
         if ((u8)func_0808E750(work) != 0 && (u8)func_0808E79C(work) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             work[CARDWORK(0x8D2)] = 7;
         }
 
@@ -2379,7 +2379,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         work[0x8BB] = 1;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & DPAD_RIGHT) {
@@ -2388,7 +2388,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         work[0x8BB] = 1;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & A_BUTTON) {
@@ -2399,11 +2399,11 @@ u8 func_08088768(u8* work, void* a) {
             SetTaskUpdate(a, (void*)func_08088F24);
             TaskPoolUpdate(&work[0x7CC]);
             TaskPoolUpdate(&work[0x7E0]);
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         ClearDeck(work[0x8C4]);
         func_0808D0A4(work[0x8C4]);
         func_0808D258(work[0x8C4]);
@@ -2429,7 +2429,7 @@ u8 func_08088768(u8* work, void* a) {
         work[0x8BB] = 1;
         work[0x8B5] = 3;
         func_0808CD48(work);
-        m4aSongNumStart(0x67);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_08088F24);
         TaskPoolUpdate(&work[0x7CC]);
         TaskPoolUpdate(&work[0x7E0]);
@@ -2454,7 +2454,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         work[0x8B7] = 1;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & DPAD_RIGHT) {
@@ -2463,7 +2463,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         work[0x8B7] = 1;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & A_BUTTON) {
@@ -2474,11 +2474,11 @@ u8 func_08088768(u8* work, void* a) {
             SetTaskUpdate(a, (void*)func_08088F24);
             TaskPoolUpdate(&work[0x7C8]);
             TaskPoolUpdate(&work[0x7DC]);
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         ClearDeck(work[0x8C0]);
         func_0808D0A4(work[0x8C0]);
         func_0808D258(work[0x8C0]);
@@ -2504,7 +2504,7 @@ u8 func_08088768(u8* work, void* a) {
         work[0x8B7] = 1;
         work[0x8B1] = 3;
         func_0808CD48(work);
-        m4aSongNumStart(0x67);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_08088F24);
         TaskPoolUpdate(&work[0x7C8]);
         TaskPoolUpdate(&work[0x7DC]);
@@ -2549,7 +2549,7 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         } else {
             w->unk_8CB = 0;
@@ -2571,7 +2571,7 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
             func_0808CBB4((u8)w->unk_8A4, 1);
             func_0808CBB4((u8)w->unk_8A6, 2);
             func_0808CBB4((u8)w->unk_8A8, 3);
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
         break;
     case DPAD_DOWN:
@@ -2589,7 +2589,7 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
             func_0808CBB4((u8)w->unk_8A4, 1);
             func_0808CBB4((u8)w->unk_8A6, 2);
             func_0808CBB4((u8)w->unk_8A8, 3);
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
         break;
 
@@ -2600,14 +2600,14 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
         w->unk_884 = 2;
         w->unk_8B7 = 1;
         SetTaskUpdate(a, (void*)func_08086984);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     }
     switch ((u16)GetKeysPressed()) {
     case A_BUTTON:
         w->unk_8B7 = 1;
         w->unk_8B2 = w->unk_8B1;
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_08088EB4);
         return 1;
     case SELECT_BUTTON:
@@ -2617,31 +2617,31 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
         SetActiveDeckIndex(w->unk_8C0);
         func_0808D16C(w->unk_8C0);
         TaskCreate(&w->cardpool, &gTaskDescDeckEquip, &w->unk_8C9);
-        m4aSongNumStart(137);
+        m4aSongNumStart(SONG_SYS_DECKSET);
         break;
     case B_BUTTON:
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B238);
             w->unk_8D2 = 8;
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         }
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8D2 = 7;
         }
         return 1;
     case L_BUTTON:
         func_0808E2F0((UnkStruct_0808DB04*)w);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_08089EC0);
         return 1;
     case R_BUTTON:
         func_0808E2F0((UnkStruct_0808DB04*)w);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_080892E8);
         return 1;
     }
@@ -2688,7 +2688,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
         } else {
             w->unk_8C8[0] = 5;
         }
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
         w->unk_8B7 = 1;
         break;
     case DPAD_DOWN:
@@ -2698,7 +2698,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
             w->unk_8C8[0] = 0;
         }
         w->unk_8B7 = 1;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
         break;
     }
     switch (GetKeysPressed()) {
@@ -2708,13 +2708,13 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
             w->unk_8B1 = 0;
             func_0808CD48((u8*)w);
             func_0808E364((u8*)w, 0);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             SetTaskUpdate(a, (u32)func_08086A14);
             func_0808E344((void**)w);
         } else {
             w->unk_8B1 = 1;
             func_0808CD48((u8*)w);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             SetTaskUpdate(a, (u32)func_08089220);
         }
         break;
@@ -2725,11 +2725,11 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
             w->unk_8B1 = 0;
             func_0808CD48((u8*)w);
             func_0808E364((u8*)w, 0);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             SetTaskUpdate(a, (u32)func_08086A14);
             func_0808E344((void**)w);
         } else {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             SetTaskUpdate(a, (u32)func_08089220);
             w->unk_8D1[1] = 7;
         }
@@ -2740,11 +2740,11 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
             SetActiveDeckIndex(w->unk_8C0);
             func_0808D16C(w->unk_8C0);
             TaskCreate(&w->tasks2, &gTaskDescDeckEquip, &w->unk_8C8[1]);
-            m4aSongNumStart(137);
+            m4aSongNumStart(SONG_SYS_DECKSET);
             SetTaskUpdate(a, (u32)func_08089220);
             return 1;
         case 1:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             func_0808C90C((u8*)w);
             w->unk_8D0 = 0;
             func_0808E344((void**)w);
@@ -2754,22 +2754,22 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
             SetTaskUpdate(a, (u32)func_0808F3E8);
             break;
         case 2:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             w->unk_8B1 = 15;
             TaskCreate(&w->tasks2, &gTaskDescDeckClear, &w->unk_8C8[1]);
             w->unk_8D1[0] = 1;
             SetTaskUpdate(a, (u32)func_08088768);
             return 1;
         case 3:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             SetTaskUpdate(a, (u32)func_080892E8);
             break;
         case 4:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             SetTaskUpdate(a, (u32)func_08089EC0);
             break;
         case 5:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             SetTaskUpdate(a, (u32)func_0808A7E4);
             break;
         }
@@ -3030,7 +3030,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         } else {
             w->unk_8CB = 0;
@@ -3043,13 +3043,13 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
                 if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 - 1)) != 0) {
                     w->unk_886--;
                     w->unk_8B7 = 1;
-                    m4aSongNumStart(121);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                 }
             } else {
                 if ((u8)func_0808CA78((u8*)w, 1) == 0) {
                     w->unk_884 = w->unk_8C1;
                     w->unk_8B7 = 1;
-                    m4aSongNumStart(121);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                     w->unk_8B1 = 6;
                     for (i = 0; i < 10; i++) {
                         func_0808DD20(0, i);
@@ -3065,7 +3065,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
                 if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
                     w->unk_886++;
                     w->unk_8B7 = 1;
-                    m4aSongNumStart(121);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                 }
             } else {
                 if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
@@ -3079,7 +3079,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
                 if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 - 1), w->unk_886) != 0) {
                     w->unk_884--;
                     w->unk_8B7 = 1;
-                    m4aSongNumStart(121);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                 }
             }
             func_0808D828((u8*)w);
@@ -3092,7 +3092,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
             if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 + 1), w->unk_886) != 0) {
                 w->unk_884++;
                 w->unk_8B7 = 1;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             }
             func_0808D828((u8*)w);
             break;
@@ -3105,7 +3105,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
                 w->unk_884 = 0;
                 w->unk_886 = 0;
                 if ((u8)func_0808DED0((u8*)w) != 0) {
-                    m4aSongNumStart(102);
+                    m4aSongNumStart(SONG_SYS_KETTEI);
                     func_0808DDD0((u8*)w);
                     func_0808E364((u8*)w, 1);
                     w->unk_8B1 = 5;
@@ -3116,29 +3116,29 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
                 } else {
                     w->unk_884 = w->unk_8B5;
                     w->unk_886 = w->unk_8B6;
-                    m4aSongNumStart(105);
+                    m4aSongNumStart(SONG_SYS_BEEP);
                     return 1;
                 }
             } else {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
                 return 1;
             }
         case B_BUTTON:
             FadeStartIn(0, 1);
             SetTaskUpdate(a, (void*)func_08089D20);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         case L_BUTTON:
             FadeStartIn(0, 1);
             func_0808E2F0((UnkStruct_0808DB04*)w);
             SetTaskUpdate(a, (void*)func_08089EC0);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         case START_BUTTON:
             if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
                 SetTaskUpdate(a, (void*)func_0808B208);
                 FadeStartOut(0, 4);
-                m4aSongNumStart(104);
+                m4aSongNumStart(SONG_SYS_CLOSE);
                 w->unk_8D2 = 7;
             }
             return 1;
@@ -3151,7 +3151,7 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
             w->x2 = 0xA000;
             w->y2 = 0x2800;
             w->unk_8AC = 4;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             w->unk_8B1 = 6;
             for (i = 0; i < 10; i++) {
                 func_0808DD20(0, i);
@@ -3352,7 +3352,7 @@ u8 func_0808A218(u8* work, void* a) {
         if ((u8)func_0808E750(work) != 0 && (u8)func_0808E79C(work) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
 
@@ -3364,7 +3364,7 @@ u8 func_0808A218(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x884)] > 0) {
             (*(s16*)&work[CARDWORK(0x884)])--;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
 
         func_0808DB50((UnkStruct_0808DB04*)work);
@@ -3373,7 +3373,7 @@ u8 func_0808A218(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x884)] <= 1) {
             (*(s16*)&work[CARDWORK(0x884)])++;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
 
         func_0808DB50((UnkStruct_0808DB04*)work);
@@ -3382,12 +3382,12 @@ u8 func_0808A218(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x886)] > 0) {
             (*(s16*)&work[CARDWORK(0x886)])--;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else if ((u8)func_0808CA78(work, 1) == 0) {
             v = work[CARDWORK(0x8C1)];
             *(s16*)&work[CARDWORK(0x884)] = v;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             work[CARDWORK(0x8B1)] = 8;
             SetTaskUpdate(a, (void*)func_080870FC);
             func_0808DE28(0);
@@ -3400,7 +3400,7 @@ u8 func_0808A218(u8* work, void* a) {
         if (*(s16*)&work[CARDWORK(0x886)] <= 2) {
             (*(s16*)&work[CARDWORK(0x886)])++;
             work[CARDWORK(0x8B7)] = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else {
             func_0808C9CC(work);
         }
@@ -3429,14 +3429,14 @@ u8 func_0808A218(u8* work, void* a) {
         work[CARDWORK(0x8CA)] = 0;
         FadeStartIn(0, 1);
         SetTaskUpdate(a, (void*)func_0808A650);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     case R_BUTTON:
         work[CARDWORK(0x8CA)] = 1;
         func_0808E2F0((UnkStruct_0808DB04*)work);
         FadeStartIn(0, 1);
         SetTaskUpdate(a, (void*)func_080892E8);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750(work) == 0) {
@@ -3449,7 +3449,7 @@ u8 func_0808A218(u8* work, void* a) {
 
         SetTaskUpdate(a, (void*)func_0808B208);
         FadeStartOut(0, 4);
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         work[CARDWORK(0x8D2)] = 7;
         return 1;
     }
@@ -3463,7 +3463,7 @@ u8 func_0808A218(u8* work, void* a) {
         *(s32*)&work[CARDWORK(0x850)] = 0x4800;
         *(s32*)&work[CARDWORK(0x854)] = 0x2800;
         *(u16*)&work[CARDWORK(0x8AC)] = 4;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         work[CARDWORK(0x8B1)] = 8;
         TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7C8)]);
         TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7DC)]);
@@ -3635,7 +3635,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         } else {
             w->unk_8CB = 0;
@@ -3647,13 +3647,13 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
             if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 - 1)) != 0) {
                 w->unk_886--;
                 w->unk_8B7 = 1;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             }
         } else {
             if ((u8)func_0808CA78((u8*)w, 1) == 0) {
                 w->unk_884 = w->unk_8C1;
                 w->unk_8B7 = 1;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
                 w->unk_8B1 = 10;
                 for (i = 0; i < 10; i++) {
                     func_0808DD20(0, i);
@@ -3669,7 +3669,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
             if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
                 w->unk_886++;
                 w->unk_8B7 = 1;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             }
         } else {
             if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
@@ -3683,7 +3683,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
             if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 - 1), w->unk_886) != 0) {
                 w->unk_884--;
                 w->unk_8B7 = 1;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             }
         }
         func_0808D828((u8*)w);
@@ -3696,7 +3696,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
         if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 + 1), w->unk_886) != 0) {
             w->unk_884++;
             w->unk_8B7 = 1;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         func_0808D828((u8*)w);
         break;
@@ -3710,7 +3710,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
             w->unk_886 = 0;
             func_0808E364((u8*)w, 1);
             if ((u8)func_0808DED0((u8*)w, 0) != 0) {
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 func_0808DDD0((u8*)w);
                 w->unk_8B1 = 11;
                 w->x = gUnk_0903571A[w->unk_884] << 8;
@@ -3722,23 +3722,23 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
                 w->unk_886 = w->unk_8B6;
                 func_0808E364((u8*)w, 0);
                 w->unk_8B1 = 9;
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
                 return 1;
             }
         } else {
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
             return 1;
         }
     case B_BUTTON:
         FadeStartIn(0, 1);
         SetTaskUpdate(a, (void*)func_0808B068);
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         return 1;
     case START_BUTTON:
         if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             w->unk_8D2 = 7;
         }
         return 1;
@@ -3750,7 +3750,7 @@ u8 func_0808AB48(UnkStruct_080889DC* w, void* a) {
         w->x2 = 0xA000;
         w->y2 = 0x2800;
         w->unk_8AC = 4;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         w->unk_8B1 = 10;
         for (i = 0; i < 10; i++) {
             func_0808DD20(0, i);
@@ -4371,7 +4371,7 @@ void func_0808C9CC(u8* work) {
             node = ListPoolNext(&node->node);
         }
 
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         *(u16*)&work[0x8B0] += 1;
         *(s32*)&work[0x858] += 0x300;
 
@@ -4400,7 +4400,7 @@ void func_0808C9CC(u8* work) {
             node = ListPoolNext(&node->node);
         }
 
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         *(u16*)&work[0x8AC] += 1;
         *(s32*)&work[0x854] += 0x300;
 
@@ -4444,11 +4444,11 @@ u8 func_0808CA78(u8* work, u8 a) {
         }
 
         if (a != 0) {
-            m4aSongNumStart(0x79);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
     } else {
         if (b != 0) {
-            m4aSongNumStart(0x79);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
 
         do {
@@ -5396,7 +5396,7 @@ s32 func_0808E19C(UnkStruct_0808DB04* w) {
     e = &w->unk_4D4[w->unk_880];
 
     if (e->unk_00[idx] == 0) {
-        m4aSongNumStart(0x69);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return 0;
     }
 
@@ -5413,20 +5413,20 @@ s32 func_0808E19C(UnkStruct_0808DB04* w) {
                     AddCardToDeck(card, w->unk_8C0);
                     e->unk_00[idx]--;
                     func_0808DD20(e->unk_00[idx], idx);
-                    m4aSongNumStart(0x66);
+                    m4aSongNumStart(SONG_SYS_KETTEI);
                     return e->unk_00[idx];
                 }
             } else if (def->unk_20 == idx) {
                 AddCardToDeck(card, w->unk_8C0);
                 e->unk_00[idx]--;
                 func_0808DD20(e->unk_00[idx], idx);
-                m4aSongNumStart(0x66);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 return e->unk_00[idx];
             }
         }
     }
 
-    m4aSongNumStart(0x69);
+    m4aSongNumStart(SONG_SYS_BEEP);
 }
 
 void func_0808E2F0(UnkStruct_0808DB04* w) {
@@ -5491,9 +5491,9 @@ void func_0808E3E0(u8* work) {
                 RemoveCardFromDeck(n->unk_28, work[CARDWORK(0x8C0)]);
                 n->unk_4A = 1;
                 ((UnkStruct_0808E3E0*)n)->unk_24 |= 0xFFFF;
-                m4aSongNumStart(0x66);
+                m4aSongNumStart(SONG_SYS_KETTEI);
             } else {
-                m4aSongNumStart(0x69);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
 
             return;
@@ -5502,7 +5502,7 @@ void func_0808E3E0(u8* work) {
         n = ListPoolNext(&n->node);
     }
 
-    m4aSongNumStart(0x69);
+    m4aSongNumStart(SONG_SYS_BEEP);
 }
 u8 func_0808E474(UnkStruct_0808DB04* w) {
     u16 idx;
@@ -5516,7 +5516,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
     e = &w->unk_4D4[w->unk_880];
 
     if (e->unk_00[idx] == 0) {
-        m4aSongNumStart(0x69);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return 1;
     }
 
@@ -5544,7 +5544,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
             }
 
             TaskCreate(&w->tasks2, &gUnk_09EE7FD8, &w->unk_888[0x41]);
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
             return 0;
         } else {
             if (def->unk_20 != idx) {
@@ -5560,7 +5560,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
             }
 
             TaskCreate(&w->tasks2, &gUnk_09EE7FD8, &w->unk_888[0x41]);
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
             return 0;
         }
     }
@@ -5579,7 +5579,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
     e = &w->unk_4D4[w->unk_880];
 
     if (e->unk_00[idx] == 0) {
-        m4aSongNumStart(0x69);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return 1;
     }
 
@@ -5598,11 +5598,11 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                             e->unk_1C[i] = 0xFFFF;
                             e->unk_00[idx]--;
                             func_0808DD20(e->unk_00[idx], idx);
-                            m4aSongNumStart(0x8A);
+                            m4aSongNumStart(SONG_SYS_CARD_DELETE);
                             return 1;
                         } else {
                             TaskCreate(&w->tasks2, &gUnk_09EE7FD8, &w->unk_888[0x41]);
-                            m4aSongNumStart(0x69);
+                            m4aSongNumStart(SONG_SYS_BEEP);
                             return 0;
                         }
                     } else {
@@ -5610,7 +5610,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         e->unk_1C[i] = 0xFFFF;
                         e->unk_00[idx]--;
                         func_0808DD20(e->unk_00[idx], idx);
-                        m4aSongNumStart(0x8A);
+                        m4aSongNumStart(SONG_SYS_CARD_DELETE);
                         return 1;
                     }
                 }
@@ -5621,11 +5621,11 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         e->unk_1C[i] = 0xFFFF;
                         e->unk_00[idx]--;
                         func_0808DD20(e->unk_00[idx], idx);
-                        m4aSongNumStart(0x8A);
+                        m4aSongNumStart(SONG_SYS_CARD_DELETE);
                         return 1;
                     } else {
                         TaskCreate(&w->tasks2, &gUnk_09EE7FD8, &w->unk_888[0x41]);
-                        m4aSongNumStart(0x69);
+                        m4aSongNumStart(SONG_SYS_BEEP);
                         return 0;
                     }
                 } else {
@@ -5633,14 +5633,14 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                     e->unk_1C[i] = 0xFFFF;
                     e->unk_00[idx]--;
                     func_0808DD20(e->unk_00[idx], idx);
-                    m4aSongNumStart(0x8A);
+                    m4aSongNumStart(SONG_SYS_CARD_DELETE);
                     return 1;
                 }
             }
         }
     }
 
-    m4aSongNumStart(0x69);
+    m4aSongNumStart(SONG_SYS_BEEP);
     return 1;
 }
 
@@ -5651,7 +5651,7 @@ s32 func_0808E750(u8* work) {
 #else
         TaskCreate(&work[0x7DC], &gUnk_09EE7FA8, &work[0x8C9]);
 #endif
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
 
         return 0;
     }
@@ -5661,7 +5661,7 @@ s32 func_0808E750(u8* work) {
 
 s32 func_0808E79C(u8* work) {
     if (func_080857D4(0) == 0) {
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
 #ifdef VERSION_EU
         TaskCreate(&work[0x7E0], &gUnk_09EE7FC0, &work[0x8CD]);
 #else
@@ -6361,7 +6361,7 @@ void func_0808F304(u8* work) {
     u8 i;
 
     if (work[0x7C4] == 0) {
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return;
     }
 
@@ -6380,7 +6380,7 @@ void func_0808F304(u8* work) {
     }
 #endif
 
-    m4aSongNumStart(104);
+    m4aSongNumStart(SONG_SYS_CLOSE);
 }
 
 s32 func_0808F358(UnkStruct_0808F358* work) {
@@ -6393,7 +6393,7 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
     u8* out;
 
     if (work->unk_7C4 <= 7) {
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
 #ifdef VERSION_EU
         if (work->unk_7C7 == 2) {
             src = gUnkEu_09F6FE6C[work->unk_7C2];
@@ -6444,7 +6444,7 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 #endif
         return 1;
     } else {
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return 0;
     }
 }
@@ -6745,7 +6745,7 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
         if (w->unk_7C7 <= 1) {
             w->unk_7C7++;
             func_jp_0808F34C(w);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
         break;
@@ -6753,7 +6753,7 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
         if (w->unk_7C7 != 0) {
             w->unk_7C7--;
             func_jp_0808F34C(w);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
         break;
@@ -6762,7 +6762,7 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
         w->unk_7C6 = 1;
         SetTaskUpdate(a, (void*)func_0808F660);
         w->unk_8B1 = 13;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         return 1;
     }
     ApproachValueHalf(&w->x2, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
@@ -6785,7 +6785,7 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
         if (*mode <= 2) {
             (*mode)++;
             func_eu_0808EE08(w);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
         break;
@@ -6794,7 +6794,7 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
         if (*mode > 2) {
             (*mode)--;
             func_eu_0808EE08(w);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
         break;
@@ -6803,7 +6803,7 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
         w->unk_7C6 = 1;
         SetTaskUpdate(a, (void*)func_0808F660);
         w->unk_8B1 = 13;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         w->unk_8B0 = 0;
         return 1;
     }
@@ -6873,7 +6873,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
             break;
 #endif
         }
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         break;
     case DPAD_RIGHT:
         w->unk_7C6 = 1;
@@ -6902,7 +6902,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
             break;
 #endif
         }
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         break;
     case DPAD_UP:
         w->unk_7C6 = 1;
@@ -6916,7 +6916,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #else
             SetTaskUpdate(a, (void*)func_eu_0808F190);
 #endif
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             return 1;
         }
 #endif
@@ -6944,7 +6944,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
             break;
 #endif
         }
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         break;
     case DPAD_DOWN:
         w->unk_7C6 = 1;
@@ -6973,7 +6973,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
             break;
 #endif
         }
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         break;
     }
     switch ((u16)GetKeysPressed()) {
@@ -6990,7 +6990,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #endif
             func_0808F2CC((u8*)w);
             SetTaskUpdate(a, (void*)func_0808FA0C);
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             FadeStartIn(0, 16);
         } else {
             if ((u8)func_0808F358((UnkStruct_0808F358*)w) != 0) {
@@ -7026,7 +7026,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         w->cursor.parts.y = 6;
 #endif
         AnimStart(&w->anim, 1, 1);
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
 #ifdef VERSION_EU
         w->unk_7C8 = 1;
 #endif
@@ -7044,7 +7044,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #else
             func_eu_0808EE08(w);
 #endif
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
         }
         break;
     case L_BUTTON:
@@ -7059,12 +7059,12 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
 #else
             func_eu_0808EE08(w);
 #endif
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
         }
         break;
     case SELECT_BUTTON:
         w->unk_7C6 = 1;
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
 #ifdef VERSION_JP
         SetTaskUpdate(a, (void*)func_jp_0808F638);
         return 1;

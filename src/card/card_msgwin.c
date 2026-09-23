@@ -330,7 +330,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
     if (w->unk_142 >= sel->unk_0A) {
         if (w->unk_141 < w->unk_143) {
             w->unk_141++;
-            m4aSongNumStart(0x74);
+            m4aSongNumStart(SONG_SYS_MESSAGE);
         } else {
             e = gUnk_09EE45DC[sel->unk_00];
             AnimStart(w->anim, 0, e[sel->unk_08].unk_11);
@@ -360,7 +360,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
     w->gfx2 = AnimUpdate(w->anim2);
     w->gfx = AnimUpdate(w->anim);
     if (GetKeysPressed() & A_BUTTON) {
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         if (*(s32*)w->unk_138 != 0) {
 #ifdef VERSION_JP
             *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
@@ -453,7 +453,7 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a) {
         break;
     case A_BUTTON:
     case START_BUTTON:
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
 
         if (w->unk_144 == 0) {
             gUnk_0203A9D8 = 1;
@@ -487,7 +487,7 @@ u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
     if (w->unk_142 >= w->messageDef->unk_0A) {
         if (w->unk_141 < w->unk_143) {
             w->unk_141++;
-            m4aSongNumStart(0x74);
+            m4aSongNumStart(SONG_SYS_MESSAGE);
         } else {
             e = gUnk_09EE45DC[w->messageDef->unk_00];
             AnimStart(w->anim, 0, e[w->messageDef->unk_08].unk_11);

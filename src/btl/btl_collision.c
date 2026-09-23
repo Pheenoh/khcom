@@ -516,10 +516,10 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             case 28:
             case 50:
             case 52:
-                m4aSongNumStart(0x213);
+                m4aSongNumStart(SONG_BTL_GARD);
                 break;
             default:
-                m4aSongNumStart(0x220);
+                m4aSongNumStart(SONG_BTL_RB_GARD);
                 break;
             }
             hit->unk_0E2 = 30;
@@ -541,10 +541,10 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             case 7:
             case 28:
             case 50:
-                m4aSongNumStart(0x213);
+                m4aSongNumStart(SONG_BTL_GARD);
                 break;
             default:
-                m4aSongNumStart(0x220);
+                m4aSongNumStart(SONG_BTL_RB_GARD);
                 break;
             }
             hit->unk_0E2 = 30;

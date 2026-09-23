@@ -657,7 +657,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                 func_08081210(w);
             } else if (p->cardDef->unk_2A == 3) {
 #ifndef VERSION_EU
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
 #endif
             } else if (w->unk_C0[w->unk_B8] == 0) {
                 if (!(flags & 2)) {
@@ -667,12 +667,12 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                         }
                     } else if (gUnk_02034AAC->unk_78 & 0x20) {
 #ifndef VERSION_EU
-                        m4aSongNumStart(105);
+                        m4aSongNumStart(SONG_SYS_BEEP);
 #endif
                     }
                 } else if (flags & 0x20) {
 #ifndef VERSION_EU
-                    m4aSongNumStart(105);
+                    m4aSongNumStart(SONG_SYS_BEEP);
 #endif
                 }
             }
@@ -680,7 +680,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             func_08081210(w);
         } else {
 #ifndef VERSION_EU
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
 #endif
         }
         break;
@@ -694,12 +694,12 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                         func_08080594(w);
                     } else if (gUnk_02034AAC->unk_78 & 0x20) {
 #ifndef VERSION_EU
-                        m4aSongNumStart(105);
+                        m4aSongNumStart(SONG_SYS_BEEP);
 #endif
                     }
                 } else if (gUnk_02034AAC->unk_78 & 0x20) {
 #ifndef VERSION_EU
-                    m4aSongNumStart(105);
+                    m4aSongNumStart(SONG_SYS_BEEP);
 #endif
                 }
             }
@@ -714,7 +714,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             func_08081210(w);
         } else if (!(gBtlWork->flags & 0x80)) {
 #ifndef VERSION_EU
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
 #endif
         }
         break;
@@ -967,7 +967,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                 gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 | 0x834) & ~0x1000;
                 TaskPoolUpdate(w);
 #ifndef VERSION_EU
-                m4aSongNumStart(145);
+                m4aSongNumStart(SONG_SYS_RELOAD);
 #endif
                 slot = w->unk_B8;
                 args[0] = (args[0] & ~0xFF) | slot;
@@ -984,7 +984,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 | 0x834) & ~0x1000;
             TaskPoolUpdate(w);
 #ifndef VERSION_EU
-            m4aSongNumStart(145);
+            m4aSongNumStart(SONG_SYS_RELOAD);
 #endif
             return 1;
         }
@@ -1015,7 +1015,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             }
 
 #ifndef VERSION_EU
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
 #endif
 
             if (FadeGetAmount() == 0) {
@@ -1189,7 +1189,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
             gUnk_02039B9C->flags &= ~0x1000000;
         }
 
-        m4aSongNumStop(0x91);
+        m4aSongNumStop(SONG_SYS_RELOAD);
         return 0;
     }
 
@@ -1219,7 +1219,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
             gUnk_02039B9C->flags &= ~0x80000000LL;
             gUnk_02039B9C->flags &= ~0x100;
             w->unk_C4[0] = 0;
-            m4aSongNumStop(0x91);
+            m4aSongNumStop(SONG_SYS_RELOAD);
             gUnk_02034AA4 = 0;
             SetTaskUpdate(a, (void*)func_0807EDEC);
         }
@@ -1229,7 +1229,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
         w->unk_BC[w->unk_B8] = 0;
         w->unk_C4[0] = 0;
         func_0807FA44(w);
-        m4aSongNumStop(0x91);
+        m4aSongNumStop(SONG_SYS_RELOAD);
     }
 
     TaskPoolUpdate(w);
@@ -1327,7 +1327,7 @@ void func_0807FE30(UnkStruct_08080268* w, u8 n) {
 void func_0807FF48(UnkStruct_08080268* w) {
     if ((gUnk_02034AAC->unk_78 & 0x40) != 0) {
 #ifndef VERSION_EU
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
 #endif
 
         if (gUnk_02039B9C->flags & 0x1000000) {
@@ -1379,7 +1379,7 @@ void func_0807FF48(UnkStruct_08080268* w) {
 }
 void func_080800B4(UnkStruct_08080268* w) {
 #ifndef VERSION_EU
-    m4aSongNumStart(103);
+    m4aSongNumStart(SONG_SYS_CANSEL);
 #endif
 
     if (gUnk_02039B9C->flags & 0x1000000) {
@@ -1574,7 +1574,7 @@ void func_080802D8(UnkStruct_08080268* w) {
             }
         }
 
-        m4aSongNumStart(0x213);
+        m4aSongNumStart(SONG_BTL_GARD);
         gBtlWork->flags |= 0x400;
         gBtlWork->flags |= 0x80;
         gBtlWork->flags &= ~0x20;
@@ -1591,7 +1591,7 @@ void func_080802D8(UnkStruct_08080268* w) {
         gBtlWork->flags &= ~0x80;
         gBtlWork->flags &= ~0x20;
         gBtlWork->flags &= ~0x400;
-        m4aSongNumStart(0xCC);
+        m4aSongNumStart(SONG_SYS_DROW);
         gBtlWork->unk_0A4 = 0;
         gUnk_02039DD4->unk_000[0] = gUnk_02034AAC;
         gUnk_02039DD4->unk_0D0 = 1;
@@ -1733,7 +1733,7 @@ u8 func_08080594(UnkStruct_08080268* w) {
         gUnk_02034AAC = 0;
         w->unk_C0[0] = 1;
 #ifndef VERSION_EU
-        m4aSongNumStart(202);
+        m4aSongNumStart(SONG_SYS_CHAGEF2);
 #endif
 
         if (FadeGetAmount() == 0) {
@@ -1827,7 +1827,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     w->unk_C4[1] = 0;
     gUnk_02039DD4->unk_0E4 = 0;
 #ifndef VERSION_EU
-    m4aSongNumStart(140);
+    m4aSongNumStart(SONG_SYS_KETEI2);
 #endif
     gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 & ~0x40) | 0x200;
     gUnk_02034AAC->unk_A1 = 6;
@@ -1927,7 +1927,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
         gUnk_02034AAC = 0;
         w->unk_C0[0] = 1;
 #ifndef VERSION_EU
-        m4aSongNumStart(202);
+        m4aSongNumStart(SONG_SYS_CHAGEF2);
 #endif
 
         if (FadeGetAmount() == 0) {
@@ -2052,7 +2052,7 @@ void func_08080EB4(UnkStruct_08080268* w) {
         }
         *(u8*)&gBtlWork->unk_0A4 = 0;
         gUnk_02039DD4->unk_0E2 = 1;
-        m4aSongNumStart(531);
+        m4aSongNumStart(SONG_BTL_GARD);
 #ifdef VERSION_EU
         if (!(gBtlWork->flags & 0x4000)) {
             result = func_080AC5E8((UnkStruct_02039DD4*)w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag);
@@ -2071,7 +2071,7 @@ void func_08080EB4(UnkStruct_08080268* w) {
     } else {
         gBtlWork->unk_1CA = 0;
         func_08080268(w);
-        m4aSongNumStart(204);
+        m4aSongNumStart(SONG_SYS_DROW);
         gBtlWork->flags &= ~0x400ULL;
         gBtlWork->flags &= ~0x20ULL;
         gBtlWork->flags &= ~0x80ULL;
@@ -2735,7 +2735,7 @@ u8 func_08082224(CardDisplayWork* p, void* a) {
                 p->slot->unk_06 = 0;
             }
 
-            m4aSongNumStart(0xCC);
+            m4aSongNumStart(SONG_SYS_DROW);
         }
     } else if ((s16)p->unk_9C <= 2) {
         p->unk_A0 -= 4;
@@ -2833,7 +2833,7 @@ u8 func_080824C8(CardDisplayWork* p, void* a) {
             gUnk_02039DD4->unk_0C0 = 0;
             gUnk_02039DD4->unk_0E2 = 0;
             SetTaskUpdate(a, (void*)func_08082B48);
-            m4aSongNumStart(0xCC);
+            m4aSongNumStart(SONG_SYS_DROW);
         }
     } else if ((s16)p->unk_9C <= 2) {
         p->unk_A0 -= 4;
@@ -3433,7 +3433,7 @@ void func_08083340(CardDisplayWork* p) {
             if ((s8)w->unk_65 == 2) {
                 if (!(gUnk_02039B9C->flags & 0x1000000)) {
 #ifndef VERSION_EU
-                    m4aSongNumStart(200);
+                    m4aSongNumStart(SONG_SYS_CHAGE);
 #endif
                     gUnk_02039B9C->flags |= 0x1000000;
                 }
@@ -3461,7 +3461,7 @@ void func_08083340(CardDisplayWork* p) {
                         p->unk_A2 = v;
                         func_080832B0(p->unk_20);
 #ifndef VERSION_EU
-                        m4aSongNumStart(201);
+                        m4aSongNumStart(SONG_SYS_CHAGEF1);
 #endif
                         func_08083314(p->unk_20, (s16)gUnk_02039DD4->unk_0FE);
                     }
@@ -3475,7 +3475,7 @@ void func_08083340(CardDisplayWork* p) {
         } else {
             func_080832D0(p->unk_20, p);
             w->unk_65 = 0;
-            m4aSongNumStop(200);
+            m4aSongNumStop(SONG_SYS_CHAGE);
             gUnk_02039B9C->flags &= ~0x1000000;
         }
     } else {
@@ -3491,7 +3491,7 @@ void func_08083340(CardDisplayWork* p) {
         if (!(p->unk_78 & 0x4000000)) {
             p->unk_78 |= 0x4000000;
 #ifndef VERSION_EU
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
 #endif
         }
 

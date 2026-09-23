@@ -99,7 +99,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         } else if (work->unk_26 <= 19) {
             work->unk_26++;
         } else if (work->unk_26 == 20) {
-            m4aSongNumStart(0x77);
+            m4aSongNumStart(SONG_SYS_DOOR0);
             TaskCreate(&work->tasks, &gTaskDescRomcriEff2, (void*)(u32)work->angle);
             work->unk_26++;
         }

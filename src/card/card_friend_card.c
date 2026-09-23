@@ -266,7 +266,7 @@ s32 Friend_card_1(UnkStruct_0809A02C* w, void* a) {
     }
 
     if (w->unk_170 != 0) {
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
 #ifdef VERSION_EU
         w->unk_1C2 = 10;
 #endif
@@ -372,7 +372,7 @@ s32 Gimmick_card_1(UnkStruct_0809A02C* w, void* a) {
     }
 
     if (w->unk_170 != 0) {
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
 #ifdef VERSION_EU
         w->unk_1C2 = 10;
 #endif
@@ -611,7 +611,7 @@ s32 Heartless_card_1(UnkStruct_0809A02C* w, void* a) {
     }
 
     if (w->unk_170 != 0) {
-        m4aSongNumStart(0x6A);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
 #ifdef VERSION_EU
         w->unk_1C2 = 10;
 #endif
@@ -1156,11 +1156,11 @@ u8 func_0809BE80(u8* work, void* a) {
     if (work[0x85] != 0) {
         if ((GetKeysPressed() & A_BUTTON) && work[0x84] == 0) {
             work[0x84] = 1;
-            m4aSongNumStart(106);
+            m4aSongNumStart(SONG_SYS_ITEMGET);
         }
 
         if ((GetKeysPressed() & B_BUTTON) && work[0x84] != 1) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             work[0x8B] = 16;
             work[0x8C] = 16;
             SetTaskUpdate(a, (void*)func_0809C4B0);
@@ -1188,7 +1188,7 @@ u8 func_0809BE80(u8* work, void* a) {
             t = n->unk_53;
 
             if (t == 0) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
 
                 if (n->unk_52 < work[0x50] - 1) {
                     n->unk_52++;

@@ -362,7 +362,7 @@ s32 func_0800E5F0(HumWork* work) {
             func_0801AF4C(actor);
 
             if (!(work->flags & 0x40)) {
-                m4aSongNumStart(0x20E);
+                m4aSongNumStart(SONG_BTL_GF_LOOP);
             }
             func_08019050(1, 0x100, gBtlWork->x2, gBtlWork->y2);
         }
@@ -400,7 +400,7 @@ s32 func_0800E5F0(HumWork* work) {
 
             FadeStartIn(2, 60);
             FadeLock();
-            m4aSongNumStart(0x20F);
+            m4aSongNumStart(SONG_BTL_KU_JUMP);
             gBtlWork->flags |= 0x400000;
             func_0801B008();
             func_0801B918(actor);

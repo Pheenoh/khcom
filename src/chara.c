@@ -278,7 +278,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
             work->unk_3C = -y;
 
             if (work->unk_40 <= 0x7FF) {
-                m4aSongNumStart(0x6A);
+                m4aSongNumStart(SONG_SYS_ITEMGET);
                 *work->unk_1C = zero;
                 return 0;
             }
@@ -1124,7 +1124,7 @@ u8 func_080C64A4(void) {
     case 2:
         CpuSet((void*)0x05000000, gCharaObj->unk_46, 0x200);
         func_080149BC(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
-        m4aSongNumStart(0x228);
+        m4aSongNumStart(SONG_EF_BOSS_DEAD1);
         gCharaObj->unk_44++;
         break;
     case 3:
@@ -1157,7 +1157,7 @@ u8 func_080C64A4(void) {
         }
         if (gCharaObj->unk_42 == 20) {
             BgAnimStop();
-            m4aSongNumStart(0x229);
+            m4aSongNumStart(SONG_EF_BOSS_DEAD2);
             fade.unk_00 = (u8*)gCharaObj->unk_0C;
             fade.unk_04 = gCharaObj->unk_10;
             fade.unk_06 = 1;
@@ -1165,14 +1165,14 @@ u8 func_080C64A4(void) {
         }
         if (++gCharaObj->unk_42 > 39) {
             gCharaObj->unk_42 = 0;
-            m4aSongNumStop(0x229);
+            m4aSongNumStop(SONG_EF_BOSS_DEAD2);
             gCharaObj->unk_44++;
         }
         break;
     case 7:
         gCharaObj->unk_3A = 0;
         gCharaObj->unk_40 = 0;
-        m4aSongNumStart(0x22A);
+        m4aSongNumStart(SONG_EF_BOSS_DEAD3);
         FadeStartOut(2, 20);
         FadeLock();
         gCharaObj->unk_44++;
@@ -1337,7 +1337,7 @@ u8 func_080C69B4(void) {
         break;
     case 2:
         func_080149BC(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
-        m4aSongNumStart(0x228);
+        m4aSongNumStart(SONG_EF_BOSS_DEAD1);
         for (i = 0; i < 32; i++) {
             SetPaletteBankFadeEnabled(i, gCharaObj->unk_1050[i]);
         }
@@ -1373,7 +1373,7 @@ u8 func_080C69B4(void) {
         gCharaObj->unk_40++;
         if (gCharaObj->unk_42 == 20) {
             BgAnimStop();
-            m4aSongNumStart(0x229);
+            m4aSongNumStart(SONG_EF_BOSS_DEAD2);
             fade0.unk_00 = (u8*)gCharaObj->unk_0C;
             fade0.unk_04 = gCharaObj->unk_10;
             fade0.unk_06 = 1;
@@ -1407,14 +1407,14 @@ u8 func_080C69B4(void) {
         }
         if (++gCharaObj->unk_42 > 39) {
             gCharaObj->unk_42 = 0;
-            m4aSongNumStop(0x229);
+            m4aSongNumStop(SONG_EF_BOSS_DEAD2);
             gCharaObj->unk_44++;
         }
         break;
     case 8:
         gCharaObj->unk_3A = 0;
         gCharaObj->unk_40 = 0;
-        m4aSongNumStart(0x22A);
+        m4aSongNumStart(SONG_EF_BOSS_DEAD3);
         FadeStartOut(2, 20);
         FadeLock();
         gCharaObj->unk_44++;

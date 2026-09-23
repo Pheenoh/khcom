@@ -739,7 +739,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         } while (q[i] == 0);
 
         if (i != w->unk_7B0) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         w->unk_7B0 = i;
@@ -766,7 +766,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         } while (q[i] == 0);
 
         if (i != w->unk_7B0) {
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
 
         w->unk_7B0 = i;
@@ -792,7 +792,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->unk_7B2[0] = 16;
         w->unk_7B2[1] = 16;
         w->unk_7B2[2] = 16;
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         ReleaseObjTiles(w->tiles);
         ReleaseObjPalette(w->palette3);
         w->tiles = AllocObjTiles(128, 0);
@@ -850,7 +850,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
         args.unk_08 = 0;
         args.unk_0C = 0;
         TaskCreate(&w->pool, &gTaskDescLVUPEFFECT, &args);
-        m4aSongNumStart(148);
+        m4aSongNumStart(SONG_SYS_LVUP);
 #endif
         w->unk_7C5++;
     }
@@ -967,7 +967,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
             } else {
                 SetTaskUpdate(a, (void*)func_080A11CC);
             }
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
         }
     } else {
         w->unk_7A4++;

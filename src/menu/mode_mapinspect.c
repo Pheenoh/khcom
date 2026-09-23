@@ -612,21 +612,21 @@ void func_08107D44(void) {
     if (keys & 1) {
         if (func_0810718C()->category != 3) {
             func_081071AC();
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             AnimStart(&gUnk_02035E80, 1, 1);
             gUnk_02035E2C = 2;
         } else {
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
         }
     } else if (keys & 2) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035FE4 = 1;
         gUnk_02035FCC = 16;
         gUnk_02035FCA = 3;
     } else if (keys & 8) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035FE4 = 0;
         FadeStartOut(0, 16);
         gUnk_02035FCA = 5;
@@ -634,7 +634,7 @@ void func_08107D44(void) {
         gUnk_02035E98 = 0;
         gUnk_02035E9A = 0;
         gUnk_02035E9C = 0;
-        m4aSongNumStart(0x79);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         gUnk_02035E2C = 1;
         func_081076D4();
     } else if (keys & 0x40) {
@@ -643,7 +643,7 @@ void func_08107D44(void) {
         } else if (gUnk_02035E9C > 0) {
             gUnk_02035E9C--;
         } else {
-            m4aSongNumStart(0x79);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             gUnk_02035E2C = 1;
             func_081076D4();
         }
@@ -676,7 +676,7 @@ void func_08107D44(void) {
         func_081071AC();
         func_081076D4();
         func_081073F0();
-        m4aSongNumStart(0x79);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
 
         if (gUnk_02035E9C != c) {
             func_08107280();
@@ -693,7 +693,7 @@ void func_08107FF0(void) {
     if ((keys & 1) == 0) {
         if (keys & 8) {
             LoadBgMap(0, gUnk_09A3439C, 0x500);
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             gUnk_02035FE4 = 0;
             FadeStartOut(0, 16);
             gUnk_02035FCA = 5;
@@ -706,17 +706,17 @@ void func_08107FF0(void) {
                 func_081076D4();
                 func_081073F0();
                 AnimStart(&gUnk_02035E80, 0, 1);
-                m4aSongNumStart(0x79);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
                 gUnk_02035E2C = 0;
                 func_081076D4();
             } else if (keys & 2) {
                 LoadBgMap(0, gUnk_09A3439C, 0x500);
-                m4aSongNumStart(0x68);
+                m4aSongNumStart(SONG_SYS_CLOSE);
                 gUnk_02035FE4 = 1;
                 gUnk_02035FCC = 16;
                 gUnk_02035FCA = 3;
             } else if (keys & 0x80) {
-                m4aSongNumStart(0x69);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         } else if (keys & 0x20) {
             gUnk_02035E2E = gMapCardCategoryDefs[gUnk_02035E2E].leftCategory;
@@ -732,7 +732,7 @@ void func_08107FF0(void) {
     if (gUnk_02035E2E != old) {
         func_081078F0(gUnk_02035E2E);
         func_08107280();
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -780,21 +780,21 @@ void func_08108208(void) {
             gUnk_02035FE0 = 0x5000;
             AnimStart(&gUnk_02035E58, 4, 1);
             EnableBg(2);
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             gUnk_02035E2C = 3;
         } else {
             EnableBg(2);
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
             gUnk_02035E2C = 4;
         }
     } else {
         if (keys & 2) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             AnimStart(&gUnk_02035E80, 0, 1);
             gUnk_02035E2C = 0;
         } else if (keys & 8) {
             LoadBgMap(0, gUnk_09A3439C, 0x500);
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             gUnk_02035FE4 = 0;
             FadeStartOut(0, 16);
             gUnk_02035FCA = 5;
@@ -826,7 +826,7 @@ void func_08108208(void) {
     }
 
     if (gUnk_02035FC4 != a || gUnk_02035FC6 != b) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -846,7 +846,7 @@ void func_081083EC(void) {
 
         if (gUnk_02035FC8 == 0) {
             func_08107938();
-            m4aSongNumStart(0x8A);
+            m4aSongNumStart(SONG_SYS_CARD_DELETE);
 
             if (func_081079A8(p)) {
                 func_08107A74(p);
@@ -865,7 +865,7 @@ void func_081083EC(void) {
                 gUnk_02035E2C = 2;
             }
         } else {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             AnimStart(&gUnk_02035E80, 1, 1);
             gUnk_02035E2C = 2;
         }
@@ -874,12 +874,12 @@ void func_081083EC(void) {
         gUnk_02035FE0 = gUnk_02035FC6 * 2048 + 0x1000;
         AnimStart(&gUnk_02035E58, 0, 1);
         DisableBg(2);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         AnimStart(&gUnk_02035E80, 1, 1);
         gUnk_02035E2C = 2;
     } else if (keys & 8) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035FE4 = 0;
         FadeStartOut(0, 16);
         gUnk_02035FCA = 5;
@@ -890,7 +890,7 @@ void func_081083EC(void) {
     }
 
     if (gUnk_02035FC8 != old) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -900,11 +900,11 @@ void func_081085E8(void) {
     keys = MapInspectReadMenuKeys();
     if (keys & 3) {
         DisableBg(2);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E2C = 2;
     } else if (keys & 8) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035FE4 = 0;
         FadeStartOut(0, 16);
         gUnk_02035FCA = 5;

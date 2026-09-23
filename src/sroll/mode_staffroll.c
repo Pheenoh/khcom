@@ -1239,7 +1239,7 @@ u8 func_081141F8(StaffRollWork* w) {
 #endif
         }
 
-        m4aSongNumStart(6);
+        m4aSongNumStart(SONG_BGM_TITLE);
         w->unk_0C4 = 1;
         w->unk_0C8 = 0;
         break;

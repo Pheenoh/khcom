@@ -1103,7 +1103,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
     }
 
     if (f == 0 && AnimIsFinished(&work->anim) != 0) {
-        m4aSongNumStart(0x255);
+        m4aSongNumStart(SONG_BTL_BU_SAKU);
 
         if (AnimGetId(&work->anim) == 3) {
             AnimChange(&work->anim, 0, 0);
@@ -1286,7 +1286,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBosShadow, &work->unk_040);
     func_0801BCD4(&work->unk_040);
-    m4aSongNumStart(0x253);
+    m4aSongNumStart(SONG_BTL_BU_KAITEN);
 }
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
@@ -1336,7 +1336,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
 
         if (func_08011F78(0x105, p->x, p->y, p->z, 0x20, 0x10, 1) == 1) {
             gUnk_0203C56C = 1;
-            m4aSongNumStart(0x22F);
+            m4aSongNumStart(SONG_BTL_MON_SWORD01);
         }
 
         break;
@@ -1412,7 +1412,7 @@ void func_080DB04C(BoogieKnifeWork* work) {
 
     if (func_08011F78(0x106, p->x - dy, p->y, p->z - 0x1000, 4, 0x1C, 0x10) == 1) {
         gUnk_0203C56C = 1;
-        m4aSongNumStart(0x226);
+        m4aSongNumStart(SONG_EF_KU_ATT04);
     }
 }
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
@@ -1676,7 +1676,7 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
 
         if (IsTaskActive(work->unk_12C[i]) != 0) {
             if (func_080DB428(((u8**)work->unk_12C[i])[1]) != 0) {
-                m4aSongNumStart(0x254);
+                m4aSongNumStart(SONG_BTL_BU_TRAP);
             }
 
             break;
@@ -1755,7 +1755,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
 
         if ((s16)work->timer == 0) {
             func_08015228(p->x, p->y, p->z + 0x2800, 0x199);
-            m4aSongNumStart(0x256);
+            m4aSongNumStart(SONG_BTL_BU_KAIFUKU);
             work->timer++;
             break;
         }
@@ -2680,7 +2680,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
                 dz = -0x3800;
             }
             if (func_08011F78(241, p->x + dx, p->y + 0x1000, p->z + dz, 24, 16, 8) == 1) {
-                m4aSongNumStart(578);
+                m4aSongNumStart(SONG_BTL_HANE_HIT);
             }
         }
         break;
@@ -2913,7 +2913,7 @@ void func_080DD69C(s32 a) {
         } else {
             func_080DDDDC(&gUrsulaMapanimeWork->unk_000, &gUnk_096FE278);
             gUrsulaMapanimeWork->unk_028 = 0;
-            m4aSongNumStart(0x111);
+            m4aSongNumStart(SONG_VO_UR_ATTACK00);
         }
     }
 }
@@ -3030,7 +3030,7 @@ void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
         break;
     }
 
-    m4aSongNumStart(640);
+    m4aSongNumStart(SONG_BTL_UR_BUBBLE);
 }
 
 u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
@@ -3173,7 +3173,7 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     if (AnimGetId(&work->anim) == 0
 #endif
             && func_08011F78(0xF2, p->x, p->y, p->z, 1, 1, 1) == 1) {
-        m4aSongNumStart(0x281);
+        m4aSongNumStart(SONG_EF_UR_BUBBHIT);
 
         return 0;
     }

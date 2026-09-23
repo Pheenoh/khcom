@@ -440,7 +440,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         }
         func_080C84E0(w, 14);
         func_0802F1E8();
-        m4aSongNumStart(372);
+        m4aSongNumStart(SONG_SND_372);
         break;
     case 0:
         if (w->pos.z < 0) {
@@ -774,7 +774,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         }
 
         if (AnimGetFrame((AnimState*)w->unk_0C) == 2 && w->unk_16 == 0) {
-            m4aSongNumStart(960);
+            m4aSongNumStart(SONG_SND_960);
         }
 
         if ((AnimGetFrame((AnimState*)w->unk_0C) > 1 && AnimGetFrame((AnimState*)w->unk_0C) <= 4) ||
@@ -948,10 +948,10 @@ u8 task_poo_pooh_1(PooWork* w) {
         if (w->unk_16 == 0) {
             switch (AnimGetFrame(w->unk_0C)) {
             case 9:
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 break;
             case 3:
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 break;
             }
         }
@@ -1817,9 +1817,9 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
 
         if (w->timer > 3) {
             if (GetRandom() % 2 != 0) {
-                m4aSongNumStart(0x71);
+                m4aSongNumStart(SONG_SYS_SR_I_VO00);
             } else {
-                m4aSongNumStart(0x72);
+                m4aSongNumStart(SONG_SYS_SR_I_VO01);
             }
             w->unk_94 = 3;
             w->unk_9C = -0x533;
@@ -1969,7 +1969,7 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
         if (w->timer == 0) {
             func_080CAA50(w, 9, 0);
             a->unk_10 = 0;
-            m4aSongNumStart(0x73);
+            m4aSongNumStart(SONG_SYS_SR_AT_VO00);
         }
 
         if (((AnimState*)w->unk_08)->timer == 0) {
@@ -2890,7 +2890,7 @@ u8 task_poo_trapballoon_1(PooBalloonWork* w) {
     w->pos.x -= 0x800;
     w->pos.y += 0x1000;
     w->unk_C8 = (s32)TaskCreate(&w->tasks, &gTaskDescPooFreeballoon, &w->pos);
-    m4aSongNumStart(0x147);
+    m4aSongNumStart(SONG_SYS_PO_BLOON);
     return 1;
 }
 
@@ -2963,7 +2963,7 @@ u8 task_poo_owlballoon_1(PooOwlBalloonWork* w) {
         gUnk_0203C3E8 = w->pos.y;
         gUnk_0203C3F0 = 7;
         func_080CCB84(&w->node.unk_00, 0);
-        m4aSongNumStart(0x181);
+        m4aSongNumStart(SONG_SND_385);
         return 0;
     }
     return 1;
@@ -3356,7 +3356,7 @@ u8 task_poo_pile_1(PooPileWork* w) {
     w->task = (s32)TaskCreate(&w->tasks, &gTaskDescPooSpark, &t);
     w->unk_B0 = func_080CD1DC(w->unk_B0);
     AnimStart(w->anim, w->unk_B0, 0);
-    m4aSongNumStart(0x146);
+    m4aSongNumStart(SONG_SYS_PO_WOOD);
 
     if (w->unk_B0 == 7) {
         ColliderUnregister(w->collider);
@@ -3886,7 +3886,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
                 w->unk_48 = 1;
                 AnimStart(w->unk_0C, 1, 0);
                 w->unk_4A = 60;
-                m4aSongNumStart(0x15F);
+                m4aSongNumStart(SONG_SND_351);
             }
 
             if (AnimGetFrame(w->unk_0C) > 3) {
@@ -3909,7 +3909,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
         }
 
         if (AnimGetFrame(w->unk_0C) == 0 && w->unk_16 == 0) {
-            m4aSongNumStart(0x158);
+            m4aSongNumStart(SONG_EV_HUKUROUJUMP);
         }
         w->pos = *gUnk_0203C3EC;
         w->gfx = AnimUpdate(w->unk_0C);
@@ -4241,9 +4241,9 @@ void func_080CE960(s32 x, s32 y, s32 z, u8 c) {
     sy = (y >> 8) + (z >> 8) - gUnk_0203C3F8;
     if (IsRectOutsideScreen(sx, sy, 120, 8, 24, 24) == 0) {
         if (c != 0) {
-            m4aSongNumStart(0x3C1);
+            m4aSongNumStart(SONG_SND_961);
         } else {
-            m4aSongNumStart(0x3B9);
+            m4aSongNumStart(SONG_SYS_LU_JP);
         }
     }
 }
@@ -4617,7 +4617,7 @@ u8 task_poo_leaf_1(PooLeafWork* w) {
     if (w->palette != 0 && (w->flags & 2) != 0 && w->unk_90 == 0) {
         w->unk_90 = 1;
         AnimReset(w->anim);
-        m4aSongNumStart(0xE0);
+        m4aSongNumStart(SONG_SND_224);
 
         if (func_080D2C1C(w->unk_94) == 0) {
             if (func_080C7BF8(2, 3, w->x + 0x1C00, w->y + 0x2000, w->z) != 0) {
@@ -4920,7 +4920,7 @@ u8 task_poo_honeycomb_1(PooHoneycombWork* w) {
             if (w->unk_94 > 60) {
                 w->unk_98 = 0;
                 gUnk_02034E1C = 2;
-                m4aSongNumStart(0x173);
+                m4aSongNumStart(SONG_SND_371);
             }
             break;
         }
@@ -5317,7 +5317,7 @@ u8 task_poo_wagon_1(PooCamera* w) {
                 gPooActor.pos.y += d;
                 gUnk_0203C3EC->y += d;
                 func_080D2D3C(6);
-                m4aSongNumStart(0x90);
+                m4aSongNumStart(SONG_SYS_OBJ_BREAK);
                 w->timer = 0;
             }
         }
@@ -5710,7 +5710,7 @@ void task_poo_beeAfterEvent_2(PooBeeAfterEventWork* w) {
             w->palette = 0;
 
             if (func_080C7CBC() == 0) {
-                m4aSongNumStop(0x182);
+                m4aSongNumStop(SONG_SND_386);
             }
         }
     } else {
@@ -5718,7 +5718,7 @@ void task_poo_beeAfterEvent_2(PooBeeAfterEventWork* w) {
             w->palette = LoadObjPalette(gUnk_09849D98, 0x20);
             w->tiles = LoadObjTiles(gUnk_09756ACE, 0x180);
             w->tiles2 = LoadObjTiles(gUnk_09756ACE, 0x180);
-            m4aSongNumStart(0x182);
+            m4aSongNumStart(SONG_SND_386);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1002 - (w->unk_48 >> 8) * 4);
         DrawSprite(x - 5, y + 5, w->gfx2, w->tiles2, w->palette, 0, 0x800, -0x1003 - (w->unk_48 >> 8) * 4);
@@ -5800,7 +5800,7 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
             w->task = TaskCreate(&w->tasks, &gTaskDescPooSpark, &w->x);
             w->state = 3;
             AnimStart(w->anim, 3, 0);
-            m4aSongNumStart(222);
+            m4aSongNumStart(SONG_SND_222);
             w->unk_CA = 30;
             w->unk_CC = 20;
             w->unk_A0 = -0x2000;
@@ -6050,9 +6050,9 @@ u8 task_poo_mapobjhit_1(PooMapObjHitWork* w) {
                 }
 
                 if (w->unk_98 == 4) {
-                    m4aSongNumStart(0x146);
+                    m4aSongNumStart(SONG_SYS_PO_WOOD);
                 } else {
-                    m4aSongNumStart(0xE0);
+                    m4aSongNumStart(SONG_SND_224);
                 }
             }
         }
@@ -6134,7 +6134,7 @@ void func_080D19C4(PooPrizeWork* w) {
         switch (w->unk_80) {
         case 2:
         case 3:
-            m4aSongNumStart(107);
+            m4aSongNumStart(SONG_SYS_POWER_GET);
             gGameState.progression.mooglePoints += w->unk_94;
 
             if (gGameState.progression.mooglePoints > 99999) {
@@ -6144,7 +6144,7 @@ void func_080D19C4(PooPrizeWork* w) {
         case 0:
         case 1:
         default:
-            m4aSongNumStart(107);
+            m4aSongNumStart(SONG_SYS_POWER_GET);
             gGameState.hp += w->unk_94;
 
             if (gGameState.hp > (s16)gGameState.progression.maxHp) {
@@ -6509,7 +6509,7 @@ void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
     w->gfx = AnimGetGfx(w->anim);
     w->unk_34 = 1;
     w->state = 0;
-    m4aSongNumStart(0x182);
+    m4aSongNumStart(SONG_SND_386);
 }
 
 u8 task_poo_mapbee_1(PooMapBeeWork* w) {
@@ -6551,7 +6551,7 @@ void task_poo_mapbee_3(PooObjWork* w) {
     ReleaseObjPalette(w->palette);
 
     if (func_080D1050() == 0) {
-        m4aSongNumStop(0x182);
+        m4aSongNumStop(SONG_SND_386);
     }
 }
 

@@ -138,7 +138,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 12;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
         ApproachValue(&work->unk_150, 256, work->unk_14A);
         work->unk_154 = work->unk_150;
@@ -170,7 +170,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
         ApproachValue(&work->unk_150, 25, work->unk_14A);
         work->unk_154 = work->unk_150;
@@ -185,7 +185,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         if (--work->unk_14A <= 0) {
             work->unk_034 = 7;
             work->unk_148 = 0;
-            m4aSongNumStart(0x29C);
+            m4aSongNumStart(SONG_EF_TELEP);
         } else work->unk_148++;
         break;
     case 7: {
@@ -230,11 +230,11 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             if ((s16)work->unk_160 == 0) {
                 switch (AnimGetFrame(&work->anim)) {
                 case 2:
-                    m4aSongNumStart(0xAF);
+                    m4aSongNumStart(SONG_VO_KU_ATTACK00);
                     break;
                 case 6:
                     if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20B);
+                        m4aSongNumStart(SONG_EF_KU_ATT00);
                         FadeStartIn(2, 20);
                         if (body->flags & 4) {
                             func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
@@ -247,7 +247,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019050(6, 256, gBtlWork->x2, gBtlWork->y2);
                     break;
                 case 9:
-                    m4aSongNumStart(0xB0);
+                    m4aSongNumStart(SONG_VO_KU_ATTACK01);
                     break;
                 }
             } else {
@@ -255,7 +255,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 case 0:
                     func_08019A30();
                     if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20C);
+                        m4aSongNumStart(SONG_EF_KU_ATT01);
                         FadeStartIn(2, 20);
                         if (body->flags & 4) {
                             func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
@@ -268,12 +268,12 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019050(6, 256, gBtlWork->x2, gBtlWork->y2);
                     break;
                 case 4:
-                    m4aSongNumStart(0xB1);
+                    m4aSongNumStart(SONG_VO_KU_ATTACK02);
                     break;
                 case 5:
                     func_08019A30();
                     if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20D);
+                        m4aSongNumStart(SONG_EF_KU_ATT02);
                         FadeStartIn(2, 50);
                         if (body->flags & 4) {
                             func_08019050(6, 512, body->x - 0x2000, body->y - 0x1800 + body->z);
@@ -305,11 +305,11 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             if ((s16)work->unk_160 == 0) {
                 switch (AnimGetFrame(&work->anim)) {
                 case 2:
-                    m4aSongNumStart(0xAF);
+                    m4aSongNumStart(SONG_VO_KU_ATTACK00);
                     break;
                 case 6:
                     if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20B);
+                        m4aSongNumStart(SONG_EF_KU_ATT00);
                         FadeStartIn(2, 20);
                         if (body->flags & 4) {
                             func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
@@ -322,7 +322,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019050(6, 256, gBtlWork->x2, gBtlWork->y2);
                     break;
                 case 9:
-                    m4aSongNumStart(0xB0);
+                    m4aSongNumStart(SONG_VO_KU_ATTACK01);
                     break;
                 }
             } else {
@@ -330,7 +330,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 case 0:
                     func_08019A30();
                     if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20C);
+                        m4aSongNumStart(SONG_EF_KU_ATT01);
                         FadeStartIn(2, 20);
                         if (body->flags & 4) {
                             func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
@@ -383,16 +383,16 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             func_08019A30();
             switch ((s16)work->unk_17C) {
             case 0:
-                m4aSongNumStart(0xAF);
+                m4aSongNumStart(SONG_VO_KU_ATTACK00);
                 AnimChangeWithDef(gUnk_0813E958, &work->anim, 3, 0, work->tiles);
                 break;
             case 1:
-                m4aSongNumStart(0xB0);
+                m4aSongNumStart(SONG_VO_KU_ATTACK01);
                 AnimChangeWithDef(gUnk_0813E958, &work->anim, 4, 0, work->tiles);
                 break;
             case 2:
             default:
-                m4aSongNumStart(0xB1);
+                m4aSongNumStart(SONG_VO_KU_ATTACK02);
                 AnimChangeWithDef(gUnk_0813E958, &work->anim, 5, 0, work->tiles);
                 break;
             }
@@ -407,7 +407,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             case 0:
                 if (AnimGetFrame(&work->anim) == 4) {
                     if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
-                        m4aSongNumStart(0x20B);
+                        m4aSongNumStart(SONG_EF_KU_ATT00);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -416,7 +416,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 if (AnimGetFrame(&work->anim) == 3) {
                     func_08019A30();
                     if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
-                        m4aSongNumStart(0x20C);
+                        m4aSongNumStart(SONG_EF_KU_ATT01);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -426,7 +426,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 if (AnimGetFrame(&work->anim) == 3) {
                     func_08019A30();
                     if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
-                        m4aSongNumStart(0x20D);
+                        m4aSongNumStart(SONG_EF_KU_ATT02);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -567,7 +567,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->unk_160 = 0;
     work->target = 0;
     work->unk_16C = 0;
-    m4aSongNumStart(0xAB);
+    m4aSongNumStart(SONG_VO_SR_SUMMON00);
     TaskPoolInit(&work->tasks, 2);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
@@ -652,7 +652,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
 
         ApproachValue(&work->unk_154, 256, work->unk_14A);
@@ -675,7 +675,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
 
         do {
@@ -693,7 +693,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (work->unk_148 == 0) {
             AnimStart(&work->anim, 0, 0);
             work->unk_15C = -0x480;
-            m4aSongNumStart(0x236);
+            m4aSongNumStart(SONG_BTL_BBI_JUMP);
             work->target = func_08042018(work);
             work->unk_14A = 0;
         }
@@ -705,8 +705,8 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
                 func_0801416C(body->x, body->y, body->z);
                 AnimStart(&work->anim, 0, 0);
                 work->unk_15C = -0x400;
-                m4aSongNumStart(0x236);
-                m4aSongNumStart(0x28D);
+                m4aSongNumStart(SONG_BTL_BBI_JUMP);
+                m4aSongNumStart(SONG_BTL_BANBIHIT);
                 work->target = func_08042018(work);
                 work->unk_14A++;
             }
@@ -715,7 +715,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (func_08041FCC(work)) {
             AnimStart(&work->anim, 0, 0);
             work->unk_15C = -0x480;
-            m4aSongNumStart(0x236);
+            m4aSongNumStart(SONG_BTL_BBI_JUMP);
             work->target = func_08042018(work);
             work->unk_14A++;
         }
@@ -752,7 +752,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (work->unk_14C > 4) {
             if (work->unk_14C == 5) {
                 work->unk_15C = -0x300;
-                m4aSongNumStart(0x236);
+                m4aSongNumStart(SONG_BTL_BBI_JUMP);
             }
 
             if (work->unk_14A > 0) {
@@ -904,7 +904,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         work->actor = gUnk_02039B9C->actor;
     }
 
-    m4aSongNumStart(0xAB);
+    m4aSongNumStart(SONG_VO_SR_SUMMON00);
     work->unk_178 = work->actor->unk_02C << 8;
 
     switch (args->unk_00) {
@@ -972,7 +972,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
 
         ApproachValue(&work->unk_14C, 256, work->unk_14A);
@@ -981,7 +981,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             work->state = 2;
             work->unk_148 = 0;
             work->unk_154 = 1;
-            m4aSongNumStart(0x24F);
+            m4aSongNumStart(SONG_EF_TINK_LOOP);
         } else {
             work->unk_148++;
             work->unk_14A--;
@@ -990,9 +990,9 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
     case 1:
         if (work->unk_148 == 0) {
             work->unk_14A = 20;
-            m4aSongNumStop(0x24F);
+            m4aSongNumStop(SONG_EF_TINK_LOOP);
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
 
         ApproachValue(&work->unk_14C, 25, work->unk_14A);
@@ -1179,7 +1179,7 @@ void task_smn_tink_3(SmnTinkWork* work) {
 
     obj = work->unk_153 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->flags &= 0xFFFFFFFFFFDFFFFF;
-    m4aSongNumStop(0x24F);
+    m4aSongNumStop(SONG_EF_TINK_LOOP);
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }
@@ -1300,7 +1300,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
 
         ApproachValue(&work->unk_150, 256, work->unk_14A);
@@ -1318,7 +1318,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
 
         ApproachValue(&work->unk_150, 25, work->unk_14A);
@@ -1344,14 +1344,14 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         case 50:
             switch (work->unk_154) {
             case 0:
-                m4aSongNumStart(0x24A);
+                m4aSongNumStart(SONG_BTL_SIMBA_ROA0);
                 break;
             case 1:
-                m4aSongNumStart(0x24B);
+                m4aSongNumStart(SONG_BTL_SIMBA_ROA1);
                 break;
             case 2:
             default:
-                m4aSongNumStart(0x24C);
+                m4aSongNumStart(SONG_BTL_SIMBA_ROA2);
                 break;
             }
 
@@ -1520,7 +1520,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
         work->actor = gUnk_02039B9C->actor;
     }
 
-    m4aSongNumStart(0xAB);
+    m4aSongNumStart(SONG_VO_SR_SUMMON00);
     TaskPoolInit(&work->tasks, 3);
 }
 
@@ -1562,7 +1562,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
 
         ApproachValue(&work->unk_14C, 256, work->unk_14A);
@@ -1580,7 +1580,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
 
         ApproachValue(&work->unk_14C, 25, work->unk_14A);
@@ -1642,7 +1642,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             }
 
             func_08019A30();
-            m4aSongNumStart(0x24D);
+            m4aSongNumStart(SONG_EF_MU_FIRE);
 
             if (body->flags & 4) {
                 func_08012E44(0, body->x - 0x3800, body->y, body->z - 0x800,
@@ -1788,7 +1788,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
 
         ApproachValue(&work->unk_150, 256, work->unk_14A);
@@ -1806,7 +1806,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
 
         ApproachValue(&work->unk_150, 25, work->unk_14A);
@@ -1842,9 +1842,9 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
                               body->z - 0x1B00, 1, 0x9C);
             }
 
-            m4aSongNumStart(0x24E);
+            m4aSongNumStart(SONG_EF_DAMBO_SPLOOP);
         } else if (func_080128EC() == 0) {
-            m4aSongNumStop(0x24E);
+            m4aSongNumStop(SONG_EF_DAMBO_SPLOOP);
             work->state = 4;
             work->unk_148 = 0;
             break;
@@ -1928,7 +1928,7 @@ void task_smn_dumbo_3(SmnDumboWork* work) {
 
     obj = work->unk_155 != 0 ? gBtlWork : gUnk_02039B9C;
     obj->flags &= 0xFFFFFFFFFFDFFFFF;
-    m4aSongNumStop(0x24E);
+    m4aSongNumStop(SONG_EF_DAMBO_SPLOOP);
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }
@@ -2115,7 +2115,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         if ((s16)work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
         ApproachValue(&work->unk_14C, 256, work->unk_14A);
         if (work->unk_14A <= 0) {
@@ -2132,7 +2132,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
             AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
         ApproachValue(&work->unk_14C, 25, work->unk_14A);
         if (work->unk_14A <= 0) {
@@ -2186,7 +2186,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         break;
     case 4:
         if ((s16)work->unk_148 == 0) {
-            m4aSongNumStart(0xC3);
+            m4aSongNumStart(SONG_VO_GE_ATTACK00);
             AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
         }
         if (work->unk_15C == 0) {
@@ -2224,7 +2224,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         break;
     case 5:
         if ((s16)work->unk_148 == 0) {
-            m4aSongNumStart(0xC4);
+            m4aSongNumStart(SONG_VO_GE_ATTACK01);
             AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
         }
         if (work->unk_15C == 0) {
@@ -2265,7 +2265,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     case 6:
         if ((s16)work->unk_148 == 0) {
             AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
-            m4aSongNumStart(0xC5);
+            m4aSongNumStart(SONG_VO_GE_ATTACK02);
         }
         if (work->unk_15C == 0) {
             func_08044518(work);
@@ -2427,7 +2427,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x235);
+            m4aSongNumStart(SONG_EF_SUMMON_UP);
         }
         ApproachValue(&work->unk_154, 256, work->unk_14A);
         if (work->unk_14A <= 0) {
@@ -2443,7 +2443,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
-            m4aSongNumStart(0x239);
+            m4aSongNumStart(SONG_EF_SUMMON_DOWN);
         }
         ApproachValue(&work->unk_154, 25, work->unk_14A);
         if (work->unk_14A <= 0) {
@@ -2465,7 +2465,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         if (AnimGetFrame(&work->anim) == 5 && work->anim.timer == 3) {
             func_08013480(body->x, body->y, body->z - 0x1300);
             func_08011F78(3, body->x, body->y, body->z, 256, 256, 256);
-            m4aSongNumStart(0x273);
+            m4aSongNumStart(SONG_EF_TLIMIT01);
             switch (work->unk_15C) {
             case 0:
                 gBtlWork->actor->unk_02C += gBtlWork->actor->unk_02E / 5;
@@ -2619,7 +2619,7 @@ void func_08045494(BtlObj* body, u8 a, s16 b, s16 c) {
         }
 
         if (func_08011F78(0x84, x, y, z, p, q, r) != 0) {
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
     }
 }

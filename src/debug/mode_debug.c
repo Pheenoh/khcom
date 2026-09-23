@@ -103,12 +103,12 @@ void mode_debug_1(void) {
 
     if (GetKeysRepeat() & DPAD_UP) {
         gDebugWork->unk_00--;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
         gDebugWork->unk_00++;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     switch (gDebugWork->unk_00) {

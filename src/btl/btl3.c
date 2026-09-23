@@ -144,8 +144,8 @@ u8 task_btl_born_1(BtlBornWork* work) {
     if (func_080128EC() == 0) {
         ClampBattlePosition(&work->pos.x, &work->pos.y, -24, -12);
 
-        if (IsSongPlaying(0x22D) == 0) {
-            m4aSongNumStart(0x22D);
+        if (IsSongPlaying(SONG_EF_MON_UP) == 0) {
+            m4aSongNumStart(SONG_EF_MON_UP);
         }
 
         if (CanAllocObjTiles(work->unk_12) == 0) {
@@ -318,7 +318,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
     work->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
-    m4aSongNumStart(0x237);
+    m4aSongNumStart(SONG_BTL_LT2_SW);
 }
 
 BtlObj* func_08040458(BtlRaidWork* work) {

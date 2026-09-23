@@ -465,14 +465,14 @@ void func_080D6944(s16* p) {
     max = (gGameState.flags & 0x20) ? 2 : 1;
     keys = GetKeysPressed() & DPAD_UP;
     if (keys != 0) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
         (*p)--;
 
         if (*p < 0) {
             *p = max;
         }
     } else if (GetKeysPressed() & DPAD_DOWN) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
         *p = *p + 1;
         if (*p > max) {
             *p = 0;
@@ -484,14 +484,14 @@ void func_080D69AC(s16* p, s16 count) {
     s16 i;
 
     if (GetKeysPressed() & DPAD_UP) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
         i = func_080D6908(*p);
         i--;
         if (i < 0) {
             i = count;
         }
     } else if (GetKeysPressed() & DPAD_DOWN) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
         i = func_080D6908(*p);
         i++;
         if (i > count) {
@@ -748,7 +748,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
         for (i = 0; i < 3; i++) {
             if (v < tbl[i]) {
                 v = tbl[i];
-                m4aSongNumStart(0x67);
+                m4aSongNumStart(SONG_SYS_CANSEL);
                 break;
             }
         }
@@ -757,7 +757,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
         for (j = 2; j > -1; j--) {
             if (v > tbl[j]) {
                 v = tbl[j];
-                m4aSongNumStart(0x67);
+                m4aSongNumStart(SONG_SYS_CANSEL);
                 break;
             }
         }

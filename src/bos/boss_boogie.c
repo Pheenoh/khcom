@@ -282,7 +282,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 work->unk_168 = (s32)TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
                 work->dialog = TaskCreate(&work->tasks, &gTaskDescBosBoogieDice, work);
                 SetBoogieAnimation(work, 2, 1);
-                m4aSongNumStart(272);
+                m4aSongNumStart(SONG_VO_BO_ATTACK00);
                 work->unk_000 = 9;
                 work->timer = 0;
 #ifndef VERSION_EU
@@ -354,7 +354,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
     case 9:
         SetBoogieAnimation(work, 2, 1);
         if (work->timer == 0) {
-            m4aSongNumStart(599);
+            m4aSongNumStart(SONG_BTL_BU_XAI);
         }
         work->timer++;
         if (AnimIsFinished(&work->anim)) {

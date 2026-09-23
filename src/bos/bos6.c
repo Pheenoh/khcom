@@ -5727,7 +5727,7 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
         switch (anim->unk_1C) {
         case 1:
             if (func_0810B49C() == 0) {
-                m4aSongNumStart(0x210);
+                m4aSongNumStart(SONG_BTL_LB_RUMB);
                 func_0810B40C(1);
                 k = anim->unk_0C;
                 steps = func_08109ECC(work);
@@ -5737,7 +5737,7 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
             break;
         case 2:
             if (func_0810B49C() == 0) {
-                m4aSongNumStart(0x210);
+                m4aSongNumStart(SONG_BTL_LB_RUMB);
                 func_0810B40C(0);
                 k = anim->unk_0C;
                 steps = func_08109ECC(work);
@@ -5771,16 +5771,16 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
             func_080154F4(p->x - 0xC00, p->y, p->z, gPcShots[idx].unk_00,
                           gPcShots[idx].unk_04, -0x1000, 0xF7, gPcShots[idx].unk_08,
                           gPcShots[idx].unk_0C);
-            m4aSongNumStart(0x266);
+            m4aSongNumStart(SONG_BTL_PK_BEEM);
             break;
         case 5:
             func_08109EB0(work);
             if (func_08011F78(0xF8, work->unk_168 - 0x2000, work->unk_16C, work->unk_170, 20, 16, 24) != 0) {
-                m4aSongNumStart(0x248);
+                m4aSongNumStart(SONG_BTL_MON_HIT03);
             }
             break;
         case 6:
-            m4aSongNumStart(0x265);
+            m4aSongNumStart(SONG_BTL_PK_TAIATA);
             break;
         }
     }
@@ -5919,8 +5919,8 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
         work->unk_2EB = 255;
         work->unk_2F4 = 0x34BC0;
         func_08109EF8(work, 11);
-        m4aSongNumStart(332);
-        m4aSongNumStart(0x2CD);
+        m4aSongNumStart(SONG_EV_FLASH00);
+        m4aSongNumStart(SONG_SND_717);
         work->unk_002 += 1;
         break;
     case 1:
@@ -7552,7 +7552,7 @@ void func_0810D4F8(BosLstWork* work) {
         work->unk_068 = 0;
         work->unk_07C = 0xC000;
         func_0810C494(work, 5, 0, 1);
-        m4aSongNumStart(0x117);
+        m4aSongNumStart(SONG_VO_MARL_ATTACK01);
     }
     if (func_0810D364(work) == 0) {
         func_0810C2F8(work);
@@ -7801,7 +7801,7 @@ u8 func_0810DC28(BosLstWork* work) {
     switch (work->unk_080) {
     case 0:
         if (work->unk_068 == 0) {
-            m4aSongNumStart(0x119);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK03);
             work->unk_068 += 1;
         }
         work->x = func_0810CC14(work->x, work->unk_088, 0, 384, 768);
@@ -7818,7 +7818,7 @@ u8 func_0810DC28(BosLstWork* work) {
         break;
     case 3:
         func_08017F70(work->x + (work->unk_012 << 12), work->y, 0, 268);
-        m4aSongNumStart(0x2AA);
+        m4aSongNumStart(SONG_EF_MARL_GROUND);
         work->unk_080 = 4;
         work->unk_068 = 0;
     case 4:
@@ -7827,7 +7827,7 @@ u8 func_0810DC28(BosLstWork* work) {
             if (func_08011F78(268, gBtlWork->actor->x,
                               gBtlWork->actor->y, 0,
                               32, 32, (s16)(((v * 8) >> 8) + 8)) != 0) {
-                m4aSongNumStart(0x2AB);
+                m4aSongNumStart(SONG_BTL_MARL_GROUNDHIT);
             }
         }
         if (func_080128EC() == 0) {
@@ -7880,14 +7880,14 @@ u8 func_0810DE04(BosLstWork* work) {
     switch (st) {
     case 0:
         if (work->unk_068 == 0) {
-            m4aSongNumStart(0x2C8);
+            m4aSongNumStart(SONG_SND_712);
             func_0810C65C(work, 3);
         }
         work->unk_068 += 1;
         if (work->unk_068 > 30) {
             *p8C = 1;
             work->unk_068 = 0;
-            m4aSongNumStart(0x116);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK00);
         }
         break;
     case 1:
@@ -7939,7 +7939,7 @@ u8 func_0810DE04(BosLstWork* work) {
                 work->unk_078 = 0;
                 func_0810C65C(work, 4);
                 func_0801836C(sub->x, work->unk_0A0, sub->z + 0x2800, -(work->unk_012 * 0x3000), 0x10A);
-                m4aSongNumStart(0x2AC);
+                m4aSongNumStart(SONG_EF_MARL_KAMAEF);
             }
         }
         break;
@@ -7947,7 +7947,7 @@ u8 func_0810DE04(BosLstWork* work) {
         switch (work->unk_068) {
         case 0:
             if (func_08011F78(0x10A, sub->x - (work->unk_012 << 13), work->unk_0A0, sub->z, 48, 12, 64) != 0) {
-                m4aSongNumStart(0x2AD);
+                m4aSongNumStart(SONG_BTL_MARL_EFEHIT);
             }
         case 1:
         case 2:
@@ -8005,13 +8005,13 @@ u8 func_0810E210(BosLstWork* work) {
     r = 1;
     if (work->unk_00A == 0) {
         func_0810C494(work, 7, 0, 1);
-        m4aSongNumStart(0x117);
-        m4aSongNumStart(280);
+        m4aSongNumStart(SONG_VO_MARL_ATTACK01);
+        m4aSongNumStart(SONG_VO_MARL_ATTACK02);
         work->unk_00A += 1;
     }
     func_0810C32C(work, 1);
     if (work->unk_068 == 30) {
-        m4aSongNumStart(0x2C7);
+        m4aSongNumStart(SONG_SND_711);
     }
     if (work->unk_068 > 30) {
         work->unk_0B0 += 32;
@@ -8033,7 +8033,7 @@ u8 func_0810E210(BosLstWork* work) {
         }
         work->z += work->unk_0B4;
         if (func_08011F78(0x10B, work->x, work->y, work->z + 0x4000, 12, 32, 64) != 0) {
-            m4aSongNumStart(0x261);
+            m4aSongNumStart(SONG_BTL_MON_HIT06);
         }
         if (r == 0) {
             work->unk_0A8 = 4;
@@ -8057,7 +8057,7 @@ u8 func_0810E32C(BosLstWork* work) {
     r = 1;
     switch (work->unk_00A) {
     case 0:
-        m4aSongNumStart(0x2C5);
+        m4aSongNumStart(SONG_SND_709);
         if (work->unk_012 > 0) {
             func_08018A70(obj->x - 0x1800, obj->y - 0x400, obj->z, 256);
         } else {
@@ -8068,7 +8068,7 @@ u8 func_0810E32C(BosLstWork* work) {
         break;
     case 1:
         func_0810C494(work, 6, 0, 1);
-        m4aSongNumStart(0x117);
+        m4aSongNumStart(SONG_VO_MARL_ATTACK01);
         work->unk_00A += 1;
         break;
     case 2:
@@ -8228,7 +8228,7 @@ u8 func_0810E73C(BosLstWork* work) {
     switch (s) {
     case 0:
         func_0810C494(work, 4, 0, 1);
-        m4aSongNumStart(0x119);
+        m4aSongNumStart(SONG_VO_MARL_ATTACK03);
         work->unk_00A += 1;
         work->unk_068 = 0;
         break;
@@ -8242,7 +8242,7 @@ u8 func_0810E73C(BosLstWork* work) {
     case 2:
         if (AnimIsFinished(&work->anim) == 1) {
             func_08018184(work->x, work->y, work->z - 0x2000, 270);
-            m4aSongNumStart(0x2AE);
+            m4aSongNumStart(SONG_EF_MARL_HANABIRA);
             work->unk_00A += 1;
             work->unk_068 = 0;
         }
@@ -8482,8 +8482,8 @@ u8 func_0810EBA0(BosLstWork* work) {
     case 0:
         work->unk_068 = 0;
         func_0801AF4C(&work->unk_0E4);
-        m4aSongNumStart(0x2C9);
-        m4aSongNumStart(0x14C);
+        m4aSongNumStart(SONG_SND_713);
+        m4aSongNumStart(SONG_EV_FLASH00);
         func_0810C494(work, 3, 0, 0);
         work->unk_00A += 1;
     case 1:
@@ -8528,7 +8528,7 @@ u8 func_0810EBA0(BosLstWork* work) {
         break;
     case 3:
         func_08014A34(work->x, -0x800 + work->y + work->z);
-        m4aSongNumStart(0x2CE);
+        m4aSongNumStart(SONG_SND_718);
         FadeToAmount(0, gBtlWork->unk_0B3, 8);
         work->unk_00A += 1;
         work->unk_068 = 0;
@@ -8551,7 +8551,7 @@ u8 func_0810EBA0(BosLstWork* work) {
                     func_0810C32C(work, 5);
                 }
                 FadeStartOut(2, 4);
-                m4aSongNumStart(0x2D0);
+                m4aSongNumStart(SONG_SND_720);
                 break;
             case 120:
             case 170:
@@ -8560,7 +8560,7 @@ u8 func_0810EBA0(BosLstWork* work) {
                     func_0810C32C(work, 5);
                 }
                 FadeStartOut(2, 2);
-                m4aSongNumStart(0x2D0);
+                m4aSongNumStart(SONG_SND_720);
                 break;
             case 44:
                 FadeStartIn(2, 4);
@@ -8577,7 +8577,7 @@ u8 func_0810EBA0(BosLstWork* work) {
             }
             FadeStartIn(2, 60);
             FadeLock();
-            m4aSongNumStart(0x2CF);
+            m4aSongNumStart(SONG_SND_719);
             gBtlWork->flags |= 0x400000;
             work->unk_002 = 1;
             work->unk_00A += 1;

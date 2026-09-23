@@ -575,14 +575,14 @@ u8 task_hum_cloud_1(CloudWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
             AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 8, 0, w->base.tiles);
-            m4aSongNumStart(267);
+            m4aSongNumStart(SONG_VO_MKU_ATTACK00);
             func_08019A30();
         }
         if (AnimGetFrame(&work->base.anim) == 6) {
             if ((act->flags & 4)
                 ? func_08011F78(0x11A, act->x - 9216, act->y, act->z, 24, 16, 50)
                 : func_08011F78(0x11A, act->x + 9216, act->y, act->z, 24, 16, 50)) {
-                m4aSongNumStart(523);
+                m4aSongNumStart(SONG_EF_KU_ATT00);
             }
         } else if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -596,14 +596,14 @@ u8 task_hum_cloud_1(CloudWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
             AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 9, 0, w->base.tiles);
-            m4aSongNumStart(268);
+            m4aSongNumStart(SONG_VO_MKU_ATTACK01);
             func_08019A30();
         }
         if (AnimGetFrame(&work->base.anim) == 6) {
             if ((act->flags & 4)
                 ? func_08011F78(0x11A, act->x - 8192, act->y, act->z, 22, 16, 50)
                 : func_08011F78(0x11A, act->x + 8192, act->y, act->z, 22, 16, 50)) {
-                m4aSongNumStart(524);
+                m4aSongNumStart(SONG_EF_KU_ATT01);
             }
         } else if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -779,7 +779,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         if ((act->flags & 4)
             ? func_08011F78(0x11A, act->x - 0x2000, act->y, act->z, 22, 16, 30)
             : func_08011F78(0x11A, act->x + 0x2000, act->y, act->z, 22, 16, 30)) {
-            m4aSongNumStart(0x20D);
+            m4aSongNumStart(SONG_EF_KU_ATT02);
         }
         if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -820,13 +820,13 @@ u8 task_hum_cloud_1(CloudWork* work) {
             if ((s16)w->unk_18E == 0) {
                 switch (AnimGetFrame(&work->base.anim)) {
                 case 2:
-                    m4aSongNumStart(0x10B);
+                    m4aSongNumStart(SONG_VO_MKU_ATTACK00);
                     break;
                 case 6:
                     if ((act->flags & 4)
                         ? func_08011F78(0x11B, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11B, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20B);
+                        m4aSongNumStart(SONG_EF_KU_ATT00);
                         FadeStartIn(2, 20);
                         if (act->flags & 4) {
                             func_08019050(6, 0x133, act->x - 0x2000, (d = act->z - 0x1800, act->y + d));
@@ -839,7 +839,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     func_08019050(6, 0x100, gBtlWork->x2, gBtlWork->y2);
                     break;
                 case 9:
-                    m4aSongNumStart(0x10C);
+                    m4aSongNumStart(SONG_VO_MKU_ATTACK01);
                     break;
                 }
             } else {
@@ -849,7 +849,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x11B, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11B, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20C);
+                        m4aSongNumStart(SONG_EF_KU_ATT01);
                         FadeStartIn(2, 20);
                         if (act->flags & 4) {
                             func_08019050(6, 0x133, act->x - 0x2000, (d = act->z - 0x1800, act->y + d));
@@ -862,14 +862,14 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     func_08019050(6, 0x100, gBtlWork->x2, gBtlWork->y2);
                     break;
                 case 4:
-                    m4aSongNumStart(0x10D);
+                    m4aSongNumStart(SONG_VO_MKU_ATTACK02);
                     break;
                 case 5:
                     func_08019A30();
                     if ((act->flags & 4)
                         ? func_08011F78(0x11C, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11C, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20D);
+                        m4aSongNumStart(SONG_EF_KU_ATT02);
                         FadeStartIn(2, 50);
                         if (act->flags & 4) {
                             func_08019050(6, 0x200, act->x - 0x2000, (d = act->z - 0x1800, act->y + d));
@@ -953,16 +953,16 @@ u8 task_hum_cloud_1(CloudWork* work) {
             func_08019A30();
             switch ((s16)w->state) {
             case 0:
-                m4aSongNumStart(0x10B);
+                m4aSongNumStart(SONG_VO_MKU_ATTACK00);
                 AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 15, 0, w->base.tiles);
                 break;
             case 1:
-                m4aSongNumStart(0x10C);
+                m4aSongNumStart(SONG_VO_MKU_ATTACK01);
                 AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 16, 0, w->base.tiles);
                 break;
             case 2:
             default:
-                m4aSongNumStart(0x10D);
+                m4aSongNumStart(SONG_VO_MKU_ATTACK02);
                 AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 17, 0, w->base.tiles);
                 break;
             }
@@ -983,7 +983,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x11D, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11D, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20B);
+                        m4aSongNumStart(SONG_EF_KU_ATT00);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -994,7 +994,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x11D, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11D, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20C);
+                        m4aSongNumStart(SONG_EF_KU_ATT01);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -1006,7 +1006,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x11D, act->x - 0x2800, act->y, act->z, 24, 24, 48)
                         : func_08011F78(0x11D, act->x + 0x2800, act->y, act->z, 24, 24, 48)) {
-                        m4aSongNumStart(0x20D);
+                        m4aSongNumStart(SONG_EF_KU_ATT02);
                         FadeStartIn(2, 20);
                     }
                 }
@@ -1289,7 +1289,7 @@ u8 task_hum_hook_1(HookWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(280, act->x - 0x1400, act->y, act->z, 20, 20, 50)
                     : func_08011F78(280, act->x + 0x1400, act->y, act->z, 20, 20, 50)) {
-                    m4aSongNumStart(0x22E);
+                    m4aSongNumStart(SONG_BTL_MON_SWORD00);
                 }
                 break;
             }
@@ -1325,7 +1325,7 @@ u8 task_hum_hook_1(HookWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(0x119, act->x - 0x1400, act->y, act->z, 20, 20, 50)
                 : func_08011F78(0x119, act->x + 0x1400, act->y, act->z, 20, 20, 50)) {
-                m4aSongNumStart(0x22E);
+                m4aSongNumStart(SONG_BTL_MON_SWORD00);
             }
         }
 
@@ -1345,7 +1345,7 @@ u8 task_hum_hook_1(HookWork* work) {
             w->unk_1B4 = 0;
             w->unk_1B8 = 0;
             w->flags &= 0xFFFC;
-            m4aSongNumStart(198);
+            m4aSongNumStart(SONG_VO_HO_VOICE00);
         }
 
         if ((w->flags & 1) == 0) {
@@ -1395,7 +1395,7 @@ u8 task_hum_hook_1(HookWork* work) {
             AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
             w->unk_1B0 = 0;
             w->flags &= 0xFFFC;
-            m4aSongNumStart(198);
+            m4aSongNumStart(SONG_VO_HO_VOICE00);
         }
 
         if ((w->flags & 1) == 0) {
@@ -1442,7 +1442,7 @@ u8 task_hum_hook_1(HookWork* work) {
             AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
             w->unk_1B0 = 0;
             w->flags &= 0xFFFE;
-            m4aSongNumStart(198);
+            m4aSongNumStart(SONG_VO_HO_VOICE00);
         }
         func_0800F368(work, 1);
 
@@ -1485,7 +1485,7 @@ u8 task_hum_hook_1(HookWork* work) {
     case 20:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 9, 0, w->base.tiles);
-            m4aSongNumStart(198);
+            m4aSongNumStart(SONG_VO_HO_VOICE00);
         }
         f = AnimGetFrame(&work->base.anim);
 
@@ -1503,7 +1503,7 @@ u8 task_hum_hook_1(HookWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(0x115, act->x - 0x2000, act->y, act->z, 16, 16, 50)
                 : func_08011F78(0x115, act->x + 0x2000, act->y, act->z, 16, 16, 50)) {
-                m4aSongNumStart(0x22E);
+                m4aSongNumStart(SONG_BTL_MON_SWORD00);
             }
         } else if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -1516,7 +1516,7 @@ u8 task_hum_hook_1(HookWork* work) {
     case 19:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 8, 0, w->base.tiles);
-            m4aSongNumStart(199);
+            m4aSongNumStart(SONG_VO_HO_VOICE01);
         }
         f = AnimGetFrame(&work->base.anim);
 
@@ -1536,7 +1536,7 @@ u8 task_hum_hook_1(HookWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(0x115, act->x - 0x4400, act->y, act->z, 20, 16, 50)
                 : func_08011F78(0x115, act->x + 0x4400, act->y, act->z, 20, 16, 50)) {
-                m4aSongNumStart(0x22E);
+                m4aSongNumStart(SONG_BTL_MON_SWORD00);
             }
             break;
         }
@@ -1561,9 +1561,9 @@ u8 task_hum_hook_1(HookWork* work) {
         case 6:
             if (work->base.anim.timer == 0) {
                 if (GetRandom() & 1) {
-                    m4aSongNumStart(198);
+                    m4aSongNumStart(SONG_VO_HO_VOICE00);
                 } else {
-                    m4aSongNumStart(199);
+                    m4aSongNumStart(SONG_VO_HO_VOICE01);
                 }
                 a = GetAngle(act->x, act->y, x, y);
                 work->base.targetX = act->x + gSineTable[a] * 50;
@@ -1576,7 +1576,7 @@ u8 task_hum_hook_1(HookWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(278, act->x - 0x1000, act->y, act->z, 32, 24, 70)
                 : func_08011F78(278, act->x + 0x1000, act->y, act->z, 32, 24, 70)) {
-                m4aSongNumStart(0x22F);
+                m4aSongNumStart(SONG_BTL_MON_SWORD01);
             }
             break;
         }
@@ -1872,7 +1872,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
             work->unk_48 = 0;
         } else if (work->timer > 18) {
             if (func_08011F78(0x117, work->x, work->y, work->z, 24, 24, 24)) {
-                m4aSongNumStart(0x264);
+                m4aSongNumStart(SONG_BTL_BW_PACHIN);
             }
         }
 
@@ -2106,7 +2106,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
             AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
             w->unk_1C4 = -0x800;
-            m4aSongNumStart(270);
+            m4aSongNumStart(SONG_VO_AN_ATTACK00);
         }
 
         if (act->flags & 4) {
@@ -2135,7 +2135,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(0x140, act->x - 0x2000, act->y, act->z, 20, 12, 24)
                 : func_08011F78(0x140, act->x + 0x2000, act->y, act->z, 20, 12, 24)) {
-                m4aSongNumStart(0x261);
+                m4aSongNumStart(SONG_BTL_MON_HIT06);
             }
             break;
         }
@@ -2155,7 +2155,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 3, 0, w->base.sub->tiles);
             w->unk_1D0 = 0;
             FadeStartOut(9, 90);
-            m4aSongNumStart(0x271);
+            m4aSongNumStart(SONG_BTL_AN_STANDENTRY);
             w->unk_1C4 = -0xC00;
         }
 
@@ -2207,13 +2207,13 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             w->sub.y = y;
             w->sub.z = 0;
             w->sub.flags |= 4;
-            m4aSongNumStart(0x272);
+            m4aSongNumStart(SONG_EF_AN_STANDUP);
         }
 
         switch (AnimGetFrame(&w->sub.anim)) {
         case 5:
             if (w->sub.anim.timer == 4) {
-                m4aSongNumStart(0x223);
+                m4aSongNumStart(SONG_EF_BOSS_DEADL);
             }
             break;
         case 6:
@@ -2231,25 +2231,25 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         case 3:
             if (func_08011F78(0x141, w->sub.x, w->sub.y,
                     w->sub.z - 0x800, 20, 16, 8)) {
-                m4aSongNumStart(0x261);
+                m4aSongNumStart(SONG_BTL_MON_HIT06);
             }
             break;
         case 4:
             if (func_08011F78(0x141, w->sub.x, w->sub.y,
                     w->sub.z - 0x1000, 20, 16, 16)) {
-                m4aSongNumStart(0x211);
+                m4aSongNumStart(SONG_BTL_MON_HIT00);
             }
             break;
         case 5:
             if (func_08011F78(0x141, w->sub.x, w->sub.y,
                     w->sub.z - 0x2000, 20, 16, 32)) {
-                m4aSongNumStart(0x211);
+                m4aSongNumStart(SONG_BTL_MON_HIT00);
             }
             break;
         case 6:
             if (func_08011F78(0x141, w->sub.x, w->sub.y,
                     w->sub.z - 0x3000, 20, 16, 48)) {
-                m4aSongNumStart(0x211);
+                m4aSongNumStart(SONG_BTL_MON_HIT00);
             }
             break;
         }
@@ -2337,7 +2337,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 4, 0, w->base.tiles);
             AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 7, 0, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
-            m4aSongNumStart(0x10F);
+            m4aSongNumStart(SONG_VO_AN_ATTACK01);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -2394,7 +2394,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
 
         if (func_08011F78(0x143, w->sub.x, w->sub.y,
                 w->sub.z, 32, 16, 32)) {
-            m4aSongNumStart(0x221);
+            m4aSongNumStart(SONG_BTL_MON_HIT02);
         }
         BgFxAddPosition(w->sub.x - a, w->sub.y - b, w->sub.z - c);
 
@@ -2676,7 +2676,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         w->sub.z = act->z;
 
         if (AnimGetFrame(&w->sub.anim) == 1 && w->sub.anim.timer == 0) {
-            m4aSongNumStart(0x26C);
+            m4aSongNumStart(SONG_BTL_HA_IKARI);
         }
 
         if (AnimGetFrame(&work->base.anim) == 5 && work->base.anim.timer == 0) {
@@ -2702,8 +2702,8 @@ u8 task_hum_hades_1(HadesWork* work) {
             AnimReset(&w->sub.anim);
             AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
             w->sub.flags &= 0xFFFD;
-            m4aSongNumStart(252);
-            m4aSongNumStart(0x2B5);
+            m4aSongNumStart(SONG_VO_HA_ATTACK00);
+            m4aSongNumStart(SONG_BTL_HA_FIREENTRY);
         }
         w->sub.x = act->x;
         w->sub.y = act->y;
@@ -2727,7 +2727,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             }
             w->sub.z -= 0x4E00;
             w->unk_1D0 = 0;
-            m4aSongNumStart(0x26D);
+            m4aSongNumStart(SONG_BTL_HA_BALLSHOT);
         }
 
         if (act->flags & 4) {
@@ -2745,7 +2745,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         }
 
         if (func_08011F78(0x120, w->sub.x, w->sub.y, w->sub.z, 16, 16, 16)) {
-            m4aSongNumStart(0x22C);
+            m4aSongNumStart(SONG_EF_TARU_BOMB);
         }
 
         if (w->sub.x < (gBtlWork->unk_0DA - 32) << 8 || w->sub.x > (gBtlWork->unk_0DC + 32) << 8) {
@@ -2796,7 +2796,7 @@ u8 task_hum_hades_1(HadesWork* work) {
                 w->sub2[1].y = w->sub2[1].y2 = w->sub2[1].y3 = act->y;
                 w->sub2[1].z = w->sub2[1].z2 = w->sub2[1].z3 = act->z - 0x3400;
             }
-            m4aSongNumStart(0x2B6);
+            m4aSongNumStart(SONG_BTL_LEC_ROCKB1);
         }
         w->unk_1C4 = 0;
 
@@ -2931,11 +2931,11 @@ u8 task_hum_hades_1(HadesWork* work) {
 
         if (w->unk_27C == 0x100) {
             if (func_08011F78(0x121, w->sub2[0].x3, w->sub2[0].unk_00, w->sub2[0].z3, 16, 16, 16)) {
-                m4aSongNumStart(0x1F9);
+                m4aSongNumStart(SONG_EF_FIRE01);
             }
 
             if (func_08011F78(0x121, w->sub2[1].x3, w->sub2[1].unk_00, w->sub2[1].z3, 16, 16, 16)) {
-                m4aSongNumStart(0x1F9);
+                m4aSongNumStart(SONG_EF_FIRE01);
             }
         }
 #ifndef VERSION_EU
@@ -2994,7 +2994,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(0x11F, act->x - 0x1E00, act->y, act->z, 30, 16, 60)
                 : func_08011F78(0x11F, act->x + 0x1E00, act->y, act->z, 30, 16, 60)) {
-                m4aSongNumStart(0x1F9);
+                m4aSongNumStart(SONG_EF_FIRE01);
             }
 #ifndef VERSION_EU
             gBtlWork->unk_124 = 0;
@@ -3020,7 +3020,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             w->sub.x = act->x;
             w->sub.y = act->y;
             w->sub.z = act->z;
-            m4aSongNumStart(253);
+            m4aSongNumStart(SONG_VO_HA_ATTACK01);
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 8) {
                 act->btl->unk_0F8--;
@@ -3031,7 +3031,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         switch (AnimGetFrame(&w->sub.anim)) {
         case 1:
             if (w->sub.anim.timer == 0) {
-                m4aSongNumStart(0x26E);
+                m4aSongNumStart(SONG_EF_HA_FINGFIRE);
             }
             break;
         case 2:
@@ -3533,7 +3533,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 25:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 7, 0, w->base.tiles);
-            m4aSongNumStart(0x116);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK00);
         }
         w->flags |= 2;
 
@@ -3549,7 +3549,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x13B, act->x - 0x2800, act->y, act->z, 40, 12, 64)
                     : func_08011F78(0x13B, act->x + 0x2800, act->y, act->z, 40, 12, 64)) {
-                    m4aSongNumStart(0x20D);
+                    m4aSongNumStart(SONG_EF_KU_ATT02);
                 }
             }
             break;
@@ -3568,7 +3568,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 28:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 10, 0, w->base.tiles);
-            m4aSongNumStart(0x119);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK03);
         }
         w->flags |= 2;
 
@@ -3589,7 +3589,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 11, 0, w->base.tiles);
             FadeStartIn(2, 20);
-            m4aSongNumStart(0x2C2);
+            m4aSongNumStart(SONG_SND_706);
             FadeLock();
             gBtlWork->unk_072 = 20;
             w->flags |= 2;
@@ -3629,7 +3629,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 8, 0, w->base.tiles);
             w->flags &= ~4;
-            m4aSongNumStart(0x117);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK01);
         }
         w->flags |= 2;
 
@@ -3657,14 +3657,14 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 27:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 9, 0, w->base.tiles);
-            m4aSongNumStart(0x119);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK03);
         }
         w->flags |= 2;
 
         switch (AnimGetFrame(&work->base.anim)) {
         case 4:
             if (work->base.anim.timer == 0) {
-                m4aSongNumStart(0x2A9);
+                m4aSongNumStart(SONG_BTL_MARL_STAMP);
 
                 if (act->flags & 4) {
                     func_08017F70(act->x + 0x1700, act->y, 0, 0x13D);
@@ -3675,7 +3675,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             break;
         case 5:
             if (work->base.anim.timer == 0) {
-                m4aSongNumStart(0x2AA);
+                m4aSongNumStart(SONG_EF_MARL_GROUND);
             }
             break;
         }
@@ -3702,7 +3702,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             }
             w->sub.z = 0;
             w->unk_38C = 0;
-            m4aSongNumStart(0x119);
+            m4aSongNumStart(SONG_VO_MARL_ATTACK03);
         }
 
         switch (AnimGetFrame(&work->base.anim)) {
@@ -3720,12 +3720,12 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
                 AnimChangeWithDef(&gUnk_0813F438, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
                 w->flags |= 4;
                 w->sub.flags &= ~2;
-                m4aSongNumStart(0x224);
+                m4aSongNumStart(SONG_EF_KU_ATT03);
 
                 if ((act->flags & 4)
                     ? func_08011F78(0x13B, act->x - 0x2800, act->y, act->z, 40, 12, 64)
                     : func_08011F78(0x13B, act->x + 0x2800, act->y, act->z, 40, 12, 64)) {
-                    m4aSongNumStart(0x20D);
+                    m4aSongNumStart(SONG_EF_KU_ATT02);
                 }
             }
             func_0804FD7C(w);
@@ -3752,12 +3752,12 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             case 3:
             case 4:
                 if (func_08011F78(0x13B, w->sub.x, w->sub.y, w->sub.z, 8, 4, 64)) {
-                    m4aSongNumStart(0x28C);
+                    m4aSongNumStart(SONG_EF_MLC_SNICHIT);
                 }
                 break;
             default:
                 if (func_08011F78(0x13B, w->sub.x, w->sub.y, w->sub.z, 16, 4, 20)) {
-                    m4aSongNumStart(0x28C);
+                    m4aSongNumStart(SONG_EF_MLC_SNICHIT);
                 }
                 break;
             }
@@ -3906,12 +3906,12 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         case 0xF35CFF3F:
             work->base.unk_152 = GetRandom() % 4 + 4;
             work->base.unk_170 = 32;
-            m4aSongNumStart(284);
+            m4aSongNumStart(SONG_SND_284);
             break;
         }
         break;
     case 4:
-        m4aSongNumStop(0x2A2);
+        m4aSongNumStop(SONG_EF_RAC_BEEM);
         work->base.unk_168 = 256;
         work->base.unk_16C = 256;
         break;
@@ -4043,7 +4043,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     case 28:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 10, 1, w->base.tiles);
-            m4aSongNumStart(0x2A2);
+            m4aSongNumStart(SONG_EF_RAC_BEEM);
 
             if (act->flags & 4) {
                 func_08018724(act->x - 0x1000, act->y, act->z - 0x3000, 1, 310);
@@ -4058,7 +4058,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         if (func_080128EC()) {
             work->base.unk_150++;
         } else {
-            m4aSongNumStop(0x2A2);
+            m4aSongNumStop(SONG_EF_RAC_BEEM);
             work->base.unk_150 = 0;
             work->base.unk_170 = 29;
         }
@@ -4080,7 +4080,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 6, 0, w->base.tiles);
             w->unk_188 = 0;
-            m4aSongNumStart(0x11B);
+            m4aSongNumStart(SONG_SND_283);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -4123,7 +4123,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 30:
         if ((s16)work->base.unk_150 == 0) {
-            m4aSongNumStart(0x11D);
+            m4aSongNumStart(SONG_SND_285);
             AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_188 = 0;
@@ -4222,7 +4222,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x131, act->x - 0x1800, act->y, act->z, 8, 24, 50)
                     : func_08011F78(0x131, act->x + 0x1800, act->y, act->z, 8, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
                 }
                 break;
@@ -4232,7 +4232,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x132, act->x - 0x1000, act->y, act->z, 16, 24, 50)
                     : func_08011F78(0x132, act->x + 0x1000, act->y, act->z, 16, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
                 }
                 break;
@@ -4316,7 +4316,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x131, act->x - 0x1800, act->y, act->z, 8, 24, 50)
                     : func_08011F78(0x131, act->x + 0x1800, act->y, act->z, 8, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
 
                     if ((s16)work->base.unk_152 == 4) {
@@ -4331,7 +4331,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x132, act->x - 0x1000, act->y, act->z, 16, 24, 50)
                     : func_08011F78(0x132, act->x + 0x1000, act->y, act->z, 16, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
 
                     if ((s16)work->base.unk_152 == 4) {
@@ -4440,7 +4440,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x131, act->x - 0x1800, act->y, act->z, 8, 24, 50)
                     : func_08011F78(0x131, act->x + 0x1800, act->y, act->z, 8, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
                 }
                 break;
@@ -4450,7 +4450,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
                 if ((act->flags & 4)
                     ? func_08011F78(0x132, act->x - 0x1000, act->y, act->z, 16, 24, 50)
                     : func_08011F78(0x132, act->x + 0x1000, act->y, act->z, 16, 24, 50)) {
-                    m4aSongNumStart(0x2A3);
+                    m4aSongNumStart(SONG_BTL_RAC_HIT);
                     w->flags |= 1;
                 }
                 break;
@@ -4477,7 +4477,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 33:
         if ((s16)work->base.unk_150 == 0) {
-            m4aSongNumStart(0x11D);
+            m4aSongNumStart(SONG_SND_285);
             act->flags ^= 4;
 
             if (act->flags & 4) {
@@ -4554,7 +4554,7 @@ void task_hum_laxene_2(LaxeneWork* work) {
 }
 
 void task_hum_laxene_3(LaxeneWork* work) {
-    m4aSongNumStop(0x2A2);
+    m4aSongNumStop(SONG_EF_RAC_BEEM);
     HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->tasks);
 }
@@ -4580,7 +4580,7 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->unk_34 = gBtlWork->actor->y;
     work->unk_38 = gBtlWork->actor->z;
     work->vx = GetRandom() % 897 + 0x800;
-    m4aSongNumStart(0x2A4);
+    m4aSongNumStart(SONG_EF_RAC_3TR);
 }
 
 u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
@@ -4597,7 +4597,7 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
     switch (work->state) {
     case 0:
         if (func_08011F78(0x133, work->x, work->y, work->z, 1, 6, 2)) {
-            m4aSongNumStart(0x2A3);
+            m4aSongNumStart(SONG_BTL_RAC_HIT);
             work->timer = 0;
             work->state = 1;
             func_08013994(work->x, work->y, work->z + 0x1000);
@@ -4756,7 +4756,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         sub2->flags |= 2;
         work->unk_20C = work->base.unk_168 = 0x100;
         work->unk_210 = work->base.unk_16C = 0x100;
-        m4aSongNumStop(654);
+        m4aSongNumStop(SONG_EF_AKL_FIREWALL);
         break;
     }
     if (gBtlWork->unk_10C == 162) {
@@ -4872,7 +4872,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             sub->palette2 = work->base.palette;
             sub->flags |= 4;
             sub->flags &= ~2;
-            m4aSongNumStart(649);
+            m4aSongNumStart(SONG_BTL_AKL_WTHR);
             if (act->flags & 4) {
                 sub->x = act->x - 0x2000;
             } else {
@@ -4888,7 +4888,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         w->unk_204--;
         func_0802F284(sub->x, sub->y, sub->z);
         if (func_08011F78(302, sub->x, sub->y, sub->z, 8, 8, 2)) {
-            m4aSongNumStart(559);
+            m4aSongNumStart(SONG_BTL_MON_SWORD01);
         }
         if ((s16)w->unk_204 == 19) {
             func_080526D4(w, 12, 0x200, 8);
@@ -4940,19 +4940,19 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         if (work->base.anim.timer == 0) {
             switch (AnimGetFrame(&work->base.anim)) {
             case 3:
-                m4aSongNumStart(650);
+                m4aSongNumStart(SONG_BTL_AKL_FIREENTRY);
                 AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 7, 1, w->base.sub->tiles);
                 AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 3, 1, ((HumSub*)w->base.sub2)->tiles);
                 break;
             case 6:
-                m4aSongNumStart(290);
+                m4aSongNumStart(SONG_SND_290);
                 AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
                 AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 4, 1, ((HumSub*)w->base.sub2)->tiles);
                 break;
             case 7:
                 AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 9, 0, w->base.sub->tiles);
                 AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 5, 0, ((HumSub*)w->base.sub2)->tiles);
-                m4aSongNumStart(651);
+                m4aSongNumStart(SONG_BTL_AKL_FIRETHR);
                 break;
             }
         }
@@ -5047,10 +5047,10 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             }
         }
         if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
         if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
         func_0805273C(w, sub);
         func_0805273C(w, sub2);
@@ -5090,7 +5090,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             w->unk_200 = act->z;
             w->unk_204 = 200;
             w->unk_214 = 0x5A00;
-            m4aSongNumStart(651);
+            m4aSongNumStart(SONG_BTL_AKL_FIRETHR);
         }
         angle = (u16)work->base.unk_150 * 4;
         ApproachValue(&w->unk_214, 0x2800, w->unk_204);
@@ -5104,10 +5104,10 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         sub->z += (-0x1800 - sub->z) >> 3;
         sub2->z += (-0x1800 - sub2->z) >> 3;
         if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
         if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
         func_0805273C(w, sub);
         func_0805273C(w, sub2);
@@ -5180,11 +5180,11 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             w->unk_236 += 128;
         }
         if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
             w->unk_234 += 128;
         }
         if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
-            m4aSongNumStart(505);
+            m4aSongNumStart(SONG_EF_FIRE01);
             w->unk_236 += 128;
         }
         func_0805273C(w, sub);
@@ -5210,7 +5210,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 20:
         if ((s16)work->base.unk_150 == 0) {
-            m4aSongNumStart(291);
+            m4aSongNumStart(SONG_SND_291);
             AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 3, 0, w->base.tiles);
             w->unk_200 = 0;
             w->flags &= ~1;
@@ -5233,7 +5233,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             if (act->flags & 4 ?
                 func_08011F78(300, act->x - 0x2000, act->y, act->z, 20, 24, 50) :
                 func_08011F78(300, act->x + 0x2000, act->y, act->z, 20, 24, 50)) {
-                m4aSongNumStart(558);
+                m4aSongNumStart(SONG_BTL_MON_SWORD00);
                 w->flags |= 1;
             }
         }
@@ -5268,7 +5268,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             if (act->flags & 4 ?
                 func_08011F78(301, act->x - 0x2000, act->y, act->z, 24, 24, 50) :
                 func_08011F78(301, act->x + 0x2000, act->y, act->z, 24, 24, 50)) {
-                m4aSongNumStart(558);
+                m4aSongNumStart(SONG_BTL_MON_SWORD00);
                 w->flags |= 1;
             }
         }
@@ -5288,7 +5288,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 11, 0, w->base.tiles);
             w->unk_200 = 0;
-            m4aSongNumStart(289);
+            m4aSongNumStart(SONG_SND_289);
         }
         func_0800F368(work, 1);
         if (AnimIsFinished(&work->base.anim)) {
@@ -5312,7 +5312,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
 #ifdef VERSION_EU
             act->flags |= 0x2000000ULL;
 #endif
-            m4aSongNumStart(654);
+            m4aSongNumStart(SONG_EF_AKL_FIREWALL);
         }
         if (act->flags & 4) {
             BgFxAddPosition(-76, 0, 0);
@@ -5321,7 +5321,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         }
         BgFxGetPosition(&a, &b, &c);
         if (!func_080128EC() || a < ((gBtlWork->unk_0DA - 64) << 8) || a > ((gBtlWork->unk_0DC + 64) << 8)) {
-            m4aSongNumStop(654);
+            m4aSongNumStop(SONG_EF_AKL_FIREWALL);
             work->base.unk_170 = 34;
             work->base.unk_150 = 0;
             gBtlWork->flags |= 0x400000;
@@ -5414,7 +5414,7 @@ void task_hum_axcel_2(AxcelWork* work) {
 }
 
 void task_hum_axcel_3(AxcelWork* work) {
-    m4aSongNumStop(0x28E);
+    m4aSongNumStop(SONG_EF_AKL_FIREWALL);
     TaskPoolDestroy(&work->tasks);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
@@ -5468,7 +5468,7 @@ void func_08054334(VixenWork* work) {
     VixenSub* p;
     s32 i;
 
-    m4aSongNumStart(0x287);
+    m4aSongNumStart(SONG_BTL_VIC_GROUNDICE);
     p = work->sub;
 
     for (i = 0; i < 3; i++) {
@@ -5570,7 +5570,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
         break;
     case 4:
-        m4aSongNumStop(0x288);
+        m4aSongNumStop(SONG_BTL_VIC_ICEFALL);
         break;
     case 3:
     case 8:
@@ -5714,7 +5714,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             if ((act->flags & 4)
                 ? func_08011F78(312, act->x - 0x2000, act->y, act->z, 12, 12, 48)
                 : func_08011F78(312, act->x + 0x2000, act->y, act->z, 12, 12, 48)) {
-                m4aSongNumStart(0x285);
+                m4aSongNumStart(SONG_BTL_VIC_SWORDHIT);
             }
         }
 
@@ -5820,7 +5820,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
                 work->angle = 64;
             }
             work->unk_19C = act->y;
-            m4aSongNumStart(276);
+            m4aSongNumStart(SONG_VO_VIC_ATTACK01);
             InitObjTilesAtSlot(&work->unk_1E8, *(u16*)((u8*)gBtlWork->tiles2 + 6), gUnk_08EE3A84, 0x7E0);
         }
 
@@ -5869,8 +5869,8 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
 
         if (AnimGetFrame(&w->base.anim) > 4 && func_080128EC() == 0) {
-            m4aSongNumStart(0x115);
-            m4aSongNumStart(0x288);
+            m4aSongNumStart(SONG_VO_VIC_ATTACK02);
+            m4aSongNumStart(SONG_BTL_VIC_ICEFALL);
             func_080171FC(9999);
         }
 
@@ -5884,7 +5884,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
         if ((s16)w->base.unk_150 > 300 ||
             ((s16)w->base.unk_150 > 120 && (s16)gBtlWork->actor->unk_02C <= 1)) {
-            m4aSongNumStop(0x288);
+            m4aSongNumStop(SONG_BTL_VIC_ICEFALL);
             FadeToOriginal(0, 8);
             gBtlWork->flags |= 0x400000;
             func_0801AF08(act);
@@ -5977,7 +5977,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
     case 35:
         if ((s16)w->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 14, 0, work->base.tiles);
-            m4aSongNumStart(0x113);
+            m4aSongNumStart(SONG_VO_VIC_ATTACK00);
         }
 
         if (AnimIsFinished(&w->base.anim)) {
@@ -6050,7 +6050,7 @@ void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
     work->y = args->y + (GetRandom() % 11 - 5) * 256;
     work->z = args->z;
     work->unk_2D = 0;
-    m4aSongNumStart(0x286);
+    m4aSongNumStart(SONG_BTL_VIC_ICEP);
 
     if ((GetRandom() & 1) != 0) {
         work->unk_2E = 1;
@@ -6252,7 +6252,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     } else {
         work->unk_34 = 1;
     }
-    m4aSongNumStart(0x1FE);
+    m4aSongNumStart(SONG_EF_BURIZA02);
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
@@ -6448,7 +6448,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
         e->vx = gSineTable[a] * b >> 8;
         e->vy = -gSineTable[a + 64] * (b >> 1) >> 8;
     }
-    m4aSongNumStart(0x2A0);
+    m4aSongNumStart(SONG_EF_VIC_ICEBREAK);
 }
 
 u8 task_hum_vixen_frg_1(VixenFrgWork* work) {
@@ -6647,7 +6647,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            m4aSongNumStart(0x11E);
+            m4aSongNumStart(SONG_SND_286);
             AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 7, 0, w->base.tiles);
             gBtlWork->flags &= ~0x100000;
         }
@@ -6655,7 +6655,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         switch (AnimGetFrame(&work->base.anim)) {
         case 2:
             if (work->base.anim.timer == 0) {
-                m4aSongNumStart(0x2B7);
+                m4aSongNumStart(SONG_BTL_LEC_ROCKB2);
             }
             break;
         case 3:
@@ -6704,7 +6704,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 5, 0, w->base.tiles);
             w->flags &= ~4;
             w->task = 0;
-            m4aSongNumStart(0x11F);
+            m4aSongNumStart(SONG_SND_287);
         }
 
         if (AnimGetFrame(&work->base.anim) == 3) {
@@ -6813,7 +6813,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x144, act->x - 0x3C00, act->y, act->z, 24, 20, 30)
                         : func_08011F78(0x144, act->x + 0x3C00, act->y, act->z, 24, 20, 30)) {
-                        m4aSongNumStart(0x2B0);
+                        m4aSongNumStart(SONG_BTL_LEC_HIT);
                         w->flags |= 1;
                     }
                 }
@@ -6861,14 +6861,14 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                     if ((act->flags & 4)
                         ? func_08011F78(0x149, act->x - 0x2800, act->y, act->z, 24, 20, 55)
                         : func_08011F78(0x149, act->x + 0x2800, act->y, act->z, 24, 20, 55)) {
-                        m4aSongNumStart(0x2B0);
+                        m4aSongNumStart(SONG_BTL_LEC_HIT);
                         w->flags |= 1;
                     }
                 } else {
                     if ((act->flags & 4)
                         ? func_08011F78(0x145, act->x - 0x2800, act->y, act->z, 24, 20, 55)
                         : func_08011F78(0x145, act->x + 0x2800, act->y, act->z, 24, 20, 55)) {
-                        m4aSongNumStart(0x2B0);
+                        m4aSongNumStart(SONG_BTL_LEC_HIT);
                         w->flags |= 1;
                     }
                 }
@@ -6898,7 +6898,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
 
         if (AnimGetFrame(&work->base.anim) == 3) {
             if (work->base.anim.timer == 0) {
-                m4aSongNumStart(0x120);
+                m4aSongNumStart(SONG_SND_288);
             }
         }
 
@@ -6912,7 +6912,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             break;
         case 5:
             if (work->base.anim.timer == 0) {
-                m4aSongNumStart(0x2B9);
+                m4aSongNumStart(SONG_EF_AIRO);
 
                 if ((act->flags & 4) == 0) {
                     w->unk_1F4 = -0x800;
@@ -7029,7 +7029,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->vz = -0x980;
     work->tiles2 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    m4aSongNumStart(0x2B1);
+    m4aSongNumStart(SONG_BTL_LEC_THRSW);
 }
 
 u8 task_hum_lex_tmh_1(LexTmhWork* work) {
@@ -7049,11 +7049,11 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         work->vz += 64;
 
         if (func_08011F78(0x146, work->x, work->y, work->z, 16, 12, 16)) {
-            m4aSongNumStart(0x2B3);
+            m4aSongNumStart(SONG_BTL_LEC_THRHIT);
             work->unk_4A = 0;
             work->state = 1;
         } else if (work->z >= 0) {
-            m4aSongNumStart(0x2B2);
+            m4aSongNumStart(SONG_BTL_LEC_THR);
             work->unk_4A = 0;
             work->state = 1;
         } else {
@@ -7086,11 +7086,11 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         work->vz += 64;
 
         if (func_08011F78(0x146, work->x, work->y, work->z, 16, 12, 16)) {
-            m4aSongNumStart(0x2B3);
+            m4aSongNumStart(SONG_BTL_LEC_THRHIT);
         }
 
         if (work->z >= 0) {
-            m4aSongNumStart(0x2B2);
+            m4aSongNumStart(SONG_BTL_LEC_THR);
             work->vz = -work->vz >> 1;
             work->z = 0;
         }
@@ -7156,7 +7156,7 @@ void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
     work->z = args->z;
     work->unk_30 = 10;
     work->unk_34 = 21;
-    m4aSongNumStart(0x2B4);
+    m4aSongNumStart(SONG_BTL_LEC_WEPUP);
 }
 
 u8 task_hum_lex_tmh0_1(LexTmh0Work* work) {
@@ -7260,7 +7260,7 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         break;
     case 3:
         if (gBtlWork->flags & 0x100000) {
-            m4aSongNumStart(0x2B8);
+            m4aSongNumStart(SONG_BTL_LEC_JMPKUEIKU);
             work->state += 2;
         }
         break;
@@ -7330,7 +7330,7 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
 
                 if (e->unk_00 == 0) {
                     if (func_08011F78(0x148, e->x, e->y, e->z, 4, 4, 4)) {
-                        m4aSongNumStart(0x221);
+                        m4aSongNumStart(SONG_BTL_MON_HIT02);
                         e->unk_00 = 1;
                     }
                 }
@@ -7755,14 +7755,14 @@ u8 task_hum_riku_1(RikuWork* work) {
         if ((s16)work->base.unk_150 == 3) {
             switch ((s32)(u16)((u16)GetRandom() % 3)) {
             case 0:
-                m4aSongNumStart(263);
+                m4aSongNumStart(SONG_VO_RK_DAMAGE00);
                 break;
             case 1:
-                m4aSongNumStart(264);
+                m4aSongNumStart(SONG_VO_RK_DAMAGE01);
                 break;
             case 2:
             default:
-                m4aSongNumStart(265);
+                m4aSongNumStart(SONG_VO_RK_DAMAGE02);
                 break;
             }
         }
@@ -7770,8 +7770,8 @@ u8 task_hum_riku_1(RikuWork* work) {
     case 30:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 14, 0, w->base.tiles);
-            m4aSongNumStart(262);
-            m4aSongNumStart(625);
+            m4aSongNumStart(SONG_VO_RK_ATTACK08);
+            m4aSongNumStart(SONG_BTL_AN_STANDENTRY);
             FadeStartOut(9, 80);
         }
         work->base.unk_158 = 0;
@@ -7871,7 +7871,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 act->x = x - 0x6300;
                 func_080184C4(act->x, act->y, act->z, 64);
             }
-            m4aSongNumStart(670);
+            m4aSongNumStart(SONG_BTL_RK_LIMITENTRY);
             work->base.unk_152 = 10;
             work->base.unk_168 = 10;
         }
@@ -7888,14 +7888,14 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 34:
         if ((s16)work->base.unk_150 == 0) {
-            m4aSongNumStart(671);
+            m4aSongNumStart(SONG_EF_RK_LIMITMOV);
             func_08019A30();
         }
         w->flags |= 4;
         act->x += gSineTable[(u8)w->unk_1C4] * 12;
         act->y += -gSineTable[(u8)w->unk_1C4 + 64] * 12;
         if (func_08011F78(295, act->x, act->y, act->z, 24, 16, 24)) {
-            m4aSongNumStart(658);
+            m4aSongNumStart(SONG_BTL_RK_HIT03);
         }
         work->base.unk_158 = 0;
         func_0802F284(gBtlWork->actor->x, gBtlWork->actor->y, gBtlWork->actor->z);
@@ -7937,7 +7937,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     case 24:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 10, 0, w->base.tiles);
-            m4aSongNumStart(261);
+            m4aSongNumStart(SONG_VO_RK_ATTACK02);
         }
         if (work->base.anim.timer == 0) {
             switch (AnimGetGfxIndex(&work->base.anim)) {
@@ -7949,7 +7949,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 if (act->flags & 4 ?
                     func_08011F78(293, act->x - 0x2000, act->y, act->z, 28, 16, 16) :
                     func_08011F78(293, act->x + 0x2000, act->y, act->z, 28, 16, 16)) {
-                    m4aSongNumStart(655);
+                    m4aSongNumStart(SONG_BTL_RK_HIT00);
                 }
                 break;
             }
@@ -7980,7 +7980,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     case 29:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 13, 0, w->base.tiles);
-            m4aSongNumStart(262);
+            m4aSongNumStart(SONG_VO_RK_ATTACK08);
             w->flags &= ~2;
             func_0800F368(work, 1);
         }
@@ -8094,7 +8094,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 if (act->flags & 4 ?
                     func_08011F78(292, act->x - 0x1400, act->y, act->z, 30, 16, 16) :
                     func_08011F78(292, act->x + 0x1400, act->y, act->z, 30, 16, 16)) {
-                    m4aSongNumStart(656);
+                    m4aSongNumStart(SONG_BTL_RK_HIT01);
                 }
             }
         }
@@ -8181,7 +8181,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 if (act->flags & 4 ?
                     func_08011F78(attack, act->x - 0x1400, act->y, act->z, 20, 8, 16) :
                     func_08011F78(attack, act->x + 0x1400, act->y, act->z, 20, 8, 16)) {
-                    m4aSongNumStart(656);
+                    m4aSongNumStart(SONG_BTL_RK_HIT01);
                     if (attack == 291) {
                         FadeStartIn(2, 45);
                         if (act->flags & 4) {
@@ -8210,7 +8210,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         }
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 3, 0, w->base.tiles);
-            m4aSongNumStart(261);
+            m4aSongNumStart(SONG_VO_RK_ATTACK02);
         }
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_150 = 0;
@@ -8245,7 +8245,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         act->y += (y - act->y) >> 4;
         if (AnimGetFrame(&work->base.anim) > 1) {
             if (func_08011F78(294, act->x, act->y, act->z, 10, 10, 4)) {
-                m4aSongNumStart(657);
+                m4aSongNumStart(SONG_BTL_RK_HIT02);
                 w->flags |= 1;
             }
         }

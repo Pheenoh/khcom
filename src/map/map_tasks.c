@@ -806,7 +806,7 @@ void func_080EFFF8(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (func_080E02E0(&p->unk_08, p->unk_C8, p->unk_CA)) {
-        m4aSongNumStart(0x75);
+        m4aSongNumStart(SONG_SYS_FIELD_ATT00);
         gUnk_0203C7AC->flags |= 0x80;
         gUnk_0203C7AC->flags |= 4;
         func_080E5EAC(p);
@@ -1946,7 +1946,7 @@ u8 func_080F1978(MapGmkTutorialWork* w) {
             TaskPool* pool = &w->tasks;
 
             TaskCreate(pool, &gTaskDescMapSpark, w);
-            m4aSongNumStart(0xDC);
+            m4aSongNumStart(SONG_SND_220);
             gUnk_0203C7AC->flags |= 0x80;
             gFieldState->unk_68 = (s32)w;
             gUnk_0203C7AC->unk_14 = (s32)w;
@@ -3172,7 +3172,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
         AnimState* a;
 
         gUnk_0203C7AC->flags |= 0x80;
-        m4aSongNumStart(0xD0);
+        m4aSongNumStart(SONG_SYS_TRESURE);
         a = &w->anim;
         AnimStart(a, 1, 1);
         w->gfx = AnimGetGfx(a);
@@ -3304,7 +3304,7 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
         r = GetRandom() % 10000;
 
         if (r <= 1499) {
-            m4aSongNumStart(0x90);
+            m4aSongNumStart(SONG_SYS_OBJ_BREAK);
             TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
             gUnk_0203C7AC->flags |= 0x80;
             gUnk_0203C7AC->flags |= 4;
@@ -3313,7 +3313,7 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
             return 0;
         }
 
-        m4aSongNumStart(0x90);
+        m4aSongNumStart(SONG_SYS_OBJ_BREAK);
         TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
 
         if (r <= 5999) {
@@ -3411,7 +3411,7 @@ void Task_MapGmk_Barrel_3(MapGmkGpWork* w) {
 
 void func_080F4140(MapGmk04Work* w) {
     if ((gUnk_0203C7AC->flags & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & A_BUTTON)) {
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         gFieldState->flags |= 0x1000;
         TaskCreate(gFieldState->tasks, &gTaskDescMapSave, 0);
         w->update = 0;
@@ -3522,7 +3522,7 @@ void func_080F445C(MapGmk05Work* w) {
         gFieldState->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
-        m4aSongNumStart(0xCF);
+        m4aSongNumStart(SONG_SYS_MOUGURI);
         w->update = func_080F44AC;
     }
 }
@@ -3627,7 +3627,7 @@ void func_080F46FC(MapGmk06Work* w) {
         gFieldState->unk_6C = 30;
         w->update = func_080F47DC;
     } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & A_BUTTON)) {
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         gFieldState->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
@@ -3737,7 +3737,7 @@ void func_080F49D0(MapPrizeWork* w) {
         switch (w->unk_80) {
         case 2:
         case 3:
-            m4aSongNumStart(107);
+            m4aSongNumStart(SONG_SYS_POWER_GET);
             gGameState.progression.mooglePoints += w->unk_94;
 
             if (gGameState.progression.mooglePoints > 99999) {
@@ -3747,7 +3747,7 @@ void func_080F49D0(MapPrizeWork* w) {
         case 0:
         case 1:
         default:
-            m4aSongNumStart(107);
+            m4aSongNumStart(SONG_SYS_POWER_GET);
             gGameState.hp += w->unk_94;
             t = gGameState.progression.maxHp;
 
@@ -3952,7 +3952,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
 
     if (w->collider[0x2C] != 0) {
         w->unk_0D2 = 1;
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_08084458(w->cardId);
 
         if (w->unk_0D1 == 0) {
@@ -5074,7 +5074,7 @@ void func_080F6EBC(MapTutorialWork* w) {
 
     if (w->z > w->unk_00C) {
         gFieldState->flags &= ~0x1000;
-        m4aSongNumStart(0xD7);
+        m4aSongNumStart(SONG_SND_215);
         w->z = w->unk_00C;
         w->vz = 0;
         w->unk_0C1 = 0;
@@ -5085,7 +5085,7 @@ void func_080F6EBC(MapTutorialWork* w) {
 
 void func_080F6F1C(MapTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 8)) {
-        m4aSongNumStart(0x90);
+        m4aSongNumStart(SONG_SYS_OBJ_BREAK);
         TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, w);
         gUnk_0203C7AC->flags &= ~0x20;
         func_080E8FB8(0, w->x, w->y, w->z);
@@ -5174,7 +5174,7 @@ void func_080F71AC(MapTutorialWork* w) {
         gUnk_0203C7AC->flags |= 0x80;
         gUnk_0203C7AC->flags |= 4;
         TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, w);
-        m4aSongNumStart(0x75);
+        m4aSongNumStart(SONG_SYS_FIELD_ATT00);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
         SetObjTileSource(w->tiles, gUnk_08963BAC);
         w->update = func_080F7284;

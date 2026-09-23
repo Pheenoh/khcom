@@ -530,7 +530,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
 
     if (w->unk_70 != 0) {
         w->unk_E5 = 1;
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         AddMapCard(w->unk_B0);
         SetTaskUpdate(a, (void*)func_08097404);
         WorldToScreen(&x, &y, w->unk_A0, w->unk_A4, w->unk_A8);

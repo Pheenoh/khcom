@@ -133,7 +133,7 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
 
     if (w->collider[0x2C] != 0) {
         w->unk_FC[0] = 1;
-        m4aSongNumStart(0x6A);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
 
         if (w->cardId <= 0x1C1) {
             func_08084458(w->cardId);

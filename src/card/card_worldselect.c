@@ -214,7 +214,7 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     w->unk_285 = 0;
     w->card = ListPoolFirst(&w->cards);
     *(MapcardWork**)w->unk_1F0 = 0;
-    m4aSongNumStart(118);
+    m4aSongNumStart(SONG_SYS_CLICKI02);
     gUnk_02034AD0 = 0;
     w->x2 = 0x1600;
     w->y2 = 0x16400;
@@ -493,7 +493,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
 #endif
         w->card->unk_6C &= 0xFDFF;
         SetTaskUpdate(a, (void*)func_080928E4);
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         break;
     case A_BUTTON:
         n = (u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20 + (s16)sel] + 0x20);
@@ -501,7 +501,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
         if (n == 1) {
             if (gUnk_0203A8C0[w->card->unk_20 + (s16)sel] != 0) {
                 if (w->unk_2BE == 1) {
-                    m4aSongNumStart(140);
+                    m4aSongNumStart(SONG_SYS_KETEI2);
 
                     if (func_08093B08(w->card->unk_20) == 0) {
                         w->card->unk_74 = sel;
@@ -572,14 +572,14 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
                 w->unk_28F = 16;
                 w->unk_290 = 16;
                 SetTaskUpdate(a, (void*)func_08092E2C);
-                m4aSongNumStart(140);
+                m4aSongNumStart(SONG_SYS_KETEI2);
                 w->unk_285 = 0;
                 w->unk_284 = 0;
                 w->unk_2CC = n;
                 return 1;
             }
         }
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
         break;
     }
 
@@ -678,7 +678,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
             if (w->card->unk_20 >= 220) {
                 if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20] + 0x48) == 1) {
                     if (gUnk_0203A8C0[w->card->unk_20 + 1] != 0) {
-                        m4aSongNumStart(140);
+                        m4aSongNumStart(SONG_SYS_KETEI2);
                         RemoveMapCard(w->card->unk_20 + 1);
                         if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->card->unk_20] + 0x48) == 1) {
                             w->unk_2DA = func_080E8D00();
@@ -716,13 +716,13 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
                         w->unk_23C = w->card->x;
                         w->card->unk_6C |= 0x200;
                     }
-                    m4aSongNumStart(102);
+                    m4aSongNumStart(SONG_SYS_KETTEI);
                     SetTaskUpdate(a, (u32)func_080923E0);
                     return 1;
                 }
             }
         }
-        m4aSongNumStart(105);
+        m4aSongNumStart(SONG_SYS_BEEP);
         break;
     case B_BUTTON:
         if (w->unk_2C1 == 0) {
@@ -733,13 +733,13 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
             w->unk_28F = 16;
             w->unk_290 = 16;
             SetTaskUpdate(a, (u32)func_08092E2C);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             gUnk_02034AD0 = 0;
             w->unk_285 = 0;
             w->unk_284 = 0;
             w->unk_2CC = 2;
         } else {
-            m4aSongNumStart(105);
+            m4aSongNumStart(SONG_SYS_BEEP);
         }
         break;
     }
@@ -972,7 +972,7 @@ void func_08093434(MapSelectWork* work) {
             work->card->unk_6C &= 0xFEFF;
             work->card = (MapcardWork*)ListPoolNext(&work->card->node);
             work->card->unk_6C |= 0x100;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         break;
     case DPAD_LEFT:
@@ -984,7 +984,7 @@ void func_08093434(MapSelectWork* work) {
             work->card->unk_6C &= 0xFEFF;
             work->card = ListPoolPrev(&work->card->node);
             work->card->unk_6C |= 0x100;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         break;
     case DPAD_DOWN:
@@ -1031,7 +1031,7 @@ counting:
                 } while (a != 0);
             }
 
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
 
         b = (MapcardWork*)ListPoolFirst(&work->cards);
@@ -1074,7 +1074,7 @@ counting:
                 } while (b != 0);
             }
 
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
 
         b = (MapcardWork*)ListPoolFirst(&work->cards);
@@ -1678,7 +1678,7 @@ void func_08093F5C(MapSelectWork* w) {
     }
 
     if (c0 != (s8)w->unk_29C || y0 != (s8)w->unk_29D) {
-        m4aSongNumStart(121);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
     }
 
     ApproachValue(&w->x2, gUnk_09EE4BB8[(s8)w->unk_29C] << 8, w->unk_28C);
@@ -2354,13 +2354,13 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
                 switch (w->unk_40) {
                 case 1:
                     if ((gBtlWork->flags & 0x1000000) == 0) {
-                        m4aSongNumStart(200);
+                        m4aSongNumStart(SONG_SYS_CHAGE);
                         gBtlWork->flags |= 0x1000000;
                     }
                     break;
                 case 2:
                     if ((gUnk_02039B9C->flags & 0x1000000) == 0) {
-                        m4aSongNumStart(200);
+                        m4aSongNumStart(SONG_SYS_CHAGE);
                         gUnk_02039B9C->flags |= 0x1000000;
                     }
                     break;
@@ -2416,7 +2416,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
                         w->unk_9C = 8;
                         w->unk_A2 = 1;
                         func_08095C20(w->unk_20);
-                        m4aSongNumStart(201);
+                        m4aSongNumStart(SONG_SYS_CHAGEF1);
                     }
                 }
 
@@ -2448,7 +2448,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
             func_08095BC8(w->unk_20, w);
             p->unk_65 = 0;
             w->flags |= 0x8000000;
-            m4aSongNumStop(200);
+            m4aSongNumStop(SONG_SYS_CHAGE);
 
             switch (w->unk_40) {
             case 1:
@@ -2471,7 +2471,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
     if (p->unk_64 < 0) {
         if ((w->flags & 0x4000000) == 0) {
             w->flags |= 0x4000000;
-            m4aSongNumStart(202);
+            m4aSongNumStart(SONG_SYS_CHAGEF2);
         }
 
         if (FadeGetAmount() == 0) {
@@ -2498,7 +2498,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
 
     if ((w->flags & 0x20) == 0) {
         SetTaskUpdate(a, (void*)func_080954C4);
-        m4aSongNumStop(200);
+        m4aSongNumStop(SONG_SYS_CHAGE);
 
         switch (w->unk_40) {
         case 1:

@@ -104,15 +104,15 @@ void func_080D764C(StatusWork* work) {
     if (keys != 0) {
         if (work->unk_1A > 0) {
             work->unk_1A--;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else if (work->unk_1C > 0) {
             work->unk_1C--;
             func_080D83F4();
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else if (work->unk_1A == 0) {
             if (!(gGameState.flags & 8)) {
                 work->unk_1A = ~work->unk_14;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
                 gUnk_02034F00 = 0;
             }
         }
@@ -120,17 +120,17 @@ void func_080D764C(StatusWork* work) {
         if (work->unk_1A < func_080D82D4() - 1) {
             if (work->unk_1A >= 0) {
                 work->unk_1A++;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             } else if (func_080D82D4() != 0) {
                 work->unk_1A = 0;
-                m4aSongNumStart(121);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
             } else {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         } else if (work->unk_1C < func_080D8308()) {
             work->unk_1C++;
             func_080D8374();
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
     } else if ((GetKeysRepeat() & DPAD_LEFT) && !(gGameState.flags & 8)) {
         if (work->unk_14 != 0) {
@@ -144,7 +144,7 @@ void func_080D764C(StatusWork* work) {
             }
             work->unk_1C = 0;
             func_080D8474(0);
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     } else if ((GetKeysRepeat() & DPAD_RIGHT) && !(gGameState.flags & 8)) {
         if (work->unk_14 <= 2) {
@@ -158,25 +158,25 @@ void func_080D764C(StatusWork* work) {
             }
             work->unk_1C = 0;
             func_080D8474(0);
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     } else if (GetKeysPressed() & SELECT_BUTTON) {
         if (work->unk_1A >= 0) {
             work->unk_1A = ~work->unk_14;
             work->unk_1C = 0;
             func_080D8474(0);
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
 #ifdef VERSION_EU
             gUnk_02034F00 = 0;
 #endif
         }
     } else if ((GetKeysPressed() & A_BUTTON) && func_080D8340() && gUnk_02034F00 == 0 && work->unk_1A >= 0) {
         gUnk_02034F00 = 1;
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
     } else if (gUnk_02034F00 != 0) {
         if ((GetKeysPressed() & B_BUTTON) || !func_080D8340()) {
             gUnk_02034F00 = 0;
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         }
     }
 }
@@ -289,13 +289,13 @@ u8 task_status_bar_1(StatusBarWork* work) {
     case 2:
         if (work->unk_24 == 0) {
             if (GetKeysPressed() & START_BUTTON) {
-                m4aSongNumStart(0x68);
+                m4aSongNumStart(SONG_SYS_CLOSE);
                 FadeStartOut(0, 16);
                 func_080D7568(0);
                 gUnk_0203C550 = 5;
             } else if (GetKeysPressed() & B_BUTTON) {
                 if (!func_080D7890()) {
-                    m4aSongNumStart(0x68);
+                    m4aSongNumStart(SONG_SYS_CLOSE);
                     func_080D78B8(work);
                     func_080D7568(1);
                 }
@@ -1066,7 +1066,7 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
     }
 
     if (changed) {
-        m4aSongNumStart(0x67);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         func_08000DE8(&work->tasks, work->task);
         work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
     }

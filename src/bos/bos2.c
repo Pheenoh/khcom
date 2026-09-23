@@ -690,7 +690,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
     if (jf->unk_238 <= 3) {
         if (++work->unk_22 > work->unk_20) {
             work->unk_22 = 0;
-            m4aSongNumStart(274);
+            m4aSongNumStart(SONG_VO_EG_DAMAGE00);
             work->unk_20 = GetRandom() % 121 + 480;
         }
     }
@@ -1333,7 +1333,7 @@ void func_080BEAE8(JfMajinWork* work) {
                 }
 
                 func_080BE380(work->jf->unk_248, 0xA0, work);
-                m4aSongNumStart(0x277);
+                m4aSongNumStart(SONG_BTL_JF_UP);
                 work->unk_48++;
             }
             break;
@@ -1589,7 +1589,7 @@ void func_080BF160(JfMajinWork* work) {
             }
 
             func_0802F1E8();
-            m4aSongNumStart(0x210);
+            m4aSongNumStart(SONG_BTL_LB_RUMB);
             work->unk_46 = 0;
             work->unk_48++;
             break;
@@ -1700,7 +1700,7 @@ void func_080BF4F4(JfMajinWork* work) {
                 func_08016C40(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100, 0x133, 96, 45);
             }
 
-            m4aSongNumStart(0x27A);
+            m4aSongNumStart(SONG_EF_JF_BEEM);
             jf->body.x = (work->x - 0x100) + (work->unk_44++ % 2) * 0x200;
             work->unk_46 = 0;
             work->unk_48++;
@@ -1829,7 +1829,7 @@ void func_080BF8C4(JfMajinWork* work) {
                 func_080147C8(0x133, 0x100);
             }
 
-            m4aSongNumStart(0x27A);
+            m4aSongNumStart(SONG_EF_JF_BEEM);
             jf->body.x = (work->x - 0x100) + (work->unk_44++ % 2) * 0x200;
             work->unk_46 = 0;
             work->unk_4A = 0;
@@ -2182,7 +2182,7 @@ void func_080C02AC(JfMajinWork* work) {
 
         if (work->unk_46 > 80) {
             work->unk_46 = 0;
-            m4aSongNumStart(0x26A);
+            m4aSongNumStart(SONG_BTL_IRON_GIMICBREAK);
             work->jf->unk_244++;
         }
         break;
@@ -2492,7 +2492,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
             work->unk_17C = 0;
             work->unk_15C = 0;
             work->state = 5;
@@ -2528,13 +2528,13 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             }
 
             work->gfx2 = gUnk_09EF3A48[15];
-            m4aSongNumStart(632);
+            m4aSongNumStart(SONG_BTL_JF_BALLTHR);
             work->unk_194 = 1;
             work->state++;
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
             work->unk_17C = 0;
             work->unk_194 = 0;
             work->unk_15C = 0;
@@ -2565,14 +2565,14 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         }
 
         if (func_08011F78(231, work->x, work->y, work->z - 0x2000, 28, 28, 28) == 1) {
-            m4aSongNumStart(0x279);
+            m4aSongNumStart(SONG_EF_JF_BALLHIT);
             func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
             work->state = 3;
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
             work->unk_17C = 0;
             work->unk_194 = 0;
             work->unk_15C = 0;
@@ -2581,7 +2581,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
 
         switch ((s8)func_080C1370(work->x, work->y, work->z - 0x2000)) {
         case 1:
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
             func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
             work->state = 3;
@@ -3326,7 +3326,7 @@ void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
     FadeSetPaletteExcluded(0x13, 0);
     FadeToAmount(0, 0x14, 8);
     func_08018B04(x - 0x1400, y, z - 0xA00, 0x100);
-    m4aSongNumStart(0x2D1);
+    m4aSongNumStart(SONG_SND_721);
     q->flags |= 0x01000000;
 }
 
@@ -3614,7 +3614,7 @@ void func_080C2FD8(DsdMainWork* work) {
         b->z = 0;
         b->flags &= ~0x1000000;
         func_0802F1E8();
-        m4aSongNumStart(0x2B9);
+        m4aSongNumStart(SONG_EF_AIRO);
         func_0801801C(0x7800, 0x16800, 0, 0x100);
         ColliderSetDisabled(&b->collider, 0);
         work->dsd->unk_350++;
@@ -3687,7 +3687,7 @@ void func_080C3188(DsdMainWork* work) {
         TaskCreate(&work->tasks, &gTaskDescBosDsdCircle, work->dsd);
         func_080147D8(0x8000, 0x15400);
         func_08011F78(0x101, 0x8000, 0x16800, -0x1400, 16, 16, 16);
-        m4aSongNumStart(0x2BC);
+        m4aSongNumStart(SONG_EF_DS_BEEM);
         work->dsd->unk_350++;
         break;
     case 1:
@@ -3769,7 +3769,7 @@ void func_080C3188(DsdMainWork* work) {
         while (e != 0) {
             if (e->unk_000 == 0) {
                 e->flags |= 0x40;
-                m4aSongNumStart(0x227);
+                m4aSongNumStart(SONG_BTL_DARKDEAD);
             }
 
             e = ListPoolNext(&e->node);
@@ -3984,7 +3984,7 @@ void func_080C3928(DsdMainWork* work) {
         while (e != 0) {
             if (e->unk_000 == 0) {
                 e->flags |= 0x40;
-                m4aSongNumStart(0x227);
+                m4aSongNumStart(SONG_BTL_DARKDEAD);
             }
 
             e = ListPoolNext(&e->node);
@@ -4001,7 +4001,7 @@ void func_080C3928(DsdMainWork* work) {
         FadeSetPaletteExcluded(19, 0);
         FadeToAmount(0, 20, 8);
         func_08018B04(a->x - 0x1400, a->y, a->z - 0xA00, 0x100);
-        m4aSongNumStart(0x2D1);
+        m4aSongNumStart(SONG_SND_721);
         work->unk_006 = 0;
         work->dsd->unk_350++;
         func_0802F274(d->body[0].x - 0x1400, d->body[0].y + d->body[0].z + 0x3000);
@@ -4621,7 +4621,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
         }
 
         func_08014588(work->x, work->y, work->z, 0x100, work->unk_3C, 0);
-        m4aSongNumStart(0x2BD);
+        m4aSongNumStart(SONG_SND_701);
         work->state++;
         break;
     case 2:
@@ -4651,7 +4651,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
 
     if (func_08011F78(0x102, work->x, work->y, work->z, 16, 16, 16) == 1) {
         func_08014790(0);
-        m4aSongNumStart(0x2A1);
+        m4aSongNumStart(SONG_EF_RAC_BEEMENTRY);
         work->unk_48 = 0;
         return 0;
     }
@@ -4770,7 +4770,7 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_3C = 0;
     work->gfx = gUnk_08B22CBC;
     func_08014588(work->x, work->y, work->z, work->unk_10, work->unk_32, 0);
-    m4aSongNumStart(0x2C0);
+    m4aSongNumStart(SONG_SND_704);
 
     switch (work->dsd->unk_35A) {
     case 1:
@@ -4815,7 +4815,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         break;
     case 2:
         func_08017F70(work->x, work->y, work->z, 0x103);
-        m4aSongNumStart(0x2C1);
+        m4aSongNumStart(SONG_SND_705);
         func_0802F274(work->x, work->y + work->z);
         work->state++;
         break;
@@ -4850,7 +4850,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         work->z += work->vz;
 
         if (func_08011F78(0x104, work->x, work->y, work->z, 16, 16, 16) == 1) {
-            m4aSongNumStart(0x29E);
+            m4aSongNumStart(SONG_BTL_RK_LIMITENTRY);
             func_08014790(0);
             work->unk_3C = 0;
             work->state = 7;
@@ -4858,7 +4858,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
 
         if (work->z >= -0x800) {
             func_08014790(0);
-            m4aSongNumStart(0x2BF);
+            m4aSongNumStart(SONG_SND_703);
             work->unk_3C = 0;
             work->state = 7;
         }

@@ -183,15 +183,15 @@ void func_08012AAC(u16 a, s32 x, s32 y, s32 z) {
     switch (a) {
     case 0:
         BgAnimStart(&gUnk_09EDA558, sx, sy);
-        m4aSongNumStart(0x204);
+        m4aSongNumStart(SONG_EF_CAREL00);
         break;
     case 1:
         BgAnimStart(&gUnk_09EDA840, sx, sy);
-        m4aSongNumStart(0x205);
+        m4aSongNumStart(SONG_EF_CAREL01);
         break;
     case 2:
         BgAnimStart(&gUnk_09EDA828, sx, sy);
-        m4aSongNumStart(0x206);
+        m4aSongNumStart(SONG_EF_CAREL02);
         break;
     }
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
@@ -274,19 +274,19 @@ void func_08012C08(void) {
         switch (gBgFx->unk_26) {
         case 0:
             BgAnimStart(&gUnk_09EDA5B8, sx, sy);
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
             break;
         case 1:
             BgAnimStart(&gUnk_09EDA5E8, sx, sy);
-            m4aSongNumStart(0x1FA);
+            m4aSongNumStart(SONG_EF_FIRE02);
             break;
         case 2:
             BgAnimStart(&gUnk_09EDA858, sx, sy);
-            m4aSongNumStart(0x1FB);
+            m4aSongNumStart(SONG_EF_FIRE03);
             break;
         default:
             BgAnimStart(&gUnk_09EDA870, sx, sy);
-            m4aSongNumStart(0x1FB);
+            m4aSongNumStart(SONG_EF_FIRE03);
             break;
         }
 
@@ -315,9 +315,9 @@ void func_08012E44(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
     }
 
     if ((gBtlWork->flags & 0x4000) == 0 && (gBtlWork->flags & 0x40)) {
-        m4aSongNumStart(0x23D);
+        m4aSongNumStart(SONG_EF_MON_FIRE);
     } else {
-        m4aSongNumStart(0x1F8);
+        m4aSongNumStart(SONG_EF_FIRE00);
     }
     BgAnimSetLoopStartFrame(8);
     gBgFx->update = func_08012C08;
@@ -348,7 +348,7 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
     gBgFx->z = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA570, sx, sy);
-    m4aSongNumStart(0x23D);
+    m4aSongNumStart(SONG_EF_MON_FIRE);
     BgAnimSetLoopStartFrame(8);
     gBgFx->update = func_08012C08;
     gBgFx->unk_28 = gBtlWork->actor->x;
@@ -432,16 +432,16 @@ void func_08013070(void) {
         switch (gBgFx->unk_26) {
         case 0:
             BgAnimStart(&gUnk_09EDA708, sx, sy);
-            m4aSongNumStart(0x1FD);
+            m4aSongNumStart(SONG_EF_BURIZA01);
             break;
         case 1:
             BgAnimStart(&gUnk_09EDA738, sx, sy);
-            m4aSongNumStart(0x1FE);
+            m4aSongNumStart(SONG_EF_BURIZA02);
             break;
         case 2:
         default:
             BgAnimStart(&gUnk_09EDA750, sx, sy);
-            m4aSongNumStart(0x1FF);
+            m4aSongNumStart(SONG_EF_BURIZA03);
             break;
         }
         gBgFx->unk_08 = -2;
@@ -488,9 +488,9 @@ void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
     BgAnimStart(&gUnk_09EDA6D8, sx, sy);
 
     if ((gBtlWork->flags & 0x4000) == 0 && (gBtlWork->flags & 0x40)) {
-        m4aSongNumStart(0x23E);
+        m4aSongNumStart(SONG_EF_MON_BURIZA);
     } else {
-        m4aSongNumStart(0x1FC);
+        m4aSongNumStart(SONG_EF_BURIZA00);
     }
     BgAnimSetLoopStartFrame(8);
     gBgFx->update = func_08013070;
@@ -768,7 +768,7 @@ void func_08013A68(s32 x, s32 y, s32 z) {
     gBgFx->z = z - 0x3000;
     WorldToScreen(&sx, &sy, x, y, z - 0x3000);
     BgAnimStart(&gUnk_09EDA6C0, sx, sy);
-    m4aSongNumStart(0x207);
+    m4aSongNumStart(SONG_EF_POSION);
     gBgFx->update = func_08012908;
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gBgFx->flags |= 8;
@@ -799,17 +799,17 @@ void func_08013B00(void) {
         case 0:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 32, 256, 256);
             BgAnimStart(&gUnk_09EDA798, sx, sy);
-            m4aSongNumStart(0x201);
+            m4aSongNumStart(SONG_EF_THUND01);
             break;
         case 1:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 256, 256, 256);
             BgAnimStart(&gUnk_09EDA7B0, sx, sy);
-            m4aSongNumStart(0x202);
+            m4aSongNumStart(SONG_EF_THUND02);
             break;
         case 2:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 256, 256, 256);
             BgAnimStart(&gUnk_09EDA7C8, sx, sy);
-            m4aSongNumStart(0x203);
+            m4aSongNumStart(SONG_EF_THUND03);
             break;
         }
 
@@ -841,7 +841,7 @@ void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q) {
     gBgFx->unk_30 = p;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA768, sx, sy);
-    m4aSongNumStart(0x200);
+    m4aSongNumStart(SONG_EF_THUND00);
     gBgFx->unk_48 = q;
     gBgFx->update = func_08013B00;
     gBgFx->unk_26 = a;
@@ -884,7 +884,7 @@ void func_08013DB8(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA7F8, sx, sy);
     BgAnimSetLoopStartFrame(4);
-    m4aSongNumStart(0x209);
+    m4aSongNumStart(SONG_EF_MON_DEATH);
     gBgFx->update = func_08013D60;
     gBgFx->unk_2C = 0;
     gBgFx->unk_08 = 0;
@@ -905,7 +905,7 @@ void func_08013E4C(s32 x, s32 y, s32 z, s32 s) {
     gBgFx->z = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA810, sx, sy);
-    m4aSongNumStart(0x227);
+    m4aSongNumStart(SONG_BTL_DARKDEAD);
     gBgFx->update = func_08012908;
     gBgFx->unk_2C = 0;
     gBgFx->unk_08 = 0;
@@ -947,7 +947,7 @@ void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c) {
     gBgFx->z = -0x1000;
     WorldToScreen(&sx, &sy, x, y, -0x1000);
     BgAnimStart(&gUnk_09EDA810, sx, sy);
-    m4aSongNumStart(0x227);
+    m4aSongNumStart(SONG_BTL_DARKDEAD);
     gBgFx->update = func_08012908;
     gBgFx->unk_2C = 0;
     gBgFx->unk_08 = 0;
@@ -973,7 +973,7 @@ void func_08014020(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA600, sx, sy);
     gBgFx->update = func_08014000;
-    m4aSongNumStart(0x22C);
+    m4aSongNumStart(SONG_EF_TARU_BOMB);
     gBgFx->flags |= 0x10;
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gBgFx->flags |= 8;
@@ -1337,16 +1337,16 @@ void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w) {
     switch (a) {
     case 0:
         BgAnimStart(&gUnk_09EDA8A0, sx, sy);
-        m4aSongNumStart(0x25C);
+        m4aSongNumStart(SONG_EF_STOP00);
         break;
     case 1:
         BgAnimStart(&gUnk_09EDA8B8, sx, sy);
-        m4aSongNumStart(0x25D);
+        m4aSongNumStart(SONG_EF_STOP01);
         break;
     case 2:
     default:
         BgAnimStart(&gUnk_09EDA8D0, sx, sy);
-        m4aSongNumStart(0x25E);
+        m4aSongNumStart(SONG_EF_STOP02);
         break;
     }
     gBgFx->update = func_08014850;
@@ -1397,7 +1397,7 @@ void func_08014AAC(s32 x, s32 y) {
     gBgFx->x = x;
     gBgFx->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
-    m4aSongNumStart(0x20E);
+    m4aSongNumStart(SONG_BTL_GF_LOOP);
     BgAnimStart(&gUnk_09EDAA50, sx, sy);
     BgAnimSetLoopStartFrame(4);
     gBgFx->update = func_08012908;
@@ -1465,7 +1465,7 @@ void func_08014BA8(void) {
             gBgFx->unk_28 = -gBgFx->unk_28;
         }
 
-        m4aSongNumStart(0x233);
+        m4aSongNumStart(SONG_EF_GRABI01);
         gBgFx->unk_0A++;
     } else if (gBgFx->unk_0A == 1) {
         if (gBgFx->unk_08 <= 29) {
@@ -1488,7 +1488,7 @@ void func_08014BA8(void) {
             }
 
             if (r) {
-                m4aSongNumStart(0x234);
+                m4aSongNumStart(SONG_EF_GRABI02);
             }
         }
 
@@ -1521,7 +1521,7 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
     gBgFx->unk_0A = 0;
     WorldToScreen(&sx, &sy, gBgFx->x, gBgFx->y, gBgFx->z);
     BgAnimStart(&gUnk_09EDA978, sx, sy);
-    m4aSongNumStart(0x232);
+    m4aSongNumStart(SONG_EF_GRABI00);
     gBgFx->unk_26 = a;
     gBgFx->update = func_08014BA8;
 }
@@ -1536,7 +1536,7 @@ void func_08014E38(void) {
 
     if (gBgFx->unk_08 == 0x23) {
         if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 40, 20, 256)) {
-            m4aSongNumStart(0x234);
+            m4aSongNumStart(SONG_EF_GRABI02);
         }
     }
     func_08012908();
@@ -1559,7 +1559,7 @@ void func_08014EC0(s32 x, s32 y, s32 z, s32 w) {
     gBgFx->unk_0A = 0;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA990, sx, sy);
-    m4aSongNumStart(0x233);
+    m4aSongNumStart(SONG_EF_GRABI01);
     gBgFx->update = func_08014E38;
 }
 
@@ -1643,7 +1643,7 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA9C0, sx, sy);
     gBgFx->update = func_0801508C;
-    m4aSongNumStart(0x262);
+    m4aSongNumStart(SONG_EF_BFG_GASS);
 
     if (f == 0) {
         gBgFx->flags |= 1;
@@ -1747,7 +1747,7 @@ void func_0801536C(void) {
     gBgFx->unk_20 = 0x19;
     BgAnimStart(&gUnk_09EDAA20, 0x78, 0x50);
     BgAnimSetLoopStartFrame(0);
-    m4aSongNumStart(0x27B);
+    m4aSongNumStart(SONG_EF_DBOSS_DEAD);
     gBgFx->update = func_080152DC;
     gBgFx->flags |= 0x10;
 }
@@ -1782,7 +1782,7 @@ void func_080153C8(void) {
             gBgFx->unk_08 = 0;
             gBgFx->unk_26 = 2;
         } else if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, u, u, u)) {
-            m4aSongNumStart(0x27F);
+            m4aSongNumStart(SONG_BTL_AN_WAVEHIT);
             gBgFx->unk_08 = 0;
             gBgFx->unk_26 = 2;
         } else {
@@ -1853,7 +1853,7 @@ void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
         gBgFx->unk_20 = 384;
     }
     BgAnimStart(&gUnk_09EDA798, sx, sy);
-    m4aSongNumStart(0x201);
+    m4aSongNumStart(SONG_EF_THUND01);
     func_08011F78(w, gBgFx->x, gBgFx->y, gBgFx->z, 16, 16, 256);
     gBgFx->update = func_08012908;
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
@@ -1885,17 +1885,17 @@ void func_08015698(void) {
         case 0:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 16, 16, 256);
             BgAnimStart(&gUnk_09EDA798, sx, sy);
-            m4aSongNumStart(0x201);
+            m4aSongNumStart(SONG_EF_THUND01);
             break;
         case 1:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 40, 40, 256);
             BgAnimStart(&gUnk_09EDA7B0, sx, sy);
-            m4aSongNumStart(0x202);
+            m4aSongNumStart(SONG_EF_THUND02);
             break;
         case 2:
             func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 64, 64, 256);
             BgAnimStart(&gUnk_09EDA7C8, sx, sy);
-            m4aSongNumStart(0x203);
+            m4aSongNumStart(SONG_EF_THUND03);
             break;
         }
 
@@ -1929,7 +1929,7 @@ void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
     gBgFx->unk_30 = r;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA768, sx, sy);
-    m4aSongNumStart(0x200);
+    m4aSongNumStart(SONG_EF_THUND00);
     gBgFx->unk_48 = s;
     gBgFx->update = func_08015698;
     gBgFx->unk_26 = a;
@@ -2242,7 +2242,7 @@ void func_08016038(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     gBgFx->unk_1C = 0x19;
     gBgFx->unk_20 = 0x19;
-    m4aSongNumStart(0x27C);
+    m4aSongNumStart(SONG_EF_RAGNA01);
     BgAnimStart(&gUnk_09EDAAC8, sx, sy);
     BgAnimSetLoopStartFrame(0);
     gBgFx->unk_08 = 0x23;
@@ -2326,7 +2326,7 @@ void func_080161F8(s32 x, s32 y, s32 z, u8 f) {
         gBgFx->unk_1C = -0x100;
     }
     gBgFx->unk_3C = 0;
-    m4aSongNumStart(0x27D);
+    m4aSongNumStart(SONG_EF_RAGNA02);
     BgAnimStart(&gUnk_09EDAAF8, sx, sy);
     BgAnimSetLoopStartFrame(6);
     gBgFx->update = func_080160C0;
@@ -2447,7 +2447,7 @@ void func_08016468(void) {
             func_08016374(o->unk_02C);
         }
         gBgFx->unk_26 = 3;
-        m4aSongNumStart(0x298);
+        m4aSongNumStart(SONG_EF_SYNC2);
         gBgFx->unk_0A = 16;
         break;
     case 3:
@@ -2484,7 +2484,7 @@ void func_080165DC(s32 x, s32 y, s32 z) {
     gBgFx->unk_1C = 89;
     gBgFx->unk_20 = 89;
     gBgFx->update = func_08016468;
-    m4aSongNumStart(0x297);
+    m4aSongNumStart(SONG_EF_SYNC1);
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gBgFx->flags |= 8;
 }
@@ -2606,7 +2606,7 @@ void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a) {
     }
     gBgFx->unk_2C = w;
     gBgFx->unk_20 = 76;
-    m4aSongNumStart(0x282);
+    m4aSongNumStart(SONG_EF_UR_BEEM);
     gBgFx->update = func_080167F8;
     BgAnimSetLoopStartFrame(0);
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
@@ -2650,7 +2650,7 @@ void func_08016A64(void) {
     if (gBgFx->x < (gBtlWork->unk_0DA - 0x40) << 8 || gBgFx->x > (gBtlWork->unk_0DC + 0x40) << 8) {
         BgAnimStop();
     } else if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 16, 16, 48)) {
-        m4aSongNumStart(0x27F);
+        m4aSongNumStart(SONG_BTL_AN_WAVEHIT);
     }
     func_08012908();
 }
@@ -2677,7 +2677,7 @@ void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w) {
         gBgFx->flags |= 1;
     }
     gBgFx->unk_20 = 0x100;
-    m4aSongNumStart(0x27E);
+    m4aSongNumStart(SONG_EF_AN_WAVE);
     gBgFx->update = func_08016A64;
     BgAnimSetLoopStartFrame(0);
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
@@ -2776,7 +2776,7 @@ void func_08016D00(void) {
         gBgFx->update = func_08012BCC;
         break;
     case -1:
-        m4aSongNumStart(0x29D);
+        m4aSongNumStart(SONG_EF_DRHEET);
         SetBlendAlpha(16, 11);
         gBgFx->unk_24 = 0;
         gBgFx->unk_1C = 0x500;
@@ -2786,7 +2786,7 @@ void func_08016D00(void) {
         WorldToScreen(&sx, &sy, gBgFx->x, gBgFx->y,
                       gBgFx->z);
         BgAnimStart(&gUnk_09EDA600, sx, sy);
-        m4aSongNumStart(0x1FB);
+        m4aSongNumStart(SONG_EF_FIRE03);
         gBgFx->unk_08 = -2;
         gBgFx->unk_0A = 0;
         break;
@@ -2817,7 +2817,7 @@ void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
     gBgFx->z = z;
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA570, sx, sy);
-    m4aSongNumStart(0x29D);
+    m4aSongNumStart(SONG_EF_DRHEET);
     BgAnimSetLoopStartFrame(8);
     gBgFx->update = func_08016D00;
     gBgFx->unk_28 = p;
@@ -3340,14 +3340,14 @@ void func_08017C54(void) {
         if (gBgFx->flags & 1) {
             if (func_08011F78(gBgFx->unk_48, gBgFx->x - 0x1000, gBgFx->y + 0x2000, 0, 20, 32, 64) || func_08011F78(gBgFx->unk_48, gBgFx->x + 0x1000, gBgFx->y - 0x2000, 0, 20, 32, 64)) {
                 gBgFx->unk_26 = 2;
-                m4aSongNumStart(0x1F9);
+                m4aSongNumStart(SONG_EF_FIRE01);
             }
         } else if (func_08011F78(gBgFx->unk_48, gBgFx->x - 0x1000, gBgFx->y - 0x2000, 0, 20, 32, 64)) {
             gBgFx->unk_26 = 2;
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
         } else if (func_08011F78(gBgFx->unk_48, gBgFx->x + 0x1000, gBgFx->y + 0x2000, 0, 20, 32, 64)) {
             gBgFx->unk_26 = 2;
-            m4aSongNumStart(0x1F9);
+            m4aSongNumStart(SONG_EF_FIRE01);
         }
 
         if (gBgFx->flags & 1) {
@@ -3414,7 +3414,7 @@ void func_08017EF4(void) {
     if (k <= 4) {
         t = (gBgFx->unk_1C * 5) >> 5;
         if (func_08011F78(0x13D, gBgFx->x, gBgFx->y, gBgFx->z, (s16)t, (s16)t >> 1, 1)) {
-            m4aSongNumStart(0x2AB);
+            m4aSongNumStart(SONG_BTL_MARL_GROUNDHIT);
         }
     }
     func_08012908();
@@ -3481,7 +3481,7 @@ void func_080180C8(void) {
         gBgFx->unk_26 = 2;
 
         if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 0x100, 0x100, 0x100)) {
-            m4aSongNumStart(0x2AF);
+            m4aSongNumStart(SONG_BTL_ETC_HIT05);
         }
         break;
     case 2:
@@ -3519,7 +3519,7 @@ void func_08018184(s32 x, s32 y, s32 z, s32 w) {
     gBgFx->unk_20 = 5;
     gBgFx->unk_28 = 256;
     gBgFx->flags |= 0x10;
-    m4aSongNumStart(0x2AE);
+    m4aSongNumStart(SONG_EF_MARL_HANABIRA);
     gBgFx->update = func_080180C8;
     FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gBgFx->flags |= 8;
@@ -3539,7 +3539,7 @@ void func_08018240(void) {
     gBgFx->z = gBgFx->unk_30 + ((-gSineTable[gBgFx->unk_24 + 64] * gBgFx->unk_3C) >> 8);
 
     if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, 10, 5, 72)) {
-        m4aSongNumStart(0x2AD);
+        m4aSongNumStart(SONG_BTL_MARL_EFEHIT);
     }
 
     switch (gBgFx->unk_26) {
@@ -3603,7 +3603,7 @@ void func_0801836C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     gBgFx->y = y;
     gBgFx->unk_20 = 0x180;
     SetBlendAlpha(16, 0);
-    m4aSongNumStart(0x2AC);
+    m4aSongNumStart(SONG_EF_MARL_KAMAEF);
     WorldToScreen(&sx, &sy, gBgFx->x, gBgFx->y, gBgFx->z);
     BgAnimStart(&gUnk_09EDACD8, sx, sy);
     gBgFx->unk_26 = 0;
@@ -3777,7 +3777,7 @@ void func_0801884C(void) {
     if (gBgFx->unk_08 == 10) {
         t = (gBgFx->unk_1C * 3) >> 4;
         if (func_08011F78(gBgFx->unk_48, gBgFx->x, gBgFx->y, gBgFx->z, t, t, 100)) {
-            m4aSongNumStart(0x2BB);
+            m4aSongNumStart(SONG_EF_DS_ANKOKUPUNCH);
         }
     }
     gBgFx->unk_08++;
@@ -3989,7 +3989,7 @@ void func_08018F28(s32 x, s32 y, s32 z) {
     gBgFx->x = x;
     gBgFx->y = y;
     gBgFx->z = z;
-    m4aSongNumStart(0x2C1);
+    m4aSongNumStart(SONG_SND_705);
     WorldToScreen(&sx, &sy, gBgFx->x, gBgFx->y, gBgFx->z);
     gBgFx->unk_26 = GetRandom() % 2;
     switch (gBgFx->unk_26) {

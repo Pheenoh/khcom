@@ -230,14 +230,14 @@ s32 Continue_1(ContinueWork* p) {
         if ((GetKeysPressed() & DPAD_UP) != 0) {
             if (p->unk_60 == 1) {
                 p->unk_60 = 0;
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
         if ((GetKeysPressed() & DPAD_DOWN) != 0) {
             if (p->unk_60 == 0) {
                 p->unk_60 = 1;
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
             }
         }
 
@@ -251,7 +251,7 @@ s32 Continue_1(ContinueWork* p) {
                 break;
             }
 
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             p->unk_6A = 2;
             p->unk_6B = 16;
         }

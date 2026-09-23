@@ -113,7 +113,7 @@ void func_080D5B04(void) {
 #endif
     SetBgBlend(0, 5, 16);
     EnableBg(1);
-    m4aSongNumStart(6);
+    m4aSongNumStart(SONG_BGM_TITLE);
 }
 
 void func_080D5B30(void) {
@@ -281,7 +281,7 @@ void mode_title_1(void) {
         if (!(GetKeysPressed() & START_BUTTON) && !(GetKeysPressed() & A_BUTTON)) {
             break;
         }
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
 
         if (SaveRepairSystem() == 2) {
             gUnk_02034EC2 = 3;
@@ -341,15 +341,15 @@ void mode_title_1(void) {
             case 0:
             case 4:
             case 5:
-                m4aSongNumStart(0x93);
+                m4aSongNumStart(SONG_SYS_START);
                 break;
             default:
-                m4aSongNumStart(0x66);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 break;
             }
             func_080D5B30();
         } else if (GetKeysPressed() & B_BUTTON) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             gUnk_02034ECA = 1;
             func_080D5B30();
         }
@@ -368,7 +368,7 @@ void mode_title_1(void) {
     func_080C73D8();
 
     if (gUnk_02034E98 <= 4 && (GetKeysPressed() & (A_BUTTON | START_BUTTON))) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
 
         if (gUnk_02034E98 <= 3) {
             func_080D5A4C(2);

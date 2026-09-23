@@ -581,7 +581,7 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
     w->unk_EC = 0;
     w->unk_EE = 0;
     w->unk_EF = 0;
-    m4aSongNumStart(0x22B);
+    m4aSongNumStart(SONG_EF_BOSS_DEAD4);
     TaskPoolInit(&w->tasks, 10);
     gBtlWork->unk_0B0++;
 }
@@ -611,7 +611,7 @@ u8 PrizeBoss_1(BossPrizeWork* w, void* a) {
     }
     if (w->collider[0x2C] != 0) {
         w->unk_ED = 1;
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_08084458(*(u16*)&w->cardId);
         if (gGameState.flags & 8) {
             _08085D04(gGameState.world);

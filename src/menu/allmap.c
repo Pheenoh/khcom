@@ -468,7 +468,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
 
         if ((GetKeysPressed() & START_BUTTON) != 0) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             func_080D3FD4(work);
             gUnk_0203C4E0 = 0;
             func_080D3ED0();
@@ -477,7 +477,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
 
         if ((GetKeysPressed() & B_BUTTON) != 0 && IsStockMesDispActive() == 0) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             func_080D3F10(work);
             gUnk_0203C4E0 = 1;
             func_080D3ED0();
@@ -670,7 +670,7 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
 s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
     if ((GetKeysPressed() & B_BUTTON) != 0 && work->unk_116 == 0) {
         work->unk_116 = 1;
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         work->unk_100 = 8 - work->unk_100;
         work->unk_10C = work->unk_0FC << 8;
         work->unk_110 = work->unk_0FE << 8;
@@ -775,7 +775,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
 
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
     if (IsStockMesDispActive() == 0 && (GetKeysPressed() & A_BUTTON) != 0) {
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         work->task = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->pos);
     }
     work->y2 = gSineTable[(u8)work->angle] >> 8;
@@ -1098,7 +1098,7 @@ void func_080D55E4(void) {
     gUnk_0203C538 = r;
 
     if (moved != 0) {
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
         func_080D54FC();
     }
 

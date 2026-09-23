@@ -277,7 +277,7 @@ u8 func_0805AA9C(void) {
             if (gJiminyWork->unk_C72 > 0) {
                 gJiminyWork->unk_CC0 = 1;
                 gJiminyWork->unk_C72--;
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
 
                 if (gJiminyWork->unk_C74 > 0) {
                     gJiminyWork->unk_C74--;
@@ -289,7 +289,7 @@ u8 func_0805AA9C(void) {
             if (gJiminyWork->unk_C72 < gJiminyWork->unk_C76 - 1) {
                 gJiminyWork->unk_CC0 = 1;
                 gJiminyWork->unk_C72++;
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
 
                 if (gJiminyWork->unk_C74 < gJiminyWork->unk_C78 - 1) {
                     gJiminyWork->unk_C74++;
@@ -305,7 +305,7 @@ u8 func_0805AA9C(void) {
     if (GetKeysPressed() & START_BUTTON) {
         gJiminyWork->unk_048 = 0;
         gJiminyWork->unk_000 = 5;
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         return 1;
     }
     return 0;

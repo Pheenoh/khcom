@@ -369,7 +369,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         if (func_080A7300(work) != 0 && func_080A734C(work) != 0) {
             SetTaskUpdate(a, (void*)func_080A6388);
             FadeStartOut(0, 4);
-            m4aSongNumStart(103);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
         }
         work[0x504] = 0;
@@ -380,7 +380,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         if (*(s16*)&work[0x4CA] > 0) {
             (*(s16*)&work[0x4CA])--;
             work[0x4EC] = 4;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else {
             func_080A6A38(work);
         }
@@ -390,7 +390,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         if (*(s16*)&work[0x4CA] <= 2) {
             (*(s16*)&work[0x4CA])++;
             work[0x4EC] = 4;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         } else {
             func_080A69A0(work);
 
@@ -408,7 +408,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         if (*(s16*)&work[0x4C8] > 0) {
             (*(s16*)&work[0x4C8])--;
             work[0x4EC] = 4;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
@@ -416,19 +416,19 @@ u8 func_080A5FF4(u8* work, void* a) {
         if (*(s16*)&work[0x4C8] <= 1) {
             (*(s16*)&work[0x4C8])++;
             work[0x4EC] = 4;
-            m4aSongNumStart(121);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
     case START_BUTTON:
         work[0x50C] = 7;
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         FadeStartOut(0, 4);
         SetTaskUpdate(a, (void*)func_080A6388);
         return 1;
     case B_BUTTON:
         work[0x50C] = 8;
-        m4aSongNumStart(103);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_080A63B8);
         return 1;
     }
@@ -664,7 +664,7 @@ void func_080A69A0(u8* work) {
         node = ListPoolNext(&node->node);
     }
 
-    m4aSongNumStart(0x79);
+    m4aSongNumStart(SONG_SYS_CLICKI04B);
     work[0x4EE]++;
     *(s32*)&work[0x498] += 0x300;
 
@@ -708,7 +708,7 @@ u8 func_080A6A38(u8* work) {
         node = ListPoolNext(&node->node);
     } while (node != 0);
 
-    m4aSongNumStart(0x79);
+    m4aSongNumStart(SONG_SYS_CLICKI04B);
     work[0x4EE]--;
     *(s32*)&work[0x498] -= 0x300;
 
@@ -1019,7 +1019,7 @@ void func_080A7284(u8* work, u8 mode) {
 u8 func_080A7300(u8* work) {
     if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.progression.cp) {
         TaskCreate(&work[0x420], &gUnk_09EE7FA8, &work[0x501]);
-        m4aSongNumStart(0x69);
+        m4aSongNumStart(SONG_SYS_BEEP);
         return 0;
     }
 
@@ -1027,7 +1027,7 @@ u8 func_080A7300(u8* work) {
 }
 u8 func_080A734C(u8* work) {
     if (func_080857D4(0) == 0) {
-        m4aSongNumStart(0x69);
+        m4aSongNumStart(SONG_SYS_BEEP);
         TaskCreate(&work[0x420], &gUnk_09EE7FC0, &work[0x501]);
         return 0;
     }

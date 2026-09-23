@@ -1343,7 +1343,7 @@ u8 func_0806EF40(void* work, void* a) {
     if (p->unk_026 == 3) {
         e = &p->keyframes[p->unk_1A0];
         if ((e->unk_18 & 0x80000) == 0) {
-            m4aSongNumStart(0x14A);
+            m4aSongNumStart(SONG_EV_WARPIN);
         }
     }
     TaskPoolUpdate(&p->tasks);
@@ -1417,7 +1417,7 @@ u8 func_0806F114(void* work, void* a) {
     if (p->unk_026 == 3) {
         e = &p->keyframes[p->unk_1A0];
         if ((e->unk_18 & 0x80000) == 0) {
-            m4aSongNumStart(0x14B);
+            m4aSongNumStart(SONG_EV_WARPOUT);
         }
     }
     TaskPoolUpdate(&p->tasks);
@@ -2432,11 +2432,11 @@ s32 func_08070AD4(EventCharaWork* p) {
         if (p->unk_024 != MSG_SOUND_ID_9E) {
             if (p->anim->timer == 0) {
                 if (p->anim->frame == 2) {
-                    m4aSongNumStart(0x3BE);
+                    m4aSongNumStart(SONG_SND_958);
                     func_08076110(0x3BE, x, y);
                 }
                 if (p->anim->frame == 6) {
-                    m4aSongNumStart(0x3BF);
+                    m4aSongNumStart(SONG_SND_959);
                     func_08076110(0x3BF, x, y);
                 }
             }
@@ -2445,11 +2445,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2E6:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3AC);
+                m4aSongNumStart(SONG_EV_MAN2_STONEL);
                 func_08076110(0x3AC, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3AD);
+                m4aSongNumStart(SONG_EV_MAN2_STONER);
                 func_08076110(0x3AD, x, y);
             }
         }
@@ -2457,11 +2457,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x375:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -2469,7 +2469,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x398:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x175);
+                m4aSongNumStart(SONG_SND_373);
                 func_08076110(0x175, x, y);
             }
         }
@@ -2477,7 +2477,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x399:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x176);
+                m4aSongNumStart(SONG_SND_374);
                 func_08076110(0x176, x, y);
             }
         }
@@ -2485,18 +2485,18 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x5E:
         if (p->anim->timer == 9) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x12E);
+                m4aSongNumStart(SONG_EV_EV01_01);
             }
         }
         break;
     case 0x1C2:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3AC);
+                m4aSongNumStart(SONG_EV_MAN2_STONEL);
                 func_08076110(0x3AC, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3AD);
+                m4aSongNumStart(SONG_EV_MAN2_STONER);
                 func_08076110(0x3AD, x, y);
             }
         }
@@ -2505,11 +2505,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x1C1:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3AC);
+                m4aSongNumStart(SONG_EV_MAN2_STONEL);
                 func_08076110(0x3AC, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3AD);
+                m4aSongNumStart(SONG_EV_MAN2_STONER);
                 func_08076110(0x3AD, x, y);
             }
         }
@@ -2518,11 +2518,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x34C:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -2530,11 +2530,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2B2:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -2551,19 +2551,19 @@ s32 func_08070AD4(EventCharaWork* p) {
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
                 if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
-                    m4aSongNumStart(0x384);
+                    m4aSongNumStart(SONG_EV_SR_DIRTL);
                     func_08076110(0x384, x, y);
                 } else {
-                    m4aSongNumStart(0x3B2);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLEL);
                     func_08076110(0x3B2, x, y);
                 }
             }
             if (p->anim->frame == 7) {
                 if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
-                    m4aSongNumStart(0x385);
+                    m4aSongNumStart(SONG_EV_SR_DIRTR);
                     func_08076110(0x385, x, y);
                 } else {
-                    m4aSongNumStart(0x3B3);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLER);
                     func_08076110(0x3B3, x, y);
                 }
             }
@@ -2574,19 +2574,19 @@ s32 func_08070AD4(EventCharaWork* p) {
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
                 if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
-                    m4aSongNumStart(0x384);
+                    m4aSongNumStart(SONG_EV_SR_DIRTL);
                     func_08076110(0x384, x, y);
                 } else {
-                    m4aSongNumStart(0x3B2);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLEL);
                     func_08076110(0x3B2, x, y);
                 }
             }
             if (p->anim->frame == 5) {
                 if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
-                    m4aSongNumStart(0x385);
+                    m4aSongNumStart(SONG_EV_SR_DIRTR);
                     func_08076110(0x385, x, y);
                 } else {
-                    m4aSongNumStart(0x3B3);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLER);
                     func_08076110(0x3B3, x, y);
                 }
             }
@@ -2596,11 +2596,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x372:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 7) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -2609,11 +2609,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x1F6:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -2621,11 +2621,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x345:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -2633,11 +2633,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x344:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -2645,11 +2645,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x341:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 9) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -2661,11 +2661,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x310:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 9) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -2674,11 +2674,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x276:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3AE);
+                m4aSongNumStart(SONG_EV_WOMAN_DIRT_L);
                 func_08076110(0x3AE, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3AF);
+                m4aSongNumStart(SONG_EV_WOMAN_DIRT_R);
                 func_08076110(0x3AF, x, y);
             }
         }
@@ -2686,11 +2686,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x277:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x3AE);
+                m4aSongNumStart(SONG_EV_WOMAN_DIRT_L);
                 func_08076110(0x3AE, x, y);
             }
             if (p->anim->frame == 7) {
-                m4aSongNumStart(0x3AF);
+                m4aSongNumStart(SONG_EV_WOMAN_DIRT_R);
                 func_08076110(0x3AF, x, y);
             }
         }
@@ -2698,11 +2698,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2A5:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x3AA);
+                m4aSongNumStart(SONG_EV_MAN2_DIRTL);
                 func_08076110(0x3AA, x, y);
             }
             if (p->anim->frame == 7) {
-                m4aSongNumStart(0x3AB);
+                m4aSongNumStart(SONG_EV_MAN2_DIRTR);
                 func_08076110(0x3AB, x, y);
             }
         }
@@ -2710,11 +2710,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2A8:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3A0);
+                m4aSongNumStart(SONG_EV_MAN_DIRTL);
                 func_08076110(0x3A0, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3A1);
+                m4aSongNumStart(SONG_EV_MAN_DIRTR);
                 func_08076110(0x3A1, x, y);
             }
         }
@@ -2722,11 +2722,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x271:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -2734,11 +2734,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x241:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3A8);
+                m4aSongNumStart(SONG_EV_MAN_MARBLEL);
                 func_08076110(0x3A8, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3A9);
+                m4aSongNumStart(SONG_EV_MAN_MARBLER);
                 func_08076110(0x3A9, x, y);
             }
         }
@@ -2746,11 +2746,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x17A:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -2759,11 +2759,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x179:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -2772,11 +2772,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x19D:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -2785,11 +2785,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x14B:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x3B6);
+                m4aSongNumStart(SONG_EV_WOMAN2_DIRTL);
                 func_08076110(0x3B6, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3B7);
+                m4aSongNumStart(SONG_EV_WOMAN2_DIRTR);
                 func_08076110(0x3B7, x, y);
             }
         }
@@ -2797,11 +2797,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x157:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x3A6);
+                m4aSongNumStart(SONG_EV_MAN_WOODL);
                 func_08076110(0x3A6, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3A7);
+                m4aSongNumStart(SONG_EV_MAN_WOODR);
                 func_08076110(0x3A7, x, y);
             }
         }
@@ -2809,11 +2809,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x23E:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3B2);
+                m4aSongNumStart(SONG_EV_MAN_RMARBLEL);
                 func_08076110(0x3B2, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3B3);
+                m4aSongNumStart(SONG_EV_MAN_RMARBLER);
                 func_08076110(0x3B3, x, y);
             }
         }
@@ -2822,11 +2822,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x16E:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3A0);
+                m4aSongNumStart(SONG_EV_MAN_DIRTL);
                 func_08076110(0x3A0, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3A1);
+                m4aSongNumStart(SONG_EV_MAN_DIRTR);
                 func_08076110(0x3A1, x, y);
             }
         }
@@ -2837,11 +2837,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x129:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -2853,19 +2853,19 @@ s32 func_08070AD4(EventCharaWork* p) {
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
                 if (p->unk_024 == 0x61) {
-                    m4aSongNumStart(0x3AE);
+                    m4aSongNumStart(SONG_EV_WOMAN_DIRT_L);
                     func_08076110(0x3AE, x, y);
                 } else {
-                    m4aSongNumStart(0x3B2);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLEL);
                     func_08076110(0x3B2, x, y);
                 }
             }
             if (p->anim->frame == 5) {
                 if (p->unk_024 == 0x61) {
-                    m4aSongNumStart(0x3AF);
+                    m4aSongNumStart(SONG_EV_WOMAN_DIRT_R);
                     func_08076110(0x3AF, x, y);
                 } else {
-                    m4aSongNumStart(0x3B3);
+                    m4aSongNumStart(SONG_EV_MAN_RMARBLER);
                     func_08076110(0x3B3, x, y);
                 }
             }
@@ -2875,11 +2875,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xD9:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -2888,11 +2888,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xCB:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3BA);
+                m4aSongNumStart(SONG_SND_954);
                 func_08076110(0x3BA, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3BB);
+                m4aSongNumStart(SONG_SND_955);
                 func_08076110(0x3BB, x, y);
             }
         }
@@ -2901,11 +2901,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xD4:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x3BC);
+                m4aSongNumStart(SONG_SND_956);
                 func_08076110(0x3BC, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x3BD);
+                m4aSongNumStart(SONG_SND_957);
                 func_08076110(0x3BD, x, y);
             }
         }
@@ -2914,11 +2914,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x10B:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -2927,7 +2927,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x88:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x130);
+                m4aSongNumStart(SONG_EV_EV01_03);
                 func_08076110(0x130, x, y);
             }
         }
@@ -2937,7 +2937,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x66:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x12E);
+                m4aSongNumStart(SONG_EV_EV01_01);
                 func_08076110(0x12E, x, y);
             }
         }
@@ -3026,11 +3026,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xBA:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -3038,7 +3038,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xBB:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x140);
+                m4aSongNumStart(SONG_EV_EV34_00);
                 func_08076110(0x140, x, y);
             }
         }
@@ -3046,7 +3046,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xC1:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x14E);
+                m4aSongNumStart(SONG_EV_CARDTHR);
                 func_08076110(0x14E, x, y);
             }
         }
@@ -3068,11 +3068,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xFA:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x39D);
+                m4aSongNumStart(SONG_EV_PI_FOOTR);
                 func_08076110(0x39D, x, y);
             }
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x39C);
+                m4aSongNumStart(SONG_EV_PI_FOOTL);
                 func_08076110(0x39C, x, y);
             }
         }
@@ -3085,11 +3085,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0xFD:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x39C);
+                m4aSongNumStart(SONG_EV_PI_FOOTL);
                 func_08076110(0x39C, x, y);
             }
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x39D);
+                m4aSongNumStart(SONG_EV_PI_FOOTR);
                 func_08076110(0x39D, x, y);
             }
         }
@@ -3098,11 +3098,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x281:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 7) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -3111,11 +3111,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x18E:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -3123,7 +3123,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x18F:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 4) {
-                m4aSongNumStart(0x26B);
+                m4aSongNumStart(SONG_BTL_GMIC_OK);
             }
         }
         break;
@@ -3131,11 +3131,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x15D:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3B0);
+                m4aSongNumStart(SONG_EV_WOMAN_STONEL);
                 func_08076110(0x3B0, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B1);
+                m4aSongNumStart(SONG_EV_WOMAN_STONER);
                 func_08076110(0x3B1, x, y);
             }
         }
@@ -3143,7 +3143,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x15E:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x14E);
+                m4aSongNumStart(SONG_EV_CARDTHR);
                 func_08076110(0x14E, x, y);
             }
         }
@@ -3152,11 +3152,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x186:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -3164,11 +3164,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x187:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 7) {
-                m4aSongNumStart(0x3A2);
+                m4aSongNumStart(SONG_EV_MAN_STONEL);
                 func_08076110(0x3A2, x, y);
             }
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0x3A3);
+                m4aSongNumStart(SONG_EV_MAN_STONER);
                 func_08076110(0x3A3, x, y);
             }
         }
@@ -3177,7 +3177,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2E8:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x155);
+                m4aSongNumStart(SONG_EV_GE_ENTRY);
                 func_08076110(0x155, x, y);
             }
         }
@@ -3186,11 +3186,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2AF:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3AC);
+                m4aSongNumStart(SONG_EV_MAN2_STONEL);
                 func_08076110(0x3AC, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3AD);
+                m4aSongNumStart(SONG_EV_MAN2_STONER);
                 func_08076110(0x3AD, x, y);
             }
         }
@@ -3199,11 +3199,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x1C6:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3AC);
+                m4aSongNumStart(SONG_EV_MAN2_STONEL);
                 func_08076110(0x3AC, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3AD);
+                m4aSongNumStart(SONG_EV_MAN2_STONER);
                 func_08076110(0x3AD, x, y);
             }
         }
@@ -3212,11 +3212,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x27D:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x3B4);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONEL);
                 func_08076110(0x3B4, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x3B5);
+                m4aSongNumStart(SONG_EV_WOMAN_RSTONER);
                 func_08076110(0x3B5, x, y);
             }
         }
@@ -3225,11 +3225,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x11B:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 6) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -3238,11 +3238,11 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x11C:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 5) {
-                m4aSongNumStart(0x39E);
+                m4aSongNumStart(SONG_SYS_POO_FOOTL);
                 func_08076110(0x39E, x, y);
             }
             if (p->anim->frame == 2) {
-                m4aSongNumStart(0x39F);
+                m4aSongNumStart(SONG_SYS_POO_FOOTR);
                 func_08076110(0x39F, x, y);
             }
         }
@@ -3250,7 +3250,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x118:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x156);
+                m4aSongNumStart(SONG_EV_AL_LAND);
                 func_08076110(0x156, x, y);
             }
         }
@@ -3258,7 +3258,7 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x29E:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 3) {
-                m4aSongNumStart(0xC5);
+                m4aSongNumStart(SONG_VO_GE_ATTACK02);
                 func_08076110(0xC5, x, y);
             }
         }
@@ -3266,14 +3266,14 @@ s32 func_08070AD4(EventCharaWork* p) {
     case 0x2A2:
         if (p->anim->timer == 0) {
             if (p->anim->frame == 1) {
-                m4aSongNumStart(0x157);
+                m4aSongNumStart(SONG_EV_GE_FOOTUP);
             }
         }
         break;
     case 0x1DE:
         if (p->anim->timer == 1) {
             if (p->anim->frame == 0) {
-                m4aSongNumStart(0x227);
+                m4aSongNumStart(SONG_BTL_DARKDEAD);
                 func_08076110(0x227, x, y);
             }
         }
@@ -3291,55 +3291,55 @@ void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
     switch (kind) {
     case 0:
         if (flag != 0) {
-            m4aSongNumStart(0x384);
+            m4aSongNumStart(SONG_EV_SR_DIRTL);
             func_08076110(0x384, x, y);
         } else {
-            m4aSongNumStart(0x385);
+            m4aSongNumStart(SONG_EV_SR_DIRTR);
             func_08076110(0x385, x, y);
         }
         break;
     case 1:
         if (flag == 0) {
-            m4aSongNumStart(0x389);
+            m4aSongNumStart(SONG_EV_SR_STONER);
             func_08076110(0x389, x, y);
         } else {
-            m4aSongNumStart(0x388);
+            m4aSongNumStart(SONG_EV_SR_STONEL);
             func_08076110(0x388, x, y);
         }
         break;
     case 2:
         if ((a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) || (a->unk_24 == 0x36 && gEventState->unk_6C <= 0x4F)) {
             if (flag != 0) {
-                m4aSongNumStart(0x388);
+                m4aSongNumStart(SONG_EV_SR_STONEL);
                 func_08076110(0x388, x, y);
             } else {
-                m4aSongNumStart(0x389);
+                m4aSongNumStart(SONG_EV_SR_STONER);
                 func_08076110(0x389, x, y);
             }
 
             if (flag != 0) {
-                m4aSongNumStart(0x388);
+                m4aSongNumStart(SONG_EV_SR_STONEL);
                 func_08076110(0x388, x, y);
             } else {
-                m4aSongNumStart(0x389);
+                m4aSongNumStart(SONG_EV_SR_STONER);
                 func_08076110(0x389, x, y);
             }
         } else {
             if (flag != 0) {
-                m4aSongNumStart(0x38C);
+                m4aSongNumStart(SONG_EV_SR_MUDL);
                 func_08076110(0x38C, x, y);
             } else {
-                m4aSongNumStart(0x38D);
+                m4aSongNumStart(SONG_EV_SR_MUDR);
                 func_08076110(0x38D, x, y);
             }
         }
         break;
     case 3:
         if (flag != 0) {
-            m4aSongNumStart(0x388);
+            m4aSongNumStart(SONG_EV_SR_STONEL);
             func_08076110(0x388, x, y);
         } else {
-            m4aSongNumStart(0x389);
+            m4aSongNumStart(SONG_EV_SR_STONER);
             func_08076110(0x389, x, y);
         }
         break;
@@ -3356,47 +3356,47 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag) {
     switch (kind) {
     case 0:
         if (flag != 0) {
-            m4aSongNumStart(0x394);
+            m4aSongNumStart(SONG_EV_DL_DIRTL);
             func_08076110(0x394, x, y);
         } else {
-            m4aSongNumStart(0x395);
+            m4aSongNumStart(SONG_EV_DL_DIRTR);
             func_08076110(0x395, x, y);
         }
         break;
     case 1:
         if (flag == 0) {
-            m4aSongNumStart(0x391);
+            m4aSongNumStart(SONG_EV_DL_STONE_R);
             func_08076110(0x391, x, y);
         } else {
-            m4aSongNumStart(0x390);
+            m4aSongNumStart(SONG_EV_DL_STONE_L);
             func_08076110(0x390, x, y);
         }
         break;
     case 2:
         if (a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) {
             if (flag == 0) {
-                m4aSongNumStart(0x391);
+                m4aSongNumStart(SONG_EV_DL_STONE_R);
                 func_08076110(0x391, x, y);
             } else {
-                m4aSongNumStart(0x390);
+                m4aSongNumStart(SONG_EV_DL_STONE_L);
                 func_08076110(0x390, x, y);
             }
         } else {
             if (flag != 0) {
-                m4aSongNumStart(0x398);
+                m4aSongNumStart(SONG_EV_DL_MUDL);
                 func_08076110(0x398, x, y);
             } else {
-                m4aSongNumStart(0x399);
+                m4aSongNumStart(SONG_EV_DL_MUDR);
                 func_08076110(0x399, x, y);
             }
         }
         break;
     case 3:
         if (flag != 0) {
-            m4aSongNumStart(0x390);
+            m4aSongNumStart(SONG_EV_DL_STONE_L);
             func_08076110(0x390, x, y);
         } else {
-            m4aSongNumStart(0x391);
+            m4aSongNumStart(SONG_EV_DL_STONE_R);
             func_08076110(0x391, x, y);
         }
         break;
@@ -3413,47 +3413,47 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
     switch (kind) {
     case 0:
         if (flag != 0) {
-            m4aSongNumStart(0x396);
+            m4aSongNumStart(SONG_EV_GF_DIRTL);
             func_08076110(0x396, x, y);
         } else {
-            m4aSongNumStart(0x397);
+            m4aSongNumStart(SONG_EV_GF_DIRTR);
             func_08076110(0x397, x, y);
         }
         break;
     case 1:
         if (flag == 0) {
-            m4aSongNumStart(0x393);
+            m4aSongNumStart(SONG_EV_GF_STONE_R);
             func_08076110(0x393, x, y);
         } else {
-            m4aSongNumStart(0x392);
+            m4aSongNumStart(SONG_EV_GF_STONE_L);
             func_08076110(0x392, x, y);
         }
         break;
     case 2:
         if (a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) {
             if (flag == 0) {
-                m4aSongNumStart(0x393);
+                m4aSongNumStart(SONG_EV_GF_STONE_R);
                 func_08076110(0x393, x, y);
             } else {
-                m4aSongNumStart(0x392);
+                m4aSongNumStart(SONG_EV_GF_STONE_L);
                 func_08076110(0x392, x, y);
             }
         } else {
             if (flag != 0) {
-                m4aSongNumStart(0x39A);
+                m4aSongNumStart(SONG_EV_GF_MUDL);
                 func_08076110(0x39A, x, y);
             } else {
-                m4aSongNumStart(0x39B);
+                m4aSongNumStart(SONG_EV_GF_MUDR);
                 func_08076110(0x39B, x, y);
             }
         }
         break;
     case 3:
         if (flag != 0) {
-            m4aSongNumStart(0x392);
+            m4aSongNumStart(SONG_EV_GF_STONE_L);
             func_08076110(0x392, x, y);
         } else {
-            m4aSongNumStart(0x393);
+            m4aSongNumStart(SONG_EV_GF_STONE_R);
             func_08076110(0x393, x, y);
         }
         break;
@@ -3890,7 +3890,7 @@ void func_0807361C(MsgWinWork* p) {
     if (p->unk_25 >= e->unk_0C) {
         if (p->unk_24 < p->unk_26) {
             p->unk_24++;
-            m4aSongNumStart(0x74);
+            m4aSongNumStart(SONG_SYS_MESSAGE);
         } else {
             gEventState->unk_7B = 0;
 
@@ -4238,11 +4238,11 @@ u8 msgwait_1(MsgWaitWork* p, void* a) {
 
         if (p->unk_103 == 4) {
             gEventState->unk_7D = 0;
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             return 0;
         } else {
             SetTaskUpdate(a, (void*)func_08073F78);
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
         }
     }
     return 1;
@@ -4322,14 +4322,14 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     case DPAD_UP:
         if (p->unk_100 != 0) {
             p->unk_100--;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
         p->unk_102 = 1;
         break;
     case DPAD_DOWN:
         if (p->unk_100 == 0) {
             p->unk_100++;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
         p->unk_102 = 1;
         break;
@@ -4345,7 +4345,7 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
                 gEventState->unk_8A = 255;
             }
         }
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         gEventState->unk_7D = 0;
         return 0;
     case B_BUTTON:
@@ -4355,7 +4355,7 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
             gEventState->unk_83 = 1;
             gEventState->unk_8A = 255;
         }
-        m4aSongNumStart(102);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         gEventState->unk_7D = 0;
         return 0;
     }
@@ -4373,7 +4373,7 @@ u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
     if (GetKeysPressed() & A_BUTTON) {
         AnimStart(p->anim, 3, 1);
         p->unk_104 = 1;
-        m4aSongNumStart(0x67);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         SetTaskUpdate(a, (void*)func_0807420C);
     }
     return 1;
@@ -4547,7 +4547,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 FadeStartIn(2, e->unk_18);
 
                 if (!(e->unk_14 & 0x10000)) {
-                    m4aSongNumStart(0x14F);
+                    m4aSongNumStart(SONG_EV_FLASH01);
                 }
 
                 gEventState->unk_7F = 0;
@@ -4563,7 +4563,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 p->unk_15 = 1;
 
                 if (e->unk_14 & 0x8000) {
-                    m4aSongNumStart(0x159);
+                    m4aSongNumStart(SONG_EV_WHITEOUT);
                 }
             }
         }
@@ -4600,7 +4600,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 FadeFromAmount(2, 16, e->unk_18);
 
                 if (!(e->unk_14 & 0x10000)) {
-                    m4aSongNumStart(332);
+                    m4aSongNumStart(SONG_EV_FLASH00);
                 }
 
                 p->unk_15 = 1;

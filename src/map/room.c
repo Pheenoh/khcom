@@ -166,7 +166,7 @@ void func_080F7E84(GaEntryWork* e) {
     e->z += e->vz;
     if (e->z > 0) {
         if (e->vz > 0x500) {
-            m4aSongNumStart(0x26A);
+            m4aSongNumStart(SONG_BTL_IRON_GIMICBREAK);
         }
         e->z = 0;
         e->vz = -e->vz / 2;
@@ -449,7 +449,7 @@ u8 func_080F854C(GaWork* work) {
                                 e->unk_14C = (func_080F7FC8(work, i) - e->unk_128) / 30;
                                 e->unk_118 = e->unk_112 << 8;
                                 e->unk_114 = 30;
-                                m4aSongNumStart(388);
+                                m4aSongNumStart(SONG_SND_388);
                             }
                         } else {
                             ApproachValue(&e->unk_118, 0x10000, e->unk_114);
@@ -738,9 +738,9 @@ u8 func_080F8AC8(GaWork* work) {
                 if (work->unk_010 <= 0) {
                     if (!(e->unk_15A & 4)) {
                         if (e->unk_1A0 == 4) {
-                            m4aSongNumStart(600);
+                            m4aSongNumStart(SONG_BTL_IRON_FOOTL);
                         } else if (e->unk_1A0 == 5) {
-                            m4aSongNumStart(601);
+                            m4aSongNumStart(SONG_BTL_IRON_FOOTR);
                         }
                     }
                     work->unk_012--;
@@ -848,9 +848,9 @@ u8 func_080F8F9C(GaWork* work) {
                     if (work->unk_010 <= 0) {
                         if (!(e->unk_15A & 4)) {
                             if (e->unk_1A0 == 4) {
-                                m4aSongNumStart(600);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTL);
                             } else if (e->unk_1A0 == 5) {
-                                m4aSongNumStart(601);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTR);
                             }
                         }
                         work->unk_012--;
@@ -949,11 +949,11 @@ u8 func_080F8F9C(GaWork* work) {
                     if (work->unk_010 <= 0) {
                         if (!(e->unk_15A & 4)) {
                             if (func_08011F78(226, e->x, e->y, e->z, 16, 16, 16)) {
-                                m4aSongNumStart(602);
+                                m4aSongNumStart(SONG_BTL_IRON_HIT00);
                             } else if (e->unk_1A0 == 4) {
-                                m4aSongNumStart(600);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTL);
                             } else if (e->unk_1A0 == 5) {
-                                m4aSongNumStart(601);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTR);
                             }
                         }
                         work->unk_012--;
@@ -1033,9 +1033,9 @@ u8 func_080F8F9C(GaWork* work) {
                     if (work->unk_010 <= 0) {
                         if (!(e->unk_15A & 4)) {
                             if (e->unk_1A0 == 4) {
-                                m4aSongNumStart(600);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTL);
                             } else if (e->unk_1A0 == 5) {
-                                m4aSongNumStart(601);
+                                m4aSongNumStart(SONG_BTL_IRON_FOOTR);
                             }
                         }
                         work->unk_012--;
@@ -1128,7 +1128,7 @@ u8 func_080F9744(GaWork* work) {
 
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE3, e->x, e->y, e->z, 0x10, 0x10, 0x20)) {
-                            m4aSongNumStart(0x25A);
+                            m4aSongNumStart(SONG_BTL_IRON_HIT00);
                         }
                     }
                     work->unk_010++;
@@ -1159,7 +1159,7 @@ u8 func_080F9744(GaWork* work) {
 
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE3, e->x, e->y, e->z, 0x10, 0x10, 0x20)) {
-                            m4aSongNumStart(0x25A);
+                            m4aSongNumStart(SONG_BTL_IRON_HIT00);
                         }
                     }
                     work->unk_010++;
@@ -1272,7 +1272,7 @@ u8 func_080F99C0(GaWork* work) {
 
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE4, e->x, e->y, e->z, 0x10, 0x10, 0x20)) {
-                            m4aSongNumStart(0x25A);
+                            m4aSongNumStart(SONG_BTL_IRON_HIT00);
                         }
                     }
                     e->unk_124 = (gSineTable[e->unk_1A4] * work->unk_A48 >> 8) + work->entries[0].unk_124;
@@ -1365,7 +1365,7 @@ u8 func_080F9C2C(GaWork* work) {
 
             if (gBtlWork->unk_0D4 > 0) {
                 func_0802F1E8();
-                m4aSongNumStart(0x25B);
+                m4aSongNumStart(SONG_BTL_IRON_RUMB);
                 func_08011F78(0xE5, gBtlWork->unk_000, gBtlWork->unk_004, 0, 0x140, 0xF0, 1);
                 work->unk_00C = 3;
             }
@@ -1528,7 +1528,7 @@ u8 func_080F9EDC(GaWork* work) {
             }
 
             if (func_08011F78(0xE6, work->entries[0].x, work->entries[0].y, work->entries[0].z, 0x10, 0x10, 0x18)) {
-                m4aSongNumStart(0x248);
+                m4aSongNumStart(SONG_BTL_MON_HIT03);
                 work->unk_00C = 3;
             }
 
@@ -1688,7 +1688,7 @@ u8 func_080FA2B4(GaWork* work) {
             }
 
             if (func_08011F78(0xE6, work->entries[0].x, work->entries[0].y, work->entries[0].z, 0x10, 0x10, 0x18)) {
-                m4aSongNumStart(0x248);
+                m4aSongNumStart(SONG_BTL_MON_HIT03);
                 work->unk_00C = 3;
             }
 
@@ -1854,7 +1854,7 @@ u8 func_080FA644(GaWork* work) {
             if (gBtlWork->unk_0D4 > 0x2600) {
                 gBtlWork->unk_0D4 = 0x2600;
                 func_0802F1E8();
-                m4aSongNumStart(0x25B);
+                m4aSongNumStart(SONG_BTL_IRON_RUMB);
                 func_08011F78(0xE5, gBtlWork->unk_000, gBtlWork->unk_004, 0, 0x140, 0xF0, 1);
                 work->unk_010--;
                 if (work->unk_010 > 0) {
@@ -1961,7 +1961,7 @@ u8 func_080FAA18(GaWork* work) {
                 }
             }
         }
-        m4aSongNumStart(0x26A);
+        m4aSongNumStart(SONG_BTL_IRON_GIMICBREAK);
         func_0802F1E8();
         break;
     case 1:
@@ -2039,7 +2039,7 @@ u8 func_080FABE4(GaWork* work) {
                     e->unk_12C += e->unk_150;
                     e->unk_150 += 128;
                     if (e->unk_12C > -0x1800) {
-                        m4aSongNumStart(389);
+                        m4aSongNumStart(SONG_SND_389);
                         e->unk_12C = -0x1800;
                         e->unk_150 = -(e->unk_150 / 2);
                         work->entries[1].unk_150 = -(work->entries[1].unk_150 / 2);
@@ -2097,7 +2097,7 @@ u8 func_080FABE4(GaWork* work) {
                     e->unk_12C += e->unk_150;
                     e->unk_150 += 128;
                     if (e->unk_12C > -0x800) {
-                        m4aSongNumStart(601);
+                        m4aSongNumStart(SONG_BTL_IRON_FOOTR);
                         e->unk_12C = -0x800;
                         e->unk_150 = -(e->unk_150 / 2);
                         work->unk_010--;

@@ -784,7 +784,7 @@ void func_08091234(u16 arg) {
                         gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
                     }
 
-                    m4aSongNumStart(203);
+                    m4aSongNumStart(SONG_SYS_CARDLOSE);
                     gBtlWork->flags |= 0x400;
                     gBtlWork->flags |= 0x80;
                     gBtlWork->flags &= ~0x20;
@@ -812,7 +812,7 @@ void func_08091234(u16 arg) {
                     p->unk_78 |= 0x2000;
                     func_0807BA54();
                 } else {
-                    m4aSongNumStart(204);
+                    m4aSongNumStart(SONG_SYS_DROW);
                     gBtlWork->flags &= ~0x80;
                     gBtlWork->flags &= ~0x20;
                     gBtlWork->flags &= ~0x400;
@@ -890,7 +890,7 @@ void func_08091234(u16 arg) {
                         gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
                     }
 
-                    m4aSongNumStart(203);
+                    m4aSongNumStart(SONG_SYS_CARDLOSE);
                     gBtlWork->flags |= 0x400;
                     gBtlWork->flags |= 0x80;
                     gBtlWork->flags &= ~0x20;
@@ -922,7 +922,7 @@ void func_08091234(u16 arg) {
                     p->unk_78 |= 0x2000;
                     func_0807BA54();
                 } else {
-                    m4aSongNumStart(204);
+                    m4aSongNumStart(SONG_SYS_DROW);
                     gBtlWork->flags &= ~0x80;
                     gBtlWork->flags &= ~0x20;
                     gBtlWork->flags &= ~0x400;
@@ -963,7 +963,7 @@ void func_080917C8(u16 a, u8 b) {
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
                 }
 
-                m4aSongNumStart(0xCB);
+                m4aSongNumStart(SONG_SYS_CARDLOSE);
                 gBtlWork->flags |= 0x800000;
                 gBtlWork->flags |= 0x400;
                 gBtlWork->flags |= 0x80;
@@ -1008,7 +1008,7 @@ void func_08091978(u16 a, u8 b) {
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
                 }
 
-                m4aSongNumStart(0xCB);
+                m4aSongNumStart(SONG_SYS_CARDLOSE);
                 gBtlWork->flags |= 0x800000;
                 gBtlWork->flags |= 0x400;
                 gBtlWork->flags |= 0x80;

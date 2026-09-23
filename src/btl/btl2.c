@@ -333,7 +333,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
     if (flag != 0) {
         if (work->unk_5D == 0) {
             work->unk_5D = 1;
-            m4aSongNumStart(0x92);
+            m4aSongNumStart(SONG_SYS_ALART);
         }
 
         if (work->unk_68 == 0) {
@@ -396,7 +396,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
 
         if (work->unk_5D != 0) {
             work->unk_5D = 0;
-            m4aSongNumStop(0x92);
+            m4aSongNumStop(SONG_SYS_ALART);
         }
     }
 
@@ -509,7 +509,7 @@ void task_btl_hpply_2(BtlHpplyWork* work) {
 }
 
 void task_btl_hpply_3(BtlHpplyWork* work) {
-    m4aSongNumStop(0x92);
+    m4aSongNumStop(SONG_SYS_ALART);
     ReleaseObjTiles(work->tiles);
     ReleaseObjTiles(work->tiles2);
     ReleaseObjTiles(work->tiles3);
@@ -1604,7 +1604,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             }
 
             if (hit) {
-                m4aSongNumStart(0x6B);
+                m4aSongNumStart(SONG_SYS_POWER_GET);
 
                 if (gBtlWork->flags & 0x4000) {
                     work->actor->unk_02C += work->unk_3A;
@@ -1846,7 +1846,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
             }
 
             if (hit) {
-                m4aSongNumStart(0x6B);
+                m4aSongNumStart(SONG_SYS_POWER_GET);
                 gBtlWork->flags |= 0x0008000000000000;
                 work->unk_28 = 0;
                 work->unk_30 = 1;
@@ -1929,7 +1929,7 @@ void task_btl_start_0(BtlStartWork* work) {
     func_08019050(1, 0x200, 0x10000, 0x14000);
     FadeStartIn(0, 60);
     work->unk_00 = 0;
-    m4aSongNumStart(0x8F);
+    m4aSongNumStart(SONG_SYS_ENCOUNT);
     SetBgPriority(gBtlWork->unk_1C4, 0);
 }
 

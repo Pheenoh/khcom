@@ -637,18 +637,18 @@ void func_0810594C(void) {
     keys = MsChargeReadMenuKeys();
     if (keys & 1) {
         func_08104B48();
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         AnimStart(&gUnk_02035C68, 0, 1);
         gUnk_02035CBA = 1;
         gUnk_02035C16 = 2;
         func_08104F2C();
     } else if (keys & 2) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E20 = 1;
         FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     } else if (keys & 8) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E20 = 0;
         FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
@@ -657,7 +657,7 @@ void func_0810594C(void) {
         gUnk_02035CE2 = 0;
         gUnk_02035CE4 = 0;
         gUnk_02035CBA = 0;
-        m4aSongNumStart(0x79);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
         gUnk_02035C16 = 1;
         func_08105090();
     } else if (keys & 0x40) {
@@ -667,7 +667,7 @@ void func_0810594C(void) {
             gUnk_02035CE4--;
         } else {
             gUnk_02035CBA = 0;
-            m4aSongNumStart(0x79);
+            m4aSongNumStart(SONG_SYS_CLICKI04B);
             gUnk_02035C16 = 1;
             func_08105090();
         }
@@ -701,7 +701,7 @@ void func_0810594C(void) {
         func_08105090();
         func_08104F2C();
         func_08104D18();
-        m4aSongNumStart(0x79);
+        m4aSongNumStart(SONG_SYS_CLICKI04B);
 
         if (gUnk_02035CE4 != oldCE4) {
             func_08104BBC();
@@ -717,7 +717,7 @@ void func_08105BD8(void) {
     keys = MsChargeReadMenuKeys();
     if ((keys & 1) == 0) {
         if (keys & 8) {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             gUnk_02035E20 = 0;
             FadeStartOut(0, 0x10);
             gUnk_02035C14 = 2;
@@ -728,18 +728,18 @@ void func_08105BD8(void) {
                 gUnk_02035CE4 = 0;
                 AnimStart(&gUnk_02035C68, 2, 1);
                 gUnk_02035CBA = 0;
-                m4aSongNumStart(0x79);
+                m4aSongNumStart(SONG_SYS_CLICKI04B);
                 gUnk_02035C16 = 0;
                 func_08104B48();
                 func_08105090();
                 func_08104D18();
             } else if (keys & 2) {
-                m4aSongNumStart(0x68);
+                m4aSongNumStart(SONG_SYS_CLOSE);
                 gUnk_02035E20 = 1;
                 FadeStartOut(0, 0x10);
                 gUnk_02035C14 = 2;
             } else if (keys & 0x80) {
-                m4aSongNumStart(0x69);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         } else if (keys & 0x20) {
             if (gUnk_02035C18 > 0) {
@@ -755,7 +755,7 @@ void func_08105BD8(void) {
     if (gUnk_02035C18 != old) {
         func_081052C8(gUnk_02035C18);
         func_08104BBC();
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -800,27 +800,27 @@ void func_08105DE0(void) {
     keys = MsChargeReadMenuKeys();
     if (keys & 1) {
         if (GetMooglePoints() + func_08104ED8(func_08104AEC()) > 99999) {
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
         } else if (gUnk_02035C3C <= 1) {
             EnableBg(2);
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             gUnk_02035C16 = 4;
         } else {
             gUnk_02035E10 = 0;
             gUnk_02035E14 = 0x4800;
             AnimStart(&gUnk_02035CC8, 0, 1);
             EnableBg(2);
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             gUnk_02035C16 = 3;
         }
     } else if (keys & 2) {
         AnimStart(&gUnk_02035C68, 2, 1);
         gUnk_02035CBA = 0;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035C16 = 0;
         func_08104F2C();
     } else if (keys & 8) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E20 = 0;
         FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
@@ -859,7 +859,7 @@ void func_08105DE0(void) {
 
     if (gUnk_02035E0C != oldCol || gUnk_02035E0E != oldRow) {
         func_08104F2C();
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -877,7 +877,7 @@ void func_0810601C(void) {
         if (gUnk_02035E10 == 0) {
             gUnk_02035CBC = 180;
             func_08105334();
-            m4aSongNumStart(0xD2);
+            m4aSongNumStart(SONG_SYS_KAIHUKU);
 
             if (func_08105404(card)) {
                 func_081054D0(card);
@@ -905,19 +905,19 @@ void func_0810601C(void) {
             func_08104FA4();
             func_08104FF8();
         } else {
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             AnimStart(&gUnk_02035C68, 0, 1);
             gUnk_02035CBA = 1;
             gUnk_02035C16 = 2;
         }
     } else if (keys & 2) {
         DisableBg(2);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         AnimStart(&gUnk_02035C68, 0, 1);
         gUnk_02035CBA = 1;
         gUnk_02035C16 = 2;
     } else if (keys & 8) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E20 = 0;
         FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
@@ -928,7 +928,7 @@ void func_0810601C(void) {
     }
 
     if (gUnk_02035E10 != old) {
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 
@@ -938,10 +938,10 @@ void func_081061DC(void) {
     keys = MsChargeReadMenuKeys();
     if (keys & 3) {
         DisableBg(2);
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035C16 = 2;
     } else if (keys & 8) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_02035E20 = 0;
         FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;

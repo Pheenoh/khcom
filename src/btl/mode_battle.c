@@ -155,7 +155,7 @@ void eu_08009E10(void) {
                 gLangWork->cursor = 4;
             }
 
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         } else if (GetKeysRepeat() & DPAD_DOWN) {
             gLangWork->cursor++;
 
@@ -163,14 +163,14 @@ void eu_08009E10(void) {
                 gLangWork->cursor = 0;
             }
 
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         } else if (GetKeysPressed() & A_BUTTON) {
             gLangWork->timer = 0;
             gLangWork->state = 2;
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
         } else if (GetKeysPressed() & B_BUTTON) {
             gLangWork->state = 3;
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
         }
         break;
     case 2:
@@ -287,20 +287,20 @@ void mode_battle_0(u32 mode) {
 
         switch (mode) {
         case 0x9C:
-            m4aSongNumStart(42);
+            m4aSongNumStart(SONG_BGM_LASTBOSS2);
             break;
         case 0x95:
         case 0x97:
         case 0x99:
         case 0x9B:
-            m4aSongNumStart(41);
+            m4aSongNumStart(SONG_BGM_BOSSWORLD);
             break;
         case 0x94:
         case 0x96:
         case 0x98:
         case 0x9A:
         default:
-            m4aSongNumStart(3);
+            m4aSongNumStart(SONG_BGM_BOSS1_WORLD);
             break;
         }
 
@@ -336,7 +336,7 @@ void mode_battle_0(u32 mode) {
             break;
         }
     } else if (gBtlWork->flags & 0x800000000) {
-        m4aSongNumStart(4);
+        m4aSongNumStart(SONG_BGM_EVENT2);
         gBtlWork->unk_1C4 = 3;
         gBtlWork->unk_1C6 = 2;
         SetBgMode2();
@@ -353,24 +353,24 @@ void mode_battle_0(u32 mode) {
         switch (mode) {
         case 0xA1:
         case 0xA8 ... 0xAC:
-            m4aSongNumStart(35);
+            m4aSongNumStart(SONG_BGM_NISERIKU);
             break;
         case 0x9D:
         case 0x9F:
-            m4aSongNumStart(4);
+            m4aSongNumStart(SONG_BGM_EVENT2);
             break;
         case 0xA5:
-            m4aSongNumStart(37);
+            m4aSongNumStart(SONG_BGM_LASTBOSS1);
             break;
         case 0x9E:
         case 0xA0:
-            m4aSongNumStart(41);
+            m4aSongNumStart(SONG_BGM_BOSSWORLD);
             break;
         case 0xB1:
-            m4aSongNumStart(29);
+            m4aSongNumStart(SONG_BGM_RIKU_ANSEM);
             break;
         default:
-            m4aSongNumStart(14);
+            m4aSongNumStart(SONG_BGM_BOSS3_XIII);
             break;
         }
 
@@ -388,44 +388,44 @@ void mode_battle_0(u32 mode) {
         switch (gGameState.unk_00D) {
         case 1:
         case 2:
-            m4aSongNumStart(1);
+            m4aSongNumStart(SONG_BGM_ALICE_BTL);
             break;
         case 3:
-            m4aSongNumStart(23);
+            m4aSongNumStart(SONG_BGM_ALADDIN_BATTLE);
             break;
         case 4:
-            m4aSongNumStart(17);
+            m4aSongNumStart(SONG_BGM_MARMAID_BATTLE);
             break;
         case 5:
             if (mode == 0x79) {
-                m4aSongNumStart(4);
+                m4aSongNumStart(SONG_BGM_EVENT2);
             } else {
-                m4aSongNumStart(9);
+                m4aSongNumStart(SONG_BGM_PINOCCHIO_BTL);
             }
             break;
         case 6:
-            m4aSongNumStart(20);
+            m4aSongNumStart(SONG_BGM_HERCULES_BATTLE);
             break;
         case 7:
-            m4aSongNumStart(16);
+            m4aSongNumStart(SONG_BGM_HALLOWEEN_BTL);
             break;
         case 8:
-            m4aSongNumStart(11);
+            m4aSongNumStart(SONG_BGM_PETERPAN_BTL);
             break;
         case 10:
-            m4aSongNumStart(26);
+            m4aSongNumStart(SONG_BGM_HOLLOW_BATTLE);
             break;
         case 11:
-            m4aSongNumStart(12);
+            m4aSongNumStart(SONG_BGM_TOWN_BTL);
             break;
         case 9:
-            m4aSongNumStart(40);
+            m4aSongNumStart(SONG_BGM_DESTINY_BATTLE);
             break;
         case 12:
-            m4aSongNumStart(39);
+            m4aSongNumStart(SONG_BGM_F13F_FORGET_BATTLE);
             break;
         case 13:
-            m4aSongNumStart(43);
+            m4aSongNumStart(SONG_BGM_TWILIGHT_BATTLE);
             break;
         }
 

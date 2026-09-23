@@ -67,7 +67,7 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
         w->y2[i] = -gSineTable[w->angle[i] + 64] * 12 + w->y;
     }
 
-    m4aSongNumStart(0xD4);
+    m4aSongNumStart(SONG_SND_212);
 }
 s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
     u8 i;

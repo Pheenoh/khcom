@@ -53,7 +53,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 173);
         break;
     case 34:
@@ -62,7 +62,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 133);
         break;
     case 88:
@@ -71,7 +71,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 134);
         break;
     case MSG_CODE(136):
@@ -80,7 +80,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 139);
         break;
     case MSG_CODE(137):
@@ -89,7 +89,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 160);
         break;
     case MSG_CODE(139):
@@ -98,7 +98,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 159);
         break;
     case MSG_CODE(140):
@@ -107,7 +107,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 136);
         break;
     case MSG_CODE(141):
@@ -116,7 +116,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 137);
         break;
     case MSG_CODE(142):
@@ -125,7 +125,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 135);
         break;
     case 61:
@@ -134,11 +134,11 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         func_080A4188(&gUnk_02034A60, 138);
         break;
     case 126:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -147,7 +147,7 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 162);
         break;
     case 114:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -156,7 +156,7 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 161);
         break;
     case 57:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -166,7 +166,7 @@ void func_08061824(void) {
         break;
     case MSG_CODE(143):
     case MSG_CODE(144):
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -199,7 +199,7 @@ void func_08061824(void) {
     case MSG_CODE(177):
     case MSG_CODE(186):
     case MSG_CODE(192):
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -218,7 +218,7 @@ void func_08061824(void) {
     case MSG_CODE(130):
     case MSG_CODE(152):
     case MSG_CODE(188):
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -227,7 +227,7 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 169);
         break;
     case 5:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -245,7 +245,7 @@ void func_08061824(void) {
     case 123:
     case MSG_CODE(131):
     case MSG_CODE(153):
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -254,7 +254,7 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 170);
         break;
     case 119:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -263,7 +263,7 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 172);
         break;
     case 60:
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -274,7 +274,7 @@ void func_08061824(void) {
     case 27:
     case MSG_CODE(156):
     case MSG_CODE(166):
-        m4aSongNumStart(106);
+        m4aSongNumStart(SONG_SYS_ITEMGET);
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);

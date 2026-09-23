@@ -1223,7 +1223,7 @@ u8 func_080FBC4C(MdWork* work) {
             case 37:
                 if (func_08011F78(251, work->sub[0].x, work->sub[0].y,
                                   work->sub[0].z, 40, 20, 24) != 0) {
-                    m4aSongNumStart(0x2A5);
+                    m4aSongNumStart(SONG_BTL_DRGN_BITE);
                 }
                 break;
             }
@@ -1282,14 +1282,14 @@ u8 func_080FBDD4(MdWork* work) {
                 if (v == 18) {
                     func_08011F78(252, gBtlWork->unk_000, gBtlWork->unk_004, 0,
                                   256, 256, 1);
-                    m4aSongNumStart(0x2A7);
+                    m4aSongNumStart(SONG_BTL_DRGN_RUMB);
                     func_0802F1E8();
                     work->unk_1B4 |= 1;
                     work->unk_00C = 1;
                 } else if (v == 28) {
                     func_08011F78(254, gBtlWork->unk_000, gBtlWork->unk_004, 0,
                                   256, 256, 1);
-                    m4aSongNumStart(0x2A7);
+                    m4aSongNumStart(SONG_BTL_DRGN_RUMB);
                     func_0802F1E8();
                     work->unk_1B4 |= 1;
                     work->unk_00C = 2;
@@ -1302,7 +1302,7 @@ u8 func_080FBDD4(MdWork* work) {
                     func_08019A30();
                     func_08011F78(252, gBtlWork->unk_000, gBtlWork->unk_004, 0,
                                   256, 256, 1);
-                    m4aSongNumStart(0x2A7);
+                    m4aSongNumStart(SONG_BTL_DRGN_RUMB);
                     func_0802F1E8();
                     work->unk_1B4 |= 1;
                     work->unk_00C = 2;
@@ -1351,14 +1351,14 @@ u8 func_080FBFA8(MdWork* work) {
                         MdAnimStart(work, 3);
                         func_0801853C(work->sub[0].x, work->sub[0].y,
                                       work->sub[0].z + 0x1200, 512);
-                        m4aSongNumStart(0x2A6);
+                        m4aSongNumStart(SONG_EF_DRGN_FIRE);
                         work->unk_00C = 1;
                     }
                     break;
                 case 1:
                     if (func_08011F78(253, work->sub[0].x,
                                       work->sub[0].y + 0x1800, 0, 72, 48, 1) != 0) {
-                        m4aSongNumStart(0x2CA);
+                        m4aSongNumStart(SONG_SND_714);
                     }
 
                     if (func_080128EC() == 0) {
@@ -1954,7 +1954,7 @@ u8 func_080FCCB4(MdFireWork* work) {
             if (work->unk_008 > 0) {
                 work->unk_008--;
             } else if (ColliderIsTouchingType(work->sub.unk_040, 1) != 0) {
-                m4aSongNumStart(0x2CA);
+                m4aSongNumStart(SONG_SND_714);
                 gBtlWork->actor->flags |= 0x20000000;
                 work->unk_008 = 60;
             }
@@ -2156,7 +2156,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             ColliderSetDisabled(&work->collider, 0);
             ColliderSetHeight(&work->collider, 8);
             work->unk_00C = work->z - 0xA000;
-            m4aSongNumStart(680);
+            m4aSongNumStart(SONG_BTL_DRGN_GIMIC);
             work->unk_07C = 1;
             work->unk_010 = 20;
             work->state = 1;
@@ -2170,7 +2170,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             ColliderSetDisabled(&work->collider, 0);
             ColliderSetHeight(&work->collider, 16);
             work->unk_00C = work->z - 0xA000;
-            m4aSongNumStart(680);
+            m4aSongNumStart(SONG_BTL_DRGN_GIMIC);
             work->unk_07C = 2;
             work->unk_010 = 20;
             work->state = 2;
@@ -2183,7 +2183,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         if (work->unk_010 <= 0) {
             ColliderSetDisabled(&work->collider, 0);
             ColliderSetHeight(&work->collider, 24);
-            m4aSongNumStart(680);
+            m4aSongNumStart(SONG_BTL_DRGN_GIMIC);
             work->unk_07C = 3;
             work->target->flags &= 0xFFFE;
             work->state = 3;
@@ -2429,11 +2429,11 @@ void func_080FDC04(void) {
             SetBgPriority(2, 1);
             gBldCnt |= BLDCNT_TGT2_OBJ;
             gUnk_020350EF = 1;
-            m4aSongNumStart(206);
+            m4aSongNumStart(SONG_SYS_WORLDSTART);
             gUnk_020350F0 = 0;
             gUnk_020350C0 = 4;
         } else if ((GetKeysPressed() & B_BUTTON) && gUnk_020350EE == 0) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             LoadBgMap(0, gUnk_09A310DC, 0x500);
             LoadBgMap(1, gUnk_09A31ADC, 0x500);
             gUnk_020350F0 = 1;
@@ -2465,7 +2465,7 @@ void func_080FDC04(void) {
                     gUnk_02034FF0 = gUnk_02035090 - 1;
                 }
 
-                m4aSongNumStart(205);
+                m4aSongNumStart(SONG_SYS_WORLDSELECT);
                 gUnk_020350B6 = 2;
                 gUnk_0203508C = 2;
             } else if (GetKeysHeld() & DPAD_RIGHT) {
@@ -2493,7 +2493,7 @@ void func_080FDC04(void) {
                     gUnk_02034FF0 = 0;
                 }
 
-                m4aSongNumStart(205);
+                m4aSongNumStart(SONG_SYS_WORLDSELECT);
                 gUnk_020350B6 = 2;
                 gUnk_0203508C = 1;
             }
@@ -2525,7 +2525,7 @@ void func_080FDC04(void) {
                 gUnk_02034FF0 = gUnk_02035090 - 1;
             }
 
-            m4aSongNumStart(205);
+            m4aSongNumStart(SONG_SYS_WORLDSELECT);
             gUnk_0203508C = 2;
         } else {
             for (i = 0; i < gUnk_02035090; i++) {
@@ -2558,7 +2558,7 @@ void func_080FDC04(void) {
                         gUnk_02034FF0 = 0;
                     }
 
-                    m4aSongNumStart(205);
+                    m4aSongNumStart(SONG_SYS_WORLDSELECT);
                     gUnk_0203508C = 1;
                 } else {
                     step = 128 - gMdSlots[gUnk_02034FF0].unk_08;
@@ -2600,7 +2600,7 @@ void func_080FDC04(void) {
                 gUnk_02034FF0 = 0;
             }
 
-            m4aSongNumStart(205);
+            m4aSongNumStart(SONG_SYS_WORLDSELECT);
             gUnk_0203508C = 1;
         } else {
             for (i = 0; i < gUnk_02035090; i++) {
@@ -2633,7 +2633,7 @@ void func_080FDC04(void) {
                         gUnk_02034FF0 = gUnk_02035090 - 1;
                     }
 
-                    m4aSongNumStart(205);
+                    m4aSongNumStart(SONG_SYS_WORLDSELECT);
                     gUnk_0203508C = 2;
                 } else {
                     step = gMdSlots[gUnk_02034FF0].unk_08 + 128;

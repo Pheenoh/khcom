@@ -3619,9 +3619,9 @@ s32 func_080E5FB4(MapEnmWork* p) {
         TaskCreate(p->tasks, &gTaskDescMapSpark, &p->unk_08);
 
         if (gGameState.flags & 8) {
-            m4aSongNumStart(0xE4);
+            m4aSongNumStart(SONG_SND_228);
         } else {
-            m4aSongNumStart(0x75);
+            m4aSongNumStart(SONG_SYS_FIELD_ATT00);
         }
         return 1;
     }
@@ -5922,7 +5922,7 @@ void func_080E9B7C(void) {
     if (FadeIsActive() == 0 && (gGameState.progression.unk_82 & 0x200) != 0 &&
         (gFieldState->flags & 0x41000) == 0 && (gUnk_0203C7AC->flags & 4) == 0) {
         if (GetKeysPressed() & SELECT_BUTTON) {
-            m4aSongNumStart(0x67);
+            m4aSongNumStart(SONG_SYS_CANSEL);
             FadeStartOut(0, 16);
             FadeLock();
             func_080E9898((s32)func_080E9E04);
@@ -6810,12 +6810,12 @@ void func_080EB12C(NewGameSlotMenuWork* w) {
 
     if (GetKeysRepeat() & DPAD_UP) {
         w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : 1;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
         w->selectedSlot = w->selectedSlot == 0 ? w->selectedSlot + 1 : 0;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (prev != w->selectedSlot) {
@@ -6838,7 +6838,7 @@ void func_080EB1F4(NewGameSlotMenuWork* w) {
     func_080EB12C(w);
 
     if (GetKeysPressed() & B_BUTTON) {
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else {
         if (!(GetKeysPressed() & (A_BUTTON | START_BUTTON))) {
             return;
@@ -6852,7 +6852,7 @@ void func_080EB1F4(NewGameSlotMenuWork* w) {
             gGameState.flags |= 0x10;
             break;
         }
-        m4aSongNumStart(0xD3);
+        m4aSongNumStart(SONG_SYS_SAVELOAD);
         w->unk_33C = 1;
     }
     w->timer = 16;
@@ -7330,12 +7330,12 @@ void func_080EBD00(LoadGameMenuWork* w) {
 
     if (GetKeysRepeat() & DPAD_UP) {
         w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : w->unk_184;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
         w->selectedSlot = w->selectedSlot < w->unk_184 ? w->selectedSlot + 1 : 0;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (old != w->selectedSlot) {
@@ -7399,7 +7399,7 @@ void func_080EBEC8(LoadGameMenuWork* work) {
     if (GetKeysPressed() & B_BUTTON) {
         work->timer = 16;
         work->update = func_080EBFB8;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
         if ((u8)func_080EB7A0(work->selectedSlot) != 0) {
             switch (work->selectedSlot) {
@@ -7420,12 +7420,12 @@ void func_080EBEC8(LoadGameMenuWork* work) {
                 gGameState.flags |= 0x10;
                 break;
             }
-            m4aSongNumStart(0xD3);
+            m4aSongNumStart(SONG_SYS_SAVELOAD);
             work->unk_182 = 1;
             work->timer = 16;
             work->update = func_080EBFB8;
         } else {
-            m4aSongNumStart(0x69);
+            m4aSongNumStart(SONG_SYS_BEEP);
         }
     }
 }
@@ -7946,7 +7946,7 @@ s32 func_080ECAC8(MapDoorWork* p) {
         gFieldState->actor.fieldPosition.z == gFieldState->actor.fieldPosition.unk_0C) {
         TaskPool* pool;
 
-        m4aSongNumStart(0xDC);
+        m4aSongNumStart(SONG_SND_220);
         pool = &p->tasks;
         TaskCreate(pool, &gTaskDescMapSpark, e);
         gUnk_0203C7AC->flags |= 0x80;
@@ -8471,19 +8471,19 @@ s32 func_080ED6CC(MapMenuWork* w) {
 s32 func_080ED7CC(MapMenuWork* w) {
     if (GetKeysRepeat() & DPAD_UP) {
         w->unk_309 = w->unk_309 != 0 ? w->unk_309 - 1 : 6;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
         w->unk_309 = w->unk_309 <= 5 ? w->unk_309 + 1 : 0;
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & (B_BUTTON | START_BUTTON)) {
         w->unk_034 = 0;
         w->unk_30C = 16;
         w->update = func_080EDB4C;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else if (GetKeysPressed() & A_BUTTON) {
         switch (w->unk_309) {
         case 0:
@@ -8493,19 +8493,19 @@ s32 func_080ED7CC(MapMenuWork* w) {
         case 5:
             func_0801CB0C();
             w->update = func_080EDA90;
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             break;
         case 1:
             if ((u8)(gUnk_0203C590.unk_06 + 4) > 2) {
                 func_0801CB0C();
                 w->update = func_080EDA90;
-                m4aSongNumStart(0x66);
+                m4aSongNumStart(SONG_SYS_KETTEI);
             } else {
-                m4aSongNumStart(0x69);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
             break;
         case 6:
-            m4aSongNumStart(0x66);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             func_080ED250((u8*)w);
             w->unk_30A = 2;
             w->x7 = 0x8800;
@@ -8519,45 +8519,45 @@ s32 func_080ED7CC(MapMenuWork* w) {
 s32 func_080ED91C(MapMenuWork* w) {
     if (GetKeysRepeat() & DPAD_UP) {
         w->unk_309 = w->unk_309 != 0 ? w->unk_309 - 1 : 6;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
         w->unk_309 = w->unk_309 <= 5 ? w->unk_309 + 1 : 0;
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 
     if (GetKeysPressed() & (B_BUTTON | START_BUTTON)) {
         w->unk_034 = 0;
         w->unk_30C = 16;
         w->update = func_080EDB4C;
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else if (GetKeysPressed() & A_BUTTON) {
         switch (w->unk_309) {
         case 0:
         case 2:
         case 3:
         case 4:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             func_0801CB0C();
             w->update = func_080EDA90;
             break;
         case 5:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             func_0801CB0C();
             w->update = func_080EDA90;
             break;
         case 1:
             if ((u8)(gUnk_0203C590.unk_06 + 4) > 2) {
-                m4aSongNumStart(102);
+                m4aSongNumStart(SONG_SYS_KETTEI);
                 func_0801CB0C();
                 w->update = func_080EDA90;
             } else {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
             break;
         case 6:
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             func_080ED250((u8*)w);
             w->unk_30A = 2;
             w->x7 = 0x8800;
@@ -8645,14 +8645,14 @@ s32 func_080EDC94(MapMenuWork* w) {
     if (GetKeysPressed() & DPAD_LEFT) {
         if (w->unk_30A != 1) {
             w->unk_30A = 1;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
 
     if (GetKeysPressed() & DPAD_RIGHT) {
         if (w->unk_30A != 2) {
             w->unk_30A = 2;
-            m4aSongNumStart(0x65);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
 
@@ -8661,11 +8661,11 @@ s32 func_080EDC94(MapMenuWork* w) {
         func_080ED314((u8*)w);
         w->y3 = (w->unk_309 * 19 + 16) << 8;
         w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else if (GetKeysPressed() & A_BUTTON) {
         SaveWriteSystem();
         w->update = func_080EDA90;
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
     }
     return 1;
 }
@@ -8697,7 +8697,7 @@ void Task_MapMenu_0(MapMenuWork* w) {
     } else {
         gGameState.unk_00F = 0;
         w->unk_30F = 0;
-        m4aSongNumStart(0x67);
+        m4aSongNumStart(SONG_SYS_CANSEL);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
     }
     w->update = func_080ED35C;
@@ -9310,26 +9310,26 @@ s32 func_080EEB00(MapSaveWork* w) {
     if (GetKeysRepeat() & DPAD_LEFT) {
         if (w->unk_2F4 != 1) {
             w->unk_2F4 = 1;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
 
     if (GetKeysRepeat() & DPAD_RIGHT) {
         if (w->unk_2F4 != 2) {
             w->unk_2F4 = 2;
-            m4aSongNumStart(101);
+            m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
 
     if ((GetKeysPressed() & B_BUTTON) || ((GetKeysPressed() & A_BUTTON) && w->unk_2F4 != 1)) {
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         w->unk_2F4 = 0;
         w->unk_2F8 = 0;
         w->unk_2F6 = 16;
         w->update = func_080EEC9C;
         DisableBg(0);
     } else if (GetKeysPressed() & A_BUTTON) {
-        m4aSongNumStart(211);
+        m4aSongNumStart(SONG_SYS_SAVELOAD);
 
         if (gGameState.flags & 8) {
             if (gGameState.flags & 0x10) {
@@ -9457,7 +9457,7 @@ void Task_MapSave_0(MapSaveWork* w) {
     TaskPoolInit(&w->tasks, 1);
     func_080EE580((UnkStruct_080EE580*)w, 1);
     FadeToAmount(0, 16, 16);
-    m4aSongNumStart(103);
+    m4aSongNumStart(SONG_SYS_CANSEL);
 }
 
 s32 Task_MapSave_1(MapSaveWork* w) {

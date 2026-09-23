@@ -431,8 +431,8 @@ void mode_pooh_0(s32 arg) {
         func_080C774C();
     }
 
-    m4aSongNumStart(0x22);
-    m4aSongNumStart(0x95);
+    m4aSongNumStart(SONG_BGM_POOHGAME);
+    m4aSongNumStart(SONG_BG_POO);
     SetBgMode0();
     SetupBg(3, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
@@ -585,7 +585,7 @@ void mode_pooh_2(void) {
     TaskPoolDestroy(&gUnk_02034D30);
     TaskPoolDestroy(&gUnk_02034D80);
     func_080D2E84();
-    m4aSongNumStop(0x95);
+    m4aSongNumStop(SONG_BG_POO);
 }
 
 void func_080C7B84(u32 a) {
@@ -1081,7 +1081,7 @@ void func_080C84E0(PoohWork* w, u32 b) {
     if (b >= 36 && b <= 37) {
         m4aSongNumStart(0x149);
     } else if (b == 16) {
-        m4aSongNumStart(0x148);
+        m4aSongNumStart(SONG_SYS_PO_FALL);
     } else if (b == 39 || b == 22 || (b >= 32 && b <= 35)) {
         do {
             w->unk_38 = 0xAD;

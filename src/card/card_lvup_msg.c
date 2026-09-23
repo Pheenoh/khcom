@@ -141,7 +141,7 @@ u8 func_080A25E0(LvupMsgWork* w, void* a) {
         ApproachValue(&w->y4, 0x6600, *counter);
         (*counter)--;
     } else if (*counter == 0) {
-        m4aSongNumStart(202);
+        m4aSongNumStart(SONG_SYS_CHAGEF2);
         w->unk_2AC = -1;
     }
 

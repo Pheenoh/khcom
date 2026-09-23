@@ -302,7 +302,7 @@ void mode_sio_battle_1(void) {
     case 6:
         if (gUnk_0203A9E8 == 1) {
             if (GetKeysPressed() & DPAD_UP) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
                 ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00--;
 
                 if (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 < 0) {
@@ -311,7 +311,7 @@ void mode_sio_battle_1(void) {
             }
 
             if (GetKeysPressed() & DPAD_DOWN) {
-                m4aSongNumStart(101);
+                m4aSongNumStart(SONG_SYS_CLICK);
                 ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00++;
 
                 if (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 > 1) {
@@ -320,7 +320,7 @@ void mode_sio_battle_1(void) {
             }
         } else {
             if (GetKeysPressed() & (DPAD_UP | DPAD_DOWN)) {
-                m4aSongNumStart(105);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         }
 
@@ -354,7 +354,7 @@ void mode_sio_battle_1(void) {
 #endif
 
         if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
 
             switch (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00) {
             case 0:
@@ -367,7 +367,7 @@ void mode_sio_battle_1(void) {
         }
 
         if (GetKeysPressed() & B_BUTTON) {
-            m4aSongNumStart(104);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 2;
         }
         break;

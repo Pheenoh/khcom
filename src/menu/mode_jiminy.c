@@ -292,7 +292,7 @@ void mode_jiminy_1(void) {
                 FadeStartIn(0, 5);
                 FadeLock();
             }
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
             break;
         }
 
@@ -310,7 +310,7 @@ void mode_jiminy_1(void) {
             }
 
             if (ok != 0) {
-                m4aSongNumStart(0x66);
+                m4aSongNumStart(SONG_SYS_KETTEI);
 
                 if (e2->children != 0) {
                     gJiminyWork->unk_000 = 6;
@@ -972,14 +972,14 @@ void func_0805BAE4(void) {
                 if (gJiminyWork->unk_C72 > 0) {
                     gJiminyWork->unk_CC0 = 1;
                     gJiminyWork->unk_C72--;
-                    m4aSongNumStart(0x79);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                     func_0805A8D0();
                 }
             } else if (GetKeysRepeat() & DPAD_DOWN) {
                 if (gJiminyWork->unk_C78 < gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
                     gJiminyWork->unk_CC0 = 1;
                     gJiminyWork->unk_C72++;
-                    m4aSongNumStart(0x79);
+                    m4aSongNumStart(SONG_SYS_CLICKI04B);
                     func_0805A8D0();
                 }
             }
@@ -991,13 +991,13 @@ void func_0805BAE4(void) {
                 gJiminyWork->unk_000 = 8;
                 gJiminyWork->unk_048 = 0;
                 gJiminyWork->unk_CD2 = gJiminyWork->unk_CD6;
-                m4aSongNumStart(0x67);
+                m4aSongNumStart(SONG_SYS_CANSEL);
                 break;
             } else if (GetKeysRepeat() & R_BUTTON) {
                 gJiminyWork->unk_000 = 8;
                 gJiminyWork->unk_048 = 0;
                 gJiminyWork->unk_CD2 = gJiminyWork->unk_CD4;
-                m4aSongNumStart(0x67);
+                m4aSongNumStart(SONG_SYS_CANSEL);
                 break;
             }
         }
@@ -1007,11 +1007,11 @@ void func_0805BAE4(void) {
             FadeStartIn(0, 5);
             FadeLock();
             SetModeUpdate(mode_jiminy_1);
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         } else if (GetKeysPressed() & START_BUTTON) {
             gJiminyWork->unk_048 = 0;
             gJiminyWork->unk_000 = 5;
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         }
         break;
     case 5:

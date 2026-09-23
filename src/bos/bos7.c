@@ -997,7 +997,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
             work->unk_05C = work->unk_028 + work->unk_034;
             work->unk_060 = work->unk_02C + work->unk_038;
             work->unk_064 = work->unk_030 + work->unk_03C;
-            m4aSongNumStart(0x2C4);
+            m4aSongNumStart(SONG_SND_708);
             AnimReset(&work->anim);
             AnimChange(&work->anim, gLstAnimSets[work->unk_000].unk_00, 1);
         }
@@ -1742,7 +1742,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->unk_00E = 0;
         }
         if (func_08011F78(0x10F, work->unk_014, work->unk_018, work->unk_01C, 8, 1, 4) != 0) {
-            m4aSongNumStart(0x2BB);
+            m4aSongNumStart(SONG_EF_DS_ANKOKUPUNCH);
         }
         break;
     case 2:
@@ -1756,7 +1756,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->unk_018 = work->y2;
             work->unk_01C = work->z2;
             AnimStart(&work->anim, 1, 0);
-            m4aSongNumStart(0x2C6);
+            m4aSongNumStart(SONG_SND_710);
         }
         break;
     case 3:
@@ -1781,7 +1781,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
         }
         work->unk_01C = work->z2 - ((work->unk_00C >> 2) << 8);
         if (func_08011F78(0x10F, work->unk_014, work->unk_018, work->unk_01C, 8, 4, 4) != 0) {
-            m4aSongNumStart(0x2BB);
+            m4aSongNumStart(SONG_EF_DS_ANKOKUPUNCH);
         }
         work->unk_00C++;
         break;
@@ -1860,7 +1860,7 @@ void task_bos_lst_snp_0(LstSnpWork* work, LstSnpArg* arg) {
     work->vz = -(GetRandom() % 0x201 + 0x400);
     work->tiles = (u32)LoadObjTiles(gUnk_09CD0E34, 0x240);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
-    m4aSongNumStart(0x2C3);
+    m4aSongNumStart(SONG_SND_707);
     AnimInit(&work->anim, gUnk_09EFBF60, gUnk_09EFBF5C);
     AnimStart(&work->anim, 0, 1);
 }

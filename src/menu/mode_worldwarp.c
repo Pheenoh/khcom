@@ -268,16 +268,16 @@ void func_081006AC(void) {
             LoadBgMap(0, gUnk_09A35A1C, 0x500);
             gUnk_020357A4 = 16;
             gUnk_020357A2 = 3;
-            m4aSongNumStart(0x68);
+            m4aSongNumStart(SONG_SYS_CLOSE);
         } else {
             if (gUnk_020354F0[gUnk_020354E8] >= 0) {
                 gUnk_0203550A = gUnk_020354E8;
                 LoadBgMap(0, gUnk_09A35A1C, 0x500);
                 gUnk_020357A4 = 16;
                 gUnk_020357A2 = 3;
-                m4aSongNumStart(0xCE);
+                m4aSongNumStart(SONG_SYS_WORLDSTART);
             } else {
-                m4aSongNumStart(0x69);
+                m4aSongNumStart(SONG_SYS_BEEP);
             }
         }
     } else if (keys & B_BUTTON) {
@@ -285,7 +285,7 @@ void func_081006AC(void) {
         LoadBgMap(0, gUnk_09A35A1C, 0x500);
         gUnk_020357A4 = 16;
         gUnk_020357A2 = 3;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
     } else if (keys & DPAD_UP) {
         do {
             gUnk_020354E8 = gWarpIcons[gUnk_020354E8].up;
@@ -364,7 +364,7 @@ void func_081006AC(void) {
         }
 #endif
         gUnk_020357A0 = func_0810063C(gUnk_020354F0[gUnk_020354E8]);
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 

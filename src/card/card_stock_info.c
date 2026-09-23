@@ -108,7 +108,7 @@ u8 StockInfo_1(u8* work, void* a) {
         ApproachValue(&work[0x0C], 0x6C00, (u16)(s8)work[0x10]);
         work[0x10]--;
     } else {
-        m4aSongNumStart(0xCA);
+        m4aSongNumStart(SONG_SYS_CHAGEF2);
         CreateStockMesDispTask(&work[0x18], gUnk_0903BFBC[gGameState.progression.unk_80], 0, 0, 0x50);
         SetTaskUpdate(a, (void*)func_080A22A4);
     }

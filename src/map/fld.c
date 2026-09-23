@@ -415,7 +415,7 @@ u8 func_0803234C(FldWork* work, void* task) {
 
     switch (work->unk_94) {
     case 13:
-        m4aSongNumStart(0x8B);
+        m4aSongNumStart(SONG_SYS_GIMICJP);
         work->unk_94 = 14;
         work->unk_A0 = -0x800;
         work->unk_98 = 0;
@@ -562,9 +562,9 @@ u8 func_080324DC(FldWork* work, void* task) {
 
             if (work->unk_B8 == 0) {
                 if (GetRandom() % 2 != 0) {
-                    m4aSongNumStart(113);
+                    m4aSongNumStart(SONG_SYS_SR_I_VO00);
                 } else {
-                    m4aSongNumStart(114);
+                    m4aSongNumStart(SONG_SYS_SR_I_VO01);
                 }
 
                 work->unk_94 = 3;
@@ -927,7 +927,7 @@ u8 func_08033054(FldWork* work, void* task) {
         act->unk_10 = 0x133;
         work->unk_A0 = -0x5C0;
         work->unk_A4 |= 4;
-        m4aSongNumStart(0x8E);
+        m4aSongNumStart(SONG_SYS_SR_CATJP);
         gFieldState->unk_68 = 0;
         return 1;
     }
@@ -953,7 +953,7 @@ u8 func_08033150(FldWork* work, void* task) {
             p = act->fieldPosition;
             p.y -= 0xA00;
             act->fieldPosition.z = func_080DFF1C(&p) + 0x2B00;
-            m4aSongNumStart(0x8D);
+            m4aSongNumStart(SONG_SYS_SR_CATCH);
             act->angle = func_080DFF94(act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
             func_08031F98(work, 9, 0);
         }
@@ -1175,7 +1175,7 @@ u8 func_0803366C(FldWork* work, void* task) {
             act->unk_10 = 0;
             gFieldState->unk_68 = 0;
             work->unk_9A = 0;
-            m4aSongNumStart(0x73);
+            m4aSongNumStart(SONG_SYS_SR_AT_VO00);
         }
 
         if (work->unk_12 == 0) {
@@ -2114,7 +2114,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
 
     switch (work->unk_94) {
     case 13:
-        m4aSongNumStart(0x8B);
+        m4aSongNumStart(SONG_SYS_GIMICJP);
         work->unk_94 = 14;
         work->unk_A0 = -0x800;
         work->unk_98 = 0;
@@ -2261,9 +2261,9 @@ u8 func_08034C88(FldWork* work, void* task) {
 
             if (work->unk_B8 == 0) {
                 if (GetRandom() % 2 != 0) {
-                    m4aSongNumStart(225);
+                    m4aSongNumStart(SONG_SND_225);
                 } else {
-                    m4aSongNumStart(226);
+                    m4aSongNumStart(SONG_SND_226);
                 }
 
                 work->unk_94 = 3;
@@ -2625,7 +2625,7 @@ u8 func_080357F4(FldWork* work, void* task) {
         act->unk_10 = 0x133;
         work->unk_A0 = -0x5C0;
         work->unk_A4 |= 4;
-        m4aSongNumStart(0x8E);
+        m4aSongNumStart(SONG_SYS_SR_CATJP);
         gFieldState->unk_68 = 0;
         return 1;
     }
@@ -2651,7 +2651,7 @@ u8 func_080358F0(FldWork* work, void* task) {
             p = act->fieldPosition;
             p.y -= 0xA00;
             act->fieldPosition.z = func_080DFF1C(&p) + 0x2B00;
-            m4aSongNumStart(0x8D);
+            m4aSongNumStart(SONG_SYS_SR_CATCH);
             act->angle = func_080DFF94(act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
             func_0803473C(work, 9, 0);
         }
@@ -2868,7 +2868,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
             act->unk_10 = 0;
             gFieldState->unk_68 = 0;
             work->unk_9A = 0;
-            m4aSongNumStart(0xE3);
+            m4aSongNumStart(SONG_SND_227);
         }
 
         if (work->unk_12 == 0) {

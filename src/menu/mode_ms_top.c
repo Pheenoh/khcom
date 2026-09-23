@@ -236,13 +236,13 @@ void func_081017A0(void) {
             AnimStart(&gUnk_02035828[gUnk_020357C0], 2, 1);
         }
         gUnk_020357C4 = gWarpDefs[gUnk_020357C0].mode;
-        m4aSongNumStart(0x66);
+        m4aSongNumStart(SONG_SYS_KETTEI);
         FadeStartOut(0, 16);
         FadeLock();
         gUnk_02035890 = 11;
     } else if (keys & B_BUTTON) {
         gUnk_020357C4 = 0;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_020358A4 = 1;
 #ifdef VERSION_EU
         LoadBgMap(2, gUnkEu_09F84EE8[gLanguage], 0x500);
@@ -253,7 +253,7 @@ void func_081017A0(void) {
         gUnk_02035890 = 9;
     } else if (keys & START_BUTTON) {
         gUnk_020357C4 = 0;
-        m4aSongNumStart(0x68);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_020358A4 = 1;
 #ifdef VERSION_EU
         LoadBgMap(2, gUnkEu_09F84EE8[gLanguage], 0x500);
@@ -283,7 +283,7 @@ void func_081017A0(void) {
         }
         gUnk_020358BE = gUnk_020357C0 == 0 ? 0x40 : 0x41;
         func_08101740(gUnk_020357C0);
-        m4aSongNumStart(0x65);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 

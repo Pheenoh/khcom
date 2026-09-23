@@ -459,11 +459,11 @@ void func_080FF330(void) {
             gBldAlpha = 0x808;
             EnableBg(2);
             EnableBg(3);
-            m4aSongNumStart(102);
+            m4aSongNumStart(SONG_SYS_KETTEI);
             gUnk_02035118 = 1;
         }
     } else if (keys & 2) {
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         LoadBgMap(0, gUnk_09A324DC, 0x500);
 #ifndef VERSION_EU
         gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
@@ -472,7 +472,7 @@ void func_080FF330(void) {
         gUnk_020354C2 = 16;
         gUnk_020354C0 = 3;
     } else if (keys & 8) {
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
         LoadBgMap(0, gUnk_09A324DC, 0x500);
 #ifndef VERSION_EU
         gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
@@ -533,7 +533,7 @@ void func_080FF330(void) {
     if (gUnk_020350F8 != old) {
         func_080FF2B8(gUnk_020350F8);
         gUnk_020352B8 = func_080FF228(gUnk_02035100[gUnk_020350F8]);
-        m4aSongNumStart(101);
+        m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
 void func_080FF794(void) {
@@ -543,7 +543,7 @@ void func_080FF794(void) {
     keys = func_080FF310();
 
     if (keys & 10) {
-        m4aSongNumStart(104);
+        m4aSongNumStart(SONG_SYS_CLOSE);
 
         for (i = 0; i < 2; i++) {
             ReleaseObjPalette(gUnk_020354A8[i]);
