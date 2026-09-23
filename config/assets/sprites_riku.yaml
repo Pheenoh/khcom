@@ -1,4 +1,4 @@
-group: sprites_09EDF404
+group: sprites_riku
 types:
   SpriteTable:
     kind: table
@@ -14,24 +14,24 @@ types:
     header: anim.h
 objects:
   us:
-  - name: sprites_09EDF404.c
+  - name: sprites_riku.c
     start: 0x09EDF404
     end: 0x09EDF5F4
-  - name: sprites_09EDF404_frames.s
+  - name: sprites_riku_frames.s
     start: 0x08927764
     end: 0x0893DBC8
   jp:
-  - name: sprites_09EDF404.c
+  - name: sprites_riku.c
     start: 0x09EB6E80
     end: 0x09EB7070
-  - name: sprites_09EDF404_frames.s
+  - name: sprites_riku_frames.s
     start: 0x0891AD4C
     end: 0x089311B0
   eu:
-  - name: sprites_09EDF404.c
+  - name: sprites_riku.c
     start: 0x09F5A05C
     end: 0x09F5A24C
-  - name: sprites_09EDF404_frames.s
+  - name: sprites_riku_frames.s
     start: 0x08953088
     end: 0x089694EC
 entries:

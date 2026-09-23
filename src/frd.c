@@ -3,8 +3,7 @@
 #include "display.h"
 #include "frd.h"
 #include "task_animation_assets.h"
-#include "sprites_09EDE5FC.h"
-#include "sprites_09EEE00C.h"
+#include "sprites_evt.h"
 #include "sprites_frd.h"
 
 const AnimDef gUnk_0813EB8C[6] = {

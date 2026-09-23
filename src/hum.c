@@ -7,9 +7,7 @@
 #include "pallet.h"
 #include "hum.h"
 #include "task_animation_assets.h"
-#include "sprites_09EDE5FC.h"
-#include "sprites_09EEE36C.h"
-#include "sprites_09EEF108.h"
+#include "sprites_cloud.h"
 #include "sprites_evt.h"
 #include "sprites_hum.h"
 

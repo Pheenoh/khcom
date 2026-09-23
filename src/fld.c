@@ -3,10 +3,10 @@
 #include "fld.h"
 #include "gba/keys.h"
 #include "task_animation_assets.h"
-#include "sprites_09EDE878.h"
-#include "sprites_09EDF404.h"
-#include "sprites_09EEF71C.h"
+#include "sprites_evt.h"
 #include "sprites_fld.h"
+#include "sprites_riku.h"
+#include "sprites_sora.h"
 
 const AnimDef gUnk_0813C89C[15][5] = {
     { { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, { 0, 0, 0 } }, { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, { 0, 0, 0 } }, { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, { 0, 0, 0 } }, { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, { 0, 0, 0 } }, { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, { 0, 0, 0 } } },

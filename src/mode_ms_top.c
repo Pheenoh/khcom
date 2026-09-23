@@ -6,8 +6,8 @@
 #include "worldwarp_catalog_assets.h"
 #include "localized_resource_assets.h"
 #include "room_resource_assets.h"
-#include "sprites_09EDE878.h"
 #include "sprites_evt.h"
+#include "sprites_sora.h"
 
 extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_08B22BA8[];

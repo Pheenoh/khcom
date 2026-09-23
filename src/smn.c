@@ -4,9 +4,8 @@
 #include "anim.h"
 #include "smn_api.h"
 #include "task_animation_assets.h"
-#include "sprites_09EDE5FC.h"
-#include "sprites_09EDE878.h"
-#include "sprites_09EEF49C.h"
+#include "sprites_cloud.h"
+#include "sprites_evt.h"
 #include "sprites_smn.h"
 
 const AnimDef gUnk_0813E958[8] = {

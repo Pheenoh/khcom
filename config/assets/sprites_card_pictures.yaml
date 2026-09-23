@@ -1,4 +1,4 @@
-group: sprites_09EE91B0
+group: sprites_card_pictures
 types:
   SpriteTable:
     kind: table
@@ -14,24 +14,24 @@ types:
     header: anim.h
 objects:
   us:
-  - name: sprites_09EE91B0.c
+  - name: sprites_card_pictures.c
     start: 0x09EE91B0
     end: 0x09EE96AC
-  - name: sprites_09EE91B0_frames.s
+  - name: sprites_card_pictures_frames.s
     start: 0x09045240
     end: 0x09059E94
   jp:
-  - name: sprites_09EE91B0.c
+  - name: sprites_card_pictures.c
     start: 0x09EC07F4
     end: 0x09EC0CF0
-  - name: sprites_09EE91B0_frames.s
+  - name: sprites_card_pictures_frames.s
     start: 0x090120E8
     end: 0x09026D3C
   eu:
-  - name: sprites_09EE91B0.c
+  - name: sprites_card_pictures.c
     start: 0x09F74630
     end: 0x09F74B2C
-  - name: sprites_09EE91B0_frames.s
+  - name: sprites_card_pictures_frames.s
     start: 0x090D2060
     end: 0x090E6CB4
 entries:
