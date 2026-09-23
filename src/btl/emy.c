@@ -4033,7 +4033,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             func_08019068(gUnk_0813E1B4, &w->base.anim, 2, 1, w->base.tiles);
             w->unk_188 = 0;
             func_0801C700(act, &x, &y, 0);
-            w->unk_18C = GetAngle(act->x, act->y, x, y);
+            w->angle = GetAngle(act->x, act->y, x, y);
         }
 
         if (((u16)work->base.unk_154 % 4) == 0) {
@@ -4043,11 +4043,11 @@ u8 task_emy_37_1(Emy37Work* work) {
 
             func_0801C700(act, &x, &y, 0);
             angle = GetAngle(act->x, act->y, x, y);
-            ApproachAngle(&w->unk_18C, angle, 4);
+            ApproachAngle(&w->angle, angle, 4);
         }
 
-        act->x += gSineTable[(u8)w->unk_18C] * (s32)w->unk_188 >> 8;
-        act->y += -gSineTable[(u8)w->unk_18C + 64] * (s32)w->unk_188 >> 8;
+        act->x += gSineTable[(u8)w->angle] * (s32)w->unk_188 >> 8;
+        act->y += -gSineTable[(u8)w->angle + 64] * (s32)w->unk_188 >> 8;
         w->unk_188 += 12;
 
         if (func_08011F78(0xD3, act->x, act->y, act->z, 32, 16, 16)) {

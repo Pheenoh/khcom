@@ -677,7 +677,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->state = 0;
     work->unk_34 = 0;
     work->unk_38 = 0;
-    work->unk_42 = 0;
+    work->angle = 0;
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, &(arg = work->jf)->sub);
 }
@@ -721,8 +721,8 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->state = 1;
         }
 
-        sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
-        work->unk_42 += 2;
+        sub->z = gSineTable[(u8)work->angle] * 20 - 0xB400;
+        work->angle += 2;
         break;
     case 1:
         if (work->unk_34 == 0) {
@@ -742,8 +742,8 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_34++;
         }
 
-        sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
-        work->unk_42 += 2;
+        sub->z = gSineTable[(u8)work->angle] * 20 - 0xB400;
+        work->angle += 2;
         break;
     case 2:
         if (work->unk_34 == 0) {
@@ -772,8 +772,8 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->state = 3;
         }
 
-        sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
-        work->unk_42 += 2;
+        sub->z = gSineTable[(u8)work->angle] * 20 - 0xB400;
+        work->angle += 2;
         break;
     case 3:
         if (work->unk_34 == 0) {
@@ -793,8 +793,8 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_34++;
         }
 
-        sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
-        work->unk_42 += 2;
+        sub->z = gSineTable[(u8)work->angle] * 20 - 0xB400;
+        work->angle += 2;
         break;
     case 4:
         if (work->unk_34 == 0) {

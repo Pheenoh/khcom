@@ -706,7 +706,7 @@ typedef struct PooHoneycombWork {
     u16 unk_36;
     u8 collider[0x5C];
     u16 unk_94;
-    u16 unk_96;
+    u16 angle;
     s32 unk_98;
     u8 unk_9C;
     u8 unk_9D[0x03];
@@ -767,7 +767,7 @@ typedef struct PooCamera {
     u8 unk_3C;
     u8 unk_3D;
     u16 timer;
-    u16 unk_40;
+    u16 angle;
     u16 unk_42;
 } PooCamera;
 

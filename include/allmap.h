@@ -166,7 +166,7 @@ typedef struct AllmapPushaWork {
     void* palette;
     void* gfx;
     AllmapCursorWork* cursor;
-    u16 unk_10;
+    u16 angle;
     s16 y2;
     TaskPool tasks;
     Task* task;

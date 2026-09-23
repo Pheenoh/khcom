@@ -767,7 +767,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
     work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->gfx = gUnk_0976DC9C;
-    work->unk_10 = 0;
+    work->angle = 0;
     TaskPoolInit(&work->tasks, 1);
     work->task = 0;
 }
@@ -777,8 +777,8 @@ s32 task_allmap_pusha_1(AllmapPushaWork* work) {
         m4aSongNumStart(102);
         work->task = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->pos);
     }
-    work->y2 = gSineTable[(u8)work->unk_10] >> 8;
-    work->unk_10 += 16;
+    work->y2 = gSineTable[(u8)work->angle] >> 8;
+    work->angle += 16;
     TaskPoolUpdate(&work->tasks);
     return 1;
 }

@@ -279,7 +279,7 @@ typedef struct JfLampWork {
     u16 unk_36;
     s32 unk_38;
     u8 unk_3C[0x6];
-    u16 unk_42;
+    u16 angle;
     TaskPool tasks;
 } JfLampWork;
 

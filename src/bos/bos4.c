@@ -3093,7 +3093,7 @@ void* eu_080DA860(void) {
 #endif
 
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
-    work->unk_13C = *arg;
+    work->angle = *arg;
     work->unk_140 = 0x333;
     func_0801B37C(&work->unk_024, &gUnk_096FE324, gBtlWork->unk_0CC,
         gBtlWork->unk_0D0 + 0x1000, gBtlWork->unk_0D4);
@@ -3124,8 +3124,8 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     }
 
     if (work->unk_138 == 0) {
-        p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
-        p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
+        p->x += gSineTable[(u8)work->angle] * work->unk_140 >> 8;
+        p->z += -gSineTable[(u8)work->angle + 0x40] * work->unk_140 >> 8;
         work->timer--;
 
         if (p->z >= 0) {
@@ -3140,11 +3140,11 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     }
 
     if (work->unk_138 == 1 && work->timer != 0) {
-        work->unk_13E = (u8)GetAngle(p->x, p->z,
+        work->targetAngle = (u8)GetAngle(p->x, p->z,
             gBtlWork->actor->x, gBtlWork->actor->z);
-        ApproachAngle(&work->unk_13C, work->unk_13E, 4);
-        p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
-        p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
+        ApproachAngle(&work->angle, work->targetAngle, 4);
+        p->x += gSineTable[(u8)work->angle] * work->unk_140 >> 8;
+        p->z += -gSineTable[(u8)work->angle + 0x40] * work->unk_140 >> 8;
 
         if (work->timer <= 169) {
             ApproachValue(&p->y, gBtlWork->actor->y, 30);

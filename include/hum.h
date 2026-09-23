@@ -80,7 +80,7 @@ typedef struct HookWork {
 typedef struct HookMoonWork {
     void* tiles;
     u8* palette;
-    u16 unk_08;
+    u16 angle;
     u8 unk_0A;
     u8 unk_0B;
 } HookMoonWork;
@@ -204,7 +204,7 @@ typedef struct MahluxiaWork {
     s32 unk_1C4;
     s16 unk_1C8;
     u16 unk_1CA;
-    s32 unk_1CC;
+    s32 angle;
     u16 flags;
     u8 unk_1D2[0x02];
     s32 unk_1D4;
@@ -248,7 +248,7 @@ typedef struct VixenWork {
     u8 unk_18C[0x0C];
     s32 unk_198;
     s32 unk_19C;
-    u16 unk_1A0;
+    u16 angle;
     u16 flags;
     TaskPool tasks;
     void* task;

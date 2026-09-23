@@ -2650,8 +2650,8 @@ void func_080958E0(ReloadGageWork* w) {
     }
 }
 void func_08095A5C(UnkStruct_08095A5C* p) {
-    p->unk_00 = gSineTable[(u8)p->unk_02] >> 8;
-    p->unk_02 += 16;
+    p->unk_00 = gSineTable[(u8)p->angle] >> 8;
+    p->angle += 16;
 }
 void func_08095A78(UnkStruct_08095A5C* p, void* a, u8 b, u8 c) {
     AnimInit(&p->anim, gUnk_09EE7588[b], gUnk_09EE7598[b]);

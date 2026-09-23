@@ -202,8 +202,8 @@ typedef struct UrsulaBubbleSingleWork {
     u16 timer;
     u8 unk_136[0x2];
     u32 unk_138;
-    u16 unk_13C;
-    u16 unk_13E;
+    u16 angle;
+    u16 targetAngle;
     s32 unk_140;
     u8 unk_144[0x4];
 } UrsulaBubbleSingleWork;

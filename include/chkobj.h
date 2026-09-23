@@ -30,7 +30,7 @@ typedef struct ChkObjWork {
     void* gfx;
     u8 paused;
     u8 unk_41;
-    u16 unk_42;
+    u16 angle;
     s16 unk_44;
     s16 y;
 } ChkObjWork;

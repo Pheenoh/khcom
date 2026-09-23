@@ -1583,7 +1583,7 @@ void mode_chkobj_0(void) {
     gChkObjWork->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
     gChkObjWork->gfx = gUnk_088B629C;
     gChkObjWork->paused = 0;
-    gChkObjWork->unk_42 = 0x80A0;
+    gChkObjWork->angle = 0x80A0;
     gChkObjWork->unk_44 = 0;
     gChkObjWork->y = 0;
     func_0800B30C(gChkObjEntries[0].defs);
@@ -1667,11 +1667,11 @@ void mode_chkobj_1(void) {
 
         if (keys != 0) {
             if (GetKeysHeld() & L_BUTTON) {
-                gChkObjWork->unk_42--;
+                gChkObjWork->angle--;
             }
 
             if (GetKeysHeld() & R_BUTTON) {
-                gChkObjWork->unk_42++;
+                gChkObjWork->angle++;
             }
         } else if (GetKeysRepeat() & (L_BUTTON | R_BUTTON)) {
             gChkObjWork->y = 0;
@@ -1699,9 +1699,9 @@ void mode_chkobj_1(void) {
             func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
 
-        SetBackdropColor((u16)abs(gSineTable[gChkObjWork->unk_42 & 0xFF] * 5 >> 6),
-                      (u16)abs(gSineTable[(gChkObjWork->unk_42 / 2) & 0xFF] * 5 >> 6),
-                      (u16)abs(gSineTable[(gChkObjWork->unk_42 / 4) & 0xFF] * 5 >> 6));
+        SetBackdropColor((u16)abs(gSineTable[gChkObjWork->angle & 0xFF] * 5 >> 6),
+                      (u16)abs(gSineTable[(gChkObjWork->angle / 2) & 0xFF] * 5 >> 6),
+                      (u16)abs(gSineTable[(gChkObjWork->angle / 4) & 0xFF] * 5 >> 6));
 
         if (GetKeysHeld() & DPAD_UP) {
             gChkObjWork->y--;

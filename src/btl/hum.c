@@ -1699,11 +1699,11 @@ void task_hum_hook_moon_0(HookMoonWork* work) {
     PopPaletteEffect();
     func_0801C298(work->palette[6] + 16, 0);
     work->unk_0A = 0;
-    work->unk_08 = 0;
+    work->angle = 0;
 }
 
 u8 task_hum_hook_moon_1(HookMoonWork* work) {
-    work->unk_08++;
+    work->angle++;
     return 1;
 }
 
@@ -1716,7 +1716,7 @@ void task_hum_hook_moon_2(HookMoonWork* work) {
 
     x = 248 - (gBtlWork->unk_000 >> 9);
     y = 208 - (gBtlWork->unk_004 >> 9);
-    s = gSineTable[(u8)work->unk_08];
+    s = gSineTable[(u8)work->angle];
     y += s >> 5;
     DrawSprite(x + 64, y - 28, gUnk_08B5A854, work->tiles, work->palette, 0, 0xC00, 0xFFFF);
     DrawSprite(x - 144, y, gUnk_08B5A85E, work->tiles, work->palette, 0, 0xC00, 0xFFFE);
@@ -3457,7 +3457,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 19:
         if ((s16)work->base.unk_150 == 0) {
             w->unk_1CA = 60;
-            w->unk_1CC = 0;
+            w->angle = 0;
             w->unk_1D4 = act->y;
 
             if (((gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7) < act->y) {
@@ -3470,12 +3470,12 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
 
         if ((s16)w->unk_1CA != 0) {
             ApproachValueHalfSteps(&act->x, work->base.targetX, w->unk_1CA);
-            ApproachValueHalfSteps(&w->unk_1CC, 128, w->unk_1CA);
+            ApproachValueHalfSteps(&w->angle, 128, w->unk_1CA);
 
             if (w->flags & 1) {
-                act->y = w->unk_1D4 + gSineTable[(u8)w->unk_1CC] * w->unk_1C8;
+                act->y = w->unk_1D4 + gSineTable[(u8)w->angle] * w->unk_1C8;
             } else {
-                act->y = w->unk_1D4 - gSineTable[(u8)w->unk_1CC] * w->unk_1C8;
+                act->y = w->unk_1D4 - gSineTable[(u8)w->angle] * w->unk_1C8;
             }
             w->unk_1CA--;
         }
@@ -5814,10 +5814,10 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
             if (act->flags & 4) {
                 work->unk_198 = act->x - 0x2000;
-                work->unk_1A0 = 192;
+                work->angle = 192;
             } else {
                 work->unk_198 = act->x + 0x2000;
-                work->unk_1A0 = 64;
+                work->angle = 64;
             }
             work->unk_19C = act->y;
             m4aSongNumStart(276);
@@ -5826,11 +5826,11 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
         if (AnimGetFrame(&w->base.anim) > 2) {
             ang = GetAngle(work->unk_198, work->unk_19C, x, y);
-            ApproachAngle(&work->unk_1A0, ang, 3);
+            ApproachAngle(&work->angle, ang, 3);
             s = abs(gSineTable[((u16)w->base.unk_150 * 2) & 0xFF]);
             s += 384;
-            work->unk_198 += (gSineTable[(u8)work->unk_1A0] * s) >> 8;
-            work->unk_19C += (-gSineTable[(u8)work->unk_1A0 + 64] * s) >> 8;
+            work->unk_198 += (gSineTable[(u8)work->angle] * s) >> 8;
+            work->unk_19C += (-gSineTable[(u8)work->angle + 64] * s) >> 8;
             ClampBattlePosition(&work->unk_198, &work->unk_19C, 0, 0);
             func_0800F368(w, 1);
 

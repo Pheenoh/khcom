@@ -4888,7 +4888,7 @@ void task_poo_honeycomb_0(PooHoneycombWork* w) {
     w->unk_9C = 0;
     gUnk_02034E1C = 0;
     w->unk_98 = 0;
-    w->unk_96 = 0;
+    w->angle = 0;
 }
 
 u8 task_poo_honeycomb_1(PooHoneycombWork* w) {
@@ -4914,8 +4914,8 @@ u8 task_poo_honeycomb_1(PooHoneycombWork* w) {
             }
             break;
         case 1:
-            w->unk_98 = gSineTable[(u8)w->unk_96];
-            w->unk_96 += 16;
+            w->unk_98 = gSineTable[(u8)w->angle];
+            w->angle += 16;
             w->unk_94++;
             if (w->unk_94 > 60) {
                 w->unk_98 = 0;
@@ -5265,7 +5265,7 @@ void task_poo_wagon_0(PooCamera* w) {
     w->gfx3 = gUnk_09758C20;
     w->unk_3C = 0;
     w->timer = 0;
-    w->unk_40 = 0;
+    w->angle = 0;
 }
 
 u8 task_poo_wagon_1(PooCamera* w) {
@@ -5339,8 +5339,8 @@ void task_poo_wagon_2(PooCamera* w) {
     d = 0;
 
     if (w->timer != 0) {
-        t = gSineTable[(u8)w->unk_40];
-        w->unk_40 += 16;
+        t = gSineTable[(u8)w->angle];
+        w->angle += 16;
     } else {
         t = 0;
     }

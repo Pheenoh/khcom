@@ -160,7 +160,7 @@ typedef struct Emy37Work {
     u8 unk_184;
     u8 unk_185[0x03];
     u32 unk_188;
-    u16 unk_18C;
+    u16 angle;
 } Emy37Work;
 
 typedef struct Emy39Work {

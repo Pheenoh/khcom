@@ -959,7 +959,7 @@ typedef struct MapcardWork {
 
 typedef struct UnkStruct_08095A5C {
     s16 unk_00;
-    u16 unk_02;
+    u16 angle;
     u8 unk_04[0x09];
     u8 unk_0D;
     u8 unk_0E[0x02];
