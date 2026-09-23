@@ -8,7 +8,6 @@
 
 #include "card_description_data.h"
 
-
 #include "obj.h"
 
 #include "card_types.h"
@@ -144,36 +143,15 @@ void func_08103F94(s16 a, s16 b);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 
 extern u8 gUnk_0203C590[];
-extern u8 gUnk_09A3ABDC[];
 
-extern u8 gUnk_09A3D79C[];
-extern u8 gUnk_09A10A3C[];
-extern u8 gUnk_09A123DC[];
-extern u8 gUnk_09A36EDC[];
-extern u8 gUnk_09A373DC[];
-extern u8 gUnk_09A378DC[];
-extern u8 gUnk_09A37DDC[];
-extern u8 gUnk_09A3D7FC[];
-extern u8 gUnk_09A3D85C[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088C56C6[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
 extern u32 gFrameCounter;
-extern u8 gUnk_09A17D1C[];
-extern u8 gUnk_09A3DA1C[];
-extern u8 gUnk_09A3DB1C[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
-extern u8 gUnk_09A3DB7C[];
 extern u8 gUnk_0908B1B4[];
-extern u8 gUnk_09A3D87C[];
-extern u8 gUnk_09A1251C[];
-extern u8 gUnk_09A18D7C[];
-extern u8 gUnk_09A382DC[];
-extern u8 gUnk_09A3AD5C[];
-extern u8 gUnk_09A3DA7C[];
-extern u8 gUnk_09A18EBC[];
 #endif /* GUARD_MODE_MS_H */

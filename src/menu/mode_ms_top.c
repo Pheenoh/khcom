@@ -3,7 +3,9 @@
 #include "system_state.h"
 #include "mode_ms.h"
 #include "mode_ms_top_api.h"
-#include "worldwarp_catalog_assets.h"
+#include "jiminy_data.h"
+#include "jiminy_text_assets.h"
+#include "mode_chkobj_assets.h"
 #include "localized_resource_assets.h"
 #include "anim.h"
 #include "bos5.h"
@@ -16,7 +18,6 @@
 #include "sprites_moogle_shop.h"
 #include "sprites_sora.h"
 
-extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_08B22BA8[];
 
 static s16 gUnk_020357C0;

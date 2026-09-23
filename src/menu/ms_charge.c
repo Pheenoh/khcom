@@ -11,7 +11,6 @@
 #include "sprites_moogle_shop.h"
 
 #ifdef VERSION_EU
-extern u8 gUnkEu_09A97520[];
 extern u8 gUnkEu_099AEE98[];
 extern u8 gUnkEu_092D1F74[];
 extern u8 gUnkEu_08890F40[];
@@ -44,7 +43,7 @@ void* gUnkEu_09F84FBC[5] = {
 };
 
 void* gUnkEu_09F84FD0[5] = {
-    gUnkEu_09A96B20,
+    gUnk_09A3B85C,
     gUnkEu_09A97A20,
     gUnkEu_09A98920,
     gUnkEu_09A98420,
@@ -52,7 +51,7 @@ void* gUnkEu_09F84FD0[5] = {
 };
 
 void* gUnkEu_09F84FE4[5] = {
-    gUnkEu_09A97020,
+    gUnk_09A3BD5C,
     gUnkEu_09A98E20,
     gUnkEu_09A99D20,
     gUnkEu_09A99820,
@@ -1151,11 +1150,7 @@ void mode_ms_charge_0(void) {
     }
     func_081052C8(gUnk_02035C18);
     LoadBgMap(2,
-#ifdef VERSION_EU
-        gUnkEu_09A97520
-#else
         gUnk_09A3C25C
-#endif
     , 0x500);
     func_08104F2C();
     func_08104FA4();

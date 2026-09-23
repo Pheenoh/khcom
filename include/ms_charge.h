@@ -41,18 +41,6 @@
 
 #define CARD_ID_MASK 0xFFF
 
-extern u8 gUnk_09A1DB9C[];
-extern u8 gUnk_09A1DCDC[];
-extern u8 gUnk_09A1DE1C[];
-extern u8 gUnk_09A1DE3C[];
-extern u8 gUnk_09A1DF7C[];
-extern u8 gUnk_09A1DF9C[];
-extern u8 gUnk_09A3B75C[];
-extern u8 gUnk_09A3B85C[];
-extern u8 gUnk_09A3BD5C[];
-extern u8 gUnk_09A3DD7C[];
-extern u8 gUnk_09A3DD88[];
-extern u8 gUnk_09A3DE08[];
 extern u8 gUnk_09A3DE7C[];
 
 s16 func_08084BAC(void);
@@ -83,10 +71,6 @@ extern u8 gUnk_08159F38[];
 extern u8 gUnk_0815C204[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_09617D58[];
-extern u8 gUnk_09A1913C[];
-extern u8 gUnk_09A3B25C[];
-extern u8 gUnk_09A3C25C[];
-extern u8 gUnk_09A3DBDC[];
 void mode_ms_charge_1(void);
 void mode_ms_charge_2(void);
 void mode_ms_charge_0(void);

@@ -45,16 +45,6 @@ extern u8 gMoogleAssetUs_099A3EA4[];
 extern u8 gMoogleAssetUs_099A41E4[];
 extern u8 gMoogleAssetUs_099A4464[];
 extern u8 gMoogleAssetUs_099A46E4[];
-extern u8 gMoogleAssetUs_09A387DC[];
-extern u8 gMoogleAssetUs_09A38CDC[];
-extern u8 gMoogleAssetUs_09A391DC[];
-extern u8 gMoogleAssetUs_09A396DC[];
-extern u8 gMoogleAssetUs_09A39BDC[];
-extern u8 gMoogleAssetUs_09A3A3DC[];
-extern u8 gMoogleAssetUs_09A3DA9C[];
-extern u8 gMoogleAssetUs_09A3DABC[];
-extern u8 gMoogleAssetUs_09A3DADC[];
-extern u8 gMoogleAssetUs_09A3DAFC[];
 #endif
 
 #ifdef VERSION_JP
@@ -98,16 +88,6 @@ extern u8 gMoogleAssetJp_0995892C[];
 extern u8 gMoogleAssetJp_09958C6C[];
 extern u8 gMoogleAssetJp_09958EEC[];
 extern u8 gMoogleAssetJp_0995916C[];
-extern u8 gMoogleAssetJp_099ED264[];
-extern u8 gMoogleAssetJp_099ED764[];
-extern u8 gMoogleAssetJp_099EDC64[];
-extern u8 gMoogleAssetJp_099EE164[];
-extern u8 gMoogleAssetJp_099EE664[];
-extern u8 gMoogleAssetJp_099EEE64[];
-extern u8 gMoogleAssetJp_099F2524[];
-extern u8 gMoogleAssetJp_099F2544[];
-extern u8 gMoogleAssetJp_099F2564[];
-extern u8 gMoogleAssetJp_099F2584[];
 #endif
 
 #ifdef VERSION_EU
@@ -151,22 +131,6 @@ extern u8 gMoogleAssetEu_099B1E28[];
 extern u8 gMoogleAssetEu_099B2168[];
 extern u8 gMoogleAssetEu_099B23E8[];
 extern u8 gMoogleAssetEu_099B2668[];
-extern u8 gMoogleAssetEu_09A8DFA0[];
-extern u8 gMoogleAssetEu_09A8E4A0[];
-extern u8 gMoogleAssetEu_09A8E9A0[];
-extern u8 gMoogleAssetEu_09A8EEA0[];
-extern u8 gMoogleAssetEu_09A8F3A0[];
-extern u8 gMoogleAssetEu_09A8FBA0[];
-extern u8 gMoogleAssetEu_09A91E20[];
-extern u8 gMoogleAssetEu_09A92620[];
-extern u8 gMoogleAssetEu_09A92E20[];
-extern u8 gMoogleAssetEu_09A93620[];
-extern u8 gMoogleAssetEu_09A93E20[];
-extern u8 gMoogleAssetEu_09A94620[];
-extern u8 gMoogleAssetEu_09A9B560[];
-extern u8 gMoogleAssetEu_09A9B580[];
-extern u8 gMoogleAssetEu_09A9B5A0[];
-extern u8 gMoogleAssetEu_09A9B5C0[];
 #endif
 
 #endif

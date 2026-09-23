@@ -20,6 +20,15 @@ objects:
   - name: sprites_moogle_shop_frames.s
     start: 0x099A1F44
     end: 0x099A7C98
+  - name: sprites_moogle_shop_tiles.s
+    start: 0x09A10A3C
+    end: 0x09A1E0DC
+  - name: sprites_moogle_shop_maps.s
+    start: 0x09A36EDC
+    end: 0x09A3C75C
+  - name: sprites_moogle_shop_palettes.s
+    start: 0x09A3D77C
+    end: 0x09A3DE7C
   jp:
   - name: sprites_moogle_shop.c
     start: 0x09ED0D14
@@ -27,6 +36,15 @@ objects:
   - name: sprites_moogle_shop_frames.s
     start: 0x099569CC
     end: 0x0995C720
+  - name: sprites_moogle_shop_tiles.s
+    start: 0x099C54C4
+    end: 0x099D2B64
+  - name: sprites_moogle_shop_maps.s
+    start: 0x099EB964
+    end: 0x099F11E4
+  - name: sprites_moogle_shop_palettes.s
+    start: 0x099F2204
+    end: 0x099F2904
   eu:
   - name: sprites_moogle_shop.c
     start: 0x09F85554
@@ -34,6 +52,15 @@ objects:
   - name: sprites_moogle_shop_frames.s
     start: 0x099AEC48
     end: 0x099B5C1C
+  - name: sprites_moogle_shop_tiles.s
+    start: 0x09A60380
+    end: 0x09A6FCA0
+  - name: sprites_moogle_shop_maps.s
+    start: 0x09A89EA0
+    end: 0x09A97A20
+  - name: sprites_moogle_shop_palettes.s
+    start: 0x09A9B240
+    end: 0x09A9B940
 entries:
 - name: gUnk_09EF9928
   record: SpriteTable
@@ -2053,3 +2080,710 @@ entries:
   eu:
     address: 0x099B0AE6
     size: 1024
+- name: gUnk_09A10A3C
+  format: tiles4
+  us:
+    address: 0x09A10A3C
+    size: 6560
+  jp:
+    address: 0x099C54C4
+    size: 6560
+  eu:
+    address: 0x09A60380
+    size: 9408
+- name: gUnk_09A123DC
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A123DC
+    size: 320
+  jp:
+    address: 0x099C6E64
+    size: 320
+  eu:
+    address: 0x09A62840
+    size: 320
+- name: gUnk_09A1251C
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09A1251C
+    size: 22528
+  jp:
+    address: 0x099C6FA4
+    size: 22528
+  eu:
+    address: 0x09A62980
+    size: 22528
+- name: gUnk_09A17D1C
+  format: tiles4
+  us:
+    address: 0x09A17D1C
+    size: 4192
+  jp:
+    address: 0x099CC7A4
+    size: 4192
+  eu:
+    address: 0x09A68180
+    size: 4192
+- name: gUnk_09A18D7C
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A18D7C
+    size: 320
+  jp:
+    address: 0x099CD804
+    size: 320
+  eu:
+    address: 0x09A691E0
+    size: 320
+- name: gUnk_09A18EBC
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09A18EBC
+    size: 640
+  jp:
+    address: 0x099CD944
+    size: 640
+  eu:
+    address: 0x09A69320
+    size: 640
+- name: gUnk_09A1913C
+  format: tiles4
+  us:
+    address: 0x09A1913C
+    size: 19040
+  jp:
+    address: 0x099CDBC4
+    size: 19040
+  eu:
+    address: 0x09A695A0
+    size: 25024
+- name: gUnk_09A1DB9C
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A1DB9C
+    size: 320
+  jp:
+    address: 0x099D2624
+    size: 320
+  eu:
+    address: 0x09A6F760
+    size: 320
+- name: gUnk_09A1DCDC
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A1DCDC
+    size: 320
+  jp:
+    address: 0x099D2764
+    size: 320
+  eu:
+    address: 0x09A6F8A0
+    size: 320
+- name: gUnk_09A1DE1C
+  format: tiles4
+  us:
+    address: 0x09A1DE1C
+    size: 32
+  jp:
+    address: 0x099D28A4
+    size: 32
+  eu:
+    address: 0x09A6F9E0
+    size: 32
+- name: gUnk_09A1DE3C
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A1DE3C
+    size: 320
+  jp:
+    address: 0x099D28C4
+    size: 320
+  eu:
+    address: 0x09A6FA00
+    size: 320
+- name: gUnk_09A1DF7C
+  format: tiles4
+  us:
+    address: 0x09A1DF7C
+    size: 32
+  jp:
+    address: 0x099D2A04
+    size: 32
+  eu:
+    address: 0x09A6FB40
+    size: 32
+- name: gUnk_09A1DF9C
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09A1DF9C
+    size: 320
+  jp:
+    address: 0x099D2A24
+    size: 320
+  eu:
+    address: 0x09A6FB60
+    size: 320
+- name: gUnk_09A36EDC
+  format: tilemap
+  us:
+    address: 0x09A36EDC
+    size: 1280
+  jp:
+    address: 0x099EB964
+    size: 1280
+  eu:
+    address: 0x09A89EA0
+    size: 1280
+- name: gUnk_09A373DC
+  format: tilemap
+  us:
+    address: 0x09A373DC
+    size: 1280
+  jp:
+    address: 0x099EBE64
+    size: 1280
+  eu:
+    address: 0x09A8A3A0
+    size: 1280
+- name: gUnk_09A378DC
+  format: tilemap
+  us:
+    address: 0x09A378DC
+    size: 1280
+  jp:
+    address: 0x099EC364
+    size: 1280
+  eu:
+    address: 0x09A8A8A0
+    size: 1280
+- name: gUnk_09A37DDC
+  format: tilemap
+  us:
+    address: 0x09A37DDC
+    size: 1280
+  jp:
+    address: 0x099EC864
+    size: 1280
+  eu:
+    address: 0x09A8ADA0
+    size: 1280
+- name: gUnk_09A382DC
+  format: tilemap
+  us:
+    address: 0x09A382DC
+    size: 1280
+  jp:
+    address: 0x099ECD64
+    size: 1280
+  eu:
+    address: 0x09A8B2A0
+    size: 1280
+- name: gMoogleAssetUs_09A387DC
+  format: tilemap
+  us:
+    address: 0x09A387DC
+    size: 1280
+  jp:
+    address: 0x099ED264
+    size: 1280
+    symbol: gMoogleAssetJp_099ED264
+  eu:
+    address: 0x09A8DFA0
+    size: 1280
+    symbol: gMoogleAssetEu_09A8DFA0
+- name: gMoogleAssetUs_09A38CDC
+  format: tilemap
+  us:
+    address: 0x09A38CDC
+    size: 1280
+  jp:
+    address: 0x099ED764
+    size: 1280
+    symbol: gMoogleAssetJp_099ED764
+  eu:
+    address: 0x09A8E4A0
+    size: 1280
+    symbol: gMoogleAssetEu_09A8E4A0
+- name: gMoogleAssetUs_09A391DC
+  format: tilemap
+  us:
+    address: 0x09A391DC
+    size: 1280
+  jp:
+    address: 0x099EDC64
+    size: 1280
+    symbol: gMoogleAssetJp_099EDC64
+  eu:
+    address: 0x09A8E9A0
+    size: 1280
+    symbol: gMoogleAssetEu_09A8E9A0
+- name: gMoogleAssetUs_09A396DC
+  format: tilemap
+  us:
+    address: 0x09A396DC
+    size: 1280
+  jp:
+    address: 0x099EE164
+    size: 1280
+    symbol: gMoogleAssetJp_099EE164
+  eu:
+    address: 0x09A8EEA0
+    size: 1280
+    symbol: gMoogleAssetEu_09A8EEA0
+- name: gMoogleAssetUs_09A39BDC
+  format: tilemap
+  us:
+    address: 0x09A39BDC
+    size: 2048
+  jp:
+    address: 0x099EE664
+    size: 2048
+    symbol: gMoogleAssetJp_099EE664
+  eu:
+    address: 0x09A8F3A0
+    size: 2048
+    symbol: gMoogleAssetEu_09A8F3A0
+- name: gMoogleAssetUs_09A3A3DC
+  format: tilemap
+  us:
+    address: 0x09A3A3DC
+    size: 2048
+  jp:
+    address: 0x099EEE64
+    size: 2048
+    symbol: gMoogleAssetJp_099EEE64
+  eu:
+    address: 0x09A8FBA0
+    size: 2048
+    symbol: gMoogleAssetEu_09A8FBA0
+- name: gUnk_09A3ABDC
+  format: tilemap
+  us:
+    address: 0x09A3ABDC
+    size: 384
+  jp:
+    address: 0x099EF664
+    size: 384
+  eu:
+    address: 0x09A903A0
+    size: 384
+- name: gUnk_09A3AD5C
+  format: tilemap
+  us:
+    address: 0x09A3AD5C
+    size: 1280
+  jp:
+    address: 0x099EF7E4
+    size: 1280
+  eu:
+    address: 0x09A90520
+    size: 1280
+- name: gUnk_09A3B25C
+  format: tilemap
+  us:
+    address: 0x09A3B25C
+    size: 1280
+  jp:
+    address: 0x099EFCE4
+    size: 1280
+  eu:
+    address: 0x09A90A20
+    size: 1280
+- name: gUnk_09A3B75C
+  format: tilemap
+  us:
+    address: 0x09A3B75C
+    size: 256
+  jp:
+    address: 0x099F01E4
+    size: 256
+  eu:
+    address: 0x09A90F20
+    size: 1280
+- name: gUnk_09A3B85C
+  format: tilemap
+  us:
+    address: 0x09A3B85C
+    size: 1280
+  jp:
+    address: 0x099F02E4
+    size: 1280
+  eu:
+    address: 0x09A96B20
+    size: 1280
+- name: gUnk_09A3BD5C
+  format: tilemap
+  us:
+    address: 0x09A3BD5C
+    size: 1280
+  jp:
+    address: 0x099F07E4
+    size: 1280
+  eu:
+    address: 0x09A97020
+    size: 1280
+- name: gUnk_09A3C25C
+  format: tilemap
+  us:
+    address: 0x09A3C25C
+    size: 1280
+  jp:
+    address: 0x099F0CE4
+    size: 1280
+  eu:
+    address: 0x09A97520
+    size: 1280
+- name: gUnk_09A3D77C
+  format: palette
+  us:
+    address: 0x09A3D77C
+    size: 32
+  jp:
+    address: 0x099F2204
+    size: 32
+  eu:
+    address: 0x09A9B240
+    size: 32
+- name: gUnk_09A3D79C
+  format: palette
+  us:
+    address: 0x09A3D79C
+    size: 96
+  jp:
+    address: 0x099F2224
+    size: 96
+  eu:
+    address: 0x09A9B260
+    size: 96
+- name: gUnk_09A3D7FC
+  format: palette
+  us:
+    address: 0x09A3D7FC
+    size: 32
+  jp:
+    address: 0x099F2284
+    size: 32
+  eu:
+    address: 0x09A9B2C0
+    size: 32
+- name: gWorldwarpAssetUs_09A3D81C
+  format: palette
+  us:
+    address: 0x09A3D81C
+    size: 32
+  jp:
+    address: 0x099F22A4
+    size: 32
+    symbol: gWorldwarpAssetJp_099F22A4
+  eu:
+    address: 0x09A9B2E0
+    size: 32
+    symbol: gWorldwarpAssetEu_09A9B2E0
+- name: gWorldwarpAssetUs_09A3D83C
+  format: palette
+  us:
+    address: 0x09A3D83C
+    size: 32
+  jp:
+    address: 0x099F22C4
+    size: 32
+    symbol: gWorldwarpAssetJp_099F22C4
+  eu:
+    address: 0x09A9B300
+    size: 32
+    symbol: gWorldwarpAssetEu_09A9B300
+- name: gUnk_09A3D85C
+  format: palette
+  us:
+    address: 0x09A3D85C
+    size: 32
+  jp:
+    address: 0x099F22E4
+    size: 32
+  eu:
+    address: 0x09A9B320
+    size: 32
+- name: gUnk_09A3D87C
+  format: palette
+  us:
+    address: 0x09A3D87C
+    size: 416
+  jp:
+    address: 0x099F2304
+    size: 416
+  eu:
+    address: 0x09A9B340
+    size: 416
+- name: gUnk_09A3DA1C
+  format: palette
+  us:
+    address: 0x09A3DA1C
+    size: 96
+  jp:
+    address: 0x099F24A4
+    size: 96
+  eu:
+    address: 0x09A9B4E0
+    size: 96
+- name: gUnk_09A3DA7C
+  format: palette
+  us:
+    address: 0x09A3DA7C
+    size: 32
+  jp:
+    address: 0x099F2504
+    size: 32
+  eu:
+    address: 0x09A9B540
+    size: 32
+- name: gMoogleAssetUs_09A3DA9C
+  format: palette
+  us:
+    address: 0x09A3DA9C
+    size: 32
+  jp:
+    address: 0x099F2524
+    size: 32
+    symbol: gMoogleAssetJp_099F2524
+  eu:
+    address: 0x09A9B560
+    size: 32
+    symbol: gMoogleAssetEu_09A9B560
+- name: gMoogleAssetUs_09A3DABC
+  format: palette
+  us:
+    address: 0x09A3DABC
+    size: 32
+  jp:
+    address: 0x099F2544
+    size: 32
+    symbol: gMoogleAssetJp_099F2544
+  eu:
+    address: 0x09A9B580
+    size: 32
+    symbol: gMoogleAssetEu_09A9B580
+- name: gMoogleAssetUs_09A3DADC
+  format: palette
+  us:
+    address: 0x09A3DADC
+    size: 32
+  jp:
+    address: 0x099F2564
+    size: 32
+    symbol: gMoogleAssetJp_099F2564
+  eu:
+    address: 0x09A9B5A0
+    size: 32
+    symbol: gMoogleAssetEu_09A9B5A0
+- name: gMoogleAssetUs_09A3DAFC
+  format: palette
+  us:
+    address: 0x09A3DAFC
+    size: 32
+  jp:
+    address: 0x099F2584
+    size: 32
+    symbol: gMoogleAssetJp_099F2584
+  eu:
+    address: 0x09A9B5C0
+    size: 32
+    symbol: gMoogleAssetEu_09A9B5C0
+- name: gUnk_09A3DB1C
+  format: palette
+  us:
+    address: 0x09A3DB1C
+    size: 96
+  jp:
+    address: 0x099F25A4
+    size: 96
+  eu:
+    address: 0x09A9B5E0
+    size: 96
+- name: gUnk_09A3DB7C
+  format: palette
+  us:
+    address: 0x09A3DB7C
+    size: 96
+  jp:
+    address: 0x099F2604
+    size: 96
+  eu:
+    address: 0x09A9B640
+    size: 96
+- name: gUnk_09A3DBDC
+  format: palette
+  us:
+    address: 0x09A3DBDC
+    size: 416
+  jp:
+    address: 0x099F2664
+    size: 416
+  eu:
+    address: 0x09A9B6A0
+    size: 416
+- name: gUnk_09A3DD7C
+  format: palette
+  us:
+    address: 0x09A3DD7C
+    size: 12
+  jp:
+    address: 0x099F2804
+    size: 12
+  eu:
+    address: 0x09A9B840
+    size: 12
+- name: gUnk_09A3DD88
+  format: palette
+  us:
+    address: 0x09A3DD88
+    size: 128
+  jp:
+    address: 0x099F2810
+    size: 128
+  eu:
+    address: 0x09A9B84C
+    size: 128
+- name: gUnk_09A3DE08
+  format: palette
+  us:
+    address: 0x09A3DE08
+    size: 116
+  jp:
+    address: 0x099F2890
+    size: 116
+  eu:
+    address: 0x09A9B8CC
+    size: 116
+- name: gUnkEu_09A8B7A0
+  format: tilemap
+  eu:
+    address: 0x09A8B7A0
+    size: 1280
+- name: gUnkEu_09A8BCA0
+  format: tilemap
+  eu:
+    address: 0x09A8BCA0
+    size: 1280
+- name: gUnkEu_09A8C1A0
+  format: tilemap
+  eu:
+    address: 0x09A8C1A0
+    size: 1280
+- name: gUnkEu_09A8C6A0
+  format: tilemap
+  eu:
+    address: 0x09A8C6A0
+    size: 1280
+- name: gUnkEu_09A8CBA0
+  format: tilemap
+  eu:
+    address: 0x09A8CBA0
+    size: 1280
+- name: gUnkEu_09A8D0A0
+  format: tilemap
+  eu:
+    address: 0x09A8D0A0
+    size: 1280
+- name: gUnkEu_09A8D5A0
+  format: tilemap
+  eu:
+    address: 0x09A8D5A0
+    size: 1280
+- name: gUnkEu_09A8DAA0
+  format: tilemap
+  eu:
+    address: 0x09A8DAA0
+    size: 1280
+- name: gUnkEu_09A91420
+  format: tilemap
+  eu:
+    address: 0x09A91420
+    size: 1280
+- name: gUnkEu_09A91920
+  format: tilemap
+  eu:
+    address: 0x09A91920
+    size: 1280
+- name: gMoogleAssetEu_09A91E20
+  format: tilemap
+  eu:
+    address: 0x09A91E20
+    size: 2048
+- name: gMoogleAssetEu_09A92620
+  format: tilemap
+  eu:
+    address: 0x09A92620
+    size: 2048
+- name: gMoogleAssetEu_09A92E20
+  format: tilemap
+  eu:
+    address: 0x09A92E20
+    size: 2048
+- name: gMoogleAssetEu_09A93620
+  format: tilemap
+  eu:
+    address: 0x09A93620
+    size: 2048
+- name: gMoogleAssetEu_09A93E20
+  format: tilemap
+  eu:
+    address: 0x09A93E20
+    size: 2048
+- name: gMoogleAssetEu_09A94620
+  format: tilemap
+  eu:
+    address: 0x09A94620
+    size: 2048
+- name: gUnkEu_09A94E20
+  format: tilemap
+  eu:
+    address: 0x09A94E20
+    size: 1280
+- name: gUnkEu_09A95320
+  format: tilemap
+  eu:
+    address: 0x09A95320
+    size: 1280
+- name: gUnkEu_09A95820
+  format: tilemap
+  eu:
+    address: 0x09A95820
+    size: 1280
+- name: gUnkEu_09A95D20
+  format: tilemap
+  eu:
+    address: 0x09A95D20
+    size: 1280
+- name: gUnkEu_09A96220
+  format: tilemap
+  eu:
+    address: 0x09A96220
+    size: 1280
+- name: gUnkEu_09A96720
+  format: tilemap
+  eu:
+    address: 0x09A96720
+    size: 256
+- name: gUnkEu_09A96820
+  format: tilemap
+  eu:
+    address: 0x09A96820
+    size: 256
+- name: gUnkEu_09A96920
+  format: tilemap
+  eu:
+    address: 0x09A96920
+    size: 256
+- name: gUnkEu_09A96A20
+  format: tilemap
+  eu:
+    address: 0x09A96A20
+    size: 256
