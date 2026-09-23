@@ -195,7 +195,7 @@ for line in units_file.read_text().splitlines():
 
 asset_gfx_build = f"{build_dir}/assets/asset_gfx.bin"
 asset_gfx_asm = f"{build_dir}/asm/asset_gfx.s"
-asset_gfx_unit = "asset_gfx_at_084D4390.s" if version == "jp" else "asset_gfx.s"
+asset_gfx_unit = "asset_gfx.s"
 asset_gfx_sym = {
     "us": "data_084E0B04",
     "jp": "data_084D4390",
@@ -260,7 +260,7 @@ for src, obj, flags in units:
         deps.append(assets_stamp)
     edges.append((obj, rule, src, deps, variables))
 if asset_gfx_mode == "built":
-    asset_gfx_obj_suffix = "/asset_gfx_at_084D4390.o" if version == "jp" else "/asset_gfx.o"
+    asset_gfx_obj_suffix = "/asset_gfx.o"
     patched = []
     for obj, rule, src, deps, variables in edges:
         if obj.endswith(asset_gfx_obj_suffix):

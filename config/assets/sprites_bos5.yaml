@@ -66,7 +66,7 @@ objects:
     end: 0x099B66DC
   - name: sprites_bos5_tiles.s
     start: 0x099B7260
-    end: 0x09A0A480
+    end: 0x09A24480
   - name: sprites_bos5_maps.s
     start: 0x09A724A0
     end: 0x09A854A0
@@ -1918,3 +1918,27 @@ entries:
   eu:
     address: 0x09A84FA0
     size: 1280
+- name: gUnkEu_09A0A480
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A0A480
+    size: 26624
+- name: gUnkEu_09A10C80
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A10C80
+    size: 26624
+- name: gUnkEu_09A17480
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A17480
+    size: 26624
+- name: gUnkEu_09A1DC80
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A1DC80
+    size: 26624

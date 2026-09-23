@@ -58,15 +58,14 @@ jiminy_records_data.c
 jiminy_placeholder_text.s
 jiminy_list.c
 mode_jiminy.c
-jiminy_placeholder_text_at_0814E57C.s
 rodata_script_gap_1.s
 monsgage.c
 btl4.c
 tutorial.c
 rodata_movie_alignment.s
 asset_movie_opening.s
+asset_movie_opening_pad.s
 asset_gfx.s
-asset_gfx_at_084D4390.s
 movie_text.c
 mode_movie.c
 mode_test.c
@@ -170,8 +169,7 @@ card_card.c
 card_battle_riku_rodata.s
 card_battle_riku.c
 card_map_anim.c
-card_battle_riku_rodata_at_090089AE.s
-rodata_regtables3_gap_10.s
+card_deckmenu2_deck_names.s
 card_deckmenu2_rodata.s
 card_deckmenu2.c
 card_deckmenu2_keyboard.s

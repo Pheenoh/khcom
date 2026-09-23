@@ -2304,9 +2304,20 @@ TARGET_DATA_ADDR = {
 }
 
 TARGET_BLOB_REGIONS = {
-    "jp": ((0x0814FC76, "rodata_movie_alignment"), (0x090089B0, "rodata_regtables3_gap_10")),
+    "jp": (
+        (0x0814E57C, "rodata_script_gap_1"),
+        (0x0814FC76, "rodata_movie_alignment"),
+        (0x090089AE, "card_deckmenu2_deck_names"),
+    ),
     "eu": (
         (0x0812FB22, "rodata_movie_alignment"),
+        (0x0887F2CC, "jiminy_placeholder_text"),
+        (0x0888E4D4, "jiminy_eu_localized_name_data_rodata"),
+        (0x08F8EA09, "msg_localized_text"),
+        (0x090D1DBF, "card_sysmsgwin_rodata"),
+        (0x090D1DF4, "card_deckmenu2_2_rodata"),
+        (0x090D1E59, "card_mode_deck_tables"),
+        (0x096C9356, "mode_pooh_tables"),
         (0x09F49910, "rodata_registrations"),
     ),
 }
@@ -2944,17 +2955,25 @@ def main():
                  for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
     found = apply_movie_regions(found, cdata, load_movie_assets("config/movie_assets.yaml", ver, ot))
     regions = []
+    last = None
 
     for here, base, how in sorted(found, key=lambda item: (item[0], item[2] != "explicit", item[1])):
-        if regions and here <= regions[-1][0]:
+        if last is not None and here <= last:
             print(f"  data region {base} dropped, not monotone ({how})")
+            continue
+        last = here
+        if regions and base == regions[-1][1]:
             continue
         regions.append((here, base))
 
     used = {}
     blob_names = set()
+    reserved = {f"{base}.s" for _here, base in regions}
 
-    def blob(lo, hi):
+    def stem(line):
+        return line.split()[0].split("(")[0].rsplit(".", 1)[0]
+
+    def blob(lo, hi, after=None, before=None):
         out = []
         cuts = [a for a, _n in regions if lo < a < hi]
         for a, b in zip([lo] + cuts, cuts + [hi]):
@@ -2963,7 +2982,17 @@ def main():
             k = bisect.bisect_right([x[0] for x in regions], a) - 1
             base = regions[k][1] if k >= 0 else "data"
             used[base] = used.get(base, 0) + 1
-            nm = f"{base}.s" if used[base] == 1 else f"{base}_at_{a:08X}.s"
+            nm = f"{base}.s"
+            if used[base] > 1:
+                names = []
+                if b == hi and before:
+                    names.append(f"{stem(before)}_rodata.s")
+                if a == lo and after:
+                    names.append(f"{stem(after)}_tail.s")
+                names = [n for n in names if n not in blob_names and n not in reserved]
+                if not names:
+                    raise ValueError(f"no name for the {ver} blob at {a:#x} after {base}")
+                nm = names[0]
             if nm in blob_names:
                 raise ValueError(f"duplicate regional blob filename: {nm}")
             blob_names.add(nm)
@@ -2972,17 +3001,19 @@ def main():
 
     tail, bounds = [], []
     pos = code_end
+    prev = None
     for lo, size, line in sorted(cdata):
         if pos < lo < pos + 4 and lo % 4 == 0 and not any(ot[pos - ROM_BASE:lo - ROM_BASE]):
             pos = lo
         if lo > pos:
-            for nm, a, b in blob(pos, lo):
+            for nm, a, b in blob(pos, lo, prev, line):
                 bounds.append((nm, a, b))
                 tail.append(f"{nm}(.rodata)")
             pos = lo
         tail.append(line)
+        prev = line
         pos += size
-    for nm, a, b in blob(pos, ROM_BASE + pad):
+    for nm, a, b in blob(pos, ROM_BASE + pad, prev):
         bounds.append((nm, a, b))
         tail.append(f"{nm}(.rodata)")
     entries, line_of = [], {}

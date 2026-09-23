@@ -3,7 +3,7 @@ schema_version: 1
 id: asset_gfx
 version: jp
 class: pack
-unit: asset_gfx_at_084D4390
+unit: asset_gfx
 rom:
   start: 0x084D4390
   end: 0x0885E300
@@ -13,7 +13,7 @@ path_mode: built
 extract_path: assets/jp/084D4390-0885E300.bin
 build_path: build/jp/assets/asset_gfx.bin
 source_root: assets/jp/src/gfx/asset_gfx
-asm_slice: asm/jp/asset_gfx_at_084D4390.s
+asm_slice: asm/jp/asset_gfx.s
 asm_built: build/jp/asm/asset_gfx.s
 tools:
   gbagfx: tools/gbagfx/gbagfx
@@ -26,8 +26,8 @@ encode_re:
   matching_path: demux_remux_copy_through
   movie_re: tools/gfx/movie_open_re.py
 head_unit:
-  unit: asset_gfx
-  asm: asm/jp/asset_gfx.s
+  unit: asset_movie_opening_pad
+  asm: asm/jp/asset_movie_opening_pad.s
   rom:
     start: 0x084D4194
     end: 0x084D4390

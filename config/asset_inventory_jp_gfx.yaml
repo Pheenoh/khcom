@@ -1,6 +1,6 @@
 # JP inventory for MVP class asset_gfx (Policy B: no binaries).
-# Pack unit asset_gfx_at_084D4390: 0x084D4390–0x0885E300.
-# Separate tiny head unit asset_gfx: 0x084D4194–0x084D4390 (slice-only).
+# Pack unit asset_gfx: 0x084D4390–0x0885E300.
+# Separate opening movie pad unit asset_movie_opening_pad: 0x084D4194–0x084D4390 (slice-only).
 # Dump/remux: python3 tools/gfx/asset_gfx_pack.py --mode built --version jp
 
 version: jp
@@ -11,8 +11,8 @@ baserom_code: B8CJ
 pack:
   id: asset_gfx
   class: pack
-  unit: asset_gfx_at_084D4390
-  asm: asm/jp/asset_gfx_at_084D4390.s
+  unit: asset_gfx
+  asm: asm/jp/asset_gfx.s
   rom:
     start: 0x084D4390
     end: 0x0885E300
@@ -28,8 +28,8 @@ pack:
 
 head_unit:
   id: asset_gfx.head_unit
-  unit: asset_gfx
-  asm: asm/jp/asset_gfx.s
+  unit: asset_movie_opening_pad
+  asm: asm/jp/asset_movie_opening_pad.s
   rom:
     start: 0x084D4194
     end: 0x084D4390

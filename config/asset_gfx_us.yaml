@@ -49,5 +49,5 @@ regional:
   built_mode: [us, jp, eu]
   matrix:
     us: built
-    jp: built (pack unit asset_gfx_at_084D4390; tiny head unit stays slice)
+    jp: built (pack unit asset_gfx; the opening movie pad before it stays slice)
     eu: built

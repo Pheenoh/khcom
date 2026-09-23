@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_0814F330
-data_0814F330:
-	.incbin "assets/jp/0814F330-0814FC14.bin"
+	.global data_0814E57C
+data_0814E57C:
+	.incbin "assets/jp/0814E57C-0814FC14.bin"

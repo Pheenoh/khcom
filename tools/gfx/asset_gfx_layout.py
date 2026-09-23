@@ -40,11 +40,11 @@ VERSIONS = {
         "source_root": ROOT / "assets" / "jp" / "src" / "gfx" / "asset_gfx",
         "manifest": ROOT / "config" / "asset_gfx_jp.yaml",
         "inventory": ROOT / "config" / "asset_inventory_jp_gfx.yaml",
-        "asm_unit": "asset_gfx_at_084D4390.s",
+        "asm_unit": "asset_gfx.s",
         "global_sym": "data_084D4390",
         "expected_sha256": "81e666166a0946b25cef38efd656ccaed50a7e5f3980a792afb4574645352f82",
         "head_unit": {
-            "asm_unit": "asset_gfx.s",
+            "asm_unit": "asset_movie_opening_pad.s",
             "extract": ROOT / "assets" / "jp" / "084D4194-084D4390.bin",
             "rom_start": 0x084D4194,
             "rom_end": 0x084D4390,

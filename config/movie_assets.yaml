@@ -14,7 +14,7 @@ regions:
     address: '0x814fc78'
     size: 3687708
     sha256: eae9a1f66f9c6148f93f510d15971bb277d45a0e1faa1798d286dc59311213c1
-    after: asset_gfx
+    after: asset_movie_opening_pad
   eu:
   - name: asset_movie_opening
     symbol: gUnk_0815C3EC
