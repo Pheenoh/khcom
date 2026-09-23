@@ -331,7 +331,8 @@ sprites_boss_tm_frames.s
 sprites_bos2_frames.s
 sprites_wlogo_tiles.s
 event_background_tiles_7.s
-asset_gfx_gap_87_at_0961A9FD_at_09652E84.s
+sprites_boss_tm_tiles.s
+asset_gfx_gap_87_at_0965DC04.s
 sprites_wlogo_maps.s
 event_background_maps_6.s
 asset_gfx_gap_87_at_0961A9FD_at_096C0464.s
@@ -339,7 +340,8 @@ sprite_palettes_7.s
 sprites_wlogo_palettes.s
 event_background_palettes_4.s
 sprite_palettes_8.s
-asset_gfx_gap_87_at_0961A9FD_at_096FB2A4.s
+sprites_boss_tm_palettes.s
+asset_gfx_gap_87_at_096FB404.s
 sprite_palettes_9.s
 asset_gfx_gap_87_at_0961A9FD_at_096FB2A4_at_096FBF24.s
 mode_pooh.c

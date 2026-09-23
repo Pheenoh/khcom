@@ -20,6 +20,12 @@ objects:
   - name: sprites_boss_tm_frames.s
     start: 0x0962ACE0
     end: 0x0962EC5C
+  - name: sprites_boss_tm_tiles.s
+    start: 0x09652E84
+    end: 0x0965DC04
+  - name: sprites_boss_tm_palettes.s
+    start: 0x096FB2C4
+    end: 0x096FB404
   jp:
   - name: sprites_boss_tm.c
     start: 0x09ECAC70
@@ -27,6 +33,12 @@ objects:
   - name: sprites_boss_tm_frames.s
     start: 0x095E37BC
     end: 0x095E7438
+  - name: sprites_boss_tm_tiles.s
+    start: 0x0960B660
+    end: 0x096163E0
+  - name: sprites_boss_tm_palettes.s
+    start: 0x096B3AA0
+    end: 0x096B3BE0
   eu:
   - name: sprites_boss_tm.c
     start: 0x09F7EAD0
@@ -34,6 +46,12 @@ objects:
   - name: sprites_boss_tm_frames.s
     start: 0x095EC1C0
     end: 0x095F8BE4
+  - name: sprites_boss_tm_tiles.s
+    start: 0x0961CE0C
+    end: 0x09627B8C
+  - name: sprites_boss_tm_palettes.s
+    start: 0x096C87EC
+    end: 0x096C892C
 entries:
 - name: gUnk_09EF3884
   record: SpriteTable
@@ -3157,3 +3175,75 @@ entries:
   eu:
     address: 0x095F7FAE
     size: 1536
+- name: gUnk_09652E84
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09652E84
+    size: 7552
+  jp:
+    address: 0x0960B660
+    size: 7552
+  eu:
+    address: 0x0961CE0C
+    size: 7552
+- name: gUnk_09654C04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09654C04
+    size: 12288
+  jp:
+    address: 0x0960D3E0
+    size: 12288
+  eu:
+    address: 0x0961EB8C
+    size: 12288
+- name: gUnk_09657C04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09657C04
+    size: 4096
+  jp:
+    address: 0x096103E0
+    size: 4096
+  eu:
+    address: 0x09621B8C
+    size: 4096
+- name: gUnk_09658C04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09658C04
+    size: 20480
+  jp:
+    address: 0x096113E0
+    size: 20480
+  eu:
+    address: 0x09622B8C
+    size: 20480
+- name: gUnk_096FB2C4
+  format: raw
+  us:
+    address: 0x096FB2C4
+    size: 64
+  jp:
+    address: 0x096B3AA0
+    size: 64
+    symbol: gUnkJp_096B3AA0
+  eu:
+    address: 0x096C87EC
+    size: 64
+    symbol: gUnkEu_096C87EC
+- name: gUnk_096FB304
+  format: palette
+  us:
+    address: 0x096FB304
+    size: 256
+  jp:
+    address: 0x096B3AE0
+    size: 256
+  eu:
+    address: 0x096C882C
+    size: 256
