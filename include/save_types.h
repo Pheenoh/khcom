@@ -8,6 +8,10 @@
 #define SAVE_CARDS 999
 #define SAVE_DECKS 3
 
+#define SAVE_BAD_SIGNATURE 0
+#define SAVE_BAD_CHECKSUM 1
+#define SAVE_OK 2
+
 typedef struct SaveCommon {
     u32 flags;
     u8 unk_04[0x88];

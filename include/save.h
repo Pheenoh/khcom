@@ -22,22 +22,8 @@ extern u8 gSramFileLarge[];
 #define SAVE_SLOTS 2
 #define SAVE_SIGNATURE_SIZE 0x18
 
-#define SAVE_BAD_SIGNATURE 0
-#define SAVE_BAD_CHECKSUM 1
-#define SAVE_OK 2
-
 extern const u8 gSaveSignatureText[SAVE_SIGNATURE_SIZE + 1];
 extern const u8* gSaveSignature;
-
-
-
-
-
-
-
-
-
-
 
 typedef struct SaveBlockLarge {
     u8 signature[SAVE_SIGNATURE_SIZE];

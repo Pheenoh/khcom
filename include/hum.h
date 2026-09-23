@@ -3,7 +3,6 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
-
 #include "hum_types.h"
 
 #include "card_api.h"
@@ -434,8 +433,6 @@ typedef struct LexRockWork {
     u8 unk_2C0;
     u8 unk_2C1[0x03];
 } LexRockWork;
-
-#define SAVE_OK 2
 
 typedef struct AxcelWork {
     HumWork base;
