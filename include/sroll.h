@@ -3,11 +3,9 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
-
 #include "pc_sprite_types.h"
 #include "staff_roll_command_sprite_data.h"
 #include "staff_roll_timer_sprite_data.h"
-
 
 #include "obj.h"
 
@@ -295,9 +293,6 @@ extern u8 gUnk_09320796[];
 extern u8 gUnk_09C8D47A[];
 extern u8 gUnk_09C8F1FA[];
 extern u8 gUnk_09C904B4[];
-extern u8 gUnk_09D6BE34[];
-extern u8 gUnk_09D6BE74[];
-extern u8 gUnk_09D6CD74[];
 extern u8 gUnk_09D6CF34[];
 extern u8 gUnk_09D6CF54[];
 extern u8 gUnk_09D6D034[];

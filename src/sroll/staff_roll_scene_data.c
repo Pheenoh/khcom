@@ -1,5 +1,5 @@
 #include "staff_roll_scene_data.h"
-#include "staff_roll_scene_assets.h"
+#include "sprites_staff_roll.h"
 
 #ifdef VERSION_JP
 

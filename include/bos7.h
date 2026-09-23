@@ -339,32 +339,8 @@ extern const u32 gUnk_09A4FEA8[6][5];
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09C5C4E2[];
 extern u8 gUnk_09C5C704[];
-extern u8 gUnk_09D09674[];
-extern u8 gUnk_09D10874[];
-extern u8 gUnk_09D15C34[];
-extern u8 gUnk_09D1AFF4[];
-extern u8 gUnk_09D203B4[];
-extern u8 gUnk_09D25774[];
-extern u8 gUnk_09D2B334[];
-extern u8 gUnk_09D65274[];
-extern u8 gUnk_09D66274[];
-extern u8 gUnk_09D66A74[];
-extern u8 gUnk_09D67274[];
-extern u8 gUnk_09D67A74[];
-extern u8 gUnk_09D68274[];
-extern u8 gUnk_09D68A74[];
-extern u8 gUnk_09D6BF74[];
-extern u8 gUnk_09D6C174[];
-extern u8 gUnk_09D6C374[];
-extern u8 gUnk_09D6C574[];
-extern u8 gUnk_09D6C774[];
-extern u8 gUnk_09D6C974[];
-extern u8 gUnk_09D6CB74[];
-
-extern u8 gUnk_09D6BE74[];
 
 extern u8 gUnk_09A541C8[];
-extern u8 gUnk_09D6BE14[];
 
 void func_0810FEDC(void);
 void func_0810FE94(void);

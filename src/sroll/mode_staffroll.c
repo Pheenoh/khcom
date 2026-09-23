@@ -5,17 +5,7 @@
 #include "mode_staffroll.h"
 #include "bos7_api.h"
 #include "sprites_title.h"
-
-#ifdef VERSION_EU
-extern u8 gUnkEu_09DD51A0[];
-extern u8 gUnkEu_09DD59A0[];
-extern u8 gUnkEu_09DD61A0[];
-extern u8 gUnkEu_09DD69A0[];
-extern u8 gUnkEu_09DD71A0[];
-extern u8 gUnkEu_09DD79A0[];
-extern u8 gUnkEu_09DD81A0[];
-extern u8 gUnkEu_09DD89A0[];
-#endif
+#include "sprites_staff_roll.h"
 
 StaffRollWork* gStaffRollWork;
 
