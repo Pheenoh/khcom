@@ -1,4 +1,4 @@
-#include "mode_test_data.h"
+#include "card_label_language_data.h"
 #include "mode_test_assets.h"
 #include "card_localized_data.h"
 

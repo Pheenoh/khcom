@@ -1,12 +1,5 @@
-#ifndef GUARD_MODE_TEST_DATA_H
-#define GUARD_MODE_TEST_DATA_H
-
-#include "mode.h"
-#include "taskpool.h"
-
-#ifndef VERSION_EU
-extern Mode gModeTest;
-#endif
+#ifndef GUARD_CARD_LABEL_LANGUAGE_DATA_H
+#define GUARD_CARD_LABEL_LANGUAGE_DATA_H
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F5D574[5];

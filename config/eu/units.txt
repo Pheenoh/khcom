@@ -190,7 +190,7 @@ asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F71C40.s
 event_background_maps_1.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F7DB78.s
 lockon.c
-mode_test_data.c
+card_label_language_data.c
 asset_gfx_gap_2.s
 card_def_data.c
 card_label_data.c

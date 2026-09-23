@@ -3193,7 +3193,7 @@ TARGET_DATA_SIZE = {
         ("map_text_eu_castle_oblivion_b1_name.c", ".rodata"): 0x14,
         ("jiminy_eu_epilogue_name_data.c", ".rodata"): 0x1034,
         ("mode_chkmov.c", ".data"): 0x10,
-        ("mode_test_data.c", ".data"): 0x140,
+        ("card_label_language_data.c", ".data"): 0x140,
         ("msg_localized_data.c", ".data"): 0x1075c,
     },
     "jp": {
@@ -3276,7 +3276,7 @@ TARGET_DATA_ADDR = {
         ("mode_chkmov.c", ".data"): 0x09f49a6c,
         ("jiminy_data.c", ".data"): 0x09f49abc,
         ("mode_test.c", ".data"): 0x09f59130,
-        ("mode_test_data.c", ".data"): 0x09f5d574,
+        ("card_label_language_data.c", ".data"): 0x09f5d574,
         ("continue_ui.c", ".data"): 0x09f5d7e4,
         ("msg_localized_data.c", ".data"): 0x09f5d828,
         ("event_background_data.c", ".data"): 0x09f6df84,

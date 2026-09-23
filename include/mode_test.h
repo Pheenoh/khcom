@@ -1,5 +1,6 @@
 #include "event_index_data.h"
-#include "mode_test_data.h"
+#include "mode.h"
+#include "taskpool.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_label_sprite_data.h"
@@ -134,6 +135,9 @@ s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void func_080B0754(void);
 void func_08061824(void);
 
+#ifndef VERSION_EU
+extern Mode gModeTest;
+#endif
 void mode_test_0(void);
 void mode_test_1(void);
 void mode_test_2(void);
