@@ -50,8 +50,8 @@ void ApproachValueHalf(s32* p, s32 v) {
 }
 
 #ifdef VERSION_EU
-u8 eu_08060C44(UnkModeTestWork* work) {
-    UnkModeTestBody* body;
+u8 eu_08060C44(FrdPoohWork* work) {
+    FrdPoohBody* body;
 
     body = &work->body;
     func_0801C6D4(&body->x, &body->y, &body->z, &body->ground);
@@ -65,8 +65,8 @@ u8 eu_08060C44(UnkModeTestWork* work) {
     return 0;
 }
 
-void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
-    UnkModeTestBody* body;
+void eu_08060C8C(FrdPoohWork* work, FrdPoohArgs* args) {
+    FrdPoohBody* body;
 
     body = &work->body;
     if (args->side != 0) {
@@ -104,8 +104,8 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
-u8 eu_08060DF8(UnkModeTestWork* work) {
-    UnkModeTestBody* body;
+u8 eu_08060DF8(FrdPoohWork* work) {
+    FrdPoohBody* body;
     BtlWork* battle;
 
     body = &work->body;
@@ -262,8 +262,8 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
     return 1;
 }
 
-void eu_08061588(UnkModeTestWork* work) {
-    UnkModeTestBody* body;
+void eu_08061588(FrdPoohWork* work) {
+    FrdPoohBody* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -304,7 +304,7 @@ void eu_08061588(UnkModeTestWork* work) {
     TaskPoolDraw(&work->tasks);
 }
 
-void eu_08061698(UnkModeTestWork* work) {
+void eu_08061698(FrdPoohWork* work) {
     BtlWork* battle;
 
     ColliderUnregister(work->body.particles);
@@ -330,6 +330,6 @@ TaskDesc gTaskDescFrdPoohEu = {
     (u8 (*)(void*))eu_08060DF8,
     (void (*)(void*))eu_08061588,
     (void (*)(void*))eu_08061698,
-    sizeof(UnkModeTestWork),
+    sizeof(FrdPoohWork),
 };
 #endif

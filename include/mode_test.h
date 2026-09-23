@@ -68,7 +68,7 @@ typedef struct CharTile {
 } CharTile;
 
 #ifdef VERSION_EU
-typedef struct UnkModeTestBody {
+typedef struct FrdPoohBody {
     s32 unk_00;
     s32 x;
     s32 y;
@@ -80,14 +80,14 @@ typedef struct UnkModeTestBody {
     u8 particles[0x8C];
     u16 depth;
     u8 unk_CE[0x42];
-} UnkModeTestBody;
+} FrdPoohBody;
 
-typedef struct UnkModeTestWork {
+typedef struct FrdPoohWork {
     TaskPool tasks;
     BtlObj* actor;
     void* tiles;
     void* palette;
-    UnkModeTestBody body;
+    FrdPoohBody body;
     AnimState anim;
     s32 state;
     u8 side;
@@ -102,13 +102,13 @@ typedef struct UnkModeTestWork {
     s32 bob;
     s32 animcounter;
     s32 scale;
-} UnkModeTestWork;
+} FrdPoohWork;
 
-typedef struct UnkModeTestArgs {
+typedef struct FrdPoohArgs {
     u16 card;
     u8 side;
     u8 unk_03;
-} UnkModeTestArgs;
+} FrdPoohArgs;
 
 extern u8 gUnk_09849A98[];
 extern u8 gUnkEu_08896524[];
