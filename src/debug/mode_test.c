@@ -223,7 +223,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         ApproachValue(&work->animcounter, 0x800, work->counter);
         ApproachValue(&work->scale, 0x10000, work->counter);
         func_080147B8(-(work->scale >> 8) - 128);
-        func_08014780(body->x, body->y, body->z - 0x1A00);
+        BgFxSetPosition(body->x, body->y, body->z - 0x1A00);
         if (--work->counter <= 0) {
             work->state = 3;
             work->counter = 0;

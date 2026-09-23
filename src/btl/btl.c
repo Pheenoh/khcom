@@ -543,7 +543,7 @@ void func_0801DD90(BtlSoraWork* work) {
     s32 z;
 
     if (work->unk_172 != 0) {
-        func_080140C0(&x, &y, &z);
+        BgFxGetPosition(&x, &y, &z);
         func_0802F284(x, gBtlWork->actor->y, gBtlWork->actor->z);
     }
 }
@@ -3441,15 +3441,15 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_0801DD90(work);
 
             if (held & 0x20) {
-                func_0801475C(-256, 0, 0);
+                BgFxAddPosition(-256, 0, 0);
             } else if (held & 0x10) {
-                func_0801475C(256, 0, 0);
+                BgFxAddPosition(256, 0, 0);
             }
 
             if (held & 0x40) {
-                func_0801475C(0, -128, 0);
+                BgFxAddPosition(0, -128, 0);
             } else if (held & 0x80) {
-                func_0801475C(0, 128, 0);
+                BgFxAddPosition(0, 128, 0);
             }
 
             if (func_080128EC() == 0) {
@@ -5344,9 +5344,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if (p->flags & 4) {
-            func_08014780(p->x - 10240, p->y, p->z - 6144);
+            BgFxSetPosition(p->x - 10240, p->y, p->z - 6144);
         } else {
-            func_08014780(p->x + 10240, p->y, p->z - 6144);
+            BgFxSetPosition(p->x + 10240, p->y, p->z - 6144);
         }
 
         if (held & 0x20) {
@@ -5500,9 +5500,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
 #ifdef VERSION_EU
         if (p->flags & 4) {
-            func_08014780(p->x - 9728, p->y, p->z - 6656);
+            BgFxSetPosition(p->x - 9728, p->y, p->z - 6656);
         } else {
-            func_08014780(p->x + 9728, p->y, p->z - 6656);
+            BgFxSetPosition(p->x + 9728, p->y, p->z - 6656);
         }
 #else
         t = p->x;
@@ -5528,7 +5528,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         ClampBattlePosition(&p->x, &p->y, -16, 0);
-        func_0801475C(p->x - t, p->y - t2, p->z - t3);
+        BgFxAddPosition(p->x - t, p->y - t2, p->z - t3);
 
 #endif
 
@@ -6424,7 +6424,7 @@ void func_0802753C(BtlRikuWork* work) {
     s32 z;
 
     if (work->unk_178 != 0) {
-        func_080140C0(&x, &y, &z);
+        BgFxGetPosition(&x, &y, &z);
         func_0802F284(x, gBtlWork->actor->y, gBtlWork->actor->z);
     }
 }
@@ -9009,7 +9009,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
         }
 
-        func_08014780(p->x, p->y, p->z - 10240);
+        BgFxSetPosition(p->x, p->y, p->z - 10240);
 
         if (work->unk_1A0 == 256) {
             work->unk_15E |= 0x800;

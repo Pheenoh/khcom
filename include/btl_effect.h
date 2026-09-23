@@ -4,11 +4,11 @@
 #include "battle_actor_types.h"
 
 u8 func_080128EC(void);
-void func_08014780(s32 x, s32 y, s32 z);
+void BgFxSetPosition(s32 x, s32 y, s32 z);
 
-void func_08012798(u16 a, u16 bg);
-void func_08012810(void);
-void func_08012824(void);
+void BgFxInit(u16 a, u16 bg);
+void BgFxFree(void);
+void BgFxUpdate(void);
 void func_08012AAC(u16 a, s32 x, s32 y, s32 z);
 void func_08012E44(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a);
@@ -22,12 +22,12 @@ void func_08013E4C(s32 x, s32 y, s32 z, s32 s);
 void func_08013EDC(s32 x, s32 y, s32 z, s32 s);
 void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c);
 void func_08014020(s32 x, s32 y, s32 z);
-void func_080140C0(s32* a, s32* b, s32* c);
+void BgFxGetPosition(s32* a, s32* b, s32* c);
 void func_080140E0(s32 x, s32 y, s32 z);
 void func_0801416C(s32 x, s32 y, s32 z);
 void func_080141FC(BtlObj* p);
 void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
-void func_0801475C(s32 a, s32 b, s32 c);
+void BgFxAddPosition(s32 a, s32 b, s32 c);
 void func_08014790(u8 bit);
 void func_080147A8(s32 a, s32 b, s32 c);
 void func_080147B8(u8 a);

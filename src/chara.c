@@ -1219,7 +1219,7 @@ u8 func_080C64A4(void) {
         gCharaObj->unk_44++;
         break;
     case 13:
-        func_0801475C(76, 0, gCharaObj->unk_3C);
+        BgFxAddPosition(76, 0, gCharaObj->unk_3C);
         if (++gCharaObj->unk_42 > 79) {
             gCharaObj->unk_42 = 0;
             gCharaObj->unk_44++;
@@ -1230,7 +1230,7 @@ u8 func_080C64A4(void) {
         gCharaObj->unk_44++;
         break;
     case 15:
-        func_0801475C(0, 0, gCharaObj->unk_3C);
+        BgFxAddPosition(0, 0, gCharaObj->unk_3C);
         gCharaObj->unk_3C -= 25;
         if (++gCharaObj->unk_42 > 39) {
             gCharaObj->unk_42 = 0;
@@ -1477,7 +1477,7 @@ u8 func_080C69B4(void) {
         }
         break;
     case 15:
-        func_0801475C(76, 0, gCharaObj->unk_3C);
+        BgFxAddPosition(76, 0, gCharaObj->unk_3C);
         if (++gCharaObj->unk_42 > 79) {
             gCharaObj->unk_42 = 0;
             gCharaObj->unk_44++;
@@ -1488,7 +1488,7 @@ u8 func_080C69B4(void) {
         gCharaObj->unk_44++;
         break;
     case 17:
-        func_0801475C(0, 0, gCharaObj->unk_3C);
+        BgFxAddPosition(0, 0, gCharaObj->unk_3C);
         gCharaObj->unk_3C -= 25;
         if (++gCharaObj->unk_42 > 39) {
             gCharaObj->unk_42 = 0;

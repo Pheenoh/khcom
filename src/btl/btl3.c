@@ -542,7 +542,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
     case 2:
     case 3:
         func_08040150(work, &x, &y, &z);
-        func_08014780(x, y, z);
+        BgFxSetPosition(x, y, z);
         break;
     }
 

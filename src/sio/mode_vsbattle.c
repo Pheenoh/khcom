@@ -32,7 +32,7 @@ void mode_vsbattle_0(u32 mode) {
     SetBgOverflow(2, 0);
     TaskPoolInit(&gBtlWork->taskPools[0], 32);
     TaskPoolInit(&gBtlWork->taskPools[1], 32);
-    func_08012798(0x80, gBtlWork->unk_1C4);
+    BgFxInit(0x80, gBtlWork->unk_1C4);
     ColliderPoolsInit();
 
     if (mode == 0) {
@@ -69,7 +69,7 @@ void mode_vsbattle_1(void) {
             gBtlWork->unk_072--;
         }
 
-        func_08012824();
+        BgFxUpdate();
         ColliderUpdateAll();
         TaskPoolDraw(&gBtlWork->taskPools[1]);
 
@@ -82,7 +82,7 @@ void mode_vsbattle_1(void) {
 }
 
 void mode_vsbattle_2(void) {
-    func_08012810();
+    BgFxFree();
     TaskPoolDestroy(&gBtlWork->taskPools[1]);
     TaskPoolDestroy(&gBtlWork->taskPools[0]);
     func_0801C104();

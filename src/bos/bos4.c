@@ -2865,7 +2865,7 @@ u8 task_bos_ursula_mapanime_1(UrsulaMapanimeWork* work) {
             func_080168B8(gBtlWork->unk_0CC, gBtlWork->unk_0D0 + 0xC00,
                 gBtlWork->unk_0D4, func_080DC510(), 0x266, 0x78);
         } else {
-            func_08014780(gBtlWork->unk_0CC, gBtlWork->unk_0D0 + 0xC00,
+            BgFxSetPosition(gBtlWork->unk_0CC, gBtlWork->unk_0D0 + 0xC00,
                 gBtlWork->unk_0D4);
         }
 

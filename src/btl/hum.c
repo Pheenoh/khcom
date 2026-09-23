@@ -2396,7 +2396,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
                 w->sub.z, 32, 16, 32)) {
             m4aSongNumStart(0x221);
         }
-        func_0801475C(w->sub.x - a, w->sub.y - b, w->sub.z - c);
+        BgFxAddPosition(w->sub.x - a, w->sub.y - b, w->sub.z - c);
 
         if (w->unk_1D6 <= 0) {
             w->sub.flags &= ~1;
@@ -4053,7 +4053,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
         u = (y - act->y) >> 3;
         act->y += u;
-        func_0801475C(0, u, 0);
+        BgFxAddPosition(0, u, 0);
 
         if (func_080128EC()) {
             work->base.unk_150++;
@@ -5315,11 +5315,11 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             m4aSongNumStart(654);
         }
         if (act->flags & 4) {
-            func_0801475C(-76, 0, 0);
+            BgFxAddPosition(-76, 0, 0);
         } else {
-            func_0801475C(76, 0, 0);
+            BgFxAddPosition(76, 0, 0);
         }
-        func_080140C0(&a, &b, &c);
+        BgFxGetPosition(&a, &b, &c);
         if (!func_080128EC() || a < ((gBtlWork->unk_0DA - 64) << 8) || a > ((gBtlWork->unk_0DC + 64) << 8)) {
             m4aSongNumStop(654);
             work->base.unk_170 = 34;

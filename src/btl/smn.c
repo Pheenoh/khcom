@@ -1656,7 +1656,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         BgAnimGetFrameState(&v1, &v2);
 
         if (v1 <= 3) {
-            func_0801475C(body->x - px, body->y - py, body->z - pz);
+            BgFxAddPosition(body->x - px, body->y - py, body->z - pz);
         }
 
         if (work->unk_148 > work->unk_14A) {
@@ -2604,7 +2604,7 @@ void func_08045494(BtlObj* body, u8 a, s16 b, s16 c) {
         t = w;
     }
 
-    func_08014780(x, y, z);
+    BgFxSetPosition(x, y, z);
     func_080147C8(t, w);
 
     if (a != 0) {

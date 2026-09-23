@@ -1709,9 +1709,9 @@ void func_080BF4F4(JfMajinWork* work) {
             jf->body.x = (work->x - 0x100) + (work->unk_44++ % 2) * 0x200;
 
             if (jf->body.flags & 4) {
-                func_08014780(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
+                BgFxSetPosition(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
             } else {
-                func_08014780(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100);
+                BgFxSetPosition(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100);
             }
 
             if (work->unk_46 > 10 && work->unk_46 % 10 == 9) {
@@ -1840,7 +1840,7 @@ void func_080BF8C4(JfMajinWork* work) {
 
             if (jf->body.flags & 4) {
                 jf->body.x = (work->x - 0x100) + (work->unk_44 % 2) * 0x200;
-                func_08014780(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
+                BgFxSetPosition(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
 
                 if (work->unk_49 <= 173 && work->unk_44 % 2 == 0) {
                     work->unk_49++;
@@ -1851,7 +1851,7 @@ void func_080BF8C4(JfMajinWork* work) {
                 }
             } else {
                 jf->body.x = (work->x - 0x100) + (work->unk_44 % 2) * 0x200;
-                func_08014780(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100);
+                BgFxSetPosition(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100);
 
                 if (work->unk_49 > 82 && work->unk_44 % 2 == 0) {
                     work->unk_49--;
@@ -4642,7 +4642,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
         func_080C4CCC(work);
         break;
     case 5:
-        func_0801475C(work->vx, work->vy, work->vz);
+        BgFxAddPosition(work->vx, work->vy, work->vz);
         work->x += work->vx;
         work->y += work->vy;
         work->z += work->vz;
@@ -4708,7 +4708,7 @@ void func_080C4C54(DsdEnergy1Work* work) {
     work->x += work->vx;
     work->y += work->vy;
     work->z += work->vz;
-    func_0801475C(work->vx, work->vy, work->vz);
+    BgFxAddPosition(work->vx, work->vy, work->vz);
 
     if ((s16)work->unk_38 > 15) {
         work->state++;
@@ -4746,7 +4746,7 @@ void func_080C4CCC(DsdEnergy1Work* work) {
 
     work->unk_40++;
     work->unk_2C += 25;
-    func_0801475C(work->vx, work->vy, work->vz);
+    BgFxAddPosition(work->vx, work->vy, work->vz);
     work->x += work->vx;
     work->y += work->vy;
     work->z += work->vz;
@@ -4803,7 +4803,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         }
         break;
     case 1:
-        func_0801475C(work->vx, work->vy, work->vz);
+        BgFxAddPosition(work->vx, work->vy, work->vz);
         work->x += work->vx;
         work->y += work->vy;
         work->z += work->vz;
@@ -4846,7 +4846,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         work->state++;
         break;
     case 6:
-        func_0801475C(0, 0, work->vz);
+        BgFxAddPosition(0, 0, work->vz);
         work->z += work->vz;
 
         if (func_08011F78(0x104, work->x, work->y, work->z, 16, 16, 16) == 1) {

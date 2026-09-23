@@ -50,7 +50,7 @@ void func_08012728(s16 a) {
     }
 }
 
-void func_08012798(u16 a, u16 bg) {
+void BgFxInit(u16 a, u16 bg) {
     s32 i;
     gBgFx = EwramAlloc(0x50);
 
@@ -71,11 +71,11 @@ void func_08012798(u16 a, u16 bg) {
     gBgFx->flags = 0;
 }
 
-void func_08012810(void) {
+void BgFxFree(void) {
     EwramFree(gBgFx);
 }
 
-void func_08012824(void) {
+void BgFxUpdate(void) {
     if (gBtlWork->flags & 0x400000) {
         gBtlWork->flags &= ~0x400000;
         gBgFx->flags &= 0xFFFD;
@@ -979,7 +979,7 @@ void func_08014020(s32 x, s32 y, s32 z) {
     gBgFx->flags |= 8;
 }
 
-void func_080140C0(s32* a, s32* b, s32* c) {
+void BgFxGetPosition(s32* a, s32* b, s32* c) {
     *a = gBgFx->x;
     *b = gBgFx->y;
     *c = gBgFx->z;
@@ -1240,13 +1240,13 @@ void func_080146A8(s32 x, s32 y, s32 z) {
     gBgFx->flags |= 8;
 }
 
-void func_0801475C(s32 a, s32 b, s32 c) {
+void BgFxAddPosition(s32 a, s32 b, s32 c) {
     gBgFx->x += a;
     gBgFx->y += b;
     gBgFx->z += c;
 }
 
-void func_08014780(s32 a, s32 b, s32 c) {
+void BgFxSetPosition(s32 a, s32 b, s32 c) {
     gBgFx->x = a;
     gBgFx->y = b;
     gBgFx->z = c;

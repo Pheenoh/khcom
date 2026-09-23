@@ -466,7 +466,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             }
             if (work->unk_14E > 40) {
                 if (func_080128EC()) {
-                    func_08014780(ally->x,ally->y,ally->z-0x2C00);
+                    BgFxSetPosition(ally->x,ally->y,ally->z-0x2C00);
                 } else {
                     if (ally->btl->unk_0F4 == 13) {
                         switch (work->unk_14D) {

@@ -441,7 +441,7 @@ void mode_battle_0(u32 mode) {
     TaskPoolInit(&gBtlWork->taskPools[0], 40);
     TaskPoolInit(&gBtlWork->taskPools[1], 32);
     TaskPoolInit(&gBtlWork->taskPools[2], 1);
-    func_08012798(0x80, gBtlWork->unk_1C4);
+    BgFxInit(0x80, gBtlWork->unk_1C4);
     ColliderPoolsInit();
 
     if (gGameState.flags & 8) {
@@ -621,7 +621,7 @@ void mode_battle_1(void) {
             }
 
             if (!(gBtlWork->flags & 0x200000000000000)) {
-                func_08012824();
+                BgFxUpdate();
             }
 
             ColliderUpdateAll();
@@ -642,7 +642,7 @@ void mode_battle_1(void) {
 
 void mode_battle_2(void) {
     gGameState.flags &= ~4;
-    func_08012810();
+    BgFxFree();
     TaskPoolDestroy(&gBtlWork->taskPools[2]);
     TaskPoolDestroy(&gBtlWork->taskPools[1]);
     TaskPoolDestroy(&gBtlWork->taskPools[0]);
