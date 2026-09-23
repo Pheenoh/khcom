@@ -30,29 +30,13 @@
 #include "m4a.h"
 #include "poo_api.h"
 #ifdef VERSION_EU
-extern u8 gUnkEu_08C9A5E2[];
 extern u8 gUnkEu_08892334[];
 extern u8 gUnk_09A3CDDC[];
 #endif
 
 extern JiminyWork* gJiminyWork;
 
-extern u8 gUnk_08C69C04[];
-extern u8 gUnk_08C69C20[];
-extern u8 gUnk_08C69C54[];
-extern u8 gUnk_08C69C76[];
-extern u8 gUnk_08C6A51C[];
-extern u8 gUnk_08C6A526[];
-extern u8 gUnk_08C6A69A[];
-extern u8 gUnk_08C6A6A4[];
-extern u8 gUnk_08C6A878[];
-extern u8 gUnk_08C6A8F8[];
 extern u8 gUnk_08159FE0[];
-extern u8 gUnk_08C69C9C[];
-extern u8 gUnk_08C6A54E[];
-extern u8 gUnk_08C6A6B8[];
-extern u8 gUnk_08C6A88C[];
-extern u8 gUnk_08C6A958[];
 extern u8 gUnk_090FDBF4[];
 extern u8 gUnk_0913F0C2[];
 extern u8 gUnk_09611AB8[];
@@ -68,8 +52,6 @@ void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
 void SplitThreeDecimalDigits(s16 a, u8* out);
 
-extern u8 gUnk_08C6A530[];
-extern u8 gUnk_08C6A53A[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A9A880[];
 extern u8 gUnkEu_09A9A8A0[];

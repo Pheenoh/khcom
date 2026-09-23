@@ -22,7 +22,7 @@ objects:
     end: 0x09EE26D4
   - name: sprites_hum_frames_1.s
     start: 0x08B26854
-    end: 0x08C665DC
+    end: 0x08C69188
   - name: sprites_hum_frames_2.s
     start: 0x08C6AF80
     end: 0x08C6B0C4
@@ -38,7 +38,7 @@ objects:
     end: 0x09EBA150
   - name: sprites_hum_frames_1.s
     start: 0x08B19E3C
-    end: 0x08C59BC4
+    end: 0x08C5C770
   - name: sprites_hum_frames_2.s
     start: 0x08C5E568
     end: 0x08C5E6AC
@@ -54,7 +54,7 @@ objects:
     end: 0x09F5D544
   - name: sprites_hum_frames_1.s
     start: 0x08B56804
-    end: 0x08C9658C
+    end: 0x08C99138
   - name: sprites_hum_frames_2.s
     start: 0x08C9CBF8
     end: 0x08C9CD3C
@@ -17622,3 +17622,210 @@ entries:
   eu:
     address: 0x08EF077C
     size: 2048
+- name: gUnk_08C665DC
+  record: Sprite
+  oam:
+  - [32960, 49647, 0]
+  - [16639, 511, 32]
+  - [32968, 16872, 34]
+  us:
+    address: 0x08C665DC
+  jp:
+    address: 0x08C59BC4
+  eu:
+    address: 0x08C9658C
+- name: gUnk_08C665F2
+  record: Sprite
+  oam:
+  - [32960, 49647, 38]
+  - [16639, 511, 70]
+  - [198, 16864, 72]
+  us:
+    address: 0x08C665F2
+  jp:
+    address: 0x08C59BDA
+  eu:
+    address: 0x08C965A2
+- name: gUnk_08C66608
+  record: Sprite
+  oam:
+  - [32960, 49649, 76]
+  - [221, 16, 108]
+  - [16639, 1, 109]
+  - [200, 16866, 111]
+  us:
+    address: 0x08C66608
+  jp:
+    address: 0x08C59BF0
+  eu:
+    address: 0x08C965B8
+- name: gUnk_08C66624
+  record: Sprite
+  oam:
+  - [32962, 49650, 115]
+  - [201, 16867, 147]
+  - [16385, 2, 151]
+  - [32981, 17, 153]
+  us:
+    address: 0x08C66624
+  jp:
+    address: 0x08C59C0C
+  eu:
+    address: 0x08C965D4
+- name: gUnk_08C66640
+  record: Sprite
+  oam:
+  - [32960, 49647, 155]
+  - [16639, 511, 187]
+  - [32968, 33248, 189]
+  us:
+    address: 0x08C66640
+  jp:
+    address: 0x08C59C28
+  eu:
+    address: 0x08C965F0
+- name: gUnk_08C66656
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  - [1, 4]
+  declare: false
+  us:
+    address: 0x08C66656
+  jp:
+    address: 0x08C59C3E
+  eu:
+    address: 0x08C96606
+- name: gUnk_08C66664
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  declare: false
+  us:
+    address: 0x08C66664
+  jp:
+    address: 0x08C59C4C
+  eu:
+    address: 0x08C96614
+- name: gUnk_08C6666E
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  - [3, 7]
+  - [2, 5]
+  declare: false
+  us:
+    address: 0x08C6666E
+  jp:
+    address: 0x08C59C56
+  eu:
+    address: 0x08C9661E
+- name: gUnk_08C66680
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  - [4, 4]
+  declare: false
+  us:
+    address: 0x08C66680
+  jp:
+    address: 0x08C59C68
+  eu:
+    address: 0x08C96630
+- name: gUnk_08C6668E
+  format: tiles4
+  us:
+    address: 0x08C6668E
+    size: 6304
+  jp:
+    address: 0x08C59C76
+    size: 6304
+  eu:
+    address: 0x08C9663E
+    size: 6304
+- name: gUnk_08C67F30
+  record: Sprite
+  align: 4
+  oam:
+  - [32963, 49649, 0]
+  - [16386, 16881, 32]
+  us:
+    address: 0x08C67F30
+  jp:
+    address: 0x08C5B518
+  eu:
+    address: 0x08C97EE0
+- name: gUnk_08C67F40
+  record: Sprite
+  oam:
+  - [32962, 49645, 36]
+  - [16385, 16877, 68]
+  us:
+    address: 0x08C67F40
+  jp:
+    address: 0x08C5B528
+  eu:
+    address: 0x08C97EF0
+- name: gUnk_08C67F50
+  record: Sprite
+  oam:
+  - [32960, 49646, 72]
+  - [16639, 16878, 104]
+  us:
+    address: 0x08C67F50
+  jp:
+    address: 0x08C5B538
+  eu:
+    address: 0x08C97F00
+- name: gUnk_08C67F60
+  record: Sprite
+  oam:
+  - [32962, 49649, 108]
+  - [16385, 16881, 140]
+  us:
+    address: 0x08C67F60
+  jp:
+    address: 0x08C5B548
+  eu:
+    address: 0x08C97F10
+- name: gUnk_08C67F70
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 5]
+  - [1, 8]
+  - [2, 10]
+  - [3, 8]
+  declare: false
+  us:
+    address: 0x08C67F70
+  jp:
+    address: 0x08C5B558
+  eu:
+    address: 0x08C97F20
+- name: gUnk_08C67F86
+  format: tiles4
+  width: 16
+  us:
+    address: 0x08C67F86
+    size: 4608
+  jp:
+    address: 0x08C5B56E
+    size: 4608
+  eu:
+    address: 0x08C97F36
+    size: 4608

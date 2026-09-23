@@ -1862,7 +1862,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F72D80": 0x09F72D80,
         "gUnkEu_090D1DFE": 0x090D1DFE,
         "gUnkEu_090D1E04": 0x090D1E04,
-        "gUnkEu_08C9A5E2": 0x08C9A5E2,
         "gUnkEu_08892334": 0x08892334,
         "gUnkEu_088920BC": 0x088920BC,
         "gUnkEu_096C798C": 0x096C798C,
@@ -2388,7 +2387,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08F77180": 0x08F77180,
         "gUnkEu_08F7EBF8": 0x08F7EBF8,
         "gUnkEu_08F7EFB0": 0x08F7EFB0,
-        "gUnkEu_08C9CA58": 0x08C9CA58,
         "gUnkEu_090D1FB0": 0x090D1FB0,
         "gUnkEu_090D1DA5": 0x090D1DA5,
         "gUnkEu_091926B2": 0x091926B2,
@@ -3602,7 +3600,8 @@ def main():
     us_units = [line.split()[0] for line in Path("config/us/units.txt").read_text().splitlines()
                 if line.strip() and not line.startswith("#")]
     manifests = [manifest for manifest in assetgen.load_manifests()
-                 if any(obj["name"] in us_units for obj in manifest.objects.get("us", []))]
+                 if any(obj["name"] in us_units for obj in manifest.objects.get("us", []))
+                 or (not manifest.objects.get("us") and manifest.objects.get(ver))]
     generated = {obj["name"] for manifest in manifests for objects in manifest.objects.values() for obj in objects}
     head, body, cdata, blobs, placed = [], [], [], [], set()
     for manifest in manifests:

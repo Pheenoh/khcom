@@ -29,6 +29,9 @@ objects:
   - name: sprites_emy_palettes.s
     start: 0x08F6DD44
     end: 0x08F6DD64
+  - name: sprites_emy_frames_3.s
+    start: 0x08C69188
+    end: 0x08C69C04
   jp:
   - name: sprites_emy_1.c
     start: 0x09EB71F4
@@ -45,6 +48,9 @@ objects:
   - name: sprites_emy_palettes.s
     start: 0x08F6124C
     end: 0x08F6126C
+  - name: sprites_emy_frames_3.s
+    start: 0x08C5C770
+    end: 0x08C5D1EC
   eu:
   - name: sprites_emy_1.c
     start: 0x09F5A3D0
@@ -61,6 +67,9 @@ objects:
   - name: sprites_emy_palettes.s
     start: 0x08F6A29C
     end: 0x08F6A2BC
+  - name: sprites_emy_frames_3.s
+    start: 0x08C99138
+    end: 0x08C99BB4
 entries:
 - name: gUnk_09EDF778
   record: SpriteTable
@@ -27179,3 +27188,120 @@ entries:
   eu:
     address: 0x08F6A29C
     size: 32
+- name: gUnk_08C69188
+  record: Sprite
+  oam:
+  - [224, 33264, 0]
+  - [16639, 16880, 16]
+  us:
+    address: 0x08C69188
+  jp:
+    address: 0x08C5C770
+  eu:
+    address: 0x08C99138
+- name: gUnk_08C69198
+  record: Sprite
+  oam:
+  - [224, 33264, 20]
+  - [16639, 16880, 36]
+  us:
+    address: 0x08C69198
+  jp:
+    address: 0x08C5C780
+  eu:
+    address: 0x08C99148
+- name: gUnk_08C691A8
+  record: Sprite
+  oam:
+  - [225, 33264, 40]
+  - [16384, 16880, 56]
+  us:
+    address: 0x08C691A8
+  jp:
+    address: 0x08C5C790
+  eu:
+    address: 0x08C99158
+- name: gUnk_08C691B8
+  record: Sprite
+  oam:
+  - [224, 33264, 60]
+  - [16639, 16880, 76]
+  us:
+    address: 0x08C691B8
+  jp:
+    address: 0x08C5C7A0
+  eu:
+    address: 0x08C99168
+- name: gUnk_08C691C8
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  declare: false
+  us:
+    address: 0x08C691C8
+  jp:
+    address: 0x08C5C7B0
+  eu:
+    address: 0x08C99178
+- name: gUnk_08C691D2
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  declare: false
+  us:
+    address: 0x08C691D2
+  jp:
+    address: 0x08C5C7BA
+  eu:
+    address: 0x08C99182
+- name: gUnk_08C691DC
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [2, 4]
+  declare: false
+  us:
+    address: 0x08C691DC
+  jp:
+    address: 0x08C5C7C4
+  eu:
+    address: 0x08C9918C
+- name: gUnk_08C691E6
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  - [1, 4]
+  - [2, 4]
+  - [3, 4]
+  - [2, 4]
+  - [1, 4]
+  declare: false
+  us:
+    address: 0x08C691E6
+  jp:
+    address: 0x08C5C7CE
+  eu:
+    address: 0x08C99196
+- name: gUnk_08C69204
+  format: tiles4
+  width: 16
+  us:
+    address: 0x08C69204
+    size: 2560
+  jp:
+    address: 0x08C5C7EC
+    size: 2560
+  eu:
+    address: 0x08C991B4
+    size: 2560

@@ -110,7 +110,8 @@ sprites_btl_frames_3.s
 sprites_mode_test_frames_1.s
 asset_gfx_gap_1_at_08B2556C.s
 sprites_hum_frames_1.s
-asset_gfx_gap_1_at_08C665DC.s
+sprites_emy_frames_3.s
+jiminy_journal_frames.s
 sprites_hum_frames_2.s
 sprites_mode_debug_tiles.s
 battle_background_tiles_1.s

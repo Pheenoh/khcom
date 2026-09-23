@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-extern u8 gUnk_08C6AA7E[];
 extern u8 gUnk_09618358[];
 extern u8 gUnk_09742FC4[];
 extern u8 gUnk_09A3CC9C[];

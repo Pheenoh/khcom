@@ -215,7 +215,7 @@ const JiminyDetail gUnk_081570E4[26] = {
 };
 
 const JiminyDetail gUnk_08157694[1] = {
-    { gUnk_0815C10E, gUnk_09EDDCF4, 17, 0, gUnkUs_08C6AA58, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    { gUnk_0815C10E, gUnk_09EDDCF4, 17, 0, gUnk_08C6AA58, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
 const JiminyDetail gUnk_081576CC[22] = {
@@ -584,7 +584,7 @@ const JiminyDetail gUnk_081570E4[26] = {
 };
 
 const JiminyDetail gUnk_08157694[1] = {
-    { gUnkJp_0814FAB8, gUnk_09EDDCF4, 13, 0, gUnkJp_08C5E040, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    { gUnkJp_0814FAB8, gUnk_09EDDCF4, 13, 0, gUnk_08C6AA58, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
 const JiminyDetail gUnk_081576CC[22] = {
@@ -953,7 +953,7 @@ const JiminyDetail gUnk_081570E4[26] = {
 };
 
 const JiminyDetail gUnk_08157694[1] = {
-    { &gUnkEu_08895850, &gUnkEu_0885E1D8, gUnkEu_08C9C454, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    { &gUnkEu_08895850, &gUnkEu_0885E1D8, gUnk_08C6AA58, gUnk_08F6E164, gUnk_08C6AA7E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
 const JiminyDetail gUnk_081576CC[22] = {
