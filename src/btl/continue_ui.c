@@ -3,7 +3,7 @@
 #include "anim.h"
 #include "types.h"
 #include "bg_animation_data.h"
-#include "card_localized_09EE9C90_data.h"
+#include "card_label_sprite_data.h"
 #include "card_lookup_09EEA344_data.h"
 #include "mode_battle_data.h"
 #include "engine_math.h"

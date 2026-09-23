@@ -2,7 +2,7 @@
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
-#include "card_localized_09EE9C90_data.h"
+#include "card_label_sprite_data.h"
 #include "card_lookup_09EEA344_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
