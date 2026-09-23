@@ -692,12 +692,12 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     target->unk_0A8 = attack->unk_04;
     target->unk_0AC = attack->unk_08;
     if (attack->flags & 0x800000) {
-        if (source->unk_034 & 4) target->unk_0B0 = 192;
-        else target->unk_0B0 = 64;
+        if (source->unk_034 & 4) target->angle = 192;
+        else target->angle = 64;
     } else if (attack->flags & 0x1000) {
-        target->unk_0B0 = GetAngle(gBtlWork->x3, gBtlWork->y3, target->x, target->y);
+        target->angle = GetAngle(gBtlWork->x3, gBtlWork->y3, target->x, target->y);
     } else {
-        target->unk_0B0 = GetAngle(source->x, source->y, target->x, target->y);
+        target->angle = GetAngle(source->x, source->y, target->x, target->y);
     }
     return 1;
 }

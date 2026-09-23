@@ -89,8 +89,8 @@ void HumReleaseResources(HumWork* work) {
 
 void func_0800E3D0(HumWork* work) {
     work->unk_158 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 s32 _0800E434(HumWork* work) {

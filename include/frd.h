@@ -64,7 +64,7 @@ typedef struct FrdGoofyWork {
     s32 unk_154;
     s32 unk_158;
     s32 unk_15C;
-    u8 unk_160;
+    u8 angle;
     u8 unk_161[0x03];
 } FrdGoofyWork;
 

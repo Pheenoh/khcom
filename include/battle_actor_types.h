@@ -68,7 +68,7 @@ typedef struct BtlObj {
     u8 unk_0A6[0x02];
     s32 unk_0A8;
     s32 unk_0AC;
-    u8 unk_0B0;
+    u8 angle;
     u8 unk_0B1;
     u16 unk_0B2;
     u16 unk_0B4;

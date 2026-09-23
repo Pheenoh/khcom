@@ -568,7 +568,7 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
 
     idx = 0;
 
-    switch (((work->unk_160 + 16) & 0xFF) >> 5) {
+    switch (((work->angle + 16) & 0xFF) >> 5) {
     case 0:
         idx = 1;
         break;
@@ -617,26 +617,26 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     p = &work->actor;
 
     if ((a & 0x10) && (a & 0x40)) {
-        work->unk_160 = 0x20;
+        work->angle = 0x20;
         p->unk_034 &= ~4;
     } else if ((a & 0x10) && (a & 0x80)) {
-        work->unk_160 = 0x60;
+        work->angle = 0x60;
         p->unk_034 &= ~4;
     } else if ((a & 0x20) && (a & 0x80)) {
-        work->unk_160 = 0xA0;
+        work->angle = 0xA0;
         p->unk_034 |= 4;
     } else if ((a & 0x20) && (a & 0x40)) {
-        work->unk_160 = 0xE0;
+        work->angle = 0xE0;
         p->unk_034 |= 4;
     } else if (a & 0x40) {
-        work->unk_160 = 0;
+        work->angle = 0;
     } else if (a & 0x10) {
-        work->unk_160 = 0x40;
+        work->angle = 0x40;
         p->unk_034 &= ~4;
     } else if (a & 0x80) {
-        work->unk_160 = 0x80;
+        work->angle = 0x80;
     } else if (a & 0x20) {
-        work->unk_160 = 0xC0;
+        work->angle = 0xC0;
         p->unk_034 |= 4;
     }
 
@@ -777,11 +777,11 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     work->unk_154 = 0;
     work->unk_156 = 0;
     work->unk_15C = 0;
-    work->unk_160 = 0;
+    work->angle = 0;
     work->unk_161 = 0;
     work->unk_170[0] = 0;
     work->unk_170[1] = 0;
-    work->unk_188 = 0;
+    work->task = 0;
     work->unk_191[0] = 2;
     work->unk_19C = work->unk_1A0 = 0x100;
     work->unk_1A8 = 0;
@@ -905,8 +905,8 @@ void func_0801E518(BtlSoraWork* work) {
 
 void func_0801E678(BtlSoraWork* work) {
     work->unk_150 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 BtlObj* func_0801E6DC(BtlSoraWork* work) {
@@ -2382,9 +2382,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
             if (!(held & 0xF0)) {
                 if (p->unk_034 & 4) {
-                    work->unk_160 = 192;
+                    work->angle = 192;
                 } else {
-                    work->unk_160 = 64;
+                    work->angle = 64;
                 }
             }
 
@@ -2437,53 +2437,53 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if (((s16)held & 0x50) == 0x50) {
-            if (work->unk_160 != 32) {
-                work->unk_160 = 32;
+            if (work->angle != 32) {
+                work->angle = 32;
                 work->unk_15C = 0;
             }
 
             p->unk_034 &= ~4;
         } else if (((s16)held & 0x90) == 0x90) {
-            if (work->unk_160 != 96) {
-                work->unk_160 = 96;
+            if (work->angle != 96) {
+                work->angle = 96;
                 work->unk_15C = 0;
             }
 
             p->unk_034 &= ~4;
         } else if (((s16)held & 0xA0) == 0xA0) {
-            if (work->unk_160 != 160) {
-                work->unk_160 = 160;
+            if (work->angle != 160) {
+                work->angle = 160;
                 work->unk_15C = 0;
             }
 
             p->unk_034 |= 4;
         } else if (((s16)held & 0x60) == 0x60) {
-            if (work->unk_160 != 224) {
-                work->unk_160 = 224;
+            if (work->angle != 224) {
+                work->angle = 224;
                 work->unk_15C = 0;
             }
 
             p->unk_034 |= 4;
         } else if (held & 0x40) {
-            if (work->unk_160 != 0) {
-                work->unk_160 = 0;
+            if (work->angle != 0) {
+                work->angle = 0;
                 work->unk_15C = 0;
             }
         } else if (held & 0x10) {
-            if (work->unk_160 != 64) {
-                work->unk_160 = 64;
+            if (work->angle != 64) {
+                work->angle = 64;
                 work->unk_15C = 0;
             }
 
             p->unk_034 &= ~4;
         } else if (held & 0x80) {
-            if (work->unk_160 != 128) {
-                work->unk_160 = 128;
+            if (work->angle != 128) {
+                work->angle = 128;
                 work->unk_15C = 0;
             }
         } else if (held & 0x20) {
-            if (work->unk_160 != 192) {
-                work->unk_160 = 192;
+            if (work->angle != 192) {
+                work->angle = 192;
                 work->unk_15C = 0;
             }
 
@@ -2591,10 +2591,10 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_15C = 0;
 
         if (p->unk_034 & 4) {
-            work->unk_160 = 192;
+            work->angle = 192;
             p->x -= 614;
         } else {
-            work->unk_160 = 64;
+            work->angle = 64;
             p->x += 614;
         }
         break;
@@ -4202,9 +4202,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_0801DE1C(work, 1, 0);
 
             if (p->unk_034 & 4) {
-                work->unk_160 = 192;
+                work->angle = 192;
             } else {
-                work->unk_160 = 64;
+                work->angle = 64;
             }
         }
 
@@ -5115,9 +5115,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
 
             if (p->unk_034 & 4) {
-                work->unk_160 = 192;
+                work->angle = 192;
             } else {
-                work->unk_160 = 64;
+                work->angle = 64;
             }
 
             if (p->x > *(s32*)&work->unk_191[3]) {
@@ -5281,9 +5281,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if ((s16)work->unk_154 == 0) {
             if (p->unk_034 & 4) {
-                work->unk_160 = 192;
+                work->angle = 192;
             } else {
-                work->unk_160 = 64;
+                work->angle = 64;
             }
 
             func_0801DE1C(work, 2, 0);
@@ -5435,9 +5435,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if ((s16)work->unk_154 == 0) {
             if (p->unk_034 & 4) {
-                work->unk_160 = 192;
+                work->angle = 192;
             } else {
-                work->unk_160 = 64;
+                work->angle = 64;
             }
 
             func_0801DE1C(work, 2, 0);
@@ -5883,7 +5883,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 args.x = p->x + 6144;
             }
 
-            work->unk_188 = TaskCreate(&work->tasks, &gTaskDescBtlRaid, &args);
+            work->task = TaskCreate(&work->tasks, &gTaskDescBtlRaid, &args);
             m4aSongNumStart(182);
             break;
         case 67:
@@ -5891,7 +5891,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             break;
         }
 
-        if ((s16)work->unk_154 > 37 && IsTaskActiveNamed(work->unk_188, gTaskDescBtlRaid.name) == 0) {
+        if ((s16)work->unk_154 > 37 && IsTaskActiveNamed(work->task, gTaskDescBtlRaid.name) == 0) {
             work->unk_038 = 32;
             work->unk_156 = 0;
             work->unk_154 = 0;
@@ -5962,10 +5962,10 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_0801DDE4(work, 58, 0);
             work->unk_15C = 256;
         } else {
-            p->x += (gSineTable[work->unk_160] * work->unk_15C) >> 8;
+            p->x += (gSineTable[work->angle] * work->unk_15C) >> 8;
         }
 
-        p->y += (-gSineTable[work->unk_160 + 64] * (work->unk_15C >> 1)) >> 8;
+        p->y += (-gSineTable[work->angle + 64] * (work->unk_15C >> 1)) >> 8;
         work->unk_15C -= 10;
 
         if (work->unk_15C < 0) {
@@ -6044,8 +6044,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             work->unk_150 = 768;
         }
     } else {
-        p->x += (gSineTable[work->unk_160] * work->unk_15C) >> 8;
-        p->y += (-gSineTable[work->unk_160 + 64] * (work->unk_15C >> 1)) >> 8;
+        p->x += (gSineTable[work->angle] * work->unk_15C) >> 8;
+        p->y += (-gSineTable[work->angle + 64] * (work->unk_15C >> 1)) >> 8;
     }
 
     if (p->collider.unk_2C != 0) {
@@ -6935,8 +6935,8 @@ void func_080280E0(BtlRikuWork* work) {
 
 void func_08028228(BtlRikuWork* work) {
     work->unk_154 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 BtlObj* func_0802828C(BtlRikuWork* work) {

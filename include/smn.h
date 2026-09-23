@@ -74,7 +74,7 @@ typedef struct SmnBambiWork {
     u8 unk_14E[0x02];
     s32 unk_150;
     s32 unk_154;
-    u8 unk_158;
+    u8 angle;
     u8 unk_159[0x03];
     s32 unk_15C;
     u16 unk_160;

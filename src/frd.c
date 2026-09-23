@@ -769,15 +769,15 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
     case 6:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EBFC, &work->anim, 4, 1, work->tiles);
-            work->unk_160 = GetRandom();
+            work->angle = GetRandom();
         }
 
-        work->unk_158 = work->actor->x + (gSineTable[work->unk_160] << 6);
-        work->unk_15C = work->actor->y - (gSineTable[work->unk_160 + 0x40] << 5);
+        work->unk_158 = work->actor->x + (gSineTable[work->angle] << 6);
+        work->unk_15C = work->actor->y - (gSineTable[work->angle + 0x40] << 5);
         body->x += (work->unk_158 - body->x) >> 3;
         body->y += (work->unk_15C - body->y) >> 3;
         ClampBattlePosition(&body->x, &body->y, -16, 0);
-        work->unk_160 += 4;
+        work->angle += 4;
 
         if (func_08011F78(0x7A, body->x, body->y, body->z, 0x23, 0x1C, 0x30)) {
             m4aSongNumStart(0x20A);

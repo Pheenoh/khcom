@@ -90,7 +90,7 @@ typedef struct Emy16bWork {
     u32 unk_038;
     s16 unk_03C;
     u8 unk_03E[0x02];
-    u32 unk_040;
+    u32 collider;
     u8 unk_044[0x28];
     u8 unk_06C;
     u8 unk_06D[0x2F];
@@ -190,7 +190,7 @@ typedef struct Emy82Work {
 
 typedef struct Emy83Work {
     EmyWork base;
-    void* unk_184;
+    void* task;
     TaskPool tasks;
     s32 unk_19C;
     s32 unk_1A0;
@@ -209,7 +209,7 @@ typedef struct Emy83bWork {
     u32 unk_02C;
     s16 unk_030;
     u8 unk_032[0x02];
-    u32 unk_034;
+    u32 collider;
     u8 unk_038[0x58];
 } Emy83bWork;
 

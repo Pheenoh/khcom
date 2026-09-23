@@ -25,9 +25,9 @@ void task_roomcreate_0(RoomCreateWork* work) {
     work->x2 = act->fieldPosition.x;
     work->y2 = act->fieldPosition.y;
     work->z2 = act->fieldPosition.z;
-    work->unk_24 = act->angle;
-    work->unk_18 = work->x2 + gSineTable[work->unk_24] * 50;
-    work->unk_1C = work->y2 + -gSineTable[work->unk_24 + 0x40] * 50;
+    work->angle = act->angle;
+    work->unk_18 = work->x2 + gSineTable[work->angle] * 50;
+    work->unk_1C = work->y2 + -gSineTable[work->angle + 0x40] * 50;
     work->unk_20 = work->z2;
     work->unk_25 = gUnk_02039BA0->actor.angle;
 }
@@ -39,7 +39,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     switch (work->unk_40) {
     case 0:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->actor.angle = work->unk_24 + 0x80;
+            gUnk_02039BA0->actor.angle = work->angle + 0x80;
             TaskCreate(&work->tasks, &gTaskDescSpotLight, &work->unk_28);
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
@@ -100,7 +100,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             work->unk_26++;
         } else if (work->unk_26 == 20) {
             m4aSongNumStart(0x77);
-            TaskCreate(&work->tasks, &gTaskDescRomcriEff2, (void*)(u32)work->unk_24);
+            TaskCreate(&work->tasks, &gTaskDescRomcriEff2, (void*)(u32)work->angle);
             work->unk_26++;
         }
 
@@ -111,7 +111,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 4:
         if (work->unk_26 == 16) {
-            TaskCreate(&work->tasks, &gTaskDescRomcriEff, (void*)(u32)work->unk_24);
+            TaskCreate(&work->tasks, &gTaskDescRomcriEff, (void*)(u32)work->angle);
         }
 
         if (work->unk_26 == 40) {

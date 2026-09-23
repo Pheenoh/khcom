@@ -134,7 +134,7 @@ typedef struct BtlPrizeWork {
     s16 unk_3A;
     s32 unk_3C;
     s32 unk_40;
-    u8 unk_44;
+    u8 angle;
     u8 unk_45[0x03];
     BtlObj* actor;
 } BtlPrizeWork;
@@ -159,7 +159,7 @@ typedef struct BtlPremireWork {
     s32 unk_34;
     s32 unk_38;
     s32 unk_3C;
-    u8 unk_40;
+    u8 angle;
     u8 unk_41[0x03];
     BtlObj* actor;
     AnimState anim;

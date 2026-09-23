@@ -1623,7 +1623,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_44 = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
+                work->angle = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1647,10 +1647,10 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
         work->unk_28++;
     } else {
-        tx = work->actor->x + ((gSineTable[work->unk_44] * (work->unk_34 << 5)) >> 8);
-        ty = work->actor->y + ((-gSineTable[work->unk_44 + 64] * (work->unk_34 << 4)) >> 8);
+        tx = work->actor->x + ((gSineTable[work->angle] * (work->unk_34 << 5)) >> 8);
+        ty = work->actor->y + ((-gSineTable[work->angle + 64] * (work->unk_34 << 4)) >> 8);
         tz = work->actor->z - ((work->unk_28 >> 1) << 8);
-        work->unk_44 += work->unk_2A;
+        work->angle += work->unk_2A;
         work->x += (tx - work->x) >> 2;
         work->y += (ty - work->y) >> 2;
         work->z += (tz - work->z) >> 2;
@@ -1851,7 +1851,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 work->unk_28 = 0;
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_40 = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
+                work->angle = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1876,10 +1876,10 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
 
         work->unk_28++;
     } else {
-        tx = work->actor->x + ((gSineTable[work->unk_40] * (work->unk_34 << 5)) >> 8);
-        ty = work->actor->y + ((-gSineTable[work->unk_40 + 64] * (work->unk_34 << 4)) >> 8);
+        tx = work->actor->x + ((gSineTable[work->angle] * (work->unk_34 << 5)) >> 8);
+        ty = work->actor->y + ((-gSineTable[work->angle + 64] * (work->unk_34 << 4)) >> 8);
         tz = work->actor->z - ((work->unk_28 >> 1) << 8);
-        work->unk_40 += work->unk_2A;
+        work->angle += work->unk_2A;
         work->x += (tx - work->x) >> 2;
         work->y += (ty - work->y) >> 2;
         work->z += (tz - work->z) >> 2;

@@ -282,7 +282,7 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     work->unk_A8 = a;
 
     e = &gUnk_0813C89C[a][idx];
-    AnimChangeWithTables(&work->unk_08, e->animId, flags, e->anims, e->gfxTable);
+    AnimChangeWithTables(&work->anim, e->animId, flags, e->anims, e->gfxTable);
     SetObjTileSource(work->tiles, e->tiles);
 }
 
@@ -325,9 +325,9 @@ void task_fld_sora_0(FldWork* work) {
         work->unk_A0 = 0;
     }
 
-    AnimInit(work->unk_08, 0, 0);
+    AnimInit(work->anim, 0, 0);
     func_08031F98(work, 0, 1);
-    work->gfx = AnimGetGfx(work->unk_08);
+    work->gfx = AnimGetGfx(work->anim);
 
     switch (gGameState.world) {
     case 7:
@@ -395,7 +395,7 @@ u8 func_08032268(FldWork* work, void* task) {
         }
 
         TaskPoolUpdate(work->unk_24);
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         (*p)++;
     }
@@ -457,7 +457,7 @@ u8 func_0803234C(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -491,7 +491,7 @@ u8 func_080324DC(FldWork* work, void* task) {
         act->fieldPosition.x += gSineTable[act->angle] * act->unk_10 >> 8;
         act->fieldPosition.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
 
-        if (AnimGetFrame(work->unk_08) > 3) {
+        if (AnimGetFrame(work->anim) > 3) {
             act->fieldPosition.z += work->unk_A0;
             work->unk_A0 += 66;
 
@@ -509,7 +509,7 @@ u8 func_080324DC(FldWork* work, void* task) {
             act->unk_10 = 0;
         }
 
-        switch (AnimGetFrame(work->unk_08)) {
+        switch (AnimGetFrame(work->anim)) {
         case 3:
         case 4:
             switch (act->angle) {
@@ -537,7 +537,7 @@ u8 func_080324DC(FldWork* work, void* task) {
             break;
         }
 
-        if (AnimIsFinished(work->unk_08) != 0) {
+        if (AnimIsFinished(work->anim) != 0) {
             if (work->unk_A0 < 0) {
                 work->unk_94 = 3;
             } else {
@@ -749,7 +749,7 @@ u8 func_080324DC(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
@@ -797,7 +797,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
 
         func_08031F98(work, 8, 1);
         work->unk_16 = ((act->fieldPosition.z >> 8) + 4) & 31;
-        work->gfx = AnimGetGfx(work->unk_08);
+        work->gfx = AnimGetGfx(work->anim);
 
         if (work->unk_12 == 0) {
             switch (work->unk_16) {
@@ -843,7 +843,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
                 act->fieldPosition.x += gSineTable[act->angle] * 10;
                 act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
                 func_08031F98(work, 0, 1);
-                work->gfx = AnimGetGfx(work->unk_08);
+                work->gfx = AnimGetGfx(work->anim);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
                 SetTaskUpdate(task, (u32)task_fld_sora_1);
@@ -868,7 +868,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
             act->fieldPosition.x += gSineTable[act->angle] * 10;
             act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
             func_08031F98(work, 6, 0);
-            work->gfx = AnimGetGfx(work->unk_08);
+            work->gfx = AnimGetGfx(work->anim);
             SetTaskUpdate(task, (u32)func_080324DC);
         }
 
@@ -888,7 +888,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
             work->unk_98++;
         }
 
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         break;
     }
 
@@ -965,7 +965,7 @@ u8 func_08033150(FldWork* work, void* task) {
         act->fieldPosition.x += gSineTable[act->angle];
         act->fieldPosition.y -= gSineTable[act->angle + 64];
 
-        if (AnimIsFinished(work->unk_08) != 0 && ret == 0) {
+        if (AnimIsFinished(work->anim) != 0 && ret == 0) {
             work->unk_94 = 9;
         } else {
             work->unk_98++;
@@ -994,7 +994,7 @@ u8 func_08033150(FldWork* work, void* task) {
         break;
     }
 
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
 
     if (func_08031D74(&act->fieldPosition) != 0) {
         act->fieldPosition.x = x;
@@ -1154,7 +1154,7 @@ u8 func_08033334(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -1181,7 +1181,7 @@ u8 func_0803366C(FldWork* work, void* task) {
         if (work->unk_12 == 0) {
             switch (act->angle) {
             case 173:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x500;
                     act->fieldPosition.y += 0x400;
@@ -1196,7 +1196,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 83:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x500;
                     act->fieldPosition.y += 0x400;
@@ -1211,7 +1211,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 211:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x500;
                     act->fieldPosition.y -= 0x200;
@@ -1226,7 +1226,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 45:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x500;
                     act->fieldPosition.y -= 0x200;
@@ -1241,7 +1241,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 128:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x300;
                     act->fieldPosition.y += 0x400;
@@ -1260,7 +1260,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 64:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x700;
                     act->fieldPosition.y += 0x100;
@@ -1275,7 +1275,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 192:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x700;
                     act->fieldPosition.y += 0x100;
@@ -1290,7 +1290,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
                 break;
             case 0:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.y -= 0x400;
                     break;
@@ -1310,7 +1310,7 @@ u8 func_0803366C(FldWork* work, void* task) {
             }
         }
 
-        if (AnimGetFrame(work->unk_08) == 2) {
+        if (AnimGetFrame(work->anim) == 2) {
             switch (act->angle) {
             case 45:
             case 211:
@@ -1335,7 +1335,7 @@ u8 func_0803366C(FldWork* work, void* task) {
             func_080E02C0(nx, ny, act->fieldPosition.z - 0x800);
         }
 
-        if (AnimIsFinished(work->unk_08) != 0) {
+        if (AnimIsFinished(work->anim) != 0) {
             switch (act->angle) {
             case 173:
                 act->fieldPosition.x -= 0x200;
@@ -1388,7 +1388,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1450,7 +1450,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
 
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         TaskPoolUpdate(work->unk_24);
         return 1;
     } else if (func_080DFC24() != 0) {
@@ -1521,7 +1521,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
                 work->unk_94 = 11;
                 SetTaskUpdate(task, (u32)func_0803366C);
             }
-        } else if (AnimIsFinished(work->unk_08) != 0) {
+        } else if (AnimIsFinished(work->anim) != 0) {
             work->unk_94 = 0;
         }
 
@@ -1681,7 +1681,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -1981,7 +1981,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
 
     work->unk_A8 = index;
     def = &gUnk_0813CDDC[index][dir];
-    AnimChangeWithTables(work->unk_08, def->animId, flags, def->anims, def->gfxTable);
+    AnimChangeWithTables(work->anim, def->animId, flags, def->anims, def->gfxTable);
     SetObjTileSource(work->tiles, def->tiles);
 }
 
@@ -2024,9 +2024,9 @@ void task_fld_riku_0(FldWork* work) {
         work->unk_A0 = 0;
     }
 
-    AnimInit(work->unk_08, 0, 0);
+    AnimInit(work->anim, 0, 0);
     func_0803473C(work, 0, 1);
-    work->gfx = AnimGetGfx(work->unk_08);
+    work->gfx = AnimGetGfx(work->anim);
 
     switch (gGameState.world) {
     case 7:
@@ -2094,7 +2094,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         }
 
         TaskPoolUpdate(work->unk_24);
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         (*p)++;
     }
@@ -2157,7 +2157,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -2191,7 +2191,7 @@ u8 func_08034C88(FldWork* work, void* task) {
         act->fieldPosition.x += gSineTable[act->angle] * act->unk_10 >> 8;
         act->fieldPosition.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
 
-        if (AnimGetFrame(work->unk_08) > 3) {
+        if (AnimGetFrame(work->anim) > 3) {
             act->fieldPosition.z += work->unk_A0;
             work->unk_A0 += 66;
 
@@ -2209,7 +2209,7 @@ u8 func_08034C88(FldWork* work, void* task) {
             act->unk_10 = 0;
         }
 
-        switch (AnimGetFrame(work->unk_08)) {
+        switch (AnimGetFrame(work->anim)) {
         case 1:
             switch (act->angle) {
             case 45:
@@ -2236,7 +2236,7 @@ u8 func_08034C88(FldWork* work, void* task) {
             break;
         }
 
-        if (AnimIsFinished(work->unk_08) != 0) {
+        if (AnimIsFinished(work->anim) != 0) {
             if (work->unk_A0 < 0) {
                 work->unk_94 = 3;
             } else {
@@ -2448,7 +2448,7 @@ u8 func_08034C88(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
@@ -2495,7 +2495,7 @@ u8 func_080353DC(FldWork* work, void* task) {
 
         func_0803473C(work, 8, 1);
         work->unk_16 = ((act->fieldPosition.z >> 8) + 4) & 31;
-        work->gfx = AnimGetGfx(work->unk_08);
+        work->gfx = AnimGetGfx(work->anim);
 
         if (work->unk_12 == 0) {
             switch (work->unk_16) {
@@ -2541,7 +2541,7 @@ u8 func_080353DC(FldWork* work, void* task) {
                 act->fieldPosition.x += gSineTable[act->angle] * 10;
                 act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
                 func_0803473C(work, 0, 1);
-                work->gfx = AnimGetGfx(work->unk_08);
+                work->gfx = AnimGetGfx(work->anim);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
                 SetTaskUpdate(task, (u32)task_fld_riku_1);
@@ -2566,7 +2566,7 @@ u8 func_080353DC(FldWork* work, void* task) {
             act->fieldPosition.x += gSineTable[act->angle] * 10;
             act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
             func_0803473C(work, 6, 0);
-            work->gfx = AnimGetGfx(work->unk_08);
+            work->gfx = AnimGetGfx(work->anim);
             SetTaskUpdate(task, (u32)func_08034C88);
         }
 
@@ -2586,7 +2586,7 @@ u8 func_080353DC(FldWork* work, void* task) {
             work->unk_98++;
         }
 
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         break;
     }
 
@@ -2663,7 +2663,7 @@ u8 func_080358F0(FldWork* work, void* task) {
         act->fieldPosition.x += gSineTable[act->angle];
         act->fieldPosition.y -= gSineTable[act->angle + 64];
 
-        if (AnimIsFinished(work->unk_08) != 0 && ret == 0) {
+        if (AnimIsFinished(work->anim) != 0 && ret == 0) {
             work->unk_94 = 9;
         } else {
             work->unk_98++;
@@ -2692,7 +2692,7 @@ u8 func_080358F0(FldWork* work, void* task) {
         break;
     }
 
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
 
     if (func_08034518(&act->fieldPosition) != 0) {
         act->fieldPosition.x = x;
@@ -2847,7 +2847,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -2874,7 +2874,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
         if (work->unk_12 == 0) {
             switch (act->angle) {
             case 173:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x500;
                     act->fieldPosition.y += 0x400;
@@ -2889,7 +2889,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 83:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x500;
                     act->fieldPosition.y += 0x400;
@@ -2904,7 +2904,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 211:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x500;
                     act->fieldPosition.y -= 0x200;
@@ -2919,7 +2919,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 45:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x500;
                     act->fieldPosition.y -= 0x200;
@@ -2934,7 +2934,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 128:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x300;
                     act->fieldPosition.y += 0x400;
@@ -2953,7 +2953,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 64:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x += 0x700;
                     act->fieldPosition.y += 0x100;
@@ -2968,7 +2968,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 192:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.x -= 0x700;
                     act->fieldPosition.y += 0x100;
@@ -2983,7 +2983,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
                 break;
             case 0:
-                switch (AnimGetFrame(work->unk_08)) {
+                switch (AnimGetFrame(work->anim)) {
                 case 0:
                     act->fieldPosition.y -= 0x400;
                     break;
@@ -3003,7 +3003,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
             }
         }
 
-        if (AnimGetFrame(work->unk_08) == 3) {
+        if (AnimGetFrame(work->anim) == 3) {
             switch (act->angle) {
             case 45:
             case 211:
@@ -3028,7 +3028,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
             func_080E02C0(nx, ny, act->fieldPosition.z - 0x800);
         }
 
-        if (AnimIsFinished(work->unk_08) != 0) {
+        if (AnimIsFinished(work->anim) != 0) {
             switch (act->angle) {
             case 173:
                 act->fieldPosition.x -= 0x200;
@@ -3081,7 +3081,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -3143,7 +3143,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
 
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-        work->gfx = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->anim);
         TaskPoolUpdate(work->unk_24);
         return 1;
     } else if (func_080DFC24() != 0) {
@@ -3214,7 +3214,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
                 work->unk_94 = 11;
                 SetTaskUpdate(task, (u32)func_08035DFC);
             }
-        } else if (AnimIsFinished(work->unk_08) != 0) {
+        } else if (AnimIsFinished(work->anim) != 0) {
             work->unk_94 = 0;
         }
 
@@ -3374,7 +3374,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    work->gfx = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }

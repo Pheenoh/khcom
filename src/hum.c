@@ -1788,20 +1788,20 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
 
     switch (work->unk_4E) {
     case 0:
-        work->unk_34 = GetAngle(work->x, work->y,
+        work->angle = GetAngle(work->x, work->y,
             gBtlWork->unk_130, gBtlWork->unk_134);
         work->unk_4C = GetRandom() % 3 + 1;
         work->unk_38 = 0;
         break;
     case 2:
-        work->unk_34 = GetAngle(work->x, work->y,
+        work->angle = GetAngle(work->x, work->y,
             gBtlWork->unk_130, gBtlWork->unk_134);
         work->unk_4C = 0;
         work->unk_38 = 1;
         break;
     case 1:
     default:
-        work->unk_34 = GetRandom();
+        work->angle = GetRandom();
         work->unk_4C = GetRandom() % 5 + 4;
         work->unk_38 = 0;
         break;
@@ -1818,8 +1818,8 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
 
     switch (work->unk_38) {
     case 0:
-        work->x += gSineTable[work->unk_34] * work->unk_50 >> 8;
-        work->y += -gSineTable[work->unk_34 + 64] * work->unk_50 >> 8;
+        work->x += gSineTable[work->angle] * work->unk_50 >> 8;
+        work->y += -gSineTable[work->angle + 64] * work->unk_50 >> 8;
         work->z += work->unk_30;
         work->unk_30 += 64;
 
@@ -1834,10 +1834,10 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
             work->unk_30 = -(GetRandom() % 0x301 + 0x200);
 
             if (work->unk_4E == 0) {
-                work->unk_34 = GetAngle(work->x, work->y,
+                work->angle = GetAngle(work->x, work->y,
                     gBtlWork->unk_130, gBtlWork->unk_134);
             } else {
-                work->unk_34 = GetRandom();
+                work->angle = GetRandom();
             }
             work->unk_4A++;
         }
@@ -1855,15 +1855,15 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         }
 
         if (work->unk_3C <= 17) {
-            work->x += gSineTable[work->unk_34] * work->unk_50 >> 8;
-            work->y += -gSineTable[work->unk_34 + 64] * work->unk_50 >> 8;
+            work->x += gSineTable[work->angle] * work->unk_50 >> 8;
+            work->y += -gSineTable[work->angle + 64] * work->unk_50 >> 8;
             work->z += work->unk_30;
             work->unk_30 += 64;
 
             if (work->z > 0) {
                 work->z = 0;
                 work->unk_30 = -(GetRandom() % 0x301 + 0x200);
-                work->unk_34 = GetAngle(work->x, work->y,
+                work->angle = GetAngle(work->x, work->y,
                     gBtlWork->unk_130, gBtlWork->unk_134);
             }
         } else if (work->unk_3C == 18) {
@@ -1883,7 +1883,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         break;
     }
     if (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
-        work->unk_34 = (u8)(work->unk_34 + 118) + GetRandom() % 21;
+        work->angle = (u8)(work->angle + 118) + GetRandom() % 21;
     }
     AnimUpdate(&work->anim);
     return 1;
@@ -5990,18 +5990,18 @@ u8 task_hum_vixen_1(VixenWork* work) {
     case 36:
         if ((s16)w->base.unk_150 == 0) {
             func_08019068(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
-            work->unk_1B8 = 0;
+            work->task = 0;
         }
 
         if (AnimGetFrame(&w->base.anim) == 3 && w->base.anim.timer == 0) {
             args.x = x;
             args.y = y;
             args.z = 0;
-            work->unk_1B8 = TaskCreate(&work->tasks, &gTaskDescHumVixenFrz, &args);
+            work->task = TaskCreate(&work->tasks, &gTaskDescHumVixenFrz, &args);
         }
 
         if (AnimIsFinished(&w->base.anim) &&
-            IsTaskActiveNamed(work->unk_1B8, gTaskDescHumVixenFrz.name) == 0) {
+            IsTaskActiveNamed(work->task, gTaskDescHumVixenFrz.name) == 0) {
             func_0801AF08(act);
             w->base.unk_170 = 0;
             w->base.unk_150 = 0;
@@ -6669,7 +6669,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 }
                 a1.y = act->y;
                 a1.z = 0;
-                w->unk_1EC = TaskCreate(&w->tasks, &gTaskDescHumLexRock, &a1);
+                w->task = TaskCreate(&w->tasks, &gTaskDescHumLexRock, &a1);
             }
             break;
         }
@@ -6687,7 +6687,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             gBtlWork->unk_068 |= 0x100000;
         }
 
-        if (IsTaskActiveNamed(w->unk_1EC, gTaskDescHumLexRock.name)) {
+        if (IsTaskActiveNamed(w->task, gTaskDescHumLexRock.name)) {
             break;
         }
 
@@ -6703,7 +6703,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             w->unk_1C4 = 0;
             func_08019068(gUnk_0813FA98, &w->base.anim, 5, 0, w->base.tiles);
             w->unk_1CA &= ~4;
-            w->unk_1EC = 0;
+            w->task = 0;
             m4aSongNumStart(0x11F);
         }
 
@@ -6719,12 +6719,12 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 a1.y = act->y;
                 a1.z = act->z - 0x6000;
                 w->unk_1CA |= 4;
-                w->unk_1EC = TaskCreate(&w->tasks, &gTaskDescHumLexTmh, &a1);
+                w->task = TaskCreate(&w->tasks, &gTaskDescHumLexTmh, &a1);
             }
         }
 
         if (w->unk_1CA & 4) {
-            if (IsTaskActiveNamed(w->unk_1EC, gTaskDescHumLexTmh.name) == 0) {
+            if (IsTaskActiveNamed(w->task, gTaskDescHumLexTmh.name) == 0) {
                 work->base.unk_150 = 0;
                 work->base.unk_170 = 24;
                 break;

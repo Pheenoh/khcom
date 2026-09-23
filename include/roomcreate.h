@@ -31,7 +31,7 @@ typedef struct RoomCreateWork {
     s32 unk_18;
     s32 unk_1C;
     s32 unk_20;
-    u8 unk_24;
+    u8 angle;
     u8 unk_25;
     s16 unk_26;
     u8 unk_28;

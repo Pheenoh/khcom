@@ -251,7 +251,7 @@ typedef struct VixenWork {
     u16 unk_1A0;
     u16 unk_1A2;
     TaskPool tasks;
-    void* unk_1B8;
+    void* task;
     u8 unk_1BC;
     u8 unk_1BD[0x03];
     s32 unk_1C0;
@@ -271,7 +271,7 @@ typedef struct LexceusWork {
     s32 unk_1D0;
     s32 unk_1D4;
     TaskPool tasks;
-    void* unk_1EC;
+    void* task;
     s32 unk_1F0;
     s32 unk_1F4;
     u16 unk_1F8;
@@ -390,7 +390,7 @@ typedef struct HookBombWork {
     u8 unk_2C;
     u8 unk_2D[0x03];
     s32 unk_30;
-    u8 unk_34;
+    u8 angle;
     u8 unk_35[0x03];
     s32 unk_38;
     s16 unk_3C;

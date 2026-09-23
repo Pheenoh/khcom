@@ -51,7 +51,7 @@ typedef char FldActor_size[(sizeof(FldActor) == 0x50) ? 1 : -1];
 typedef struct FldWork {
     void* tiles;
     FldRes* palette;
-    u8 unk_08[0x0A];
+    u8 anim[0x0A];
     u16 unk_12;
     u8 unk_14[0x02];
     u16 unk_16;

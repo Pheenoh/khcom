@@ -508,9 +508,9 @@ void task_smn_cloud_3(SmnCloudWork* work) {
 }
 
 void func_08041D64(SmnBambiWork* work) {
-    work->unk_170 = work->body.x + gSineTable[work->unk_158] * 80;
-    work->unk_174 = work->body.y + -gSineTable[work->unk_158 + 0x40] * 40;
-    work->unk_158 += GetRandom() % 0x21 + 0x20;
+    work->unk_170 = work->body.x + gSineTable[work->angle] * 80;
+    work->unk_174 = work->body.y + -gSineTable[work->angle + 0x40] * 40;
+    work->angle += GetRandom() % 0x21 + 0x20;
 
     if (work->unk_170 - work->body.x > 0) {
         work->body.unk_034 |= 4;
@@ -546,10 +546,10 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
 
     if (obj->unk_034 & 4) {
         body->unk_034 = 0;
-        work->unk_158 = 0xC0;
+        work->angle = 0xC0;
     } else {
         body->unk_034 = 4;
-        work->unk_158 = 0x40;
+        work->angle = 0x40;
     }
 
     work->unk_162 = args->unk_00;

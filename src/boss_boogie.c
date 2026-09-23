@@ -182,8 +182,8 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             AnimReset(&work->anim);
             SetBoogieAnimation(work, 4, 1);
             work->unk_158 = -((a->unk_0AC << 9) >> 8);
-            work->unk_150 = ((gSineTable[a->unk_0B0] * 375) >> 8) * a->unk_0A8 >> 8;
-            work->unk_154 = ((-gSineTable[a->unk_0B0 + 64] * 375) >> 8) * a->unk_0A8 >> 8;
+            work->unk_150 = ((gSineTable[a->angle] * 375) >> 8) * a->unk_0A8 >> 8;
+            work->unk_154 = ((-gSineTable[a->angle + 64] * 375) >> 8) * a->unk_0A8 >> 8;
             work->unk_004++;
         }
         if (AnimIsFinished(&work->anim)) {

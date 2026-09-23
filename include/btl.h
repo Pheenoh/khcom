@@ -117,7 +117,7 @@ typedef struct BtlSoraWork {
     u16 unk_158;
     u16 unk_15A;
     s32 unk_15C;
-    u8 unk_160;
+    u8 angle;
     u8 unk_161;
     u8 unk_162[0x2];
     const void* unk_164;
@@ -131,7 +131,7 @@ typedef struct BtlSoraWork {
     u16 unk_178;
     u8 unk_17A[0xA];
     const u16* unk_184;
-    u32 unk_188;
+    u32 task;
     u8 unk_18C[0x4];
     u8 unk_190;
     u8 unk_191[0xB];

@@ -3070,7 +3070,7 @@ void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
     s32 ny;
 
     if (d) {
-        b->unk_0B0 = GetAngle(a->x, a->y, b->x, b->y);
+        b->angle = GetAngle(a->x, a->y, b->x, b->y);
         b->unk_0A8 = 0;
     }
     dx = b->x - gUnk_02034928->x;
@@ -3089,8 +3089,8 @@ void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
                 h = 0;
             }
             t = -(h >> 9);
-            nx = gUnk_02034928->x + gSineTable[(b->unk_0B0 + c) & 0xFF] * (s16)t;
-            ny = gUnk_02034928->y + -gSineTable[((b->unk_0B0 + c) & 0xFF) + 64] * ((s16)t >> 1);
+            nx = gUnk_02034928->x + gSineTable[(b->angle + c) & 0xFF] * (s16)t;
+            ny = gUnk_02034928->y + -gSineTable[((b->angle + c) & 0xFF) + 64] * ((s16)t >> 1);
 
             if (b->x < nx) {
                 b->unk_034 &= ~4;

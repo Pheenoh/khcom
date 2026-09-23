@@ -128,8 +128,8 @@ void func_0800CB4C(EmyWork* work) {
 
 void func_0800CB78(EmyWork* work) {
     work->unk_168 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.unk_0B0] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.unk_0B0 + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 
