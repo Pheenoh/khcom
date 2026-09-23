@@ -210,7 +210,7 @@ void func_0806CF04(ContinueWork* p) {
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
 }
-s32 func_0806D0A8(ContinueWork* p) {
+s32 Continue_1(ContinueWork* p) {
     const s32* t;
 
     BgAnimUpdate();
@@ -295,7 +295,7 @@ s32 func_0806D0A8(ContinueWork* p) {
     p->y += (t[p->unk_60] - p->y) >> 3;
     p->unk_64 += 4;
 }
-void func_0806D288(ContinueWork* p) {
+void Continue_2(ContinueWork* p) {
     DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, 0, 4, 100);
     DrawSprite(120, 120, p->gfx2, p->tiles2, p->palette2, 0, 0, 100);
 }
@@ -315,8 +315,8 @@ void Continue_3(ContinueWork* p) {
 TaskDesc gUnk_09EE2834 = {
     gTaskName_09EE2834,
     (void (*)(void*, void*))func_0806CD60,
-    func_0806D0A8,
-    (void (*)(void*))func_0806D288,
+    Continue_1,
+    (void (*)(void*))Continue_2,
     (void (*)(void*))Continue_3,
     0x6C,
 };
@@ -324,8 +324,8 @@ TaskDesc gUnk_09EE2834 = {
 TaskDesc gUnk_09EE284C = {
     gTaskName_09EE2834,
     (void (*)(void*, void*))func_0806CF04,
-    func_0806D0A8,
-    (void (*)(void*))func_0806D288,
+    Continue_1,
+    (void (*)(void*))Continue_2,
     (void (*)(void*))Continue_3,
     0x6C,
 };

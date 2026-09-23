@@ -10,8 +10,8 @@ extern TaskDesc gUnk_09EE284C;
 void func_0806CD30(s32 a);
 void func_0806CD60(ContinueWork* p);
 void func_0806CF04(ContinueWork* p);
-s32 func_0806D0A8(ContinueWork* p);
-void func_0806D288(ContinueWork* p);
+s32 Continue_1(ContinueWork* p);
+void Continue_2(ContinueWork* p);
 void Continue_3(ContinueWork* p);
 
 #endif

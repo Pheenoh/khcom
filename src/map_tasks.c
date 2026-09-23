@@ -480,7 +480,7 @@ void func_080EF8CC(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF914(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm00_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -501,7 +501,7 @@ void func_080EF914(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     *(u16*)&p->unk_D0 = 0;
 }
 
-s32 func_080EF9A0(UnkStruct_080E590C* p) {
+s32 Task_MapEnm00_1(UnkStruct_080E590C* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -524,11 +524,11 @@ s32 func_080EF9A0(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080EFA18(UnkStruct_080E590C* p) {
+void Task_MapEnm00_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080EFA24(UnkStruct_080E590C* p) {
+void Task_MapEnm00_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -745,7 +745,7 @@ void func_080EFE94(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EFEDC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm01_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     UnkStruct_080EFA30* w = (UnkStruct_080EFA30*)p;
 
     func_080E6394(p, q);
@@ -765,7 +765,7 @@ void func_080EFEDC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
 }
 
-s32 func_080EFF64(UnkStruct_080E590C* p) {
+s32 Task_MapEnm01_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
@@ -790,11 +790,11 @@ s32 func_080EFF64(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080EFFE0(UnkStruct_080E590C* p) {
+void Task_MapEnm01_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080EFFEC(UnkStruct_080E590C* p) {
+void Task_MapEnm01_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -812,7 +812,7 @@ void func_080EFFF8(UnkStruct_080E590C* p) {
     func_080E5F50(p);
 }
 
-void func_080F005C(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm02_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
     p->update = func_080EFFF8;
     func_080E5D6C(p, 0, 1);
@@ -820,7 +820,7 @@ void func_080F005C(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ColliderSetDisabled(p->unk_48, 0);
 }
 
-s32 func_080F0098(UnkStruct_080E590C* p) {
+s32 Task_MapEnm02_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
@@ -840,11 +840,11 @@ s32 func_080F0098(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080F00F0(UnkStruct_080E590C* p) {
+void Task_MapEnm02_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080F00FC(UnkStruct_080E590C* p) {
+void Task_MapEnm02_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -1033,7 +1033,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
     func_080E5F50((UnkStruct_080E590C*)w);
 }
 
-void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
+void Task_MapEnm03_0(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     func_080E6394((UnkStruct_080E590C*)w, arg);
     w->update = func_080F02A0;
     func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
@@ -1043,7 +1043,7 @@ void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
 }
 
-s32 func_080F05A4(UnkStruct_080E590C* p) {
+s32 Task_MapEnm03_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
@@ -1063,11 +1063,11 @@ s32 func_080F05A4(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080F05FC(UnkStruct_080E590C* p) {
+void Task_MapEnm03_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080F0608(UnkStruct_080E590C* p) {
+void Task_MapEnm03_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -1285,7 +1285,7 @@ void func_080F0A84(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0ACC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm04_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     UnkStruct_080EFA30* w = (UnkStruct_080EFA30*)p;
 
     func_080E6394(p, q);
@@ -1305,7 +1305,7 @@ void func_080F0ACC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
 }
 
-s32 func_080F0B54(UnkStruct_080E590C* p) {
+s32 Task_MapEnm04_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
@@ -1330,11 +1330,11 @@ s32 func_080F0B54(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080F0BD0(UnkStruct_080E590C* p) {
+void Task_MapEnm04_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080F0BDC(UnkStruct_080E590C* p) {
+void Task_MapEnm04_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -1409,7 +1409,7 @@ void func_080F0D40(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm05_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -1423,7 +1423,7 @@ void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_D0 = 0;
 }
 
-s32 func_080F0DD8(UnkStruct_080E590C* p) {
+s32 Task_MapEnm05_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
@@ -1448,11 +1448,11 @@ s32 func_080F0DD8(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080F0E54(UnkStruct_080E590C* p) {
+void Task_MapEnm05_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080F0E60(UnkStruct_080E590C* p) {
+void Task_MapEnm05_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -1527,7 +1527,7 @@ void func_080F0FC4(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm06_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -1541,7 +1541,7 @@ void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_D0 = 0;
 }
 
-s32 func_080F105C(UnkStruct_080E590C* p) {
+s32 Task_MapEnm06_1(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
@@ -1566,11 +1566,11 @@ s32 func_080F105C(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080F10D8(UnkStruct_080E590C* p) {
+void Task_MapEnm06_2(UnkStruct_080E590C* p) {
     func_080E64D4(p);
 }
 
-void func_080F10E4(UnkStruct_080E590C* p) {
+void Task_MapEnm06_3(UnkStruct_080E590C* p) {
     func_080E657C(p);
 }
 
@@ -1666,7 +1666,7 @@ void func_080F1274(MapDbgWork* w) {
     }
 }
 
-void func_080F131C(MapDbgWork* w, u8* p) {
+void Task_MapDbg_0(MapDbgWork* w, u8* p) {
 #ifndef VERSION_EU
     UnkStruct_080DEE18* d;
 #endif
@@ -1689,12 +1689,12 @@ void func_080F131C(MapDbgWork* w, u8* p) {
 #endif
 }
 
-s32 func_080F138C(u8* work) {
+s32 Task_MapDbg_1(u8* work) {
     (*(void (**)(u8*))&work[8])(work);
     return 1;
 }
 
-void func_080F139C(MapDbgWork* w) {
+void Task_MapDbg_2(MapDbgWork* w) {
 #ifndef VERSION_EU
     if (w->unk_00 != 0) {
         DrawSmallFontString(240 - w->unk_2C * 8, 0x8E, w->unk_18, w->tiles, w->palette, 0, w->unk_2C);
@@ -1711,7 +1711,7 @@ void func_080F139C(MapDbgWork* w) {
 #endif
 }
 
-void func_080F1450(u8* work) {
+void Task_MapDbg_3(u8* work) {
 #ifndef VERSION_EU
     FreeSmallFontResources(*(void**)&work[16], *(void**)&work[20]);
 #endif
@@ -1754,7 +1754,7 @@ void func_080F1544(MapGmkJumpWork* w) {
     }
 }
 
-void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
+void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     AnimState* a;
     s32 v;
@@ -1790,7 +1790,7 @@ void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     ColliderSetPosition(&w->unk_040, p->unk_00, p->x, p->y);
 }
 
-s32 func_080F1650(MapGmkJumpWork* w) {
+s32 Task_MapGmk_Jump_1(MapGmkJumpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -1807,7 +1807,7 @@ s32 func_080F1650(MapGmkJumpWork* w) {
     return 1;
 }
 
-void func_080F169C(MapGmkJumpWork* w) {
+void Task_MapGmk_Jump_2(MapGmkJumpWork* w) {
     u16 v;
     s32 k;
     s16 x;
@@ -1820,7 +1820,7 @@ void func_080F169C(MapGmkJumpWork* w) {
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F1718(MapGmkJumpWork* w) {
+void Task_MapGmk_Jump_3(MapGmkJumpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->unk_040);
@@ -1841,7 +1841,7 @@ s32 func_080F173C(MapGmkEnmWork* w) {
     return 1;
 }
 
-void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
+void Task_MapGmk_Enm_0(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     UnkStruct_080DFF1C* e = &w->unk_000;
     AnimState* an;
     u8* anim;
@@ -1883,7 +1883,7 @@ void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_06C = e->y - 0x1000;
 }
 
-u8 func_080F1880(u8* work) {
+u8 Task_MapGmk_Enm_1(u8* work) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -1894,7 +1894,7 @@ u8 func_080F1880(u8* work) {
     return 1;
 }
 
-void func_080F18AC(u8* work) {
+void Task_MapGmk_Enm_2(u8* work) {
     u16 flags;
     s32 k;
     s32 x;
@@ -1913,26 +1913,26 @@ void func_080F18AC(u8* work) {
     DrawSprite(x, y, *(void**)&work[0x60], *(void**)&work[0x58], *(void**)&work[0x5C], 0, flags, -0x1004 - k * 4);
 }
 
-void func_080F1918(u8* work) {
+void Task_MapGmk_Enm_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x58]);
     ReleaseObjPalette(*(u8**)&work[0x5C]);
 }
 
-void func_080F1930(u8* work) {
+void Task_MapGmk_Dmy_0(u8* work) {
     *(void**)work = AllocObjTiles(func_080E83C4() << 5, 0);
 }
 
-s32 func_080F194C(void) {
+s32 Task_MapGmk_Dmy_1(void) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
     return 1;
 }
 
-void func_080F1964(u8* work) {
+void Task_MapGmk_Dmy_2(u8* work) {
 }
 
-void func_080F1968(u8* work) {
+void Task_MapGmk_Dmy_3(u8* work) {
     if (*(void**)work != 0) {
         ReleaseObjTiles(*(void**)work);
     }
@@ -1987,7 +1987,7 @@ u8 func_080F1ACC(MapGmkTutorialWork* w) {
     return 1;
 }
 
-void func_080F1AD0(MapGmkTutorialWork* w) {
+void Task_MapGmk_Tutorial_0(MapGmkTutorialWork* w) {
     w->x = 0x19000;
     w->y = 0xAA00;
     w->z = 0;
@@ -2006,7 +2006,7 @@ void func_080F1AD0(MapGmkTutorialWork* w) {
     TaskPoolInit(&w->tasks, 2);
 }
 
-s32 func_080F1B6C(MapGmkTutorialWork* w) {
+s32 Task_MapGmk_Tutorial_1(MapGmkTutorialWork* w) {
     if (w->unk_0A8 != 0 && (w->unk_06E & 2) && w->unk_074 == 1) {
         gUnk_0203C7AC->unk_00 |= 0x200;
     }
@@ -2021,7 +2021,7 @@ s32 func_080F1B6C(MapGmkTutorialWork* w) {
     return 1;
 }
 
-void func_080F1BC8(MapGmkTutorialWork* w) {
+void Task_MapGmk_Tutorial_2(MapGmkTutorialWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2035,7 +2035,7 @@ void func_080F1BC8(MapGmkTutorialWork* w) {
     TaskPoolDraw(&w->tasks);
 }
 
-void func_080F1C38(MapGmkTutorialWork* w) {
+void Task_MapGmk_Tutorial_3(MapGmkTutorialWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
@@ -2056,7 +2056,7 @@ u8 func_080F1C64(MapGmkSpiderWork* w) {
     return 1;
 }
 
-void func_080F1CCC(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_Spider_0(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     u8 v;
 
     *(UnkStruct_080DFF1C*)w = arg->unk_04;
@@ -2076,7 +2076,7 @@ void func_080F1CCC(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     w->unk_0C4 = v;
 }
 
-u8 func_080F1D68(MapGmkSpiderWork* w) {
+u8 Task_MapGmk_Spider_1(MapGmkSpiderWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2087,7 +2087,7 @@ u8 func_080F1D68(MapGmkSpiderWork* w) {
     return 1;
 }
 
-void func_080F1D98(MapGmkSpiderWork* w) {
+void Task_MapGmk_Spider_2(MapGmkSpiderWork* w) {
     u16 flags;
     u16 v;
     s32 t;
@@ -2109,7 +2109,7 @@ void func_080F1D98(MapGmkSpiderWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, flags, v);
 }
 
-void func_080F1E0C(MapGmkSpiderWork* w) {
+void Task_MapGmk_Spider_3(MapGmkSpiderWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
 }
@@ -2143,7 +2143,7 @@ s32 func_080F1EA0(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP00_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2165,7 +2165,7 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F1E28;
 }
 
-u8 func_080F1F98(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP00_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2182,7 +2182,7 @@ u8 func_080F1F98(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F1FEC(MapGmkGpWork* w) {
+void Task_MapGmk_GP00_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2195,7 +2195,7 @@ void func_080F1FEC(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F2058(MapGmkGpWork* w) {
+void Task_MapGmk_GP00_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2238,7 +2238,7 @@ s32 func_080F2130(MapGmkGp1Work* w) {
     return 1;
 }
 
-void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP01_0(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -2263,7 +2263,7 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F207C;
 }
 
-u8 func_080F2244(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP01_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2274,7 +2274,7 @@ u8 func_080F2244(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2274(MapGmkGp1Work* w) {
+void Task_MapGmk_GP01_2(MapGmkGp1Work* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2289,7 +2289,7 @@ void func_080F2274(MapGmkGp1Work* w) {
     }
 }
 
-void func_080F22E8(MapGmkGpWork* w) {
+void Task_MapGmk_GP01_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2330,7 +2330,7 @@ u8 func_080F238C(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP02_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -2354,7 +2354,7 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F230C;
 }
 
-u8 func_080F24B0(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP02_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2371,7 +2371,7 @@ u8 func_080F24B0(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2504(MapGmkGpWork* w) {
+void Task_MapGmk_GP02_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2384,7 +2384,7 @@ void func_080F2504(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F2570(MapGmkGpWork* w) {
+void Task_MapGmk_GP02_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2434,7 +2434,7 @@ u8 func_080F2654(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP03_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -2458,7 +2458,7 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F2594;
 }
 
-u8 func_080F2778(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP03_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2475,7 +2475,7 @@ u8 func_080F2778(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F27CC(MapGmkGpWork* w) {
+void Task_MapGmk_GP03_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2488,7 +2488,7 @@ void func_080F27CC(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F2838(MapGmkGpWork* w) {
+void Task_MapGmk_GP03_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2525,7 +2525,7 @@ s32 func_080F28F4(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP04_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2553,7 +2553,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F285C;
 }
 
-u8 func_080F2A10(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP04_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2570,7 +2570,7 @@ u8 func_080F2A10(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2A64(MapGmkGpWork* w) {
+void Task_MapGmk_GP04_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2583,7 +2583,7 @@ void func_080F2A64(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F2AD0(MapGmkGpWork* w) {
+void Task_MapGmk_GP04_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2618,7 +2618,7 @@ s32 func_080F2B78(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP05_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2646,7 +2646,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F2AF4;
 }
 
-u8 func_080F2CAC(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP05_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2663,7 +2663,7 @@ u8 func_080F2CAC(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2D00(MapGmkGpWork* w) {
+void Task_MapGmk_GP05_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2676,7 +2676,7 @@ void func_080F2D00(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F2D6C(MapGmkGpWork* w) {
+void Task_MapGmk_GP05_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2725,7 +2725,7 @@ s32 func_080F2E4C(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP06_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2753,7 +2753,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F2D90;
 }
 
-u8 func_080F2F6C(MapGmkGpWork* w) {
+u8 Task_MapGmk_GP06_1(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2770,7 +2770,7 @@ u8 func_080F2F6C(MapGmkGpWork* w) {
     return 1;
 }
 
-void func_080F2FC0(MapGmkGpWork* w) {
+void Task_MapGmk_GP06_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2783,7 +2783,7 @@ void func_080F2FC0(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F302C(MapGmkGpWork* w) {
+void Task_MapGmk_GP06_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2831,7 +2831,7 @@ s32 func_080F3108(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP07_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2852,7 +2852,7 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     w->unk_0C4 = func_080F3050;
 }
 
-u8 func_080F3210(MapGmkGp8Work* w) {
+u8 Task_MapGmk_GP07_1(MapGmkGp8Work* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2869,7 +2869,7 @@ u8 func_080F3210(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F3264(MapGmkGpWork* w) {
+void Task_MapGmk_GP07_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2882,7 +2882,7 @@ void func_080F3264(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F32D0(MapGmkGpWork* w) {
+void Task_MapGmk_GP07_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -2924,7 +2924,7 @@ s32 func_080F3384(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP08_0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -2946,7 +2946,7 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     w->unk_0CC = func_080F32F4;
 }
 
-u8 func_080F3494(MapGmkGp8Work* w) {
+u8 Task_MapGmk_GP08_1(MapGmkGp8Work* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -2963,7 +2963,7 @@ u8 func_080F3494(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F34E8(MapGmkGp8Work* w) {
+void Task_MapGmk_GP08_2(MapGmkGp8Work* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -2980,7 +2980,7 @@ void func_080F34E8(MapGmkGp8Work* w) {
     }
 }
 
-void func_080F359C(MapGmkGp8Work* w) {
+void Task_MapGmk_GP08_3(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_044);
@@ -3024,7 +3024,7 @@ s32 func_080F3674(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_GP09_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -3045,7 +3045,7 @@ void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     w->unk_0CC = func_080F35C0;
 }
 
-u8 func_080F375C(MapGmkGp8Work* w) {
+u8 Task_MapGmk_GP09_1(MapGmkGp8Work* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -3062,7 +3062,7 @@ u8 func_080F375C(MapGmkGp8Work* w) {
     return 1;
 }
 
-void func_080F37B0(MapGmkGp8Work* w) {
+void Task_MapGmk_GP09_2(MapGmkGp8Work* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -3079,13 +3079,13 @@ void func_080F37B0(MapGmkGp8Work* w) {
     }
 }
 
-void func_080F3864(MapGmkGp8Work* w) {
+void Task_MapGmk_GP09_3(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_044);
 }
 
-void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -3114,7 +3114,7 @@ void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     w->unk_0C6 = 0;
 }
 
-u8 func_080F3958(MapGmk00Work* w) {
+u8 Task_MapGmk00_1(MapGmk00Work* w) {
     UnkStruct_080DFF1C* q = &w->unk_004;
     u16 t;
 
@@ -3144,7 +3144,7 @@ u8 func_080F3958(MapGmk00Work* w) {
     return 1;
 }
 
-void func_080F39DC(MapGmk00Work* w) {
+void Task_MapGmk00_2(MapGmk00Work* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -3159,7 +3159,7 @@ void func_080F39DC(MapGmk00Work* w) {
     }
 }
 
-void func_080F3A50(MapGmkGpWork* w) {
+void Task_MapGmk00_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -3240,7 +3240,7 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
 }
 
-u8 func_080F3C98(MapGmk01Work* w) {
+u8 Task_MapGmk01_1(MapGmk01Work* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -3251,7 +3251,7 @@ u8 func_080F3C98(MapGmk01Work* w) {
     return 1;
 }
 
-void func_080F3CC8(MapGmkGpWork* w) {
+void Task_MapGmk01_2(MapGmkGpWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -3264,7 +3264,7 @@ void func_080F3CC8(MapGmkGpWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F3D34(MapGmkGpWork* w) {
+void Task_MapGmk01_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -3351,7 +3351,7 @@ s32 func_080F3F6C(MapGmkBarrelWork* w) {
     return 1;
 }
 
-void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk_Barrel_0(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -3375,7 +3375,7 @@ void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F3E24;
 }
 
-u8 func_080F4078(MapGmkBarrelWork* w) {
+u8 Task_MapGmk_Barrel_1(MapGmkBarrelWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -3386,7 +3386,7 @@ u8 func_080F4078(MapGmkBarrelWork* w) {
     return 1;
 }
 
-void func_080F40A8(MapGmkBarrelWork* w) {
+void Task_MapGmk_Barrel_2(MapGmkBarrelWork* w) {
     u16 v;
     s32 k;
     s32 x;
@@ -3401,7 +3401,7 @@ void func_080F40A8(MapGmkBarrelWork* w) {
     }
 }
 
-void func_080F411C(MapGmkGpWork* w) {
+void Task_MapGmk_Barrel_3(MapGmkGpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -3447,7 +3447,7 @@ void func_080F4258(MapGmk04Work* w) {
     }
 }
 
-void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk04_0(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -3473,7 +3473,7 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     func_080121D4(e);
 }
 
-s32 func_080F4370(MapGmk04Work* w) {
+s32 Task_MapGmk04_1(MapGmk04Work* w) {
     TaskPoolUpdate(&w->tasks);
 
     if ((u8)func_080E0390() != 0) {
@@ -3492,7 +3492,7 @@ s32 func_080F4370(MapGmk04Work* w) {
     return 0;
 }
 
-void func_080F43B4(MapGmk04Work* w) {
+void Task_MapGmk04_2(MapGmk04Work* w) {
     UnkStruct_080DFF1C* p = &w->unk_004;
     u16 v;
     s32 k;
@@ -3507,7 +3507,7 @@ void func_080F43B4(MapGmk04Work* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F4428(MapGmk04Work* w) {
+void Task_MapGmk04_3(MapGmk04Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->collider);
@@ -3542,7 +3542,7 @@ void func_080F44AC(MapGmk04Work* w) {
     w->update = 0;
 }
 
-void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk05_0(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -3567,7 +3567,7 @@ void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     TaskCreate(&w->tasks2, &gTaskDescMapTalk, e);
 }
 
-s32 func_080F45D4(MapGmk05Work* w) {
+s32 Task_MapGmk05_1(MapGmk05Work* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -3587,7 +3587,7 @@ s32 func_080F45D4(MapGmk05Work* w) {
     return 0;
 }
 
-void func_080F4630(MapGmk05Work* w) {
+void Task_MapGmk05_2(MapGmk05Work* w) {
     UnkStruct_080DFF1C* p = &w->unk_004;
     u16 v;
     s32 k;
@@ -3608,7 +3608,7 @@ void func_080F4630(MapGmk05Work* w) {
     }
 }
 
-void func_080F46C0(MapGmk05Work* w) {
+void Task_MapGmk05_3(MapGmk05Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -3651,7 +3651,7 @@ void func_080F47DC(MapGmk06Work* w) {
     }
 }
 
-void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk06_0(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
 
@@ -3670,7 +3670,7 @@ void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     func_080121D4(e);
 }
 
-s32 func_080F48E4(MapGmk06Work* w) {
+s32 Task_MapGmk06_1(MapGmk06Work* w) {
     TaskPoolUpdate(&w->tasks);
 
     if ((u8)func_080E0390() != 0) {
@@ -3689,7 +3689,7 @@ s32 func_080F48E4(MapGmk06Work* w) {
     return 0;
 }
 
-void func_080F4928(MapGmk06Work* w) {
+void Task_MapGmk06_2(MapGmk06Work* w) {
     UnkStruct_080DFF1C* p = &w->unk_004;
     u16 v;
     s32 k;
@@ -3704,7 +3704,7 @@ void func_080F4928(MapGmk06Work* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
 
-void func_080F499C(MapGmk06Work* w) {
+void Task_MapGmk06_3(MapGmk06Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(&w->collider);
@@ -3805,7 +3805,7 @@ void func_080F4BA0(MapPrizeWork* w) {
     }
 }
 
-void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
+void Task_MapPrize_0(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->x = arg->unk_04;
     w->y = arg->unk_08;
     w->z = arg->unk_0C;
@@ -3849,7 +3849,7 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     ColliderSetDisabled(&w->collider, 1);
 }
 
-s32 func_080F4DB0(MapPrizeWork* w) {
+s32 Task_MapPrize_1(MapPrizeWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -3865,7 +3865,7 @@ s32 func_080F4DB0(MapPrizeWork* w) {
     return 1;
 }
 
-void func_080F4DDC(MapPrizeWork* w) {
+void Task_MapPrize_2(MapPrizeWork* w) {
     s16 x;
     s16 y;
     s32 aff;
@@ -3888,7 +3888,7 @@ void func_080F4DDC(MapPrizeWork* w) {
     }
 }
 
-void func_080F4EC4(MapPrizeWork* w) {
+void Task_MapPrize_3(MapPrizeWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -4076,7 +4076,7 @@ void func_080F534C(MapPrzCardWork* w) {
     }
 }
 
-void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
+void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     CardDef* d;
     CardBack* q;
 
@@ -4123,7 +4123,7 @@ void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     TaskPoolInit(&w->tasks, 1);
 }
 
-s32 func_080F5580(MapPrzCardWork* w) {
+s32 Task_MapPrzCard_1(MapPrzCardWork* w) {
     if ((u8)func_080E0390() != 0) {
         return 0;
     }
@@ -4139,7 +4139,7 @@ s32 func_080F5580(MapPrzCardWork* w) {
     return 1;
 }
 
-void func_080F55B0(MapPrzCardWork* w) {
+void Task_MapPrzCard_2(MapPrzCardWork* w) {
     CardDef* d;
     CardBack* q;
     void* t;
@@ -4182,7 +4182,7 @@ void func_080F55B0(MapPrzCardWork* w) {
 
     TaskPoolDraw(&w->tasks);
 }
-void func_080F5780(MapPrzCardWork* w) {
+void Task_MapPrzCard_3(MapPrzCardWork* w) {
     FadeSetPaletteExcluded(w->palette2->index + 0x10, 0);
     FadeSetPaletteExcluded(w->palette->index + 0x10, 0);
     ColliderUnregister(w->collider);
@@ -4208,7 +4208,7 @@ void func_080F5820(MapPrzStockWork* w) {
     }
 }
 
-void func_080F5838(MapPrzStockWork* w, u16* a) {
+void Task_MapPrzStock_0(MapPrzStockWork* w, u16* a) {
     w->unk_00 = a;
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
@@ -4216,7 +4216,7 @@ void func_080F5838(MapPrzStockWork* w, u16* a) {
     TaskPoolInit(&w->tasks, 1);
 }
 
-s32 func_080F5868(MapPrzStockWork* w) {
+s32 Task_MapPrzStock_1(MapPrzStockWork* w) {
     TaskPoolUpdate(&w->tasks);
 
     if (w->update != 0) {
@@ -4229,11 +4229,11 @@ s32 func_080F5868(MapPrzStockWork* w) {
     return 0;
 }
 
-void func_080F5890(MapPrzStockWork* w) {
+void Task_MapPrzStock_2(MapPrzStockWork* w) {
     TaskPoolDraw(&w->tasks);
 }
 
-void func_080F589C(MapPrzStockWork* w) {
+void Task_MapPrzStock_3(MapPrzStockWork* w) {
     TaskPoolDestroy(&w->tasks);
     gUnk_02039BA0->unk_70 &= ~0x1000;
     gUnk_02039BA0->unk_70 &= ~0x80;
@@ -4252,7 +4252,7 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     w->unk_188 = 0;
 }
 
-s32 func_080F5968(MapMsgWork* w) {
+s32 Task_MapMsg_1(MapMsgWork* w) {
     return 1;
 }
 
@@ -4270,7 +4270,7 @@ void func_080F59A0(MapMsgWork* w) {
     FreeTextSlots(&w->unk_004, 0x30);
 }
 
-s32 func_080F59E4(MapMsgWork* w) {
+s32 Task_MapMsg2_1(MapMsgWork* w) {
     w->unk_188++;
 
     if (w->unk_188 == 120) {
@@ -4295,7 +4295,7 @@ void func_080F5A00(MapSparkWork* w, void* arg) {
     }
 }
 
-s32 func_080F5A64(MapSparkWork* w) {
+s32 Task_MapSpark_1(MapSparkWork* w) {
     AnimUpdate(&w->anim);
 
     if (AnimIsFinished(&w->anim) != 0) {
@@ -4304,7 +4304,7 @@ s32 func_080F5A64(MapSparkWork* w) {
     return 1;
 }
 
-void func_080F5A88(MapSparkWork* w) {
+void Task_MapSpark_2(MapSparkWork* w) {
     UnkStruct_080E8374* p = w->unk_00;
     s32 h;
     u16 x;
@@ -4321,12 +4321,12 @@ void func_080F5A88(MapSparkWork* w) {
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
-void func_080F5B00(u8* work) {
+void Task_MapSpark_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x1C]);
     ReleaseObjPalette(*(u8**)&work[0x20]);
 }
 
-void func_080F5B18(MapTalkWork* w, s32* arg) {
+void Task_MapTalk_0(MapTalkWork* w, s32* arg) {
     w->unk_00 = arg;
     w->tiles = AllocObjTiles(0x200, &gUnk_098A4B68[0x1028]);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
@@ -4351,7 +4351,7 @@ s32 func_080F5B68(MapTalkWork* w) {
     return 1;
 }
 
-void func_080F5BB8(MapTalkWork* w) {
+void Task_MapTalk_2(MapTalkWork* w) {
     UnkStruct_080E8374* p = (UnkStruct_080E8374*)w->unk_00;
     u16 x;
     u16 y;
@@ -4365,7 +4365,7 @@ void func_080F5BB8(MapTalkWork* w) {
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
-void func_080F5C48(MapTalkWork* w) {
+void Task_MapTalk_3(MapTalkWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
 }
@@ -4391,7 +4391,7 @@ void func_080F5CDC(MapDonaldWork* w) {
     }
 }
 
-void func_080F5D10(MapDonaldWork* w) {
+void Task_MapDonald_0(MapDonaldWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w;
 
     if (gUnk_0203C590.unk_06 != 0xFE) {
@@ -4435,7 +4435,7 @@ void func_080F5D10(MapDonaldWork* w) {
     TaskCreate(&w->tasks2, &gTaskDescMapTalk, w);
 }
 
-s32 func_080F5E4C(MapDonaldWork* w) {
+s32 Task_MapDonald_1(MapDonaldWork* w) {
     if ((u8)func_080E0390() != 0) {
         w->unk_0C1 = 0;
     } else {
@@ -4453,7 +4453,7 @@ s32 func_080F5E4C(MapDonaldWork* w) {
     return 1;
 }
 
-void func_080F5EA8(MapDonaldWork* w) {
+void Task_MapDonald_2(MapDonaldWork* w) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     u16 v;
     s32 k;
@@ -4476,7 +4476,7 @@ void func_080F5EA8(MapDonaldWork* w) {
     }
 }
 
-void func_080F5F4C(MapFrdWork* w) {
+void Task_MapDonald_3(MapFrdWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
@@ -4506,7 +4506,7 @@ void func_080F6004(MapGoofyWork* w) {
     }
 }
 
-void func_080F6038(MapGoofyWork* w) {
+void Task_MapGoofy_0(MapGoofyWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w;
 
     if (gUnk_0203C590.unk_06 != 0xFE) {
@@ -4550,7 +4550,7 @@ void func_080F6038(MapGoofyWork* w) {
     TaskCreate(&w->tasks2, &gTaskDescMapTalk, w);
 }
 
-s32 func_080F6174(MapGoofyWork* w) {
+s32 Task_MapGoofy_1(MapGoofyWork* w) {
     if ((u8)func_080E0390() != 0) {
         w->unk_0C1 = 0;
     } else {
@@ -4568,7 +4568,7 @@ s32 func_080F6174(MapGoofyWork* w) {
     return 1;
 }
 
-void func_080F61D0(MapGoofyWork* w) {
+void Task_MapGoofy_2(MapGoofyWork* w) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     u16 v;
     s32 k;
@@ -4591,7 +4591,7 @@ void func_080F61D0(MapGoofyWork* w) {
     }
 }
 
-void func_080F6274(MapFrdWork* w) {
+void Task_MapGoofy_3(MapFrdWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
@@ -4620,7 +4620,7 @@ void func_080F6314(MapNamineWork* w) {
     }
 }
 
-void func_080F6348(MapNamineWork* w) {
+void Task_MapNamine_0(MapNamineWork* w) {
     UnkStruct_080E6394* p = (UnkStruct_080E6394*)w;
 
     switch (gUnk_0203C590.unk_00) {
@@ -4671,7 +4671,7 @@ void func_080F6348(MapNamineWork* w) {
     TaskCreate(&w->tasks2, &gTaskDescMapTalk, w);
 }
 
-s32 func_080F64A4(MapNamineWork* w) {
+s32 Task_MapNamine_1(MapNamineWork* w) {
     if ((u8)func_080E0390() != 0) {
         w->unk_0C2 = 0;
     } else {
@@ -4689,7 +4689,7 @@ s32 func_080F64A4(MapNamineWork* w) {
     return 1;
 }
 
-void func_080F6500(MapNamineWork* w) {
+void Task_MapNamine_2(MapNamineWork* w) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     u16 v;
     s32 k;
@@ -4712,7 +4712,7 @@ void func_080F6500(MapNamineWork* w) {
     }
 }
 
-void func_080F65A8(MapNamineWork* w) {
+void Task_MapNamine_3(MapNamineWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -4772,7 +4772,7 @@ void func_080F66E0(MapNamineWork* w) {
     }
 }
 
-void func_080F6704(MapNiserikuWork* w) {
+void Task_MapNiseriku_0(MapNiserikuWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w;
     s32 c;
 
@@ -4855,7 +4855,7 @@ void func_080F6704(MapNiserikuWork* w) {
     }
 }
 
-s32 func_080F691C(MapNiserikuWork* w) {
+s32 Task_MapNiseriku_1(MapNiserikuWork* w) {
     if ((u8)func_080E0390() != 0) {
         w->unk_0C2 = 0;
     } else {
@@ -4873,7 +4873,7 @@ s32 func_080F691C(MapNiserikuWork* w) {
     return 1;
 }
 
-void func_080F6978(MapNiserikuWork* w) {
+void Task_MapNiseriku_2(MapNiserikuWork* w) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     u16 v;
     s32 k;
@@ -4896,7 +4896,7 @@ void func_080F6978(MapNiserikuWork* w) {
     }
 }
 
-void func_080F6A1C(MapMickeyWork* w) {
+void Task_MapNiseriku_3(MapMickeyWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->collider);
@@ -4937,7 +4937,7 @@ void func_080F6AD8(MapMickeyWork* w) {
     }
 }
 
-void func_080F6B0C(MapMickeyWork* w) {
+void Task_MapMickey_0(MapMickeyWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w;
 
     e->unk_00.unk_00 = 0x1C800;
@@ -4966,7 +4966,7 @@ void func_080F6B0C(MapMickeyWork* w) {
     TaskCreate(&w->tasks2, &gTaskDescMapTalk, w);
 }
 
-s32 func_080F6C00(MapMickeyWork* w) {
+s32 Task_MapMickey_1(MapMickeyWork* w) {
     if ((u8)func_080E0390() != 0) {
         w->unk_0C1 = 0;
     } else {
@@ -4984,7 +4984,7 @@ s32 func_080F6C00(MapMickeyWork* w) {
     return 1;
 }
 
-void func_080F6C5C(MapMickeyWork* w) {
+void Task_MapMickey_2(MapMickeyWork* w) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
     u16 v;
     s32 k;
@@ -5007,7 +5007,7 @@ void func_080F6C5C(MapMickeyWork* w) {
     }
 }
 
-void func_080F6D04(MapFrdWork* w) {
+void Task_MapMickey_3(MapFrdWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_040);
@@ -5199,7 +5199,7 @@ void func_080F7284(MapTutorialWork* w) {
     }
 }
 
-void func_080F72CC(MapTutorialWork* w) {
+void Task_MapTutorial_0(MapTutorialWork* w) {
     u16 t;
 
     TaskPoolInit(&w->tasks, 1);
@@ -5223,7 +5223,7 @@ void func_080F72CC(MapTutorialWork* w) {
     }
 }
 
-s32 func_080F7378(MapTutorialWork* w) {
+s32 Task_MapTutorial_1(MapTutorialWork* w) {
     TaskPoolUpdate(&w->tasks);
     TaskPoolUpdate(&w->tasks2);
 
@@ -5237,7 +5237,7 @@ s32 func_080F7378(MapTutorialWork* w) {
     return 0;
 }
 
-void func_080F73AC(MapTutorialWork* w) {
+void Task_MapTutorial_2(MapTutorialWork* w) {
     u16 flags;
     u16 v;
     s32 k;
@@ -5268,7 +5268,7 @@ void func_080F73AC(MapTutorialWork* w) {
     }
 }
 
-void func_080F7458(MapTutorialWork* w) {
+void Task_MapTutorial_3(MapTutorialWork* w) {
     if (w->tiles != 0) {
         ReleaseObjTiles(w->tiles);
         ReleaseObjPalette(w->palette);
@@ -5340,7 +5340,7 @@ void func_080F75E4(MapStairWork* w) {
     }
 }
 
-void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
+void Task_MapStair_0(MapStairWork* w, UnkStruct_080EF4BC* arg) {
     s32 y;
 
     w->unk_14 = arg->unk_14;
@@ -5368,7 +5368,7 @@ void func_080F7640(MapStairWork* w, UnkStruct_080EF4BC* arg) {
     TaskPoolInit(&w->tasks, 1);
 }
 
-s32 func_080F76D0(MapStairWork* w) {
+s32 Task_MapStair_1(MapStairWork* w) {
     TaskPoolUpdate(&w->tasks);
 
     if (w->update != 0) {
@@ -5377,7 +5377,7 @@ s32 func_080F76D0(MapStairWork* w) {
     return 1;
 }
 
-void func_080F76F0(MapStairWork* w) {
+void Task_MapStair_2(MapStairWork* w) {
     s32 x;
     s32 y;
 
@@ -5390,13 +5390,13 @@ void func_080F76F0(MapStairWork* w) {
     }
 }
 
-void func_080F775C(MapStairWork* w) {
+void Task_MapStair_3(MapStairWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     TaskPoolDestroy(&w->tasks);
 }
 
-void func_080F777C(MapFaintWork* w, void* a) {
+void Task_MapFaint_0(MapFaintWork* w, void* a) {
     w->unk_00 = a;
     w->tiles = AllocObjTiles(0x80, gUnk_08B21ACE);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
@@ -5404,12 +5404,12 @@ void func_080F777C(MapFaintWork* w, void* a) {
     AnimStart(&w->anim, 0, 1);
 }
 
-s32 func_080F77C4(u8* work) {
+s32 Task_MapFaint_1(u8* work) {
     AnimUpdate((AnimState*)&work[4]);
     return 1;
 }
 
-void func_080F77D4(MapFaintWork* w) {
+void Task_MapFaint_2(MapFaintWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w->unk_00;
     u16 x;
     u16 y;
@@ -5419,12 +5419,12 @@ void func_080F77D4(MapFaintWork* w) {
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, -0x1005 - (e->unk_00.x >> 8) * 4);
 }
 
-void func_080F7860(u8* work) {
+void Task_MapFaint_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x1C]);
     ReleaseObjPalette(*(u8**)&work[0x20]);
 }
 
-void func_080F7878(u8* work) {
+void Task_MapDmg_0(u8* work) {
     s32 z = 0;
 
     work[8] = z;
@@ -5434,7 +5434,7 @@ void func_080F7878(u8* work) {
     work[9] = 1;
 }
 
-s32 func_080F78A8(u8* work) {
+s32 Task_MapDmg_1(u8* work) {
     if (work[9] == 0) {
         work[8] = 0;
     } else {
@@ -5451,7 +5451,7 @@ s32 func_080F78A8(u8* work) {
     return 1;
 }
 
-void func_080F78EC(u8* work) {
+void Task_MapDmg_2(u8* work) {
     s16 x;
     s16 y;
 
@@ -5480,7 +5480,7 @@ void func_080F78EC(u8* work) {
     DrawSprite(x, y, gUnk_08B1E9A6, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 }
 
-void func_080F7A9C(u8* work) {
+void Task_MapDmg_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[4]);
     ReleaseObjPalette(*(u8**)&work[0]);
 }
@@ -5499,7 +5499,7 @@ void* func_080F7AB4(void) {
 #endif
 }
 
-void func_080F7AE0(MapFloorWork* w) {
+void Task_MapFloor_0(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     w->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
@@ -5516,7 +5516,7 @@ void func_080F7AE0(MapFloorWork* w) {
     w->unk_0C = (240 - GetTextSlotsWidth(w->unk_18, w->unk_10)) / 2;
 }
 
-s32 func_080F7B64(u8* work) {
+s32 Task_MapFloor_1(u8* work) {
     u16* p = (u16*)&work[14];
 
     if (*p != 0) {
@@ -5526,12 +5526,12 @@ s32 func_080F7B64(u8* work) {
     return 0;
 }
 
-void func_080F7B78(MapFloorWork* w) {
+void Task_MapFloor_2(MapFloorWork* w) {
     DrawSprite(120, 138, w->gfx, w->tiles, w->palette, 0, 0, 0x3C);
     DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->palette2, 50, w->unk_10);
 }
 
-void func_080F7BB8(MapFloorWork* w) {
+void Task_MapFloor_3(MapFloorWork* w) {
     ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette2);
@@ -5624,64 +5624,64 @@ const char gTaskNameMapDmg[] = "Task_MapDmg";
 const char gTaskNameMapFloor[] = "Task_MapFloor";
 TaskDesc gUnk_09EF6B90 = {
     gTaskName_09EF6B90,
-    (void (*)(void*, void*))func_080EF914,
-    func_080EF9A0,
-    (void (*)(void*))func_080EFA18,
-    (void (*)(void*))func_080EFA24,
+    (void (*)(void*, void*))Task_MapEnm00_0,
+    Task_MapEnm00_1,
+    (void (*)(void*))Task_MapEnm00_2,
+    (void (*)(void*))Task_MapEnm00_3,
     0xF8,
 };
 
 TaskDesc gUnk_09EF6BA8 = {
     gTaskName_09EF6BA8,
-    (void (*)(void*, void*))func_080EFEDC,
-    func_080EFF64,
-    (void (*)(void*))func_080EFFE0,
-    (void (*)(void*))func_080EFFEC,
+    (void (*)(void*, void*))Task_MapEnm01_0,
+    Task_MapEnm01_1,
+    (void (*)(void*))Task_MapEnm01_2,
+    (void (*)(void*))Task_MapEnm01_3,
     0xFC,
 };
 
 TaskDesc gUnk_09EF6BC0 = {
     gTaskName_09EF6BC0,
-    (void (*)(void*, void*))func_080F005C,
-    func_080F0098,
-    (void (*)(void*))func_080F00F0,
-    (void (*)(void*))func_080F00FC,
+    (void (*)(void*, void*))Task_MapEnm02_0,
+    Task_MapEnm02_1,
+    (void (*)(void*))Task_MapEnm02_2,
+    (void (*)(void*))Task_MapEnm02_3,
     0xF8,
 };
 
 TaskDesc gUnk_09EF6BD8 = {
     gTaskName_09EF6BD8,
-    (void (*)(void*, void*))func_080F0550,
-    func_080F05A4,
-    (void (*)(void*))func_080F05FC,
-    (void (*)(void*))func_080F0608,
+    (void (*)(void*, void*))Task_MapEnm03_0,
+    Task_MapEnm03_1,
+    (void (*)(void*))Task_MapEnm03_2,
+    (void (*)(void*))Task_MapEnm03_3,
     0x108,
 };
 
 TaskDesc gUnk_09EF6BF0 = {
     gTaskName_09EF6BF0,
-    (void (*)(void*, void*))func_080F0ACC,
-    func_080F0B54,
-    (void (*)(void*))func_080F0BD0,
-    (void (*)(void*))func_080F0BDC,
+    (void (*)(void*, void*))Task_MapEnm04_0,
+    Task_MapEnm04_1,
+    (void (*)(void*))Task_MapEnm04_2,
+    (void (*)(void*))Task_MapEnm04_3,
     0xFC,
 };
 
 TaskDesc gUnk_09EF6C08 = {
     gTaskName_09EF6C08,
-    (void (*)(void*, void*))func_080F0D80,
-    func_080F0DD8,
-    (void (*)(void*))func_080F0E54,
-    (void (*)(void*))func_080F0E60,
+    (void (*)(void*, void*))Task_MapEnm05_0,
+    Task_MapEnm05_1,
+    (void (*)(void*))Task_MapEnm05_2,
+    (void (*)(void*))Task_MapEnm05_3,
     0xF8,
 };
 
 TaskDesc gUnk_09EF6C20 = {
     gTaskName_09EF6C20,
-    (void (*)(void*, void*))func_080F1004,
-    func_080F105C,
-    (void (*)(void*))func_080F10D8,
-    (void (*)(void*))func_080F10E4,
+    (void (*)(void*, void*))Task_MapEnm06_0,
+    Task_MapEnm06_1,
+    (void (*)(void*))Task_MapEnm06_2,
+    (void (*)(void*))Task_MapEnm06_3,
     0xF8,
 };
 
@@ -5689,233 +5689,233 @@ u8 gUnk_09EF6C38[] = "_";
 
 TaskDesc gTaskDescMapDbg = {
     gTaskNameMapDbg,
-    (void (*)(void*, void*))func_080F131C,
-    func_080F138C,
-    (void (*)(void*))func_080F139C,
-    (void (*)(void*))func_080F1450,
+    (void (*)(void*, void*))Task_MapDbg_0,
+    Task_MapDbg_1,
+    (void (*)(void*))Task_MapDbg_2,
+    (void (*)(void*))Task_MapDbg_3,
     0x48,
 };
 
 TaskDesc gTaskDescMapGmkJump = {
     gTaskNameMapGmkJump,
-    (void (*)(void*, void*))func_080F1584,
-    func_080F1650,
-    (void (*)(void*))func_080F169C,
-    (void (*)(void*))func_080F1718,
+    (void (*)(void*, void*))Task_MapGmk_Jump_0,
+    Task_MapGmk_Jump_1,
+    (void (*)(void*))Task_MapGmk_Jump_2,
+    (void (*)(void*))Task_MapGmk_Jump_3,
     0xCC,
 };
 
 TaskDesc gTaskDescMapGmkEnm = {
     gTaskNameMapGmkEnm,
-    (void (*)(void*, void*))func_080F1798,
-    func_080F1880,
-    (void (*)(void*))func_080F18AC,
-    (void (*)(void*))func_080F1918,
+    (void (*)(void*, void*))Task_MapGmk_Enm_0,
+    Task_MapGmk_Enm_1,
+    (void (*)(void*))Task_MapGmk_Enm_2,
+    (void (*)(void*))Task_MapGmk_Enm_3,
     0x74,
 };
 
 TaskDesc gTaskDescMapGmkDmy = {
     gTaskNameMapGmkDmy,
-    (void (*)(void*, void*))func_080F1930,
-    func_080F194C,
-    (void (*)(void*))func_080F1964,
-    (void (*)(void*))func_080F1968,
+    (void (*)(void*, void*))Task_MapGmk_Dmy_0,
+    Task_MapGmk_Dmy_1,
+    (void (*)(void*))Task_MapGmk_Dmy_2,
+    (void (*)(void*))Task_MapGmk_Dmy_3,
     0x4,
 };
 
 TaskDesc gTaskDescMapGmkTutorial = {
     gTaskNameMapGmkTutorial,
-    (void (*)(void*, void*))func_080F1AD0,
-    func_080F1B6C,
-    (void (*)(void*))func_080F1BC8,
-    (void (*)(void*))func_080F1C38,
+    (void (*)(void*, void*))Task_MapGmk_Tutorial_0,
+    Task_MapGmk_Tutorial_1,
+    (void (*)(void*))Task_MapGmk_Tutorial_2,
+    (void (*)(void*))Task_MapGmk_Tutorial_3,
     0xC4,
 };
 
 TaskDesc gTaskDescMapGmkSpider = {
     gTaskNameMapGmkSpider,
-    (void (*)(void*, void*))func_080F1CCC,
-    func_080F1D68,
-    (void (*)(void*))func_080F1D98,
-    (void (*)(void*))func_080F1E0C,
+    (void (*)(void*, void*))Task_MapGmk_Spider_0,
+    Task_MapGmk_Spider_1,
+    (void (*)(void*))Task_MapGmk_Spider_2,
+    (void (*)(void*))Task_MapGmk_Spider_3,
     0xC8,
 };
 
 TaskDesc gUnk_09EF6CCC = {
     gTaskName_09EF6CCC,
-    (void (*)(void*, void*))func_080F1ED4,
-    func_080F1F98,
-    (void (*)(void*))func_080F1FEC,
-    (void (*)(void*))func_080F2058,
+    (void (*)(void*, void*))Task_MapGmk_GP00_0,
+    Task_MapGmk_GP00_1,
+    (void (*)(void*))Task_MapGmk_GP00_2,
+    (void (*)(void*))Task_MapGmk_GP00_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6CE4 = {
     gTaskName_09EF6CE4,
-    (void (*)(void*, void*))func_080F2178,
-    func_080F2244,
-    (void (*)(void*))func_080F2274,
-    (void (*)(void*))func_080F22E8,
+    (void (*)(void*, void*))Task_MapGmk_GP01_0,
+    Task_MapGmk_GP01_1,
+    (void (*)(void*))Task_MapGmk_GP01_2,
+    (void (*)(void*))Task_MapGmk_GP01_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6CFC = {
     gTaskName_09EF6CFC,
-    (void (*)(void*, void*))func_080F23E8,
-    func_080F24B0,
-    (void (*)(void*))func_080F2504,
-    (void (*)(void*))func_080F2570,
+    (void (*)(void*, void*))Task_MapGmk_GP02_0,
+    Task_MapGmk_GP02_1,
+    (void (*)(void*))Task_MapGmk_GP02_2,
+    (void (*)(void*))Task_MapGmk_GP02_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6D14 = {
     gTaskName_09EF6D14,
-    (void (*)(void*, void*))func_080F26B0,
-    func_080F2778,
-    (void (*)(void*))func_080F27CC,
-    (void (*)(void*))func_080F2838,
+    (void (*)(void*, void*))Task_MapGmk_GP03_0,
+    Task_MapGmk_GP03_1,
+    (void (*)(void*))Task_MapGmk_GP03_2,
+    (void (*)(void*))Task_MapGmk_GP03_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6D2C = {
     gTaskName_09EF6D2C,
-    (void (*)(void*, void*))func_080F2934,
-    func_080F2A10,
-    (void (*)(void*))func_080F2A64,
-    (void (*)(void*))func_080F2AD0,
+    (void (*)(void*, void*))Task_MapGmk_GP04_0,
+    Task_MapGmk_GP04_1,
+    (void (*)(void*))Task_MapGmk_GP04_2,
+    (void (*)(void*))Task_MapGmk_GP04_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6D44 = {
     gTaskName_09EF6D44,
-    (void (*)(void*, void*))func_080F2BD0,
-    func_080F2CAC,
-    (void (*)(void*))func_080F2D00,
-    (void (*)(void*))func_080F2D6C,
+    (void (*)(void*, void*))Task_MapGmk_GP05_0,
+    Task_MapGmk_GP05_1,
+    (void (*)(void*))Task_MapGmk_GP05_2,
+    (void (*)(void*))Task_MapGmk_GP05_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6D5C = {
     gTaskName_09EF6D5C,
-    (void (*)(void*, void*))func_080F2E90,
-    func_080F2F6C,
-    (void (*)(void*))func_080F2FC0,
-    (void (*)(void*))func_080F302C,
+    (void (*)(void*, void*))Task_MapGmk_GP06_0,
+    Task_MapGmk_GP06_1,
+    (void (*)(void*))Task_MapGmk_GP06_2,
+    (void (*)(void*))Task_MapGmk_GP06_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6D74 = {
     gTaskName_09EF6D74,
-    (void (*)(void*, void*))func_080F3150,
-    func_080F3210,
-    (void (*)(void*))func_080F3264,
-    (void (*)(void*))func_080F32D0,
+    (void (*)(void*, void*))Task_MapGmk_GP07_0,
+    Task_MapGmk_GP07_1,
+    (void (*)(void*))Task_MapGmk_GP07_2,
+    (void (*)(void*))Task_MapGmk_GP07_3,
     0xC8,
 };
 
 TaskDesc gUnk_09EF6D8C = {
     gTaskName_09EF6D8C,
-    (void (*)(void*, void*))func_080F33D0,
-    func_080F3494,
-    (void (*)(void*))func_080F34E8,
-    (void (*)(void*))func_080F359C,
+    (void (*)(void*, void*))Task_MapGmk_GP08_0,
+    Task_MapGmk_GP08_1,
+    (void (*)(void*))Task_MapGmk_GP08_2,
+    (void (*)(void*))Task_MapGmk_GP08_3,
     0xD0,
 };
 
 TaskDesc gUnk_09EF6DA4 = {
     gTaskName_09EF6DA4,
-    (void (*)(void*, void*))func_080F369C,
-    func_080F375C,
-    (void (*)(void*))func_080F37B0,
-    (void (*)(void*))func_080F3864,
+    (void (*)(void*, void*))Task_MapGmk_GP09_0,
+    Task_MapGmk_GP09_1,
+    (void (*)(void*))Task_MapGmk_GP09_2,
+    (void (*)(void*))Task_MapGmk_GP09_3,
     0xD0,
 };
 
 TaskDesc gTaskDescMapGmk00 = {
     gTaskNameMapGmk00,
-    (void (*)(void*, void*))func_080F3888,
-    func_080F3958,
-    (void (*)(void*))func_080F39DC,
-    (void (*)(void*))func_080F3A50,
+    (void (*)(void*, void*))Task_MapGmk00_0,
+    Task_MapGmk00_1,
+    (void (*)(void*))Task_MapGmk00_2,
+    (void (*)(void*))Task_MapGmk00_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6DD4 = {
     gTaskName_09EF6DD4,
     (void (*)(void*, void*))func_080F3BC4,
-    func_080F3C98,
-    (void (*)(void*))func_080F3CC8,
-    (void (*)(void*))func_080F3D34,
+    Task_MapGmk01_1,
+    (void (*)(void*))Task_MapGmk01_2,
+    (void (*)(void*))Task_MapGmk01_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6DEC = {
     gTaskName_09EF6DEC,
-    (void (*)(void*, void*))func_080F3FB4,
-    func_080F4078,
-    (void (*)(void*))func_080F40A8,
-    (void (*)(void*))func_080F411C,
+    (void (*)(void*, void*))Task_MapGmk_Barrel_0,
+    Task_MapGmk_Barrel_1,
+    (void (*)(void*))Task_MapGmk_Barrel_2,
+    (void (*)(void*))Task_MapGmk_Barrel_3,
     0xCC,
 };
 
 TaskDesc gUnk_09EF6E04 = {
     gTaskName_09EF6E04,
-    (void (*)(void*, void*))func_080F42B4,
-    func_080F4370,
-    (void (*)(void*))func_080F43B4,
-    (void (*)(void*))func_080F4428,
+    (void (*)(void*, void*))Task_MapGmk04_0,
+    Task_MapGmk04_1,
+    (void (*)(void*))Task_MapGmk04_2,
+    (void (*)(void*))Task_MapGmk04_3,
     0xDC,
 };
 
 TaskDesc gUnk_09EF6E1C = {
     gTaskName_09EF6E1C,
-    (void (*)(void*, void*))func_080F4500,
-    func_080F45D4,
-    (void (*)(void*))func_080F4630,
-    (void (*)(void*))func_080F46C0,
+    (void (*)(void*, void*))Task_MapGmk05_0,
+    Task_MapGmk05_1,
+    (void (*)(void*))Task_MapGmk05_2,
+    (void (*)(void*))Task_MapGmk05_3,
     0xF4,
 };
 
 TaskDesc gUnk_09EF6E34 = {
     gTaskName_09EF6E34,
-    (void (*)(void*, void*))func_080F484C,
-    func_080F48E4,
-    (void (*)(void*))func_080F4928,
-    (void (*)(void*))func_080F499C,
+    (void (*)(void*, void*))Task_MapGmk06_0,
+    Task_MapGmk06_1,
+    (void (*)(void*))Task_MapGmk06_2,
+    (void (*)(void*))Task_MapGmk06_3,
     0xDC,
 };
 
 TaskDesc gTaskDescMapPrize = {
     gTaskNameMapPrize,
-    (void (*)(void*, void*))func_080F4C5C,
-    func_080F4DB0,
-    (void (*)(void*))func_080F4DDC,
-    (void (*)(void*))func_080F4EC4,
+    (void (*)(void*, void*))Task_MapPrize_0,
+    Task_MapPrize_1,
+    (void (*)(void*))Task_MapPrize_2,
+    (void (*)(void*))Task_MapPrize_3,
     0x98,
 };
 
 TaskDesc gTaskDescMapPrzCard = {
     gTaskNameMapPrzCard,
-    (void (*)(void*, void*))func_080F53D0,
-    func_080F5580,
-    (void (*)(void*))func_080F55B0,
-    (void (*)(void*))func_080F5780,
+    (void (*)(void*, void*))Task_MapPrzCard_0,
+    Task_MapPrzCard_1,
+    (void (*)(void*))Task_MapPrzCard_2,
+    (void (*)(void*))Task_MapPrzCard_3,
     0xE8,
 };
 
 TaskDesc gTaskDescMapPrzStock = {
     gTaskNameMapPrzStock,
-    (void (*)(void*, void*))func_080F5838,
-    func_080F5868,
-    (void (*)(void*))func_080F5890,
-    (void (*)(void*))func_080F589C,
+    (void (*)(void*, void*))Task_MapPrzStock_0,
+    Task_MapPrzStock_1,
+    (void (*)(void*))Task_MapPrzStock_2,
+    (void (*)(void*))Task_MapPrzStock_3,
     0x1C,
 };
 
 TaskDesc gTaskDescMapMsg = {
     gTaskNameMapMsg,
     (void (*)(void*, void*))func_080F58C4,
-    func_080F5968,
+    Task_MapMsg_1,
     (void (*)(void*))func_080F596C,
     (void (*)(void*))func_080F59A0,
     0x18C,
@@ -5924,7 +5924,7 @@ TaskDesc gTaskDescMapMsg = {
 TaskDesc gUnk_09EF6EAC = {
     gTaskName_09EF6EAC,
     (void (*)(void*, void*))func_080F58C4,
-    func_080F59E4,
+    Task_MapMsg2_1,
     (void (*)(void*))func_080F596C,
     (void (*)(void*))func_080F59A0,
     0x18C,
@@ -5933,99 +5933,99 @@ TaskDesc gUnk_09EF6EAC = {
 TaskDesc gTaskDescMapSpark = {
     gTaskNameMapSpark,
     (void (*)(void*, void*))func_080F5A00,
-    func_080F5A64,
-    (void (*)(void*))func_080F5A88,
-    (void (*)(void*))func_080F5B00,
+    Task_MapSpark_1,
+    (void (*)(void*))Task_MapSpark_2,
+    (void (*)(void*))Task_MapSpark_3,
     0x28,
 };
 
 TaskDesc gTaskDescMapTalk = {
     gTaskNameMapTalk,
-    (void (*)(void*, void*))func_080F5B18,
+    (void (*)(void*, void*))Task_MapTalk_0,
     func_080F5B68,
-    (void (*)(void*))func_080F5BB8,
-    (void (*)(void*))func_080F5C48,
+    (void (*)(void*))Task_MapTalk_2,
+    (void (*)(void*))Task_MapTalk_3,
     0x2C,
 };
 
 TaskDesc gTaskDescMapDonald = {
     gTaskNameMapDonald,
-    (void (*)(void*, void*))func_080F5D10,
-    func_080F5E4C,
-    (void (*)(void*))func_080F5EA8,
-    (void (*)(void*))func_080F5F4C,
+    (void (*)(void*, void*))Task_MapDonald_0,
+    Task_MapDonald_1,
+    (void (*)(void*))Task_MapDonald_2,
+    (void (*)(void*))Task_MapDonald_3,
     0xEC,
 };
 
 TaskDesc gTaskDescMapGoofy = {
     gTaskNameMapGoofy,
-    (void (*)(void*, void*))func_080F6038,
-    func_080F6174,
-    (void (*)(void*))func_080F61D0,
-    (void (*)(void*))func_080F6274,
+    (void (*)(void*, void*))Task_MapGoofy_0,
+    Task_MapGoofy_1,
+    (void (*)(void*))Task_MapGoofy_2,
+    (void (*)(void*))Task_MapGoofy_3,
     0xEC,
 };
 
 TaskDesc gTaskDescMapNamine = {
     gTaskNameMapNamine,
-    (void (*)(void*, void*))func_080F6348,
-    func_080F64A4,
-    (void (*)(void*))func_080F6500,
-    (void (*)(void*))func_080F65A8,
+    (void (*)(void*, void*))Task_MapNamine_0,
+    Task_MapNamine_1,
+    (void (*)(void*))Task_MapNamine_2,
+    (void (*)(void*))Task_MapNamine_3,
     0xF0,
 };
 
 TaskDesc gTaskDescMapNiseriku = {
     gTaskNameMapNiseriku,
-    (void (*)(void*, void*))func_080F6704,
-    func_080F691C,
-    (void (*)(void*))func_080F6978,
-    (void (*)(void*))func_080F6A1C,
+    (void (*)(void*, void*))Task_MapNiseriku_0,
+    Task_MapNiseriku_1,
+    (void (*)(void*))Task_MapNiseriku_2,
+    (void (*)(void*))Task_MapNiseriku_3,
     0xEC,
 };
 
 TaskDesc gTaskDescMapMickey = {
     gTaskNameMapMickey,
-    (void (*)(void*, void*))func_080F6B0C,
-    func_080F6C00,
-    (void (*)(void*))func_080F6C5C,
-    (void (*)(void*))func_080F6D04,
+    (void (*)(void*, void*))Task_MapMickey_0,
+    Task_MapMickey_1,
+    (void (*)(void*))Task_MapMickey_2,
+    (void (*)(void*))Task_MapMickey_3,
     0xEC,
 };
 
 TaskDesc gTaskDescMapTutorial = {
     gTaskNameMapTutorial,
-    (void (*)(void*, void*))func_080F72CC,
-    func_080F7378,
-    (void (*)(void*))func_080F73AC,
-    (void (*)(void*))func_080F7458,
+    (void (*)(void*, void*))Task_MapTutorial_0,
+    Task_MapTutorial_1,
+    (void (*)(void*))Task_MapTutorial_2,
+    (void (*)(void*))Task_MapTutorial_3,
     0xF0,
 };
 
 TaskDesc gTaskDescMapStair = {
     gTaskNameMapStair,
-    (void (*)(void*, void*))func_080F7640,
-    func_080F76D0,
-    (void (*)(void*))func_080F76F0,
-    (void (*)(void*))func_080F775C,
+    (void (*)(void*, void*))Task_MapStair_0,
+    Task_MapStair_1,
+    (void (*)(void*))Task_MapStair_2,
+    (void (*)(void*))Task_MapStair_3,
     0x64,
 };
 
 TaskDesc gUnk_09EF6F9C = {
     gTaskName_09EF6F9C,
-    (void (*)(void*, void*))func_080F777C,
-    func_080F77C4,
-    (void (*)(void*))func_080F77D4,
-    (void (*)(void*))func_080F7860,
+    (void (*)(void*, void*))Task_MapFaint_0,
+    Task_MapFaint_1,
+    (void (*)(void*))Task_MapFaint_2,
+    (void (*)(void*))Task_MapFaint_3,
     0x28,
 };
 
 TaskDesc gTaskDescMapDmg = {
     gTaskNameMapDmg,
-    (void (*)(void*, void*))func_080F7878,
-    func_080F78A8,
-    (void (*)(void*))func_080F78EC,
-    (void (*)(void*))func_080F7A9C,
+    (void (*)(void*, void*))Task_MapDmg_0,
+    Task_MapDmg_1,
+    (void (*)(void*))Task_MapDmg_2,
+    (void (*)(void*))Task_MapDmg_3,
     0xC,
 };
 
@@ -6120,10 +6120,10 @@ MapNameText* gUnk_09EF7000[12] = {
 
 TaskDesc gTaskDescMapFloor = {
     gTaskNameMapFloor,
-    (void (*)(void*, void*))func_080F7AE0,
-    func_080F7B64,
-    (void (*)(void*))func_080F7B78,
-    (void (*)(void*))func_080F7BB8,
+    (void (*)(void*, void*))Task_MapFloor_0,
+    Task_MapFloor_1,
+    (void (*)(void*))Task_MapFloor_2,
+    (void (*)(void*))Task_MapFloor_3,
 #ifdef VERSION_EU
     0x1F8,
 #else

@@ -7709,7 +7709,7 @@ void func_080EC644(void) {
     EwramFree(gUnk_02034FE4);
 }
 
-void func_080EC660(MapRndWork* w) {
+void Task_MapRnd_0(MapRndWork* w) {
     UnkStruct_09EF70D0* r = gUnk_09EF70D0[gUnk_0203C590.unk_04];
     s32 i;
 
@@ -7737,17 +7737,17 @@ void func_080EC660(MapRndWork* w) {
     }
 }
 
-s32 func_080EC720(MapRndWork* w) {
+s32 Task_MapRnd_1(MapRndWork* w) {
     func_080E00E4(gUnk_02039BA0->x2, gUnk_02039BA0->y2);
     TaskPoolUpdate(&w->tasks);
     return 1;
 }
 
-void func_080EC744(TaskPool* pool) {
+void Task_MapRnd_2(TaskPool* pool) {
     TaskPoolDraw(pool);
 }
 
-void func_080EC750(TaskPool* pool) {
+void Task_MapRnd_3(TaskPool* pool) {
     TaskPoolDestroy(pool);
     func_080E4B34();
 }
@@ -7774,7 +7774,7 @@ void func_080EC760(UnkStruct_080EC760* p, UnkStruct_080EC760Entry* q) {
     }
 }
 
-void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
+void Task_MapFix_0(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     UnkStruct_080EF4BC v;
 
     switch (gUnk_0203C590.unk_07) {
@@ -7879,7 +7879,7 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     func_080EC760(w, p->unk_30);
 }
 
-s32 func_080EC94C(u8* work) {
+s32 Task_MapFix_1(u8* work) {
     s32 tx = gUnk_02039BA0->x2 - 0x7800;
     s32 ty = gUnk_02039BA0->y2 - 0x6000;
 
@@ -7905,7 +7905,7 @@ s32 func_080EC94C(u8* work) {
     return 1;
 }
 
-void func_080EC9EC(u8* work) {
+void Task_MapFix_2(u8* work) {
     ScrollBgMapTo(3, gUnk_02039BA0->x >> 8, gUnk_02039BA0->y >> 8);
     ScrollBgMapTo(2, gUnk_02039BA0->x >> 8, gUnk_02039BA0->y >> 8);
 
@@ -7915,7 +7915,7 @@ void func_080EC9EC(u8* work) {
     TaskPoolDraw((TaskPool*)&work[0x1D0]);
 }
 
-void func_080ECA54(u8* work) {
+void Task_MapFix_3(u8* work) {
     s32 i;
 
     for (i = 0; i < work[0]; i++) {
@@ -8017,7 +8017,7 @@ u8 func_080ECC8C(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
+void Task_MapDoor_0(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
     UnkStruct_080DFF1C* v = &e->unk_00;
     const UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
@@ -8099,7 +8099,7 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     TaskPoolInit(&w->tasks, 2);
 }
 
-s32 func_080ECE3C(UnkStruct_080ECA88* w) {
+s32 Task_MapDoor_1(UnkStruct_080ECA88* w) {
     if (gUnk_02039BA0->unk_70 & 0x40000) {
         if (w->unk_71 == 0) {
             w->unk_70 = 0;
@@ -8119,7 +8119,7 @@ s32 func_080ECE3C(UnkStruct_080ECA88* w) {
     return 1;
 }
 
-void func_080ECE98(UnkStruct_080ECA88* p) {
+void Task_MapDoor_2(UnkStruct_080ECA88* p) {
     UnkStruct_080DFB7C* f = p->unk_00;
     u16 sx;
     u16 sy;
@@ -8166,7 +8166,7 @@ void func_080ECE98(UnkStruct_080ECA88* p) {
     }
 }
 
-void func_080ECFBC(UnkStruct_080ECA88* p) {
+void Task_MapDoor_3(UnkStruct_080ECA88* p) {
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
     ReleaseObjTiles(p->tiles2);
@@ -8690,7 +8690,7 @@ s32 func_080EDD7C(MapMenuWork* w) {
     return 1;
 }
 
-void func_080EDDBC(MapMenuWork* w) {
+void Task_MapMenu_0(MapMenuWork* w) {
     s8 v;
 
     gUnk_02039BA0->unk_70 |= 0x1000;
@@ -8717,7 +8717,7 @@ void func_080EDDBC(MapMenuWork* w) {
     w->update = func_080ED35C;
 }
 
-s32 func_080EDE78(MapMenuWork* w) {
+s32 Task_MapMenu_1(MapMenuWork* w) {
     if (w->unk_30F != 0) {
         FadeStartIn(0, 16);
     }
@@ -8732,7 +8732,7 @@ s32 func_080EDE78(MapMenuWork* w) {
     return 1;
 }
 
-void func_080EDECC(MapMenuWork* w) {
+void Task_MapMenu_2(MapMenuWork* w) {
     s32 i;
     s32 k;
 
@@ -9024,7 +9024,7 @@ void func_080EDECC(MapMenuWork* w) {
     }
 }
 
-void func_080EE418(MapMenuWork* w) {
+void Task_MapMenu_3(MapMenuWork* w) {
     s32 i;
 
     func_080ED06C((UnkStruct_080ED06C*)w, 0);
@@ -9417,7 +9417,7 @@ s32 func_080EED44(MapSaveWork* w) {
     return 0;
 }
 
-void func_080EED88(MapSaveWork* w) {
+void Task_MapSave_0(MapSaveWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     gUnk_0203C7AC->unk_00 |= 0x2000;
@@ -9474,7 +9474,7 @@ void func_080EED88(MapSaveWork* w) {
     m4aSongNumStart(103);
 }
 
-s32 func_080EEF04(MapSaveWork* w) {
+s32 Task_MapSave_1(MapSaveWork* w) {
     TaskPoolUpdate(&w->tasks);
 
     if (w->unk_2F4 != 0) {
@@ -9489,7 +9489,7 @@ s32 func_080EEF04(MapSaveWork* w) {
     return 1;
 }
 
-void func_080EEF4C(MapSaveWork* w) {
+void Task_MapSave_2(MapSaveWork* w) {
     TaskPoolDraw(&w->tasks);
 #ifdef VERSION_EU
     switch (gLanguage) {
@@ -9580,7 +9580,7 @@ void func_080EEF4C(MapSaveWork* w) {
     }
 }
 
-void func_080EF234(MapSaveWork* w) {
+void Task_MapSave_3(MapSaveWork* w) {
     u32 f;
 
     func_080EE580((UnkStruct_080EE580*)w, 0);
@@ -9614,7 +9614,7 @@ void func_080EF234(MapSaveWork* w) {
     TaskPoolDestroy(&w->tasks);
 }
 
-void func_080EF32C(MapAnmWork* work, MapAnmEntry* list) {
+void Task_MapAnm_0(MapAnmWork* work, MapAnmEntry* list) {
     UnkStruct_080E8B1C* e;
     s32 i;
 
@@ -9638,7 +9638,7 @@ void func_080EF32C(MapAnmWork* work, MapAnmEntry* list) {
     }
 }
 
-s32 func_080EF368(MapAnmWork* w) {
+s32 Task_MapAnm_1(MapAnmWork* w) {
     s32 i;
 
     for (i = 0; i < 8; i++) {
@@ -9649,10 +9649,10 @@ s32 func_080EF368(MapAnmWork* w) {
     return 1;
 }
 
-void func_080EF398(MapAnmWork* w) {
+void Task_MapAnm_2(MapAnmWork* w) {
 }
 
-void func_080EF39C(MapAnmWork* w) {
+void Task_MapAnm_3(MapAnmWork* w) {
 }
 
 const char gModeNameMapDbg[] = "Mode_MapDbg";
@@ -9853,19 +9853,19 @@ Mode gModeMenuMsg = {
 
 TaskDesc gTaskDescMapRnd = {
     gTaskNameMapRnd,
-    (void (*)(void*, void*))func_080EC660,
-    func_080EC720,
-    (void (*)(void*))func_080EC744,
-    (void (*)(void*))func_080EC750,
+    (void (*)(void*, void*))Task_MapRnd_0,
+    Task_MapRnd_1,
+    (void (*)(void*))Task_MapRnd_2,
+    (void (*)(void*))Task_MapRnd_3,
     0x14,
 };
 
 TaskDesc gTaskDescMapFix = {
     gTaskNameMapFix,
-    (void (*)(void*, void*))func_080EC7AC,
-    func_080EC94C,
-    (void (*)(void*))func_080EC9EC,
-    (void (*)(void*))func_080ECA54,
+    (void (*)(void*, void*))Task_MapFix_0,
+    Task_MapFix_1,
+    (void (*)(void*))Task_MapFix_2,
+    (void (*)(void*))Task_MapFix_3,
 #ifdef VERSION_EU
     0x1E8,
 #else
@@ -9875,19 +9875,19 @@ TaskDesc gTaskDescMapFix = {
 
 TaskDesc gTaskDescMapDoor = {
     gTaskNameMapDoor,
-    (void (*)(void*, void*))func_080ECC90,
-    func_080ECE3C,
-    (void (*)(void*))func_080ECE98,
-    (void (*)(void*))func_080ECFBC,
+    (void (*)(void*, void*))Task_MapDoor_0,
+    Task_MapDoor_1,
+    (void (*)(void*))Task_MapDoor_2,
+    (void (*)(void*))Task_MapDoor_3,
     0x88,
 };
 
 TaskDesc gTaskDescMapMenu = {
     gTaskNameMapMenu,
-    (void (*)(void*, void*))func_080EDDBC,
-    func_080EDE78,
-    (void (*)(void*))func_080EDECC,
-    (void (*)(void*))func_080EE418,
+    (void (*)(void*, void*))Task_MapMenu_0,
+    Task_MapMenu_1,
+    (void (*)(void*))Task_MapMenu_2,
+    (void (*)(void*))Task_MapMenu_3,
 #ifdef VERSION_EU
     0x41C,
 #else
@@ -9897,10 +9897,10 @@ TaskDesc gTaskDescMapMenu = {
 
 TaskDesc gTaskDescMapSave = {
     gTaskNameMapSave,
-    (void (*)(void*, void*))func_080EED88,
-    func_080EEF04,
-    (void (*)(void*))func_080EEF4C,
-    (void (*)(void*))func_080EF234,
+    (void (*)(void*, void*))Task_MapSave_0,
+    Task_MapSave_1,
+    (void (*)(void*))Task_MapSave_2,
+    (void (*)(void*))Task_MapSave_3,
 #ifdef VERSION_EU
     0x3E8,
 #else
@@ -9910,9 +9910,9 @@ TaskDesc gTaskDescMapSave = {
 
 TaskDesc gTaskDescMapAnm = {
     gTaskNameMapAnm,
-    (void (*)(void*, void*))func_080EF32C,
-    func_080EF368,
-    (void (*)(void*))func_080EF398,
-    (void (*)(void*))func_080EF39C,
+    (void (*)(void*, void*))Task_MapAnm_0,
+    Task_MapAnm_1,
+    (void (*)(void*))Task_MapAnm_2,
+    (void (*)(void*))Task_MapAnm_3,
     0xE0,
 };
