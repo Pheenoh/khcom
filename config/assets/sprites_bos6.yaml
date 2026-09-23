@@ -21,7 +21,7 @@ objects:
     start: 0x09EFBBBC
     end: 0x09EFBC40
   - name: sprites_bos6_frames_1.s
-    start: 0x09C488D4
+    start: 0x09C448D2
     end: 0x09C5B8B0
   - name: sprites_bos6_frames_2.s
     start: 0x09C907B0
@@ -49,7 +49,7 @@ objects:
     start: 0x09ED3134
     end: 0x09ED31B8
   - name: sprites_bos6_frames_1.s
-    start: 0x09C20FF8
+    start: 0x09C1CFF6
     end: 0x09C33FD4
   - name: sprites_bos6_frames_2.s
     start: 0x09C69CBC
@@ -77,7 +77,7 @@ objects:
     start: 0x09F883D0
     end: 0x09F88454
   - name: sprites_bos6_frames_1.s
-    start: 0x09CA661C
+    start: 0x09CA261A
     end: 0x09CB95F8
   - name: sprites_bos6_frames_2.s
     start: 0x09D00ADC
@@ -5642,3 +5642,15 @@ entries:
   eu:
     address: 0x09DD94C0
     size: 96
+- name: gUnk_09C448D2
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09C448D2
+    size: 16384
+  jp:
+    address: 0x09C1CFF6
+    size: 16384
+  eu:
+    address: 0x09CA261A
+    size: 16384

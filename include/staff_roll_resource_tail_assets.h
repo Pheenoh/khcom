@@ -5,26 +5,7 @@
 #include "pc_sprite_types.h"
 
 #ifdef VERSION_US
-extern u8 gUnkUs_09C44708[];
-extern u8 gUnkUs_09C4471E[];
-extern u8 gUnkUs_09C44734[];
-extern u8 gUnkUs_09C4474A[];
-extern u8 gUnkUs_09C44766[];
-extern u8 gUnkUs_09C4477C[];
-extern u8 gUnkUs_09C44798[];
-extern u8 gUnkUs_09C447AE[];
-extern u8 gUnkUs_09C447CA[];
-extern u8 gUnkUs_09C447E0[];
-extern u8 gUnkUs_09C447F6[];
-extern u8 gUnkUs_09C4480C[];
-extern u8 gUnkUs_09C44828[];
-extern u8 gUnkUs_09C4483E[];
-extern u8 gUnkUs_09C4485A[];
-extern u8 gUnkUs_09C44870[];
-extern u8 gUnkUs_09C44886[];
-extern u8 gUnkUs_09C4489C[];
-extern u8 gUnkUs_09C448B2[];
-extern AnimHeader gUnkUs_09C448C8;
+extern AnimHeader gUnk_09C448C8;
 extern u8 gUnkUs_09C5B8B0[];
 extern AnimHeader gUnkUs_09C5B8DE;
 extern u8 gUnkUs_09C5BAE8[];
@@ -236,26 +217,7 @@ extern AnimHeader gUnkUs_09C913E8;
 #endif
 
 #ifdef VERSION_JP
-extern u8 gUnkJp_09C1CE2C[];
-extern u8 gUnkJp_09C1CE42[];
-extern u8 gUnkJp_09C1CE58[];
-extern u8 gUnkJp_09C1CE6E[];
-extern u8 gUnkJp_09C1CE8A[];
-extern u8 gUnkJp_09C1CEA0[];
-extern u8 gUnkJp_09C1CEBC[];
-extern u8 gUnkJp_09C1CED2[];
-extern u8 gUnkJp_09C1CEEE[];
-extern u8 gUnkJp_09C1CF04[];
-extern u8 gUnkJp_09C1CF1A[];
-extern u8 gUnkJp_09C1CF30[];
-extern u8 gUnkJp_09C1CF4C[];
-extern u8 gUnkJp_09C1CF62[];
-extern u8 gUnkJp_09C1CF7E[];
-extern u8 gUnkJp_09C1CF94[];
-extern u8 gUnkJp_09C1CFAA[];
-extern u8 gUnkJp_09C1CFC0[];
-extern u8 gUnkJp_09C1CFD6[];
-extern AnimHeader gUnkJp_09C1CFEC;
+extern AnimHeader gUnk_09C448C8;
 extern u8 gUnkJp_09C33FD4[];
 extern AnimHeader gUnkJp_09C34002;
 extern u8 gUnkJp_09C3420C[];
@@ -467,26 +429,7 @@ extern AnimHeader gUnkJp_09C6A8F4;
 #endif
 
 #ifdef VERSION_EU
-extern u8 gUnkEu_09CA2450[];
-extern u8 gUnkEu_09CA2466[];
-extern u8 gUnkEu_09CA247C[];
-extern u8 gUnkEu_09CA2492[];
-extern u8 gUnkEu_09CA24AE[];
-extern u8 gUnkEu_09CA24C4[];
-extern u8 gUnkEu_09CA24E0[];
-extern u8 gUnkEu_09CA24F6[];
-extern u8 gUnkEu_09CA2512[];
-extern u8 gUnkEu_09CA2528[];
-extern u8 gUnkEu_09CA253E[];
-extern u8 gUnkEu_09CA2554[];
-extern u8 gUnkEu_09CA2570[];
-extern u8 gUnkEu_09CA2586[];
-extern u8 gUnkEu_09CA25A2[];
-extern u8 gUnkEu_09CA25B8[];
-extern u8 gUnkEu_09CA25CE[];
-extern u8 gUnkEu_09CA25E4[];
-extern u8 gUnkEu_09CA25FA[];
-extern AnimHeader gUnkEu_09CA2610;
+extern AnimHeader gUnk_09C448C8;
 extern u8 gUnkEu_09CB95F8[];
 extern AnimHeader gUnkEu_09CB9626;
 extern u8 gUnkEu_09CB9830[];

@@ -6792,7 +6792,7 @@ void func_080EAF10(void) {
             0x400, 81);
     }
 
-    DrawSprite(0, 16, gUnk_098A8F28, gNewGameSlotMenuWork->tiles3, gNewGameSlotMenuWork->palette3, 0, 0x400, 90);
+    DrawSprite(0, 16, gMapUiSpriteUs_098A8F28, gNewGameSlotMenuWork->tiles3, gNewGameSlotMenuWork->palette3, 0, 0x400, 90);
     t = 45;
     u = gNewGameSlotMenuWork->selectedSlot * t;
     ApproachValueHalf(&gNewGameSlotMenuWork->y3, (gNewGameSlotMenuWork->unk_162 + u) << 8);
@@ -6954,7 +6954,7 @@ void Mode_MenuNew_0(void) {
     gNewGameSlotMenuWork->tiles7 = AllocObjTiles(0x400, gUnk_092EB78A);
     gNewGameSlotMenuWork->palette7 = LoadObjPalette(gUnk_09618118, 32);
     gNewGameSlotMenuWork->palette3 = LoadObjPalette(gUnk_09991D24, 32);
-    gNewGameSlotMenuWork->tiles3 = LoadObjTiles(&gUnk_098A8F28[0x62], 0x4C0);
+    gNewGameSlotMenuWork->tiles3 = LoadObjTiles(&gMapUiSpriteUs_098A8F28[0x62], 0x4C0);
     gNewGameSlotMenuWork->palette = LoadObjPalette(gUnk_09991BE4, 32);
 #ifdef VERSION_EU
     gNewGameSlotMenuWork->tiles = AllocObjTiles(0x120, &gUnk_098A8628[0x120E]);
@@ -7557,7 +7557,7 @@ void Mode_MenuLoad_0(s32 arg) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        gLoadGameMenuWork->tiles2 = LoadObjTiles(gUnkEu_09885EEA, 0x2C0);
+        gLoadGameMenuWork->tiles2 = LoadObjTiles(gUnk_098A87AA, 0x2C0);
         break;
     case 1:
         gLoadGameMenuWork->tiles2 = LoadObjTiles(gUnkEu_0988519C, 0x300);
@@ -8014,7 +8014,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
 
     switch (p->unk_06) {
     case 0:
-        w->unk_4C = gUnk_098A94A0;
+        w->unk_4C = gMapUiSpriteUs_098A94A0;
         w->unk_54 = q->unk_08;
         w->unk_50 = q->unk_04;
         e->unk_14 = 173;
@@ -8022,7 +8022,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         e->unk_00.x = (p->unk_04 << 4) + 10;
         break;
     case 1:
-        w->unk_4C = gUnk_098A94B4;
+        w->unk_4C = gMapUiSpriteUs_098A94B4;
         w->unk_54 = q->unk_20;
         w->unk_50 = q->unk_1C;
         e->unk_14 = 45;
@@ -8030,7 +8030,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         e->unk_00.x = (p->unk_04 << 4) + 6;
         break;
     case 2:
-        w->unk_4C = gUnk_098A94C8;
+        w->unk_4C = gMapUiSpriteUs_098A94C8;
         w->unk_54 = q->unk_18;
         w->unk_50 = q->unk_14;
         e->unk_14 = 211;
@@ -8038,7 +8038,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         e->unk_00.x = (p->unk_04 << 4) + 6;
         break;
     case 3:
-        w->unk_4C = gUnk_098A948C;
+        w->unk_4C = gMapUiSpriteUs_098A948C;
         w->unk_54 = q->unk_10;
         w->unk_50 = q->unk_0C;
         e->unk_14 = 83;
@@ -8062,13 +8062,13 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
     switch (p->unk_06) {
     case 0:
     case 1:
-        w->unk_60 = gUnk_098A94DC;
+        w->unk_60 = gMapUiSpriteUs_098A94DC;
         w->unk_64 = gUnk_09953864;
         w->unk_68 = gUnk_09953864 + 0x200;
         break;
     case 2:
     case 3:
-        w->unk_60 = gUnk_098A94FC;
+        w->unk_60 = gMapUiSpriteUs_098A94FC;
         w->unk_64 = gUnk_09953764;
         w->unk_68 = gUnk_09953764 + 0x200;
         break;
@@ -9528,7 +9528,7 @@ void Task_MapSave_2(MapSaveWork* w) {
             DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->tiles6, w->palette7, 0, 0x400, 81);
         }
 
-        DrawSprite(0, 16, gUnk_098A8F28, w->tiles3, w->palette3, 0, 0x400, 90);
+        DrawSprite(0, 16, gMapUiSpriteUs_098A8F28, w->tiles3, w->palette3, 0, 0x400, 90);
         DrawTextSlots(100, 59, w->unk_044, w->palette4, 50, w->unk_044[0x120]);
 
         if (w->unk_2F4 != 0) {

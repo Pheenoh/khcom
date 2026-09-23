@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_card.h"
+#include "premium_card_effect.h"
 
 void* gUnk_02034AD4;
 

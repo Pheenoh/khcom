@@ -1,0 +1,39 @@
+group: premium_card_effect
+types: {}
+objects:
+  us:
+  - name: premium_card_effect_tiles.s
+    start: 0x09036300
+    end: 0x09037F80
+  jp:
+  - name: premium_card_effect_tiles.s
+    start: 0x0900978C
+    end: 0x0900B40C
+  eu:
+  - name: premium_card_effect_tiles.s
+    start: 0x090CF67C
+    end: 0x090D12FC
+entries:
+- name: gUnk_09036300
+  format: palette
+  us:
+    address: 0x09036300
+    size: 128
+  jp:
+    address: 0x0900978C
+    size: 128
+  eu:
+    address: 0x090CF67C
+    size: 128
+- name: gUnk_09036380
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09036380
+    size: 7168
+  jp:
+    address: 0x0900980C
+    size: 7168
+  eu:
+    address: 0x090CF6FC
+    size: 7168

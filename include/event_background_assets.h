@@ -62,7 +62,6 @@ extern u8 gUnk_098A24FC[];
 extern u8 gUnk_098A2D98[];
 extern u8 gUnk_098A3634[];
 extern u8 gUnk_098A3950[];
-extern u8 gUnk_098A94A0[];
 extern u8 gUnk_09D69274[];
 
 #endif

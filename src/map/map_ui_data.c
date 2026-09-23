@@ -1,5 +1,6 @@
 #include "map_ui_data.h"
 #include "map_ui_assets.h"
+#include "sprites_map.h"
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F843D8[3] = {
@@ -82,13 +83,13 @@ void* gUnk_09EF8D8C[3] = {
     gMapUiSpriteUs_098A8BF4,
     gMapUiSpriteUs_098A8C28,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985D6F8,
-    gMapUiSpriteJp_0985D708,
-    gMapUiSpriteJp_0985D73C,
+    gMapUiSpriteUs_098A8BE4,
+    gMapUiSpriteUs_098A8BF4,
+    gMapUiSpriteUs_098A8C28,
 #elif defined(VERSION_EU)
-    gMapUiSpriteEu_09886324,
-    gMapUiSpriteEu_09886340,
-    gMapUiSpriteEu_09886374,
+    gMapUiSpriteUs_098A8BE4,
+    gMapUiSpriteUs_098A8BF4,
+    gMapUiSpriteUs_098A8C28,
 #endif
 };
 
@@ -97,7 +98,7 @@ AnimHeader* gUnk_09EF8D98 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A8C5C
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985D770
+    &gMapUiAnimUs_098A8C5C
 #endif
 ;
 #endif
@@ -107,7 +108,7 @@ void* gUnk_09EF8D9C =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A8F28
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DA3C
+    gMapUiSpriteUs_098A8F28
 #endif
 ;
 #endif
@@ -117,14 +118,14 @@ AnimHeader* gUnk_09EF8DA0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A8F80
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DA94
+    &gMapUiAnimUs_098A8F80
 #endif
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F84448 =
-    &gMapUiAnimEu_098863A8
+    &gMapUiAnimUs_098A8C5C
 ;
 #endif
 
@@ -186,13 +187,13 @@ AnimHeader* gUnkEu_09F84488 =
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F8448C =
-    gMapUiSpriteEu_098876CC
+    gMapUiSpriteUs_098A8F28
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F84490 =
-    &gMapUiAnimEu_09887724
+    &gMapUiAnimUs_098A8F80
 ;
 #endif
 
@@ -200,9 +201,9 @@ void* gUnk_09EF8DA4[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A944C,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DF60,
+    gMapUiSpriteUs_098A944C,
 #elif defined(VERSION_EU)
-    gMapUiSpriteEu_09887BF0,
+    gMapUiSpriteUs_098A944C,
 #endif
 };
 
@@ -211,7 +212,7 @@ AnimHeader* gUnk_09EF8DA8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9480
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DF94
+    &gMapUiAnimUs_098A9480
 #endif
 ;
 #endif
@@ -221,7 +222,7 @@ void* gUnk_09EF8DAC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A948C
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DFA0
+    gMapUiSpriteUs_098A948C
 #endif
 ;
 #endif
@@ -231,7 +232,7 @@ AnimHeader* gUnk_09EF8DB0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9496
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DFAA
+    &gMapUiAnimUs_098A9496
 #endif
 ;
 #endif
@@ -241,7 +242,7 @@ void* gUnk_09EF8DB4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94A0
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DFB4
+    gMapUiSpriteUs_098A94A0
 #endif
 ;
 #endif
@@ -251,7 +252,7 @@ AnimHeader* gUnk_09EF8DB8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94AA
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DFBE
+    &gMapUiAnimUs_098A94AA
 #endif
 ;
 #endif
@@ -261,7 +262,7 @@ void* gUnk_09EF8DBC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94B4
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DFC8
+    gMapUiSpriteUs_098A94B4
 #endif
 ;
 #endif
@@ -271,7 +272,7 @@ AnimHeader* gUnk_09EF8DC0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94BE
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DFD2
+    &gMapUiAnimUs_098A94BE
 #endif
 ;
 #endif
@@ -281,7 +282,7 @@ void* gUnk_09EF8DC4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94C8
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DFDC
+    gMapUiSpriteUs_098A94C8
 #endif
 ;
 #endif
@@ -291,7 +292,7 @@ AnimHeader* gUnk_09EF8DC8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94D2
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985DFE6
+    &gMapUiAnimUs_098A94D2
 #endif
 ;
 #endif
@@ -301,7 +302,7 @@ void* gUnk_09EF8DCC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94DC
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985DFF0
+    gMapUiSpriteUs_098A94DC
 #endif
 ;
 #endif
@@ -311,7 +312,7 @@ AnimHeader* gUnk_09EF8DD0 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A94F2
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E006
+    &gMapUiAnimUs_098A94F2
 #endif
 ;
 #endif
@@ -321,7 +322,7 @@ void* gUnk_09EF8DD4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A94FC
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E010
+    gMapUiSpriteUs_098A94FC
 #endif
 ;
 #endif
@@ -331,7 +332,7 @@ AnimHeader* gUnk_09EF8DD8 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9512
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E026
+    &gMapUiAnimUs_098A9512
 #endif
 ;
 #endif
@@ -341,7 +342,7 @@ void* gUnk_09EF8DDC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A951C
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E030
+    gMapUiSpriteUs_098A951C
 #endif
 ;
 #endif
@@ -351,7 +352,7 @@ void* gUnk_09EF8DE0 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9526
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E03A
+    gMapUiSpriteUs_098A9526
 #endif
 ;
 #endif
@@ -361,7 +362,7 @@ void* gUnk_09EF8DE4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9530
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E044
+    gMapUiSpriteUs_098A9530
 #endif
 ;
 #endif
@@ -371,7 +372,7 @@ void* gUnk_09EF8DE8 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A953A
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E04E
+    gMapUiSpriteUs_098A953A
 #endif
 ;
 #endif
@@ -381,7 +382,7 @@ void* gUnk_09EF8DEC =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9544
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E058
+    gMapUiSpriteUs_098A9544
 #endif
 ;
 #endif
@@ -391,7 +392,7 @@ void* gUnk_09EF8DF0 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A954E
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E062
+    gMapUiSpriteUs_098A954E
 #endif
 ;
 #endif
@@ -401,7 +402,7 @@ void* gUnk_09EF8DF4 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9558
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E06C
+    gMapUiSpriteUs_098A9558
 #endif
 ;
 #endif
@@ -411,7 +412,7 @@ void* gUnk_09EF8DF8 =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9562
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E076
+    gMapUiSpriteUs_098A9562
 #endif
 ;
 #endif
@@ -421,7 +422,7 @@ AnimHeader* gUnk_09EF8DFC =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A956C
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E080
+    &gMapUiAnimUs_098A956C
 #endif
 ;
 #endif
@@ -431,7 +432,7 @@ AnimHeader* gUnk_09EF8E00 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A958A
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E09E
+    &gMapUiAnimUs_098A958A
 #endif
 ;
 #endif
@@ -441,7 +442,7 @@ AnimHeader* gUnk_09EF8E04 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A95A8
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E0BC
+    &gMapUiAnimUs_098A95A8
 #endif
 ;
 #endif
@@ -451,7 +452,7 @@ AnimHeader* gUnk_09EF8E08 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A95C6
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E0DA
+    &gMapUiAnimUs_098A95C6
 #endif
 ;
 #endif
@@ -464,10 +465,10 @@ void* gUnk_09EF8E0C[4] = {
     gMapUiSpriteUs_098A9658,
     gMapUiSpriteUs_098A967A,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E0F8,
-    gMapUiSpriteJp_0985E14A,
-    gMapUiSpriteJp_0985E16C,
-    gMapUiSpriteJp_0985E18E,
+    gMapUiSpriteUs_098A95E4,
+    gMapUiSpriteUs_098A9636,
+    gMapUiSpriteUs_098A9658,
+    gMapUiSpriteUs_098A967A,
 #endif
 };
 #endif
@@ -477,7 +478,7 @@ AnimHeader* gUnk_09EF8E1C =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9696
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E1AA
+    &gMapUiAnimUs_098A9696
 #endif
 ;
 #endif
@@ -494,14 +495,14 @@ void* gUnk_09EF8E20[8] = {
     gMapUiSpriteUs_098A9940,
     gMapUiSpriteUs_098A99B0,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E1B4,
-    gMapUiSpriteJp_0985E224,
-    gMapUiSpriteJp_0985E294,
-    gMapUiSpriteJp_0985E304,
-    gMapUiSpriteJp_0985E374,
-    gMapUiSpriteJp_0985E3E4,
-    gMapUiSpriteJp_0985E454,
-    gMapUiSpriteJp_0985E4C4,
+    gMapUiSpriteUs_098A96A0,
+    gMapUiSpriteUs_098A9710,
+    gMapUiSpriteUs_098A9780,
+    gMapUiSpriteUs_098A97F0,
+    gMapUiSpriteUs_098A9860,
+    gMapUiSpriteUs_098A98D0,
+    gMapUiSpriteUs_098A9940,
+    gMapUiSpriteUs_098A99B0,
 #endif
 };
 #endif
@@ -511,7 +512,7 @@ AnimHeader* gUnk_09EF8E40 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9A32
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E546
+    &gMapUiAnimUs_098A9A32
 #endif
 ;
 #endif
@@ -527,13 +528,13 @@ void* gUnk_09EF8E44[7] = {
     gMapUiSpriteUs_098A9AAA,
     gMapUiSpriteUs_098A9AC0,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E550,
-    gMapUiSpriteJp_0985E566,
-    gMapUiSpriteJp_0985E57C,
-    gMapUiSpriteJp_0985E592,
-    gMapUiSpriteJp_0985E5A8,
-    gMapUiSpriteJp_0985E5BE,
-    gMapUiSpriteJp_0985E5D4,
+    gMapUiSpriteUs_098A9A3C,
+    gMapUiSpriteUs_098A9A52,
+    gMapUiSpriteUs_098A9A68,
+    gMapUiSpriteUs_098A9A7E,
+    gMapUiSpriteUs_098A9A94,
+    gMapUiSpriteUs_098A9AAA,
+    gMapUiSpriteUs_098A9AC0,
 #endif
 };
 #endif
@@ -543,7 +544,7 @@ AnimHeader* gUnk_09EF8E60 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9AD6
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E5EA
+    &gMapUiAnimUs_098A9AD6
 #endif
 ;
 #endif
@@ -553,7 +554,7 @@ void* gUnk_09EF8E64[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9AE0,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E5F4,
+    gMapUiSpriteUs_098A9AE0,
 #endif
 };
 #endif
@@ -563,7 +564,7 @@ AnimHeader* gUnk_09EF8E68 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9B38
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E64C
+    &gMapUiAnimUs_098A9B38
 #endif
 ;
 #endif
@@ -573,7 +574,7 @@ void* gUnk_09EF8E6C[1] = {
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9B44,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E658,
+    gMapUiSpriteUs_098A9B44,
 #endif
 };
 #endif
@@ -583,7 +584,7 @@ AnimHeader* gUnk_09EF8E70 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9B54
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E668
+    &gMapUiAnimUs_098A9B54
 #endif
 ;
 #endif
@@ -594,8 +595,8 @@ void* gUnk_09EF8E74[2] = {
     gMapUiSpriteUs_098A9B60,
     gMapUiSpriteUs_098A9B94,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E674,
-    gMapUiSpriteJp_0985E6A8,
+    gMapUiSpriteUs_098A9B60,
+    gMapUiSpriteUs_098A9B94,
 #endif
 };
 #endif
@@ -605,7 +606,7 @@ AnimHeader* gUnk_09EF8E7C =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9BC8
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E6DC
+    &gMapUiAnimUs_098A9BC8
 #endif
 ;
 #endif
@@ -617,9 +618,9 @@ void* gUnk_09EF8E80[3] = {
     gMapUiSpriteUs_098A9C20,
     gMapUiSpriteUs_098A9C42,
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E6E8,
-    gMapUiSpriteJp_0985E734,
-    gMapUiSpriteJp_0985E756,
+    gMapUiSpriteUs_098A9BD4,
+    gMapUiSpriteUs_098A9C20,
+    gMapUiSpriteUs_098A9C42,
 #endif
 };
 #endif
@@ -629,7 +630,7 @@ void* gUnk_09EF8E8C =
 #if defined(VERSION_US)
     gMapUiSpriteUs_098A9C5E
 #elif defined(VERSION_JP)
-    gMapUiSpriteJp_0985E772
+    gMapUiSpriteUs_098A9C5E
 #endif
 ;
 #endif
@@ -639,182 +640,182 @@ AnimHeader* gUnk_09EF8E90 =
 #if defined(VERSION_US)
     &gMapUiAnimUs_098A9C7A
 #elif defined(VERSION_JP)
-    &gMapUiAnimJp_0985E78E
+    &gMapUiAnimUs_098A9C7A
 #endif
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F84498 =
-    &gMapUiAnimEu_09887C24
+    &gMapUiAnimUs_098A9480
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F8449C =
-    gMapUiSpriteEu_09887C30
+    gMapUiSpriteUs_098A948C
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844A0 =
-    &gMapUiAnimEu_09887C3A
+    &gMapUiAnimUs_098A9496
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844A4 =
-    gMapUiSpriteEu_09887C44
+    gMapUiSpriteUs_098A94A0
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844A8 =
-    &gMapUiAnimEu_09887C4E
+    &gMapUiAnimUs_098A94AA
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844AC =
-    gMapUiSpriteEu_09887C58
+    gMapUiSpriteUs_098A94B4
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844B0 =
-    &gMapUiAnimEu_09887C62
+    &gMapUiAnimUs_098A94BE
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844B4 =
-    gMapUiSpriteEu_09887C6C
+    gMapUiSpriteUs_098A94C8
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844B8 =
-    &gMapUiAnimEu_09887C76
+    &gMapUiAnimUs_098A94D2
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844BC =
-    gMapUiSpriteEu_09887C80
+    gMapUiSpriteUs_098A94DC
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844C0 =
-    &gMapUiAnimEu_09887C96
+    &gMapUiAnimUs_098A94F2
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844C4 =
-    gMapUiSpriteEu_09887CA0
+    gMapUiSpriteUs_098A94FC
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844C8 =
-    &gMapUiAnimEu_09887CB6
+    &gMapUiAnimUs_098A9512
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844CC =
-    gMapUiSpriteEu_09887CC0
+    gMapUiSpriteUs_098A951C
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844D0 =
-    gMapUiSpriteEu_09887CCA
+    gMapUiSpriteUs_098A9526
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844D4 =
-    gMapUiSpriteEu_09887CD4
+    gMapUiSpriteUs_098A9530
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844D8 =
-    gMapUiSpriteEu_09887CDE
+    gMapUiSpriteUs_098A953A
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844DC =
-    gMapUiSpriteEu_09887CE8
+    gMapUiSpriteUs_098A9544
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844E0 =
-    gMapUiSpriteEu_09887CF2
+    gMapUiSpriteUs_098A954E
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844E4 =
-    gMapUiSpriteEu_09887CFC
+    gMapUiSpriteUs_098A9558
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844E8 =
-    gMapUiSpriteEu_09887D06
+    gMapUiSpriteUs_098A9562
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844EC =
-    &gMapUiAnimEu_09887D10
+    &gMapUiAnimUs_098A956C
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844F0 =
-    &gMapUiAnimEu_09887D2E
+    &gMapUiAnimUs_098A958A
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844F4 =
-    &gMapUiAnimEu_09887D4C
+    &gMapUiAnimUs_098A95A8
 ;
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F844F8 =
-    &gMapUiAnimEu_09887D6A
+    &gMapUiAnimUs_098A95C6
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F844FC[4] = {
-    gMapUiSpriteEu_09887D88,
-    gMapUiSpriteEu_09887DDA,
-    gMapUiSpriteEu_09887DFC,
-    gMapUiSpriteEu_09887E1E,
+    gMapUiSpriteUs_098A95E4,
+    gMapUiSpriteUs_098A9636,
+    gMapUiSpriteUs_098A9658,
+    gMapUiSpriteUs_098A967A,
 };
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F8450C =
-    &gMapUiAnimEu_09887E3A
+    &gMapUiAnimUs_098A9696
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F84510[4] = {
-    gMapUiSpriteEu_09887E44,
-    gMapUiSpriteEu_09887E96,
-    gMapUiSpriteEu_09887EB8,
-    gMapUiSpriteEu_09887EDA,
+    gMapUiSpriteUs_098A96A0,
+    gMapUiSpriteUs_098A9710,
+    gMapUiSpriteUs_098A9780,
+    gMapUiSpriteUs_098A97F0,
 };
 #endif
 
@@ -1180,37 +1181,37 @@ AnimHeader* gUnkEu_09F84724 =
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F84728[1] = {
-    gMapUiSpriteEu_09889A1C,
+    gMapUiSpriteUs_098A9AC0,
 };
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F8472C =
-    &gMapUiAnimEu_09889A2C
+    &gMapUiAnimUs_098A9AD6
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F84730[1] = {
-    gMapUiSpriteEu_09889A38,
+    gMapUiSpriteUs_098A9AE0,
 };
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F84734 =
-    &gMapUiAnimEu_09889A90
+    &gMapUiAnimUs_098A9B38
 ;
 #endif
 
 #if defined(VERSION_EU)
 void* gUnkEu_09F84738[2] = {
-    gMapUiSpriteEu_09889A9C,
-    gMapUiSpriteEu_09889AD0,
+    gMapUiSpriteUs_098A9B60,
+    gMapUiSpriteUs_098A9B94,
 };
 #endif
 
 #if defined(VERSION_EU)
 AnimHeader* gUnkEu_09F84740 =
-    &gMapUiAnimEu_09889B04
+    &gMapUiAnimUs_098A9BC8
 ;
 #endif

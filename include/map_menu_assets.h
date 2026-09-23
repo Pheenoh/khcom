@@ -8,7 +8,6 @@ extern u8 gUnkEu_0988519C[];
 extern u8 gUnkEu_0988551E[];
 extern u8 gUnkEu_09885862[];
 extern u8 gUnkEu_09885BA6[];
-extern u8 gUnkEu_09885EEA[];
 #endif
 
 #endif

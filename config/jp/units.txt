@@ -191,7 +191,8 @@ asset_gfx_gap_32_at_09036277.s
 card_premire_chance.c
 asset_gfx_gap_32_at_090362A3.s
 card_name.c
-asset_gfx_gap_32_at_09036300.s
+premium_card_effect_tiles.s
+mode_premire_name_text.s
 card_mode_premire.c
 asset_gfx_gap_33_gap_1.s
 card_level_up.c
@@ -308,7 +309,6 @@ event_background_palettes_2.s
 sprites_evt_palettes.s
 event_background_palettes_3.s
 sprite_palettes_6.s
-asset_gfx_gap_43_at_09617C58.s
 mode_sio.c
 mode_wlogo.c
 wlogo.c
@@ -421,7 +421,6 @@ map_rooms.c
 asset_gfx_gap_185_at_098566B4_at_09856FB4.s
 map_spawn_data.c
 sprites_map_frames_3.s
-asset_gfx_gap_185_at_098566B4_at_09856FB4_at_098582E0.s
 map_room_tiles_1.s
 map_tile_animation_tiles_5.s
 map_room_tiles_2.s
@@ -488,8 +487,10 @@ asset_gfx_gap_205_at_09A541C8.s
 mode_staffroll.c
 sprites_staff_roll_tiles_1.s
 sroll.c
-asset_gfx_gap_212_at_09A544FF.s
-asset_fmv.s
+sroll_rodata.s
+staff_roll_audio.s
+audio_block_codec_tables.s
+sprites_staff_roll_frames_4.s
 sprites_bos6_frames_1.s
 sprites_staff_roll_frames_1.s
 sprites_bos7_frames_1.s

@@ -1978,7 +1978,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
 u8 func_080F1A84(MapGmkTutorialWork* w) {
     if (gFieldState->flags & 0x200000) {
-        UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994C364);
+        UpdateSpriteFrameTiles(w->tiles, gMapUiSpriteUs_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
         w->update = func_080F1ACC;
     }
@@ -2000,7 +2000,7 @@ void Task_MapGmk_Tutorial_0(MapGmkTutorialWork* w) {
     w->unk_01A = 32;
     w->palette = LoadObjPalette(&gUnk_099910C4[0x140], 32);
     w->tiles = AllocSpriteFrameTiles(0x400);
-    UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994BF64);
+    UpdateSpriteFrameTiles(w->tiles, gMapUiSpriteUs_098A94A0, gUnk_0994BF64);
     ColliderInit(&w->collider, 6, 16, 0);
     ColliderSetPosition(&w->collider, w->x, w->y, w->z);
     w->unk_0A8 = 0;

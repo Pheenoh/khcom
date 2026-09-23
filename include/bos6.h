@@ -601,7 +601,6 @@ void func_0810A51C(PcWork* work, TaskPool* pool);
 
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];
-extern u8 gUnk_09C448D2[];
 extern u8 gUnk_08F69BC4[];
 extern const BattleBackgroundDef gUnk_09A4CF6C;
 extern const EmyKind gUnk_09A4CF5C;

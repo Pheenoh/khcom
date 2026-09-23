@@ -3,6 +3,7 @@
 #include "sprites_evt.h"
 #include "battle_backgrounds.h"
 #include "event_backgrounds.h"
+#include "sprites_map.h"
 
 const void* gUnk_09EE2864[4] = {
     gUnk_0952EAB8,
@@ -1725,7 +1726,7 @@ void* gUnk_09EE2EF8[4] = {
     gUnk_09864E28,
     gUnk_09866668,
     gUnk_0986700C,
-    gUnk_098A94A0,
+    gMapUiSpriteUs_098A94A0,
 };
 
 const void* gUnk_09EE2F08[16] = {
