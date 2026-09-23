@@ -57,7 +57,7 @@ objects:
     end: 0x09A6FCA0
   - name: sprites_moogle_shop_maps.s
     start: 0x09A89EA0
-    end: 0x09A97A20
+    end: 0x09A9A220
   - name: sprites_moogle_shop_palettes.s
     start: 0x09A9B240
     end: 0x09A9B940
@@ -2787,3 +2787,43 @@ entries:
   eu:
     address: 0x09A96A20
     size: 256
+- name: gUnkEu_09A97A20
+  format: tilemap
+  eu:
+    address: 0x09A97A20
+    size: 1280
+- name: gUnkEu_09A97F20
+  format: tilemap
+  eu:
+    address: 0x09A97F20
+    size: 1280
+- name: gUnkEu_09A98420
+  format: tilemap
+  eu:
+    address: 0x09A98420
+    size: 1280
+- name: gUnkEu_09A98920
+  format: tilemap
+  eu:
+    address: 0x09A98920
+    size: 1280
+- name: gUnkEu_09A98E20
+  format: tilemap
+  eu:
+    address: 0x09A98E20
+    size: 1280
+- name: gUnkEu_09A99320
+  format: tilemap
+  eu:
+    address: 0x09A99320
+    size: 1280
+- name: gUnkEu_09A99820
+  format: tilemap
+  eu:
+    address: 0x09A99820
+    size: 1280
+- name: gUnkEu_09A99D20
+  format: tilemap
+  eu:
+    address: 0x09A99D20
+    size: 1280

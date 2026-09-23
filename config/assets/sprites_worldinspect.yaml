@@ -96,7 +96,7 @@ objects:
     end: 0x099B7260
   - name: sprites_worldinspect_tiles.s
     start: 0x09A24480
-    end: 0x09A4F3C0
+    end: 0x09A60380
   - name: sprites_worldinspect_maps.s
     start: 0x09A854A0
     end: 0x09A89EA0
@@ -6630,3 +6630,147 @@ entries:
   eu:
     address: 0x09A44D80
     size: 640
+- name: gUnkEu_09A4F3C0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A4F3C0
+    size: 2048
+- name: gUnkEu_09A4FBC0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A4FBC0
+    size: 2048
+- name: gUnkEu_09A503C0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A503C0
+    size: 2048
+- name: gUnkEu_09A50BC0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A50BC0
+    size: 2048
+- name: gUnkEu_09A513C0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A513C0
+    size: 2048
+- name: gUnkEu_09A51BC0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A51BC0
+    size: 2048
+- name: gUnkEu_09A523C0
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x09A523C0
+    size: 2048
+- name: gUnkEu_09A52BC0
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x09A52BC0
+    size: 1984
+- name: gUnk_09A53380
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A53380
+    size: 3328
+- name: gUnk_09A54080
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A54080
+    size: 3328
+- name: gUnk_09A54D80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A54D80
+    size: 3328
+- name: gUnk_09A55A80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A55A80
+    size: 3328
+- name: gUnkEu_09A56780
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A56780
+    size: 3328
+- name: gUnkEu_09A57480
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A57480
+    size: 3328
+- name: gUnkEu_09A58180
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A58180
+    size: 3328
+- name: gUnkEu_09A58E80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A58E80
+    size: 3328
+- name: gUnk_09A59B80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A59B80
+    size: 3328
+- name: gUnk_09A5A880
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5A880
+    size: 3328
+- name: gUnk_09A5B580
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5B580
+    size: 3328
+- name: gUnk_09A5C280
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5C280
+    size: 3328
+- name: gUnkEu_09A5CF80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5CF80
+    size: 3328
+- name: gUnkEu_09A5DC80
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5DC80
+    size: 3328
+- name: gUnkEu_09A5E980
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5E980
+    size: 3328
+- name: gUnkEu_09A5F680
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09A5F680
+    size: 3328

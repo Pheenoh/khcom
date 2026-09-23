@@ -93,10 +93,10 @@ objects:
     end: 0x09793C20
   - name: sprites_pooh_tiles_2.s
     start: 0x09795660
-    end: 0x097966A0
+    end: 0x097ADE00
   - name: sprites_pooh_maps.s
     start: 0x09811AC0
-    end: 0x09814240
+    end: 0x09814A40
 entries:
 - name: gUnk_09EF5298
   record: SpriteTable
@@ -16991,3 +16991,61 @@ entries:
   eu:
     address: 0x09811AC0
     size: 10112
+- name: gUnkEu_097966A0
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x097966A0
+    size: 4160
+- name: gUnkEu_097976E0
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x097976E0
+    size: 4160
+- name: gUnkEu_09798720
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x09798720
+    size: 4160
+- name: gUnkEu_09799760
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x09799760
+    size: 4160
+- name: gUnkEu_0979A7A0
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x0979A7A0
+    size: 4160
+- name: gUnkEu_0979B7E0
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x0979B7E0
+    size: 4160
+- name: gUnkEu_0979C820
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x0979C820
+    size: 4160
+- name: gUnkEu_0979D860
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x0979D860
+    size: 4160
+- name: gUnkEu_0979E8A0
+  format: tiles4
+  eu:
+    address: 0x0979E8A0
+    size: 62816
+- name: gUnkEu_09814240
+  format: tilemap
+  eu:
+    address: 0x09814240
+    size: 2048

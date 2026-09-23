@@ -54,9 +54,9 @@ objects:
     end: 0x0973C884
   - name: sprites_allmap_tiles.s
     start: 0x09793C20
-    end: 0x09794B80
+    end: 0x09795660
   - name: sprites_allmap_maps.s
-    start: 0x09811140
+    start: 0x0980F840
     end: 0x09811AC0
   - name: sprites_allmap_palettes.s
     start: 0x0981E8A0
@@ -1924,3 +1924,33 @@ entries:
   eu:
     address: 0x09811640
     size: 28
+- name: gUnkEu_09794B80
+  format: tiles4
+  eu:
+    address: 0x09794B80
+    size: 2784
+- name: gUnkEu_0980F840
+  format: tilemap
+  eu:
+    address: 0x0980F840
+    size: 1280
+- name: gUnkEu_0980FD40
+  format: tilemap
+  eu:
+    address: 0x0980FD40
+    size: 1280
+- name: gUnkEu_09810240
+  format: tilemap
+  eu:
+    address: 0x09810240
+    size: 1280
+- name: gUnkEu_09810740
+  format: tilemap
+  eu:
+    address: 0x09810740
+    size: 1280
+- name: gUnkEu_09810C40
+  format: tilemap
+  eu:
+    address: 0x09810C40
+    size: 1280

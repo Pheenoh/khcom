@@ -35,13 +35,13 @@ objects:
     end: 0x09061F48
   - name: sprites_deck_menu_tiles_1.s
     start: 0x093BE294
-    end: 0x093D1694
+    end: 0x093D2694
   - name: sprites_deck_menu_tiles_2.s
     start: 0x093D2694
     end: 0x093D2754
   - name: sprites_deck_menu_maps.s
     start: 0x094CAD94
-    end: 0x094D4594
+    end: 0x094D5594
   eu:
   - name: sprites_deck_menu.c
     start: 0x09F77128
@@ -51,10 +51,10 @@ objects:
     end: 0x0919728C
   - name: sprites_deck_menu_tiles.s
     start: 0x094DCCE4
-    end: 0x094F03A4
+    end: 0x094F22C4
   - name: sprites_deck_menu_maps.s
     start: 0x09532B24
-    end: 0x0953C324
+    end: 0x0953CB24
 entries:
 - name: gUnk_09EEB008
   record: SpriteTable
@@ -1588,3 +1588,47 @@ entries:
   eu:
     address: 0x094EB184
     size: 800
+- name: gUnkJp_093D1694
+  format: tiles4
+  width: 32
+  jp:
+    address: 0x093D1694
+    size: 4096
+- name: gUnkJp_094D4594
+  format: tilemap
+  jp:
+    address: 0x094D4594
+    size: 2048
+- name: gUnkJp_094D4D94
+  format: tilemap
+  jp:
+    address: 0x094D4D94
+    size: 2048
+- name: gUnkEu_094F03A4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094F03A4
+    size: 2048
+- name: gUnkEu_094F0BA4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094F0BA4
+    size: 2048
+- name: gUnkEu_094F13A4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094F13A4
+    size: 2048
+- name: gUnkEu_094F1BA4
+  format: tiles4
+  eu:
+    address: 0x094F1BA4
+    size: 1824
+- name: gUnkEu_0953C324
+  format: tilemap
+  eu:
+    address: 0x0953C324
+    size: 2048

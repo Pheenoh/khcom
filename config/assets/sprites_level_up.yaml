@@ -54,7 +54,7 @@ objects:
     end: 0x0917E264
   - name: sprites_level_up_tiles.s
     start: 0x094D0304
-    end: 0x094D53C4
+    end: 0x094DCCE4
   - name: sprites_level_up_maps_1.s
     start: 0x09531224
     end: 0x09532B24
@@ -4552,3 +4552,50 @@ entries:
   eu:
     address: 0x09541B24
     size: 2048
+- name: gUnkEu_094D53C4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094D53C4
+    size: 2048
+- name: gUnkEu_094D5BC4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094D5BC4
+    size: 2048
+- name: gUnkEu_094D63C4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094D63C4
+    size: 2048
+- name: gUnkEu_094D6BC4
+  format: tiles4
+  eu:
+    address: 0x094D6BC4
+    size: 1824
+- name: gUnkEu_094D72E4
+  format: tiles4
+  width: 4
+  eu:
+    address: 0x094D72E4
+    size: 5760
+- name: gUnkEu_094D8964
+  format: tiles4
+  width: 4
+  eu:
+    address: 0x094D8964
+    size: 5760
+- name: gUnkEu_094D9FE4
+  format: tiles4
+  width: 4
+  eu:
+    address: 0x094D9FE4
+    size: 5760
+- name: gUnkEu_094DB664
+  format: tiles4
+  width: 4
+  eu:
+    address: 0x094DB664
+    size: 5760

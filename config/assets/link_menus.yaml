@@ -24,13 +24,13 @@ objects:
   eu:
   - name: link_menu_tiles.s
     start: 0x096769CC
-    end: 0x0967CB6C
+    end: 0x0967E18C
   - name: link_menu_maps_1.s
     start: 0x096BD18C
-    end: 0x096C098C
+    end: 0x096C118C
   - name: link_menu_maps_2.s
     start: 0x096C118C
-    end: 0x096C198C
+    end: 0x096C818C
 entries:
 - name: gUnk_096ACA44
   format: tiles4
@@ -331,3 +331,78 @@ entries:
   jp:
     address: 0x096B4760
     size: 128
+- name: gUnkEu_0967CB6C
+  format: tiles4
+  eu:
+    address: 0x0967CB6C
+    size: 5664
+- name: gUnkEu_096C098C
+  format: tilemap
+  eu:
+    address: 0x096C098C
+    size: 2048
+- name: gUnkEu_096C198C
+  format: tilemap
+  eu:
+    address: 0x096C198C
+    size: 2048
+- name: gUnkEu_096C218C
+  format: tilemap
+  eu:
+    address: 0x096C218C
+    size: 2048
+- name: gUnkEu_096C298C
+  format: tilemap
+  eu:
+    address: 0x096C298C
+    size: 2048
+- name: gUnkEu_096C318C
+  format: tilemap
+  eu:
+    address: 0x096C318C
+    size: 2048
+- name: gUnkEu_096C398C
+  format: tilemap
+  eu:
+    address: 0x096C398C
+    size: 2048
+- name: gUnkEu_096C418C
+  format: tilemap
+  eu:
+    address: 0x096C418C
+    size: 2048
+- name: gUnkEu_096C498C
+  format: tilemap
+  eu:
+    address: 0x096C498C
+    size: 2048
+- name: gUnkEu_096C518C
+  format: tilemap
+  eu:
+    address: 0x096C518C
+    size: 2048
+- name: gUnkEu_096C598C
+  format: tilemap
+  eu:
+    address: 0x096C598C
+    size: 2048
+- name: gUnkEu_096C618C
+  format: tilemap
+  eu:
+    address: 0x096C618C
+    size: 2048
+- name: gUnkEu_096C698C
+  format: tilemap
+  eu:
+    address: 0x096C698C
+    size: 2048
+- name: gUnkEu_096C718C
+  format: tilemap
+  eu:
+    address: 0x096C718C
+    size: 2048
+- name: gUnkEu_096C798C
+  format: tilemap
+  eu:
+    address: 0x096C798C
+    size: 2048

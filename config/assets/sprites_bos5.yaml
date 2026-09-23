@@ -69,7 +69,7 @@ objects:
     end: 0x09A0A480
   - name: sprites_bos5_maps.s
     start: 0x09A724A0
-    end: 0x09A840A0
+    end: 0x09A854A0
 entries:
 - name: gUnk_09EF9740
   record: SpriteTable
@@ -1894,3 +1894,27 @@ entries:
   eu:
     address: 0x09A02CC0
     size: 4032
+- name: gUnkEu_09A840A0
+  format: tilemap
+  declare: false
+  eu:
+    address: 0x09A840A0
+    size: 1280
+- name: gUnkEu_09A845A0
+  format: tilemap
+  declare: false
+  eu:
+    address: 0x09A845A0
+    size: 1280
+- name: gUnkEu_09A84AA0
+  format: tilemap
+  declare: false
+  eu:
+    address: 0x09A84AA0
+    size: 1280
+- name: gUnkEu_09A84FA0
+  format: tilemap
+  declare: false
+  eu:
+    address: 0x09A84FA0
+    size: 1280

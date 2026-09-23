@@ -48,7 +48,7 @@ objects:
     end: 0x0919AC30
   - name: sprites_continue_tiles.s
     start: 0x0954C284
-    end: 0x0954C7B4
+    end: 0x0954DD34
   - name: sprites_continue_maps.s
     start: 0x095A3D74
     end: 0x095A3F4C
@@ -906,4 +906,28 @@ entries:
   eu:
     address: 0x095A3D74
     size: 472
+    compress: lz77
+- name: gUnkEu_0954C7B4
+  format: tiles4
+  eu:
+    address: 0x0954C7B4
+    size: 1384
+    compress: lz77
+- name: gUnkEu_0954CD1C
+  format: tiles4
+  eu:
+    address: 0x0954CD1C
+    size: 1308
+    compress: lz77
+- name: gUnkEu_0954D238
+  format: tiles4
+  eu:
+    address: 0x0954D238
+    size: 1384
+    compress: lz77
+- name: gUnkEu_0954D7A0
+  format: tiles4
+  eu:
+    address: 0x0954D7A0
+    size: 1428
     compress: lz77

@@ -57,7 +57,7 @@ objects:
     end: 0x097B1D00
   - name: sprites_title_maps_1.s
     start: 0x09814A40
-    end: 0x09814E40
+    end: 0x09815640
   - name: sprites_title_maps_2.s
     start: 0x09815640
     end: 0x09815E40
@@ -4649,3 +4649,8 @@ entries:
   eu:
     address: 0x0981F0C0
     size: 32
+- name: gUnkEu_09814E40
+  format: tilemap
+  eu:
+    address: 0x09814E40
+    size: 2048

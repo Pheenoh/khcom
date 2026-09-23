@@ -54,7 +54,7 @@ objects:
     end: 0x09780840
   - name: sprites_status_tiles.s
     start: 0x097D62A0
-    end: 0x097D8300
+    end: 0x097DAF60
   - name: sprites_status_maps.s
     start: 0x0981BE40
     end: 0x0981D740
@@ -1418,3 +1418,26 @@ entries:
   eu:
     address: 0x0981F920
     size: 32
+- name: gUnkEu_097D8300
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x097D8300
+    size: 3072
+- name: gUnkEu_097D8F00
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x097D8F00
+    size: 3072
+- name: gUnkEu_097D9B00
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x097D9B00
+    size: 3072
+- name: gUnkEu_097DA700
+  format: tiles4
+  eu:
+    address: 0x097DA700
+    size: 2144

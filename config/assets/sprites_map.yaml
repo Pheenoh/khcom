@@ -87,16 +87,16 @@ objects:
     end: 0x094C3B00
   - name: sprites_map_frames_3.s
     start: 0x09834CCC
-    end: 0x09885114
+    end: 0x09885E68
   - name: sprites_map_tiles_1.s
     start: 0x0991B5F0
-    end: 0x099452B0
+    end: 0x0994A6B0
   - name: sprites_map_tiles_2.s
     start: 0x0994A6B0
-    end: 0x0994A8B0
+    end: 0x0994ACB0
   - name: sprites_map_tiles_3.s
     start: 0x0994ACB0
-    end: 0x0996D130
+    end: 0x0996F130
   - name: sprites_map_maps.s
     start: 0x0998BF30
     end: 0x09995F30
@@ -18339,3 +18339,266 @@ entries:
   eu:
     address: 0x09969ED0
     size: 4480
+- name: gMapUiSpriteEu_09885114
+  record: Sprite
+  oam:
+  - [16384, 32768, 0]
+  - [16384, 32800, 8]
+  - [32768, 64, 16]
+  eu:
+    address: 0x09885114
+- name: gMapUiSpriteEu_0988512A
+  record: Sprite
+  oam:
+  - [16384, 16768, 18]
+  - [16384, 16800, 18]
+  - [16384, 16832, 18]
+  - [16384, 16864, 18]
+  - [16384, 16384, 18]
+  - [16384, 16416, 18]
+  - [16384, 16448, 18]
+  - [16384, 96, 22]
+  eu:
+    address: 0x0988512A
+- name: gMapUiSpriteEu_0988515E
+  record: Sprite
+  oam:
+  - [16384, 24960, 18]
+  - [16384, 24992, 18]
+  - [16384, 25024, 18]
+  - [16384, 25056, 18]
+  - [16384, 24576, 18]
+  - [16384, 24608, 18]
+  - [16384, 24640, 18]
+  - [16384, 8288, 22]
+  eu:
+    address: 0x0988515E
+- name: gMapUiAnimEu_09885192
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  declare: false
+  eu:
+    address: 0x09885192
+- name: gUnkEu_0988519C
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x0988519C
+    size: 768
+- name: gMapUiSpriteEu_0988549C
+  record: Sprite
+  oam:
+  - [16384, 32768, 0]
+  - [16384, 32800, 8]
+  eu:
+    address: 0x0988549C
+- name: gMapUiSpriteEu_098854AC
+  record: Sprite
+  oam:
+  - [16384, 16768, 16]
+  - [16384, 16800, 16]
+  - [16384, 16832, 16]
+  - [16384, 16864, 16]
+  - [16384, 16384, 16]
+  - [16384, 16416, 16]
+  - [16384, 16448, 16]
+  - [16384, 96, 20]
+  eu:
+    address: 0x098854AC
+- name: gMapUiSpriteEu_098854E0
+  record: Sprite
+  oam:
+  - [16384, 24960, 16]
+  - [16384, 24992, 16]
+  - [16384, 25024, 16]
+  - [16384, 25056, 16]
+  - [16384, 24576, 16]
+  - [16384, 24608, 16]
+  - [16384, 24640, 16]
+  - [16384, 8288, 20]
+  eu:
+    address: 0x098854E0
+- name: gMapUiAnimEu_09885514
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  declare: false
+  eu:
+    address: 0x09885514
+- name: gUnkEu_0988551E
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x0988551E
+    size: 704
+- name: gMapUiSpriteEu_098857E0
+  record: Sprite
+  align: 4
+  oam:
+  - [16384, 32768, 0]
+  - [16384, 32800, 8]
+  eu:
+    address: 0x098857E0
+- name: gMapUiSpriteEu_098857F0
+  record: Sprite
+  oam:
+  - [16384, 16768, 16]
+  - [16384, 16800, 16]
+  - [16384, 16832, 16]
+  - [16384, 16864, 16]
+  - [16384, 16384, 16]
+  - [16384, 16416, 16]
+  - [16384, 16448, 16]
+  - [16384, 96, 20]
+  eu:
+    address: 0x098857F0
+- name: gMapUiSpriteEu_09885824
+  record: Sprite
+  oam:
+  - [16384, 24960, 16]
+  - [16384, 24992, 16]
+  - [16384, 25024, 16]
+  - [16384, 25056, 16]
+  - [16384, 24576, 16]
+  - [16384, 24608, 16]
+  - [16384, 24640, 16]
+  - [16384, 8288, 20]
+  eu:
+    address: 0x09885824
+- name: gMapUiAnimEu_09885858
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  declare: false
+  eu:
+    address: 0x09885858
+- name: gUnkEu_09885862
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x09885862
+    size: 704
+- name: gMapUiSpriteEu_09885B24
+  record: Sprite
+  align: 4
+  oam:
+  - [16384, 32768, 0]
+  - [16384, 32800, 8]
+  eu:
+    address: 0x09885B24
+- name: gMapUiSpriteEu_09885B34
+  record: Sprite
+  oam:
+  - [16384, 16768, 16]
+  - [16384, 16800, 16]
+  - [16384, 16832, 16]
+  - [16384, 16864, 16]
+  - [16384, 16384, 16]
+  - [16384, 16416, 16]
+  - [16384, 16448, 16]
+  - [16384, 96, 20]
+  eu:
+    address: 0x09885B34
+- name: gMapUiSpriteEu_09885B68
+  record: Sprite
+  oam:
+  - [16384, 24960, 16]
+  - [16384, 24992, 16]
+  - [16384, 25024, 16]
+  - [16384, 25056, 16]
+  - [16384, 24576, 16]
+  - [16384, 24608, 16]
+  - [16384, 24640, 16]
+  - [16384, 8288, 20]
+  eu:
+    address: 0x09885B68
+- name: gMapUiAnimEu_09885B9C
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  declare: false
+  eu:
+    address: 0x09885B9C
+- name: gUnkEu_09885BA6
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x09885BA6
+    size: 704
+- name: gUnkEu_099452B0
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x099452B0
+    size: 5376
+- name: gUnkEu_099467B0
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x099467B0
+    size: 5376
+- name: gUnkEu_09947CB0
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x09947CB0
+    size: 5376
+- name: gUnkEu_099491B0
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x099491B0
+    size: 5376
+- name: gUnkEu_0994A8B0
+  format: tiles4
+  width: 16
+  eu:
+    address: 0x0994A8B0
+    size: 512
+- name: gUnkEu_0994AAB0
+  format: tiles4
+  width: 16
+  eu:
+    address: 0x0994AAB0
+    size: 512
+- name: gUnkEu_0996D130
+  format: tiles4
+  width: 32
+  declare: false
+  eu:
+    address: 0x0996D130
+    size: 2048
+- name: gUnkEu_0996D930
+  format: tiles4
+  width: 32
+  declare: false
+  eu:
+    address: 0x0996D930
+    size: 2048
+- name: gUnkEu_0996E130
+  format: tiles4
+  width: 32
+  declare: false
+  eu:
+    address: 0x0996E130
+    size: 2048
+- name: gUnkEu_0996E930
+  format: tiles4
+  width: 32
+  declare: false
+  eu:
+    address: 0x0996E930
+    size: 2048

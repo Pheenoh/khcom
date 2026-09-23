@@ -12,6 +12,15 @@ objects:
   - name: sprites_language_select_frames.s
     start: 0x08C9C97C
     end: 0x08C9CBF8
+  - name: sprites_language_select_palettes.s
+    start: 0x08F6A6FC
+    end: 0x08F6A73C
+  - name: sprites_language_select_tiles.s
+    start: 0x08F77180
+    end: 0x08F79038
+  - name: sprites_language_select_maps.s
+    start: 0x08F7EBF8
+    end: 0x08F7F15C
 entries:
 - name: gUnkEu_08C9C97C
   record: Sprite
@@ -118,3 +127,27 @@ entries:
   eu:
     address: 0x08C9CA58
     size: 416
+- name: gUnkEu_08F6A6FC
+  format: palette
+  eu:
+    address: 0x08F6A6FC
+    size: 64
+- name: gUnkEu_08F77180
+  format: tiles4
+  width: 2
+  eu:
+    address: 0x08F77180
+    size: 7864
+    compress: lz77
+- name: gUnkEu_08F7EBF8
+  format: tilemap
+  eu:
+    address: 0x08F7EBF8
+    size: 952
+    compress: lz77
+- name: gUnkEu_08F7EFB0
+  format: tilemap
+  eu:
+    address: 0x08F7EFB0
+    size: 428
+    compress: lz77

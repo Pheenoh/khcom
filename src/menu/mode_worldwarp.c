@@ -26,21 +26,21 @@ extern u8 gUnkEu_09A503C0[];
 extern u8 gUnkEu_09A513C0[];
 extern u8 gUnkEu_09A523C0[];
 extern u8 gUnkEu_09A56780[];
-extern u8 gUnkEu_09A53380[];
+extern u8 gUnk_09A53380[];
 extern u8 gUnkEu_09A5CF80[];
-extern u8 gUnkEu_09A59B80[];
+extern u8 gUnk_09A59B80[];
 extern u8 gUnkEu_09A57480[];
-extern u8 gUnkEu_09A54080[];
+extern u8 gUnk_09A54080[];
 extern u8 gUnkEu_09A5DC80[];
-extern u8 gUnkEu_09A5A880[];
+extern u8 gUnk_09A5A880[];
 extern u8 gUnkEu_09A58180[];
-extern u8 gUnkEu_09A54D80[];
+extern u8 gUnk_09A54D80[];
 extern u8 gUnkEu_09A5E980[];
-extern u8 gUnkEu_09A5B580[];
+extern u8 gUnk_09A5B580[];
 extern u8 gUnkEu_09A58E80[];
-extern u8 gUnkEu_09A55A80[];
+extern u8 gUnk_09A55A80[];
 extern u8 gUnkEu_09A5F680[];
-extern u8 gUnkEu_09A5C280[];
+extern u8 gUnk_09A5C280[];
 extern u8 gUnkEu_099AAC2C[];
 extern u8 gUnkEu_099ABA18[];
 extern u8 gUnkEu_099ABFA0[];
@@ -625,38 +625,38 @@ void mode_worldwarp_0(void) {
     case 1:
         if ((gGameState.flags & 8) == 0) {
             func_08100670(gGameState.floor, gUnkEu_09A56780, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A53380, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A53380, (u8*)GetBgCharBase(0) + 0x20);
         } else {
             func_08100670(gGameState.floor, gUnkEu_09A5CF80, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A59B80, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A59B80, (u8*)GetBgCharBase(0) + 0x20);
         }
         break;
     case 4:
         if ((gGameState.flags & 8) == 0) {
             func_08100670(gGameState.floor, gUnkEu_09A57480, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A54080, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A54080, (u8*)GetBgCharBase(0) + 0x20);
         } else {
             func_08100670(gGameState.floor, gUnkEu_09A5DC80, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A5A880, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A5A880, (u8*)GetBgCharBase(0) + 0x20);
         }
         break;
     case 3:
         if ((gGameState.flags & 8) == 0) {
             func_08100670(gGameState.floor, gUnkEu_09A58180, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A54D80, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A54D80, (u8*)GetBgCharBase(0) + 0x20);
         } else {
             func_08100670(gGameState.floor, gUnkEu_09A5E980, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A5B580, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A5B580, (u8*)GetBgCharBase(0) + 0x20);
         }
         break;
     case 2:
     default:
         if ((gGameState.flags & 8) == 0) {
             func_08100670(gGameState.floor, gUnkEu_09A58E80, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A55A80, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A55A80, (u8*)GetBgCharBase(0) + 0x20);
         } else {
             func_08100670(gGameState.floor, gUnkEu_09A5F680, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A5C280, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gUnk_020354E8, gUnk_09A5C280, (u8*)GetBgCharBase(0) + 0x20);
         }
         break;
     }
