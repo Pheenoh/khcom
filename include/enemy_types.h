@@ -17,7 +17,7 @@ typedef struct EmyDef {
     u16 unk_14;
     u16 unk_16;
     u16 unk_18;
-    u16 unk_1A;
+    u16 flags;
     EmyKind kind;
 } EmyDef;
 
@@ -33,7 +33,7 @@ typedef struct EmyWork {
     u32 unk_150;
     s16 unk_154;
     s16 unk_156;
-    u16 unk_158;
+    u16 flags;
     u8 unk_15A;
     u8 unk_15B;
     const EmyDef* def;

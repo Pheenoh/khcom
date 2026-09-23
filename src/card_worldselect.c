@@ -2245,7 +2245,7 @@ void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
     w->palette = 0;
     w->unk_A1 = 0;
     *(ReloadGageArgs*)&w->pool2 = *a;
-    w->unk_78 = 0;
+    w->flags = 0;
     w->unk_9C = 16;
     w->unk_84 = 0;
     w->unk_9F = 0;
@@ -2279,7 +2279,7 @@ void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
         w->unk_4C = gUnk_09033FF4[4][0];
         w->unk_50 = gUnk_09033FF4[4][1];
         w->angle = w->targetAngle = 0x2000;
-        w->unk_78 |= 0x8000000;
+        w->flags |= 0x8000000;
         break;
     case 2:
         w->unk_8C = gUnk_0903401C[0][0];
@@ -2306,7 +2306,7 @@ void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
     w->tiles5 = AllocObjTiles(0x100, 0);
     SetObjTileSource(w->tiles5, gUnk_09EE7578[w->unk_46]);
     func_08095A78(w->unk_20, w->tiles5, w->unk_46, d->unk_64);
-    w->unk_78 |= 0x1000026;
+    w->flags |= 0x1000026;
 
     if (d->unk_64 >= 0) {
         TaskPoolInit(&w->tasks, d->unk_64 + 1);
@@ -2357,7 +2357,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
         break;
     }
 
-    if ((w->unk_78 & 0x44) == 0x44) {
+    if ((w->flags & 0x44) == 0x44) {
         if (v == 1) {
             if ((s8)p->unk_65 == 2) {
                 switch (w->unk_40) {
@@ -2456,7 +2456,7 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
         } else {
             func_08095BC8(w->unk_20, w);
             p->unk_65 = 0;
-            w->unk_78 |= 0x8000000;
+            w->flags |= 0x8000000;
             m4aSongNumStop(200);
 
             switch (w->unk_40) {
@@ -2478,8 +2478,8 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
     }
 
     if (p->unk_64 < 0) {
-        if ((w->unk_78 & 0x4000000) == 0) {
-            w->unk_78 |= 0x4000000;
+        if ((w->flags & 0x4000000) == 0) {
+            w->flags |= 0x4000000;
             m4aSongNumStart(202);
         }
 
@@ -2498,14 +2498,14 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
 
     func_080958E0(w);
 
-    if (w->unk_78 & 0x4000) {
+    if (w->flags & 0x4000) {
         return 0;
     }
 
     func_08095A5C(w->unk_20);
     w->unk_5C[3] += 4;
 
-    if ((w->unk_78 & 0x20) == 0) {
+    if ((w->flags & 0x20) == 0) {
         SetTaskUpdate(a, (void*)func_080954C4);
         m4aSongNumStop(200);
 
@@ -2532,7 +2532,7 @@ u8 func_080954C4(ReloadGageWork* w, void* a) {
     w->unk_4C += (gUnk_09033FF4[4][0] - w->unk_4C) >> 1;
     w->unk_50 += (gUnk_09033FF4[4][1] - w->unk_50) >> 1;
 
-    if (w->unk_78 & 0x20) {
+    if (w->flags & 0x20) {
         SetTaskUpdate(a, (void*)Reload_Gage_1);
     }
 
@@ -2629,10 +2629,10 @@ void func_080958E0(ReloadGageWork* w) {
     w->unk_84 += (w->unk_88 - w->unk_84) >> 1;
     if (w->unk_9C > 0) {
         w->unk_9C--;
-        w->unk_78 &= ~0x40;
+        w->flags &= ~0x40;
     } else {
         w->unk_9C = 0;
-        w->unk_78 |= 0x40;
+        w->flags |= 0x40;
     }
 
     switch (w->unk_40) {

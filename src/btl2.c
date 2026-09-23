@@ -1377,10 +1377,10 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_28 = 0;
     work->gfx2 = gUnk_08B208E8;
-    work->unk_2C = 3;
+    work->flags = 3;
 
     if (src->unk_14 != 0) {
-        work->unk_2C = 11;
+        work->flags = 11;
     }
 
     switch (src->unk_12) {
@@ -1487,7 +1487,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
     }
 
     if (work->unk_30 == 0) {
-        if (!(work->unk_2C & 4)) {
+        if (!(work->flags & 4)) {
             if (gBtlWork->boundsCallback != 0) {
                 gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
@@ -1511,15 +1511,15 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             work->y += work->vy;
 
             if (work->z > work->unk_0C) {
-                work->unk_2C &= ~2;
+                work->flags &= ~2;
                 work->z = work->unk_0C;
                 work->vz = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
-                work->unk_2C |= 2;
+                work->flags |= 2;
             }
         }
 
-        if (work->unk_2C & 16) {
+        if (work->flags & 16) {
             hit = 0;
             f = gBtlWork->unk_068;
 
@@ -1624,15 +1624,15 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                 work->unk_30 = 1;
                 work->unk_28 = 0;
                 work->angle = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
-                work->unk_2C &= ~2;
-                work->unk_2C |= 1;
+                work->flags &= ~2;
+                work->flags |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
                 return 1;
             }
 
-            if (!(work->unk_2C & 8)) {
+            if (!(work->flags & 8)) {
                 if (work->unk_28 > 360 && (work->unk_28 & 3) == 0) {
-                    work->unk_2C ^= 1;
+                    work->flags ^= 1;
                 }
 
                 if (work->unk_28 > 420) {
@@ -1641,7 +1641,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             }
         } else {
             if (work->unk_28 > 10) {
-                work->unk_2C |= 16;
+                work->flags |= 16;
             }
         }
 
@@ -1670,7 +1670,7 @@ void task_btl_prize_2(BtlPrizeWork* work) {
     s16 y;
     s32 aff;
 
-    if (work->unk_2C & 1) {
+    if (work->flags & 1) {
         s32 pri = 0x800;
 
         WorldToScreen(&x, &y, work->x, work->y, work->z);
@@ -1678,7 +1678,7 @@ void task_btl_prize_2(BtlPrizeWork* work) {
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, pri,
                    (u16)(-4100 - (work->y >> 8) * 4));
 
-        if (work->unk_2C & 2) {
+        if (work->flags & 2) {
             WorldToScreen(&x, &y, work->x, work->y, work->unk_0C);
             DrawSprite(x, y, work->gfx2, work->tiles, work->palette, aff, pri, 0xFFFF);
         }
@@ -1714,10 +1714,10 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->gfx = AnimGetGfx(&work->anim);
     work->unk_28 = 0;
     work->gfx2 = gUnk_08B208E8;
-    work->unk_2C = 3;
+    work->flags = 3;
 
     if (src->unk_14 != 0) {
-        work->unk_2C = 11;
+        work->flags = 11;
     }
     work->unk_24 = 0x400;
     spd = 384;
@@ -1743,7 +1743,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
     }
 
     if (work->unk_30 == 0) {
-        if (!(work->unk_2C & 4)) {
+        if (!(work->flags & 4)) {
             if (gBtlWork->boundsCallback != 0) {
                 gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
@@ -1767,15 +1767,15 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
             work->y += work->vy;
 
             if (work->z > work->unk_0C) {
-                work->unk_2C &= ~2;
+                work->flags &= ~2;
                 work->z = work->unk_0C;
                 work->vz = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
-                work->unk_2C |= 2;
+                work->flags |= 2;
             }
         }
 
-        if (work->unk_2C & 16) {
+        if (work->flags & 16) {
             hit = 0;
             f = gBtlWork->unk_068;
 
@@ -1852,16 +1852,16 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 work->unk_30 = 1;
                 work->unk_28 = 0;
                 work->angle = GetAngle(work->actor->x, work->actor->y, work->x, work->y);
-                work->unk_2C &= ~2;
-                work->unk_2C |= 1;
+                work->flags &= ~2;
+                work->flags |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
                 work->gfx = AnimUpdate(&work->anim);
                 return 1;
             }
 
-            if (!(work->unk_2C & 8)) {
+            if (!(work->flags & 8)) {
                 if (work->unk_28 > 360 && (work->unk_28 & 3) == 0) {
-                    work->unk_2C ^= 1;
+                    work->flags ^= 1;
                 }
 
                 if (work->unk_28 > 420) {
@@ -1870,7 +1870,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
             }
         } else {
             if (work->unk_28 > 10) {
-                work->unk_2C |= 16;
+                work->flags |= 16;
             }
         }
 
@@ -1901,7 +1901,7 @@ void task_btl_premire_2(BtlPremireWork* work) {
     s16 y;
     s32 aff;
 
-    if (work->unk_2C & 1) {
+    if (work->flags & 1) {
         u16 anim = GetBattleSpritePriorityFlags(work->y);
 
         WorldToScreen(&x, &y, work->x, work->y, work->z);
@@ -1909,7 +1909,7 @@ void task_btl_premire_2(BtlPremireWork* work) {
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, anim,
                    (u16)(-4100 - (work->y >> 8) * 4));
 
-        if (work->unk_2C & 2) {
+        if (work->flags & 2) {
             WorldToScreen(&x, &y, work->x, work->y, work->unk_0C);
             DrawSprite(x, y, work->gfx2, work->tiles, work->palette, aff, anim, 0xFFFF);
         }

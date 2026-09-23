@@ -46,7 +46,7 @@ extern const PcAnimStep gUnk_09A4C818[];
 extern const PcAnimStep gUnk_09A4C860[];
 
 typedef struct PcSpriteCmd {
-    u8 unk_00;
+    u8 flags;
     u8 unk_01;
     s16 unk_02;
     s16 x;

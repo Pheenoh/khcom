@@ -42,7 +42,7 @@ typedef struct StaffRollSecnArg {
 typedef struct StaffRollWork {
     u8 unk_000;
     u8 unk_001;
-    u16 unk_002;
+    u16 flags;
     u16 unk_004;
     u16 unk_006;
     s32 unk_008;

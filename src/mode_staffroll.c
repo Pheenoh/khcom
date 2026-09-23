@@ -405,13 +405,13 @@ u8 func_08112C38(StaffRollWork* w) {
             w->unk_088 = 0;
             break;
         }
-        if ((w->unk_002 & 1) != 0 || (w->unk_004 & 0x100) != 0) {
+        if ((w->flags & 1) != 0 || (w->unk_004 & 0x100) != 0) {
             w->unk_084 = 3;
             w->unk_08C = 0;
             w->unk_088 = 0;
             break;
         }
-        if ((w->unk_002 & 2) == 0) {
+        if ((w->flags & 2) == 0) {
             break;
         }
         func_08000DE8(w->tasks, (void*)w->unk_124[0]);
@@ -727,7 +727,7 @@ u8 func_08113180(StaffRollWork* w) {
         w->unk_0A8++;
         SetBgScroll(0, 0, (u16)(w->unk_0B8 >> 8));
 
-        if (w->unk_010 >= STAFFROLL_SCROLL_FRAMES || (w->unk_002 & 2) != 0) {
+        if (w->unk_010 >= STAFFROLL_SCROLL_FRAMES || (w->flags & 2) != 0) {
             w->unk_0A4 = 4;
             w->unk_0A8 = 0;
         }
@@ -1285,7 +1285,7 @@ void mode_StaffRoll_1(void) {
 
     w = gUnk_02036020;
     w->unk_004 = 0;
-    w->unk_002 = 0;
+    w->flags = 0;
 
     switch (w->unk_008) {
     case 0:

@@ -138,11 +138,11 @@ u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a) {
         return 0;
     }
 
-    if (*(u16*)e[w->unk_14].unk_00 <= *(u16*)&gUnk_02039DC8[0x6C] && !(*(u16*)e[w->unk_14].unk_0C & 0x8000)) {
+    if (*(u16*)e[w->unk_14].unk_00 <= *(u16*)&gUnk_02039DC8[0x6C] && !(*(u16*)e[w->unk_14].flags & 0x8000)) {
         w->unk_14++;
         cur = &e[w->unk_14];
 
-        if (*(u16*)cur->unk_0C & 1) {
+        if (*(u16*)cur->flags & 1) {
             func_080A1DAC(w);
 
             if (w->unk_15 != 0) {
@@ -150,16 +150,16 @@ u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a) {
             }
         }
 
-        if (*(u16*)cur->unk_0C & 4) {
+        if (*(u16*)cur->flags & 4) {
             func_080A1E80((u8*)w);
         }
 
-        if (*(u16*)cur->unk_0C & 8) {
+        if (*(u16*)cur->flags & 8) {
             func_080A1ED8((u8*)w);
             w->unk_16 = 1;
         }
 
-        if (*(u16*)cur->unk_0C & 2) {
+        if (*(u16*)cur->flags & 2) {
             func_080A1E4C((u8*)w);
             gUnk_02039DC8[0x80] = 0;
             gBldCnt = *(u16*)&gUnk_02039DC8[0x6E];

@@ -23,7 +23,7 @@ typedef struct MessageScriptEntry {
     u8 unk_0C;
     u8 unk_0D[3];
     u32 unk_10;
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
 } MessageScriptEntry;
 
@@ -52,7 +52,7 @@ typedef struct EventCharaTrack {
 typedef struct EvSoundCue {
     u16 unk_00;
     u16 unk_02;
-    u16 unk_04;
+    u16 flags;
     u16 unk_06;
 } EvSoundCue;
 
@@ -61,7 +61,7 @@ typedef struct EventBgEffectEntry {
     u16 unk_02;
     s32 unk_04;
     s32 unk_08;
-    u8 unk_0C[0x04];
+    u8 flags[0x04];
 } EventBgEffectEntry;
 
 typedef struct EventSequenceDef {

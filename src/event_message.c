@@ -141,7 +141,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
         u = gUnk_09EE3CA0[work->unk_2C];
         if (u != NULL) {
             if (u->tiles2 != NULL) {
-                if ((u->unk_2D & 1) != 0) {
+                if ((u->flags & 1) != 0) {
                     SetupBg(0, 3, 31, 14);
                     SetupBg(1, 0, 29, 0);
                     SetupBg(2, 2, 30, 0);
@@ -231,7 +231,7 @@ u8 eu_0806C848(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
         if (u->tiles2 != NULL) {
-            if ((u->unk_2D & 1) != 0) {
+            if ((u->flags & 1) != 0) {
                 LoadBgTiles(2, u->tiles2, u->tilesSize2);
             } else if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
                 eu_080059D4(1, u->tiles2);
@@ -240,7 +240,7 @@ u8 eu_0806C848(EventSeqWork* work) {
             }
         }
         if (u->maps3 != NULL) {
-            if ((u->unk_2D & 2) != 0) {
+            if ((u->flags & 2) != 0) {
                 gBldCnt = 0x1844;
                 (*(volatile u16*)&gBldAlpha) = 0x050E;
                 SetBgPriority(2, 1);
@@ -316,7 +316,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     if (u != NULL) {
         if (u->tiles2 != NULL) {
-            if ((u->unk_2D & 1) != 0) {
+            if ((u->flags & 1) != 0) {
                 SetupBg(0, 3, 31, 14);
                 SetupBg(1, 0, 29, 0);
                 SetupBg(2, 2, 30, 0);
@@ -341,7 +341,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             LoadBgPalette(3, u->palette, u->paletteSize);
 
             if (u->tiles2 != NULL) {
-                if ((u->unk_2D & 1) != 0) {
+                if ((u->flags & 1) != 0) {
                     LoadBgTiles(2, u->tiles2, u->tilesSize2);
                 } else {
                     LoadBgTiles(1, u->tiles2, u->tilesSize2);
@@ -362,7 +362,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             }
 
             if (u->maps3 != NULL) {
-                if ((u->unk_2D & 2) != 0) {
+                if ((u->flags & 2) != 0) {
                     gBldCnt = 0x1844;
                     (*(volatile u16*)&gBldAlpha) = 0x050E;
                     SetBgPriority(2, 1);
@@ -461,7 +461,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             TaskCreate(&work->tasks, &gTaskDescEvMapObj, &work->unk_2C);
         }
 
-        if ((u->unk_2D & 1) != 0) {
+        if ((u->flags & 1) != 0) {
             func_080CA35C();
             TaskCreate(&work->tasks, &gTaskDescPooMapanime, NULL);
         }
@@ -3571,7 +3571,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
                     LoadPalette(gUnk_09611AB8, pal, 32);
 
-                    if ((e->unk_14 & 0x80) != 0) {
+                    if ((e->flags & 0x80) != 0) {
                         FadeSetPaletteExcluded(15, 1);
                     }
                     gUnk_02039DC8->unk_81 = 1;
@@ -3590,7 +3590,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     if (p->palette == NULL) {
                         p->palette = LoadObjPalette(gUnk_09614718, 32);
 
-                        if ((e->unk_14 & 0x80) != 0) {
+                        if ((e->flags & 0x80) != 0) {
                             FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
                         }
                     }
@@ -3624,7 +3624,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
             LoadPalette(gUnk_09611AB8, pal, 32);
 
-            if ((e->unk_14 & 0x80) != 0) {
+            if ((e->flags & 0x80) != 0) {
                 FadeSetPaletteExcluded(15, 1);
             }
             gUnk_02039DC8->unk_81 = 1;
@@ -3643,7 +3643,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             if (p->palette == NULL) {
                 p->palette = LoadObjPalette(gUnk_09614718, 32);
 
-                if ((e->unk_14 & 0x80) != 0) {
+                if ((e->flags & 0x80) != 0) {
                 FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
                 }
             }
@@ -3746,7 +3746,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     } else {
         p->unk_1E = 0;
 
-        if ((e->unk_14 & 0xF) == 0) {
+        if ((e->flags & 0xF) == 0) {
             gUnk_02039DC8->unk_7B = 1;
         }
         SetTaskUpdate(a, (void*)func_08073318);
@@ -3778,7 +3778,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
         } else {
             _08065994();
 
-            if ((e->unk_14 & 0x8000) == 0) {
+            if ((e->flags & 0x8000) == 0) {
                 if (p->script[p->unk_27 + 1].unk_08 != 4) {
                     p->unk_1E = 8;
                     func_08073E74(&p->face);
@@ -3828,7 +3828,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
         }
         gUnk_02039DC8->unk_7C = 0;
 
-        if ((e->unk_14 & 0x8000) == 0) {
+        if ((e->flags & 0x8000) == 0) {
             p->unk_2A = 0;
             p->unk_29 = 0;
             p->unk_27++;
@@ -3849,7 +3849,7 @@ void func_08073508(MsgWinWork* p) {
         p->unk_18 = gUnk_09033C98[n];
     }
 
-    if ((e->unk_14 & 0x20) != 0) {
+    if ((e->flags & 0x20) != 0) {
         p->face.unk_03 = 1;
     } else {
         p->face.unk_03 = 0;
@@ -3894,8 +3894,8 @@ void func_0807361C(MsgWinWork* p) {
             gUnk_02039DC8->unk_7B = 0;
 
             if (p->unk_2B == 0) {
-                if ((p->script[p->unk_27].unk_14 & 0x8000) == 0) {
-                    if ((p->script[p->unk_27].unk_14 & 0x40) == 0) {
+                if ((p->script[p->unk_27].flags & 0x8000) == 0) {
+                    if ((p->script[p->unk_27].flags & 0x40) == 0) {
                         TaskCreate(p, &gTaskDescMsgface[1], &p->script[p->unk_27 + 1].unk_08);
                     } else {
                         TaskCreate(p, &gTaskDescMsgface[2], &p->script[p->unk_27 + 1].unk_08);
@@ -3903,7 +3903,7 @@ void func_0807361C(MsgWinWork* p) {
                 } else {
                     v = 0;
 
-                    if ((p->script[p->unk_27].unk_14 & 0x40) == 0) {
+                    if ((p->script[p->unk_27].flags & 0x40) == 0) {
                         TaskCreate(p, &gTaskDescMsgface[1], &v);
                     } else {
                         TaskCreate(p, &gTaskDescMsgface[2], &v);
@@ -3926,7 +3926,7 @@ void func_080736F8(MsgWinWork* p) {
             p->unk_2A = 1;
             p->unk_1E = 8;
 
-            if ((e->unk_14 & 0x10) != 0) {
+            if ((e->flags & 0x10) != 0) {
                 gUnk_02039DC8->unk_7C = 1;
                 gUnk_02039DC8->unk_88 = e->unk_00;
                 gUnk_02039DC8->unk_89 = 32;
@@ -4751,7 +4751,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
         SetTaskUpdate(task, (u32)_08074EC8);
     }
 
-    if (u != NULL && (u->unk_2D & 1)) {
+    if (u != NULL && (u->flags & 1)) {
         func_080CA368(3, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
     }
 

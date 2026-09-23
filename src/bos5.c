@@ -883,7 +883,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     }
 
     work->unk_004 = work->unk_000;
-    work->unk_00E = 0;
+    work->flags = 0;
     work->unk_008 = 0;
     work->unk_010 = 0;
     work->unk_012 = 0;

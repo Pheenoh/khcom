@@ -557,7 +557,7 @@ void func_080EFA7C(UnkStruct_080F023C* p, u8 a) {
         break;
     }
 
-    if (p->unk_04 & 16) {
+    if (p->flags & 16) {
         q[2] += (v - q[2]) / 80;
     } else {
         q[2] += (v - q[2]) >> 4;
@@ -863,7 +863,7 @@ void func_080F0108(UnkStruct_080F023C* p, u8 a) {
         break;
     }
 
-    if (p->unk_04 & 16) {
+    if (p->flags & 16) {
         q[2] += (v - q[2]) / 80;
     } else {
         q[2] += (v - q[2]) >> 4;
@@ -1096,7 +1096,7 @@ void func_080F0660(UnkStruct_080F023C* p, u8 a) {
         break;
     }
 
-    if (p->unk_04 & 16) {
+    if (p->flags & 16) {
         q[2] += (v - q[2]) / 80;
     } else {
         q[2] += (v - q[2]) >> 4;
@@ -2795,7 +2795,7 @@ s32 func_080F3050(MapGmkGp8Work* w) {
     w->gfx = AnimUpdate(a);
 
     if (ColliderIsTouchingType(w->collider, 1) != 0) {
-        if (w->unk_072 & 2) {
+        if (w->flags & 2) {
             if (!(w->cell->unk_00 & 2)) {
                 w->cell->unk_00 |= 2;
                 func_080E84DC(&w->unk_004);
@@ -2992,7 +2992,7 @@ s32 func_080F35C0(MapGmkGp8Work* w) {
     w->unk_0C4 = AnimUpdate(a);
 
     if (ColliderIsTouchingType(w->collider, 1) != 0) {
-        if (w->unk_072 & 2) {
+        if (w->flags & 2) {
             if (!(w->cell->unk_00 & 2)) {
                 w->cell->unk_00 |= 2;
                 func_080E84DC(&w->unk_004);

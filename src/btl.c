@@ -6438,9 +6438,9 @@ void func_08027570(BtlRikuWork* work, BtlDrawInfo* out) {
     out->z = a->z;
 
     if (a->unk_034 & 4) {
-        out->unk_0C |= 1;
+        out->flags |= 1;
     } else {
-        out->unk_0C &= 0xFFFE;
+        out->flags &= 0xFFFE;
     }
     out->anim = work->anim;
     out->unk_28 = *(void**)work->tiles2;
@@ -6470,7 +6470,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
         flags = GetBattleSpritePriorityFlags(a->y);
     }
 
-    if (out->unk_0C & 1) {
+    if (out->flags & 1) {
         p = out->unk_2C;
         q = p;
     } else {

@@ -5421,9 +5421,9 @@ void func_0810A018(PcWork* work) {
         work->oam[j].count = 0;
     }
 
-    for (j = 0; !(cmds[j].unk_00 & 0x80); j++) {
+    for (j = 0; !(cmds[j].flags & 0x80); j++) {
         cmd = &cmds[j];
-        if (cmd->unk_00 & 1) {
+        if (cmd->flags & 1) {
             DrawSprite(sx + cmd->x, sy + cmd->y, gUnk_09EFAB18[cmd->unk_01],
                 work->tiles2[j], gfx, 0,
                 func_08109FF0(work, work->unk_024 + PcLayerDepth(cmd->unk_02)),
@@ -5630,14 +5630,14 @@ void func_0810A850(PcWork* work) {
     step = func_08109ECC(work);
     x = 0;
     y = 6;
-    if ((step->unk_00 & 0x80) == 0) {
+    if ((step->flags & 0x80) == 0) {
         do {
-            if (step->unk_00 & 0xC) {
+            if (step->flags & 0xC) {
                 x += step->x;
                 y += step->y;
             }
             step++;
-        } while ((step->unk_00 & 0x80) == 0);
+        } while ((step->flags & 0x80) == 0);
     }
     x /= 2;
     y /= 2;

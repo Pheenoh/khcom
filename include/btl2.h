@@ -126,7 +126,7 @@ typedef struct BtlPrizeWork {
     s16 unk_28;
     u8 unk_2A;
     u8 unk_2B;
-    u16 unk_2C;
+    u16 flags;
     u8 unk_2E[0x02];
     s32 unk_30;
     s32 unk_34;
@@ -153,7 +153,7 @@ typedef struct BtlPremireWork {
     s16 unk_28;
     u8 unk_2A;
     u8 unk_2B;
-    u16 unk_2C;
+    u16 flags;
     u8 unk_2E[0x02];
     s32 unk_30;
     s32 unk_34;

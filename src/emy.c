@@ -562,7 +562,7 @@ const char gTaskNameEmyTest[] = "task_emy_test";
 
 void task_emy_00_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813D3CC, obj);
-    work->unk_158 |= 1;
+    work->flags |= 1;
     work->unk_150 = 0x12;
     work->unk_14C = 0x16;
 }
@@ -2219,7 +2219,7 @@ u8 task_emy_18_1(Emy18Work* work) {
                 >> 8;
             act->z += (work->base.unk_178 - act->z) >> 3;
 
-            if ((work->base.unk_158 & 2) ||
+            if ((work->base.flags & 2) ||
                     ((act->x - work->base.x >= 0
                     ? act->x - work->base.x <= 0xFFF
                     : work->base.x - act->x <= 0xFFF) &&
@@ -3261,7 +3261,7 @@ u8 task_emy_28_1(Emy28Work* work) {
                 >> 8;
             act->z += (work->base.unk_178 - act->z) >> 3;
 
-            if ((work->base.unk_158 & 2) ||
+            if ((work->base.flags & 2) ||
                     ((act->x - work->base.x >= 0
                     ? act->x - work->base.x <= 0xFFF
                     : work->base.x - act->x <= 0xFFF) &&
@@ -3353,7 +3353,7 @@ void task_emy_29_0(Emy29Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813DFCC, obj);
     work->base.unk_16C = 0x180;
     work->base.unk_150 = 7;
-    work->base.unk_158 |= 1;
+    work->base.flags |= 1;
     work->state = 0;
     work->unk_186 = 0;
 }
@@ -3539,7 +3539,7 @@ u8 task_emy_30_1(EmyWork* work) {
             act->y += -gSineTable[work->angle + 64] * work->unk_164 >> 8;
             act->z += (work->unk_178 - act->z) >> 3;
 
-            if ((work->unk_158 & 2)
+            if ((work->flags & 2)
                 || ((act->x - work->x >= 0
                         ? act->x - work->x
                         : work->x - act->x) <= 0xFFF
@@ -3665,7 +3665,7 @@ u8 task_emy_30_1(EmyWork* work) {
         act->y += (y - act->y) >> 4;
         act->z += (-0x800 - act->z) >> 4;
 
-        if (AnimIsFinished(&work->anim) && (work->unk_158 & 2)) {
+        if (AnimIsFinished(&work->anim) && (work->flags & 2)) {
             work->unk_154 = 0;
             work->unk_14C = 22;
             work->unk_164 = 0;
@@ -3965,7 +3965,7 @@ void task_emy_31_3(EmyWork* work) {
 
 void task_emy_37_0(Emy37Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813E264, obj);
-    work->base.unk_158 |= 1;
+    work->base.flags |= 1;
     work->base.unk_150 = 0x12;
     work->base.unk_14C = 0x1C;
     work->unk_184 = 0;
@@ -4811,7 +4811,7 @@ u8 task_emy_81_1(Emy81Work* work) {
 
         act->y += d;
 
-        if ((work->base.unk_158 & 2)
+        if ((work->base.flags & 2)
                 || ((w->unk_18C - act->x < 0
                         ? act->x - w->unk_18C
                         : w->unk_18C - act->x) <= 0x7FF

@@ -5700,12 +5700,12 @@ void func_0808E7D8(u8* work) {
         node->unk_24 = y;
         x++;
 
-        if (node->unk_48 & 1) {
+        if (node->flags & 1) {
             ReleaseObjPalette(node->palette2);
             ReleaseObjTiles(node->tiles);
             ReleaseObjPalette(node->palette);
             ReleaseObjTiles(node->tiles2);
-            node->unk_48 &= ~1;
+            node->flags &= ~1;
             node->tiles = 0;
             node->palette = 0;
             node->tiles2 = 0;
@@ -5736,12 +5736,12 @@ void func_0808E7D8(u8* work) {
         node->unk_24 = y;
         x++;
 
-        if (node->unk_48 & 1) {
+        if (node->flags & 1) {
             ReleaseObjPalette(node->palette2);
             ReleaseObjTiles(node->tiles);
             ReleaseObjPalette(node->palette);
             ReleaseObjTiles(node->tiles2);
-            node->unk_48 &= ~1;
+            node->flags &= ~1;
             node->tiles = 0;
             node->palette = 0;
             node->tiles2 = 0;

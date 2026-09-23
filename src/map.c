@@ -3460,9 +3460,9 @@ u8 func_080E5AC8(UnkStruct_080E5B90* w) {
 }
 
 void func_080E5B90(UnkStruct_080E5B90* p, const UnkStruct_0984BC9C* q) {
-    if (q->unk_14 & 4) {
+    if (q->flags & 4) {
         func_080E5968(p);
-    } else if (q->unk_14 & 2) {
+    } else if (q->flags & 2) {
         func_080E5938(p);
     } else {
         func_080E590C(p);
@@ -3825,11 +3825,11 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     AnimInit((AnimState*)&p->anim, 0, 0);
     TaskPoolInit((TaskPool*)&p->tasks, 2);
 
-    if ((d->unk_14 & 1) == 0) {
+    if ((d->flags & 1) == 0) {
         TaskCreate(&p->tasks, &gTaskDescFldShadow, e);
     }
 
-    if (d->unk_14 & 8) {
+    if (d->flags & 8) {
         p->unk_04 |= 2;
         ColliderInit(&p->collider, 11, d->unk_0C, d->unk_0A);
     } else {

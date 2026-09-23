@@ -15,7 +15,7 @@ typedef struct HumSub {
     s32 x;
     s32 y;
     s32 z;
-    u16 unk_34;
+    u16 flags;
     u16 unk_36;
     void* gfx;
 } HumSub;
@@ -45,7 +45,7 @@ typedef struct HumWork {
     BtlObj actor;
     s16 unk_150;
     s16 unk_152;
-    u32 unk_154;
+    u32 flags;
     u32 unk_158;
     u32 unk_15C;
     u32 unk_160;

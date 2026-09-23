@@ -202,7 +202,7 @@ s32 func_08031F1C(FldWork* work) {
 
     act = &gUnk_02039BA0->actor;
 
-    if (work->unk_66 & 1) {
+    if (work->flags & 1) {
         if (act->fieldPosition.unk_0C < work->unk_78) {
             v = act->fieldPosition.unk_0C;
         } else {
@@ -700,7 +700,7 @@ u8 func_080324DC(FldWork* work, void* task) {
         case 11:
             break;
         default:
-            if ((work->unk_66 & 1) == 0) {
+            if ((work->flags & 1) == 0) {
                 act->unk_10 = 230 * act->unk_10 >> 8;
                 act->fieldPosition.x += work->unk_70;
                 act->fieldPosition.y += work->unk_74;
@@ -1372,7 +1372,7 @@ u8 func_0803366C(FldWork* work, void* task) {
         case 11:
             break;
         default:
-            if ((work->unk_66 & 1) == 0) {
+            if ((work->flags & 1) == 0) {
                 act->fieldPosition.x += work->unk_70;
                 act->fieldPosition.y += work->unk_74;
             }
@@ -1532,7 +1532,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
             case 11:
                 break;
             default:
-                if ((work->unk_66 & 1) == 0) {
+                if ((work->flags & 1) == 0) {
                     act->unk_10 = 230 * act->unk_10 >> 8;
                     act->fieldPosition.x += work->unk_70;
                     act->fieldPosition.y += work->unk_74;
@@ -1897,7 +1897,7 @@ s32 func_080346C0(FldWork* work) {
 
     act = &gUnk_02039BA0->actor;
 
-    if (work->unk_66 & 1) {
+    if (work->flags & 1) {
         if (act->fieldPosition.unk_0C < work->unk_78) {
             v = act->fieldPosition.unk_0C;
         } else {
@@ -2399,7 +2399,7 @@ u8 func_08034C88(FldWork* work, void* task) {
         case 11:
             break;
         default:
-            if ((work->unk_66 & 1) == 0) {
+            if ((work->flags & 1) == 0) {
                 act->unk_10 = 230 * act->unk_10 >> 8;
                 act->fieldPosition.x += work->unk_70;
                 act->fieldPosition.y += work->unk_74;
@@ -3065,7 +3065,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
         case 11:
             break;
         default:
-            if ((work->unk_66 & 1) == 0) {
+            if ((work->flags & 1) == 0) {
                 act->fieldPosition.x += work->unk_70;
                 act->fieldPosition.y += work->unk_74;
             }
@@ -3225,7 +3225,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             case 11:
                 break;
             default:
-                if ((work->unk_66 & 1) == 0) {
+                if ((work->flags & 1) == 0) {
                     act->unk_10 = 230 * act->unk_10 >> 8;
                     act->fieldPosition.x += work->unk_70;
                     act->fieldPosition.y += work->unk_74;

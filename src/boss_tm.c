@@ -282,7 +282,7 @@ static Task* gBosTmTblTask;
 static TaskPool gBosTmTaskPool;
 
 void func_080B7E68(TmWork* w) {
-    if (w->unk_28 & 0x20) {
+    if (w->flags & 0x20) {
         w->unk_48 = w->x2 + 0x1000;
         w->unk_54 = w->x2 - 0x700;
         w->unk_4C = w->y2 + 0x700;
@@ -300,14 +300,14 @@ void func_080B7E68(TmWork* w) {
 }
 
 void task_bos_tm_0(TmWork* w, BtlObj* arg) {
-    w->unk_28 = 0;
+    w->flags = 0;
 
     if (arg != 0) {
-        w->unk_28 = 8;
+        w->flags = 8;
     }
     TaskPoolInit(&gBosTmTaskPool, 4);
 
-    if (w->unk_28 & 8) {
+    if (w->flags & 8) {
         w->x = arg->x >> 8;
         w->y = arg->y >> 8;
         w->z = arg->z >> 8;
@@ -333,7 +333,7 @@ void task_bos_tm_0(TmWork* w, BtlObj* arg) {
     w->unk_32 = 55;
     w->unk_38 = 0;
     w->unk_3A = 0;
-    w->unk_28 |= 0x30;
+    w->flags |= 0x30;
     w->unk_3B = 0;
     w->unk_3C = 16;
     w->unk_40 = 0;
@@ -342,7 +342,7 @@ void task_bos_tm_0(TmWork* w, BtlObj* arg) {
     w->unk_60 = w;
     func_080B7E68(w);
 
-    if (w->unk_28 & 8) {
+    if (w->flags & 8) {
         w->unk_2C = 15;
         gBosTmBodyTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmBody, w);
         gBosTmFootTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmFoot, w);
@@ -419,7 +419,7 @@ u8 task_bos_tm_1(TmWork* w) {
             gUnk_0203AB50.z = w->z2;
             param.unk_20 = &gUnk_0203AB50;
             func_080C640C(&param);
-            w->unk_28 &= ~1;
+            w->flags &= ~1;
             w->unk_34++;
         }
         break;
@@ -512,7 +512,7 @@ void func_080B83C4(TmBodyWork* p) {
 }
 
 void func_080B8418(TmBodyWork* p) {
-    if (p->tm->unk_28 & 0x20) {
+    if (p->tm->flags & 0x20) {
         p->body.x = p->tm->x2 + 0x400;
         p->body2.x = p->tm->x2;
         p->body3.x = p->tm->x2 + 0xC00;
@@ -555,7 +555,7 @@ void func_080B8554(TmBodyWork* p) {
     dz = 0xF00;
     src = p->tm;
 
-    if (src->unk_28 & 0x20) {
+    if (src->flags & 0x20) {
         p->tm->x2 = p->tm->unk_08 - 0xA00;
         p->tm->y2 = p->tm->unk_0C;
         p->tm->z2 = p->tm->unk_10 + dz;
@@ -584,7 +584,7 @@ void func_080B8688(TmBodyWork* p) {
     p->gfx3 = gUnk_09EF397C[0];
     p->gfx4 = gUnk_09EF3960[0];
 
-    if (p->tm->unk_28 & 0x20) {
+    if (p->tm->flags & 0x20) {
         p->tm->x2 = p->tm->unk_08 + 0xA00;
         p->tm->y2 = p->tm->unk_0C;
         p->tm->z2 = p->tm->unk_10 + 0xF00;
@@ -608,7 +608,7 @@ void func_080B8688(TmBodyWork* p) {
 }
 
 void func_080B87C0(TmBodyWork* p, s16 a) {
-    if (p->tm->unk_28 & 0x20) {
+    if (p->tm->flags & 0x20) {
         p->unk_128 += gUnk_09EF1E14[a].unk_04;
         p->unk_244 += gUnk_09EF1E14[a].unk_0C;
         p->body.x += gUnk_09EF1E14[a].unk_00 << 8;
@@ -664,7 +664,7 @@ void func_080B8A00(TmBodyWork* p) {
     if ((s16)p->tm->unk_30 == 1) {
         p->tm->unk_34 = 0;
         p->tm->unk_36 = 0;
-        if (p->tm->unk_28 & 0x20) {
+        if (p->tm->flags & 0x20) {
             p->unk_128 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
             p->unk_244 = gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
             p->body.x = p->tm->unk_08 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 + 4) << 8);
@@ -688,7 +688,7 @@ void func_080B8A00(TmBodyWork* p) {
         p->tm->z2 = p->tm->unk_10 + ((gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0A + 0 + gUnk_09EF1E08[2]) << 8);
     } else {
         if ((s16)p->tm->unk_34 < 3) {
-            if (p->tm->unk_28 & 0x20) {
+            if (p->tm->flags & 0x20) {
                 p->unk_128 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_04;
                 p->unk_244 += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_0C;
                 p->body.x += gUnk_09EF1D88[(s16)p->tm->unk_34].unk_00 << 8;
@@ -714,7 +714,7 @@ void func_080B8A00(TmBodyWork* p) {
         }
         if ((s16)p->tm->unk_32 < 3) {
             i = p->tm->unk_32;
-            if (p->tm->unk_28 & 0x20) {
+            if (p->tm->flags & 0x20) {
                 p->unk_128 -= gUnk_09EF1D88[i].unk_04;
                 p->unk_244 -= gUnk_09EF1D88[i].unk_0C;
                 p->body.x -= gUnk_09EF1D88[i].unk_00 << 8;
@@ -742,7 +742,7 @@ void func_080B8A00(TmBodyWork* p) {
 }
 
 void func_080B8FF4(TmBodyWork* p, s16 a) {
-    if (p->tm->unk_28 & 0x20) {
+    if (p->tm->flags & 0x20) {
         p->unk_128 += gUnk_09EF2034[a].unk_04;
         p->unk_244 += gUnk_09EF2034[a].unk_0C;
         p->body.x += gUnk_09EF2034[a].unk_00 << 8;
@@ -781,7 +781,7 @@ void func_080B91A4(TmBodyWork* p) {
     s32 next;
     u16 rnd;
 
-    if (p->tm->unk_28 & 0x40) {
+    if (p->tm->flags & 0x40) {
         p->tm->unk_2C = p->tm->unk_3C;
         return;
     }
@@ -790,9 +790,9 @@ void func_080B91A4(TmBodyWork* p) {
         st = p->tm->unk_3A;
 
         if (st == 2) {
-            if (p->tm->unk_28 & 0x10) {
+            if (p->tm->flags & 0x10) {
                 p->tm->unk_2C = 1;
-                p->tm->unk_28 = p->tm->unk_28 & ~0x10;
+                p->tm->flags = p->tm->flags & ~0x10;
             } else if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
@@ -825,12 +825,12 @@ void func_080B91A4(TmBodyWork* p) {
                 p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
                 if (p->tm->unk_2C == 4) {
-                    if (p->tm->unk_28 & 0x20) {
-                        p->tm->unk_28 |= 0x40;
+                    if (p->tm->flags & 0x20) {
+                        p->tm->flags |= 0x40;
                         p->tm->unk_2C = 4;
                         p->tm->unk_3C = 4;
                     } else {
-                        p->tm->unk_28 |= 0x40;
+                        p->tm->flags |= 0x40;
                         p->tm->unk_2C = 6;
                         p->tm->unk_3C = 6;
                     }
@@ -871,9 +871,9 @@ void func_080B91A4(TmBodyWork* p) {
         st = p->tm->unk_3A;
 
         if (st == 2) {
-            if (p->tm->unk_28 & 0x10) {
+            if (p->tm->flags & 0x10) {
                 p->tm->unk_2C = 1;
-                p->tm->unk_28 = p->tm->unk_28 & ~0x10;
+                p->tm->flags = p->tm->flags & ~0x10;
             } else if (GetAbsoluteDifference(gBtlWork->actor->x, p->tm->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
@@ -906,12 +906,12 @@ void func_080B91A4(TmBodyWork* p) {
                 p->tm->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
                 if (p->tm->unk_2C == 4) {
-                    if (p->tm->unk_28 & 0x20) {
-                        p->tm->unk_28 |= 0x40;
+                    if (p->tm->flags & 0x20) {
+                        p->tm->flags |= 0x40;
                         p->tm->unk_2C = 4;
                         p->tm->unk_3C = 4;
                     } else {
-                        p->tm->unk_28 |= 0x40;
+                        p->tm->flags |= 0x40;
                         p->tm->unk_2C = 6;
                         p->tm->unk_3C = 6;
                     }
@@ -941,7 +941,7 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
         func_080B8324(b);
         func_080B9FC4(b);
         func_080B91A4(b);
-        b->tm->unk_28 &= ~1;
+        b->tm->flags &= ~1;
         break;
     case 4:
         b->tm->unk_38 = 0;
@@ -951,16 +951,16 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
     case 6:
     case 7:
         b->unk_48A = a->unk_02C;
-        b->tm->unk_28 |= 1;
+        b->tm->flags |= 1;
         b->tm->unk_30++;
 
         if (b->unk_48C - b->unk_48A >= 9999) {
             b->tm->unk_32 = 55;
             b->tm->unk_2C = 12;
-            b->tm->unk_28 &= ~4;
+            b->tm->flags &= ~4;
         } else if (b->tm->unk_2C != 12) {
             b->tm->unk_32 = 20;
-            b->tm->unk_28 |= 4;
+            b->tm->flags |= 4;
         }
         break;
     case 3:
@@ -971,19 +971,19 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
         break;
     }
 
-    if (b->tm->unk_28 & 1) {
+    if (b->tm->flags & 1) {
         b->tm->unk_32--;
 
         if ((s16)b->tm->unk_32 <= 0) {
             b->tm->unk_30 = 0;
-            b->tm->unk_28 &= ~1;
+            b->tm->flags &= ~1;
             func_0801AF08(a);
 
-            if (b->tm->unk_28 & 4) {
-                b->tm->unk_28 &= ~4;
+            if (b->tm->flags & 4) {
+                b->tm->flags &= ~4;
             } else {
                 func_080B8324(b);
-                t = b->tm->unk_28 & 0x40;
+                t = b->tm->flags & 0x40;
 
                 if (t) {
                     func_080B895C(b);
@@ -1025,7 +1025,7 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     work->unk_490 = 10;
     work->unk_492 = 0;
 
-    if (work->tm->unk_28 & 8) {
+    if (work->tm->flags & 8) {
         func_080B83A4(&work->body, work->tm->x + 4, work->tm->y,
                       work->tm->z - 34);
         func_080B83A4(&work->body2, work->tm->x, work->tm->y,
@@ -1051,7 +1051,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
     u16 n;
     u16 flags;
 
-    if (!(work->tm->unk_28 & 8)) {
+    if (!(work->tm->flags & 8)) {
         _080B949C(&work->body2, work);
     }
     switch (work->tm->unk_2C) {
@@ -1082,7 +1082,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
         } else {
             func_080B89B0(work);
             if (work->tm->unk_08 <= 0x8E00) {
-                work->tm->unk_28 &= ~0x20;
+                work->tm->flags &= ~0x20;
                 work->body2.unk_034 &= ~4;
                 work->tm->unk_2C = 5;
                 work->tm->unk_3C = 5;
@@ -1102,7 +1102,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             func_080B89B0(work);
             if (work->tm->unk_08 > 0x9FFF) {
                 func_0801AF08(&work->body2);
-                work->tm->unk_28 &= ~0x40;
+                work->tm->flags &= ~0x40;
                 work->tm->unk_2C = 0;
                 work->tm->unk_3C = 16;
                 func_080B8324(work);
@@ -1118,7 +1118,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
         } else {
             func_080B89B0(work);
             if (work->tm->unk_08 > 0x16EFF) {
-                work->tm->unk_28 |= 0x20;
+                work->tm->flags |= 0x20;
                 work->body2.unk_034 |= 4;
                 work->tm->unk_2C = 7;
                 work->tm->unk_3C = 7;
@@ -1138,7 +1138,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             func_080B89B0(work);
             if (work->tm->unk_08 <= 0x15D00) {
                 func_0801AF08(&work->body2);
-                work->tm->unk_28 &= ~0x40;
+                work->tm->flags &= ~0x40;
                 work->tm->unk_2C = 0;
                 work->tm->unk_3C = 16;
                 func_080B8324(work);
@@ -1150,8 +1150,8 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
     case 10:
         if ((s16)work->tm->unk_38 == 0) {
             func_080B8508(work);
-        } else if (work->tm->unk_28 & 2) {
-            work->tm->unk_28 &= ~2;
+        } else if (work->tm->flags & 2) {
+            work->tm->flags &= ~2;
             func_0801AF08(&work->body2);
             work->tm->unk_2C = 0;
             func_080B8324(work);
@@ -1171,8 +1171,8 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             } else if (n >= 98 && n <= 100) {
                 func_080B87C0(work, n - 85);
             }
-            if (work->tm->unk_28 & 2) {
-                work->tm->unk_28 &= ~2;
+            if (work->tm->flags & 2) {
+                work->tm->flags &= ~2;
                 func_0801AF08(&work->body2);
                 work->tm->unk_2C = 0;
                 func_080B8324(work);
@@ -1192,8 +1192,8 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             } else if (n >= 128 && n <= 130) {
                 func_080B87C0(work, n - 115);
             }
-            if (work->tm->unk_28 & 2) {
-                work->tm->unk_28 &= ~2;
+            if (work->tm->flags & 2) {
+                work->tm->flags &= ~2;
                 func_0801AF08(&work->body2);
                 work->tm->unk_2C = 0;
                 func_080B8324(work);
@@ -1211,8 +1211,8 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             } else if (n >= 41 && n <= 46) {
                 func_080B8FF4(work, n - 38);
             }
-            if (work->tm->unk_28 & 2) {
-                work->tm->unk_28 &= ~2;
+            if (work->tm->flags & 2) {
+                work->tm->flags &= ~2;
                 func_0801AF08(&work->body2);
                 work->tm->unk_2C = 0;
                 func_080B8324(work);
@@ -1226,13 +1226,13 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
     case 14:
         if ((s16)work->tm->unk_38 == 0) {
             func_080B8688(work);
-            if (work->tm->unk_28 & 0x40) {
+            if (work->tm->flags & 0x40) {
                 func_08083900(9);
             }
         } else if ((s16)work->tm->unk_38 > 59) {
             func_080B8324(work);
-            work->tm->unk_28 &= ~0x80;
-            flags = work->tm->unk_28 & 0x40;
+            work->tm->flags &= ~0x80;
+            flags = work->tm->flags & 0x40;
             if (flags) {
                 func_0801AF08(&work->body2);
                 func_080B8688(work);
@@ -1242,12 +1242,12 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
                 func_080B8508(work);
                 work->tm->unk_2C = 0;
             }
-        } else if (!(work->tm->unk_28 & 0x80) && work->tm->unk_3A == 0 && (work->tm->unk_28 & 1)) {
+        } else if (!(work->tm->flags & 0x80) && work->tm->unk_3A == 0 && (work->tm->flags & 1)) {
             if ((u16)(GetRandom() % 100) <= 30) {
                 _0801C1F8(0, work->tm->unk_08, work->tm->unk_0C, work->tm->unk_10);
-                work->tm->unk_28 |= 0x80;
+                work->tm->flags |= 0x80;
             } else {
-                work->tm->unk_28 |= 0x80;
+                work->tm->flags |= 0x80;
             }
         }
         break;
@@ -1277,7 +1277,7 @@ void task_bos_tm_body_2(TmBodyWork* work) {
     s16 x;
     s16 y;
 
-    if (work->tm->unk_28 & 0x20) {
+    if (work->tm->flags & 0x20) {
         a1 = AllocObjAffine(work->unk_128, 0x100, 0x100, 1);
         a2 = AllocObjAffine(work->unk_244, 0x100, 0x100, 1);
         mode = 0x800;
@@ -1289,7 +1289,7 @@ void task_bos_tm_body_2(TmBodyWork* work) {
 
     if (gBtlWork->unk_070 != 0) {
         pal = work->palette;
-    } else if (work->tm->unk_28 & 1) {
+    } else if (work->tm->flags & 1) {
         if (gFrameCounter & 1) {
             pal = work->palette2;
         } else {
@@ -1318,7 +1318,7 @@ void task_bos_tm_body_2(TmBodyWork* work) {
 }
 
 void task_bos_tm_body_3(TmBodyWork* work) {
-    if ((work->tm->unk_28 & 8) == 0) {
+    if ((work->tm->flags & 8) == 0) {
         func_080B83B8(&work->body2);
     }
 
@@ -1375,7 +1375,7 @@ void func_080BA11C(TmFootWork* work) {
     work->gfx = gUnk_09EF39DC[2];
     work->gfx2 = gUnk_09EF39DC[2];
 
-    if (work->tm->unk_28 & 0x20) {
+    if (work->tm->flags & 0x20) {
         work->body.x = work->tm->unk_08 + 0x100;
         work->body2.x = work->tm->unk_08 - 0x600;
         work->body3.x = work->tm->unk_08 + 0x600;
@@ -1409,7 +1409,7 @@ void func_080BA2B0(TmFootWork* work) {
     work->gfx = gUnk_09EF39DC[0];
     work->gfx2 = gUnk_09EF39DC[0];
 
-    if (work->tm->unk_28 & 0x20) {
+    if (work->tm->flags & 0x20) {
         work->body.x = work->tm->unk_08 + 0x100;
         work->body2.x = work->tm->unk_08 - 0x600;
         work->body3.x = work->tm->unk_08 + 0x600;
@@ -1453,7 +1453,7 @@ void func_080BA49C(TmFootWork* work) {
     work->gfx = gUnk_09EF3A1C[6];
     work->gfx2 = gUnk_09EF3A1C[1];
 
-    if (work->tm->unk_28 & 0x20) {
+    if (work->tm->flags & 0x20) {
         work->body.x = work->tm->x2 + 0x500;
         work->body2.x = work->tm->x2 - 0x600;
         work->body3.x = work->tm->x2 + 0x600;
@@ -1489,7 +1489,7 @@ void func_080BA62C(TmFootWork* work) {
     work->gfx = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_06];
     work->gfx2 = gUnk_09EF3A1C[gUnk_09EF2464[work->tm->unk_34].unk_0E];
 
-    if (work->tm->unk_28 & 0x20) {
+    if (work->tm->flags & 0x20) {
         work->body3.x = work->tm->x2 + ((gUnk_09EF2464[work->tm->unk_34].unk_10 + 6) << 8);
         work->body4.x = work->tm->x2 + ((gUnk_09EF2464[work->tm->unk_34].unk_18 - 2) << 8);
         work->body.x = work->tm->x2 + 0x100;
@@ -1560,7 +1560,7 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     work->unk_248 = 0;
     work->unk_360 = 0;
     work->unk_478 = 0;
-    f = work->tm->unk_28 & 8;
+    f = work->tm->flags & 8;
 
     if (f != 0) {
         func_080BA0E4(&work->body, (s16)(work->tm->x + 1),
@@ -1724,7 +1724,7 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         if (work->tm->unk_38 == 0) {
             func_080BA2B0(work);
         } else if (work->tm->unk_38 > 59) {
-            if (work->tm->unk_28 & 0x40) {
+            if (work->tm->flags & 0x40) {
                 func_080BA49C(work);
             } else {
                 func_080BA11C(work);
@@ -1756,7 +1756,7 @@ void task_bos_tm_foot_2(TmFootWork* work) {
     BtlObj* s3;
     u16 mode;
 
-    flag = work->tm->unk_28 & 0x20;
+    flag = work->tm->flags & 0x20;
     mode = 0x801;
     if (flag != 0) {
         mode = 0x800;
@@ -1764,7 +1764,7 @@ void task_bos_tm_foot_2(TmFootWork* work) {
 
     if (gBtlWork->unk_070 != 0) {
         pal = work->palette;
-    } else if ((work->tm->unk_28 & 1) && (gFrameCounter & 1)) {
+    } else if ((work->tm->flags & 1) && (gFrameCounter & 1)) {
         pal = work->palette2;
     } else {
         pal = work->palette;
@@ -1785,7 +1785,7 @@ void task_bos_tm_foot_2(TmFootWork* work) {
 }
 
 void task_bos_tm_foot_3(TmFootWork* work) {
-    if ((work->tm->unk_28 & 8) == 0) {
+    if ((work->tm->flags & 8) == 0) {
         func_080BA0F8(&work->body3);
         func_080BA0F8(&work->body4);
     }

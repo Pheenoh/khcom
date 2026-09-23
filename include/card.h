@@ -444,7 +444,7 @@ typedef struct DeckCard2Work {
     ListNode node;
     s32 x;
     s32 y;
-    u16 unk_48;
+    u16 flags;
     u8 unk_4A;
     u8 unk_4B[0x02];
     u8 unk_4D;
@@ -1132,7 +1132,7 @@ typedef struct ReloadGageWork {
     s32 unk_58;
     u8 unk_5C[0x08];
     ListNode node;
-    u32 unk_78;
+    u32 flags;
     s32 unk_7C;
     s32 unk_80;
     s32 unk_84;

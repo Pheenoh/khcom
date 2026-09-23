@@ -51,7 +51,7 @@ void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
     n->palette = 0;
     n->tiles2 = 0;
     n->palette2 = 0;
-    n->unk_48 = 0;
+    n->flags = 0;
 
     switch (n->unk_26) {
     case 0:
@@ -129,7 +129,7 @@ u8 DeckCard2_1(DeckCard2Work* n) {
 }
 
 void DeckCard2_2(DeckCard2Work* n) {
-    if (!(n->unk_48 & 1)) {
+    if (!(n->flags & 1)) {
         return;
     }
 
@@ -156,7 +156,7 @@ void func_08090100(DeckCard2Work* n) {
         return;
     }
 
-    if (n->unk_48 & 1) {
+    if (n->flags & 1) {
         return;
     }
 
@@ -166,17 +166,17 @@ void func_08090100(DeckCard2Work* n) {
     n->tiles2 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
 
     if (n->tiles != 0 && n->palette != 0) {
-        n->unk_48 |= 1;
+        n->flags |= 1;
     }
 }
 
 void func_08090170(DeckCard2Work* node) {
-    if (node->unk_48 & 1) {
+    if (node->flags & 1) {
         ReleaseObjPalette(node->palette2);
         ReleaseObjTiles(node->tiles);
         ReleaseObjPalette(node->palette);
         ReleaseObjTiles(node->tiles2);
-        node->unk_48 &= 0xFFFE;
+        node->flags &= 0xFFFE;
         node->tiles = 0;
         node->palette = 0;
         node->tiles2 = 0;

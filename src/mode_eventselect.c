@@ -722,7 +722,7 @@ s32 EV_SOUND_1(EvSoundWork* w) {
 
     if (gUnk_02039DC8->unk_6C == p->unk_02) {
         if (p->unk_00 != 0xFFFF) {
-            if ((p->unk_04 & 4) == 0) {
+            if ((p->flags & 4) == 0) {
                 m4aSongNumStartOrContinue(p->unk_00);
                 idx = gSongTable[p->unk_00].ms;
                 m4aMPlayImmInit(gMPlayTable[idx].info);
@@ -735,12 +735,12 @@ s32 EV_SOUND_1(EvSoundWork* w) {
             m4aMPlayAllStop();
         }
 
-        if (p->unk_04 & 1) {
+        if (p->flags & 1) {
             m4aMPlayFadeOut(gMPlayTable[gSongTable[p->unk_00].ms].info, 5);
             w->unk_07 = 2;
         }
 
-        if (p->unk_04 & 2) {
+        if (p->flags & 2) {
             n = gSongTable[p->unk_00].ms;
             mp = gMPlayTable[n].info;
             w->unk_08 = 3;
@@ -748,7 +748,7 @@ s32 EV_SOUND_1(EvSoundWork* w) {
             w->unk_07 = 1;
         }
 
-        if ((p->unk_04 & 0x8000) == 0) {
+        if ((p->flags & 0x8000) == 0) {
             w->unk_05++;
         }
     }

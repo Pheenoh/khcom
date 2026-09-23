@@ -6,7 +6,7 @@ void task_tutorial_0(TutorialWork* work, s32 arg1) {
     gBg0Cnt = 0;
     SetupBg(0, 2, 28, 14);
     SetBgScroll(0, 0, 0);
-    work->unk_000 = 0;
+    work->flags = 0;
     work->unk_00C = 0;
     work->unk_004 = 0;
     work->unk_00E = 120;
@@ -189,23 +189,23 @@ s32 task_tutorial_1(TutorialWork* work) {
     case 21:
         if (work->unk_00C == 0) {
             work->unk_00E = 0;
-            work->unk_000 &= ~2;
+            work->flags &= ~2;
         }
 
         if (work->unk_00C == 10) {
             gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
-        if (work->unk_000 & 2) {
+        if (work->flags & 2) {
             if (!(gBtlWork->unk_068 & 0x20000000)) {
                 if (work->unk_00E == 0) {
                     func_0805DAEC();
                 }
-                work->unk_000 &= ~2;
+                work->flags &= ~2;
                 work->unk_00E++;
             }
         } else if (gBtlWork->unk_068 & 0x20000000) {
-            work->unk_000 |= 2;
+            work->flags |= 2;
         }
 
         if (work->unk_00E <= 2) {
@@ -354,7 +354,7 @@ s32 task_tutorial_1(TutorialWork* work) {
     case 45:
         if (work->unk_00C == 0) {
             func_0805DB28(work);
-            work->unk_000 &= ~2;
+            work->flags &= ~2;
             work->unk_00E = 0;
             gBtlWork->unk_068 &= ~0x1000000000ULL;
             gBtlWork->unk_068 &= ~0x100000000000ULL;
@@ -367,13 +367,13 @@ s32 task_tutorial_1(TutorialWork* work) {
             gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
-        if (work->unk_000 & 2) {
+        if (work->flags & 2) {
             if (!(gBtlWork->unk_068 & 0x20000000)) {
-                work->unk_000 &= ~2;
+                work->flags &= ~2;
                 work->unk_00E++;
             }
         } else if (gBtlWork->unk_068 & 0x20000000) {
-            work->unk_000 |= 2;
+            work->flags |= 2;
         }
 
         if (work->unk_00E <= 6) {
@@ -462,7 +462,7 @@ s32 task_tutorial_1(TutorialWork* work) {
     case 60:
         if (work->unk_00C == 0) {
             gBtlWork->unk_068 |= 0x20000000000ULL;
-            work->unk_000 &= ~2;
+            work->flags &= ~2;
             work->unk_00E = 0;
         }
 
@@ -470,13 +470,13 @@ s32 task_tutorial_1(TutorialWork* work) {
             gBtlWork->unk_068 &= ~0x4000000000000ULL;
         }
 
-        if (work->unk_000 & 2) {
+        if (work->flags & 2) {
             if (!(gBtlWork->unk_068 & 0x20000000)) {
-                work->unk_000 &= ~2;
+                work->flags &= ~2;
                 work->unk_00E++;
             }
         } else if (gBtlWork->unk_068 & 0x20000000) {
-            work->unk_000 |= 2;
+            work->flags |= 2;
 
             if (work->unk_00E == 0) {
                 func_0805DAEC();
@@ -514,7 +514,7 @@ void task_tutorial_2(TutorialWork* work) {
     u16 y;
     s32 s;
 
-    if (work->unk_000 & 4) {
+    if (work->flags & 4) {
         spr = AnimUpdate(work->unk_020);
 
         if (work->unk_030 == 0) {

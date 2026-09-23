@@ -4615,7 +4615,7 @@ void task_poo_leaf_0(PooLeafWork* w, PooLeafArgs* a) {
 }
 
 u8 task_poo_leaf_1(PooLeafWork* w) {
-    if (w->palette != 0 && (w->unk_62 & 2) != 0 && w->unk_90 == 0) {
+    if (w->palette != 0 && (w->flags & 2) != 0 && w->unk_90 == 0) {
         w->unk_90 = 1;
         AnimReset(w->anim);
         m4aSongNumStart(0xE0);
@@ -4656,7 +4656,7 @@ void task_poo_leaf_2(PooLeafWork* w) {
 
             if (AnimIsFinished(w->anim) == 0) {
                 DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, 0xFFF1);
-            } else if ((w->unk_62 & 2) == 0) {
+            } else if ((w->flags & 2) == 0) {
                 *p = 0;
             }
         }
@@ -4690,7 +4690,7 @@ void task_poo_tanpopo_0(PooTanpopoWork* w, PooLeafArgs* a) {
 }
 
 u8 task_poo_tanpopo_1(PooTanpopoWork* w) {
-    if (w->palette != 0 && (w->unk_82 & 2) != 0 && w->unk_B0 == 0) {
+    if (w->palette != 0 && (w->flags & 2) != 0 && w->unk_B0 == 0) {
         w->unk_B0 = 1;
         AnimReset(w->anim);
         AnimReset(w->anim2);
@@ -4735,7 +4735,7 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
 
             if (AnimIsFinished(w->anim2) == 0) {
                 DrawSprite(x, y, w->gfx2, w->tiles2, w->palette, 0, 0x800, 100);
-            } else if ((w->unk_82 & 2) == 0) {
+            } else if ((w->flags & 2) == 0) {
                 *p = 0;
             }
         }
@@ -6572,7 +6572,7 @@ void task_poo_mapbeeborn_0(PooMapBornWork* w, PooPos* p) {
 
 u8 task_poo_mapbeeborn_1(PooMapBornWork* w) {
     if (w->unk_98 != 0) {
-        if ((w->unk_4E & 2) != 0) {
+        if ((w->flags & 2) != 0) {
             if (IsTaskActive(w->task) == 0 && w->unk_99 != 0) {
                 w->unk_99 = 0;
                 w->task = TaskCreate(&w->tasks, &gTaskDescPooMapbee, &w->pos);
@@ -6674,7 +6674,7 @@ void task_poo_mapbutterflyborn_0(PooMapBornWork* w, PooPos* p) {
 
 u8 task_poo_mapbutterflyborn_1(PooMapBornWork* w) {
     if (w->unk_98 != 0) {
-        if ((w->unk_4E & 2) != 0) {
+        if ((w->flags & 2) != 0) {
             if (IsTaskActive(w->task) == 0 && w->unk_99 != 0) {
                 w->unk_99 = 0;
                 w->task = TaskCreate(&w->tasks, &gTaskDescPooMapbutterfly, &w->pos);

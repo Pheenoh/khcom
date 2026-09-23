@@ -77,7 +77,7 @@ typedef struct DsdWork {
     s16 unk_352;
     s16 unk_354;
     s16 unk_356;
-    s16 unk_358;
+    s16 flags;
     s8 unk_35A;
     u8 unk_35B;
     s32 unk_35C;
@@ -215,7 +215,7 @@ typedef struct DsdItaWork {
     s16 unk_078;
     u8 state;
     u8 unk_07B[0x1];
-    u16 unk_07C;
+    u16 flags;
     s16 unk_07E;
     s32 unk_080;
     u8 unk_084[0x4];

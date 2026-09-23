@@ -18,7 +18,7 @@
 #include "btl4_api.h"
 
 typedef struct TutorialWork {
-    u16 unk_000;
+    u16 flags;
     u16 unk_002;
     u32 unk_004;
     u32 unk_008;

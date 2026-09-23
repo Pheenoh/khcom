@@ -65,7 +65,7 @@ typedef struct GaWork {
     s32 unk_004;
     u32 unk_008;
     u16 unk_00C;
-    u16 unk_00E;
+    u16 flags;
     s16 unk_010;
     s16 unk_012;
     s16 unk_014;

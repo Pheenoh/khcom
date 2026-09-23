@@ -19,7 +19,7 @@ typedef struct TmWork {
     s32 z2;
     s32 unk_20;
     s32 unk_24;
-    u16 unk_28;
+    u16 flags;
     u8 unk_2A[0x2];
     u32 unk_2C;
     s16 unk_30;

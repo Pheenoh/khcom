@@ -35,7 +35,7 @@ typedef struct BtlFormWork {
     s32 x;
     s32 y;
     s32 z;
-    u16 unk_20;
+    u16 flags;
     u16 unk_22;
     s16 unk_24;
     u8 unk_26[0x02];
@@ -83,7 +83,7 @@ typedef struct BtlRaidWork {
     s32 unk_4C;
     s32 unk_50;
     s16 unk_54;
-    u16 unk_56;
+    u16 flags;
     u16 angle;
     u16 unk_5A;
     BtlObj* actor;

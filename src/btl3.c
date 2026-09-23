@@ -28,7 +28,7 @@ void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     s32 i;
 
     gBtlWork->unk_068 |= 0x2000000;
-    work->unk_20 = 0;
+    work->flags = 0;
     work->list = list;
     work->entry = list->entries[0];
     work->timer = work->entry->delay;
@@ -56,7 +56,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
         return 0;
     }
 
-    if (work->unk_20 & 2) {
+    if (work->flags & 2) {
         list = work->list;
         if (list->threshold >= work->unk_22 + gBtlWork->unk_0EC) {
             if (work->unk_22 == 0) {
@@ -66,13 +66,13 @@ u8 task_btl_form_1(BtlFormWork* work) {
             work->timer = work->entry->delay;
             work->unk_02 = 0;
             work->unk_04 = 0;
-            work->unk_20 &= ~2;
+            work->flags &= ~2;
             work->unk_10++;
             work->unk_24 = 100;
         }
     } else if (work->entry->count <= work->unk_04) {
         if (work->unk_24-- <= 0) {
-            work->unk_20 |= 2;
+            work->flags |= 2;
 
             if (gGameState.unk_1B8 != 4) {
                 gGameState.flags &= ~4;
@@ -96,22 +96,22 @@ u8 task_btl_form_1(BtlFormWork* work) {
 
                 if (obj->unk_034 & 4) {
                     if (GetRandom() % 5 != 0) {
-                        work->unk_20 |= 1;
+                        work->flags |= 1;
                     } else {
-                        work->unk_20 &= ~1;
+                        work->flags &= ~1;
                     }
                 } else {
                     if (GetRandom() % 5 == 0) {
-                        work->unk_20 |= 1;
+                        work->flags |= 1;
                     } else {
-                        work->unk_20 &= ~1;
+                        work->flags &= ~1;
                     }
                 }
                 work->timer = 0xFFFF;
             }
             step = &work->entry->steps[work->unk_04];
             if (work->unk_02 >= step->delay) {
-                if (work->unk_20 & 1) {
+                if (work->flags & 1) {
                     x = work->x - (step->x << 8);
                 } else {
                     x = work->x + (step->x << 8);
@@ -256,7 +256,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     work->unk_44 = 256;
     work->vx = 0x800;
     work->unk_54 = 10;
-    work->unk_56 = 2;
+    work->flags = 2;
     work->unk_68 = 568;
 
     switch (work->unk_48) {
@@ -282,12 +282,12 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         break;
     case 4:
         work->unk_4C = 103;
-        work->unk_56 |= 1;
+        work->flags |= 1;
         work->unk_54 = 8;
         break;
     case 5:
         work->unk_4C = 104;
-        work->unk_56 |= 1;
+        work->flags |= 1;
         work->unk_54 = 8;
         break;
     case 6:
@@ -453,7 +453,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             work->x = work->x + work->vx;
         }
 
-        if (work->unk_56 & 1) {
+        if (work->flags & 1) {
             if (func_08011E3C(work->x, work->y, work->z, work->unk_54, work->unk_54, 32) != 0) {
                 work->state = 2;
                 work->unk_38 = 0;
@@ -526,11 +526,11 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             ApproachValue(&work->unk_44, 25, work->unk_3A);
             work->unk_3A--;
             if (work->unk_3A <= 0) {
-                work->unk_56 &= ~2;
+                work->flags &= ~2;
             }
         }
 
-        if (!(work->unk_56 & 2) && func_080128EC() == 0) {
+        if (!(work->flags & 2) && func_080128EC() == 0) {
             return 0;
         }
 
@@ -557,7 +557,7 @@ void task_btl_raid_2(BtlRaidWork* work) {
     s32 affine;
     s32 scale;
 
-    if (work->unk_56 & 2) {
+    if (work->flags & 2) {
         flags = GetBattleSpritePriorityFlags(work->y);
         WorldToScreen(&sx, &sy, work->x, work->y, work->z);
         scale = gBtlWork->unk_024 * work->unk_44 >> 8;

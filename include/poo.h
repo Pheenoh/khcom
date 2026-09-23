@@ -181,7 +181,7 @@ typedef struct PooMapBornWork {
     u8 unk_0C[0x04];
     PooPos pos;
     u8 unk_20[0x2E];
-    u16 unk_4E;
+    u16 flags;
     u8 unk_50[0x2C];
     u8 unk_7C;
     u8 unk_7D[0x03];
@@ -598,7 +598,7 @@ typedef struct PooLeafWork {
     s32 z;
     u8 unk_30[0x04];
     u8 unk_34[0x2E];
-    u16 unk_62;
+    u16 flags;
     u8 unk_64[0x2C];
     u8 unk_90;
     u8 unk_91;
@@ -684,7 +684,7 @@ typedef struct PooTanpopoWork {
     s32 z;
     u8 unk_50[0x04];
     u8 unk_54[0x2E];
-    u16 unk_82;
+    u16 flags;
     u8 unk_84[0x2C];
     u8 unk_B0;
     u8 unk_B1;

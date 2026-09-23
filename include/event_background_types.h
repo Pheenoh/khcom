@@ -22,7 +22,7 @@ typedef struct EventBackgroundDef {
     u8 unk_25[3];
     struct EventMapObjectDef* mapObjects;
     u8 unk_2C;
-    u8 unk_2D;
+    u8 flags;
     u8 unk_2E[2];
 } EventBackgroundDef;
 

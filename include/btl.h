@@ -54,7 +54,7 @@ typedef struct BtlDrawInfo {
     s32 x;
     s32 y;
     s32 z;
-    u16 unk_0C;
+    u16 flags;
     u8 unk_0E[0x2];
     AnimState anim;
     void* unk_28;

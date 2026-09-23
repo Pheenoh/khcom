@@ -98,7 +98,7 @@ typedef struct UnkStruct_0984BC9C {
     u16 unk_0C;
     u16 unk_0E;
     TaskDesc* desc;
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
 } UnkStruct_0984BC9C;
 
@@ -683,7 +683,7 @@ typedef struct MapGmkGp8Work {
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 collider[0x2E];
-    u16 unk_072;
+    u16 flags;
     u8 unk_074[0x2C];
     AnimState anim;
     void* tiles;
@@ -999,7 +999,7 @@ typedef struct MapStairWork {
 
 typedef struct UnkStruct_080F023C {
     u8 unk_00[0x04];
-    u16 unk_04;
+    u16 flags;
     u16 unk_06;
     s32 unk_08;
     s32 unk_0C;

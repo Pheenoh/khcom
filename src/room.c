@@ -204,7 +204,7 @@ void func_080F7E84(GaEntryWork* e) {
 void func_080F7F54(GaWork* work, s32 state) {
     if (work->unk_004 != 11 && work->unk_000 != 11) {
         work->unk_004 = state;
-        work->unk_00E |= 1;
+        work->flags |= 1;
     }
 }
 
@@ -394,7 +394,7 @@ u8 func_080F854C(GaWork* work) {
     u32 i = 0;
     GaEntryWork* e;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
     switch (work->unk_008) {
@@ -530,7 +530,7 @@ u8 func_080F854C(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -540,7 +540,7 @@ u8 func_080F8958(GaWork* work) {
     s32 dx;
     s32 dy;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -622,7 +622,7 @@ u8 func_080F8958(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -632,7 +632,7 @@ u8 func_080F8AC8(GaWork* work) {
     GaEntryWork* e;
     s32 x, y;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
     for (i = 0; i <= 5; i++) {
@@ -796,7 +796,7 @@ u8 func_080F8AC8(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -805,7 +805,7 @@ u8 func_080F8F9C(GaWork* work) {
     GaEntryWork* e;
     s32 velocity;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
     switch (work->unk_008) {
@@ -1077,7 +1077,7 @@ u8 func_080F8F9C(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1086,7 +1086,7 @@ u8 func_080F9744(GaWork* work) {
     GaEntryWork* e;
     u32 i;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1193,7 +1193,7 @@ u8 func_080F9744(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1204,7 +1204,7 @@ u8 func_080F99C0(GaWork* work) {
     u32 i;
     s32 t;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1307,7 +1307,7 @@ u8 func_080F99C0(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1319,7 +1319,7 @@ u8 func_080F9C2C(GaWork* work) {
 
     e = 0;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1426,7 +1426,7 @@ u8 func_080F9C2C(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1437,7 +1437,7 @@ u8 func_080F9EDC(GaWork* work) {
 
     e = 0;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1600,7 +1600,7 @@ u8 func_080F9EDC(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1611,7 +1611,7 @@ u8 func_080FA2B4(GaWork* work) {
 
     e = 0;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1760,7 +1760,7 @@ u8 func_080FA2B4(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1771,7 +1771,7 @@ u8 func_080FA644(GaWork* work) {
 
     e = 0;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1927,7 +1927,7 @@ u8 func_080FA644(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -1940,7 +1940,7 @@ u8 func_080FAA18(GaWork* work) {
 
     e = 0;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
 
@@ -1997,7 +1997,7 @@ u8 func_080FAA18(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return 1;
 }
@@ -2008,7 +2008,7 @@ u8 func_080FABE4(GaWork* work) {
     GaEntryWork* e;
     u8 result = 1;
 
-    if (work->unk_00E & 1) {
+    if (work->flags & 1) {
         work->unk_008 = 2;
     }
     switch (work->unk_008) {
@@ -2156,7 +2156,7 @@ u8 func_080FABE4(GaWork* work) {
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
-        work->unk_00E &= 0xFFFE;
+        work->flags &= 0xFFFE;
     }
     return result;
 }

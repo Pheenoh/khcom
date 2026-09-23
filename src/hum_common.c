@@ -25,7 +25,7 @@ void HumInit(HumWork* work, const HumDef* def) {
     work->unk_178 = def->palette;
     work->unk_150 = 0;
     work->unk_152 = 0;
-    work->unk_154 = 0;
+    work->flags = 0;
     work->unk_158 = 0;
     actor->vx = 0;
     actor->vy = 0;
@@ -62,7 +62,7 @@ void HumSubInit(HumWork* work, HumSub* sub, const HumSubDef* def) {
     sub->x = work->actor.x;
     sub->y = work->actor.y;
     sub->z = work->actor.z;
-    sub->unk_34 = 0;
+    sub->flags = 0;
     AnimInit(&sub->anim, 0, 0);
 }
 
@@ -103,7 +103,7 @@ s32 _0800E434(HumWork* work) {
 
     switch (r) {
     case 5:
-        work->unk_154 |= 4;
+        work->flags |= 4;
         gUnk_02039B9C->unk_068 &= ~0x40000000;
         work->unk_17E = 0;
         work->unk_150 = 0;
@@ -137,7 +137,7 @@ s32 _0800E434(HumWork* work) {
         work->unk_150 = 0;
         break;
     case 3:
-        work->unk_154 |= 4;
+        work->flags |= 4;
         work->unk_170 = 3;
         work->unk_150 = 0;
         break;
@@ -163,7 +163,7 @@ s32 _0800E434(HumWork* work) {
 
 void HumSubUpdateAnimation(HumSub* sub) {
     if (sub != 0) {
-        if (!(sub->unk_34 & 2)) {
+        if (!(sub->flags & 2)) {
             sub->gfx = AnimUpdate(&sub->anim);
         }
     }
@@ -361,7 +361,7 @@ s32 func_0800E5F0(HumWork* work) {
         if (work->unk_150 == 0) {
             func_0801AF4C(actor);
 
-            if (!(work->unk_154 & 0x40)) {
+            if (!(work->flags & 0x40)) {
                 m4aSongNumStart(0x20E);
             }
             func_08019050(1, 0x100, gBtlWork->x2, gBtlWork->y2);
@@ -369,7 +369,7 @@ s32 func_0800E5F0(HumWork* work) {
         if (FadeIsActive() == 0) {
             work->unk_150 = 0;
 
-            if (work->unk_154 & 0x40) {
+            if (work->flags & 0x40) {
                 work->unk_170 = 6;
             } else {
                 work->unk_170 = 4;
@@ -449,7 +449,7 @@ s32 func_0800E5F0(HumWork* work) {
         work->unk_150++;
         break;
     case 0:
-        work->unk_154 &= ~4;
+        work->flags &= ~4;
 
         if (func_0807E29C()) {
             work->unk_150 = 0;
@@ -476,7 +476,7 @@ s32 func_0800E5F0(HumWork* work) {
             actor->z = 0;
             work->unk_158 = 0;
         }
-        if (actor->collider.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->collider.other->unk_30 & 2)) {
+        if (actor->collider.unk_2C != 0 && !(work->flags & 4) && !(actor->collider.other->unk_30 & 2)) {
             actor->x += actor->collider.unk_38 >> 1;
             actor->y += actor->collider.unk_3C >> 1;
         }
@@ -510,20 +510,20 @@ s32 func_0800E5F0(HumWork* work) {
         }
     }
 
-    if (!(work->unk_154 & 8)) {
+    if (!(work->flags & 8)) {
         switch (ClampBattlePosition(&actor->x, &actor->y, work->unk_174, 0)) {
         case 1:
         case 2:
             actor->vx = -(actor->vx >> 1);
-            work->unk_154 |= 1;
+            work->flags |= 1;
             break;
         case 3:
         case 4:
             actor->vy = -(actor->vy >> 1);
-            work->unk_154 |= 1;
+            work->flags |= 1;
             break;
         default:
-            work->unk_154 &= ~1;
+            work->flags &= ~1;
             break;
         }
     }

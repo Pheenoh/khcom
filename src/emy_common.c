@@ -26,7 +26,7 @@ void func_0800C778(EmyWork* work, const EmyDef* def, EmyObj* obj) {
     work->unk_14C = 11;
     work->unk_154 = 0;
     work->unk_156 = 0;
-    work->unk_158 = 0;
+    work->flags = 0;
     work->unk_15A = 1;
     work->angle = 0;
     work->unk_164 = def->unk_08;
@@ -49,13 +49,13 @@ void func_0800C778(EmyWork* work, const EmyDef* def, EmyObj* obj) {
     work->gfx = AnimGetGfx(&work->anim);
     TaskPoolInit(&work->tasks, 3);
 
-    if (!(def->unk_1A & 1)) {
+    if (!(def->flags & 1)) {
         TaskCreate(&work->tasks, &gTaskDescBtlShadow, actor);
     }
 
     TaskCreate(&work->tasks, &gTaskDescBtlBadstatus, actor);
 
-    if (def->unk_1A & 2) {
+    if (def->flags & 2) {
         work->unk_17C = 0x100;
         work->unk_180 = 0x100;
     } else {
@@ -76,7 +76,7 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
     ret = 0;
 
     if (work->unk_154 == 0) {
-        work->unk_158 &= ~4;
+        work->flags &= ~4;
     }
 
     if (work->unk_154 >= a) {
@@ -95,18 +95,18 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
                 ApproachValueHalfSteps(&actor->y, target, steps);
             }
 
-            if (!(work->unk_158 & 4)) {
+            if (!(work->flags & 4)) {
                 if (actor->unk_034 & 4) {
                     if (func_08011F78(d, actor->x - (g << 8), actor->y, actor->z + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
                         m4aSongNumStart(f);
-                        work->unk_158 |= 4;
+                        work->flags |= 4;
                         ret = 1;
                     }
                 } else {
                     if (func_08011F78(d, actor->x + (g << 8), actor->y, actor->z + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
                         m4aSongNumStart(f);
                         ret = 1;
-                        work->unk_158 |= 4;
+                        work->flags |= 4;
                     }
                 }
             }
@@ -671,7 +671,7 @@ s32 _0800CDF0(EmyWork* work) {
             }
             t = (actor->unk_09C / 2) * work->unk_16C;
 
-            if (work->unk_158 & 1) {
+            if (work->flags & 1) {
                 func_08013E4C(actor->x, actor->y, actor->z - t, work->unk_16C);
             } else {
                 func_08013DB8(actor->x, actor->y, actor->z - t, work->unk_16C);
@@ -757,16 +757,16 @@ s32 _0800CDF0(EmyWork* work) {
     switch (ClampBattlePosition(&actor->x, &actor->y, -20, 0)) {
     case 1:
     case 2:
-        work->unk_158 |= 2;
+        work->flags |= 2;
         actor->vx = -(actor->vx >> 1);
         break;
     case 3:
     case 4:
-        work->unk_158 |= 2;
+        work->flags |= 2;
         actor->vy = -(actor->vy >> 1);
         break;
     default:
-        work->unk_158 &= 0xFFFD;
+        work->flags &= 0xFFFD;
         break;
     }
 
