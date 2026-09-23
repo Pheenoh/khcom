@@ -1443,7 +1443,7 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             work->jf->unk_24A = 0;
-            work->unk_80 = TaskCreate(&work->tasks, &gTaskDescBosJfRock, work->jf);
+            work->task = TaskCreate(&work->tasks, &gTaskDescBosJfRock, work->jf);
             func_080BE380(work->jf->unk_248, 0xA0, work);
             work->unk_44 = 120;
             work->unk_48++;
@@ -1482,7 +1482,7 @@ void func_080BEDF4(JfMajinWork* work) {
             work->jf->unk_24A++;
             break;
         case 4:
-            if (IsTaskActive(work->unk_80) == 0) {
+            if (IsTaskActive(work->task) == 0) {
                 work->z = -0x3800;
                 work->unk_44 = 10;
                 work->unk_48++;
@@ -4213,8 +4213,8 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_07C = 0;
     work->unk_07E = 0;
     work->unk_080 = 0;
-    ColliderInit(&work->unk_004, 7, 0x20, 3);
-    ColliderSetPosition(&work->unk_004, work->x, work->y, work->z);
+    ColliderInit(&work->collider, 7, 0x20, 3);
+    ColliderSetPosition(&work->collider, work->x, work->y, work->z);
     work->gfx = (u32)gUnk_09EF3BF8[0];
     work->gfx2 = (u32)gUnk_09EF3C18;
 }
@@ -4283,7 +4283,7 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
         return 0;
     }
 
-    ColliderSetPosition(&work->unk_004, work->x, work->y, work->z);
+    ColliderSetPosition(&work->collider, work->x, work->y, work->z);
 
     return 1;
 }
@@ -4331,14 +4331,14 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
 }
 
 void task_bos_dsd_ita_3(DsdItaWork* work) {
-    ColliderUnregister(&work->unk_004);
+    ColliderUnregister(&work->collider);
 }
 
 void func_080C427C(DsdItaWork* work) {
     s32 v;
     s16 k;
 
-    if (gBtlWork->unk_0F0 == (u32)&work->unk_004) {
+    if (gBtlWork->unk_0F0 == (u32)&work->collider) {
         v = work->dsd->unk_358 & 32;
 
         if (v == 0) {
@@ -4593,7 +4593,7 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_10 = 0;
     work->unk_14 = 0;
     work->unk_18 = 0;
-    work->unk_28 = 0xF4;
+    work->angle = 0xF4;
     work->unk_29 = 0xF4;
     work->unk_2C = 0x800;
     work->unk_30 = 0x19;
@@ -4603,9 +4603,9 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_3C = 0xF;
     work->unk_3A = 0x3C;
     work->unk_48 = 0;
-    work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
+    work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
     work->unk_20 = 0;
-    work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
+    work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     work->gfx = gUnk_08B22CBC;
 }
 
@@ -4701,10 +4701,10 @@ void task_bos_dsd_energy1_3(void) {
 }
 
 void func_080C4C54(DsdEnergy1Work* work) {
-    work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
-    work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
+    work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
+    work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     work->unk_2C -= 76;
-    work->unk_28 -= 3;
+    work->angle -= 3;
     work->unk_04 += work->unk_1C;
     work->unk_08 += work->unk_20;
     work->unk_0C += work->unk_24;
@@ -4724,24 +4724,24 @@ void func_080C4CCC(DsdEnergy1Work* work) {
         work->unk_40 = 0;
         work->unk_29 = GetAngle(work->unk_04, work->unk_0C, gBtlWork->unk_130, gBtlWork->unk_138);
 
-        if (work->unk_29 >= work->unk_28) {
-            d = work->unk_29 - work->unk_28;
+        if (work->unk_29 >= work->angle) {
+            d = work->unk_29 - work->angle;
 
             if ((s16)d > 10) {
                 d = 10;
             }
         } else {
-            d = work->unk_29 - work->unk_28;
+            d = work->unk_29 - work->angle;
 
             if ((s16)d < -10) {
                 d = -10;
             }
         }
 
-        work->unk_28 += d;
-        work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
+        work->angle += d;
+        work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
         work->unk_20 = 0;
-        work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
+        work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     }
 
     work->unk_40++;

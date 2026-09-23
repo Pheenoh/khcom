@@ -56,7 +56,7 @@ typedef struct LstState {
     s16 unk_010;
     s16 unk_012;
     s16 unk_014;
-    u16 unk_016;
+    u16 angle;
     u16 unk_018;
     u8 unk_01A;
     u8 unk_01B;
@@ -309,7 +309,7 @@ typedef struct LstFalArg {
     s32 x;
     s32 y;
     s32 z;
-    u8 unk_10;
+    u8 angle;
     u8 unk_11;
     s16 unk_12;
     u16* unk_14;

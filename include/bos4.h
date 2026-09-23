@@ -77,7 +77,7 @@ typedef struct BoogieExplosiondiceWork {
     u8 unk_050[0x24];
     u32 unk_074;
     u8 unk_078[0x8];
-    u32 unk_080;
+    u32 collider;
     u8 unk_084[0xCC];
     u32 unk_150;
     u32 unk_154;
@@ -242,11 +242,11 @@ typedef struct BoogieDiceWork {
     u8 unk_070[0x04];
     u64 unk_074;
     u8 unk_07C[0x4];
-    u32 unk_080;
+    u32 collider;
     u8 unk_084[0xCC];
     s32 unk_150;
     s32 unk_154;
-    u8 unk_158;
+    u8 angle;
     u8 unk_159[0x3];
     s32 unk_15C;
     s32 unk_160;
@@ -353,7 +353,7 @@ typedef struct UrsulaMapanimeWork {
     u32 unk_00C;
     u32 unk_010;
     u8 unk_014[0x10];
-    void* unk_024;
+    void* task;
     u8 unk_028;
     u8 unk_029[0x3];
 } UrsulaMapanimeWork;
@@ -402,7 +402,7 @@ typedef struct BoogieKnifeWork {
     u32 unk_034;
     u32 unk_038;
     u8 unk_03C[0x30];
-    u32 unk_06C;
+    u32 collider;
     u8 unk_070[0xBC];
     u8 unk_12C[0x10];
     s32 unk_13C;

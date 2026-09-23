@@ -845,7 +845,7 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->unk_068 = p->x;
     work->unk_06C = p->y;
     work->unk_070 = p->z;
-    work->unk_016 = arg->unk_04 << 7;
+    work->angle = arg->unk_04 << 7;
     work->unk_074 = 2;
     work->unk_078 = 2;
     work->tiles = (u32)LoadObjTiles(gUnk_09CD0334, 0x900);
@@ -1097,17 +1097,17 @@ u8 task_bos_lst_bit_1(LstState* work) {
 
     if (gBtlWork->unk_068 & 0x2000000000000) {
         WorldToScreen(&x2, &y2, work->unk_068, work->unk_06C, work->unk_070);
-        work->unk_016 += 2;
+        work->angle += 2;
     } else {
         if (work->unk_00E == 0) {
             switch (work->unk_002) {
             case 2:
             case 3:
-                work->unk_016 += 2;
+                work->angle += 2;
                 WorldToScreen(&x2, &y2, work->unk_050, work->unk_054, work->unk_058);
                 break;
             default:
-                work->unk_016 += 2;
+                work->angle += 2;
                 WorldToScreen(&x2, &y2, gBtlWork->actor->x, gBtlWork->actor->y,
                               gBtlWork->actor->z);
                 break;
@@ -1117,11 +1117,11 @@ u8 task_bos_lst_bit_1(LstState* work) {
             case 2:
             case 3:
             case 4:
-                work->unk_016 += 6;
+                work->angle += 6;
                 WorldToScreen(&x2, &y2, work->unk_050, work->unk_054, work->unk_058);
                 break;
             default:
-                work->unk_016 += 2;
+                work->angle += 2;
                 WorldToScreen(&x2, &y2, gBtlWork->actor->x, gBtlWork->actor->y,
                               gBtlWork->actor->z);
                 break;
@@ -1133,19 +1133,19 @@ u8 task_bos_lst_bit_1(LstState* work) {
         work->unk_070 = gBtlWork->actor->z;
     }
 
-    work->unk_016 &= 0xFF;
+    work->angle &= 0xFF;
 
     if (work->unk_00E == 0) {
-        work->unk_034 = (-gSineTable[(work->unk_016 & 0xFF) + 64] * 3 >> 6) << 8;
-        work->unk_038 = (gSineTable[work->unk_016 & 0xFF] * 3 >> 6) << 8;
+        work->unk_034 = (-gSineTable[(work->angle & 0xFF) + 64] * 3 >> 6) << 8;
+        work->unk_038 = (gSineTable[work->angle & 0xFF] * 3 >> 6) << 8;
         work->unk_03C = work->unk_03C / 2;
     } else if (work->unk_010 == 0) {
         work->unk_034 = work->unk_034 / 2;
         work->unk_038 = work->unk_038 / 2;
         work->unk_03C = work->unk_03C / 2;
     } else {
-        work->unk_034 = (-gSineTable[(work->unk_016 & 0xFF) + 64] >> 3) << 8;
-        work->unk_038 = (gSineTable[work->unk_016 & 0xFF] * 3 >> 6) << 8;
+        work->unk_034 = (-gSineTable[(work->angle & 0xFF) + 64] >> 3) << 8;
+        work->unk_038 = (gSineTable[work->angle & 0xFF] * 3 >> 6) << 8;
         work->unk_03C = 0x800;
     }
 
@@ -1547,8 +1547,8 @@ void task_bos_lst_fal_0(LstFalWork* work, LstFalArg* arg) {
         work->unk_010 = work->unk_010 * 640 >> 8;
         break;
     case 4:
-        work->unk_010 = (-gSineTable[arg->unk_10 + 0x40] << 8) / 256;
-        work->unk_014 = (gSineTable[arg->unk_10] << 8) / 256;
+        work->unk_010 = (-gSineTable[arg->angle + 0x40] << 8) / 256;
+        work->unk_014 = (gSineTable[arg->angle] << 8) / 256;
         break;
     case 5:
         work->unk_010 = GetRandom() % 0x201 - 0x100;

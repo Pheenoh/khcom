@@ -866,7 +866,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         e->x += e->unk_078;
         e->y += e->unk_07C;
     }
-    ColliderSetPosition(&e->unk_040, e->x, e->y, e->z + e->unk_13C);
+    ColliderSetPosition(&e->collider, e->x, e->y, e->z + e->unk_13C);
     TaskPoolUpdate(&e->tasks);
 }
 
@@ -889,7 +889,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     work->unk_012 = 0;
     work->unk_014 = 0;
     work->unk_018 = 0;
-    work->unk_01C = 0;
+    work->angle = 0;
     work->unk_A4C = 0;
     work->unk_A50 = 60;
     TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, &gUnk_0999202C);
@@ -1941,13 +1941,13 @@ u8 func_080FCCB4(MdFireWork* work) {
                     }
                     break;
                 case 2:
-                    work->unk_162++;
-                    work->x = gSineTable[work->unk_162] * 40 + work->unk_164;
-                    work->y = -gSineTable[work->unk_162 + 0x40] * 40 + work->unk_168;
+                    work->angle++;
+                    work->x = gSineTable[work->angle] * 40 + work->unk_164;
+                    work->y = -gSineTable[work->angle + 0x40] * 40 + work->unk_168;
                     break;
                 case 3:
-                    work->unk_162++;
-                    work->x = gSineTable[work->unk_162] * 32 + work->unk_164;
+                    work->angle++;
+                    work->x = gSineTable[work->angle] * 32 + work->unk_164;
                     break;
             }
 
@@ -1992,11 +1992,11 @@ void func_080FCF78(MdFireWork* work) {
         work->unk_15C = 0;
         break;
     case 3:
-        work->unk_162 = work->unk_160 * 256 / 6;
+        work->angle = work->unk_160 * 256 / 6;
         work->unk_164 = 0x8000;
         work->unk_168 = 0x14800;
-        work->x = gSineTable[work->unk_162] * 40 + work->unk_164;
-        work->y = -gSineTable[work->unk_162 + 0x40] * 40 + work->unk_168;
+        work->x = gSineTable[work->angle] * 40 + work->unk_164;
+        work->y = -gSineTable[work->angle + 0x40] * 40 + work->unk_168;
         work->unk_004 = 60;
         work->unk_15C = 0;
         break;
@@ -2007,9 +2007,9 @@ void func_080FCF78(MdFireWork* work) {
         work->unk_15C = 0;
         break;
     case 5:
-        work->unk_162 = 0;
+        work->angle = 0;
         work->unk_164 = 0x9800;
-        work->x = gSineTable[work->unk_162] * 32 + work->unk_164;
+        work->x = gSineTable[work->angle] * 32 + work->unk_164;
         work->y = work->unk_160 * 4096 + 0x11800;
         work->unk_004 = work->unk_160 * 256 / 6 + 60;
         work->unk_15C = 0;
@@ -2153,8 +2153,8 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            ColliderSetDisabled(&work->unk_01C, 0);
-            ColliderSetHeight(&work->unk_01C, 8);
+            ColliderSetDisabled(&work->collider, 0);
+            ColliderSetHeight(&work->collider, 8);
             work->unk_00C = work->z - 0xA000;
             m4aSongNumStart(680);
             work->unk_07C = 1;
@@ -2167,8 +2167,8 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            ColliderSetDisabled(&work->unk_01C, 0);
-            ColliderSetHeight(&work->unk_01C, 16);
+            ColliderSetDisabled(&work->collider, 0);
+            ColliderSetHeight(&work->collider, 16);
             work->unk_00C = work->z - 0xA000;
             m4aSongNumStart(680);
             work->unk_07C = 2;
@@ -2181,8 +2181,8 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            ColliderSetDisabled(&work->unk_01C, 0);
-            ColliderSetHeight(&work->unk_01C, 24);
+            ColliderSetDisabled(&work->collider, 0);
+            ColliderSetHeight(&work->collider, 24);
             m4aSongNumStart(680);
             work->unk_07C = 3;
             work->target->unk_00 &= 0xFFFE;
@@ -2204,10 +2204,10 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             work->unk_07C--;
 
             if (work->unk_07C <= 0) {
-                ColliderSetDisabled(&work->unk_01C, 1);
+                ColliderSetDisabled(&work->collider, 1);
                 result = 0;
             } else {
-                ColliderSetHeight(&work->unk_01C, work->unk_07C * 8);
+                ColliderSetHeight(&work->collider, work->unk_07C * 8);
             }
         }
         break;
@@ -2243,7 +2243,7 @@ void task_bos_md_dai_2(MdDaiWork* work) {
 }
 
 void task_bos_md_dai_3(MdDaiWork* work) {
-    ColliderUnregister(&work->unk_01C);
+    ColliderUnregister(&work->collider);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjTiles((void*)work->tiles);
     gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;

@@ -29,7 +29,7 @@ void func_080D8F14(BoogieWork* work) {
 
         if (gUnk_0203C558 == 0) {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieDisk, &work->actor);
+            work->task = TaskCreate(&work->tasks, &gTaskDescBosBoogieDisk, &work->actor);
         } else if (gUnk_0203C558 == 1) {
             work->unk_000 = 6;
             work->unk_004 = 0;
@@ -42,7 +42,7 @@ void func_080D8F14(BoogieWork* work) {
             func_0801BDDC(17, 0x15000, 0x24000, 0);
         } else if (gUnk_0203C558 == 3) {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieKnifereader, 0);
+            work->task = TaskCreate(&work->tasks, &gTaskDescBosBoogieKnifereader, 0);
         } else if (gUnk_0203C558 == 4) {
             work->unk_000 = 6;
             work->unk_004 = 0;
@@ -50,7 +50,7 @@ void func_080D8F14(BoogieWork* work) {
             func_0801BDDC(15, 0x15000, 0x24000, 0);
         } else {
             work->unk_000 = 8;
-            work->unk_164 = TaskCreate(&work->tasks, &gTaskDescBosBoogieKaihuku, work);
+            work->task = TaskCreate(&work->tasks, &gTaskDescBosBoogieKaihuku, work);
         }
     }
 }
@@ -132,7 +132,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     TaskCreate(&work->tasks, &gTaskDescBosBoogieMapanime, 0);
     TaskCreate(&work->tasks, &gTaskDescBosBoogieSaku, work);
     work->unk_160 = 0;
-    work->unk_164 = 0;
+    work->task = 0;
     work->unk_168 = 0;
     work->dialog = 0;
     gBtlWork->unk_0CC = work->actor.x;
@@ -258,7 +258,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         work->unk_004++;
         if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
             !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->dialog) &&
-            !IsTaskActive((Task*)work->unk_164) && gBtlWork->unk_0EC <= 0 && work->unk_174 == 0) {
+            !IsTaskActive((Task*)work->task) && gBtlWork->unk_0EC <= 0 && work->unk_174 == 0) {
             random = GetRandom() % 100;
             if (random == 0) {
                 func_08083900(8);
@@ -339,7 +339,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         } else if (gUnk_0203C570 != 0) {
             work->unk_000 = 0;
             work->unk_004 = 0;
-        } else if (!IsTaskActive((Task*)work->unk_164)) {
+        } else if (!IsTaskActive((Task*)work->task)) {
             work->unk_000 = 7;
             work->unk_004 = 0;
         }

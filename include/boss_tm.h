@@ -98,7 +98,7 @@ typedef struct WlogoObjParam {
 
 typedef struct TmTblWork {
     u32 unk_000;
-    u32 unk_004;
+    u32 collider;
     u8 unk_008[0x32];
     u8 unk_03A;
     u8 unk_03B[0x25];
@@ -181,7 +181,7 @@ typedef struct TmArmSrc {
 typedef struct TmArmJoint {
     s32 unk_00;
     s32 unk_04;
-    u8 unk_08;
+    u8 angle;
     u8 unk_09[0x3];
     s32 x;
     s32 y;

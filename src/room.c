@@ -337,12 +337,12 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         AnimStart(&work->anim, 0, 1);
         work->gfx = AnimGetGfx(&work->anim);
     }
-    ColliderInit(&e->unk_040, 8, 8, 0x10);
+    ColliderInit(&e->collider, 8, 8, 0x10);
 }
 
 void func_080F8374(GaEntryWork* e) {
     if (!(e->unk_15A & 0x10)) {
-        ColliderUnregister(&e->unk_040);
+        ColliderUnregister(&e->collider);
         ReleaseObjTiles(e->tiles);
         func_0801B7D8(e);
         TaskPoolDestroy(&e->tasks);
@@ -678,7 +678,7 @@ u8 func_080F8AC8(GaWork* work) {
             work->unk_012 = d / 4900 + 2;
             work->unk_A40 = 768;
             work->unk_A44 = work->unk_A40 * 2 / work->unk_010;
-            work->unk_01C = func_080F7E0C(e->unk_124, e->unk_128, x, y);
+            work->angle = func_080F7E0C(e->unk_124, e->unk_128, x, y);
             work->unk_A38 = (x - e->unk_124) / ((work->unk_012 - 1) * work->unk_010 * 2);
             if (work->unk_A38 > 640) {
                 work->unk_A38 = 640;
@@ -905,7 +905,7 @@ u8 func_080F8F9C(GaWork* work) {
                     work->unk_012 = 5;
                     work->unk_A40 = 1024;
                     work->unk_A44 = work->unk_A40 * 2 / work->unk_010;
-                    work->unk_01C = func_080F7E0C(e->unk_124, e->unk_128, gBtlWork->actor->x, gBtlWork->actor->y);
+                    work->angle = func_080F7E0C(e->unk_124, e->unk_128, gBtlWork->actor->x, gBtlWork->actor->y);
                     work->unk_00C = 3;
                     break;
                 }
@@ -920,7 +920,7 @@ u8 func_080F8F9C(GaWork* work) {
                     if (!(e->unk_15A & 8)) {
                         break;
                     }
-                    velocity = gSineTable[work->unk_01C] * 972 >> 8;
+                    velocity = gSineTable[work->angle] * 972 >> 8;
                     e->unk_124 += velocity;
                     if (velocity < 0) {
                         if (e->unk_124 < 0) {
@@ -931,7 +931,7 @@ u8 func_080F8F9C(GaWork* work) {
                             e->unk_124 = 0x10000;
                         }
                     }
-                    velocity = -gSineTable[work->unk_01C + 64] * 972 >> 8;
+                    velocity = -gSineTable[work->angle + 64] * 972 >> 8;
                     e->unk_128 += velocity;
                     if (velocity < 0) {
                         if (e->unk_128 < 0x12800) {
@@ -1482,8 +1482,8 @@ u8 func_080F9EDC(GaWork* work) {
             func_080F80C0(work);
             break;
         case 2:
-            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->actor->x, gBtlWork->actor->y);
-            work->unk_A38 += gSineTable[work->unk_01C] * 5 >> 8;
+            work->angle = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->actor->x, gBtlWork->actor->y);
+            work->unk_A38 += gSineTable[work->angle] * 5 >> 8;
             if (work->unk_A38 > 0x200) {
                 work->unk_A38 = 0x200;
             } else if (work->unk_A38 < -0x200) {
@@ -1505,7 +1505,7 @@ u8 func_080F9EDC(GaWork* work) {
                 }
             }
 
-            work->unk_A3C += -gSineTable[work->unk_01C + 0x40] * 5 >> 8;
+            work->unk_A3C += -gSineTable[work->angle + 0x40] * 5 >> 8;
             if (work->unk_A3C > 0x200) {
                 work->unk_A3C = 0x200;
             } else if (work->unk_A3C < -0x200) {
@@ -1649,9 +1649,9 @@ u8 func_080FA2B4(GaWork* work) {
             }
             break;
         case 1:
-            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->actor->x, gBtlWork->actor->y);
-            work->unk_A38 = gSineTable[work->unk_01C] * 4;
-            work->unk_A3C = -gSineTable[work->unk_01C + 0x40] * 4;
+            work->angle = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->actor->x, gBtlWork->actor->y);
+            work->unk_A38 = gSineTable[work->angle] * 4;
+            work->unk_A3C = -gSineTable[work->angle + 0x40] * 4;
             work->unk_010 = 0x12C;
             work->unk_00C = 2;
             func_080F80C0(work);

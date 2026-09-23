@@ -1949,16 +1949,16 @@ void func_080BB464(TmArmWork* work) {
     TmArmJoint* s = &work->joints.all[7];
     TmArmPos* d = &work->unk_1F8[0];
 
-    d->x = s->unk_00 + gSineTable[s->unk_08] * 12 + work->src->unk_00;
-    d->z = s->unk_04 + -gSineTable[s->unk_08 + 0x40] * 12 + work->src->unk_08;
+    d->x = s->unk_00 + gSineTable[s->angle] * 12 + work->src->unk_00;
+    d->z = s->unk_04 + -gSineTable[s->angle + 0x40] * 12 + work->src->unk_08;
     d->y = work->src->unk_04;
 }
 void func_080BB4C0(TmArmWork* work) {
     TmArmJoint* s = &work->joints.all[3];
     TmArmPos* d = &work->unk_1F8[1];
 
-    d->x = s->unk_00 + gSineTable[s->unk_08] * 12 + work->src->unk_0C;
-    d->z = s->unk_04 + -gSineTable[s->unk_08 + 0x40] * 12 + work->src->unk_14;
+    d->x = s->unk_00 + gSineTable[s->angle] * 12 + work->src->unk_0C;
+    d->z = s->unk_04 + -gSineTable[s->angle + 0x40] * 12 + work->src->unk_14;
     d->y = work->src->unk_10;
 }
 
@@ -1976,8 +1976,8 @@ void func_080BB518(TmArmJoint* joints) {
         p = &joints[i];
         p->x = x;
         p->y = y;
-        x += gSineTable[p->unk_08] * gUnk_0961A63C[n = p->unk_26];
-        y += -gSineTable[p->unk_08 + 0x40] * gUnk_0961A63C[n = p->unk_26];
+        x += gSineTable[p->angle] * gUnk_0961A63C[n = p->unk_26];
+        y += -gSineTable[p->angle + 0x40] * gUnk_0961A63C[n = p->unk_26];
     }
 
     p = &joints[n = 3];
@@ -1992,7 +1992,7 @@ void func_080BB588(TmArmJoint* joints, u16 a) {
     for (i = 0; i < 4; i++) {
         p = &joints[i];
 
-        q = &p->unk_08;
+        q = &p->angle;
         ApproachAngle(q, p->unk_14, a);
     }
 
@@ -2046,8 +2046,8 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
     for (i = 0; i < 4; i++) {
         p = &work->joints.arms[0][i];
         q = &work->joints.arms[1][i];
-        *(u16*)&p->unk_08 = p->unk_14;
-        *(u16*)&q->unk_08 = q->unk_14;
+        *(u16*)&p->angle = p->unk_14;
+        *(u16*)&q->angle = q->unk_14;
     }
 
     a = work->joints.arms[0];
@@ -2691,14 +2691,14 @@ void task_bos_tm_arm_2(TmArmWork* work) {
 
     for (i = 0; i < 3; i++) {
         j = &work->joints.all[i + 4];
-        affine = AllocObjAffine(j->unk_08, 256, 256, 0);
+        affine = AllocObjAffine(j->angle, 256, 256, 0);
         WorldToScreen(&x, &y, work->src->unk_00 + j->unk_00, work->src->unk_04,
                       work->src->unk_08 + j->unk_04);
         depth = -4100;
         DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                    (depth -= (work->src->unk_04 >> 8) * 4, (u16)depth));
         j = &work->joints.all[i];
-        affine = AllocObjAffine(j->unk_08, 256, 256, 0);
+        affine = AllocObjAffine(j->angle, 256, 256, 0);
         WorldToScreen(&x, &y, work->src->unk_0C + j->unk_00, work->src->unk_10,
                       work->src->unk_14 + j->unk_04);
         depth = -4100;
@@ -2713,13 +2713,13 @@ void task_bos_tm_arm_2(TmArmWork* work) {
     }
 
     j = &work->joints.all[7];
-    affine = AllocObjAffine(j->unk_08, mode, 256, 0);
+    affine = AllocObjAffine(j->angle, mode, 256, 0);
     WorldToScreen(&x, &y, work->src->unk_00 + j->unk_00, work->src->unk_04,
                   work->src->unk_08 + j->unk_04);
     DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
                (endDepth = -4100 - (work->src->unk_04 >> 8) * 4, (u16)endDepth));
     j = &work->joints.all[3];
-    affine = AllocObjAffine(j->unk_08, mode, 256, 0);
+    affine = AllocObjAffine(j->angle, mode, 256, 0);
     WorldToScreen(&x, &y, work->src->unk_0C + j->unk_00, work->src->unk_10,
                   work->src->unk_14 + j->unk_04);
     DrawSprite(x, y, j->gfx, (void*)work->tiles, pal, affine, 0x800,
@@ -2736,9 +2736,9 @@ void task_bos_tm_arm_3(TmArmWork* work) {
 }
 
 void task_bos_tm_tbl_0(TmTblWork* work, void* arg) {
-    ColliderInit(&work->unk_004, 7, 0x1C, 0);
-    ColliderSetPosition(&work->unk_004, 0x10000, 0x16000, 0);
-    ColliderSetDisabled(&work->unk_004, 0);
+    ColliderInit(&work->collider, 7, 0x1C, 0);
+    ColliderSetPosition(&work->collider, 0x10000, 0x16000, 0);
+    ColliderSetDisabled(&work->collider, 0);
     DisableBg(1);
     work->unk_000 = arg;
     work->unk_068 = 0;
@@ -2777,7 +2777,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
             m4aSongNumStart(0x225);
             EnableBg(1);
             LoadBgMap(1, &gUnk_096BF464[0x5000], 0x800);
-            ColliderSetDisabled(&work->unk_004, 0);
+            ColliderSetDisabled(&work->collider, 0);
             break;
         case 2:
             LoadBgMap(1, &gUnk_096BF464[0x4800], 0x800);
@@ -2812,7 +2812,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
             t = *(u16*)((u8*)work->unk_000 + 40) | 0x10;
             *(u16*)((u8*)work->unk_000 + 40) = t;
         } else {
-            ColliderSetHeight(&work->unk_004, work->unk_060);
+            ColliderSetHeight(&work->collider, work->unk_060);
             work->unk_060 += 3;
             work->unk_066++;
         }
@@ -2821,7 +2821,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
         switch (work->unk_066) {
         case 0:
             LoadBgMap(1, &gUnk_096BF464[0x1800], 0x800);
-            ColliderSetDisabled(&work->unk_004, 1);
+            ColliderSetDisabled(&work->collider, 1);
             work->unk_060 = 0;
             break;
         case 1:
@@ -2865,7 +2865,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
 }
 
 void task_bos_tm_tbl_3(TmTblWork* work) {
-    ColliderUnregister(&work->unk_004);
+    ColliderUnregister(&work->collider);
     DisableBg(1);
 }
 

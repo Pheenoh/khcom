@@ -547,7 +547,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     work->unk_004 = 0;
     work->unk_150 = -0x4CC;
     work->unk_154 = GetRandom() % 437 + 0x4C;
-    work->unk_158 = GetRandom() % 0x78 + 0x44;
+    work->angle = GetRandom() % 0x78 + 0x44;
     work->unk_160 = 0x33;
     work->unk_15C = 0x33;
     work->y = 0;
@@ -557,7 +557,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     d = 0x24000;
     e = p->z - 0x3800;
     func_0801B37C(&work->unk_040, &gUnk_096FDF54, c, d, e);
-    ColliderInit(&work->unk_080, 3, gUnk_096FDF54.unk_08, gUnk_096FDF54.unk_06);
+    ColliderInit(&work->collider, 3, gUnk_096FDF54.unk_08, gUnk_096FDF54.unk_06);
     work->unk_074 |= 0x400;
 #ifdef VERSION_EU
     work->unk_074 |= 0x100;
@@ -664,18 +664,18 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         func_080D9B6C(work);
         work->unk_150 += 51;
         p->z += work->unk_150;
-        p->x += gSineTable[work->unk_158] * work->unk_154 >> 8;
-        p->y += -gSineTable[work->unk_158 + 0x40] * work->unk_154 >> 8;
+        p->x += gSineTable[work->angle] * work->unk_154 >> 8;
+        p->y += -gSineTable[work->angle + 0x40] * work->unk_154 >> 8;
 
         if (*((u8*)p + 0x6C) != 0 && work->unk_160 > 255 && work->unk_15C > 255) {
             work->unk_154 = work->unk_154 * 230 >> 8;
             p->x += *(s32*)((u8*)p + 0x78);
             p->y += *(s32*)((u8*)p + 0x7C);
-            work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
+            work->angle = work->angle + (100 + GetRandom() % 57);
         }
 
         if (ClampBoogieDicePosition(&p->x, &p->y, 0, 0) != 0) {
-            work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
+            work->angle = work->angle + (100 + GetRandom() % 57);
         }
 
         if (p->z > 0) {
@@ -715,7 +715,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             work->unk_154 = work->unk_154 * 230 >> 8;
             p->x += *(s32*)((u8*)p + 0x78);
             p->y += *(s32*)((u8*)p + 0x7C);
-            work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
+            work->angle = work->angle + (100 + GetRandom() % 57);
         }
 
         work->unk_150 += 51;
@@ -737,18 +737,18 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
         work->unk_004++;
         work->unk_150 += 51;
-        p->x += gSineTable[work->unk_158] * work->unk_154 >> 8;
-        p->y += -gSineTable[work->unk_158 + 0x40] * work->unk_154 >> 8;
+        p->x += gSineTable[work->angle] * work->unk_154 >> 8;
+        p->y += -gSineTable[work->angle + 0x40] * work->unk_154 >> 8;
 
         if (*((u8*)p + 0x6C) != 0 && work->unk_160 > 255 && work->unk_15C > 255) {
             work->unk_154 = work->unk_154 * 230 >> 8;
             p->x += *(s32*)((u8*)p + 0x78);
             p->y += *(s32*)((u8*)p + 0x7C);
-            work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
+            work->angle = work->angle + (100 + GetRandom() % 57);
         }
 
         if (ClampBoogieDicePosition(&p->x, &p->y, 0, 0) != 0) {
-            work->unk_158 = work->unk_158 + (100 + GetRandom() % 57);
+            work->angle = work->angle + (100 + GetRandom() % 57);
         }
 
         if (p->z > 0) {
@@ -891,7 +891,7 @@ void task_bos_boogie_dice_3(BoogieDiceWork* work) {
         gUnk_0203C564 = 1;
     }
 
-    ColliderUnregister(&work->unk_080);
+    ColliderUnregister(&work->collider);
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
@@ -961,7 +961,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_044 = ((BtlObj*)p)->x;
     work->unk_048 = ((BtlObj*)p)->y;
     work->unk_04C = -0xA000;
-    ColliderInit(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
+    ColliderInit(&work->collider, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6774, 4), gUnk_0979666A);
     work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
@@ -1025,7 +1025,7 @@ void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
 }
 
 void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
-    ColliderUnregister(&work->unk_080);
+    ColliderUnregister(&work->collider);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
@@ -1444,7 +1444,7 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     work->unk_034 = 0x25C00;
     work->unk_038 = -0xC000;
     work->unk_030 = *arg;
-    ColliderInit(&work->unk_06C, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
+    ColliderInit(&work->collider, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
     work->tiles = (u32)LoadObjTiles(gUnk_0979C44E, 0xC40);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFD8, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
@@ -1535,7 +1535,7 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
 }
 
 void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
-    ColliderUnregister(&work->unk_06C);
+    ColliderUnregister(&work->collider);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
@@ -2830,7 +2830,7 @@ void task_bos_ursula_backtako_3(UrsulaBacktakoWork* work) {
 void task_bos_ursula_mapanime_0(UrsulaMapanimeWork* work) {
     gUrsulaMapanimeWork = work;
     TaskPoolInit(&work->unk_010, 1);
-    work->unk_024 = 0;
+    work->task = 0;
     work->unk_00C = 4;
     func_080DD69C(0);
 }
@@ -2876,7 +2876,7 @@ u8 task_bos_ursula_mapanime_1(UrsulaMapanimeWork* work) {
     if (work->unk_000.unk_08 == &gUnk_096FE290 && func_080DDEA0(&work->unk_000) == 2
             && work->unk_028 == 0) {
         work->unk_028 = 1;
-        work->unk_024 = TaskCreate(&work->unk_010, &gTaskDescBosUrsulaBubble, 0);
+        work->task = TaskCreate(&work->unk_010, &gTaskDescBosUrsulaBubble, 0);
     }
 
     TaskPoolUpdate(&work->unk_010);
@@ -2893,16 +2893,16 @@ void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work) {
 }
 
 void func_080DD69C(s32 a) {
-    if (IsTaskActive(gUrsulaMapanimeWork->unk_024) != 0) {
-        if (strcmp(GetTaskName(gUrsulaMapanimeWork->unk_024), "task_bos_ursula_bubble") == 0) {
-            func_080DD9B0(((UrsulaBubbleWork**)gUrsulaMapanimeWork->unk_024)[1]);
+    if (IsTaskActive(gUrsulaMapanimeWork->task) != 0) {
+        if (strcmp(GetTaskName(gUrsulaMapanimeWork->task), "task_bos_ursula_bubble") == 0) {
+            func_080DD9B0(((UrsulaBubbleWork**)gUrsulaMapanimeWork->task)[1]);
         } else {
-            func_08000DE8(&gUrsulaMapanimeWork->unk_010, gUrsulaMapanimeWork->unk_024);
+            func_08000DE8(&gUrsulaMapanimeWork->unk_010, gUrsulaMapanimeWork->task);
         }
     }
 
     if (a == 3) {
-        gUrsulaMapanimeWork->unk_024 = TaskCreate(&gUrsulaMapanimeWork->unk_010, &gTaskDescBosUrsulaThunder, 0);
+        gUrsulaMapanimeWork->task = TaskCreate(&gUrsulaMapanimeWork->unk_010, &gTaskDescBosUrsulaThunder, 0);
     } else if (gUrsulaMapanimeWork->unk_00C != a) {
         gUrsulaMapanimeWork->unk_00C = a;
 
@@ -2930,7 +2930,7 @@ u8 func_080DD754(void) {
         return 1;
     }
 
-    return IsTaskActive((void*)gUrsulaMapanimeWork->unk_024);
+    return IsTaskActive((void*)gUrsulaMapanimeWork->task);
 }
 
 u8 func_080DD794(void) {

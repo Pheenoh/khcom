@@ -13,7 +13,7 @@ typedef struct GaEntryWork {
     u8 unk_010[0x24];
     u64 unk_034;
     u8 unk_03C[0x04];
-    u8 unk_040[0x2C];
+    u8 collider[0x2C];
     u8 unk_06C;
     u8 unk_06D[0x0B];
     s32 unk_078;
@@ -71,7 +71,7 @@ typedef struct GaWork {
     s16 unk_014;
     u8 unk_016[0x02];
     s32 unk_018;
-    u8 unk_01C;
+    u8 angle;
     u8 unk_01D[0x03];
     GaEntryWork entries[6];
     AnimState anim;

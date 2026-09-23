@@ -144,7 +144,7 @@ typedef struct MdDaiWork {
     u8 unk_012[0x2];
     u32 palette;
     u32 tiles;
-    u32 unk_01C;
+    u32 collider;
     u8 unk_020[0x58];
     MdDaiTarget* target;
     s16 unk_07C;
@@ -178,7 +178,7 @@ typedef struct MdFireWork {
     s16 unk_15C;
     s16 unk_15E;
     s16 unk_160;
-    u8 unk_162;
+    u8 angle;
     u8 unk_163;
     u32 unk_164;
     u32 unk_168;

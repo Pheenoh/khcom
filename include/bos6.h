@@ -278,7 +278,7 @@ typedef struct PcWork {
     u8 unk_174[0x24];
     u64 unk_198;
     u8 unk_1A0[0xD4];
-    u32 unk_274;
+    u32 collider;
     u8 unk_278[0x58];
     void** unk_2D0;
     void* unk_2D4[4];
@@ -338,7 +338,7 @@ typedef struct PcFltWork {
     u32 tiles;
     u32 palette;
     PcPos* pos;
-    u32 unk_040;
+    u32 collider;
     u8 unk_044[0x58];
     AnimState anim;
 } PcFltWork;
@@ -348,7 +348,7 @@ typedef struct PcFldWork {
     u8 unk_004[0x4];
     u32 tiles;
     u32 palette;
-    u32 unk_010;
+    u32 collider;
     u8 unk_014[0x58];
 } PcFldWork;
 
@@ -475,7 +475,7 @@ typedef struct BosLstWork {
     u32 unk_4D0;
     u8 unk_4D4[0x58];
     u8 unk_52C[8][0x5C];
-    void* unk_80C;
+    void* task;
     LstTask* lstTasks[0x20];
     u32 unk_890;
     u8 unk_894[0x10];

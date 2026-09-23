@@ -20,7 +20,7 @@ typedef struct BoogieWork {
     s32 unk_158;
     s32 animationIndex;
     s32 unk_160;
-    void* unk_164;
+    void* task;
     s32 unk_168;
     Task* dialog;
     u32 unk_170;

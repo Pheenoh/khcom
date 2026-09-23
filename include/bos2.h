@@ -104,7 +104,7 @@ typedef struct DsdEnergy1Work {
     s32 unk_1C;
     s32 unk_20;
     s32 unk_24;
-    u8 unk_28;
+    u8 angle;
     u8 unk_29;
     u8 unk_2A[0x2];
     s32 unk_2C;
@@ -203,7 +203,7 @@ typedef struct DsdMainWork {
 
 typedef struct DsdItaWork {
     DsdWork* dsd;
-    u32 unk_004;
+    u32 collider;
     u8 unk_008[0x58];
     s32 x;
     s32 y;
@@ -364,7 +364,7 @@ typedef struct JfMajinWork {
     s8 unk_6A;
     u8 unk_6B[0x1];
     TaskPool tasks;
-    u32 unk_80;
+    u32 task;
 } JfMajinWork;
 
 typedef struct JfBorderlineWork {
