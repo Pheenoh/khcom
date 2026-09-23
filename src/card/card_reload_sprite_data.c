@@ -1,4 +1,4 @@
-#include "card_lookup_09EEA344_data.h"
+#include "card_reload_sprite_data.h"
 #include "card_animation_assets.h"
 #include "card_lookup_assets.h"
 

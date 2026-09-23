@@ -3,7 +3,7 @@
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
 #include "card_label_sprite_data.h"
-#include "card_lookup_09EEA344_data.h"
+#include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MSG_H

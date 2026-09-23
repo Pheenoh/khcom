@@ -280,7 +280,7 @@ sprites_premire_chance.c
 sprites_card_1.c
 sprites_level_up.c
 reload_animation_data.c
-card_lookup_09EEA344_data.c
+card_reload_sprite_data.c
 sprites_card_2.c
 card_localized_deck_labels_data.c
 sprites_deck_menu.c

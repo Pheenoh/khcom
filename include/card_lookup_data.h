@@ -2,7 +2,7 @@
 #define GUARD_CARD_LOOKUP_DATA_H
 
 #include "anim.h"
-#include "card_lookup_09EEA344_data.h"
+#include "card_reload_sprite_data.h"
 
 extern void* gUnk_09EE96AC;
 extern AnimHeader* gUnk_09EE96B0;

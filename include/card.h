@@ -14,7 +14,7 @@
 #include "card_message_data.h"
 #include "card_lookup_data.h"
 #include "card_label_sprite_data.h"
-#include "card_lookup_09EEA344_data.h"
+#include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #include "system_state.h"
