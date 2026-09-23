@@ -469,11 +469,11 @@ sprites_worldinspect_frames_3.s
 sprites_bos5_tiles.s
 sprites_worldinspect_tiles.s
 sprites_moogle_shop_tiles.s
-asset_gfx_gap_195_at_09A1E0DC.s
+sprites_room_maps.s
 sprites_bos5_maps.s
 sprites_worldinspect_maps.s
 sprites_moogle_shop_maps.s
-asset_gfx_gap_195_at_09A3C75C.s
+sprites_room_palettes.s
 sprite_palettes_14.s
 sprites_worldinspect_palettes_1.s
 sprite_palettes_15.s

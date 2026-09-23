@@ -9,25 +9,25 @@ regions:
       size: 1280
       kind: Tilemap
       sha256: aae670c649cb5a8c010c4a90cc2363cbf8f57c9787b42f4d549b9e38407686c8
-      unit: asset_gfx_gap_195_at_09A1E0DC_at_09A840A0.s
+      unit: asset_gfx_gap_192_at_09A840A0.s
     - name: gUnkEu_09A84FA0
       address: '0x9a84fa0'
       size: 1280
       kind: Tilemap
       sha256: 5a262f4e6539cbd815c5361f19addd22fab5d42d49d6a5cc405054539d1c0bfd
-      unit: asset_gfx_gap_195_at_09A1E0DC_at_09A840A0.s
+      unit: asset_gfx_gap_192_at_09A840A0.s
     - name: gUnkEu_09A84AA0
       address: '0x9a84aa0'
       size: 1280
       kind: Tilemap
       sha256: a5309379a8a114f81bd09b529269a780dbe19e94395c85a060d44a91cad5cd3a
-      unit: asset_gfx_gap_195_at_09A1E0DC_at_09A840A0.s
+      unit: asset_gfx_gap_192_at_09A840A0.s
     - name: gUnkEu_09A845A0
       address: '0x9a845a0'
       size: 1280
       kind: Tilemap
       sha256: 97589a2afd3e223dd46ba5f810dfe636c9beaa60f2fec334ce2a9e8b18842981
-      unit: asset_gfx_gap_195_at_09A1E0DC_at_09A840A0.s
+      unit: asset_gfx_gap_192_at_09A840A0.s
     - name: gUnkEu_09A0A480
       address: '0x9a0a480'
       size: 26624

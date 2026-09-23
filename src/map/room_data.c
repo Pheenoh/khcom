@@ -1,7 +1,6 @@
 #include "anim.h"
 #include "types.h"
 #include "room_data.h"
-#include "room_record_assets.h"
 #include "sprites_room.h"
 #include "sprites_worldinspect.h"
 

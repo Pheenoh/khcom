@@ -20,6 +20,12 @@ objects:
   - name: sprites_room_frames.s
     start: 0x0999389C
     end: 0x09999E0C
+  - name: sprites_room_maps.s
+    start: 0x09A1E0DC
+    end: 0x09A208DC
+  - name: sprites_room_palettes.s
+    start: 0x09A3C75C
+    end: 0x09A3C89C
   jp:
   - name: sprites_room.c
     start: 0x09ED0A70
@@ -27,6 +33,12 @@ objects:
   - name: sprites_room_frames.s
     start: 0x099483B0
     end: 0x0994E920
+  - name: sprites_room_maps.s
+    start: 0x099D2B64
+    end: 0x099D5364
+  - name: sprites_room_palettes.s
+    start: 0x099F11E4
+    end: 0x099F1324
   eu:
   - name: sprites_room.c
     start: 0x09F85100
@@ -34,6 +46,12 @@ objects:
   - name: sprites_room_frames.s
     start: 0x09999B58
     end: 0x099A00C8
+  - name: sprites_room_maps.s
+    start: 0x09A6FCA0
+    end: 0x09A724A0
+  - name: sprites_room_palettes.s
+    start: 0x09A9A220
+    end: 0x09A9A360
 entries:
 - name: gUnk_09EF9684
   record: SpriteTable
@@ -891,3 +909,68 @@ entries:
   eu:
     address: 0x0999FC68
     size: 1120
+- name: gRoomAssetUs_09A1E0DC
+  format: tilemap
+  us:
+    address: 0x09A1E0DC
+    size: 2048
+  jp:
+    address: 0x099D2B64
+    size: 2048
+    symbol: gRoomAssetJp_099D2B64
+  eu:
+    address: 0x09A6FCA0
+    size: 2048
+    symbol: gRoomAssetEu_09A6FCA0
+- name: gRoomAssetUs_09A1E8DC
+  format: tilemap
+  us:
+    address: 0x09A1E8DC
+    size: 2048
+  jp:
+    address: 0x099D3364
+    size: 2048
+    symbol: gRoomAssetJp_099D3364
+  eu:
+    address: 0x09A704A0
+    size: 2048
+    symbol: gRoomAssetEu_09A704A0
+- name: gRoomAssetUs_09A1F0DC
+  format: tilemap
+  us:
+    address: 0x09A1F0DC
+    size: 2048
+  jp:
+    address: 0x099D3B64
+    size: 2048
+    symbol: gRoomAssetJp_099D3B64
+  eu:
+    address: 0x09A70CA0
+    size: 2048
+    symbol: gRoomAssetEu_09A70CA0
+- name: gRoomAssetUs_09A1F8DC
+  format: tilemap
+  us:
+    address: 0x09A1F8DC
+    size: 4096
+  jp:
+    address: 0x099D4364
+    size: 4096
+    symbol: gRoomAssetJp_099D4364
+  eu:
+    address: 0x09A714A0
+    size: 4096
+    symbol: gRoomAssetEu_09A714A0
+- name: gRoomAssetUs_09A3C75C
+  format: palette
+  us:
+    address: 0x09A3C75C
+    size: 320
+  jp:
+    address: 0x099F11E4
+    size: 320
+    symbol: gRoomAssetJp_099F11E4
+  eu:
+    address: 0x09A9A220
+    size: 320
+    symbol: gRoomAssetEu_09A9A220
