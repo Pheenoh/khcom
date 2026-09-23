@@ -10,6 +10,7 @@
 #include "bos4_api.h"
 #include "map_runtime.h"
 #include "map_text_data.h"
+#include "world_types.h"
 
 extern UnkStruct_0984C868 gUnk_0984C868[];
 extern UnkStruct_0984C868 gUnk_0984CBD0[];
@@ -229,7 +230,7 @@ void func_080DEF20(void) {
         gGameState.unk_00D = 12;
         break;
     case 0xFC:
-        gGameState.world = 10;
+        gGameState.world = WORLD_TRAVERSE_TOWN;
         gGameState.unk_00D = 11;
         break;
     default:
@@ -251,29 +252,29 @@ void func_080DEF20(void) {
     switch (gGameState.world) {
     case 0:
         break;
-    case 1:
+    case WORLD_AGRABAH:
         t = gGameState.progression.unk_84 & 0xFF07;
         gGameState.progression.unk_84 = t;
         break;
-    case 2:
+    case WORLD_ATLANTICA:
         t = gGameState.progression.unk_84 & 0xFF0B;
         gGameState.progression.unk_84 = t;
         break;
-    case 6:
+    case WORLD_HALLOWEEN_TOWN:
         t = gGameState.progression.unk_84 & 0xFF13;
         gGameState.progression.unk_84 = t;
         break;
-    case 7:
+    case WORLD_NEVER_LAND:
         t = gGameState.progression.unk_84 & 0xFF23;
         gGameState.progression.unk_84 = t;
         break;
-    case 8:
+    case WORLD_HOLLOW_BASTION:
         t = gGameState.progression.unk_84 & 0xFF43;
         gGameState.progression.unk_84 = t;
         break;
-    case 3:
-    case 4:
-    case 5:
+    case WORLD_OLYMPUS_COLISEUM:
+    case WORLD_WONDERLAND:
+    case WORLD_MONSTRO:
     default:
         t = gGameState.progression.unk_84 & 0xFF03;
         gGameState.progression.unk_84 = t;
@@ -283,35 +284,35 @@ void func_080DEF20(void) {
 void func_080DF048(void) {
     if ((gGameState.flags & 8) != 0) {
         switch (gGameState.world) {
-        case 1:
+        case WORLD_AGRABAH:
             func_0800FDD0(57);
             break;
-        case 2:
+        case WORLD_ATLANTICA:
             func_0800FDD0(67);
             break;
-        case 3:
+        case WORLD_OLYMPUS_COLISEUM:
             func_0800FDD0(50);
             break;
-        case 6:
+        case WORLD_HALLOWEEN_TOWN:
             func_0800FDD0(61);
             break;
-        case 7:
+        case WORLD_NEVER_LAND:
             func_0800FDD0(72);
             break;
-        case 8:
+        case WORLD_HOLLOW_BASTION:
             func_0800FDD0(75);
             break;
         }
     } else {
         switch (gGameState.world) {
-        case 10:
+        case WORLD_TRAVERSE_TOWN:
             func_0800FDD0(4);
             func_0800FDD0(28);
             func_0800FDD0(29);
             func_0800FDD0(30);
             func_0800FDD0(31);
             break;
-        case 4:
+        case WORLD_WONDERLAND:
             func_0800FDD0(5);
             func_0800FDD0(42);
             func_0800FDD0(43);
@@ -320,14 +321,14 @@ void func_080DF048(void) {
             func_0800FDD0(46);
             func_0800FDD0(47);
             break;
-        case 3:
+        case WORLD_OLYMPUS_COLISEUM:
             func_0800FDD0(6);
             func_0800FDD0(32);
             func_0800FDD0(48);
             func_0800FDD0(49);
             func_0800FDD0(50);
             break;
-        case 1:
+        case WORLD_AGRABAH:
             func_0800FDD0(7);
             func_0800FDD0(51);
             func_0800FDD0(52);
@@ -337,19 +338,19 @@ void func_080DF048(void) {
             func_0800FDD0(56);
             func_0800FDD0(57);
             break;
-        case 6:
+        case WORLD_HALLOWEEN_TOWN:
             func_0800FDD0(8);
             func_0800FDD0(58);
             func_0800FDD0(59);
             func_0800FDD0(60);
             func_0800FDD0(61);
             break;
-        case 5:
+        case WORLD_MONSTRO:
             func_0800FDD0(9);
             func_0800FDD0(62);
             func_0800FDD0(63);
             break;
-        case 2:
+        case WORLD_ATLANTICA:
             func_0800FDD0(10);
             func_0800FDD0(64);
             func_0800FDD0(65);
@@ -357,24 +358,24 @@ void func_080DF048(void) {
             func_0800FDD0(67);
             func_0800FDD0(68);
             break;
-        case 7:
+        case WORLD_NEVER_LAND:
             func_0800FDD0(11);
             func_0800FDD0(69);
             func_0800FDD0(70);
             func_0800FDD0(71);
             func_0800FDD0(72);
             break;
-        case 8:
+        case WORLD_HOLLOW_BASTION:
             func_0800FDD0(12);
             func_0800FDD0(73);
             func_0800FDD0(74);
             func_0800FDD0(75);
             func_0800FDD0(76);
             break;
-        case 11:
+        case WORLD_TWILIGHT_TOWN:
             func_0800FDD0(14);
             break;
-        case 9:
+        case WORLD_DESTINY_ISLANDS:
             func_0800FDD0(15);
             func_0800FDD0(33);
             func_0800FDD0(34);

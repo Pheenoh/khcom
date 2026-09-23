@@ -9,6 +9,7 @@
 #include "obj_api.h"
 #include "battle.h"
 #include "battle_actor.h"
+#include "world_types.h"
 
 s32 gUnk_02039DC0 EWRAM_COMMON(4);
 s32* gUnk_02039DC4 EWRAM_COMMON(4);
@@ -506,31 +507,31 @@ void func_08019ACC(s32 a, s32 b, s32 c) {
 
     if (GetRandom() % 4 != 0) {
         switch (gGameState.world) {
-        case 1:
+        case WORLD_AGRABAH:
             if (flags & 4) {
                 v = 2;
                 func_0800FDD0(159);
             }
             break;
-        case 2:
+        case WORLD_ATLANTICA:
             if (flags & 8) {
                 v = 3;
                 func_0800FDD0(160);
             }
             break;
-        case 6:
+        case WORLD_HALLOWEEN_TOWN:
             if (flags & 0x10) {
                 v = 4;
                 func_0800FDD0(161);
             }
             break;
-        case 7:
+        case WORLD_NEVER_LAND:
             if (flags & 0x20) {
                 v = 5;
                 func_0800FDD0(162);
             }
             break;
-        case 8:
+        case WORLD_HOLLOW_BASTION:
             if (flags & 0x40) {
                 v = 6;
                 func_0800FDD0(163);
@@ -2465,7 +2466,7 @@ void func_0801CA88(void) {
         gGameState.flags |= 8;
         gGameState.flags |= 0x20;
     }
-    gGameState.world = 4;
+    gGameState.world = WORLD_WONDERLAND;
     gGameState.unk_00D = 1;
     InitPlayerProgression();
     gGameState.unk_180 = 0xFFFF;

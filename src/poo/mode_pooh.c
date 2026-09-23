@@ -5,6 +5,7 @@
 #include "gba/keys.h"
 #include "pooh_animation_assets.h"
 #include "sprites_pooh.h"
+#include "world_types.h"
 
 const char gModeNamePooh[] = "mode_pooh";
 
@@ -421,7 +422,7 @@ void func_080C774C(void) {
 void mode_pooh_0(s32 arg) {
     s32 i;
 
-    gGameState.world = 13;
+    gGameState.world = WORLD_100_ACRE_WOOD;
 
     if (arg == 0) {
         func_080D2BE0();

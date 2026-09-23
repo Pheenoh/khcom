@@ -5,6 +5,7 @@
 #include "task_animation_assets.h"
 #include "sprites_evt.h"
 #include "sprites_frd.h"
+#include "world_types.h"
 
 const AnimDef gUnk_0813EB8C[6] = {
     { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 0, { 0, 0, 0 } },
@@ -914,7 +915,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 
     body = &work->body;
 
-    if (gGameState.world != 2) {
+    if (gGameState.world != WORLD_ATLANTICA) {
         return 0;
     }
 
@@ -1163,7 +1164,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     BtlObj* body = &work->body;
     BtlWork* owner;
     BtlObj* target;
-    if (gGameState.world != 6) return 0;
+    if (gGameState.world != WORLD_HALLOWEEN_TOWN) return 0;
     if (work->unk_14C != 0) {
         owner = gBtlWork;
         target = owner->actor2;
@@ -1684,7 +1685,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
     s32 ground;
     s32 y;
     s32 z;
-    if (gGameState.world != 7) {
+    if (gGameState.world != WORLD_NEVER_LAND) {
         return 0;
     }
     owner = work->unk_14C != 0 ? gBtlWork : gUnk_02039B9C;
@@ -1969,7 +1970,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
     s32 delta;
 
     body = &work->body;
-    if (gGameState.world != 1) {
+    if (gGameState.world != WORLD_AGRABAH) {
         return 0;
     }
     if ((work->unk_14C ? gBtlWork->flags : gUnk_02039B9C->flags) & 0x40000000) return 0;
@@ -2221,7 +2222,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
 
     body = &work->body;
 
-    if (gGameState.world != 8) {
+    if (gGameState.world != WORLD_HOLLOW_BASTION) {
         return 0;
     }
 

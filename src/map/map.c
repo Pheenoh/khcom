@@ -22,6 +22,7 @@
 #include "sprites_evt.h"
 #include "sprites_map.h"
 #include "sprites_sora.h"
+#include "world_types.h"
 
 UnkStruct_0203C7AC* gUnk_0203C7AC EWRAM_COMMON(4);
 UnkStruct_0203C7B0 gUnk_0203C7B0 EWRAM_COMMON(8);
@@ -5502,7 +5503,7 @@ void func_080E9078(s32 x, s32 y, s32 z) {
         }
     }
 
-    if ((gGameState.flags & 0x800) && gGameState.world == 12 && func_0800FC5C(16) != 0) {
+    if ((gGameState.flags & 0x800) && gGameState.world == WORLD_CASTLE_OBLIVION && func_0800FC5C(16) != 0) {
         e = &gUnk_0985814C[14];
 
         if (func_0800FC5C(e->unk_00[0]) != 1) {
@@ -5860,28 +5861,28 @@ void func_080E9A00(void) {
 
 void func_080E9A28(void) {
     switch (gGameState.world) {
-    case 10:
+    case WORLD_TRAVERSE_TOWN:
         ModeRequest(&gModeBattle, 0x94);
         break;
-    case 1:
+    case WORLD_AGRABAH:
         ModeRequest(&gModeBattle, 0x95);
         break;
-    case 5:
+    case WORLD_MONSTRO:
         ModeRequest(&gModeBattle, 0x98);
         break;
-    case 7:
+    case WORLD_NEVER_LAND:
         ModeRequest(&gModeBattle, 0x9E);
         break;
-    case 6:
+    case WORLD_HALLOWEEN_TOWN:
         ModeRequest(&gModeBattle, 0x9B);
         break;
-    case 2:
+    case WORLD_ATLANTICA:
         ModeRequest(&gModeBattle, 0x97);
         break;
-    case 4:
+    case WORLD_WONDERLAND:
         ModeRequest(&gModeBattle, 0x96);
         break;
-    case 3:
+    case WORLD_OLYMPUS_COLISEUM:
         ModeRequest(&gModeBattle, 0xA0);
         break;
     }
@@ -7468,7 +7469,7 @@ void func_080EC04C(LoadGameMenuWork* work) {
         }
     } else if (work->unk_182 != 0) {
 #ifdef VERSION_EU
-        if (e->world != 13) {
+        if (e->world != WORLD_100_ACRE_WOOD) {
 #else
         if (gUnk_0203C590.unk_04 != 13) {
 #endif

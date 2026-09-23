@@ -13,6 +13,7 @@
 #include "fade.h"
 #include "key.h"
 #include "malloc.h"
+#include "world_types.h"
 
 extern UnkStruct_0203C590 gUnk_0203C590;
 
@@ -597,7 +598,7 @@ void Mode_MapChk_1(void) {
             func_080E04EC();
             break;
         case 4:
-            gGameState.floors[0].world = 10;
+            gGameState.floors[0].world = WORLD_TRAVERSE_TOWN;
             func_080DF990(0);
             func_080DFA18(10);
             gUnk_0203C590.unk_06 = 0xFC;

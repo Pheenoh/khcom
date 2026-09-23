@@ -8,6 +8,7 @@
 #include "sprites_fld.h"
 #include "sprites_riku.h"
 #include "sprites_sora.h"
+#include "world_types.h"
 
 const AnimDef gUnk_0813C89C[15][5] = {
     { { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, { 0, 0, 0 } }, { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, { 0, 0, 0 } }, { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, { 0, 0, 0 } }, { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, { 0, 0, 0 } }, { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, { 0, 0, 0 } } },
@@ -330,27 +331,27 @@ void task_fld_sora_0(FldWork* work) {
     work->gfx = AnimGetGfx(work->anim);
 
     switch (gGameState.world) {
-    case 7:
+    case WORLD_NEVER_LAND:
         work->unk_AC = gUnk_0813CD4C[1];
         break;
-    case 2:
+    case WORLD_ATLANTICA:
         work->unk_AC = gUnk_0813CD4C[2];
         break;
-    case 5:
+    case WORLD_MONSTRO:
         work->unk_AC = gUnk_0813CD4C[3];
         break;
-    case 4:
+    case WORLD_WONDERLAND:
         work->unk_AC = gUnk_0813CD4C[4];
         break;
-    case 6:
+    case WORLD_HALLOWEEN_TOWN:
         work->unk_AC = gUnk_0813CD4C[5];
         break;
     case 0:
-    case 3:
-    case 12:
+    case WORLD_OLYMPUS_COLISEUM:
+    case WORLD_CASTLE_OBLIVION:
         work->unk_AC = gUnk_0813CD4C[6];
         break;
-    case 9:
+    case WORLD_DESTINY_ISLANDS:
         work->unk_AC = gUnk_0813CD4C[7];
         break;
     default:
@@ -2029,27 +2030,27 @@ void task_fld_riku_0(FldWork* work) {
     work->gfx = AnimGetGfx(work->anim);
 
     switch (gGameState.world) {
-    case 7:
+    case WORLD_NEVER_LAND:
         work->unk_AC = gUnk_0813D28C[1];
         break;
-    case 2:
+    case WORLD_ATLANTICA:
         work->unk_AC = gUnk_0813D28C[2];
         break;
-    case 5:
+    case WORLD_MONSTRO:
         work->unk_AC = gUnk_0813D28C[3];
         break;
-    case 4:
+    case WORLD_WONDERLAND:
         work->unk_AC = gUnk_0813D28C[4];
         break;
-    case 6:
+    case WORLD_HALLOWEEN_TOWN:
         work->unk_AC = gUnk_0813D28C[5];
         break;
     case 0:
-    case 3:
-    case 12:
+    case WORLD_OLYMPUS_COLISEUM:
+    case WORLD_CASTLE_OBLIVION:
         work->unk_AC = gUnk_0813D28C[6];
         break;
-    case 9:
+    case WORLD_DESTINY_ISLANDS:
         work->unk_AC = gUnk_0813D28C[7];
         break;
     default:
