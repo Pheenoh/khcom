@@ -56,9 +56,9 @@ extern void* gUnk_09EF275C[2][15];
 
 typedef struct BosPos {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
 } BosPos;
 
 typedef struct DsdWork {
@@ -101,9 +101,9 @@ typedef struct DsdEnergy1Work {
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
+    s32 vx;
+    s32 vy;
+    s32 vz;
     u8 angle;
     u8 unk_29;
     u8 unk_2A[0x2];
@@ -131,9 +131,9 @@ typedef struct DsdEnergy2Work {
     s32 unk_14;
     s32 unk_18;
     s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    s32 vx;
+    s32 vy;
+    s32 vz;
     s16 state;
     u16 unk_2E;
     s16 unk_30;
@@ -381,9 +381,9 @@ typedef struct JfBorderlineWork {
     AnimState anim4;
     void* gfx5;
     AnimState anim5;
-    s32 unk_098;
-    s32 unk_09C;
-    u32 unk_0A0;
+    s32 x;
+    s32 y;
+    u32 z;
     s32 unk_0A4;
     s32 unk_0A8;
     u32 unk_0AC;

@@ -6671,8 +6671,8 @@ void task_bos_pc_acd_0(PcAcdWork* work, void* arg) {
     work->unk_000 = 0;
     work->tiles = (u32)AllocObjTiles(0x300, gUnk_09C489E4);
     work->palette = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
-    work->unk_00C = -1;
-    work->unk_010 = -1;
+    work->x = -1;
+    work->y = -1;
     work->unk_014 = -1;
     work->flt = arg;
     anim = &work->anim;
@@ -6697,7 +6697,7 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     if (gBtlWork->actor->z >= 0) {
         if ((gBtlWork->flags & 0x20000000) == 0 ||
             (gBtlWork->flags & 0x200000) == 0) {
-            if (work->unk_00C < 0 || AnimIsFinished(anim) == 1) {
+            if (work->x < 0 || AnimIsFinished(anim) == 1) {
                 v = 0;
                 if (work->unk_018 == 1) {
                     v = 1;
@@ -6733,20 +6733,20 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         ox = gUnk_02039DC8->unk_68 << 8;
         oy = gUnk_02039DC8->unk_6A << 8;
     }
-    work->unk_00C = pos->x;
-    work->unk_010 = pos->y - 0x400;
+    work->x = pos->x;
+    work->y = pos->y - 0x400;
     work->unk_014 = 0;
     if (flt->unk_004 == 1) {
         tbl = (u8*)gUnk_09EFAB68;
         ofs = (AnimGetGfxIndex(&work->anim) + 5) * 4;
         gfx = *(void**)((u32)tbl + ofs);
         if ((*gp)->actor->flags & 4) {
-            WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
+            WorldToScreen(&sx, &sy, work->x - ox + 0x600, work->y - oy, 0);
         } else {
-            WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
+            WorldToScreen(&sx, &sy, work->x - ox + 0x200, work->y - oy, 0);
         }
-        DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->unk_010),
-                   (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
+        DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->y),
+                   (u16)((-0x1004 - ((work->y >> 8) << 2)) | 3));
     } else if (pos->z >= 0) {
         if (((*gp)->flags & 0x20000000) && ((*gp)->flags & 0x200000)) {
             return;
@@ -6761,14 +6761,14 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
             ofs = (AnimGetGfxIndex(anim) + 5) * 4;
             gfx = *(void**)((u32)tbl + ofs);
             if ((*gp)->actor->flags & 4) {
-                WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
+                WorldToScreen(&sx, &sy, work->x - ox + 0x600, work->y - oy, 0);
             } else {
-                WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
+                WorldToScreen(&sx, &sy, work->x - ox + 0x200, work->y - oy, 0);
             }
-            DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->unk_010),
-                       (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
+            DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->y),
+                       (u16)((-0x1004 - ((work->y >> 8) << 2)) | 3));
         } else {
-            WorldToScreen(&sx, &sy, work->unk_00C - ox, work->unk_010 - oy, 0);
+            WorldToScreen(&sx, &sy, work->x - ox, work->y - oy, 0);
             DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags((*gp)->actor->y),
                        (u16)(-0x1004 - (((*gp)->actor->y >> 8) << 2)));
         }

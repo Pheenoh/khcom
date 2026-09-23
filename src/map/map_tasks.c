@@ -1760,8 +1760,8 @@ void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     AnimState* a;
     s32 v;
 
-    p->unk_00 = arg->unk_0A << 13;
-    p->x = arg->unk_0C << 12;
+    p->unk_00 = arg->x << 13;
+    p->x = arg->y << 12;
     p->y = 0;
     p->y = w->unk_00C = func_080DFF30(p);
     p->x -= w->unk_00C;

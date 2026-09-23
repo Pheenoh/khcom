@@ -832,8 +832,8 @@ void func_080E0C1C(u16 x, u16 y) {
 
 void func_080E0ED4(UnkStruct_02034F20* p) {
     s32 go = 1;
-    u16 x = p->unk_0A;
-    u16 y = p->unk_0C;
+    u16 x = p->x;
+    u16 y = p->y;
 
     while (go) {
         s16 cy = (s16)y;
@@ -845,8 +845,8 @@ void func_080E0ED4(UnkStruct_02034F20* p) {
             func_080E08BC((s16)(x + 1), cy)->unk_00 |= 0x40;
             func_080E08BC((s16)(x + 1), (s16)(y + 1))->unk_00 |= 0x40;
             c->unk_00 |= 0x40;
-            p->unk_0A = x + 1;
-            p->unk_0C = y + 1;
+            p->x = x + 1;
+            p->y = y + 1;
             go = 0;
             break;
         case 6:
@@ -854,8 +854,8 @@ void func_080E0ED4(UnkStruct_02034F20* p) {
             func_080E08BC((s16)(x - 1), cy)->unk_00 |= 0x40;
             func_080E08BC((s16)(x - 1), (s16)(y + 1))->unk_00 |= 0x40;
             c->unk_00 |= 0x40;
-            p->unk_0A = x;
-            p->unk_0C = y + 1;
+            p->x = x;
+            p->y = y + 1;
             go = 0;
             break;
         default:
@@ -893,8 +893,8 @@ void func_080E0FD8(UnkStruct_02034F20* p) {
                                  (p->unk_10 < q->unk_08 ||
                                   p->unk_00 + GetRandom() % (p->unk_02 - p->unk_00 + 1) > x))) {
                                 p->unk_08 = 1;
-                                p->unk_0A = x;
-                                p->unk_0C = y - d;
+                                p->x = x;
+                                p->y = y - d;
                                 p->unk_0E = q->unk_02;
                                 p->unk_10 = q->unk_08;
                                 p->unk_14 = q->unk_0C;
@@ -902,8 +902,8 @@ void func_080E0FD8(UnkStruct_02034F20* p) {
                         } else if (p->unk_08 == 0 && p->unk_10 <= q->unk_08 &&
                                    (p->unk_10 < q->unk_08 ||
                                     p->unk_00 + GetRandom() % (p->unk_02 - p->unk_00 + 1) > x)) {
-                            p->unk_0A = x;
-                            p->unk_0C = y - d;
+                            p->x = x;
+                            p->y = y - d;
                             p->unk_0E = q->unk_02;
                             p->unk_10 = q->unk_08;
                             p->unk_14 = q->unk_0C;
@@ -928,7 +928,7 @@ void func_080E1138(void) {
         }
 
         if (e->unk_08 != 0) {
-            func_080E0C1C(e->unk_0A, e->unk_0C);
+            func_080E0C1C(e->x, e->y);
         } else if (e->unk_14 != 0x100000) {
             func_080E0ED4(e);
         }
@@ -2802,8 +2802,8 @@ void func_080E49DC(u16 a, u16 b) {
             gUnk_02034F20[i].unk_02 = 0;
             gUnk_02034F20[i].unk_04 = 0x100000;
             gUnk_02034F20[i].unk_08 = 0;
-            gUnk_02034F20[i].unk_0A = 0;
-            gUnk_02034F20[i].unk_0C = 0;
+            gUnk_02034F20[i].x = 0;
+            gUnk_02034F20[i].y = 0;
             gUnk_02034F20[i].unk_0E = 11;
             gUnk_02034F20[i].unk_10 = -0x100000;
             gUnk_02034F20[i].unk_14 = 0x100000;

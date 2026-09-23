@@ -49,8 +49,8 @@ typedef struct VixenSub {
     u8 unk_00;
     u8 unk_01;
     u8 unk_02[0x02];
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
 } VixenSub;
 
 typedef struct CloudWork {
@@ -345,13 +345,13 @@ typedef struct VixenFrgDef {
 } VixenFrgDef;
 
 typedef struct VixenFrgSub {
-    void* unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
+    void* gfx;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 vz;
+    s32 vx;
+    s32 vy;
     u16 unk_1C;
     u16 unk_1E;
 } VixenFrgSub;

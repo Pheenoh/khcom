@@ -305,8 +305,8 @@ typedef struct PcAcdWork {
     u32 unk_000;
     u32 tiles;
     u32 palette;
-    s32 unk_00C;
-    s32 unk_010;
+    s32 x;
+    s32 y;
     s32 unk_014;
     u8 unk_018;
     u8 unk_019[0x3];

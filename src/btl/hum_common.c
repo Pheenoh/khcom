@@ -29,9 +29,9 @@ void HumInit(HumWork* work, const HumDef* def) {
     work->unk_158 = 0;
     actor->vx = 0;
     actor->vy = 0;
-    work->unk_15C = 0;
-    work->unk_160 = 0;
-    work->unk_164 = 0;
+    work->targetX = 0;
+    work->targetY = 0;
+    work->targetZ = 0;
     work->unk_174 = 0xFFF0;
     work->unk_17C = 1;
     AnimInit(&work->anim, 0, 0);

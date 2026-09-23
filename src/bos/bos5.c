@@ -1221,8 +1221,8 @@ u8 func_080FBC4C(MdWork* work) {
             case 34:
             case 36:
             case 37:
-                if (func_08011F78(251, work->sub[0].unk_004, work->sub[0].unk_008,
-                                  work->sub[0].unk_00C, 40, 20, 24) != 0) {
+                if (func_08011F78(251, work->sub[0].x, work->sub[0].y,
+                                  work->sub[0].z, 40, 20, 24) != 0) {
                     m4aSongNumStart(0x2A5);
                 }
                 break;
@@ -1349,15 +1349,15 @@ u8 func_080FBFA8(MdWork* work) {
                 case 0:
                     if (func_080FBA9C(work) != 0) {
                         func_080FBA14(work, 3);
-                        func_0801853C(work->sub[0].unk_004, work->sub[0].unk_008,
-                                      work->sub[0].unk_00C + 0x1200, 512);
+                        func_0801853C(work->sub[0].x, work->sub[0].y,
+                                      work->sub[0].z + 0x1200, 512);
                         m4aSongNumStart(0x2A6);
                         work->unk_00C = 1;
                     }
                     break;
                 case 1:
-                    if (func_08011F78(253, work->sub[0].unk_004,
-                                      work->sub[0].unk_008 + 0x1800, 0, 72, 48, 1) != 0) {
+                    if (func_08011F78(253, work->sub[0].x,
+                                      work->sub[0].y + 0x1800, 0, 72, 48, 1) != 0) {
                         m4aSongNumStart(0x2CA);
                     }
 
@@ -1443,8 +1443,8 @@ u8 func_080FC17C(MdWork* work) {
             switch (work->unk_00C) {
             case 0:
                 if (FadeIsActive() == 0) {
-                    func_08014AAC(work->sub[0].unk_004,
-                                  work->sub[0].unk_008 + work->sub[0].unk_00C);
+                    func_08014AAC(work->sub[0].x,
+                                  work->sub[0].y + work->sub[0].z);
                     FadeToAmount(0, gBtlWork->unk_0B3, 8);
                     work->unk_016 = 120;
                     work->unk_00C = 1;
@@ -1465,9 +1465,9 @@ u8 func_080FC17C(MdWork* work) {
                 }
 
                 if (func_080128EC() == 0) {
-                    arg.x = work->sub[0].unk_004;
-                    arg.y = work->sub[0].unk_008;
-                    arg.z = work->sub[0].unk_00C;
+                    arg.x = work->sub[0].x;
+                    arg.y = work->sub[0].y;
+                    arg.z = work->sub[0].z;
                     CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
                     func_0801B918(&work->sub[0]);
                     func_0801B008();
@@ -1689,17 +1689,17 @@ s32 task_bos_md_1(MdWork* work) {
     }
 
     for (i = 0; i < 1; i++) {
-        work->sub[i].unk_004 = gBtlWork->unk_0CC
+        work->sub[i].x = gBtlWork->unk_0CC
             + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
                   .pos[i].x * 256;
-        work->sub[i].unk_008 = gBtlWork->unk_0D0
+        work->sub[i].y = gBtlWork->unk_0D0
             + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
                   .pos[i].y * 256;
-        work->sub[i].unk_00C = gBtlWork->unk_0D4
+        work->sub[i].z = gBtlWork->unk_0D4
             + gUnk_09992108[(s16)work->anim.frames[work->anim.frame].gfxIndex]
                   .pos[i].z * 256;
-        ColliderSetPosition(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
-                      work->sub[i].unk_00C);
+        ColliderSetPosition(work->sub[i].unk_040, work->sub[i].x, work->sub[i].y,
+                      work->sub[i].z);
     }
 
     TaskPoolUpdate(&work->tasks);
@@ -1862,7 +1862,7 @@ void func_080FCC14(MdFireWork* work) {
     case 8:
         if (GetRandom() % 100 <= 49) {
             if ((gBtlWork->flags & 0x100000) == 0) {
-                _0801C1F8(0, e->unk_004, e->unk_008, e->unk_00C);
+                _0801C1F8(0, e->x, e->y, e->z);
             }
         }
 
@@ -2033,8 +2033,8 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     func_080FCF78(work);
     func_0801B37C(&work->sub, &gUnk_09992F28, work->x, work->y, work->z);
     ColliderInit(work->sub.unk_040, 3, 16, 16);
-    ColliderSetPosition(work->sub.unk_040, work->sub.unk_004, work->sub.unk_008,
-                  work->sub.unk_00C);
+    ColliderSetPosition(work->sub.unk_040, work->sub.x, work->sub.y,
+                  work->sub.z);
     work->sub.unk_034 |= 0x1000;
     work->sub.unk_02C = 20;
     work->sub.unk_02E = 20;
@@ -2072,11 +2072,11 @@ u8 task_bos_md_fire_1(MdFireWork* work) {
         work->unk_006--;
     }
 
-    work->sub.unk_004 = work->x;
-    work->sub.unk_008 = work->y;
-    work->sub.unk_00C = work->z;
-    ColliderSetPosition(work->sub.unk_040, work->sub.unk_004, work->sub.unk_008,
-                  work->sub.unk_00C);
+    work->sub.x = work->x;
+    work->sub.y = work->y;
+    work->sub.z = work->z;
+    ColliderSetPosition(work->sub.unk_040, work->sub.x, work->sub.y,
+                  work->sub.z);
     return result;
 }
 

@@ -65,8 +65,8 @@ typedef struct UnkStruct_02034F20 {
     s32 unk_04;
     u8 unk_08;
     u8 unk_09;
-    u16 unk_0A;
-    u16 unk_0C;
+    u16 x;
+    u16 y;
     u8 unk_0E;
     u8 unk_0F;
     s32 unk_10;

@@ -105,9 +105,9 @@ typedef struct MdAnim {
 
 typedef struct MdSub {
     u32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_010[0x1C];
     s16 unk_02C;
     s16 unk_02E;

@@ -47,9 +47,9 @@ typedef struct HumWork {
     s16 unk_152;
     u32 flags;
     u32 unk_158;
-    u32 unk_15C;
-    u32 unk_160;
-    s32 unk_164;
+    u32 targetX;
+    u32 targetY;
+    s32 targetZ;
     s32 unk_168;
     s32 unk_16C;
     u32 unk_170;

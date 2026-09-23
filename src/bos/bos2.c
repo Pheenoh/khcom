@@ -2711,9 +2711,9 @@ void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
     func_080C1A48(work);
     work->unk_0A8 = 0xA00;
     work->unk_0AC = 0x3600;
-    work->unk_098 = arg->unk_04 + work->unk_0A4;
-    work->unk_09C = arg->unk_08 + work->unk_0A8;
-    work->unk_0A0 = arg->unk_0C + work->unk_0AC;
+    work->x = arg->x + work->unk_0A4;
+    work->y = arg->y + work->unk_0A8;
+    work->z = arg->z + work->unk_0AC;
     work->unk_0B0 = 0;
     work->unk_0B2 = 0;
     work->unk_0B4 = 0;
@@ -2742,8 +2742,8 @@ u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
     BosPos* p = work->jf;
 
     func_080C1A48(work);
-    work->unk_098 = p->unk_04 + work->unk_0A4;
-    work->unk_09C = p->unk_08 + work->unk_0A8;
+    work->x = p->x + work->unk_0A4;
+    work->y = p->y + work->unk_0A8;
     work->gfx = AnimUpdate(&work->anim);
     work->gfx2 = AnimUpdate(&work->anim2);
     work->gfx3 = AnimUpdate(&work->anim3);
@@ -2757,7 +2757,7 @@ void task_bos_jf_borderline_2(JfBorderlineWork* work) {
     s16 sx;
     s16 sy;
 
-    WorldToScreen(&sx, &sy, work->unk_098, work->unk_09C, work->unk_0A0);
+    WorldToScreen(&sx, &sy, work->x, work->y, work->z);
 
     switch (work->unk_0B5) {
     case 0:
@@ -4603,9 +4603,9 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_3C = 0xF;
     work->unk_3A = 0x3C;
     work->unk_48 = 0;
-    work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
-    work->unk_20 = 0;
-    work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
+    work->vx = gSineTable[work->angle] * work->unk_2C >> 8;
+    work->vy = 0;
+    work->vz = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     work->gfx = gUnk_08B22CBC;
 }
 
@@ -4631,7 +4631,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
             work->unk_48 = 1;
             work->unk_38 = 0;
             work->unk_36 = 10;
-            work->unk_20 = (gBtlWork->unk_134 - work->y) / 15;
+            work->vy = (gBtlWork->unk_134 - work->y) / 15;
             work->state++;
         }
         break;
@@ -4642,10 +4642,10 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
         func_080C4CCC(work);
         break;
     case 5:
-        func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
-        work->x += work->unk_1C;
-        work->y += work->unk_20;
-        work->z += work->unk_24;
+        func_0801475C(work->vx, work->vy, work->vz);
+        work->x += work->vx;
+        work->y += work->vy;
+        work->z += work->vz;
         break;
     }
 
@@ -4701,14 +4701,14 @@ void task_bos_dsd_energy1_3(void) {
 }
 
 void func_080C4C54(DsdEnergy1Work* work) {
-    work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
-    work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
+    work->vx = gSineTable[work->angle] * work->unk_2C >> 8;
+    work->vz = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     work->unk_2C -= 76;
     work->angle -= 3;
-    work->x += work->unk_1C;
-    work->y += work->unk_20;
-    work->z += work->unk_24;
-    func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
+    work->x += work->vx;
+    work->y += work->vy;
+    work->z += work->vz;
+    func_0801475C(work->vx, work->vy, work->vz);
 
     if ((s16)work->unk_38 > 15) {
         work->state++;
@@ -4739,17 +4739,17 @@ void func_080C4CCC(DsdEnergy1Work* work) {
         }
 
         work->angle += d;
-        work->unk_1C = gSineTable[work->angle] * work->unk_2C >> 8;
-        work->unk_20 = 0;
-        work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
+        work->vx = gSineTable[work->angle] * work->unk_2C >> 8;
+        work->vy = 0;
+        work->vz = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     }
 
     work->unk_40++;
     work->unk_2C += 25;
-    func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
-    work->x += work->unk_1C;
-    work->y += work->unk_20;
-    work->z += work->unk_24;
+    func_0801475C(work->vx, work->vy, work->vz);
+    work->x += work->vx;
+    work->y += work->vy;
+    work->z += work->vz;
 }
 
 void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
@@ -4763,9 +4763,9 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_32 = 0xF;
     work->unk_10 = 0x80;
     work->unk_14 = 0x80;
-    work->unk_20 = 0;
-    work->unk_24 = 0;
-    work->unk_28 = -0x500;
+    work->vx = 0;
+    work->vy = 0;
+    work->vz = -0x500;
     work->unk_34 = 0;
     work->unk_3C = 0;
     work->gfx = gUnk_08B22CBC;
@@ -4803,10 +4803,10 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         }
         break;
     case 1:
-        func_0801475C(work->unk_20, work->unk_24, work->unk_28);
-        work->x += work->unk_20;
-        work->y += work->unk_24;
-        work->z += work->unk_28;
+        func_0801475C(work->vx, work->vy, work->vz);
+        work->x += work->vx;
+        work->y += work->vy;
+        work->z += work->vz;
         func_0802F274(work->x, work->y + work->z);
 
         if (work->z <= -0xF000) {
@@ -4839,15 +4839,15 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
 
         work->y = gBtlWork->actor->y - 0x2400 + GetRandom() % 0x4001;
         work->z = -0xF000;
-        work->unk_28 = 0x600;
+        work->vz = 0x600;
         func_08014588(work->x, work->y, work->z, 0x100, work->unk_32, 0);
         work->unk_3C = 1;
         work->unk_30 = 0;
         work->state++;
         break;
     case 6:
-        func_0801475C(0, 0, work->unk_28);
-        work->z += work->unk_28;
+        func_0801475C(0, 0, work->vz);
+        work->z += work->vz;
 
         if (func_08011F78(0x104, work->x, work->y, work->z, 16, 16, 16) == 1) {
             m4aSongNumStart(0x29E);
