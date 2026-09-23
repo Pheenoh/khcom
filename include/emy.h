@@ -207,7 +207,7 @@ typedef struct Emy83bWork {
     s32 y;
     s32 z;
     u32 state;
-    s16 unk_030;
+    s16 timer;
     u8 unk_032[0x02];
     u32 collider;
     u8 unk_038[0x58];

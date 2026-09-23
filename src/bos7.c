@@ -453,7 +453,7 @@ u8 func_08110668(LstWork* work) {
 void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg) {
     work->state = 0;
     work->unk_002 = 0;
-    work->unk_004 = 0;
+    work->timer = 0;
     work->unk_006 = arg->unk_00;
     work->x = arg->x;
     work->y = arg->y;
@@ -476,7 +476,7 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         if (work->unk_006 <= 0) {
             work->state = 1;
             work->unk_002 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
             work->unk_006 = 0;
             p = gBtlWork->actor;
             work->unk_020 = p->x;
@@ -489,11 +489,11 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         ApproachValueHalfSteps(&work->x, work->unk_020, 30);
         ApproachValueHalfSteps(&work->y, work->unk_024, 30);
         ApproachValueHalfSteps(&work->z, work->unk_028, 30);
-        work->unk_004++;
-        if (work->unk_004 > 49) {
+        work->timer++;
+        if (work->timer > 49) {
             work->state = 2;
             work->unk_002 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
             work->unk_006 = 0;
         }
         func_08011F78(0x10C, work->x, work->y, work->z, 8, 8, 1);
@@ -502,11 +502,11 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         ApproachValueHalfSteps(&work->x, work->unk_014, 30);
         ApproachValueHalfSteps(&work->y, work->unk_018, 30);
         ApproachValueHalfSteps(&work->z, work->unk_01C, 30);
-        work->unk_004++;
-        if (work->unk_004 > 49) {
+        work->timer++;
+        if (work->timer > 49) {
             work->state = 3;
             work->unk_002 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
             work->unk_006 = 0;
         }
         func_08011F78(0x10C, work->x, work->y, work->z, 8, 8, 1);
@@ -514,7 +514,7 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
     case 3:
         work->state = 4;
         work->unk_002 = 0;
-        work->unk_004 = 0;
+        work->timer = 0;
         work->unk_006 = 0;
         break;
     case 4:

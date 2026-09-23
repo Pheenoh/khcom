@@ -72,7 +72,7 @@ typedef struct DsdWork {
     u32 unk_344;
     u32 unk_348;
     u16 unk_34C;
-    u16 unk_34E;
+    u16 timer;
     s16 unk_350;
     s16 unk_352;
     s16 unk_354;

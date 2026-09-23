@@ -2910,7 +2910,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
     work->unk_330 = 1;
     work->unk_33C = 0;
     work->unk_34C = 0;
-    work->unk_34E = 0;
+    work->timer = 0;
     work->unk_350 = 0;
     work->unk_352 = 0;
     work->unk_354 = 0;
@@ -2988,7 +2988,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
     case 6:
     case 7:
         work->unk_358 |= 1;
-        work->unk_34E = 20;
+        work->timer = 20;
         break;
     case 3:
     case 8:
@@ -3002,9 +3002,9 @@ u8 task_bos_dsd_1(DsdWork* work) {
     }
 
     if (work->unk_358 & 1) {
-        work->unk_34E--;
+        work->timer--;
 
-        if ((s16)work->unk_34E <= 0) {
+        if ((s16)work->timer <= 0) {
             work->unk_34C = 0;
             work->unk_358 &= ~1;
             LoadPaletteWithEffect(gUnk_096FB744, (void*)0x05000000, 32);

@@ -127,7 +127,7 @@ typedef struct MdHahenWork {
     u32 palette;
     u32 tiles;
     void* gfx;
-    u16 unk_024;
+    u16 timer;
     u8 unk_026[0x2];
 } MdHahenWork;
 

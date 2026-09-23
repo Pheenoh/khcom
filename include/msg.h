@@ -252,7 +252,7 @@ typedef struct MsgWaitWork {
     void* gfx;
     u8 unk_C0[0x1C];
     u8 unk_DC[0x26];
-    u8 unk_102;
+    u8 timer;
     u8 unk_103;
     u8 unk_104[4];
 } MsgWaitWork;

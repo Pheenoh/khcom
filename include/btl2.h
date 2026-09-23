@@ -49,7 +49,7 @@ typedef struct BtlHpplyWork {
     AnimState anim;
     u8 unk_5C;
     u8 unk_5D;
-    s16 unk_5E;
+    s16 timer;
     s16 unk_60;
     s16 unk_62;
     s16 unk_64;
@@ -94,7 +94,7 @@ typedef struct BtlPopWork {
     s32 x;
     s32 y;
     s32 z;
-    s16 unk_30;
+    s16 timer;
     s16 unk_32;
 } BtlPopWork;
 
@@ -107,7 +107,7 @@ typedef struct BtlEscapeWork {
     s32 unk_14;
     s32 unk_18;
     s32 unk_1C;
-    s16 unk_20;
+    s16 timer;
     u8 unk_22;
     u8 unk_23;
 } BtlEscapeWork;

@@ -419,7 +419,7 @@ void func_080B4210(u8 a) {
 void task_wLogo_0(WLogoTaskWork* work, u8 arg) {
     work->unk_00 = arg;
     work->unk_04 = -0x5A00;
-    work->unk_08 = 0;
+    work->timer = 0;
     TaskPoolInit(&gUnk_02034C20, 2);
 
     switch (work->unk_00) {
@@ -476,13 +476,13 @@ void task_wLogo_0(WLogoTaskWork* work, u8 arg) {
 
 u8 task_wLogo_1(WLogoTaskWork* work) {
     if (work->unk_00 == 0) {
-        work->unk_08++;
-        if (work->unk_08 <= 314) {
+        work->timer++;
+        if (work->timer <= 314) {
             func_080CA6A8(0, 76);
         }
     } else {
-        work->unk_08++;
-        if (work->unk_08 <= 314) {
+        work->timer++;
+        if (work->timer <= 314) {
             func_080E02A8(0, 76);
         }
     }

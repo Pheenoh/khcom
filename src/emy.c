@@ -5415,7 +5415,7 @@ void task_emy_83_b_0(Emy83bWork* work, EmySpawn* spawn) {
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
-    work->unk_030 = 0;
+    work->timer = 0;
     ColliderInit(&work->collider, 0x0C, 4, 0x10);
 }
 
@@ -5426,15 +5426,15 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
 
     switch (work->state) {
     case 0:
-        if (work->unk_030 > 0x0F) {
+        if (work->timer > 0x0F) {
             work->state = 1;
-            work->unk_030 = 0;
+            work->timer = 0;
         } else {
-            work->unk_030++;
+            work->timer++;
         }
         break;
     case 1:
-        if (work->unk_030 == 0) {
+        if (work->timer == 0) {
             AnimStart(work->unk_008, 1, 0);
         }
 
@@ -5444,16 +5444,16 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
             }
         }
 
-        if (work->unk_030 > 0x1D) {
+        if (work->timer > 0x1D) {
             work->state = 2;
-            work->unk_030 = 0;
+            work->timer = 0;
         } else {
-            work->unk_030++;
+            work->timer++;
         }
         break;
     case 2:
     default:
-        if (work->unk_030 == 0) {
+        if (work->timer == 0) {
             AnimStart(work->unk_008, 2, 0);
         }
 
@@ -5461,7 +5461,7 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
             return 0;
         }
 
-        work->unk_030++;
+        work->timer++;
         break;
     }
 

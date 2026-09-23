@@ -205,7 +205,7 @@ typedef struct StatusStocklistWork {
     void* gfx;
     s32* unk_4C0;
     u16 unk_4C4;
-    u16 unk_4C6;
+    u16 timer;
     u8 unk_4C8;
     u8 unk_4C9[3];
 } StatusStocklistWork;

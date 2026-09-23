@@ -295,7 +295,7 @@ typedef struct PooHoneyWork {
     PooNode node;
     u32 state;
     TaskPool tasks;
-    u16 unk_108;
+    u16 timer;
     u16 unk_10A;
 } PooHoneyWork;
 
@@ -348,7 +348,7 @@ typedef struct PooPigletWork {
     u8 collider[0x5C];
     TaskPool tasks;
     u32 state;
-    u16 unk_AC;
+    u16 timer;
     u16 unk_AE;
     s32 unk_B0;
     u16 unk_B4;
@@ -766,7 +766,7 @@ typedef struct PooCamera {
     PooPos pos2;
     u8 unk_3C;
     u8 unk_3D;
-    u16 unk_3E;
+    u16 timer;
     u16 unk_40;
     u16 unk_42;
 } PooCamera;
@@ -835,7 +835,7 @@ typedef struct PooCabbageWork {
 typedef struct PooCabbageBornWork {
     TaskPool tasks;
     u16 unk_14;
-    u16 unk_16;
+    u16 timer;
 } PooCabbageBornWork;
 
 typedef struct PooMapButterflyWork {

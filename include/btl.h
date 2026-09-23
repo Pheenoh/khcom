@@ -75,7 +75,7 @@ typedef struct BtlAreaWork {
     void* tiles;
     u8 unk_008;
     u8 unk_009;
-    s16 unk_00A;
+    s16 timer;
 } BtlAreaWork;
 
 typedef struct SoraAttackDef {

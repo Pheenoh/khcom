@@ -561,15 +561,15 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
 #else
     work->gfx = gUnk_097A2DF8;
 #endif
-    work->unk_4C6 = 0;
+    work->timer = 0;
     work->unk_4C8 = 0;
 }
 
 u8 task_status_stocklist_1(StatusStocklistWork* work) {
-    work->unk_4C6++;
-    if (work->unk_4C6 > 24) {
+    work->timer++;
+    if (work->timer > 24) {
         work->unk_4C8 = (work->unk_4C8 == 0) ? 1 : 0;
-        work->unk_4C6 = 0;
+        work->timer = 0;
     }
     return 1;
 }

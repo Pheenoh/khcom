@@ -1781,7 +1781,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
     work->y = args->y;
     work->z = args->z;
     work->unk_4E = args->unk_14;
-    work->unk_3C = 0;
+    work->timer = 0;
     work->unk_4A = 0;
     work->unk_50 = GetRandom() % 0x201 + 0x14C;
     work->unk_30 = -(GetRandom() % 0x201 + 0x100);
@@ -1827,7 +1827,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
             work->z = 0;
 
             if (work->unk_4A >= work->unk_4C) {
-                work->unk_3C = 0;
+                work->timer = 0;
                 work->unk_38 = 1;
                 break;
             }
@@ -1843,18 +1843,18 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         }
 
         if (func_08011E3C(work->x, work->y, work->z, 2, 2, 2)) {
-            work->unk_3C = 0;
+            work->timer = 0;
             work->unk_38 = 1;
             break;
         }
-        work->unk_3C++;
+        work->timer++;
         break;
     default:
-        if (work->unk_3C == 0) {
+        if (work->timer == 0) {
             AnimStart(&work->anim, 1, 0);
         }
 
-        if (work->unk_3C <= 17) {
+        if (work->timer <= 17) {
             work->x += gSineTable[work->angle] * work->unk_50 >> 8;
             work->y += -gSineTable[work->angle + 64] * work->unk_50 >> 8;
             work->z += work->unk_30;
@@ -1866,20 +1866,20 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
                 work->angle = GetAngle(work->x, work->y,
                     gBtlWork->unk_130, gBtlWork->unk_134);
             }
-        } else if (work->unk_3C == 18) {
+        } else if (work->timer == 18) {
             func_08019A30();
             func_08014020(work->x, work->y, work->z);
             work->unk_48 = 0;
-        } else if (work->unk_3C > 18) {
+        } else if (work->timer > 18) {
             if (func_08011F78(0x117, work->x, work->y, work->z, 24, 24, 24)) {
                 m4aSongNumStart(0x264);
             }
         }
 
-        if (work->unk_3C > 17 && func_080128EC() == 0) {
+        if (work->timer > 17 && func_080128EC() == 0) {
             return 0;
         }
-        work->unk_3C++;
+        work->timer++;
         break;
     }
     if (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
@@ -4573,7 +4573,7 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
-    work->unk_2E = 0;
+    work->timer = 0;
     work->unk_2D = 1;
     work->state = 0;
     work->unk_30 = gBtlWork->actor->x;
@@ -4598,7 +4598,7 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
     case 0:
         if (func_08011F78(0x133, work->x, work->y, work->z, 1, 6, 2)) {
             m4aSongNumStart(0x2A3);
-            work->unk_2E = 0;
+            work->timer = 0;
             work->state = 1;
             func_08013994(work->x, work->y, work->z + 0x1000);
         } else {
@@ -4607,11 +4607,11 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
             } else {
                 work->x = work->x + work->unk_40;
             }
-            work->unk_2E++;
+            work->timer++;
         }
         break;
     case 1:
-        if ((s16)work->unk_2E == 0) {
+        if ((s16)work->timer == 0) {
             AnimStart(&work->anim, 1, 0);
         }
         c = gBtlWork->actor;
@@ -4619,10 +4619,10 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
         work->y += c->y - work->unk_34;
         work->z += c->z - work->unk_38;
 
-        if ((s16)work->unk_2E > 30) {
+        if ((s16)work->timer > 30) {
             return 0;
         }
-        work->unk_2E++;
+        work->timer++;
         break;
     }
     AnimUpdate(&work->anim);
@@ -6268,7 +6268,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
 
     switch (work->unk_2C) {
     case 1:
-        if (work->unk_30 == 0) {
+        if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
                 func_08019068(gUnk_0813F91C, &work->anim, 2, 0, work->tiles);
@@ -6287,13 +6287,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_2C = 2;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
-            work->unk_30++;
+            work->timer++;
         }
         break;
     case 2:
-        if (work->unk_30 == 0) {
+        if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
                 func_08019068(gUnk_0813F91C, &work->anim, 4, 0, work->tiles);
@@ -6312,13 +6312,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
 
         if (gBtlWork->unk_068 & 0x100000) {
             work->unk_2C = 3;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
-            work->unk_30++;
+            work->timer++;
         }
         break;
     case 3:
-        if (work->unk_30 == 0) {
+        if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
                 func_08019068(gUnk_0813F91C, &work->anim, 6, 0, work->tiles);
@@ -6341,9 +6341,9 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             args.z = work->z;
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumVixenFrg, &args);
             work->unk_2C = 6;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
-            work->unk_30++;
+            work->timer++;
         }
         break;
     case 0:
@@ -6358,26 +6358,26 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             gBtlWork->actor->unk_034 |= 0x100000000200;
             work->unk_2C = 1;
             gBtlWork->unk_068 &= ~0x100000;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
             work->unk_2C = 4;
-            work->unk_30 = 0;
+            work->timer = 0;
         }
         break;
     case 4:
-        if (work->unk_30 == 0) {
+        if (work->timer == 0) {
             func_08019068(gUnk_0813F91C, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_2C = 5;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
-            work->unk_30++;
+            work->timer++;
         }
         break;
     case 5:
-        if (work->unk_30 == 0) {
+        if (work->timer == 0) {
             func_08019068(gUnk_0813F91C, &work->anim, 5, 0, work->tiles);
         }
 
@@ -6387,16 +6387,16 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             args2.z = work->z;
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumVixenFrg, &args2);
             work->unk_2C = 6;
-            work->unk_30 = 0;
+            work->timer = 0;
         } else {
-            work->unk_30++;
+            work->timer++;
         }
         break;
     case 6:
-        if (work->unk_30 > 80) {
+        if (work->timer > 80) {
             return 0;
         }
-        work->unk_30++;
+        work->timer++;
         break;
     }
     AnimUpdate(&work->anim);

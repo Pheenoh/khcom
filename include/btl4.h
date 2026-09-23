@@ -42,7 +42,7 @@ typedef struct BtlPopCbWork {
     s32 x;
     s32 y;
     s32 z;
-    s16 unk_18;
+    s16 timer;
     u8 unk_1A[0x02];
 } BtlPopCbWork;
 
@@ -52,7 +52,7 @@ typedef struct BtlExpWork {
     void* tiles2[6];
     void* gfx;
     void* gfx2[6];
-    s16 unk_3C;
+    s16 timer;
     u8 unk_3E;
     u8 unk_3F;
     u16 unk_40;
@@ -85,7 +85,7 @@ typedef struct BtlHpothWork {
     AnimState anim;
     u8 unk_5C;
     u8 unk_5D;
-    s16 unk_5E;
+    s16 timer;
     s16 unk_60;
     s16 unk_62;
     s16 unk_64;

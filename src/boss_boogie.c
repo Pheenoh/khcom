@@ -32,12 +32,12 @@ void func_080D8F14(BoogieWork* work) {
             work->task = TaskCreate(&work->tasks, &gTaskDescBosBoogieDisk, &work->actor);
         } else if (gUnk_0203C558 == 1) {
             work->unk_000 = 6;
-            work->unk_004 = 0;
+            work->timer = 0;
             func_0801BDDC(18, 0xA000, 0x24000, 0);
             func_0801BDDC(18, 0x15000, 0x24000, 0);
         } else if (gUnk_0203C558 == 2) {
             work->unk_000 = 6;
-            work->unk_004 = 0;
+            work->timer = 0;
             func_0801BDDC(17, 0xA000, 0x24000, 0);
             func_0801BDDC(17, 0x15000, 0x24000, 0);
         } else if (gUnk_0203C558 == 3) {
@@ -45,7 +45,7 @@ void func_080D8F14(BoogieWork* work) {
             work->task = TaskCreate(&work->tasks, &gTaskDescBosBoogieKnifereader, 0);
         } else if (gUnk_0203C558 == 4) {
             work->unk_000 = 6;
-            work->unk_004 = 0;
+            work->timer = 0;
             func_0801BDDC(15, 0xA000, 0x24000, 0);
             func_0801BDDC(15, 0x15000, 0x24000, 0);
         } else {
@@ -98,7 +98,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     gBoogieWork = work;
     TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosBoogieMap, gUnk_096FDF24);
     work->unk_000 = 0;
-    work->unk_004 = 0;
+    work->timer = 0;
     gUnk_0203C564 = 0;
     gUnk_0203C568 = 0;
     gUnk_0203C554 = 0;
@@ -148,56 +148,56 @@ u8 task_bos_boogie_1(BoogieWork* work) {
     switch (func_0801ADAC(a)) {
     case 5:
         work->unk_000 = 1;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     case 1:
     case 6:
     case 7:
         work->unk_000 = 3;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     case 3:
     case 8:
         if (work->unk_000 != 4) {
             work->unk_000 = 4;
             work->unk_170 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     case 4:
         work->unk_000 = 2;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     default:
         if (gUnk_0203C564 != 0 && work->unk_000 != 4) {
             work->unk_000 = 5;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     }
 
     switch (work->unk_000) {
     case 3:
-        if (work->unk_004 == 0) {
+        if (work->timer == 0) {
             AnimReset(&work->anim);
             SetBoogieAnimation(work, 4, 1);
             work->unk_158 = -((a->unk_0AC << 9) >> 8);
             work->unk_150 = ((gSineTable[a->angle] * 375) >> 8) * a->unk_0A8 >> 8;
             work->unk_154 = ((-gSineTable[a->angle + 64] * 375) >> 8) * a->unk_0A8 >> 8;
-            work->unk_004++;
+            work->timer++;
         }
         if (AnimIsFinished(&work->anim)) {
             func_0801AF08(a);
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     case 4:
         SetBoogieAnimation(work, 8, 0);
         switch (work->unk_170) {
         case 0:
-            if (work->unk_004 <= 1) {
-                work->unk_004++;
+            if (work->timer <= 1) {
+                work->timer++;
             } else {
                 work->unk_170 = 1;
             }
@@ -212,12 +212,12 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
                 FadeToAmount(0, gBtlWork->unk_0B3, 8);
                 work->unk_170 = 3;
-                work->unk_004 = 0;
+                work->timer = 0;
             }
             break;
         case 3:
-            if (work->unk_004 <= 119) {
-                work->unk_004++;
+            if (work->timer <= 119) {
+                work->timer++;
             } else {
                 work->unk_170 = 4;
                 func_0801536C();
@@ -246,7 +246,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                     func_08083914();
                     work->unk_174 = 0;
                 }
-                work->unk_004 = 0;
+                work->timer = 0;
                 SetBoogieAnimation(work, 1, 1);
             } else {
                 AnimReset(&work->anim);
@@ -255,7 +255,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         break;
     case 11:
         SetBoogieAnimation(work, 1, 1);
-        work->unk_004++;
+        work->timer++;
         if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
             !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->dialog) &&
             !IsTaskActive((Task*)work->task) && gBtlWork->unk_0EC <= 0 && work->unk_174 == 0) {
@@ -263,7 +263,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             if (random == 0) {
                 func_08083900(8);
                 work->unk_174 = 1;
-                work->unk_004 = 0;
+                work->timer = 0;
             }
         }
         if (func_08083920() == 8) {
@@ -284,7 +284,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 SetBoogieAnimation(work, 2, 1);
                 m4aSongNumStart(272);
                 work->unk_000 = 9;
-                work->unk_004 = 0;
+                work->timer = 0;
 #ifndef VERSION_EU
                 if (func_0801C1C0(0)) {
                     gUnk_0203C568 = 0;
@@ -292,14 +292,14 @@ u8 task_bos_boogie_1(BoogieWork* work) {
 #endif
                 break;
             }
-        } else if (work->unk_174 != 0 && work->unk_004 > 10) {
+        } else if (work->unk_174 != 0 && work->timer > 10) {
             func_08083914();
             work->unk_174 = 0;
         }
         random = GetRandom();
         if ((random & 255) == 0 && work->unk_174 == 0) {
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         } else if (a->unk_034 & 4) {
             a->x -= 256;
             if (a->x <= 0xA000) {
@@ -320,46 +320,46 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         if (func_0801C1C0(0)) {
             func_080D9A58();
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         } else if (AnimIsFinished(&work->anim)) {
             func_080D8F14(work);
         }
         break;
     case 6:
-        if (work->unk_004 > 29) {
+        if (work->timer > 29) {
             work->unk_000 = 7;
         } else {
-            work->unk_004++;
+            work->timer++;
         }
         break;
     case 8:
         if (gUnk_0203C56C != 0) {
             work->unk_000 = 10;
-            work->unk_004 = 0;
+            work->timer = 0;
         } else if (gUnk_0203C570 != 0) {
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         } else if (!IsTaskActive((Task*)work->task)) {
             work->unk_000 = 7;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     case 7:
         SetBoogieAnimation(work, 7, 0);
         if (AnimIsFinished(&work->anim)) {
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     case 9:
         SetBoogieAnimation(work, 2, 1);
-        if (work->unk_004 == 0) {
+        if (work->timer == 0) {
             m4aSongNumStart(599);
         }
-        work->unk_004++;
+        work->timer++;
         if (AnimIsFinished(&work->anim)) {
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     case 10:
@@ -367,7 +367,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         SetBoogieAnimation(work, 5, 1);
         if (AnimIsFinished(&work->anim)) {
             work->unk_000 = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
         break;
     }

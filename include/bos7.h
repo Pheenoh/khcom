@@ -110,7 +110,7 @@ typedef struct LstLsrTask {
 typedef struct LstEdgWork {
     s16 state;
     s16 unk_002;
-    s16 unk_004;
+    s16 timer;
     s16 unk_006;
     s32 x;
     s32 y;

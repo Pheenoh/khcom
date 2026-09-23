@@ -3112,7 +3112,7 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     TaskPoolInit(&w->tasks, 1);
     CreatePooShadowscaleTask(&w->tasks, &w->pos, 0xCC);
     w->state = 0;
-    w->unk_108 = 0;
+    w->timer = 0;
 }
 
 u8 task_poo_honey_1(PooHoneyWork* w) {
@@ -3183,7 +3183,7 @@ u8 task_poo_honey_1(PooHoneyWork* w) {
             w->pos.x = w->pos3.x;
             w->pos.y = w->pos3.y;
             w->pos.z = w->pos3.z;
-            w->unk_108++;
+            w->timer++;
             break;
         case 0:
         default:
@@ -3200,7 +3200,7 @@ void task_poo_honey_2(PooHoneyWork* w) {
     s16 x;
     s16 y;
 
-    if (w->unk_108 > 29 && (w->unk_108 & 1) != 0) {
+    if (w->timer > 29 && (w->timer & 1) != 0) {
         return;
     }
 
@@ -3556,7 +3556,7 @@ void task_poo_piglet_0(PooPigletWork* w) {
     w->y = 0x21100;
     w->z = 0;
     w->state = 0;
-    w->unk_AC = 0;
+    w->timer = 0;
     w->palette = 0;
     m = 0;
 
@@ -3608,11 +3608,11 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         func_080CD854((PooAnimWork*)w, 0, 1);
         w->unk_24 = 0;
 
-        if (w->unk_AC > 209) {
+        if (w->timer > 209) {
             w->state = 1;
             w->unk_B0 = 0;
         } else {
-            w->unk_AC++;
+            w->timer++;
         }
         break;
     case 1:
@@ -3628,48 +3628,48 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
 
         if (w->x > 0x2C8FF) {
             w->state = 2;
-            w->unk_AC = 0;
+            w->timer = 0;
         }
         break;
     case 2:
         func_080CD854((PooAnimWork*)w, 1, 1);
         w->unk_24 = 1;
 
-        if (w->unk_AC > 39) {
+        if (w->timer > 39) {
             w->state = 3;
-            w->unk_AC = 0;
+            w->timer = 0;
         } else {
-            w->unk_AC++;
+            w->timer++;
         }
         break;
     case 3:
         func_080CD854((PooAnimWork*)w, 0, 1);
         w->unk_24 = 1;
 
-        if (w->unk_AC > 29) {
+        if (w->timer > 29) {
             w->state = 4;
-            w->unk_AC = 0;
+            w->timer = 0;
         } else {
-            w->unk_AC++;
+            w->timer++;
         }
         break;
     case 4:
         func_080CD854((PooAnimWork*)w, 1, 1);
         w->unk_24 = 1;
 
-        if (w->unk_AC > 29) {
+        if (w->timer > 29) {
             w->state = 5;
-            w->unk_AC = 0;
+            w->timer = 0;
         } else {
-            w->unk_AC++;
+            w->timer++;
         }
         break;
     case 5:
         func_080CD854((PooAnimWork*)w, 0, 1);
         w->unk_24 = 1;
 
-        if (w->unk_AC <= 59) {
-            w->unk_AC++;
+        if (w->timer <= 59) {
+            w->timer++;
         } else {
             w->state = 6;
             w->unk_B0 = 0;
@@ -3690,7 +3690,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
             w->x = 0x2A500;
             w->y = 0x21100;
             w->state = 0;
-            w->unk_AC = 0;
+            w->timer = 0;
         }
         break;
     default:
@@ -5265,7 +5265,7 @@ void task_poo_wagon_0(PooCamera* w) {
     w->gfx2 = gUnk_09758B70;
     w->gfx3 = gUnk_09758C20;
     w->unk_3C = 0;
-    w->unk_3E = 0;
+    w->timer = 0;
     w->unk_40 = 0;
 }
 
@@ -5308,9 +5308,9 @@ u8 task_poo_wagon_1(PooCamera* w) {
     }
 
     if (func_080CFF0C() != 0 && func_080C9D98() != 0 && func_080D2D50(6) == 0) {
-        w->unk_3E++;
+        w->timer++;
 
-        if (w->unk_3E > 100) {
+        if (w->timer > 100) {
             if (w->pos.y != w->pos2.y + 0xC00) {
                 t = w->pos.y - 0xC00;
                 d = w->pos2.y - t;
@@ -5319,11 +5319,11 @@ u8 task_poo_wagon_1(PooCamera* w) {
                 gUnk_0203C3EC->y += d;
                 func_080D2D3C(6);
                 m4aSongNumStart(0x90);
-                w->unk_3E = 0;
+                w->timer = 0;
             }
         }
     } else {
-        w->unk_3E = 0;
+        w->timer = 0;
     }
     return 1;
 }
@@ -5339,7 +5339,7 @@ void task_poo_wagon_2(PooCamera* w) {
 
     d = 0;
 
-    if (w->unk_3E != 0) {
+    if (w->timer != 0) {
         t = gSineTable[(u8)w->unk_40];
         w->unk_40 += 16;
     } else {
@@ -5955,7 +5955,7 @@ void task_poo_cabbage_3(PooCabbageWork* w) {
 void task_poo_cabbageborn_0(PooCabbageBornWork* w) {
     TaskPoolInit(&w->tasks, 0x20);
     w->unk_14 = 0;
-    w->unk_16 = 0;
+    w->timer = 0;
     gUnk_02034E34 = 0;
     gUnk_02034E36 = 0;
 }
@@ -5968,13 +5968,13 @@ u8 func_080D1650(void) {
 }
 
 u8 task_poo_cabbageborn_1(PooCabbageBornWork* w) {
-    if (func_080D1650() != 0 && w->unk_16 == 0) {
+    if (func_080D1650() != 0 && w->timer == 0) {
         TaskCreate(&w->tasks, &gTaskDescPooCabbage, 0);
-        w->unk_16 = 40;
+        w->timer = 40;
     }
 
-    if (w->unk_16 != 0) {
-        w->unk_16--;
+    if (w->timer != 0) {
+        w->timer--;
     }
     TaskPoolUpdate(&w->tasks);
     return 1;

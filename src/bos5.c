@@ -2261,7 +2261,7 @@ void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
     work->vx = -gSineTable[angle + 0x40] * speed >> 8;
     work->vy = gSineTable[angle] * speed >> 8;
     work->vz = -((GetRandom() & 0x1FF) + 0x100);
-    work->unk_024 = 3;
+    work->timer = 3;
     work->palette = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
     work->gfx = gUnk_09EF9740[GetRandom() % 2];
@@ -2288,9 +2288,9 @@ s32 task_bos_md_hahen_1(MdHahenWork* work) {
     if (work->z > 0) {
         work->z = 0;
         work->vz = -(work->vz * 8 / 10);
-        work->unk_024--;
+        work->timer--;
 
-        if ((s16)work->unk_024 <= 0) {
+        if ((s16)work->timer <= 0) {
             result = 0;
         }
     }

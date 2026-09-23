@@ -366,7 +366,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     AnimState* anim;
     s32 t;
 
-    w->unk_00 = 0;
+    w->timer = 0;
     w->unk_04 = a->unk_00;
     switch (w->unk_04) {
     case 0:
@@ -409,28 +409,28 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
 
     r = 1;
     AnimUpdate(&w->anim);
-    w->unk_00++;
+    w->timer++;
 
     switch (w->unk_04) {
     case 1:
-        if (w->unk_00 > 120) {
+        if (w->timer > 120) {
             r = 0;
         }
         break;
     case 2:
         w->y += 0x100;
 
-        if (w->unk_00 > 20) {
+        if (w->timer > 20) {
             r = 0;
         }
         break;
     case 5:
-        if (w->unk_00 == 12) {
+        if (w->timer == 12) {
             AnimStart(&w->anim, 6, 1);
         }
     case 0:
     case 3:
-        if (w->unk_00 > 50) {
+        if (w->timer > 50) {
             r = 0;
         }
         break;

@@ -118,7 +118,7 @@ typedef struct VixenFrzWork {
     s32 y;
     s32 z;
     u32 unk_2C;
-    s16 unk_30;
+    s16 timer;
     u16 unk_32;
     u16 unk_34;
     u16 unk_36;
@@ -224,7 +224,7 @@ typedef struct LaxeneKnfWork {
     s32 z;
     u8 unk_2C;
     u8 unk_2D;
-    u16 unk_2E;
+    u16 timer;
     s32 unk_30;
     s32 unk_34;
     s32 unk_38;
@@ -393,7 +393,7 @@ typedef struct HookBombWork {
     u8 angle;
     u8 unk_35[0x03];
     s32 unk_38;
-    s16 unk_3C;
+    s16 timer;
     u16 unk_3E;
     void* tiles2;
     void* palette2;

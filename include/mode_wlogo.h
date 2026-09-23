@@ -7,7 +7,7 @@ typedef struct WLogoTaskWork {
     u8 unk_00;
     u8 unk_01[3];
     s32 unk_04;
-    s16 unk_08;
+    s16 timer;
     u8 unk_0A[2];
 } WLogoTaskWork;
 

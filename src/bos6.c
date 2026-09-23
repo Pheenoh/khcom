@@ -6348,7 +6348,7 @@ void func_0810B844(PcFltWork* work) {
             if (work->unk_018 < 0) {
                 work->unk_005 = 1;
                 work->unk_000 = 0;
-                work->unk_002 = 0;
+                work->timer = 0;
                 work->unk_018 = 360;
                 AnimChange(&work->anim, 7, 0);
             }
@@ -6367,7 +6367,7 @@ void func_0810B844(PcFltWork* work) {
     } else {
         work->unk_005 = 5;
         work->unk_000 = 0;
-        work->unk_002 = 0;
+        work->timer = 0;
         AnimChange(&work->anim, 5, 0);
     }
 }
@@ -6379,7 +6379,7 @@ void func_0810B8F8(PcFltWork* work) {
     anim = &work->anim;
     if (AnimIsFinished(anim) == 1) {
         work->unk_005 = 2;
-        work->unk_002 = 0;
+        work->timer = 0;
         AnimReset(anim);
         AnimChange(anim, 3, 0);
     }
@@ -6390,21 +6390,21 @@ void func_0810B930(PcFltWork* work) {
     if (AnimIsFinished(&work->anim) == 1) {
         work->unk_005 = 3;
         work->unk_000 = 0;
-        work->unk_002 = 60;
+        work->timer = 60;
     }
 }
 
 void func_0810B95C(PcFltWork* work) {
     work->unk_030 = work->unk_024 + 0x1000;
-    work->unk_002 -= 1;
-    if (work->unk_002 < 0) {
+    work->timer -= 1;
+    if (work->timer < 0) {
         if (work->pos->unk_02 == 0) {
             work->unk_005 = 4;
-            work->unk_002 = 0;
+            work->timer = 0;
             AnimChange(&work->anim, 4, 0);
         } else {
             work->unk_005 = 6;
-            work->unk_002 = 0;
+            work->timer = 0;
             AnimChange(&work->anim, 9, 0);
         }
     }
@@ -6429,7 +6429,7 @@ void func_0810B9DC(PcFltWork* work) {
     anim = &work->anim;
     if (AnimIsFinished(anim) == 1) {
         work->unk_005 = 6;
-        work->unk_002 = 0;
+        work->timer = 0;
         AnimReset(anim);
         AnimChange(anim, 2, 0);
     }
@@ -6439,7 +6439,7 @@ void func_0810BA14(PcFltWork* work) {
     work->unk_030 = work->unk_024;
     if (work->pos->unk_02 == 0) {
         work->unk_005 = 7;
-        work->unk_002 = 0;
+        work->timer = 0;
         AnimChange(&work->anim, 6, 0);
     }
 }
@@ -6451,7 +6451,7 @@ void func_0810BA3C(PcFltWork* work) {
     anim = &work->anim;
     if (AnimIsFinished(anim) == 1) {
         work->unk_005 = 0;
-        work->unk_002 = 0;
+        work->timer = 0;
         AnimReset(anim);
         AnimChange(anim, 1, 0);
     }
@@ -6463,7 +6463,7 @@ void func_0810BA74(PcFltWork* work) {
     u16 id;
 
     work->unk_030 = work->unk_024;
-    if (work->unk_002 == 0) {
+    if (work->timer == 0) {
         anim = &work->anim;
         fin = AnimIsFinished(anim);
         if (fin == 1) {
@@ -6472,13 +6472,13 @@ void func_0810BA74(PcFltWork* work) {
                 AnimReset(anim);
                 AnimChange(anim, gUnk_09A4CEDC[id].unk_06, 0);
             } else {
-                work->unk_002 = 1;
+                work->timer = 1;
             }
         }
     } else if (work->pos->z <= 119) {
         work->unk_005 = 3;
         work->unk_000 = 0;
-        work->unk_002 = work->unk_004 * 30;
+        work->timer = work->unk_004 * 30;
     }
 }
 
@@ -6494,7 +6494,7 @@ void func_0810BAE4(PcFltWork* work) {
     if (work->unk_005 != 8 && work->pos->z > 0x257) {
         work->unk_005 = 8;
         work->unk_000 = 0;
-        work->unk_002 = 0;
+        work->timer = 0;
         work->unk_018 = 360;
     }
     if (work->pos->unk_02 == 0) {
@@ -6586,7 +6586,7 @@ void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg) {
     AnimStart(anim, 1, 0);
     ColliderInit(&work->collider, 7, 26, 4);
     work->unk_000 = 0;
-    work->unk_002 = 0;
+    work->timer = 0;
     work->unk_004 = arg->unk_00;
     work->unk_005 = 0;
     work->unk_006 = 0;
@@ -7076,7 +7076,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->sub[0].unk_001 = 1;
     work->sub[0].unk_002 = 1;
     work->sub[0].unk_004 = 0;
-    work->sub[0].unk_006 = 0;
+    work->sub[0].timer = 0;
     work->sub[0].unk_008 = 0;
     work->sub[0].unk_00A = 0;
     work->sub[0].unk_00C = -1;
@@ -7084,7 +7084,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->sub[1].unk_001 = 0;
     work->sub[1].unk_002 = 1;
     work->sub[1].unk_004 = 0;
-    work->sub[1].unk_006 = 0;
+    work->sub[1].timer = 0;
     work->sub[1].unk_008 = 0;
     work->sub[1].unk_00A = 0;
     work->sub[1].unk_00C = -1;
@@ -8687,7 +8687,7 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
     switch (func_0801ADAC(obj)) {
     case 5:
         p->unk_004 = 1;
-        p->unk_006 = 0;
+        p->timer = 0;
         break;
     case 1:
     case 6:
@@ -8700,12 +8700,12 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
             func_0801AF08(obj);
         } else {
             p->unk_004 = 3;
-            p->unk_006 = 0;
+            p->timer = 0;
         }
         break;
     case 3:
         p->unk_004 = 4;
-        p->unk_006 = 0;
+        p->timer = 0;
         p->unk_002 = 1;
         p->unk_00A = 6;
         s.unk_00 = p->unk_01C;
@@ -8716,18 +8716,18 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
         break;
     case 4:
         p->unk_004 = 2;
-        p->unk_006 = 0;
+        p->timer = 0;
         break;
     }
     switch (p->unk_004) {
     case 0:
         break;
     case 3:
-        p->unk_006 += 1;
-        if (p->unk_006 > 20) {
+        p->timer += 1;
+        if (p->timer > 20) {
             func_0801AF08(obj);
             p->unk_004 = 0;
-            p->unk_006 = 0;
+            p->timer = 0;
         }
         break;
     case 1:
@@ -8735,7 +8735,7 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
     case 5:
         func_0801AF08(obj);
         p->unk_004 = 0;
-        p->unk_006 = 0;
+        p->timer = 0;
         break;
     case 4:
         p->unk_000 = 1;

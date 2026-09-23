@@ -24,7 +24,7 @@
 #include "formation_types.h"
 
 typedef struct BtlFormWork {
-    s16 unk_00;
+    s16 timer;
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x02];

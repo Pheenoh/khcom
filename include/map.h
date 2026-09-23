@@ -572,7 +572,7 @@ typedef struct MapGmk01Work {
     void* tiles;
     u8* palette;
     void* gfx;
-    u16 unk_0C4;
+    u16 timer;
     u16 unk_0C6;
     u8 (*update)(struct MapGmk01Work*);
 } MapGmk01Work;
@@ -603,7 +603,7 @@ typedef struct MapGmkGpWork {
     u8* palette;
     void* gfx;
     u16 unk_0C4;
-    u16 unk_0C6;
+    u16 timer;
     u8 (*update)(struct MapGmkGpWork*);
 } MapGmkGpWork;
 
@@ -791,7 +791,7 @@ typedef struct MapPrzCardWork {
     void* tiles4;
     u8* palette3;
     u16 unk_088;
-    u16 unk_08A;
+    u16 timer;
     void (*update)(struct MapPrzCardWork*);
     UnkStruct_08F70ACC unk_090;
     u16 unk_0A8;
@@ -976,7 +976,7 @@ typedef struct MapMsgWork {
     u8 unk_184;
     u8 unk_185;
     s16 unk_186;
-    u16 unk_188;
+    u16 timer;
     u8 unk_18A[0x02];
 } MapMsgWork;
 
@@ -1013,7 +1013,7 @@ typedef struct UnkStruct_080F023C {
     void* gfx;
     u8 unk_C8[0x04];
     void (*update)(struct UnkStruct_080F023C*);
-    u16 unk_D0;
+    u16 timer;
     u8 unk_D2[0x02];
     s32 unk_D4;
     s32 unk_D8;

@@ -7,7 +7,7 @@
 
 typedef struct BoogieWork {
     s32 unk_000;
-    s16 unk_004;
+    s16 timer;
     u16 unk_006;
     void* tiles;
     void* palette;

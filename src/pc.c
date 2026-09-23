@@ -7,7 +7,7 @@ const char gTaskNamePcAcddmg[] = "task_pc_acddmg";
 void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
     work->actor = obj;
     work->unk_02 = 0;
-    work->unk_00 = 0x28;
+    work->timer = 0x28;
     work->unk_08 = 0;
 }
 
@@ -19,23 +19,23 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
         if (obj->z >= 0) {
             work->unk_08 = 1;
 
-            if (work->unk_00 <= 0) {
+            if (work->timer <= 0) {
                 if (work->unk_02 % 60 == 0) {
                     obj->unk_034 |= 0x20000000;
                 }
                 work->unk_02++;
             } else {
-                work->unk_00--;
+                work->timer--;
             }
         } else {
             if (work->unk_08 != 0) {
                 work->unk_08 = 0;
                 work->unk_02 = 0;
-                work->unk_00 = 0;
+                work->timer = 0;
             }
 
             if (!(gBtlWork->unk_068 & 0x8000)) {
-                work->unk_00 = 0x28;
+                work->timer = 0x28;
             }
         }
     }

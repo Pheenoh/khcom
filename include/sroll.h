@@ -168,7 +168,7 @@ typedef struct SrollBSecnArg {
 } SrollBSecnArg;
 
 typedef struct SrollBCrtnWork {
-    s32 unk_00;
+    s32 timer;
     u16 unk_04;
     u8 unk_06[0x2];
     s32 x;

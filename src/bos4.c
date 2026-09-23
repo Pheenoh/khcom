@@ -544,7 +544,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     work->unk_170 = arg[0x175];
     work->parent = (BoogieWork*)arg;
     work->state = 10;
-    work->unk_004 = 0;
+    work->timer = 0;
     work->unk_150 = -0x4CC;
     work->unk_154 = GetRandom() % 437 + 0x4C;
     work->angle = GetRandom() % 0x78 + 0x44;
@@ -585,11 +585,11 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         switch (func_0801ADAC(p)) {
         case 5:
             work->state = 3;
-            work->unk_004 = 0;
+            work->timer = 0;
             break;
         case 4:
             work->state = 0;
-            work->unk_004 = 0;
+            work->timer = 0;
             gUnk_0203C554 += 180;
             break;
         case 2:
@@ -599,7 +599,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
                 if (work->state == 3) {
                     work->state = 0;
-                    work->unk_004 = 0;
+                    work->timer = 0;
                 }
             }
 
@@ -610,7 +610,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         case 7:
         case 8:
             work->state = 2;
-            work->unk_004 = 0;
+            work->timer = 0;
             break;
         }
     } else {
@@ -618,21 +618,21 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         case 3:
             if (work->state != 3) {
                 work->state = 3;
-                work->unk_004 = 0;
+                work->timer = 0;
             }
 
             break;
         case 0:
             if (work->state != 0) {
                 work->state = 0;
-                work->unk_004 = 0;
+                work->timer = 0;
             }
 
             break;
         case 1:
             if (work->state == 3) {
                 work->state = 0;
-                work->unk_004 = 0;
+                work->timer = 0;
             }
 
             break;
@@ -645,7 +645,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         case 7:
         case 8:
             work->state = 2;
-            work->unk_004 = 0;
+            work->timer = 0;
             break;
         }
     }
@@ -702,13 +702,13 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         ((BtlObj*)p)->unk_034 &= ~0x80;
 #endif
 
-        if ((s16)work->unk_004 == 0 && work->unk_170 == 0) {
+        if ((s16)work->timer == 0 && work->unk_170 == 0) {
             func_0801AF08(p);
             gUnk_0203C560++;
             work->unk_168 = 1;
         }
 
-        work->unk_004++;
+        work->timer++;
         func_080D9B6C(work);
 
         if (*((u8*)p + 0x6C) != 0 && work->unk_160 > 255 && work->unk_15C > 255) {
@@ -724,18 +724,18 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         if (p->z > 0) {
             p->z = 0;
             work->unk_150 = -(work->unk_150 * 128 >> 8);
-            work->unk_004 = 0;
+            work->timer = 0;
             work->state = 1;
         }
 
         break;
     case 1:
-        if ((s16)work->unk_004 > 59) {
+        if ((s16)work->timer > 59) {
             work->state = 6;
             break;
         }
 
-        work->unk_004++;
+        work->timer++;
         work->unk_150 += 51;
         p->x += gSineTable[work->angle] * work->unk_154 >> 8;
         p->y += -gSineTable[work->angle + 0x40] * work->unk_154 >> 8;
@@ -769,17 +769,17 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
     case 4:
         if (AnimIsFinished(&work->anim) != 0) {
             work->state = 5;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
 
         break;
     case 5:
-        if ((s16)work->unk_004 > 20) {
+        if ((s16)work->timer > 20) {
             work->state = 6;
             break;
         }
 
-        work->unk_004++;
+        work->timer++;
         break;
     case 6:
         func_0801C2DC(p, 1);
@@ -789,18 +789,18 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         if (work->unk_160 <= 127) {
             work->state = 7;
             work->unk_150 = -0x4CC;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
 
         break;
     case 7:
-        if ((s16)work->unk_004 > 10) {
+        if ((s16)work->timer > 10) {
             work->state = 8;
-            work->unk_004 = 0;
+            work->timer = 0;
             break;
         }
 
-        work->unk_004++;
+        work->timer++;
         break;
     case 8:
         work->unk_150 += 51;
@@ -810,7 +810,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
         if (work->unk_160 > 255) {
             work->state = 9;
-            work->unk_004 = 0;
+            work->timer = 0;
         } else if (work->unk_160 <= 178) {
             break;
         }
@@ -825,11 +825,11 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
         break;
     case 10:
-        if ((s16)work->unk_004 > 30) {
+        if ((s16)work->timer > 30) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         break;
     }
 
@@ -1250,7 +1250,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 e;
 
     work->state = 2;
-    work->unk_004 = 0;
+    work->timer = 0;
     work->unk_15C = 0;
     work->unk_150 = -0x200;
 
@@ -1293,7 +1293,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     switch (func_0801ADAC(p)) {
     case 5:
         work->state = 0;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     case 2:
     default:
@@ -1310,7 +1310,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     case 8:
         if (work->state != 1) {
             work->state = 1;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
 
         break;
@@ -1347,7 +1347,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         p->x -= work->unk_154;
         work->unk_15C += 0x19;
         p->z += work->unk_150;
@@ -1359,11 +1359,11 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
 
         break;
     case 2:
-        if ((s16)work->unk_004 > 30) {
+        if ((s16)work->timer > 30) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         break;
     }
 
@@ -1419,7 +1419,7 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     s32 v;
 
     work->state = 0;
-    work->unk_004 = 0;
+    work->timer = 0;
 
     if (gUnk_0203C578 != 0) {
         work->unk_140 = 0x133;
@@ -1476,7 +1476,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
         p->x += work->unk_140;
         p->z += work->unk_13C;
         work->unk_13C += work->unk_150;
-        work->unk_004++;
+        work->timer++;
 
         if (p->z < 0) {
             func_080DB04C(work);
@@ -1484,7 +1484,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
             p->z = 0;
             work->unk_13C = work->unk_154;
 
-            if ((s16)work->unk_004 > 199.99999f) {
+            if ((s16)work->timer > 199.99999f) {
                 work->state = 2;
             } else {
                 func_080DB04C(work);
@@ -1588,7 +1588,7 @@ void task_bos_boogie_knifereader_0(BoogieKnifereaderWork* work) {
     s32 i;
 
     work->state = 2;
-    work->unk_004 = 0;
+    work->timer = 0;
     gUnk_0203C574 = 0;
     TaskPoolInit(&work->tasks, 5);
 
@@ -1610,7 +1610,7 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
     switch (func_0801ADAC(e)) {
     case 5:
         work->state = 0;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     case 2:
     default:
@@ -1627,7 +1627,7 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
     case 8:
         if (work->state != 1) {
             work->state = 1;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
 
         break;
@@ -1635,11 +1635,11 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
 
     switch (work->state) {
     case 2:
-        if ((s16)work->unk_004 > 30) {
+        if ((s16)work->timer > 30) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         checkKnives = 0;
         break;
     case 1:
@@ -1647,8 +1647,8 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
         checkKnives = 1;
         break;
     case 0:
-        if ((s16)work->unk_004 == 0) {
-            work->unk_004++;
+        if ((s16)work->timer == 0) {
+            work->timer++;
             func_080DB468(work);
             checkKnives = 0;
             break;
@@ -1702,7 +1702,7 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     s32 e;
 
     work->state = 2;
-    work->unk_004 = 0;
+    work->timer = 0;
     work->unk_154 = (u32)arg;
     work->unk_150 = 0;
     c = arg->unk_044;
@@ -1725,7 +1725,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
     switch (func_0801ADAC(p)) {
     case 5:
         work->state = 0;
-        work->unk_004 = 0;
+        work->timer = 0;
         break;
     case 2:
     default:
@@ -1742,7 +1742,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
     case 8:
         if (work->state != 1) {
             work->state = 1;
-            work->unk_004 = 0;
+            work->timer = 0;
         }
 
         break;
@@ -1752,10 +1752,10 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
     case 0:
         func_0802F274(p->x, p->y + p->z);
 
-        if ((s16)work->unk_004 == 0) {
+        if ((s16)work->timer == 0) {
             func_08015228(p->x, p->y, p->z + 0x2800, 0x199);
             m4aSongNumStart(0x256);
-            work->unk_004++;
+            work->timer++;
             break;
         }
 
@@ -1781,7 +1781,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         p->z += work->unk_150;
         work->unk_150 += 0x42;
 
@@ -1791,11 +1791,11 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
 
         break;
     case 2:
-        if ((s16)work->unk_004 > 30) {
+        if ((s16)work->timer > 30) {
             return 0;
         }
 
-        work->unk_004++;
+        work->timer++;
         break;
     }
 
@@ -3112,7 +3112,7 @@ void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     AnimStart(&work->anim, 0, 1);
 #endif
     work->unk_138 = 0;
-    work->unk_134 = 0x3C;
+    work->timer = 0x3C;
 }
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
@@ -3126,27 +3126,27 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     if (work->unk_138 == 0) {
         p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
         p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
-        work->unk_134--;
+        work->timer--;
 
         if (p->z >= 0) {
             p->z = 0;
-            work->unk_134 = 0;
+            work->timer = 0;
         }
 
-        if (work->unk_134 == 0) {
-            work->unk_134 = 180;
+        if (work->timer == 0) {
+            work->timer = 180;
             work->unk_138 = 1;
         }
     }
 
-    if (work->unk_138 == 1 && work->unk_134 != 0) {
+    if (work->unk_138 == 1 && work->timer != 0) {
         work->unk_13E = (u8)GetAngle(p->x, p->z,
             gBtlWork->actor->x, gBtlWork->actor->z);
         ApproachAngle(&work->unk_13C, work->unk_13E, 4);
         p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
         p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
 
-        if (work->unk_134 <= 169) {
+        if (work->timer <= 169) {
             ApproachValue(&p->y, gBtlWork->actor->y, 30);
         }
 
@@ -3154,9 +3154,9 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
             return 0;
         }
 
-        work->unk_134--;
+        work->timer--;
 
-        if (work->unk_134 == 0) {
+        if (work->timer == 0) {
 #ifdef VERSION_EU
             eu_080DA80C(1, 0);
 #else
@@ -3226,7 +3226,7 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
 #else
     if (AnimGetId(&work->anim) == 0) {
 #endif
-        work->unk_134 = 0;
+        work->timer = 0;
 #ifdef VERSION_EU
         eu_080DA80C(1, 0);
 #else

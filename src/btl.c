@@ -352,7 +352,7 @@ void task_btl_area_0(BtlAreaWork* work) {
     work->unk_008 = 0;
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->tiles = LoadObjTiles(gUnk_08B1EA00, 0xE0);
-    work->unk_00A = 0;
+    work->timer = 0;
     work->unk_009 = 1;
 }
 
@@ -363,18 +363,18 @@ u8 task_btl_area_1(BtlAreaWork* work) {
     }
 
     if (gBtlWork->unk_0B4 != 0) {
-        work->unk_00A = 20;
+        work->timer = 20;
         gBtlWork->unk_0B4 = 0;
     }
 
-    if (work->unk_00A > 0) {
+    if (work->timer > 0) {
         work->unk_008 = 1;
     } else {
         work->unk_008 = 0;
     }
 
-    if (work->unk_00A > 0) {
-        work->unk_00A--;
+    if (work->timer > 0) {
+        work->timer--;
     }
     return 1;
 }

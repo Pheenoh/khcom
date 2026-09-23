@@ -263,17 +263,17 @@ void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
     work->x = src->x;
     work->y = src->y;
     work->z = src->z;
-    work->unk_18 = 0;
+    work->timer = 0;
 }
 
 s32 task_btl_pop_cb_1(BtlPopCbWork* work) {
     work->z -= 192;
 
-    if (work->unk_18 > 49) {
+    if (work->timer > 49) {
         return 0;
     }
 
-    work->unk_18++;
+    work->timer++;
     return 1;
 }
 
@@ -379,7 +379,7 @@ void task_btl_exp_0(BtlExpWork* work) {
         work->gfx2[i] = 0;
     }
 
-    work->unk_3C = 0;
+    work->timer = 0;
     work->unk_3E = gGameState.progression.level;
     work->unk_44 = gGameState.progression.exp;
     work->state = 0;
@@ -415,7 +415,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 #else
         work->gfx = gUnk_08B25E40;
 #endif
-        work->unk_3C = 0;
+        work->timer = 0;
         work->state = 3;
         work->unk_3E = gGameState.progression.level;
         work->unk_40 = 0;
@@ -447,7 +447,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 #else
             work->gfx = gUnk_08B25E54;
 #endif
-            work->unk_3C = 0;
+            work->timer = 0;
             work->state = 1;
             work->unk_44 = gGameState.progression.exp;
         }
@@ -457,7 +457,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
     case 0:
         break;
     case 3:
-        if (work->unk_3C > 100) {
+        if (work->timer > 100) {
             if (gGameState.progression.level > 98) {
                 work->state = 0;
             } else {
@@ -486,14 +486,14 @@ s32 task_btl_exp_1(BtlExpWork* work) {
                 work->gfx = gUnk_08B25E5E;
 #endif
             }
-            work->unk_3C = 0;
+            work->timer = 0;
             work->unk_40 = 0;
         } else {
-            work->unk_3C++;
+            work->timer++;
         }
         break;
     case 1:
-        if (work->unk_3C > 60) {
+        if (work->timer > 60) {
             if (gGameState.progression.level > 98) {
                 work->state = 0;
             } else {
@@ -522,18 +522,18 @@ s32 task_btl_exp_1(BtlExpWork* work) {
                 work->gfx = gUnk_08B25E5E;
 #endif
             }
-            work->unk_3C = 0;
+            work->timer = 0;
             work->unk_40 = 0;
         } else {
-            work->unk_3C++;
+            work->timer++;
         }
         break;
     case 2:
-        if (work->unk_3C > 100) {
-            work->unk_3C = 0;
+        if (work->timer > 100) {
+            work->timer = 0;
             work->state = 0;
         } else {
-            work->unk_3C++;
+            work->timer++;
         }
         break;
     }
@@ -747,7 +747,7 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
     work->unk_00 = 0x100;
     work->unk_04 = 1;
     work->unk_5C = 1;
-    work->unk_5E = 0;
+    work->timer = 0;
     work->unk_60 = 0;
     work->unk_62 = 0;
 }
@@ -773,12 +773,12 @@ s32 task_btl_hpoth_1(BtlHpothWork* work) {
     }
 
     if (actor->unk_02C < work->unk_60) {
-        work->unk_5E = 44;
+        work->timer = 44;
     }
 
-    if (work->unk_5E != 0) {
+    if (work->timer != 0) {
         AnimChange(&work->anim, 1, 1);
-        work->unk_5E--;
+        work->timer--;
     } else if (flag != 0) {
         AnimChange(&work->anim, 2, 1);
     } else {

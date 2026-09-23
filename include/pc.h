@@ -10,7 +10,7 @@
 #include "pc_api.h"
 
 typedef struct PcAcdDmgWork {
-    s16 unk_00;
+    s16 timer;
     s16 unk_02;
     BtlObj* actor;
     u8 unk_08;

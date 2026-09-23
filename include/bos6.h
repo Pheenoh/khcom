@@ -316,7 +316,7 @@ typedef struct PcAcdWork {
 
 typedef struct PcFltWork {
     u16 unk_000;
-    s16 unk_002;
+    s16 timer;
     u8 unk_004;
     u8 unk_005;
     u8 unk_006;
@@ -363,7 +363,7 @@ typedef struct LstSub {
     u8 unk_002;
     u8 unk_003;
     s16 unk_004;
-    s16 unk_006;
+    s16 timer;
     s16 unk_008;
     s16 unk_00A;
     s16 unk_00C;

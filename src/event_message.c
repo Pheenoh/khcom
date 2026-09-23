@@ -4226,7 +4226,7 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
     SetObjTileSource(p->tiles, gUnk_09320796);
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
-    p->unk_102 = 0;
+    p->timer = 0;
     gUnk_02039DC8->unk_7D = 1;
 }
 u8 msgwait_1(MsgWaitWork* p, void* a) {
@@ -4250,8 +4250,8 @@ u8 func_08073F78(MsgWaitWork* p) {
     u8 r;
 
     p->gfx = AnimUpdate(p->unk_DC);
-    p->unk_102++;
-    if (p->unk_102 <= 15) {
+    p->timer++;
+    if (p->timer <= 15) {
         r = 1;
     } else {
         gUnk_02039DC8->unk_7D = 0;

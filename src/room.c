@@ -17,7 +17,7 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->y = 0x8A00;
     work->unk_20 = 0x400;
     work->unk_24 = 0x19;
-    work->unk_2A = 0;
+    work->timer = 0;
     work->unk_2C = 0;
     work->state = 0;
     work->unk_1C = 0x19;
@@ -37,16 +37,16 @@ u8 task_room_name_1(RoomNameWork* work) {
 
     switch (work->state) {
     case 0:
-        work->unk_2A++;
-        if (work->unk_2A > 0x27) {
-            work->unk_2A = 0;
+        work->timer++;
+        if (work->timer > 0x27) {
+            work->timer = 0;
             work->state++;
         }
         break;
     case 1:
-        work->unk_2A++;
-        if (work->unk_2A > 1) {
-            work->unk_2A = 0;
+        work->timer++;
+        if (work->timer > 1) {
+            work->timer = 0;
             work->y2 -= 0x99;
             work->unk_1C += 0x19;
             if (work->unk_1C > 0xFF) {
@@ -56,16 +56,16 @@ u8 task_room_name_1(RoomNameWork* work) {
         }
         break;
     case 2:
-        work->unk_2A++;
-        if (work->unk_2A > 0xB3) {
-            work->unk_2A = 0;
+        work->timer++;
+        if (work->timer > 0xB3) {
+            work->timer = 0;
             work->state++;
         }
         break;
     case 3:
-        work->unk_2A++;
-        if (work->unk_2A > 1) {
-            work->unk_2A = 0;
+        work->timer++;
+        if (work->timer > 1) {
+            work->timer = 0;
             work->y2 += 0x99;
             work->unk_1C -= 0x19;
             if (work->unk_1C <= 0x19) {

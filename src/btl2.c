@@ -255,7 +255,7 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
     work->unk_00 = 0x100;
     work->unk_04 = 1;
     work->unk_5C = 1;
-    work->unk_5E = 0;
+    work->timer = 0;
     work->unk_60 = 0;
     work->unk_62 = 0;
     work->unk_5D = 0;
@@ -281,12 +281,12 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
     }
 
     if (actor->unk_02C < work->unk_60) {
-        work->unk_5E = 44;
+        work->timer = 44;
     }
 
-    if (work->unk_5E != 0) {
+    if (work->timer != 0) {
         AnimChange(&work->anim, 1, 1);
-        work->unk_5E--;
+        work->timer--;
     } else if (flag != 0) {
         AnimChange(&work->anim, 2, 1);
     } else {
@@ -1145,7 +1145,7 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     work->x = src->x;
     work->y = src->y;
     work->z = src->z;
-    work->unk_30 = 0;
+    work->timer = 0;
 }
 #else
 void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
@@ -1213,17 +1213,17 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     work->x = src->x;
     work->y = src->y;
     work->z = src->z;
-    work->unk_30 = 0;
+    work->timer = 0;
 }
 #endif
 
 s32 task_btl_pop_1(BtlPopWork* work) {
     work->z -= 0xC0;
 
-    if (work->unk_30 > 49) {
+    if (work->timer > 49) {
         return 0;
     }
-    work->unk_30++;
+    work->timer++;
     work->gfx = AnimUpdate(&work->anim);
     return 1;
 }
@@ -1285,7 +1285,7 @@ void task_btl_escape_0(BtlEscapeWork* work) {
     work->unk_14 = 0;
     work->unk_1C = 0;
     work->unk_22 = 0;
-    work->unk_20 = 0;
+    work->timer = 0;
 }
 
 s32 task_btl_escape_1(BtlEscapeWork* work) {
@@ -1297,11 +1297,11 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
         if (work->unk_22 != 0) {
             work->unk_1C = 0;
             work->unk_22 = 0;
-            work->unk_20 = 0;
+            work->timer = 0;
         }
     } else {
-        if (work->unk_20 <= 15) {
-            work->unk_20++;
+        if (work->timer <= 15) {
+            work->timer++;
             work->unk_22 = 0;
         } else {
             work->unk_22 = 1;
