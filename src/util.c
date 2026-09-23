@@ -49,50 +49,50 @@ void KeyStateClear(KeyState* k) {
 
 u8 KeyGetHoldFrames(KeyState* k, u16 key) {
     switch (key) {
-    case 0x20:
+    case DPAD_LEFT:
         return k->on[0];
-    case 0x10:
+    case DPAD_RIGHT:
         return k->on[1];
-    case 0x40:
+    case DPAD_UP:
         return k->on[2];
-    case 0x80:
+    case DPAD_DOWN:
         return k->on[3];
-    case 0x200:
+    case L_BUTTON:
         return k->on[6];
-    case 0x100:
+    case R_BUTTON:
         return k->on[7];
-    case 0x1:
+    case A_BUTTON:
         return k->on[4];
-    case 0x2:
+    case B_BUTTON:
         return k->on[5];
-    case 0x8:
+    case START_BUTTON:
         return k->on[8];
-    case 0x4:
+    case SELECT_BUTTON:
         return k->on[9];
     }
 }
 
 u8 KeyGetOffFrames(KeyState* k, u16 key) {
     switch (key) {
-    case 0x20:
+    case DPAD_LEFT:
         return k->off[0];
-    case 0x10:
+    case DPAD_RIGHT:
         return k->off[1];
-    case 0x40:
+    case DPAD_UP:
         return k->off[2];
-    case 0x80:
+    case DPAD_DOWN:
         return k->off[3];
-    case 0x200:
+    case L_BUTTON:
         return k->off[6];
-    case 0x100:
+    case R_BUTTON:
         return k->off[7];
-    case 0x1:
+    case A_BUTTON:
         return k->off[4];
-    case 0x2:
+    case B_BUTTON:
         return k->off[5];
-    case 0x8:
+    case START_BUTTON:
         return k->off[8];
-    case 0x4:
+    case SELECT_BUTTON:
         return k->off[9];
     }
 }
@@ -135,7 +135,7 @@ u16 KeyReadChord(KeyState* k, u16 a, u16 b) {
 void KeyStateUpdate(KeyState* k, u16 keys) {
     k->trg = keys & ~k->held;
     k->held = keys;
-    if (k->held & 0x20) {
+    if (k->held & DPAD_LEFT) {
         k->on[0]++;
         k->off[0] = 0;
 
@@ -150,7 +150,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x10) {
+    if (k->held & DPAD_RIGHT) {
         k->on[1]++;
         k->off[1] = 0;
 
@@ -165,7 +165,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x40) {
+    if (k->held & DPAD_UP) {
         k->on[2]++;
         k->off[2] = 0;
 
@@ -180,7 +180,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x80) {
+    if (k->held & DPAD_DOWN) {
         k->on[3]++;
         k->off[3] = 0;
 
@@ -195,7 +195,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x200) {
+    if (k->held & L_BUTTON) {
         k->on[6]++;
         k->off[6] = 0;
 
@@ -210,7 +210,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x100) {
+    if (k->held & R_BUTTON) {
         k->on[7]++;
         k->off[7] = 0;
 
@@ -225,7 +225,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x1) {
+    if (k->held & A_BUTTON) {
         k->on[4]++;
         k->off[4] = 0;
 
@@ -240,7 +240,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x2) {
+    if (k->held & B_BUTTON) {
         k->on[5]++;
         k->off[5] = 0;
 
@@ -255,7 +255,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x8) {
+    if (k->held & START_BUTTON) {
         k->on[8]++;
         k->off[8] = 0;
 
@@ -270,7 +270,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
         }
     }
 
-    if (k->held & 0x4) {
+    if (k->held & SELECT_BUTTON) {
         k->on[9]++;
         k->off[9] = 0;
 
@@ -287,43 +287,43 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     k->rep = 0;
 
     if (k->on[0] == 1 || k->on[0] == 32) {
-        k->rep |= 0x20;
+        k->rep |= DPAD_LEFT;
     }
 
     if (k->on[1] == 1 || k->on[1] == 32) {
-        k->rep |= 0x10;
+        k->rep |= DPAD_RIGHT;
     }
 
     if (k->on[2] == 1 || k->on[2] == 32) {
-        k->rep |= 0x40;
+        k->rep |= DPAD_UP;
     }
 
     if (k->on[3] == 1 || k->on[3] == 32) {
-        k->rep |= 0x80;
+        k->rep |= DPAD_DOWN;
     }
 
     if (k->on[6] == 1 || k->on[6] == 32) {
-        k->rep |= 0x200;
+        k->rep |= L_BUTTON;
     }
 
     if (k->on[7] == 1 || k->on[7] == 32) {
-        k->rep |= 0x100;
+        k->rep |= R_BUTTON;
     }
 
     if (k->on[4] == 1 || k->on[4] == 32) {
-        k->rep |= 0x1;
+        k->rep |= A_BUTTON;
     }
 
     if (k->on[5] == 1 || k->on[5] == 32) {
-        k->rep |= 0x2;
+        k->rep |= B_BUTTON;
     }
 
     if (k->on[8] == 1 || k->on[8] == 32) {
-        k->rep |= 0x8;
+        k->rep |= START_BUTTON;
     }
 
     if (k->on[9] == 1 || k->on[9] == 32) {
-        k->rep |= 0x4;
+        k->rep |= SELECT_BUTTON;
     }
 }
 

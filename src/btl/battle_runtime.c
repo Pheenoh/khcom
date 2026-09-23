@@ -176,10 +176,10 @@ void func_08019350(void) {
     a = ReadKeyChord(L_BUTTON, R_BUTTON);
 
     switch (a) {
-    case 0x200:
+    case L_BUTTON:
         func_08076318();
         break;
-    case 0x100:
+    case R_BUTTON:
         func_08076324();
         break;
     }
@@ -234,7 +234,7 @@ void func_08019350(void) {
         return;
     }
 
-    if (a == 0x300) {
+    if (a == (L_BUTTON | R_BUTTON)) {
         if (func_0807B3E0() > 2) {
             func_08076348();
         } else {
@@ -275,10 +275,10 @@ void func_080195A8(void) {
     a = ReadKeyChord(L_BUTTON, R_BUTTON);
 
     switch (a) {
-    case 0x200:
+    case L_BUTTON:
         func_0807E1F4();
         break;
-    case 0x100:
+    case R_BUTTON:
         func_0807E200();
         break;
     }
@@ -333,7 +333,7 @@ void func_080195A8(void) {
         return;
     }
 
-    if (a == 0x300) {
+    if (a == (L_BUTTON | R_BUTTON)) {
         if (func_0807B3F8() > 2) {
             func_0807E224();
         } else {
@@ -379,10 +379,10 @@ void func_080197AC(void) {
 
     if (!(gBtlWork->flags & 0x4000000000)) {
         switch (a) {
-        case 0x200:
+        case L_BUTTON:
             func_08076318();
             break;
-        case 0x100:
+        case R_BUTTON:
             func_08076324();
             break;
         }
@@ -442,7 +442,7 @@ void func_080197AC(void) {
         return;
     }
 
-    if (a == 0x300) {
+    if (a == (L_BUTTON | R_BUTTON)) {
         if (func_0807B3E0() > 2) {
             if (!(gBtlWork->flags & 0x4000000000000)) {
                 func_08076348();

@@ -118,8 +118,8 @@ void func_080107D4(void) {
     }
 
     if (gUnk_02039B9C->flags & 0x10000000000000) {
-        if (held & 1) {
-            if (!(held & 0x300)) {
+        if (held & A_BUTTON) {
+            if (!(held & (L_BUTTON | R_BUTTON))) {
                 func_0807E2F4();
             }
         }
@@ -152,7 +152,7 @@ void func_080107D4(void) {
         break;
     }
 
-    if (pressed & 4) {
+    if (pressed & SELECT_BUTTON) {
         func_0807E260();
     }
 
@@ -162,7 +162,7 @@ void func_080107D4(void) {
         w->unk_0E2 = 0;
         w->unk_0E3 = 0;
     } else {
-        if ((held & 0x200) && !(held & 0x100)) {
+        if ((held & L_BUTTON) && !(held & R_BUTTON)) {
             if (w->unk_0E2 <= 254) {
                 w->unk_0E2++;
             }
@@ -170,7 +170,7 @@ void func_080107D4(void) {
             w->unk_0E2 = f;
         }
 
-        if ((held & 0x100) && !(held & 0x200)) {
+        if ((held & R_BUTTON) && !(held & L_BUTTON)) {
             if (w->unk_0E3 <= 254) {
                 w->unk_0E3++;
             }
@@ -216,7 +216,7 @@ void func_080107D4(void) {
         }
     }
 
-    if (pressed & 1) {
+    if (pressed & A_BUTTON) {
         func_0807E20C();
 
         if (func_08081838() == 3) {
@@ -246,8 +246,8 @@ void func_08010A24(void) {
     }
 
     if (gBtlWork->flags & 0x10000000000000) {
-        if (held & 1) {
-            if (!(held & 0x300)) {
+        if (held & A_BUTTON) {
+            if (!(held & (L_BUTTON | R_BUTTON))) {
                 func_080763F0();
             }
         }
@@ -280,7 +280,7 @@ void func_08010A24(void) {
         break;
     }
 
-    if (pressed & 4) {
+    if (pressed & SELECT_BUTTON) {
         func_08076394();
     }
 
@@ -290,7 +290,7 @@ void func_08010A24(void) {
         w->unk_0E2 = 0;
         w->unk_0E3 = 0;
     } else {
-        if ((held & 0x200) && !(held & 0x100)) {
+        if ((held & L_BUTTON) && !(held & R_BUTTON)) {
             if (w->unk_0E2 <= 254) {
                 w->unk_0E2++;
             }
@@ -298,7 +298,7 @@ void func_08010A24(void) {
             w->unk_0E2 = f;
         }
 
-        if ((held & 0x100) && !(held & 0x200)) {
+        if ((held & R_BUTTON) && !(held & L_BUTTON)) {
             if (w->unk_0E3 <= 254) {
                 w->unk_0E3++;
             }
@@ -345,7 +345,7 @@ void func_08010A24(void) {
         }
     }
 
-    if (pressed & 1) {
+    if (pressed & A_BUTTON) {
         func_08076330();
 
         if (func_0807B3C8() == 3) {
