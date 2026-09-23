@@ -2753,7 +2753,7 @@ tables:
   pointer_offsets: [0]
 - name: direct_animation_resources_09EF8414
   layer: 1
-  provenance: Canonical UnkStruct_080E7D80 gUnk_0984C158 fields +0C/+10 contain the independently corresponding table bases. Its TaskDesc +24 callback func_080F3BC4 initializes animations 0/1 and callback func_080F3A74 explicitly starts 1. Both full headers and frames agree across regions. map.c tutorial func_080F6DE8 starts animation 0 and func_080F6F1C starts 1. map.c MapGmkJump initialization and callbacks func_080F1460/14C4/1544 explicitly select animation 0,1,2. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
+  provenance: Canonical UnkStruct_080E7D80 gUnk_0984C158 fields +0C/+10 contain the independently corresponding table bases. Its TaskDesc +24 callback Task_MapGmk01_0 initializes animations 0/1 and callback func_080F3A74 explicitly starts 1. Both full headers and frames agree across regions. map.c tutorial func_080F6DE8 starts animation 0 and func_080F6F1C starts 1. map.c MapGmkJump initialization and callbacks func_080F1460/14C4/1544 explicitly select animation 0,1,2. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
   us: '0x9ef8414'
   targets:
     jp: '0x9ecf800'
@@ -2763,7 +2763,7 @@ tables:
   pointer_offsets: [0]
 - name: direct_animation_resources_09EF8CA0
   layer: 1
-  provenance: map.c func_080F5A00 selects animation 0/1 by game-state flag. poo.c shares these same tables. map.c func_080F5B68 selects animation 0/1 by relative position. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
+  provenance: map.c Task_MapSpark_0 selects animation 0/1 by game-state flag. poo.c shares these same tables. map.c Task_MapTalk_1 selects animation 0/1 by relative position. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
   us: '0x9ef8ca0'
   targets:
     jp: '0x9ed008c'
@@ -5219,7 +5219,7 @@ tables:
   pointer_offsets: [0, 4, 8]
 - name: data_09EE91A8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee91a8'
   targets:
     jp: '0x9ec07ec'
@@ -5229,7 +5229,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE91E8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee91e8'
   targets:
     jp: '0x9ec082c'
@@ -5239,7 +5239,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE9240_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee9240'
   targets:
     jp: '0x9ec0884'
@@ -5249,7 +5249,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE92E8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee92e8'
   targets:
     jp: '0x9ec092c'
@@ -5259,7 +5259,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE9320_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee9320'
   targets:
     jp: '0x9ec0964'
@@ -5269,7 +5269,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE93C8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee93c8'
   targets:
     jp: '0x9ec0a0c'
@@ -5279,7 +5279,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE94AC_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee94ac'
   targets:
     jp: '0x9ec0af0'
@@ -5289,7 +5289,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE9544_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee9544'
   targets:
     jp: '0x9ec0b88'
@@ -5299,7 +5299,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EE95B4_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ee95b4'
   targets:
     jp: '0x9ec0bf8'
@@ -5309,7 +5309,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEA16C_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eea16c'
   targets:
     jp: '0x9ec1560'
@@ -5319,7 +5319,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEB080_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eeb080'
   targets:
     jp: '0x9ec246c'
@@ -5329,7 +5329,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEB110_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eeb110'
   targets:
     jp: '0x9ec24fc'
@@ -5339,7 +5339,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EED7E8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eed7e8'
   targets:
     jp: '0x9ec4bd4'
@@ -5349,7 +5349,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEDB84_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eedb84'
   targets:
     jp: '0x9ec4f70'
@@ -5359,7 +5359,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEDFA8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eedfa8'
   targets:
     jp: '0x9ec5394'
@@ -5369,7 +5369,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEE454_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eee454'
   targets:
     jp: '0x9ec5840'
@@ -5379,7 +5379,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEE544_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eee544'
   targets:
     jp: '0x9ec5930'
@@ -5389,7 +5389,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEEE38_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eeee38'
   targets:
     jp: '0x9ec6224'
@@ -5399,7 +5399,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEEE5C_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eeee5c'
   targets:
     jp: '0x9ec6248'
@@ -5409,7 +5409,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEF0E8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eef0e8'
   targets:
     jp: '0x9ec64d4'
@@ -5419,7 +5419,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEF480_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eef480'
   targets:
     jp: '0x9ec686c'
@@ -5429,7 +5429,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEF6F0_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eef6f0'
   targets:
     jp: '0x9ec6adc'
@@ -5439,7 +5439,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EEFDA4_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9eefda4'
   targets:
     jp: '0x9ec7190'
@@ -5449,7 +5449,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF06A8_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef06a8'
   targets:
     jp: '0x9ec7a94'
@@ -5459,7 +5459,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF07D4_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef07d4'
   targets:
     jp: '0x9ec7bc0'
@@ -5469,7 +5469,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF090C_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef090c'
   targets:
     jp: '0x9ec7cf8'
@@ -5479,7 +5479,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF0EB4_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef0eb4'
   targets:
     jp: '0x9ec82a0'
@@ -5489,7 +5489,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF0F64_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef0f64'
   targets:
     jp: '0x9ec8350'
@@ -5499,7 +5499,7 @@ tables:
   pointer_offsets: [0]
 - name: data_09EF1060_event_sprite
   layer: 2
-  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to func_0801CE70; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
+  provenance: The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical EvtAnimDef identities plus931 EvtObjAnim records supply animation indices to EvtObjChangeAnim; their frame graph proves each active gfx-table bound. MapCardDef and direct card consumers select only the independently declared sprite indices. Words beyond proven arrays remain neutral typed scalar objects. The unreferenced EvtAnimDef at081370F0 retains its one-frame gfx/animation pair as canonical one-entry tables. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.
   us: '0x9ef1060'
   targets:
     jp: '0x9ec844c'

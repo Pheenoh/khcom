@@ -3214,7 +3214,7 @@ s32 func_080F3B84(MapGmk01Work* w) {
     return 1;
 }
 
-void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
+void Task_MapGmk01_0(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     const UnkStruct_080E7D80* d = arg->unk_14;
     AnimState* a;
@@ -4281,7 +4281,7 @@ s32 Task_MapMsg2_1(MapMsgWork* w) {
     return 1;
 }
 
-void func_080F5A00(MapSparkWork* w, void* arg) {
+void Task_MapSpark_0(MapSparkWork* w, void* arg) {
     AnimState* a;
 
     w->unk_00 = arg;
@@ -4337,7 +4337,7 @@ void Task_MapTalk_0(MapTalkWork* w, s32* arg) {
     w->unk_28 = 0;
 }
 
-s32 func_080F5B68(MapTalkWork* w) {
+s32 Task_MapTalk_1(MapTalkWork* w) {
     s32* p = w->unk_00;
     AnimState* anim = &w->anim;
 
@@ -5844,7 +5844,7 @@ TaskDesc gTaskDescMapGmk00 = {
 
 TaskDesc gTaskDescMapGmk01 = {
     gTaskNameMapGmk01,
-    (void (*)(void*, void*))func_080F3BC4,
+    (void (*)(void*, void*))Task_MapGmk01_0,
     Task_MapGmk01_1,
     (void (*)(void*))Task_MapGmk01_2,
     (void (*)(void*))Task_MapGmk01_3,
@@ -5934,7 +5934,7 @@ TaskDesc gTaskDescMapMsg2 = {
 
 TaskDesc gTaskDescMapSpark = {
     gTaskNameMapSpark,
-    (void (*)(void*, void*))func_080F5A00,
+    (void (*)(void*, void*))Task_MapSpark_0,
     Task_MapSpark_1,
     (void (*)(void*))Task_MapSpark_2,
     (void (*)(void*))Task_MapSpark_3,
@@ -5944,7 +5944,7 @@ TaskDesc gTaskDescMapSpark = {
 TaskDesc gTaskDescMapTalk = {
     gTaskNameMapTalk,
     (void (*)(void*, void*))Task_MapTalk_0,
-    func_080F5B68,
+    Task_MapTalk_1,
     (void (*)(void*))Task_MapTalk_2,
     (void (*)(void*))Task_MapTalk_3,
     0x2C,

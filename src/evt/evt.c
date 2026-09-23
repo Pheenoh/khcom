@@ -63,7 +63,7 @@ s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a,
     TaskCreate(pool, desc, &param);
 }
 
-void func_0801CE70(EvtObjWork* work) {
+void EvtObjChangeAnim(EvtObjWork* work) {
     EvtObj* obj;
     EvtObjAnim* anim;
     EvtAnimDef* def;
@@ -86,14 +86,14 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     AnimInit(&work->anim, 0, 0);
     work->obj->anim = &work->anim;
     work->obj->unk_1C = work->palette[3];
-    func_0801CE70(work);
+    EvtObjChangeAnim(work);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescEvtShadow, work->obj);
 }
 
 s32 task_evt_obj_1(EvtObjWork* work) {
     if (work->obj->flags & 1) {
-        func_0801CE70(work);
+        EvtObjChangeAnim(work);
     }
 
     AnimUpdate(&work->anim);

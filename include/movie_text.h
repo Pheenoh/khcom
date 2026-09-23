@@ -10,9 +10,9 @@ s16 func_0805E848(u16* widths, u16 count);
 #endif
 #ifndef VERSION_JP
 #ifdef VERSION_EU
-u16 func_0805E89C(u8* str);
+u16 CountNonSpaceChars(u8* str);
 #else
-u16 func_0805E89C(u16* str);
+u16 CountNonSpaceChars(u16* str);
 #endif
 #endif
 

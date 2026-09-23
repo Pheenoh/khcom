@@ -101,7 +101,7 @@ s32 func_0805E93C(s32 arg) {
 #ifdef VERSION_JP
                     gUnk_02034956 = func_0805E848((u8*)gUnk_02034948->unk_04);
 #else
-                    gUnk_02034956 = func_0805E89C(gUnk_02034948->unk_04);
+                    gUnk_02034956 = CountNonSpaceChars(gUnk_02034948->unk_04);
 #endif
 
                     if (gUnk_02034956 > MOVIE_SUB_MAX_CHARS) {
@@ -121,7 +121,7 @@ s32 func_0805E93C(s32 arg) {
 #ifdef VERSION_JP
                     gUnk_0203495E = func_0805E848((u8*)e->unk_04);
 #else
-                    gUnk_0203495E = func_0805E89C(e->unk_04);
+                    gUnk_0203495E = CountNonSpaceChars(e->unk_04);
 #endif
 
                     if (gUnk_0203495E > MOVIE_SUB_MAX_CHARS) {

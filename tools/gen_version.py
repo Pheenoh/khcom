@@ -2029,7 +2029,7 @@ TARGET_FUNC_SIZE = {
     "eu": {
         "func_080892E8": 632,
         "func_08089EC0": 596,
-        "func_0805E89C": 32,
+        "CountNonSpaceChars": 32,
         "func_0801CB44": 60,
         "task_btl_escape_0": 224,
         "event_seq_3": 76,

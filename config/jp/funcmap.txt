@@ -721,7 +721,7 @@ func_0801CD94	0x0801cd94	4	0x0801cd94	body
 CreateEvtObjTask	0x0801cd98	104	0x0801cd98	global
 func_0801CE00	0x0801ce00	4	0x0801ce00	body
 func_0801CE04	0x0801ce04	108	0x0801ce04	global
-func_0801CE70	0x0801ce70	60	0x0801ce70	global
+EvtObjChangeAnim	0x0801ce70	60	0x0801ce70	global
 task_evt_obj_0	0x0801ceac	96	0x0801ceac	named
 task_evt_obj_1	0x0801cf0c	48	0x0801cf0c	named
 task_evt_obj_2	0x0801cf3c	164	0x0801cf3c	named
@@ -1336,7 +1336,7 @@ task_tutorial_1	0x0805dc58	2864	0x0805dc08	named
 task_tutorial_2	0x0805e788	156	0x0805e738	named
 task_tutorial_3	0x0805e824	36	0x0805e7d4	named
 func_0805E848	0x0805e848	84	0x0805e7f8	entry
-func_0805E89C	0x0805e89c	24	-	absent
+CountNonSpaceChars	0x0805e89c	24	-	absent
 mode_movie_0	0x0805e8b4	136	0x0805e814	named
 func_0805E93C	0x0805e93c	340	0x0805e89c	near
 func_0805EA90	0x0805ea90	876	0x0805e9f0	match
@@ -4337,7 +4337,7 @@ Task_MapGmk00_3	0x080f3a50	36	0x080f3a70	body
 func_080F3A74	0x080f3a74	104	0x080f3a94	global
 func_080F3ADC	0x080f3adc	168	0x080f3afc	global
 func_080F3B84	0x080f3b84	64	0x080f3ba4	global
-func_080F3BC4	0x080f3bc4	212	0x080f3be4	global
+Task_MapGmk01_0	0x080f3bc4	212	0x080f3be4	global
 Task_MapGmk01_1	0x080f3c98	48	0x080f3cb8	body
 Task_MapGmk01_2	0x080f3cc8	108	0x080f3ce8	body
 Task_MapGmk01_3	0x080f3d34	36	0x080f3d54	body
@@ -4396,12 +4396,12 @@ Task_MapMsg_1	0x080f5968	4	0x080f5988	body
 func_080F596C	0x080f596c	52	0x080f598c	global
 func_080F59A0	0x080f59a0	68	0x080f59c0	global
 Task_MapMsg2_1	0x080f59e4	28	0x080f5a04	global
-func_080F5A00	0x080f5a00	100	0x080f5a20	global
+Task_MapSpark_0	0x080f5a00	100	0x080f5a20	global
 Task_MapSpark_1	0x080f5a64	36	0x080f5a84	global
 Task_MapSpark_2	0x080f5a88	120	0x080f5aa8	global
 Task_MapSpark_3	0x080f5b00	24	0x080f5b20	body
 Task_MapTalk_0	0x080f5b18	80	0x080f5b38	global
-func_080F5B68	0x080f5b68	80	0x080f5b88	global
+Task_MapTalk_1	0x080f5b68	80	0x080f5b88	global
 Task_MapTalk_2	0x080f5bb8	144	0x080f5bd8	global
 Task_MapTalk_3	0x080f5c48	24	0x080f5c68	body
 func_080F5C60	0x080f5c60	124	0x080f5c80	global
