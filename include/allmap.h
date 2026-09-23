@@ -3,7 +3,6 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
-
 #include "poo_api.h"
 
 #include "obj.h"
@@ -204,9 +203,6 @@ extern u8 gUnk_0976D880[];
 extern u8 gUnk_0976DB68[];
 extern u8 gUnk_0976DB9C[];
 extern u8 gUnk_0976DC9C[];
-extern u8 gUnk_0983AD98[];
-extern u8 gUnk_0983B298[];
-extern u8 gUnk_0983B7B4[];
 extern u8 gUnk_0984A078[];
 extern u8 gUnk_0984A0F8[];
 extern u8 gUnk_0984A118[];
@@ -214,7 +210,6 @@ extern u8 gUnk_0984A138[];
 extern u8 gUnk_0984A1D8[];
 extern u8 gUnk_09618D38[];
 extern u8 gUnk_0905E3BA[];
-extern u8 gUnk_0984A1F8[];
 
 extern u8 gUnk_0203C538;
 extern s16 gUnk_0203C53C;

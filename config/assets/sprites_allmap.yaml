@@ -20,6 +20,15 @@ objects:
   - name: sprites_allmap_frames.s
     start: 0x0976B1D8
     end: 0x0976E9D4
+  - name: sprites_allmap_tiles.s
+    start: 0x097B62B8
+    end: 0x097B7218
+  - name: sprites_allmap_maps.s
+    start: 0x0983AD98
+    end: 0x0983BC18
+  - name: sprites_allmap_palettes.s
+    start: 0x0984A1F8
+    end: 0x0984A418
   jp:
   - name: sprites_allmap.c
     start: 0x09ECD810
@@ -27,6 +36,15 @@ objects:
   - name: sprites_allmap_frames.s
     start: 0x097239B4
     end: 0x097271B0
+  - name: sprites_allmap_tiles.s
+    start: 0x0977074C
+    end: 0x097716AC
+  - name: sprites_allmap_maps.s
+    start: 0x097F026C
+    end: 0x097F10EC
+  - name: sprites_allmap_palettes.s
+    start: 0x097FEECC
+    end: 0x097FF0EC
   eu:
   - name: sprites_allmap.c
     start: 0x09F8181C
@@ -34,6 +52,15 @@ objects:
   - name: sprites_allmap_frames.s
     start: 0x09738538
     end: 0x0973C884
+  - name: sprites_allmap_tiles.s
+    start: 0x09793C20
+    end: 0x09794B80
+  - name: sprites_allmap_maps.s
+    start: 0x09811140
+    end: 0x09811AC0
+  - name: sprites_allmap_palettes.s
+    start: 0x0981E8A0
+    end: 0x0981EAC0
 entries:
 - name: gUnk_09EF6424
   record: SpriteTable
@@ -1827,3 +1854,73 @@ entries:
   eu:
     address: 0x0973C384
     size: 1280
+- name: gUnk_097B62B8
+  format: tiles4
+  us:
+    address: 0x097B62B8
+    size: 3936
+  jp:
+    address: 0x0977074C
+    size: 3936
+  eu:
+    address: 0x09793C20
+    size: 3936
+- name: gUnk_0983AD98
+  format: tilemap
+  us:
+    address: 0x0983AD98
+    size: 1280
+  jp:
+    address: 0x097F026C
+    size: 1280
+  eu:
+    address: 0x09811140
+    size: 1280
+- name: gUnk_0983B298
+  format: tilemap
+  us:
+    address: 0x0983B298
+    size: 1308
+  jp:
+    address: 0x097F076C
+    size: 1308
+- name: gUnk_0983B7B4
+  format: tilemap
+  us:
+    address: 0x0983B7B4
+    size: 1124
+  jp:
+    address: 0x097F0C88
+    size: 1124
+  eu:
+    address: 0x0981165C
+    size: 1124
+- name: gUnk_0984A1F8
+  format: palette
+  us:
+    address: 0x0984A1F8
+    size: 32
+  jp:
+    address: 0x097FEECC
+    size: 32
+  eu:
+    address: 0x0981E8A0
+    size: 32
+- name: gUnk_0984A218
+  format: raw
+  us:
+    address: 0x0984A218
+    size: 512
+  jp:
+    address: 0x097FEEEC
+    size: 512
+    symbol: gUnkJp_097FEEEC
+  eu:
+    address: 0x0981E8C0
+    size: 512
+    symbol: gUnkEu_0981E8C0
+- name: gUnkEu_09811640
+  format: raw
+  eu:
+    address: 0x09811640
+    size: 28

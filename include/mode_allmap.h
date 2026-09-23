@@ -2,7 +2,6 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
-
 #include "allmap_types.h"
 
 #include "map_api.h"
@@ -42,8 +41,6 @@ extern u16 gUnk_02034E38;
 extern u16 gUnk_02034E3A;
 extern TaskPool gUnk_0203C4F0;
 extern u8 gUnk_05000140[];
-extern u8 gUnk_097B62B8[];
-extern u8 gUnk_0983AD98[];
 extern u8 gUnk_0984A0F8[];
 extern u8 gUnk_09849F78[];
 
