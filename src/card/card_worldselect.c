@@ -45,6 +45,8 @@
 #include "sprites_worldselect.h"
 #include "battle_backgrounds.h"
 #include "prize_card.h"
+#include "sprites_card_pictures.h"
+#include "sprites_card.h"
 
 u8 gUnk_02034AB8[20];
 
@@ -63,7 +65,6 @@ extern void* gUnk_09EE75A8[];
 extern void** gUnk_09EE75B8[];
 extern AnimHeader** gUnk_09EE75C8[];
 extern u8 gUnk_09618CD8[];
-extern u8 gUnk_093F4578[];
 extern u8 gUnk_09618D18[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_09F72C10[];
@@ -84,7 +85,6 @@ extern u8 gUnkEu_094C789A[];
 extern u8 gUnkEu_094C7472[];
 extern u8 gUnkEu_094C704A[];
 #endif
-extern u8 gUnk_0908B1B4[];
 void func_080949A0(MapcardWork* w);
 u8 func_08094A18(MapcardWork* w, void* a);
 s32 RemoveMapCard(u16 a);
@@ -124,9 +124,6 @@ void WORLDSELECT_1(void) {
 void WORLDSELECT_2(void) {
     TaskPoolDestroy(gUnk_02034AB8);
 }
-extern u8 gUnk_093F5422[];
-extern u8 gUnk_093F6734[];
-extern u8 gUnk_093F5C40[];
 void func_0809332C(MapSelectWork* w);
 void MapSelect_0(MapSelectWork* w, u8* a) {
     u32 zero;

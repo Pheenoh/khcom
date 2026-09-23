@@ -33,7 +33,6 @@ extern u8 gUnk_08159E10[];
 extern u8 gUnk_08159E18[];
 extern u8 gUnk_08159FBC[];
 extern u8 gUnk_0815C136[];
-extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09611AB8[];
 
 s16 func_0810712C(s16 a);

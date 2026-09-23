@@ -1,6 +1,7 @@
 #include "card_reload_sprite_data.h"
 #include "card_animation_assets.h"
 #include "card_lookup_assets.h"
+#include "sprites_card.h"
 
 void* gUnk_09EEA344[1] = {
     gUnk_09099368,

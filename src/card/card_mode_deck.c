@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 #ifndef VERSION_EU
 u8 gUnk_02034B08[20];

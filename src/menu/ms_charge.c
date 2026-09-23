@@ -9,6 +9,7 @@
 #include "sprites_card.h"
 #include "sprites_evt.h"
 #include "sprites_moogle_shop.h"
+#include "sprites_card_pictures.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_099AEE98[];

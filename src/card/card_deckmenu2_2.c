@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_deck_menu.h"
+#include "sprites_card_pictures.h"
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F7434C[];
@@ -60,7 +61,6 @@ void func_080A7180(u8 a);
 void func_080A6EB4(u8* work, s32 id);
 void func_080A5C60(u8* work, u16 card);
 void func_08090170(DeckCard2Work* node);
-extern u8 gUnk_0908B1B4[];
 void func_080A6FAC(UnkStruct_080A6FAC* w);
 u8 func_080A5FF4(u8* work, void* a);
 s32 func_080A6388(u8* work);

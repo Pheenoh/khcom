@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 void* gUnk_02034AD4;
 

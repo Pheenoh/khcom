@@ -12,13 +12,11 @@
 #include "monsgage.h"
 #include "anim.h"
 #include "msg.h"
-
-
+#include "sprites_msg.h"
 
 #ifdef VERSION_EU
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
-extern u8 gUnkEu_0919B63A[];
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)
@@ -2169,7 +2167,7 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090AB5B2[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
@@ -2302,7 +2300,7 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090AB5B2[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
@@ -2885,7 +2883,7 @@ s32 LoadLatinTextSlots(u16* a, TextSlot* b) {
             }
 #ifdef VERSION_EU
             v = ((u16*)gUnk_09EEB204[v])[3];
-            b->tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+            b->tiles = LoadObjTiles(&gUnk_090AB5B2[v * 32], 128);
 #else
             v = ((u16*)gUnk_09EEC134[v])[3];
             b->tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
@@ -6905,7 +6903,7 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090AB5B2[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
@@ -7704,7 +7702,7 @@ u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
                 *b = gUnk_08F7D438[v];
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                CpuSet(&gUnkEu_0919B63A[v * 32], dst, 0x40);
+                CpuSet(&gUnk_090AB5B2[v * 32], dst, 0x40);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 CpuSet(&gUnk_090CBFB2[v * 32], dst, 0x40);

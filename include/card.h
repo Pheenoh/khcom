@@ -135,10 +135,7 @@ typedef struct CardDisplayWork {
 } CardDisplayWork;
 extern u16 gUnk_0903BFD4[];
 extern u16 gUnk_0903BFBC[];
-extern u8 gUnk_093FB6C4[];
 extern u8 gUnk_096148D8[];
-extern u8 gUnk_0909A4E0[];
-extern u8 gUnk_0909FDCA[];
 extern u8 gUnk_090A0C86[];
 typedef struct CardListWork {
     ListPool cards;
@@ -363,8 +360,6 @@ extern u16 gUnk_0903801C[];
 extern u16 gUnk_09EE48F4[47];
 extern s32 gUnk_090352E4[];
 extern s16 gUnk_090352F4[];
-extern u8 gUnk_093FB954[];
-extern u8 gUnk_093FBAB8[][0x80];
 extern u8 gUnk_09619178[];
 typedef struct WorldSelAnim {
     u8 unk_00;
@@ -373,9 +368,7 @@ typedef struct WorldSelAnim {
 } WorldSelAnim;
 
 extern WorldSelAnim gWorldSelAnims[30];
-extern u8 gUnk_093FB1AC[];
 extern u8 gUnk_09619378[];
-extern u8 gUnk_093FB0CC[];
 extern s32 gUnk_09041E80[];
 extern s32 gUnk_09041E9C[];
 extern s16 gUnk_09041EB4[];
@@ -387,7 +380,6 @@ extern u16 gUnk_09041EEE[];
 extern s16 gUnk_09041F04[];
 extern s16 gUnk_09041F1A[];
 extern s16 gUnk_09041F0A[];
-extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_08159E18[];
 extern u8 gUnk_08159F38[];
 extern u8 gUnk_08159FBC[];
@@ -396,7 +388,6 @@ extern u8 gUnk_0815C1C2[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_09614418[];
 extern u8 gUnk_09614438[];
-extern u8 gUnk_093F8C8E[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_08F69BE4[];
 
@@ -1174,7 +1165,6 @@ extern s32 gUnk_09033FA8[];
 extern const s32 gUnk_09033FB8[];
 extern s32 gUnk_0903401C[][2];
 extern s32 gUnk_0903404C[];
-extern u8 gUnk_090A261E[];
 extern u8 gUnk_096144D8[];
 extern u8 gUnk_096FBA04[];
 extern u8 gUnk_09628DC0[];
@@ -1212,25 +1202,17 @@ typedef struct UnkStruct_09035730 {
 } UnkStruct_09035730;
 
 extern UnkStruct_09035730 gUnk_09035730;
-extern u8 gUnk_093F7172[];
 extern u8 gUnk_09618C58[];
 extern u8 gUnk_09619098[];
-extern u8 gUnk_0905F03C[];
-extern u8 gUnk_090A418E[];
-extern u8 gUnk_090A44C4[];
 extern u8 gUnk_090A3E46[];
 extern u8 gUnk_096144F8[];
-extern u8 gUnk_093F47E4[];
 extern u8 gUnk_09619158[];
-extern u8 gUnk_093F762E[];
 extern u8 gUnk_09614458[];
 extern u8 gUnk_09614478[];
 extern u8 gUnk_09614498[];
 extern u8 gUnk_096144B8[];
 extern u8 gUnk_09614406[];
 extern Deck gUnk_09034084[];
-extern u8 gUnk_0905ED36[];
-extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
@@ -2558,7 +2540,6 @@ extern const u8* gUnkEu_09F6FE8C[7];
 extern void* gUnkEu_09F6FF30[5];
 extern void** gUnkEu_09F6FF44[5];
 extern void** gUnkEu_09F6FF70[5];
-extern u8 gUnkEu_09187A0E[];
 extern u8 gUnkEu_09189F36[];
 extern u8 gUnkEu_0918A73A[];
 extern u8 gUnkEu_0918A48E[];
@@ -2583,7 +2564,6 @@ extern const u8* gUnk_09EE4B0C[7];
 extern const u8* gUnkJp_09EBC148[7];
 extern const u8* gUnkJp_09EBC164[7];
 #endif
-extern u8 gUnk_093F6734[];
 extern const u16 gUnk_096102B8[];
 extern const void* gUnk_09EE4BB0[2];
 extern s16 gUnk_09EE4BB8[5];

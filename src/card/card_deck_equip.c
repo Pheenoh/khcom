@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08895A00[];

@@ -45,6 +45,7 @@
 #include "sprites_evt.h"
 #include "sprites_msg.h"
 #include "sprites_map.h"
+#include "sprites_card.h"
 
 UnkStruct_02034AFC* gUnk_02034B00;
 #ifndef VERSION_EU

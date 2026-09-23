@@ -1,5 +1,6 @@
 #include "card_lookup_data.h"
 #include "card_lookup_assets.h"
+#include "sprites_msg.h"
 
 void* gUnk_09EEC5F0 = gUnk_090D4720;
 

@@ -44,6 +44,8 @@
 #include "sprites_btl.h"
 #include "prize_card.h"
 #include "sprites_worldselect.h"
+#include "sprites_card_pictures.h"
+#include "sprites_card.h"
 
 extern UnkStruct_09EE752C gUnk_09EE752C[7];
 #ifdef VERSION_EU
@@ -1486,7 +1488,7 @@ void* gUnkEu_09F72A3C[5] = { gUnk_09EF1224, gUnkEu_09F7C438, gUnkEu_09F7C450, gU
 
 void* gUnkEu_09F72A50[5] = { gUnk_09EF1220, gUnkEu_09F7C434, gUnkEu_09F7C44C, gUnkEu_09F7C444, gUnkEu_09F7C43C };
 
-void* gUnkEu_09F72A64[5] = { gUnkEu_094C6154, gUnkEu_094C7CCE, gUnkEu_094C9180, gUnkEu_094C8946, gUnkEu_094C8288 };
+void* gUnkEu_09F72A64[5] = { gUnk_093F6ACC, gUnkEu_094C7CCE, gUnkEu_094C9180, gUnkEu_094C8946, gUnkEu_094C8288 };
 #endif
 
 const char gTaskNameSELMAPEVKEY[] = "SELMAP_EVKEY";

@@ -45,6 +45,7 @@
 #include "sprites_deck_menu.h"
 #include "sprites_evt.h"
 #include "sprites_msg.h"
+#include "sprites_card.h"
 
 UnkStruct_02034AFC* gUnk_02034AFC;
 

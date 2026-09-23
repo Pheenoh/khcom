@@ -44,6 +44,7 @@
 #include "sprites_btl.h"
 #include "sprites_card.h"
 #include "sprites_premire_chance.h"
+#include "sprites_card_pictures.h"
 
 struct CardListWork* gCardListWork EWRAM_COMMON(4);
 
@@ -51,7 +52,6 @@ struct CardListWork* gCardListWork EWRAM_COMMON(4);
 extern void** gUnkEu_09F72BFC[5];
 #endif
 extern u8 gUnk_09618CD8[];
-extern u8 gUnk_093F4578[];
 extern u8 gUnk_0908BB80[];
 extern u8 gUnk_09613E98[];
 extern u8 gUnk_0908BFB2[];

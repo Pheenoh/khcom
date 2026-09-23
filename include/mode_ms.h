@@ -151,7 +151,4 @@ extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09611AB8[];
-extern u8 gUnk_0905EAE8[];
-extern u8 gUnk_0905ED36[];
-extern u8 gUnk_0908B1B4[];
 #endif /* GUARD_MODE_MS_H */

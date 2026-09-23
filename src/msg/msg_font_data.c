@@ -1,5 +1,6 @@
 #include "msg_font_data.h"
 #include "msg_font_assets.h"
+#include "sprites_msg.h"
 
 #ifndef VERSION_EU
 void* gUnk_09EEB188[30] = {
@@ -36,9 +37,9 @@ void* gUnk_09EEB188[30] = {
 };
 #endif
 #if defined(VERSION_US)
-AnimHeader* gUnkUs_09EEB200 = &gUnkUs_090AA4FC;
+AnimHeader* gUnkUs_09EEB200 = &gUnk_090AA4FC;
 #elif defined(VERSION_JP)
-AnimHeader* gUnkJp_09EC25EC = &gUnkJp_09065A24;
+AnimHeader* gUnkJp_09EC25EC = &gUnk_090AA4FC;
 #endif
 
 void* gUnk_09EEB204[256] = {
@@ -563,9 +564,9 @@ void* gUnk_09EEB608[256] = {
 };
 #endif
 #if defined(VERSION_US)
-AnimHeader* gUnkUs_09EEBA08 = &gUnkUs_090B3FB4;
+AnimHeader* gUnkUs_09EEBA08 = &gUnk_090B3FB4;
 #elif defined(VERSION_JP)
-AnimHeader* gUnkJp_09EC2DF4 = &gUnkJp_0906F4DC;
+AnimHeader* gUnkJp_09EC2DF4 = &gUnk_090B3FB4;
 #endif
 
 #ifndef VERSION_EU
@@ -829,9 +830,9 @@ void* gUnk_09EEBA0C[256] = {
 };
 #endif
 #if defined(VERSION_US)
-AnimHeader* gUnkUs_09EEBE0C = &gUnkUs_090BC9C0;
+AnimHeader* gUnkUs_09EEBE0C = &gUnk_090BC9C0;
 #elif defined(VERSION_JP)
-AnimHeader* gUnkJp_09EC31F8 = &gUnkJp_09077EE8;
+AnimHeader* gUnkJp_09EC31F8 = &gUnk_090BC9C0;
 #endif
 
 #ifndef VERSION_EU
@@ -1039,9 +1040,9 @@ void* gUnk_09EEBE10[200] = {
 };
 #endif
 #if defined(VERSION_US)
-AnimHeader* gUnkUs_09EEC130 = &gUnkUs_090C519C;
+AnimHeader* gUnkUs_09EEC130 = &gUnk_090C519C;
 #elif defined(VERSION_JP)
-AnimHeader* gUnkJp_09EC351C = &gUnkJp_090806C4;
+AnimHeader* gUnkJp_09EC351C = &gUnk_090C519C;
 #endif
 
 #ifndef VERSION_EU
@@ -1305,9 +1306,9 @@ void* gUnk_09EEC134[256] = {
 };
 #endif
 #if defined(VERSION_US)
-AnimHeader* gUnkUs_09EEC534 = &gUnkUs_090CBFA8;
+AnimHeader* gUnkUs_09EEC534 = &gUnk_090CBFA8;
 #elif defined(VERSION_JP)
-AnimHeader* gUnkJp_09EC3920 = &gUnkJp_090874D0;
+AnimHeader* gUnkJp_09EC3920 = &gUnk_090CBFA8;
 #endif
 
 void* gUnk_09EEC538[45] = {

@@ -42,6 +42,8 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_btl.h"
+#include "sprites_card_pictures.h"
+#include "sprites_card.h"
 
 extern void* gUnk_09EE7698[];
 extern void* gUnk_09EE76C0[];

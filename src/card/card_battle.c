@@ -21,8 +21,8 @@
 #include "mode.h"
 #include "anim.h"
 #include "gba/keys.h"
-
-extern u8 gUnk_0905EEE6[];
+#include "sprites_card_pictures.h"
+#include "sprites_card.h"
 
 u16 func_080787B8(CardBattleWork* w, u8 n);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);

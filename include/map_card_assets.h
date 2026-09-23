@@ -6,10 +6,6 @@
 #include "anim.h"
 #include "types.h"
 
-extern u8 gUnk_0905AC8A[];
-extern u8 gUnk_0905C862[];
-extern u8 gUnk_0905D64E[];
-extern u8 gUnk_0905E3BA[];
 extern u8 gUnk_093EF068[];
 extern u8 gUnk_093EF27C[];
 extern u8 gUnk_093EF490[];
@@ -36,10 +32,6 @@ extern u8 gUnk_093F1E20[];
 extern u8 gUnk_093F3E50[];
 extern u8 gUnk_093F4064[];
 extern u8 gUnk_093F4278[];
-extern u8 gUnk_093F5C7A[];
-extern u8 gUnk_093F5F16[];
-extern u8 gUnk_093F61B2[];
-extern u8 gUnk_093F644E[];
 extern u8 gUnk_09618598[];
 extern u8 gUnk_096185B8[];
 extern u8 gUnk_096185D8[];

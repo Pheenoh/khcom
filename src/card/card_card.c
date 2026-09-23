@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_card.h"
+#include "sprites_card_pictures.h"
 
 u32 gUnk_02034AA4;
 
@@ -58,7 +59,6 @@ void func_0807D4B8(CardDisplayWork* p);
 void func_0807B458(UnkStruct_08080268* w, u16 value);
 void func_0807B45C(UnkStruct_08080268* w);
 void func_0807B478(CardDisplayWork* w);
-extern u8 gUnk_0908B1B4[];
 u8 func_0807C5D8(CardDisplayWork* w, void* a);
 extern s32 gUnk_09034054[];
 void func_0807CC2C(CardDisplayWork* p);

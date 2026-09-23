@@ -1,78 +1,79 @@
 #include "card_localized_data.h"
 #include "card_localized_assets.h"
+#include "sprites_deck_menu.h"
 
 #if defined(VERSION_US)
-void* gUnk_09EEAFD4 = gUnkUs_090A1F88;
+void* gUnk_09EEAFD4 = gUnk_090A1F88;
 
-void* gUnk_09EEAFD8 = gUnkUs_090A1F98;
+void* gUnk_09EEAFD8 = gUnk_090A1F98;
 
-AnimHeader* gUnkUs_09EEAFDC = &gUnkUs_090A1FA8;
+AnimHeader* gUnkUs_09EEAFDC = &gUnk_090A1FA8;
 
-void* gUnkUs_09EEAFE0 = gUnkUs_090A2234;
+void* gUnkUs_09EEAFE0 = gUnk_090A2234;
 
-AnimHeader* gUnkUs_09EEAFE4 = &gUnkUs_090A228C;
+AnimHeader* gUnkUs_09EEAFE4 = &gUnk_090A228C;
 
-void* gUnk_09EEAFE8 = gUnkUs_090A25F8;
+void* gUnk_09EEAFE8 = gUnk_090A25F8;
 
-AnimHeader* gUnkUs_09EEAFEC = &gUnkUs_090A2614;
+AnimHeader* gUnkUs_09EEAFEC = &gUnk_090A2614;
 
-void* gUnk_09EEAFF0 = gUnkUs_090A3E20;
+void* gUnk_09EEAFF0 = gUnk_090A3E20;
 
-AnimHeader* gUnkUs_09EEAFF4 = &gUnkUs_090A3E3C;
+AnimHeader* gUnkUs_09EEAFF4 = &gUnk_090A3E3C;
 
-void* gUnk_09EEAFF8 = gUnkUs_090A4168;
+void* gUnk_09EEAFF8 = gUnk_090A4168;
 
-AnimHeader* gUnkUs_09EEAFFC = &gUnkUs_090A4184;
+AnimHeader* gUnkUs_09EEAFFC = &gUnk_090A4184;
 
-void* gUnk_09EEB000 = gUnkUs_090A44B0;
+void* gUnk_09EEB000 = gUnk_090A44B0;
 
-AnimHeader* gUnkUs_09EEB004 = &gUnkUs_090A44BA;
+AnimHeader* gUnkUs_09EEB004 = &gUnk_090A44BA;
 #elif defined(VERSION_JP)
-void* gUnk_09EEAFD4 = gUnkJp_0905D7F8;
+void* gUnk_09EEAFD4 = gUnk_090A1F88;
 
-void* gUnk_09EEAFD8 = gUnkJp_0905D808;
+void* gUnk_09EEAFD8 = gUnk_090A1F98;
 
-AnimHeader* gUnkJp_09EC23D0 = &gUnkJp_0905D818;
+AnimHeader* gUnkJp_09EC23D0 = &gUnk_090A1FA8;
 
-void* gUnkJp_09EC23D4 = gUnkJp_0905DAA4;
+void* gUnkJp_09EC23D4 = gUnk_090A2234;
 
-AnimHeader* gUnkJp_09EC23D8 = &gUnkJp_0905DAFC;
+AnimHeader* gUnkJp_09EC23D8 = &gUnk_090A228C;
 
-void* gUnk_09EEAFE8 = gUnkJp_0905DE68;
+void* gUnk_09EEAFE8 = gUnk_090A25F8;
 
-AnimHeader* gUnkJp_09EC23E0 = &gUnkJp_0905DE84;
+AnimHeader* gUnkJp_09EC23E0 = &gUnk_090A2614;
 
-void* gUnk_09EEAFF0 = gUnkJp_0905F690;
+void* gUnk_09EEAFF0 = gUnk_090A3E20;
 
-AnimHeader* gUnkJp_09EC23E8 = &gUnkJp_0905F6AC;
+AnimHeader* gUnkJp_09EC23E8 = &gUnk_090A3E3C;
 
-void* gUnk_09EEB000 = gUnkJp_0905F9D8;
+void* gUnk_09EEB000 = gUnk_090A44B0;
 
-AnimHeader* gUnkJp_09EC23F0 = &gUnkJp_0905F9E2;
+AnimHeader* gUnkJp_09EC23F0 = &gUnk_090A44BA;
 #elif defined(VERSION_EU)
-void* gUnk_09EEAFD4 = gUnkEu_091879E4;
+void* gUnk_09EEAFD4 = gUnk_090A1F88;
 
-void* gUnk_09EEAFD8 = gUnkEu_091879F4;
+void* gUnk_09EEAFD8 = gUnk_090A1F98;
 
-AnimHeader* gUnkEu_09F7704C = &gUnkEu_09187A04;
+AnimHeader* gUnkEu_09F7704C = &gUnk_090A1FA8;
 
-void* gUnkEu_09F77050 = gUnkEu_09187C90;
+void* gUnkEu_09F77050 = gUnk_090A2234;
 
-AnimHeader* gUnkEu_09F77054 = &gUnkEu_09187CE8;
+AnimHeader* gUnkEu_09F77054 = &gUnk_090A228C;
 
-void* gUnk_09EEAFE8 = gUnkEu_09188054;
+void* gUnk_09EEAFE8 = gUnk_090A25F8;
 
-AnimHeader* gUnkEu_09F7705C = &gUnkEu_09188070;
+AnimHeader* gUnkEu_09F7705C = &gUnk_090A2614;
 
-void* gUnk_09EEAFF0 = gUnkEu_0918987C;
+void* gUnk_09EEAFF0 = gUnk_090A3E20;
 
-AnimHeader* gUnkEu_09F77064 = &gUnkEu_09189898;
+AnimHeader* gUnkEu_09F77064 = &gUnk_090A3E3C;
 
-void* gUnk_09EEAFF8 = gUnkEu_09189BC4;
+void* gUnk_09EEAFF8 = gUnk_090A4168;
 
-AnimHeader* gUnkEu_09F7706C = &gUnkEu_09189BE0;
+AnimHeader* gUnkEu_09F7706C = &gUnk_090A4184;
 
-void* gUnkEu_09F77070 = gUnkEu_09189F0C;
+void* gUnkEu_09F77070 = gUnk_090A44B0;
 
 void* gUnkEu_09F77074 = gUnkEu_09189F1C;
 
@@ -162,5 +163,5 @@ AnimHeader* gUnkEu_09F7711C = &gUnkEu_09193080;
 
 void* gUnk_09EEB000 = gUnkEu_091933AC;
 
-AnimHeader* gUnkEu_09F77124 = &gUnkEu_091933B6;
+AnimHeader* gUnkEu_09F77124 = &gUnk_090A44BA;
 #endif

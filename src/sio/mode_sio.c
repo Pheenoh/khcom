@@ -29,6 +29,8 @@
 #include "battle_backgrounds.h"
 #include "sprites_msg.h"
 #include "link_menus.h"
+#include "sprites_card_pictures.h"
+#include "sprites_card.h"
 
 u16 gUnk_0203A9EC EWRAM_COMMON(4);
 u16 gUnk_0203A9F0 EWRAM_COMMON(4);

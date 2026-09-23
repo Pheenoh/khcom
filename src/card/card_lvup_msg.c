@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 u8 func_080A25E0(LvupMsgWork* w, void* a);
 void Lvup_msg_3(u8* work);

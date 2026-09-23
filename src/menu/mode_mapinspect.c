@@ -9,6 +9,7 @@
 #include "sprites_card.h"
 #include "sprites_worldinspect.h"
 #include "sprites_map.h"
+#include "sprites_card_pictures.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08890EC0[];

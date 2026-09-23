@@ -179,7 +179,6 @@ extern EventState* gEventState;
 
 extern Mode gModeChkbtl;
 extern u8 gUnk_08B24DAA[];
-extern u8 gUnk_090D4DD0[];
 extern u8 gUnk_096148B8[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08F69BE4[];

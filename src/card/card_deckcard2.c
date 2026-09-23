@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card_pictures.h"
 
 void func_08090170(DeckCard2Work* node);
 u8 func_080901B8(u8* p);

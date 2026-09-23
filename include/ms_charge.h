@@ -63,7 +63,6 @@ s32 func_081055E8(u16 id, u8 flag, s16 count);
 s32 func_0810592C(void);
 s32 func_08105D24(MsCard* card, u16 col);
 
-extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_092028EC[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_08159E18[];

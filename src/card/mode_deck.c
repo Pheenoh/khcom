@@ -6,7 +6,7 @@
 #include "mode_test.h"
 #include "gba/keys.h"
 #include "mode_test_api.h"
-
+#include "sprites_msg.h"
 
 static TaskPool gUnk_02034A30;
 static u8 gUnk_02034A44;
@@ -237,7 +237,6 @@ void menu_3(MenuWork* w) {
     gFieldState->flags &= ~0x80;
     gFieldState->flags &= ~0x2000;
 }
-
 
 const char gModeNameDeck[] = "Mode_Deck";
 const char gTaskNameMenu[] = "menu";

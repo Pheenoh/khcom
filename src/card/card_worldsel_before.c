@@ -41,6 +41,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
     u8 i;

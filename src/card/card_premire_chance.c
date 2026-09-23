@@ -41,8 +41,8 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card_pictures.h"
 
-extern u8 gUnk_0908B1B4[];
 s32 func_0809CBD0(u8* work);
 void func_0809CAC8(void* work);
 void func_0809C9A4(UnkStruct_0809C9A4* p);

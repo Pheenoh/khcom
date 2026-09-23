@@ -43,6 +43,7 @@
 #include "bos4_api.h"
 #include "sprites_card.h"
 #include "sprites_deck_menu.h"
+#include "sprites_card_pictures.h"
 
 u8 gActiveDeck;
 
@@ -52,7 +53,7 @@ CardUiSpriteState gCardUiSpriteState EWRAM_COMMON(16);
 
 u8 func_080892E8(u8* work, void* a);
 #ifdef VERSION_EU
-extern AnimHeader gUnkEu_091933B6;
+extern AnimHeader gUnk_090A44BA;
 extern void* gUnkEu_09F6FD8C[];
 extern void** gUnkEu_09F6FDA0[];
 extern u16 gUnkEu_090CE9E0[];
@@ -117,7 +118,6 @@ extern u8* gUnkEu_09F6FE04[];
 #endif
 void func_0808CC58(u16 a, u8 b);
 void func_08090170(DeckCard2Work* node);
-extern u8 gUnk_0908B1B4[];
 u8 func_0808A114(UnkStruct_0808DB04* work, void* a);
 u8 func_0808B208(u8* work);
 u8 func_0808AB48(struct UnkStruct_080889DC* w, void* a);
@@ -1024,7 +1024,7 @@ void func_08085FB4(u8* work, void* a) {
     *(s32*)&work[CARDWORK(0x84C)] = gUnk_090356F2[0] << 8;
     *(u16*)&work[CARDWORK(0x882)] = 0;
 #ifdef VERSION_EU
-    *(void**)&work[0x10] = LoadObjTiles((u8*)&gUnkEu_091933B6 + 10, 32);
+    *(void**)&work[0x10] = LoadObjTiles((u8*)&gUnk_090A44BA + 10, 32);
 #else
     *(void**)&work[0x10] = LoadObjTiles(gUnk_090A44C4, 32);
 #endif
@@ -7242,7 +7242,7 @@ u16 gUnk_09EE4AD6[7] = { 'D', 'e', 'c', 'k', ' ', '2', 0 };
 u16 gUnk_09EE4AE4[7] = { 'D', 'e', 'c', 'k', ' ', '3', 0 };
 #endif
 #ifdef VERSION_EU
-void* gUnkEu_09F6FD8C[5] = { gUnkEu_09187A0E, gUnkEu_09189F36, gUnkEu_0918A73A, gUnkEu_0918A48E, gUnkEu_0918A1E2 };
+void* gUnkEu_09F6FD8C[5] = { gUnk_090A1FB2, gUnkEu_09189F36, gUnkEu_0918A73A, gUnkEu_0918A48E, gUnkEu_0918A1E2 };
 
 void** gUnkEu_09F6FDA0[5] = { &gUnk_09EEAFD4, &gUnkEu_09F77070, &gUnkEu_09F77094, &gUnkEu_09F77088, &gUnkEu_09F7707C };
 

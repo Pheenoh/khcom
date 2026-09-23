@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_btl.h"
+#include "sprites_card_pictures.h"
 
 void CreateCardNameDisplay(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);

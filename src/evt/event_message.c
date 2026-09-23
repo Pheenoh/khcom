@@ -16,6 +16,7 @@
 #include "sprites_deck_menu.h"
 #include "sprites_evt.h"
 #include "sprites_msg.h"
+#include "sprites_card.h"
 
 extern const u16 gUnk_0951D2B8[1024];
 extern const u16 gUnk_0951DAB8[1024];
@@ -25,7 +26,6 @@ extern const u16 gUnk_0951EAB8[1024];
 #ifdef VERSION_EU
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
-extern u8 gUnkEu_0919B63A[];
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)

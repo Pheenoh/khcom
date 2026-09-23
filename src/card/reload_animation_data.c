@@ -1,5 +1,6 @@
 #include "reload_animation_data.h"
 #include "reload_animation_assets.h"
+#include "sprites_card.h"
 
 void* gUnk_09EEA2F4[4] = {
     gUnk_09098808,
@@ -44,5 +45,3 @@ void* gUnk_09EEA33C = gUnk_090990C0;
 
 AnimHeader* gUnk_09EEA340 = &gUnk_090990D0;
 
-#ifdef VERSION_EU
-#endif

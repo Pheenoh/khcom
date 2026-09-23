@@ -1,7 +1,7 @@
 #include "card_label_data.h"
-#include "card_label_assets.h"
 #include "card_localized_data.h"
 #include "card_label_language_data.h"
+#include "sprites_card_pictures.h"
 
 const UnkStruct_08F7CBA8 gUnk_08F7CBA8[55] = {
     {

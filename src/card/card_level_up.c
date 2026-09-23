@@ -46,11 +46,11 @@
 #include "sprites_level_up.h"
 #include "sprites_sora.h"
 #include "sprites_msg.h"
+#include "sprites_card.h"
 
 u8 gUnk_02034AF8;
 
 extern u8 gUnk_09618CD8[];
-extern u8 gUnk_093F4578[];
 extern u8 gUnk_09613E98[];
 #ifdef VERSION_EU
 extern void** gUnkEu_09F72E10[];
