@@ -42,7 +42,7 @@
 #include "bos4_api.h"
 
 u8 func_080A25E0(LvupMsgWork* w, void* a);
-void func_080A27EC(u8* work);
+void Lvup_msg_3(u8* work);
 extern u8 gUnk_0815A09A[];
 extern u8 gUnk_0815A198[];
 extern u8 gUnk_0815A0EE[];
@@ -51,7 +51,7 @@ extern u8 gUnk_0815A0A0[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_08895EDC[];
 #endif
-void func_080A23A0(LvupMsgWork* w, LvupMsgArgs* a) {
+void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
     struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
     InitTextSlots(w->unk_000, 20);
@@ -124,7 +124,7 @@ void func_080A23A0(LvupMsgWork* w, LvupMsgArgs* a) {
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 }
 
-s32 func_080A25B8(LvupMsgWork* w, void* a) {
+s32 Lvup_msg_1(LvupMsgWork* w, void* a) {
     SetTaskUpdate(a, func_080A25E0);
     w->unk_2B1++;
     return 1;
@@ -148,7 +148,7 @@ u8 func_080A25E0(LvupMsgWork* w, void* a) {
     }
     return 1;
 }
-void func_080A2678(LvupMsgWork* w) {
+void Lvup_msg_2(LvupMsgWork* w) {
 #ifdef VERSION_JP
     w->x2 = w->x + w->unk_2AD * 0xA00;
     w->x3 = w->x2 + w->unk_2AE * 0xA00;
@@ -200,7 +200,7 @@ void func_080A2678(LvupMsgWork* w) {
                   w->unk_1E0, w->unk_280, 40, w->unk_2B0);
 #endif
 }
-void func_080A27EC(u8* work) {
+void Lvup_msg_3(u8* work) {
     FreeTextSlots((TextSlot*)work, 20);
     FreeTextSlots((TextSlot*)&work[0xA0], 20);
     FreeTextSlots((TextSlot*)&work[0x140], 20);
@@ -220,10 +220,10 @@ const char gTaskNameLvupMsg[] = "Lvup msg";
 
 TaskDesc gTaskDescLvupMsg = {
     gTaskNameLvupMsg,
-    (void (*)(void*, void*))func_080A23A0,
-    func_080A25B8,
-    (void (*)(void*))func_080A2678,
-    (void (*)(void*))func_080A27EC,
+    (void (*)(void*, void*))Lvup_msg_0,
+    Lvup_msg_1,
+    (void (*)(void*))Lvup_msg_2,
+    (void (*)(void*))Lvup_msg_3,
 #ifdef VERSION_JP
     0x218,
 #else

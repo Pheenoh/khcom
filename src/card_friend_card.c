@@ -70,7 +70,7 @@ void ConvertActiveDeckCardToPremium(u16 index);
 Deck* GetActiveDeck(void);
 void CreateCardNameDisplay(void* a, void* b);
 
-void func_0809A02C(UnkStruct_0809A02C* w, s32* args) {
+void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
     u8* p;
 
     w->unk_1A0 = args[3];
@@ -113,7 +113,7 @@ void func_0809A02C(UnkStruct_0809A02C* w, s32* args) {
     gBtlWork->unk_0B0++;
 }
 
-void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
+void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
     u8* p;
 
     w->unk_1A0 = args[3];
@@ -157,7 +157,7 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
     gBtlWork->unk_0B0++;
 }
 
-void func_0809A368(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
+void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     u8* p;
 
     w->unk_1A0 = args->unk_0C;
@@ -217,7 +217,7 @@ void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind) {
     w->unk_1A4 = 2;
 }
 
-s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
+s32 Friend_card_1(UnkStruct_0809A02C* w, void* a) {
     s16 sx;
     s32 t;
     u16 n;
@@ -323,7 +323,7 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
 
     return 1;
 }
-s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
+s32 Gimmick_card_1(UnkStruct_0809A02C* w, void* a) {
     s16 sx;
     s32 t;
     u16 n;
@@ -571,7 +571,7 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
     TaskPoolUpdate(&w->tasks);
     return 1;
 }
-s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
+s32 Heartless_card_1(UnkStruct_0809A02C* w, void* a) {
     s16 x;
     s16 y;
 
@@ -689,7 +689,7 @@ void func_0809B200(UnkStruct_0809A02C* w) {
         TaskPoolDraw(&w->tasks);
     }
 }
-void func_0809B3F4(UnkStruct_0809A02C* w) {
+void Heartless_card_2(UnkStruct_0809A02C* w) {
     s16 x;
     s16 y;
     s32 affine;
@@ -747,7 +747,7 @@ void func_0809B59C(UnkStruct_0809A02C* w) {
     gBtlWork->unk_0B0--;
 }
 
-void func_0809B5F4(UnkStruct_0809A02C* w) {
+void Heartless_card_3(UnkStruct_0809A02C* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ReleaseObjTiles(w->tiles2);
@@ -1424,8 +1424,8 @@ const char gTaskNameFriendCard[] = "Friend card";
 
 TaskDesc gTaskDescFriendCard = {
     gTaskNameFriendCard,
-    (void (*)(void*, void*))func_0809A02C,
-    func_0809A54C,
+    (void (*)(void*, void*))Friend_card_0,
+    Friend_card_1,
     (void (*)(void*))func_0809B200,
     (void (*)(void*))func_0809B59C,
     0x1D4,
@@ -1435,10 +1435,10 @@ const char gTaskNameHeartlessCard[] = "Heartless card";
 
 TaskDesc gTaskDescHeartlessCard = {
     gTaskNameHeartlessCard,
-    (void (*)(void*, void*))func_0809A1B8,
-    func_0809AF84,
-    (void (*)(void*))func_0809B3F4,
-    (void (*)(void*))func_0809B5F4,
+    (void (*)(void*, void*))Heartless_card_0,
+    Heartless_card_1,
+    (void (*)(void*))Heartless_card_2,
+    (void (*)(void*))Heartless_card_3,
     0x1D4,
 };
 
@@ -1446,8 +1446,8 @@ const char gTaskNameGimmickCard[] = "Gimmick card";
 
 TaskDesc gTaskDescGimmickCard = {
     gTaskNameGimmickCard,
-    (void (*)(void*, void*))func_0809A368,
-    func_0809A840,
+    (void (*)(void*, void*))Gimmick_card_0,
+    Gimmick_card_1,
     (void (*)(void*))func_0809B200,
     (void (*)(void*))func_0809B59C,
     0x1D4,

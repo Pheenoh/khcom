@@ -56,7 +56,7 @@ u8* GetDeckName(u8 index);
 void SetActiveDeckIndex(u8 index);
 u8 GetActiveDeckIndex(void);
 
-void func_080A2844(DeckConfirmWork* w, u8* a) {
+void Deck_Equip_0(DeckConfirmWork* w, u8* a) {
     w->unk_78C = 0;
     w->unk_78D = 0;
     w->unk_78E = 0;
@@ -408,7 +408,7 @@ const char gTaskNameDeckEquip[] = "Deck Equip";
 
 TaskDesc gTaskDescDeckEquip = {
     gTaskNameDeckEquip,
-    (void (*)(void*, void*))func_080A2844,
+    (void (*)(void*, void*))Deck_Equip_0,
     func_080A2DE4,
     (void (*)(void*))func_080A2E14,
     (void (*)(void*))func_080A2EF8,

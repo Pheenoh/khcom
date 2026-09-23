@@ -74,7 +74,7 @@ extern u8 gUnkEu_09543324[];
 #endif
 u16 func_08093B08(u16 a);
 s32* func_080E04E0(void);
-u8 func_0809511C(ReloadGageWork* w, void* a);
+u8 Reload_Gage_1(ReloadGageWork* w, void* a);
 u8 func_080954C4(ReloadGageWork* w, void* a);
 u8 func_0809217C(MapSelectWork* w, void* a);
 void func_08093C44(u16 a, MapSelectWork* w);
@@ -2228,7 +2228,7 @@ void func_08094E90(MapcardWork* w) {
     ListNodeInit(&w->node, w->pool, w);
     ListPoolAppend(&w->node, w->pool);
 }
-void func_08094EB0(ReloadGageWork* w, ReloadGageArgs* a) {
+void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
     UnkStruct_08095A5C* d;
     ReloadChildArgs args;
     u16 v;
@@ -2329,7 +2329,7 @@ void func_08094EB0(ReloadGageWork* w, ReloadGageArgs* a) {
     }
 }
 
-u8 func_0809511C(ReloadGageWork* w, void* a) {
+u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
     ReloadChildArgs args;
     UnkStruct_08095A5C* p;
     ReloadChildWork* node;
@@ -2531,12 +2531,12 @@ u8 func_080954C4(ReloadGageWork* w, void* a) {
     w->unk_50 += (gUnk_09033FF4[4][1] - w->unk_50) >> 1;
 
     if (w->unk_78 & 0x20) {
-        SetTaskUpdate(a, (void*)func_0809511C);
+        SetTaskUpdate(a, (void*)Reload_Gage_1);
     }
 
     return 1;
 }
-void func_08095520(CardDisplayWork* p) {
+void Reload_Gage_2(CardDisplayWork* p) {
     u8* q;
     s32 affine;
     void* gfx;
@@ -2573,7 +2573,7 @@ void func_08095520(CardDisplayWork* p) {
 
     TaskPoolDraw(&p->unk_24[0]);
 }
-void func_080956AC(CardDisplayWork* p) {
+void Reload_Gage_3(CardDisplayWork* p) {
     TaskPoolDestroy(&p->unk_24[0]);
     ReleaseObjPalette(p->palette);
     ReleaseObjTiles(p->tiles);
@@ -3104,10 +3104,10 @@ const char gTaskNameReloadGage[] = "Reload Gage";
 
 TaskDesc gTaskDescReloadGage = {
     gTaskNameReloadGage,
-    (void (*)(void*, void*))func_08094EB0,
-    func_0809511C,
-    (void (*)(void*))func_08095520,
-    (void (*)(void*))func_080956AC,
+    (void (*)(void*, void*))Reload_Gage_0,
+    Reload_Gage_1,
+    (void (*)(void*))Reload_Gage_2,
+    (void (*)(void*))Reload_Gage_3,
     0xA8,
 };
 
