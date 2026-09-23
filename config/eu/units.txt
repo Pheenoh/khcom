@@ -375,7 +375,7 @@ asset_gfx_gap_87_at_0961A9FD_at_096FB2A4.s
 sprite_palettes_10.s
 mode_pooh.c
 asset_gfx_gap_87_at_0961A9FD_at_096FB2A4_at_096C9356.s
-poo_096FC05C_data.c
+poo_data.c
 poo.c
 asset_gfx_gap_122.s
 mode_allmap.c
