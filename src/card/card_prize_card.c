@@ -57,8 +57,8 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     u8* q;
 
     args = *p;
-    w->cardId = args.unk_20;
-    def = &gCardDefs[args.unk_20];
+    w->cardId = args.cardId;
+    def = &gCardDefs[args.cardId];
     w->tiles = LoadObjTiles(def->tiles, 0x300);
     w->palette = LoadObjPalette(def->palette, 32);
     *(CardStat*)&w->unk_20[0x14] = *(CardStat*)&def->unk_1C;

@@ -383,7 +383,7 @@ typedef struct BoogieSakuWork {
     u32 unk_024;
     u32 tasks;
     u8 unk_02C[0x10];
-    u32 unk_03C;
+    u32 task;
     u8 unk_040;
     u8 unk_041[0x3];
 } BoogieSakuWork;

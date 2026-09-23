@@ -3318,7 +3318,7 @@ void task_poo_pile_0(PooPileWork* w, PooPileArgs* a) {
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
     w->unk_CC = 0;
     TaskPoolInit(&w->tasks, 1);
-    w->unk_C8 = 0;
+    w->task = 0;
 }
 
 u8 task_poo_pile_1(PooPileWork* w) {
@@ -3350,10 +3350,10 @@ u8 task_poo_pile_1(PooPileWork* w) {
     t = *(PooPos*)&w->x;
     t.z -= (u16)func_080CD1F8(w->unk_B0) * 256;
 
-    if (IsTaskActive((Task*)w->unk_C8) != 0) {
-        func_08000DE8(&w->tasks, (Task*)w->unk_C8);
+    if (IsTaskActive((Task*)w->task) != 0) {
+        func_08000DE8(&w->tasks, (Task*)w->task);
     }
-    w->unk_C8 = (s32)TaskCreate(&w->tasks, &gTaskDescPooSpark, &t);
+    w->task = (s32)TaskCreate(&w->tasks, &gTaskDescPooSpark, &t);
     w->unk_B0 = func_080CD1DC(w->unk_B0);
     AnimStart(w->anim, w->unk_B0, 0);
     m4aSongNumStart(0x146);

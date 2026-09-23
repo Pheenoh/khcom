@@ -5,7 +5,7 @@
 
 typedef struct MsCard {
     u16 unk_00;
-    u16 unk_02;
+    u16 cardId;
     u16 unk_04;
     s16 unk_06[10][2];
     u8 unk_2E;

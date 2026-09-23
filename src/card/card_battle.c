@@ -361,7 +361,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_0E = slot;
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
-            if (c->unk_00 == 0xFFFE) {
+            if (c->cardId == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
@@ -381,7 +381,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_0E = slot;
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
-            if (c->unk_00 == 0xFFFE) {
+            if (c->cardId == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
@@ -401,7 +401,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_0E = slot;
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
-            if (c->unk_00 == 0xFFFE) {
+            if (c->cardId == 0xFFFE) {
                 TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
@@ -1293,7 +1293,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.slot = c;
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
-                if (c->unk_00 == 0xFFFE) {
+                if (c->cardId == 0xFFFE) {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg))->work;
                 } else {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;
@@ -1336,7 +1336,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.slot = c;
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
-                if (c->unk_00 == 0xFFFE) {
+                if (c->cardId == 0xFFFE) {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg))->work;
                 } else {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;

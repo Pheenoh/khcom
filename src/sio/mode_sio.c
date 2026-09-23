@@ -2476,7 +2476,7 @@ void func_080B1E70(void) {
     InitTextSlots(gSioChgCardWork->unk_364, 20);
     gSioChgCardWork->unk_361 = LoadTextSlots(gCardDefs[0].name, gSioChgCardWork->unk_364);
     gSioChgCardWork->unk_360 = 0;
-    TaskPoolInit(gSioChgCardWork->unk_BE4, 11);
+    TaskPoolInit(gSioChgCardWork->tasks, 11);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
     gSioChgCardWork->unk_001++;
 }
@@ -2716,7 +2716,7 @@ void func_080B29BC(void) {
 }
 
 void func_080B29D8(void) {
-    TaskPoolUpdate(gSioChgCardWork->unk_BE4);
+    TaskPoolUpdate(gSioChgCardWork->tasks);
 
     if (func_080C5930() == 0) {
         if (gUnk_0203A9E4 == 0) {
@@ -2735,7 +2735,7 @@ void func_080B29D8(void) {
 }
 
 void func_080B2A5C(void) {
-    TaskPoolUpdate(gSioChgCardWork->unk_BE4);
+    TaskPoolUpdate(gSioChgCardWork->tasks);
 
     if (gSioChgCardWork->unk_004 == 80) {
         gSioChgCardWork->unk_20C = 0;
@@ -2811,7 +2811,7 @@ void mode_sio_chg_card_2(void) {
     ReleaseObjTiles(gSioChgCardWork->tiles5);
     FreeTextSlots(gSioChgCardWork->unk_210, 42);
     FreeTextSlots(gSioChgCardWork->unk_364, 20);
-    TaskPoolDestroy(gSioChgCardWork->unk_BE4);
+    TaskPoolDestroy(gSioChgCardWork->tasks);
     EwramFree(gSioChgCardWork);
 }
 
@@ -3231,7 +3231,7 @@ void func_080B3B5C(void) {
             arg.unk_18 = 0xA000;
             arg.unk_1C = 0x800;
             arg.unk_20 = (5 - i) * 20;
-            TaskCreate(gSioChgCardWork->unk_BE4, &gTaskDescChgCardObj, &arg);
+            TaskCreate(gSioChgCardWork->tasks, &gTaskDescChgCardObj, &arg);
         }
     }
 
@@ -3246,7 +3246,7 @@ void func_080B3B5C(void) {
             arg.unk_18 = 0x4000;
             arg.unk_1C = 0x800;
             arg.unk_20 = (10 - i) * 20 + 10;
-            TaskCreate(gSioChgCardWork->unk_BE4, &gTaskDescChgCardObj, &arg);
+            TaskCreate(gSioChgCardWork->tasks, &gTaskDescChgCardObj, &arg);
         }
     }
 }

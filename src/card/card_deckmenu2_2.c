@@ -918,7 +918,7 @@ void func_080A6FAC(UnkStruct_080A6FAC* w) {
 
     while (node != 0) {
         if (node->unk_24 == w->unk_4CA && node->unk_22 == w->unk_4C8) {
-            id = node->unk_20;
+            id = node->cardId;
             break;
         }
 

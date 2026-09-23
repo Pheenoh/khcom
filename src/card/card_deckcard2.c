@@ -74,14 +74,14 @@ void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
         break;
     }
 
-    if (n->unk_20 != 0xFFFF) {
-        if (!(n->unk_20 & 0x8000)) {
+    if (n->cardId != 0xFFFF) {
+        if (!(n->cardId & 0x8000)) {
             n->unk_4D = 0;
         } else {
             n->unk_4D = 1;
         }
 
-        n->cardDef = &gCardDefs[n->unk_20 & 0xFFF];
+        n->cardDef = &gCardDefs[n->cardId & 0xFFF];
 
         if (n->cardDef->unk_1E & 0xC) {
             n->cardBack = &gUnk_08F709B0[3];
@@ -152,7 +152,7 @@ void DeckCard2_3(u8* p) {
 }
 
 void func_08090100(DeckCard2Work* n) {
-    if (n->unk_20 == 0xFFFF) {
+    if (n->cardId == 0xFFFF) {
         return;
     }
 

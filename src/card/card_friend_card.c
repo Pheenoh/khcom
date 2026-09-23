@@ -164,7 +164,7 @@ void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
 void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     u8* p;
 
-    w->cardId = args->unk_0C;
+    w->cardId = args->cardId;
     w->unk_38 = args->unk_00;
     w->unk_3C = args->unk_04;
     w->unk_40 = args->unk_08;
@@ -183,7 +183,7 @@ void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     w->unk_1CC = 0;
     w->unk_1C4 = 0;
     w->unk_1CD = 1;
-    w->cardDef = &gCardDefs[args->unk_0C];
+    w->cardDef = &gCardDefs[args->cardId];
     w->unk_1CE = w->cardDef->unk_2A;
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
@@ -1089,7 +1089,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
             if (!(gCardCollection[cards[i]] & 0x8000)) {
                 if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A != 3) {
                     if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A != 2) {
-                        w->slots[n].unk_00 = gCardCollection[cards[i]] & CARD_ID_MASK;
+                        w->slots[n].cardId = gCardCollection[cards[i]] & CARD_ID_MASK;
                         w->slots[n].unk_04 = i;
                         w->slots[n].unk_06 = n;
                         w->slots[n].unk_07 = 0;
@@ -1108,7 +1108,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
                 if (!(gCardCollection[cards[j]] & 0x8000)) {
                     if (gCardDefs[gCardCollection[cards[j]] & CARD_ID_MASK].unk_2A != 3) {
                         if (gCardDefs[gCardCollection[cards[j]] & CARD_ID_MASK].unk_2A != 2) {
-                            w->slots[n].unk_00 = gCardCollection[cards[j]] & CARD_ID_MASK;
+                            w->slots[n].cardId = gCardCollection[cards[j]] & CARD_ID_MASK;
                             w->slots[n].unk_04 = j;
                             w->slots[n].unk_06 = n;
                             w->slots[n].unk_07 = 0;

@@ -100,7 +100,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
 
     gUnk_02039DD0 = NULL;
     gBtlWork = NULL;
-    work->unk_28 = 0;
+    work->task = 0;
     work->unk_2C = a[0];
     work->unk_2E = a[1];
     work->seqDef = gUnk_09EE3FB4[work->unk_2C];
@@ -419,7 +419,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
     TaskPoolInit(&work->tasks, t->unk_00 + 8);
     TaskPoolInit(&work->tasks2, 1);
-    work->unk_28 = (u32)TaskCreate(&work->tasks2, &gTaskDescMsgwin, &work->unk_2C);
+    work->task = (u32)TaskCreate(&work->tasks2, &gTaskDescMsgwin, &work->unk_2C);
 
     for (j = 0; j < t->unk_00; j++) {
         arg.unk_00 = work->unk_2C;
@@ -575,7 +575,7 @@ void event_seq_2(EventSeqWork* p) {
 void event_seq_3(EventSeqWork* p) {
     TaskPoolDestroy(&p->tasks);
 
-    if (p->unk_28 != 0) {
+    if (p->task != 0) {
         TaskPoolDestroy(&p->tasks2);
     }
 #ifdef VERSION_EU

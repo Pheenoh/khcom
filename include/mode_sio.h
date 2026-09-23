@@ -180,7 +180,7 @@ typedef struct SioChgCardWork {
     s16 y3;
     s8 unk_BE0;
     u8 unk_BE1[3];
-    u8 unk_BE4[0x14];
+    u8 tasks[0x14];
 } SioChgCardWork;
 
 typedef struct SioBtlCardgetWork {

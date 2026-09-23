@@ -893,7 +893,7 @@ void task_status_meswindow_0(StatusMeswindowWork* work, u8* arg) {
     work->unk_1C = arg;
     work->unk_18 = 72;
     TaskPoolInit(&work->pool, 2);
-    work->unk_14 = 0;
+    work->task = 0;
     work->unk_20 = 0;
 }
 
@@ -908,11 +908,11 @@ u8 task_status_meswindow_1(StatusMeswindowWork* work) {
             if (work->unk_18 != v) {
                 work->unk_18 = v;
 
-                if (work->unk_14 != 0) {
-                    work->unk_20 = func_080D8F04(work->unk_14);
-                    func_08000DE8(&work->pool, work->unk_14);
+                if (work->task != 0) {
+                    work->unk_20 = func_080D8F04(work->task);
+                    func_08000DE8(&work->pool, work->task);
                 }
-                work->unk_14 = CreateStockMesDispTask(work, func_080D85F8(work->unk_18), work->unk_20, 88, 98);
+                work->task = CreateStockMesDispTask(work, func_080D85F8(work->unk_18), work->unk_20, 88, 98);
                 func_0800FD68(work->unk_18);
             }
             TaskPoolUpdate(&work->pool);
@@ -1016,7 +1016,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
         data = &table.entries[index];
         source = &gGameState.progression.unk_84;
         if (*(const u16*)source & ((const StatusFriendEntry*)data)->unk_00) {
-            card = &gCardDefs[((const StatusFriendEntry*)data)->unk_02];
+            card = &gCardDefs[((const StatusFriendEntry*)data)->cardId];
             a[count] = LoadObjTiles(card->tiles2, 0x100);
             b[count] = LoadObjPalette(card->palette2, 0x20);
             c[count] = card->gfx2;
@@ -1040,7 +1040,7 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     work->tiles = func_080D85C0(work->unk_42);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     TaskPoolInit(&work->tasks, 1);
-    work->unk_38 = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16,
+    work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
     work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
@@ -1067,8 +1067,8 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
 
     if (changed) {
         m4aSongNumStart(0x67);
-        func_08000DE8(&work->tasks, work->unk_38);
-        work->unk_38 = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
+        func_08000DE8(&work->tasks, work->task);
+        work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
     }
 
     TaskPoolUpdate(&work->tasks);

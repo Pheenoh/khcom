@@ -1048,7 +1048,7 @@ s32 func_080A97D4(u8* work, u8 kind) {
         if (kind == 5) {
             if (*(u16*)(i * 32 + (u32)*(void**)&work[0x4CC] + 20) <= 77) {
                 args.unk_00 = &work[0x63C];
-                args.unk_04 =
+                args.cardId =
                     func_080A993C(*(u16*)(i * 32 + (u32)*(void**)&work[0x4CC] + 20));
                 args.unk_06 = x;
                 args.unk_08 = y;
@@ -1059,10 +1059,10 @@ s32 func_080A97D4(u8* work, u8 kind) {
             }
         } else {
             args.unk_00 = &work[0x63C];
-            args.unk_04 =
+            args.cardId =
                 func_080A993C(*(u16*)(i * 32 + (u32)*(void**)&work[0x4CC] + 20));
 
-            if (gCardDefs[args.unk_04].unk_2A == kind - 1 &&
+            if (gCardDefs[args.cardId].unk_2A == kind - 1 &&
                 *(u16*)(i * 32 + (u32)*(void**)&work[0x4CC] + 20) <= 77) {
                 args.unk_06 = x;
                 args.unk_08 = y;
@@ -1484,7 +1484,7 @@ void func_080AA450(u8* work) {
 
     while (node != 0) {
         if (node->unk_24 == *(s16*)&work[0x6D2] && node->unk_22 == *(s16*)&work[0x6D0]) {
-            id = node->unk_20;
+            id = node->cardId;
             break;
         }
 

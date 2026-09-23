@@ -197,83 +197,83 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
 
         switch (gBtlWork->unk_10C) {
         case 148:
-            args.unk_20 = 0x21D;
+            args.cardId = 0x21D;
             break;
         case 149:
-            args.unk_20 = 0x228;
+            args.cardId = 0x228;
             break;
         case 150:
-            args.unk_20 = 0x21F;
+            args.cardId = 0x21F;
             break;
         case 151:
-            args.unk_20 = 0x22A;
+            args.cardId = 0x22A;
             break;
         case 152:
-            args.unk_20 = 0x21E;
+            args.cardId = 0x21E;
             break;
         case 153:
-            args.unk_20 = 0x22C;
+            args.cardId = 0x22C;
             break;
         case 154:
-            args.unk_20 = 0x220;
+            args.cardId = 0x220;
             break;
         case 155:
-            args.unk_20 = 0x229;
+            args.cardId = 0x229;
             break;
         case 156:
-            args.unk_20 = 0x232;
+            args.cardId = 0x232;
             break;
         case 120:
-            args.unk_20 = 0x221;
+            args.cardId = 0x221;
             break;
         case 162:
-            args.unk_20 = 0xAF;
+            args.cardId = 0xAF;
             break;
         case 163:
-            args.unk_20 = 0xC5;
+            args.cardId = 0xC5;
             break;
         case 161:
-            args.unk_20 = 0xEC;
+            args.cardId = 0xEC;
             break;
         case 157:
         case 158:
-            args.unk_20 = 0x22B;
+            args.cardId = 0x22B;
             break;
         case 159:
-            args.unk_20 = 0x189;
+            args.cardId = 0x189;
             break;
         case 160:
-            args.unk_20 = 0x227;
+            args.cardId = 0x227;
             break;
         case 165:
-            args.unk_20 = 0x231;
+            args.cardId = 0x231;
             break;
         case 164:
-            args.unk_20 = 0x1A8;
+            args.cardId = 0x1A8;
             break;
         case 169:
-            args.unk_20 = 0x192;
+            args.cardId = 0x192;
             break;
         case 170:
-            args.unk_20 = 0x22D;
+            args.cardId = 0x22D;
             break;
         case 173:
-            args.unk_20 = 0x22E;
+            args.cardId = 0x22E;
             break;
         case 174:
-            args.unk_20 = 0x22F;
+            args.cardId = 0x22F;
             break;
         case 175:
-            args.unk_20 = 0x230;
+            args.cardId = 0x230;
             break;
         case 121:
-            args.unk_20 = 0x125;
+            args.cardId = 0x125;
             break;
         case 124:
-            args.unk_20 = 0x19D;
+            args.cardId = 0x19D;
             break;
         case 167:
-            args.unk_20 = 0x233;
+            args.cardId = 0x233;
             break;
         default:
             w->unk_14 = 1;
@@ -281,7 +281,7 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
         }
 
         if (gBtlWork->unk_10C != 121) {
-            if (func_0808510C(args.unk_20) == 0) {
+            if (func_0808510C(args.cardId) == 0) {
                 TaskCreate(w, &gTaskDescPrizeBoss, &args);
             }
         } else {

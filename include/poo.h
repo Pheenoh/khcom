@@ -328,7 +328,7 @@ typedef struct PooPileWork {
     u16 unk_B0;
     u16 unk_B2;
     TaskPool tasks;
-    s32 unk_C8;
+    s32 task;
     u8 unk_CC;
     u8 unk_CD[0x03];
 } PooPileWork;

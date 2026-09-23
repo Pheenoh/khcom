@@ -1048,7 +1048,7 @@ void task_bos_boogie_saku_0(BoogieSakuWork* work, void* arg) {
     AnimStart(&work->anim, 0, 0);
     work->unk_020 = 0;
     TaskPoolInit(&work->tasks, 1);
-    work->unk_03C = 0;
+    work->task = 0;
     work->unk_040 = 0;
 }
 
@@ -1077,12 +1077,12 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
             func_0801C2DC((u8*)work->unk_024 + 0x40, 1);
 
             if (func_080DA73C() != 0) {
-                work->unk_03C = (u32)TaskCreate(&work->tasks, &gTaskDescBosBoogieExplosiondice, (void*)work->unk_024);
+                work->task = (u32)TaskCreate(&work->tasks, &gTaskDescBosBoogieExplosiondice, (void*)work->unk_024);
             }
         }
     }
 
-    if (gUnk_0203C560 <= 2 && IsTaskActive((void*)work->unk_03C) == 0) {
+    if (gUnk_0203C560 <= 2 && IsTaskActive((void*)work->task) == 0) {
         SetBattleBounds(0x80, 0x170, 0x240, 0x278);
 
         if (gUnk_0203C560 != 0) {
@@ -1097,7 +1097,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
 
     if (gUnk_0203C560 > 2
             || (gUnk_0203C560 == 0 && AnimGetId(&work->anim) == 3
-                && IsTaskActive((void*)work->unk_03C) == 0)) {
+                && IsTaskActive((void*)work->task) == 0)) {
         AnimUpdate(&work->anim);
     }
 

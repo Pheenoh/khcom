@@ -114,7 +114,7 @@ typedef struct StatusScrollcursorWork {
 
 typedef struct StatusMeswindowWork {
     TaskPool pool;
-    void* unk_14;
+    void* task;
     s32 unk_18;
     u8* unk_1C;
     u8 unk_20;
@@ -153,7 +153,7 @@ typedef struct StatusMesParam {
 
 typedef struct StatusFriendEntry {
     u16 unk_00;
-    u16 unk_02;
+    u16 cardId;
 } StatusFriendEntry;
 
 typedef struct StatusFriendTable {
@@ -172,7 +172,7 @@ typedef struct StockMesDispWork {
     u16 unk_20;
     u16 unk_22;
     TaskPool tasks;
-    void* unk_38;
+    void* task;
     u16 x;
     u16 y;
     u8 unk_40;

@@ -205,7 +205,7 @@ void func_08104BBC(void) {
             }
 
             if (idx < limit) {
-                defIdx = gUnk_02035C10[a + idx].unk_02;
+                defIdx = gUnk_02035C10[a + idx].cardId;
                 gUnk_02035CE8[i][k] = LoadObjPalette(gCardDefs[defIdx].palette2, 0x20);
                 gUnk_02035D18[i][k] = LoadObjTiles(gCardDefs[defIdx].tiles2, 0x100);
                 gUnk_02035D48[i][k] = gCardDefs[defIdx].gfx2;
@@ -242,7 +242,7 @@ void func_08104D18(void) {
     }
 
     if (card->unk_00 != 0x8F && func_08104AA4(gUnk_02035C18) > 0) {
-        defIdx = card->unk_02;
+        defIdx = card->cardId;
         gUnk_02035D84 = LoadObjPalette(gCardDefs[defIdx].palette, 0x20);
         gUnk_02035D88 = LoadObjTiles(gCardDefs[defIdx].tiles, 0x200);
         gUnk_02035D8C = gCardDefs[defIdx].gfx;
@@ -473,7 +473,7 @@ void func_081054D0(MsCard* card) {
     u8 slot;
     s16 j;
 
-    slot = gCardDefs[card->unk_02].unk_2A;
+    slot = gCardDefs[card->cardId].unk_2A;
     dma = (vu32*)0x040000D4;
     dma[0] = (u32)(card + 1);
     dma[1] = (u32)card;
@@ -551,7 +551,7 @@ void func_0810563C(void) {
 
     for (n = 0; n <= 285; n++) {
         gUnk_02035C10[n].unk_00 = 0x8F;
-        gUnk_02035C10[n].unk_02 = 0x3B6;
+        gUnk_02035C10[n].cardId = 0x3B6;
         gUnk_02035C10[n].unk_2E = 0;
     }
     a = func_08084BAC();
@@ -582,7 +582,7 @@ void func_0810563C(void) {
                 gUnk_02035C10[idx].unk_06[raw][1] = id;
             } else {
                 gUnk_02035C10[n].unk_00 = kind;
-                gUnk_02035C10[n].unk_02 = gCardDefs[id].unk_28;
+                gUnk_02035C10[n].cardId = gCardDefs[id].unk_28;
                 gUnk_02035C10[n].unk_04 = j;
                 raw = gCardDefs[id].unk_20;
                 gUnk_02035C10[n].unk_06[raw][0]++;
@@ -593,7 +593,7 @@ void func_0810563C(void) {
                 if (prem != 0) {
                     sortKey = 0x03000000;
                 }
-                gUnk_02035C10[n].unk_30 = (sortKey << (gUnk_02035C10[n].unk_04 * 2)) | gUnk_02035C10[n].unk_02;
+                gUnk_02035C10[n].unk_30 = (sortKey << (gUnk_02035C10[n].unk_04 * 2)) | gUnk_02035C10[n].cardId;
                 gUnk_02035C28[j]++;
                 n++;
             }

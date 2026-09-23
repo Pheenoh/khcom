@@ -75,7 +75,7 @@ void func_080A096C(u16 a, u16* p);
 #endif
 
 typedef struct CardSlot {
-    u32 unk_00;
+    u32 cardId;
     u16 unk_04;
     u8 unk_06;
     u8 unk_07;
@@ -428,7 +428,7 @@ typedef struct DeckCard2Work {
     CardDef* cardDef;
     CardBack* cardBack;
     ListPool* pool;
-    u16 unk_20;
+    u16 cardId;
     s16 unk_22;
     s16 unk_24;
     u8 unk_26;
@@ -449,7 +449,7 @@ typedef struct UnkStruct_0808E3E0 {
 } UnkStruct_0808E3E0;
 
 typedef struct UnkStruct_0809C534_Args {
-    s32 unk_00;
+    s32 cardId;
     u16 unk_04;
     u8 unk_06;
 } UnkStruct_0809C534_Args;
@@ -1038,7 +1038,7 @@ typedef struct PrizeCardTaskArgs {
     s32 y;
     s32 z;
     u8 unk_0C[0x14];
-    s32 unk_20;
+    s32 cardId;
 } PrizeCardTaskArgs;
 
 typedef struct PrizeCardInitWork {
@@ -1623,7 +1623,7 @@ typedef struct GimmickCardArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
-    s32 unk_0C;
+    s32 cardId;
 } GimmickCardArgs;
 
 typedef struct WorldSelBeforeWork {
@@ -1851,7 +1851,7 @@ extern s16 gUnk_09035964[];
 
 typedef struct UnkStruct_080A97D4 {
     void* unk_00;
-    u16 unk_04;
+    u16 cardId;
     s16 unk_06;
     s16 unk_08;
     u8 unk_0A;
