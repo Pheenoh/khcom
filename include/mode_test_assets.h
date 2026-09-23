@@ -3,11 +3,6 @@
 
 #include "types.h"
 
-#ifndef VERSION_EU
-#endif
-extern u8 gUnk_08F6E190[];
-extern u8 gUnk_08F6F190[];
-
 #ifdef VERSION_EU
 extern u8 gUnkEu_091078AE[];
 extern u8 gUnkEu_0910DD2E[];

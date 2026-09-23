@@ -140,7 +140,7 @@ sprite_palettes_3.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04.s
 jiminy_journal_palettes.s
 lockon.c
-asset_gfx_gap_2.s
+debug_font_tiles.s
 card_def_data.c
 card_label_data.c
 mode_deck.c

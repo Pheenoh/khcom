@@ -204,7 +204,7 @@ battle_background_maps_2.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F7EBF8.s
 lockon.c
 card_label_language_data.c
-asset_gfx_gap_2.s
+debug_font_tiles.s
 card_def_data.c
 card_label_data.c
 mode_deck.c

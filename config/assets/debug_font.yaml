@@ -1,0 +1,52 @@
+group: debug_font
+types: {}
+objects:
+  us:
+  - name: debug_font_tiles.s
+    start: 0x08F6E190
+    end: 0x08F709B0
+  jp:
+  - name: debug_font_tiles.s
+    start: 0x08F61698
+    end: 0x08F63EB8
+  eu:
+  - name: debug_font_tiles.s
+    start: 0x08F7F168
+    end: 0x08F81988
+entries:
+- name: gUnk_08F6E190
+  format: tiles4
+  width: 32
+  us:
+    address: 0x08F6E190
+    size: 4096
+  jp:
+    address: 0x08F61698
+    size: 4096
+  eu:
+    address: 0x08F7F168
+    size: 4096
+- name: gUnk_08F6F190
+  format: tiles4
+  width: 32
+  us:
+    address: 0x08F6F190
+    size: 6144
+  jp:
+    address: 0x08F62698
+    size: 6144
+  eu:
+    address: 0x08F80168
+    size: 6144
+- name: gUnk_08F70990
+  format: raw
+  declare: false
+  us:
+    address: 0x08F70990
+    size: 32
+  jp:
+    address: 0x08F63E98
+    size: 32
+  eu:
+    address: 0x08F81968
+    size: 32
