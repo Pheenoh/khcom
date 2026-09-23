@@ -123,7 +123,7 @@ void func_080A581C(u8* work) {
     TaskCreate(&work[0x10], &gTaskDescWorldSelBefore, work);
 }
 
-void func_080A5830(void* a, s32 b, s32 c, s32 d) {
+void CreateWorldSelBeforeTask(void* a, s32 b, s32 c, s32 d) {
     s32 args[3];
 
     args[0] = b;

@@ -3278,20 +3278,20 @@ void func_080F3D58(UnkStruct_080DFF1C* p) {
     if (gGameState.flags & 8) {
         r = GetRandom() % 10000;
         if (r < 6000) {
-            func_080E9034(0, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(0, 5, p->unk_00, p->x, p->y);
         } else if (r < 10000) {
-            func_080E9034(1, 3, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(1, 3, p->unk_00, p->x, p->y);
         }
     } else {
         r = GetRandom() % 10000;
         if (r < 3000) {
-            func_080E9034(0, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(0, 5, p->unk_00, p->x, p->y);
         } else if (r < 5000) {
-            func_080E9034(1, 3, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(1, 3, p->unk_00, p->x, p->y);
         } else if (r < 8000) {
-            func_080E9034(2, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(2, 5, p->unk_00, p->x, p->y);
         } else {
-            func_080E9034(3, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(3, 5, p->unk_00, p->x, p->y);
         }
     }
 }

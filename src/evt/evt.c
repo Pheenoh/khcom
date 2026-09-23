@@ -27,7 +27,7 @@ void func_0801CD94(EvtObj* obj, s32 a) {
     obj->unk_10 = a;
 }
 
-void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c) {
+void CreateEvtObjTask(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c) {
     EvtObjParam param;
 
     param.res = &gUnk_0813B09C[res].res;

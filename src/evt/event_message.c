@@ -815,7 +815,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         break;
     default:
         if ((p->keyframes->unk_18 & 0x2000) == 0) {
-            func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->keyframes->unk_00, p->keyframes->unk_08, p->keyframes->unk_0C, p->keyframes->unk_10);
+            CreateEvtObjTask(&p->tasks, p->unk_028, p->unk_026, p->keyframes->unk_00, p->keyframes->unk_08, p->keyframes->unk_0C, p->keyframes->unk_10);
             p->unk_1B4 = 1;
         } else {
             p->unk_1B4 = 0;
@@ -991,7 +991,7 @@ u8 func_0806E570(EventCharaWork* p) {
     p->unk_17C = p->keyframes[p->unk_1A0].unk_00;
 
     if ((p->keyframes[p->unk_1A0].unk_18 & 0x4000) != 0) {
-        func_0801CD98(&p->tasks, p->unk_028, p->unk_026, p->keyframes[p->unk_1A0].unk_00,
+        CreateEvtObjTask(&p->tasks, p->unk_028, p->unk_026, p->keyframes[p->unk_1A0].unk_00,
                       p->keyframes[p->unk_1A0].unk_08, p->keyframes[p->unk_1A0].unk_0C,
                       p->keyframes[p->unk_1A0].unk_10);
         p->unk_1B4 = 1;
@@ -3541,7 +3541,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     gEventState->unk_7D = 0;
     gEventState->unk_8B = 0;
     TaskPoolInit(p, 2);
-    func_08073E0C(p, &p->face, p->script->unk_00, p->script->unk_04, p->script->unk_08);
+    CreateMsgfaceTask(p, &p->face, p->script->unk_00, p->script->unk_04, p->script->unk_08);
 }
 
 u8 func_08072EAC(MsgWinWork* p, void* a) {
@@ -4186,7 +4186,7 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
     }
     return 1;
 }
-void func_08073E0C(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c) {
+void CreateMsgfaceTask(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c) {
     p->portraitId = a;
     p->expressionId = b;
     p->positionIndex = c;

@@ -681,7 +681,7 @@ func_0801B024	0x0801b024	856	0x0801b024	global
 func_0801B37C	0x0801b37c	1116	0x0801b37c	global
 func_0801B7D8	0x0801b7d8	64	0x0801b7d8	global
 func_0801B818	0x0801b818	144	0x0801b818	global
-func_0801B8A8	0x0801b8a8	112	0x0801b8a8	global
+CreateBtlPrizeTasks	0x0801b8a8	112	0x0801b8a8	global
 func_0801B918	0x0801b918	124	0x0801b918	global
 func_0801B994	0x0801b994	604	0x0801b994	global
 func_0801BBF0	0x0801bbf0	184	0x0801bbf0	global
@@ -718,7 +718,7 @@ func_0801CD20	0x0801cd20	84	0x0801cd20	global
 func_0801CD74	0x0801cd74	24	0x0801cd74	global
 EvtObjSetPos	0x0801cd8c	8	0x0801cd8c	body
 func_0801CD94	0x0801cd94	4	0x0801cd94	body
-func_0801CD98	0x0801cd98	104	0x0801cd98	global
+CreateEvtObjTask	0x0801cd98	104	0x0801cd98	global
 func_0801CE00	0x0801ce00	4	0x0801ce00	body
 func_0801CE04	0x0801ce04	108	0x0801ce04	global
 func_0801CE70	0x0801ce70	60	0x0801ce70	global
@@ -1549,7 +1549,7 @@ func_08073B54	0x08073b54	72	0x080739ac	global
 func_08073B9C	0x08073b9c	264	0x080739f4	global
 func_08073CA4	0x08073ca4	256	0x08073afc	global
 func_08073DA4	0x08073da4	104	0x08073bfc	global
-func_08073E0C	0x08073e0c	40	0x08073c64	global
+CreateMsgfaceTask	0x08073e0c	40	0x08073c64	global
 func_08073E34	0x08073e34	56	0x08073c8c	global
 _08073E6C	0x08073e6c	8	0x08073cc4	body
 func_08073E74	0x08073e74	8	0x08073ccc	body
@@ -2291,7 +2291,7 @@ func_0809B59C	0x0809b59c	88	0x0809b728	global
 Heartless_card_3	0x0809b5f4	80	0x0809b780	global
 func_0809B644	0x0809b644	140	0x0809b7d0	global
 CreateHeartlessCardTask	0x0809b6d0	64	0x0809b85c	global
-func_0809B710	0x0809b710	92	0x0809b89c	global
+CreateGimmickCardTask	0x0809b710	92	0x0809b89c	global
 func_0809B76C	0x0809b76c	212	0x0809b8f8	global
 func_0809B840	0x0809b840	176	0x0809b9cc	global
 func_0809B8F0	0x0809b8f0	48	0x0809ba7c	global
@@ -2475,7 +2475,7 @@ WorldSel_Before_1	0x080a55b8	332	0x080a567c	global
 WorldSel_Before_2	0x080a5704	244	0x080a57c8	global
 WorldSel_Before_3	0x080a57f8	36	0x080a58bc	body
 func_080A581C	0x080a581c	20	0x080a58e0	body
-func_080A5830	0x080a5830	28	0x080a58f4	global
+CreateWorldSelBeforeTask	0x080a5830	28	0x080a58f4	global
 func_080A584C	0x080a584c	980	0x080a5910	global
 func_080A5C20	0x080a5c20	64	0x080a5ce4	global
 func_080A5C60	0x080a5c60	60	0x080a5d24	global
@@ -3446,7 +3446,7 @@ task_allmap_room_0	0x080d37ec	196	0x080d38a0	named
 task_allmap_room_1	0x080d38b0	4	0x080d3964	named
 task_allmap_room_2	0x080d38b4	320	0x080d3968	named
 task_allmap_room_3	0x080d39f4	44	0x080d3aa8	named
-func_080D3A20	0x080d3a20	80	0x080d3ad4	global
+CreateAllmapRoomTask	0x080d3a20	80	0x080d3ad4	global
 func_080D3A70	0x080d3a70	72	0x080d3b24	global
 func_080D3AB8	0x080d3ab8	100	0x080d3b6c	global
 task_allmap_cursor_0	0x080d3b1c	172	0x080d3bd0	named
@@ -4014,7 +4014,7 @@ func_080E8E74	0x080e8e74	152	0x080e8e94	global
 func_080E8F0C	0x080e8f0c	68	0x080e8f2c	global
 func_080E8F50	0x080e8f50	104	0x080e8f70	global
 func_080E8FB8	0x080e8fb8	124	0x080e8fd8	global
-func_080E9034	0x080e9034	68	0x080e9054	global
+CreateMapPrizeTasks	0x080e9034	68	0x080e9054	global
 func_080E9078	0x080e9078	468	0x080e9098	global
 func_080E924C	0x080e924c	108	0x080e926c	global
 func_080E92B8	0x080e92b8	64	0x080e92d8	global
@@ -4716,7 +4716,7 @@ func_0810A454	0x0810a454	68	0x0810a4d0	global
 func_0810A498	0x0810a498	44	0x0810a514	global
 func_0810A4C4	0x0810a4c4	8	0x0810a540	body
 CreateBosPcFltTask	0x0810a4cc	80	0x0810a548	global
-func_0810A51C	0x0810a51c	100	0x0810a598	global
+CreateBosPcAcdTask	0x0810a51c	100	0x0810a598	global
 task_bos_pc_0	0x0810a580	720	0x0810a5fc	named
 func_0810A850	0x0810a850	196	0x0810a8cc	global
 func_0810A914	0x0810a914	184	0x0810a990	global

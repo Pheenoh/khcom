@@ -1136,7 +1136,7 @@ u8 func_08033334(FldWork* work, void* task) {
         }
 
         if (work->unk_98 == 40) {
-            func_080A5830(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
+            CreateWorldSelBeforeTask(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         }
 
         if (work->unk_98 > 140) {
@@ -2829,7 +2829,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
         }
 
         if (work->unk_98 == 40) {
-            func_080A5830(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
+            CreateWorldSelBeforeTask(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         }
 
         if (work->unk_98 > 140) {

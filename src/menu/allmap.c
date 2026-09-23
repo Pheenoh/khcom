@@ -157,7 +157,7 @@ void task_allmap_room_3(AllmapRoomWork* work) {
     }
 }
 
-Task* func_080D3A20(TaskPool* pool) {
+Task* CreateAllmapRoomTask(TaskPool* pool) {
     AllmapRoomArg arg;
 
     arg.unk_00 = 208;

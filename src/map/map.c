@@ -4843,28 +4843,28 @@ void func_080E83DC(s32 a, s32 b, s32 c) {
     if (gGameState.flags & 8) {
         r = GetRandom() % 10000;
         if (r < 2500) {
-            func_080E9034(0, 2, a, b, c);
+            CreateMapPrizeTasks(0, 2, a, b, c);
         } else if (r < 6500) {
-            func_080E9034(0, 5, a, b, c);
+            CreateMapPrizeTasks(0, 5, a, b, c);
         } else if (r < 9000) {
-            func_080E9034(1, 3, a, b, c);
+            CreateMapPrizeTasks(1, 3, a, b, c);
         } else {
-            func_080E9034(1, 5, a, b, c);
+            CreateMapPrizeTasks(1, 5, a, b, c);
         }
     } else {
         r = GetRandom() % 10000;
         if (r < 2000) {
-            func_080E9034(0, 2, a, b, c);
+            CreateMapPrizeTasks(0, 2, a, b, c);
         } else if (r < 4000) {
-            func_080E9034(0, 5, a, b, c);
+            CreateMapPrizeTasks(0, 5, a, b, c);
         } else if (r < 6000) {
-            func_080E9034(1, 3, a, b, c);
+            CreateMapPrizeTasks(1, 3, a, b, c);
         } else if (r < 6500) {
-            func_080E9034(1, 5, a, b, c);
+            CreateMapPrizeTasks(1, 5, a, b, c);
         } else if (r < 8000) {
-            func_080E9034(2, 5, a, b, c);
+            CreateMapPrizeTasks(2, 5, a, b, c);
         } else {
-            func_080E9034(3, 5, a, b, c);
+            CreateMapPrizeTasks(3, 5, a, b, c);
         }
     }
 }
@@ -5422,7 +5422,7 @@ u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d) {
     return func_080E8F50(q, 0, b, c, d);
 }
 
-void func_080E9034(u8 a, u8 b, s32 c, s32 d, s32 e) {
+void CreateMapPrizeTasks(u8 a, u8 b, s32 c, s32 d, s32 e) {
     UnkStruct_080E8F50 w;
     s32 i;
 
@@ -5713,7 +5713,7 @@ void func_080E95C4(void) {
 
 void func_080E95E8(void) {
     if ((gFieldState->flags & 0x2000) == 0 && (gUnk_0203C7AC->flags & 0x2000) == 0) {
-        gUnk_02034FA8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FA8 = CreateAllmapRoomTask(gFieldState->tasks);
         func_080E8594();
         func_080E9344((s32)func_080E93FC);
     } else {
@@ -5729,7 +5729,7 @@ void func_080E963C(void) {
     } else if ((gFieldState->flags & 0x40000) == 0) {
         gBldCnt = 0;
         SetBgPriority(0, 0);
-        gUnk_02034FA8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FA8 = CreateAllmapRoomTask(gFieldState->tasks);
         func_080E8594();
         func_080E607C();
         func_080E9344((s32)func_080E93FC);
@@ -5767,7 +5767,7 @@ void Mode_MapDbg_0(void) {
     p = gUnk_09EF70D0[gUnk_0203C590.unk_04];
     TaskCreate(gFieldState->tasks, &gTaskDescLockon, 0);
     TaskCreate(gFieldState->tasks, &gTaskDescMapAnm, p->unk_2C);
-    gUnk_02034FA8 = func_080D3A20(gFieldState->tasks);
+    gUnk_02034FA8 = CreateAllmapRoomTask(gFieldState->tasks);
     func_080E9338((s32)func_080E93FC);
 
     if (gGameState.unk_000 != 0) {
@@ -5899,7 +5899,7 @@ void func_080E9AF0(void) {
         u16 t = gUnk_0203C590.unk_02 | 0x10;
         gUnk_0203C590.unk_02 = t;
         gUnk_02034FB4 = 0;
-        gUnk_02034FB8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FB8 = CreateAllmapRoomTask(gFieldState->tasks);
         gFieldState->flags &= ~0x200;
         gFieldState->flags &= ~1;
         func_080E9898((s32)func_080E9B7C);
@@ -6034,7 +6034,7 @@ void func_080E9E28(void) {
         SetupBg(0, 3, 31, 14);
         SetBgPriority(0, 0);
         func_080E8594();
-        gUnk_02034FB8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FB8 = CreateAllmapRoomTask(gFieldState->tasks);
         func_080E9898((s32)func_080E9B7C);
     } else {
         func_080E0780();
@@ -6058,7 +6058,7 @@ void func_080E9E94(void) {
         SetBgPriority(0, 0);
         func_080E8594();
         func_080E607C();
-        gUnk_02034FB8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FB8 = CreateAllmapRoomTask(gFieldState->tasks);
         func_080E9898((s32)func_080E9B7C);
     } else {
         func_080E0780();
@@ -6140,11 +6140,11 @@ void Mode_MapFld_0(void) {
             TaskCreate(gFieldState->tasks, &gTaskDescMapMenu, 0);
             func_080E988C((s32)func_080E9E28);
         } else {
-            gUnk_02034FB8 = func_080D3A20(gFieldState->tasks);
+            gUnk_02034FB8 = CreateAllmapRoomTask(gFieldState->tasks);
             func_080E988C((s32)func_080E9B7C);
         }
     } else {
-        gUnk_02034FB8 = func_080D3A20(gFieldState->tasks);
+        gUnk_02034FB8 = CreateAllmapRoomTask(gFieldState->tasks);
         func_080E0298(gFieldState->unk_DC, gFieldState->unk_E0);
         func_080E988C((s32)func_080E9B7C);
     }

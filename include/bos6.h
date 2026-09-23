@@ -597,7 +597,7 @@ u8 task_bos_pc_1(PcWork* work, s32 arg);
 void task_bos_pc_0(PcWork* work, s32 arg);
 void func_0810A444(PcWork* work);
 void CreateBosPcFltTask(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
-void func_0810A51C(PcWork* work, TaskPool* pool);
+void CreateBosPcAcdTask(PcWork* work, TaskPool* pool);
 
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];

@@ -5524,7 +5524,7 @@ void CreateBosPcFltTask(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e) {
     work->unk_2D4[e] = TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPcFlt, &arg);
 }
 
-void func_0810A51C(PcWork* work, TaskPool* pool) {
+void CreateBosPcAcdTask(PcWork* work, TaskPool* pool) {
     if ((s32)pool > 0x01FFFFFF) {
         gBtlWork->actor->x = 0xFE00;
         gBtlWork->actor->y = 0x15D00;
@@ -5608,7 +5608,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     }
     func_0810B7E8(work->unk_2D4[0], &x, &y, &z);
     SetBattleActorPosition(x, y, z - 0x400);
-    func_0810A51C(work, (TaskPool*)arg);
+    CreateBosPcAcdTask(work, (TaskPool*)arg);
     g = gBtlWork;
     g->unk_0CC = work->unk_058;
     g->unk_0D0 = work->unk_05C;

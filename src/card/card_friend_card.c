@@ -792,7 +792,7 @@ void CreateHeartlessCardTask(void* pool, s16 a, s16 b, s16 c, u16 d) {
     TaskCreate(pool, &gTaskDescHeartlessCard, args);
 }
 
-void func_0809B710(void* pool, u16 a, u16 b, u16 c, u16 d) {
+void CreateGimmickCardTask(void* pool, u16 a, u16 b, u16 c, u16 d) {
     s32 args[4];
 
     if (gUnk_02039DD4 != 0 && gUnk_02039DD4->unk_0DC == 0) {

@@ -299,7 +299,7 @@ void func_08013678(s32 x, s32 y, s32 z);
 void func_0801709C(void);
 void func_0801718C(void);
 u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt);
-void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
+void CreateBtlPrizeTasks(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
 
 s32 LevelUpMaxHp(void);
 s32 LevelUpCp(void);
@@ -329,7 +329,7 @@ u8 ColliderIsColliding(Collider* p);
 s32 func_0801A978(BtlObj* p);
 u8 func_08085BAC(void);
 u8 HasNonPremiumCardsInActiveDeck(void);
-void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
+void CreateGimmickCardTask(void* pool, s16 a, s16 b, s16 c, u16 d);
 
 typedef struct BtlPrizeArgs {
     s32 x;

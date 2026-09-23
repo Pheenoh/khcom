@@ -1563,7 +1563,7 @@ u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt) {
     return 0;
 }
 
-void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
+void CreateBtlPrizeTasks(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
     s16 i;
     s16 lim;
     lim = *n / c;
@@ -1582,13 +1582,13 @@ void func_0801B918(BtlObj* p) {
     a.z = p->z;
     a.unk_14 = 1;
     n = p->unk_0B4;
-    func_0801B8A8(&a, 0, 0x578, &n);
-    func_0801B8A8(&a, 8, 199, &n);
-    func_0801B8A8(&a, 5, 60, &n);
-    func_0801B8A8(&a, 7, 30, &n);
-    func_0801B8A8(&a, 4, 10, &n);
-    func_0801B8A8(&a, 6, 5, &n);
-    func_0801B8A8(&a, 3, 1, &n);
+    CreateBtlPrizeTasks(&a, 0, 0x578, &n);
+    CreateBtlPrizeTasks(&a, 8, 199, &n);
+    CreateBtlPrizeTasks(&a, 5, 60, &n);
+    CreateBtlPrizeTasks(&a, 7, 30, &n);
+    CreateBtlPrizeTasks(&a, 4, 10, &n);
+    CreateBtlPrizeTasks(&a, 6, 5, &n);
+    CreateBtlPrizeTasks(&a, 3, 1, &n);
 }
 
 void func_0801B994(BtlObj* p) {
@@ -2032,7 +2032,7 @@ void _0801C1F8(u8 a, s32 x, s32 y, s32 z) {
     default:
         return;
     }
-    func_0809B710(&gBtlWork->taskPools[0], x >> 8, y >> 8, z >> 8, id);
+    CreateGimmickCardTask(&gBtlWork->taskPools[0], x >> 8, y >> 8, z >> 8, id);
 }
 
 void func_0801C274(s32 a, s32 b, s32 c) {
