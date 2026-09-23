@@ -28,6 +28,7 @@
 #include "sprites_sora.h"
 #include "battle_backgrounds.h"
 #include "sprites_msg.h"
+#include "link_menus.h"
 
 u16 gUnk_0203A9EC EWRAM_COMMON(4);
 u16 gUnk_0203A9F0 EWRAM_COMMON(4);
@@ -100,8 +101,6 @@ extern u8 gUnkEu_095F6D50[];
 extern u8 gUnkEu_095F73AA[];
 extern u8 gUnkEu_095F79D2[];
 extern u8 gUnkEu_095F7FAE[];
-extern u8 gUnkEu_096C118C[];
-extern u8 gUnkEu_096BE98C[];
 extern u8 gUnkEu_096C298C[];
 extern u8 gUnkEu_096C498C[];
 extern u8 gUnkEu_096C198C[];
@@ -110,7 +109,6 @@ extern u8 gUnkEu_096C218C[];
 extern u8 gUnkEu_096C418C[];
 extern u8 gUnkEu_096C318C[];
 extern u8 gUnkEu_096C518C[];
-extern u8 gUnkEu_096BF18C[];
 extern u8 gUnkEu_096C698C[];
 extern u8 gUnkEu_096C598C[];
 extern u8 gUnkEu_096C618C[];
@@ -352,8 +350,8 @@ void func_080AF0B0(void) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        LoadBgMap(0, gUnkEu_096C118C, 0x800);
-        LoadBgMap(1, gUnkEu_096BE98C, 0x800);
+        LoadBgMap(0, gUnk_096F6C64, 0x800);
+        LoadBgMap(1, gUnk_096F7464, 0x800);
         break;
     case 3:
         LoadBgMap(0, gUnkEu_096C298C, 0x800);
@@ -1912,7 +1910,7 @@ void func_080B1558(void) {
 #ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
-        LoadBgMap(1, gUnkEu_096BF18C, 0x800);
+        LoadBgMap(1, gUnk_096F7C64, 0x800);
         break;
     case 3:
         LoadBgMap(1, gUnkEu_096C698C, 0x800);

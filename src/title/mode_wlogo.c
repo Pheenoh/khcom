@@ -11,6 +11,7 @@
 #include "mode_dummy.h"
 #include "gba/keys.h"
 #include "battle_backgrounds.h"
+#include "link_menus.h"
 
 void func_080B4154(void);
 void func_080B4210(u8 a);

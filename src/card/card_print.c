@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_boss_tm.h"
+#include "link_menus.h"
 
 s8 gUnk_0203A9E4 EWRAM_COMMON(4);
 
