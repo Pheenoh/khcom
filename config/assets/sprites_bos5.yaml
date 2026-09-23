@@ -15,85 +15,85 @@ types:
 objects:
   us:
   - name: sprites_bos5.c
-    start: 166697904
-    end: 166697924
+    start: 0x09EF9BB0
+    end: 0x09EF9BC4
   - name: sprites_bos5_frames.s
-    start: 161122072
-    end: 161122136
+    start: 0x099A8718
+    end: 0x099A8758
   jp:
   - name: sprites_bos5.c
-    start: 166530972
-    end: 166530992
+    start: 0x09ED0F9C
+    end: 0x09ED0FB0
   - name: sprites_bos5_frames.s
-    start: 160813472
-    end: 160813536
+    start: 0x0995D1A0
+    end: 0x0995D1E0
   eu:
   - name: sprites_bos5.c
-    start: 167270428
-    end: 167270448
+    start: 0x09F8581C
+    end: 0x09F85830
   - name: sprites_bos5_frames.s
-    start: 161179292
-    end: 161179356
+    start: 0x099B669C
+    end: 0x099B66DC
 entries:
 - name: gUnk_09EF9BB0
   record: SpriteTable
   items: [gUnk_099A8718, gUnk_099A8722, gUnk_099A872C, gUnk_099A8736]
   us:
-    address: 166697904
+    address: 0x09EF9BB0
   jp:
-    address: 166530972
+    address: 0x09ED0F9C
   eu:
-    address: 167270428
+    address: 0x09F8581C
 - name: gUnk_09EF9BC0
   record: AnimTable
   items: [gUnk_099A8740]
   us:
-    address: 166697920
+    address: 0x09EF9BC0
   jp:
-    address: 166530988
+    address: 0x09ED0FAC
   eu:
-    address: 167270444
+    address: 0x09F8582C
 - name: gUnk_099A8718
   record: Sprite
   align: 4
   oam:
   - [240, 33264, 0]
   us:
-    address: 161122072
+    address: 0x099A8718
   jp:
-    address: 160813472
+    address: 0x0995D1A0
   eu:
-    address: 161179292
+    address: 0x099B669C
 - name: gUnk_099A8722
   record: Sprite
   oam:
   - [240, 33264, 16]
   us:
-    address: 161122082
+    address: 0x099A8722
   jp:
-    address: 160813482
+    address: 0x0995D1AA
   eu:
-    address: 161179302
+    address: 0x099B66A6
 - name: gUnk_099A872C
   record: Sprite
   oam:
   - [240, 33264, 32]
   us:
-    address: 161122092
+    address: 0x099A872C
   jp:
-    address: 160813492
+    address: 0x0995D1B4
   eu:
-    address: 161179312
+    address: 0x099B66B0
 - name: gUnk_099A8736
   record: Sprite
   oam:
   - [240, 33264, 48]
   us:
-    address: 161122102
+    address: 0x099A8736
   jp:
-    address: 160813502
+    address: 0x0995D1BE
   eu:
-    address: 161179322
+    address: 0x099B66BA
 - name: gUnk_099A8740
   record: AnimHeader
   fields:
@@ -105,8 +105,8 @@ entries:
   - [2, 12]
   - [3, 12]
   us:
-    address: 161122112
+    address: 0x099A8740
   jp:
-    address: 160813512
+    address: 0x0995D1C8
   eu:
-    address: 161179332
+    address: 0x099B66C4

@@ -15,79 +15,79 @@ types:
 objects:
   us:
   - name: sprites_mode_test.c
-    start: 166597844
-    end: 166597920
+    start: 0x09EE14D4
+    end: 0x09EE1520
   - name: sprites_mode_test_frames.s
-    start: 145902744
-    end: 145905004
+    start: 0x08B24C98
+    end: 0x08B2556C
   jp:
   - name: sprites_mode_test.c
-    start: 166432592
-    end: 166432668
+    start: 0x09EB8F50
+    end: 0x09EB8F9C
   - name: sprites_mode_test_frames.s
-    start: 145851008
-    end: 145853268
+    start: 0x08B18280
+    end: 0x08B18B54
   eu: []
 entries:
 - name: gUnk_09EE14D4
   record: SpriteTable
   items: [gUnk_08B24C98, gUnk_08B24CA2, gUnk_08B24CB2, gUnk_08B24CC2, gUnk_08B24CD2, gUnk_08B24CE2, gUnk_08B24CF8, gUnk_08B24D0E, gUnk_08B24D18, gUnk_08B24D22, gUnk_08B24D2C, gUnk_08B24D42, gUnk_08B24D58, gUnk_08B24D6E]
   us:
-    address: 166597844
+    address: 0x09EE14D4
   jp:
-    address: 166432592
+    address: 0x09EB8F50
 - name: gUnk_09EE150C
   record: AnimTable
   items: [gUnk_08B24D78, gUnk_08B24D82, gUnk_08B24D8C, gUnk_08B24D96, gUnk_08B24DA0]
   us:
-    address: 166597900
+    address: 0x09EE150C
   jp:
-    address: 166432648
+    address: 0x09EB8F88
 - name: gUnk_08B24C98
   record: Sprite
   align: 4
   oam:
   - [16636, 16864, 0]
   us:
-    address: 145902744
+    address: 0x08B24C98
   jp:
-    address: 145851008
+    address: 0x08B18280
 - name: gUnk_08B24CA2
   record: Sprite
   oam:
   - [16384, 16864, 4]
   - [0, 4568, 8]
   us:
-    address: 145902754
+    address: 0x08B24CA2
   jp:
-    address: 145851018
+    address: 0x08B1828A
 - name: gUnk_08B24CB2
   record: Sprite
   oam:
   - [16384, 16864, 4]
   - [16384, 4560, 9]
   us:
-    address: 145902770
+    address: 0x08B24CB2
   jp:
-    address: 145851034
+    address: 0x08B1829A
 - name: gUnk_08B24CC2
   record: Sprite
   oam:
   - [16384, 16864, 4]
   - [16384, 20936, 11]
   us:
-    address: 145902786
+    address: 0x08B24CC2
   jp:
-    address: 145851050
+    address: 0x08B182AA
 - name: gUnk_08B24CD2
   record: Sprite
   oam:
   - [16384, 16864, 4]
   - [16384, 20928, 11]
   us:
-    address: 145902802
+    address: 0x08B24CD2
   jp:
-    address: 145851066
+    address: 0x08B182BA
 - name: gUnk_08B24CE2
   record: Sprite
   oam:
@@ -95,9 +95,9 @@ entries:
   - [16384, 20928, 15]
   - [0, 4536, 8]
   us:
-    address: 145902818
+    address: 0x08B24CE2
   jp:
-    address: 145851082
+    address: 0x08B182CA
 - name: gUnk_08B24CF8
   record: Sprite
   oam:
@@ -105,33 +105,33 @@ entries:
   - [16384, 16832, 15]
   - [16384, 4528, 9]
   us:
-    address: 145902840
+    address: 0x08B24CF8
   jp:
-    address: 145851104
+    address: 0x08B182E0
 - name: gUnk_08B24D0E
   record: Sprite
   oam:
   - [16636, 16864, 19]
   us:
-    address: 145902862
+    address: 0x08B24D0E
   jp:
-    address: 145851126
+    address: 0x08B182F6
 - name: gUnk_08B24D18
   record: Sprite
   oam:
   - [16636, 16864, 23]
   us:
-    address: 145902872
+    address: 0x08B24D18
   jp:
-    address: 145851136
+    address: 0x08B18300
 - name: gUnk_08B24D22
   record: Sprite
   oam:
   - [16636, 16864, 27]
   us:
-    address: 145902882
+    address: 0x08B24D22
   jp:
-    address: 145851146
+    address: 0x08B1830A
 - name: gUnk_08B24D2C
   record: Sprite
   oam:
@@ -139,9 +139,9 @@ entries:
   - [16384, 16832, 35]
   - [16384, 4528, 39]
   us:
-    address: 145902892
+    address: 0x08B24D2C
   jp:
-    address: 145851156
+    address: 0x08B18314
 - name: gUnk_08B24D42
   record: Sprite
   oam:
@@ -149,9 +149,9 @@ entries:
   - [16384, 16832, 45]
   - [16384, 432, 49]
   us:
-    address: 145902914
+    address: 0x08B24D42
   jp:
-    address: 145851178
+    address: 0x08B1832A
 - name: gUnk_08B24D58
   record: Sprite
   oam:
@@ -159,17 +159,17 @@ entries:
   - [16384, 16832, 55]
   - [16384, 432, 59]
   us:
-    address: 145902936
+    address: 0x08B24D58
   jp:
-    address: 145851200
+    address: 0x08B18340
 - name: gUnk_08B24D6E
   record: Sprite
   oam:
   - [0, 488, 61]
   us:
-    address: 145902958
+    address: 0x08B24D6E
   jp:
-    address: 145851222
+    address: 0x08B18356
 - name: gUnk_08B24D78
   record: AnimHeader
   fields:
@@ -178,9 +178,9 @@ entries:
   frames:
   - [0, 4]
   us:
-    address: 145902968
+    address: 0x08B24D78
   jp:
-    address: 145851232
+    address: 0x08B18360
 - name: gUnk_08B24D82
   record: AnimHeader
   fields:
@@ -189,9 +189,9 @@ entries:
   frames:
   - [1, 4]
   us:
-    address: 145902978
+    address: 0x08B24D82
   jp:
-    address: 145851242
+    address: 0x08B1836A
 - name: gUnk_08B24D8C
   record: AnimHeader
   fields:
@@ -200,9 +200,9 @@ entries:
   frames:
   - [2, 4]
   us:
-    address: 145902988
+    address: 0x08B24D8C
   jp:
-    address: 145851252
+    address: 0x08B18374
 - name: gUnk_08B24D96
   record: AnimHeader
   fields:
@@ -211,9 +211,9 @@ entries:
   frames:
   - [3, 4]
   us:
-    address: 145902998
+    address: 0x08B24D96
   jp:
-    address: 145851262
+    address: 0x08B1837E
 - name: gUnk_08B24DA0
   record: AnimHeader
   fields:
@@ -222,17 +222,17 @@ entries:
   frames:
   - [4, 4]
   us:
-    address: 145903008
+    address: 0x08B24DA0
   jp:
-    address: 145851272
+    address: 0x08B18388
 - name: b_hpgag_e
   format: tiles4
   width: 2
   palette: b_states
   symbol: gUnk_08B24DAA
   us:
-    address: 145903018
+    address: 0x08B24DAA
     size: 1984
   jp:
-    address: 145851282
+    address: 0x08B18392
     size: 1984

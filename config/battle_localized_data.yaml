@@ -7,2586 +7,2586 @@ regions:
   us:
     binary_assets:
     - name: gUnkUs_08B1E974
-      address: 145877364
+      address: 0x08B1E974
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkUs_08B1E97E
-      address: 145877374
+      address: 0x08B1E97E
       size: 8
       kind: Sprite
       sha256: 509ba32e08c97173005bc27b586629252fbf6f2b74ca86c72de26da481becd2b
     - name: gUnkUs_08B1E988
-      address: 145877384
+      address: 0x08B1E988
       size: 8
       kind: Sprite
       sha256: 5cc2140b0187fb8fbdb39718517fff668cdcefba0570d4624b4177e8e3109e52
     - name: gUnkUs_08B1E992
-      address: 145877394
+      address: 0x08B1E992
       size: 8
       kind: Sprite
       sha256: 67b3b8459f8f7c5863f410d7427d635feb85bc17671e548f4a63fb387d764fef
     - name: gUnkUs_08B1E99C
-      address: 145877404
+      address: 0x08B1E99C
       size: 8
       kind: Sprite
       sha256: dfa88a6d691fe017333c28be28a6f443ed185787b9ad1caf43d42b65c9b556c1
     - name: gUnkUs_08B1E9A6
-      address: 145877414
+      address: 0x08B1E9A6
       size: 8
       kind: Sprite
       sha256: 36370c83b34e0008260283f2ea9c29b38a01522aa1864e6a2670338852df76ce
     - name: gUnkUs_08B1FCBC
-      address: 145882300
+      address: 0x08B1FCBC
       size: 14
       kind: Sprite
       sha256: 2607bb6141ba487314c8605a0051b83ea59a23cfb9e5e0d23517373866186ebf
     - name: gUnkUs_08B1FCCC
-      address: 145882316
+      address: 0x08B1FCCC
       size: 14
       kind: Sprite
       sha256: 483d0f8c019d71cbabf645d5161f5edb71ffc2dcf256f703b0ee53a54e8adf4c
     - name: gUnkUs_08B1FCDC
-      address: 145882332
+      address: 0x08B1FCDC
       size: 14
       kind: Sprite
       sha256: 4a8ba86bd59374cd497c011bb322fb877f47d6677e665b68253abb8e6a08840f
     - name: gUnkUs_08B1FCEC
-      address: 145882348
+      address: 0x08B1FCEC
       size: 14
       kind: Sprite
       sha256: 4e8e62777180bd917419253352313f15529f1c1720f4db9c19e82f11738f446d
     - name: gUnkUs_08B1FCFC
-      address: 145882364
+      address: 0x08B1FCFC
       size: 14
       kind: Sprite
       sha256: 848676a0a8b8acfd812cbd5eb1efef6aec5cd6e0490b65eba8c9c339776d8142
     - name: gUnkUs_08B1FD0C
-      address: 145882380
+      address: 0x08B1FD0C
       size: 14
       kind: Sprite
       sha256: ccc4537515770c37e156ac5df59dc55c82d064546e895a2ed21cdfa1c8128383
     - name: gUnkUs_08B1FD1C
-      address: 145882396
+      address: 0x08B1FD1C
       size: 14
       kind: Sprite
       sha256: d8a2067db3ed10acc0f9963d77ef3b09a14902c57f8c639fa55c107d581f0281
     - name: gUnkUs_08B1FD2C
-      address: 145882412
+      address: 0x08B1FD2C
       size: 14
       kind: Sprite
       sha256: 2381af357e0228a2034db2115d73f524107c02f4fc558a602ecc82109b757366
     - name: gUnkUs_08B1FD3C
-      address: 145882428
+      address: 0x08B1FD3C
       size: 14
       kind: Sprite
       sha256: 964fbc4d2dfe5f3f4f660a22c225820c2f7c56c2cf9443f5a1b83221d113e030
     - name: gUnkUs_08B1FD4C
-      address: 145882444
+      address: 0x08B1FD4C
       size: 14
       kind: Sprite
       sha256: 0823e2e88521b02e5e716d588207c4f79184017912693bafbf320b6661d9186d
     - name: gUnkUs_08B2556C
-      address: 145905004
+      address: 0x08B2556C
       size: 14
       kind: Sprite
       sha256: 952fa210a68805d1dbf01fa75585f9049e951709c3108de73bb1aa4d8a39c7f5
     - name: gUnkUs_08B2557C
-      address: 145905020
+      address: 0x08B2557C
       size: 8
       kind: Sprite
       sha256: 8731bdc1049771e5929e1e037257c55150dbc1c75bb4dd5e05194787fce16c3c
     - name: gUnkUs_08B25586
-      address: 145905030
+      address: 0x08B25586
       size: 8
       kind: Sprite
       sha256: ee9d55857724427210ed31d38e95caf019c7568a5787441bd69642d97779cd45
     - name: gUnkUs_08B25590
-      address: 145905040
+      address: 0x08B25590
       size: 8
       kind: Sprite
       sha256: a029e48284f4cc8e5230fd6f2b8213422bb96b77bb99a6dcd105051041b91eda
     - name: gUnkUs_08B2559A
-      address: 145905050
+      address: 0x08B2559A
       size: 14
       kind: Sprite
       sha256: 381eca6a8a34bc2edd6e0af02930844dc275a07070b01e93fcd1dded4f70fd1e
     - name: gUnkUs_08B255AA
-      address: 145905066
+      address: 0x08B255AA
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08B25A34
-      address: 145906228
+      address: 0x08B25A34
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkUs_08B25A3E
-      address: 145906238
+      address: 0x08B25A3E
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkUs_08B25A48
-      address: 145906248
+      address: 0x08B25A48
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkUs_08B25A52
-      address: 145906258
+      address: 0x08B25A52
       size: 8
       kind: Sprite
       sha256: edd48fc2269cb7ebc9dd4067948caf436461e546d975fa7018fbfb07c8050825
     - name: gUnkUs_08B25A5C
-      address: 145906268
+      address: 0x08B25A5C
       size: 8
       kind: Sprite
       sha256: 8aadf922afdb2ac12f56d3e209b7061925716f928bdfa409a1851622d7add208
     - name: gUnkUs_08B25A66
-      address: 145906278
+      address: 0x08B25A66
       size: 8
       kind: Sprite
       sha256: 0366f8a70c1634f25a8e20600524df984e83e372eb5659066484195e822918b0
     - name: gUnkUs_08B25A70
-      address: 145906288
+      address: 0x08B25A70
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkUs_08B25A7A
-      address: 145906298
+      address: 0x08B25A7A
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkUs_08B25A84
-      address: 145906308
+      address: 0x08B25A84
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkUs_08B25A8E
-      address: 145906318
+      address: 0x08B25A8E
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkUs_08B25A98
-      address: 145906328
+      address: 0x08B25A98
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkUs_08B25AA2
-      address: 145906338
+      address: 0x08B25AA2
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkUs_08B25AAC
-      address: 145906348
+      address: 0x08B25AAC
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkUs_08B25AB6
-      address: 145906358
+      address: 0x08B25AB6
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkUs_08B25AC0
-      address: 145906368
+      address: 0x08B25AC0
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkUs_08B25ACA
-      address: 145906378
+      address: 0x08B25ACA
       size: 8
       kind: Sprite
       sha256: bb3ed818eb03f05baa23c60a27b67d2b7c5cee4f99f9c36f9c82714b12a81d89
     - name: gUnkUs_08B25AD4
-      address: 145906388
+      address: 0x08B25AD4
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08B25E40
-      address: 145907264
+      address: 0x08B25E40
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkUs_08B25E4A
-      address: 145907274
+      address: 0x08B25E4A
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkUs_08B25E54
-      address: 145907284
+      address: 0x08B25E54
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkUs_08B25E5E
-      address: 145907294
+      address: 0x08B25E5E
       size: 14
       kind: Sprite
       sha256: ae9cb0299eb4f017b3a917f6b59ddefb550fb64839c48f59cd68905c2c1a9e12
     - name: gUnkUs_08B25E6E
-      address: 145907310
+      address: 0x08B25E6E
       size: 8
       kind: Sprite
       sha256: 0366f8a70c1634f25a8e20600524df984e83e372eb5659066484195e822918b0
     - name: gUnkUs_08B25E78
-      address: 145907320
+      address: 0x08B25E78
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkUs_08B25E82
-      address: 145907330
+      address: 0x08B25E82
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkUs_08B25E8C
-      address: 145907340
+      address: 0x08B25E8C
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkUs_08B25E96
-      address: 145907350
+      address: 0x08B25E96
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkUs_08B25EA0
-      address: 145907360
+      address: 0x08B25EA0
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkUs_08B25EAA
-      address: 145907370
+      address: 0x08B25EAA
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkUs_08B25EB4
-      address: 145907380
+      address: 0x08B25EB4
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkUs_08B25EBE
-      address: 145907390
+      address: 0x08B25EBE
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkUs_08B25EC8
-      address: 145907400
+      address: 0x08B25EC8
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkUs_08B25ED2
-      address: 145907410
+      address: 0x08B25ED2
       size: 8
       kind: Sprite
       sha256: 1c72312c0659f8ee0265bc5954b93f46d086776c53d8e7a8be1063153709b338
     - name: gUnkUs_08B25EDC
-      address: 145907420
+      address: 0x08B25EDC
       size: 8
       kind: Sprite
       sha256: 010649d3474141d64022c7506355962b70fa6621ce8051191c7eb4f188b760c8
     - name: gUnkUs_08B25EE6
-      address: 145907430
+      address: 0x08B25EE6
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08B26270
-      address: 145908336
+      address: 0x08B26270
       size: 20
       kind: Sprite
       sha256: 9e2cae857d3b7308b69450ed092b05f408ca232facd64662aaae483cbac1b82e
     - name: gUnkUs_08B26286
-      address: 145908358
+      address: 0x08B26286
       size: 20
       kind: Sprite
       sha256: 2ffa9a7929c234f1c409d76f94046dd85a9860d334547a9c911764ec3854a9a9
     - name: gUnkUs_08B2629C
-      address: 145908380
+      address: 0x08B2629C
       size: 20
       kind: Sprite
       sha256: e328b0fd32b455639e313185245ca533f3c78cea399ee09bd35526cc6554b6e4
     - name: gUnkUs_08B262B2
-      address: 145908402
+      address: 0x08B262B2
       size: 20
       kind: Sprite
       sha256: 51779e46507371a4dd9ff123d2532f618f2a56f94d6b70dd4e78735f0d188753
     - name: gUnkUs_08B262C8
-      address: 145908424
+      address: 0x08B262C8
       size: 20
       kind: Sprite
       sha256: 52d9dfe2337c1e5130a9884f8f63c1af8e53922e445a850ff5ee1c85806547fc
     - name: gUnkUs_08B262DE
-      address: 145908446
+      address: 0x08B262DE
       size: 20
       kind: Sprite
       sha256: ccb71eb3da24c17008875ed39ca29ba0dc59399f9c3a63104cda53abc36c503a
     - name: gUnkUs_08B262F4
-      address: 145908468
+      address: 0x08B262F4
       size: 20
       kind: Sprite
       sha256: ff37ff7fbaa2f5f1228d27b5a444338569157d52269f1e877da4c842340ce19e
     - name: gUnkUs_08B2630A
-      address: 145908490
+      address: 0x08B2630A
       size: 20
       kind: Sprite
       sha256: e22c637e97e1433d1dcbba44ffcc04537de5860281ee33f1850cc099c2b256c2
     - name: gUnkUs_08B26320
-      address: 145908512
+      address: 0x08B26320
       size: 20
       kind: Sprite
       sha256: 0eea0ce97b5ce8c2a3e8a67529824bf284690bb038327f51596459315e8a585b
     - name: gUnkUs_08B26336
-      address: 145908534
+      address: 0x08B26336
       size: 20
       kind: Sprite
       sha256: 641c7030b0686c029f05f2e2a950221e9017bd1694747a99a0ca9f6af09f57ce
     - name: gUnkUs_08B2634C
-      address: 145908556
+      address: 0x08B2634C
       size: 20
       kind: Sprite
       sha256: 16ab683f4ce1acef80be3e6100b467aa75a7a7934813a1ed3e86fdc02483090a
     - name: gUnkUs_08B26362
-      address: 145908578
+      address: 0x08B26362
       size: 20
       kind: Sprite
       sha256: e2ebdf0c7aee954c61977a8b73d4fe74c8c7eb37e762fad5d046718ccde270a3
     - name: gUnkUs_08B26378
-      address: 145908600
+      address: 0x08B26378
       size: 30
       kind: AnimHeader
       sha256: fc87d3ef4906c51648858622fa23bd0bf5faba47277b13aab0229b1e043b5bef
     - name: gUnkUs_08B26396
-      address: 145908630
+      address: 0x08B26396
       size: 30
       kind: AnimHeader
       sha256: 35b6e0bf72ba32fed28a06d8d1c8250bf70b7434e36adab8f5004dc2aaa9aeff
     - name: gUnkUs_08B263B4
-      address: 145908660
+      address: 0x08B263B4
       size: 30
       kind: AnimHeader
       sha256: 038102f7edf9d002c74db0dded002ef5a8e06dc4ca076b0130e86d566db1ae72
     - name: gUnkUs_08C665DC
-      address: 147219932
+      address: 0x08C665DC
       size: 20
       kind: Sprite
       sha256: a4c83d3e14e9be883b72afbea1f2f2d7e21ea210e3719e7dd955f5d00c6124e3
     - name: gUnkUs_08C665F2
-      address: 147219954
+      address: 0x08C665F2
       size: 20
       kind: Sprite
       sha256: 7e9498b242528b8e9da8fd588ca4430efd05114f8bb5dfcf52ba171baea926cd
     - name: gUnkUs_08C66608
-      address: 147219976
+      address: 0x08C66608
       size: 26
       kind: Sprite
       sha256: d8f22a8f719d9d62cfba16bb15a4a12faaf93ba0ddfdbaa55635f2aef52b140d
     - name: gUnkUs_08C66624
-      address: 147220004
+      address: 0x08C66624
       size: 26
       kind: Sprite
       sha256: c21600a23c6d398638a44d0aa5d34655c71f6ef994c7fac3ce287e20a4b0aed3
     - name: gUnkUs_08C66640
-      address: 147220032
+      address: 0x08C66640
       size: 20
       kind: Sprite
       sha256: 299419a82dd9cf7c22d4642f133a25c9b0d492f903f97c6b057db55e5d3049b0
     - name: gUnkUs_08C66656
-      address: 147220054
+      address: 0x08C66656
       size: 14
       kind: AnimHeader
       sha256: 71c7bbe36d2d27ae66ea332eebf77585fee075336f8bdf2427a49433afc76e5a
     - name: gUnkUs_08C66664
-      address: 147220068
+      address: 0x08C66664
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkUs_08C6666E
-      address: 147220078
+      address: 0x08C6666E
       size: 18
       kind: AnimHeader
       sha256: 8d8ce7e4be1f71a6cdcc08356d61ca94c514c2633d7dac59f46086d6e4f1da55
     - name: gUnkUs_08C66680
-      address: 147220096
+      address: 0x08C66680
       size: 14
       kind: AnimHeader
       sha256: 3fdb0dd019e47bc43982286dbf08d80c28b2a9222c7b905e185b9470efddfae6
     - name: gUnkUs_08C67F30
-      address: 147226416
+      address: 0x08C67F30
       size: 14
       kind: Sprite
       sha256: bde745688952e9a00b7c95ed61a6135d45a028543db142707dc6d3ee74e01d79
     - name: gUnkUs_08C67F40
-      address: 147226432
+      address: 0x08C67F40
       size: 14
       kind: Sprite
       sha256: 71efc304fb7269a9a17c5fdbfe7077d01db87dde72777edfde954103cd774528
     - name: gUnkUs_08C67F50
-      address: 147226448
+      address: 0x08C67F50
       size: 14
       kind: Sprite
       sha256: 16dcf6f37606c8871c90319752eb65ce0c932d98613bed86326b20ff949c79e9
     - name: gUnkUs_08C67F60
-      address: 147226464
+      address: 0x08C67F60
       size: 14
       kind: Sprite
       sha256: 45ae27051270a061f6b28a2ca5b94e14645319794e5304ea592e42c7ec8911d8
     - name: gUnkUs_08C67F70
-      address: 147226480
+      address: 0x08C67F70
       size: 22
       kind: AnimHeader
       sha256: 6ccee77892df39bdbca8dfa651b22c4268a802bebefddbff6600af125c004459
     - name: gUnkUs_08C69188
-      address: 147231112
+      address: 0x08C69188
       size: 14
       kind: Sprite
       sha256: 719fb25abceb5e594e7758d3e9d9a54d947f080cdb9d191e69f21ae719783b3a
     - name: gUnkUs_08C69198
-      address: 147231128
+      address: 0x08C69198
       size: 14
       kind: Sprite
       sha256: 666a13591ae875f1a7e9680eef17c8bc7f65b20bef9ddba15aaef6d0addd6878
     - name: gUnkUs_08C691A8
-      address: 147231144
+      address: 0x08C691A8
       size: 14
       kind: Sprite
       sha256: 2056cc986cc97fc9961d9c10f150a0819d8830f8f9fe8406c75dc51d91606954
     - name: gUnkUs_08C691B8
-      address: 147231160
+      address: 0x08C691B8
       size: 14
       kind: Sprite
       sha256: d3c9842854feda8d6f81ee1163144cc97d6a8ffe137b2c980ef4ab44f3563f3b
     - name: gUnkUs_08C691C8
-      address: 147231176
+      address: 0x08C691C8
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C691D2
-      address: 147231186
+      address: 0x08C691D2
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkUs_08C691DC
-      address: 147231196
+      address: 0x08C691DC
       size: 10
       kind: AnimHeader
       sha256: 5168569454a35b6b2c06fbd8d4eb1a8e2f7f5ac80bbd835965ef356e322533c7
     - name: gUnkUs_08C691E6
-      address: 147231206
+      address: 0x08C691E6
       size: 30
       kind: AnimHeader
       sha256: c3ca703896918b79d688b4a35ec05a440752d792475c53aa303226d0f6e92d0b
     - name: gUnkUs_08C69C04
-      address: 147233796
+      address: 0x08C69C04
       size: 26
       kind: Sprite
       sha256: 9b301ddec8f068b3dabde741a92a6d97abc5deaba494ad96ca477ee3456f961f
     - name: gUnkUs_08C69C20
-      address: 147233824
+      address: 0x08C69C20
       size: 50
       kind: Sprite
       sha256: 6fcc928db240c7d81fdab65b555f9152bac19c0d318beccd504801d91eac06cd
     - name: gUnkUs_08C69C54
-      address: 147233876
+      address: 0x08C69C54
       size: 32
       kind: Sprite
       sha256: 59734a293cba973a5b6aa06c94421ba97e8b0e66e8880c0caad32c7c10a563e2
     - name: gUnkUs_08C69C76
-      address: 147233910
+      address: 0x08C69C76
       size: 26
       kind: Sprite
       sha256: 0607ca799e0cd9255cab3184265370e397d033c0d55b923ed5270c4ca8c5f85d
     - name: gUnkUs_08C69C92
-      address: 147233938
+      address: 0x08C69C92
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C6A51C
-      address: 147236124
+      address: 0x08C6A51C
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkUs_08C6A526
-      address: 147236134
+      address: 0x08C6A526
       size: 8
       kind: Sprite
       sha256: f9d10b77126ab15bc3488ce712403813f59b1dc4781f4cf22bef2feacd0a2868
     - name: gUnkUs_08C6A530
-      address: 147236144
+      address: 0x08C6A530
       size: 8
       kind: Sprite
       sha256: e4a6d2dc3ea85d1ed044a1a24d71db5b12956aa58e12b2bde04bb67bdc360c61
     - name: gUnkUs_08C6A53A
-      address: 147236154
+      address: 0x08C6A53A
       size: 8
       kind: Sprite
       sha256: 25046c8b65fe8308785848aad126b76d6677d5956889ef6e8d86d3943abf8417
     - name: gUnkUs_08C6A544
-      address: 147236164
+      address: 0x08C6A544
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C6A690
-      address: 147236496
+      address: 0x08C6A690
       size: 8
       kind: Sprite
       sha256: 578d98b73032f3e2b65020e01d91f350615488a258a9e880297e9205c2d2166c
     - name: gUnkUs_08C6A69A
-      address: 147236506
+      address: 0x08C6A69A
       size: 8
       kind: Sprite
       sha256: 0a8c0c7ce3cc5099f876889694090797d476ef818f3055c0140c916a5955d9fc
     - name: gUnkUs_08C6A6A4
-      address: 147236516
+      address: 0x08C6A6A4
       size: 8
       kind: Sprite
       sha256: 015e20f30c5ce20e18d968d99623ca489fb493f86e7fba1e21cf56e9a1a9ab1d
     - name: gUnkUs_08C6A6AE
-      address: 147236526
+      address: 0x08C6A6AE
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C6A878
-      address: 147236984
+      address: 0x08C6A878
       size: 8
       kind: Sprite
       sha256: da72316eb7151483ab8bda3a0ab57bd2b806e0ae037aed224968abd3bc71d6f4
     - name: gUnkUs_08C6A882
-      address: 147236994
+      address: 0x08C6A882
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C6A8CC
-      address: 147237068
+      address: 0x08C6A8CC
       size: 20
       kind: Sprite
       sha256: 39232b53026769bde8dd27f53c3e76a85899cff978675f37dde50d2e47c486ca
     - name: gUnkUs_08C6A8E2
-      address: 147237090
+      address: 0x08C6A8E2
       size: 20
       kind: Sprite
       sha256: d0efbf03824c2dcbbb6f7e1f97c2c3b337a884aa3bdd124ec03d7daf4e06f17d
     - name: gUnkUs_08C6A8F8
-      address: 147237112
+      address: 0x08C6A8F8
       size: 20
       kind: Sprite
       sha256: 0e940058331c189deed9f53459f53989a5e23286d620e229182d36024993be75
     - name: gUnkUs_08C6A90E
-      address: 147237134
+      address: 0x08C6A90E
       size: 20
       kind: Sprite
       sha256: 0bdb3d52c1ed052114431900f0445f70e3ac7f475c4efc33a31579981de943f1
     - name: gUnkUs_08C6A924
-      address: 147237156
+      address: 0x08C6A924
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkUs_08C6A92A
-      address: 147237162
+      address: 0x08C6A92A
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkUs_08C6A930
-      address: 147237168
+      address: 0x08C6A930
       size: 30
       kind: AnimHeader
       sha256: c02066bb84aedb33b98e1dea69bc1bb26d80a1aa419e8f1ca159a54bc769d90b
     - name: gUnkUs_08C6A94E
-      address: 147237198
+      address: 0x08C6A94E
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkUs_08C6AA58
-      address: 147237464
+      address: 0x08C6AA58
       size: 26
       kind: Sprite
       sha256: 41e73fda43bcc3fa415a5b7763a9cac1c52c0a7fa3f44460ba076d8b538e694a
     - name: gUnkUs_08C6AA74
-      address: 147237492
+      address: 0x08C6AA74
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
   jp:
     binary_assets:
     - name: gUnkJp_08B11F5C
-      address: 145825628
+      address: 0x08B11F5C
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkJp_08B11F66
-      address: 145825638
+      address: 0x08B11F66
       size: 8
       kind: Sprite
       sha256: 509ba32e08c97173005bc27b586629252fbf6f2b74ca86c72de26da481becd2b
     - name: gUnkJp_08B11F70
-      address: 145825648
+      address: 0x08B11F70
       size: 8
       kind: Sprite
       sha256: 5cc2140b0187fb8fbdb39718517fff668cdcefba0570d4624b4177e8e3109e52
     - name: gUnkJp_08B11F7A
-      address: 145825658
+      address: 0x08B11F7A
       size: 8
       kind: Sprite
       sha256: 67b3b8459f8f7c5863f410d7427d635feb85bc17671e548f4a63fb387d764fef
     - name: gUnkJp_08B11F84
-      address: 145825668
+      address: 0x08B11F84
       size: 8
       kind: Sprite
       sha256: dfa88a6d691fe017333c28be28a6f443ed185787b9ad1caf43d42b65c9b556c1
     - name: gUnkJp_08B11F8E
-      address: 145825678
+      address: 0x08B11F8E
       size: 8
       kind: Sprite
       sha256: 36370c83b34e0008260283f2ea9c29b38a01522aa1864e6a2670338852df76ce
     - name: gUnkJp_08B132A4
-      address: 145830564
+      address: 0x08B132A4
       size: 14
       kind: Sprite
       sha256: 2607bb6141ba487314c8605a0051b83ea59a23cfb9e5e0d23517373866186ebf
     - name: gUnkJp_08B132B4
-      address: 145830580
+      address: 0x08B132B4
       size: 14
       kind: Sprite
       sha256: 483d0f8c019d71cbabf645d5161f5edb71ffc2dcf256f703b0ee53a54e8adf4c
     - name: gUnkJp_08B132C4
-      address: 145830596
+      address: 0x08B132C4
       size: 14
       kind: Sprite
       sha256: 4a8ba86bd59374cd497c011bb322fb877f47d6677e665b68253abb8e6a08840f
     - name: gUnkJp_08B132D4
-      address: 145830612
+      address: 0x08B132D4
       size: 14
       kind: Sprite
       sha256: 4e8e62777180bd917419253352313f15529f1c1720f4db9c19e82f11738f446d
     - name: gUnkJp_08B132E4
-      address: 145830628
+      address: 0x08B132E4
       size: 14
       kind: Sprite
       sha256: 848676a0a8b8acfd812cbd5eb1efef6aec5cd6e0490b65eba8c9c339776d8142
     - name: gUnkJp_08B132F4
-      address: 145830644
+      address: 0x08B132F4
       size: 14
       kind: Sprite
       sha256: ccc4537515770c37e156ac5df59dc55c82d064546e895a2ed21cdfa1c8128383
     - name: gUnkJp_08B13304
-      address: 145830660
+      address: 0x08B13304
       size: 14
       kind: Sprite
       sha256: d8a2067db3ed10acc0f9963d77ef3b09a14902c57f8c639fa55c107d581f0281
     - name: gUnkJp_08B13314
-      address: 145830676
+      address: 0x08B13314
       size: 14
       kind: Sprite
       sha256: 2381af357e0228a2034db2115d73f524107c02f4fc558a602ecc82109b757366
     - name: gUnkJp_08B13324
-      address: 145830692
+      address: 0x08B13324
       size: 14
       kind: Sprite
       sha256: 964fbc4d2dfe5f3f4f660a22c225820c2f7c56c2cf9443f5a1b83221d113e030
     - name: gUnkJp_08B13334
-      address: 145830708
+      address: 0x08B13334
       size: 14
       kind: Sprite
       sha256: 0823e2e88521b02e5e716d588207c4f79184017912693bafbf320b6661d9186d
     - name: gUnkJp_08B18B54
-      address: 145853268
+      address: 0x08B18B54
       size: 14
       kind: Sprite
       sha256: 952fa210a68805d1dbf01fa75585f9049e951709c3108de73bb1aa4d8a39c7f5
     - name: gUnkJp_08B18B64
-      address: 145853284
+      address: 0x08B18B64
       size: 8
       kind: Sprite
       sha256: 8731bdc1049771e5929e1e037257c55150dbc1c75bb4dd5e05194787fce16c3c
     - name: gUnkJp_08B18B6E
-      address: 145853294
+      address: 0x08B18B6E
       size: 8
       kind: Sprite
       sha256: ee9d55857724427210ed31d38e95caf019c7568a5787441bd69642d97779cd45
     - name: gUnkJp_08B18B78
-      address: 145853304
+      address: 0x08B18B78
       size: 8
       kind: Sprite
       sha256: a029e48284f4cc8e5230fd6f2b8213422bb96b77bb99a6dcd105051041b91eda
     - name: gUnkJp_08B18B82
-      address: 145853314
+      address: 0x08B18B82
       size: 14
       kind: Sprite
       sha256: 381eca6a8a34bc2edd6e0af02930844dc275a07070b01e93fcd1dded4f70fd1e
     - name: gUnkJp_08B18B92
-      address: 145853330
+      address: 0x08B18B92
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08B1901C
-      address: 145854492
+      address: 0x08B1901C
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkJp_08B19026
-      address: 145854502
+      address: 0x08B19026
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkJp_08B19030
-      address: 145854512
+      address: 0x08B19030
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkJp_08B1903A
-      address: 145854522
+      address: 0x08B1903A
       size: 8
       kind: Sprite
       sha256: edd48fc2269cb7ebc9dd4067948caf436461e546d975fa7018fbfb07c8050825
     - name: gUnkJp_08B19044
-      address: 145854532
+      address: 0x08B19044
       size: 8
       kind: Sprite
       sha256: 8aadf922afdb2ac12f56d3e209b7061925716f928bdfa409a1851622d7add208
     - name: gUnkJp_08B1904E
-      address: 145854542
+      address: 0x08B1904E
       size: 8
       kind: Sprite
       sha256: 0366f8a70c1634f25a8e20600524df984e83e372eb5659066484195e822918b0
     - name: gUnkJp_08B19058
-      address: 145854552
+      address: 0x08B19058
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkJp_08B19062
-      address: 145854562
+      address: 0x08B19062
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkJp_08B1906C
-      address: 145854572
+      address: 0x08B1906C
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkJp_08B19076
-      address: 145854582
+      address: 0x08B19076
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkJp_08B19080
-      address: 145854592
+      address: 0x08B19080
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkJp_08B1908A
-      address: 145854602
+      address: 0x08B1908A
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkJp_08B19094
-      address: 145854612
+      address: 0x08B19094
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkJp_08B1909E
-      address: 145854622
+      address: 0x08B1909E
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkJp_08B190A8
-      address: 145854632
+      address: 0x08B190A8
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkJp_08B190B2
-      address: 145854642
+      address: 0x08B190B2
       size: 8
       kind: Sprite
       sha256: bb3ed818eb03f05baa23c60a27b67d2b7c5cee4f99f9c36f9c82714b12a81d89
     - name: gUnkJp_08B190BC
-      address: 145854652
+      address: 0x08B190BC
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08B19428
-      address: 145855528
+      address: 0x08B19428
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkJp_08B19432
-      address: 145855538
+      address: 0x08B19432
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkJp_08B1943C
-      address: 145855548
+      address: 0x08B1943C
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkJp_08B19446
-      address: 145855558
+      address: 0x08B19446
       size: 14
       kind: Sprite
       sha256: ae9cb0299eb4f017b3a917f6b59ddefb550fb64839c48f59cd68905c2c1a9e12
     - name: gUnkJp_08B19456
-      address: 145855574
+      address: 0x08B19456
       size: 8
       kind: Sprite
       sha256: 0366f8a70c1634f25a8e20600524df984e83e372eb5659066484195e822918b0
     - name: gUnkJp_08B19460
-      address: 145855584
+      address: 0x08B19460
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkJp_08B1946A
-      address: 145855594
+      address: 0x08B1946A
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkJp_08B19474
-      address: 145855604
+      address: 0x08B19474
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkJp_08B1947E
-      address: 145855614
+      address: 0x08B1947E
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkJp_08B19488
-      address: 145855624
+      address: 0x08B19488
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkJp_08B19492
-      address: 145855634
+      address: 0x08B19492
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkJp_08B1949C
-      address: 145855644
+      address: 0x08B1949C
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkJp_08B194A6
-      address: 145855654
+      address: 0x08B194A6
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkJp_08B194B0
-      address: 145855664
+      address: 0x08B194B0
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkJp_08B194BA
-      address: 145855674
+      address: 0x08B194BA
       size: 8
       kind: Sprite
       sha256: 1c72312c0659f8ee0265bc5954b93f46d086776c53d8e7a8be1063153709b338
     - name: gUnkJp_08B194C4
-      address: 145855684
+      address: 0x08B194C4
       size: 8
       kind: Sprite
       sha256: 010649d3474141d64022c7506355962b70fa6621ce8051191c7eb4f188b760c8
     - name: gUnkJp_08B194CE
-      address: 145855694
+      address: 0x08B194CE
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08B19858
-      address: 145856600
+      address: 0x08B19858
       size: 20
       kind: Sprite
       sha256: 9e2cae857d3b7308b69450ed092b05f408ca232facd64662aaae483cbac1b82e
     - name: gUnkJp_08B1986E
-      address: 145856622
+      address: 0x08B1986E
       size: 20
       kind: Sprite
       sha256: 2ffa9a7929c234f1c409d76f94046dd85a9860d334547a9c911764ec3854a9a9
     - name: gUnkJp_08B19884
-      address: 145856644
+      address: 0x08B19884
       size: 20
       kind: Sprite
       sha256: e328b0fd32b455639e313185245ca533f3c78cea399ee09bd35526cc6554b6e4
     - name: gUnkJp_08B1989A
-      address: 145856666
+      address: 0x08B1989A
       size: 20
       kind: Sprite
       sha256: 51779e46507371a4dd9ff123d2532f618f2a56f94d6b70dd4e78735f0d188753
     - name: gUnkJp_08B198B0
-      address: 145856688
+      address: 0x08B198B0
       size: 20
       kind: Sprite
       sha256: 52d9dfe2337c1e5130a9884f8f63c1af8e53922e445a850ff5ee1c85806547fc
     - name: gUnkJp_08B198C6
-      address: 145856710
+      address: 0x08B198C6
       size: 20
       kind: Sprite
       sha256: ccb71eb3da24c17008875ed39ca29ba0dc59399f9c3a63104cda53abc36c503a
     - name: gUnkJp_08B198DC
-      address: 145856732
+      address: 0x08B198DC
       size: 20
       kind: Sprite
       sha256: ff37ff7fbaa2f5f1228d27b5a444338569157d52269f1e877da4c842340ce19e
     - name: gUnkJp_08B198F2
-      address: 145856754
+      address: 0x08B198F2
       size: 20
       kind: Sprite
       sha256: e22c637e97e1433d1dcbba44ffcc04537de5860281ee33f1850cc099c2b256c2
     - name: gUnkJp_08B19908
-      address: 145856776
+      address: 0x08B19908
       size: 20
       kind: Sprite
       sha256: 0eea0ce97b5ce8c2a3e8a67529824bf284690bb038327f51596459315e8a585b
     - name: gUnkJp_08B1991E
-      address: 145856798
+      address: 0x08B1991E
       size: 20
       kind: Sprite
       sha256: 641c7030b0686c029f05f2e2a950221e9017bd1694747a99a0ca9f6af09f57ce
     - name: gUnkJp_08B19934
-      address: 145856820
+      address: 0x08B19934
       size: 20
       kind: Sprite
       sha256: 16ab683f4ce1acef80be3e6100b467aa75a7a7934813a1ed3e86fdc02483090a
     - name: gUnkJp_08B1994A
-      address: 145856842
+      address: 0x08B1994A
       size: 20
       kind: Sprite
       sha256: e2ebdf0c7aee954c61977a8b73d4fe74c8c7eb37e762fad5d046718ccde270a3
     - name: gUnkJp_08B19960
-      address: 145856864
+      address: 0x08B19960
       size: 30
       kind: AnimHeader
       sha256: fc87d3ef4906c51648858622fa23bd0bf5faba47277b13aab0229b1e043b5bef
     - name: gUnkJp_08B1997E
-      address: 145856894
+      address: 0x08B1997E
       size: 30
       kind: AnimHeader
       sha256: 35b6e0bf72ba32fed28a06d8d1c8250bf70b7434e36adab8f5004dc2aaa9aeff
     - name: gUnkJp_08B1999C
-      address: 145856924
+      address: 0x08B1999C
       size: 30
       kind: AnimHeader
       sha256: 038102f7edf9d002c74db0dded002ef5a8e06dc4ca076b0130e86d566db1ae72
     - name: gUnkJp_08C59BC4
-      address: 147168196
+      address: 0x08C59BC4
       size: 20
       kind: Sprite
       sha256: a4c83d3e14e9be883b72afbea1f2f2d7e21ea210e3719e7dd955f5d00c6124e3
     - name: gUnkJp_08C59BDA
-      address: 147168218
+      address: 0x08C59BDA
       size: 20
       kind: Sprite
       sha256: 7e9498b242528b8e9da8fd588ca4430efd05114f8bb5dfcf52ba171baea926cd
     - name: gUnkJp_08C59BF0
-      address: 147168240
+      address: 0x08C59BF0
       size: 26
       kind: Sprite
       sha256: d8f22a8f719d9d62cfba16bb15a4a12faaf93ba0ddfdbaa55635f2aef52b140d
     - name: gUnkJp_08C59C0C
-      address: 147168268
+      address: 0x08C59C0C
       size: 26
       kind: Sprite
       sha256: c21600a23c6d398638a44d0aa5d34655c71f6ef994c7fac3ce287e20a4b0aed3
     - name: gUnkJp_08C59C28
-      address: 147168296
+      address: 0x08C59C28
       size: 20
       kind: Sprite
       sha256: 299419a82dd9cf7c22d4642f133a25c9b0d492f903f97c6b057db55e5d3049b0
     - name: gUnkJp_08C59C3E
-      address: 147168318
+      address: 0x08C59C3E
       size: 14
       kind: AnimHeader
       sha256: 71c7bbe36d2d27ae66ea332eebf77585fee075336f8bdf2427a49433afc76e5a
     - name: gUnkJp_08C59C4C
-      address: 147168332
+      address: 0x08C59C4C
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkJp_08C59C56
-      address: 147168342
+      address: 0x08C59C56
       size: 18
       kind: AnimHeader
       sha256: 8d8ce7e4be1f71a6cdcc08356d61ca94c514c2633d7dac59f46086d6e4f1da55
     - name: gUnkJp_08C59C68
-      address: 147168360
+      address: 0x08C59C68
       size: 14
       kind: AnimHeader
       sha256: 3fdb0dd019e47bc43982286dbf08d80c28b2a9222c7b905e185b9470efddfae6
     - name: gUnkJp_08C5B518
-      address: 147174680
+      address: 0x08C5B518
       size: 14
       kind: Sprite
       sha256: bde745688952e9a00b7c95ed61a6135d45a028543db142707dc6d3ee74e01d79
     - name: gUnkJp_08C5B528
-      address: 147174696
+      address: 0x08C5B528
       size: 14
       kind: Sprite
       sha256: 71efc304fb7269a9a17c5fdbfe7077d01db87dde72777edfde954103cd774528
     - name: gUnkJp_08C5B538
-      address: 147174712
+      address: 0x08C5B538
       size: 14
       kind: Sprite
       sha256: 16dcf6f37606c8871c90319752eb65ce0c932d98613bed86326b20ff949c79e9
     - name: gUnkJp_08C5B548
-      address: 147174728
+      address: 0x08C5B548
       size: 14
       kind: Sprite
       sha256: 45ae27051270a061f6b28a2ca5b94e14645319794e5304ea592e42c7ec8911d8
     - name: gUnkJp_08C5B558
-      address: 147174744
+      address: 0x08C5B558
       size: 22
       kind: AnimHeader
       sha256: 6ccee77892df39bdbca8dfa651b22c4268a802bebefddbff6600af125c004459
     - name: gUnkJp_08C5C770
-      address: 147179376
+      address: 0x08C5C770
       size: 14
       kind: Sprite
       sha256: 719fb25abceb5e594e7758d3e9d9a54d947f080cdb9d191e69f21ae719783b3a
     - name: gUnkJp_08C5C780
-      address: 147179392
+      address: 0x08C5C780
       size: 14
       kind: Sprite
       sha256: 666a13591ae875f1a7e9680eef17c8bc7f65b20bef9ddba15aaef6d0addd6878
     - name: gUnkJp_08C5C790
-      address: 147179408
+      address: 0x08C5C790
       size: 14
       kind: Sprite
       sha256: 2056cc986cc97fc9961d9c10f150a0819d8830f8f9fe8406c75dc51d91606954
     - name: gUnkJp_08C5C7A0
-      address: 147179424
+      address: 0x08C5C7A0
       size: 14
       kind: Sprite
       sha256: d3c9842854feda8d6f81ee1163144cc97d6a8ffe137b2c980ef4ab44f3563f3b
     - name: gUnkJp_08C5C7B0
-      address: 147179440
+      address: 0x08C5C7B0
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5C7BA
-      address: 147179450
+      address: 0x08C5C7BA
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkJp_08C5C7C4
-      address: 147179460
+      address: 0x08C5C7C4
       size: 10
       kind: AnimHeader
       sha256: 5168569454a35b6b2c06fbd8d4eb1a8e2f7f5ac80bbd835965ef356e322533c7
     - name: gUnkJp_08C5C7CE
-      address: 147179470
+      address: 0x08C5C7CE
       size: 30
       kind: AnimHeader
       sha256: c3ca703896918b79d688b4a35ec05a440752d792475c53aa303226d0f6e92d0b
     - name: gUnkJp_08C5D1EC
-      address: 147182060
+      address: 0x08C5D1EC
       size: 26
       kind: Sprite
       sha256: 9b301ddec8f068b3dabde741a92a6d97abc5deaba494ad96ca477ee3456f961f
     - name: gUnkJp_08C5D208
-      address: 147182088
+      address: 0x08C5D208
       size: 50
       kind: Sprite
       sha256: 6fcc928db240c7d81fdab65b555f9152bac19c0d318beccd504801d91eac06cd
     - name: gUnkJp_08C5D23C
-      address: 147182140
+      address: 0x08C5D23C
       size: 32
       kind: Sprite
       sha256: 59734a293cba973a5b6aa06c94421ba97e8b0e66e8880c0caad32c7c10a563e2
     - name: gUnkJp_08C5D25E
-      address: 147182174
+      address: 0x08C5D25E
       size: 26
       kind: Sprite
       sha256: 0607ca799e0cd9255cab3184265370e397d033c0d55b923ed5270c4ca8c5f85d
     - name: gUnkJp_08C5D27A
-      address: 147182202
+      address: 0x08C5D27A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5DB04
-      address: 147184388
+      address: 0x08C5DB04
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkJp_08C5DB0E
-      address: 147184398
+      address: 0x08C5DB0E
       size: 8
       kind: Sprite
       sha256: f9d10b77126ab15bc3488ce712403813f59b1dc4781f4cf22bef2feacd0a2868
     - name: gUnkJp_08C5DB18
-      address: 147184408
+      address: 0x08C5DB18
       size: 8
       kind: Sprite
       sha256: e4a6d2dc3ea85d1ed044a1a24d71db5b12956aa58e12b2bde04bb67bdc360c61
     - name: gUnkJp_08C5DB22
-      address: 147184418
+      address: 0x08C5DB22
       size: 8
       kind: Sprite
       sha256: 25046c8b65fe8308785848aad126b76d6677d5956889ef6e8d86d3943abf8417
     - name: gUnkJp_08C5DB2C
-      address: 147184428
+      address: 0x08C5DB2C
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5DC78
-      address: 147184760
+      address: 0x08C5DC78
       size: 8
       kind: Sprite
       sha256: 578d98b73032f3e2b65020e01d91f350615488a258a9e880297e9205c2d2166c
     - name: gUnkJp_08C5DC82
-      address: 147184770
+      address: 0x08C5DC82
       size: 8
       kind: Sprite
       sha256: 0a8c0c7ce3cc5099f876889694090797d476ef818f3055c0140c916a5955d9fc
     - name: gUnkJp_08C5DC8C
-      address: 147184780
+      address: 0x08C5DC8C
       size: 8
       kind: Sprite
       sha256: 015e20f30c5ce20e18d968d99623ca489fb493f86e7fba1e21cf56e9a1a9ab1d
     - name: gUnkJp_08C5DC96
-      address: 147184790
+      address: 0x08C5DC96
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5DE60
-      address: 147185248
+      address: 0x08C5DE60
       size: 8
       kind: Sprite
       sha256: da72316eb7151483ab8bda3a0ab57bd2b806e0ae037aed224968abd3bc71d6f4
     - name: gUnkJp_08C5DE6A
-      address: 147185258
+      address: 0x08C5DE6A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5DEB4
-      address: 147185332
+      address: 0x08C5DEB4
       size: 20
       kind: Sprite
       sha256: 39232b53026769bde8dd27f53c3e76a85899cff978675f37dde50d2e47c486ca
     - name: gUnkJp_08C5DECA
-      address: 147185354
+      address: 0x08C5DECA
       size: 20
       kind: Sprite
       sha256: d0efbf03824c2dcbbb6f7e1f97c2c3b337a884aa3bdd124ec03d7daf4e06f17d
     - name: gUnkJp_08C5DEE0
-      address: 147185376
+      address: 0x08C5DEE0
       size: 20
       kind: Sprite
       sha256: 0e940058331c189deed9f53459f53989a5e23286d620e229182d36024993be75
     - name: gUnkJp_08C5DEF6
-      address: 147185398
+      address: 0x08C5DEF6
       size: 20
       kind: Sprite
       sha256: 0bdb3d52c1ed052114431900f0445f70e3ac7f475c4efc33a31579981de943f1
     - name: gUnkJp_08C5DF0C
-      address: 147185420
+      address: 0x08C5DF0C
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkJp_08C5DF12
-      address: 147185426
+      address: 0x08C5DF12
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkJp_08C5DF18
-      address: 147185432
+      address: 0x08C5DF18
       size: 30
       kind: AnimHeader
       sha256: c02066bb84aedb33b98e1dea69bc1bb26d80a1aa419e8f1ca159a54bc769d90b
     - name: gUnkJp_08C5DF36
-      address: 147185462
+      address: 0x08C5DF36
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkJp_08C5E040
-      address: 147185728
+      address: 0x08C5E040
       size: 26
       kind: Sprite
       sha256: 41e73fda43bcc3fa415a5b7763a9cac1c52c0a7fa3f44460ba076d8b538e694a
     - name: gUnkJp_08C5E05C
-      address: 147185756
+      address: 0x08C5E05C
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
   eu:
     binary_assets:
     - name: gUnkEu_08B4A298
-      address: 146055832
+      address: 0x08B4A298
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkEu_08B4A2A2
-      address: 146055842
+      address: 0x08B4A2A2
       size: 8
       kind: Sprite
       sha256: 509ba32e08c97173005bc27b586629252fbf6f2b74ca86c72de26da481becd2b
     - name: gUnkEu_08B4A2AC
-      address: 146055852
+      address: 0x08B4A2AC
       size: 8
       kind: Sprite
       sha256: 5cc2140b0187fb8fbdb39718517fff668cdcefba0570d4624b4177e8e3109e52
     - name: gUnkEu_08B4A2B6
-      address: 146055862
+      address: 0x08B4A2B6
       size: 8
       kind: Sprite
       sha256: 67b3b8459f8f7c5863f410d7427d635feb85bc17671e548f4a63fb387d764fef
     - name: gUnkEu_08B4A2C0
-      address: 146055872
+      address: 0x08B4A2C0
       size: 8
       kind: Sprite
       sha256: dfa88a6d691fe017333c28be28a6f443ed185787b9ad1caf43d42b65c9b556c1
     - name: gUnkEu_08B4A2CA
-      address: 146055882
+      address: 0x08B4A2CA
       size: 8
       kind: Sprite
       sha256: 36370c83b34e0008260283f2ea9c29b38a01522aa1864e6a2670338852df76ce
     - name: gUnkEu_08B4FB78
-      address: 146078584
+      address: 0x08B4FB78
       size: 14
       kind: Sprite
       sha256: 952fa210a68805d1dbf01fa75585f9049e951709c3108de73bb1aa4d8a39c7f5
     - name: gUnkEu_08B4FB88
-      address: 146078600
+      address: 0x08B4FB88
       size: 8
       kind: Sprite
       sha256: 8731bdc1049771e5929e1e037257c55150dbc1c75bb4dd5e05194787fce16c3c
     - name: gUnkEu_08B4FB92
-      address: 146078610
+      address: 0x08B4FB92
       size: 8
       kind: Sprite
       sha256: ee9d55857724427210ed31d38e95caf019c7568a5787441bd69642d97779cd45
     - name: gUnkEu_08B4FB9C
-      address: 146078620
+      address: 0x08B4FB9C
       size: 8
       kind: Sprite
       sha256: a029e48284f4cc8e5230fd6f2b8213422bb96b77bb99a6dcd105051041b91eda
     - name: gUnkEu_08B4FBA6
-      address: 146078630
+      address: 0x08B4FBA6
       size: 14
       kind: Sprite
       sha256: 381eca6a8a34bc2edd6e0af02930844dc275a07070b01e93fcd1dded4f70fd1e
     - name: gUnkEu_08B4FBB6
-      address: 146078646
+      address: 0x08B4FBB6
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B50040
-      address: 146079808
+      address: 0x08B50040
       size: 20
       kind: Sprite
       sha256: 9e2cae857d3b7308b69450ed092b05f408ca232facd64662aaae483cbac1b82e
     - name: gUnkEu_08B50056
-      address: 146079830
+      address: 0x08B50056
       size: 20
       kind: Sprite
       sha256: 2ffa9a7929c234f1c409d76f94046dd85a9860d334547a9c911764ec3854a9a9
     - name: gUnkEu_08B5006C
-      address: 146079852
+      address: 0x08B5006C
       size: 20
       kind: Sprite
       sha256: e328b0fd32b455639e313185245ca533f3c78cea399ee09bd35526cc6554b6e4
     - name: gUnkEu_08B50082
-      address: 146079874
+      address: 0x08B50082
       size: 20
       kind: Sprite
       sha256: 51779e46507371a4dd9ff123d2532f618f2a56f94d6b70dd4e78735f0d188753
     - name: gUnkEu_08B50098
-      address: 146079896
+      address: 0x08B50098
       size: 20
       kind: Sprite
       sha256: 52d9dfe2337c1e5130a9884f8f63c1af8e53922e445a850ff5ee1c85806547fc
     - name: gUnkEu_08B500AE
-      address: 146079918
+      address: 0x08B500AE
       size: 20
       kind: Sprite
       sha256: ccb71eb3da24c17008875ed39ca29ba0dc59399f9c3a63104cda53abc36c503a
     - name: gUnkEu_08B500C4
-      address: 146079940
+      address: 0x08B500C4
       size: 20
       kind: Sprite
       sha256: ff37ff7fbaa2f5f1228d27b5a444338569157d52269f1e877da4c842340ce19e
     - name: gUnkEu_08B500DA
-      address: 146079962
+      address: 0x08B500DA
       size: 20
       kind: Sprite
       sha256: e22c637e97e1433d1dcbba44ffcc04537de5860281ee33f1850cc099c2b256c2
     - name: gUnkEu_08B500F0
-      address: 146079984
+      address: 0x08B500F0
       size: 20
       kind: Sprite
       sha256: 0eea0ce97b5ce8c2a3e8a67529824bf284690bb038327f51596459315e8a585b
     - name: gUnkEu_08B50106
-      address: 146080006
+      address: 0x08B50106
       size: 20
       kind: Sprite
       sha256: 641c7030b0686c029f05f2e2a950221e9017bd1694747a99a0ca9f6af09f57ce
     - name: gUnkEu_08B5011C
-      address: 146080028
+      address: 0x08B5011C
       size: 20
       kind: Sprite
       sha256: 16ab683f4ce1acef80be3e6100b467aa75a7a7934813a1ed3e86fdc02483090a
     - name: gUnkEu_08B50132
-      address: 146080050
+      address: 0x08B50132
       size: 20
       kind: Sprite
       sha256: e2ebdf0c7aee954c61977a8b73d4fe74c8c7eb37e762fad5d046718ccde270a3
     - name: gUnkEu_08B50148
-      address: 146080072
+      address: 0x08B50148
       size: 30
       kind: AnimHeader
       sha256: fc87d3ef4906c51648858622fa23bd0bf5faba47277b13aab0229b1e043b5bef
     - name: gUnkEu_08B50166
-      address: 146080102
+      address: 0x08B50166
       size: 30
       kind: AnimHeader
       sha256: 35b6e0bf72ba32fed28a06d8d1c8250bf70b7434e36adab8f5004dc2aaa9aeff
     - name: gUnkEu_08B50184
-      address: 146080132
+      address: 0x08B50184
       size: 30
       kind: AnimHeader
       sha256: 038102f7edf9d002c74db0dded002ef5a8e06dc4ca076b0130e86d566db1ae72
     - name: gUnkEu_08B50624
-      address: 146081316
+      address: 0x08B50624
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkEu_08B5062E
-      address: 146081326
+      address: 0x08B5062E
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkEu_08B50638
-      address: 146081336
+      address: 0x08B50638
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkEu_08B50642
-      address: 146081346
+      address: 0x08B50642
       size: 8
       kind: Sprite
       sha256: edd48fc2269cb7ebc9dd4067948caf436461e546d975fa7018fbfb07c8050825
     - name: gUnkEu_08B5064C
-      address: 146081356
+      address: 0x08B5064C
       size: 8
       kind: Sprite
       sha256: 8aadf922afdb2ac12f56d3e209b7061925716f928bdfa409a1851622d7add208
     - name: gUnkEu_08B50656
-      address: 146081366
+      address: 0x08B50656
       size: 8
       kind: Sprite
       sha256: 0366f8a70c1634f25a8e20600524df984e83e372eb5659066484195e822918b0
     - name: gUnkEu_08B50660
-      address: 146081376
+      address: 0x08B50660
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkEu_08B5066A
-      address: 146081386
+      address: 0x08B5066A
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkEu_08B50674
-      address: 146081396
+      address: 0x08B50674
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkEu_08B5067E
-      address: 146081406
+      address: 0x08B5067E
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkEu_08B50688
-      address: 146081416
+      address: 0x08B50688
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkEu_08B50692
-      address: 146081426
+      address: 0x08B50692
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkEu_08B5069C
-      address: 146081436
+      address: 0x08B5069C
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkEu_08B506A6
-      address: 146081446
+      address: 0x08B506A6
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkEu_08B506B0
-      address: 146081456
+      address: 0x08B506B0
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkEu_08B506BA
-      address: 146081466
+      address: 0x08B506BA
       size: 8
       kind: Sprite
       sha256: bb3ed818eb03f05baa23c60a27b67d2b7c5cee4f99f9c36f9c82714b12a81d89
     - name: gUnkEu_08B506C4
-      address: 146081476
+      address: 0x08B506C4
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B50A30
-      address: 146082352
+      address: 0x08B50A30
       size: 14
       kind: Sprite
       sha256: eb9b46345c81325175fe2b9d6e737f1ddfa47b83d37a139054d1457ea37d555a
     - name: gUnkEu_08B50A40
-      address: 146082368
+      address: 0x08B50A40
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B50BCC
-      address: 146082764
+      address: 0x08B50BCC
       size: 14
       kind: Sprite
       sha256: eb9b46345c81325175fe2b9d6e737f1ddfa47b83d37a139054d1457ea37d555a
     - name: gUnkEu_08B50BDC
-      address: 146082780
+      address: 0x08B50BDC
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B50D68
-      address: 146083176
+      address: 0x08B50D68
       size: 14
       kind: Sprite
       sha256: eb9b46345c81325175fe2b9d6e737f1ddfa47b83d37a139054d1457ea37d555a
     - name: gUnkEu_08B50D78
-      address: 146083192
+      address: 0x08B50D78
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B50F04
-      address: 146083588
+      address: 0x08B50F04
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B50F0E
-      address: 146083598
+      address: 0x08B50F0E
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51018
-      address: 146083864
+      address: 0x08B51018
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B51022
-      address: 146083874
+      address: 0x08B51022
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B5112C
-      address: 146084140
+      address: 0x08B5112C
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B51136
-      address: 146084150
+      address: 0x08B51136
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51240
-      address: 146084416
+      address: 0x08B51240
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B5124A
-      address: 146084426
+      address: 0x08B5124A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51354
-      address: 146084692
+      address: 0x08B51354
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B5135E
-      address: 146084702
+      address: 0x08B5135E
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51468
-      address: 146084968
+      address: 0x08B51468
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B51472
-      address: 146084978
+      address: 0x08B51472
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B5157C
-      address: 146085244
+      address: 0x08B5157C
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B51586
-      address: 146085254
+      address: 0x08B51586
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51690
-      address: 146085520
+      address: 0x08B51690
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B5169A
-      address: 146085530
+      address: 0x08B5169A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B517A4
-      address: 146085796
+      address: 0x08B517A4
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B517AE
-      address: 146085806
+      address: 0x08B517AE
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B518B8
-      address: 146086072
+      address: 0x08B518B8
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B518C2
-      address: 146086082
+      address: 0x08B518C2
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B519CC
-      address: 146086348
+      address: 0x08B519CC
       size: 8
       kind: Sprite
       sha256: 33c1fb663407cb81224d08192f2ae2cdab42656ec86bfbdc62784880d406cd08
     - name: gUnkEu_08B519D6
-      address: 146086358
+      address: 0x08B519D6
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51A60
-      address: 146086496
+      address: 0x08B51A60
       size: 8
       kind: Sprite
       sha256: b716ef54664bd1c903fe701dbdfa80b43d77ab209631abd55cd2929d140633b7
     - name: gUnkEu_08B51A6A
-      address: 146086506
+      address: 0x08B51A6A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51B74
-      address: 146086772
+      address: 0x08B51B74
       size: 14
       kind: Sprite
       sha256: f3d476a1b74c8859f8a5e61f8b230deeeab16a59b3ed6bd6d3a99aca77595b38
     - name: gUnkEu_08B51B84
-      address: 146086788
+      address: 0x08B51B84
       size: 14
       kind: Sprite
       sha256: 31cd28756cb51b2281fb1a92b5381450ef1bb53dae432e9f7e008a7324cc043c
     - name: gUnkEu_08B51B94
-      address: 146086804
+      address: 0x08B51B94
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51B9E
-      address: 146086814
+      address: 0x08B51B9E
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkEu_08B51D28
-      address: 146087208
+      address: 0x08B51D28
       size: 8
       kind: Sprite
       sha256: aca0b74094ba505acac5f699341918d2645b725b2a2ed03db12bcaa31949e8fa
     - name: gUnkEu_08B51D32
-      address: 146087218
+      address: 0x08B51D32
       size: 8
       kind: Sprite
       sha256: eafd78dcf30c63eb6a8ce251a27734cfbc63a1d4ccf9cdfddee51b2c26e63f08
     - name: gUnkEu_08B51D3C
-      address: 146087228
+      address: 0x08B51D3C
       size: 8
       kind: Sprite
       sha256: ce2b106503cacd52a0d1238e366e116aa645561539110d1377cc3b156b7dea3c
     - name: gUnkEu_08B51D46
-      address: 146087238
+      address: 0x08B51D46
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B51F90
-      address: 146087824
+      address: 0x08B51F90
       size: 8
       kind: Sprite
       sha256: aca0b74094ba505acac5f699341918d2645b725b2a2ed03db12bcaa31949e8fa
     - name: gUnkEu_08B51F9A
-      address: 146087834
+      address: 0x08B51F9A
       size: 8
       kind: Sprite
       sha256: eafd78dcf30c63eb6a8ce251a27734cfbc63a1d4ccf9cdfddee51b2c26e63f08
     - name: gUnkEu_08B51FA4
-      address: 146087844
+      address: 0x08B51FA4
       size: 8
       kind: Sprite
       sha256: ce2b106503cacd52a0d1238e366e116aa645561539110d1377cc3b156b7dea3c
     - name: gUnkEu_08B51FAE
-      address: 146087854
+      address: 0x08B51FAE
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B521F8
-      address: 146088440
+      address: 0x08B521F8
       size: 8
       kind: Sprite
       sha256: aca0b74094ba505acac5f699341918d2645b725b2a2ed03db12bcaa31949e8fa
     - name: gUnkEu_08B52202
-      address: 146088450
+      address: 0x08B52202
       size: 8
       kind: Sprite
       sha256: eafd78dcf30c63eb6a8ce251a27734cfbc63a1d4ccf9cdfddee51b2c26e63f08
     - name: gUnkEu_08B5220C
-      address: 146088460
+      address: 0x08B5220C
       size: 8
       kind: Sprite
       sha256: ce2b106503cacd52a0d1238e366e116aa645561539110d1377cc3b156b7dea3c
     - name: gUnkEu_08B52216
-      address: 146088470
+      address: 0x08B52216
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B52460
-      address: 146089056
+      address: 0x08B52460
       size: 8
       kind: Sprite
       sha256: aca0b74094ba505acac5f699341918d2645b725b2a2ed03db12bcaa31949e8fa
     - name: gUnkEu_08B5246A
-      address: 146089066
+      address: 0x08B5246A
       size: 8
       kind: Sprite
       sha256: eafd78dcf30c63eb6a8ce251a27734cfbc63a1d4ccf9cdfddee51b2c26e63f08
     - name: gUnkEu_08B52474
-      address: 146089076
+      address: 0x08B52474
       size: 8
       kind: Sprite
       sha256: ce2b106503cacd52a0d1238e366e116aa645561539110d1377cc3b156b7dea3c
     - name: gUnkEu_08B5247E
-      address: 146089086
+      address: 0x08B5247E
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B526C8
-      address: 146089672
+      address: 0x08B526C8
       size: 14
       kind: Sprite
       sha256: cd5287fc0e84a0031a83caeb90ead6aa9f2782c6c5f69113aae1ae3338782cb6
     - name: gUnkEu_08B526D8
-      address: 146089688
+      address: 0x08B526D8
       size: 14
       kind: Sprite
       sha256: 2607bb6141ba487314c8605a0051b83ea59a23cfb9e5e0d23517373866186ebf
     - name: gUnkEu_08B526E8
-      address: 146089704
+      address: 0x08B526E8
       size: 14
       kind: Sprite
       sha256: 483d0f8c019d71cbabf645d5161f5edb71ffc2dcf256f703b0ee53a54e8adf4c
     - name: gUnkEu_08B526F8
-      address: 146089720
+      address: 0x08B526F8
       size: 14
       kind: Sprite
       sha256: 4a8ba86bd59374cd497c011bb322fb877f47d6677e665b68253abb8e6a08840f
     - name: gUnkEu_08B52708
-      address: 146089736
+      address: 0x08B52708
       size: 14
       kind: Sprite
       sha256: 4e8e62777180bd917419253352313f15529f1c1720f4db9c19e82f11738f446d
     - name: gUnkEu_08B52718
-      address: 146089752
+      address: 0x08B52718
       size: 14
       kind: Sprite
       sha256: 848676a0a8b8acfd812cbd5eb1efef6aec5cd6e0490b65eba8c9c339776d8142
     - name: gUnkEu_08B52728
-      address: 146089768
+      address: 0x08B52728
       size: 14
       kind: Sprite
       sha256: ccc4537515770c37e156ac5df59dc55c82d064546e895a2ed21cdfa1c8128383
     - name: gUnkEu_08B52738
-      address: 146089784
+      address: 0x08B52738
       size: 14
       kind: Sprite
       sha256: 4fda217fecbd6cacb424b78f913949f8653ce2736ae52b1b77daa5071b0655e7
     - name: gUnkEu_08B52748
-      address: 146089800
+      address: 0x08B52748
       size: 14
       kind: Sprite
       sha256: 2381af357e0228a2034db2115d73f524107c02f4fc558a602ecc82109b757366
     - name: gUnkEu_08B52758
-      address: 146089816
+      address: 0x08B52758
       size: 14
       kind: Sprite
       sha256: 964fbc4d2dfe5f3f4f660a22c225820c2f7c56c2cf9443f5a1b83221d113e030
     - name: gUnkEu_08B52768
-      address: 146089832
+      address: 0x08B52768
       size: 14
       kind: Sprite
       sha256: 0823e2e88521b02e5e716d588207c4f79184017912693bafbf320b6661d9186d
     - name: gUnkEu_08B52778
-      address: 146089848
+      address: 0x08B52778
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B53304
-      address: 146092804
+      address: 0x08B53304
       size: 14
       kind: Sprite
       sha256: eb9b46345c81325175fe2b9d6e737f1ddfa47b83d37a139054d1457ea37d555a
     - name: gUnkEu_08B53314
-      address: 146092820
+      address: 0x08B53314
       size: 14
       kind: Sprite
       sha256: 2607bb6141ba487314c8605a0051b83ea59a23cfb9e5e0d23517373866186ebf
     - name: gUnkEu_08B53324
-      address: 146092836
+      address: 0x08B53324
       size: 14
       kind: Sprite
       sha256: 483d0f8c019d71cbabf645d5161f5edb71ffc2dcf256f703b0ee53a54e8adf4c
     - name: gUnkEu_08B53334
-      address: 146092852
+      address: 0x08B53334
       size: 14
       kind: Sprite
       sha256: 4a8ba86bd59374cd497c011bb322fb877f47d6677e665b68253abb8e6a08840f
     - name: gUnkEu_08B53344
-      address: 146092868
+      address: 0x08B53344
       size: 14
       kind: Sprite
       sha256: 4e8e62777180bd917419253352313f15529f1c1720f4db9c19e82f11738f446d
     - name: gUnkEu_08B53354
-      address: 146092884
+      address: 0x08B53354
       size: 14
       kind: Sprite
       sha256: 848676a0a8b8acfd812cbd5eb1efef6aec5cd6e0490b65eba8c9c339776d8142
     - name: gUnkEu_08B53364
-      address: 146092900
+      address: 0x08B53364
       size: 14
       kind: Sprite
       sha256: ccc4537515770c37e156ac5df59dc55c82d064546e895a2ed21cdfa1c8128383
     - name: gUnkEu_08B53374
-      address: 146092916
+      address: 0x08B53374
       size: 14
       kind: Sprite
       sha256: 4fda217fecbd6cacb424b78f913949f8653ce2736ae52b1b77daa5071b0655e7
     - name: gUnkEu_08B53384
-      address: 146092932
+      address: 0x08B53384
       size: 14
       kind: Sprite
       sha256: 2381af357e0228a2034db2115d73f524107c02f4fc558a602ecc82109b757366
     - name: gUnkEu_08B53394
-      address: 146092948
+      address: 0x08B53394
       size: 14
       kind: Sprite
       sha256: 964fbc4d2dfe5f3f4f660a22c225820c2f7c56c2cf9443f5a1b83221d113e030
     - name: gUnkEu_08B533A4
-      address: 146092964
+      address: 0x08B533A4
       size: 14
       kind: Sprite
       sha256: 0823e2e88521b02e5e716d588207c4f79184017912693bafbf320b6661d9186d
     - name: gUnkEu_08B533B4
-      address: 146092980
+      address: 0x08B533B4
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B53F40
-      address: 146095936
+      address: 0x08B53F40
       size: 14
       kind: Sprite
       sha256: eb9b46345c81325175fe2b9d6e737f1ddfa47b83d37a139054d1457ea37d555a
     - name: gUnkEu_08B53F50
-      address: 146095952
+      address: 0x08B53F50
       size: 14
       kind: Sprite
       sha256: 2607bb6141ba487314c8605a0051b83ea59a23cfb9e5e0d23517373866186ebf
     - name: gUnkEu_08B53F60
-      address: 146095968
+      address: 0x08B53F60
       size: 14
       kind: Sprite
       sha256: 483d0f8c019d71cbabf645d5161f5edb71ffc2dcf256f703b0ee53a54e8adf4c
     - name: gUnkEu_08B53F70
-      address: 146095984
+      address: 0x08B53F70
       size: 14
       kind: Sprite
       sha256: 4a8ba86bd59374cd497c011bb322fb877f47d6677e665b68253abb8e6a08840f
     - name: gUnkEu_08B53F80
-      address: 146096000
+      address: 0x08B53F80
       size: 14
       kind: Sprite
       sha256: 4e8e62777180bd917419253352313f15529f1c1720f4db9c19e82f11738f446d
     - name: gUnkEu_08B53F90
-      address: 146096016
+      address: 0x08B53F90
       size: 14
       kind: Sprite
       sha256: 848676a0a8b8acfd812cbd5eb1efef6aec5cd6e0490b65eba8c9c339776d8142
     - name: gUnkEu_08B53FA0
-      address: 146096032
+      address: 0x08B53FA0
       size: 14
       kind: Sprite
       sha256: ccc4537515770c37e156ac5df59dc55c82d064546e895a2ed21cdfa1c8128383
     - name: gUnkEu_08B53FB0
-      address: 146096048
+      address: 0x08B53FB0
       size: 14
       kind: Sprite
       sha256: 4fda217fecbd6cacb424b78f913949f8653ce2736ae52b1b77daa5071b0655e7
     - name: gUnkEu_08B53FC0
-      address: 146096064
+      address: 0x08B53FC0
       size: 14
       kind: Sprite
       sha256: 2381af357e0228a2034db2115d73f524107c02f4fc558a602ecc82109b757366
     - name: gUnkEu_08B53FD0
-      address: 146096080
+      address: 0x08B53FD0
       size: 14
       kind: Sprite
       sha256: 964fbc4d2dfe5f3f4f660a22c225820c2f7c56c2cf9443f5a1b83221d113e030
     - name: gUnkEu_08B53FE0
-      address: 146096096
+      address: 0x08B53FE0
       size: 14
       kind: Sprite
       sha256: 0823e2e88521b02e5e716d588207c4f79184017912693bafbf320b6661d9186d
     - name: gUnkEu_08B53FF0
-      address: 146096112
+      address: 0x08B53FF0
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B54B7C
-      address: 146099068
+      address: 0x08B54B7C
       size: 8
       kind: Sprite
       sha256: 0c65c92e04983627cd8a3e1d413e405b86f3aad732693ec45caaecc3840a90d0
     - name: gUnkEu_08B54B86
-      address: 146099078
+      address: 0x08B54B86
       size: 14
       kind: Sprite
       sha256: 269b33c7f9da0a15b382f1d9d56d3fe8d606c145ae1923491c742c72533c4b3e
     - name: gUnkEu_08B54B96
-      address: 146099094
+      address: 0x08B54B96
       size: 14
       kind: Sprite
       sha256: 227156904fdbe1052c35c9e1fadbdf8407fbc8fb92e73ec32e1f81d9186b4226
     - name: gUnkEu_08B54BA6
-      address: 146099110
+      address: 0x08B54BA6
       size: 14
       kind: Sprite
       sha256: 2703e0b143a322f74237aef20e5ffa3b0d16b64f89beabd71d65ae286ad5f7fc
     - name: gUnkEu_08B54BB6
-      address: 146099126
+      address: 0x08B54BB6
       size: 14
       kind: Sprite
       sha256: 676d76ace78e7d34177b367f5a46952f3660cc52df5beb2fc5399002df8a2ecf
     - name: gUnkEu_08B54BC6
-      address: 146099142
+      address: 0x08B54BC6
       size: 20
       kind: Sprite
       sha256: 68ace117bbbeb1090c5eb82da57ddf707df07f9b815f670bd60bf63358c38cb2
     - name: gUnkEu_08B54BDC
-      address: 146099164
+      address: 0x08B54BDC
       size: 20
       kind: Sprite
       sha256: 08a0b234e8caa698aa4af8b9bfaa7041804d6347ac42e1f6f02e064684322095
     - name: gUnkEu_08B54BF2
-      address: 146099186
+      address: 0x08B54BF2
       size: 8
       kind: Sprite
       sha256: ea2ce4ffb2fb20aa97a0c4047ff7ddda05a1af6db3d40a09e202bb77b1d398b1
     - name: gUnkEu_08B54BFC
-      address: 146099196
+      address: 0x08B54BFC
       size: 8
       kind: Sprite
       sha256: 75b2e65dd60dfad797eeeae830ec44b94127d4ebfb3e7c3f3de63ac7a906a058
     - name: gUnkEu_08B54C06
-      address: 146099206
+      address: 0x08B54C06
       size: 8
       kind: Sprite
       sha256: 892e90ff2006a9a626069d678282bccb6c74f80e1faaafb2c07dbed19b52680f
     - name: gUnkEu_08B54C10
-      address: 146099216
+      address: 0x08B54C10
       size: 20
       kind: Sprite
       sha256: 69a613eb6b8c35209c7fe5da261a7a9ea15e95bd6b18c44336523be1dac15429
     - name: gUnkEu_08B54C26
-      address: 146099238
+      address: 0x08B54C26
       size: 20
       kind: Sprite
       sha256: f5a05e04c6f9212631a50c55335b7662dcaaecaa8f3a4df6a56c38bb4b90fa64
     - name: gUnkEu_08B54C3C
-      address: 146099260
+      address: 0x08B54C3C
       size: 20
       kind: Sprite
       sha256: 26868d549658e499be849b4316f53ec431c7194eebfd13edbb06e713bd05d8e5
     - name: gUnkEu_08B54C52
-      address: 146099282
+      address: 0x08B54C52
       size: 8
       kind: Sprite
       sha256: cc98b6f1d9a049603348fbcb0e5c4f30997f02d2fe00a09d3f3aa76be68d773b
     - name: gUnkEu_08B54C5C
-      address: 146099292
+      address: 0x08B54C5C
       size: 14
       kind: Sprite
       sha256: 8fc16f2c6f5c6b3aa7da6b24e9617c5809ca493d4c981fc161ece9167c719f83
     - name: gUnkEu_08B54C6C
-      address: 146099308
+      address: 0x08B54C6C
       size: 14
       kind: Sprite
       sha256: 9fe9381ed5012d493fa945ea09647dcf9aea2d74f1de59048500c9dec1cb24b4
     - name: gUnkEu_08B54C7C
-      address: 146099324
+      address: 0x08B54C7C
       size: 14
       kind: Sprite
       sha256: 9639f54eaa7140a64e1e2ba863ee9e74c6b33d420b8ff9fa10633b59484cf9a7
     - name: gUnkEu_08B54C8C
-      address: 146099340
+      address: 0x08B54C8C
       size: 14
       kind: Sprite
       sha256: 5f77b55b6bd02c6ebc3fdb1c047840bc0d193c060c8b604d25648d3284aa1c6a
     - name: gUnkEu_08B54C9C
-      address: 146099356
+      address: 0x08B54C9C
       size: 20
       kind: Sprite
       sha256: 4351f128e4d2399d74963f6125a5c8eb554e7797237b41e99cb5e914794bcbc5
     - name: gUnkEu_08B54CB2
-      address: 146099378
+      address: 0x08B54CB2
       size: 20
       kind: Sprite
       sha256: ff57cbdac36186f72c8009d278e58deb7be5eb29881c9e5b8ea9ea40fd9b2638
     - name: gUnkEu_08B54CC8
-      address: 146099400
+      address: 0x08B54CC8
       size: 20
       kind: Sprite
       sha256: cd34471c8b8f8f53bc41d79a7a1682623fac1ab0b6d4906bf39976e10e86ba03
     - name: gUnkEu_08B54CDE
-      address: 146099422
+      address: 0x08B54CDE
       size: 20
       kind: Sprite
       sha256: b7a90b72e1198b15ba86912fe178856f5531c9a7276934e0615536e7430046aa
     - name: gUnkEu_08B54CF4
-      address: 146099444
+      address: 0x08B54CF4
       size: 20
       kind: Sprite
       sha256: 9cd1fa71f7d7472998645748f520a73fe1ccecfd19fb5b5ddae89c44c3b021bb
     - name: gUnkEu_08B54D0A
-      address: 146099466
+      address: 0x08B54D0A
       size: 14
       kind: Sprite
       sha256: 09c93c761525d2c47c91f2d4de590e7001e433c61c9cf3b9279aa8ed8234396a
     - name: gUnkEu_08B54D1A
-      address: 146099482
+      address: 0x08B54D1A
       size: 14
       kind: Sprite
       sha256: e912361cea4bdb7c6b2630ebcb22c17874270c96d062a2fbf637aaf4b3ceba4c
     - name: gUnkEu_08B54D2A
-      address: 146099498
+      address: 0x08B54D2A
       size: 14
       kind: Sprite
       sha256: d42ac5f3a4378672a8dd88b4e737c89d123eb3c6c8ee25f2c97e2a88e1ee40dc
     - name: gUnkEu_08B54D3A
-      address: 146099514
+      address: 0x08B54D3A
       size: 14
       kind: Sprite
       sha256: 588ee8784a3b97cb67b318976ec35231c0b79452270eb9877a84f364a06dcef0
     - name: gUnkEu_08B54D4A
-      address: 146099530
+      address: 0x08B54D4A
       size: 20
       kind: Sprite
       sha256: 02f2ce6c1c1f1d3c2e8288c1416f42b0d245525766d5b48331c03ae9811cb95e
     - name: gUnkEu_08B54D60
-      address: 146099552
+      address: 0x08B54D60
       size: 20
       kind: Sprite
       sha256: 534168d30dd0f10402168e59c4ae304bd373726c88a29be14fe9df4ca9b840a4
     - name: gUnkEu_08B54D76
-      address: 146099574
+      address: 0x08B54D76
       size: 20
       kind: Sprite
       sha256: f15ce21fc921452f47187e22cfd3dbe9e8d4f2c51a828d92e1d7cf66772398a9
     - name: gUnkEu_08B54D8C
-      address: 146099596
+      address: 0x08B54D8C
       size: 20
       kind: Sprite
       sha256: ae2f886323b2c139124c5fe9c52a5551cda09ab704449bbdb9db58212d0099da
     - name: gUnkEu_08B54DA2
-      address: 146099618
+      address: 0x08B54DA2
       size: 20
       kind: Sprite
       sha256: 72953d4d3cd56635e38515206658c531a7a7799c7019191201601b9424a56ed7
     - name: gUnkEu_08B54DB8
-      address: 146099640
+      address: 0x08B54DB8
       size: 14
       kind: Sprite
       sha256: 469eec10ca2ac4bf95b05b3225c5d86b67bdd3097d2311187d4a9b6aa1396354
     - name: gUnkEu_08B54DC8
-      address: 146099656
+      address: 0x08B54DC8
       size: 14
       kind: Sprite
       sha256: 837683775313fb60b8b142f8e7fa3b7dd8e9b39fa51721b98a5eb7c542237bf0
     - name: gUnkEu_08B54DD8
-      address: 146099672
+      address: 0x08B54DD8
       size: 14
       kind: Sprite
       sha256: 4f2781d75e609fdd2a9b11b3d1c18343a86888f45418d5c1c5f09fc6c1a59772
     - name: gUnkEu_08B54DE8
-      address: 146099688
+      address: 0x08B54DE8
       size: 14
       kind: Sprite
       sha256: e75be2dd71346517e43901584d54174b95e339ee1c7cbbf830ebe4e2640a05e8
     - name: gUnkEu_08B54DF8
-      address: 146099704
+      address: 0x08B54DF8
       size: 20
       kind: Sprite
       sha256: 59ea1be86e0bcac6f64e4123144912f538427e4ca4ded071d47e6abcb0c1b65a
     - name: gUnkEu_08B54E0E
-      address: 146099726
+      address: 0x08B54E0E
       size: 20
       kind: Sprite
       sha256: e123a95196b70ab07e35e90a21c49006352b5c6f4d657926009c7c831132d46c
     - name: gUnkEu_08B54E24
-      address: 146099748
+      address: 0x08B54E24
       size: 20
       kind: Sprite
       sha256: b2e2b7d5e65b0870ec5dbba9d85591f7fe9c8769c9059051af923ae4902512d0
     - name: gUnkEu_08B54E3A
-      address: 146099770
+      address: 0x08B54E3A
       size: 20
       kind: Sprite
       sha256: ce11921b631c0151c9da85d560fea25262a0ceb9446be8d4f150df55578c8015
     - name: gUnkEu_08B54E50
-      address: 146099792
+      address: 0x08B54E50
       size: 20
       kind: Sprite
       sha256: 2aa08985722e034ec10ed9923ad91c8ce0a1df4aa7df3121db259364fa884917
     - name: gUnkEu_08B54E66
-      address: 146099814
+      address: 0x08B54E66
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08B54E70
-      address: 146099824
+      address: 0x08B54E70
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkEu_08B54E7A
-      address: 146099834
+      address: 0x08B54E7A
       size: 10
       kind: AnimHeader
       sha256: 5168569454a35b6b2c06fbd8d4eb1a8e2f7f5ac80bbd835965ef356e322533c7
     - name: gUnkEu_08B54E84
-      address: 146099844
+      address: 0x08B54E84
       size: 10
       kind: AnimHeader
       sha256: a02a6b48dc6d1a76c0e678cffd10f0e0b84ac679b815f9dd084f6f3ce132c8cd
     - name: gUnkEu_08B54E8E
-      address: 146099854
+      address: 0x08B54E8E
       size: 10
       kind: AnimHeader
       sha256: adf9d23eae87a246c22475f3c0af497f0f27f79fddd2122f85a36d92cbd8cb50
     - name: gUnkEu_08B55C58
-      address: 146103384
+      address: 0x08B55C58
       size: 8
       kind: Sprite
       sha256: 66c1aff49235087cbecc5a024d7e83d66e77f0a339ef05f06242d5967824c6c7
     - name: gUnkEu_08B55C62
-      address: 146103394
+      address: 0x08B55C62
       size: 8
       kind: Sprite
       sha256: 4d3224ace5b0b688a77379e420761df14787ab0ba5a5359e610229f8a805593e
     - name: gUnkEu_08B55C6C
-      address: 146103404
+      address: 0x08B55C6C
       size: 8
       kind: Sprite
       sha256: a82699cf7cfd401b71c1ba71648403fbb7659cf68ba4583ca32b7279c75a2dc0
     - name: gUnkEu_08B55C76
-      address: 146103414
+      address: 0x08B55C76
       size: 14
       kind: Sprite
       sha256: 40203d0922ba67971cd448217e7fd1d951b6f681d08ed053ecfe62950956e806
     - name: gUnkEu_08B55C86
-      address: 146103430
+      address: 0x08B55C86
       size: 8
       kind: Sprite
       sha256: c41e74b89ec0ec5cee0d676506cf774e26f42a1c7a9f538f89d866fffe80c910
     - name: gUnkEu_08B55C90
-      address: 146103440
+      address: 0x08B55C90
       size: 8
       kind: Sprite
       sha256: bca87fca0dd21dd4b4d13f4ba0dfa4425431f922d86bfc1745ee430a4b91413a
     - name: gUnkEu_08B55C9A
-      address: 146103450
+      address: 0x08B55C9A
       size: 8
       kind: Sprite
       sha256: 22240c3212e3fd3a884a0ec28a88ec59edc15dbd6a09d9aca2c67ad78a04dc08
     - name: gUnkEu_08B55CA4
-      address: 146103460
+      address: 0x08B55CA4
       size: 8
       kind: Sprite
       sha256: 63a65050444dd8aa86cad3eff4c731bc50cf2179865fa781ab546883399a4cb0
     - name: gUnkEu_08B55CAE
-      address: 146103470
+      address: 0x08B55CAE
       size: 8
       kind: Sprite
       sha256: 998b5abe08390b6972760470c470d48d0d6016f8711c70c4d70e017fae9dfa88
     - name: gUnkEu_08B55CB8
-      address: 146103480
+      address: 0x08B55CB8
       size: 8
       kind: Sprite
       sha256: 8b5062b478b6d82fe9b956c5563e06703cb14d6616c6b96093291bcd4a7b9b7f
     - name: gUnkEu_08B55CC2
-      address: 146103490
+      address: 0x08B55CC2
       size: 8
       kind: Sprite
       sha256: 66a044477a3978551f5a54b619068101c9d264d9202cff647014dd411a3ff45c
     - name: gUnkEu_08B55CCC
-      address: 146103500
+      address: 0x08B55CCC
       size: 8
       kind: Sprite
       sha256: 8f8b1a9db54b632fbd607cb487cabe4b8eb244e78f913db09b195184b73b5981
     - name: gUnkEu_08B55CD6
-      address: 146103510
+      address: 0x08B55CD6
       size: 8
       kind: Sprite
       sha256: f5af555a91bc8e235ad8d9ffbacbfaf0ec7c59073b7ace127338c18ee8189297
     - name: gUnkEu_08B55CE0
-      address: 146103520
+      address: 0x08B55CE0
       size: 8
       kind: Sprite
       sha256: 1c72312c0659f8ee0265bc5954b93f46d086776c53d8e7a8be1063153709b338
     - name: gUnkEu_08B55CEA
-      address: 146103530
+      address: 0x08B55CEA
       size: 8
       kind: Sprite
       sha256: 83e725000fe158922bb6f703ac66a72b572b7d5c738ee0518dc366ad954f2b75
     - name: gUnkEu_08B55CF4
-      address: 146103540
+      address: 0x08B55CF4
       size: 8
       kind: Sprite
       sha256: 209b56068e947c9183148c14d054f4404d8e68f72ce43b0d1b372a7a30c4465a
     - name: gUnkEu_08B55CFE
-      address: 146103550
+      address: 0x08B55CFE
       size: 8
       kind: Sprite
       sha256: 86c937c9ce1c9f2eda229874231e90e48b9104a73c32e734ef0e6ae066ac3235
     - name: gUnkEu_08B55D08
-      address: 146103560
+      address: 0x08B55D08
       size: 14
       kind: Sprite
       sha256: e4ba6f8d1a669f5cf5dc9944930109f87a9b3c3148b6fbf199ce5cb40553547b
     - name: gUnkEu_08B55D18
-      address: 146103576
+      address: 0x08B55D18
       size: 8
       kind: Sprite
       sha256: 4e63df4e4eb4fbcad0fa5fc4d2d17f389a3e698316bc9f3f8dc937263da8b582
     - name: gUnkEu_08B55D22
-      address: 146103586
+      address: 0x08B55D22
       size: 14
       kind: Sprite
       sha256: f355c6a0e1487a9d661ba96da4e86c1308b32a3e72e5e9995a236c329c38bb56
     - name: gUnkEu_08B55D32
-      address: 146103602
+      address: 0x08B55D32
       size: 8
       kind: Sprite
       sha256: 85acd6ff5c71ae29f5ff6662d0d5571298326b540172aee974ac6de10a354cb1
     - name: gUnkEu_08B55D3C
-      address: 146103612
+      address: 0x08B55D3C
       size: 14
       kind: Sprite
       sha256: ebde67e12ab567bd0d89e3a15acd462541540e4a82515ffbfaf558d10cf800d0
     - name: gUnkEu_08B55D4C
-      address: 146103628
+      address: 0x08B55D4C
       size: 8
       kind: Sprite
       sha256: 1a0d32de0bc282cab4e314044bb1baf62356b14abc7ae51fe23f65c72198e686
     - name: gUnkEu_08B55D56
-      address: 146103638
+      address: 0x08B55D56
       size: 14
       kind: Sprite
       sha256: e872f7513b448e605ba66190bc82baeffe06cced65bae01e713ea4a32920ff3d
     - name: gUnkEu_08B55D66
-      address: 146103654
+      address: 0x08B55D66
       size: 8
       kind: Sprite
       sha256: cca38c030cbc915706b9f21bc1cbc15f10eb03df399e832ecc7bd3e88233e9e0
     - name: gUnkEu_08B55D70
-      address: 146103664
+      address: 0x08B55D70
       size: 14
       kind: Sprite
       sha256: 2f425011a695ee914bf9d03ff94ddf0a5674037dd185eb372426a0425e76bfbb
     - name: gUnkEu_08B55D80
-      address: 146103680
+      address: 0x08B55D80
       size: 8
       kind: Sprite
       sha256: 62e751722d9f93b3f536f362186c4c766589d39ed481ddf20f05cf2b3ea95579
     - name: gUnkEu_08B55D8A
-      address: 146103690
+      address: 0x08B55D8A
       size: 14
       kind: Sprite
       sha256: e7742038551f336c73dc94d9695ce42d08b0b21229dad5748ca8d38c4109173c
     - name: gUnkEu_08B55D9A
-      address: 146103706
+      address: 0x08B55D9A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9658C
-      address: 147416460
+      address: 0x08C9658C
       size: 20
       kind: Sprite
       sha256: a4c83d3e14e9be883b72afbea1f2f2d7e21ea210e3719e7dd955f5d00c6124e3
     - name: gUnkEu_08C965A2
-      address: 147416482
+      address: 0x08C965A2
       size: 20
       kind: Sprite
       sha256: 7e9498b242528b8e9da8fd588ca4430efd05114f8bb5dfcf52ba171baea926cd
     - name: gUnkEu_08C965B8
-      address: 147416504
+      address: 0x08C965B8
       size: 26
       kind: Sprite
       sha256: d8f22a8f719d9d62cfba16bb15a4a12faaf93ba0ddfdbaa55635f2aef52b140d
     - name: gUnkEu_08C965D4
-      address: 147416532
+      address: 0x08C965D4
       size: 26
       kind: Sprite
       sha256: c21600a23c6d398638a44d0aa5d34655c71f6ef994c7fac3ce287e20a4b0aed3
     - name: gUnkEu_08C965F0
-      address: 147416560
+      address: 0x08C965F0
       size: 20
       kind: Sprite
       sha256: 299419a82dd9cf7c22d4642f133a25c9b0d492f903f97c6b057db55e5d3049b0
     - name: gUnkEu_08C96606
-      address: 147416582
+      address: 0x08C96606
       size: 14
       kind: AnimHeader
       sha256: 71c7bbe36d2d27ae66ea332eebf77585fee075336f8bdf2427a49433afc76e5a
     - name: gUnkEu_08C96614
-      address: 147416596
+      address: 0x08C96614
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkEu_08C9661E
-      address: 147416606
+      address: 0x08C9661E
       size: 18
       kind: AnimHeader
       sha256: 8d8ce7e4be1f71a6cdcc08356d61ca94c514c2633d7dac59f46086d6e4f1da55
     - name: gUnkEu_08C96630
-      address: 147416624
+      address: 0x08C96630
       size: 14
       kind: AnimHeader
       sha256: 3fdb0dd019e47bc43982286dbf08d80c28b2a9222c7b905e185b9470efddfae6
     - name: gUnkEu_08C97EE0
-      address: 147422944
+      address: 0x08C97EE0
       size: 14
       kind: Sprite
       sha256: bde745688952e9a00b7c95ed61a6135d45a028543db142707dc6d3ee74e01d79
     - name: gUnkEu_08C97EF0
-      address: 147422960
+      address: 0x08C97EF0
       size: 14
       kind: Sprite
       sha256: 71efc304fb7269a9a17c5fdbfe7077d01db87dde72777edfde954103cd774528
     - name: gUnkEu_08C97F00
-      address: 147422976
+      address: 0x08C97F00
       size: 14
       kind: Sprite
       sha256: 16dcf6f37606c8871c90319752eb65ce0c932d98613bed86326b20ff949c79e9
     - name: gUnkEu_08C97F10
-      address: 147422992
+      address: 0x08C97F10
       size: 14
       kind: Sprite
       sha256: 45ae27051270a061f6b28a2ca5b94e14645319794e5304ea592e42c7ec8911d8
     - name: gUnkEu_08C97F20
-      address: 147423008
+      address: 0x08C97F20
       size: 22
       kind: AnimHeader
       sha256: 6ccee77892df39bdbca8dfa651b22c4268a802bebefddbff6600af125c004459
     - name: gUnkEu_08C99138
-      address: 147427640
+      address: 0x08C99138
       size: 14
       kind: Sprite
       sha256: 719fb25abceb5e594e7758d3e9d9a54d947f080cdb9d191e69f21ae719783b3a
     - name: gUnkEu_08C99148
-      address: 147427656
+      address: 0x08C99148
       size: 14
       kind: Sprite
       sha256: 666a13591ae875f1a7e9680eef17c8bc7f65b20bef9ddba15aaef6d0addd6878
     - name: gUnkEu_08C99158
-      address: 147427672
+      address: 0x08C99158
       size: 14
       kind: Sprite
       sha256: 2056cc986cc97fc9961d9c10f150a0819d8830f8f9fe8406c75dc51d91606954
     - name: gUnkEu_08C99168
-      address: 147427688
+      address: 0x08C99168
       size: 14
       kind: Sprite
       sha256: d3c9842854feda8d6f81ee1163144cc97d6a8ffe137b2c980ef4ab44f3563f3b
     - name: gUnkEu_08C99178
-      address: 147427704
+      address: 0x08C99178
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C99182
-      address: 147427714
+      address: 0x08C99182
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkEu_08C9918C
-      address: 147427724
+      address: 0x08C9918C
       size: 10
       kind: AnimHeader
       sha256: 5168569454a35b6b2c06fbd8d4eb1a8e2f7f5ac80bbd835965ef356e322533c7
     - name: gUnkEu_08C99196
-      address: 147427734
+      address: 0x08C99196
       size: 30
       kind: AnimHeader
       sha256: c3ca703896918b79d688b4a35ec05a440752d792475c53aa303226d0f6e92d0b
     - name: gUnkEu_08C99BB4
-      address: 147430324
+      address: 0x08C99BB4
       size: 26
       kind: Sprite
       sha256: 9b301ddec8f068b3dabde741a92a6d97abc5deaba494ad96ca477ee3456f961f
     - name: gUnkEu_08C99BD0
-      address: 147430352
+      address: 0x08C99BD0
       size: 50
       kind: Sprite
       sha256: 6fcc928db240c7d81fdab65b555f9152bac19c0d318beccd504801d91eac06cd
     - name: gUnkEu_08C99C04
-      address: 147430404
+      address: 0x08C99C04
       size: 32
       kind: Sprite
       sha256: 59734a293cba973a5b6aa06c94421ba97e8b0e66e8880c0caad32c7c10a563e2
     - name: gUnkEu_08C99C26
-      address: 147430438
+      address: 0x08C99C26
       size: 26
       kind: Sprite
       sha256: 0607ca799e0cd9255cab3184265370e397d033c0d55b923ed5270c4ca8c5f85d
     - name: gUnkEu_08C99C42
-      address: 147430466
+      address: 0x08C99C42
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9A4CC
-      address: 147432652
+      address: 0x08C9A4CC
       size: 20
       kind: Sprite
       sha256: a1b8634d6d9c2b3a5e6dcef3b658986578334f20f94c0e76d818d63b3285d767
     - name: gUnkEu_08C9A4E2
-      address: 147432674
+      address: 0x08C9A4E2
       size: 50
       kind: Sprite
       sha256: 277dffeb36fda7dd3a1e449de1b1935fc2da32a51dea3bd89126a808079e29cf
     - name: gUnkEu_08C9A516
-      address: 147432726
+      address: 0x08C9A516
       size: 32
       kind: Sprite
       sha256: 61138de48fc91e4587c3d0bfb65b9a4c8c47dbd0ec028b8e265b47f10c3998e3
     - name: gUnkEu_08C9A538
-      address: 147432760
+      address: 0x08C9A538
       size: 26
       kind: Sprite
       sha256: 40555d0f98056d49d4d3b9d840f7cfb468729e8a1138c094783527491591598d
     - name: gUnkEu_08C9A554
-      address: 147432788
+      address: 0x08C9A554
       size: 14
       kind: Sprite
       sha256: 45cc39aca81cb5ba2244b98082b0ae21886fb544d49c2047fecbb90cbbbc8602
     - name: gUnkEu_08C9A564
-      address: 147432804
+      address: 0x08C9A564
       size: 20
       kind: Sprite
       sha256: 9bd2ec8b9262ebda44f811a271a70742575a957e724ce33c3ae25cf2b196f5b8
     - name: gUnkEu_08C9A57A
-      address: 147432826
+      address: 0x08C9A57A
       size: 20
       kind: Sprite
       sha256: e6d33be0d3a56b40896e1fd625dc9cd0dec117bdc38531e39e0af3221fed4291
     - name: gUnkEu_08C9A590
-      address: 147432848
+      address: 0x08C9A590
       size: 20
       kind: Sprite
       sha256: e527837bd5032ba37cb4dc88e81579b1d269f0b03a9fe79fdbf192b44f5f0b25
     - name: gUnkEu_08C9A5A6
-      address: 147432870
+      address: 0x08C9A5A6
       size: 26
       kind: Sprite
       sha256: fe21dc20f80978f2dbf301a9076144b2878afc9c8683473fd94864433d3551f1
     - name: gUnkEu_08C9A5C2
-      address: 147432898
+      address: 0x08C9A5C2
       size: 20
       kind: Sprite
       sha256: 6cdaa30510f4f8eea0a6ec238829518acc281adfa79cc9b35be622ed7ffccfeb
     - name: gUnkEu_08C9A5D8
-      address: 147432920
+      address: 0x08C9A5D8
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9BD64
-      address: 147438948
+      address: 0x08C9BD64
       size: 8
       kind: Sprite
       sha256: 578d98b73032f3e2b65020e01d91f350615488a258a9e880297e9205c2d2166c
     - name: gUnkEu_08C9BD6E
-      address: 147438958
+      address: 0x08C9BD6E
       size: 8
       kind: Sprite
       sha256: 0a8c0c7ce3cc5099f876889694090797d476ef818f3055c0140c916a5955d9fc
     - name: gUnkEu_08C9BD78
-      address: 147438968
+      address: 0x08C9BD78
       size: 8
       kind: Sprite
       sha256: 015e20f30c5ce20e18d968d99623ca489fb493f86e7fba1e21cf56e9a1a9ab1d
     - name: gUnkEu_08C9BD82
-      address: 147438978
+      address: 0x08C9BD82
       size: 8
       kind: Sprite
       sha256: b795c1a0227357e314586be91b0a522470d46119176e440da939d89331908403
     - name: gUnkEu_08C9BD8C
-      address: 147438988
+      address: 0x08C9BD8C
       size: 14
       kind: Sprite
       sha256: e77c2b55eb158084d0bb438e8b1a32c5a784935cb3dff229efa3d39aa281c9f2
     - name: gUnkEu_08C9BD9C
-      address: 147439004
+      address: 0x08C9BD9C
       size: 14
       kind: Sprite
       sha256: 39367fb99e1f102fab2d5bb1a12a11ca65ae6c7a2365b93d1eabfe7c2f8ff61a
     - name: gUnkEu_08C9BDAC
-      address: 147439020
+      address: 0x08C9BDAC
       size: 8
       kind: Sprite
       sha256: fdf0ebf0ef00be32130ef6ae8eba193c79eb546ae302acc2a06a9a4bad7bc3d3
     - name: gUnkEu_08C9BDB6
-      address: 147439030
+      address: 0x08C9BDB6
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9C100
-      address: 147439872
+      address: 0x08C9C100
       size: 8
       kind: Sprite
       sha256: 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8
     - name: gUnkEu_08C9C10A
-      address: 147439882
+      address: 0x08C9C10A
       size: 8
       kind: Sprite
       sha256: f9d10b77126ab15bc3488ce712403813f59b1dc4781f4cf22bef2feacd0a2868
     - name: gUnkEu_08C9C114
-      address: 147439892
+      address: 0x08C9C114
       size: 8
       kind: Sprite
       sha256: e4a6d2dc3ea85d1ed044a1a24d71db5b12956aa58e12b2bde04bb67bdc360c61
     - name: gUnkEu_08C9C11E
-      address: 147439902
+      address: 0x08C9C11E
       size: 8
       kind: Sprite
       sha256: 25046c8b65fe8308785848aad126b76d6677d5956889ef6e8d86d3943abf8417
     - name: gUnkEu_08C9C128
-      address: 147439912
+      address: 0x08C9C128
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9C274
-      address: 147440244
+      address: 0x08C9C274
       size: 8
       kind: Sprite
       sha256: da72316eb7151483ab8bda3a0ab57bd2b806e0ae037aed224968abd3bc71d6f4
     - name: gUnkEu_08C9C27E
-      address: 147440254
+      address: 0x08C9C27E
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9C2C8
-      address: 147440328
+      address: 0x08C9C2C8
       size: 20
       kind: Sprite
       sha256: 39232b53026769bde8dd27f53c3e76a85899cff978675f37dde50d2e47c486ca
     - name: gUnkEu_08C9C2DE
-      address: 147440350
+      address: 0x08C9C2DE
       size: 20
       kind: Sprite
       sha256: d0efbf03824c2dcbbb6f7e1f97c2c3b337a884aa3bdd124ec03d7daf4e06f17d
     - name: gUnkEu_08C9C2F4
-      address: 147440372
+      address: 0x08C9C2F4
       size: 20
       kind: Sprite
       sha256: 0e940058331c189deed9f53459f53989a5e23286d620e229182d36024993be75
     - name: gUnkEu_08C9C30A
-      address: 147440394
+      address: 0x08C9C30A
       size: 20
       kind: Sprite
       sha256: 0bdb3d52c1ed052114431900f0445f70e3ac7f475c4efc33a31579981de943f1
     - name: gUnkEu_08C9C320
-      address: 147440416
+      address: 0x08C9C320
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkEu_08C9C326
-      address: 147440422
+      address: 0x08C9C326
       size: 6
       kind: AnimHeader
       sha256: f1ec278dcc391f0035bfdb4d171e3495850fbb92a74c7009ed97a1cc910a35a1
     - name: gUnkEu_08C9C32C
-      address: 147440428
+      address: 0x08C9C32C
       size: 30
       kind: AnimHeader
       sha256: c02066bb84aedb33b98e1dea69bc1bb26d80a1aa419e8f1ca159a54bc769d90b
     - name: gUnkEu_08C9C34A
-      address: 147440458
+      address: 0x08C9C34A
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9C454
-      address: 147440724
+      address: 0x08C9C454
       size: 26
       kind: Sprite
       sha256: 41e73fda43bcc3fa415a5b7763a9cac1c52c0a7fa3f44460ba076d8b538e694a
     - name: gUnkEu_08C9C470
-      address: 147440752
+      address: 0x08C9C470
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9C97C
-      address: 147442044
+      address: 0x08C9C97C
       size: 32
       kind: Sprite
       sha256: 71e8ffcf8ab2a2f7a571a156e60b89cf66c9347f44de332766942354663b5f49
     - name: gUnkEu_08C9C99E
-      address: 147442078
+      address: 0x08C9C99E
       size: 32
       kind: Sprite
       sha256: d459be2482b9fee017fc79a6fbc44a117c39ef7c1918a93cb111ceadc49dc588
     - name: gUnkEu_08C9C9C0
-      address: 147442112
+      address: 0x08C9C9C0
       size: 32
       kind: Sprite
       sha256: 3dd41f7feb0f4dbdfc036085f7990fb67cc27ab59d1ff4d912aa4d4ff7de6973
     - name: gUnkEu_08C9C9E2
-      address: 147442146
+      address: 0x08C9C9E2
       size: 32
       kind: Sprite
       sha256: ace767b9c6e5eb4a26118c1b71d4f9b6b490e581e027dac804902c900e4a7497
     - name: gUnkEu_08C9CA04
-      address: 147442180
+      address: 0x08C9CA04
       size: 32
       kind: Sprite
       sha256: 741026668b6a22d78411a04e640d91a7b8e2eb4c8b5e98adb27e0c81295b4ec5
     - name: gUnkEu_08C9CA26
-      address: 147442214
+      address: 0x08C9CA26
       size: 10
       kind: AnimHeader
       sha256: 96937bb0a93fca55fa1f937e4b16825b666a7c0e342e8452267d875d8b597c46
     - name: gUnkEu_08C9CA30
-      address: 147442224
+      address: 0x08C9CA30
       size: 10
       kind: AnimHeader
       sha256: 9a7efb9bd7c686a34a112eb91f9edbe4ed91199decaf0806b439bb4d77a6aff7
     - name: gUnkEu_08C9CA3A
-      address: 147442234
+      address: 0x08C9CA3A
       size: 10
       kind: AnimHeader
       sha256: 5168569454a35b6b2c06fbd8d4eb1a8e2f7f5ac80bbd835965ef356e322533c7
     - name: gUnkEu_08C9CA44
-      address: 147442244
+      address: 0x08C9CA44
       size: 10
       kind: AnimHeader
       sha256: a02a6b48dc6d1a76c0e678cffd10f0e0b84ac679b815f9dd084f6f3ce132c8cd
     - name: gUnkEu_08C9CA4E
-      address: 147442254
+      address: 0x08C9CA4E
       size: 10
       kind: AnimHeader
       sha256: adf9d23eae87a246c22475f3c0af497f0f27f79fddd2122f85a36d92cbd8cb50

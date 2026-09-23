@@ -3,6769 +3,6769 @@ types: {}
 objects:
   us:
   - name: sprite_palettes_1.s
-    start: 150373252
-    end: 150373316
+    start: 0x08F68384
+    end: 0x08F683C4
   - name: sprite_palettes_2.s
-    start: 150378404
-    end: 150379524
+    start: 0x08F697A4
+    end: 0x08F69C04
   - name: sprite_palettes_3.s
-    start: 150395940
-    end: 150396164
+    start: 0x08F6DC24
+    end: 0x08F6DD04
   - name: sprite_palettes_4.s
-    start: 157358776
-    end: 157363256
+    start: 0x09611AB8
+    end: 0x09612C38
   - name: sprite_palettes_5.s
-    start: 157367960
-    end: 157372888
+    start: 0x09613E98
+    end: 0x096151D8
   - name: sprite_palettes_6.s
-    start: 157383768
-    end: 157389720
+    start: 0x09617C58
+    end: 0x09619398
   - name: sprite_palettes_7.s
-    start: 158313572
-    end: 158313604
+    start: 0x096FAC64
+    end: 0x096FAC84
   - name: sprite_palettes_8.s
-    start: 158315172
-    end: 158315204
+    start: 0x096FB2A4
+    end: 0x096FB2C4
   - name: sprite_palettes_9.s
-    start: 158316644
-    end: 158318372
+    start: 0x096FB864
+    end: 0x096FBF24
   - name: sprite_palettes_10.s
-    start: 159685272
-    end: 159687160
+    start: 0x09849A98
+    end: 0x0984A1F8
   - name: sprite_palettes_11.s
-    start: 159690616
-    end: 159691032
+    start: 0x0984AF78
+    end: 0x0984B118
   - name: sprite_palettes_12.s
-    start: 161026244
-    end: 161026724
+    start: 0x099910C4
+    end: 0x099912A4
   - name: sprite_palettes_13.s
-    start: 161028388
-    end: 161029444
+    start: 0x09991924
+    end: 0x09991D44
   - name: sprite_palettes_14.s
-    start: 161728668
-    end: 161730716
+    start: 0x09A3C89C
+    end: 0x09A3D09C
   - name: sprite_palettes_15.s
-    start: 161731964
-    end: 161732060
+    start: 0x09A3D57C
+    end: 0x09A3D5DC
   - name: sprite_palettes_16.s
-    start: 161734268
-    end: 161734300
+    start: 0x09A3DE7C
+    end: 0x09A3DE9C
   - name: sprite_palettes_17.s
-    start: 165057140
-    end: 165057172
+    start: 0x09D69274
+    end: 0x09D69294
   - name: sprite_palettes_18.s
-    start: 165072692
-    end: 165073204
+    start: 0x09D6CF34
+    end: 0x09D6D134
   jp:
   - name: sprite_palettes_1.s
-    start: 150321292
-    end: 150321356
+    start: 0x08F5B88C
+    end: 0x08F5B8CC
   - name: sprite_palettes_2.s
-    start: 150326444
-    end: 150327564
+    start: 0x08F5CCAC
+    end: 0x08F5D10C
   - name: sprite_palettes_3.s
-    start: 150343980
-    end: 150344204
+    start: 0x08F6112C
+    end: 0x08F6120C
   - name: sprite_palettes_4.s
-    start: 157066644
-    end: 157071124
+    start: 0x095CA594
+    end: 0x095CB714
   - name: sprite_palettes_5.s
-    start: 157075828
-    end: 157080756
+    start: 0x095CC974
+    end: 0x095CDCB4
   - name: sprite_palettes_6.s
-    start: 157091636
-    end: 157097588
+    start: 0x095D0734
+    end: 0x095D1E74
   - name: sprite_palettes_7.s
-    start: 158020672
-    end: 158020704
+    start: 0x096B3440
+    end: 0x096B3460
   - name: sprite_palettes_8.s
-    start: 158022272
-    end: 158022304
+    start: 0x096B3A80
+    end: 0x096B3AA0
   - name: sprite_palettes_9.s
-    start: 158023744
-    end: 158025472
+    start: 0x096B4040
+    end: 0x096B4700
   - name: sprite_palettes_10.s
-    start: 159377260
-    end: 159379148
+    start: 0x097FE76C
+    end: 0x097FEECC
   - name: sprite_palettes_11.s
-    start: 159382604
-    end: 159383020
+    start: 0x097FFC4C
+    end: 0x097FFDEC
   - name: sprite_palettes_12.s
-    start: 160717784
-    end: 160718264
+    start: 0x09945BD8
+    end: 0x09945DB8
   - name: sprite_palettes_13.s
-    start: 160719928
-    end: 160720984
+    start: 0x09946438
+    end: 0x09946858
   - name: sprite_palettes_14.s
-    start: 161420068
-    end: 161422116
+    start: 0x099F1324
+    end: 0x099F1B24
   - name: sprite_palettes_15.s
-    start: 161423364
-    end: 161423460
+    start: 0x099F2004
+    end: 0x099F2064
   - name: sprite_palettes_16.s
-    start: 161425668
-    end: 161425700
+    start: 0x099F2904
+    end: 0x099F2924
   - name: sprite_palettes_17.s
-    start: 164898688
-    end: 164898720
+    start: 0x09D42780
+    end: 0x09D427A0
   - name: sprite_palettes_18.s
-    start: 164914240
-    end: 164914752
+    start: 0x09D46440
+    end: 0x09D46640
   eu:
   - name: sprite_palettes_1.s
-    start: 150358236
-    end: 150358300
+    start: 0x08F648DC
+    end: 0x08F6491C
   - name: sprite_palettes_2.s
-    start: 150363388
-    end: 150364508
+    start: 0x08F65CFC
+    end: 0x08F6615C
   - name: sprite_palettes_3.s
-    start: 150380924
-    end: 150381148
+    start: 0x08F6A17C
+    end: 0x08F6A25C
   - name: sprite_palettes_4.s
-    start: 150382300
-    end: 150382332
+    start: 0x08F6A6DC
+    end: 0x08F6A6FC
   - name: sprite_palettes_5.s
-    start: 156519204
-    end: 156523684
+    start: 0x09544B24
+    end: 0x09545CA4
   - name: sprite_palettes_6.s
-    start: 156528004
-    end: 156532932
+    start: 0x09546D84
+    end: 0x095480C4
   - name: sprite_palettes_7.s
-    start: 156543812
-    end: 156549764
+    start: 0x0954AB44
+    end: 0x0954C284
   - name: sprite_palettes_8.s
-    start: 158105996
-    end: 158106028
+    start: 0x096C818C
+    end: 0x096C81AC
   - name: sprite_palettes_9.s
-    start: 158107596
-    end: 158107628
+    start: 0x096C87CC
+    end: 0x096C87EC
   - name: sprite_palettes_10.s
-    start: 158109068
-    end: 158110540
+    start: 0x096C8D8C
+    end: 0x096C934C
   - name: sprite_palettes_11.s
-    start: 159506752
-    end: 159508640
+    start: 0x0981E140
+    end: 0x0981E8A0
   - name: sprite_palettes_12.s
-    start: 159512096
-    end: 159512512
+    start: 0x0981F620
+    end: 0x0981F7C0
   - name: sprite_palettes_13.s
-    start: 161050800
-    end: 161051280
+    start: 0x099970B0
+    end: 0x09997290
   - name: sprite_palettes_14.s
-    start: 161052944
-    end: 161054000
+    start: 0x09997910
+    end: 0x09997D30
   - name: sprite_palettes_15.s
-    start: 162112352
-    end: 162114400
+    start: 0x09A9A360
+    end: 0x09A9AB60
   - name: sprite_palettes_16.s
-    start: 162115648
-    end: 162115744
+    start: 0x09A9B040
+    end: 0x09A9B0A0
   - name: sprite_palettes_17.s
-    start: 162117952
-    end: 162117984
+    start: 0x09A9B940
+    end: 0x09A9B960
   - name: sprite_palettes_18.s
-    start: 165515680
-    end: 165515712
+    start: 0x09DD91A0
+    end: 0x09DD91C0
   - name: sprite_palettes_19.s
-    start: 165531232
-    end: 165531744
+    start: 0x09DDCE60
+    end: 0x09DDD060
 entries:
 - name: goofy
   format: palette
   symbol: gUnk_08F68384
   us:
-    address: 150373252
+    address: 0x08F68384
     size: 32
   jp:
-    address: 150321292
+    address: 0x08F5B88C
     size: 32
   eu:
-    address: 150358236
+    address: 0x08F648DC
     size: 32
 - name: sora
   format: palette
   symbol: gUnk_08F683A4
   us:
-    address: 150373284
+    address: 0x08F683A4
     size: 32
   jp:
-    address: 150321324
+    address: 0x08F5B8AC
     size: 32
   eu:
-    address: 150358268
+    address: 0x08F648FC
     size: 32
 - name: emy_00
   format: palette
   symbol: gUnk_08F697A4
   us:
-    address: 150378404
+    address: 0x08F697A4
     size: 32
   jp:
-    address: 150326444
+    address: 0x08F5CCAC
     size: 32
   eu:
-    address: 150363388
+    address: 0x08F65CFC
     size: 32
 - name: emy_38
   format: palette
   symbol: gUnk_08F697C4
   us:
-    address: 150378436
+    address: 0x08F697C4
     size: 32
   jp:
-    address: 150326476
+    address: 0x08F5CCCC
     size: 32
   eu:
-    address: 150363420
+    address: 0x08F65D1C
     size: 32
 - name: emy_14
   format: palette
   symbol: gUnk_08F697E4
   us:
-    address: 150378468
+    address: 0x08F697E4
     size: 32
   jp:
-    address: 150326508
+    address: 0x08F5CCEC
     size: 32
   eu:
-    address: 150363452
+    address: 0x08F65D3C
     size: 32
 - name: emy_01
   format: palette
   symbol: gUnk_08F69804
   us:
-    address: 150378500
+    address: 0x08F69804
     size: 32
   jp:
-    address: 150326540
+    address: 0x08F5CD0C
     size: 32
   eu:
-    address: 150363484
+    address: 0x08F65D5C
     size: 32
 - name: emy_02
   format: palette
   symbol: gUnk_08F69824
   us:
-    address: 150378532
+    address: 0x08F69824
     size: 32
   jp:
-    address: 150326572
+    address: 0x08F5CD2C
     size: 32
   eu:
-    address: 150363516
+    address: 0x08F65D7C
     size: 32
 - name: emy_03
   format: palette
   symbol: gUnk_08F69844
   us:
-    address: 150378564
+    address: 0x08F69844
     size: 32
   jp:
-    address: 150326604
+    address: 0x08F5CD4C
     size: 32
   eu:
-    address: 150363548
+    address: 0x08F65D9C
     size: 32
 - name: emy_04
   format: palette
   symbol: gUnk_08F69864
   us:
-    address: 150378596
+    address: 0x08F69864
     size: 32
   jp:
-    address: 150326636
+    address: 0x08F5CD6C
     size: 32
   eu:
-    address: 150363580
+    address: 0x08F65DBC
     size: 32
 - name: emy_21
   format: palette
   symbol: gUnk_08F69884
   us:
-    address: 150378628
+    address: 0x08F69884
     size: 32
   jp:
-    address: 150326668
+    address: 0x08F5CD8C
     size: 32
   eu:
-    address: 150363612
+    address: 0x08F65DDC
     size: 32
 - name: emy_07
   format: palette
   symbol: gUnk_08F698A4
   us:
-    address: 150378660
+    address: 0x08F698A4
     size: 32
   jp:
-    address: 150326700
+    address: 0x08F5CDAC
     size: 32
   eu:
-    address: 150363644
+    address: 0x08F65DFC
     size: 32
 - name: emy_07m
   format: palette
   symbol: gUnk_08F698C4
   us:
-    address: 150378692
+    address: 0x08F698C4
     size: 32
   jp:
-    address: 150326732
+    address: 0x08F5CDCC
     size: 32
   eu:
-    address: 150363676
+    address: 0x08F65E1C
     size: 32
 - name: emy_07b
   format: palette
   symbol: gUnk_08F698E4
   us:
-    address: 150378724
+    address: 0x08F698E4
     size: 32
   jp:
-    address: 150326764
+    address: 0x08F5CDEC
     size: 32
   eu:
-    address: 150363708
+    address: 0x08F65E3C
     size: 32
 - name: emy_31
   format: palette
   symbol: gUnk_08F69904
   us:
-    address: 150378756
+    address: 0x08F69904
     size: 32
   jp:
-    address: 150326796
+    address: 0x08F5CE0C
     size: 32
   eu:
-    address: 150363740
+    address: 0x08F65E5C
     size: 32
 - name: emy_06
   format: palette
   symbol: gUnk_08F69924
   us:
-    address: 150378788
+    address: 0x08F69924
     size: 32
   jp:
-    address: 150326828
+    address: 0x08F5CE2C
     size: 32
   eu:
-    address: 150363772
+    address: 0x08F65E7C
     size: 32
 - name: emy_15
   format: palette
   symbol: gUnk_08F69944
   us:
-    address: 150378820
+    address: 0x08F69944
     size: 32
   jp:
-    address: 150326860
+    address: 0x08F5CE4C
     size: 32
   eu:
-    address: 150363804
+    address: 0x08F65E9C
     size: 32
 - name: emy_19
   format: palette
   symbol: gUnk_08F69964
   us:
-    address: 150378852
+    address: 0x08F69964
     size: 32
   jp:
-    address: 150326892
+    address: 0x08F5CE6C
     size: 32
   eu:
-    address: 150363836
+    address: 0x08F65EBC
     size: 32
 - name: emy_23
   format: palette
   symbol: gUnk_08F69984
   us:
-    address: 150378884
+    address: 0x08F69984
     size: 32
   jp:
-    address: 150326924
+    address: 0x08F5CE8C
     size: 32
   eu:
-    address: 150363868
+    address: 0x08F65EDC
     size: 32
 - name: emy_41
   format: palette
   symbol: gUnk_08F699A4
   us:
-    address: 150378916
+    address: 0x08F699A4
     size: 32
   jp:
-    address: 150326956
+    address: 0x08F5CEAC
     size: 32
   eu:
-    address: 150363900
+    address: 0x08F65EFC
     size: 32
 - name: emy_16
   format: palette
   symbol: gUnk_08F699C4
   us:
-    address: 150378948
+    address: 0x08F699C4
     size: 32
   jp:
-    address: 150326988
+    address: 0x08F5CECC
     size: 32
   eu:
-    address: 150363932
+    address: 0x08F65F1C
     size: 32
 - name: emy_22
   format: palette
   symbol: gUnk_08F699E4
   us:
-    address: 150378980
+    address: 0x08F699E4
     size: 32
   jp:
-    address: 150327020
+    address: 0x08F5CEEC
     size: 32
   eu:
-    address: 150363964
+    address: 0x08F65F3C
     size: 32
 - name: emy_26
   format: palette
   symbol: gUnk_08F69A04
   us:
-    address: 150379012
+    address: 0x08F69A04
     size: 32
   jp:
-    address: 150327052
+    address: 0x08F5CF0C
     size: 32
   eu:
-    address: 150363996
+    address: 0x08F65F5C
     size: 32
 - name: emy_27
   format: palette
   symbol: gUnk_08F69A24
   us:
-    address: 150379044
+    address: 0x08F69A24
     size: 32
   jp:
-    address: 150327084
+    address: 0x08F5CF2C
     size: 32
   eu:
-    address: 150364028
+    address: 0x08F65F7C
     size: 32
 - name: emy_28
   format: palette
   symbol: gUnk_08F69A44
   us:
-    address: 150379076
+    address: 0x08F69A44
     size: 32
   jp:
-    address: 150327116
+    address: 0x08F5CF4C
     size: 32
   eu:
-    address: 150364060
+    address: 0x08F65F9C
     size: 32
 - name: emy_29
   format: palette
   symbol: gUnk_08F69A64
   us:
-    address: 150379108
+    address: 0x08F69A64
     size: 32
   jp:
-    address: 150327148
+    address: 0x08F5CF6C
     size: 32
   eu:
-    address: 150364092
+    address: 0x08F65FBC
     size: 32
 - name: emy_37
   format: palette
   symbol: gUnk_08F69A84
   us:
-    address: 150379140
+    address: 0x08F69A84
     size: 32
   jp:
-    address: 150327180
+    address: 0x08F5CF8C
     size: 32
   eu:
-    address: 150364124
+    address: 0x08F65FDC
     size: 32
 - name: emy_39
   format: palette
   symbol: gUnk_08F69AA4
   us:
-    address: 150379172
+    address: 0x08F69AA4
     size: 32
   jp:
-    address: 150327212
+    address: 0x08F5CFAC
     size: 32
   eu:
-    address: 150364156
+    address: 0x08F65FFC
     size: 32
 - name: emy_30
   format: palette
   symbol: gUnk_08F69AC4
   us:
-    address: 150379204
+    address: 0x08F69AC4
     size: 32
   jp:
-    address: 150327244
+    address: 0x08F5CFCC
     size: 32
   eu:
-    address: 150364188
+    address: 0x08F6601C
     size: 32
 - name: emy_25
   format: palette
   symbol: gUnk_08F69AE4
   us:
-    address: 150379236
+    address: 0x08F69AE4
     size: 32
   jp:
-    address: 150327276
+    address: 0x08F5CFEC
     size: 32
   eu:
-    address: 150364220
+    address: 0x08F6603C
     size: 32
 - name: emy_44
   format: palette
   symbol: gUnk_08F69B04
   us:
-    address: 150379268
+    address: 0x08F69B04
     size: 32
   jp:
-    address: 150327308
+    address: 0x08F5D00C
     size: 32
   eu:
-    address: 150364252
+    address: 0x08F6605C
     size: 32
 - name: emy_18
   format: palette
   symbol: gUnk_08F69B24
   us:
-    address: 150379300
+    address: 0x08F69B24
     size: 32
   jp:
-    address: 150327340
+    address: 0x08F5D02C
     size: 32
   eu:
-    address: 150364284
+    address: 0x08F6607C
     size: 32
 - name: emy_81
   format: palette
   symbol: gUnk_08F69B44
   us:
-    address: 150379332
+    address: 0x08F69B44
     size: 32
   jp:
-    address: 150327372
+    address: 0x08F5D04C
     size: 32
   eu:
-    address: 150364316
+    address: 0x08F6609C
     size: 32
 - name: emy_82
   format: palette
   symbol: gUnk_08F69B64
   us:
-    address: 150379364
+    address: 0x08F69B64
     size: 32
   jp:
-    address: 150327404
+    address: 0x08F5D06C
     size: 32
   eu:
-    address: 150364348
+    address: 0x08F660BC
     size: 32
 - name: emy_83
   format: palette
   symbol: gUnk_08F69B84
   us:
-    address: 150379396
+    address: 0x08F69B84
     size: 32
   jp:
-    address: 150327436
+    address: 0x08F5D08C
     size: 32
   eu:
-    address: 150364380
+    address: 0x08F660DC
     size: 32
 - name: b_states
   format: palette
   symbol: gUnk_08F69BA4
   us:
-    address: 150379428
+    address: 0x08F69BA4
     size: 32
   jp:
-    address: 150327468
+    address: 0x08F5D0AC
     size: 32
   eu:
-    address: 150364412
+    address: 0x08F660FC
     size: 32
 - name: gUnk_08F69BC4
   format: palette
   us:
-    address: 150379460
+    address: 0x08F69BC4
     size: 32
   jp:
-    address: 150327500
+    address: 0x08F5D0CC
     size: 32
   eu:
-    address: 150364444
+    address: 0x08F6611C
     size: 32
 - name: gUnk_08F69BE4
   format: palette
   us:
-    address: 150379492
+    address: 0x08F69BE4
     size: 32
   jp:
-    address: 150327532
+    address: 0x08F5D0EC
     size: 32
   eu:
-    address: 150364476
+    address: 0x08F6613C
     size: 32
 - name: croud
   format: palette
   symbol: gUnk_08F6DC24
   us:
-    address: 150395940
+    address: 0x08F6DC24
     size: 32
   jp:
-    address: 150343980
+    address: 0x08F6112C
     size: 32
   eu:
-    address: 150380924
+    address: 0x08F6A17C
     size: 32
 - name: gUnk_08F6DC44
   format: palette
   us:
-    address: 150395972
+    address: 0x08F6DC44
     size: 32
   jp:
-    address: 150344012
+    address: 0x08F6114C
     size: 32
   eu:
-    address: 150380956
+    address: 0x08F6A19C
     size: 32
 - name: gUnk_08F6DC64
   format: raw
   us:
-    address: 150396004
+    address: 0x08F6DC64
     size: 32
   jp:
-    address: 150344044
+    address: 0x08F6116C
     size: 32
   eu:
-    address: 150380988
+    address: 0x08F6A1BC
     size: 32
 - name: maruxha_bt_eff
   format: palette
   symbol: gUnk_08F6DC84
   us:
-    address: 150396036
+    address: 0x08F6DC84
     size: 32
   jp:
-    address: 150344076
+    address: 0x08F6118C
     size: 32
   eu:
-    address: 150381020
+    address: 0x08F6A1DC
     size: 32
 - name: vix_e
   format: palette
   symbol: gUnk_08F6DCA4
   us:
-    address: 150396068
+    address: 0x08F6DCA4
     size: 32
   jp:
-    address: 150344108
+    address: 0x08F611AC
     size: 32
   eu:
-    address: 150381052
+    address: 0x08F6A1FC
     size: 32
 - name: gUnk_08F6DCC4
   format: palette
   us:
-    address: 150396100
+    address: 0x08F6DCC4
     size: 32
   jp:
-    address: 150344140
+    address: 0x08F611CC
     size: 32
   eu:
-    address: 150381084
+    address: 0x08F6A21C
     size: 32
 - name: gUnk_08F6DCE4
   format: palette
   us:
-    address: 150396132
+    address: 0x08F6DCE4
     size: 32
   jp:
-    address: 150344172
+    address: 0x08F611EC
     size: 32
   eu:
-    address: 150381116
+    address: 0x08F6A23C
     size: 32
 - name: card_00
   format: palette
   symbol: gUnk_09611AB8
   us:
-    address: 157358776
+    address: 0x09611AB8
     size: 32
   jp:
-    address: 157066644
+    address: 0x095CA594
     size: 32
   eu:
-    address: 156519204
+    address: 0x09544B24
     size: 32
 - name: gUnk_09611AD8
   format: palette
   us:
-    address: 157358808
+    address: 0x09611AD8
     size: 32
   jp:
-    address: 157066676
+    address: 0x095CA5B4
     size: 32
   eu:
-    address: 156519236
+    address: 0x09544B44
     size: 32
 - name: gUnk_09611AF8
   format: palette
   us:
-    address: 157358840
+    address: 0x09611AF8
     size: 32
   jp:
-    address: 157066708
+    address: 0x095CA5D4
     size: 32
   eu:
-    address: 156519268
+    address: 0x09544B64
     size: 32
 - name: gUnk_09611B18
   format: palette
   us:
-    address: 157358872
+    address: 0x09611B18
     size: 32
   jp:
-    address: 157066740
+    address: 0x095CA5F4
     size: 32
   eu:
-    address: 156519300
+    address: 0x09544B84
     size: 32
 - name: gUnk_09611B38
   format: palette
   us:
-    address: 157358904
+    address: 0x09611B38
     size: 32
   jp:
-    address: 157066772
+    address: 0x095CA614
     size: 32
   eu:
-    address: 156519332
+    address: 0x09544BA4
     size: 32
 - name: gUnk_09611B58
   format: palette
   us:
-    address: 157358936
+    address: 0x09611B58
     size: 32
   jp:
-    address: 157066804
+    address: 0x095CA634
     size: 32
   eu:
-    address: 156519364
+    address: 0x09544BC4
     size: 32
 - name: gUnk_09611B78
   format: palette
   us:
-    address: 157358968
+    address: 0x09611B78
     size: 32
   jp:
-    address: 157066836
+    address: 0x095CA654
     size: 32
   eu:
-    address: 156519396
+    address: 0x09544BE4
     size: 32
 - name: gUnk_09611B98
   format: palette
   us:
-    address: 157359000
+    address: 0x09611B98
     size: 32
   jp:
-    address: 157066868
+    address: 0x095CA674
     size: 32
   eu:
-    address: 156519428
+    address: 0x09544C04
     size: 32
 - name: gUnk_09611BB8
   format: palette
   us:
-    address: 157359032
+    address: 0x09611BB8
     size: 32
   jp:
-    address: 157066900
+    address: 0x095CA694
     size: 32
   eu:
-    address: 156519460
+    address: 0x09544C24
     size: 32
 - name: gUnk_09611BD8
   format: palette
   us:
-    address: 157359064
+    address: 0x09611BD8
     size: 32
   jp:
-    address: 157066932
+    address: 0x095CA6B4
     size: 32
   eu:
-    address: 156519492
+    address: 0x09544C44
     size: 32
 - name: gUnk_09611BF8
   format: palette
   us:
-    address: 157359096
+    address: 0x09611BF8
     size: 32
   jp:
-    address: 157066964
+    address: 0x095CA6D4
     size: 32
   eu:
-    address: 156519524
+    address: 0x09544C64
     size: 32
 - name: gUnk_09611C18
   format: palette
   us:
-    address: 157359128
+    address: 0x09611C18
     size: 32
   jp:
-    address: 157066996
+    address: 0x095CA6F4
     size: 32
   eu:
-    address: 156519556
+    address: 0x09544C84
     size: 32
 - name: gUnk_09611C38
   format: palette
   us:
-    address: 157359160
+    address: 0x09611C38
     size: 32
   jp:
-    address: 157067028
+    address: 0x095CA714
     size: 32
   eu:
-    address: 156519588
+    address: 0x09544CA4
     size: 32
 - name: gUnk_09611C58
   format: palette
   us:
-    address: 157359192
+    address: 0x09611C58
     size: 32
   jp:
-    address: 157067060
+    address: 0x095CA734
     size: 32
   eu:
-    address: 156519620
+    address: 0x09544CC4
     size: 32
 - name: gUnk_09611C78
   format: palette
   us:
-    address: 157359224
+    address: 0x09611C78
     size: 32
   jp:
-    address: 157067092
+    address: 0x095CA754
     size: 32
   eu:
-    address: 156519652
+    address: 0x09544CE4
     size: 32
 - name: gUnk_09611C98
   format: raw
   us:
-    address: 157359256
+    address: 0x09611C98
     size: 96
   jp:
-    address: 157067124
+    address: 0x095CA774
     size: 96
     symbol: gUnkJp_095CA774
   eu:
-    address: 156519684
+    address: 0x09544D04
     size: 96
     symbol: gUnkEu_09544D04
 - name: gUnk_09611CF8
   format: palette
   us:
-    address: 157359352
+    address: 0x09611CF8
     size: 32
   jp:
-    address: 157067220
+    address: 0x095CA7D4
     size: 32
   eu:
-    address: 156519780
+    address: 0x09544D64
     size: 32
 - name: gUnk_09611D18
   format: palette
   us:
-    address: 157359384
+    address: 0x09611D18
     size: 32
   jp:
-    address: 157067252
+    address: 0x095CA7F4
     size: 32
   eu:
-    address: 156519812
+    address: 0x09544D84
     size: 32
 - name: gUnk_09611D38
   format: raw
   us:
-    address: 157359416
+    address: 0x09611D38
     size: 32
   jp:
-    address: 157067284
+    address: 0x095CA814
     size: 32
     symbol: gUnkJp_095CA814
   eu:
-    address: 156519844
+    address: 0x09544DA4
     size: 32
     symbol: gUnkEu_09544DA4
 - name: gUnk_09611D58
   format: palette
   us:
-    address: 157359448
+    address: 0x09611D58
     size: 32
   jp:
-    address: 157067316
+    address: 0x095CA834
     size: 32
   eu:
-    address: 156519876
+    address: 0x09544DC4
     size: 32
 - name: gUnk_09611D78
   format: raw
   us:
-    address: 157359480
+    address: 0x09611D78
     size: 64
   jp:
-    address: 157067348
+    address: 0x095CA854
     size: 64
     symbol: gUnkJp_095CA854
   eu:
-    address: 156519908
+    address: 0x09544DE4
     size: 64
     symbol: gUnkEu_09544DE4
 - name: gUnk_09611DB8
   format: palette
   us:
-    address: 157359544
+    address: 0x09611DB8
     size: 32
   jp:
-    address: 157067412
+    address: 0x095CA894
     size: 32
   eu:
-    address: 156519972
+    address: 0x09544E24
     size: 32
 - name: card_smn09a
   format: palette
   symbol: gUnk_09611DD8
   us:
-    address: 157359576
+    address: 0x09611DD8
     size: 32
   jp:
-    address: 157067444
+    address: 0x095CA8B4
     size: 32
   eu:
-    address: 156520004
+    address: 0x09544E44
     size: 32
 - name: card_smn09b
   format: palette
   symbol: gUnk_09611DF8
   us:
-    address: 157359608
+    address: 0x09611DF8
     size: 32
   jp:
-    address: 157067476
+    address: 0x095CA8D4
     size: 32
   eu:
-    address: 156520036
+    address: 0x09544E64
     size: 32
 - name: card_smn09c
   format: palette
   symbol: gUnk_09611E18
   us:
-    address: 157359640
+    address: 0x09611E18
     size: 32
   jp:
-    address: 157067508
+    address: 0x095CA8F4
     size: 32
   eu:
-    address: 156520068
+    address: 0x09544E84
     size: 32
 - name: card_smn09d
   format: palette
   symbol: gUnk_09611E38
   us:
-    address: 157359672
+    address: 0x09611E38
     size: 32
   jp:
-    address: 157067540
+    address: 0x095CA914
     size: 32
   eu:
-    address: 156520100
+    address: 0x09544EA4
     size: 32
 - name: gUnk_09611E58
   format: palette
   us:
-    address: 157359704
+    address: 0x09611E58
     size: 32
   jp:
-    address: 157067572
+    address: 0x095CA934
     size: 32
   eu:
-    address: 156520132
+    address: 0x09544EC4
     size: 32
 - name: gUnk_09611E78
   format: raw
   us:
-    address: 157359736
+    address: 0x09611E78
     size: 32
   jp:
-    address: 157067604
+    address: 0x095CA954
     size: 32
     symbol: gUnkJp_095CA954
   eu:
-    address: 156520164
+    address: 0x09544EE4
     size: 32
     symbol: gUnkEu_09544EE4
 - name: gUnk_09611E98
   format: palette
   us:
-    address: 157359768
+    address: 0x09611E98
     size: 32
   jp:
-    address: 157067636
+    address: 0x095CA974
     size: 32
   eu:
-    address: 156520196
+    address: 0x09544F04
     size: 32
 - name: gUnk_09611EB8
   format: palette
   us:
-    address: 157359800
+    address: 0x09611EB8
     size: 32
   jp:
-    address: 157067668
+    address: 0x095CA994
     size: 32
   eu:
-    address: 156520228
+    address: 0x09544F24
     size: 32
 - name: gUnk_09611ED8
   format: palette
   us:
-    address: 157359832
+    address: 0x09611ED8
     size: 32
   jp:
-    address: 157067700
+    address: 0x095CA9B4
     size: 32
   eu:
-    address: 156520260
+    address: 0x09544F44
     size: 32
 - name: gUnk_09611EF8
   format: palette
   us:
-    address: 157359864
+    address: 0x09611EF8
     size: 32
   jp:
-    address: 157067732
+    address: 0x095CA9D4
     size: 32
   eu:
-    address: 156520292
+    address: 0x09544F64
     size: 32
 - name: gUnk_09611F18
   format: palette
   us:
-    address: 157359896
+    address: 0x09611F18
     size: 32
   jp:
-    address: 157067764
+    address: 0x095CA9F4
     size: 32
   eu:
-    address: 156520324
+    address: 0x09544F84
     size: 32
 - name: gUnk_09611F38
   format: palette
   us:
-    address: 157359928
+    address: 0x09611F38
     size: 32
   jp:
-    address: 157067796
+    address: 0x095CAA14
     size: 32
   eu:
-    address: 156520356
+    address: 0x09544FA4
     size: 32
 - name: gUnk_09611F58
   format: palette
   us:
-    address: 157359960
+    address: 0x09611F58
     size: 32
   jp:
-    address: 157067828
+    address: 0x095CAA34
     size: 32
   eu:
-    address: 156520388
+    address: 0x09544FC4
     size: 32
 - name: gUnk_09611F78
   format: palette
   us:
-    address: 157359992
+    address: 0x09611F78
     size: 32
   jp:
-    address: 157067860
+    address: 0x095CAA54
     size: 32
   eu:
-    address: 156520420
+    address: 0x09544FE4
     size: 32
 - name: gUnk_09611F98
   format: palette
   us:
-    address: 157360024
+    address: 0x09611F98
     size: 32
   jp:
-    address: 157067892
+    address: 0x095CAA74
     size: 32
   eu:
-    address: 156520452
+    address: 0x09545004
     size: 32
 - name: gUnk_09611FB8
   format: palette
   us:
-    address: 157360056
+    address: 0x09611FB8
     size: 32
   jp:
-    address: 157067924
+    address: 0x095CAA94
     size: 32
   eu:
-    address: 156520484
+    address: 0x09545024
     size: 32
 - name: gUnk_09611FD8
   format: palette
   us:
-    address: 157360088
+    address: 0x09611FD8
     size: 32
   jp:
-    address: 157067956
+    address: 0x095CAAB4
     size: 32
   eu:
-    address: 156520516
+    address: 0x09545044
     size: 32
 - name: gUnk_09611FF8
   format: palette
   us:
-    address: 157360120
+    address: 0x09611FF8
     size: 32
   jp:
-    address: 157067988
+    address: 0x095CAAD4
     size: 32
   eu:
-    address: 156520548
+    address: 0x09545064
     size: 32
 - name: gUnk_09612018
   format: palette
   us:
-    address: 157360152
+    address: 0x09612018
     size: 32
   jp:
-    address: 157068020
+    address: 0x095CAAF4
     size: 32
   eu:
-    address: 156520580
+    address: 0x09545084
     size: 32
 - name: gUnk_09612038
   format: palette
   us:
-    address: 157360184
+    address: 0x09612038
     size: 32
   jp:
-    address: 157068052
+    address: 0x095CAB14
     size: 32
   eu:
-    address: 156520612
+    address: 0x095450A4
     size: 32
 - name: gUnk_09612058
   format: palette
   us:
-    address: 157360216
+    address: 0x09612058
     size: 32
   jp:
-    address: 157068084
+    address: 0x095CAB34
     size: 32
   eu:
-    address: 156520644
+    address: 0x095450C4
     size: 32
 - name: gUnk_09612078
   format: palette
   us:
-    address: 157360248
+    address: 0x09612078
     size: 32
   jp:
-    address: 157068116
+    address: 0x095CAB54
     size: 32
   eu:
-    address: 156520676
+    address: 0x095450E4
     size: 32
 - name: gUnk_09612098
   format: palette
   us:
-    address: 157360280
+    address: 0x09612098
     size: 32
   jp:
-    address: 157068148
+    address: 0x095CAB74
     size: 32
   eu:
-    address: 156520708
+    address: 0x09545104
     size: 32
 - name: gUnk_096120B8
   format: palette
   us:
-    address: 157360312
+    address: 0x096120B8
     size: 32
   jp:
-    address: 157068180
+    address: 0x095CAB94
     size: 32
   eu:
-    address: 156520740
+    address: 0x09545124
     size: 32
 - name: gUnk_096120D8
   format: palette
   us:
-    address: 157360344
+    address: 0x096120D8
     size: 32
   jp:
-    address: 157068212
+    address: 0x095CABB4
     size: 32
   eu:
-    address: 156520772
+    address: 0x09545144
     size: 32
 - name: gUnk_096120F8
   format: palette
   us:
-    address: 157360376
+    address: 0x096120F8
     size: 32
   jp:
-    address: 157068244
+    address: 0x095CABD4
     size: 32
   eu:
-    address: 156520804
+    address: 0x09545164
     size: 32
 - name: gUnk_09612118
   format: palette
   us:
-    address: 157360408
+    address: 0x09612118
     size: 32
   jp:
-    address: 157068276
+    address: 0x095CABF4
     size: 32
   eu:
-    address: 156520836
+    address: 0x09545184
     size: 32
 - name: gUnk_09612138
   format: palette
   us:
-    address: 157360440
+    address: 0x09612138
     size: 32
   jp:
-    address: 157068308
+    address: 0x095CAC14
     size: 32
   eu:
-    address: 156520868
+    address: 0x095451A4
     size: 32
 - name: gUnk_09612158
   format: palette
   us:
-    address: 157360472
+    address: 0x09612158
     size: 32
   jp:
-    address: 157068340
+    address: 0x095CAC34
     size: 32
   eu:
-    address: 156520900
+    address: 0x095451C4
     size: 32
 - name: gUnk_09612178
   format: palette
   us:
-    address: 157360504
+    address: 0x09612178
     size: 32
   jp:
-    address: 157068372
+    address: 0x095CAC54
     size: 32
   eu:
-    address: 156520932
+    address: 0x095451E4
     size: 32
 - name: gUnk_09612198
   format: palette
   us:
-    address: 157360536
+    address: 0x09612198
     size: 32
   jp:
-    address: 157068404
+    address: 0x095CAC74
     size: 32
   eu:
-    address: 156520964
+    address: 0x09545204
     size: 32
 - name: gUnk_096121B8
   format: palette
   us:
-    address: 157360568
+    address: 0x096121B8
     size: 32
   jp:
-    address: 157068436
+    address: 0x095CAC94
     size: 32
   eu:
-    address: 156520996
+    address: 0x09545224
     size: 32
 - name: gUnk_096121D8
   format: palette
   us:
-    address: 157360600
+    address: 0x096121D8
     size: 32
   jp:
-    address: 157068468
+    address: 0x095CACB4
     size: 32
   eu:
-    address: 156521028
+    address: 0x09545244
     size: 32
 - name: gUnk_096121F8
   format: palette
   us:
-    address: 157360632
+    address: 0x096121F8
     size: 32
   jp:
-    address: 157068500
+    address: 0x095CACD4
     size: 32
   eu:
-    address: 156521060
+    address: 0x09545264
     size: 32
 - name: gUnk_09612218
   format: raw
   us:
-    address: 157360664
+    address: 0x09612218
     size: 32
   jp:
-    address: 157068532
+    address: 0x095CACF4
     size: 32
     symbol: gUnkJp_095CACF4
   eu:
-    address: 156521092
+    address: 0x09545284
     size: 32
     symbol: gUnkEu_09545284
 - name: gUnk_09612238
   format: palette
   us:
-    address: 157360696
+    address: 0x09612238
     size: 32
   jp:
-    address: 157068564
+    address: 0x095CAD14
     size: 32
   eu:
-    address: 156521124
+    address: 0x095452A4
     size: 32
 - name: gUnk_09612258
   format: palette
   us:
-    address: 157360728
+    address: 0x09612258
     size: 32
   jp:
-    address: 157068596
+    address: 0x095CAD34
     size: 32
   eu:
-    address: 156521156
+    address: 0x095452C4
     size: 32
 - name: gUnk_09612278
   format: palette
   us:
-    address: 157360760
+    address: 0x09612278
     size: 32
   jp:
-    address: 157068628
+    address: 0x095CAD54
     size: 32
   eu:
-    address: 156521188
+    address: 0x095452E4
     size: 32
 - name: gUnk_09612298
   format: palette
   us:
-    address: 157360792
+    address: 0x09612298
     size: 32
   jp:
-    address: 157068660
+    address: 0x095CAD74
     size: 32
   eu:
-    address: 156521220
+    address: 0x09545304
     size: 32
 - name: gUnk_096122B8
   format: palette
   us:
-    address: 157360824
+    address: 0x096122B8
     size: 32
   jp:
-    address: 157068692
+    address: 0x095CAD94
     size: 32
   eu:
-    address: 156521252
+    address: 0x09545324
     size: 32
 - name: gUnk_096122D8
   format: palette
   us:
-    address: 157360856
+    address: 0x096122D8
     size: 32
   jp:
-    address: 157068724
+    address: 0x095CADB4
     size: 32
   eu:
-    address: 156521284
+    address: 0x09545344
     size: 32
 - name: gUnk_096122F8
   format: palette
   us:
-    address: 157360888
+    address: 0x096122F8
     size: 32
   jp:
-    address: 157068756
+    address: 0x095CADD4
     size: 32
   eu:
-    address: 156521316
+    address: 0x09545364
     size: 32
 - name: gUnk_09612318
   format: palette
   us:
-    address: 157360920
+    address: 0x09612318
     size: 32
   jp:
-    address: 157068788
+    address: 0x095CADF4
     size: 32
   eu:
-    address: 156521348
+    address: 0x09545384
     size: 32
 - name: gUnk_09612338
   format: palette
   us:
-    address: 157360952
+    address: 0x09612338
     size: 32
   jp:
-    address: 157068820
+    address: 0x095CAE14
     size: 32
   eu:
-    address: 156521380
+    address: 0x095453A4
     size: 32
 - name: gUnk_09612358
   format: palette
   us:
-    address: 157360984
+    address: 0x09612358
     size: 32
   jp:
-    address: 157068852
+    address: 0x095CAE34
     size: 32
   eu:
-    address: 156521412
+    address: 0x095453C4
     size: 32
 - name: gUnk_09612378
   format: palette
   us:
-    address: 157361016
+    address: 0x09612378
     size: 32
   jp:
-    address: 157068884
+    address: 0x095CAE54
     size: 32
   eu:
-    address: 156521444
+    address: 0x095453E4
     size: 32
 - name: gUnk_09612398
   format: palette
   us:
-    address: 157361048
+    address: 0x09612398
     size: 32
   jp:
-    address: 157068916
+    address: 0x095CAE74
     size: 32
   eu:
-    address: 156521476
+    address: 0x09545404
     size: 32
 - name: gUnk_096123B8
   format: palette
   us:
-    address: 157361080
+    address: 0x096123B8
     size: 32
   jp:
-    address: 157068948
+    address: 0x095CAE94
     size: 32
   eu:
-    address: 156521508
+    address: 0x09545424
     size: 32
 - name: gUnk_096123D8
   format: palette
   us:
-    address: 157361112
+    address: 0x096123D8
     size: 32
   jp:
-    address: 157068980
+    address: 0x095CAEB4
     size: 32
   eu:
-    address: 156521540
+    address: 0x09545444
     size: 32
 - name: gUnk_096123F8
   format: palette
   us:
-    address: 157361144
+    address: 0x096123F8
     size: 32
   jp:
-    address: 157069012
+    address: 0x095CAED4
     size: 32
   eu:
-    address: 156521572
+    address: 0x09545464
     size: 32
 - name: gUnk_09612418
   format: palette
   us:
-    address: 157361176
+    address: 0x09612418
     size: 32
   jp:
-    address: 157069044
+    address: 0x095CAEF4
     size: 32
   eu:
-    address: 156521604
+    address: 0x09545484
     size: 32
 - name: gUnk_09612438
   format: palette
   us:
-    address: 157361208
+    address: 0x09612438
     size: 32
   jp:
-    address: 157069076
+    address: 0x095CAF14
     size: 32
   eu:
-    address: 156521636
+    address: 0x095454A4
     size: 32
 - name: gUnk_09612458
   format: palette
   us:
-    address: 157361240
+    address: 0x09612458
     size: 32
   jp:
-    address: 157069108
+    address: 0x095CAF34
     size: 32
   eu:
-    address: 156521668
+    address: 0x095454C4
     size: 32
 - name: gUnk_09612478
   format: palette
   us:
-    address: 157361272
+    address: 0x09612478
     size: 32
   jp:
-    address: 157069140
+    address: 0x095CAF54
     size: 32
   eu:
-    address: 156521700
+    address: 0x095454E4
     size: 32
 - name: gUnk_09612498
   format: palette
   us:
-    address: 157361304
+    address: 0x09612498
     size: 32
   jp:
-    address: 157069172
+    address: 0x095CAF74
     size: 32
   eu:
-    address: 156521732
+    address: 0x09545504
     size: 32
 - name: gUnk_096124B8
   format: palette
   us:
-    address: 157361336
+    address: 0x096124B8
     size: 32
   jp:
-    address: 157069204
+    address: 0x095CAF94
     size: 32
   eu:
-    address: 156521764
+    address: 0x09545524
     size: 32
 - name: gUnk_096124D8
   format: palette
   us:
-    address: 157361368
+    address: 0x096124D8
     size: 32
   jp:
-    address: 157069236
+    address: 0x095CAFB4
     size: 32
   eu:
-    address: 156521796
+    address: 0x09545544
     size: 32
 - name: gUnk_096124F8
   format: palette
   us:
-    address: 157361400
+    address: 0x096124F8
     size: 32
   jp:
-    address: 157069268
+    address: 0x095CAFD4
     size: 32
   eu:
-    address: 156521828
+    address: 0x09545564
     size: 32
 - name: gUnk_09612518
   format: palette
   us:
-    address: 157361432
+    address: 0x09612518
     size: 32
   jp:
-    address: 157069300
+    address: 0x095CAFF4
     size: 32
   eu:
-    address: 156521860
+    address: 0x09545584
     size: 32
 - name: gUnk_09612538
   format: palette
   us:
-    address: 157361464
+    address: 0x09612538
     size: 32
   jp:
-    address: 157069332
+    address: 0x095CB014
     size: 32
   eu:
-    address: 156521892
+    address: 0x095455A4
     size: 32
 - name: gUnk_09612558
   format: palette
   us:
-    address: 157361496
+    address: 0x09612558
     size: 32
   jp:
-    address: 157069364
+    address: 0x095CB034
     size: 32
   eu:
-    address: 156521924
+    address: 0x095455C4
     size: 32
 - name: gUnk_09612578
   format: palette
   us:
-    address: 157361528
+    address: 0x09612578
     size: 32
   jp:
-    address: 157069396
+    address: 0x095CB054
     size: 32
   eu:
-    address: 156521956
+    address: 0x095455E4
     size: 32
 - name: gUnk_09612598
   format: palette
   us:
-    address: 157361560
+    address: 0x09612598
     size: 32
   jp:
-    address: 157069428
+    address: 0x095CB074
     size: 32
   eu:
-    address: 156521988
+    address: 0x09545604
     size: 32
 - name: gUnk_096125B8
   format: palette
   us:
-    address: 157361592
+    address: 0x096125B8
     size: 32
   jp:
-    address: 157069460
+    address: 0x095CB094
     size: 32
   eu:
-    address: 156522020
+    address: 0x09545624
     size: 32
 - name: gUnk_096125D8
   format: palette
   us:
-    address: 157361624
+    address: 0x096125D8
     size: 32
   jp:
-    address: 157069492
+    address: 0x095CB0B4
     size: 32
   eu:
-    address: 156522052
+    address: 0x09545644
     size: 32
 - name: gUnk_096125F8
   format: palette
   us:
-    address: 157361656
+    address: 0x096125F8
     size: 32
   jp:
-    address: 157069524
+    address: 0x095CB0D4
     size: 32
   eu:
-    address: 156522084
+    address: 0x09545664
     size: 32
 - name: gUnk_09612618
   format: palette
   us:
-    address: 157361688
+    address: 0x09612618
     size: 32
   jp:
-    address: 157069556
+    address: 0x095CB0F4
     size: 32
   eu:
-    address: 156522116
+    address: 0x09545684
     size: 32
 - name: card_bos_10a
   format: palette
   symbol: gUnk_09612638
   us:
-    address: 157361720
+    address: 0x09612638
     size: 32
   jp:
-    address: 157069588
+    address: 0x095CB114
     size: 32
   eu:
-    address: 156522148
+    address: 0x095456A4
     size: 32
 - name: card_bos_10b
   format: palette
   symbol: gUnk_09612658
   us:
-    address: 157361752
+    address: 0x09612658
     size: 32
   jp:
-    address: 157069620
+    address: 0x095CB134
     size: 32
   eu:
-    address: 156522180
+    address: 0x095456C4
     size: 32
 - name: card_bos_10c
   format: palette
   symbol: gUnk_09612678
   us:
-    address: 157361784
+    address: 0x09612678
     size: 32
   jp:
-    address: 157069652
+    address: 0x095CB154
     size: 32
   eu:
-    address: 156522212
+    address: 0x095456E4
     size: 32
 - name: card_bos_10d
   format: palette
   symbol: gUnk_09612698
   us:
-    address: 157361816
+    address: 0x09612698
     size: 32
   jp:
-    address: 157069684
+    address: 0x095CB174
     size: 32
   eu:
-    address: 156522244
+    address: 0x09545704
     size: 32
 - name: gUnk_096126B8
   format: palette
   us:
-    address: 157361848
+    address: 0x096126B8
     size: 32
   jp:
-    address: 157069716
+    address: 0x095CB194
     size: 32
   eu:
-    address: 156522276
+    address: 0x09545724
     size: 32
 - name: card_bos_11a
   format: palette
   symbol: gUnk_096126D8
   us:
-    address: 157361880
+    address: 0x096126D8
     size: 32
   jp:
-    address: 157069748
+    address: 0x095CB1B4
     size: 32
   eu:
-    address: 156522308
+    address: 0x09545744
     size: 32
 - name: card_bos_11b
   format: palette
   symbol: gUnk_096126F8
   us:
-    address: 157361912
+    address: 0x096126F8
     size: 32
   jp:
-    address: 157069780
+    address: 0x095CB1D4
     size: 32
   eu:
-    address: 156522340
+    address: 0x09545764
     size: 32
 - name: card_bos_11c
   format: palette
   symbol: gUnk_09612718
   us:
-    address: 157361944
+    address: 0x09612718
     size: 32
   jp:
-    address: 157069812
+    address: 0x095CB1F4
     size: 32
   eu:
-    address: 156522372
+    address: 0x09545784
     size: 32
 - name: card_bos_11d
   format: palette
   symbol: gUnk_09612738
   us:
-    address: 157361976
+    address: 0x09612738
     size: 32
   jp:
-    address: 157069844
+    address: 0x095CB214
     size: 32
   eu:
-    address: 156522404
+    address: 0x095457A4
     size: 32
 - name: gUnk_09612758
   format: palette
   us:
-    address: 157362008
+    address: 0x09612758
     size: 32
   jp:
-    address: 157069876
+    address: 0x095CB234
     size: 32
   eu:
-    address: 156522436
+    address: 0x095457C4
     size: 32
 - name: card_bos_12a
   format: palette
   symbol: gUnk_09612778
   us:
-    address: 157362040
+    address: 0x09612778
     size: 32
   jp:
-    address: 157069908
+    address: 0x095CB254
     size: 32
   eu:
-    address: 156522468
+    address: 0x095457E4
     size: 32
 - name: card_bos_12b
   format: palette
   symbol: gUnk_09612798
   us:
-    address: 157362072
+    address: 0x09612798
     size: 32
   jp:
-    address: 157069940
+    address: 0x095CB274
     size: 32
   eu:
-    address: 156522500
+    address: 0x09545804
     size: 32
 - name: card_bos_12c
   format: palette
   symbol: gUnk_096127B8
   us:
-    address: 157362104
+    address: 0x096127B8
     size: 32
   jp:
-    address: 157069972
+    address: 0x095CB294
     size: 32
   eu:
-    address: 156522532
+    address: 0x09545824
     size: 32
 - name: card_bos_12d
   format: palette
   symbol: gUnk_096127D8
   us:
-    address: 157362136
+    address: 0x096127D8
     size: 32
   jp:
-    address: 157070004
+    address: 0x095CB2B4
     size: 32
   eu:
-    address: 156522564
+    address: 0x09545844
     size: 32
 - name: gUnk_096127F8
   format: palette
   us:
-    address: 157362168
+    address: 0x096127F8
     size: 32
   jp:
-    address: 157070036
+    address: 0x095CB2D4
     size: 32
   eu:
-    address: 156522596
+    address: 0x09545864
     size: 32
 - name: card_bos_13a
   format: palette
   symbol: gUnk_09612818
   us:
-    address: 157362200
+    address: 0x09612818
     size: 32
   jp:
-    address: 157070068
+    address: 0x095CB2F4
     size: 32
   eu:
-    address: 156522628
+    address: 0x09545884
     size: 32
 - name: card_bos_13b
   format: palette
   symbol: gUnk_09612838
   us:
-    address: 157362232
+    address: 0x09612838
     size: 32
   jp:
-    address: 157070100
+    address: 0x095CB314
     size: 32
   eu:
-    address: 156522660
+    address: 0x095458A4
     size: 32
 - name: card_bos_13c
   format: palette
   symbol: gUnk_09612858
   us:
-    address: 157362264
+    address: 0x09612858
     size: 32
   jp:
-    address: 157070132
+    address: 0x095CB334
     size: 32
   eu:
-    address: 156522692
+    address: 0x095458C4
     size: 32
 - name: card_bos_13d
   format: palette
   symbol: gUnk_09612878
   us:
-    address: 157362296
+    address: 0x09612878
     size: 32
   jp:
-    address: 157070164
+    address: 0x095CB354
     size: 32
   eu:
-    address: 156522724
+    address: 0x095458E4
     size: 32
 - name: gUnk_09612898
   format: palette
   us:
-    address: 157362328
+    address: 0x09612898
     size: 32
   jp:
-    address: 157070196
+    address: 0x095CB374
     size: 32
   eu:
-    address: 156522756
+    address: 0x09545904
     size: 32
 - name: card_bos_14a
   format: palette
   symbol: gUnk_096128B8
   us:
-    address: 157362360
+    address: 0x096128B8
     size: 32
   jp:
-    address: 157070228
+    address: 0x095CB394
     size: 32
   eu:
-    address: 156522788
+    address: 0x09545924
     size: 32
 - name: card_bos_14b
   format: palette
   symbol: gUnk_096128D8
   us:
-    address: 157362392
+    address: 0x096128D8
     size: 32
   jp:
-    address: 157070260
+    address: 0x095CB3B4
     size: 32
   eu:
-    address: 156522820
+    address: 0x09545944
     size: 32
 - name: card_bos_14c
   format: palette
   symbol: gUnk_096128F8
   us:
-    address: 157362424
+    address: 0x096128F8
     size: 32
   jp:
-    address: 157070292
+    address: 0x095CB3D4
     size: 32
   eu:
-    address: 156522852
+    address: 0x09545964
     size: 32
 - name: card_bos_14d
   format: palette
   symbol: gUnk_09612918
   us:
-    address: 157362456
+    address: 0x09612918
     size: 32
   jp:
-    address: 157070324
+    address: 0x095CB3F4
     size: 32
   eu:
-    address: 156522884
+    address: 0x09545984
     size: 32
 - name: gUnk_09612938
   format: palette
   us:
-    address: 157362488
+    address: 0x09612938
     size: 32
   jp:
-    address: 157070356
+    address: 0x095CB414
     size: 32
   eu:
-    address: 156522916
+    address: 0x095459A4
     size: 32
 - name: card_bos_15a
   format: palette
   symbol: gUnk_09612958
   us:
-    address: 157362520
+    address: 0x09612958
     size: 32
   jp:
-    address: 157070388
+    address: 0x095CB434
     size: 32
   eu:
-    address: 156522948
+    address: 0x095459C4
     size: 32
 - name: card_bos_15b
   format: palette
   symbol: gUnk_09612978
   us:
-    address: 157362552
+    address: 0x09612978
     size: 32
   jp:
-    address: 157070420
+    address: 0x095CB454
     size: 32
   eu:
-    address: 156522980
+    address: 0x095459E4
     size: 32
 - name: card_bos_15c
   format: palette
   symbol: gUnk_09612998
   us:
-    address: 157362584
+    address: 0x09612998
     size: 32
   jp:
-    address: 157070452
+    address: 0x095CB474
     size: 32
   eu:
-    address: 156523012
+    address: 0x09545A04
     size: 32
 - name: card_bos_15d
   format: palette
   symbol: gUnk_096129B8
   us:
-    address: 157362616
+    address: 0x096129B8
     size: 32
   jp:
-    address: 157070484
+    address: 0x095CB494
     size: 32
   eu:
-    address: 156523044
+    address: 0x09545A24
     size: 32
 - name: gUnk_096129D8
   format: palette
   us:
-    address: 157362648
+    address: 0x096129D8
     size: 32
   jp:
-    address: 157070516
+    address: 0x095CB4B4
     size: 32
   eu:
-    address: 156523076
+    address: 0x09545A44
     size: 32
 - name: card_bos_16a
   format: palette
   symbol: gUnk_096129F8
   us:
-    address: 157362680
+    address: 0x096129F8
     size: 32
   jp:
-    address: 157070548
+    address: 0x095CB4D4
     size: 32
   eu:
-    address: 156523108
+    address: 0x09545A64
     size: 32
 - name: card_bos_16b
   format: palette
   symbol: gUnk_09612A18
   us:
-    address: 157362712
+    address: 0x09612A18
     size: 32
   jp:
-    address: 157070580
+    address: 0x095CB4F4
     size: 32
   eu:
-    address: 156523140
+    address: 0x09545A84
     size: 32
 - name: card_bos_16c
   format: palette
   symbol: gUnk_09612A38
   us:
-    address: 157362744
+    address: 0x09612A38
     size: 32
   jp:
-    address: 157070612
+    address: 0x095CB514
     size: 32
   eu:
-    address: 156523172
+    address: 0x09545AA4
     size: 32
 - name: card_bos_16d
   format: palette
   symbol: gUnk_09612A58
   us:
-    address: 157362776
+    address: 0x09612A58
     size: 32
   jp:
-    address: 157070644
+    address: 0x095CB534
     size: 32
   eu:
-    address: 156523204
+    address: 0x09545AC4
     size: 32
 - name: gUnk_09612A78
   format: palette
   us:
-    address: 157362808
+    address: 0x09612A78
     size: 32
   jp:
-    address: 157070676
+    address: 0x095CB554
     size: 32
   eu:
-    address: 156523236
+    address: 0x09545AE4
     size: 32
 - name: card_bos_17a
   format: palette
   symbol: gUnk_09612A98
   us:
-    address: 157362840
+    address: 0x09612A98
     size: 32
   jp:
-    address: 157070708
+    address: 0x095CB574
     size: 32
   eu:
-    address: 156523268
+    address: 0x09545B04
     size: 32
 - name: card_bos_17b
   format: palette
   symbol: gUnk_09612AB8
   us:
-    address: 157362872
+    address: 0x09612AB8
     size: 32
   jp:
-    address: 157070740
+    address: 0x095CB594
     size: 32
   eu:
-    address: 156523300
+    address: 0x09545B24
     size: 32
 - name: card_bos_17c
   format: palette
   symbol: gUnk_09612AD8
   us:
-    address: 157362904
+    address: 0x09612AD8
     size: 32
   jp:
-    address: 157070772
+    address: 0x095CB5B4
     size: 32
   eu:
-    address: 156523332
+    address: 0x09545B44
     size: 32
 - name: card_bos_17d
   format: palette
   symbol: gUnk_09612AF8
   us:
-    address: 157362936
+    address: 0x09612AF8
     size: 32
   jp:
-    address: 157070804
+    address: 0x095CB5D4
     size: 32
   eu:
-    address: 156523364
+    address: 0x09545B64
     size: 32
 - name: gUnk_09612B18
   format: palette
   us:
-    address: 157362968
+    address: 0x09612B18
     size: 32
   jp:
-    address: 157070836
+    address: 0x095CB5F4
     size: 32
   eu:
-    address: 156523396
+    address: 0x09545B84
     size: 32
 - name: card_bos_18a
   format: palette
   symbol: gUnk_09612B38
   us:
-    address: 157363000
+    address: 0x09612B38
     size: 32
   jp:
-    address: 157070868
+    address: 0x095CB614
     size: 32
   eu:
-    address: 156523428
+    address: 0x09545BA4
     size: 32
 - name: card_bos_18b
   format: palette
   symbol: gUnk_09612B58
   us:
-    address: 157363032
+    address: 0x09612B58
     size: 32
   jp:
-    address: 157070900
+    address: 0x095CB634
     size: 32
   eu:
-    address: 156523460
+    address: 0x09545BC4
     size: 32
 - name: card_bos_18c
   format: palette
   symbol: gUnk_09612B78
   us:
-    address: 157363064
+    address: 0x09612B78
     size: 32
   jp:
-    address: 157070932
+    address: 0x095CB654
     size: 32
   eu:
-    address: 156523492
+    address: 0x09545BE4
     size: 32
 - name: card_bos_18d
   format: palette
   symbol: gUnk_09612B98
   us:
-    address: 157363096
+    address: 0x09612B98
     size: 32
   jp:
-    address: 157070964
+    address: 0x095CB674
     size: 32
   eu:
-    address: 156523524
+    address: 0x09545C04
     size: 32
 - name: gUnk_09612BB8
   format: raw
   us:
-    address: 157363128
+    address: 0x09612BB8
     size: 32
   jp:
-    address: 157070996
+    address: 0x095CB694
     size: 32
   eu:
-    address: 156523556
+    address: 0x09545C24
     size: 32
 - name: gUnk_09612BD8
   format: palette
   us:
-    address: 157363160
+    address: 0x09612BD8
     size: 32
   jp:
-    address: 157071028
+    address: 0x095CB6B4
     size: 32
   eu:
-    address: 156523588
+    address: 0x09545C44
     size: 32
 - name: gUnk_09612BF8
   format: palette
   us:
-    address: 157363192
+    address: 0x09612BF8
     size: 32
   jp:
-    address: 157071060
+    address: 0x095CB6D4
     size: 32
   eu:
-    address: 156523620
+    address: 0x09545C64
     size: 32
 - name: gUnk_09612C18
   format: palette
   us:
-    address: 157363224
+    address: 0x09612C18
     size: 32
   jp:
-    address: 157071092
+    address: 0x095CB6F4
     size: 32
   eu:
-    address: 156523652
+    address: 0x09545C84
     size: 32
 - name: gUnk_09613E98
   format: palette
   us:
-    address: 157367960
+    address: 0x09613E98
     size: 32
   jp:
-    address: 157075828
+    address: 0x095CC974
     size: 32
   eu:
-    address: 156528004
+    address: 0x09546D84
     size: 32
 - name: gUnk_09613EB8
   format: palette
   us:
-    address: 157367992
+    address: 0x09613EB8
     size: 32
   jp:
-    address: 157075860
+    address: 0x095CC994
     size: 32
   eu:
-    address: 156528036
+    address: 0x09546DA4
     size: 32
 - name: gUnk_09613ED8
   format: palette
   us:
-    address: 157368024
+    address: 0x09613ED8
     size: 32
   jp:
-    address: 157075892
+    address: 0x095CC9B4
     size: 32
   eu:
-    address: 156528068
+    address: 0x09546DC4
     size: 32
 - name: gUnk_09613EF8
   format: raw
   us:
-    address: 157368056
+    address: 0x09613EF8
     size: 32
   jp:
-    address: 157075924
+    address: 0x095CC9D4
     size: 32
     symbol: gUnkJp_095CC9D4
   eu:
-    address: 156528100
+    address: 0x09546DE4
     size: 32
     symbol: gUnkEu_09546DE4
 - name: gUnk_09613F18
   format: palette
   us:
-    address: 157368088
+    address: 0x09613F18
     size: 32
   jp:
-    address: 157075956
+    address: 0x095CC9F4
     size: 32
   eu:
-    address: 156528132
+    address: 0x09546E04
     size: 32
 - name: gUnk_09613F38
   format: palette
   us:
-    address: 157368120
+    address: 0x09613F38
     size: 32
   jp:
-    address: 157075988
+    address: 0x095CCA14
     size: 32
   eu:
-    address: 156528164
+    address: 0x09546E24
     size: 32
 - name: gUnk_09613F58
   format: raw
   us:
-    address: 157368152
+    address: 0x09613F58
     size: 32
   jp:
-    address: 157076020
+    address: 0x095CCA34
     size: 32
     symbol: gUnkJp_095CCA34
   eu:
-    address: 156528196
+    address: 0x09546E44
     size: 32
     symbol: gUnkEu_09546E44
 - name: gUnk_09613F78
   format: palette
   us:
-    address: 157368184
+    address: 0x09613F78
     size: 32
   jp:
-    address: 157076052
+    address: 0x095CCA54
     size: 32
   eu:
-    address: 156528228
+    address: 0x09546E64
     size: 32
 - name: gUnk_09613F98
   format: palette
   us:
-    address: 157368216
+    address: 0x09613F98
     size: 32
   jp:
-    address: 157076084
+    address: 0x095CCA74
     size: 32
   eu:
-    address: 156528260
+    address: 0x09546E84
     size: 32
 - name: gUnk_09613FB8
   format: palette
   us:
-    address: 157368248
+    address: 0x09613FB8
     size: 32
   jp:
-    address: 157076116
+    address: 0x095CCA94
     size: 32
   eu:
-    address: 156528292
+    address: 0x09546EA4
     size: 32
 - name: gUnk_09613FD8
   format: palette
   us:
-    address: 157368280
+    address: 0x09613FD8
     size: 32
   jp:
-    address: 157076148
+    address: 0x095CCAB4
     size: 32
   eu:
-    address: 156528324
+    address: 0x09546EC4
     size: 32
 - name: gUnk_09613FF8
   format: palette
   us:
-    address: 157368312
+    address: 0x09613FF8
     size: 32
   jp:
-    address: 157076180
+    address: 0x095CCAD4
     size: 32
   eu:
-    address: 156528356
+    address: 0x09546EE4
     size: 32
 - name: gUnk_09614018
   format: raw
   us:
-    address: 157368344
+    address: 0x09614018
     size: 128
   jp:
-    address: 157076212
+    address: 0x095CCAF4
     size: 128
   eu:
-    address: 156528388
+    address: 0x09546F04
     size: 128
 - name: gUnk_09614098
   format: raw
   us:
-    address: 157368472
+    address: 0x09614098
     size: 128
   jp:
-    address: 157076340
+    address: 0x095CCB74
     size: 128
   eu:
-    address: 156528516
+    address: 0x09546F84
     size: 128
 - name: gUnk_09614118
   format: raw
   us:
-    address: 157368600
+    address: 0x09614118
     size: 480
   jp:
-    address: 157076468
+    address: 0x095CCBF4
     size: 480
   eu:
-    address: 156528644
+    address: 0x09547004
     size: 480
 - name: gUnk_096142F8
   format: raw
   us:
-    address: 157369080
+    address: 0x096142F8
     size: 32
   jp:
-    address: 157076948
+    address: 0x095CCDD4
     size: 32
   eu:
-    address: 156529124
+    address: 0x095471E4
     size: 32
 - name: gUnk_09614318
   format: raw
   us:
-    address: 157369112
+    address: 0x09614318
     size: 238
   jp:
-    address: 157076980
+    address: 0x095CCDF4
     size: 238
   eu:
-    address: 156529156
+    address: 0x09547204
     size: 238
 - name: gUnk_09614406
   format: raw
   us:
-    address: 157369350
+    address: 0x09614406
     size: 18
   jp:
-    address: 157077218
+    address: 0x095CCEE2
     size: 18
   eu:
-    address: 156529394
+    address: 0x095472F2
     size: 18
 - name: gUnk_09614418
   format: palette
   us:
-    address: 157369368
+    address: 0x09614418
     size: 32
   jp:
-    address: 157077236
+    address: 0x095CCEF4
     size: 32
   eu:
-    address: 156529412
+    address: 0x09547304
     size: 32
 - name: gUnk_09614438
   format: palette
   us:
-    address: 157369400
+    address: 0x09614438
     size: 32
   jp:
-    address: 157077268
+    address: 0x095CCF14
     size: 32
   eu:
-    address: 156529444
+    address: 0x09547324
     size: 32
 - name: gUnk_09614458
   format: raw
   us:
-    address: 157369432
+    address: 0x09614458
     size: 32
   jp:
-    address: 157077300
+    address: 0x095CCF34
     size: 32
   eu:
-    address: 156529476
+    address: 0x09547344
     size: 32
 - name: gUnk_09614478
   format: raw
   us:
-    address: 157369464
+    address: 0x09614478
     size: 32
   jp:
-    address: 157077332
+    address: 0x095CCF54
     size: 32
   eu:
-    address: 156529508
+    address: 0x09547364
     size: 32
 - name: gUnk_09614498
   format: raw
   us:
-    address: 157369496
+    address: 0x09614498
     size: 32
   jp:
-    address: 157077364
+    address: 0x095CCF74
     size: 32
   eu:
-    address: 156529540
+    address: 0x09547384
     size: 32
 - name: gUnk_096144B8
   format: raw
   us:
-    address: 157369528
+    address: 0x096144B8
     size: 32
   jp:
-    address: 157077396
+    address: 0x095CCF94
     size: 32
   eu:
-    address: 156529572
+    address: 0x095473A4
     size: 32
 - name: gUnk_096144D8
   format: palette
   us:
-    address: 157369560
+    address: 0x096144D8
     size: 32
   jp:
-    address: 157077428
+    address: 0x095CCFB4
     size: 32
   eu:
-    address: 156529604
+    address: 0x095473C4
     size: 32
 - name: gUnk_096144F8
   format: palette
   us:
-    address: 157369592
+    address: 0x096144F8
     size: 32
   jp:
-    address: 157077460
+    address: 0x095CCFD4
     size: 32
   eu:
-    address: 156529636
+    address: 0x095473E4
     size: 32
 - name: gUnk_09614518
   format: raw
   us:
-    address: 157369624
+    address: 0x09614518
     size: 160
   jp:
-    address: 157077492
+    address: 0x095CCFF4
     size: 160
   eu:
-    address: 156529668
+    address: 0x09547404
     size: 160
 - name: gUnk_096145B8
   format: palette
   us:
-    address: 157369784
+    address: 0x096145B8
     size: 32
   jp:
-    address: 157077652
+    address: 0x095CD094
     size: 32
   eu:
-    address: 156529828
+    address: 0x095474A4
     size: 32
 - name: gUnk_096145D8
   format: raw
   us:
-    address: 157369816
+    address: 0x096145D8
     size: 64
   jp:
-    address: 157077684
+    address: 0x095CD0B4
     size: 64
   eu:
-    address: 156529860
+    address: 0x095474C4
     size: 64
 - name: gUnk_09614618
   format: raw
   us:
-    address: 157369880
+    address: 0x09614618
     size: 64
   jp:
-    address: 157077748
+    address: 0x095CD0F4
     size: 64
   eu:
-    address: 156529924
+    address: 0x09547504
     size: 64
 - name: gUnk_09614658
   format: raw
   us:
-    address: 157369944
+    address: 0x09614658
     size: 160
   jp:
-    address: 157077812
+    address: 0x095CD134
     size: 160
   eu:
-    address: 156529988
+    address: 0x09547544
     size: 160
 - name: gUnk_096146F8
   format: palette
   us:
-    address: 157370104
+    address: 0x096146F8
     size: 32
   jp:
-    address: 157077972
+    address: 0x095CD1D4
     size: 32
   eu:
-    address: 156530148
+    address: 0x095475E4
     size: 32
 - name: gUnk_09614718
   format: palette
   us:
-    address: 157370136
+    address: 0x09614718
     size: 32
   jp:
-    address: 157078004
+    address: 0x095CD1F4
     size: 32
   eu:
-    address: 156530180
+    address: 0x09547604
     size: 32
 - name: gUnk_09614738
   format: palette
   us:
-    address: 157370168
+    address: 0x09614738
     size: 32
   jp:
-    address: 157078036
+    address: 0x095CD214
     size: 32
   eu:
-    address: 156530212
+    address: 0x09547624
     size: 32
 - name: gUnk_09614758
   format: palette
   us:
-    address: 157370200
+    address: 0x09614758
     size: 32
   jp:
-    address: 157078068
+    address: 0x095CD234
     size: 32
   eu:
-    address: 156530244
+    address: 0x09547644
     size: 32
 - name: gUnk_09614778
   format: palette
   us:
-    address: 157370232
+    address: 0x09614778
     size: 32
   jp:
-    address: 157078100
+    address: 0x095CD254
     size: 32
   eu:
-    address: 156530276
+    address: 0x09547664
     size: 32
 - name: gUnk_09614798
   format: palette
   us:
-    address: 157370264
+    address: 0x09614798
     size: 32
   jp:
-    address: 157078132
+    address: 0x095CD274
     size: 32
   eu:
-    address: 156530308
+    address: 0x09547684
     size: 32
 - name: gUnk_096147B8
   format: palette
   us:
-    address: 157370296
+    address: 0x096147B8
     size: 32
   jp:
-    address: 157078164
+    address: 0x095CD294
     size: 32
   eu:
-    address: 156530340
+    address: 0x095476A4
     size: 32
 - name: gUnk_096147D8
   format: raw
   us:
-    address: 157370328
+    address: 0x096147D8
     size: 224
   jp:
-    address: 157078196
+    address: 0x095CD2B4
     size: 224
     symbol: gUnkJp_095CD2B4
   eu:
-    address: 156530372
+    address: 0x095476C4
     size: 224
     symbol: gUnkEu_095476C4
 - name: gUnk_096148B8
   format: raw
   us:
-    address: 157370552
+    address: 0x096148B8
     size: 32
   jp:
-    address: 157078420
+    address: 0x095CD394
     size: 32
   eu:
-    address: 156530596
+    address: 0x095477A4
     size: 32
 - name: gUnk_096148D8
   format: raw
   us:
-    address: 157370584
+    address: 0x096148D8
     size: 288
   jp:
-    address: 157078452
+    address: 0x095CD3B4
     size: 288
   eu:
-    address: 156530628
+    address: 0x095477C4
     size: 288
 - name: gUnk_096149F8
   format: palette
   us:
-    address: 157370872
+    address: 0x096149F8
     size: 32
   jp:
-    address: 157078740
+    address: 0x095CD4D4
     size: 32
   eu:
-    address: 156530916
+    address: 0x095478E4
     size: 32
 - name: gUnk_09614A18
   format: palette
   us:
-    address: 157370904
+    address: 0x09614A18
     size: 32
   jp:
-    address: 157078772
+    address: 0x095CD4F4
     size: 32
   eu:
-    address: 156530948
+    address: 0x09547904
     size: 32
 - name: gUnk_09614A38
   format: palette
   us:
-    address: 157370936
+    address: 0x09614A38
     size: 32
   jp:
-    address: 157078804
+    address: 0x095CD514
     size: 32
   eu:
-    address: 156530980
+    address: 0x09547924
     size: 32
 - name: gUnk_09614A58
   format: palette
   us:
-    address: 157370968
+    address: 0x09614A58
     size: 32
   jp:
-    address: 157078836
+    address: 0x095CD534
     size: 32
   eu:
-    address: 156531012
+    address: 0x09547944
     size: 32
 - name: gUnk_09614A78
   format: palette
   us:
-    address: 157371000
+    address: 0x09614A78
     size: 32
   jp:
-    address: 157078868
+    address: 0x095CD554
     size: 32
   eu:
-    address: 156531044
+    address: 0x09547964
     size: 32
 - name: gUnk_09614A98
   format: palette
   us:
-    address: 157371032
+    address: 0x09614A98
     size: 32
   jp:
-    address: 157078900
+    address: 0x095CD574
     size: 32
   eu:
-    address: 156531076
+    address: 0x09547984
     size: 32
 - name: gUnk_09614AB8
   format: palette
   us:
-    address: 157371064
+    address: 0x09614AB8
     size: 32
   jp:
-    address: 157078932
+    address: 0x095CD594
     size: 32
   eu:
-    address: 156531108
+    address: 0x095479A4
     size: 32
 - name: gUnk_09614AD8
   format: palette
   us:
-    address: 157371096
+    address: 0x09614AD8
     size: 32
   jp:
-    address: 157078964
+    address: 0x095CD5B4
     size: 32
   eu:
-    address: 156531140
+    address: 0x095479C4
     size: 32
 - name: gUnk_09614AF8
   format: palette
   us:
-    address: 157371128
+    address: 0x09614AF8
     size: 32
   jp:
-    address: 157078996
+    address: 0x095CD5D4
     size: 32
   eu:
-    address: 156531172
+    address: 0x095479E4
     size: 32
 - name: gUnk_09614B18
   format: palette
   us:
-    address: 157371160
+    address: 0x09614B18
     size: 32
   jp:
-    address: 157079028
+    address: 0x095CD5F4
     size: 32
   eu:
-    address: 156531204
+    address: 0x09547A04
     size: 32
 - name: gUnk_09614B38
   format: palette
   us:
-    address: 157371192
+    address: 0x09614B38
     size: 32
   jp:
-    address: 157079060
+    address: 0x095CD614
     size: 32
   eu:
-    address: 156531236
+    address: 0x09547A24
     size: 32
 - name: gUnk_09614B58
   format: palette
   us:
-    address: 157371224
+    address: 0x09614B58
     size: 32
   jp:
-    address: 157079092
+    address: 0x095CD634
     size: 32
   eu:
-    address: 156531268
+    address: 0x09547A44
     size: 32
 - name: gUnk_09614B78
   format: palette
   us:
-    address: 157371256
+    address: 0x09614B78
     size: 32
   jp:
-    address: 157079124
+    address: 0x095CD654
     size: 32
   eu:
-    address: 156531300
+    address: 0x09547A64
     size: 32
 - name: gUnk_09614B98
   format: palette
   us:
-    address: 157371288
+    address: 0x09614B98
     size: 32
   jp:
-    address: 157079156
+    address: 0x095CD674
     size: 32
   eu:
-    address: 156531332
+    address: 0x09547A84
     size: 32
 - name: gUnk_09614BB8
   format: palette
   us:
-    address: 157371320
+    address: 0x09614BB8
     size: 32
   jp:
-    address: 157079188
+    address: 0x095CD694
     size: 32
   eu:
-    address: 156531364
+    address: 0x09547AA4
     size: 32
 - name: gUnk_09614BD8
   format: palette
   us:
-    address: 157371352
+    address: 0x09614BD8
     size: 32
   jp:
-    address: 157079220
+    address: 0x095CD6B4
     size: 32
   eu:
-    address: 156531396
+    address: 0x09547AC4
     size: 32
 - name: gUnk_09614BF8
   format: palette
   us:
-    address: 157371384
+    address: 0x09614BF8
     size: 32
   jp:
-    address: 157079252
+    address: 0x095CD6D4
     size: 32
   eu:
-    address: 156531428
+    address: 0x09547AE4
     size: 32
 - name: gUnk_09614C18
   format: palette
   us:
-    address: 157371416
+    address: 0x09614C18
     size: 32
   jp:
-    address: 157079284
+    address: 0x095CD6F4
     size: 32
   eu:
-    address: 156531460
+    address: 0x09547B04
     size: 32
 - name: gUnk_09614C38
   format: palette
   us:
-    address: 157371448
+    address: 0x09614C38
     size: 32
   jp:
-    address: 157079316
+    address: 0x095CD714
     size: 32
   eu:
-    address: 156531492
+    address: 0x09547B24
     size: 32
 - name: gUnk_09614C58
   format: palette
   us:
-    address: 157371480
+    address: 0x09614C58
     size: 32
   jp:
-    address: 157079348
+    address: 0x095CD734
     size: 32
   eu:
-    address: 156531524
+    address: 0x09547B44
     size: 32
 - name: gUnk_09614C78
   format: palette
   us:
-    address: 157371512
+    address: 0x09614C78
     size: 32
   jp:
-    address: 157079380
+    address: 0x095CD754
     size: 32
   eu:
-    address: 156531556
+    address: 0x09547B64
     size: 32
 - name: gUnk_09614C98
   format: palette
   us:
-    address: 157371544
+    address: 0x09614C98
     size: 32
   jp:
-    address: 157079412
+    address: 0x095CD774
     size: 32
   eu:
-    address: 156531588
+    address: 0x09547B84
     size: 32
 - name: talk_22_00
   format: palette
   symbol: gUnk_09614CB8
   us:
-    address: 157371576
+    address: 0x09614CB8
     size: 32
   jp:
-    address: 157079444
+    address: 0x095CD794
     size: 32
   eu:
-    address: 156531620
+    address: 0x09547BA4
     size: 32
 - name: talk_23_00
   format: palette
   symbol: gUnk_09614CD8
   us:
-    address: 157371608
+    address: 0x09614CD8
     size: 32
   jp:
-    address: 157079476
+    address: 0x095CD7B4
     size: 32
   eu:
-    address: 156531652
+    address: 0x09547BC4
     size: 32
 - name: gUnk_09614CF8
   format: palette
   us:
-    address: 157371640
+    address: 0x09614CF8
     size: 32
   jp:
-    address: 157079508
+    address: 0x095CD7D4
     size: 32
   eu:
-    address: 156531684
+    address: 0x09547BE4
     size: 32
 - name: gUnk_09614D18
   format: palette
   us:
-    address: 157371672
+    address: 0x09614D18
     size: 32
   jp:
-    address: 157079540
+    address: 0x095CD7F4
     size: 32
   eu:
-    address: 156531716
+    address: 0x09547C04
     size: 32
 - name: gUnk_09614D38
   format: palette
   us:
-    address: 157371704
+    address: 0x09614D38
     size: 32
   jp:
-    address: 157079572
+    address: 0x095CD814
     size: 32
   eu:
-    address: 156531748
+    address: 0x09547C24
     size: 32
 - name: gUnk_09614D58
   format: palette
   us:
-    address: 157371736
+    address: 0x09614D58
     size: 32
   jp:
-    address: 157079604
+    address: 0x095CD834
     size: 32
   eu:
-    address: 156531780
+    address: 0x09547C44
     size: 32
 - name: gUnk_09614D78
   format: palette
   us:
-    address: 157371768
+    address: 0x09614D78
     size: 32
   jp:
-    address: 157079636
+    address: 0x095CD854
     size: 32
   eu:
-    address: 156531812
+    address: 0x09547C64
     size: 32
 - name: gUnk_09614D98
   format: palette
   us:
-    address: 157371800
+    address: 0x09614D98
     size: 32
   jp:
-    address: 157079668
+    address: 0x095CD874
     size: 32
   eu:
-    address: 156531844
+    address: 0x09547C84
     size: 32
 - name: gUnk_09614DB8
   format: palette
   us:
-    address: 157371832
+    address: 0x09614DB8
     size: 32
   jp:
-    address: 157079700
+    address: 0x095CD894
     size: 32
   eu:
-    address: 156531876
+    address: 0x09547CA4
     size: 32
 - name: gUnk_09614DD8
   format: palette
   us:
-    address: 157371864
+    address: 0x09614DD8
     size: 32
   jp:
-    address: 157079732
+    address: 0x095CD8B4
     size: 32
   eu:
-    address: 156531908
+    address: 0x09547CC4
     size: 32
 - name: gUnk_09614DF8
   format: palette
   us:
-    address: 157371896
+    address: 0x09614DF8
     size: 32
   jp:
-    address: 157079764
+    address: 0x095CD8D4
     size: 32
   eu:
-    address: 156531940
+    address: 0x09547CE4
     size: 32
 - name: gUnk_09614E18
   format: palette
   us:
-    address: 157371928
+    address: 0x09614E18
     size: 32
   jp:
-    address: 157079796
+    address: 0x095CD8F4
     size: 32
   eu:
-    address: 156531972
+    address: 0x09547D04
     size: 32
 - name: gUnk_09614E38
   format: palette
   us:
-    address: 157371960
+    address: 0x09614E38
     size: 32
   jp:
-    address: 157079828
+    address: 0x095CD914
     size: 32
   eu:
-    address: 156532004
+    address: 0x09547D24
     size: 32
 - name: gUnk_09614E58
   format: palette
   us:
-    address: 157371992
+    address: 0x09614E58
     size: 32
   jp:
-    address: 157079860
+    address: 0x095CD934
     size: 32
   eu:
-    address: 156532036
+    address: 0x09547D44
     size: 32
 - name: gUnk_09614E78
   format: palette
   us:
-    address: 157372024
+    address: 0x09614E78
     size: 32
   jp:
-    address: 157079892
+    address: 0x095CD954
     size: 32
   eu:
-    address: 156532068
+    address: 0x09547D64
     size: 32
 - name: gUnk_09614E98
   format: palette
   us:
-    address: 157372056
+    address: 0x09614E98
     size: 32
   jp:
-    address: 157079924
+    address: 0x095CD974
     size: 32
   eu:
-    address: 156532100
+    address: 0x09547D84
     size: 32
 - name: gUnk_09614EB8
   format: palette
   us:
-    address: 157372088
+    address: 0x09614EB8
     size: 32
   jp:
-    address: 157079956
+    address: 0x095CD994
     size: 32
   eu:
-    address: 156532132
+    address: 0x09547DA4
     size: 32
 - name: gUnk_09614ED8
   format: palette
   us:
-    address: 157372120
+    address: 0x09614ED8
     size: 32
   jp:
-    address: 157079988
+    address: 0x095CD9B4
     size: 32
   eu:
-    address: 156532164
+    address: 0x09547DC4
     size: 32
 - name: gUnk_09614EF8
   format: palette
   us:
-    address: 157372152
+    address: 0x09614EF8
     size: 32
   jp:
-    address: 157080020
+    address: 0x095CD9D4
     size: 32
   eu:
-    address: 156532196
+    address: 0x09547DE4
     size: 32
 - name: gUnk_09614F18
   format: palette
   us:
-    address: 157372184
+    address: 0x09614F18
     size: 32
   jp:
-    address: 157080052
+    address: 0x095CD9F4
     size: 32
   eu:
-    address: 156532228
+    address: 0x09547E04
     size: 32
 - name: gUnk_09614F38
   format: palette
   us:
-    address: 157372216
+    address: 0x09614F38
     size: 32
   jp:
-    address: 157080084
+    address: 0x095CDA14
     size: 32
   eu:
-    address: 156532260
+    address: 0x09547E24
     size: 32
 - name: gUnk_09614F58
   format: palette
   us:
-    address: 157372248
+    address: 0x09614F58
     size: 32
   jp:
-    address: 157080116
+    address: 0x095CDA34
     size: 32
   eu:
-    address: 156532292
+    address: 0x09547E44
     size: 32
 - name: gUnk_09614F78
   format: palette
   us:
-    address: 157372280
+    address: 0x09614F78
     size: 32
   jp:
-    address: 157080148
+    address: 0x095CDA54
     size: 32
   eu:
-    address: 156532324
+    address: 0x09547E64
     size: 32
 - name: gUnk_09614F98
   format: palette
   us:
-    address: 157372312
+    address: 0x09614F98
     size: 32
   jp:
-    address: 157080180
+    address: 0x095CDA74
     size: 32
   eu:
-    address: 156532356
+    address: 0x09547E84
     size: 32
 - name: gUnk_09614FB8
   format: palette
   us:
-    address: 157372344
+    address: 0x09614FB8
     size: 32
   jp:
-    address: 157080212
+    address: 0x095CDA94
     size: 32
   eu:
-    address: 156532388
+    address: 0x09547EA4
     size: 32
 - name: gUnk_09614FD8
   format: palette
   us:
-    address: 157372376
+    address: 0x09614FD8
     size: 32
   jp:
-    address: 157080244
+    address: 0x095CDAB4
     size: 32
   eu:
-    address: 156532420
+    address: 0x09547EC4
     size: 32
 - name: gUnk_09614FF8
   format: palette
   us:
-    address: 157372408
+    address: 0x09614FF8
     size: 32
   jp:
-    address: 157080276
+    address: 0x095CDAD4
     size: 32
   eu:
-    address: 156532452
+    address: 0x09547EE4
     size: 32
 - name: gUnk_09615018
   format: palette
   us:
-    address: 157372440
+    address: 0x09615018
     size: 32
   jp:
-    address: 157080308
+    address: 0x095CDAF4
     size: 32
   eu:
-    address: 156532484
+    address: 0x09547F04
     size: 32
 - name: gUnk_09615038
   format: palette
   us:
-    address: 157372472
+    address: 0x09615038
     size: 32
   jp:
-    address: 157080340
+    address: 0x095CDB14
     size: 32
   eu:
-    address: 156532516
+    address: 0x09547F24
     size: 32
 - name: gUnk_09615058
   format: raw
   us:
-    address: 157372504
+    address: 0x09615058
     size: 32
   jp:
-    address: 157080372
+    address: 0x095CDB34
     size: 32
   eu:
-    address: 156532548
+    address: 0x09547F44
     size: 32
 - name: gUnk_09615078
   format: palette
   us:
-    address: 157372536
+    address: 0x09615078
     size: 32
   jp:
-    address: 157080404
+    address: 0x095CDB54
     size: 32
   eu:
-    address: 156532580
+    address: 0x09547F64
     size: 32
 - name: gUnk_09615098
   format: palette
   us:
-    address: 157372568
+    address: 0x09615098
     size: 32
   jp:
-    address: 157080436
+    address: 0x095CDB74
     size: 32
   eu:
-    address: 156532612
+    address: 0x09547F84
     size: 32
 - name: gUnk_096150B8
   format: palette
   us:
-    address: 157372600
+    address: 0x096150B8
     size: 32
   jp:
-    address: 157080468
+    address: 0x095CDB94
     size: 32
   eu:
-    address: 156532644
+    address: 0x09547FA4
     size: 32
 - name: gUnk_096150D8
   format: palette
   us:
-    address: 157372632
+    address: 0x096150D8
     size: 32
   jp:
-    address: 157080500
+    address: 0x095CDBB4
     size: 32
   eu:
-    address: 156532676
+    address: 0x09547FC4
     size: 32
 - name: gUnk_096150F8
   format: palette
   us:
-    address: 157372664
+    address: 0x096150F8
     size: 32
   jp:
-    address: 157080532
+    address: 0x095CDBD4
     size: 32
   eu:
-    address: 156532708
+    address: 0x09547FE4
     size: 32
 - name: gUnk_09615118
   format: palette
   us:
-    address: 157372696
+    address: 0x09615118
     size: 32
   jp:
-    address: 157080564
+    address: 0x095CDBF4
     size: 32
   eu:
-    address: 156532740
+    address: 0x09548004
     size: 32
 - name: gUnk_09615138
   format: palette
   us:
-    address: 157372728
+    address: 0x09615138
     size: 32
   jp:
-    address: 157080596
+    address: 0x095CDC14
     size: 32
   eu:
-    address: 156532772
+    address: 0x09548024
     size: 32
 - name: gUnk_09615158
   format: palette
   us:
-    address: 157372760
+    address: 0x09615158
     size: 32
   jp:
-    address: 157080628
+    address: 0x095CDC34
     size: 32
   eu:
-    address: 156532804
+    address: 0x09548044
     size: 32
 - name: gUnk_09615178
   format: palette
   us:
-    address: 157372792
+    address: 0x09615178
     size: 32
   jp:
-    address: 157080660
+    address: 0x095CDC54
     size: 32
   eu:
-    address: 156532836
+    address: 0x09548064
     size: 32
 - name: gUnk_09615198
   format: palette
   us:
-    address: 157372824
+    address: 0x09615198
     size: 32
   jp:
-    address: 157080692
+    address: 0x095CDC74
     size: 32
   eu:
-    address: 156532868
+    address: 0x09548084
     size: 32
 - name: gUnk_096151B8
   format: palette
   us:
-    address: 157372856
+    address: 0x096151B8
     size: 32
   jp:
-    address: 157080724
+    address: 0x095CDC94
     size: 32
   eu:
-    address: 156532900
+    address: 0x095480A4
     size: 32
 - name: donald
   format: palette
   symbol: gUnk_09617C58
   us:
-    address: 157383768
+    address: 0x09617C58
     size: 32
   jp:
-    address: 157091636
+    address: 0x095D0734
     size: 32
   eu:
-    address: 156543812
+    address: 0x0954AB44
     size: 32
 - name: robe
   format: palette
   symbol: gUnk_09617C78
   us:
-    address: 157383800
+    address: 0x09617C78
     size: 32
   jp:
-    address: 157091668
+    address: 0x095D0754
     size: 32
   eu:
-    address: 156543844
+    address: 0x0954AB64
     size: 32
 - name: trump_H
   format: palette
   symbol: gUnk_09617C98
   us:
-    address: 157383832
+    address: 0x09617C98
     size: 32
   jp:
-    address: 157091700
+    address: 0x095D0774
     size: 32
   eu:
-    address: 156543876
+    address: 0x0954AB84
     size: 32
 - name: trump_S
   format: palette
   symbol: gUnk_09617CB8
   us:
-    address: 157383864
+    address: 0x09617CB8
     size: 32
   jp:
-    address: 157091732
+    address: 0x095D0794
     size: 32
   eu:
-    address: 156543908
+    address: 0x0954ABA4
     size: 32
 - name: qeen
   format: palette
   symbol: gUnk_09617CD8
   us:
-    address: 157383896
+    address: 0x09617CD8
     size: 32
   jp:
-    address: 157091764
+    address: 0x095D07B4
     size: 32
   eu:
-    address: 156543940
+    address: 0x0954ABC4
     size: 32
 - name: alice
   format: palette
   symbol: gUnk_09617CF8
   us:
-    address: 157383928
+    address: 0x09617CF8
     size: 32
   jp:
-    address: 157091796
+    address: 0x095D07D4
     size: 32
   eu:
-    address: 156543972
+    address: 0x0954ABE4
     size: 32
 - name: jiminy
   format: palette
   symbol: gUnk_09617D18
   us:
-    address: 157383960
+    address: 0x09617D18
     size: 32
   jp:
-    address: 157091828
+    address: 0x095D07F4
     size: 32
   eu:
-    address: 156544004
+    address: 0x0954AC04
     size: 32
 - name: pinokio
   format: palette
   symbol: gUnk_09617D38
   us:
-    address: 157383992
+    address: 0x09617D38
     size: 32
   jp:
-    address: 157091860
+    address: 0x095D0814
     size: 32
   eu:
-    address: 156544036
+    address: 0x0954AC24
     size: 32
 - name: mogu
   format: palette
   symbol: gUnk_09617D58
   us:
-    address: 157384024
+    address: 0x09617D58
     size: 32
   jp:
-    address: 157091892
+    address: 0x095D0834
     size: 32
   eu:
-    address: 156544068
+    address: 0x0954AC44
     size: 32
 - name: usagi00
   format: palette
   symbol: gUnk_09617D78
   us:
-    address: 157384056
+    address: 0x09617D78
     size: 32
   jp:
-    address: 157091924
+    address: 0x095D0854
     size: 32
   eu:
-    address: 156544100
+    address: 0x0954AC64
     size: 32
 - name: aladdin
   format: palette
   symbol: gUnk_09617D98
   us:
-    address: 157384088
+    address: 0x09617D98
     size: 32
   jp:
-    address: 157091956
+    address: 0x095D0874
     size: 32
   eu:
-    address: 156544132
+    address: 0x0954AC84
     size: 32
 - name: jack
   format: palette
   symbol: gUnk_09617DB8
   us:
-    address: 157384120
+    address: 0x09617DB8
     size: 32
   jp:
-    address: 157091988
+    address: 0x095D0894
     size: 32
   eu:
-    address: 156544164
+    address: 0x0954ACA4
     size: 32
 - name: peter
   format: palette
   symbol: gUnk_09617DD8
   us:
-    address: 157384152
+    address: 0x09617DD8
     size: 32
   jp:
-    address: 157092020
+    address: 0x095D08B4
     size: 32
   eu:
-    address: 156544196
+    address: 0x0954ACC4
     size: 32
 - name: ariel
   format: palette
   symbol: gUnk_09617DF8
   us:
-    address: 157384184
+    address: 0x09617DF8
     size: 32
   jp:
-    address: 157092052
+    address: 0x095D08D4
     size: 32
   eu:
-    address: 156544228
+    address: 0x0954ACE4
     size: 32
 - name: beast
   format: palette
   symbol: gUnk_09617E18
   us:
-    address: 157384216
+    address: 0x09617E18
     size: 32
   jp:
-    address: 157092084
+    address: 0x095D08F4
     size: 32
   eu:
-    address: 156544260
+    address: 0x0954AD04
     size: 32
 - name: gUnk_09617E38
   format: palette
   us:
-    address: 157384248
+    address: 0x09617E38
     size: 32
   jp:
-    address: 157092116
+    address: 0x095D0914
     size: 32
   eu:
-    address: 156544292
+    address: 0x0954AD24
     size: 32
 - name: geppetto
   format: palette
   symbol: gUnk_09617E58
   us:
-    address: 157384280
+    address: 0x09617E58
     size: 32
   jp:
-    address: 157092148
+    address: 0x095D0934
     size: 32
   eu:
-    address: 156544324
+    address: 0x0954AD44
     size: 32
 - name: arthra
   format: palette
   symbol: gUnk_09617E78
   us:
-    address: 157384312
+    address: 0x09617E78
     size: 32
   jp:
-    address: 157092180
+    address: 0x095D0954
     size: 32
   eu:
-    address: 156544356
+    address: 0x0954AD64
     size: 32
 - name: bugi
   format: palette
   symbol: gUnk_09617E98
   us:
-    address: 157384344
+    address: 0x09617E98
     size: 32
   jp:
-    address: 157092212
+    address: 0x095D0974
     size: 32
   eu:
-    address: 156544388
+    address: 0x0954AD84
     size: 32
 - name: bell
   format: palette
   symbol: gUnk_09617EB8
   us:
-    address: 157384376
+    address: 0x09617EB8
     size: 32
   jp:
-    address: 157092244
+    address: 0x095D0994
     size: 32
   eu:
-    address: 156544420
+    address: 0x0954ADA4
     size: 32
 - name: phil
   format: palette
   symbol: gUnk_09617ED8
   us:
-    address: 157384408
+    address: 0x09617ED8
     size: 32
   jp:
-    address: 157092276
+    address: 0x095D09B4
     size: 32
   eu:
-    address: 156544452
+    address: 0x0954ADC4
     size: 32
 - name: heracles
   format: palette
   symbol: gUnk_09617EF8
   us:
-    address: 157384440
+    address: 0x09617EF8
     size: 32
   jp:
-    address: 157092308
+    address: 0x095D09D4
     size: 32
   eu:
-    address: 156544484
+    address: 0x0954ADE4
     size: 32
 - name: hades
   format: palette
   symbol: gUnk_09617F18
   us:
-    address: 157384472
+    address: 0x09617F18
     size: 32
   jp:
-    address: 157092340
+    address: 0x095D09F4
     size: 32
   eu:
-    address: 156544516
+    address: 0x0954AE04
     size: 32
 - name: gUnk_09617F38
   format: palette
   us:
-    address: 157384504
+    address: 0x09617F38
     size: 32
   jp:
-    address: 157092372
+    address: 0x095D0A14
     size: 32
   eu:
-    address: 156544548
+    address: 0x0954AE24
     size: 32
 - name: gUnk_09617F58
   format: palette
   us:
-    address: 157384536
+    address: 0x09617F58
     size: 32
   jp:
-    address: 157092404
+    address: 0x095D0A34
     size: 32
   eu:
-    address: 156544580
+    address: 0x0954AE44
     size: 32
 - name: gUnk_09617F78
   format: raw
   us:
-    address: 157384568
+    address: 0x09617F78
     size: 32
   jp:
-    address: 157092436
+    address: 0x095D0A54
     size: 32
   eu:
-    address: 156544612
+    address: 0x0954AE64
     size: 32
 - name: gUnk_09617F98
   format: palette
   us:
-    address: 157384600
+    address: 0x09617F98
     size: 32
   jp:
-    address: 157092468
+    address: 0x095D0A74
     size: 32
   eu:
-    address: 156544644
+    address: 0x0954AE84
     size: 32
 - name: finkl
   format: palette
   symbol: gUnk_09617FB8
   us:
-    address: 157384632
+    address: 0x09617FB8
     size: 32
   jp:
-    address: 157092500
+    address: 0x095D0A94
     size: 32
   eu:
-    address: 156544676
+    address: 0x0954AEA4
     size: 32
 - name: maref
   format: palette
   symbol: gUnk_09617FD8
   us:
-    address: 157384664
+    address: 0x09617FD8
     size: 32
   jp:
-    address: 157092532
+    address: 0x095D0AB4
     size: 32
   eu:
-    address: 156544708
+    address: 0x0954AEC4
     size: 32
 - name: banb
   format: palette
   symbol: gUnk_09617FF8
   us:
-    address: 157384696
+    address: 0x09617FF8
     size: 32
   jp:
-    address: 157092564
+    address: 0x095D0AD4
     size: 32
   eu:
-    address: 156544740
+    address: 0x0954AEE4
     size: 32
 - name: shinba
   format: palette
   symbol: gUnk_09618018
   us:
-    address: 157384728
+    address: 0x09618018
     size: 32
   jp:
-    address: 157092596
+    address: 0x095D0AF4
     size: 32
   eu:
-    address: 156544772
+    address: 0x0954AF04
     size: 32
 - name: mushu
   format: palette
   symbol: gUnk_09618038
   us:
-    address: 157384760
+    address: 0x09618038
     size: 32
   jp:
-    address: 157092628
+    address: 0x095D0B14
     size: 32
   eu:
-    address: 156544804
+    address: 0x0954AF24
     size: 32
 - name: kairi
   format: palette
   symbol: gUnk_09618058
   us:
-    address: 157384792
+    address: 0x09618058
     size: 32
   jp:
-    address: 157092660
+    address: 0x095D0B34
     size: 32
   eu:
-    address: 156544836
+    address: 0x0954AF44
     size: 32
 - name: earis
   format: palette
   symbol: gUnk_09618078
   us:
-    address: 157384824
+    address: 0x09618078
     size: 32
   jp:
-    address: 157092692
+    address: 0x095D0B54
     size: 32
   eu:
-    address: 156544868
+    address: 0x0954AF64
     size: 32
 - name: tink
   format: palette
   symbol: gUnk_09618098
   us:
-    address: 157384856
+    address: 0x09618098
     size: 32
   jp:
-    address: 157092724
+    address: 0x095D0B74
     size: 32
   eu:
-    address: 156544900
+    address: 0x0954AF84
     size: 32
 - name: sebastian
   format: palette
   symbol: gUnk_096180B8
   us:
-    address: 157384888
+    address: 0x096180B8
     size: 32
   jp:
-    address: 157092756
+    address: 0x095D0B94
     size: 32
   eu:
-    address: 156544932
+    address: 0x0954AFA4
     size: 32
 - name: flounder
   format: palette
   symbol: gUnk_096180D8
   us:
-    address: 157384920
+    address: 0x096180D8
     size: 32
   jp:
-    address: 157092788
+    address: 0x095D0BB4
     size: 32
   eu:
-    address: 156544964
+    address: 0x0954AFC4
     size: 32
 - name: accele
   format: palette
   symbol: gUnk_096180F8
   us:
-    address: 157384952
+    address: 0x096180F8
     size: 32
   jp:
-    address: 157092820
+    address: 0x095D0BD4
     size: 32
   eu:
-    address: 156544996
+    address: 0x0954AFE4
     size: 32
 - name: riku
   format: palette
   symbol: gUnk_09618118
   us:
-    address: 157384984
+    address: 0x09618118
     size: 32
   jp:
-    address: 157092852
+    address: 0x095D0BF4
     size: 32
   eu:
-    address: 156545028
+    address: 0x0954B004
     size: 32
 - name: sari
   format: palette
   symbol: gUnk_09618138
   us:
-    address: 157385016
+    address: 0x09618138
     size: 32
   jp:
-    address: 157092884
+    address: 0x095D0C14
     size: 32
   eu:
-    address: 156545060
+    address: 0x0954B024
     size: 32
 - name: hook
   format: palette
   symbol: gUnk_09618158
   us:
-    address: 157385048
+    address: 0x09618158
     size: 32
   jp:
-    address: 157092916
+    address: 0x095D0C34
     size: 32
   eu:
-    address: 156545092
+    address: 0x0954B044
     size: 32
 - name: jasmine
   format: palette
   symbol: gUnk_09618178
   us:
-    address: 157385080
+    address: 0x09618178
     size: 32
   jp:
-    address: 157092948
+    address: 0x095D0C54
     size: 32
   eu:
-    address: 156545124
+    address: 0x0954B064
     size: 32
 - name: omamori
   format: palette
   symbol: gUnk_09618198
   us:
-    address: 157385112
+    address: 0x09618198
     size: 32
   jp:
-    address: 157092980
+    address: 0x095D0C74
     size: 32
   eu:
-    address: 156545156
+    address: 0x0954B084
     size: 32
 - name: goofy2
   format: palette
   symbol: gUnk_096181B8
   us:
-    address: 157385144
+    address: 0x096181B8
     size: 32
   jp:
-    address: 157093012
+    address: 0x095D0C94
     size: 32
   eu:
-    address: 156545188
+    address: 0x0954B0A4
     size: 32
 - name: donald2
   format: palette
   symbol: gUnk_096181D8
   us:
-    address: 157385176
+    address: 0x096181D8
     size: 32
   jp:
-    address: 157093044
+    address: 0x095D0CB4
     size: 32
   eu:
-    address: 156545220
+    address: 0x0954B0C4
     size: 32
 - name: shido
   format: palette
   symbol: gUnk_096181F8
   us:
-    address: 157385208
+    address: 0x096181F8
     size: 32
   jp:
-    address: 157093076
+    address: 0x095D0CD4
     size: 32
   eu:
-    address: 156545252
+    address: 0x0954B0E4
     size: 32
 - name: selphie
   format: palette
   symbol: gUnk_09618218
   us:
-    address: 157385240
+    address: 0x09618218
     size: 32
   jp:
-    address: 157093108
+    address: 0x095D0CF4
     size: 32
   eu:
-    address: 156545284
+    address: 0x0954B104
     size: 32
 - name: jaffer
   format: palette
   symbol: gUnk_09618238
   us:
-    address: 157385272
+    address: 0x09618238
     size: 32
   jp:
-    address: 157093140
+    address: 0x095D0D14
     size: 32
   eu:
-    address: 156545316
+    address: 0x0954B124
     size: 32
 - name: reon
   format: palette
   symbol: gUnk_09618258
   us:
-    address: 157385304
+    address: 0x09618258
     size: 32
   jp:
-    address: 157093172
+    address: 0x095D0D34
     size: 32
   eu:
-    address: 156545348
+    address: 0x0954B144
     size: 32
 - name: wakka
   format: palette
   symbol: gUnk_09618278
   us:
-    address: 157385336
+    address: 0x09618278
     size: 32
   jp:
-    address: 157093204
+    address: 0x095D0D54
     size: 32
   eu:
-    address: 156545380
+    address: 0x0954B164
     size: 32
 - name: genie
   format: palette
   symbol: gUnk_09618298
   us:
-    address: 157385368
+    address: 0x09618298
     size: 32
   jp:
-    address: 157093236
+    address: 0x095D0D74
     size: 32
   eu:
-    address: 156545412
+    address: 0x0954B184
     size: 32
 - name: tidus
   format: palette
   symbol: gUnk_096182B8
   us:
-    address: 157385400
+    address: 0x096182B8
     size: 32
   jp:
-    address: 157093268
+    address: 0x095D0D94
     size: 32
   eu:
-    address: 156545444
+    address: 0x0954B1A4
     size: 32
 - name: wendy
   format: palette
   symbol: gUnk_096182D8
   us:
-    address: 157385432
+    address: 0x096182D8
     size: 32
   jp:
-    address: 157093300
+    address: 0x095D0DB4
     size: 32
   eu:
-    address: 156545476
+    address: 0x0954B1C4
     size: 32
 - name: yuffie
   format: palette
   symbol: gUnk_096182F8
   us:
-    address: 157385464
+    address: 0x096182F8
     size: 32
   jp:
-    address: 157093332
+    address: 0x095D0DD4
     size: 32
   eu:
-    address: 156545508
+    address: 0x0954B1E4
     size: 32
 - name: ansem
   format: palette
   symbol: gUnk_09618318
   us:
-    address: 157385496
+    address: 0x09618318
     size: 32
   jp:
-    address: 157093364
+    address: 0x095D0DF4
     size: 32
   eu:
-    address: 156545540
+    address: 0x0954B204
     size: 32
 - name: niseriku
   format: palette
   symbol: gUnk_09618338
   us:
-    address: 157385528
+    address: 0x09618338
     size: 32
   jp:
-    address: 157093396
+    address: 0x095D0E14
     size: 32
   eu:
-    address: 156545572
+    address: 0x0954B224
     size: 32
 - name: gUnk_09618358
   format: raw
   us:
-    address: 157385560
+    address: 0x09618358
     size: 32
   jp:
-    address: 157093428
+    address: 0x095D0E34
     size: 32
   eu:
-    address: 156545604
+    address: 0x0954B244
     size: 32
 - name: ansemback
   format: palette
   symbol: gUnk_09618378
   us:
-    address: 157385592
+    address: 0x09618378
     size: 32
   jp:
-    address: 157093460
+    address: 0x095D0E54
     size: 32
   eu:
-    address: 156545636
+    address: 0x0954B264
     size: 32
 - name: gUnk_09618398
   format: raw
   us:
-    address: 157385624
+    address: 0x09618398
     size: 32
   jp:
-    address: 157093492
+    address: 0x095D0E74
     size: 32
   eu:
-    address: 156545668
+    address: 0x0954B284
     size: 32
 - name: vixen
   format: palette
   symbol: gUnk_096183B8
   us:
-    address: 157385656
+    address: 0x096183B8
     size: 32
   jp:
-    address: 157093524
+    address: 0x095D0E94
     size: 32
   eu:
-    address: 156545700
+    address: 0x0954B2A4
     size: 32
 - name: gUnk_096183D8
   format: raw
   us:
-    address: 157385688
+    address: 0x096183D8
     size: 32
   jp:
-    address: 157093556
+    address: 0x095D0EB4
     size: 32
   eu:
-    address: 156545732
+    address: 0x0954B2C4
     size: 32
 - name: mickey
   format: palette
   symbol: gUnk_096183F8
   us:
-    address: 157385720
+    address: 0x096183F8
     size: 32
   jp:
-    address: 157093588
+    address: 0x095D0ED4
     size: 32
   eu:
-    address: 156545764
+    address: 0x0954B2E4
     size: 32
 - name: gUnk_09618418
   format: raw
   us:
-    address: 157385752
+    address: 0x09618418
     size: 32
   jp:
-    address: 157093620
+    address: 0x095D0EF4
     size: 32
   eu:
-    address: 156545796
+    address: 0x0954B304
     size: 32
 - name: maruxha
   format: palette
   symbol: gUnk_09618438
   us:
-    address: 157385784
+    address: 0x09618438
     size: 32
   jp:
-    address: 157093652
+    address: 0x095D0F14
     size: 32
   eu:
-    address: 156545828
+    address: 0x0954B324
     size: 32
 - name: laxine
   format: palette
   symbol: gUnk_09618458
   us:
-    address: 157385816
+    address: 0x09618458
     size: 32
   jp:
-    address: 157093684
+    address: 0x095D0F34
     size: 32
   eu:
-    address: 156545860
+    address: 0x0954B344
     size: 32
 - name: rexeus
   format: palette
   symbol: gUnk_09618478
   us:
-    address: 157385848
+    address: 0x09618478
     size: 32
   jp:
-    address: 157093716
+    address: 0x095D0F54
     size: 32
   eu:
-    address: 156545892
+    address: 0x0954B364
     size: 32
 - name: xexion
   format: palette
   symbol: gUnk_09618498
   us:
-    address: 157385880
+    address: 0x09618498
     size: 32
   jp:
-    address: 157093748
+    address: 0x095D0F74
     size: 32
   eu:
-    address: 156545924
+    address: 0x0954B384
     size: 32
 - name: diz
   format: palette
   symbol: gUnk_096184B8
   us:
-    address: 157385912
+    address: 0x096184B8
     size: 32
   jp:
-    address: 157093780
+    address: 0x095D0F94
     size: 32
   eu:
-    address: 156545956
+    address: 0x0954B3A4
     size: 32
 - name: namine
   format: palette
   symbol: gUnk_096184D8
   us:
-    address: 157385944
+    address: 0x096184D8
     size: 32
   jp:
-    address: 157093812
+    address: 0x095D0FB4
     size: 32
   eu:
-    address: 156545988
+    address: 0x0954B3C4
     size: 32
 - name: gUnk_096184F8
   format: raw
   us:
-    address: 157385976
+    address: 0x096184F8
     size: 32
   jp:
-    address: 157093844
+    address: 0x095D0FD4
     size: 32
     symbol: gUnkJp_095D0FD4
   eu:
-    address: 156546020
+    address: 0x0954B3E4
     size: 32
     symbol: gUnkEu_0954B3E4
 - name: gUnk_09618518
   format: palette
   us:
-    address: 157386008
+    address: 0x09618518
     size: 32
   jp:
-    address: 157093876
+    address: 0x095D0FF4
     size: 32
   eu:
-    address: 156546052
+    address: 0x0954B404
     size: 32
 - name: gUnk_09618538
   format: palette
   us:
-    address: 157386040
+    address: 0x09618538
     size: 32
   jp:
-    address: 157093908
+    address: 0x095D1014
     size: 32
   eu:
-    address: 156546084
+    address: 0x0954B424
     size: 32
 - name: gUnk_09618558
   format: raw
   us:
-    address: 157386072
+    address: 0x09618558
     size: 64
   jp:
-    address: 157093940
+    address: 0x095D1034
     size: 64
     symbol: gUnkJp_095D1034
   eu:
-    address: 156546116
+    address: 0x0954B444
     size: 64
     symbol: gUnkEu_0954B444
 - name: gUnk_09618598
   format: palette
   us:
-    address: 157386136
+    address: 0x09618598
     size: 32
   jp:
-    address: 157094004
+    address: 0x095D1074
     size: 32
   eu:
-    address: 156546180
+    address: 0x0954B484
     size: 32
 - name: gUnk_096185B8
   format: palette
   us:
-    address: 157386168
+    address: 0x096185B8
     size: 32
   jp:
-    address: 157094036
+    address: 0x095D1094
     size: 32
   eu:
-    address: 156546212
+    address: 0x0954B4A4
     size: 32
 - name: gUnk_096185D8
   format: palette
   us:
-    address: 157386200
+    address: 0x096185D8
     size: 32
   jp:
-    address: 157094068
+    address: 0x095D10B4
     size: 32
   eu:
-    address: 156546244
+    address: 0x0954B4C4
     size: 32
 - name: gUnk_096185F8
   format: palette
   us:
-    address: 157386232
+    address: 0x096185F8
     size: 32
   jp:
-    address: 157094100
+    address: 0x095D10D4
     size: 32
   eu:
-    address: 156546276
+    address: 0x0954B4E4
     size: 32
 - name: gUnk_09618618
   format: palette
   us:
-    address: 157386264
+    address: 0x09618618
     size: 32
   jp:
-    address: 157094132
+    address: 0x095D10F4
     size: 32
   eu:
-    address: 156546308
+    address: 0x0954B504
     size: 32
 - name: gUnk_09618638
   format: palette
   us:
-    address: 157386296
+    address: 0x09618638
     size: 32
   jp:
-    address: 157094164
+    address: 0x095D1114
     size: 32
   eu:
-    address: 156546340
+    address: 0x0954B524
     size: 32
 - name: gUnk_09618658
   format: palette
   us:
-    address: 157386328
+    address: 0x09618658
     size: 32
   jp:
-    address: 157094196
+    address: 0x095D1134
     size: 32
   eu:
-    address: 156546372
+    address: 0x0954B544
     size: 32
 - name: gUnk_09618678
   format: palette
   us:
-    address: 157386360
+    address: 0x09618678
     size: 32
   jp:
-    address: 157094228
+    address: 0x095D1154
     size: 32
   eu:
-    address: 156546404
+    address: 0x0954B564
     size: 32
 - name: gUnk_09618698
   format: palette
   us:
-    address: 157386392
+    address: 0x09618698
     size: 32
   jp:
-    address: 157094260
+    address: 0x095D1174
     size: 32
   eu:
-    address: 156546436
+    address: 0x0954B584
     size: 32
 - name: gUnk_096186B8
   format: palette
   us:
-    address: 157386424
+    address: 0x096186B8
     size: 32
   jp:
-    address: 157094292
+    address: 0x095D1194
     size: 32
   eu:
-    address: 156546468
+    address: 0x0954B5A4
     size: 32
 - name: gUnk_096186D8
   format: palette
   us:
-    address: 157386456
+    address: 0x096186D8
     size: 32
   jp:
-    address: 157094324
+    address: 0x095D11B4
     size: 32
   eu:
-    address: 156546500
+    address: 0x0954B5C4
     size: 32
 - name: gUnk_096186F8
   format: palette
   us:
-    address: 157386488
+    address: 0x096186F8
     size: 32
   jp:
-    address: 157094356
+    address: 0x095D11D4
     size: 32
   eu:
-    address: 156546532
+    address: 0x0954B5E4
     size: 32
 - name: gUnk_09618718
   format: palette
   us:
-    address: 157386520
+    address: 0x09618718
     size: 32
   jp:
-    address: 157094388
+    address: 0x095D11F4
     size: 32
   eu:
-    address: 156546564
+    address: 0x0954B604
     size: 32
 - name: gUnk_09618738
   format: palette
   us:
-    address: 157386552
+    address: 0x09618738
     size: 32
   jp:
-    address: 157094420
+    address: 0x095D1214
     size: 32
   eu:
-    address: 156546596
+    address: 0x0954B624
     size: 32
 - name: gUnk_09618758
   format: palette
   us:
-    address: 157386584
+    address: 0x09618758
     size: 32
   jp:
-    address: 157094452
+    address: 0x095D1234
     size: 32
   eu:
-    address: 156546628
+    address: 0x0954B644
     size: 32
 - name: gUnk_09618778
   format: palette
   us:
-    address: 157386616
+    address: 0x09618778
     size: 32
   jp:
-    address: 157094484
+    address: 0x095D1254
     size: 32
   eu:
-    address: 156546660
+    address: 0x0954B664
     size: 32
 - name: gUnk_09618798
   format: palette
   us:
-    address: 157386648
+    address: 0x09618798
     size: 32
   jp:
-    address: 157094516
+    address: 0x095D1274
     size: 32
   eu:
-    address: 156546692
+    address: 0x0954B684
     size: 32
 - name: gUnk_096187B8
   format: palette
   us:
-    address: 157386680
+    address: 0x096187B8
     size: 32
   jp:
-    address: 157094548
+    address: 0x095D1294
     size: 32
   eu:
-    address: 156546724
+    address: 0x0954B6A4
     size: 32
 - name: gUnk_096187D8
   format: palette
   us:
-    address: 157386712
+    address: 0x096187D8
     size: 32
   jp:
-    address: 157094580
+    address: 0x095D12B4
     size: 32
   eu:
-    address: 156546756
+    address: 0x0954B6C4
     size: 32
 - name: gUnk_096187F8
   format: palette
   us:
-    address: 157386744
+    address: 0x096187F8
     size: 32
   jp:
-    address: 157094612
+    address: 0x095D12D4
     size: 32
   eu:
-    address: 156546788
+    address: 0x0954B6E4
     size: 32
 - name: gUnk_09618818
   format: palette
   us:
-    address: 157386776
+    address: 0x09618818
     size: 32
   jp:
-    address: 157094644
+    address: 0x095D12F4
     size: 32
   eu:
-    address: 156546820
+    address: 0x0954B704
     size: 32
 - name: gUnk_09618838
   format: palette
   us:
-    address: 157386808
+    address: 0x09618838
     size: 32
   jp:
-    address: 157094676
+    address: 0x095D1314
     size: 32
   eu:
-    address: 156546852
+    address: 0x0954B724
     size: 32
 - name: gUnk_09618858
   format: palette
   us:
-    address: 157386840
+    address: 0x09618858
     size: 32
   jp:
-    address: 157094708
+    address: 0x095D1334
     size: 32
   eu:
-    address: 156546884
+    address: 0x0954B744
     size: 32
 - name: gUnk_09618878
   format: raw
   us:
-    address: 157386872
+    address: 0x09618878
     size: 32
   jp:
-    address: 157094740
+    address: 0x095D1354
     size: 32
   eu:
-    address: 156546916
+    address: 0x0954B764
     size: 32
 - name: gUnk_09618898
   format: raw
   us:
-    address: 157386904
+    address: 0x09618898
     size: 32
   jp:
-    address: 157094772
+    address: 0x095D1374
     size: 32
   eu:
-    address: 156546948
+    address: 0x0954B784
     size: 32
 - name: gUnk_096188B8
   format: raw
   us:
-    address: 157386936
+    address: 0x096188B8
     size: 32
   jp:
-    address: 157094804
+    address: 0x095D1394
     size: 32
   eu:
-    address: 156546980
+    address: 0x0954B7A4
     size: 32
 - name: gUnk_096188D8
   format: raw
   us:
-    address: 157386968
+    address: 0x096188D8
     size: 32
   jp:
-    address: 157094836
+    address: 0x095D13B4
     size: 32
   eu:
-    address: 156547012
+    address: 0x0954B7C4
     size: 32
 - name: gUnk_096188F8
   format: raw
   us:
-    address: 157387000
+    address: 0x096188F8
     size: 32
   jp:
-    address: 157094868
+    address: 0x095D13D4
     size: 32
   eu:
-    address: 156547044
+    address: 0x0954B7E4
     size: 32
 - name: gUnk_09618918
   format: raw
   us:
-    address: 157387032
+    address: 0x09618918
     size: 32
   jp:
-    address: 157094900
+    address: 0x095D13F4
     size: 32
   eu:
-    address: 156547076
+    address: 0x0954B804
     size: 32
 - name: gUnk_09618938
   format: raw
   us:
-    address: 157387064
+    address: 0x09618938
     size: 32
   jp:
-    address: 157094932
+    address: 0x095D1414
     size: 32
   eu:
-    address: 156547108
+    address: 0x0954B824
     size: 32
 - name: gUnk_09618958
   format: raw
   us:
-    address: 157387096
+    address: 0x09618958
     size: 32
   jp:
-    address: 157094964
+    address: 0x095D1434
     size: 32
   eu:
-    address: 156547140
+    address: 0x0954B844
     size: 32
 - name: gUnk_09618978
   format: raw
   us:
-    address: 157387128
+    address: 0x09618978
     size: 32
   jp:
-    address: 157094996
+    address: 0x095D1454
     size: 32
   eu:
-    address: 156547172
+    address: 0x0954B864
     size: 32
 - name: gUnk_09618998
   format: raw
   us:
-    address: 157387160
+    address: 0x09618998
     size: 32
   jp:
-    address: 157095028
+    address: 0x095D1474
     size: 32
   eu:
-    address: 156547204
+    address: 0x0954B884
     size: 32
 - name: gUnk_096189B8
   format: raw
   us:
-    address: 157387192
+    address: 0x096189B8
     size: 32
   jp:
-    address: 157095060
+    address: 0x095D1494
     size: 32
   eu:
-    address: 156547236
+    address: 0x0954B8A4
     size: 32
 - name: gUnk_096189D8
   format: raw
   us:
-    address: 157387224
+    address: 0x096189D8
     size: 32
   jp:
-    address: 157095092
+    address: 0x095D14B4
     size: 32
   eu:
-    address: 156547268
+    address: 0x0954B8C4
     size: 32
 - name: gUnk_096189F8
   format: raw
   us:
-    address: 157387256
+    address: 0x096189F8
     size: 32
   jp:
-    address: 157095124
+    address: 0x095D14D4
     size: 32
   eu:
-    address: 156547300
+    address: 0x0954B8E4
     size: 32
 - name: gUnk_09618A18
   format: raw
   us:
-    address: 157387288
+    address: 0x09618A18
     size: 32
   jp:
-    address: 157095156
+    address: 0x095D14F4
     size: 32
   eu:
-    address: 156547332
+    address: 0x0954B904
     size: 32
 - name: gUnk_09618A38
   format: raw
   us:
-    address: 157387320
+    address: 0x09618A38
     size: 32
   jp:
-    address: 157095188
+    address: 0x095D1514
     size: 32
   eu:
-    address: 156547364
+    address: 0x0954B924
     size: 32
 - name: gUnk_09618A58
   format: raw
   us:
-    address: 157387352
+    address: 0x09618A58
     size: 32
   jp:
-    address: 157095220
+    address: 0x095D1534
     size: 32
   eu:
-    address: 156547396
+    address: 0x0954B944
     size: 32
 - name: gUnk_09618A78
   format: raw
   us:
-    address: 157387384
+    address: 0x09618A78
     size: 32
   jp:
-    address: 157095252
+    address: 0x095D1554
     size: 32
   eu:
-    address: 156547428
+    address: 0x0954B964
     size: 32
 - name: gUnk_09618A98
   format: raw
   us:
-    address: 157387416
+    address: 0x09618A98
     size: 32
   jp:
-    address: 157095284
+    address: 0x095D1574
     size: 32
   eu:
-    address: 156547460
+    address: 0x0954B984
     size: 32
 - name: gUnk_09618AB8
   format: raw
   us:
-    address: 157387448
+    address: 0x09618AB8
     size: 32
   jp:
-    address: 157095316
+    address: 0x095D1594
     size: 32
   eu:
-    address: 156547492
+    address: 0x0954B9A4
     size: 32
 - name: gUnk_09618AD8
   format: raw
   us:
-    address: 157387480
+    address: 0x09618AD8
     size: 32
   jp:
-    address: 157095348
+    address: 0x095D15B4
     size: 32
   eu:
-    address: 156547524
+    address: 0x0954B9C4
     size: 32
 - name: gUnk_09618AF8
   format: raw
   us:
-    address: 157387512
+    address: 0x09618AF8
     size: 32
   jp:
-    address: 157095380
+    address: 0x095D15D4
     size: 32
   eu:
-    address: 156547556
+    address: 0x0954B9E4
     size: 32
 - name: gUnk_09618B18
   format: raw
   us:
-    address: 157387544
+    address: 0x09618B18
     size: 32
   jp:
-    address: 157095412
+    address: 0x095D15F4
     size: 32
   eu:
-    address: 156547588
+    address: 0x0954BA04
     size: 32
 - name: gUnk_09618B38
   format: raw
   us:
-    address: 157387576
+    address: 0x09618B38
     size: 32
   jp:
-    address: 157095444
+    address: 0x095D1614
     size: 32
   eu:
-    address: 156547620
+    address: 0x0954BA24
     size: 32
 - name: gUnk_09618B58
   format: raw
   us:
-    address: 157387608
+    address: 0x09618B58
     size: 32
   jp:
-    address: 157095476
+    address: 0x095D1634
     size: 32
   eu:
-    address: 156547652
+    address: 0x0954BA44
     size: 32
 - name: gUnk_09618B78
   format: raw
   us:
-    address: 157387640
+    address: 0x09618B78
     size: 32
   jp:
-    address: 157095508
+    address: 0x095D1654
     size: 32
   eu:
-    address: 156547684
+    address: 0x0954BA64
     size: 32
 - name: gUnk_09618B98
   format: raw
   us:
-    address: 157387672
+    address: 0x09618B98
     size: 64
   jp:
-    address: 157095540
+    address: 0x095D1674
     size: 64
   eu:
-    address: 156547716
+    address: 0x0954BA84
     size: 64
 - name: gUnk_09618BD8
   format: palette
   us:
-    address: 157387736
+    address: 0x09618BD8
     size: 32
   jp:
-    address: 157095604
+    address: 0x095D16B4
     size: 32
   eu:
-    address: 156547780
+    address: 0x0954BAC4
     size: 32
 - name: gUnk_09618BF8
   format: palette
   us:
-    address: 157387768
+    address: 0x09618BF8
     size: 32
   jp:
-    address: 157095636
+    address: 0x095D16D4
     size: 32
   eu:
-    address: 156547812
+    address: 0x0954BAE4
     size: 32
 - name: gUnk_09618C18
   format: palette
   us:
-    address: 157387800
+    address: 0x09618C18
     size: 32
   jp:
-    address: 157095668
+    address: 0x095D16F4
     size: 32
   eu:
-    address: 156547844
+    address: 0x0954BB04
     size: 32
 - name: gUnk_09618C38
   format: raw
   us:
-    address: 157387832
+    address: 0x09618C38
     size: 32
   jp:
-    address: 157095700
+    address: 0x095D1714
     size: 32
   eu:
-    address: 156547876
+    address: 0x0954BB24
     size: 32
 - name: gUnk_09618C58
   format: raw
   us:
-    address: 157387864
+    address: 0x09618C58
     size: 128
   jp:
-    address: 157095732
+    address: 0x095D1734
     size: 128
   eu:
-    address: 156547908
+    address: 0x0954BB44
     size: 128
 - name: gUnk_09618CD8
   format: palette
   us:
-    address: 157387992
+    address: 0x09618CD8
     size: 32
   jp:
-    address: 157095860
+    address: 0x095D17B4
     size: 32
   eu:
-    address: 156548036
+    address: 0x0954BBC4
     size: 32
 - name: gUnk_09618CF8
   format: raw
   us:
-    address: 157388024
+    address: 0x09618CF8
     size: 32
   jp:
-    address: 157095892
+    address: 0x095D17D4
     size: 32
     symbol: gUnkJp_095D17D4
   eu:
-    address: 156548068
+    address: 0x0954BBE4
     size: 32
     symbol: gUnkEu_0954BBE4
 - name: gUnk_09618D18
   format: palette
   us:
-    address: 157388056
+    address: 0x09618D18
     size: 32
   jp:
-    address: 157095924
+    address: 0x095D17F4
     size: 32
   eu:
-    address: 156548100
+    address: 0x0954BC04
     size: 32
 - name: gUnk_09618D38
   format: palette
   us:
-    address: 157388088
+    address: 0x09618D38
     size: 32
   jp:
-    address: 157095956
+    address: 0x095D1814
     size: 32
   eu:
-    address: 156548132
+    address: 0x0954BC24
     size: 32
 - name: gUnk_09618D58
   format: raw
   us:
-    address: 157388120
+    address: 0x09618D58
     size: 32
   jp:
-    address: 157095988
+    address: 0x095D1834
     size: 32
     symbol: gUnkJp_095D1834
   eu:
-    address: 156548164
+    address: 0x0954BC44
     size: 32
     symbol: gUnkEu_0954BC44
 - name: gUnk_09618D78
   format: raw
   us:
-    address: 157388152
+    address: 0x09618D78
     size: 800
   jp:
-    address: 157096020
+    address: 0x095D1854
     size: 800
   eu:
-    address: 156548196
+    address: 0x0954BC64
     size: 800
 - name: gUnk_09619098
   format: raw
   us:
-    address: 157388952
+    address: 0x09619098
     size: 192
   jp:
-    address: 157096820
+    address: 0x095D1B74
     size: 192
   eu:
-    address: 156548996
+    address: 0x0954BF84
     size: 192
 - name: gUnk_09619158
   format: palette
   us:
-    address: 157389144
+    address: 0x09619158
     size: 32
   jp:
-    address: 157097012
+    address: 0x095D1C34
     size: 32
   eu:
-    address: 156549188
+    address: 0x0954C044
     size: 32
 - name: gUnk_09619178
   format: raw
   us:
-    address: 157389176
+    address: 0x09619178
     size: 512
   jp:
-    address: 157097044
+    address: 0x095D1C54
     size: 512
   eu:
-    address: 156549220
+    address: 0x0954C064
     size: 512
 - name: gUnk_09619378
   format: palette
   us:
-    address: 157389688
+    address: 0x09619378
     size: 32
   jp:
-    address: 157097556
+    address: 0x095D1E54
     size: 32
   eu:
-    address: 156549732
+    address: 0x0954C264
     size: 32
 - name: gUnk_096FAC64
   format: palette
   us:
-    address: 158313572
+    address: 0x096FAC64
     size: 32
   jp:
-    address: 158020672
+    address: 0x096B3440
     size: 32
   eu:
-    address: 158105996
+    address: 0x096C818C
     size: 32
 - name: boss03obj
   format: palette
   symbol: gUnk_096FB2A4
   us:
-    address: 158315172
+    address: 0x096FB2A4
     size: 32
   jp:
-    address: 158022272
+    address: 0x096B3A80
     size: 32
   eu:
-    address: 158107596
+    address: 0x096C87CC
     size: 32
 - name: gUnk_096FB864
   format: palette
   us:
-    address: 158316644
+    address: 0x096FB864
     size: 32
   jp:
-    address: 158023744
+    address: 0x096B4040
     size: 32
   eu:
-    address: 158109068
+    address: 0x096C8D8C
     size: 32
 - name: gUnk_096FB884
   format: palette
   us:
-    address: 158316676
+    address: 0x096FB884
     size: 32
   jp:
-    address: 158023776
+    address: 0x096B4060
     size: 32
   eu:
-    address: 158109100
+    address: 0x096C8DAC
     size: 32
 - name: boss00_obj
   format: palette
   symbol: gUnk_096FB8A4
   us:
-    address: 158316708
+    address: 0x096FB8A4
     size: 32
   jp:
-    address: 158023808
+    address: 0x096B4080
     size: 32
   eu:
-    address: 158109132
+    address: 0x096C8DCC
     size: 32
 - name: gUnk_096FB8C4
   format: palette
   us:
-    address: 158316740
+    address: 0x096FB8C4
     size: 32
   jp:
-    address: 158023840
+    address: 0x096B40A0
     size: 32
   eu:
-    address: 158109164
+    address: 0x096C8DEC
     size: 32
 - name: gUnk_096FB8E4
   format: palette
   us:
-    address: 158316772
+    address: 0x096FB8E4
     size: 32
   jp:
-    address: 158023872
+    address: 0x096B40C0
     size: 32
   eu:
-    address: 158109196
+    address: 0x096C8E0C
     size: 32
 - name: gUnk_096FB904
   format: raw
   us:
-    address: 158316804
+    address: 0x096FB904
     size: 256
   jp:
-    address: 158023904
+    address: 0x096B40E0
     size: 256
   eu:
-    address: 158109228
+    address: 0x096C8E2C
     size: 256
 - name: gUnk_096FBA04
   format: raw
   us:
-    address: 158317060
+    address: 0x096FBA04
     size: 64
   jp:
-    address: 158024160
+    address: 0x096B41E0
     size: 64
   eu:
-    address: 158109484
+    address: 0x096C8F2C
     size: 64
 - name: gUnk_096FBA44
   format: palette
   us:
-    address: 158317124
+    address: 0x096FBA44
     size: 32
   jp:
-    address: 158024224
+    address: 0x096B4220
     size: 32
   eu:
-    address: 158109548
+    address: 0x096C8F6C
     size: 32
 - name: gUnk_096FBA64
   format: palette
   us:
-    address: 158317156
+    address: 0x096FBA64
     size: 32
   jp:
-    address: 158024256
+    address: 0x096B4240
     size: 32
   eu:
-    address: 158109580
+    address: 0x096C8F8C
     size: 32
 - name: gUnk_096FBA84
   format: palette
   us:
-    address: 158317188
+    address: 0x096FBA84
     size: 32
   jp:
-    address: 158024288
+    address: 0x096B4260
     size: 32
   eu:
-    address: 158109612
+    address: 0x096C8FAC
     size: 32
 - name: gUnk_096FBAA4
   format: palette
   us:
-    address: 158317220
+    address: 0x096FBAA4
     size: 32
   jp:
-    address: 158024320
+    address: 0x096B4280
     size: 32
   eu:
-    address: 158109644
+    address: 0x096C8FCC
     size: 32
 - name: gUnk_096FBAC4
   format: raw
   us:
-    address: 158317252
+    address: 0x096FBAC4
     size: 320
   jp:
-    address: 158024352
+    address: 0x096B42A0
     size: 320
   eu:
-    address: 158109676
+    address: 0x096C8FEC
     size: 320
 - name: gUnk_096FBC04
   format: raw
   us:
-    address: 158317572
+    address: 0x096FBC04
     size: 192
   jp:
-    address: 158024672
+    address: 0x096B43E0
     size: 192
   eu:
-    address: 158109996
+    address: 0x096C912C
     size: 192
 - name: gUnk_096FBCC4
   format: palette
   us:
-    address: 158317764
+    address: 0x096FBCC4
     size: 32
   jp:
-    address: 158024864
+    address: 0x096B44A0
     size: 32
   eu:
-    address: 158110188
+    address: 0x096C91EC
     size: 32
 - name: gUnk_096FBCE4
   format: raw
   us:
-    address: 158317796
+    address: 0x096FBCE4
     size: 64
   jp:
-    address: 158024896
+    address: 0x096B44C0
     size: 64
     symbol: gUnkJp_096B44C0
   eu:
-    address: 158110220
+    address: 0x096C920C
     size: 64
     symbol: gUnkEu_096C920C
 - name: gUnk_096FBD24
   format: palette
   us:
-    address: 158317860
+    address: 0x096FBD24
     size: 32
   jp:
-    address: 158024960
+    address: 0x096B4500
     size: 32
   eu:
-    address: 158110284
+    address: 0x096C924C
     size: 32
 - name: gUnk_096FBD44
   format: palette
   us:
-    address: 158317892
+    address: 0x096FBD44
     size: 32
   jp:
-    address: 158024992
+    address: 0x096B4520
     size: 32
   eu:
-    address: 158110316
+    address: 0x096C926C
     size: 32
 - name: gUnk_096FBD64
   format: palette
   us:
-    address: 158317924
+    address: 0x096FBD64
     size: 32
   jp:
-    address: 158025024
+    address: 0x096B4540
     size: 32
   eu:
-    address: 158110348
+    address: 0x096C928C
     size: 32
 - name: gUnk_096FBD84
   format: raw
   us:
-    address: 158317956
+    address: 0x096FBD84
     size: 32
   jp:
-    address: 158025056
+    address: 0x096B4560
     size: 32
     symbol: gUnkJp_096B4560
   eu:
-    address: 158110380
+    address: 0x096C92AC
     size: 32
     symbol: gUnkEu_096C92AC
 - name: gUnk_096FBDA4
   format: palette
   us:
-    address: 158317988
+    address: 0x096FBDA4
     size: 32
   jp:
-    address: 158025088
+    address: 0x096B4580
     size: 32
   eu:
-    address: 158110412
+    address: 0x096C92CC
     size: 32
 - name: gUnk_096FBDC4
   format: raw
   us:
-    address: 158318020
+    address: 0x096FBDC4
     size: 32
   jp:
-    address: 158025120
+    address: 0x096B45A0
     size: 32
     symbol: gUnkJp_096B45A0
   eu:
-    address: 158110444
+    address: 0x096C92EC
     size: 32
     symbol: gUnkEu_096C92EC
 - name: gUnk_096FBDE4
   format: palette
   us:
-    address: 158318052
+    address: 0x096FBDE4
     size: 32
   jp:
-    address: 158025152
+    address: 0x096B45C0
     size: 32
   eu:
-    address: 158110476
+    address: 0x096C930C
     size: 32
 - name: gUnk_096FBE04
   format: palette
   us:
-    address: 158318084
+    address: 0x096FBE04
     size: 32
   jp:
-    address: 158025184
+    address: 0x096B45E0
     size: 32
   eu:
-    address: 158110508
+    address: 0x096C932C
     size: 32
 - name: gUnk_096FBE24
   format: raw
   us:
-    address: 158318116
+    address: 0x096FBE24
     size: 224
   jp:
-    address: 158025216
+    address: 0x096B4600
     size: 224
 - name: gUnk_096FBF04
   format: palette
   us:
-    address: 158318340
+    address: 0x096FBF04
     size: 32
   jp:
-    address: 158025440
+    address: 0x096B46E0
     size: 32
 - name: pooh
   format: palette
   symbol: gUnk_09849A98
   us:
-    address: 159685272
+    address: 0x09849A98
     size: 32
   jp:
-    address: 159377260
+    address: 0x097FE76C
     size: 32
   eu:
-    address: 159506752
+    address: 0x0981E140
     size: 32
 - name: gUnk_09849AB8
   format: raw
   us:
-    address: 159685304
+    address: 0x09849AB8
     size: 32
   jp:
-    address: 159377292
+    address: 0x097FE78C
     size: 32
   eu:
-    address: 159506784
+    address: 0x0981E160
     size: 32
 - name: trap00_01
   format: palette
   symbol: gUnk_09849AD8
   us:
-    address: 159685336
+    address: 0x09849AD8
     size: 32
   jp:
-    address: 159377324
+    address: 0x097FE7AC
     size: 32
   eu:
-    address: 159506816
+    address: 0x0981E180
     size: 32
 - name: gUnk_09849AF8
   format: palette
   us:
-    address: 159685368
+    address: 0x09849AF8
     size: 32
   jp:
-    address: 159377356
+    address: 0x097FE7CC
     size: 32
   eu:
-    address: 159506848
+    address: 0x0981E1A0
     size: 32
 - name: gUnk_09849B18
   format: palette
   us:
-    address: 159685400
+    address: 0x09849B18
     size: 32
   jp:
-    address: 159377388
+    address: 0x097FE7EC
     size: 32
   eu:
-    address: 159506880
+    address: 0x0981E1C0
     size: 32
 - name: gUnk_09849B38
   format: palette
   us:
-    address: 159685432
+    address: 0x09849B38
     size: 32
   jp:
-    address: 159377420
+    address: 0x097FE80C
     size: 32
   eu:
-    address: 159506912
+    address: 0x0981E1E0
     size: 32
 - name: gUnk_09849B58
   format: raw
   us:
-    address: 159685464
+    address: 0x09849B58
     size: 32
   jp:
-    address: 159377452
+    address: 0x097FE82C
     size: 32
   eu:
-    address: 159506944
+    address: 0x0981E200
     size: 32
 - name: gUnk_09849B78
   format: raw
   us:
-    address: 159685496
+    address: 0x09849B78
     size: 32
   jp:
-    address: 159377484
+    address: 0x097FE84C
     size: 32
   eu:
-    address: 159506976
+    address: 0x0981E220
     size: 32
 - name: pooh_gauge
   format: palette
   symbol: gUnk_09849B98
   us:
-    address: 159685528
+    address: 0x09849B98
     size: 32
   jp:
-    address: 159377516
+    address: 0x097FE86C
     size: 32
   eu:
-    address: 159507008
+    address: 0x0981E240
     size: 32
 - name: gUnk_09849BB8
   format: raw
   us:
-    address: 159685560
+    address: 0x09849BB8
     size: 32
   jp:
-    address: 159377548
+    address: 0x097FE88C
     size: 32
   eu:
-    address: 159507040
+    address: 0x0981E260
     size: 32
 - name: tigger
   format: palette
   symbol: gUnk_09849BD8
   us:
-    address: 159685592
+    address: 0x09849BD8
     size: 32
   jp:
-    address: 159377580
+    address: 0x097FE8AC
     size: 32
   eu:
-    address: 159507072
+    address: 0x0981E280
     size: 32
 - name: gUnk_09849BF8
   format: raw
   us:
-    address: 159685624
+    address: 0x09849BF8
     size: 32
   jp:
-    address: 159377612
+    address: 0x097FE8CC
     size: 32
   eu:
-    address: 159507104
+    address: 0x0981E2A0
     size: 32
 - name: gUnk_09849C18
   format: raw
   us:
-    address: 159685656
+    address: 0x09849C18
     size: 32
   jp:
-    address: 159377644
+    address: 0x097FE8EC
     size: 32
   eu:
-    address: 159507136
+    address: 0x0981E2C0
     size: 32
 - name: trap01_00
   format: palette
   symbol: gUnk_09849C38
   us:
-    address: 159685688
+    address: 0x09849C38
     size: 32
   jp:
-    address: 159377676
+    address: 0x097FE90C
     size: 32
   eu:
-    address: 159507168
+    address: 0x0981E2E0
     size: 32
 - name: eeyore
   format: palette
   symbol: gUnk_09849C58
   us:
-    address: 159685720
+    address: 0x09849C58
     size: 32
   jp:
-    address: 159377708
+    address: 0x097FE92C
     size: 32
   eu:
-    address: 159507200
+    address: 0x0981E300
     size: 32
 - name: owl
   format: palette
   symbol: gUnk_09849C78
   us:
-    address: 159685752
+    address: 0x09849C78
     size: 32
   jp:
-    address: 159377740
+    address: 0x097FE94C
     size: 32
   eu:
-    address: 159507232
+    address: 0x0981E320
     size: 32
 - name: gUnk_09849C98
   format: raw
   us:
-    address: 159685784
+    address: 0x09849C98
     size: 32
   jp:
-    address: 159377772
+    address: 0x097FE96C
     size: 32
   eu:
-    address: 159507264
+    address: 0x0981E340
     size: 32
 - name: rabbit
   format: palette
   symbol: gUnk_09849CB8
   us:
-    address: 159685816
+    address: 0x09849CB8
     size: 32
   jp:
-    address: 159377804
+    address: 0x097FE98C
     size: 32
   eu:
-    address: 159507296
+    address: 0x0981E360
     size: 32
 - name: gUnk_09849CD8
   format: raw
   us:
-    address: 159685848
+    address: 0x09849CD8
     size: 32
   jp:
-    address: 159377836
+    address: 0x097FE9AC
     size: 32
     symbol: gUnkJp_097FE9AC
   eu:
-    address: 159507328
+    address: 0x0981E380
     size: 32
     symbol: gUnkEu_0981E380
 - name: roo
   format: palette
   symbol: gUnk_09849CF8
   us:
-    address: 159685880
+    address: 0x09849CF8
     size: 32
   jp:
-    address: 159377868
+    address: 0x097FE9CC
     size: 32
   eu:
-    address: 159507360
+    address: 0x0981E3A0
     size: 32
 - name: gUnk_09849D18
   format: palette
   us:
-    address: 159685912
+    address: 0x09849D18
     size: 32
   jp:
-    address: 159377900
+    address: 0x097FE9EC
     size: 32
   eu:
-    address: 159507392
+    address: 0x0981E3C0
     size: 32
 - name: gUnk_09849D38
   format: raw
   us:
-    address: 159685944
+    address: 0x09849D38
     size: 32
   jp:
-    address: 159377932
+    address: 0x097FEA0C
     size: 32
   eu:
-    address: 159507424
+    address: 0x0981E3E0
     size: 32
 - name: gUnk_09849D58
   format: raw
   us:
-    address: 159685976
+    address: 0x09849D58
     size: 32
   jp:
-    address: 159377964
+    address: 0x097FEA2C
     size: 32
   eu:
-    address: 159507456
+    address: 0x0981E400
     size: 32
 - name: gUnk_09849D78
   format: palette
   us:
-    address: 159686008
+    address: 0x09849D78
     size: 32
   jp:
-    address: 159377996
+    address: 0x097FEA4C
     size: 32
   eu:
-    address: 159507488
+    address: 0x0981E420
     size: 32
 - name: gUnk_09849D98
   format: palette
   us:
-    address: 159686040
+    address: 0x09849D98
     size: 32
   jp:
-    address: 159378028
+    address: 0x097FEA6C
     size: 32
   eu:
-    address: 159507520
+    address: 0x0981E440
     size: 32
 - name: gUnk_09849DB8
   format: palette
   us:
-    address: 159686072
+    address: 0x09849DB8
     size: 32
   jp:
-    address: 159378060
+    address: 0x097FEA8C
     size: 32
   eu:
-    address: 159507552
+    address: 0x0981E460
     size: 32
 - name: gUnk_09849DD8
   format: palette
   us:
-    address: 159686104
+    address: 0x09849DD8
     size: 32
   jp:
-    address: 159378092
+    address: 0x097FEAAC
     size: 32
   eu:
-    address: 159507584
+    address: 0x0981E480
     size: 32
 - name: gUnk_09849DF8
   format: raw
   us:
-    address: 159686136
+    address: 0x09849DF8
     size: 32
   jp:
-    address: 159378124
+    address: 0x097FEACC
     size: 32
   eu:
-    address: 159507616
+    address: 0x0981E4A0
     size: 32
 - name: gUnk_09849E18
   format: raw
   us:
-    address: 159686168
+    address: 0x09849E18
     size: 32
   jp:
-    address: 159378156
+    address: 0x097FEAEC
     size: 32
   eu:
-    address: 159507648
+    address: 0x0981E4C0
     size: 32
 - name: gUnk_09849E38
   format: raw
   us:
-    address: 159686200
+    address: 0x09849E38
     size: 32
   jp:
-    address: 159378188
+    address: 0x097FEB0C
     size: 32
   eu:
-    address: 159507680
+    address: 0x0981E4E0
     size: 32
 - name: gUnk_09849E58
   format: raw
   us:
-    address: 159686232
+    address: 0x09849E58
     size: 32
   jp:
-    address: 159378220
+    address: 0x097FEB2C
     size: 32
   eu:
-    address: 159507712
+    address: 0x0981E500
     size: 32
 - name: gUnk_09849E78
   format: raw
   us:
-    address: 159686264
+    address: 0x09849E78
     size: 32
   jp:
-    address: 159378252
+    address: 0x097FEB4C
     size: 32
   eu:
-    address: 159507744
+    address: 0x0981E520
     size: 32
 - name: gUnk_09849E98
   format: raw
   us:
-    address: 159686296
+    address: 0x09849E98
     size: 32
   jp:
-    address: 159378284
+    address: 0x097FEB6C
     size: 32
   eu:
-    address: 159507776
+    address: 0x0981E540
     size: 32
 - name: gUnk_09849EB8
   format: raw
   us:
-    address: 159686328
+    address: 0x09849EB8
     size: 32
   jp:
-    address: 159378316
+    address: 0x097FEB8C
     size: 32
   eu:
-    address: 159507808
+    address: 0x0981E560
     size: 32
 - name: gUnk_09849ED8
   format: raw
   us:
-    address: 159686360
+    address: 0x09849ED8
     size: 32
   jp:
-    address: 159378348
+    address: 0x097FEBAC
     size: 32
   eu:
-    address: 159507840
+    address: 0x0981E580
     size: 32
 - name: gUnk_09849EF8
   format: raw
   us:
-    address: 159686392
+    address: 0x09849EF8
     size: 32
   jp:
-    address: 159378380
+    address: 0x097FEBCC
     size: 32
   eu:
-    address: 159507872
+    address: 0x0981E5A0
     size: 32
 - name: gUnk_09849F18
   format: raw
   us:
-    address: 159686424
+    address: 0x09849F18
     size: 32
   jp:
-    address: 159378412
+    address: 0x097FEBEC
     size: 32
   eu:
-    address: 159507904
+    address: 0x0981E5C0
     size: 32
 - name: gUnk_09849F38
   format: raw
   us:
-    address: 159686456
+    address: 0x09849F38
     size: 32
   jp:
-    address: 159378444
+    address: 0x097FEC0C
     size: 32
   eu:
-    address: 159507936
+    address: 0x0981E5E0
     size: 32
 - name: gUnk_09849F58
   format: raw
   us:
-    address: 159686488
+    address: 0x09849F58
     size: 32
   jp:
-    address: 159378476
+    address: 0x097FEC2C
     size: 32
   eu:
-    address: 159507968
+    address: 0x0981E600
     size: 32
 - name: gUnk_09849F78
   format: raw
   us:
-    address: 159686520
+    address: 0x09849F78
     size: 256
   jp:
-    address: 159378508
+    address: 0x097FEC4C
     size: 256
   eu:
-    address: 159508000
+    address: 0x0981E620
     size: 256
 - name: gUnk_0984A078
   format: raw
   us:
-    address: 159686776
+    address: 0x0984A078
     size: 128
   jp:
-    address: 159378764
+    address: 0x097FED4C
     size: 128
   eu:
-    address: 159508256
+    address: 0x0981E720
     size: 128
 - name: gUnk_0984A0F8
   format: raw
   us:
-    address: 159686904
+    address: 0x0984A0F8
     size: 32
   jp:
-    address: 159378892
+    address: 0x097FEDCC
     size: 32
   eu:
-    address: 159508384
+    address: 0x0981E7A0
     size: 32
 - name: gUnk_0984A118
   format: raw
   us:
-    address: 159686936
+    address: 0x0984A118
     size: 32
   jp:
-    address: 159378924
+    address: 0x097FEDEC
     size: 32
   eu:
-    address: 159508416
+    address: 0x0981E7C0
     size: 32
 - name: gUnk_0984A138
   format: raw
   us:
-    address: 159686968
+    address: 0x0984A138
     size: 160
   jp:
-    address: 159378956
+    address: 0x097FEE0C
     size: 160
   eu:
-    address: 159508448
+    address: 0x0981E7E0
     size: 160
 - name: gUnk_0984A1D8
   format: palette
   us:
-    address: 159687128
+    address: 0x0984A1D8
     size: 32
   jp:
-    address: 159379116
+    address: 0x097FEEAC
     size: 32
   eu:
-    address: 159508608
+    address: 0x0981E880
     size: 32
 - name: boss02obj
   format: palette
   symbol: gUnk_0984AF78
   us:
-    address: 159690616
+    address: 0x0984AF78
     size: 32
   jp:
-    address: 159382604
+    address: 0x097FFC4C
     size: 32
   eu:
-    address: 159512096
+    address: 0x0981F620
     size: 32
 - name: gUnk_0984AF98
   format: palette
   us:
-    address: 159690648
+    address: 0x0984AF98
     size: 32
   jp:
-    address: 159382636
+    address: 0x097FFC6C
     size: 32
   eu:
-    address: 159512128
+    address: 0x0981F640
     size: 32
 - name: gUnk_0984AFB8
   format: palette
   us:
-    address: 159690680
+    address: 0x0984AFB8
     size: 32
   jp:
-    address: 159382668
+    address: 0x097FFC8C
     size: 32
   eu:
-    address: 159512160
+    address: 0x0981F660
     size: 32
 - name: gUnk_0984AFD8
   format: palette
   us:
-    address: 159690712
+    address: 0x0984AFD8
     size: 32
   jp:
-    address: 159382700
+    address: 0x097FFCAC
     size: 32
   eu:
-    address: 159512192
+    address: 0x0981F680
     size: 32
 - name: gUnk_0984AFF8
   format: raw
   us:
-    address: 159690744
+    address: 0x0984AFF8
     size: 224
   jp:
-    address: 159382732
+    address: 0x097FFCCC
     size: 224
   eu:
-    address: 159512224
+    address: 0x0981F6A0
     size: 224
 - name: gUnk_0984B0D8
   format: raw
   us:
-    address: 159690968
+    address: 0x0984B0D8
     size: 32
   jp:
-    address: 159382956
+    address: 0x097FFDAC
     size: 32
   eu:
-    address: 159512448
+    address: 0x0981F780
     size: 32
 - name: gUnk_0984B0F8
   format: palette
   us:
-    address: 159691000
+    address: 0x0984B0F8
     size: 32
   jp:
-    address: 159382988
+    address: 0x097FFDCC
     size: 32
   eu:
-    address: 159512480
+    address: 0x0981F7A0
     size: 32
 - name: gUnk_099910C4
   format: palette
   us:
-    address: 161026244
+    address: 0x099910C4
     size: 32
   jp:
-    address: 160717784
+    address: 0x09945BD8
     size: 32
   eu:
-    address: 161050800
+    address: 0x099970B0
     size: 32
 - name: gUnk_099910E4
   format: raw
   us:
-    address: 161026276
+    address: 0x099910E4
     size: 32
   jp:
-    address: 160717816
+    address: 0x09945BF8
     size: 32
     symbol: gUnkJp_09945BF8
   eu:
-    address: 161050832
+    address: 0x099970D0
     size: 32
     symbol: gUnkEu_099970D0
 - name: gUnk_09991104
   format: raw
   us:
-    address: 161026308
+    address: 0x09991104
     size: 32
   jp:
-    address: 160717848
+    address: 0x09945C18
     size: 32
   eu:
-    address: 161050864
+    address: 0x099970F0
     size: 32
 - name: gUnk_09991124
   format: raw
   us:
-    address: 161026340
+    address: 0x09991124
     size: 32
   jp:
-    address: 160717880
+    address: 0x09945C38
     size: 32
   eu:
-    address: 161050896
+    address: 0x09997110
     size: 32
 - name: gUnk_09991144
   format: raw
   us:
-    address: 161026372
+    address: 0x09991144
     size: 32
   jp:
-    address: 160717912
+    address: 0x09945C58
     size: 32
   eu:
-    address: 161050928
+    address: 0x09997130
     size: 32
 - name: gUnk_09991164
   format: raw
   us:
-    address: 161026404
+    address: 0x09991164
     size: 32
   jp:
-    address: 160717944
+    address: 0x09945C78
     size: 32
   eu:
-    address: 161050960
+    address: 0x09997150
     size: 32
 - name: gUnk_09991184
   format: raw
   us:
-    address: 161026436
+    address: 0x09991184
     size: 32
   jp:
-    address: 160717976
+    address: 0x09945C98
     size: 32
   eu:
-    address: 161050992
+    address: 0x09997170
     size: 32
 - name: gUnk_099911A4
   format: raw
   us:
-    address: 161026468
+    address: 0x099911A4
     size: 32
   jp:
-    address: 160718008
+    address: 0x09945CB8
     size: 32
   eu:
-    address: 161051024
+    address: 0x09997190
     size: 32
 - name: gUnk_099911C4
   format: raw
   us:
-    address: 161026500
+    address: 0x099911C4
     size: 32
   jp:
-    address: 160718040
+    address: 0x09945CD8
     size: 32
   eu:
-    address: 161051056
+    address: 0x099971B0
     size: 32
 - name: gUnk_099911E4
   format: raw
   us:
-    address: 161026532
+    address: 0x099911E4
     size: 32
   jp:
-    address: 160718072
+    address: 0x09945CF8
     size: 32
   eu:
-    address: 161051088
+    address: 0x099971D0
     size: 32
 - name: gUnk_09991204
   format: raw
   us:
-    address: 161026564
+    address: 0x09991204
     size: 32
   jp:
-    address: 160718104
+    address: 0x09945D18
     size: 32
   eu:
-    address: 161051120
+    address: 0x099971F0
     size: 32
 - name: gUnk_09991224
   format: raw
   us:
-    address: 161026596
+    address: 0x09991224
     size: 32
   jp:
-    address: 160718136
+    address: 0x09945D38
     size: 32
   eu:
-    address: 161051152
+    address: 0x09997210
     size: 32
 - name: gUnk_09991244
   format: raw
   us:
-    address: 161026628
+    address: 0x09991244
     size: 32
   jp:
-    address: 160718168
+    address: 0x09945D58
     size: 32
   eu:
-    address: 161051184
+    address: 0x09997230
     size: 32
 - name: gUnk_09991264
   format: raw
   us:
-    address: 161026660
+    address: 0x09991264
     size: 32
   jp:
-    address: 160718200
+    address: 0x09945D78
     size: 32
   eu:
-    address: 161051216
+    address: 0x09997250
     size: 32
 - name: gUnk_09991284
   format: palette
   us:
-    address: 161026692
+    address: 0x09991284
     size: 32
   jp:
-    address: 160718232
+    address: 0x09945D98
     size: 32
   eu:
-    address: 161051248
+    address: 0x09997270
     size: 32
 - name: gUnk_09991924
   format: palette
   us:
-    address: 161028388
+    address: 0x09991924
     size: 32
   jp:
-    address: 160719928
+    address: 0x09946438
     size: 32
   eu:
-    address: 161052944
+    address: 0x09997910
     size: 32
 - name: gUnk_09991944
   format: palette
   us:
-    address: 161028420
+    address: 0x09991944
     size: 32
   jp:
-    address: 160719960
+    address: 0x09946458
     size: 32
   eu:
-    address: 161052976
+    address: 0x09997930
     size: 32
 - name: gUnk_09991964
   format: palette
   us:
-    address: 161028452
+    address: 0x09991964
     size: 32
   jp:
-    address: 160719992
+    address: 0x09946478
     size: 32
   eu:
-    address: 161053008
+    address: 0x09997950
     size: 32
 - name: gUnk_09991984
   format: palette
   us:
-    address: 161028484
+    address: 0x09991984
     size: 32
   jp:
-    address: 160720024
+    address: 0x09946498
     size: 32
   eu:
-    address: 161053040
+    address: 0x09997970
     size: 32
 - name: gUnk_099919A4
   format: palette
   us:
-    address: 161028516
+    address: 0x099919A4
     size: 32
   jp:
-    address: 160720056
+    address: 0x099464B8
     size: 32
   eu:
-    address: 161053072
+    address: 0x09997990
     size: 32
 - name: gUnk_099919C4
   format: raw
   us:
-    address: 161028548
+    address: 0x099919C4
     size: 512
   jp:
-    address: 160720088
+    address: 0x099464D8
     size: 512
   eu:
-    address: 161053104
+    address: 0x099979B0
     size: 512
 - name: gUnk_09991BC4
   format: palette
   us:
-    address: 161029060
+    address: 0x09991BC4
     size: 32
   jp:
-    address: 160720600
+    address: 0x099466D8
     size: 32
   eu:
-    address: 161053616
+    address: 0x09997BB0
     size: 32
 - name: gUnk_09991BE4
   format: palette
   us:
-    address: 161029092
+    address: 0x09991BE4
     size: 32
   jp:
-    address: 160720632
+    address: 0x099466F8
     size: 32
   eu:
-    address: 161053648
+    address: 0x09997BD0
     size: 32
 - name: gUnk_09991C04
   format: palette
   us:
-    address: 161029124
+    address: 0x09991C04
     size: 32
   jp:
-    address: 160720664
+    address: 0x09946718
     size: 32
   eu:
-    address: 161053680
+    address: 0x09997BF0
     size: 32
 - name: gUnk_09991C24
   format: raw
   us:
-    address: 161029156
+    address: 0x09991C24
     size: 32
   jp:
-    address: 160720696
+    address: 0x09946738
     size: 32
     symbol: gUnkJp_09946738
   eu:
-    address: 161053712
+    address: 0x09997C10
     size: 32
     symbol: gUnkEu_09997C10
 - name: gUnk_09991C44
   format: palette
   us:
-    address: 161029188
+    address: 0x09991C44
     size: 32
   jp:
-    address: 160720728
+    address: 0x09946758
     size: 32
   eu:
-    address: 161053744
+    address: 0x09997C30
     size: 32
 - name: gUnk_09991C64
   format: raw
   us:
-    address: 161029220
+    address: 0x09991C64
     size: 32
   jp:
-    address: 160720760
+    address: 0x09946778
     size: 32
     symbol: gUnkJp_09946778
   eu:
-    address: 161053776
+    address: 0x09997C50
     size: 32
     symbol: gUnkEu_09997C50
 - name: gUnk_09991C84
   format: raw
   us:
-    address: 161029252
+    address: 0x09991C84
     size: 128
   jp:
-    address: 160720792
+    address: 0x09946798
     size: 128
   eu:
-    address: 161053808
+    address: 0x09997C70
     size: 128
 - name: gUnk_09991D04
   format: palette
   us:
-    address: 161029380
+    address: 0x09991D04
     size: 32
   jp:
-    address: 160720920
+    address: 0x09946818
     size: 32
   eu:
-    address: 161053936
+    address: 0x09997CF0
     size: 32
 - name: gUnk_09991D24
   format: palette
   us:
-    address: 161029412
+    address: 0x09991D24
     size: 32
   jp:
-    address: 160720952
+    address: 0x09946838
     size: 32
   eu:
-    address: 161053968
+    address: 0x09997D10
     size: 32
 - name: boss01obj
   format: palette
   symbol: gUnk_09A3C89C
   us:
-    address: 161728668
+    address: 0x09A3C89C
     size: 32
   jp:
-    address: 161420068
+    address: 0x099F1324
     size: 32
   eu:
-    address: 162112352
+    address: 0x09A9A360
     size: 32
 - name: gUnk_09A3C8BC
   format: raw
   us:
-    address: 161728700
+    address: 0x09A3C8BC
     size: 192
   jp:
-    address: 161420100
+    address: 0x099F1344
     size: 192
   eu:
-    address: 162112384
+    address: 0x09A9A380
     size: 192
 - name: gUnk_09A3C97C
   format: palette
   us:
-    address: 161728892
+    address: 0x09A3C97C
     size: 32
   jp:
-    address: 161420292
+    address: 0x099F1404
     size: 32
   eu:
-    address: 162112576
+    address: 0x09A9A440
     size: 32
 - name: gUnk_09A3C99C
   format: palette
   us:
-    address: 161728924
+    address: 0x09A3C99C
     size: 32
   jp:
-    address: 161420324
+    address: 0x099F1424
     size: 32
   eu:
-    address: 162112608
+    address: 0x09A9A460
     size: 32
 - name: gUnk_09A3C9BC
   format: palette
   us:
-    address: 161728956
+    address: 0x09A3C9BC
     size: 32
   jp:
-    address: 161420356
+    address: 0x099F1444
     size: 32
   eu:
-    address: 162112640
+    address: 0x09A9A480
     size: 32
 - name: gUnk_09A3C9DC
   format: raw
   us:
-    address: 161728988
+    address: 0x09A3C9DC
     size: 96
   jp:
-    address: 161420388
+    address: 0x099F1464
     size: 96
   eu:
-    address: 162112672
+    address: 0x09A9A4A0
     size: 96
 - name: gUnk_09A3CA3C
   format: raw
   declare: false
   us:
-    address: 161729084
+    address: 0x09A3CA3C
     size: 32
   jp:
-    address: 161420484
+    address: 0x099F14C4
     size: 32
   eu:
-    address: 162112768
+    address: 0x09A9A500
     size: 32
 - name: gUnk_09A3CA5C
   format: raw
   declare: false
   us:
-    address: 161729116
+    address: 0x09A3CA5C
     size: 32
   jp:
-    address: 161420516
+    address: 0x099F14E4
     size: 32
   eu:
-    address: 162112800
+    address: 0x09A9A520
     size: 32
 - name: gUnk_09A3CA7C
   format: raw
   declare: false
   us:
-    address: 161729148
+    address: 0x09A3CA7C
     size: 32
   jp:
-    address: 161420548
+    address: 0x099F1504
     size: 32
   eu:
-    address: 162112832
+    address: 0x09A9A540
     size: 32
 - name: gUnk_09A3CA9C
   format: raw
   declare: false
   us:
-    address: 161729180
+    address: 0x09A3CA9C
     size: 32
   jp:
-    address: 161420580
+    address: 0x099F1524
     size: 32
   eu:
-    address: 162112864
+    address: 0x09A9A560
     size: 32
 - name: gUnk_09A3CABC
   format: raw
   declare: false
   us:
-    address: 161729212
+    address: 0x09A3CABC
     size: 32
   jp:
-    address: 161420612
+    address: 0x099F1544
     size: 32
   eu:
-    address: 162112896
+    address: 0x09A9A580
     size: 32
 - name: gUnk_09A3CADC
   format: raw
   declare: false
   us:
-    address: 161729244
+    address: 0x09A3CADC
     size: 32
   jp:
-    address: 161420644
+    address: 0x099F1564
     size: 32
   eu:
-    address: 162112928
+    address: 0x09A9A5A0
     size: 32
 - name: gUnk_09A3CAFC
   format: raw
   declare: false
   us:
-    address: 161729276
+    address: 0x09A3CAFC
     size: 32
   jp:
-    address: 161420676
+    address: 0x099F1584
     size: 32
   eu:
-    address: 162112960
+    address: 0x09A9A5C0
     size: 32
 - name: gUnk_09A3CB1C
   format: raw
   declare: false
   us:
-    address: 161729308
+    address: 0x09A3CB1C
     size: 32
   jp:
-    address: 161420708
+    address: 0x099F15A4
     size: 32
   eu:
-    address: 162112992
+    address: 0x09A9A5E0
     size: 32
 - name: gUnk_09A3CB3C
   format: raw
   declare: false
   us:
-    address: 161729340
+    address: 0x09A3CB3C
     size: 32
   jp:
-    address: 161420740
+    address: 0x099F15C4
     size: 32
   eu:
-    address: 162113024
+    address: 0x09A9A600
     size: 32
 - name: gUnk_09A3CB5C
   format: raw
   declare: false
   us:
-    address: 161729372
+    address: 0x09A3CB5C
     size: 32
   jp:
-    address: 161420772
+    address: 0x099F15E4
     size: 32
   eu:
-    address: 162113056
+    address: 0x09A9A620
     size: 32
 - name: gUnk_09A3CB7C
   format: raw
   declare: false
   us:
-    address: 161729404
+    address: 0x09A3CB7C
     size: 32
   jp:
-    address: 161420804
+    address: 0x099F1604
     size: 32
   eu:
-    address: 162113088
+    address: 0x09A9A640
     size: 32
 - name: gUnk_09A3CB9C
   format: raw
   declare: false
   us:
-    address: 161729436
+    address: 0x09A3CB9C
     size: 32
   jp:
-    address: 161420836
+    address: 0x099F1624
     size: 32
   eu:
-    address: 162113120
+    address: 0x09A9A660
     size: 32
 - name: gUnk_09A3CBBC
   format: raw
   declare: false
   us:
-    address: 161729468
+    address: 0x09A3CBBC
     size: 32
   jp:
-    address: 161420868
+    address: 0x099F1644
     size: 32
   eu:
-    address: 162113152
+    address: 0x09A9A680
     size: 32
 - name: gUnk_09A3CBDC
   format: raw
   declare: false
   us:
-    address: 161729500
+    address: 0x09A3CBDC
     size: 32
   jp:
-    address: 161420900
+    address: 0x099F1664
     size: 32
   eu:
-    address: 162113184
+    address: 0x09A9A6A0
     size: 32
 - name: gUnk_09A3CBFC
   format: raw
   declare: false
   us:
-    address: 161729532
+    address: 0x09A3CBFC
     size: 32
   jp:
-    address: 161420932
+    address: 0x099F1684
     size: 32
   eu:
-    address: 162113216
+    address: 0x09A9A6C0
     size: 32
 - name: gUnk_09A3CC1C
   format: raw
   declare: false
   us:
-    address: 161729564
+    address: 0x09A3CC1C
     size: 32
   jp:
-    address: 161420964
+    address: 0x099F16A4
     size: 32
   eu:
-    address: 162113248
+    address: 0x09A9A6E0
     size: 32
 - name: gUnk_09A3CC3C
   format: palette
   us:
-    address: 161729596
+    address: 0x09A3CC3C
     size: 32
   jp:
-    address: 161420996
+    address: 0x099F16C4
     size: 32
   eu:
-    address: 162113280
+    address: 0x09A9A700
     size: 32
 - name: gUnk_09A3CC5C
   format: palette
   us:
-    address: 161729628
+    address: 0x09A3CC5C
     size: 32
   jp:
-    address: 161421028
+    address: 0x099F16E4
     size: 32
   eu:
-    address: 162113312
+    address: 0x09A9A720
     size: 32
 - name: gUnk_09A3CC7C
   format: palette
   us:
-    address: 161729660
+    address: 0x09A3CC7C
     size: 32
   jp:
-    address: 161421060
+    address: 0x099F1704
     size: 32
   eu:
-    address: 162113344
+    address: 0x09A9A740
     size: 32
 - name: gUnk_09A3CC9C
   format: raw
   us:
-    address: 161729692
+    address: 0x09A3CC9C
     size: 32
   jp:
-    address: 161421092
+    address: 0x099F1724
     size: 32
   eu:
-    address: 162113376
+    address: 0x09A9A760
     size: 32
 - name: gUnk_09A3CCBC
   format: raw
   us:
-    address: 161729724
+    address: 0x09A3CCBC
     size: 32
   jp:
-    address: 161421124
+    address: 0x099F1744
     size: 32
   eu:
-    address: 162113408
+    address: 0x09A9A780
     size: 32
 - name: gUnk_09A3CCDC
   format: raw
   us:
-    address: 161729756
+    address: 0x09A3CCDC
     size: 32
   jp:
-    address: 161421156
+    address: 0x099F1764
     size: 32
   eu:
-    address: 162113440
+    address: 0x09A9A7A0
     size: 32
 - name: gUnk_09A3CCFC
   format: raw
   us:
-    address: 161729788
+    address: 0x09A3CCFC
     size: 32
   jp:
-    address: 161421188
+    address: 0x099F1784
     size: 32
   eu:
-    address: 162113472
+    address: 0x09A9A7C0
     size: 32
 - name: gUnk_09A3CD1C
   format: raw
   us:
-    address: 161729820
+    address: 0x09A3CD1C
     size: 32
   jp:
-    address: 161421220
+    address: 0x099F17A4
     size: 32
   eu:
-    address: 162113504
+    address: 0x09A9A7E0
     size: 32
 - name: gUnk_09A3CD3C
   format: raw
   us:
-    address: 161729852
+    address: 0x09A3CD3C
     size: 32
   jp:
-    address: 161421252
+    address: 0x099F17C4
     size: 32
   eu:
-    address: 162113536
+    address: 0x09A9A800
     size: 32
 - name: gUnk_09A3CD5C
   format: raw
   us:
-    address: 161729884
+    address: 0x09A3CD5C
     size: 32
   jp:
-    address: 161421284
+    address: 0x099F17E4
     size: 32
   eu:
-    address: 162113568
+    address: 0x09A9A820
     size: 32
 - name: gUnk_09A3CD7C
   format: raw
   us:
-    address: 161729916
+    address: 0x09A3CD7C
     size: 32
   jp:
-    address: 161421316
+    address: 0x099F1804
     size: 32
   eu:
-    address: 162113600
+    address: 0x09A9A840
     size: 32
 - name: gUnk_09A3CD9C
   format: raw
   us:
-    address: 161729948
+    address: 0x09A3CD9C
     size: 32
   jp:
-    address: 161421348
+    address: 0x099F1824
     size: 32
   eu:
-    address: 162113632
+    address: 0x09A9A860
     size: 32
 - name: gUnk_09A3CDBC
   format: raw
   us:
-    address: 161729980
+    address: 0x09A3CDBC
     size: 32
   jp:
-    address: 161421380
+    address: 0x099F1844
     size: 32
   eu:
-    address: 162113664
+    address: 0x09A9A880
     size: 32
 - name: gUnk_09A3CDDC
   format: raw
   us:
-    address: 161730012
+    address: 0x09A3CDDC
     size: 64
   jp:
-    address: 161421412
+    address: 0x099F1864
     size: 64
   eu:
-    address: 162113696
+    address: 0x09A9A8A0
     size: 64
 - name: gUnk_09A3CE1C
   format: raw
   us:
-    address: 161730076
+    address: 0x09A3CE1C
     size: 32
   jp:
-    address: 161421476
+    address: 0x099F18A4
     size: 32
   eu:
-    address: 162113760
+    address: 0x09A9A8E0
     size: 32
 - name: gUnk_09A3CE3C
   format: raw
   us:
-    address: 161730108
+    address: 0x09A3CE3C
     size: 32
   jp:
-    address: 161421508
+    address: 0x099F18C4
     size: 32
   eu:
-    address: 162113792
+    address: 0x09A9A900
     size: 32
 - name: gUnk_09A3CE5C
   format: raw
   us:
-    address: 161730140
+    address: 0x09A3CE5C
     size: 32
   jp:
-    address: 161421540
+    address: 0x099F18E4
     size: 32
   eu:
-    address: 162113824
+    address: 0x09A9A920
     size: 32
 - name: gUnk_09A3CE7C
   format: raw
   us:
-    address: 161730172
+    address: 0x09A3CE7C
     size: 512
   jp:
-    address: 161421572
+    address: 0x099F1904
     size: 512
   eu:
-    address: 162113856
+    address: 0x09A9A940
     size: 512
 - name: gUnk_09A3D07C
   format: palette
   us:
-    address: 161730684
+    address: 0x09A3D07C
     size: 32
   jp:
-    address: 161422084
+    address: 0x099F1B04
     size: 32
   eu:
-    address: 162114368
+    address: 0x09A9AB40
     size: 32
 - name: gUnk_09A3D57C
   format: palette
   us:
-    address: 161731964
+    address: 0x09A3D57C
     size: 32
   jp:
-    address: 161423364
+    address: 0x099F2004
     size: 32
   eu:
-    address: 162115648
+    address: 0x09A9B040
     size: 32
 - name: gUnk_09A3D59C
   format: palette
   us:
-    address: 161731996
+    address: 0x09A3D59C
     size: 32
   jp:
-    address: 161423396
+    address: 0x099F2024
     size: 32
   eu:
-    address: 162115680
+    address: 0x09A9B060
     size: 32
 - name: gUnk_09A3D5BC
   format: palette
   us:
-    address: 161732028
+    address: 0x09A3D5BC
     size: 32
   jp:
-    address: 161423428
+    address: 0x099F2044
     size: 32
   eu:
-    address: 162115712
+    address: 0x09A9B080
     size: 32
 - name: gUnk_09A3DE7C
   format: palette
   us:
-    address: 161734268
+    address: 0x09A3DE7C
     size: 32
   jp:
-    address: 161425668
+    address: 0x099F2904
     size: 32
   eu:
-    address: 162117952
+    address: 0x09A9B940
     size: 32
 - name: bos_pc_bg
   format: palette
   symbol: gUnk_09D69274
   us:
-    address: 165057140
+    address: 0x09D69274
     size: 32
   jp:
-    address: 164898688
+    address: 0x09D42780
     size: 32
   eu:
-    address: 165515680
+    address: 0x09DD91A0
     size: 32
 - name: gUnk_09D6CF34
   format: palette
   us:
-    address: 165072692
+    address: 0x09D6CF34
     size: 32
   jp:
-    address: 164914240
+    address: 0x09D46440
     size: 32
   eu:
-    address: 165531232
+    address: 0x09DDCE60
     size: 32
 - name: gUnk_09D6CF54
   format: raw
   us:
-    address: 165072724
+    address: 0x09D6CF54
     size: 224
   jp:
-    address: 164914272
+    address: 0x09D46460
     size: 224
   eu:
-    address: 165531264
+    address: 0x09DDCE80
     size: 224
 - name: gUnk_09D6D034
   format: raw
   us:
-    address: 165072948
+    address: 0x09D6D034
     size: 224
   jp:
-    address: 164914496
+    address: 0x09D46540
     size: 224
   eu:
-    address: 165531488
+    address: 0x09DDCF60
     size: 224
 - name: gUnk_09D6D114
   format: palette
   us:
-    address: 165073172
+    address: 0x09D6D114
     size: 32
   jp:
-    address: 164914720
+    address: 0x09D46620
     size: 32
   eu:
-    address: 165531712
+    address: 0x09DDD040
     size: 32
 - name: gUnkEu_08F6A6DC
   format: palette
   eu:
-    address: 150382300
+    address: 0x08F6A6DC
     size: 32
