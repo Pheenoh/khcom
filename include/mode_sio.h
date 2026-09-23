@@ -401,7 +401,7 @@ s8 func_080B3908(void);
 s8 func_080B3958(void);
 void func_080B397C(void);
 void func_080B3A48(void);
-s16 func_08084068(u16 a);
+s16 AddCardToCollection(u16 a);
 void func_080B3204(void);
 void func_080B3354(void);
 void func_080B3A68(void);

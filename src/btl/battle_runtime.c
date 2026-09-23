@@ -20,7 +20,7 @@ void func_08019050(u16 a, s32 b, s32 c, s32 d) {
     gBtlWork->unk_020 = d;
 }
 
-void func_08019068(const AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
+void AnimChangeWithDef(const AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     const AnimDef* e = &tbl[i];
     AnimChangeWithTables(a, e->animId, j, e->anims, e->gfxTable);
     SetObjTileSource(obj, e->tiles);
@@ -1335,7 +1335,7 @@ void func_0801B37C(BtlObj* p, const EmyKind* d, s32 x, s32 y, s32 z) {
     s32 b;
     s32 c;
 
-    e = func_0800FB14(d->unk_00);
+    e = GetEnemyBaseStats(d->unk_00);
 
     if (e != 0) {
         v = d->unk_00;
@@ -2302,7 +2302,7 @@ void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d) {
 
 void func_0801C7FC(HitData* a, s32 id, s32 c) {
     u16 b = id;
-    const EnemyBaseStats* e = func_0800FB14(b);
+    const EnemyBaseStats* e = GetEnemyBaseStats(b);
     if (e != 0) {
         a->unk_2E = (e->hp * c) >> 8;
         if (a->unk_2E <= 0) {

@@ -131,8 +131,8 @@ void func_0808CBB4(u8 a, u8 b);
 void ConvertActiveDeckCardToPremium(u16 index);
 void InitCardCollection(void);
 s16 func_08084458(u16 cardId);
-u16 func_08084BAC(void);
-u16 func_08084BF0(void);
+u16 CountCollectionCards(void);
+u16 CountCardsInDecks(void);
 
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p) {
     u16 mask;
@@ -4846,8 +4846,8 @@ void func_0808D594(void) {
 
     u32 base;
 
-    a = func_08084BF0();
-    b = func_08084BAC();
+    a = CountCardsInDecks();
+    b = CountCollectionCards();
 
     d1[0] = a / 100;
     d1[1] = a / 10 - d1[0] * 10;

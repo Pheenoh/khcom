@@ -526,21 +526,21 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
     e = work->entries;
 
     for (i = 0; i < 4; i++) {
-        func_080D8584(e);
+        StatusEntryClear(e);
         e++;
     }
 
     if (gGameState.flags & 8) {
         for (i = 66; i <= 69; i++) {
             if (func_0800FBCC(i)) {
-                func_080D8590(work->entries, i);
+                StatusEntryAppend(work->entries, i);
             }
         }
     } else {
         for (i = 0; i <= 65; i++) {
             if (func_0800FBCC(i)) {
-                func_080D8590(work->entries, i);
-                func_080D8590(&work->entries[func_080D85A8(i)], i);
+                StatusEntryAppend(work->entries, i);
+                StatusEntryAppend(&work->entries[func_080D85A8(i)], i);
             }
         }
     }
@@ -672,11 +672,11 @@ s32 func_080D855C(s16 a) {
     return gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[a];
 }
 
-void func_080D8584(StatusEntry* e) {
+void StatusEntryClear(StatusEntry* e) {
     e->count = 0;
 }
 
-void func_080D8590(StatusEntry* e, s32 v) {
+void StatusEntryAppend(StatusEntry* e, s32 v) {
     e->unk_000[e->count] = v;
     e->count++;
 }

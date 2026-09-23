@@ -106,7 +106,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DC24, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14C = 0;
@@ -217,9 +217,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
     }
     case 1:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
         } else if ((s16)work->unk_160 == 0 && AnimIsFinished(&work->anim)) {
-            func_08019068(gUnk_0813E958, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813E958, &work->anim, 1, 0, work->tiles);
             work->unk_160++;
         } else if (AnimIsFinished(&work->anim)) {
             work->unk_034 = 5;
@@ -292,9 +292,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         break;
     case 2:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813E958, &work->anim, 6, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813E958, &work->anim, 6, 0, work->tiles);
         } else if ((s16)work->unk_160 == 0 && AnimIsFinished(&work->anim)) {
-            func_08019068(gUnk_0813E958, &work->anim, 7, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813E958, &work->anim, 7, 0, work->tiles);
             work->unk_160++;
         } else if (AnimIsFinished(&work->anim)) {
             work->unk_034 = 5;
@@ -349,7 +349,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         break;
     case 3:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813E958, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E958, &work->anim, 2, 1, work->tiles);
             work->unk_14C = 0;
         }
         if (body->flags & 4) pixelX = gBtlWork->unk_0DA + 50;
@@ -384,16 +384,16 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             switch ((s16)work->unk_17C) {
             case 0:
                 m4aSongNumStart(0xAF);
-                func_08019068(gUnk_0813E958, &work->anim, 3, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813E958, &work->anim, 3, 0, work->tiles);
                 break;
             case 1:
                 m4aSongNumStart(0xB0);
-                func_08019068(gUnk_0813E958, &work->anim, 4, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813E958, &work->anim, 4, 0, work->tiles);
                 break;
             case 2:
             default:
                 m4aSongNumStart(0xB1);
-                func_08019068(gUnk_0813E958, &work->anim, 5, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813E958, &work->anim, 5, 0, work->tiles);
                 break;
             }
             if (body->x < work->unk_170) body->flags &= ~4ULL;
@@ -556,7 +556,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_09617FF8, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(&gUnk_0813E9E8, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(&gUnk_0813E9E8, &work->anim, 0, 0, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -888,7 +888,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     work->unk_152 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618098, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
+    AnimChangeWithDef(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1008,7 +1008,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
             work->unk_160 = body->z;
             work->unk_14A = 30;
         } else {
@@ -1033,7 +1033,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
         }
 
         p = work->actor;
@@ -1092,7 +1092,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EA08, &work->anim, 2, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_16C = 0xC0;
@@ -1111,7 +1111,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         }
 
         if (AnimIsFinished(&work->anim)) {
-            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
             work->state = 3;
             work->unk_148 = 1;
         } else {
@@ -1269,7 +1269,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_154 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618018, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(&gUnk_0813EA5C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(&gUnk_0813EA5C, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1506,7 +1506,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
     work->unk_152 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618038, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA7C, &work->anim, 0, 1, work->tiles);
+    AnimChangeWithDef(gUnk_0813EA7C, &work->anim, 0, 1, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1593,7 +1593,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         work->unk_14A--;
         break;
     case 3:
-        func_08019068(gUnk_0813EA7C, &work->anim, 2, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813EA7C, &work->anim, 2, 0, work->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             work->state = 2;
@@ -1602,7 +1602,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         break;
     case 2:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA7C, &work->anim, 3, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EA7C, &work->anim, 3, 1, work->tiles);
 
             switch (work->unk_152) {
             case 0:
@@ -1759,7 +1759,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     work->unk_154 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09617F98, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1820,7 +1820,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 2:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -1832,7 +1832,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 3:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EADC, &work->anim, 1, 1, work->tiles);
 
             if (body->flags & 4) {
                 func_08015B50(work->unk_154, body->x - 0x1C00, body->y,
@@ -1854,7 +1854,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 4:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EADC, &work->anim, 2, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -1965,7 +1965,7 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     work->unk_150 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618298, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -2129,7 +2129,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         break;
     case 1:
         if ((s16)work->unk_148 == 0) {
-            func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
             work->unk_14A = 30;
             func_080140E0(body->x, body->y, body->z);
             m4aSongNumStart(0x239);
@@ -2144,7 +2144,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     case 2:
         if ((s16)work->unk_148 == 0) {
             gBtlWork->flags |= 0x40000;
-            func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
         }
         height = ((u32)gSineTable[(work->unk_148 * 2) & 255] << 3) + 0xC00;
         body->z += (body->unk_010 - height - body->z) >> 3;
@@ -2162,7 +2162,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         }
         break;
     case 3:
-        func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
         func_08044518(work);
         if ((s16)work->unk_148 > 40) {
             work->unk_15C = 0;
@@ -2187,7 +2187,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     case 4:
         if ((s16)work->unk_148 == 0) {
             m4aSongNumStart(0xC3);
-            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
         }
         if (work->unk_15C == 0) {
             func_08044518(work);
@@ -2225,7 +2225,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     case 5:
         if ((s16)work->unk_148 == 0) {
             m4aSongNumStart(0xC4);
-            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
         }
         if (work->unk_15C == 0) {
             func_08044518(work);
@@ -2264,7 +2264,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         break;
     case 6:
         if ((s16)work->unk_148 == 0) {
-            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
             m4aSongNumStart(0xC5);
         }
         if (work->unk_15C == 0) {
@@ -2386,7 +2386,7 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_096183F8, 32);
     work->unk_158 = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB4C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EB4C, &work->anim, 0, 0, work->tiles);
     work->state = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -2453,7 +2453,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         work->unk_14A--;
         break;
     case 2:
-        func_08019068(gUnk_0813EB4C, &work->anim, 1, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813EB4C, &work->anim, 1, 0, work->tiles);
         if (func_08044F98(work)) {
             work->state = 4;
             work->unk_148 = 0;
@@ -2461,7 +2461,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         }
         break;
     case 4:
-        func_08019068(gUnk_0813EB4C, &work->anim, 2, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813EB4C, &work->anim, 2, 0, work->tiles);
         if (AnimGetFrame(&work->anim) == 5 && work->anim.timer == 3) {
             func_08013480(body->x, body->y, body->z - 0x1300);
             func_08011F78(3, body->x, body->y, body->z, 256, 256, 256);

@@ -107,7 +107,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_09617C58, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
 
     switch (args->unk_00) {
     case 0:
@@ -173,7 +173,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
             work->unk_14E++;
         }
         body->x += (work->unk_158 - body->x) >> 4;
@@ -189,7 +189,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         }
         break;
     case 1:
-        if (work->unk_14E == 0) func_08019068(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
+        if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             func_0801D288();
             if (gBtlWork->flags & 0x800000000ULL) work->state = 4;
@@ -239,7 +239,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             work->unk_14E = 0;
             work->unk_160--;
         } else {
-            if (work->unk_14E == 0) func_08019068(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
+            if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
             if (AnimIsFinished(&work->anim)) {
                 work->state = 3;
                 work->unk_14E = 0;
@@ -248,7 +248,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
             if (!(body->flags & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
             else work->unk_158 = (gBtlWork->unk_0DC + 64) * 256;
             work->unk_154 = -0x500;
@@ -271,8 +271,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             work->unk_158 = gSineTable[angle] * 3;
             work->unk_15C = -gSineTable[angle + 64] * 3;
         }
-        if (work->unk_15C > 0) func_08019068(gUnk_0813EB8C, &work->anim, 4, 1, work->tiles);
-        else func_08019068(gUnk_0813EB8C, &work->anim, 5, 1, work->tiles);
+        if (work->unk_15C > 0) AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 4, 1, work->tiles);
+        else AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 5, 1, work->tiles);
         if (work->unk_158 < 0) body->flags |= 4;
         else body->flags &= ~4ULL;
         body->x += work->unk_158;
@@ -298,7 +298,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         {
             s32 x,y,z;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
                     if (target->x < body->x) body->flags |= 4;
@@ -349,7 +349,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         {
             s32 x,y,z;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
                     if (target->x < body->x) body->flags |= 4;
@@ -398,7 +398,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         }
     case 6:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EB8C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EB8C, &work->anim, 1, 0, work->tiles);
             AnimReset(&work->anim);
             if (target != 0) {
                 if (target->x < body->x) body->flags |= 4;
@@ -443,7 +443,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         {
             BtlObj* ally=work->unk_14C != 0 ? gBtlWork->actor : gUnk_02039B9C->actor;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EB8C,&work->anim,1,0,work->tiles);
+                AnimChangeWithDef(gUnk_0813EB8C,&work->anim,1,0,work->tiles);
                 AnimReset(&work->anim);
                 if (ally->x < body->x) body->flags |= 4;
                 else body->flags &= ~4ULL;
@@ -625,7 +625,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_08F68384, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
@@ -645,7 +645,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
             work->unk_14E++;
         }
 
@@ -660,7 +660,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -681,7 +681,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 2:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -693,7 +693,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_158 = (gBtlWork->unk_0DA - 0x40) << 8;
@@ -717,7 +717,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 4:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 2, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_158 = body->x - 0x8500;
@@ -754,7 +754,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 5:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 3, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 3, 0, work->tiles);
         }
 
         func_080465F0(work);
@@ -768,7 +768,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 6:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 4, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813EBFC, &work->anim, 4, 1, work->tiles);
             work->angle = GetRandom();
         }
 
@@ -886,7 +886,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     body->z = -0x1000;
     work->palette = LoadObjPalette(gUnk_09617DF8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EC5C, &work->anim, 1, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EC5C, &work->anim, 1, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 
@@ -947,7 +947,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         if (work->unk_14E == 0) {
             work->unk_160 = 0;
             work->unk_150 = 12;
-            func_08019068(gUnk_0813EC5C, &work->anim, 2, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EC5C, &work->anim, 2, 0, work->tiles);
         }
 
         switch (AnimGetFrame(&work->anim)) {
@@ -978,7 +978,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         }
         break;
     case 2:
-        func_08019068(gUnk_0813EC5C, &work->anim, 0, 1, work->tiles);
+        AnimChangeWithDef(gUnk_0813EC5C, &work->anim, 0, 1, work->tiles);
 
         if (body->flags & 4
                 ? func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)
@@ -1140,7 +1140,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     work->unk_160 = 0;
     work->palette = LoadObjPalette(gUnk_09617DB8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
 
     switch (args->unk_00) {
     case 0:
@@ -1175,7 +1175,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
             work->unk_14E++;
         }
         body->x += (work->unk_158 - body->x) >> 4;
@@ -1187,7 +1187,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         }
         break;
     case 1:
-        if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 2, 0, work->tiles);
+        if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 2, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             u16 spell;
             func_0801D288();
@@ -1216,7 +1216,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             work->unk_14E = 0;
             work->unk_168--;
         } else {
-            if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
+            if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
             if (AnimIsFinished(&work->anim)) {
                 work->state = 3;
                 work->unk_14E = 0;
@@ -1225,7 +1225,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
             if (!(body->flags & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
             else work->unk_158 = (gBtlWork->unk_0DC + 64) * 256;
             work->unk_154 = -0x500;
@@ -1238,7 +1238,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         work->unk_150--;
         break;
     case 8:
-        if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
+        if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             work->state = 9;
             GetRandom();
@@ -1269,8 +1269,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             work->unk_14E++;
         }
         func_080474A8(work);
-        if (work->unk_154 > 0) func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
-        else func_08019068(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
+        if (work->unk_154 > 0) AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
+        else AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
         if (work->unk_150 > 0) {
             ApproachValueHalfSteps(&body->x, work->unk_158, work->unk_150);
             ApproachValueHalfSteps(&body->y, work->unk_15C, work->unk_150);
@@ -1284,7 +1284,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         }
         break;
     case 10:
-        if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 2, 0, work->tiles);
+        if (work->unk_14E == 0) AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 2, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             u16 spell;
             func_0801D288();
@@ -1311,7 +1311,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         {
             s32 x, y, z;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
                     if (target->x < body->x) body->flags |= 4;
@@ -1362,7 +1362,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         {
             s32 x, y, z;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
                     if (target->x < body->x) body->flags |= 4;
@@ -1410,7 +1410,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         {
             s32 x, y, z;
             if (work->unk_14E == 0) {
-                func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
                     if (target->x < body->x) body->flags |= 4;
@@ -1459,7 +1459,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         }
     case 6:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
             AnimReset(&work->anim);
             if (target != 0) {
                 if (target->x < body->x) body->flags |= 4;
@@ -1613,7 +1613,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     body->z = -0x2000;
     work->palette = LoadObjPalette(gUnk_09617DD8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 15);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 
@@ -1703,7 +1703,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
             work->unk_150 = 30;
         }
         ApproachValueHalfSteps(&body->x, work->unk_15C, work->unk_150);
@@ -1718,7 +1718,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
         }
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
@@ -1730,7 +1730,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         break;
     case 2:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
             if (!(body->flags & 4)) {
                 work->unk_15C = (gBtlWork->unk_0DA - 64) * 256;
             } else {
@@ -1749,7 +1749,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 1, 0, work->tiles);
         }
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
@@ -1762,7 +1762,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         break;
     case 4:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 2, 1, work->tiles);
             work->unk_150 = 70;
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
@@ -1814,7 +1814,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         break;
     case 5:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ECFC, &work->anim, 3, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 3, 0, work->tiles);
         }
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
@@ -1944,7 +1944,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_09617D98, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 
@@ -1976,7 +1976,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
             work->unk_14E++;
         }
         body->x += (work->unk_158 - body->x) >> 4;
@@ -1989,7 +1989,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED4C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ED4C, &work->anim, 1, 0, work->tiles);
         }
         if (AnimIsFinished(&work->anim)) {
             work->state = 3;
@@ -2000,7 +2000,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         break;
     case 2:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
             if (!(body->flags & 4)) {
                 work->unk_158 = (gBtlWork->unk_0DA - 64) << 8;
             } else {
@@ -2019,7 +2019,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED4C, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813ED4C, &work->anim, 2, 1, work->tiles);
         }
         func_0801D288();
         if (work->actor->flags & 4) {
@@ -2210,7 +2210,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
 
     work->palette = LoadObjPalette(gUnk_09617E18, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ED90, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813ED90, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
@@ -2267,7 +2267,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED90, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813ED90, &work->anim, 1, 1, work->tiles);
 
             if (work->unk_14D != 2) {
                 m4aSongNumStart(0xBD);

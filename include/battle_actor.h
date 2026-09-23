@@ -7,7 +7,7 @@ struct EmyKind;
 struct AnimDef;
 
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
-void func_08019068(const struct AnimDef* tbl, void* a, u16 i, u16 j, void* obj);
+void AnimChangeWithDef(const struct AnimDef* tbl, void* a, u16 i, u16 j, void* obj);
 void WorldToScreen(s16* x, s16* y, s32 px, s32 py, s32 pz);
 void func_08019190(BtlObj* p, s16 b);
 void func_08019A30(void);

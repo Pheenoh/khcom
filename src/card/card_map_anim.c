@@ -292,7 +292,7 @@ u16 CountCardsById(u16 cardId) {
     return count;
 }
 
-s16 func_08084068(u16 cardId) {
+s16 AddCardToCollection(u16 cardId) {
     u16 i;
 
     i = 0;
@@ -318,7 +318,7 @@ s16 func_08084068(u16 cardId) {
     return i;
 }
 
-s32 func_080840E4(void) {
+s32 IsCardCollectionFull(void) {
     s32 count;
     s32 i;
 
@@ -1025,7 +1025,7 @@ void func_08084AC8(u16 a) {
     }
 }
 
-u16 func_08084BAC(void) {
+u16 CountCollectionCards(void) {
     u16 count;
     u16 i;
 
@@ -1040,7 +1040,7 @@ u16 func_08084BAC(void) {
     return count;
 }
 
-u16 func_08084BF0(void) {
+u16 CountCardsInDecks(void) {
     u16 count;
     u16 i;
 

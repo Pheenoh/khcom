@@ -151,7 +151,7 @@ void func_08112768(StaffRollWork* w) {
             continue;
         case 2:
             e = (EvtObj*)func_08112748(w);
-            func_0801CD74(e, w->unk_0CC[w->unk_0D0 + 4]);
+            EvtObjSetAnim(e, w->unk_0CC[w->unk_0D0 + 4]);
             break;
         case 3:
             e = (EvtObj*)func_08112748(w);

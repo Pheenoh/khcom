@@ -1023,7 +1023,7 @@ u8 func_0806E570(EventCharaWork* p) {
             EvtObjSetPos(p->unk_028, p->keyframes[p->unk_1A0].unk_08, p->keyframes[p->unk_1A0].unk_0C, p->keyframes[p->unk_1A0].unk_10);
         }
 
-        func_0801CD74(p->unk_028, p->unk_17C);
+        EvtObjSetAnim(p->unk_028, p->unk_17C);
         func_0806F94C(p);
         return 1;
     }
@@ -1102,7 +1102,7 @@ void func_0806E7A8(EventCharaWork* p) {
 void func_0806E9BC(EventCharaWork* p) {
     const EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
 
-    func_0801CD74(p->unk_028, e->unk_14);
+    EvtObjSetAnim(p->unk_028, e->unk_14);
 }
 
 u8 _0806E9DC(EventCharaWork* p, void* a) {
@@ -1747,7 +1747,7 @@ u8 func_0806FAB8(EventCharaWork* p, void* a) {
     u16 buf[2];
 
     memcpy(buf, gUnk_09033C8C, 4);
-    func_0801CD74(p->unk_028, buf[p->unk_1A9]);
+    EvtObjSetAnim(p->unk_028, buf[p->unk_1A9]);
     p->unk_1AA++;
     if (p->unk_1AA == 12) {
         p->unk_1AA = 0;
@@ -1987,7 +1987,7 @@ void func_08070058(EventCharaWork* p, s32 a) {
     }
 
     if (a != p->unk_17C) {
-        func_0801CD74(p->unk_028, a);
+        EvtObjSetAnim(p->unk_028, a);
         p->unk_17C = a;
     }
     func_0801CE00(p->unk_028, f);

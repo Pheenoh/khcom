@@ -1277,7 +1277,7 @@ s32 func_080ECAC8(MapDoorWork* p);
 s32 func_080ECBC8(MapDoorWork* p);
 s32 func_080ECC54(MapDoorWork* p);
 void func_080E9078(s32 x, s32 y, s32 z);
-u8 func_080840E4(void);
+u8 IsCardCollectionFull(void);
 MapCell* func_080E08BC(s16 x, s16 y);
 void func_080E2D80(void);
 void func_080E0960(MapCell* p, s32 n);

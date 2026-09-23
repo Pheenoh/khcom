@@ -3127,7 +3127,7 @@ void func_080B3354(void) {
 }
 
 void func_080B38A4(void) {
-    func_08084068(gUnk_0203AB20[gSioChgCardWork->unk_076]);
+    AddCardToCollection(gUnk_0203AB20[gSioChgCardWork->unk_076]);
     gUnk_0203AB20[gSioChgCardWork->unk_076] = 0x800;
     gUnk_0203AB10 = gSioChgCardWork->unk_076;
     gSioChgCardWork->unk_202 = 0x800;
@@ -3278,7 +3278,7 @@ s16 func_080B3D28(void) {
         for (i = 5; i < 10; i++) {
             t = gUnk_0203AB20[i] != 0x800;
             if (t) {
-                if (func_08084068(gUnk_0203AB20[i]) == -1) {
+                if (AddCardToCollection(gUnk_0203AB20[i]) == -1) {
                     return 0;
                 }
             }
@@ -3287,7 +3287,7 @@ s16 func_080B3D28(void) {
         for (i = 0; i < 5; i++) {
             t = gUnk_0203AB20[i] != 0x800;
             if (t) {
-                if (func_08084068(gUnk_0203AB20[i]) == -1) {
+                if (AddCardToCollection(gUnk_0203AB20[i]) == -1) {
                     return 0;
                 }
             }
@@ -3302,13 +3302,13 @@ void func_080B3DA0(void) {
     if (gSioPlayerId == 0) {
         for (i = 0; i < 5; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
-                func_08084068(gUnk_0203AB20[i]);
+                AddCardToCollection(gUnk_0203AB20[i]);
             }
         }
     } else {
         for (i = 5; i < 10; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
-                func_08084068(gUnk_0203AB20[i]);
+                AddCardToCollection(gUnk_0203AB20[i]);
             }
         }
     }

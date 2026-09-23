@@ -230,7 +230,7 @@ void func_0800F230(void);
 u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
 void func_0801CA88(void);
 
-const EnemyBaseStats* func_0800FB14(u16 i);
+const EnemyBaseStats* GetEnemyBaseStats(u16 i);
 s32 func_08011398(BtlObj* a, s32 b);
 
 u8 func_08081870(void);

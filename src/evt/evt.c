@@ -10,7 +10,7 @@ const char gTaskNameEvtShadow[] = "task_evt_shadow";
 
 EventState* gEventState EWRAM_COMMON(4);
 
-void func_0801CD74(EvtObj* obj, s32 anim) {
+void EvtObjSetAnim(EvtObj* obj, s32 anim) {
     u16 t = obj->flags | 1;
 
     obj->flags = t;
@@ -32,7 +32,7 @@ void CreateEvtObjTask(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, 
 
     param.res = &gUnk_0813B09C[res].res;
     param.obj = obj;
-    func_0801CD74(obj, anim);
+    EvtObjSetAnim(obj, anim);
     EvtObjSetPos(obj, a, b, c);
     obj->flags = 0;
     obj->unk_10 = 0;
@@ -52,7 +52,7 @@ s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a,
 
     param.res = &gUnk_0813B09C[res].res;
     param.obj = obj;
-    func_0801CD74(obj, anim);
+    EvtObjSetAnim(obj, anim);
     EvtObjSetPos(obj, a, b, c);
     obj->flags = 0;
     obj->unk_10 = 0;

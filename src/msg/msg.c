@@ -1511,7 +1511,7 @@ void func_0806422C(void) {
 }
 #endif
 #ifndef VERSION_EU
-void func_080642A8(u8 bg) {
+void InitBgTextLines(u8 bg) {
     u8 i;
     u8 j;
 
@@ -1871,7 +1871,7 @@ void func_08064624(void) {
 }
 #endif
 #ifndef VERSION_EU
-void func_08064B68(void) {
+void FreeBgTextLines(void) {
     EwramFree(gBgTextLines);
     gBgTextLines = NULL;
 }

@@ -42,7 +42,7 @@ s16 func_08107220(s16 a);
 u8 func_08107268(void);
 s16 func_081075C0(s16 a, s16 b);
 s16 func_081075D8(void);
-u16 func_08107D24(void);
+u16 MapInspectReadMenuKeys(void);
 void func_08108170(MapCardInventoryEntry* p, u16 row);
 void func_08107938(void);
 u8 func_081079A8(MapCardInventoryEntry* p);

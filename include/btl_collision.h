@@ -18,7 +18,7 @@ struct FldObj;
 
 u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c);
 s32 func_08011F68(s32 a, BtlObj* b);
-void func_080121D4(struct FldObj* p);
-void func_080121FC(struct FldObj* p);
+void FldObjRegister(struct FldObj* p);
+void FldObjUnregister(struct FldObj* p);
 
 #endif

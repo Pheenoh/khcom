@@ -1734,7 +1734,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     w->unk_A4 = 12;
     a->unk_32 = 0;
     a->unk_30 = 0;
-    func_080D2D24(&a->pos);
+    GetPooStatePos2(&a->pos);
     a->angle = 0xAD;
     a->pos.unk_0C = 0;
     a->unk_10 = 0;
@@ -2336,7 +2336,7 @@ void task_poo_sora_2(PooSoraWork* w) {
 }
 
 void task_poo_sora_3(PooSoraWork* w) {
-    func_080D2D0C(&gPooActor.pos);
+    SetPooStatePos2(&gPooActor.pos);
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_38);
@@ -6895,11 +6895,11 @@ void func_080D2CF4(u16* a, u16* b) {
     *b = gPooState.unk_42;
 }
 
-void func_080D2D0C(PooPos* p) {
+void SetPooStatePos2(PooPos* p) {
     gPooState.pos2 = *p;
 }
 
-void func_080D2D24(PooPos* p) {
+void GetPooStatePos2(PooPos* p) {
     *p = gPooState.pos2;
 }
 
@@ -6929,11 +6929,11 @@ u8 func_080D2D94(s32 a) {
     return 0;
 }
 
-void func_080D2DB0(void* p) {
+void GetPooState(void* p) {
     memcpy(p, &gPooState, sizeof(gPooState));
 }
 
-void func_080D2DC4(const void* p) {
+void SetPooState(const void* p) {
     memcpy(&gPooState, p, sizeof(gPooState));
 }
 

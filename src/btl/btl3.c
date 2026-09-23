@@ -597,7 +597,7 @@ void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     work->palette3 = work->palette;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
+    AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
 }
 
 u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
@@ -616,24 +616,24 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
 
         switch (state) {
         case 2:
-            func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         case 5:
-            func_08019068(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
             work->palette3 = work->palette2;
             break;
         case 3:
-            func_08019068(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         case 4:
-            func_08019068(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
             work->palette3 = work->palette2;
             break;
         case 1:
         default:
-            func_08019068(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         }

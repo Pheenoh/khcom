@@ -1467,7 +1467,7 @@ void func_080D2CC4(u16 a, u16 b);
 void func_080D2CD0(u16* a, u16* b);
 void func_080D2CE0(s16 a, s16 b);
 void func_080D2CF4(u16* a, u16* b);
-void func_080D2D24(PooPos* p);
+void GetPooStatePos2(PooPos* p);
 void func_080D2D3C(s32 a);
 void func_080D2D80(s32 a);
 u16 func_080D2E28(void* a, u16 b);

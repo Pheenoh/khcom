@@ -43,8 +43,8 @@
 
 extern u8 gUnk_09A3DE7C[];
 
-s16 func_08084BAC(void);
-s16 func_08084BF0(void);
+s16 CountCollectionCards(void);
+s16 CountCardsInDecks(void);
 void ClearCardCollectionSlot(u16* p);
 
 s16 func_08104A84(s16 a);
@@ -60,7 +60,7 @@ u8 func_08105440(MsCard* card);
 void func_08105464(MsCard* card);
 void func_081054D0(MsCard* card);
 s32 func_081055E8(u16 id, u8 flag, s16 count);
-s32 func_0810592C(void);
+s32 MsChargeReadMenuKeys(void);
 s32 func_08105D24(MsCard* card, u16 col);
 
 extern u8 gUnk_092028EC[];

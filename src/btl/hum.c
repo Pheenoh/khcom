@@ -495,10 +495,10 @@ u8 task_hum_cloud_1(CloudWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813EDE8, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17: {
-        func_08019068(gUnk_0813EDE8, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 0, 3, w->base.tiles);
         if (gBtlWork->flags & 0x20000000) {
             if ((u8)func_08049F50((struct PcCharaWork*)w)) {
                 break;
@@ -516,7 +516,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         break;
     }
     case 0:
-        func_08019068(gUnk_0813EDE8, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 0, 3, w->base.tiles);
         if (func_08081828()) {
             break;
         }
@@ -540,7 +540,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         work->base.unk_150++;
         break;
     case 8: {
-        func_08019068(gUnk_0813EDE8, &w->base.anim, 1, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 1, 3, w->base.tiles);
         work->base.targetX = x;
         work->base.targetY = y;
         if (func_0800F3BC(&work->base, work->base.targetX, y, 0x133)) {
@@ -569,12 +569,12 @@ u8 task_hum_cloud_1(CloudWork* work) {
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813EDE8, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 19:
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 8, 0, w->base.tiles);
             m4aSongNumStart(267);
             func_08019A30();
         }
@@ -595,7 +595,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     case 20:
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 9, 0, w->base.tiles);
             m4aSongNumStart(268);
             func_08019A30();
         }
@@ -615,7 +615,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 3, 0, w->base.tiles);
         }
         if ((s16)work->base.unk_150 > 3) {
             work->base.unk_150 = 0;
@@ -633,14 +633,14 @@ u8 task_hum_cloud_1(CloudWork* work) {
         d = work->base.unk_158;
         if (d < 0) {
             if (d <= -0x200) {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
             }
         } else if (d <= 0x1FF) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
         } else {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 6, 0, w->base.tiles);
         }
         if (act->z >= 0) {
             work->base.unk_150 = 0;
@@ -653,7 +653,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     }
     case 27:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 7, 0, w->base.tiles);
         }
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_150 = 0;
@@ -671,9 +671,9 @@ u8 task_hum_cloud_1(CloudWork* work) {
         d = work->base.unk_158;
         if (d < 0) {
             if (d > -0x200) {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
             }
         }
         if ((s32)work->base.unk_158 > 0) {
@@ -688,7 +688,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         s32 d;
 
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 14, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 14, 0, w->base.tiles);
             w->unk_188 = 0;
             work->base.targetZ = act->z;
         }
@@ -728,7 +728,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
 
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 10, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 10, 0, w->base.tiles);
         }
         act->z += (gSineTable[gFrameCounter % 256] * 10 - (d = act->z + 0x2C00)) >> 3;
         if (act->x < x) {
@@ -750,7 +750,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     }
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 11, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 11, 0, w->base.tiles);
         }
         work->base.unk_158 = 0;
         if ((s16)work->base.unk_150 > 8) {
@@ -763,7 +763,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 12, 0, w->base.tiles);
         }
         if (act->z >= 0) {
             work->base.unk_170 = 24;
@@ -774,7 +774,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 13, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 13, 0, w->base.tiles);
         }
         if ((act->flags & 4)
             ? func_08011F78(0x11A, act->x - 0x2000, act->y, act->z, 22, 16, 30)
@@ -804,9 +804,9 @@ u8 task_hum_cloud_1(CloudWork* work) {
         s32 d;
         if ((s16)work->base.unk_150 == 0) {
             w->unk_18E = 0;
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 18, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 18, 0, w->base.tiles);
         } else if ((s16)w->unk_18E == 0 && AnimIsFinished(&work->base.anim)) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 19, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 19, 0, w->base.tiles);
             w->unk_18E++;
         } else if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -896,9 +896,9 @@ u8 task_hum_cloud_1(CloudWork* work) {
         d = work->base.unk_158;
         if (d < 0) {
             if (d > -0x200) {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 5, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 4, 0, w->base.tiles);
             }
         }
         if ((s32)work->base.unk_158 > 0) {
@@ -912,7 +912,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     }
     case 29: {
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EDE8, &w->base.anim, 14, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 14, 0, w->base.tiles);
             w->unk_188 = 0;
             if (act->flags & 4) {
                 work->base.targetX = (gBtlWork->unk_0DA + 50) << 8;
@@ -954,16 +954,16 @@ u8 task_hum_cloud_1(CloudWork* work) {
             switch ((s16)w->state) {
             case 0:
                 m4aSongNumStart(0x10B);
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 15, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 15, 0, w->base.tiles);
                 break;
             case 1:
                 m4aSongNumStart(0x10C);
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 16, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 16, 0, w->base.tiles);
                 break;
             case 2:
             default:
                 m4aSongNumStart(0x10D);
-                func_08019068(gUnk_0813EDE8, &w->base.anim, 17, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EDE8, &w->base.anim, 17, 0, w->base.tiles);
                 break;
             }
             if (act->x < (s32)work->base.targetX) {
@@ -1161,12 +1161,12 @@ u8 task_hum_hook_1(HookWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17: {
         s32 d;
 
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 0, 3, w->base.tiles);
 
         if (gBtlWork->flags & 0x20000000) {
             if (func_0804B4F4((CloudWork*)w)) {
@@ -1187,7 +1187,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     }
     case 0:
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 0, 3, w->base.tiles);
 
         if (func_08081828()) {
             break;
@@ -1215,7 +1215,7 @@ u8 task_hum_hook_1(HookWork* work) {
         work->base.unk_150++;
         break;
     case 8:
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 1, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 1, 3, w->base.tiles);
         work->base.targetX = x;
         work->base.targetY = y;
 
@@ -1235,14 +1235,14 @@ u8 task_hum_hook_1(HookWork* work) {
         work->base.unk_150++;
         break;
     case 3:
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 2, 0, w->base.tiles);
         gBtlWork->unk_018 = 0;
         break;
     case 1:
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813EF6C, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 2:
         if (func_08081828() == 0) {
@@ -1265,7 +1265,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 11, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 11, 1, w->base.tiles);
         }
         func_0802F284(act->x, act->y, act->z);
         func_0800F368(work, 1);
@@ -1306,7 +1306,7 @@ u8 task_hum_hook_1(HookWork* work) {
         func_0802F284(act->x, act->y, act->z);
 
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 9, 0, w->base.tiles);
         }
         func_0800F368(work, 1);
 
@@ -1340,7 +1340,7 @@ u8 task_hum_hook_1(HookWork* work) {
         func_0802F284(act->x, act->y, act->z);
 
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
             w->unk_1B0 = 0;
             w->unk_1B4 = 0;
             w->unk_1B8 = 0;
@@ -1370,11 +1370,11 @@ u8 task_hum_hook_1(HookWork* work) {
             }
         } else if (w->flags & 2) {
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 14, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 14, 1, w->base.tiles);
             }
         } else {
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 13, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 13, 0, w->base.tiles);
                 w->flags |= 2;
             }
         }
@@ -1392,7 +1392,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
             w->unk_1B0 = 0;
             w->flags &= 0xFFFC;
             m4aSongNumStart(198);
@@ -1418,11 +1418,11 @@ u8 task_hum_hook_1(HookWork* work) {
             }
         } else if (w->flags & 2) {
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 14, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 14, 1, w->base.tiles);
             }
         } else {
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 13, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 13, 0, w->base.tiles);
                 w->flags |= 2;
             }
         }
@@ -1439,7 +1439,7 @@ u8 task_hum_hook_1(HookWork* work) {
     case 29:
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 12, 0, w->base.tiles);
             w->unk_1B0 = 0;
             w->flags &= 0xFFFE;
             m4aSongNumStart(198);
@@ -1484,7 +1484,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 20:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 9, 0, w->base.tiles);
             m4aSongNumStart(198);
         }
         f = AnimGetFrame(&work->base.anim);
@@ -1515,7 +1515,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 19:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 8, 0, w->base.tiles);
             m4aSongNumStart(199);
         }
         f = AnimGetFrame(&work->base.anim);
@@ -1551,7 +1551,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 10, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 10, 0, w->base.tiles);
         }
         func_0800F368(work, 1);
         f = AnimGetFrame(&work->base.anim);
@@ -1591,7 +1591,7 @@ u8 task_hum_hook_1(HookWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 3, 0, w->base.tiles);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -1611,14 +1611,14 @@ u8 task_hum_hook_1(HookWork* work) {
 
         if (d < 0) {
             if (d > -0x200) {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 5, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813EF6C, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 4, 0, w->base.tiles);
             }
         } else if (d <= 0x1FF) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 5, 0, w->base.tiles);
         } else {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 6, 0, w->base.tiles);
         }
 
         if (act->z >= 0) {
@@ -1632,7 +1632,7 @@ u8 task_hum_hook_1(HookWork* work) {
     }
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813EF6C, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813EF6C, &w->base.anim, 7, 0, w->base.tiles);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -2010,17 +2010,17 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-        func_08019068(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+        AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-        func_08019068(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+        AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
         w->unk_1C4 = -0x5000;
         break;
     case 0:
-        func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-        func_08019068(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+        AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
         w->unk_1C4 = -0xC00;
 
         if (func_08081828()) {
@@ -2047,8 +2047,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 8:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
             work->base.targetY = y;
 
@@ -2083,8 +2083,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     case 11:
     case 14:
         w->unk_1C4 = 0;
-        func_08019068(gUnk_0813F0D0, &w->base.anim, 1, 0, w->base.tiles);
-        func_08019068(gUnk_0813F140, &w->base.sub->anim, 1, 0, w->base.sub->tiles);
+        AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 1, 0, w->base.sub->tiles);
         break;
     case 2:
         if (gBtlWork->unk_10C != 177) {
@@ -2103,8 +2103,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 20:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
             w->unk_1C4 = -0x800;
             m4aSongNumStart(270);
         }
@@ -2151,8 +2151,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 2, 0, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 3, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 2, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 3, 0, w->base.sub->tiles);
             w->unk_1D0 = 0;
             FadeStartOut(9, 90);
             m4aSongNumStart(0x271);
@@ -2184,8 +2184,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 5, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 5, 0, w->base.sub->tiles);
         }
         w->unk_1D0 += 25;
         w->sub.z -= w->unk_1D0;
@@ -2200,8 +2200,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     case 23:
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
             w->unk_1D0 = 0x800;
             w->sub.x = x + (d = ((u16)(GetRandom() % 65) << 8) - 0x2000);
             w->sub.y = y;
@@ -2270,7 +2270,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
             w->unk_1D6 = 30;
         }
 
@@ -2295,7 +2295,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     case 29:
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 7, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 7, 0, w->base.sub->tiles);
             w->sub.flags |= 1;
             act->unk_014 = act->x;
             act->flags |= 0x200;
@@ -2334,8 +2334,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 4, 0, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 7, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 7, 0, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
             m4aSongNumStart(0x10F);
         }
@@ -2359,8 +2359,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             work->base.targetY = y;
             AnimReset(&work->base.anim);
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 5, 1, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 5, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
             w->unk_1D6 = 40;
             func_080169A0(w->sub.x, w->sub.y,
@@ -2414,8 +2414,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 6, 0, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 9, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 9, 0, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
         }
 
@@ -2428,8 +2428,8 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F0D0, &w->base.anim, 3, 0, w->base.tiles);
-            func_08019068(gUnk_0813F140, &w->base.sub->anim, 6, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 6, 0, w->base.sub->tiles);
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_1C4 = -0xC00;
         }
@@ -2624,7 +2624,7 @@ u8 task_hum_hades_1(HadesWork* work) {
     case 12:
     case 17:
     case 18:
-        func_08019068(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
         break;
     case 0:
     case 8:
@@ -2642,15 +2642,15 @@ u8 task_hum_hades_1(HadesWork* work) {
         if (AnimIsFinished(&work->base.anim)) {
             if (act->flags & 4) {
                 if ((s32)work->base.targetX < act->x) {
-                    func_08019068(gUnk_0813F22C, &w->base.anim, 0, 1, w->base.tiles);
+                    AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 0, 1, w->base.tiles);
                 } else {
-                    func_08019068(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
+                    AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
                 }
             } else {
                 if ((s32)work->base.targetX < act->x) {
-                    func_08019068(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
+                    AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 1, 1, w->base.tiles);
                 } else {
-                    func_08019068(gUnk_0813F22C, &w->base.anim, 0, 1, w->base.tiles);
+                    AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 0, 1, w->base.tiles);
                 }
             }
         }
@@ -2662,13 +2662,13 @@ u8 task_hum_hades_1(HadesWork* work) {
     case 11:
     case 14:
         w->unk_1C4 = 0;
-        func_08019068(gUnk_0813F22C, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 19:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 6, 0, w->base.tiles);
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
             w->sub.flags &= 0xFFFD;
         }
         w->sub.x = act->x;
@@ -2698,9 +2698,9 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 4, 0, w->base.tiles);
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 2, 0, w->base.sub->tiles);
             w->sub.flags &= 0xFFFD;
             m4aSongNumStart(252);
             m4aSongNumStart(0x2B5);
@@ -2718,7 +2718,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 3, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 3, 1, w->base.sub->tiles);
 
             if (act->flags & 4) {
                 w->sub.x -= 0xA00;
@@ -2759,7 +2759,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 7, 0, w->base.tiles);
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 8) {
                 act->btl->unk_0F8--;
@@ -2776,7 +2776,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 8, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 8, 1, w->base.tiles);
             w->unk_27C = 10;
             work->base.unk_152 = 8;
             w->unk_1CA = (w->unk_1CA & 0xFFFB) | 2;
@@ -2952,7 +2952,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 9, 0, w->base.tiles);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -2965,9 +2965,9 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 5, 0, w->base.tiles);
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 1, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 1, 0, w->base.sub->tiles);
             w->sub.flags &= 0xFFFD;
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 8) {
@@ -3013,9 +3013,9 @@ u8 task_hum_hades_1(HadesWork* work) {
         break;
     case 20:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F22C, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 3, 0, w->base.tiles);
             AnimReset(&w->sub.anim);
-            func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F2CC, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
             w->sub.flags &= 0xFFFD;
             w->sub.x = act->x;
             w->sub.y = act->y;
@@ -3274,7 +3274,7 @@ void task_hum_mahluxia_0(MahluxiaWork* work) {
     work->unk_1C4 = -0x300;
     work->sub.flags |= 3;
     work->unk_1D8 = 0;
-    func_08019068(gUnk_0813F368, &work->base.anim, 0, 1, work->base.tiles);
+    AnimChangeWithDef(gUnk_0813F368, &work->base.anim, 0, 1, work->base.tiles);
     func_0804FA70(work, &work->spawns[0]);
     work->spawns[1] = work->spawns[0];
     work->spawns[2] = work->spawns[0];
@@ -3359,10 +3359,10 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
 
         if (gBtlWork->flags & 0x20000000) {
             if (func_0804F9C8(w)) {
@@ -3379,7 +3379,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         }
         break;
     case 0:
-        func_08019068(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 0, 1, w->base.tiles);
         w->unk_1C4 = -0x300;
 
         if (func_08081828()) {
@@ -3409,7 +3409,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         work->base.unk_150++;
         break;
     case 8:
-        func_08019068(gUnk_0813F368, &w->base.anim, 1, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 1, 1, w->base.tiles);
         work->base.targetX = x;
         work->base.targetY = y;
 
@@ -3434,10 +3434,10 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813F368, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 20:
-        func_08019068(gUnk_0813F368, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 1, 0, w->base.tiles);
         act->x += ((s32)work->base.targetX - act->x) >> 4;
         act->y += ((s32)work->base.targetY - act->y) >> 4;
 
@@ -3465,7 +3465,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             } else {
                 w->flags |= 1;
             }
-            func_08019068(gUnk_0813F368, &w->base.anim, 1, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 1, 1, w->base.tiles);
         }
 
         if ((s16)w->unk_1CA != 0) {
@@ -3492,7 +3492,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 4, 0, w->base.tiles);
         }
         w->flags |= 2;
 
@@ -3505,7 +3505,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 5, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 5, 1, w->base.tiles);
         }
         act->y += (y - act->y) >> 2;
         n = (u16)work->base.unk_150;
@@ -3519,7 +3519,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 6, 0, w->base.tiles);
         }
         w->flags |= 2;
 
@@ -3532,7 +3532,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 7, 0, w->base.tiles);
             m4aSongNumStart(0x116);
         }
         w->flags |= 2;
@@ -3567,7 +3567,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 10, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 10, 0, w->base.tiles);
             m4aSongNumStart(0x119);
         }
         w->flags |= 2;
@@ -3587,7 +3587,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 29:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 11, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 11, 0, w->base.tiles);
             FadeStartIn(2, 20);
             m4aSongNumStart(0x2C2);
             FadeLock();
@@ -3613,7 +3613,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 30:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 12, 0, w->base.tiles);
         }
         w->flags |= 2;
 
@@ -3627,7 +3627,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 8, 0, w->base.tiles);
             w->flags &= ~4;
             m4aSongNumStart(0x117);
         }
@@ -3656,7 +3656,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 27:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 9, 0, w->base.tiles);
             m4aSongNumStart(0x119);
         }
         w->flags |= 2;
@@ -3692,7 +3692,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F368, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F368, &w->base.anim, 3, 0, w->base.tiles);
             w->flags &= ~4;
 
             if (act->flags & 4) {
@@ -3717,7 +3717,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         case 4:
             if (work->base.anim.timer == 0) {
                 AnimReset(&w->sub.anim);
-                func_08019068(&gUnk_0813F438, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
+                AnimChangeWithDef(&gUnk_0813F438, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
                 w->flags |= 4;
                 w->sub.flags &= ~2;
                 m4aSongNumStart(0x224);
@@ -3932,13 +3932,13 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 0:
-        func_08019068(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 0, 1, w->base.tiles);
         func_0800F368(work, 5);
 
         if (func_08081828() == 0) {
@@ -3952,7 +3952,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 8:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 1, 0, w->base.tiles);
             work->base.targetX = (gBtlWork->unk_0DA + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1)) << 8;
             work->base.targetY = (gBtlWork->unk_0DE + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) << 8;
             work->base.targetZ = -((GetRandom() % 71) << 8);
@@ -3964,7 +3964,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             }
             w->unk_188 = 0;
         } else if (AnimIsFinished(&work->base.anim)) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 2, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 2, 1, w->base.tiles);
         }
         ApproachValue(&act->x, work->base.targetX, (u16)work->base.unk_152);
         ApproachValue(&act->y, work->base.targetY, (u16)work->base.unk_152);
@@ -3992,11 +3992,11 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     case 11:
     case 14:
         w->unk_188 = 0;
-        func_08019068(gUnk_0813F498, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 3, 0, w->base.tiles);
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 6, 0, w->base.tiles);
             w->unk_188 = 0;
         }
 
@@ -4009,7 +4009,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 7, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 7, 1, w->base.tiles);
 
             if (act->flags & 4) {
                 func_08015834(0, act->x + 0x400, act->y, act->z - 0x5000, act->x,
@@ -4029,7 +4029,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 27:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 9, 0, w->base.tiles);
         }
         func_0800F368(work, 1);
 
@@ -4042,7 +4042,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 10, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 10, 1, w->base.tiles);
             m4aSongNumStart(0x2A2);
 
             if (act->flags & 4) {
@@ -4065,7 +4065,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 29:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 11, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 11, 0, w->base.tiles);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -4078,7 +4078,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 6, 0, w->base.tiles);
             w->unk_188 = 0;
             m4aSongNumStart(0x11B);
         }
@@ -4092,7 +4092,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 7, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 7, 1, w->base.tiles);
 
             if (act->flags & 4) {
                 func_08015834(1, act->x + 0x400, act->y, act->z - 0x5000, x, y, 0, 0x135);
@@ -4110,7 +4110,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F498, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 8, 0, w->base.tiles);
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -4124,7 +4124,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     case 30:
         if ((s16)work->base.unk_150 == 0) {
             m4aSongNumStart(0x11D);
-            func_08019068(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
@@ -4166,9 +4166,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             AnimReset(&work->base.anim);
 
             if ((s16)work->base.unk_152 == 0) {
-                func_08019068(gUnk_0813F498, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 5, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813F498, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 4, 0, w->base.tiles);
             }
             w->unk_188 = 0;
             w->flags &= ~1;
@@ -4258,9 +4258,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             AnimReset(&work->base.anim);
 
             if ((work->base.unk_152 & 1) == 0) {
-                func_08019068(gUnk_0813F498, &w->base.anim, 13, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 13, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813F498, &w->base.anim, 14, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 14, 0, w->base.tiles);
             }
             w->unk_188 = 0;
             w->flags &= ~1;
@@ -4381,9 +4381,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             AnimReset(&work->base.anim);
 
             if ((GetRandom() & 1) == 0) {
-                func_08019068(gUnk_0813F498, &w->base.anim, 13, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 13, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813F498, &w->base.anim, 14, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 14, 0, w->base.tiles);
             }
             w->unk_188 = 0;
             w->flags &= ~1;
@@ -4493,7 +4493,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             }
             act->z = 0;
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
@@ -4773,13 +4773,13 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 0:
-        func_08019068(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
         w->unk_200 = -0x300;
         if (func_08081828()) {
             break;
@@ -4827,11 +4827,11 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             w->unk_210 = work->base.unk_16C = 0x100;
         }
         w->unk_200 = 0;
-        func_08019068(gUnk_0813F5E0, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 1, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 1, 1, w->base.tiles);
             work->base.unk_152 = 10;
         }
         if (act->x < x) {
@@ -4851,7 +4851,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 5, 0, w->base.tiles);
             w->unk_200 = 0;
             work->base.targetX = x * 2 - act->x;
             work->base.targetY = y * 2 - act->y;
@@ -4867,8 +4867,8 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 6, 0, w->base.tiles);
-            func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 0, 1, w->base.sub->tiles);
             sub->palette2 = work->base.palette;
             sub->flags |= 4;
             sub->flags &= ~2;
@@ -4908,7 +4908,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 7, 0, w->base.tiles);
             sub->flags |= 2;
             sub->flags &= ~4;
         }
@@ -4923,11 +4923,11 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 8, 0, w->base.tiles);
             AnimReset(&sub->anim);
             AnimReset(&sub2->anim);
-            func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 6, 0, w->base.sub->tiles);
-            func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 2, 0, ((HumSub*)w->base.sub2)->tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 6, 0, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 2, 0, ((HumSub*)w->base.sub2)->tiles);
             sub->palette2 = sub->palette;
             sub->flags &= ~6;
             sub2->flags &= ~6;
@@ -4941,17 +4941,17 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             switch (AnimGetFrame(&work->base.anim)) {
             case 3:
                 m4aSongNumStart(650);
-                func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 7, 1, w->base.sub->tiles);
-                func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 3, 1, ((HumSub*)w->base.sub2)->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 7, 1, w->base.sub->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 3, 1, ((HumSub*)w->base.sub2)->tiles);
                 break;
             case 6:
                 m4aSongNumStart(290);
-                func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
-                func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 4, 1, ((HumSub*)w->base.sub2)->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 4, 1, ((HumSub*)w->base.sub2)->tiles);
                 break;
             case 7:
-                func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 9, 0, w->base.sub->tiles);
-                func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 5, 0, ((HumSub*)w->base.sub2)->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 9, 0, w->base.sub->tiles);
+                AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 5, 0, ((HumSub*)w->base.sub2)->tiles);
                 m4aSongNumStart(651);
                 break;
             }
@@ -5006,9 +5006,9 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     case 27: {
         s32 t;
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
-            func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
-            func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
             sub->flags |= 4;
             sub2->flags |= 4;
             if (act->flags & 4) {
@@ -5071,9 +5071,9 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         s32 dy;
         func_0800F368(work, 1);
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
-            func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
-            func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
             sub->flags |= 4;
             sub2->flags |= 4;
             if (act->flags & 4) {
@@ -5145,9 +5145,9 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     case 31:
         func_0800F368(work, 1);
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
-            func_08019068(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
-            func_08019068(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 9, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &w->base.sub->anim, 1, 1, w->base.sub->tiles);
+            AnimChangeWithDef(gUnk_0813F6C0, &((HumSub*)w->base.sub2)->anim, 1, 1, ((HumSub*)w->base.sub2)->tiles);
             sub->flags |= 4;
             sub2->flags |= 4;
             if (act->flags & 4) {
@@ -5198,7 +5198,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 10, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 10, 0, w->base.tiles);
         }
         if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);
@@ -5211,7 +5211,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     case 20:
         if ((s16)work->base.unk_150 == 0) {
             m4aSongNumStart(291);
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 3, 0, w->base.tiles);
             w->unk_200 = 0;
             w->flags &= ~1;
         }
@@ -5250,7 +5250,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 4, 0, w->base.tiles);
             w->unk_200 = 0;
             w->flags &= ~1;
         }
@@ -5286,7 +5286,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 32:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 11, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 11, 0, w->base.tiles);
             w->unk_200 = 0;
             m4aSongNumStart(289);
         }
@@ -5302,7 +5302,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         s32 a, b, c;
         if ((s16)work->base.unk_150 == 0) {
             FadeToAmount(0, gBtlWork->unk_0B3, 8);
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 12, 0, w->base.tiles);
             if (act->flags & 4) {
                 func_08017E18(act->x, 1, 303);
             } else {
@@ -5333,7 +5333,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     }
     case 34:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 13, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 13, 0, w->base.tiles);
             w->unk_200 = 0;
         }
         if (AnimIsFinished(&work->base.anim)) {
@@ -5349,7 +5349,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         break;
     case 19:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 0, 1, w->base.tiles);
             func_080526D4(w, 12, 512, 8);
         }
         if ((s16)work->base.unk_150 > 6) {
@@ -5623,15 +5623,15 @@ u8 task_hum_vixen_1(VixenWork* work) {
     switch (w->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
+        AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
+        AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
         work->unk_188 = -0x4000;
         func_0800F368(w, 20);
         break;
     case 0:
-        func_08019068(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
+        AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 0, 1, work->base.tiles);
         work->unk_188 = 0;
 
         if (func_08081828() == 0) {
@@ -5647,7 +5647,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 8:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 1, 1, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 1, 1, work->base.tiles);
             work->unk_188 = -0xF00;
 
             if (act->x <= 0xFFFF) {
@@ -5694,11 +5694,11 @@ u8 task_hum_vixen_1(VixenWork* work) {
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813F7D8, &work->base.anim, 2, 0, work->base.tiles);
+        AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 2, 0, work->base.tiles);
         break;
     case 21:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 3, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 3, 0, work->base.tiles);
             work->unk_188 = 0;
         }
 
@@ -5729,7 +5729,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
     case 37:
         if ((s16)w->base.unk_150 == 0) {
             AnimReset(&w->base.anim);
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 2, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 2, 0, work->base.tiles);
         }
 
         if (AnimIsFinished(&w->base.anim)) {
@@ -5748,7 +5748,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 22:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
             work->unk_188 = 0;
         }
 
@@ -5772,7 +5772,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 23:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 5, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 5, 0, work->base.tiles);
             work->unk_188 = 0;
             work->unk_1BC = 0;
         }
@@ -5786,7 +5786,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 24:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 6, 1, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 6, 1, work->base.tiles);
         }
 
         if ((s16)w->base.unk_150 > 60) {
@@ -5798,7 +5798,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 25:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 7, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 7, 0, work->base.tiles);
         }
 
         if (AnimIsFinished(&w->base.anim)) {
@@ -5810,7 +5810,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 26:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
 
             if (act->flags & 4) {
                 work->unk_198 = act->x - 0x2000;
@@ -5863,7 +5863,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 28:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 8, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 8, 0, work->base.tiles);
             work->unk_188 = 0;
             FadeToAmount(0, *((u8*)gBtlWork + 0xB3), 8);
         }
@@ -5896,7 +5896,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 29:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 9, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 9, 0, work->base.tiles);
             work->unk_188 = 0;
         }
 
@@ -5909,7 +5909,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 30:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 10, 1, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 10, 1, work->base.tiles);
         }
 
         if ((s16)w->base.unk_150 > 60) {
@@ -5921,7 +5921,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 31:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 11, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 11, 0, work->base.tiles);
         }
 
         if (AnimIsFinished(&w->base.anim)) {
@@ -5933,7 +5933,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 32:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
         }
 
         if (AnimGetFrame(&w->base.anim) == 3 && w->base.anim.timer == 0) {
@@ -5951,7 +5951,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 33:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 12, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 12, 0, work->base.tiles);
             work->unk_188 = 0;
         }
 
@@ -5964,7 +5964,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 34:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 13, 1, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 13, 1, work->base.tiles);
         }
 
         if ((s16)w->base.unk_150 > 60) {
@@ -5976,7 +5976,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 35:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 14, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 14, 0, work->base.tiles);
             m4aSongNumStart(0x113);
         }
 
@@ -5989,7 +5989,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 36:
         if ((s16)w->base.unk_150 == 0) {
-            func_08019068(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813F7D8, &work->base.anim, 4, 0, work->base.tiles);
             work->task = 0;
         }
 
@@ -6244,7 +6244,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
         work->unk_32 = 0;
     }
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813F91C, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnk_0813F91C, &work->anim, 0, 0, work->tiles);
     work->unk_2C = 0;
 
     if (gBtlWork->actor->flags & 4) {
@@ -6271,13 +6271,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 2, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 2, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 7, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 7, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 10, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 10, 0, work->tiles);
                 break;
             }
         }
@@ -6296,13 +6296,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 4, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 4, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 8, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 8, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 11, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 11, 0, work->tiles);
                 break;
             }
         }
@@ -6321,13 +6321,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->timer == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 6, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 6, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 9, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 9, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 12, 0, work->tiles);
+                AnimChangeWithDef(gUnk_0813F91C, &work->anim, 12, 0, work->tiles);
                 break;
             }
         }
@@ -6366,7 +6366,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         break;
     case 4:
         if (work->timer == 0) {
-            func_08019068(gUnk_0813F91C, &work->anim, 1, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813F91C, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -6378,7 +6378,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         break;
     case 5:
         if (work->timer == 0) {
-            func_08019068(gUnk_0813F91C, &work->anim, 5, 0, work->tiles);
+            AnimChangeWithDef(gUnk_0813F91C, &work->anim, 5, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -6590,14 +6590,14 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
 
     switch (work->base.unk_170) {
     case 12:
-        func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17:
     case 18:
-        func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 0:
-        func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
 
         if (func_08081828()) {
             break;
@@ -6614,7 +6614,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         work->base.unk_150++;
         break;
     case 8:
-        func_08019068(gUnk_0813FA98, &w->base.anim, 1, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 1, 1, w->base.tiles);
         w->unk_1C4 = -0x1000;
         work->base.targetX = x;
         work->base.targetY = y;
@@ -6643,12 +6643,12 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813FA98, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 25:
         if ((s16)work->base.unk_150 == 0) {
             m4aSongNumStart(0x11E);
-            func_08019068(gUnk_0813FA98, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 7, 0, w->base.tiles);
             gBtlWork->flags &= ~0x100000;
         }
 
@@ -6683,7 +6683,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         break;
     case 26:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FA98, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 8, 0, w->base.tiles);
             gBtlWork->flags |= 0x100000;
         }
 
@@ -6701,7 +6701,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     case 23:
         if ((s16)work->base.unk_150 == 0) {
             w->unk_1C4 = 0;
-            func_08019068(gUnk_0813FA98, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 5, 0, w->base.tiles);
             w->flags &= ~4;
             w->task = 0;
             m4aSongNumStart(0x11F);
@@ -6734,7 +6734,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FA98, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 6, 0, w->base.tiles);
         }
 
         if (AnimGetFrame(&work->base.anim) == 2) {
@@ -6764,7 +6764,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             w->unk_1C4 = 0;
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813FA98, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 3, 0, w->base.tiles);
             w->flags &= ~3;
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 49) {
@@ -6844,7 +6844,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             w->unk_1C4 = 0;
             AnimReset(&work->base.anim);
-            func_08019068(gUnk_0813FA98, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 4, 0, w->base.tiles);
             w->flags &= ~1;
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 49) {
@@ -6881,7 +6881,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             } else {
                 act->x = act->x + 0x1900;
             }
-            func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
             work->base.unk_150 = 0;
             func_0801AF08(act);
             work->base.unk_170 = 0;
@@ -6891,7 +6891,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         break;
     case 27:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FA98, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FA98, &w->base.anim, 9, 0, w->base.tiles);
             w->unk_1C4 = 0;
             w->unk_200 = gBtlWork->y;
         }
@@ -7684,10 +7684,10 @@ u8 task_hum_riku_1(RikuWork* work) {
     switch (work->base.unk_170) {
     case 12:
     case 18:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 17:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 0, 3, w->base.tiles);
         if ((gBtlWork->flags & 0x20000000) && func_08057D68(w)) {
             break;
         }
@@ -7700,7 +7700,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         }
         break;
     case 0:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
         if (func_08081828()) {
             break;
         }
@@ -7723,7 +7723,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         work->base.unk_150++;
         break;
     case 8:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 1, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 1, 1, w->base.tiles);
         work->base.targetX = x;
         work->base.targetY = y;
         if (func_0800F3BC(&work->base, work->base.targetX, work->base.targetY, 512) && AnimIsFinished(&work->base.anim)) {
@@ -7748,10 +7748,10 @@ u8 task_hum_riku_1(RikuWork* work) {
     case 9:
     case 11:
     case 14:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 2, 0, w->base.tiles);
         break;
     case 1:
-        func_08019068(gUnk_0813FBD4, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 2, 0, w->base.tiles);
         if ((s16)work->base.unk_150 == 3) {
             switch ((s32)(u16)((u16)GetRandom() % 3)) {
             case 0:
@@ -7769,7 +7769,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 30:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 14, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 14, 0, w->base.tiles);
             m4aSongNumStart(262);
             m4aSongNumStart(625);
             FadeStartOut(9, 80);
@@ -7786,7 +7786,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     case 31: {
 
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 15, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 15, 0, w->base.tiles);
         }
         switch (AnimGetFrame(&work->base.anim)) {
         case 1:
@@ -7812,7 +7812,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     }
     case 32:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 16, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 16, 0, w->base.tiles);
             work->base.flags |= 8;
         }
         work->base.unk_158 = 0;
@@ -7836,7 +7836,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             act->flags ^= 4;
             switch ((u16)((u16)GetRandom() % 3)) {
             case 0:
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 17, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 17, 1, w->base.tiles);
                 if (act->flags & 4) {
                     w->unk_1C4 = (u16)((u16)GetRandom() % 17) + 184;
                 } else {
@@ -7845,7 +7845,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 act->y = y + (((u16)((u16)GetRandom() % 33) - 16) << 8);
                 break;
             case 1:
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 18, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 18, 1, w->base.tiles);
                 if (act->flags & 4) {
                     w->unk_1C4 = (u16)((u16)GetRandom() % 17) + 203;
                 } else {
@@ -7854,7 +7854,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                 act->y = y + (((u16)((u16)GetRandom() % 17) + 16) << 8);
                 break;
             case 2:
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 19, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 19, 1, w->base.tiles);
                 if (act->flags & 4) {
                     w->unk_1C4 = (u16)((u16)GetRandom() % 17) + 165;
                 } else {
@@ -7912,7 +7912,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 35:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 20, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 20, 0, w->base.tiles);
             work->base.unk_152 = 40;
         }
         if ((s16)work->base.unk_152 > 0) {
@@ -7936,7 +7936,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 24:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 10, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 10, 0, w->base.tiles);
             m4aSongNumStart(261);
         }
         if (work->base.anim.timer == 0) {
@@ -7979,7 +7979,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 29:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 13, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 13, 0, w->base.tiles);
             m4aSongNumStart(262);
             w->flags &= ~2;
             func_0800F368(work, 1);
@@ -8040,7 +8040,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             }
         }
         if (AnimIsFinished(&work->base.anim)) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 0, 1, w->base.tiles);
         }
         if (AnimIsFinished(&work->base.anim) && !func_080128EC()) {
             func_0801AF08(act);
@@ -8052,7 +8052,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 23:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 9, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 9, 0, w->base.tiles);
             m4aSongNumStart((u16)GetRandom() % 2 + 259);
         }
         if (work->base.anim.timer == 0) {
@@ -8123,7 +8123,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 8, 0, w->base.tiles);
             m4aSongNumStart((u16)GetRandom() % 2 + 259);
         }
         if (AnimGetGfxIndex(&work->base.anim) == 6) {
@@ -8209,7 +8209,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             break;
         }
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 3, 0, w->base.tiles);
             m4aSongNumStart(261);
         }
         if (AnimIsFinished(&work->base.anim)) {
@@ -8225,9 +8225,9 @@ u8 task_hum_riku_1(RikuWork* work) {
         act->y += (y - act->y) >> 4;
         if ((s32)work->base.unk_158 < 0) {
             if ((s32)work->base.unk_158 > -0x200) {
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 4, 0, w->base.tiles);
             }
         } else {
             work->base.unk_150 = 0;
@@ -8238,7 +8238,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 27:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 11, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 11, 0, w->base.tiles);
             w->flags &= ~1;
         }
         act->x += (x - act->x) >> 4;
@@ -8258,7 +8258,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 12, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 12, 0, w->base.tiles);
             work->base.unk_158 = -0x400;
             if (act->flags & 4) {
                 work->base.targetX = act->x + 0x3000;
@@ -8277,7 +8277,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 19:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 3, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 3, 0, w->base.tiles);
         }
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_150 = 0;
@@ -8292,14 +8292,14 @@ u8 task_hum_riku_1(RikuWork* work) {
         act->y += ((s32)work->base.targetY - act->y) >> 4;
         if ((s32)work->base.unk_158 < 0) {
             if ((s32)work->base.unk_158 <= -0x200) {
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 4, 0, w->base.tiles);
             } else {
-                func_08019068(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
             }
         } else if ((s32)work->base.unk_158 <= 0x1FF) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 5, 0, w->base.tiles);
         } else {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 6, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 6, 0, w->base.tiles);
         }
         if (act->z >= 0) {
             work->base.unk_150 = 0;
@@ -8311,7 +8311,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
-            func_08019068(gUnk_0813FBD4, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FBD4, &w->base.anim, 7, 0, w->base.tiles);
         }
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_150 = 0;
@@ -8353,7 +8353,7 @@ void task_hum_leon_0(LeonWork* work) {
     HumInit(&work->base, &gUnk_0813FDA8);
     work->unk_188 = 0;
     work->unk_18A = 0;
-    func_08019068(gUnk_0813FD58, &work->base.anim, 0, 1, work->base.tiles);
+    AnimChangeWithDef(gUnk_0813FD58, &work->base.anim, 0, 1, work->base.tiles);
     work->unk_18C = gGameState.progression.unk_14;
     work->unk_194 = gGameState.progression.unk_1C;
     gGameState.progression.unk_14 = 0;
@@ -8387,22 +8387,22 @@ u8 task_hum_leon_1(LeonWork* work) {
 
     switch (work->base.unk_170) {
     case 12:
-        func_08019068(gUnk_0813FD58, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 0, 1, w->base.tiles);
         break;
     case 0:
         if (gBtlWork->flags & 0x20000000000) {
             if (w->unk_18A == 0) {
-                func_08019068(gUnk_0813FD58, &w->base.anim, 1, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 1, 0, w->base.tiles);
                 w->unk_18A = 1;
             } else if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813FD58, &w->base.anim, 3, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 3, 0, w->base.tiles);
             }
         } else {
             if (w->unk_18A != 0) {
-                func_08019068(gUnk_0813FD58, &w->base.anim, 2, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 2, 0, w->base.tiles);
                 w->unk_18A = 0;
             } else if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(gUnk_0813FD58, &w->base.anim, 0, 1, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 0, 1, w->base.tiles);
             }
         }
 
@@ -8416,7 +8416,7 @@ u8 task_hum_leon_1(LeonWork* work) {
     case 1:
         if ((s16)work->base.unk_150 == 0) {
             func_0801AF08(act);
-            func_08019068(gUnk_0813FD58, &w->base.anim, 4, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 4, 0, w->base.tiles);
             work->base.unk_150 = 8;
         }
         break;
@@ -8447,7 +8447,7 @@ u8 task_hum_leon_1(LeonWork* work) {
         }
         break;
     default:
-        func_08019068(gUnk_0813FD58, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813FD58, &w->base.anim, 3, 0, w->base.tiles);
         func_0800F368(work, 1);
         break;
     }
@@ -8481,7 +8481,7 @@ void task_hum_leon_3(LeonWork* work) {
 void task_hum_robe_0(RobeWork* work) {
     HumInit(&work->base, &gUnk_0813FDF4);
     work->unk_188 = 1;
-    func_08019068(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
+    AnimChangeWithDef(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
 }
 
 u8 task_hum_robe_1(RobeWork* work) {
@@ -8497,11 +8497,11 @@ u8 task_hum_robe_1(RobeWork* work) {
 
     if (gBtlWork->flags & 0x20000000) {
         if (work->unk_188 == 1) {
-            func_08019068(gUnk_0813FDD4, &work->base.anim, 1, 0, work->base.tiles);
+            AnimChangeWithDef(gUnk_0813FDD4, &work->base.anim, 1, 0, work->base.tiles);
             work->unk_188 = 0;
         }
     } else if (AnimIsFinished(&work->base.anim)) {
-        func_08019068(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
+        AnimChangeWithDef(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
         work->unk_188 = 1;
     }
     func_0800F368(work, 1);

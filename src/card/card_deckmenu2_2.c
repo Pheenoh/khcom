@@ -71,8 +71,8 @@ u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a);
 void func_080A6968(u8* work);
 void func_080A7264(void** p);
 void func_080A7210(u8* work);
-u16 func_08084BAC(void);
-u16 func_08084BF0(void);
+u16 CountCollectionCards(void);
+u16 CountCardsInDecks(void);
 Deck* GetDeck(u8 index);
 u16 GetDeckCpCost(u8 index);
 u8* GetDeckName(u8 index);
@@ -818,8 +818,8 @@ void func_080A6D0C(void) {
     u16 b;
     u32 base;
 
-    a = func_08084BF0();
-    b = func_08084BAC();
+    a = CountCardsInDecks();
+    b = CountCollectionCards();
     d[0] = a / 100;
     d[1] = a / 10 - d[0] * 10;
     d[2] = a - d[0] * 100 - d[1] * 10;

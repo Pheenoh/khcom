@@ -159,7 +159,7 @@ u8 CanLevelUp(void) {
     return 0;
 }
 
-const EnemyBaseStats* func_0800FB14(u16 i) {
+const EnemyBaseStats* GetEnemyBaseStats(u16 i) {
     if (i > 0x35) {
         return 0;
     }

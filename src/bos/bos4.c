@@ -3319,9 +3319,9 @@ void func_080DDEA4(void) {
 }
 
 void func_080DDEB0(s32 a) {
-    func_080D2DB0(a);
+    GetPooState(a);
 }
 
 void func_080DDEBC(s32 a) {
-    func_080D2DC4(a);
+    SetPooState(a);
 }

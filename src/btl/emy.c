@@ -593,11 +593,11 @@ u8 task_emy_00_1(EmyWork* work) {
 
     switch (w->unk_14C) {
     case 24:
-        func_08019068(gUnk_0813D35C, &work->anim, 5, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 5, 0, work->tiles);
         func_0800C980(w, 31, 18, 11, 165, 40, 0x211, 0, 0, 24);
         break;
     case 25:
-        func_08019068(gUnk_0813D35C, &work->anim, 6, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 6, 0, work->tiles);
 
         if (w->unk_154 == 10) {
             w->unk_168 = -0x400;
@@ -606,7 +606,7 @@ u8 task_emy_00_1(EmyWork* work) {
         func_0800C980(w, 14, 35, 10, 166, 96, 0x211, 0, 0, 24);
         break;
     case 19:
-        func_08019068(gUnk_0813D35C, &work->anim, 0, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 0, 0, work->tiles);
 
         if (AnimIsFinished(&w->anim)) {
             w->unk_14C = 20;
@@ -618,7 +618,7 @@ u8 task_emy_00_1(EmyWork* work) {
     case 20:
         if (gBtlWork->flags & 0x40000) {
             func_0801C700(act, &pos, 0, 0);
-            func_08019068(gUnk_0813D35C, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnk_0813D35C, &work->anim, 1, 1, work->tiles);
             act->x += gSineTable[w->angle] * w->unk_164 >> 8;
             act->y += -gSineTable[w->angle + 64] * w->unk_164 >> 8;
 
@@ -640,7 +640,7 @@ u8 task_emy_00_1(EmyWork* work) {
         }
         break;
     case 22:
-        func_08019068(gUnk_0813D35C, &work->anim, 3, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 3, 0, work->tiles);
 
         if (w->unk_154 == 20) {
             act->flags &= ~0x100;
@@ -659,7 +659,7 @@ u8 task_emy_00_1(EmyWork* work) {
         w->unk_154++;
         break;
     case 21:
-        func_08019068(gUnk_0813D35C, &work->anim, 2, 0, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 2, 0, work->tiles);
 
         if (w->unk_154 == 30) {
             act->flags &= ~0x100;
@@ -680,7 +680,7 @@ u8 task_emy_00_1(EmyWork* work) {
         if (w->unk_154 == 0) {
             ColliderSetDisabled(&act->collider, 0);
             act->flags &= ~0x300;
-            func_08019068(work->def->animDef, &work->anim, 0, 3,
+            AnimChangeWithDef(work->def->animDef, &work->anim, 0, 3,
                 work->tiles);
         }
 
@@ -725,7 +725,7 @@ u8 task_emy_00_1(EmyWork* work) {
     ret = _0800CDF0(w);
 
     if (w->unk_14C == 14) {
-        func_08019068(gUnk_0813D35C, &work->anim, 4, 1, work->tiles);
+        AnimChangeWithDef(gUnk_0813D35C, &work->anim, 4, 1, work->tiles);
     }
 
     return ret;
@@ -827,7 +827,7 @@ u8 task_emy_01_1(EmyWork* work) {
     switch (work->unk_14C) {
     case 0x12: {
         s32 z;
-        func_08019068(gUnk_0813D434, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D434, &w->anim, 0, 0, w->tiles);
         work->unk_168 = 0;
 
         if (work->unk_154 != 0) {
@@ -855,7 +855,7 @@ u8 task_emy_01_1(EmyWork* work) {
     }
     case 0x13: {
         s32 z;
-        func_08019068(gUnk_0813D434, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D434, &w->anim, 1, 0, w->tiles);
         work->unk_168 = 0;
 
         if (work->unk_154 != 0) {
@@ -925,7 +925,7 @@ u8 task_emy_02_1(EmyWork* work) {
     case 0x12: {
         s32 y;
 
-        func_08019068(gUnk_0813D4BC, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D4BC, &w->anim, 0, 0, w->tiles);
         work->unk_168 = 0;
 
         if (work->unk_154 == 0) {
@@ -953,7 +953,7 @@ u8 task_emy_02_1(EmyWork* work) {
     case 0x13: {
         s32 y;
 
-        func_08019068(gUnk_0813D4BC, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D4BC, &w->anim, 1, 0, w->tiles);
         work->unk_168 = 0;
 
         if (work->unk_154 == 0) {
@@ -1021,7 +1021,7 @@ u8 task_emy_03_1(Emy03Work* work) {
     case 0x12:
         if (work->base.unk_154 == 0) {
             work->base.unk_168 = -0x480;
-            func_08019068(gUnk_0813D544, &w->base.anim, 0, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813D544, &w->base.anim, 0, 0, w->base.tiles);
         } else if (work->base.unk_154 == 1) {
             func_080141FC(act);
             m4aSongNumStart(0x246);
@@ -1033,7 +1033,7 @@ u8 task_emy_03_1(Emy03Work* work) {
         break;
     case 0x13:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813D544, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813D544, &w->base.anim, 1, 0, w->base.tiles);
         } else if (work->base.unk_154 == 1) {
             func_0801C700(act, &w->unk_184, &w->unk_188, 0);
             w->unk_18C = 0;
@@ -1085,7 +1085,7 @@ u8 task_emy_04_1(Emy04Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(&gUnk_0813D5CC, &work->base.anim, 0, 0, work->base.tiles);
+        AnimChangeWithDef(&gUnk_0813D5CC, &work->base.anim, 0, 0, work->base.tiles);
         work->base.unk_168 = 0;
 
         if (work->unk_186 > 2) {
@@ -1182,7 +1182,7 @@ u8 task_emy_06_1(Emy06Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813D644, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D644, &w->base.anim, 0, 0, w->base.tiles);
         work->base.unk_168 = 0;
         p = &gBtlWork->unk_138;
         t = act->z + 0xC00;
@@ -1214,7 +1214,7 @@ u8 task_emy_06_1(Emy06Work* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813D644, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D644, &w->base.anim, 1, 0, w->base.tiles);
         work->base.unk_168 = 0;
         p = &gBtlWork->unk_138;
         t = act->z + 0xC00;
@@ -1340,7 +1340,7 @@ u8 task_emy_07_1(Emy07Work* work) {
 
     switch (work->base.unk_14C) {
     case 18:
-        func_08019068(w->base.def->animDef, &w->base.anim, 0, 3,
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 3,
             w->base.tiles);
         func_0801C700(act, &pos, 0, 0);
 
@@ -1370,7 +1370,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
         break;
     case 21:
-        func_08019068(gUnk_0813D6CC, &w->base.anim, 3, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 3, 1, w->base.tiles);
 
         if (work->base.unk_154 > 300) {
             work->base.unk_154 = 0;
@@ -1380,7 +1380,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
         break;
     case 22:
-        func_08019068(gUnk_0813D6CC, &w->base.anim, 4, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 4, 1, w->base.tiles);
 
         if (work->base.unk_154 > 300) {
             work->base.unk_154 = 0;
@@ -1390,7 +1390,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
         break;
     case 23:
-        func_08019068(gUnk_0813D6CC, &w->base.anim, 5, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 5, 1, w->base.tiles);
 
         if (work->base.unk_154 > 300) {
             work->base.unk_154 = 0;
@@ -1401,9 +1401,9 @@ u8 task_emy_07_1(Emy07Work* work) {
         break;
     case 20:
         if (w->unk_186 != 0) {
-            func_08019068(gUnk_0813D6CC, &w->base.anim, 2, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 2, 0, w->base.tiles);
         } else {
-            func_08019068(gUnk_0813D6CC, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 1, 0, w->base.tiles);
         }
 
         if (work->base.unk_154 == 0) {
@@ -1439,7 +1439,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         break;
     case 26:
         if (work->base.unk_154 == 0) {
-            func_08019068(w->base.def->animDef, &w->base.anim, 1, 0,
+            AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 1, 0,
                 w->base.tiles);
         }
 
@@ -1461,7 +1461,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
         break;
     case 19:
-        func_08019068(gUnk_0813D6CC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 0, 0, w->base.tiles);
 
         if (work->base.unk_154 == 0) {
             act->flags |= 0x100;
@@ -1474,7 +1474,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
         break;
     case 25:
-        func_08019068(gUnk_0813D6CC, &w->base.anim, 6, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D6CC, &w->base.anim, 6, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             if (w->unk_187 != 0) {
@@ -1541,7 +1541,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 22:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 4, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 4, 0, w->base.tiles);
 
         if (AnimGetFrame(&work->base.anim) == 6) {
             act->flags |= 0x180000000;
@@ -1554,7 +1554,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 23:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 5, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 5, 0, w->base.tiles);
 
         if (AnimGetFrame(&work->base.anim) == 4) {
             act->flags &= ~0x180000000;
@@ -1567,7 +1567,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 18:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 0, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             func_0800CB4C(&work->base);
@@ -1631,7 +1631,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 20:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 2, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_154 = 0;
@@ -1642,7 +1642,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 21:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 3, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_154 = 0;
@@ -1653,7 +1653,7 @@ u8 task_emy_08_1(Emy08Work* work) {
         }
         break;
     case 19:
-        func_08019068(gUnk_0813D7A4, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D7A4, &w->base.anim, 1, 0, w->base.tiles);
 
         if (work->base.anim.timer == 0
                 && AnimGetFrame(&work->base.anim) == 7) {
@@ -1718,11 +1718,11 @@ u8 task_emy_14_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813D86C, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D86C, &w->anim, 0, 0, w->tiles);
         func_0800C980(work, 0x0F, 0x0E, 0x14, 0xB3, 0x18, 0x242, 0, 0, 0x16);
         break;
     case 0x13:
-        func_08019068(gUnk_0813D86C, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D86C, &w->anim, 1, 0, w->tiles);
         func_0800C980(work, 0x14, 0x25, 0x06, 0xB4, 0x64, 0x221, 0, 0, 0x14);
         break;
     }
@@ -1765,7 +1765,7 @@ u8 task_emy_15_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813D8F4, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D8F4, &w->anim, 0, 0, w->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_14C = 0x13;
@@ -1773,7 +1773,7 @@ u8 task_emy_15_1(EmyWork* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813D8F4, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D8F4, &w->anim, 1, 0, w->tiles);
 
         if (act->flags & 4) {
             ApproachValueHalfSteps(&act->x, act->unk_014 - 0x5000, work->unk_154);
@@ -1795,7 +1795,7 @@ u8 task_emy_15_1(EmyWork* work) {
         }
         break;
     case 0x14:
-        func_08019068(gUnk_0813D8F4, &w->anim, 2, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D8F4, &w->anim, 2, 0, w->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             func_0800CB4C(work);
@@ -1803,7 +1803,7 @@ u8 task_emy_15_1(EmyWork* work) {
         break;
     case 0x15:
         if (work->unk_154 == 0) {
-            func_08019068(gUnk_0813D8F4, &w->anim, 3, 0, w->tiles);
+            AnimChangeWithDef(gUnk_0813D8F4, &w->anim, 3, 0, w->tiles);
             work->unk_168 = -0x533;
         }
 
@@ -1815,7 +1815,7 @@ u8 task_emy_15_1(EmyWork* work) {
         }
         break;
     case 0x16:
-        func_08019068(gUnk_0813D8F4, &w->anim, 4, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813D8F4, &w->anim, 4, 0, w->tiles);
         func_0800C980(work, 0x16, 0x16, 0x3C, 0xB6, 0x40, 0x221, 0x10, -0x0C, 0x0C);
         break;
     }
@@ -1868,7 +1868,7 @@ u8 task_emy_16_1(Emy16Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813D9AC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D9AC, &w->base.anim, 0, 0, w->base.tiles);
 
         if (AnimGetFrame(&work->base.anim) == 3 && work->base.anim.timer == 0) {
             if (act->flags & 4) {
@@ -1894,7 +1894,7 @@ u8 task_emy_16_1(Emy16Work* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813D9AC, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813D9AC, &w->base.anim, 1, 0, w->base.tiles);
 
         if (AnimGetFrame(&work->base.anim) == 0x0A && work->base.anim.timer == 0) {
             if (act->flags & 4) {
@@ -2182,7 +2182,7 @@ u8 task_emy_18_1(Emy18Work* work) {
 
     switch (work->base.unk_14C) {
     case 20:
-        func_08019068(gUnk_0813DA54, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DA54, &w->base.anim, 2, 0, w->base.tiles);
         work->base.unk_168 = 0;
 
         if (AnimGetFrame(&work->base.anim) == 5) {
@@ -2201,7 +2201,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         break;
     case 22:
         work->base.unk_168 = 0;
-        func_08019068(w->base.def->animDef, &w->base.anim, 2, 3,
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 2, 3,
             w->base.tiles);
 
         if (gBtlWork->flags & 0x40000) {
@@ -2235,7 +2235,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         }
         break;
     case 21:
-        func_08019068(gUnk_0813DA54, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DA54, &w->base.anim, 3, 0, w->base.tiles);
         work->base.unk_168 = 0;
         act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
         act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
@@ -2251,7 +2251,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         }
         break;
     case 18:
-        func_08019068(gUnk_0813DA54, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DA54, &w->base.anim, 0, 0, w->base.tiles);
 
         if (work->base.unk_154 <= 29) {
             work->base.unk_168 = 0;
@@ -2266,7 +2266,7 @@ u8 task_emy_18_1(Emy18Work* work) {
         }
         break;
     case 19:
-        func_08019068(gUnk_0813DA54, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DA54, &w->base.anim, 1, 0, w->base.tiles);
 
         if (work->base.anim.timer == 0) {
             switch (AnimGetFrame(&work->base.anim)) {
@@ -2325,7 +2325,7 @@ u8 task_emy_19_1(Emy19Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 0x13;
@@ -2334,7 +2334,7 @@ u8 task_emy_19_1(Emy19Work* work) {
         break;
     case 0x13:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813DAFC, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 1, 0, w->base.tiles);
             work->base.unk_168 = -0x500;
             w->unk_184 = 0x500;
         }
@@ -2350,7 +2350,7 @@ u8 task_emy_19_1(Emy19Work* work) {
         }
         break;
     case 0x14:
-        func_08019068(gUnk_0813DAFC, &w->base.anim, 2, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 2, 1, w->base.tiles);
         act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
         w->unk_184 = w->unk_184 * 248 >> 8;
 
@@ -2372,7 +2372,7 @@ u8 task_emy_19_1(Emy19Work* work) {
         }
         break;
     case 0x15:
-        func_08019068(gUnk_0813DAFC, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 3, 0, w->base.tiles);
         act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
         w->unk_184 = w->unk_184 * 248 >> 8;
 
@@ -2382,14 +2382,14 @@ u8 task_emy_19_1(Emy19Work* work) {
         }
         break;
     case 0x16:
-        func_08019068(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             func_0800CB4C(&work->base);
         }
         break;
     case 0x17:
-        func_08019068(gUnk_0813DAFC, &w->base.anim, 4, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DAFC, &w->base.anim, 4, 0, w->base.tiles);
 
         switch (AnimGetFrame(&work->base.anim)) {
         case 3:
@@ -2460,7 +2460,7 @@ u8 task_emy_21_1(Emy21Work* work) {
     switch (work->base.unk_14C) {
     case 0x12:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813DBB4, &w->base.anim, 0, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813DBB4, &w->base.anim, 0, 1, w->base.tiles);
         }
 
         if (work->base.unk_154 > 29) {
@@ -2498,7 +2498,7 @@ u8 task_emy_21_1(Emy21Work* work) {
         break;
     }
     case 0x14:
-        func_08019068(gUnk_0813DBB4, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DBB4, &w->base.anim, 1, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_154 = 0;
@@ -2507,7 +2507,7 @@ u8 task_emy_21_1(Emy21Work* work) {
         break;
     case 0x15:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813DBB4, &w->base.anim, 2, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813DBB4, &w->base.anim, 2, 1, w->base.tiles);
             w->unk_184 = 0;
         }
 
@@ -2527,7 +2527,7 @@ u8 task_emy_21_1(Emy21Work* work) {
         }
         break;
     case 0x16:
-        func_08019068(gUnk_0813DBB4, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DBB4, &w->base.anim, 3, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_154 = 0;
@@ -2629,7 +2629,7 @@ u8 task_emy_22_1(Emy22Work* work) {
         break;
     case 18:
         if (work->base.unk_154 == 0) {
-            func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
+            AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 1,
                 w->base.tiles);
             act->flags |= 0x300;
             work->base.unk_156 = 20;
@@ -2652,7 +2652,7 @@ u8 task_emy_22_1(Emy22Work* work) {
     case 19:
         if (work->base.unk_154 == 0) {
             func_0801C700(act, &pos, 0, 0);
-            func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
+            AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 1,
                 w->base.tiles);
 
             if (act->x > pos) {
@@ -2700,7 +2700,7 @@ u8 task_emy_22_1(Emy22Work* work) {
         }
 
         act->z += -act->z >> 4;
-        func_08019068(gUnk_0813DC5C, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DC5C, &w->base.anim, 0, 0, w->base.tiles);
         func_0800C980(&work->base, 27, 14, 40, 191, 24, 0x211, 24, 0, 24);
 
         if (gBtlWork->actor->flags & 2) {
@@ -2725,7 +2725,7 @@ u8 task_emy_22_1(Emy22Work* work) {
         }
 
         act->z += -act->z >> 4;
-        func_08019068(gUnk_0813DC5C, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DC5C, &w->base.anim, 1, 0, w->base.tiles);
         func_0800C980(&work->base, 50, 19, 30, 192, 16, 0x211, 48, 0, 24);
         break;
     }
@@ -2769,7 +2769,7 @@ u8 task_emy_23_1(Emy23Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DCE4, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DCE4, &w->base.anim, 0, 0, w->base.tiles);
 
         switch (AnimGetFrame(&work->base.anim)) {
         case 0:
@@ -2804,7 +2804,7 @@ u8 task_emy_23_1(Emy23Work* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813DCE4, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DCE4, &w->base.anim, 1, 0, w->base.tiles);
         act->z += -act->z >> 2;
 
         if (AnimGetFrame(&work->base.anim) == 3) {
@@ -2865,7 +2865,7 @@ u8 task_emy_25_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DD6C, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813DD6C, &w->anim, 0, 0, w->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             func_0800CB4C(work);
@@ -2918,7 +2918,7 @@ u8 task_emy_25_1(EmyWork* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813DD6C, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813DD6C, &w->anim, 1, 0, w->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             func_0800CB4C(work);
@@ -3023,7 +3023,7 @@ u8 task_emy_26_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DDF4, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813DDF4, &w->anim, 0, 0, w->tiles);
 
         switch (AnimGetFrame(&work->anim)) {
         case 3:
@@ -3048,7 +3048,7 @@ u8 task_emy_26_1(EmyWork* work) {
 
         switch (work->unk_154) {
         case 0:
-            func_08019068(gUnk_0813DDF4, &w->anim, 1, 0, w->tiles);
+            AnimChangeWithDef(gUnk_0813DDF4, &w->anim, 1, 0, w->tiles);
             work->unk_154++;
             break;
         case 1:
@@ -3126,7 +3126,7 @@ u8 task_emy_27_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DE7C, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813DE7C, &w->anim, 0, 0, w->tiles);
 
         if (AnimGetFrame(&work->anim) == 1 && work->anim.timer == 0) {
             m4aSongNumStart(0x267);
@@ -3141,7 +3141,7 @@ u8 task_emy_27_1(EmyWork* work) {
         func_0800C980(work, 0x3D, 6, 0x14, 0xC8, 0x20, 0x268, 0x28, 0, 0x14);
         break;
     case 0x13:
-        func_08019068(gUnk_0813DE7C, &w->anim, 1, 1, w->tiles);
+        AnimChangeWithDef(gUnk_0813DE7C, &w->anim, 1, 1, w->tiles);
         func_0801C700(act, &tx, &ty, 0);
 
         if (work->unk_154 % 6 == 0) {
@@ -3224,7 +3224,7 @@ u8 task_emy_28_1(Emy28Work* work) {
 
     switch (work->base.unk_14C) {
     case 20:
-        func_08019068(gUnk_0813DF04, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DF04, &w->base.anim, 2, 0, w->base.tiles);
         work->base.unk_168 = 0;
 
         if (AnimGetFrame(&work->base.anim) == 1) {
@@ -3243,7 +3243,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         break;
     case 22:
         work->base.unk_168 = 0;
-        func_08019068(w->base.def->animDef, &w->base.anim, 2, 3,
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 2, 3,
             w->base.tiles);
 
         if (gBtlWork->flags & 0x40000) {
@@ -3277,7 +3277,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         }
         break;
     case 21:
-        func_08019068(gUnk_0813DF04, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DF04, &w->base.anim, 3, 0, w->base.tiles);
         work->base.unk_168 = 0;
         act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
         act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
@@ -3293,7 +3293,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         }
         break;
     case 18:
-        func_08019068(gUnk_0813DF04, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DF04, &w->base.anim, 0, 0, w->base.tiles);
 
         if (work->base.anim.timer == 0) {
             switch (AnimGetFrame(&work->base.anim)) {
@@ -3312,7 +3312,7 @@ u8 task_emy_28_1(Emy28Work* work) {
         }
         break;
     case 19:
-        func_08019068(gUnk_0813DF04, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DF04, &w->base.anim, 1, 0, w->base.tiles);
 
         if (work->base.unk_154 <= 34) {
             work->base.unk_168 = 0;
@@ -3396,7 +3396,7 @@ u8 task_emy_29_1(Emy29Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813DFAC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813DFAC, &w->base.anim, 0, 0, w->base.tiles);
         work->base.unk_168 = 0;
         a = -gSineTable[(((u16)work->base.unk_154 * 2) & 0xFF) + 0x40] << 4;
         t = act->z + 0x1000;
@@ -3410,7 +3410,7 @@ u8 task_emy_29_1(Emy29Work* work) {
         c = work->base.unk_154;
 
         if (c == 0) {
-            func_08019068(gUnk_0813DFAC, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813DFAC, &w->base.anim, 1, 0, w->base.tiles);
             w->state = 0;
             w->unk_186 = 8;
             work->base.unk_154++;
@@ -3507,7 +3507,7 @@ u8 task_emy_30_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 24:
-        func_08019068(gUnk_0813E034, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 0, 0, w->tiles);
         work->unk_168 = 0;
 
         if (AnimGetFrame(&work->anim) == 1) {
@@ -3524,7 +3524,7 @@ u8 task_emy_30_1(EmyWork* work) {
         break;
     case 26:
         work->unk_168 = 0;
-        func_08019068(w->def->animDef, &w->anim, 2, 3, w->tiles);
+        AnimChangeWithDef(w->def->animDef, &w->anim, 2, 3, w->tiles);
 
         if (gBtlWork->flags & 0x40000) {
             if (act->x > work->x) {
@@ -3554,7 +3554,7 @@ u8 task_emy_30_1(EmyWork* work) {
         }
         break;
     case 25:
-        func_08019068(gUnk_0813E034, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 1, 0, w->tiles);
         work->unk_168 = 0;
         act->x += gSineTable[work->angle] * work->unk_164 >> 8;
         act->y += -gSineTable[work->angle + 64] * work->unk_164 >> 8;
@@ -3572,7 +3572,7 @@ u8 task_emy_30_1(EmyWork* work) {
     case 18: {
     s32 currentX;
     s32 targetX;
-        func_08019068(gUnk_0813E034, &w->anim, 2, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 2, 0, w->tiles);
         work->unk_168 = 0;
         act->z += (-0x4000 - act->z) >> 3;
         act->y += (y - act->y) >> 3;
@@ -3599,7 +3599,7 @@ u8 task_emy_30_1(EmyWork* work) {
     case 19: {
     s32 currentX;
     s32 targetX;
-        func_08019068(gUnk_0813E034, &w->anim, 3, 1, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 3, 1, w->tiles);
         work->unk_168 = 0;
         act->z += (-0x2000 - act->z) >> 3;
         act->y += (y - act->y) >> 4;
@@ -3639,7 +3639,7 @@ u8 task_emy_30_1(EmyWork* work) {
         break;
     }
     case 20:
-        func_08019068(gUnk_0813E034, &w->anim, 4, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 4, 0, w->tiles);
         work->unk_168 = 0;
 
         if (AnimIsFinished(&work->anim)) {
@@ -3650,7 +3650,7 @@ u8 task_emy_30_1(EmyWork* work) {
         work->unk_168 = 0;
 
         if (work->unk_154 == 0) {
-            func_08019068(gUnk_0813E034, &w->anim, 5, 0, w->tiles);
+            AnimChangeWithDef(gUnk_0813E034, &w->anim, 5, 0, w->tiles);
 
             if (act->x > 0x10000) {
                 act->flags |= 4;
@@ -3674,7 +3674,7 @@ u8 task_emy_30_1(EmyWork* work) {
         }
         break;
     case 22:
-        func_08019068(gUnk_0813E034, &w->anim, 6, 1, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 6, 1, w->tiles);
         work->unk_168 = 0;
         work->unk_164 += 38;
         act->y += (y - act->y) >> 4;
@@ -3705,7 +3705,7 @@ u8 task_emy_30_1(EmyWork* work) {
         }
         break;
     case 23:
-        func_08019068(gUnk_0813E034, &w->anim, 7, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E034, &w->anim, 7, 0, w->tiles);
         work->unk_168 = 0;
         work->unk_164 -= 128;
 
@@ -3773,7 +3773,7 @@ u8 task_emy_31_1(Emy31Work* work) {
         switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E11C, &w->base.anim, 0, 0,
+                AnimChangeWithDef(gUnk_0813E11C, &w->base.anim, 0, 0,
                     w->base.tiles);
             }
 
@@ -3813,7 +3813,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
+                AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 1,
                     w->base.tiles);
             }
 
@@ -3835,7 +3835,7 @@ u8 task_emy_31_1(Emy31Work* work) {
         switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E11C, &w->base.anim, 1, 0,
+                AnimChangeWithDef(gUnk_0813E11C, &w->base.anim, 1, 0,
                     w->base.tiles);
             }
 
@@ -3875,7 +3875,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                func_08019068(w->base.def->animDef, &w->base.anim, 0, 1,
+                AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 1,
                     w->base.tiles);
             }
 
@@ -3895,7 +3895,7 @@ u8 task_emy_31_1(Emy31Work* work) {
         switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E11C, &w->base.anim, 2, 0,
+                AnimChangeWithDef(gUnk_0813E11C, &w->base.anim, 2, 0,
                     w->base.tiles);
                 func_0801C700(act, &w->unk_188, &w->unk_18C, &w->unk_190);
             }
@@ -3991,11 +3991,11 @@ u8 task_emy_37_1(Emy37Work* work) {
 
     switch (work->base.unk_14C) {
     case 24:
-        func_08019068(gUnk_0813E1B4, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 0, 0, w->base.tiles);
         func_0800C980(&work->base, 30, 14, 20, 0xD2, 70, 0x211, 0, 0, 24);
         break;
     case 25:
-        func_08019068(gUnk_0813E1B4, &w->base.anim, 4, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 4, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_154 = 0;
@@ -4007,7 +4007,7 @@ u8 task_emy_37_1(Emy37Work* work) {
     case 29:
         if (work->base.unk_154 == 0) {
             work->base.unk_168 = -0x399;
-            func_08019068(gUnk_0813E1B4, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 1, 0, w->base.tiles);
         }
 
         if (work->base.unk_168 > 0) {
@@ -4030,7 +4030,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             s32 x;
             s32 y;
 
-            func_08019068(gUnk_0813E1B4, &w->base.anim, 2, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 2, 1, w->base.tiles);
             w->unk_188 = 0;
             func_0801C700(act, &x, &y, 0);
             w->angle = GetAngle(act->x, act->y, x, y);
@@ -4064,7 +4064,7 @@ u8 task_emy_37_1(Emy37Work* work) {
         }
         break;
     case 28:
-        func_08019068(gUnk_0813E1B4, &w->base.anim, 10, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 10, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             act->flags &= ~0x100;
@@ -4074,7 +4074,7 @@ u8 task_emy_37_1(Emy37Work* work) {
         }
         break;
     case 19:
-        func_08019068(gUnk_0813E1B4, &w->base.anim, 9, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 9, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 20;
@@ -4093,7 +4093,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             s32 offset;
 
             func_0801C700(act, &x, &y, 0);
-            func_08019068(gUnk_0813E1B4, &w->base.anim, 5, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 5, 1, w->base.tiles);
             sample = gSineTable[work->base.angle];
             offset = 70;
             offset *= sample;
@@ -4147,7 +4147,7 @@ u8 task_emy_37_1(Emy37Work* work) {
         }
         break;
     case 21:
-        func_08019068(gUnk_0813E1B4, &w->base.anim, 6, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 6, 0, w->base.tiles);
 
         if (work->base.unk_154 == 30) {
             act->flags &= ~0x100;
@@ -4163,7 +4163,7 @@ u8 task_emy_37_1(Emy37Work* work) {
         break;
     case 26:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813E1B4, &w->base.anim, 7, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 7, 0, w->base.tiles);
             work->base.unk_168 = -0x433;
         }
 
@@ -4176,7 +4176,7 @@ u8 task_emy_37_1(Emy37Work* work) {
         break;
     case 27:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813E1B4, &w->base.anim, 8, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E1B4, &w->base.anim, 8, 0, w->base.tiles);
         }
 
         if (act->z >= act->unk_010) {
@@ -4191,7 +4191,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             act->unk_0A2 = 20;
             ColliderSetDisabled(&act->collider, 0);
             act->flags &= ~0x300;
-            func_08019068(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
+            AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
         }
 
         func_0801BCF8(act);
@@ -4335,7 +4335,7 @@ u8 task_emy_38_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813E2CC, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E2CC, &w->anim, 0, 0, w->tiles);
         func_0800C980(work, 0x1E, 0x14, 0x2D, 0xD4, 0x32, 0x212, 0, 0, 0x18);
 
         if (work->unk_154 == 0x1E) {
@@ -4343,7 +4343,7 @@ u8 task_emy_38_1(EmyWork* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813E2CC, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E2CC, &w->anim, 1, 0, w->tiles);
 
         if (work->unk_154 == 0x3F) {
             func_08011F78(0xD5, act->x, act->y, act->z, 0x100, 0x100, 1);
@@ -4413,7 +4413,7 @@ u8 task_emy_39_1(Emy39Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813E354, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E354, &w->base.anim, 0, 0, w->base.tiles);
 
         if (work->base.unk_154 == 0x30) {
             z = act->y;
@@ -4439,7 +4439,7 @@ u8 task_emy_39_1(Emy39Work* work) {
         c = work->base.unk_154;
 
         if (c == 0) {
-            func_08019068(gUnk_0813E354, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E354, &w->base.anim, 1, 0, w->base.tiles);
             w->unk_184 = 0;
         }
 
@@ -4563,7 +4563,7 @@ u8 task_emy_41_1(Emy41Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813E3DC, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E3DC, &w->base.anim, 0, 0, w->base.tiles);
         work->base.unk_168 = 0;
         a = gSineTable[((u16)work->base.unk_154 * 4) & 0xFF] << 4;
         t = act->z + 0x1000;
@@ -4572,7 +4572,7 @@ u8 task_emy_41_1(Emy41Work* work) {
         break;
     case 0x13:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813E3DC, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E3DC, &w->base.anim, 1, 0, w->base.tiles);
             func_0801C700(act, &w->unk_184, &w->unk_188, 0);
             w->unk_18C = 0;
         }
@@ -4633,7 +4633,7 @@ u8 task_emy_44_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813E464, &w->anim, 0, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E464, &w->anim, 0, 0, w->tiles);
 
         switch (AnimGetFrame(&work->anim)) {
         case 1:
@@ -4655,7 +4655,7 @@ u8 task_emy_44_1(EmyWork* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813E464, &w->anim, 1, 0, w->tiles);
+        AnimChangeWithDef(gUnk_0813E464, &w->anim, 1, 0, w->tiles);
 
         if (AnimGetFrame(&work->anim) == 7 && work->anim.timer == 0) {
             if (act->flags & 4) {
@@ -4746,7 +4746,7 @@ u8 task_emy_81_1(Emy81Work* work) {
         }
         break;
     case 20:
-        func_08019068(gUnk_0813E4EC, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E4EC, &w->base.anim, 2, 0, w->base.tiles);
 
         d = (-0x2800 - act->z) >> 4;
 
@@ -4768,7 +4768,7 @@ u8 task_emy_81_1(Emy81Work* work) {
     case 21:
         if (work->base.unk_154 == 0) {
             func_0801C700(act, &a, &b, 0);
-            func_08019068(gUnk_0813E4EC, &w->base.anim, 3, 1, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E4EC, &w->base.anim, 3, 1, w->base.tiles);
             w->unk_18C = (a * 2) - act->x;
             w->unk_190 = (b * 2) - act->y;
             w->unk_184 = 0;
@@ -4825,7 +4825,7 @@ u8 task_emy_81_1(Emy81Work* work) {
         }
         break;
     case 22:
-        func_08019068(gUnk_0813E4EC, &w->base.anim, 4, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E4EC, &w->base.anim, 4, 0, w->base.tiles);
         work->base.unk_168 -= 25;
 
         if (act->z >= act->unk_010) {
@@ -4835,7 +4835,7 @@ u8 task_emy_81_1(Emy81Work* work) {
         break;
     case 18:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813E4EC, &w->base.anim, 0, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E4EC, &w->base.anim, 0, 0, w->base.tiles);
         }
 
         {
@@ -4889,7 +4889,7 @@ u8 task_emy_81_1(Emy81Work* work) {
         break;
     case 19:
         if (work->base.unk_154 == 0) {
-            func_08019068(gUnk_0813E4EC, &w->base.anim, 1, 0, w->base.tiles);
+            AnimChangeWithDef(gUnk_0813E4EC, &w->base.anim, 1, 0, w->base.tiles);
         }
 
         {
@@ -5019,7 +5019,7 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         break;
     case 22:
-        func_08019068(w->base.def->animDef, &w->base.anim, 2, 1, w->base.tiles);
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 2, 1, w->base.tiles);
         if (act->z < act->unk_010 && (gBtlWork->flags & 0x40000)) {
             act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
             act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
@@ -5050,7 +5050,7 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         break;
     case 21:
-        func_08019068(w->base.def->animDef, &w->base.anim, 0, 1, w->base.tiles);
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 1, w->base.tiles);
         if ((u16)((u32)GetRandom() % work->base.def->unk_0E) == 0) {
             s32 x;
             func_0801C700(act, &x, 0, 0);
@@ -5083,7 +5083,7 @@ u8 task_emy_82_1(Emy82Work* work) {
             u32 frame;
             s32 hitX;
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E5A4, &w->base.anim, 3, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 3, 0, w->base.tiles);
                 work->base.unk_168 = -0x400;
             }
             if (act->flags & 4) {
@@ -5134,7 +5134,7 @@ u8 task_emy_82_1(Emy82Work* work) {
         {
             u32 frame;
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E5A4, &w->base.anim, 4, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 4, 0, w->base.tiles);
             }
             frame = AnimGetFrame(&work->base.anim);
             if (frame > 1) {
@@ -5182,7 +5182,7 @@ u8 task_emy_82_1(Emy82Work* work) {
         {
             u32 frame;
             if (work->base.unk_154 == 0) {
-                func_08019068(gUnk_0813E5A4, &w->base.anim, 5, 0, w->base.tiles);
+                AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 5, 0, w->base.tiles);
             }
             frame = AnimGetFrame(&work->base.anim);
             if ((u16)(frame - 2) <= 21) {
@@ -5229,20 +5229,20 @@ u8 task_emy_82_1(Emy82Work* work) {
         }
         break;
     case 23:
-        func_08019068(gUnk_0813E5A4, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 0, 0, w->base.tiles);
         work->base.unk_168 = 0;
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 24;
         }
         break;
     case 24:
-        func_08019068(gUnk_0813E5A4, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 1, 0, w->base.tiles);
         if (act->z >= act->unk_010) {
             work->base.unk_14C = 25;
         }
         break;
     case 25:
-        func_08019068(gUnk_0813E5A4, &w->base.anim, 2, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E5A4, &w->base.anim, 2, 0, w->base.tiles);
         if (AnimGetFrame(&work->base.anim) == 1 && work->base.anim.timer == 0) {
             work->base.unk_168 = -0x333;
         }
@@ -5301,7 +5301,7 @@ u8 task_emy_83_1(Emy83Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x16:
-        func_08019068(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
+        AnimChangeWithDef(w->base.def->animDef, &w->base.anim, 0, 3, w->base.tiles);
         func_0801BCF8(act);
         func_0801C700(act, &pos, 0, 0);
 
@@ -5312,7 +5312,7 @@ u8 task_emy_83_1(Emy83Work* work) {
         }
         break;
     case 0x12:
-        func_08019068(gUnk_0813E66C, &w->base.anim, 0, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E66C, &w->base.anim, 0, 0, w->base.tiles);
         c = work->base.anim.timer;
 
         if (c == 0) {
@@ -5334,14 +5334,14 @@ u8 task_emy_83_1(Emy83Work* work) {
         }
         break;
     case 0x13:
-        func_08019068(gUnk_0813E66C, &w->base.anim, 1, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E66C, &w->base.anim, 1, 0, w->base.tiles);
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 0x14;
         }
         break;
     case 0x14:
-        func_08019068(gUnk_0813E66C, &w->base.anim, 2, 1, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E66C, &w->base.anim, 2, 1, w->base.tiles);
 
         if (AnimGetGfxIndex(&work->base.anim) == 6 && work->base.anim.timer == 0) {
             if (act->flags & 4) {
@@ -5371,7 +5371,7 @@ u8 task_emy_83_1(Emy83Work* work) {
         }
         break;
     case 0x15:
-        func_08019068(gUnk_0813E66C, &w->base.anim, 3, 0, w->base.tiles);
+        AnimChangeWithDef(gUnk_0813E66C, &w->base.anim, 3, 0, w->base.tiles);
 
         if (work->base.unk_154 > 0x28) {
             func_0800CB4C(&work->base);
@@ -5573,12 +5573,12 @@ u8 task_emy_trump_h_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x13:
-        func_08019068(&gUnk_0813E734, &work->anim, 0, 0, work->tiles);
+        AnimChangeWithDef(&gUnk_0813E734, &work->anim, 0, 0, work->tiles);
         func_0800C980(work, 0x19, 8, 0x0A, 0x12B, 0x30, 0x22E, 0x50, 0, 0x18);
         break;
     case 0x12:
         if (work->unk_154 == 0) {
-            func_08019068(work->def->animDef, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(work->def->animDef, &work->anim, 0, 0, work->tiles);
             m4aSongNumStart(0x23B);
         }
 
@@ -5624,7 +5624,7 @@ u8 task_emy_trump_s_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x13:
-        func_08019068(&gUnk_0813E7B4, &work->anim, 0, 0, work->tiles);
+        AnimChangeWithDef(&gUnk_0813E7B4, &work->anim, 0, 0, work->tiles);
         func_0800C980(work, 0x14, 0x1E, 0x0A, 0x12A, 0x46, 0x22F, 0x10, 0, 0x18);
 
         if (work->unk_154 == 0x14) {
@@ -5633,7 +5633,7 @@ u8 task_emy_trump_s_1(EmyWork* work) {
         break;
     case 0x12:
         if (work->unk_154 == 0) {
-            func_08019068(work->def->animDef, &work->anim, 0, 0, work->tiles);
+            AnimChangeWithDef(work->def->animDef, &work->anim, 0, 0, work->tiles);
             m4aSongNumStart(0x23B);
         }
 

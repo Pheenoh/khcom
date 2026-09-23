@@ -554,10 +554,10 @@ void func_0810563C(void) {
         gMsCards[n].cardId = 0x3B6;
         gMsCards[n].unk_2E = 0;
     }
-    a = func_08084BAC();
+    a = CountCollectionCards();
     gUnk_02035C3C = a;
     q = &gUnk_02035C38;
-    *q = func_08084BF0();
+    *q = CountCardsInDecks();
 
     for (j = 0; j < 4; j++) {
         gUnk_02035C20[j] = 0;
@@ -618,7 +618,7 @@ void func_0810563C(void) {
     }
 }
 
-s32 func_0810592C(void) {
+s32 MsChargeReadMenuKeys(void) {
     s32 keys;
 
     keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -634,7 +634,7 @@ void func_0810594C(void) {
     oldCE0 = gUnk_02035CE0;
     oldCE2 = gUnk_02035CE2;
     oldCE4 = gUnk_02035CE4;
-    keys = func_0810592C();
+    keys = MsChargeReadMenuKeys();
     if (keys & 1) {
         func_08104B48();
         m4aSongNumStart(0x66);
@@ -714,7 +714,7 @@ void func_08105BD8(void) {
     u16 keys;
 
     old = gUnk_02035C18;
-    keys = func_0810592C();
+    keys = MsChargeReadMenuKeys();
     if ((keys & 1) == 0) {
         if (keys & 8) {
             m4aSongNumStart(0x68);
@@ -797,7 +797,7 @@ void func_08105DE0(void) {
     card = func_08104B2C();
     oldCol = gUnk_02035E0C;
     oldRow = gUnk_02035E0E;
-    keys = func_0810592C();
+    keys = MsChargeReadMenuKeys();
     if (keys & 1) {
         if (GetMooglePoints() + func_08104ED8(func_08104AEC()) > 99999) {
             m4aSongNumStart(0x69);
@@ -870,7 +870,7 @@ void func_0810601C(void) {
 
     card = func_08104B2C();
     old = gUnk_02035E10;
-    keys = func_0810592C();
+    keys = MsChargeReadMenuKeys();
     if (keys & 1) {
         DisableBg(2);
 
@@ -935,7 +935,7 @@ void func_0810601C(void) {
 void func_081061DC(void) {
     u16 keys;
 
-    keys = func_0810592C();
+    keys = MsChargeReadMenuKeys();
     if (keys & 3) {
         DisableBg(2);
         m4aSongNumStart(0x68);

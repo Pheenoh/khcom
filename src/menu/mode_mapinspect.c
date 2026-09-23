@@ -591,7 +591,7 @@ void func_08107B84(void) {
     }
 }
 
-u16 func_08107D24(void) {
+u16 MapInspectReadMenuKeys(void) {
     u16 keys;
 
     keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -608,7 +608,7 @@ void func_08107D44(void) {
     a = gUnk_02035E98;
     b = gUnk_02035E9A;
     c = gUnk_02035E9C;
-    keys = func_08107D24();
+    keys = MapInspectReadMenuKeys();
     if (keys & 1) {
         if (func_0810718C()->category != 3) {
             func_081071AC();
@@ -689,7 +689,7 @@ void func_08107FF0(void) {
     u16 keys;
 
     old = gUnk_02035E2E;
-    keys = func_08107D24();
+    keys = MapInspectReadMenuKeys();
     if ((keys & 1) == 0) {
         if (keys & 8) {
             LoadBgMap(0, gUnk_09A3439C, 0x500);
@@ -770,7 +770,7 @@ void func_08108208(void) {
     p = func_0810718C();
     a = gUnk_02035FC4;
     b = gUnk_02035FC6;
-    trg = func_08107D24();
+    trg = MapInspectReadMenuKeys();
     keys = trg;
 
     if (keys & 1) {
@@ -837,7 +837,7 @@ void func_081083EC(void) {
 
     p = func_0810718C();
     old = gUnk_02035FC8;
-    keys = func_08107D24();
+    keys = MapInspectReadMenuKeys();
     if (keys & 1) {
         gUnk_02035FDC = gUnk_02035FC4 * 12288 + 0x9200;
         gUnk_02035FE0 = gUnk_02035FC6 * 2048 + 0x1000;
@@ -897,7 +897,7 @@ void func_081083EC(void) {
 void func_081085E8(void) {
     u16 keys;
 
-    keys = func_08107D24();
+    keys = MapInspectReadMenuKeys();
     if (keys & 3) {
         DisableBg(2);
         m4aSongNumStart(0x68);

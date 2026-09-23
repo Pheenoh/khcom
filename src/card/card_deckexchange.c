@@ -66,8 +66,8 @@ void func_0808CBB4(u8 a, u8 b);
 void func_080A9F08(u8 a);
 void func_080AA1F8(void);
 u8 func_080A82E0(UnkStruct_080A82E0* work, void* a);
-u16 func_08084BAC(void);
-u16 func_08084BF0(void);
+u16 CountCollectionCards(void);
+u16 CountCardsInDecks(void);
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 u16 func_08084E50(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 void func_0808500C(u8 mode, u16* out);
@@ -1410,8 +1410,8 @@ void func_080AA1F8(void) {
 
     u32 base;
 
-    a = func_08084BF0();
-    b = func_08084BAC();
+    a = CountCardsInDecks();
+    b = CountCollectionCards();
 
     d1[0] = a / 100;
     d1[1] = a / 10 - d1[0] * 10;

@@ -5400,7 +5400,7 @@ u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d) {
         return 0;
     }
 
-    if (func_080840E4()) {
+    if (IsCardCollectionFull()) {
         return 0;
     }
 

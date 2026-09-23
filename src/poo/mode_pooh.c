@@ -395,7 +395,7 @@ void func_080C7714(void) {
     p.x = 0x13000;
     p.y = 0xE800;
     p.z = 0;
-    func_080D2D0C(&p);
+    SetPooStatePos2(&p);
     p.x = 0x11000;
     p.y = 0xF800;
     p.z = 0;
@@ -408,7 +408,7 @@ void func_080C774C(void) {
     p.x = 0xB5400;
     p.y = 0x5DE00;
     p.z = 0;
-    func_080D2D0C(&p);
+    SetPooStatePos2(&p);
 
     if (func_080D2D94(3)) {
         p.x = 0xB3400;

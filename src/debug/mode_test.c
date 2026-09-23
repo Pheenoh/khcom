@@ -98,7 +98,7 @@ void eu_08060C8C(FrdPoohWork* work, FrdPoohArgs* args) {
     work->targetY = work->actor->y;
     work->palette = LoadObjPalette(gUnk_09849A98, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
+    AnimChangeWithDef(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
     ColliderInit(body->particles, 3, 10, 32);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
@@ -120,35 +120,35 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         u8 angle = GetAngle(body->x, body->y, work->targetX, work->targetY);
         switch (((angle + 16) & 255) >> 5) {
         case 0:
-            func_08019068(gUnkEu_08896524, &work->anim, 4, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 4, 1, work->tiles);
             flip = 1;
             break;
         case 1:
-            func_08019068(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
             flip = 1;
             break;
         case 2:
-            func_08019068(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
             flip = 1;
             break;
         case 3:
-            func_08019068(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
             flip = 1;
             break;
         case 4:
-            func_08019068(gUnkEu_08896524, &work->anim, 0, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 0, 1, work->tiles);
             flip = 0;
             break;
         case 5:
-            func_08019068(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
             flip = 0;
             break;
         case 6:
-            func_08019068(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
             flip = 0;
             break;
         case 7:
-            func_08019068(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
+            AnimChangeWithDef(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
             flip = 0;
             break;
         }
@@ -169,7 +169,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         u8 angle;
         work->targetX = work->actor->x;
         work->targetY = work->actor->y;
-        func_08019068(gUnkEu_08896524, &work->anim, 5, 1, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, 5, 1, work->tiles);
         angle = GetAngle(body->x, body->y, work->targetX, work->targetY);
         if (work->targetX < body->x) body->flags |= 4;
         else body->flags &= ~4ULL;
@@ -184,7 +184,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         break;
     }
     case 2:
-        func_08019068(gUnkEu_08896524, &work->anim, 6, 0, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, 6, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             if (work->actor->flags & 4) body->flags |= 4;
             else body->flags &= ~4ULL;
@@ -197,7 +197,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         work->bob += (-0x1C00 - work->bob) >> 3;
         break;
     case 5:
-        func_08019068(gUnkEu_08896524, &work->anim, 9, 0, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, 9, 0, work->tiles);
         if (work->actor->flags & 4) body->flags |= 4;
         else body->flags &= ~4ULL;
         body->x = work->actor->x;
@@ -219,7 +219,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         body->y = work->actor->y + 0x800;
         body->z = work->actor->z + work->bob - 0xC00;
         frame = (work->animcounter >> 8) & 7;
-        func_08019068(gUnkEu_08896524, &work->anim, frame + 10, 0, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, frame + 10, 0, work->tiles);
         ApproachValue(&work->animcounter, 0x800, work->counter);
         ApproachValue(&work->scale, 0x10000, work->counter);
         func_080147B8(-(work->scale >> 8) - 128);
@@ -234,7 +234,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         break;
     }
     case 3:
-        func_08019068(gUnkEu_08896524, &work->anim, 7, 0, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, 7, 0, work->tiles);
         if (body->flags & 4) body->x -= work->speed;
         else body->x += work->speed;
         work->speed -= 0x33;
@@ -252,7 +252,7 @@ u8 eu_08060DF8(FrdPoohWork* work) {
         func_08011F78(162, body->x, body->y, body->z, 30, 25, 10);
         break;
     case 4:
-        func_08019068(gUnkEu_08896524, &work->anim, 8, 0, work->tiles);
+        AnimChangeWithDef(gUnkEu_08896524, &work->anim, 8, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) work->state = 0;
         break;
     }
