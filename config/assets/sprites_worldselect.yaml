@@ -20,6 +20,12 @@ objects:
   - name: sprites_worldselect_frames.s
     start: 0x093F2020
     end: 0x093F3E3C
+  - name: sprites_worldselect_tiles.s
+    start: 0x09507F38
+    end: 0x0950E2F8
+  - name: sprites_worldselect_maps.s
+    start: 0x096102B8
+    end: 0x096112B8
   jp:
   - name: sprites_worldselect.c
     start: 0x09EC844C
@@ -27,6 +33,12 @@ objects:
   - name: sprites_worldselect_frames.s
     start: 0x093AD548
     end: 0x093AF364
+  - name: sprites_worldselect_tiles.s
+    start: 0x094C0214
+    end: 0x094C65D4
+  - name: sprites_worldselect_maps.s
+    start: 0x095C8D94
+    end: 0x095C9D94
   eu:
   - name: sprites_worldselect.c
     start: 0x09F7C244
@@ -34,6 +46,12 @@ objects:
   - name: sprites_worldselect_frames.s
     start: 0x094C16A8
     end: 0x094C34C4
+  - name: sprites_worldselect_tiles.s
+    start: 0x095298A4
+    end: 0x09530064
+  - name: sprites_worldselect_maps.s
+    start: 0x09543324
+    end: 0x09544324
 entries:
 - name: gUnk_09EF1060
   record: SpriteTable
@@ -1521,3 +1539,85 @@ entries:
   eu:
     address: 0x094C32C4
     size: 512
+- name: gUnk_09507F38
+  format: tiles4
+  us:
+    address: 0x09507F38
+    size: 32
+  jp:
+    address: 0x094C0214
+    size: 32
+  eu:
+    address: 0x095298A4
+    size: 32
+- name: gUnk_09507F58
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09507F58
+    size: 320
+  jp:
+    address: 0x094C0234
+    size: 320
+  eu:
+    address: 0x095298C4
+    size: 320
+- name: gUnk_09508098
+  format: tiles4
+  us:
+    address: 0x09508098
+    size: 17376
+  jp:
+    address: 0x094C0374
+    size: 17376
+  eu:
+    address: 0x09529A04
+    size: 17376
+- name: gUnk_0950C478
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0950C478
+    size: 7808
+  jp:
+    address: 0x094C4754
+    size: 7808
+  eu:
+    address: 0x0952E1E4
+    size: 7808
+- name: gUnkEu_0952DDE4
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x0952DDE4
+    size: 256
+- name: gUnkEu_0952DEE4
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x0952DEE4
+    size: 256
+- name: gUnkEu_0952DFE4
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x0952DFE4
+    size: 256
+- name: gUnkEu_0952E0E4
+  format: tiles4
+  width: 8
+  eu:
+    address: 0x0952E0E4
+    size: 256
+- name: gUnk_096102B8
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096102B8
+    size: 4096
+  jp:
+    address: 0x095C8D94
+    size: 4096
+  eu:
+    address: 0x09543324
+    size: 4096

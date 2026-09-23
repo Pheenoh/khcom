@@ -140,8 +140,6 @@ extern u8 gUnk_096148D8[];
 extern u8 gUnk_0909A4E0[];
 extern u8 gUnk_0909FDCA[];
 extern u8 gUnk_090A0C86[];
-extern u8 gUnk_09507F38[];
-extern u8 gUnk_09507F58[];
 typedef struct CardListWork {
     ListPool cards;
     struct UnkStruct_0809C534* selectedCard;
@@ -1173,7 +1171,6 @@ extern u8 gUnk_09036380[];
 extern u8 gUnk_0891ED26[];
 extern u8 gUnk_088E33C2[];
 extern u8 gUnk_09036300[];
-extern u8 gUnk_0950C478[];
 extern u8 gUnk_09618D38[];
 extern s32 gUnk_09033FF4[][2];
 extern s32 gUnk_09033FA8[];
@@ -1221,7 +1218,6 @@ typedef struct UnkStruct_09035730 {
 
 extern UnkStruct_09035730 gUnk_09035730;
 extern u8 gUnk_093F7172[];
-extern u8 gUnk_09508098[];
 extern u8 gUnk_09618C58[];
 extern u8 gUnk_09619098[];
 extern u8 gUnk_0905F03C[];

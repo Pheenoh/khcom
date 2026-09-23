@@ -67,12 +67,6 @@ extern u8 gUnk_093F4578[];
 extern u8 gUnk_09618D18[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_09F72C10[];
-extern u8 gUnkEu_09529A04[];
-extern u8 gUnkEu_0952DDE4[];
-extern u8 gUnkEu_0952E0E4[];
-extern u8 gUnkEu_0952DFE4[];
-extern u8 gUnkEu_0952DEE4[];
-extern u8 gUnkEu_09543324[];
 #endif
 u16 func_08093B08(u16 a);
 s32* func_080E04E0(void);
@@ -476,7 +470,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
     switch (keys & 0x30F) {
     case 2:
 #ifdef VERSION_EU
-        LoadBgTiles(1, gUnkEu_09529A04, 0x2020);
+        LoadBgTiles(1, gUnk_09508098, 0x2020);
 
         switch (gLanguage) {
         case 0:
@@ -495,7 +489,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
             break;
         }
 
-        LoadBgMap(1, gUnkEu_09543324, 0x800);
+        LoadBgMap(1, gUnk_096102B8, 0x800);
 #else
         LoadBgTiles(1, gUnk_09508098, 0x2020);
         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
@@ -543,7 +537,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
 
                     if ((s8)func_08093E34(w->card->unk_20, w) == -1) {
 #ifdef VERSION_EU
-                        LoadBgTiles(1, gUnkEu_09529A04, 0x2020);
+                        LoadBgTiles(1, gUnk_09508098, 0x2020);
 
                         switch (gLanguage) {
                         case 0:
@@ -562,7 +556,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
                             break;
                         }
 
-                        LoadBgMap(1, gUnkEu_09543324, 0x800);
+                        LoadBgMap(1, gUnk_096102B8, 0x800);
 #else
                         LoadBgTiles(1, gUnk_09508098, 0x2020);
                         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
