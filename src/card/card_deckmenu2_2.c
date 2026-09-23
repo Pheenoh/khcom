@@ -46,13 +46,7 @@
 #ifdef VERSION_EU
 extern void* gUnkEu_09F7434C[];
 extern u16 gUnkEu_090D1DF4[];
-extern u8 gUnkEu_094DCCE4[];
-extern u8 gUnkEu_094E20E4[];
-extern u8 gUnkEu_094E74E4[];
-extern u8 gUnkEu_094E58E4[];
-extern u8 gUnkEu_094E3CE4[];
 extern u8* gUnkEu_09F74374[];
-extern u8 gUnkEu_09534324[];
 extern s16 gUnkEu_090D1DFE[];
 extern s16 gUnkEu_090D1E04[];
 
@@ -210,7 +204,7 @@ void func_080A5C60(u8* work, u16 card) {
 
 u8 func_080A5C9C(u8* work, void* a) {
 #ifdef VERSION_EU
-    LoadBgTiles(3, gUnkEu_094DCCE4, 0x5400);
+    LoadBgTiles(3, gUnk_09402F78, 0x5400);
 
     switch (gLanguage) {
     case 1:
@@ -256,7 +250,7 @@ u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a) {
     LoadPalette(gUnk_09614118 + 0x1E0, pal, 32);
 #ifdef VERSION_EU
     RequestDma3Copy(gUnkEu_09F74374[gLanguage] + 0x20, base + 0x2D80, 0x1E0);
-    LoadBgMap(0, gUnkEu_09534324, 0x800);
+    LoadBgMap(0, gUnk_095172B8, 0x800);
     LoadBgMap(1, gUnk_09516AB8, 0x800);
 #else
     RequestDma3Copy(gUnk_0940FC58, base + 0x1A0, 0x1E0);

@@ -59,9 +59,6 @@ extern u16 gUnkEu_090CE9E0[];
 extern void* gUnkEu_09F6FDB4[];
 extern u16 gUnkEu_090CE9EA[];
 extern void* gUnkEu_09F6FDDC[];
-extern u8 gUnkEu_09538324[];
-extern u8 gUnkEu_09538B24[];
-extern u8 gUnkEu_09539324[];
 extern u16 gUnkEu_090CE9F4[];
 
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -116,8 +113,6 @@ void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
 u8 func_080864A4(u8* work, void* a);
 #ifdef VERSION_EU
-extern u8 gUnkEu_094E04E4[];
-extern u8 gUnkEu_09533324[];
 extern u8* gUnkEu_09F6FE04[];
 #endif
 void func_0808CC58(u16 a, u8 b);
@@ -1221,7 +1216,7 @@ u8 func_080864A4(u8* work, void* a) {
         break;
     case 2:
 #ifdef VERSION_EU
-        LoadBgMap(3, gUnkEu_09533324, 0x800);
+        LoadBgMap(3, gUnk_095132B8, 0x800);
 #else
         LoadBgMap(3, gUnk_09516AB8, 0x800);
 #endif
@@ -1292,15 +1287,9 @@ u8 func_08086650(UnkStruct_0808DB04* w, void* a) {
     FadeStartIn(0, 16);
     switch (w->unk_8D0) {
     case 0:
-#ifdef VERSION_EU
-        LoadBgMap(0, gUnkEu_09538324, 0x180);
-        LoadBgMap(1, gUnkEu_09538B24, 0x180);
-        LoadBgMap(2, gUnkEu_09539324, 0x180);
-#else
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
-#endif
         w->unk_8D0++;
         break;
     case 1:
@@ -6513,7 +6502,6 @@ void func_jp_0808F240(UnkStruct_0808F0C0* w) {
     }
 }
 void func_jp_0808F240(UnkStruct_0808F0C0* w);
-extern u8 gUnk_0951C2B8[];
 extern u8 gUnkJp_094D4594[];
 extern u8 gUnkJp_094D4D94[];
 void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
@@ -6605,7 +6593,6 @@ void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
     }
 }
 void func_eu_0808EC78(UnkStruct_0808F0C0* w);
-extern u8 gUnk_0951C2B8[];
 extern u8 gUnkEu_0953C324[];
 void func_eu_0808EE08(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
@@ -6621,10 +6608,6 @@ void func_eu_0808EE08(UnkStruct_0808F0C0* w) {
 #endif
 extern u8 gUnk_096145B8[];
 extern u8 gUnk_090A5F1E[];
-extern u8 gUnk_09417438[];
-extern u8 gUnk_09418438[];
-extern u8 gUnk_09419438[];
-extern u8 gUnk_0951C2B8[];
 extern u8 gUnk_09614518[];
 extern s16 gUnk_09035808[];
 extern s16 gUnk_09035874[];

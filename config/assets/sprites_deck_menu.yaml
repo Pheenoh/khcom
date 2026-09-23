@@ -20,6 +20,12 @@ objects:
   - name: sprites_deck_menu_frames.s
     start: 0x090A44E4
     end: 0x090A6A20
+  - name: sprites_deck_menu_tiles.s
+    start: 0x09402F78
+    end: 0x0941A418
+  - name: sprites_deck_menu_maps.s
+    start: 0x09512AB8
+    end: 0x0951CAB8
   jp:
   - name: sprites_deck_menu.c
     start: 0x09EC23F4
@@ -27,6 +33,15 @@ objects:
   - name: sprites_deck_menu_frames.s
     start: 0x0905FA0C
     end: 0x09061F48
+  - name: sprites_deck_menu_tiles_1.s
+    start: 0x093BE294
+    end: 0x093D1694
+  - name: sprites_deck_menu_tiles_2.s
+    start: 0x093D2694
+    end: 0x093D2754
+  - name: sprites_deck_menu_maps.s
+    start: 0x094CAD94
+    end: 0x094D4594
   eu:
   - name: sprites_deck_menu.c
     start: 0x09F77128
@@ -34,6 +49,12 @@ objects:
   - name: sprites_deck_menu_frames.s
     start: 0x091933E0
     end: 0x0919728C
+  - name: sprites_deck_menu_tiles.s
+    start: 0x094DCCE4
+    end: 0x094F03A4
+  - name: sprites_deck_menu_maps.s
+    start: 0x09532B24
+    end: 0x0953C324
 entries:
 - name: gUnk_09EEB008
   record: SpriteTable
@@ -1121,3 +1142,449 @@ entries:
   eu:
     address: 0x091965CA
     size: 3264
+- name: gUnk_09402F78
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09402F78
+    size: 16384
+  jp:
+    address: 0x093BE294
+    size: 16384
+  eu:
+    address: 0x094DCCE4
+    size: 14336
+- name: gUnk_09406F78
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09406F78
+    size: 34880
+  jp:
+    address: 0x093C2294
+    size: 34880
+  eu:
+    address: 0x094E0CE4
+    size: 5120
+- name: gUnk_0940F7B8
+  format: tiles4
+  us:
+    address: 0x0940F7B8
+    size: 352
+  jp:
+    address: 0x093CAAD4
+    size: 352
+  eu:
+    address: 0x094EA8E4
+    size: 352
+- name: gUnk_0940F918
+  format: tiles4
+  us:
+    address: 0x0940F918
+    size: 32
+  jp:
+    address: 0x093CAC34
+    size: 32
+  eu:
+    address: 0x094EAA44
+    size: 32
+- name: gUnk_0940F938
+  format: tiles4
+  us:
+    address: 0x0940F938
+    size: 352
+  jp:
+    address: 0x093CAC54
+    size: 352
+  eu:
+    address: 0x094EAA64
+    size: 352
+- name: gUnk_0940FA98
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0940FA98
+    size: 64
+  jp:
+    address: 0x093CADB4
+    size: 64
+  eu:
+    address: 0x094EABC4
+    size: 64
+- name: gUnk_0940FAD8
+  format: tiles4
+  us:
+    address: 0x0940FAD8
+    size: 384
+  jp:
+    address: 0x093CADF4
+    size: 384
+  eu:
+    address: 0x094EAC04
+    size: 352
+- name: gUnk_0940FC58
+  format: tiles4
+  width: 32
+  us:
+    address: 0x0940FC58
+    size: 1024
+  jp:
+    address: 0x093CAF74
+    size: 1024
+  eu:
+    address: 0x094EAD84
+    size: 1024
+- name: gUnk_09410058
+  format: tiles4
+  us:
+    address: 0x09410058
+    size: 29472
+  jp:
+    address: 0x093CB374
+    size: 800
+- name: gUnk_09417438
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09417438
+    size: 4096
+  jp:
+    address: 0x093CB694
+    size: 8192
+  eu:
+    address: 0x094EB564
+    size: 4096
+- name: gUnk_09418438
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09418438
+    size: 4096
+  jp:
+    address: 0x093CD694
+    size: 8192
+  eu:
+    address: 0x094EC564
+    size: 4096
+- name: gUnk_09419438
+  format: tiles4
+  us:
+    address: 0x09419438
+    size: 4064
+  jp:
+    address: 0x093CF694
+    size: 8192
+  eu:
+    address: 0x094ED564
+    size: 11840
+- name: gUnk_09417378
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09417378
+    size: 192
+  jp:
+    address: 0x093D2694
+    size: 192
+  eu:
+    address: 0x094EB4A4
+    size: 192
+- name: gUnk_09512AB8
+  format: tilemap
+  us:
+    address: 0x09512AB8
+    size: 2048
+  jp:
+    address: 0x094CAD94
+    size: 2048
+  eu:
+    address: 0x09532B24
+    size: 2048
+- name: gUnk_095132B8
+  format: tilemap
+  us:
+    address: 0x095132B8
+    size: 4096
+  jp:
+    address: 0x094CB594
+    size: 2048
+  eu:
+    address: 0x09533324
+    size: 4096
+- name: gUnk_095142B8
+  format: tilemap
+  us:
+    address: 0x095142B8
+    size: 2048
+  jp:
+    address: 0x094CBD94
+    size: 2048
+  eu:
+    address: 0x09535324
+    size: 2048
+- name: gUnk_09514AB8
+  format: tilemap
+  us:
+    address: 0x09514AB8
+    size: 2048
+  jp:
+    address: 0x094CC594
+    size: 2048
+  eu:
+    address: 0x09536B24
+    size: 2048
+- name: gUnk_095152B8
+  format: tilemap
+  us:
+    address: 0x095152B8
+    size: 20
+  jp:
+    address: 0x094CCD94
+    size: 20
+  eu:
+    address: 0x09537B24
+    size: 20
+- name: gUnk_095152CC
+  format: tilemap
+  us:
+    address: 0x095152CC
+    size: 20
+  jp:
+    address: 0x094CCDA8
+    size: 20
+  eu:
+    address: 0x09537B38
+    size: 20
+- name: gUnk_095152E0
+  format: tilemap
+  us:
+    address: 0x095152E0
+    size: 88
+  jp:
+    address: 0x094CCDBC
+    size: 88
+  eu:
+    address: 0x09537B4C
+    size: 88
+- name: gUnk_09515338
+  format: tilemap
+  us:
+    address: 0x09515338
+    size: 20
+  jp:
+    address: 0x094CCE14
+    size: 20
+  eu:
+    address: 0x09537BA4
+    size: 20
+- name: gUnk_0951534C
+  format: tilemap
+  us:
+    address: 0x0951534C
+    size: 1900
+  jp:
+    address: 0x094CCE28
+    size: 1900
+  eu:
+    address: 0x09537BB8
+    size: 1900
+- name: gUnk_09515AB8
+  format: tilemap
+  us:
+    address: 0x09515AB8
+    size: 2048
+  jp:
+    address: 0x094CD594
+    size: 2048
+- name: gUnk_095162B8
+  format: tilemap
+  us:
+    address: 0x095162B8
+    size: 2048
+  jp:
+    address: 0x094CDD94
+    size: 2048
+  eu:
+    address: 0x0953A324
+    size: 2048
+- name: gUnk_09516AB8
+  format: tilemap
+  us:
+    address: 0x09516AB8
+    size: 2048
+  jp:
+    address: 0x094CE594
+    size: 2048
+  eu:
+    address: 0x0953AB24
+    size: 4096
+- name: gUnk_095172B8
+  format: tilemap
+  us:
+    address: 0x095172B8
+    size: 2048
+  jp:
+    address: 0x094CED94
+    size: 2048
+  eu:
+    address: 0x09534324
+    size: 2048
+- name: gUnk_09517AB8
+  format: tilemap
+  us:
+    address: 0x09517AB8
+    size: 2048
+  jp:
+    address: 0x094CF594
+    size: 2048
+  eu:
+    address: 0x09534B24
+    size: 2048
+- name: gUnk_095182B8
+  format: tilemap
+  us:
+    address: 0x095182B8
+    size: 2048
+  jp:
+    address: 0x094CFD94
+    size: 2048
+  eu:
+    address: 0x09535B24
+    size: 2048
+- name: gUnk_09518AB8
+  format: tilemap
+  us:
+    address: 0x09518AB8
+    size: 2048
+  jp:
+    address: 0x094D0594
+    size: 2048
+  eu:
+    address: 0x09536324
+    size: 2048
+- name: gUnk_095192B8
+  format: tilemap
+  us:
+    address: 0x095192B8
+    size: 2048
+  jp:
+    address: 0x094D0D94
+    size: 2048
+  eu:
+    address: 0x09537324
+    size: 2048
+- name: gUnk_09519AB8
+  format: tilemap
+  us:
+    address: 0x09519AB8
+    size: 2048
+  jp:
+    address: 0x094D1594
+    size: 2048
+  eu:
+    address: 0x09538324
+    size: 2048
+- name: gUnk_0951A2B8
+  format: tilemap
+  us:
+    address: 0x0951A2B8
+    size: 2048
+  jp:
+    address: 0x094D1D94
+    size: 2048
+  eu:
+    address: 0x09538B24
+    size: 2048
+- name: gUnk_0951AAB8
+  format: tilemap
+  us:
+    address: 0x0951AAB8
+    size: 2048
+  jp:
+    address: 0x094D2594
+    size: 2048
+  eu:
+    address: 0x09539324
+    size: 2048
+- name: gUnk_0951B2B8
+  format: tilemap
+  us:
+    address: 0x0951B2B8
+    size: 4096
+  jp:
+    address: 0x094D2D94
+    size: 4096
+  eu:
+    address: 0x09539B24
+    size: 2048
+- name: gUnk_0951C2B8
+  format: tilemap
+  us:
+    address: 0x0951C2B8
+    size: 2048
+  jp:
+    address: 0x094D3D94
+    size: 2048
+  eu:
+    address: 0x0953BB24
+    size: 2048
+- name: gUnkEu_094E04E4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094E04E4
+    size: 2048
+- name: gUnkEu_094E20E4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094E20E4
+    size: 7168
+- name: gUnkEu_094E3CE4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094E3CE4
+    size: 7168
+- name: gUnkEu_094E58E4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094E58E4
+    size: 7168
+- name: gUnkEu_094E74E4
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x094E74E4
+    size: 7168
+- name: gUnkEu_094E90E4
+  format: raw
+  eu:
+    address: 0x094E90E4
+    size: 1536
+- name: gUnkEu_094E96E4
+  format: raw
+  eu:
+    address: 0x094E96E4
+    size: 1536
+- name: gUnkEu_094E9CE4
+  format: raw
+  eu:
+    address: 0x094E9CE4
+    size: 1536
+- name: gUnkEu_094EA2E4
+  format: raw
+  eu:
+    address: 0x094EA2E4
+    size: 1536
+- name: gUnkEu_094EAD64
+  format: raw
+  eu:
+    address: 0x094EAD64
+    size: 32
+- name: gUnkEu_094EB184
+  format: raw
+  eu:
+    address: 0x094EB184
+    size: 800
