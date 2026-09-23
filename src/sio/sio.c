@@ -120,8 +120,8 @@ void SioInit(void) {
     REG_IE &= ~(INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
     REG_IME = ime;
     REG_RCNT = 0;
-    REG_SIOCNT = 0x2000;
-    REG_SIOCNT |= 0x4003;
+    REG_SIOCNT = SIO_MULTI_MODE;
+    REG_SIOCNT |= (SIO_INTR_ENABLE | SIO_115200_BPS);
     *p = REG_IME;
     SetVBlankCallback(VBlankIntrSio);
     SetSerialCallback(SioSerialIntr);
@@ -291,7 +291,7 @@ u32 func_0800702C(u8* a, u16* b, u16 (*c)[2]) {
 }
 
 void func_080070B4(void) {
-    if (((*(vu32*)REG_ADDR_SIOCNT) & 0xC) == 8 && gSioWork.playerId == 0) {
+    if (((*(vu32*)REG_ADDR_SIOCNT) & (SIO_MULTI_SI | SIO_MULTI_SD)) == SIO_MULTI_SD && gSioWork.playerId == 0) {
         gSioWork.unk_00 = 8;
     } else {
         gSioWork.unk_00 = 0;
@@ -423,7 +423,7 @@ void SioSerialIntr(void) {
 
     switch (gSioWork.unk_01) {
     case 4:
-        if (cnt & 0x40) {
+        if (cnt & SIO_ERROR) {
             gSioWork.unk_12 = 1;
         }
         func_08007550();
@@ -450,7 +450,7 @@ void SioSerialIntr(void) {
 }
 
 void SioStartTransfer(void) {
-    REG_SIOCNT |= 0x80;
+    REG_SIOCNT |= SIO_START;
 }
 
 u8 func_08007454(void) {

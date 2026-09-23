@@ -9,21 +9,21 @@ static u16 verifySramFast_Work[80];
 static u16 readSramFast_Work[64];
 
 void ReadSramFast_Core(const u8* src, u8* dest, u32 size) {
-    REG_WAITCNT = (REG_WAITCNT & ~3) | 3;
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
 
     while (--size != -1)
         *dest++ = *src++;
 }
 
 void WriteSramFast(const u8* src, u8* dest, u32 size) {
-    REG_WAITCNT = (REG_WAITCNT & ~3) | 3;
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
 
     while (--size != -1)
         *dest++ = *src++;
 }
 
 u32 VerifySramFast_Core(const u8* src, u8* dest, u32 size) {
-    REG_WAITCNT = (REG_WAITCNT & ~3) | 3;
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
 
     while (--size != -1) {
         if (*dest++ != *src++)
@@ -61,7 +61,7 @@ void SetSramFastFunc(void) {
 
     VerifySramFast = (void*)((u32)verifySramFast_Work + 1);
 
-    REG_WAITCNT = (REG_WAITCNT & ~3) | 3;
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
 }
 
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size) {

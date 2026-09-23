@@ -39,13 +39,13 @@ void SndStreamInit(u32 rate, u32 channels) {
     }
 
     if (channels == 1) {
-        REG_SOUNDCNT_H = 0x0B04;
+        REG_SOUNDCNT_H = (SOUND_A_MIX_FULL | SOUND_A_RIGHT_OUTPUT | SOUND_A_LEFT_OUTPUT | SOUND_A_FIFO_RESET);
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
         REG_DMA1SAD = (u32)gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
     } else {
-        REG_SOUNDCNT_H = 0xA90C;
+        REG_SOUNDCNT_H = (SOUND_A_MIX_FULL | SOUND_B_MIX_FULL | SOUND_A_RIGHT_OUTPUT | SOUND_A_FIFO_RESET | SOUND_B_LEFT_OUTPUT | SOUND_B_FIFO_RESET);
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
         REG_DMA1SAD = (u32)gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;

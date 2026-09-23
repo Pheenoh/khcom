@@ -47,7 +47,7 @@ u8 PcmPlaybackInit(u32 sampleRate) {
     if (!LookupPcmPlaybackConfig(sampleRate, &timerReload, (u32*)&gPcmSamplesPerBuffer)) {
         return 0;
     }
-    REG_SOUNDCNT_H = 0x0B06;
+    REG_SOUNDCNT_H = (SOUND_CGB_MIX_FULL | SOUND_A_MIX_FULL | SOUND_A_RIGHT_OUTPUT | SOUND_A_LEFT_OUTPUT | SOUND_A_FIFO_RESET);
     REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
     REG_DMA1DAD = (s32)&REG_FIFO_A;
     REG_TM0CNT_L = timerReload;
@@ -69,7 +69,7 @@ void PcmPlaybackStart(void) {
 void PcmPlaybackStop(void) {
     REG_DMA1CNT = 0;
     REG_TM0CNT_H = 0;
-    REG_SOUNDCNT_H |= 0x800;
+    REG_SOUNDCNT_H |= SOUND_A_FIFO_RESET;
 }
 
 void PcmPlaybackUpdate(void) {

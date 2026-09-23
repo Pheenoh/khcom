@@ -100,7 +100,7 @@ void ClearSystemMemory(void) {
     u32 c;
 
     RegisterRamReset(0xFF);
-    REG_WAITCNT = 0x45B6;
+    REG_WAITCNT = (WAITCNT_SRAM_2 | WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 | WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 | WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 | WAITCNT_PREFETCH_ENABLE);
     a = 0;
     CpuSet(&a, (void*)0x02000000, 0x05010000);
     b = 0;
@@ -126,17 +126,17 @@ void InitSystem(void) {
     u32 zero;
 
     RegisterRamReset(0xFF);
-    REG_WAITCNT = 0x45B6;
+    REG_WAITCNT = (WAITCNT_SRAM_2 | WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1 | WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1 | WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1 | WAITCNT_PREFETCH_ENABLE);
     zero = 0;
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)&zero;
     dma[1] = 0x02000000;
-    dma[2] = 0x85010000;
+    dma[2] = ((DMA_ENABLE | DMA_32BIT | DMA_SRC_FIXED) << 16) | 0x10000;
     dma[2];
     zero = 0;
     dma[0] = (vu32)&zero;
     dma[1] = 0x03000000;
-    dma[2] = 0x85001F80;
+    dma[2] = ((DMA_ENABLE | DMA_32BIT | DMA_SRC_FIXED) << 16) | 0x1F80;
     dma[2];
 #endif
     gVBlankEndVCount = 0;
@@ -151,7 +151,7 @@ void InitSystem(void) {
 #endif
     dma[0] = (vu32)IrqHandler;
     dma[1] = (vu32)gIntrHandler;
-    dma[2] = 0x84000200;
+    dma[2] = ((DMA_ENABLE | DMA_32BIT) << 16) | 0x200;
     dma[2];
     INTR_VECTOR = gIntrHandler;
     REG_IE = INTR_FLAG_GAMEPAK;

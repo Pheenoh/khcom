@@ -1670,7 +1670,7 @@ void FlushDma3Queue(void) {
         vu32* dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)req[i].src;
         dma[1] = (u32)req[i].dst;
-        dma[2] = (req[i].size / 2) | 0x80000000;
+        dma[2] = (req[i].size / 2) | (DMA_ENABLE << 16);
         dma[2];
         gDma3Requests->transferredBytes += req[i].size;
     }
@@ -1724,7 +1724,7 @@ void FlushDma3Queue(void) {
         dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)&zero;
         dma[1] = (u32)pend[i].dst;
-        dma[2] = (pend[i].size >> 1) | 0x81000000;
+        dma[2] = (pend[i].size >> 1) | ((DMA_ENABLE | DMA_SRC_FIXED) << 16);
         dma[2];
         gDma3Requests->transferredBytes += pend[i].size;
     }
@@ -1934,9 +1934,9 @@ void SetBgMode0(void) {
 
     gDispCnt = gDispCnt & ~DISPCNT_MODE_MASK;
     gBg0Cnt = 0;
-    gBg1Cnt = 1;
-    gBg2Cnt = 2;
-    gBg3Cnt = 3;
+    gBg1Cnt = BGCNT_PRIORITY(1);
+    gBg2Cnt = BGCNT_PRIORITY(2);
+    gBg3Cnt = BGCNT_PRIORITY(3);
     SetupBg(0, 0, 7, 0);
     SetupBg(1, 1, 15, 4);
     SetupBg(2, 2, 23, 8);
@@ -1960,8 +1960,8 @@ void SetBgMode1(void) {
 
     gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
     gBg0Cnt = 0;
-    gBg1Cnt = 1;
-    gBg2Cnt = 0x82;
+    gBg1Cnt = BGCNT_PRIORITY(1);
+    gBg2Cnt = (BGCNT_PRIORITY(2) | BGCNT_256COLOR);
     SetupBg(0, 0, 7, 0);
     SetupBg(1, 1, 15, 0);
     SetupBg(2, 2, 23, 0);
@@ -1982,8 +1982,8 @@ void SetBgMode2(void) {
     s32 i;
 
     gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_2;
-    gBg2Cnt = 0x6080;
-    gBg3Cnt = 0x4081;
+    gBg2Cnt = (BGCNT_256COLOR | BGCNT_WRAP | BGCNT_AFF256x256);
+    gBg3Cnt = (BGCNT_PRIORITY(1) | BGCNT_256COLOR | BGCNT_AFF256x256);
     SetupBg(2, 0, 15, 0);
     SetupBg(3, 2, 31, 0);
     SetBgAffine(2, 0, 0x100, 0x100, 0, 0);

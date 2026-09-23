@@ -9034,12 +9034,12 @@ void task_bos_lst_2(BosLstWork* work) {
         dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)gLstAnimDefs[anim].unk_00;
         dma[1] = (u32)work->unk_8A4;
-        dma[2] = 0x80000400;
+        dma[2] = (DMA_ENABLE << 16) | 0x400;
         dma[2];
         src = gUnk_09A4D194[n][1];
         dma[0] = (u32)src;
         dma[1] = (u32)work->unk_8A4;
-        dma[2] = 0x80000140;
+        dma[2] = (DMA_ENABLE << 16) | 0x140;
         dma[2];
         if (work->unk_012 > 0) {
             dma[0] = (u32)(src + 160);
@@ -9048,7 +9048,7 @@ void task_bos_lst_2(BosLstWork* work) {
             dma[0] = (u32)(src + 169);
             dma[1] = (u32)work->unk_B48;
         }
-        dma[2] = 0x8000000E;
+        dma[2] = (DMA_ENABLE << 16) | 0xE;
         dma[2];
         if (sy < 0) {
             fill = 0;

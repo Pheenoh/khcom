@@ -2370,7 +2370,7 @@ void func_080FDB1C(s16 model, s16 n) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)zp;
     dma[1] = (vu32)gUnk_020350BC;
-    dma[2] = 0x81000360;
+    dma[2] = ((DMA_ENABLE | DMA_SRC_FIXED) << 16) | 0x360;
     dma[2];
 
     if (n > 0) {
@@ -2383,7 +2383,7 @@ void func_080FDB1C(s16 model, s16 n) {
         dma[0] = (vu32)src;
         dst = (u8*)gUnk_020350BC + (9 - n) * 32;
         dma[1] = (vu32)dst;
-        ctrl = (n << 4) | 0x80000000;
+        ctrl = (n << 4) | (DMA_ENABLE << 16);
         dma[2] = ctrl;
         dma[2];
         src2 = src + (18 - n) * 32;

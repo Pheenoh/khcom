@@ -563,7 +563,7 @@ void mode_worldwarp_0(void) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gUnk_09A3641C;
     dma[1] = (u32)gUnk_0203550C;
-    dma[2] = 0x80000280;
+    dma[2] = (DMA_ENABLE << 16) | 0x280;
     dma[2];
 
     for (i = 0; i <= 12; i++) {

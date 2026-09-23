@@ -235,7 +235,7 @@ void MPlayExtender(CgbChannel* cgbChans) {
     SoundInfo* soundInfo;
     u32 ident;
 
-    REG_SOUNDCNT_X = 0x8F;
+    REG_SOUNDCNT_X = (SOUND_1_ON | SOUND_2_ON | SOUND_3_ON | SOUND_4_ON | SOUND_MASTER_ENABLE);
     REG_SOUNDCNT_L = 0;
     REG_NR12 = 0x8;
     REG_NR22 = 0x8;
@@ -310,8 +310,8 @@ void SoundInit(SoundInfo* soundInfo) {
 
     REG_DMA1CNT_H = DMA_32BIT;
     REG_DMA2CNT_H = DMA_32BIT;
-    REG_SOUNDCNT_X = 0x8F;
-    REG_SOUNDCNT_H = 0xA90E;
+    REG_SOUNDCNT_X = (SOUND_1_ON | SOUND_2_ON | SOUND_3_ON | SOUND_4_ON | SOUND_MASTER_ENABLE);
+    REG_SOUNDCNT_H = (SOUND_ALL_MIX_FULL | SOUND_A_RIGHT_OUTPUT | SOUND_A_FIFO_RESET | SOUND_B_LEFT_OUTPUT | SOUND_B_FIFO_RESET);
     REG_SOUNDBIAS_H = (REG_SOUNDBIAS_H & 0x3F) | 0x40;
 
     REG_DMA1SAD = (s32)soundInfo->pcmBuffer;

@@ -476,7 +476,7 @@ void func_08102984(s16 a) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)&zero;
     dma[1] = (u32)gUnk_02035C00;
-    dma[2] = 0x81000280;
+    dma[2] = ((DMA_ENABLE | DMA_SRC_FIXED) << 16) | 0x280;
     dma[2];
 
     for (j = 0; j < 4; j++) {

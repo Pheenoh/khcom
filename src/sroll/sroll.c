@@ -1730,8 +1730,8 @@ void ScanlineDmaReset(void) {
     vu16* dma;
 
     dma = (vu16*)REG_ADDR_DMA0;
-    dma[5] &= 0xC5FF;
-    dma[5] &= 0x7FFF;
+    dma[5] &= ~(DMA_START_MASK | DMA_DREQ_ON | DMA_REPEAT);
+    dma[5] &= ~DMA_ENABLE;
     dma[5];
     gUnk_02036028.unk_00 = 0;
     gUnk_02036028.unk_01 = 0;
@@ -1749,8 +1749,8 @@ void ScanlineDmaUpdate(void) {
     u8* src;
 
     dma = (vu16*)REG_ADDR_DMA0;
-    dma[5] &= 0xC5FF;
-    dma[5] &= 0x7FFF;
+    dma[5] &= ~(DMA_START_MASK | DMA_DREQ_ON | DMA_REPEAT);
+    dma[5] &= ~DMA_ENABLE;
     dma[5];
 
     if (gUnk_02036028.unk_00 != 0) {

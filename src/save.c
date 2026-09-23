@@ -704,19 +704,19 @@ void ShowSramErrorScreen(void) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gSramErrorTiles;
     dma[1] = 0x06008000;
-    dma[2] = 0x80002000;
+    dma[2] = (DMA_ENABLE << 16) | 0x2000;
     dma[2];
     dma[0] = (u32)gSramErrorPalette;
     dma[1] = 0x05000000;
-    dma[2] = 0x80000100;
+    dma[2] = (DMA_ENABLE << 16) | 0x100;
     dma[2];
     dma[0] = (u32)gSramErrorTilemap;
     dma[1] = (u32)gSramErrorTilemapBuf;
-    dma[2] = 0x80000280;
+    dma[2] = (DMA_ENABLE << 16) | 0x280;
     dma[2];
     dma[0] = (u32)gSramErrorTilemapBuf;
     dma[1] = 0x06000000;
-    dma[2] = 0x80000400;
+    dma[2] = (DMA_ENABLE << 16) | 0x400;
     dma[2];
     WaitSramErrorInput();
     *ime = 0;
@@ -765,7 +765,7 @@ void WaitSramErrorInput(void) {
             VBlankIntrWait();
             dma[0] = (u32)gSramErrorTilemapBuf;
             dma[1] = 0x06000000;
-            dma[2] = 0x84000200;
+            dma[2] = ((DMA_ENABLE | DMA_32BIT) << 16) | 0x200;
             dma[2];
         } while (i <= 19);
     }

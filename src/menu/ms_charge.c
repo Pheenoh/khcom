@@ -477,14 +477,14 @@ void func_081054D0(MsCard* card) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)(card + 1);
     dma[1] = (u32)card;
-    dma[2] = ((285 - func_08104AEC()) * 26) | 0x80000000;
+    dma[2] = ((285 - func_08104AEC()) * 26) | (DMA_ENABLE << 16);
     dma[2];
     p = &zero;
     *p = 0;
     dma[0] = (u32)p;
     last = &gMsCards[285];
     dma[1] = (u32)last;
-    dma[2] = 0x8100001A;
+    dma[2] = ((DMA_ENABLE | DMA_SRC_FIXED) << 16) | 0x1A;
     dma[2];
     last->unk_00 = 0x8F;
 
@@ -546,7 +546,7 @@ void func_0810563C(void) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)p;
     dma[1] = (u32)gMsCards;
-    dma[2] = 0x81001D0C;
+    dma[2] = ((DMA_ENABLE | DMA_SRC_FIXED) << 16) | 0x1D0C;
     dma[2];
 
     for (n = 0; n <= 285; n++) {

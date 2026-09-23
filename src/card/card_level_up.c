@@ -154,7 +154,7 @@ void Level_Up_0(LevelUpWork* w) {
     if (!(gBtlWork->flags & 4)) {
         w->unk_7C6 = 0;
         gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
-        gBg1Cnt &= 0xFF7F;
+        gBg1Cnt &= ~BGCNT_256COLOR;
         SetBgSize(1, 0);
         SetupBg(2, 0, 12, 0);
         SetupBg(1, 2, 24, 0);

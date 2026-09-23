@@ -506,6 +506,7 @@
 #define DMA_START_VBLANK  0x1000
 #define DMA_START_HBLANK  0x2000
 #define DMA_START_SPECIAL 0x3000
+#define DMA_START_MASK    0x3000
 #define DMA_INTR_ENABLE   0x4000
 #define DMA_ENABLE        0x8000
 
@@ -549,6 +550,12 @@
 #define SOUND_B_TIMER_0       0x0000
 #define SOUND_B_TIMER_1       0x4000
 #define SOUND_B_FIFO_RESET    0x8000
+#define SOUND_ALL_MIX_FULL    0x000E
+
+#define SOUND_1_ON 0x0001
+#define SOUND_2_ON 0x0002
+#define SOUND_3_ON 0x0004
+#define SOUND_4_ON 0x0008
 
 #define SOUND_MASTER_ENABLE   0x0080
 #define SOUND_BIAS_RESOLUTION 0x4000
@@ -567,5 +574,34 @@
 #define INTR_FLAG_DMA3    (1 << 11)
 #define INTR_FLAG_KEYPAD  (1 << 12)
 #define INTR_FLAG_GAMEPAK (1 << 13)
+
+#define WAITCNT_SRAM_4          (0 << 0)
+#define WAITCNT_SRAM_3          (1 << 0)
+#define WAITCNT_SRAM_2          (2 << 0)
+#define WAITCNT_SRAM_8          (3 << 0)
+#define WAITCNT_SRAM_MASK       (3 << 0)
+#define WAITCNT_WS0_N_4         (0 << 2)
+#define WAITCNT_WS0_N_3         (1 << 2)
+#define WAITCNT_WS0_N_2         (2 << 2)
+#define WAITCNT_WS0_N_8         (3 << 2)
+#define WAITCNT_WS0_S_2         (0 << 4)
+#define WAITCNT_WS0_S_1         (1 << 4)
+#define WAITCNT_WS1_N_4         (0 << 5)
+#define WAITCNT_WS1_N_3         (1 << 5)
+#define WAITCNT_WS1_N_2         (2 << 5)
+#define WAITCNT_WS1_N_8         (3 << 5)
+#define WAITCNT_WS1_S_4         (0 << 7)
+#define WAITCNT_WS1_S_1         (1 << 7)
+#define WAITCNT_WS2_N_4         (0 << 8)
+#define WAITCNT_WS2_N_3         (1 << 8)
+#define WAITCNT_WS2_N_2         (2 << 8)
+#define WAITCNT_WS2_N_8         (3 << 8)
+#define WAITCNT_WS2_S_8         (0 << 10)
+#define WAITCNT_WS2_S_1         (1 << 10)
+#define WAITCNT_PHI_OUT_NONE    (0 << 11)
+#define WAITCNT_PHI_OUT_4MHZ    (1 << 11)
+#define WAITCNT_PHI_OUT_8MHZ    (2 << 11)
+#define WAITCNT_PHI_OUT_16MHZ   (3 << 11)
+#define WAITCNT_PREFETCH_ENABLE (1 << 14)
 
 #endif

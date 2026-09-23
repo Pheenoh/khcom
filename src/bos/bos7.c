@@ -209,11 +209,11 @@ void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
     dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)gUnk_09A4D234;
     dma[1] = (vu32)work->unk_0C4;
-    dma[2] = 0x80000340;
+    dma[2] = (DMA_ENABLE << 16) | 0x340;
     dma[2];
     dma[0] = (vu32)gUnk_09A4F2B4;
     dma[1] = (vu32)work->unk_744;
-    dma[2] = 0x800004A0;
+    dma[2] = (DMA_ENABLE << 16) | 0x4A0;
     dma[2];
 
     for (i = 0; i < 0x1A0; i++) {
@@ -393,11 +393,11 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
         switch (work->unk_010) {
         case 0:
             LoadBgMap(0, gUnk_09D4B274, 0x800);
-            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_1084[work->unk_018 & 1], ((DMA_ENABLE | DMA_REPEAT | DMA_START_HBLANK | DMA_DEST_RELOAD) << 16) | 0x1);
             break;
         case 1:
             LoadBgMap(0, gUnk_09D4BA74, 0x800);
-            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_744, 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_744, ((DMA_ENABLE | DMA_REPEAT | DMA_START_HBLANK | DMA_DEST_RELOAD) << 16) | 0x1);
             break;
         case 2:
             work->unk_020 = -(work->unk_014 * 120);
@@ -408,12 +408,12 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
                 LoadBgMap(0, gUnk_09D4CA74, 0x800);
             }
 
-            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_1084[work->unk_018 & 1], ((DMA_ENABLE | DMA_REPEAT | DMA_START_HBLANK | DMA_DEST_RELOAD) << 16) | 0x1);
             break;
         case 3:
             work->unk_01C = 0;
             LoadBgMap(0, gUnk_09D4C274, 0x800);
-            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_0C4, 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_0C4, ((DMA_ENABLE | DMA_REPEAT | DMA_START_HBLANK | DMA_DEST_RELOAD) << 16) | 0x1);
             break;
         default:
             LoadBgMap(0, gUnk_09D4D274, 0x800);
