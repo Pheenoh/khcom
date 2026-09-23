@@ -725,7 +725,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
     enum { mapOffset = 0x7C0, mapSize = 0x800, palOffset = 0x24A0 };
 #endif
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         i = w->unk_7B0;
         q = w->unk_7C8;
 
@@ -752,7 +752,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->unk_7B6 = 8;
     }
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         i = w->unk_7B0;
         q = w->unk_7C8;
 
@@ -779,7 +779,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->unk_7B6 = 8;
     }
 
-    while (GetKeysRepeat() & 1) {
+    while (GetKeysRepeat() & A_BUTTON) {
         w->unk_7BD = 2;
 
         if (gBtlWork->unk_10C == 151) {
@@ -947,7 +947,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
         w->unk_7C1 ^= 1;
     }
     if (w->unk_7A4 == 180) {
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             if (gBtlWork->unk_10C == 151) {
                 SetBgMapBlocks(0, gUnk_09EE790C, 2, 1);
             } else {

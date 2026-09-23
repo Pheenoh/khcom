@@ -2,6 +2,7 @@
 #define GUARD_KEY_H
 
 #include "types.h"
+#include "gba/keys.h"
 
 u16 GetKeysHeld(void);
 u16 GetKeysPressed(void);

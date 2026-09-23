@@ -626,7 +626,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
 
     r = 1;
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         if (w->unk_00 == 1) {
             w->unk_00 = 0;
         } else {

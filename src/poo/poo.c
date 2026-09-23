@@ -346,7 +346,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
 
     switch (gUnk_02034DAC) {
     case 3:
-        if (AnimGetGfxIndex((AnimState*)w->unk_0C) == 8 && gUnk_0203C3EC->y > 0x1BD00 && (GetKeysPressed() & 1) != 0) {
+        if (AnimGetGfxIndex((AnimState*)w->unk_0C) == 8 && gUnk_0203C3EC->y > 0x1BD00 && (GetKeysPressed() & A_BUTTON) != 0) {
             v = 128;
 
             if (func_080D1738() != 0) {
@@ -1532,37 +1532,37 @@ void func_080CA6A8(s32 a, s32 b) {
 }
 
 void func_080CA724(PooSoraWork* w) {
-    if ((GetKeysHeld() & 0x20) != 0 && (GetKeysHeld() & 0x80) != 0) {
+    if ((GetKeysHeld() & DPAD_LEFT) != 0 && (GetKeysHeld() & DPAD_DOWN) != 0) {
         w->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x40) != 0 && (GetKeysHeld() & 0x20) != 0) {
+    } else if ((GetKeysHeld() & DPAD_UP) != 0 && (GetKeysHeld() & DPAD_LEFT) != 0) {
         w->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x40) != 0 && (GetKeysHeld() & 0x10) != 0) {
+    } else if ((GetKeysHeld() & DPAD_UP) != 0 && (GetKeysHeld() & DPAD_RIGHT) != 0) {
         w->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x10) != 0 && (GetKeysHeld() & 0x80) != 0) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) != 0 && (GetKeysHeld() & DPAD_DOWN) != 0) {
         w->unk_14 = 0x53;
-    } else if ((GetKeysHeld() & 0x80) != 0 && GetKeyReleaseTime(0x20) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_DOWN) != 0 && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
         w->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x80) != 0 && GetKeyReleaseTime(0x10) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_DOWN) != 0 && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
         w->unk_14 = 0x53;
-    } else if ((GetKeysHeld() & 0x40) != 0 && GetKeyReleaseTime(0x20) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_UP) != 0 && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
         w->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x40) != 0 && GetKeyReleaseTime(0x10) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_UP) != 0 && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
         w->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x20) != 0 && GetKeyReleaseTime(0x40) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_LEFT) != 0 && GetKeyReleaseTime(DPAD_UP) <= 4) {
         w->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x20) != 0 && GetKeyReleaseTime(0x80) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_LEFT) != 0 && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
         w->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x10) != 0 && GetKeyReleaseTime(0x40) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) != 0 && GetKeyReleaseTime(DPAD_UP) <= 4) {
         w->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x10) != 0 && GetKeyReleaseTime(0x80) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) != 0 && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
         w->unk_14 = 0x53;
-    } else if ((GetKeysHeld() & 0x80) != 0) {
+    } else if ((GetKeysHeld() & DPAD_DOWN) != 0) {
         w->unk_14 = 0x80;
-    } else if ((GetKeysHeld() & 0x40) != 0) {
+    } else if ((GetKeysHeld() & DPAD_UP) != 0) {
         w->unk_14 = 0;
-    } else if ((GetKeysHeld() & 0x20) != 0) {
+    } else if ((GetKeysHeld() & DPAD_LEFT) != 0) {
         w->unk_14 = 0xC0;
-    } else if ((GetKeysHeld() & 0x10) != 0) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) != 0) {
         w->unk_14 = 0x40;
     }
 }
@@ -1830,7 +1830,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         }
         break;
     case 3:
-        if ((GetKeysHeld() & 0xF0) != 0) {
+        if ((GetKeysHeld() & DPAD_ANY) != 0) {
             a->unk_10 += 17;
 
             if (a->unk_10 > 0x200) {
@@ -1855,12 +1855,12 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         w->unk_9C += 66;
 
         if (w->unk_9C < 0) {
-            if ((GetKeysHeld() & 2) == 0) {
+            if ((GetKeysHeld() & B_BUTTON) == 0) {
                 w->unk_9C += 64;
             }
         }
 
-        if ((GetKeysPressed() & 1) != 0) {
+        if ((GetKeysPressed() & A_BUTTON) != 0) {
             w->timer = 0;
             w->unk_94 = 7;
         } else if (w->unk_9C > 0) {
@@ -1871,7 +1871,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         }
         break;
     case 4:
-        if ((GetKeysHeld() & 0xF0) != 0) {
+        if ((GetKeysHeld() & DPAD_ANY) != 0) {
             a->unk_10 += 17;
 
             if (a->unk_10 > 0x200) {
@@ -1895,7 +1895,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         a->pos.z += w->unk_9C;
         w->unk_9C += 66;
 
-        if ((GetKeysPressed() & 1) != 0) {
+        if ((GetKeysPressed() & A_BUTTON) != 0) {
             w->timer = 0;
             w->unk_94 = 7;
         } else if (a->pos.z > z) {
@@ -1914,7 +1914,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
             m4aSongNumStart(((const u16*)w->animDesc)[3]);
         }
         a->unk_10 = 0;
-        k = GetKeysPressed() & 2;
+        k = GetKeysPressed() & B_BUTTON;
 
         if (k != 0) {
             w->timer = 0;
@@ -2159,7 +2159,7 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
         }
 
         if (w->timer > 29) {
-            keys = GetKeysHeld() & 0x100;
+            keys = GetKeysHeld() & R_BUTTON;
             if (keys != 0) {
                 w->timer = 0;
             } else {
@@ -2200,7 +2200,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     if (w->unk_94 <= 1) {
         func_080CA9DC((PooSoraWork*)a);
 
-        if ((GetKeysHeld() & 0xF0) != 0) {
+        if ((GetKeysHeld() & DPAD_ANY) != 0) {
             a->unk_10 += 128;
             func_080CAA50(w, 2, 1);
 
@@ -2229,12 +2229,12 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
         a->pos.x += gSineTable[a->angle] * a->unk_10 >> 8;
         a->pos.y += -gSineTable[a->angle + 0x40] * a->unk_10 >> 8;
 
-        if ((GetKeysPressed() & 2) != 0) {
+        if ((GetKeysPressed() & B_BUTTON) != 0) {
             w->timer = 0;
             w->unk_94 = 2;
             SetTaskUpdate(t, (u32)func_080CAD08);
             m4aSongNumStart(((const u16*)w->animDesc)[2]);
-        } else if ((GetKeysPressed() & 1) != 0) {
+        } else if ((GetKeysPressed() & A_BUTTON) != 0) {
             func_080CAB24(a);
             gUnk_0203C3D8 = 0;
             v = func_080D2EB8();
@@ -2250,7 +2250,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
                 w->unk_94 = 6;
                 SetTaskUpdate(t, (u32)func_080CB1BC);
             }
-        } else if ((GetKeysPressed() & 0x100) != 0) {
+        } else if ((GetKeysPressed() & R_BUTTON) != 0) {
             w->timer = 0;
             w->unk_94 = 8;
             SetTaskUpdate(t, (u32)func_080CB5A8);

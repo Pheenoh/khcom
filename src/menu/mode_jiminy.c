@@ -281,7 +281,7 @@ void mode_jiminy_1(void) {
         p2->unk_00 = gJiminyWork->unk_C72;
         p2->unk_02 = gJiminyWork->unk_C74;
 
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             gJiminyWork->unk_048 = 0;
 
             if (e2->parent == -1) {
@@ -296,7 +296,7 @@ void mode_jiminy_1(void) {
             break;
         }
 
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             u32 ok;
 
             ok = 1;
@@ -968,14 +968,14 @@ void func_0805BAE4(void) {
             break;
         }
         if (gJiminyWork->unk_CC0 <= 0) {
-            if (GetKeysRepeat() & 0x40) {
+            if (GetKeysRepeat() & DPAD_UP) {
                 if (gJiminyWork->unk_C72 > 0) {
                     gJiminyWork->unk_CC0 = 1;
                     gJiminyWork->unk_C72--;
                     m4aSongNumStart(0x79);
                     func_0805A8D0();
                 }
-            } else if (GetKeysRepeat() & 0x80) {
+            } else if (GetKeysRepeat() & DPAD_DOWN) {
                 if (gJiminyWork->unk_C78 < gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
                     gJiminyWork->unk_CC0 = 1;
                     gJiminyWork->unk_C72++;
@@ -987,13 +987,13 @@ void func_0805BAE4(void) {
             gJiminyWork->unk_CC0 = 0;
         }
         if (gJiminyWork->unk_CD2 != gJiminyWork->unk_CD4) {
-            if (GetKeysRepeat() & 0x200) {
+            if (GetKeysRepeat() & L_BUTTON) {
                 gJiminyWork->unk_000 = 8;
                 gJiminyWork->unk_048 = 0;
                 gJiminyWork->unk_CD2 = gJiminyWork->unk_CD6;
                 m4aSongNumStart(0x67);
                 break;
-            } else if (GetKeysRepeat() & 0x100) {
+            } else if (GetKeysRepeat() & R_BUTTON) {
                 gJiminyWork->unk_000 = 8;
                 gJiminyWork->unk_048 = 0;
                 gJiminyWork->unk_CD2 = gJiminyWork->unk_CD4;
@@ -1001,14 +1001,14 @@ void func_0805BAE4(void) {
                 break;
             }
         }
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             gJiminyWork->unk_048 = 0;
             gJiminyWork->unk_000 = 6;
             FadeStartIn(0, 5);
             FadeLock();
             SetModeUpdate(mode_jiminy_1);
             m4aSongNumStart(0x68);
-        } else if (GetKeysPressed() & 8) {
+        } else if (GetKeysPressed() & START_BUTTON) {
             gJiminyWork->unk_048 = 0;
             gJiminyWork->unk_000 = 5;
             m4aSongNumStart(0x68);

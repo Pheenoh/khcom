@@ -492,7 +492,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         return 0;
     }
 
-    if ((GetKeysHeld() & 8) != 0) {
+    if ((GetKeysHeld() & START_BUTTON) != 0) {
         switch (p->unk_2C) {
         case 68:
         case 83:
@@ -1898,53 +1898,53 @@ u8 func_0806FDB0(EventCharaWork* p, void* a) {
 void func_0806FE90(EventCharaWork* p) {
     u16 keys = GetKeysHeld();
 
-    switch (keys & 0xF0) {
-    case 0x40:
-        if (GetKeyReleaseTime(0x20) <= 4) {
+    switch (keys & DPAD_ANY) {
+    case DPAD_UP:
+        if (GetKeyReleaseTime(DPAD_LEFT) <= 4) {
             p->unk_1AB = 211;
-        } else if (GetKeyReleaseTime(0x10) <= 4) {
+        } else if (GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
             p->unk_1AB = 45;
         } else {
             p->unk_1AB = 0;
         }
         break;
-    case 0x80:
-        if (GetKeyReleaseTime(0x20) <= 4) {
+    case DPAD_DOWN:
+        if (GetKeyReleaseTime(DPAD_LEFT) <= 4) {
             p->unk_1AB = 173;
-        } else if (GetKeyReleaseTime(0x10) <= 4) {
+        } else if (GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
             p->unk_1AB = 83;
         } else {
             p->unk_1AB = 128;
         }
         break;
-    case 0x20:
-        if (GetKeyReleaseTime(0x40) <= 4) {
+    case DPAD_LEFT:
+        if (GetKeyReleaseTime(DPAD_UP) <= 4) {
             p->unk_1AB = 211;
-        } else if (GetKeyReleaseTime(0x80) <= 4) {
+        } else if (GetKeyReleaseTime(DPAD_DOWN) <= 4) {
             p->unk_1AB = 173;
         } else {
             p->unk_1AB = 192;
         }
         break;
-    case 0x10:
-        if (GetKeyReleaseTime(0x40) <= 4) {
+    case DPAD_RIGHT:
+        if (GetKeyReleaseTime(DPAD_UP) <= 4) {
             p->unk_1AB = 45;
-        } else if (GetKeyReleaseTime(0x80) <= 4) {
+        } else if (GetKeyReleaseTime(DPAD_DOWN) <= 4) {
             p->unk_1AB = 83;
         } else {
             p->unk_1AB = 64;
         }
         break;
-    case 0x50:
+    case (DPAD_RIGHT | DPAD_UP):
         p->unk_1AB = 45;
         break;
-    case 0x60:
+    case (DPAD_LEFT | DPAD_UP):
         p->unk_1AB = 211;
         break;
-    case 0x90:
+    case (DPAD_RIGHT | DPAD_DOWN):
         p->unk_1AB = 83;
         break;
-    case 0xA0:
+    case (DPAD_LEFT | DPAD_DOWN):
         p->unk_1AB = 173;
         break;
     }
@@ -2001,7 +2001,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
 
     switch (p->unk_1AB) {
     case 0x00:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 5);
         } else {
@@ -2010,7 +2010,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0x80:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 6);
         } else {
@@ -2019,7 +2019,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0xC0:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 8);
         } else {
@@ -2028,7 +2028,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0x40:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 8);
         } else {
@@ -2037,7 +2037,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0xD3:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 9);
         } else {
@@ -2046,7 +2046,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0x2D:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 9);
         } else {
@@ -2055,7 +2055,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0xAD:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 7);
         } else {
@@ -2064,7 +2064,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
         break;
     case 0x53:
-        if ((keys & 1) != 0) {
+        if ((keys & A_BUTTON) != 0) {
             p->unk_1AD = 1;
             func_08070058(p, 7);
         } else {
@@ -2074,7 +2074,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         break;
     }
 
-    if ((keys & 0xF0) != 0) {
+    if ((keys & DPAD_ANY) != 0) {
         v = p->unk_19C + 51;
         p->unk_19C = v;
 
@@ -2125,7 +2125,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
         }
     }
 
-    if ((GetKeysPressed() & 2) != 0) {
+    if ((GetKeysPressed() & B_BUTTON) != 0) {
         p->unk_1AF = 0;
         p->unk_1A8 = 0;
         SetTaskUpdate(a, (void*)func_0807048C);
@@ -2151,7 +2151,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
 u8 func_0807048C(EventCharaWork* p, void* a) {
     u16 keys = GetKeysHeld();
 
-    if ((keys & 0xF0) != 0) {
+    if ((keys & DPAD_ANY) != 0) {
         p->unk_19C += 5;
     }
 
@@ -2231,7 +2231,7 @@ u8 func_0807048C(EventCharaWork* p, void* a) {
         p->unk_18C += 51;
         p->unk_034 += p->unk_18C;
 
-        if ((GetKeysHeld() & 2) == 0) {
+        if ((GetKeysHeld() & B_BUTTON) == 0) {
             p->unk_18C += 64;
         }
 
@@ -2275,7 +2275,7 @@ u8 func_0807048C(EventCharaWork* p, void* a) {
         p->unk_18C += 51;
         p->unk_034 += p->unk_18C;
 
-        if ((GetKeysHeld() & 2) == 0) {
+        if ((GetKeysHeld() & B_BUTTON) == 0) {
             p->unk_18C += 64;
         }
 
@@ -2395,7 +2395,7 @@ u8 func_0807048C(EventCharaWork* p, void* a) {
 
         p->unk_19C = 204 * p->unk_19C >> 8;
 
-        if ((GetKeysPressed() & 2) != 0) {
+        if ((GetKeysPressed() & B_BUTTON) != 0) {
             p->unk_1AF = 1;
             p->unk_18C = -0x540;
         } else if (p->unk_1A8 > 10) {
@@ -3762,7 +3762,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
 
     if (e->unk_00 == 62) {
         p->unk_24 = p->unk_26;
-    } else if (GetKeysPressed() & 1) {
+    } else if (GetKeysPressed() & A_BUTTON) {
         if (p->unk_24 < p->unk_26) {
             p->unk_24 = p->unk_26;
         }
@@ -4233,7 +4233,7 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
 u8 msgwait_1(MsgWaitWork* p, void* a) {
     p->gfx = AnimUpdate(p->unk_DC);
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         AnimStart(p->unk_DC, 3, 1);
 
         if (p->unk_103 == 4) {
@@ -4319,22 +4319,22 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
 }
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     switch (GetKeysPressed()) {
-    case 64:
+    case DPAD_UP:
         if (p->unk_100 != 0) {
             p->unk_100--;
             m4aSongNumStart(101);
         }
         p->unk_102 = 1;
         break;
-    case 128:
+    case DPAD_DOWN:
         if (p->unk_100 == 0) {
             p->unk_100++;
             m4aSongNumStart(101);
         }
         p->unk_102 = 1;
         break;
-    case 1:
-    case 8:
+    case A_BUTTON:
+    case START_BUTTON:
         if (p->unk_100 == 0) {
             gEventState->unk_84 = 1;
         } else {
@@ -4348,7 +4348,7 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
         m4aSongNumStart(102);
         gEventState->unk_7D = 0;
         return 0;
-    case 2:
+    case B_BUTTON:
         gEventState->unk_84 = 0;
 
         if (gEventState->unk_74 == 68) {
@@ -4370,7 +4370,7 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
 u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
     p->gfx = AnimUpdate(p->anim);
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         AnimStart(p->anim, 3, 1);
         p->unk_104 = 1;
         m4aSongNumStart(0x67);

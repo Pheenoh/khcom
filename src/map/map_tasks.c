@@ -1581,15 +1581,15 @@ s32 func_080F10F0(u8* p) {
 }
 
 void func_080F1124(MapDbgWork* w) {
-    if ((GetKeysHeld() & 0x300) == 0x300) {
-        if (GetKeysPressed() & 4) {
+    if ((GetKeysHeld() & (L_BUTTON | R_BUTTON)) == (L_BUTTON | R_BUTTON)) {
+        if (GetKeysPressed() & SELECT_BUTTON) {
             *w->unk_04 = 1;
             func_0801CB0C();
             ModeRequest(&gModeDebflag, 1);
         }
 
 #ifndef VERSION_EU
-        if (GetKeysPressed() & 8) {
+        if (GetKeysPressed() & START_BUTTON) {
             w->unk_00 = 1;
             *w->unk_04 = 1;
             w->update = func_080F117C;
@@ -1611,25 +1611,25 @@ void func_080F117C(MapDbgWork* w) {
 
     d = func_080DEE18(gUnk_0203C590.unk_06);
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         d->unk_04 += step;
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         d->unk_04 -= step;
     }
 
-    if (GetKeysPressed() & 0x20) {
+    if (GetKeysPressed() & DPAD_LEFT) {
         w->unk_0C = w->unk_0C == 7 ? 0 : w->unk_0C + 1;
     }
 
-    if (GetKeysPressed() & 0x10) {
+    if (GetKeysPressed() & DPAD_RIGHT) {
         w->unk_0C = w->unk_0C == 0 ? 7 : w->unk_0C - 1;
     }
 
     w->unk_2C = FormatSmallFontHex(d->unk_04, w->unk_18);
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         if (++gUnk_0203C590.unk_04 > 12) {
             gUnk_0203C590.unk_04 = 0;
         }
@@ -1637,9 +1637,9 @@ void func_080F117C(MapDbgWork* w) {
         w->unk_42 = FormatSmallFontHex(func_080F10F0((u8*)d), w->unk_2E);
     }
 
-    if (GetKeysPressed() & 0x300) {
+    if (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
         w->update = func_080F1274;
-    } else if (GetKeysPressed() & 0xB) {
+    } else if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
         *w->unk_04 = 0;
         w->update = func_080F1124;
     }
@@ -1648,21 +1648,21 @@ void func_080F117C(MapDbgWork* w) {
 void func_080F1274(MapDbgWork* w) {
     UnkStruct_080DEE18* d = func_080DEE18(gUnk_0203C590.unk_06);
 
-    if ((GetKeysRepeat() & 0x40) && w->unk_0D == 0) {
+    if ((GetKeysRepeat() & DPAD_UP) && w->unk_0D == 0) {
         gUnk_0203C590.unk_04 = gUnk_0203C590.unk_04 < 12 ? gUnk_0203C590.unk_04 + 1 : 0;
     }
 
-    if ((GetKeysRepeat() & 0x80) && w->unk_0D == 0) {
+    if ((GetKeysRepeat() & DPAD_DOWN) && w->unk_0D == 0) {
         gUnk_0203C590.unk_04 = gUnk_0203C590.unk_04 != 0 ? gUnk_0203C590.unk_04 - 1 : 12;
     }
 
     w->unk_42 = FormatSmallFontHex(func_080F10F0((u8*)d), w->unk_2E);
 
-    if (GetKeysPressed() & 0x300) {
+    if (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
         w->update = func_080F117C;
     }
 
-    if (GetKeysPressed() & 0xB) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
         *w->unk_04 = 0;
         w->update = func_080F1124;
     }
@@ -3410,7 +3410,7 @@ void Task_MapGmk_Barrel_3(MapGmkGpWork* w) {
 }
 
 void func_080F4140(MapGmk04Work* w) {
-    if ((gUnk_0203C7AC->flags & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
+    if ((gUnk_0203C7AC->flags & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & A_BUTTON)) {
         m4aSongNumStart(0x66);
         gFieldState->flags |= 0x1000;
         TaskCreate(gFieldState->tasks, &gTaskDescMapSave, 0);
@@ -3518,7 +3518,7 @@ void Task_MapGmk04_3(MapGmk04Work* w) {
 }
 
 void func_080F445C(MapGmk05Work* w) {
-    if (w->unk_0C8 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C8 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
@@ -3626,7 +3626,7 @@ void func_080F46FC(MapGmk06Work* w) {
         func_080A411C(&w->tasks, 0, 0x84);
         gFieldState->unk_6C = 30;
         w->update = func_080F47DC;
-    } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
+    } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & A_BUTTON)) {
         m4aSongNumStart(0x66);
         gFieldState->flags |= 0x1000;
         func_0801CB0C();
@@ -4373,7 +4373,7 @@ void Task_MapTalk_3(MapTalkWork* w) {
 }
 
 void func_080F5C60(MapDonaldWork* w) {
-    if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C0 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
@@ -4488,7 +4488,7 @@ void Task_MapDonald_3(MapFrdWork* w) {
 }
 
 void func_080F5F88(MapGoofyWork* w) {
-    if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C0 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
@@ -4603,7 +4603,7 @@ void Task_MapGoofy_3(MapFrdWork* w) {
 }
 
 void func_080F62B0(MapNamineWork* w) {
-    if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C1 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
 
         if (gUnk_0203C590.unk_00 == 27) {
@@ -4728,7 +4728,7 @@ void Task_MapNamine_3(MapNamineWork* w) {
 }
 
 void func_080F65EC(MapNamineWork* w) {
-    if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C1 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
         func_080A411C(&w->unk_0C4, 0, 0x34);
         w->update = func_080F6634;
@@ -4912,7 +4912,7 @@ void Task_MapNiseriku_3(MapMickeyWork* w) {
 }
 
 void func_080F6A60(MapMickeyWork* w) {
-    if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
+    if (w->unk_0C0 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
 
         switch (gUnk_0203C590.unk_00) {

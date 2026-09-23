@@ -2423,7 +2423,7 @@ void func_080FDC04(void) {
 
     switch (gUnk_0203508C) {
     case 0:
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             BgAnimInit(2, 0x8000, 128);
             BgAnimStart(&gUnk_09EDABB8, 112, 126);
             SetBgPriority(2, 1);
@@ -2432,7 +2432,7 @@ void func_080FDC04(void) {
             m4aSongNumStart(206);
             gUnk_020350F0 = 0;
             gUnk_020350C0 = 4;
-        } else if ((GetKeysPressed() & 2) && gUnk_020350EE == 0) {
+        } else if ((GetKeysPressed() & B_BUTTON) && gUnk_020350EE == 0) {
             m4aSongNumStart(104);
             LoadBgMap(0, gUnk_09A310DC, 0x500);
             LoadBgMap(1, gUnk_09A31ADC, 0x500);
@@ -2440,7 +2440,7 @@ void func_080FDC04(void) {
             gUnk_020350C2 = 16;
             gUnk_020350C0 = 5;
         } else if (gUnk_02035090 > 1) {
-            if (GetKeysHeld() & 0x20) {
+            if (GetKeysHeld() & DPAD_LEFT) {
                 j = gUnk_02034FF0 - gUnk_02035090 / 2;
 
                 while (j < 0) {
@@ -2468,7 +2468,7 @@ void func_080FDC04(void) {
                 m4aSongNumStart(205);
                 gUnk_020350B6 = 2;
                 gUnk_0203508C = 2;
-            } else if (GetKeysHeld() & 0x10) {
+            } else if (GetKeysHeld() & DPAD_RIGHT) {
                 j = gUnk_02034FF0 + gUnk_02035090 / 2;
 
                 while (j >= gUnk_02035090) {
@@ -2500,7 +2500,7 @@ void func_080FDC04(void) {
         }
         break;
     case 1:
-        if (GetKeysHeld() & 0x20) {
+        if (GetKeysHeld() & DPAD_LEFT) {
             j = gUnk_02034FF0 - gUnk_02035090 / 2;
 
             while (j < 0) {
@@ -2533,7 +2533,7 @@ void func_080FDC04(void) {
             }
 
             if (gMdSlots[gUnk_02034FF0].unk_08 <= 128) {
-                if (GetKeysHeld() & 0x10) {
+                if (GetKeysHeld() & DPAD_RIGHT) {
                     j = gUnk_02034FF0 + gUnk_02035090 / 2;
 
                     while (j >= gUnk_02035090) {
@@ -2575,7 +2575,7 @@ void func_080FDC04(void) {
         }
         break;
     case 2:
-        if (GetKeysHeld() & 0x10) {
+        if (GetKeysHeld() & DPAD_RIGHT) {
             j = gUnk_02034FF0 + gUnk_02035090 / 2;
 
             while (j >= gUnk_02035090) {
@@ -2608,7 +2608,7 @@ void func_080FDC04(void) {
             }
 
             if ((s8)gMdSlots[gUnk_02034FF0].unk_08 < 0) {
-                if (GetKeysHeld() & 0x20) {
+                if (GetKeysHeld() & DPAD_LEFT) {
                     j = gUnk_02034FF0 - gUnk_02035090 / 2;
 
                     while (j < 0) {

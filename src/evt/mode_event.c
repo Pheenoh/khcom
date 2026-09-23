@@ -90,7 +90,7 @@ void func_0806119C(void) {
 
     if (gUnk_02034A74 == 0) {
         TaskPoolUpdate(&gUnk_02034A60);
-    } else if (GetKeysRepeat() & 4) {
+    } else if (GetKeysRepeat() & SELECT_BUTTON) {
         TaskPoolUpdate(&gUnk_02034A60);
     }
 
@@ -109,7 +109,7 @@ void func_0806119C(void) {
         }
     }
 
-    if (GetKeysPressed() & 8) {
+    if (GetKeysPressed() & START_BUTTON) {
         gUnk_02034A74 = 0;
     }
 }

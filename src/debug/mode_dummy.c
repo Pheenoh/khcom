@@ -107,7 +107,7 @@ void func_0800C064(void) {
 }
 
 void mode_dummy_1(void) {
-    if (!FadeIsActive() && (GetKeysPressed() & 9)) {
+    if (!FadeIsActive() && (GetKeysPressed() & (A_BUTTON | START_BUTTON))) {
         FadeStartOut(0, 0x10);
         SetModeUpdate(func_0800C064);
     }

@@ -240,8 +240,8 @@ void func_080A2CC4(DeckConfirmWork* w, u8* a) {
 }
 
 s32 func_080A2DE4(void) {
-    if ((GetKeysPressed() & 1) || (GetKeysPressed() & 8) ||
-        (GetKeysPressed() & 2)) {
+    if ((GetKeysPressed() & A_BUTTON) || (GetKeysPressed() & START_BUTTON) ||
+        (GetKeysPressed() & B_BUTTON)) {
         return 0;
     }
 
@@ -303,7 +303,7 @@ void Deck_Yes_No_0(DeckConfirmWork* w, u8* a) {
     a[0] = 1;
 }
 s32 func_080A30C0(void) {
-    if ((GetKeysPressed() & 1) || (GetKeysPressed() & 2)) {
+    if ((GetKeysPressed() & A_BUTTON) || (GetKeysPressed() & B_BUTTON)) {
         return 0;
     }
 

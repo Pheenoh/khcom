@@ -227,21 +227,21 @@ s32 Continue_1(ContinueWork* p) {
             p->unk_66 = 0x1010;
         }
 
-        if ((GetKeysPressed() & 0x40) != 0) {
+        if ((GetKeysPressed() & DPAD_UP) != 0) {
             if (p->unk_60 == 1) {
                 p->unk_60 = 0;
                 m4aSongNumStart(101);
             }
         }
 
-        if ((GetKeysPressed() & 0x80) != 0) {
+        if ((GetKeysPressed() & DPAD_DOWN) != 0) {
             if (p->unk_60 == 0) {
                 p->unk_60 = 1;
                 m4aSongNumStart(101);
             }
         }
 
-        if ((GetKeysHeld() & 1) != 0) {
+        if ((GetKeysHeld() & A_BUTTON) != 0) {
             switch (p->unk_60) {
             case 0:
                 FadeStartOut(0, 96);

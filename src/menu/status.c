@@ -160,7 +160,7 @@ void func_080D764C(StatusWork* work) {
             func_080D8474(0);
             m4aSongNumStart(101);
         }
-    } else if (GetKeysPressed() & 4) {
+    } else if (GetKeysPressed() & SELECT_BUTTON) {
         if (work->unk_1A >= 0) {
             work->unk_1A = ~work->unk_14;
             work->unk_1C = 0;
@@ -170,11 +170,11 @@ void func_080D764C(StatusWork* work) {
             gUnk_02034F00 = 0;
 #endif
         }
-    } else if ((GetKeysPressed() & 1) && func_080D8340() && gUnk_02034F00 == 0 && work->unk_1A >= 0) {
+    } else if ((GetKeysPressed() & A_BUTTON) && func_080D8340() && gUnk_02034F00 == 0 && work->unk_1A >= 0) {
         gUnk_02034F00 = 1;
         m4aSongNumStart(102);
     } else if (gUnk_02034F00 != 0) {
-        if ((GetKeysPressed() & 2) || !func_080D8340()) {
+        if ((GetKeysPressed() & B_BUTTON) || !func_080D8340()) {
             gUnk_02034F00 = 0;
             m4aSongNumStart(104);
         }
@@ -288,12 +288,12 @@ u8 task_status_bar_1(StatusBarWork* work) {
         break;
     case 2:
         if (work->unk_24 == 0) {
-            if (GetKeysPressed() & 8) {
+            if (GetKeysPressed() & START_BUTTON) {
                 m4aSongNumStart(0x68);
                 FadeStartOut(0, 16);
                 func_080D7568(0);
                 gUnk_0203C550 = 5;
-            } else if (GetKeysPressed() & 2) {
+            } else if (GetKeysPressed() & B_BUTTON) {
                 if (!func_080D7890()) {
                     m4aSongNumStart(0x68);
                     func_080D78B8(work);

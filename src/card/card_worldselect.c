@@ -464,8 +464,8 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
         keys = 0;
     }
 
-    switch (keys & 0x30F) {
-    case 2:
+    switch (keys & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON | L_BUTTON | R_BUTTON)) {
+    case B_BUTTON:
 #ifdef VERSION_EU
         LoadBgTiles(1, gUnk_09508098, 0x2020);
 
@@ -495,7 +495,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
         SetTaskUpdate(a, (void*)func_080928E4);
         m4aSongNumStart(104);
         break;
-    case 1:
+    case A_BUTTON:
         n = (u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20 + (s16)sel] + 0x20);
 
         if (n == 1) {
@@ -672,8 +672,8 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
         w->unk_29B = 0;
     }
     w->unk_29B++;
-    switch (keys & 0x30F) {
-    case 1:
+    switch (keys & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON | L_BUTTON | R_BUTTON)) {
+    case A_BUTTON:
         if (w->card != 0) {
             if (w->card->unk_20 >= 220) {
                 if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->card->unk_20] + 0x48) == 1) {
@@ -724,7 +724,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
         }
         m4aSongNumStart(105);
         break;
-    case 2:
+    case B_BUTTON:
         if (w->unk_2C1 == 0) {
             for (p = ListPoolFirst(&w->cards); p != 0; p = ListPoolNext(&p->node)) {
                 p->unk_6C &= 0xFFFD;
@@ -962,8 +962,8 @@ void func_08093434(MapSelectWork* work) {
         return;
     }
 
-    switch (GetKeysRepeat() & 0xF0) {
-    case 16:
+    switch (GetKeysRepeat() & DPAD_ANY) {
+    case DPAD_RIGHT:
         p = (MapcardWork*)ListPoolNext(&work->card->node);
 
         if (p != 0 && (p->unk_6C & 1)) {
@@ -975,7 +975,7 @@ void func_08093434(MapSelectWork* work) {
             m4aSongNumStart(121);
         }
         break;
-    case 32:
+    case DPAD_LEFT:
         p = ListPoolPrev(&work->card->node);
 
         if (p != 0 && (p->unk_6C & 1)) {
@@ -987,7 +987,7 @@ void func_08093434(MapSelectWork* work) {
             m4aSongNumStart(121);
         }
         break;
-    case 128:
+    case DPAD_DOWN:
         a = (MapcardWork*)ListPoolFirst(&work->cards);
         b = 0;
         found = 0;
@@ -1044,7 +1044,7 @@ counting:
             b = (MapcardWork*)ListPoolNext(&b->node);
         }
         break;
-    case 64:
+    case DPAD_UP:
         a = (MapcardWork*)ListPoolFirst(&work->cards);
         b = 0;
 
@@ -1598,8 +1598,8 @@ void func_08093F5C(MapSelectWork* w) {
     y0 = w->unk_29D;
     z = 0;
 
-    switch (GetKeysRepeat() & 0xF0) {
-    case 16:
+    switch (GetKeysRepeat() & DPAD_ANY) {
+    case DPAD_RIGHT:
         do {
             if ((s8)w->unk_29C <= 3) {
                 w->unk_29C++;
@@ -1611,7 +1611,7 @@ void func_08093F5C(MapSelectWork* w) {
 
         w->unk_28C = 4;
         break;
-    case 32:
+    case DPAD_LEFT:
         do {
             if ((s8)w->unk_29C > 0) {
                 w->unk_29C--;
@@ -1623,7 +1623,7 @@ void func_08093F5C(MapSelectWork* w) {
 
         w->unk_28C = 4;
         break;
-    case 64:
+    case DPAD_UP:
         w->unk_29D ^= 1;
         c0 = w->unk_29C;
 
@@ -1649,7 +1649,7 @@ void func_08093F5C(MapSelectWork* w) {
 
         w->unk_28C = 4;
         break;
-    case 128:
+    case DPAD_DOWN:
         w->unk_29D ^= 1;
         c0 = w->unk_29C;
 

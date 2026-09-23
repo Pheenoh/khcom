@@ -302,7 +302,7 @@ u8 func_0805AA9C(void) {
     func_0805A514(gJiminyWork->unk_CAE - 24, gJiminyWork->unk_CB0 - 4,
         gJiminyWork->unk_CB2);
 
-    if (GetKeysPressed() & 8) {
+    if (GetKeysPressed() & START_BUTTON) {
         gJiminyWork->unk_048 = 0;
         gJiminyWork->unk_000 = 5;
         m4aSongNumStart(104);

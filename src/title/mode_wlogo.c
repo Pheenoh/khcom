@@ -130,14 +130,14 @@ void mode_wLogo_1(void) {
 #endif
         }
 
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             FadeStartOut(0, 16);
             DisableBg(0);
             DisableBg(1);
             gUnk_02034B58++;
         }
 
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             ModeRequest(&gModeDebug, 0);
         }
         break;

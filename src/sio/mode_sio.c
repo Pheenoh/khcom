@@ -709,9 +709,9 @@ void func_080AFADC(void) {
 #endif
     gUnk_02039B58[1] |= 5;
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         gUnk_02039B58[1] |= 0x1F20;
-    } else if (GetKeysPressed() & 2) {
+    } else if (GetKeysPressed() & B_BUTTON) {
         gUnk_02039B58[1] |= 0xC2F0;
     }
 
@@ -876,7 +876,7 @@ void func_080AFCD4(void) {
         gUnk_02039B58[2] &= 0xFFF0;
     }
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         m4aSongNumStart(102);
 
         switch (gSioBtlOptionWork->unk_000) {
@@ -910,7 +910,7 @@ void func_080AFCD4(void) {
             gSioBtlOptionWork->unk_002 = 7;
             break;
         }
-    } else if (GetKeysPressed() & 2) {
+    } else if (GetKeysPressed() & B_BUTTON) {
         m4aSongNumStart(104);
         gSioBtlOptionWork->unk_1B4 = 0;
         gSioBtlOptionWork->unk_002 = 5;
@@ -973,7 +973,7 @@ void func_080AFCD4(void) {
             }
         }
 
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             m4aSongNumStart(102);
 
             switch (gSioBtlOptionWork->unk_000) {
@@ -999,7 +999,7 @@ void func_080AFCD4(void) {
                 gSioBtlOptionWork->unk_002 = 7;
                 break;
             }
-        } else if (GetKeysPressed() & 2) {
+        } else if (GetKeysPressed() & B_BUTTON) {
             m4aSongNumStart(104);
             gSioBtlOptionWork->unk_1B4 = 0;
             gSioBtlOptionWork->unk_002 = 5;
@@ -1038,7 +1038,7 @@ void func_080AFEFC(void) {
         gUnk_0203AA58[1] = gSioBtlOptionWork->unk_216;
     }
 
-    if (GetKeysPressed() & 3) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON)) {
         m4aSongNumStart(104);
         gSioBtlOptionWork->unk_1E0 = 1;
         gSioBtlOptionWork->unk_1F8 = 0;
@@ -1082,7 +1082,7 @@ void func_080AFEFC(void) {
                 m4aSongNumStart(105);
             }
         }
-        if (GetKeysPressed() & 3) {
+        if (GetKeysPressed() & (A_BUTTON | B_BUTTON)) {
             m4aSongNumStart(104);
             gSioBtlOptionWork->unk_1E0 = 1;
             gSioBtlOptionWork->unk_1F8 = 0;
@@ -1203,9 +1203,9 @@ void func_080B02A4(void) {
 #ifdef VERSION_EU
     if (gUnk_0203A9E4 == 0) {
 #endif
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         gUnk_02039B58[1] = 0xA926;
-    } else if (GetKeysPressed() & 2) {
+    } else if (GetKeysPressed() & B_BUTTON) {
         gUnk_02039B58[1] = 0xDD42;
     }
 
@@ -2640,9 +2640,9 @@ void func_080B2480(void) {
 }
 
 void func_080B2788(void) {
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         gUnk_02039B58[1] = 0xEF01;
-    } else if (GetKeysPressed() & 2) {
+    } else if (GetKeysPressed() & B_BUTTON) {
         gUnk_02039B58[1] = 0x58FA;
     }
 
@@ -2980,25 +2980,25 @@ void func_080B3354(void) {
     k2 = GetKeysPressed();
 
     if (gSioChgCardWork->unk_360 == 1) {
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             if (gSioChgCardWork->unk_360 == 1) {
                 func_080B3A48();
             }
         }
     } else if (gSioPlayerId == 0) {
-        if (k1 & 0xF0) {
+        if (k1 & DPAD_ANY) {
             m4aSongNumStart(101);
         }
 
-        if (k1 & 0x40) {
+        if (k1 & DPAD_UP) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_05;
-        } else if (k1 & 0x80) {
+        } else if (k1 & DPAD_DOWN) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_06;
         }
 
-        if (k1 & 0x20) {
+        if (k1 & DPAD_LEFT) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_07;
-        } else if (k1 & 0x10) {
+        } else if (k1 & DPAD_RIGHT) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_08;
         }
 
@@ -3006,7 +3006,7 @@ void func_080B3354(void) {
             gSioChgCardWork->unk_076 = gSioChgCardWork->unk_078;
         }
 
-        if (k1 & 8) {
+        if (k1 & START_BUTTON) {
             m4aSongNumStart(101);
             gSioChgCardWork->unk_078 = 10;
             gSioChgCardWork->unk_076 = 10;
@@ -3015,7 +3015,7 @@ void func_080B3354(void) {
         gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
         v = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_04;
 
-        if (k1 & 1) {
+        if (k1 & A_BUTTON) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
                     gSioChgCardWork->unk_0A4 = 1;
@@ -3034,7 +3034,7 @@ void func_080B3354(void) {
                 m4aSongNumStart(102);
                 func_080B397C();
             }
-        } else if (k1 & 2) {
+        } else if (k1 & B_BUTTON) {
             if (func_080B3958() == 1) {
                 gUnk_02039B58[1] = 0xA4CA;
             } else if (v == 0) {
@@ -3045,19 +3045,19 @@ void func_080B3354(void) {
             }
         }
     } else {
-        if (k2 & 0xF0) {
+        if (k2 & DPAD_ANY) {
             m4aSongNumStart(101);
         }
 
-        if (k2 & 0x40) {
+        if (k2 & DPAD_UP) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_05;
-        } else if (k2 & 0x80) {
+        } else if (k2 & DPAD_DOWN) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_06;
         }
 
-        if (k2 & 0x20) {
+        if (k2 & DPAD_LEFT) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_07;
-        } else if (k2 & 0x10) {
+        } else if (k2 & DPAD_RIGHT) {
             gSioChgCardWork->unk_078 = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_08;
         }
 
@@ -3065,7 +3065,7 @@ void func_080B3354(void) {
             gSioChgCardWork->unk_076 = gSioChgCardWork->unk_078;
         }
 
-        if (k2 & 8) {
+        if (k2 & START_BUTTON) {
             m4aSongNumStart(101);
             gSioChgCardWork->unk_078 = 11;
             gSioChgCardWork->unk_076 = 11;
@@ -3074,7 +3074,7 @@ void func_080B3354(void) {
         gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
         v = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_04;
 
-        if (k2 & 1) {
+        if (k2 & A_BUTTON) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
                     gSioChgCardWork->unk_0A4 = 1;
@@ -3093,7 +3093,7 @@ void func_080B3354(void) {
                 m4aSongNumStart(102);
                 func_080B397C();
             }
-        } else if (k2 & 2) {
+        } else if (k2 & B_BUTTON) {
             if (func_080B3958() == 1) {
                 gUnk_02039B58[1] = 0xA4CA;
             } else if (v == 1) {

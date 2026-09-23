@@ -301,7 +301,7 @@ void mode_sio_battle_1(void) {
         break;
     case 6:
         if (gUnk_0203A9E8 == 1) {
-            if (GetKeysPressed() & 0x40) {
+            if (GetKeysPressed() & DPAD_UP) {
                 m4aSongNumStart(101);
                 ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00--;
 
@@ -310,7 +310,7 @@ void mode_sio_battle_1(void) {
                 }
             }
 
-            if (GetKeysPressed() & 0x80) {
+            if (GetKeysPressed() & DPAD_DOWN) {
                 m4aSongNumStart(101);
                 ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00++;
 
@@ -319,7 +319,7 @@ void mode_sio_battle_1(void) {
                 }
             }
         } else {
-            if (GetKeysPressed() & 0xC0) {
+            if (GetKeysPressed() & (DPAD_UP | DPAD_DOWN)) {
                 m4aSongNumStart(105);
             }
         }
@@ -353,7 +353,7 @@ void mode_sio_battle_1(void) {
         ((UnkStruct_02034B38*)gUnk_02034B38)->gfx4 = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
 #endif
 
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             m4aSongNumStart(102);
 
             switch (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00) {
@@ -366,7 +366,7 @@ void mode_sio_battle_1(void) {
             }
         }
 
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             m4aSongNumStart(104);
             ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 2;
         }

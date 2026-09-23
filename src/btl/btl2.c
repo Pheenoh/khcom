@@ -922,7 +922,7 @@ void task_btl_pause_0(BtlPauseWork* work) {
 s32 task_btl_pause_1(BtlPauseWork* work) {
     s32 paused;
 
-    if (GetKeysPressed() & 8) {
+    if (GetKeysPressed() & START_BUTTON) {
         if (!(gBtlWork->flags & 0x04000000)) {
             gBtlWork->unk_070 = gBtlWork->unk_070 == 0 ? 1 : 0;
         }

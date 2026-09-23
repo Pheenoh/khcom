@@ -162,8 +162,8 @@ void func_08019350(void) {
 
     if (gBtlWork->flags & 0x10000000000000) {
         if (!(gGameState.flags & 8)) {
-            if (GetKeysHeld() & 1) {
-                if (!(GetKeysHeld() & 0x300)) {
+            if (GetKeysHeld() & A_BUTTON) {
+                if (!(GetKeysHeld() & (L_BUTTON | R_BUTTON))) {
                     func_080763F0();
                 }
             }
@@ -173,7 +173,7 @@ void func_08019350(void) {
     if (gBtlWork->flags & 0x1000000) {
         return;
     }
-    a = ReadKeyChord(0x200, 0x100);
+    a = ReadKeyChord(L_BUTTON, R_BUTTON);
 
     switch (a) {
     case 0x200:
@@ -184,7 +184,7 @@ void func_08019350(void) {
         break;
     }
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         func_08076394();
     }
 
@@ -192,7 +192,7 @@ void func_08019350(void) {
         gBtlWork->unk_0E2 = 0;
         gBtlWork->unk_0E3 = 0;
     } else {
-        if ((GetKeysHeld() & 0x200) && !(GetKeysHeld() & 0x100)) {
+        if ((GetKeysHeld() & L_BUTTON) && !(GetKeysHeld() & R_BUTTON)) {
             if (gBtlWork->unk_0E2 < 255) {
                 gBtlWork->unk_0E2++;
             }
@@ -200,7 +200,7 @@ void func_08019350(void) {
             gBtlWork->unk_0E2 = 0;
         }
 
-        if ((GetKeysHeld() & 0x100) && !(GetKeysHeld() & 0x200)) {
+        if ((GetKeysHeld() & R_BUTTON) && !(GetKeysHeld() & L_BUTTON)) {
             if (gBtlWork->unk_0E3 < 255) {
                 gBtlWork->unk_0E3++;
             }
@@ -242,7 +242,7 @@ void func_08019350(void) {
         }
     }
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         func_08076330();
 
         if (func_0807B3C8() == 3) {
@@ -272,7 +272,7 @@ void func_080195A8(void) {
         return;
     }
 
-    a = ReadKeyChord(0x200, 0x100);
+    a = ReadKeyChord(L_BUTTON, R_BUTTON);
 
     switch (a) {
     case 0x200:
@@ -283,7 +283,7 @@ void func_080195A8(void) {
         break;
     }
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         func_0807E260();
     }
 
@@ -291,7 +291,7 @@ void func_080195A8(void) {
         gBtlWork->unk_0E2 = 0;
         gBtlWork->unk_0E3 = 0;
     } else {
-        if ((GetKeysHeld() & 0x200) && !(GetKeysHeld() & 0x100)) {
+        if ((GetKeysHeld() & L_BUTTON) && !(GetKeysHeld() & R_BUTTON)) {
             if (gBtlWork->unk_0E2 < 255) {
                 gBtlWork->unk_0E2++;
             }
@@ -299,7 +299,7 @@ void func_080195A8(void) {
             gBtlWork->unk_0E2 = 0;
         }
 
-        if ((GetKeysHeld() & 0x100) && !(GetKeysHeld() & 0x200)) {
+        if ((GetKeysHeld() & R_BUTTON) && !(GetKeysHeld() & L_BUTTON)) {
             if (gBtlWork->unk_0E3 < 255) {
                 gBtlWork->unk_0E3++;
             }
@@ -341,7 +341,7 @@ void func_080195A8(void) {
         }
     }
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         func_0807E20C();
 
         if (func_08081838() == 3) {
@@ -361,8 +361,8 @@ void func_080197AC(void) {
     if (!(gBtlWork->flags & 0x2000000000)) {
         if (gBtlWork->flags & 0x10000000000000) {
             if (!(gGameState.flags & 8)) {
-                if (GetKeysHeld() & 1) {
-                    if (!(GetKeysHeld() & 0x300)) {
+                if (GetKeysHeld() & A_BUTTON) {
+                    if (!(GetKeysHeld() & (L_BUTTON | R_BUTTON))) {
                         func_080763F0();
                     }
                 }
@@ -373,7 +373,7 @@ void func_080197AC(void) {
     if (gBtlWork->flags & 0x1000000) {
         return;
     }
-    a = ReadKeyChord(0x200, 0x100);
+    a = ReadKeyChord(L_BUTTON, R_BUTTON);
     pressed = GetKeysPressed();
     held = GetKeysHeld();
 
@@ -389,7 +389,7 @@ void func_080197AC(void) {
     }
 
     if (!(gBtlWork->flags & 0x10000000000)) {
-        if (pressed & 4) {
+        if (pressed & SELECT_BUTTON) {
             func_08076394();
         }
     }
@@ -399,7 +399,7 @@ void func_080197AC(void) {
             gBtlWork->unk_0E2 = 0;
             gBtlWork->unk_0E3 = 0;
         } else {
-            if ((held & 0x200) && !(held & 0x100)) {
+            if ((held & L_BUTTON) && !(held & R_BUTTON)) {
                 if (gBtlWork->unk_0E2 < 255) {
                     gBtlWork->unk_0E2++;
                 }
@@ -407,7 +407,7 @@ void func_080197AC(void) {
                 gBtlWork->unk_0E2 = 0;
             }
 
-            if ((held & 0x100) && !(held & 0x200)) {
+            if ((held & R_BUTTON) && !(held & L_BUTTON)) {
                 if (gBtlWork->unk_0E3 < 255) {
                     gBtlWork->unk_0E3++;
                 }
@@ -455,7 +455,7 @@ void func_080197AC(void) {
     }
 
     if (!(gBtlWork->flags & 0x2000000000)) {
-        if (pressed & 1) {
+        if (pressed & A_BUTTON) {
             func_08076330();
         }
     }

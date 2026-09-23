@@ -657,7 +657,7 @@ const char gUnkEu_0812F604[4] = ": ";
 void mode_chksnd_1(void) {
     u16 keys;
 
-    keys = GetKeysPressed() & 2;
+    keys = GetKeysPressed() & B_BUTTON;
 
     if (keys != 0) {
         ModeRequest(&gModeDebug, 0);
@@ -679,7 +679,7 @@ void mode_chksnd_1(void) {
             gUnk_020348B4 = 0;
         }
 
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             m4aSongNumStart(gChkSndEntries[gUnk_020348B4].songNum);
         }
 
@@ -687,7 +687,7 @@ void mode_chksnd_1(void) {
         func_0809D458(0, 0, 0, gChkSndEntries[gUnk_020348B4].songNum);
         func_0809D2B0(5, 0, 0, gUnkEu_0812F604);
 #else
-        if (GetKeysPressed() & 1) {
+        if (GetKeysPressed() & A_BUTTON) {
             m4aSongNumStart(gChkSndEntries[gUnk_020348B4].songNum);
         }
 

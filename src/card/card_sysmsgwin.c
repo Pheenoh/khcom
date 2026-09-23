@@ -235,7 +235,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
         *(void**)&w->gfx4 = AnimUpdate(w->anim2);
     }
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         m4aSongNumStart(102);
         if (w->gfx2 != 0) {
 #ifdef VERSION_JP
@@ -315,7 +315,7 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
     w->gfx = AnimUpdate(w->anim3);
 
     switch (GetKeysPressed()) {
-    case 0x40:
+    case DPAD_UP:
         if (w->unk_13D != 0) {
             w->unk_13D--;
             m4aSongNumStart(0x65);
@@ -323,7 +323,7 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
 
         ((u8*)&w->unk_13E)[0] = 4;
         break;
-    case 0x80:
+    case DPAD_DOWN:
         if (w->unk_13D == 0) {
             w->unk_13D++;
             m4aSongNumStart(0x65);
@@ -331,8 +331,8 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
 
         ((u8*)&w->unk_13E)[0] = 4;
         break;
-    case 1:
-    case 8:
+    case A_BUTTON:
+    case START_BUTTON:
         m4aSongNumStart(0x66);
 
         if (w->unk_13D == 0) {
@@ -710,7 +710,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     w->gfx = AnimUpdate(w->anim3);
 
     switch (GetKeysPressed()) {
-    case 0x20:
+    case DPAD_LEFT:
         if (w->unk_13D != 0) {
             w->unk_13D--;
             m4aSongNumStart(0x65);
@@ -718,7 +718,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
 
         ((u8*)&w->unk_13E)[0] = 1;
         break;
-    case 0x10:
+    case DPAD_RIGHT:
         if (w->unk_13D == 0) {
             w->unk_13D++;
             m4aSongNumStart(0x65);
@@ -729,8 +729,8 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
     }
 
     switch (GetKeysPressed()) {
-    case 1:
-    case 8:
+    case A_BUTTON:
+    case START_BUTTON:
         m4aSongNumStart(0x66);
 
         if (w->unk_13D == 0) {
@@ -742,7 +742,7 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
         w->unk_142 = 0;
         SetTaskUpdate(a, (void*)func_080A5150);
         break;
-    case 2:
+    case B_BUTTON:
         m4aSongNumStart(0x68);
         gUnk_0203A9D8 = 0;
         w->unk_142 = 0;

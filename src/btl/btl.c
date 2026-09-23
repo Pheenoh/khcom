@@ -14,6 +14,7 @@
 #include "sprites_hum.h"
 #include "sprites_riku.h"
 #include "sprites_sora.h"
+#include "gba/keys.h"
 
 const char gTaskNameBtlLockon[] = "task_btl_lockon";
 const char gTaskNameBtlArea[] = "task_btl_area";
@@ -1190,32 +1191,32 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
     if (f & 0x800000000LL) {
         if (f & 0x1000000000LL) {
-            held &= ~1;
-            held &= ~2;
-            held &= ~0x40;
-            held &= ~0x80;
-            held &= ~0x20;
-            held &= ~0x10;
-            pressed &= ~1;
-            pressed &= ~2;
-            pressed &= ~0x40;
-            pressed &= ~0x80;
-            pressed &= ~0x20;
-            pressed &= ~0x10;
+            held &= ~A_BUTTON;
+            held &= ~B_BUTTON;
+            held &= ~DPAD_UP;
+            held &= ~DPAD_DOWN;
+            held &= ~DPAD_LEFT;
+            held &= ~DPAD_RIGHT;
+            pressed &= ~A_BUTTON;
+            pressed &= ~B_BUTTON;
+            pressed &= ~DPAD_UP;
+            pressed &= ~DPAD_DOWN;
+            pressed &= ~DPAD_LEFT;
+            pressed &= ~DPAD_RIGHT;
         }
 
         if (f & 0x100000000000LL) {
-            pressed &= ~2;
+            pressed &= ~B_BUTTON;
         }
 
         if (f & 0x200000000000LL) {
-            pressed &= ~0x20;
-            pressed &= ~0x10;
+            pressed &= ~DPAD_LEFT;
+            pressed &= ~DPAD_RIGHT;
         }
 
         if (f & 0x2000000000LL) {
-            pressed &= ~1;
-            held &= ~1;
+            pressed &= ~A_BUTTON;
+            held &= ~A_BUTTON;
         }
     }
 
@@ -2315,7 +2316,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
         }
 
-        if ((u16)(pressed & 0x20) != 0) {
+        if ((u16)(pressed & DPAD_LEFT) != 0) {
             if (work->unk_170[0] != 0) {
                 p->flags |= 4;
                 p->unk_014 = p->x;
@@ -2331,7 +2332,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 }
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_170[1] != 0) {
                 p->flags &= ~4;
                 p->unk_014 = p->x;
@@ -2351,7 +2352,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         func_0801DF10(work, held);
 
-        if (!(pressed & 2)) {
+        if (!(pressed & B_BUTTON)) {
             break;
         }
 
@@ -2380,7 +2381,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if ((s16)work->unk_154 == 0) {
             func_0801DE1C(work, 1, 1);
 
-            if (!(held & 0xF0)) {
+            if (!(held & DPAD_ANY)) {
                 if (p->flags & 4) {
                     work->angle = 192;
                 } else {
@@ -2432,56 +2433,56 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_0801DE1C(work, 4, 1);
         }
 
-        if (work->unk_150 < 0 && !(held & 2)) {
+        if (work->unk_150 < 0 && !(held & B_BUTTON)) {
             work->unk_150 += 64;
         }
 
-        if (((s16)held & 0x50) == 0x50) {
+        if (((s16)held & (DPAD_RIGHT | DPAD_UP)) == (DPAD_RIGHT | DPAD_UP)) {
             if (work->angle != 32) {
                 work->angle = 32;
                 work->unk_15C = 0;
             }
 
             p->flags &= ~4;
-        } else if (((s16)held & 0x90) == 0x90) {
+        } else if (((s16)held & (DPAD_RIGHT | DPAD_DOWN)) == (DPAD_RIGHT | DPAD_DOWN)) {
             if (work->angle != 96) {
                 work->angle = 96;
                 work->unk_15C = 0;
             }
 
             p->flags &= ~4;
-        } else if (((s16)held & 0xA0) == 0xA0) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_DOWN)) == (DPAD_LEFT | DPAD_DOWN)) {
             if (work->angle != 160) {
                 work->angle = 160;
                 work->unk_15C = 0;
             }
 
             p->flags |= 4;
-        } else if (((s16)held & 0x60) == 0x60) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_UP)) == (DPAD_LEFT | DPAD_UP)) {
             if (work->angle != 224) {
                 work->angle = 224;
                 work->unk_15C = 0;
             }
 
             p->flags |= 4;
-        } else if (held & 0x40) {
+        } else if (held & DPAD_UP) {
             if (work->angle != 0) {
                 work->angle = 0;
                 work->unk_15C = 0;
             }
-        } else if (held & 0x10) {
+        } else if (held & DPAD_RIGHT) {
             if (work->angle != 64) {
                 work->angle = 64;
                 work->unk_15C = 0;
             }
 
             p->flags &= ~4;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             if (work->angle != 128) {
                 work->angle = 128;
                 work->unk_15C = 0;
             }
-        } else if (held & 0x20) {
+        } else if (held & DPAD_LEFT) {
             if (work->angle != 192) {
                 work->angle = 192;
                 work->unk_15C = 0;
@@ -2490,7 +2491,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->flags |= 4;
         }
 
-        if (held & 0xF0) {
+        if (held & DPAD_ANY) {
             work->unk_15C += 17;
 
             if (work->unk_15C > 614) {
@@ -2521,7 +2522,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             work->unk_15C = 0;
             func_0801DE1C(work, 5, 0);
             gBtlWork->flags |= 0x0000080000000000LL;
-        } else if (pressed & 2) {
+        } else if (pressed & B_BUTTON) {
             m4aSongNumStart(work->unk_184[2]);
             p->btl->flags |= 0x8000;
 
@@ -2534,7 +2535,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 work->unk_156 = 0;
                 work->unk_154 = 0;
             }
-        } else if ((u16)(pressed & 0x20) != 0) {
+        } else if ((u16)(pressed & DPAD_LEFT) != 0) {
             if (work->unk_170[0] != 0) {
                 p->flags |= 4;
                 p->unk_014 = p->x;
@@ -2550,7 +2551,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 }
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_170[1] != 0) {
                 p->flags &= ~4;
                 p->unk_014 = p->x;
@@ -2669,9 +2670,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             work->unk_156--;
 
             if (p->z < p->unk_010) {
-                if (held & 0x40) {
+                if (held & DPAD_UP) {
                     p->y -= 384;
-                } else if (held & 0x80) {
+                } else if (held & DPAD_DOWN) {
                     p->y += 384;
                 }
             }
@@ -3440,15 +3441,15 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         } else if ((s16)work->unk_154 > 27) {
             func_0801DD90(work);
 
-            if (held & 0x20) {
+            if (held & DPAD_LEFT) {
                 BgFxAddPosition(-256, 0, 0);
-            } else if (held & 0x10) {
+            } else if (held & DPAD_RIGHT) {
                 BgFxAddPosition(256, 0, 0);
             }
 
-            if (held & 0x40) {
+            if (held & DPAD_UP) {
                 BgFxAddPosition(0, -128, 0);
-            } else if (held & 0x80) {
+            } else if (held & DPAD_DOWN) {
                 BgFxAddPosition(0, 128, 0);
             }
 
@@ -4093,9 +4094,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 m4aSongNumStart(503);
             }
 
-            if (held & 0x40) {
+            if (held & DPAD_UP) {
                 p->y -= 384;
-            } else if (held & 0x80) {
+            } else if (held & DPAD_DOWN) {
                 p->y += 384;
             }
         }
@@ -4120,7 +4121,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             break;
         }
 
-        if ((s16)work->unk_154 > 38 && (pressed & 1) && work->unk_161 <= 5) {
+        if ((s16)work->unk_154 > 38 && (pressed & A_BUTTON) && work->unk_161 <= 5) {
             p->flags ^= 4;
             work->unk_161++;
             func_08019A30();
@@ -4889,9 +4890,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->x += *(s32*)&work->unk_191[3];
         }
 
-        if (held & 0x40) {
+        if (held & DPAD_UP) {
             p->y -= 384;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             p->y += 384;
         }
 
@@ -5349,9 +5350,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             BgFxSetPosition(p->x + 10240, p->y, p->z - 6144);
         }
 
-        if (held & 0x20) {
+        if (held & DPAD_LEFT) {
             p->x -= 640;
-        } else if (held & 0x10) {
+        } else if (held & DPAD_RIGHT) {
             p->x += 640;
         }
 
@@ -5362,16 +5363,16 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->z += (p->unk_01C + (sine[(uv * 2) & 0xFF] << 3) - p->z) >> 3;
         }
 
-        if (held & 0x40) {
+        if (held & DPAD_UP) {
             p->y -= 320;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             p->y += 320;
         }
 
         uv = work->unk_154;
         st = work->unk_154;
 
-        if ((st > 9 && (pressed & 1)) || st > 120) {
+        if ((st > 9 && (pressed & A_BUTTON)) || st > 120) {
             if (p->flags & 4) {
                 func_080161F8(p->x - 10240, p->y, p->z - 6144, 1);
             } else {
@@ -5515,15 +5516,15 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->z += (p->unk_01C + (sine[(uv * 2) & 0xFF] << 3) - p->z) >> 3;
         }
 
-        if (held & 0x40) {
+        if (held & DPAD_UP) {
             p->y -= 128;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             p->y += 128;
         }
 
-        if (held & 0x20) {
+        if (held & DPAD_LEFT) {
             p->x -= 256;
-        } else if (held & 0x10) {
+        } else if (held & DPAD_RIGHT) {
             p->x += 256;
         }
 
@@ -5671,13 +5672,13 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if ((s16)work->unk_154 > 285) {
             gBtlWork->flags |= 0x100000;
         } else {
-            if (pressed & 0xF0) {
+            if (pressed & DPAD_ANY) {
                 p->vx = GetRandom() % 257 - 128;
                 p->vy = GetRandom() % 257 - 128;
                 work->unk_154 += 2;
             }
 
-            if (p->z >= p->unk_010 && (pressed & 2)) {
+            if (p->z >= p->unk_010 && (pressed & B_BUTTON)) {
                 work->unk_150 = -256;
                 work->unk_154 += 2;
             }
@@ -5939,7 +5940,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->flags &= ~0x80;
         }
 
-        if (pressed & 0xF3) {
+        if (pressed & (A_BUTTON | B_BUTTON | DPAD_ANY)) {
             p->unk_0EC -= 1;
         }
 
@@ -6018,10 +6019,10 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         break;
     }
 
-    if ((u16)(pressed & 0x20) != 0) {
+    if ((u16)(pressed & DPAD_LEFT) != 0) {
         work->unk_170[0] = 13;
         work->unk_170[1] = 0;
-    } else if (pressed & 0x10) {
+    } else if (pressed & DPAD_RIGHT) {
         work->unk_170[1] = 13;
         work->unk_170[0] = 0;
     }
@@ -6169,7 +6170,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         case 1:
             p->vx = -(p->vx >> 1);
 
-            if (p->z == 0 && (held & 0x20)) {
+            if (p->z == 0 && (held & DPAD_LEFT)) {
                 p->btl->flags |= 8;
             } else {
                 p->btl->flags &= ~8;
@@ -6180,7 +6181,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         case 2:
             p->vx = -(p->vx >> 1);
 
-            if (p->z == 0 && (held & 0x10)) {
+            if (p->z == 0 && (held & DPAD_RIGHT)) {
                 p->btl->flags |= 8;
             } else {
                 p->btl->flags &= ~8;
@@ -8647,7 +8648,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_158 == 0) {
             SetBtlRikuAnimation(work, 15, 0);
 
-            if ((held & 0xF0) == 0) {
+            if ((held & DPAD_ANY) == 0) {
                 if (p->flags & 4) {
                     work->unk_164 = 192;
                 } else {
@@ -8658,7 +8659,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_160 >>= 1;
         }
 
-        if (pressed & 2) {
+        if (pressed & B_BUTTON) {
             work->unk_03C = 56;
             work->unk_15A = 0;
             work->unk_158 = 0;
@@ -8693,63 +8694,63 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             SetBtlRikuAnimation(work, 18, 0);
         }
 
-        if (work->unk_154 < 0 && (held & 2) == 0) {
+        if (work->unk_154 < 0 && (held & B_BUTTON) == 0) {
             work->unk_154 += 64;
         }
 
-        if (pressed & 2) {
+        if (pressed & B_BUTTON) {
             work->unk_03C = 56;
             work->unk_15A = 0;
             work->unk_158 = 0;
             break;
         }
 
-        if (((s16)held & 0x50) == 0x50) {
+        if (((s16)held & (DPAD_RIGHT | DPAD_UP)) == (DPAD_RIGHT | DPAD_UP)) {
             if (work->unk_164 != 32) {
                 work->unk_164 = 32;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (((s16)held & 0x90) == 0x90) {
+        } else if (((s16)held & (DPAD_RIGHT | DPAD_DOWN)) == (DPAD_RIGHT | DPAD_DOWN)) {
             if (work->unk_164 != 96) {
                 work->unk_164 = 96;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (((s16)held & 0xA0) == 0xA0) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_DOWN)) == (DPAD_LEFT | DPAD_DOWN)) {
             if (work->unk_164 != 160) {
                 work->unk_164 = 160;
                 work->unk_160 = 0;
             }
 
             p->flags |= 4;
-        } else if (((s16)held & 0x60) == 0x60) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_UP)) == (DPAD_LEFT | DPAD_UP)) {
             if (work->unk_164 != 224) {
                 work->unk_164 = 224;
                 work->unk_160 = 0;
             }
 
             p->flags |= 4;
-        } else if (held & 0x40) {
+        } else if (held & DPAD_UP) {
             if (work->unk_164 != 0) {
                 work->unk_164 = 0;
                 work->unk_160 = 0;
             }
-        } else if (held & 0x10) {
+        } else if (held & DPAD_RIGHT) {
             if (work->unk_164 != 64) {
                 work->unk_164 = 64;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             if (work->unk_164 != 128) {
                 work->unk_164 = 128;
                 work->unk_160 = 0;
             }
-        } else if (held & 0x20) {
+        } else if (held & DPAD_LEFT) {
             if (work->unk_164 != 192) {
                 work->unk_164 = 192;
                 work->unk_160 = 0;
@@ -8758,7 +8759,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->flags |= 4;
         }
 
-        if (held & 0xF0) {
+        if (held & DPAD_ANY) {
             work->unk_160 += 17;
 
             if (work->unk_160 > 512) {
@@ -8781,13 +8782,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             m4aSongNumStart(work->unk_188[3]);
             work->unk_160 = 0;
             SetBtlRikuAnimation(work, 19, 0);
-        } else if (pressed & 2) {
+        } else if (pressed & B_BUTTON) {
             m4aSongNumStart(work->unk_188[2]);
             p->btl->flags |= 0x8000;
             work->unk_03C = 37;
             work->unk_15A = 0;
             work->unk_158 = 0;
-        } else if (pressed & 0x20) {
+        } else if (pressed & DPAD_LEFT) {
             if (work->unk_174[0] != 0) {
                 p->flags &= 0xFFFFFFFFFFFFFFFBLL;
                 work->unk_03C = 57;
@@ -8795,7 +8796,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_174[1] != 0) {
                 p->flags |= 4;
                 work->unk_03C = 57;
@@ -8803,7 +8804,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x40) {
+        } else if (pressed & DPAD_UP) {
             if (work->unk_174[2] != 0) {
                 work->unk_15E |= 0x2000;
                 work->unk_03C = 58;
@@ -8811,7 +8812,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x80) {
+        } else if (pressed & DPAD_DOWN) {
             if (work->unk_174[3] != 0) {
                 work->unk_15E &= 0xDFFF;
                 work->unk_03C = 58;
@@ -8900,7 +8901,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-        if (pressed & 0x20) {
+        if (pressed & DPAD_LEFT) {
             if (work->unk_174[0] != 0) {
                 p->flags &= 0xFFFFFFFFFFFFFFFBLL;
                 work->unk_03C = 57;
@@ -8908,7 +8909,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_174[1] != 0) {
                 p->flags |= 4;
                 work->unk_03C = 57;
@@ -8916,7 +8917,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x40) {
+        } else if (pressed & DPAD_UP) {
             if (work->unk_174[2] != 0) {
                 work->unk_15E |= 0x2000;
                 work->unk_03C = 58;
@@ -8924,7 +8925,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x80) {
+        } else if (pressed & DPAD_DOWN) {
             if (work->unk_174[3] != 0) {
                 work->unk_15E &= 0xDFFF;
                 work->unk_03C = 58;
@@ -8936,7 +8937,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         func_08027A64(work, held);
 
-        if (pressed & 2) {
+        if (pressed & B_BUTTON) {
             m4aSongNumStart(work->unk_188[2]);
             work->unk_03C = 37;
             work->unk_15A = 0;
@@ -9138,7 +9139,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-        if (pressed & 0x20) {
+        if (pressed & DPAD_LEFT) {
             if (work->unk_174[0] != 0) {
                 p->flags &= 0xFFFFFFFFFFFFFFFBLL;
                 p->unk_014 = p->x;
@@ -9147,7 +9148,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_174[1] != 0) {
                 p->flags |= 4;
                 p->unk_014 = p->x;
@@ -9160,7 +9161,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         func_080277FC(work, held);
 
-        if ((pressed & 2) == 0) {
+        if ((pressed & B_BUTTON) == 0) {
             break;
         }
 
@@ -9175,7 +9176,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_158 == 0) {
             func_0802770C(work, 1, 1);
 
-            if ((held & 0xF0) == 0) {
+            if ((held & DPAD_ANY) == 0) {
                 if (p->flags & 4) {
                     work->unk_164 = 192;
                 } else {
@@ -9211,13 +9212,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_158 > 285) {
             gBtlWork->flags |= 0x100000;
         } else {
-            if (pressed & 0xF0) {
+            if (pressed & DPAD_ANY) {
                 p->vx = GetRandom() % 257 - 128;
                 p->vy = GetRandom() % 257 - 128;
                 work->unk_158 += 2;
             }
 
-            if (p->z >= p->unk_010 && (pressed & 2)) {
+            if (p->z >= p->unk_010 && (pressed & B_BUTTON)) {
                 work->unk_154 = -256;
                 work->unk_158 += 2;
             }
@@ -9270,56 +9271,56 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             func_0802770C(work, 4, 1);
         }
 
-        if (work->unk_154 < 0 && (held & 2) == 0) {
+        if (work->unk_154 < 0 && (held & B_BUTTON) == 0) {
             work->unk_154 += 64;
         }
 
-        if (((s16)held & 0x50) == 0x50) {
+        if (((s16)held & (DPAD_RIGHT | DPAD_UP)) == (DPAD_RIGHT | DPAD_UP)) {
             if (work->unk_164 != 32) {
                 work->unk_164 = 32;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (((s16)held & 0x90) == 0x90) {
+        } else if (((s16)held & (DPAD_RIGHT | DPAD_DOWN)) == (DPAD_RIGHT | DPAD_DOWN)) {
             if (work->unk_164 != 96) {
                 work->unk_164 = 96;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (((s16)held & 0xA0) == 0xA0) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_DOWN)) == (DPAD_LEFT | DPAD_DOWN)) {
             if (work->unk_164 != 160) {
                 work->unk_164 = 160;
                 work->unk_160 = 0;
             }
 
             p->flags |= 4;
-        } else if (((s16)held & 0x60) == 0x60) {
+        } else if (((s16)held & (DPAD_LEFT | DPAD_UP)) == (DPAD_LEFT | DPAD_UP)) {
             if (work->unk_164 != 224) {
                 work->unk_164 = 224;
                 work->unk_160 = 0;
             }
 
             p->flags |= 4;
-        } else if (held & 0x40) {
+        } else if (held & DPAD_UP) {
             if (work->unk_164 != 0) {
                 work->unk_164 = 0;
                 work->unk_160 = 0;
             }
-        } else if (held & 0x10) {
+        } else if (held & DPAD_RIGHT) {
             if (work->unk_164 != 64) {
                 work->unk_164 = 64;
                 work->unk_160 = 0;
             }
 
             p->flags &= 0xFFFFFFFFFFFFFFFBLL;
-        } else if (held & 0x80) {
+        } else if (held & DPAD_DOWN) {
             if (work->unk_164 != 128) {
                 work->unk_164 = 128;
                 work->unk_160 = 0;
             }
-        } else if (held & 0x20) {
+        } else if (held & DPAD_LEFT) {
             if (work->unk_164 != 192) {
                 work->unk_164 = 192;
                 work->unk_160 = 0;
@@ -9328,7 +9329,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->flags |= 4;
         }
 
-        if (held & 0xF0) {
+        if (held & DPAD_ANY) {
             work->unk_160 += 17;
 
             if (work->unk_160 > 512) {
@@ -9351,13 +9352,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             m4aSongNumStart(work->unk_188[3]);
             work->unk_160 = 0;
             func_0802770C(work, 5, 0);
-        } else if (pressed & 2) {
+        } else if (pressed & B_BUTTON) {
             m4aSongNumStart(work->unk_188[2]);
             p->btl->flags |= 0x8000;
             work->unk_03C = 2;
             work->unk_15A = 0;
             work->unk_158 = 0;
-        } else if (pressed & 0x20) {
+        } else if (pressed & DPAD_LEFT) {
             if (work->unk_174[0] != 0) {
                 p->flags &= 0xFFFFFFFFFFFFFFFBLL;
                 p->unk_014 = p->x;
@@ -9366,7 +9367,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 work->unk_158 = 0;
                 break;
             }
-        } else if (pressed & 0x10) {
+        } else if (pressed & DPAD_RIGHT) {
             if (work->unk_174[1] != 0) {
                 p->flags |= 4;
                 p->unk_014 = p->x;
@@ -9561,9 +9562,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15A--;
 
             if (p->z < p->unk_010) {
-                if (held & 0x40) {
+                if (held & DPAD_UP) {
                     p->y -= 384;
-                } else if (held & 0x80) {
+                } else if (held & DPAD_DOWN) {
                     p->y += 384;
                 }
             }
@@ -9636,9 +9637,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15A--;
 
             if (p->z < p->unk_010) {
-                if (held & 0x40) {
+                if (held & DPAD_UP) {
                     p->y -= 384;
-                } else if (held & 0x80) {
+                } else if (held & DPAD_DOWN) {
                     p->y += 384;
                 }
             }
@@ -9709,9 +9710,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15A--;
 
             if (p->z < p->unk_010) {
-                if (held & 0x40) {
+                if (held & DPAD_UP) {
                     p->x -= 640;
-                } else if (held & 0x80) {
+                } else if (held & DPAD_DOWN) {
                     p->x += 640;
                 }
             }
@@ -10516,7 +10517,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->flags &= ~0x80;
         }
 
-        if (0xF3 & pressed) {
+        if ((A_BUTTON | B_BUTTON | DPAD_ANY) & pressed) {
             p->unk_0EC -= 1;
         }
 
@@ -10543,7 +10544,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->flags &= ~0x80;
         }
 
-        if (0xF3 & pressed) {
+        if ((A_BUTTON | B_BUTTON | DPAD_ANY) & pressed) {
             p->unk_0EC -= 1;
         }
 
@@ -10563,16 +10564,16 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         break;
     }
 
-    if (pressed & 0x20) {
+    if (pressed & DPAD_LEFT) {
         work->unk_174[0] = 13;
         work->unk_174[1] = 0;
-    } else if (pressed & 0x10) {
+    } else if (pressed & DPAD_RIGHT) {
         work->unk_174[1] = 13;
         work->unk_174[0] = 0;
-    } else if (pressed & 0x40) {
+    } else if (pressed & DPAD_UP) {
         work->unk_174[2] = 13;
         work->unk_174[3] = 0;
-    } else if (pressed & 0x80) {
+    } else if (pressed & DPAD_DOWN) {
         work->unk_174[3] = 13;
         work->unk_174[2] = 0;
     }
@@ -10715,7 +10716,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         case 1:
             p->vx = 0;
 
-            if (p->z == 0 && (held & 0x20)) {
+            if (p->z == 0 && (held & DPAD_LEFT)) {
                 p->btl->flags |= 8;
             } else {
                 p->btl->flags &= ~8LL;
@@ -10726,7 +10727,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         case 2:
             p->vx = 0;
 
-            if (p->z == 0 && (held & 0x10)) {
+            if (p->z == 0 && (held & DPAD_RIGHT)) {
                 p->btl->flags |= 8;
             } else {
                 p->btl->flags &= ~8LL;

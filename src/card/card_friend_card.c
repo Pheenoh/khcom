@@ -1153,12 +1153,12 @@ u8 func_0809BE80(u8* work, void* a) {
     s32 z;
 
     if (work[0x85] != 0) {
-        if ((GetKeysPressed() & 1) && work[0x84] == 0) {
+        if ((GetKeysPressed() & A_BUTTON) && work[0x84] == 0) {
             work[0x84] = 1;
             m4aSongNumStart(106);
         }
 
-        if ((GetKeysPressed() & 2) && work[0x84] != 1) {
+        if ((GetKeysPressed() & B_BUTTON) && work[0x84] != 1) {
             m4aSongNumStart(104);
             work[0x8B] = 16;
             work[0x8C] = 16;
@@ -1375,7 +1375,7 @@ u8 func_0809C448(u8* work, void* a) {
     TaskPoolUpdate(&work[0x3C]);
     TaskPoolUpdate(&gCardListWork->effectTasks);
 
-    if ((GetKeysPressed() & 1)
+    if ((GetKeysPressed() & A_BUTTON)
 #ifdef VERSION_EU
         && work[0x89] > 8
 #endif

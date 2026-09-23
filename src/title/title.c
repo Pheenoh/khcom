@@ -744,7 +744,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
     memcpy(tbl, gUnk_096FDCE8, sizeof(tbl));
 
     switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
-    case 0x100:
+    case R_BUTTON:
         for (i = 0; i < 3; i++) {
             if (v < tbl[i]) {
                 v = tbl[i];
@@ -753,7 +753,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
             }
         }
         break;
-    case 0x200:
+    case L_BUTTON:
         for (j = 2; j > -1; j--) {
             if (v > tbl[j]) {
                 v = tbl[j];

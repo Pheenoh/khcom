@@ -5610,23 +5610,23 @@ void func_080E935C(void) {
     u16 m1 = 0x200;
     u16 m2 = 0x1000;
 
-    if (GetKeysHeld() & 0x20) {
+    if (GetKeysHeld() & DPAD_LEFT) {
         x = -1024;
     }
-    if (GetKeysHeld() & 0x10) {
+    if (GetKeysHeld() & DPAD_RIGHT) {
         x = 1024;
     }
-    if (GetKeysHeld() & 0x40) {
+    if (GetKeysHeld() & DPAD_UP) {
         y = -1024;
     }
-    if (GetKeysHeld() & 0x80) {
+    if (GetKeysHeld() & DPAD_DOWN) {
         y = 1024;
     }
     func_080E02A8(x, y);
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         (*(volatile u16*)&gDispCnt) = ((*(volatile u16*)&gDispCnt) & 0xFDFF) | (m1 & ~(*(volatile u16*)&gDispCnt));
     }
-    if (GetKeysPressed() & 2) {
+    if (GetKeysPressed() & B_BUTTON) {
         (*(volatile u16*)&gDispCnt) = ((*(volatile u16*)&gDispCnt) & 0xEFFF) | (m2 & ~(*(volatile u16*)&gDispCnt));
     }
 }
@@ -5662,13 +5662,13 @@ void func_080E93FC(void) {
     func_080E0820();
     ColliderUpdateAll();
     func_080E6264();
-    if ((GetKeysHeld() & 0x300) == 0x300) {
+    if ((GetKeysHeld() & (L_BUTTON | R_BUTTON)) == (L_BUTTON | R_BUTTON)) {
         return;
     }
-    if (GetKeysPressed() & 8) {
+    if (GetKeysPressed() & START_BUTTON) {
         func_080E9338((s32)func_080E9550);
     }
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         ModeRequest(&gModeMapChk, 0);
     }
 }
@@ -5693,13 +5693,13 @@ void func_080E9550(void) {
     func_080E935C();
     TaskPoolUpdate(gFieldState->tasks);
     func_080E0820();
-    if ((GetKeysHeld() & 0x300) == 0x300) {
+    if ((GetKeysHeld() & (L_BUTTON | R_BUTTON)) == (L_BUTTON | R_BUTTON)) {
         return;
     }
-    if (GetKeysPressed() & 8) {
+    if (GetKeysPressed() & START_BUTTON) {
         func_080E9338((s32)func_080E93FC);
     }
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         ModeRequest(&gModeMapChk, 0);
     }
 }
@@ -5921,14 +5921,14 @@ void func_080E9B7C(void) {
     }
     if (FadeIsActive() == 0 && (gGameState.progression.unk_82 & 0x200) != 0 &&
         (gFieldState->flags & 0x41000) == 0 && (gUnk_0203C7AC->flags & 4) == 0) {
-        if (GetKeysPressed() & 4) {
+        if (GetKeysPressed() & SELECT_BUTTON) {
             m4aSongNumStart(0x67);
             FadeStartOut(0, 16);
             FadeLock();
             func_080E9898((s32)func_080E9E04);
             return;
         }
-        if (GetKeysPressed() & 8) {
+        if (GetKeysPressed() & START_BUTTON) {
             func_080E9A00();
             TaskCreate(gFieldState->tasks, &gTaskDescMapMenu, 0);
             func_080E9898((s32)func_080E9E28);
@@ -6324,7 +6324,7 @@ void func_080EA498(void) {
         func_080EA1F4((s32)func_080EA730);
     } else if (FadeIsActive() == 0 && (gGameState.progression.unk_82 & 0x200) != 0 &&
                (gFieldState->flags & 0x41000) == 0 && (gUnk_0203C7AC->flags & 4) == 0 &&
-               (GetKeysPressed() & 8) != 0) {
+               (GetKeysPressed() & START_BUTTON) != 0) {
         TaskCreate(gFieldState->tasks, &gTaskDescMapMenu, 0);
         func_080EA1F4((s32)func_080EA730);
     } else {
@@ -6808,12 +6808,12 @@ void func_080EAF10(void) {
 void func_080EB12C(NewGameSlotMenuWork* w) {
     u8 prev = w->selectedSlot;
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : 1;
         m4aSongNumStart(0x65);
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         w->selectedSlot = w->selectedSlot == 0 ? w->selectedSlot + 1 : 0;
         m4aSongNumStart(0x65);
     }
@@ -6837,10 +6837,10 @@ void func_080EB1AC(NewGameSlotMenuWork* w) {
 void func_080EB1F4(NewGameSlotMenuWork* w) {
     func_080EB12C(w);
 
-    if (GetKeysPressed() & 2) {
+    if (GetKeysPressed() & B_BUTTON) {
         m4aSongNumStart(0x68);
     } else {
-        if (!(GetKeysPressed() & 9)) {
+        if (!(GetKeysPressed() & (A_BUTTON | START_BUTTON))) {
             return;
         }
 
@@ -7328,12 +7328,12 @@ void func_080EBB24(void) {
 void func_080EBD00(LoadGameMenuWork* w) {
     u8 old = w->selectedSlot;
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : w->unk_184;
         m4aSongNumStart(0x65);
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         w->selectedSlot = w->selectedSlot < w->unk_184 ? w->selectedSlot + 1 : 0;
         m4aSongNumStart(0x65);
     }
@@ -7396,11 +7396,11 @@ void func_080EBE90(LoadGameMenuWork* work) {
 void func_080EBEC8(LoadGameMenuWork* work) {
     func_080EBD00(work);
 
-    if (GetKeysPressed() & 2) {
+    if (GetKeysPressed() & B_BUTTON) {
         work->timer = 16;
         work->update = func_080EBFB8;
         m4aSongNumStart(0x68);
-    } else if (GetKeysPressed() & 9) {
+    } else if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
         if ((u8)func_080EB7A0(work->selectedSlot) != 0) {
             switch (work->selectedSlot) {
             case 0:
@@ -8469,22 +8469,22 @@ s32 func_080ED6CC(MapMenuWork* w) {
 }
 
 s32 func_080ED7CC(MapMenuWork* w) {
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         w->unk_309 = w->unk_309 != 0 ? w->unk_309 - 1 : 6;
         m4aSongNumStart(0x65);
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         w->unk_309 = w->unk_309 <= 5 ? w->unk_309 + 1 : 0;
         m4aSongNumStart(0x65);
     }
 
-    if (GetKeysPressed() & 10) {
+    if (GetKeysPressed() & (B_BUTTON | START_BUTTON)) {
         w->unk_034 = 0;
         w->unk_30C = 16;
         w->update = func_080EDB4C;
         m4aSongNumStart(0x68);
-    } else if (GetKeysPressed() & 1) {
+    } else if (GetKeysPressed() & A_BUTTON) {
         switch (w->unk_309) {
         case 0:
         case 2:
@@ -8517,22 +8517,22 @@ s32 func_080ED7CC(MapMenuWork* w) {
 }
 
 s32 func_080ED91C(MapMenuWork* w) {
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         w->unk_309 = w->unk_309 != 0 ? w->unk_309 - 1 : 6;
         m4aSongNumStart(101);
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         w->unk_309 = w->unk_309 <= 5 ? w->unk_309 + 1 : 0;
         m4aSongNumStart(101);
     }
 
-    if (GetKeysPressed() & 10) {
+    if (GetKeysPressed() & (B_BUTTON | START_BUTTON)) {
         w->unk_034 = 0;
         w->unk_30C = 16;
         w->update = func_080EDB4C;
         m4aSongNumStart(104);
-    } else if (GetKeysPressed() & 1) {
+    } else if (GetKeysPressed() & A_BUTTON) {
         switch (w->unk_309) {
         case 0:
         case 2:
@@ -8642,27 +8642,27 @@ s32 func_080EDC38(MapMenuWork* w) {
 }
 
 s32 func_080EDC94(MapMenuWork* w) {
-    if (GetKeysPressed() & 0x20) {
+    if (GetKeysPressed() & DPAD_LEFT) {
         if (w->unk_30A != 1) {
             w->unk_30A = 1;
             m4aSongNumStart(0x65);
         }
     }
 
-    if (GetKeysPressed() & 0x10) {
+    if (GetKeysPressed() & DPAD_RIGHT) {
         if (w->unk_30A != 2) {
             w->unk_30A = 2;
             m4aSongNumStart(0x65);
         }
     }
 
-    if ((GetKeysPressed() & 2) || ((GetKeysPressed() & 1) && w->unk_30A == 2)) {
+    if ((GetKeysPressed() & B_BUTTON) || ((GetKeysPressed() & A_BUTTON) && w->unk_30A == 2)) {
         w->unk_30A = 0;
         func_080ED314((u8*)w);
         w->y3 = (w->unk_309 * 19 + 16) << 8;
         w->update = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
         m4aSongNumStart(0x68);
-    } else if (GetKeysPressed() & 1) {
+    } else if (GetKeysPressed() & A_BUTTON) {
         SaveWriteSystem();
         w->update = func_080EDA90;
         m4aSongNumStart(0x66);
@@ -9307,28 +9307,28 @@ s32 func_080EE824(MapSaveWork* w) {
 }
 
 s32 func_080EEB00(MapSaveWork* w) {
-    if (GetKeysRepeat() & 0x20) {
+    if (GetKeysRepeat() & DPAD_LEFT) {
         if (w->unk_2F4 != 1) {
             w->unk_2F4 = 1;
             m4aSongNumStart(101);
         }
     }
 
-    if (GetKeysRepeat() & 0x10) {
+    if (GetKeysRepeat() & DPAD_RIGHT) {
         if (w->unk_2F4 != 2) {
             w->unk_2F4 = 2;
             m4aSongNumStart(101);
         }
     }
 
-    if ((GetKeysPressed() & 2) || ((GetKeysPressed() & 1) && w->unk_2F4 != 1)) {
+    if ((GetKeysPressed() & B_BUTTON) || ((GetKeysPressed() & A_BUTTON) && w->unk_2F4 != 1)) {
         m4aSongNumStart(104);
         w->unk_2F4 = 0;
         w->unk_2F8 = 0;
         w->unk_2F6 = 16;
         w->update = func_080EEC9C;
         DisableBg(0);
-    } else if (GetKeysPressed() & 1) {
+    } else if (GetKeysPressed() & A_BUTTON) {
         m4aSongNumStart(211);
 
         if (gGameState.flags & 8) {
@@ -9364,7 +9364,7 @@ s32 func_080EEB00(MapSaveWork* w) {
 }
 
 s32 func_080EEC5C(MapSaveWork* w) {
-    if (GetKeysPressed() & 3) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON)) {
         w->unk_2F8 = 0;
         DisableBg(0);
         w->unk_2F6 = 16;

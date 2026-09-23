@@ -320,7 +320,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
 
     w->gfx = AnimUpdate(w->anim);
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         w->unk_141 = w->unk_143;
     }
 
@@ -359,7 +359,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
 
     w->gfx2 = AnimUpdate(w->anim2);
     w->gfx = AnimUpdate(w->anim);
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         m4aSongNumStart(102);
         if (*(s32*)w->unk_138 != 0) {
 #ifdef VERSION_JP
@@ -446,13 +446,13 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a) {
     w->gfx3 = AnimUpdate(w->anim3);
 
     switch (GetKeysRepeat()) {
-    case 0x40:
-    case 0x80:
+    case DPAD_UP:
+    case DPAD_DOWN:
         w->unk_144 ^= 1;
         w->unk_145 = 4;
         break;
-    case 1:
-    case 8:
+    case A_BUTTON:
+    case START_BUTTON:
         m4aSongNumStart(0x66);
 
         if (w->unk_144 == 0) {
@@ -478,7 +478,7 @@ u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
 
     w->gfx = AnimUpdate(w->anim);
 
-    if (GetKeysPressed() & 1) {
+    if (GetKeysPressed() & A_BUTTON) {
         w->unk_141 = w->unk_143;
     }
 

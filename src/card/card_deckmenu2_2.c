@@ -351,7 +351,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         TaskPoolUpdate((TaskPool*)&work[0x40C]);
         TaskPoolUpdate((TaskPool*)&work[0x420]);
 
-        if (GetKeysPressed() & 8) {
+        if (GetKeysPressed() & START_BUTTON) {
             work[0x504] = 1;
         }
         work[0x507] = 4;
@@ -376,7 +376,7 @@ u8 func_080A5FF4(u8* work, void* a) {
     }
 
     switch (GetKeysRepeat()) {
-    case 64:
+    case DPAD_UP:
         if (*(s16*)&work[0x4CA] > 0) {
             (*(s16*)&work[0x4CA])--;
             work[0x4EC] = 4;
@@ -386,7 +386,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
-    case 128:
+    case DPAD_DOWN:
         if (*(s16*)&work[0x4CA] <= 2) {
             (*(s16*)&work[0x4CA])++;
             work[0x4EC] = 4;
@@ -404,7 +404,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
-    case 32:
+    case DPAD_LEFT:
         if (*(s16*)&work[0x4C8] > 0) {
             (*(s16*)&work[0x4C8])--;
             work[0x4EC] = 4;
@@ -412,7 +412,7 @@ u8 func_080A5FF4(u8* work, void* a) {
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
-    case 16:
+    case DPAD_RIGHT:
         if (*(s16*)&work[0x4C8] <= 1) {
             (*(s16*)&work[0x4C8])++;
             work[0x4EC] = 4;
@@ -420,13 +420,13 @@ u8 func_080A5FF4(u8* work, void* a) {
         }
         func_080A6FAC((UnkStruct_080A6FAC*)work);
         break;
-    case 8:
+    case START_BUTTON:
         work[0x50C] = 7;
         m4aSongNumStart(103);
         FadeStartOut(0, 4);
         SetTaskUpdate(a, (void*)func_080A6388);
         return 1;
-    case 2:
+    case B_BUTTON:
         work[0x50C] = 8;
         m4aSongNumStart(103);
         SetTaskUpdate(a, (void*)func_080A63B8);

@@ -391,9 +391,9 @@ void mode_chkbtl_1(void) {
         }
     }
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         ModeRequest(&gUnk_09EE2704, 0);
-    } else if (GetKeysPressed() & 9) {
+    } else if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
         SeedRandom(gFrameCounter);
         gGameState.unk_00D = gChkBtlWorlds[gChkBtlWork->bg].unk_00;
         gGameState.floor = gChkBtlWork->floor;
@@ -412,7 +412,7 @@ void mode_chkbtl_1(void) {
         }
 
         ModeRequest(&gModeBattle, gChkBtlEntries[gChkBtlWork->enemy].unk_08);
-    } else if (GetKeysPressed() & 2) {
+    } else if (GetKeysPressed() & B_BUTTON) {
         ModeRequest(&gModeDebug, 0);
         return;
     }

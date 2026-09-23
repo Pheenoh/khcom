@@ -326,7 +326,7 @@ u8 func_080C54B4(void) {
             return gUnk_02039B60;
         }
     } else {
-        if (GetKeysPressed() & 2) {
+        if (GetKeysPressed() & B_BUTTON) {
             gUnk_0203BEA4 = 10;
         }
 
@@ -558,11 +558,11 @@ s32 func_080C5AA4(void) {
 
     if (gUnk_0203C3A8 == 0) {
         if (gUnk_0203C3A0 == 0) {
-            if (GetKeysPressed() & 1) {
+            if (GetKeysPressed() & A_BUTTON) {
                 gUnk_02039B68[0] = 0xFEFE;
                 send = gUnk_02039B68;
                 param = &gUnk_0203C3B0;
-            } else if (GetKeysPressed() & 2) {
+            } else if (GetKeysPressed() & B_BUTTON) {
                 gUnk_02039B68[0] = 0xAFAF;
                 send = gUnk_02039B68;
                 param = &gUnk_0203C3B0;
@@ -1018,7 +1018,7 @@ s32 eu_080C2740(void) {
     u16 keys;
     u16 r;
 
-    held = GetKeysHeld() & 0x3FF;
+    held = GetKeysHeld() & KEYS_MASK;
     keys = 0;
 
     if (gUnkEu_0203C970 != 0) {

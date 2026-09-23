@@ -1261,7 +1261,7 @@ u8 func_081141F8(StaffRollWork* w) {
         }
         break;
     default:
-        if ((GetKeysPressed() & 9) != 0) {
+        if ((GetKeysPressed() & (A_BUTTON | START_BUTTON)) != 0) {
             result = 0;
         }
         break;

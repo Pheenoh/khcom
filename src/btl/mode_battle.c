@@ -148,7 +148,7 @@ void eu_08009E10(void) {
         }
         break;
     case 1:
-        if (GetKeysRepeat() & 0x40) {
+        if (GetKeysRepeat() & DPAD_UP) {
             gLangWork->cursor--;
 
             if (gLangWork->cursor < 0) {
@@ -156,7 +156,7 @@ void eu_08009E10(void) {
             }
 
             m4aSongNumStart(0x65);
-        } else if (GetKeysRepeat() & 0x80) {
+        } else if (GetKeysRepeat() & DPAD_DOWN) {
             gLangWork->cursor++;
 
             if (gLangWork->cursor > 4) {
@@ -164,11 +164,11 @@ void eu_08009E10(void) {
             }
 
             m4aSongNumStart(0x65);
-        } else if (GetKeysPressed() & 1) {
+        } else if (GetKeysPressed() & A_BUTTON) {
             gLangWork->timer = 0;
             gLangWork->state = 2;
             m4aSongNumStart(0x66);
-        } else if (GetKeysPressed() & 2) {
+        } else if (GetKeysPressed() & B_BUTTON) {
             gLangWork->state = 3;
             m4aSongNumStart(0x67);
         }

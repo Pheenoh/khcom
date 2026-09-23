@@ -85,14 +85,14 @@ void mode_debug_1(void) {
     v = GetPaletteEffect();
 
     switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
-    case 0x100:
+    case R_BUTTON:
         if (v <= 23) {
             SetPaletteEffect(v + 1);
             ModeRequest(&gModeDebug, 0);
             return;
         }
         break;
-    case 0x200:
+    case L_BUTTON:
         if (v > -24) {
             SetPaletteEffect(v - 1);
             ModeRequest(&gModeDebug, 0);
@@ -113,7 +113,7 @@ void mode_debug_1(void) {
 
     switch (gDebugWork->unk_00) {
     case 0:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
 #ifdef VERSION_EU
             gUnk_03006C10 &= ~0x8000;
 #endif
@@ -122,13 +122,13 @@ void mode_debug_1(void) {
         }
         break;
     case 1:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeChkobj, 0);
             return;
         }
         break;
     case 2:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
 #ifdef VERSION_EU
             gUnk_03006C10 &= ~0x8000;
 #endif
@@ -137,25 +137,25 @@ void mode_debug_1(void) {
         }
         break;
     case 3:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeChkeff, 0);
             return;
         }
         break;
     case 4:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeChksnd, 0);
             return;
         }
         break;
     case 5:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeEventselect, 0);
             return;
         }
         break;
     case 6:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
 #ifndef VERSION_EU
             SaveLoadHeader();
 #endif
@@ -166,27 +166,27 @@ void mode_debug_1(void) {
         }
         break;
     case 7:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeChkbtl, 0);
         }
         break;
     case 8:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModePooh, 0);
         }
         break;
     case 9:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeDebflag, 0);
         }
         break;
     case 10:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeWLogo, 0);
         }
         break;
     case 11:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             SaveClearHeader();
             SaveClearFileLarge(0);
             SaveClearFileLarge(1);
@@ -197,7 +197,7 @@ void mode_debug_1(void) {
         }
         break;
     case 12:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             func_0800FDD0(0);
             func_0800FDD0(17);
             func_0800FDD0(18);
@@ -210,35 +210,35 @@ void mode_debug_1(void) {
         break;
 #ifdef VERSION_EU
     case 13:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeMovieDebugEu, 0);
         }
         break;
     case 14:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeStaffRoll, 0);
         }
         break;
     case 15:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeLang, 0);
         }
         break;
     case 16:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             func_0800FDD0(250);
             ModeRequest(&gModeJiminy, 0);
         }
         break;
     case 17:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             gGameState.unk_180 = 0xFFFF;
             gGameState.progression.unk_82 = -1;
             ModeRequest(&gModeWorldselect, 0);
         }
         break;
     case 18:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequest(&gModeContinue, 0);
         }
         break;
@@ -250,27 +250,27 @@ void mode_debug_1(void) {
         break;
 #else
     case 13:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequestHeapReset(&gModeMovie, 1);
         }
         break;
     case 14:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequestHeapReset(&gModeMovie, 2);
         }
         break;
     case 15:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequestHeapReset(&gModeMovie, 3);
         }
         break;
     case 16:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequestHeapReset(&gModeMovie, 4);
         }
         break;
     case 17:
-        if (GetKeysPressed() & 9) {
+        if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
             ModeRequestHeapReset(&gModeMovie, 5);
         }
         break;
@@ -357,7 +357,7 @@ void mode_debug_1(void) {
         }
     }
 
-    if (GetKeysPressed() & 4) {
+    if (GetKeysPressed() & SELECT_BUTTON) {
         ModeRequest(&gModeDebflag, 0);
     }
 

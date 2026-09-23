@@ -278,7 +278,7 @@ void mode_title_1(void) {
             break;
         }
 
-        if (!(GetKeysPressed() & 8) && !(GetKeysPressed() & 1)) {
+        if (!(GetKeysPressed() & START_BUTTON) && !(GetKeysPressed() & A_BUTTON)) {
             break;
         }
         m4aSongNumStart(0x66);
@@ -336,7 +336,7 @@ void mode_title_1(void) {
         }
         break;
     case 8:
-        if ((GetKeysPressed() & 8) || (GetKeysPressed() & 1)) {
+        if ((GetKeysPressed() & START_BUTTON) || (GetKeysPressed() & A_BUTTON)) {
             switch (gUnk_02034EC2) {
             case 0:
             case 4:
@@ -348,7 +348,7 @@ void mode_title_1(void) {
                 break;
             }
             func_080D5B30();
-        } else if (GetKeysPressed() & 2) {
+        } else if (GetKeysPressed() & B_BUTTON) {
             m4aSongNumStart(0x68);
             gUnk_02034ECA = 1;
             func_080D5B30();
@@ -367,7 +367,7 @@ void mode_title_1(void) {
     TaskPoolDraw(&gTitleTaskPool);
     func_080C73D8();
 
-    if (gUnk_02034E98 <= 4 && (GetKeysPressed() & 9)) {
+    if (gUnk_02034E98 <= 4 && (GetKeysPressed() & (A_BUTTON | START_BUTTON))) {
         m4aSongNumStart(0x65);
 
         if (gUnk_02034E98 <= 3) {

@@ -325,7 +325,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             gBtlWork->flags &= ~0x10000000000ULL;
         }
 
-        if (GetKeysPressed() & 4) {
+        if (GetKeysPressed() & SELECT_BUTTON) {
             work->unk_00E++;
         }
 

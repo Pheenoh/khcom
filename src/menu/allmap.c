@@ -467,7 +467,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             break;
         }
 
-        if ((GetKeysPressed() & 8) != 0) {
+        if ((GetKeysPressed() & START_BUTTON) != 0) {
             m4aSongNumStart(104);
             func_080D3FD4(work);
             gUnk_0203C4E0 = 0;
@@ -476,7 +476,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             return 0;
         }
 
-        if ((GetKeysPressed() & 2) != 0 && IsStockMesDispActive() == 0) {
+        if ((GetKeysPressed() & B_BUTTON) != 0 && IsStockMesDispActive() == 0) {
             m4aSongNumStart(104);
             func_080D3F10(work);
             gUnk_0203C4E0 = 1;
@@ -668,7 +668,7 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
 }
 
 s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
-    if ((GetKeysPressed() & 2) != 0 && work->unk_116 == 0) {
+    if ((GetKeysPressed() & B_BUTTON) != 0 && work->unk_116 == 0) {
         work->unk_116 = 1;
         m4aSongNumStart(104);
         work->unk_100 = 8 - work->unk_100;
@@ -774,7 +774,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
 }
 
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
-    if (IsStockMesDispActive() == 0 && (GetKeysPressed() & 1) != 0) {
+    if (IsStockMesDispActive() == 0 && (GetKeysPressed() & A_BUTTON) != 0) {
         m4aSongNumStart(102);
         work->task = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->pos);
     }
@@ -1064,22 +1064,22 @@ void func_080D55E4(void) {
     p = c->pos;
 
     switch (GetKeysRepeat()) {
-    case 64:
+    case DPAD_UP:
         p.x++;
         p.y--;
         moved = 1;
         break;
-    case 16:
+    case DPAD_RIGHT:
         p.x++;
         p.y++;
         moved = 1;
         break;
-    case 32:
+    case DPAD_LEFT:
         p.x--;
         p.y--;
         moved = 1;
         break;
-    case 128:
+    case DPAD_DOWN:
         p.x--;
         p.y++;
         moved = 1;

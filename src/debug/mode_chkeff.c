@@ -66,10 +66,10 @@ void mode_chkeff_1(void) {
     u16 a;
     u16 b;
 
-    if (GetKeysPressed() & 2) {
+    if (GetKeysPressed() & B_BUTTON) {
         ModeRequest(&gModeDebug, 0);
     } else {
-        if (GetKeysPressed() & 8) {
+        if (GetKeysPressed() & START_BUTTON) {
             gChkEffWork->paused = !gChkEffWork->paused;
         }
 
@@ -104,7 +104,7 @@ void mode_chkeff_1(void) {
             gChkEffWork->scale -= 8;
         }
 
-        if (GetKeysPressed() & 4) {
+        if (GetKeysPressed() & SELECT_BUTTON) {
             gChkEffWork->scale = 0x100;
             gChkEffWork->unk_1C = 0;
         }
@@ -127,7 +127,7 @@ void mode_chkeff_1(void) {
             gChkEffWork->scale = 0xA00;
         }
 
-        if (BgAnimIsStopped() && (GetKeysHeld() & 1)) {
+        if (BgAnimIsStopped() && (GetKeysHeld() & A_BUTTON)) {
             BgAnimStart(obj, 120, 80);
         }
 
@@ -162,7 +162,7 @@ void mode_chkeff_1(void) {
         BgAnimSetTransform((*wp)->unk_1C, (*wp)->scale, (*wp)->scale);
         SetBlendAlpha((*wp)->alphaA, (*wp)->alphaB);
 
-        if ((*wp)->paused == 0 || (GetKeysRepeat() & 1)) {
+        if ((*wp)->paused == 0 || (GetKeysRepeat() & A_BUTTON)) {
             BgAnimUpdate();
         }
 

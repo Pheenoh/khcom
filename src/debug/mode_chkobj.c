@@ -1599,14 +1599,14 @@ void mode_chkobj_1(void) {
     u16 keys;
     s16 v;
 
-    if (GetKeysPressed() & 2) {
+    if (GetKeysPressed() & B_BUTTON) {
         ModeRequest(&gModeDebug, 0);
     } else {
-        if (GetKeysPressed() & 8) {
+        if (GetKeysPressed() & START_BUTTON) {
             gChkObjWork->paused = !gChkObjWork->paused;
         }
 
-        if (AnimIsFinished(&gChkObjWork->anim) && (GetKeysHeld() & 1)) {
+        if (AnimIsFinished(&gChkObjWork->anim) && (GetKeysHeld() & A_BUTTON)) {
             AnimStart(&gChkObjWork->anim, gChkObjWork->animId, 0);
         }
 
@@ -1663,7 +1663,7 @@ void mode_chkobj_1(void) {
             func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
 
-        keys = GetKeysHeld() & 4;
+        keys = GetKeysHeld() & SELECT_BUTTON;
 
         if (keys != 0) {
             if (GetKeysHeld() & L_BUTTON) {
@@ -1712,7 +1712,7 @@ void mode_chkobj_1(void) {
         TaskPoolUpdate(&gChkObjWork->pool);
         TaskPoolDraw(&gChkObjWork->pool);
 
-        if (gChkObjWork->paused == 0 || (GetKeysRepeat() & 1)) {
+        if (gChkObjWork->paused == 0 || (GetKeysRepeat() & A_BUTTON)) {
             AnimUpdate(&gChkObjWork->anim);
         }
 

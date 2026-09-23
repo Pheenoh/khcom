@@ -402,8 +402,8 @@ void func_080FF2B8(s16 index) {
 s32 func_080FF310(void) {
     s32 keys;
 
-    keys = GetKeysPressed() & 0xF;
-    keys |= GetKeysRepeat() & 0x3F0;
+    keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
+    keys |= GetKeysRepeat() & (DPAD_ANY | L_BUTTON | R_BUTTON);
     return keys;
 }
 void func_080FF330(void) {

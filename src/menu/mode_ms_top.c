@@ -231,7 +231,7 @@ void func_081017A0(void) {
 
     prev = gUnk_020357C0;
     keys = GetKeysPressed();
-    if (keys & 1) {
+    if (keys & A_BUTTON) {
         if (gUnk_020357C0 == 1) {
             AnimStart(&gUnk_02035828[gUnk_020357C0], 2, 1);
         }
@@ -240,7 +240,7 @@ void func_081017A0(void) {
         FadeStartOut(0, 16);
         FadeLock();
         gUnk_02035890 = 11;
-    } else if (keys & 2) {
+    } else if (keys & B_BUTTON) {
         gUnk_020357C4 = 0;
         m4aSongNumStart(0x68);
         gUnk_020358A4 = 1;
@@ -251,7 +251,7 @@ void func_081017A0(void) {
 #endif
         gUnk_02035892 = 16;
         gUnk_02035890 = 9;
-    } else if (keys & 8) {
+    } else if (keys & START_BUTTON) {
         gUnk_020357C4 = 0;
         m4aSongNumStart(0x68);
         gUnk_020358A4 = 1;
@@ -263,13 +263,13 @@ void func_081017A0(void) {
         FadeStartOut(0, 16);
         FadeLock();
         gUnk_02035890 = 11;
-    } else if ((keys & 0x20) && gUnk_02035878 != 1 && gUnk_020357C0 != 0) {
+    } else if ((keys & DPAD_LEFT) && gUnk_02035878 != 1 && gUnk_020357C0 != 0) {
         gUnk_020357C0 = 0;
         gUnk_02035878 = 1;
         gUnk_0203587A = 30 - gUnk_0203587A;
         gUnk_0203587C = 1;
         AnimStart(&gUnk_02035860, 1, 1);
-    } else if ((keys & 0x10) && gUnk_02035878 != 2 && gUnk_020357C0 != 1) {
+    } else if ((keys & DPAD_RIGHT) && gUnk_02035878 != 2 && gUnk_020357C0 != 1) {
         gUnk_020357C0 = 1;
         gUnk_02035878 = 2;
         gUnk_0203587A = 30 - gUnk_0203587A;

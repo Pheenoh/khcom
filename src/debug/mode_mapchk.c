@@ -309,11 +309,11 @@ void func_080DDF04(u8 a, u8 b) {
     }
 }
 void func_080DE2A4(MapChkWork* p) {
-    if ((GetKeysRepeat() & 0x20) != 0) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0) {
         p->unk_01 = p->unk_01 == 0 ? 4 : p->unk_01 - 1;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0) {
         p->unk_01 = p->unk_01 > 3 ? 0 : p->unk_01 + 1;
     }
 
@@ -324,11 +324,11 @@ void func_080DE2FC(MapChkWork* p) {
     const u8* t;
     s32 n;
 
-    if ((GetKeysRepeat() & 0x20) != 0) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0) {
         p->unk_02 = p->unk_02 == 0 ? 12 : p->unk_02 - 1;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0) {
         p->unk_02 = p->unk_02 > 11 ? 0 : p->unk_02 + 1;
     }
 
@@ -340,11 +340,11 @@ void func_080DE2FC(MapChkWork* p) {
     }
 }
 void func_080DE35C(MapChkWork* p) {
-    if ((GetKeysRepeat() & 0x20) != 0) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0) {
         p->unk_03 = p->unk_03 == 0 ? 13 : p->unk_03 - 1;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0) {
         p->unk_03 = p->unk_03 > 12 ? 0 : p->unk_03 + 1;
     }
 
@@ -360,11 +360,11 @@ void func_080DE35C(MapChkWork* p) {
 void func_080DE3E8(MapChkWork* p) {
     u8 v = p->unk_04;
 
-    if ((GetKeysRepeat() & 0x20) != 0) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0) {
         p->unk_04 = p->unk_04 == 0 ? 12 : p->unk_04 - 1;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0) {
         p->unk_04 = p->unk_04 > 11 ? 0 : p->unk_04 + 1;
     }
 
@@ -382,11 +382,11 @@ void func_080DE3E8(MapChkWork* p) {
 void func_080DE4A4(MapChkWork* p) {
     u8 v = gUnk_02034F18->unk_02;
 
-    if ((GetKeysRepeat() & 0x20) != 0 && v > 8) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0 && v > 8) {
         v--;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0 && v <= 47) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0 && v <= 47) {
         v++;
     }
 
@@ -398,18 +398,18 @@ void func_080DE4A4(MapChkWork* p) {
     }
 }
 void func_080DE50C(MapChkWork* p) {
-    if ((GetKeysRepeat() & 0x30) != 0) {
+    if ((GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) != 0) {
         func_080DDEC8((u8*)p, p->unk_05 == 0 ? 1 : 0);
     }
 }
 void func_080DE534(MapChkWork* p) {
     u8 v = gUnk_02034F18->unk_03;
 
-    if ((GetKeysRepeat() & 0x20) != 0 && v > 2) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0 && v > 2) {
         v--;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0 && v <= 9) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0 && v <= 9) {
         v++;
     }
 
@@ -428,11 +428,11 @@ void func_080DE534(MapChkWork* p) {
 void func_080DE5B0(MapChkWork* p) {
     u8 v = gUnk_02034F18->unk_04;
 
-    if ((GetKeysRepeat() & 0x20) != 0 && v > 2) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0 && v > 2) {
         v--;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0 && v <= 9) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0 && v <= 9) {
         v++;
     }
 
@@ -451,11 +451,11 @@ void func_080DE5B0(MapChkWork* p) {
 void func_080DE62C(MapChkWork* p) {
     u8 v = gUnk_02034F18->unk_05;
 
-    if ((GetKeysRepeat() & 0x20) != 0 && v > 3) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0 && v > 3) {
         v--;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0 && v <= 47) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0 && v <= 47) {
         v++;
     }
 
@@ -474,11 +474,11 @@ void func_080DE62C(MapChkWork* p) {
 void func_080DE6A8(MapChkWork* p) {
     u8 v = gUnk_02034F18->unk_06;
 
-    if ((GetKeysRepeat() & 0x20) != 0 && v > 3) {
+    if ((GetKeysRepeat() & DPAD_LEFT) != 0 && v > 3) {
         v--;
     }
 
-    if ((GetKeysRepeat() & 0x10) != 0 && v <= 47) {
+    if ((GetKeysRepeat() & DPAD_RIGHT) != 0 && v <= 47) {
         v++;
     }
 
@@ -545,18 +545,18 @@ void Mode_MapChk_1(void) {
 
     func_0805FCB0(12, gMapChkWork->unk_00 * 12 + 32, 2, gUnk_0984B830);
 
-    if ((GetKeysRepeat() & 0x40) != 0) {
+    if ((GetKeysRepeat() & DPAD_UP) != 0) {
         gMapChkWork->unk_00 = gMapChkWork->unk_00 == 0 ? 9 : gMapChkWork->unk_00 - 1;
     }
 
-    if ((GetKeysRepeat() & 0x80) != 0) {
+    if ((GetKeysRepeat() & DPAD_DOWN) != 0) {
         gMapChkWork->unk_00 = gMapChkWork->unk_00 > 8 ? 0 : gMapChkWork->unk_00 + 1;
     }
 
     func_0805FCB0(12, gMapChkWork->unk_00 * 12 + 32, 2, gUnk_0984B834);
     gUnk_09EF69A8[gMapChkWork->unk_00](gMapChkWork);
 
-    if ((GetKeysPressed() & 9) != 0) {
+    if ((GetKeysPressed() & (A_BUTTON | START_BUTTON)) != 0) {
         func_08085FB0();
 
         if ((gGameState.flags & 8) == 0) {
@@ -614,7 +614,7 @@ void Mode_MapChk_1(void) {
             ModeRequest(&gModeMapDbg, 0);
             break;
         }
-    } else if ((GetKeysPressed() & 6) != 0) {
+    } else if ((GetKeysPressed() & (B_BUTTON | SELECT_BUTTON)) != 0) {
         ModeRequest(&gModeDebug, 0);
     } else {
         func_080605A4(0);
