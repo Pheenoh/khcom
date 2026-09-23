@@ -22,9 +22,6 @@ typedef struct DummyEntry {
 extern u32 gFrameCounter;
 
 extern const DummyEntry gDummyEntries[];
-extern u8 gUnk_08C6B0C4[];
-extern u8 gUnk_08F683C4[];
-extern u8 gUnk_08EEE384[];
 
 void mode_dummy_0(u32 arg);
 void func_0800C064(void);

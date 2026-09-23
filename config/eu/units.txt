@@ -180,7 +180,7 @@ romcri_background_maps.s
 asset_gfx_gap_1_at_08CB46E4_at_08EE4A64_at_08F5A8DC.s
 asset_gfx_gap_1_at_08F5E384.s
 sprite_palettes_1.s
-asset_gfx_gap_1_at_08EFE384_at_08F683C4.s
+sprites_mode_debug_palettes.s
 battle_background_palettes_1.s
 event_background_palettes_1.s
 battle_background_palettes_2.s
@@ -192,10 +192,12 @@ sprite_palettes_3.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04.s
 sprite_palettes_4.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F6A6FC.s
+sprites_mode_debug_tiles.s
 battle_background_tiles_2.s
 event_background_tiles_1.s
 battle_background_tiles_3.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F77180.s
+sprites_mode_debug_maps.s
 battle_background_maps_1.s
 event_background_maps_1.s
 battle_background_maps_2.s

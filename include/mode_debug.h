@@ -34,10 +34,6 @@ typedef struct DebugWork {
 } DebugWork;
 
 extern const char gUnk_08F68604[];
-extern u8 gUnk_08C72CE4[];
-extern u8 gUnk_08EEEB84[];
-extern u8 gUnk_08F683E4[];
-extern u8 gUnk_08F685E4[];
 extern Mode gModeChkbtl;
 extern Mode gModeChksnd;
 

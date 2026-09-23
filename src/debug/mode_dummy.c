@@ -3,11 +3,7 @@
 #include "msg_api.h"
 #include "display.h"
 #include "mode_dummy.h"
-
-#ifdef VERSION_EU
-extern void* gUnkEu_08F6A73C;
-extern void* gUnkEu_08F79038;
-#endif
+#include "sprites_mode_debug.h"
 
 u16 gUnk_020348BC;
 
@@ -35,8 +31,8 @@ void mode_dummy_0(u32 arg) {
     func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     SetupBg(1, 1, 0x0C, 8);
 #ifdef VERSION_EU
-    eu_080059D4(1, &gUnkEu_08F6A73C);
-    eu_080059F4(1, &gUnkEu_08F79038);
+    eu_080059D4(1, gUnk_08C6B0C4);
+    eu_080059F4(1, gUnk_08EEE384);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
 #else
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);

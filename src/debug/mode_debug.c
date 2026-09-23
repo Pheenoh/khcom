@@ -23,11 +23,6 @@ const char gUnk_081283C0[12] = "J041001a";
 const char gUnk_081283C0[12] = "E041220b";
 #endif
 
-#ifdef VERSION_EU
-extern u8 gUnkEu_08F6B5FC[];
-extern u8 gUnkEu_08F7913C[];
-#endif
-
 void mode_debug_0(void) {
     m4aMPlayAllStop();
 #ifdef VERSION_EU
@@ -46,8 +41,8 @@ void mode_debug_0(void) {
     SetBgSize(1, 0);
 #ifdef VERSION_EU
     LoadBgPalette(1, gUnk_08F683E4, 0x200);
-    eu_080059D4(1, gUnkEu_08F6B5FC);
-    eu_080059F4(1, gUnkEu_08F7913C);
+    eu_080059D4(1, gUnk_08C72CE4);
+    eu_080059F4(1, gUnk_08EEEB84);
 #else
     LoadBgTiles(1, gUnk_08C72CE4, 0x5B40);
     LoadBgPalette(1, gUnk_08F683E4, 0x200);

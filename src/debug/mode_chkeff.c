@@ -2,14 +2,11 @@
 #include "display.h"
 #include "mode_chkeff.h"
 #include "gba/keys.h"
+#include "sprites_mode_debug.h"
 
 extern BgAnimationDef* gUnk_09ED9A1C[83];
 
 ChkEffWork* gChkEffWork;
-#ifdef VERSION_EU
-extern u8 gUnkEu_08F6A73C[];
-extern u8 gUnkEu_08F79038[];
-#endif
 
 const char gUnk_081309E0[8] = "PAUSE";
 const char gUnk_081309E8[8] = "     ";
@@ -32,8 +29,8 @@ void mode_chkeff_0(void) {
     SetBgPriority(0, 1);
     SetBgPriority(1, 2);
 #ifdef VERSION_EU
-    eu_080059D4(1, gUnkEu_08F6A73C);
-    eu_080059F4(1, gUnkEu_08F79038);
+    eu_080059D4(1, gUnk_08C6B0C4);
+    eu_080059F4(1, gUnk_08EEE384);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
 #else
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);

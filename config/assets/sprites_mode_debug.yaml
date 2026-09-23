@@ -20,6 +20,15 @@ objects:
   - name: sprites_mode_debug_frames.s
     start: 0x0895085C
     end: 0x08950BE4
+  - name: sprites_mode_debug_tiles.s
+    start: 0x08C6B0C4
+    end: 0x08C78824
+  - name: sprites_mode_debug_maps.s
+    start: 0x08EEE384
+    end: 0x08EEF384
+  - name: sprites_mode_debug_palettes.s
+    start: 0x08F683C4
+    end: 0x08F68624
   jp:
   - name: sprites_mode_debug.c
     start: 0x09EB71E0
@@ -27,6 +36,15 @@ objects:
   - name: sprites_mode_debug_frames.s
     start: 0x08943E44
     end: 0x089441CC
+  - name: sprites_mode_debug_tiles.s
+    start: 0x08C5E6AC
+    end: 0x08C6BE0C
+  - name: sprites_mode_debug_maps.s
+    start: 0x08EE188C
+    end: 0x08EE288C
+  - name: sprites_mode_debug_palettes.s
+    start: 0x08F5B8CC
+    end: 0x08F5BB2C
   eu:
   - name: sprites_mode_debug.c
     start: 0x09F5A3BC
@@ -34,6 +52,15 @@ objects:
   - name: sprites_mode_debug_frames.s
     start: 0x0897C180
     end: 0x0897C508
+  - name: sprites_mode_debug_palettes.s
+    start: 0x08F6491C
+    end: 0x08F64B7C
+  - name: sprites_mode_debug_tiles.s
+    start: 0x08F6A73C
+    end: 0x08F6EF3C
+  - name: sprites_mode_debug_maps.s
+    start: 0x08F79038
+    end: 0x08F79520
 entries:
 - name: gUnk_09EDF764
   record: SpriteTable
@@ -140,3 +167,97 @@ entries:
   eu:
     address: 0x0897C226
     size: 736
+- name: gUnk_08C6B0C4
+  format: tiles4
+  us:
+    address: 0x08C6B0C4
+    size: 31776
+  jp:
+    address: 0x08C5E6AC
+    size: 31776
+  eu:
+    address: 0x08F6A73C
+    size: 3776
+    compress: lz77
+- name: gUnk_08C72CE4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x08C72CE4
+    size: 23360
+  jp:
+    address: 0x08C662CC
+    size: 23360
+  eu:
+    address: 0x08F6B5FC
+    size: 14656
+    compress: lz77
+- name: gUnk_08EEE384
+  format: tilemap
+  us:
+    address: 0x08EEE384
+    size: 2048
+  jp:
+    address: 0x08EE188C
+    size: 2048
+  eu:
+    address: 0x08F79038
+    size: 260
+    compress: lz77
+- name: gUnk_08EEEB84
+  format: tilemap
+  us:
+    address: 0x08EEEB84
+    size: 2048
+  jp:
+    address: 0x08EE208C
+    size: 2048
+  eu:
+    address: 0x08F7913C
+    size: 996
+    compress: lz77
+- name: gUnk_08F683C4
+  format: palette
+  us:
+    address: 0x08F683C4
+    size: 32
+  jp:
+    address: 0x08F5B8CC
+    size: 32
+  eu:
+    address: 0x08F6491C
+    size: 32
+- name: gUnk_08F683E4
+  format: palette
+  us:
+    address: 0x08F683E4
+    size: 512
+  jp:
+    address: 0x08F5B8EC
+    size: 512
+  eu:
+    address: 0x08F6493C
+    size: 512
+- name: gUnk_08F685E4
+  format: palette
+  us:
+    address: 0x08F685E4
+    size: 32
+  jp:
+    address: 0x08F5BAEC
+    size: 32
+  eu:
+    address: 0x08F64B3C
+    size: 32
+- name: gUnk_08F68604
+  format: palette
+  declare: false
+  us:
+    address: 0x08F68604
+    size: 32
+  jp:
+    address: 0x08F5BB0C
+    size: 32
+  eu:
+    address: 0x08F64B5C
+    size: 32
