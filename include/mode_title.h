@@ -28,26 +28,6 @@
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
 
-extern u8 gUnk_09840798[];
-extern u8 gUnk_0983E398[];
-extern u8 gUnk_097D3658[];
-extern u8 gUnk_09840F98[];
-extern u8 gUnk_097C77B8[];
-extern u8 gUnk_0983EB98[];
-extern u8 gUnk_097CF758[];
-extern u8 gUnk_0984A618[];
-extern u8 gUnk_0983FB98[];
-extern u8 gUnk_0984AA18[];
-extern u8 gUnk_0984A6D8[];
-extern u8 gUnk_0984A6B8[];
-extern u8 gUnk_0984A6F8[];
-extern u8 gUnk_0984A718[];
-extern u8 gUnk_0984A738[];
-
-extern u8 gUnk_0983F398[];
-extern u8 gUnk_0984A418[];
-extern u8 gUnk_0984A818[];
-
 void func_080D5A4C(u16 a);
 void func_080D5B04(void);
 void func_080D5B30(void);

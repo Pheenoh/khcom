@@ -9,7 +9,6 @@
 
 #include "staff_roll_scene_data.h"
 
-
 #include "evt_object_types.h"
 
 #include "gba/syscall.h"
@@ -344,9 +343,6 @@ extern u8 gUnk_09C5C4E2[];
 extern u8 gUnk_09C5C704[];
 extern u8 gUnk_09CD0334[];
 extern u8 gUnk_09CD0E34[];
-extern u8 gUnk_097CF758[];
-extern u8 gUnk_0983FB98[];
-extern u8 gUnk_0984A618[];
 extern u8 gUnk_09D09674[];
 extern u8 gUnk_09D4B274[];
 extern u8 gUnk_09D4BA74[];

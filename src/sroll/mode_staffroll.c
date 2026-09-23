@@ -4,6 +4,7 @@
 #include "bos7.h"
 #include "mode_staffroll.h"
 #include "bos7_api.h"
+#include "sprites_title.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_09DD51A0[];

@@ -2,7 +2,6 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
-
 #include "obj.h"
 
 #include "title_api.h"
@@ -55,12 +54,6 @@ typedef struct TitleLumiChangeWork {
 } TitleLumiChangeWork;
 
 extern u8 gUnk_02034ECC;
-
-extern u8 gUnk_0984A718[];
-extern u8 gUnk_0984A778[];
-extern u8 gUnk_0984A7B8[];
-extern u8 gUnk_0984A7D8[];
-extern u8 gUnk_0984A7F8[];
 
 u8 func_080D6280(void);
 u8 func_080D6294(void);

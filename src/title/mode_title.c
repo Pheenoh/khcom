@@ -26,20 +26,7 @@ u8 gUnk_02034ECB;
 u8 gUnk_02034ECC;
 
 #ifdef VERSION_EU
-extern u8 gUnkEu_09827920[];
-extern u8 gUnkEu_098272D0[];
-extern u8 gUnkEu_09823D9C[];
-extern u8 gUnkEu_09827C34[];
-extern u8 gUnkEu_0981F960[];
-extern u8 gUnkEu_0982761C[];
-extern u8 gUnkEu_097ADE00[];
-extern u8 gUnkEu_0981ECC0[];
-extern u8 gUnkEu_09814A40[];
-#endif
-
-#ifdef VERSION_EU
 extern u8 gUnkEu_09814E40[];
-extern u8 gUnkEu_09815640[];
 #endif
 
 void func_080D5978(u16 a, void* b, u16 c) {
@@ -115,7 +102,7 @@ void func_080D5B04(void) {
     case 4:
     case 5:
     case 6:
-        LoadBgMap(0, gUnkEu_09815640, 0x800);
+        LoadBgMap(0, gUnk_0983F398, 0x800);
         break;
     case 2:
         LoadBgMap(0, gUnkEu_09814E40, 0x800);
@@ -150,13 +137,13 @@ void mode_title_0(void) {
 
     if (gGameState.flags & 0x200) {
 #ifdef VERSION_EU
-        eu_080059F4(0, gUnkEu_09827920);
+        eu_080059F4(0, gUnk_09840798);
 #else
         LoadBgMap(0, gUnk_09840798, 0x800);
 #endif
     } else {
 #ifdef VERSION_EU
-        eu_080059F4(0, gUnkEu_098272D0);
+        eu_080059F4(0, gUnk_0983E398);
 #else
         LoadBgMap(0, gUnk_0983E398, 0x800);
 #endif
@@ -167,16 +154,16 @@ void mode_title_0(void) {
 
     if (gGameState.flags & 0x200) {
 #ifdef VERSION_EU
-        eu_080059D4(1, gUnkEu_09823D9C);
-        eu_080059F4(1, gUnkEu_09827C34);
+        eu_080059D4(1, gUnk_097D3658);
+        eu_080059F4(1, gUnk_09840F98);
 #else
         LoadBgTiles(1, gUnk_097D3658, 0x7FA0);
         LoadBgMap(1, gUnk_09840F98, 0x800);
 #endif
     } else {
 #ifdef VERSION_EU
-        eu_080059D4(1, gUnkEu_0981F960);
-        eu_080059F4(1, gUnkEu_0982761C);
+        eu_080059D4(1, gUnk_097C77B8);
+        eu_080059F4(1, gUnk_0983EB98);
 #else
         LoadBgTiles(1, gUnk_097C77B8, 0x7FA0);
         LoadBgMap(1, gUnk_0983EB98, 0x800);
@@ -188,15 +175,9 @@ void mode_title_0(void) {
     SetupBg(2, 2, 0x1F, 0xB);
     SetBgSize(2, 0x4000);
     SetBgPriority(2, 2);
-#ifdef VERSION_EU
-    LoadBgTiles(2, gUnkEu_097ADE00, 0x3F00);
-    LoadBgPalette(2, gUnkEu_0981ECC0, 0xA0);
-    LoadBgMap(2, gUnkEu_09814A40, 0x400);
-#else
     LoadBgTiles(2, gUnk_097CF758, 0x3F00);
     LoadBgPalette(2, gUnk_0984A618, 0xA0);
     LoadBgMap(2, gUnk_0983FB98, 0x400);
-#endif
     gTitleBgX = 0x7800;
     gTitleBgY = 0x5A00;
     gTitleBgScale = 0x1000;
