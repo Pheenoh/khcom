@@ -674,7 +674,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->unk_22 = 0;
     work->unk_24 = 1;
     work->unk_2D = 1;
-    work->unk_32 = 0;
+    work->state = 0;
     work->unk_34 = 0;
     work->unk_38 = 0;
     work->unk_42 = 0;
@@ -696,10 +696,10 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
     }
 
     if (work->jf->unk_238 == 9) {
-        work->unk_32 = 5;
+        work->state = 5;
     }
 
-    switch (work->unk_32) {
+    switch (work->state) {
     case 0:
         if (work->unk_34 == 0) {
             work->unk_38 = func_080BE278(work);
@@ -718,7 +718,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_2E--;
         } else {
             work->unk_34 = 0;
-            work->unk_32 = 1;
+            work->state = 1;
         }
 
         sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
@@ -737,7 +737,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_34++;
         } else if (work->unk_34 > 60) {
             work->unk_34 = 0;
-            work->unk_32 = 2;
+            work->state = 2;
         } else {
             work->unk_34++;
         }
@@ -769,7 +769,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_2E--;
         } else {
             work->unk_34 = 0;
-            work->unk_32 = 3;
+            work->state = 3;
         }
 
         sub->z = gSineTable[(u8)work->unk_42] * 20 - 0xB400;
@@ -788,7 +788,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_34++;
         } else if (work->unk_34 > 60) {
             work->unk_34 = 0;
-            work->unk_32 = 0;
+            work->state = 0;
         } else {
             work->unk_34++;
         }
@@ -822,7 +822,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
 
             if (work->jf->unk_250 == 0) {
                 work->unk_34 = 0;
-                work->unk_32 = 2;
+                work->state = 2;
             }
         }
         break;
@@ -832,7 +832,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
 
     if (work->jf->unk_24E == 2) {
         work->unk_34 = 0;
-        work->unk_32 = 4;
+        work->state = 4;
     }
 
     if (work->unk_1E > 3) {
@@ -2405,7 +2405,7 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_158 = 0;
     work->unk_15C = 120;
     work->unk_15E = 0;
-    work->unk_160 = 0;
+    work->state = 0;
     work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
     AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
@@ -2422,7 +2422,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
     BtlObj* b;
     s16 n;
 
-    switch (work->unk_160) {
+    switch (work->state) {
     case 0:
         if (work->unk_15C > 40) {
             func_0802F274(work->x, work->y + work->z - 0x2000);
@@ -2488,14 +2488,14 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_14C = (work->unk_140 - work->y) / 40;
             work->unk_150 = 0;
             work->unk_154 = (work->unk_144 - work->z) / 820;
-            work->unk_160++;
+            work->state++;
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
             m4aSongNumStart(0x1F9);
             work->unk_17C = 0;
             work->unk_15C = 0;
-            work->unk_160 = 5;
+            work->state = 5;
         }
         break;
     case 1:
@@ -2530,7 +2530,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->gfx2 = gUnk_09EF3A48[15];
             m4aSongNumStart(632);
             work->unk_194 = 1;
-            work->unk_160++;
+            work->state++;
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
@@ -2538,7 +2538,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_17C = 0;
             work->unk_194 = 0;
             work->unk_15C = 0;
-            work->unk_160 = 5;
+            work->state = 5;
         }
         break;
     case 2:
@@ -2568,7 +2568,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             m4aSongNumStart(0x279);
             func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
-            work->unk_160 = 3;
+            work->state = 3;
         }
 
         if (work->jf->unk_238 == 7 || work->jf->unk_238 == 11) {
@@ -2576,7 +2576,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_17C = 0;
             work->unk_194 = 0;
             work->unk_15C = 0;
-            work->unk_160 = 5;
+            work->state = 5;
         }
 
         switch ((s8)func_080C1370(work->x, work->y, work->z - 0x2000)) {
@@ -2584,11 +2584,11 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             m4aSongNumStart(0x1F9);
             func_08014020(work->x - 0x800, work->y + work->z - 0x2400, 0);
             work->unk_194 = 0;
-            work->unk_160 = 3;
+            work->state = 3;
             break;
         case 2:
             work->unk_194 = 0;
-            work->unk_160 = 4;
+            work->state = 4;
             break;
         }
 
@@ -4204,7 +4204,7 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_074 = 0x1E;
     work->unk_076 = 0;
     work->unk_078 = 0;
-    work->unk_07A = 0;
+    work->state = 0;
     work->x = 0x12C00;
     work->y = 0x17C00;
     work->z = -0x7800;
@@ -4224,19 +4224,19 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
 
     func_080C427C(work);
 
-    switch (work->unk_07A) {
+    switch (work->state) {
     case 0:
         if (work->unk_074 > 0) {
             ApproachValue(&work->x, 0x1400, work->unk_074);
             ApproachValue(&work->z, -0x1400, work->unk_074);
             work->unk_074--;
         } else {
-            work->unk_07A = 1;
+            work->state = 1;
         }
         break;
     case 1:
         if (work->dsd->unk_358 & 32) {
-            work->unk_07A = 2;
+            work->state = 2;
         }
 
         func_080C4398(work);
@@ -4247,7 +4247,7 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
             func_080C43E4(&work->y, a->y);
             func_080C43E4(&work->z, a->z + 0x500);
         } else if (work->unk_078 > 49) {
-            work->unk_07A = 3;
+            work->state = 3;
         } else {
             work->unk_078++;
         }
@@ -4264,7 +4264,7 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
 
         if (work->dsd->unk_358 & 32) {
             work->unk_078 = 0;
-            work->unk_07A = 2;
+            work->state = 2;
         }
 
         func_080C4398(work);
@@ -4275,7 +4275,7 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
             ApproachValue(&work->z, -0x1400, work->unk_074);
             work->unk_074--;
         } else {
-            work->unk_07A++;
+            work->state++;
         }
         break;
     default:
@@ -4377,13 +4377,13 @@ void func_080C427C(DsdItaWork* work) {
 void func_080C4398(DsdItaWork* work) {
     if ((s16)work->unk_076 >= 600) {
         work->unk_074 = 30;
-        work->unk_07A = 4;
+        work->state = 4;
     } else {
         work->unk_076++;
     }
 
     if (work->dsd->unk_334 == 11) {
-        work->unk_07A = 4;
+        work->state = 4;
     }
 }
 
@@ -4597,7 +4597,7 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_29 = 0xF4;
     work->unk_2C = 0x800;
     work->unk_30 = 0x19;
-    work->unk_34 = 0;
+    work->state = 0;
     work->unk_36 = 0;
     work->unk_38 = 0;
     work->unk_3C = 0xF;
@@ -4610,10 +4610,10 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
 }
 
 u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
-    switch (work->unk_34) {
+    switch (work->state) {
     case 0:
         func_08013EDC(work->unk_04, work->unk_08, work->unk_0C, 0x100);
-        work->unk_34++;
+        work->state++;
         break;
     case 1:
         if (func_080128EC() != 0) {
@@ -4622,7 +4622,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
 
         func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_3C, 0);
         m4aSongNumStart(0x2BD);
-        work->unk_34++;
+        work->state++;
         break;
     case 2:
         work->unk_38++;
@@ -4632,7 +4632,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
             work->unk_38 = 0;
             work->unk_36 = 10;
             work->unk_20 = (gBtlWork->unk_134 - work->unk_08) / 15;
-            work->unk_34++;
+            work->state++;
         }
         break;
     case 3:
@@ -4711,7 +4711,7 @@ void func_080C4C54(DsdEnergy1Work* work) {
     func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
 
     if ((s16)work->unk_38 > 15) {
-        work->unk_34++;
+        work->state++;
     } else {
         work->unk_38++;
     }
@@ -4757,7 +4757,7 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_04 = 0xBC00;
     work->unk_08 = 0x16800;
     work->unk_0C = -0x2C00;
-    work->unk_2C = 0;
+    work->state = 0;
     work->unk_2E = 0;
     work->unk_30 = 0;
     work->unk_32 = 0xF;
@@ -4789,7 +4789,7 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
 u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
     BtlObj* p;
 
-    switch (work->unk_2C) {
+    switch (work->state) {
     case 0:
         func_080147C8(work->unk_10, work->unk_14);
         work->unk_10 += 25;
@@ -4797,7 +4797,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
 
         if (work->unk_30 >= work->unk_32) {
             func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
-            work->unk_2C++;
+            work->state++;
         } else {
             work->unk_30++;
         }
@@ -4810,25 +4810,25 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
 
         if (work->unk_0C <= -0xF000) {
-            work->unk_2C++;
+            work->state++;
         }
         break;
     case 2:
         func_08017F70(work->unk_04, work->unk_08, work->unk_0C, 0x103);
         m4aSongNumStart(0x2C1);
         func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
-        work->unk_2C++;
+        work->state++;
         break;
     case 3:
         func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
 
         if (func_080128EC() == 0) {
-            work->unk_2C++;
+            work->state++;
         }
         break;
     case 4:
         FadeToAmount(0, gBtlWork->unk_0B3, 8);
-        work->unk_2C++;
+        work->state++;
         break;
     case 5:
         work->unk_04 = (p = gBtlWork->actor)->x + (-0x4000 + GetRandom() % 0x8001);
@@ -4843,7 +4843,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_32, 0);
         work->unk_3C = 1;
         work->unk_30 = 0;
-        work->unk_2C++;
+        work->state++;
         break;
     case 6:
         func_0801475C(0, 0, work->unk_28);
@@ -4853,14 +4853,14 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
             m4aSongNumStart(0x29E);
             func_08014790(0);
             work->unk_3C = 0;
-            work->unk_2C = 7;
+            work->state = 7;
         }
 
         if (work->unk_0C >= -0x800) {
             func_08014790(0);
             m4aSongNumStart(0x2BF);
             work->unk_3C = 0;
-            work->unk_2C = 7;
+            work->state = 7;
         }
 
         work->unk_30++;
@@ -4870,7 +4870,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
             if (func_080128EC() == 0) {
                 BgAnimStop();
                 FadeToOriginal(0, 8);
-                work->unk_2C++;
+                work->state++;
             }
 
             return 1;
@@ -4879,7 +4879,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         if (work->unk_30 > 49) {
             work->unk_30 = 0;
             work->unk_34++;
-            work->unk_2C = 5;
+            work->state = 5;
         } else {
             work->unk_30++;
         }

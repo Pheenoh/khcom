@@ -451,7 +451,7 @@ u8 func_08110668(LstWork* work) {
 }
 
 void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg) {
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_002 = 0;
     work->unk_004 = 0;
     work->unk_006 = arg->unk_00;
@@ -470,11 +470,11 @@ void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg) {
 u8 task_bos_lst_edg_1(LstEdgWork* work) {
     BtlObj* p;
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_006--;
         if (work->unk_006 <= 0) {
-            work->unk_000 = 1;
+            work->state = 1;
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_006 = 0;
@@ -491,7 +491,7 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         ApproachValueHalfSteps(&work->z, work->unk_028, 30);
         work->unk_004++;
         if (work->unk_004 > 49) {
-            work->unk_000 = 2;
+            work->state = 2;
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_006 = 0;
@@ -504,7 +504,7 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         ApproachValueHalfSteps(&work->z, work->unk_01C, 30);
         work->unk_004++;
         if (work->unk_004 > 49) {
-            work->unk_000 = 3;
+            work->state = 3;
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_006 = 0;
@@ -512,7 +512,7 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         func_08011F78(0x10C, work->x, work->y, work->z, 8, 8, 1);
         break;
     case 3:
-        work->unk_000 = 4;
+        work->state = 4;
         work->unk_002 = 0;
         work->unk_004 = 0;
         work->unk_006 = 0;
@@ -1286,7 +1286,7 @@ void func_08111660(LstLsrTask* t) {
     LstLsrWork* w;
 
     w = t->unk_04;
-    w->unk_000 = 0;
+    w->state = 0;
     w->unk_010 = 0;
     AnimStart(&w->anim, 4, 0);
 }
@@ -1319,7 +1319,7 @@ void task_bos_lst_lsr_0(LstLsrWork* work, LstLsrArg* arg) {
     work->unk_004 = arg->unk_00;
     work->unk_008 = arg->unk_04;
     work->unk_00C = arg->unk_08;
-    work->unk_000 = 0;
+    work->state = 0;
     work->tiles = (u32)LoadObjTiles(gUnk_09CD0334, 0x900);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
@@ -1327,7 +1327,7 @@ void task_bos_lst_lsr_0(LstLsrWork* work, LstLsrArg* arg) {
 }
 
 u8 task_bos_lst_lsr_1(LstLsrWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         break;
     case 1:
@@ -1335,12 +1335,12 @@ u8 task_bos_lst_lsr_1(LstLsrWork* work) {
         if (work->unk_012 > 0) {
             break;
         }
-        work->unk_000 = 2;
+        work->state = 2;
         work->unk_012 = 0;
     case 2:
         work->unk_010++;
         if (work->unk_010 >= work->unk_014) {
-            work->unk_000 = 3;
+            work->state = 3;
             work->unk_010 = 0;
             AnimReset(&work->anim);
             AnimChange(&work->anim, 6, 1);
@@ -1348,7 +1348,7 @@ u8 task_bos_lst_lsr_1(LstLsrWork* work) {
         break;
     case 3:
         if (work->unk_010 > 15) {
-            work->unk_000 = 0;
+            work->state = 0;
             work->unk_010 = 0;
             AnimChange(&work->anim, 4, 0);
         } else {
@@ -1392,7 +1392,7 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
     void* gfx;
     s32 oam;
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 2:
         WorldToScreen(&x1, &y1, work->x2, work->y2, work->z2);
         prio = GetBattleSpritePriorityFlags(work->y2);
@@ -1437,7 +1437,7 @@ u8 func_08111A08(LstWork* work) {
 }
 
 void task_bos_lst_ptl_0(LstPtlWork* work, LstPtlArg* arg) {
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_002 = 0;
     work->unk_004 = 0;
     work->unk_006 = arg->unk_00;
@@ -1456,11 +1456,11 @@ u8 task_bos_lst_ptl_1(LstPtlWork* work) {
 
     result = 1;
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_006--;
         if (work->unk_006 <= 0) {
-            work->unk_000 = 1;
+            work->state = 1;
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_006 = 0;
@@ -1475,7 +1475,7 @@ u8 task_bos_lst_ptl_1(LstPtlWork* work) {
         work->unk_014 = gSineTable[(work->unk_004 * 2) & 0xFF];
         work->unk_004++;
         if ((work->unk_00C >> 8) > 0xA8) {
-            work->unk_000 = 2;
+            work->state = 2;
             work->unk_002 = 0;
             work->unk_004 = 0;
             work->unk_006 = 0;
@@ -1672,7 +1672,7 @@ void task_bos_lst_ctr_0(LstCtrWork* work, LstCtrArg* arg) {
     work->unk_000 = arg->unk_00;
     work->unk_004 = arg->unk_04;
     work->unk_006 = arg->unk_06;
-    work->unk_008 = 0;
+    work->state = 0;
     work->unk_00A = 0;
     work->unk_00C = 0;
     work->unk_00E = arg->unk_08;
@@ -1703,7 +1703,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
     work->unk_024 /= 2;
     work->unk_028 /= 2;
 
-    switch (work->unk_008) {
+    switch (work->state) {
     case 0:
         c = (u16)work->unk_00C + 1;
         work->unk_00C = c;
@@ -1713,7 +1713,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->x2 = work->unk_014 - (work->unk_014 - p->x) / 4;
             work->y2 = p->y;
             work->z2 = -0x1000;
-            work->unk_008 = 1;
+            work->state = 1;
             work->unk_00A = 0;
             work->unk_00C = 0;
             work->unk_00E = 0;
@@ -1734,7 +1734,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
         work->unk_01C = work->z + (work->z2 - work->z) * work->unk_00C / work->unk_012;
         work->unk_00C++;
         if (work->unk_00C >= work->unk_012) {
-            work->unk_008 = 2;
+            work->state = 2;
             work->unk_00A = 0;
             work->unk_00C = 0;
             work->unk_00E = 0;
@@ -1746,7 +1746,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
     case 2:
         work->unk_00C++;
         if (work->unk_00C > 2) {
-            work->unk_008 = 3;
+            work->state = 3;
             work->unk_00A = 0;
             work->unk_00C = 0;
             work->unk_00E = 0;
@@ -1762,7 +1762,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->unk_010 = 0;
             work->unk_014 = work->unk_014 - 0x600;
             if (work->unk_014 < 0x6000) {
-                work->unk_008 = 4;
+                work->state = 4;
                 work->unk_00A = 0;
                 work->unk_00C = 0;
                 work->unk_00E = 0;
@@ -1771,7 +1771,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
             work->unk_010 = 0x80;
             work->unk_014 = work->unk_014 + 0x600;
             if (work->unk_014 > 0x19000) {
-                work->unk_008 = 4;
+                work->state = 4;
                 work->unk_00A = 0;
                 work->unk_00C = 0;
                 work->unk_00E = 0;
@@ -1808,7 +1808,7 @@ void task_bos_lst_ctr_2(LstCtrWork* work) {
     prio = GetBattleSpritePriorityFlags(work->unk_018 + work->unk_024) | 4;
     z = -0x1004 - ((work->unk_018 + work->unk_024) >> 8) * 4;
 
-    switch (work->unk_008) {
+    switch (work->state) {
     case 0:
         d = work->unk_00C - work->unk_006 * 8;
         if (d <= 0) {

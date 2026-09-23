@@ -2125,7 +2125,7 @@ void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
     work->target = (MdDaiTarget*)src[1];
     work->unk_080 = (void*)src[0];
     work->unk_07C = 0;
-    work->unk_07E = 0;
+    work->state = 0;
     work->x = 0x8000;
     work->y = 0x14F00;
     work->z = 0;
@@ -2147,7 +2147,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
 
     result = 1;
 
-    switch (work->unk_07E) {
+    switch (work->state) {
     case 0:
         ApproachValue(&work->unk_00C, 0, work->unk_010);
         work->unk_010--;
@@ -2159,7 +2159,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             m4aSongNumStart(680);
             work->unk_07C = 1;
             work->unk_010 = 20;
-            work->unk_07E = 1;
+            work->state = 1;
         }
         break;
     case 1:
@@ -2173,7 +2173,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             m4aSongNumStart(680);
             work->unk_07C = 2;
             work->unk_010 = 20;
-            work->unk_07E = 2;
+            work->state = 2;
         }
         break;
     case 2:
@@ -2186,7 +2186,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             m4aSongNumStart(680);
             work->unk_07C = 3;
             work->target->unk_00 &= 0xFFFE;
-            work->unk_07E = 3;
+            work->state = 3;
         }
         break;
     case 3:
@@ -2223,7 +2223,7 @@ void task_bos_md_dai_2(MdDaiWork* work) {
     WorldToScreen(&x, &y, work->x, work->y, work->z + work->unk_00C);
     frame = GetBattleSpritePriorityFlags(work->y);
 
-    if (work->unk_07E <= 2) {
+    if (work->state <= 2) {
         DrawSprite(x, y + 24, gUnk_09999E0C, (void*)work->tiles, (void*)work->palette, 0,
                       frame, (u16)(-4100 - (work->y >> 8) * 4));
         DrawSprite(x, y, gUnk_09999E1C, (void*)work->tiles, (void*)work->palette, 0, frame,

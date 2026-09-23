@@ -87,7 +87,7 @@ typedef struct BoogieExplosiondiceWork {
 } BoogieExplosiondiceWork;
 
 typedef struct BoogieDiskWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
@@ -112,7 +112,7 @@ typedef struct BoogieDiskWork {
 } BoogieDiskWork;
 
 typedef struct UrsulaWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tasks;
@@ -211,7 +211,7 @@ typedef struct UrsulaBubbleSingleWork {
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work);
 
 typedef struct BoogieKnifereaderWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tasks;
@@ -222,7 +222,7 @@ typedef struct BoogieKnifereaderWork {
 } BoogieKnifereaderWork;
 
 typedef struct BoogieDiceWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
@@ -389,7 +389,7 @@ typedef struct BoogieSakuWork {
 } BoogieSakuWork;
 
 typedef struct BoogieKnifeWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
@@ -436,7 +436,7 @@ typedef struct UrsulaBacktakoWork {
 } UrsulaBacktakoWork;
 
 typedef struct BoogieKaihukuWork {
-    u32 unk_000;
+    u32 state;
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;

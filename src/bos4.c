@@ -512,7 +512,7 @@ u8 ClampBoogieDicePosition(s32* a, s32* b, s16 c, u16 d) {
 }
 
 u8 func_080D9B28(BoogieDiceWork* work) {
-    if (work->unk_000 == 3) {
+    if (work->state == 3) {
         if (work->parent->unk_000 == 9) {
             if (AnimGetFrame(&work->parent->anim) <= 2) {
                 if (!AnimIsFinished(&work->parent->anim)) {
@@ -543,7 +543,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
 
     work->unk_170 = arg[0x175];
     work->parent = (BoogieWork*)arg;
-    work->unk_000 = 10;
+    work->state = 10;
     work->unk_004 = 0;
     work->unk_150 = -0x4CC;
     work->unk_154 = GetRandom() % 437 + 0x4C;
@@ -584,11 +584,11 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
     if (work->unk_170 == 0) {
         switch (func_0801ADAC(p)) {
         case 5:
-            work->unk_000 = 3;
+            work->state = 3;
             work->unk_004 = 0;
             break;
         case 4:
-            work->unk_000 = 0;
+            work->state = 0;
             work->unk_004 = 0;
             gUnk_0203C554 += 180;
             break;
@@ -597,8 +597,8 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             if (func_0801C1C0(0) != 0) {
                 func_080D9A58();
 
-                if (work->unk_000 == 3) {
-                    work->unk_000 = 0;
+                if (work->state == 3) {
+                    work->state = 0;
                     work->unk_004 = 0;
                 }
             }
@@ -609,29 +609,29 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         case 6:
         case 7:
         case 8:
-            work->unk_000 = 2;
+            work->state = 2;
             work->unk_004 = 0;
             break;
         }
     } else {
         switch (GetBoogieDiceState()) {
         case 3:
-            if (work->unk_000 != 3) {
-                work->unk_000 = 3;
+            if (work->state != 3) {
+                work->state = 3;
                 work->unk_004 = 0;
             }
 
             break;
         case 0:
-            if (work->unk_000 != 0) {
-                work->unk_000 = 0;
+            if (work->state != 0) {
+                work->state = 0;
                 work->unk_004 = 0;
             }
 
             break;
         case 1:
-            if (work->unk_000 == 3) {
-                work->unk_000 = 0;
+            if (work->state == 3) {
+                work->state = 0;
                 work->unk_004 = 0;
             }
 
@@ -644,13 +644,13 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         case 6:
         case 7:
         case 8:
-            work->unk_000 = 2;
+            work->state = 2;
             work->unk_004 = 0;
             break;
         }
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 3:
         if (func_080D9B28(work) != 0) {
             return 1;
@@ -685,7 +685,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
             if (work->unk_150 >= -25) {
                 func_080DA42C(work);
-                work->unk_000 = 4;
+                work->state = 4;
                 ((BtlObj*)p)->unk_034 |= 0x100;
 
                 if (work->unk_170 == 0) {
@@ -725,13 +725,13 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             p->z = 0;
             work->unk_150 = -(work->unk_150 * 128 >> 8);
             work->unk_004 = 0;
-            work->unk_000 = 1;
+            work->state = 1;
         }
 
         break;
     case 1:
         if ((s16)work->unk_004 > 59) {
-            work->unk_000 = 6;
+            work->state = 6;
             break;
         }
 
@@ -768,14 +768,14 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         return 0;
     case 4:
         if (AnimIsFinished(&work->anim) != 0) {
-            work->unk_000 = 5;
+            work->state = 5;
             work->unk_004 = 0;
         }
 
         break;
     case 5:
         if ((s16)work->unk_004 > 20) {
-            work->unk_000 = 6;
+            work->state = 6;
             break;
         }
 
@@ -787,7 +787,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         work->y += 96;
 
         if (work->unk_160 <= 127) {
-            work->unk_000 = 7;
+            work->state = 7;
             work->unk_150 = -0x4CC;
             work->unk_004 = 0;
         }
@@ -795,7 +795,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         break;
     case 7:
         if ((s16)work->unk_004 > 10) {
-            work->unk_000 = 8;
+            work->state = 8;
             work->unk_004 = 0;
             break;
         }
@@ -809,7 +809,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         work->y -= 200;
 
         if (work->unk_160 > 255) {
-            work->unk_000 = 9;
+            work->state = 9;
             work->unk_004 = 0;
         } else if (work->unk_160 <= 178) {
             break;
@@ -835,7 +835,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
     AnimUpdate(&work->anim);
 
-    if (work->unk_000 == 1) {
+    if (work->state == 1) {
         AnimUpdate(&work->anim);
     }
 
@@ -887,7 +887,7 @@ void task_bos_boogie_dice_2(BoogieDiceWork* work) {
 }
 
 void task_bos_boogie_dice_3(BoogieDiceWork* work) {
-    if (work->unk_168 == 0 && gUnk_0203C560 != 3 && work->unk_170 == 0 && work->unk_000 != 10) {
+    if (work->unk_168 == 0 && gUnk_0203C560 != 3 && work->unk_170 == 0 && work->state != 10) {
         gUnk_0203C564 = 1;
     }
 
@@ -1249,7 +1249,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 d;
     s32 e;
 
-    work->unk_000 = 2;
+    work->state = 2;
     work->unk_004 = 0;
     work->unk_15C = 0;
     work->unk_150 = -0x200;
@@ -1292,7 +1292,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
 
     switch (func_0801ADAC(p)) {
     case 5:
-        work->unk_000 = 0;
+        work->state = 0;
         work->unk_004 = 0;
         break;
     case 2:
@@ -1308,15 +1308,15 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     case 6:
     case 7:
     case 8:
-        if (work->unk_000 != 1) {
-            work->unk_000 = 1;
+        if (work->state != 1) {
+            work->state = 1;
             work->unk_004 = 0;
         }
 
         break;
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         p->y += work->unk_158;
 
@@ -1418,7 +1418,7 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     BtlObj* p;
     s32 v;
 
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_004 = 0;
 
     if (gUnk_0203C578 != 0) {
@@ -1455,10 +1455,10 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_02C;
 
     if (gUnk_0203C574 != 0) {
-        work->unk_000 = 2;
+        work->state = 2;
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         p->z += work->unk_13C;
         work->unk_13C += work->unk_150;
@@ -1467,7 +1467,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
             func_080DB04C(work);
         } else {
             p->z = 0;
-            work->unk_000 = 1;
+            work->state = 1;
             work->unk_13C = work->unk_154;
         }
 
@@ -1485,7 +1485,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
             work->unk_13C = work->unk_154;
 
             if ((s16)work->unk_004 > 199.99999f) {
-                work->unk_000 = 2;
+                work->state = 2;
             } else {
                 func_080DB04C(work);
             }
@@ -1587,7 +1587,7 @@ void func_080DB468(BoogieKnifereaderWork* work) {
 void task_bos_boogie_knifereader_0(BoogieKnifereaderWork* work) {
     s32 i;
 
-    work->unk_000 = 2;
+    work->state = 2;
     work->unk_004 = 0;
     gUnk_0203C574 = 0;
     TaskPoolInit(&work->tasks, 5);
@@ -1609,7 +1609,7 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
 
     switch (func_0801ADAC(e)) {
     case 5:
-        work->unk_000 = 0;
+        work->state = 0;
         work->unk_004 = 0;
         break;
     case 2:
@@ -1625,15 +1625,15 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
     case 6:
     case 7:
     case 8:
-        if (work->unk_000 != 1) {
-            work->unk_000 = 1;
+        if (work->state != 1) {
+            work->state = 1;
             work->unk_004 = 0;
         }
 
         break;
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 2:
         if ((s16)work->unk_004 > 30) {
             return 0;
@@ -1701,7 +1701,7 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     s32 d;
     s32 e;
 
-    work->unk_000 = 2;
+    work->state = 2;
     work->unk_004 = 0;
     work->unk_154 = (u32)arg;
     work->unk_150 = 0;
@@ -1724,7 +1724,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
 
     switch (func_0801ADAC(p)) {
     case 5:
-        work->unk_000 = 0;
+        work->state = 0;
         work->unk_004 = 0;
         break;
     case 2:
@@ -1740,15 +1740,15 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
     case 6:
     case 7:
     case 8:
-        if (work->unk_000 != 1) {
-            work->unk_000 = 1;
+        if (work->state != 1) {
+            work->state = 1;
             work->unk_004 = 0;
         }
 
         break;
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         func_0802F274(p->x, p->y + p->z);
 
@@ -1812,7 +1812,7 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work) {
     s16 x;
     s16 y;
 
-    if (work->unk_000 != 2) {
+    if (work->state != 2) {
         v = GetBattleSpritePriorityFlags(p->y);
         d = (void*)work->palette;
         WorldToScreen(&x, &y, p->x, p->y, p->z);
@@ -1828,7 +1828,7 @@ void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
 }
 
 void func_080DB978(UrsulaWork* work) {
-    if (work->unk_000 >= 3 && work->unk_000 <= 4) {
+    if (work->state >= 3 && work->state <= 4) {
         if (work->unk_028 > gBtlWork->actor->x) {
             if (work->unk_134 != (u32)gUnk_09EF5130) {
                 work->unk_134 = (u32)gUnk_09EF5130;
@@ -1872,7 +1872,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     gUnk_0203C57C = 1;
     TaskCreate((u8*)gBtlWork + 0x40, &gTaskDescBosUrsulaMap, (void*)&gUnk_096FE14C);
     TaskCreate((u8*)gBtlWork + 0x2C, &gTaskDescBosUrsulaBorder, 0);
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_004 = 0;
     work->unk_134 = 0;
     work->unk_160 = 0;
@@ -2037,23 +2037,23 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
 
     switch (func_0801ADAC(p)) {
     case 5:
-        work->unk_000 = 1;
+        work->state = 1;
         work->unk_004 = 0;
         break;
     case 1:
     case 6:
     case 7:
         func_080DBE18(work);
-        work->unk_000 = 3;
+        work->state = 3;
         work->unk_004 = 0;
         break;
     case 3:
     case 8:
-        work->unk_000 = 4;
+        work->state = 4;
         work->unk_004 = 0;
         break;
     case 4:
-        work->unk_000 = 2;
+        work->state = 2;
         break;
     }
 
@@ -2069,8 +2069,8 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             work->unk_15E = 9;
         }
         work->unk_142 = 300;
-        if (work->unk_000 == 1) {
-            work->unk_000 = 2;
+        if (work->state == 1) {
+            work->state = 2;
         }
     }
 
@@ -2087,7 +2087,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 func_0802F1E8();
             }
             work->unk_142--;
-            if (work->unk_142 == 0 && work->unk_000 == 4) {
+            if (work->unk_142 == 0 && work->state == 4) {
                 work->unk_142 = 1;
             }
             if (work->unk_142 > 280) {
@@ -2110,7 +2110,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         func_0801C2DC(&work->unk_024, 0);
     }
 
-    switch (work->unk_000) {
+    switch (work->state) {
     case 1:
         if ((s16)work->unk_004 == 0) {
             func_080DD69C(func_080DBDC0(work));
@@ -2121,22 +2121,22 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             }
             if (!func_080DD754()) {
                 func_0801AF08(p);
-                work->unk_000 = 0;
+                work->state = 0;
             }
         }
         break;
     case 2:
         func_0801AF08(p);
-        work->unk_000 = 0;
+        work->state = 0;
         func_080DD69C(0);
         break;
     case 3:
         if ((s16)work->unk_004 > 20) {
             func_0801AF08(p);
             if (func_080DC5E8() == 1 && !func_080DC528()) {
-                work->unk_000 = 5;
+                work->state = 5;
             } else {
-                work->unk_000 = 0;
+                work->state = 0;
             }
             work->unk_004 = 0;
         } else {
@@ -2200,11 +2200,11 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 }
             }
             if ((u32)p->x > 0x20000) {
-                work->unk_000 = 5;
+                work->state = 5;
             }
             if (func_080DC5E8() == 2) {
                 if (((p->x - gBtlWork->actor->x) >= 0 ? p->x - gBtlWork->actor->x : -(p->x - gBtlWork->actor->x)) > 0x6800) {
-                    work->unk_000 = 5;
+                    work->state = 5;
                 }
             }
         }
@@ -2220,17 +2220,17 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             if (func_080DC5E8() == 2 && p->x > 0x6800 && p->x < 0x19800) {
                 if (((p->x - gBtlWork->actor->x) >= 0 ? p->x - gBtlWork->actor->x : -(p->x - gBtlWork->actor->x)) < 0x6800 && func_080DBA14(work)) {
                     func_0801BCD4(&work->unk_024);
-                    work->unk_000 = 0;
+                    work->state = 0;
                 }
             }
             if ((!(p->unk_034 & 4) && p->x == 0x6800) || ((p->unk_034 & 4) && p->x == 0x19800)) {
-                work->unk_000 = 0;
+                work->state = 0;
             }
         }
         break;
     }
 
-    if (work->unk_000 != 4) {
+    if (work->state != 4) {
         func_080DB978(work);
     }
     if (func_080DBA14(work)) {
@@ -2322,7 +2322,7 @@ u32 func_080DC5E8(void) {
 }
 
 u8 func_080DC628(void) {
-    if (((UrsulaWork*)gUrsulaWork)->unk_000 == 4) {
+    if (((UrsulaWork*)gUrsulaWork)->state == 4) {
         return 1;
     }
 

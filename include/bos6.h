@@ -229,7 +229,7 @@ typedef struct PcOam {
 } PcOam;
 
 typedef struct PcWork {
-    s16 unk_000;
+    s16 state;
     s16 unk_002;
     s16 unk_004;
     s16 unk_006;

@@ -148,7 +148,7 @@ typedef struct MdDaiWork {
     u8 unk_020[0x58];
     MdDaiTarget* target;
     s16 unk_07C;
-    u16 unk_07E;
+    u16 state;
     void* unk_080;
 } MdDaiWork;
 

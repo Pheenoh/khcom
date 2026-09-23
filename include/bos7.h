@@ -108,7 +108,7 @@ typedef struct LstLsrTask {
 } LstLsrTask;
 
 typedef struct LstEdgWork {
-    s16 unk_000;
+    s16 state;
     s16 unk_002;
     s16 unk_004;
     s16 unk_006;
@@ -131,7 +131,7 @@ typedef struct LstCtrWork {
     s32 unk_000;
     s16 unk_004;
     s16 unk_006;
-    s16 unk_008;
+    s16 state;
     s16 unk_00A;
     s16 unk_00C;
     s16 unk_00E;
@@ -177,7 +177,7 @@ typedef struct LstFldWork {
 typedef LstState LstBitWork;
 
 typedef struct LstLsrWork {
-    s16 unk_000;
+    s16 state;
     u8 unk_002;
     u8 unk_003;
     s32 unk_004;
@@ -200,7 +200,7 @@ typedef struct LstLsrWork {
 } LstLsrWork;
 
 typedef struct LstPtlWork {
-    s16 unk_000;
+    s16 state;
     s16 unk_002;
     s16 unk_004;
     s16 unk_006;

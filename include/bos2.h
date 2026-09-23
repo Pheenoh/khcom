@@ -109,7 +109,7 @@ typedef struct DsdEnergy1Work {
     u8 unk_2A[0x2];
     s32 unk_2C;
     s32 unk_30;
-    s16 unk_34;
+    s16 state;
     u16 unk_36;
     s16 unk_38;
     u16 unk_3A;
@@ -134,7 +134,7 @@ typedef struct DsdEnergy2Work {
     s32 unk_20;
     s32 unk_24;
     s32 unk_28;
-    s16 unk_2C;
+    s16 state;
     u16 unk_2E;
     s16 unk_30;
     s16 unk_32;
@@ -213,7 +213,7 @@ typedef struct DsdItaWork {
     s16 unk_074;
     u16 unk_076;
     s16 unk_078;
-    u8 unk_07A;
+    u8 state;
     u8 unk_07B[0x1];
     u16 unk_07C;
     s16 unk_07E;
@@ -273,7 +273,7 @@ typedef struct JfLampWork {
     u8 unk_2D;
     s16 unk_2E;
     u8 unk_30[0x2];
-    u8 unk_32;
+    u8 state;
     u8 unk_33[0x1];
     s16 unk_34;
     u16 unk_36;
@@ -313,7 +313,7 @@ typedef struct JfRockWork {
     u8 unk_15B[0x1];
     s16 unk_15C;
     s16 unk_15E;
-    u8 unk_160;
+    u8 state;
     u8 unk_161[0x3];
     void* tiles2;
     void* palette2;

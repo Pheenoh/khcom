@@ -5546,7 +5546,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     u16 zero;
 
     work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosPcFld, gUnk_09A3DF0C);
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_002 = 0;
     work->unk_004 = 600;
     work->unk_006 = 0;
@@ -5595,7 +5595,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     if (arg == 0) {
         work->unk_2ED = 0;
     } else {
-        work->unk_000 = 7;
+        work->state = 7;
         work->unk_2F4 = 0x34BC0;
         work->unk_2EC = 1;
         work->unk_2ED = 1;
@@ -5712,7 +5712,7 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
         work->unk_002 += 1;
     } else if (func_0810A424(work) != 0) {
         func_0801AF08(p);
-        work->unk_000 = 0;
+        work->state = 0;
         work->unk_002 = 0;
         func_0810A914(work, arg);
     } else {
@@ -5802,17 +5802,17 @@ u8 func_0810ACB8(PcWork* work, s32 arg) {
             switch (work->unk_010) {
             case 67:
                 work->unk_008 = 2;
-                work->unk_000 = 5;
+                work->state = 5;
                 work->unk_002 = 0;
                 return 1;
             case 68:
                 work->unk_008 = 3;
-                work->unk_000 = 5;
+                work->state = 5;
                 work->unk_002 = 0;
                 return 1;
             default:
                 work->unk_008 = 1;
-                work->unk_000 = 5;
+                work->state = 5;
                 work->unk_002 = 0;
                 return 1;
             }
@@ -5840,14 +5840,14 @@ u8 func_0810ACB8(PcWork* work, s32 arg) {
                 if (work->unk_2F4 <= 0) {
                     if ((GetRandom() & 0x300) == 0x300) {
                         work->unk_008 = 1;
-                        work->unk_000 = 5;
+                        work->state = 5;
                         work->unk_002 = 0;
                         break;
                     }
                 }
             default:
                 work->unk_004 = work->unk_004 / 4;
-                work->unk_000 = 0;
+                work->state = 0;
                 work->unk_002 = 0;
                 break;
             }
@@ -5867,7 +5867,7 @@ u8 func_0810AE74(PcWork* work, s32 arg) {
             func_0801AF08(p);
             work->unk_006 = 0;
         }
-        work->unk_000 = 0;
+        work->state = 0;
         work->unk_002 = 0;
     } else {
         if (work->unk_006 == 1) {
@@ -5894,7 +5894,7 @@ u8 func_0810AED4(PcWork* work, s32 arg) {
     }
     work->unk_002 += 1;
     func_0801AF08(p);
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_002 = 0;
     return 1;
 }
@@ -5989,13 +5989,13 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
     }
     switch (func_0801ADAC(p)) {
     case 5:
-        work->unk_000 = 1;
+        work->state = 1;
         work->unk_002 = 0;
         break;
     case 1:
     case 6:
     case 7:
-        if (work->unk_000 == 5) {
+        if (work->state == 5) {
             work->unk_006 = 16;
             if (work->unk_2F4 <= 0) {
                 if (GetRandom() & 0x300) {
@@ -6003,20 +6003,20 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
                 }
             }
         } else {
-            work->unk_000 = 3;
+            work->state = 3;
             work->unk_002 = 0;
         }
         break;
     case 3:
-        work->unk_000 = 4;
+        work->state = 4;
         work->unk_002 = 0;
         break;
     case 4:
-        work->unk_000 = 2;
+        work->state = 2;
         work->unk_002 = 0;
         break;
     }
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         r = func_0810A914(work, arg);
         break;
