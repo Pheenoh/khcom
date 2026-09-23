@@ -2,7 +2,13 @@
 #define GUARD_EMY_H
 
 #include "task_descriptors.h"
-#include "animation_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "enemy_types.h"
 
@@ -26,7 +32,6 @@
 #include "enemy_common.h"
 #include "btl_api.h"
 
-
 typedef struct EmySpawn {
     s32 x;
     s32 y;
@@ -36,7 +41,6 @@ typedef struct EmySpawn {
     u16 unk_14;
     u8 unk_16[0x0A];
 } EmySpawn;
-
 
 typedef struct Emy03Work {
     EmyWork base;

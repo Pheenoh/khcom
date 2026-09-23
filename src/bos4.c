@@ -8,6 +8,7 @@
 #include "monsgage.h"
 #include "bos4.h"
 #include "bos4_api.h"
+#include "sprites_bos4.h"
 
 u16 gUnk_0203C554 EWRAM_COMMON(4);
 u8 gUnk_0203C558 EWRAM_COMMON(4);

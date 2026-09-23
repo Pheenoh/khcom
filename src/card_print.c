@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_boss_tm.h"
 
 s8 gUnk_0203A9E4 EWRAM_COMMON(4);
 

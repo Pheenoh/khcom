@@ -1,5 +1,5 @@
 #include "aux_animation_data.h"
-#include "map_resource_data.h"
+#include "anim.h"
 #include "event_sprite_data.h"
 #include "card_animation_data.h"
 #ifndef GUARD_EVT_ASSETS_H
@@ -43,13 +43,5 @@ extern u8 gUnk_0978A4E8[];
 extern u8 gUnk_09849C18[];
 extern u8 gUnk_098A364E[];
 extern u8 gUnk_099918C4[];
-extern u8 gUnk_09EF5CAC[];
-extern u8 gUnk_09EF5CB0[];
-extern u8 gUnk_09EF5CB4[];
-extern u8 gUnk_09EF5CB8[];
-extern u8 gUnk_09EF5CBC[];
-extern u8 gUnk_09EF5CDC[];
-extern u8 gUnk_09EF5CE0[];
-extern u8 gUnk_09EF5D00[];
 
 #endif

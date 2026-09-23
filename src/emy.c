@@ -2,6 +2,8 @@
 #include "display.h"
 #include "emy.h"
 #include "task_animation_assets.h"
+#include "sprites_emy.h"
+#include "sprites_evt.h"
 
 const AnimDef gUnk_0813D32C[3] = {
     { gUnk_09EDF834, gUnk_09EDF85C, gUnk_08957290, 0, { 0, 0, 0 } },
@@ -1294,7 +1296,6 @@ u8 task_emy_07_1(Emy07Work* work) {
 #ifdef VERSION_EU
     act->unk_02C = act->unk_02E;
 #endif
-
 
     switch (work->base.unk_14C) {
     case 1:
@@ -3954,7 +3955,6 @@ u8 task_emy_31_1(Emy31Work* work) {
     return _0800CDF0(&work->base);
 }
 
-
 void task_emy_31_2(EmyWork* work) {
     func_0800DF30(work);
 }
@@ -4234,7 +4234,6 @@ u8 task_emy_37_1(Emy37Work* work) {
     return _0800CDF0(&work->base);
 }
 
-
 void task_emy_37_2(Emy37Work* work) {
     Emy37Work* w;
     BtlObj* act;
@@ -4303,7 +4302,6 @@ void task_emy_37_2(Emy37Work* work) {
         TaskPoolDraw(&work->base.tasks);
     }
 }
-
 
 void task_emy_37_3(EmyWork* work) {
     func_0800E0D0(work);
@@ -4941,7 +4939,6 @@ u8 task_emy_81_1(Emy81Work* work) {
     return _0800CDF0(&work->base);
 }
 
-
 void task_emy_81_2(EmyWork* work) {
     func_0800DF30(work);
 }
@@ -5256,7 +5253,6 @@ u8 task_emy_82_1(Emy82Work* work) {
     }
     return _0800CDF0(&work->base);
 }
-
 
 void task_emy_82_2(EmyWork* work) {
     func_0800DF30(work);

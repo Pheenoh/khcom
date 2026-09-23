@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_096B3A80
-data_096B3A80:
-	.incbin "assets/jp/096B3A80-096B47E0.bin"
+	.global data_096B3AA0
+data_096B3AA0:
+	.incbin "assets/jp/096B3AA0-096B4040.bin"

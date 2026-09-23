@@ -3,7 +3,7 @@
 #include "mode.h"
 #include "bos7.h"
 #include "bos7_api.h"
-
+#include "sprites_bos7.h"
 
 const s8* gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
 

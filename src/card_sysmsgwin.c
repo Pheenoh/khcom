@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_evt.h"
 
 UnkStruct_02034AFC* gUnk_02034B00;
 #ifndef VERSION_EU

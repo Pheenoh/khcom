@@ -1,5 +1,6 @@
 #include "msg_portrait_data.h"
 #include "msg_portrait_assets.h"
+#include "sprites_msg.h"
 
 const MsgFaceAnim gUnk_09032484[8] = {
     {

@@ -4,8 +4,13 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
-#include "animation_resource_data.h"
-
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "hum_types.h"
 
@@ -530,8 +535,5 @@ u8 func_0800FF70(u16 a);
 s32 func_0805A574(s32 idx);
 
 struct PcCharaWork;
-
-
-
 
 #endif /* GUARD_HUM_H */

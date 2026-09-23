@@ -1,0 +1,333 @@
+group: sprites_09EF60C4
+types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
+  Sprite:
+    kind: sprite
+  AnimHeader:
+    kind: anim
+    header: anim.h
+objects:
+  us:
+  - name: sprites_09EF60C4.c
+    start: 166682820
+    end: 166682892
+  - name: sprites_09EF60C4_frames.s
+    start: 158703764
+    end: 158712684
+  jp:
+  - name: sprites_09EF60C4.c
+    start: 166515888
+    end: 166515960
+  - name: sprites_09EF60C4_frames.s
+    start: 158410864
+    end: 158419784
+  eu:
+  - name: sprites_09EF60C4.c
+    start: 167253180
+    end: 167253252
+  - name: sprites_09EF60C4_frames.s
+    start: 158495732
+    end: 158504652
+entries:
+- name: gUnkUs_09EF60C4
+  record: SpriteTable
+  items: [gUnkUs_0975A094, gUnkUs_0975A0B0, gUnkUs_0975A0CC, gUnkUs_0975A0DC, gUnkUs_0975A0EC, gUnkUs_0975A0FC, gUnkUs_0975A10C, gUnkUs_0975A116, gUnkUs_0975A120, gUnkUs_0975A12A, gUnkUs_0975A134, gUnkUs_0975A144]
+  us:
+    address: 166682820
+  jp:
+    address: 166515888
+    symbol: gUnkJp_09ECD4B0
+  eu:
+    address: 167253180
+    symbol: gUnkEu_09F814BC
+- name: gUnkUs_09EF60F4
+  record: AnimTable
+  items: [gUnkUs_0975A166, gUnkUs_0975A170, gUnkUs_0975A17A, gUnkUs_0975A184, gUnkUs_0975A1B6, gUnkUs_0975A1C0]
+  us:
+    address: 166682868
+  jp:
+    address: 166515936
+    symbol: gUnkJp_09ECD4E0
+  eu:
+    address: 167253228
+    symbol: gUnkEu_09F814EC
+- name: gUnkUs_0975A094
+  record: Sprite
+  align: 4
+  oam:
+  - [16611, 49636, 0]
+  - [16387, 33252, 32]
+  - [16387, 32772, 40]
+  - [219, 33234, 48]
+  us:
+    address: 158703764
+  jp:
+    address: 158410864
+    symbol: gUnkJp_09712870
+  eu:
+    address: 158495732
+    symbol: gUnkEu_097273F4
+- name: gUnkUs_0975A0B0
+  record: Sprite
+  oam:
+  - [16627, 49634, 64]
+  - [19, 12, 96]
+  - [219, 33234, 48]
+  - [32987, 16882, 97]
+  us:
+    address: 158703792
+  jp:
+    address: 158410892
+    symbol: gUnkJp_0971288C
+  eu:
+    address: 158495760
+    symbol: gUnkEu_09727410
+- name: gUnkUs_0975A0CC
+  record: Sprite
+  oam:
+  - [16385, 33259, 101]
+  - [16401, 16875, 109]
+  us:
+    address: 158703820
+  jp:
+    address: 158410920
+    symbol: gUnkJp_097128A8
+  eu:
+    address: 158495788
+    symbol: gUnkEu_0972742C
+- name: gUnkUs_0975A0DC
+  record: Sprite
+  oam:
+  - [16619, 33265, 101]
+  - [16635, 16881, 109]
+  us:
+    address: 158703836
+  jp:
+    address: 158410936
+    symbol: gUnkJp_097128B8
+  eu:
+    address: 158495804
+    symbol: gUnkEu_0972743C
+- name: gUnkUs_0975A0EC
+  record: Sprite
+  oam:
+  - [32997, 33270, 113]
+  - [32997, 16390, 121]
+  us:
+    address: 158703852
+  jp:
+    address: 158410952
+    symbol: gUnkJp_097128C8
+  eu:
+    address: 158495820
+    symbol: gUnkEu_0972744C
+- name: gUnkUs_0975A0FC
+  record: Sprite
+  oam:
+  - [32997, 33269, 125]
+  - [32997, 16389, 133]
+  us:
+    address: 158703868
+  jp:
+    address: 158410968
+    symbol: gUnkJp_097128D8
+  eu:
+    address: 158495836
+    symbol: gUnkEu_0972745C
+- name: gUnkUs_0975A10C
+  record: Sprite
+  oam:
+  - [32997, 33272, 137]
+  us:
+    address: 158703884
+  jp:
+    address: 158410984
+    symbol: gUnkJp_097128E8
+  eu:
+    address: 158495852
+    symbol: gUnkEu_0972746C
+- name: gUnkUs_0975A116
+  record: Sprite
+  oam:
+  - [32997, 33272, 145]
+  us:
+    address: 158703894
+  jp:
+    address: 158410994
+    symbol: gUnkJp_097128F2
+  eu:
+    address: 158495862
+    symbol: gUnkEu_09727476
+- name: gUnkUs_0975A120
+  record: Sprite
+  oam:
+  - [32997, 33272, 153]
+  us:
+    address: 158703904
+  jp:
+    address: 158411004
+    symbol: gUnkJp_097128FC
+  eu:
+    address: 158495872
+    symbol: gUnkEu_09727480
+- name: gUnkUs_0975A12A
+  record: Sprite
+  oam:
+  - [32997, 33272, 161]
+  us:
+    address: 158703914
+  jp:
+    address: 158411014
+    symbol: gUnkJp_09712906
+  eu:
+    address: 158495882
+    symbol: gUnkEu_0972748A
+- name: gUnkUs_0975A134
+  record: Sprite
+  oam:
+  - [16628, 33264, 169]
+  - [16388, 16880, 177]
+  us:
+    address: 158703924
+  jp:
+    address: 158411024
+    symbol: gUnkJp_09712910
+  eu:
+    address: 158495892
+    symbol: gUnkEu_09727494
+- name: gUnkUs_0975A144
+  record: Sprite
+  oam:
+  - [216, 49616, 181]
+  - [32984, 32784, 245]
+  - [32984, 16416, 253]
+  - [33016, 32784, 257]
+  - [33016, 16416, 265]
+  us:
+    address: 158703940
+  jp:
+    address: 158411040
+    symbol: gUnkJp_09712920
+  eu:
+    address: 158495908
+    symbol: gUnkEu_097274A4
+- name: gUnkUs_0975A166
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  us:
+    address: 158703974
+  jp:
+    address: 158411074
+    symbol: gUnkJp_09712942
+  eu:
+    address: 158495942
+    symbol: gUnkEu_097274C6
+- name: gUnkUs_0975A170
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  us:
+    address: 158703984
+  jp:
+    address: 158411084
+    symbol: gUnkJp_0971294C
+  eu:
+    address: 158495952
+    symbol: gUnkEu_097274D0
+- name: gUnkUs_0975A17A
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [2, 4]
+  us:
+    address: 158703994
+  jp:
+    address: 158411094
+    symbol: gUnkJp_09712956
+  eu:
+    address: 158495962
+    symbol: gUnkEu_097274DA
+- name: gUnkUs_0975A184
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [3, 30]
+  - [4, 15]
+  - [5, 15]
+  - [6, 15]
+  - [7, 15]
+  - [8, 15]
+  - [9, 15]
+  - [6, 15]
+  - [7, 15]
+  - [8, 15]
+  - [9, 15]
+  us:
+    address: 158704004
+  jp:
+    address: 158411104
+    symbol: gUnkJp_09712960
+  eu:
+    address: 158495972
+    symbol: gUnkEu_097274E4
+- name: gUnkUs_0975A1B6
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [10, 4]
+  us:
+    address: 158704054
+  jp:
+    address: 158411154
+    symbol: gUnkJp_09712992
+  eu:
+    address: 158496022
+    symbol: gUnkEu_09727516
+- name: gUnkUs_0975A1C0
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [11, 4]
+  us:
+    address: 158704064
+  jp:
+    address: 158411164
+    symbol: gUnkJp_0971299C
+  eu:
+    address: 158496032
+    symbol: gUnkEu_09727520
+- name: gUnk_0975A1CA
+  format: tiles4
+  width: 1
+  us:
+    address: 158704074
+    size: 8608
+  jp:
+    address: 158411174
+    size: 8608
+    symbol: gUnkJp_097129A6
+  eu:
+    address: 158496042
+    size: 8608
+    symbol: gUnkEu_0972752A

@@ -22,7 +22,14 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
-#include "remaining_resource_data.h"
+#include "anim.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "card_label_data.h"
 
@@ -30,10 +37,7 @@
 
 #include "map_card_data.h"
 
-#include "animation_resource_data.h"
-
 #include "bg_animation_data.h"
-
 
 #include "msg_types.h"
 
@@ -77,7 +81,6 @@ void func_080A096C(u16 a, u16* p);
 #else
 #define CARDWORK(off) (off)
 #endif
-
 
 typedef struct CardSlot {
     u32 unk_00;
@@ -938,7 +941,6 @@ typedef struct UnkStruct_08078754 {
 
 typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0xCC) ? 1 : -1];
 
-
 typedef struct MapcardWork {
     void* tiles;
     void* unk_04;
@@ -1501,7 +1503,6 @@ typedef struct MapSelectWork {
 
 typedef char MapSelectWork_size[(sizeof(struct MapSelectWork) == 0x2E4) ? 1 : -1];
 
-
 typedef struct UnkStruct_080A23A0_Args {
     u8* unk_00;
     u32 unk_04;
@@ -1762,7 +1763,6 @@ typedef struct ReloadWork {
     u8 unk_34;
 } ReloadWork;
 
-
 typedef struct UnkStruct_080984E4 {
     u8 unk_00[0x08];
     UnkStruct_080038C8* unk_08;
@@ -1772,7 +1772,6 @@ typedef struct UnkStruct_080984E4 {
     u16 unk_2E;
     u16 unk_30;
 } UnkStruct_080984E4;
-
 
 typedef struct UnkStruct_080A4DCC {
     void* tiles;
@@ -1861,7 +1860,6 @@ typedef struct UnkStruct_080A3F5C {
 } UnkStruct_080A3F5C;
 
 typedef char UnkStruct_080A3F5C_sizechk[(sizeof(struct UnkStruct_080A3F5C) == 0x150) ? 1 : -1];
-
 
 typedef struct UnkStruct_08094CE4_A {
     void* tiles;

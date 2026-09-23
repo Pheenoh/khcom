@@ -1,4 +1,7 @@
-#include "staff_roll_resource_tail_data.h"
+#include "anim.h"
+#include "pc_sprite_types.h"
+#include "staff_roll_command_sprite_data.h"
+#include "staff_roll_timer_sprite_data.h"
 #include "staff_roll_resource_tail_assets.h"
 
 #ifdef VERSION_US
@@ -27,4 +30,3 @@ PcSpriteDef* gUnk_09EFBB18[40] = { &gUnkEu_09D00940, &gUnkEu_09D0094A, &gUnkEu_0
 AnimHeader* gUnkEu_09F883CC[1] = { &gUnkEu_09D00AD0 };
 
 #endif
-

@@ -3,11 +3,15 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
-#include "remaining_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "card_label_data.h"
-
-#include "animation_resource_data.h"
 
 #include "poo_api.h"
 
@@ -163,7 +167,6 @@ typedef struct StatusFriendTable {
     StatusFriendEntry entries[8];
 } StatusFriendTable;
 
-
 typedef struct StockMesDispWork {
     void* tiles;
     void* palette;
@@ -216,7 +219,6 @@ typedef struct StatusStocklistWork {
 
 extern s32 gUnk_0203C550;
 
-
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_097A2CF6[];
 extern u8 gUnk_0984B258[];
@@ -243,8 +245,6 @@ extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
 
-
-
 u8 func_080D7B94(void);
 void func_080D764C(StatusWork* work);
 s16 func_080D78A8(void);
@@ -268,6 +268,5 @@ u8 func_080D8F04(void* a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
 void func_080D83F4(void);
-
 
 #endif /* GUARD_STATUS_H */

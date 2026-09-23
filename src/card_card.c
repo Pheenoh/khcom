@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 u32 gUnk_02034AA4;
 

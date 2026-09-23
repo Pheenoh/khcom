@@ -1,6 +1,19 @@
 #include "evt_data.h"
 #include "mode_chkobj_assets.h"
 #include "evt_assets.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EEE00C.h"
+#include "sprites_09EEE36C.h"
+#include "sprites_09EEF108.h"
+#include "sprites_09EEF49C.h"
+#include "sprites_09EEF71C.h"
+#include "sprites_evt.h"
+#include "sprites_fld.h"
+#include "sprites_hum.h"
+#include "sprites_map.h"
+#include "sprites_map_tasks.h"
+#include "sprites_pooh.h"
+#include "sprites_sio2.h"
 
 const EvtAnimDef gUnk_08135EFC[500] = {
     { gUnk_09EEF89C, gUnk_09EEF8C0, gUnk_092EB78A },

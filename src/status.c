@@ -6,6 +6,8 @@
 #include "anim.h"
 #include "status.h"
 #include "gba/keys.h"
+#include "sprites_fld.h"
+#include "sprites_status.h"
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F80288[5];

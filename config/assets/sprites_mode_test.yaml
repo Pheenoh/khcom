@@ -1,0 +1,238 @@
+group: sprites_mode_test
+types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
+  Sprite:
+    kind: sprite
+  AnimHeader:
+    kind: anim
+    header: anim.h
+objects:
+  us:
+  - name: sprites_mode_test.c
+    start: 166597844
+    end: 166597920
+  - name: sprites_mode_test_frames.s
+    start: 145902744
+    end: 145905004
+  jp:
+  - name: sprites_mode_test.c
+    start: 166432592
+    end: 166432668
+  - name: sprites_mode_test_frames.s
+    start: 145851008
+    end: 145853268
+  eu: []
+entries:
+- name: gUnk_09EE14D4
+  record: SpriteTable
+  items: [gUnk_08B24C98, gUnk_08B24CA2, gUnk_08B24CB2, gUnk_08B24CC2, gUnk_08B24CD2, gUnk_08B24CE2, gUnk_08B24CF8, gUnk_08B24D0E, gUnk_08B24D18, gUnk_08B24D22, gUnk_08B24D2C, gUnk_08B24D42, gUnk_08B24D58, gUnk_08B24D6E]
+  us:
+    address: 166597844
+  jp:
+    address: 166432592
+- name: gUnk_09EE150C
+  record: AnimTable
+  items: [gUnk_08B24D78, gUnk_08B24D82, gUnk_08B24D8C, gUnk_08B24D96, gUnk_08B24DA0]
+  us:
+    address: 166597900
+  jp:
+    address: 166432648
+- name: gUnk_08B24C98
+  record: Sprite
+  align: 4
+  oam:
+  - [16636, 16864, 0]
+  us:
+    address: 145902744
+  jp:
+    address: 145851008
+- name: gUnk_08B24CA2
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [0, 4568, 8]
+  us:
+    address: 145902754
+  jp:
+    address: 145851018
+- name: gUnk_08B24CB2
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [16384, 4560, 9]
+  us:
+    address: 145902770
+  jp:
+    address: 145851034
+- name: gUnk_08B24CC2
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [16384, 20936, 11]
+  us:
+    address: 145902786
+  jp:
+    address: 145851050
+- name: gUnk_08B24CD2
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [16384, 20928, 11]
+  us:
+    address: 145902802
+  jp:
+    address: 145851066
+- name: gUnk_08B24CE2
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [16384, 20928, 15]
+  - [0, 4536, 8]
+  us:
+    address: 145902818
+  jp:
+    address: 145851082
+- name: gUnk_08B24CF8
+  record: Sprite
+  oam:
+  - [16384, 16864, 4]
+  - [16384, 16832, 15]
+  - [16384, 4528, 9]
+  us:
+    address: 145902840
+  jp:
+    address: 145851104
+- name: gUnk_08B24D0E
+  record: Sprite
+  oam:
+  - [16636, 16864, 19]
+  us:
+    address: 145902862
+  jp:
+    address: 145851126
+- name: gUnk_08B24D18
+  record: Sprite
+  oam:
+  - [16636, 16864, 23]
+  us:
+    address: 145902872
+  jp:
+    address: 145851136
+- name: gUnk_08B24D22
+  record: Sprite
+  oam:
+  - [16636, 16864, 27]
+  us:
+    address: 145902882
+  jp:
+    address: 145851146
+- name: gUnk_08B24D2C
+  record: Sprite
+  oam:
+  - [16384, 16864, 31]
+  - [16384, 16832, 35]
+  - [16384, 4528, 39]
+  us:
+    address: 145902892
+  jp:
+    address: 145851156
+- name: gUnk_08B24D42
+  record: Sprite
+  oam:
+  - [16384, 16864, 41]
+  - [16384, 16832, 45]
+  - [16384, 432, 49]
+  us:
+    address: 145902914
+  jp:
+    address: 145851178
+- name: gUnk_08B24D58
+  record: Sprite
+  oam:
+  - [16384, 16864, 51]
+  - [16384, 16832, 55]
+  - [16384, 432, 59]
+  us:
+    address: 145902936
+  jp:
+    address: 145851200
+- name: gUnk_08B24D6E
+  record: Sprite
+  oam:
+  - [0, 488, 61]
+  us:
+    address: 145902958
+  jp:
+    address: 145851222
+- name: gUnk_08B24D78
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 4]
+  us:
+    address: 145902968
+  jp:
+    address: 145851232
+- name: gUnk_08B24D82
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [1, 4]
+  us:
+    address: 145902978
+  jp:
+    address: 145851242
+- name: gUnk_08B24D8C
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [2, 4]
+  us:
+    address: 145902988
+  jp:
+    address: 145851252
+- name: gUnk_08B24D96
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [3, 4]
+  us:
+    address: 145902998
+  jp:
+    address: 145851262
+- name: gUnk_08B24DA0
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [4, 4]
+  us:
+    address: 145903008
+  jp:
+    address: 145851272
+- name: b_hpgag_e
+  format: tiles4
+  width: 2
+  palette: b_states
+  symbol: gUnk_08B24DAA
+  us:
+    address: 145903018
+    size: 1984
+  jp:
+    address: 145851282
+    size: 1984

@@ -7,8 +7,13 @@
 
 #include "card_description_data.h"
 
-#include "animation_resource_data.h"
-
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "obj.h"
 
@@ -42,9 +47,6 @@
 #include "mode.h"
 #include "malloc.h"
 #include "m4a.h"
-
-
-
 
 typedef struct MooglePackCardDef {
     u16 cardId;
@@ -117,8 +119,6 @@ typedef struct MooglePackCardWork {
     u8 premium;
     u8 revealed;
 } MooglePackCardWork;
-
-
 
 void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);

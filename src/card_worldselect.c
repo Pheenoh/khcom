@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_map.h"
 
 u8 gUnk_02034AB8[20];
 

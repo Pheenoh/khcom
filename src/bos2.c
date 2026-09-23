@@ -8,6 +8,7 @@
 #include "boss_map_block_assets.h"
 #include "background_actor_assets.h"
 #include "boss_jafar_assets.h"
+#include "sprites_bos2.h"
 
 extern const u16* gUnk_09EF2AA4[46][4];
 extern void* gUnk_09EF2D94[37];
@@ -4571,21 +4572,6 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
 
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void task_bos_dsd_circle_2(DsdCircleWork* work) {
     s16 x;

@@ -6,6 +6,7 @@
 #include "m4a_song.h"
 #include "btl2.h"
 #include "gba/keys.h"
+#include "sprites_btl.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08B4A680[];

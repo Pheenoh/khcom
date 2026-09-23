@@ -10,6 +10,8 @@
 #include "listpool.h"
 #include "mode_eventselect.h"
 #include "gba/keys.h"
+#include "sprites_evt.h"
+#include "sprites_hum.h"
 
 const s16 gUnk_09033D50[147] = {
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
@@ -875,7 +877,6 @@ void Event_Debug_2(u8* work) {
 void Event_Debug_3(s32* p) {
     FreeSmallFontResources(p[0], p[1]);
 }
-
 
 const char gModeNameEventselect[] = "mode_eventselect";
 

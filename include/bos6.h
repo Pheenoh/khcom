@@ -3,7 +3,16 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
-#include "staff_roll_resource_tail_data.h"
+#include "pc_sprite_types.h"
+#include "staff_roll_command_sprite_data.h"
+#include "staff_roll_timer_sprite_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "battle_actor_types.h"
 
@@ -178,8 +187,6 @@ extern const s8 gUnk_09A4CAB5[];
 
 extern const u16 gUnk_09A4CABE[];
 extern const s16 gUnk_09A4CAC4[];
-
-#include "animation_resource_data.h"
 
 #include "battle_bg_types.h"
 
@@ -526,7 +533,6 @@ u8 func_0810D364(BosLstWork* work);
 void func_0810D3A8(BosLstWork* work);
 void func_0810D478(BosLstWork* work);
 
-
 void func_0810B3E4(void);
 void func_0810B40C(s16 a);
 void func_0810B434(void);
@@ -551,7 +557,6 @@ typedef struct UnkStruct_09A4CEDC {
 } UnkStruct_09A4CEDC;
 
 extern const UnkStruct_09A4CEDC gUnk_09A4CEDC[12];
-
 
 extern u8 gUnk_09CC4E54[];
 extern u8 gUnk_09D693D4[];
@@ -592,11 +597,9 @@ extern u8 gUnk_09C51CBC[];
 void func_0810CE1C(BosLstWork* work);
 void func_0810C57C(BosLstWork* work, s16 a);
 
-
 void task_bos_pc_fld_2(PcFldWork* work);
 
 extern u8 gUnk_09C489E4[];
-
 
 PcAnimStep* func_08109EB0(PcWork* work);
 void func_0810A454(PcWork* work);
@@ -653,7 +656,6 @@ extern u8 gUnk_09D69454[];
 void task_bos_lst_2(BosLstWork* work);
 u8 func_0810EBA0(BosLstWork* work);
 
-
 extern EventState* gUnk_02039DC8;
 void task_bos_pc_acd_2(PcAcdWork* work);
 
@@ -681,7 +683,6 @@ extern u8 gUnk_09CB8F54[];
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
 
-
 void task_bos_pc_fld_0(PcFldWork* work, BattleBackgroundDef* arg);
 
 u8 task_bos_pc_fld_1(PcFldWork* work);
@@ -702,7 +703,6 @@ u8 func_0810E32C(BosLstWork* work);
 u8 func_0810E524(BosLstWork* work);
 u8 func_0810E73C(BosLstWork* work);
 
-
 u8 func_0810A914(PcWork* work, s32 arg);
 void func_0810B844(PcFltWork* work);
 
@@ -720,7 +720,6 @@ typedef struct LstSpawn {
     s16 unk_12;
     void* unk_14;
 } LstSpawn;
-
 
 u8 func_0810ACB8(PcWork* work, s32 arg);
 
@@ -769,7 +768,6 @@ typedef struct LstSpawn2 {
     s32 unk_14;
 } LstSpawn2;
 
-
 typedef struct LstSpawn3 {
     s32 unk_00;
     s32 unk_04;
@@ -793,7 +791,6 @@ typedef struct LstSpawn4 {
     s32 unk_28;
 } LstSpawn4;
 
-
 typedef struct LstSpawn5 {
     s32 unk_00;
     s32 unk_04;
@@ -801,7 +798,6 @@ typedef struct LstSpawn5 {
     s16 unk_0C;
     u8 unk_0E[0x2];
 } LstSpawn5;
-
 
 void func_0810F064(BosLstWork* work, LstSub* p);
 

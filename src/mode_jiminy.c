@@ -4,6 +4,7 @@
 #include "msg_api.h"
 #include "fade.h"
 #include "mode_jiminy.h"
+#include "sprites_msg.h"
 
 JiminyWork* gJiminyWork;
 

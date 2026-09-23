@@ -7,6 +7,11 @@
 #include "pallet.h"
 #include "hum.h"
 #include "task_animation_assets.h"
+#include "sprites_09EDE5FC.h"
+#include "sprites_09EEE36C.h"
+#include "sprites_09EEF108.h"
+#include "sprites_evt.h"
+#include "sprites_hum.h"
 
 const u32 gUnk_0813EDD0[2][3] = {
     { 37, 37, 37 },
@@ -1957,7 +1962,6 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     s32 b;
     s32 c;
     s32 d;
-
 
     w = work;
     act = &work->base.actor;

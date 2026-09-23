@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_08896652
-data_08896652:
-	.incbin "assets/eu/08896652-08CE635C.bin"
+	.global data_088A0908
+data_088A0908:
+	.incbin "assets/eu/088A0908-088A5BBC.bin"

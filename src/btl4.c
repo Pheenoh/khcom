@@ -3,6 +3,7 @@
 #include "system_state.h"
 #include "btl4.h"
 #include "btl4_api.h"
+#include "sprites_btl.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08B55C58[];

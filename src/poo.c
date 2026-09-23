@@ -8,6 +8,12 @@
 #include "background_actor_assets.h"
 #include "mode_chkobj_assets.h"
 #include "actor_ui_resource_data.h"
+#include "sprites_09EDE878.h"
+#include "sprites_evt.h"
+#include "sprites_fld.h"
+#include "sprites_map.h"
+#include "sprites_pooh.h"
+#include "sprites_sio2.h"
 
 u8 gUnk_0203C3D8 EWRAM_COMMON(4);
 s32 gUnk_0203C3DC EWRAM_COMMON(4);

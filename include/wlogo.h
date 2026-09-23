@@ -2,12 +2,15 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
-#include "remaining_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "animation_resource_assets.h"
-
-#include "animation_resource_data.h"
-
 
 #include "obj.h"
 
@@ -216,7 +219,6 @@ typedef struct WlogoTvtWork {
     u8 unk_031[0x3];
 } WlogoTvtWork;
 
-
 typedef struct WlogoAgrSmokeWork {
     void* tiles;
     void* palette;
@@ -361,7 +363,6 @@ typedef struct WlogoAtlWork {
     u8 unk_009;
     u16 unk_00A;
 } WlogoAtlWork;
-
 
 typedef struct WlogoWonWork {
     void* tiles;
@@ -514,7 +515,6 @@ extern u8 gUnk_096FB084[];
 extern u8 gUnk_096FB0A4[];
 extern u8 gUnk_096FB0C4[];
 
-
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);
 void task_wlogo_hwt_2(WlogoHwtWork* work);
@@ -612,6 +612,5 @@ void task_wlogo_mons_0(WlogoMonsWork* work);
 u8 task_wlogo_mons_1(WlogoMonsWork* work);
 void task_wlogo_mons_2(WlogoMonsWork* work);
 void task_wlogo_mons_3(WlogoMonsWork* work);
-
 
 #endif /* GUARD_WLOGO_H */

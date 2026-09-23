@@ -1,19 +1,18 @@
 #include "registration_data.h"
-#include "remaining_resource_09EF679C_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 #include "battle_actor_types.h"
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
 #include "boss_boogie.h"
 
-
-
 #include "map_text_data.h"
-
-#include "animation_resource_data.h"
-
-
-
 
 #include "battle_bg_types.h"
 
@@ -53,10 +52,6 @@
 #include "btl_api.h"
 
 extern UnkStruct_0203C590 gUnk_0203C590;
-
-
-
-
 
 typedef struct UnkStruct_080DDDDC {
     u16 unk_00;
@@ -222,7 +217,6 @@ typedef struct UrsulaBubbleSingleWork {
 
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work);
 
-
 typedef struct BoogieKnifereaderWork {
     u32 unk_000;
     u16 unk_004;
@@ -326,7 +320,6 @@ extern const UnkStruct_096FE034 gUnk_096FE2A8;
 extern u8 gUnk_0984B0D8[];
 
 extern UnkStruct_02034F7C gUnk_0984CECC[];
-
 
 extern const u8 gUnk_0984D0CC[][4];
 extern vu32 gFrameCounter;
@@ -469,7 +462,6 @@ typedef struct BoogieKaihukuWork {
     u32 unk_154;
 } BoogieKaihukuWork;
 
-
 u16 func_080DDEA0(UnkStruct_080DDDDC* p);
 u8 func_080DC510(void);
 u8 func_080DC528(void);
@@ -519,7 +511,6 @@ u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work);
 void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 
 void func_080DB04C(BoogieKnifeWork* work);
-
 
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 void task_bos_ursula_0(UrsulaWork* work);

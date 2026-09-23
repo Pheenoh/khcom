@@ -1,0 +1,112 @@
+group: sprites_bos5
+types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
+  Sprite:
+    kind: sprite
+  AnimHeader:
+    kind: anim
+    header: anim.h
+objects:
+  us:
+  - name: sprites_bos5.c
+    start: 166697904
+    end: 166697924
+  - name: sprites_bos5_frames.s
+    start: 161122072
+    end: 161122136
+  jp:
+  - name: sprites_bos5.c
+    start: 166530972
+    end: 166530992
+  - name: sprites_bos5_frames.s
+    start: 160813472
+    end: 160813536
+  eu:
+  - name: sprites_bos5.c
+    start: 167270428
+    end: 167270448
+  - name: sprites_bos5_frames.s
+    start: 161179292
+    end: 161179356
+entries:
+- name: gUnk_09EF9BB0
+  record: SpriteTable
+  items: [gUnk_099A8718, gUnk_099A8722, gUnk_099A872C, gUnk_099A8736]
+  us:
+    address: 166697904
+  jp:
+    address: 166530972
+  eu:
+    address: 167270428
+- name: gUnk_09EF9BC0
+  record: AnimTable
+  items: [gUnk_099A8740]
+  us:
+    address: 166697920
+  jp:
+    address: 166530988
+  eu:
+    address: 167270444
+- name: gUnk_099A8718
+  record: Sprite
+  align: 4
+  oam:
+  - [240, 33264, 0]
+  us:
+    address: 161122072
+  jp:
+    address: 160813472
+  eu:
+    address: 161179292
+- name: gUnk_099A8722
+  record: Sprite
+  oam:
+  - [240, 33264, 16]
+  us:
+    address: 161122082
+  jp:
+    address: 160813482
+  eu:
+    address: 161179302
+- name: gUnk_099A872C
+  record: Sprite
+  oam:
+  - [240, 33264, 32]
+  us:
+    address: 161122092
+  jp:
+    address: 160813492
+  eu:
+    address: 161179312
+- name: gUnk_099A8736
+  record: Sprite
+  oam:
+  - [240, 33264, 48]
+  us:
+    address: 161122102
+  jp:
+    address: 160813502
+  eu:
+    address: 161179322
+- name: gUnk_099A8740
+  record: AnimHeader
+  fields:
+    unk_00: 64
+    unk_02: 64
+  frames:
+  - [0, 12]
+  - [1, 12]
+  - [2, 12]
+  - [3, 12]
+  us:
+    address: 161122112
+  jp:
+    address: 160813512
+  eu:
+    address: 161179332

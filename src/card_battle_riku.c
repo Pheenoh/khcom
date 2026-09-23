@@ -40,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card.h"
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 

@@ -8,6 +8,12 @@
 #include "registration_data.h"
 #include "btl_effect.h"
 #include "btl_api.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EDF404.h"
+#include "sprites_09EEF71C.h"
+#include "sprites_btl.h"
+#include "sprites_fld.h"
+#include "sprites_hum.h"
 
 const char gTaskNameBtlLockon[] = "task_btl_lockon";
 const char gTaskNameBtlArea[] = "task_btl_area";
@@ -687,7 +693,6 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
             e->unk_034 = 4;
             work->unk_173 = 0;
         }
-
 
         if (arg->unk_04 != 0) {
             work->unk_172 = 1;
@@ -10557,7 +10562,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 #endif
         break;
     }
-
 
     if (pressed & 0x20) {
         work->unk_174[0] = 13;

@@ -13,12 +13,12 @@
 #include "monsgage.h"
 #include "anim.h"
 #include "msg.h"
+#include "sprites_evt.h"
 
 extern const u16 gUnk_0951D2B8[1024];
 extern const u16 gUnk_0951DAB8[1024];
 extern const u16 gUnk_0951E2B8[1024];
 extern const u16 gUnk_0951EAB8[1024];
-
 
 #ifdef VERSION_EU
 extern void* gUnkEu_08890E1C[];
@@ -91,7 +91,6 @@ const char gTaskNameMsgwaitYesno[] = "msgwait_yesno";
 const char gTaskNameView[] = "view";
 
 EventScanlineScroll* gUnk_02039DCC EWRAM_COMMON(4);
-
 
 void event_seq_0(EventSeqWork* work, u8* a) {
 #ifdef VERSION_EU
@@ -4902,8 +4901,6 @@ void func_08075010(EventCameraWork* p) {
     }
 }
 
-
-
 TaskDesc gTaskDescEventSeq = {
     gTaskNameEventSeq,
     (void (*)(void*, void*))event_seq_0,
@@ -4916,7 +4913,6 @@ TaskDesc gTaskDescEventSeq = {
     0x3C,
 #endif
 };
-
 
 TaskDesc gTaskDescEventChara = {
     gTaskNameEventChara,
@@ -4941,7 +4937,6 @@ void* gUnk_09EE4724[4] = {
     gUnk_09EE4704[3],
 };
 
-
 TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
     (void (*)(void*, void*))func_08072D98,
@@ -4950,8 +4945,6 @@ TaskDesc gTaskDescMsgwin = {
     (void (*)(void*))func_08073274,
     0x44,
 };
-
-
 
 TaskDesc gTaskDescMsgface[3] = {
     {
@@ -4979,7 +4972,6 @@ TaskDesc gTaskDescMsgface[3] = {
         0x108,
     },
 };
-
 
 TaskDesc gTaskDescView = {
     gTaskNameView,

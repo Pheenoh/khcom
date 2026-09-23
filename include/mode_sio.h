@@ -6,16 +6,15 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
-#include "remaining_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "card_description_data.h"
-
-#include "animation_resource_data.h"
-
-
-
-
-
 
 #include "chara_types.h"
 
@@ -216,8 +215,6 @@ typedef struct SioBtlCardgetWork {
     u8 unk_40[4];
 } SioBtlCardgetWork;
 
-
-
 typedef struct SioBtlOptionWork {
     s8 unk_000;
     u8 unk_001;
@@ -300,9 +297,6 @@ typedef struct SioBtlOptionWork {
 } SioBtlOptionWork;
 extern u32 gFrameCounter;
 extern vu16 gSystemFlags;
-
-
-
 
 extern u8 gUnk_0815A2BE[];
 extern u8 gUnk_08C78824[];

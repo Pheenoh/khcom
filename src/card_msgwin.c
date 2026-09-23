@@ -41,6 +41,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "events_134_196.h"
+#include "sprites_evt.h"
 
 UnkStruct_02034AFC* gUnk_02034AFC;
 

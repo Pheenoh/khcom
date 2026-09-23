@@ -1,6 +1,10 @@
 #include "mode.h"
 #include "obj_api.h"
 #include "battle.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EDF404.h"
+#include "sprites_09EEF71C.h"
+#include "sprites_fld.h"
 
 void func_080100A0(void);
 

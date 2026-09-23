@@ -40,6 +40,9 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EEF71C.h"
+#include "sprites_fld.h"
 
 u8 gUnk_02034AF8;
 

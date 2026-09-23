@@ -6,11 +6,18 @@
 
 #include "staff_roll_localized_resource_data.h"
 
-#include "staff_roll_resource_tail_data.h"
+#include "pc_sprite_types.h"
+#include "staff_roll_command_sprite_data.h"
+#include "staff_roll_timer_sprite_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "staff_roll_resource_data.h"
-
-#include "animation_resource_data.h"
 
 #include "obj.h"
 
@@ -67,7 +74,6 @@ typedef struct SrollBlit {
     u32* unk_10;
     u32 unk_14[32];
 } SrollBlit;
-
 
 typedef struct SrollANameWork {
     u16 unk_00;
@@ -290,7 +296,6 @@ typedef struct SrollWork {
     u32 unk_54;
     u16 charQueue[0x100];
 } SrollWork;
-
 
 extern void* gUnk_09A54218[][2];
 #if defined(VERSION_US)

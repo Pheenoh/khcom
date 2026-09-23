@@ -1,4 +1,7 @@
-#include "staff_roll_resource_tail_data.h"
+#include "anim.h"
+#include "pc_sprite_types.h"
+#include "staff_roll_command_sprite_data.h"
+#include "staff_roll_timer_sprite_data.h"
 #include "staff_roll_resource_tail_assets.h"
 
 #ifdef VERSION_US
@@ -21,4 +24,3 @@ void* gUnk_09EFAB18[19] = { gUnkEu_09CA2450, gUnkEu_09CA2466, gUnkEu_09CA247C, g
 AnimHeader* gUnkEu_09F868B0[1] = { &gUnkEu_09CA2610 };
 
 #endif
-

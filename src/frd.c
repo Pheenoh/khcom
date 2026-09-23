@@ -3,6 +3,9 @@
 #include "display.h"
 #include "frd.h"
 #include "task_animation_assets.h"
+#include "sprites_09EDE5FC.h"
+#include "sprites_09EEE00C.h"
+#include "sprites_frd.h"
 
 const AnimDef gUnk_0813EB8C[6] = {
     { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 0, { 0, 0, 0 } },
@@ -909,7 +912,6 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
     BtlObj* body;
     BtlWork* obj;
     s32 t;
-
 
     body = &work->body;
 

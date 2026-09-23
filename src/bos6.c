@@ -3,6 +3,8 @@
 #include "bos6.h"
 #include "bos6_api.h"
 #include "boss_pc_assets.h"
+#include "sprites_bos6.h"
+#include "sprites_staff_roll.h"
 
 #ifdef VERSION_EU
 extern u8 eu_0810BA1C(BosLstWork* work, s32 idx);

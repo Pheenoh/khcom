@@ -2,6 +2,7 @@
 #include "mode_test.h"
 #include "mode_test_assets.h"
 #include "gba/keys.h"
+#include "sprites_mode_test.h"
 
 #ifndef VERSION_EU
 static struct ObjTiles* gUnk_02034A08;
@@ -302,7 +303,6 @@ void eu_08061588(UnkModeTestWork* work) {
     body->depth = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->tasks);
 }
-
 
 void eu_08061698(UnkModeTestWork* work) {
     BtlWork* battle;

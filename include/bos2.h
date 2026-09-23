@@ -22,14 +22,17 @@ extern s16 gUnk_09EF2A42[12];
 
 extern void* gUnk_09EF275C[2][15];
 
-#include "animation_resource_data.h"
-
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "background_actor_assets.h"
 
-
 #include "boss_jafar_types.h"
-
 
 #include "prize_types.h"
 
@@ -253,7 +256,6 @@ typedef struct JfWork {
     u16 unk_26A;
 } JfWork;
 
-
 typedef struct JfMapWork {
     s16 unk_00;
     s16 unk_02;
@@ -443,7 +445,6 @@ extern const s16 gUnk_0961A6A8[49];
 extern const s8 gUnk_0961A70A[6];
 extern const u16 gUnk_0961A710[16][3];
 
-
 void func_080C1A48(JfBorderlineWork* work);
 s32 __divsi3(s32 a, s32 b);
 void func_080BE3DC(u8 a, JfMajinWork* work);
@@ -546,7 +547,6 @@ void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg);
 void task_bos_jf_lamp_2(JfLampWork* work);
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg);
 u8 task_bos_dsd_1(DsdWork* work);
-
 
 void func_080C3C40(DsdMainWork* work);
 

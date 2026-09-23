@@ -10,6 +10,7 @@
 #include "room_resource_assets.h"
 #include "mode_battle_data.h"
 #include "worldinspect_assets.h"
+#include "sprites_bos5.h"
 
 const char gTaskNameBosGa[] = "task_bos_ga";
 

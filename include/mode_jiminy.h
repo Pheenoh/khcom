@@ -6,8 +6,13 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
-#include "animation_resource_data.h"
-
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "jiminy_list.h"
 #include "map_api.h"
@@ -43,7 +48,6 @@ extern u8 gUnk_09A3CDDC[];
 #endif
 
 extern JiminyWork* gJiminyWork;
-
 
 extern u8 gUnk_08C69C04[];
 extern u8 gUnk_08C69C20[];

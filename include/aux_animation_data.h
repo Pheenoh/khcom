@@ -3,10 +3,8 @@
 
 #include "anim.h"
 #include "aux_animation_09EDE7B4_data.h"
-#include "animation_resource_09EDF404_data.h"
 #include "aux_animation_09EDF764_data.h"
 #include "aux_animation_09EDF8F0_data.h"
-#include "animation_resource_09EDF9A8_data.h"
 #include "aux_animation_09EE12A4_data.h"
 #include "aux_animation_09EE17B4_data.h"
 

@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_096FE36C
-data_096FE36C:
-	.incbin "assets/us/096FE36C-097A2ED8.bin"
+	.global data_09760C88
+data_09760C88:
+	.incbin "assets/us/09760C88-0979662C.bin"

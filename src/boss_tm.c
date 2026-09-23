@@ -2,7 +2,15 @@
 #include "registration_data.h"
 #include "boss_tm.h"
 #include "boss_tm_assets.h"
-#include "animation_resource_data.h"
+#include "anim.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
+#include "sprites_boss_tm.h"
 #include "animation_resource_assets.h"
 #include "chara_api.h"
 #include "card_api.h"
@@ -920,7 +928,6 @@ void func_080B91A4(TmBodyWork* p) {
         }
     }
 }
-
 
 void _080B949C(BtlObj* a, TmBodyWork* b) {
     u16 t;
@@ -2867,13 +2874,6 @@ void task_bos_tm_tbl_3(TmTblWork* work) {
     ColliderUnregister(&work->unk_004);
     DisableBg(1);
 }
-
-
-
-
-
-
-
 
 TaskDesc gTaskDescBosTm = {
     gTaskNameBosTm,

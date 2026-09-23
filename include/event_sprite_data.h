@@ -2,11 +2,9 @@
 #define GUARD_EVENT_SPRITE_DATA_H
 
 #include "anim.h"
-#include "animation_resource_09EE91B0_data.h"
 #include "event_sprite_09EEB110_data.h"
 #include "event_sprite_09EED7E8_data.h"
 #include "event_sprite_09EEDB84_data.h"
-#include "animation_resource_09EEE36C_data.h"
 #include "card_animation_09EEFD7C_data.h"
 #include "event_sprite_09EF0F64_data.h"
 #include "event_sprite_09EF1060_data.h"

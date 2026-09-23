@@ -6,7 +6,13 @@
 
 #include "registration_data.h"
 
-#include "animation_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "ga_types.h"
 
@@ -52,13 +58,8 @@ typedef struct RoomNameWork {
     u8 unk_3C[0x120];
 } RoomNameWork;
 
-
-
 extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
-
-
-
 
 extern GaWork* gGaWork;
 extern u8 gUnk_099999AC[];
@@ -73,7 +74,6 @@ typedef struct RoomObjResource {
     u8 unk_1C[0x04];
     u32 unk_20;
 } RoomObjResource;
-
 
 s32 func_080F7F70(GaWork* work, s16 i);
 s32 func_080F7F94(GaWork* work, s16 i);

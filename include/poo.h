@@ -4,21 +4,21 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
-#include "remaining_resource_data.h"
+#include "aux_animation_09EDF764_data.h"
+#include "aux_animation_09EDF8F0_data.h"
+#include "aux_animation_09EE12A4_data.h"
+#include "event_sprite_09EEB110_data.h"
+#include "card_animation_09EEFD7C_data.h"
+#include "room_resources_data.h"
+#include "worldinspect_resources_data.h"
 
 #include "poo_data.h"
 
 #include "poo_background_data.h"
 
-#include "animation_resource_data.h"
-
 #include "mode_allmap_api.h"
 
-
-
-
 #include "pooh_actor_types.h"
-
 
 #include "prize_types.h"
 
@@ -58,9 +58,6 @@ typedef struct PooShadowInfo {
     u16 unk_02;
     s32 unk_04;
 } PooShadowInfo;
-
-
-
 
 typedef struct PooHit {
     void* unk_00;
@@ -1057,7 +1054,6 @@ typedef struct PooPalStep {
     u16 unk_02;
 } PooPalStep;
 
-
 extern const s32 gUnk_096FDA74[];
 extern u8 gUnk_0984A138[];
 extern u8 gUnk_097B7218[];
@@ -1065,9 +1061,6 @@ extern u8 gUnk_097B8258[];
 extern u8 gUnk_0983BC18[];
 extern const PooBgSet gUnk_096FDA8C[];
 extern const PooPalStep gUnk_096FDB40[];
-
-
-
 
 extern const UnkStruct_096FE034Entry gUnk_096FD3C8[4];
 extern const UnkStruct_096FE034Entry gUnk_096FD3D8[4];

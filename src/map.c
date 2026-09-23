@@ -18,6 +18,10 @@
 #include "map_spawn_data.h"
 #include "map_resource_assets.h"
 #include "map_text_data.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EEE00C.h"
+#include "sprites_09EEF71C.h"
+#include "sprites_map.h"
 
 UnkStruct_0203C7AC* gUnk_0203C7AC EWRAM_COMMON(4);
 UnkStruct_0203C7B0 gUnk_0203C7B0 EWRAM_COMMON(8);

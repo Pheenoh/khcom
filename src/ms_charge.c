@@ -6,6 +6,7 @@
 #include "monsgage.h"
 #include "ms_charge.h"
 #include "gba/keys.h"
+#include "sprites_evt.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A97520[];

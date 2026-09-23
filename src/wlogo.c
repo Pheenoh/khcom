@@ -5,6 +5,8 @@
 #include "pallet.h"
 #include "wlogo.h"
 #include "boss_tm_assets.h"
+#include "sprites_boss_tm.h"
+#include "sprites_wlogo.h"
 
 extern const WlogoHwtObjA gUnk_096194D0[6];
 extern const WlogoHwtObjB gUnk_09619530[6][6];
@@ -371,7 +373,6 @@ u8 task_wlogo_won_1(WlogoWonWork* work) {
     }
     return 1;
 }
-
 
 void task_wlogo_won_2(WlogoWonWork* work) {
     s32 i;
@@ -1713,7 +1714,6 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
     TaskPoolUpdate(&work->tasks);
     return 1;
 }
-
 
 void task_wlogo_tt_2(WlogoTtWork* work) {
     s32 affine;

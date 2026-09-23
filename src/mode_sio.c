@@ -17,6 +17,10 @@
 #include "mode_sio.h"
 #include "gba/keys.h"
 #include "world_intro_assets.h"
+#include "sprites_09EDE878.h"
+#include "sprites_09EEE36C.h"
+#include "sprites_boss_tm.h"
+#include "sprites_fld.h"
 
 u16 gUnk_0203A9EC EWRAM_COMMON(4);
 u16 gUnk_0203A9F0 EWRAM_COMMON(4);
