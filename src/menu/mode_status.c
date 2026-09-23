@@ -90,6 +90,6 @@ const char gModeNameStatus[] = "mode_status";
 Mode gModeStatus = {
     gModeNameStatus,
     (void (*)(s32))mode_status_0,
-    (void (*)(void))mode_status_1,
-    (void (*)(void))mode_status_2,
+    mode_status_1,
+    mode_status_2,
 };

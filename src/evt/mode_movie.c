@@ -542,7 +542,7 @@ const char gModeNameMovie[] = "mode_movie";
 
 Mode gModeMovie = {
     gModeNameMovie,
-    (void (*)(s32))mode_movie_0,
-    (void (*)(void))mode_movie_1,
-    (void (*)(void))mode_movie_2,
+    mode_movie_0,
+    mode_movie_1,
+    mode_movie_2,
 };

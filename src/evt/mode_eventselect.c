@@ -907,8 +907,8 @@ const char gTaskNameEventDebug[] = "Event_Debug";
 Mode gModeEventselect = {
     gModeNameEventselect,
     (void (*)(s32))mode_eventselect_0,
-    (void (*)(void))mode_eventselect_1,
-    (void (*)(void))mode_eventselect_2,
+    mode_eventselect_1,
+    mode_eventselect_2,
 };
 
 TaskDesc gTaskDescHanabira = {

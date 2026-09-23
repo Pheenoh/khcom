@@ -1425,8 +1425,8 @@ TaskDesc gTaskDescPrizeCardInit = {
     gTaskNamePrizeCardInit,
     (void (*)(void*, void*))func_08096714,
     PrizeCardInit_1,
-    (void (*)(void*))func_08096C20,
-    (void (*)(void*))func_08096C2C,
+    func_08096C20,
+    func_08096C2C,
     0x38,
 };
 
@@ -1436,8 +1436,8 @@ TaskDesc gTaskDescPrizeCardInitBoss = {
     gTaskNamePrizeCardInitBoss,
     (void (*)(void*, void*))func_08096714,
     PrizeCardInit_Boss_1,
-    (void (*)(void*))func_08096C20,
-    (void (*)(void*))func_08096C2C,
+    func_08096C20,
+    func_08096C2C,
     0x38,
 };
 

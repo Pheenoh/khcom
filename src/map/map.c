@@ -9750,15 +9750,15 @@ u8 (*gUnk_09EF6A88[2])(UnkStruct_080E8B1C*) = {
 Mode gModeMapDbg = {
     gModeNameMapDbg,
     (void (*)(s32))Mode_MapDbg_0,
-    (void (*)(void))Mode_MapDbg_1,
-    (void (*)(void))Mode_MapDbg_2,
+    Mode_MapDbg_1,
+    Mode_MapDbg_2,
 };
 
 Mode gModeMapFld = {
     gModeNameMapFld,
     (void (*)(s32))Mode_MapFld_0,
-    (void (*)(void))Mode_MapFld_1,
-    (void (*)(void))Mode_MapFld_2,
+    Mode_MapFld_1,
+    Mode_MapFld_2,
 };
 
 u8 gUnk_09EF6AB0[14] = {
@@ -9813,29 +9813,29 @@ u8 gUnk_09EF6AB0[14] = {
 Mode gModeMapFix = {
     gModeNameMapFix,
     (void (*)(s32))Mode_MapFix_0,
-    (void (*)(void))Mode_MapFix_1,
-    (void (*)(void))Mode_MapFix_2,
+    Mode_MapFix_1,
+    Mode_MapFix_2,
 };
 
 Mode gModeMenuNew = {
     gModeNameMenuNew,
     (void (*)(s32))Mode_MenuNew_0,
-    (void (*)(void))Mode_MenuNew_1,
-    (void (*)(void))Mode_MenuNew_2,
+    Mode_MenuNew_1,
+    Mode_MenuNew_2,
 };
 
 Mode gModeMenuLoad = {
     gModeNameMenuLoad,
-    (void (*)(s32))Mode_MenuLoad_0,
-    (void (*)(void))Mode_MenuLoad_1,
-    (void (*)(void))Mode_MenuLoad_2,
+    Mode_MenuLoad_0,
+    Mode_MenuLoad_1,
+    Mode_MenuLoad_2,
 };
 
 Mode gModeMenuMsg = {
     gModeNameMenuMsg,
-    (void (*)(s32))func_080EC57C,
-    (void (*)(void))Mode_MenuMsg_1,
-    (void (*)(void))Mode_MenuMsg_2,
+    func_080EC57C,
+    Mode_MenuMsg_1,
+    Mode_MenuMsg_2,
 };
 
 TaskDesc gTaskDescMapRnd = {

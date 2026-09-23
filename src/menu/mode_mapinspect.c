@@ -1385,6 +1385,6 @@ const char gModeNameMapinspect[] = "mode_mapinspect";
 Mode gModeMapinspect = {
     gModeNameMapinspect,
     (void (*)(s32))mode_mapinspect_0,
-    (void (*)(void))mode_mapinspect_1,
-    (void (*)(void))mode_mapinspect_2,
+    mode_mapinspect_1,
+    mode_mapinspect_2,
 };

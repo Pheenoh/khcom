@@ -435,9 +435,9 @@ const char gModeNameWLogo[] = "mode_wLogo";
 
 Mode gModeWLogo = {
     gModeNameWLogo,
-    (void (*)(s32))mode_wLogo_0,
-    (void (*)(void))mode_wLogo_1,
-    (void (*)(void))mode_wLogo_2,
+    mode_wLogo_0,
+    mode_wLogo_1,
+    mode_wLogo_2,
 };
 
 const char gTaskNameWLogo[] = "task_wLogo";

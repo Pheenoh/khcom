@@ -809,6 +809,6 @@ const char gModeNameWorldwarp[] = "mode_worldwarp";
 Mode gModeWorldwarp = {
     gModeNameWorldwarp,
     (void (*)(s32))mode_worldwarp_0,
-    (void (*)(void))mode_worldwarp_1,
-    (void (*)(void))mode_worldwarp_2,
+    mode_worldwarp_1,
+    mode_worldwarp_2,
 };

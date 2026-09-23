@@ -612,8 +612,8 @@ const char gModeNameWorldselect[] = "mode_worldselect";
 Mode gModeWorldselect = {
     gModeNameWorldselect,
     (void (*)(s32))mode_worldselect_0,
-    (void (*)(void))mode_worldselect_1,
-    (void (*)(void))mode_worldselect_2,
+    mode_worldselect_1,
+    mode_worldselect_2,
 };
 
 GaWork* gGaWork;

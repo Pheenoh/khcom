@@ -155,6 +155,6 @@ const char gModeNameBackupstat[] = "mode_backupstat";
 Mode gModeBackupstat = {
     gModeNameBackupstat,
     (void (*)(s32))mode_backupstat_0,
-    (void (*)(void))mode_backupstat_1,
-    (void (*)(void))mode_backupstat_2,
+    mode_backupstat_1,
+    mode_backupstat_2,
 };

@@ -11,9 +11,9 @@ const char gModeNamePooh[] = "mode_pooh";
 
 Mode gModePooh = {
     gModeNamePooh,
-    (void (*)(s32))mode_pooh_0,
-    (void (*)(void))mode_pooh_1,
-    (void (*)(void))mode_pooh_2,
+    mode_pooh_0,
+    mode_pooh_1,
+    mode_pooh_2,
 };
 
 AnimDef gUnk_09EF3C98[5] = {

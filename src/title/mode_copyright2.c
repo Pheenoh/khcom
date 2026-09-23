@@ -101,7 +101,7 @@ const char gModeNameCopyright2[] = "mode_copyright2";
 
 Mode gModeCopyright2 = {
     gModeNameCopyright2,
-    (void (*)(s32))mode_copyright2_0,
-    (void (*)(void))mode_copyright2_1,
-    (void (*)(void))mode_copyright2_2,
+    mode_copyright2_0,
+    mode_copyright2_1,
+    mode_copyright2_2,
 };

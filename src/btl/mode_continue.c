@@ -54,6 +54,6 @@ const char gModeNameContinue[] = "Continue";
 Mode gModeContinue = {
     gModeNameContinue,
     (void (*)(s32))func_08060ED8,
-    (void (*)(void))func_08060F1C,
-    (void (*)(void))func_08060F64,
+    func_08060F1C,
+    func_08060F64,
 };

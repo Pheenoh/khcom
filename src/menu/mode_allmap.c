@@ -251,7 +251,7 @@ s32 func_080D37BC(u8 a) {
 
 Mode gModeAllmap = {
     gModeNameAllmap,
-    (void (*)(s32))mode_allmap_0,
-    (void (*)(void))mode_allmap_1,
-    (void (*)(void))mode_allmap_2,
+    mode_allmap_0,
+    mode_allmap_1,
+    mode_allmap_2,
 };

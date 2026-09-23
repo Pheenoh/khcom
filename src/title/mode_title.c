@@ -439,6 +439,6 @@ const char gModeNameTitle[] = "mode_title";
 Mode gModeTitle = {
     gModeNameTitle,
     (void (*)(s32))mode_title_0,
-    (void (*)(void))mode_title_1,
-    (void (*)(void))mode_title_2,
+    mode_title_1,
+    mode_title_2,
 };

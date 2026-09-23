@@ -124,8 +124,8 @@ const char gModeNameMapChk[] = "Mode_MapChk";
 Mode gModeMapChk = {
     gModeNameMapChk,
     (void (*)(s32))Mode_MapChk_0,
-    (void (*)(void))Mode_MapChk_1,
-    (void (*)(void))Mode_MapChk_2,
+    Mode_MapChk_1,
+    Mode_MapChk_2,
 };
 
 void func_080DDEC8(u8* p, u8 a) {

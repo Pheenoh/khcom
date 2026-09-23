@@ -8138,8 +8138,8 @@ TaskDesc gTaskDescPooMapanime = {
     gTaskNamePooMapanime,
     (void (*)(void*, void*))task_poo_mapanime_0,
     task_poo_mapanime_1,
-    (void (*)(void*))task_poo_mapanime_2,
-    (void (*)(void*))task_poo_mapanime_3,
+    task_poo_mapanime_2,
+    task_poo_mapanime_3,
     0x18,
 };
 

@@ -4521,6 +4521,6 @@ const char gModeNameStaffRoll[] = "mode_StaffRoll";
 Mode gModeStaffRoll = {
     gModeNameStaffRoll,
     (void (*)(s32))mode_StaffRoll_0,
-    (void (*)(void))mode_StaffRoll_1,
-    (void (*)(void))mode_StaffRoll_2,
+    mode_StaffRoll_1,
+    mode_StaffRoll_2,
 };

@@ -122,8 +122,8 @@ void* gUnkEu_09F84F38[5] = {
 Mode gModeMsTop = {
     gModeNameMsTop,
     (void (*)(s32))mode_ms_top_0,
-    (void (*)(void))mode_ms_top_1,
-    (void (*)(void))mode_ms_top_2,
+    mode_ms_top_1,
+    mode_ms_top_2,
 };
 
 u32 GetMooglePoints(void) {

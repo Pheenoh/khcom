@@ -3389,16 +3389,16 @@ void mode_sioError_2(void) {
 
 Mode gModeSioBattle = {
     gModeNameSioBattle,
-    (void (*)(s32))mode_sio_battle_0,
-    (void (*)(void))mode_sio_battle_1,
-    (void (*)(void))mode_sio_battle_2,
+    mode_sio_battle_0,
+    mode_sio_battle_1,
+    mode_sio_battle_2,
 };
 
 Mode gModeSioBtlConnect = {
     gModeNameSioBtlConnect,
-    (void (*)(s32))mode_sio_btl_connect_0,
-    (void (*)(void))mode_sio_btl_connect_1,
-    (void (*)(void))mode_sio_btl_connect_2,
+    mode_sio_btl_connect_0,
+    mode_sio_btl_connect_1,
+    mode_sio_btl_connect_2,
 };
 
 SioWorldEntry gSioWorldEntries[13] = {
@@ -3481,18 +3481,18 @@ const char gModeNameSioBtlOption[] = "mode_sio_btl_option";
 
 Mode gModeSioBtlOption = {
     gModeNameSioBtlOption,
-    (void (*)(s32))mode_sio_btl_option_0,
-    (void (*)(void))mode_sio_btl_option_1,
-    (void (*)(void))mode_sio_btl_option_2,
+    mode_sio_btl_option_0,
+    mode_sio_btl_option_1,
+    mode_sio_btl_option_2,
 };
 
 const char gModeNameSioBtlCardget[] = "mode_sio_btl_cardget";
 
 Mode gModeSioBtlCardget = {
     gModeNameSioBtlCardget,
-    (void (*)(s32))mode_sio_btl_cardget_0,
-    (void (*)(void))mode_sio_btl_cardget_1,
-    (void (*)(void))mode_sio_btl_cardget_2,
+    mode_sio_btl_cardget_0,
+    mode_sio_btl_cardget_1,
+    mode_sio_btl_cardget_2,
 };
 
 #ifndef VERSION_EU
@@ -3502,9 +3502,9 @@ const char gModeNameSioChgConnect[] = "mode_sio_chg_connect";
 #ifndef VERSION_EU
 Mode gModeSioChgConnect = {
     gModeNameSioChgConnect,
-    (void (*)(s32))mode_sio_chg_connect_0,
-    (void (*)(void))mode_sio_chg_connect_1,
-    (void (*)(void))mode_sio_chg_connect_2,
+    mode_sio_chg_connect_0,
+    mode_sio_chg_connect_1,
+    mode_sio_chg_connect_2,
 };
 
 SioChgCardPos gUnk_09EF150C[13] = {
@@ -3537,9 +3537,9 @@ const char gModeNameSioChgCard[] = "mode_sio_chg_card";
 #ifndef VERSION_EU
 Mode gModeSioChgCard = {
     gModeNameSioChgCard,
-    (void (*)(s32))mode_sio_chg_card_0,
-    (void (*)(void))mode_sio_chg_card_1,
-    (void (*)(void))mode_sio_chg_card_2,
+    mode_sio_chg_card_0,
+    mode_sio_chg_card_1,
+    mode_sio_chg_card_2,
 };
 #endif
 
@@ -3547,7 +3547,7 @@ const char gModeNameSioError[] = "mode_sioError";
 
 Mode gModeSioError = {
     gModeNameSioError,
-    (void (*)(s32))mode_sioError_0,
-    (void (*)(void))mode_sioError_1,
-    (void (*)(void))mode_sioError_2,
+    mode_sioError_0,
+    mode_sioError_1,
+    mode_sioError_2,
 };
