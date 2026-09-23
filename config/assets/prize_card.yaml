@@ -1,0 +1,61 @@
+group: prize_card
+types: {}
+objects:
+  us:
+  - name: prize_card_tiles.s
+    start: 0x09501378
+    end: 0x09507F38
+  - name: prize_card_maps.s
+    start: 0x0960F2B8
+    end: 0x096102B8
+  jp:
+  - name: prize_card_tiles.s
+    start: 0x094B9654
+    end: 0x094C0214
+  - name: prize_card_maps.s
+    start: 0x095C7D94
+    end: 0x095C8D94
+  eu:
+  - name: prize_card_tiles.s
+    start: 0x09522CE4
+    end: 0x095298A4
+  - name: prize_card_maps.s
+    start: 0x09542324
+    end: 0x09543324
+entries:
+- name: gUnk_09501378
+  format: raw
+  us:
+    address: 0x09501378
+    size: 1024
+  jp:
+    address: 0x094B9654
+    size: 1024
+    symbol: gUnkJp_094B9654
+  eu:
+    address: 0x09522CE4
+    size: 1024
+    symbol: gUnkEu_09522CE4
+- name: gUnk_09501778
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09501778
+    size: 26560
+  jp:
+    address: 0x094B9A54
+    size: 26560
+  eu:
+    address: 0x095230E4
+    size: 26560
+- name: gUnk_0960F2B8
+  format: tilemap
+  us:
+    address: 0x0960F2B8
+    size: 4096
+  jp:
+    address: 0x095C7D94
+    size: 4096
+  eu:
+    address: 0x09542324
+    size: 4096

@@ -44,6 +44,7 @@
 #include "sprites_map.h"
 #include "sprites_worldselect.h"
 #include "battle_backgrounds.h"
+#include "prize_card.h"
 
 u8 gUnk_02034AB8[20];
 

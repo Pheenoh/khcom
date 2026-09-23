@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_btl.h"
+#include "prize_card.h"
 
 extern UnkStruct_09EE752C gUnk_09EE752C[7];
 #ifdef VERSION_EU
