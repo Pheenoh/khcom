@@ -25,6 +25,7 @@
 #include "btl_api.h"
 #include "acgtrans.h"
 #include "mode_battle_data.h"
+#include "sprites_wlogo.h"
 #include <string.h>
 
 s16 gUnk_0203AB3C EWRAM_COMMON(4);

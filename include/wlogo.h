@@ -2,7 +2,6 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
-
 #include "animation_resource_assets.h"
 
 #include "obj.h"
@@ -451,62 +450,7 @@ extern u8 gUnk_096249F4[];
 extern u8 gUnk_09624F72[];
 extern u8 gUnk_0962848A[];
 extern u8 gUnk_09628DC0[];
-extern u8 gUnk_096300C4[];
-extern u8 gUnk_09630CC4[];
-extern u8 gUnk_096324C4[];
-extern u8 gUnk_09633144[];
-extern u8 gUnk_09633D64[];
-extern u8 gUnk_09634664[];
-extern u8 gUnk_09638664[];
-extern u8 gUnk_09638C84[];
-extern u8 gUnk_0963CC84[];
-extern u8 gUnk_0963DCE4[];
-extern u8 gUnk_096424E4[];
-extern u8 gUnk_09642CE4[];
-extern u8 gUnk_096438E4[];
-extern u8 gUnk_096444E4[];
-extern u8 gUnk_09645C84[];
-extern u8 gUnk_09646884[];
-extern u8 gUnk_096474A4[];
-extern u8 gUnk_09648484[];
-extern u8 gUnk_09648EA4[];
-extern u8 gUnk_0964A104[];
-extern u8 gUnk_096B6464[];
-extern u8 gUnk_096B6C64[];
-extern u8 gUnk_096B7464[];
-extern u8 gUnk_096B7C64[];
-extern u8 gUnk_096B8464[];
-extern u8 gUnk_096B8C64[];
-extern u8 gUnk_096B9464[];
-extern u8 gUnk_096B9C64[];
-extern u8 gUnk_096BA464[];
-extern u8 gUnk_096BAC64[];
-extern u8 gUnk_096BB464[];
-extern u8 gUnk_096BBC64[];
-extern u8 gUnk_096BC464[];
-extern u8 gUnk_096BCC64[];
-extern u8 gUnk_096BD464[];
-extern u8 gUnk_096BDC64[];
-extern u8 gUnk_096BE464[];
-extern u8 gUnk_096BEC64[];
-extern u8 gUnk_096FAC84[];
-extern u8 gUnk_096FACA4[];
-extern u8 gUnk_096FACC4[];
-extern u8 gUnk_096FAD64[];
-extern u8 gUnk_096FAD84[];
-extern u8 gUnk_096FADA4[];
-extern u8 gUnk_096FADC4[];
-extern u8 gUnk_096FADE4[];
-extern u8 gUnk_096FAE04[];
-extern u8 gUnk_096FAE24[];
-extern u8 gUnk_096FAE44[];
-extern u8 gUnk_096FAE64[];
-extern u8 gUnk_096FAE84[];
-extern u8 gUnk_096FAEA4[];
-extern u8 gUnk_096FAFA4[];
 extern u8 gUnk_096FB084[];
-extern u8 gUnk_096FB0A4[];
-extern u8 gUnk_096FB0C4[];
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);

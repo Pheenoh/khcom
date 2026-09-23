@@ -329,13 +329,14 @@ sprites_bos2.c
 sprites_wlogo_frames.s
 sprites_boss_tm_frames.s
 sprites_bos2_frames.s
-asset_gfx_gap_87_at_0961A9FD.s
+sprites_wlogo_tiles.s
 event_background_tiles_7.s
 asset_gfx_gap_87_at_0961A9FD_at_09652E84.s
+sprites_wlogo_maps.s
 event_background_maps_6.s
 asset_gfx_gap_87_at_0961A9FD_at_096C0464.s
 sprite_palettes_7.s
-asset_gfx_gap_87_at_0961A9FD_at_096C0464_at_096FAC84.s
+sprites_wlogo_palettes.s
 event_background_palettes_4.s
 sprite_palettes_8.s
 asset_gfx_gap_87_at_0961A9FD_at_096FB2A4.s
