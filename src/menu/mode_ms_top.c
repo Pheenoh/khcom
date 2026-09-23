@@ -50,7 +50,7 @@ static s16 gUnk_02035892;
 static s32 gUnk_02035898[2];
 static s32 gUnk_020358A0;
 static u8 gUnk_020358A4;
-static TaskPool gUnk_020358A8;
+static TaskPool gMsTopTaskPool;
 static s16 gUnk_020358BC;
 static s16 gUnk_020358BE;
 static u8 gUnk_020358C0;
@@ -337,7 +337,7 @@ void func_08101970(void) {
     if (gUnk_02035890 == 6) {
         func_08102F30();
     }
-    TaskPoolDraw(&gUnk_020358A8);
+    TaskPoolDraw(&gMsTopTaskPool);
     SetBgScroll(0, (u16)(gUnk_02035884 >> 8), 0);
     SetBgScroll(1, (u16)(gUnk_02035880 >> 8), 0);
 }
@@ -442,7 +442,7 @@ void mode_ms_top_0(u32 a) {
     func_08101740(gUnk_020357C0);
     func_08101654();
     func_081015E8();
-    TaskPoolInit(&gUnk_020358A8, 1);
+    TaskPoolInit(&gMsTopTaskPool, 1);
     EnableBg(0);
     EnableBg(1);
     EnableBg(2);
@@ -621,11 +621,11 @@ void mode_ms_top_1(void) {
     if (gUnk_020358BE >= 0) {
         if (gUnk_020358C0 != 0) {
             if (func_080A42C8() == 0) {
-                func_080A4234(&gUnk_020358A8, 3, gUnk_020358BE);
+                func_080A4234(&gMsTopTaskPool, 3, gUnk_020358BE);
                 gUnk_020358BE = -1;
             }
         } else {
-            func_080A4234(&gUnk_020358A8, 3, gUnk_020358BE);
+            func_080A4234(&gMsTopTaskPool, 3, gUnk_020358BE);
             gUnk_020358BE = -1;
             gUnk_020358C0 = 1;
         }
@@ -634,17 +634,17 @@ void mode_ms_top_1(void) {
     if (gUnk_020358BC >= 0) {
         if (gUnk_020358C0 != 0) {
             if (func_080A42C8() == 0) {
-                func_080A411C(&gUnk_020358A8, 3, gUnk_020358BC);
+                func_080A411C(&gMsTopTaskPool, 3, gUnk_020358BC);
                 gUnk_020358BC = -1;
             }
         } else {
-            func_080A411C(&gUnk_020358A8, 3, gUnk_020358BC);
+            func_080A411C(&gMsTopTaskPool, 3, gUnk_020358BC);
             gUnk_020358BC = -1;
             gUnk_020358C0 = 1;
         }
     }
 
-    TaskPoolUpdate(&gUnk_020358A8);
+    TaskPoolUpdate(&gMsTopTaskPool);
     func_08101970();
 }
 
@@ -667,5 +667,5 @@ void mode_ms_top_2(void) {
 
     ReleaseObjPalette(gUnk_0203585C);
     ReleaseObjTiles(gUnk_02035858);
-    TaskPoolDestroy(&gUnk_020358A8);
+    TaskPoolDestroy(&gMsTopTaskPool);
 }

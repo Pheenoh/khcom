@@ -12,7 +12,7 @@ typedef struct EvtArg {
 
 extern Mode gUnk_09EE273C;
 extern Mode gUnk_09EE274C;
-extern TaskPool gUnk_02034A60;
+extern TaskPool gEventTaskPool;
 extern u32 gUnk_02034A78;
 
 #endif

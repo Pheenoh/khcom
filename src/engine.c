@@ -97,7 +97,7 @@ u8 gMosaicActive;
 u32 gRandSeed;
 u8 gUnk_0203402C[4];
 u32 gRandomState[4];
-BgAnimationDef* gUnk_02034040;
+BgAnimationDef* gBgAnimCurrent;
 u16 gUnk_02034044;
 u16 gUnk_02034046;
 s32 gUnk_02034048;
@@ -3123,7 +3123,7 @@ u16 GetRandom(void) {
 
 void BgAnimInit(s32 bg, u16 b, u16 c) {
     gUnk_02034048 = bg;
-    gUnk_02034040 = 0;
+    gBgAnimCurrent = 0;
     gUnk_02034050 = 0;
     gUnk_02034052 = 0;
     gUnk_02034054 = 1;
@@ -3171,8 +3171,8 @@ void BgAnimSetPosition(s16 x, s16 y) {
         gUnk_02034050 = -x;
         gUnk_02034052 = -y;
     } else {
-        gUnk_02034050 = (gUnk_02034040->unk_10 << 2) - x;
-        gUnk_02034052 = (gUnk_02034040->unk_12 << 2) - y;
+        gUnk_02034050 = (gBgAnimCurrent->unk_10 << 2) - x;
+        gUnk_02034052 = (gBgAnimCurrent->unk_12 << 2) - y;
     }
 }
 
@@ -3183,7 +3183,7 @@ void BgAnimSetTransform(u8 a, s32 b, s32 c) {
 }
 
 void BgAnimStart(BgAnimationDef* a, s32 x, s32 y) {
-    gUnk_02034040 = a;
+    gBgAnimCurrent = a;
     BgAnimSetPosition((s16)x, (s16)y);
 
     if (gUnk_02034058 != 0) {
@@ -3213,8 +3213,8 @@ void BgAnimApplyAffineTransform(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) 
     BgAffineSrcData src;
     BgAffineDstData dst;
 
-    src.texX = gUnk_02034040->unk_10 << 10;
-    src.texY = gUnk_02034040->unk_12 << 10;
+    src.texX = gBgAnimCurrent->unk_10 << 10;
+    src.texY = gBgAnimCurrent->unk_12 << 10;
     src.scrX = -cx;
     src.scrY = -cy;
     src.sx = 0x10000 / sx;
@@ -3249,11 +3249,11 @@ void BgAnimUpdate(void) {
     s16 over;
     s32 vis;
 
-    if (gUnk_02034040 == 0) {
+    if (gBgAnimCurrent == 0) {
         return;
     }
 
-    if (gUnk_02034046 >= gUnk_02034040->frameCount) {
+    if (gUnk_02034046 >= gBgAnimCurrent->frameCount) {
         if (gUnk_02034066 >= 0) {
             gUnk_02034046 = gUnk_02034066;
             gUnk_02034044 = 0;
@@ -3281,8 +3281,8 @@ void BgAnimUpdate(void) {
         if (gUnk_02034044 == 0) {
             q = gUnk_02034046 / gUnk_0203404E;
             off = gUnk_02034046 % gUnk_0203404E * gUnk_0203404C;
-            src = (u8*)gUnk_02034040->chunks[q].data + off;
-            over = off + gUnk_0203404C - gUnk_02034040->chunks[q].size;
+            src = (u8*)gBgAnimCurrent->chunks[q].data + off;
+            over = off + gUnk_0203404C - gBgAnimCurrent->chunks[q].size;
 
             if (over > 0) {
                 len = gUnk_0203404C - over;
@@ -3319,7 +3319,7 @@ void BgAnimSetStopFrame(u16 a) {
 }
 
 void BgAnimStop(void) {
-    gUnk_02034040 = 0;
+    gBgAnimCurrent = 0;
     gUnk_02034054 = 1;
     DisableBg(gUnk_02034048);
 }
@@ -3343,7 +3343,7 @@ u32 BgAnimGetDuration(BgAnimationDef* p) {
 }
 
 BgAnimationDef* BgAnimGetCurrent(void) {
-    return gUnk_02034040;
+    return gBgAnimCurrent;
 }
 
 Dma3Queue* gDma3Requests IWRAM_COMMON(4);

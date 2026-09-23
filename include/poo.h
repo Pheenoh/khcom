@@ -1103,7 +1103,7 @@ extern u8 gUnk_09756D90[];
 extern const u16 gUnk_096FD850[];
 extern const PooMapObjHitDesc gPooMapObjHitDescs[];
 extern const PooStumpDesc gPooStumpDescs[];
-extern const PooAnimDesc gUnk_096FD50C[];
+extern const PooAnimDesc gPooRabbitAnimDescs[];
 extern u8 gUnk_09755A34[];
 extern u8 gUnk_097559F4[];
 extern u8 gUnk_09755A04[];

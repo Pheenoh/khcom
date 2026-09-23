@@ -3951,8 +3951,8 @@ void task_poo_owl_3(PooOwlWork* w) {
 void SetPooRabbitAnimation(PooRabbitWork* w, s32 b, u16 c) {
     if (w->unk_A8 != b) {
         w->unk_A8 = b;
-        AnimChangeWithTables(w->anim, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
-        SetObjTileSource(w->tiles, gUnk_096FD50C[b].unk_08);
+        AnimChangeWithTables(w->anim, gPooRabbitAnimDescs[b].unk_0C, c, gPooRabbitAnimDescs[b].unk_00, gPooRabbitAnimDescs[b].unk_04);
+        SetObjTileSource(w->tiles, gPooRabbitAnimDescs[b].unk_08);
     }
 }
 
@@ -8067,7 +8067,7 @@ TaskDesc gTaskDescPooEeyore = {
 
 const char gTaskNamePooOwl[] = "task_poo_owl";
 
-const PooAnimDesc gUnk_096FD50C[7] = {
+const PooAnimDesc gPooRabbitAnimDescs[7] = {
     { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 0, 0 },
     { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 1, 0 },
     { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 2, 0 },

@@ -17,7 +17,7 @@ const AllmapRoomDirs gAllmapRoomDirs = {{1, 2, 3, 0}};
 
 u16* gUnk_0203C4C0[8] EWRAM_COMMON(16);
 u32 gUnk_0203C4E0 EWRAM_COMMON(4);
-TaskPool gUnk_0203C4F0 EWRAM_COMMON(16);
+TaskPool gAllmapTaskPool EWRAM_COMMON(16);
 u16* gUnk_0203C504 EWRAM_COMMON(4);
 u16 gUnk_0203C508 EWRAM_COMMON(4);
 u16* gUnk_0203C510[8] EWRAM_COMMON(16);
@@ -62,8 +62,8 @@ void mode_allmap_0(s32 a) {
     SetupBg(1, 0, 27, 0);
     SetBgPriority(1, 2);
     SetBgMapBlocks(1, gUnk_0203C510, 2, 4);
-    TaskPoolInit(&gUnk_0203C4F0, 1);
-    TaskCreate(&gUnk_0203C4F0, &gTaskDescAllmapBar, 0);
+    TaskPoolInit(&gAllmapTaskPool, 1);
+    TaskCreate(&gAllmapTaskPool, &gTaskDescAllmapBar, 0);
     gUnk_0203C4E0 = 0;
     func_080D4EBC();
     REG_IME = 0;
@@ -91,8 +91,8 @@ void func_080D3370(void) {
 
 void mode_allmap_1(void) {
     UpdatePlayTime();
-    TaskPoolUpdate(&gUnk_0203C4F0);
-    TaskPoolDraw(&gUnk_0203C4F0);
+    TaskPoolUpdate(&gAllmapTaskPool);
+    TaskPoolDraw(&gAllmapTaskPool);
 
     if (gUnk_0203C4E0 == 0 && !FadeIsActive()) {
         if (gUnk_0203C534 != 0 && gUnk_0203C508 != 0) {
@@ -142,7 +142,7 @@ void mode_allmap_1(void) {
 
 void mode_allmap_2(void) {
     func_080D53A8();
-    TaskPoolDestroy(&gUnk_0203C4F0);
+    TaskPoolDestroy(&gAllmapTaskPool);
     REG_IME = 0;
     REG_IE &= ~INTR_FLAG_VCOUNT;
     REG_DISPSTAT &= ~DISPSTAT_VCOUNT_INTR;

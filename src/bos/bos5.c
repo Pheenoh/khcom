@@ -565,7 +565,7 @@ u32 gUnk_020350C4;
 s32 gUnk_020350C8[2];
 s32 gUnk_020350D0;
 u32 gUnk_020350D4;
-TaskPool gUnk_020350D8;
+TaskPool gWorldselectTaskPool;
 s16 gUnk_020350EC;
 u8 gUnk_020350EE;
 u8 gUnk_020350EF;
@@ -2761,7 +2761,7 @@ void func_080FE47C(void) {
         BgAnimUpdate();
     }
 
-    TaskPoolDraw(&gUnk_020350D8);
+    TaskPoolDraw(&gWorldselectTaskPool);
 }
 
 void func_080FE854(void) {
@@ -2888,7 +2888,7 @@ void mode_worldselect_0(void) {
     gUnk_020350A8 = LoadObjTiles(gUnk_0999CBB6, 0x380);
 #endif
     gUnk_020350B0 = LoadObjTiles(gUnk_0999C410, 0x780);
-    TaskPoolInit(&gUnk_020350D8, 1);
+    TaskPoolInit(&gWorldselectTaskPool, 1);
     EnableBg(0);
     EnableBg(1);
 
@@ -2924,7 +2924,7 @@ void mode_worldselect_1(void) {
         if (gUnk_020350C2 <= 0) {
             if (gUnk_020350EE != 0) {
                 gUnk_020350EC = 0;
-                func_080A411C(&gUnk_020350D8, 2, 70);
+                func_080A411C(&gWorldselectTaskPool, 2, 70);
                 gUnk_020350C0 = 2;
             } else {
                 gUnk_020350C0 = 3;
@@ -2941,7 +2941,7 @@ void mode_worldselect_1(void) {
     case 2:
         if (func_080A42C8() == 0) {
             if (gUnk_020350EC == 0) {
-                func_080A411C(&gUnk_020350D8, 2, 71);
+                func_080A411C(&gWorldselectTaskPool, 2, 71);
                 gUnk_020350EC++;
             } else {
                 gGameState.progression.unk_82 |= 1;
@@ -3040,7 +3040,7 @@ void mode_worldselect_1(void) {
         FadeGetAmount();
     }
 
-    TaskPoolUpdate(&gUnk_020350D8);
+    TaskPoolUpdate(&gWorldselectTaskPool);
     func_080FE47C();
 }
 
@@ -3062,5 +3062,5 @@ void mode_worldselect_2(void) {
     ReleaseObjPalette(gUnk_020350AC);
     ReleaseObjTiles(gUnk_020350A8);
     ReleaseObjTiles(gUnk_020350B0);
-    TaskPoolDestroy(&gUnk_020350D8);
+    TaskPoolDestroy(&gWorldselectTaskPool);
 }

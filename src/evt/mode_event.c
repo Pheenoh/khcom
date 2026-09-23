@@ -7,7 +7,7 @@
 #include "mode_test_api.h"
 
 
-TaskPool gUnk_02034A60;
+TaskPool gEventTaskPool;
 u8 gUnk_02034A74;
 u32 gUnk_02034A78;
 u8 gUnk_02034A7C;
@@ -78,8 +78,8 @@ void Event_0(s32 arg) {
         FadeStartIn(1, 999);
     }
 
-    TaskPoolInit(&gUnk_02034A60, 2);
-    TaskCreate(&gUnk_02034A60, &gTaskDescEventSeq, &cfg);
+    TaskPoolInit(&gEventTaskPool, 2);
+    TaskCreate(&gEventTaskPool, &gTaskDescEventSeq, &cfg);
     func_080A42B4();
     gUnk_02034A7C = 0;
 }
@@ -89,12 +89,12 @@ void func_0806119C(void) {
     }
 
     if (gUnk_02034A74 == 0) {
-        TaskPoolUpdate(&gUnk_02034A60);
+        TaskPoolUpdate(&gEventTaskPool);
     } else if (GetKeysRepeat() & SELECT_BUTTON) {
-        TaskPoolUpdate(&gUnk_02034A60);
+        TaskPoolUpdate(&gEventTaskPool);
     }
 
-    TaskPoolDraw(&gUnk_02034A60);
+    TaskPoolDraw(&gEventTaskPool);
 
     if (gEventState->unk_7A == 0) {
         if (gUnk_02034A7C == 0) {
@@ -117,8 +117,8 @@ void func_0806119C(void) {
 void func_08061248(void) {
     EventSequenceDef* p = gUnk_09EE3FB4[gUnk_02034A78];
     UpdatePlayTime();
-    TaskPoolUpdate(&gUnk_02034A60);
-    TaskPoolDraw(&gUnk_02034A60);
+    TaskPoolUpdate(&gEventTaskPool);
+    TaskPoolDraw(&gEventTaskPool);
     if (gEventState->unk_7A != 0) {
         return;
     }
@@ -295,7 +295,7 @@ void func_08061248(void) {
 }
 
 void Event_2(void) {
-    TaskPoolDestroy(&gUnk_02034A60);
+    TaskPoolDestroy(&gEventTaskPool);
     EwramFree(gEventState);
     gEventState = 0;
 }

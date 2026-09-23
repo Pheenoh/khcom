@@ -13,8 +13,8 @@ extern u8 gUnkEu_097D9B00[];
 extern u8 gUnkEu_097DA700[];
 #endif
 
-TaskPool gUnk_02034EE0 __attribute__((aligned(8)));
-Task* gUnk_02034EF4;
+TaskPool gStatusTaskPool __attribute__((aligned(8)));
+Task* gStatusBarTask;
 u8 gUnk_02034EF8;
 
 void mode_status_0(void) {
@@ -61,24 +61,24 @@ void mode_status_0(void) {
     LoadBgMap(0, gUnk_09848B98, 0x500);
     DisableBg(0);
     func_080D733C();
-    TaskPoolInit(&gUnk_02034EE0, 4);
-    gUnk_02034EF4 = TaskCreate(&gUnk_02034EE0, &gTaskDescStatusBar, 0);
-    TaskCreate(&gUnk_02034EE0, &gTaskDescStatus, 0);
+    TaskPoolInit(&gStatusTaskPool, 4);
+    gStatusBarTask = TaskCreate(&gStatusTaskPool, &gTaskDescStatusBar, 0);
+    TaskCreate(&gStatusTaskPool, &gTaskDescStatus, 0);
     FadeStartIn(0, 0x10);
 }
 
 void mode_status_1(void) {
     UpdatePlayTime();
-    TaskPoolUpdate(&gUnk_02034EE0);
-    TaskPoolDraw(&gUnk_02034EE0);
+    TaskPoolUpdate(&gStatusTaskPool);
+    TaskPoolDraw(&gStatusTaskPool);
 
-    if (!IsTaskActive(gUnk_02034EF4) && !FadeIsActive()) {
+    if (!IsTaskActive(gStatusBarTask) && !FadeIsActive()) {
         func_080E052C(gUnk_02034EF8);
     }
 }
 
 void mode_status_2(void) {
-    TaskPoolDestroy(&gUnk_02034EE0);
+    TaskPoolDestroy(&gStatusTaskPool);
 }
 
 void func_080D7568(u8 a) {

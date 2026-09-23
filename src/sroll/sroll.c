@@ -11,7 +11,7 @@
 #include "sprites_staff_roll.h"
 #include "gba/io_reg.h"
 
-DmaStream gUnk_02036028 __attribute__((aligned(8)));
+DmaStream gDmaStream __attribute__((aligned(8)));
 u8 gUnk_02036048;
 u32 gUnk_0203604C;
 s32 gUnk_02036050[0x810];
@@ -1733,14 +1733,14 @@ void ScanlineDmaReset(void) {
     dma[5] &= ~(DMA_START_MASK | DMA_DREQ_ON | DMA_REPEAT);
     dma[5] &= ~DMA_ENABLE;
     dma[5];
-    gUnk_02036028.unk_00 = 0;
-    gUnk_02036028.unk_01 = 0;
-    gUnk_02036028.update = 0;
-    gUnk_02036028.dst = 0;
-    gUnk_02036028.unk_0C = 0;
-    gUnk_02036028.src[0] = 0;
-    gUnk_02036028.src[1] = 0;
-    gUnk_02036028.cnt = 0;
+    gDmaStream.unk_00 = 0;
+    gDmaStream.unk_01 = 0;
+    gDmaStream.update = 0;
+    gDmaStream.dst = 0;
+    gDmaStream.unk_0C = 0;
+    gDmaStream.src[0] = 0;
+    gDmaStream.src[1] = 0;
+    gDmaStream.cnt = 0;
 }
 
 void ScanlineDmaUpdate(void) {
@@ -1753,79 +1753,79 @@ void ScanlineDmaUpdate(void) {
     dma[5] &= ~DMA_ENABLE;
     dma[5];
 
-    if (gUnk_02036028.unk_00 != 0) {
-        if (gUnk_02036028.unk_01 != 0) {
-            gUnk_02036028.unk_0C ^= 1;
-            src = gUnk_02036028.src[gUnk_02036028.unk_0C];
-            gUnk_02036028.unk_18 = src;
+    if (gDmaStream.unk_00 != 0) {
+        if (gDmaStream.unk_01 != 0) {
+            gDmaStream.unk_0C ^= 1;
+            src = gDmaStream.src[gDmaStream.unk_0C];
+            gDmaStream.unk_18 = src;
 
-            if (!(gUnk_02036028.cnt & CPU_SET_SRC_FIXED)) {
-                if (gUnk_02036028.cnt & CPU_SET_32BIT) {
-                    gUnk_02036028.unk_18 = src + 4;
+            if (!(gDmaStream.cnt & CPU_SET_SRC_FIXED)) {
+                if (gDmaStream.cnt & CPU_SET_32BIT) {
+                    gDmaStream.unk_18 = src + 4;
                 } else {
-                    gUnk_02036028.unk_18 = src + 2;
+                    gDmaStream.unk_18 = src + 2;
                 }
             }
-            gUnk_02036028.unk_01 = 0;
+            gDmaStream.unk_01 = 0;
         }
 
-        if (gUnk_02036028.src[gUnk_02036028.unk_0C] != 0 && gUnk_02036028.dst != 0 &&
-            gUnk_02036028.cnt != 0) {
+        if (gDmaStream.src[gDmaStream.unk_0C] != 0 && gDmaStream.dst != 0 &&
+            gDmaStream.cnt != 0) {
             dma32 = (vu32*)REG_ADDR_DMA0;
-            dma32[0] = (u32)gUnk_02036028.unk_18;
-            dma32[1] = (u32)gUnk_02036028.dst;
-            dma32[2] = gUnk_02036028.cnt;
+            dma32[0] = (u32)gDmaStream.unk_18;
+            dma32[1] = (u32)gDmaStream.dst;
+            dma32[2] = gDmaStream.cnt;
             dma32[2];
         }
 
-        if (gUnk_02036028.update != 0) {
-            gUnk_02036028.update();
+        if (gDmaStream.update != 0) {
+            gDmaStream.update();
         }
     }
 }
 
 void ScanlineDmaPrime32Bit(void) {
-    *gUnk_02036028.dst = *(u32*)gUnk_02036028.src[gUnk_02036028.unk_0C];
+    *gDmaStream.dst = *(u32*)gDmaStream.src[gDmaStream.unk_0C];
 }
 
 void ScanlineDmaPrime16Bit(void) {
-    *gUnk_02036028.dst = *(u16*)gUnk_02036028.src[gUnk_02036028.unk_0C];
+    *gDmaStream.dst = *(u16*)gDmaStream.src[gDmaStream.unk_0C];
 }
 
 void ScanlineDmaInit(vu16* dst, u8* src, u32 cnt) {
     ScanlineDmaReset();
-    gUnk_02036028.src[0] = src;
-    gUnk_02036028.src[1] = src;
-    gUnk_02036028.unk_18 = src;
+    gDmaStream.src[0] = src;
+    gDmaStream.src[1] = src;
+    gDmaStream.unk_18 = src;
 
     if (cnt & CPU_SET_32BIT) {
-        gUnk_02036028.update = ScanlineDmaPrime32Bit;
+        gDmaStream.update = ScanlineDmaPrime32Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
-            gUnk_02036028.unk_18 = src + 4;
+            gDmaStream.unk_18 = src + 4;
         }
     } else {
-        gUnk_02036028.update = ScanlineDmaPrime16Bit;
+        gDmaStream.update = ScanlineDmaPrime16Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
-            gUnk_02036028.unk_18 = src + 2;
+            gDmaStream.unk_18 = src + 2;
         }
     }
-    gUnk_02036028.dst = dst;
-    gUnk_02036028.cnt = cnt;
+    gDmaStream.dst = dst;
+    gDmaStream.cnt = cnt;
 }
 
 void ScanlineDmaQueueBuffer(u8* src) {
-    gUnk_02036028.src[gUnk_02036028.unk_0C ^ 1] = src;
-    gUnk_02036028.unk_01 = 1;
+    gDmaStream.src[gDmaStream.unk_0C ^ 1] = src;
+    gDmaStream.unk_01 = 1;
 }
 
 void ScanlineDmaEnable(void) {
-    gUnk_02036028.unk_00 = 1;
+    gDmaStream.unk_00 = 1;
 }
 
 void ScanlineDmaDisable(void) {
-    gUnk_02036028.unk_00 = 0;
+    gDmaStream.unk_00 = 0;
 }
 
 void BlockAudioStart(void) {

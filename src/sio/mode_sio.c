@@ -59,13 +59,13 @@ const char gModeNameSioBattle[] = "mode_sio_battle";
 
 const char gModeNameSioBtlConnect[] = "mode_sio_btl_connect";
 
-const SioAnimDef gUnk_096193E0[2] = {
+const SioAnimDef gSioBtlOptionAnimDefs[2] = {
     {gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0},
     {gUnk_09EDEE08, gUnk_09EDEE14, gUnk_088E33C2, 0},
 };
 
 #ifndef VERSION_EU
-extern const SioAnimDef gUnk_09619444[3];
+extern const SioAnimDef gSioChgCardAnimDefs[3];
 #endif
 
 #ifdef VERSION_EU
@@ -298,7 +298,7 @@ void func_080AEE84(void) {
 }
 
 void SetSioBtlOptionAnimation(u16 a, u16 b, u16 c) {
-    const SioAnimDef* def = &gUnk_096193E0[b];
+    const SioAnimDef* def = &gSioBtlOptionAnimDefs[b];
     AnimChangeWithTables(&gSioBtlOptionWork->anim2[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioBtlOptionWork->unk_008[a], def->tiles);
 }
@@ -2343,7 +2343,7 @@ void func_080B1C14(void) {
 
 #ifndef VERSION_EU
 void SetSioChgCardAnimation(u16 a, u16 b, u16 c) {
-    const SioAnimDef* def = &gUnk_09619444[b];
+    const SioAnimDef* def = &gSioChgCardAnimDefs[b];
     AnimChangeWithTables(&gSioChgCardWork->anim[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioChgCardWork->unk_008[a], def->tiles);
 }
@@ -3525,7 +3525,7 @@ SioChgCardPos gUnk_09EF150C[13] = {
 #endif
 
 #ifndef VERSION_EU
-const SioAnimDef gUnk_09619444[3] = {
+const SioAnimDef gSioChgCardAnimDefs[3] = {
     {gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0},
     {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0},
     {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 1},

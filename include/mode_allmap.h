@@ -36,7 +36,7 @@ typedef struct AllmapRoomDirs {
 
 extern u16 gUnk_02034E38;
 extern u16 gUnk_02034E3A;
-extern TaskPool gUnk_0203C4F0;
+extern TaskPool gAllmapTaskPool;
 extern u8 gUnk_05000140[];
 extern u8 gUnk_0984A0F8[];
 extern u8 gUnk_09849F78[];

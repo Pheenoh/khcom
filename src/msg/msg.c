@@ -54,7 +54,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 173);
+        func_080A4188(&gEventTaskPool, 173);
         break;
     case 34:
         DisableBg(0);
@@ -63,7 +63,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 133);
+        func_080A4188(&gEventTaskPool, 133);
         break;
     case 88:
         DisableBg(0);
@@ -72,7 +72,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 134);
+        func_080A4188(&gEventTaskPool, 134);
         break;
     case MSG_CODE(136):
         DisableBg(0);
@@ -81,7 +81,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 139);
+        func_080A4188(&gEventTaskPool, 139);
         break;
     case MSG_CODE(137):
         DisableBg(0);
@@ -90,7 +90,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 160);
+        func_080A4188(&gEventTaskPool, 160);
         break;
     case MSG_CODE(139):
         DisableBg(0);
@@ -99,7 +99,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 159);
+        func_080A4188(&gEventTaskPool, 159);
         break;
     case MSG_CODE(140):
         DisableBg(0);
@@ -108,7 +108,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 136);
+        func_080A4188(&gEventTaskPool, 136);
         break;
     case MSG_CODE(141):
         DisableBg(0);
@@ -117,7 +117,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 137);
+        func_080A4188(&gEventTaskPool, 137);
         break;
     case MSG_CODE(142):
         DisableBg(0);
@@ -126,7 +126,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 135);
+        func_080A4188(&gEventTaskPool, 135);
         break;
     case 61:
         DisableBg(0);
@@ -135,7 +135,7 @@ void func_08061824(void) {
         DisableBg(3);
         FadeStartIn(0, 1);
         m4aSongNumStart(SONG_SYS_ITEMGET);
-        func_080A4188(&gUnk_02034A60, 138);
+        func_080A4188(&gEventTaskPool, 138);
         break;
     case 126:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -144,7 +144,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 162);
+        func_080A4188(&gEventTaskPool, 162);
         break;
     case 114:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -153,7 +153,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 161);
+        func_080A4188(&gEventTaskPool, 161);
         break;
     case 57:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -162,7 +162,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 163);
+        func_080A4188(&gEventTaskPool, 163);
         break;
     case MSG_CODE(143):
     case MSG_CODE(144):
@@ -172,7 +172,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 165);
+        func_080A4188(&gEventTaskPool, 165);
         break;
     case MSG_CODE(145):
     case MSG_CODE(146):
@@ -183,7 +183,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 166);
+        func_080A4188(&gEventTaskPool, 166);
         break;
     case 3:
     case 44:
@@ -205,7 +205,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 168);
+        func_080A4188(&gEventTaskPool, 168);
         break;
     case 54:
     case 75:
@@ -224,7 +224,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 169);
+        func_080A4188(&gEventTaskPool, 169);
         break;
     case 5:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -233,7 +233,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 175);
+        func_080A4188(&gEventTaskPool, 175);
         break;
     case 6:
     case 80:
@@ -251,7 +251,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 170);
+        func_080A4188(&gEventTaskPool, 170);
         break;
     case 119:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -260,7 +260,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 172);
+        func_080A4188(&gEventTaskPool, 172);
         break;
     case 60:
         m4aSongNumStart(SONG_SYS_ITEMGET);
@@ -269,7 +269,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 164);
+        func_080A4188(&gEventTaskPool, 164);
         break;
     case 27:
     case MSG_CODE(156):
@@ -280,7 +280,7 @@ void func_08061824(void) {
         DisableBg(2);
         DisableBg(3);
         FadeStartIn(0, 1);
-        func_080A4188(&gUnk_02034A60, 174);
+        func_080A4188(&gEventTaskPool, 174);
         break;
     }
 }
