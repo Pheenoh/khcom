@@ -3103,7 +3103,7 @@ TARGET_DATA_SIZE = {
         ("sroll.c", ".rodata"): 0x257,
         ("bos5.c", ".rodata"): 0x102D,
         ("btl_hud_localized_data.c", ".data"): 0x31C,
-        ("battle_localized_09EE25D0_data.c", ".data"): 0x124,
+        ("actor_localized_data.c", ".data"): 0x124,
         ("card_localized_09EE9C90_data.c", ".data"): 0xE74,
         ("jiminy_records_data.c", ".rodata"): 0x42C4,
         ("mode_chkobj.c", ".data"): 0x9A90,

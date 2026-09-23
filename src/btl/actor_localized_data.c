@@ -1,4 +1,4 @@
-#include "battle_localized_09EE25D0_data.h"
+#include "actor_localized_data.h"
 #include "battle_localized_assets.h"
 
 #ifdef VERSION_US

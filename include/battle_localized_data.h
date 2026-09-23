@@ -3,6 +3,6 @@
 
 #include "anim.h"
 #include "btl_hud_localized_data.h"
-#include "battle_localized_09EE25D0_data.h"
+#include "actor_localized_data.h"
 
 #endif
