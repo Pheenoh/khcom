@@ -1,5 +1,5 @@
 #include "bg_animation_data.h"
-#include "bg_animation_assets.h"
+#include "battle_bg_animations.h"
 
 const BgAnimationChunk gUnk_0813B67C[108] = {
     { gUnk_08CEFCE4, 29696, 0 },
