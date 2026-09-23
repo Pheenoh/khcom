@@ -560,7 +560,7 @@ void mode_worldwarp_0(void) {
 #endif
 
     LoadBgMap(0, gUnk_09A35A1C, 0x500);
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gUnk_09A3641C;
     dma[1] = (u32)gUnk_0203550C;
     dma[2] = 0x80000280;

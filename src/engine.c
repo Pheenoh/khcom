@@ -1448,41 +1448,41 @@ void InitDisplayRegs(void) {
     gBg3Y = 0;
 }
 void CommitDisplayRegs(void) {
-    *(vu16*)0x0400004c = gMosaic;
-    *(vu16*)0x04000050 = gBldCnt;
-    *(vu16*)0x04000052 = gBldAlpha;
-    *(vu16*)0x04000054 = gBldY;
-    *(vu16*)0x04000040 = gWin0H;
-    *(vu16*)0x04000042 = gWin1H;
-    *(vu16*)0x04000044 = gWin0V;
-    *(vu16*)0x04000046 = gWin1V;
-    *(vu16*)0x04000048 = gWinIn;
-    *(vu16*)0x0400004a = gWinOut;
-    *(vu16*)0x04000008 = gBg0Cnt;
-    *(vu16*)0x0400000a = gBg1Cnt;
-    *(vu16*)0x0400000c = gBg2Cnt;
-    *(vu16*)0x0400000e = gBg3Cnt;
-    *(vu16*)0x04000010 = gBg0HOfs;
-    *(vu16*)0x04000012 = gBg0VOfs;
-    *(vu16*)0x04000014 = gBg1HOfs;
-    *(vu16*)0x04000016 = gBg1VOfs;
-    *(vu16*)0x04000018 = gBg2HOfs;
-    *(vu16*)0x0400001a = gBg2VOfs;
-    *(vu16*)0x0400001c = gBg3HOfs;
-    *(vu16*)0x0400001e = gBg3VOfs;
-    *(vu16*)0x04000020 = gBg2PA;
-    *(vu16*)0x04000022 = gBg2PB;
-    *(vu16*)0x04000024 = gBg2PC;
-    *(vu16*)0x04000026 = gBg2PD;
-    *(vu32*)0x04000028 = gBg2X;
-    *(vu32*)0x0400002c = gBg2Y;
-    *(vu16*)0x04000030 = gBg3PA;
-    *(vu16*)0x04000032 = gBg3PB;
-    *(vu16*)0x04000034 = gBg3PC;
-    *(vu16*)0x04000036 = gBg3PD;
-    *(vu32*)0x04000038 = gBg3X;
-    *(vu32*)0x0400003c = gBg3Y;
-    *(vu16*)0x04000000 = gDispCnt;
+    REG_MOSAIC = gMosaic;
+    REG_BLDCNT = gBldCnt;
+    REG_BLDALPHA = gBldAlpha;
+    REG_BLDY = gBldY;
+    REG_WIN0H = gWin0H;
+    REG_WIN1H = gWin1H;
+    REG_WIN0V = gWin0V;
+    REG_WIN1V = gWin1V;
+    REG_WININ = gWinIn;
+    REG_WINOUT = gWinOut;
+    REG_BG0CNT = gBg0Cnt;
+    REG_BG1CNT = gBg1Cnt;
+    REG_BG2CNT = gBg2Cnt;
+    REG_BG3CNT = gBg3Cnt;
+    REG_BG0HOFS = gBg0HOfs;
+    REG_BG0VOFS = gBg0VOfs;
+    REG_BG1HOFS = gBg1HOfs;
+    REG_BG1VOFS = gBg1VOfs;
+    REG_BG2HOFS = gBg2HOfs;
+    REG_BG2VOFS = gBg2VOfs;
+    REG_BG3HOFS = gBg3HOfs;
+    REG_BG3VOFS = gBg3VOfs;
+    REG_BG2PA = gBg2PA;
+    REG_BG2PB = gBg2PB;
+    REG_BG2PC = gBg2PC;
+    REG_BG2PD = gBg2PD;
+    REG_BG2X = gBg2X;
+    REG_BG2Y = gBg2Y;
+    REG_BG3PA = gBg3PA;
+    REG_BG3PB = gBg3PB;
+    REG_BG3PC = gBg3PC;
+    REG_BG3PD = gBg3PD;
+    REG_BG3X = gBg3X;
+    REG_BG3Y = gBg3Y;
+    REG_DISPCNT = gDispCnt;
     *(vu16*)0x05000000 = gBackdropColor;
 }
 
@@ -1531,7 +1531,7 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
         q->requests[q->requestCount].size = size;
         q->requestCount = q->requestCount + 1;
     } else {
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)src;
         dma[1] = (u32)dst;
         dma[2] = 0x80000000 | (size / 2);
@@ -1667,7 +1667,7 @@ void FlushDma3Queue(void) {
     n = gDma3Requests->requestCount;
 
     for (i = 0; i < n; i++) {
-        vu32* dma = (vu32*)0x040000D4;
+        vu32* dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)req[i].src;
         dma[1] = (u32)req[i].dst;
         dma[2] = (req[i].size / 2) | 0x80000000;
@@ -1721,7 +1721,7 @@ void FlushDma3Queue(void) {
     for (i = 0; i < n; i++) {
         vu32* dma;
         zero = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)&zero;
         dma[1] = (u32)pend[i].dst;
         dma[2] = (pend[i].size >> 1) | 0x81000000;

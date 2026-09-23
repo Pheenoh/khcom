@@ -474,7 +474,7 @@ void func_081054D0(MsCard* card) {
     s16 j;
 
     slot = gCardDefs[card->cardId].unk_2A;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)(card + 1);
     dma[1] = (u32)card;
     dma[2] = ((285 - func_08104AEC()) * 26) | 0x80000000;
@@ -543,7 +543,7 @@ void func_0810563C(void) {
 
     p = &zero;
     *p = 0;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)p;
     dma[1] = (u32)gMsCards;
     dma[2] = 0x81001D0C;

@@ -77,7 +77,7 @@ s32 func_0805E93C(s32 arg) {
     s32 i;
     u16 keys;
 
-    keys = ~*(vu16*)0x04000130;
+    keys = ~REG_KEYINPUT;
 
     if ((keys & 0xF) == 0xF) {
         gUnk_02034958 |= 4;
@@ -153,7 +153,7 @@ void func_0805EA90(void) {
     u32 attr1;
 
     if (gUnk_02034958 & 8) {
-        *(vu16*)0x04000000 = 0xF43;
+        REG_DISPCNT = 0xF43;
         MovieUpdate();
         if (gUnk_02034950 != 0) {
             if (gUnk_02034958 & 1) {
@@ -176,13 +176,13 @@ void func_0805EA90(void) {
             }
             if (gUnk_02034954 > 0 || gUnk_0203495A != 0 ||
                 gUnk_0203495C > 0 || gUnk_02034960 != 0) {
-                *(vu16*)0x04000000 |= 0x1000;
-                *(vu16*)0x04000050 = 0xF10;
+                REG_DISPCNT |= 0x1000;
+                REG_BLDCNT = 0xF10;
                 if (gUnk_0203495A < 16) {
                     if (gUnk_0203495A == 0) {
                         attr0 = 0x200;
                     } else {
-                        *(vu16*)0x04000052 = ((16 - gUnk_0203495A) << 8) | gUnk_0203495A;
+                        REG_BLDALPHA = ((16 - gUnk_0203495A) << 8) | gUnk_0203495A;
                         attr0 = 0x400;
                     }
                 } else {
@@ -192,7 +192,7 @@ void func_0805EA90(void) {
                     if (gUnk_02034960 == 0) {
                         attr1 = 0x200;
                     } else {
-                        *(vu16*)0x04000052 = ((16 - gUnk_02034960) << 8) | gUnk_02034960;
+                        REG_BLDALPHA = ((16 - gUnk_02034960) << 8) | gUnk_02034960;
                         attr1 = 0x400;
                     }
                 } else {
@@ -300,7 +300,7 @@ void func_0805EA90(void) {
                     }
                 }
             } else {
-                *(vu16*)0x04000000 &= ~0x1000;
+                REG_DISPCNT &= ~0x1000;
             }
         }
     }

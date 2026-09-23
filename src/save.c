@@ -2,6 +2,7 @@
 #include "agb_sram.h"
 #include "gba/syscall.h"
 #include "save.h"
+#include "gba/io_reg.h"
 
 static u16 gRawKeys;
 static u16 gRawKeysPrev;
@@ -25,7 +26,7 @@ void ZeroFill(void* dst, s16 size) {
 
     p = &zero;
     *p = 0;
-    dma = (vu32*)0x40000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)p;
     dma[1] = (u32)dst;
     dma[2] = 0x81000000 | (size / 2);
@@ -682,14 +683,14 @@ void ShowSramErrorScreen(void) {
     vu16* p;
     vu32* dma;
 
-    ime = (vu16*)0x04000208;
+    ime = (vu16*)REG_ADDR_IME;
     *ime = 0;
-    ie = (vu16*)0x04000200;
+    ie = (vu16*)REG_ADDR_IE;
     *ie |= 1;
-    dispstat = (vu16*)0x04000004;
+    dispstat = (vu16*)REG_ADDR_DISPSTAT;
     *dispstat |= 8;
     *ime = 1;
-    p = (vu16*)0x04000008;
+    p = (vu16*)REG_ADDR_BG0CNT;
     do {
         *p = 0x88;
     } while (0);
@@ -697,10 +698,10 @@ void ShowSramErrorScreen(void) {
     *p = 0x3FBF;
     p += 2;
     *p = 0x10;
-    dispcnt = (vu16*)0x04000000;
+    dispcnt = (vu16*)REG_ADDR_DISPCNT;
     *dispcnt = 0x1100;
     VBlankIntrWait();
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gSramErrorTiles;
     dma[1] = 0x06008000;
     dma[2] = 0x80002000;
@@ -740,7 +741,7 @@ void WaitSramErrorInput(void) {
     cur = 0;
     prev = 0;
     j = 0;
-    bldy = (vu16*)0x04000054;
+    bldy = (vu16*)REG_ADDR_BLDY;
     do {
         VBlankIntrWait();
         *bldy = 16 - j;
@@ -748,7 +749,7 @@ void WaitSramErrorInput(void) {
     } while (j <= 16);
 
     if (i <= 19) {
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         do {
             ReadKeysRaw();
 
@@ -770,7 +771,7 @@ void WaitSramErrorInput(void) {
     }
 
     j = 0;
-    bldy2 = (vu16*)0x04000054;
+    bldy2 = (vu16*)REG_ADDR_BLDY;
     do {
         VBlankIntrWait();
         *bldy2 = j;
@@ -785,7 +786,7 @@ void WaitSramErrorInput(void) {
 }
 
 void ReadKeysRaw(void) {
-    u16 keys = 0x3FF ^ *(vu16*)0x04000130;
+    u16 keys = 0x3FF ^ REG_KEYINPUT;
 
     gRawKeysPrev = gRawKeys;
     gRawKeys = keys;

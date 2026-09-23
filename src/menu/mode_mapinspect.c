@@ -487,7 +487,7 @@ void func_08107A74(MapCardInventoryEntry* p) {
     s16 j;
 
     row = p->category;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)(p + 1);
     dma[1] = (u32)p;
     dma[2] = ((26 - func_0810714C()) * 14) | 0x80000000;
@@ -540,7 +540,7 @@ void func_08107B84(void) {
     u16 t;
 
     zero = 0;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)&zero;
     dma[1] = (u32)gMapCardInventoryEntries;
     dma[2] = 0x8100017A;

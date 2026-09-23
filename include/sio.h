@@ -1,9 +1,6 @@
 #ifndef GUARD_SIO_H
 #define GUARD_SIO_H
 
-
-
-
 #include "display.h"
 #include "sio_api.h"
 #include "types.h"
@@ -11,25 +8,7 @@
 #include "gba/syscall.h"
 #include "intr.h"
 #include "engine.h"
-
-#define REG_DISPCNT (*(vu16*)0x04000000)
-#define REG_DISPSTAT (*(vu16*)0x04000004)
-#define REG_TM3CNT_L (*(vu16*)0x0400010C)
-#define REG_TM3CNT_H (*(vu16*)0x0400010E)
-#define REG_SIODATA32 (*(vu16*)0x04000120)
-#define REG_SIOMLT_RECV (*(vu16*)0x04000120)
-#define REG_SIOMULTI0 (*(vu16*)0x04000120)
-#define REG_SIOMULTI1 (*(vu16*)0x04000122)
-#define REG_SIOMULTI2 (*(vu16*)0x04000124)
-#define REG_SIOMULTI3 (*(vu16*)0x04000126)
-#define REG_SIOCNT (*(vu16*)0x04000128)
-#define REG_SIOCNT32 (*(vu32*)0x04000128)
-#define REG_SIODATA8 (*(vu16*)0x0400012A)
-#define REG_SIOMLT_SEND (*(vu16*)0x0400012A)
-#define REG_RCNT (*(vu16*)0x04000134)
-#define REG_IE (*(vu16*)0x04000200)
-#define REG_IF (*(vu16*)0x04000202)
-#define REG_IME (*(vu16*)0x04000208)
+#include "gba/io_reg.h"
 
 u16 IsVBlankIntrLive(void);
 void SioInit(void);

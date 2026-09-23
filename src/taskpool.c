@@ -15,6 +15,7 @@
 #include "mode.h"
 #include "gba/keys.h"
 #include "sroll_api.h"
+#include "gba/io_reg.h"
 
 extern u16 gSystemFlags;
 Mode* gCurrentMode;
@@ -194,7 +195,7 @@ s32 func_08000F90(void) {
 }
 
 void ModeBlankDisplay(void) {
-    *(vu16*)0x04000000 &= 0xE0FF;
+    REG_DISPCNT &= 0xE0FF;
     *(vu16*)0x05000000 = gUnk_0300749E;
 }
 

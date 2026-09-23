@@ -26,8 +26,6 @@ static s8 gPcmOutputBufferB[0x2C0];
 #define DMA_SOUND_FIFO                                                        \
     ((DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT | DMA_DEST_FIXED) << 16)
 
-#define SOUND_MASTER_ENABLE 0x0080
-
 u8 LookupPcmPlaybackConfig(u32 sampleRate, u16* timerReload, u32* samplesPerBuffer) {
     s32 i = 0;
 

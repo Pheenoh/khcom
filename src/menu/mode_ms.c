@@ -473,7 +473,7 @@ void func_08102984(s16 a) {
     s32 j;
 
     zero = 0;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)&zero;
     dma[1] = (u32)gUnk_02035C00;
     dma[2] = 0x81000280;

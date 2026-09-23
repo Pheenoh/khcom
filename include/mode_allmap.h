@@ -24,10 +24,7 @@
 #include "poo_api.h"
 #include "allmap_api.h"
 #include "mode_battle_data.h"
-
-#define REG_DISPSTAT (*(vu16*)0x04000004)
-#define REG_IE (*(vu16*)0x04000200)
-#define REG_IME (*(vu16*)0x04000208)
+#include "gba/io_reg.h"
 
 typedef struct AllmapRoomOrder {
     s32 unk_00[16];

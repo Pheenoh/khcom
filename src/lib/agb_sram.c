@@ -1,14 +1,12 @@
 #include "macros.h"
 #include "agb_sram.h"
+#include "gba/io_reg.h"
 
 void (*ReadSramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
 u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
 
-#define REG_WAITCNT (*(vu16*)0x4000204)
-
 static u16 verifySramFast_Work[80];
 static u16 readSramFast_Work[64];
-
 
 void ReadSramFast_Core(const u8* src, u8* dest, u32 size) {
     REG_WAITCNT = (REG_WAITCNT & ~3) | 3;

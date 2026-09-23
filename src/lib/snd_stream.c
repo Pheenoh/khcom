@@ -2,45 +2,19 @@
 #include <string.h>
 #include "types.h"
 #include "snd_stream.h"
+#include "gba/io_reg.h"
 
 SoundStream gSndStream EWRAM_COMMON(16);
-
-#define REG_SOUNDCNT_H (*(vu16*)0x04000082)
-#define REG_SOUNDCNT_X (*(vu16*)0x04000084)
-#define REG_SOUNDBIAS (*(vu16*)0x04000088)
-#define REG_ADDR_FIFO_A ((void*)0x040000A0)
-#define REG_ADDR_FIFO_B ((void*)0x040000A4)
-#define REG_DMA1SAD (*(void* volatile*)0x040000BC)
-#define REG_DMA1DAD (*(void* volatile*)0x040000C0)
-#define REG_DMA1CNT (*(vu32*)0x040000C4)
-#define REG_DMA2SAD (*(void* volatile*)0x040000C8)
-#define REG_DMA2DAD (*(void* volatile*)0x040000CC)
-#define REG_DMA2CNT (*(vu32*)0x040000D0)
-#define REG_TM0CNT_L (*(vu16*)0x04000100)
-#define REG_TM0CNT_H (*(vu16*)0x04000102)
-
-#define DMA_DEST_FIXED 0x0040
-#define DMA_REPEAT 0x0200
-#define DMA_32BIT 0x0400
-#define DMA_START_SPECIAL 0x3000
-#define DMA_ENABLE 0x8000
 
 #define DMA_SOUND_FIFO                                                        \
     ((DMA_ENABLE | DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT |               \
       DMA_DEST_FIXED)                                                         \
      << 16)
 
-#define TIMER_ENABLE 0x0080
-
-#define SOUND_BIAS_RESOLUTION 0x4000
-
-#define SOUND_MASTER_ENABLE 0x0080
-
 #define GBA_CLOCK 16780000.0f
 #define GBA_REFRESH 59.727f
 
 #define FRAMES_PER_BUFFER 30
-
 
 void SndStreamInit(u32 rate, u32 channels) {
     u32 i;
@@ -67,16 +41,16 @@ void SndStreamInit(u32 rate, u32 channels) {
     if (channels == 1) {
         REG_SOUNDCNT_H = 0x0B04;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gSndStream.buffers[0];
+        REG_DMA1SAD = (u32)gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
     } else {
         REG_SOUNDCNT_H = 0xA90C;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gSndStream.buffers[0];
+        REG_DMA1SAD = (u32)gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
-        REG_DMA2SAD = gSndStream.buffers[1];
+        REG_DMA2SAD = (u32)gSndStream.buffers[1];
         REG_DMA2DAD = REG_ADDR_FIFO_B;
         REG_DMA2CNT = DMA_SOUND_FIFO;
     }
@@ -93,18 +67,18 @@ void SndStreamUpdate(void) {
         if (gSndStream.channels == 1) {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gSndStream.buffers[0] + gSndStream.dmaOffset;
+                (u32)((u8*)gSndStream.buffers[0] + gSndStream.dmaOffset);
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
         } else {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gSndStream.buffers[0] + gSndStream.dmaOffset;
+                (u32)((u8*)gSndStream.buffers[0] + gSndStream.dmaOffset);
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
             REG_DMA2CNT = 0;
             REG_DMA2SAD =
-                (u8*)gSndStream.buffers[1] + gSndStream.dmaOffset;
+                (u32)((u8*)gSndStream.buffers[1] + gSndStream.dmaOffset);
             REG_DMA2DAD = REG_ADDR_FIFO_B;
             REG_DMA2CNT = DMA_SOUND_FIFO;
         }

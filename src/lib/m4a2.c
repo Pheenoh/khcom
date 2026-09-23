@@ -475,10 +475,10 @@ void m4aSoundVSyncOn(void) {
     soundInfo->pcmDmaCounter = 0;
     soundInfo->ident = ident - 10;
 
-    while (REG_VCOUNT == 159)
+    while (*(vu8*)REG_ADDR_VCOUNT == 159)
         ;
 
-    while (REG_VCOUNT != 159)
+    while (*(vu8*)REG_ADDR_VCOUNT != 159)
         ;
 
     REG_TM0CNT_L = -(280896 / soundInfo->pcmSamplesPerVBlank);

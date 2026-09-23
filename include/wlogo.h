@@ -18,9 +18,7 @@
 #include "intr.h"
 #include "main.h"
 #include "anim.h"
-
-#define REG_VCOUNT (*(vu16*)0x04000006)
-#define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
+#include "gba/io_reg.h"
 
 typedef struct WlogoWonEntry {
     s32 unk_00;

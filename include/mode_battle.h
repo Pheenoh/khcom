@@ -22,9 +22,6 @@
 #include "m4a.h"
 #include "btl_effect.h"
 
-#define CPU_SET_SRC_FIXED 0x01000000
-#define CPU_SET_32BIT     0x04000000
-
 #include "formation_data.h"
 #ifdef VERSION_EU
 #include "save_api.h"

@@ -4407,13 +4407,13 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
 void HBlankIntrEventScanlineScroll(void) {
     vu16 v;
 
-    v = *(vu16*)0x04000006;
+    v = REG_VCOUNT;
     v = (v + 1) % 228;
 
     if (v < 160) {
         if (gEventScanlineScroll->enabled == 1) {
-            *(vu16*)0x04000018 = gEventScanlineScroll->scrollX[v];
-            *(vu16*)0x0400001C = gEventScanlineScroll->scrollX[v];
+            REG_BG2HOFS = gEventScanlineScroll->scrollX[v];
+            REG_BG3HOFS = gEventScanlineScroll->scrollX[v];
         }
     }
 }

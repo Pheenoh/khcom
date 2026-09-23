@@ -13,13 +13,8 @@
 #include "main.h"
 #include "mode.h"
 #include "system_state.h"
+#include "gba/io_reg.h"
 
-#define REG_DISPSTAT (*(vu16*)0x04000004)
-#define REG_VCOUNT (*(vu16*)0x04000006)
-#define REG_IE (*(vu16*)0x04000200)
-#define REG_IF (*(vu16*)0x04000202)
-#define REG_WAITCNT (*(vu16*)0x04000204)
-#define REG_IME (*(vu16*)0x04000208)
 #define INTR_VECTOR (*(void**)0x03007FFC)
 
 vu16 gFrameSyncFlags;
@@ -46,10 +41,7 @@ u32 gLanguage;
 #endif
 IntrFunc gVBlankHandlerOverride;
 
-
 extern u8 IrqHandler[];
-
-
 
 extern const IntrFunc gIntrTableTemplate[14];
 
@@ -136,7 +128,7 @@ void InitSystem(void) {
     RegisterRamReset(0xFF);
     REG_WAITCNT = 0x45B6;
     zero = 0;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)&zero;
     dma[1] = 0x02000000;
     dma[2] = 0x85010000;
@@ -155,7 +147,7 @@ void InitSystem(void) {
 #endif
     REG_IME = 0;
 #ifdef VERSION_EU
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
 #endif
     dma[0] = (vu32)IrqHandler;
     dma[1] = (vu32)gIntrHandler;

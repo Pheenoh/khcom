@@ -9,6 +9,7 @@
 #include "sprites_evt.h"
 #include "sprites_smn.h"
 #include "sprites_staff_roll.h"
+#include "gba/io_reg.h"
 
 DmaStream gUnk_02036028 __attribute__((aligned(8)));
 u8 gUnk_02036048;
@@ -17,8 +18,6 @@ s32 gUnk_02036050[0x810];
 u32* gUnk_02038090;
 s32 gUnk_02038094;
 s32 gUnk_02038098;
-
-#define REG_ADDR_DMA0 0x040000B0
 
 void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
     AnimState* anim;

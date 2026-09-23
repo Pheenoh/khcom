@@ -66,8 +66,6 @@ typedef struct UnkStruct_09EE752C {
 void func_080A0944(u16 a, u16* p);
 void func_080A096C(u16 a, u16* p);
 
-#define CARD_ID_MASK 0xFFF
-
 #ifdef VERSION_EU
 #define CARDWORK(off) ((off) + 4)
 #else

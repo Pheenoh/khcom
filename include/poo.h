@@ -37,6 +37,7 @@
 #include "bos4_api.h"
 #include "poo_api.h"
 #include "btl_api.h"
+#include "gba/io_reg.h"
 typedef struct PooAim {
     u8 unk_00[0x2E];
     u16 unk_2E;
@@ -1162,10 +1163,6 @@ extern u8 gUnk_097606E8[];
 extern u8 gUnk_09849E38[];
 extern u8 gUnk_09849BB8[];
 extern const UnkStruct_096FE034 gUnk_096FD400;
-
-#define REG_DISPSTAT (*(vu16*)0x04000004)
-#define REG_BG3CNT (*(vu16*)0x0400000C)
-#define REG_BG1HOFS (*(vu16*)0x04000018)
 
 void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p);
 void task_poo_zzz_2(PooZzzWork* w);

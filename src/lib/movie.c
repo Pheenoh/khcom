@@ -1,9 +1,7 @@
 #include "macros.h"
 #include "snd_stream.h"
 #include "movie.h"
-
-#define REG_VCNT (*(vu16*)0x04000006)
-#define REG_IME (*(vu16*)0x04000208)
+#include "gba/io_reg.h"
 
 #define MOVIE_TICKS_PER_FRAME 228
 #define MOVIE_SECONDS_PER_TICK 0.000073433f
@@ -11,7 +9,6 @@
 MoviePlayer* gMoviePlayer EWRAM_COMMON(4);
 u8 gUnk_0203C7C8[8] EWRAM_COMMON(8);
 MovieHeap gMovieHeap EWRAM_COMMON(16);
-
 
 void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
     MovieSetHeapCallbacks(a, b, c, d);
@@ -152,7 +149,7 @@ u8* MovieGetTicks(void) {
     u16 vc;
 
     REG_IME = 0;
-    vc = REG_VCNT;
+    vc = REG_VCOUNT;
     if (vc > 159) {
         t = gMovieHeap.ticks + (vc - MOVIE_TICKS_PER_FRAME);
     } else {

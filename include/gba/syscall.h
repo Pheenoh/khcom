@@ -3,6 +3,9 @@
 
 #include "types.h"
 
+#define CPU_SET_SRC_FIXED 0x01000000
+#define CPU_SET_32BIT     0x04000000
+
 typedef struct BgAffineSrcData {
     s32 texX;
     s32 texY;

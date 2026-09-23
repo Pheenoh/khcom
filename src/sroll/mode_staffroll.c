@@ -6,6 +6,7 @@
 #include "bos7_api.h"
 #include "sprites_title.h"
 #include "sprites_staff_roll.h"
+#include "gba/io_reg.h"
 
 StaffRollWork* gStaffRollWork;
 
@@ -1297,7 +1298,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 2;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1335,7 +1336,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 3;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1371,7 +1372,7 @@ void mode_StaffRoll_1(void) {
             break;
         }
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1416,7 +1417,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 10;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1450,7 +1451,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 6;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1488,7 +1489,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 4;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1526,7 +1527,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 8;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1564,7 +1565,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 9;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;
@@ -1602,7 +1603,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 4;
         w->unk_00C = 0;
         tmp = 0;
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (vu32)&tmp;
         dma[1] = 0x06000000;
         dma[2] = 0x81000020;

@@ -5,6 +5,7 @@
 #include "bos7_api.h"
 #include "sprites_bos7.h"
 #include "sprites_bos6.h"
+#include "gba/io_reg.h"
 
 const s8* gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
 
@@ -205,7 +206,7 @@ void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
     func_0810FE94();
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)gUnk_09A4D234;
     dma[1] = (vu32)work->unk_0C4;
     dma[2] = 0x80000340;
@@ -392,11 +393,11 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
         switch (work->unk_010) {
         case 0:
             LoadBgMap(0, gUnk_09D4B274, 0x800);
-            ScanlineDmaInit(0x04000010, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_1084[work->unk_018 & 1], 0xA2600001);
             break;
         case 1:
             LoadBgMap(0, gUnk_09D4BA74, 0x800);
-            ScanlineDmaInit(0x04000010, work->unk_744, 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0HOFS, work->unk_744, 0xA2600001);
             break;
         case 2:
             work->unk_020 = -(work->unk_014 * 120);
@@ -407,12 +408,12 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
                 LoadBgMap(0, gUnk_09D4CA74, 0x800);
             }
 
-            ScanlineDmaInit(0x04000012, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_1084[work->unk_018 & 1], 0xA2600001);
             break;
         case 3:
             work->unk_01C = 0;
             LoadBgMap(0, gUnk_09D4C274, 0x800);
-            ScanlineDmaInit(0x04000012, work->unk_0C4, 0xA2600001);
+            ScanlineDmaInit(REG_ADDR_BG0VOFS, work->unk_0C4, 0xA2600001);
             break;
         default:
             LoadBgMap(0, gUnk_09D4D274, 0x800);

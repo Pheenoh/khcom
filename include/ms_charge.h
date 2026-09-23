@@ -39,8 +39,6 @@
 #include "engine.h"
 #include "m4a.h"
 
-#define CARD_ID_MASK 0xFFF
-
 extern u8 gUnk_09A3DE7C[];
 
 s16 CountCollectionCards(void);

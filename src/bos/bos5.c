@@ -2367,7 +2367,7 @@ void func_080FDB1C(s16 model, s16 n) {
 
     zp = &zero;
     zero = 0;
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (vu32)zp;
     dma[1] = (vu32)gUnk_020350BC;
     dma[2] = 0x81000360;

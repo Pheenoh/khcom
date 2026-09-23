@@ -130,7 +130,7 @@ void SioInit(void) {
     REG_IE |= 0x80;
     REG_IME = *p;
     REG_SIOMLT_SEND = 0;
-    *(u64*)0x04000120 = 0;
+    *(u64*)REG_ADDR_SIOMULTI0 = 0;
     zero = 0;
     CpuSet(&zero, &gSioWork, (sizeof(SioWork) / 4) | 0x05000000);
     gUnk_02034070 = 0;
@@ -291,7 +291,7 @@ u32 func_0800702C(u8* a, u16* b, u16 (*c)[2]) {
 }
 
 void func_080070B4(void) {
-    if ((REG_SIOCNT32 & 0xC) == 8 && gSioWork.playerId == 0) {
+    if (((*(vu32*)REG_ADDR_SIOCNT) & 0xC) == 8 && gSioWork.playerId == 0) {
         gSioWork.unk_00 = 8;
     } else {
         gSioWork.unk_00 = 0;
@@ -418,7 +418,7 @@ void SioTimer3Intr(void) {
 void SioSerialIntr(void) {
     u32 cnt;
 
-    cnt = REG_SIOCNT32;
+    cnt = (*(vu32*)REG_ADDR_SIOCNT);
     gSioWork.playerId = (cnt << 26) >> 30;
 
     switch (gSioWork.unk_01) {
@@ -467,7 +467,7 @@ u8 func_08007454(void) {
         REG_SIOMLT_SEND = 0xD5E0;
     }
     gSioWork.unk_10 = 0;
-    *(u64*)gSioWork.recv = *(u64*)0x04000120;
+    *(u64*)gSioWork.recv = *(u64*)REG_ADDR_SIOMULTI0;
 
     for (i = 0; i < 2; i++) {
         if ((gSioWork.recv[i] & ~3) == 0xD5E0 || gSioWork.recv[i] == 0x8FFF) {
@@ -508,7 +508,7 @@ void func_08007550(void) {
     u8 i;
     u8 idx;
 
-    *(u64*)buf = *(u64*)0x04000120;
+    *(u64*)buf = *(u64*)REG_ADDR_SIOMULTI0;
 
     if (gSioWork.unk_18 == 0) {
         for (i = 0; i < gSioWork.playerCount; i++) {
@@ -628,7 +628,7 @@ void SioClearRegs(void) {
     REG_RCNT = 0;
     REG_SIOCNT = 0;
     REG_SIODATA8 = 0;
-    REG_SIODATA32 = 0;
+    *(vu16*)REG_ADDR_SIODATA32 = 0;
     REG_SIOMLT_SEND = 0;
     REG_SIOMLT_RECV = 0;
     REG_SIOMULTI0 = 0;

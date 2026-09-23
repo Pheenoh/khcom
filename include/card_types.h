@@ -4,6 +4,7 @@
 #include "types.h"
 
 #define DECK_SIZE 99
+#define CARD_ID_MASK 0xFFF
 
 typedef struct Deck {
     u16 cards[DECK_SIZE];

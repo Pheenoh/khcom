@@ -23,10 +23,7 @@
 #include "engine.h"
 #include "m4a.h"
 #include "battle_actor.h"
-
-#define REG_DISPSTAT (*(vu16*)0x04000004)
-#define REG_IE (*(vu16*)0x04000200)
-#define REG_IME (*(vu16*)0x04000208)
+#include "gba/io_reg.h"
 
 void func_080D5A4C(u16 a);
 void func_080D5B04(void);

@@ -829,7 +829,7 @@ void mode_worldinspect_0(void) {
 #endif
 
     LoadBgMap(0, gUnk_09A324DC, 0x500);
-    dma = (vu32*)0x040000D4;
+    dma = (vu32*)REG_ADDR_DMA3;
     dma[0] = (u32)gUnk_09A32EDC;
     dma[1] = (u32)gUnk_020354D4;
     dma[2] = 0x80000280;

@@ -4,6 +4,7 @@
 #include "bos6_api.h"
 #include "sprites_bos6.h"
 #include "sprites_staff_roll.h"
+#include "gba/io_reg.h"
 
 #ifdef VERSION_EU
 extern u8 eu_0810BA1C(BosLstWork* work, s32 idx);
@@ -9030,7 +9031,7 @@ void task_bos_lst_2(BosLstWork* work) {
         if (work->unk_012 < 0) {
             n += 9;
         }
-        dma = (vu32*)0x040000D4;
+        dma = (vu32*)REG_ADDR_DMA3;
         dma[0] = (u32)gLstAnimDefs[anim].unk_00;
         dma[1] = (u32)work->unk_8A4;
         dma[2] = 0x80000400;

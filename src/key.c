@@ -1,5 +1,6 @@
 #include "gba/keys.h"
 #include "key.h"
+#include "gba/io_reg.h"
 
 u16 gKeysHeld;
 u16 gKeysPressed;
@@ -231,7 +232,7 @@ u16 ReadDpadChord(void) {
 void UpdateKeyState(void) {
     u16 keys;
 
-    keys = *(vu16*)0x04000130 ^ KEYS_MASK;
+    keys = REG_KEYINPUT ^ KEYS_MASK;
     gKeysPressed = keys & ~gKeysHeld;
     gKeysHeld = keys;
 

@@ -49,9 +49,6 @@
 #include "bos4_api.h"
 #include "btl_api.h"
 
-#define CPU_SET_SRC_FIXED 0x01000000
-#define CPU_SET_32BIT     0x04000000
-
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
     u8 unk_7A;
