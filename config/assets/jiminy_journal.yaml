@@ -1,0 +1,526 @@
+group: jiminy_journal
+types: {}
+objects:
+  us:
+  - name: jiminy_journal_tiles.s
+    start: 0x08EE4A64
+    end: 0x08EEE384
+  - name: jiminy_journal_maps.s
+    start: 0x08F5E384
+    end: 0x08F68384
+  - name: jiminy_journal_palettes.s
+    start: 0x08F6DD64
+    end: 0x08F6E184
+  jp:
+  - name: jiminy_journal_tiles.s
+    start: 0x08ED804C
+    end: 0x08EE188C
+  - name: jiminy_journal_maps.s
+    start: 0x08F5188C
+    end: 0x08F5B88C
+  - name: jiminy_journal_palettes.s
+    start: 0x08F6126C
+    end: 0x08F6168C
+  eu:
+  - name: jiminy_journal_tiles.s
+    start: 0x08EF0F7C
+    end: 0x08EFE8DC
+  - name: jiminy_journal_maps.s
+    start: 0x08F5A8DC
+    end: 0x08F648DC
+  - name: jiminy_journal_palettes.s
+    start: 0x08F6A2BC
+    end: 0x08F6A6DC
+entries:
+- name: gUnk_08EE4A64
+  format: tiles4
+  us:
+    address: 0x08EE4A64
+    size: 11904
+  jp:
+    address: 0x08ED804C
+    size: 11680
+  eu:
+    address: 0x08EF0F7C
+    size: 11904
+- name: gUnk_08EE78E4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x08EE78E4
+    size: 320
+  jp:
+    address: 0x08EDADEC
+    size: 320
+  eu:
+    address: 0x08EF7E3C
+    size: 320
+- name: gUnk_08EE7A24
+  format: tiles4
+  us:
+    address: 0x08EE7A24
+    size: 5216
+  jp:
+    address: 0x08EDAF2C
+    size: 5216
+  eu:
+    address: 0x08EF7F7C
+    size: 5216
+- name: gUnk_08EE8E84
+  format: tiles4
+  us:
+    address: 0x08EE8E84
+    size: 3488
+  jp:
+    address: 0x08EDC38C
+    size: 3488
+  eu:
+    address: 0x08EF93DC
+    size: 3488
+- name: gUnk_08EE9C24
+  format: tiles4
+  us:
+    address: 0x08EE9C24
+    size: 4384
+  jp:
+    address: 0x08EDD12C
+    size: 4384
+  eu:
+    address: 0x08EFA17C
+    size: 4384
+- name: gUnk_08EEAD44
+  format: tiles4
+  width: 8
+  us:
+    address: 0x08EEAD44
+    size: 4864
+  jp:
+    address: 0x08EDE24C
+    size: 4864
+  eu:
+    address: 0x08EFB29C
+    size: 4864
+- name: gUnk_08EEC044
+  format: tiles4
+  us:
+    address: 0x08EEC044
+    size: 3744
+  jp:
+    address: 0x08EDF54C
+    size: 3744
+  eu:
+    address: 0x08EFC59C
+    size: 3744
+- name: gUnk_08EECEE4
+  format: tiles4
+  us:
+    address: 0x08EECEE4
+    size: 5280
+  jp:
+    address: 0x08EE03EC
+    size: 5280
+  eu:
+    address: 0x08EFD43C
+    size: 5280
+- name: gUnkEu_08EF3DFC
+  format: raw
+  eu:
+    address: 0x08EF3DFC
+    size: 224
+- name: gUnkEu_08EF3EDC
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x08EF3EDC
+    size: 4096
+- name: gUnkEu_08EF4EDC
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x08EF4EDC
+    size: 4096
+- name: gUnkEu_08EF5EDC
+  format: tiles4
+  width: 32
+  eu:
+    address: 0x08EF5EDC
+    size: 4096
+- name: gUnkEu_08EF6EDC
+  format: tiles4
+  eu:
+    address: 0x08EF6EDC
+    size: 3936
+- name: gUnk_08F5E384
+  format: tilemap
+  us:
+    address: 0x08F5E384
+    size: 2048
+  jp:
+    address: 0x08F5188C
+    size: 2048
+  eu:
+    address: 0x08F5D8DC
+    size: 2048
+- name: gUnk_08F5EB84
+  format: tilemap
+  us:
+    address: 0x08F5EB84
+    size: 2048
+  jp:
+    address: 0x08F5208C
+    size: 2048
+  eu:
+    address: 0x08F5E0DC
+    size: 2048
+- name: gUnk_08F5F384
+  format: tilemap
+  us:
+    address: 0x08F5F384
+    size: 2048
+  jp:
+    address: 0x08F5288C
+    size: 2048
+  eu:
+    address: 0x08F5E8DC
+    size: 2048
+- name: gUnk_08F5FB84
+  format: tilemap
+  us:
+    address: 0x08F5FB84
+    size: 2048
+  jp:
+    address: 0x08F5308C
+    size: 2048
+  eu:
+    address: 0x08F5F0DC
+    size: 2048
+- name: gUnk_08F60384
+  format: tilemap
+  us:
+    address: 0x08F60384
+    size: 2048
+  jp:
+    address: 0x08F5388C
+    size: 2048
+  eu:
+    address: 0x08F610DC
+    size: 2048
+- name: gUnk_08F60B84
+  format: tilemap
+  us:
+    address: 0x08F60B84
+    size: 2048
+  jp:
+    address: 0x08F5408C
+    size: 2048
+  eu:
+    address: 0x08F5B8DC
+    size: 2048
+- name: gUnk_08F61384
+  format: tilemap
+  us:
+    address: 0x08F61384
+    size: 2048
+  jp:
+    address: 0x08F5488C
+    size: 2048
+  eu:
+    address: 0x08F608DC
+    size: 2048
+- name: gUnk_08F61B84
+  format: tilemap
+  us:
+    address: 0x08F61B84
+    size: 2048
+  jp:
+    address: 0x08F5508C
+    size: 2048
+  eu:
+    address: 0x08F5C0DC
+    size: 2048
+- name: gUnk_08F62384
+  format: tilemap
+  us:
+    address: 0x08F62384
+    size: 2048
+  jp:
+    address: 0x08F5588C
+    size: 2048
+  eu:
+    address: 0x08F5C8DC
+    size: 2048
+- name: gUnk_08F62B84
+  format: tilemap
+  us:
+    address: 0x08F62B84
+    size: 2048
+  jp:
+    address: 0x08F5608C
+    size: 2048
+  eu:
+    address: 0x08F5D0DC
+    size: 2048
+- name: gUnk_08F63384
+  format: tilemap
+  us:
+    address: 0x08F63384
+    size: 2048
+  jp:
+    address: 0x08F5688C
+    size: 2048
+  eu:
+    address: 0x08F5F8DC
+    size: 2048
+- name: gUnk_08F63B84
+  format: tilemap
+  us:
+    address: 0x08F63B84
+    size: 2048
+  jp:
+    address: 0x08F5708C
+    size: 2048
+  eu:
+    address: 0x08F600DC
+    size: 2048
+- name: gUnk_08F64384
+  format: tilemap
+  us:
+    address: 0x08F64384
+    size: 2048
+  jp:
+    address: 0x08F5788C
+    size: 2048
+  eu:
+    address: 0x08F5A8DC
+    size: 2048
+- name: gUnk_08F64B84
+  format: tilemap
+  us:
+    address: 0x08F64B84
+    size: 2048
+  jp:
+    address: 0x08F5808C
+    size: 2048
+  eu:
+    address: 0x08F5B0DC
+    size: 2048
+- name: gUnk_08F65384
+  format: tilemap
+  us:
+    address: 0x08F65384
+    size: 2048
+  jp:
+    address: 0x08F5888C
+    size: 2048
+  eu:
+    address: 0x08F618DC
+    size: 2048
+- name: gUnk_08F65B84
+  format: tilemap
+  us:
+    address: 0x08F65B84
+    size: 2048
+  jp:
+    address: 0x08F5908C
+    size: 2048
+  eu:
+    address: 0x08F620DC
+    size: 2048
+- name: gUnk_08F66384
+  format: tilemap
+  us:
+    address: 0x08F66384
+    size: 2048
+  jp:
+    address: 0x08F5988C
+    size: 2048
+  eu:
+    address: 0x08F628DC
+    size: 2048
+- name: gUnk_08F66B84
+  format: tilemap
+  us:
+    address: 0x08F66B84
+    size: 2048
+  jp:
+    address: 0x08F5A08C
+    size: 2048
+  eu:
+    address: 0x08F630DC
+    size: 2048
+- name: gUnk_08F67384
+  format: tilemap
+  us:
+    address: 0x08F67384
+    size: 2048
+  jp:
+    address: 0x08F5A88C
+    size: 2048
+  eu:
+    address: 0x08F638DC
+    size: 2048
+- name: gUnk_08F67B84
+  format: tilemap
+  us:
+    address: 0x08F67B84
+    size: 2048
+  jp:
+    address: 0x08F5B08C
+    size: 2048
+  eu:
+    address: 0x08F640DC
+    size: 2048
+- name: gUnk_08F6DD64
+  format: palette
+  us:
+    address: 0x08F6DD64
+    size: 32
+  jp:
+    address: 0x08F6126C
+    size: 32
+  eu:
+    address: 0x08F6A2BC
+    size: 32
+- name: gUnk_08F6DD84
+  format: palette
+  us:
+    address: 0x08F6DD84
+    size: 32
+  jp:
+    address: 0x08F6128C
+    size: 32
+  eu:
+    address: 0x08F6A2DC
+    size: 32
+- name: gUnk_08F6DDA4
+  format: palette
+  us:
+    address: 0x08F6DDA4
+    size: 32
+  jp:
+    address: 0x08F612AC
+    size: 32
+  eu:
+    address: 0x08F6A2FC
+    size: 32
+- name: gUnk_08F6DDC4
+  format: palette
+  us:
+    address: 0x08F6DDC4
+    size: 32
+  jp:
+    address: 0x08F612CC
+    size: 32
+  eu:
+    address: 0x08F6A31C
+    size: 32
+- name: gUnk_08F6DDE4
+  format: palette
+  us:
+    address: 0x08F6DDE4
+    size: 32
+  jp:
+    address: 0x08F612EC
+    size: 32
+  eu:
+    address: 0x08F6A33C
+    size: 32
+- name: gUnk_08F6DE04
+  format: palette
+  us:
+    address: 0x08F6DE04
+    size: 32
+  jp:
+    address: 0x08F6130C
+    size: 32
+  eu:
+    address: 0x08F6A35C
+    size: 32
+- name: gUnk_08F6DE24
+  format: palette
+  us:
+    address: 0x08F6DE24
+    size: 512
+  jp:
+    address: 0x08F6132C
+    size: 512
+  eu:
+    address: 0x08F6A37C
+    size: 512
+- name: gUnk_08F6E024
+  format: palette
+  us:
+    address: 0x08F6E024
+    size: 32
+  jp:
+    address: 0x08F6152C
+    size: 32
+  eu:
+    address: 0x08F6A57C
+    size: 32
+- name: gUnk_08F6E044
+  format: palette
+  us:
+    address: 0x08F6E044
+    size: 32
+  jp:
+    address: 0x08F6154C
+    size: 32
+  eu:
+    address: 0x08F6A59C
+    size: 32
+- name: gUnk_08F6E064
+  format: palette
+  us:
+    address: 0x08F6E064
+    size: 64
+  jp:
+    address: 0x08F6156C
+    size: 64
+  eu:
+    address: 0x08F6A5BC
+    size: 64
+- name: gUnk_08F6E0A4
+  format: palette
+  us:
+    address: 0x08F6E0A4
+    size: 96
+  jp:
+    address: 0x08F615AC
+    size: 96
+  eu:
+    address: 0x08F6A5FC
+    size: 96
+- name: gUnk_08F6E104
+  format: palette
+  us:
+    address: 0x08F6E104
+    size: 32
+  jp:
+    address: 0x08F6160C
+    size: 32
+  eu:
+    address: 0x08F6A65C
+    size: 32
+- name: gUnk_08F6E124
+  format: palette
+  us:
+    address: 0x08F6E124
+    size: 64
+  jp:
+    address: 0x08F6162C
+    size: 64
+  eu:
+    address: 0x08F6A67C
+    size: 64
+- name: gUnk_08F6E164
+  format: palette
+  us:
+    address: 0x08F6E164
+    size: 32
+  jp:
+    address: 0x08F6166C
+    size: 32
+  eu:
+    address: 0x08F6A6BC
+    size: 32

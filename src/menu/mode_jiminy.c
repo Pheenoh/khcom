@@ -5,6 +5,7 @@
 #include "fade.h"
 #include "mode_jiminy.h"
 #include "sprites_msg.h"
+#include "jiminy_journal.h"
 
 JiminyWork* gJiminyWork;
 

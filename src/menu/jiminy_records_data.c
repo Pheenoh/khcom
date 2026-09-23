@@ -18,6 +18,7 @@
 #include "sprites_evt.h"
 #include "sprites_smn.h"
 #include "sprites_worldinspect.h"
+#include "jiminy_journal.h"
 
 const JiminyEntry gUnk_08155554[21] = {
     { gUnk_08F62384, gUnk_09EDDECC, 3, -1, gUnk_0815552E, 0, 0 },

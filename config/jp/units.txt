@@ -119,14 +119,14 @@ battle_background_tiles_2.s
 battle_bg_animation_tiles.s
 romcri_background_tiles.s
 sprites_hum_frames_3.s
-asset_gfx_gap_1_at_08CB46E4_at_08EE4A64.s
+jiminy_journal_tiles.s
 sprites_mode_debug_maps.s
 battle_background_maps_1.s
 event_background_maps_1.s
 battle_background_maps_2.s
 battle_bg_animation_maps.s
 romcri_background_maps.s
-asset_gfx_gap_1_at_08F5E384.s
+jiminy_journal_maps.s
 sprite_palettes_1.s
 sprites_mode_debug_palettes.s
 battle_background_palettes_1.s
@@ -138,6 +138,7 @@ battle_bg_animation_palettes.s
 romcri_background_palettes.s
 sprite_palettes_3.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04.s
+jiminy_journal_palettes.s
 lockon.c
 asset_gfx_gap_2.s
 card_def_data.c
