@@ -1897,7 +1897,7 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->unk_60 = 0;
     w->unk_64 = 0;
     w->unk_6C = 0;
-    w->unk_6E = 0;
+    w->angle = 0;
     w->unk_6F = 16;
     w->unk_70 = 0;
     w->unk_68 = 0x100;
@@ -1921,13 +1921,13 @@ u8 Mapcard_1(MapcardWork* w, void* a) {
     }
 
     if (w->unk_6C & 0x200) {
-        w->unk_6E = 0;
+        w->angle = 0;
         w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_080947B4);
     }
 
     if (w->unk_6C & 0x40) {
-        w->unk_6E = 0;
+        w->angle = 0;
         w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_08094934);
     }
@@ -1936,7 +1936,7 @@ u8 Mapcard_1(MapcardWork* w, void* a) {
         return 0;
     }
 
-    w->unk_6E = 0;
+    w->angle = 0;
     func_08094DA8(w);
     func_08094CE4(w);
     return 1;
@@ -1952,13 +1952,13 @@ u8 func_080947B4(MapcardWork* w, void* a) {
     }
 
     if (w->unk_6C & 0x100) {
-        w->unk_6E += 8;
+        w->angle += 8;
     } else {
-        w->unk_6E = 0;
+        w->angle = 0;
     }
 
     if (w->unk_6C & 0x40) {
-        w->unk_6E = 0;
+        w->angle = 0;
         w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_08094934);
     }
@@ -1981,9 +1981,9 @@ u8 func_0809486C(MapcardWork* w, void* a) {
     }
 
     if (w->unk_6C & 0x100) {
-        w->unk_6E += 8;
+        w->angle += 8;
     } else {
-        w->unk_6E = 0;
+        w->angle = 0;
     }
 
     func_08094DA8(w);
@@ -2007,7 +2007,7 @@ s32 func_080948F0(MapcardWork* w, void* a) {
 }
 
 u8 func_08094934(MapcardWork* w, void* a) {
-    w->unk_6E = 0;
+    w->angle = 0;
     ApproachValue(&w->x, 0x7800, w->unk_6F);
     ApproachValue(&w->y, 0x3800, w->unk_6F);
 
@@ -2041,7 +2041,7 @@ void func_080949A0(MapcardWork* w) {
     w->unk_58 = -v[1];
     w->unk_60 = 0x300;
     w->unk_5C = 25;
-    w->unk_6E = 0;
+    w->angle = 0;
     w->unk_68 = 0x100;
 }
 
@@ -2068,7 +2068,7 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     }
 
     {
-        u8* q = &w->unk_6E;
+        u8* q = &w->angle;
         *q += 24;
         t = *(u16*)(q - 6);
         *(u16*)(q - 6) = (s16)t > 25 ? t - 12 : 25;
@@ -2105,7 +2105,7 @@ void Mapcard_2(MapcardWork* w) {
     void* sprite;
 
     if (func_080A42C8() == 0) {
-        y = (w->y >> 8) + (gSineTable[w->unk_6E] >> 8);
+        y = (w->y >> 8) + (gSineTable[w->angle] >> 8);
 
         if (w->unk_6C & 1) {
             if (w->x > 0) {
@@ -2122,7 +2122,7 @@ void Mapcard_2(MapcardWork* w) {
             aff = 0;
 
             if (w->unk_6C & 0x40) {
-                aff = AllocObjAffine(w->unk_6E, (s16)w->unk_68, (s16)w->unk_68, 1);
+                aff = AllocObjAffine(w->angle, (s16)w->unk_68, (s16)w->unk_68, 1);
             }
 
             if (gUnk_09EE4C80[w->unk_20].backIndex == 4) {
@@ -2278,7 +2278,7 @@ void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
         w->unk_90 = gUnk_09033FF4[0][1];
         w->unk_4C = gUnk_09033FF4[4][0];
         w->unk_50 = gUnk_09033FF4[4][1];
-        w->unk_94 = w->unk_98 = 0x2000;
+        w->angle = w->targetAngle = 0x2000;
         w->unk_78 |= 0x8000000;
         break;
     case 2:
@@ -2286,7 +2286,7 @@ void Reload_Gage_0(ReloadGageWork* w, ReloadGageArgs* a) {
         w->unk_90 = gUnk_0903401C[0][1];
         w->unk_4C = gUnk_0903401C[4][0];
         w->unk_50 = gUnk_0903401C[4][1];
-        w->unk_94 = w->unk_98 = -0x2000;
+        w->angle = w->targetAngle = -0x2000;
         break;
     }
 
@@ -2622,7 +2622,7 @@ void Reload_Gage_3(CardDisplayWork* p) {
     ListPoolRemove(&p->node, p->pool);
 }
 void func_080958E0(ReloadGageWork* w) {
-    ApproachValue(&w->unk_94, w->unk_98, w->unk_A3);
+    ApproachValue(&w->angle, w->targetAngle, w->unk_A3);
     if (w->unk_A3 != 0) {
         w->unk_A3--;
     }
@@ -2637,14 +2637,14 @@ void func_080958E0(ReloadGageWork* w) {
 
     switch (w->unk_40) {
     case 1:
-        w->unk_8C = gSineTable[(w->unk_94 >> 8) & 0xFF] * 80 + gUnk_09033FF4[0][0];
-        w->unk_90 = -gSineTable[((w->unk_94 >> 8) & 0xFF) + 0x40] * 80 + gUnk_09033FF4[0][1];
+        w->unk_8C = gSineTable[(w->angle >> 8) & 0xFF] * 80 + gUnk_09033FF4[0][0];
+        w->unk_90 = -gSineTable[((w->angle >> 8) & 0xFF) + 0x40] * 80 + gUnk_09033FF4[0][1];
         w->unk_4C = gSineTable[0x20] * (w->unk_84 >> 8) + w->unk_8C;
         w->unk_50 = -gSineTable[0x60] * (w->unk_84 >> 8) + w->unk_90;
         break;
     case 2:
-        w->unk_8C = gSineTable[(w->unk_94 >> 8) & 0xFF] * 80 + gUnk_0903401C[0][0];
-        w->unk_90 = -gSineTable[((w->unk_94 >> 8) & 0xFF) + 0x40] * 80 + gUnk_0903401C[0][1];
+        w->unk_8C = gSineTable[(w->angle >> 8) & 0xFF] * 80 + gUnk_0903401C[0][0];
+        w->unk_90 = -gSineTable[((w->angle >> 8) & 0xFF) + 0x40] * 80 + gUnk_0903401C[0][1];
         w->unk_4C = gSineTable[0xE0] * (w->unk_84 >> 8) + w->unk_8C;
         w->unk_50 = -gSineTable[0x120] * (w->unk_84 >> 8) + w->unk_90;
         break;

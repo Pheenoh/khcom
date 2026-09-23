@@ -60,10 +60,10 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a) {
     FadeSetPaletteExcluded(w->palette2->index + 16, 1);
 
     for (i = 0; i < w->unk_A2; i++) {
-        w->unk_98[i] = 0x80;
+        w->angle[i] = 0x80;
         w->z2[i] = 0;
-        w->x2[i] = gSineTable[w->unk_98[i]] * 24 + w->x;
-        w->y2[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->y;
+        w->x2[i] = gSineTable[w->angle[i]] * 24 + w->x;
+        w->y2[i] = -gSineTable[w->angle[i] + 64] * 12 + w->y;
     }
 
     m4aSongNumStart(0xD4);
@@ -80,9 +80,9 @@ s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
     }
 
     for (i = 0; i < w->unk_A3; i++) {
-        w->x2[i] = gSineTable[w->unk_98[i]] * 24 + w->x;
-        w->y2[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->y;
-        w->unk_98[i] += 4;
+        w->x2[i] = gSineTable[w->angle[i]] * 24 + w->x;
+        w->y2[i] = -gSineTable[w->angle[i] + 64] * 12 + w->y;
+        w->angle[i] += 4;
     }
 
     if (++w->unk_1D == gUnk_09EE8E60[w->unk_1C].unk_01) {

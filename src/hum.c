@@ -1102,7 +1102,7 @@ void task_hum_hook_0(HookWork* work, void* arg) {
     work->unk_188 = 0;
     work->unk_18C = 0;
     work->unk_190 = 0;
-    work->unk_194 = 0;
+    work->angle = 0;
     work->unk_196 = 0;
     work->unk_198 = 0;
     TaskPoolInit(&work->tasks, 3);
@@ -1645,12 +1645,12 @@ u8 task_hum_hook_1(HookWork* work) {
     }
 
     if ((s16)act->unk_02C > 0) {
-        gBtlWork->unk_018 = (gSineTable[(w->unk_194 / 2) & 0xFF] * gUnk_0813F078[w->unk_196]) >> 8;
+        gBtlWork->unk_018 = (gSineTable[(w->angle / 2) & 0xFF] * gUnk_0813F078[w->unk_196]) >> 8;
         {
             s32 t;
 
-            t = w->unk_194 + 1;
-            w->unk_194 = t;
+            t = w->angle + 1;
+            w->angle = t;
 
             if ((t & 511) == 0) {
                 w->unk_196++;

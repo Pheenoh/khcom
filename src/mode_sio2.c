@@ -1004,7 +1004,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
     }
 
     AnimChangeWithTables(&w->anim, e->animId, flags, e->anims, e->gfxTable);
-    SetObjTileSource(w->unk_00, e->tiles);
+    SetObjTileSource(w->tiles, e->tiles);
 }
 
 u8 func_080C83C4(u16 x, u16 y, u16 px, u16 py) {

@@ -57,7 +57,7 @@ typedef struct PoohHit {
 } PoohHit;
 
 typedef struct PoohWork {
-    void* unk_00;
+    void* tiles;
     PaletteSlot* palette;
     u8 unk_08[0x04];
     u8 anim[0x18];

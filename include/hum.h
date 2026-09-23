@@ -67,7 +67,7 @@ typedef struct HookWork {
     u32 unk_188;
     s32 unk_18C;
     s32 unk_190;
-    u16 unk_194;
+    u16 angle;
     u16 unk_196;
     u16 unk_198;
     u8 unk_19A[0x02];

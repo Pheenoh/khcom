@@ -6,8 +6,8 @@
 void task_ms_shop_hosi_0(MsShopHosiWork* work, MsShopHosiArg* arg) {
     work->x = arg->x << 8;
     work->y = arg->y << 8;
-    work->velX = gSineTable[arg->unk_08] * arg->unk_0C >> 8;
-    work->velY = -gSineTable[arg->unk_08 + 0x40] * arg->unk_0C >> 8;
+    work->velX = gSineTable[arg->angle] * arg->speed >> 8;
+    work->velY = -gSineTable[arg->angle + 0x40] * arg->speed >> 8;
     work->unk_10 = 0;
     work->unk_12 = work->unk_14 = GetRandom() % 8 + 4;
     work->palette = arg->palette;

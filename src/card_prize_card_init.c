@@ -1230,15 +1230,15 @@ void func_080984E4(UnkStruct_080984E4* w) {
 
     if (w->unk_2E <= 9) {
         z = 0;
-        UpdateSpriteFrameTiles(w->unk_08, gUnk_09EF1198[0], gUnk_0950C478);
+        UpdateSpriteFrameTiles(w->tiles, gUnk_09EF1198[0], gUnk_0950C478);
         w->unk_20 = z;
-        RequestDma3Copy(w->unk_08->src + w->unk_2E * 128, &gUnk_06010000[w->unk_08->index * 32], 128);
+        RequestDma3Copy(w->tiles->src + w->unk_2E * 128, &gUnk_06010000[w->tiles->index * 32], 128);
     } else {
         z = 0;
-        UpdateSpriteFrameTiles(w->unk_08, gUnk_09EF1198[2], gUnk_0950C478);
+        UpdateSpriteFrameTiles(w->tiles, gUnk_09EF1198[2], gUnk_0950C478);
         w->unk_20 = z;
-        RequestDma3Copy(w->unk_08->src + (u16)(w->unk_2E / 10) * 128, &gUnk_06010000[w->unk_08->index * 32], 128);
-        RequestDma3Copy(w->unk_08->src + (w->unk_2E - (u16)(w->unk_2E / 10) * 10) * 128, &gUnk_06010000[(w->unk_08->index + 4) * 32], 128);
+        RequestDma3Copy(w->tiles->src + (u16)(w->unk_2E / 10) * 128, &gUnk_06010000[w->tiles->index * 32], 128);
+        RequestDma3Copy(w->tiles->src + (w->unk_2E - (u16)(w->unk_2E / 10) * 10) * 128, &gUnk_06010000[(w->tiles->index + 4) * 32], 128);
     }
 
     w->unk_30 = w->unk_2E;

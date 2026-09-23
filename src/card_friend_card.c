@@ -886,9 +886,9 @@ u8 func_0809B840(StockNameWork* w) {
         }
 
 #ifdef VERSION_EU
-        UpdateSpriteFrameTiles(w->unk_08, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
+        UpdateSpriteFrameTiles(w->tiles, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(w->unk_08, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+        UpdateSpriteFrameTiles(w->tiles, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
 #endif
     }
 
@@ -987,9 +987,9 @@ u8 func_0809B9F4(StockNameWork* w) {
         }
 
 #ifdef VERSION_EU
-        UpdateSpriteFrameTiles(w->unk_08, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
+        UpdateSpriteFrameTiles(w->tiles, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(w->unk_08, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+        UpdateSpriteFrameTiles(w->tiles, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
 #endif
     }
 

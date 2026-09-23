@@ -497,7 +497,7 @@ typedef struct UnkStruct_0809C9A4 {
     u8 unk_00[0x4A];
     s16 unk_4A;
     s16 unk_4C;
-    u8 unk_4E;
+    u8 angle;
     u8 unk_4F;
     s16 unk_50;
 } UnkStruct_0809C9A4;
@@ -775,7 +775,7 @@ typedef struct StockNameWork {
     u8 unk_00[4];
     u16 unk_04;
     u8 unk_06[2];
-    UnkStruct_080038C8* unk_08;
+    UnkStruct_080038C8* tiles;
     void* unk_0C;
     u8 unk_10;
     u8 unk_11;
@@ -817,7 +817,7 @@ typedef struct ReloadChildWork {
     u8 unk_2C[0x04];
     ListNode node;
     u8 unk_44;
-    u8 unk_45;
+    u8 angle;
     u8 unk_46;
 } ReloadChildWork;
 
@@ -848,7 +848,7 @@ typedef struct PremiumCardEffectWork {
     s32 x;
     s32 y;
     s32 unk_38;
-    s32 unk_3C;
+    s32 angle;
     s32 unk_40;
     s32 unk_44;
     s32 unk_48;
@@ -954,7 +954,7 @@ typedef struct MapcardWork {
     u16 unk_68;
     u16 unk_6A;
     u16 unk_6C;
-    u8 unk_6E;
+    u8 angle;
     u8 unk_6F;
     u8 unk_70;
     u8 unk_71;
@@ -1139,8 +1139,8 @@ typedef struct ReloadGageWork {
     s32 unk_88;
     s32 unk_8C;
     s32 unk_90;
-    s32 unk_94;
-    s32 unk_98;
+    s32 angle;
+    s32 targetAngle;
     s16 unk_9C;
     u8 unk_9E;
     u8 unk_9F;
@@ -1624,7 +1624,7 @@ typedef struct LevelUpEffectWork {
     s32 unk_68;
     s32 unk_6C[4];
     s32 unk_7C[4];
-    u16 unk_8C[4];
+    u16 angle[4];
     s8 unk_94;
     u8 unk_95;
     u8 unk_96;
@@ -1675,7 +1675,7 @@ typedef struct WorldSelBeforeWork {
     s32 x2[10];
     s32 y2[10];
     s32 z2[10];
-    u8 unk_98[10];
+    u8 angle[10];
     u8 unk_A2;
     u8 unk_A3;
 } WorldSelBeforeWork;
@@ -1749,7 +1749,7 @@ typedef struct ReloadWork {
 
 typedef struct UnkStruct_080984E4 {
     u8 unk_00[0x08];
-    UnkStruct_080038C8* unk_08;
+    UnkStruct_080038C8* tiles;
     u8 unk_0C[0x14];
     s32 unk_20;
     u8 unk_24[0x0A];

@@ -4432,7 +4432,7 @@ void view_0(EventCameraWork* p, u8* arg) {
     p->unk_08 = arg[0];
     p->unk_09 = 0;
     p->unk_10 = 0;
-    p->unk_12 = 0;
+    p->angle = 0;
     p->unk_14 = 0;
     p->unk_15 = 0;
     t = gUnk_09EE3FB4[p->unk_08];
@@ -4636,8 +4636,8 @@ u8 view_1(EventCameraWork* p, u8* task) {
             gUnk_02039DC8->unk_6A = GetRandom() % 16;
         } else if (e->unk_14 & 0x1000) {
             gUnk_02039DC8->unk_68 = 0;
-            gUnk_02039DC8->unk_6A = gSineTable[(p->unk_12 >> 3) & 0xFF] >> 5;
-            p->unk_12 += 4;
+            gUnk_02039DC8->unk_6A = gSineTable[(p->angle >> 3) & 0xFF] >> 5;
+            p->angle += 4;
         } else {
             gUnk_02039DC8->unk_68 = 0;
             gUnk_02039DC8->unk_6A = 0;

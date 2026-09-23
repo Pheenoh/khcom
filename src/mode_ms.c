@@ -781,8 +781,8 @@ u8 func_0810329C(u16 a) {
                     arg0.x = gUnk_020358C8[i].x >> 8;
                     arg0.y = gUnk_020358C8[i].y >> 8;
                     arg0.palette = gUnk_02035A40;
-                    arg0.unk_08 = GetRandom() % 96 - 48;
-                    arg0.unk_0C = GetRandom() % 256 + 0x1C0;
+                    arg0.angle = GetRandom() % 96 - 48;
+                    arg0.speed = GetRandom() % 256 + 0x1C0;
                     TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg0);
                 }
             }
@@ -795,8 +795,8 @@ u8 func_0810329C(u16 a) {
                 arg0.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
                 arg0.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
                 arg0.palette = gUnk_02035A40;
-                arg0.unk_08 = 0x80;
-                arg0.unk_0C = f;
+                arg0.angle = 0x80;
+                arg0.speed = f;
                 TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg0);
             }
 
@@ -823,8 +823,8 @@ u8 func_0810329C(u16 a) {
                     arg1.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
                     arg1.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
                     arg1.palette = gUnk_02035A40;
-                    arg1.unk_08 = 0x80;
-                    arg1.unk_0C = g;
+                    arg1.angle = 0x80;
+                    arg1.speed = g;
                     TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg1);
                 }
             }
@@ -858,8 +858,8 @@ u8 func_0810329C(u16 a) {
                     arg2.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
                     arg2.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
                     arg2.palette = gUnk_02035A40;
-                    arg2.unk_08 = 0x80;
-                    arg2.unk_0C = h;
+                    arg2.angle = 0x80;
+                    arg2.speed = h;
                     TaskCreate(&gUnk_02035A70[i], &gTaskDescMsShopHosi, &arg2);
                 }
             }

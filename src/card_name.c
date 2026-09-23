@@ -191,7 +191,7 @@ void func_0809CE88(PremiumCardEffectWork* w, s16* a) {
     w->unk_28 = a[2] << 8;
     w->unk_2C = 0;
     w->unk_40 = a[0] << 8;
-    w->unk_3C = a[3];
+    w->angle = a[3];
     w->unk_4C = GetRandom() % 0x181 + 0x100;
     w->x = 0;
     w->y = 0;
@@ -211,7 +211,7 @@ void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
     w->unk_28 = a[2] << 8;
     w->unk_2C = 0;
     w->unk_40 = a[0] << 8;
-    w->unk_3C = a[3];
+    w->angle = a[3];
     w->unk_4C = GetRandom() % 0x81 + 0x200;
     w->x = 0;
     w->y = 0;
@@ -223,7 +223,7 @@ void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
 
 s32 func_0809D040(PremiumCardEffectWork* w) {
     func_0809D124(w);
-    w->unk_3C += 8;
+    w->angle += 8;
 
     if (w->unk_40 > 0) {
         w->unk_40 += -0x180;
@@ -245,7 +245,7 @@ s32 Premire_EFFECT2_1(PremiumCardEffectWork* w) {
 }
 s32 func_0809D09C(PremiumCardEffectWork* w) {
     func_0809D1B0(w);
-    w->unk_3C += 8;
+    w->angle += 8;
     w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_40 <= 0x800) {
@@ -264,15 +264,15 @@ void func_0809D0FC(PremiumCardEffectWork* w) {
 }
 
 void func_0809D124(PremiumCardEffectWork* w) {
-    w->x = gSineTable[w->unk_3C & 0xFF] * (w->unk_40 >> 8) + w->unk_24;
-    w->y = -gSineTable[(w->unk_3C & 0xFF) + 64] * (w->unk_40 >> 8) + w->unk_28;
+    w->x = gSineTable[w->angle & 0xFF] * (w->unk_40 >> 8) + w->unk_24;
+    w->y = -gSineTable[(w->angle & 0xFF) + 64] * (w->unk_40 >> 8) + w->unk_28;
 }
 
 void func_0809D160(PremiumCardEffectWork* w) {
     w->unk_50 += 30;
     w->unk_2C += w->unk_50;
-    w->unk_24 += gSineTable[w->unk_3C & 0xFF] * (w->unk_4C >> 8);
-    w->unk_28 += -gSineTable[(w->unk_3C & 0xFF) + 64] * (w->unk_4C >> 8);
+    w->unk_24 += gSineTable[w->angle & 0xFF] * (w->unk_4C >> 8);
+    w->unk_28 += -gSineTable[(w->angle & 0xFF) + 64] * (w->unk_4C >> 8);
     w->x = w->unk_24;
     w->y = w->unk_28 + w->unk_2C;
 }

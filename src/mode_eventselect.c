@@ -571,7 +571,7 @@ void down_0(EffectWork* w, EventActor* arg) {
     s = w->down;
 
     for (i = 0; i < 8; i++) {
-        s->unk_48[i] = i * 32;
+        s->angle[i] = i * 32;
         s->unk_40[i] = 0;
     }
 }
@@ -583,10 +583,10 @@ s32 down_1(EffectWork* w) {
     s = w->down;
 
     for (i = 0; i < 8; i++) {
-        s->unk_00[i] = gSineTable[s->unk_48[i] & 0xFF] * 8 + w->x;
-        s->unk_20[i] = -gSineTable[(s->unk_48[i] & 0xFF) + 64] * (s->unk_40[i] + 4) +
+        s->unk_00[i] = gSineTable[s->angle[i] & 0xFF] * 8 + w->x;
+        s->unk_20[i] = -gSineTable[(s->angle[i] & 0xFF) + 64] * (s->unk_40[i] + 4) +
                        w->y;
-        s->unk_48[i] += 4;
+        s->angle[i] += 4;
 
         if (s->unk_40[i] == 0) {
             s->unk_40[i]++;

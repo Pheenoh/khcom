@@ -192,8 +192,8 @@ void func_0809C98C(void** work) {
 }
 
 void func_0809C9A4(UnkStruct_0809C9A4* p) {
-    p->unk_4A = (gSineTable[p->unk_4E] * p->unk_50) >> 8;
-    p->unk_4C = ((-gSineTable[p->unk_4E + 64] * p->unk_50) >> 8) + 160;
+    p->unk_4A = (gSineTable[p->angle] * p->unk_50) >> 8;
+    p->unk_4C = ((-gSineTable[p->angle + 64] * p->unk_50) >> 8) + 160;
 }
 
 u8 func_0809C9F4(UnkStruct_0809C9A4* p) {

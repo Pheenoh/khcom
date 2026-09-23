@@ -42,7 +42,7 @@ typedef struct DownWork {
     s32 unk_00[8];
     s32 unk_20[8];
     u8 unk_40[8];
-    u16 unk_48[8];
+    u16 angle[8];
 } DownWork;
 
 typedef struct EvSoundWork {

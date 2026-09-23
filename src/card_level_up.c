@@ -1855,9 +1855,9 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     for (i = 0; i < 4; i++) {
         w->unk_10[i] = (w->unk_64 << 8) + gUnk_09037FFC[i];
         w->unk_20[i] = (w->unk_68 << 8) + gUnk_0903800C[i];
-        w->unk_8C[i] = gUnk_0903801C[i];
-        w->x[i] = w->unk_30 * gSineTable[w->unk_8C[i] & 0xFF] + w->unk_10[i];
-        w->y[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
+        w->angle[i] = gUnk_0903801C[i];
+        w->x[i] = w->unk_30 * gSineTable[w->angle[i] & 0xFF] + w->unk_10[i];
+        w->y[i] = -gSineTable[(w->angle[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
         w->unk_54[i] = 0;
     }
 
@@ -1890,19 +1890,19 @@ u8 LVUP_EFFECT_1(LevelUpEffectWork* w, void* a) {
         w->unk_96--;
     } else {
         for (i = 0; i < 4; i++) {
-            w->unk_8C[i] += 6;
+            w->angle[i] += 6;
             w->unk_10[i] = w->unk_64 << 8;
             w->unk_20[i] = w->unk_68 << 8;
         }
 
-        if ((s16)w->unk_8C[0] > 0x100) {
+        if ((s16)w->angle[0] > 0x100) {
             w->unk_30--;
         }
     }
 
     for (i = 0; i < 4; i++) {
-        w->x[i] = gSineTable[w->unk_8C[i] & 0xFF] * w->unk_30 + w->unk_10[i];
-        w->y[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
+        w->x[i] = gSineTable[w->angle[i] & 0xFF] * w->unk_30 + w->unk_10[i];
+        w->y[i] = -gSineTable[(w->angle[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
     }
 
     w->unk_95++;
@@ -1914,22 +1914,22 @@ u8 LVUP_EFFECT_1(LevelUpEffectWork* w, void* a) {
             case 0:
                 w->unk_7C[0] = 0x300;
                 w->unk_6C[0] = -0x180;
-                w->unk_8C[0] = 8;
+                w->angle[0] = 8;
                 break;
             case 1:
                 w->unk_7C[1] = 0x300;
                 w->unk_6C[1] = -0x180;
-                w->unk_8C[1] = -8;
+                w->angle[1] = -8;
                 break;
             case 2:
                 w->unk_7C[2] = 0x300;
                 w->unk_6C[2] = -0x180;
-                w->unk_8C[2] = 16;
+                w->angle[2] = 16;
                 break;
             case 3:
                 w->unk_7C[3] = 0x300;
                 w->unk_6C[3] = -0x180;
-                w->unk_8C[3] = -16;
+                w->angle[3] = -16;
                 break;
             }
         }
@@ -1946,7 +1946,7 @@ u8 func_080A18F4(LevelUpEffectWork* w) {
     for (i = 0; i < 4; i++) {
         w->unk_6C[i] += 25;
         w->y[i] += w->unk_6C[i];
-        w->x[i] += gSineTable[(u8)w->unk_8C[i]] * (w->unk_7C[i] >> 8);
+        w->x[i] += gSineTable[(u8)w->angle[i]] * (w->unk_7C[i] >> 8);
     }
 
     w->unk_95++;

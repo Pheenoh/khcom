@@ -234,7 +234,7 @@ typedef struct EventCameraWork {
     u8 unk_0A[2];
     const EventCameraKeyframe* keyframes;
     u16 unk_10;
-    u16 unk_12;
+    u16 angle;
     u8 unk_14;
     u8 unk_15;
     u16 wavePhase;

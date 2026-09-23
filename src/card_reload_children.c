@@ -131,7 +131,7 @@ u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a) {
         w->unk_44--;
     }
 
-    w->unk_45 += 8;
+    w->angle += 8;
     return 1;
 }
 
@@ -188,14 +188,14 @@ void RELOAD_CHILDREN_2(ReloadChildWork* w) {
     if (w->unk_18 <= 3) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
-        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_09EEA344[0], w->tiles, w->palette, 0, 0, 50);
+        DrawSprite(x, y + (gSineTable[w->angle] >> 8), gUnk_09EEA344[0], w->tiles, w->palette, 0, 0, 50);
     }
 
     if ((s8)w->unk_18 < 0) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
         aff = AllocObjAffine(0, w->unk_28, w->unk_28, 0);
-        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_08F709B0[w->unk_19].gfx2, w->tiles2, w->palette, aff, 0, 49);
+        DrawSprite(x, y + (gSineTable[w->angle] >> 8), gUnk_08F709B0[w->unk_19].gfx2, w->tiles2, w->palette, aff, 0, 49);
     }
 }
 
