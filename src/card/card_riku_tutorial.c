@@ -1581,7 +1581,7 @@ s32 func_080ADE2C(CardDisplayWork** p, u8 b, u16 c, u16 d, u8 e) {
         b == 3 &&
 #endif
         p[0]->cardDef->unk_1C == c && p[1]->cardDef->unk_1C == d &&
-        p[2]->cardDef->unk_2A == e && !(p[2]->cardDef->unk_1E & 4)) {
+        p[2]->cardDef->unk_2A == e && !(p[2]->cardDef->flags & 4)) {
         return 1;
     }
 
@@ -1594,7 +1594,7 @@ s32 func_080ADE78(CardDisplayWork** p, u8 b, u16 c, u16 d) {
         b == 3 &&
 #endif
         p[0]->cardDef->unk_1C == c && p[1]->cardDef->unk_1C == d &&
-        (p[2]->cardDef->unk_1E & 4)) {
+        (p[2]->cardDef->flags & 4)) {
         return 1;
     }
 
@@ -1684,8 +1684,8 @@ s32 func_080ADF94(CardDisplayWork** p, u8 b, u16 c) {
     u16 e1;
 
     if (b == 3) {
-        e0 = p[0]->cardDef->unk_1E;
-        e1 = p[1]->cardDef->unk_1E;
+        e0 = p[0]->cardDef->flags;
+        e1 = p[1]->cardDef->flags;
 
         if ((e0 & 4) && (e1 & 4) && p[2]->cardDef->unk_1C == c) {
             return 1;
@@ -1707,7 +1707,7 @@ s32 func_080ADFD4(CardDisplayWork** p, u8 b) {
         if (c0 == 25 && c1 == 30) {
             d2 = p[2]->cardDef;
 
-            if (d2->unk_2A == 2 && !(d2->unk_1E & 8)) {
+            if (d2->unk_2A == 2 && !(d2->flags & 8)) {
                 return 1;
             }
         }
@@ -1722,9 +1722,9 @@ s32 func_080AE014(CardDisplayWork** p, u8 b) {
     u16 e1;
 
     if (b == 3) {
-        e0 = p[0]->cardDef->unk_1E;
+        e0 = p[0]->cardDef->flags;
         d1 = p[1]->cardDef;
-        e1 = d1->unk_1E;
+        e1 = d1->flags;
 
         if ((e0 & 4) && e1 == 0 && d1->unk_2A == 1 &&
             p[2]->cardDef->unk_1C == 43) {
@@ -1732,7 +1732,7 @@ s32 func_080AE014(CardDisplayWork** p, u8 b) {
         }
 
         if (p[0]->cardDef->unk_1C == 27 && p[1]->cardDef->unk_1C == 19 &&
-            p[2]->cardDef->unk_2A == 2 && !(p[2]->cardDef->unk_1E & 8)) {
+            p[2]->cardDef->unk_2A == 2 && !(p[2]->cardDef->flags & 8)) {
             return 1;
         }
     }
@@ -1748,7 +1748,7 @@ s32 func_080AE080(CardDisplayWork** p, u8 b) {
     if (b == 3) {
         c0 = p[0]->cardDef->unk_1C;
         c1 = p[1]->cardDef->unk_1C;
-        e2 = p[2]->cardDef->unk_1E;
+        e2 = p[2]->cardDef->flags;
 
         if (c0 == 26 && c1 == 29 && (e2 & 4)) {
             return 1;
@@ -1770,7 +1770,7 @@ s32 func_080AE0B4(CardDisplayWork** p, u8 b) {
         d2 = p[2]->cardDef;
         s2 = d2->unk_2A;
 
-        if (c0 == 36 && c1 == 38 && s2 == 2 && !(d2->unk_1E & 8)) {
+        if (c0 == 36 && c1 == 38 && s2 == 2 && !(d2->flags & 8)) {
             return 1;
         }
     }
@@ -1790,7 +1790,7 @@ s32 func_080AE0F4(CardDisplayWork** p, u8 b) {
         d2 = p[2]->cardDef;
         s2 = d2->unk_2A;
 
-        if (c0 == 18 && c1 == 39 && s2 == 1 && !(d2->unk_1E & 4)) {
+        if (c0 == 18 && c1 == 39 && s2 == 1 && !(d2->flags & 4)) {
             return 1;
         }
     }
@@ -1828,7 +1828,7 @@ s32 func_080AE168(CardDisplayWork** p, u8 b) {
         d2 = p[2]->cardDef;
         s2 = d2->unk_2A;
 
-        if (c0 == 24 && c1 == 18 && s2 == 1 && !(d2->unk_1E & 4)) {
+        if (c0 == 24 && c1 == 18 && s2 == 1 && !(d2->flags & 4)) {
             return 1;
         }
     }
@@ -1848,7 +1848,7 @@ s32 func_080AE1A8(CardDisplayWork** p, u8 b) {
         d2 = p[2]->cardDef;
         s2 = d2->unk_2A;
 
-        if (c0 == 24 && c1 == 19 && s2 == 1 && !(d2->unk_1E & 4)) {
+        if (c0 == 24 && c1 == 19 && s2 == 1 && !(d2->flags & 4)) {
             return 1;
         }
     }
@@ -1878,12 +1878,12 @@ s32 func_080AE1E8(CardDisplayWork** p, u8 b) {
         s1 = d1->unk_2A;
         s2 = d2->unk_2A;
 
-        if (s0 == 1 && !(d0->unk_1E & 4) && s1 == 1 && !(d1->unk_1E & 4) &&
+        if (s0 == 1 && !(d0->flags & 4) && s1 == 1 && !(d1->flags & 4) &&
             c2 == 44) {
             return 1;
         }
 
-        if (c0 == 23 && c1 == 24 && s2 == 2 && !(p[2]->cardDef->unk_1E & 8)) {
+        if (c0 == 23 && c1 == 24 && s2 == 2 && !(p[2]->cardDef->flags & 8)) {
             return 1;
         }
     }

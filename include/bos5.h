@@ -132,7 +132,7 @@ typedef struct MdHahenWork {
 } MdHahenWork;
 
 typedef struct MdDaiTarget {
-    u16 unk_00;
+    u16 flags;
 } MdDaiTarget;
 
 typedef struct MdDaiWork {

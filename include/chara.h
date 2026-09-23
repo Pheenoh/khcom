@@ -49,7 +49,7 @@ typedef struct MaskFadeWork {
 } MaskFadeWork;
 
 typedef struct ChgCardObjWork {
-    s16 unk_00;
+    s16 timer;
     s16 unk_02;
     s8 state;
     u8 unk_05[0x03];

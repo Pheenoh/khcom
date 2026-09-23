@@ -719,7 +719,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (gUnk_02034A98->cardDef->unk_2A != 3) {
                 if (!(gUnk_02034A98->unk_78 & 0x100000)) {
                     if (w->unk_C0[w->unk_B8] == 0) {
-                        if (gUnk_02034A98->cardDef->unk_1E & 0x10) {
+                        if (gUnk_02034A98->cardDef->flags & 0x10) {
                             func_08079ECC(w);
                         } else if (!(gUnk_02034A98->unk_78 & 2)) {
                             if (func_0807B60C() != 0) {

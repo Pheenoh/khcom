@@ -1502,7 +1502,7 @@ void task_emy_08_0(Emy08Work* work, void* obj) {
     func_0800C778(&work->base, &gUnk_0813D804, obj);
     work->palette = LoadObjPalette(gUnk_08F698C4, 0x20);
     work->unk_188 = work->base.palette;
-    work->unk_18C = 0;
+    work->flags = 0;
 }
 
 u8 task_emy_08_1(Emy08Work* work) {
@@ -1531,7 +1531,7 @@ u8 task_emy_08_1(Emy08Work* work) {
     switch (work->base.unk_14C) {
     case 0:
         if (GetRandom() % 100 == 0) {
-            if (w->unk_18C & 2) {
+            if (w->flags & 2) {
                 work->base.unk_14C = 23;
             } else {
                 work->base.unk_14C = 22;
@@ -1545,7 +1545,7 @@ u8 task_emy_08_1(Emy08Work* work) {
 
         if (AnimGetFrame(&work->base.anim) == 6) {
             act->flags |= 0x180000000;
-            w->unk_18C |= 2;
+            w->flags |= 2;
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -1558,7 +1558,7 @@ u8 task_emy_08_1(Emy08Work* work) {
 
         if (AnimGetFrame(&work->base.anim) == 4) {
             act->flags &= ~0x180000000;
-            w->unk_18C &= ~2;
+            w->flags &= ~2;
         }
 
         if (AnimIsFinished(&work->base.anim)) {
@@ -1573,7 +1573,7 @@ u8 task_emy_08_1(Emy08Work* work) {
             func_0800CB4C(&work->base);
             act->flags |= 0x200;
 
-            if (w->unk_18C & 1) {
+            if (w->flags & 1) {
                 work->base.unk_14C = 20;
             } else {
                 work->base.unk_14C = 21;
@@ -1614,9 +1614,9 @@ u8 task_emy_08_1(Emy08Work* work) {
                         : func_08011F78(0xB1, act->x + 0x1400, act->y, act->z,
                             4, 4, 0x20)) {
                     m4aSongNumStart(0x242);
-                    w->unk_18C |= 1;
+                    w->flags |= 1;
                 } else {
-                    w->unk_18C &= ~1;
+                    w->flags &= ~1;
                 }
                 break;
             }
@@ -1682,7 +1682,7 @@ u8 task_emy_08_1(Emy08Work* work) {
 }
 
 void task_emy_08_2(Emy08Work* work) {
-    work->base.palette = (work->unk_18C & 2) ? work->palette : work->unk_188;
+    work->base.palette = (work->flags & 2) ? work->palette : work->unk_188;
     func_0800DF30(&work->base);
     work->base.palette = work->unk_188;
 }

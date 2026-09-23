@@ -752,7 +752,7 @@ typedef struct HcEffectNameWork {
     void* tiles;
     u8 unk_18;
     u8 unk_19;
-    u16 unk_1A;
+    u16 timer;
     u16 unk_1C;
     u16 unk_1E;
     u16 unk_20;

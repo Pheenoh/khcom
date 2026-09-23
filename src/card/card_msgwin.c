@@ -377,7 +377,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             }
             w->unk_148 = 0;
             SetTaskUpdate(a, func_080A3A98);
-        } else if (!(w->messageDef->unk_10 & 1)) {
+        } else if (!(w->messageDef->flags & 1)) {
             AnimStart(w->anim2, 3, 1);
             SetTaskUpdate(a, func_080A3DD0);
             w->unk_13E = 0;
@@ -551,7 +551,7 @@ void func_080A411C(void* pool, u32 a, u16 b) {
     args.unk_07 = 0;
 
     if (gUnk_09EE8008[b].unk_00 == 62) {
-        if (gUnk_09EE8008[b].unk_10 & 2) {
+        if (gUnk_09EE8008[b].flags & 2) {
             TaskCreate(pool, &gUnk_09EE8E48, &args);
         } else {
             TaskCreate(pool, &gUnk_09EE8E30, &args);
@@ -568,7 +568,7 @@ void func_080A4188(void* pool, u16 b) {
     args.unk_04 = b;
     args.unk_07 = 2;
 
-    if (gUnk_09EE8008[b].unk_10 & 2) {
+    if (gUnk_09EE8008[b].flags & 2) {
         TaskCreate(pool, &gUnk_09EE8E48, &args);
     } else {
         TaskCreate(pool, &gUnk_09EE8E30, &args);

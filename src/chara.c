@@ -211,7 +211,7 @@ void task_chgCardObj_0(ChgCardObjWork* work, ChgCardObjParam* param) {
     work->unk_40 = NormalizeVector2D8(&x, &y);
     work->unk_38 = -x;
     work->unk_3C = -y;
-    work->unk_00 = 0;
+    work->timer = 0;
     work->unk_02 = 0;
     work->state = 0;
 }
@@ -238,11 +238,11 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
 
     switch (work->state) {
     case 0:
-        if (work->unk_00 >= work->unk_28) {
-            work->unk_00 = 0;
+        if (work->timer >= work->unk_28) {
+            work->timer = 0;
             work->state++;
         } else {
-            work->unk_00++;
+            work->timer++;
         }
         break;
     case 1:

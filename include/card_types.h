@@ -22,7 +22,7 @@ typedef struct CardDef {
     void* tiles2;
     void* palette2;
     u16 unk_1C;
-    u16 unk_1E;
+    u16 flags;
     u8 unk_20;
     u8 unk_21[0x03];
     u32 unk_24;

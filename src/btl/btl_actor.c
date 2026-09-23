@@ -72,7 +72,7 @@ void func_0800EFE8(Actor* work) {
     s32 g;
     s16 idx;
 
-    if (work->unk_154 & 0x20) {
+    if (work->flags & 0x20) {
         attr = 0x800;
     } else {
         attr = GetBattleSpritePriorityFlags(c->y);
@@ -117,17 +117,17 @@ void func_0800EFE8(Actor* work) {
         idx = ((s16)work->unk_150 >> 2) % 8;
 
         if (work->unk_150 & 1) {
-            work->unk_154 |= 2;
+            work->flags |= 2;
             LoadObjPaletteBank(work->palette->index, gUnk_08F6DA04 + 32 + gUnk_08133E54[idx] * 32);
         } else {
-            work->unk_154 &= ~2;
+            work->flags &= ~2;
             LoadObjPaletteBank(work->palette->index, work->unk_178);
         }
     } else if (func_0801CA00(c)) {
-        work->unk_154 |= 2;
+        work->flags |= 2;
         LoadObjPaletteBank(work->palette->index, gUnk_08F69BC4);
-    } else if (work->unk_154 & 2) {
-        work->unk_154 &= ~2;
+    } else if (work->flags & 2) {
+        work->flags &= ~2;
         LoadObjPaletteBank(work->palette->index, work->unk_178);
     }
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->y >> 8) * 4) | 3);
@@ -408,12 +408,12 @@ u8 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
     if (func_08081838() == 3) {
         if ((GetRandom() & 3) == 0) {
             if (count <= 0) {
-                work->unk_154 |= 0x10;
+                work->flags |= 0x10;
                 gBtlWork->unk_0EF |= 4;
             } else {
                 gBtlWork->unk_0EF |= 0x20;
                 if (count == 1) {
-                    work->unk_154 |= 0x10;
+                    work->flags |= 0x10;
                 }
             }
         } else if (count > 1) {
@@ -421,7 +421,7 @@ u8 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
         }
         return 0;
     }
-    if (!(work->unk_154 & 0x10) && gUnk_02039B9C->unk_0F4 == 0
+    if (!(work->flags & 0x10) && gUnk_02039B9C->unk_0F4 == 0
         && (u16)(GetRandom() % 60U) == 0) {
         gBtlWork->unk_0EF |= 4;
         return 0;

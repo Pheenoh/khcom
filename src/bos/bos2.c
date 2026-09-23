@@ -46,10 +46,10 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     gUnk_0203AC80 = 0;
     gUnk_0203ACB0 = 0;
     gUnk_0203ACB4 = 0;
-    work->unk_24C = 0;
+    work->flags = 0;
 
     if (a != 0) {
-        work->unk_24C = 8;
+        work->flags = 8;
     }
 
     gUnk_0203ACC4 = 7;
@@ -65,7 +65,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     gUnk_0203AC90.maps[3] = gUnk_096C6464;
     TaskPoolInit(&work->tasks, 4);
 
-    if (work->unk_24C & 8) {
+    if (work->flags & 8) {
         TaskCreate(&work->tasks, &gTaskDescBosJfMap, &gUnk_0203AC90);
     } else {
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosJfMap, &gUnk_0203AC90);
@@ -73,7 +73,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
 
     work->unk_268 = 0;
     work->unk_26A = 0;
-    v1 = work->unk_24C & 8;
+    v1 = work->flags & 8;
 
     if (v1 != 0) {
         work->unk_238 = 10;
@@ -91,7 +91,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     work->unk_24A = 12;
     work->unk_24E = 0;
     work->unk_250 = 0;
-    v2 = work->unk_24C & 8;
+    v2 = work->flags & 8;
 
     if (v2 != 0) {
         work->unk_22C = 0x2A200;
@@ -139,7 +139,7 @@ u8 task_bos_jf_1(JfWork* work) {
     BtlWork* q;
     u16 t;
 
-    if (work->unk_24C & 8) {
+    if (work->flags & 8) {
         TaskPoolUpdate(&work->tasks);
         return 1;
     }
@@ -152,7 +152,7 @@ u8 task_bos_jf_1(JfWork* work) {
     case 1:
     case 6:
     case 7:
-        work->unk_24C |= 1;
+        work->flags |= 1;
         work->unk_242 = 20;
         break;
     case 3:
@@ -174,10 +174,10 @@ u8 task_bos_jf_1(JfWork* work) {
         break;
     }
 
-    if (work->unk_24C & 1) {
+    if (work->flags & 1) {
         if (--work->unk_242 <= 0) {
             work->unk_240 = 0;
-            work->unk_24C &= ~1;
+            work->flags &= ~1;
             LoadPaletteWithEffect(gUnk_096FB584, (void*)0x05000000, 32);
             func_0801AF08(sub);
 
@@ -195,7 +195,7 @@ u8 task_bos_jf_1(JfWork* work) {
         if (sub->unk_024 & 0x20000000) {
             sub->unk_024 &= ~0x20000000;
 
-            if ((work->unk_24C & 1) == 0) {
+            if ((work->flags & 1) == 0) {
                 if (work->unk_250 == 0) {
                     _0801C1F8(0, sub->x, sub->y, sub->z);
                 }
@@ -206,7 +206,7 @@ u8 task_bos_jf_1(JfWork* work) {
     if (func_0801C1C0(0)) {
         work->unk_244 = 0;
         work->unk_238 = 11;
-        work->unk_24C |= 4;
+        work->flags |= 4;
 
         if (gBtlWork->flags & 0x40) {
             gBtlWork->flags |= 0x400000;
@@ -225,7 +225,7 @@ u8 task_bos_jf_1(JfWork* work) {
     q->unk_0D0 = sub->y;
     q->unk_0D4 = sub->z;
 
-    if (work->unk_24C & 2) {
+    if (work->flags & 2) {
         return 0;
     }
 
@@ -240,7 +240,7 @@ void task_bos_jf_2(JfWork* work) {
 }
 
 void task_bos_jf_3(JfWork* work) {
-    if ((work->unk_24C & 8) == 0) {
+    if ((work->flags & 8) == 0) {
         func_0801B7D8(&work->sub);
         func_0801B7D8(&work->body);
     }
@@ -870,7 +870,7 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
         mode |= 1;
     }
 
-    if (gBtlWork->unk_070 == 0 && (work->jf->unk_24C & 1) && (gFrameCounter & 1)) {
+    if (gBtlWork->unk_070 == 0 && (work->jf->flags & 1) && (gFrameCounter & 1)) {
         pal = work->palette2;
     } else {
         pal = work->palette;
@@ -971,7 +971,7 @@ void func_080BE380(u8 a, u16 b, JfMajinWork* work) {
     func_080BE3DC(a, work);
     SetBgMapBlocks(1, gUnk_0203B500, 2, 2);
     LoadBgTiles(1, gUnk_09EF28D0[a], b * 32);
-    work->jf->unk_24C &= ~0x10;
+    work->jf->flags &= ~0x10;
 }
 void func_080BE3DC(u8 a, JfMajinWork* work) {
     s16 n;
@@ -1073,7 +1073,7 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
 u8 task_bos_jf_majin_1(JfMajinWork* work) {
     JfWork* jf = work->jf;
 
-    jf->unk_24C |= 0x10;
+    jf->flags |= 0x10;
 
     switch (work->jf->unk_238) {
     case 0:
@@ -1117,7 +1117,7 @@ u8 task_bos_jf_majin_1(JfMajinWork* work) {
     ColliderSetPosition(&jf->body.collider, jf->body.x, jf->body.y, jf->body.z);
     TaskPoolUpdate(&work->tasks);
 
-    if (work->jf->unk_24C & 0x10) {
+    if (work->jf->flags & 0x10) {
         if (work->jf->unk_238 != 6) {
             func_080BE478(work->jf->unk_248, work);
         }
@@ -1134,7 +1134,7 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
     s16 y;
 
     if (gBtlWork->unk_070 == 0) {
-        if (jf->unk_24C & 1) {
+        if (jf->flags & 1) {
             if (gFrameCounter & 1) {
                 LoadPaletteWithEffect(gUnk_08F69BC4, (void*)0x05000000, 32);
                 gfx = work->palette2;
@@ -2080,7 +2080,7 @@ void func_080BFFF8(JfMajinWork* work) {
         break;
     default:
         func_0801B008();
-        work->jf->unk_24C |= 2;
+        work->jf->flags |= 2;
         break;
     }
 }
@@ -2139,8 +2139,8 @@ void func_080C02AC(JfMajinWork* work) {
         work->unk_3C = 0;
         work->unk_2C = 1;
 
-        if (work->jf->unk_24C & 4) {
-            work->jf->unk_24C &= ~4;
+        if (work->jf->flags & 4) {
+            work->jf->flags &= ~4;
             work->jf->unk_24E = 2;
             m = 14;
         } else if (s->unk_02C < s->unk_02E / 2) {

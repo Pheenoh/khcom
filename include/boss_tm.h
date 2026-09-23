@@ -144,7 +144,7 @@ typedef struct TmArmState {
     s32 unk_08;
     s32 unk_0C;
     u8 unk_10[0x18];
-    u16 unk_28;
+    u16 flags;
     u8 unk_2A[0x2];
     s32 unk_2C;
     u8 unk_30[0xA];

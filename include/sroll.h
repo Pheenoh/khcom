@@ -98,7 +98,7 @@ typedef struct SrollBCharSub {
     s32 y;
     s32 unk_0C;
     u8 unk_10[0x4];
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
     AnimState* anim;
     u16 unk_1C;

@@ -63,7 +63,7 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->palette = LoadObjPalette(def->palette, 32);
     *(CardStat*)&w->unk_20[0x14] = *(CardStat*)&def->unk_1C;
 
-    if (gCardDefs[w->cardId].unk_1E & 12) {
+    if (gCardDefs[w->cardId].flags & 12) {
         back = &gUnk_08F709B0[3];
     } else {
         back = &gUnk_08F709B0[w->unk_20[0x22]];

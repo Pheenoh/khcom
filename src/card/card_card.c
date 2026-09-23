@@ -829,7 +829,7 @@ void func_080792F4(UnkStruct_08080268* w) {
         if (gUnk_02039B9C->unk_0F4 == 29) {
             for (k = 0; k < gUnk_02039DD4->unk_0D0; k++) {
                 if (gUnk_02039DD4->unk_000[k]->cardDef->unk_2A == 2 &&
-                    !(gUnk_02039DD4->unk_000[k]->cardDef->unk_1E & 8)) {
+                    !(gUnk_02039DD4->unk_000[k]->cardDef->flags & 8)) {
                     skip = 1;
                 }
             }
@@ -961,10 +961,10 @@ s32 func_08079600(UnkStruct_08080268* w) {
     if (w->unk_B0[w->unk_B8] == 1) {
         gUnk_02034A98->slot->unk_0B = 1;
     }
-    if ((gUnk_02034A98->cardDef->unk_1E & 2) && (gUnk_02034A98->unk_78 & 0x2000)) {
+    if ((gUnk_02034A98->cardDef->flags & 2) && (gUnk_02034A98->unk_78 & 0x2000)) {
         gUnk_02034A98->slot->unk_0A = 1;
     }
-    if (gUnk_02034A98->cardDef->unk_1E & 8) {
+    if (gUnk_02034A98->cardDef->flags & 8) {
         gUnk_02034A98->slot->unk_0A = 1;
     }
     if (gUnk_02034A98->unk_A6 == 1) {
@@ -1329,7 +1329,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     if (!(gUnk_02034A98->unk_78 & 0x40)) {
         return 1;
     }
-    if ((u16)(gUnk_02034A98->cardDef->unk_1E & 0x10)) {
+    if ((u16)(gUnk_02034A98->cardDef->flags & 0x10)) {
         m4aSongNumStart(105);
         return 1;
     }
@@ -1378,7 +1378,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
         w->unk_C4[3] = 8;
     }
     w->unk_B0[w->unk_B8]--;
-    if (gUnk_02034A98->cardDef->unk_1E & 8) {
+    if (gUnk_02034A98->cardDef->flags & 8) {
         gUnk_02034A98->slot->unk_0A = 1;
     }
     if (gBtlWork->unk_0F4 == 37) {
@@ -1611,7 +1611,7 @@ void func_0807A80C(UnkStruct_08080268* w) {
         if (gUnk_02039B9C->unk_0F4 == 29) {
             for (k = 0; k < gUnk_02039DD4->unk_0D0; k++) {
                 if (gUnk_02039DD4->unk_000[k]->cardDef->unk_2A == 2 &&
-                    !(gUnk_02039DD4->unk_000[k]->cardDef->unk_1E & 8)) {
+                    !(gUnk_02039DD4->unk_000[k]->cardDef->flags & 8)) {
                     skip = 1;
                 }
             }
@@ -1700,7 +1700,7 @@ void func_0807A80C(UnkStruct_08080268* w) {
             *q = w->unk_28[i];
             w->unk_28[i]->unk_78 |= 0x2000;
 
-            if (w->unk_28[i]->cardDef->unk_1E & 2) {
+            if (w->unk_28[i]->cardDef->flags & 2) {
                 w->unk_28[i]->slot->unk_0A = 1;
             }
         }
@@ -1769,7 +1769,7 @@ void func_0807ABC8(UnkStruct_08080268* w) {
             *q = w->unk_28[i];
             w->unk_28[i]->unk_A0 = i * 4 + 50;
 
-            if (w->unk_28[i]->cardDef->unk_1E & 2) {
+            if (w->unk_28[i]->cardDef->flags & 2) {
                 w->unk_28[i]->slot->unk_0A = 1;
             }
 
@@ -1799,7 +1799,7 @@ void func_0807ABC8(UnkStruct_08080268* w) {
     for (i = 0; i < w->unk_B9; i++) {
         w->unk_28[i]->slot->unk_07 = 0;
 
-        if (w->unk_28[i]->cardDef->unk_1E & 2) {
+        if (w->unk_28[i]->cardDef->flags & 2) {
             w->unk_28[i]->slot->unk_0A = 1;
         } else if (i == 0 && gBtlWork->unk_0F4 != 15) {
             w->unk_28[0]->slot->unk_0A = 1;
@@ -2213,7 +2213,7 @@ u8 func_0807B60C(void) {
             return 1;
         }
 
-        if (!(gUnk_02034A98->cardDef->unk_1E & 4)) {
+        if (!(gUnk_02034A98->cardDef->flags & 4)) {
             return 1;
         }
 
@@ -2223,7 +2223,7 @@ u8 func_0807B60C(void) {
             return 1;
         }
 
-        if (gUnk_02034A98->cardDef->unk_1E & 4) {
+        if (gUnk_02034A98->cardDef->flags & 4) {
             return 1;
         }
 
@@ -2426,7 +2426,7 @@ void func_0807B9EC(UnkStruct_08078754* w) {
     for (i = 0; i < w->unk_A8[0]; i++) {
         if (c[i].cardId != 0xFFFF) {
             if (c[i].cardId != 0xFFFE) {
-                if (gCardDefs[c[i].cardId & CARD_ID_MASK].unk_1E & 2) {
+                if (gCardDefs[c[i].cardId & CARD_ID_MASK].flags & 2) {
                     if (c[i].unk_0A == 0) {
                         c[i].unk_09 = 1;
                     }
@@ -2848,7 +2848,7 @@ u8 func_0807C4BC(CardDisplayWork* p, void* a) {
             p->unk_78 |= 0x2000;
             SetTaskUpdate(a, (void*)func_0807CE9C);
 
-            if (p->cardDef->unk_1E & 2) {
+            if (p->cardDef->flags & 2) {
                 p->slot->unk_06 = 0;
             }
 
@@ -3953,7 +3953,7 @@ void func_0807E018(CardDisplayWork* w) {
             }
             break;
         case 8:
-            if (w->cardDef->unk_2A == 2 && (w->cardDef->unk_1E & 2)) {
+            if (w->cardDef->unk_2A == 2 && (w->cardDef->flags & 2)) {
                 w->unk_A5 += 2;
                 if (w->unk_A5 > 9) {
                     w->unk_A5 = 9;

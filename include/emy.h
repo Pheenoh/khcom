@@ -65,7 +65,7 @@ typedef struct Emy08Work {
     EmyWork base;
     void* palette;
     void* unk_188;
-    u16 unk_18C;
+    u16 flags;
 } Emy08Work;
 
 typedef struct Emy16Work {

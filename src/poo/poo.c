@@ -1650,36 +1650,36 @@ void func_080CAA50(PooSoraWork* w, s32 b, u16 c) {
     switch (gUnk_0203C420.angle) {
     case 0x2D:
         d = 4;
-        w->unk_A0 |= 2;
+        w->flags |= 2;
         break;
     case 0x40:
         d = 3;
-        w->unk_A0 |= 2;
+        w->flags |= 2;
         break;
     case 0x53:
         d = 2;
-        w->unk_A0 |= 2;
+        w->flags |= 2;
         break;
     case 0x80:
         d = 1;
-        w->unk_A0 &= ~2;
+        w->flags &= ~2;
         break;
     case 0xAD:
         d = 2;
-        w->unk_A0 &= ~2;
+        w->flags &= ~2;
         break;
     case 0xC0:
         d = 3;
-        w->unk_A0 &= ~2;
+        w->flags &= ~2;
         break;
     case 0xD3:
         d = 4;
-        w->unk_A0 &= ~2;
+        w->flags &= ~2;
         break;
     case 0x00:
     default:
         d = 0;
-        w->unk_A0 &= ~2;
+        w->flags &= ~2;
         break;
     }
 
@@ -1729,8 +1729,8 @@ void task_poo_sora_0(PooSoraWork* w) {
     w->palette = LoadObjPalette(gUnk_08F683A4, 32);
     a->unk_1A = 16;
     w->unk_AC = 0;
-    w->unk_98 = 0;
-    w->unk_A0 = 0;
+    w->timer = 0;
+    w->flags = 0;
     w->unk_A4 = 12;
     a->unk_32 = 0;
     a->unk_30 = 0;
@@ -1767,7 +1767,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
 
     switch (w->unk_94) {
     case 7:
-        if (w->unk_98 == 0) {
+        if (w->timer == 0) {
             func_080CAA50(w, 10, 0);
         }
         a->pos.x += gSineTable[a->angle] * a->unk_10 >> 8;
@@ -1804,18 +1804,18 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
                 w->unk_94 = 4;
             }
         } else {
-            w->unk_98++;
+            w->timer++;
         }
         break;
     case 2:
-        if (w->unk_98 == 0) {
+        if (w->timer == 0) {
             func_080CAA50(w, 3, 0);
             a->unk_10 >>= 1;
         }
         a->pos.x += gSineTable[a->angle] * a->unk_10 >> 8;
         a->pos.y += -gSineTable[a->angle + 0x40] * a->unk_10 >> 8;
 
-        if (w->unk_98 > 3) {
+        if (w->timer > 3) {
             if (GetRandom() % 2 != 0) {
                 m4aSongNumStart(0x71);
             } else {
@@ -1824,9 +1824,9 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
             w->unk_94 = 3;
             w->unk_9C = -0x533;
             a->unk_10 <<= 1;
-            w->unk_98 = 0;
+            w->timer = 0;
         } else {
-            w->unk_98++;
+            w->timer++;
         }
         break;
     case 3:
@@ -1861,13 +1861,13 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         }
 
         if ((GetKeysPressed() & 1) != 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 7;
         } else if (w->unk_9C > 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 4;
         } else {
-            w->unk_98++;
+            w->timer++;
         }
         break;
     case 4:
@@ -1896,7 +1896,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         w->unk_9C += 66;
 
         if ((GetKeysPressed() & 1) != 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 7;
         } else if (a->pos.z > z) {
             a->pos.z = z;
@@ -1904,12 +1904,12 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
 
             if (w->unk_94 != 5) {
                 w->unk_94 = 5;
-                w->unk_98 = 0;
+                w->timer = 0;
             }
         }
         break;
     case 5:
-        if (w->unk_98 == 0) {
+        if (w->timer == 0) {
             func_080CAA50(w, 7, 0);
             m4aSongNumStart(((const u16*)w->animDesc)[3]);
         }
@@ -1917,14 +1917,14 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
         k = GetKeysPressed() & 2;
 
         if (k != 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 2;
-        } else if (w->unk_98 > 6) {
+        } else if (w->timer > 6) {
             w->unk_94 = 0;
-            w->unk_98 = 0;
+            w->timer = 0;
             SetTaskUpdate(t, (u32)task_poo_sora_1);
         } else {
-            w->unk_98++;
+            w->timer++;
         }
         break;
     }
@@ -1966,7 +1966,7 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
     sy = a->pos.y;
 
     if (w->unk_94 == 6) {
-        if (w->unk_98 == 0) {
+        if (w->timer == 0) {
             func_080CAA50(w, 9, 0);
             a->unk_10 = 0;
             m4aSongNumStart(0x73);
@@ -2096,7 +2096,7 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
             }
         }
 
-        if (w->unk_98 > 14) {
+        if (w->timer > 14) {
             func_080CAB24(a);
         }
 
@@ -2125,7 +2125,7 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
             w->unk_94 = 0;
             SetTaskUpdate(t, (u32)task_poo_sora_1);
         } else {
-            w->unk_98++;
+            w->timer++;
         }
     }
     func_080CA8D4(w, &a->pos);
@@ -2153,22 +2153,22 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
     y = a->pos.y;
 
     if (w->unk_94 == 8) {
-        if (w->unk_98 == 0) {
+        if (w->timer == 0) {
             func_080CAA50(w, 8, 1);
             a->unk_10 = 0;
         }
 
-        if (w->unk_98 > 29) {
+        if (w->timer > 29) {
             keys = GetKeysHeld() & 0x100;
             if (keys != 0) {
-                w->unk_98 = 0;
+                w->timer = 0;
             } else {
-                w->unk_98 = 0;
+                w->timer = 0;
                 w->unk_94 = 0;
                 SetTaskUpdate(t, (u32)task_poo_sora_1);
             }
         } else {
-            w->unk_98++;
+            w->timer++;
         }
     }
     func_080CA8D4(w, &a->pos);
@@ -2230,7 +2230,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
         a->pos.y += -gSineTable[a->angle + 0x40] * a->unk_10 >> 8;
 
         if ((GetKeysPressed() & 2) != 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 2;
             SetTaskUpdate(t, (u32)func_080CAD08);
             m4aSongNumStart(((const u16*)w->animDesc)[2]);
@@ -2246,12 +2246,12 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
 #endif
                 func_080C7BCC(v);
             } else {
-                w->unk_98 = 0;
+                w->timer = 0;
                 w->unk_94 = 6;
                 SetTaskUpdate(t, (u32)func_080CB1BC);
             }
         } else if ((GetKeysPressed() & 0x100) != 0) {
-            w->unk_98 = 0;
+            w->timer = 0;
             w->unk_94 = 8;
             SetTaskUpdate(t, (u32)func_080CB5A8);
             a->angle = func_080CA960(&a->pos);
@@ -2278,7 +2278,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     if (z != a->pos.z) {
         a->unk_10 >>= 2;
         w->unk_9C = 0;
-        w->unk_98 = 0;
+        w->timer = 0;
         w->unk_94 = 4;
         SetTaskUpdate(t, (u32)func_080CAD08);
     }
@@ -2297,7 +2297,7 @@ void task_poo_sora_2(PooSoraWork* w) {
     s16 x;
     s16 y;
 
-    c = w->unk_A0 & 2;
+    c = w->flags & 2;
     prio = 0x800;
 
     if (c != 0) {
@@ -2346,7 +2346,7 @@ void task_poo_sora_3(PooSoraWork* w) {
 }
 
 u8 func_080CBA4C(void) {
-    if (gPooSoraWork->unk_94 == 8 && gPooSoraWork->unk_98 == 0) {
+    if (gPooSoraWork->unk_94 == 8 && gPooSoraWork->timer == 0) {
         return 1;
     }
     return 0;

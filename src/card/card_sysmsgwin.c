@@ -75,7 +75,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     CpuSet((void*)&zero, w, 0x05000052);
     *(u64*)&w->unk_10C = *(u64*)a;
     w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
-    if (w->messageDef->unk_10 & 4) {
+    if (w->messageDef->flags & 4) {
         w->unk_134 = func_0806BA74(1, 1);
     } else {
         w->unk_134 = func_0806BA74(1, 0);
@@ -247,7 +247,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #endif
             w->unk_138[1] = w->unk_138[3];
-        } else if (!(w->messageDef->unk_10 & 1)) {
+        } else if (!(w->messageDef->flags & 1)) {
             AnimStart(w->anim2, 3, 1);
             w->unk_142 = 0;
             SetTaskUpdate(a, func_080A4910);

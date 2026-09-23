@@ -2123,7 +2123,7 @@ void func_080BB924(TmArmWork* work) {
         if (work->unk_1B0 == 0) {
             work->unk_1F8[0].unk_0C = 0x110;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619D18, 3, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619D90, 3, (u8*)&work->joints.all[4]);
@@ -2159,7 +2159,7 @@ void func_080BB924(TmArmWork* work) {
             work->unk_1F8[0].unk_0C = 0x110;
             func_080BB1E8((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0]);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A2CC, 6, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A3BC, 6, (u8*)&work->joints.all[4]);
@@ -2174,7 +2174,7 @@ void func_080BB924(TmArmWork* work) {
             work->unk_1F8[0].unk_0C = 90;
             func_080BB1D8((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0], -128);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619DE0, 1, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619E08, 1, (u8*)&work->joints.all[4]);
@@ -2188,7 +2188,7 @@ void func_080BB924(TmArmWork* work) {
             work->unk_1F8[0].unk_0C = 90;
             func_080BB1D8((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0], -128);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619DE0, 1, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619E08, 1, (u8*)&work->joints.all[4]);
@@ -2199,7 +2199,7 @@ void func_080BB924(TmArmWork* work) {
         break;
     case 1:
         if (work->unk_1B0 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619E1C, 3, (u8*)&work->joints.all[4]);
                 work->unk_1F8[0].unk_0C = 0xE8;
                 func_080BB1F4((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0], 0);
@@ -2215,7 +2215,7 @@ void func_080BB924(TmArmWork* work) {
             y = work->src->unk_10;
             z = work->src->unk_14 + j->unk_04 - 0x2300;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 x = work->src->unk_0C + j->unk_00 - 0x3E00;
                 func_08012F74(x, y, z, 1, 0, 168, 20);
             } else {
@@ -2225,7 +2225,7 @@ void func_080BB924(TmArmWork* work) {
         } else if (work->unk_1B0 > 55) {
             if (func_080128EC() == 0) {
                 work->unk_1F8[0].unk_0C = 0x110;
-                work->src->state->unk_28 |= 2;
+                work->src->state->flags |= 2;
             }
         }
 
@@ -2233,7 +2233,7 @@ void func_080BB924(TmArmWork* work) {
         break;
     case 10:
         if (work->unk_1B0 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619E1C, 3, (u8*)&work->joints.all[4]);
                 work->unk_1F8[0].unk_0C = 0xE8;
                 func_080BB1F4((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0], 0);
@@ -2249,7 +2249,7 @@ void func_080BB924(TmArmWork* work) {
             y = work->src->unk_10;
             z = work->src->unk_14 + j->unk_04 - 0x2300;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 x = work->src->unk_0C + j->unk_00 - 0x3E00;
                 func_08012F74(x, y, z, 1, 0, 168, 18);
             } else {
@@ -2259,7 +2259,7 @@ void func_080BB924(TmArmWork* work) {
         } else if (work->unk_1B0 > 70) {
             if (func_080128EC() == 0) {
                 work->unk_1F8[0].unk_0C = 0x110;
-                work->src->state->unk_28 |= 2;
+                work->src->state->flags |= 2;
             }
         } else if (work->unk_1B0 > 50) {
             v = func_080128EC();
@@ -2268,7 +2268,7 @@ void func_080BB924(TmArmWork* work) {
                 y2 = work->src->unk_10;
                 z2 = work->src->unk_14 + j2->unk_04 - 0x2300;
 
-                if (work->src->state->unk_28 & 0x20) {
+                if (work->src->state->flags & 0x20) {
                     x2 = work->src->unk_0C + j2->unk_00 - 0x3E00;
                     func_08012F74(x2, y2, z2, 1, 0, 168, 18);
                 } else {
@@ -2282,7 +2282,7 @@ void func_080BB924(TmArmWork* work) {
         break;
     case 2:
         if (work->unk_1B0 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619F0C, 6, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619FFC, 6, (u8*)&work->joints.all[4]);
@@ -2296,7 +2296,7 @@ void func_080BB924(TmArmWork* work) {
             work->unk_1F8[0].unk_0C = 0x110;
             work->src->state->unk_3A = 1;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 r = func_08011F78(237, work->unk_1F8[1].x - 0x1000, work->unk_1F8[1].y,
                                   work->unk_1F8[1].z + 0x1400, 16, 16, 16);
             } else {
@@ -2312,14 +2312,14 @@ void func_080BB924(TmArmWork* work) {
         }
 
         if (work->unk_1B0 > 50) {
-            work->src->state->unk_28 |= 2;
+            work->src->state->flags |= 2;
         } else {
             work->unk_1B0++;
         }
         break;
     case 3:
         if (work->unk_1B0 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619F0C, 6, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_09619FFC, 6, (u8*)&work->joints.all[4]);
@@ -2339,7 +2339,7 @@ void func_080BB924(TmArmWork* work) {
             gUnk_0203AC60 = gUnk_0203AC64 >> 8;
             gUnk_0203AC6C = gUnk_0203AC78 >> 8;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080147D8(0x10D00, 0x15800);
             } else {
                 func_080147D8(0xF000, 0x15800);
@@ -2355,14 +2355,14 @@ void func_080BB924(TmArmWork* work) {
         }
 
         if (work->unk_1B0 > 50) {
-            work->src->state->unk_28 |= 2;
+            work->src->state->flags |= 2;
         } else {
             work->unk_1B0++;
         }
         break;
     case 11:
         if (work->unk_1B0 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A0EC, 6, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A1DC, 6, (u8*)&work->joints.all[4]);
@@ -2382,7 +2382,7 @@ void func_080BB924(TmArmWork* work) {
             gUnk_0203AC60 = gUnk_0203AC64 >> 8;
             gUnk_0203AC6C = gUnk_0203AC78 >> 8;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080147D8(0x10D00, 0x15800);
             } else {
                 func_080147D8(0xF000, 0x15800);
@@ -2398,7 +2398,7 @@ void func_080BB924(TmArmWork* work) {
         }
 
         if (work->unk_1B0 > 65) {
-            work->src->state->unk_28 |= 2;
+            work->src->state->flags |= 2;
         } else {
             work->unk_1B0++;
         }
@@ -2408,7 +2408,7 @@ void func_080BB924(TmArmWork* work) {
             work->unk_1F8[0].unk_0C = 0x10C;
             func_080BB1E8((TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0]);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A4AC, 5, (u8*)&work->joints.all[4]);
             } else {
                 func_080BB43C((u8*)&work->unk_218, gUnk_0961A574, 5, (u8*)&work->joints.all[4]);
@@ -2423,7 +2423,7 @@ void func_080BB924(TmArmWork* work) {
         }
 
         if (work->unk_1B0 > 33) {
-            work->src->state->unk_28 |= 2;
+            work->src->state->flags |= 2;
         } else {
             work->unk_1B0++;
         }
@@ -2454,7 +2454,7 @@ void func_080BC304(TmArmWork* work) {
         if (work->unk_1B2 == 0) {
             work->unk_1F8[1].unk_0C = 0x110;
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619CDC, 3, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_09619D54, 3, (u8*)work->joints.all);
@@ -2479,7 +2479,7 @@ void func_080BC304(TmArmWork* work) {
             work->unk_1F8[1].unk_0C = 0x110;
             func_080BB1E8((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1]);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_0961A344, 6, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_0961A434, 6, (u8*)work->joints.all);
@@ -2494,7 +2494,7 @@ void func_080BC304(TmArmWork* work) {
             work->unk_1F8[1].unk_0C = 185;
             func_080BB1D8((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1], -128);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619DCC, 1, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_09619DF4, 1, (u8*)work->joints.all);
@@ -2508,7 +2508,7 @@ void func_080BC304(TmArmWork* work) {
             work->unk_1F8[1].unk_0C = 185;
             func_080BB1D8((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1], -128);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619DCC, 1, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_09619DF4, 1, (u8*)work->joints.all);
@@ -2519,7 +2519,7 @@ void func_080BC304(TmArmWork* work) {
         break;
     case 1:
         if (work->unk_1B2 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619E58, 3, (u8*)work->joints.all);
                 work->unk_1F8[1].unk_0C = 0x10C;
                 func_080BB1F4((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1], 1);
@@ -2540,7 +2540,7 @@ void func_080BC304(TmArmWork* work) {
         break;
     case 10:
         if (work->unk_1B2 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619E58, 3, (u8*)work->joints.all);
                 work->unk_1F8[1].unk_0C = 0x10C;
                 func_080BB1F4((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1], 1);
@@ -2561,7 +2561,7 @@ void func_080BC304(TmArmWork* work) {
         break;
     case 2:
         if (work->unk_1B2 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619F84, 6, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_0961A074, 6, (u8*)work->joints.all);
@@ -2579,7 +2579,7 @@ void func_080BC304(TmArmWork* work) {
         break;
     case 3:
         if (work->unk_1B2 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_09619F84, 6, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_0961A074, 6, (u8*)work->joints.all);
@@ -2597,7 +2597,7 @@ void func_080BC304(TmArmWork* work) {
         break;
     case 11:
         if (work->unk_1B2 == 0) {
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_0961A164, 6, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_0961A254, 6, (u8*)work->joints.all);
@@ -2618,7 +2618,7 @@ void func_080BC304(TmArmWork* work) {
             work->unk_1F8[1].unk_0C = 0x110;
             func_080BB1E8((TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1]);
 
-            if (work->src->state->unk_28 & 0x20) {
+            if (work->src->state->flags & 0x20) {
                 func_080BB43C(work->unk_224, gUnk_0961A510, 5, (u8*)work->joints.all);
             } else {
                 func_080BB43C(work->unk_224, gUnk_0961A5D8, 5, (u8*)work->joints.all);
@@ -2683,7 +2683,7 @@ void task_bos_tm_arm_2(TmArmWork* work) {
 
     if (gBtlWork->unk_070 != 0) {
         pal = work->palette;
-    } else if ((work->src->state->unk_28 & 1) && (gFrameCounter & 1)) {
+    } else if ((work->src->state->flags & 1) && (gFrameCounter & 1)) {
         pal = (void*)work->palette2;
     } else {
         pal = work->palette;
@@ -2706,7 +2706,7 @@ void task_bos_tm_arm_2(TmArmWork* work) {
                    (depth -= (work->src->unk_10 >> 8) * 4, (u16)depth));
     }
 
-    if (work->src->state->unk_28 & 32) {
+    if (work->src->state->flags & 32) {
         mode = 256;
     } else {
         mode = -256;

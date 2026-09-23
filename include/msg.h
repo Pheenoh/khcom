@@ -188,7 +188,7 @@ typedef struct EventSeqWork {
     u8 unk_32;
     u8 unk_33;
     struct EventSequenceDef* seqDef;
-    u16 unk_38;
+    u16 timer;
     u8 unk_3A;
     u8 unk_3B;
     u8 unk_3C;

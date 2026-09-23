@@ -3528,20 +3528,20 @@ void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b) {
 void func_080E5CD4(MapEnmWork* p) {
     switch (gUnk_0203C7AC->unk_0D) {
     case 4:
-        p->unk_04 |= 8;
+        p->flags |= 8;
         break;
     case 5:
-        p->unk_04 |= 0x20;
-        p->unk_04 |= 2;
+        p->flags |= 0x20;
+        p->flags |= 2;
         break;
     case 18:
-        p->unk_04 |= 0x10;
+        p->flags |= 0x10;
         break;
     case 20:
-        p->unk_04 |= 0x100;
+        p->flags |= 0x100;
         break;
     case 21:
-        p->unk_04 |= 0x200;
+        p->flags |= 0x200;
         break;
     }
 }
@@ -3552,19 +3552,19 @@ void func_080E5D6C(MapEnmWork* p, u8 n, u16 a) {
     switch (p->unk_1C >> 6) {
     case 0:
         q += n * 2;
-        p->unk_04 |= 1;
+        p->flags |= 1;
         break;
     case 1:
         q += n * 2 + 1;
-        p->unk_04 |= 1;
+        p->flags |= 1;
         break;
     case 2:
         q += n * 2 + 1;
-        p->unk_04 &= ~1;
+        p->flags &= ~1;
         break;
     default:
         q += n * 2;
-        p->unk_04 &= ~1;
+        p->flags &= ~1;
         break;
     }
     AnimChangeWithTables(p->anim, q->animId, a, q->anims, q->gfxTable);
@@ -3599,13 +3599,13 @@ void func_080E5EAC(MapEnmWork* p) {
     ColliderSetDisabled(p->collider, 1);
     gUnk_0203C7AC->flags |= 2;
     gUnk_02039BA0->flags |= 0x80;
-    p->unk_04 |= 4;
-    if (p->unk_04 & 0x40) {
+    p->flags |= 4;
+    if (p->flags & 0x40) {
         gGameState.flags |= 4;
     }
-    if (p->unk_04 & 0x100) {
+    if (p->flags & 0x100) {
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 128;
-    } else if (p->unk_04 & 0x200) {
+    } else if (p->flags & 0x200) {
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 131;
     } else {
         gUnk_0203C7AC->unk_0E = func_080E5E44();
@@ -3802,7 +3802,7 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
     p->unk_00 = d;
     p->update = q->unk_04;
-    p->unk_04 = 0;
+    p->flags = 0;
     p->unk_E0 = 30;
     e->unk_00 = q->unk_08;
     e->unk_14 = q->unk_18;
@@ -3830,7 +3830,7 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     }
 
     if (d->flags & 8) {
-        p->unk_04 |= 2;
+        p->flags |= 2;
         ColliderInit(&p->collider, 11, d->unk_0C, d->unk_0A);
     } else {
         ColliderInit(&p->collider, 3, d->unk_0C, d->unk_0A);
@@ -3854,7 +3854,7 @@ void func_080E64D4(MapEnmWork* p) {
         return;
     }
 
-    t = p->unk_04 & 1;
+    t = p->flags & 1;
     flags = 0x800;
 
     if (t) {
@@ -3876,8 +3876,8 @@ void func_080E64D4(MapEnmWork* p) {
 void func_080E657C(MapEnmWork* p) {
     UnkStruct_080E6034* q;
 
-    if (gGameState.unk_000 != 0 && (p->unk_04 & 4) == 0 &&
-        ((gUnk_0203C7AC->flags & 2) == 0 || (p->unk_04 & 2))) {
+    if (gGameState.unk_000 != 0 && (p->flags & 4) == 0 &&
+        ((gUnk_0203C7AC->flags & 2) == 0 || (p->flags & 2))) {
         q = ListPoolFirstFree(gGameState.unk_0E8);
         if (q != 0) {
             q->unk_30 = p->unk_00;

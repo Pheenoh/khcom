@@ -148,7 +148,7 @@ typedef struct Actor {
     u8 unk_7C[0xD4];
     u16 unk_150;
     u16 unk_152;
-    u32 unk_154;
+    u32 flags;
     u8 unk_158[0x10];
     s32 unk_168;
     s32 unk_16C;

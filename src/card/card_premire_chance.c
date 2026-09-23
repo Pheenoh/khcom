@@ -67,7 +67,7 @@ void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
     def = &gCardDefs[a->cardId];
     w->cardDef = def;
 
-    if (def->unk_1E & 0xC) {
+    if (def->flags & 0xC) {
         w->cardBack = &gUnk_08F709B0[1];
     } else {
         w->cardBack = &gUnk_08F709B0[def->unk_2A];

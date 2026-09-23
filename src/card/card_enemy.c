@@ -756,7 +756,7 @@ void func_08091234(u16 arg) {
             if (gBtlWork->unk_0F4 == 29) {
 #ifdef VERSION_EU
                 for (k = 0; k < gUnk_02039DD4->unk_0D0; k++) {
-                    if (gUnk_02039DD4->unk_000[k]->cardDef->unk_2A == 2 && !(gUnk_02039DD4->unk_000[k]->cardDef->unk_1E & 8)) {
+                    if (gUnk_02039DD4->unk_000[k]->cardDef->unk_2A == 2 && !(gUnk_02039DD4->unk_000[k]->cardDef->flags & 8)) {
                         found = 1;
                     }
                 }
@@ -866,7 +866,7 @@ void func_08091234(u16 arg) {
             if (gBtlWork->unk_0F4 == 29) {
                 for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
 #ifdef VERSION_EU
-                    if (gUnk_02039DD4->unk_000[i]->cardDef->unk_2A == 2 && !(gUnk_02039DD4->unk_000[i]->cardDef->unk_1E & 8)) {
+                    if (gUnk_02039DD4->unk_000[i]->cardDef->unk_2A == 2 && !(gUnk_02039DD4->unk_000[i]->cardDef->flags & 8)) {
 #else
                     if (gUnk_02039DD4->unk_000[i]->cardDef->unk_2A == 2) {
 #endif

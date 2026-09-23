@@ -2185,13 +2185,13 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             ColliderSetHeight(&work->collider, 24);
             m4aSongNumStart(680);
             work->unk_07C = 3;
-            work->target->unk_00 &= 0xFFFE;
+            work->target->flags &= 0xFFFE;
             work->state = 3;
         }
         break;
     case 3:
-        if (work->target->unk_00 & 1) {
-            work->target->unk_00 &= 0xFFFE;
+        if (work->target->flags & 1) {
+            work->target->flags &= 0xFFFE;
             args[0] = work->x;
             args[1] = work->y;
             args[2] = -((work->unk_07C - 1) * 7 << 9);

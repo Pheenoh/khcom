@@ -156,7 +156,7 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
     void** tiles;
 
     w->unk_19 = a[0];
-    w->unk_1A = 0;
+    w->timer = 0;
     w->unk_1C = 32;
     w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     w->tiles2 = AllocSpriteFrameTiles(0x3C0);
@@ -287,15 +287,15 @@ u8 HCEffectName_1(HcEffectNameWork* w, void* a) {
         break;
     }
 
-    w->unk_1A++;
+    w->timer++;
 
     if ((s16)w->unk_1C <= 2) {
         w->unk_1C = 2;
     }
 
-    if ((s16)w->unk_1A >= (s16)w->unk_1C) {
+    if ((s16)w->timer >= (s16)w->unk_1C) {
         w->unk_27 ^= 1;
-        w->unk_1A = 0;
+        w->timer = 0;
     }
 
     return 1;

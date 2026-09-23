@@ -179,7 +179,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
         } else if ((work->seqDef->keyframes->unk_14 & 0xFF0) == 0x80) {
             FadeStartIn(1, 120);
         }
-        work->unk_38 = 0;
+        work->timer = 0;
         eu_0806C974(work);
 #endif
     }
@@ -453,7 +453,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
         FadeStartIn(1, 120);
     }
 
-    work->unk_38 = 0;
+    work->timer = 0;
 #endif
 
     if (u != NULL) {
@@ -518,7 +518,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         return 1;
     }
 
-    if (p->unk_38 == p->seqDef->unk_24) {
+    if (p->timer == p->seqDef->unk_24) {
         gUnk_02039DC8->flags |= 2;
     } else {
         s32 t = p->seqDef->keyframes->unk_14 & 0xFF0;
@@ -528,7 +528,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         } else if (t == 128) {
             FadeStartIn(1, 120);
         }
-        p->unk_38++;
+        p->timer++;
     }
     TaskPoolUpdate(&p->tasks);
     TaskPoolUpdate(&p->tasks2);

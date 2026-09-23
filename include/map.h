@@ -241,7 +241,7 @@ typedef struct UnkStruct_080E6394 {
 
 typedef struct MapEnmWork {
     const UnkStruct_0984BC9C* unk_00;
-    u16 unk_04;
+    u16 flags;
     u16 unk_06;
     UnkStruct_080DFF1C unk_08;
     s32 unk_18;

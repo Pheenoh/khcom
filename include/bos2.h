@@ -240,7 +240,7 @@ typedef struct JfWork {
     s16 unk_246;
     s16 unk_248;
     s16 unk_24A;
-    s16 unk_24C;
+    s16 flags;
     s16 unk_24E;
     s16 unk_250;
     u8 unk_252[0x2];

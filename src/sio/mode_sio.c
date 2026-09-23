@@ -152,7 +152,7 @@ void mode_sio_btl_connect_0(s32 arg) {
     LoadBgMap(1, gUnk_096F5C64, 0x800);
     gSioBtlConnectWork->unk_00 = 0;
     gSioBtlConnectWork->unk_02 = 0;
-    gSioBtlConnectWork->unk_04 = 0;
+    gSioBtlConnectWork->state = 0;
     gSioBtlConnectWork->unk_05 = 0;
     InitTextSlots(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
 #ifdef VERSION_EU
@@ -181,7 +181,7 @@ void mode_sio_btl_connect_1(void) {
     s16 x;
     if (gUnk_0203A9E4 == 0) {
 #endif
-    switch (gSioBtlConnectWork->unk_04) {
+    switch (gSioBtlConnectWork->state) {
     case 0:
         func_080C54B4();
         break;
@@ -193,14 +193,14 @@ void mode_sio_btl_connect_1(void) {
             func_080C61D4();
             gSystemFlags |= 1;
             gSystemFlags |= 0x10;
-            gSioBtlConnectWork->unk_04++;
+            gSioBtlConnectWork->state++;
         }
         break;
     case 2:
         if (gUnk_02039B60 == 2) {
             gSioBtlConnectWork->unk_02 = 0;
             func_080AEE84();
-            gSioBtlConnectWork->unk_04++;
+            gSioBtlConnectWork->state++;
         }
         break;
     case 3:
@@ -270,7 +270,7 @@ void mode_sio_btl_connect_2(void) {
 
 void func_080AEE50(void) {
     m4aSongNumStart(0x6A);
-    gSioBtlConnectWork->unk_04++;
+    gSioBtlConnectWork->state++;
 }
 
 void func_080AEE6C(void) {
@@ -1894,7 +1894,7 @@ void mode_sio_btl_cardget_0(s32 arg) {
     SetupBg(2, 0, 24, 0);
     SetBgPriority(2, 2);
     RequestDma3Copy(gUnk_096AD744, GetBgCharBase(1), 0x2000);
-    gSioBtlCardgetWork->unk_00 = 0;
+    gSioBtlCardgetWork->state = 0;
 }
 
 void func_080B1534(void) {
@@ -1989,18 +1989,18 @@ void mode_sio_btl_cardget_1(void) {
 #ifdef VERSION_EU
     SioBtlCardgetWork* work;
 #endif
-    switch (gSioBtlCardgetWork->unk_00) {
+    switch (gSioBtlCardgetWork->state) {
     case 0:
         func_080B1534();
-        gSioBtlCardgetWork->unk_00++;
+        gSioBtlCardgetWork->state++;
         break;
     case 1:
         func_080B1558();
-        gSioBtlCardgetWork->unk_00++;
+        gSioBtlCardgetWork->state++;
         break;
     case 2:
         func_080B15A4();
-        gSioBtlCardgetWork->unk_00++;
+        gSioBtlCardgetWork->state++;
         break;
     case 3:
         gSioBtlCardgetWork->unk_04++;
@@ -2014,7 +2014,7 @@ void mode_sio_btl_cardget_1(void) {
 #ifdef VERSION_EU
             }
 #endif
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
         func_080B1848();
         break;
@@ -2022,7 +2022,7 @@ void mode_sio_btl_cardget_1(void) {
         gSioBtlCardgetWork->unk_04++;
         if (gSioBtlCardgetWork->unk_04 > 4) {
             gSioBtlCardgetWork->unk_04 = 0;
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
         func_080B1848();
         break;
@@ -2037,13 +2037,13 @@ void mode_sio_btl_cardget_1(void) {
         if (gUnk_02039810[1][0] == 0x45FC || gUnk_02039810[1][1] == 0x45FC) {
             m4aSongNumStart(106);
             gSioBtlCardgetWork->unk_04 = 0;
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
 #ifdef VERSION_EU
         } else if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
             m4aSongNumStart(106);
             gSioBtlCardgetWork->unk_04 = 0;
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
 #endif
         func_080B1848();
@@ -2060,9 +2060,9 @@ void mode_sio_btl_cardget_1(void) {
 #ifdef VERSION_EU
                 work = gSioBtlCardgetWork;
             }
-            work->unk_00++;
+            work->state++;
 #else
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
 #endif
         }
         func_080B1848();
@@ -2073,12 +2073,12 @@ void mode_sio_btl_cardget_1(void) {
 #endif
         if (gUnk_02039B60 == 2) {
             gSioBtlCardgetWork->unk_04 = 0;
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
 #ifdef VERSION_EU
         } else {
             gSioBtlCardgetWork->unk_04 = 0;
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
         }
 #endif
         func_080B1848();
@@ -2095,16 +2095,16 @@ void mode_sio_btl_cardget_1(void) {
 #ifdef VERSION_EU
                 work = gSioBtlCardgetWork;
             }
-            work->unk_00++;
+            work->state++;
 #else
-            gSioBtlCardgetWork->unk_00++;
+            gSioBtlCardgetWork->state++;
 #endif
         }
         func_080B1848();
         break;
     case 9:
         ModeRequestHeapReset(&gModeSioBtlOption, 0);
-        gSioBtlCardgetWork->unk_00++;
+        gSioBtlCardgetWork->state++;
         break;
     }
 }
@@ -2264,7 +2264,7 @@ void mode_sio_chg_connect_0(s32 arg) {
     LoadBgMap(1, gUnk_096F5C64, 0x800);
     gSioChgConnectWork->unk_00 = 0;
     gSioChgConnectWork->unk_02 = 0;
-    gSioChgConnectWork->unk_04 = 0;
+    gSioChgConnectWork->state = 0;
     gSioChgConnectWork->unk_05 = 0;
     InitTextSlots(gSioChgConnectWork->unk_08, 0x5A);
     gSioChgConnectWork->unk_05 = LoadTextSlots(gUnk_08159EC4, gSioChgConnectWork->unk_08);
@@ -2276,7 +2276,7 @@ void mode_sio_chg_connect_0(s32 arg) {
 
 #ifndef VERSION_EU
 void mode_sio_chg_connect_1(void) {
-    switch (gSioChgConnectWork->unk_04) {
+    switch (gSioChgConnectWork->state) {
     case 0:
         func_080C54B4();
         break;
@@ -2308,7 +2308,7 @@ void mode_sio_chg_connect_2(void) {
 #ifndef VERSION_EU
 void func_080B1BE0(void) {
     m4aSongNumStart(0x6A);
-    gSioChgConnectWork->unk_04++;
+    gSioChgConnectWork->state++;
 }
 #endif
 
@@ -2371,7 +2371,7 @@ void mode_sio_chg_card_0(s32 arg) {
     gSioChgCardWork->unk_002 = 0;
     gSioChgCardWork->unk_004 = 0;
     gSioChgCardWork->unk_0A4 = 0;
-    gSioChgCardWork->unk_001 = 0;
+    gSioChgCardWork->state = 0;
     gSioChgCardWork->unk_404 = 0;
     gSioChgCardWork->unk_BE0 = 0;
     gSioChgCardWork->unk_202 = arg;
@@ -2388,7 +2388,7 @@ void func_080B1DDC(void) {
     DisableBg(1);
     DisableBg(2);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
-    gSioChgCardWork->unk_001++;
+    gSioChgCardWork->state++;
 }
 #endif
 
@@ -2478,13 +2478,13 @@ void func_080B1E70(void) {
     gSioChgCardWork->unk_360 = 0;
     TaskPoolInit(gSioChgCardWork->tasks, 11);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
-    gSioChgCardWork->unk_001++;
+    gSioChgCardWork->state++;
 }
 #endif
 
 #ifndef VERSION_EU
 void mode_sio_chg_card_1(void) {
-    switch (gSioChgCardWork->unk_001) {
+    switch (gSioChgCardWork->state) {
     case 0:
         func_080B1DDC();
         break;
@@ -2547,7 +2547,7 @@ void func_080B2420(void) {
     if (gSioChgCardWork->unk_004 > 5) {
         func_080B2FC0();
         func_080B3204();
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
 }
@@ -2603,7 +2603,7 @@ void func_080B2480(void) {
         gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A3C0, gSioChgCardWork->unk_210);
         gSioChgCardWork->x3 = 64;
         gSioChgCardWork->y3 = 114;
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
 
     if (gUnk_02039810[1][0] == 0xA4CA || gUnk_02039810[1][1] == 0xA4CA) {
@@ -2650,14 +2650,14 @@ void func_080B2788(void) {
         gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A404, gSioChgCardWork->unk_210);
         gSioChgCardWork->x3 = 71;
         gSioChgCardWork->y3 = 124;
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
 
     if (gUnk_02039810[1][0] == 0x58FA || gUnk_02039810[1][1] == 0x58FA) {
         m4aSongNumStart(104);
         gSioChgCardWork->unk_004 = 0;
         func_080B3A68();
-        gSioChgCardWork->unk_001 = 3;
+        gSioChgCardWork->state = 3;
     }
     func_080B2FC0();
     func_080B3204();
@@ -2671,7 +2671,7 @@ void func_080B2854(void) {
     } else {
         gUnk_02039B58[1] = 0x1269;
     }
-    gSioChgCardWork->unk_001++;
+    gSioChgCardWork->state++;
 }
 
 void func_080B28A8(void) {
@@ -2685,7 +2685,7 @@ void func_080B28A8(void) {
         m4aSongNumStart(106);
         gSioChgCardWork->unk_004 = 0;
         gGameState.progression.unk_34 = gSioChgCardWork->unk_BD4;
-        gSioChgCardWork->unk_001 = 8;
+        gSioChgCardWork->state = 8;
     }
 
     if (gUnk_02039810[1][0] == 0x1269 || gUnk_02039810[1][1] == 0x1269) {
@@ -2695,7 +2695,7 @@ void func_080B28A8(void) {
         gSioChgCardWork->y3 = 118;
         func_080B3CC0();
         gSioChgCardWork->unk_004 = 0;
-        gSioChgCardWork->unk_001 = 7;
+        gSioChgCardWork->state = 7;
     }
 }
 
@@ -2703,7 +2703,7 @@ void func_080B298C(void) {
     if (gSioChgCardWork->unk_004 > 179) {
         gSioChgCardWork->unk_004 = 0;
         func_080B3A68();
-        gSioChgCardWork->unk_001 = 3;
+        gSioChgCardWork->state = 3;
     } else {
         gSioChgCardWork->unk_004++;
     }
@@ -2712,7 +2712,7 @@ void func_080B298C(void) {
 void func_080B29BC(void) {
     func_080B3B5C();
     gSioChgCardWork->unk_004 = 0;
-    gSioChgCardWork->unk_001++;
+    gSioChgCardWork->state++;
 }
 
 void func_080B29D8(void) {
@@ -2731,7 +2731,7 @@ void func_080B29D8(void) {
         ModeRequest(&gModeSioError, 0);
     }
     gSioChgCardWork->unk_004 = 0;
-    gSioChgCardWork->unk_001++;
+    gSioChgCardWork->state++;
 }
 
 void func_080B2A5C(void) {
@@ -2747,7 +2747,7 @@ void func_080B2A5C(void) {
         gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A428, gSioChgCardWork->unk_210);
         gSioChgCardWork->x3 = 70;
         gSioChgCardWork->y3 = 119;
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
 }
 
@@ -2758,7 +2758,7 @@ void func_080B2AE8(void) {
         gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815B3FA, gSioChgCardWork->unk_210);
         gSioChgCardWork->x3 = 83;
         gSioChgCardWork->y3 = 124;
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
 }
 
@@ -2767,7 +2767,7 @@ void func_080B2B48(void) {
     if (gSioChgCardWork->unk_004 > 119) {
         gSioChgCardWork->unk_004 = 0;
         gSioChgCardWork->unk_20C = 0;
-        gSioChgCardWork->unk_001++;
+        gSioChgCardWork->state++;
     }
 }
 

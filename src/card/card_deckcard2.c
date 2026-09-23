@@ -83,7 +83,7 @@ void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
 
         n->cardDef = &gCardDefs[n->cardId & 0xFFF];
 
-        if (n->cardDef->unk_1E & 0xC) {
+        if (n->cardDef->flags & 0xC) {
             n->cardBack = &gUnk_08F709B0[3];
         } else {
             n->cardBack = &gUnk_08F709B0[n->cardDef->unk_2A];

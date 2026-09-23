@@ -308,7 +308,7 @@ s16 func_08084068(u16 cardId) {
         }
     }
 
-    if (gCardDefs[cardId & CARD_ID_MASK].unk_1E & 8) {
+    if (gCardDefs[cardId & CARD_ID_MASK].flags & 8) {
         return -1;
     }
 
@@ -641,7 +641,7 @@ s16 func_08084458(u16 cardId) {
             return -1;
         }
     }
-    if (gCardDefs[cardId & CARD_ID_MASK].unk_1E & 8) {
+    if (gCardDefs[cardId & CARD_ID_MASK].flags & 8) {
         return -1;
     }
     gCardCollection[i] = cardId;

@@ -98,7 +98,7 @@ void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
     w->unk_1CD = 1;
     w->cardDef = &gCardDefs[args[3]];
 
-    if (w->cardDef->unk_1E & 8) {
+    if (w->cardDef->flags & 8) {
         w->unk_1CE = 3;
     } else {
         w->unk_1CE = w->cardDef->unk_2A;
@@ -141,7 +141,7 @@ void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
     w->unk_1CD = 1;
     w->cardDef = &gCardDefs[args[3]];
 
-    if (w->cardDef->unk_1E & 8) {
+    if (w->cardDef->flags & 8) {
         w->unk_1CE = 3;
     } else {
         w->unk_1CE = w->cardDef->unk_2A;

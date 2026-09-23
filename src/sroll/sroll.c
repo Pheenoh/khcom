@@ -131,7 +131,7 @@ void func_081149B8(SrollBCharWork* w) {
     gfx = def->gfx;
     AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->anims, gfx->gfxTable);
     SetObjTileSource(w->tiles, gfx->tiles);
-    w->sub->unk_14 &= 0xFFFE;
+    w->sub->flags &= 0xFFFE;
 }
 
 void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
@@ -155,7 +155,7 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
 s32 task_sroll_b_char_1(SrollBCharWork* w) {
     SrollBCrtnArg a;
 
-    if (w->sub->unk_14 & 1) {
+    if (w->sub->flags & 1) {
         func_081149B8(w);
     }
 
@@ -209,7 +209,7 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
 
     sub = w->sub;
 
-    if ((sub->unk_14 & 2) == 0) {
+    if ((sub->flags & 2) == 0) {
         x = sub->x >> 8;
         y = (sub->y + sub->unk_0C) >> 8;
         gfx = AnimGetGfx(&w->anim);

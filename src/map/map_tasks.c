@@ -247,7 +247,7 @@ s32 func_080EF3A0(MapEnmWork* p) {
 void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
 
-    if (p->unk_04 & 0x10) {
+    if (p->flags & 0x10) {
         b /= 5;
         c /= 5;
     }
@@ -292,7 +292,7 @@ void func_080EF508(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished(p->anim)) {
-        if (p->unk_04 & 8) {
+        if (p->flags & 8) {
             p->update = func_080EF7B8;
         } else {
             p->update = func_080EF58C;
@@ -447,7 +447,7 @@ void func_080EF7B8(MapEnmWork* p) {
 }
 
 void func_080EF84C(MapEnmWork* p) {
-    p->unk_04 |= 4;
+    p->flags |= 4;
     func_080E5D6C(p, 3, 0);
     func_080E5DEC(p);
     TaskPoolUpdate(p->tasks);
@@ -462,7 +462,7 @@ void func_080EF88C(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished(p->anim)) {
-        p->unk_04 |= 0x40;
+        p->flags |= 0x40;
         func_080E5EAC(p);
     } else {
         func_080E5DEC(p);
@@ -485,7 +485,7 @@ void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
-        if (p->unk_04 & 0x20) {
+        if (p->flags & 0x20) {
             p->update = func_080EF8CC;
             func_080E5D6C(p, 1, 0);
             p->gfx = AnimGetGfx(p->anim);
@@ -662,7 +662,7 @@ void func_080EFCF4(MapEnmWork* p) {
     dx = p->unk_D4;
     dy = p->unk_D8;
 
-    if (p->unk_04 & 16) {
+    if (p->flags & 16) {
         lim = 0x140;
         q->unk_10 += 10;
 
@@ -727,7 +727,7 @@ void func_080EFE54(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_04 |= 0x40;
+        p->flags |= 0x40;
         func_080E5EAC(p);
     } else {
         func_080E5DEC(p);
@@ -751,7 +751,7 @@ void Task_MapEnm01_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
     func_080E6394(p, q);
 
-    if (p->unk_04 & 0x20) {
+    if (p->flags & 0x20) {
         p->update = func_080EFE94;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
@@ -1202,7 +1202,7 @@ void func_080F08E4(MapEnmWork* p) {
     dx = p->unk_D4;
     dy = p->unk_D8;
 
-    if (p->unk_04 & 16) {
+    if (p->flags & 16) {
         lim = 0x140;
         q->unk_10 += 10;
 
@@ -1267,7 +1267,7 @@ void func_080F0A44(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_04 |= 0x40;
+        p->flags |= 0x40;
         func_080E5EAC(p);
     } else {
         func_080E5DEC(p);
@@ -1291,7 +1291,7 @@ void Task_MapEnm04_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
     func_080E6394(p, q);
 
-    if (p->unk_04 & 0x20) {
+    if (p->flags & 0x20) {
         p->update = func_080F0A84;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
@@ -1388,7 +1388,7 @@ void func_080F0C68(MapEnmWork* p) {
 }
 
 void func_080F0D00(MapEnmWork* p) {
-    p->unk_04 |= 4;
+    p->flags |= 4;
     func_080E5D6C(p, 2, 0);
     func_080E5DEC(p);
     TaskPoolUpdate(p->tasks);
@@ -1403,7 +1403,7 @@ void func_080F0D40(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_04 |= 0x40;
+        p->flags |= 0x40;
         func_080E5EAC(p);
     } else {
         func_080E5DEC(p);
@@ -1506,7 +1506,7 @@ void func_080F0EEC(MapEnmWork* p) {
 }
 
 void func_080F0F84(MapEnmWork* p) {
-    p->unk_04 |= 4;
+    p->flags |= 4;
     func_080E5D6C(p, 2, 0);
     func_080E5DEC(p);
     TaskPoolUpdate(p->tasks);
@@ -1521,7 +1521,7 @@ void func_080F0FC4(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (AnimIsFinished((AnimState*)p->anim)) {
-        p->unk_04 |= 0x40;
+        p->flags |= 0x40;
         func_080E5EAC(p);
     } else {
         func_080E5DEC(p);

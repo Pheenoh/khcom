@@ -93,7 +93,7 @@ typedef struct SioAnimDef {
 typedef struct SioBtlConnectWork {
     u16 unk_00;
     s16 unk_02;
-    s8 unk_04;
+    s8 state;
     u8 unk_05;
     u8 unk_06[2];
     TextSlot unk_08[SIO_CONNECT_TEXT_SLOTS];
@@ -126,7 +126,7 @@ typedef struct SioCardTaskArg {
 
 typedef struct SioChgCardWork {
     u8 unk_000;
-    s8 unk_001;
+    s8 state;
     s16 unk_002;
     s16 unk_004;
     u8 unk_006[2];
@@ -184,7 +184,7 @@ typedef struct SioChgCardWork {
 } SioChgCardWork;
 
 typedef struct SioBtlCardgetWork {
-    s8 unk_00;
+    s8 state;
     u8 unk_01;
     u16 unk_02;
     s16 unk_04;

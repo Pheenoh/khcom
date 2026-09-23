@@ -990,10 +990,10 @@ typedef struct PooSoraWork {
     s32* unk_88;
     u8 unk_8C[0x08];
     u32 unk_94;
-    s16 unk_98;
+    s16 timer;
     s16 unk_9A;
     s32 unk_9C;
-    u16 unk_A0;
+    u16 flags;
     u16 unk_A2;
     s32 unk_A4;
     const PooAnimDesc* animDesc;
