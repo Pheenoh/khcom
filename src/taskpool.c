@@ -186,7 +186,7 @@ const char* GetTaskName(Task* t) {
     return t->desc->name;
 }
 
-void SetTaskUpdate(Task* task, void* update) {
+void SetTaskUpdate(Task* task, TaskUpdateFunc update) {
     task->update = update;
 }
 

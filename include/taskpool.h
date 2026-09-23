@@ -9,12 +9,18 @@ typedef struct TaskPool {
     void* tasks;
 } TaskPool;
 
+struct Task;
+
+typedef void (*TaskInitFunc)(void* work, void* arg);
+typedef u8 (*TaskUpdateFunc)(void* work, struct Task* task);
+typedef void (*TaskFunc)(void* work);
+
 typedef struct TaskDesc {
     const char* name;
-    void (*init)(void* work, void* arg);
-    void* update;
-    void (*draw)(void* work);
-    void (*destroy)(void* work);
+    TaskInitFunc init;
+    TaskUpdateFunc update;
+    TaskFunc draw;
+    TaskFunc destroy;
     s32 workSize;
 } TaskDesc;
 
@@ -23,7 +29,7 @@ typedef struct Task {
     void* work;
     u8 unk_08[0x04];
     ListNode node;
-    u8 (*update)(void* work, struct Task* task);
+    TaskUpdateFunc update;
 } Task;
 
 typedef char TaskPool_size[(sizeof(TaskPool) == 0x14) ? 1 : -1];
@@ -35,7 +41,7 @@ void func_08000DE8(TaskPool* pool, Task* task);
 u8 IsTaskActive(Task* task);
 u8 IsTaskActiveNamed(Task* task, const char* name);
 const char* GetTaskName(Task* task);
-void SetTaskUpdate(Task* task, void* update);
+void SetTaskUpdate(Task* task, TaskUpdateFunc update);
 void TaskPoolInit(TaskPool* pool, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* pool);

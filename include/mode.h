@@ -3,11 +3,14 @@
 
 #include "types.h"
 
+typedef void (*ModeInitFunc)(s32 arg);
+typedef void (*ModeFunc)(void);
+
 typedef struct Mode {
     const char* name;
-    void (*init)(s32 arg);
-    void (*update)(void);
-    void (*exit)(void);
+    ModeInitFunc init;
+    ModeFunc update;
+    ModeFunc exit;
 } Mode;
 
 void ModeRequest(Mode* mode, s32 arg);
