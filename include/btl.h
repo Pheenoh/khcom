@@ -3,7 +3,6 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
-
 #include "card_api.h"
 
 #include "card_battle.h"
@@ -189,9 +188,6 @@ typedef struct BtlRikuWork {
 
 extern u8 gUnk_08F6DD04[];
 
-
-
-
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1E974[];
 extern u8 gUnk_08B1E97E[];
@@ -200,70 +196,15 @@ extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E99C[];
 extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_08B1EA00[];
-extern u8 gUnk_08C78824[];
-extern u8 gUnk_08C7C824[];
-extern u8 gUnk_08C80824[];
-extern u8 gUnk_08C84824[];
-extern u8 gUnk_08C88824[];
-extern u8 gUnk_08C8C824[];
-extern u8 gUnk_08C90824[];
-extern u8 gUnk_08C94824[];
-extern u8 gUnk_08C98824[];
-extern u8 gUnk_08C9C6E4[];
-extern u8 gUnk_08CA06E4[];
-extern u8 gUnk_08CA46E4[];
-extern u8 gUnk_08CA86E4[];
-extern u8 gUnk_08CAC6E4[];
 extern u8 gUnk_08CB06E4[];
-extern u8 gUnk_08CB46E4[];
-extern u8 gUnk_08CB86E4[];
-extern u8 gUnk_08CBC6E4[];
-extern u8 gUnk_08CC06E4[];
-extern u8 gUnk_08EEF384[];
-extern u8 gUnk_08EF0384[];
-extern u8 gUnk_08EF1384[];
-extern u8 gUnk_08EF2384[];
-extern u8 gUnk_08EF3384[];
-extern u8 gUnk_08EF4384[];
-extern u8 gUnk_08EF5384[];
-extern u8 gUnk_08EF6384[];
-extern u8 gUnk_08EF7384[];
-extern u8 gUnk_08EF8384[];
-extern u8 gUnk_08EF9384[];
-extern u8 gUnk_08EFA384[];
-extern u8 gUnk_08EFB384[];
-extern u8 gUnk_08EFC384[];
 extern u8 gUnk_08EFD384[];
-extern u8 gUnk_08EFE384[];
-extern u8 gUnk_08EFF384[];
-extern u8 gUnk_08F00384[];
-extern u8 gUnk_08F01384[];
-extern u8 gUnk_08F68624[];
-extern u8 gUnk_08F686E4[];
-extern u8 gUnk_08F687C4[];
-extern u8 gUnk_08F68904[];
-extern u8 gUnk_08F689C4[];
-extern u8 gUnk_08F68A84[];
-extern u8 gUnk_08F68B84[];
-extern u8 gUnk_08F68C84[];
-extern u8 gUnk_08F68D64[];
-extern u8 gUnk_08F68EA4[];
-extern u8 gUnk_08F68FC4[];
-extern u8 gUnk_08F690A4[];
-extern u8 gUnk_08F691E4[];
-extern u8 gUnk_08F692C4[];
 extern u8 gUnk_08F69404[];
-extern u8 gUnk_08F694C4[];
-extern u8 gUnk_08F69544[];
-extern u8 gUnk_08F69604[];
-extern u8 gUnk_08F69724[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F69BA4[];
 extern u32 gFrameCounter;
-
 
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
@@ -277,13 +218,6 @@ typedef struct BtlMapWork {
     s32 unk_08;
     s32 unk_0C;
 } BtlMapWork;
-
-
-
-
-
-
-
 
 typedef struct BtlTaskArg {
     s32 unk_00;

@@ -43,6 +43,7 @@
 #include "bos4_api.h"
 #include "sprites_map.h"
 #include "sprites_worldselect.h"
+#include "battle_backgrounds.h"
 
 u8 gUnk_02034AB8[20];
 
@@ -64,8 +65,6 @@ extern u8 gUnk_09618CD8[];
 extern u8 gUnk_093F4578[];
 extern u8 gUnk_09618D18[];
 #ifdef VERSION_EU
-extern u8 gUnkEu_08CB0D3C[];
-extern u8 gUnkEu_08F7ADFC[];
 extern u8 gUnkEu_09F72C10[];
 extern u8 gUnkEu_09529A04[];
 extern u8 gUnkEu_0952DDE4[];
@@ -107,9 +106,9 @@ void WORLDSELECT_0(void) {
     SetupBg(2, 2, 28, 10);
     SetBgSize(3, 0x8000);
 #ifdef VERSION_EU
-    LoadBgTiles(3, gUnkEu_08CB0D3C, 0x4000);
+    LoadBgTiles(3, gUnk_08C8C824, 0x4000);
     LoadBgPalette(3, gUnk_08F68A84, 0x100);
-    eu_080059F4(3, gUnkEu_08F7ADFC);
+    eu_080059F4(3, gUnk_08EF4384);
 #else
     LoadBgTiles(3, gUnk_08C8C824, 0x4000);
     LoadBgPalette(3, gUnk_08F68A84, 0x100);

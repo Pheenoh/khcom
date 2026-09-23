@@ -1,6 +1,7 @@
 #include "event_background_data.h"
 #include "event_background_assets.h"
 #include "sprites_evt.h"
+#include "battle_backgrounds.h"
 
 const void* gUnk_09EE2864[4] = {
     gUnk_0952EAB8,
@@ -853,35 +854,19 @@ const void* gUnk_09EE2B68[1] = {
 };
 
 const void* gUnk_09EE2B6C[1] = {
-#ifdef VERSION_EU
-    gUnkEu_08F7A7A8,
-#else
     gUnk_08EF3384,
-#endif
 };
 
 const void* gUnk_09EE2B70[1] = {
-#ifdef VERSION_EU
-    gUnkEu_08F7A224,
-#else
     gUnk_08EF2384,
-#endif
 };
 
 const void* gUnk_09EE2B74[1] = {
-#ifdef VERSION_EU
-    gUnkEu_08F7ADFC,
-#else
     gUnk_08EF4384,
-#endif
 };
 
 const void* gUnk_09EE2B78[1] = {
-#ifdef VERSION_EU
-    gUnkEu_08F7BE78,
-#else
     gUnk_08EF7384,
-#endif
 };
 
 const void* gUnk_09EE2B7C[16] = {

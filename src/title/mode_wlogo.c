@@ -3,35 +3,14 @@
 #include "mode_sio.h"
 #include "msg_api.h"
 #include "monsgage.h"
-#include "world_intro_assets.h"
+#include "btl.h"
+#include "event_background_assets.h"
+#include "jiminy_data.h"
+#include "jiminy_text_assets.h"
+#include "map.h"
+#include "mode_dummy.h"
 #include "gba/keys.h"
-
-#ifdef VERSION_EU
-extern u8 gUnkEu_08F7A224[];
-extern u8 gUnkEu_08F7ADFC[];
-extern u8 gUnkEu_08F7B958[];
-extern u8 gUnkEu_08F7A7A8[];
-extern u8 gUnkEu_08F7BE78[];
-extern u8 gUnkEu_08F79960[];
-extern u8 gUnkEu_08F7C6CC[];
-extern u8 gUnkEu_08F7C274[];
-extern u8 gUnkEu_08F7B498[];
-extern u8 gUnkEu_08F79520[];
-extern u8 gUnkEu_08F7CB08[];
-extern u8 gUnkEu_08F7CFB4[];
-extern u8 gUnkEu_08CA8D3C[];
-extern u8 gUnkEu_08CB0D3C[];
-extern u8 gUnkEu_08CB8D3C[];
-extern u8 gUnkEu_08CACD3C[];
-extern u8 gUnkEu_08CBCD3C[];
-extern u8 gUnkEu_08CA0D3C[];
-extern u8 gUnkEu_08CC4BFC[];
-extern u8 gUnkEu_08CC0BFC[];
-extern u8 gUnkEu_08CB4D3C[];
-extern u8 gUnkEu_08C9CD3C[];
-extern u8 gUnkEu_08CC8BFC[];
-extern u8 gUnkEu_08CCCBFC[];
-#endif
+#include "battle_backgrounds.h"
 
 void func_080B4154(void);
 void func_080B4210(u8 a);
@@ -231,182 +210,130 @@ void func_080B4210(u8 a) {
 
     switch (a) {
     case 4:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CA8D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C84824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68904, 0xC0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7A224);
+        eu_080059F4(2, gUnk_08EF2384);
 #else
         LoadBgMap(2, gUnk_08EF2384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoWon, 0);
         break;
     case 5:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CB0D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C8C824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68A84, 0x100);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7ADFC);
+        eu_080059F4(2, gUnk_08EF4384);
 #else
         LoadBgMap(2, gUnk_08EF4384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoMons, 0);
         break;
     case 6:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CB8D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C94824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68C84, 0xE0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7B958);
+        eu_080059F4(2, gUnk_08EF6384);
 #else
         LoadBgMap(2, gUnk_08EF6384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoHwt, 0);
         break;
     case 2:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CACD3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C88824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F689C4, 0xC0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7A7A8);
+        eu_080059F4(2, gUnk_08EF3384);
 #else
         LoadBgMap(2, gUnk_08EF3384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoAtl, 0);
         break;
     case 7:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CBCD3C, 0x3EC0);
-#else
         LoadBgTiles(2, gUnk_08C98824, 0x3EC0);
-#endif
         LoadBgPalette(2, gUnk_08F68D64, 0x140);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7BE78);
+        eu_080059F4(2, gUnk_08EF7384);
 #else
         LoadBgMap(2, gUnk_08EF7384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoNvl, 0);
         break;
     case 3:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CA0D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C7C824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F686E4, 0xE0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F79960);
+        eu_080059F4(2, gUnk_08EF0384);
 #else
         LoadBgMap(2, gUnk_08EF0384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoCol, 0);
         break;
     case 8:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CC4BFC, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08CA06E4, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68FC4, 0xE0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7C6CC);
+        eu_080059F4(2, gUnk_08EF9384);
 #else
         LoadBgMap(2, gUnk_08EF9384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoHlw, 0);
         break;
     case 9:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CC0BFC, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C9C6E4, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68EA4, 0x120);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7C274);
+        eu_080059F4(2, gUnk_08EF8384);
 #else
         LoadBgMap(2, gUnk_08EF8384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoDil, 0);
         break;
     case 1:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CB4D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C90824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68B84, 0x100);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7B498);
+        eu_080059F4(2, gUnk_08EF5384);
 #else
         LoadBgMap(2, gUnk_08EF5384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoAgr, 0);
         break;
     case 10:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08C9CD3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C78824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68624, 0xC0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F79520);
+        eu_080059F4(2, gUnk_08EEF384);
 #else
         LoadBgMap(2, gUnk_08EEF384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoTvt, 0);
         break;
     case 0:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CA8D3C, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08C84824, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F68904, 0xC0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7A224);
+        eu_080059F4(2, gUnk_08EF2384);
 #else
         LoadBgMap(2, gUnk_08EF2384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoPoo, 0);
         break;
     case 11:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CC8BFC, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08CA46E4, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F690A4, 0x140);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7CB08);
+        eu_080059F4(2, gUnk_08EFA384);
 #else
         LoadBgMap(2, gUnk_08EFA384, 0x1000);
 #endif
         gUnk_02034C1C = TaskCreate(&gUnk_02034C08, &gTaskDescWlogoTt, 0);
         break;
     case 12:
-#ifdef VERSION_EU
-        LoadBgTiles(2, gUnkEu_08CCCBFC, 0x4000);
-#else
         LoadBgTiles(2, gUnk_08CA86E4, 0x4000);
-#endif
         LoadBgPalette(2, gUnk_08F691E4, 0xE0);
 #ifdef VERSION_EU
-        eu_080059F4(2, gUnkEu_08F7CFB4);
+        eu_080059F4(2, gUnk_08EFB384);
 #else
         LoadBgMap(2, gUnk_08EFB384, 0x1000);
 #endif

@@ -5,26 +5,6 @@
 #include "mode_battle_data.h"
 #include "poo_background_data.h"
 
-extern u8 gUnkEu_08CA8D3C[];
-extern u8 gUnkEu_08CACD3C[];
-extern u8 gUnkEu_08CB0D3C[];
-extern u8 gUnkEu_08CBCD3C[];
-extern u8 gUnkEu_08F7A224[];
-extern u8 gUnkEu_08F7A7A8[];
-extern u8 gUnkEu_08F7ADFC[];
-extern u8 gUnkEu_08F7BE78[];
-extern u8 gUnk_08C84824[];
-extern u8 gUnk_08C88824[];
-extern u8 gUnk_08C8C824[];
-extern u8 gUnk_08C98824[];
-extern u8 gUnk_08EF2384[];
-extern u8 gUnk_08EF3384[];
-extern u8 gUnk_08EF4384[];
-extern u8 gUnk_08EF7384[];
-extern u8 gUnk_08F68904[];
-extern u8 gUnk_08F689C4[];
-extern u8 gUnk_08F68A84[];
-extern u8 gUnk_08F68D64[];
 extern u8 gUnk_0953C2B8[];
 extern u8 gUnk_0953CAB8[];
 extern u8 gUnk_0953D2B8[];

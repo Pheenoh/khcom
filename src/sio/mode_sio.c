@@ -16,11 +16,17 @@
 #include "monsgage.h"
 #include "mode_sio.h"
 #include "gba/keys.h"
-#include "world_intro_assets.h"
+#include "btl.h"
+#include "event_background_assets.h"
+#include "jiminy_data.h"
+#include "jiminy_text_assets.h"
+#include "map.h"
+#include "mode_dummy.h"
 #include "sprites_boss_tm.h"
 #include "sprites_evt.h"
 #include "sprites_fld.h"
 #include "sprites_sora.h"
+#include "battle_backgrounds.h"
 
 u16 gUnk_0203A9EC EWRAM_COMMON(4);
 u16 gUnk_0203A9F0 EWRAM_COMMON(4);
@@ -3424,19 +3430,19 @@ SioWorldEntry gUnk_09EF1318[13] = {
     {gUnk_08CA46E4, 16384, 0, gUnk_08EFA384, 4096, 0, gUnk_08F690A4, 320, 0, gUnkJp_0814E644, 13, 0, 12},
     {gUnk_08CA86E4, 16384, 0, gUnk_08EFB384, 4096, 0, gUnk_08F691E4, 224, 0, gUnkJp_0814E658, 12, 0, 34},
 #elif defined(VERSION_EU)
-    {gWorldIntroAssetEu_08CB8D3C, 16384, 0, gWorldIntroAssetEu_08F7B958, 1312, 0, gUnk_08F68C84, 224, 0, &gUnkEu_0888E4C0, 7, 0, 0},
-    {gWorldIntroAssetEu_08CB4D3C, 16384, 0, gWorldIntroAssetEu_08F7B498, 1216, 0, gUnk_08F68B84, 256, 0, &gUnkEu_0888E3A0, 3, 0, 36},
-    {gUnkEu_08CACD3C, 16384, 0, gUnkEu_08F7A7A8, 1620, 0, gUnk_08F689C4, 192, 0, &gUnkEu_0888E578, 4, 0, 32},
-    {gWorldIntroAssetEu_08CA0D3C, 16384, 0, gWorldIntroAssetEu_08F79960, 1164, 0, gUnk_08F686E4, 224, 0, &gUnkEu_0888E530, 6, 0, 16},
-    {gUnkEu_08CA8D3C, 16384, 0, gUnkEu_08F7A224, 1412, 0, gUnk_08F68904, 192, 0, &gUnkEu_0888E410, 1, 0, 28},
-    {gUnkEu_08CB0D3C, 16384, 0, gUnkEu_08F7ADFC, 1692, 0, gUnk_08F68A84, 256, 0, &gUnkEu_0888E450, 5, 0, 36},
-    {gWorldIntroAssetEu_08CB8D3C, 16384, 0, gWorldIntroAssetEu_08F7B958, 1312, 0, gUnk_08F68C84, 224, 0, &gUnkEu_0888E4C0, 7, 0, 18},
-    {gUnkEu_08CBCD3C, 16064, 0, gUnkEu_08F7BE78, 1020, 0, gUnk_08F68D64, 320, 0, &gUnkEu_0888E5DC, 8, 0, 26},
-    {gWorldIntroAssetEu_08CC4BFC, 16384, 0, gWorldIntroAssetEu_08F7C6CC, 1084, 0, gUnk_08F68FC4, 224, 0, &gUnkEu_0888E6BC, 10, 0, 20},
-    {gWorldIntroAssetEu_08CC0BFC, 16384, 0, gWorldIntroAssetEu_08F7C274, 1112, 0, gUnk_08F68EA4, 288, 0, &gUnkEu_0888E72C, 9, 0, 18},
-    {gUnk_08C6B0C4, 16384, 0, gWorldIntroAssetEu_08F79520, 1088, 0, gUnk_08F68624, 192, 0, &gUnkEu_0888E364, 11, 0, 20},
-    {gWorldIntroAssetEu_08CC8BFC, 16384, 0, gWorldIntroAssetEu_08F7CB08, 1196, 0, gUnk_08F690A4, 320, 0, &gUnkEu_0888E78C, 13, 0, 22},
-    {gWorldIntroAssetEu_08CCCBFC, 16384, 0, gWorldIntroAssetEu_08F7CFB4, 868, 0, gUnk_08F691E4, 224, 0, &gUnkEu_0888E804, 12, 0, 22},
+    {gUnk_08C94824, 16384, 0, gUnk_08EF6384, 1312, 0, gUnk_08F68C84, 224, 0, &gUnkEu_0888E4C0, 7, 0, 0},
+    {gUnk_08C90824, 16384, 0, gUnk_08EF5384, 1216, 0, gUnk_08F68B84, 256, 0, &gUnkEu_0888E3A0, 3, 0, 36},
+    {gUnk_08C88824, 16384, 0, gUnk_08EF3384, 1620, 0, gUnk_08F689C4, 192, 0, &gUnkEu_0888E578, 4, 0, 32},
+    {gUnk_08C7C824, 16384, 0, gUnk_08EF0384, 1164, 0, gUnk_08F686E4, 224, 0, &gUnkEu_0888E530, 6, 0, 16},
+    {gUnk_08C84824, 16384, 0, gUnk_08EF2384, 1412, 0, gUnk_08F68904, 192, 0, &gUnkEu_0888E410, 1, 0, 28},
+    {gUnk_08C8C824, 16384, 0, gUnk_08EF4384, 1692, 0, gUnk_08F68A84, 256, 0, &gUnkEu_0888E450, 5, 0, 36},
+    {gUnk_08C94824, 16384, 0, gUnk_08EF6384, 1312, 0, gUnk_08F68C84, 224, 0, &gUnkEu_0888E4C0, 7, 0, 18},
+    {gUnk_08C98824, 16064, 0, gUnk_08EF7384, 1020, 0, gUnk_08F68D64, 320, 0, &gUnkEu_0888E5DC, 8, 0, 26},
+    {gUnk_08CA06E4, 16384, 0, gUnk_08EF9384, 1084, 0, gUnk_08F68FC4, 224, 0, &gUnkEu_0888E6BC, 10, 0, 20},
+    {gUnk_08C9C6E4, 16384, 0, gUnk_08EF8384, 1112, 0, gUnk_08F68EA4, 288, 0, &gUnkEu_0888E72C, 9, 0, 18},
+    {gUnk_08C78824, 16384, 0, gUnk_08EEF384, 1088, 0, gUnk_08F68624, 192, 0, &gUnkEu_0888E364, 11, 0, 20},
+    {gUnk_08CA46E4, 16384, 0, gUnk_08EFA384, 1196, 0, gUnk_08F690A4, 320, 0, &gUnkEu_0888E78C, 13, 0, 22},
+    {gUnk_08CA86E4, 16384, 0, gUnk_08EFB384, 868, 0, gUnk_08F691E4, 224, 0, &gUnkEu_0888E804, 12, 0, 22},
 #endif
 };
 

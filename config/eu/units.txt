@@ -170,7 +170,7 @@ asset_gfx_gap_1_at_08B2556C.s
 sprites_hum_frames_1.s
 asset_gfx_gap_1_at_08C665DC.s
 sprites_hum_frames_2.s
-asset_gfx_gap_1_at_08C665DC_at_08C9CD3C.s
+battle_background_tiles_1.s
 battle_bg_animation_tiles.s
 asset_gfx_gap_1_at_08ED21E4.s
 sprites_hum_frames_3.s
@@ -179,8 +179,9 @@ battle_bg_animation_maps.s
 asset_gfx_gap_1_at_08F4C384.s
 sprite_palettes_1.s
 asset_gfx_gap_1_at_08EFE384_at_08F683C4.s
+battle_background_palettes_1.s
 event_background_palettes_1.s
-asset_gfx_gap_1_at_08F694C4.s
+battle_background_palettes_2.s
 sprite_palettes_2.s
 asset_gfx_gap_1_at_08F694C4_at_08F69C04.s
 battle_bg_animation_palettes.s
@@ -189,10 +190,14 @@ sprite_palettes_3.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04.s
 sprite_palettes_4.s
 asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F6A6FC.s
+battle_background_tiles_2.s
 event_background_tiles_1.s
-asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F71C40.s
+battle_background_tiles_3.s
+asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F77180.s
+battle_background_maps_1.s
 event_background_maps_1.s
-asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F7DB78.s
+battle_background_maps_2.s
+asset_gfx_gap_1_at_08F694C4_at_08F6DD04_at_08F7EBF8.s
 lockon.c
 card_label_language_data.c
 asset_gfx_gap_2.s

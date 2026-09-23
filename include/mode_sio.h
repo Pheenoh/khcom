@@ -6,7 +6,6 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
-
 #include "card_description_data.h"
 
 #include "chara_types.h"
@@ -292,42 +291,6 @@ extern u32 gFrameCounter;
 extern vu16 gSystemFlags;
 
 extern u8 gUnk_0815A2BE[];
-extern u8 gUnk_08C78824[];
-extern u8 gUnk_08C7C824[];
-extern u8 gUnk_08C84824[];
-extern u8 gUnk_08C88824[];
-extern u8 gUnk_08C8C824[];
-extern u8 gUnk_08C90824[];
-extern u8 gUnk_08C94824[];
-extern u8 gUnk_08C98824[];
-extern u8 gUnk_08C9C6E4[];
-extern u8 gUnk_08CA06E4[];
-extern u8 gUnk_08CA46E4[];
-extern u8 gUnk_08CA86E4[];
-extern u8 gUnk_08EEF384[];
-extern u8 gUnk_08EF0384[];
-extern u8 gUnk_08EF2384[];
-extern u8 gUnk_08EF3384[];
-extern u8 gUnk_08EF4384[];
-extern u8 gUnk_08EF5384[];
-extern u8 gUnk_08EF6384[];
-extern u8 gUnk_08EF7384[];
-extern u8 gUnk_08EF8384[];
-extern u8 gUnk_08EF9384[];
-extern u8 gUnk_08EFA384[];
-extern u8 gUnk_08EFB384[];
-extern u8 gUnk_08F68624[];
-extern u8 gUnk_08F686E4[];
-extern u8 gUnk_08F68904[];
-extern u8 gUnk_08F689C4[];
-extern u8 gUnk_08F68A84[];
-extern u8 gUnk_08F68B84[];
-extern u8 gUnk_08F68C84[];
-extern u8 gUnk_08F68D64[];
-extern u8 gUnk_08F68EA4[];
-extern u8 gUnk_08F68FC4[];
-extern u8 gUnk_08F690A4[];
-extern u8 gUnk_08F691E4[];
 extern u8 gUnk_096F5464[];
 extern u8 gUnk_08159E4A[];
 extern u8 gUnk_08159EC4[];

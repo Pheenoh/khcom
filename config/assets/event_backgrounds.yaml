@@ -566,7 +566,6 @@ entries:
   eu:
     address: 0x09057ED0
     fields:
-      tiles: gUnkEu_08CACD3C
       unk_2E: [2, 0]
 - name: event_bg_08F7DD20
   symbol: gUnk_08F7DD20
@@ -597,7 +596,6 @@ entries:
   eu:
     address: 0x09057F00
     fields:
-      tiles: gUnkEu_08CA8D3C
       unk_2E: [2, 0]
 - name: event_bg_08F7DD50
   symbol: gUnk_08F7DD50
@@ -628,7 +626,6 @@ entries:
   eu:
     address: 0x09057F30
     fields:
-      tiles: gUnkEu_08CB0D3C
       unk_2E: [2, 0]
 - name: event_bg_08F7DD80
   symbol: gUnk_08F7DD80
@@ -659,7 +656,6 @@ entries:
   eu:
     address: 0x09057F60
     fields:
-      tiles: gUnkEu_08CBCD3C
       unk_2E: [2, 0]
 - name: event_bg_090
   symbol: gUnk_08F7DDB0

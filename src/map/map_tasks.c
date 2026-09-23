@@ -35,6 +35,7 @@ extern u8 gUnk_09EF6C38[2];
 #include "sprites_evt.h"
 #include "sprites_map.h"
 #include "sprites_map_tasks.h"
+#include "battle_backgrounds.h"
 
 const AnimDef gUnk_0984BB9C[10] = {
     { gUnk_09EDF914, gUnk_09EDF940, gUnk_0895EECC, 0, { 0, 0, 0 } },

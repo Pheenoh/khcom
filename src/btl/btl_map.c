@@ -1,5 +1,6 @@
 #include "task_descriptors.h"
 #include "btl.h"
+#include "battle_backgrounds.h"
 
 u8 gUnk_0203492C;
 u16 gUnk_0203492E;
@@ -12,44 +13,8 @@ const s8 gUnk_0813C7D8[32] = {
 const char gTaskNameBtlMap[] = "task_btl_map";
 
 #ifdef VERSION_EU
-extern u8 gUnkEu_08C9CD3C[];
-extern u8 gUnkEu_08F79520[];
-extern u8 gUnkEu_08F74484[];
-extern u8 gUnkEu_08F7E498[];
 extern u8 gUnkEu_08F7042C[];
 extern u8 gUnkEu_08F7D724[];
-extern u8 gUnkEu_08F6EF3C[];
-extern u8 gUnkEu_08F7D318[];
-extern u8 gUnkEu_08CA0D3C[];
-extern u8 gUnkEu_08F79960[];
-extern u8 gUnkEu_08F728C0[];
-extern u8 gUnkEu_08F7DED0[];
-extern u8 gUnkEu_08F756FC[];
-extern u8 gUnkEu_08F7E83C[];
-extern u8 gUnkEu_08F71C40[];
-extern u8 gUnkEu_08F7DB78[];
-extern u8 gUnkEu_08CA4D3C[];
-extern u8 gUnkEu_08F79DEC[];
-extern u8 gUnkEu_08CA8D3C[];
-extern u8 gUnkEu_08F7A224[];
-extern u8 gUnkEu_08CB4D3C[];
-extern u8 gUnkEu_08F7B498[];
-extern u8 gUnkEu_08CACD3C[];
-extern u8 gUnkEu_08F7A7A8[];
-extern u8 gUnkEu_08CB0D3C[];
-extern u8 gUnkEu_08F7ADFC[];
-extern u8 gUnkEu_08CB8D3C[];
-extern u8 gUnkEu_08F7B958[];
-extern u8 gUnkEu_08CBCD3C[];
-extern u8 gUnkEu_08F7BE78[];
-extern u8 gUnkEu_08CC0BFC[];
-extern u8 gUnkEu_08F7C274[];
-extern u8 gUnkEu_08CC4BFC[];
-extern u8 gUnkEu_08F7C6CC[];
-extern u8 gUnkEu_08CCCBFC[];
-extern u8 gUnkEu_08F7CFB4[];
-extern u8 gUnkEu_08CC8BFC[];
-extern u8 gUnkEu_08F7CB08[];
 #endif
 
 void task_btl_map_0(BtlMapWork* work) {
@@ -59,14 +24,10 @@ void task_btl_map_0(BtlMapWork* work) {
         switch (gBtlWork->unk_10C) {
         case 0xB2:
         case 0xB3:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EEF384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
 #endif
@@ -74,13 +35,13 @@ void task_btl_map_0(BtlMapWork* work) {
             break;
         case 0xB1:
 #ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F74484);
+            eu_080059D4(gBtlWork->unk_1C6, gUnk_08CBC6E4);
 #else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CBC6E4, 0x4000);
 #endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69604, 0x120);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E498);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08F00384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F00384, 0x1000);
 #endif
@@ -102,27 +63,23 @@ void task_btl_map_0(BtlMapWork* work) {
             break;
         case 0x9E:
 #ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F6EF3C);
+            eu_080059D4(gBtlWork->unk_1C6, gUnk_08CAC6E4);
 #else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CAC6E4, 0x4000);
 #endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F692C4, 0x140);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7D318);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EFC384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFC384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 9;
             break;
         case 0x9F:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF0384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
 #endif
@@ -131,13 +88,13 @@ void task_btl_map_0(BtlMapWork* work) {
         case 0xAC:
         case 0xAF:
 #ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F728C0);
+            eu_080059D4(gBtlWork->unk_1C6, gUnk_08CB86E4);
 #else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB86E4, 0x4000);
 #endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69544, 0xC0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DED0);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EFF384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFF384, 0x1000);
 #endif
@@ -145,13 +102,13 @@ void task_btl_map_0(BtlMapWork* work) {
             break;
         case 0xA5:
 #ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F756FC);
+            eu_080059D4(gBtlWork->unk_1C6, gUnk_08CC06E4);
 #else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CC06E4, 0x4000);
 #endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69724, 0x80);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E83C);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08F01384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F01384, 0x1000);
 #endif
@@ -159,13 +116,13 @@ void task_btl_map_0(BtlMapWork* work) {
             break;
         default:
 #ifdef VERSION_EU
-            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F71C40);
+            eu_080059D4(gBtlWork->unk_1C6, gUnk_08CB46E4);
 #else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB46E4, 0x4000);
 #endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F694C4, 0x80);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DB78);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EFE384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFE384, 0x1000);
 #endif
@@ -173,14 +130,10 @@ void task_btl_map_0(BtlMapWork* work) {
             break;
         }
     } else if (gBtlWork->unk_10C == 0x78) {
-#ifdef VERSION_EU
-        LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
-#else
         LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
-#endif
         LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
 #ifdef VERSION_EU
-        eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
+        eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF1384);
 #else
         LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
 #endif
@@ -188,182 +141,130 @@ void task_btl_map_0(BtlMapWork* work) {
     } else {
         switch (gGameState.unk_00D) {
         case 1:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA8D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C84824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68904, 0xC0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A224);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF2384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF2384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 2:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF1384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 3:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB4D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C90824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68B84, 0x100);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B498);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF5384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF5384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 4:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CACD3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C88824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F689C4, 0xC0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A7A8);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF3384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF3384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 5:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB0D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C8C824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68A84, 0x100);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7ADFC);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF4384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF4384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 7:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB8D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C94824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68C84, 0xE0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B958);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF6384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF6384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 8:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CBCD3C, 0x3EC0);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C98824, 0x3EC0);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68D64, 0x140);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7BE78);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF7384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF7384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 9:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC0BFC, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C9C6E4, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68EA4, 0x120);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C274);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF8384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF8384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 10:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC4BFC, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA06E4, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68FC4, 0xE0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C6CC);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF9384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF9384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 11:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EEF384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 12:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CCCBFC, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA86E4, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F691E4, 0xE0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CFB4);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EFB384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFB384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 20;
             break;
         case 13:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC8BFC, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA46E4, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F690A4, 0x140);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CB08);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EFA384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFA384, 0x1000);
 #endif
             gBtlWork->unk_0B3 = 10;
             break;
         default:
-#ifdef VERSION_EU
-            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
-#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
-#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
 #ifdef VERSION_EU
-            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
+            eu_080059F4(gBtlWork->unk_1C6, gUnk_08EF0384);
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
 #endif
