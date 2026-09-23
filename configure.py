@@ -152,6 +152,12 @@ for group_name, group in groups.items():
 def rel(path):
     return os.path.relpath(str(path))
 
+sources = {}
+for path in sorted(Path("src").rglob("*.c")):
+    if path.name in sources:
+        sys.exit(f"error: {path} and {sources[path.name]} share the basename {path.name}")
+    sources[path.name] = path
+
 units = []
 archives = []
 linked = set()
@@ -173,7 +179,7 @@ for line in units_file.read_text().splitlines():
         src = Path(f"{build_dir}/gen") / name
         obj = f"{build_dir}/gen/{src.stem}.o"
     elif name.endswith(".c"):
-        src = Path("src") / name
+        src = sources.get(name, Path("src") / name)
         obj = f"{build_dir}/src/{src.stem}.o"
     else:
         src = Path(f"asm/{version}") / name

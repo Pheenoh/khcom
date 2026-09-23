@@ -3438,7 +3438,7 @@ def load_rows(ver):
             r[3] = at
             if r[4] == "absent":
                 r[4] = "entry"
-    for f in sorted(Path("src").glob("*.c")):
+    for f in sorted(Path("src").rglob("*.c"), key=lambda path: path.name):
         for name, at in active_definitions(f, ver):
             rows.append([name, 0, 0, at, "named"])
     return rows
@@ -3637,7 +3637,7 @@ def main():
             owner.setdefault(m.group(1), cur)
 
     flexible = set()
-    for f in sorted(Path("src").glob("*.c")):
+    for f in sorted(Path("src").rglob("*.c"), key=lambda path: path.name):
         for tu, name in active_includes(f, ver):
             flexible.add(name)
         for name, at in active_definitions(f, ver):
@@ -3706,7 +3706,7 @@ def main():
     wrote = missing = absent = 0
     kept = set()
     filled = set()
-    for src in sorted(Path("src").glob("*.c")):
+    for src in sorted(Path("src").rglob("*.c"), key=lambda path: path.name):
         for tu, name in active_includes(src, ver):
             m = re.fullmatch(f"{ver}_([0-9A-Fa-f]{{8}})", name)
             if m:
