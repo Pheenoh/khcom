@@ -2160,10 +2160,10 @@ u8 func_080FABE4(GaWork* work) {
     return result;
 }
 
-const char gTaskName_09EF70B8[] = "task_room_name";
+const char gTaskNameRoomName[] = "task_room_name";
 
-TaskDesc gUnk_09EF70B8 = {
-    gTaskName_09EF70B8,
+TaskDesc gTaskDescRoomName = {
+    gTaskNameRoomName,
     (void (*)(void*, void*))task_room_name_0,
     task_room_name_1,
     (void (*)(void*))task_room_name_2,

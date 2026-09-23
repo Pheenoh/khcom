@@ -2741,7 +2741,7 @@ void* func_08095C28(u8* w, u16 b, void* pool, u8 mode) {
 
     args.unk_08 = mode;
     args.unk_0E = w[0xB8];
-    return ((void**)TaskCreate(pool, &gUnk_09EE7560, &args))[1];
+    return ((void**)TaskCreate(pool, &gTaskDescReloadGage, &args))[1];
 }
 
 const char gUnk_090359BC[] = "WORLDSELECT";
@@ -3100,10 +3100,10 @@ TaskDesc gTaskDescMapcard = {
     0x78,
 };
 
-const char gTaskName_09EE7560[] = "Reload Gage";
+const char gTaskNameReloadGage[] = "Reload Gage";
 
-TaskDesc gUnk_09EE7560 = {
-    gTaskName_09EE7560,
+TaskDesc gTaskDescReloadGage = {
+    gTaskNameReloadGage,
     (void (*)(void*, void*))func_08094EB0,
     func_0809511C,
     (void (*)(void*))func_08095520,

@@ -900,7 +900,7 @@ const char gTaskNameTinkerbell[] = "Tinkerbell";
 
 const char gTaskNameEvSound[] = "EV_SOUND";
 
-const char gTaskName_09EE48DC[] = "Event_Debug";
+const char gTaskNameEventDebug[] = "Event_Debug";
 
 Mode gModeEventselect = {
     gModeNameEventselect,
@@ -1017,8 +1017,8 @@ TaskDesc gTaskDescEvSound = {
     0xC,
 };
 
-TaskDesc gUnk_09EE48DC = {
-    gTaskName_09EE48DC,
+TaskDesc gTaskDescEventDebug = {
+    gTaskNameEventDebug,
     (void (*)(void*, void*))Event_Debug_0,
     Event_Debug_1,
     (void (*)(void*))Event_Debug_2,

@@ -826,10 +826,10 @@ void func_080A53E4(UnkStruct_080A3F5C* w) {
     gUnk_02034B00 = 0;
 }
 
-const char gTaskName_09EE8E30[] = "sysmsgwin";
+const char gTaskNameSysmsgwin[] = "sysmsgwin";
 
 TaskDesc gUnk_09EE8E30 = {
-    gTaskName_09EE8E30,
+    gTaskNameSysmsgwin,
     (void (*)(void*, void*))func_080A430C,
     func_080A4578,
     (void (*)(void*))func_080A4A50,
@@ -838,7 +838,7 @@ TaskDesc gUnk_09EE8E30 = {
 };
 
 TaskDesc gUnk_09EE8E48 = {
-    gTaskName_09EE8E30,
+    gTaskNameSysmsgwin,
     (void (*)(void*, void*))func_080A4DCC,
     func_080A4F14,
     (void (*)(void*))func_080A52BC,

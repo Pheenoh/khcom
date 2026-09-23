@@ -216,10 +216,10 @@ void func_080A27EC(u8* work) {
 #endif
 }
 
-const char gTaskName_09EE7F48[] = "Lvup msg";
+const char gTaskNameLvupMsg[] = "Lvup msg";
 
-TaskDesc gUnk_09EE7F48 = {
-    gTaskName_09EE7F48,
+TaskDesc gTaskDescLvupMsg = {
+    gTaskNameLvupMsg,
     (void (*)(void*, void*))func_080A23A0,
     func_080A25B8,
     (void (*)(void*))func_080A2678,

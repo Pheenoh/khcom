@@ -405,10 +405,10 @@ Mode gUnk_09EE8F20 = {
 };
 #endif
 
-const char gTaskName_09EE8F30[] = "DarkPoint";
+const char gTaskNameDarkPoint[] = "DarkPoint";
 
-TaskDesc gUnk_09EE8F30 = {
-    gTaskName_09EE8F30,
+TaskDesc gTaskDescDarkPoint = {
+    gTaskNameDarkPoint,
     (void (*)(void*, void*))DarkPoint_0,
     DarkPoint_1,
     (void (*)(void*))DarkPoint_2,

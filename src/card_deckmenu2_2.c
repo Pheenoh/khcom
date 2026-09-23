@@ -613,7 +613,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
                 x++;
             } else if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A == kind - 1) {
                 args.unk_00 = &w->pool;
@@ -622,7 +622,7 @@ void func_080A6838(UnkStruct_080A5D3C* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &cards[i];
-                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
                 x++;
             }
             if (x > 2) {

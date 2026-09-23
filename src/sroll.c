@@ -2074,10 +2074,10 @@ TaskDesc gTaskDescSrollCChar = {
     0x98,
 };
 
-const char gTaskName_09EFAA64[] = "task_sroll_tmr";
+const char gTaskNameSrollTmr[] = "task_sroll_tmr";
 
-TaskDesc gUnk_09EFAA64 = {
-    gTaskName_09EFAA64,
+TaskDesc gTaskDescSrollTmr = {
+    gTaskNameSrollTmr,
     (void (*)(void*, void*))task_sroll_tmr_0,
     task_sroll_tmr_1,
     (void (*)(void*))task_sroll_tmr_2,

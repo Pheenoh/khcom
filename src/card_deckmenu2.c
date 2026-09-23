@@ -1940,7 +1940,7 @@ u8 func_0808778C(UnkStruct_080889DC* w, void* a) {
             return 1;
         }
 
-        TaskCreate(&w->cardpool, &gUnk_09EE7F78, &w->unk_8C9);
+        TaskCreate(&w->cardpool, &gTaskDescDeckYesNo, &w->unk_8C9);
         w->unk_8D1 = 1;
         SetTaskUpdate(a, (void*)func_08087438);
         w->unk_8B7 = 1;
@@ -2624,7 +2624,7 @@ u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
 #endif
         SetActiveDeckIndex(w->unk_8C0);
         func_0808D16C(w->unk_8C0);
-        TaskCreate(&w->cardpool, &gUnk_09EE7F60, &w->unk_8C9);
+        TaskCreate(&w->cardpool, &gTaskDescDeckEquip, &w->unk_8C9);
         m4aSongNumStart(137);
         break;
     case 2:
@@ -2747,7 +2747,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
         case 0:
             SetActiveDeckIndex(w->unk_8C0);
             func_0808D16C(w->unk_8C0);
-            TaskCreate(&w->tasks2, &gUnk_09EE7F60, &w->unk_8C8[1]);
+            TaskCreate(&w->tasks2, &gTaskDescDeckEquip, &w->unk_8C8[1]);
             m4aSongNumStart(137);
             SetTaskUpdate(a, (u32)func_08089220);
             return 1;
@@ -2764,7 +2764,7 @@ u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
         case 2:
             m4aSongNumStart(102);
             w->unk_8B1 = 15;
-            TaskCreate(&w->tasks2, &gUnk_09EE7F90, &w->unk_8C8[1]);
+            TaskCreate(&w->tasks2, &gTaskDescDeckClear, &w->unk_8C8[1]);
             w->unk_8D1[0] = 1;
             SetTaskUpdate(a, (u32)func_08088768);
             return 1;
@@ -4159,7 +4159,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                 } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                     args.unk_00 = &work[CARDWORK(0x7F0)];
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
@@ -4167,7 +4167,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                 }
             } else {
                 args.unk_00 = &work[CARDWORK(0x7F0)];
@@ -4176,7 +4176,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
             }
 
             x++;
@@ -4195,7 +4195,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                 x++;
             }
 
@@ -4234,7 +4234,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                     args.unk_08 = y;
                     args.unk_0A = 1;
                     args.unk_0C = 0;
-                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                     x++;
                     count++;
                 }
@@ -4248,7 +4248,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                     args.unk_08 = y;
                     args.unk_0A = 1;
                     args.unk_0C = 0;
-                    TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                     x++;
                     count++;
                 }
@@ -4272,7 +4272,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                         args.unk_08 = y;
                         args.unk_0A = 1;
                         args.unk_0C = 0;
-                        TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                        TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                         x++;
                         count++;
                     }
@@ -4289,7 +4289,7 @@ s32 func_0808C60C(u8* work, u8 kind, u8 c) {
                         args.unk_08 = y;
                         args.unk_0A = 1;
                         args.unk_0C = 0;
-                        TaskCreate(&work[CARDWORK(0x7C8)], &gUnk_09EE4B28, &args);
+                        TaskCreate(&work[CARDWORK(0x7C8)], &gTaskDescDeckCard2, &args);
                         x++;
                         count++;
                     }
@@ -5840,7 +5840,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                    TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
                 } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                     args.unk_00 = &w->pool;
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
@@ -5848,7 +5848,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                    TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
                 }
             } else {
                 args.unk_00 = &w->pool;
@@ -5857,7 +5857,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
             }
 
             x++;
@@ -5876,7 +5876,7 @@ void func_0808EA0C(UnkStruct_0808DB04* w, u8 kind) {
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&w->tasks, &gUnk_09EE4B28, &args);
+                TaskCreate(&w->tasks, &gTaskDescDeckCard2, &args);
                 x++;
             }
 

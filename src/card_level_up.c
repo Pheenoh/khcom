@@ -889,7 +889,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                 args.amount = amount;
                 args.done = &w->unk_7C4;
                 args.flags = 0x8000;
-                TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
+                TaskCreate(&w->pool, &gTaskDescLvupMsg, &args);
                 break;
             }
             case 1:
@@ -900,7 +900,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.amount = amount;
                     args.done = &w->unk_7C4;
                     args.flags = 0;
-                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gTaskDescLvupMsg, &args);
                 } else {
                     s32 amount = LevelUpAp();
                     StatIncreaseDisplayArgs args;
@@ -909,13 +909,13 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.done = &w->unk_7C4;
                     args.flags = 0;
                     gGameState.progression.unk_80++;
-                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gTaskDescLvupMsg, &args);
                 }
                 break;
             case 2:
                 if (!(gGameState.flags & 8)) {
                     w->unk_7C4 = 1;
-                    TaskCreate(&w->pool, &gUnk_09EE7F30, &w->unk_7C4);
+                    TaskCreate(&w->pool, &gTaskDescStockInfo, &w->unk_7C4);
                 } else {
                     s32 amount = LevelUpDp();
                     StatIncreaseDisplayArgs args;
@@ -923,7 +923,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     args.amount = amount;
                     args.done = &w->unk_7C4;
                     args.flags = 0x4000;
-                    TaskCreate(&w->pool, &gUnk_09EE7F48, &args);
+                    TaskCreate(&w->pool, &gTaskDescLvupMsg, &args);
                 }
                 break;
             }

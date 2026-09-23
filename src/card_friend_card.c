@@ -769,7 +769,7 @@ void func_0809B644(void* pool, s16 x, s16 y, s16 z, u8 idx) {
                 args[1] = (s16)y << 8;
                 args[2] = (s16)z << 8;
                 args[3] = gUnk_09036210[idx] + GetRandom() % 9;
-                TaskCreate(pool, &gUnk_09EE778C, args);
+                TaskCreate(pool, &gTaskDescFriendCard, args);
                 gUnk_02039DD4->unk_0D6++;
             }
         }
@@ -785,7 +785,7 @@ void func_0809B6D0(void* pool, s16 a, s16 b, s16 c, u16 d) {
     args[1] = b << 8;
     args[2] = c << 8;
     args[3] = t[0];
-    TaskCreate(pool, &gUnk_09EE77A4, args);
+    TaskCreate(pool, &gTaskDescHeartlessCard, args);
 }
 
 void func_0809B710(void* pool, u16 a, u16 b, u16 c, u16 d) {
@@ -797,7 +797,7 @@ void func_0809B710(void* pool, u16 a, u16 b, u16 c, u16 d) {
         args[1] = (s16)b << 8;
         args[2] = (s16)c << 8;
         args[3] = d;
-        TaskCreate(pool, &gUnk_09EE77BC, args);
+        TaskCreate(pool, &gTaskDescGimmickCard, args);
     }
 }
 
@@ -1354,7 +1354,7 @@ u8 func_0809C2D0(u8* work, void* a) {
         FadeSetPaletteExcluded(13, 1);
         FadeSetPaletteExcluded(14, 1);
         FadeSetPaletteExcluded(15, 1);
-        TaskCreate(pool, &gUnk_09EE7834, 0);
+        TaskCreate(pool, &gTaskDescCardName, 0);
         SetTaskUpdate(a, (void*)func_0809C448);
     }
 
@@ -1420,10 +1420,10 @@ u8 func_0809C4B0(u8* work, void* a) {
 struct UnkStruct_0809BB4C;
 void func_0809BB4C(struct UnkStruct_0809BB4C* w);
 
-const char gTaskName_09EE778C[] = "Friend card";
+const char gTaskNameFriendCard[] = "Friend card";
 
-TaskDesc gUnk_09EE778C = {
-    gTaskName_09EE778C,
+TaskDesc gTaskDescFriendCard = {
+    gTaskNameFriendCard,
     (void (*)(void*, void*))func_0809A02C,
     func_0809A54C,
     (void (*)(void*))func_0809B200,
@@ -1431,10 +1431,10 @@ TaskDesc gUnk_09EE778C = {
     0x1D4,
 };
 
-const char gTaskName_09EE77A4[] = "Heartless card";
+const char gTaskNameHeartlessCard[] = "Heartless card";
 
-TaskDesc gUnk_09EE77A4 = {
-    gTaskName_09EE77A4,
+TaskDesc gTaskDescHeartlessCard = {
+    gTaskNameHeartlessCard,
     (void (*)(void*, void*))func_0809A1B8,
     func_0809AF84,
     (void (*)(void*))func_0809B3F4,
@@ -1442,10 +1442,10 @@ TaskDesc gUnk_09EE77A4 = {
     0x1D4,
 };
 
-const char gTaskName_09EE77BC[] = "Gimmick card";
+const char gTaskNameGimmickCard[] = "Gimmick card";
 
-TaskDesc gUnk_09EE77BC = {
-    gTaskName_09EE77BC,
+TaskDesc gTaskDescGimmickCard = {
+    gTaskNameGimmickCard,
     (void (*)(void*, void*))func_0809A368,
     func_0809A840,
     (void (*)(void*))func_0809B200,
@@ -1453,10 +1453,10 @@ TaskDesc gUnk_09EE77BC = {
     0x1D4,
 };
 
-const char gTaskName_09EE77D4[] = "StockName";
+const char gTaskNameStockName[] = "StockName";
 
 TaskDesc gUnk_09EE77D4 = {
-    gTaskName_09EE77D4,
+    gTaskNameStockName,
     (void (*)(void*, void*))func_0809B76C,
     func_0809B840,
     (void (*)(void*))func_0809B8F0,
@@ -1465,7 +1465,7 @@ TaskDesc gUnk_09EE77D4 = {
 };
 
 TaskDesc gUnk_09EE77EC = {
-    gTaskName_09EE77D4,
+    gTaskNameStockName,
     (void (*)(void*, void*))func_0809B920,
     func_0809B9F4,
     (void (*)(void*))func_0809BAA4,

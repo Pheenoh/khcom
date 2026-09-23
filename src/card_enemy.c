@@ -1038,10 +1038,10 @@ u16 func_08091B44(void) {
     return gUnk_02039DD4->unk_0D7;
 }
 
-const char gTaskName_09EE4B40[] = "card_enemy";
+const char gTaskNameCardEnemy[] = "card_enemy";
 
-TaskDesc gUnk_09EE4B40 = {
-    gTaskName_09EE4B40,
+TaskDesc gTaskDescCardEnemy = {
+    gTaskNameCardEnemy,
     (void (*)(void*, void*))card_enemy_0,
     card_enemy_1,
     (void (*)(void*))func_08090374,
@@ -1049,10 +1049,10 @@ TaskDesc gUnk_09EE4B40 = {
     0xA8,
 };
 
-const char gTaskName_09EE4B58[] = "EnemyUsecard";
+const char gTaskNameEnemyUsecard[] = "EnemyUsecard";
 
 TaskDesc gUnk_09EE4B58 = {
-    gTaskName_09EE4B58,
+    gTaskNameEnemyUsecard,
     (void (*)(void*, void*))func_08090EA0,
     EnemyUsecard_1,
     (void (*)(void*))func_08090374,
@@ -1061,7 +1061,7 @@ TaskDesc gUnk_09EE4B58 = {
 };
 
 TaskDesc gUnk_09EE4B70 = {
-    gTaskName_09EE4B58,
+    gTaskNameEnemyUsecard,
     (void (*)(void*, void*))func_08091048,
     EnemyUsecard_1,
     (void (*)(void*))func_08090374,
@@ -1070,7 +1070,7 @@ TaskDesc gUnk_09EE4B70 = {
 };
 
 TaskDesc gUnk_09EE4B88 = {
-    gTaskName_09EE4B58,
+    gTaskNameEnemyUsecard,
     (void (*)(void*, void*))func_08091138,
     EnemyUsecard_1,
     (void (*)(void*))func_08090374,

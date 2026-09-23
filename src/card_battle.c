@@ -362,7 +362,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
@@ -382,7 +382,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
@@ -402,7 +402,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.slot = c;
             arg.unk_0F = w->unk_9C[slot];
             if (c->unk_00 == 0xFFFE) {
-                TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg);
+                TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg);
             } else {
                 TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg);
             }
@@ -416,7 +416,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
             arg.unk_0C = 0xFFFF;
             arg.slot = (CardSlot*)w->unk_44[slot];
             arg.unk_0E = slot;
-            TaskCreate((TaskPool*)w, &gUnk_09EE4984, &arg);
+            TaskCreate((TaskPool*)w, &gTaskDescCardNotHave, &arg);
             e = ListPoolFirst(&w->unk_54[slot]);
             e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
             e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
@@ -555,7 +555,7 @@ void func_08076CB4(UnkStruct_08080268* w) {
         return;
     }
     if (gGameState.flags & 8) {
-        TaskCreate((TaskPool*)w, &gUnk_09EE8F30, 0);
+        TaskCreate((TaskPool*)w, &gTaskDescDarkPoint, 0);
     }
 }
 
@@ -1083,7 +1083,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                     args.slot = w->unk_B8;
                     args.state = &w->unk_C4[0];
                     args.mode = 1;
-                    TaskCreate((TaskPool*)w, &gUnk_09EE772C, &args);
+                    TaskCreate((TaskPool*)w, &gTaskDescRELOAD, &args);
                     return 1;
                 }
             } else {
@@ -1294,7 +1294,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {
-                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg))->work;
                 } else {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;
                 }
@@ -1337,7 +1337,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 arg.unk_0F = w->unk_9C[w->unk_B8];
 
                 if (c->unk_00 == 0xFFFE) {
-                    e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE499C, &arg))->work;
+                    e = ((Task*)TaskCreate((TaskPool*)w, &gTaskDescCardReload, &arg))->work;
                 } else {
                     e = ((Task*)TaskCreate((TaskPool*)w, &gUnk_09EE496C, &arg))->work;
                 }

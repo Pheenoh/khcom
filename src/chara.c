@@ -1161,7 +1161,7 @@ u8 func_080C64A4(void) {
             fade.unk_00 = (u8*)gCharaObj->unk_0C;
             fade.unk_04 = gCharaObj->unk_10;
             fade.unk_06 = 1;
-            TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade);
+            TaskCreate(&gCharaTaskPool, &gTaskDescCharaMaskFade, &fade);
         }
         if (++gCharaObj->unk_42 > 39) {
             gCharaObj->unk_42 = 0;
@@ -1378,25 +1378,25 @@ u8 func_080C69B4(void) {
             fade0.unk_04 = gCharaObj->unk_10;
             fade0.unk_06 = 1;
             if (fade0.unk_04 != 0) {
-                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade0);
+                TaskCreate(&gCharaTaskPool, &gTaskDescCharaMaskFade, &fade0);
             }
             fade1.unk_00 = (u8*)gCharaObj->unk_14;
             fade1.unk_04 = gCharaObj->unk_18;
             fade1.unk_06 = 1;
             if (fade1.unk_04 != 0) {
-                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade1);
+                TaskCreate(&gCharaTaskPool, &gTaskDescCharaMaskFade, &fade1);
             }
             fade2.unk_00 = (u8*)gCharaObj->unk_1C;
             fade2.unk_04 = gCharaObj->unk_20;
             fade2.unk_06 = 1;
             if (fade2.unk_04 != 0) {
-                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade2);
+                TaskCreate(&gCharaTaskPool, &gTaskDescCharaMaskFade, &fade2);
             }
             fade3.unk_00 = (u8*)gCharaObj->unk_2C;
             fade3.unk_04 = gCharaObj->unk_30;
             fade3.unk_06 = 1;
             if (fade3.unk_04 != 0) {
-                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade3);
+                TaskCreate(&gCharaTaskPool, &gTaskDescCharaMaskFade, &fade3);
             }
         }
         if (gCharaObj->unk_28 != 0) {
@@ -1540,10 +1540,10 @@ void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count) {
     }
 }
 
-const char gTaskName_09EF34A8[] = "task_chara_mask_fade";
+const char gTaskNameCharaMaskFade[] = "task_chara_mask_fade";
 
-TaskDesc gUnk_09EF34A8 = {
-    gTaskName_09EF34A8,
+TaskDesc gTaskDescCharaMaskFade = {
+    gTaskNameCharaMaskFade,
     (void (*)(void*, void*))task_chara_mask_fade_0,
     task_chara_mask_fade_1,
     (void (*)(void*))task_chara_mask_fade_2,

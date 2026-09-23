@@ -273,10 +273,10 @@ const CardHelpDef* gUnk_09EE7D84[] = {
 #endif
 };
 
-const char gTaskName_09EE7F30[] = "StockInfo";
+const char gTaskNameStockInfo[] = "StockInfo";
 
-TaskDesc gUnk_09EE7F30 = {
-    gTaskName_09EE7F30,
+TaskDesc gTaskDescStockInfo = {
+    gTaskNameStockInfo,
     (void (*)(void*, void*))StockInfo_0,
     StockInfo_1,
     (void (*)(void*))StockInfo_2,

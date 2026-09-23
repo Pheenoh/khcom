@@ -7115,50 +7115,50 @@ const PooMapBgDesc gUnk_096FC6E0 = {
 };
 
 const PooSpawn gUnk_096FC6F8[85] = {
-    { 130816, 99328, &gUnk_09EF49D0 },
-    { 223232, 130304, &gUnk_09EF49A0 },
-    { 229888, 153088, &gUnk_09EF49A0 },
-    { 251392, 143104, &gUnk_09EF48F8 },
-    { 242688, 159488, &gUnk_09EF48E0 },
-    { 263936, 162816, &gUnk_09EF49D0 },
-    { 279040, 175104, &gUnk_09EF48E0 },
-    { 304896, 167424, &gUnk_09EF48E0 },
-    { 301824, 182784, &gUnk_09EF49A0 },
-    { 444672, 238848, &gUnk_09EF4A18 },
-    { 411904, 238848, &gUnk_09EF4A18 },
-    { 428288, 247040, &gUnk_09EF4A18 },
-    { 428288, 230656, &gUnk_09EF4A18 },
-    { 440576, 231680, &gUnk_09EF4B38 },
-    { 407040, 218624, &gUnk_09EF49D0 },
-    { 463104, 266496, &gUnk_09EF48E0 },
-    { 476672, 251136, &gUnk_09EF48F8 },
-    { 502272, 262912, &gUnk_09EF48E0 },
-    { 489216, 277504, &gUnk_09EF48F8 },
-    { 484096, 265472, &gUnk_09EF49A0 },
-    { 518400, 271616, &gUnk_09EF49D0 },
-    { 648960, 335616, &gUnk_09EF49D0 },
-    { 602624, 320256, &gUnk_09EF4A30 },
-    { 584192, 320256, &gUnk_09EF4A30 },
-    { 593408, 315648, &gUnk_09EF4A30 },
-    { 593408, 324864, &gUnk_09EF4A30 },
-    { 602624, 315136, &gUnk_09EF4B38 },
-    { 585984, 305920, &gUnk_09EF4A30 },
-    { 573440, 329472, &gUnk_09EF4A30 },
-    { 566016, 325376, &gUnk_09EF4A30 },
-    { 617728, 319488, &gUnk_09EF4A30 },
+    { 130816, 99328, &gTaskDescPooHoney },
+    { 223232, 130304, &gTaskDescPooTrapballoon },
+    { 229888, 153088, &gTaskDescPooTrapballoon },
+    { 251392, 143104, &gTaskDescPooPitAndButterfly },
+    { 242688, 159488, &gTaskDescPooTrap },
+    { 263936, 162816, &gTaskDescPooHoney },
+    { 279040, 175104, &gTaskDescPooTrap },
+    { 304896, 167424, &gTaskDescPooTrap },
+    { 301824, 182784, &gTaskDescPooTrapballoon },
+    { 444672, 238848, &gTaskDescPooTigerstump },
+    { 411904, 238848, &gTaskDescPooTigerstump },
+    { 428288, 247040, &gTaskDescPooTigerstump },
+    { 428288, 230656, &gTaskDescPooTigerstump },
+    { 440576, 231680, &gTaskDescPooTiBoard },
+    { 407040, 218624, &gTaskDescPooHoney },
+    { 463104, 266496, &gTaskDescPooTrap },
+    { 476672, 251136, &gTaskDescPooPitAndButterfly },
+    { 502272, 262912, &gTaskDescPooTrap },
+    { 489216, 277504, &gTaskDescPooPitAndButterfly },
+    { 484096, 265472, &gTaskDescPooTrapballoon },
+    { 518400, 271616, &gTaskDescPooHoney },
+    { 648960, 335616, &gTaskDescPooHoney },
+    { 602624, 320256, &gTaskDescPooPoohstump },
+    { 584192, 320256, &gTaskDescPooPoohstump },
+    { 593408, 315648, &gTaskDescPooPoohstump },
+    { 593408, 324864, &gTaskDescPooPoohstump },
+    { 602624, 315136, &gTaskDescPooTiBoard },
+    { 585984, 305920, &gTaskDescPooPoohstump },
+    { 573440, 329472, &gTaskDescPooPoohstump },
+    { 566016, 325376, &gTaskDescPooPoohstump },
+    { 617728, 319488, &gTaskDescPooPoohstump },
     { 282624, 150272, &gTaskDescPooLeaf },
     { 512000, 285440, &gTaskDescPooLeaf },
     { 159744, 102400, &gTaskDescPooTanpopo },
     { 194560, 114688, &gTaskDescPooTanpopo },
     { 200704, 118784, &gTaskDescPooButterfly },
     { 167936, 120832, &gTaskDescPooTanpopo },
-    { 174080, 124928, &gUnk_09EF4CF0 },
+    { 174080, 124928, &gTaskDescPooButterflyRight },
     { 198656, 133120, &gTaskDescPooTanpopo },
     { 323584, 167936, &gTaskDescPooTanpopo },
     { 313344, 180224, &gTaskDescPooTanpopo },
     { 323584, 192512, &gTaskDescPooTanpopo },
     { 333824, 182272, &gTaskDescPooTanpopo },
-    { 339968, 186368, &gUnk_09EF4CF0 },
+    { 339968, 186368, &gTaskDescPooButterflyRight },
     { 350208, 182272, &gTaskDescPooTanpopo },
     { 337920, 190464, &gTaskDescPooTanpopo },
     { 358400, 190464, &gTaskDescPooTanpopo },
@@ -7182,24 +7182,24 @@ const PooSpawn gUnk_096FC6F8[85] = {
     { 325632, 202752, &gTaskDescPooTanpopo },
     { 337920, 198656, &gTaskDescPooTanpopo },
     { 344064, 206848, &gTaskDescPooTanpopo },
-    { 350208, 210944, &gUnk_09EF4D08 },
+    { 350208, 210944, &gTaskDescPooButterflyLeft },
     { 356352, 212992, &gTaskDescPooTanpopo },
     { 342016, 215040, &gTaskDescPooTanpopo },
-    { 79872, 38912, &gUnk_09EF4D38 },
-    { 153600, 75776, &gUnk_09EF4D38 },
-    { 559104, 278528, &gUnk_09EF4D38 },
-    { 632832, 315392, &gUnk_09EF4D38 },
-    { 706560, 352256, &gUnk_09EF4D38 },
-    { 780288, 389120, &gUnk_09EF4D38 },
-    { 131072, 63488, &gUnk_09EF4D68 },
-    { 278528, 137216, &gUnk_09EF4D68 },
-    { 352256, 174080, &gUnk_09EF4D68 },
-    { 536576, 266240, &gUnk_09EF4D68 },
-    { 610304, 303104, &gUnk_09EF4D68 },
-    { 684032, 339968, &gUnk_09EF4D68 },
-    { 757760, 376832, &gUnk_09EF4D68 },
-    { 794624, 395264, &gUnk_09EF4D68 },
-    { 831488, 413696, &gUnk_09EF4D68 },
+    { 79872, 38912, &gTaskDescPooMapbeeborn },
+    { 153600, 75776, &gTaskDescPooMapbeeborn },
+    { 559104, 278528, &gTaskDescPooMapbeeborn },
+    { 632832, 315392, &gTaskDescPooMapbeeborn },
+    { 706560, 352256, &gTaskDescPooMapbeeborn },
+    { 780288, 389120, &gTaskDescPooMapbeeborn },
+    { 131072, 63488, &gTaskDescPooMapbutterflyborn },
+    { 278528, 137216, &gTaskDescPooMapbutterflyborn },
+    { 352256, 174080, &gTaskDescPooMapbutterflyborn },
+    { 536576, 266240, &gTaskDescPooMapbutterflyborn },
+    { 610304, 303104, &gTaskDescPooMapbutterflyborn },
+    { 684032, 339968, &gTaskDescPooMapbutterflyborn },
+    { 757760, 376832, &gTaskDescPooMapbutterflyborn },
+    { 794624, 395264, &gTaskDescPooMapbutterflyborn },
+    { 831488, 413696, &gTaskDescPooMapbutterflyborn },
 };
 
 const PooStumpDesc gUnk_096FCAF4[12] = {
@@ -7854,10 +7854,10 @@ TaskDesc gTaskDescPooSora = {
     0xD0,
 };
 
-const char gTaskName_09EF48E0[] = "task_poo_trap";
+const char gTaskNamePooTrap[] = "task_poo_trap";
 
-TaskDesc gUnk_09EF48E0 = {
-    gTaskName_09EF48E0,
+TaskDesc gTaskDescPooTrap = {
+    gTaskNamePooTrap,
     (void (*)(void*, void*))task_poo_trap_0,
     task_poo_trap_1,
     (void (*)(void*))task_poo_trap_2,
@@ -7865,10 +7865,10 @@ TaskDesc gUnk_09EF48E0 = {
     0xB0,
 };
 
-const char gTaskName_09EF48F8[] = "task_poo_pitAndButterfly";
+const char gTaskNamePooPitAndButterfly[] = "task_poo_pitAndButterfly";
 
-TaskDesc gUnk_09EF48F8 = {
-    gTaskName_09EF48F8,
+TaskDesc gTaskDescPooPitAndButterfly = {
+    gTaskNamePooPitAndButterfly,
     (void (*)(void*, void*))task_poo_pitAndButterfly_0,
     task_poo_pitAndButterfly_1,
     (void (*)(void*))task_poo_pitAndButterfly_2,
@@ -7942,10 +7942,10 @@ TaskDesc gTaskDescPooGauge = {
     0x14,
 };
 
-const char gTaskName_09EF49A0[] = "task_poo_trapballoon";
+const char gTaskNamePooTrapballoon[] = "task_poo_trapballoon";
 
-TaskDesc gUnk_09EF49A0 = {
-    gTaskName_09EF49A0,
+TaskDesc gTaskDescPooTrapballoon = {
+    gTaskNamePooTrapballoon,
     (void (*)(void*, void*))task_poo_trapballoon_0,
     task_poo_trapballoon_1,
     (void (*)(void*))task_poo_trapballoon_2,
@@ -7964,7 +7964,7 @@ TaskDesc gTaskDescPooOwlballoon = {
     0xCC,
 };
 
-const char gTaskName_09EF49D0[] = "task_poo_honey";
+const char gTaskNamePooHoney[] = "task_poo_honey";
 
 const UnkStruct_096FE034Entry gUnk_096FD3C8[4] = { { 18, 0 }, { 18, 1 }, { 18, 2 }, { 18, 3 } };
 
@@ -7974,8 +7974,8 @@ const UnkStruct_096FE034 gUnk_096FD3E8 = { gUnk_096FD3C8, 4, 0, gUnk_097B4578, 0
 
 const UnkStruct_096FE034 gUnk_096FD400 = { gUnk_096FD3D8, 4, 0, gUnk_097B5418, 0X3880, 0X0240, 0X0400, 0, 3 };
 
-TaskDesc gUnk_09EF49D0 = {
-    gTaskName_09EF49D0,
+TaskDesc gTaskDescPooHoney = {
+    gTaskNamePooHoney,
     (void (*)(void*, void*))task_poo_honey_0,
     task_poo_honey_1,
     (void (*)(void*))task_poo_honey_2,
@@ -8007,10 +8007,10 @@ TaskDesc gTaskDescPooPile = {
     0xD0,
 };
 
-const char gTaskName_09EF4A18[] = "task_poo_tigerstump";
+const char gTaskNamePooTigerstump[] = "task_poo_tigerstump";
 
-TaskDesc gUnk_09EF4A18 = {
-    gTaskName_09EF4A18,
+TaskDesc gTaskDescPooTigerstump = {
+    gTaskNamePooTigerstump,
     (void (*)(void*, void*))task_poo_tigerstump_0,
     task_poo_tigerstump_1,
     (void (*)(void*))task_poo_tigerstump_2,
@@ -8018,7 +8018,7 @@ TaskDesc gUnk_09EF4A18 = {
     0x90,
 };
 
-const char gTaskName_09EF4A30[] = "task_poo_poohstump";
+const char gTaskNamePooPoohstump[] = "task_poo_poohstump";
 
 const PooAnimDesc gUnk_096FD47C[4] = {
     { gUnk_09EF5CB0, gUnk_09EF5CAC, gUnk_09742FD8, 0, 0 },
@@ -8034,8 +8034,8 @@ const PooGfxDesc gUnk_096FD4BC[4] = {
     { gUnk_09EF5CE0, 8, 0 },
 };
 
-TaskDesc gUnk_09EF4A30 = {
-    gTaskName_09EF4A30,
+TaskDesc gTaskDescPooPoohstump = {
+    gTaskNamePooPoohstump,
     (void (*)(void*, void*))task_poo_poohstump_0,
     task_poo_poohstump_1,
     (void (*)(void*))task_poo_poohstump_2,
@@ -8186,10 +8186,10 @@ TaskDesc gTaskDescPooTanpopo = {
     0xB8,
 };
 
-const char gTaskName_09EF4B38[] = "task_poo_ti_board";
+const char gTaskNamePooTiBoard[] = "task_poo_ti_board";
 
-TaskDesc gUnk_09EF4B38 = {
-    gTaskName_09EF4B38,
+TaskDesc gTaskDescPooTiBoard = {
+    gTaskNamePooTiBoard,
     (void (*)(void*, void*))task_poo_ti_board_0,
     task_poo_ti_board_1,
     (void (*)(void*))task_poo_ti_board_2,
@@ -8423,10 +8423,10 @@ TaskDesc gTaskDescPooButterfly = {
     0xE4,
 };
 
-const char gTaskName_09EF4CF0[] = "task_poo_butterflyRight";
+const char gTaskNamePooButterflyRight[] = "task_poo_butterflyRight";
 
-TaskDesc gUnk_09EF4CF0 = {
-    gTaskName_09EF4CF0,
+TaskDesc gTaskDescPooButterflyRight = {
+    gTaskNamePooButterflyRight,
     (void (*)(void*, void*))task_poo_butterfly_0,
     task_poo_butterflyRight_1,
     (void (*)(void*))task_poo_butterflyRight_2,
@@ -8434,10 +8434,10 @@ TaskDesc gUnk_09EF4CF0 = {
     0xE4,
 };
 
-const char gTaskName_09EF4D08[] = "task_poo_butterflyLeft";
+const char gTaskNamePooButterflyLeft[] = "task_poo_butterflyLeft";
 
-TaskDesc gUnk_09EF4D08 = {
-    gTaskName_09EF4D08,
+TaskDesc gTaskDescPooButterflyLeft = {
+    gTaskNamePooButterflyLeft,
     (void (*)(void*, void*))task_poo_butterfly_0,
     task_poo_butterflyLeft_1,
     (void (*)(void*))task_poo_butterflyLeft_2,
@@ -8456,10 +8456,10 @@ TaskDesc gTaskDescPooMapbee = {
     0x38,
 };
 
-const char gTaskName_09EF4D38[] = "task_poo_mapbeeborn";
+const char gTaskNamePooMapbeeborn[] = "task_poo_mapbeeborn";
 
-TaskDesc gUnk_09EF4D38 = {
-    gTaskName_09EF4D38,
+TaskDesc gTaskDescPooMapbeeborn = {
+    gTaskNamePooMapbeeborn,
     (void (*)(void*, void*))task_poo_mapbeeborn_0,
     task_poo_mapbeeborn_1,
     (void (*)(void*))task_poo_mapbeeborn_2,
@@ -8478,10 +8478,10 @@ TaskDesc gTaskDescPooMapbutterfly = {
     0x38,
 };
 
-const char gTaskName_09EF4D68[] = "task_poo_mapbutterflyborn";
+const char gTaskNamePooMapbutterflyborn[] = "task_poo_mapbutterflyborn";
 
-TaskDesc gUnk_09EF4D68 = {
-    gTaskName_09EF4D68,
+TaskDesc gTaskDescPooMapbutterflyborn = {
+    gTaskNamePooMapbutterflyborn,
     (void (*)(void*, void*))task_poo_mapbutterflyborn_0,
     task_poo_mapbutterflyborn_1,
     (void (*)(void*))task_poo_mapbutterflyborn_2,

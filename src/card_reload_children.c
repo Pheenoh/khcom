@@ -1071,10 +1071,10 @@ void** gUnk_09EE7720[3] = {
     gUnk_09EEA308,
 };
 
-const char gTaskName_09EE772C[] = "RELOAD";
+const char gTaskNameRELOAD[] = "RELOAD";
 
-TaskDesc gUnk_09EE772C = {
-    gTaskName_09EE772C,
+TaskDesc gTaskDescRELOAD = {
+    gTaskNameRELOAD,
     (void (*)(void*, void*))RELOAD_0,
     RELOAD_1,
     (void (*)(void*))RELOAD_2,

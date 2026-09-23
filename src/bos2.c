@@ -1064,7 +1064,7 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     ScrollBgMapTo(1, ((y.bounds->unk_000 - arg->body.x) >> 8) + x,
                   ((z = y.bounds->unk_004 - (arg->body.y + arg->body.z)) >> 8) + 0x126);
     TaskPoolInit(&work->tasks, 2);
-    TaskCreate(&work->tasks, &gUnk_09EF2A74, work->jf);
+    TaskCreate(&work->tasks, &gTaskDescBosJfBorderline, work->jf);
 }
 
 #undef GET_ACTOR_POSITION
@@ -1442,7 +1442,7 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             work->jf->unk_24A = 0;
-            work->unk_80 = TaskCreate(&work->tasks, &gUnk_09EF2A5C, work->jf);
+            work->unk_80 = TaskCreate(&work->tasks, &gTaskDescBosJfRock, work->jf);
             func_080BE380(work->jf->unk_248, 0xA0, work);
             work->unk_44 = 120;
             work->unk_48++;
@@ -2414,7 +2414,7 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->palette2 = LoadObjPalette(gUnk_096FB5A4, 0x60);
     work->gfx2 = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
     TaskPoolInit(&work->tasks, 1);
-    TaskCreate(&work->tasks, &gUnk_09EF34D8, &work->unk_02C);
+    TaskCreate(&work->tasks, &gTaskDescBosJfShadow, &work->unk_02C);
 }
 u8 task_bos_jf_rock_1(JfRockWork* work) {
     JfWork* jf = work->jf;
@@ -5160,9 +5160,9 @@ u32 gUnk_09EF2A1C __attribute__((aligned(4))) = 683;
 
 const char gTaskNameBosJfMajin[] = "task_bos_jf_majin";
 
-const char gTaskName_09EF2A5C[] = "task_bos_jf_rock";
+const char gTaskNameBosJfRock[] = "task_bos_jf_rock";
 
-const char gTaskName_09EF2A74[] = "task_bos_jf_borderline";
+const char gTaskNameBosJfBorderline[] = "task_bos_jf_borderline";
 
 const EmyKind gUnk_0961A7B0 = { 38, 1000, 16, 16, 40, 60, 0 };
 
@@ -5213,8 +5213,8 @@ const char gTaskNameBosDsdEnergy1[] = "task_bos_dsd_energy1";
 
 const char gTaskNameBosDsdEnergy2[] = "task_bos_dsd_energy2";
 
-TaskDesc gUnk_09EF2A5C = {
-    gTaskName_09EF2A5C,
+TaskDesc gTaskDescBosJfRock = {
+    gTaskNameBosJfRock,
     (void (*)(void*, void*))task_bos_jf_rock_0,
     task_bos_jf_rock_1,
     (void (*)(void*))task_bos_jf_rock_2,
@@ -5222,8 +5222,8 @@ TaskDesc gUnk_09EF2A5C = {
     0x198,
 };
 
-TaskDesc gUnk_09EF2A74 = {
-    gTaskName_09EF2A74,
+TaskDesc gTaskDescBosJfBorderline = {
+    gTaskNameBosJfBorderline,
     (void (*)(void*, void*))task_bos_jf_borderline_0,
     task_bos_jf_borderline_1,
     (void (*)(void*))task_bos_jf_borderline_2,

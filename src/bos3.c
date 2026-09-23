@@ -79,10 +79,10 @@ void func_080C7024(u16* in) {
     gUnk_0203C3BC = in[1];
 }
 
-const char gTaskName_09EF34D8[] = "task_bos_jf_shadow";
+const char gTaskNameBosJfShadow[] = "task_bos_jf_shadow";
 
-TaskDesc gUnk_09EF34D8 = {
-    gTaskName_09EF34D8,
+TaskDesc gTaskDescBosJfShadow = {
+    gTaskNameBosJfShadow,
     (void (*)(void*, void*))task_bos_jf_shadow_0,
     task_bos_jf_shadow_1,
     (void (*)(void*))task_bos_jf_shadow_2,

@@ -435,7 +435,7 @@ void func_080789E4(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                p = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -457,7 +457,7 @@ void func_080789E4(UnkStruct_08080268* w) {
         args.unk_0C = 0xFFFF;
         args.slot = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
-        p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE4984, &args))[1];
+        p = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardNotHave, &args))[1];
         p->unk_80 = p->unk_7C = gUnk_09033FA8[1];
         p->unk_98 = p->unk_94 = gUnk_09033FB8[0];
         p->unk_A0 = 50;
@@ -601,7 +601,7 @@ void func_08078E34(UnkStruct_08080268* w, u8 b, u8 c) {
             args.unk_0F = w->unk_9C[b];
 
             if (slot->unk_00 == 0xFFFE) {
-                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -676,7 +676,7 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
             args.unk_0F = w->unk_9C[b];
 
             if (c->unk_00 == 0xFFFE) {
-                q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                q = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 q = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -1049,7 +1049,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -1159,7 +1159,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
         args.unk_0C = 0xFFFF;
         args.slot = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
-        e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE4984, &args))[1];
+        e = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardNotHave, &args))[1];
         e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
         e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
         e->unk_A0 = 50;
@@ -1193,7 +1193,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -1295,7 +1295,7 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -1451,7 +1451,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
             args.unk_0F = w->unk_9C[w->unk_B8];
 
             if (c->unk_00 == 0xFFFE) {
-                e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE499C, &args))[1];
+                e = ((CardDisplayWork**)TaskCreate(w, &gTaskDescCardReload, &args))[1];
             } else {
                 e = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE496C, &args))[1];
             }
@@ -4137,10 +4137,10 @@ TaskDesc gUnk_09EE496C = {
     0xA8,
 };
 
-const char gTaskName_09EE4984[] = "card_not_have";
+const char gTaskNameCardNotHave[] = "card_not_have";
 
-TaskDesc gUnk_09EE4984 = {
-    gTaskName_09EE4984,
+TaskDesc gTaskDescCardNotHave = {
+    gTaskNameCardNotHave,
     (void (*)(void*, void*))func_0807BC24,
     func_0807BD64,
     (void (*)(void*))card_not_have_2,
@@ -4148,10 +4148,10 @@ TaskDesc gUnk_09EE4984 = {
     0xA8,
 };
 
-const char gTaskName_09EE499C[] = "card_reload";
+const char gTaskNameCardReload[] = "card_reload";
 
-TaskDesc gUnk_09EE499C = {
-    gTaskName_09EE499C,
+TaskDesc gTaskDescCardReload = {
+    gTaskNameCardReload,
     (void (*)(void*, void*))card_reload_0,
     card_reload_1,
     (void (*)(void*))card_reload_2,
