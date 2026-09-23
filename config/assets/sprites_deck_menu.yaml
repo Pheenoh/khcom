@@ -1559,22 +1559,26 @@ entries:
     address: 0x094E74E4
     size: 7168
 - name: gUnkEu_094E90E4
-  format: raw
+  format: tiles4
+  width: 16
   eu:
     address: 0x094E90E4
     size: 1536
 - name: gUnkEu_094E96E4
-  format: raw
+  format: tiles4
+  width: 16
   eu:
     address: 0x094E96E4
     size: 1536
 - name: gUnkEu_094E9CE4
-  format: raw
+  format: tiles4
+  width: 16
   eu:
     address: 0x094E9CE4
     size: 1536
 - name: gUnkEu_094EA2E4
-  format: raw
+  format: tiles4
+  width: 16
   eu:
     address: 0x094EA2E4
     size: 1536

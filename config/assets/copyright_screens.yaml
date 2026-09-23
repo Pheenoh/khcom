@@ -78,7 +78,8 @@ entries:
     address: 0x097B6CC0
     size: 52928
 - name: gUnk_09801C98
-  format: raw
+  format: tiles4
+  width: 2
   us:
     address: 0x09801C98
     size: 320
