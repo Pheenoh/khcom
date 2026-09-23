@@ -115,6 +115,9 @@ objects:
   - name: event_background_maps_10.s
     start: 0x09601AB8
     end: 0x09603AB8
+  - name: event_background_maps_11.s
+    start: 0x09D33274
+    end: 0x09D34A74
   jp:
   - name: event_background_tiles_1.s
     start: 0x08CA3CCC
@@ -188,6 +191,9 @@ objects:
   - name: event_background_maps_10.s
     start: 0x095BA594
     end: 0x095BC594
+  - name: event_background_maps_11.s
+    start: 0x09D0C780
+    end: 0x09D0DF80
   eu:
   - name: event_background_palettes_1.s
     start: 0x08F6595C
@@ -249,6 +255,9 @@ objects:
   - name: event_background_maps_10.s
     start: 0x095D690C
     end: 0x095D6D70
+  - name: event_background_maps_11.s
+    start: 0x09D9F1A0
+    end: 0x09DA09A0
 entries:
 - name: event_bg_08F7DB10
   symbol: gUnk_08F7DB10
@@ -11174,3 +11183,25 @@ entries:
     address: 0x095D6C44
     size: 300
     compress: lz77
+- name: gUnk_09D33274
+  format: tilemap
+  us:
+    address: 0x09D33274
+    size: 2048
+  jp:
+    address: 0x09D0C780
+    size: 2048
+  eu:
+    address: 0x09D9F1A0
+    size: 2048
+- name: gUnk_09D33A74
+  format: tilemap
+  us:
+    address: 0x09D33A74
+    size: 4096
+  jp:
+    address: 0x09D0CF80
+    size: 4096
+  eu:
+    address: 0x09D9F9A0
+    size: 4096
