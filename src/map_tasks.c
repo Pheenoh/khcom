@@ -231,7 +231,7 @@ const char gTaskName_09EF6DA4[] = "Task_MapGmk_GP09";
 
 const char gTaskNameMapGmk00[] = "Task_MapGmk00";
 
-s32 func_080EF3A0(UnkStruct_080E590C* p) {
+s32 func_080EF3A0(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
     if (p->unk_08.unk_00 < gUnk_02039BA0->x - 0x1800 || p->unk_08.unk_00 > gUnk_02039BA0->x + 0x10800 ||
@@ -243,7 +243,7 @@ s32 func_080EF3A0(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080EF404(UnkStruct_080E590C* p, s32 b, s32 c) {
+void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
 
     if (p->unk_04 & 0x10) {
@@ -258,7 +258,7 @@ void func_080EF404(UnkStruct_080E590C* p, s32 b, s32 c) {
     }
 }
 
-void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c) {
+void func_080EF478(MapEnmWork* p, s32 b, s32 c) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
     if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->y) {
@@ -269,7 +269,7 @@ void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c) {
     }
 }
 
-s32 func_080EF4BC(UnkStruct_080E590C* p) {
+s32 func_080EF4BC(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     u8 ang;
 
@@ -284,7 +284,7 @@ s32 func_080EF4BC(UnkStruct_080E590C* p) {
     return 1;
 }
 
-void func_080EF508(UnkStruct_080E590C* p) {
+void func_080EF508(MapEnmWork* p) {
     s32 z;
 
     func_080E5D6C(p, 0, 0);
@@ -311,7 +311,7 @@ void func_080EF508(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF58C(UnkStruct_080E590C* p) {
+void func_080EF58C(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     s32 x;
     s32 y;
@@ -357,7 +357,7 @@ void func_080EF58C(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF664(UnkStruct_080E590C* p) {
+void func_080EF664(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     s32 x;
     s32 y;
@@ -389,7 +389,7 @@ void func_080EF664(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF718(UnkStruct_080E590C* p) {
+void func_080EF718(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     s32 x;
     s32 y;
@@ -420,7 +420,7 @@ void func_080EF718(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF7B8(UnkStruct_080E590C* p) {
+void func_080EF7B8(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     s32 x;
     s32 y;
@@ -445,7 +445,7 @@ void func_080EF7B8(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF84C(UnkStruct_080E590C* p) {
+void func_080EF84C(MapEnmWork* p) {
     p->unk_04 |= 4;
     func_080E5D6C(p, 3, 0);
     func_080E5DEC(p);
@@ -456,7 +456,7 @@ void func_080EF84C(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF88C(UnkStruct_080E590C* p) {
+void func_080EF88C(MapEnmWork* p) {
     func_080E5D6C(p, 4, 0);
     TaskPoolUpdate(p->unk_E4);
 
@@ -468,7 +468,7 @@ void func_080EF88C(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EF8CC(UnkStruct_080E590C* p) {
+void func_080EF8CC(MapEnmWork* p) {
     func_080E5D6C(p, 1, 0);
     p->gfx = AnimGetGfx(p->anim);
     TaskPoolUpdate(p->unk_E4);
@@ -480,7 +480,7 @@ void func_080EF8CC(UnkStruct_080E590C* p) {
     }
 }
 
-void Task_MapEnm00_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -501,7 +501,7 @@ void Task_MapEnm00_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     *(u16*)&p->unk_D0 = 0;
 }
 
-s32 Task_MapEnm00_1(UnkStruct_080E590C* p) {
+s32 Task_MapEnm00_1(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -524,11 +524,11 @@ s32 Task_MapEnm00_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm00_2(UnkStruct_080E590C* p) {
+void Task_MapEnm00_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm00_3(UnkStruct_080E590C* p) {
+void Task_MapEnm00_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
@@ -602,8 +602,8 @@ void func_080EFB24(UnkStruct_080F023C* w, u8 a) {
     }
 }
 
-void func_080EFC08(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* w = p;
+void func_080EFC08(MapEnmWork* p) {
+    MapEnmWork* w = p;
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
 
     func_080E5D6C(p, 0, 3);
@@ -639,7 +639,7 @@ void func_080EFC08(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EFCF4(UnkStruct_080E590C* p) {
+void func_080EFCF4(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     UnkStruct_080DFF1C t;
     s32 dx;
@@ -721,7 +721,7 @@ void func_080EFCF4(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EFE54(UnkStruct_080E590C* p) {
+void func_080EFE54(MapEnmWork* p) {
     func_080E5D6C(p, 2, 0);
     TaskPoolUpdate(p->unk_E4);
 
@@ -733,7 +733,7 @@ void func_080EFE54(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080EFE94(UnkStruct_080E590C* p) {
+void func_080EFE94(MapEnmWork* p) {
     func_080E5D6C(p, 0, 0);
     p->gfx = AnimGetGfx(p->anim);
     TaskPoolUpdate(p->unk_E4);
@@ -745,7 +745,7 @@ void func_080EFE94(UnkStruct_080E590C* p) {
     }
 }
 
-void Task_MapEnm01_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm01_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     UnkStruct_080EFA30* w = (UnkStruct_080EFA30*)p;
 
     func_080E6394(p, q);
@@ -765,8 +765,8 @@ void Task_MapEnm01_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
 }
 
-s32 Task_MapEnm01_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+s32 Task_MapEnm01_1(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -779,7 +779,7 @@ s32 Task_MapEnm01_1(UnkStruct_080E590C* p) {
     }
 
     if (p->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->update)(q);
+        ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
@@ -790,15 +790,15 @@ s32 Task_MapEnm01_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm01_2(UnkStruct_080E590C* p) {
+void Task_MapEnm01_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm01_3(UnkStruct_080E590C* p) {
+void Task_MapEnm01_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
-void func_080EFFF8(UnkStruct_080E590C* p) {
+void func_080EFFF8(MapEnmWork* p) {
     func_080E5D6C(p, 0, 1);
     func_080E5DEC(p);
     TaskPoolUpdate(p->unk_E4);
@@ -812,7 +812,7 @@ void func_080EFFF8(UnkStruct_080E590C* p) {
     func_080E5F50(p);
 }
 
-void Task_MapEnm02_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm02_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
     p->update = func_080EFFF8;
     func_080E5D6C(p, 0, 1);
@@ -820,8 +820,8 @@ void Task_MapEnm02_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ColliderSetDisabled(p->unk_48, 0);
 }
 
-s32 Task_MapEnm02_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* w = p;
+s32 Task_MapEnm02_1(MapEnmWork* p) {
+    MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -830,7 +830,7 @@ s32 Task_MapEnm02_1(UnkStruct_080E590C* p) {
     }
 
     if (w->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))w->update)(w);
+        ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
             ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
@@ -840,11 +840,11 @@ s32 Task_MapEnm02_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm02_2(UnkStruct_080E590C* p) {
+void Task_MapEnm02_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm02_3(UnkStruct_080E590C* p) {
+void Task_MapEnm02_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
@@ -933,8 +933,8 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
 void func_080F02A0(UnkStruct_080F023C* w) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&w->unk_08;
 
-    func_080E5D6C((UnkStruct_080E590C*)w, 0, 3);
-    func_080E5DEC((UnkStruct_080E590C*)w);
+    func_080E5D6C((MapEnmWork*)w, 0, 3);
+    func_080E5DEC((MapEnmWork*)w);
     TaskPoolUpdate(&w->tasks);
     func_080F0108(w, 0);
 
@@ -950,7 +950,7 @@ void func_080F02A0(UnkStruct_080F023C* w) {
         q->unk_10 = 0;
         w->update = func_080F0348;
     }
-    func_080E5F50((UnkStruct_080E590C*)w);
+    func_080E5F50((MapEnmWork*)w);
 }
 
 void func_080F0348(UnkStruct_080F023C* w) {
@@ -959,8 +959,8 @@ void func_080F0348(UnkStruct_080F023C* w) {
     UnkStruct_080DFF1C tmp;
     s32 n;
 
-    func_080E5D6C((UnkStruct_080E590C*)w, 1, 3);
-    func_080E5DEC((UnkStruct_080E590C*)w);
+    func_080E5D6C((MapEnmWork*)w, 1, 3);
+    func_080E5DEC((MapEnmWork*)w);
     TaskPoolUpdate(&w->tasks);
     func_080F0108(w, 1);
     tmp = *(UnkStruct_080DFF1C*)v;
@@ -995,7 +995,7 @@ void func_080F0348(UnkStruct_080F023C* w) {
         v->unk_0C = n;
     }
 
-    func_080E5F50((UnkStruct_080E590C*)w);
+    func_080E5F50((MapEnmWork*)w);
 }
 
 void func_080F0470(UnkStruct_080F023C* w) {
@@ -1003,8 +1003,8 @@ void func_080F0470(UnkStruct_080F023C* w) {
     UnkStruct_080DFF1C save;
     s32 r;
 
-    func_080E5D6C((UnkStruct_080E590C*)w, 1, 3);
-    func_080E5DEC((UnkStruct_080E590C*)w);
+    func_080E5D6C((MapEnmWork*)w, 1, 3);
+    func_080E5DEC((MapEnmWork*)w);
     TaskPoolUpdate(&w->tasks);
     func_080F0108(w, 1);
     save = *(UnkStruct_080DFF1C*)q;
@@ -1030,21 +1030,21 @@ void func_080F0470(UnkStruct_080F023C* w) {
     } else {
         q->unk_0C = r;
     }
-    func_080E5F50((UnkStruct_080E590C*)w);
+    func_080E5F50((MapEnmWork*)w);
 }
 
 void Task_MapEnm03_0(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
-    func_080E6394((UnkStruct_080E590C*)w, arg);
+    func_080E6394((MapEnmWork*)w, arg);
     w->update = func_080F02A0;
-    func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
+    func_080E5D6C((MapEnmWork*)w, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderSetDisabled(&w->collider, 0);
     w->unk_D0 = 0;
     *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
 }
 
-s32 Task_MapEnm03_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* w = p;
+s32 Task_MapEnm03_1(MapEnmWork* p) {
+    MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1053,7 +1053,7 @@ s32 Task_MapEnm03_1(UnkStruct_080E590C* p) {
     }
 
     if (w->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))w->update)(w);
+        ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
             ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
@@ -1063,11 +1063,11 @@ s32 Task_MapEnm03_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm03_2(UnkStruct_080E590C* p) {
+void Task_MapEnm03_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm03_3(UnkStruct_080E590C* p) {
+void Task_MapEnm03_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
@@ -1139,8 +1139,8 @@ void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
     }
 }
 
-void func_080F07EC(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* r = p;
+void func_080F07EC(MapEnmWork* p) {
+    MapEnmWork* r = p;
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     UnkStruct_080DFF1C tmp;
 
@@ -1179,7 +1179,7 @@ void func_080F07EC(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F08E4(UnkStruct_080E590C* p) {
+void func_080F08E4(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     UnkStruct_080DFF1C t;
     s32 dx;
@@ -1261,7 +1261,7 @@ void func_080F08E4(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0A44(UnkStruct_080E590C* p) {
+void func_080F0A44(MapEnmWork* p) {
     func_080E5D6C(p, 2, 0);
     TaskPoolUpdate(p->unk_E4);
 
@@ -1273,7 +1273,7 @@ void func_080F0A44(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0A84(UnkStruct_080E590C* p) {
+void func_080F0A84(MapEnmWork* p) {
     func_080E5D6C(p, 0, 0);
     p->gfx = AnimGetGfx(p->anim);
     TaskPoolUpdate(p->unk_E4);
@@ -1285,7 +1285,7 @@ void func_080F0A84(UnkStruct_080E590C* p) {
     }
 }
 
-void Task_MapEnm04_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm04_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     UnkStruct_080EFA30* w = (UnkStruct_080EFA30*)p;
 
     func_080E6394(p, q);
@@ -1305,8 +1305,8 @@ void Task_MapEnm04_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
 }
 
-s32 Task_MapEnm04_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+s32 Task_MapEnm04_1(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1319,7 +1319,7 @@ s32 Task_MapEnm04_1(UnkStruct_080E590C* p) {
     }
 
     if (p->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->update)(q);
+        ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
@@ -1330,16 +1330,16 @@ s32 Task_MapEnm04_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm04_2(UnkStruct_080E590C* p) {
+void Task_MapEnm04_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm04_3(UnkStruct_080E590C* p) {
+void Task_MapEnm04_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
-void func_080F0BE8(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+void func_080F0BE8(MapEnmWork* p) {
+    MapEnmWork* q = p;
 
     func_080E5D6C(p, 0, 0);
     TaskPoolUpdate(p->unk_E4);
@@ -1360,8 +1360,8 @@ void func_080F0BE8(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0C68(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+void func_080F0C68(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080EF4BC* r = (UnkStruct_080EF4BC*)&p->unk_08;
 
     func_080E5D6C(p, 1, 1);
@@ -1386,7 +1386,7 @@ void func_080F0C68(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0D00(UnkStruct_080E590C* p) {
+void func_080F0D00(MapEnmWork* p) {
     p->unk_04 |= 4;
     func_080E5D6C(p, 2, 0);
     func_080E5DEC(p);
@@ -1397,7 +1397,7 @@ void func_080F0D00(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0D40(UnkStruct_080E590C* p) {
+void func_080F0D40(MapEnmWork* p) {
     func_080E5D6C(p, 3, 0);
     TaskPoolUpdate(p->unk_E4);
 
@@ -1409,7 +1409,7 @@ void func_080F0D40(UnkStruct_080E590C* p) {
     }
 }
 
-void Task_MapEnm05_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm05_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -1423,8 +1423,8 @@ void Task_MapEnm05_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_D0 = 0;
 }
 
-s32 Task_MapEnm05_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+s32 Task_MapEnm05_1(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1437,7 +1437,7 @@ s32 Task_MapEnm05_1(UnkStruct_080E590C* p) {
     }
 
     if (p->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->update)(q);
+        ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
@@ -1448,16 +1448,16 @@ s32 Task_MapEnm05_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm05_2(UnkStruct_080E590C* p) {
+void Task_MapEnm05_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm05_3(UnkStruct_080E590C* p) {
+void Task_MapEnm05_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 
-void func_080F0E6C(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+void func_080F0E6C(MapEnmWork* p) {
+    MapEnmWork* q = p;
 
     func_080E5D6C(p, 0, 0);
     TaskPoolUpdate(p->unk_E4);
@@ -1478,8 +1478,8 @@ void func_080F0E6C(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0EEC(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+void func_080F0EEC(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080EF4BC* r = (UnkStruct_080EF4BC*)&p->unk_08;
 
     func_080E5D6C(p, 1, 1);
@@ -1504,7 +1504,7 @@ void func_080F0EEC(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0F84(UnkStruct_080E590C* p) {
+void func_080F0F84(MapEnmWork* p) {
     p->unk_04 |= 4;
     func_080E5D6C(p, 2, 0);
     func_080E5DEC(p);
@@ -1515,7 +1515,7 @@ void func_080F0F84(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080F0FC4(UnkStruct_080E590C* p) {
+void func_080F0FC4(MapEnmWork* p) {
     func_080E5D6C(p, 3, 0);
     TaskPoolUpdate(p->unk_E4);
 
@@ -1527,7 +1527,7 @@ void func_080F0FC4(UnkStruct_080E590C* p) {
     }
 }
 
-void Task_MapEnm06_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void Task_MapEnm06_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     func_080E6394(p, q);
 
     if (p->update == 0) {
@@ -1541,8 +1541,8 @@ void Task_MapEnm06_0(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_D0 = 0;
 }
 
-s32 Task_MapEnm06_1(UnkStruct_080E590C* p) {
-    UnkStruct_080E590C* q = p;
+s32 Task_MapEnm06_1(MapEnmWork* p) {
+    MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1555,7 +1555,7 @@ s32 Task_MapEnm06_1(UnkStruct_080E590C* p) {
     }
 
     if (p->update != 0) {
-        ((void (*)(UnkStruct_080E590C*))p->update)(q);
+        ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
             ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
@@ -1566,11 +1566,11 @@ s32 Task_MapEnm06_1(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void Task_MapEnm06_2(UnkStruct_080E590C* p) {
+void Task_MapEnm06_2(MapEnmWork* p) {
     func_080E64D4(p);
 }
 
-void Task_MapEnm06_3(UnkStruct_080E590C* p) {
+void Task_MapEnm06_3(MapEnmWork* p) {
     func_080E657C(p);
 }
 

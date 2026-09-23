@@ -41,7 +41,7 @@
 #include "game.h"
 #include "bos4_api.h"
 
-u8 func_080A25E0(UnkStruct_080A2678* w, void* a);
+u8 func_080A25E0(LvupMsgWork* w, void* a);
 void func_080A27EC(u8* work);
 extern u8 gUnk_0815A09A[];
 extern u8 gUnk_0815A198[];
@@ -51,7 +51,7 @@ extern u8 gUnk_0815A0A0[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_08895EDC[];
 #endif
-void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
+void func_080A23A0(LvupMsgWork* w, UnkStruct_080A23A0_Args* a) {
     struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
     InitTextSlots(w->unk_000, 20);
@@ -124,12 +124,12 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 }
 
-s32 func_080A25B8(UnkStruct_080A2678* w, void* a) {
+s32 func_080A25B8(LvupMsgWork* w, void* a) {
     SetTaskUpdate(a, func_080A25E0);
     w->unk_2B1++;
     return 1;
 }
-u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
+u8 func_080A25E0(LvupMsgWork* w, void* a) {
     s8* counter = &w->unk_2AC;
 
     if (*counter > 0) {
@@ -148,7 +148,7 @@ u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
     }
     return 1;
 }
-void func_080A2678(UnkStruct_080A2678* w) {
+void func_080A2678(LvupMsgWork* w) {
 #ifdef VERSION_JP
     w->x2 = w->x + w->unk_2AD * 0xA00;
     w->x3 = w->x2 + w->unk_2AE * 0xA00;

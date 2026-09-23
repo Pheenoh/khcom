@@ -247,7 +247,7 @@ typedef struct UnkStruct_080E6394 {
     u16 unk_34;
 } UnkStruct_080E6394;
 
-typedef struct UnkStruct_080E590C {
+typedef struct MapEnmWork {
     const UnkStruct_0984BC9C* unk_00;
     u16 unk_04;
     u16 unk_06;
@@ -270,7 +270,7 @@ typedef struct UnkStruct_080E590C {
     void* gfx;
     s16 unk_C8;
     s16 unk_CA;
-    void (*update)(struct UnkStruct_080E590C*);
+    void (*update)(struct MapEnmWork*);
     u16 unk_D0;
     u16 unk_D2;
     s32 unk_D4;
@@ -279,7 +279,7 @@ typedef struct UnkStruct_080E590C {
     s16 unk_E0;
     u8 unk_E2[0x02];
     u8 unk_E4[0x14];
-} UnkStruct_080E590C;
+} MapEnmWork;
 
 typedef struct LoadGameMenuWork {
     u8* palette2;
@@ -291,7 +291,7 @@ typedef struct LoadGameMenuWork {
     u8* palette;
     void* tiles;
     s32 y3;
-    UnkStruct_080E590C* palette7;
+    MapEnmWork* palette7;
     u8 unk_03C[0x120];
     u8 unk_15C;
     u8 unk_15D;
@@ -332,7 +332,7 @@ typedef struct NewGameSlotMenuWork {
     u8* palette;
     void* tiles;
     s32 y3;
-    UnkStruct_080E590C* palette8;
+    MapEnmWork* palette8;
     u8 unk_040[0x120];
     u8 unk_160;
     u8 unk_161;
@@ -1045,7 +1045,7 @@ typedef struct UnkStruct_080EFA30 {
     u8 unk_F9[0x03];
 } UnkStruct_080EFA30;
 
-typedef struct UnkStruct_080EC760 {
+typedef struct MapFixWork {
     u8 unk_00;
     u8 unk_01[0x03];
     u8 unk_04[5][0x5C];
@@ -1055,7 +1055,7 @@ typedef struct UnkStruct_080EC760 {
     u8 unk_1E5;
     u8 unk_1E6;
 #endif
-} UnkStruct_080EC760;
+} MapFixWork;
 
 typedef struct UnkStruct_080ECFE8 {
     u8 unk_000[0x20];
@@ -1083,7 +1083,7 @@ typedef struct UnkStruct_0984B968 {
     void* unk_20;
 } UnkStruct_0984B968;
 
-typedef struct UnkStruct_080ECA88 {
+typedef struct MapDoorWork {
     UnkStruct_080DFB7C* unk_00;
     s32 unk_04;
     s32 unk_08;
@@ -1099,12 +1099,12 @@ typedef struct UnkStruct_080ECA88 {
     void* unk_60;
     void* unk_64;
     void* unk_68;
-    u8 (*update)(struct UnkStruct_080ECA88*);
+    u8 (*update)(struct MapDoorWork*);
     u8 unk_70;
     u8 unk_71;
     u8 unk_72[0x02];
     TaskPool tasks;
-} UnkStruct_080ECA88;
+} MapDoorWork;
 
 typedef struct UnkStruct_080ED06C {
     FldRes* palette;
@@ -1394,7 +1394,7 @@ extern u8 gUnk_0937E90A[];
 extern u8 gUnk_0938044A[];
 extern u8 gUnk_0938D282[];
 extern u8 gUnk_09618338[];
-void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
+void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q);
 
 s32 func_080EB7A0(u8 a);
 s32 func_080EE824(MapSaveWork* w);
@@ -1424,9 +1424,9 @@ s32 Task_MapSave_1(MapSaveWork* w);
 void func_080E4B34(void);
 void RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
-s32 func_080ECAC8(UnkStruct_080ECA88* p);
-s32 func_080ECBC8(UnkStruct_080ECA88* p);
-s32 func_080ECC54(UnkStruct_080ECA88* p);
+s32 func_080ECAC8(MapDoorWork* p);
+s32 func_080ECBC8(MapDoorWork* p);
+s32 func_080ECC54(MapDoorWork* p);
 void func_080E9078(s32 x, s32 y, s32 z);
 u8 func_080840E4(void);
 MapCell* func_080E08BC(s16 x, s16 y);
@@ -1444,7 +1444,7 @@ void func_080E5B90(UnkStruct_080E5B90* p, const UnkStruct_0984BC9C* q);
 u8 func_080E59D8(UnkStruct_080E5B90* w);
 u8 func_080E5AC8(UnkStruct_080E5B90* w);
 void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b);
-void func_080E5EAC(UnkStruct_080E590C* p);
+void func_080E5EAC(MapEnmWork* p);
 u8* func_080E8644(void* a, u16 b, u16 c);
 void* func_080E8668(u8 a);
 u8 func_080E8374(UnkStruct_080E8374* p);
@@ -1527,13 +1527,13 @@ void func_080E49DC(u16 a, u16 b);
 void func_080E590C(UnkStruct_080E5B90* p);
 void func_080E5938(UnkStruct_080E5B90* p);
 s32 func_080E5968(UnkStruct_080E5B90* p);
-void func_080E5CD4(UnkStruct_080E590C* p);
-void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a);
-void func_080E5DEC(UnkStruct_080E590C* p);
+void func_080E5CD4(MapEnmWork* p);
+void func_080E5D6C(MapEnmWork* p, u8 n, u16 a);
+void func_080E5DEC(MapEnmWork* p);
 u8 func_080E5E44(void);
-void func_080E5F50(UnkStruct_080E590C* p);
-s32 func_080E5FB4(UnkStruct_080E590C* p);
-void func_080E6034(UnkStruct_080E590C* p);
+void func_080E5F50(MapEnmWork* p);
+s32 func_080E5FB4(MapEnmWork* p);
+void func_080E6034(MapEnmWork* p);
 void func_080E607C(void);
 void func_080E6100(void);
 void func_080E6178(void);
@@ -1543,7 +1543,7 @@ u8 func_080E68A4(s16 x, s16 y, u8 n);
 s32 func_080E68E4(s16 x, s16 y, u8 w, u8 h, u8 n);
 s32 func_080E6968(s16 a, s16 b, u8 c);
 s32 func_080E6A80(s16 x, s16 y, u16 n);
-void func_080E657C(UnkStruct_080E590C* p);
+void func_080E657C(MapEnmWork* p);
 s32 func_080E6804(s16 x, s16 y);
 void func_080E6998(s16 x, s16 y, u8 w, u8 h);
 s16 func_080E6A14(s16 x, s16 y);
@@ -1633,8 +1633,8 @@ void func_080EB93C(u8 a, u32 v);
 void func_080ED0B8(FldRes* p, u8 a, u16 v);
 void func_080ED14C(FldRes* p, u8 a, u32 v);
 s32 Task_MapFix_1(u8* work);
-void func_080ECA88(UnkStruct_080ECA88* p);
-u8 func_080ECC8C(UnkStruct_080ECA88* p);
+void func_080ECA88(MapDoorWork* p);
+u8 func_080ECC8C(MapDoorWork* p);
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a);
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a);
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a);
@@ -1642,7 +1642,7 @@ void func_080EE580(UnkStruct_080EE580* p, u8 a);
 void func_080EE5E0(u8 a);
 
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
-void func_080E64D4(UnkStruct_080E590C* p);
+void func_080E64D4(MapEnmWork* p);
 void func_080EBA58(u8 a);
 void func_080EE760(u8* work, u8 i);
 void func_080E00E4(s32 a, s32 b);
@@ -1652,7 +1652,7 @@ void func_080EB12C(NewGameSlotMenuWork* w);
 void func_080EB698(void);
 void func_080EC424(void);
 s32 Task_MapRnd_1(MapRndWork* w);
-void func_080ECAA8(UnkStruct_080ECA88* p);
+void func_080ECAA8(MapDoorWork* p);
 void func_080EE62C(u16 v);
 void func_080EE6AC(u32 t);
 void func_080E0C1C(u16 a, u16 b);

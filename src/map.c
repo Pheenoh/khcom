@@ -3525,7 +3525,7 @@ void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b) {
     }
 }
 
-void func_080E5CD4(UnkStruct_080E590C* p) {
+void func_080E5CD4(MapEnmWork* p) {
     switch (gUnk_0203C7AC->unk_0D) {
     case 4:
         p->unk_04 |= 8;
@@ -3546,7 +3546,7 @@ void func_080E5CD4(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
+void func_080E5D6C(MapEnmWork* p, u8 n, u16 a) {
     const AnimDef* q = p->unk_00->animDef;
 
     switch (p->unk_1C >> 6) {
@@ -3571,7 +3571,7 @@ void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
     SetObjTileSource(p->tiles, q->tiles);
 }
 
-void func_080E5DEC(UnkStruct_080E590C* p) {
+void func_080E5DEC(MapEnmWork* p) {
     if (gUnk_02039BA0->unk_70 & 0x10000) {
         if (AnimIsFrameEnding(p->anim)) {
             return;
@@ -3594,7 +3594,7 @@ u8 func_080E5E44(void) {
     return v + gUnk_09EF6A34[gUnk_0203C590.unk_04];
 }
 
-void func_080E5EAC(UnkStruct_080E590C* p) {
+void func_080E5EAC(MapEnmWork* p) {
     gGameState.flags |= 2;
     ColliderSetDisabled(p->unk_48, 1);
     gUnk_0203C7AC->unk_00 |= 2;
@@ -3612,7 +3612,7 @@ void func_080E5EAC(UnkStruct_080E590C* p) {
     }
 }
 
-void func_080E5F50(UnkStruct_080E590C* p) {
+void func_080E5F50(MapEnmWork* p) {
     if (p->unk_74 != 0) {
         if ((gUnk_0203C7AC->unk_00 & 4) == 0 && ColliderIsTouchingType(p->unk_48, 1)) {
             func_080E5EAC(p);
@@ -3626,7 +3626,7 @@ void func_080E5F50(UnkStruct_080E590C* p) {
     }
 }
 
-s32 func_080E5FB4(UnkStruct_080E590C* p) {
+s32 func_080E5FB4(MapEnmWork* p) {
     if (func_080E02E0(&p->unk_08, p->unk_C8 / 2, p->unk_CA / 2)) {
         gUnk_0203C7AC->unk_00 |= 0x80;
         gUnk_0203C7AC->unk_00 |= 4;
@@ -3642,7 +3642,7 @@ s32 func_080E5FB4(UnkStruct_080E590C* p) {
     return 0;
 }
 
-void func_080E6034(UnkStruct_080E590C* p) {
+void func_080E6034(MapEnmWork* p) {
     UnkStruct_080E6034* q = ListPoolFirstFree(gGameState.unk_0E8);
 
     if (q != 0) {
@@ -3796,7 +3796,7 @@ void func_080E6264(void) {
     TaskCreate(gUnk_02039BA0->unk_B4, d->desc, &w);
 }
 
-void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&p->unk_08;
     const UnkStruct_0984BC9C* d = q->unk_00;
 
@@ -3840,7 +3840,7 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     func_080E5CD4(p);
 }
 
-void func_080E64D4(UnkStruct_080E590C* p) {
+void func_080E64D4(MapEnmWork* p) {
     UnkStruct_080E64D4* q = (UnkStruct_080E64D4*)&p->unk_08;
     u16 flags;
     u16 v;
@@ -3873,7 +3873,7 @@ void func_080E64D4(UnkStruct_080E590C* p) {
     TaskPoolDraw(p->unk_E4);
 }
 
-void func_080E657C(UnkStruct_080E590C* p) {
+void func_080E657C(MapEnmWork* p) {
     UnkStruct_080E6034* q;
 
     if (gGameState.unk_000 != 0 && (p->unk_04 & 4) == 0 &&
@@ -7752,7 +7752,7 @@ void Task_MapRnd_3(TaskPool* pool) {
     func_080E4B34();
 }
 
-void func_080EC760(UnkStruct_080EC760* p, UnkStruct_080EC760Entry* q) {
+void func_080EC760(MapFixWork* p, UnkStruct_080EC760Entry* q) {
     s32 i;
 
     p->unk_00 = 0;
@@ -7774,7 +7774,7 @@ void func_080EC760(UnkStruct_080EC760* p, UnkStruct_080EC760Entry* q) {
     }
 }
 
-void Task_MapFix_0(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
+void Task_MapFix_0(MapFixWork* w, UnkStruct_09EF8370* p) {
     UnkStruct_080EF4BC v;
 
     switch (gUnk_0203C590.unk_07) {
@@ -7940,17 +7940,17 @@ void Task_MapFix_3(u8* work) {
     func_080E58E4();
 }
 
-void func_080ECA88(UnkStruct_080ECA88* p) {
+void func_080ECA88(MapDoorWork* p) {
     UpdateSpriteFrameTiles(p->tiles, p->unk_4C, p->unk_54);
     UpdateSpriteFrameTiles(p->tiles2, p->unk_60, p->unk_64);
 }
 
-void func_080ECAA8(UnkStruct_080ECA88* p) {
+void func_080ECAA8(MapDoorWork* p) {
     UpdateSpriteFrameTiles(p->tiles, p->unk_4C, p->unk_50);
     UpdateSpriteFrameTiles(p->tiles2, p->unk_60, p->unk_68);
 }
 
-s32 func_080ECAC8(UnkStruct_080ECA88* p) {
+s32 func_080ECAC8(MapDoorWork* p) {
     UnkStruct_080DFB7C* flags = p->unk_00;
     UnkStruct_080DFF1C* e = (UnkStruct_080DFF1C*)&p->unk_04;
 
@@ -7977,7 +7977,7 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-s32 func_080ECBC8(UnkStruct_080ECA88* p) {
+s32 func_080ECBC8(MapDoorWork* p) {
     UnkStruct_080DFB7C* flags = p->unk_00;
     void* t = func_08093BF8();
 
@@ -7999,7 +7999,7 @@ s32 func_080ECBC8(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-s32 func_080ECC54(UnkStruct_080ECA88* p) {
+s32 func_080ECC54(MapDoorWork* p) {
     UnkStruct_080DFB7C* flags = p->unk_00;
     u16 v;
 
@@ -8013,11 +8013,11 @@ s32 func_080ECC54(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-u8 func_080ECC8C(UnkStruct_080ECA88* p) {
+u8 func_080ECC8C(MapDoorWork* p) {
     return 1;
 }
 
-void Task_MapDoor_0(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
+void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
     UnkStruct_080DFF1C* v = &e->unk_00;
     const UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
@@ -8099,7 +8099,7 @@ void Task_MapDoor_0(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     TaskPoolInit(&w->tasks, 2);
 }
 
-s32 Task_MapDoor_1(UnkStruct_080ECA88* w) {
+s32 Task_MapDoor_1(MapDoorWork* w) {
     if (gUnk_02039BA0->unk_70 & 0x40000) {
         if (w->unk_71 == 0) {
             w->unk_70 = 0;
@@ -8119,7 +8119,7 @@ s32 Task_MapDoor_1(UnkStruct_080ECA88* w) {
     return 1;
 }
 
-void Task_MapDoor_2(UnkStruct_080ECA88* p) {
+void Task_MapDoor_2(MapDoorWork* p) {
     UnkStruct_080DFB7C* f = p->unk_00;
     u16 sx;
     u16 sy;
@@ -8166,7 +8166,7 @@ void Task_MapDoor_2(UnkStruct_080ECA88* p) {
     }
 }
 
-void Task_MapDoor_3(UnkStruct_080ECA88* p) {
+void Task_MapDoor_3(MapDoorWork* p) {
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
     ReleaseObjTiles(p->tiles2);

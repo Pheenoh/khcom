@@ -1508,7 +1508,7 @@ typedef struct UnkStruct_080A23A0_Args {
     u32 unk_04;
 } UnkStruct_080A23A0_Args;
 
-typedef struct UnkStruct_080A2678 {
+typedef struct LvupMsgWork {
     TextSlot unk_000[20];
     TextSlot unk_0A0[20];
     TextSlot unk_140[20];
@@ -1536,7 +1536,7 @@ typedef struct UnkStruct_080A2678 {
 #endif
     u8 unk_2B1;
     u8* unk_2B4;
-} UnkStruct_080A2678;
+} LvupMsgWork;
 
 typedef struct DeckConfirmWork {
     u8 unk_000[0x280];
