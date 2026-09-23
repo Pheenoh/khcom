@@ -186,8 +186,6 @@ typedef struct BtlRikuWork {
     BtlObj* actor2;
 } BtlRikuWork;
 
-extern u8 gUnk_08F6DD04[];
-
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1E974[];
 extern u8 gUnk_08B1E97E[];

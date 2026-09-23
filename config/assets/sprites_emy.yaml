@@ -26,6 +26,9 @@ objects:
   - name: sprites_emy_frames_2.s
     start: 0x08963B3C
     end: 0x08B1D828
+  - name: sprites_emy_palettes.s
+    start: 0x08F6DD44
+    end: 0x08F6DD64
   jp:
   - name: sprites_emy_1.c
     start: 0x09EB71F4
@@ -39,6 +42,9 @@ objects:
   - name: sprites_emy_frames_2.s
     start: 0x08957124
     end: 0x08B10E10
+  - name: sprites_emy_palettes.s
+    start: 0x08F6124C
+    end: 0x08F6126C
   eu:
   - name: sprites_emy_1.c
     start: 0x09F5A3D0
@@ -52,6 +58,9 @@ objects:
   - name: sprites_emy_frames_2.s
     start: 0x0898F460
     end: 0x08B4914C
+  - name: sprites_emy_palettes.s
+    start: 0x08F6A29C
+    end: 0x08F6A2BC
 entries:
 - name: gUnk_09EDF778
   record: SpriteTable
@@ -27159,3 +27168,14 @@ entries:
   eu:
     address: 0x08B473CC
     size: 7552
+- name: gUnk_08F6DD44
+  format: palette
+  us:
+    address: 0x08F6DD44
+    size: 32
+  jp:
+    address: 0x08F6124C
+    size: 32
+  eu:
+    address: 0x08F6A29C
+    size: 32

@@ -32,6 +32,9 @@ objects:
   - name: sprites_btl_frames_3.s
     start: 0x08B1D828
     end: 0x08B24C98
+  - name: sprites_btl_palettes.s
+    start: 0x08F6DD04
+    end: 0x08F6DD44
   jp:
   - name: sprites_btl_1.c
     start: 0x09EB6C3C
@@ -51,6 +54,9 @@ objects:
   - name: sprites_btl_frames_3.s
     start: 0x08B10E10
     end: 0x08B18280
+  - name: sprites_btl_palettes.s
+    start: 0x08F6120C
+    end: 0x08F6124C
   eu:
   - name: sprites_btl_1.c
     start: 0x09F59E18
@@ -70,6 +76,9 @@ objects:
   - name: sprites_btl_frames_3.s
     start: 0x08B4914C
     end: 0x08B4FB78
+  - name: sprites_btl_palettes.s
+    start: 0x08F6A25C
+    end: 0x08F6A29C
 entries:
 - name: gUnk_09EE11D8_jp
   record: AnimTable
@@ -6672,3 +6681,14 @@ entries:
   - [16632, 32772, 84]
   eu:
     address: 0x08B4AC2C
+- name: gUnk_08F6DD04
+  format: palette
+  us:
+    address: 0x08F6DD04
+    size: 64
+  jp:
+    address: 0x08F6120C
+    size: 64
+  eu:
+    address: 0x08F6A25C
+    size: 64

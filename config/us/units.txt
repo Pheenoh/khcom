@@ -133,11 +133,12 @@ battle_background_palettes_1.s
 event_background_palettes_1.s
 battle_background_palettes_2.s
 sprite_palettes_2.s
-asset_gfx_gap_1_at_08F694C4_at_08F69C04.s
+sprite_palettes_20.s
 battle_bg_animation_palettes.s
 romcri_background_palettes.s
 sprite_palettes_3.s
-asset_gfx_gap_1_at_08F694C4_at_08F6DD04.s
+sprites_btl_palettes.s
+sprites_emy_palettes.s
 jiminy_journal_palettes.s
 lockon.c
 debug_font_tiles.s

@@ -56,6 +56,9 @@ objects:
   - name: sprite_palettes_18.s
     start: 0x09D6CF34
     end: 0x09D6D134
+  - name: sprite_palettes_20.s
+    start: 0x08F69C04
+    end: 0x08F69C24
   jp:
   - name: sprite_palettes_1.s
     start: 0x08F5B88C
@@ -111,6 +114,9 @@ objects:
   - name: sprite_palettes_18.s
     start: 0x09D46440
     end: 0x09D46640
+  - name: sprite_palettes_20.s
+    start: 0x08F5D10C
+    end: 0x08F5D12C
   eu:
   - name: sprite_palettes_1.s
     start: 0x08F648DC
@@ -169,6 +175,9 @@ objects:
   - name: sprite_palettes_19.s
     start: 0x09DDCE60
     end: 0x09DDD060
+  - name: sprite_palettes_20.s
+    start: 0x08F6615C
+    end: 0x08F6617C
 entries:
 - name: goofy
   format: palette
@@ -6768,4 +6777,15 @@ entries:
   format: palette
   eu:
     address: 0x08F6A6DC
+    size: 32
+- name: gUnk_08F69C04
+  format: palette
+  us:
+    address: 0x08F69C04
+    size: 32
+  jp:
+    address: 0x08F5D10C
+    size: 32
+  eu:
+    address: 0x08F6615C
     size: 32
