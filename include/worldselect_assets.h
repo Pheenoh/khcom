@@ -21,7 +21,6 @@ extern u16 gUnk_09A3CBFC[16];
 extern u16 gUnk_09A3CC1C[16];
 
 extern u8 gUnk_09A3CDDC[];
-extern u8 gUnk_099EDE7C[];
 extern u8 gUnk_09A3CC3C[];
 
 #ifdef VERSION_EU

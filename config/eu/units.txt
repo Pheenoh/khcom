@@ -543,7 +543,12 @@ sprites_moogle_shop_frames.s
 sprites_worldinspect_frames_2.s
 sprites_bos5_frames_2.s
 sprites_worldinspect_frames_3.s
-asset_gfx_gap_195_at_099A92DC.s
+sprites_bos5_tiles.s
+asset_gfx_gap_192.s
+asset_gfx_gap_195_at_099FB53C.s
+sprites_bos5_maps.s
+asset_gfx_gap_195_at_099FB53C_at_09A840A0.s
+asset_gfx_gap_195_at_09A324DC.s
 sprite_palettes_15.s
 asset_gfx_gap_195_at_09A3D09C.s
 sprite_palettes_16.s

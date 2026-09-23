@@ -9,52 +9,46 @@ regions:
       size: 1280
       kind: Tilemap
       sha256: aae670c649cb5a8c010c4a90cc2363cbf8f57c9787b42f4d549b9e38407686c8
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_195_at_099FB53C_at_09A840A0.s
     - name: gUnkEu_09A84FA0
       address: '0x9a84fa0'
       size: 1280
       kind: Tilemap
       sha256: 5a262f4e6539cbd815c5361f19addd22fab5d42d49d6a5cc405054539d1c0bfd
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_195_at_099FB53C_at_09A840A0.s
     - name: gUnkEu_09A84AA0
       address: '0x9a84aa0'
       size: 1280
       kind: Tilemap
       sha256: a5309379a8a114f81bd09b529269a780dbe19e94395c85a060d44a91cad5cd3a
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_195_at_099FB53C_at_09A840A0.s
     - name: gUnkEu_09A845A0
       address: '0x9a845a0'
       size: 1280
       kind: Tilemap
       sha256: 97589a2afd3e223dd46ba5f810dfe636c9beaa60f2fec334ce2a9e8b18842981
-      unit: asset_gfx_gap_195_at_099A92DC.s
-    - name: gUnkEu_09A03C80
-      address: '0x9a03c80'
-      size: 26624
-      kind: Tiles4bpp
-      sha256: 0f88953f76f07220e4c402d4dd1cde580dda284d43be8ff427f1e7008c17bfb0
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_195_at_099FB53C_at_09A840A0.s
     - name: gUnkEu_09A0A480
       address: '0x9a0a480'
       size: 26624
       kind: Tiles4bpp
       sha256: a53ed745d8847561ea953fe2414199f439135e38e8902564415d2303b6a4a80e
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_192.s
     - name: gUnkEu_09A1DC80
       address: '0x9a1dc80'
       size: 26624
       kind: Tiles4bpp
       sha256: 9600b2287108a92813253c05d06d11976b0239669dfc802daef30ea89967ae9f
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_192.s
     - name: gUnkEu_09A17480
       address: '0x9a17480'
       size: 26624
       kind: Tiles4bpp
       sha256: b9be3646f609c4ca531c58685b52063942da3b9f4f976e3d11c9a159063e3084
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_192.s
     - name: gUnkEu_09A10C80
       address: '0x9a10c80'
       size: 26624
       kind: Tiles4bpp
       sha256: 195a549085585374b4f316163858bf3d0d50ae9c4baef05b06976f186e23cd60
-      unit: asset_gfx_gap_195_at_099A92DC.s
+      unit: asset_gfx_gap_192.s

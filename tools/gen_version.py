@@ -1987,7 +1987,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_099AAC2C": 0x099AAC2C,
         "gUnkEu_09A9A880": 0x09A9A880,
         "gUnkEu_09A9A8A0": 0x09A9A8A0,
-        "gUnkEu_099FBE00": 0x099FBE00,
         "gUnkEu_094C6BFC": 0x094C6BFC,
         "gUnkEu_094C6C18": 0x094C6C18,
         "gUnkEu_094C7024": 0x094C7024,

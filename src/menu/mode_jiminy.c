@@ -6,6 +6,7 @@
 #include "mode_jiminy.h"
 #include "sprites_msg.h"
 #include "jiminy_journal.h"
+#include "sprites_bos5.h"
 
 JiminyWork* gJiminyWork;
 
@@ -794,7 +795,7 @@ void func_0805BAE4(void) {
             if (gJiminyWork->detail->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
                 LoadObjPaletteBank(gJiminyWork->palette8->index, gUnkEu_09A9A8A0);
                 LoadObjPaletteBank(gJiminyWork->palette8->index + 1, gUnkEu_09A9A8A0 + 0x20);
-                SetObjTileSource(gJiminyWork->tiles7, gUnkEu_099FBE00);
+                SetObjTileSource(gJiminyWork->tiles7, gUnk_099EDE7C);
             } else
 #endif
             {

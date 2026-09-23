@@ -400,7 +400,7 @@ void* gUnkEu_09F847D4[5] = {
 };
 
 void* gUnkEu_09F847E8[5] = {
-    gUnkEu_09A03C80,
+    gUnk_099F4D3C,
     gUnkEu_09A0A480,
     gUnkEu_09A1DC80,
     gUnkEu_09A17480,
