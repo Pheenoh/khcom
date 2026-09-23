@@ -75,7 +75,7 @@ typedef struct PooWork {
     u8 unk_25;
     u16 unk_26;
     PooPos pos;
-    u8 unk_38;
+    u8 angle;
     u8 unk_39;
     u8 unk_3A;
     u8 unk_3B;
@@ -246,7 +246,7 @@ typedef struct PooAnim {
 } PooAnim;
 
 typedef struct PooAnimWork {
-    void* unk_00;
+    void* tiles;
     void* unk_04;
     u8 unk_08[0x04];
     u8 unk_0C[0x1A];
@@ -458,7 +458,7 @@ typedef struct PooBalloonWork {
     Task* task;
     s32 unk_C8;
     u16 unk_CC;
-    u16 unk_CE;
+    u16 angle;
 } PooBalloonWork;
 
 typedef struct PooOwlBalloonWork {
@@ -490,7 +490,7 @@ typedef struct PooPrizeWork {
     u16 unk_82;
     s32 unk_84;
     s32 unk_88;
-    u8 unk_8C;
+    u8 angle;
     u8 unk_8D;
     u16 unk_8E;
     s32 unk_90;
@@ -571,9 +571,9 @@ typedef struct PooMapObjHitWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_30[0x04];
     const PooMapObjHitDesc* desc;
     u8 unk_38;
@@ -593,9 +593,9 @@ typedef struct PooLeafWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_30[0x04];
     u8 unk_34[0x2E];
     u16 unk_62;
@@ -628,8 +628,8 @@ typedef struct PooStumpWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    s32 unk_24;
-    s32 unk_28;
+    s32 x;
+    s32 y;
     s32 unk_2C;
     u8 unk_30[0x04];
     u8 collider[0x5C];
@@ -679,9 +679,9 @@ typedef struct PooTanpopoWork {
     void* tiles2;
     void* gfx2;
     u8 anim2[0x18];
-    s32 unk_44;
-    s32 unk_48;
-    s32 unk_4C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_50[0x04];
     u8 unk_54[0x2E];
     u16 unk_82;
@@ -698,8 +698,8 @@ typedef struct PooHoneycombWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    s32 unk_24;
-    s32 unk_28;
+    s32 x;
+    s32 y;
     s32 unk_2C;
     s32 unk_30;
     u16 unk_34;
@@ -717,7 +717,7 @@ typedef struct PooMover {
     s32 unk_28;
     s32 unk_2C;
     u8 unk_30[0x08];
-    u8 unk_38;
+    u8 angle;
     u8 unk_39;
     u8 unk_3A;
     u8 unk_3B;
@@ -819,7 +819,7 @@ typedef struct PooCabbageWork {
     Task* task;
     s32 unk_C0;
     s32 unk_C4;
-    u8 unk_C8;
+    u8 angle;
     u8 unk_C9;
     u16 unk_CA;
     u16 unk_CC;

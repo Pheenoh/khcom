@@ -13,7 +13,7 @@ typedef struct PooPos {
 typedef struct PooActor {
     PooPos pos;
     s32 unk_10;
-    u8 unk_14;
+    u8 angle;
     u8 unk_15[0x05];
     u16 unk_1A;
     u8 unk_1C[0x14];
