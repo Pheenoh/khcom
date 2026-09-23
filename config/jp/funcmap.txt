@@ -748,7 +748,7 @@ func_0801DC80	0x0801dc80	136	0x0801dc80	global
 func_0801DD08	0x0801dd08	136	0x0801dd08	global
 func_0801DD90	0x0801dd90	52	0x0801dd90	global
 func_0801DDC4	0x0801ddc4	32	0x0801ddc4	global
-func_0801DDE4	0x0801dde4	56	0x0801dde4	global
+SetBtlSoraAnimation	0x0801dde4	56	0x0801dde4	global
 func_0801DE1C	0x0801de1c	156	0x0801de1c	global
 func_0801DEB8	0x0801deb8	60	0x0801deb8	global
 func_0801DEF4	0x0801def4	28	0x0801def4	global
@@ -771,7 +771,7 @@ func_080274F0	0x080274f0	76	0x080274f0	global
 func_0802753C	0x0802753c	52	0x0802753c	global
 func_08027570	0x08027570	100	0x08027570	global
 func_080275D4	0x080275d4	256	0x080275d4	global
-func_080276D4	0x080276d4	56	0x080276d4	global
+SetBtlRikuAnimation	0x080276d4	56	0x080276d4	global
 func_0802770C	0x0802770c	156	0x0802770c	global
 func_080277A8	0x080277a8	60	0x080277a8	global
 func_080277E4	0x080277e4	24	0x080277e4	global
@@ -1563,7 +1563,7 @@ func_0807420C	0x0807420c	292	0x08074064	global
 msgwait_yesno_1	0x08074330	80	0x08074188	global
 msgwait_yesno_2	0x08074380	328	0x080741d8	global
 msgwait_yesno_3	0x080744c8	60	0x08074320	global
-func_08074504	0x08074504	96	0x0807435c	global
+HBlankIntrEventScanlineScroll	0x08074504	96	0x0807435c	global
 func_08074564	0x08074564	24	0x080743bc	global
 view_0	0x0807457c	348	0x080743d4	global
 func_080746D8	0x080746d8	32	0x08074530	global
@@ -2620,7 +2620,7 @@ mode_sio_btl_connect_2	0x080aee24	44	0x080aeee8	named
 func_080AEE50	0x080aee50	28	0x080aef14	body
 func_080AEE6C	0x080aee6c	24	0x080aef30	global
 func_080AEE84	0x080aee84	84	0x080aef48	global
-func_080AEED8	0x080aeed8	96	0x080aef9c	body
+SetSioBtlOptionAnimation	0x080aeed8	96	0x080aef9c	body
 mode_sio_btl_option_0	0x080aef38	376	0x080aeffc	named
 func_080AF0B0	0x080af0b0	108	0x080af174	global
 func_080AF11C	0x080af11c	988	0x080af1e0	near
@@ -2667,7 +2667,7 @@ mode_sio_chg_connect_2	0x080b1bb4	44	0x080b1c78	named
 func_080B1BE0	0x080b1be0	28	0x080b1ca4	body
 func_080B1BFC	0x080b1bfc	24	0x080b1cc0	global
 func_080B1C14	0x080b1c14	92	0x080b1cd8	global
-func_080B1C70	0x080b1c70	96	0x080b1d34	body
+SetSioChgCardAnimation	0x080b1c70	96	0x080b1d34	body
 mode_sio_chg_card_0	0x080b1cd0	268	0x080b1d94	named
 func_080B1DDC	0x080b1ddc	148	0x080b1ea0	global
 func_080B1E70	0x080b1e70	1228	0x080b1f34	global
@@ -3243,7 +3243,7 @@ task_poo_owl_0	0x080ce024	144	0x080ce0d8	named
 task_poo_owl_1	0x080ce0b4	292	0x080ce168	named
 task_poo_owl_2	0x080ce1d8	200	0x080ce28c	named
 task_poo_owl_3	0x080ce2a0	36	0x080ce354	named
-func_080CE2C4	0x080ce2c4	76	0x080ce378	global
+SetPooRabbitAnimation	0x080ce2c4	76	0x080ce378	global
 task_poo_rabbit_0	0x080ce310	196	0x080ce3c4	named
 task_poo_rabbit_1	0x080ce3d4	520	0x080ce488	named
 task_poo_rabbit_2	0x080ce5dc	264	0x080ce690	named
@@ -4514,8 +4514,8 @@ func_080FB8DC	0x080fb8dc	12	0x080fb8fc	body
 func_080FB8E8	0x080fb8e8	32	0x080fb908	global
 func_080FB908	0x080fb908	40	0x080fb928	global
 func_080FB930	0x080fb930	228	0x080fb950	global
-func_080FBA14	0x080fba14	56	0x080fba34	global
-func_080FBA4C	0x080fba4c	80	0x080fba6c	global
+MdAnimStart	0x080fba14	56	0x080fba34	global
+MdAnimUpdate	0x080fba4c	80	0x080fba6c	global
 func_080FBA9C	0x080fba9c	28	0x080fbabc	global
 func_080FBAB8	0x080fbab8	404	0x080fbad8	global
 func_080FBC4C	0x080fbc4c	392	0x080fbc6c	global

@@ -297,7 +297,7 @@ void func_080AEE84(void) {
     }
 }
 
-void func_080AEED8(u16 a, u16 b, u16 c) {
+void SetSioBtlOptionAnimation(u16 a, u16 b, u16 c) {
     const SioAnimDef* def = &gUnk_096193E0[b];
     AnimChangeWithTables(&gSioBtlOptionWork->anim2[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioBtlOptionWork->unk_008[a], def->tiles);
@@ -414,7 +414,7 @@ void func_080AF11C(void) {
     for (i = 0; i < 2; i++) {
         gSioBtlOptionWork->unk_008[i] = AllocObjTiles(0xC80, 0);
         AnimInit(&gSioBtlOptionWork->anim2[i], 0, 0);
-        func_080AEED8(i, 0, 0);
+        SetSioBtlOptionAnimation(i, 0, 0);
         gSioBtlOptionWork->gfx6[i] = AnimGetGfx(&gSioBtlOptionWork->anim2[i]);
     }
 
@@ -1388,7 +1388,7 @@ void func_080B0634(void) {
         RequestDma3Copy(gUnk_096B2724, (void*)0x06000020, 0xC0);
 
         if (gSioBtlOptionWork->unk_217 == 0) {
-            func_080AEED8(0, 1, 1);
+            SetSioBtlOptionAnimation(0, 1, 1);
         }
         gSioBtlOptionWork->unk_217 = 1;
     }
@@ -1397,7 +1397,7 @@ void func_080B0634(void) {
         RequestDma3Copy(gUnk_096B2B24, (void*)0x06000300, 0xC0);
 
         if (gSioBtlOptionWork->unk_218 == 0) {
-            func_080AEED8(1, 1, 1);
+            SetSioBtlOptionAnimation(1, 1, 1);
         }
         gSioBtlOptionWork->unk_218 = 1;
     }
@@ -1407,7 +1407,7 @@ void func_080B0634(void) {
         RequestDma3Copy(gUnk_096B2724, (void*)0x06000020, 0xC0);
 
         if (gSioBtlOptionWork->unk_217 == 0) {
-            func_080AEED8(0, 1, 1);
+            SetSioBtlOptionAnimation(0, 1, 1);
         }
         gSioBtlOptionWork->unk_217 = 1;
     }
@@ -1416,7 +1416,7 @@ void func_080B0634(void) {
         RequestDma3Copy(gUnk_096B2B24, (void*)0x06000300, 0xC0);
 
         if (gSioBtlOptionWork->unk_218 == 0) {
-            func_080AEED8(1, 1, 1);
+            SetSioBtlOptionAnimation(1, 1, 1);
         }
         gSioBtlOptionWork->unk_218 = 1;
     }
@@ -1823,8 +1823,8 @@ void func_080B1364(void) {
     RequestDma3Copy(gUnk_096B2664 + 0x400, (void*)0x06000300, 0xC0);
     gSioBtlOptionWork->unk_217 = 0;
     gSioBtlOptionWork->unk_218 = 0;
-    func_080AEED8(0, 0, 0);
-    func_080AEED8(1, 0, 0);
+    SetSioBtlOptionAnimation(0, 0, 0);
+    SetSioBtlOptionAnimation(1, 0, 0);
 }
 
 void func_080B13D0(void) {
@@ -2342,7 +2342,7 @@ void func_080B1C14(void) {
 #endif
 
 #ifndef VERSION_EU
-void func_080B1C70(u16 a, u16 b, u16 c) {
+void SetSioChgCardAnimation(u16 a, u16 b, u16 c) {
     const SioAnimDef* def = &gUnk_09619444[b];
     AnimChangeWithTables(&gSioChgCardWork->anim[a], def->animId, c, def->anims, def->gfxTable);
     SetObjTileSource(gSioChgCardWork->unk_008[a], def->tiles);
@@ -2414,9 +2414,9 @@ void func_080B1E70(void) {
         AnimInit(&gSioChgCardWork->anim[i], 0, 0);
 
         if (gUnk_0203AB34[i] == 0) {
-            func_080B1C70(i, 0, 0);
+            SetSioChgCardAnimation(i, 0, 0);
         } else {
-            func_080B1C70(i, 2, 0);
+            SetSioChgCardAnimation(i, 2, 0);
         }
         gSioChgCardWork->gfx[i] = AnimGetGfx(&gSioChgCardWork->anim[i]);
     }
@@ -2566,14 +2566,14 @@ void func_080B2480(void) {
 
     if (gUnk_02039810[1][0] == 0x1AC7) {
         if (gUnk_0203AB34[0] == 0) {
-            func_080B1C70(0, 1, 0);
+            SetSioChgCardAnimation(0, 1, 0);
             m4aSongNumStart(102);
         }
         RequestDma3Copy(gUnk_096B5FA4, (void*)0x06000020, 0xC0);
         gUnk_0203AB34[0] = 1;
     } else if (gUnk_02039810[1][0] == 0x2B9A) {
         if (gUnk_0203AB34[0] == 1) {
-            func_080B1C70(0, 0, 0);
+            SetSioChgCardAnimation(0, 0, 0);
             m4aSongNumStart(104);
             gSioChgCardWork->unk_20C = 0;
         }
@@ -2583,14 +2583,14 @@ void func_080B2480(void) {
 
     if (gUnk_02039810[1][1] == 0x1AC7) {
         if (gUnk_0203AB34[1] == 0) {
-            func_080B1C70(1, 1, 0);
+            SetSioChgCardAnimation(1, 1, 0);
             m4aSongNumStart(102);
         }
         RequestDma3Copy(gUnk_096B63A4, (void*)0x060000E0, 0xC0);
         gUnk_0203AB34[1] = 1;
     } else if (gUnk_02039810[1][1] == 0x2B9A) {
         if (gUnk_0203AB34[1] == 1) {
-            func_080B1C70(1, 0, 0);
+            SetSioChgCardAnimation(1, 0, 0);
             m4aSongNumStart(104);
             gSioChgCardWork->unk_20C = 0;
         }
@@ -3208,8 +3208,8 @@ void func_080B3A68(void) {
     gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
     gSioChgCardWork->unk_074 = 1;
     gSioChgCardWork->unk_202 = gUnk_0203AB20[gSioChgCardWork->unk_076];
-    func_080B1C70(0, 0, 0);
-    func_080B1C70(1, 0, 0);
+    SetSioChgCardAnimation(0, 0, 0);
+    SetSioChgCardAnimation(1, 0, 0);
     RequestDma3Copy(gUnk_096B5EE4, (void*)0x06000020, 0xC0);
     RequestDma3Copy(gUnk_096B5EE4 + 0x400, (void*)0x060000E0, 0xC0);
     gUnk_0203AB34[0] = 0;

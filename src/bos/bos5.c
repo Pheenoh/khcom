@@ -1061,7 +1061,7 @@ void func_080FB930(MdWork* work, u16 id) {
     }
 }
 
-void func_080FBA14(MdWork* work, s16 id) {
+void MdAnimStart(MdWork* work, s16 id) {
     MdAnim* a;
     const MdAnimDef* base;
     const MdAnimDef* d;
@@ -1078,7 +1078,7 @@ void func_080FBA14(MdWork* work, s16 id) {
     a->timer = f->duration;
     func_080FB930(work, f->gfxIndex);
 }
-void func_080FBA4C(MdWork* work) {
+void MdAnimUpdate(MdWork* work) {
     MdAnim* a;
 
     a = &work->anim;
@@ -1114,9 +1114,9 @@ u8 func_080FBAB8(MdWork* work) {
     switch (work->unk_008) {
     case 0:
         if (gBtlWork->actor->x > 0x8000) {
-            func_080FBA14(work, 1);
+            MdAnimStart(work, 1);
         } else {
-            func_080FBA14(work, 0);
+            MdAnimStart(work, 0);
         }
 
         if (gBtlWork->flags & 0x100000) {
@@ -1129,7 +1129,7 @@ u8 func_080FBAB8(MdWork* work) {
         break;
     case 1:
         if (func_080FBA9C(work) != 0 && gBtlWork->actor->x > 0x8000) {
-            func_080FBA14(work, 1);
+            MdAnimStart(work, 1);
         }
 
         if (gBtlWork->unk_0A0 != 0) {
@@ -1172,45 +1172,45 @@ u8 func_080FBC4C(MdWork* work) {
             if (d > 0xA800) {
                 switch (GetRandom() % 3) {
                 case 0:
-                    func_080FBA14(work, 7);
+                    MdAnimStart(work, 7);
                     break;
                 case 1:
-                    func_080FBA14(work, 8);
+                    MdAnimStart(work, 8);
                     break;
                 case 2:
-                    func_080FBA14(work, 9);
+                    MdAnimStart(work, 9);
                     break;
                 }
             } else if (d > 0x7000) {
                 r = GetRandom() % 100;
 
                 if (r <= 59) {
-                    func_080FBA14(work, 7);
+                    MdAnimStart(work, 7);
                 } else if (r <= 89) {
-                    func_080FBA14(work, 8);
+                    MdAnimStart(work, 8);
                 } else {
-                    func_080FBA14(work, 9);
+                    MdAnimStart(work, 9);
                 }
             } else if (d > 0x3800) {
                 r = GetRandom() % 100;
 
                 if (r <= 59) {
-                    func_080FBA14(work, 8);
+                    MdAnimStart(work, 8);
                 } else if (r <= 89) {
-                    func_080FBA14(work, 7);
+                    MdAnimStart(work, 7);
                 } else {
-                    func_080FBA14(work, 9);
+                    MdAnimStart(work, 9);
                 }
             } else {
                 switch (GetRandom() % 3) {
                 case 0:
-                    func_080FBA14(work, 7);
+                    MdAnimStart(work, 7);
                     break;
                 case 1:
-                    func_080FBA14(work, 8);
+                    MdAnimStart(work, 8);
                     break;
                 case 2:
-                    func_080FBA14(work, 9);
+                    MdAnimStart(work, 9);
                     break;
                 }
             }
@@ -1260,15 +1260,15 @@ u8 func_080FBDD4(MdWork* work) {
         case 0:
             if (gBtlWork->actor->x > 0xA800) {
                 if (GetRandom() % 100 <= 59) {
-                    func_080FBA14(work, 6);
+                    MdAnimStart(work, 6);
                 } else {
-                    func_080FBA14(work, 5);
+                    MdAnimStart(work, 5);
                 }
             } else {
                 if (GetRandom() % 100 <= 79) {
-                    func_080FBA14(work, 5);
+                    MdAnimStart(work, 5);
                 } else {
-                    func_080FBA14(work, 6);
+                    MdAnimStart(work, 6);
                 }
             }
 
@@ -1341,14 +1341,14 @@ u8 func_080FBFA8(MdWork* work) {
     switch (work->unk_008) {
         case 0:
             work->unk_1B4 = work->unk_1B4 | 2;
-            func_080FBA14(work, 2);
+            MdAnimStart(work, 2);
             work->unk_00C = 0;
             break;
         case 1:
             switch (work->unk_00C) {
                 case 0:
                     if (func_080FBA9C(work) != 0) {
-                        func_080FBA14(work, 3);
+                        MdAnimStart(work, 3);
                         func_0801853C(work->sub[0].x, work->sub[0].y,
                                       work->sub[0].z + 0x1200, 512);
                         m4aSongNumStart(0x2A6);
@@ -1394,7 +1394,7 @@ u8 func_080FBFA8(MdWork* work) {
                         }
 
                         TaskCreate(&work->tasks, &gTaskDescBosMdFire, &a);
-                        func_080FBA14(work, 4);
+                        MdAnimStart(work, 4);
                         work->unk_00C = 2;
                     }
                     break;
@@ -1434,7 +1434,7 @@ u8 func_080FC17C(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            func_080FBA14(work, 10);
+            MdAnimStart(work, 10);
             func_0801AF4C(&work->sub[0]);
             work->unk_1B4 |= 2;
             work->unk_00C = 0;
@@ -1633,7 +1633,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     }
 
     func_080FB930(work, 0);
-    func_080FBA14(work, 0);
+    MdAnimStart(work, 0);
     LoadPalette(gUnk_09A3C97C, (void*)0x05000000, 32);
     func_0801C298(0, 1);
     work->unk_028 = gUnk_09A3C97C;
@@ -1682,7 +1682,7 @@ s32 task_bos_md_1(MdWork* work) {
         TaskCreate(&work->tasks2, &gTaskDescBosMdDai, args);
     }
 
-    func_080FBA4C(work);
+    MdAnimUpdate(work);
 
     if (work->unk_01A > 0) {
         work->unk_01A--;

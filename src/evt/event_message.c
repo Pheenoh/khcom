@@ -4404,7 +4404,7 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
     FreeTextSlots(p->unk_1C, 10);
     FreeTextSlots(p->unk_6C, 10);
 }
-void func_08074504(void) {
+void HBlankIntrEventScanlineScroll(void) {
     vu16 v;
 
     v = *(vu16*)0x04000006;
@@ -4419,7 +4419,7 @@ void func_08074504(void) {
 }
 void func_08074564(void) {
     gIntrCheck |= 2;
-    func_08074504();
+    HBlankIntrEventScanlineScroll();
 }
 void view_0(EventCameraWork* p, u8* arg) {
     EventSequenceDef* t;

@@ -449,7 +449,7 @@ void NumberPlus_3(void** p) {
     ReleaseObjPalette(p[1]);
 }
 
-Mode gUnk_09EE7894 = {
+Mode gModePremire = {
     gUnk_09037F80,
     (void (*)(s32))Mode_Premire_0,
     Mode_Premire_1,

@@ -3948,7 +3948,7 @@ void task_poo_owl_3(PooOwlWork* w) {
     TaskPoolDestroy(&w->tasks);
 }
 
-void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c) {
+void SetPooRabbitAnimation(PooRabbitWork* w, s32 b, u16 c) {
     if (w->unk_A8 != b) {
         w->unk_A8 = b;
         AnimChangeWithTables(w->anim, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
@@ -3978,7 +3978,7 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
     w->tiles = AllocObjTiles(m, 0);
     AnimInit(w->anim, 0, 0);
     w->unk_A8 = 7;
-    func_080CE2C4(w, 1, 0);
+    SetPooRabbitAnimation(w, 1, 0);
     w->unk_24 = 0;
     w->unk_AC = 0;
     w->gfx = AnimGetGfx(w->anim);
@@ -3998,7 +3998,7 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
             if (w->unk_AC <= 3) {
                 AnimReset(w->anim);
             } else {
-                func_080CE2C4(w, 4, 1);
+                SetPooRabbitAnimation(w, 4, 1);
                 w->unk_24 = 1;
                 w->unk_AC = 312;
             }
@@ -4006,7 +4006,7 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
         break;
     case 4:
         if (w->palette != 0 && w->collider[0x2C] != 0 && ColliderIsTouchingType(w->collider, 9) != 0) {
-            func_080CE2C4(w, 6, 0);
+            SetPooRabbitAnimation(w, 6, 0);
             w->unk_B0 = 20;
         } else {
             ApproachValue(&w->x, 0x23000, w->unk_AC);
@@ -4014,14 +4014,14 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
             w->unk_AC--;
 
             if (w->unk_AC == 0) {
-                func_080CE2C4(w, 5, 0);
+                SetPooRabbitAnimation(w, 5, 0);
                 w->unk_24 = 1;
             }
         }
         break;
     case 5:
         if (AnimIsFinished(w->anim) != 0) {
-            func_080CE2C4(w, 2, 1);
+            SetPooRabbitAnimation(w, 2, 1);
             w->unk_24 = 0;
             w->unk_AC = 260;
         }
@@ -4029,14 +4029,14 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
     case 2:
         if (w->palette != 0 && w->collider[0x2C] != 0 && ColliderIsTouchingType(w->collider, 9) != 0) {
             w->unk_B0 = 20;
-            func_080CE2C4(w, 0, 0);
+            SetPooRabbitAnimation(w, 0, 0);
         } else {
             ApproachValue(&w->x, 0x1B700, w->unk_AC);
             ApproachValue(&w->y, 0x16E00, w->unk_AC);
             w->unk_AC--;
 
             if (w->unk_AC == 0) {
-                func_080CE2C4(w, 1, 0);
+                SetPooRabbitAnimation(w, 1, 0);
                 w->unk_24 = 0;
                 w->unk_AC = 0;
             }
@@ -4045,7 +4045,7 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
     case 6:
         if (w->unk_B0 == 0) {
             if (w->palette != 0 && ColliderIsTouchingType(w->collider, 9) == 0) {
-                func_080CE2C4(w, 4, 1);
+                SetPooRabbitAnimation(w, 4, 1);
             }
         } else {
             w->unk_B0--;
@@ -4055,7 +4055,7 @@ u8 task_poo_rabbit_1(PooRabbitWork* w) {
         if (w->unk_B0 != 0) {
             w->unk_B0--;
         } else if (w->palette != 0 && ColliderIsTouchingType(w->collider, 9) == 0) {
-            func_080CE2C4(w, 2, 1);
+            SetPooRabbitAnimation(w, 2, 1);
         }
         break;
     default:

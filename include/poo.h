@@ -1222,7 +1222,7 @@ void task_poo_shadowdodai_0(PooShadowWork* w, PooShadowArgs* a);
 void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a);
 void CreatePooMapobjhitTask(void* pool, u32 a, s32 x, s32 y, u16 e);
 void task_poo_zzz_3(PooZzzWork* w);
-void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c);
+void SetPooRabbitAnimation(PooRabbitWork* w, s32 b, u16 c);
 void func_080D206C(PooBflyPart* p);
 void task_poo_roo_footmark_0(PooFootmarkWork* w);
 void task_poo_spark_0(PooSparkWork* w, PooPos* p);
