@@ -87,7 +87,7 @@ sprites_map_tasks_1.c
 sprites_emy_2.c
 sprites_btl_3.c
 sprites_mode_test_1.c
-battle_localized_09EE1520_data.c
+btl_hud_localized_data.c
 sprites_hum_1.c
 battle_localized_09EE25D0_data.c
 sprites_hum_2.c

@@ -1,4 +1,4 @@
-#include "battle_localized_09EE1520_data.h"
+#include "btl_hud_localized_data.h"
 #include "battle_localized_assets.h"
 
 #ifdef VERSION_US
