@@ -488,7 +488,7 @@ snd_stream.c
 @libc.a:strcmp.o
 m4a_1.s
 m4a2.c -O2
-movie_debug.c
+mode_chkmov.c
 m4a_catalog_data.c
 asset_misc2_at_09D71554.s
 transform_veneers.s

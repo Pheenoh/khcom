@@ -1,4 +1,4 @@
-#include "movie_debug.h"
+#include "mode_chkmov.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "main.h"

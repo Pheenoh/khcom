@@ -1,6 +1,6 @@
 #include "mode_continue.h"
 #include "mode_battle_data.h"
-#include "movie_debug.h"
+#include "mode_chkmov.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "mode_debug_api.h"

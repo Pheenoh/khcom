@@ -17,7 +17,7 @@ mode_debug.c
 mode_chkobj.c
 mode_chksnd.c
 mode_chkeff.c
-movie_debug.c
+mode_chkmov.c
 mode_dummy.c
 mode_debflag.c
 mode_vsbattle.c

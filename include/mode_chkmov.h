@@ -1,5 +1,5 @@
-#ifndef GUARD_MOVIE_DEBUG_H
-#define GUARD_MOVIE_DEBUG_H
+#ifndef GUARD_MODE_CHKMOV_H
+#define GUARD_MODE_CHKMOV_H
 
 #include "mode.h"
 #include "taskpool.h"

@@ -3,7 +3,7 @@
 #include "gba/keys.h"
 #include "key.h"
 #include "malloc.h"
-#include "movie_debug.h"
+#include "mode_chkmov.h"
 #include "registration_data.h"
 #include "taskpool.h"
 
